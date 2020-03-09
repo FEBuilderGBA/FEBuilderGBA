@@ -269,6 +269,10 @@ namespace FEBuilderGBA
             {//FSEC
                 text = InputFormRef.GetFSEC(value);
             }
+            else if (arg.Type == EventScript.ArgType.MAPXY)
+            {//MAPXY
+                text = InputFormRef.GetMAPXY(value);
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;
@@ -621,6 +625,11 @@ namespace FEBuilderGBA
                     {//FSEC
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetFSEC(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.MAPXY)
+                    {//MAPXY
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetMAPXY(v));
                     }
                     sb.Append("]");
                     break;

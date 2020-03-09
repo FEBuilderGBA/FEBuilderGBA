@@ -6654,6 +6654,12 @@ namespace FEBuilderGBA
             double sec = Math.Round( ((double)num / 60.0f) , 4);
             return R._("フレーム秒({0}秒)", sec );
         }
+        public static string GetMAPXY(uint num)
+        {
+            uint x = ((num & 0xffff0000) >> 16);
+            uint y = ((num & 0x0000ffff) );
+            return String.Format("({0},{1})", x, y);
+        }
 
         //RAM UNIT PARAM
         public static string GetRAM_UNIT_PARAM(uint num, out string errorMessae)

@@ -242,10 +242,10 @@ Bonus: Lethal damage + attacker's expected damage
 Target AI
 
 :タイル
-tile.
+tile
 
 :AIの対象タイル
-Target tile of AI.
+Target tile of AI
 
 :ユニット
 Unit
@@ -2420,7 +2420,7 @@ Event template
 Events added with this template
 
 :テンプレートを選択してください
-Please select a template
+Please select template
 
 :イベント会話グループ
 Event conversation group
@@ -6475,14 +6475,14 @@ Resize2 * 2
 :サイズ変更 3*3
 Resize3 * 3
 
+:タイルを選択する
+Select tile
+
 :保存する内容にマップ変化も含めますか？\r\n「はい」の場合は、マップ変化も含めて出力します。\r\n「いいえ」の場合は、現在のマップだけ出力します。
 Do you include Tile Changes in the content you save?\r\nIf "Yes", it outputs Tile Changes as well.\r\nIf "No", only the current map will be output.\r\n
 
 :開くマップを選択してください
 Select a Map to open
-
-:マップ変化を含めてインポートしてもよろしいですか？\r\n「はい」の場合は、マップとマップ変化の両方をTMXで指定されたものにすべて置き換えてロードします。\r\n「いいえ」の場合は、メインマップだけをロードします。
-Are you sure to import including Tile Changes?\r\n\r\nIf "yes", load all maps and map changes both with those specified in TMX.\r\nIf "No", only the main map will be loaded.
 
 :マップファイルの幅または高さが正しくありません。\r\n\r\nマップファイル:{0}\r\n最初の行: {1}\r\n
 The width or height of the map file is incorrect.\r\n\r\nMapFilename:{0}\r\nFirst line: {1}\r\n
@@ -6499,11 +6499,11 @@ The file is corrupted.\r\nThere is no header.\r\nFile: {0}.
 :ファイルが壊れています。\r\nBODYがありません。\r\nFile:{0}
 The file is corrupted.\r\nThere is no BODY.\r\nFile: {0}.
 
+:マップ変化を含めてインポートしてもよろしいですか？\r\n「はい」の場合は、マップとマップ変化の両方をTMXで指定されたものにすべて置き換えてロードします。\r\n「いいえ」の場合は、メインマップだけをロードします。
+Are you sure to import including Tile Changes?\r\n\r\nIf "yes", load all maps and map changes both with those specified in TMX.\r\nIf "No", only the main map will be loaded.
+
 :LAYERの指定がありません。
 LAYER is not specified.
-
-:Mainとなるマップがありません。\r\nメインマップのレイヤーは、「Main」と名前を付ける必要があります。\r\n\r\nマップファイル:{0}
-There is no main map.\r\nThe layers of the main map must be named "Main".\r\n\r\nMap file: {0}.
 
 :マップデータの形式が正しくありません。\r\nTiledで保存するデータ形式をcsvか、tmxディフォルトのxml形式にしてください。
 The format of the map data is incorrect.\r\nPlease set the data format saved with Tiled to csv or tmx default xml format.

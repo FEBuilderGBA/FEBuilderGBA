@@ -1,0 +1,30 @@
+﻿NAME=特定範囲の全ユニットの様々なパラメータを設定する(イベント命令)
+NAME.en=AddEvent: Set All Unit Status in specific coord
+NAME.zh=在特定坐标中设置所有人物状态(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+INFO=条件にマッチする全ユニットの値を変更します。\r\nまとめて、一括で変更したい場合に利用してください。
+INFO.en=This event changes the value of all units that match the condition.\r\nUse them when you want to change them all at once.
+INFO.zh=此事件会更改与条件匹配的所有人物的值
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 set_status_param_all_range.dmp=0x30 0xB5 0x62 0x4C
+
+EVENTSCRIPT:1=400D0000{$L1:set_status_param_all_range.dmp}	特定範囲の全ユニットのパラメータを設定する(LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR40050A00VVVV000040050B00TTTTTTTT400D0000{$L1:set_status_param_all_range.dmp}	範囲[PP:MAPXY:開始範囲][RR:MAPXY:終了範囲 00=ANY]内の全ユニットの[VV:RAM_UNIT_PARAM:Status]を[TT:RAM_UNIT_VALUE:NewValue]に設定する。条件:[XXXX:UNIT:ユニット条件 00=ANY][YYYY:CLASS:クラス条件 00=ANY][ZZZZ:ITEM:アイテム条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件 FF=ANY]	{UNITPERSOLNAL}
+
+
+
+EVENTSCRIPT:1.en=400D0000{$L1:set_status_param_all_range.dmp}	Set ALL Unit's Status in specific coord(LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2.en=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR40050A00VVVV000040050B00TTTTTTTT400D0000{$L1:set_status_param_all_range.dmp}	Set ALL Unit's [VV:RAM_UNIT_PARAM:Status] to [TT:RAM_UNIT_VALUE:NewValue] If Cond conditions[XXXX:UNIT:CheckUnit 00=ANY][YYYY:CLASS:CheckClass 00=ANY][ZZZZ:ITEM:CheckItem 00=ANY][WWWW:WMAPAFFILIATION:FF=ANY]in[PP:MAPXY:StartRange][RR:MAPXY:EndRange 00=ANY]	{UNITPERSOLNAL}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:set_status_param_all_range.dmp}	在特定坐标中设置所有人物状态(LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2.zh=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR40050A00VVVV000040050B00TTTTTTTT400D0000{$L1:set_status_param_all_range.dmp}	全人物的[VV:RAM_UNIT_PARAM:Status]设置为[TT:RAM_UNIT_VALUE:NewValue] 条件 [XXXX:UNIT:人物条件 00=ANY][YYYY:CLASS:职业条件 00=ANY][ZZZZ:ITEM:道具条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件FF=ANY][PP:MAPXY:StartRange][RR:MAPXY:EndRange 00=ANY]	{UNITPERSOLNAL}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=set_status_param_all_range.dmp
+
+AUTHOR=7743
+

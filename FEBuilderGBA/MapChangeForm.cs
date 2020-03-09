@@ -81,7 +81,7 @@ namespace FEBuilderGBA
             if (!U.isSafetyOffset(change_addr))
             {
                 this.N_InputFormRef.ClearSelect(true);
-                this.N_AddressListExpandsButton.Enabled = false;
+                this.N_AddressListExpandsButton_80.Enabled = false;
                 return;
             }
 
@@ -220,6 +220,26 @@ namespace FEBuilderGBA
         //リストが拡張されたとき
         void N_AddressListExpandsEvent(object sender, EventArgs arg)
         {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            //
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearTileChangePointer");
+            addr = addr + ((eearg.OldDataCount - 1) * eearg.BlockSize);            //-1は id は 0x00から始まるため
+            for (int i = (int)eearg.OldDataCount - 1; i < count; i++)
+            {
+                //タイルチェンジID
+                Program.ROM.write_u8(addr + 0, (uint)i, undodata);
+                //タイル変化ポインタを0にする.
+                Program.ROM.write_u32(addr + 8, 0, undodata);
+
+                addr += eearg.BlockSize;
+            }
+
+            Program.Undo.Push(undodata);
+
+
             U.ReSelectList(this.AddressList);
         }
         void N_PostWriteEvent(object sender, EventArgs arg)

@@ -978,6 +978,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAPXY)
             {
+                text = InputFormRef.GetMAPXY(v);
                 if (isOrderOfHuman)
                 {
                     NumericUpDown xyObj = (NumericUpDown)sender;
@@ -1039,6 +1040,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
                 text = " " + InputFormRef.GetFSEC(v);
+            }
+            else if (arg.Type == EventScript.ArgType.MAPXY)
+            {//MAPXY
+                text = " " + InputFormRef.GetMAPXY(v);
             }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
             {//RAM_UNIT_PARAM
@@ -2820,6 +2825,11 @@ namespace FEBuilderGBA
                     {//FSEC
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetFSEC(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.MAPXY)
+                    {//MAPXY
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetMAPXY(v));
                     }
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
                     {//RAM_UNIT_PARAM

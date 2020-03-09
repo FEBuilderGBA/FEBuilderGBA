@@ -39,44 +39,24 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ControlPanel = new System.Windows.Forms.Panel();
-            this.ParamImage10 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage9 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamValue10 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc10 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel10 = new System.Windows.Forms.Label();
-            this.ParamValue9 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc9 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel9 = new System.Windows.Forms.Label();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
             this.TemplateButton = new System.Windows.Forms.Button();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
-            this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
-            this.ASMTextBox = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
             this.ScriptChangeButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
             this.UpButton = new System.Windows.Forms.Button();
             this.DownButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.ParamImage8 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage6 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage4 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage2 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage7 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage5 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage3 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamImage1 = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ParamValue8 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue6 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue4 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc8 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel8 = new System.Windows.Forms.Label();
             this.ParamSrc6 = new System.Windows.Forms.NumericUpDown();
@@ -85,10 +65,6 @@
             this.ParamLabel4 = new System.Windows.Forms.Label();
             this.ParamSrc2 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel2 = new System.Windows.Forms.Label();
-            this.ParamValue7 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue5 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue3 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc7 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel7 = new System.Windows.Forms.Label();
             this.ParamSrc5 = new System.Windows.Forms.NumericUpDown();
@@ -101,24 +77,38 @@
             this.EventToFileButton = new System.Windows.Forms.Button();
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.ParamImage10 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage9 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamValue10 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue9 = new FEBuilderGBA.TextBoxEx();
+            this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
+            this.ASMTextBox = new FEBuilderGBA.TextBoxEx();
+            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
+            this.ParamImage8 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage6 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage4 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage2 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage7 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage5 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage3 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage1 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamValue8 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue6 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue4 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue7 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue5 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue3 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.ControlPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc9)).BeginInit();
             this.ControlPanelCommand.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc4)).BeginInit();
@@ -128,11 +118,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc1)).BeginInit();
             this.FooterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage1)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(215, 87);
+            this.UpdateButton.Location = new System.Drawing.Point(215, 84);
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(472, 50);
@@ -275,23 +275,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1520, 803);
             this.MainPanel.TabIndex = 54;
             // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.HorizontalScrollbar = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 0);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(1518, 801);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
-            this.AddressList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressList_MouseDoubleClick);
-            // 
             // ControlPanel
             // 
             this.ControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -340,41 +323,8 @@
             this.ControlPanel.Location = new System.Drawing.Point(8, 414);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1482, 316);
+            this.ControlPanel.Size = new System.Drawing.Size(1482, 311);
             this.ControlPanel.TabIndex = 1;
-            // 
-            // ParamImage10
-            // 
-            this.ParamImage10.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage10.Location = new System.Drawing.Point(1344, 142);
-            this.ParamImage10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage10.Name = "ParamImage10";
-            this.ParamImage10.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage10.TabIndex = 210;
-            this.ParamImage10.TabStop = false;
-            // 
-            // ParamImage9
-            // 
-            this.ParamImage9.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage9.Location = new System.Drawing.Point(665, 143);
-            this.ParamImage9.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage9.Name = "ParamImage9";
-            this.ParamImage9.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage9.TabIndex = 209;
-            this.ParamImage9.TabStop = false;
-            // 
-            // ParamValue10
-            // 
-            this.ParamValue10.ErrorMessage = "";
-            this.ParamValue10.Location = new System.Drawing.Point(1051, 143);
-            this.ParamValue10.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue10.Name = "ParamValue10";
-            this.ParamValue10.Placeholder = "";
-            this.ParamValue10.ReadOnly = true;
-            this.ParamValue10.Size = new System.Drawing.Size(290, 25);
-            this.ParamValue10.TabIndex = 208;
             // 
             // ParamSrc10
             // 
@@ -400,21 +350,10 @@
             this.ParamLabel10.Text = "パラメータ10";
             this.ParamLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ParamValue9
-            // 
-            this.ParamValue9.ErrorMessage = "";
-            this.ParamValue9.Location = new System.Drawing.Point(339, 145);
-            this.ParamValue9.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue9.Name = "ParamValue9";
-            this.ParamValue9.Placeholder = "";
-            this.ParamValue9.ReadOnly = true;
-            this.ParamValue9.Size = new System.Drawing.Size(322, 25);
-            this.ParamValue9.TabIndex = 206;
-            // 
             // ParamSrc9
             // 
             this.ParamSrc9.Hexadecimal = true;
-            this.ParamSrc9.Location = new System.Drawing.Point(205, 143);
+            this.ParamSrc9.Location = new System.Drawing.Point(205, 140);
             this.ParamSrc9.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc9.Maximum = new decimal(new int[] {
             -559939585,
@@ -427,7 +366,7 @@
             // 
             // ParamLabel9
             // 
-            this.ParamLabel9.Location = new System.Drawing.Point(4, 148);
+            this.ParamLabel9.Location = new System.Drawing.Point(4, 145);
             this.ParamLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ParamLabel9.Name = "ParamLabel9";
             this.ParamLabel9.Size = new System.Drawing.Size(190, 18);
@@ -455,12 +394,12 @@
             this.ControlPanelCommand.Location = new System.Drawing.Point(0, 176);
             this.ControlPanelCommand.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanelCommand.Name = "ControlPanelCommand";
-            this.ControlPanelCommand.Size = new System.Drawing.Size(1481, 138);
+            this.ControlPanelCommand.Size = new System.Drawing.Size(1481, 134);
             this.ControlPanelCommand.TabIndex = 202;
             // 
             // TemplateButton
             // 
-            this.TemplateButton.Location = new System.Drawing.Point(1344, 72);
+            this.TemplateButton.Location = new System.Drawing.Point(1344, 69);
             this.TemplateButton.Margin = new System.Windows.Forms.Padding(2);
             this.TemplateButton.Name = "TemplateButton";
             this.TemplateButton.Size = new System.Drawing.Size(136, 32);
@@ -472,7 +411,7 @@
             // AddressLabel
             // 
             this.AddressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AddressLabel.Location = new System.Drawing.Point(1066, 61);
+            this.AddressLabel.Location = new System.Drawing.Point(1066, 58);
             this.AddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(130, 24);
@@ -483,7 +422,7 @@
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Location = new System.Drawing.Point(1202, 59);
+            this.AddressTextBox.Location = new System.Drawing.Point(1202, 56);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.ReadOnly = true;
             this.AddressTextBox.Size = new System.Drawing.Size(137, 25);
@@ -491,21 +430,11 @@
             this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             this.AddressTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressTextBox_MouseDoubleClick);
             // 
-            // CommentTextBox
-            // 
-            this.CommentTextBox.ErrorMessage = "";
-            this.CommentTextBox.Location = new System.Drawing.Point(144, 5);
-            this.CommentTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.CommentTextBox.Name = "CommentTextBox";
-            this.CommentTextBox.Placeholder = "";
-            this.CommentTextBox.Size = new System.Drawing.Size(1196, 25);
-            this.CommentTextBox.TabIndex = 0;
-            // 
             // label5
             // 
             this.label5.AccessibleDescription = "@COMMENT";
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(8, 5);
+            this.label5.Location = new System.Drawing.Point(8, 2);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 24);
@@ -513,21 +442,10 @@
             this.label5.Text = "コメント";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ASMTextBox
-            // 
-            this.ASMTextBox.ErrorMessage = "";
-            this.ASMTextBox.Location = new System.Drawing.Point(144, 58);
-            this.ASMTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ASMTextBox.Name = "ASMTextBox";
-            this.ASMTextBox.Placeholder = "";
-            this.ASMTextBox.Size = new System.Drawing.Size(911, 25);
-            this.ASMTextBox.TabIndex = 3;
-            this.ASMTextBox.Leave += new System.EventHandler(this.ASMTextBox_Leave);
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(8, 31);
+            this.label3.Location = new System.Drawing.Point(8, 28);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 24);
@@ -537,7 +455,7 @@
             // 
             // ScriptChangeButton
             // 
-            this.ScriptChangeButton.Location = new System.Drawing.Point(1343, 3);
+            this.ScriptChangeButton.Location = new System.Drawing.Point(1343, 0);
             this.ScriptChangeButton.Margin = new System.Windows.Forms.Padding(2);
             this.ScriptChangeButton.Name = "ScriptChangeButton";
             this.ScriptChangeButton.Size = new System.Drawing.Size(137, 64);
@@ -549,7 +467,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(8, 58);
+            this.label4.Location = new System.Drawing.Point(8, 55);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 24);
@@ -557,23 +475,9 @@
             this.label4.Text = "バイナリコード";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ScriptCodeName
-            // 
-            this.ScriptCodeName.ErrorMessage = "";
-            this.ScriptCodeName.Location = new System.Drawing.Point(144, 31);
-            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
-            this.ScriptCodeName.Name = "ScriptCodeName";
-            this.ScriptCodeName.Placeholder = "";
-            this.ScriptCodeName.ReadOnly = true;
-            this.ScriptCodeName.Size = new System.Drawing.Size(1196, 25);
-            this.ScriptCodeName.TabIndex = 1;
-            this.ScriptCodeName.DoubleClick += new System.EventHandler(this.ScriptCodeName_DoubleClick);
-            this.ScriptCodeName.MouseEnter += new System.EventHandler(this.ScriptCodeName_MouseEnter);
-            this.ScriptCodeName.MouseLeave += new System.EventHandler(this.ScriptCodeName_MouseLeave);
-            // 
             // UpButton
             // 
-            this.UpButton.Location = new System.Drawing.Point(1344, 106);
+            this.UpButton.Location = new System.Drawing.Point(1344, 103);
             this.UpButton.Margin = new System.Windows.Forms.Padding(2);
             this.UpButton.Name = "UpButton";
             this.UpButton.Size = new System.Drawing.Size(56, 30);
@@ -584,7 +488,7 @@
             // 
             // DownButton
             // 
-            this.DownButton.Location = new System.Drawing.Point(1424, 106);
+            this.DownButton.Location = new System.Drawing.Point(1424, 103);
             this.DownButton.Margin = new System.Windows.Forms.Padding(2);
             this.DownButton.Name = "DownButton";
             this.DownButton.Size = new System.Drawing.Size(56, 30);
@@ -595,7 +499,7 @@
             // 
             // NewButton
             // 
-            this.NewButton.Location = new System.Drawing.Point(969, 88);
+            this.NewButton.Location = new System.Drawing.Point(969, 85);
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(227, 50);
@@ -606,7 +510,7 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(835, 88);
+            this.RemoveButton.Location = new System.Drawing.Point(835, 85);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(112, 50);
@@ -625,138 +529,6 @@
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // ParamImage8
-            // 
-            this.ParamImage8.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage8.Location = new System.Drawing.Point(1344, 106);
-            this.ParamImage8.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage8.Name = "ParamImage8";
-            this.ParamImage8.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage8.TabIndex = 198;
-            this.ParamImage8.TabStop = false;
-            // 
-            // ParamImage6
-            // 
-            this.ParamImage6.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage6.Location = new System.Drawing.Point(1344, 71);
-            this.ParamImage6.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage6.Name = "ParamImage6";
-            this.ParamImage6.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage6.TabIndex = 197;
-            this.ParamImage6.TabStop = false;
-            // 
-            // ParamImage4
-            // 
-            this.ParamImage4.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage4.Location = new System.Drawing.Point(1344, 35);
-            this.ParamImage4.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage4.Name = "ParamImage4";
-            this.ParamImage4.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage4.TabIndex = 196;
-            this.ParamImage4.TabStop = false;
-            // 
-            // ParamImage2
-            // 
-            this.ParamImage2.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage2.Location = new System.Drawing.Point(1344, 0);
-            this.ParamImage2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage2.Name = "ParamImage2";
-            this.ParamImage2.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage2.TabIndex = 195;
-            this.ParamImage2.TabStop = false;
-            // 
-            // ParamImage7
-            // 
-            this.ParamImage7.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage7.Location = new System.Drawing.Point(665, 107);
-            this.ParamImage7.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage7.Name = "ParamImage7";
-            this.ParamImage7.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage7.TabIndex = 194;
-            this.ParamImage7.TabStop = false;
-            // 
-            // ParamImage5
-            // 
-            this.ParamImage5.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage5.Location = new System.Drawing.Point(665, 72);
-            this.ParamImage5.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage5.Name = "ParamImage5";
-            this.ParamImage5.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage5.TabIndex = 193;
-            this.ParamImage5.TabStop = false;
-            // 
-            // ParamImage3
-            // 
-            this.ParamImage3.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage3.Location = new System.Drawing.Point(665, 36);
-            this.ParamImage3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage3.Name = "ParamImage3";
-            this.ParamImage3.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage3.TabIndex = 192;
-            this.ParamImage3.TabStop = false;
-            // 
-            // ParamImage1
-            // 
-            this.ParamImage1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ParamImage1.Location = new System.Drawing.Point(665, 0);
-            this.ParamImage1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.ParamImage1.Name = "ParamImage1";
-            this.ParamImage1.Size = new System.Drawing.Size(32, 32);
-            this.ParamImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ParamImage1.TabIndex = 191;
-            this.ParamImage1.TabStop = false;
-            // 
-            // ParamValue8
-            // 
-            this.ParamValue8.ErrorMessage = "";
-            this.ParamValue8.Location = new System.Drawing.Point(1051, 107);
-            this.ParamValue8.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue8.Name = "ParamValue8";
-            this.ParamValue8.Placeholder = "";
-            this.ParamValue8.ReadOnly = true;
-            this.ParamValue8.Size = new System.Drawing.Size(290, 25);
-            this.ParamValue8.TabIndex = 56;
-            // 
-            // ParamValue6
-            // 
-            this.ParamValue6.ErrorMessage = "";
-            this.ParamValue6.Location = new System.Drawing.Point(1049, 78);
-            this.ParamValue6.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue6.Name = "ParamValue6";
-            this.ParamValue6.Placeholder = "";
-            this.ParamValue6.ReadOnly = true;
-            this.ParamValue6.Size = new System.Drawing.Size(290, 25);
-            this.ParamValue6.TabIndex = 55;
-            // 
-            // ParamValue4
-            // 
-            this.ParamValue4.ErrorMessage = "";
-            this.ParamValue4.Location = new System.Drawing.Point(1051, 40);
-            this.ParamValue4.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue4.Name = "ParamValue4";
-            this.ParamValue4.Placeholder = "";
-            this.ParamValue4.ReadOnly = true;
-            this.ParamValue4.Size = new System.Drawing.Size(290, 25);
-            this.ParamValue4.TabIndex = 54;
-            // 
-            // ParamValue2
-            // 
-            this.ParamValue2.ErrorMessage = "";
-            this.ParamValue2.Location = new System.Drawing.Point(1051, 1);
-            this.ParamValue2.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue2.Name = "ParamValue2";
-            this.ParamValue2.Placeholder = "";
-            this.ParamValue2.ReadOnly = true;
-            this.ParamValue2.Size = new System.Drawing.Size(290, 25);
-            this.ParamValue2.TabIndex = 53;
             // 
             // ParamSrc8
             // 
@@ -785,7 +557,7 @@
             // ParamSrc6
             // 
             this.ParamSrc6.Hexadecimal = true;
-            this.ParamSrc6.Location = new System.Drawing.Point(917, 71);
+            this.ParamSrc6.Location = new System.Drawing.Point(917, 73);
             this.ParamSrc6.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc6.Maximum = new decimal(new int[] {
             -559939585,
@@ -809,7 +581,7 @@
             // ParamSrc4
             // 
             this.ParamSrc4.Hexadecimal = true;
-            this.ParamSrc4.Location = new System.Drawing.Point(917, 36);
+            this.ParamSrc4.Location = new System.Drawing.Point(917, 38);
             this.ParamSrc4.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc4.Maximum = new decimal(new int[] {
             -559939585,
@@ -833,7 +605,7 @@
             // ParamSrc2
             // 
             this.ParamSrc2.Hexadecimal = true;
-            this.ParamSrc2.Location = new System.Drawing.Point(917, 2);
+            this.ParamSrc2.Location = new System.Drawing.Point(917, 4);
             this.ParamSrc2.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc2.Maximum = new decimal(new int[] {
             -559939585,
@@ -854,54 +626,10 @@
             this.ParamLabel2.Text = "パラメータ2";
             this.ParamLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ParamValue7
-            // 
-            this.ParamValue7.ErrorMessage = "";
-            this.ParamValue7.Location = new System.Drawing.Point(339, 109);
-            this.ParamValue7.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue7.Name = "ParamValue7";
-            this.ParamValue7.Placeholder = "";
-            this.ParamValue7.ReadOnly = true;
-            this.ParamValue7.Size = new System.Drawing.Size(322, 25);
-            this.ParamValue7.TabIndex = 41;
-            // 
-            // ParamValue5
-            // 
-            this.ParamValue5.ErrorMessage = "";
-            this.ParamValue5.Location = new System.Drawing.Point(339, 80);
-            this.ParamValue5.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue5.Name = "ParamValue5";
-            this.ParamValue5.Placeholder = "";
-            this.ParamValue5.ReadOnly = true;
-            this.ParamValue5.Size = new System.Drawing.Size(322, 25);
-            this.ParamValue5.TabIndex = 40;
-            // 
-            // ParamValue3
-            // 
-            this.ParamValue3.ErrorMessage = "";
-            this.ParamValue3.Location = new System.Drawing.Point(339, 42);
-            this.ParamValue3.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue3.Name = "ParamValue3";
-            this.ParamValue3.Placeholder = "";
-            this.ParamValue3.ReadOnly = true;
-            this.ParamValue3.Size = new System.Drawing.Size(322, 25);
-            this.ParamValue3.TabIndex = 39;
-            // 
-            // ParamValue1
-            // 
-            this.ParamValue1.ErrorMessage = "";
-            this.ParamValue1.Location = new System.Drawing.Point(339, 4);
-            this.ParamValue1.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue1.Name = "ParamValue1";
-            this.ParamValue1.Placeholder = "";
-            this.ParamValue1.ReadOnly = true;
-            this.ParamValue1.Size = new System.Drawing.Size(322, 25);
-            this.ParamValue1.TabIndex = 38;
-            // 
             // ParamSrc7
             // 
             this.ParamSrc7.Hexadecimal = true;
-            this.ParamSrc7.Location = new System.Drawing.Point(205, 107);
+            this.ParamSrc7.Location = new System.Drawing.Point(205, 104);
             this.ParamSrc7.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc7.Maximum = new decimal(new int[] {
             -559939585,
@@ -1039,6 +767,278 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "変更したい行をダブルクリック or Enterキーを押してください。 右クリックでメニューが出ます。";
             // 
+            // ParamImage10
+            // 
+            this.ParamImage10.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage10.Location = new System.Drawing.Point(1344, 142);
+            this.ParamImage10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage10.Name = "ParamImage10";
+            this.ParamImage10.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage10.TabIndex = 210;
+            this.ParamImage10.TabStop = false;
+            // 
+            // ParamImage9
+            // 
+            this.ParamImage9.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage9.Location = new System.Drawing.Point(665, 143);
+            this.ParamImage9.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage9.Name = "ParamImage9";
+            this.ParamImage9.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage9.TabIndex = 209;
+            this.ParamImage9.TabStop = false;
+            // 
+            // ParamValue10
+            // 
+            this.ParamValue10.ErrorMessage = "";
+            this.ParamValue10.Location = new System.Drawing.Point(1051, 140);
+            this.ParamValue10.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue10.Name = "ParamValue10";
+            this.ParamValue10.Placeholder = "";
+            this.ParamValue10.ReadOnly = true;
+            this.ParamValue10.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue10.TabIndex = 208;
+            // 
+            // ParamValue9
+            // 
+            this.ParamValue9.ErrorMessage = "";
+            this.ParamValue9.Location = new System.Drawing.Point(339, 140);
+            this.ParamValue9.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue9.Name = "ParamValue9";
+            this.ParamValue9.Placeholder = "";
+            this.ParamValue9.ReadOnly = true;
+            this.ParamValue9.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue9.TabIndex = 206;
+            // 
+            // CommentTextBox
+            // 
+            this.CommentTextBox.ErrorMessage = "";
+            this.CommentTextBox.Location = new System.Drawing.Point(144, 2);
+            this.CommentTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CommentTextBox.Name = "CommentTextBox";
+            this.CommentTextBox.Placeholder = "";
+            this.CommentTextBox.Size = new System.Drawing.Size(1196, 25);
+            this.CommentTextBox.TabIndex = 0;
+            // 
+            // ASMTextBox
+            // 
+            this.ASMTextBox.ErrorMessage = "";
+            this.ASMTextBox.Location = new System.Drawing.Point(144, 55);
+            this.ASMTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ASMTextBox.Name = "ASMTextBox";
+            this.ASMTextBox.Placeholder = "";
+            this.ASMTextBox.Size = new System.Drawing.Size(911, 25);
+            this.ASMTextBox.TabIndex = 3;
+            this.ASMTextBox.Leave += new System.EventHandler(this.ASMTextBox_Leave);
+            // 
+            // ScriptCodeName
+            // 
+            this.ScriptCodeName.ErrorMessage = "";
+            this.ScriptCodeName.Location = new System.Drawing.Point(144, 28);
+            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
+            this.ScriptCodeName.Name = "ScriptCodeName";
+            this.ScriptCodeName.Placeholder = "";
+            this.ScriptCodeName.ReadOnly = true;
+            this.ScriptCodeName.Size = new System.Drawing.Size(1196, 25);
+            this.ScriptCodeName.TabIndex = 1;
+            this.ScriptCodeName.DoubleClick += new System.EventHandler(this.ScriptCodeName_DoubleClick);
+            this.ScriptCodeName.MouseEnter += new System.EventHandler(this.ScriptCodeName_MouseEnter);
+            this.ScriptCodeName.MouseLeave += new System.EventHandler(this.ScriptCodeName_MouseLeave);
+            // 
+            // ParamImage8
+            // 
+            this.ParamImage8.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage8.Location = new System.Drawing.Point(1344, 106);
+            this.ParamImage8.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage8.Name = "ParamImage8";
+            this.ParamImage8.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage8.TabIndex = 198;
+            this.ParamImage8.TabStop = false;
+            // 
+            // ParamImage6
+            // 
+            this.ParamImage6.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage6.Location = new System.Drawing.Point(1344, 71);
+            this.ParamImage6.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage6.Name = "ParamImage6";
+            this.ParamImage6.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage6.TabIndex = 197;
+            this.ParamImage6.TabStop = false;
+            // 
+            // ParamImage4
+            // 
+            this.ParamImage4.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage4.Location = new System.Drawing.Point(1344, 35);
+            this.ParamImage4.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage4.Name = "ParamImage4";
+            this.ParamImage4.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage4.TabIndex = 196;
+            this.ParamImage4.TabStop = false;
+            // 
+            // ParamImage2
+            // 
+            this.ParamImage2.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage2.Location = new System.Drawing.Point(1344, 0);
+            this.ParamImage2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage2.Name = "ParamImage2";
+            this.ParamImage2.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage2.TabIndex = 195;
+            this.ParamImage2.TabStop = false;
+            // 
+            // ParamImage7
+            // 
+            this.ParamImage7.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage7.Location = new System.Drawing.Point(665, 107);
+            this.ParamImage7.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage7.Name = "ParamImage7";
+            this.ParamImage7.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage7.TabIndex = 194;
+            this.ParamImage7.TabStop = false;
+            // 
+            // ParamImage5
+            // 
+            this.ParamImage5.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage5.Location = new System.Drawing.Point(665, 72);
+            this.ParamImage5.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage5.Name = "ParamImage5";
+            this.ParamImage5.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage5.TabIndex = 193;
+            this.ParamImage5.TabStop = false;
+            // 
+            // ParamImage3
+            // 
+            this.ParamImage3.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage3.Location = new System.Drawing.Point(665, 36);
+            this.ParamImage3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage3.Name = "ParamImage3";
+            this.ParamImage3.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage3.TabIndex = 192;
+            this.ParamImage3.TabStop = false;
+            // 
+            // ParamImage1
+            // 
+            this.ParamImage1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage1.Location = new System.Drawing.Point(665, 0);
+            this.ParamImage1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage1.Name = "ParamImage1";
+            this.ParamImage1.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage1.TabIndex = 191;
+            this.ParamImage1.TabStop = false;
+            // 
+            // ParamValue8
+            // 
+            this.ParamValue8.ErrorMessage = "";
+            this.ParamValue8.Location = new System.Drawing.Point(1051, 105);
+            this.ParamValue8.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue8.Name = "ParamValue8";
+            this.ParamValue8.Placeholder = "";
+            this.ParamValue8.ReadOnly = true;
+            this.ParamValue8.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue8.TabIndex = 56;
+            // 
+            // ParamValue6
+            // 
+            this.ParamValue6.ErrorMessage = "";
+            this.ParamValue6.Location = new System.Drawing.Point(1051, 73);
+            this.ParamValue6.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue6.Name = "ParamValue6";
+            this.ParamValue6.Placeholder = "";
+            this.ParamValue6.ReadOnly = true;
+            this.ParamValue6.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue6.TabIndex = 55;
+            // 
+            // ParamValue4
+            // 
+            this.ParamValue4.ErrorMessage = "";
+            this.ParamValue4.Location = new System.Drawing.Point(1051, 40);
+            this.ParamValue4.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue4.Name = "ParamValue4";
+            this.ParamValue4.Placeholder = "";
+            this.ParamValue4.ReadOnly = true;
+            this.ParamValue4.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue4.TabIndex = 54;
+            // 
+            // ParamValue2
+            // 
+            this.ParamValue2.ErrorMessage = "";
+            this.ParamValue2.Location = new System.Drawing.Point(1051, 4);
+            this.ParamValue2.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue2.Name = "ParamValue2";
+            this.ParamValue2.Placeholder = "";
+            this.ParamValue2.ReadOnly = true;
+            this.ParamValue2.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue2.TabIndex = 53;
+            // 
+            // ParamValue7
+            // 
+            this.ParamValue7.ErrorMessage = "";
+            this.ParamValue7.Location = new System.Drawing.Point(339, 105);
+            this.ParamValue7.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue7.Name = "ParamValue7";
+            this.ParamValue7.Placeholder = "";
+            this.ParamValue7.ReadOnly = true;
+            this.ParamValue7.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue7.TabIndex = 41;
+            // 
+            // ParamValue5
+            // 
+            this.ParamValue5.ErrorMessage = "";
+            this.ParamValue5.Location = new System.Drawing.Point(339, 73);
+            this.ParamValue5.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue5.Name = "ParamValue5";
+            this.ParamValue5.Placeholder = "";
+            this.ParamValue5.ReadOnly = true;
+            this.ParamValue5.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue5.TabIndex = 40;
+            // 
+            // ParamValue3
+            // 
+            this.ParamValue3.ErrorMessage = "";
+            this.ParamValue3.Location = new System.Drawing.Point(339, 40);
+            this.ParamValue3.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue3.Name = "ParamValue3";
+            this.ParamValue3.Placeholder = "";
+            this.ParamValue3.ReadOnly = true;
+            this.ParamValue3.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue3.TabIndex = 39;
+            // 
+            // ParamValue1
+            // 
+            this.ParamValue1.ErrorMessage = "";
+            this.ParamValue1.Location = new System.Drawing.Point(339, 4);
+            this.ParamValue1.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue1.Name = "ParamValue1";
+            this.ParamValue1.Placeholder = "";
+            this.ParamValue1.ReadOnly = true;
+            this.ParamValue1.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue1.TabIndex = 38;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.HorizontalScrollbar = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 0);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(1518, 801);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
+            this.AddressList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressList_MouseDoubleClick);
+            // 
             // EventScriptInnerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1059,20 +1059,10 @@
             this.MainPanel.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc9)).EndInit();
             this.ControlPanelCommand.ResumeLayout(false);
             this.ControlPanelCommand.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ParamImage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc4)).EndInit();
@@ -1083,6 +1073,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc1)).EndInit();
             this.FooterPanel.ResumeLayout(false);
             this.FooterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage1)).EndInit();
             this.ResumeLayout(false);
 
         }

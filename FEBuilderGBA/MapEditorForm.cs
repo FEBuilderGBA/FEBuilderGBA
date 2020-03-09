@@ -306,7 +306,8 @@ namespace FEBuilderGBA
             //書き込みボタンの黄色を消す
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
         }
-        void LoadMapMainData(uint addr, MapChangeForm.ChangeSt change)
+
+        static ushort[] LoadMapMainDataLow(uint addr, out int outMapWidth, out int outMapHeight)
         {
             //マップ配置データの読込
             byte[] mappointerUZ = LZ77.decompress(Program.ROM.Data, addr); //tsa
@@ -316,10 +317,10 @@ namespace FEBuilderGBA
                 mappointerUZ = ErrorMap();
             }
 
-            this.MapWidth = mappointerUZ[0];
-            this.MapHeight = mappointerUZ[1];
+            int mapWidth = mappointerUZ[0];
+            int mapHeight = mappointerUZ[1];
 
-            this.MAR = new UInt16[(this.MapWidth) * (this.MapHeight)];
+            ushort[] mar = new UInt16[(mapWidth) * (mapHeight)];
             int n = 0;
             int length = mappointerUZ.Length;
             for (int i = 2; i < length; i += 2, n++)
@@ -328,15 +329,24 @@ namespace FEBuilderGBA
                 {
                     break;
                 }
-                if (n >= this.MAR.Length)
+                if (n >= mar.Length)
                 {
                     break;
                 }
 
                 //マップデータを読む
                 int m = (mappointerUZ[i] + ((UInt16)mappointerUZ[i + 1] << 8));
-                this.MAR[n] = (UInt16)m;
+                mar[n] = (UInt16)m;
             }
+            outMapWidth = mapWidth;
+            outMapHeight = mapHeight;
+            return mar;
+        }
+        void LoadMapMainData(uint addr, MapChangeForm.ChangeSt change)
+        {
+            //マップ配置データの読込
+            this.MAR = LoadMapMainDataLow(addr, out this.MapWidth, out this.MapHeight);
+
             UpdateMapChip();
 
             UpdateSizeText(change);
@@ -942,7 +952,41 @@ this.MapObjImage);
             menuItem.Enabled = (!(w == 3 && w == 3));
             contextMenu.MenuItems.Add(menuItem);
 
+            contextMenu.MenuItems.Add(new MenuItem("-"));
+
+            menuItem = new MenuItem(R._("タイルを選択する"));
+            menuItem.Click += new EventHandler((sender, ee) =>
+            {
+                Spoit_MainMapTile(x, y);
+            });
+            contextMenu.MenuItems.Add(menuItem);
+
             contextMenu.Show(MAP, new Point(e.X, e.Y));
+        }
+
+        //メインマップから選択しているタイルをスポイトする。 そのタイルを選択する.
+        void Spoit_MainMapTile(int x,int y)
+        {
+            if (this.ChangeList.Count <= 0)
+            {
+                Debug.Assert(false);
+                return;
+            }
+            if (x < 0 || y < 0)
+            {
+                return;
+            }
+            MapChangeForm.ChangeSt changest = this.ChangeList[0];
+            int width,height;
+            ushort[] mar = LoadMapMainDataLow(changest.addr, out width, out height);
+            int p = x + y * width;
+            if (p >= mar.Length)
+            {
+                return;
+            }
+
+            this.SelectChipset = new int[] { mar[p] >> 2 };
+            MAPCHIPLIST.Invalidate();
         }
 
         private void MAP_MouseDown(object sender, MouseEventArgs e)

@@ -1446,6 +1446,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetFSEC(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.MAPXY)
+                        {//MAPXY
+                            isENumText = true;
+                            text = " " + InputFormRef.GetMAPXY(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
                         {
                             isENumText = true;
