@@ -455,13 +455,13 @@ namespace FEBuilderGBA
                 if (useNumber.IndexOf(number) >= 0)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                        , R._("マップ変化({0})のIDが重複しています", number)));
+                        , R._("マップ変化({0})のIDが重複しています", U.To0xHexString(number))));
                     continue;
                 }
                 if (number > 0x7f )
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                        , R._("マップ変化({0})のIDが、0x7Fを超えています。\r\nマップ変化IDは、0x7F以下でなければなりません。", number)));
+                        , R._("マップ変化({0})のIDが、0x7Fを超えています。\r\nマップ変化IDは、0x7F以下でなければなりません。", U.To0xHexString(number))));
                     continue;
                 }
                 uint x = Program.ROM.u8(1 + addr);
@@ -484,7 +484,7 @@ namespace FEBuilderGBA
 //                        continue;
 //                    }
 //                    errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-//                        , R._("マップ変化({0})の高さ(Y:{1} Height:{2})は、マップの高さ({3})より大きいです", number, y, height, mapheight)));
+                //                        , R._("マップ変化({0})の高さ(Y:{1} Height:{2})は、マップの高さ({3})より大きいです", U.To0xHexString(number), y, height, mapheight)));
 //                }
 
                 if (pointer == 0)
@@ -494,7 +494,7 @@ namespace FEBuilderGBA
                 if (! U.isSafetyPointer(pointer))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                        , R._("マップ変化({0})のポインタ({1})が危険です。", number, U.To0xHexString(pointer))));
+                        , R._("マップ変化({0})のポインタ({1})が危険です。", U.To0xHexString(number), U.To0xHexString(pointer))));
                     continue;
                 }
 
@@ -504,7 +504,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(limitAddr - 1))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                        , R._("マップ変化({0})のポインタ({1})か、マップ変化のサイズの指定が正しくありません。", number, U.To0xHexString(pointer))));
+                        , R._("マップ変化({0})のポインタ({1})か、マップ変化のサイズの指定が正しくありません。", U.To0xHexString(number), U.To0xHexString(pointer))));
                     continue;
                 }
 
@@ -514,7 +514,7 @@ namespace FEBuilderGBA
                     if (!ImageUtilMap.IsCorrectMapChip(mapData, configUZ, isFE6))
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                            , R._("マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。", number, U.To0xHexString(pointer), U.To0xHexString(mapData))));
+                            , R._("マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。", U.To0xHexString(number), U.To0xHexString(pointer), U.To0xHexString(mapData))));
                         break;
                     }
                 }

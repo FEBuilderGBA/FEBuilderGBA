@@ -41,6 +41,12 @@ namespace FEBuilderGBA
                 , 4
                 , (int i, uint addr) =>
                 {
+                    uint p = Program.ROM.u32(addr);
+                    if (!U.isPointerOrNULL(p))
+                    {
+                        return false;
+                    }
+
                     return i < Program.ROM.RomInfo.map_exit_point_npc_blockadd();
                 }
                 , (int i, uint addr) =>

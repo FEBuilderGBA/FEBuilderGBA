@@ -62,6 +62,7 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.EXPLAIN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -266,6 +267,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.EXPLAIN);
             this.panel2.Controls.Add(this.ImportButton3);
             this.panel2.Controls.Add(this.X_TITLE_PIC);
             this.panel2.Controls.Add(this.ImportButton2);
@@ -289,10 +291,10 @@
             // 
             // ImportButton3
             // 
-            this.ImportButton3.Location = new System.Drawing.Point(573, 260);
+            this.ImportButton3.Location = new System.Drawing.Point(581, 260);
             this.ImportButton3.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton3.Name = "ImportButton3";
-            this.ImportButton3.Size = new System.Drawing.Size(250, 30);
+            this.ImportButton3.Size = new System.Drawing.Size(285, 30);
             this.ImportButton3.TabIndex = 64;
             this.ImportButton3.Text = "章タイトル読込";
             this.ImportButton3.UseVisualStyleBackColor = true;
@@ -310,10 +312,10 @@
             // 
             // ImportButton2
             // 
-            this.ImportButton2.Location = new System.Drawing.Point(276, 260);
+            this.ImportButton2.Location = new System.Drawing.Point(281, 260);
             this.ImportButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton2.Name = "ImportButton2";
-            this.ImportButton2.Size = new System.Drawing.Size(268, 30);
+            this.ImportButton2.Size = new System.Drawing.Size(288, 30);
             this.ImportButton2.TabIndex = 62;
             this.ImportButton2.Text = "章画像読込";
             this.ImportButton2.UseVisualStyleBackColor = true;
@@ -321,10 +323,10 @@
             // 
             // ExportButton3
             // 
-            this.ExportButton3.Location = new System.Drawing.Point(573, 212);
+            this.ExportButton3.Location = new System.Drawing.Point(581, 212);
             this.ExportButton3.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton3.Name = "ExportButton3";
-            this.ExportButton3.Size = new System.Drawing.Size(250, 30);
+            this.ExportButton3.Size = new System.Drawing.Size(285, 30);
             this.ExportButton3.TabIndex = 63;
             this.ExportButton3.Text = "章タイトル取出し";
             this.ExportButton3.UseVisualStyleBackColor = true;
@@ -335,7 +337,7 @@
             this.ImportButton1.Location = new System.Drawing.Point(2, 260);
             this.ImportButton1.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton1.Name = "ImportButton1";
-            this.ImportButton1.Size = new System.Drawing.Size(252, 30);
+            this.ImportButton1.Size = new System.Drawing.Size(268, 30);
             this.ImportButton1.TabIndex = 60;
             this.ImportButton1.Text = "セーブ画像読込";
             this.ImportButton1.UseVisualStyleBackColor = true;
@@ -353,10 +355,10 @@
             // 
             // ExportButton2
             // 
-            this.ExportButton2.Location = new System.Drawing.Point(276, 212);
+            this.ExportButton2.Location = new System.Drawing.Point(281, 212);
             this.ExportButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton2.Name = "ExportButton2";
-            this.ExportButton2.Size = new System.Drawing.Size(268, 30);
+            this.ExportButton2.Size = new System.Drawing.Size(288, 30);
             this.ExportButton2.TabIndex = 61;
             this.ExportButton2.Text = "章画像取出し";
             this.ExportButton2.UseVisualStyleBackColor = true;
@@ -367,7 +369,7 @@
             this.ExportButton1.Location = new System.Drawing.Point(2, 212);
             this.ExportButton1.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton1.Name = "ExportButton1";
-            this.ExportButton1.Size = new System.Drawing.Size(252, 30);
+            this.ExportButton1.Size = new System.Drawing.Size(268, 30);
             this.ExportButton1.TabIndex = 59;
             this.ExportButton1.Text = "セーブ画像取出し";
             this.ExportButton1.UseVisualStyleBackColor = true;
@@ -482,6 +484,15 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // EXPLAIN
+            // 
+            this.EXPLAIN.Location = new System.Drawing.Point(3, 324);
+            this.EXPLAIN.Multiline = true;
+            this.EXPLAIN.Name = "EXPLAIN";
+            this.EXPLAIN.ReadOnly = true;
+            this.EXPLAIN.Size = new System.Drawing.Size(861, 108);
+            this.EXPLAIN.TabIndex = 91;
+            // 
             // ImageChapterTitleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -504,6 +515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_SAVE_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_TITLE_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_CHAPTER_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
@@ -550,5 +562,6 @@
         private InterpolatedPictureBox X_SAVE_PIC;
         private InterpolatedPictureBox X_TITLE_PIC;
         private InterpolatedPictureBox X_CHAPTER_PIC;
+        private System.Windows.Forms.TextBox EXPLAIN;
     }
 }

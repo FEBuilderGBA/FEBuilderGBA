@@ -32,13 +32,7 @@ namespace FEBuilderGBA
             EventUnitForm.AI3ToCombo(L_18_AI3_HYOUTEKI);
 
             //右クリックメニューを出す.
-            this.InputFormRef.MakeGeneralAddressListContextMenu(true, false,(sender,e)=>{
-                if (e.Control && e.KeyCode == Keys.V)
-                {
-                    MaskMovePointerByClipbord();
-                }
-                this.InputFormRef.GeneralAddressList_KeyDown(sender, e);
-            });
+            this.InputFormRef.MakeGeneralAddressListContextMenu(true, true, CustomKeydownHandler);
 
             InputFormRef.MakeEditListboxContextMenu(FE8CoordListBox, FE8CoordListBox_KeyDown);
 
@@ -59,9 +53,8 @@ namespace FEBuilderGBA
 //            this.B0.ValueChanged += EventUnitForm_CheckDuplicatePlayerUnits;
 
             InitCoordMainPanel();
+
         }
-
-
         int MoveCallback(int x,int y)
         {
             ControlPanel.Show();
@@ -2546,6 +2539,45 @@ namespace FEBuilderGBA
                     }
                 }
             }
+        }
+        void CustomKeydownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                ClearData((ListBoxEx)sender);
+                return;
+            }
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                MaskMovePointerByClipbord();
+            }
+            this.InputFormRef.GeneralAddressList_KeyDown(sender, e);
+        }
+        void ClearData(ListBoxEx listbox)
+        {
+            uint destAddr = InputFormRef.SelectToAddr(listbox);
+            if (destAddr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            DialogResult dr = R.ShowYesNo("このユニットを消去して、データの終端にしてもよろしいですか？");
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
+            uint blockSize = Program.ROM.RomInfo.eventunit_data_size();
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
+
+            Program.Undo.Push(undodata);
+
+            //再描画と再選択.
+            //listbox.Invalidate();
+            U.ReSelectList(listbox);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
         }
 
     }

@@ -911,6 +911,16 @@ this.MapObjImage);
 
             ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
             MenuItem menuItem;
+
+            menuItem = new MenuItem(R._("タイルを選択する"));
+            menuItem.Click += new EventHandler((sender, ee) =>
+            {
+                Spoit_MainMapTile(x, y);
+            });
+            contextMenu.MenuItems.Add(menuItem);
+
+            contextMenu.MenuItems.Add(new MenuItem("-"));
+ 
             menuItem = new MenuItem(R._("この位置に移動する"));
             menuItem.Click += new EventHandler((sender, ee) => {
                 MoveMapChangeMenuAction((uint)x, (uint)y);
@@ -950,15 +960,6 @@ this.MapObjImage);
                 ResizeDirectMapChangeMenuAction(3, 3);
             });
             menuItem.Enabled = (!(w == 3 && w == 3));
-            contextMenu.MenuItems.Add(menuItem);
-
-            contextMenu.MenuItems.Add(new MenuItem("-"));
-
-            menuItem = new MenuItem(R._("タイルを選択する"));
-            menuItem.Click += new EventHandler((sender, ee) =>
-            {
-                Spoit_MainMapTile(x, y);
-            });
             contextMenu.MenuItems.Add(menuItem);
 
             contextMenu.Show(MAP, new Point(e.X, e.Y));
@@ -1004,7 +1005,7 @@ this.MapObjImage);
                 y = y - (int)ChangeList[mapChangeIndex].y;
             }
 
-            if (x < 0 || y < 0)
+            if (x < 0 || y < 0 || x >= MapWidth)
             {
                 IfMapChangeMouseDown(mapChangeIndex,e);
                 return ;
@@ -1112,7 +1113,7 @@ this.MapObjImage);
             }
             else if (ext == ".TMX")
             {
-                if (MapChange.SelectedIndex == 0)
+                if (MapChange.Items.Count >= 2)
                 {
                     string message = R.Notify("保存する内容にマップ変化も含めますか？\r\n「はい」の場合は、マップ変化も含めて出力します。\r\n「いいえ」の場合は、現在のマップだけ出力します。");
                     DialogResult dr = MessageBox.Show(message
@@ -1121,6 +1122,7 @@ this.MapObjImage);
                         , MessageBoxIcon.Question);
                     if (dr == System.Windows.Forms.DialogResult.Yes)
                     {
+                        MapChange.SelectedIndex = 0;  //メインマップを選択
                         SaveAsTMX(save.FileName, true);
                     }
                     else

@@ -32,6 +32,7 @@ template_event_BATTLE_FromEnemy_Attack_Counter_Attack.txt	BattleEvent From Enemy
 template_event_BATTLE_Attack.txt	BattleEvent Attack->No Counterattack
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Attack->Attack-> No Counterattack (2x attacks)
 template_event_BATTLE_FromEnemy_Attack.txt	BattleEvent From Enemy Attack->No Counterattack
+template_event_RedFadeout.txt	background fades out to red
 template_event_WarpIN_FE8.txt	Make a unit appear in warp
 template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
 template_event_GAMEOVER_FE8.txt	Call game over

@@ -30,7 +30,7 @@ namespace FEBuilderGBA
             EventUnitForm.AI3ToCombo(L_14_AI3_HYOUTEKI);
 
             //右クリックメニューを出す.
-            this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.MakeGeneralAddressListContextMenu(true, true, CustomKeydownHandler);
 
             this.InputFormRef.PreAddressListExpandsEvent += EventUnitForm.OnPreClassExtendsWarningHandler;
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
@@ -508,6 +508,42 @@ namespace FEBuilderGBA
                 , selectEventAR.addr
                 , selectUnitAR.addr
                 , mapid);
+        }
+
+        void CustomKeydownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                ClearData((ListBoxEx)sender);
+                return;
+            }
+            this.InputFormRef.GeneralAddressList_KeyDown(sender, e);
+        }
+        void ClearData(ListBoxEx listbox)
+        {
+            uint destAddr = InputFormRef.SelectToAddr(listbox);
+            if (destAddr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            DialogResult dr = R.ShowYesNo("このユニットを消去して、データの終端にしてもよろしいですか？");
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
+            uint blockSize = Program.ROM.RomInfo.eventunit_data_size();
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
+
+            Program.Undo.Push(undodata);
+
+            //再描画と再選択.
+            //listbox.Invalidate();
+            U.ReSelectList(listbox);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
         }
     }
 }

@@ -34,6 +34,7 @@ template_event_BATTLE_Attack.txt	戦闘イベント 攻撃->反撃なし
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	戦闘イベント 攻撃->攻撃->反撃なし (2回攻撃)
 template_event_BATTLE_FromEnemy_Attack.txt	戦闘イベント 敵から攻撃->反撃なし
 template_event_WarpIN_FE8.txt	ユニットをワープで登場させる
+template_event_RedFadeout.txt	背景を赤色にフェードアウト
 template_event_GAMEOVER_FE8.txt	ゲームオーバーを呼び出す
 template_event_CALL_END_EVENT_FE8.txt	章をクリアする
 template_event_PREPARATION_FE8.txt	自軍と敵軍を読み込み進撃開始を呼び出す

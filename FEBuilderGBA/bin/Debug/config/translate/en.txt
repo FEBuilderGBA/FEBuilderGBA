@@ -2509,6 +2509,9 @@ Pointer to read unit is specified incorrectly.: {0}.
 :ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}
 Reading unit There is a problem with the data of the {0}, {1} th unit.: {2}.
 
+:このユニットを消去して、データの終端にしてもよろしいですか？
+Are you sure you want to delete this unit and end the data? 
+
 :00=50%以下で回復モード、100%回復したら戻る
 00=Recovery mode when HP 50%, return HP 100%
 
@@ -3336,6 +3339,12 @@ Import Saved image
 
 :章タイトル
 Chapter Title
+
+:FE8Uの場合は、章テキストから画像を自動生成するパッチを利用できます。\r\nパッチ画面から、「Convert Chapter Titles to Text」で検索してください。\r\n
+For FE8U, a patch that automatically generates images from chapter texts is available.\r\nFrom the patch screen, search for “Convert Chapter Titles to Text”.\r\n
+
+:セーブ画面、章画像、章タイトルの3つを変更できますが、\r\nもし面倒ならば、セーブ画面の画像だけを作成し、他の2つは0x0を指定してゲームは動作します。\r\n
+You can change the save screen, the chapter image, and the chapter title, but.\r\nIf it's troublesome, just create an image of the save screen, the other two will specify 0x0 and the game will work.\r\n
 
 :章画像
 Chapter Image
@@ -6460,6 +6469,9 @@ Terrain cost
 :座標 X:{0} Y:{1}
 CoordinateX: {0}Y: {1}
 
+:タイルを選択する
+Select tile
+
 :この位置に移動する
 Move to this position
 
@@ -6474,9 +6486,6 @@ Resize2 * 2
 
 :サイズ変更 3*3
 Resize3 * 3
-
-:タイルを選択する
-Select tile
 
 :保存する内容にマップ変化も含めますか？\r\n「はい」の場合は、マップ変化も含めて出力します。\r\n「いいえ」の場合は、現在のマップだけ出力します。
 Do you include Tile Changes in the content you save?\r\nIf "Yes", it outputs Tile Changes as well.\r\nIf "No", only the current map will be output.\r\n

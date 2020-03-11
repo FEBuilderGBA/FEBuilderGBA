@@ -1,6 +1,5 @@
 NAME=Fix Disable IndoorFighter,OutdoorFighter Glitch for SkillSystems 20200223
-INFO=HIT and AVOID are increased by +10 because this skill is always active.\r\nThis is because the skills of IndoorFighter and OutdoorFighter are always enabled by bugs.\r\nThis patch neutralizes this runaway skill.
-This skills will be corrected in the next update of SkillSystems.\r\nDo not use this skill in this 20200223 version.
+INFO=HIT and AVOID are increased by +10 because this skill is always active.\r\nThis is because the skills of IndoorFighter and OutdoorFighter are always enabled by bugs.\r\nThis patch neutralizes this runaway skill.\r\nThis skills will be corrected in the next update of SkillSystems.\r\nDo not use this skill in this 20200223 version.
 
 
 TYPE=BIN

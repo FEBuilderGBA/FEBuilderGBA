@@ -22,6 +22,12 @@ namespace FEBuilderGBA
             U.SetIcon(ImportButton2, Properties.Resources.icon_upload);
             U.SetIcon(ExportButton3, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton3, Properties.Resources.icon_upload);
+
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                this.EXPLAIN.Text += R._("FE8Uの場合は、章テキストから画像を自動生成するパッチを利用できます。\r\nパッチ画面から、「Convert Chapter Titles to Text」で検索してください。\r\n");
+            }
+            this.EXPLAIN.Text += R._("セーブ画面、章画像、章タイトルの3つを変更できますが、\r\nもし面倒ならば、セーブ画面の画像だけを作成し、他の2つは0x0を指定してゲームは動作します。\r\n");
         }
 
         public InputFormRef InputFormRef;

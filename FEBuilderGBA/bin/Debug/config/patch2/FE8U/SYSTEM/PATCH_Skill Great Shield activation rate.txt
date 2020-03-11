@@ -2,12 +2,16 @@ NAME=大盾発動率
 NAME.en=Great Shield Activation Rate
 NAME.zh=大盾发动率
 
+INFO=大盾発動率に利用するステータス項目を指定します。\r\nディフォルトはLvが利用されています。\r\n例えば、Lv20なら20%です。
+INFO.en=Specify the status item to be used for Great Shield activation rate.\r\n Lv is used by default.\r\n For example, 20% for Lv20.
+INFO.zh=Specify the status item to be used for Great Shield activation rate.\r\n Lv is used by default.\r\n For example, 20% for Lv20.
+
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x02B34E
-HEX=false
+COMBO=Default: LV|0x8|MaxHP|0x12|HP|0x13|Power|0x14|Skill|0x15|Speed|0x16|Defence|0x17|Ref|0x18|Luck|0x19
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

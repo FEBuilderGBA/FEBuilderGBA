@@ -279,7 +279,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            string control_name = ((Control)sender).Name;
+            uint default_type = GetDefaultEventType();
 
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
             uint addr = eearg.NewBaseAddress;
@@ -296,22 +296,7 @@ namespace FEBuilderGBA
                 uint type = Program.ROM.u8(addr + 0);
                 if (type == 0)
                 {
-                    if (control_name == "OBJECT_AddressList")
-                    {//マップオブジェクト
-                        Program.ROM.write_u8(addr + 0, 0x5, undodata);//制圧ポイントと民家
-                    }
-                    else if (control_name == "TALK_AddressList")
-                    {//会話
-                        Program.ROM.write_u8(addr + 0, 0x3, undodata);//話す条件
-                    }
-                    else if (control_name == "TALK_AddressList" || control_name == "NFE702_AddressList")
-                    {//ターン条件
-                        Program.ROM.write_u8(addr + 0, 0x2, undodata);//ターン条件
-                    }
-                    else if (control_name == "ALWAYS_AddressList")
-                    {//常時条件
-                        Program.ROM.write_u8(addr + 0, 0x1, undodata);//常時条件
-                    }
+                    Program.ROM.write_u8(addr + 0, default_type, undodata);
                 }
 
                 //増えた分のP4をゼロにする.
@@ -324,6 +309,42 @@ namespace FEBuilderGBA
 
             //イベントの関連アイコンを取得しなおしたい
             EventRelationIconsCache.Clear();
+            WriteButton.PerformClick();
+        }
+
+
+        uint GetDefaultEventType()
+        {
+            if (FilterComboBox.SelectedIndex < 0)
+            {
+                return 0;
+            }
+            CONDTYPE condtype = EventCondForm.MapCond[FilterComboBox.SelectedIndex].Type;
+            if (condtype == CONDTYPE.TURN)
+            {
+                return 2; //ターン条件
+            }
+            if (condtype == CONDTYPE.TALK)
+            {
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    return 4; //会話条件
+                }
+                return 3; //会話条件
+            }
+            if (condtype == CONDTYPE.OBJECT)
+            {
+                return 5; //制圧と民家
+            }
+            if (condtype == CONDTYPE.ALWAYS)
+            {
+                return 1; //常時
+            }
+            if (condtype == CONDTYPE.TRAP)
+            {
+                return 1; //バリスタ
+            }
+            return 0;
         }
 
         void AddressListExpandsEventTrap(object sender, EventArgs arg)
@@ -350,6 +371,7 @@ namespace FEBuilderGBA
                 addr += eearg.BlockSize;
             }
             Program.Undo.Push(undodata);
+            WriteButton.PerformClick();
         }
 
         //リストが拡張されたとき P0イベントポインタをNULLにする.
@@ -371,6 +393,7 @@ namespace FEBuilderGBA
                 addr += eearg.BlockSize;
             }
             Program.Undo.Push(undodata);
+            WriteButton.PerformClick();
         }
 
         //ターン条件
@@ -779,6 +802,8 @@ namespace FEBuilderGBA
 
             InputFormRef.WritePointerButton(this, addr, event_pointer, undo_name);
             InputFormRef.WriteButtonToYellow(WriteButton, false);
+            //イベントの関連アイコンを取得しなおしたい
+            EventRelationIconsCache.Clear();
         }
 
         private void EventPointer_KeyDown(object sender, KeyEventArgs e)
@@ -4564,6 +4589,8 @@ namespace FEBuilderGBA
 
             InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
         }
+
+
         void CustomKeydownHandler(object sender, KeyEventArgs e , InputFormRef ifr)
         {
             if (e.KeyCode == Keys.Delete)
