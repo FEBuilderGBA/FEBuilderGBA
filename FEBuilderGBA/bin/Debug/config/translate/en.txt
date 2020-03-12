@@ -1150,6 +1150,15 @@ Difficulty: Easy
 :難易度:普通
 Difficulty: Normal
 
+:MNC2の修正パッチを適応していないので、章ワープを利用できません。
+Chapter warp is not available because the patch for MNC2 has not been applied.
+
+:このバージョンでは、章ワープを利用できません。
+Chapter warp is not available in this version.
+
+:MAPTASK Procsの位置を特定できませんでした
+The location of MAPTASK Procs could not be determined.
+
 :自動的に更新する
 Automatically update
 
@@ -1345,8 +1354,8 @@ Weather
 :07=曇り
 07=Cloudy
 
-:天気を変更\r\n次のターンから適用されます。
-Change the weather.\r\nIt will be applied from the next turn.
+:天気を変更(次のターンから適用されます。)
+Change weather (applied from next turn)
 
 :デバッグ用に便利なチート機能です
 Useful cheating function for debugging
@@ -1370,13 +1379,13 @@ Dump memory and write to file0x02000000
 Fog level
 
 :(他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。)
-(If you want to change other flags, double-click on the flag you want to change from the event screen.).
+(If you want to change other flags, double-click on the flag you want to change from the event screen).
 
 :所持金
 Gold
 
-:霧レベルを変更\r\n次のターンから適用されます。
-Change fog level\r\nIt will be applied from the next turn.
+:霧レベルを変更(次のターンから適用されます。)
+Change fog level (applied from next turn)
 
 :所持金を以下の値に変更する
 Change your money to the following value
@@ -1398,6 +1407,12 @@ Counter Stop the parameters of this unit
 
 :クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。(Hotkey: Ctrl + U)
 Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.(Hotkey: Ctrl + U).
+
+:章ワープ
+Chapter warp
+
+:ワープする章
+Warp chapter
 
 :エミュレータへ接続
 Connect to emulator
@@ -1547,7 +1562,7 @@ User canceled changes
 2=Set by FEBuilderGBA comment
 
 :3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)
-3=Both (Save .sym.txt and set comment of FEBuilderGBA).
+3=Both (Save .sym.txt and set comment of FEBuilderGBA)
 
 :デバッグ用のシンボル 
 Symbol for debugging
@@ -1727,7 +1742,7 @@ startEvent is an Event that is automatically called from the game system at the 
 Attack preparation screen
 
 :終了イベントは、章終了時に呼び出す必要があるイベントです。\r\nフラグ03 「{0}」を有効にして、終了イベントを呼び出すと章をクリアになります。\r\n終了イベントには、次の章へ進む処理を記述する必要があります。\r\n\r\nフラグ03「{0}」を有効にして、ユニットを待機させるとシステムから自動的に呼ばれます。\r\nターン防衛などで、待機させられない場合は、フラグ03「{0}」を有効にした後で、直接呼ぶこともできます。\r\n(フラグ03「{0}」を有効にしてから呼ばないとクリアターン数が保存されないなどの問題があることがあります。)\r\n
-EndEvent is an Event that needs to be called at the end of the chapter.\r\nEnable flag 03 "{0}" and call EndEvent to clear the chapter.\r\nFor EndEvent, you need to write Anima to go to the next chapter.\r\n\r\nActivating flag 03 "{0}" and waiting Unit will be called automatically by the system.\r\nIf you can't let Wait by turn defense etc, you can call it directly after flag 03 "{0}" is valid.\r\n(There may be problems such as the number of clear turns not being saved if you do not call it after enabling flag 03 "{0}".).\r\n
+EndEvent is an Event that needs to be called at the end of the chapter.\r\nEnable flag 03 "{0}" and call EndEvent to clear the chapter.\r\nFor EndEvent, you need to write Anima to go to the next chapter.\r\n\r\nActivating flag 03 "{0}" and waiting Unit will be called automatically by the system.\r\nIf you can't let Wait by turn defense etc, you can call it directly after flag 03 "{0}" is valid.\r\n(There may be problems such as the number of clear turns not being saved if you do not call it after enabling flag 03 "{0}".)\r\n
 
 :制圧フラグ
 Seize flag
@@ -2183,7 +2198,7 @@ Place a Poison Gas trap.
 Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
 
 :ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。
-Place a Gorgon Egg.\r\nWhen enough turns have elapsed, it will hatch from the egg ("emergence start" time).
+Place a Gorgon Egg.\r\nWhen enough turns have elapsed, it will hatch from the egg ("emergence start" time)
 
 :炎のトラップを設定します。
 Make a Instant Fire trap.
@@ -2501,7 +2516,7 @@ Allocate a new event area and define an Empty Event.(No Fade)
 Allocate a new event area and define an Empty Event.(With Fade)
 
 :ユニットの座標({0},{1})は、マップのサイズ({2},{3})より大きい座標です。
-The coordinates of the unit ({0}, {1}) are larger than the size of the map ({2}, {3}).
+The coordinates of the unit ({0}, {1}) are larger than the size of the map ({2}, {3})
 
 :ユニットを読みこむポインタの指定が正しくありません。: {0}
 Pointer to read unit is specified incorrectly.: {0}.
@@ -5585,7 +5600,7 @@ Export with EA
 Insert EA
 
 :上記以外に、次のパッチが見つかりました。(パッチには不安定なものもあるので、注意してください。)
-In addition to the above, the next patch was found.(Some patches are unstable, so please be careful.).
+In addition to the above, the next patch was found.(Some patches are unstable, so please be careful)
 
 :間接エフェクトポインタ
 Magic Instr Pointers
@@ -7478,7 +7493,7 @@ Object type 2
 ChipSet Type
 
 :マップのデザインを新規に定義するには、PLSITでスタイルを割り当てます。\r\nPLISTはマップ関係のデータへのポインタが格納されているリストです。\r\n(注意してください。間違ったPLISTを割り当てると危険です。バックアップを取った後でやることをお勧めします。)\r\n\r\n全く新しいデザインを割り当てたいときは、PLIST拡張をしたあとで未使用のPLISTを割り当ててください。\r\nその後でマップスタイルエディタから、使いたい画像や設定をインポートしてください。
-To define a new map design, assign a style with PLSIT.\r\nPLIST is a list containing pointers to map related data.\r\n(be careful.Assigning the wrong PLIST is dangerous.We recommend you do it after taking a backup.).\r\n\r\nIf you want to assign a completely new design, please allocate unused PLIST after PLIST extension.\r\nThen import the images and settings you want to use from the map style editor.
+To define a new map design, assign a style with PLSIT.\r\nPLIST is a list containing pointers to map related data.\r\n(be careful.Assigning the wrong PLIST is dangerous.We recommend you do it after taking a backup.)\r\n\r\nIf you want to assign a completely new design, please allocate unused PLIST after PLIST extension.\r\nThen import the images and settings you want to use from the map style editor.
 
 :マップスタイルPLIST割当
 Map style PLIST assignment
@@ -8084,7 +8099,7 @@ Data written
 Written to address {}.
 
 :ROM内に存在する無圧縮の特殊OAMデータです。\r\n魔法などのエフェクトや、C26/C27命令などの特殊効果、その他いろいろから利用されます。\r\n利用は、6CStructとセットになることが多いです。\r\n現在は、まだデータを見ることにしかできません。(OAMで操作される画像のアドレスが不明なためです。)
-Uncompressed special OAM data existing in ROM.\r\nIt is used with miscellaneous effects, special effects such as C26 / C27 instructions, and others.\r\nUsage is often set with 6CStruct.\r\nCurrently it's not possible to edit this data.(The address of the image operated by OAM is unknown.).
+Uncompressed special OAM data existing in ROM.\r\nIt is used with miscellaneous effects, special effects such as C26 / C27 instructions, and others.\r\nUsage is often set with 6CStruct.\r\nCurrently it's not possible to edit this data.(The address of the image operated by OAM is unknown.)
 
 :警告:アルファベット以外の文字が入っています。
 Warning: Characters other than alphabets are included.
@@ -8189,7 +8204,7 @@ Select whether to use a proxy server for net connection.\r\nWhen proxy server's 
 Switch the language used to display the screen of FEBuilderGBA.\r\n\r\nThe translation data is "config/data/func_lang_ALL.*.txt" and "config/translate".\r\nIf you want to display in the language of your country, please send me the translation data.\r\nLook forward to.\r\n
 
 :ゲーム内で利用する言語を設定します。\r\nFE6の英語版、及び中国語版は、日本語版をtblデータを利用して翻訳したファンサブです。\r\nこれらを利用する場合に設定します。\r\n(現在は、これらのROMを開くと、自動的に適用されるので、手動で変更しなくても問題ありません。)\r\n
-Set the language to use in the game.\r\nThe English version and Chinese version of FE 6 are fansub translated Japanese version using tbl data.\r\nSet these when using these.\r\n(Currently, these ROMs are automatically applied when you open them, so you do not have to change them manually.).\r\n
+Set the language to use in the game.\r\nThe English version and Chinese version of FE 6 are fansub translated Japanese version using tbl data.\r\nSet these when using these.\r\n(Currently, these ROMs are automatically applied when you open them, so you do not have to change them manually.)\r\n
 
 :参照リンクから飛んだ場合に、\r\n画面の上に、「このリストをダブルクリックで選択できます」というメッセージの通知を行う時間を設定します。\r\n
 When jumping from the reference link,\r\nOn the top of the screen, set the time to notify of the message "You can select this list by double clicking".\r\n
@@ -10352,7 +10367,7 @@ Support Partner 4
 Support Partner 3
 
 :このチェックボックスを有効にしている場合、\r\n初期値、進行値を変更すると、\r\nその相手の初期値、進行値も自動的に調整します。\r\n(ただし、相手の支援データが存在している必要があります。)
-When this check box is enabled,\r\nchanging the initial and progress value automatically adjusts\r\ninitial and progress value of the other party.\r\n(However, the other party's support data must be present.).
+When this check box is enabled,\r\nchanging the initial and progress value automatically adjusts\r\ninitial and progress value of the other party.\r\n(However, the other party's support data must be present.)
 
 :ユニット({0})->ユニット({1})へ支援と、その逆の、ユニット({1})->ユニット({0})へ支援の設定値が違います。\r\n初期値({2} vs {3})、進行度({4} vs {5})\r\n初期値と進行度は、同じ値にする必要があります。
 Assistance setting to unit ({1}) -> unit ({0}) is different from support to unit ({0}) -> unit ({1}) and vice versa.\r\nInitial value ({2}vs{3}), degree of progress ({4}vs{5})\r\nThe initial value and the progress degree must be the same value.

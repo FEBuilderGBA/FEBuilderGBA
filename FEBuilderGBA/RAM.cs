@@ -273,6 +273,46 @@ namespace FEBuilderGBA
             //            Debug.Assert(false);
             return 0;
         }
+        public uint Grep0x02(byte[] need, uint blocksize)
+        {
+            uint addr = U.Grep(this.Memory02, need, this.AppnedOffset02, 0, blocksize);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            addr = addr + 0x02000000 - this.AppnedOffset02;
+            return addr;
+        }
+        public uint Grep0x03(byte[] need, uint blocksize)
+        {
+            uint addr = U.Grep(this.Memory03, need, this.AppnedOffset03, 0, blocksize);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            addr = addr + 0x03000000 - this.AppnedOffset03;
+            return addr;
+        }
+        public uint GrepPatternMatch0x02(byte[] need, bool[] mask, uint blocksize = 4)
+        {
+            uint addr = U.GrepPatternMatch(this.Memory02, need,mask, this.AppnedOffset02, 0, blocksize);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            addr = addr + 0x02000000 - this.AppnedOffset02;
+            return addr;
+        }
+        public uint GrepPatternMatch0x03(byte[] need, bool[] mask, uint blocksize = 4)
+        {
+            uint addr = U.GrepPatternMatch(this.Memory03, need, mask, this.AppnedOffset03, 0, blocksize);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            addr = addr + 0x03000000 - this.AppnedOffset03;
+            return addr;
+        }
 
         public void write_u32(uint pointer, uint data)
         {
@@ -386,6 +426,32 @@ namespace FEBuilderGBA
             Debug.Assert(false);
             return;
         }
+        public void write_range(uint addr, byte[] write_data)
+        {
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 1 > this.Memory02.Length)
+                {
+                    return;
+                }
+                U.write_range(this.Memory02, addr, write_data);
+                WriteMemory02(addr, write_data, (uint)write_data.Length);
+                return;
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 1 > this.Memory03.Length)
+                {
+                    return;
+                }
+                U.write_range(this.Memory02, addr, write_data);
+                WriteMemory03(addr, write_data, (uint)write_data.Length);
+                return;
+            }
+        }
+
 
         public void DisConnect()
         {
@@ -859,6 +925,40 @@ namespace FEBuilderGBA
             }
             uint writeAddr = (uint)(MemBasicInfo03.BaseAddress + addr);
             WriteProcessMemory((int)this.ProcessHandle, writeAddr, buffer, (uint)size, ref bytesWrite);
+
+            if (bytesWrite <= 0 || bytesWrite < size)
+            {
+                this.ErrorMessage = R._("Page03に書き込めません。bytesWrite:{0},size:{1}"
+                    , bytesWrite, size);
+                this.DisConnect();
+                return;
+            }
+
+            return;
+        }
+        void WriteMemory02(uint addr, byte[] data, uint size)
+        {
+            Debug.Assert(MemBasicInfo02.RegionSize > 0);
+            int bytesWrite = 0;  // number of bytes Write
+            uint writeAddr = (uint)(MemBasicInfo02.BaseAddress + addr);
+            WriteProcessMemory((int)this.ProcessHandle, writeAddr, data, size, ref bytesWrite);
+
+            if (bytesWrite <= 0 || bytesWrite < size)
+            {
+                this.ErrorMessage = R._("Page02に書き込めません。bytesWrite:{0},size:{1}"
+                    , bytesWrite, size);
+                this.DisConnect();
+                return;
+            }
+
+            return;
+        }
+        void WriteMemory03(uint addr, byte[] data, uint size)
+        {
+            Debug.Assert(MemBasicInfo03.RegionSize > 0);
+            int bytesWrite = 0;  // number of bytes Write
+            uint writeAddr = (uint)(MemBasicInfo03.BaseAddress + addr);
+            WriteProcessMemory((int)this.ProcessHandle, writeAddr, data, (uint)size, ref bytesWrite);
 
             if (bytesWrite <= 0 || bytesWrite < size)
             {
