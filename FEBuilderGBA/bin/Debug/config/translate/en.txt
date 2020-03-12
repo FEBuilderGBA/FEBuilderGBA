@@ -1409,7 +1409,7 @@ Counter Stop the parameters of this unit
 Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.(Hotkey: Ctrl + U).
 
 :章ワープ
-Chapter warp
+Warp Chapter
 
 :ワープする章
 Warp chapter

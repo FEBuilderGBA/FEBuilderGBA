@@ -312,8 +312,6 @@
 0804A224	NewMenu_DefaultAdjusted Same as NewMenu_Default, except default geometry is adjusted given the parameters	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=some x screen position?	r2=X tile position of menu on the left	r3=X tile position of menu of the right	{U}
 0804AA3C	NewMenu_DefaultChild Same as NewMenu_Default, except the E_Menu has a parent	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=Parent 6C	{J}
 0804A254	NewMenu_DefaultChild Same as NewMenu_Default, except the E_Menu has a parent	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=Parent 6C	{U}
-0804AC78	EndAllMenus Kills *all* the E_Menus	void	{J}
-08049A6C	EndAllMenus Kills *all* the E_Menus	void	{U}
 08035CC4	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{J}
 080357EC	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{U}
 080070AC	GetSaveDataLocation	{J}

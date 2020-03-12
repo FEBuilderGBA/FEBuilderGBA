@@ -353,8 +353,6 @@
 0804A224	NewMenu_DefaultAdjusted Same as NewMenu_Default, except default geometry is adjusted given the parameters	RET=E_Menu 6C pointer	r0=pointer to Menu Definition	r1=some x screen position?	r2=X tile position of menu on the left	r3=X tile position of menu of the right	{U}
 0804AA3C	NewMenu_DefaultChild Same as NewMenu_Default, except the E_Menu has a parent	RET=E_Menu 6C pointer	r0=pointer to Menu Definition	r1=Parent 6C	{J}
 0804A254	NewMenu_DefaultChild Same as NewMenu_Default, except the E_Menu has a parent	RET=E_Menu 6C pointer	r0=pointer to Menu Definition	r1=Parent 6C	{U}
-0804AC78	EndAllMenus Kills *all* the E_Menus	void	{J}
-08049A6C	EndAllMenus Kills *all* the E_Menus	void	{U}
 
 //from https://doc.feuniverse.us/static/stan/EventEngineCalls.txt
 08035CC4	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{J}
@@ -5122,3 +5120,8 @@
 080B7980	10分割されたCGをロード	{J}
 0807DEC0	砂漠の財宝の判定	{J}
 0807D2B0	砂漠の財宝の判定	{U}
+0800AEB0	イベント命令を動作させる関数	r0=イベント命令ポインタ:POINTER_EVENT	r1=引数?1-3	{J}
+0800af74	イベント命令を動作させる関数	r0=イベント命令ポインタ:POINTER_EVENT	r1=引数?1-3	{U}
+0808667C	DeletePlayerPhaseInterface6Cs	{J}
+08085C7C	DeletePlayerPhaseInterface6Cs	{U}
+
