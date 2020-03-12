@@ -1406,3 +1406,6 @@
 0805BD8C	Call m4aMPlayStop
 08006408	DrawTextInline
 0806D028	Judgment of desert treasure.
+08041A38	EndAllMenus
+0808F2A4	DeletePlayerPhaseInterface6Cs
+0800d9b8	Function to operate the event instruction.	r0=Event instruction pointer: POINTER_EVENT.	r1=Argument? 1-3.	{J}

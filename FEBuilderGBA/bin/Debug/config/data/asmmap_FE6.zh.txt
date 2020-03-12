@@ -1195,3 +1195,6 @@
 0805BD8C	Call m4aMPlayStop
 08006408	DrawTextInline
 0806D028	沙漠宝藏的判断
+08041A38	EndAllMenus
+0808F2A4	DeletePlayerPhaseInterface6Cs
+0800d9b8	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{J}

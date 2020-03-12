@@ -1121,8 +1121,16 @@ namespace FEBuilderGBA
 
             InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_WARP_CHPATER_VALUE, this.CHEAT_WARP_CHPATER_NAME, 0, "MAP", args);
             InputFormRef.makeJumpEventHandler(this.CHEAT_WARP_CHPATER_VALUE, this.CHEAT_WARP_CHPATER_JUMP, "MAP", args);
-
-            InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_WARP_EDTION_VALUE, this.CHEAT_WARP_EDTION_NAME, 0, "CHAPTORMODE", args);
+            if (Program.ROM.RomInfo.version() >= 7)
+            {
+                InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_WARP_EDTION_VALUE, this.CHEAT_WARP_EDTION_NAME, 0, "CHAPTORMODE", args);
+            }
+            else
+            {
+                CHEAT_WARP_EDTION_JUMP.Hide();
+                CHEAT_WARP_EDTION_VALUE.Hide();
+                CHEAT_WARP_EDTION_NAME.Hide();
+            }
         }
 
         //表示しているイベントの開始アドレス
@@ -1601,6 +1609,26 @@ namespace FEBuilderGBA
         void KillUnit(uint unitRAMAddress)
         {
             Program.RAM.write_u32(unitRAMAddress, 0);
+        }
+        void UpdateUnitAIToDoNotMOVE(uint unitRAMAddress, bool showNotify)
+        {
+            uint writeRAMPointer;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                Program.RAM.write_u8(unitRAMAddress + 0x42, 0x3);
+                Program.RAM.write_u8(unitRAMAddress + 0x44, 0x16);
+            }
+            else
+            {
+                Program.RAM.write_u8(unitRAMAddress + 0x42, 0x6);
+                Program.RAM.write_u8(unitRAMAddress + 0x44, 0x3);
+            }
+
+
+            if (showNotify)
+            {
+                InputFormRef.ShowWriteNotifyAnimation(this, unitRAMAddress);
+            }
         }
         void UpdateUnitHP1(uint unitRAMAddress, bool showNotify)
         {
@@ -2321,23 +2349,26 @@ namespace FEBuilderGBA
             }
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
-
-
-        ProcsData Find6C(uint romPointer)
+        private void CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click(object sender, EventArgs e)
         {
-            romPointer = U.toPointer(romPointer);
-            for (int i = 0; i < ProcsTree.Count; i++)
+            uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address();
+            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
             {
-                ProcsData proc = ProcsTree[i];
-                if (proc.ROMAddr == romPointer)
+                uint unitPointer = Program.RAM.u32(addr);
+                if (unitPointer == 0)
                 {
-                    return proc;
+                    continue;
                 }
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    break;
+                }
+
+                UpdateUnitAIToDoNotMOVE(addr, showNotify: true);
             }
-            return null;
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
-
-
 
         void InitPaletteEtc()
         {
@@ -2864,10 +2895,6 @@ namespace FEBuilderGBA
             0x00, 0x00, 0x00, 0x08, 
             0x00, 0x00, 0x00, 0x08  //eventExecuteFucntion
             };
-            if (Program.ROM.RomInfo.is_multibyte() == false)
-            {//FE7Uだと、MNCHは、0x7f 0x00 ではなく、 0x81 0x00.
-                U.write_u8(warpCode, 0x24, 0x81);
-            }
             //章ID
             U.write_u16(warpCode, 0x28, warp_chapter);
             //Procsで実行を指定するASMコードの位置
@@ -2889,10 +2916,6 @@ namespace FEBuilderGBA
             uint procs_jump_addr = work_address + 0x34;
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
-            //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-            Program.RAM.write_u8(stageStructAddr + 0x1b, (uint)CHEAT_WARP_EDTION_VALUE.Value);
-
             InputFormRef.ShowWriteNotifyAnimation(this, procs_jump_addr);
         }
 
@@ -2900,6 +2923,7 @@ namespace FEBuilderGBA
         {
             CHEAT_WARP_CHPATER_VALUE.Value = N_B14.Value + 1;
         }
+
 
     }
 }

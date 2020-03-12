@@ -4807,3 +4807,7 @@
 080B7980	加载10个分割的CG	{J}
 0807DEC0	沙漠宝藏的判断	{J}
 0807D2B0	沙漠宝藏的判断	{U}
+0800AEB0	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{J}
+0800af74	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{U}
+0808667C	DeletePlayerPhaseInterface6Cs	{J}
+08085C7C	DeletePlayerPhaseInterface6Cs	{U}

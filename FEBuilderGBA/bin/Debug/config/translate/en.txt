@@ -1150,11 +1150,11 @@ Difficulty: Easy
 :難易度:普通
 Difficulty: Normal
 
-:MNC2の修正パッチを適応していないので、章ワープを利用できません。
-Chapter warp is not available because the patch for MNC2 has not been applied.
-
 :このバージョンでは、章ワープを利用できません。
 Chapter warp is not available in this version.
+
+:MNC2の修正パッチを適応していないので、章ワープを利用できません。
+Chapter warp is not available because the patch for MNC2 has not been applied.
 
 :MAPTASK Procsの位置を特定できませんでした
 The location of MAPTASK Procs could not be determined.
@@ -1321,6 +1321,15 @@ Party
 :チート
 Cheat
 
+:すべての敵ユニットAIを「移動しない」に設定にします。
+Set all enemy units AI to "do not move".
+
+:ワープする章
+Warp chapter
+
+:章ワープ
+Warp Chapter
+
 :すべての敵ユニットのHPを1にします。
 Set HP of all enemy units to 1.
 
@@ -1407,12 +1416,6 @@ Counter Stop the parameters of this unit
 
 :クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。(Hotkey: Ctrl + U)
 Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.(Hotkey: Ctrl + U).
-
-:章ワープ
-Warp Chapter
-
-:ワープする章
-Warp chapter
 
 :エミュレータへ接続
 Connect to emulator
