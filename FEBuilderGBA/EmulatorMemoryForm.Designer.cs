@@ -34,24 +34,82 @@
             this.ERROR_EMU_CONNECT = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MainTabControl = new System.Windows.Forms.TabControl();
+            this.CheatPage = new System.Windows.Forms.TabPage();
+            this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP_NODE_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE = new System.Windows.Forms.Button();
+            this.CHEAT_WARP_EDTION_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_EDTION_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP_CHPATER_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_CHPATER_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_PLAYER_UNIT_GROW = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CHEAT_WEATHER_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WEATHER_COMBO = new System.Windows.Forms.ComboBox();
+            this.CHEAT_WEATHER = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CHEAT_FOG_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_ITEM_COUNT = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.CHEAT_ITEM_ID = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_MONEY_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Dump03Button = new System.Windows.Forms.Button();
+            this.Dump02Button = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CHEAT_FOG = new System.Windows.Forms.Button();
+            this.CHEAT_MONEY = new System.Windows.Forms.Button();
+            this.CHEAT_ITEM_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_UNIT_HAVE_ITEM = new System.Windows.Forms.Button();
+            this.CHEAT_UNIT_HP_1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.CHEAT_UNIT_GROW = new System.Windows.Forms.Button();
+            this.CHEAT_SET_FLAG03 = new System.Windows.Forms.Button();
+            this.CHEAT_WARP_EDTION_NAME = new FEBuilderGBA.TextBoxEx();
+            this.CHEAT_WARP_CHPATER_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_UNIT_MEMORY_AND_NAME = new FEBuilderGBA.TextBoxEx();
+            this.CHEAT_ITEM_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_UNIT_MEMORY_AND_ICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_ITEM_ICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.EventPage = new System.Windows.Forms.TabPage();
             this.SubtileButton = new System.Windows.Forms.Button();
             this.SpeechButton = new System.Windows.Forms.Button();
+            this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.RunningEventListBox = new FEBuilderGBA.ListBoxEx();
             this.RunningEventListBoxLabel = new System.Windows.Forms.Label();
             this.N_J_14_MAP = new System.Windows.Forms.Label();
+            this.FlagListBox = new FEBuilderGBA.ListBoxEx();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
+            this.BGMName = new FEBuilderGBA.TextBoxEx();
             this.N_B14 = new System.Windows.Forms.NumericUpDown();
             this.BGM = new System.Windows.Forms.NumericUpDown();
             this.J_BGM = new System.Windows.Forms.Label();
+            this.MemorySlotListBox = new FEBuilderGBA.ListBoxEx();
             this.MemorySlotLabel = new System.Windows.Forms.Label();
+            this.N_L_14_MAP = new FEBuilderGBA.TextBoxEx();
             this.EventHistoryPage = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.EventHistoryListBox = new FEBuilderGBA.ListBoxEx();
             this.ProcPage = new System.Windows.Forms.TabPage();
             this.Proc_ControlPanel = new System.Windows.Forms.Panel();
             this.PROCS_Address = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.PROCS_AddressLabel = new System.Windows.Forms.Label();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
@@ -103,26 +161,47 @@
             this.PROCS_B93 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B77 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B85 = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_L_104_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_96_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_88_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_80_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_72_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_64_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_100_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_92_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_84_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_76_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_68_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_60_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_56_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_52_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_48_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_44_DWORD = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PROCS_B41 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B43 = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_CURSOL_CODE = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B42 = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_L_16_TEXT = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_44 = new System.Windows.Forms.Label();
             this.PROCS_P16 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B104 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_16_TEXT = new System.Windows.Forms.Label();
             this.PROCS_B44 = new System.Windows.Forms.NumericUpDown();
+            this.textBoxEx16 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_104 = new System.Windows.Forms.Label();
             this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_48 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.PROCS_B48 = new System.Windows.Forms.NumericUpDown();
+            this.textBoxEx17 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_52 = new System.Windows.Forms.Label();
             this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B52 = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.PROCS_J_56 = new System.Windows.Forms.Label();
+            this.textBoxEx18 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B56 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_60 = new System.Windows.Forms.Label();
@@ -144,36 +223,44 @@
             this.PROCS_B96 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_36 = new System.Windows.Forms.Label();
             this.PROCS_J_72 = new System.Windows.Forms.Label();
+            this.PROCS_L_32_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_96 = new System.Windows.Forms.Label();
             this.PROCS_P32 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B72 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_32_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_B92 = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_L_28_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_76 = new System.Windows.Forms.Label();
             this.PROCS_P28 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_92 = new System.Windows.Forms.Label();
             this.PROCS_J_28_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_B76 = new System.Windows.Forms.NumericUpDown();
+            this.PROCS_L_24_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B88 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_P24 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_80 = new System.Windows.Forms.Label();
             this.PROCS_J_24_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_J_88 = new System.Windows.Forms.Label();
+            this.PROCS_L_20_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B80 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_P20 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B84 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_20_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_J_84 = new System.Windows.Forms.Label();
+            this.PROCS_L_12_ASM = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P12 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_12_ASM = new System.Windows.Forms.Label();
+            this.PROCS_L_8_ASM = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P8 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_8_ASM = new System.Windows.Forms.Label();
             this.PROCS_P4 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_JUMP_CURSOL_CODE = new System.Windows.Forms.Label();
+            this.PROCS_NAME = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P0 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_0_PROCS = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label91 = new System.Windows.Forms.Label();
@@ -181,9 +268,18 @@
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
+            this.PARTY_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PARTY_AI2_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_AI1_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_PORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_38_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_36_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_34_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_32_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_30_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.PARTY_B71 = new System.Windows.Forms.NumericUpDown();
             this.label89 = new System.Windows.Forms.Label();
             this.PARTY_B70 = new System.Windows.Forms.NumericUpDown();
@@ -248,22 +344,27 @@
             this.label41 = new System.Windows.Forms.Label();
             this.PARTY_B40 = new System.Windows.Forms.NumericUpDown();
             this.label38 = new System.Windows.Forms.Label();
+            this.PARTY_L_38_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B39 = new System.Windows.Forms.NumericUpDown();
             this.label34 = new System.Windows.Forms.Label();
             this.PARTY_B38 = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
+            this.PARTY_L_36_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B37 = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.PARTY_B36 = new System.Windows.Forms.NumericUpDown();
             this.label29 = new System.Windows.Forms.Label();
+            this.PARTY_L_34_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B35 = new System.Windows.Forms.NumericUpDown();
             this.label31 = new System.Windows.Forms.Label();
             this.PARTY_B34 = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
+            this.PARTY_L_32_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B33 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.PARTY_B32 = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
+            this.PARTY_L_30_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B31 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.PARTY_B30 = new System.Windows.Forms.NumericUpDown();
@@ -272,6 +373,7 @@
             this.label66 = new System.Windows.Forms.Label();
             this.PARTY_B29 = new System.Windows.Forms.NumericUpDown();
             this.label65 = new System.Windows.Forms.Label();
+            this.PARTY_RAMUNITAID = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B27 = new System.Windows.Forms.NumericUpDown();
             this.label64 = new System.Windows.Forms.Label();
             this.PARTY_B26 = new System.Windows.Forms.NumericUpDown();
@@ -286,12 +388,17 @@
             this.label59 = new System.Windows.Forms.Label();
             this.PARTY_B21 = new System.Windows.Forms.NumericUpDown();
             this.label57 = new System.Windows.Forms.Label();
+            this.PARTY_RAMUNITSTATE = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_ROMCLASSPOINTER = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B10 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
+            this.textBoxEx52 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown59 = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
+            this.textBoxEx53 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown61 = new System.Windows.Forms.NumericUpDown();
             this.label30 = new System.Windows.Forms.Label();
+            this.textBoxEx54 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown64 = new System.Windows.Forms.NumericUpDown();
             this.label33 = new System.Windows.Forms.Label();
             this.PARTY_B19 = new System.Windows.Forms.NumericUpDown();
@@ -314,107 +421,12 @@
             this.label53 = new System.Windows.Forms.Label();
             this.PARTY_P4 = new System.Windows.Forms.NumericUpDown();
             this.label54 = new System.Windows.Forms.Label();
+            this.PARTY_ROMUNITPOINTER = new FEBuilderGBA.TextBoxEx();
             this.PARTY_P0 = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.CheatPage = new System.Windows.Forms.TabPage();
-            this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE = new System.Windows.Forms.Button();
-            this.CHEAT_WARP_EDTION_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_EDTION_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_WARP_CHPATER_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_CHPATER_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_WARP = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_PLAYER_UNIT_GROW = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.CHEAT_WEATHER_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WEATHER_COMBO = new System.Windows.Forms.ComboBox();
-            this.CHEAT_WEATHER = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.CHEAT_FOG_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_ITEM_COUNT = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.CHEAT_ITEM_ID = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_MONEY_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Dump03Button = new System.Windows.Forms.Button();
-            this.Dump02Button = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CHEAT_FOG = new System.Windows.Forms.Button();
-            this.CHEAT_MONEY = new System.Windows.Forms.Button();
-            this.CHEAT_ITEM_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_UNIT_HAVE_ITEM = new System.Windows.Forms.Button();
-            this.CHEAT_UNIT_HP_1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.CHEAT_UNIT_GROW = new System.Windows.Forms.Button();
-            this.CHEAT_SET_FLAG03 = new System.Windows.Forms.Button();
-            this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.RunningEventListBox = new FEBuilderGBA.ListBoxEx();
-            this.FlagListBox = new FEBuilderGBA.ListBoxEx();
-            this.BGMName = new FEBuilderGBA.TextBoxEx();
-            this.MemorySlotListBox = new FEBuilderGBA.ListBoxEx();
-            this.N_L_14_MAP = new FEBuilderGBA.TextBoxEx();
-            this.EventHistoryListBox = new FEBuilderGBA.ListBoxEx();
-            this.PROCS_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_104_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_96_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_88_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_80_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_72_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_64_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_100_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_92_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_84_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_76_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_68_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_60_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_56_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_52_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_48_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_44_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_CURSOL_CODE = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_16_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx16 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx17 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx18 = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_32_RAMPROCS = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_28_RAMPROCS = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_24_RAMPROCS = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_20_RAMPROCS = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_12_ASM = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_8_ASM = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_NAME = new FEBuilderGBA.TextBoxEx();
-            this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
-            this.PARTY_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_AI2_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_AI1_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_PORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_38_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_36_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_34_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_32_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_30_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_38_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_L_36_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_L_34_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_L_32_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_L_30_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_RAMUNITAID = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_RAMUNITSTATE = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_ROMCLASSPOINTER = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx52 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx53 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx54 = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_ROMUNITPOINTER = new FEBuilderGBA.TextBoxEx();
             this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.SoundList = new FEBuilderGBA.ListBoxEx();
@@ -423,18 +435,6 @@
             this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
             this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
-            this.CHEAT_WARP_NODE_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_WARP_EDTION_NAME = new FEBuilderGBA.TextBoxEx();
-            this.CHEAT_WARP_CHPATER_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_UNIT_MEMORY_AND_NAME = new FEBuilderGBA.TextBoxEx();
-            this.CHEAT_ITEM_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_UNIT_MEMORY_AND_ICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_ITEM_ICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx3 = new FEBuilderGBA.TextBoxEx();
@@ -466,6 +466,22 @@
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
+            this.CheatPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
             this.EventPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BGM)).BeginInit();
@@ -561,6 +577,12 @@
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B71)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B70)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B69)).BeginInit();
@@ -627,28 +649,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).BeginInit();
-            this.CheatPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
             this.SuspendLayout();
             // 
             // AutoUpdateCheckBox
@@ -693,17 +693,660 @@
             // 
             // MainTabControl
             // 
-            this.MainTabControl.Controls.Add(this.CheatPage);
             this.MainTabControl.Controls.Add(this.EventPage);
             this.MainTabControl.Controls.Add(this.EventHistoryPage);
             this.MainTabControl.Controls.Add(this.ProcPage);
             this.MainTabControl.Controls.Add(this.EtcPage);
+            this.MainTabControl.Controls.Add(this.CheatPage);
             this.MainTabControl.Location = new System.Drawing.Point(6, 5);
             this.MainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
             this.MainTabControl.Size = new System.Drawing.Size(1654, 920);
             this.MainTabControl.TabIndex = 67;
+            // 
+            // CheatPage
+            // 
+            this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox5);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_UNIT_HP_1);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.label35);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_COMBO);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER);
+            this.CheatPage.Controls.Add(this.label19);
+            this.CheatPage.Controls.Add(this.label18);
+            this.CheatPage.Controls.Add(this.CHEAT_FOG_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_COUNT);
+            this.CheatPage.Controls.Add(this.label17);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ID);
+            this.CheatPage.Controls.Add(this.CHEAT_MONEY_VALUE);
+            this.CheatPage.Controls.Add(this.label16);
+            this.CheatPage.Controls.Add(this.Dump03Button);
+            this.CheatPage.Controls.Add(this.Dump02Button);
+            this.CheatPage.Controls.Add(this.label15);
+            this.CheatPage.Controls.Add(this.label14);
+            this.CheatPage.Controls.Add(this.label13);
+            this.CheatPage.Controls.Add(this.CHEAT_FOG);
+            this.CheatPage.Controls.Add(this.CHEAT_MONEY);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HAVE_ITEM);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HP_1);
+            this.CheatPage.Controls.Add(this.label11);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.CHEAT_SET_FLAG03);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_NAME);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox4);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_NAME);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox3);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox2);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_ICON);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox1);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ICON);
+            this.CheatPage.Location = new System.Drawing.Point(4, 28);
+            this.CheatPage.Margin = new System.Windows.Forms.Padding(2);
+            this.CheatPage.Name = "CheatPage";
+            this.CheatPage.Padding = new System.Windows.Forms.Padding(2);
+            this.CheatPage.Size = new System.Drawing.Size(1646, 888);
+            this.CheatPage.TabIndex = 3;
+            this.CheatPage.Text = "チート";
+            // 
+            // CHEAT_WARP_NODE_VALUE
+            // 
+            this.CHEAT_WARP_NODE_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_NODE_VALUE.Location = new System.Drawing.Point(1041, 188);
+            this.CHEAT_WARP_NODE_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_NODE_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_NODE_VALUE.Name = "CHEAT_WARP_NODE_VALUE";
+            this.CHEAT_WARP_NODE_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_NODE_VALUE.TabIndex = 327;
+            // 
+            // CHEAT_WARP_NODE_JUMP
+            // 
+            this.CHEAT_WARP_NODE_JUMP.AutoSize = true;
+            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(890, 190);
+            this.CHEAT_WARP_NODE_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_NODE_JUMP.Name = "CHEAT_WARP_NODE_JUMP";
+            this.CHEAT_WARP_NODE_JUMP.Size = new System.Drawing.Size(139, 18);
+            this.CHEAT_WARP_NODE_JUMP.TabIndex = 328;
+            this.CHEAT_WARP_NODE_JUMP.Text = "ワールドマップ拠点";
+            // 
+            // CHEAT_WARP_NODE_NAME
+            // 
+            this.CHEAT_WARP_NODE_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_NODE_NAME.Location = new System.Drawing.Point(1122, 188);
+            this.CHEAT_WARP_NODE_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_NODE_NAME.Name = "CHEAT_WARP_NODE_NAME";
+            this.CHEAT_WARP_NODE_NAME.Placeholder = "";
+            this.CHEAT_WARP_NODE_NAME.ReadOnly = true;
+            this.CHEAT_WARP_NODE_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_NODE_NAME.TabIndex = 329;
+            // 
+            // systemIconPictureBox5
+            // 
+            this.systemIconPictureBox5.IconNumber = ((uint)(3u));
+            this.systemIconPictureBox5.IconType = FEBuilderGBA.SystemIconPictureBox.IconTypeEnum.Music;
+            this.systemIconPictureBox5.Location = new System.Drawing.Point(824, 56);
+            this.systemIconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
+            this.systemIconPictureBox5.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox5.TabIndex = 326;
+            this.systemIconPictureBox5.TabStop = false;
+            // 
+            // CHEAT_ALL_ENEMY_DO_NOT_MOVE
+            // 
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Location = new System.Drawing.Point(67, 676);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Name = "CHEAT_ALL_ENEMY_DO_NOT_MOVE";
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TabIndex = 325;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Text = "すべての敵ユニットAIを「移動しない」に設定にします。";
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click);
+            // 
+            // CHEAT_WARP_EDTION_VALUE
+            // 
+            this.CHEAT_WARP_EDTION_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_EDTION_VALUE.Location = new System.Drawing.Point(1041, 155);
+            this.CHEAT_WARP_EDTION_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_EDTION_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_EDTION_VALUE.Name = "CHEAT_WARP_EDTION_VALUE";
+            this.CHEAT_WARP_EDTION_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_EDTION_VALUE.TabIndex = 322;
+            // 
+            // CHEAT_WARP_EDTION_JUMP
+            // 
+            this.CHEAT_WARP_EDTION_JUMP.AutoSize = true;
+            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(890, 157);
+            this.CHEAT_WARP_EDTION_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_EDTION_JUMP.Name = "CHEAT_WARP_EDTION_JUMP";
+            this.CHEAT_WARP_EDTION_JUMP.Size = new System.Drawing.Size(26, 18);
+            this.CHEAT_WARP_EDTION_JUMP.TabIndex = 323;
+            this.CHEAT_WARP_EDTION_JUMP.Text = "編";
+            // 
+            // CHEAT_WARP_CHPATER_VALUE
+            // 
+            this.CHEAT_WARP_CHPATER_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_CHPATER_VALUE.Location = new System.Drawing.Point(1041, 122);
+            this.CHEAT_WARP_CHPATER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_CHPATER_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_CHPATER_VALUE.Name = "CHEAT_WARP_CHPATER_VALUE";
+            this.CHEAT_WARP_CHPATER_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_CHPATER_VALUE.TabIndex = 319;
+            this.CHEAT_WARP_CHPATER_VALUE.ValueChanged += new System.EventHandler(this.CHEAT_WARP_CHPATER_VALUE_ValueChanged);
+            // 
+            // CHEAT_WARP_CHPATER_JUMP
+            // 
+            this.CHEAT_WARP_CHPATER_JUMP.AutoSize = true;
+            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(890, 124);
+            this.CHEAT_WARP_CHPATER_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_CHPATER_JUMP.Name = "CHEAT_WARP_CHPATER_JUMP";
+            this.CHEAT_WARP_CHPATER_JUMP.Size = new System.Drawing.Size(98, 18);
+            this.CHEAT_WARP_CHPATER_JUMP.TabIndex = 320;
+            this.CHEAT_WARP_CHPATER_JUMP.Text = "ワープする章";
+            // 
+            // CHEAT_WARP
+            // 
+            this.CHEAT_WARP.Location = new System.Drawing.Point(887, 56);
+            this.CHEAT_WARP.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_WARP.Name = "CHEAT_WARP";
+            this.CHEAT_WARP.Size = new System.Drawing.Size(742, 53);
+            this.CHEAT_WARP.TabIndex = 318;
+            this.CHEAT_WARP.Text = "この章へワープする(Hotkey: Ctrl + J)";
+            this.CHEAT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_WARP.UseVisualStyleBackColor = true;
+            this.CHEAT_WARP.Click += new System.EventHandler(this.CHEAT_WARP_Click);
+            // 
+            // CHEAT_ALL_ENEMY_UNIT_HP_1
+            // 
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(66, 623);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TabIndex = 317;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Text = "すべての敵ユニットのHPを1にします。";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_UNIT_HP_1_Click);
+            // 
+            // CHEAT_ALL_UNIT_GROW
+            // 
+            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(66, 550);
+            this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
+            this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_UNIT_GROW.TabIndex = 315;
+            this.CHEAT_ALL_UNIT_GROW.Text = "敵を含めて、すべてのユニットを最強にします";
+            this.CHEAT_ALL_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_UNIT_GROW_Click);
+            // 
+            // CHEAT_ALL_PLAYER_UNIT_GROW
+            // 
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(66, 498);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TabIndex = 313;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Text = "すべての味方ユニットを最強にします。(Hotkey Ctrl + G)";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_PLAYER_UNIT_GROW_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(890, 457);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 18);
+            this.label35.TabIndex = 312;
+            this.label35.Text = "天気";
+            // 
+            // CHEAT_WEATHER_VALUE
+            // 
+            this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
+            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 452);
+            this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WEATHER_VALUE.Name = "CHEAT_WEATHER_VALUE";
+            this.CHEAT_WEATHER_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WEATHER_VALUE.TabIndex = 309;
+            // 
+            // CHEAT_WEATHER_COMBO
+            // 
+            this.CHEAT_WEATHER_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CHEAT_WEATHER_COMBO.FormattingEnabled = true;
+            this.CHEAT_WEATHER_COMBO.Items.AddRange(new object[] {
+            "00=晴れ",
+            "01=雪",
+            "02=吹雪",
+            "04=雨",
+            "05=マグマ",
+            "06=砂嵐",
+            "07=曇り"});
+            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
+            this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
+            this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
+            this.CHEAT_WEATHER_COMBO.TabIndex = 310;
+            // 
+            // CHEAT_WEATHER
+            // 
+            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 402);
+            this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
+            this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_WEATHER.TabIndex = 308;
+            this.CHEAT_WEATHER.Text = "天気を変更(次のターンから適用されます。)";
+            this.CHEAT_WEATHER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_WEATHER.UseVisualStyleBackColor = true;
+            this.CHEAT_WEATHER.Click += new System.EventHandler(this.CHEAT_WEATHER_Click);
+            // 
+            // label19
+            // 
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Location = new System.Drawing.Point(6, 13);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(796, 30);
+            this.label19.TabIndex = 307;
+            this.label19.Text = "デバッグ用に便利なチート機能です";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1120, 363);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(313, 18);
+            this.label18.TabIndex = 229;
+            this.label18.Text = "0で霧なし。1が視界1マスの最大の霧です。";
+            // 
+            // CHEAT_FOG_VALUE
+            // 
+            this.CHEAT_FOG_VALUE.Hexadecimal = true;
+            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 361);
+            this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_FOG_VALUE.Name = "CHEAT_FOG_VALUE";
+            this.CHEAT_FOG_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_FOG_VALUE.TabIndex = 9;
+            // 
+            // CHEAT_ITEM_COUNT
+            // 
+            this.CHEAT_ITEM_COUNT.Location = new System.Drawing.Point(213, 414);
+            this.CHEAT_ITEM_COUNT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_ITEM_COUNT.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_COUNT.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_COUNT.Name = "CHEAT_ITEM_COUNT";
+            this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_ITEM_COUNT.TabIndex = 5;
+            this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(68, 409);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 18);
+            this.label17.TabIndex = 221;
+            this.label17.Text = "個数";
+            // 
+            // CHEAT_ITEM_ID
+            // 
+            this.CHEAT_ITEM_ID.Hexadecimal = true;
+            this.CHEAT_ITEM_ID.Location = new System.Drawing.Point(213, 378);
+            this.CHEAT_ITEM_ID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_ITEM_ID.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_ID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_ID.Name = "CHEAT_ITEM_ID";
+            this.CHEAT_ITEM_ID.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_ITEM_ID.TabIndex = 4;
+            this.CHEAT_ITEM_ID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CHEAT_MONEY_VALUE
+            // 
+            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(1041, 271);
+            this.CHEAT_MONEY_VALUE.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_MONEY_VALUE.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.CHEAT_MONEY_VALUE.Name = "CHEAT_MONEY_VALUE";
+            this.CHEAT_MONEY_VALUE.Size = new System.Drawing.Size(187, 25);
+            this.CHEAT_MONEY_VALUE.TabIndex = 7;
+            this.CHEAT_MONEY_VALUE.Value = new decimal(new int[] {
+            838861,
+            0,
+            0,
+            0});
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(895, 758);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 18);
+            this.label16.TabIndex = 216;
+            this.label16.Text = "解析者向けの機能";
+            // 
+            // Dump03Button
+            // 
+            this.Dump03Button.Location = new System.Drawing.Point(893, 832);
+            this.Dump03Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Dump03Button.Name = "Dump03Button";
+            this.Dump03Button.Size = new System.Drawing.Size(742, 40);
+            this.Dump03Button.TabIndex = 12;
+            this.Dump03Button.Text = "メモリをダンプしてファイルに書き込む 0x03000000";
+            this.Dump03Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dump03Button.UseVisualStyleBackColor = true;
+            this.Dump03Button.Click += new System.EventHandler(this.Dump0x03000000Button_Click);
+            // 
+            // Dump02Button
+            // 
+            this.Dump02Button.Location = new System.Drawing.Point(893, 778);
+            this.Dump02Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Dump02Button.Name = "Dump02Button";
+            this.Dump02Button.Size = new System.Drawing.Size(742, 40);
+            this.Dump02Button.TabIndex = 10;
+            this.Dump02Button.Text = "メモリをダンプしてファイルに書き込む 0x02000000";
+            this.Dump02Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dump02Button.UseVisualStyleBackColor = true;
+            this.Dump02Button.Click += new System.EventHandler(this.Dump0x02000000Button_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(887, 363);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 18);
+            this.label15.TabIndex = 213;
+            this.label15.Text = "霧レベル";
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(64, 124);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(738, 46);
+            this.label14.TabIndex = 212;
+            this.label14.Text = "クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(889, 273);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 18);
+            this.label13.TabIndex = 210;
+            this.label13.Text = "所持金";
+            // 
+            // CHEAT_FOG
+            // 
+            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 312);
+            this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_FOG.Name = "CHEAT_FOG";
+            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_FOG.TabIndex = 8;
+            this.CHEAT_FOG.Text = "霧レベルを変更(次のターンから適用されます。)";
+            this.CHEAT_FOG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_FOG.UseVisualStyleBackColor = true;
+            this.CHEAT_FOG.Click += new System.EventHandler(this.CHEAT_FOG_Click);
+            // 
+            // CHEAT_MONEY
+            // 
+            this.CHEAT_MONEY.Location = new System.Drawing.Point(887, 220);
+            this.CHEAT_MONEY.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_MONEY.Name = "CHEAT_MONEY";
+            this.CHEAT_MONEY.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_MONEY.TabIndex = 6;
+            this.CHEAT_MONEY.Text = "所持金を以下の値に変更する";
+            this.CHEAT_MONEY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_MONEY.UseVisualStyleBackColor = true;
+            this.CHEAT_MONEY.Click += new System.EventHandler(this.CHEAT_MONEY_Click);
+            // 
+            // CHEAT_ITEM_JUMP
+            // 
+            this.CHEAT_ITEM_JUMP.AutoSize = true;
+            this.CHEAT_ITEM_JUMP.Location = new System.Drawing.Point(68, 380);
+            this.CHEAT_ITEM_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_ITEM_JUMP.Name = "CHEAT_ITEM_JUMP";
+            this.CHEAT_ITEM_JUMP.Size = new System.Drawing.Size(125, 18);
+            this.CHEAT_ITEM_JUMP.TabIndex = 207;
+            this.CHEAT_ITEM_JUMP.Text = "持たせるアイテム";
+            // 
+            // CHEAT_UNIT_HAVE_ITEM
+            // 
+            this.CHEAT_UNIT_HAVE_ITEM.Location = new System.Drawing.Point(66, 329);
+            this.CHEAT_UNIT_HAVE_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_HAVE_ITEM.Name = "CHEAT_UNIT_HAVE_ITEM";
+            this.CHEAT_UNIT_HAVE_ITEM.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_HAVE_ITEM.TabIndex = 3;
+            this.CHEAT_UNIT_HAVE_ITEM.Text = "このユニットに以下のアイテムをもたせる";
+            this.CHEAT_UNIT_HAVE_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_HAVE_ITEM.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_HAVE_ITEM.Click += new System.EventHandler(this.CHEAT_UNIT_HAVE_ITEM_Click);
+            // 
+            // CHEAT_UNIT_HP_1
+            // 
+            this.CHEAT_UNIT_HP_1.Location = new System.Drawing.Point(66, 274);
+            this.CHEAT_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_HP_1.Name = "CHEAT_UNIT_HP_1";
+            this.CHEAT_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_HP_1.TabIndex = 2;
+            this.CHEAT_UNIT_HP_1.Text = "このユニットのHPを1にする。";
+            this.CHEAT_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_HP_1.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_UNIT_HP_1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(68, 197);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(199, 18);
+            this.label11.TabIndex = 204;
+            this.label11.Text = "現在、操作しているユニット";
+            // 
+            // CHEAT_UNIT_GROW
+            // 
+            this.CHEAT_UNIT_GROW.Location = new System.Drawing.Point(66, 220);
+            this.CHEAT_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_GROW.Name = "CHEAT_UNIT_GROW";
+            this.CHEAT_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_GROW.TabIndex = 1;
+            this.CHEAT_UNIT_GROW.Text = "このユニットのパラメータをカンストさせる。";
+            this.CHEAT_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_UNIT_GROW_Click);
+            // 
+            // CHEAT_SET_FLAG03
+            // 
+            this.CHEAT_SET_FLAG03.Location = new System.Drawing.Point(61, 58);
+            this.CHEAT_SET_FLAG03.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_SET_FLAG03.Name = "CHEAT_SET_FLAG03";
+            this.CHEAT_SET_FLAG03.Size = new System.Drawing.Size(742, 53);
+            this.CHEAT_SET_FLAG03.TabIndex = 0;
+            this.CHEAT_SET_FLAG03.Text = "現在の章をクリアします。(Hotkey: Ctrl + U)";
+            this.CHEAT_SET_FLAG03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_SET_FLAG03.UseVisualStyleBackColor = true;
+            this.CHEAT_SET_FLAG03.Click += new System.EventHandler(this.CHEAT_SET_FLAG03_Click);
+            // 
+            // CHEAT_WARP_EDTION_NAME
+            // 
+            this.CHEAT_WARP_EDTION_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_EDTION_NAME.Location = new System.Drawing.Point(1122, 155);
+            this.CHEAT_WARP_EDTION_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_EDTION_NAME.Name = "CHEAT_WARP_EDTION_NAME";
+            this.CHEAT_WARP_EDTION_NAME.Placeholder = "";
+            this.CHEAT_WARP_EDTION_NAME.ReadOnly = true;
+            this.CHEAT_WARP_EDTION_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_EDTION_NAME.TabIndex = 324;
+            // 
+            // CHEAT_WARP_CHPATER_NAME
+            // 
+            this.CHEAT_WARP_CHPATER_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_CHPATER_NAME.Location = new System.Drawing.Point(1122, 122);
+            this.CHEAT_WARP_CHPATER_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_CHPATER_NAME.Name = "CHEAT_WARP_CHPATER_NAME";
+            this.CHEAT_WARP_CHPATER_NAME.Placeholder = "";
+            this.CHEAT_WARP_CHPATER_NAME.ReadOnly = true;
+            this.CHEAT_WARP_CHPATER_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_CHPATER_NAME.TabIndex = 321;
+            // 
+            // systemIconPictureBox4
+            // 
+            this.systemIconPictureBox4.IconNumber = ((uint)(2u));
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(1, 487);
+            this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
+            this.systemIconPictureBox4.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox4.TabIndex = 316;
+            this.systemIconPictureBox4.TabStop = false;
+            // 
+            // CHEAT_UNIT_MEMORY_AND_NAME
+            // 
+            this.CHEAT_UNIT_MEMORY_AND_NAME.ErrorMessage = "";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Location = new System.Drawing.Point(290, 190);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Name = "CHEAT_UNIT_MEMORY_AND_NAME";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Placeholder = "";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.ReadOnly = true;
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Size = new System.Drawing.Size(513, 25);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.TabIndex = 225;
+            // 
+            // CHEAT_ITEM_NAME
+            // 
+            this.CHEAT_ITEM_NAME.ErrorMessage = "";
+            this.CHEAT_ITEM_NAME.Location = new System.Drawing.Point(294, 378);
+            this.CHEAT_ITEM_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_ITEM_NAME.Name = "CHEAT_ITEM_NAME";
+            this.CHEAT_ITEM_NAME.Placeholder = "";
+            this.CHEAT_ITEM_NAME.ReadOnly = true;
+            this.CHEAT_ITEM_NAME.Size = new System.Drawing.Size(189, 25);
+            this.CHEAT_ITEM_NAME.TabIndex = 219;
+            // 
+            // systemIconPictureBox3
+            // 
+            this.systemIconPictureBox3.IconNumber = ((uint)(5u));
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(830, 758);
+            this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
+            this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox3.TabIndex = 228;
+            this.systemIconPictureBox3.TabStop = false;
+            // 
+            // systemIconPictureBox2
+            // 
+            this.systemIconPictureBox2.IconNumber = ((uint)(8u));
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(824, 220);
+            this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
+            this.systemIconPictureBox2.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox2.TabIndex = 227;
+            this.systemIconPictureBox2.TabStop = false;
+            // 
+            // CHEAT_UNIT_MEMORY_AND_ICON
+            // 
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Location = new System.Drawing.Point(1, 197);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Name = "CHEAT_UNIT_MEMORY_AND_ICON";
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Size = new System.Drawing.Size(56, 56);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.TabIndex = 226;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.TabStop = false;
+            // 
+            // systemIconPictureBox1
+            // 
+            this.systemIconPictureBox1.Location = new System.Drawing.Point(1, 56);
+            this.systemIconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
+            this.systemIconPictureBox1.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox1.TabIndex = 224;
+            this.systemIconPictureBox1.TabStop = false;
+            // 
+            // CHEAT_ITEM_ICON
+            // 
+            this.CHEAT_ITEM_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHEAT_ITEM_ICON.Location = new System.Drawing.Point(487, 378);
+            this.CHEAT_ITEM_ICON.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ITEM_ICON.Name = "CHEAT_ITEM_ICON";
+            this.CHEAT_ITEM_ICON.Size = new System.Drawing.Size(32, 32);
+            this.CHEAT_ITEM_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CHEAT_ITEM_ICON.TabIndex = 220;
+            this.CHEAT_ITEM_ICON.TabStop = false;
             // 
             // EventPage
             // 
@@ -750,6 +1393,45 @@
             this.SpeechButton.UseVisualStyleBackColor = true;
             this.SpeechButton.Click += new System.EventHandler(this.SpeechButton_Click);
             // 
+            // CurrentTextBox
+            // 
+            this.CurrentTextBox.ErrorMessage = "";
+            this.CurrentTextBox.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CurrentTextBox.Location = new System.Drawing.Point(1, 62);
+            this.CurrentTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.CurrentTextBox.Name = "CurrentTextBox";
+            this.CurrentTextBox.Placeholder = "";
+            this.CurrentTextBox.ReadOnly = true;
+            this.CurrentTextBox.Size = new System.Drawing.Size(582, 191);
+            this.CurrentTextBox.TabIndex = 309;
+            this.CurrentTextBox.Text = "";
+            this.CurrentTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CurrentTextBox_MouseDoubleClick);
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(166, 262);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(240, 25);
+            this.N_SelectAddress.TabIndex = 307;
+            // 
+            // RunningEventListBox
+            // 
+            this.RunningEventListBox.FormattingEnabled = true;
+            this.RunningEventListBox.HorizontalScrollbar = true;
+            this.RunningEventListBox.IntegralHeight = false;
+            this.RunningEventListBox.ItemHeight = 18;
+            this.RunningEventListBox.Location = new System.Drawing.Point(588, 30);
+            this.RunningEventListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RunningEventListBox.Name = "RunningEventListBox";
+            this.RunningEventListBox.Size = new System.Drawing.Size(1058, 850);
+            this.RunningEventListBox.TabIndex = 168;
+            this.RunningEventListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RunningEventListBox_KeyDown);
+            this.RunningEventListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RunningEventListBox_MouseDoubleClick);
+            // 
             // RunningEventListBoxLabel
             // 
             this.RunningEventListBoxLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -773,6 +1455,20 @@
             this.N_J_14_MAP.Text = "マップID";
             this.N_J_14_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FlagListBox
+            // 
+            this.FlagListBox.FormattingEnabled = true;
+            this.FlagListBox.IntegralHeight = false;
+            this.FlagListBox.ItemHeight = 18;
+            this.FlagListBox.Location = new System.Drawing.Point(0, 287);
+            this.FlagListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FlagListBox.Name = "FlagListBox";
+            this.FlagListBox.Size = new System.Drawing.Size(407, 598);
+            this.FlagListBox.TabIndex = 16;
+            this.FlagListBox.SelectedIndexChanged += new System.EventHandler(this.FlagListBox_SelectedIndexChanged);
+            this.FlagListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlagListBox_KeyDown);
+            this.FlagListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FlagListBox_MouseDoubleClick);
+            // 
             // N1_LabelFilter
             // 
             this.N1_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -783,6 +1479,17 @@
             this.N1_LabelFilter.TabIndex = 108;
             this.N1_LabelFilter.Text = "フラグ";
             this.N1_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BGMName
+            // 
+            this.BGMName.ErrorMessage = "";
+            this.BGMName.Location = new System.Drawing.Point(266, 4);
+            this.BGMName.Margin = new System.Windows.Forms.Padding(2);
+            this.BGMName.Name = "BGMName";
+            this.BGMName.Placeholder = "";
+            this.BGMName.ReadOnly = true;
+            this.BGMName.Size = new System.Drawing.Size(316, 25);
+            this.BGMName.TabIndex = 166;
             // 
             // N_B14
             // 
@@ -830,6 +1537,18 @@
             this.J_BGM.Text = "BGM";
             this.J_BGM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // MemorySlotListBox
+            // 
+            this.MemorySlotListBox.FormattingEnabled = true;
+            this.MemorySlotListBox.IntegralHeight = false;
+            this.MemorySlotListBox.ItemHeight = 18;
+            this.MemorySlotListBox.Location = new System.Drawing.Point(410, 287);
+            this.MemorySlotListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MemorySlotListBox.Name = "MemorySlotListBox";
+            this.MemorySlotListBox.Size = new System.Drawing.Size(173, 598);
+            this.MemorySlotListBox.TabIndex = 14;
+            this.MemorySlotListBox.SelectedIndexChanged += new System.EventHandler(this.MemorySlotListBox_SelectedIndexChanged);
+            // 
             // MemorySlotLabel
             // 
             this.MemorySlotLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -840,6 +1559,17 @@
             this.MemorySlotLabel.TabIndex = 162;
             this.MemorySlotLabel.Text = "メモリスロット";
             this.MemorySlotLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // N_L_14_MAP
+            // 
+            this.N_L_14_MAP.ErrorMessage = "";
+            this.N_L_14_MAP.Location = new System.Drawing.Point(242, 34);
+            this.N_L_14_MAP.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_14_MAP.Name = "N_L_14_MAP";
+            this.N_L_14_MAP.Placeholder = "";
+            this.N_L_14_MAP.ReadOnly = true;
+            this.N_L_14_MAP.Size = new System.Drawing.Size(339, 25);
+            this.N_L_14_MAP.TabIndex = 141;
             // 
             // EventHistoryPage
             // 
@@ -905,6 +1635,20 @@
             this.label6.Text = "より古い↓";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // EventHistoryListBox
+            // 
+            this.EventHistoryListBox.FormattingEnabled = true;
+            this.EventHistoryListBox.HorizontalScrollbar = true;
+            this.EventHistoryListBox.IntegralHeight = false;
+            this.EventHistoryListBox.ItemHeight = 18;
+            this.EventHistoryListBox.Location = new System.Drawing.Point(26, 70);
+            this.EventHistoryListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EventHistoryListBox.Name = "EventHistoryListBox";
+            this.EventHistoryListBox.Size = new System.Drawing.Size(1613, 814);
+            this.EventHistoryListBox.TabIndex = 109;
+            this.EventHistoryListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventHistoryListBox_KeyDown);
+            this.EventHistoryListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventHistoryListBox_MouseDoubleClick);
+            // 
             // ProcPage
             // 
             this.ProcPage.BackColor = System.Drawing.SystemColors.Control;
@@ -948,6 +1692,17 @@
             this.PROCS_Address.ReadOnly = true;
             this.PROCS_Address.Size = new System.Drawing.Size(161, 25);
             this.PROCS_Address.TabIndex = 304;
+            // 
+            // PROCS_SelectAddress
+            // 
+            this.PROCS_SelectAddress.ErrorMessage = "";
+            this.PROCS_SelectAddress.Location = new System.Drawing.Point(490, 4);
+            this.PROCS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.PROCS_SelectAddress.Name = "PROCS_SelectAddress";
+            this.PROCS_SelectAddress.Placeholder = "";
+            this.PROCS_SelectAddress.ReadOnly = true;
+            this.PROCS_SelectAddress.Size = new System.Drawing.Size(210, 25);
+            this.PROCS_SelectAddress.TabIndex = 303;
             // 
             // label22
             // 
@@ -1844,6 +2599,182 @@
             this.PROCS_B85.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B85.TabIndex = 97;
             // 
+            // PROCS_L_104_DWORD
+            // 
+            this.PROCS_L_104_DWORD.ErrorMessage = "";
+            this.PROCS_L_104_DWORD.Location = new System.Drawing.Point(908, 572);
+            this.PROCS_L_104_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_104_DWORD.Name = "PROCS_L_104_DWORD";
+            this.PROCS_L_104_DWORD.Placeholder = "";
+            this.PROCS_L_104_DWORD.ReadOnly = true;
+            this.PROCS_L_104_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_104_DWORD.TabIndex = 122;
+            // 
+            // PROCS_L_96_DWORD
+            // 
+            this.PROCS_L_96_DWORD.ErrorMessage = "";
+            this.PROCS_L_96_DWORD.Location = new System.Drawing.Point(908, 542);
+            this.PROCS_L_96_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_96_DWORD.Name = "PROCS_L_96_DWORD";
+            this.PROCS_L_96_DWORD.Placeholder = "";
+            this.PROCS_L_96_DWORD.ReadOnly = true;
+            this.PROCS_L_96_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_96_DWORD.TabIndex = 109;
+            // 
+            // PROCS_L_88_DWORD
+            // 
+            this.PROCS_L_88_DWORD.ErrorMessage = "";
+            this.PROCS_L_88_DWORD.Location = new System.Drawing.Point(908, 512);
+            this.PROCS_L_88_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_88_DWORD.Name = "PROCS_L_88_DWORD";
+            this.PROCS_L_88_DWORD.Placeholder = "";
+            this.PROCS_L_88_DWORD.ReadOnly = true;
+            this.PROCS_L_88_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_88_DWORD.TabIndex = 91;
+            // 
+            // PROCS_L_80_DWORD
+            // 
+            this.PROCS_L_80_DWORD.ErrorMessage = "";
+            this.PROCS_L_80_DWORD.Location = new System.Drawing.Point(908, 481);
+            this.PROCS_L_80_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_80_DWORD.Name = "PROCS_L_80_DWORD";
+            this.PROCS_L_80_DWORD.Placeholder = "";
+            this.PROCS_L_80_DWORD.ReadOnly = true;
+            this.PROCS_L_80_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_80_DWORD.TabIndex = 79;
+            // 
+            // PROCS_L_72_DWORD
+            // 
+            this.PROCS_L_72_DWORD.ErrorMessage = "";
+            this.PROCS_L_72_DWORD.Location = new System.Drawing.Point(908, 451);
+            this.PROCS_L_72_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_72_DWORD.Name = "PROCS_L_72_DWORD";
+            this.PROCS_L_72_DWORD.Placeholder = "";
+            this.PROCS_L_72_DWORD.ReadOnly = true;
+            this.PROCS_L_72_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_72_DWORD.TabIndex = 65;
+            // 
+            // PROCS_L_64_DWORD
+            // 
+            this.PROCS_L_64_DWORD.ErrorMessage = "";
+            this.PROCS_L_64_DWORD.Location = new System.Drawing.Point(908, 422);
+            this.PROCS_L_64_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_64_DWORD.Name = "PROCS_L_64_DWORD";
+            this.PROCS_L_64_DWORD.Placeholder = "";
+            this.PROCS_L_64_DWORD.ReadOnly = true;
+            this.PROCS_L_64_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_64_DWORD.TabIndex = 53;
+            // 
+            // PROCS_L_100_DWORD
+            // 
+            this.PROCS_L_100_DWORD.ErrorMessage = "";
+            this.PROCS_L_100_DWORD.Location = new System.Drawing.Point(422, 576);
+            this.PROCS_L_100_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_100_DWORD.Name = "PROCS_L_100_DWORD";
+            this.PROCS_L_100_DWORD.Placeholder = "";
+            this.PROCS_L_100_DWORD.ReadOnly = true;
+            this.PROCS_L_100_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_100_DWORD.TabIndex = 115;
+            // 
+            // PROCS_L_92_DWORD
+            // 
+            this.PROCS_L_92_DWORD.ErrorMessage = "";
+            this.PROCS_L_92_DWORD.Location = new System.Drawing.Point(422, 546);
+            this.PROCS_L_92_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_92_DWORD.Name = "PROCS_L_92_DWORD";
+            this.PROCS_L_92_DWORD.Placeholder = "";
+            this.PROCS_L_92_DWORD.ReadOnly = true;
+            this.PROCS_L_92_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_92_DWORD.TabIndex = 103;
+            // 
+            // PROCS_L_84_DWORD
+            // 
+            this.PROCS_L_84_DWORD.ErrorMessage = "";
+            this.PROCS_L_84_DWORD.Location = new System.Drawing.Point(422, 512);
+            this.PROCS_L_84_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_84_DWORD.Name = "PROCS_L_84_DWORD";
+            this.PROCS_L_84_DWORD.Placeholder = "";
+            this.PROCS_L_84_DWORD.ReadOnly = true;
+            this.PROCS_L_84_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_84_DWORD.TabIndex = 85;
+            // 
+            // PROCS_L_76_DWORD
+            // 
+            this.PROCS_L_76_DWORD.ErrorMessage = "";
+            this.PROCS_L_76_DWORD.Location = new System.Drawing.Point(422, 480);
+            this.PROCS_L_76_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_76_DWORD.Name = "PROCS_L_76_DWORD";
+            this.PROCS_L_76_DWORD.Placeholder = "";
+            this.PROCS_L_76_DWORD.ReadOnly = true;
+            this.PROCS_L_76_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_76_DWORD.TabIndex = 72;
+            // 
+            // PROCS_L_68_DWORD
+            // 
+            this.PROCS_L_68_DWORD.ErrorMessage = "";
+            this.PROCS_L_68_DWORD.Location = new System.Drawing.Point(422, 450);
+            this.PROCS_L_68_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_68_DWORD.Name = "PROCS_L_68_DWORD";
+            this.PROCS_L_68_DWORD.Placeholder = "";
+            this.PROCS_L_68_DWORD.ReadOnly = true;
+            this.PROCS_L_68_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_68_DWORD.TabIndex = 59;
+            // 
+            // PROCS_L_60_DWORD
+            // 
+            this.PROCS_L_60_DWORD.ErrorMessage = "";
+            this.PROCS_L_60_DWORD.Location = new System.Drawing.Point(422, 422);
+            this.PROCS_L_60_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_60_DWORD.Name = "PROCS_L_60_DWORD";
+            this.PROCS_L_60_DWORD.Placeholder = "";
+            this.PROCS_L_60_DWORD.ReadOnly = true;
+            this.PROCS_L_60_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_60_DWORD.TabIndex = 47;
+            // 
+            // PROCS_L_56_DWORD
+            // 
+            this.PROCS_L_56_DWORD.ErrorMessage = "";
+            this.PROCS_L_56_DWORD.Location = new System.Drawing.Point(908, 392);
+            this.PROCS_L_56_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_56_DWORD.Name = "PROCS_L_56_DWORD";
+            this.PROCS_L_56_DWORD.Placeholder = "";
+            this.PROCS_L_56_DWORD.ReadOnly = true;
+            this.PROCS_L_56_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_56_DWORD.TabIndex = 40;
+            // 
+            // PROCS_L_52_DWORD
+            // 
+            this.PROCS_L_52_DWORD.ErrorMessage = "";
+            this.PROCS_L_52_DWORD.Location = new System.Drawing.Point(422, 392);
+            this.PROCS_L_52_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_52_DWORD.Name = "PROCS_L_52_DWORD";
+            this.PROCS_L_52_DWORD.Placeholder = "";
+            this.PROCS_L_52_DWORD.ReadOnly = true;
+            this.PROCS_L_52_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_52_DWORD.TabIndex = 34;
+            // 
+            // PROCS_L_48_DWORD
+            // 
+            this.PROCS_L_48_DWORD.ErrorMessage = "";
+            this.PROCS_L_48_DWORD.Location = new System.Drawing.Point(908, 362);
+            this.PROCS_L_48_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_48_DWORD.Name = "PROCS_L_48_DWORD";
+            this.PROCS_L_48_DWORD.Placeholder = "";
+            this.PROCS_L_48_DWORD.ReadOnly = true;
+            this.PROCS_L_48_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_48_DWORD.TabIndex = 28;
+            // 
+            // PROCS_L_44_DWORD
+            // 
+            this.PROCS_L_44_DWORD.ErrorMessage = "";
+            this.PROCS_L_44_DWORD.Location = new System.Drawing.Point(422, 362);
+            this.PROCS_L_44_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_44_DWORD.Name = "PROCS_L_44_DWORD";
+            this.PROCS_L_44_DWORD.Placeholder = "";
+            this.PROCS_L_44_DWORD.ReadOnly = true;
+            this.PROCS_L_44_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_44_DWORD.TabIndex = 22;
+            // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -1895,6 +2826,17 @@
             this.PROCS_B43.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B43.TabIndex = 16;
             // 
+            // PROCS_CURSOL_CODE
+            // 
+            this.PROCS_CURSOL_CODE.ErrorMessage = "";
+            this.PROCS_CURSOL_CODE.Location = new System.Drawing.Point(338, 35);
+            this.PROCS_CURSOL_CODE.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_CURSOL_CODE.Name = "PROCS_CURSOL_CODE";
+            this.PROCS_CURSOL_CODE.Placeholder = "";
+            this.PROCS_CURSOL_CODE.ReadOnly = true;
+            this.PROCS_CURSOL_CODE.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_CURSOL_CODE.TabIndex = 300;
+            // 
             // PROCS_B42
             // 
             this.PROCS_B42.Hexadecimal = true;
@@ -1909,6 +2851,17 @@
             this.PROCS_B42.ReadOnly = true;
             this.PROCS_B42.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B42.TabIndex = 298;
+            // 
+            // PROCS_L_16_TEXT
+            // 
+            this.PROCS_L_16_TEXT.ErrorMessage = "";
+            this.PROCS_L_16_TEXT.Location = new System.Drawing.Point(338, 120);
+            this.PROCS_L_16_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_16_TEXT.Name = "PROCS_L_16_TEXT";
+            this.PROCS_L_16_TEXT.Placeholder = "";
+            this.PROCS_L_16_TEXT.ReadOnly = true;
+            this.PROCS_L_16_TEXT.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_16_TEXT.TabIndex = 295;
             // 
             // PROCS_J_44
             // 
@@ -1975,6 +2928,17 @@
             this.PROCS_B44.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B44.TabIndex = 18;
             // 
+            // textBoxEx16
+            // 
+            this.textBoxEx16.ErrorMessage = "";
+            this.textBoxEx16.Location = new System.Drawing.Point(329, 830);
+            this.textBoxEx16.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx16.Name = "textBoxEx16";
+            this.textBoxEx16.Placeholder = "";
+            this.textBoxEx16.ReadOnly = true;
+            this.textBoxEx16.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx16.TabIndex = 289;
+            // 
             // PROCS_J_104
             // 
             this.PROCS_J_104.Location = new System.Drawing.Point(533, 576);
@@ -2035,6 +2999,17 @@
             this.PROCS_B48.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B48.TabIndex = 24;
             // 
+            // textBoxEx17
+            // 
+            this.textBoxEx17.ErrorMessage = "";
+            this.textBoxEx17.Location = new System.Drawing.Point(329, 802);
+            this.textBoxEx17.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx17.Name = "textBoxEx17";
+            this.textBoxEx17.Placeholder = "";
+            this.textBoxEx17.ReadOnly = true;
+            this.textBoxEx17.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx17.TabIndex = 286;
+            // 
             // PROCS_J_52
             // 
             this.PROCS_J_52.Location = new System.Drawing.Point(49, 396);
@@ -2094,6 +3069,17 @@
             this.PROCS_J_56.TabIndex = 35;
             this.PROCS_J_56.Text = "56(0x38)";
             this.PROCS_J_56.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxEx18
+            // 
+            this.textBoxEx18.ErrorMessage = "";
+            this.textBoxEx18.Location = new System.Drawing.Point(329, 773);
+            this.textBoxEx18.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx18.Name = "textBoxEx18";
+            this.textBoxEx18.Placeholder = "";
+            this.textBoxEx18.ReadOnly = true;
+            this.textBoxEx18.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx18.TabIndex = 283;
             // 
             // PROCS_B56
             // 
@@ -2360,6 +3346,17 @@
             this.PROCS_J_72.Text = "72(0x48)";
             this.PROCS_J_72.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PROCS_L_32_RAMPROCS
+            // 
+            this.PROCS_L_32_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_32_RAMPROCS.Location = new System.Drawing.Point(338, 234);
+            this.PROCS_L_32_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_32_RAMPROCS.Name = "PROCS_L_32_RAMPROCS";
+            this.PROCS_L_32_RAMPROCS.Placeholder = "";
+            this.PROCS_L_32_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_32_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_32_RAMPROCS.TabIndex = 223;
+            // 
             // PROCS_J_96
             // 
             this.PROCS_J_96.Location = new System.Drawing.Point(533, 546);
@@ -2425,6 +3422,17 @@
             this.PROCS_B92.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B92.TabIndex = 93;
             // 
+            // PROCS_L_28_RAMPROCS
+            // 
+            this.PROCS_L_28_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_28_RAMPROCS.Location = new System.Drawing.Point(338, 206);
+            this.PROCS_L_28_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_28_RAMPROCS.Name = "PROCS_L_28_RAMPROCS";
+            this.PROCS_L_28_RAMPROCS.Placeholder = "";
+            this.PROCS_L_28_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_28_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_28_RAMPROCS.TabIndex = 220;
+            // 
             // PROCS_J_76
             // 
             this.PROCS_J_76.Location = new System.Drawing.Point(49, 484);
@@ -2485,6 +3493,17 @@
             this.PROCS_B76.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B76.TabIndex = 68;
             // 
+            // PROCS_L_24_RAMPROCS
+            // 
+            this.PROCS_L_24_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_24_RAMPROCS.Location = new System.Drawing.Point(338, 176);
+            this.PROCS_L_24_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_24_RAMPROCS.Name = "PROCS_L_24_RAMPROCS";
+            this.PROCS_L_24_RAMPROCS.Placeholder = "";
+            this.PROCS_L_24_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_24_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_24_RAMPROCS.TabIndex = 217;
+            // 
             // PROCS_B88
             // 
             this.PROCS_B88.Hexadecimal = true;
@@ -2544,6 +3563,17 @@
             this.PROCS_J_88.TabIndex = 86;
             this.PROCS_J_88.Text = "88(0x58)";
             this.PROCS_J_88.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PROCS_L_20_RAMPROCS
+            // 
+            this.PROCS_L_20_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_20_RAMPROCS.Location = new System.Drawing.Point(338, 149);
+            this.PROCS_L_20_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_20_RAMPROCS.Name = "PROCS_L_20_RAMPROCS";
+            this.PROCS_L_20_RAMPROCS.Placeholder = "";
+            this.PROCS_L_20_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_20_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_20_RAMPROCS.TabIndex = 214;
             // 
             // PROCS_B80
             // 
@@ -2610,6 +3640,17 @@
             this.PROCS_J_84.Text = "84(0x54)";
             this.PROCS_J_84.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PROCS_L_12_ASM
+            // 
+            this.PROCS_L_12_ASM.ErrorMessage = "";
+            this.PROCS_L_12_ASM.Location = new System.Drawing.Point(338, 91);
+            this.PROCS_L_12_ASM.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_12_ASM.Name = "PROCS_L_12_ASM";
+            this.PROCS_L_12_ASM.Placeholder = "";
+            this.PROCS_L_12_ASM.ReadOnly = true;
+            this.PROCS_L_12_ASM.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_12_ASM.TabIndex = 211;
+            // 
             // PROCS_P12
             // 
             this.PROCS_P12.Hexadecimal = true;
@@ -2634,6 +3675,17 @@
             this.PROCS_J_12_ASM.TabIndex = 210;
             this.PROCS_J_12_ASM.Text = "Loop Routine";
             this.PROCS_J_12_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PROCS_L_8_ASM
+            // 
+            this.PROCS_L_8_ASM.ErrorMessage = "";
+            this.PROCS_L_8_ASM.Location = new System.Drawing.Point(338, 62);
+            this.PROCS_L_8_ASM.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_8_ASM.Name = "PROCS_L_8_ASM";
+            this.PROCS_L_8_ASM.Placeholder = "";
+            this.PROCS_L_8_ASM.ReadOnly = true;
+            this.PROCS_L_8_ASM.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_8_ASM.TabIndex = 208;
             // 
             // PROCS_P8
             // 
@@ -2686,6 +3738,17 @@
             this.PROCS_JUMP_CURSOL_CODE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PROCS_JUMP_CURSOL_CODE.Click += new System.EventHandler(this.PROCS_JUMP_CURSOL_CODE_Click);
             // 
+            // PROCS_NAME
+            // 
+            this.PROCS_NAME.ErrorMessage = "";
+            this.PROCS_NAME.Location = new System.Drawing.Point(338, 6);
+            this.PROCS_NAME.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_NAME.Name = "PROCS_NAME";
+            this.PROCS_NAME.Placeholder = "";
+            this.PROCS_NAME.ReadOnly = true;
+            this.PROCS_NAME.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_NAME.TabIndex = 202;
+            // 
             // PROCS_P0
             // 
             this.PROCS_P0.Hexadecimal = true;
@@ -2732,6 +3795,20 @@
             this.label1.TabIndex = 160;
             this.label1.Text = "Procs";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ProcsListBox
+            // 
+            this.ProcsListBox.FormattingEnabled = true;
+            this.ProcsListBox.IntegralHeight = false;
+            this.ProcsListBox.ItemHeight = 18;
+            this.ProcsListBox.Location = new System.Drawing.Point(14, 28);
+            this.ProcsListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ProcsListBox.Name = "ProcsListBox";
+            this.ProcsListBox.Size = new System.Drawing.Size(1629, 850);
+            this.ProcsListBox.TabIndex = 161;
+            this.ProcsListBox.SelectedIndexChanged += new System.EventHandler(this.ProcsListBox_SelectedIndexChanged);
+            this.ProcsListBox.DoubleClick += new System.EventHandler(this.ProcsListBox_DoubleClick);
+            this.ProcsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsListBox_KeyDown);
             // 
             // EtcPage
             // 
@@ -2831,6 +3908,17 @@
             this.PARTY_Address.ReadOnly = true;
             this.PARTY_Address.Size = new System.Drawing.Size(160, 25);
             this.PARTY_Address.TabIndex = 304;
+            // 
+            // PARTY_SelectAddress
+            // 
+            this.PARTY_SelectAddress.ErrorMessage = "";
+            this.PARTY_SelectAddress.Location = new System.Drawing.Point(444, 4);
+            this.PARTY_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.PARTY_SelectAddress.Name = "PARTY_SelectAddress";
+            this.PARTY_SelectAddress.Placeholder = "";
+            this.PARTY_SelectAddress.ReadOnly = true;
+            this.PARTY_SelectAddress.Size = new System.Drawing.Size(259, 25);
+            this.PARTY_SelectAddress.TabIndex = 303;
             // 
             // label2
             // 
@@ -3013,6 +4101,96 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(777, 695);
             this.panel3.TabIndex = 0;
+            // 
+            // PARTY_AI2_TEXT
+            // 
+            this.PARTY_AI2_TEXT.ErrorMessage = "";
+            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(620, 558);
+            this.PARTY_AI2_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_AI2_TEXT.Multiline = true;
+            this.PARTY_AI2_TEXT.Name = "PARTY_AI2_TEXT";
+            this.PARTY_AI2_TEXT.Placeholder = "";
+            this.PARTY_AI2_TEXT.ReadOnly = true;
+            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(154, 68);
+            this.PARTY_AI2_TEXT.TabIndex = 435;
+            // 
+            // PARTY_AI1_TEXT
+            // 
+            this.PARTY_AI1_TEXT.ErrorMessage = "";
+            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(620, 497);
+            this.PARTY_AI1_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_AI1_TEXT.Multiline = true;
+            this.PARTY_AI1_TEXT.Name = "PARTY_AI1_TEXT";
+            this.PARTY_AI1_TEXT.Placeholder = "";
+            this.PARTY_AI1_TEXT.ReadOnly = true;
+            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(154, 57);
+            this.PARTY_AI1_TEXT.TabIndex = 434;
+            // 
+            // PARTY_PORTRAIT
+            // 
+            this.PARTY_PORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_PORTRAIT.Location = new System.Drawing.Point(260, 153);
+            this.PARTY_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.PARTY_PORTRAIT.Name = "PARTY_PORTRAIT";
+            this.PARTY_PORTRAIT.Size = new System.Drawing.Size(118, 104);
+            this.PARTY_PORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_PORTRAIT.TabIndex = 433;
+            this.PARTY_PORTRAIT.TabStop = false;
+            // 
+            // PARTY_L_38_ITEMICON
+            // 
+            this.PARTY_L_38_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(590, 386);
+            this.PARTY_L_38_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_38_ITEMICON.Name = "PARTY_L_38_ITEMICON";
+            this.PARTY_L_38_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_38_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_38_ITEMICON.TabIndex = 432;
+            this.PARTY_L_38_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_36_ITEMICON
+            // 
+            this.PARTY_L_36_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(590, 354);
+            this.PARTY_L_36_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_36_ITEMICON.Name = "PARTY_L_36_ITEMICON";
+            this.PARTY_L_36_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_36_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_36_ITEMICON.TabIndex = 431;
+            this.PARTY_L_36_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_34_ITEMICON
+            // 
+            this.PARTY_L_34_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(590, 323);
+            this.PARTY_L_34_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_34_ITEMICON.Name = "PARTY_L_34_ITEMICON";
+            this.PARTY_L_34_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_34_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_34_ITEMICON.TabIndex = 430;
+            this.PARTY_L_34_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_32_ITEMICON
+            // 
+            this.PARTY_L_32_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(590, 291);
+            this.PARTY_L_32_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_32_ITEMICON.Name = "PARTY_L_32_ITEMICON";
+            this.PARTY_L_32_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_32_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_32_ITEMICON.TabIndex = 429;
+            this.PARTY_L_32_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_30_ITEMICON
+            // 
+            this.PARTY_L_30_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(590, 260);
+            this.PARTY_L_30_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_30_ITEMICON.Name = "PARTY_L_30_ITEMICON";
+            this.PARTY_L_30_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_30_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_30_ITEMICON.TabIndex = 428;
+            this.PARTY_L_30_ITEMICON.TabStop = false;
             // 
             // PARTY_B71
             // 
@@ -3799,6 +4977,17 @@
             this.label38.Text = "剣 EXP";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PARTY_L_38_ITEM
+            // 
+            this.PARTY_L_38_ITEM.ErrorMessage = "";
+            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(430, 376);
+            this.PARTY_L_38_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_38_ITEM.Name = "PARTY_L_38_ITEM";
+            this.PARTY_L_38_ITEM.Placeholder = "";
+            this.PARTY_L_38_ITEM.ReadOnly = true;
+            this.PARTY_L_38_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_38_ITEM.TabIndex = 363;
+            // 
             // PARTY_B39
             // 
             this.PARTY_B39.Location = new System.Drawing.Point(353, 380);
@@ -3847,6 +5036,17 @@
             this.label37.TabIndex = 359;
             this.label37.Text = "アイテムID5";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PARTY_L_36_ITEM
+            // 
+            this.PARTY_L_36_ITEM.ErrorMessage = "";
+            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(430, 348);
+            this.PARTY_L_36_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_36_ITEM.Name = "PARTY_L_36_ITEM";
+            this.PARTY_L_36_ITEM.Placeholder = "";
+            this.PARTY_L_36_ITEM.ReadOnly = true;
+            this.PARTY_L_36_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_36_ITEM.TabIndex = 358;
             // 
             // PARTY_B37
             // 
@@ -3897,6 +5097,17 @@
             this.label29.Text = "アイテムID4";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PARTY_L_34_ITEM
+            // 
+            this.PARTY_L_34_ITEM.ErrorMessage = "";
+            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(430, 323);
+            this.PARTY_L_34_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_34_ITEM.Name = "PARTY_L_34_ITEM";
+            this.PARTY_L_34_ITEM.Placeholder = "";
+            this.PARTY_L_34_ITEM.ReadOnly = true;
+            this.PARTY_L_34_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_34_ITEM.TabIndex = 353;
+            // 
             // PARTY_B35
             // 
             this.PARTY_B35.Location = new System.Drawing.Point(353, 324);
@@ -3946,6 +5157,17 @@
             this.label32.Text = "アイテムID3";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PARTY_L_32_ITEM
+            // 
+            this.PARTY_L_32_ITEM.ErrorMessage = "";
+            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(430, 294);
+            this.PARTY_L_32_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_32_ITEM.Name = "PARTY_L_32_ITEM";
+            this.PARTY_L_32_ITEM.Placeholder = "";
+            this.PARTY_L_32_ITEM.ReadOnly = true;
+            this.PARTY_L_32_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_32_ITEM.TabIndex = 333;
+            // 
             // PARTY_B33
             // 
             this.PARTY_B33.Location = new System.Drawing.Point(353, 297);
@@ -3994,6 +5216,17 @@
             this.label23.TabIndex = 329;
             this.label23.Text = "アイテムID2";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PARTY_L_30_ITEM
+            // 
+            this.PARTY_L_30_ITEM.ErrorMessage = "";
+            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(430, 268);
+            this.PARTY_L_30_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_30_ITEM.Name = "PARTY_L_30_ITEM";
+            this.PARTY_L_30_ITEM.Placeholder = "";
+            this.PARTY_L_30_ITEM.ReadOnly = true;
+            this.PARTY_L_30_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_30_ITEM.TabIndex = 328;
             // 
             // PARTY_B31
             // 
@@ -4091,6 +5324,18 @@
             this.label65.TabIndex = 321;
             this.label65.Text = "移動＋";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PARTY_RAMUNITAID
+            // 
+            this.PARTY_RAMUNITAID.ErrorMessage = "";
+            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
+            this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
+            this.PARTY_RAMUNITAID.Placeholder = "";
+            this.PARTY_RAMUNITAID.ReadOnly = true;
+            this.PARTY_RAMUNITAID.Size = new System.Drawing.Size(157, 25);
+            this.PARTY_RAMUNITAID.TabIndex = 319;
+            this.PARTY_RAMUNITAID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_RAMUNITAID_MouseDoubleClick);
             // 
             // PARTY_B27
             // 
@@ -4261,6 +5506,29 @@
             this.label57.Text = "技";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PARTY_RAMUNITSTATE
+            // 
+            this.PARTY_RAMUNITSTATE.ErrorMessage = "";
+            this.PARTY_RAMUNITSTATE.Location = new System.Drawing.Point(280, 65);
+            this.PARTY_RAMUNITSTATE.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_RAMUNITSTATE.Name = "PARTY_RAMUNITSTATE";
+            this.PARTY_RAMUNITSTATE.Placeholder = "";
+            this.PARTY_RAMUNITSTATE.ReadOnly = true;
+            this.PARTY_RAMUNITSTATE.Size = new System.Drawing.Size(482, 25);
+            this.PARTY_RAMUNITSTATE.TabIndex = 302;
+            // 
+            // PARTY_ROMCLASSPOINTER
+            // 
+            this.PARTY_ROMCLASSPOINTER.ErrorMessage = "";
+            this.PARTY_ROMCLASSPOINTER.Location = new System.Drawing.Point(280, 34);
+            this.PARTY_ROMCLASSPOINTER.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_ROMCLASSPOINTER.Name = "PARTY_ROMCLASSPOINTER";
+            this.PARTY_ROMCLASSPOINTER.Placeholder = "";
+            this.PARTY_ROMCLASSPOINTER.ReadOnly = true;
+            this.PARTY_ROMCLASSPOINTER.Size = new System.Drawing.Size(481, 25);
+            this.PARTY_ROMCLASSPOINTER.TabIndex = 300;
+            this.PARTY_ROMCLASSPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMCLASSPOINTER_MouseDoubleClick);
+            // 
             // PARTY_B10
             // 
             this.PARTY_B10.Hexadecimal = true;
@@ -4285,6 +5553,17 @@
             this.label21.TabIndex = 294;
             this.label21.Text = "回復モード";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxEx52
+            // 
+            this.textBoxEx52.ErrorMessage = "";
+            this.textBoxEx52.Location = new System.Drawing.Point(329, 830);
+            this.textBoxEx52.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx52.Name = "textBoxEx52";
+            this.textBoxEx52.Placeholder = "";
+            this.textBoxEx52.ReadOnly = true;
+            this.textBoxEx52.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx52.TabIndex = 289;
             // 
             // numericUpDown59
             // 
@@ -4311,6 +5590,17 @@
             this.label28.Text = "UserSpace3";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // textBoxEx53
+            // 
+            this.textBoxEx53.ErrorMessage = "";
+            this.textBoxEx53.Location = new System.Drawing.Point(329, 802);
+            this.textBoxEx53.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx53.Name = "textBoxEx53";
+            this.textBoxEx53.Placeholder = "";
+            this.textBoxEx53.ReadOnly = true;
+            this.textBoxEx53.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx53.TabIndex = 286;
+            // 
             // numericUpDown61
             // 
             this.numericUpDown61.Hexadecimal = true;
@@ -4335,6 +5625,17 @@
             this.label30.TabIndex = 285;
             this.label30.Text = "UserSpace2";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxEx54
+            // 
+            this.textBoxEx54.ErrorMessage = "";
+            this.textBoxEx54.Location = new System.Drawing.Point(329, 773);
+            this.textBoxEx54.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx54.Name = "textBoxEx54";
+            this.textBoxEx54.Placeholder = "";
+            this.textBoxEx54.ReadOnly = true;
+            this.textBoxEx54.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx54.TabIndex = 283;
             // 
             // numericUpDown64
             // 
@@ -4604,6 +5905,18 @@
             this.label54.Text = "ROM Class";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // PARTY_ROMUNITPOINTER
+            // 
+            this.PARTY_ROMUNITPOINTER.ErrorMessage = "";
+            this.PARTY_ROMUNITPOINTER.Location = new System.Drawing.Point(280, 5);
+            this.PARTY_ROMUNITPOINTER.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_ROMUNITPOINTER.Name = "PARTY_ROMUNITPOINTER";
+            this.PARTY_ROMUNITPOINTER.Placeholder = "";
+            this.PARTY_ROMUNITPOINTER.ReadOnly = true;
+            this.PARTY_ROMUNITPOINTER.Size = new System.Drawing.Size(481, 25);
+            this.PARTY_ROMUNITPOINTER.TabIndex = 202;
+            this.PARTY_ROMUNITPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMUNITPOINTER_MouseDoubleClick);
+            // 
             // PARTY_P0
             // 
             this.PARTY_P0.Hexadecimal = true;
@@ -4660,1187 +5973,6 @@
             this.label56.TabIndex = 310;
             this.label56.Text = "パーティー";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // CheatPage
-            // 
-            this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox5);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_UNIT_HP_1);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.label35);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_COMBO);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER);
-            this.CheatPage.Controls.Add(this.label19);
-            this.CheatPage.Controls.Add(this.label18);
-            this.CheatPage.Controls.Add(this.CHEAT_FOG_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_COUNT);
-            this.CheatPage.Controls.Add(this.label17);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ID);
-            this.CheatPage.Controls.Add(this.CHEAT_MONEY_VALUE);
-            this.CheatPage.Controls.Add(this.label16);
-            this.CheatPage.Controls.Add(this.Dump03Button);
-            this.CheatPage.Controls.Add(this.Dump02Button);
-            this.CheatPage.Controls.Add(this.label15);
-            this.CheatPage.Controls.Add(this.label14);
-            this.CheatPage.Controls.Add(this.label13);
-            this.CheatPage.Controls.Add(this.CHEAT_FOG);
-            this.CheatPage.Controls.Add(this.CHEAT_MONEY);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HAVE_ITEM);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HP_1);
-            this.CheatPage.Controls.Add(this.label11);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.CHEAT_SET_FLAG03);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_NAME);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox4);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_NAME);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox3);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox2);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_ICON);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox1);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ICON);
-            this.CheatPage.Location = new System.Drawing.Point(4, 28);
-            this.CheatPage.Margin = new System.Windows.Forms.Padding(2);
-            this.CheatPage.Name = "CheatPage";
-            this.CheatPage.Padding = new System.Windows.Forms.Padding(2);
-            this.CheatPage.Size = new System.Drawing.Size(1646, 888);
-            this.CheatPage.TabIndex = 3;
-            this.CheatPage.Text = "チート";
-            // 
-            // CHEAT_WARP_NODE_VALUE
-            // 
-            this.CHEAT_WARP_NODE_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_NODE_VALUE.Location = new System.Drawing.Point(1041, 188);
-            this.CHEAT_WARP_NODE_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_NODE_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_NODE_VALUE.Name = "CHEAT_WARP_NODE_VALUE";
-            this.CHEAT_WARP_NODE_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_NODE_VALUE.TabIndex = 327;
-            // 
-            // CHEAT_WARP_NODE_JUMP
-            // 
-            this.CHEAT_WARP_NODE_JUMP.AutoSize = true;
-            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(890, 190);
-            this.CHEAT_WARP_NODE_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_NODE_JUMP.Name = "CHEAT_WARP_NODE_JUMP";
-            this.CHEAT_WARP_NODE_JUMP.Size = new System.Drawing.Size(139, 18);
-            this.CHEAT_WARP_NODE_JUMP.TabIndex = 328;
-            this.CHEAT_WARP_NODE_JUMP.Text = "ワールドマップ拠点";
-            // 
-            // CHEAT_ALL_ENEMY_DO_NOT_MOVE
-            // 
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Location = new System.Drawing.Point(67, 676);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Name = "CHEAT_ALL_ENEMY_DO_NOT_MOVE";
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TabIndex = 325;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Text = "すべての敵ユニットAIを「移動しない」に設定にします。";
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click);
-            // 
-            // CHEAT_WARP_EDTION_VALUE
-            // 
-            this.CHEAT_WARP_EDTION_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_EDTION_VALUE.Location = new System.Drawing.Point(1041, 155);
-            this.CHEAT_WARP_EDTION_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_EDTION_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_EDTION_VALUE.Name = "CHEAT_WARP_EDTION_VALUE";
-            this.CHEAT_WARP_EDTION_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_EDTION_VALUE.TabIndex = 322;
-            // 
-            // CHEAT_WARP_EDTION_JUMP
-            // 
-            this.CHEAT_WARP_EDTION_JUMP.AutoSize = true;
-            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(890, 157);
-            this.CHEAT_WARP_EDTION_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_EDTION_JUMP.Name = "CHEAT_WARP_EDTION_JUMP";
-            this.CHEAT_WARP_EDTION_JUMP.Size = new System.Drawing.Size(26, 18);
-            this.CHEAT_WARP_EDTION_JUMP.TabIndex = 323;
-            this.CHEAT_WARP_EDTION_JUMP.Text = "編";
-            // 
-            // CHEAT_WARP_CHPATER_VALUE
-            // 
-            this.CHEAT_WARP_CHPATER_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_CHPATER_VALUE.Location = new System.Drawing.Point(1041, 122);
-            this.CHEAT_WARP_CHPATER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_CHPATER_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_CHPATER_VALUE.Name = "CHEAT_WARP_CHPATER_VALUE";
-            this.CHEAT_WARP_CHPATER_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_CHPATER_VALUE.TabIndex = 319;
-            this.CHEAT_WARP_CHPATER_VALUE.ValueChanged += new System.EventHandler(this.CHEAT_WARP_CHPATER_VALUE_ValueChanged);
-            // 
-            // CHEAT_WARP_CHPATER_JUMP
-            // 
-            this.CHEAT_WARP_CHPATER_JUMP.AutoSize = true;
-            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(890, 124);
-            this.CHEAT_WARP_CHPATER_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_CHPATER_JUMP.Name = "CHEAT_WARP_CHPATER_JUMP";
-            this.CHEAT_WARP_CHPATER_JUMP.Size = new System.Drawing.Size(98, 18);
-            this.CHEAT_WARP_CHPATER_JUMP.TabIndex = 320;
-            this.CHEAT_WARP_CHPATER_JUMP.Text = "ワープする章";
-            // 
-            // CHEAT_WARP
-            // 
-            this.CHEAT_WARP.Location = new System.Drawing.Point(887, 56);
-            this.CHEAT_WARP.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_WARP.Name = "CHEAT_WARP";
-            this.CHEAT_WARP.Size = new System.Drawing.Size(742, 53);
-            this.CHEAT_WARP.TabIndex = 318;
-            this.CHEAT_WARP.Text = "この章へワープする(Hotkey: Ctrl + J)";
-            this.CHEAT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_WARP.UseVisualStyleBackColor = true;
-            this.CHEAT_WARP.Click += new System.EventHandler(this.CHEAT_WARP_Click);
-            // 
-            // CHEAT_ALL_ENEMY_UNIT_HP_1
-            // 
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(66, 623);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TabIndex = 317;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Text = "すべての敵ユニットのHPを1にします。";
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_UNIT_HP_1_Click);
-            // 
-            // CHEAT_ALL_UNIT_GROW
-            // 
-            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(66, 550);
-            this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
-            this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_UNIT_GROW.TabIndex = 315;
-            this.CHEAT_ALL_UNIT_GROW.Text = "敵を含めて、すべてのユニットを最強にします";
-            this.CHEAT_ALL_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_UNIT_GROW_Click);
-            // 
-            // CHEAT_ALL_PLAYER_UNIT_GROW
-            // 
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(66, 498);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.TabIndex = 313;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Text = "すべての味方ユニットを最強にします。(Hotkey Ctrl + G)";
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_PLAYER_UNIT_GROW_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(890, 457);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(44, 18);
-            this.label35.TabIndex = 312;
-            this.label35.Text = "天気";
-            // 
-            // CHEAT_WEATHER_VALUE
-            // 
-            this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
-            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 452);
-            this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WEATHER_VALUE.Name = "CHEAT_WEATHER_VALUE";
-            this.CHEAT_WEATHER_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WEATHER_VALUE.TabIndex = 309;
-            // 
-            // CHEAT_WEATHER_COMBO
-            // 
-            this.CHEAT_WEATHER_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CHEAT_WEATHER_COMBO.FormattingEnabled = true;
-            this.CHEAT_WEATHER_COMBO.Items.AddRange(new object[] {
-            "00=晴れ",
-            "01=雪",
-            "02=吹雪",
-            "04=雨",
-            "05=マグマ",
-            "06=砂嵐",
-            "07=曇り"});
-            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
-            this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
-            this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
-            this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
-            this.CHEAT_WEATHER_COMBO.TabIndex = 310;
-            // 
-            // CHEAT_WEATHER
-            // 
-            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 402);
-            this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
-            this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_WEATHER.TabIndex = 308;
-            this.CHEAT_WEATHER.Text = "天気を変更(次のターンから適用されます。)";
-            this.CHEAT_WEATHER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_WEATHER.UseVisualStyleBackColor = true;
-            this.CHEAT_WEATHER.Click += new System.EventHandler(this.CHEAT_WEATHER_Click);
-            // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(6, 13);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(796, 30);
-            this.label19.TabIndex = 307;
-            this.label19.Text = "デバッグ用に便利なチート機能です";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1120, 363);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(313, 18);
-            this.label18.TabIndex = 229;
-            this.label18.Text = "0で霧なし。1が視界1マスの最大の霧です。";
-            // 
-            // CHEAT_FOG_VALUE
-            // 
-            this.CHEAT_FOG_VALUE.Hexadecimal = true;
-            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 361);
-            this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_FOG_VALUE.Name = "CHEAT_FOG_VALUE";
-            this.CHEAT_FOG_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_FOG_VALUE.TabIndex = 9;
-            // 
-            // CHEAT_ITEM_COUNT
-            // 
-            this.CHEAT_ITEM_COUNT.Location = new System.Drawing.Point(213, 414);
-            this.CHEAT_ITEM_COUNT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_ITEM_COUNT.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_COUNT.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_COUNT.Name = "CHEAT_ITEM_COUNT";
-            this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_ITEM_COUNT.TabIndex = 5;
-            this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(68, 409);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 18);
-            this.label17.TabIndex = 221;
-            this.label17.Text = "個数";
-            // 
-            // CHEAT_ITEM_ID
-            // 
-            this.CHEAT_ITEM_ID.Hexadecimal = true;
-            this.CHEAT_ITEM_ID.Location = new System.Drawing.Point(213, 378);
-            this.CHEAT_ITEM_ID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_ITEM_ID.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_ID.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_ID.Name = "CHEAT_ITEM_ID";
-            this.CHEAT_ITEM_ID.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_ITEM_ID.TabIndex = 4;
-            this.CHEAT_ITEM_ID.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // CHEAT_MONEY_VALUE
-            // 
-            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(1041, 271);
-            this.CHEAT_MONEY_VALUE.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_MONEY_VALUE.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.CHEAT_MONEY_VALUE.Name = "CHEAT_MONEY_VALUE";
-            this.CHEAT_MONEY_VALUE.Size = new System.Drawing.Size(187, 25);
-            this.CHEAT_MONEY_VALUE.TabIndex = 7;
-            this.CHEAT_MONEY_VALUE.Value = new decimal(new int[] {
-            838861,
-            0,
-            0,
-            0});
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(895, 758);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 18);
-            this.label16.TabIndex = 216;
-            this.label16.Text = "解析者向けの機能";
-            // 
-            // Dump03Button
-            // 
-            this.Dump03Button.Location = new System.Drawing.Point(893, 832);
-            this.Dump03Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Dump03Button.Name = "Dump03Button";
-            this.Dump03Button.Size = new System.Drawing.Size(742, 40);
-            this.Dump03Button.TabIndex = 12;
-            this.Dump03Button.Text = "メモリをダンプしてファイルに書き込む 0x03000000";
-            this.Dump03Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dump03Button.UseVisualStyleBackColor = true;
-            this.Dump03Button.Click += new System.EventHandler(this.Dump0x03000000Button_Click);
-            // 
-            // Dump02Button
-            // 
-            this.Dump02Button.Location = new System.Drawing.Point(893, 778);
-            this.Dump02Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Dump02Button.Name = "Dump02Button";
-            this.Dump02Button.Size = new System.Drawing.Size(742, 40);
-            this.Dump02Button.TabIndex = 10;
-            this.Dump02Button.Text = "メモリをダンプしてファイルに書き込む 0x02000000";
-            this.Dump02Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dump02Button.UseVisualStyleBackColor = true;
-            this.Dump02Button.Click += new System.EventHandler(this.Dump0x02000000Button_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(887, 363);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 18);
-            this.label15.TabIndex = 213;
-            this.label15.Text = "霧レベル";
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(64, 124);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(738, 46);
-            this.label14.TabIndex = 212;
-            this.label14.Text = "クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(889, 273);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 18);
-            this.label13.TabIndex = 210;
-            this.label13.Text = "所持金";
-            // 
-            // CHEAT_FOG
-            // 
-            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 312);
-            this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_FOG.Name = "CHEAT_FOG";
-            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_FOG.TabIndex = 8;
-            this.CHEAT_FOG.Text = "霧レベルを変更(次のターンから適用されます。)";
-            this.CHEAT_FOG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_FOG.UseVisualStyleBackColor = true;
-            this.CHEAT_FOG.Click += new System.EventHandler(this.CHEAT_FOG_Click);
-            // 
-            // CHEAT_MONEY
-            // 
-            this.CHEAT_MONEY.Location = new System.Drawing.Point(887, 220);
-            this.CHEAT_MONEY.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_MONEY.Name = "CHEAT_MONEY";
-            this.CHEAT_MONEY.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_MONEY.TabIndex = 6;
-            this.CHEAT_MONEY.Text = "所持金を以下の値に変更する";
-            this.CHEAT_MONEY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_MONEY.UseVisualStyleBackColor = true;
-            this.CHEAT_MONEY.Click += new System.EventHandler(this.CHEAT_MONEY_Click);
-            // 
-            // CHEAT_ITEM_JUMP
-            // 
-            this.CHEAT_ITEM_JUMP.AutoSize = true;
-            this.CHEAT_ITEM_JUMP.Location = new System.Drawing.Point(68, 380);
-            this.CHEAT_ITEM_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_ITEM_JUMP.Name = "CHEAT_ITEM_JUMP";
-            this.CHEAT_ITEM_JUMP.Size = new System.Drawing.Size(125, 18);
-            this.CHEAT_ITEM_JUMP.TabIndex = 207;
-            this.CHEAT_ITEM_JUMP.Text = "持たせるアイテム";
-            // 
-            // CHEAT_UNIT_HAVE_ITEM
-            // 
-            this.CHEAT_UNIT_HAVE_ITEM.Location = new System.Drawing.Point(66, 329);
-            this.CHEAT_UNIT_HAVE_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_HAVE_ITEM.Name = "CHEAT_UNIT_HAVE_ITEM";
-            this.CHEAT_UNIT_HAVE_ITEM.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_HAVE_ITEM.TabIndex = 3;
-            this.CHEAT_UNIT_HAVE_ITEM.Text = "このユニットに以下のアイテムをもたせる";
-            this.CHEAT_UNIT_HAVE_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_HAVE_ITEM.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_HAVE_ITEM.Click += new System.EventHandler(this.CHEAT_UNIT_HAVE_ITEM_Click);
-            // 
-            // CHEAT_UNIT_HP_1
-            // 
-            this.CHEAT_UNIT_HP_1.Location = new System.Drawing.Point(66, 274);
-            this.CHEAT_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_HP_1.Name = "CHEAT_UNIT_HP_1";
-            this.CHEAT_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_HP_1.TabIndex = 2;
-            this.CHEAT_UNIT_HP_1.Text = "このユニットのHPを1にする。";
-            this.CHEAT_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_HP_1.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_UNIT_HP_1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(68, 197);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(199, 18);
-            this.label11.TabIndex = 204;
-            this.label11.Text = "現在、操作しているユニット";
-            // 
-            // CHEAT_UNIT_GROW
-            // 
-            this.CHEAT_UNIT_GROW.Location = new System.Drawing.Point(66, 220);
-            this.CHEAT_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_GROW.Name = "CHEAT_UNIT_GROW";
-            this.CHEAT_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_GROW.TabIndex = 1;
-            this.CHEAT_UNIT_GROW.Text = "このユニットのパラメータをカンストさせる。";
-            this.CHEAT_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_UNIT_GROW_Click);
-            // 
-            // CHEAT_SET_FLAG03
-            // 
-            this.CHEAT_SET_FLAG03.Location = new System.Drawing.Point(61, 58);
-            this.CHEAT_SET_FLAG03.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_SET_FLAG03.Name = "CHEAT_SET_FLAG03";
-            this.CHEAT_SET_FLAG03.Size = new System.Drawing.Size(742, 53);
-            this.CHEAT_SET_FLAG03.TabIndex = 0;
-            this.CHEAT_SET_FLAG03.Text = "現在の章をクリアします。(Hotkey: Ctrl + U)";
-            this.CHEAT_SET_FLAG03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_SET_FLAG03.UseVisualStyleBackColor = true;
-            this.CHEAT_SET_FLAG03.Click += new System.EventHandler(this.CHEAT_SET_FLAG03_Click);
-            // 
-            // CurrentTextBox
-            // 
-            this.CurrentTextBox.ErrorMessage = "";
-            this.CurrentTextBox.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CurrentTextBox.Location = new System.Drawing.Point(1, 62);
-            this.CurrentTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.CurrentTextBox.Name = "CurrentTextBox";
-            this.CurrentTextBox.Placeholder = "";
-            this.CurrentTextBox.ReadOnly = true;
-            this.CurrentTextBox.Size = new System.Drawing.Size(582, 191);
-            this.CurrentTextBox.TabIndex = 309;
-            this.CurrentTextBox.Text = "";
-            this.CurrentTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CurrentTextBox_MouseDoubleClick);
-            // 
-            // N_SelectAddress
-            // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(166, 262);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(240, 25);
-            this.N_SelectAddress.TabIndex = 307;
-            // 
-            // RunningEventListBox
-            // 
-            this.RunningEventListBox.FormattingEnabled = true;
-            this.RunningEventListBox.HorizontalScrollbar = true;
-            this.RunningEventListBox.IntegralHeight = false;
-            this.RunningEventListBox.ItemHeight = 18;
-            this.RunningEventListBox.Location = new System.Drawing.Point(588, 30);
-            this.RunningEventListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.RunningEventListBox.Name = "RunningEventListBox";
-            this.RunningEventListBox.Size = new System.Drawing.Size(1058, 850);
-            this.RunningEventListBox.TabIndex = 168;
-            this.RunningEventListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RunningEventListBox_KeyDown);
-            this.RunningEventListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RunningEventListBox_MouseDoubleClick);
-            // 
-            // FlagListBox
-            // 
-            this.FlagListBox.FormattingEnabled = true;
-            this.FlagListBox.IntegralHeight = false;
-            this.FlagListBox.ItemHeight = 18;
-            this.FlagListBox.Location = new System.Drawing.Point(0, 287);
-            this.FlagListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.FlagListBox.Name = "FlagListBox";
-            this.FlagListBox.Size = new System.Drawing.Size(407, 598);
-            this.FlagListBox.TabIndex = 16;
-            this.FlagListBox.SelectedIndexChanged += new System.EventHandler(this.FlagListBox_SelectedIndexChanged);
-            this.FlagListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlagListBox_KeyDown);
-            this.FlagListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FlagListBox_MouseDoubleClick);
-            // 
-            // BGMName
-            // 
-            this.BGMName.ErrorMessage = "";
-            this.BGMName.Location = new System.Drawing.Point(266, 4);
-            this.BGMName.Margin = new System.Windows.Forms.Padding(2);
-            this.BGMName.Name = "BGMName";
-            this.BGMName.Placeholder = "";
-            this.BGMName.ReadOnly = true;
-            this.BGMName.Size = new System.Drawing.Size(316, 25);
-            this.BGMName.TabIndex = 166;
-            // 
-            // MemorySlotListBox
-            // 
-            this.MemorySlotListBox.FormattingEnabled = true;
-            this.MemorySlotListBox.IntegralHeight = false;
-            this.MemorySlotListBox.ItemHeight = 18;
-            this.MemorySlotListBox.Location = new System.Drawing.Point(410, 287);
-            this.MemorySlotListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MemorySlotListBox.Name = "MemorySlotListBox";
-            this.MemorySlotListBox.Size = new System.Drawing.Size(173, 598);
-            this.MemorySlotListBox.TabIndex = 14;
-            this.MemorySlotListBox.SelectedIndexChanged += new System.EventHandler(this.MemorySlotListBox_SelectedIndexChanged);
-            // 
-            // N_L_14_MAP
-            // 
-            this.N_L_14_MAP.ErrorMessage = "";
-            this.N_L_14_MAP.Location = new System.Drawing.Point(242, 34);
-            this.N_L_14_MAP.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_14_MAP.Name = "N_L_14_MAP";
-            this.N_L_14_MAP.Placeholder = "";
-            this.N_L_14_MAP.ReadOnly = true;
-            this.N_L_14_MAP.Size = new System.Drawing.Size(339, 25);
-            this.N_L_14_MAP.TabIndex = 141;
-            // 
-            // EventHistoryListBox
-            // 
-            this.EventHistoryListBox.FormattingEnabled = true;
-            this.EventHistoryListBox.HorizontalScrollbar = true;
-            this.EventHistoryListBox.IntegralHeight = false;
-            this.EventHistoryListBox.ItemHeight = 18;
-            this.EventHistoryListBox.Location = new System.Drawing.Point(26, 70);
-            this.EventHistoryListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.EventHistoryListBox.Name = "EventHistoryListBox";
-            this.EventHistoryListBox.Size = new System.Drawing.Size(1613, 814);
-            this.EventHistoryListBox.TabIndex = 109;
-            this.EventHistoryListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventHistoryListBox_KeyDown);
-            this.EventHistoryListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventHistoryListBox_MouseDoubleClick);
-            // 
-            // PROCS_SelectAddress
-            // 
-            this.PROCS_SelectAddress.ErrorMessage = "";
-            this.PROCS_SelectAddress.Location = new System.Drawing.Point(490, 4);
-            this.PROCS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PROCS_SelectAddress.Name = "PROCS_SelectAddress";
-            this.PROCS_SelectAddress.Placeholder = "";
-            this.PROCS_SelectAddress.ReadOnly = true;
-            this.PROCS_SelectAddress.Size = new System.Drawing.Size(210, 25);
-            this.PROCS_SelectAddress.TabIndex = 303;
-            // 
-            // PROCS_L_104_DWORD
-            // 
-            this.PROCS_L_104_DWORD.ErrorMessage = "";
-            this.PROCS_L_104_DWORD.Location = new System.Drawing.Point(908, 572);
-            this.PROCS_L_104_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_104_DWORD.Name = "PROCS_L_104_DWORD";
-            this.PROCS_L_104_DWORD.Placeholder = "";
-            this.PROCS_L_104_DWORD.ReadOnly = true;
-            this.PROCS_L_104_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_104_DWORD.TabIndex = 122;
-            // 
-            // PROCS_L_96_DWORD
-            // 
-            this.PROCS_L_96_DWORD.ErrorMessage = "";
-            this.PROCS_L_96_DWORD.Location = new System.Drawing.Point(908, 542);
-            this.PROCS_L_96_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_96_DWORD.Name = "PROCS_L_96_DWORD";
-            this.PROCS_L_96_DWORD.Placeholder = "";
-            this.PROCS_L_96_DWORD.ReadOnly = true;
-            this.PROCS_L_96_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_96_DWORD.TabIndex = 109;
-            // 
-            // PROCS_L_88_DWORD
-            // 
-            this.PROCS_L_88_DWORD.ErrorMessage = "";
-            this.PROCS_L_88_DWORD.Location = new System.Drawing.Point(908, 512);
-            this.PROCS_L_88_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_88_DWORD.Name = "PROCS_L_88_DWORD";
-            this.PROCS_L_88_DWORD.Placeholder = "";
-            this.PROCS_L_88_DWORD.ReadOnly = true;
-            this.PROCS_L_88_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_88_DWORD.TabIndex = 91;
-            // 
-            // PROCS_L_80_DWORD
-            // 
-            this.PROCS_L_80_DWORD.ErrorMessage = "";
-            this.PROCS_L_80_DWORD.Location = new System.Drawing.Point(908, 481);
-            this.PROCS_L_80_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_80_DWORD.Name = "PROCS_L_80_DWORD";
-            this.PROCS_L_80_DWORD.Placeholder = "";
-            this.PROCS_L_80_DWORD.ReadOnly = true;
-            this.PROCS_L_80_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_80_DWORD.TabIndex = 79;
-            // 
-            // PROCS_L_72_DWORD
-            // 
-            this.PROCS_L_72_DWORD.ErrorMessage = "";
-            this.PROCS_L_72_DWORD.Location = new System.Drawing.Point(908, 451);
-            this.PROCS_L_72_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_72_DWORD.Name = "PROCS_L_72_DWORD";
-            this.PROCS_L_72_DWORD.Placeholder = "";
-            this.PROCS_L_72_DWORD.ReadOnly = true;
-            this.PROCS_L_72_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_72_DWORD.TabIndex = 65;
-            // 
-            // PROCS_L_64_DWORD
-            // 
-            this.PROCS_L_64_DWORD.ErrorMessage = "";
-            this.PROCS_L_64_DWORD.Location = new System.Drawing.Point(908, 422);
-            this.PROCS_L_64_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_64_DWORD.Name = "PROCS_L_64_DWORD";
-            this.PROCS_L_64_DWORD.Placeholder = "";
-            this.PROCS_L_64_DWORD.ReadOnly = true;
-            this.PROCS_L_64_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_64_DWORD.TabIndex = 53;
-            // 
-            // PROCS_L_100_DWORD
-            // 
-            this.PROCS_L_100_DWORD.ErrorMessage = "";
-            this.PROCS_L_100_DWORD.Location = new System.Drawing.Point(422, 576);
-            this.PROCS_L_100_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_100_DWORD.Name = "PROCS_L_100_DWORD";
-            this.PROCS_L_100_DWORD.Placeholder = "";
-            this.PROCS_L_100_DWORD.ReadOnly = true;
-            this.PROCS_L_100_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_100_DWORD.TabIndex = 115;
-            // 
-            // PROCS_L_92_DWORD
-            // 
-            this.PROCS_L_92_DWORD.ErrorMessage = "";
-            this.PROCS_L_92_DWORD.Location = new System.Drawing.Point(422, 546);
-            this.PROCS_L_92_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_92_DWORD.Name = "PROCS_L_92_DWORD";
-            this.PROCS_L_92_DWORD.Placeholder = "";
-            this.PROCS_L_92_DWORD.ReadOnly = true;
-            this.PROCS_L_92_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_92_DWORD.TabIndex = 103;
-            // 
-            // PROCS_L_84_DWORD
-            // 
-            this.PROCS_L_84_DWORD.ErrorMessage = "";
-            this.PROCS_L_84_DWORD.Location = new System.Drawing.Point(422, 512);
-            this.PROCS_L_84_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_84_DWORD.Name = "PROCS_L_84_DWORD";
-            this.PROCS_L_84_DWORD.Placeholder = "";
-            this.PROCS_L_84_DWORD.ReadOnly = true;
-            this.PROCS_L_84_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_84_DWORD.TabIndex = 85;
-            // 
-            // PROCS_L_76_DWORD
-            // 
-            this.PROCS_L_76_DWORD.ErrorMessage = "";
-            this.PROCS_L_76_DWORD.Location = new System.Drawing.Point(422, 480);
-            this.PROCS_L_76_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_76_DWORD.Name = "PROCS_L_76_DWORD";
-            this.PROCS_L_76_DWORD.Placeholder = "";
-            this.PROCS_L_76_DWORD.ReadOnly = true;
-            this.PROCS_L_76_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_76_DWORD.TabIndex = 72;
-            // 
-            // PROCS_L_68_DWORD
-            // 
-            this.PROCS_L_68_DWORD.ErrorMessage = "";
-            this.PROCS_L_68_DWORD.Location = new System.Drawing.Point(422, 450);
-            this.PROCS_L_68_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_68_DWORD.Name = "PROCS_L_68_DWORD";
-            this.PROCS_L_68_DWORD.Placeholder = "";
-            this.PROCS_L_68_DWORD.ReadOnly = true;
-            this.PROCS_L_68_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_68_DWORD.TabIndex = 59;
-            // 
-            // PROCS_L_60_DWORD
-            // 
-            this.PROCS_L_60_DWORD.ErrorMessage = "";
-            this.PROCS_L_60_DWORD.Location = new System.Drawing.Point(422, 422);
-            this.PROCS_L_60_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_60_DWORD.Name = "PROCS_L_60_DWORD";
-            this.PROCS_L_60_DWORD.Placeholder = "";
-            this.PROCS_L_60_DWORD.ReadOnly = true;
-            this.PROCS_L_60_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_60_DWORD.TabIndex = 47;
-            // 
-            // PROCS_L_56_DWORD
-            // 
-            this.PROCS_L_56_DWORD.ErrorMessage = "";
-            this.PROCS_L_56_DWORD.Location = new System.Drawing.Point(908, 392);
-            this.PROCS_L_56_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_56_DWORD.Name = "PROCS_L_56_DWORD";
-            this.PROCS_L_56_DWORD.Placeholder = "";
-            this.PROCS_L_56_DWORD.ReadOnly = true;
-            this.PROCS_L_56_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_56_DWORD.TabIndex = 40;
-            // 
-            // PROCS_L_52_DWORD
-            // 
-            this.PROCS_L_52_DWORD.ErrorMessage = "";
-            this.PROCS_L_52_DWORD.Location = new System.Drawing.Point(422, 392);
-            this.PROCS_L_52_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_52_DWORD.Name = "PROCS_L_52_DWORD";
-            this.PROCS_L_52_DWORD.Placeholder = "";
-            this.PROCS_L_52_DWORD.ReadOnly = true;
-            this.PROCS_L_52_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_52_DWORD.TabIndex = 34;
-            // 
-            // PROCS_L_48_DWORD
-            // 
-            this.PROCS_L_48_DWORD.ErrorMessage = "";
-            this.PROCS_L_48_DWORD.Location = new System.Drawing.Point(908, 362);
-            this.PROCS_L_48_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_48_DWORD.Name = "PROCS_L_48_DWORD";
-            this.PROCS_L_48_DWORD.Placeholder = "";
-            this.PROCS_L_48_DWORD.ReadOnly = true;
-            this.PROCS_L_48_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_48_DWORD.TabIndex = 28;
-            // 
-            // PROCS_L_44_DWORD
-            // 
-            this.PROCS_L_44_DWORD.ErrorMessage = "";
-            this.PROCS_L_44_DWORD.Location = new System.Drawing.Point(422, 362);
-            this.PROCS_L_44_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_44_DWORD.Name = "PROCS_L_44_DWORD";
-            this.PROCS_L_44_DWORD.Placeholder = "";
-            this.PROCS_L_44_DWORD.ReadOnly = true;
-            this.PROCS_L_44_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_44_DWORD.TabIndex = 22;
-            // 
-            // PROCS_CURSOL_CODE
-            // 
-            this.PROCS_CURSOL_CODE.ErrorMessage = "";
-            this.PROCS_CURSOL_CODE.Location = new System.Drawing.Point(338, 35);
-            this.PROCS_CURSOL_CODE.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_CURSOL_CODE.Name = "PROCS_CURSOL_CODE";
-            this.PROCS_CURSOL_CODE.Placeholder = "";
-            this.PROCS_CURSOL_CODE.ReadOnly = true;
-            this.PROCS_CURSOL_CODE.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_CURSOL_CODE.TabIndex = 300;
-            // 
-            // PROCS_L_16_TEXT
-            // 
-            this.PROCS_L_16_TEXT.ErrorMessage = "";
-            this.PROCS_L_16_TEXT.Location = new System.Drawing.Point(338, 120);
-            this.PROCS_L_16_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_16_TEXT.Name = "PROCS_L_16_TEXT";
-            this.PROCS_L_16_TEXT.Placeholder = "";
-            this.PROCS_L_16_TEXT.ReadOnly = true;
-            this.PROCS_L_16_TEXT.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_16_TEXT.TabIndex = 295;
-            // 
-            // textBoxEx16
-            // 
-            this.textBoxEx16.ErrorMessage = "";
-            this.textBoxEx16.Location = new System.Drawing.Point(329, 830);
-            this.textBoxEx16.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx16.Name = "textBoxEx16";
-            this.textBoxEx16.Placeholder = "";
-            this.textBoxEx16.ReadOnly = true;
-            this.textBoxEx16.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx16.TabIndex = 289;
-            // 
-            // textBoxEx17
-            // 
-            this.textBoxEx17.ErrorMessage = "";
-            this.textBoxEx17.Location = new System.Drawing.Point(329, 802);
-            this.textBoxEx17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx17.Name = "textBoxEx17";
-            this.textBoxEx17.Placeholder = "";
-            this.textBoxEx17.ReadOnly = true;
-            this.textBoxEx17.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx17.TabIndex = 286;
-            // 
-            // textBoxEx18
-            // 
-            this.textBoxEx18.ErrorMessage = "";
-            this.textBoxEx18.Location = new System.Drawing.Point(329, 773);
-            this.textBoxEx18.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx18.Name = "textBoxEx18";
-            this.textBoxEx18.Placeholder = "";
-            this.textBoxEx18.ReadOnly = true;
-            this.textBoxEx18.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx18.TabIndex = 283;
-            // 
-            // PROCS_L_32_RAMPROCS
-            // 
-            this.PROCS_L_32_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_32_RAMPROCS.Location = new System.Drawing.Point(338, 234);
-            this.PROCS_L_32_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_32_RAMPROCS.Name = "PROCS_L_32_RAMPROCS";
-            this.PROCS_L_32_RAMPROCS.Placeholder = "";
-            this.PROCS_L_32_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_32_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_32_RAMPROCS.TabIndex = 223;
-            // 
-            // PROCS_L_28_RAMPROCS
-            // 
-            this.PROCS_L_28_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_28_RAMPROCS.Location = new System.Drawing.Point(338, 206);
-            this.PROCS_L_28_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_28_RAMPROCS.Name = "PROCS_L_28_RAMPROCS";
-            this.PROCS_L_28_RAMPROCS.Placeholder = "";
-            this.PROCS_L_28_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_28_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_28_RAMPROCS.TabIndex = 220;
-            // 
-            // PROCS_L_24_RAMPROCS
-            // 
-            this.PROCS_L_24_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_24_RAMPROCS.Location = new System.Drawing.Point(338, 176);
-            this.PROCS_L_24_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_24_RAMPROCS.Name = "PROCS_L_24_RAMPROCS";
-            this.PROCS_L_24_RAMPROCS.Placeholder = "";
-            this.PROCS_L_24_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_24_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_24_RAMPROCS.TabIndex = 217;
-            // 
-            // PROCS_L_20_RAMPROCS
-            // 
-            this.PROCS_L_20_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_20_RAMPROCS.Location = new System.Drawing.Point(338, 149);
-            this.PROCS_L_20_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_20_RAMPROCS.Name = "PROCS_L_20_RAMPROCS";
-            this.PROCS_L_20_RAMPROCS.Placeholder = "";
-            this.PROCS_L_20_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_20_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_20_RAMPROCS.TabIndex = 214;
-            // 
-            // PROCS_L_12_ASM
-            // 
-            this.PROCS_L_12_ASM.ErrorMessage = "";
-            this.PROCS_L_12_ASM.Location = new System.Drawing.Point(338, 91);
-            this.PROCS_L_12_ASM.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_12_ASM.Name = "PROCS_L_12_ASM";
-            this.PROCS_L_12_ASM.Placeholder = "";
-            this.PROCS_L_12_ASM.ReadOnly = true;
-            this.PROCS_L_12_ASM.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_12_ASM.TabIndex = 211;
-            // 
-            // PROCS_L_8_ASM
-            // 
-            this.PROCS_L_8_ASM.ErrorMessage = "";
-            this.PROCS_L_8_ASM.Location = new System.Drawing.Point(338, 62);
-            this.PROCS_L_8_ASM.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_8_ASM.Name = "PROCS_L_8_ASM";
-            this.PROCS_L_8_ASM.Placeholder = "";
-            this.PROCS_L_8_ASM.ReadOnly = true;
-            this.PROCS_L_8_ASM.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_8_ASM.TabIndex = 208;
-            // 
-            // PROCS_NAME
-            // 
-            this.PROCS_NAME.ErrorMessage = "";
-            this.PROCS_NAME.Location = new System.Drawing.Point(338, 6);
-            this.PROCS_NAME.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_NAME.Name = "PROCS_NAME";
-            this.PROCS_NAME.Placeholder = "";
-            this.PROCS_NAME.ReadOnly = true;
-            this.PROCS_NAME.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_NAME.TabIndex = 202;
-            // 
-            // ProcsListBox
-            // 
-            this.ProcsListBox.FormattingEnabled = true;
-            this.ProcsListBox.IntegralHeight = false;
-            this.ProcsListBox.ItemHeight = 18;
-            this.ProcsListBox.Location = new System.Drawing.Point(14, 28);
-            this.ProcsListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ProcsListBox.Name = "ProcsListBox";
-            this.ProcsListBox.Size = new System.Drawing.Size(1629, 850);
-            this.ProcsListBox.TabIndex = 161;
-            this.ProcsListBox.SelectedIndexChanged += new System.EventHandler(this.ProcsListBox_SelectedIndexChanged);
-            this.ProcsListBox.DoubleClick += new System.EventHandler(this.ProcsListBox_DoubleClick);
-            this.ProcsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsListBox_KeyDown);
-            // 
-            // PARTY_SelectAddress
-            // 
-            this.PARTY_SelectAddress.ErrorMessage = "";
-            this.PARTY_SelectAddress.Location = new System.Drawing.Point(444, 4);
-            this.PARTY_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PARTY_SelectAddress.Name = "PARTY_SelectAddress";
-            this.PARTY_SelectAddress.Placeholder = "";
-            this.PARTY_SelectAddress.ReadOnly = true;
-            this.PARTY_SelectAddress.Size = new System.Drawing.Size(259, 25);
-            this.PARTY_SelectAddress.TabIndex = 303;
-            // 
-            // PARTY_AI2_TEXT
-            // 
-            this.PARTY_AI2_TEXT.ErrorMessage = "";
-            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(620, 558);
-            this.PARTY_AI2_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_AI2_TEXT.Multiline = true;
-            this.PARTY_AI2_TEXT.Name = "PARTY_AI2_TEXT";
-            this.PARTY_AI2_TEXT.Placeholder = "";
-            this.PARTY_AI2_TEXT.ReadOnly = true;
-            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(154, 68);
-            this.PARTY_AI2_TEXT.TabIndex = 435;
-            // 
-            // PARTY_AI1_TEXT
-            // 
-            this.PARTY_AI1_TEXT.ErrorMessage = "";
-            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(620, 497);
-            this.PARTY_AI1_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_AI1_TEXT.Multiline = true;
-            this.PARTY_AI1_TEXT.Name = "PARTY_AI1_TEXT";
-            this.PARTY_AI1_TEXT.Placeholder = "";
-            this.PARTY_AI1_TEXT.ReadOnly = true;
-            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(154, 57);
-            this.PARTY_AI1_TEXT.TabIndex = 434;
-            // 
-            // PARTY_PORTRAIT
-            // 
-            this.PARTY_PORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_PORTRAIT.Location = new System.Drawing.Point(260, 153);
-            this.PARTY_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.PARTY_PORTRAIT.Name = "PARTY_PORTRAIT";
-            this.PARTY_PORTRAIT.Size = new System.Drawing.Size(118, 104);
-            this.PARTY_PORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_PORTRAIT.TabIndex = 433;
-            this.PARTY_PORTRAIT.TabStop = false;
-            // 
-            // PARTY_L_38_ITEMICON
-            // 
-            this.PARTY_L_38_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(590, 386);
-            this.PARTY_L_38_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_38_ITEMICON.Name = "PARTY_L_38_ITEMICON";
-            this.PARTY_L_38_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_38_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_38_ITEMICON.TabIndex = 432;
-            this.PARTY_L_38_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_36_ITEMICON
-            // 
-            this.PARTY_L_36_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(590, 354);
-            this.PARTY_L_36_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_36_ITEMICON.Name = "PARTY_L_36_ITEMICON";
-            this.PARTY_L_36_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_36_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_36_ITEMICON.TabIndex = 431;
-            this.PARTY_L_36_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_34_ITEMICON
-            // 
-            this.PARTY_L_34_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(590, 323);
-            this.PARTY_L_34_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_34_ITEMICON.Name = "PARTY_L_34_ITEMICON";
-            this.PARTY_L_34_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_34_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_34_ITEMICON.TabIndex = 430;
-            this.PARTY_L_34_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_32_ITEMICON
-            // 
-            this.PARTY_L_32_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(590, 291);
-            this.PARTY_L_32_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_32_ITEMICON.Name = "PARTY_L_32_ITEMICON";
-            this.PARTY_L_32_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_32_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_32_ITEMICON.TabIndex = 429;
-            this.PARTY_L_32_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_30_ITEMICON
-            // 
-            this.PARTY_L_30_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(590, 260);
-            this.PARTY_L_30_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_30_ITEMICON.Name = "PARTY_L_30_ITEMICON";
-            this.PARTY_L_30_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_30_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_30_ITEMICON.TabIndex = 428;
-            this.PARTY_L_30_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_38_ITEM
-            // 
-            this.PARTY_L_38_ITEM.ErrorMessage = "";
-            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(430, 376);
-            this.PARTY_L_38_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_38_ITEM.Name = "PARTY_L_38_ITEM";
-            this.PARTY_L_38_ITEM.Placeholder = "";
-            this.PARTY_L_38_ITEM.ReadOnly = true;
-            this.PARTY_L_38_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_38_ITEM.TabIndex = 363;
-            // 
-            // PARTY_L_36_ITEM
-            // 
-            this.PARTY_L_36_ITEM.ErrorMessage = "";
-            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(430, 348);
-            this.PARTY_L_36_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_36_ITEM.Name = "PARTY_L_36_ITEM";
-            this.PARTY_L_36_ITEM.Placeholder = "";
-            this.PARTY_L_36_ITEM.ReadOnly = true;
-            this.PARTY_L_36_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_36_ITEM.TabIndex = 358;
-            // 
-            // PARTY_L_34_ITEM
-            // 
-            this.PARTY_L_34_ITEM.ErrorMessage = "";
-            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(430, 323);
-            this.PARTY_L_34_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_34_ITEM.Name = "PARTY_L_34_ITEM";
-            this.PARTY_L_34_ITEM.Placeholder = "";
-            this.PARTY_L_34_ITEM.ReadOnly = true;
-            this.PARTY_L_34_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_34_ITEM.TabIndex = 353;
-            // 
-            // PARTY_L_32_ITEM
-            // 
-            this.PARTY_L_32_ITEM.ErrorMessage = "";
-            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(430, 294);
-            this.PARTY_L_32_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_32_ITEM.Name = "PARTY_L_32_ITEM";
-            this.PARTY_L_32_ITEM.Placeholder = "";
-            this.PARTY_L_32_ITEM.ReadOnly = true;
-            this.PARTY_L_32_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_32_ITEM.TabIndex = 333;
-            // 
-            // PARTY_L_30_ITEM
-            // 
-            this.PARTY_L_30_ITEM.ErrorMessage = "";
-            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(430, 268);
-            this.PARTY_L_30_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_30_ITEM.Name = "PARTY_L_30_ITEM";
-            this.PARTY_L_30_ITEM.Placeholder = "";
-            this.PARTY_L_30_ITEM.ReadOnly = true;
-            this.PARTY_L_30_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_30_ITEM.TabIndex = 328;
-            // 
-            // PARTY_RAMUNITAID
-            // 
-            this.PARTY_RAMUNITAID.ErrorMessage = "";
-            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
-            this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
-            this.PARTY_RAMUNITAID.Placeholder = "";
-            this.PARTY_RAMUNITAID.ReadOnly = true;
-            this.PARTY_RAMUNITAID.Size = new System.Drawing.Size(157, 25);
-            this.PARTY_RAMUNITAID.TabIndex = 319;
-            this.PARTY_RAMUNITAID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_RAMUNITAID_MouseDoubleClick);
-            // 
-            // PARTY_RAMUNITSTATE
-            // 
-            this.PARTY_RAMUNITSTATE.ErrorMessage = "";
-            this.PARTY_RAMUNITSTATE.Location = new System.Drawing.Point(280, 65);
-            this.PARTY_RAMUNITSTATE.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_RAMUNITSTATE.Name = "PARTY_RAMUNITSTATE";
-            this.PARTY_RAMUNITSTATE.Placeholder = "";
-            this.PARTY_RAMUNITSTATE.ReadOnly = true;
-            this.PARTY_RAMUNITSTATE.Size = new System.Drawing.Size(482, 25);
-            this.PARTY_RAMUNITSTATE.TabIndex = 302;
-            // 
-            // PARTY_ROMCLASSPOINTER
-            // 
-            this.PARTY_ROMCLASSPOINTER.ErrorMessage = "";
-            this.PARTY_ROMCLASSPOINTER.Location = new System.Drawing.Point(280, 34);
-            this.PARTY_ROMCLASSPOINTER.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_ROMCLASSPOINTER.Name = "PARTY_ROMCLASSPOINTER";
-            this.PARTY_ROMCLASSPOINTER.Placeholder = "";
-            this.PARTY_ROMCLASSPOINTER.ReadOnly = true;
-            this.PARTY_ROMCLASSPOINTER.Size = new System.Drawing.Size(481, 25);
-            this.PARTY_ROMCLASSPOINTER.TabIndex = 300;
-            this.PARTY_ROMCLASSPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMCLASSPOINTER_MouseDoubleClick);
-            // 
-            // textBoxEx52
-            // 
-            this.textBoxEx52.ErrorMessage = "";
-            this.textBoxEx52.Location = new System.Drawing.Point(329, 830);
-            this.textBoxEx52.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx52.Name = "textBoxEx52";
-            this.textBoxEx52.Placeholder = "";
-            this.textBoxEx52.ReadOnly = true;
-            this.textBoxEx52.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx52.TabIndex = 289;
-            // 
-            // textBoxEx53
-            // 
-            this.textBoxEx53.ErrorMessage = "";
-            this.textBoxEx53.Location = new System.Drawing.Point(329, 802);
-            this.textBoxEx53.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx53.Name = "textBoxEx53";
-            this.textBoxEx53.Placeholder = "";
-            this.textBoxEx53.ReadOnly = true;
-            this.textBoxEx53.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx53.TabIndex = 286;
-            // 
-            // textBoxEx54
-            // 
-            this.textBoxEx54.ErrorMessage = "";
-            this.textBoxEx54.Location = new System.Drawing.Point(329, 773);
-            this.textBoxEx54.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx54.Name = "textBoxEx54";
-            this.textBoxEx54.Placeholder = "";
-            this.textBoxEx54.ReadOnly = true;
-            this.textBoxEx54.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx54.TabIndex = 283;
-            // 
-            // PARTY_ROMUNITPOINTER
-            // 
-            this.PARTY_ROMUNITPOINTER.ErrorMessage = "";
-            this.PARTY_ROMUNITPOINTER.Location = new System.Drawing.Point(280, 5);
-            this.PARTY_ROMUNITPOINTER.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_ROMUNITPOINTER.Name = "PARTY_ROMUNITPOINTER";
-            this.PARTY_ROMUNITPOINTER.Placeholder = "";
-            this.PARTY_ROMUNITPOINTER.ReadOnly = true;
-            this.PARTY_ROMUNITPOINTER.Size = new System.Drawing.Size(481, 25);
-            this.PARTY_ROMUNITPOINTER.TabIndex = 202;
-            this.PARTY_ROMUNITPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMUNITPOINTER_MouseDoubleClick);
             // 
             // PaletteAddress
             // 
@@ -5934,138 +6066,6 @@
             this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
-            // 
-            // CHEAT_WARP_NODE_NAME
-            // 
-            this.CHEAT_WARP_NODE_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_NODE_NAME.Location = new System.Drawing.Point(1122, 188);
-            this.CHEAT_WARP_NODE_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_NODE_NAME.Name = "CHEAT_WARP_NODE_NAME";
-            this.CHEAT_WARP_NODE_NAME.Placeholder = "";
-            this.CHEAT_WARP_NODE_NAME.ReadOnly = true;
-            this.CHEAT_WARP_NODE_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_NODE_NAME.TabIndex = 329;
-            // 
-            // systemIconPictureBox5
-            // 
-            this.systemIconPictureBox5.IconNumber = ((uint)(3u));
-            this.systemIconPictureBox5.IconType = FEBuilderGBA.SystemIconPictureBox.IconTypeEnum.Music;
-            this.systemIconPictureBox5.Location = new System.Drawing.Point(824, 56);
-            this.systemIconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
-            this.systemIconPictureBox5.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox5.TabIndex = 326;
-            this.systemIconPictureBox5.TabStop = false;
-            // 
-            // CHEAT_WARP_EDTION_NAME
-            // 
-            this.CHEAT_WARP_EDTION_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_EDTION_NAME.Location = new System.Drawing.Point(1122, 155);
-            this.CHEAT_WARP_EDTION_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_EDTION_NAME.Name = "CHEAT_WARP_EDTION_NAME";
-            this.CHEAT_WARP_EDTION_NAME.Placeholder = "";
-            this.CHEAT_WARP_EDTION_NAME.ReadOnly = true;
-            this.CHEAT_WARP_EDTION_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_EDTION_NAME.TabIndex = 324;
-            // 
-            // CHEAT_WARP_CHPATER_NAME
-            // 
-            this.CHEAT_WARP_CHPATER_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_CHPATER_NAME.Location = new System.Drawing.Point(1122, 122);
-            this.CHEAT_WARP_CHPATER_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_CHPATER_NAME.Name = "CHEAT_WARP_CHPATER_NAME";
-            this.CHEAT_WARP_CHPATER_NAME.Placeholder = "";
-            this.CHEAT_WARP_CHPATER_NAME.ReadOnly = true;
-            this.CHEAT_WARP_CHPATER_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_CHPATER_NAME.TabIndex = 321;
-            // 
-            // systemIconPictureBox4
-            // 
-            this.systemIconPictureBox4.IconNumber = ((uint)(2u));
-            this.systemIconPictureBox4.Location = new System.Drawing.Point(1, 487);
-            this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
-            this.systemIconPictureBox4.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox4.TabIndex = 316;
-            this.systemIconPictureBox4.TabStop = false;
-            // 
-            // CHEAT_UNIT_MEMORY_AND_NAME
-            // 
-            this.CHEAT_UNIT_MEMORY_AND_NAME.ErrorMessage = "";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Location = new System.Drawing.Point(290, 190);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Name = "CHEAT_UNIT_MEMORY_AND_NAME";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Placeholder = "";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.ReadOnly = true;
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Size = new System.Drawing.Size(513, 25);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.TabIndex = 225;
-            // 
-            // CHEAT_ITEM_NAME
-            // 
-            this.CHEAT_ITEM_NAME.ErrorMessage = "";
-            this.CHEAT_ITEM_NAME.Location = new System.Drawing.Point(294, 378);
-            this.CHEAT_ITEM_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_ITEM_NAME.Name = "CHEAT_ITEM_NAME";
-            this.CHEAT_ITEM_NAME.Placeholder = "";
-            this.CHEAT_ITEM_NAME.ReadOnly = true;
-            this.CHEAT_ITEM_NAME.Size = new System.Drawing.Size(189, 25);
-            this.CHEAT_ITEM_NAME.TabIndex = 219;
-            // 
-            // systemIconPictureBox3
-            // 
-            this.systemIconPictureBox3.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(830, 758);
-            this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
-            this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox3.TabIndex = 228;
-            this.systemIconPictureBox3.TabStop = false;
-            // 
-            // systemIconPictureBox2
-            // 
-            this.systemIconPictureBox2.IconNumber = ((uint)(8u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(824, 220);
-            this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
-            this.systemIconPictureBox2.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox2.TabIndex = 227;
-            this.systemIconPictureBox2.TabStop = false;
-            // 
-            // CHEAT_UNIT_MEMORY_AND_ICON
-            // 
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Location = new System.Drawing.Point(1, 197);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Name = "CHEAT_UNIT_MEMORY_AND_ICON";
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Size = new System.Drawing.Size(56, 56);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.TabIndex = 226;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.TabStop = false;
-            // 
-            // systemIconPictureBox1
-            // 
-            this.systemIconPictureBox1.Location = new System.Drawing.Point(1, 56);
-            this.systemIconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
-            this.systemIconPictureBox1.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox1.TabIndex = 224;
-            this.systemIconPictureBox1.TabStop = false;
-            // 
-            // CHEAT_ITEM_ICON
-            // 
-            this.CHEAT_ITEM_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHEAT_ITEM_ICON.Location = new System.Drawing.Point(487, 378);
-            this.CHEAT_ITEM_ICON.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ITEM_ICON.Name = "CHEAT_ITEM_ICON";
-            this.CHEAT_ITEM_ICON.Size = new System.Drawing.Size(32, 32);
-            this.CHEAT_ITEM_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CHEAT_ITEM_ICON.TabIndex = 220;
-            this.CHEAT_ITEM_ICON.TabStop = false;
             // 
             // textBoxEx1
             // 
@@ -6404,6 +6404,23 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.MainTabControl.ResumeLayout(false);
+            this.CheatPage.ResumeLayout(false);
+            this.CheatPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
             this.EventPage.ResumeLayout(false);
             this.EventPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B14)).EndInit();
@@ -6505,6 +6522,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B71)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B70)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B69)).EndInit();
@@ -6571,29 +6594,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).EndInit();
-            this.CheatPage.ResumeLayout(false);
-            this.CheatPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
             this.ResumeLayout(false);
 
         }
