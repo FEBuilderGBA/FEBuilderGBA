@@ -1,0 +1,11 @@
+NAME=タイトルに戻るときに、青いフラッシュが表示される問題を修正します(256 colors titlebackground)
+INFO=このパッチは、以前のバージョンにあった、問題を修正するhotfixです。
+NAME.en=Fixes blue flash when return to title(256 colors titlebackground)
+INFO.en=This patch is a hotfix that fixes a problem in previous versions.
+NAME.zh=Fixes blue flash when return to title(256 colors titlebackground)
+INFO.zh=This patch is a hotfix that fixes a problem in previous versions.
+
+TYPE=BIN
+IF:0xC579E=0x01 0x80
+BINF:0xC579E=nop.dmp
+IF:0xC5724=0x00 0x4B 0x18 0x47
