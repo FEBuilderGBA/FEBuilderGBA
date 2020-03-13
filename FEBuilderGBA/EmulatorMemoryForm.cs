@@ -1633,7 +1633,7 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 6)
             {
                 Program.RAM.write_u8(unitRAMAddress + 0x42, 0x3);
-                Program.RAM.write_u8(unitRAMAddress + 0x44, 0x16);
+                Program.RAM.write_u8(unitRAMAddress + 0x44, 0x3);
             }
             else
             {
