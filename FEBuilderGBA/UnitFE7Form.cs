@@ -74,6 +74,8 @@ namespace FEBuilderGBA
             {
                 InitFE7UMagicExtends(controls);
             }
+        
+            this.AddressList.Focus();
         }
         void InitFE7UMagicExtends(List<Control> controls)
         {

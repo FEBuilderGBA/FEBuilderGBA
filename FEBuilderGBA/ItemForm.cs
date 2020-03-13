@@ -83,6 +83,8 @@ namespace FEBuilderGBA
                 MagicExtUnitBase.Show();
             }
             VennouWeaponLockArray(controls);
+        
+            this.AddressList.Focus();
         }
         void VennouWeaponLockArray(List<Control> controls)
         {

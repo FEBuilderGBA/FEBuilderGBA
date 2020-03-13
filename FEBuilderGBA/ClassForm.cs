@@ -126,6 +126,8 @@ namespace FEBuilderGBA
 
             //SkillSystemsによる 特効リワーク
             InitFE8ClassType(controls);
+        
+            this.AddressList.Focus();
         }
 
 

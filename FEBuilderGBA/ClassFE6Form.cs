@@ -87,6 +87,7 @@ namespace FEBuilderGBA
                 this.AddressList.Height += AddressListExpandsButton_255.Height;
                 AddressListExpandsButton_255.Hide();
             }
+            this.AddressList.Focus();
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)

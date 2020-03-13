@@ -72,6 +72,8 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<UnitFE6Form>();
             InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
+        
+            this.AddressList.Focus();
         }
 
         public static void GetSim(ref GrowSimulator sim,uint uid)

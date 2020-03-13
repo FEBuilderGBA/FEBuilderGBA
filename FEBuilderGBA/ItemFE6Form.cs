@@ -60,6 +60,8 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<ItemFE6Form>();
             InputFormRef.LoadCheckboxesResource("item_checkbox_", controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
+        
+            this.AddressList.Focus();
         }
 
 

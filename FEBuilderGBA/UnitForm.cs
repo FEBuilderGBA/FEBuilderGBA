@@ -106,6 +106,8 @@ namespace FEBuilderGBA
                     InitFE8UMagicExtends(controls);
                 }
             }
+
+            this.AddressList.Focus();
         }
 
         public static uint GetUnitAddr(uint uid)
