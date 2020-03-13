@@ -7510,6 +7510,7 @@
 03004F9C	gCurrentUnitIndex	{J}
 03005240	gGlobalTriggerData	{J}
 03005270	gSomeWMEventRelatedStruct	{J}
+
 03005272	gWMCamera	{J}
 0300533E	gSaved	{J}
 03006790	gpReadSramFast	{J}

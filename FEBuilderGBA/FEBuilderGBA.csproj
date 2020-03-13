@@ -80,6 +80,7 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="EmulatorMemoryUtil.cs" />
     <Compile Include="ImageUtilBorderAP.cs" />
     <Compile Include="PatchUtil.cs" />
     <Compile Include="SongInstrumentDirectSoundForm.cs">

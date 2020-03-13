@@ -166,8 +166,8 @@ namespace FEBuilderGBA
                     return PatchUtil.SearchSkipWorldMapPatch() != PatchUtil.mnc2_fix_enum.NO;
                 };
                 reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
-                patchName1 = "Eliminate the constraint of freezing unless it enters from the world map";///No Translate
-                patchName2 = "Eliminate the constraint of freezing unless it enters from the world map.";///No Translate
+                patchName1 = "MNC2Fix";///No Translate
+                patchName2 = "MNC2Fix";///No Translate
                 patchShowName = "Skip Worldmap";
                 patchCombo = "fix";
             }

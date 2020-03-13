@@ -5124,4 +5124,17 @@
 0800af74	イベント命令を動作させる関数	r0=イベント命令ポインタ:POINTER_EVENT	r1=引数?1-3	{U}
 0808667C	DeletePlayerPhaseInterface6Cs	{J}
 08085C7C	DeletePlayerPhaseInterface6Cs	{U}
-
+080793a0	GetAvailableLocaCommandAt	{J}
+08079990	MaybeCallEndEvent_	{J}
+080799A0	MaybeCallEndEvent	{J}
+0807977c	ShouldCallEndEvent	{J}
+0807a208	CallEndEvent	{J}
+08078BD0	GetAvailableLocaCommandAt	{U}
+080791C0	MaybeCallEndEvent_	{U}
+080791D0	MaybeCallEndEvent	{U}
+08078FAC	ShouldCallEndEvent	{U}
+08079A38	CallEndEvent	{U}
+0800AE98	CallExecuteEvent_Slot3	r0=event	{J}
+0800AEA4	Call_ExecuteEvent	r0=event	r1=slot	{J}
+0800AF5C	CallExecuteEvent_Slot3	r0=event	{U}
+0800AF68	Call_ExecuteEvent	r0=event	r1=slot	{U}

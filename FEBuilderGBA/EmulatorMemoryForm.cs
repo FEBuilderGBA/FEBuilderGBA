@@ -531,7 +531,7 @@ namespace FEBuilderGBA
             MakeProcNode(tree, procHeaderP + 0x18, topTreeIndex, jisage + 1);
 
             //同僚のノードを探索
-            MakeProcNode(tree, procHeaderP + 0x20, topTreeIndex, jisage);
+            MakeProcNode(tree, procHeaderP + 0x20, topTreeIndex, jisage); //next
             return true;
         }
         string GetProcName(uint procHeaderP,uint startCode)
@@ -1008,6 +1008,11 @@ namespace FEBuilderGBA
                 MainTabControl.SelectedTab = CheatPage;
                 CHEAT_ALL_PLAYER_UNIT_GROW.PerformClick();
             }
+            else if (e.Control && e.KeyCode == Keys.J)
+            {
+                MainTabControl.SelectedTab = CheatPage;
+                CHEAT_WARP.PerformClick();
+            }
         }
 
         private void ProcsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1130,6 +1135,18 @@ namespace FEBuilderGBA
                 CHEAT_WARP_EDTION_JUMP.Hide();
                 CHEAT_WARP_EDTION_VALUE.Hide();
                 CHEAT_WARP_EDTION_NAME.Hide();
+            }
+
+            if (Program.ROM.RomInfo.version() >= 8)
+            {
+                InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_WARP_NODE_VALUE, this.CHEAT_WARP_NODE_NAME, 0, "BASEPOINT", args);
+                InputFormRef.makeJumpEventHandler(this.CHEAT_WARP_NODE_VALUE, this.CHEAT_WARP_NODE_JUMP, "BASEPOINT", args);
+            }
+            else
+            {
+                CHEAT_WARP_NODE_JUMP.Hide();
+                CHEAT_WARP_NODE_VALUE.Hide();
+                CHEAT_WARP_NODE_NAME.Hide();
             }
         }
 
@@ -1555,7 +1572,8 @@ namespace FEBuilderGBA
 
         private void CHEAT_SET_FLAG03_Click(object sender, EventArgs e)
         {
-            WriteFlag(0x03, true);
+//            WriteFlag(0x03, true);
+            EmulatorMemoryUtil.CHEAT_CALLENDEvent(this);
         }
 
         void CanNotUpdateControlUnit()
@@ -1612,7 +1630,6 @@ namespace FEBuilderGBA
         }
         void UpdateUnitAIToDoNotMOVE(uint unitRAMAddress, bool showNotify)
         {
-            uint writeRAMPointer;
             if (Program.ROM.RomInfo.version() == 6)
             {
                 Program.RAM.write_u8(unitRAMAddress + 0x42, 0x3);
@@ -2662,15 +2679,15 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version() == 8)
             {
-                CHEAT_WARP_FE8();
+                EmulatorMemoryUtil.CHEAT_WARP_FE8(this, (uint)this.CHEAT_WARP_CHPATER_VALUE.Value, (uint)this.CHEAT_WARP_EDTION_VALUE.Value, (uint)this.CHEAT_WARP_NODE_VALUE.Value);
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
-                CHEAT_WARP_FE7();
+                EmulatorMemoryUtil.CHEAT_WARP_FE7(this, (uint)this.CHEAT_WARP_CHPATER_VALUE.Value, (uint)this.CHEAT_WARP_EDTION_VALUE.Value);
             }
             else if (Program.ROM.RomInfo.version() == 6)
             {
-                CHEAT_WARP_FE6();
+                EmulatorMemoryUtil.CHEAT_WARP_FE6(this, (uint)this.CHEAT_WARP_CHPATER_VALUE.Value);
             }
             else
             {
@@ -2679,250 +2696,20 @@ namespace FEBuilderGBA
             }
         }
 
-        private void CHEAT_WARP_FE8()
-        {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
-
-            //Search MAPTASK Procs
-            byte[] need;
-            bool[] mask;
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
-            uint eventExecuteFucntion;
-            uint endAllMenusFunction;
-            uint deletePlayerPhaseInterface6CsFunction;
-
-            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
-            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
-            {
-                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。");
-                return;
-            }
-            if (Program.ROM.RomInfo.is_multibyte())
-            {//FE8J
-                //Search MAPTASK Procs
-                need = new byte[] { 0xE8, 0x5D, 0x5C, 0x08, 0x00, 0x00, 0x00, 0x08 };
-                mask = new bool[] { false, false, false, false, true, true, true, false };
-                eventExecuteFucntion = 0x0800D340;
-                endAllMenusFunction = 0x0804FCAC;
-                deletePlayerPhaseInterface6CsFunction = 0x0808F44C;
-            }
-            else
-            {//FE8U
-                //Search MAPTASK Procs
-                need = new byte[] { 0x08, 0xD9, 0x59, 0x08, 0x00, 0x00, 0x00, 0x08 };
-                mask = new bool[] { false, false, false, false, true, true, true, false };
-                eventExecuteFucntion = 0x0800D07C;
-                endAllMenusFunction = 0x0804ef20;
-                deletePlayerPhaseInterface6CsFunction = 0x0808d150;
-            }
-
-            //Search MAPTASK Procs
-            uint maptask = Program.RAM.GrepPatternMatch0x02(need, mask, 4);
-            if (maptask == U.NOT_FOUND)
-            {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
-                return;
-            }
-
-            uint warp_chapter = (uint)CHEAT_WARP_CHPATER_VALUE.Value;
-            byte[] warpCode = { 
-            //ASM
-            0x00, 0xB5, 0x12, 0x4A, 0x42, 0x60, 0x12, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x11, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x78, 0x46, 0x0E, 0x30, 0x01, 0x21, 0x0F, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x01, 0xBC, 0x00, 0x47, 0xC0, 0x46, 
-            //Event +24
-            0x22, 0x2A, 0xFF, 0xFF,                        //MNC2
-            0x28, 0x02, 0x07, 0x00, 0x20, 0x01, 0x00, 0x00,//NoFade+Term
-            0x00, 0x00, 0x00, 0x00,                        //padding
-            //hook procs +34
-            0x02, 0x00, 0x00, 0x00, 0x61, 0xB6, 0x02, 0x02, 0x0E, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-            0x30, 0x5E, 0x5C, 0x08, //backCode
-            0xAC, 0xFC, 0x04, 0x08, 
-            0x4C, 0xF4, 0x08, 0x08, 
-            0x40, 0xD3, 0x00, 0x08  //eventExecuteFucntion
-            };
-            //章ID
-            U.write_u16(warpCode, 0x26, warp_chapter);
-            //Procsで実行を指定するASMコードの位置
-            U.write_u32(warpCode, 0x38, work_address + 1);
-
-            //メニューがあれば閉じる命令
-            U.write_u32(warpCode, 0x50, endAllMenusFunction);
-            //TI PIなどのプレイヤーUIがあれば閉じる命令
-            U.write_u32(warpCode, 0x54, deletePlayerPhaseInterface6CsFunction);
-
-            //イベント命令を実行する命令
-            U.write_u32(warpCode, 0x58, eventExecuteFucntion);
-
-            //復帰するProcsのコード
-            uint backCode = Program.RAM.u32(maptask + 4);
-            U.write_u32(warpCode, 0x4C, backCode);
-            Program.RAM.write_range(work_address, warpCode);
-
-            uint procs_jump_addr = work_address + 0x34;
-            Program.RAM.write_u32(maptask + 4, procs_jump_addr);
-
-            //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-            Program.RAM.write_u8(stageStructAddr + 0x1b, (uint)CHEAT_WARP_EDTION_VALUE.Value);
-
-            InputFormRef.ShowWriteNotifyAnimation(this, procs_jump_addr);
-        }
-
-        private void CHEAT_WARP_FE7()
-        {
-            Debug.Assert(Program.ROM.RomInfo.version() == 7);
-
-            //Search MAPTASK Procs
-            byte[] need;
-            bool[] mask;
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
-            uint eventExecuteFucntion;
-            uint endAllMenusFunction;
-            uint deletePlayerPhaseInterface6CsFunction;
-
-            if (Program.ROM.RomInfo.is_multibyte())
-            {//FE7J
-                //Search MAPTASK Procs
-                need = new byte[] { 0x64, 0x54, 0xC0, 0x08, 0x00, 0x00, 0x00, 0x08 };
-                mask = new bool[] { false, false, false, false, true, true, true, false };
-                eventExecuteFucntion = 0x0800AEB0;
-                endAllMenusFunction = 0x0804AC78;
-                deletePlayerPhaseInterface6CsFunction = 0x0808667C;
-            }
-            else
-            {//FE7U
-                //Search MAPTASK Procs
-                need = new byte[] { 0xA8, 0x61, 0xB9, 0x08, 0x00, 0x00, 0x00, 0x08 };
-                mask = new bool[] { false, false, false, false, true, true, true, false };
-                eventExecuteFucntion = 0x0800af74;
-                endAllMenusFunction = 0x0804A490;
-                deletePlayerPhaseInterface6CsFunction = 0x08085C7C;
-            }
-
-            //Search MAPTASK Procs
-            uint maptask = Program.RAM.GrepPatternMatch0x02(need, mask, 4);
-            if (maptask == U.NOT_FOUND)
-            {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
-                return;
-            }
-
-            uint warp_chapter = (uint)CHEAT_WARP_CHPATER_VALUE.Value;
-            byte[] warpCode = { 
-            //ASM
-            0x00, 0xB5, 0x12, 0x4A, 0x42, 0x60, 0x12, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x11, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x78, 0x46, 0x0E, 0x30, 0x01, 0x21, 0x0F, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x01, 0xBC, 0x00, 0x47, 0xC0, 0x46, 
-            //Event +24
-            0x7F, 0x00, 0xFF, 0xFF,	                       //MNCH
-            0x01, 0x00, 0x00, 0x00,                        //_1
-            0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,//ENDA
-            //hook procs +34
-            0x02, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x02, 0x02, 0x0E, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-            0x00, 0x00, 0x00, 0x08, //backCode
-            0x00, 0x00, 0x00, 0x08, 
-            0x00, 0x00, 0x00, 0x08, 
-            0x00, 0x00, 0x00, 0x08  //eventExecuteFucntion
-            };
-            if (Program.ROM.RomInfo.is_multibyte() == false)
-            {//FE7Uだと、MNCHは、0x7f 0x00 ではなく、 0x81 0x00.
-                U.write_u8(warpCode, 0x24, 0x81);
-            }
-            //章ID
-            U.write_u16(warpCode, 0x26, warp_chapter);
-            //Procsで実行を指定するASMコードの位置
-            U.write_u32(warpCode, 0x38, work_address + 1);
-
-            //メニューがあれば閉じる命令
-            U.write_u32(warpCode, 0x50, endAllMenusFunction);
-            //TI PIなどのプレイヤーUIがあれば閉じる命令
-            U.write_u32(warpCode, 0x54, deletePlayerPhaseInterface6CsFunction);
-
-            //イベント命令を実行する命令
-            U.write_u32(warpCode, 0x58, eventExecuteFucntion);
-
-            //復帰するProcsのコード
-            uint backCode = Program.RAM.u32(maptask + 4);
-            U.write_u32(warpCode, 0x4C, backCode);
-            Program.RAM.write_range(work_address, warpCode);
-
-            uint procs_jump_addr = work_address + 0x34;
-            Program.RAM.write_u32(maptask + 4, procs_jump_addr);
-
-            //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-            Program.RAM.write_u8(stageStructAddr + 0x1b, (uint)CHEAT_WARP_EDTION_VALUE.Value);
-
-            InputFormRef.ShowWriteNotifyAnimation(this, procs_jump_addr);
-        }
-
-        private void CHEAT_WARP_FE6()
-        {
-            Debug.Assert(Program.ROM.RomInfo.version() == 6);
-
-            //Search MAPTASK Procs
-            byte[] need;
-            bool[] mask;
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
-            uint eventExecuteFucntion;
-            uint endAllMenusFunction;
-            uint deletePlayerPhaseInterface6CsFunction;
-
-            //Search MAPTASK Procs
-            need = new byte[] { 0xE4, 0x7B, 0x5C, 0x08, 0x00, 0x00, 0x00, 0x08 };
-            mask = new bool[] { false, false, false, false, true, true, true, false };
-            eventExecuteFucntion = 0x0800d9b8;
-            endAllMenusFunction = 0x08041A38;
-            deletePlayerPhaseInterface6CsFunction = 0x0808F2A4;
-
-            //Search MAPTASK Procs
-            uint maptask = Program.RAM.GrepPatternMatch0x02(need, mask, 4);
-            if (maptask == U.NOT_FOUND)
-            {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
-                return;
-            }
-
-            uint warp_chapter = (uint)CHEAT_WARP_CHPATER_VALUE.Value;
-            byte[] warpCode = { 
-            //ASM
-            0x00, 0xB5, 0x12, 0x4A, 0x42, 0x60, 0x12, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x11, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x78, 0x46, 0x0E, 0x30, 0x01, 0x21, 0x0F, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x01, 0xBC, 0x00, 0x47, 0xC0, 0x46, 
-            
-            //Event +24
-            0x3D, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00,//MNCH
-            0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,//END
-            //hook procs +34
-            0x02, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x02, 0x02, 0x0E, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-            0x00, 0x00, 0x00, 0x08, //backCode
-            0x00, 0x00, 0x00, 0x08, 
-            0x00, 0x00, 0x00, 0x08, 
-            0x00, 0x00, 0x00, 0x08  //eventExecuteFucntion
-            };
-            //章ID
-            U.write_u16(warpCode, 0x28, warp_chapter);
-            //Procsで実行を指定するASMコードの位置
-            U.write_u32(warpCode, 0x38, work_address + 1);
-
-            //メニューがあれば閉じる命令
-            U.write_u32(warpCode, 0x50, endAllMenusFunction);
-            //TI PIなどのプレイヤーUIがあれば閉じる命令
-            U.write_u32(warpCode, 0x54, deletePlayerPhaseInterface6CsFunction);
-
-            //イベント命令を実行する命令
-            U.write_u32(warpCode, 0x58, eventExecuteFucntion);
-
-            //復帰するProcsのコード
-            uint backCode = Program.RAM.u32(maptask + 4);
-            U.write_u32(warpCode, 0x4C, backCode);
-            Program.RAM.write_range(work_address, warpCode);
-
-            uint procs_jump_addr = work_address + 0x34;
-            Program.RAM.write_u32(maptask + 4, procs_jump_addr);
-
-            InputFormRef.ShowWriteNotifyAnimation(this, procs_jump_addr);
-        }
-
         private void N_B14_ValueChanged(object sender, EventArgs e)
         {
             CHEAT_WARP_CHPATER_VALUE.Value = N_B14.Value + 1;
         }
+
+        private void CHEAT_WARP_CHPATER_VALUE_ValueChanged(object sender, EventArgs e)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                CHEAT_WARP_NODE_VALUE.Value = EmulatorMemoryUtil.GetWorldmapNode((uint)CHEAT_WARP_CHPATER_VALUE.Value);
+            }
+
+        }
+
 
 
     }

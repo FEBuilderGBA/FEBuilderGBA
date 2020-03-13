@@ -1153,12 +1153,6 @@ Difficulty: Normal
 :このバージョンでは、章ワープを利用できません。
 Chapter warp is not available in this version.
 
-:MNC2の修正パッチを適応していないので、章ワープを利用できません。
-Chapter warp is not available because the patch for MNC2 has not been applied.
-
-:MAPTASK Procsの位置を特定できませんでした
-The location of MAPTASK Procs could not be determined.
-
 :自動的に更新する
 Automatically update
 
@@ -1327,8 +1321,8 @@ Set all enemy units AI to "do not move".
 :ワープする章
 Warp chapter
 
-:章ワープ
-Warp Chapter
+:この章へワープする(Hotkey: Ctrl + J)
+Warp to this chapter.(Hotkey: Ctrl + J)
 
 :すべての敵ユニットのHPを1にします。
 Set HP of all enemy units to 1.
@@ -1337,7 +1331,7 @@ Set HP of all enemy units to 1.
 Including enemies, Grow ALL units strongest.
 
 :すべての味方ユニットを最強にします。(Hotkey Ctrl + G)
-Grow all Player units strongest.(Hotkey Ctrl + G).
+Grow all Player units strongest.(Hotkey Ctrl + G)
 
 :天気
 Weather
@@ -1387,8 +1381,8 @@ Dump memory and write to file0x02000000
 :霧レベル
 Fog level
 
-:(他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。)
-(If you want to change other flags, double-click on the flag you want to change from the event screen).
+:クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。
+If you want to change other flags other than the clear flag, double-click the flag you want to change from the event screen.
 
 :所持金
 Gold
@@ -1414,11 +1408,17 @@ Currently operating unit
 :このユニットのパラメータをカンストさせる。
 Counter Stop the parameters of this unit
 
-:クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。(Hotkey: Ctrl + U)
-Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.(Hotkey: Ctrl + U).
+:現在の章をクリアします。(Hotkey: Ctrl + U)
+Clear the current chapter.(Hotkey: Ctrl + U)
 
 :エミュレータへ接続
 Connect to emulator
+
+:MNC2の修正パッチを適応していないので、章ワープを利用できません。
+Chapter warp is not available because the patch for MNC2 has not been applied.
+
+:MAPTASK Procsの位置を特定できませんでした
+The location of MAPTASK Procs could not be determined.
 
 :ROMのバージョン情報:
 ROM version information:

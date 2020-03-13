@@ -270,6 +270,21 @@ namespace FEBuilderGBA
             }
             return (OptionForm.show_worldmap_node_extends() == OptionForm.show_extends_enum.Show);
         }
-
+        public static uint GetNodeIDByChapter(uint chapter_id)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint max = InputFormRef.DataCount;
+            uint addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < max; i++ , addr += InputFormRef.BlockSize)
+            {
+                uint c1 = Program.ROM.u8(addr + 4);
+                uint c2 = Program.ROM.u8(addr + 5);
+                if (c1 == chapter_id || c2 == chapter_id)
+                {
+                    return i;
+                }
+            }
+            return U.NOT_FOUND;
+        }
     }
 }

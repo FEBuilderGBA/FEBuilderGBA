@@ -4082,6 +4082,10 @@ namespace FEBuilderGBA
                     ImageCGForm f = (ImageCGForm)InputFormRef.JumpForm<ImageCGForm>(value, "AddressList", src_object);
                 }
             }
+            else if (linktype == "BASEPOINT")
+            {
+                InputFormRef.JumpForm<WorldMapPointForm>(value, "AddressList", src_object);
+            }
         }
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)
         {
