@@ -34,55 +34,6 @@
             this.ERROR_EMU_CONNECT = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MainTabControl = new System.Windows.Forms.TabControl();
-            this.CheatPage = new System.Windows.Forms.TabPage();
-            this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_WARP_NODE_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE = new System.Windows.Forms.Button();
-            this.CHEAT_WARP_EDTION_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_EDTION_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_WARP_CHPATER_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WARP_CHPATER_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_WARP = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
-            this.CHEAT_ALL_PLAYER_UNIT_GROW = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.CHEAT_WEATHER_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_WEATHER_COMBO = new System.Windows.Forms.ComboBox();
-            this.CHEAT_WEATHER = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.CHEAT_FOG_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_ITEM_COUNT = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.CHEAT_ITEM_ID = new System.Windows.Forms.NumericUpDown();
-            this.CHEAT_MONEY_VALUE = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Dump03Button = new System.Windows.Forms.Button();
-            this.Dump02Button = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CHEAT_FOG = new System.Windows.Forms.Button();
-            this.CHEAT_MONEY = new System.Windows.Forms.Button();
-            this.CHEAT_ITEM_JUMP = new System.Windows.Forms.Label();
-            this.CHEAT_UNIT_HAVE_ITEM = new System.Windows.Forms.Button();
-            this.CHEAT_UNIT_HP_1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.CHEAT_UNIT_GROW = new System.Windows.Forms.Button();
-            this.CHEAT_SET_FLAG03 = new System.Windows.Forms.Button();
-            this.CHEAT_WARP_EDTION_NAME = new FEBuilderGBA.TextBoxEx();
-            this.CHEAT_WARP_CHPATER_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_UNIT_MEMORY_AND_NAME = new FEBuilderGBA.TextBoxEx();
-            this.CHEAT_ITEM_NAME = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_UNIT_MEMORY_AND_ICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
-            this.CHEAT_ITEM_ICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.EventPage = new System.Windows.Forms.TabPage();
             this.SubtileButton = new System.Windows.Forms.Button();
             this.SpeechButton = new System.Windows.Forms.Button();
@@ -435,6 +386,55 @@
             this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
             this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
+            this.CheatPage = new System.Windows.Forms.TabPage();
+            this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP_NODE_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE = new System.Windows.Forms.Button();
+            this.CHEAT_WARP_EDTION_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_EDTION_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP_CHPATER_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WARP_CHPATER_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_WARP = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_PLAYER_UNIT_GROW = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CHEAT_WEATHER_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WEATHER_COMBO = new System.Windows.Forms.ComboBox();
+            this.CHEAT_WEATHER = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CHEAT_FOG_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_ITEM_COUNT = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.CHEAT_ITEM_ID = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_MONEY_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Dump03Button = new System.Windows.Forms.Button();
+            this.Dump02Button = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CHEAT_FOG = new System.Windows.Forms.Button();
+            this.CHEAT_MONEY = new System.Windows.Forms.Button();
+            this.CHEAT_ITEM_JUMP = new System.Windows.Forms.Label();
+            this.CHEAT_UNIT_HAVE_ITEM = new System.Windows.Forms.Button();
+            this.CHEAT_UNIT_HP_1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.CHEAT_UNIT_GROW = new System.Windows.Forms.Button();
+            this.CHEAT_SET_FLAG03 = new System.Windows.Forms.Button();
+            this.CHEAT_WARP_EDTION_NAME = new FEBuilderGBA.TextBoxEx();
+            this.CHEAT_WARP_CHPATER_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_UNIT_MEMORY_AND_NAME = new FEBuilderGBA.TextBoxEx();
+            this.CHEAT_ITEM_NAME = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_UNIT_MEMORY_AND_ICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_ITEM_ICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx3 = new FEBuilderGBA.TextBoxEx();
@@ -466,22 +466,6 @@
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
-            this.CheatPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
             this.EventPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BGM)).BeginInit();
@@ -649,6 +633,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).BeginInit();
+            this.CheatPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
             this.SuspendLayout();
             // 
             // AutoUpdateCheckBox
@@ -704,649 +704,6 @@
             this.MainTabControl.SelectedIndex = 0;
             this.MainTabControl.Size = new System.Drawing.Size(1654, 920);
             this.MainTabControl.TabIndex = 67;
-            // 
-            // CheatPage
-            // 
-            this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox5);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_UNIT_HP_1);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.label35);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_COMBO);
-            this.CheatPage.Controls.Add(this.CHEAT_WEATHER);
-            this.CheatPage.Controls.Add(this.label19);
-            this.CheatPage.Controls.Add(this.label18);
-            this.CheatPage.Controls.Add(this.CHEAT_FOG_VALUE);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_COUNT);
-            this.CheatPage.Controls.Add(this.label17);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ID);
-            this.CheatPage.Controls.Add(this.CHEAT_MONEY_VALUE);
-            this.CheatPage.Controls.Add(this.label16);
-            this.CheatPage.Controls.Add(this.Dump03Button);
-            this.CheatPage.Controls.Add(this.Dump02Button);
-            this.CheatPage.Controls.Add(this.label15);
-            this.CheatPage.Controls.Add(this.label14);
-            this.CheatPage.Controls.Add(this.label13);
-            this.CheatPage.Controls.Add(this.CHEAT_FOG);
-            this.CheatPage.Controls.Add(this.CHEAT_MONEY);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_JUMP);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HAVE_ITEM);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HP_1);
-            this.CheatPage.Controls.Add(this.label11);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_GROW);
-            this.CheatPage.Controls.Add(this.CHEAT_SET_FLAG03);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_NAME);
-            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox4);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_NAME);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_NAME);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox3);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox2);
-            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_ICON);
-            this.CheatPage.Controls.Add(this.systemIconPictureBox1);
-            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ICON);
-            this.CheatPage.Location = new System.Drawing.Point(4, 28);
-            this.CheatPage.Margin = new System.Windows.Forms.Padding(2);
-            this.CheatPage.Name = "CheatPage";
-            this.CheatPage.Padding = new System.Windows.Forms.Padding(2);
-            this.CheatPage.Size = new System.Drawing.Size(1646, 888);
-            this.CheatPage.TabIndex = 3;
-            this.CheatPage.Text = "チート";
-            // 
-            // CHEAT_WARP_NODE_VALUE
-            // 
-            this.CHEAT_WARP_NODE_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_NODE_VALUE.Location = new System.Drawing.Point(1041, 188);
-            this.CHEAT_WARP_NODE_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_NODE_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_NODE_VALUE.Name = "CHEAT_WARP_NODE_VALUE";
-            this.CHEAT_WARP_NODE_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_NODE_VALUE.TabIndex = 327;
-            // 
-            // CHEAT_WARP_NODE_JUMP
-            // 
-            this.CHEAT_WARP_NODE_JUMP.AutoSize = true;
-            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(890, 190);
-            this.CHEAT_WARP_NODE_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_NODE_JUMP.Name = "CHEAT_WARP_NODE_JUMP";
-            this.CHEAT_WARP_NODE_JUMP.Size = new System.Drawing.Size(139, 18);
-            this.CHEAT_WARP_NODE_JUMP.TabIndex = 328;
-            this.CHEAT_WARP_NODE_JUMP.Text = "ワールドマップ拠点";
-            // 
-            // CHEAT_WARP_NODE_NAME
-            // 
-            this.CHEAT_WARP_NODE_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_NODE_NAME.Location = new System.Drawing.Point(1122, 188);
-            this.CHEAT_WARP_NODE_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_NODE_NAME.Name = "CHEAT_WARP_NODE_NAME";
-            this.CHEAT_WARP_NODE_NAME.Placeholder = "";
-            this.CHEAT_WARP_NODE_NAME.ReadOnly = true;
-            this.CHEAT_WARP_NODE_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_NODE_NAME.TabIndex = 329;
-            // 
-            // systemIconPictureBox5
-            // 
-            this.systemIconPictureBox5.IconNumber = ((uint)(3u));
-            this.systemIconPictureBox5.IconType = FEBuilderGBA.SystemIconPictureBox.IconTypeEnum.Music;
-            this.systemIconPictureBox5.Location = new System.Drawing.Point(824, 56);
-            this.systemIconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
-            this.systemIconPictureBox5.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox5.TabIndex = 326;
-            this.systemIconPictureBox5.TabStop = false;
-            // 
-            // CHEAT_ALL_ENEMY_DO_NOT_MOVE
-            // 
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Location = new System.Drawing.Point(67, 676);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Name = "CHEAT_ALL_ENEMY_DO_NOT_MOVE";
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TabIndex = 325;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Text = "すべての敵ユニットAIを「移動しない」に設定にします。";
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click);
-            // 
-            // CHEAT_WARP_EDTION_VALUE
-            // 
-            this.CHEAT_WARP_EDTION_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_EDTION_VALUE.Location = new System.Drawing.Point(1041, 155);
-            this.CHEAT_WARP_EDTION_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_EDTION_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_EDTION_VALUE.Name = "CHEAT_WARP_EDTION_VALUE";
-            this.CHEAT_WARP_EDTION_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_EDTION_VALUE.TabIndex = 322;
-            // 
-            // CHEAT_WARP_EDTION_JUMP
-            // 
-            this.CHEAT_WARP_EDTION_JUMP.AutoSize = true;
-            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(890, 157);
-            this.CHEAT_WARP_EDTION_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_EDTION_JUMP.Name = "CHEAT_WARP_EDTION_JUMP";
-            this.CHEAT_WARP_EDTION_JUMP.Size = new System.Drawing.Size(26, 18);
-            this.CHEAT_WARP_EDTION_JUMP.TabIndex = 323;
-            this.CHEAT_WARP_EDTION_JUMP.Text = "編";
-            // 
-            // CHEAT_WARP_CHPATER_VALUE
-            // 
-            this.CHEAT_WARP_CHPATER_VALUE.Hexadecimal = true;
-            this.CHEAT_WARP_CHPATER_VALUE.Location = new System.Drawing.Point(1041, 122);
-            this.CHEAT_WARP_CHPATER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WARP_CHPATER_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WARP_CHPATER_VALUE.Name = "CHEAT_WARP_CHPATER_VALUE";
-            this.CHEAT_WARP_CHPATER_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WARP_CHPATER_VALUE.TabIndex = 319;
-            this.CHEAT_WARP_CHPATER_VALUE.ValueChanged += new System.EventHandler(this.CHEAT_WARP_CHPATER_VALUE_ValueChanged);
-            // 
-            // CHEAT_WARP_CHPATER_JUMP
-            // 
-            this.CHEAT_WARP_CHPATER_JUMP.AutoSize = true;
-            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(890, 124);
-            this.CHEAT_WARP_CHPATER_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_WARP_CHPATER_JUMP.Name = "CHEAT_WARP_CHPATER_JUMP";
-            this.CHEAT_WARP_CHPATER_JUMP.Size = new System.Drawing.Size(98, 18);
-            this.CHEAT_WARP_CHPATER_JUMP.TabIndex = 320;
-            this.CHEAT_WARP_CHPATER_JUMP.Text = "ワープする章";
-            // 
-            // CHEAT_WARP
-            // 
-            this.CHEAT_WARP.Location = new System.Drawing.Point(887, 56);
-            this.CHEAT_WARP.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_WARP.Name = "CHEAT_WARP";
-            this.CHEAT_WARP.Size = new System.Drawing.Size(742, 53);
-            this.CHEAT_WARP.TabIndex = 318;
-            this.CHEAT_WARP.Text = "この章へワープする(Hotkey: Ctrl + J)";
-            this.CHEAT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_WARP.UseVisualStyleBackColor = true;
-            this.CHEAT_WARP.Click += new System.EventHandler(this.CHEAT_WARP_Click);
-            // 
-            // CHEAT_ALL_ENEMY_UNIT_HP_1
-            // 
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(66, 623);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TabIndex = 317;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Text = "すべての敵ユニットのHPを1にします。";
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_UNIT_HP_1_Click);
-            // 
-            // CHEAT_ALL_UNIT_GROW
-            // 
-            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(66, 550);
-            this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
-            this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_UNIT_GROW.TabIndex = 315;
-            this.CHEAT_ALL_UNIT_GROW.Text = "敵を含めて、すべてのユニットを最強にします";
-            this.CHEAT_ALL_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_UNIT_GROW_Click);
-            // 
-            // CHEAT_ALL_PLAYER_UNIT_GROW
-            // 
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(66, 498);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.TabIndex = 313;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Text = "すべての味方ユニットを最強にします。(Hotkey Ctrl + G)";
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_PLAYER_UNIT_GROW_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(890, 457);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(44, 18);
-            this.label35.TabIndex = 312;
-            this.label35.Text = "天気";
-            // 
-            // CHEAT_WEATHER_VALUE
-            // 
-            this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
-            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 452);
-            this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_WEATHER_VALUE.Name = "CHEAT_WEATHER_VALUE";
-            this.CHEAT_WEATHER_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_WEATHER_VALUE.TabIndex = 309;
-            // 
-            // CHEAT_WEATHER_COMBO
-            // 
-            this.CHEAT_WEATHER_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CHEAT_WEATHER_COMBO.FormattingEnabled = true;
-            this.CHEAT_WEATHER_COMBO.Items.AddRange(new object[] {
-            "00=晴れ",
-            "01=雪",
-            "02=吹雪",
-            "04=雨",
-            "05=マグマ",
-            "06=砂嵐",
-            "07=曇り"});
-            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
-            this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
-            this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
-            this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
-            this.CHEAT_WEATHER_COMBO.TabIndex = 310;
-            // 
-            // CHEAT_WEATHER
-            // 
-            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 402);
-            this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
-            this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_WEATHER.TabIndex = 308;
-            this.CHEAT_WEATHER.Text = "天気を変更(次のターンから適用されます。)";
-            this.CHEAT_WEATHER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_WEATHER.UseVisualStyleBackColor = true;
-            this.CHEAT_WEATHER.Click += new System.EventHandler(this.CHEAT_WEATHER_Click);
-            // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(6, 13);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(796, 30);
-            this.label19.TabIndex = 307;
-            this.label19.Text = "デバッグ用に便利なチート機能です";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1120, 363);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(313, 18);
-            this.label18.TabIndex = 229;
-            this.label18.Text = "0で霧なし。1が視界1マスの最大の霧です。";
-            // 
-            // CHEAT_FOG_VALUE
-            // 
-            this.CHEAT_FOG_VALUE.Hexadecimal = true;
-            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 361);
-            this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_FOG_VALUE.Name = "CHEAT_FOG_VALUE";
-            this.CHEAT_FOG_VALUE.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_FOG_VALUE.TabIndex = 9;
-            // 
-            // CHEAT_ITEM_COUNT
-            // 
-            this.CHEAT_ITEM_COUNT.Location = new System.Drawing.Point(213, 414);
-            this.CHEAT_ITEM_COUNT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_ITEM_COUNT.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_COUNT.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_COUNT.Name = "CHEAT_ITEM_COUNT";
-            this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_ITEM_COUNT.TabIndex = 5;
-            this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(68, 409);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 18);
-            this.label17.TabIndex = 221;
-            this.label17.Text = "個数";
-            // 
-            // CHEAT_ITEM_ID
-            // 
-            this.CHEAT_ITEM_ID.Hexadecimal = true;
-            this.CHEAT_ITEM_ID.Location = new System.Drawing.Point(213, 378);
-            this.CHEAT_ITEM_ID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.CHEAT_ITEM_ID.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_ID.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CHEAT_ITEM_ID.Name = "CHEAT_ITEM_ID";
-            this.CHEAT_ITEM_ID.Size = new System.Drawing.Size(65, 25);
-            this.CHEAT_ITEM_ID.TabIndex = 4;
-            this.CHEAT_ITEM_ID.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // CHEAT_MONEY_VALUE
-            // 
-            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(1041, 271);
-            this.CHEAT_MONEY_VALUE.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_MONEY_VALUE.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.CHEAT_MONEY_VALUE.Name = "CHEAT_MONEY_VALUE";
-            this.CHEAT_MONEY_VALUE.Size = new System.Drawing.Size(187, 25);
-            this.CHEAT_MONEY_VALUE.TabIndex = 7;
-            this.CHEAT_MONEY_VALUE.Value = new decimal(new int[] {
-            838861,
-            0,
-            0,
-            0});
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(895, 758);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 18);
-            this.label16.TabIndex = 216;
-            this.label16.Text = "解析者向けの機能";
-            // 
-            // Dump03Button
-            // 
-            this.Dump03Button.Location = new System.Drawing.Point(893, 832);
-            this.Dump03Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Dump03Button.Name = "Dump03Button";
-            this.Dump03Button.Size = new System.Drawing.Size(742, 40);
-            this.Dump03Button.TabIndex = 12;
-            this.Dump03Button.Text = "メモリをダンプしてファイルに書き込む 0x03000000";
-            this.Dump03Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dump03Button.UseVisualStyleBackColor = true;
-            this.Dump03Button.Click += new System.EventHandler(this.Dump0x03000000Button_Click);
-            // 
-            // Dump02Button
-            // 
-            this.Dump02Button.Location = new System.Drawing.Point(893, 778);
-            this.Dump02Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Dump02Button.Name = "Dump02Button";
-            this.Dump02Button.Size = new System.Drawing.Size(742, 40);
-            this.Dump02Button.TabIndex = 10;
-            this.Dump02Button.Text = "メモリをダンプしてファイルに書き込む 0x02000000";
-            this.Dump02Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dump02Button.UseVisualStyleBackColor = true;
-            this.Dump02Button.Click += new System.EventHandler(this.Dump0x02000000Button_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(887, 363);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 18);
-            this.label15.TabIndex = 213;
-            this.label15.Text = "霧レベル";
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(64, 124);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(738, 46);
-            this.label14.TabIndex = 212;
-            this.label14.Text = "クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(889, 273);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 18);
-            this.label13.TabIndex = 210;
-            this.label13.Text = "所持金";
-            // 
-            // CHEAT_FOG
-            // 
-            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 312);
-            this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_FOG.Name = "CHEAT_FOG";
-            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_FOG.TabIndex = 8;
-            this.CHEAT_FOG.Text = "霧レベルを変更(次のターンから適用されます。)";
-            this.CHEAT_FOG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_FOG.UseVisualStyleBackColor = true;
-            this.CHEAT_FOG.Click += new System.EventHandler(this.CHEAT_FOG_Click);
-            // 
-            // CHEAT_MONEY
-            // 
-            this.CHEAT_MONEY.Location = new System.Drawing.Point(887, 220);
-            this.CHEAT_MONEY.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_MONEY.Name = "CHEAT_MONEY";
-            this.CHEAT_MONEY.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_MONEY.TabIndex = 6;
-            this.CHEAT_MONEY.Text = "所持金を以下の値に変更する";
-            this.CHEAT_MONEY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_MONEY.UseVisualStyleBackColor = true;
-            this.CHEAT_MONEY.Click += new System.EventHandler(this.CHEAT_MONEY_Click);
-            // 
-            // CHEAT_ITEM_JUMP
-            // 
-            this.CHEAT_ITEM_JUMP.AutoSize = true;
-            this.CHEAT_ITEM_JUMP.Location = new System.Drawing.Point(68, 380);
-            this.CHEAT_ITEM_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.CHEAT_ITEM_JUMP.Name = "CHEAT_ITEM_JUMP";
-            this.CHEAT_ITEM_JUMP.Size = new System.Drawing.Size(125, 18);
-            this.CHEAT_ITEM_JUMP.TabIndex = 207;
-            this.CHEAT_ITEM_JUMP.Text = "持たせるアイテム";
-            // 
-            // CHEAT_UNIT_HAVE_ITEM
-            // 
-            this.CHEAT_UNIT_HAVE_ITEM.Location = new System.Drawing.Point(66, 329);
-            this.CHEAT_UNIT_HAVE_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_HAVE_ITEM.Name = "CHEAT_UNIT_HAVE_ITEM";
-            this.CHEAT_UNIT_HAVE_ITEM.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_HAVE_ITEM.TabIndex = 3;
-            this.CHEAT_UNIT_HAVE_ITEM.Text = "このユニットに以下のアイテムをもたせる";
-            this.CHEAT_UNIT_HAVE_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_HAVE_ITEM.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_HAVE_ITEM.Click += new System.EventHandler(this.CHEAT_UNIT_HAVE_ITEM_Click);
-            // 
-            // CHEAT_UNIT_HP_1
-            // 
-            this.CHEAT_UNIT_HP_1.Location = new System.Drawing.Point(66, 274);
-            this.CHEAT_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_HP_1.Name = "CHEAT_UNIT_HP_1";
-            this.CHEAT_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_HP_1.TabIndex = 2;
-            this.CHEAT_UNIT_HP_1.Text = "このユニットのHPを1にする。";
-            this.CHEAT_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_HP_1.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_UNIT_HP_1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(68, 197);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(199, 18);
-            this.label11.TabIndex = 204;
-            this.label11.Text = "現在、操作しているユニット";
-            // 
-            // CHEAT_UNIT_GROW
-            // 
-            this.CHEAT_UNIT_GROW.Location = new System.Drawing.Point(66, 220);
-            this.CHEAT_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_GROW.Name = "CHEAT_UNIT_GROW";
-            this.CHEAT_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
-            this.CHEAT_UNIT_GROW.TabIndex = 1;
-            this.CHEAT_UNIT_GROW.Text = "このユニットのパラメータをカンストさせる。";
-            this.CHEAT_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_GROW.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_UNIT_GROW_Click);
-            // 
-            // CHEAT_SET_FLAG03
-            // 
-            this.CHEAT_SET_FLAG03.Location = new System.Drawing.Point(61, 58);
-            this.CHEAT_SET_FLAG03.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_SET_FLAG03.Name = "CHEAT_SET_FLAG03";
-            this.CHEAT_SET_FLAG03.Size = new System.Drawing.Size(742, 53);
-            this.CHEAT_SET_FLAG03.TabIndex = 0;
-            this.CHEAT_SET_FLAG03.Text = "現在の章をクリアします。(Hotkey: Ctrl + U)";
-            this.CHEAT_SET_FLAG03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_SET_FLAG03.UseVisualStyleBackColor = true;
-            this.CHEAT_SET_FLAG03.Click += new System.EventHandler(this.CHEAT_SET_FLAG03_Click);
-            // 
-            // CHEAT_WARP_EDTION_NAME
-            // 
-            this.CHEAT_WARP_EDTION_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_EDTION_NAME.Location = new System.Drawing.Point(1122, 155);
-            this.CHEAT_WARP_EDTION_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_EDTION_NAME.Name = "CHEAT_WARP_EDTION_NAME";
-            this.CHEAT_WARP_EDTION_NAME.Placeholder = "";
-            this.CHEAT_WARP_EDTION_NAME.ReadOnly = true;
-            this.CHEAT_WARP_EDTION_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_EDTION_NAME.TabIndex = 324;
-            // 
-            // CHEAT_WARP_CHPATER_NAME
-            // 
-            this.CHEAT_WARP_CHPATER_NAME.ErrorMessage = "";
-            this.CHEAT_WARP_CHPATER_NAME.Location = new System.Drawing.Point(1122, 122);
-            this.CHEAT_WARP_CHPATER_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_WARP_CHPATER_NAME.Name = "CHEAT_WARP_CHPATER_NAME";
-            this.CHEAT_WARP_CHPATER_NAME.Placeholder = "";
-            this.CHEAT_WARP_CHPATER_NAME.ReadOnly = true;
-            this.CHEAT_WARP_CHPATER_NAME.Size = new System.Drawing.Size(350, 25);
-            this.CHEAT_WARP_CHPATER_NAME.TabIndex = 321;
-            // 
-            // systemIconPictureBox4
-            // 
-            this.systemIconPictureBox4.IconNumber = ((uint)(2u));
-            this.systemIconPictureBox4.Location = new System.Drawing.Point(1, 487);
-            this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
-            this.systemIconPictureBox4.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox4.TabIndex = 316;
-            this.systemIconPictureBox4.TabStop = false;
-            // 
-            // CHEAT_UNIT_MEMORY_AND_NAME
-            // 
-            this.CHEAT_UNIT_MEMORY_AND_NAME.ErrorMessage = "";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Location = new System.Drawing.Point(290, 190);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Name = "CHEAT_UNIT_MEMORY_AND_NAME";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Placeholder = "";
-            this.CHEAT_UNIT_MEMORY_AND_NAME.ReadOnly = true;
-            this.CHEAT_UNIT_MEMORY_AND_NAME.Size = new System.Drawing.Size(513, 25);
-            this.CHEAT_UNIT_MEMORY_AND_NAME.TabIndex = 225;
-            // 
-            // CHEAT_ITEM_NAME
-            // 
-            this.CHEAT_ITEM_NAME.ErrorMessage = "";
-            this.CHEAT_ITEM_NAME.Location = new System.Drawing.Point(294, 378);
-            this.CHEAT_ITEM_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.CHEAT_ITEM_NAME.Name = "CHEAT_ITEM_NAME";
-            this.CHEAT_ITEM_NAME.Placeholder = "";
-            this.CHEAT_ITEM_NAME.ReadOnly = true;
-            this.CHEAT_ITEM_NAME.Size = new System.Drawing.Size(189, 25);
-            this.CHEAT_ITEM_NAME.TabIndex = 219;
-            // 
-            // systemIconPictureBox3
-            // 
-            this.systemIconPictureBox3.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(830, 758);
-            this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
-            this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox3.TabIndex = 228;
-            this.systemIconPictureBox3.TabStop = false;
-            // 
-            // systemIconPictureBox2
-            // 
-            this.systemIconPictureBox2.IconNumber = ((uint)(8u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(824, 220);
-            this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
-            this.systemIconPictureBox2.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox2.TabIndex = 227;
-            this.systemIconPictureBox2.TabStop = false;
-            // 
-            // CHEAT_UNIT_MEMORY_AND_ICON
-            // 
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Location = new System.Drawing.Point(1, 197);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Name = "CHEAT_UNIT_MEMORY_AND_ICON";
-            this.CHEAT_UNIT_MEMORY_AND_ICON.Size = new System.Drawing.Size(56, 56);
-            this.CHEAT_UNIT_MEMORY_AND_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.TabIndex = 226;
-            this.CHEAT_UNIT_MEMORY_AND_ICON.TabStop = false;
-            // 
-            // systemIconPictureBox1
-            // 
-            this.systemIconPictureBox1.Location = new System.Drawing.Point(1, 56);
-            this.systemIconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
-            this.systemIconPictureBox1.Size = new System.Drawing.Size(56, 56);
-            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox1.TabIndex = 224;
-            this.systemIconPictureBox1.TabStop = false;
-            // 
-            // CHEAT_ITEM_ICON
-            // 
-            this.CHEAT_ITEM_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHEAT_ITEM_ICON.Location = new System.Drawing.Point(487, 378);
-            this.CHEAT_ITEM_ICON.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_ITEM_ICON.Name = "CHEAT_ITEM_ICON";
-            this.CHEAT_ITEM_ICON.Size = new System.Drawing.Size(32, 32);
-            this.CHEAT_ITEM_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CHEAT_ITEM_ICON.TabIndex = 220;
-            this.CHEAT_ITEM_ICON.TabStop = false;
             // 
             // EventPage
             // 
@@ -3813,20 +3170,20 @@
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PaletteSearchButton);
             this.EtcPage.Controls.Add(this.label91);
             this.EtcPage.Controls.Add(this.label58);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
             this.EtcPage.Controls.Add(this.label92);
-            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Controls.Add(this.PaletteAddress);
-            this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.SoundList);
             this.EtcPage.Controls.Add(this.SelectPalette);
             this.EtcPage.Controls.Add(this.PaletteList);
             this.EtcPage.Controls.Add(this.X_ETC_Diffculty_Text);
             this.EtcPage.Controls.Add(this.X_ETC_Edition_Text);
             this.EtcPage.Controls.Add(this.PartyListBox);
+            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
             this.EtcPage.Name = "EtcPage";
             this.EtcPage.Padding = new System.Windows.Forms.Padding(3);
@@ -6067,6 +5424,649 @@
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
             // 
+            // CheatPage
+            // 
+            this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox5);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_UNIT_HP_1);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.label35);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_COMBO);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER);
+            this.CheatPage.Controls.Add(this.label19);
+            this.CheatPage.Controls.Add(this.label18);
+            this.CheatPage.Controls.Add(this.CHEAT_FOG_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_COUNT);
+            this.CheatPage.Controls.Add(this.label17);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ID);
+            this.CheatPage.Controls.Add(this.CHEAT_MONEY_VALUE);
+            this.CheatPage.Controls.Add(this.label16);
+            this.CheatPage.Controls.Add(this.Dump03Button);
+            this.CheatPage.Controls.Add(this.Dump02Button);
+            this.CheatPage.Controls.Add(this.label15);
+            this.CheatPage.Controls.Add(this.label14);
+            this.CheatPage.Controls.Add(this.label13);
+            this.CheatPage.Controls.Add(this.CHEAT_FOG);
+            this.CheatPage.Controls.Add(this.CHEAT_MONEY);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_JUMP);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HAVE_ITEM);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_HP_1);
+            this.CheatPage.Controls.Add(this.label11);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.CHEAT_SET_FLAG03);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_EDTION_NAME);
+            this.CheatPage.Controls.Add(this.CHEAT_WARP_CHPATER_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox4);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_NAME);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_NAME);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox3);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox2);
+            this.CheatPage.Controls.Add(this.CHEAT_UNIT_MEMORY_AND_ICON);
+            this.CheatPage.Controls.Add(this.systemIconPictureBox1);
+            this.CheatPage.Controls.Add(this.CHEAT_ITEM_ICON);
+            this.CheatPage.Location = new System.Drawing.Point(4, 28);
+            this.CheatPage.Margin = new System.Windows.Forms.Padding(2);
+            this.CheatPage.Name = "CheatPage";
+            this.CheatPage.Padding = new System.Windows.Forms.Padding(2);
+            this.CheatPage.Size = new System.Drawing.Size(1646, 888);
+            this.CheatPage.TabIndex = 3;
+            this.CheatPage.Text = "チート";
+            // 
+            // CHEAT_WARP_NODE_VALUE
+            // 
+            this.CHEAT_WARP_NODE_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_NODE_VALUE.Location = new System.Drawing.Point(1041, 188);
+            this.CHEAT_WARP_NODE_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_NODE_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_NODE_VALUE.Name = "CHEAT_WARP_NODE_VALUE";
+            this.CHEAT_WARP_NODE_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_NODE_VALUE.TabIndex = 327;
+            // 
+            // CHEAT_WARP_NODE_JUMP
+            // 
+            this.CHEAT_WARP_NODE_JUMP.AutoSize = true;
+            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(890, 190);
+            this.CHEAT_WARP_NODE_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_NODE_JUMP.Name = "CHEAT_WARP_NODE_JUMP";
+            this.CHEAT_WARP_NODE_JUMP.Size = new System.Drawing.Size(139, 18);
+            this.CHEAT_WARP_NODE_JUMP.TabIndex = 328;
+            this.CHEAT_WARP_NODE_JUMP.Text = "ワールドマップ拠点";
+            // 
+            // CHEAT_WARP_NODE_NAME
+            // 
+            this.CHEAT_WARP_NODE_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_NODE_NAME.Location = new System.Drawing.Point(1122, 188);
+            this.CHEAT_WARP_NODE_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_NODE_NAME.Name = "CHEAT_WARP_NODE_NAME";
+            this.CHEAT_WARP_NODE_NAME.Placeholder = "";
+            this.CHEAT_WARP_NODE_NAME.ReadOnly = true;
+            this.CHEAT_WARP_NODE_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_NODE_NAME.TabIndex = 329;
+            // 
+            // systemIconPictureBox5
+            // 
+            this.systemIconPictureBox5.IconNumber = ((uint)(3u));
+            this.systemIconPictureBox5.IconType = FEBuilderGBA.SystemIconPictureBox.IconTypeEnum.Music;
+            this.systemIconPictureBox5.Location = new System.Drawing.Point(824, 56);
+            this.systemIconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
+            this.systemIconPictureBox5.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox5.TabIndex = 326;
+            this.systemIconPictureBox5.TabStop = false;
+            // 
+            // CHEAT_ALL_ENEMY_DO_NOT_MOVE
+            // 
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Location = new System.Drawing.Point(67, 676);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Name = "CHEAT_ALL_ENEMY_DO_NOT_MOVE";
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TabIndex = 325;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Text = "すべての敵ユニットAIを「移動しない」に設定にします。";
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_ENEMY_DO_NOT_MOVE.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click);
+            // 
+            // CHEAT_WARP_EDTION_VALUE
+            // 
+            this.CHEAT_WARP_EDTION_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_EDTION_VALUE.Location = new System.Drawing.Point(1041, 155);
+            this.CHEAT_WARP_EDTION_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_EDTION_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_EDTION_VALUE.Name = "CHEAT_WARP_EDTION_VALUE";
+            this.CHEAT_WARP_EDTION_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_EDTION_VALUE.TabIndex = 322;
+            // 
+            // CHEAT_WARP_EDTION_JUMP
+            // 
+            this.CHEAT_WARP_EDTION_JUMP.AutoSize = true;
+            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(890, 157);
+            this.CHEAT_WARP_EDTION_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_EDTION_JUMP.Name = "CHEAT_WARP_EDTION_JUMP";
+            this.CHEAT_WARP_EDTION_JUMP.Size = new System.Drawing.Size(26, 18);
+            this.CHEAT_WARP_EDTION_JUMP.TabIndex = 323;
+            this.CHEAT_WARP_EDTION_JUMP.Text = "編";
+            // 
+            // CHEAT_WARP_CHPATER_VALUE
+            // 
+            this.CHEAT_WARP_CHPATER_VALUE.Hexadecimal = true;
+            this.CHEAT_WARP_CHPATER_VALUE.Location = new System.Drawing.Point(1041, 122);
+            this.CHEAT_WARP_CHPATER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WARP_CHPATER_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WARP_CHPATER_VALUE.Name = "CHEAT_WARP_CHPATER_VALUE";
+            this.CHEAT_WARP_CHPATER_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WARP_CHPATER_VALUE.TabIndex = 319;
+            this.CHEAT_WARP_CHPATER_VALUE.ValueChanged += new System.EventHandler(this.CHEAT_WARP_CHPATER_VALUE_ValueChanged);
+            // 
+            // CHEAT_WARP_CHPATER_JUMP
+            // 
+            this.CHEAT_WARP_CHPATER_JUMP.AutoSize = true;
+            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(890, 124);
+            this.CHEAT_WARP_CHPATER_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_WARP_CHPATER_JUMP.Name = "CHEAT_WARP_CHPATER_JUMP";
+            this.CHEAT_WARP_CHPATER_JUMP.Size = new System.Drawing.Size(98, 18);
+            this.CHEAT_WARP_CHPATER_JUMP.TabIndex = 320;
+            this.CHEAT_WARP_CHPATER_JUMP.Text = "ワープする章";
+            // 
+            // CHEAT_WARP
+            // 
+            this.CHEAT_WARP.Location = new System.Drawing.Point(887, 56);
+            this.CHEAT_WARP.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_WARP.Name = "CHEAT_WARP";
+            this.CHEAT_WARP.Size = new System.Drawing.Size(742, 53);
+            this.CHEAT_WARP.TabIndex = 318;
+            this.CHEAT_WARP.Text = "この章へワープする(Hotkey: Ctrl + J)";
+            this.CHEAT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_WARP.UseVisualStyleBackColor = true;
+            this.CHEAT_WARP.Click += new System.EventHandler(this.CHEAT_WARP_Click);
+            // 
+            // CHEAT_ALL_ENEMY_UNIT_HP_1
+            // 
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(66, 623);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TabIndex = 317;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Text = "すべての敵ユニットのHPを1にします。";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_UNIT_HP_1_Click);
+            // 
+            // CHEAT_ALL_UNIT_GROW
+            // 
+            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(66, 550);
+            this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
+            this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_UNIT_GROW.TabIndex = 315;
+            this.CHEAT_ALL_UNIT_GROW.Text = "敵を含めて、すべてのユニットを最強にします";
+            this.CHEAT_ALL_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_UNIT_GROW_Click);
+            // 
+            // CHEAT_ALL_PLAYER_UNIT_GROW
+            // 
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(66, 498);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TabIndex = 313;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Text = "すべての味方ユニットを最強にします。(Hotkey Ctrl + G)";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_PLAYER_UNIT_GROW_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(890, 457);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 18);
+            this.label35.TabIndex = 312;
+            this.label35.Text = "天気";
+            // 
+            // CHEAT_WEATHER_VALUE
+            // 
+            this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
+            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 452);
+            this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WEATHER_VALUE.Name = "CHEAT_WEATHER_VALUE";
+            this.CHEAT_WEATHER_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WEATHER_VALUE.TabIndex = 309;
+            // 
+            // CHEAT_WEATHER_COMBO
+            // 
+            this.CHEAT_WEATHER_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CHEAT_WEATHER_COMBO.FormattingEnabled = true;
+            this.CHEAT_WEATHER_COMBO.Items.AddRange(new object[] {
+            "00=晴れ",
+            "01=雪",
+            "02=吹雪",
+            "04=雨",
+            "05=マグマ",
+            "06=砂嵐",
+            "07=曇り"});
+            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
+            this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
+            this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
+            this.CHEAT_WEATHER_COMBO.TabIndex = 310;
+            // 
+            // CHEAT_WEATHER
+            // 
+            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 402);
+            this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
+            this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_WEATHER.TabIndex = 308;
+            this.CHEAT_WEATHER.Text = "天気を変更(次のターンから適用されます。)";
+            this.CHEAT_WEATHER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_WEATHER.UseVisualStyleBackColor = true;
+            this.CHEAT_WEATHER.Click += new System.EventHandler(this.CHEAT_WEATHER_Click);
+            // 
+            // label19
+            // 
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Location = new System.Drawing.Point(6, 13);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(796, 30);
+            this.label19.TabIndex = 307;
+            this.label19.Text = "デバッグ用に便利なチート機能です";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1120, 363);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(313, 18);
+            this.label18.TabIndex = 229;
+            this.label18.Text = "0で霧なし。1が視界1マスの最大の霧です。";
+            // 
+            // CHEAT_FOG_VALUE
+            // 
+            this.CHEAT_FOG_VALUE.Hexadecimal = true;
+            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 361);
+            this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_FOG_VALUE.Name = "CHEAT_FOG_VALUE";
+            this.CHEAT_FOG_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_FOG_VALUE.TabIndex = 9;
+            // 
+            // CHEAT_ITEM_COUNT
+            // 
+            this.CHEAT_ITEM_COUNT.Location = new System.Drawing.Point(213, 414);
+            this.CHEAT_ITEM_COUNT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_ITEM_COUNT.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_COUNT.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_COUNT.Name = "CHEAT_ITEM_COUNT";
+            this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_ITEM_COUNT.TabIndex = 5;
+            this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(68, 409);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 18);
+            this.label17.TabIndex = 221;
+            this.label17.Text = "個数";
+            // 
+            // CHEAT_ITEM_ID
+            // 
+            this.CHEAT_ITEM_ID.Hexadecimal = true;
+            this.CHEAT_ITEM_ID.Location = new System.Drawing.Point(213, 378);
+            this.CHEAT_ITEM_ID.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_ITEM_ID.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_ID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CHEAT_ITEM_ID.Name = "CHEAT_ITEM_ID";
+            this.CHEAT_ITEM_ID.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_ITEM_ID.TabIndex = 4;
+            this.CHEAT_ITEM_ID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CHEAT_MONEY_VALUE
+            // 
+            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(1041, 271);
+            this.CHEAT_MONEY_VALUE.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_MONEY_VALUE.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.CHEAT_MONEY_VALUE.Name = "CHEAT_MONEY_VALUE";
+            this.CHEAT_MONEY_VALUE.Size = new System.Drawing.Size(187, 25);
+            this.CHEAT_MONEY_VALUE.TabIndex = 7;
+            this.CHEAT_MONEY_VALUE.Value = new decimal(new int[] {
+            838861,
+            0,
+            0,
+            0});
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(895, 758);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 18);
+            this.label16.TabIndex = 216;
+            this.label16.Text = "解析者向けの機能";
+            // 
+            // Dump03Button
+            // 
+            this.Dump03Button.Location = new System.Drawing.Point(893, 832);
+            this.Dump03Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Dump03Button.Name = "Dump03Button";
+            this.Dump03Button.Size = new System.Drawing.Size(742, 40);
+            this.Dump03Button.TabIndex = 12;
+            this.Dump03Button.Text = "メモリをダンプしてファイルに書き込む 0x03000000";
+            this.Dump03Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dump03Button.UseVisualStyleBackColor = true;
+            this.Dump03Button.Click += new System.EventHandler(this.Dump0x03000000Button_Click);
+            // 
+            // Dump02Button
+            // 
+            this.Dump02Button.Location = new System.Drawing.Point(893, 778);
+            this.Dump02Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Dump02Button.Name = "Dump02Button";
+            this.Dump02Button.Size = new System.Drawing.Size(742, 40);
+            this.Dump02Button.TabIndex = 10;
+            this.Dump02Button.Text = "メモリをダンプしてファイルに書き込む 0x02000000";
+            this.Dump02Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dump02Button.UseVisualStyleBackColor = true;
+            this.Dump02Button.Click += new System.EventHandler(this.Dump0x02000000Button_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(887, 363);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 18);
+            this.label15.TabIndex = 213;
+            this.label15.Text = "霧レベル";
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(64, 124);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(738, 46);
+            this.label14.TabIndex = 212;
+            this.label14.Text = "クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(889, 273);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 18);
+            this.label13.TabIndex = 210;
+            this.label13.Text = "所持金";
+            // 
+            // CHEAT_FOG
+            // 
+            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 312);
+            this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_FOG.Name = "CHEAT_FOG";
+            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_FOG.TabIndex = 8;
+            this.CHEAT_FOG.Text = "霧レベルを変更(次のターンから適用されます。)";
+            this.CHEAT_FOG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_FOG.UseVisualStyleBackColor = true;
+            this.CHEAT_FOG.Click += new System.EventHandler(this.CHEAT_FOG_Click);
+            // 
+            // CHEAT_MONEY
+            // 
+            this.CHEAT_MONEY.Location = new System.Drawing.Point(887, 220);
+            this.CHEAT_MONEY.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_MONEY.Name = "CHEAT_MONEY";
+            this.CHEAT_MONEY.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_MONEY.TabIndex = 6;
+            this.CHEAT_MONEY.Text = "所持金を以下の値に変更する";
+            this.CHEAT_MONEY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_MONEY.UseVisualStyleBackColor = true;
+            this.CHEAT_MONEY.Click += new System.EventHandler(this.CHEAT_MONEY_Click);
+            // 
+            // CHEAT_ITEM_JUMP
+            // 
+            this.CHEAT_ITEM_JUMP.AutoSize = true;
+            this.CHEAT_ITEM_JUMP.Location = new System.Drawing.Point(68, 380);
+            this.CHEAT_ITEM_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CHEAT_ITEM_JUMP.Name = "CHEAT_ITEM_JUMP";
+            this.CHEAT_ITEM_JUMP.Size = new System.Drawing.Size(125, 18);
+            this.CHEAT_ITEM_JUMP.TabIndex = 207;
+            this.CHEAT_ITEM_JUMP.Text = "持たせるアイテム";
+            // 
+            // CHEAT_UNIT_HAVE_ITEM
+            // 
+            this.CHEAT_UNIT_HAVE_ITEM.Location = new System.Drawing.Point(66, 329);
+            this.CHEAT_UNIT_HAVE_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_HAVE_ITEM.Name = "CHEAT_UNIT_HAVE_ITEM";
+            this.CHEAT_UNIT_HAVE_ITEM.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_HAVE_ITEM.TabIndex = 3;
+            this.CHEAT_UNIT_HAVE_ITEM.Text = "このユニットに以下のアイテムをもたせる";
+            this.CHEAT_UNIT_HAVE_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_HAVE_ITEM.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_HAVE_ITEM.Click += new System.EventHandler(this.CHEAT_UNIT_HAVE_ITEM_Click);
+            // 
+            // CHEAT_UNIT_HP_1
+            // 
+            this.CHEAT_UNIT_HP_1.Location = new System.Drawing.Point(66, 274);
+            this.CHEAT_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_HP_1.Name = "CHEAT_UNIT_HP_1";
+            this.CHEAT_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_HP_1.TabIndex = 2;
+            this.CHEAT_UNIT_HP_1.Text = "このユニットのHPを1にする。";
+            this.CHEAT_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_HP_1.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_UNIT_HP_1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(68, 197);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(199, 18);
+            this.label11.TabIndex = 204;
+            this.label11.Text = "現在、操作しているユニット";
+            // 
+            // CHEAT_UNIT_GROW
+            // 
+            this.CHEAT_UNIT_GROW.Location = new System.Drawing.Point(66, 220);
+            this.CHEAT_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_GROW.Name = "CHEAT_UNIT_GROW";
+            this.CHEAT_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_UNIT_GROW.TabIndex = 1;
+            this.CHEAT_UNIT_GROW.Text = "このユニットのパラメータをカンストさせる。";
+            this.CHEAT_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_UNIT_GROW_Click);
+            // 
+            // CHEAT_SET_FLAG03
+            // 
+            this.CHEAT_SET_FLAG03.Location = new System.Drawing.Point(61, 58);
+            this.CHEAT_SET_FLAG03.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_SET_FLAG03.Name = "CHEAT_SET_FLAG03";
+            this.CHEAT_SET_FLAG03.Size = new System.Drawing.Size(742, 53);
+            this.CHEAT_SET_FLAG03.TabIndex = 0;
+            this.CHEAT_SET_FLAG03.Text = "現在の章をクリアします。(Hotkey: Ctrl + U)";
+            this.CHEAT_SET_FLAG03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_SET_FLAG03.UseVisualStyleBackColor = true;
+            this.CHEAT_SET_FLAG03.Click += new System.EventHandler(this.CHEAT_SET_FLAG03_Click);
+            // 
+            // CHEAT_WARP_EDTION_NAME
+            // 
+            this.CHEAT_WARP_EDTION_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_EDTION_NAME.Location = new System.Drawing.Point(1122, 155);
+            this.CHEAT_WARP_EDTION_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_EDTION_NAME.Name = "CHEAT_WARP_EDTION_NAME";
+            this.CHEAT_WARP_EDTION_NAME.Placeholder = "";
+            this.CHEAT_WARP_EDTION_NAME.ReadOnly = true;
+            this.CHEAT_WARP_EDTION_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_EDTION_NAME.TabIndex = 324;
+            // 
+            // CHEAT_WARP_CHPATER_NAME
+            // 
+            this.CHEAT_WARP_CHPATER_NAME.ErrorMessage = "";
+            this.CHEAT_WARP_CHPATER_NAME.Location = new System.Drawing.Point(1122, 122);
+            this.CHEAT_WARP_CHPATER_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_WARP_CHPATER_NAME.Name = "CHEAT_WARP_CHPATER_NAME";
+            this.CHEAT_WARP_CHPATER_NAME.Placeholder = "";
+            this.CHEAT_WARP_CHPATER_NAME.ReadOnly = true;
+            this.CHEAT_WARP_CHPATER_NAME.Size = new System.Drawing.Size(350, 25);
+            this.CHEAT_WARP_CHPATER_NAME.TabIndex = 321;
+            // 
+            // systemIconPictureBox4
+            // 
+            this.systemIconPictureBox4.IconNumber = ((uint)(2u));
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(1, 487);
+            this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
+            this.systemIconPictureBox4.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox4.TabIndex = 316;
+            this.systemIconPictureBox4.TabStop = false;
+            // 
+            // CHEAT_UNIT_MEMORY_AND_NAME
+            // 
+            this.CHEAT_UNIT_MEMORY_AND_NAME.ErrorMessage = "";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Location = new System.Drawing.Point(290, 190);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Name = "CHEAT_UNIT_MEMORY_AND_NAME";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Placeholder = "";
+            this.CHEAT_UNIT_MEMORY_AND_NAME.ReadOnly = true;
+            this.CHEAT_UNIT_MEMORY_AND_NAME.Size = new System.Drawing.Size(513, 25);
+            this.CHEAT_UNIT_MEMORY_AND_NAME.TabIndex = 225;
+            // 
+            // CHEAT_ITEM_NAME
+            // 
+            this.CHEAT_ITEM_NAME.ErrorMessage = "";
+            this.CHEAT_ITEM_NAME.Location = new System.Drawing.Point(294, 378);
+            this.CHEAT_ITEM_NAME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CHEAT_ITEM_NAME.Name = "CHEAT_ITEM_NAME";
+            this.CHEAT_ITEM_NAME.Placeholder = "";
+            this.CHEAT_ITEM_NAME.ReadOnly = true;
+            this.CHEAT_ITEM_NAME.Size = new System.Drawing.Size(189, 25);
+            this.CHEAT_ITEM_NAME.TabIndex = 219;
+            // 
+            // systemIconPictureBox3
+            // 
+            this.systemIconPictureBox3.IconNumber = ((uint)(5u));
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(830, 758);
+            this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
+            this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox3.TabIndex = 228;
+            this.systemIconPictureBox3.TabStop = false;
+            // 
+            // systemIconPictureBox2
+            // 
+            this.systemIconPictureBox2.IconNumber = ((uint)(8u));
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(824, 220);
+            this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
+            this.systemIconPictureBox2.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox2.TabIndex = 227;
+            this.systemIconPictureBox2.TabStop = false;
+            // 
+            // CHEAT_UNIT_MEMORY_AND_ICON
+            // 
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Location = new System.Drawing.Point(1, 197);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Name = "CHEAT_UNIT_MEMORY_AND_ICON";
+            this.CHEAT_UNIT_MEMORY_AND_ICON.Size = new System.Drawing.Size(56, 56);
+            this.CHEAT_UNIT_MEMORY_AND_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.TabIndex = 226;
+            this.CHEAT_UNIT_MEMORY_AND_ICON.TabStop = false;
+            // 
+            // systemIconPictureBox1
+            // 
+            this.systemIconPictureBox1.Location = new System.Drawing.Point(1, 56);
+            this.systemIconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
+            this.systemIconPictureBox1.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox1.TabIndex = 224;
+            this.systemIconPictureBox1.TabStop = false;
+            // 
+            // CHEAT_ITEM_ICON
+            // 
+            this.CHEAT_ITEM_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHEAT_ITEM_ICON.Location = new System.Drawing.Point(487, 378);
+            this.CHEAT_ITEM_ICON.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ITEM_ICON.Name = "CHEAT_ITEM_ICON";
+            this.CHEAT_ITEM_ICON.Size = new System.Drawing.Size(32, 32);
+            this.CHEAT_ITEM_ICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CHEAT_ITEM_ICON.TabIndex = 220;
+            this.CHEAT_ITEM_ICON.TabStop = false;
+            // 
             // textBoxEx1
             // 
             this.textBoxEx1.ErrorMessage = "";
@@ -6404,23 +6404,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.MainTabControl.ResumeLayout(false);
-            this.CheatPage.ResumeLayout(false);
-            this.CheatPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
             this.EventPage.ResumeLayout(false);
             this.EventPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B14)).EndInit();
@@ -6594,6 +6577,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).EndInit();
+            this.CheatPage.ResumeLayout(false);
+            this.CheatPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
             this.ResumeLayout(false);
 
         }
