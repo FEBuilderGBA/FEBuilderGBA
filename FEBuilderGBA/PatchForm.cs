@@ -1640,13 +1640,7 @@ namespace FEBuilderGBA
             uint addr;
             if (address_string[0] == '$')
             {//マクロ展開.
-                string basedir = Path.GetDirectoryName(patch.PatchFileName);
-                addr = convertBinAddressString(address_string, 0, 0x100,basedir); //check only.
-                if (!U.isSafetyOffset(addr))
-                {
-                    throw new PatchException("bad address : " + address_string);
-                }
-                address_sp = new string[] { U.To0xHexString(addr) };
+                address_sp = ParseMacroAddrPatch(address_string, patch);
             }
             else
             {//直値か、直値が複数.
@@ -2012,6 +2006,27 @@ namespace FEBuilderGBA
                 Program.ReLoadSetting();
             };
 
+        }
+        string[] ParseMacroAddrPatch(string address_string_multi,PatchSt patch)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+
+            string[] multi_address_string = address_string_multi.Split(new char[]{';'},StringSplitOptions.RemoveEmptyEntries);
+            string[] address_sp = new string[multi_address_string.Length];
+            for (int i = 0; i < multi_address_string.Length; i++ )
+            {
+                string address_string = multi_address_string[i];
+                address_string = address_string.Trim();
+
+                uint addr = convertBinAddressString(address_string, 0, 0x100, basedir); //check only.
+                if (!U.isSafetyOffset(addr))
+                {
+                    throw new PatchException("bad address : " + address_string);
+                }
+
+                multi_address_string[i] = U.To0xHexString(addr);
+            }
+            return multi_address_string;
         }
 
         void LoadPatchAddrLong(PatchSt patch)
