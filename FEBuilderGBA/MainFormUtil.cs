@@ -463,6 +463,15 @@ namespace FEBuilderGBA
                     return null;
                 }
             }
+            //既に起動している?
+            if (IsAlreadyRunningProcess(run_name, arg1))
+            {
+                DialogResult dr = R.ShowNoYes("既に({0})のプロセスを実行しています。\r\n二重実行になってしまいますが、続行してもよろしいですか？", run_name);
+                if (dr != DialogResult.Yes)
+                {
+                    return null;
+                }
+            }
 
             if (InputFormRef.IsPleaseWaitDialog(null))
             {//2重割り込み禁止
@@ -623,6 +632,33 @@ namespace FEBuilderGBA
             return sb.ToString();
         }
 
+        static bool IsAlreadyRunningProcess(string run_name, string arg1 = "<<ROM>>")
+        {
+            string emulator = Program.Config.at(run_name, "");
+            if (emulator == "" || !File.Exists(emulator))
+            {
+                return false;
+            }
+
+            string tempfilename;
+            if (arg1 == "<<ROM>>")
+            {
+                tempfilename = U.MakeFilename(run_name);
+            }
+            else
+            {
+                tempfilename = arg1;
+            }
+
+            //既に実行しているか？
+            Process p = Program.UpdateWatcher.GetRunning(tempfilename);
+            if (p == null)
+            {//未実行
+                return false;
+            }
+            //実行済み
+            return true;
+        }
 
         public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>")
         {

@@ -1315,6 +1315,9 @@ Party
 :チート
 Cheat
 
+:ワールドマップ拠点
+World Map Nodes
+
 :すべての敵ユニットAIを「移動しない」に設定にします。
 Set all enemy units AI to "do not move".
 
@@ -5784,6 +5787,9 @@ Failed to create working ROM to start process.\r\nReturned error\r\n{0}
 
 :プロセスを実行できませんでした。\r\nプロセス:{0}\r\n引数:{1}\r\n返されたエラー:\r\n{2}
 The process could not be executed.\r\nProcess: {0}\r\nArgument: {1}\r\nReturned error:\r\n{2}
+
+:既に({0})のプロセスを実行しています。\r\n二重実行になってしまいますが、続行してもよろしいですか？
+Already running ({0}) process.\r\nIt will be double execution, are you sure you want to continue? 
 
 :プロセスを起動中:{0}
 Starting process: {0}
@@ -12354,7 +12360,4 @@ Map Skirmish Type
 
 :いつでも入れるかどうか
 Placement Flag
-
-:ワールドマップ拠点
-World Map Nodes
 
