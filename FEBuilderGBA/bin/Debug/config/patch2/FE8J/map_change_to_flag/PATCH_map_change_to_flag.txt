@@ -5,10 +5,6 @@ TAG=#ENGINE
 //既に適応されたかどうか
 PATCHED_IF:0x2E51E=When tile change to set flag
 
-タイルがセットフラグに変わると\r\n
-
- 0x00 0x00 0x48
-
 
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=map_change_to_flag.bin

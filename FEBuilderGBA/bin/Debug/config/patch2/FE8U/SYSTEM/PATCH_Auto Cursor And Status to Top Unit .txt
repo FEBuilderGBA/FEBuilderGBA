@@ -1,5 +1,3 @@
-Duplicate of Another Earlier Patch
-
 NAME=オートカーソルとステータス画面を名簿の一番上のユニットにする
 NAME.en=Autocursor Fix
 NAME.zh=使自动光标和状态屏幕成为列表顶部的人物

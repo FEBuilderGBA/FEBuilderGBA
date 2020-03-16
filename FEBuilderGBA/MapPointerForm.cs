@@ -142,6 +142,10 @@ namespace FEBuilderGBA
                 {//OBJECTとPALは共有
                     return "PAL " + MapSettingForm.GetMapNameWhereAddr(addr);
                 }
+                if (plists.palette2_plist == plist && type == PLIST_TYPE.OBJECT)
+                {//OBJECTとPALは共有
+                    return "PAL2 " + MapSettingForm.GetMapNameWhereAddr(addr);
+                }
 
                 uint obj_plist_low = (plists.obj_plist & 0xFF);
                 uint obj_plist_high = ((plists.obj_plist >> 8) & 0xFF);
@@ -204,6 +208,10 @@ namespace FEBuilderGBA
                 if (plists.palette_plist == plist)
                 {
                     return "PAL " + MapSettingForm.GetMapNameWhereAddr(addr);
+                }
+                if (plists.palette2_plist == plist)
+                {
+                    return "PAL2 " + MapSettingForm.GetMapNameWhereAddr(addr);
                 }
                 uint obj_plist_low = (plists.obj_plist & 0xFF);
                 uint obj_plist_high = ((plists.obj_plist >> 8) & 0xFF);

@@ -6103,10 +6103,38 @@ namespace FEBuilderGBA
                 }
                 else if (type == "STRUCT")
                 {
-                    MakeTextIDArrayForStruct(list, patch , i);
+                    MakeTextIDArrayForStruct(list, patch, i);
                 }
+//                else if (type == "BIN" || type == "EA")
+//                {
+//                    MakeTextIDArrayForBIN(list, patch, i);
+//                }
             }
         }
+        public static void MakeTextIDArrayForBIN(List<UseTextID> list, PatchSt patch, int tag)
+        {
+            string usetext = U.at(patch.Param, "USETEXT");
+
+            string error = CheckIF(patch, false);
+            if (error != "")
+            {
+                return;
+            }
+
+            string name = U.at(patch.Param, "NAME");
+
+            string[] textidlist = usetext.Split(' ');
+            foreach(string idtext in textidlist)
+            {
+                uint textid = U.atoi0x(idtext);
+                if (textid <= 0)
+                {
+                    continue;
+                }
+                UseTextID.AppendTextID(list, FELint.Type.PATCH, U.NOT_FOUND, name, textid, (uint)tag);
+            }
+        }
+
         public static void MakeTextIDArrayForAddr(List<UseTextID> list, PatchSt patch , int tag)
         {
             string addressType = U.at(patch.Param, "ADDRESS_TYPE");

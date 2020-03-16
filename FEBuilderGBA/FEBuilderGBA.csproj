@@ -120,6 +120,12 @@
     <Compile Include="ToolChangeProjectnameForm.Designer.cs">
       <DependentUpon>ToolChangeProjectnameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolCustomBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolCustomBuildForm.Designer.cs">
+      <DependentUpon>ToolCustomBuildForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolDecompileResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2078,6 +2084,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolChangeProjectnameForm.resx">
       <DependentUpon>ToolChangeProjectnameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolCustomBuildForm.resx">
+      <DependentUpon>ToolCustomBuildForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolDecompileResultForm.resx">
       <DependentUpon>ToolDecompileResultForm.cs</DependentUpon>

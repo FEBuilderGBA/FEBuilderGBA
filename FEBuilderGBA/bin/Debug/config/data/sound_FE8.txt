@@ -97,7 +97,7 @@
 00B5=SE:Warp end
 00B6=SE:Pure Water
 00B7=SE:Poison sound
-00B8=SE:UI or status-related sound effect?
+00B8=SE:壁崩落
 00B9=SE:Gold changing
 00BA=SE:Poison vent
 00BC=SE:神の矢 Vertical Arrow

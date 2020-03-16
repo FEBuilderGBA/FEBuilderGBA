@@ -32,6 +32,8 @@ namespace FEBuilderGBA
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
             g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
             g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
+            g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = MapSecondPalette_extends.NoCache;
+
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
         }
@@ -1071,6 +1073,57 @@ namespace FEBuilderGBA
             return itemicon_extends.NO;
         }
 
+        //マップ第2パレット.
+        public enum  MapSecondPalette_extends
+        {
+            NO,             //なし
+            Flag0x28_146,
+            Flag0x28_45,   
+            NoCache = (int)NO_CACHE
+        };
+        static MapSecondPalette_extends g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = MapSecondPalette_extends.NoCache;
+        public static MapSecondPalette_extends SearchFlag0x28ToMapSecondPalettePatch()
+        {
+            if (g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow == MapSecondPalette_extends.NoCache)
+            {
+                g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = SearchFlag0x28ToMapSecondPalettePatchLow();
+            }
+            return g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow;
+        }
+        static MapSecondPalette_extends SearchFlag0x28ToMapSecondPalettePatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Flag0x28_146",	ver = "FE8J", addr = 0x19628,data = new byte[]{0x00, 0x4A}},
+                new PatchTableSt{ name="Flag0x28_45",	ver = "FE8J", addr = 0x19628,data = new byte[]{0x00, 0x49}},
+                new PatchTableSt{ name="Flag0x28_146",	ver = "FE8U", addr = 0x19950,data = new byte[]{0x00, 0x4A}},
+                new PatchTableSt{ name="Flag0x28_45",	ver = "FE8U", addr = 0x19950,data = new byte[]{0x00, 0x49}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "Flag0x28_146")
+                {
+                    return MapSecondPalette_extends.Flag0x28_146;
+                }
+                if (t.name == "Flag0x28_45")
+                {
+                    return MapSecondPalette_extends.Flag0x28_45;
+                }
+            }
+            return MapSecondPalette_extends.NO;
+        }
 
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {

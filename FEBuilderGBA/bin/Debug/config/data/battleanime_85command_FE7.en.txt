@@ -5,7 +5,7 @@
 04=Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
 05=Call spell associated with equipped weapon
 06=Begin opponent's turn after hit.next code 0D.
-07=Start attack animation; should be preceeded by 0x03
+07=Start attack animation; should be immediately before by 0x03
 08=Critical hit
 09=Critical hit
 0A=Critical hit

@@ -10945,6 +10945,36 @@ Safely change the project file name. \r\nThe name of the past backup is also don
 :どちらのボタンをクリックしますか？
 Which button do you click?
 
+:スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。
+Build and install the skill extension from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.
+
+:ターゲット:ビルドするスキル拡張
+Target: Skill extension to build.
+
+:UnInstallに利用するエンジン
+Engine used for UnInstall.
+
+:スキル割り当て等を引き継ぎ
+Take over skill assignments, etc.
+
+:0=引き継がない
+0=There is no handover.
+
+:1=可能な限り引き継ぐ
+1=Take over as much as possible.
+
+:ビルド開始
+Build started.
+
+:FEBuilderGBAでインストールされるスキル拡張のソースコードが以下のURLで公開されています。
+The source code of the skill extension installed by FEBuilderGBA is released at the following URL.
+
+:ビルドエンジン: EA Coreの設定
+Build engine: EA Core settings.
+
+:カスタムビルド
+Custom build.
+
 :逆コンパイル中です。しばらくお待ちください。
 We are currently running decompiling. Please wait.
 

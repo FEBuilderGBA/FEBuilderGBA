@@ -373,6 +373,8 @@ namespace FEBuilderGBA
             public uint anime2_plist;
 
             public uint event_plist;
+
+            public uint palette2_plist; //パッチで拡張されたplist
         };
 
         //各種Plist一括取得.
@@ -403,6 +405,17 @@ namespace FEBuilderGBA
             plists.event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
             //            //FE6だけ worldmapは plistなんだけど。。。 別ルーチンでやっているからいれないことにする.
             //            plists.worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos());
+
+            //マップ第2パレット
+            PatchUtil.MapSecondPalette_extends secondPalette = PatchUtil.SearchFlag0x28ToMapSecondPalettePatch();
+            if (secondPalette == PatchUtil.MapSecondPalette_extends.Flag0x28_146)
+            {
+                plists.palette2_plist = (uint)Program.ROM.u8(addr + 146);
+            }
+            else if (secondPalette == PatchUtil.MapSecondPalette_extends.Flag0x28_45)
+            {
+                plists.palette2_plist = (uint)Program.ROM.u8(addr + 45);
+            }
 
             return plists;
         }
