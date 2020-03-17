@@ -1407,3 +1407,18 @@
 0802934C	EndBMAPMAIN
 08004078	ForEach6C
 080041E4	DeleteEach6CMarked
+08018e10	InitMapChangeGraphics
+08026f1c	AddMapChange
+08026f5c	UpdateUnitsUnderRoof
+08026B08	AddTrap
+
+@TrapEntry@00	byte	x pos
+@TrapEntry@01	byte	y pos
+@TrapEntry@02	byte	trap type id	0=Nothing (unused entry) 1=Ballista 2=Wall/Snag 3=Map Change (yes those are actually traps) 4=Fire Trap 5=Gas Trap 6=Map Change too? game supports them but idk where it might be used 7=Arrow Trap 8=? (used?) 9=? (used?) A=Light from Torch Staff B=Mine C=Gorgon Egg? (needs investigating as to in which circumstances) D=Light Rune
+@TrapEntry@03	byte	ext1
+@TrapEntry@04	byte	ext2
+@TrapEntry@05	byte	ext3
+@TrapEntry@06	byte	ext4
+@TrapEntry@07	byte	ext5
+
+02039330	@TrapEntry@[40]	Traps

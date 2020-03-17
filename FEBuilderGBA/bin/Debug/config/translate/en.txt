@@ -1310,7 +1310,7 @@ State
 Unit table ID
 
 :トラップデータ
-Trap data.
+Trap data
 
 :パーティー
 Party

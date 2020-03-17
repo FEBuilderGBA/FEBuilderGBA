@@ -1409,3 +1409,29 @@
 08041A38	EndAllMenus
 0808F2A4	DeletePlayerPhaseInterface6Cs
 0800d9b8	Function to operate the event instruction.	r0=Event instruction pointer: POINTER_EVENT.	r1=Argument? 1-3.	{J}
+0800D978	CallExecuteEvent_Slot3	r0=event
+0806B5B0	MaybeCallEndEvent
+0806cd78	ShouldCallEndEvent
+080419cc	EndMenu
+08008580	DeleteFaceByIndex
+0800830C	NewFace
+080082D0	StartFaceAuto
+080080a8	FindFreeFaceSlot
+0802934C	EndBMAPMAIN
+08004078	ForEach6C
+080041E4	DeleteEach6CMarked
+08018e10	InitMapChangeGraphics
+08026f1c	AddMapChange
+08026f5c	UpdateUnitsUnderRoof
+08026B08	AddTrap
+
+@TrapEntry@00	byte	x pos
+@TrapEntry@01	byte	y pos
+@TrapEntry@02	byte	trap type id	0=Nothing (unused entry) 1=Ballista 2=Wall/Snag 3=Map Change (yes those are actually traps) 4=Fire Trap 5=Gas Trap 6=Map Change too? game supports them but idk where it might be used 7=Arrow Trap 8=? (used?) 9=? (used?) A=Light from Torch Staff B=Mine C=Gorgon Egg? (needs investigating as to in which circumstances) D=Light Rune
+@TrapEntry@03	byte	ext1
+@TrapEntry@04	byte	ext2
+@TrapEntry@05	byte	ext3
+@TrapEntry@06	byte	ext4
+@TrapEntry@07	byte	ext5
+
+02039330	@TrapEntry@[40]	Traps

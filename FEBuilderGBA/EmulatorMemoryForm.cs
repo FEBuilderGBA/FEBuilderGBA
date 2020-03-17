@@ -2415,9 +2415,9 @@ namespace FEBuilderGBA
             this.SoundList.DummyAlloc(this.SongWorkingRAMs.Length, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SoundAddress);
 
-            this.TrapCheckBuffer = new byte[8 * 0x50];
+            this.TrapCheckBuffer = new byte[8 * 0x40];
             this.TrapList.OwnerDraw(DrawTrapList, DrawMode.OwnerDrawVariable, false);
-            this.TrapList.DummyAlloc(0x50, 0);
+            this.TrapList.DummyAlloc(0x40, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.TrapAddress);
         }
         //編を求める
@@ -2835,12 +2835,12 @@ namespace FEBuilderGBA
         private void SoundList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = SoundList.SelectedIndex;
-            if (index < 0 || index >= SongIDBuffer.Length)
+            if (index < 0 || index >= SongWorkingRAMs.Length)
             {
                 SoundAddress.Text = "";
                 return;
             }
-            uint addr = this.SongIDBuffer[index];
+            uint addr = this.SongWorkingRAMs[index];
             SoundAddress.Text = U.ToHexString(addr);
         }
 

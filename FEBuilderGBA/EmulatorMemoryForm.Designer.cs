@@ -213,9 +213,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
-            this.SoundAddress = new FEBuilderGBA.TextBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
-            this.label91 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
@@ -382,7 +380,6 @@
             this.TrapList = new FEBuilderGBA.ListBoxEx();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
-            this.SoundList = new FEBuilderGBA.ListBoxEx();
             this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
             this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
@@ -468,6 +465,14 @@
             this.textBoxEx30 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx31 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.SoundList = new FEBuilderGBA.ListBoxEx();
+            this.label91 = new System.Windows.Forms.Label();
+            this.SoundAddress = new FEBuilderGBA.TextBoxEx();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.EventPage.SuspendLayout();
@@ -653,6 +658,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // AutoUpdateCheckBox
@@ -3174,23 +3184,10 @@
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
-            this.EtcPage.Controls.Add(this.SoundAddress);
-            this.EtcPage.Controls.Add(this.PaletteSearchButton);
-            this.EtcPage.Controls.Add(this.label91);
-            this.EtcPage.Controls.Add(this.label58);
+            this.EtcPage.Controls.Add(this.tabControl1);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
-            this.EtcPage.Controls.Add(this.TrapAddress);
-            this.EtcPage.Controls.Add(this.SelectPalette);
-            this.EtcPage.Controls.Add(this.TrapList);
             this.EtcPage.Controls.Add(this.PartyCombo);
-            this.EtcPage.Controls.Add(this.PaletteAddress);
-            this.EtcPage.Controls.Add(this.SoundList);
-            this.EtcPage.Controls.Add(this.PaletteList);
-            this.EtcPage.Controls.Add(this.X_ETC_Diffculty_Text);
-            this.EtcPage.Controls.Add(this.X_ETC_Edition_Text);
             this.EtcPage.Controls.Add(this.PartyListBox);
-            this.EtcPage.Controls.Add(this.label92);
-            this.EtcPage.Controls.Add(this.label62);
             this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
             this.EtcPage.Name = "EtcPage";
@@ -3199,20 +3196,9 @@
             this.EtcPage.TabIndex = 4;
             this.EtcPage.Text = "Etc";
             // 
-            // SoundAddress
-            // 
-            this.SoundAddress.ErrorMessage = "";
-            this.SoundAddress.Location = new System.Drawing.Point(1525, 248);
-            this.SoundAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.SoundAddress.Name = "SoundAddress";
-            this.SoundAddress.Placeholder = "";
-            this.SoundAddress.ReadOnly = true;
-            this.SoundAddress.Size = new System.Drawing.Size(116, 25);
-            this.SoundAddress.TabIndex = 331;
-            // 
             // PaletteSearchButton
             // 
-            this.PaletteSearchButton.Location = new System.Drawing.Point(1446, 452);
+            this.PaletteSearchButton.Location = new System.Drawing.Point(660, 1);
             this.PaletteSearchButton.Name = "PaletteSearchButton";
             this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
             this.PaletteSearchButton.TabIndex = 324;
@@ -3220,21 +3206,10 @@
             this.PaletteSearchButton.UseVisualStyleBackColor = true;
             this.PaletteSearchButton.Click += new System.EventHandler(this.PaletteSearchButton_Click);
             // 
-            // label91
-            // 
-            this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label91.Location = new System.Drawing.Point(792, 245);
-            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(851, 30);
-            this.label91.TabIndex = 325;
-            this.label91.Text = "再生されている音楽";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label58
             // 
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label58.Location = new System.Drawing.Point(792, 3);
+            this.label58.Location = new System.Drawing.Point(1, 2);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(142, 30);
@@ -5331,7 +5306,7 @@
             // TrapAddress
             // 
             this.TrapAddress.ErrorMessage = "";
-            this.TrapAddress.Location = new System.Drawing.Point(1525, 41);
+            this.TrapAddress.Location = new System.Drawing.Point(732, 5);
             this.TrapAddress.Margin = new System.Windows.Forms.Padding(2);
             this.TrapAddress.Name = "TrapAddress";
             this.TrapAddress.Placeholder = "";
@@ -5342,7 +5317,7 @@
             // SelectPalette
             // 
             this.SelectPalette.ErrorMessage = "";
-            this.SelectPalette.Location = new System.Drawing.Point(884, 453);
+            this.SelectPalette.Location = new System.Drawing.Point(98, 4);
             this.SelectPalette.Name = "SelectPalette";
             this.SelectPalette.Placeholder = "";
             this.SelectPalette.Size = new System.Drawing.Size(556, 25);
@@ -5350,12 +5325,13 @@
             // 
             // TrapList
             // 
+            this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TrapList.FormattingEnabled = true;
             this.TrapList.IntegralHeight = false;
             this.TrapList.ItemHeight = 18;
-            this.TrapList.Location = new System.Drawing.Point(792, 67);
+            this.TrapList.Location = new System.Drawing.Point(3, 33);
             this.TrapList.Name = "TrapList";
-            this.TrapList.Size = new System.Drawing.Size(851, 175);
+            this.TrapList.Size = new System.Drawing.Size(847, 538);
             this.TrapList.TabIndex = 329;
             this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
             this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
@@ -5377,7 +5353,7 @@
             // PaletteAddress
             // 
             this.PaletteAddress.ErrorMessage = "";
-            this.PaletteAddress.Location = new System.Drawing.Point(1525, 455);
+            this.PaletteAddress.Location = new System.Drawing.Point(739, 4);
             this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
             this.PaletteAddress.Name = "PaletteAddress";
             this.PaletteAddress.Placeholder = "";
@@ -5385,27 +5361,15 @@
             this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
             this.PaletteAddress.TabIndex = 327;
             // 
-            // SoundList
-            // 
-            this.SoundList.FormattingEnabled = true;
-            this.SoundList.IntegralHeight = false;
-            this.SoundList.ItemHeight = 18;
-            this.SoundList.Location = new System.Drawing.Point(792, 274);
-            this.SoundList.Name = "SoundList";
-            this.SoundList.Size = new System.Drawing.Size(851, 175);
-            this.SoundList.TabIndex = 326;
-            this.SoundList.SelectedIndexChanged += new System.EventHandler(this.SoundList_SelectedIndexChanged);
-            this.SoundList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SoundList_KeyDown);
-            this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
-            // 
             // PaletteList
             // 
+            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PaletteList.FormattingEnabled = true;
             this.PaletteList.IntegralHeight = false;
             this.PaletteList.ItemHeight = 18;
-            this.PaletteList.Location = new System.Drawing.Point(792, 481);
+            this.PaletteList.Location = new System.Drawing.Point(3, 33);
             this.PaletteList.Name = "PaletteList";
-            this.PaletteList.Size = new System.Drawing.Size(851, 407);
+            this.PaletteList.Size = new System.Drawing.Size(847, 538);
             this.PaletteList.TabIndex = 321;
             this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
             this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
@@ -5414,7 +5378,7 @@
             // X_ETC_Diffculty_Text
             // 
             this.X_ETC_Diffculty_Text.ErrorMessage = "";
-            this.X_ETC_Diffculty_Text.Location = new System.Drawing.Point(1251, 2);
+            this.X_ETC_Diffculty_Text.Location = new System.Drawing.Point(460, 1);
             this.X_ETC_Diffculty_Text.Margin = new System.Windows.Forms.Padding(2);
             this.X_ETC_Diffculty_Text.Name = "X_ETC_Diffculty_Text";
             this.X_ETC_Diffculty_Text.Placeholder = "";
@@ -5425,7 +5389,7 @@
             // X_ETC_Edition_Text
             // 
             this.X_ETC_Edition_Text.ErrorMessage = "";
-            this.X_ETC_Edition_Text.Location = new System.Drawing.Point(938, 3);
+            this.X_ETC_Edition_Text.Location = new System.Drawing.Point(147, 2);
             this.X_ETC_Edition_Text.Margin = new System.Windows.Forms.Padding(2);
             this.X_ETC_Edition_Text.Name = "X_ETC_Edition_Text";
             this.X_ETC_Edition_Text.Placeholder = "";
@@ -5451,10 +5415,11 @@
             // label92
             // 
             this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label92.Location = new System.Drawing.Point(792, 452);
+            this.label92.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label92.Location = new System.Drawing.Point(3, 3);
             this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(851, 30);
+            this.label92.Size = new System.Drawing.Size(847, 30);
             this.label92.TabIndex = 319;
             this.label92.Text = "パレット";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -5462,10 +5427,11 @@
             // label62
             // 
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label62.Location = new System.Drawing.Point(792, 38);
+            this.label62.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label62.Location = new System.Drawing.Point(3, 3);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(851, 30);
+            this.label62.Size = new System.Drawing.Size(847, 30);
             this.label62.TabIndex = 328;
             this.label62.Text = "トラップデータ";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -6443,6 +6409,105 @@
             this.textBoxEx32.Size = new System.Drawing.Size(671, 25);
             this.textBoxEx32.TabIndex = 202;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(785, 8);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(861, 876);
+            this.tabControl1.TabIndex = 332;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.SoundAddress);
+            this.tabPage1.Controls.Add(this.SoundList);
+            this.tabPage1.Controls.Add(this.label91);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(853, 844);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "汎用";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.TrapAddress);
+            this.tabPage2.Controls.Add(this.TrapList);
+            this.tabPage2.Controls.Add(this.label62);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(853, 574);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "トラップデータ";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.PaletteList);
+            this.tabPage3.Controls.Add(this.PaletteAddress);
+            this.tabPage3.Controls.Add(this.PaletteSearchButton);
+            this.tabPage3.Controls.Add(this.SelectPalette);
+            this.tabPage3.Controls.Add(this.label92);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(853, 574);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "パレット";
+            // 
+            // SoundList
+            // 
+            this.SoundList.FormattingEnabled = true;
+            this.SoundList.IntegralHeight = false;
+            this.SoundList.ItemHeight = 18;
+            this.SoundList.Location = new System.Drawing.Point(3, 79);
+            this.SoundList.Name = "SoundList";
+            this.SoundList.Size = new System.Drawing.Size(851, 175);
+            this.SoundList.TabIndex = 326;
+            this.SoundList.SelectedIndexChanged += new System.EventHandler(this.SoundList_SelectedIndexChanged);
+            this.SoundList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SoundList_KeyDown);
+            this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
+            // 
+            // label91
+            // 
+            this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label91.Location = new System.Drawing.Point(3, 50);
+            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(851, 30);
+            this.label91.TabIndex = 325;
+            this.label91.Text = "再生されている音楽";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SoundAddress
+            // 
+            this.SoundAddress.ErrorMessage = "";
+            this.SoundAddress.Location = new System.Drawing.Point(736, 53);
+            this.SoundAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundAddress.Name = "SoundAddress";
+            this.SoundAddress.Placeholder = "";
+            this.SoundAddress.ReadOnly = true;
+            this.SoundAddress.Size = new System.Drawing.Size(116, 25);
+            this.SoundAddress.TabIndex = 331;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.X_ETC_Edition_Text);
+            this.panel2.Controls.Add(this.label58);
+            this.panel2.Controls.Add(this.X_ETC_Diffculty_Text);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(847, 43);
+            this.panel2.TabIndex = 332;
+            // 
             // EmulatorMemoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -6651,6 +6716,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -7077,8 +7151,6 @@
         private ListBoxEx PaletteList;
         private System.Windows.Forms.Button PaletteSearchButton;
         private TextBoxEx SelectPalette;
-        private System.Windows.Forms.Label label91;
-        private ListBoxEx SoundList;
         private TextBoxEx PaletteAddress;
         private System.Windows.Forms.Button CHEAT_WARP;
         private System.Windows.Forms.NumericUpDown CHEAT_WARP_CHPATER_VALUE;
@@ -7095,6 +7167,13 @@
         private System.Windows.Forms.Label label62;
         private ListBoxEx TrapList;
         private TextBoxEx TrapAddress;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
         private TextBoxEx SoundAddress;
+        private ListBoxEx SoundList;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Panel panel2;
     }
 }
