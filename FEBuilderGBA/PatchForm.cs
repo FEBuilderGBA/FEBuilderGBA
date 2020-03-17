@@ -5208,6 +5208,7 @@ namespace FEBuilderGBA
             return false;
         }
 
+
         public bool ApplyPatch(string PatchName, string PatchName2 = "", string patchCombo = "", bool isSlient = false, bool isAutoClose = true)
         {
             //フィルターをしていたらやめさせる.
@@ -6948,6 +6949,59 @@ namespace FEBuilderGBA
             }
         }
 
+        public bool UnInstallPatch(string PatchName, string PatchName2, bool isAutoClose, bool isForceUninstall)
+        {
+            //フィルターをしていたらやめさせる.
+            Filter.Text = "";
+            SortFilter = SortEnum.SortNone;
+            //パッチの再スキャン
+            ReScan();
+
+            bool r;
+
+            //自動適応するパッチを検索
+            int i = 0;
+            for (; i < this.Patchs.Count; i++)
+            {
+                r = checkPatchName(this.Patchs[i].PatchFileName, PatchName, PatchName2);
+                if (r)
+                {
+                    break;
+                }
+            }
+            if (i >= this.Patchs.Count)
+            {
+                return false;
+            }
+
+            //パッチの選択
+            PatchList.SelectedIndex = i;
+
+            if (isForceUninstall == false)
+            {
+                if (this.TAB.SelectedTab == this.PatchedPage)
+                {//既に適応済み
+                    return true;
+                }
+                if (this.TAB.SelectedTab != this.PatchPage)
+                {//パッチ画面ではない.エラーが発生している
+                    return false;
+                }
+            }
+
+            PatchSt patch = this.FiltedPatchs[this.PatchList.SelectedIndex];
+            r = UnInstallPatch(patch, false);
+            if (r == true)
+            {
+                if (isAutoClose)
+                {
+                    //フォームを閉じる.
+                    this.Close();
+                }
+            }
+
+            return r;
+        }
 
         bool UnInstallPatch(PatchSt patch, bool isAutomatic)
         {

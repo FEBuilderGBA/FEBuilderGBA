@@ -1309,6 +1309,9 @@ State
 :部隊表ID
 Unit table ID
 
+:トラップデータ
+Trap data.
+
 :パーティー
 Party
 
@@ -9136,12 +9139,6 @@ Since the opcode has been rewritten with another patch, it can't be expanded\r\n
 :配列を {0}まで拡張してもよろしいですか？
 ArrayAre you sure you want to extend it to {0}?
 
-:変換開始
-Start conversion
-
-:ASMファイルを他のゲーム用に自動変換します
-Automatically convert ASM files for other games
-
 :一括アドレス変換
 Batch address translation
 
@@ -10945,14 +10942,17 @@ Safely change the project file name. \r\nThe name of the past backup is also don
 :どちらのボタンをクリックしますか？
 Which button do you click?
 
+:無改造ROM({0})が見つかりませんでした
+Unmodified ROM ({0}) was not found.
+
+:無改造ROM({0})を、({1})にコピーできませんでした。\r\n{2}
+Unmodified ROM ({0}) could not be copied to ({1}).\r\n{2}.
+
 :スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。
 Build and install the skill extension from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.
 
 :ターゲット:ビルドするスキル拡張
 Target: Skill extension to build.
-
-:UnInstallに利用するエンジン
-Engine used for UnInstall.
 
 :スキル割り当て等を引き継ぎ
 Take over skill assignments, etc.
@@ -10969,8 +10969,8 @@ Build started.
 :FEBuilderGBAでインストールされるスキル拡張のソースコードが以下のURLで公開されています。
 The source code of the skill extension installed by FEBuilderGBA is released at the following URL.
 
-:ビルドエンジン: EA Coreの設定
-Build engine: EA Core settings.
+:無改造ROM
+Unmodified ROM
 
 :カスタムビルド
 Custom build.
@@ -11004,9 +11004,6 @@ There is no difference.\r\nPlease change the comparison condition.\r\nIf the com
 
 :無改造ROMを選択してください
 Please select unmodified ROM
-
-:無改造ROM
-Unmodified ROM
 
 :探索するprefix
 Search prefix

@@ -35,6 +35,7 @@ namespace FEBuilderGBA
         {
             //マップエディタのマップスタイル
             List < MapEditConfst >  mapeditconf = PreLoadResource(U.ConfigDataFilename("mapstyle_"));
+            bool useSecondPalette = PatchUtil.SearchFlag0x28ToMapSecondPalettePatch() != PatchUtil.MapSecondPalette_extends.NO;
 
             for (int i = 0; i < maplist.Count; i++)
             {
@@ -51,6 +52,22 @@ namespace FEBuilderGBA
                     st.anime2_plist = plists.anime2_plist;
                     st.Name = R._("追加スタイル({0})",MapSettingForm.GetMapNameWhereAddr(addr));
                     mapeditconf.Add(st);
+                }
+
+                if (useSecondPalette && plists.palette2_plist > 0)
+                {
+                    int style2 = FindMapStyle_UsePalette2(mapeditconf, plists);
+                    if (style2 < 0)
+                    {
+                        MapEditConfst st = new MapEditConfst();
+                        st.obj_plist = plists.obj_plist;
+                        st.palette_plist = plists.palette2_plist;
+                        st.config_plist = plists.config_plist;
+                        st.anime1_plist = plists.anime1_plist;
+                        st.anime2_plist = plists.anime2_plist;
+                        st.Name = R._("追加スタイル({0})", MapSettingForm.GetMapNameWhereAddr(addr));
+                        mapeditconf.Add(st);
+                    }
                 }
             }
             return mapeditconf;
@@ -1253,13 +1270,32 @@ this.MapObjImage);
             return U.NOT_FOUND;
         }
         //マップスタイルの検索
-        public static int FindMapStyle(List<MapEditConfst> mapceditonf, MapSettingForm.PLists plists)
+        static int FindMapStyle(List<MapEditConfst> mapceditonf, MapSettingForm.PLists plists)
         {
             for (int i = 0; i < mapceditonf.Count; i++)
             {
                 if (
                     mapceditonf[i].obj_plist == plists.obj_plist
                  && mapceditonf[i].palette_plist == plists.palette_plist
+                 && mapceditonf[i].config_plist == plists.config_plist
+                 && mapceditonf[i].anime1_plist == plists.anime1_plist
+                 && mapceditonf[i].anime2_plist == plists.anime2_plist
+                    )
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        static int FindMapStyle_UsePalette2(List<MapEditConfst> mapceditonf, MapSettingForm.PLists plists)
+        {
+            Debug.Assert(plists.palette2_plist > 0);
+            for (int i = 0; i < mapceditonf.Count; i++)
+            {
+                if (
+                    mapceditonf[i].obj_plist == plists.obj_plist
+                 && mapceditonf[i].palette_plist == plists.palette2_plist
                  && mapceditonf[i].config_plist == plists.config_plist
                  && mapceditonf[i].anime1_plist == plists.anime1_plist
                  && mapceditonf[i].anime2_plist == plists.anime2_plist

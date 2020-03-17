@@ -517,6 +517,12 @@ namespace FEBuilderGBA
         public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
         {
             StringBuilder sb = new StringBuilder();
+            if (freearea == U.NOT_FOUND && org_sp == U.NOT_FOUND)
+            {
+                sb.AppendLine(String.Format("#include \"{0}\"\r\n"
+                    , Path.GetFileName(target_filename)));
+                return sb.ToString();
+            }
 
             EAUtil ea = new EAUtil(target_filename);
             for (int i = 0; i < ea.IfNDefList.Count; i++)

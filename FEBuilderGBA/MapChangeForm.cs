@@ -117,6 +117,11 @@ namespace FEBuilderGBA
             }
             U.SelectedIndexSafety(N_AddressList, id);
         }
+        public void JumpToMAPIDAndID(uint mapid, uint id)
+        {
+            SelectMapID(mapid);
+            U.SelectedIndexSafety(N_AddressList, id);
+        }
 
         private void N_P8_ValueChanged(object sender, EventArgs e)
         {

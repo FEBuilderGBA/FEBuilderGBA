@@ -6413,6 +6413,59 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        //トラップデータ
+        public static string GetTrapName(uint num)
+        {
+            if (num == 0)
+            {
+                return R._("0=None");
+            }
+            else if (num == 1)
+            {
+                return R._("1=Ballista");
+            }
+            else if (num == 2)
+            {
+                return R._("2=Wall/Snag");
+            }
+            else if (num == 3)
+            {
+                return R._("3=MapChange");
+            }
+            else if (num == 4)
+            {
+                return R._("4=Fire Trap");
+            }
+            else if (num == 5)
+            {
+                return R._("5=Gas Trap");
+            }
+            else if (num == 6)
+            {
+                return R._("6=MapChange2");
+            }
+            else if (num == 7)
+            {
+                return R._("7=Arrow Trap");
+            }
+            else if (num == 0xA)
+            {
+                return R._("A=TorchStaff");
+            }
+            else if (num == 0xB)
+            {
+                return R._("B=Mine");
+            }
+            else if (num == 0xC)
+            {
+                return R._("C=Gorgon Egg");
+            }
+            else if (num == 0xD)
+            {
+                return R._("D=Light Rune");
+            }
+            return U.ToHexString(num) + "=??";
+        }
 
         //フラグ
         public static String GetFlagName(uint num, out string errorMessage)
@@ -11465,6 +11518,14 @@ namespace FEBuilderGBA
         public static string GetCommentSA(uint addr)
         {
             return Program.CommentCache.S_At(addr);
+        }
+        public static void AppendEvent_CopyAddressToDoubleClick(Control v)
+        {
+            v.MouseDoubleClick += (self, ee ) => {
+                PointerToolCopyToForm f = (PointerToolCopyToForm)InputFormRef.JumpFormLow<PointerToolCopyToForm>();
+                f.Init((uint)U.atoh(v.Text));
+                f.ShowDialog();
+            };
         }
     }
 }

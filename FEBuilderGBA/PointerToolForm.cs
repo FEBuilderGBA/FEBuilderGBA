@@ -1086,47 +1086,5 @@ namespace FEBuilderGBA
             return prefix + U.ToHexString(foundAddr);
         }
 
-        private void PointerToolAlienButton_Click(object sender, EventArgs e)
-        {
-            if (   this.OtherROMData == null 
-                || this.OtherROMData.Length <= 0)
-            {
-                R.ShowStopError("先に、ターゲットのROMを読込んでください。");
-                return;
-            }
-
-            PointerToolAlienForm f = (PointerToolAlienForm)InputFormRef.JumpFormLow<PointerToolAlienForm>();
-            DialogResult dr = f.ShowDialog(this);
-            if (dr != System.Windows.Forms.DialogResult.Yes)
-            {
-                return;
-            }
-
-            string saveFilename = AlienSourceCode(f.GetFilename());
-        }
-        string AlienSourceCode(string filename)
-        {
-            Dictionary<uint, uint> addressCache = new Dictionary<uint, uint>();
-
-            string[] lines = File.ReadAllLines(filename);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                lines[i] = Regex.Replace(lines[i], @"(0x|$)([0-9a-fA-F]+)", (Match m)=>
-                {
-                    if (m.Groups.Count < 3)
-                    {
-                        return m.Value;
-                    }
-                    uint addr = U.atoh(m.Groups[2].ToString());
-                    string prefix = m.Groups[1].ToString();
-
-                    return ReplaceFunction(prefix, addr, m.Value, addressCache);
-                });
-            }
-            string ext = Path.GetExtension(filename);
-            string saveFilename = filename + ".convert" + ext;
-            File.WriteAllLines(saveFilename, lines);
-            return saveFilename; 
-        }
     }
 }

@@ -1,5 +1,5 @@
-NAME=Sランクの制限を解除して、複数の武器をSランクで利用できるようにする
-NAME.en=Modify S-Rank Limits
+NAME=Sランクの制限を解除して、複数の武器をSランクで利用できるようにする(FE8N)
+NAME.en=Modify S-Rank Limits(FE8N)
 
 TYPE=SWITCH
 TAG=#ENGINE
@@ -8,16 +8,14 @@ COMBO=Default|OFF|Sランク制限の解除|ONN
 
 DETERMINATION_ADDRESS=0x2C098
 
-ONN:0x2C098=0x11 0xE0
+ONN:0x2C098=0x04 0x2B
 OFF:0x2C098=0x99 0x42
 
 AUTHOR=Tequila
 
 COMBO.en=Default|OFF|Removing S rank limit|ONN
-NAME.zh=取消对S等级的限制，并为S等级制造多种武器
+NAME.zh=取消对S等级的限制，并为S等级制造多种武器(FE8N)
 COMBO.zh=Default|OFF|发布S等级限制|ONN
 INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched)\r\n
 
-IF:0x2C0BE=0x38 0x68
-
-//IF:0x2C0C2=0x94 0x6A
+IF:0x2C0C2=0x94 0x6A

@@ -202,7 +202,10 @@ namespace FEBuilderGBA
             UpdateRunningEventList();
             UpdateControlUnit();
             UpdateParty();
-            UpdatePaletteEtc();
+            UpdateEditon();
+            UpdateSong();
+            UpdateTrap();
+            UpdatePalette();
         }
         void UpdateUserStack()
         {
@@ -2394,6 +2397,7 @@ namespace FEBuilderGBA
             this.PaletteCheckBuffer = new byte[2 * 16 * 16 * 2];
             this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawVariable, false);
             this.PaletteList.DummyAlloc(32, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.PaletteAddress);
 
             this.SongWorkingRAMs = new uint[]{
                 Program.ROM.RomInfo.workmemory_sound_player_00_address()
@@ -2409,6 +2413,12 @@ namespace FEBuilderGBA
             this.SongIDBuffer = new uint[this.SongWorkingRAMs.Length];
             this.SoundList.OwnerDraw(DrawSongList, DrawMode.OwnerDrawVariable, false);
             this.SoundList.DummyAlloc(this.SongWorkingRAMs.Length, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SoundAddress);
+
+            this.TrapCheckBuffer = new byte[8 * 0x50];
+            this.TrapList.OwnerDraw(DrawTrapList, DrawMode.OwnerDrawVariable, false);
+            this.TrapList.DummyAlloc(0x50, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.TrapAddress);
         }
         //編を求める
         uint GetEdition()
@@ -2477,7 +2487,7 @@ namespace FEBuilderGBA
             }
             return ret;
         }
-        void UpdatePaletteEtc()
+        void UpdateEditon()
         {
             {
                 uint v = GetEdition();
@@ -2496,7 +2506,9 @@ namespace FEBuilderGBA
                     this.X_ETC_Diffculty_Text.Text = ConvertDiffeclyToString(v);
                 }
             }
-
+        }
+        void UpdateSong()
+        {
             bool isInvalidateSongList = false;
             for (int i = 0; i < this.SongWorkingRAMs.Length; i++)
             {
@@ -2516,13 +2528,34 @@ namespace FEBuilderGBA
             {
                 this.SoundList.Invalidate();
             }
-
+        }
+        void UpdateTrap()
+        {
             byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_trap_address()
+                , this.TrapCheckBuffer.Length);
+            if (U.memcmp(this.TrapCheckBuffer, bin) != 0)
+            {//変更有
+                this.TrapCheckBuffer = bin;
+                this.TrapList.Invalidate();
+            }
+        }
+        void UpdatePalette()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_trap_address()
+                , this.TrapCheckBuffer.Length);
+            if (U.memcmp(this.TrapCheckBuffer, bin) != 0)
+            {//変更有
+                this.TrapCheckBuffer = bin;
+                this.TrapList.Invalidate();
+            }
+
+            bin = Program.RAM.getBinaryData(
                   Program.ROM.RomInfo.workmemory_palette_address()
                 , this.PaletteCheckBuffer.Length);
             if (U.memcmp(this.PaletteCheckBuffer, bin) != 0)
-            {
-                //変更有
+            {//変更有
                 this.PaletteCheckBuffer = bin;
                 this.PartyListBox.Invalidate();
             }
@@ -2599,11 +2632,63 @@ namespace FEBuilderGBA
             bounds.Y += (int)lineHeight;
             return new Size(bounds.X, bounds.Y);
         }
+        Size DrawTrapList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            uint lineHeight = 12;
+
+            uint addr = Program.ROM.RomInfo.workmemory_trap_address() + ((uint)index * 0x8);
+            uint x = Program.RAM.u8(addr + 0);
+            uint y = Program.RAM.u8(addr + 1);
+            uint trapID = Program.RAM.u8(addr + 2);
+
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            U.DrawText(InputFormRef.GetTrapName(trapID), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 90;
+
+            if (trapID == 0)
+            {
+                bounds.Y += (int)lineHeight;
+                return new Size(bounds.X, bounds.Y);
+            }
+
+            U.DrawText("X:" + x, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 40;
+
+            U.DrawText("Y:" + y, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 40;
+
+            uint ext1 = Program.RAM.u8(addr + 3);
+            uint ext2 = Program.RAM.u8(addr + 4);
+            uint ext3 = Program.RAM.u8(addr + 5);
+            uint ext4 = Program.RAM.u8(addr + 6);
+            uint ext5 = Program.RAM.u8(addr + 7);
+            U.DrawText(U.ToHexString2(ext1), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 20;
+            U.DrawText(U.ToHexString2(ext2), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 30;
+            U.DrawText(U.ToHexString2(ext3), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 30;
+            U.DrawText(U.ToHexString2(ext4), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 30;
+            U.DrawText(U.ToHexString2(ext5), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 30;
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
         uint Edition;
         uint Diffeclty;
         byte[] PaletteCheckBuffer;
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
+        byte[] TrapCheckBuffer;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
         {
@@ -2647,7 +2732,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint addr = SongIDBuffer[index];
+            uint addr = this.SongIDBuffer[index];
             string name = SongTableForm.GetSongNameWhereSongHeader(addr);
             uint song_id = U.atoh(name);
             if (song_id <= 0)
@@ -2655,6 +2740,32 @@ namespace FEBuilderGBA
                 return;
             }
             InputFormRef.JumpForm<SongTableForm>(song_id);
+        }
+
+        private void TrapList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = TrapList.SelectedIndex;
+            if (index < 0 || index >= TrapList.Items.Count)
+            {
+                return;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_trap_address() + ((uint)index * 0x8);
+            uint x = Program.RAM.u8(addr + 0);
+            uint y = Program.RAM.u8(addr + 1);
+            uint trapID = Program.RAM.u8(addr + 2);
+
+            uint ext1 = Program.RAM.u8(addr + 3);
+            uint ext2 = Program.RAM.u8(addr + 4);
+            uint ext3 = Program.RAM.u8(addr + 5);
+            uint ext4 = Program.RAM.u8(addr + 6);
+            uint ext5 = Program.RAM.u8(addr + 7);
+
+            uint mapid = (uint)N_B14.Value;
+            if (trapID == 0x03 || trapID == 0x06)
+            {//ext1がマップ変化ID
+                MapChangeForm f = (MapChangeForm)InputFormRef.JumpForm<MapChangeForm>();
+                f.JumpToMAPIDAndID( mapid, ext1);
+            }
         }
 
         private void PARTY_ROMUNITPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -2709,6 +2820,55 @@ namespace FEBuilderGBA
             }
 
         }
+
+        private void TrapList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = TrapList.SelectedIndex;
+            if (index < 0 || index >= TrapList.Items.Count)
+            {
+                TrapAddress.Text = "";
+                return ;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_trap_address() + ((uint)index * 0x8);
+            TrapAddress.Text = U.ToHexString(addr);
+        }
+        private void SoundList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = SoundList.SelectedIndex;
+            if (index < 0 || index >= SongIDBuffer.Length)
+            {
+                SoundAddress.Text = "";
+                return;
+            }
+            uint addr = this.SongIDBuffer[index];
+            SoundAddress.Text = U.ToHexString(addr);
+        }
+
+        private void TrapList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TrapList_MouseDoubleClick(sender, null);
+            }
+        }
+
+        private void SoundList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SoundList_MouseDoubleClick(sender, null);
+            }
+        }
+
+        private void PaletteList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PaletteList_MouseDoubleClick(sender, null);
+            }
+        }
+
+
 
 
 
