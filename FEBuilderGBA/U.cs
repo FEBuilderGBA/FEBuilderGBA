@@ -6909,6 +6909,24 @@ namespace FEBuilderGBA
             }
             return false;
         }
+        public static void DeleteFile(string dir , string filename, SearchOption option = SearchOption.TopDirectoryOnly)
+        {
+            string[] files = U.Directory_GetFiles_Safe(dir, filename, option);
+            foreach (string name in files)
+            {
+                File.Delete(name);
+            }
+        }
+        public static bool CopyFile(string src,string dest)
+        {
+            if (!File.Exists(src))
+            {
+                return false;
+            }
+            byte[] bin = File.ReadAllBytes(src);
+            File.WriteAllBytes(dest, bin);
+            return true;
+        }
     }
 }
 

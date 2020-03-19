@@ -835,6 +835,7 @@ namespace FEBuilderGBA
                 //FE8Nのスキル割り当てはユニットの??領域を使うので専用画面は不要.
                 SkillAssignmentUnitButton.Hide();
                 FE8SpellMenuExtendsButton.Hide();
+                ToolCustomBuildButton.Hide();
             }
         }
 
@@ -1074,6 +1075,11 @@ namespace FEBuilderGBA
         private void WorkSupportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolWorkSupportForm>();
+        }
+
+        private void ToolCustomBuildButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolCustomBuildForm>();
         }
 
     }

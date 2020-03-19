@@ -213,7 +213,7 @@ namespace FEBuilderGBA
 
             return "";
         }
-        static PatchSt LoadPatch(string fullfilename, bool isScanOnly)
+        public static PatchSt LoadPatch(string fullfilename, bool isScanOnly)
         {
             string[] lines = File.ReadAllLines(fullfilename);
             return LoadPatch(lines,fullfilename, isScanOnly);
@@ -7636,7 +7636,10 @@ namespace FEBuilderGBA
                     return R.Error("ユーザが処理をキャンセルしました。");
                 }
             }
-
+            return UpdatePatch(patch);
+        }
+        public string UpdatePatch(PatchSt patch)
+        {
             //依存するパッチのリストをすべて作成する.
             List<PatchSt> dependsList = new List<PatchSt>();
             //新しくインストールしたパッチのリスト
@@ -8144,7 +8147,7 @@ namespace FEBuilderGBA
             }
             U.WriteAllText(filename, sb.ToString());
         }
-        void ReplacePointers(PatchSt patch,Undo.UndoData undodata)
+        static void ReplacePointers(PatchSt patch,Undo.UndoData undodata)
         {
             foreach (var pair in patch.Param)
             {
@@ -8157,7 +8160,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        void ReplacePointerSub(uint searchPointer,string typeName , PatchSt patch, Undo.UndoData undodata)
+        static void ReplacePointerSub(uint searchPointer,string typeName , PatchSt patch, Undo.UndoData undodata)
         {
             uint newPointer;
             if (typeName == "ITEM")

@@ -1,0 +1,12 @@
+NAME=Fix Bug 盾パッチのマップ変化バグの修正
+NAME.en=Fix Bug Shield patch TileChange Glitch
+NAME.zh=Fix Bug Shield patch TileChange Glitch
+
+INFO=宝箱を開けたときに、持ち物が満杯だったときに、マップ変化のデータを破壊するバグを修正します。
+INFO.en=Fixes a bug that destroys map change data when the chest is full and your inventory is full.
+INFO.zh=Fixes a bug that destroys map change data when the chest is full and your inventory is full.
+
+
+TYPE=BIN
+IF:0x0E49330=0x89 0x00 0x09 0x19 0x08 0x80 0x4A 0x80
+BINF:0xE49330=nop4.dmp

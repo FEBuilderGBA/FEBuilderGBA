@@ -861,9 +861,17 @@ namespace FEBuilderGBA
 
             return output;
         }
-        static bool IsCompilerErrorByEventAssembler(string output)
+        public static bool IsCompilerErrorByEventAssembler(string output)
         {
-            return (output.IndexOf("No errors or warnings.") < 0);
+            if (output.IndexOf("No errors or warnings.") >= 0)
+            {
+                return false;
+            }
+            if (output.IndexOf("No errors. Please continue being awesome.") >= 0)
+            {
+                return false;
+            }
+            return true;
         }
 
 
@@ -2534,7 +2542,11 @@ namespace FEBuilderGBA
             {
                 return R._("UnitActionテーブルを表示します。\r\nUnitActionテーブルは、マップ上のユニットの動作を定義するテーブルです。") + GetForHighLevelUser();
             }
-            
+            if (name == "ToolCustomBuildButton")
+            {
+                return R._("スキル拡張のカスタムビルドを行います。") + GetForHighLevelUser();
+            }
+
             return "";
         }
         public static void MakeExplainFunctions(Control controlPanel)

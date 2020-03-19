@@ -1005,7 +1005,7 @@ Baldr
 闇の樹海	Darkling Woods
 ジャハナ王宮	Jehanna Hall
 国境ミュラン	Border Mulan
-Ide	イム
+イム	Ide
 ザッハの古森	Za'ha Woods
 ロード	Lord
 マスターロード	Great Lord

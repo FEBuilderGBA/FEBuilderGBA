@@ -85,7 +85,19 @@ namespace FEBuilderGBA
             }
             Program.LastSelectedFilename.Save(this, "", save);
 
-            string name = U.substr(Path.GetFileNameWithoutExtension(save.FileName), "PATCH_".Length);
+            uint PATCHED_IF_MinSize = (uint)RecoverMissMatchNumericUpDown.Value;
+            string bin_patchfilename = save.FileName;
+
+            bool isCollectFreeSpace = this.IsCollectFreeSpace.Checked;
+            byte[] otherBIN = File.ReadAllBytes(OtherFilename.Text);
+            MakeDiff(bin_patchfilename, Program.ROM.Data, otherBIN, PATCHED_IF_MinSize, isCollectFreeSpace);
+
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(bin_patchfilename);
+        }
+        public static void MakeDiff(string bin_patchfilename,byte[] currentBIN, byte[] otherBIN, uint PATCHED_IF_MinSize, bool isCollectFreeSpace)
+        {
+            string name = U.substr(Path.GetFileNameWithoutExtension(bin_patchfilename), "PATCH_".Length);
 
             List<string> lines = new List<string>();
             lines.Add("NAME=" + name);
@@ -93,24 +105,20 @@ namespace FEBuilderGBA
             lines.Add("");
 
             bool PATCHED_IF_NotYet = true;
-            uint PATCHED_IF_MinSize = (uint)RecoverMissMatchNumericUpDown.Value;
+//            uint PATCHED_IF_MinSize = (uint)RecoverMissMatchNumericUpDown.Value;
 
-            string bin_patchfilename = save.FileName;
-
-            int RecoverMissMatch = (int)RecoverMissMatchNumericUpDown.Value;
+            int RecoverMissMatch = (int)PATCHED_IF_MinSize;
             int checkpoint = -1;
 
             //SkillSystemsのパッチを作るときのために、フリー領域はまとめてdiffを出力する.
             uint beginFreeSpace;
             uint endFreeSpace;
-            bool isCollectFreeSpace = DefineFreeSapce(out beginFreeSpace, out endFreeSpace);
+            isCollectFreeSpace = DefineFreeSapce(out beginFreeSpace, out endFreeSpace, isCollectFreeSpace);
 
-            byte[] other = File.ReadAllBytes(OtherFilename.Text);
-
-            int length = Math.Max(Program.ROM.Data.Length,other.Length);
+            int length = Math.Max(currentBIN.Length, otherBIN.Length);
             for (int i = 0; i < length; i++)
             {
-                if ( U.at(Program.ROM.Data,i) == U.at(other,i))
+                if (U.at(currentBIN, i) == U.at(otherBIN, i))
                 {
                     continue;
                 }
@@ -128,7 +136,7 @@ namespace FEBuilderGBA
                         continue;
                     }
 
-                    if (U.at(Program.ROM.Data, i) != U.at(other, i))
+                    if (U.at(currentBIN, i) != U.at(otherBIN, i))
                     {
                         missCount = 0;
                         continue;
@@ -151,14 +159,14 @@ namespace FEBuilderGBA
                 string split_filename_fullpath =
                     Path.Combine(Path.GetDirectoryName(bin_patchfilename), split_filename);
 
-                byte[] diff = U.subrange(other, (uint)checkpoint, (uint)i);
+                byte[] diff = U.subrange(otherBIN, (uint)checkpoint, (uint)i);
                 U.WriteAllBytes(split_filename_fullpath, diff);
 
                 if (PATCHED_IF_NotYet)
                 {
                     if (diff.Length > PATCHED_IF_MinSize)
                     {
-                        lines.Add("PATCHED_IF:" + U.To0xHexString((uint)checkpoint) + "=" + U.DumpByte(diff) );
+                        lines.Add("PATCHED_IF:" + U.To0xHexString((uint)checkpoint) + "=" + U.DumpByte(diff));
 
                         PATCHED_IF_NotYet = false;
                     }
@@ -168,15 +176,12 @@ namespace FEBuilderGBA
             }
 
             File.WriteAllLines(bin_patchfilename, lines);
-
-            //エクスプローラで選択しよう
-            U.SelectFileByExplorer(bin_patchfilename);
         }
-        bool DefineFreeSapce(out uint beginFreeSpace,out uint endFreeSpace)
+        static bool DefineFreeSapce(out uint beginFreeSpace, out uint endFreeSpace, bool isCollectFreeSpace)
         {
             beginFreeSpace = U.NOT_FOUND;
             endFreeSpace = U.NOT_FOUND;
-            if (! this.IsCollectFreeSpace.Checked)
+            if (!isCollectFreeSpace)
             {
                 return false;
             }

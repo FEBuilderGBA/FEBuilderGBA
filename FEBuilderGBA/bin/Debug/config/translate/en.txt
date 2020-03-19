@@ -1186,9 +1186,6 @@ This is the call history of events recorded from data acquired from the emulator
 :より古い↓
 Older↓
 
-:再生されている音楽
-Music being played.
-
 :編
 Editing
 
@@ -1416,6 +1413,12 @@ Counter Stop the parameters of this unit
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear the current chapter.(Hotkey: Ctrl + U)
+
+:汎用
+General Purpose
+
+:再生されている音楽
+Music being played.
 
 :エミュレータへ接続
 Connect to emulator
@@ -3643,9 +3646,6 @@ Weapon
 :やじるし
 Arrow
 
-:汎用
-General Purpose
-
 :システムパレット
 System Palette
 
@@ -5755,6 +5755,9 @@ Assign Skill by Unit
 :スキル拡張設定
 Skill Config
 
+:スキル カスタムビルド
+Skill Custom Build
+
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
 
@@ -6231,6 +6234,9 @@ Reverse the event from the flags used in the chapter.
 
 :UnitActionテーブルを表示します。\r\nUnitActionテーブルは、マップ上のユニットの動作を定義するテーブルです。
 Display the UnitAction table.\r\nThe UnitAction table is a table that defines the behavior of units on a map.
+
+:スキル拡張のカスタムビルドを行います。
+Perform a custom build of the skill extension.
 
 :ファイルが見つかりません
 File not found
@@ -10942,38 +10948,47 @@ Safely change the project file name. \r\nThe name of the past backup is also don
 :どちらのボタンをクリックしますか？
 Which button do you click?
 
+:ターゲット({0})が見つかりませんでした。
+Target ({0}) was not found.
+
 :無改造ROM({0})が見つかりませんでした
 Unmodified ROM ({0}) was not found.
 
-:無改造ROM({0})を、({1})にコピーできませんでした。\r\n{2}
-Unmodified ROM ({0}) could not be copied to ({1}).\r\n{2}.
+:ベースとなるシステム({0})が見つかりませんでした
+The base system ({0}) was not found.
 
-:スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。
-Build and install the skill extension from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.
+:完成
+Complete.
+
+:まだ未実装です!
+Not implemented yet !.
+
+:SkillSystemsがインストールされていません。
+SkillSystems is not installed.
+
+:スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。\r\n\r\n詳細な説明と、スキル拡張のソースコードのダウンロードは、以下のURLを参照してください。\r\n
+Build and install SkillSystems from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.\r\n\r\nPlease refer to the following URL for detailed explanation and download of source code of skill extension.\r\n
 
 :ターゲット:ビルドするスキル拡張
-Target: Skill extension to build.
-
-:スキル割り当て等を引き継ぎ
-Take over skill assignments, etc.
-
-:0=引き継がない
-0=There is no handover.
-
-:1=可能な限り引き継ぐ
-1=Take over as much as possible.
+Target: SkillSystems to build.
 
 :ビルド開始
-Build started.
-
-:FEBuilderGBAでインストールされるスキル拡張のソースコードが以下のURLで公開されています。
-The source code of the skill extension installed by FEBuilderGBA is released at the following URL.
+Build Started
 
 :無改造ROM
 Unmodified ROM
 
+:スキル割り当ての引き継ぎ
+Takeover of skill assignment.
+
+:0=引き継がない
+0=No Take over
+
+:1=引き継ぐ
+1=Take over
+
 :カスタムビルド
-Custom build.
+Custom build
 
 :逆コンパイル中です。しばらくお待ちください。
 We are currently running decompiling. Please wait.

@@ -6620,7 +6620,7 @@ namespace FEBuilderGBA
         //マップでの漫符
         public static string GetMAPEMOTION(uint num)
         {
-            Dictionary<uint, string> dic = ConfigDataDatanameCache("battleterrain_set_");
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("map_emotion_exetnds_well_known_list_");
             return U.at(dic, num);
         }
 

@@ -263,7 +263,7 @@ namespace FEBuilderGBA
             else if (this.Step1 == Step1_Enum.DOWNLOAD_VBA_M)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "VBA-M");
-                string url = "https://cdn.discordapp.com/attachments/470029781795078175/568603259908915211/VisualBoyAdvance-M.7z";
+                string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20200316.21/VisualBoyAdvance-M.7z";
                 string r = DownloadProgram_Direct(url, dir, "VisualBoyAdvance*.exe");
                 if (IsErrorResult(r))
                 {
@@ -337,7 +337,7 @@ namespace FEBuilderGBA
             else if (this.Step3 == Step3_Enum.DOWNLOAD_SAPPY)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "sappy");
-                string url = "https://cdn.discordapp.com/attachments/470029781795078175/646360802785361921/SappyInstaller.7z";
+                string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20200316.21/SappyInstaller.7z";
                 string r = DownloadProgram_Direct(url, dir, "sappy.exe");
                 if (IsErrorResult(r))
                 {
@@ -421,7 +421,7 @@ namespace FEBuilderGBA
             {
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "gba_mus_riper");
-                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/640291680813318145/gba_mus_riper_v24.7z";
+                    string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20200316.21/gba_mus_riper_v24.7z";
                     string r = DownloadProgram_Direct(url, dir, "song_riper.exe");
                     if (IsErrorResult(r))
                     {
@@ -432,7 +432,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "sox");
-                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/640298468430053417/sox-14.4.2.7z";
+                    string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20200316.21/sox-14.4.2.7z";
                     string r = DownloadProgram_Direct(url, dir, "sox.exe");
                     if (IsErrorResult(r))
                     {

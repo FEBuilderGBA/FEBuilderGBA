@@ -28,7 +28,6 @@ namespace FEBuilderGBA
             {
                 return;
             }
-
             //最後の改行の削除.
             if (text.Length < 2)
             {

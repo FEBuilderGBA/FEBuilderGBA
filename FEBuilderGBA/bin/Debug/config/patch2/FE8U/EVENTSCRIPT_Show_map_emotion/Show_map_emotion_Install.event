@@ -14,10 +14,14 @@ Show_map_emotion_Show_without_SE:
 #incbin "Show_map_emotion_Show_without_SE.dmp"
 
 ALIGN 4
+Show_map_emotion_Destructor:
+#incbin "Show_map_emotion_Destructor.dmp"
+
+ALIGN 4
 Show_map_emotion_Proc_without_SE:
 BYTE $02 $00 $00 $00; POIN Show_map_emotion_Show_without_SE+1;   //Call Routine
 BYTE $03 $00 $00 $00; WORD 0x08078B08+1 //Set Loop routine And Yield
-BYTE $03 $00 $00 $00; WORD 0x08078BCC+1 //Set Loop routine And Yield
+BYTE $03 $00 $00 $00; POIN Show_map_emotion_Destructor+1 //Set Loop routine And Yield
 BYTE $00 $00 $00 $00 $00 $00 $00 $00 //Deletes self
 
 emotion01_umm:

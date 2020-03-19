@@ -12714,3 +12714,4 @@
 08088cfc	DrawStatScreenBar_Make_GenenicBuffer	{J}
 080130BC	DrawStatScreenBar_GenenicBuffer_To_VRAM	{U}
 08086A40	DrawStatScreenBar_Make_GenenicBuffer	{U}
+08078B08	Show_map_emotion_UpdateLoop	{U}
