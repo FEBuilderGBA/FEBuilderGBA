@@ -79,11 +79,12 @@ namespace FEBuilderGBA
                 );
         }
 
+        List<Control> CurrntControls;
         private void ImageUnitPaletteForm_Load(object sender, EventArgs e)
         {
-            List<Control> controls = InputFormRef.GetAllControls(this);
+            this.CurrntControls = InputFormRef.GetAllControls(this);
             InputFormRef.makeJumpEventHandler(this.X_BATTLEANIME, this.X_BATTLEANIME_LABEL, "BATTLEANIME", new string[] { "MINUS1" });
-            InputFormRef.makeLinkEventHandler("X_", controls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
+            InputFormRef.makeLinkEventHandler("X_", this.CurrntControls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
 
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
@@ -453,6 +454,16 @@ namespace FEBuilderGBA
                 FELint.CheckLZ77(p, errors, FELint.Type.IMAGE_UNIT_PALETTE, table_addr, id);
             }
         }
+
+        private void X_PIC_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != System.Windows.Forms.MouseButtons.Right)
+            {
+                return;
+            }
+            PaletteFormRef.SpoitTool_SelectPalette(this.X_PIC, this.CurrntControls, this.PaletteZoomComboBox.SelectedIndex, e);
+        }
+
 
     }
 }

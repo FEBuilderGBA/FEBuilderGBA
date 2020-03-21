@@ -3,14 +3,58 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.ComponentModel;
-using System.Drawing.Imaging;
 
 namespace FEBuilderGBA
 {
     public class PaletteFormRef
     {
+
+        public static void SpoitTool_SelectPalette(PictureBox pic, List<Control> controls, int options, MouseEventArgs e)
+        {
+            if (pic.Image == null)
+            {
+                return;
+            }
+
+            int x = e.X;
+            int y = e.Y;
+
+            Color rgb;
+
+            try
+            {
+                rgb = ((Bitmap)(pic.Image)).GetPixel(x, y);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            uint or = (uint)(rgb.R & 0xFD);
+            uint og = (uint)(rgb.G & 0xFD);
+            uint ob = (uint)(rgb.B & 0xFD);
+
+            for (int paletteno = 1; paletteno <= 16; paletteno++)
+            {
+                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
+                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
+                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+
+                uint dr = (uint)((uint)r.Value & 0xFD);
+                uint dg = (uint)((uint)g.Value & 0xFD);
+                uint db = (uint)((uint)b.Value & 0xFD);
+
+                if (dr == or && og == dg && ob == db)
+                {
+                    r.Focus();
+                    return;
+                }
+            }
+        }
+
+
         public static void SetScaleSampleImage(PictureBox pic,Panel parentPanel, Bitmap bitmap,int options)
         {
             if (options == 0)

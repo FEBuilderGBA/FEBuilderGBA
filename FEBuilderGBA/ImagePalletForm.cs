@@ -167,9 +167,10 @@ namespace FEBuilderGBA
         }
 
 
+        List<Control> CurrntControls;
         private void ImagePalletForm_Load(object sender, EventArgs e)
         {
-
+            this.CurrntControls = InputFormRef.GetAllControls(this);
         }
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)
@@ -194,6 +195,15 @@ namespace FEBuilderGBA
         public static string GetExplainColor0()
         {
             return GetExplainColor() + R._("通常最初のパレットには、背景色が設定されます。\r\n");
+        }
+
+        private void X_PIC_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != System.Windows.Forms.MouseButtons.Right)
+            {
+                return;
+            }
+            PaletteFormRef.SpoitTool_SelectPalette(this.X_PIC, this.CurrntControls, this.PaletteZoomComboBox.SelectedIndex, e);
         }
 
 

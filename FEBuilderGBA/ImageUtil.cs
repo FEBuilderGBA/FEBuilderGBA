@@ -1654,6 +1654,11 @@ namespace FEBuilderGBA
                         {
                             byte a = Marshal.ReadByte(adr, (x + x8 + 0) + bmpData.Stride * (y+y8));
                             byte b = Marshal.ReadByte(adr, (x + x8 + 1) + bmpData.Stride * (y + y8));
+
+                            if (nn >= data.Length)
+                            {
+                                break;
+                            }
                             data[nn] = (byte)((a&0xF) + ((b&0xF)<<4));
                             nn++;
                         }
@@ -3340,9 +3345,18 @@ namespace FEBuilderGBA
             }
 
             //謎のイメージ 機械的に256色で読み込んでみる.
+            Bitmap r = ConvertIndexedBitmapOtherPaletteFormat(bitmap, paletteHint, out errormessage);
+            if (r != null)
             {
-                return ConvertIndexedBitmapOtherPaletteFormat(bitmap, paletteHint, out errormessage);
+                return r;
             }
+            return ImageConvert24biTo8bit(bitmap);
+        }
+
+        unsafe static Bitmap ImageConvert24biTo8bit(Bitmap bmpSource)
+        {
+            Bitmap dstBmp = bmpSource.Clone(new Rectangle(0, 0, bmpSource.Width, bmpSource.Height), PixelFormat.Format8bppIndexed);
+            return dstBmp;
         }
 
         public static byte[] ImageToByte256Tile(Bitmap bitmap, int width, int height)

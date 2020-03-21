@@ -92,8 +92,8 @@
 1F00XXYY	Moves_camera_on_chapter_map[XX:MAPX:PositionX][YY:MAPY:PositionY](CAM2)	{CAMERA}	{U}
 3B000000	Chapter event start command(CMOF)	{J}
 3D000000	Chapter event start command(CMOF)	{U}
-53000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
-55000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
+53000000XXXX0000YYYY0000	If [YY:UNIT:Character] is dead, execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{J}
+55000000XXXX0000YYYY0000	If [YY:UNIT:Character] is dead, execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{U}
 4D000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{J}
 4F000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{U}
 4E000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNEM)	{COND} 	{J}

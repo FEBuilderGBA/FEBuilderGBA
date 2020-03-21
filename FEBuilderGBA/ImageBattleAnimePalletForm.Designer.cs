@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Warning32ColorMode = new System.Windows.Forms.Label();
             this.AutoScrollPanel = new System.Windows.Forms.Panel();
+            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.PaletteZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -126,10 +128,9 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.Warning32ColorMode = new System.Windows.Forms.Label();
-            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel1.SuspendLayout();
             this.AutoScrollPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).BeginInit();
@@ -179,7 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -289,6 +289,19 @@
             this.panel1.Size = new System.Drawing.Size(1197, 451);
             this.panel1.TabIndex = 74;
             // 
+            // Warning32ColorMode
+            // 
+            this.Warning32ColorMode.AccessibleDescription = "";
+            this.Warning32ColorMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Warning32ColorMode.Location = new System.Drawing.Point(398, 51);
+            this.Warning32ColorMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Warning32ColorMode.Name = "Warning32ColorMode";
+            this.Warning32ColorMode.Size = new System.Drawing.Size(143, 26);
+            this.Warning32ColorMode.TabIndex = 277;
+            this.Warning32ColorMode.Text = "32ColorMode";
+            this.Warning32ColorMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Warning32ColorMode.Visible = false;
+            // 
             // AutoScrollPanel
             // 
             this.AutoScrollPanel.AutoScroll = true;
@@ -297,6 +310,17 @@
             this.AutoScrollPanel.Name = "AutoScrollPanel";
             this.AutoScrollPanel.Size = new System.Drawing.Size(574, 419);
             this.AutoScrollPanel.TabIndex = 276;
+            // 
+            // X_PIC
+            // 
+            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC.Location = new System.Drawing.Point(2, 2);
+            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
+            this.X_PIC.Name = "X_PIC";
+            this.X_PIC.Size = new System.Drawing.Size(555, 406);
+            this.X_PIC.TabIndex = 0;
+            this.X_PIC.TabStop = false;
+            this.X_PIC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.X_PIC_MouseDown);
             // 
             // PaletteZoomComboBox
             // 
@@ -1683,29 +1707,6 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Warning32ColorMode
-            // 
-            this.Warning32ColorMode.AccessibleDescription = "";
-            this.Warning32ColorMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Warning32ColorMode.Location = new System.Drawing.Point(398, 51);
-            this.Warning32ColorMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Warning32ColorMode.Name = "Warning32ColorMode";
-            this.Warning32ColorMode.Size = new System.Drawing.Size(143, 26);
-            this.Warning32ColorMode.TabIndex = 277;
-            this.Warning32ColorMode.Text = "32ColorMode";
-            this.Warning32ColorMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Warning32ColorMode.Visible = false;
-            // 
-            // X_PIC
-            // 
-            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(2, 2);
-            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
-            this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(555, 406);
-            this.X_PIC.TabIndex = 0;
-            this.X_PIC.TabStop = false;
-            // 
             // ImageBattleAnimePalletForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1720,6 +1721,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AutoScrollPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).EndInit();
@@ -1769,7 +1771,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }

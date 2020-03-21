@@ -975,12 +975,13 @@
             // X_PIC
             // 
             this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(2, 2);
+            this.X_PIC.Location = new System.Drawing.Point(2, 1);
             this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
             this.X_PIC.Name = "X_PIC";
             this.X_PIC.Size = new System.Drawing.Size(636, 407);
             this.X_PIC.TabIndex = 0;
             this.X_PIC.TabStop = false;
+            this.X_PIC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.X_PIC_MouseDown);
             // 
             // PaletteZoomComboBox
             // 

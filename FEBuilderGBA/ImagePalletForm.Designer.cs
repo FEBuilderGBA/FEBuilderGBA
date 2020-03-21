@@ -305,6 +305,7 @@
             this.X_PIC.Size = new System.Drawing.Size(555, 406);
             this.X_PIC.TabIndex = 0;
             this.X_PIC.TabStop = false;
+            this.X_PIC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.X_PIC_MouseDown);
             // 
             // PaletteZoomComboBox
             // 

@@ -48,6 +48,7 @@ namespace FEBuilderGBA
 
         private void SoundRoomForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = true;
         }
 
         public static string GetSongName(uint roomid)

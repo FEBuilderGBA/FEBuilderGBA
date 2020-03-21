@@ -212,14 +212,24 @@ namespace FEBuilderGBA
             ReDrawBitmap();
         }
 
+        List<Control> CurrntControls;
         private void ImageBattleAnimePalletForm_Load(object sender, EventArgs e)
         {
-
+            this.CurrntControls = InputFormRef.GetAllControls(this);
         }
 
         void SetExpain()
         {
             Warning32ColorMode.AccessibleDescription = R._("この戦闘アニメーションは、32モードで作られています。\r\n通常、戦闘アニメーションは、自軍(青)、敵軍(赤)、友軍(緑)、グレー(グレー)の4つがあります。\r\n32Colorモードでは、自軍(青)と敵軍(赤)のパレットを同時に利用して、32色のキャラクターを描画します。");
+        }
+
+        private void X_PIC_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != System.Windows.Forms.MouseButtons.Right)
+            {
+                return;
+            }
+            PaletteFormRef.SpoitTool_SelectPalette(this.X_PIC, this.CurrntControls, this.PaletteZoomComboBox.SelectedIndex, e);
         }
 
     }
