@@ -1,0 +1,33 @@
+NAME=全預け+メニュー 20200321(Editor)
+INFO=常に輸送隊に送る,または、送らないアイテムを設定できます。
+
+IF:$FGREP4 zenazuke_plus_Usability.dmp=0x00 0xB5 0x37 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END zenazuke_plus_Usability.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=ITEM
+B1:$COMBO Processing.jp.txt:.ja=処理
+B1:$COMBO Processing.en.txt:.en=processing
+B1:$COMBO Processing.en.txt:.zh=processing
+
+
+NAME.en=GiveAll+ Menu 20200321(Editor)
+INFO.en=You can set items to always send to the convoy or not to send.
+
+NAME.zh=GiveAll+ Menu 20200321(Editor)
+INFO.zh=You can set items to always send to the convoy or not to send.

@@ -1,0 +1,47 @@
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+	POIN	zenazuke_plus_sjis_string
+	SHORT	$0efe $0f00		//右の$0661がヘルプ
+	SHORT	$4f03 0
+	POIN	zenazuke_plus_Usability|1
+	WORD	0
+	POIN	zenazuke_plus_effect|1
+	WORD	0 
+	WORD	0
+	WORD	0
+POP
+
+ALIGN 4
+zenazuke_plus_Usability:
+#incbin "zenazuke_plus_Usability.dmp"
+POIN zenazuke_Table
+
+ALIGN 4
+zenazuke_plus_effect:
+#incbin "zenazuke_plus_effect.dmp"
+WORD 0xf01
+POIN zenazuke_Table
+
+
+ALIGN 4
+zenazuke_plus_sjis_string:
+#incbin "TEXT_SJIS.bin"	//全預け+
+
+TxtData0xefe:
+#incbin "0xefe.bin"
+
+TxtData0xf00:
+#incbin "0xf00.bin"
+
+TxtData0xf01: //Item Full
+#incbin "0xf01.bin"
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset | 0x80000000); POP" //Anti-huffman
+setText(0xefe,TxtData0xefe)
+setText(0xf00,TxtData0xf00)
+setText(0xf01,TxtData0xf01)
+
+ALIGN 4
+#include "zenazuke_Table.event"
+
+ALIGN 4
