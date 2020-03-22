@@ -2,6 +2,11 @@ NAME=MSS Growth Colors Table (SkillSystems)
 NAME.en=MSS Growth Colors Table (SkillSystems)
 NAME.zh=MSS Growth Colors Table (SkillSystems)
 
+INFO=成長率ごとに色を定義します。\r\nディフォルトだと、20%以下だと赤色、100%だと緑になります。
+INFO.en=Define a color for each growth rate.\r\nBy default, it will be red if it is less than 20% and green if it is 100%.
+INFO.zh=Define a color for each growth rate.\r\nBy default, it will be red if it is less than 20% and green if it is 100%.
+
+
 IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 
 //STRUCTパッチとして実装します
