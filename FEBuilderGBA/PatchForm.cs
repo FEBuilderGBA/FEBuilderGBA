@@ -1338,6 +1338,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "DECIMAL")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -1393,6 +1397,10 @@ namespace FEBuilderGBA
             else if (listname == "TEXT")
             {
                 appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
+            }
+            else if (listname == "DECIMAL")
+            {
+                appendname = i.ToString();
             }
             else if (listname == "VENNOUWEAPONLOCK_INDEX")
             {
