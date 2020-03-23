@@ -1,0 +1,39 @@
+NAME=セーブメニューの色を難易度ごとに変更する(Editor)
+NAME.en=Change color of save menu for each difficulty level(Editor)
+
+INFO=セーブスロットの色を変更します。\r\n難易度を3段階もっている作品では、普通の難易度のセーブスロットと、簡単の難易度のセーブスロットの見分けがつかなくなるのを抑制します。\r\n特殊26とは、難易度設定に、0x26が指定されているハックロムを指します。ハードとチュートリアルの両方のフラグがONになるとこの値が格納されるようです。\r\nフラグ0x8Aとは、フレリア城にたどり着きモルダー達が仲間になった時に有効になるフラグを指します。どういうわけか、このフラグはセーブスロットの色指定に関与できます。FE7のヘクトル編の名残でしょうか？\r\n
+
+IF:0xABDB4=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeSaveSlotColor.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 FF FF FF FF が出てくるまで
+DATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのは射程名です
+LISTNAME.ja=$W0:$COMBO ChangeSaveSlotColor_Type_Combo.ja.txt
+LISTNAME.en=$W0:$COMBO ChangeSaveSlotColor_Type_Combo.ja.txt
+LISTNAME.zh=$W0:$COMBO ChangeSaveSlotColor_Type_Combo.ja.txt
+
+//データを定義します
+W0:$COMBO ChangeSaveSlotColor_Type_Combo.ja.txt:.ja=Type
+W0:$COMBO ChangeSaveSlotColor_Type_Combo.en.txt:.en=Type
+W0:$COMBO ChangeSaveSlotColor_Type_Combo.en.txt:.zh=Type
+B2=00
+B3:$COMBO ChangeSaveSlotColor_Color_Combo.ja.txt:.ja=Color
+B3:$COMBO ChangeSaveSlotColor_Color_Combo.en.txt:.en=Color
+B3:$COMBO ChangeSaveSlotColor_Color_Combo.en.txt:.zh=Color
+
+INFO.en=Change the color of the save slot.\r\nIn a work that has three levels of difficulty, it is possible to prevent a normal difficulty save slot from being easily distinguished from a simple difficulty save slot.\r\nSP26(Special 26) refers to Hack Chrome where 0x26 is specified in the difficulty setting.It seems that this value is stored when both the hardware and tutorial flags are turned on.\r\nFlag 0x8A is a flag that is activated when Mulders arrive at Frelia Castle and become friends.Somehow, this flag can contribute to save slot color specification.Is it a remnant of the FE7 Hector version? \r\n
+NAME.zh=更改每个难度级别（编辑器）的保存菜单的颜色。
+INFO.zh=更改保存插槽的颜色。\r\n在具有三个难度等级的作品中，可以防止将普通的难度保存槽与简单的难度保存槽容易地区分开。\r\n特殊26是指在难度设置中指定为0x26的Hack Chrome。似乎在打开硬件和教程标志时都存储了该值。\r\n标志0x8A是当Mulders到达Frelia Castle并成为朋友时激活的标志。不知何故，此标志可以有助于节省插槽颜色。它是FE7 Hector版本的残余吗？ \r\n

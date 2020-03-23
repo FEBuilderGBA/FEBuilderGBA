@@ -1,0 +1,13 @@
+NAME=セーブメニューの色を難易度ごとに変更する(Install)
+NAME.en=Change color of save menu for each difficulty level(Install)
+
+INFO=セーブスロットの色を変更します。\r\n難易度を3段階もっている作品では、普通の難易度のセーブスロットと、簡単の難易度のセーブスロットの見分けがつかなくなるのを抑制します。
+
+PATCHED_IF:0xABDB4=0x00 0x4B 0x18 0x47
+AUTHOR=7743
+
+TYPE=EA
+EA=ChangeSaveSlotColor.event
+INFO.en=Change the color of the save slot.\r\nIn a work that has three levels of difficulty, it is possible to prevent a normal difficulty save slot from being easily distinguished from a simple difficulty save slot.
+NAME.zh=更改每个难度级别的保存菜单的颜色（安装）。
+INFO.zh=更改保存插槽的颜色。\r\n在具有三个难度等级的作品中，可以防止将普通的难度保存槽与简单的难度保存槽容易地区分开。

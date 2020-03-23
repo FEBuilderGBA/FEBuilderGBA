@@ -5206,6 +5206,9 @@ The description field of the item is empty.\r\nIn FE 8, when emptying, you need 
 :アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例:  [.]
 Item description is empty.\r\nIn FE8, when emptying, it is necessary to insert a blank space and [.].\r\nExample: [.].
 
+:武器なのに、「間接エフェクト」の項目がありません。\r\nアニメオフ時のマップ戦闘でフリーズする可能性があります。
+Although it is a weapon, there is no "Magic Animations (indirect effects)" item.\r\nThere is a possibility of freezing in the map battle when the animation is off.
+
 :物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。
 This item is a physical weapon, but "Damage effect" when attacking is set to "None".
 

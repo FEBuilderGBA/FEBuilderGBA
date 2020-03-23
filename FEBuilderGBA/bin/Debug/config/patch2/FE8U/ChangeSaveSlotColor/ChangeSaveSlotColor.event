@@ -1,0 +1,15 @@
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+//ORG $B0868		//FE8J
+ORG $ABDB4		//FE8U
+jumpToHack(ChangeSaveSlotColor)
+POP
+
+ALIGN 4
+ChangeSaveSlotColor:
+#incbin "ChangeSaveSlotColor.dmp"
+POIN ChangeSaveSlotColor_Table
+
+#include "ChangeSaveSlotColor_Table.event"

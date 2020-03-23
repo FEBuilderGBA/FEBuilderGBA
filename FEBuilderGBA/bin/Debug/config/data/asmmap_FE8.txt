@@ -3947,7 +3947,6 @@
 08078898	Moveunit_ExecMoveCommand	{U}
 08078a14	DisplayFogThingMaybe	{U}
 08078a64	Call6C_89A2968	{U}
-08078b08	Loop6C_89A2968_1	{U}
 08078bcc	Loop6C_89A2968_2	{U}
 08078bfc	Does6C_89A2968Exist	{U}
 08078c14	MOVU_Call5_WaitForSomething	{U}
@@ -12715,3 +12714,6 @@
 080130BC	DrawStatScreenBar_GenenicBuffer_To_VRAM	{U}
 08086A40	DrawStatScreenBar_Make_GenenicBuffer	{U}
 08078B08	Show_map_emotion_UpdateLoop	{U}
+0807AF1C	Show_map_emotion_UpdateLoop	{J}
+0805999C	弓兵の戦闘アニメのパレットを強制上書き指定	{U}
+0805A740	弓兵の戦闘アニメのパレットを強制上書き指定	{J}

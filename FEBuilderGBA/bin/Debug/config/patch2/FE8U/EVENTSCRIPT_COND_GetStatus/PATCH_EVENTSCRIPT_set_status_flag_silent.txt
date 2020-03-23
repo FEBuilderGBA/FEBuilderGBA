@@ -1,0 +1,45 @@
+﻿NAME=ユニットのステータスフラグを静かに変更する(イベント命令)
+NAME.en=AddEvent: Silently change the unit's status flag
+NAME.zh=Silently change the unit's status flag(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+
+INFO=バッチ処理で一気に数十人のユニットのステータスフラグを変更すると、変更に耐えきれずゲームがハングアップしてしまいます。\r\nこのパッチは、それに対応するパッチです。\r\nこのパッチでステータスを変更しても、マップのユニットの状態は更新されません。\r\n終了イベント、開始イベントでの一括バッチ処理に利用してください。
+INFO.en=If you change the status flags of dozens of units at once in batch processing, the game will not be able to withstand the change and the game will hang.\r\nThis patch is the corresponding patch.\r\nChanging the status with this patch will not update the status of map units.\r\nPlease use it for batch processing of end event and start event.
+INFO.zh=If you change the status flags of dozens of units at once in batch processing, the game will not be able to withstand the change and the game will hang.\r\nThis patch is the corresponding patch.\r\nChanging the status with this patch will not update the status of map units.\r\nPlease use it for batch processing of end event and start event.
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 set_status_flag_silent.dmp=0x30 0xB5 0x84 0x6B
+
+EVENTSCRIPT:1=400DXXYY{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かに変更する[YY::BOOL](LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2=40050200ZZZZZZZZ400DXXYY{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かに[YY::BOOL]に変更する[ZZ:RAM_UNIT_STATE:ユニットの状態]	{UNITPERSOLNAL}
+EVENTSCRIPT:3=40050200ZZZZZZZZ400DXX01{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かにONに変更する[ZZ:RAM_UNIT_STATE:ユニットの状態](UNCM_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:4=40050200ZZZZZZZZ400DXX00{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かにOFFに変更する[ZZ:RAM_UNIT_STATE:ユニットの状態](UNCR_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:5=4005020000000104400DXX01{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かに変更し、パーティから外して離脱させる(REMU_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:6=4005020000000104400DXX00{$L1:set_status_flag_silent.dmp}	[XX:UNIT:ユニット]のステータスフラグを静かに変更し、パーティに仲間として再加入できるように変更(REVEAL_slient)	{UNITPERSOLNAL}
+
+
+EVENTSCRIPT:1.en=400DXXYY{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags[YY::BOOL](LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2.en=40050200ZZZZZZZZ400DXXYY{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags[ZZ:RAM_UNIT_STATE:Unit Status]	{UNITPERSOLNAL}
+EVENTSCRIPT:3.en=40050200ZZZZZZZZ400DXX01{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags ON [ZZ:RAM_UNIT_STATE:Unit Status](UNCM_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:4.en=40050200ZZZZZZZZ400DXX00{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags OFF [ZZ:RAM_UNIT_STATE:Unit Status](UNCR_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:5.en=4005020000000104400DXX01{$L1:set_status_flag_silent.dmp}	Silently change, Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:6.en=4005020000000104400DXX00{$L1:set_status_flag_silent.dmp}	Silently change, Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL_slient)	{UNITPERSOLNAL}
+
+EVENTSCRIPT:1.zh=400DXXYY{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags[YY::BOOL](LOW)	{UNITPERSOLNAL}
+EVENTSCRIPT:2.zh=40050200ZZZZZZZZ400DXXYY{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags[ZZ:RAM_UNIT_STATE:Unit Status]	{UNITPERSOLNAL}
+EVENTSCRIPT:3.zh=40050200ZZZZZZZZ400DXX01{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags ON [ZZ:RAM_UNIT_STATE:Unit Status](UNCM_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:4.zh=40050200ZZZZZZZZ400DXX00{$L1:set_status_flag_silent.dmp}	Silently change [XX:UNIT:Character] status flags OFF [ZZ:RAM_UNIT_STATE:Unit Status](UNCR_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:5.zh=4005020000000104400DXX01{$L1:set_status_flag_silent.dmp}	Silently change, Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU_slient)	{UNITPERSOLNAL}
+EVENTSCRIPT:6.zh=4005020000000104400DXX00{$L1:set_status_flag_silent.dmp}	Silently change, Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL_slient)	{UNITPERSOLNAL}
+
+
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=set_status_flag_silent.dmp
+
+AUTHOR=7743
+

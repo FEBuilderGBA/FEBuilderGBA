@@ -1,0 +1,8 @@
+2640=Hard SP26
+2642=Hard Flag8A SP26
+2040=Hard
+2042=Hard Flag8A
+2000=Normal
+2002=Normal Flag8A
+0000=Eazy
+0002=Eazy Flag8A

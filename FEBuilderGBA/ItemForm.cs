@@ -118,6 +118,24 @@ namespace FEBuilderGBA
             uint textid = Program.ROM.u16(addr);
             return TextForm.Direct(textid);
         }
+        public static String GetItemNameAddr(uint addr)
+        {
+            if (!U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            uint textid = Program.ROM.u16(addr);
+            return TextForm.Direct(textid);
+        }
+        public static uint GetItemNameIDAddr(uint addr)
+        {
+            if (!U.isSafetyOffset(addr))
+            {
+                return 0;
+            }
+            uint textid = Program.ROM.u16(addr);
+            return textid;
+        }
         //アイコンを画く.
         public static Bitmap DrawIcon(uint item_id)
         {
@@ -393,22 +411,57 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             return InputFormRef.DataCount;
         }
+        static bool MakeCheckError_FE8_WeaponEffect_Bug(uint item_addr)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+            uint textid = GetItemNameIDAddr(item_addr);
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                if (textid == 0x38A) //ダミー
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (textid == 0x403) //Dummy
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         static void MakeCheckErrorWeaponRange(
               Dictionary<uint, U.AddrResult> itemWeaponEffectDic
             , uint item_addr
             , uint id
             ,List<FELint.ErrorSt> errors)
         {
+            //物理武器かどうか
+            uint flag1 = Program.ROM.u8(item_addr + 8);
+            bool equipped = ((flag1 & 0x01) == 0x01) ;
+
             U.AddrResult ar;
             if (!itemWeaponEffectDic.TryGetValue(id, out ar))
-            {//間接効果がないとマップアニメになります
+            {//間接効果がないとまずい
+                if (equipped)
+                {
+                    if (MakeCheckError_FE8_WeaponEffect_Bug(item_addr))
+                    {//バニラにそもそもあるバグ
+                        return;
+                    }
+                    errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, item_addr
+                        , R._("武器なのに、「間接エフェクト」の項目がありません。\r\nアニメオフ時のマップ戦闘でフリーズする可能性があります。"), id));
+                }
                 return;
             }
 
 
             //物理武器かどうか
-            uint flag1 = Program.ROM.u8(item_addr + 8);
-            if ((flag1 & 0x01) == 0x01)
+            if (equipped)
             {//ダメージエフェクトがONのはず
                 //ダメージエフェクトの有無
                 uint IsDamageEffect = Program.ROM.u8(ar.addr + 12);

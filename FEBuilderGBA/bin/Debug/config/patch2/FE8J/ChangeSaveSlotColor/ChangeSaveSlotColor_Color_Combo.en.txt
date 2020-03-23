@@ -1,0 +1,5 @@
+4=Blue
+8=Gray
+10=Green
+20=Default
+24=Red

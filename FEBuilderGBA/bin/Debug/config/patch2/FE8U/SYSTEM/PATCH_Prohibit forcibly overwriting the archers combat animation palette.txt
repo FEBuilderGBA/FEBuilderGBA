@@ -1,0 +1,22 @@
+NAME=弓兵の戦闘アニメのパレットを強制上書きするのを禁止する
+NAME.en=Prohibit forcibly overwriting the archer's combat animation palette
+
+INFO=スナイパーと弓兵のクラス(19,1A,1B,1C)の戦闘アニメのパレットが指定されていない場合、GBAFEは勝手にパレットを書き換えます。\r\nこのパッチはその挙動を抑制します。
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|上書きを禁止する|ONN
+
+DETERMINATION_ADDRESS=0x0599B6
+
+ONN:0x599B6=0x14 0xE0
+OFF:0x599B6=0x0E 0xD0
+
+
+AUTHOR=7743
+INFO.en=If no sniper and archer class (19,1A,1B,1C) battle animation palette is specified, GBAFE will rewrite the palette on its own.\r\nThis patch suppresses that behavior.
+COMBO.en=Default|OFF|Prohibit overwriting|ONN
+NAME.zh=禁止强行覆盖弓箭手的战斗动画调色板。
+INFO.zh=如果未指定战斗动画调色板，则GBAFE会重写狙击手和弓箭手类（19,1A,1B,1C）的调色板。\r\n此修补程序可以抑制该行为。
+COMBO.zh=Default|OFF|禁止覆盖|ONN
