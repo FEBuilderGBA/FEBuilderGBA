@@ -1,0 +1,17 @@
+NAME=命令0x33_ユニットの状態取得_存在しないユニットでもフリーズさせない
+NAME.en=Prevent Freeze For Get Unit State Event 0x33.
+NAME.zh=指令0x33_人物状态改变_不冻结甚至不存在的人物
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x1027C
+
+COMBO=Default|0x06 0x20 0x05 0xE0|Fix|0x00 0x20 0x02 0xE0
+AUTHOR=7743
+
+
+INFO=存在しないキャラクターの状態を取得しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターの状態を取得すると、MemorySlotCに、必ず0を返すようにします。\r\nこのパッチを適応すると、毎回CHECK_ALIVEする手間を省略できます。\r\n以下の命令の挙動を改善します。\r\n(CHECK_STATUS,CHECK_COORDS,CHECK_CLASS,CHECK_LUCK,CHECK_COORDS,CHECK_CLASS,CHECK_DEPLOYED,CHECK_ACTIVEID,CHECK_ALLEGIANCE,CHECK_EXISTS)
+INFO.en=Resolves an issue where trying to get the status of a character that does not exist freezes.\r\nIf you get the status of a non-existent character, make sure to return 0 to MemorySlotC.\r\nApplying this patch saves you from having to CHECK_ALIVE every time.\r\nImproves the behavior of the following instructions.\r\n(CHECK_STATUS,CHECK_COORDS,CHECK_CLASS,CHECK_LUCK,CHECK_COORDS,CHECK_CLASS,CHECK_DEPLOYED,CHECK_ACTIVEID,CHECK_ALLEGIANCE,CHECK_EXISTS)
+INFO.zh=解决了试图获取不存在的字符的状态冻结的问题。\r\n如果获得不存在的字符的状态，请确保将0返回给MemorySlotC。\r\n应用此补丁可以使您不必每次都去CHECK_ALIVE。\r\n改善以下说明的行为。\r\n（CHECK_STATUS，CHECK_COORDS，CHECK_CLASS，CHECK_LUCK，CHECK_COORDS，CHECK_CLASS，CHECK_DEPLOYED，CHECK_ACTIVEID，CHECK_ALLEGIANCE，CHECK_EXISTS）。

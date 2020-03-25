@@ -618,7 +618,16 @@ namespace FEBuilderGBA
             return SearchPatchBool(table);
         }
         //存在ユニットを選択したときフリーズしないように
-        public static bool SearchUnitStateEvent_0x34_FixPatch()
+        public static bool SearchGetUnitStateEvent_0x33_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Prevent Freeze For Unit State Event 0x33",	ver = "FE8J", addr = 0x103D8,data = new byte[]{0x00, 0x20, 0x02, 0xE0}},
+                new PatchTableSt{ name="Prevent Freeze For Unit State Event 0x33",	ver = "FE8U", addr = 0x1027C,data = new byte[]{0x00, 0x20, 0x02, 0xE0}},
+            };
+            return SearchPatchBool(table);
+        }
+        //存在ユニットを選択したときフリーズしないように
+        public static bool SearchUpdateUnitStateEvent_0x34_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="Prevent Freeze For Unit State Event 0x34",	ver = "FE8J", addr = 0x10430,data = new byte[]{0x00, 0x20}},

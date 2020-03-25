@@ -2169,7 +2169,8 @@ namespace FEBuilderGBA
             CheckSkipWorldmapPatch();
             CheckCAMERA_Event_OutOfBand_Fix();
             CheckCAMERA_Event_NotExistsUnit_Fix();
-            CheckUnitStateEvent_0x34_Fix();
+            CheckGetUnitStateEvent_0x33_Fix();
+            CheckUpdateUnitStateEvent_0x34_Fix();
             CheckWakuEvent_0x3B_Fix();
         }
 
@@ -2200,7 +2201,26 @@ namespace FEBuilderGBA
             }
         }
 
-        void CheckUnitStateEvent_0x34_Fix()
+        void CheckGetUnitStateEvent_0x33_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("(CHECK_STATUS)") >= 0
+                || command.IndexOf("(CHECK_COORDS)") >= 0
+                || command.IndexOf("(CHECK_CLASS)") >= 0
+                || command.IndexOf("(CHECK_LUCK)") >= 0
+                || command.IndexOf("(CHECK_COORDS)") >= 0
+                || command.IndexOf("(CHECK_CLASS)") >= 0
+                || command.IndexOf("(CHECK_DEPLOYED)") >= 0
+                || command.IndexOf("(CHECK_ACTIVEID)") >= 0
+                || command.IndexOf("(CHECK_ALLEGIANCE)") >= 0
+                || command.IndexOf("(CHECK_EXISTS)") >= 0
+                )
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.UnitGetStateEvent_0x33_Fix);
+            }
+        }
+
+        void CheckUpdateUnitStateEvent_0x34_Fix()
         {
             string command = ScriptCodeName.Text;
             if (command.IndexOf("(REMU)") >= 0
@@ -2217,7 +2237,7 @@ namespace FEBuilderGBA
                 || command.IndexOf("(DISA)") >= 0
                 )
             {
-                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.UnitStateEvent_0x34_Fix);
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.UnitUpdateStateEvent_0x34_Fix);
             }
         }
 

@@ -47,7 +47,8 @@ namespace FEBuilderGBA
             , ItemIconExpands
             , CAMERA_Event_OutOfBand_Fix
             , CAMERA_Event_NotExistsUnit_Fix
-            , UnitStateEvent_0x34_Fix
+            , UnitGetStateEvent_0x33_Fix
+            , UnitUpdateStateEvent_0x34_Fix
             , WakuEvent_0x3B_Fix
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
@@ -117,7 +118,7 @@ namespace FEBuilderGBA
                 reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
                 patchName1 = "Extended to item icon 0xFE";///No Translate
                 patchName2 = "Extend Item Icon List Length";///No Translate
-                patchCombo = "fix";
+                patchCombo = "fix";///No Translate
             }
             else if (type == TYPE.MagicPatch_By_Menu)
             {
@@ -168,8 +169,8 @@ namespace FEBuilderGBA
                 reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
                 patchName1 = "MNC2Fix";///No Translate
                 patchName2 = "MNC2Fix";///No Translate
-                patchShowName = "Skip Worldmap";
-                patchCombo = "fix";
+                patchShowName = "Skip Worldmap";///No Translate
+                patchCombo = "fix";///No Translate
             }
             else if (type == TYPE.CAMERA_Event_OutOfBand_Fix)
             {
@@ -185,8 +186,8 @@ namespace FEBuilderGBA
                 reason = R._("カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチをインストールしますか？");
                 patchName1 = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
                 patchName2 = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
-                patchShowName = "Fix CAM1_CAMERA2 going out of bounds";
-                patchCombo = "Fix";
+                patchShowName = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
+                patchCombo = "Fix";///No Translate
             }
             else if (type == TYPE.CAMERA_Event_NotExistsUnit_Fix)
             {
@@ -202,10 +203,10 @@ namespace FEBuilderGBA
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
                 patchName2 = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
-                patchShowName = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";
-                patchCombo = "Fix";
+                patchShowName = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
             }
-            else if (type == TYPE.UnitStateEvent_0x34_Fix)
+            else if (type == TYPE.UnitGetStateEvent_0x33_Fix)
             {
                 if (Program.ROM.RomInfo.version() != 8)
                 {
@@ -214,13 +215,30 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return PatchUtil.SearchUnitStateEvent_0x34_FixPatch();
+                    return PatchUtil.SearchGetUnitStateEvent_0x33_FixPatch();
+                };
+                reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
+                patchName1 = "Event33_CheckUnitVarious_Fix not to freeze even nonexistent units";///No Translate
+                patchName2 = "Event33_CheckUnitVarious_Fix not to freeze even nonexistent units";///No Translate
+                patchShowName = "Event33_CheckUnitVarious_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
+            }
+            else if (type == TYPE.UnitUpdateStateEvent_0x34_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchUpdateUnitStateEvent_0x34_FixPatch();
                 };
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
                 patchName2 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
-                patchShowName = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";
-                patchCombo = "Fix";
+                patchShowName = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
             }
             else if (type == TYPE.WakuEvent_0x3B_Fix)
             {
@@ -236,8 +254,8 @@ namespace FEBuilderGBA
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
                 patchName2 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
-                patchShowName = "Event3B_frame_Fix not to freeze even nonexistent units";
-                patchCombo = "Fix";
+                patchShowName = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
             }
 
             Debug.Assert(checkFunc != null);
