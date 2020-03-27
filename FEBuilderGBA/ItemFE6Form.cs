@@ -27,6 +27,7 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             InputFormRef.markupJumpLabel(JumpToITEMEFFECT);
+            InputFormRef.markupJumpLabel(HardCodingWarningLabel);
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
@@ -128,8 +129,20 @@ namespace FEBuilderGBA
             {
                 L_16_NEWALLOC_ITEMCRTIICAL.Hide();
             }
+            CheckHardCodingWarning();
         }
 
+        void CheckHardCodingWarning()
+        {
+            uint id = (uint)(this.AddressList.SelectedIndex);
+            bool r = Program.AsmMapFileAsmCache.IsHardCodeItem(id);
+            HardCodingWarningLabel.Visible = r;
+        }
+        private void HardCodingWarningLabel_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("HARDCODING_ITEM=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
+        }
 
 
     }

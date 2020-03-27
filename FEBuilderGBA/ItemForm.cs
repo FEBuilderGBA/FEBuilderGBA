@@ -37,6 +37,7 @@ namespace FEBuilderGBA
             InputFormRef.LoadComboResource(L_31_COMBO, U.ConfigDataFilename("item_weapon_effect_"));
 
             InputFormRef.markupJumpLabel(JumpToITEMEFFECT);
+            InputFormRef.markupJumpLabel(HardCodingWarningLabel);
         }
 
         public InputFormRef InputFormRef;
@@ -405,6 +406,8 @@ namespace FEBuilderGBA
             {
                 L_16_NEWALLOC_ITEMCRTIICAL.Hide();
             }
+
+            CheckHardCodingWarning();
         }
         public static uint DataCount()
         {
@@ -666,6 +669,18 @@ namespace FEBuilderGBA
                 SKILLICON.Visible = true;
                 SKILLNAME.Visible = true;
             }
+        }
+
+        void CheckHardCodingWarning()
+        {
+            uint id = (uint)(this.AddressList.SelectedIndex);
+            bool r = Program.AsmMapFileAsmCache.IsHardCodeItem(id);
+            HardCodingWarningLabel.Visible = r;
+        }
+        private void HardCodingWarningLabel_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("HARDCODING_ITEM=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
         }
 
     }

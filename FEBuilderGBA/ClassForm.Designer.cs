@@ -93,6 +93,7 @@
             this.J_11 = new System.Windows.Forms.Label();
             this.X_BASE = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             this.X_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
             this.L_4_ID = new FEBuilderGBA.PanelEx();
             this.B4 = new System.Windows.Forms.NumericUpDown();
@@ -1223,6 +1224,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.HardCodingWarningLabel);
             this.panel2.Controls.Add(this.X_CLASSTYPE);
             this.panel2.Controls.Add(this.L_4_ID);
             this.panel2.Controls.Add(this.X_SKILL_BUTTON9);
@@ -1261,6 +1263,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 154);
             this.panel2.TabIndex = 32;
+            // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(3, 77);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // X_CLASSTYPE
             // 
@@ -3756,5 +3773,6 @@
         private System.Windows.Forms.NumericUpDown MagicExtClassLimit;
         private System.Windows.Forms.Label MagicExtClassLimitLabel;
         private TextBoxEx X_CLASSTYPE;
+        private System.Windows.Forms.Label HardCodingWarningLabel;
     }
 }

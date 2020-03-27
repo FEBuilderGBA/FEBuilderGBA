@@ -1,4 +1,4 @@
-NAME=Remove leadership star total from the status screen(SkillSystems)
+NAME=Remove leadership star total from the MENU->Status screen(SkillSystems)
 AUTHOR=7743
 TYPE=BIN
 IF:0x8E4D4=0x00 0x4B 0x18 0x47
@@ -11,6 +11,6 @@ UNINSTALL:0x8E4E9=1
 UNINSTALL:0xA01D2A=2
 UNINSTALL:0xA01D46=2
 
-INFO=バニラでは敵数やプレイヤーユニット数が表示されているところに、リーダーシップスターの合計値が表示されています。\r\nこの機能をキャンセルし、元の挙動に戻します。
-INFO.en=In vanilla, the total number of leadership stars is displayed where the number of enemies and the number of player units are displayed.\r\nCancel this function and return to the original behavior.
+INFO=バニラでは敵数やプレイヤーユニット数が表示されているところに、リーダーシップスターの合計値が表示されています。\r\nこの機能をキャンセルし、元の挙動に戻します。\r\n注意:このパッチのステータスは、MENU->Statusのことであり、ユニットのステータスではありません。
+INFO.en=In vanilla, the total number of leadership stars is displayed where the number of enemies and the number of player units are displayed.\r\nCancel this function and return to the original behavior.\r\nNote: The status of this patch is MENU-> Status, not unit status.
 INFO.zh=在香草中，显示领导星的总数，其中显示敌人的数量和玩家单位的数量。\r\n取消此功能并返回到原始行为。

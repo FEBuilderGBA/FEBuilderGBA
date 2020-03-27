@@ -874,7 +874,15 @@ namespace FEBuilderGBA
                      }
                      else
                      {//変数
-                         if (IsPointerArgs(arg.Type))
+                         if (IsPointerArgsOrNULL(arg.Type))
+                         {
+                             uint vp = U.u32(data, startaddr + pos);
+                             if (vp != 0 && U.isSafetyPointer(vp) == false)
+                             {//不一致.
+                                 break;
+                             }
+                         }
+                         else if (IsPointerArgs(arg.Type))
                          {//ポインタ型であればポインタであることを確認する.
                              uint vp = U.u32(data, startaddr + pos);
                              if (U.isSafetyPointer(vp) == false)
@@ -1451,6 +1459,13 @@ namespace FEBuilderGBA
                 || argtype == EventScript.ArgType.POINTER_AIUNIT4
                 || argtype == EventScript.ArgType.POINTER_AICALLTALK
                 || argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
+                ;
+        }
+
+        public static bool IsPointerArgsOrNULL(ArgType argtype)
+        {
+            return
+                   argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
                 ;
         }
 

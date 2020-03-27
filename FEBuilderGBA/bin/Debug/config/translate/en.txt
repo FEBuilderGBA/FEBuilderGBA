@@ -619,6 +619,9 @@ Terrain AVO
 :地形防御
 Terrain DEF
 
+:ハードコーディング警告
+Hard coding warning.
+
 :クラス能力
 Class Editor
 
@@ -5017,6 +5020,9 @@ Specify the recovery bonus for each terrain.\r\nIt is used for setting to recove
 :地形ごとの毒や睡眠などのバットステータスを自動回復するボーナスを指定します。\r\n城門にいると回復するという設定に利用されます。\r\nこの設定はすべてのクラスで共通しています。\r\n個別に指定することはできません。\r\n1を設定すると有効になります。\r\nその地形にいるユニットのバッドステータスが自動的に回復します。\r\n
 Specify bonuses to automatically recover bat status such as poison and sleep for each terrain.\r\nIt is used for setting to recover when you are at the gate.\r\nThis setting is common to all classes.\r\nIt cannot be specified individually.\r\nSet to 1 to enable.\r\nThe bad status of units on that terrain is automatically restored.\r\n
 
+:このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n
+There is hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -5081,7 +5087,7 @@ To shrink the list, please set all three items to 00 and put a terminal symbol.
 Indirect effect pointer table
 
 :間接エフェクト Jump
-Edit Magic Animations
+Edit Magic Animations(Indirect effects)
 
 :使った場合
 When Used
@@ -6447,6 +6453,9 @@ The tile change ({0}) pointer ({1}) or the map change size specification is inco
 
 :マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。
 Illegal tile data ({2}) in the destination data pointer ({1}) of tile change ({0}).
+
+:マップエディタ Jump
+Map Editor Jump.
 
 :リストを縮める場合は、\r\n番号に、終端コード:255(0xFF)を設定してください。
 If you want to shrink the list,\r\nPlease set the termination code: 255(0xFF)\r\nto the number.

@@ -21,7 +21,7 @@
 005B=SE:LevelUP
 005C=SE:Weapon broke
 0060=SE:SaveMenu Wrote
-0061=SE:Menu Show
+0061=SE:Menu Select
 0065=SE:Map cursor moved
 0066=SE:Menu Move cursor
 0067=SE:Menu Move cursor(higher-pitched)
@@ -30,14 +30,14 @@
 006A=SE:Menu option selected (A pressed)
 006B=SE:Going back in the menu (B pressed)
 006C=SE:Invalid option selected
-006D=SE:SaveMenu New Game
+006D=SE:SaveMenu Pressed Start (Title)
 006E=SE:SaveMenu Move cursor
 006F=SE:SaveMenu Swipe
 0070=SE:R Description Open
 0071=SE:R Description Close
 0072=SE:SaveMenu Can not be selected
 0073=SE:Phase Message Sound
-0074=EnvSound:Bell such as a call
+0074=EnvSound:Experience Blip
 0075=SE:HP Replenishment
 0076=SE:Menu Select
 0077=SE:Menu Select
@@ -121,7 +121,7 @@
 00D5=SE:Kill (map)
 00D6=SE:Death (map)
 00D7=SE:Miss (realtime)
-00D8=SE:Crumbling? @C85_1F @C85_20 @C85_21
+00D8=SE:Critical Hit @C85_1F @C85_20 @C85_21
 00DC=SE:Mamkute transform
 00DD=SE:Mamkute de-transform
 00DE=SE:Mamkute yowl @C85_7B

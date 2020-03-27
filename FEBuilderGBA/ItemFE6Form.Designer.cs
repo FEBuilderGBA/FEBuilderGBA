@@ -173,6 +173,7 @@
             this.L_8_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_8_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B8 = new System.Windows.Forms.NumericUpDown();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -1498,6 +1499,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.HardCodingWarningLabel);
             this.panel3.Controls.Add(this.L_6_ID);
             this.panel3.Controls.Add(this.L_0_TEXT_NAME1);
             this.panel3.Controls.Add(this.J_0_TEXT);
@@ -2208,6 +2210,20 @@
             this.B8.Size = new System.Drawing.Size(60, 25);
             this.B8.TabIndex = 12;
             // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(1, 101);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
+            // 
             // ItemFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2434,5 +2450,6 @@
         private CustomColorGroupBox J_8;
         private PanelEx L_6_ID;
         private System.Windows.Forms.NumericUpDown B6;
+        private System.Windows.Forms.Label HardCodingWarningLabel;
     }
 }

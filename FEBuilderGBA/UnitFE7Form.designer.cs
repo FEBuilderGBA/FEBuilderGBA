@@ -222,6 +222,7 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             this.panel123.SuspendLayout();
@@ -403,6 +404,7 @@
             // panel123
             // 
             this.panel123.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel123.Controls.Add(this.HardCodingWarningLabel);
             this.panel123.Controls.Add(this.L_8_GENERICENEMYPORTRAIT);
             this.panel123.Controls.Add(this.L_4_ID_PLUS1);
             this.panel123.Controls.Add(this.L_9_ATTRIBUTEICON);
@@ -2837,6 +2839,20 @@
             this.panel9.Size = new System.Drawing.Size(211, 508);
             this.panel9.TabIndex = 14;
             // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(0, 66);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
+            // 
             // UnitFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -3153,5 +3169,6 @@
         private System.Windows.Forms.NumericUpDown X_SIM_MAGICEX_Value;
         private System.Windows.Forms.Label X_SIM_MAGICEX_Label;
         private InterpolatedPictureBox L_8_GENERICENEMYPORTRAIT;
+        private System.Windows.Forms.Label HardCodingWarningLabel;
     }
 }

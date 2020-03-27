@@ -225,6 +225,7 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.B29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B32)).BeginInit();
             this.panel5.SuspendLayout();
@@ -1091,6 +1092,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.HardCodingWarningLabel);
             this.panel2.Controls.Add(this.L_4_ID);
             this.panel2.Controls.Add(this.L_6_CLASSICONSRC);
             this.panel2.Controls.Add(this.B7);
@@ -2847,6 +2849,20 @@
             this.panel11.Size = new System.Drawing.Size(152, 134);
             this.panel11.TabIndex = 64;
             // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(3, 72);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
+            // 
             // ClassFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -3171,5 +3187,6 @@
         private System.Windows.Forms.Panel panel11;
         private PanelEx L_4_ID;
         private System.Windows.Forms.NumericUpDown B4;
+        private System.Windows.Forms.Label HardCodingWarningLabel;
     }
 }

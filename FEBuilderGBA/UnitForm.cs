@@ -42,6 +42,7 @@ namespace FEBuilderGBA
             MagicExtUnitGrow.ValueChanged += X_SIM_ValueChanged;
 
             X_SIM.ValueChanged += X_SIM_ValueChanged;
+            InputFormRef.markupJumpLabel(HardCodingWarningLabel);
         }
 
         public InputFormRef InputFormRef;
@@ -190,19 +191,22 @@ namespace FEBuilderGBA
                 return;
             }
 
-            GrowSimulator sim = BuildSim();
-            sim.Grow((int)X_SIM.Value,true);
+            using (U.ActiveControlSave uac = new U.ActiveControlSave(this))
+            {
+                GrowSimulator sim = BuildSim();
+                sim.Grow((int)X_SIM.Value, true);
 
-            X_SIM.Value = sim.sim_lv;
-            U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
-            U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
-            U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
-            U.SelectedIndexSafety(X_SIM_SPD, sim.sim_spd);
-            U.SelectedIndexSafety(X_SIM_DEF, sim.sim_def);
-            U.SelectedIndexSafety(X_SIM_RES, sim.sim_res);
-            U.SelectedIndexSafety(X_SIM_LUCK, sim.sim_luck);
-            U.SelectedIndexSafety(X_SIM_MAGICEX_Value, sim.sim_ext_magic);
-            U.SelectedIndexSafety(X_SIM_SUM_RATE, sim.sim_sum_grow_rate);
+                X_SIM.Value = sim.sim_lv;
+                U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
+                U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
+                U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
+                U.SelectedIndexSafety(X_SIM_SPD, sim.sim_spd);
+                U.SelectedIndexSafety(X_SIM_DEF, sim.sim_def);
+                U.SelectedIndexSafety(X_SIM_RES, sim.sim_res);
+                U.SelectedIndexSafety(X_SIM_LUCK, sim.sim_luck);
+                U.SelectedIndexSafety(X_SIM_MAGICEX_Value, sim.sim_ext_magic);
+                U.SelectedIndexSafety(X_SIM_SUM_RATE, sim.sim_sum_grow_rate);
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,6 +214,7 @@ namespace FEBuilderGBA
             X_SIM.Value = GrowSimulator.CalcMaxLevel((uint)B5.Value);
             X_SIM_ValueChanged(null, null);
             SkillUtil.MakeUnitSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex+1, this.X_SkillButtons, this.X_Tooltip);
+            CheckHardCodingWarning();
             
         }
         //支援クラス
@@ -881,6 +886,18 @@ namespace FEBuilderGBA
                 addr += InputFormRef.BlockSize;
             }
             Program.Undo.Push(undodata);
+        }
+
+        void CheckHardCodingWarning()
+        {
+            uint id = (uint)(this.AddressList.SelectedIndex + 1);
+            bool r = Program.AsmMapFileAsmCache.IsHardCodeUnit(id);
+            HardCodingWarningLabel.Visible = r;
+        }
+        private void HardCodingWarningLabel_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("HARDCODING_UNIT=" + U.ToHexString2(this.AddressList.SelectedIndex + 1), 0);
         }
 
     }

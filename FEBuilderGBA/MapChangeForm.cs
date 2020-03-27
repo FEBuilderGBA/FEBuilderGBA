@@ -18,12 +18,13 @@ namespace FEBuilderGBA
             this.N_InputFormRef = N_Init(this);
             this.InputFormRef = Init(this);
 
-            //マップを最前面に移動する.
-            MapPictureBox.BringToFront();
+            MapPictureBox.HideCommandBar2();
 
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
             this.N_InputFormRef.PostWriteHandler += N_PostWriteEvent;
+
+            InputFormRef.markupJumpLabel(X_MAPEDITOR_LINK);
         }
 
         public InputFormRef InputFormRef;
@@ -69,6 +70,8 @@ namespace FEBuilderGBA
 
         private void MapExitPointForm_Load(object sender, EventArgs e)
         {
+            MaximizeBox = true;
+
         }
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -218,9 +221,11 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            U.AddrResult ar = InputFormRef.SelectToAddrResult(this.AddressList);
+            uint mapid = ar.tag;
 
             MapEditorForm f = (MapEditorForm)InputFormRef.JumpForm<MapEditorForm>(U.NOT_FOUND);
-            f.JumpTo((uint)AddressList.SelectedIndex, (uint)N_B0.Value);
+            f.JumpTo(mapid, (uint)N_B0.Value);
         }
         //リストが拡張されたとき
         void N_AddressListExpandsEvent(object sender, EventArgs arg)
@@ -617,6 +622,12 @@ namespace FEBuilderGBA
             }
             //判別不能
             return 0x0;
+        }
+
+
+        private void X_MAPEDITOR_LINK_Click(object sender, EventArgs e)
+        {
+            X_JUMP_MAPEDITOR_Click(sender, e);
         }
 
     }

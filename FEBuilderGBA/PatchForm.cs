@@ -154,6 +154,21 @@ namespace FEBuilderGBA
                     patchs.Add(patch);
                 }
             }
+            else if (filter.IndexOf("hardcoding_") == 0)
+            {
+                string target_typename = U.cut(filter, "hardcoding_", "=").ToUpper();
+                uint target_value = U.atoh(U.skip(filter, "="));
+                for (int i = 0; i < this.Patchs.Count; i++)
+                {
+                    PatchSt patch = this.Patchs[i];
+                    bool r = isFilterHardCoding(patch, target_value, target_typename);
+                    if (r == false)
+                    {//フィルターで消す.
+                        continue;
+                    }
+                    patchs.Add(patch);
+                }
+            }
             else
             {
                 for (int i = 0; i < this.Patchs.Count; i++)
@@ -8305,7 +8320,94 @@ namespace FEBuilderGBA
             string symbolData = File.ReadAllText(symbol);
             SymbolUtil.ProcessSymbolToList(list, patch.Name, symbolData, 0);
         }
+        static uint GetAddrPatchAddressFast(PatchSt patch)
+        {
+            Debug.Assert(U.at(patch.Param, "TYPE") == "ADDR");
 
+            string address_string = U.at(patch.Param, "ADDRESS");
+            return U.atoi0x(address_string);
+        }
+        static uint GetAddrPatchAddressToValue8Fast(PatchSt patch)
+        {
+            uint addr = GetAddrPatchAddressFast(patch);
+            if (! U.isSafetyOffset(addr))
+            {
+                return 0;
+            }
+            return Program.ROM.u8(addr);
+        }
+        static bool isFilterHardCoding(PatchSt patch,uint value,string typename)
+        {
+            if (value <= 0)
+            {
+                return false;
+            }
+            if (isCanonicalSkip(patch))
+            {
+                return false;
+            }
+            string checkIF = CheckIFFast(patch);
+            if (checkIF == "E")
+            {
+                return false;
+            }
 
+            string addressType = U.at(patch.Param, "ADDRESS_TYPE");
+            if (addressType == typename)
+            {
+                uint id = GetAddrPatchAddressToValue8Fast(patch);
+                return id == value;
+            }
+            return false;
+        }
+
+        public static void MakeHardCodeWarning(ref bool[] HardCodeUnit, ref bool[] HardCodeClass, ref bool[] HardCodeItem)
+        {
+            List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(), false);
+            for (int i = 0; i < patchs.Count; i++)
+            {
+                PatchSt patch = patchs[i];
+
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
+                string checkIF = CheckIFFast(patch);
+                if (checkIF == "E")
+                {
+                    continue;
+                }
+
+                string addressType = U.at(patch.Param, "ADDRESS_TYPE");
+                if (addressType == "UNIT")
+                {
+                    uint unitid = GetAddrPatchAddressToValue8Fast(patch);
+                    if (unitid == 0)
+                    {
+                        continue;
+                    }
+                    HardCodeUnit[unitid] = true;
+                }
+                else if (addressType == "CLASS")
+                {
+                    uint classid = GetAddrPatchAddressToValue8Fast(patch);
+                    if (classid == 0)
+                    {
+                        continue;
+                    }
+                    HardCodeClass[classid] = true;
+                }
+                else if (addressType == "ITEM")
+                {
+                    uint itemid = GetAddrPatchAddressToValue8Fast(patch);
+                    if (itemid == 0)
+                    {
+                        continue;
+                    }
+                    HardCodeItem[itemid] = true;
+                }
+
+            }
+        }
     }
 }

@@ -1,0 +1,13 @@
+NAME=IMAGE_進撃準備側面の右側のメニューの装飾
+NAME.en=Menu decoration on right side of preparation.
+NAME.zh=Menu decoration on right side of preparation.
+
+
+TYPE=IMAGE
+
+WIDTH=112
+HEIGHT=8
+
+ZIMAGE_POINTER=0x098CB4//0xA1D7DC
+PALETTE_POINTER=0x036D48//0x5B6C14
+AUTHOR=Zane

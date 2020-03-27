@@ -103,6 +103,19 @@ namespace FEBuilderGBA
             try
             {
 #endif
+            MakeHardCodeWarning(); //ハードコーディングされているデータの警告
+            if (IsStopFlag) return map;
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+            }
+#endif
+#if !DEBUG 
+            try
+            {
+#endif
             ScanFELintByThread(ldrmap);
             if (IsStopFlag) return map;
 #if !DEBUG 
@@ -719,5 +732,29 @@ namespace FEBuilderGBA
             map.MakeTextIDArray(list);
         }
 
+        //ハードコーディングされたユニット、クラス、アイテムの警告
+        //主にパッチをスキャンした時に、データを作ります.
+        bool[] HardCodeUnit = new bool[255];
+        bool[] HardCodeClass = new bool[255];
+        bool[] HardCodeItem = new bool[255];
+        public bool IsHardCodeUnit(uint unitid)
+        {
+            return HardCodeUnit[(byte)unitid];
+        }
+        public bool IsHardCodeClass(uint classid)
+        {
+            return HardCodeClass[(byte)classid];
+        }
+        public bool IsHardCodeItem(uint itemid)
+        {
+            return HardCodeItem[(byte)itemid];
+        }
+        void MakeHardCodeWarning()
+        {
+            Array.Clear(HardCodeUnit, 0, HardCodeUnit.Length);
+            Array.Clear(HardCodeClass, 0, HardCodeClass.Length);
+            Array.Clear(HardCodeItem, 0, HardCodeItem.Length);
+            PatchForm.MakeHardCodeWarning(ref HardCodeUnit, ref HardCodeClass, ref HardCodeItem);
+        }
     }
 }

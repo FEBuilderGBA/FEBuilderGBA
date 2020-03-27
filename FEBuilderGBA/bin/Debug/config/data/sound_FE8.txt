@@ -21,7 +21,7 @@
 005B=SE:LevelUP
 005C=SE:アイテム破損
 0060=SE:セーブメニュー 書き込み
-0061=SE:メニュー 表示
+0061=SE:メニュー 選択
 0065=SE:Cursor
 0066=SE:メニュー カーソル移動
 0067=SE:メニュー カーソル移動
@@ -121,7 +121,7 @@
 00D5=SE:Kill (map)
 00D6=SE:Death (map)
 00D7=SE:Miss (realtime)
-00D8=SE:Crumbling? @C85_1F @C85_20 @C85_21
+00D8=SE:Critical Hit @C85_1F @C85_20 @C85_21
 00DC=SE:Mamkute transform
 00DD=SE:Mamkute de-transform
 00DE=SE:Mamkute yowl @C85_7B

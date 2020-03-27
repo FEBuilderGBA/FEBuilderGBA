@@ -34,6 +34,9 @@
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_8_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
+            this.B4 = new System.Windows.Forms.NumericUpDown();
             this.X_SKILL_BUTTON9 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON8 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON7 = new System.Windows.Forms.Button();
@@ -44,18 +47,23 @@
             this.X_UNITSKILL = new System.Windows.Forms.Label();
             this.X_SKILL_BUTTON2 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON1 = new System.Windows.Forms.Button();
+            this.L_9_ATTRIBUTEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.J_ID_UNITPALETTEFE8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_6_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.J_10 = new System.Windows.Forms.Label();
             this.B8 = new System.Windows.Forms.NumericUpDown();
             this.W6 = new System.Windows.Forms.NumericUpDown();
             this.J_8_GENERICENEMYPORTRAIT = new System.Windows.Forms.Label();
             this.J_6_PORTRAIT = new System.Windows.Forms.Label();
+            this.L_5_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B5 = new System.Windows.Forms.NumericUpDown();
             this.B9 = new System.Windows.Forms.NumericUpDown();
             this.L_9_ATTRIBUTE = new System.Windows.Forms.Label();
             this.J_5_CLASS = new System.Windows.Forms.Label();
+            this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
+            this.L_2_TEXT_DETAIL3 = new FEBuilderGBA.TextBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
             this.MagicExtUnitBase = new System.Windows.Forms.NumericUpDown();
             this.MagicExtUnitBaseLabel = new System.Windows.Forms.Label();
@@ -79,6 +87,46 @@
             this.J_11 = new System.Windows.Forms.Label();
             this.X_BASE = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
+            this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_20 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_10 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_08 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_04 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_02 = new System.Windows.Forms.CheckBox();
+            this.L_43_BIT_01 = new System.Windows.Forms.CheckBox();
+            this.B43 = new System.Windows.Forms.NumericUpDown();
+            this.J_42 = new FEBuilderGBA.CustomColorGroupBox();
+            this.L_42_BIT_80 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_40 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_20 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_10 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_08 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_04 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_02 = new System.Windows.Forms.CheckBox();
+            this.L_42_BIT_01 = new System.Windows.Forms.CheckBox();
+            this.B42 = new System.Windows.Forms.NumericUpDown();
+            this.J_41 = new FEBuilderGBA.CustomColorGroupBox();
+            this.L_41_BIT_80 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_40 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_20 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_10 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_08 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_04 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_02 = new System.Windows.Forms.CheckBox();
+            this.L_41_BIT_01 = new System.Windows.Forms.CheckBox();
+            this.B41 = new System.Windows.Forms.NumericUpDown();
+            this.J_40 = new FEBuilderGBA.CustomColorGroupBox();
+            this.L_40_BIT_80 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_40 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_20 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_10 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_08 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_04 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
+            this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
+            this.B40 = new System.Windows.Forms.NumericUpDown();
             this.J_50 = new System.Windows.Forms.Label();
             this.J_51 = new System.Windows.Forms.Label();
             this.J_48_TALKGROUP = new System.Windows.Forms.Label();
@@ -141,6 +189,14 @@
             this.label66 = new System.Windows.Forms.Label();
             this.X_SIM_LABEL = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.systemIconPictureBox8 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox7 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox6 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
             this.B24 = new System.Windows.Forms.NumericUpDown();
             this.B23 = new System.Windows.Forms.NumericUpDown();
             this.B27 = new System.Windows.Forms.NumericUpDown();
@@ -159,7 +215,9 @@
             this.L_20_WEAPON = new System.Windows.Forms.Label();
             this.X_WEAPON_LV = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -172,69 +230,17 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.systemIconPictureBox8 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox7 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox6 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
-            this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
-            this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_20 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_10 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_08 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_04 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_02 = new System.Windows.Forms.CheckBox();
-            this.L_43_BIT_01 = new System.Windows.Forms.CheckBox();
-            this.B43 = new System.Windows.Forms.NumericUpDown();
-            this.J_42 = new FEBuilderGBA.CustomColorGroupBox();
-            this.L_42_BIT_80 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_40 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_20 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_10 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_08 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_04 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_02 = new System.Windows.Forms.CheckBox();
-            this.L_42_BIT_01 = new System.Windows.Forms.CheckBox();
-            this.B42 = new System.Windows.Forms.NumericUpDown();
-            this.J_41 = new FEBuilderGBA.CustomColorGroupBox();
-            this.L_41_BIT_80 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_40 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_20 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_10 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_08 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_04 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_02 = new System.Windows.Forms.CheckBox();
-            this.L_41_BIT_01 = new System.Windows.Forms.CheckBox();
-            this.B41 = new System.Windows.Forms.NumericUpDown();
-            this.J_40 = new FEBuilderGBA.CustomColorGroupBox();
-            this.L_40_BIT_80 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_40 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_20 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_10 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_08 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_04 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
-            this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
-            this.B40 = new System.Windows.Forms.NumericUpDown();
-            this.L_8_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
-            this.B4 = new System.Windows.Forms.NumericUpDown();
-            this.L_9_ATTRIBUTEICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_6_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_5_CLASS = new FEBuilderGBA.TextBoxEx();
-            this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
-            this.L_2_TEXT_DETAIL3 = new FEBuilderGBA.TextBoxEx();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).BeginInit();
+            this.L_4_ID_PLUS1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_6_PORTRAIT_AUTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).BeginInit();
@@ -252,6 +258,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.b15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).BeginInit();
             this.panel8.SuspendLayout();
+            this.J_43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B43)).BeginInit();
+            this.J_42.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B42)).BeginInit();
+            this.J_41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B41)).BeginInit();
+            this.J_40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B49)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B51)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B48)).BeginInit();
@@ -284,6 +298,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_SPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM)).BeginInit();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B27)).BeginInit();
@@ -299,27 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
-            this.J_43.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B43)).BeginInit();
-            this.J_42.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B42)).BeginInit();
-            this.J_41.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B41)).BeginInit();
-            this.J_40.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B40)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).BeginInit();
-            this.L_4_ID_PLUS1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_6_PORTRAIT_AUTO)).BeginInit();
             this.SuspendLayout();
             // 
             // J_0_TEXT
@@ -391,6 +392,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.HardCodingWarningLabel);
             this.panel2.Controls.Add(this.L_8_GENERICENEMYPORTRAIT);
             this.panel2.Controls.Add(this.L_4_ID_PLUS1);
             this.panel2.Controls.Add(this.X_SKILL_BUTTON9);
@@ -430,6 +432,40 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1110, 138);
             this.panel2.TabIndex = 18;
+            // 
+            // L_8_GENERICENEMYPORTRAIT
+            // 
+            this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(847, 73);
+            this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
+            this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(64, 64);
+            this.L_8_GENERICENEMYPORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_8_GENERICENEMYPORTRAIT.TabIndex = 107;
+            this.L_8_GENERICENEMYPORTRAIT.TabStop = false;
+            // 
+            // L_4_ID_PLUS1
+            // 
+            this.L_4_ID_PLUS1.Controls.Add(this.B4);
+            this.L_4_ID_PLUS1.ErrorMessage = "";
+            this.L_4_ID_PLUS1.Location = new System.Drawing.Point(389, 1);
+            this.L_4_ID_PLUS1.Name = "L_4_ID_PLUS1";
+            this.L_4_ID_PLUS1.Size = new System.Drawing.Size(84, 32);
+            this.L_4_ID_PLUS1.TabIndex = 105;
+            // 
+            // B4
+            // 
+            this.B4.Hexadecimal = true;
+            this.B4.Location = new System.Drawing.Point(4, 4);
+            this.B4.Margin = new System.Windows.Forms.Padding(2);
+            this.B4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(76, 25);
+            this.B4.TabIndex = 0;
             // 
             // X_SKILL_BUTTON9
             // 
@@ -571,6 +607,15 @@
             this.X_SKILL_BUTTON1.UseVisualStyleBackColor = true;
             this.X_SKILL_BUTTON1.Visible = false;
             // 
+            // L_9_ATTRIBUTEICON
+            // 
+            this.L_9_ATTRIBUTEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(1069, 2);
+            this.L_9_ATTRIBUTEICON.Name = "L_9_ATTRIBUTEICON";
+            this.L_9_ATTRIBUTEICON.Size = new System.Drawing.Size(32, 32);
+            this.L_9_ATTRIBUTEICON.TabIndex = 46;
+            this.L_9_ATTRIBUTEICON.TabStop = false;
+            // 
             // J_ID_UNITPALETTEFE8
             // 
             this.J_ID_UNITPALETTEFE8.AccessibleDescription = "@UNIT_FE8_CLASS_PALETTE";
@@ -589,6 +634,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(115, 60);
             this.panel3.TabIndex = 10;
+            // 
+            // L_6_PORTRAIT_AUTO
+            // 
+            this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(723, 33);
+            this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
+            this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(118, 104);
+            this.L_6_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_6_PORTRAIT_AUTO.TabIndex = 30;
+            this.L_6_PORTRAIT_AUTO.TabStop = false;
             // 
             // B10
             // 
@@ -670,6 +726,17 @@
             this.J_6_PORTRAIT.Text = "顔";
             this.J_6_PORTRAIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_5_CLASS
+            // 
+            this.L_5_CLASS.ErrorMessage = "";
+            this.L_5_CLASS.Location = new System.Drawing.Point(723, 6);
+            this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_5_CLASS.Name = "L_5_CLASS";
+            this.L_5_CLASS.Placeholder = "";
+            this.L_5_CLASS.ReadOnly = true;
+            this.L_5_CLASS.Size = new System.Drawing.Size(117, 25);
+            this.L_5_CLASS.TabIndex = 23;
+            // 
             // B5
             // 
             this.B5.Hexadecimal = true;
@@ -726,6 +793,29 @@
             this.J_5_CLASS.TabIndex = 18;
             this.J_5_CLASS.Text = "支援クラス";
             this.J_5_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_0_TEXT_NAME1
+            // 
+            this.L_0_TEXT_NAME1.ErrorMessage = "";
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(178, 7);
+            this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
+            this.L_0_TEXT_NAME1.Placeholder = "";
+            this.L_0_TEXT_NAME1.ReadOnly = true;
+            this.L_0_TEXT_NAME1.Size = new System.Drawing.Size(162, 25);
+            this.L_0_TEXT_NAME1.TabIndex = 14;
+            // 
+            // L_2_TEXT_DETAIL3
+            // 
+            this.L_2_TEXT_DETAIL3.ErrorMessage = "";
+            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(178, 34);
+            this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_2_TEXT_DETAIL3.Multiline = true;
+            this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
+            this.L_2_TEXT_DETAIL3.Placeholder = "";
+            this.L_2_TEXT_DETAIL3.ReadOnly = true;
+            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(297, 65);
+            this.L_2_TEXT_DETAIL3.TabIndex = 15;
             // 
             // panel4
             // 
@@ -1033,6 +1123,498 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(937, 297);
             this.panel8.TabIndex = 13;
+            // 
+            // J_43
+            // 
+            this.J_43.BorderColor = System.Drawing.Color.Empty;
+            this.J_43.Controls.Add(this.L_43_BIT_80);
+            this.J_43.Controls.Add(this.L_43_BIT_40);
+            this.J_43.Controls.Add(this.L_43_BIT_20);
+            this.J_43.Controls.Add(this.L_43_BIT_10);
+            this.J_43.Controls.Add(this.L_43_BIT_08);
+            this.J_43.Controls.Add(this.L_43_BIT_04);
+            this.J_43.Controls.Add(this.L_43_BIT_02);
+            this.J_43.Controls.Add(this.L_43_BIT_01);
+            this.J_43.Controls.Add(this.B43);
+            this.J_43.Location = new System.Drawing.Point(691, 9);
+            this.J_43.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_43.Name = "J_43";
+            this.J_43.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_43.Size = new System.Drawing.Size(245, 287);
+            this.J_43.TabIndex = 3;
+            this.J_43.TabStop = false;
+            this.J_43.Text = "特性4";
+            // 
+            // L_43_BIT_80
+            // 
+            this.L_43_BIT_80.AutoSize = true;
+            this.L_43_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_80.Location = new System.Drawing.Point(8, 226);
+            this.L_43_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_80.Name = "L_43_BIT_80";
+            this.L_43_BIT_80.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_80.TabIndex = 8;
+            this.L_43_BIT_80.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_40
+            // 
+            this.L_43_BIT_40.AutoSize = true;
+            this.L_43_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_40.Location = new System.Drawing.Point(8, 202);
+            this.L_43_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_40.Name = "L_43_BIT_40";
+            this.L_43_BIT_40.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_40.TabIndex = 7;
+            this.L_43_BIT_40.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_20
+            // 
+            this.L_43_BIT_20.AutoSize = true;
+            this.L_43_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_20.Location = new System.Drawing.Point(8, 178);
+            this.L_43_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_20.Name = "L_43_BIT_20";
+            this.L_43_BIT_20.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_20.TabIndex = 6;
+            this.L_43_BIT_20.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_10
+            // 
+            this.L_43_BIT_10.AutoSize = true;
+            this.L_43_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_10.Location = new System.Drawing.Point(8, 154);
+            this.L_43_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_10.Name = "L_43_BIT_10";
+            this.L_43_BIT_10.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_10.TabIndex = 5;
+            this.L_43_BIT_10.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_08
+            // 
+            this.L_43_BIT_08.AutoSize = true;
+            this.L_43_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_08.Location = new System.Drawing.Point(8, 130);
+            this.L_43_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_08.Name = "L_43_BIT_08";
+            this.L_43_BIT_08.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_08.TabIndex = 4;
+            this.L_43_BIT_08.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_04
+            // 
+            this.L_43_BIT_04.AutoSize = true;
+            this.L_43_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_04.Location = new System.Drawing.Point(8, 107);
+            this.L_43_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_04.Name = "L_43_BIT_04";
+            this.L_43_BIT_04.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_04.TabIndex = 3;
+            this.L_43_BIT_04.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_02
+            // 
+            this.L_43_BIT_02.AutoSize = true;
+            this.L_43_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_02.Location = new System.Drawing.Point(8, 82);
+            this.L_43_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_02.Name = "L_43_BIT_02";
+            this.L_43_BIT_02.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_02.TabIndex = 2;
+            this.L_43_BIT_02.UseVisualStyleBackColor = true;
+            // 
+            // L_43_BIT_01
+            // 
+            this.L_43_BIT_01.AutoSize = true;
+            this.L_43_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_43_BIT_01.Location = new System.Drawing.Point(8, 58);
+            this.L_43_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_43_BIT_01.Name = "L_43_BIT_01";
+            this.L_43_BIT_01.Size = new System.Drawing.Size(22, 21);
+            this.L_43_BIT_01.TabIndex = 1;
+            this.L_43_BIT_01.UseVisualStyleBackColor = true;
+            // 
+            // B43
+            // 
+            this.B43.Hexadecimal = true;
+            this.B43.Location = new System.Drawing.Point(8, 23);
+            this.B43.Margin = new System.Windows.Forms.Padding(2);
+            this.B43.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B43.Name = "B43";
+            this.B43.Size = new System.Drawing.Size(60, 25);
+            this.B43.TabIndex = 0;
+            // 
+            // J_42
+            // 
+            this.J_42.BorderColor = System.Drawing.Color.Empty;
+            this.J_42.Controls.Add(this.L_42_BIT_80);
+            this.J_42.Controls.Add(this.L_42_BIT_40);
+            this.J_42.Controls.Add(this.L_42_BIT_20);
+            this.J_42.Controls.Add(this.L_42_BIT_10);
+            this.J_42.Controls.Add(this.L_42_BIT_08);
+            this.J_42.Controls.Add(this.L_42_BIT_04);
+            this.J_42.Controls.Add(this.L_42_BIT_02);
+            this.J_42.Controls.Add(this.L_42_BIT_01);
+            this.J_42.Controls.Add(this.B42);
+            this.J_42.Location = new System.Drawing.Point(465, 9);
+            this.J_42.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_42.Name = "J_42";
+            this.J_42.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_42.Size = new System.Drawing.Size(224, 287);
+            this.J_42.TabIndex = 2;
+            this.J_42.TabStop = false;
+            this.J_42.Text = "特性3";
+            // 
+            // L_42_BIT_80
+            // 
+            this.L_42_BIT_80.AutoSize = true;
+            this.L_42_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_80.Location = new System.Drawing.Point(11, 225);
+            this.L_42_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_80.Name = "L_42_BIT_80";
+            this.L_42_BIT_80.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_80.TabIndex = 0;
+            this.L_42_BIT_80.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_40
+            // 
+            this.L_42_BIT_40.AutoSize = true;
+            this.L_42_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_40.Location = new System.Drawing.Point(11, 201);
+            this.L_42_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_40.Name = "L_42_BIT_40";
+            this.L_42_BIT_40.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_40.TabIndex = 8;
+            this.L_42_BIT_40.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_20
+            // 
+            this.L_42_BIT_20.AutoSize = true;
+            this.L_42_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_20.Location = new System.Drawing.Point(11, 177);
+            this.L_42_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_20.Name = "L_42_BIT_20";
+            this.L_42_BIT_20.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_20.TabIndex = 7;
+            this.L_42_BIT_20.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_10
+            // 
+            this.L_42_BIT_10.AutoSize = true;
+            this.L_42_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_10.Location = new System.Drawing.Point(11, 153);
+            this.L_42_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_10.Name = "L_42_BIT_10";
+            this.L_42_BIT_10.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_10.TabIndex = 6;
+            this.L_42_BIT_10.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_08
+            // 
+            this.L_42_BIT_08.AutoSize = true;
+            this.L_42_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_08.Location = new System.Drawing.Point(11, 130);
+            this.L_42_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_08.Name = "L_42_BIT_08";
+            this.L_42_BIT_08.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_08.TabIndex = 5;
+            this.L_42_BIT_08.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_04
+            // 
+            this.L_42_BIT_04.AutoSize = true;
+            this.L_42_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_04.Location = new System.Drawing.Point(11, 105);
+            this.L_42_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_04.Name = "L_42_BIT_04";
+            this.L_42_BIT_04.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_04.TabIndex = 4;
+            this.L_42_BIT_04.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_02
+            // 
+            this.L_42_BIT_02.AutoSize = true;
+            this.L_42_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_02.Location = new System.Drawing.Point(11, 81);
+            this.L_42_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_02.Name = "L_42_BIT_02";
+            this.L_42_BIT_02.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_02.TabIndex = 3;
+            this.L_42_BIT_02.UseVisualStyleBackColor = true;
+            // 
+            // L_42_BIT_01
+            // 
+            this.L_42_BIT_01.AutoSize = true;
+            this.L_42_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_42_BIT_01.Location = new System.Drawing.Point(11, 57);
+            this.L_42_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_BIT_01.Name = "L_42_BIT_01";
+            this.L_42_BIT_01.Size = new System.Drawing.Size(22, 21);
+            this.L_42_BIT_01.TabIndex = 2;
+            this.L_42_BIT_01.UseVisualStyleBackColor = true;
+            // 
+            // B42
+            // 
+            this.B42.Hexadecimal = true;
+            this.B42.Location = new System.Drawing.Point(11, 24);
+            this.B42.Margin = new System.Windows.Forms.Padding(2);
+            this.B42.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B42.Name = "B42";
+            this.B42.Size = new System.Drawing.Size(60, 25);
+            this.B42.TabIndex = 0;
+            // 
+            // J_41
+            // 
+            this.J_41.BorderColor = System.Drawing.Color.Empty;
+            this.J_41.Controls.Add(this.L_41_BIT_80);
+            this.J_41.Controls.Add(this.L_41_BIT_40);
+            this.J_41.Controls.Add(this.L_41_BIT_20);
+            this.J_41.Controls.Add(this.L_41_BIT_10);
+            this.J_41.Controls.Add(this.L_41_BIT_08);
+            this.J_41.Controls.Add(this.L_41_BIT_04);
+            this.J_41.Controls.Add(this.L_41_BIT_02);
+            this.J_41.Controls.Add(this.L_41_BIT_01);
+            this.J_41.Controls.Add(this.B41);
+            this.J_41.Location = new System.Drawing.Point(243, 9);
+            this.J_41.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_41.Name = "J_41";
+            this.J_41.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_41.Size = new System.Drawing.Size(219, 287);
+            this.J_41.TabIndex = 1;
+            this.J_41.TabStop = false;
+            this.J_41.Text = "特性2";
+            // 
+            // L_41_BIT_80
+            // 
+            this.L_41_BIT_80.AutoSize = true;
+            this.L_41_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_80.Location = new System.Drawing.Point(10, 225);
+            this.L_41_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_80.Name = "L_41_BIT_80";
+            this.L_41_BIT_80.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_80.TabIndex = 8;
+            this.L_41_BIT_80.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_40
+            // 
+            this.L_41_BIT_40.AutoSize = true;
+            this.L_41_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_40.Location = new System.Drawing.Point(10, 200);
+            this.L_41_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_40.Name = "L_41_BIT_40";
+            this.L_41_BIT_40.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_40.TabIndex = 7;
+            this.L_41_BIT_40.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_20
+            // 
+            this.L_41_BIT_20.AutoSize = true;
+            this.L_41_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_20.Location = new System.Drawing.Point(10, 176);
+            this.L_41_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_20.Name = "L_41_BIT_20";
+            this.L_41_BIT_20.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_20.TabIndex = 6;
+            this.L_41_BIT_20.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_10
+            // 
+            this.L_41_BIT_10.AutoSize = true;
+            this.L_41_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_10.Location = new System.Drawing.Point(10, 152);
+            this.L_41_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_10.Name = "L_41_BIT_10";
+            this.L_41_BIT_10.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_10.TabIndex = 5;
+            this.L_41_BIT_10.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_08
+            // 
+            this.L_41_BIT_08.AutoSize = true;
+            this.L_41_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_08.Location = new System.Drawing.Point(10, 128);
+            this.L_41_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_08.Name = "L_41_BIT_08";
+            this.L_41_BIT_08.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_08.TabIndex = 4;
+            this.L_41_BIT_08.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_04
+            // 
+            this.L_41_BIT_04.AutoSize = true;
+            this.L_41_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_04.Location = new System.Drawing.Point(10, 104);
+            this.L_41_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_04.Name = "L_41_BIT_04";
+            this.L_41_BIT_04.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_04.TabIndex = 3;
+            this.L_41_BIT_04.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_02
+            // 
+            this.L_41_BIT_02.AutoSize = true;
+            this.L_41_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_02.Location = new System.Drawing.Point(10, 80);
+            this.L_41_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_02.Name = "L_41_BIT_02";
+            this.L_41_BIT_02.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_02.TabIndex = 2;
+            this.L_41_BIT_02.UseVisualStyleBackColor = true;
+            // 
+            // L_41_BIT_01
+            // 
+            this.L_41_BIT_01.AutoSize = true;
+            this.L_41_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_41_BIT_01.Location = new System.Drawing.Point(10, 56);
+            this.L_41_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_41_BIT_01.Name = "L_41_BIT_01";
+            this.L_41_BIT_01.Size = new System.Drawing.Size(22, 21);
+            this.L_41_BIT_01.TabIndex = 1;
+            this.L_41_BIT_01.UseVisualStyleBackColor = true;
+            // 
+            // B41
+            // 
+            this.B41.Hexadecimal = true;
+            this.B41.Location = new System.Drawing.Point(10, 23);
+            this.B41.Margin = new System.Windows.Forms.Padding(2);
+            this.B41.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B41.Name = "B41";
+            this.B41.Size = new System.Drawing.Size(60, 25);
+            this.B41.TabIndex = 0;
+            // 
+            // J_40
+            // 
+            this.J_40.BorderColor = System.Drawing.Color.Empty;
+            this.J_40.Controls.Add(this.L_40_BIT_80);
+            this.J_40.Controls.Add(this.L_40_BIT_40);
+            this.J_40.Controls.Add(this.L_40_BIT_20);
+            this.J_40.Controls.Add(this.L_40_BIT_10);
+            this.J_40.Controls.Add(this.L_40_BIT_08);
+            this.J_40.Controls.Add(this.L_40_BIT_04);
+            this.J_40.Controls.Add(this.L_40_BIT_02);
+            this.J_40.Controls.Add(this.L_40_BIT_01);
+            this.J_40.Controls.Add(this.B40);
+            this.J_40.Location = new System.Drawing.Point(4, 9);
+            this.J_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_40.Name = "J_40";
+            this.J_40.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.J_40.Size = new System.Drawing.Size(237, 287);
+            this.J_40.TabIndex = 0;
+            this.J_40.TabStop = false;
+            this.J_40.Text = "特性1";
+            // 
+            // L_40_BIT_80
+            // 
+            this.L_40_BIT_80.AutoSize = true;
+            this.L_40_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_80.Location = new System.Drawing.Point(3, 227);
+            this.L_40_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_80.Name = "L_40_BIT_80";
+            this.L_40_BIT_80.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_80.TabIndex = 8;
+            this.L_40_BIT_80.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_40
+            // 
+            this.L_40_BIT_40.AutoSize = true;
+            this.L_40_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_40.Location = new System.Drawing.Point(3, 203);
+            this.L_40_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_40.Name = "L_40_BIT_40";
+            this.L_40_BIT_40.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_40.TabIndex = 7;
+            this.L_40_BIT_40.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_20
+            // 
+            this.L_40_BIT_20.AutoSize = true;
+            this.L_40_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_20.Location = new System.Drawing.Point(3, 179);
+            this.L_40_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_20.Name = "L_40_BIT_20";
+            this.L_40_BIT_20.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_20.TabIndex = 6;
+            this.L_40_BIT_20.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_10
+            // 
+            this.L_40_BIT_10.AutoSize = true;
+            this.L_40_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_10.Location = new System.Drawing.Point(3, 155);
+            this.L_40_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_10.Name = "L_40_BIT_10";
+            this.L_40_BIT_10.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_10.TabIndex = 5;
+            this.L_40_BIT_10.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_08
+            // 
+            this.L_40_BIT_08.AutoSize = true;
+            this.L_40_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_08.Location = new System.Drawing.Point(3, 131);
+            this.L_40_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_08.Name = "L_40_BIT_08";
+            this.L_40_BIT_08.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_08.TabIndex = 4;
+            this.L_40_BIT_08.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_04
+            // 
+            this.L_40_BIT_04.AutoSize = true;
+            this.L_40_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_04.Location = new System.Drawing.Point(3, 107);
+            this.L_40_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_04.Name = "L_40_BIT_04";
+            this.L_40_BIT_04.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_04.TabIndex = 3;
+            this.L_40_BIT_04.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_02
+            // 
+            this.L_40_BIT_02.AutoSize = true;
+            this.L_40_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_02.Location = new System.Drawing.Point(3, 83);
+            this.L_40_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_02.Name = "L_40_BIT_02";
+            this.L_40_BIT_02.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_02.TabIndex = 2;
+            this.L_40_BIT_02.UseVisualStyleBackColor = true;
+            // 
+            // L_40_BIT_01
+            // 
+            this.L_40_BIT_01.AutoSize = true;
+            this.L_40_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_01.Location = new System.Drawing.Point(3, 59);
+            this.L_40_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_BIT_01.Name = "L_40_BIT_01";
+            this.L_40_BIT_01.Size = new System.Drawing.Size(22, 21);
+            this.L_40_BIT_01.TabIndex = 1;
+            this.L_40_BIT_01.UseVisualStyleBackColor = true;
+            // 
+            // B40
+            // 
+            this.B40.Hexadecimal = true;
+            this.B40.Location = new System.Drawing.Point(3, 23);
+            this.B40.Margin = new System.Windows.Forms.Padding(2);
+            this.B40.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B40.Name = "B40";
+            this.B40.Size = new System.Drawing.Size(60, 25);
+            this.B40.TabIndex = 0;
             // 
             // J_50
             // 
@@ -1891,6 +2473,85 @@
             this.panel11.Size = new System.Drawing.Size(937, 54);
             this.panel11.TabIndex = 21;
             // 
+            // systemIconPictureBox8
+            // 
+            this.systemIconPictureBox8.IconNumber = ((uint)(7u));
+            this.systemIconPictureBox8.Location = new System.Drawing.Point(666, -1);
+            this.systemIconPictureBox8.Name = "systemIconPictureBox8";
+            this.systemIconPictureBox8.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox8.TabIndex = 35;
+            this.systemIconPictureBox8.TabStop = false;
+            // 
+            // systemIconPictureBox7
+            // 
+            this.systemIconPictureBox7.IconNumber = ((uint)(6u));
+            this.systemIconPictureBox7.Location = new System.Drawing.Point(596, -1);
+            this.systemIconPictureBox7.Name = "systemIconPictureBox7";
+            this.systemIconPictureBox7.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox7.TabIndex = 34;
+            this.systemIconPictureBox7.TabStop = false;
+            // 
+            // systemIconPictureBox6
+            // 
+            this.systemIconPictureBox6.IconNumber = ((uint)(5u));
+            this.systemIconPictureBox6.Location = new System.Drawing.Point(525, -1);
+            this.systemIconPictureBox6.Name = "systemIconPictureBox6";
+            this.systemIconPictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox6.TabIndex = 33;
+            this.systemIconPictureBox6.TabStop = false;
+            // 
+            // systemIconPictureBox5
+            // 
+            this.systemIconPictureBox5.IconNumber = ((uint)(4u));
+            this.systemIconPictureBox5.Location = new System.Drawing.Point(459, -1);
+            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
+            this.systemIconPictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox5.TabIndex = 32;
+            this.systemIconPictureBox5.TabStop = false;
+            // 
+            // systemIconPictureBox4
+            // 
+            this.systemIconPictureBox4.IconNumber = ((uint)(3u));
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(385, -1);
+            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
+            this.systemIconPictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox4.TabIndex = 31;
+            this.systemIconPictureBox4.TabStop = false;
+            // 
+            // systemIconPictureBox3
+            // 
+            this.systemIconPictureBox3.IconNumber = ((uint)(2u));
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(316, -1);
+            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
+            this.systemIconPictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox3.TabIndex = 30;
+            this.systemIconPictureBox3.TabStop = false;
+            // 
+            // systemIconPictureBox2
+            // 
+            this.systemIconPictureBox2.IconNumber = ((uint)(1u));
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(248, -1);
+            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
+            this.systemIconPictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox2.TabIndex = 29;
+            this.systemIconPictureBox2.TabStop = false;
+            // 
+            // systemIconPictureBox1
+            // 
+            this.systemIconPictureBox1.Location = new System.Drawing.Point(177, -1);
+            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
+            this.systemIconPictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox1.TabIndex = 28;
+            this.systemIconPictureBox1.TabStop = false;
+            // 
             // B24
             // 
             this.B24.Location = new System.Drawing.Point(444, 25);
@@ -2119,6 +2780,17 @@
             this.AddressPanel.Size = new System.Drawing.Size(1110, 30);
             this.AddressPanel.TabIndex = 27;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(387, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(86, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2129,6 +2801,17 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(652, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(252, 25);
+            this.SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -2281,6 +2964,18 @@
             this.panel6.Size = new System.Drawing.Size(226, 727);
             this.panel6.TabIndex = 54;
             // 
+            // AddressList
+            // 
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(226, 706);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2299,698 +2994,19 @@
             this.panel7.Size = new System.Drawing.Size(158, 293);
             this.panel7.TabIndex = 55;
             // 
-            // AddressList
-            // 
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(226, 706);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(387, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(86, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(652, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(252, 25);
-            this.SelectAddress.TabIndex = 40;
-            // 
-            // systemIconPictureBox8
-            // 
-            this.systemIconPictureBox8.IconNumber = ((uint)(7u));
-            this.systemIconPictureBox8.Location = new System.Drawing.Point(666, -1);
-            this.systemIconPictureBox8.Name = "systemIconPictureBox8";
-            this.systemIconPictureBox8.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox8.TabIndex = 35;
-            this.systemIconPictureBox8.TabStop = false;
-            // 
-            // systemIconPictureBox7
-            // 
-            this.systemIconPictureBox7.IconNumber = ((uint)(6u));
-            this.systemIconPictureBox7.Location = new System.Drawing.Point(596, -1);
-            this.systemIconPictureBox7.Name = "systemIconPictureBox7";
-            this.systemIconPictureBox7.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox7.TabIndex = 34;
-            this.systemIconPictureBox7.TabStop = false;
-            // 
-            // systemIconPictureBox6
-            // 
-            this.systemIconPictureBox6.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox6.Location = new System.Drawing.Point(525, -1);
-            this.systemIconPictureBox6.Name = "systemIconPictureBox6";
-            this.systemIconPictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox6.TabIndex = 33;
-            this.systemIconPictureBox6.TabStop = false;
-            // 
-            // systemIconPictureBox5
-            // 
-            this.systemIconPictureBox5.IconNumber = ((uint)(4u));
-            this.systemIconPictureBox5.Location = new System.Drawing.Point(459, -1);
-            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
-            this.systemIconPictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox5.TabIndex = 32;
-            this.systemIconPictureBox5.TabStop = false;
-            // 
-            // systemIconPictureBox4
-            // 
-            this.systemIconPictureBox4.IconNumber = ((uint)(3u));
-            this.systemIconPictureBox4.Location = new System.Drawing.Point(385, -1);
-            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
-            this.systemIconPictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox4.TabIndex = 31;
-            this.systemIconPictureBox4.TabStop = false;
-            // 
-            // systemIconPictureBox3
-            // 
-            this.systemIconPictureBox3.IconNumber = ((uint)(2u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(316, -1);
-            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
-            this.systemIconPictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox3.TabIndex = 30;
-            this.systemIconPictureBox3.TabStop = false;
-            // 
-            // systemIconPictureBox2
-            // 
-            this.systemIconPictureBox2.IconNumber = ((uint)(1u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(248, -1);
-            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
-            this.systemIconPictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox2.TabIndex = 29;
-            this.systemIconPictureBox2.TabStop = false;
-            // 
-            // systemIconPictureBox1
-            // 
-            this.systemIconPictureBox1.Location = new System.Drawing.Point(177, -1);
-            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
-            this.systemIconPictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox1.TabIndex = 28;
-            this.systemIconPictureBox1.TabStop = false;
-            // 
-            // J_43
-            // 
-            this.J_43.BorderColor = System.Drawing.Color.Empty;
-            this.J_43.Controls.Add(this.L_43_BIT_80);
-            this.J_43.Controls.Add(this.L_43_BIT_40);
-            this.J_43.Controls.Add(this.L_43_BIT_20);
-            this.J_43.Controls.Add(this.L_43_BIT_10);
-            this.J_43.Controls.Add(this.L_43_BIT_08);
-            this.J_43.Controls.Add(this.L_43_BIT_04);
-            this.J_43.Controls.Add(this.L_43_BIT_02);
-            this.J_43.Controls.Add(this.L_43_BIT_01);
-            this.J_43.Controls.Add(this.B43);
-            this.J_43.Location = new System.Drawing.Point(691, 9);
-            this.J_43.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_43.Name = "J_43";
-            this.J_43.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_43.Size = new System.Drawing.Size(245, 287);
-            this.J_43.TabIndex = 3;
-            this.J_43.TabStop = false;
-            this.J_43.Text = "特性4";
-            // 
-            // L_43_BIT_80
-            // 
-            this.L_43_BIT_80.AutoSize = true;
-            this.L_43_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_80.Location = new System.Drawing.Point(8, 226);
-            this.L_43_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_80.Name = "L_43_BIT_80";
-            this.L_43_BIT_80.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_80.TabIndex = 8;
-            this.L_43_BIT_80.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_40
-            // 
-            this.L_43_BIT_40.AutoSize = true;
-            this.L_43_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_40.Location = new System.Drawing.Point(8, 202);
-            this.L_43_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_40.Name = "L_43_BIT_40";
-            this.L_43_BIT_40.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_40.TabIndex = 7;
-            this.L_43_BIT_40.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_20
-            // 
-            this.L_43_BIT_20.AutoSize = true;
-            this.L_43_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_20.Location = new System.Drawing.Point(8, 178);
-            this.L_43_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_20.Name = "L_43_BIT_20";
-            this.L_43_BIT_20.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_20.TabIndex = 6;
-            this.L_43_BIT_20.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_10
-            // 
-            this.L_43_BIT_10.AutoSize = true;
-            this.L_43_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_10.Location = new System.Drawing.Point(8, 154);
-            this.L_43_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_10.Name = "L_43_BIT_10";
-            this.L_43_BIT_10.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_10.TabIndex = 5;
-            this.L_43_BIT_10.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_08
-            // 
-            this.L_43_BIT_08.AutoSize = true;
-            this.L_43_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_08.Location = new System.Drawing.Point(8, 130);
-            this.L_43_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_08.Name = "L_43_BIT_08";
-            this.L_43_BIT_08.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_08.TabIndex = 4;
-            this.L_43_BIT_08.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_04
-            // 
-            this.L_43_BIT_04.AutoSize = true;
-            this.L_43_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_04.Location = new System.Drawing.Point(8, 107);
-            this.L_43_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_04.Name = "L_43_BIT_04";
-            this.L_43_BIT_04.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_04.TabIndex = 3;
-            this.L_43_BIT_04.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_02
-            // 
-            this.L_43_BIT_02.AutoSize = true;
-            this.L_43_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_02.Location = new System.Drawing.Point(8, 82);
-            this.L_43_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_02.Name = "L_43_BIT_02";
-            this.L_43_BIT_02.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_02.TabIndex = 2;
-            this.L_43_BIT_02.UseVisualStyleBackColor = true;
-            // 
-            // L_43_BIT_01
-            // 
-            this.L_43_BIT_01.AutoSize = true;
-            this.L_43_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_01.Location = new System.Drawing.Point(8, 58);
-            this.L_43_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_43_BIT_01.Name = "L_43_BIT_01";
-            this.L_43_BIT_01.Size = new System.Drawing.Size(22, 21);
-            this.L_43_BIT_01.TabIndex = 1;
-            this.L_43_BIT_01.UseVisualStyleBackColor = true;
-            // 
-            // B43
-            // 
-            this.B43.Hexadecimal = true;
-            this.B43.Location = new System.Drawing.Point(8, 23);
-            this.B43.Margin = new System.Windows.Forms.Padding(2);
-            this.B43.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B43.Name = "B43";
-            this.B43.Size = new System.Drawing.Size(60, 25);
-            this.B43.TabIndex = 0;
-            // 
-            // J_42
-            // 
-            this.J_42.BorderColor = System.Drawing.Color.Empty;
-            this.J_42.Controls.Add(this.L_42_BIT_80);
-            this.J_42.Controls.Add(this.L_42_BIT_40);
-            this.J_42.Controls.Add(this.L_42_BIT_20);
-            this.J_42.Controls.Add(this.L_42_BIT_10);
-            this.J_42.Controls.Add(this.L_42_BIT_08);
-            this.J_42.Controls.Add(this.L_42_BIT_04);
-            this.J_42.Controls.Add(this.L_42_BIT_02);
-            this.J_42.Controls.Add(this.L_42_BIT_01);
-            this.J_42.Controls.Add(this.B42);
-            this.J_42.Location = new System.Drawing.Point(465, 9);
-            this.J_42.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_42.Name = "J_42";
-            this.J_42.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_42.Size = new System.Drawing.Size(224, 287);
-            this.J_42.TabIndex = 2;
-            this.J_42.TabStop = false;
-            this.J_42.Text = "特性3";
-            // 
-            // L_42_BIT_80
-            // 
-            this.L_42_BIT_80.AutoSize = true;
-            this.L_42_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_80.Location = new System.Drawing.Point(11, 225);
-            this.L_42_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_80.Name = "L_42_BIT_80";
-            this.L_42_BIT_80.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_80.TabIndex = 0;
-            this.L_42_BIT_80.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_40
-            // 
-            this.L_42_BIT_40.AutoSize = true;
-            this.L_42_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_40.Location = new System.Drawing.Point(11, 201);
-            this.L_42_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_40.Name = "L_42_BIT_40";
-            this.L_42_BIT_40.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_40.TabIndex = 8;
-            this.L_42_BIT_40.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_20
-            // 
-            this.L_42_BIT_20.AutoSize = true;
-            this.L_42_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_20.Location = new System.Drawing.Point(11, 177);
-            this.L_42_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_20.Name = "L_42_BIT_20";
-            this.L_42_BIT_20.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_20.TabIndex = 7;
-            this.L_42_BIT_20.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_10
-            // 
-            this.L_42_BIT_10.AutoSize = true;
-            this.L_42_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_10.Location = new System.Drawing.Point(11, 153);
-            this.L_42_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_10.Name = "L_42_BIT_10";
-            this.L_42_BIT_10.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_10.TabIndex = 6;
-            this.L_42_BIT_10.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_08
-            // 
-            this.L_42_BIT_08.AutoSize = true;
-            this.L_42_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_08.Location = new System.Drawing.Point(11, 130);
-            this.L_42_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_08.Name = "L_42_BIT_08";
-            this.L_42_BIT_08.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_08.TabIndex = 5;
-            this.L_42_BIT_08.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_04
-            // 
-            this.L_42_BIT_04.AutoSize = true;
-            this.L_42_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_04.Location = new System.Drawing.Point(11, 105);
-            this.L_42_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_04.Name = "L_42_BIT_04";
-            this.L_42_BIT_04.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_04.TabIndex = 4;
-            this.L_42_BIT_04.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_02
-            // 
-            this.L_42_BIT_02.AutoSize = true;
-            this.L_42_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_02.Location = new System.Drawing.Point(11, 81);
-            this.L_42_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_02.Name = "L_42_BIT_02";
-            this.L_42_BIT_02.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_02.TabIndex = 3;
-            this.L_42_BIT_02.UseVisualStyleBackColor = true;
-            // 
-            // L_42_BIT_01
-            // 
-            this.L_42_BIT_01.AutoSize = true;
-            this.L_42_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_01.Location = new System.Drawing.Point(11, 57);
-            this.L_42_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_BIT_01.Name = "L_42_BIT_01";
-            this.L_42_BIT_01.Size = new System.Drawing.Size(22, 21);
-            this.L_42_BIT_01.TabIndex = 2;
-            this.L_42_BIT_01.UseVisualStyleBackColor = true;
-            // 
-            // B42
-            // 
-            this.B42.Hexadecimal = true;
-            this.B42.Location = new System.Drawing.Point(11, 24);
-            this.B42.Margin = new System.Windows.Forms.Padding(2);
-            this.B42.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B42.Name = "B42";
-            this.B42.Size = new System.Drawing.Size(60, 25);
-            this.B42.TabIndex = 0;
-            // 
-            // J_41
-            // 
-            this.J_41.BorderColor = System.Drawing.Color.Empty;
-            this.J_41.Controls.Add(this.L_41_BIT_80);
-            this.J_41.Controls.Add(this.L_41_BIT_40);
-            this.J_41.Controls.Add(this.L_41_BIT_20);
-            this.J_41.Controls.Add(this.L_41_BIT_10);
-            this.J_41.Controls.Add(this.L_41_BIT_08);
-            this.J_41.Controls.Add(this.L_41_BIT_04);
-            this.J_41.Controls.Add(this.L_41_BIT_02);
-            this.J_41.Controls.Add(this.L_41_BIT_01);
-            this.J_41.Controls.Add(this.B41);
-            this.J_41.Location = new System.Drawing.Point(243, 9);
-            this.J_41.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_41.Name = "J_41";
-            this.J_41.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_41.Size = new System.Drawing.Size(219, 287);
-            this.J_41.TabIndex = 1;
-            this.J_41.TabStop = false;
-            this.J_41.Text = "特性2";
-            // 
-            // L_41_BIT_80
-            // 
-            this.L_41_BIT_80.AutoSize = true;
-            this.L_41_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_80.Location = new System.Drawing.Point(10, 225);
-            this.L_41_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_80.Name = "L_41_BIT_80";
-            this.L_41_BIT_80.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_80.TabIndex = 8;
-            this.L_41_BIT_80.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_40
-            // 
-            this.L_41_BIT_40.AutoSize = true;
-            this.L_41_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_40.Location = new System.Drawing.Point(10, 200);
-            this.L_41_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_40.Name = "L_41_BIT_40";
-            this.L_41_BIT_40.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_40.TabIndex = 7;
-            this.L_41_BIT_40.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_20
-            // 
-            this.L_41_BIT_20.AutoSize = true;
-            this.L_41_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_20.Location = new System.Drawing.Point(10, 176);
-            this.L_41_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_20.Name = "L_41_BIT_20";
-            this.L_41_BIT_20.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_20.TabIndex = 6;
-            this.L_41_BIT_20.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_10
-            // 
-            this.L_41_BIT_10.AutoSize = true;
-            this.L_41_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_10.Location = new System.Drawing.Point(10, 152);
-            this.L_41_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_10.Name = "L_41_BIT_10";
-            this.L_41_BIT_10.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_10.TabIndex = 5;
-            this.L_41_BIT_10.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_08
-            // 
-            this.L_41_BIT_08.AutoSize = true;
-            this.L_41_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_08.Location = new System.Drawing.Point(10, 128);
-            this.L_41_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_08.Name = "L_41_BIT_08";
-            this.L_41_BIT_08.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_08.TabIndex = 4;
-            this.L_41_BIT_08.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_04
-            // 
-            this.L_41_BIT_04.AutoSize = true;
-            this.L_41_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_04.Location = new System.Drawing.Point(10, 104);
-            this.L_41_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_04.Name = "L_41_BIT_04";
-            this.L_41_BIT_04.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_04.TabIndex = 3;
-            this.L_41_BIT_04.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_02
-            // 
-            this.L_41_BIT_02.AutoSize = true;
-            this.L_41_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_02.Location = new System.Drawing.Point(10, 80);
-            this.L_41_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_02.Name = "L_41_BIT_02";
-            this.L_41_BIT_02.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_02.TabIndex = 2;
-            this.L_41_BIT_02.UseVisualStyleBackColor = true;
-            // 
-            // L_41_BIT_01
-            // 
-            this.L_41_BIT_01.AutoSize = true;
-            this.L_41_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_01.Location = new System.Drawing.Point(10, 56);
-            this.L_41_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_41_BIT_01.Name = "L_41_BIT_01";
-            this.L_41_BIT_01.Size = new System.Drawing.Size(22, 21);
-            this.L_41_BIT_01.TabIndex = 1;
-            this.L_41_BIT_01.UseVisualStyleBackColor = true;
-            // 
-            // B41
-            // 
-            this.B41.Hexadecimal = true;
-            this.B41.Location = new System.Drawing.Point(10, 23);
-            this.B41.Margin = new System.Windows.Forms.Padding(2);
-            this.B41.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B41.Name = "B41";
-            this.B41.Size = new System.Drawing.Size(60, 25);
-            this.B41.TabIndex = 0;
-            // 
-            // J_40
-            // 
-            this.J_40.BorderColor = System.Drawing.Color.Empty;
-            this.J_40.Controls.Add(this.L_40_BIT_80);
-            this.J_40.Controls.Add(this.L_40_BIT_40);
-            this.J_40.Controls.Add(this.L_40_BIT_20);
-            this.J_40.Controls.Add(this.L_40_BIT_10);
-            this.J_40.Controls.Add(this.L_40_BIT_08);
-            this.J_40.Controls.Add(this.L_40_BIT_04);
-            this.J_40.Controls.Add(this.L_40_BIT_02);
-            this.J_40.Controls.Add(this.L_40_BIT_01);
-            this.J_40.Controls.Add(this.B40);
-            this.J_40.Location = new System.Drawing.Point(4, 9);
-            this.J_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_40.Name = "J_40";
-            this.J_40.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_40.Size = new System.Drawing.Size(237, 287);
-            this.J_40.TabIndex = 0;
-            this.J_40.TabStop = false;
-            this.J_40.Text = "特性1";
-            // 
-            // L_40_BIT_80
-            // 
-            this.L_40_BIT_80.AutoSize = true;
-            this.L_40_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_80.Location = new System.Drawing.Point(3, 227);
-            this.L_40_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_80.Name = "L_40_BIT_80";
-            this.L_40_BIT_80.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_80.TabIndex = 8;
-            this.L_40_BIT_80.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_40
-            // 
-            this.L_40_BIT_40.AutoSize = true;
-            this.L_40_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_40.Location = new System.Drawing.Point(3, 203);
-            this.L_40_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_40.Name = "L_40_BIT_40";
-            this.L_40_BIT_40.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_40.TabIndex = 7;
-            this.L_40_BIT_40.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_20
-            // 
-            this.L_40_BIT_20.AutoSize = true;
-            this.L_40_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_20.Location = new System.Drawing.Point(3, 179);
-            this.L_40_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_20.Name = "L_40_BIT_20";
-            this.L_40_BIT_20.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_20.TabIndex = 6;
-            this.L_40_BIT_20.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_10
-            // 
-            this.L_40_BIT_10.AutoSize = true;
-            this.L_40_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_10.Location = new System.Drawing.Point(3, 155);
-            this.L_40_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_10.Name = "L_40_BIT_10";
-            this.L_40_BIT_10.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_10.TabIndex = 5;
-            this.L_40_BIT_10.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_08
-            // 
-            this.L_40_BIT_08.AutoSize = true;
-            this.L_40_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_08.Location = new System.Drawing.Point(3, 131);
-            this.L_40_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_08.Name = "L_40_BIT_08";
-            this.L_40_BIT_08.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_08.TabIndex = 4;
-            this.L_40_BIT_08.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_04
-            // 
-            this.L_40_BIT_04.AutoSize = true;
-            this.L_40_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_04.Location = new System.Drawing.Point(3, 107);
-            this.L_40_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_04.Name = "L_40_BIT_04";
-            this.L_40_BIT_04.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_04.TabIndex = 3;
-            this.L_40_BIT_04.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_02
-            // 
-            this.L_40_BIT_02.AutoSize = true;
-            this.L_40_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_02.Location = new System.Drawing.Point(3, 83);
-            this.L_40_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_02.Name = "L_40_BIT_02";
-            this.L_40_BIT_02.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_02.TabIndex = 2;
-            this.L_40_BIT_02.UseVisualStyleBackColor = true;
-            // 
-            // L_40_BIT_01
-            // 
-            this.L_40_BIT_01.AutoSize = true;
-            this.L_40_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_40_BIT_01.Location = new System.Drawing.Point(3, 59);
-            this.L_40_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_BIT_01.Name = "L_40_BIT_01";
-            this.L_40_BIT_01.Size = new System.Drawing.Size(22, 21);
-            this.L_40_BIT_01.TabIndex = 1;
-            this.L_40_BIT_01.UseVisualStyleBackColor = true;
-            // 
-            // B40
-            // 
-            this.B40.Hexadecimal = true;
-            this.B40.Location = new System.Drawing.Point(3, 23);
-            this.B40.Margin = new System.Windows.Forms.Padding(2);
-            this.B40.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B40.Name = "B40";
-            this.B40.Size = new System.Drawing.Size(60, 25);
-            this.B40.TabIndex = 0;
-            // 
-            // L_8_GENERICENEMYPORTRAIT
-            // 
-            this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(847, 73);
-            this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
-            this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(64, 64);
-            this.L_8_GENERICENEMYPORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_8_GENERICENEMYPORTRAIT.TabIndex = 107;
-            this.L_8_GENERICENEMYPORTRAIT.TabStop = false;
-            // 
-            // L_4_ID_PLUS1
-            // 
-            this.L_4_ID_PLUS1.Controls.Add(this.B4);
-            this.L_4_ID_PLUS1.ErrorMessage = "";
-            this.L_4_ID_PLUS1.Location = new System.Drawing.Point(389, 1);
-            this.L_4_ID_PLUS1.Name = "L_4_ID_PLUS1";
-            this.L_4_ID_PLUS1.Size = new System.Drawing.Size(84, 32);
-            this.L_4_ID_PLUS1.TabIndex = 105;
-            // 
-            // B4
-            // 
-            this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(4, 4);
-            this.B4.Margin = new System.Windows.Forms.Padding(2);
-            this.B4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(76, 25);
-            this.B4.TabIndex = 0;
-            // 
-            // L_9_ATTRIBUTEICON
-            // 
-            this.L_9_ATTRIBUTEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(1069, 2);
-            this.L_9_ATTRIBUTEICON.Name = "L_9_ATTRIBUTEICON";
-            this.L_9_ATTRIBUTEICON.Size = new System.Drawing.Size(32, 32);
-            this.L_9_ATTRIBUTEICON.TabIndex = 46;
-            this.L_9_ATTRIBUTEICON.TabStop = false;
-            // 
-            // L_6_PORTRAIT_AUTO
-            // 
-            this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(723, 33);
-            this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
-            this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(118, 104);
-            this.L_6_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_6_PORTRAIT_AUTO.TabIndex = 30;
-            this.L_6_PORTRAIT_AUTO.TabStop = false;
-            // 
-            // L_5_CLASS
-            // 
-            this.L_5_CLASS.ErrorMessage = "";
-            this.L_5_CLASS.Location = new System.Drawing.Point(723, 6);
-            this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_5_CLASS.Name = "L_5_CLASS";
-            this.L_5_CLASS.Placeholder = "";
-            this.L_5_CLASS.ReadOnly = true;
-            this.L_5_CLASS.Size = new System.Drawing.Size(117, 25);
-            this.L_5_CLASS.TabIndex = 23;
-            // 
-            // L_0_TEXT_NAME1
-            // 
-            this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(178, 7);
-            this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
-            this.L_0_TEXT_NAME1.Placeholder = "";
-            this.L_0_TEXT_NAME1.ReadOnly = true;
-            this.L_0_TEXT_NAME1.Size = new System.Drawing.Size(162, 25);
-            this.L_0_TEXT_NAME1.TabIndex = 14;
-            // 
-            // L_2_TEXT_DETAIL3
-            // 
-            this.L_2_TEXT_DETAIL3.ErrorMessage = "";
-            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(178, 34);
-            this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_2_TEXT_DETAIL3.Multiline = true;
-            this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
-            this.L_2_TEXT_DETAIL3.Placeholder = "";
-            this.L_2_TEXT_DETAIL3.ReadOnly = true;
-            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(297, 65);
-            this.L_2_TEXT_DETAIL3.TabIndex = 15;
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(3, 63);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
+            this.HardCodingWarningLabel.TabIndex = 108;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // UnitForm
             // 
@@ -3019,6 +3035,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).EndInit();
+            this.L_4_ID_PLUS1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_6_PORTRAIT_AUTO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
@@ -3036,6 +3057,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.b15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).EndInit();
             this.panel8.ResumeLayout(false);
+            this.J_43.ResumeLayout(false);
+            this.J_43.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B43)).EndInit();
+            this.J_42.ResumeLayout(false);
+            this.J_42.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B42)).EndInit();
+            this.J_41.ResumeLayout(false);
+            this.J_41.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B41)).EndInit();
+            this.J_40.ResumeLayout(false);
+            this.J_40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B49)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B51)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B48)).EndInit();
@@ -3068,6 +3101,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_SPD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM)).EndInit();
             this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B27)).EndInit();
@@ -3084,31 +3125,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
-            this.J_43.ResumeLayout(false);
-            this.J_43.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B43)).EndInit();
-            this.J_42.ResumeLayout(false);
-            this.J_42.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B42)).EndInit();
-            this.J_41.ResumeLayout(false);
-            this.J_41.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B41)).EndInit();
-            this.J_40.ResumeLayout(false);
-            this.J_40.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B40)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).EndInit();
-            this.L_4_ID_PLUS1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_6_PORTRAIT_AUTO)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3319,5 +3335,6 @@
         private System.Windows.Forms.NumericUpDown X_SIM_MAGICEX_Value;
         private System.Windows.Forms.Label X_SIM_MAGICEX_Label;
         private InterpolatedPictureBox L_8_GENERICENEMYPORTRAIT;
+        private System.Windows.Forms.Label HardCodingWarningLabel;
     }
 }

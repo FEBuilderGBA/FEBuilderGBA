@@ -1,0 +1,13 @@
+NAME=IMAGE_進撃準備側面の所持金とユニットの顔画像のメニューの装飾
+NAME.en=IMAGE_Menu decoration of money and face image(mini portrait) of unit of preparation
+NAME.zh=IMAGE_Menu decoration of money and face image(mini portrait) of unit of preparation
+
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x098468//0xA1B1FC
+PALETTE_POINTER=0x098470//0xA1B638
+AUTHOR=Zane

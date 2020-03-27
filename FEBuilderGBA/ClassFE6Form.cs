@@ -41,7 +41,7 @@ namespace FEBuilderGBA
             B16.ValueChanged += X_SIM_ValueChanged;
 
             X_SIM.ValueChanged += X_SIM_ValueChanged;
-        
+            InputFormRef.markupJumpLabel(HardCodingWarningLabel);
         }
 
         public InputFormRef InputFormRef;
@@ -95,6 +95,7 @@ namespace FEBuilderGBA
             U.ForceUpdate(X_SIM, GrowSimulator.CalcMaxLevel((uint)this.AddressList.SelectedIndex));
 
             X_SIM_ValueChanged(null, null);
+            CheckHardCodingWarning();
         }
 
         public static void GetSim(ref GrowSimulator sim,uint cid)
@@ -163,18 +164,21 @@ namespace FEBuilderGBA
                 return;
             }
 
-            GrowSimulator sim = BuildSim();
-            sim.Grow((int)X_SIM.Value, false);
+            using (U.ActiveControlSave uac = new U.ActiveControlSave(this))
+            {
+                GrowSimulator sim = BuildSim();
+                sim.Grow((int)X_SIM.Value, false);
 
-            X_SIM.Value = sim.sim_lv;
-            U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
-            U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
-            U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
-            U.SelectedIndexSafety(X_SIM_SPD, sim.sim_spd);
-            U.SelectedIndexSafety(X_SIM_DEF, sim.sim_def);
-            U.SelectedIndexSafety(X_SIM_RES, sim.sim_res);
-            U.SelectedIndexSafety(X_SIM_LUCK, sim.sim_luck);
-            U.SelectedIndexSafety(X_SIM_SUM_RATE, sim.sim_sum_grow_rate);
+                X_SIM.Value = sim.sim_lv;
+                U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
+                U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
+                U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
+                U.SelectedIndexSafety(X_SIM_SPD, sim.sim_spd);
+                U.SelectedIndexSafety(X_SIM_DEF, sim.sim_def);
+                U.SelectedIndexSafety(X_SIM_RES, sim.sim_res);
+                U.SelectedIndexSafety(X_SIM_LUCK, sim.sim_luck);
+                U.SelectedIndexSafety(X_SIM_SUM_RATE, sim.sim_sum_grow_rate);
+            }
         }
 
         public static uint GetMoveCostAddrLow(uint addr, uint costtype)
@@ -430,6 +434,18 @@ namespace FEBuilderGBA
 
             uint flag2 = Program.ROM.u8(addr + 37);
             return ((flag2 & 0x20) == 0x20);
+        }
+
+        void CheckHardCodingWarning()
+        {
+            uint id = (uint)(this.AddressList.SelectedIndex);
+            bool r = Program.AsmMapFileAsmCache.IsHardCodeUnit(id);
+            HardCodingWarningLabel.Visible = r;
+        }
+        private void HardCodingWarningLabel_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("HARDCODING_CLASS=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
         }
     }
 }

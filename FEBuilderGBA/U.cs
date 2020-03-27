@@ -3423,6 +3423,21 @@ namespace FEBuilderGBA
             }
         }
 
+        public class ActiveControlSave : IDisposable
+        {
+            Form CurrentForm;
+            Control CurrentControl;
+            public ActiveControlSave(Form f)
+            {
+                CurrentForm = f;
+                CurrentControl = CurrentForm.ActiveControl;
+            }
+            public void Dispose()
+            {
+                CurrentForm.ActiveControl = CurrentControl;
+            }
+        }
+
         public static string GetRelativePath(string uri1, string uri2)
         {
             Uri u1 = new Uri(uri1);

@@ -162,6 +162,11 @@ namespace FEBuilderGBA
         {
             this.CommandBar.Visible = false;
         }
+        public void HideCommandBar2()
+        {
+            this.CommandBar.Visible = false;
+            this.Map.Location = new Point(0, 0);
+        }
 
         Point LastMouseCursor = new Point(255,255);
         private void Map_MouseMove(object sender, MouseEventArgs e)

@@ -8877,6 +8877,15 @@ namespace FEBuilderGBA
             return true;
         }
 
+        static bool isErrorColorData(Control self)
+        {
+            if (self.Name.IndexOf("ERROR_") == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         //コントロールの色を設定どおりにカスタムします.
         public static void ReColor(Control self)
         {
@@ -8905,6 +8914,7 @@ namespace FEBuilderGBA
                     info_object.TabStop = false;
                     info_object.BackColor = OptionForm.Color_Control_BackColor();
                 }
+                info_object.ImeMode = ImeMode.Disable;
 
                 //フォーカスを持った時に全文選択状態にする.
                 info_object.Enter += (sender, e) =>
@@ -8912,7 +8922,7 @@ namespace FEBuilderGBA
                     info_object.Select(0, info_object.Text.Length);
                 };
             }
-            else if (self.Name.IndexOf("ERROR_") == 0)
+            else if (isErrorColorData(self))
             {
                 self.BackColor = OptionForm.Color_Error_BackColor();
                 self.ForeColor = OptionForm.Color_Error_ForeColor();
@@ -11128,6 +11138,10 @@ namespace FEBuilderGBA
             else if (str == "@EXPLAIN_MOVEMENTCOST_RECOVERY")
             {
                 str = R._("地形ごとの毒や睡眠などのバットステータスを自動回復するボーナスを指定します。\r\n城門にいると回復するという設定に利用されます。\r\nこの設定はすべてのクラスで共通しています。\r\n個別に指定することはできません。\r\n1を設定すると有効になります。\r\nその地形にいるユニットのバッドステータスが自動的に回復します。\r\n");
+            }
+            else if (str == "@HARDCODING_WARNING")
+            {
+                str = R._("このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n");
             }
             else
             {
