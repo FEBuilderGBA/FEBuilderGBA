@@ -33,7 +33,7 @@
 2A000000XXYY0000	[XX:MAPX:X][YY:MAPY:Y]Map change processing (coordinate specification)(MACC)	{MAPCHANGE}
 2C000000XXXXYYYY	[XXXX:MAPX:X][YYYY:MAPY:Y]Highlight with cursor(CURF)	{WAKU}
 2D000000XX000000	[XX:UNIT:Character]Unit highlighted with cursor(CURF)	{WAKU}
-30000000XX000000	[XX:UNIT:Character]Turn off unit(DISA)	@WARNING_DISA	{UNITREMOVE}
+30000000XX000000	[XX:UNIT:Character]Turn off unit(DISA)	{UNITREMOVE}
 31000000XX000000	[XX:UNIT:Character]to death unit(KILL)	{UNITREMOVE}
 34000000XX000000	[XX:FLAG:Flag to turn on]flag on(ENUT)	{FLAG}
 35000000XX000000	[XX:FLAG:Flag to turn off flag]Flag off(ENUF)	{FLAG}

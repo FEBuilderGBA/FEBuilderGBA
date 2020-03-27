@@ -734,9 +734,9 @@ namespace FEBuilderGBA
 
         //ハードコーディングされたユニット、クラス、アイテムの警告
         //主にパッチをスキャンした時に、データを作ります.
-        bool[] HardCodeUnit = new bool[255];
-        bool[] HardCodeClass = new bool[255];
-        bool[] HardCodeItem = new bool[255];
+        bool[] HardCodeUnit = new bool[256];
+        bool[] HardCodeClass = new bool[256];
+        bool[] HardCodeItem = new bool[256];
         public bool IsHardCodeUnit(uint unitid)
         {
             return HardCodeUnit[(byte)unitid];
