@@ -59,7 +59,7 @@ Selection:
 Address
 
 :AIの章ごとの設定
-AI Setting for chapter
+AI Item Usage per chapter
 
 :杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
 Specify a function to decide whether AI that can use Staff.

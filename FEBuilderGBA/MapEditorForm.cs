@@ -1854,6 +1854,7 @@ this.MapObjImage);
                 {
                     continue;
                 }
+                m = m & 0xffff;
                 newMAR.Add((UInt16)((m - 1) << 2));
             }
             return newMAR;
@@ -1878,11 +1879,12 @@ this.MapObjImage);
                         continue;
                     }
 
-                    uint m = U.atoi(csv[i]);
+                    uint m = U.atou(csv[i]);
                     if (m == 0)
                     {
                         continue;
                     }
+                    m = m & 0xffff;
                     newMAR.Add((UInt16)((m - 1) << 2));
                 }
             }
@@ -1909,6 +1911,7 @@ this.MapObjImage);
                 {
                     continue;
                 }
+                m = m & 0xffff;
                 newMAR.Add((UInt16)((m - 1) << 2));
             }
             return newMAR;

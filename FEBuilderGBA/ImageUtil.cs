@@ -2831,9 +2831,9 @@ namespace FEBuilderGBA
                 retbitmap = CloneBitmap(bitmap);
             }
             //256色の画像のはずです.
-            Debug.Assert(bitmap.PixelFormat == PixelFormat.Format8bppIndexed);
+            Debug.Assert(retbitmap.PixelFormat == PixelFormat.Format8bppIndexed);
 
-            int bitmapsize = bitmap.Width * bitmap.Height;
+            int bitmapsize = retbitmap.Width * retbitmap.Height;
 
             Rectangle destrect = new Rectangle(new Point(), retbitmap.Size);
             BitmapData destbmpData = retbitmap.LockBits(destrect, ImageLockMode.ReadWrite, PixelFormat.Format8bppIndexed);

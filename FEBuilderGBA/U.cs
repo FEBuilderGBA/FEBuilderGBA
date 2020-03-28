@@ -195,6 +195,34 @@ namespace FEBuilderGBA
             }
             return (uint)ret;
         }
+        public static uint atou(String a)
+        {
+            //C#のTryParseはC言語のatoiと違い、後ろに数字以外があると false が変えるので補正する.
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (!isnum(a[i]))
+                {
+                    a = a.Substring(0, i);
+                    break;
+                }
+            }
+
+            uint ret = 0;
+            if (!uint.TryParse(a, out ret))
+            {
+                return 0;
+            }
+            return ret;
+        }
+#if DEBUG
+        public static void TEST_atou()
+        {
+            {
+                uint r = atou("2147483812");
+                Debug.Assert(r == 2147483812);
+            }
+        }
+#endif
         public static uint atoh(String a)
         {
             //C#のTryParseはC言語のatoiと違い、後ろに数字以外があると false が変えるので補正する.
