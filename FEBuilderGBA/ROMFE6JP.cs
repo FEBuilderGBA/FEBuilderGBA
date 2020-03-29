@@ -259,7 +259,7 @@ namespace FEBuilderGBA
         public uint workmemory_next_text_buffer_address() { return 0x03000038; }  //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ
         public uint workmemory_local_flag_address() { return 0x03004898; }  //ワークメモリ グローバルフラグ
         public uint workmemory_global_flag_address() { return 0x03004890; }  //ワークメモリ ローカルフラグ
-        public uint workmemory_trap_address() { return 0; }  //ワークメモリ トラップ
+        public uint workmemory_trap_address() { return 0x02039330; }  //ワークメモリ トラップ
         public uint workmemory_memoryslot_address() { return 0x02039330; }  //ワークメモリ メモリスロットFE8
         public uint workmemory_eventcounter_address() { return 0x0; }  //イベントカウンター メモリスロットFE8
         public uint workmemory_procs_forest_address() { return 0x020258CC; }  //ワークメモリ Procs
