@@ -51,8 +51,8 @@
 400A0000FFFFFFFF	Call 0xFFFFFF(LOW)
 2902XXXX	Flag ON[XXXX:FLAG:Flag](ENUT)	{FLAG}
 2102XXXX	Flag OFF[XXXX:FLAG:Flag](ENUF)	{FLAG}
-28020900	Make camera follow moving units(EVBIT_T)	{CAMERA}	{EVBIT}
-20020900	Stop making camera follow moving units(EVBIT_F)	{CAMERA}	{EVBIT}
+28020900	Make camera follow moving units(EVBIT_T 9)	{CAMERA}	{EVBIT}
+20020900	Stop making camera follow moving units(EVBIT_F 9)	{CAMERA}	{EVBIT}
 2802XXXX	EVBIT_T[XXXX:EVBIT:Bit]	{EVBIT}
 2002XXXX	EVBIT_F[XXXX:EVBIT:Bit]	{EVBIT}
 2010XXXX	EVBIT_MODIFY[XXXX:EVBIT_MODIFY:Value]	{EVBIT}
@@ -550,3 +550,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 402FFFFFYYYYZZWW	Set move [YY:UNIT:Unit] at coordinates[ZZ:MAPX:X][WW:MAPY:Y]with instantaneously(MOVE)	Silent Warp like FE7 REPO	{UNITMOVE}
 402FFFFFYYYYZZWW20300000	Move [YY:UNIT:Unit] at coordinates[ZZ:MAPX:X][WW:MAPY:Y]with warp instantaneously(MOVE+ENUN)Silent Warp like FE7 REPO	{UNITMOVE}
+20100000	Allows scene skipping, dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 0)	{EVBIT}
+20100100	Disallows scene skipping, dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 1)	{EVBIT}
+20100200	Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding(EVBIT_MODIFY 2)	{EVBIT}
+20100300	Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 3)	{EVBIT}
+20100400	Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding(EVBIT_MODIFY 4)	{EVBIT}
