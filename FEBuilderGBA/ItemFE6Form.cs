@@ -123,11 +123,11 @@ namespace FEBuilderGBA
             if (P16.Value == 0
                 && this.AddressList.SelectedIndex > 0)
             {
-                L_16_NEWALLOC_ITEMCRTIICAL.Show();
+                L_16_NEWALLOC_EFFECTIVENESS.Show();
             }
             else
             {
-                L_16_NEWALLOC_ITEMCRTIICAL.Hide();
+                L_16_NEWALLOC_EFFECTIVENESS.Hide();
             }
             CheckHardCodingWarning();
         }
@@ -142,6 +142,11 @@ namespace FEBuilderGBA
         {
             PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
             f.JumpTo("HARDCODING_ITEM=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
+        }
+        public static uint GetItemAddr(uint id)
+        {
+            InputFormRef InputFormRef = Init(null);
+            return InputFormRef.IDToAddr(id);
         }
 
 

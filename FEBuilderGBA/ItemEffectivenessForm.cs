@@ -102,6 +102,9 @@ namespace FEBuilderGBA
             U.ConvertListBox(list, ref this.ItemListBox);
 
             this.N_InputFormRef.ReInit(selectaddress);
+
+            //他のアイテムでこのデータを参照しているならば、独立ボタンを出す.
+            IndependencePanel.Visible = UpdateIndependencePanel();
         }
         public static List<U.AddrResult> MakeCriticalClassList(uint addr)
         {
@@ -120,6 +123,54 @@ namespace FEBuilderGBA
         private void label30_Click(object sender, EventArgs e)
         {
 
+        }
+
+        bool UpdateIndependencePanel()
+        {
+            return this.ItemListBox.Items.Count > 1;
+        }
+        private void IndependenceButton_Click(object sender, EventArgs e)
+        {
+            if (this.ItemListBox.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint itemid = (uint)U.atoh(this.ItemListBox.Text);
+            uint itemaddr = ItemForm.GetItemAddr(itemid);
+            string name = U.ToHexString(itemid) + " " + ClassForm.GetClassNameLow(itemaddr);
+
+            uint pointer;
+            uint currentP = ItemForm.GetEFFECTIVENESSPointerWhereID(itemid, out pointer);
+            if (!U.isSafetyOffset(currentP))
+            {
+                return;
+            }
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, this.Name + " Independence");
+
+            uint dataSize = (InputFormRef.DataCount + 1) * InputFormRef.BlockSize;
+            PatchUtil.WriteIndependence(currentP, dataSize, pointer, name, undodata);
+            Program.Undo.Push(undodata);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, currentP);
+
+            ReselectItem(itemid);
+        }
+        void ReselectItem(uint itemid)
+        {
+            this.InputFormRef.ReloadAddressList();
+            List<U.AddrResult> arlist = InputFormRef.MakeList();
+            int count = 0;
+            foreach (U.AddrResult ar in arlist)
+            {
+                if (U.atoh(ar.name) == itemid)
+                {
+                    U.SelectedIndexSafety(this.AddressList, count);
+                    return;
+                }
+                count ++;
+            }
         }
     }
 }

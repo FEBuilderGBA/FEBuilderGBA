@@ -593,7 +593,7 @@ namespace FEBuilderGBA
                 return;
             }
             byte[] wave = File.ReadAllBytes(f.GetFilename());
-            byte[] gbawave = SongUtil.wavToByte(wave, useFormatCheck: true);
+            byte[] gbawave = SongUtil.wavToByte(wave);
             if (gbawave == null)
             {
                 return;

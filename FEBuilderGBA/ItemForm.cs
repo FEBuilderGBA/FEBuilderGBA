@@ -400,11 +400,11 @@ namespace FEBuilderGBA
             if (P16.Value == 0 
                 && this.AddressList.SelectedIndex > 0)
             {
-                L_16_NEWALLOC_ITEMCRTIICAL.Show();
+                L_16_NEWALLOC_EFFECTIVENESS.Show();
             }
             else
             {
-                L_16_NEWALLOC_ITEMCRTIICAL.Hide();
+                L_16_NEWALLOC_EFFECTIVENESS.Hide();
             }
 
             CheckHardCodingWarning();
@@ -681,6 +681,27 @@ namespace FEBuilderGBA
         {
             PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
             f.JumpTo("HARDCODING_ITEM=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
+        }
+        public static uint GetItemAddr(uint id)
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                return ItemFE6Form.GetItemAddr(id);
+            }
+            InputFormRef InputFormRef = Init(null);
+            return InputFormRef.IDToAddr(id);
+        }
+        public static uint GetEFFECTIVENESSPointerWhereID(uint itemid, out uint out_pointer)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(itemid);
+            if (!U.isSafetyOffset(addr))
+            {
+                out_pointer = U.NOT_FOUND;
+                return U.NOT_FOUND;
+            }
+            out_pointer = addr + 16;
+            return Program.ROM.p32(addr + 16);
         }
 
     }

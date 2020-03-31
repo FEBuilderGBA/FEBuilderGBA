@@ -2785,7 +2785,7 @@ namespace FEBuilderGBA
             if (addressListBox.SelectedIndex == 0)
             {
                 if (arg1 == "ITEMSTATBOOSTER"
-                    || arg1 == "ITEMCRTIICAL"
+                    || arg1 == "EFFECTIVENESS"
                     )
                 {//アイテム:0 null には表示させたくない.
                     return false;
@@ -2973,7 +2973,7 @@ namespace FEBuilderGBA
                     alloc[1] = 5;
                 }
             }
-            else if (arg1 == "ITEMCRTIICAL")
+            else if (arg1 == "EFFECTIVENESS")
             {
                 alllocQMessage = R._("このアイテムに、特効効果を新規に割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。特効効果画面より値を割り振ってください。");
@@ -3585,7 +3585,7 @@ namespace FEBuilderGBA
                     InputFormRef.JumpForm<ItemStatBonusesForm>(value, "AddressList", src_object);
                 }
             }
-            else if (linktype == "ITEMCRTIICAL")
+            else if (linktype == "EFFECTIVENESS")
             {//特効
                 value = CheckAndAlloc(src_object, value, linktype);
                 if (value == U.NOT_FOUND)

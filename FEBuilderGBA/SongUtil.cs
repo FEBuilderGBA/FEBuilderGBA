@@ -2853,7 +2853,7 @@ namespace FEBuilderGBA
             return Math.Max(ret, 1);
         }
 
-        public static byte[] wavToByte(byte[] data, bool useFormatCheck)
+        public static byte[] wavToByte(byte[] data)
         {
             List<byte> wave = new List<byte>();
             if (data[0] != 'R'
@@ -2894,15 +2894,6 @@ namespace FEBuilderGBA
             }
 
             PatchUtil.ImprovedSoundMixer withImprovedSoundMixer = PatchUtil.SearchImprovedSoundMixer();
-            if (useFormatCheck)
-            {
-                uint limit = 65536;
-                if (fmt_samples_per_sec > limit)
-                {
-                    R.ShowStopError("Waveファイルが高音質すぎます。{0}hz\r\n品質は、8bit 12khz monoぐらいにしてください。", fmt_samples_per_sec);
-                    return null;
-                }
-            }
             if (fmt_bits_per_sample > 8)
             {//サンプルビット数が8ビットを超える
                 R.ShowStopError("Waveファイルが高音質すぎます。{0}bit\r\n品質は、8bit 12khz monoぐらいにしてください。", fmt_bits_per_sample);
@@ -2940,7 +2931,7 @@ namespace FEBuilderGBA
             uint songheader_address = Program.ROM.p32(songtable_address + 0);
 
             byte[] wave = File.ReadAllBytes(filename);
-            byte[] gbawave = SongUtil.wavToByte(wave, useFormatCheck: true);
+            byte[] gbawave = SongUtil.wavToByte(wave);
             if (gbawave == null)
             {
                 return R.Error("Waveファイルのインポートを取りやめました");

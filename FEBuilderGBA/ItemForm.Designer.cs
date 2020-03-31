@@ -102,10 +102,10 @@
             this.J_20 = new System.Windows.Forms.Label();
             this.B22 = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.L_16_NEWALLOC_ITEMCRTIICAL = new System.Windows.Forms.Button();
+            this.L_16_NEWALLOC_EFFECTIVENESS = new System.Windows.Forms.Button();
             this.CLASS_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.P16 = new System.Windows.Forms.NumericUpDown();
-            this.J_16_ITEMCRTIICAL = new System.Windows.Forms.Label();
+            this.J_16_EFFECTIVENESS = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.MagicExtUnitBase = new System.Windows.Forms.NumericUpDown();
             this.MagicExtUnitBaseLabel = new System.Windows.Forms.Label();
@@ -1262,24 +1262,24 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.L_16_NEWALLOC_ITEMCRTIICAL);
+            this.panel5.Controls.Add(this.L_16_NEWALLOC_EFFECTIVENESS);
             this.panel5.Controls.Add(this.CLASS_LISTBOX);
             this.panel5.Controls.Add(this.P16);
-            this.panel5.Controls.Add(this.J_16_ITEMCRTIICAL);
+            this.panel5.Controls.Add(this.J_16_EFFECTIVENESS);
             this.panel5.Location = new System.Drawing.Point(770, 442);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(351, 227);
             this.panel5.TabIndex = 69;
             // 
-            // L_16_NEWALLOC_ITEMCRTIICAL
+            // L_16_NEWALLOC_EFFECTIVENESS
             // 
-            this.L_16_NEWALLOC_ITEMCRTIICAL.Location = new System.Drawing.Point(-2, 145);
-            this.L_16_NEWALLOC_ITEMCRTIICAL.Name = "L_16_NEWALLOC_ITEMCRTIICAL";
-            this.L_16_NEWALLOC_ITEMCRTIICAL.Size = new System.Drawing.Size(136, 77);
-            this.L_16_NEWALLOC_ITEMCRTIICAL.TabIndex = 51;
-            this.L_16_NEWALLOC_ITEMCRTIICAL.Text = "特効効果\r\n新規割当";
-            this.L_16_NEWALLOC_ITEMCRTIICAL.UseVisualStyleBackColor = true;
+            this.L_16_NEWALLOC_EFFECTIVENESS.Location = new System.Drawing.Point(-2, 145);
+            this.L_16_NEWALLOC_EFFECTIVENESS.Name = "L_16_NEWALLOC_EFFECTIVENESS";
+            this.L_16_NEWALLOC_EFFECTIVENESS.Size = new System.Drawing.Size(136, 77);
+            this.L_16_NEWALLOC_EFFECTIVENESS.TabIndex = 51;
+            this.L_16_NEWALLOC_EFFECTIVENESS.Text = "特効効果\r\n新規割当";
+            this.L_16_NEWALLOC_EFFECTIVENESS.UseVisualStyleBackColor = true;
             // 
             // CLASS_LISTBOX
             // 
@@ -1307,17 +1307,17 @@
             this.P16.TabIndex = 28;
             this.P16.ValueChanged += new System.EventHandler(this.P16_ValueChanged);
             // 
-            // J_16_ITEMCRTIICAL
+            // J_16_EFFECTIVENESS
             // 
-            this.J_16_ITEMCRTIICAL.AccessibleDescription = "@ITEM_EFFECTIVENESS";
-            this.J_16_ITEMCRTIICAL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_16_ITEMCRTIICAL.Location = new System.Drawing.Point(-1, -1);
-            this.J_16_ITEMCRTIICAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_16_ITEMCRTIICAL.Name = "J_16_ITEMCRTIICAL";
-            this.J_16_ITEMCRTIICAL.Size = new System.Drawing.Size(136, 56);
-            this.J_16_ITEMCRTIICAL.TabIndex = 14;
-            this.J_16_ITEMCRTIICAL.Text = "特効効果\r\n格納アドレス";
-            this.J_16_ITEMCRTIICAL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_16_EFFECTIVENESS.AccessibleDescription = "@ITEM_EFFECTIVENESS";
+            this.J_16_EFFECTIVENESS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_16_EFFECTIVENESS.Location = new System.Drawing.Point(-1, -1);
+            this.J_16_EFFECTIVENESS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_16_EFFECTIVENESS.Name = "J_16_EFFECTIVENESS";
+            this.J_16_EFFECTIVENESS.Size = new System.Drawing.Size(136, 56);
+            this.J_16_EFFECTIVENESS.TabIndex = 14;
+            this.J_16_EFFECTIVENESS.Text = "特効効果\r\n格納アドレス";
+            this.J_16_EFFECTIVENESS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -2637,7 +2637,7 @@
         private System.Windows.Forms.Panel panel5;
         private ListBoxEx CLASS_LISTBOX;
         private System.Windows.Forms.NumericUpDown P16;
-        private System.Windows.Forms.Label J_16_ITEMCRTIICAL;
+        private System.Windows.Forms.Label J_16_EFFECTIVENESS;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label37;
@@ -2714,7 +2714,7 @@
         private CustomColorGroupBox J_10;
         private CustomColorGroupBox J_9;
         private CustomColorGroupBox J_8;
-        private System.Windows.Forms.Button L_16_NEWALLOC_ITEMCRTIICAL;
+        private System.Windows.Forms.Button L_16_NEWALLOC_EFFECTIVENESS;
         private System.Windows.Forms.Button L_12_NEWALLOC_ITEMSTATBOOSTER;
         private PanelEx L_6_ID;
         private System.Windows.Forms.NumericUpDown B6;

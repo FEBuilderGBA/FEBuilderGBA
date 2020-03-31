@@ -61,6 +61,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.IndependencePanel = new System.Windows.Forms.Panel();
+            this.IndependenceButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +76,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
+            this.IndependencePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ItemListBox
@@ -81,20 +85,20 @@
             this.ItemListBox.FormattingEnabled = true;
             this.ItemListBox.IntegralHeight = false;
             this.ItemListBox.ItemHeight = 18;
-            this.ItemListBox.Location = new System.Drawing.Point(716, 97);
+            this.ItemListBox.Location = new System.Drawing.Point(659, 98);
             this.ItemListBox.Margin = new System.Windows.Forms.Padding(4);
             this.ItemListBox.Name = "ItemListBox";
-            this.ItemListBox.Size = new System.Drawing.Size(220, 400);
+            this.ItemListBox.Size = new System.Drawing.Size(282, 454);
             this.ItemListBox.TabIndex = 110;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(716, 72);
+            this.label10.Location = new System.Drawing.Point(659, 73);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(220, 26);
+            this.label10.Size = new System.Drawing.Size(282, 26);
             this.label10.TabIndex = 109;
             this.label10.Text = "該当アイテム";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,7 +183,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 27);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(324, 508);
+            this.AddressList.Size = new System.Drawing.Size(324, 643);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -191,12 +195,13 @@
             this.panel1.Location = new System.Drawing.Point(14, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 539);
+            this.panel1.Size = new System.Drawing.Size(322, 676);
             this.panel1.TabIndex = 91;
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.IndependencePanel);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel2);
@@ -205,7 +210,7 @@
             this.panel4.Location = new System.Drawing.Point(336, 76);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(942, 507);
+            this.panel4.Size = new System.Drawing.Size(942, 644);
             this.panel4.TabIndex = 90;
             // 
             // panel7
@@ -218,13 +223,13 @@
             this.panel7.Location = new System.Drawing.Point(269, 73);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(444, 430);
+            this.panel7.Size = new System.Drawing.Size(388, 567);
             this.panel7.TabIndex = 179;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 404);
+            this.label4.Location = new System.Drawing.Point(3, 540);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(363, 18);
             this.label4.TabIndex = 104;
@@ -380,12 +385,12 @@
             this.panel2.Location = new System.Drawing.Point(1, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(264, 501);
+            this.panel2.Size = new System.Drawing.Size(264, 638);
             this.panel2.TabIndex = 111;
             // 
             // N_AddressListExpandsButton
             // 
-            this.N_AddressListExpandsButton.Location = new System.Drawing.Point(2, 468);
+            this.N_AddressListExpandsButton.Location = new System.Drawing.Point(2, 604);
             this.N_AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.N_AddressListExpandsButton.Name = "N_AddressListExpandsButton";
             this.N_AddressListExpandsButton.Size = new System.Drawing.Size(256, 30);
@@ -399,17 +404,17 @@
             this.N_AddressList.FormattingEnabled = true;
             this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
-            this.N_AddressList.Location = new System.Drawing.Point(-1, 30);
+            this.N_AddressList.Location = new System.Drawing.Point(-1, 31);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(262, 436);
+            this.N_AddressList.Size = new System.Drawing.Size(262, 567);
             this.N_AddressList.TabIndex = 108;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, -3);
+            this.label1.Location = new System.Drawing.Point(-1, -2);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 33);
@@ -464,12 +469,41 @@
             this.panel3.Size = new System.Drawing.Size(1264, 30);
             this.panel3.TabIndex = 93;
             // 
+            // IndependencePanel
+            // 
+            this.IndependencePanel.Controls.Add(this.IndependenceButton);
+            this.IndependencePanel.Controls.Add(this.label5);
+            this.IndependencePanel.Location = new System.Drawing.Point(659, 554);
+            this.IndependencePanel.Name = "IndependencePanel";
+            this.IndependencePanel.Size = new System.Drawing.Size(281, 85);
+            this.IndependencePanel.TabIndex = 143;
+            this.IndependencePanel.Visible = false;
+            // 
+            // IndependenceButton
+            // 
+            this.IndependenceButton.Location = new System.Drawing.Point(0, 55);
+            this.IndependenceButton.Name = "IndependenceButton";
+            this.IndependenceButton.Size = new System.Drawing.Size(281, 30);
+            this.IndependenceButton.TabIndex = 121;
+            this.IndependenceButton.Text = "選択アイテムの分離独立";
+            this.IndependenceButton.UseVisualStyleBackColor = true;
+            this.IndependenceButton.Click += new System.EventHandler(this.IndependenceButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(3, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(278, 48);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "このデータは、複数のアイテムで参照されています。";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ItemEffectivenessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1281, 593);
+            this.ClientSize = new System.Drawing.Size(1281, 730);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -492,6 +526,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.IndependencePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -531,5 +566,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private InterpolatedPictureBox N_L_0_CLASSICON;
+        private System.Windows.Forms.Panel IndependencePanel;
+        private System.Windows.Forms.Button IndependenceButton;
+        private System.Windows.Forms.Label label5;
     }
 }

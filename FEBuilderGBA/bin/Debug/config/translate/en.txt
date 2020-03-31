@@ -896,7 +896,7 @@ Disassembler
 All program data of this game will be exported to a file.\r\nProcessing may take time.
 
 :全部逆アセンブルして保存する
-Assemble all and save
+Disassemble all and save
 
 :すべてのコードを逆アセンブルしてファイルに保存します。
 Disassemble all the code and save it in a file.
