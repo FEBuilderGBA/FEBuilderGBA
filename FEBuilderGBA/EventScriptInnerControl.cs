@@ -2418,16 +2418,11 @@ namespace FEBuilderGBA
 
         private void ScriptChangeButton_Click(object sender, EventArgs e)
         {
-            EventScriptFormCategorySelectForm form = (EventScriptFormCategorySelectForm)InputFormRef.JumpFormLow<EventScriptFormCategorySelectForm>();
-            DialogResult dr = form.ShowDialog();
-            if (dr != System.Windows.Forms.DialogResult.OK)
-            {
-                return;
-            }
+            FireChanegCommandByDirectMode(isDirectMode: false);
+        }
 
-            EventScript.Script script = form.Script;
-            EventScript.SetDefaultFrameTo60(script);
-
+        void InsertEventScript(EventScript.Script script)
+        {
             //選択した命令を代入
             byte[] selectedByteData = script.Data;
             this.ASMTextBox.Text = U.convertByteToStringDump(selectedByteData);
@@ -2445,36 +2440,52 @@ namespace FEBuilderGBA
                 this.Popup.Hide();
             }
         }
+        void InsertEventTemplate(List<EventScript.OneCode> codes)
+        {
+            HideFloatingControlpanel();
 
-        void FireChanegCommandByDirectMode()
+            int insertedPoint = this.AddressList.SelectedIndex;
+            if (insertedPoint < 0)
+            {
+                insertedPoint = 0;
+            }
+
+            //追加するのでUndoポイントを作成する
+            PushUndo();
+
+            //テンプレートからデータを追加.
+            this.EventAsm.InsertRange(insertedPoint, codes);
+            //最後に自下げ処理実行.
+            JisageReorder(this.EventAsm);
+
+            //リストの更新.
+            this.AddressList.DummyAlloc(this.EventAsm.Count, insertedPoint + 1);
+
+            InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
+        }
+
+        void FireChanegCommandByDirectMode(bool isDirectMode)
         {
             EventScriptFormCategorySelectForm form = (EventScriptFormCategorySelectForm)InputFormRef.JumpFormLow<EventScriptFormCategorySelectForm>();
+            form.Init(this.MapID, this);
             DialogResult dr = form.ShowDialog();
-            if (dr != System.Windows.Forms.DialogResult.OK)
-            {
-                //直接編集モードだったら、キャンセルされた場合は、コントロールパネルも消す.
-                HideFloatingControlpanel();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {//イベント命令の選択
+                InsertEventScript(form.Script);
+                return;
+            }
+            if (dr == System.Windows.Forms.DialogResult.Retry)
+            {//イベントテンプレートの選択
+                InsertEventTemplate(form.EventTemplateCode);
                 return;
             }
 
-            EventScript.Script script = form.Script;
-
-            //選択した命令を代入
-            byte[] selectedByteData = script.Data;
-            this.ASMTextBox.Text = U.convertByteToStringDump(selectedByteData);
-            this.ScriptCodeName.Text = EventScript.makeCommandComboText(script, false);
-
-            //イベントを逆アセンブルして確定する.
-            OneLineDisassembler();
-
-            //値1を自動選択
-            if (ParamSrc1.Visible)
-            {
-                ParamSrc1.Focus();
-
-                //もし、自動でポップアップメニューが表示される場合OFFにする.
-                this.Popup.Hide();
+            if (isDirectMode)
+            {//直接編集モードだったら、キャンセルされた場合は、コントロールパネルも消す.
+                HideFloatingControlpanel();
             }
+            return;
+
         }
 
         private static byte[] LineToEventByte(string line)
@@ -3276,7 +3287,7 @@ namespace FEBuilderGBA
             }
             ShowFloatingControlpanel();
             ScriptChangeButton.Focus();
-            FireChanegCommandByDirectMode();
+            FireChanegCommandByDirectMode(isDirectMode: true);
         }
         public void ChangeComment()
         {
@@ -3460,26 +3471,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            HideFloatingControlpanel();
-
-            int insertedPoint = this.AddressList.SelectedIndex;
-            if (insertedPoint < 0)
-            {
-                insertedPoint = 0;
-            }
-
-            //追加するのでUndoポイントを作成する
-            PushUndo();
-
-            //テンプレートからデータを追加.
-            this.EventAsm.InsertRange(insertedPoint,f.Codes);
-            //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
-
-            //リストの更新.
-            this.AddressList.DummyAlloc(this.EventAsm.Count, insertedPoint + 1);
-
-            InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
+            InsertEventTemplate(f.Codes);
         }
 
         private void TemplateButton_Click(object sender, EventArgs e)

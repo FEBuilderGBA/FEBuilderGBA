@@ -38,3 +38,4 @@ template_event_RedFadeout.txt	背景を赤色にフェードアウト
 template_event_GAMEOVER_FE8.txt	ゲームオーバーを呼び出す
 template_event_CALL_END_EVENT_FE8.txt	章をクリアする
 template_event_PREPARATION_FE8.txt	自軍と敵軍を読み込み進撃開始を呼び出す
+template_event_Turn_off_background_FE8.txt	背景をオフにして消すときにフェードアウトを入れて画面を乱さない

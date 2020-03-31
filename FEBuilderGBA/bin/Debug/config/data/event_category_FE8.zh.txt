@@ -1,4 +1,5 @@
 {}	全部显示
+{TEMPLATE}	Event Template
 {TEXT}	文本
 {CAMERA}	相机
 {ITEM}	道具

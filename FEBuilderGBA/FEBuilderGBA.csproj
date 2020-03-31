@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
     <Compile Include="EmulatorMemoryUtil.cs" />
+    <Compile Include="EventTemplateImpl.cs" />
     <Compile Include="ImageUtilBorderAP.cs" />
     <Compile Include="PatchUtil.cs" />
     <Compile Include="SongInstrumentDirectSoundForm.cs">
@@ -2015,6 +2016,12 @@
     <Compile Include="UshortBitFlagForm.Designer.cs">
       <DependentUpon>UshortBitFlagForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SongInstrumentImportWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongInstrumentImportWaveForm.Designer.cs">
+      <DependentUpon>SongInstrumentImportWaveForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2980,6 +2987,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UshortBitFlagForm.resx">
       <DependentUpon>UshortBitFlagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongInstrumentImportWaveForm.resx">
+      <DependentUpon>SongInstrumentImportWaveForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

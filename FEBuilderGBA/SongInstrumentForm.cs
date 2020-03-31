@@ -584,12 +584,22 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(this, "", open);
             string filename = open.FileNames[0];
 
-            byte[] wave = File.ReadAllBytes(filename);
+            SongInstrumentImportWaveForm f = (SongInstrumentImportWaveForm)InputFormRef.JumpFormLow<SongInstrumentImportWaveForm>();
+            f.Init(filename);
+            dr = f.ShowDialog();
+            if (dr != System.Windows.Forms.DialogResult.OK)
+            {
+                f.Dettach();
+                return;
+            }
+            byte[] wave = File.ReadAllBytes(f.GetFilename());
             byte[] gbawave = SongUtil.wavToByte(wave, useFormatCheck: true);
             if (gbawave == null)
             {
-                return ;
+                return;
             }
+
+            f.Dettach();
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"Instrument Wave");
             uint newaddr = InputFormRef.WriteBinaryData(this, addr, gbawave, gbawave_length, undodata);

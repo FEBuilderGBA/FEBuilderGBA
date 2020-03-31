@@ -1,4 +1,5 @@
 {}	Show all
+{TEMPLATE}	Event Template
 {TEXT}	Text
 {CAMERA}	Camera
 {ITEM}	Item

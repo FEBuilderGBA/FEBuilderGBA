@@ -1,0 +1,3 @@
+21171000	//Fade the screen to black with[Speed:16 frame sec(0.2667 sec)]
+20220000	//Erase the background(CLEAN)
+20171000	//Fade the screen back from black with[Speed:16 frame sec(0.2667 sec)]

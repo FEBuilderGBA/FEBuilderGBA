@@ -17,6 +17,9 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+            this.EventTemplate = new EventTemplateImpl();
+            this.EventTemplate.LoadTemplate();
+
             this.CategoryDic = U.LoadTSVResourcePair((U.ConfigDataFilename("event_category_")));
             this.CategoryListBox.BeginUpdate();
             this.CategoryListBox.Items.Clear();
@@ -30,10 +33,8 @@ namespace FEBuilderGBA
             this.CategoryListBox.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed, false);
             this.ListBox.OwnerDraw(ListBoxEx.DrawEventCategory, DrawMode.OwnerDrawFixed, false);
         }
+        EventTemplateImpl EventTemplate;
 
-
-
-        List<EventScript.Script> ScriptCahce = new List<EventScript.Script>();
         private void CategoryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string category = GetSelectedCategory();
@@ -47,7 +48,6 @@ namespace FEBuilderGBA
 
             this.ListBox.BeginUpdate();
             this.ListBox.Items.Clear();
-            this.ScriptCahce.Clear();
             foreach (EventScript.Script script in Program.EventScript.Scripts)
             {
                 if (filtered == true)
@@ -74,13 +74,34 @@ namespace FEBuilderGBA
                 }
 
                 this.ListBox.Items.Add(name);
-                this.ScriptCahce.Add(script);
             }
+
+            if (filtered == true && category != "{TEMPLATE}")
+            {
+            }
+            else
+            {
+                foreach (EventTemplateImpl.EventTemplate ev in this.EventTemplate.GetTemplateAll())
+                {
+                    string name = ev.Info + EVENT_TEMPLATE_MARK;
+                    if (filterString.Length > 0)
+                    {
+                        if (!U.StrStrEx(name + " " + Path.GetFileName(ev.Filename), filterString, isJP))
+                        {//フィルターで消す.
+                            continue;
+                        }
+                    }
+
+                    this.ListBox.Items.Add(name);
+                }
+            }
+
             this.ListBox.EndUpdate();
 
         }
+
         public EventScript.Script Script { get; private set; }
-        bool UpdateSelected()
+        bool UpdateEventSelected()
         {
             string text = this.ListBox.Text;
             if (text.Length <= 0)
@@ -100,8 +121,35 @@ namespace FEBuilderGBA
             return false;
         }
 
+        const string EVENT_TEMPLATE_MARK = "//{EVENT_TEMPLATE}";
+        public List<EventScript.OneCode> EventTemplateCode { get; private set; }
+        bool UpdateEventTemplateSelected()
+        {
+            string text = this.ListBox.Text;
+            if (text.Length <= 0)
+            {
+                return false;
+            }
+
+            text = text.Replace(EVENT_TEMPLATE_MARK, "");
+            foreach (EventTemplateImpl.EventTemplate ev in this.EventTemplate.GetTemplateAll())
+            {
+                if (ev.Info == text)
+                {
+                    this.EventTemplateCode = this.EventTemplate.GetCodes(ev);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void EventScriptFormCategorySelectForm_Load(object sender, EventArgs e)
         {
+        }
+        public void Init(uint mapid, EventScriptInnerControl currentControl)
+        {
+            EventTemplate.Init(mapid, currentControl);
         }
 
         string GetSelectedCategory()
@@ -121,9 +169,14 @@ namespace FEBuilderGBA
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
-            if (UpdateSelected())
+            if (UpdateEventSelected())
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.Close();
+            }
+            if (UpdateEventTemplateSelected())
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.Retry;
                 this.Close();
             }
         }

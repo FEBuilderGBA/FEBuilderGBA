@@ -2896,12 +2896,7 @@ namespace FEBuilderGBA
             PatchUtil.ImprovedSoundMixer withImprovedSoundMixer = PatchUtil.SearchImprovedSoundMixer();
             if (useFormatCheck)
             {
-                uint limit = 26758;
-                if (withImprovedSoundMixer == PatchUtil.ImprovedSoundMixer.ImprovedSoundMixer)
-                {//もっと高音質にできるらしい
-                    limit = 65536;
-                }
-
+                uint limit = 65536;
                 if (fmt_samples_per_sec > limit)
                 {
                     R.ShowStopError("Waveファイルが高音質すぎます。{0}hz\r\n品質は、8bit 12khz monoぐらいにしてください。", fmt_samples_per_sec);
