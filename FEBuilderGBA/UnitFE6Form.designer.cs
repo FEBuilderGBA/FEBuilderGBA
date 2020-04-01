@@ -36,6 +36,7 @@
             this.L_2_TEXT_DETAIL3 = new FEBuilderGBA.TextBoxEx();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             this.L_8_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
             this.B4 = new System.Windows.Forms.NumericUpDown();
@@ -208,7 +209,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.J_39 = new System.Windows.Forms.Label();
             this.J_38 = new System.Windows.Forms.Label();
-            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -412,6 +412,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1151, 141);
             this.panel2.TabIndex = 0;
+            // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(6, 67);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(109, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // L_8_GENERICENEMYPORTRAIT
             // 
@@ -648,7 +662,7 @@
             this.panel4.Location = new System.Drawing.Point(261, 217);
             this.panel4.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(935, 50);
+            this.panel4.Size = new System.Drawing.Size(936, 50);
             this.panel4.TabIndex = 10;
             // 
             // b19
@@ -898,7 +912,7 @@
             this.label123.Location = new System.Drawing.Point(261, 439);
             this.label123.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(935, 282);
+            this.label123.Size = new System.Drawing.Size(936, 282);
             this.label123.TabIndex = 13;
             // 
             // J_43
@@ -913,11 +927,11 @@
             this.J_43.Controls.Add(this.L_43_BIT_02);
             this.J_43.Controls.Add(this.L_43_BIT_01);
             this.J_43.Controls.Add(this.B43);
-            this.J_43.Location = new System.Drawing.Point(688, 6);
+            this.J_43.Location = new System.Drawing.Point(698, 6);
             this.J_43.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_43.Name = "J_43";
             this.J_43.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_43.Size = new System.Drawing.Size(245, 267);
+            this.J_43.Size = new System.Drawing.Size(235, 267);
             this.J_43.TabIndex = 136;
             this.J_43.TabStop = false;
             this.J_43.Text = "特性4";
@@ -925,8 +939,8 @@
             // L_43_BIT_80
             // 
             this.L_43_BIT_80.AutoSize = true;
-            this.L_43_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_80.Location = new System.Drawing.Point(8, 225);
+            this.L_43_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_80.Location = new System.Drawing.Point(5, 225);
             this.L_43_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_80.Name = "L_43_BIT_80";
             this.L_43_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -936,8 +950,8 @@
             // L_43_BIT_40
             // 
             this.L_43_BIT_40.AutoSize = true;
-            this.L_43_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_40.Location = new System.Drawing.Point(8, 201);
+            this.L_43_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_40.Location = new System.Drawing.Point(5, 201);
             this.L_43_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_40.Name = "L_43_BIT_40";
             this.L_43_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -947,8 +961,8 @@
             // L_43_BIT_20
             // 
             this.L_43_BIT_20.AutoSize = true;
-            this.L_43_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_20.Location = new System.Drawing.Point(8, 177);
+            this.L_43_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_20.Location = new System.Drawing.Point(5, 177);
             this.L_43_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_20.Name = "L_43_BIT_20";
             this.L_43_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -958,8 +972,8 @@
             // L_43_BIT_10
             // 
             this.L_43_BIT_10.AutoSize = true;
-            this.L_43_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_10.Location = new System.Drawing.Point(8, 153);
+            this.L_43_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_10.Location = new System.Drawing.Point(5, 153);
             this.L_43_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_10.Name = "L_43_BIT_10";
             this.L_43_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -969,8 +983,8 @@
             // L_43_BIT_08
             // 
             this.L_43_BIT_08.AutoSize = true;
-            this.L_43_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_08.Location = new System.Drawing.Point(8, 129);
+            this.L_43_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_08.Location = new System.Drawing.Point(5, 129);
             this.L_43_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_08.Name = "L_43_BIT_08";
             this.L_43_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -980,8 +994,8 @@
             // L_43_BIT_04
             // 
             this.L_43_BIT_04.AutoSize = true;
-            this.L_43_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_04.Location = new System.Drawing.Point(8, 106);
+            this.L_43_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_04.Location = new System.Drawing.Point(5, 106);
             this.L_43_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_04.Name = "L_43_BIT_04";
             this.L_43_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -991,8 +1005,8 @@
             // L_43_BIT_02
             // 
             this.L_43_BIT_02.AutoSize = true;
-            this.L_43_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_02.Location = new System.Drawing.Point(8, 81);
+            this.L_43_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_02.Location = new System.Drawing.Point(5, 81);
             this.L_43_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_02.Name = "L_43_BIT_02";
             this.L_43_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -1002,8 +1016,8 @@
             // L_43_BIT_01
             // 
             this.L_43_BIT_01.AutoSize = true;
-            this.L_43_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_43_BIT_01.Location = new System.Drawing.Point(8, 57);
+            this.L_43_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_43_BIT_01.Location = new System.Drawing.Point(5, 57);
             this.L_43_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_43_BIT_01.Name = "L_43_BIT_01";
             this.L_43_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -1013,7 +1027,7 @@
             // B43
             // 
             this.B43.Hexadecimal = true;
-            this.B43.Location = new System.Drawing.Point(8, 28);
+            this.B43.Location = new System.Drawing.Point(5, 28);
             this.B43.Margin = new System.Windows.Forms.Padding(2);
             this.B43.Maximum = new decimal(new int[] {
             255,
@@ -1040,7 +1054,7 @@
             this.J_42.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_42.Name = "J_42";
             this.J_42.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_42.Size = new System.Drawing.Size(224, 267);
+            this.J_42.Size = new System.Drawing.Size(234, 267);
             this.J_42.TabIndex = 135;
             this.J_42.TabStop = false;
             this.J_42.Text = "特性3";
@@ -1048,8 +1062,8 @@
             // L_42_BIT_80
             // 
             this.L_42_BIT_80.AutoSize = true;
-            this.L_42_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_80.Location = new System.Drawing.Point(11, 224);
+            this.L_42_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_80.Location = new System.Drawing.Point(6, 224);
             this.L_42_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_80.Name = "L_42_BIT_80";
             this.L_42_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -1059,8 +1073,8 @@
             // L_42_BIT_40
             // 
             this.L_42_BIT_40.AutoSize = true;
-            this.L_42_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_40.Location = new System.Drawing.Point(11, 200);
+            this.L_42_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_40.Location = new System.Drawing.Point(6, 200);
             this.L_42_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_40.Name = "L_42_BIT_40";
             this.L_42_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -1070,8 +1084,8 @@
             // L_42_BIT_20
             // 
             this.L_42_BIT_20.AutoSize = true;
-            this.L_42_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_20.Location = new System.Drawing.Point(11, 176);
+            this.L_42_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_20.Location = new System.Drawing.Point(6, 176);
             this.L_42_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_20.Name = "L_42_BIT_20";
             this.L_42_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -1081,8 +1095,8 @@
             // L_42_BIT_10
             // 
             this.L_42_BIT_10.AutoSize = true;
-            this.L_42_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_10.Location = new System.Drawing.Point(11, 152);
+            this.L_42_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_10.Location = new System.Drawing.Point(6, 152);
             this.L_42_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_10.Name = "L_42_BIT_10";
             this.L_42_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -1092,8 +1106,8 @@
             // L_42_BIT_08
             // 
             this.L_42_BIT_08.AutoSize = true;
-            this.L_42_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_08.Location = new System.Drawing.Point(11, 129);
+            this.L_42_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_08.Location = new System.Drawing.Point(6, 129);
             this.L_42_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_08.Name = "L_42_BIT_08";
             this.L_42_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -1103,8 +1117,8 @@
             // L_42_BIT_04
             // 
             this.L_42_BIT_04.AutoSize = true;
-            this.L_42_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_04.Location = new System.Drawing.Point(11, 104);
+            this.L_42_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_04.Location = new System.Drawing.Point(6, 104);
             this.L_42_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_04.Name = "L_42_BIT_04";
             this.L_42_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -1114,8 +1128,8 @@
             // L_42_BIT_02
             // 
             this.L_42_BIT_02.AutoSize = true;
-            this.L_42_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_02.Location = new System.Drawing.Point(11, 80);
+            this.L_42_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_02.Location = new System.Drawing.Point(6, 80);
             this.L_42_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_02.Name = "L_42_BIT_02";
             this.L_42_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -1125,8 +1139,8 @@
             // L_42_BIT_01
             // 
             this.L_42_BIT_01.AutoSize = true;
-            this.L_42_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_42_BIT_01.Location = new System.Drawing.Point(11, 56);
+            this.L_42_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_42_BIT_01.Location = new System.Drawing.Point(6, 56);
             this.L_42_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_42_BIT_01.Name = "L_42_BIT_01";
             this.L_42_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -1136,7 +1150,7 @@
             // B42
             // 
             this.B42.Hexadecimal = true;
-            this.B42.Location = new System.Drawing.Point(11, 26);
+            this.B42.Location = new System.Drawing.Point(6, 26);
             this.B42.Margin = new System.Windows.Forms.Padding(2);
             this.B42.Maximum = new decimal(new int[] {
             255,
@@ -1171,8 +1185,8 @@
             // L_41_BIT_80
             // 
             this.L_41_BIT_80.AutoSize = true;
-            this.L_41_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_80.Location = new System.Drawing.Point(10, 225);
+            this.L_41_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_80.Location = new System.Drawing.Point(7, 225);
             this.L_41_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_80.Name = "L_41_BIT_80";
             this.L_41_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -1182,8 +1196,8 @@
             // L_41_BIT_40
             // 
             this.L_41_BIT_40.AutoSize = true;
-            this.L_41_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_40.Location = new System.Drawing.Point(10, 200);
+            this.L_41_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_40.Location = new System.Drawing.Point(7, 200);
             this.L_41_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_40.Name = "L_41_BIT_40";
             this.L_41_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -1193,8 +1207,8 @@
             // L_41_BIT_20
             // 
             this.L_41_BIT_20.AutoSize = true;
-            this.L_41_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_20.Location = new System.Drawing.Point(10, 176);
+            this.L_41_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_20.Location = new System.Drawing.Point(7, 176);
             this.L_41_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_20.Name = "L_41_BIT_20";
             this.L_41_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -1204,8 +1218,8 @@
             // L_41_BIT_10
             // 
             this.L_41_BIT_10.AutoSize = true;
-            this.L_41_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_10.Location = new System.Drawing.Point(10, 152);
+            this.L_41_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_10.Location = new System.Drawing.Point(7, 152);
             this.L_41_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_10.Name = "L_41_BIT_10";
             this.L_41_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -1215,8 +1229,8 @@
             // L_41_BIT_08
             // 
             this.L_41_BIT_08.AutoSize = true;
-            this.L_41_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_08.Location = new System.Drawing.Point(10, 128);
+            this.L_41_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_08.Location = new System.Drawing.Point(7, 128);
             this.L_41_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_08.Name = "L_41_BIT_08";
             this.L_41_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -1226,8 +1240,8 @@
             // L_41_BIT_04
             // 
             this.L_41_BIT_04.AutoSize = true;
-            this.L_41_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_04.Location = new System.Drawing.Point(10, 104);
+            this.L_41_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_04.Location = new System.Drawing.Point(7, 104);
             this.L_41_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_04.Name = "L_41_BIT_04";
             this.L_41_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -1237,8 +1251,8 @@
             // L_41_BIT_02
             // 
             this.L_41_BIT_02.AutoSize = true;
-            this.L_41_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_02.Location = new System.Drawing.Point(10, 80);
+            this.L_41_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_02.Location = new System.Drawing.Point(7, 80);
             this.L_41_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_02.Name = "L_41_BIT_02";
             this.L_41_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -1248,8 +1262,8 @@
             // L_41_BIT_01
             // 
             this.L_41_BIT_01.AutoSize = true;
-            this.L_41_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_41_BIT_01.Location = new System.Drawing.Point(10, 56);
+            this.L_41_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_41_BIT_01.Location = new System.Drawing.Point(7, 56);
             this.L_41_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_41_BIT_01.Name = "L_41_BIT_01";
             this.L_41_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -1259,7 +1273,7 @@
             // B41
             // 
             this.B41.Hexadecimal = true;
-            this.B41.Location = new System.Drawing.Point(10, 26);
+            this.B41.Location = new System.Drawing.Point(7, 26);
             this.B41.Margin = new System.Windows.Forms.Padding(2);
             this.B41.Maximum = new decimal(new int[] {
             255,
@@ -1294,7 +1308,7 @@
             // L_40_BIT_80
             // 
             this.L_40_BIT_80.AutoSize = true;
-            this.L_40_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_80.Location = new System.Drawing.Point(3, 224);
             this.L_40_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_80.Name = "L_40_BIT_80";
@@ -1305,7 +1319,7 @@
             // L_40_BIT_40
             // 
             this.L_40_BIT_40.AutoSize = true;
-            this.L_40_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_40.Location = new System.Drawing.Point(3, 200);
             this.L_40_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_40.Name = "L_40_BIT_40";
@@ -1316,7 +1330,7 @@
             // L_40_BIT_20
             // 
             this.L_40_BIT_20.AutoSize = true;
-            this.L_40_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_20.Location = new System.Drawing.Point(3, 176);
             this.L_40_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_20.Name = "L_40_BIT_20";
@@ -1327,7 +1341,7 @@
             // L_40_BIT_10
             // 
             this.L_40_BIT_10.AutoSize = true;
-            this.L_40_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_10.Location = new System.Drawing.Point(3, 152);
             this.L_40_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_10.Name = "L_40_BIT_10";
@@ -1338,7 +1352,7 @@
             // L_40_BIT_08
             // 
             this.L_40_BIT_08.AutoSize = true;
-            this.L_40_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_08.Location = new System.Drawing.Point(3, 128);
             this.L_40_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_08.Name = "L_40_BIT_08";
@@ -1349,7 +1363,7 @@
             // L_40_BIT_04
             // 
             this.L_40_BIT_04.AutoSize = true;
-            this.L_40_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_04.Location = new System.Drawing.Point(3, 104);
             this.L_40_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_04.Name = "L_40_BIT_04";
@@ -1360,7 +1374,7 @@
             // L_40_BIT_02
             // 
             this.L_40_BIT_02.AutoSize = true;
-            this.L_40_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_02.Location = new System.Drawing.Point(3, 80);
             this.L_40_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_02.Name = "L_40_BIT_02";
@@ -1371,7 +1385,7 @@
             // L_40_BIT_01
             // 
             this.L_40_BIT_01.AutoSize = true;
-            this.L_40_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_40_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_40_BIT_01.Location = new System.Drawing.Point(3, 56);
             this.L_40_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_40_BIT_01.Name = "L_40_BIT_01";
@@ -1785,7 +1799,7 @@
             this.panel10.Location = new System.Drawing.Point(261, 326);
             this.panel10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(935, 58);
+            this.panel10.Size = new System.Drawing.Size(936, 58);
             this.panel10.TabIndex = 20;
             // 
             // X_SIM_SUM_RATE
@@ -2064,7 +2078,7 @@
             this.panel11.Location = new System.Drawing.Point(261, 385);
             this.panel11.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(935, 50);
+            this.panel11.Size = new System.Drawing.Size(936, 50);
             this.panel11.TabIndex = 21;
             // 
             // systemIconPictureBox8
@@ -2615,20 +2629,6 @@
             this.J_38.TabIndex = 133;
             this.J_38.Text = "??";
             this.J_38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // HardCodingWarningLabel
-            // 
-            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
-            this.HardCodingWarningLabel.AutoSize = true;
-            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.HardCodingWarningLabel.Location = new System.Drawing.Point(6, 67);
-            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
-            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
-            this.HardCodingWarningLabel.TabIndex = 109;
-            this.HardCodingWarningLabel.Text = "[HardCoding]";
-            this.HardCodingWarningLabel.Visible = false;
-            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // UnitFE6Form
             // 

@@ -118,6 +118,7 @@
             this.P12 = new System.Windows.Forms.NumericUpDown();
             this.J_12_ITEMSTATBOOSTER = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             this.L_6_ID = new FEBuilderGBA.PanelEx();
             this.B6 = new System.Windows.Forms.NumericUpDown();
             this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
@@ -173,7 +174,6 @@
             this.L_8_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_8_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B8 = new System.Windows.Forms.NumericUpDown();
-            this.HardCodingWarningLabel = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -288,7 +288,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1322, 30);
+            this.panel1.Size = new System.Drawing.Size(1337, 30);
             this.panel1.TabIndex = 144;
             // 
             // ReloadListButton
@@ -358,7 +358,7 @@
             this.AddressPanel.Location = new System.Drawing.Point(283, 36);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(2);
             this.AddressPanel.Name = "AddressPanel";
-            this.AddressPanel.Size = new System.Drawing.Size(1048, 30);
+            this.AddressPanel.Size = new System.Drawing.Size(1063, 30);
             this.AddressPanel.TabIndex = 145;
             // 
             // BlockSize
@@ -458,13 +458,13 @@
             this.panel2.Location = new System.Drawing.Point(282, 67);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1050, 735);
+            this.panel2.Size = new System.Drawing.Size(1065, 735);
             this.panel2.TabIndex = 147;
             // 
             // JumpToITEMEFFECT
             // 
             this.JumpToITEMEFFECT.AutoSize = true;
-            this.JumpToITEMEFFECT.Location = new System.Drawing.Point(699, 648);
+            this.JumpToITEMEFFECT.Location = new System.Drawing.Point(709, 664);
             this.JumpToITEMEFFECT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.JumpToITEMEFFECT.Name = "JumpToITEMEFFECT";
             this.JumpToITEMEFFECT.Size = new System.Drawing.Size(152, 18);
@@ -482,17 +482,17 @@
             this.panel10.Controls.Add(this.L_31_COMBO);
             this.panel10.Controls.Add(this.B31);
             this.panel10.Controls.Add(this.label29);
-            this.panel10.Location = new System.Drawing.Point(-1, 611);
+            this.panel10.Location = new System.Drawing.Point(-1, 627);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(696, 55);
+            this.panel10.Size = new System.Drawing.Size(709, 55);
             this.panel10.TabIndex = 73;
             // 
             // L_30_COMBO
             // 
             this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_30_COMBO.FormattingEnabled = true;
-            this.L_30_COMBO.Location = new System.Drawing.Point(156, 25);
+            this.L_30_COMBO.Location = new System.Drawing.Point(163, 25);
             this.L_30_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_30_COMBO.Name = "L_30_COMBO";
             this.L_30_COMBO.Size = new System.Drawing.Size(256, 26);
@@ -503,7 +503,7 @@
             this.B30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B30.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B30.Hexadecimal = true;
-            this.B30.Location = new System.Drawing.Point(80, 26);
+            this.B30.Location = new System.Drawing.Point(93, 26);
             this.B30.Margin = new System.Windows.Forms.Padding(2);
             this.B30.Maximum = new decimal(new int[] {
             255,
@@ -520,7 +520,7 @@
             this.J_30_ITEMUSAGEPOINTER.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_30_ITEMUSAGEPOINTER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30_ITEMUSAGEPOINTER.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_30_ITEMUSAGEPOINTER.Location = new System.Drawing.Point(80, 0);
+            this.J_30_ITEMUSAGEPOINTER.Location = new System.Drawing.Point(93, 0);
             this.J_30_ITEMUSAGEPOINTER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_30_ITEMUSAGEPOINTER.Name = "J_30_ITEMUSAGEPOINTER";
             this.J_30_ITEMUSAGEPOINTER.Size = new System.Drawing.Size(326, 25);
@@ -533,10 +533,10 @@
             this.X_JUMP_USEITEM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_JUMP_USEITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_JUMP_USEITEM.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_JUMP_USEITEM.Location = new System.Drawing.Point(1, 26);
+            this.X_JUMP_USEITEM.Location = new System.Drawing.Point(-1, 26);
             this.X_JUMP_USEITEM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_JUMP_USEITEM.Name = "X_JUMP_USEITEM";
-            this.X_JUMP_USEITEM.Size = new System.Drawing.Size(75, 25);
+            this.X_JUMP_USEITEM.Size = new System.Drawing.Size(93, 25);
             this.X_JUMP_USEITEM.TabIndex = 83;
             this.X_JUMP_USEITEM.Text = "効果";
             this.X_JUMP_USEITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -545,7 +545,7 @@
             // 
             this.L_31_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_31_COMBO.FormattingEnabled = true;
-            this.L_31_COMBO.Location = new System.Drawing.Point(505, 26);
+            this.L_31_COMBO.Location = new System.Drawing.Point(512, 26);
             this.L_31_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_31_COMBO.Name = "L_31_COMBO";
             this.L_31_COMBO.Size = new System.Drawing.Size(187, 26);
@@ -554,7 +554,7 @@
             // B31
             // 
             this.B31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B31.Location = new System.Drawing.Point(436, 26);
+            this.B31.Location = new System.Drawing.Point(449, 26);
             this.B31.Margin = new System.Windows.Forms.Padding(2);
             this.B31.Maximum = new decimal(new int[] {
             255,
@@ -570,7 +570,7 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label29.Location = new System.Drawing.Point(436, -1);
+            this.label29.Location = new System.Drawing.Point(449, -1);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(259, 25);
@@ -588,16 +588,16 @@
             this.panel9.Controls.Add(this.B28);
             this.panel9.Controls.Add(this.label41);
             this.panel9.Controls.Add(this.label42);
-            this.panel9.Location = new System.Drawing.Point(-1, 555);
+            this.panel9.Location = new System.Drawing.Point(-1, 571);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(699, 55);
+            this.panel9.Size = new System.Drawing.Size(709, 55);
             this.panel9.TabIndex = 72;
             // 
             // L_29_ITEMICONSRC
             // 
             this.L_29_ITEMICONSRC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_29_ITEMICONSRC.Location = new System.Drawing.Point(325, -1);
+            this.L_29_ITEMICONSRC.Location = new System.Drawing.Point(332, -1);
             this.L_29_ITEMICONSRC.Margin = new System.Windows.Forms.Padding(2);
             this.L_29_ITEMICONSRC.Name = "L_29_ITEMICONSRC";
             this.L_29_ITEMICONSRC.Size = new System.Drawing.Size(56, 56);
@@ -608,7 +608,7 @@
             // B29
             // 
             this.B29.Hexadecimal = true;
-            this.B29.Location = new System.Drawing.Point(248, 26);
+            this.B29.Location = new System.Drawing.Point(255, 26);
             this.B29.Margin = new System.Windows.Forms.Padding(2);
             this.B29.Maximum = new decimal(new int[] {
             -559939585,
@@ -624,7 +624,7 @@
             this.J_29_ICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_29_ICON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_29_ICON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_29_ICON.Location = new System.Drawing.Point(248, -1);
+            this.J_29_ICON.Location = new System.Drawing.Point(260, -1);
             this.J_29_ICON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_29_ICON.Name = "J_29_ICON";
             this.J_29_ICON.Size = new System.Drawing.Size(66, 25);
@@ -643,7 +643,7 @@
             "B",
             "A",
             "S"});
-            this.L_28_WEAPON.Location = new System.Drawing.Point(146, 25);
+            this.L_28_WEAPON.Location = new System.Drawing.Point(153, 25);
             this.L_28_WEAPON.Margin = new System.Windows.Forms.Padding(2);
             this.L_28_WEAPON.Name = "L_28_WEAPON";
             this.L_28_WEAPON.Size = new System.Drawing.Size(98, 26);
@@ -652,7 +652,7 @@
             // B28
             // 
             this.B28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B28.Location = new System.Drawing.Point(81, 25);
+            this.B28.Location = new System.Drawing.Point(93, 25);
             this.B28.Margin = new System.Windows.Forms.Padding(2);
             this.B28.Maximum = new decimal(new int[] {
             255,
@@ -671,7 +671,7 @@
             this.label41.Location = new System.Drawing.Point(-1, 28);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(75, 25);
+            this.label41.Size = new System.Drawing.Size(93, 25);
             this.label41.TabIndex = 45;
             this.label41.Text = "レベル";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -682,7 +682,7 @@
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label42.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label42.Location = new System.Drawing.Point(81, -1);
+            this.label42.Location = new System.Drawing.Point(93, -1);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(66, 25);
@@ -702,10 +702,10 @@
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.W26);
             this.panel8.Controls.Add(this.J_26);
-            this.panel8.Location = new System.Drawing.Point(-1, 498);
+            this.panel8.Location = new System.Drawing.Point(-1, 514);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(699, 55);
+            this.panel8.Size = new System.Drawing.Size(709, 55);
             this.panel8.TabIndex = 71;
             // 
             // label37
@@ -713,7 +713,7 @@
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label37.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label37.Location = new System.Drawing.Point(362, 0);
+            this.label37.Location = new System.Drawing.Point(376, 0);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(145, 25);
@@ -724,7 +724,7 @@
             // X_VALUE_SHINGEKI_SHOP
             // 
             this.X_VALUE_SHINGEKI_SHOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SHINGEKI_SHOP.Location = new System.Drawing.Point(361, 27);
+            this.X_VALUE_SHINGEKI_SHOP.Location = new System.Drawing.Point(375, 27);
             this.X_VALUE_SHINGEKI_SHOP.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SHINGEKI_SHOP.Maximum = new decimal(new int[] {
             -559939585,
@@ -741,7 +741,7 @@
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label36.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label36.Location = new System.Drawing.Point(211, 0);
+            this.label36.Location = new System.Drawing.Point(225, 0);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(145, 25);
@@ -752,7 +752,7 @@
             // X_VALUE_SHOP
             // 
             this.X_VALUE_SHOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SHOP.Location = new System.Drawing.Point(210, 27);
+            this.X_VALUE_SHOP.Location = new System.Drawing.Point(224, 27);
             this.X_VALUE_SHOP.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SHOP.Maximum = new decimal(new int[] {
             -559939585,
@@ -769,7 +769,7 @@
             this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label35.Location = new System.Drawing.Point(513, 0);
+            this.label35.Location = new System.Drawing.Point(527, 0);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(145, 25);
@@ -780,7 +780,7 @@
             // X_VALUE_SEL
             // 
             this.X_VALUE_SEL.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SEL.Location = new System.Drawing.Point(512, 27);
+            this.X_VALUE_SEL.Location = new System.Drawing.Point(526, 27);
             this.X_VALUE_SEL.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SEL.Maximum = new decimal(new int[] {
             -559939585,
@@ -800,7 +800,7 @@
             this.label10.Location = new System.Drawing.Point(-1, 28);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 25);
+            this.label10.Size = new System.Drawing.Size(93, 25);
             this.label10.TabIndex = 45;
             this.label10.Text = "価格";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -808,7 +808,7 @@
             // W26
             // 
             this.W26.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.W26.Location = new System.Drawing.Point(80, 27);
+            this.W26.Location = new System.Drawing.Point(94, 27);
             this.W26.Margin = new System.Windows.Forms.Padding(2);
             this.W26.Maximum = new decimal(new int[] {
             655535,
@@ -831,7 +831,7 @@
             this.J_26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_26.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_26.Location = new System.Drawing.Point(80, 0);
+            this.J_26.Location = new System.Drawing.Point(94, 0);
             this.J_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_26.Name = "J_26";
             this.J_26.Size = new System.Drawing.Size(126, 25);
@@ -856,10 +856,10 @@
             this.panel7.Controls.Add(this.label23);
             this.panel7.Controls.Add(this.J_20);
             this.panel7.Controls.Add(this.B22);
-            this.panel7.Location = new System.Drawing.Point(-1, 441);
+            this.panel7.Location = new System.Drawing.Point(-1, 457);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(699, 55);
+            this.panel7.Size = new System.Drawing.Size(709, 55);
             this.panel7.TabIndex = 70;
             // 
             // L_25_COMBO
@@ -874,7 +874,7 @@
             "22=射程2-2(弓)",
             "23=射程2-3(長弓)",
             "3A=射程3-10(サンダーストーム)"});
-            this.L_25_COMBO.Location = new System.Drawing.Point(494, 25);
+            this.L_25_COMBO.Location = new System.Drawing.Point(503, 25);
             this.L_25_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_25_COMBO.Name = "L_25_COMBO";
             this.L_25_COMBO.Size = new System.Drawing.Size(202, 26);
@@ -888,7 +888,7 @@
             this.label28.Location = new System.Drawing.Point(-1, 28);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(75, 25);
+            this.label28.Size = new System.Drawing.Size(93, 25);
             this.label28.TabIndex = 45;
             this.label28.Text = "性能";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -896,7 +896,7 @@
             // B21
             // 
             this.B21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B21.Location = new System.Drawing.Point(148, 28);
+            this.B21.Location = new System.Drawing.Point(162, 28);
             this.B21.Margin = new System.Windows.Forms.Padding(2);
             this.B21.Maximum = new decimal(new int[] {
             255,
@@ -912,7 +912,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label26.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label26.Location = new System.Drawing.Point(148, 1);
+            this.label26.Location = new System.Drawing.Point(162, 1);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(64, 25);
@@ -923,7 +923,7 @@
             // B20
             // 
             this.B20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B20.Location = new System.Drawing.Point(80, 28);
+            this.B20.Location = new System.Drawing.Point(94, 28);
             this.B20.Margin = new System.Windows.Forms.Padding(2);
             this.B20.Maximum = new decimal(new int[] {
             255,
@@ -940,7 +940,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label25.Location = new System.Drawing.Point(214, 0);
+            this.label25.Location = new System.Drawing.Point(228, 0);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(64, 25);
@@ -951,7 +951,7 @@
             // B23
             // 
             this.B23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B23.Location = new System.Drawing.Point(284, 28);
+            this.B23.Location = new System.Drawing.Point(298, 28);
             this.B23.Margin = new System.Windows.Forms.Padding(2);
             this.B23.Maximum = new decimal(new int[] {
             255,
@@ -965,7 +965,7 @@
             // B24
             // 
             this.B24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B24.Location = new System.Drawing.Point(351, 28);
+            this.B24.Location = new System.Drawing.Point(365, 28);
             this.B24.Margin = new System.Windows.Forms.Padding(2);
             this.B24.Maximum = new decimal(new int[] {
             255,
@@ -982,7 +982,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label13.Location = new System.Drawing.Point(425, 1);
+            this.label13.Location = new System.Drawing.Point(439, 1);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 25);
@@ -995,7 +995,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(425, 26);
+            this.B25.Location = new System.Drawing.Point(439, 26);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -1011,7 +1011,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label24.Location = new System.Drawing.Point(284, 1);
+            this.label24.Location = new System.Drawing.Point(298, 1);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(64, 25);
@@ -1024,7 +1024,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label23.Location = new System.Drawing.Point(351, 1);
+            this.label23.Location = new System.Drawing.Point(365, 1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(70, 25);
@@ -1038,7 +1038,7 @@
             this.J_20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_20.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_20.Location = new System.Drawing.Point(80, 1);
+            this.J_20.Location = new System.Drawing.Point(94, 1);
             this.J_20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_20.Name = "J_20";
             this.J_20.Size = new System.Drawing.Size(64, 25);
@@ -1049,7 +1049,7 @@
             // B22
             // 
             this.B22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B22.Location = new System.Drawing.Point(214, 28);
+            this.B22.Location = new System.Drawing.Point(228, 28);
             this.B22.Margin = new System.Windows.Forms.Padding(2);
             this.B22.Maximum = new decimal(new int[] {
             255,
@@ -1067,7 +1067,7 @@
             this.panel5.Controls.Add(this.CLASS_LISTBOX);
             this.panel5.Controls.Add(this.P16);
             this.panel5.Controls.Add(this.J_16_EFFECTIVENESS);
-            this.panel5.Location = new System.Drawing.Point(699, 440);
+            this.panel5.Location = new System.Drawing.Point(711, 456);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(350, 171);
@@ -1090,7 +1090,7 @@
             this.CLASS_LISTBOX.Location = new System.Drawing.Point(136, 0);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(2);
             this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(210, 166);
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(213, 166);
             this.CLASS_LISTBOX.TabIndex = 30;
             // 
             // P16
@@ -1145,15 +1145,15 @@
             this.panel4.Controls.Add(this.label67);
             this.panel4.Controls.Add(this.P12);
             this.panel4.Controls.Add(this.J_12_ITEMSTATBOOSTER);
-            this.panel4.Location = new System.Drawing.Point(-1, 379);
+            this.panel4.Location = new System.Drawing.Point(-1, 395);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1045, 58);
+            this.panel4.Size = new System.Drawing.Size(1062, 58);
             this.panel4.TabIndex = 68;
             // 
             // L_12_NEWALLOC_ITEMSTATBOOSTER
             // 
-            this.L_12_NEWALLOC_ITEMSTATBOOSTER.Location = new System.Drawing.Point(896, -1);
+            this.L_12_NEWALLOC_ITEMSTATBOOSTER.Location = new System.Drawing.Point(913, -1);
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.Name = "L_12_NEWALLOC_ITEMSTATBOOSTER";
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.Size = new System.Drawing.Size(149, 58);
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.TabIndex = 49;
@@ -1163,7 +1163,7 @@
             // X_SIM_BODY
             // 
             this.X_SIM_BODY.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_BODY.Location = new System.Drawing.Point(826, 28);
+            this.X_SIM_BODY.Location = new System.Drawing.Point(835, 28);
             this.X_SIM_BODY.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_BODY.Maximum = new decimal(new int[] {
             65535,
@@ -1185,7 +1185,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label15.Location = new System.Drawing.Point(826, 4);
+            this.label15.Location = new System.Drawing.Point(835, 4);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 25);
@@ -1196,7 +1196,7 @@
             // X_SIM_MOVE
             // 
             this.X_SIM_MOVE.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_MOVE.Location = new System.Drawing.Point(757, 28);
+            this.X_SIM_MOVE.Location = new System.Drawing.Point(766, 28);
             this.X_SIM_MOVE.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_MOVE.Maximum = new decimal(new int[] {
             65535,
@@ -1218,7 +1218,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label14.Location = new System.Drawing.Point(757, 4);
+            this.label14.Location = new System.Drawing.Point(766, 4);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 25);
@@ -1229,7 +1229,7 @@
             // X_SIM_LUCK
             // 
             this.X_SIM_LUCK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_LUCK.Location = new System.Drawing.Point(688, 28);
+            this.X_SIM_LUCK.Location = new System.Drawing.Point(697, 28);
             this.X_SIM_LUCK.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_LUCK.Maximum = new decimal(new int[] {
             65535,
@@ -1249,7 +1249,7 @@
             // X_SIM_SKILL
             // 
             this.X_SIM_SKILL.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_SKILL.Location = new System.Drawing.Point(413, 28);
+            this.X_SIM_SKILL.Location = new System.Drawing.Point(422, 28);
             this.X_SIM_SKILL.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SKILL.Maximum = new decimal(new int[] {
             65535,
@@ -1269,7 +1269,7 @@
             // X_SIM_RES
             // 
             this.X_SIM_RES.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_RES.Location = new System.Drawing.Point(620, 29);
+            this.X_SIM_RES.Location = new System.Drawing.Point(629, 29);
             this.X_SIM_RES.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_RES.Maximum = new decimal(new int[] {
             65535,
@@ -1289,7 +1289,7 @@
             // X_SIM_STR
             // 
             this.X_SIM_STR.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_STR.Location = new System.Drawing.Point(342, 29);
+            this.X_SIM_STR.Location = new System.Drawing.Point(351, 29);
             this.X_SIM_STR.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_STR.Maximum = new decimal(new int[] {
             65535,
@@ -1309,7 +1309,7 @@
             // X_SIM_DEF
             // 
             this.X_SIM_DEF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_DEF.Location = new System.Drawing.Point(552, 28);
+            this.X_SIM_DEF.Location = new System.Drawing.Point(561, 28);
             this.X_SIM_DEF.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_DEF.Maximum = new decimal(new int[] {
             65535,
@@ -1329,7 +1329,7 @@
             // X_SIM_HP
             // 
             this.X_SIM_HP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_HP.Location = new System.Drawing.Point(270, 28);
+            this.X_SIM_HP.Location = new System.Drawing.Point(279, 28);
             this.X_SIM_HP.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_HP.Maximum = new decimal(new int[] {
             65535,
@@ -1349,7 +1349,7 @@
             // X_SIM_SPD
             // 
             this.X_SIM_SPD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_SPD.Location = new System.Drawing.Point(482, 28);
+            this.X_SIM_SPD.Location = new System.Drawing.Point(491, 28);
             this.X_SIM_SPD.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SPD.Maximum = new decimal(new int[] {
             65535,
@@ -1371,7 +1371,7 @@
             this.label58.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label58.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label58.Location = new System.Drawing.Point(688, 4);
+            this.label58.Location = new System.Drawing.Point(697, 4);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 25);
@@ -1384,7 +1384,7 @@
             this.label60.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label60.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label60.Location = new System.Drawing.Point(620, 4);
+            this.label60.Location = new System.Drawing.Point(629, 4);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(64, 25);
@@ -1397,7 +1397,7 @@
             this.label61.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label61.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label61.Location = new System.Drawing.Point(552, 4);
+            this.label61.Location = new System.Drawing.Point(561, 4);
             this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(64, 25);
@@ -1410,7 +1410,7 @@
             this.label62.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label62.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label62.Location = new System.Drawing.Point(482, 4);
+            this.label62.Location = new System.Drawing.Point(491, 4);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(64, 25);
@@ -1423,7 +1423,7 @@
             this.label63.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label63.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label63.Location = new System.Drawing.Point(413, 2);
+            this.label63.Location = new System.Drawing.Point(422, 2);
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(64, 25);
@@ -1436,7 +1436,7 @@
             this.label64.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label64.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label64.Location = new System.Drawing.Point(342, 4);
+            this.label64.Location = new System.Drawing.Point(351, 4);
             this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(64, 25);
@@ -1449,7 +1449,7 @@
             this.label65.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label65.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label65.Location = new System.Drawing.Point(270, 4);
+            this.label65.Location = new System.Drawing.Point(279, 4);
             this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(64, 25);
@@ -1461,10 +1461,10 @@
             // 
             this.label67.AccessibleDescription = "";
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label67.Location = new System.Drawing.Point(126, 24);
+            this.label67.Location = new System.Drawing.Point(121, 28);
             this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(132, 32);
+            this.label67.Size = new System.Drawing.Size(149, 28);
             this.label67.TabIndex = 29;
             this.label67.Text = "能力補正値";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1472,7 +1472,7 @@
             // P12
             // 
             this.P12.Hexadecimal = true;
-            this.P12.Location = new System.Drawing.Point(128, 1);
+            this.P12.Location = new System.Drawing.Point(123, 1);
             this.P12.Margin = new System.Windows.Forms.Padding(2);
             this.P12.Maximum = new decimal(new int[] {
             -559939585,
@@ -1480,7 +1480,7 @@
             54,
             0});
             this.P12.Name = "P12";
-            this.P12.Size = new System.Drawing.Size(130, 25);
+            this.P12.Size = new System.Drawing.Size(147, 25);
             this.P12.TabIndex = 28;
             this.P12.ValueChanged += new System.EventHandler(this.P12_ValueChanged);
             // 
@@ -1517,8 +1517,22 @@
             this.panel3.Location = new System.Drawing.Point(1, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1044, 130);
+            this.panel3.Size = new System.Drawing.Size(1062, 130);
             this.panel3.TabIndex = 67;
+            // 
+            // HardCodingWarningLabel
+            // 
+            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
+            this.HardCodingWarningLabel.AutoSize = true;
+            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(1, 101);
+            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
+            this.HardCodingWarningLabel.Size = new System.Drawing.Size(109, 20);
+            this.HardCodingWarningLabel.TabIndex = 109;
+            this.HardCodingWarningLabel.Text = "[HardCoding]";
+            this.HardCodingWarningLabel.Visible = false;
+            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // L_6_ID
             // 
@@ -1547,7 +1561,7 @@
             // 
             this.L_0_TEXT_NAME1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(235, 8);
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(244, 8);
             this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
             this.L_0_TEXT_NAME1.Placeholder = "";
@@ -1734,7 +1748,7 @@
             this.J_11.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_11.Name = "J_11";
             this.J_11.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_11.Size = new System.Drawing.Size(265, 244);
+            this.J_11.Size = new System.Drawing.Size(281, 257);
             this.J_11.TabIndex = 66;
             this.J_11.TabStop = false;
             this.J_11.Text = "特性4";
@@ -1742,7 +1756,7 @@
             // L_11_BIT_80
             // 
             this.L_11_BIT_80.AutoSize = true;
-            this.L_11_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_80.Location = new System.Drawing.Point(8, 216);
             this.L_11_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_80.Name = "L_11_BIT_80";
@@ -1753,7 +1767,7 @@
             // L_11_BIT_40
             // 
             this.L_11_BIT_40.AutoSize = true;
-            this.L_11_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_40.Location = new System.Drawing.Point(8, 192);
             this.L_11_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_40.Name = "L_11_BIT_40";
@@ -1764,7 +1778,7 @@
             // L_11_BIT_20
             // 
             this.L_11_BIT_20.AutoSize = true;
-            this.L_11_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_20.Location = new System.Drawing.Point(8, 168);
             this.L_11_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_20.Name = "L_11_BIT_20";
@@ -1775,7 +1789,7 @@
             // L_11_BIT_10
             // 
             this.L_11_BIT_10.AutoSize = true;
-            this.L_11_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_10.Location = new System.Drawing.Point(8, 144);
             this.L_11_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_10.Name = "L_11_BIT_10";
@@ -1786,7 +1800,7 @@
             // L_11_BIT_08
             // 
             this.L_11_BIT_08.AutoSize = true;
-            this.L_11_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_08.Location = new System.Drawing.Point(8, 120);
             this.L_11_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_08.Name = "L_11_BIT_08";
@@ -1797,7 +1811,7 @@
             // L_11_BIT_04
             // 
             this.L_11_BIT_04.AutoSize = true;
-            this.L_11_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_04.Location = new System.Drawing.Point(8, 97);
             this.L_11_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_04.Name = "L_11_BIT_04";
@@ -1808,7 +1822,7 @@
             // L_11_BIT_02
             // 
             this.L_11_BIT_02.AutoSize = true;
-            this.L_11_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_02.Location = new System.Drawing.Point(8, 72);
             this.L_11_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_02.Name = "L_11_BIT_02";
@@ -1819,7 +1833,7 @@
             // L_11_BIT_01
             // 
             this.L_11_BIT_01.AutoSize = true;
-            this.L_11_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.L_11_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.L_11_BIT_01.Location = new System.Drawing.Point(8, 48);
             this.L_11_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_11_BIT_01.Name = "L_11_BIT_01";
@@ -1857,7 +1871,7 @@
             this.J_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_10.Name = "J_10";
             this.J_10.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_10.Size = new System.Drawing.Size(245, 244);
+            this.J_10.Size = new System.Drawing.Size(245, 257);
             this.J_10.TabIndex = 65;
             this.J_10.TabStop = false;
             this.J_10.Text = "特性3";
@@ -1865,8 +1879,8 @@
             // L_10_BIT_80
             // 
             this.L_10_BIT_80.AutoSize = true;
-            this.L_10_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_80.Location = new System.Drawing.Point(6, 214);
+            this.L_10_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_80.Location = new System.Drawing.Point(6, 216);
             this.L_10_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_80.Name = "L_10_BIT_80";
             this.L_10_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -1876,8 +1890,8 @@
             // L_10_BIT_40
             // 
             this.L_10_BIT_40.AutoSize = true;
-            this.L_10_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_40.Location = new System.Drawing.Point(6, 190);
+            this.L_10_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_40.Location = new System.Drawing.Point(6, 192);
             this.L_10_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_40.Name = "L_10_BIT_40";
             this.L_10_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -1887,8 +1901,8 @@
             // L_10_BIT_20
             // 
             this.L_10_BIT_20.AutoSize = true;
-            this.L_10_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_20.Location = new System.Drawing.Point(6, 166);
+            this.L_10_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_20.Location = new System.Drawing.Point(6, 168);
             this.L_10_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_20.Name = "L_10_BIT_20";
             this.L_10_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -1898,8 +1912,8 @@
             // L_10_BIT_10
             // 
             this.L_10_BIT_10.AutoSize = true;
-            this.L_10_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_10.Location = new System.Drawing.Point(6, 142);
+            this.L_10_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_10.Location = new System.Drawing.Point(6, 144);
             this.L_10_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_10.Name = "L_10_BIT_10";
             this.L_10_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -1909,8 +1923,8 @@
             // L_10_BIT_08
             // 
             this.L_10_BIT_08.AutoSize = true;
-            this.L_10_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_08.Location = new System.Drawing.Point(6, 119);
+            this.L_10_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_08.Location = new System.Drawing.Point(6, 121);
             this.L_10_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_08.Name = "L_10_BIT_08";
             this.L_10_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -1920,8 +1934,8 @@
             // L_10_BIT_04
             // 
             this.L_10_BIT_04.AutoSize = true;
-            this.L_10_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_04.Location = new System.Drawing.Point(6, 94);
+            this.L_10_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_04.Location = new System.Drawing.Point(6, 96);
             this.L_10_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_04.Name = "L_10_BIT_04";
             this.L_10_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -1931,8 +1945,8 @@
             // L_10_BIT_02
             // 
             this.L_10_BIT_02.AutoSize = true;
-            this.L_10_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_02.Location = new System.Drawing.Point(6, 70);
+            this.L_10_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_02.Location = new System.Drawing.Point(6, 72);
             this.L_10_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_02.Name = "L_10_BIT_02";
             this.L_10_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -1942,8 +1956,8 @@
             // L_10_BIT_01
             // 
             this.L_10_BIT_01.AutoSize = true;
-            this.L_10_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_10_BIT_01.Location = new System.Drawing.Point(6, 46);
+            this.L_10_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_10_BIT_01.Location = new System.Drawing.Point(6, 48);
             this.L_10_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_10_BIT_01.Name = "L_10_BIT_01";
             this.L_10_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -1980,7 +1994,7 @@
             this.J_9.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_9.Name = "J_9";
             this.J_9.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_9.Size = new System.Drawing.Size(286, 244);
+            this.J_9.Size = new System.Drawing.Size(286, 257);
             this.J_9.TabIndex = 64;
             this.J_9.TabStop = false;
             this.J_9.Text = "特性2";
@@ -1988,8 +2002,8 @@
             // L_9_BIT_80
             // 
             this.L_9_BIT_80.AutoSize = true;
-            this.L_9_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_80.Location = new System.Drawing.Point(7, 215);
+            this.L_9_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_80.Location = new System.Drawing.Point(7, 217);
             this.L_9_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_80.Name = "L_9_BIT_80";
             this.L_9_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -1999,8 +2013,8 @@
             // L_9_BIT_40
             // 
             this.L_9_BIT_40.AutoSize = true;
-            this.L_9_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_40.Location = new System.Drawing.Point(7, 190);
+            this.L_9_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_40.Location = new System.Drawing.Point(7, 192);
             this.L_9_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_40.Name = "L_9_BIT_40";
             this.L_9_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -2010,8 +2024,8 @@
             // L_9_BIT_20
             // 
             this.L_9_BIT_20.AutoSize = true;
-            this.L_9_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_20.Location = new System.Drawing.Point(7, 166);
+            this.L_9_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_20.Location = new System.Drawing.Point(7, 168);
             this.L_9_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_20.Name = "L_9_BIT_20";
             this.L_9_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -2021,8 +2035,8 @@
             // L_9_BIT_10
             // 
             this.L_9_BIT_10.AutoSize = true;
-            this.L_9_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_10.Location = new System.Drawing.Point(7, 142);
+            this.L_9_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_10.Location = new System.Drawing.Point(7, 144);
             this.L_9_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_10.Name = "L_9_BIT_10";
             this.L_9_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -2032,8 +2046,8 @@
             // L_9_BIT_08
             // 
             this.L_9_BIT_08.AutoSize = true;
-            this.L_9_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_08.Location = new System.Drawing.Point(7, 118);
+            this.L_9_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_08.Location = new System.Drawing.Point(7, 120);
             this.L_9_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_08.Name = "L_9_BIT_08";
             this.L_9_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -2043,8 +2057,8 @@
             // L_9_BIT_04
             // 
             this.L_9_BIT_04.AutoSize = true;
-            this.L_9_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_04.Location = new System.Drawing.Point(7, 94);
+            this.L_9_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_04.Location = new System.Drawing.Point(7, 96);
             this.L_9_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_04.Name = "L_9_BIT_04";
             this.L_9_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -2054,8 +2068,8 @@
             // L_9_BIT_02
             // 
             this.L_9_BIT_02.AutoSize = true;
-            this.L_9_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_02.Location = new System.Drawing.Point(7, 70);
+            this.L_9_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_02.Location = new System.Drawing.Point(7, 72);
             this.L_9_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_02.Name = "L_9_BIT_02";
             this.L_9_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -2065,8 +2079,8 @@
             // L_9_BIT_01
             // 
             this.L_9_BIT_01.AutoSize = true;
-            this.L_9_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_9_BIT_01.Location = new System.Drawing.Point(7, 46);
+            this.L_9_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_9_BIT_01.Location = new System.Drawing.Point(7, 48);
             this.L_9_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_9_BIT_01.Name = "L_9_BIT_01";
             this.L_9_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -2103,7 +2117,7 @@
             this.J_8.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.J_8.Name = "J_8";
             this.J_8.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.J_8.Size = new System.Drawing.Size(230, 244);
+            this.J_8.Size = new System.Drawing.Size(230, 257);
             this.J_8.TabIndex = 63;
             this.J_8.TabStop = false;
             this.J_8.Text = "特性1";
@@ -2111,8 +2125,8 @@
             // L_8_BIT_80
             // 
             this.L_8_BIT_80.AutoSize = true;
-            this.L_8_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_80.Location = new System.Drawing.Point(6, 215);
+            this.L_8_BIT_80.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_80.Location = new System.Drawing.Point(6, 217);
             this.L_8_BIT_80.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_80.Name = "L_8_BIT_80";
             this.L_8_BIT_80.Size = new System.Drawing.Size(22, 21);
@@ -2122,8 +2136,8 @@
             // L_8_BIT_40
             // 
             this.L_8_BIT_40.AutoSize = true;
-            this.L_8_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_40.Location = new System.Drawing.Point(6, 191);
+            this.L_8_BIT_40.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_40.Location = new System.Drawing.Point(6, 193);
             this.L_8_BIT_40.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_40.Name = "L_8_BIT_40";
             this.L_8_BIT_40.Size = new System.Drawing.Size(22, 21);
@@ -2133,8 +2147,8 @@
             // L_8_BIT_20
             // 
             this.L_8_BIT_20.AutoSize = true;
-            this.L_8_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_20.Location = new System.Drawing.Point(6, 167);
+            this.L_8_BIT_20.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_20.Location = new System.Drawing.Point(6, 169);
             this.L_8_BIT_20.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_20.Name = "L_8_BIT_20";
             this.L_8_BIT_20.Size = new System.Drawing.Size(22, 21);
@@ -2144,8 +2158,8 @@
             // L_8_BIT_10
             // 
             this.L_8_BIT_10.AutoSize = true;
-            this.L_8_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_10.Location = new System.Drawing.Point(6, 143);
+            this.L_8_BIT_10.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_10.Location = new System.Drawing.Point(6, 145);
             this.L_8_BIT_10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_10.Name = "L_8_BIT_10";
             this.L_8_BIT_10.Size = new System.Drawing.Size(22, 21);
@@ -2155,8 +2169,8 @@
             // L_8_BIT_08
             // 
             this.L_8_BIT_08.AutoSize = true;
-            this.L_8_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_08.Location = new System.Drawing.Point(6, 119);
+            this.L_8_BIT_08.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_08.Location = new System.Drawing.Point(6, 121);
             this.L_8_BIT_08.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_08.Name = "L_8_BIT_08";
             this.L_8_BIT_08.Size = new System.Drawing.Size(22, 21);
@@ -2166,8 +2180,8 @@
             // L_8_BIT_04
             // 
             this.L_8_BIT_04.AutoSize = true;
-            this.L_8_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_04.Location = new System.Drawing.Point(6, 95);
+            this.L_8_BIT_04.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_04.Location = new System.Drawing.Point(6, 97);
             this.L_8_BIT_04.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_04.Name = "L_8_BIT_04";
             this.L_8_BIT_04.Size = new System.Drawing.Size(22, 21);
@@ -2177,8 +2191,8 @@
             // L_8_BIT_02
             // 
             this.L_8_BIT_02.AutoSize = true;
-            this.L_8_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_02.Location = new System.Drawing.Point(6, 71);
+            this.L_8_BIT_02.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_02.Location = new System.Drawing.Point(6, 73);
             this.L_8_BIT_02.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_02.Name = "L_8_BIT_02";
             this.L_8_BIT_02.Size = new System.Drawing.Size(22, 21);
@@ -2188,8 +2202,8 @@
             // L_8_BIT_01
             // 
             this.L_8_BIT_01.AutoSize = true;
-            this.L_8_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.L_8_BIT_01.Location = new System.Drawing.Point(6, 47);
+            this.L_8_BIT_01.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.L_8_BIT_01.Location = new System.Drawing.Point(6, 49);
             this.L_8_BIT_01.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_8_BIT_01.Name = "L_8_BIT_01";
             this.L_8_BIT_01.Size = new System.Drawing.Size(22, 21);
@@ -2209,20 +2223,6 @@
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(60, 25);
             this.B8.TabIndex = 12;
-            // 
-            // HardCodingWarningLabel
-            // 
-            this.HardCodingWarningLabel.AccessibleDescription = "@HARDCODING_WARNING";
-            this.HardCodingWarningLabel.AutoSize = true;
-            this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.HardCodingWarningLabel.Location = new System.Drawing.Point(1, 101);
-            this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
-            this.HardCodingWarningLabel.Size = new System.Drawing.Size(168, 20);
-            this.HardCodingWarningLabel.TabIndex = 109;
-            this.HardCodingWarningLabel.Text = "[HardCoding]";
-            this.HardCodingWarningLabel.Visible = false;
-            this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
             // ItemFE6Form
             // 

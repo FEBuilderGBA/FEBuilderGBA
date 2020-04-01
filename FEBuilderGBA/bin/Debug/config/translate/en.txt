@@ -1357,8 +1357,8 @@ Weather
 :06=砂嵐
 06=Sandstorm
 
-:07=曇り
-07=Cloudy
+:07=曇り(非推奨)
+07=Cloudy(Don't use)
 
 :天気を変更(次のターンから適用されます。)
 Change weather (applied from next turn)
@@ -5020,6 +5020,9 @@ Specify bonuses to automatically recover bat status such as poison and sleep for
 :このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n
 There is hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
 
+:壊れる壁と古木のHPを設定します。\r\n最大で120まで設定できます。\r\n
+Set broken wall and Srag HP.\r\nUp to 120 can be set.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -5073,6 +5076,12 @@ To shorten the list, please set termination: 0.
 
 :特効クラス
 Special class
+
+:選択アイテムの分離独立
+Separation of selected items.
+
+:このデータは、複数のアイテムで参照されています。
+This data is referenced by multiple items.
 
 :特効指定
 Specific Effectiveness Designation
@@ -5153,7 +5162,7 @@ Effectiveness\r\nAddress
 New\r\nStat Booster
 
 :能力補正値
-Stat Boosts Pointer
+Stat Booster
 
 :能力修正\r\n格納アドレス
 Stat Boosts\r\nAddress
@@ -6796,6 +6805,12 @@ Easy Mode Penalty
 :章オープニングBGM
 Chapter Opening BGM
 
+:経験評価
+Experience evaluation
+
+:攻略評価
+Tactics evaluation
+
 :00=0章
 00=Ch0
 
@@ -7200,12 +7215,6 @@ Palette (Plist)
 
 :オブジェクトタイプ(Plist)
 Object type (Plist)
-
-:攻略評価
-Tactics evaluation
-
-:経験評価
-Experience evaluation
 
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
@@ -10152,9 +10161,6 @@ Not a Wav file. Data is too small.
 
 :Waveファイルではありません. data_chunk_size({0})が小さすぎます
 Not a Wav file. data_chunk_size ({0}) is too small.
-
-:Waveファイルが高音質すぎます。{0}hz\r\n品質は、8bit 12khz monoぐらいにしてください。
-Wave file is too high quality.{0} hz.\r\nQuality should be about 8bit 12khz mono.
 
 :Waveファイルが高音質すぎます。{0}bit\r\n品質は、8bit 12khz monoぐらいにしてください。
 Wave file is too high quality.{0} bit.\r\nQuality should be about 8bit 12khz mono.

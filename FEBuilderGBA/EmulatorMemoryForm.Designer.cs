@@ -5674,7 +5674,7 @@
             "04=雨",
             "05=マグマ",
             "06=砂嵐",
-            "07=曇り"});
+            "07=曇り(非推奨)"});
             this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
             this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";

@@ -15,7 +15,7 @@
 15=Pegasus Unit Icon	Displays a Pegasus icon in the Rescue field on the Status menu.\r\nDefault set to pegasus-riding units.
 16=Lord Unit	Lord unit.\r\nDefault set to the Lord and Master Lord class.
 17=Female	Sets female status.\r\nDefault set to units and unused by classes.
-18=Boss	Flag	Sets importance and displays the boss marker on a unit's map sprite.\r\nIf set on an enemy, bonus experience will be earned in combat.
+18=Boss	Sets importance and displays the boss marker on a unit's map sprite.\r\nIf set on an enemy, bonus experience will be earned in combat.
 //特性3
 21=Roy Lock	Allows equipping of weapons locked to the Roy lock.\r\nBy default this unlocks the Rapier and Binding Blade.
 22=Myrmidon/Swordmaster	Allows equipping of Myrmidon/Swordmaster Weapons.\r\nBy default, this unlocks the Wo Dao.

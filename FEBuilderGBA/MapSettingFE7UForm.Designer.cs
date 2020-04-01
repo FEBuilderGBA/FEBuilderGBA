@@ -2621,6 +2621,7 @@
             // 
             // J_44
             // 
+            this.J_44.AccessibleDescription = "@WALL_OR_SNAG_HP";
             this.J_44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_44.Location = new System.Drawing.Point(6, 872);
             this.J_44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -2994,7 +2995,7 @@
             "04=雨",
             "05=マグマ",
             "06=砂嵐",
-            "07=曇り"});
+            "07=曇り(非推奨)"});
             this.L_18_COMBO.Location = new System.Drawing.Point(295, 432);
             this.L_18_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_18_COMBO.Name = "L_18_COMBO";

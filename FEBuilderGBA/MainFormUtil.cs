@@ -563,7 +563,7 @@ namespace FEBuilderGBA
             f.Show();
         }
 
-        public static Process ProgramRunAs(string appPath, string args, int waitMainwindowMiriSec = 1000)
+        public static Process ProgramRunAs(string appPath, string args, int waitMainwindowMiriSec = 60000)
         {
             //see
             //http://www.slotware.net/blog/2009/11/processstart.html
@@ -583,14 +583,21 @@ namespace FEBuilderGBA
             //ウィンドウハンドルが取得できるか、
             //生成したプロセスが終了するまで待ってみる。
             int waitLoopMiriSec = 0;
-            while (p.MainWindowHandle == IntPtr.Zero
-                && p.HasExited == false)
+            while (true)
             {
+                if (p.HasExited == true)
+                {//プロセスは既に終了した
+                    break;
+                }
+                if (p.MainWindowHandle != IntPtr.Zero)
+                {//メインハンドルが作られた
+                    break;
+                }
+
                 System.Threading.Thread.Sleep(1);
-                p.Refresh();
-                waitLoopMiriSec += 1000;
+                waitLoopMiriSec += 1;
                 if (waitLoopMiriSec > waitMainwindowMiriSec)
-                {
+                {//タイムオーバー
                     break;
                 }
             }

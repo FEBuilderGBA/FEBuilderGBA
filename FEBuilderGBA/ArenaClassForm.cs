@@ -78,7 +78,7 @@ namespace FEBuilderGBA
 
         private void ArenaClassForm_Load(object sender, EventArgs e)
         {
-
+            this.MaximizeBox = true;
         }
     }
 }

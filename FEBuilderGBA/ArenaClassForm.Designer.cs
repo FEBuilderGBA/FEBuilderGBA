@@ -54,6 +54,7 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -63,18 +64,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(308, 576);
+            this.AddressList.Size = new System.Drawing.Size(305, 608);
             this.AddressList.TabIndex = 0;
             // 
             // panel4
@@ -85,10 +87,11 @@
             this.panel4.Controls.Add(this.L_0_CLASS);
             this.panel4.Controls.Add(this.B0);
             this.panel4.Controls.Add(this.J_0_CLASS);
-            this.panel4.Location = new System.Drawing.Point(320, 77);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 34);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(858, 610);
+            this.panel4.Size = new System.Drawing.Size(878, 632);
             this.panel4.TabIndex = 88;
             // 
             // L_0_CLASSICON
@@ -182,33 +185,35 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressList);
             this.panel6.Controls.Add(this.AddressListExpandsButton);
             this.panel6.Controls.Add(this.LabelFilter);
-            this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(12, 46);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 34);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(307, 641);
+            this.panel6.Size = new System.Drawing.Size(307, 666);
             this.panel6.TabIndex = 89;
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(2, 607);
+            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 634);
             this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(301, 30);
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(305, 30);
             this.AddressListExpandsButton.TabIndex = 114;
             this.AddressListExpandsButton.Text = "リストの拡張";
             this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(307, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(305, 26);
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -292,10 +297,11 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.ReadCount);
             this.panel3.Controls.Add(this.ReadStartAddress);
-            this.panel3.Location = new System.Drawing.Point(12, 10);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1167, 34);
+            this.panel3.Size = new System.Drawing.Size(1185, 34);
             this.panel3.TabIndex = 87;
             // 
             // label2
@@ -371,11 +377,22 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(320, 44);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(859, 34);
+            this.panel5.Size = new System.Drawing.Size(878, 34);
             this.panel5.TabIndex = 86;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(307, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(878, 666);
+            this.panel1.TabIndex = 90;
             // 
             // ArenaClassForm
             // 
@@ -383,10 +400,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1185, 700);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ArenaClassForm";
             this.Text = "闘技場 出現クラス";
@@ -402,6 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -434,5 +451,6 @@
         private System.Windows.Forms.Label X_FE8J_COMMENT;
         private System.Windows.Forms.Label label2;
         private InterpolatedPictureBox L_0_CLASSICON;
+        private System.Windows.Forms.Panel panel1;
     }
 }

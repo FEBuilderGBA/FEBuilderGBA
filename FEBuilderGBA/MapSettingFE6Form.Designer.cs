@@ -33,6 +33,8 @@
             this.B24 = new System.Windows.Forms.NumericUpDown();
             this.J_24_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
             this.L_54_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
@@ -171,8 +173,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.B24)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_54_GENERICENEMYPORTRAIT)).BeginInit();
@@ -412,6 +412,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1460, 914);
             this.panel3.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleDescription = "@MAPSETTING_RANK_EXP";
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(586, 718);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(310, 32);
+            this.label6.TabIndex = 353;
+            this.label6.Text = "経験評価";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AccessibleDescription = "@MAPSETTING_RANK_TACT";
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(586, 526);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(310, 32);
+            this.label5.TabIndex = 352;
+            this.label5.Text = "攻略評価";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -1303,6 +1327,7 @@
             // 
             // J_25
             // 
+            this.J_25.AccessibleDescription = "@WALL_OR_SNAG_HP";
             this.J_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_25.Location = new System.Drawing.Point(6, 776);
             this.J_25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1574,7 +1599,7 @@
             "04=雨",
             "05=マグマ",
             "06=砂嵐",
-            "07=曇り"});
+            "07=曇り(非推奨)"});
             this.L_17_COMBO.Location = new System.Drawing.Point(306, 530);
             this.L_17_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_17_COMBO.Name = "L_17_COMBO";
@@ -2119,30 +2144,6 @@
             this.AddressListExpandsButton_255.TabIndex = 152;
             this.AddressListExpandsButton_255.Text = "リストの拡張";
             this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AccessibleDescription = "@MAPSETTING_RANK_TACT";
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(586, 526);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(310, 32);
-            this.label5.TabIndex = 352;
-            this.label5.Text = "攻略評価";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleDescription = "@MAPSETTING_RANK_EXP";
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(586, 718);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(310, 32);
-            this.label6.TabIndex = 353;
-            this.label6.Text = "経験評価";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapSettingFE6Form
             // 
