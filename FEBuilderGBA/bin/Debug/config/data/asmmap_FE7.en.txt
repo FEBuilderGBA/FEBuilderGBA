@@ -321,8 +321,6 @@
 0804A254	NewMenu_DefaultChild Same as NewMenu_Default, except the E_Menu has a parent	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=Parent 6C	{U}
 08035CC4	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{J}
 080357EC	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{U}
-080070AC	GetSaveDataLocation	{J}
-0800721C	GetSaveDataLocation	{U}
 080A7BB4	LoadLocalEventIds	{J}
 080A722C	LoadLocalEventIds	{U}
 0809F384	LoadGlobalEventIds	{J}
@@ -4830,3 +4828,5 @@
 0800af74	Function to operate the event instruction.	r0=Event instruction pointer: POINTER_EVENT.	r1=Argument? 1-3.	{U}
 0808667C	DeletePlayerPhaseInterface6Cs	{J}
 08085C7C	DeletePlayerPhaseInterface6Cs	{U}
+080070AC	ShouldPortraitBeSmol	{J}
+0800721C	ShouldPortraitBeSmol	{U}

@@ -272,6 +272,7 @@ namespace FEBuilderGBA
         void MargePatch(string custombuild, string curentPatchFileName, uint takeoverSkillAssignment)
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("UPDATE_UNINSTALL:0=" + curentPatchFileName);
             string[] lines = File.ReadAllLines(curentPatchFileName);
             foreach (string line in lines)
             {

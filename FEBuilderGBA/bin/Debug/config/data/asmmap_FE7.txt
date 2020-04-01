@@ -359,8 +359,6 @@
 080357EC	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{U}
 
 //from https://doc.feuniverse.us/static/stan/RealSaveData.txt
-080070AC	GetSaveDataLocation	{J}
-0800721C	GetSaveDataLocation	{U}
 080A7BB4	LoadLocalEventIds	{J}
 080A722C	LoadLocalEventIds	{U}
 0809F384	LoadGlobalEventIds	{J}
@@ -5138,3 +5136,7 @@
 0800AEA4	Call_ExecuteEvent	r0=event	r1=slot	{J}
 0800AF5C	CallExecuteEvent_Slot3	r0=event	{U}
 0800AF68	Call_ExecuteEvent	r0=event	r1=slot	{U}
+080070AC	ShouldPortraitBeSmol	{J}
+0800721C	ShouldPortraitBeSmol	{U}
+08007160	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
+080072D0	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}

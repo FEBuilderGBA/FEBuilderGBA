@@ -12717,3 +12717,5 @@
 0807AF1C	Show_map_emotion_UpdateLoop	{J}
 0805999C	弓兵の戦闘アニメのパレットを強制上書き指定	{U}
 0805A740	弓兵の戦闘アニメのパレットを強制上書き指定	{J}
+08005CA4	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
+08005BA8	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
