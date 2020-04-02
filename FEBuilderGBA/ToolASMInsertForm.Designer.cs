@@ -85,7 +85,8 @@
             "0=中間ファイルは利用しないので消去する",
             "1=.sym.txtとしてファイルにシンボルを保存する",
             "2=ELFを保存する",
-            "3=ELFとシンボルを両方とも保存"});
+            "3=ELFとシンボルを両方とも保存",
+            "4=lyn.eventとして保存する"});
             this.ELFComboBox.Location = new System.Drawing.Point(304, 165);
             this.ELFComboBox.Name = "ELFComboBox";
             this.ELFComboBox.Size = new System.Drawing.Size(473, 26);

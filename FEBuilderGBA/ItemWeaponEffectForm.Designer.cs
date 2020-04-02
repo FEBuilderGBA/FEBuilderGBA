@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.AddressListExpandsButton_256 = new System.Windows.Forms.Button();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_2_COMBO = new System.Windows.Forms.ComboBox();
             this.L_6_COMBO = new System.Windows.Forms.ComboBox();
             this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B1 = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +57,6 @@
             this.L_13_COMBO = new System.Windows.Forms.ComboBox();
             this.L_12_COMBO = new System.Windows.Forms.ComboBox();
             this.L_4_COMBO = new System.Windows.Forms.ComboBox();
-            this.L_0_TEXT = new FEBuilderGBA.TextBoxEx();
             this.B15 = new System.Windows.Forms.NumericUpDown();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.B13 = new System.Windows.Forms.NumericUpDown();
@@ -77,7 +77,7 @@
             this.J_3 = new System.Windows.Forms.Label();
             this.J_2 = new System.Windows.Forms.Label();
             this.J_0_ITEM = new System.Windows.Forms.Label();
-            this.L_2_COMBO = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -97,52 +97,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
-            this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(14, 42);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_256);
+            this.panel6.Controls.Add(this.LabelFilter);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 30);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(276, 512);
+            this.panel6.Size = new System.Drawing.Size(276, 735);
             this.panel6.TabIndex = 149;
-            // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 484);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(272, 30);
-            this.AddressListExpandsButton.TabIndex = 144;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
-            // 
-            // LabelFilter
-            // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, 0);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(276, 33);
-            this.LabelFilter.TabIndex = 106;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 32);
+            this.AddressList.Location = new System.Drawing.Point(0, 33);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(275, 454);
+            this.AddressList.Size = new System.Drawing.Size(274, 670);
             this.AddressList.TabIndex = 143;
+            // 
+            // AddressListExpandsButton_256
+            // 
+            this.AddressListExpandsButton_256.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton_256.Location = new System.Drawing.Point(0, 703);
+            this.AddressListExpandsButton_256.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_256.Name = "AddressListExpandsButton_256";
+            this.AddressListExpandsButton_256.Size = new System.Drawing.Size(274, 30);
+            this.AddressListExpandsButton_256.TabIndex = 144;
+            this.AddressListExpandsButton_256.Text = "リストの拡張";
+            this.AddressListExpandsButton_256.UseVisualStyleBackColor = true;
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(274, 33);
+            this.LabelFilter.TabIndex = 106;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -152,10 +156,11 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ReadCount);
             this.panel1.Controls.Add(this.ReadStartAddress);
-            this.panel1.Location = new System.Drawing.Point(14, 13);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 30);
+            this.panel1.Size = new System.Drawing.Size(1286, 30);
             this.panel1.TabIndex = 147;
             // 
             // ReloadListButton
@@ -222,10 +227,11 @@
             this.AddressPanel.Controls.Add(this.WriteButton);
             this.AddressPanel.Controls.Add(this.Address);
             this.AddressPanel.Controls.Add(this.label55);
-            this.AddressPanel.Location = new System.Drawing.Point(291, 43);
+            this.AddressPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddressPanel.Location = new System.Drawing.Point(0, 0);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(2);
             this.AddressPanel.Name = "AddressPanel";
-            this.AddressPanel.Size = new System.Drawing.Size(981, 30);
+            this.AddressPanel.Size = new System.Drawing.Size(1010, 30);
             this.AddressPanel.TabIndex = 148;
             // 
             // BlockSize
@@ -320,7 +326,6 @@
             this.panel2.Controls.Add(this.L_13_COMBO);
             this.panel2.Controls.Add(this.L_12_COMBO);
             this.panel2.Controls.Add(this.L_4_COMBO);
-            this.panel2.Controls.Add(this.L_0_TEXT);
             this.panel2.Controls.Add(this.B15);
             this.panel2.Controls.Add(this.B14);
             this.panel2.Controls.Add(this.B13);
@@ -341,11 +346,25 @@
             this.panel2.Controls.Add(this.J_3);
             this.panel2.Controls.Add(this.J_2);
             this.panel2.Controls.Add(this.J_0_ITEM);
-            this.panel2.Location = new System.Drawing.Point(291, 74);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(980, 474);
+            this.panel2.Size = new System.Drawing.Size(1010, 705);
             this.panel2.TabIndex = 150;
+            // 
+            // L_2_COMBO
+            // 
+            this.L_2_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_2_COMBO.FormattingEnabled = true;
+            this.L_2_COMBO.Items.AddRange(new object[] {
+            "1=マップだけのアニメーション",
+            "2=マップと戦闘アニメーション"});
+            this.L_2_COMBO.Location = new System.Drawing.Point(421, 79);
+            this.L_2_COMBO.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_COMBO.Name = "L_2_COMBO";
+            this.L_2_COMBO.Size = new System.Drawing.Size(545, 26);
+            this.L_2_COMBO.TabIndex = 105;
             // 
             // L_6_COMBO
             // 
@@ -395,9 +414,8 @@
             // 
             // L_0_ITEM
             // 
-            this.L_0_ITEM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_ITEM.ErrorMessage = "";
-            this.L_0_ITEM.Location = new System.Drawing.Point(409, 18);
+            this.L_0_ITEM.Location = new System.Drawing.Point(420, 18);
             this.L_0_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_ITEM.Name = "L_0_ITEM";
             this.L_0_ITEM.Placeholder = "";
@@ -459,18 +477,6 @@
             this.L_4_COMBO.Name = "L_4_COMBO";
             this.L_4_COMBO.Size = new System.Drawing.Size(545, 26);
             this.L_4_COMBO.TabIndex = 79;
-            // 
-            // L_0_TEXT
-            // 
-            this.L_0_TEXT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_0_TEXT.ErrorMessage = "";
-            this.L_0_TEXT.Location = new System.Drawing.Point(271, -96);
-            this.L_0_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_TEXT.Name = "L_0_TEXT";
-            this.L_0_TEXT.Placeholder = "";
-            this.L_0_TEXT.ReadOnly = true;
-            this.L_0_TEXT.Size = new System.Drawing.Size(162, 25);
-            this.L_0_TEXT.TabIndex = 78;
             // 
             // B15
             // 
@@ -722,29 +728,25 @@
             this.J_0_ITEM.Text = "アイテムID";
             this.J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_2_COMBO
+            // panel3
             // 
-            this.L_2_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_2_COMBO.FormattingEnabled = true;
-            this.L_2_COMBO.Items.AddRange(new object[] {
-            "1=マップだけのアニメーション",
-            "2=マップと戦闘アニメーション"});
-            this.L_2_COMBO.Location = new System.Drawing.Point(421, 79);
-            this.L_2_COMBO.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_COMBO.Name = "L_2_COMBO";
-            this.L_2_COMBO.Size = new System.Drawing.Size(545, 26);
-            this.L_2_COMBO.TabIndex = 105;
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.AddressPanel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(276, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1010, 735);
+            this.panel3.TabIndex = 151;
             // 
             // ItemWeaponEffectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1286, 556);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1286, 765);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.AddressPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ItemWeaponEffectForm";
             this.Text = "アイテムエフェクト";
@@ -770,6 +772,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -779,7 +782,7 @@
         private System.Windows.Forms.Panel panel6;
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
-        private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.Button AddressListExpandsButton_256;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label1;
@@ -819,12 +822,12 @@
         private System.Windows.Forms.ComboBox L_13_COMBO;
         private System.Windows.Forms.ComboBox L_12_COMBO;
         private System.Windows.Forms.ComboBox L_4_COMBO;
-        private FEBuilderGBA.TextBoxEx L_0_TEXT;
         private FEBuilderGBA.TextBoxEx L_0_ITEM;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.Label J_1;
         private InterpolatedPictureBox L_0_ITEMICON;
         private System.Windows.Forms.ComboBox L_6_COMBO;
         private System.Windows.Forms.ComboBox L_2_COMBO;
+        private System.Windows.Forms.Panel panel3;
     }
 }

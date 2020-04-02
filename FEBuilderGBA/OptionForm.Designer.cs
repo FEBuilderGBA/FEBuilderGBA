@@ -30,50 +30,43 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePath = new System.Windows.Forms.TabPage();
+            this.sox_button = new System.Windows.Forms.Button();
             this.ERROR_IsOldEA = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
+            this.gba_mus_riper_button = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.X_EXPLAIN_NECESSARY_PROGRAM = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
             this.mid2agb_default = new System.Windows.Forms.CheckBox();
+            this.X_EXPLAIN_MUSICTOOL = new System.Windows.Forms.Label();
             this.mid2agb_button = new System.Windows.Forms.Button();
-            this.mid2agb = new FEBuilderGBA.TextBoxEx();
+            this.label63 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.X_EXPLAIN_MID2AGB = new System.Windows.Forms.Label();
             this.X_EXPLAIN_EA = new System.Windows.Forms.Label();
             this.X_EXPLAIN_SAPPY = new System.Windows.Forms.Label();
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER = new System.Windows.Forms.Label();
             this.X_EXPLAIN_VBA_M = new System.Windows.Forms.Label();
             this.event_assembler_button = new System.Windows.Forms.Button();
-            this.event_assembler = new FEBuilderGBA.TextBoxEx();
             this.label41 = new System.Windows.Forms.Label();
             this.sappy_button = new System.Windows.Forms.Button();
-            this.sappy = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
             this.emulator2_button = new System.Windows.Forms.Button();
-            this.emulator2 = new FEBuilderGBA.TextBoxEx();
             this.label2 = new System.Windows.Forms.Label();
             this.emulator_button = new System.Windows.Forms.Button();
-            this.emulator = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPagePath2 = new System.Windows.Forms.TabPage();
-            this.sox_button = new System.Windows.Forms.Button();
-            this.sox = new FEBuilderGBA.TextBoxEx();
-            this.label65 = new System.Windows.Forms.Label();
-            this.gba_mus_riper_button = new System.Windows.Forms.Button();
+            this.FECLIB_button = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.X_EXPLAIN_CLANG = new System.Windows.Forms.Label();
             this.python3_button = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
-            this.gba_mus_riper = new FEBuilderGBA.TextBoxEx();
-            this.label53 = new System.Windows.Forms.Label();
+            this.X_EXPLAIN_DECOMPILER = new System.Windows.Forms.Label();
             this.retdec_button = new System.Windows.Forms.Button();
-            this.label63 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.J_SKILL = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.binary_editor_button = new System.Windows.Forms.Button();
+            this.X_EXPLAIN_COMPILER = new System.Windows.Forms.Label();
+            this.X_EXPLAIN_PROGRAMN = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.program1_button = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
@@ -84,15 +77,6 @@
             this.goldroad_asm_button = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.program3_button = new System.Windows.Forms.Button();
-            this.python3 = new FEBuilderGBA.TextBoxEx();
-            this.retdec = new FEBuilderGBA.TextBoxEx();
-            this.CFLAGS = new FEBuilderGBA.TextBoxEx();
-            this.binary_editor = new FEBuilderGBA.TextBoxEx();
-            this.program1 = new FEBuilderGBA.TextBoxEx();
-            this.program2 = new FEBuilderGBA.TextBoxEx();
-            this.goldroad_asm = new FEBuilderGBA.TextBoxEx();
-            this.devkitpro_eabi = new FEBuilderGBA.TextBoxEx();
-            this.program3 = new FEBuilderGBA.TextBoxEx();
             this.tabPageColor = new System.Windows.Forms.TabPage();
             this.Color_ControlComment_ForeColor_reset_button = new System.Windows.Forms.Button();
             this.Color_ControlComment_ForeColor_button = new System.Windows.Forms.Button();
@@ -176,22 +160,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.ShortCutValue1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.ShortCutKey15 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey14 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey13 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey12 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey11 = new FEBuilderGBA.TextBoxEx();
-            this.KeyFinder = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey10 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey9 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey8 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey7 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey6 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey5 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey4 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey3 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
-            this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
             this.tabPageFunc1 = new System.Windows.Forms.TabPage();
             this.explain_func_alloc_program_area_option = new System.Windows.Forms.Label();
             this.func_alloc_program_area_option = new System.Windows.Forms.ComboBox();
@@ -215,6 +183,8 @@
             this.explain_func_rom_extends_option = new System.Windows.Forms.Label();
             this.func_rom_extends_option = new System.Windows.Forms.ComboBox();
             this.tabPageFunc2 = new System.Windows.Forms.TabPage();
+            this.func_show_song_table_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_song_table_extends = new System.Windows.Forms.Label();
             this.func_show_fe76_item_icon_extends = new System.Windows.Forms.ComboBox();
             this.explain_func_show_fe76_item_icon_extends = new System.Windows.Forms.Label();
             this.func_show_worldmap_path_extends = new System.Windows.Forms.ComboBox();
@@ -257,8 +227,38 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.func_show_song_table_extends = new System.Windows.Forms.ComboBox();
-            this.explain_func_show_song_table_extends = new System.Windows.Forms.Label();
+            this.sox = new FEBuilderGBA.TextBoxEx();
+            this.mid2agb = new FEBuilderGBA.TextBoxEx();
+            this.gba_mus_riper = new FEBuilderGBA.TextBoxEx();
+            this.event_assembler = new FEBuilderGBA.TextBoxEx();
+            this.sappy = new FEBuilderGBA.TextBoxEx();
+            this.emulator2 = new FEBuilderGBA.TextBoxEx();
+            this.emulator = new FEBuilderGBA.TextBoxEx();
+            this.FECLIB = new FEBuilderGBA.TextBoxEx();
+            this.python3 = new FEBuilderGBA.TextBoxEx();
+            this.retdec = new FEBuilderGBA.TextBoxEx();
+            this.CFLAGS = new FEBuilderGBA.TextBoxEx();
+            this.program1 = new FEBuilderGBA.TextBoxEx();
+            this.program2 = new FEBuilderGBA.TextBoxEx();
+            this.goldroad_asm = new FEBuilderGBA.TextBoxEx();
+            this.devkitpro_eabi = new FEBuilderGBA.TextBoxEx();
+            this.program3 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey15 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey14 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey13 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey12 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey11 = new FEBuilderGBA.TextBoxEx();
+            this.KeyFinder = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey10 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey9 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey8 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey7 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey6 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey5 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey4 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey3 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
+            this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -288,15 +288,22 @@
             // tabPagePath
             // 
             this.tabPagePath.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagePath.Controls.Add(this.sox_button);
             this.tabPagePath.Controls.Add(this.ERROR_IsOldEA);
             this.tabPagePath.Controls.Add(this.label51);
+            this.tabPagePath.Controls.Add(this.gba_mus_riper_button);
+            this.tabPagePath.Controls.Add(this.sox);
             this.tabPagePath.Controls.Add(this.label50);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_NECESSARY_PROGRAM);
+            this.tabPagePath.Controls.Add(this.label65);
             this.tabPagePath.Controls.Add(this.mid2agb_default);
+            this.tabPagePath.Controls.Add(this.X_EXPLAIN_MUSICTOOL);
             this.tabPagePath.Controls.Add(this.mid2agb_button);
+            this.tabPagePath.Controls.Add(this.label63);
             this.tabPagePath.Controls.Add(this.mid2agb);
+            this.tabPagePath.Controls.Add(this.gba_mus_riper);
             this.tabPagePath.Controls.Add(this.label31);
-            this.tabPagePath.Controls.Add(this.label4);
+            this.tabPagePath.Controls.Add(this.X_EXPLAIN_MID2AGB);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_EA);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_SAPPY);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_NODOLL_GBA_DEBUGGER);
@@ -321,6 +328,17 @@
             this.tabPagePath.TabIndex = 0;
             this.tabPagePath.Text = "パス";
             // 
+            // sox_button
+            // 
+            this.sox_button.Location = new System.Drawing.Point(746, 567);
+            this.sox_button.Margin = new System.Windows.Forms.Padding(2);
+            this.sox_button.Name = "sox_button";
+            this.sox_button.Size = new System.Drawing.Size(82, 28);
+            this.sox_button.TabIndex = 64;
+            this.sox_button.Text = "参照";
+            this.sox_button.UseVisualStyleBackColor = true;
+            this.sox_button.Click += new System.EventHandler(this.sox_button_Click);
+            // 
             // ERROR_IsOldEA
             // 
             this.ERROR_IsOldEA.AutoSize = true;
@@ -340,6 +358,17 @@
             this.label51.TabIndex = 55;
             this.label51.Text = "Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。";
             // 
+            // gba_mus_riper_button
+            // 
+            this.gba_mus_riper_button.Location = new System.Drawing.Point(746, 537);
+            this.gba_mus_riper_button.Margin = new System.Windows.Forms.Padding(2);
+            this.gba_mus_riper_button.Name = "gba_mus_riper_button";
+            this.gba_mus_riper_button.Size = new System.Drawing.Size(82, 28);
+            this.gba_mus_riper_button.TabIndex = 60;
+            this.gba_mus_riper_button.Text = "参照";
+            this.gba_mus_riper_button.UseVisualStyleBackColor = true;
+            this.gba_mus_riper_button.Click += new System.EventHandler(this.gba_mus_riper_button_Click);
+            // 
             // label50
             // 
             this.label50.AutoSize = true;
@@ -352,12 +381,22 @@
             // X_EXPLAIN_NECESSARY_PROGRAM
             // 
             this.X_EXPLAIN_NECESSARY_PROGRAM.AutoSize = true;
-            this.X_EXPLAIN_NECESSARY_PROGRAM.Location = new System.Drawing.Point(8, 566);
+            this.X_EXPLAIN_NECESSARY_PROGRAM.Location = new System.Drawing.Point(8, 654);
             this.X_EXPLAIN_NECESSARY_PROGRAM.Name = "X_EXPLAIN_NECESSARY_PROGRAM";
             this.X_EXPLAIN_NECESSARY_PROGRAM.Size = new System.Drawing.Size(522, 18);
             this.X_EXPLAIN_NECESSARY_PROGRAM.TabIndex = 53;
             this.X_EXPLAIN_NECESSARY_PROGRAM.Text = "それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。";
             this.X_EXPLAIN_NECESSARY_PROGRAM.Click += new System.EventHandler(this.X_EXPLAIN_NECESSARY_PROGRAM_Click);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(11, 574);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(33, 18);
+            this.label65.TabIndex = 62;
+            this.label65.Text = "sox";
             // 
             // mid2agb_default
             // 
@@ -370,9 +409,20 @@
             this.mid2agb_default.UseVisualStyleBackColor = true;
             this.mid2agb_default.Visible = false;
             // 
+            // X_EXPLAIN_MUSICTOOL
+            // 
+            this.X_EXPLAIN_MUSICTOOL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_MUSICTOOL.Location = new System.Drawing.Point(8, 502);
+            this.X_EXPLAIN_MUSICTOOL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_MUSICTOOL.Name = "X_EXPLAIN_MUSICTOOL";
+            this.X_EXPLAIN_MUSICTOOL.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_MUSICTOOL.TabIndex = 57;
+            this.X_EXPLAIN_MUSICTOOL.Text = "音楽を変換するためのツールを設定してください。";
+            this.X_EXPLAIN_MUSICTOOL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mid2agb_button
             // 
-            this.mid2agb_button.Location = new System.Drawing.Point(734, 428);
+            this.mid2agb_button.Location = new System.Drawing.Point(746, 428);
             this.mid2agb_button.Margin = new System.Windows.Forms.Padding(2);
             this.mid2agb_button.Name = "mid2agb_button";
             this.mid2agb_button.Size = new System.Drawing.Size(82, 28);
@@ -381,17 +431,15 @@
             this.mid2agb_button.UseVisualStyleBackColor = true;
             this.mid2agb_button.Click += new System.EventHandler(this.mid2agb_button_Click);
             // 
-            // mid2agb
+            // label63
             // 
-            this.mid2agb.ErrorMessage = "";
-            this.mid2agb.Location = new System.Drawing.Point(228, 428);
-            this.mid2agb.Margin = new System.Windows.Forms.Padding(2);
-            this.mid2agb.Name = "mid2agb";
-            this.mid2agb.Placeholder = "";
-            this.mid2agb.Size = new System.Drawing.Size(490, 25);
-            this.mid2agb.TabIndex = 49;
-            this.mid2agb.TextChanged += new System.EventHandler(this.mid2agb_TextChanged);
-            this.mid2agb.DoubleClick += new System.EventHandler(this.mid2agb_DoubleClick);
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(11, 542);
+            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(108, 18);
+            this.label63.TabIndex = 58;
+            this.label63.Text = "gba_mus_riper";
             // 
             // label31
             // 
@@ -403,16 +451,16 @@
             this.label31.TabIndex = 48;
             this.label31.Text = "mid2agb";
             // 
-            // label4
+            // X_EXPLAIN_MID2AGB
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(8, 392);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(808, 30);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Midiの変換にmid2agbを利用する場合は、選択してください";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X_EXPLAIN_MID2AGB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_MID2AGB.Location = new System.Drawing.Point(8, 392);
+            this.X_EXPLAIN_MID2AGB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_MID2AGB.Name = "X_EXPLAIN_MID2AGB";
+            this.X_EXPLAIN_MID2AGB.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_MID2AGB.TabIndex = 47;
+            this.X_EXPLAIN_MID2AGB.Text = "Midiの変換にmid2agbを利用する場合は、選択してください。";
+            this.X_EXPLAIN_MID2AGB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_EXPLAIN_EA
             // 
@@ -420,7 +468,7 @@
             this.X_EXPLAIN_EA.Location = new System.Drawing.Point(8, 298);
             this.X_EXPLAIN_EA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_EA.Name = "X_EXPLAIN_EA";
-            this.X_EXPLAIN_EA.Size = new System.Drawing.Size(808, 30);
+            this.X_EXPLAIN_EA.Size = new System.Drawing.Size(822, 30);
             this.X_EXPLAIN_EA.TabIndex = 46;
             this.X_EXPLAIN_EA.Text = "Event Assemblerと連動させる場合は、設定してください。";
             this.X_EXPLAIN_EA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -431,7 +479,7 @@
             this.X_EXPLAIN_SAPPY.Location = new System.Drawing.Point(8, 218);
             this.X_EXPLAIN_SAPPY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_SAPPY.Name = "X_EXPLAIN_SAPPY";
-            this.X_EXPLAIN_SAPPY.Size = new System.Drawing.Size(808, 30);
+            this.X_EXPLAIN_SAPPY.Size = new System.Drawing.Size(822, 30);
             this.X_EXPLAIN_SAPPY.TabIndex = 45;
             this.X_EXPLAIN_SAPPY.Text = "音楽を再生するときに利用するsappyを設定してください。";
             this.X_EXPLAIN_SAPPY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,7 +490,7 @@
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Location = new System.Drawing.Point(8, 117);
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Name = "X_EXPLAIN_NODOLL_GBA_DEBUGGER";
-            this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Size = new System.Drawing.Size(808, 30);
+            this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Size = new System.Drawing.Size(822, 30);
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.TabIndex = 44;
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Text = "他に使うエミュレータがあれば設定してください。おすすめは、no$gba-debuggerです。";
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -453,14 +501,14 @@
             this.X_EXPLAIN_VBA_M.Location = new System.Drawing.Point(8, 9);
             this.X_EXPLAIN_VBA_M.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_VBA_M.Name = "X_EXPLAIN_VBA_M";
-            this.X_EXPLAIN_VBA_M.Size = new System.Drawing.Size(808, 30);
+            this.X_EXPLAIN_VBA_M.Size = new System.Drawing.Size(822, 30);
             this.X_EXPLAIN_VBA_M.TabIndex = 43;
             this.X_EXPLAIN_VBA_M.Text = "メインで利用するエミュレータを設定してください。おすすめは、VBA-Mです。";
             this.X_EXPLAIN_VBA_M.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // event_assembler_button
             // 
-            this.event_assembler_button.Location = new System.Drawing.Point(734, 334);
+            this.event_assembler_button.Location = new System.Drawing.Point(746, 334);
             this.event_assembler_button.Margin = new System.Windows.Forms.Padding(2);
             this.event_assembler_button.Name = "event_assembler_button";
             this.event_assembler_button.Size = new System.Drawing.Size(82, 28);
@@ -468,17 +516,6 @@
             this.event_assembler_button.Text = "参照";
             this.event_assembler_button.UseVisualStyleBackColor = true;
             this.event_assembler_button.Click += new System.EventHandler(this.event_assembler_button_Click);
-            // 
-            // event_assembler
-            // 
-            this.event_assembler.ErrorMessage = "";
-            this.event_assembler.Location = new System.Drawing.Point(228, 334);
-            this.event_assembler.Margin = new System.Windows.Forms.Padding(2);
-            this.event_assembler.Name = "event_assembler";
-            this.event_assembler.Placeholder = "";
-            this.event_assembler.Size = new System.Drawing.Size(490, 25);
-            this.event_assembler.TabIndex = 32;
-            this.event_assembler.DoubleClick += new System.EventHandler(this.event_assembler_DoubleClick);
             // 
             // label41
             // 
@@ -492,7 +529,7 @@
             // 
             // sappy_button
             // 
-            this.sappy_button.Location = new System.Drawing.Point(735, 250);
+            this.sappy_button.Location = new System.Drawing.Point(747, 250);
             this.sappy_button.Margin = new System.Windows.Forms.Padding(2);
             this.sappy_button.Name = "sappy_button";
             this.sappy_button.Size = new System.Drawing.Size(82, 28);
@@ -500,17 +537,6 @@
             this.sappy_button.Text = "参照";
             this.sappy_button.UseVisualStyleBackColor = true;
             this.sappy_button.Click += new System.EventHandler(this.sappy_button_Click);
-            // 
-            // sappy
-            // 
-            this.sappy.ErrorMessage = "";
-            this.sappy.Location = new System.Drawing.Point(228, 254);
-            this.sappy.Margin = new System.Windows.Forms.Padding(2);
-            this.sappy.Name = "sappy";
-            this.sappy.Placeholder = "";
-            this.sappy.Size = new System.Drawing.Size(490, 25);
-            this.sappy.TabIndex = 14;
-            this.sappy.DoubleClick += new System.EventHandler(this.sappy_DoubleClick);
             // 
             // label5
             // 
@@ -524,7 +550,7 @@
             // 
             // emulator2_button
             // 
-            this.emulator2_button.Location = new System.Drawing.Point(734, 150);
+            this.emulator2_button.Location = new System.Drawing.Point(746, 150);
             this.emulator2_button.Margin = new System.Windows.Forms.Padding(2);
             this.emulator2_button.Name = "emulator2_button";
             this.emulator2_button.Size = new System.Drawing.Size(82, 28);
@@ -532,17 +558,6 @@
             this.emulator2_button.Text = "参照";
             this.emulator2_button.UseVisualStyleBackColor = true;
             this.emulator2_button.Click += new System.EventHandler(this.emulator2_button_Click);
-            // 
-            // emulator2
-            // 
-            this.emulator2.ErrorMessage = "";
-            this.emulator2.Location = new System.Drawing.Point(228, 152);
-            this.emulator2.Margin = new System.Windows.Forms.Padding(2);
-            this.emulator2.Name = "emulator2";
-            this.emulator2.Placeholder = "";
-            this.emulator2.Size = new System.Drawing.Size(490, 25);
-            this.emulator2.TabIndex = 5;
-            this.emulator2.DoubleClick += new System.EventHandler(this.emulator2_DoubleClick);
             // 
             // label2
             // 
@@ -556,7 +571,7 @@
             // 
             // emulator_button
             // 
-            this.emulator_button.Location = new System.Drawing.Point(734, 48);
+            this.emulator_button.Location = new System.Drawing.Point(746, 48);
             this.emulator_button.Margin = new System.Windows.Forms.Padding(2);
             this.emulator_button.Name = "emulator_button";
             this.emulator_button.Size = new System.Drawing.Size(82, 28);
@@ -564,17 +579,6 @@
             this.emulator_button.Text = "参照";
             this.emulator_button.UseVisualStyleBackColor = true;
             this.emulator_button.Click += new System.EventHandler(this.emulator_button_Click);
-            // 
-            // emulator
-            // 
-            this.emulator.ErrorMessage = "";
-            this.emulator.Location = new System.Drawing.Point(228, 48);
-            this.emulator.Margin = new System.Windows.Forms.Padding(2);
-            this.emulator.Name = "emulator";
-            this.emulator.Placeholder = "";
-            this.emulator.Size = new System.Drawing.Size(490, 25);
-            this.emulator.TabIndex = 2;
-            this.emulator.DoubleClick += new System.EventHandler(this.emulator_DoubleClick);
             // 
             // label1
             // 
@@ -589,24 +593,17 @@
             // tabPagePath2
             // 
             this.tabPagePath2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPagePath2.Controls.Add(this.sox_button);
-            this.tabPagePath2.Controls.Add(this.sox);
-            this.tabPagePath2.Controls.Add(this.label65);
-            this.tabPagePath2.Controls.Add(this.gba_mus_riper_button);
+            this.tabPagePath2.Controls.Add(this.FECLIB_button);
+            this.tabPagePath2.Controls.Add(this.label67);
+            this.tabPagePath2.Controls.Add(this.X_EXPLAIN_CLANG);
             this.tabPagePath2.Controls.Add(this.python3_button);
             this.tabPagePath2.Controls.Add(this.label62);
-            this.tabPagePath2.Controls.Add(this.gba_mus_riper);
-            this.tabPagePath2.Controls.Add(this.label53);
+            this.tabPagePath2.Controls.Add(this.X_EXPLAIN_DECOMPILER);
             this.tabPagePath2.Controls.Add(this.retdec_button);
-            this.tabPagePath2.Controls.Add(this.label63);
             this.tabPagePath2.Controls.Add(this.label60);
-            this.tabPagePath2.Controls.Add(this.label64);
             this.tabPagePath2.Controls.Add(this.label54);
-            this.tabPagePath2.Controls.Add(this.label49);
-            this.tabPagePath2.Controls.Add(this.label48);
-            this.tabPagePath2.Controls.Add(this.J_SKILL);
-            this.tabPagePath2.Controls.Add(this.label3);
-            this.tabPagePath2.Controls.Add(this.binary_editor_button);
+            this.tabPagePath2.Controls.Add(this.X_EXPLAIN_COMPILER);
+            this.tabPagePath2.Controls.Add(this.X_EXPLAIN_PROGRAMN);
             this.tabPagePath2.Controls.Add(this.label6);
             this.tabPagePath2.Controls.Add(this.program1_button);
             this.tabPagePath2.Controls.Add(this.label30);
@@ -617,10 +614,10 @@
             this.tabPagePath2.Controls.Add(this.goldroad_asm_button);
             this.tabPagePath2.Controls.Add(this.label27);
             this.tabPagePath2.Controls.Add(this.program3_button);
+            this.tabPagePath2.Controls.Add(this.FECLIB);
             this.tabPagePath2.Controls.Add(this.python3);
             this.tabPagePath2.Controls.Add(this.retdec);
             this.tabPagePath2.Controls.Add(this.CFLAGS);
-            this.tabPagePath2.Controls.Add(this.binary_editor);
             this.tabPagePath2.Controls.Add(this.program1);
             this.tabPagePath2.Controls.Add(this.program2);
             this.tabPagePath2.Controls.Add(this.goldroad_asm);
@@ -633,52 +630,41 @@
             this.tabPagePath2.TabIndex = 5;
             this.tabPagePath2.Text = "パス2";
             // 
-            // sox_button
+            // FECLIB_button
             // 
-            this.sox_button.Location = new System.Drawing.Point(737, 541);
-            this.sox_button.Margin = new System.Windows.Forms.Padding(2);
-            this.sox_button.Name = "sox_button";
-            this.sox_button.Size = new System.Drawing.Size(82, 28);
-            this.sox_button.TabIndex = 64;
-            this.sox_button.Text = "参照";
-            this.sox_button.UseVisualStyleBackColor = true;
-            this.sox_button.Click += new System.EventHandler(this.sox_button_Click);
+            this.FECLIB_button.Location = new System.Drawing.Point(746, 347);
+            this.FECLIB_button.Margin = new System.Windows.Forms.Padding(2);
+            this.FECLIB_button.Name = "FECLIB_button";
+            this.FECLIB_button.Size = new System.Drawing.Size(82, 28);
+            this.FECLIB_button.TabIndex = 49;
+            this.FECLIB_button.Text = "参照";
+            this.FECLIB_button.UseVisualStyleBackColor = true;
+            this.FECLIB_button.Click += new System.EventHandler(this.FECLIB_button_Click);
             // 
-            // sox
+            // label67
             // 
-            this.sox.ErrorMessage = "";
-            this.sox.Location = new System.Drawing.Point(230, 541);
-            this.sox.Margin = new System.Windows.Forms.Padding(2);
-            this.sox.Name = "sox";
-            this.sox.Placeholder = "";
-            this.sox.Size = new System.Drawing.Size(490, 25);
-            this.sox.TabIndex = 63;
-            this.sox.DoubleClick += new System.EventHandler(this.sox_DoubleClick);
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(9, 354);
+            this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(135, 18);
+            this.label67.TabIndex = 47;
+            this.label67.Text = "FE-CLib(include)";
             // 
-            // label65
+            // X_EXPLAIN_CLANG
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(11, 545);
-            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(33, 18);
-            this.label65.TabIndex = 62;
-            this.label65.Text = "sox";
-            // 
-            // gba_mus_riper_button
-            // 
-            this.gba_mus_riper_button.Location = new System.Drawing.Point(737, 511);
-            this.gba_mus_riper_button.Margin = new System.Windows.Forms.Padding(2);
-            this.gba_mus_riper_button.Name = "gba_mus_riper_button";
-            this.gba_mus_riper_button.Size = new System.Drawing.Size(82, 28);
-            this.gba_mus_riper_button.TabIndex = 60;
-            this.gba_mus_riper_button.Text = "参照";
-            this.gba_mus_riper_button.UseVisualStyleBackColor = true;
-            this.gba_mus_riper_button.Click += new System.EventHandler(this.gba_mus_riper_button_Click);
+            this.X_EXPLAIN_CLANG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_CLANG.Location = new System.Drawing.Point(7, 276);
+            this.X_EXPLAIN_CLANG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_CLANG.Name = "X_EXPLAIN_CLANG";
+            this.X_EXPLAIN_CLANG.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_CLANG.TabIndex = 46;
+            this.X_EXPLAIN_CLANG.Text = "コンパイラを利用してC言語を利用する場合は設定してください。";
+            this.X_EXPLAIN_CLANG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // python3_button
             // 
-            this.python3_button.Location = new System.Drawing.Point(735, 429);
+            this.python3_button.Location = new System.Drawing.Point(746, 462);
             this.python3_button.Margin = new System.Windows.Forms.Padding(2);
             this.python3_button.Name = "python3_button";
             this.python3_button.Size = new System.Drawing.Size(82, 28);
@@ -690,38 +676,27 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(9, 435);
+            this.label62.Location = new System.Drawing.Point(9, 467);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(70, 18);
             this.label62.TabIndex = 43;
             this.label62.Text = "Python3";
             // 
-            // gba_mus_riper
+            // X_EXPLAIN_DECOMPILER
             // 
-            this.gba_mus_riper.ErrorMessage = "";
-            this.gba_mus_riper.Location = new System.Drawing.Point(230, 511);
-            this.gba_mus_riper.Margin = new System.Windows.Forms.Padding(2);
-            this.gba_mus_riper.Name = "gba_mus_riper";
-            this.gba_mus_riper.Placeholder = "";
-            this.gba_mus_riper.Size = new System.Drawing.Size(490, 25);
-            this.gba_mus_riper.TabIndex = 59;
-            this.gba_mus_riper.DoubleClick += new System.EventHandler(this.gba_mus_riper_DoubleClick);
-            // 
-            // label53
-            // 
-            this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label53.Location = new System.Drawing.Point(8, 368);
-            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(809, 30);
-            this.label53.TabIndex = 40;
-            this.label53.Text = "逆コンパイラを利用する場合は設定してください。";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X_EXPLAIN_DECOMPILER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_DECOMPILER.Location = new System.Drawing.Point(8, 395);
+            this.X_EXPLAIN_DECOMPILER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_DECOMPILER.Name = "X_EXPLAIN_DECOMPILER";
+            this.X_EXPLAIN_DECOMPILER.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_DECOMPILER.TabIndex = 40;
+            this.X_EXPLAIN_DECOMPILER.Text = "逆コンパイラを利用する場合は設定してください。";
+            this.X_EXPLAIN_DECOMPILER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // retdec_button
             // 
-            this.retdec_button.Location = new System.Drawing.Point(735, 399);
+            this.retdec_button.Location = new System.Drawing.Point(746, 432);
             this.retdec_button.Margin = new System.Windows.Forms.Padding(2);
             this.retdec_button.Name = "retdec_button";
             this.retdec_button.Size = new System.Drawing.Size(82, 28);
@@ -730,100 +705,47 @@
             this.retdec_button.UseVisualStyleBackColor = true;
             this.retdec_button.Click += new System.EventHandler(this.retdec_button_Click);
             // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(11, 513);
-            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(108, 18);
-            this.label63.TabIndex = 58;
-            this.label63.Text = "gba_mus_riper";
-            // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(9, 405);
+            this.label60.Location = new System.Drawing.Point(9, 437);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(192, 18);
             this.label60.TabIndex = 37;
             this.label60.Text = "Retargetable Decompiler";
             // 
-            // label64
-            // 
-            this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label64.Location = new System.Drawing.Point(8, 473);
-            this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(808, 30);
-            this.label64.TabIndex = 57;
-            this.label64.Text = "音楽を変換するための外部ツール";
-            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(8, 336);
+            this.label54.Location = new System.Drawing.Point(9, 318);
             this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(161, 18);
             this.label54.TabIndex = 36;
             this.label54.Text = "gcc option(CFLAGS)";
             // 
-            // label49
+            // X_EXPLAIN_COMPILER
             // 
-            this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label49.Location = new System.Drawing.Point(8, 221);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(809, 30);
-            this.label49.TabIndex = 33;
-            this.label49.Text = "コンパイラ、アセンブラを利用する場合は設定してください。";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X_EXPLAIN_COMPILER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_COMPILER.Location = new System.Drawing.Point(8, 158);
+            this.X_EXPLAIN_COMPILER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_COMPILER.Name = "X_EXPLAIN_COMPILER";
+            this.X_EXPLAIN_COMPILER.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_COMPILER.TabIndex = 33;
+            this.X_EXPLAIN_COMPILER.Text = "コンパイラ、アセンブラを利用する場合は設定してください。";
+            this.X_EXPLAIN_COMPILER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label48
+            // X_EXPLAIN_PROGRAMN
             // 
-            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Location = new System.Drawing.Point(8, 142);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(809, 30);
-            this.label48.TabIndex = 32;
-            this.label48.Text = "外部のバイナリエディタを利用する場合は指定してください。";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // J_SKILL
-            // 
-            this.J_SKILL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_SKILL.Location = new System.Drawing.Point(8, 9);
-            this.J_SKILL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_SKILL.Name = "J_SKILL";
-            this.J_SKILL.Size = new System.Drawing.Size(809, 30);
-            this.J_SKILL.TabIndex = 31;
-            this.J_SKILL.Text = "他に連動させたいプログラムがあれば設定してください。";
-            this.J_SKILL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 180);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "バイナリエディタ設定";
-            // 
-            // binary_editor_button
-            // 
-            this.binary_editor_button.Location = new System.Drawing.Point(734, 174);
-            this.binary_editor_button.Margin = new System.Windows.Forms.Padding(2);
-            this.binary_editor_button.Name = "binary_editor_button";
-            this.binary_editor_button.Size = new System.Drawing.Size(82, 28);
-            this.binary_editor_button.TabIndex = 9;
-            this.binary_editor_button.Text = "参照";
-            this.binary_editor_button.UseVisualStyleBackColor = true;
-            this.binary_editor_button.Click += new System.EventHandler(this.binary_editor_button_Click);
+            this.X_EXPLAIN_PROGRAMN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_PROGRAMN.Location = new System.Drawing.Point(8, 9);
+            this.X_EXPLAIN_PROGRAMN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_PROGRAMN.Name = "X_EXPLAIN_PROGRAMN";
+            this.X_EXPLAIN_PROGRAMN.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_PROGRAMN.TabIndex = 31;
+            this.X_EXPLAIN_PROGRAMN.Text = "他に連動させたいプログラムがあれば設定してください。";
+            this.X_EXPLAIN_PROGRAMN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -837,7 +759,7 @@
             // 
             // program1_button
             // 
-            this.program1_button.Location = new System.Drawing.Point(734, 40);
+            this.program1_button.Location = new System.Drawing.Point(748, 40);
             this.program1_button.Margin = new System.Windows.Forms.Padding(2);
             this.program1_button.Name = "program1_button";
             this.program1_button.Size = new System.Drawing.Size(82, 28);
@@ -849,7 +771,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(8, 290);
+            this.label30.Location = new System.Drawing.Point(8, 231);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(106, 18);
@@ -868,7 +790,7 @@
             // 
             // devkitpro_eabi_button
             // 
-            this.devkitpro_eabi_button.Location = new System.Drawing.Point(734, 252);
+            this.devkitpro_eabi_button.Location = new System.Drawing.Point(748, 193);
             this.devkitpro_eabi_button.Margin = new System.Windows.Forms.Padding(2);
             this.devkitpro_eabi_button.Name = "devkitpro_eabi_button";
             this.devkitpro_eabi_button.Size = new System.Drawing.Size(82, 28);
@@ -879,7 +801,7 @@
             // 
             // program2_button
             // 
-            this.program2_button.Location = new System.Drawing.Point(734, 72);
+            this.program2_button.Location = new System.Drawing.Point(748, 72);
             this.program2_button.Margin = new System.Windows.Forms.Padding(2);
             this.program2_button.Name = "program2_button";
             this.program2_button.Size = new System.Drawing.Size(82, 28);
@@ -900,7 +822,7 @@
             // 
             // goldroad_asm_button
             // 
-            this.goldroad_asm_button.Location = new System.Drawing.Point(734, 285);
+            this.goldroad_asm_button.Location = new System.Drawing.Point(748, 226);
             this.goldroad_asm_button.Margin = new System.Windows.Forms.Padding(2);
             this.goldroad_asm_button.Name = "goldroad_asm_button";
             this.goldroad_asm_button.Size = new System.Drawing.Size(82, 28);
@@ -912,7 +834,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(8, 258);
+            this.label27.Location = new System.Drawing.Point(8, 199);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(177, 18);
@@ -921,7 +843,7 @@
             // 
             // program3_button
             // 
-            this.program3_button.Location = new System.Drawing.Point(734, 103);
+            this.program3_button.Location = new System.Drawing.Point(748, 103);
             this.program3_button.Margin = new System.Windows.Forms.Padding(2);
             this.program3_button.Name = "program3_button";
             this.program3_button.Size = new System.Drawing.Size(82, 28);
@@ -929,104 +851,6 @@
             this.program3_button.Text = "参照";
             this.program3_button.UseVisualStyleBackColor = true;
             this.program3_button.Click += new System.EventHandler(this.program3_button_Click);
-            // 
-            // python3
-            // 
-            this.python3.ErrorMessage = "";
-            this.python3.Location = new System.Drawing.Point(230, 430);
-            this.python3.Margin = new System.Windows.Forms.Padding(2);
-            this.python3.Name = "python3";
-            this.python3.Placeholder = "";
-            this.python3.Size = new System.Drawing.Size(492, 25);
-            this.python3.TabIndex = 44;
-            this.python3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.python3_MouseDoubleClick);
-            // 
-            // retdec
-            // 
-            this.retdec.ErrorMessage = "";
-            this.retdec.Location = new System.Drawing.Point(230, 400);
-            this.retdec.Margin = new System.Windows.Forms.Padding(2);
-            this.retdec.Name = "retdec";
-            this.retdec.Placeholder = "";
-            this.retdec.Size = new System.Drawing.Size(492, 25);
-            this.retdec.TabIndex = 38;
-            this.retdec.DoubleClick += new System.EventHandler(this.retdec_DoubleClick);
-            // 
-            // CFLAGS
-            // 
-            this.CFLAGS.ErrorMessage = "";
-            this.CFLAGS.Location = new System.Drawing.Point(226, 331);
-            this.CFLAGS.Margin = new System.Windows.Forms.Padding(2);
-            this.CFLAGS.Name = "CFLAGS";
-            this.CFLAGS.Placeholder = "";
-            this.CFLAGS.Size = new System.Drawing.Size(590, 25);
-            this.CFLAGS.TabIndex = 35;
-            // 
-            // binary_editor
-            // 
-            this.binary_editor.ErrorMessage = "";
-            this.binary_editor.Location = new System.Drawing.Point(226, 178);
-            this.binary_editor.Margin = new System.Windows.Forms.Padding(2);
-            this.binary_editor.Name = "binary_editor";
-            this.binary_editor.Placeholder = "";
-            this.binary_editor.Size = new System.Drawing.Size(493, 25);
-            this.binary_editor.TabIndex = 8;
-            this.binary_editor.DoubleClick += new System.EventHandler(this.binary_editor_DoubleClick);
-            // 
-            // program1
-            // 
-            this.program1.ErrorMessage = "";
-            this.program1.Location = new System.Drawing.Point(226, 44);
-            this.program1.Margin = new System.Windows.Forms.Padding(2);
-            this.program1.Name = "program1";
-            this.program1.Placeholder = "";
-            this.program1.Size = new System.Drawing.Size(493, 25);
-            this.program1.TabIndex = 17;
-            this.program1.DoubleClick += new System.EventHandler(this.program1_DoubleClick);
-            // 
-            // program2
-            // 
-            this.program2.ErrorMessage = "";
-            this.program2.Location = new System.Drawing.Point(226, 75);
-            this.program2.Margin = new System.Windows.Forms.Padding(2);
-            this.program2.Name = "program2";
-            this.program2.Placeholder = "";
-            this.program2.Size = new System.Drawing.Size(493, 25);
-            this.program2.TabIndex = 20;
-            this.program2.DoubleClick += new System.EventHandler(this.program2_DoubleClick);
-            // 
-            // goldroad_asm
-            // 
-            this.goldroad_asm.ErrorMessage = "";
-            this.goldroad_asm.Location = new System.Drawing.Point(228, 285);
-            this.goldroad_asm.Margin = new System.Windows.Forms.Padding(2);
-            this.goldroad_asm.Name = "goldroad_asm";
-            this.goldroad_asm.Placeholder = "";
-            this.goldroad_asm.Size = new System.Drawing.Size(492, 25);
-            this.goldroad_asm.TabIndex = 29;
-            this.goldroad_asm.DoubleClick += new System.EventHandler(this.goldroad_asm_DoubleClick);
-            // 
-            // devkitpro_eabi
-            // 
-            this.devkitpro_eabi.ErrorMessage = "";
-            this.devkitpro_eabi.Location = new System.Drawing.Point(228, 254);
-            this.devkitpro_eabi.Margin = new System.Windows.Forms.Padding(2);
-            this.devkitpro_eabi.Name = "devkitpro_eabi";
-            this.devkitpro_eabi.Placeholder = "";
-            this.devkitpro_eabi.Size = new System.Drawing.Size(492, 25);
-            this.devkitpro_eabi.TabIndex = 26;
-            this.devkitpro_eabi.DoubleClick += new System.EventHandler(this.devkitpro_eabi_DoubleClick);
-            // 
-            // program3
-            // 
-            this.program3.ErrorMessage = "";
-            this.program3.Location = new System.Drawing.Point(226, 107);
-            this.program3.Margin = new System.Windows.Forms.Padding(2);
-            this.program3.Name = "program3";
-            this.program3.Placeholder = "";
-            this.program3.Size = new System.Drawing.Size(493, 25);
-            this.program3.TabIndex = 23;
-            this.program3.DoubleClick += new System.EventHandler(this.program3_DoubleClick);
             // 
             // tabPageColor
             // 
@@ -2001,178 +1825,6 @@
             this.label17.TabIndex = 1;
             this.label17.Text = "ショートカットキー1";
             // 
-            // ShortCutKey15
-            // 
-            this.ShortCutKey15.ErrorMessage = "";
-            this.ShortCutKey15.Location = new System.Drawing.Point(174, 518);
-            this.ShortCutKey15.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey15.Name = "ShortCutKey15";
-            this.ShortCutKey15.Placeholder = "";
-            this.ShortCutKey15.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey15.TabIndex = 47;
-            // 
-            // ShortCutKey14
-            // 
-            this.ShortCutKey14.ErrorMessage = "";
-            this.ShortCutKey14.Location = new System.Drawing.Point(174, 482);
-            this.ShortCutKey14.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey14.Name = "ShortCutKey14";
-            this.ShortCutKey14.Placeholder = "";
-            this.ShortCutKey14.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey14.TabIndex = 44;
-            // 
-            // ShortCutKey13
-            // 
-            this.ShortCutKey13.ErrorMessage = "";
-            this.ShortCutKey13.Location = new System.Drawing.Point(174, 441);
-            this.ShortCutKey13.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey13.Name = "ShortCutKey13";
-            this.ShortCutKey13.Placeholder = "";
-            this.ShortCutKey13.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey13.TabIndex = 41;
-            // 
-            // ShortCutKey12
-            // 
-            this.ShortCutKey12.ErrorMessage = "";
-            this.ShortCutKey12.Location = new System.Drawing.Point(174, 406);
-            this.ShortCutKey12.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey12.Name = "ShortCutKey12";
-            this.ShortCutKey12.Placeholder = "";
-            this.ShortCutKey12.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey12.TabIndex = 38;
-            // 
-            // ShortCutKey11
-            // 
-            this.ShortCutKey11.ErrorMessage = "";
-            this.ShortCutKey11.Location = new System.Drawing.Point(174, 370);
-            this.ShortCutKey11.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey11.Name = "ShortCutKey11";
-            this.ShortCutKey11.Placeholder = "";
-            this.ShortCutKey11.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey11.TabIndex = 35;
-            // 
-            // KeyFinder
-            // 
-            this.KeyFinder.ErrorMessage = "";
-            this.KeyFinder.Location = new System.Drawing.Point(20, 580);
-            this.KeyFinder.Margin = new System.Windows.Forms.Padding(2);
-            this.KeyFinder.Name = "KeyFinder";
-            this.KeyFinder.Placeholder = "";
-            this.KeyFinder.ReadOnly = true;
-            this.KeyFinder.Size = new System.Drawing.Size(212, 25);
-            this.KeyFinder.TabIndex = 32;
-            this.KeyFinder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyFinder_KeyDown);
-            // 
-            // ShortCutKey10
-            // 
-            this.ShortCutKey10.ErrorMessage = "";
-            this.ShortCutKey10.Location = new System.Drawing.Point(174, 336);
-            this.ShortCutKey10.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey10.Name = "ShortCutKey10";
-            this.ShortCutKey10.Placeholder = "";
-            this.ShortCutKey10.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey10.TabIndex = 30;
-            this.ShortCutKey10.Leave += new System.EventHandler(this.ShortCutKey10_Leave);
-            // 
-            // ShortCutKey9
-            // 
-            this.ShortCutKey9.ErrorMessage = "";
-            this.ShortCutKey9.Location = new System.Drawing.Point(174, 302);
-            this.ShortCutKey9.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey9.Name = "ShortCutKey9";
-            this.ShortCutKey9.Placeholder = "";
-            this.ShortCutKey9.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey9.TabIndex = 27;
-            this.ShortCutKey9.Leave += new System.EventHandler(this.ShortCutKey9_Leave);
-            // 
-            // ShortCutKey8
-            // 
-            this.ShortCutKey8.ErrorMessage = "";
-            this.ShortCutKey8.Location = new System.Drawing.Point(174, 266);
-            this.ShortCutKey8.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey8.Name = "ShortCutKey8";
-            this.ShortCutKey8.Placeholder = "";
-            this.ShortCutKey8.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey8.TabIndex = 24;
-            this.ShortCutKey8.Leave += new System.EventHandler(this.ShortCutKey8_Leave);
-            // 
-            // ShortCutKey7
-            // 
-            this.ShortCutKey7.ErrorMessage = "";
-            this.ShortCutKey7.Location = new System.Drawing.Point(174, 230);
-            this.ShortCutKey7.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey7.Name = "ShortCutKey7";
-            this.ShortCutKey7.Placeholder = "";
-            this.ShortCutKey7.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey7.TabIndex = 21;
-            this.ShortCutKey7.Leave += new System.EventHandler(this.ShortCutKey7_Leave);
-            // 
-            // ShortCutKey6
-            // 
-            this.ShortCutKey6.ErrorMessage = "";
-            this.ShortCutKey6.Location = new System.Drawing.Point(174, 194);
-            this.ShortCutKey6.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey6.Name = "ShortCutKey6";
-            this.ShortCutKey6.Placeholder = "";
-            this.ShortCutKey6.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey6.TabIndex = 18;
-            this.ShortCutKey6.Leave += new System.EventHandler(this.ShortCutKey6_Leave);
-            // 
-            // ShortCutKey5
-            // 
-            this.ShortCutKey5.ErrorMessage = "";
-            this.ShortCutKey5.Location = new System.Drawing.Point(174, 158);
-            this.ShortCutKey5.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey5.Name = "ShortCutKey5";
-            this.ShortCutKey5.Placeholder = "";
-            this.ShortCutKey5.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey5.TabIndex = 15;
-            this.ShortCutKey5.Leave += new System.EventHandler(this.ShortCutKey5_Leave);
-            // 
-            // ShortCutKey4
-            // 
-            this.ShortCutKey4.ErrorMessage = "";
-            this.ShortCutKey4.Location = new System.Drawing.Point(174, 122);
-            this.ShortCutKey4.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey4.Name = "ShortCutKey4";
-            this.ShortCutKey4.Placeholder = "";
-            this.ShortCutKey4.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey4.TabIndex = 12;
-            this.ShortCutKey4.Leave += new System.EventHandler(this.ShortCutKey4_Leave);
-            // 
-            // ShortCutKey3
-            // 
-            this.ShortCutKey3.ErrorMessage = "";
-            this.ShortCutKey3.Location = new System.Drawing.Point(174, 86);
-            this.ShortCutKey3.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey3.Name = "ShortCutKey3";
-            this.ShortCutKey3.Placeholder = "";
-            this.ShortCutKey3.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey3.TabIndex = 9;
-            this.ShortCutKey3.Leave += new System.EventHandler(this.ShortCutKey3_Leave);
-            // 
-            // ShortCutKey2
-            // 
-            this.ShortCutKey2.ErrorMessage = "";
-            this.ShortCutKey2.Location = new System.Drawing.Point(174, 50);
-            this.ShortCutKey2.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey2.Name = "ShortCutKey2";
-            this.ShortCutKey2.Placeholder = "";
-            this.ShortCutKey2.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey2.TabIndex = 6;
-            this.ShortCutKey2.Leave += new System.EventHandler(this.ShortCutKey2_Leave);
-            // 
-            // ShortCutKey1
-            // 
-            this.ShortCutKey1.ErrorMessage = "";
-            this.ShortCutKey1.Location = new System.Drawing.Point(174, 14);
-            this.ShortCutKey1.Margin = new System.Windows.Forms.Padding(2);
-            this.ShortCutKey1.Name = "ShortCutKey1";
-            this.ShortCutKey1.Placeholder = "";
-            this.ShortCutKey1.Size = new System.Drawing.Size(190, 25);
-            this.ShortCutKey1.TabIndex = 3;
-            this.ShortCutKey1.Leave += new System.EventHandler(this.ShortCutKey1_Leave);
-            // 
             // tabPageFunc1
             // 
             this.tabPageFunc1.BackColor = System.Drawing.SystemColors.Control;
@@ -2497,6 +2149,30 @@
             this.tabPageFunc2.Size = new System.Drawing.Size(842, 703);
             this.tabPageFunc2.TabIndex = 6;
             this.tabPageFunc2.Text = "機能2";
+            // 
+            // func_show_song_table_extends
+            // 
+            this.func_show_song_table_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_song_table_extends.FormattingEnabled = true;
+            this.func_show_song_table_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_song_table_extends.Location = new System.Drawing.Point(419, 424);
+            this.func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_song_table_extends.Name = "func_show_song_table_extends";
+            this.func_show_song_table_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_song_table_extends.TabIndex = 66;
+            // 
+            // explain_func_show_song_table_extends
+            // 
+            this.explain_func_show_song_table_extends.AccessibleDescription = "";
+            this.explain_func_show_song_table_extends.Location = new System.Drawing.Point(9, 429);
+            this.explain_func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_song_table_extends.Name = "explain_func_show_song_table_extends";
+            this.explain_func_show_song_table_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_song_table_extends.TabIndex = 65;
+            this.explain_func_show_song_table_extends.Text = "SongTable拡張ボタンの表示";
+            this.explain_func_show_song_table_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // func_show_fe76_item_icon_extends
             // 
@@ -3021,29 +2697,353 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // func_show_song_table_extends
+            // sox
             // 
-            this.func_show_song_table_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_show_song_table_extends.FormattingEnabled = true;
-            this.func_show_song_table_extends.Items.AddRange(new object[] {
-            "0=表示しない",
-            "1=表示する"});
-            this.func_show_song_table_extends.Location = new System.Drawing.Point(419, 424);
-            this.func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2);
-            this.func_show_song_table_extends.Name = "func_show_song_table_extends";
-            this.func_show_song_table_extends.Size = new System.Drawing.Size(408, 26);
-            this.func_show_song_table_extends.TabIndex = 66;
+            this.sox.ErrorMessage = "";
+            this.sox.Location = new System.Drawing.Point(228, 570);
+            this.sox.Margin = new System.Windows.Forms.Padding(2);
+            this.sox.Name = "sox";
+            this.sox.Placeholder = "";
+            this.sox.Size = new System.Drawing.Size(514, 25);
+            this.sox.TabIndex = 63;
+            this.sox.DoubleClick += new System.EventHandler(this.sox_DoubleClick);
             // 
-            // explain_func_show_song_table_extends
+            // mid2agb
             // 
-            this.explain_func_show_song_table_extends.AccessibleDescription = "";
-            this.explain_func_show_song_table_extends.Location = new System.Drawing.Point(9, 429);
-            this.explain_func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_show_song_table_extends.Name = "explain_func_show_song_table_extends";
-            this.explain_func_show_song_table_extends.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_show_song_table_extends.TabIndex = 65;
-            this.explain_func_show_song_table_extends.Text = "SongTable拡張ボタンの表示";
-            this.explain_func_show_song_table_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mid2agb.ErrorMessage = "";
+            this.mid2agb.Location = new System.Drawing.Point(228, 428);
+            this.mid2agb.Margin = new System.Windows.Forms.Padding(2);
+            this.mid2agb.Name = "mid2agb";
+            this.mid2agb.Placeholder = "";
+            this.mid2agb.Size = new System.Drawing.Size(514, 25);
+            this.mid2agb.TabIndex = 49;
+            this.mid2agb.TextChanged += new System.EventHandler(this.mid2agb_TextChanged);
+            this.mid2agb.DoubleClick += new System.EventHandler(this.mid2agb_DoubleClick);
+            // 
+            // gba_mus_riper
+            // 
+            this.gba_mus_riper.ErrorMessage = "";
+            this.gba_mus_riper.Location = new System.Drawing.Point(228, 540);
+            this.gba_mus_riper.Margin = new System.Windows.Forms.Padding(2);
+            this.gba_mus_riper.Name = "gba_mus_riper";
+            this.gba_mus_riper.Placeholder = "";
+            this.gba_mus_riper.Size = new System.Drawing.Size(514, 25);
+            this.gba_mus_riper.TabIndex = 59;
+            this.gba_mus_riper.DoubleClick += new System.EventHandler(this.gba_mus_riper_DoubleClick);
+            // 
+            // event_assembler
+            // 
+            this.event_assembler.ErrorMessage = "";
+            this.event_assembler.Location = new System.Drawing.Point(228, 334);
+            this.event_assembler.Margin = new System.Windows.Forms.Padding(2);
+            this.event_assembler.Name = "event_assembler";
+            this.event_assembler.Placeholder = "";
+            this.event_assembler.Size = new System.Drawing.Size(514, 25);
+            this.event_assembler.TabIndex = 32;
+            this.event_assembler.DoubleClick += new System.EventHandler(this.event_assembler_DoubleClick);
+            // 
+            // sappy
+            // 
+            this.sappy.ErrorMessage = "";
+            this.sappy.Location = new System.Drawing.Point(228, 254);
+            this.sappy.Margin = new System.Windows.Forms.Padding(2);
+            this.sappy.Name = "sappy";
+            this.sappy.Placeholder = "";
+            this.sappy.Size = new System.Drawing.Size(514, 25);
+            this.sappy.TabIndex = 14;
+            this.sappy.DoubleClick += new System.EventHandler(this.sappy_DoubleClick);
+            // 
+            // emulator2
+            // 
+            this.emulator2.ErrorMessage = "";
+            this.emulator2.Location = new System.Drawing.Point(228, 152);
+            this.emulator2.Margin = new System.Windows.Forms.Padding(2);
+            this.emulator2.Name = "emulator2";
+            this.emulator2.Placeholder = "";
+            this.emulator2.Size = new System.Drawing.Size(514, 25);
+            this.emulator2.TabIndex = 5;
+            this.emulator2.DoubleClick += new System.EventHandler(this.emulator2_DoubleClick);
+            // 
+            // emulator
+            // 
+            this.emulator.ErrorMessage = "";
+            this.emulator.Location = new System.Drawing.Point(228, 48);
+            this.emulator.Margin = new System.Windows.Forms.Padding(2);
+            this.emulator.Name = "emulator";
+            this.emulator.Placeholder = "";
+            this.emulator.Size = new System.Drawing.Size(514, 25);
+            this.emulator.TabIndex = 2;
+            this.emulator.DoubleClick += new System.EventHandler(this.emulator_DoubleClick);
+            // 
+            // FECLIB
+            // 
+            this.FECLIB.ErrorMessage = "";
+            this.FECLIB.Location = new System.Drawing.Point(226, 347);
+            this.FECLIB.Margin = new System.Windows.Forms.Padding(2);
+            this.FECLIB.Name = "FECLIB";
+            this.FECLIB.Placeholder = "";
+            this.FECLIB.Size = new System.Drawing.Size(516, 25);
+            this.FECLIB.TabIndex = 48;
+            this.FECLIB.DoubleClick += new System.EventHandler(this.FECLIB_DoubleClick);
+            // 
+            // python3
+            // 
+            this.python3.ErrorMessage = "";
+            this.python3.Location = new System.Drawing.Point(226, 462);
+            this.python3.Margin = new System.Windows.Forms.Padding(2);
+            this.python3.Name = "python3";
+            this.python3.Placeholder = "";
+            this.python3.Size = new System.Drawing.Size(516, 25);
+            this.python3.TabIndex = 44;
+            this.python3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.python3_MouseDoubleClick);
+            // 
+            // retdec
+            // 
+            this.retdec.ErrorMessage = "";
+            this.retdec.Location = new System.Drawing.Point(226, 432);
+            this.retdec.Margin = new System.Windows.Forms.Padding(2);
+            this.retdec.Name = "retdec";
+            this.retdec.Placeholder = "";
+            this.retdec.Size = new System.Drawing.Size(516, 25);
+            this.retdec.TabIndex = 38;
+            this.retdec.DoubleClick += new System.EventHandler(this.retdec_DoubleClick);
+            // 
+            // CFLAGS
+            // 
+            this.CFLAGS.ErrorMessage = "";
+            this.CFLAGS.Location = new System.Drawing.Point(227, 313);
+            this.CFLAGS.Margin = new System.Windows.Forms.Padding(2);
+            this.CFLAGS.Name = "CFLAGS";
+            this.CFLAGS.Placeholder = "";
+            this.CFLAGS.Size = new System.Drawing.Size(590, 25);
+            this.CFLAGS.TabIndex = 35;
+            // 
+            // program1
+            // 
+            this.program1.ErrorMessage = "";
+            this.program1.Location = new System.Drawing.Point(226, 44);
+            this.program1.Margin = new System.Windows.Forms.Padding(2);
+            this.program1.Name = "program1";
+            this.program1.Placeholder = "";
+            this.program1.Size = new System.Drawing.Size(517, 25);
+            this.program1.TabIndex = 17;
+            this.program1.DoubleClick += new System.EventHandler(this.program1_DoubleClick);
+            // 
+            // program2
+            // 
+            this.program2.ErrorMessage = "";
+            this.program2.Location = new System.Drawing.Point(226, 75);
+            this.program2.Margin = new System.Windows.Forms.Padding(2);
+            this.program2.Name = "program2";
+            this.program2.Placeholder = "";
+            this.program2.Size = new System.Drawing.Size(517, 25);
+            this.program2.TabIndex = 20;
+            this.program2.DoubleClick += new System.EventHandler(this.program2_DoubleClick);
+            // 
+            // goldroad_asm
+            // 
+            this.goldroad_asm.ErrorMessage = "";
+            this.goldroad_asm.Location = new System.Drawing.Point(228, 226);
+            this.goldroad_asm.Margin = new System.Windows.Forms.Padding(2);
+            this.goldroad_asm.Name = "goldroad_asm";
+            this.goldroad_asm.Placeholder = "";
+            this.goldroad_asm.Size = new System.Drawing.Size(516, 25);
+            this.goldroad_asm.TabIndex = 29;
+            this.goldroad_asm.DoubleClick += new System.EventHandler(this.goldroad_asm_DoubleClick);
+            // 
+            // devkitpro_eabi
+            // 
+            this.devkitpro_eabi.ErrorMessage = "";
+            this.devkitpro_eabi.Location = new System.Drawing.Point(228, 195);
+            this.devkitpro_eabi.Margin = new System.Windows.Forms.Padding(2);
+            this.devkitpro_eabi.Name = "devkitpro_eabi";
+            this.devkitpro_eabi.Placeholder = "";
+            this.devkitpro_eabi.Size = new System.Drawing.Size(516, 25);
+            this.devkitpro_eabi.TabIndex = 26;
+            this.devkitpro_eabi.DoubleClick += new System.EventHandler(this.devkitpro_eabi_DoubleClick);
+            // 
+            // program3
+            // 
+            this.program3.ErrorMessage = "";
+            this.program3.Location = new System.Drawing.Point(226, 107);
+            this.program3.Margin = new System.Windows.Forms.Padding(2);
+            this.program3.Name = "program3";
+            this.program3.Placeholder = "";
+            this.program3.Size = new System.Drawing.Size(517, 25);
+            this.program3.TabIndex = 23;
+            this.program3.DoubleClick += new System.EventHandler(this.program3_DoubleClick);
+            // 
+            // ShortCutKey15
+            // 
+            this.ShortCutKey15.ErrorMessage = "";
+            this.ShortCutKey15.Location = new System.Drawing.Point(174, 518);
+            this.ShortCutKey15.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey15.Name = "ShortCutKey15";
+            this.ShortCutKey15.Placeholder = "";
+            this.ShortCutKey15.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey15.TabIndex = 47;
+            // 
+            // ShortCutKey14
+            // 
+            this.ShortCutKey14.ErrorMessage = "";
+            this.ShortCutKey14.Location = new System.Drawing.Point(174, 482);
+            this.ShortCutKey14.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey14.Name = "ShortCutKey14";
+            this.ShortCutKey14.Placeholder = "";
+            this.ShortCutKey14.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey14.TabIndex = 44;
+            // 
+            // ShortCutKey13
+            // 
+            this.ShortCutKey13.ErrorMessage = "";
+            this.ShortCutKey13.Location = new System.Drawing.Point(174, 441);
+            this.ShortCutKey13.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey13.Name = "ShortCutKey13";
+            this.ShortCutKey13.Placeholder = "";
+            this.ShortCutKey13.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey13.TabIndex = 41;
+            // 
+            // ShortCutKey12
+            // 
+            this.ShortCutKey12.ErrorMessage = "";
+            this.ShortCutKey12.Location = new System.Drawing.Point(174, 406);
+            this.ShortCutKey12.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey12.Name = "ShortCutKey12";
+            this.ShortCutKey12.Placeholder = "";
+            this.ShortCutKey12.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey12.TabIndex = 38;
+            // 
+            // ShortCutKey11
+            // 
+            this.ShortCutKey11.ErrorMessage = "";
+            this.ShortCutKey11.Location = new System.Drawing.Point(174, 370);
+            this.ShortCutKey11.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey11.Name = "ShortCutKey11";
+            this.ShortCutKey11.Placeholder = "";
+            this.ShortCutKey11.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey11.TabIndex = 35;
+            // 
+            // KeyFinder
+            // 
+            this.KeyFinder.ErrorMessage = "";
+            this.KeyFinder.Location = new System.Drawing.Point(20, 580);
+            this.KeyFinder.Margin = new System.Windows.Forms.Padding(2);
+            this.KeyFinder.Name = "KeyFinder";
+            this.KeyFinder.Placeholder = "";
+            this.KeyFinder.ReadOnly = true;
+            this.KeyFinder.Size = new System.Drawing.Size(212, 25);
+            this.KeyFinder.TabIndex = 32;
+            this.KeyFinder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyFinder_KeyDown);
+            // 
+            // ShortCutKey10
+            // 
+            this.ShortCutKey10.ErrorMessage = "";
+            this.ShortCutKey10.Location = new System.Drawing.Point(174, 336);
+            this.ShortCutKey10.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey10.Name = "ShortCutKey10";
+            this.ShortCutKey10.Placeholder = "";
+            this.ShortCutKey10.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey10.TabIndex = 30;
+            this.ShortCutKey10.Leave += new System.EventHandler(this.ShortCutKey10_Leave);
+            // 
+            // ShortCutKey9
+            // 
+            this.ShortCutKey9.ErrorMessage = "";
+            this.ShortCutKey9.Location = new System.Drawing.Point(174, 302);
+            this.ShortCutKey9.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey9.Name = "ShortCutKey9";
+            this.ShortCutKey9.Placeholder = "";
+            this.ShortCutKey9.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey9.TabIndex = 27;
+            this.ShortCutKey9.Leave += new System.EventHandler(this.ShortCutKey9_Leave);
+            // 
+            // ShortCutKey8
+            // 
+            this.ShortCutKey8.ErrorMessage = "";
+            this.ShortCutKey8.Location = new System.Drawing.Point(174, 266);
+            this.ShortCutKey8.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey8.Name = "ShortCutKey8";
+            this.ShortCutKey8.Placeholder = "";
+            this.ShortCutKey8.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey8.TabIndex = 24;
+            this.ShortCutKey8.Leave += new System.EventHandler(this.ShortCutKey8_Leave);
+            // 
+            // ShortCutKey7
+            // 
+            this.ShortCutKey7.ErrorMessage = "";
+            this.ShortCutKey7.Location = new System.Drawing.Point(174, 230);
+            this.ShortCutKey7.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey7.Name = "ShortCutKey7";
+            this.ShortCutKey7.Placeholder = "";
+            this.ShortCutKey7.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey7.TabIndex = 21;
+            this.ShortCutKey7.Leave += new System.EventHandler(this.ShortCutKey7_Leave);
+            // 
+            // ShortCutKey6
+            // 
+            this.ShortCutKey6.ErrorMessage = "";
+            this.ShortCutKey6.Location = new System.Drawing.Point(174, 194);
+            this.ShortCutKey6.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey6.Name = "ShortCutKey6";
+            this.ShortCutKey6.Placeholder = "";
+            this.ShortCutKey6.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey6.TabIndex = 18;
+            this.ShortCutKey6.Leave += new System.EventHandler(this.ShortCutKey6_Leave);
+            // 
+            // ShortCutKey5
+            // 
+            this.ShortCutKey5.ErrorMessage = "";
+            this.ShortCutKey5.Location = new System.Drawing.Point(174, 158);
+            this.ShortCutKey5.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey5.Name = "ShortCutKey5";
+            this.ShortCutKey5.Placeholder = "";
+            this.ShortCutKey5.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey5.TabIndex = 15;
+            this.ShortCutKey5.Leave += new System.EventHandler(this.ShortCutKey5_Leave);
+            // 
+            // ShortCutKey4
+            // 
+            this.ShortCutKey4.ErrorMessage = "";
+            this.ShortCutKey4.Location = new System.Drawing.Point(174, 122);
+            this.ShortCutKey4.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey4.Name = "ShortCutKey4";
+            this.ShortCutKey4.Placeholder = "";
+            this.ShortCutKey4.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey4.TabIndex = 12;
+            this.ShortCutKey4.Leave += new System.EventHandler(this.ShortCutKey4_Leave);
+            // 
+            // ShortCutKey3
+            // 
+            this.ShortCutKey3.ErrorMessage = "";
+            this.ShortCutKey3.Location = new System.Drawing.Point(174, 86);
+            this.ShortCutKey3.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey3.Name = "ShortCutKey3";
+            this.ShortCutKey3.Placeholder = "";
+            this.ShortCutKey3.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey3.TabIndex = 9;
+            this.ShortCutKey3.Leave += new System.EventHandler(this.ShortCutKey3_Leave);
+            // 
+            // ShortCutKey2
+            // 
+            this.ShortCutKey2.ErrorMessage = "";
+            this.ShortCutKey2.Location = new System.Drawing.Point(174, 50);
+            this.ShortCutKey2.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey2.Name = "ShortCutKey2";
+            this.ShortCutKey2.Placeholder = "";
+            this.ShortCutKey2.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey2.TabIndex = 6;
+            this.ShortCutKey2.Leave += new System.EventHandler(this.ShortCutKey2_Leave);
+            // 
+            // ShortCutKey1
+            // 
+            this.ShortCutKey1.ErrorMessage = "";
+            this.ShortCutKey1.Location = new System.Drawing.Point(174, 14);
+            this.ShortCutKey1.Margin = new System.Windows.Forms.Padding(2);
+            this.ShortCutKey1.Name = "ShortCutKey1";
+            this.ShortCutKey1.Placeholder = "";
+            this.ShortCutKey1.Size = new System.Drawing.Size(190, 25);
+            this.ShortCutKey1.TabIndex = 3;
+            this.ShortCutKey1.Leave += new System.EventHandler(this.ShortCutKey1_Leave);
             // 
             // OptionForm
             // 
@@ -3051,7 +3051,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(865, 783);
+            this.ClientSize = new System.Drawing.Size(866, 796);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -3085,9 +3085,6 @@
         private System.Windows.Forms.Button emulator_button;
         private FEBuilderGBA.TextBoxEx emulator;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button binary_editor_button;
-        private FEBuilderGBA.TextBoxEx binary_editor;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button sappy_button;
         private FEBuilderGBA.TextBoxEx sappy;
         private System.Windows.Forms.Label label5;
@@ -3206,9 +3203,8 @@
         private System.Windows.Forms.Button Color_Keyword_BackColor_button;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TabPage tabPagePath2;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label J_SKILL;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label X_EXPLAIN_PROGRAMN;
+        private System.Windows.Forms.Label X_EXPLAIN_COMPILER;
         private System.Windows.Forms.Label X_EXPLAIN_VBA_M;
         private System.Windows.Forms.Label X_EXPLAIN_NODOLL_GBA_DEBUGGER;
         private System.Windows.Forms.Label X_EXPLAIN_SAPPY;
@@ -3238,7 +3234,7 @@
         private System.Windows.Forms.Label explain_func_lookup_feditor;
         private System.Windows.Forms.ComboBox func_lint_text_skip_bug;
         private System.Windows.Forms.Label explain_func_lint_text_skip_bug;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label X_EXPLAIN_MID2AGB;
         private System.Windows.Forms.Button mid2agb_button;
         private TextBoxEx mid2agb;
         private System.Windows.Forms.Label label31;
@@ -3278,7 +3274,7 @@
         private System.Windows.Forms.Label explain_func_alert_unk_event_code;
         private TextBoxEx CFLAGS;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label X_EXPLAIN_DECOMPILER;
         private System.Windows.Forms.Button retdec_button;
         private System.Windows.Forms.Label label60;
         private TextBoxEx retdec;
@@ -3301,11 +3297,15 @@
         private System.Windows.Forms.Button gba_mus_riper_button;
         private TextBoxEx gba_mus_riper;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label X_EXPLAIN_MUSICTOOL;
         private System.Windows.Forms.Button sox_button;
         private TextBoxEx sox;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.ComboBox func_show_song_table_extends;
         private System.Windows.Forms.Label explain_func_show_song_table_extends;
+        private System.Windows.Forms.Label X_EXPLAIN_CLANG;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Button FECLIB_button;
+        private TextBoxEx FECLIB;
     }
 }

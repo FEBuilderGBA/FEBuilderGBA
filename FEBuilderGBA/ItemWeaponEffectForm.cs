@@ -70,6 +70,7 @@ namespace FEBuilderGBA
         }
         private void ItemEffectForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = true;
         }
         public static string GetName(uint id)
         {

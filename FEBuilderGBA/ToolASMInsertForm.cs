@@ -106,13 +106,24 @@ namespace FEBuilderGBA
             this.Method.SelectedIndex = 2;
         }
 
-        bool IsSaveElf()
+        MainFormUtil.CompileType GetCompileType()
         {
             if (ELFComboBox.Visible)
             {
-                return ELFComboBox.SelectedIndex == 2 || ELFComboBox.SelectedIndex == 3;
+                if (this.ELFComboBox.SelectedIndex == 4)
+                {
+                    return MainFormUtil.CompileType.CONVERT_LYN;
+                }
+                if (ELFComboBox.SelectedIndex == 2 || ELFComboBox.SelectedIndex == 3)
+                {
+                    return MainFormUtil.CompileType.KEEP_ELF;
+                }
+                if (ELFComboBox.SelectedIndex == 4)
+                {
+                    return MainFormUtil.CompileType.CONVERT_LYN;
+                }
             }
-            return false;
+            return MainFormUtil.CompileType.NONE;
         }
         SymbolUtil.DebugSymbol GetPlanOfDebugSymbol()
         {
@@ -130,6 +141,10 @@ namespace FEBuilderGBA
             }
             return (SymbolUtil.DebugSymbol)DebugSymbolComboBox.SelectedIndex;
         }
+        bool IsMakeLynEventMode()
+        {
+            return (this.ELFComboBox.SelectedIndex == 4);
+        }
 
         private void RunButton_Click(object sender, EventArgs e)
         {
@@ -141,9 +156,15 @@ namespace FEBuilderGBA
                 return;
             }
 
+            if (IsMakeLynEventMode() && this.Method.SelectedIndex != 0)
+            {
+                R.ShowStopError("lyn.eventを作成する時は、ROMに書き込むことはできません。");
+                return;
+            }
+            
             string result;
             string symbol;
-            bool r = MainFormUtil.Compile(fullpath, out result, out symbol , IsSaveElf() );
+            bool r = MainFormUtil.Compile(fullpath, out result, out symbol, GetCompileType());
             if (r == false)
             {
                 R.ShowStopError("エラーが返されました。\r\n{0}", result);
@@ -355,5 +376,6 @@ namespace FEBuilderGBA
             HookRegisterLabel.AccessibleDescription = R._("フックするのに利用するレジスタを選択します。\r\nr3を利用するとEAのJumToHackと同じ意味になります。");
             FREEAREALabel.AccessibleDescription = R._("データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。");
         }
+
     }
 }

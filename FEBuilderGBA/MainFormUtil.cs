@@ -621,11 +621,11 @@ namespace FEBuilderGBA
             p.StartInfo.RedirectStandardError = true;  // 
             p.OutputDataReceived += (sender, e) =>
             {
-                sb.Append(e.Data);
+                sb.AppendLine(e.Data);
             };
             p.ErrorDataReceived += (sender, e) =>
             {
-                sb.Append(e.Data);
+                sb.AppendLine(e.Data);
             };
 
             p.Start();
@@ -741,7 +741,7 @@ namespace FEBuilderGBA
 
 
         //Devkit pro Enbiで対象物をコンパイル
-        public static bool CompilerDevkitPro(string target_filename, out string output,out string out_symbol, bool isKeepElf)
+        public static bool CompilerDevkitPro(string target_filename, out string output, out string out_symbol, CompileType compileType)
         {
             output = "";
             out_symbol = "";
@@ -795,12 +795,28 @@ namespace FEBuilderGBA
             {
                 args += " " + OptionForm.GetCFLAGS();
             }
+            //add Lyn Option
+            if (compileType == CompileType.CONVERT_LYN)
+            {
+                args += " -mlong-calls -S ";
+            }
+            string FEClib = OptionForm.GetFECLIB();
+            if (File.Exists(FEClib))
+            {
+                string FEClibDir = Path.GetDirectoryName(FEClib);
+                args += " -I " + U.escape_shell_args(FEClibDir);
+            }
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, target_filedir);
             if (!File.Exists(output_temp_filename) || U.GetFileSize(output_temp_filename) <= 0)
             {//エラーなのでコマンド名もついでに付与
                 output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
                 return false;
+            }
+
+            if (compileType == CompileType.CONVERT_LYN)
+            {//LYNに変換する場合、ELFを作るのとは別の処理になる.
+                return ConvertLYN(output_temp_filename , out output);
             }
 
             Elf elf = new Elf(output_temp_filename , useHookMode: false);
@@ -815,11 +831,127 @@ namespace FEBuilderGBA
             Log.Notify(out_symbol);
 
             output = output_temp_filename;
-            if (isKeepElf == false)
+            if (compileType == CompileType.KEEP_ELF)
             {
                 File.Delete(target + ".elf");
             }
             return true;
+        }
+
+        static bool ConvertLYN(string target_filename, out string output)
+        {
+            bool r;
+            r = ConvertLYN_S_to_O(target_filename, out output);
+            if (r == false || !File.Exists(output))
+            {
+                return false;
+            }
+
+            target_filename = output;
+            r = ConvertLYN_O_to_Event(target_filename, out output);
+            if (r == false || !File.Exists(output))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        static bool ConvertLYN_S_to_O(string target_filename, out string output)
+        {
+            string old_target_filename = target_filename;
+            target_filename = U.ChangeExtFilename(target_filename, ".s");
+            U.Move(old_target_filename, target_filename);
+
+            string devkitpro_eabi = Program.Config.at("devkitpro_eabi", "");
+            string tooldir = Path.GetDirectoryName(devkitpro_eabi);
+            string target = Path.Combine(Path.GetDirectoryName(target_filename), Path.GetFileNameWithoutExtension(target_filename));
+            string compiler = "*as.exe";
+            string compiler_exe = U.FindFileOne(tooldir, compiler);
+            if (compiler_exe == "")
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。"
+                    , "devkitpro_eabi " + compiler);
+                return false;
+            }
+            string output_temp_filename = U.ChangeExtFilename(target_filename, ".o");
+
+            string args = "-g -mcpu=arm7tdmi -mthumb-interwork "
+                + " " + U.escape_shell_args(target_filename);
+
+            string reference = GetFEClibReference();
+            if (File.Exists(reference))
+            {//FEClibがあればコンパイルオプションに追加
+                args += " " + U.escape_shell_args(reference);
+            }
+            args += " -o " + U.escape_shell_args(output_temp_filename);
+
+            string target_filedir = Path.GetDirectoryName(target_filename);
+            output = ProgramRunAsAndEndWait(compiler_exe, args, target_filedir);
+            if (!File.Exists(output_temp_filename) || U.GetFileSize(output_temp_filename) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = output_temp_filename;
+            return true;
+        }
+        static bool ConvertLYN_O_to_Event(string target_filename, out string output)
+        {
+            string EACoreEXE = Program.Config.at("event_assembler", "");
+            string lynEXE = Path.Combine(Path.GetDirectoryName(EACoreEXE), "Tools/lyn.exe");
+            if (!File.Exists(lynEXE))
+            {
+                output = R.Error("lyn.exeが見つかりません。\r\n{0}",lynEXE);
+                return false;
+            }
+
+            string args = U.escape_shell_args(target_filename);
+            string target_filedir = Path.GetDirectoryName(target_filename);
+            output = ProgramRunAsAndEndWait(lynEXE, args, target_filedir);
+            if (output.IndexOf("ALIGN 4") < 0)
+            {
+                output = lynEXE + " " + args + " \r\noutput:\r\n" + output;
+
+                string reference = GetFEClibReference();
+                if (!File.Exists(reference))
+                {
+                    output += R.Error("FEClib Referenceが見つかりません。");
+                }
+                return false;
+            }
+
+            string output_temp_filename = U.ChangeExtFilename(target_filename, ".lyn.event");
+            File.WriteAllText(output_temp_filename,output);
+
+            output = output_temp_filename;
+            return true;
+        }
+
+        static string GetFEClibReference()
+        {
+            string FEClib = OptionForm.GetFECLIB();
+            string dir = Path.GetDirectoryName(FEClib);
+            dir = Path.Combine(dir, "../reference/");
+
+            if (!Directory.Exists(dir))
+            {
+                return "";
+            }
+
+            string filename = Program.ROM.RomInfo.VersionToFilename() + "*.s";
+            string[] list = U.Directory_GetFiles_Safe(dir, filename, SearchOption.TopDirectoryOnly);
+
+            if (list.Length <= 0)
+            {
+                return "";
+            }
+
+            Array.Sort(list);
+            Array.Reverse(list);
+
+            return list[0];
         }
 
         static string CompilerEventAssemblerInner(string compiler_exe ,string tooldir,string  freeareadef_targetfile_fullpath,string  output_target_rom,string  output_symFile)
@@ -990,8 +1122,16 @@ namespace FEBuilderGBA
             File.Move(output_temp_filename, output);
             return true;
         }
+
+        public enum CompileType
+        {
+             NONE
+            ,KEEP_ELF
+            ,CONVERT_LYN
+        }
+
         //対象物をコンパイル
-        public static bool Compile(string target_filename, out string output, out string out_symbol, bool isKeepElf)
+        public static bool Compile(string target_filename, out string output, out string out_symbol, CompileType compileType)
         {
             string ext = U.GetFilenameExt(target_filename);
             if (ext == ".ASM")
@@ -1006,7 +1146,7 @@ namespace FEBuilderGBA
                     return CompilerGoldRoad(target_filename, out output, out out_symbol);
                 }
             }
-            return CompilerDevkitPro(target_filename, out output,out out_symbol, isKeepElf);
+            return CompilerDevkitPro(target_filename, out output, out out_symbol, compileType);
         }
         //無改造ROMを探索する CRCと言語で探索
         public static string FindOrignalROM(string current_dir)

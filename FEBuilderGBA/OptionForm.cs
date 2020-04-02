@@ -42,7 +42,6 @@ namespace FEBuilderGBA
         {
             emulator.Text = Program.Config.at("emulator");
             emulator2.Text = Program.Config.at("emulator2");
-            binary_editor.Text = Program.Config.at("binary_editor");
             sappy.Text = Program.Config.at("sappy");
             program1.Text = Program.Config.at("program1");
             program2.Text = Program.Config.at("program2");
@@ -54,6 +53,7 @@ namespace FEBuilderGBA
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
             gba_mus_riper.Text = Program.Config.at("gba_mus_riper");
             sox.Text = Program.Config.at("sox");
+            FECLIB.Text = Program.Config.at("FECLIB");
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
             python3.Text = GetPython3();
@@ -215,7 +215,6 @@ namespace FEBuilderGBA
         {
             Program.Config["emulator"] = emulator.Text;
             Program.Config["emulator2"] = emulator2.Text;
-            Program.Config["binary_editor"] = binary_editor.Text;
             Program.Config["sappy"] = sappy.Text;
             Program.Config["program1"] = program1.Text;
             Program.Config["program2"] = program2.Text;
@@ -229,6 +228,7 @@ namespace FEBuilderGBA
             Program.Config["python3"] = python3.Text;
             Program.Config["gba_mus_riper"] = gba_mus_riper.Text;
             Program.Config["sox"] = sox.Text;
+            Program.Config["FECLIB"] = FECLIB.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -442,15 +442,6 @@ namespace FEBuilderGBA
             if (r != "")
             {
                 emulator2.Text = r;
-            }
-        }
-
-        private void binary_editor_button_Click(object sender, EventArgs e)
-        {
-            string r = EXESearch("");
-            if (r != "")
-            {
-                binary_editor.Text = r;
             }
         }
 
@@ -1194,11 +1185,6 @@ namespace FEBuilderGBA
             this.emulator2_button.PerformClick();
         }
 
-        private void binary_editor_DoubleClick(object sender, EventArgs e)
-        {
-            this.binary_editor_button.PerformClick();
-        }
-
         private void sappy_DoubleClick(object sender, EventArgs e)
         {
             this.sappy_button.PerformClick();
@@ -1329,6 +1315,10 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("sox", "");
         }
+        public static string GetFECLIB()
+        {
+            return Program.Config.at("FECLIB", "");
+        }
 
         void MakeExplainFunctions()
         {
@@ -1363,6 +1353,12 @@ namespace FEBuilderGBA
             explain_func_show_worldmap_path_extends.AccessibleDescription = R._("FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");
             explain_func_show_fe76_item_icon_extends.AccessibleDescription = R._("FE7とFE6のアイテムアイコンにも拡張ボタンを表示します。\r\nアイテムアイコンを拡張するには、パッチが必要です。\r\nFE8のパッチは存在しますが、FE7とFE6用には不安定なものしか存在しません。");
             explain_func_show_song_table_extends.AccessibleDescription = R._("SongTableを拡張するボタンを表示します。\r\nSongTableをrepointするとsapplyでは認識できなくなります。\r\nSongTableには空き領域がたくさんあるので拡張する必要はほとんどありません。");
+            X_EXPLAIN_DECOMPILER.AccessibleDescription = R._("逆コンパイラを指定します。\r\nただ、あまり期待しない方がいいですよ。\r\n");
+            X_EXPLAIN_CLANG.AccessibleDescription = R._("C言語を利用してパッチを作る場合に使用する項目を設定します。\r\n\r\nCFLAGSは、gccに渡すオプションを指定します。\r\nたいていの場合、ディフォルト値から変更する必要は特にありません。\r\n\r\nFE-CLibには、ヘッダーファイルのライブラリを渡すします。\r\n現在は、FE8Uバージョンのみが開発されています。\r\n");
+            X_EXPLAIN_COMPILER.AccessibleDescription = R._("ASMやC言語をマシン語バイナリに変換するコンパイラー(アセンブラ)を設定します。\r\ndevkitProは、現在よく使われている処理系です。\r\n言語系は、gnu asmです。\r\ndevkitProを公式サイトからダウンロードして、インストールすると、gccも利用できます。\r\n\r\ngoldroadは、昔使われていた処理系です。\r\n言語系は、MASMに似ています。\r\n\r\n\r\nFEBuilderGBAは両者をソースコードにより自動的に切り替えて利用します。");
+            X_EXPLAIN_PROGRAMN.AccessibleDescription = R._("FEBuilderGBAから動作させたいプログラムがあれば指定してください。\r\nたいていの場合は、特に設定する必要はありません。");
+            X_EXPLAIN_MUSICTOOL.AccessibleDescription = R._("音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n");
+            X_EXPLAIN_MID2AGB.AccessibleDescription = R._("Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)
@@ -1449,6 +1445,20 @@ namespace FEBuilderGBA
         private void sox_DoubleClick(object sender, EventArgs e)
         {
             sox_button.PerformClick();
+        }
+
+        private void FECLIB_button_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("gbafe.h|gbafe.h|");
+            if (r != "")
+            {
+                FECLIB.Text = r;
+            }
+        }
+
+        private void FECLIB_DoubleClick(object sender, EventArgs e)
+        {
+            FECLIB_button.PerformClick();
         }
     }
 }

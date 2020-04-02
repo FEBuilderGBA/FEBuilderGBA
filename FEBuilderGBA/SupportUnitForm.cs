@@ -357,6 +357,26 @@ namespace FEBuilderGBA
                 )
                 , id));
         }
+
+        //支援データが変なポインタを指していないか確認する
+        static bool CheckIfSupportDataToStrangePointer(uint support_addr)
+        {
+            //件数の比較
+            uint all_count = Program.ROM.u8(support_addr + 0x15);
+            if (all_count > 15)
+            {
+                return false;
+            }
+            uint yohaku1 = Program.ROM.u8(support_addr + 0x16);
+            uint yohaku2 = Program.ROM.u8(support_addr + 0x17);
+            if (yohaku1 != 0 || yohaku2 != 0)
+            {//まあ、あまり厳しくしても意味がないので、どちらかが0でなけばダメということで。
+                return false;
+            }
+
+            return true;
+        }
+
         static void MakeCheckError_Check(List<FELint.ErrorSt> errors, uint support_addr , uint id)
         {
             uint uid = UnitForm.GetUnitIDWhereSupportAddr(support_addr);
@@ -589,6 +609,14 @@ namespace FEBuilderGBA
             {
                 errors.Add(new FELint.ErrorSt(type, parentAddr
                     , R._("支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。",U.To0xHexString(support_pointer) ),tag));
+                return;
+            }
+
+            if (!CheckIfSupportDataToStrangePointer(addr))
+            {
+                errors.Add(new FELint.ErrorSt(type, parentAddr
+                    , R._("支援データにめちゃくちゃな値({0})が格納されています。\r\n支援ポインタが正しくない値を指しているようです。\r\nこのユニットの支援ポインタを0に変更し、設定し直すことを推奨します。", U.ToHexString(support_pointer))
+                    , tag));
                 return;
             }
 

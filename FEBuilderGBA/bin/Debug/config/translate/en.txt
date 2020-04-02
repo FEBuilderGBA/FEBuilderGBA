@@ -5317,6 +5317,12 @@ Related item.
 :アイテム利用効果
 Item "Use" Effect
 
+:1=マップだけのアニメーション
+1=Maps only animation
+
+:2=マップと戦闘アニメーション
+2=Map and fighting animation
+
 :0=白
 0=White
 
@@ -5373,12 +5379,6 @@ Battle Animation
 
 :アイテムID
 Item ID
-
-:1=マップだけのアニメーション
-1=Maps only animation
-
-:2=マップと戦闘アニメーション
-2=Map and fighting animation
 
 :アイテムエフェクト
 Item Effect
@@ -5823,6 +5823,12 @@ Sappy does not exist.\r\nPlease set the correct path from the setting -> option.
 
 :Sappyプロセスを実行できません。\r\n{0}
 Unable to execute Sappy process.\r\n{0}
+
+:lyn.exeが見つかりません。\r\n{0}
+"Cannot find lyn.exe."\r\n{0}.
+
+:FEClib Referenceが見つかりません。
+FEClib Reference not found.
 
 :このパッチを使うには、lynが必要です。EAのToolsフォルダにlynをインストールしてください。以下のマニュアルを参考にしてください。\r\n{0}\r\n\r\n詳細エラーメッセージ:\r\n{1}
 To use this patch, lyn is required.Please install lyn in the Tools folder of EA.Please refer to the following manual.\r\n{0}\r\n\r\nError message:\r\n{1}
@@ -8281,6 +8287,24 @@ An extension button is also displayed on the item icons of FE7 and FE6.\r\nPatch
 :SongTableを拡張するボタンを表示します。\r\nSongTableをrepointするとsapplyでは認識できなくなります。\r\nSongTableには空き領域がたくさんあるので拡張する必要はほとんどありません。
 Displays a button that extends SongTable.\r\nIf you repoint SongTable, sapply will not recognize it.\r\nSince SongTable has a lot of free space, there is almost no need to expand it.
 
+:逆コンパイラを指定します。\r\nただ、あまり期待しない方がいいですよ。\r\n
+Specify the decompiler.\r\nHowever, you should not expect too much.\r\n
+
+:C言語を利用してパッチを作る場合に使用する項目を設定します。\r\n\r\nCFLAGSは、gccに渡すオプションを指定します。\r\nたいていの場合、ディフォルト値から変更する必要は特にありません。\r\n\r\nFE-CLibには、ヘッダーファイルのライブラリを渡すします。\r\n現在は、FE8Uバージョンのみが開発されています。\r\n
+Set the items used when creating a patch using the C language.\r\n\r\nCFLAGS specifies options to pass to gcc.\r\nIn most cases, there is no need to change from the default value.\r\n\r\nPass the header file library to FE-CLib.\r\nCurrently, only the FE8U version is being developed.\r\n
+
+:ASMやC言語をマシン語バイナリに変換するコンパイラー(アセンブラ)を設定します。\r\ndevkitProは、現在よく使われている処理系です。\r\n言語系は、gnu asmです。\r\ndevkitProを公式サイトからダウンロードして、インストールすると、gccも利用できます。\r\n\r\ngoldroadは、昔使われていた処理系です。\r\n言語系は、MASMに似ています。\r\n\r\n\r\nFEBuilderGBAは両者をソースコードにより自動的に切り替えて利用します。
+Set the compiler (assembler) that converts ASM and C language into machine language binary.\r\ndevkitPro is a commonly used processing system.\r\nThe language system is gnu asm.\r\nIf you download devkitPro from the official website and install it, you can also use gcc.\r\n\r\ngoldroad is an old processing system.\r\nThe language system is similar to MASM.\r\n\r\n\r\nFEBuilderGBA automatically switches between them according to the source code.
+
+:FEBuilderGBAから動作させたいプログラムがあれば指定してください。\r\nたいていの場合は、特に設定する必要はありません。
+Please specify if you want to run the program from FEBuilderGBA.\r\nIn most cases, you do not need to set anything.
+
+:音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n
+Set music conversion tools.\r\ngba_mus_riper is used to export to midi and to export soundfont.\r\nsox is used to remove frequencies and margins when importing wavs.\r\n
+
+:Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。
+Please set if you use mid2agb when importing Midi.\r\nIn most cases, conversion using mid2agb will give better results.
+
 :パス
 Path
 
@@ -8299,8 +8323,11 @@ For details on where to obtain each program, please refer to this manual.
 :mid2agbをmidi取り込みのディフォルトにする
 Make mid2agb the default for midi import
 
-:Midiの変換にmid2agbを利用する場合は、選択してください
-Please select when using mid2agb for Midi conversion
+:音楽を変換するためのツールを設定してください。
+Set up the tool to convert music.
+
+:Midiの変換にmid2agbを利用する場合は、選択してください。
+Set when using mid2agb for Midi conversion.
 
 :Event Assemblerと連動させる場合は、設定してください。
 Set to enable Event Assembler functionality.
@@ -8323,23 +8350,17 @@ Emulator
 :パス2
 Path 2
 
+:コンパイラを利用してC言語を利用する場合は設定してください。
+Set this when using C language with a compiler.
+
 :逆コンパイラを利用する場合は設定してください。
 Please set it when using the decompiler.
-
-:音楽を変換するための外部ツール
-An external tool for converting music.
 
 :コンパイラ、アセンブラを利用する場合は設定してください。
 Set to use the specified compiler/assembler.
 
-:外部のバイナリエディタを利用する場合は指定してください。
-Set to use an external hex-editing program.
-
 :他に連動させたいプログラムがあれば設定してください。
 Set paths to use desired alternative programs not yet mentioned
-
-:バイナリエディタ設定
-Hex Editor
 
 :任意のプログラム1
 Program 1
@@ -8644,6 +8665,9 @@ Function 2
 :1=表示する
 1=Displayed
 
+:SongTable拡張ボタンの表示
+SongTable expansion button display
+
 :FE6 FE7 アイテムアイコン拡張ボタンの表示
 FE6 FE7 Item icon expansion button display
 
@@ -8781,9 +8805,6 @@ File Export Settings
 
 :保存
 Save
-
-:SongTable拡張ボタンの表示
-SongTable expansion button display
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -10423,6 +10444,9 @@ Up to 7 people can register for support.
 :支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。
 Structure size of support data is not enough.\r\nInvalid address ({0}) is specified.
 
+:支援データにめちゃくちゃな値({0})が格納されています。\r\n支援ポインタが正しくない値を指しているようです。\r\nこのユニットの支援ポインタを0に変更し、設定し直すことを推奨します。
+Corrupted values({0}) are used as support data.\r\nThe support pointer seems to point to an incorrect value.\r\nIt is recommended to change the support pointer of this unit to 0 and reset it.
+
 :既に別のアドレスで定義されています
 Already defined with a different address.
 
@@ -10900,6 +10924,9 @@ Direct editing of ASM code
 :フックするアドレス
 Address to hook
 
+:lyn.eventを作成する時は、ROMに書き込むことはできません。
+When creating lyn.event, you cannot write to ROM.
+
 :エラーが返されました。\r\n{0}
 An error was returned.\r\n{0}
 
@@ -10926,6 +10953,9 @@ Define the area where data is stored.\r\nBy default, the end of ROM is automatic
 
 :3=ELFとシンボルを両方とも保存
 3=Save both ELF and symbols
+
+:4=lyn.eventとして保存する
+4=lyn.Save as event.
 
 :中間ファイル
 Intermediate file

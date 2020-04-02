@@ -4607,6 +4607,10 @@ namespace FEBuilderGBA
 
         public static void Move(string src, string dest)
         {
+            if (src == dest)
+            {
+                return;
+            }
             File.Copy(src, dest,true);
             File.Delete(src);
         }

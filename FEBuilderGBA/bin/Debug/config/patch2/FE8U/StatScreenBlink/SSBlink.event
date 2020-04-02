@@ -1,0 +1,23 @@
+#ifndef HAX_SSBLINK_INCLUDED
+#define HAX_SSBLINK_INCLUDED
+
+// Makes portraits drawn on bgs (as opposed to as objects) be able to blink.
+// Portraits are drawn on bgs in the stat screen as well as in places such as the support menus.
+// hack by Stan
+
+// The functionality was already in the game, it just was unused.
+
+#include "Src/SSBlink.lyn.event"
+
+PUSH
+//
+//	ORG $005C24 // portraits shouldn't be smol (because it breaks)
+//		SHORT $2000 $4770
+//
+	ORG $005E98 // Make portraits on backgrounds blink
+		// (t)bx pc; (a)ldr ip, =NuDisplayBgFace; (a)bx ip
+		WORD $46C04778 $E59FC000 $E12FFF1C; POIN NuDisplayBgFace
+
+POP
+
+#endif // HAX_SSBLINK_INCLUDED

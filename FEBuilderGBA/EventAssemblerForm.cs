@@ -325,15 +325,23 @@ namespace FEBuilderGBA
                         continue;
                     }
 
-                    bool isKeepElf = false;
+                    MainFormUtil.CompileType compileType = MainFormUtil.CompileType.NONE;
                     if (d.DataType == EAUtil.DataEnum.LYN)
                     {
-                        isKeepElf = true;
+                        string lyn_event = U.ChangeExtFilename(targetfilename, "lyn.event");
+                        if (File.Exists(lyn_event))
+                        {
+                            compileType = MainFormUtil.CompileType.CONVERT_LYN;
+                        }
+                        else
+                        {
+                            compileType = MainFormUtil.CompileType.KEEP_ELF;
+                        }
                     }
 
                     string error;
                     string symbol;
-                    bool r = MainFormUtil.Compile(sourceCode, out error, out symbol, isKeepElf);
+                    bool r = MainFormUtil.Compile(sourceCode, out error, out symbol, compileType);
                     if (!r)
                     {
                         return error;

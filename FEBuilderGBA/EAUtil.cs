@@ -92,6 +92,7 @@ namespace FEBuilderGBA
                 ParseIncBIN(line, lines[i]);
                 ParseLynELF(line, lines[i]);
                 ParseLynHook(line, lines[i]);
+                ParseLynInclude(line, lines[i]);
                 ParsePng2Dmp(line, lines[i]);
                 ParseString(line, lines[i]);
                 ParseLabel(line, lines[i]);
@@ -374,6 +375,43 @@ namespace FEBuilderGBA
                 this.DataList.Add(data);
             }
 
+            return true;
+        }
+        bool ParseLynInclude(string line, string orignalIine)
+        {
+            int start = line.IndexOf("#include");
+            if (start < 0)
+            {
+                return false;
+            }
+
+            int lyn_event_pos = line.IndexOf("lyn.event",start);
+            if (lyn_event_pos < 0)
+            {
+                return false;
+            }
+            string filename = U.cut(line, "\"", "\"");
+            string fullfilename = Path.Combine(this.Dir, filename);
+
+            if (!File.Exists(fullfilename))
+            {
+                return false;
+            }
+
+            string[] lines = File.ReadAllLines(fullfilename);
+            EAUtilLynDumpMode lyndmp = new EAUtilLynDumpMode();
+            foreach (string l in lines)
+            {
+                bool r = lyndmp.ParseLine(l);
+                if (!r)
+                {
+                    break;
+                }
+            }
+
+            //LYNDUMPの終了
+            Data data = new Data("LYNDUMP", lyndmp.GetData(), DataEnum.LYN, 0);
+            this.DataList.Add(data);
             return true;
         }
         bool ParseString(string line, string orignalIine)
