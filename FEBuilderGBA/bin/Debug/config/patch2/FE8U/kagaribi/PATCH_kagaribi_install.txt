@@ -19,4 +19,4 @@ NAME.zh=即使在雾中，我们也能确保特定坐标的可见性（Installer
 INFO.zh=至于FE 5的出发点，即使在雾中也能确保能够在特定位置看到能见度，如在雾中，确保了能见度。
 
 DEPRECATED=1
-UPDATE_PATCH=..\kagaribi2\PATCH_kagaribi2_install.txt
+UPDATE_PATCH=..\kagaribi3\PATCH_kagaribi3_install.txt
