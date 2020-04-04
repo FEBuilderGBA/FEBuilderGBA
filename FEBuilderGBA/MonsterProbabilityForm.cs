@@ -61,5 +61,48 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
             }
         }
+        public static Bitmap DrawUnitsList(uint index, int iconSize, out string errorMessage)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(index);
+            if (!U.isSafetyOffset(addr))
+            {
+                errorMessage = R._("範囲外のIDを指定しています。\r\n指定できるのは、最大{0}までです。", InputFormRef.DataCount);
+                return ImageUtil.BlankDummy();
+            }
+            errorMessage = "";
+
+            Bitmap bitmap = new Bitmap((iconSize*2) * 5, iconSize);
+            Rectangle bounds = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+            SolidBrush brush = new SolidBrush(OptionForm.Color_Input_ForeColor());
+            Font font = new Font("MS UI Gothic", 8);
+
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                for (uint i = 0; i < 5; i++)
+                {
+                    uint classid = Program.ROM.u8(addr + i);
+                    if (classid <= 0)
+                    {
+                        continue;
+                    }
+                    Bitmap icon = ClassForm.DrawWaitIcon(classid, 2);
+
+                    U.MakeTransparent(icon);
+
+                    Rectangle b = bounds;
+                    b.Width = iconSize;
+                    b.Height = iconSize;
+
+                    bounds.X += U.DrawPicture(icon, g, true, b);
+
+                    uint probability = Program.ROM.u8(addr + 5 + i);
+                    bounds.X += U.DrawText( probability + "", g , font, brush, true , bounds);
+                }
+            }
+            brush.Dispose();
+            font.Dispose();
+            return bitmap;
+        }
     }
 }

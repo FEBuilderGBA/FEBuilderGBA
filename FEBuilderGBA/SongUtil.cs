@@ -2287,7 +2287,6 @@ namespace FEBuilderGBA
             track.codes = ret_codes;
         }
 
-
         public static void RecycleOldSong(ref List<Address> recycle,string basename, uint track_basepointer)
         {
             uint track_baseaddress = Program.ROM.u32(track_basepointer);
@@ -2582,12 +2581,11 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("song", Path.GetFileName(filename));
 
+            InputFormRef.DoEvents(null, "Recycle");
             //古い曲をリサイクル情報に登録..
-            List<Address> recycle = new List<Address>();
-            RecycleOldSong(ref recycle, "", songheader_address);
+            RecycleAddress ra = SongTableForm.MakeRecycleSong(songtable_address);
 
-            RecycleAddress ra = new RecycleAddress(recycle);
-
+            InputFormRef.DoEvents(null, "Write");
             //とりあえずデータを書き込む
             for (int i = 0; i < global.Count; i++)
             {
@@ -2637,6 +2635,7 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
             return "";
         }
+
         static int findGlobal(List<SongInnerDataSt> global, string name)
         {
             for (int i = 0; i < global.Count; i++)
@@ -2945,11 +2944,10 @@ namespace FEBuilderGBA
 
             //gbawave + 楽器データ 12バイト * 2(終端用に無効値) + 音を鳴らす楽譜
 
-            //gba waveデータ
-            List<Address> recycle = new List<Address>();
-            RecycleOldSong(ref recycle , "",songheader_address);
-            RecycleAddress ra = new RecycleAddress(recycle);
+            InputFormRef.DoEvents(null, "Recycle");
+            RecycleAddress ra = SongTableForm.MakeRecycleSongAndInst(songtable_address);
 
+            InputFormRef.DoEvents(null, "Write");
             uint gbawave_addr = ra.Write(gbawave, undodata);
 
             //楽器データ
@@ -3029,8 +3027,8 @@ namespace FEBuilderGBA
             U.write_p32(songheader, 8, track_addr); //楽譜データへのポインタ
             uint songheader_addr = ra.Write(songheader, undodata);
 
-
             Program.ROM.write_p32(songtable_address + 0, songheader_addr);
+            ra.BlackOut(undodata);
             return "";
         }
 

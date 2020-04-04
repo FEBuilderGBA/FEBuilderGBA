@@ -40,10 +40,11 @@
 223B0000	[]Erase frame(CURE)	{WAKU}
 20010000	Return[TERM](ENDA)	{TERM}
 21010000	Event end[TERM](ENDB)
+
 200EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL)	@WAIT	{WAIT}	{MAPEFFECT}
-220EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL2)	@WAIT	{WAIT}	{MAPEFFECT}
-230EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL3)	@WAIT	{WAIT}	{MAPEFFECT}
-210EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(_0E21)	@WAIT	{WAIT}
+220EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL_FAST)(LOW)	@WAIT	Stall for x frames (sped up if A is held or fast game speed)	{WAIT}	{MAPEFFECT}
+230EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL_SKIP_FAST)(LOW)	@WAIT	Stall for x frames (combines behavior of STALL_SKIP and STALL_FAST)	{WAIT}	{MAPEFFECT}
+210EXXXX	[XXXX:FSEC:Frames (1/60 second)]Wait(STAL_SKIP)(LOW)	@WAIT	Stall for x frames (skippable with B)	{WAIT}
 20020200	Stop here if you're skipping events(EVBIT_F 2)	{MAP}	{EVBIT}
 28020700	No Fade(EVBIT_T 7)	{MAP}	{EVBIT}
 2802070020010000	Event end(also serves as a section to no fade)[TERM](EVBIT_T+ENDA)

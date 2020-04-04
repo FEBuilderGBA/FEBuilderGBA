@@ -180,5 +180,8 @@ namespace FEBuilderGBA
             this.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
             this.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
         }
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Image BackgroundImage { get; set; }
     }
 }

@@ -2740,15 +2740,6 @@ Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare 
 :ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
 In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 
-:/60秒
-/60sec
-
-:0=普通
-0=Normal
-
-:1=鈍足
-1=Heavy Steps
-
 :特殊:
 Special:
 
@@ -2757,6 +2748,15 @@ After Moving
 
 :配置後座標格納アドレス
 Post-place coordinate storage
+
+:/60秒
+/60sec
+
+:0=普通
+0=Normal
+
+:1=鈍足
+1=Heavy Steps
 
 :アイテムドロップする
 Drop item
@@ -4834,8 +4834,8 @@ When recovering, specify whether or not the AI will retreat.\r\nSetting 0x20 pre
 :ユニットを制御するAIを指定します。\r\nAI3は主に性格を定義します。\r\n残りHPでの回復アイテムを使うようになります。\r\n
 Specify AI to control the unit.\r\nAI 3 mainly defines personality.\r\nYou will be using restore items on the rest HP.\r\n
 
-:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\nそれ以外はよくわっていません。\r\n
-Set to "None" normally.\r\nSetting "Item Drop" causes an enemy to drop their last-held item.\r\nOther options are less understood.\r\n
+:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\nそれ以外はよくわっていません。\r\n
+None: Specify this usually.\r\nItem Drop: Enemies will drop items.The item to be dropped is the item in the bottom item column.\r\nMonster: Place monsters according to the probability table.The class ID acts as an ID into the probability table.\r\nOther than that, I'm not doing well.\r\n
 
 :ユニットを最終的に登場させる座標を指定します。\r\nユニットは、配置前座標から登場し、\r\nイベントで移動開始命令が指定されると、配置後座標まで移動します。\r\n
 Specify the coordinates to make the unit finally appear.\r\nThe unit appears from the coordinates before arrangement,\r\nWhen a movement start instruction is specified in an event, it moves to the post-placement coordinates.\r\n
@@ -7899,6 +7899,9 @@ Equipped Table
 
 :所持品1 候補1
 Equipped Table
+
+:範囲外のIDを指定しています。\r\n指定できるのは、最大{0}までです。
+The specified ID is out of range.\r\nUp to {0} can be specified.
 
 :魔物5出現確率
 Monster 5 Probability

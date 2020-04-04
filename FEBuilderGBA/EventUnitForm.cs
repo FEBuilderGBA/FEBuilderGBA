@@ -53,8 +53,8 @@ namespace FEBuilderGBA
 //            this.B0.ValueChanged += EventUnitForm_CheckDuplicatePlayerUnits;
 
             InitCoordMainPanel();
-
         }
+
         int MoveCallback(int x,int y)
         {
             ControlPanel.Show();
@@ -1072,6 +1072,8 @@ namespace FEBuilderGBA
             }
             //アイテムドロップ
             UpdateItemDropLabel();
+            //ランダムモンスター
+            UpdateRandomMonster();
         }
 
         Size FE8CoordListBox_Draw(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
@@ -2024,6 +2026,8 @@ namespace FEBuilderGBA
 
             //アイテムドロップの更新
             UpdateItemDropLabel();
+            //ランダムモンスターの更新
+            UpdateRandomMonster();
         }
 
         private void FE8CoordListBox_KeyDown(object sender, KeyEventArgs e)
@@ -2203,6 +2207,8 @@ namespace FEBuilderGBA
 
             //アイテムドロップの更新
             UpdateItemDropLabel();
+            //ランダムモンスターの更新
+            UpdateRandomMonster();
         }
 
         private void DownButton_Click(object sender, EventArgs e)
@@ -2224,6 +2230,8 @@ namespace FEBuilderGBA
 
             //アイテムドロップの更新
             UpdateItemDropLabel();
+            //ランダムモンスターの更新
+            UpdateRandomMonster();
         }
         class UndoData
         {
@@ -2296,6 +2304,7 @@ namespace FEBuilderGBA
             this.UndoPosstion = UndoPosstion + 1;
             RunUndoRollback(this.UndoBuffer[UndoPosstion]);
             UpdateItemDropLabel();
+            UpdateRandomMonster();
         }
         void RunUndoRollback(UndoData u)
         {
@@ -2462,6 +2471,8 @@ namespace FEBuilderGBA
             }
             //アイテムドロップのラベルの更新
             UpdateItemDropLabel();
+            //ランダムモンスターの更新
+            UpdateRandomMonster();
             //設定を変更したので、ライトボタンの点灯
             InputFormRef.WriteButtonToYellow(WriteButton, true);
         }
@@ -2486,6 +2497,50 @@ namespace FEBuilderGBA
             {
                 X_ITEMDROP.Text = R._("アイテムドロップ: ドロップしない");
                 X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
+            }
+        }
+        void UpdateRandomMonster()
+        {
+            uint classid = (uint)this.B1.Value;
+            if (IsRandomMonster())
+            {
+                string errorMessage;
+                X_RANDOMMONSTER_VIEW.BackgroundImage = MonsterProbabilityForm.DrawUnitsList(classid, L_1_CLASS.Height, out errorMessage);
+                X_RANDOMMONSTER_VIEW.ErrorMessage = errorMessage;
+                if (X_RANDOMMONSTER.Visible)
+                {
+                    X_RANDOMMONSTER_VIEW.Invalidate();
+                }
+                else
+                {
+                    X_RANDOMMONSTER.BringToFront();
+                    X_RANDOMMONSTER.Show();
+                }
+            }
+            else
+            {
+                X_RANDOMMONSTER.Hide();
+            }
+        }
+        bool IsRandomMonster()
+        {
+            uint ext;
+            if (this.FE8CoordList.Count <= 0)
+            {
+                ext = 0;
+            }
+            else
+            {
+                ext = this.FE8CoordList[0].ext;
+            }
+
+            if (ext == 1 )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -2580,6 +2635,11 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
         }
 
+        private void X_RANDOMMONSTER_DoubleClick(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<MonsterProbabilityForm>((uint)this.B1.Value,"AddressList",this.B1);
+        }
+        
     }
 
 }

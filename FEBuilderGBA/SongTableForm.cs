@@ -189,26 +189,100 @@ namespace FEBuilderGBA
             uint songpointer = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
             {
-                uint songaddr = Program.ROM.p32(songpointer);
-                if (!U.isSafetyOffset(songaddr))
-                {
+                MakeAllDataLength_Song_And_Inst(list, i, songpointer);
+            }
+        }
+        static void MakeAllDataLength_Song_And_Inst(List<Address> list, int i, uint songpointer)
+        {
+            uint songaddr = Program.ROM.p32(songpointer);
+            if (!U.isSafetyOffset(songaddr))
+            {
+                return;
+            }
+
+            {//楽譜
+                string name = "Song" + U.ToHexString(i) + " ";
+                //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
+                SongUtil.RecycleOldSong(ref list, name, songpointer);
+            }
+
+            uint instpointer = songaddr + 4;
+            //uint instaddr = Program.ROM.p32(instpointer);
+            {//楽器
+                string name = "SongInst" + U.ToHexString(i) + " ";
+                SongInstrumentForm.RecycleOldInstrument(ref list, name, instpointer);
+            }
+        }
+
+        static void MakeAllDataLength_Song(List<Address> list, int i, uint songpointer)
+        {
+            uint songaddr = Program.ROM.p32(songpointer);
+            if (!U.isSafetyOffset(songaddr))
+            {
+                return;
+            }
+
+            {//楽譜
+                string name = "Song" + U.ToHexString(i) + " ";
+                //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
+                SongUtil.RecycleOldSong(ref list, name, songpointer);
+            }
+        }
+
+        public static RecycleAddress MakeRecycleSong(uint songtable_address)
+        {
+            //今回の楽曲リサイクル
+            List<FEBuilderGBA.Address> recycle = new List<FEBuilderGBA.Address>();
+            MakeAllDataLength_Song(recycle, 0, songtable_address);
+
+            //ポインタを共有しているといけないので調べる
+            List<FEBuilderGBA.Address> list = new List<FEBuilderGBA.Address>(); 
+            InputFormRef InputFormRef = Init(null);
+
+            uint songpointer = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
+            {
+                if (songtable_address == songpointer)
+                {//自分自身
                     continue;
                 }
 
-                {//楽譜
-                    string name = "Song" + U.ToHexString(i) + " ";
-                    //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
-                    SongUtil.RecycleOldSong(ref list, name, songpointer);
+                MakeAllDataLength_Song(list, i, songpointer);
+            }
+
+            RecycleAddress ra = new RecycleAddress(recycle);
+            ra.SubRecycle(list);
+
+            return ra;
+        }
+
+        public static RecycleAddress MakeRecycleSongAndInst(uint songtable_address)
+        {
+            //今回の楽曲リサイクル
+            List<FEBuilderGBA.Address> recycle = new List<FEBuilderGBA.Address>();
+            MakeAllDataLength_Song_And_Inst(recycle, 0, songtable_address);
+
+            //ポインタを共有しているといけないので調べる
+            List<FEBuilderGBA.Address> list = new List<FEBuilderGBA.Address>();
+            InputFormRef InputFormRef = Init(null);
+
+            uint songpointer = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
+            {
+                if (songtable_address == songpointer)
+                {//自分自身
+                    continue;
                 }
 
-                uint instpointer = songaddr + 4;
-                //uint instaddr = Program.ROM.p32(instpointer);
-                {//楽器
-                    string name = "SongInst" + U.ToHexString(i) + " ";
-                    SongInstrumentForm.RecycleOldInstrument(ref list, name, instpointer);
-                }
+                MakeAllDataLength_Song_And_Inst(list, i, songpointer);
             }
+
+            RecycleAddress ra = new RecycleAddress(recycle);
+            ra.SubRecycle(list);
+
+            return ra;
         }
+
         //SongHeaderアドレスから曲名への逆変換
         public static string GetSongNameWhereSongHeader(uint headerAddr)
         {

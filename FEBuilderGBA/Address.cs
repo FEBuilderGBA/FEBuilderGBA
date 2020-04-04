@@ -109,9 +109,15 @@ namespace FEBuilderGBA
 
         public void ResizeAddress(uint addr,uint length)
         {
-            Debug.Assert(length < 0x100000);
-            Debug.Assert(U.isSafetyOffset(addr));
-            Debug.Assert(U.isSafetyOffset(addr+length));
+            if (length >= 0x100000)
+            {//バグってる?
+                Debug.Assert(false);
+                length = 0;
+            }
+            if (U.isSafetyOffset(addr) == false || U.isSafetyOffset(addr + length) == false)
+            {//範囲外なので長さを0にして消えることを想定します.
+                length = 0;
+            }
 
             this.Addr = addr;
             this.Length = length;
