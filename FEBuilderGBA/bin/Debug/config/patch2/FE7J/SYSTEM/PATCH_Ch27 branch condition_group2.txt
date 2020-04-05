@@ -1,0 +1,22 @@
+NAME=ch27の分岐に関係する人たちのグループ2
+NAME.en=Group 2 of people involved in branch of ch27
+
+//アドレスパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+POINTER=0x07E168
+DATASIZE=2
+DATACOUNT=$GREP2 0x00 0x00
+LISTNAME=$W0:UNIT
+
+//データを定義します
+W0:UNIT=Unit
+
+AUTHOR=7743
+
+INFO=ch27の分岐には、グループ1とグループ2のレベルアップした回数の合計値が利用されます。\r\nグループ1の方が大きいと、ch27Aへ移動します。\r\nグループ2の方が大きいと、ch27Bへ移動します。
+INFO.en=For the branch of ch27, total value of number of times level of Group 1 and Group 2 has been upgraded is used.\r\nIf group 1 is larger, move to ch27A.\r\nIf group 2 is larger, move to ch27B.
+
+NAME.zh=属于ch27分支的一群人2。
+INFO.zh=对于ch27的分支，使用组1和组2的级别已升级次数的总和。\r\n如果组1较大，请移至ch27A。\r\n如果组2较大，请移至ch27B。

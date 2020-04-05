@@ -3648,7 +3648,6 @@
 03004ADC	旗0x21  -  0x28	{U}
 08D6F71C	&EVENT	活动GAMEOVER	{J}
 08CA749C	&EVENT	活动GAMEOVER	{U}
-0807E14C	第23章分会决定	{J}
 08BFF828	:08BFF841	关于面部图像相关的OAM 1的东西	{J}
 08BFF842	:08BFF85B	关于面部图像相关的OAM 2的东西	{J}
 08BFF85C	:08BFF881	关于面部图像相关的OAM 3的东西	{J}
@@ -4811,3 +4810,11 @@
 08085C7C	DeletePlayerPhaseInterface6Cs	{U}
 080070AC	ShouldPortraitBeSmol	{J}
 0800721C	ShouldPortraitBeSmol	{U}
+08007160	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
+080072D0	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
+0807D368	Judgment Branch Ch24	{U}
+0807DF88	Judgment Branch Ch24	{J}
+0807D4C0	Judgment Branch Ch27	{U}
+0807E14C	Judgment Branch Ch27	{J}
+0807D448	Get Sum levelup count	{U}
+0807E0D4	Get Sum levelup count	{J}

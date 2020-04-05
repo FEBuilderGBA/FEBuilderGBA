@@ -3650,7 +3650,6 @@
 03004ADC	flag0x21 - 0x 28	{U}
 08D6F71C	&EVENT	EventGameOver	{J}
 08CA749C	&EVENT	EventGameOver	{U}
-0807E14C	ch.23 Branch decision	{J}
 08006C48	Decide which portrait OAM to use	{J}
 08006DB8	Decide which portrait OAM to use	{U}
 08BFF828	:08BFF841	Something about face image related OAM 1	{J}
@@ -4830,3 +4829,11 @@
 08085C7C	DeletePlayerPhaseInterface6Cs	{U}
 080070AC	ShouldPortraitBeSmol	{J}
 0800721C	ShouldPortraitBeSmol	{U}
+08007160	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
+080072D0	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
+0807D368	Judgment Branch Ch24	{U}
+0807DF88	Judgment Branch Ch24	{J}
+0807D4C0	Judgment Branch Ch27	{U}
+0807E14C	Judgment Branch Ch27	{J}
+0807D448	Get Sum levelup count	{U}
+0807E0D4	Get Sum levelup count	{J}

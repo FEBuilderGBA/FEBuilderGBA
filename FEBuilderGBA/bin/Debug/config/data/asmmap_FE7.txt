@@ -3762,7 +3762,6 @@
 03004ADC	フラグ 0x21-0x28	{U}
 08D6F71C	&EVENT	イベント GameOver	{J}
 08CA749C	&EVENT	イベント GameOver	{U}
-0807E14C	ch23分岐判定	{J}
 08BFF828	:08BFF841	顔画像関係のOAMの何か1	{J}
 08BFF842	:08BFF85B	顔画像関係のOAMの何か2	{J}
 08BFF85C	:08BFF881	顔画像関係のOAMの何か3	{J}
@@ -5140,3 +5139,9 @@
 0800721C	ShouldPortraitBeSmol	{U}
 08007160	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
 080072D0	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
+0807D368	Judgment Branch Ch24	{U}
+0807DF88	Judgment Branch Ch24	{J}
+0807D4C0	Judgment Branch Ch27	{U}
+0807E14C	Judgment Branch Ch27	{J}
+0807D448	Get Sum levelup count	{U}
+0807E0D4	Get Sum levelup count	{J}

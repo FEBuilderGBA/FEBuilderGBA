@@ -1,0 +1,16 @@
+NAME=Ch24の分岐条件
+NAME.en=Ch24 branch condition
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07D3AA
+HEX=false
+
+AUTHOR=SaltySoul
+
+INFO=エリウッド、ヘクトル、リンのLVの合計が、この値を超えるならば、ch24Aへ移動します。\r\nエリウッド、ヘクトル、リンのLVの合計が、この値を以下ならば、ch24Bへ移動します。
+INFO.en=If the sum of Eliwood, Hector and Lyn LV exceeds this value, move to ch24A.\r\nIf the sum of Eliwood, Hector and Lyn LV is below this value, move to ch24B.
+NAME.zh=Ch24分支条件。
+INFO.zh=如果Eliwood，Hector和Rin LV的总和超过此值，请移至ch24A。\r\n如果Eliwood，Hector和Rin的LV之和低于此值，请移至ch24B。

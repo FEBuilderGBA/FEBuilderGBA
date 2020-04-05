@@ -5740,6 +5740,9 @@ Road Movement Editor
 :ソングトラック
 Song Track
 
+:スキル カスタムビルド
+Skill Custom Build
+
 :外伝風の魔法拡張
 Gaiden-style Spell
 
@@ -5769,9 +5772,6 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
-
-:スキル カスタムビルド
-Skill Custom Build
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?

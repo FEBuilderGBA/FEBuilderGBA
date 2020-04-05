@@ -156,6 +156,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ToolCustomBuildButton = new System.Windows.Forms.Button();
             this.FE8SpellMenuExtendsButton = new System.Windows.Forms.Button();
             this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
@@ -225,7 +226,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ToolCustomBuildButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1579,6 +1579,17 @@
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
             this.ControlPanel.TabIndex = 1;
             // 
+            // ToolCustomBuildButton
+            // 
+            this.ToolCustomBuildButton.Location = new System.Drawing.Point(204, 492);
+            this.ToolCustomBuildButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ToolCustomBuildButton.Name = "ToolCustomBuildButton";
+            this.ToolCustomBuildButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolCustomBuildButton.TabIndex = 136;
+            this.ToolCustomBuildButton.Text = "スキル カスタムビルド";
+            this.ToolCustomBuildButton.UseVisualStyleBackColor = true;
+            this.ToolCustomBuildButton.Click += new System.EventHandler(this.ToolCustomBuildButton_Click);
+            // 
             // FE8SpellMenuExtendsButton
             // 
             this.FE8SpellMenuExtendsButton.Location = new System.Drawing.Point(204, 452);
@@ -2337,17 +2348,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // ToolCustomBuildButton
-            // 
-            this.ToolCustomBuildButton.Location = new System.Drawing.Point(204, 492);
-            this.ToolCustomBuildButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ToolCustomBuildButton.Name = "ToolCustomBuildButton";
-            this.ToolCustomBuildButton.Size = new System.Drawing.Size(200, 36);
-            this.ToolCustomBuildButton.TabIndex = 136;
-            this.ToolCustomBuildButton.Text = "スキル カスタムビルド";
-            this.ToolCustomBuildButton.UseVisualStyleBackColor = true;
-            this.ToolCustomBuildButton.Click += new System.EventHandler(this.ToolCustomBuildButton_Click);
             // 
             // MainFE8Form
             // 
