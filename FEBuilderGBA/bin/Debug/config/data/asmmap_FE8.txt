@@ -8191,8 +8191,8 @@
 08802884	:08802903	たぶん、何かの複数パレット	A2	{U}
 08802904	:08802B03	たぶん、何かの複数パレット	A3	{U}
 08802B24	:08802B83	たぶん、何かの複数パレット	A4	{U}
-08802B84	:08802C83	たぶん、何かの複数パレット	A5	{U}
-08802C84	:08802D23	たぶん、何かの複数パレット	A6	{U}
+08802B84	:08802C83	When struck palette (for all factions apparently)	{U}
+08802C84	:08802D23	Another array of palettes	player HP bar flashing,enemy HP bar flashing,NPC HP bar flashing,presumably other allegiace HP bar flashing	{U}
 08802D24	:08802D43	たぶん、何かの複数パレット	A7	{U}
 08802D44	:088030C3	無圧縮画像	枠	{U}
 088030C4	:088033C3	無圧縮画像	棒グラフのパーツ	{U}
@@ -8220,8 +8220,8 @@
 08856DDC	:08856E5B	たぶん、何かの複数パレット	A2	{J}
 08856E5C	:0885705B	たぶん、何かの複数パレット	A3	{J}
 0885705C	:088570DB	たぶん、何かの複数パレット	A4	{J}
-088570DC	:088571DB	たぶん、何かの複数パレット	A5	{J}
-088571DC	:0885727B	たぶん、何かの複数パレット	A6	{J}
+088570DC	:088571DB	When struck palette (for all factions apparently)	{J}
+088571DC	:0885727B	Another array of palettes	player HP bar flashing,enemy HP bar flashing,NPC HP bar flashing,presumably other allegiace HP bar flashing	{J}
 0885727C	:0885729B	たぶん、何かの複数パレット	A7	{J}
 0885729C	:0885761B	無圧縮画像	枠	{J}
 0885761C	:0885791B	無圧縮画像	棒グラフのパーツ	{J}

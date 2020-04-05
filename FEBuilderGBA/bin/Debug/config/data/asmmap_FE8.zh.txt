@@ -8166,8 +8166,8 @@ r3=X tile position of menu of the right	{U}
 08802884	:08802903	Maybe, something multiple palette	A2	{U}
 08802904	:08802B03	Maybe, something multiple palette	A3	{U}
 08802B24	:08802B83	Maybe, something multiple palette	A4	{U}
-08802B84	:08802C83	Maybe, something multiple palette	A5	{U}
-08802C84	:08802D23	Maybe, something multiple palette	A6	{U}
+08802B84	:08802C83	When struck palette (for all factions apparently)	{U}
+08802C84	:08802D23	Another array of palettes	player HP bar flashing,enemy HP bar flashing,NPC HP bar flashing,presumably other allegiace HP bar flashing	{U}
 08802D24	:08802D43	Maybe, something multiple palette	A7	{U}
 08802D44	:088030C3	Uncompressed Image	frame	{U}
 088030C4	:088033C3	Uncompressed Image	Bar chart parts	{U}
@@ -8195,8 +8195,8 @@ r3=X tile position of menu of the right	{U}
 08856DDC	:08856E5B	Maybe, something multiple palette	A2	{J}
 08856E5C	:0885705B	Maybe, something multiple palette	A3	{J}
 0885705C	:088570DB	Maybe, something multiple palette	A4	{J}
-088570DC	:088571DB	Maybe, something multiple palette	A5	{J}
-088571DC	:0885727B	Maybe, something multiple palette	A6	{J}
+088570DC	:088571DB	When struck palette (for all factions apparently)	{J}
+088571DC	:0885727B	Another array of palettes	player HP bar flashing,enemy HP bar flashing,NPC HP bar flashing,presumably other allegiace HP bar flashing	{J}
 0885727C	:0885729B	Maybe, something multiple palette	A7	{J}
 0885729C	:0885761B	Uncompressed Image	frame	{J}
 0885761C	:0885791B	Uncompressed Image	Bar chart parts	{J}
