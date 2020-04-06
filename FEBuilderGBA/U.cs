@@ -6983,15 +6983,22 @@ namespace FEBuilderGBA
             const int HORZRES = 8;
             const int DESKTOPHORZRES = 118;
 
-            using (Graphics screen = Graphics.FromHwnd(IntPtr.Zero))
+            try
             {
-                IntPtr hdc = screen.GetHdc();
+                using (Graphics screen = Graphics.FromHwnd(IntPtr.Zero))
+                {
+                    IntPtr hdc = screen.GetHdc();
 
-                int virtualWidth = GetDeviceCaps(hdc, HORZRES);
-                int physicalWidth = GetDeviceCaps(hdc, DESKTOPHORZRES);
-                screen.ReleaseHdc(hdc);
+                    int virtualWidth = GetDeviceCaps(hdc, HORZRES);
+                    int physicalWidth = GetDeviceCaps(hdc, DESKTOPHORZRES);
+                    screen.ReleaseHdc(hdc);
 
-                return (int)(96f * physicalWidth / virtualWidth);
+                    return (int)(96f * physicalWidth / virtualWidth);
+                }
+            }
+            catch (Exception)
+            {
+                return 96;
             }
         }
 
