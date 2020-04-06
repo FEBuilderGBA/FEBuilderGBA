@@ -7,7 +7,7 @@ TAG=#ENGINE
 HEX=false
 
 ADDRESS=0x002A2F8
-INFO=瞬殺で敵を倒した場合、撃破経験値が倍になります。ディフォルトは2です。\r\n関連ワード:撃破経験加算点,経験値計算式,GetUnitExpMultiplier
-INFO.en=If you kill an enemy by instantaneous killing, your EXP will be doubled.The default is 2.\r\nRelated words: Destruction experience addition point, experience value calculation formula, GetUnitExpMultiplier.
+INFO=瞬殺で敵を倒した場合、撃破経験値が倍になります。ディフォルトは2です。\r\nこのパッチで変更されるのは、{}で囲まれた部分です。\r\n未撃破経験値　　＝（31＋相手のLV＋相手の上級職補正－自分のLV－自分の上級職補正）÷自分の経験値補正値\r\n基礎撃破経験値　＝（相手のLV×相手の経験値補正値＋相手の階級修正B）－（自分のLV×自分の経験値補正値＋自分の階級修正B）÷プレイモード係数\r\n撃破経験値　　　＝未撃破経験値＋max（0，基礎撃破経験値＋20＋ボス修正＋シーフ修正）×{{瞬殺係数}}\r\n\r\n関連ワード:撃破経験加算点,経験値計算式,GetUnitExpMultiplier\r\n
+INFO.en=If you kill an enemy by instantaneous killing, your EXP will be doubled.The default is 2.\r\nWhat is changed in this patch is the part enclosed by {}.\r\nUndefeated EXP  = (31 + enemy's Level + enemy's Promoted Bonus - your LV - your Promoted Bonus) / your Class power\r\nBasic defeat EXP= (enemy's Level * enemy's class Relative Power + enemy's Class bonus B) - (your LV * your class Relative Power + your Class bonus B) / Mode coefficient\r\nDefeat EXP      = Undefeated EXP + max(0,Basic defeat EXP + 20 + boss Bonus + theif Bonus) * {{silencer Bonus}}\r\n\r\nRelated words: Destruction experience addition point, experience value calculation formula, GetUnitExpMultiplier.\r\n
 NAME.zh=激活瞬时杀戮获得的经验加成。
 INFO.zh=如果您通过瞬间杀戮杀死敌人，那么您的经验值将增加一倍。预设值为2。\r\n相关词：销毁经验附加点，经验值计算公式，GetUnitExpMultiplier。
