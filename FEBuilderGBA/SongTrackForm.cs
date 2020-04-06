@@ -69,6 +69,7 @@ namespace FEBuilderGBA
 
         private void SongTrackForm_Load(object sender, EventArgs e)
         {
+            U.AllowMaximizeBox(this);
         }
 
 
@@ -371,6 +372,26 @@ namespace FEBuilderGBA
             this.WriteButton.PerformClick();
 
             U.ReSelectList(this.AddressList);
+        }
+
+        private void SongTrackForm_Resize(object sender, EventArgs e)
+        {
+            Track1.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel1.Height - 10;
+            Track2.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel2.Height - 10;
+            Track3.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel3.Height - 10;
+            Track4.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel4.Height - 10;
+            Track5.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel5.Height - 10;
+            Track6.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel6.Height - 10;
+            Track7.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel7.Height - 10;
+            Track8.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel8.Height - 10;
+            Track9.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel9.Height - 10;
+            Track10.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel10.Height - 10;
+            Track11.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel11.Height - 10;
+            Track12.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel12.Height - 10;
+            Track13.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel13.Height - 10;
+            Track14.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel14.Height - 10;
+            Track15.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel15.Height - 10;
+            Track16.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel16.Height - 10;
         }
 
 

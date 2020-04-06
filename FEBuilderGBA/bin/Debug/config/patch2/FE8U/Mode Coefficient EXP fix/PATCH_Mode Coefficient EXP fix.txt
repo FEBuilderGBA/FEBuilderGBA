@@ -1,4 +1,5 @@
-NAME=Adjusted Experience Gains for High-level Units
+NAME=モードごとの経験値補正
+NAME.zh=调整上位职业的经验收益
 NAME.en=Adjust Mode Coefficient Experience Gain
 
 TYPE=ADDR
@@ -7,6 +8,8 @@ TAG=#ENGINE #ESSENTIALFIXES
 ADDRESS=0x2C474
 COMBO=Fix|0x00|Default|0x01
 
-INFO.en=Edit field to toggle the high-level experience coefficient.\r\nBy default, higher level units gain more experience than lower level units during chapters 1-8.\r\n
 
 AUTHOR=Vennobennu https://feuniverse.us/t/exp-formula-mode-coefficient-fix/27/2 Compatability:7743
+INFO=FE8では、序盤だと経験値計算式が変わります。\r\nこのパッチは、それを抑制しやめさせます。\r\n関連ワード:撃破経験加算点,経験値計算式
+INFO.en=Edit field to toggle the high-level experience coefficient.\r\nBy default, higher level units gain more experience than lower level units during chapters 1-8.\r\n
+INFO.zh=在FE8中，经验计算公式从一开始就更改。\r\n该补丁可以抑制它。\r\n相关词：破坏经验附加点，经验值计算公式。

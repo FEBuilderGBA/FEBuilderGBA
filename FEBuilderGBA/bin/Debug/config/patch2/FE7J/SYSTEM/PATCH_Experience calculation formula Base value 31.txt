@@ -1,0 +1,13 @@
+NAME=経験値計算式 基本値31
+NAME.en=EXP calculation formula Base value 31
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=false
+
+ADDRESS=0x02A260
+INFO=GetUnitRoundExp関数で経験値の計算に利用される基礎値です。ディフォルトは31です。\r\n関連ワード:撃破経験加算点\r\n\r\n
+INFO.en=This is the base value used for calculating the experience value by the GetUnitRoundExp function.The default is 31.\r\nRelated Words: Defeat experience points.\r\n\r\n
+NAME.zh=经验计算公式基本值31。
+INFO.zh=这是用于通过GetUnitRoundExp函数计算体验值的基本值。默认值为31。\r\n相关词：击败经验点。\r\n\r\n

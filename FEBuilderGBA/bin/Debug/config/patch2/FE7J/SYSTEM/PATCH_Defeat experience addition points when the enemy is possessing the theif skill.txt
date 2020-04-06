@@ -1,0 +1,13 @@
+NAME=敵が盗賊スキル保持だった時の撃破経験加算点
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2A2CC
+HEX=false
+
+AUTHOR=7743
+
+NAME.zh=当敌人拥有盗贼技能时击败经验点
+NAME.en=Bonus EXP Value if Enemy has Theif
+

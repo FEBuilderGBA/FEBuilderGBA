@@ -720,7 +720,7 @@ namespace FEBuilderGBA
                     Control c = tab.Controls[n];
                     if (c is ProcsScriptInnerControl)
                     {
-                        {//フォントサイズ中と小
+                        {
                             c.Width = tab.Width;
                             c.Height = tab.Height;
                         }

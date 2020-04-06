@@ -4818,3 +4818,76 @@
 0807E14C	Judgment Branch Ch27	{J}
 0807D448	Get Sum levelup count	{U}
 0807E0D4	Get Sum levelup count	{J}
+0802A24C	GetUnitRoundExp	{J}
+0802a22c	GetUnitEffectiveLevel	{J}
+0802a324	GetUnitKillExpBonus	{J}
+0802A3C0	ComputeExpFromBattle	{J}
+08029ae4	CanUnitNotLevelUp	{J}
+08029A1C	BattleApplyExpGains	{J}
+080288b0	BattleGenerate	{J}
+0802a1bc	UpdateUnitDuringBattle	{J}
+0802a940	nullsub_11	{J}
+080a1a88	SaveSuspendedGame	{J}
+08028c08	SetupBattleWeaponData	{J}
+0802a620	BattleApplyWeaponTriangle	{J}
+0802AB90	BattleGenerateArena	{J}
+0802EAC4	MapMain_ResumeFromArena	{J}
+0802EB40	MapMain_ResumeFromPhaseSwitch	{J}
+080b7880	ComputeChapterRankings	{J}
+080a0054	SaveEndgameRankingsMaybe	{J}
+0802EB7C	Strategy evaluation called from GAMECTRL	{J}
+08013200	SetNextGameActionId	{J}
+080a0e48	RegisterCompletedPlaythrough	{J}
+0809ee90	IsSramWorking	{J}
+080a22cc	GetNextSuspendSaveId	{J}
+0809f280	GetSaveDataLocation	{J}
+08000eec	GetGameClock	{J}
+080a1d80	PackUnitStructForSuspend	{J}
+0802ad58	BattleUnwindScripted	{J}
+0802887C	SimulateBattleBallista	{J}
+08028654	BattleGenerateSimulationInternal	{J}
+08028868	BattleGenerateReal	{J}
+08028724	BattleGenerateRealInternal	{J}
+08028654	BattleGenerateSimulationInternal	{J}
+08028830	SimulateBattle	{J}
+0802a944	BattlePrintDebugHitInfo	{J}
+
+08029D9C)	GetUnitRoundExp	{U}
+08029D7C)	GetUnitEffectiveLevel	{U}
+08029E74)	GetUnitKillExpBonus	{U}
+08029F10)	ComputeExpFromBattle	{U}
+08029634)	CanUnitNotLevelUp	{U}
+0802956C)	BattleApplyExpGains	{U}
+08028424)	BattleGenerate	{U}
+08029D0C)	UpdateUnitDuringBattle	{U}
+0802a490	nullsub_11	{U}
+080a1100	SaveSuspendedGame	{U}
+0802877c	SetupBattleWeaponData	{U}
+0802a170	BattleApplyWeaponTriangle	{U}
+0802A6E0	BattleGenerateArena	{U}
+0802E5F8	MapMain_ResumeFromArena	{U}
+0802E500	MapMain_ResumeFromPhaseSwitch	{U}
+080B6A74	ComputeChapterRankings	{U}
+0809F618	SaveEndgameRankingsMaybe	{U}
+0802E6B0	Strategy evaluation called from GAMECTRL	{U}
+08012B48	SetNextGameActionId	{U}
+080A049C	RegisterCompletedPlaythrough	{U}
+0809e478	IsSramWorking	{U}
+080A1938	GetNextSuspendSaveId	{U}
+0809E870	GetSaveDataLocation	{U}
+08000F14	GetGameClock	{U}
+080A13EC	PackUnitStructForSuspend	{U}
+0802A8A8	BattleUnwindScripted	{U}
+080283F0	SimulateBattleBallista	{U}
+080281C8	BattleGenerateSimulationInternal	{U}
+08028410	BattleGenerateReal	{U}
+08028298	BattleGenerateRealInternal	{U}
+080281C8	BattleGenerateSimulationInternal	{U}
+080283A4	SimulateBattle	{U}
+0802A494	BattlePrintDebugHitInfo	{U}
+0802a27c	GetUnitEffectivePowerLevel	{J}
+0802a2b8	GetUnitClassKillExpBonus	{J}
+0802a2e0	GetUnitExpMultiplier	{J}
+08029DCC	GetUnitEffectivePowerLevel	{U}
+08029E08	GetUnitClassKillExpBonus	{U}
+08029E30	GetUnitExpMultiplier	{U}

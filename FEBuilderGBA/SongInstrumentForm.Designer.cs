@@ -529,7 +529,6 @@
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -541,7 +540,6 @@
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
@@ -4833,7 +4831,7 @@
             this.FINGERPRINT.Name = "FINGERPRINT";
             this.FINGERPRINT.Placeholder = "";
             this.FINGERPRINT.ReadOnly = true;
-            this.FINGERPRINT.Size = new System.Drawing.Size(623, 25);
+            this.FINGERPRINT.Size = new System.Drawing.Size(660, 25);
             this.FINGERPRINT.TabIndex = 1;
             // 
             // label122

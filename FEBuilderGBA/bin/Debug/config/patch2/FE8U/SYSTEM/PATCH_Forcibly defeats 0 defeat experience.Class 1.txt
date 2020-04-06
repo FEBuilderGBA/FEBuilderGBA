@@ -1,0 +1,13 @@
+NAME=撃破経験値を強制的に0にするクラス1
+NAME.en=Forcibly defeats 0 defeat EXP.Class 1
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS_TYPE=CLASS
+
+ADDRESS=0x002C514
+INFO=ModifyUnitSpecialExp関数で、撃破経験値を強制的に0に上書きするクラスです。\r\n関連ワード:撃破経験加算点,経験値計算式
+INFO.en=This class forcibly overwrites the kill experience value with 0 with the ModifyUnitSpecialExp function.\r\nRelated words: Destruction experience addition point, experience value calculation formula.
+NAME.zh=强制击败0次失败经验的1类。
+INFO.zh=此类使用ModifyUnitSpecialExp函数强制将杀死经验值覆盖为0。\r\n相关词：破坏经验附加点，经验值计算公式。

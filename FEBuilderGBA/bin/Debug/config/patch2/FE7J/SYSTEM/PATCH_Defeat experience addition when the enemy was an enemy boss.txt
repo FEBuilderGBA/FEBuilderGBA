@@ -1,0 +1,13 @@
+NAME=敵が敵将だった時の撃破経験加算点
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2A2D8
+HEX=false
+
+AUTHOR=7743
+
+NAME.zh=当敌人是将军时击败经验附加点
+NAME.en=Bonus EXP Value if Enemy has BossFlag
+

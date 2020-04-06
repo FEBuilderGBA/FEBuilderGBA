@@ -6974,6 +6974,36 @@ namespace FEBuilderGBA
             File.WriteAllBytes(dest, bin);
             return true;
         }
+
+        //高解像度対応
+        [DllImport("gdi32.dll")]
+        extern static int GetDeviceCaps(IntPtr hdc, int index);
+        public static int GetSystemDpi()
+        {
+            const int HORZRES = 8;
+            const int DESKTOPHORZRES = 118;
+
+            using (Graphics screen = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                IntPtr hdc = screen.GetHdc();
+
+                int virtualWidth = GetDeviceCaps(hdc, HORZRES);
+                int physicalWidth = GetDeviceCaps(hdc, DESKTOPHORZRES);
+                screen.ReleaseHdc(hdc);
+
+                return (int)(96f * physicalWidth / virtualWidth);
+            }
+        }
+
+        public static void AllowMaximizeBox(Form f)
+        {
+            f.MaximizeBox = true;
+            if (Program.SystemDPI > 96)
+            {
+                f.Width = (int)(f.Width * 1.25);
+                f.Height = (int)(f.Height * 1.25);
+            }
+        }
     }
 }
 

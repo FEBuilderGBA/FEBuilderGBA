@@ -131,7 +131,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(587, 3);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -179,9 +178,8 @@
             // 
             // L_0_UNITICON
             // 
-            this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(472, 2);
+            this.L_0_UNITICON.Location = new System.Drawing.Point(487, 2);
             this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_UNITICON.Name = "L_0_UNITICON";
             this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -432,6 +430,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);

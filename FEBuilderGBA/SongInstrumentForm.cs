@@ -132,7 +132,6 @@ namespace FEBuilderGBA
 
         private void SongVocaForm_Load(object sender, EventArgs e)
         {
-
         }
         public void JumpToAddr(uint addr)
         {

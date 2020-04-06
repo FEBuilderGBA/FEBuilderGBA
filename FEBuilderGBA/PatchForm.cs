@@ -32,6 +32,7 @@ namespace FEBuilderGBA
         private void PatchForm_Load(object sender, EventArgs e)
         {
             this.ToolTip = InputFormRef.GetToolTip<PatchForm>();
+            U.AllowMaximizeBox(this);
         }
 
         public static string GetPatchDirectory()
@@ -6589,6 +6590,32 @@ namespace FEBuilderGBA
                 exportFunctions.Add(EAName, addr);
             }
         }
+        public static void MakeAIScript(List<EventScript.Script> scripts)
+        {
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
+            List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(), true);
+            for (int i = 0; i < patchs.Count; i++)
+            {
+                PatchSt patch = patchs[i];
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
+                string error = CheckIFFast(patch);
+                if (error != "I")
+                {
+                    continue;
+                }
+
+                foreach (var pair in patch.Param)
+                {
+                    if (pair.Key.IndexOf("AISCRIPT") == 0)
+                    {
+                        MakeEventScriptAddEventScript(patch, pair.Value, scripts);
+                    }
+                }
+            }
+        }
 
         public static void MakeEventScript(List<EventScript.Script> scripts
             , Dictionary<uint, string> flags
@@ -8409,5 +8436,6 @@ namespace FEBuilderGBA
 
             }
         }
+
     }
 }

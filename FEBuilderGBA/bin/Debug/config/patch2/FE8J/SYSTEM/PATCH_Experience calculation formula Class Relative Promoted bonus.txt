@@ -1,0 +1,13 @@
+NAME=経験値計算式 クラス階級修正値 上級職ボーナス
+NAME.en=EXP calculation formula Class Relative Promoted bonus
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=false
+
+ADDRESS=0x002C2A6
+INFO=GetUnitEffectiveLevel関数で、クラス値を計算するときに、上級職だった場合に加算される補助値です。ディフォルトは20です。\r\n関連ワード:撃破経験加算点,経験値計算式
+INFO.en=When calculating the class value with the GetUnitEffectiveLevel function, this is an auxiliary value that is added if you are a senior employee.The default is 20.\r\nRelated words: Destruction experience addition point, experience value calculation formula.
+NAME.zh=经验计算公式班级班级修改值高级职位奖金。
+INFO.zh=当使用GetUnitEffectiveLevel函数计算类值时，这是一个辅助值，如果您是高级员工，则会添加该值。默认值为20。\r\n相关词：破坏经验附加点，经验值计算公式。

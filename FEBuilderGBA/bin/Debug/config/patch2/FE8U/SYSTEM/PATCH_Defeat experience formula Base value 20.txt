@@ -1,0 +1,13 @@
+NAME=撃破経験値の基礎値20
+NAME.en=Defeat EXP formula Base value 20
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=false
+
+ADDRESS=0x02C462 0x02C480
+INFO=撃破経験値の計算に利用する基礎値です。ディフォルトは20です。\r\n関連ワード:撃破経験加算点,経験値計算式
+INFO.en=This is the base value used to calculate the kill experience.The default is 20.\r\nRelated words: Destruction experience addition point, experience value calculation formula.
+NAME.zh=击败经验基础值20。
+INFO.zh=这是用于计算击杀经验的基本值。默认值为20。\r\n相关词：破坏经验附加点，经验值计算公式。

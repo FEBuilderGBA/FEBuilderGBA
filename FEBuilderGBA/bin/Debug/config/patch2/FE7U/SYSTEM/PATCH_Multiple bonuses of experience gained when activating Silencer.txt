@@ -1,0 +1,13 @@
+NAME=瞬殺を発動した場合の獲得経験値の倍数ボーナス値
+NAME.en=Multiple bonuses of EXP gained when activating Silencer
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=false
+
+ADDRESS=0x0029E48
+INFO=瞬殺で敵を倒した場合、撃破経験値が倍になります。ディフォルトは2です。\r\n関連ワード:撃破経験加算点,経験値計算式,GetUnitExpMultiplier
+INFO.en=If you kill an enemy by instantaneous killing, your EXP will be doubled.The default is 2.\r\nRelated words: Destruction experience addition point, experience value calculation formula, GetUnitExpMultiplier.
+NAME.zh=激活瞬时杀戮获得的经验加成。
+INFO.zh=如果您通过瞬间杀戮杀死敌人，那么您的经验值将增加一倍。预设值为2。\r\n相关词：销毁经验附加点，经验值计算公式，GetUnitExpMultiplier。

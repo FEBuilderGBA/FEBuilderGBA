@@ -50,6 +50,7 @@ namespace FEBuilderGBA
                 this.AddressList.Height += AddressListExpandsButton_32766.Height;
                 AddressListExpandsButton_32766.Hide();
             }
+            U.AllowMaximizeBox(this);
         }
 
         public static string GetSongName(uint song_id)

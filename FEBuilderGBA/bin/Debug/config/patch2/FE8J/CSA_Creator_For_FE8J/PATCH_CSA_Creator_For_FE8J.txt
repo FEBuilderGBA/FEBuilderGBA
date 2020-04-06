@@ -15,3 +15,4 @@ INFO.zh=这个补丁导入了自定义魔法系统。\r\nFE的魔法ASM + Proc�
 
 INFO=このパッチは、カスタム魔法システムを導入します。\r\nFEの魔法はASM+Procでハードコーディングされています。\r\nそのため戦闘アニメーションのように利用するのがとても困難です。\r\nこのパッチは、独自の魔法システムを構築します。\r\nそのシステムを利用することで、戦闘アニメーションのように、魔法アニメーションを作ることができるようになります。\r\nカスタム魔法システムを支える重要なパッチです。
 INFO.en=This patch introduces custom magic system.\r\nFE's magic is hard-coded in ASM + Proc.\r\nTherefore it is very difficult to use like battle animation.\r\nThis patch builds its own magic system.\r\nBy using that system, you will be able to create magic animation like battle animation.\r\nIt is an important patch that supports custom magic system.
+AFTER_TRY_EXECUTE:1=../Fix dodge to front glitch/PATCH_Fix dodge to front glitch.txt

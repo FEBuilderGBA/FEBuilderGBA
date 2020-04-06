@@ -1,0 +1,13 @@
+NAME=撃破経験値を強制上書きするクラス2
+NAME.en=Forcibly overwrites defeat EXP. Class2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS_TYPE=CLASS
+
+ADDRESS=0x02C434
+INFO=ModifyUnitSpecialExp関数で、撃破経験値を強制的に上書きするクラスです。\r\n関連ワード:撃破経験加算点,経験値計算式
+INFO.en=A class that forcibly overwrites the kill experience value with the ModifyUnitSpecialExp function.\r\nRelated words: Destruction experience addition point, experience value calculation formula.
+NAME.zh=强制覆盖失败经验的2类。
+INFO.zh=一个类，使用ModifyUnitSpecialExp函数强制覆盖终止体验值。\r\n相关词：破坏经验附加点，经验值计算公式。

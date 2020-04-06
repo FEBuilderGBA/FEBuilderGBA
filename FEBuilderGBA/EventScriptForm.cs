@@ -676,7 +676,7 @@ namespace FEBuilderGBA
                     Control c = tab.Controls[n];
                     if (c is EventScriptInnerControl)
                     {
-                        {//フォントサイズ中と小
+                        {
                             c.Width = tab.Width;
                             c.Height = tab.Height;
                         }

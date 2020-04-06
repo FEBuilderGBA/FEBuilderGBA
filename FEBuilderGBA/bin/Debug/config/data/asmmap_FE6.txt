@@ -1395,7 +1395,7 @@
 0806D028	砂漠の財宝の判定
 08041A38	EndAllMenus
 0808F2A4	DeletePlayerPhaseInterface6Cs
-0800d9b8	イベント命令を動作させる関数	r0=イベント命令ポインタ:POINTER_EVENT	r1=引数?1-3	{J}
+0800d9b8	イベント命令を動作させる関数	r0=イベント命令ポインタ:POINTER_EVENT	r1=引数?1-3
 0800D978	CallExecuteEvent_Slot3	r0=event
 0806B5B0	MaybeCallEndEvent
 0806cd78	ShouldCallEndEvent
@@ -1422,3 +1422,29 @@
 @TrapEntry@07	byte	ext5
 
 02039330	@TrapEntry@[40]	Traps
+
+080257B0	GetUnitRoundExp
+08025790	GetUnitEffectiveLevel
+08025844	GetUnitKillExpBonus
+08025880	ComputeExpFromBattle
+0802503C	BattleApplyExpGains
+080242C8	BattleGenerate
+0802571C	UpdateUnitDuringBattle
+08025a90	BattleApplyWeaponTriangle
+08025FB4	BattleGenerateArena
+08000EEC	GetGameClock
+08085A48	PackUnitStructForSuspend
+08024294	SimulateBattleBallista
+0802407C	BattleGenerateSimulationInternal
+080242B4	BattleGenerateReal
+08024144	BattleGenerateRealInternal
+0802407C	BattleGenerateSimulationInternal
+08025D5C	BattlePrintDebugHitInfo
+080257E0	GetUnitEffectivePowerLevel
+0802581c	GetUnitClassKillExpBonus
+08025d58	nullsub_11
+08025748	UpdateBallistaUsesFromBattle
+0802454c	BattleSetupTerrainData
+080245a0	SetupBattleWeaponData
+08025b1c	DoSomeBattleWeaponStuff
+080245a0	SetupBattleWeaponData

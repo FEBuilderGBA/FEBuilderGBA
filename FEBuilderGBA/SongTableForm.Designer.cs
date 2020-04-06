@@ -30,10 +30,10 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ReadCount = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -64,9 +64,10 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -76,6 +77,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -86,10 +88,11 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.ReadStartAddress);
             this.panel3.Controls.Add(this.ReadCount);
-            this.panel3.Location = new System.Drawing.Point(13, 14);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1394, 30);
+            this.panel3.Size = new System.Drawing.Size(1413, 30);
             this.panel3.TabIndex = 79;
             // 
             // ReloadListButton
@@ -102,17 +105,6 @@
             this.ReloadListButton.Text = "再取得";
             this.ReloadListButton.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(-1, -1);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 30);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "先頭アドレス";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -124,13 +116,16 @@
             this.label5.Text = "読込数";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ReadCount
+            // label4
             // 
-            this.ReadCount.Location = new System.Drawing.Point(621, 2);
-            this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
-            this.ReadCount.Name = "ReadCount";
-            this.ReadCount.Size = new System.Drawing.Size(78, 25);
-            this.ReadCount.TabIndex = 28;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(-1, -1);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 30);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "先頭アドレス";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReadStartAddress
             // 
@@ -145,6 +140,14 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
+            // 
+            // ReadCount
+            // 
+            this.ReadCount.Location = new System.Drawing.Point(621, 2);
+            this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
+            this.ReadCount.Name = "ReadCount";
+            this.ReadCount.Size = new System.Drawing.Size(78, 25);
+            this.ReadCount.TabIndex = 28;
             // 
             // D4
             // 
@@ -185,10 +188,11 @@
             this.panel4.Controls.Add(this.J_4);
             this.panel4.Controls.Add(this.P0);
             this.panel4.Controls.Add(this.J_ID_SONGTRACK_ADDR);
-            this.panel4.Location = new System.Drawing.Point(538, 78);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(870, 680);
+            this.panel4.Size = new System.Drawing.Size(887, 711);
             this.panel4.TabIndex = 80;
             // 
             // Comment
@@ -370,10 +374,11 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(538, 44);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(872, 30);
+            this.panel5.Size = new System.Drawing.Size(887, 30);
             this.panel5.TabIndex = 78;
             // 
             // BlockSize
@@ -458,48 +463,60 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressList);
             this.panel6.Controls.Add(this.AddressListExpandsButton_32766);
             this.panel6.Controls.Add(this.LabelFilter);
-            this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(13, 48);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 30);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(521, 710);
+            this.panel6.Size = new System.Drawing.Size(526, 741);
             this.panel6.TabIndex = 147;
             // 
             // AddressListExpandsButton_32766
             // 
-            this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(2, 680);
+            this.AddressListExpandsButton_32766.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(0, 709);
             this.AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_32766.Name = "AddressListExpandsButton_32766";
-            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(510, 30);
+            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(524, 30);
             this.AddressListExpandsButton_32766.TabIndex = 116;
             this.AddressListExpandsButton_32766.Text = "リストの拡張";
             this.AddressListExpandsButton_32766.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(522, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(524, 26);
             this.LabelFilter.TabIndex = 106;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(522, 657);
+            this.AddressList.Size = new System.Drawing.Size(524, 683);
             this.AddressList.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(526, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(887, 741);
+            this.panel2.TabIndex = 148;
             // 
             // SongTableForm
             // 
@@ -507,17 +524,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1413, 771);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "SongTableForm";
             this.Text = "ソングテーブル";
             this.Load += new System.EventHandler(this.SongTableForm_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -532,6 +548,7 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -574,5 +591,6 @@
         private System.Windows.Forms.Button AddressListExpandsButton_32766;
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -230,6 +230,11 @@ namespace FEBuilderGBA
                 PatchForm.MakeEventScript(scripts, flags, Program.TextEscape, Program.ExportFunction);
                 Program.FlagCache.MargeFlags(flags);
             }
+//            else if (eventScriptType == EventScriptType.AI)
+//            {
+//                //パッチに登録されているイベントのスキャン(少し重いです)
+//                PatchForm.MakeAIScript(scripts);
+//            }
 
             //でかいイベントからマッチさせていきたいので、スクリプト長で、降順にソートする
             scripts.Sort((a, b) => 

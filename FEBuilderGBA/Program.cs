@@ -26,6 +26,7 @@ namespace FEBuilderGBA
 #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Program.SystemDPI = U.GetSystemDpi();
 
             //自プロセスのパスから、ベースディレクトリを特定します.
             Program.BaseDirectory = MakeBaseDirectory();
@@ -661,6 +662,7 @@ namespace FEBuilderGBA
         public static RAM RAM { get; private set; }
         public static TextEscape TextEscape { get; private set; }
         public static bool IsCommandLine { get; private set; }
+        public static int  SystemDPI { get; private set; }
         public static bool DoReOpen = false;
         static int MainThreadID;
     }
