@@ -1,0 +1,6 @@
+0=AllyStarHitBonus
+1=AllyStarAvoidBonus
+2=EnemyStarHitBonus
+3=EnemyStarAvoidBonus(not use)
+4=NPCStarHitBonus
+5=NPCStarAvoidBonus

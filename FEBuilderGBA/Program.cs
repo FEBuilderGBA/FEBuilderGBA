@@ -48,11 +48,6 @@ namespace FEBuilderGBA
             //多言語切り替え
             ReLoadTranslateResource();
 
-            //アップデートに失敗して、アップデーターの残骸があれば利用する
-            if (ToolUpdateDialogForm.CheckUpdateGarbage())
-            {
-                return;
-            }
 
             //外部プロセスからの書き換え監視等の開始
             UpdateWatcher = new ROMUpdateWatcher();

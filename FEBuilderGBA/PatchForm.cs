@@ -20,7 +20,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            InputFormRef.TabControlHideTabOption(this.TAB);
+//            InputFormRef.TabControlHideTabOption(this.TAB);
             this.MaximizeBox = false;
             ClearCheckIF();
             ReScan();

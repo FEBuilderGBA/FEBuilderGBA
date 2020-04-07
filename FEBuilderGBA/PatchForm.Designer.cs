@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PatchList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Filter = new FEBuilderGBA.TextBoxEx();
             this.FilterExLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.PatchFilename = new FEBuilderGBA.TextBoxEx();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PatchOpenButton = new System.Windows.Forms.Button();
             this.ReloadButton = new System.Windows.Forms.Button();
             this.TAB = new System.Windows.Forms.TabControl();
             this.ErrorPage = new System.Windows.Forms.TabPage();
             this.ERROR_label = new System.Windows.Forms.Label();
-            this.ERROR_TextBox = new FEBuilderGBA.TextBoxEx();
             this.ElsePage = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.ELSE_TextBox = new FEBuilderGBA.TextBoxEx();
             this.PatchedPage = new System.Windows.Forms.TabPage();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.UnInstallButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.PATCHED_TextBox = new FEBuilderGBA.TextBoxEx();
             this.PatchPage = new System.Windows.Forms.TabPage();
             this.ConflictPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
+            this.PatchFilename = new FEBuilderGBA.TextBoxEx();
+            this.ERROR_TextBox = new FEBuilderGBA.TextBoxEx();
+            this.ELSE_TextBox = new FEBuilderGBA.TextBoxEx();
+            this.PATCHED_TextBox = new FEBuilderGBA.TextBoxEx();
             this.CONFLICT_TextBox = new FEBuilderGBA.TextBoxEx();
+            this.PatchList = new FEBuilderGBA.ListBoxEx();
+            this.Filter = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,20 +78,6 @@
             this.panel1.Size = new System.Drawing.Size(584, 855);
             this.panel1.TabIndex = 2;
             // 
-            // PatchList
-            // 
-            this.PatchList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PatchList.FormattingEnabled = true;
-            this.PatchList.IntegralHeight = false;
-            this.PatchList.ItemHeight = 18;
-            this.PatchList.Location = new System.Drawing.Point(0, 32);
-            this.PatchList.Margin = new System.Windows.Forms.Padding(2);
-            this.PatchList.Name = "PatchList";
-            this.PatchList.Size = new System.Drawing.Size(584, 823);
-            this.PatchList.TabIndex = 1;
-            this.PatchList.SelectedIndexChanged += new System.EventHandler(this.PatchList_SelectedIndexChanged);
-            this.PatchList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PatchList_KeyDown);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.Filter);
@@ -101,18 +87,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(584, 32);
             this.panel4.TabIndex = 4;
-            // 
-            // Filter
-            // 
-            this.Filter.ErrorMessage = "";
-            this.Filter.Location = new System.Drawing.Point(110, 3);
-            this.Filter.Name = "Filter";
-            this.Filter.Placeholder = "";
-            this.Filter.Size = new System.Drawing.Size(470, 25);
-            this.Filter.TabIndex = 0;
-            this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
-            this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
-            this.Filter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
             // 
             // FilterExLabel
             // 
@@ -149,18 +123,6 @@
             this.panel3.Size = new System.Drawing.Size(1035, 40);
             this.panel3.TabIndex = 1;
             // 
-            // PatchFilename
-            // 
-            this.PatchFilename.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PatchFilename.ErrorMessage = "";
-            this.PatchFilename.Location = new System.Drawing.Point(0, 0);
-            this.PatchFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.PatchFilename.Name = "PatchFilename";
-            this.PatchFilename.Placeholder = "";
-            this.PatchFilename.ReadOnly = true;
-            this.PatchFilename.Size = new System.Drawing.Size(606, 25);
-            this.PatchFilename.TabIndex = 6;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.PatchOpenButton);
@@ -195,6 +157,7 @@
             // 
             // TAB
             // 
+            this.TAB.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.TAB.Controls.Add(this.ErrorPage);
             this.TAB.Controls.Add(this.ElsePage);
             this.TAB.Controls.Add(this.PatchedPage);
@@ -203,6 +166,7 @@
             this.TAB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TAB.Location = new System.Drawing.Point(0, 0);
             this.TAB.Margin = new System.Windows.Forms.Padding(0);
+            this.TAB.Multiline = true;
             this.TAB.Name = "TAB";
             this.TAB.SelectedIndex = 0;
             this.TAB.Size = new System.Drawing.Size(1035, 855);
@@ -213,7 +177,7 @@
             this.ErrorPage.BackColor = System.Drawing.SystemColors.Control;
             this.ErrorPage.Controls.Add(this.ERROR_label);
             this.ErrorPage.Controls.Add(this.ERROR_TextBox);
-            this.ErrorPage.Location = new System.Drawing.Point(4, 28);
+            this.ErrorPage.Location = new System.Drawing.Point(4, 4);
             this.ErrorPage.Margin = new System.Windows.Forms.Padding(2);
             this.ErrorPage.Name = "ErrorPage";
             this.ErrorPage.Padding = new System.Windows.Forms.Padding(2);
@@ -232,25 +196,12 @@
             this.ERROR_label.Text = "エラーが発生しているため、このパッチは利用できません";
             this.ERROR_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ERROR_TextBox
-            // 
-            this.ERROR_TextBox.ErrorMessage = "";
-            this.ERROR_TextBox.Location = new System.Drawing.Point(7, 84);
-            this.ERROR_TextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ERROR_TextBox.Multiline = true;
-            this.ERROR_TextBox.Name = "ERROR_TextBox";
-            this.ERROR_TextBox.Placeholder = "";
-            this.ERROR_TextBox.ReadOnly = true;
-            this.ERROR_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ERROR_TextBox.Size = new System.Drawing.Size(999, 658);
-            this.ERROR_TextBox.TabIndex = 0;
-            // 
             // ElsePage
             // 
             this.ElsePage.BackColor = System.Drawing.SystemColors.Control;
             this.ElsePage.Controls.Add(this.label2);
             this.ElsePage.Controls.Add(this.ELSE_TextBox);
-            this.ElsePage.Location = new System.Drawing.Point(4, 28);
+            this.ElsePage.Location = new System.Drawing.Point(4, 4);
             this.ElsePage.Margin = new System.Windows.Forms.Padding(2);
             this.ElsePage.Name = "ElsePage";
             this.ElsePage.Padding = new System.Windows.Forms.Padding(2);
@@ -269,19 +220,6 @@
             this.label2.Text = "以下の条件を満たしていないため利用できません。";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ELSE_TextBox
-            // 
-            this.ELSE_TextBox.ErrorMessage = "";
-            this.ELSE_TextBox.Location = new System.Drawing.Point(6, 84);
-            this.ELSE_TextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ELSE_TextBox.Multiline = true;
-            this.ELSE_TextBox.Name = "ELSE_TextBox";
-            this.ELSE_TextBox.Placeholder = "";
-            this.ELSE_TextBox.ReadOnly = true;
-            this.ELSE_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ELSE_TextBox.Size = new System.Drawing.Size(998, 657);
-            this.ELSE_TextBox.TabIndex = 5;
-            // 
             // PatchedPage
             // 
             this.PatchedPage.BackColor = System.Drawing.SystemColors.Control;
@@ -289,7 +227,7 @@
             this.PatchedPage.Controls.Add(this.UnInstallButton);
             this.PatchedPage.Controls.Add(this.label3);
             this.PatchedPage.Controls.Add(this.PATCHED_TextBox);
-            this.PatchedPage.Location = new System.Drawing.Point(4, 28);
+            this.PatchedPage.Location = new System.Drawing.Point(4, 4);
             this.PatchedPage.Margin = new System.Windows.Forms.Padding(4);
             this.PatchedPage.Name = "PatchedPage";
             this.PatchedPage.Padding = new System.Windows.Forms.Padding(4);
@@ -330,24 +268,11 @@
             this.label3.Text = "すでに適応済みです";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PATCHED_TextBox
-            // 
-            this.PATCHED_TextBox.ErrorMessage = "";
-            this.PATCHED_TextBox.Location = new System.Drawing.Point(7, 103);
-            this.PATCHED_TextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.PATCHED_TextBox.Multiline = true;
-            this.PATCHED_TextBox.Name = "PATCHED_TextBox";
-            this.PATCHED_TextBox.Placeholder = "";
-            this.PATCHED_TextBox.ReadOnly = true;
-            this.PATCHED_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.PATCHED_TextBox.Size = new System.Drawing.Size(995, 647);
-            this.PATCHED_TextBox.TabIndex = 7;
-            // 
             // PatchPage
             // 
             this.PatchPage.AutoScroll = true;
             this.PatchPage.BackColor = System.Drawing.SystemColors.Control;
-            this.PatchPage.Location = new System.Drawing.Point(4, 28);
+            this.PatchPage.Location = new System.Drawing.Point(4, 4);
             this.PatchPage.Margin = new System.Windows.Forms.Padding(2);
             this.PatchPage.Name = "PatchPage";
             this.PatchPage.Padding = new System.Windows.Forms.Padding(2);
@@ -360,7 +285,7 @@
             this.ConflictPage.BackColor = System.Drawing.SystemColors.Control;
             this.ConflictPage.Controls.Add(this.label4);
             this.ConflictPage.Controls.Add(this.CONFLICT_TextBox);
-            this.ConflictPage.Location = new System.Drawing.Point(4, 28);
+            this.ConflictPage.Location = new System.Drawing.Point(4, 4);
             this.ConflictPage.Name = "ConflictPage";
             this.ConflictPage.Padding = new System.Windows.Forms.Padding(3);
             this.ConflictPage.Size = new System.Drawing.Size(1027, 823);
@@ -378,6 +303,57 @@
             this.label4.Text = "競合するパッチがあるため、利用できません";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PatchFilename
+            // 
+            this.PatchFilename.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PatchFilename.ErrorMessage = "";
+            this.PatchFilename.Location = new System.Drawing.Point(0, 0);
+            this.PatchFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.PatchFilename.Name = "PatchFilename";
+            this.PatchFilename.Placeholder = "";
+            this.PatchFilename.ReadOnly = true;
+            this.PatchFilename.Size = new System.Drawing.Size(606, 25);
+            this.PatchFilename.TabIndex = 6;
+            // 
+            // ERROR_TextBox
+            // 
+            this.ERROR_TextBox.ErrorMessage = "";
+            this.ERROR_TextBox.Location = new System.Drawing.Point(7, 84);
+            this.ERROR_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ERROR_TextBox.Multiline = true;
+            this.ERROR_TextBox.Name = "ERROR_TextBox";
+            this.ERROR_TextBox.Placeholder = "";
+            this.ERROR_TextBox.ReadOnly = true;
+            this.ERROR_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ERROR_TextBox.Size = new System.Drawing.Size(999, 658);
+            this.ERROR_TextBox.TabIndex = 0;
+            // 
+            // ELSE_TextBox
+            // 
+            this.ELSE_TextBox.ErrorMessage = "";
+            this.ELSE_TextBox.Location = new System.Drawing.Point(6, 84);
+            this.ELSE_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ELSE_TextBox.Multiline = true;
+            this.ELSE_TextBox.Name = "ELSE_TextBox";
+            this.ELSE_TextBox.Placeholder = "";
+            this.ELSE_TextBox.ReadOnly = true;
+            this.ELSE_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ELSE_TextBox.Size = new System.Drawing.Size(998, 657);
+            this.ELSE_TextBox.TabIndex = 5;
+            // 
+            // PATCHED_TextBox
+            // 
+            this.PATCHED_TextBox.ErrorMessage = "";
+            this.PATCHED_TextBox.Location = new System.Drawing.Point(7, 103);
+            this.PATCHED_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PATCHED_TextBox.Multiline = true;
+            this.PATCHED_TextBox.Name = "PATCHED_TextBox";
+            this.PATCHED_TextBox.Placeholder = "";
+            this.PATCHED_TextBox.ReadOnly = true;
+            this.PATCHED_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.PATCHED_TextBox.Size = new System.Drawing.Size(995, 647);
+            this.PATCHED_TextBox.TabIndex = 7;
+            // 
             // CONFLICT_TextBox
             // 
             this.CONFLICT_TextBox.ErrorMessage = "";
@@ -390,6 +366,32 @@
             this.CONFLICT_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.CONFLICT_TextBox.Size = new System.Drawing.Size(995, 568);
             this.CONFLICT_TextBox.TabIndex = 9;
+            // 
+            // PatchList
+            // 
+            this.PatchList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PatchList.FormattingEnabled = true;
+            this.PatchList.IntegralHeight = false;
+            this.PatchList.ItemHeight = 18;
+            this.PatchList.Location = new System.Drawing.Point(0, 32);
+            this.PatchList.Margin = new System.Windows.Forms.Padding(2);
+            this.PatchList.Name = "PatchList";
+            this.PatchList.Size = new System.Drawing.Size(584, 823);
+            this.PatchList.TabIndex = 1;
+            this.PatchList.SelectedIndexChanged += new System.EventHandler(this.PatchList_SelectedIndexChanged);
+            this.PatchList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PatchList_KeyDown);
+            // 
+            // Filter
+            // 
+            this.Filter.ErrorMessage = "";
+            this.Filter.Location = new System.Drawing.Point(110, 3);
+            this.Filter.Name = "Filter";
+            this.Filter.Placeholder = "";
+            this.Filter.Size = new System.Drawing.Size(470, 25);
+            this.Filter.TabIndex = 0;
+            this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
+            this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
+            this.Filter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
             // 
             // PatchForm
             // 
