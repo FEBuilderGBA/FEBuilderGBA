@@ -5749,9 +5749,6 @@ Road Movement Editor
 :ソングトラック
 Song Track
 
-:WMAPアイコンデータ
-WMAP icon data.
-
 :スキル カスタムビルド
 Skill Custom Build
 
@@ -12316,12 +12313,6 @@ Set the event that is executed when World Map Node is selected from the map.\r\n
 :マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。
 Specify the event to be executed when the map is cleared.\r\nThe next base appears on the world map, and the road is drawn.
 
-:画像シート番号
-Image sheet number.
-
-:ワールドマップアイコンデータ
-World map icon data.
-
 :256色画像
 256 Color Image
 
@@ -12381,6 +12372,12 @@ Border
 
 :描画例
 Drawing example.
+
+:アイコン用のデータ
+Data for the icon.
+
+:画像シート番号
+Image sheet number.
 
 :右端のパネルは消しゴムです。\r\n道を消す場合は消しゴムを選択して、上書きしてください。
 The rightmost column is an eraser.\r\nSelect and erase over a road to remove it.

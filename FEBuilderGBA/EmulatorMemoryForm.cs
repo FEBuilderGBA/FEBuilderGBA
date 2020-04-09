@@ -121,7 +121,7 @@ namespace FEBuilderGBA
             PartyCombo.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             PartyCombo.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
 
-            this.UpdateCheckParty = new byte[RAMUnitSizeOf * (50)];
+            this.UpdateCheckParty = new byte[RAMUnitSizeOf * (62)];
             this.PartyListBox.OwnerDraw(DrawParty, DrawMode.OwnerDrawVariable, false);
         }
         void InitFlag()

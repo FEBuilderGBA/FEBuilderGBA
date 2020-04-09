@@ -542,6 +542,11 @@ namespace FEBuilderGBA
 
                     Program.Undo.SetF5();
                 }
+                else if (run_name == "emulator")
+                {
+                    Program.UpdateWatcher.RegistOtherProcess(p, tempfilename);
+                    AutoConnectEmulator(run_name);
+                }
 
                 return p;
             }
