@@ -43,7 +43,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.WMPoint1_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
+            this.WMRoad_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.WMPoint2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.WMPoint1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.WMMini_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.WMMini_Import = new System.Windows.Forms.Button();
             this.WMMini_Export = new System.Windows.Forms.Button();
             this.WMMini_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -60,6 +64,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.WMEvent_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.WMEvent_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,6 +72,7 @@
             this.DarkMAPExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
+            this.WMPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.WMPaletteMap = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.WMdPalette = new System.Windows.Forms.NumericUpDown();
@@ -80,7 +86,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.BORDER_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.BORDER_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.X_BORDER_DRAW_SAMPLE = new FEBuilderGBA.InterpolatedPictureBox();
+            this.BorderDawSample = new FEBuilderGBA.InterpolatedPictureBox();
             this.BORDER_W10 = new System.Windows.Forms.NumericUpDown();
             this.BORDER_J_10 = new System.Windows.Forms.Label();
             this.BORDER_P0 = new System.Windows.Forms.NumericUpDown();
@@ -89,8 +99,11 @@
             this.BORDER_J_8 = new System.Windows.Forms.Label();
             this.BORDER_J_4 = new System.Windows.Forms.Label();
             this.BORDER_J_0 = new System.Windows.Forms.Label();
+            this.BORDER_X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.BORDER_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label17 = new System.Windows.Forms.Label();
+            this.BORDER_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.BORDER_WriteButton = new System.Windows.Forms.Button();
             this.BORDER_Address = new System.Windows.Forms.NumericUpDown();
@@ -104,32 +117,67 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BORDER_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.BORDER_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.WMPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
-            this.WMEvent_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.WMMini_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.WMRoad_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.WMPoint2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.WMPoint1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BORDER_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_BORDER_DRAW_SAMPLE = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BorderDawSample = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BORDER_X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BORDER_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.BORDER_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.ICON_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ICON_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.ICON_BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ICON_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.label27 = new System.Windows.Forms.Label();
+            this.ICON_WriteButton = new System.Windows.Forms.Button();
+            this.ICON_Address = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.ICON_ReloadListButton = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ICON_ReadCount = new System.Windows.Forms.NumericUpDown();
+            this.ICON_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.ICON_W14 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_14 = new System.Windows.Forms.Label();
+            this.ICON_B13 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_13 = new System.Windows.Forms.Label();
+            this.ICON_B12 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_12 = new System.Windows.Forms.Label();
+            this.ICON_B11 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_11 = new System.Windows.Forms.Label();
+            this.ICON_B10 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_10 = new System.Windows.Forms.Label();
+            this.ICON_B9 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_9 = new System.Windows.Forms.Label();
+            this.ICON_B8 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_8 = new System.Windows.Forms.Label();
+            this.ICON_P4 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_4 = new System.Windows.Forms.Label();
+            this.ICON_B3 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_B2 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_B1 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_1 = new System.Windows.Forms.Label();
+            this.ICON_B0 = new System.Windows.Forms.NumericUpDown();
+            this.ICON_J_0 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.WMPointIconTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WMRoad_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMRoad_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_Picture)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WMMini_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMMini_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMMini_ZIMAGE)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_ZHEADERTSA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMEvent_Picture)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPaletteMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMdPalette)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPalette)).BeginInit();
@@ -138,25 +186,39 @@
             this.tabPage4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BORDER_DRAW_SAMPLE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderDawSample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BORDER_X_BG_PIC)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_Address)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMEvent_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMMini_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMRoad_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BORDER_DRAW_SAMPLE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderDawSample)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BORDER_X_BG_PIC)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_Address)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_ReadCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_W14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_P4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B0)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -339,6 +401,36 @@
             this.label9.Text = "拠点画像1";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // WMRoad_Picture
+            // 
+            this.WMRoad_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMRoad_Picture.Location = new System.Drawing.Point(320, 322);
+            this.WMRoad_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.WMRoad_Picture.Name = "WMRoad_Picture";
+            this.WMRoad_Picture.Size = new System.Drawing.Size(281, 187);
+            this.WMRoad_Picture.TabIndex = 111;
+            this.WMRoad_Picture.TabStop = false;
+            // 
+            // WMPoint2_Picture
+            // 
+            this.WMPoint2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMPoint2_Picture.Location = new System.Drawing.Point(320, 168);
+            this.WMPoint2_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.WMPoint2_Picture.Name = "WMPoint2_Picture";
+            this.WMPoint2_Picture.Size = new System.Drawing.Size(281, 132);
+            this.WMPoint2_Picture.TabIndex = 110;
+            this.WMPoint2_Picture.TabStop = false;
+            // 
+            // WMPoint1_Picture
+            // 
+            this.WMPoint1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMPoint1_Picture.Location = new System.Drawing.Point(320, 17);
+            this.WMPoint1_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.WMPoint1_Picture.Name = "WMPoint1_Picture";
+            this.WMPoint1_Picture.Size = new System.Drawing.Size(281, 131);
+            this.WMPoint1_Picture.TabIndex = 109;
+            this.WMPoint1_Picture.TabStop = false;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -355,6 +447,16 @@
             this.tabPage3.Size = new System.Drawing.Size(1021, 539);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "ミニマップ";
+            // 
+            // WMMini_Picture
+            // 
+            this.WMMini_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMMini_Picture.Location = new System.Drawing.Point(358, 2);
+            this.WMMini_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.WMMini_Picture.Name = "WMMini_Picture";
+            this.WMMini_Picture.Size = new System.Drawing.Size(569, 518);
+            this.WMMini_Picture.TabIndex = 103;
+            this.WMMini_Picture.TabStop = false;
             // 
             // WMMini_Import
             // 
@@ -553,6 +655,16 @@
             this.label8.Text = "画像";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // WMEvent_Picture
+            // 
+            this.WMEvent_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMEvent_Picture.Location = new System.Drawing.Point(358, 10);
+            this.WMEvent_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.WMEvent_Picture.Name = "WMEvent_Picture";
+            this.WMEvent_Picture.Size = new System.Drawing.Size(659, 518);
+            this.WMEvent_Picture.TabIndex = 97;
+            this.WMEvent_Picture.TabStop = false;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
@@ -644,6 +756,16 @@
             this.ExportButton.Text = "画像取出";
             this.ExportButton.UseVisualStyleBackColor = true;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
+            // WMPictureBox
+            // 
+            this.WMPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.WMPictureBox.Location = new System.Drawing.Point(284, 20);
+            this.WMPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.WMPictureBox.Name = "WMPictureBox";
+            this.WMPictureBox.Size = new System.Drawing.Size(733, 518);
+            this.WMPictureBox.TabIndex = 88;
+            this.WMPictureBox.TabStop = false;
             // 
             // WMPaletteMap
             // 
@@ -752,6 +874,7 @@
             this.WMTabControl.Controls.Add(this.tabPage3);
             this.WMTabControl.Controls.Add(this.WMPointIconTabPage);
             this.WMTabControl.Controls.Add(this.tabPage4);
+            this.WMTabControl.Controls.Add(this.tabPage5);
             this.WMTabControl.Location = new System.Drawing.Point(12, 48);
             this.WMTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.WMTabControl.Name = "WMTabControl";
@@ -806,6 +929,19 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // BORDER_AddressList
+            // 
+            this.BORDER_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BORDER_AddressList.FormattingEnabled = true;
+            this.BORDER_AddressList.IntegralHeight = false;
+            this.BORDER_AddressList.ItemHeight = 18;
+            this.BORDER_AddressList.Location = new System.Drawing.Point(0, 24);
+            this.BORDER_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.BORDER_AddressList.Name = "BORDER_AddressList";
+            this.BORDER_AddressList.Size = new System.Drawing.Size(251, 434);
+            this.BORDER_AddressList.TabIndex = 0;
+            this.BORDER_AddressList.SelectedIndexChanged += new System.EventHandler(this.BORDER_AddressList_SelectedIndexChanged);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -826,6 +962,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(757, 409);
             this.panel2.TabIndex = 74;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(292, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 18);
+            this.label14.TabIndex = 74;
+            this.label14.Text = "描画例";
+            // 
+            // X_BORDER_DRAW_SAMPLE
+            // 
+            this.X_BORDER_DRAW_SAMPLE.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_BORDER_DRAW_SAMPLE.Location = new System.Drawing.Point(295, 111);
+            this.X_BORDER_DRAW_SAMPLE.Margin = new System.Windows.Forms.Padding(5);
+            this.X_BORDER_DRAW_SAMPLE.Name = "X_BORDER_DRAW_SAMPLE";
+            this.X_BORDER_DRAW_SAMPLE.Size = new System.Drawing.Size(455, 296);
+            this.X_BORDER_DRAW_SAMPLE.TabIndex = 73;
+            this.X_BORDER_DRAW_SAMPLE.TabStop = false;
+            // 
+            // BorderDawSample
+            // 
+            this.BorderDawSample.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.BorderDawSample.Location = new System.Drawing.Point(295, 85);
+            this.BorderDawSample.Margin = new System.Windows.Forms.Padding(5);
+            this.BorderDawSample.Name = "BorderDawSample";
+            this.BorderDawSample.Size = new System.Drawing.Size(455, 296);
+            this.BorderDawSample.TabIndex = 73;
+            this.BorderDawSample.TabStop = false;
             // 
             // BORDER_W10
             // 
@@ -927,6 +1092,16 @@
             this.BORDER_J_0.Text = "画像";
             this.BORDER_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BORDER_X_BG_PIC
+            // 
+            this.BORDER_X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.BORDER_X_BG_PIC.Location = new System.Drawing.Point(295, 6);
+            this.BORDER_X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.BORDER_X_BG_PIC.Name = "BORDER_X_BG_PIC";
+            this.BORDER_X_BG_PIC.Size = new System.Drawing.Size(455, 69);
+            this.BORDER_X_BG_PIC.TabIndex = 67;
+            this.BORDER_X_BG_PIC.TabStop = false;
+            // 
             // AddressPanel
             // 
             this.AddressPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -943,6 +1118,17 @@
             this.AddressPanel.Size = new System.Drawing.Size(758, 30);
             this.AddressPanel.TabIndex = 75;
             // 
+            // BORDER_BlockSize
+            // 
+            this.BORDER_BlockSize.ErrorMessage = "";
+            this.BORDER_BlockSize.Location = new System.Drawing.Point(286, 1);
+            this.BORDER_BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BORDER_BlockSize.Name = "BORDER_BlockSize";
+            this.BORDER_BlockSize.Placeholder = "";
+            this.BORDER_BlockSize.ReadOnly = true;
+            this.BORDER_BlockSize.Size = new System.Drawing.Size(80, 25);
+            this.BORDER_BlockSize.TabIndex = 52;
+            // 
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -953,6 +1139,17 @@
             this.label17.TabIndex = 52;
             this.label17.Text = "Size:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BORDER_SelectAddress
+            // 
+            this.BORDER_SelectAddress.ErrorMessage = "";
+            this.BORDER_SelectAddress.Location = new System.Drawing.Point(489, 1);
+            this.BORDER_SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.BORDER_SelectAddress.Name = "BORDER_SelectAddress";
+            this.BORDER_SelectAddress.Placeholder = "";
+            this.BORDER_SelectAddress.ReadOnly = true;
+            this.BORDER_SelectAddress.Size = new System.Drawing.Size(132, 25);
+            this.BORDER_SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -967,7 +1164,7 @@
             // 
             // BORDER_WriteButton
             // 
-            this.BORDER_WriteButton.Location = new System.Drawing.Point(623, -3);
+            this.BORDER_WriteButton.Location = new System.Drawing.Point(623, -2);
             this.BORDER_WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.BORDER_WriteButton.Name = "BORDER_WriteButton";
             this.BORDER_WriteButton.Size = new System.Drawing.Size(134, 30);
@@ -1101,139 +1298,551 @@
             this.BORDER_ReadStartAddress.Size = new System.Drawing.Size(125, 25);
             this.BORDER_ReadStartAddress.TabIndex = 0;
             // 
-            // label14
+            // tabPage5
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(292, 85);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 18);
-            this.label14.TabIndex = 74;
-            this.label14.Text = "描画例";
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.panel5);
+            this.tabPage5.Controls.Add(this.panel7);
+            this.tabPage5.Controls.Add(this.panel8);
+            this.tabPage5.Controls.Add(this.panel9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1021, 539);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "アイコン用のデータ";
             // 
-            // WMPictureBox
+            // panel5
             // 
-            this.WMPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMPictureBox.Location = new System.Drawing.Point(284, 20);
-            this.WMPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.WMPictureBox.Name = "WMPictureBox";
-            this.WMPictureBox.Size = new System.Drawing.Size(733, 518);
-            this.WMPictureBox.TabIndex = 88;
-            this.WMPictureBox.TabStop = false;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.ICON_AddressListExpandsButton);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.ICON_AddressList);
+            this.panel5.Location = new System.Drawing.Point(1, 35);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(252, 502);
+            this.panel5.TabIndex = 81;
             // 
-            // WMEvent_Picture
+            // ICON_AddressListExpandsButton
             // 
-            this.WMEvent_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMEvent_Picture.Location = new System.Drawing.Point(358, 10);
-            this.WMEvent_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.WMEvent_Picture.Name = "WMEvent_Picture";
-            this.WMEvent_Picture.Size = new System.Drawing.Size(659, 518);
-            this.WMEvent_Picture.TabIndex = 97;
-            this.WMEvent_Picture.TabStop = false;
+            this.ICON_AddressListExpandsButton.Location = new System.Drawing.Point(-1, 465);
+            this.ICON_AddressListExpandsButton.Name = "ICON_AddressListExpandsButton";
+            this.ICON_AddressListExpandsButton.Size = new System.Drawing.Size(240, 30);
+            this.ICON_AddressListExpandsButton.TabIndex = 114;
+            this.ICON_AddressListExpandsButton.Text = "リストの拡張";
+            this.ICON_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
-            // WMMini_Picture
+            // label15
             // 
-            this.WMMini_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMMini_Picture.Location = new System.Drawing.Point(358, 2);
-            this.WMMini_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.WMMini_Picture.Name = "WMMini_Picture";
-            this.WMMini_Picture.Size = new System.Drawing.Size(569, 518);
-            this.WMMini_Picture.TabIndex = 103;
-            this.WMMini_Picture.TabStop = false;
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Location = new System.Drawing.Point(0, -1);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(251, 26);
+            this.label15.TabIndex = 55;
+            this.label15.Text = "名前";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // WMRoad_Picture
+            // ICON_AddressList
             // 
-            this.WMRoad_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMRoad_Picture.Location = new System.Drawing.Point(320, 322);
-            this.WMRoad_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.WMRoad_Picture.Name = "WMRoad_Picture";
-            this.WMRoad_Picture.Size = new System.Drawing.Size(281, 187);
-            this.WMRoad_Picture.TabIndex = 111;
-            this.WMRoad_Picture.TabStop = false;
+            this.ICON_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ICON_AddressList.FormattingEnabled = true;
+            this.ICON_AddressList.IntegralHeight = false;
+            this.ICON_AddressList.ItemHeight = 18;
+            this.ICON_AddressList.Location = new System.Drawing.Point(0, 24);
+            this.ICON_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.ICON_AddressList.Name = "ICON_AddressList";
+            this.ICON_AddressList.Size = new System.Drawing.Size(251, 434);
+            this.ICON_AddressList.TabIndex = 0;
             // 
-            // WMPoint2_Picture
+            // panel7
             // 
-            this.WMPoint2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMPoint2_Picture.Location = new System.Drawing.Point(320, 168);
-            this.WMPoint2_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.WMPoint2_Picture.Name = "WMPoint2_Picture";
-            this.WMPoint2_Picture.Size = new System.Drawing.Size(281, 132);
-            this.WMPoint2_Picture.TabIndex = 110;
-            this.WMPoint2_Picture.TabStop = false;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.ICON_W14);
+            this.panel7.Controls.Add(this.ICON_J_14);
+            this.panel7.Controls.Add(this.ICON_B13);
+            this.panel7.Controls.Add(this.ICON_J_13);
+            this.panel7.Controls.Add(this.ICON_B12);
+            this.panel7.Controls.Add(this.ICON_J_12);
+            this.panel7.Controls.Add(this.ICON_B11);
+            this.panel7.Controls.Add(this.ICON_J_11);
+            this.panel7.Controls.Add(this.ICON_B10);
+            this.panel7.Controls.Add(this.ICON_J_10);
+            this.panel7.Controls.Add(this.ICON_B9);
+            this.panel7.Controls.Add(this.ICON_J_9);
+            this.panel7.Controls.Add(this.ICON_B8);
+            this.panel7.Controls.Add(this.ICON_J_8);
+            this.panel7.Controls.Add(this.ICON_P4);
+            this.panel7.Controls.Add(this.ICON_J_4);
+            this.panel7.Controls.Add(this.ICON_B3);
+            this.panel7.Controls.Add(this.ICON_B2);
+            this.panel7.Controls.Add(this.ICON_B1);
+            this.panel7.Controls.Add(this.ICON_J_1);
+            this.panel7.Controls.Add(this.ICON_B0);
+            this.panel7.Controls.Add(this.ICON_J_0);
+            this.panel7.Location = new System.Drawing.Point(260, 64);
+            this.panel7.Margin = new System.Windows.Forms.Padding(5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(757, 473);
+            this.panel7.TabIndex = 78;
             // 
-            // WMPoint1_Picture
+            // panel8
             // 
-            this.WMPoint1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.WMPoint1_Picture.Location = new System.Drawing.Point(320, 17);
-            this.WMPoint1_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.WMPoint1_Picture.Name = "WMPoint1_Picture";
-            this.WMPoint1_Picture.Size = new System.Drawing.Size(281, 131);
-            this.WMPoint1_Picture.TabIndex = 109;
-            this.WMPoint1_Picture.TabStop = false;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.ICON_BlockSize);
+            this.panel8.Controls.Add(this.label26);
+            this.panel8.Controls.Add(this.ICON_SelectAddress);
+            this.panel8.Controls.Add(this.label27);
+            this.panel8.Controls.Add(this.ICON_WriteButton);
+            this.panel8.Controls.Add(this.ICON_Address);
+            this.panel8.Controls.Add(this.label28);
+            this.panel8.Location = new System.Drawing.Point(260, 35);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(758, 30);
+            this.panel8.TabIndex = 79;
             // 
-            // BORDER_AddressList
+            // ICON_BlockSize
             // 
-            this.BORDER_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BORDER_AddressList.FormattingEnabled = true;
-            this.BORDER_AddressList.IntegralHeight = false;
-            this.BORDER_AddressList.ItemHeight = 18;
-            this.BORDER_AddressList.Location = new System.Drawing.Point(0, 24);
-            this.BORDER_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.BORDER_AddressList.Name = "BORDER_AddressList";
-            this.BORDER_AddressList.Size = new System.Drawing.Size(251, 434);
-            this.BORDER_AddressList.TabIndex = 0;
-            this.BORDER_AddressList.SelectedIndexChanged += new System.EventHandler(this.BORDER_AddressList_SelectedIndexChanged);
+            this.ICON_BlockSize.ErrorMessage = "";
+            this.ICON_BlockSize.Location = new System.Drawing.Point(286, 1);
+            this.ICON_BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.ICON_BlockSize.Name = "ICON_BlockSize";
+            this.ICON_BlockSize.Placeholder = "";
+            this.ICON_BlockSize.ReadOnly = true;
+            this.ICON_BlockSize.Size = new System.Drawing.Size(80, 25);
+            this.ICON_BlockSize.TabIndex = 52;
             // 
-            // X_BORDER_DRAW_SAMPLE
+            // label26
             // 
-            this.X_BORDER_DRAW_SAMPLE.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_BORDER_DRAW_SAMPLE.Location = new System.Drawing.Point(295, 111);
-            this.X_BORDER_DRAW_SAMPLE.Margin = new System.Windows.Forms.Padding(5);
-            this.X_BORDER_DRAW_SAMPLE.Name = "X_BORDER_DRAW_SAMPLE";
-            this.X_BORDER_DRAW_SAMPLE.Size = new System.Drawing.Size(455, 296);
-            this.X_BORDER_DRAW_SAMPLE.TabIndex = 73;
-            this.X_BORDER_DRAW_SAMPLE.TabStop = false;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Location = new System.Drawing.Point(217, -1);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(68, 30);
+            this.label26.TabIndex = 52;
+            this.label26.Text = "Size:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BorderDawSample
+            // ICON_SelectAddress
             // 
-            this.BorderDawSample.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.BorderDawSample.Location = new System.Drawing.Point(295, 85);
-            this.BorderDawSample.Margin = new System.Windows.Forms.Padding(5);
-            this.BorderDawSample.Name = "BorderDawSample";
-            this.BorderDawSample.Size = new System.Drawing.Size(455, 296);
-            this.BorderDawSample.TabIndex = 73;
-            this.BorderDawSample.TabStop = false;
+            this.ICON_SelectAddress.ErrorMessage = "";
+            this.ICON_SelectAddress.Location = new System.Drawing.Point(489, 1);
+            this.ICON_SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.ICON_SelectAddress.Name = "ICON_SelectAddress";
+            this.ICON_SelectAddress.Placeholder = "";
+            this.ICON_SelectAddress.ReadOnly = true;
+            this.ICON_SelectAddress.Size = new System.Drawing.Size(132, 25);
+            this.ICON_SelectAddress.TabIndex = 40;
             // 
-            // BORDER_X_BG_PIC
+            // label27
             // 
-            this.BORDER_X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.BORDER_X_BG_PIC.Location = new System.Drawing.Point(295, 6);
-            this.BORDER_X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.BORDER_X_BG_PIC.Name = "BORDER_X_BG_PIC";
-            this.BORDER_X_BG_PIC.Size = new System.Drawing.Size(455, 69);
-            this.BORDER_X_BG_PIC.TabIndex = 67;
-            this.BORDER_X_BG_PIC.TabStop = false;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Location = new System.Drawing.Point(370, -1);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(117, 30);
+            this.label27.TabIndex = 39;
+            this.label27.Text = "選択アドレス:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BORDER_BlockSize
+            // ICON_WriteButton
             // 
-            this.BORDER_BlockSize.ErrorMessage = "";
-            this.BORDER_BlockSize.Location = new System.Drawing.Point(286, 1);
-            this.BORDER_BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BORDER_BlockSize.Name = "BORDER_BlockSize";
-            this.BORDER_BlockSize.Placeholder = "";
-            this.BORDER_BlockSize.ReadOnly = true;
-            this.BORDER_BlockSize.Size = new System.Drawing.Size(80, 25);
-            this.BORDER_BlockSize.TabIndex = 52;
+            this.ICON_WriteButton.Location = new System.Drawing.Point(623, -2);
+            this.ICON_WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ICON_WriteButton.Name = "ICON_WriteButton";
+            this.ICON_WriteButton.Size = new System.Drawing.Size(134, 30);
+            this.ICON_WriteButton.TabIndex = 9;
+            this.ICON_WriteButton.Text = "書き込み";
+            this.ICON_WriteButton.UseVisualStyleBackColor = true;
             // 
-            // BORDER_SelectAddress
+            // ICON_Address
             // 
-            this.BORDER_SelectAddress.ErrorMessage = "";
-            this.BORDER_SelectAddress.Location = new System.Drawing.Point(489, 1);
-            this.BORDER_SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.BORDER_SelectAddress.Name = "BORDER_SelectAddress";
-            this.BORDER_SelectAddress.Placeholder = "";
-            this.BORDER_SelectAddress.ReadOnly = true;
-            this.BORDER_SelectAddress.Size = new System.Drawing.Size(132, 25);
-            this.BORDER_SelectAddress.TabIndex = 40;
+            this.ICON_Address.Hexadecimal = true;
+            this.ICON_Address.Location = new System.Drawing.Point(86, 4);
+            this.ICON_Address.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ICON_Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ICON_Address.Name = "ICON_Address";
+            this.ICON_Address.Size = new System.Drawing.Size(125, 25);
+            this.ICON_Address.TabIndex = 0;
+            // 
+            // label28
+            // 
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Location = new System.Drawing.Point(-1, 0);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(83, 32);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "アドレス";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.ICON_ReloadListButton);
+            this.panel9.Controls.Add(this.label29);
+            this.panel9.Controls.Add(this.label30);
+            this.panel9.Controls.Add(this.ICON_ReadCount);
+            this.panel9.Controls.Add(this.ICON_ReadStartAddress);
+            this.panel9.Location = new System.Drawing.Point(1, 6);
+            this.panel9.Margin = new System.Windows.Forms.Padding(5);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1018, 30);
+            this.panel9.TabIndex = 80;
+            // 
+            // ICON_ReloadListButton
+            // 
+            this.ICON_ReloadListButton.Location = new System.Drawing.Point(474, -1);
+            this.ICON_ReloadListButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ICON_ReloadListButton.Name = "ICON_ReloadListButton";
+            this.ICON_ReloadListButton.Size = new System.Drawing.Size(107, 31);
+            this.ICON_ReloadListButton.TabIndex = 25;
+            this.ICON_ReloadListButton.Text = "再取得";
+            this.ICON_ReloadListButton.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label29.Location = new System.Drawing.Point(-1, -1);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(111, 32);
+            this.label29.TabIndex = 23;
+            this.label29.Text = "先頭アドレス";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Location = new System.Drawing.Point(258, -1);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(83, 32);
+            this.label30.TabIndex = 24;
+            this.label30.Text = "読込数";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_ReadCount
+            // 
+            this.ICON_ReadCount.Location = new System.Drawing.Point(345, 2);
+            this.ICON_ReadCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ICON_ReadCount.Name = "ICON_ReadCount";
+            this.ICON_ReadCount.Size = new System.Drawing.Size(76, 25);
+            this.ICON_ReadCount.TabIndex = 28;
+            // 
+            // ICON_ReadStartAddress
+            // 
+            this.ICON_ReadStartAddress.Hexadecimal = true;
+            this.ICON_ReadStartAddress.Location = new System.Drawing.Point(123, 2);
+            this.ICON_ReadStartAddress.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ICON_ReadStartAddress.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ICON_ReadStartAddress.Name = "ICON_ReadStartAddress";
+            this.ICON_ReadStartAddress.Size = new System.Drawing.Size(125, 25);
+            this.ICON_ReadStartAddress.TabIndex = 0;
+            // 
+            // ICON_W14
+            // 
+            this.ICON_W14.Hexadecimal = true;
+            this.ICON_W14.Location = new System.Drawing.Point(270, 281);
+            this.ICON_W14.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_W14.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_W14.Name = "ICON_W14";
+            this.ICON_W14.Size = new System.Drawing.Size(109, 25);
+            this.ICON_W14.TabIndex = 277;
+            // 
+            // ICON_J_14
+            // 
+            this.ICON_J_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_14.Location = new System.Drawing.Point(2, 281);
+            this.ICON_J_14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_14.Name = "ICON_J_14";
+            this.ICON_J_14.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_14.TabIndex = 276;
+            this.ICON_J_14.Text = "00 Padding";
+            this.ICON_J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B13
+            // 
+            this.ICON_B13.Hexadecimal = true;
+            this.ICON_B13.Location = new System.Drawing.Point(270, 251);
+            this.ICON_B13.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B13.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B13.Name = "ICON_B13";
+            this.ICON_B13.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B13.TabIndex = 275;
+            // 
+            // ICON_J_13
+            // 
+            this.ICON_J_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_13.Location = new System.Drawing.Point(2, 251);
+            this.ICON_J_13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_13.Name = "ICON_J_13";
+            this.ICON_J_13.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_13.TabIndex = 274;
+            this.ICON_J_13.Text = "??";
+            this.ICON_J_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B12
+            // 
+            this.ICON_B12.Hexadecimal = true;
+            this.ICON_B12.Location = new System.Drawing.Point(270, 221);
+            this.ICON_B12.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B12.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B12.Name = "ICON_B12";
+            this.ICON_B12.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B12.TabIndex = 273;
+            // 
+            // ICON_J_12
+            // 
+            this.ICON_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_12.Location = new System.Drawing.Point(2, 221);
+            this.ICON_J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_12.Name = "ICON_J_12";
+            this.ICON_J_12.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_12.TabIndex = 272;
+            this.ICON_J_12.Text = "tcs params??";
+            this.ICON_J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B11
+            // 
+            this.ICON_B11.Increment = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.ICON_B11.Location = new System.Drawing.Point(270, 192);
+            this.ICON_B11.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B11.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B11.Name = "ICON_B11";
+            this.ICON_B11.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B11.TabIndex = 271;
+            // 
+            // ICON_J_11
+            // 
+            this.ICON_J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_11.Location = new System.Drawing.Point(2, 192);
+            this.ICON_J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_11.Name = "ICON_J_11";
+            this.ICON_J_11.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_11.TabIndex = 270;
+            this.ICON_J_11.Text = "Height";
+            this.ICON_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B10
+            // 
+            this.ICON_B10.Increment = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.ICON_B10.Location = new System.Drawing.Point(270, 162);
+            this.ICON_B10.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B10.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B10.Name = "ICON_B10";
+            this.ICON_B10.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B10.TabIndex = 269;
+            // 
+            // ICON_J_10
+            // 
+            this.ICON_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_10.Location = new System.Drawing.Point(2, 162);
+            this.ICON_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_10.Name = "ICON_J_10";
+            this.ICON_J_10.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_10.TabIndex = 268;
+            this.ICON_J_10.Text = "Width";
+            this.ICON_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B9
+            // 
+            this.ICON_B9.Increment = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.ICON_B9.Location = new System.Drawing.Point(270, 132);
+            this.ICON_B9.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B9.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B9.Name = "ICON_B9";
+            this.ICON_B9.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B9.TabIndex = 267;
+            // 
+            // ICON_J_9
+            // 
+            this.ICON_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_9.Location = new System.Drawing.Point(2, 132);
+            this.ICON_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_9.Name = "ICON_J_9";
+            this.ICON_J_9.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_9.TabIndex = 266;
+            this.ICON_J_9.Text = "Center Y";
+            this.ICON_J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B8
+            // 
+            this.ICON_B8.Increment = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.ICON_B8.Location = new System.Drawing.Point(270, 102);
+            this.ICON_B8.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B8.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B8.Name = "ICON_B8";
+            this.ICON_B8.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B8.TabIndex = 265;
+            // 
+            // ICON_J_8
+            // 
+            this.ICON_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_8.Location = new System.Drawing.Point(2, 102);
+            this.ICON_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_8.Name = "ICON_J_8";
+            this.ICON_J_8.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_8.TabIndex = 264;
+            this.ICON_J_8.Text = "Center X";
+            this.ICON_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_P4
+            // 
+            this.ICON_P4.Hexadecimal = true;
+            this.ICON_P4.Location = new System.Drawing.Point(270, 74);
+            this.ICON_P4.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_P4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_P4.Name = "ICON_P4";
+            this.ICON_P4.Size = new System.Drawing.Size(161, 25);
+            this.ICON_P4.TabIndex = 263;
+            // 
+            // ICON_J_4
+            // 
+            this.ICON_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_4.Location = new System.Drawing.Point(2, 72);
+            this.ICON_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_4.Name = "ICON_J_4";
+            this.ICON_J_4.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_4.TabIndex = 262;
+            this.ICON_J_4.Text = "OAMTable entry";
+            this.ICON_J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B3
+            // 
+            this.ICON_B3.Hexadecimal = true;
+            this.ICON_B3.Location = new System.Drawing.Point(423, 46);
+            this.ICON_B3.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B3.Name = "ICON_B3";
+            this.ICON_B3.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B3.TabIndex = 261;
+            // 
+            // ICON_B2
+            // 
+            this.ICON_B2.Hexadecimal = true;
+            this.ICON_B2.Location = new System.Drawing.Point(345, 45);
+            this.ICON_B2.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B2.Name = "ICON_B2";
+            this.ICON_B2.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B2.TabIndex = 260;
+            // 
+            // ICON_B1
+            // 
+            this.ICON_B1.Hexadecimal = true;
+            this.ICON_B1.Location = new System.Drawing.Point(270, 45);
+            this.ICON_B1.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B1.Name = "ICON_B1";
+            this.ICON_B1.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B1.TabIndex = 259;
+            // 
+            // ICON_J_1
+            // 
+            this.ICON_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_1.Location = new System.Drawing.Point(2, 42);
+            this.ICON_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_1.Name = "ICON_J_1";
+            this.ICON_J_1.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_1.TabIndex = 258;
+            this.ICON_J_1.Text = "00 Padding";
+            this.ICON_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ICON_B0
+            // 
+            this.ICON_B0.Hexadecimal = true;
+            this.ICON_B0.Location = new System.Drawing.Point(270, 14);
+            this.ICON_B0.Margin = new System.Windows.Forms.Padding(2);
+            this.ICON_B0.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.ICON_B0.Name = "ICON_B0";
+            this.ICON_B0.Size = new System.Drawing.Size(65, 25);
+            this.ICON_B0.TabIndex = 257;
+            // 
+            // ICON_J_0
+            // 
+            this.ICON_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ICON_J_0.Location = new System.Drawing.Point(2, 12);
+            this.ICON_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICON_J_0.Name = "ICON_J_0";
+            this.ICON_J_0.Size = new System.Drawing.Size(253, 26);
+            this.ICON_J_0.TabIndex = 256;
+            this.ICON_J_0.Text = "画像シート番号";
+            this.ICON_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WorldMapImageForm
             // 
@@ -1252,14 +1861,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.WMRoad_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMRoad_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_Picture)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WMMini_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMMini_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMMini_ZIMAGE)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_ZHEADERTSA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMEvent_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMEvent_Picture)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WMPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPaletteMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMdPalette)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WMPalette)).EndInit();
@@ -1269,10 +1884,13 @@
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BORDER_DRAW_SAMPLE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderDawSample)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BORDER_X_BG_PIC)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_Address)).EndInit();
@@ -1280,15 +1898,27 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMEvent_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMMini_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMRoad_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPoint2_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WMPoint1_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BORDER_DRAW_SAMPLE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderDawSample)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BORDER_X_BG_PIC)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_Address)).EndInit();
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_ReadCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_W14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_P4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICON_B0)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1384,6 +2014,48 @@
         private InterpolatedPictureBox BorderDawSample;
         private InterpolatedPictureBox X_BORDER_DRAW_SAMPLE;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button ICON_AddressListExpandsButton;
+        private System.Windows.Forms.Label label15;
+        private ListBoxEx ICON_AddressList;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private TextBoxEx ICON_BlockSize;
+        private System.Windows.Forms.Label label26;
+        private TextBoxEx ICON_SelectAddress;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button ICON_WriteButton;
+        private System.Windows.Forms.NumericUpDown ICON_Address;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button ICON_ReloadListButton;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.NumericUpDown ICON_ReadCount;
+        private System.Windows.Forms.NumericUpDown ICON_ReadStartAddress;
+        private System.Windows.Forms.NumericUpDown ICON_W14;
+        private System.Windows.Forms.Label ICON_J_14;
+        private System.Windows.Forms.NumericUpDown ICON_B13;
+        private System.Windows.Forms.Label ICON_J_13;
+        private System.Windows.Forms.NumericUpDown ICON_B12;
+        private System.Windows.Forms.Label ICON_J_12;
+        private System.Windows.Forms.NumericUpDown ICON_B11;
+        private System.Windows.Forms.Label ICON_J_11;
+        private System.Windows.Forms.NumericUpDown ICON_B10;
+        private System.Windows.Forms.Label ICON_J_10;
+        private System.Windows.Forms.NumericUpDown ICON_B9;
+        private System.Windows.Forms.Label ICON_J_9;
+        private System.Windows.Forms.NumericUpDown ICON_B8;
+        private System.Windows.Forms.Label ICON_J_8;
+        private System.Windows.Forms.NumericUpDown ICON_P4;
+        private System.Windows.Forms.Label ICON_J_4;
+        private System.Windows.Forms.NumericUpDown ICON_B3;
+        private System.Windows.Forms.NumericUpDown ICON_B2;
+        private System.Windows.Forms.NumericUpDown ICON_B1;
+        private System.Windows.Forms.Label ICON_J_1;
+        private System.Windows.Forms.NumericUpDown ICON_B0;
+        private System.Windows.Forms.Label ICON_J_0;
 
     }
 }

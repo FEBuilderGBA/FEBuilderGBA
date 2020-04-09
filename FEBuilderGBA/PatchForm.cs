@@ -7382,7 +7382,7 @@ namespace FEBuilderGBA
                     , R._("「{0}」パッチがインストールされていますが、設定画面のポインタを取得できません。パッチが壊れていると思われます。", name), loopI));
                 return;
             }
-
+/*
             uint second_pointer = convertBinAddressString(pointer_str, 8, struct_pointer + 4, basedir);
             if (second_pointer != U.NOT_FOUND
                 && struct_pointer != second_pointer)
@@ -7393,7 +7393,7 @@ namespace FEBuilderGBA
                     , name, U.To0xHexString(struct_pointer), U.To0xHexString(second_pointer)), loopI));
                 return;
             }
-
+*/
             //問題なし
             return;
         }

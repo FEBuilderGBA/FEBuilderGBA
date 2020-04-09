@@ -23,7 +23,7 @@ namespace FEBuilderGBA
             U.SetIcon(ExportButton3, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton3, Properties.Resources.icon_upload);
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte() == false)
             {
                 this.EXPLAIN.Text += R._("FE8Uの場合は、章テキストから画像を自動生成するパッチを利用できます。\r\nパッチ画面から、「Convert Chapter Titles to Text」で検索してください。\r\n");
             }

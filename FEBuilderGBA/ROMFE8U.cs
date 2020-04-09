@@ -92,6 +92,7 @@ namespace FEBuilderGBA
         public uint sound_foot_steps_switch2_address() { return 0x78DC2; }
         public uint worldmap_point_pointer() { return 0xBE84; } // ワールドマップ拠点の開始位置
         public uint worldmap_bgm_pointer() { return 0xB9F94; } // ワールドマップのBGMテーブルの開始位置
+        public uint worldmap_icon_data_pointer() { return 0xBB674; } // ワールドマップのアイコンデータのテーブルの開始位置
         public uint worldmap_event_on_stageclear_pointer() { return 0xBA3D0; } // ワールドマップイベント 拠点クリア時
         public uint worldmap_event_on_stageselect_pointer() { return 0xBA41C; } // ワールドマップイベント 拠点選択時
         public uint worldmap_county_border_pointer() { return 0xC2B74; } // ワールドマップ国名の表示

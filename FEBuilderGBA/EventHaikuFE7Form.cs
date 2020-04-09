@@ -123,11 +123,11 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                uint textid = Program.ROM.u16(addr + 6);
-                if (textid <= 0)
-                {
-                    continue;
-                }
+//                uint textid = Program.ROM.u16(addr + 6);
+//                if (textid <= 0)
+//                {
+//                    continue;
+//                }
 
                 uint spEventP = Program.ROM.u32(addr + 8);
                 if (!U.isSafetyPointer(spEventP))

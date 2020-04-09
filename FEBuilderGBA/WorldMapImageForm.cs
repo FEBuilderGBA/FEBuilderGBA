@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             Border_InputFormRef = Border_Init(this);
+            ICON_InputFormRef = ICON_Init(this);
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
@@ -66,6 +67,31 @@ namespace FEBuilderGBA
                 }
                 );
         }
+
+        public InputFormRef ICON_InputFormRef;
+        static InputFormRef ICON_Init(Form self)
+        {
+            return new InputFormRef(self
+                , "ICON_"
+                , Program.ROM.RomInfo.worldmap_icon_data_pointer()
+                , 16
+                , (int i, uint addr) =>
+                {//終端データは存在しない
+                    uint p = Program.ROM.u32(addr + 4);
+                    if (!U.isPointer(p))
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                , (int i, uint addr) =>
+                {
+                    string name = "";
+                    return U.ToHexString(i) + " " + name;
+                }
+                );
+        }
+
 
 
 
@@ -412,6 +438,11 @@ namespace FEBuilderGBA
                         , isPointerOnly
                         );
                 }
+            }
+            {
+                string name = "WorldMapIconData";
+                InputFormRef InputFormRef = ICON_Init(null);
+                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 4 });
             }
         }
 

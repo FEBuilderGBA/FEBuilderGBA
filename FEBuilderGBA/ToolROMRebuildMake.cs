@@ -316,6 +316,19 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        void DeleteCommentData()
+        {
+            for (int i = 0; i < this.StructList.Count; )
+            {
+                Address a = this.StructList[i];
+                if (a.DataType == Address.DataTypeEnum.Comment)
+                {
+                    this.StructList.RemoveAt(i);
+                    continue;
+                }
+                i++;
+            }
+        }
         void AppendPointer()
         {
             int length = this.StructList.Count;
@@ -631,6 +644,7 @@ namespace FEBuilderGBA
                 , isUseOtherGraphics: true
                 , isUseOAMSP: false
                 );
+            DeleteCommentData();
             AppendPointer();
 
             wait.DoEvents(R._("データを準備中..."));

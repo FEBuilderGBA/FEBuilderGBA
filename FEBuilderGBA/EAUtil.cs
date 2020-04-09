@@ -130,12 +130,28 @@ namespace FEBuilderGBA
             }
 
             //LYNDUMPの終了
-            Data data = new Data("LYNDUMP", this.LynDump.GetData(), DataEnum.LYN, 0);
-            this.DataList.Add(data);
+            AddLynDump(this.LynDump);
 
             this.LynDump = null;
             return false;
         }
+        void AddLynDump(EAUtilLynDumpMode lyn)
+        {
+            if (lyn.GetCount() == 0)
+            {//ORG指定がない場合
+                Data data = new Data("LYNDUMP", lyn.GetDataAll(), DataEnum.LYN, 0);
+                this.DataList.Add(data);
+                return;
+            }
+
+            int count = lyn.GetCount();
+            for (int i = 0; i < count; i++)
+            {
+                Data data = new Data("LYNDUMP_" + lyn.GetName(i), lyn.GetData(i), DataEnum.LYN, 0);
+                this.DataList.Add(data);
+            }
+        }
+
         void ParseLabel(string line, string orignalIine)
         {
             string a = line.Trim();
@@ -410,8 +426,7 @@ namespace FEBuilderGBA
             }
 
             //LYNDUMPの終了
-            Data data = new Data("LYNDUMP", lyndmp.GetData(), DataEnum.LYN, 0);
-            this.DataList.Add(data);
+            AddLynDump(lyndmp);
             return true;
         }
         bool ParseString(string line, string orignalIine)
