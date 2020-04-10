@@ -1319,6 +1319,10 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("FECLIB", "");
         }
+        public static bool IsKanaToNumberMode()
+        {
+            return U.stringbool(Program.Config.at("IsKanaToNumberMode", "false"));
+        }
 
         void MakeExplainFunctions()
         {

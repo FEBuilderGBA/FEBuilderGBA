@@ -61,14 +61,20 @@ Address
 :AIの章ごとの設定
 AI Item Usage per chapter
 
-:杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
-Specify a function to decide whether AI that can use Staff.
+:AIがアイテムを使用するかどうか判定する関数を指定します。\r\nなお、章ごとにアイテムを使えるかどうかの設定は、「AIの章ごとの設定」にあります。
+Specify a function that determines whether the AI \u200b\u200buses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "Setting for each chapter of AI".
 
 :アイテム
 Item Editor
 
 :リストの拡張
 Extended list
+
+:AIのアイテム利用判定
+AI's Item
+
+:杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
+Specify a function to decide whether AI that can use Staff.
 
 :AIの杖利用判定
 AI's Staff
@@ -5521,6 +5527,9 @@ Run in Program 3
 :任意のプログラムで開く
 Run in External Program
 
+:作品支援
+Work support
+
 :ツール
 Tools
 
@@ -5679,9 +5688,6 @@ Simple Menu
 
 :地形設定
 Terrain Editor
-
-:作品支援
-Work support
 
 :詳細メニュー
 Advanced Editors

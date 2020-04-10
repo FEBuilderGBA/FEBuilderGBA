@@ -226,6 +226,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.AIPerformItemButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1437,6 +1438,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.ToolCustomBuildButton);
             this.ControlPanel.Controls.Add(this.FE8SpellMenuExtendsButton);
             this.ControlPanel.Controls.Add(this.StatusUnitsMenuButton);
@@ -1614,7 +1616,7 @@
             // 
             // UnitActionPointerButton
             // 
-            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 601);
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 638);
             this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.UnitActionPointerButton.Name = "UnitActionPointerButton";
             this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -1779,7 +1781,7 @@
             // 
             // AIMapSettingButton
             // 
-            this.AIMapSettingButton.Location = new System.Drawing.Point(814, 526);
+            this.AIMapSettingButton.Location = new System.Drawing.Point(814, 563);
             this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
             this.AIMapSettingButton.Size = new System.Drawing.Size(200, 36);
@@ -2054,7 +2056,7 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 564);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 601);
             this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -2349,6 +2351,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // AIPerformItemButton
+            // 
+            this.AIPerformItemButton.Location = new System.Drawing.Point(814, 526);
+            this.AIPerformItemButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIPerformItemButton.Name = "AIPerformItemButton";
+            this.AIPerformItemButton.Size = new System.Drawing.Size(200, 36);
+            this.AIPerformItemButton.TabIndex = 137;
+            this.AIPerformItemButton.Text = "AIのアイテム利用判定";
+            this.AIPerformItemButton.UseVisualStyleBackColor = true;
+            this.AIPerformItemButton.Click += new System.EventHandler(this.AIPerformItemButton_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2575,6 +2588,7 @@
         private ToolStripSeparatorEx toolStripSeparatorEx6;
         private System.Windows.Forms.ToolStripMenuItem WorkSupportToolStripMenuItem;
         private System.Windows.Forms.Button ToolCustomBuildButton;
+        private System.Windows.Forms.Button AIPerformItemButton;
     }
 }
 

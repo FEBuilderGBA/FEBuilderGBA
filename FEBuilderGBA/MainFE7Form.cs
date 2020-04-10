@@ -848,5 +848,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolWorkSupportForm>();
         }
+
+        private void AIPerformItemButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<AIPerformItemForm>();
+        }
     }
 }

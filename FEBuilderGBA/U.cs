@@ -2352,6 +2352,8 @@ namespace FEBuilderGBA
             ItemWeaponTriangleForm.MakeAllDataLength(list);
             AIStealItemForm.MakeAllDataLength(list);
             AIMapSettingForm.MakeAllDataLength(list);
+            AIPerformStaffForm.MakeAllDataLength(list);
+            AIPerformItemForm.MakeAllDataLength(list);
             ImageRomAnimeForm.MakeAllDataLength(list, isPointerOnly);
             ImageGenericEnemyPortraitForm.MakeAllDataLength(list, isPointerOnly);
             MapTerrainFloorLookupTableForm.MakeAllDataLength(list);
@@ -4847,6 +4849,19 @@ namespace FEBuilderGBA
             return s;
         }
 
+        static Dictionary<string, string> CleanupFindKanaInputStringCache = new Dictionary<string, string>();
+        public static string KanaToNumber(string str)
+        {
+            if (CleanupFindKanaInputStringCache.ContainsKey(str))
+            {
+                return CleanupFindKanaInputStringCache[str];
+            }
+
+            string s = KanaToNumberLow(str);
+            CleanupFindKanaInputStringCache[str] = s;
+            return s;
+        }
+
         static string CleanupFindStringLow(string str, bool isJP)
         {
             string a = str.ToLower();
@@ -4862,6 +4877,11 @@ namespace FEBuilderGBA
             }
             a = RegexCache.Replace(a, @"\s+", " ");//連続するスペースを1つにする. ///No Translate
             return a;
+        }
+
+        static string KanaToNumberLow(string str)
+        {
+            return MultiByteJPUtil.ConvertKanaToNumber(str);
         }
 
         public static bool StrStrEx(string str,string need,bool isJP)
@@ -4886,7 +4906,6 @@ namespace FEBuilderGBA
                     return false;
                 }
             }
-            //マッチ
             return true;
         }
 

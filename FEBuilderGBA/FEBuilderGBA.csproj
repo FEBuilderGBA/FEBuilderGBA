@@ -2022,6 +2022,12 @@
     <Compile Include="SongInstrumentImportWaveForm.Designer.cs">
       <DependentUpon>SongInstrumentImportWaveForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIPerformItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIPerformItemForm.Designer.cs">
+      <DependentUpon>AIPerformItemForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2981,6 +2987,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIASMCALLTALKForm.resx">
       <DependentUpon>AIASMCALLTALKForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolWorkSupport_UpdateQuestionDialogForm.resx">
       <DependentUpon>ToolWorkSupport_UpdateQuestionDialogForm.cs</DependentUpon>
@@ -2990,6 +2997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SongInstrumentImportWaveForm.resx">
       <DependentUpon>SongInstrumentImportWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIPerformItemForm.resx">
+      <DependentUpon>AIPerformItemForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

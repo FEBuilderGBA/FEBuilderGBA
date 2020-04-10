@@ -2204,6 +2204,10 @@ namespace FEBuilderGBA
             {
                 return 0x20;
             }
+            if (this.PartyCombo.SelectedIndex == 2)
+            {
+                return 50;
+            }
             return (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
         }
 

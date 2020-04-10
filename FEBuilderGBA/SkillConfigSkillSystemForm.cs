@@ -80,7 +80,7 @@ namespace FEBuilderGBA
                 , 2
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    return i < 256;
+                    return i < 255;
                 }
                 , (int i, uint addr) =>
                 {

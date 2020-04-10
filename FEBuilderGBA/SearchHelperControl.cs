@@ -146,7 +146,25 @@ namespace FEBuilderGBA
                 }
             }
 
+            //かな入力への配慮
             bool isJP = (this.LangCode == "ja");
+            if (isJP && OptionForm.IsKanaToNumberMode())
+            {
+                string t = U.KanaToNumber(search);
+                if (t != "")
+                {
+                    uint searchhex = U.atoh(t);
+                    for (int i = start; i < end; i++)
+                    {
+                        if (U.atoh((string)this.TargetistBox.Items[i]) == searchhex)
+                        {
+                            SelectIndex(i, noListFocus);
+                            return true;
+                        }
+                    }
+                }
+            }
+
             search = U.CleanupFindString(search, isJP);
 
             //部分一致

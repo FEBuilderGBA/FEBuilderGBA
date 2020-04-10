@@ -773,6 +773,35 @@ namespace FEBuilderGBA
             return ret;
         }
 
+        //ひらがな入力を数字入力に変換する
+        static string[] replaceKanaToNumber = new string[]{
+		         "ぬ","1"    ///No Translate
+		        ,"ふ","2"    ///No Translate
+		        ,"あ","3"    ///No Translate
+		        ,"う","4"    ///No Translate
+		        ,"え","5"    ///No Translate
+		        ,"お","6"    ///No Translate
+		        ,"や","7"    ///No Translate
+		        ,"ゆ","8"    ///No Translate
+		        ,"よ","9"    ///No Translate
+		        ,"わ","0"    ///No Translate
+		        ,"ち","A"    ///No Translate
+		        ,"こ","B"    ///No Translate
+		        ,"そ","C"    ///No Translate
+		        ,"し","D"    ///No Translate
+		        ,"い","E"    ///No Translate
+		        ,"は","F"    ///No Translate
+                ,"　"," "    ///No Translate
+	        };
+        public static string ConvertKanaToNumber(string str)
+        {
+            string ret = U.table_replace(str, replaceKanaToNumber);
+            if (U.isAsciiString(ret))
+            {
+                return ret;
+            }
+            return "";
+        }
     
     }
 }

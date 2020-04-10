@@ -86,6 +86,8 @@
             this.RunAsProgram2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.WorkSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UndoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,8 +190,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.WorkSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.AIPerformItemButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -752,6 +753,18 @@
             this.RunAsToolStripMenuItem.Text = "任意のプログラムで開く";
             this.RunAsToolStripMenuItem.Click += new System.EventHandler(this.RunAsToolStripMenuItem_Click);
             // 
+            // toolStripSeparatorEx6
+            // 
+            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
+            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
+            // 
+            // WorkSupportToolStripMenuItem
+            // 
+            this.WorkSupportToolStripMenuItem.Name = "WorkSupportToolStripMenuItem";
+            this.WorkSupportToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
+            this.WorkSupportToolStripMenuItem.Text = "作品支援";
+            this.WorkSupportToolStripMenuItem.Click += new System.EventHandler(this.WorkSupportToolStripMenuItem_Click);
+            // 
             // ToolToolToolStripMenuItem
             // 
             this.ToolToolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1106,6 +1119,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
@@ -1237,7 +1251,7 @@
             // 
             // UnitActionPointerButton
             // 
-            this.UnitActionPointerButton.Location = new System.Drawing.Point(824, 584);
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(824, 622);
             this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.UnitActionPointerButton.Name = "UnitActionPointerButton";
             this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -1358,7 +1372,7 @@
             // 
             // AIMapSettingButton
             // 
-            this.AIMapSettingButton.Location = new System.Drawing.Point(824, 508);
+            this.AIMapSettingButton.Location = new System.Drawing.Point(824, 546);
             this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
             this.AIMapSettingButton.Size = new System.Drawing.Size(200, 36);
@@ -1600,7 +1614,7 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(824, 546);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(824, 584);
             this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -1873,17 +1887,16 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // WorkSupportToolStripMenuItem
+            // AIPerformItemButton
             // 
-            this.WorkSupportToolStripMenuItem.Name = "WorkSupportToolStripMenuItem";
-            this.WorkSupportToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
-            this.WorkSupportToolStripMenuItem.Text = "作品支援";
-            this.WorkSupportToolStripMenuItem.Click += new System.EventHandler(this.WorkSupportToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx6
-            // 
-            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
-            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
+            this.AIPerformItemButton.Location = new System.Drawing.Point(824, 508);
+            this.AIPerformItemButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIPerformItemButton.Name = "AIPerformItemButton";
+            this.AIPerformItemButton.Size = new System.Drawing.Size(200, 36);
+            this.AIPerformItemButton.TabIndex = 142;
+            this.AIPerformItemButton.Text = "AIのアイテム利用判定";
+            this.AIPerformItemButton.UseVisualStyleBackColor = true;
+            this.AIPerformItemButton.Click += new System.EventHandler(this.AIPerformItemButton_Click);
             // 
             // MainFE6Form
             // 
@@ -2075,5 +2088,6 @@
         private System.Windows.Forms.Button GameOptionButton;
         private ToolStripSeparatorEx toolStripSeparatorEx6;
         private System.Windows.Forms.ToolStripMenuItem WorkSupportToolStripMenuItem;
+        private System.Windows.Forms.Button AIPerformItemButton;
     }
 }
