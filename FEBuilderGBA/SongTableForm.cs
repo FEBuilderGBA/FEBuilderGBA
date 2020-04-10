@@ -14,12 +14,15 @@ namespace FEBuilderGBA
         public SongTableForm()
         {
             InitializeComponent();
+            fixDocsBugs = new U.FixDocsBugs(this);
+
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
 //            this.Icon = Properties.Resources.icon_music;
         }
 
+        U.FixDocsBugs fixDocsBugs;
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
@@ -50,7 +53,7 @@ namespace FEBuilderGBA
                 this.AddressList.Height += AddressListExpandsButton_32766.Height;
                 AddressListExpandsButton_32766.Hide();
             }
-            U.AllowMaximizeBox(this);
+            fixDocsBugs.AllowMaximizeBox();
         }
 
         public static string GetSongName(uint song_id)

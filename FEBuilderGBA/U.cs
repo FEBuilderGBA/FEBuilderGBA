@@ -6974,7 +6974,7 @@ namespace FEBuilderGBA
             File.WriteAllBytes(dest, bin);
             return true;
         }
-
+/*
         //高解像度対応
         [DllImport("gdi32.dll")]
         extern static int GetDeviceCaps(IntPtr hdc, int index);
@@ -7001,16 +7001,37 @@ namespace FEBuilderGBA
                 return 96;
             }
         }
-
-        public static void AllowMaximizeBox(Form f)
+*/
+        public class FixDocsBugs
         {
-            f.MaximizeBox = true;
-            if (Program.SystemDPI > 96)
+            Size KeepSize;
+            Form Form;
+            public FixDocsBugs(Form f)
             {
-                f.Width = (int)(f.Width * 1.25);
-                f.Height = (int)(f.Height * 1.25);
+                KeepSize = f.Size;
+                foreach (Control c in f.Controls)
+                {
+                    int width = c.Left + c.Width;
+                    int height = c.Top + c.Height;
+
+                    if (KeepSize.Width < width)
+                    {
+                        KeepSize.Width = width;
+                    }
+                    if (KeepSize.Height < height)
+                    {
+                        KeepSize.Height = height;
+                    }
+                }
+                Form = f;
+            }
+            public void AllowMaximizeBox()
+            {
+                this.Form.MaximizeBox = true;
+                this.Form.Size = this.KeepSize;
             }
         }
+
     }
 }
 

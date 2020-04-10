@@ -20,19 +20,21 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+            fixDocsBugs = new U.FixDocsBugs(this);
 //            InputFormRef.TabControlHideTabOption(this.TAB);
-            this.MaximizeBox = false;
             ClearCheckIF();
             ReScan();
             this.PatchList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.Normal);
             InputFormRef.markupJumpLabel(this.FilterExLabel);
         }
 
+        U.FixDocsBugs fixDocsBugs;
         ToolTipEx ToolTip;
         private void PatchForm_Load(object sender, EventArgs e)
         {
+            List<Control> controls = InputFormRef.GetAllControls(this);
             this.ToolTip = InputFormRef.GetToolTip<PatchForm>();
-            U.AllowMaximizeBox(this);
+            fixDocsBugs.AllowMaximizeBox();
         }
 
         public static string GetPatchDirectory()

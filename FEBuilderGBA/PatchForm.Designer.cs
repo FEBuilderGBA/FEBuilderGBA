@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.FilterExLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PatchOpenButton = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.Filter = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.ContentPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.TAB.SuspendLayout();
@@ -100,16 +100,16 @@
             this.FilterExLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.FilterExLabel.Click += new System.EventHandler(this.FilterExLabel_Click);
             // 
-            // panel2
+            // ContentPanel
             // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.TAB);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(584, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1035, 855);
-            this.panel2.TabIndex = 3;
+            this.ContentPanel.Controls.Add(this.panel3);
+            this.ContentPanel.Controls.Add(this.TAB);
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(584, 0);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(1035, 855);
+            this.ContentPanel.TabIndex = 3;
             // 
             // panel3
             // 
@@ -166,10 +166,10 @@
             this.TAB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TAB.Location = new System.Drawing.Point(0, 0);
             this.TAB.Margin = new System.Windows.Forms.Padding(0);
-            this.TAB.Multiline = true;
             this.TAB.Name = "TAB";
             this.TAB.SelectedIndex = 0;
             this.TAB.Size = new System.Drawing.Size(1035, 855);
+            this.TAB.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TAB.TabIndex = 0;
             // 
             // ErrorPage
@@ -397,9 +397,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1619, 855);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PatchForm";
@@ -408,7 +407,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.ContentPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -429,7 +428,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private ListBoxEx PatchList;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.TabControl TAB;
         private System.Windows.Forms.TabPage ErrorPage;
         private FEBuilderGBA.TextBoxEx ERROR_TextBox;

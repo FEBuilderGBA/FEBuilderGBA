@@ -15,10 +15,12 @@ namespace FEBuilderGBA
         public List<SongUtil.Track> Tracks = new List<SongUtil.Track>();
         ListBox[] TrackListBoxs;
         Label[] TrackLabels;
+        U.FixDocsBugs fixDocsBugs;
         
         public SongTrackForm()
         {
             InitializeComponent();
+            fixDocsBugs = new U.FixDocsBugs(this);
 
             this.TrackListBoxs = new ListBox[] { Track1, Track2, Track3, Track4, Track5, Track6, Track7, Track8, Track9, Track10, Track11, Track12, Track13, Track14, Track15, Track16 };
             this.TrackLabels = new Label[] { TrackLabel1, TrackLabel2, TrackLabel3, TrackLabel4, TrackLabel5, TrackLabel6, TrackLabel7, TrackLabel8, TrackLabel9, TrackLabel10, TrackLabel11, TrackLabel12, TrackLabel13, TrackLabel14, TrackLabel15, TrackLabel16 };
@@ -69,7 +71,7 @@ namespace FEBuilderGBA
 
         private void SongTrackForm_Load(object sender, EventArgs e)
         {
-            U.AllowMaximizeBox(this);
+            fixDocsBugs.AllowMaximizeBox();
         }
 
 
