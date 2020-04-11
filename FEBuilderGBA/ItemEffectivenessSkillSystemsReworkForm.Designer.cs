@@ -36,40 +36,40 @@
             this.label16 = new System.Windows.Forms.Label();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N_L_2_CLASSTYPEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.N_W2 = new System.Windows.Forms.NumericUpDown();
             this.N_J_2_CLASSTYPE = new System.Windows.Forms.Label();
             this.N_J_1 = new System.Windows.Forms.Label();
             this.N_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.N_J_0 = new System.Windows.Forms.Label();
+            this.N_L_2_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
             this.N_B0 = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.N_WriteButton = new System.Windows.Forms.Button();
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.N_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label1 = new System.Windows.Forms.Label();
+            this.ItemListBox = new FEBuilderGBA.ListBoxEx();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.N_L_2_CLASSTYPEICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.N_L_2_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
-            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.ItemListBox = new FEBuilderGBA.ListBoxEx();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B0)).BeginInit();
@@ -78,7 +78,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -174,6 +173,19 @@
             this.panel1.Size = new System.Drawing.Size(322, 539);
             this.panel1.TabIndex = 91;
             // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 27);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(324, 508);
+            this.AddressList.TabIndex = 108;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -195,7 +207,6 @@
             this.panel7.Controls.Add(this.N_J_2_CLASSTYPE);
             this.panel7.Controls.Add(this.N_J_1);
             this.panel7.Controls.Add(this.N_B1);
-            this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.N_J_0);
             this.panel7.Controls.Add(this.N_L_2_CLASSTYPE);
             this.panel7.Controls.Add(this.N_B0);
@@ -204,6 +215,16 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(444, 430);
             this.panel7.TabIndex = 179;
+            // 
+            // N_L_2_CLASSTYPEICON
+            // 
+            this.N_L_2_CLASSTYPEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N_L_2_CLASSTYPEICON.Location = new System.Drawing.Point(297, 71);
+            this.N_L_2_CLASSTYPEICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_2_CLASSTYPEICON.Name = "N_L_2_CLASSTYPEICON";
+            this.N_L_2_CLASSTYPEICON.Size = new System.Drawing.Size(32, 32);
+            this.N_L_2_CLASSTYPEICON.TabIndex = 110;
+            this.N_L_2_CLASSTYPEICON.TabStop = false;
             // 
             // N_W2
             // 
@@ -253,15 +274,6 @@
             this.N_B1.Size = new System.Drawing.Size(62, 25);
             this.N_B1.TabIndex = 105;
             // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(8, 343);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(423, 85);
-            this.label4.TabIndex = 104;
-            this.label4.Text = "リストを縮める場合は、3つの項目を全部:00にして終端記号を入れてください。";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // N_J_0
             // 
             this.N_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -272,6 +284,17 @@
             this.N_J_0.TabIndex = 57;
             this.N_J_0.Text = "00";
             this.N_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_L_2_CLASSTYPE
+            // 
+            this.N_L_2_CLASSTYPE.ErrorMessage = "";
+            this.N_L_2_CLASSTYPE.Location = new System.Drawing.Point(159, 105);
+            this.N_L_2_CLASSTYPE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_L_2_CLASSTYPE.Name = "N_L_2_CLASSTYPE";
+            this.N_L_2_CLASSTYPE.Placeholder = "";
+            this.N_L_2_CLASSTYPE.ReadOnly = true;
+            this.N_L_2_CLASSTYPE.Size = new System.Drawing.Size(280, 25);
+            this.N_L_2_CLASSTYPE.TabIndex = 55;
             // 
             // N_B0
             // 
@@ -303,6 +326,17 @@
             this.panel6.Size = new System.Drawing.Size(672, 64);
             this.panel6.TabIndex = 178;
             // 
+            // N_BlockSize
+            // 
+            this.N_BlockSize.ErrorMessage = "";
+            this.N_BlockSize.Location = new System.Drawing.Point(91, 34);
+            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
+            this.N_BlockSize.ReadOnly = true;
+            this.N_BlockSize.Size = new System.Drawing.Size(72, 25);
+            this.N_BlockSize.TabIndex = 55;
+            // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -313,6 +347,17 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Size:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(307, 32);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N_SelectAddress.TabIndex = 54;
             // 
             // label22
             // 
@@ -382,6 +427,18 @@
             this.N_AddressListExpandsButton.Text = "リストの拡張";
             this.N_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
+            // N_AddressList
+            // 
+            this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
+            this.N_AddressList.ItemHeight = 18;
+            this.N_AddressList.Location = new System.Drawing.Point(-1, 30);
+            this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N_AddressList.Name = "N_AddressList";
+            this.N_AddressList.Size = new System.Drawing.Size(262, 436);
+            this.N_AddressList.TabIndex = 108;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -393,6 +450,18 @@
             this.label1.TabIndex = 107;
             this.label1.Text = "特効クラス";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ItemListBox
+            // 
+            this.ItemListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ItemListBox.FormattingEnabled = true;
+            this.ItemListBox.IntegralHeight = false;
+            this.ItemListBox.ItemHeight = 18;
+            this.ItemListBox.Location = new System.Drawing.Point(716, 97);
+            this.ItemListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ItemListBox.Name = "ItemListBox";
+            this.ItemListBox.Size = new System.Drawing.Size(220, 400);
+            this.ItemListBox.TabIndex = 110;
             // 
             // ReadStartAddress
             // 
@@ -441,86 +510,6 @@
             this.panel3.Size = new System.Drawing.Size(1264, 30);
             this.panel3.TabIndex = 93;
             // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 27);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(324, 508);
-            this.AddressList.TabIndex = 108;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // N_L_2_CLASSTYPEICON
-            // 
-            this.N_L_2_CLASSTYPEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N_L_2_CLASSTYPEICON.Location = new System.Drawing.Point(297, 71);
-            this.N_L_2_CLASSTYPEICON.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_2_CLASSTYPEICON.Name = "N_L_2_CLASSTYPEICON";
-            this.N_L_2_CLASSTYPEICON.Size = new System.Drawing.Size(32, 32);
-            this.N_L_2_CLASSTYPEICON.TabIndex = 110;
-            this.N_L_2_CLASSTYPEICON.TabStop = false;
-            // 
-            // N_L_2_CLASSTYPE
-            // 
-            this.N_L_2_CLASSTYPE.ErrorMessage = "";
-            this.N_L_2_CLASSTYPE.Location = new System.Drawing.Point(159, 105);
-            this.N_L_2_CLASSTYPE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_L_2_CLASSTYPE.Name = "N_L_2_CLASSTYPE";
-            this.N_L_2_CLASSTYPE.Placeholder = "";
-            this.N_L_2_CLASSTYPE.ReadOnly = true;
-            this.N_L_2_CLASSTYPE.Size = new System.Drawing.Size(280, 25);
-            this.N_L_2_CLASSTYPE.TabIndex = 55;
-            // 
-            // N_BlockSize
-            // 
-            this.N_BlockSize.ErrorMessage = "";
-            this.N_BlockSize.Location = new System.Drawing.Point(91, 34);
-            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_BlockSize.Name = "N_BlockSize";
-            this.N_BlockSize.Placeholder = "";
-            this.N_BlockSize.ReadOnly = true;
-            this.N_BlockSize.Size = new System.Drawing.Size(72, 25);
-            this.N_BlockSize.TabIndex = 55;
-            // 
-            // N_SelectAddress
-            // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(307, 32);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(136, 25);
-            this.N_SelectAddress.TabIndex = 54;
-            // 
-            // N_AddressList
-            // 
-            this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N_AddressList.FormattingEnabled = true;
-            this.N_AddressList.IntegralHeight = false;
-            this.N_AddressList.ItemHeight = 18;
-            this.N_AddressList.Location = new System.Drawing.Point(-1, 30);
-            this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(262, 436);
-            this.N_AddressList.TabIndex = 108;
-            // 
-            // ItemListBox
-            // 
-            this.ItemListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemListBox.FormattingEnabled = true;
-            this.ItemListBox.IntegralHeight = false;
-            this.ItemListBox.ItemHeight = 18;
-            this.ItemListBox.Location = new System.Drawing.Point(716, 97);
-            this.ItemListBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ItemListBox.Name = "ItemListBox";
-            this.ItemListBox.Size = new System.Drawing.Size(220, 400);
-            this.ItemListBox.TabIndex = 110;
-            // 
             // ItemEffectivenessSkillSystemsReworkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -541,6 +530,7 @@
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_W2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B0)).EndInit();
@@ -550,7 +540,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -588,7 +577,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label N_J_1;
         private System.Windows.Forms.NumericUpDown N_B1;
         private System.Windows.Forms.Label N_J_2_CLASSTYPE;

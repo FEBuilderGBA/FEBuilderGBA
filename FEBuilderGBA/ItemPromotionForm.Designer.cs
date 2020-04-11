@@ -50,7 +50,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.B0 = new System.Windows.Forms.NumericUpDown();
@@ -69,7 +68,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(349, 1);
             this.ReadCount.Maximum = new decimal(new int[] {
             256,
@@ -103,6 +101,7 @@
             // 
             this.ITEM_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ITEM_LIST.FormattingEnabled = true;
+            this.ITEM_LIST.IntegralHeight = false;
             this.ITEM_LIST.ItemHeight = 18;
             this.ITEM_LIST.Location = new System.Drawing.Point(0, 25);
             this.ITEM_LIST.Margin = new System.Windows.Forms.Padding(4);
@@ -127,6 +126,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -305,7 +305,6 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.L_0_CLASSICON);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel2);
@@ -317,15 +316,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(743, 576);
             this.panel4.TabIndex = 98;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(268, 543);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(363, 18);
-            this.label4.TabIndex = 182;
-            this.label4.Text = "リストを縮める場合は、終端:0 を設定してください。";
             // 
             // L_0_CLASSICON
             // 
@@ -425,7 +415,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown B0;
         private FEBuilderGBA.TextBoxEx L_0_CLASS;
-        private System.Windows.Forms.Label label4;
         private InterpolatedPictureBox L_0_CLASSICON;
     }
 }

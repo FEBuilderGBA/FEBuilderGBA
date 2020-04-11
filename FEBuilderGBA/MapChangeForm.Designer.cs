@@ -36,7 +36,6 @@
             this.N_B6 = new System.Windows.Forms.NumericUpDown();
             this.N_L_5_FLAG = new FEBuilderGBA.TextBoxEx();
             this.N_J_6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.N_P8 = new System.Windows.Forms.NumericUpDown();
             this.N_J_8 = new System.Windows.Forms.Label();
             this.N_B7 = new System.Windows.Forms.NumericUpDown();
@@ -152,7 +151,6 @@
             this.panel3.Controls.Add(this.N_B6);
             this.panel3.Controls.Add(this.N_L_5_FLAG);
             this.panel3.Controls.Add(this.N_J_6);
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.N_P8);
             this.panel3.Controls.Add(this.N_J_8);
             this.panel3.Controls.Add(this.N_B7);
@@ -225,17 +223,6 @@
             this.N_J_6.TabIndex = 200;
             this.N_J_6.Text = "??";
             this.N_J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label4.Location = new System.Drawing.Point(0, 375);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(410, 95);
-            this.label4.TabIndex = 206;
-            this.label4.Text = "リストを縮める場合は、\r\n番号に、終端コード:255(0xFF)を設定してください。";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // N_P8
             // 
@@ -548,8 +535,8 @@
             // panel14
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.LabelFilter);
             this.panel14.Controls.Add(this.AddressList);
+            this.panel14.Controls.Add(this.LabelFilter);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 30);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
@@ -575,10 +562,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 0);
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(256, 566);
+            this.AddressList.Size = new System.Drawing.Size(256, 540);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -877,7 +864,6 @@
         private System.Windows.Forms.Label N_L_1_MAPXY_2;
         private System.Windows.Forms.NumericUpDown N_B0;
         private System.Windows.Forms.Label X_JUMP_MAPEDITOR;
-        private System.Windows.Forms.Label label4;
         private FEBuilderGBA.TextBoxEx N_L_5_FLAG;
         private System.Windows.Forms.NumericUpDown N_B6;
         private System.Windows.Forms.Label N_J_6;

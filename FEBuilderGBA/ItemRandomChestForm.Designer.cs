@@ -32,7 +32,6 @@
             this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
@@ -104,7 +103,6 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.L_0_ITEMICON);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.B1);
@@ -119,15 +117,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(794, 356);
             this.panel4.TabIndex = 94;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(292, 323);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(363, 18);
-            this.label2.TabIndex = 182;
-            this.label2.Text = "リストを縮める場合は、終端:0 を設定してください。";
             // 
             // L_0_ITEMICON
             // 
@@ -421,7 +410,6 @@
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
         private System.Windows.Forms.Button AddressListExpandsButton;
-        private System.Windows.Forms.Label label2;
         private InterpolatedPictureBox L_0_ITEMICON;
     }
 }

@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.N_L_3_FLAG = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
             this.N_B1 = new System.Windows.Forms.NumericUpDown();
             this.N_B0 = new System.Windows.Forms.NumericUpDown();
@@ -71,7 +71,6 @@
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.N_L_3_FLAG = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -183,7 +182,6 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.N_L_3_FLAG);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.N_B1);
             this.panel3.Controls.Add(this.N_B0);
@@ -200,14 +198,17 @@
             this.panel3.Size = new System.Drawing.Size(1154, 555);
             this.panel3.TabIndex = 179;
             // 
-            // label2
+            // N_L_3_FLAG
             // 
-            this.label2.Location = new System.Drawing.Point(3, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(374, 117);
-            this.label2.TabIndex = 191;
-            this.label2.Text = "リストを縮める場合は、\r\nX座標に、終端コード:255(0xFF)を設定してください。";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.N_L_3_FLAG.ErrorMessage = "";
+            this.N_L_3_FLAG.Location = new System.Drawing.Point(223, 85);
+            this.N_L_3_FLAG.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_3_FLAG.Name = "N_L_3_FLAG";
+            this.N_L_3_FLAG.Placeholder = "";
+            this.N_L_3_FLAG.ReadOnly = true;
+            this.N_L_3_FLAG.Size = new System.Drawing.Size(186, 25);
+            this.N_L_3_FLAG.TabIndex = 225;
+            this.N_L_3_FLAG.Visible = false;
             // 
             // label5
             // 
@@ -607,18 +608,6 @@
             this.MapPictureBox.Size = new System.Drawing.Size(743, 649);
             this.MapPictureBox.TabIndex = 224;
             // 
-            // N_L_3_FLAG
-            // 
-            this.N_L_3_FLAG.ErrorMessage = "";
-            this.N_L_3_FLAG.Location = new System.Drawing.Point(223, 85);
-            this.N_L_3_FLAG.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_3_FLAG.Name = "N_L_3_FLAG";
-            this.N_L_3_FLAG.Placeholder = "";
-            this.N_L_3_FLAG.ReadOnly = true;
-            this.N_L_3_FLAG.Size = new System.Drawing.Size(186, 25);
-            this.N_L_3_FLAG.TabIndex = 225;
-            this.N_L_3_FLAG.Visible = false;
-            // 
             // MapExitPointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -699,7 +688,6 @@
         private MapPictureBox MapPictureBox;
         private System.Windows.Forms.Button N_ReloadListButton;
         private System.Windows.Forms.Button NewListAlloc;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown Address;
         private TextBoxEx N_L_3_FLAG;
