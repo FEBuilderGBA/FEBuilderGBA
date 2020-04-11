@@ -849,6 +849,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem SoundRoomForm")) return;
                 SoundRoomForm.MakeCheckError(errors);
+
+                if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
+                EDForm.MakeCheckError(errors);
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
@@ -869,6 +872,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem SoundRoomForm")) return;
                 SoundRoomForm.MakeCheckError(errors);
+
+                if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
+                EDFE7Form.MakeCheckError(errors);
             }
             else
             {
@@ -883,6 +889,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem SupportTalkFE6Form")) return;
                 SupportTalkFE6Form.MakeCheckError(errors);
+
+                if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
+                EDFE6Form.MakeCheckError(errors);
             }
         }
     }

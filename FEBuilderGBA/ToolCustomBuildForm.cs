@@ -114,7 +114,7 @@ namespace FEBuilderGBA
             }
 
             string parentPatchFilename = Path.Combine(Program.BaseDirectory, "config", "patch2", "FE8U"
-                , "skill20200223", "PATCH_Skill20200223.txt");
+                , "skill20200411", "PATCH_Skill20200411.txt");
             this.ParentPatch = PatchForm.LoadPatch(parentPatchFilename, isScanOnly: false);
             if (this.ParentPatch == null)
             {
@@ -239,7 +239,6 @@ namespace FEBuilderGBA
             U.CopyDirectory(Path.GetDirectoryName(ParentPatch.PatchFileName), skill_CustomBuildDirectory);
             U.DeleteFile(skill_CustomBuildDirectory, "0*.bin");
             U.DeleteFile(skill_CustomBuildDirectory, "PATCH_*.txt");
-            U.DeleteFile(Path.Combine(skill_CustomBuildDirectory, "fix_mag_statbooster"), "PATCH_*.txt");
 
             //シンボル情報のコピー
             CopySYM(skill_CustomBuildDirectory);

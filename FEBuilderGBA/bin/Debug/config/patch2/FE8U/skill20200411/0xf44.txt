@@ -1,0 +1,2 @@
+Enrage: Inflict berserk status.
+(Skill% activation)

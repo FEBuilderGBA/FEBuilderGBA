@@ -1,0 +1,2 @@
+Malefic Aura: Enemies within 2
+tiles receive +2 magic damage.

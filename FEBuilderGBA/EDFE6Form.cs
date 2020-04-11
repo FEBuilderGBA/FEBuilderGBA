@@ -64,5 +64,24 @@ namespace FEBuilderGBA
                 UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 ,2 , 4, 6 });
             }
         }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            {
+                InputFormRef ifr = N2_Init(null);
+
+                uint addr = ifr.BaseAddress;
+                for (uint i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
+                {
+                    uint name = Program.ROM.u16(addr + 0);
+                    FELint.CheckText(name, "FE6EDAFTER6", errors, FELint.Type.ED, addr, i);
+
+                    name = Program.ROM.u16(addr + 2);
+                    FELint.CheckText(name, "FE6EDAFTER6", errors, FELint.Type.ED, addr, i);
+
+                    name = Program.ROM.u16(addr + 6);
+                    FELint.CheckText(name, "EDTITLE1", errors, FELint.Type.ED, addr, i);
+                }
+            }
+        }
     }
 }

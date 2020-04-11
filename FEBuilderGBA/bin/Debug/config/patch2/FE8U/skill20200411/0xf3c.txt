@@ -1,0 +1,2 @@
+Tome Range +1: Maximum range
+of equipped tome is increased.

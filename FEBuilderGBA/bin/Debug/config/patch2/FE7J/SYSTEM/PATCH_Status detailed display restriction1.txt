@@ -1,0 +1,15 @@
+
+NAME=ステータス詳細表示制限 1
+NAME.en=Disabled Status Screen On Map 1
+NAME.zh=敌人状态详细表示限制 1
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x01C60E
+ADDRESS_TYPE=CLASS
+
+INFO=ステータスを表示しないクラスを指定します。
+INFO.en=Disables opening the Status menu to view detailed unit info for the selected class.\r\n
+INFO.zh=指定不显示其状态的类。

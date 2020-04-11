@@ -59,10 +59,10 @@ Selection:
 Address
 
 :AIの章ごとの設定
-AI Item Usage per chapter
+AI's Item Usage
 
 :AIがアイテムを使用するかどうか判定する関数を指定します。\r\nなお、章ごとにアイテムを使えるかどうかの設定は、「AIの章ごとの設定」にあります。
-Specify a function that determines whether the AI \u200b\u200buses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "Setting for each chapter of AI".
+Specify a function that determines whether the AI \u200b\u200buses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "AI's Item Usage".
 
 :アイテム
 Item Editor
@@ -6258,6 +6258,9 @@ You can change the setting option items of the game.
 
 :AIが杖を利用できるかどうか判断する関数テーブルを設定します。
 Set up a function table to determine if AI can use staff.
+
+:AIがアイテムを利用できるかどうか判断する関数テーブルを設定します。
+Set up a function table to determine if the item is available to AI.
 
 :軍師の属性を決定するテーブルを設定します。
 Set up a table to determine the military attributes.

@@ -151,8 +151,8 @@ namespace FEBuilderGBA
                         return PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem;
                     };
                     reason = R._("スキル拡張 SkillSystems が必要です。\r\n有効にしますか？");
-                    patchName1 = "Skill20200223";///No Translate
-                    patchName2 = "Skill20200223";///No Translate
+                    patchName1 = "Skill20200411";///No Translate
+                    patchName2 = "Skill20200411";///No Translate
                 }
             }
             else if (type == TYPE.SkipWorldmapFix)

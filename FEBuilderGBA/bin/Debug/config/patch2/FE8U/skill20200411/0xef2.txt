@@ -1,0 +1,2 @@
+Heavy Strikes: Add weapon
+weight to critical chance.

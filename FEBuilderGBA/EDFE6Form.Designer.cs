@@ -35,10 +35,10 @@
             this.N2_L_4_TEXT = new FEBuilderGBA.TextBoxEx();
             this.N2_W4 = new System.Windows.Forms.NumericUpDown();
             this.N2_J_4_TEXT = new System.Windows.Forms.Label();
-            this.N2_L_2_TEXT_EDAFTER6 = new FEBuilderGBA.TextBoxEx();
+            this.N2_L_2_TEXT_FE6EDAFTER6 = new FEBuilderGBA.TextBoxEx();
             this.N2_W2 = new System.Windows.Forms.NumericUpDown();
             this.N2_J_2_TEXT = new System.Windows.Forms.Label();
-            this.N2_L_0_TEXT_EDAFTER6 = new FEBuilderGBA.TextBoxEx();
+            this.N2_L_0_TEXT_FE6EDAFTER6 = new FEBuilderGBA.TextBoxEx();
             this.N2_W0 = new System.Windows.Forms.NumericUpDown();
             this.N2_J_0_TEXT = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -81,10 +81,10 @@
             this.panel12.Controls.Add(this.N2_L_4_TEXT);
             this.panel12.Controls.Add(this.N2_W4);
             this.panel12.Controls.Add(this.N2_J_4_TEXT);
-            this.panel12.Controls.Add(this.N2_L_2_TEXT_EDAFTER6);
+            this.panel12.Controls.Add(this.N2_L_2_TEXT_FE6EDAFTER6);
             this.panel12.Controls.Add(this.N2_W2);
             this.panel12.Controls.Add(this.N2_J_2_TEXT);
-            this.panel12.Controls.Add(this.N2_L_0_TEXT_EDAFTER6);
+            this.panel12.Controls.Add(this.N2_L_0_TEXT_FE6EDAFTER6);
             this.panel12.Controls.Add(this.N2_W0);
             this.panel12.Controls.Add(this.N2_J_0_TEXT);
             this.panel12.Location = new System.Drawing.Point(284, 73);
@@ -163,17 +163,17 @@
             this.N2_J_4_TEXT.Text = "ショート版";
             this.N2_J_4_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // N2_L_2_TEXT_EDAFTER6
+            // N2_L_2_TEXT_FE6EDAFTER6
             // 
-            this.N2_L_2_TEXT_EDAFTER6.ErrorMessage = "";
-            this.N2_L_2_TEXT_EDAFTER6.Location = new System.Drawing.Point(3, 244);
-            this.N2_L_2_TEXT_EDAFTER6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.N2_L_2_TEXT_EDAFTER6.Multiline = true;
-            this.N2_L_2_TEXT_EDAFTER6.Name = "N2_L_2_TEXT_EDAFTER6";
-            this.N2_L_2_TEXT_EDAFTER6.Placeholder = "";
-            this.N2_L_2_TEXT_EDAFTER6.ReadOnly = true;
-            this.N2_L_2_TEXT_EDAFTER6.Size = new System.Drawing.Size(639, 150);
-            this.N2_L_2_TEXT_EDAFTER6.TabIndex = 191;
+            this.N2_L_2_TEXT_FE6EDAFTER6.ErrorMessage = "";
+            this.N2_L_2_TEXT_FE6EDAFTER6.Location = new System.Drawing.Point(3, 244);
+            this.N2_L_2_TEXT_FE6EDAFTER6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.N2_L_2_TEXT_FE6EDAFTER6.Multiline = true;
+            this.N2_L_2_TEXT_FE6EDAFTER6.Name = "N2_L_2_TEXT_FE6EDAFTER6";
+            this.N2_L_2_TEXT_FE6EDAFTER6.Placeholder = "";
+            this.N2_L_2_TEXT_FE6EDAFTER6.ReadOnly = true;
+            this.N2_L_2_TEXT_FE6EDAFTER6.Size = new System.Drawing.Size(639, 150);
+            this.N2_L_2_TEXT_FE6EDAFTER6.TabIndex = 191;
             // 
             // N2_W2
             // 
@@ -198,17 +198,17 @@
             this.N2_J_2_TEXT.Text = "ロイと支援Ａ時";
             this.N2_J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // N2_L_0_TEXT_EDAFTER6
+            // N2_L_0_TEXT_FE6EDAFTER6
             // 
-            this.N2_L_0_TEXT_EDAFTER6.ErrorMessage = "";
-            this.N2_L_0_TEXT_EDAFTER6.Location = new System.Drawing.Point(3, 48);
-            this.N2_L_0_TEXT_EDAFTER6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.N2_L_0_TEXT_EDAFTER6.Multiline = true;
-            this.N2_L_0_TEXT_EDAFTER6.Name = "N2_L_0_TEXT_EDAFTER6";
-            this.N2_L_0_TEXT_EDAFTER6.Placeholder = "";
-            this.N2_L_0_TEXT_EDAFTER6.ReadOnly = true;
-            this.N2_L_0_TEXT_EDAFTER6.Size = new System.Drawing.Size(639, 150);
-            this.N2_L_0_TEXT_EDAFTER6.TabIndex = 188;
+            this.N2_L_0_TEXT_FE6EDAFTER6.ErrorMessage = "";
+            this.N2_L_0_TEXT_FE6EDAFTER6.Location = new System.Drawing.Point(3, 48);
+            this.N2_L_0_TEXT_FE6EDAFTER6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.N2_L_0_TEXT_FE6EDAFTER6.Multiline = true;
+            this.N2_L_0_TEXT_FE6EDAFTER6.Name = "N2_L_0_TEXT_FE6EDAFTER6";
+            this.N2_L_0_TEXT_FE6EDAFTER6.Placeholder = "";
+            this.N2_L_0_TEXT_FE6EDAFTER6.ReadOnly = true;
+            this.N2_L_0_TEXT_FE6EDAFTER6.Size = new System.Drawing.Size(639, 150);
+            this.N2_L_0_TEXT_FE6EDAFTER6.TabIndex = 188;
             // 
             // N2_W0
             // 
@@ -479,7 +479,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown N2_W0;
         private System.Windows.Forms.Label N2_J_0_TEXT;
-        private FEBuilderGBA.TextBoxEx N2_L_0_TEXT_EDAFTER6;
+        private FEBuilderGBA.TextBoxEx N2_L_0_TEXT_FE6EDAFTER6;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button N2_AddressListExpandsButton;
         private System.Windows.Forms.Label N2_LabelFilter;
@@ -490,7 +490,7 @@
         private FEBuilderGBA.TextBoxEx N2_L_4_TEXT;
         private System.Windows.Forms.NumericUpDown N2_W4;
         private System.Windows.Forms.Label N2_J_4_TEXT;
-        private FEBuilderGBA.TextBoxEx N2_L_2_TEXT_EDAFTER6;
+        private FEBuilderGBA.TextBoxEx N2_L_2_TEXT_FE6EDAFTER6;
         private System.Windows.Forms.NumericUpDown N2_W2;
         private System.Windows.Forms.Label N2_J_2_TEXT;
     }

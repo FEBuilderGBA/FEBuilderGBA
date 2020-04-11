@@ -1,0 +1,2 @@
+Petrify: Inflict stone status.
+(Skill% activation)

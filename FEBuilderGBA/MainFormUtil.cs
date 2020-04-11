@@ -2678,6 +2678,10 @@ namespace FEBuilderGBA
             {
                 return R._("AIが杖を利用できるかどうか判断する関数テーブルを設定します。");
             }
+            if (name == "AIPerformItemButton")
+            {
+                return R._("AIがアイテムを利用できるかどうか判断する関数テーブルを設定します。");
+            }
             if (name == "TacticianAffinity")
             {
                 return R._("軍師の属性を決定するテーブルを設定します。");

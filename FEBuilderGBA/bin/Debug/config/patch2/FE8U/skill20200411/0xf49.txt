@@ -1,0 +1,3 @@
+Arcane Blade: When initiating battle
+at 1 range: Add 3+(Mag/2) to Hit
+and Crit

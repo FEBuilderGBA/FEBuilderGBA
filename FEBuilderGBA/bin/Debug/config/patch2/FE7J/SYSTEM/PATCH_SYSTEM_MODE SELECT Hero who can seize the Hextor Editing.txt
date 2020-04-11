@@ -6,7 +6,7 @@ NAME.en=MODE SELECT Hero who can seize the Hextor Editing
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x034DA2 0x34D60 0x34D64
+ADDRESS=0x034DA2
 ADDRESS_TYPE=UNIT
 AUTHOR=Source: shin19 https://feuniverse.us/t/fe7-replace-hector-mode/3169/8
 NAME.zh=MODESELECT可以保护的英雄赫克托编。

@@ -1,0 +1,2 @@
+Shade: Enemies are less
+likely to target this unit.

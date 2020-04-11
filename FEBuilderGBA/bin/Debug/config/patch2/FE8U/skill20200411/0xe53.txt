@@ -1,0 +1,2 @@
+Demoiselle: Male allies within
+2 tiles receive -2 damage.

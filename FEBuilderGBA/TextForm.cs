@@ -2704,13 +2704,13 @@ namespace FEBuilderGBA
             }
             if (arg1 == "EDAFTER5")
             {
-                return CheckOneLineTextMessage(text, 250, 5 * 16, false);
+                return CheckOneLineTextMessage(text, 250, 5 * 16, true);
             }
-            if (arg1 == "EDAFTER6")
+            if (arg1 == "FE6EDAFTER6")
             {
-                return CheckOneLineTextMessage(text, 250, 6 * 16, false);
+                return CheckOneLineTextMessage(text, 250, 6 * 16, true);
             }
-            if (arg1 == "EDAFTER8")
+            if (arg1 == "LYNEDAFTER8")
             {
                 return CheckOneLineTextMessage(text, 250, 8 * 16, false);
             }
