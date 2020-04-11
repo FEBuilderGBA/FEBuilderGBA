@@ -39,7 +39,7 @@
 0073=SE:Phase Message Sound
 0074=EnvSound:Experience Blip
 0075=SE:HP Replenishment
-0076=SE:Menu Select
+0076=SE:Stat Increase
 0077=SE:Menu Select
 0078=SE:Mini Map Open
 0079=SE:Mini Map Close
@@ -416,7 +416,7 @@
 02CA=SE:Forblaze charging
 02CB=SE:Forblaze rising
 02CC=SE:Weird charging
-02CD=SE:Weird glittery sound
+02CD=SE:Level up Sparkle
 02CE=SE:No damage
 02CF=SE:Weird pat sound @C85_43
 02D0=SE:Eliwood's sword shining @C85_44

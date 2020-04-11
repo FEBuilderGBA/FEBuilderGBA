@@ -183,6 +183,11 @@ namespace FEBuilderGBA
                 uint addr = ifr.BaseAddress;
                 for (uint i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
                 {
+                    uint unitid1 = Program.ROM.u8(addr + 1);
+                    if (unitid1 == 0)
+                    {
+                        continue;
+                    }
                     uint name = Program.ROM.u32(addr + 4);
                     FELint.CheckText(name, "EDAFTER5", errors, FELint.Type.ED, addr, i);
                 }
