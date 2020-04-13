@@ -5595,6 +5595,13 @@ namespace FEBuilderGBA
 //            Debug.Assert(count <= 0x14);
 
             return 2 + count * 2 * 3;
+
+            //[CC CC]  
+            //oam1  oam0  oam2
+            //XX ?? YY ?? ?? ??
+            //CC=count この値だけOAMのデータが続きます。データは6バイトです。
+            //XX=x     オブジェクトを表示するX座標
+            //YY=x     オブジェクトを表示するY座標
         }
         //TextBatchの長さを求める
         //

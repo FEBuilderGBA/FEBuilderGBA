@@ -5086,23 +5086,17 @@ Write Effectiveness Pointer
 :特効ポインタアドレス
 Effectiveness Pointer Address
 
-:リストを縮める場合は、終端:0 を設定してください。
-To shorten the list, please set termination: 0.
-
-:特効クラス
-Special class
-
 :選択アイテムの分離独立
 Separation of selected items.
 
 :このデータは、複数のアイテムで参照されています。
 This data is referenced by multiple items.
 
+:特効クラス
+Special class
+
 :特効指定
 Specific Effectiveness Designation
-
-:リストを縮める場合は、3つの項目を全部:00にして終端記号を入れてください。
-To shrink the list, please set all three items to 00 and put a terminal symbol.
 
 :アイテム間接エフェクトポインタテーブル
 Indirect effect pointer table
@@ -6487,9 +6481,6 @@ Illegal tile data ({2}) in the destination data pointer ({1}) of tile change ({0
 :マップエディタ Jump
 Map Editor Jump.
 
-:リストを縮める場合は、\r\n番号に、終端コード:255(0xFF)を設定してください。
-If you want to shrink the list,\r\nPlease set the termination code: 255(0xFF)\r\nto the number.
-
 :マップ変化の再取得
 Reload Tile Changes
 
@@ -6681,9 +6672,6 @@ Resize Map
 
 :離脱ポイントが大量に存在します({0})。データが壊れていませんか？
 There are a large number of exit points ({0}).Is the data broken? 
-
-:リストを縮める場合は、\r\nX座標に、終端コード:255(0xFF)を設定してください。
-If you want to shrink the list,\r\nPlease set the termination code:255 (0xFF)\r\nto X coordinate.
 
 :00=左2歩
 00=2 Steps Left

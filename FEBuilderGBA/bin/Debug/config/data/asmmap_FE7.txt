@@ -5217,3 +5217,29 @@
 08029DCC	GetUnitEffectivePowerLevel	{U}
 08029E08	GetUnitClassKillExpBonus	{U}
 08029E30	GetUnitExpMultiplier	{U}
+080AD424	サウンドルーム	音の波形を描画	{J}
+080AD39C	サウンドルーム	音の波形を描画LOW	{J}
+080AD460	サウンドルーム	RANDOM MODE タイム表示	{J}
+080ad2d0	サウンドルーム	曲名の表示	{J}
+080AD544	SoundRoom サウンドルームの描画関係	{J}
+08006884	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{J}
+08DAEDF8	&OAMREGS	サウンドルーム	RANDOMMODE	RANDOM MODE 表示	OAM	{J}
+08DAEE18	&OAMREGS	サウンドルーム	RANDOMMODE	再生位置のシークバーのメモリ	OAM	{J}
+08DAEE38	&OAMREGS	サウンドルーム	RANDOMMODE	再生位置のシークバーのつまみ	OAM	{J}
+08DAEDE0	&OAMREGS	サウンドルーム	コントロール	再生開始ボタン	OAM	{J}
+08DAEDE8	&OAMREGS	サウンドルーム	コントロール	停止開始ボタン	OAM	{J}
+08DAEDF0	&OAMREGS	サウンドルーム	コントロール	ランダムモードボタン	OAM	{J}
+08BFF7A8	&OAMREGS	サウンドルーム	曲名	名前	OAM	{J}
+080AC54C	サウンドルーム	音の波形を描画	{U}
+080AC4C4	サウンドルーム	音の波形を描画LOW	{U}
+080AC588	サウンドルーム	RANDOM MODE タイム表示	{U}
+080AC3F8	サウンドルーム	曲名の表示	{U}
+080AC66C	SoundRoom サウンドルームの描画関係	{U}
+080069F4	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{U}
+08CE560C	&OAMREGS	サウンドルーム	RANDOMMODE	RANDOM MODE 表示	OAM	{U}
+08CE562C	&OAMREGS	サウンドルーム	RANDOMMODE	再生位置のシークバーのメモリ	OAM	{U}
+08CE564C	&OAMREGS	サウンドルーム	RANDOMMODE	再生位置のシークバーのつまみ	OAM	{U}
+08CE55F4	&OAMREGS	サウンドルーム	コントロール	再生開始ボタン	OAM	{U}
+08CE55FC	&OAMREGS	サウンドルーム	コントロール	停止開始ボタン	OAM	{U}
+08CE5604	&OAMREGS	サウンドルーム	コントロール	ランダムモードボタン	OAM	{U}
+08B905F8	&OAMREGS	サウンドルーム	曲名	名前	OAM	{U}

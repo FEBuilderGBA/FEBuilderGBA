@@ -102,8 +102,8 @@ namespace FEBuilderGBA
         {
             if (this.AddressList.SelectedIndex > 0)
             {
-                L_2_TEXT_ITEMX.ErrorMessage = ItemForm.ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value);
-                L_4_TEXT_ITEM2.ErrorMessage = ItemForm.ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value);
+                L_2_TEXT_ITEMX.ErrorMessage = ItemForm.ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value, L_8_BIT_01.Checked);
+                L_4_TEXT_ITEM2.ErrorMessage = ItemForm.ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value, L_8_BIT_01.Checked);
             }
             else
             {

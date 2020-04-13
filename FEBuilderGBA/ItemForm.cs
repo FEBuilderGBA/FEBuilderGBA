@@ -335,9 +335,26 @@ namespace FEBuilderGBA
             return Program.ROM.u8(addr + 28);
         }
 
-        public static string ChcekTextItem1ErrorMessage(uint id, string text, uint textid, uint type)
+        public static bool is3Message(uint type, bool isEquip)
         {
-            if (type <= 7 && type != 4)
+            if (type >= 0x9)
+            {
+                return true;
+            }
+            if (isEquip)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static string ChcekTextItem1ErrorMessage(uint id, string text, uint textid, uint type, bool isEquip)
+        {
+            if (is3Message(type , isEquip))
+            {
+                return TextForm.GetErrorMessage(text, textid, "ITEM3");
+            }
+            else
             {
                 if (text == "")
                 {
@@ -365,12 +382,8 @@ namespace FEBuilderGBA
                 }
                 return errormessage;
             }
-            else
-            {
-                return TextForm.GetErrorMessage(text, textid, "ITEM3");
-            }
         }
-        public static string ChcekTextItem2ErrorMessage(uint id, string text,uint textid, uint type)
+        public static string ChcekTextItem2ErrorMessage(uint id, string text, uint textid, uint type, bool isEquip)
         {
             return TextForm.GetErrorMessage(text,textid, "ITEM3");
         }
@@ -379,8 +392,8 @@ namespace FEBuilderGBA
         {
             if (this.AddressList.SelectedIndex > 0)
             {
-                L_2_TEXT_ITEMX.ErrorMessage = ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value);
-                L_4_TEXT_ITEM2.ErrorMessage = ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value);
+                L_2_TEXT_ITEMX.ErrorMessage = ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value , L_8_BIT_01.Checked);
+                L_4_TEXT_ITEM2.ErrorMessage = ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEMX.Text, (uint)W2.Value, (uint)B7.Value, L_8_BIT_01.Checked);
             }
             else
             {
@@ -530,14 +543,16 @@ namespace FEBuilderGBA
                     uint info = Program.ROM.u16(item_addr + 2);
                     uint info2 = Program.ROM.u16(item_addr + 4);
                     uint type = Program.ROM.u8(item_addr + 7);
-                    string errorMessage = ChcekTextItem1ErrorMessage(id , FETextDecode.Direct(info),info, type);
+                    uint attr1 = Program.ROM.u8(item_addr + 8);
+                    bool isEquip = (attr1 & 0x01) == 0x01;
+                    string errorMessage = ChcekTextItem1ErrorMessage(id, FETextDecode.Direct(info), info, type, isEquip);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
                             , R._("TextID:{0}\r\n{1}", U.To0xHexString(info), errorMessage), i));
                     }
 
-                    errorMessage = ChcekTextItem2ErrorMessage(id , FETextDecode.Direct(info2),info2, type);
+                    errorMessage = ChcekTextItem2ErrorMessage(id, FETextDecode.Direct(info2), info2, type, isEquip);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)

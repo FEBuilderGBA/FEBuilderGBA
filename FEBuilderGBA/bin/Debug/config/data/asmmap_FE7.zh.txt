@@ -4891,3 +4891,43 @@
 08029DCC	GetUnitEffectivePowerLevel	{U}
 08029E08	GetUnitClassKillExpBonus	{U}
 08029E30	GetUnitExpMultiplier	{U}
+080793a0	GetAvailableLocaCommandAt	{J}
+08079990	MaybeCallEndEvent_	{J}
+080799A0	MaybeCallEndEvent	{J}
+0807977c	ShouldCallEndEvent	{J}
+0807a208	CallEndEvent	{J}
+08078BD0	GetAvailableLocaCommandAt	{U}
+080791C0	MaybeCallEndEvent_	{U}
+080791D0	MaybeCallEndEvent	{U}
+08078FAC	ShouldCallEndEvent	{U}
+08079A38	CallEndEvent	{U}
+0800AE98	CallExecuteEvent_Slot3	r0=event	{J}
+0800AEA4	Call_ExecuteEvent	r0=event	r1=slot	{J}
+0800AF5C	CallExecuteEvent_Slot3	r0=event	{U}
+0800AF68	Call_ExecuteEvent	r0=event	r1=slot	{U}
+080AD424	声音室	绘制声音波形。	{J}
+080AD39C	声音室	将声音波形拉低。	{J}
+080AD460	声音室	RANDOM MODE时间显示。	{J}
+080ad2d0	声音室	显示歌曲标题。	{J}
+080AD544	SoundRoom声音室的绘图。	{J}
+08006884	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{J}
+08DAEDF8	&OAMREGS	声音室	RANDOMMODE	随机模式显示。	OAM	{J}
+08DAEE18	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆。	OAM	{J}
+08DAEE38	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置。	OAM	{J}
+08DAEDE0	&OAMREGS	声音室	控制。	播放开始按钮。	OAM	{J}
+08DAEDE8	&OAMREGS	声音室	控制。	停止开始按钮。	OAM	{J}
+08DAEDF0	&OAMREGS	声音室	控制。	随机模式按钮。	OAM	{J}
+08BFF7A8	&OAMREGS	声音室	歌名	名称	OAM	{J}
+080AC54C	声音室	绘制声音波形。	{U}
+080AC4C4	声音室	将声音波形拉低。	{U}
+080AC588	声音室	RANDOM MODE时间显示。	{U}
+080AC3F8	声音室	显示歌曲标题。	{U}
+080AC66C	SoundRoom声音室的绘图。	{U}
+080069F4	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{U}
+08CE560C	&OAMREGS	声音室	RANDOMMODE	随机模式显示。	OAM	{U}
+08CE562C	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆。	OAM	{U}
+08CE564C	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置。	OAM	{U}
+08CE55F4	&OAMREGS	声音室	控制。	播放开始按钮。	OAM	{U}
+08CE55FC	&OAMREGS	声音室	控制。	停止开始按钮。	OAM	{U}
+08CE5604	&OAMREGS	声音室	控制。	随机模式按钮。	OAM	{U}
+08B905F8	&OAMREGS	声音室	歌名	名称	OAM	{U}

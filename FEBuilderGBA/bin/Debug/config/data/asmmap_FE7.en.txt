@@ -4910,3 +4910,43 @@
 08029DCC	GetUnitEffectivePowerLevel	{U}
 08029E08	GetUnitClassKillExpBonus	{U}
 08029E30	GetUnitExpMultiplier	{U}
+080793a0	GetAvailableLocaCommandAt	{J}
+08079990	MaybeCallEndEvent_	{J}
+080799A0	MaybeCallEndEvent	{J}
+0807977c	ShouldCallEndEvent	{J}
+0807a208	CallEndEvent	{J}
+08078BD0	GetAvailableLocaCommandAt	{U}
+080791C0	MaybeCallEndEvent_	{U}
+080791D0	MaybeCallEndEvent	{U}
+08078FAC	ShouldCallEndEvent	{U}
+08079A38	CallEndEvent	{U}
+0800AE98	CallExecuteEvent_Slot3	r0=event	{J}
+0800AEA4	Call_ExecuteEvent	r0=event	r1=slot	{J}
+0800AF5C	CallExecuteEvent_Slot3	r0=event	{U}
+0800AF68	Call_ExecuteEvent	r0=event	r1=slot	{U}
+080AD424	Sound Room	Draw a sound waveform.	{J}
+080AD39C	Sound Room	Draw sound waveform LOW.	{J}
+080AD460	Sound Room	RANDOM MODE Time display.	{J}
+080ad2d0	Sound Room	Display of song title.	{J}
+080AD544	SoundRoom Drawing of sound room.	{J}
+08006884	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{J}
+08DAEDF8	&OAMREGS	Sound Room	RANDOMMODE	RANDOM MODE display.	OAM	{J}
+08DAEE18	&OAMREGS	Sound Room	RANDOMMODE	Seek bar memory at playback position.	OAM	{J}
+08DAEE38	&OAMREGS	Sound Room	RANDOMMODE	The seek bar knob at the playback position.	OAM	{J}
+08DAEDE0	&OAMREGS	Sound Room	Control	Play start button.	OAM	{J}
+08DAEDE8	&OAMREGS	Sound Room	Control	Stop start button.	OAM	{J}
+08DAEDF0	&OAMREGS	Sound Room	Control	Random mode button.	OAM	{J}
+08BFF7A8	&OAMREGS	Sound Room	Song Name	Name	OAM	{J}
+080AC54C	Sound Room	Draw a sound waveform.	{U}
+080AC4C4	Sound Room	Draw sound waveform LOW.	{U}
+080AC588	Sound Room	RANDOM MODE Time display.	{U}
+080AC3F8	Sound Room	Display of song title.	{U}
+080AC66C	SoundRoom Drawing of sound room.	{U}
+080069F4	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{U}
+08CE560C	&OAMREGS	Sound Room	RANDOMMODE	RANDOM MODE display.	OAM	{U}
+08CE562C	&OAMREGS	Sound Room	RANDOMMODE	Seek bar memory at playback position.	OAM	{U}
+08CE564C	&OAMREGS	Sound Room	RANDOMMODE	The seek bar knob at the playback position.	OAM	{U}
+08CE55F4	&OAMREGS	Sound Room	Control	Play start button.	OAM	{U}
+08CE55FC	&OAMREGS	Sound Room	Control	Stop start button.	OAM	{U}
+08CE5604	&OAMREGS	Sound Room	Control	Random mode button.	OAM	{U}
+08B905F8	&OAMREGS	Sound Room	Song Name	Name	OAM	{U}

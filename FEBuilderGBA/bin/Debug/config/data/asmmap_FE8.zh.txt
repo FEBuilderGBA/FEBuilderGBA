@@ -6369,8 +6369,6 @@ r3=X tile position of menu of the right	{U}
 085B8CFC	&OAMREGS	OAMREGS	{J}
 085B8D04	&OAMREGS	OAMREGS	{J}
 085B8D14	&OAMREGS	OAMREGS	{J}
-085B8D24	&OAMREGS	OAMREGS	{J}
-085B8D2C	&OAMREGS	OAMREGS	{J}
 085B8D34	&OAMREGS	OAMREGS	{J}
 085B8D3C	&OAMREGS	OAMREGS	{J}
 085B8D4C	&OAMREGS	OAMREGS	{J}
@@ -6464,10 +6462,6 @@ r3=X tile position of menu of the right	{U}
 08A9DAAC	&OAMREGS	OAMREGS	{J}
 08A9DAE4	&OAMREGS	OAMREGS	{J}
 08A9DAF2	&OAMREGS	OAMREGS	{J}
-08A9E3A8	&OAMREGS	OAMREGS	{J}
-08A9E3B6	&OAMREGS	OAMREGS	{J}
-08A9E3C4	&OAMREGS	OAMREGS	{J}
-08A9E3D2	&OAMREGS	OAMREGS	{J}
 08A9E3F2	&OAMREGS	OAMREGS	{J}
 08A9E406	&OAMREGS	OAMREGS	{J}
 08A9E40E	&OAMREGS	OAMREGS	{J}
@@ -6541,8 +6535,6 @@ r3=X tile position of menu of the right	{U}
 08590F64	&OAMREGS	OAMREGS	{U}
 08590F6C	&OAMREGS	OAMREGS	{U}
 08590F7C	&OAMREGS	OAMREGS	{U}
-08590F8C	&OAMREGS	OAMREGS	{U}
-08590F94	&OAMREGS	OAMREGS	{U}
 08590F9C	&OAMREGS	OAMREGS	{U}
 08590FA4	&OAMREGS	OAMREGS	{U}
 08590FB4	&OAMREGS	OAMREGS	{U}
@@ -6624,12 +6616,7 @@ r3=X tile position of menu of the right	{U}
 08A20B3C	&OAMREGS	OAMREGS	{U}
 08A20B44	&OAMREGS	OAMREGS	{U}
 08A20B7C	&OAMREGS	OAMREGS	{U}
-08A21440	&OAMREGS	OAMREGS	{U}
-08A2144E	&OAMREGS	OAMREGS	{U}
 08A2145C	&OAMREGS	OAMREGS	{U}
-08A2146A	&OAMREGS	OAMREGS	{U}
-08A2148A	&OAMREGS	OAMREGS	{U}
-08A2149E	&OAMREGS	OAMREGS	{U}
 08A214A6	&OAMREGS	OAMREGS	{U}
 08A214AE	&OAMREGS	OAMREGS	{U}
 08A214B6	&OAMREGS	OAMREGS	{U}
@@ -12677,3 +12664,28 @@ r3=X tile position of menu of the right	{U}
 0805A740	Forcibly overwrite the palette of the archer's battle animation	{J}
 08005CA4	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
 08005BA8	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
+080B4E1C	Sound Room	Draw a sound waveform.	{J}
+080B4D94	Sound Room	Draw sound waveform LOW.	{J}
+080b4e58	Sound Room	RANDOM MODE Time display.	{J}
+080B4CA0	Sound Room	Display of song title.	{J}
+080B0204	Sound Room	Draw a sound waveform.	{U}
+080B017C	Sound Room	Draw sound waveform LOW.	{U}
+080B0240	Sound Room	RANDOM MODE Time display.	{U}
+080B0088	Sound Room	Display of song title.	{U}
+
+08A9E3A8	&OAMREGS	Sound Room	Control	PlayButton	OAM	{J}
+08A9E3B6	&OAMREGS	Sound Room	Control	StopButton	OAM	{J}
+08A9E3C4	&OAMREGS	Sound Room	Control	RandomMode Button	OAM	{J}
+08A9E406	&OAMREGS	Sound Room	RANDOMMODE	Seek bar knob at playback position	OAM	{J}
+08A9E3F2	&OAMREGS	Sound Room	RANDOMMODE	Seek bar at playback position	OAM	{J}
+08A9E3D2	&OAMREGS	Sound Room	RANDOMMODE	RANDOM MODE Display	OAM	{J}
+085B8D2C	&OAMREGS	Sound Room	SongName	Background	OAM	{J}
+085B8D24	&OAMREGS	Sound Room	SongName	Name	OAM	{J}
+08A21440	&OAMREGS	Sound Room	Control	PlayButton	OAM	{U}
+08A2144E	&OAMREGS	Sound Room	Control	StopButton	OAM	{U}
+08A2145C	&OAMREGS	Sound Room	Control	RandomMode Button	OAM	{U}
+08A2148A	&OAMREGS	Sound Room	RANDOMMODE	Seek bar knob at playback position	OAM	{U}
+08A2149E	&OAMREGS	Sound Room	RANDOMMODE	Seek bar at playback position	OAM	{U}
+08A2146A	&OAMREGS	Sound Room	RANDOMMODE	RANDOM MODE Display	OAM	{U}
+08590F94	&OAMREGS	Sound Room	SongName	Background	OAM	{U}
+08590F8C	&OAMREGS	Sound Room	SongName	Name	OAM	{U}
