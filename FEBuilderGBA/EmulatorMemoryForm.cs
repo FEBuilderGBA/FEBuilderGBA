@@ -1011,11 +1011,6 @@ namespace FEBuilderGBA
                 MainTabControl.SelectedTab = CheatPage;
                 CHEAT_ALL_PLAYER_UNIT_GROW.PerformClick();
             }
-            else if (e.Control && e.KeyCode == Keys.J)
-            {
-                MainTabControl.SelectedTab = CheatPage;
-                CHEAT_WARP.PerformClick();
-            }
         }
 
         private void ProcsListBox_SelectedIndexChanged(object sender, EventArgs e)

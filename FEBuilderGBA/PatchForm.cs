@@ -2480,6 +2480,7 @@ namespace FEBuilderGBA
             bool keepimage = U.stringbool(U.at(patch.Param, "KEEPIMAGE", "false"));
             bool keeppalette = U.stringbool(U.at(patch.Param, "KEEPPALETTE", "false"));
             bool keeptsa = U.stringbool(U.at(patch.Param, "KEEPTSA", "false"));
+            bool tsaNoMargin = U.stringbool(U.at(patch.Param, "TSANOMARGIN", "false"));
 
             if (keeptsa)
             {
@@ -2539,6 +2540,30 @@ namespace FEBuilderGBA
                 import.Name = prefix + "_Import_KeepImage";
                 parent.Controls.Add(import);
 
+                Button paletteEditor = new Button();
+                paletteEditor.Location = new Point(5, y);
+                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
+                paletteEditor.Text = "PaletteEditor";
+                paletteEditor.Name = prefix + "_PaletteEditor";
+                parent.Controls.Add(paletteEditor);
+            }
+            else if (tsaNoMargin)
+            {
+                Button export = new Button();
+                export.Location = new Point(200, y);
+                export.Size = new Size(90, CONTROL_HEIGHT);
+                export.Text = "Export";
+                export.Name = prefix + "_Export";
+                parent.Controls.Add(export);
+
+                Button import = new Button();
+                import.Location = new Point(100, y);
+                import.Size = new Size(90, CONTROL_HEIGHT);
+                import.Text = "Import";
+                import.Name = prefix + "_Import_TSANoMargin";
+                parent.Controls.Add(import);
+
+                //TSAを変更しない場合Paletteを変更する選択肢を出す
                 Button paletteEditor = new Button();
                 paletteEditor.Location = new Point(5, y);
                 paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
@@ -5433,6 +5458,7 @@ namespace FEBuilderGBA
                 }
                 p = atOffset(st.Param, "ZHEADERTSA_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
+
                 {
                     out_tsa = Program.ROM.p32(p);
                 }
@@ -6124,10 +6150,15 @@ namespace FEBuilderGBA
                 }
 
                 string type = U.at(patch.Param, "TYPE");
+                string checkIF = CheckIFFast(patch);
+                if (!IsMakePatchStructDataListTarget(type, checkIF,isInstallOnly: true,isStructOnly: false))
+                {
+                    continue;
+                }
+
                 if (type == "ADDR")
                 {
                     MakeTextIDArrayForAddr(list, patch , i);
-                    continue;
                 }
                 else if (type == "STRUCT")
                 {
@@ -6253,8 +6284,7 @@ namespace FEBuilderGBA
                 }
             }
             string[] typeArray;
-            Address.DataTypeEnum iftType;
-            uint[] pointerIndexes = MakePointerIndexes(patch, out typeArray, out iftType);
+            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray);
 
             string patchname = patch.Name + "@STRUCT";
 
@@ -6388,6 +6418,37 @@ namespace FEBuilderGBA
                 out_iftType = Address.DataTypeEnum.InputFormRef; ;
             }
 
+            return pointerIndexes.ToArray();
+        }
+
+        static uint[] MakeTextIndexes(PatchSt patch
+            , out string[] out_typeArray
+            )
+        {
+            List<string> typeArray = new List<string>();
+            List<uint> pointerIndexes = new List<uint>();
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string type = U.at(sp, 1);
+                string value = pair.Value;
+
+                if (type != "TEXT" && type != "EVENT")
+                {
+                    continue;
+                }
+
+                if (!U.isnum(key[1]))
+                {
+                    continue;
+                }
+                int datanum = (int)U.atoi(key.Substring(1));
+                pointerIndexes.Add((uint)datanum);
+                typeArray.Add(type);
+            }
+
+            out_typeArray = typeArray.ToArray();
             return pointerIndexes.ToArray();
         }
 

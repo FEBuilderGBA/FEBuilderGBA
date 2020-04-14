@@ -1,0 +1,17 @@
+#ifdef _FE6_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $257FC
+#incbin "change_class_power_b_to_table.dmp"
+POIN change_class_power_b_to_table_Table
+POP
+
+#include "change_class_power_b_to_table_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE6!
+#endif

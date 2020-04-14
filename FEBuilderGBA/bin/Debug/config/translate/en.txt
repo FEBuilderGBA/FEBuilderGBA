@@ -1192,8 +1192,17 @@ This is the call history of events recorded from data acquired from the emulator
 :より古い↓
 Older↓
 
+:汎用
+General Purpose
+
 :編
 Editing
+
+:再生されている音楽
+Music being played.
+
+:トラップデータ
+Trap data
 
 :支援フラグ
 Support Flag
@@ -1312,9 +1321,6 @@ State
 :部隊表ID
 Unit table ID
 
-:トラップデータ
-Trap data
-
 :パーティー
 Party
 
@@ -1330,8 +1336,8 @@ Set all enemy units AI to "do not move".
 :ワープする章
 Warp chapter
 
-:この章へワープする(Hotkey: Ctrl + J)
-Warp to this chapter.(Hotkey: Ctrl + J)
+:この章へワープする
+Warp to this chapter.
 
 :すべての敵ユニットのHPを1にします。
 Set HP of all enemy units to 1.
@@ -1419,12 +1425,6 @@ Counter Stop the parameters of this unit
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear the current chapter.(Hotkey: Ctrl + U)
-
-:汎用
-General Purpose
-
-:再生されている音楽
-Music being played.
 
 :エミュレータへ接続
 Connect to emulator

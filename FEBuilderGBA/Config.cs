@@ -102,7 +102,7 @@ namespace FEBuilderGBA
         {
             ShortCutKeys = new Keys[15];
             U.CheckKeys(Program.Config.at("ShortCutKey1", "F5"), out ShortCutKeys[0]);
-            U.CheckKeys(Program.Config.at("ShortCutKey2", "Ctrl+F5"), out ShortCutKeys[1]);
+            U.CheckKeys(Program.Config.at("ShortCutKey2", U.GetCtrlKeyName() + "+F5"), out ShortCutKeys[1]);
             U.CheckKeys(Program.Config.at("ShortCutKey3", ""), out ShortCutKeys[2]);
             U.CheckKeys(Program.Config.at("ShortCutKey4", ""), out ShortCutKeys[3]);
             U.CheckKeys(Program.Config.at("ShortCutKey5", ""), out ShortCutKeys[4]);

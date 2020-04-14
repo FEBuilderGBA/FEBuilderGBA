@@ -95,9 +95,9 @@ namespace FEBuilderGBA
 
             ShortCutKey1.Text = Program.Config.at("ShortCutKey1", "F5");
             ShortCutValue1.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue1", "1"));  //F5 エミュレータ
-            ShortCutKey2.Text = Program.Config.at("ShortCutKey2", "Ctrl+F5");
+            ShortCutKey2.Text = Program.Config.at("ShortCutKey2", U.GetCtrlKeyName()+"+F5");
             ShortCutValue2.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue2", "2"));  //Ctrl+F5 デバッガー
-            ShortCutKey3.Text = Program.Config.at("ShortCutKey3", "Ctrl+K");
+            ShortCutKey3.Text = Program.Config.at("ShortCutKey3", U.GetCtrlKeyName() + "+K");
             ShortCutValue3.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue3", "12")); //Ctrl+K 書き込み
             ShortCutKey4.Text = Program.Config.at("ShortCutKey4", "Pause");
             ShortCutValue4.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue4", "11")); //Pause メインへ
@@ -113,7 +113,7 @@ namespace FEBuilderGBA
             ShortCutValue9.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue9", ""));
             ShortCutKey10.Text = Program.Config.at("ShortCutKey10", "");
             ShortCutValue10.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue10", ""));
-            ShortCutKey11.Text = Program.Config.at("ShortCutKey11", "Ctrl+W");
+            ShortCutKey11.Text = Program.Config.at("ShortCutKey11", U.GetCtrlKeyName() + "+W");
             ShortCutValue11.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue11", "13")); //Ctrl+W 閉じる
             ShortCutKey12.Text = Program.Config.at("ShortCutKey12", "");
             ShortCutValue12.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue12", ""));

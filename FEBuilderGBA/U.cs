@@ -320,8 +320,38 @@ namespace FEBuilderGBA
             }
             catch (Exception e)
             {
+                if (CheckKeysCtrlFixed(text, out keys))
+                {
+                    return true;
+                }
+
                 Log.Error(e.ToString());
 
+//                keys = new Keys(); //未割り当てと怒られないために.
+                return false;
+            }
+            return true;
+        }
+
+        static bool CheckKeysCtrlFixed(string text, out Keys keys)
+        {
+            if (text.IndexOf("Ctrl+") >= 0)
+            {
+                text = text.Replace("Ctrl+", U.GetCtrlKeyName() + "+");
+            }
+            else
+            {
+                keys = new Keys();
+                return false;
+            }
+
+            try
+            {
+                KeysConverter c = new KeysConverter();
+                keys = (Keys)(c.ConvertFrom(text));
+            }
+            catch (Exception)
+            {
                 keys = new Keys(); //未割り当てと怒られないために.
                 return false;
             }
@@ -7058,6 +7088,10 @@ namespace FEBuilderGBA
             }
         }
 
+        public static string GetCtrlKeyName()
+        {
+            return Keys.Control.ToString();
+        }
     }
 }
 

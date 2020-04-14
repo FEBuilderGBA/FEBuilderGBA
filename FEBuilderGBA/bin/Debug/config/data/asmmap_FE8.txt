@@ -12729,3 +12729,8 @@
 080B0088	サウンドルーム	曲名の表示	{U}
 08590F94	&OAMREGS	サウンドルーム	曲名	背景	OAM	{U}
 08590F8C	&OAMREGS	サウンドルーム	曲名	名前	OAM	{U}
+0808BFE0	MakeHelpDialog_WeaponDetail	{J}
+0808b55c	武器の種類を判定する	{J}
+0808B438	HelpDialog_CalcStringWidth	{J}
+08089CD4	MakeHelpDialog_WeaponDetail	{U}
+080892D0	武器の種類を判定する	{U}

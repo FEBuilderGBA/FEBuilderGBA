@@ -12689,3 +12689,8 @@ r3=X tile position of menu of the right	{U}
 08A2146A	&OAMREGS	Sound Room	RANDOMMODE	RANDOM MODE Display	OAM	{U}
 08590F94	&OAMREGS	Sound Room	SongName	Background	OAM	{U}
 08590F8C	&OAMREGS	Sound Room	SongName	Name	OAM	{U}
+0808BFE0	MakeHelpDialog_WeaponDetail	{J}
+0808b55c	确定武器的类型。	{J}
+0808B438	HelpDialog_CalcStringWidth	{J}
+08089CD4	MakeHelpDialog_WeaponDetail	{U}
+080892D0	确定武器的类型。	{U}

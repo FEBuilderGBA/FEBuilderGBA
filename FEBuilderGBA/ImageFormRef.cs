@@ -43,6 +43,7 @@ namespace FEBuilderGBA
         bool ImportKeepImage = false;
         bool ImportKeepTSA = false;
         bool ImportKeepPalette = false;
+        bool ImportTSANoMargin = false;
         uint[] ForceSeparationAddress;
 
         public ImageFormRef(Form self, string prefix, int width, int height, int palette_count, uint image_pointer, uint tsa_pointer, uint palette_pointer, uint[] force_separation_address = null, uint image2_pointer = 0)
@@ -193,6 +194,11 @@ namespace FEBuilderGBA
                     {
                         ImportKeepPalette = true;
                     }
+                    if (name.IndexOf("_TSANoMargin") >= 0)
+                    {
+                        ImportTSANoMargin = true;
+                    }
+                    
                     continue;
                 }
                 if (name.IndexOf("TSAEditor") >= 0 && info is Button)
@@ -1177,7 +1183,12 @@ namespace FEBuilderGBA
                     }
                     else
                     {//TSAを総入れ替えできる
-                        string error_string = ImageUtil.ImageToByteHeaderPackedTSA(bitmap, Width, Height, out image, out tsa);
+                        int tsa_width_margin = 2;
+                        if (this.ImportTSANoMargin)
+                        {
+                            tsa_width_margin = 0;
+                        }
+                        string error_string = ImageUtil.ImageToByteHeaderPackedTSA(bitmap, Width, Height, out image, out tsa, tsa_width_margin);
                         if (error_string != "")
                         {
                             R.ShowStopError(error_string);

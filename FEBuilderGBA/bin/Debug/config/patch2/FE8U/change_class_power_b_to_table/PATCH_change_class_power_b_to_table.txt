@@ -1,0 +1,36 @@
+NAME=自分の階級修正Bをテーブルに変更する(editor)
+NAME.en=change class power b to table(editor)
+
+IF:0x2C3B4=0x08 0x40 0x19 0x79 0x49 0x00 0x00 0x28 0x00 0xD0 0x01 0x31 0x03 0x4A 0x52 0x5C 0xA4 0x18 0x20 0x1C 0x10 0xBC 0x02 0xBC 0x08 0x47 0xC0 0x46
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END change_class_power_b_to_table.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数
+DATACOUNT=256
+
+//リストに表示されるのはレート
+LISTNAME=CLASS
+
+//データを定義します
+B0:DECIMAL=下級職
+B1:DECIMAL=上級職
+
+B0:DECIMAL.en=UnPormoted
+B1:DECIMAL.en=Promoted
+
+B0:DECIMAL.zh=UnPormoted
+B1:DECIMAL.zh=Promoted
+
+INFO=クラス階級修正を計算ではなく、テーブルを利用して算出するようにします。
+INFO.en=Try to calculate class class correction using a table instead of a calculation.
+NAME.zh=将您的等级修改B更改为表（编辑器）。
+INFO.zh=尝试使用表而不是计算来计算类的类更正。
