@@ -24,10 +24,10 @@ LISTNAME=CLASS
 B0:DECIMAL=下級職
 B1:DECIMAL=上級職
 
-B0:DECIMAL.en=UnPormoted
+B0:DECIMAL.en=UnPromoted
 B1:DECIMAL.en=Promoted
 
-B0:DECIMAL.zh=UnPormoted
+B0:DECIMAL.zh=UnPromoted
 B1:DECIMAL.zh=Promoted
 
 INFO=クラス階級修正を計算ではなく、テーブルを利用して算出するようにします。
