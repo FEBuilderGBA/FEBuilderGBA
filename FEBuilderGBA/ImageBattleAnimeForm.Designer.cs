@@ -338,7 +338,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(617, -1);
+            this.WriteButton.Location = new System.Drawing.Point(617, -2);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(139, 30);
@@ -379,12 +379,12 @@
             this.panel2.Location = new System.Drawing.Point(487, 70);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(757, 231);
+            this.panel2.Size = new System.Drawing.Size(757, 239);
             this.panel2.TabIndex = 62;
             // 
             // ZeroPointerPanel
             // 
-            this.ZeroPointerPanel.Location = new System.Drawing.Point(4, 168);
+            this.ZeroPointerPanel.Location = new System.Drawing.Point(4, 176);
             this.ZeroPointerPanel.Name = "ZeroPointerPanel";
             this.ZeroPointerPanel.Size = new System.Drawing.Size(455, 59);
             this.ZeroPointerPanel.TabIndex = 143;
@@ -395,7 +395,7 @@
             // 
             this.IndependencePanel.Controls.Add(this.IndependenceButton);
             this.IndependencePanel.Controls.Add(this.label5);
-            this.IndependencePanel.Location = new System.Drawing.Point(1, 168);
+            this.IndependencePanel.Location = new System.Drawing.Point(1, 176);
             this.IndependencePanel.Name = "IndependencePanel";
             this.IndependencePanel.Size = new System.Drawing.Size(457, 62);
             this.IndependencePanel.TabIndex = 142;
@@ -423,7 +423,7 @@
             // L_2_BATTLEANIMEICON
             // 
             this.L_2_BATTLEANIMEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_2_BATTLEANIMEICON.Location = new System.Drawing.Point(498, 70);
+            this.L_2_BATTLEANIMEICON.Location = new System.Drawing.Point(498, 78);
             this.L_2_BATTLEANIMEICON.Margin = new System.Windows.Forms.Padding(2);
             this.L_2_BATTLEANIMEICON.Name = "L_2_BATTLEANIMEICON";
             this.L_2_BATTLEANIMEICON.Size = new System.Drawing.Size(150, 150);
@@ -579,7 +579,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(276, 0);
+            this.label9.Location = new System.Drawing.Point(276, -1);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 32);
@@ -1339,9 +1339,8 @@
             // 
             // label30
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(-1, -2);
+            this.label30.Location = new System.Drawing.Point(-1, -1);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(237, 26);
@@ -1381,7 +1380,7 @@
             this.panel6.Location = new System.Drawing.Point(13, 12);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(237, 289);
+            this.panel6.Size = new System.Drawing.Size(237, 297);
             this.panel6.TabIndex = 111;
             // 
             // CLASS_LISTBOX
@@ -1390,10 +1389,10 @@
             this.CLASS_LISTBOX.FormattingEnabled = true;
             this.CLASS_LISTBOX.IntegralHeight = false;
             this.CLASS_LISTBOX.ItemHeight = 18;
-            this.CLASS_LISTBOX.Location = new System.Drawing.Point(-1, 23);
+            this.CLASS_LISTBOX.Location = new System.Drawing.Point(-1, 24);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
             this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(236, 256);
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(236, 270);
             this.CLASS_LISTBOX.TabIndex = 0;
             this.CLASS_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.CLASS_LISTBOX_SelectedIndexChanged);
             // 
@@ -1406,12 +1405,12 @@
             this.panel7.Location = new System.Drawing.Point(253, 41);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(229, 260);
+            this.panel7.Size = new System.Drawing.Size(229, 268);
             this.panel7.TabIndex = 112;
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 230);
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 237);
             this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
             this.AddressListExpandsButton.Size = new System.Drawing.Size(228, 30);
@@ -1425,10 +1424,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(229, 202);
+            this.AddressList.Size = new System.Drawing.Size(229, 220);
             this.AddressList.TabIndex = 109;
             // 
             // panel8
@@ -1462,7 +1461,7 @@
             this.N_AddressList.Location = new System.Drawing.Point(-1, 24);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(269, 472);
+            this.N_AddressList.Size = new System.Drawing.Size(269, 483);
             this.N_AddressList.TabIndex = 107;
             this.N_AddressList.SelectedIndexChanged += new System.EventHandler(this.N_AddressList_SelectedIndexChanged);
             // 

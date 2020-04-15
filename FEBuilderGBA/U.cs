@@ -7092,6 +7092,8 @@ namespace FEBuilderGBA
         {
             return Keys.Control.ToString();
         }
+        [DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
     }
 }
 

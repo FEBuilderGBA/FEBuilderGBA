@@ -117,44 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon_film" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_film.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_settings.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FEBuilderGBA_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\FEBuilderGBA_logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_speaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_speaker.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_snow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_snow.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_sunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_sunny.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_arrow.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_music" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_music.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_rain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_rain.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_translate_subtile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_translate_subtile.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon_upload.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play_button_green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play_button_green.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Detail.Text" xml:space="preserve">
+    <value>テスト実行について
+
+ヒント:
+どの画面であっても、F5キーを押せばテストができます。
+
+開発方法:
+テスト実行の段階では、変更点はROMに書き込まれません。
+テスト実行し、問題がなければ、MENU-&gt;ファイル-&gt;保存データで、データを保存してください。
+もし、解決できない問題があれば、保存せずにFEBuilderGBAを終了してください。
+間違えて保存してしまった場合は、過去のバックアップを参照してください。
+
+わからないことがあれば、コミニティで質問してください。</value>
   </data>
 </root>

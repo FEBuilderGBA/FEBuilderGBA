@@ -53,12 +53,10 @@
             this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.P4 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.B3 = new System.Windows.Forms.NumericUpDown();
-            this.B2 = new System.Windows.Forms.NumericUpDown();
-            this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
+            this.J_4 = new System.Windows.Forms.Label();
+            this.W2 = new System.Windows.Forms.NumericUpDown();
+            this.W0 = new System.Windows.Forms.NumericUpDown();
+            this.J_0 = new System.Windows.Forms.Label();
             this.X_JUMP_MOVEICON = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -67,6 +65,8 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.J_2 = new System.Windows.Forms.Label();
+            this.L_2_COMBO = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -77,10 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             this.panel6.SuspendLayout();
             this.DragTargetPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -251,6 +249,8 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.L_2_COMBO);
+            this.DragTargetPanel.Controls.Add(this.J_2);
             this.DragTargetPanel.Controls.Add(this.JumpToSystemPalette);
             this.DragTargetPanel.Controls.Add(this.Comment);
             this.DragTargetPanel.Controls.Add(this.X_PALETTE);
@@ -261,12 +261,10 @@
             this.DragTargetPanel.Controls.Add(this.X_ONE_PIC);
             this.DragTargetPanel.Controls.Add(this.X_PIC);
             this.DragTargetPanel.Controls.Add(this.P4);
-            this.DragTargetPanel.Controls.Add(this.label5);
-            this.DragTargetPanel.Controls.Add(this.B3);
-            this.DragTargetPanel.Controls.Add(this.B2);
-            this.DragTargetPanel.Controls.Add(this.B1);
-            this.DragTargetPanel.Controls.Add(this.B0);
-            this.DragTargetPanel.Controls.Add(this.label4);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Controls.Add(this.W2);
+            this.DragTargetPanel.Controls.Add(this.W0);
+            this.DragTargetPanel.Controls.Add(this.J_0);
             this.DragTargetPanel.Location = new System.Drawing.Point(355, 64);
             this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel.Name = "DragTargetPanel";
@@ -291,7 +289,7 @@
             // Comment
             // 
             this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(165, 127);
+            this.Comment.Location = new System.Drawing.Point(159, 152);
             this.Comment.Name = "Comment";
             this.Comment.Placeholder = "";
             this.Comment.Size = new System.Drawing.Size(308, 25);
@@ -318,7 +316,7 @@
             // 
             this.label8.AccessibleDescription = "@COMMENT";
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(4, 124);
+            this.label8.Location = new System.Drawing.Point(-1, 149);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 31);
@@ -355,10 +353,10 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(425, 6);
+            this.label6.Location = new System.Drawing.Point(445, 6);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 75);
+            this.label6.Size = new System.Drawing.Size(96, 75);
             this.label6.TabIndex = 69;
             this.label6.Text = "表示例";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -387,7 +385,7 @@
             // P4
             // 
             this.P4.Hexadecimal = true;
-            this.P4.Location = new System.Drawing.Point(165, 56);
+            this.P4.Location = new System.Drawing.Point(159, 81);
             this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.P4.Maximum = new decimal(new int[] {
             -559939585,
@@ -398,83 +396,55 @@
             this.P4.Size = new System.Drawing.Size(130, 25);
             this.P4.TabIndex = 63;
             // 
-            // label5
+            // J_4
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(4, 53);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 31);
-            this.label5.TabIndex = 62;
-            this.label5.Text = "画像アドレス";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_4.Location = new System.Drawing.Point(-1, 78);
+            this.J_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_4.Name = "J_4";
+            this.J_4.Size = new System.Drawing.Size(153, 31);
+            this.J_4.TabIndex = 62;
+            this.J_4.Text = "画像アドレス";
+            this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // B3
+            // W2
             // 
-            this.B3.Hexadecimal = true;
-            this.B3.Location = new System.Drawing.Point(358, 6);
-            this.B3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B3.Maximum = new decimal(new int[] {
+            this.W2.Hexadecimal = true;
+            this.W2.Location = new System.Drawing.Point(159, 42);
+            this.W2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.W2.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.B3.Name = "B3";
-            this.B3.Size = new System.Drawing.Size(60, 25);
-            this.B3.TabIndex = 61;
+            this.W2.Name = "W2";
+            this.W2.Size = new System.Drawing.Size(60, 25);
+            this.W2.TabIndex = 60;
             // 
-            // B2
+            // W0
             // 
-            this.B2.Hexadecimal = true;
-            this.B2.Location = new System.Drawing.Point(293, 6);
-            this.B2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B2.Maximum = new decimal(new int[] {
+            this.W0.Hexadecimal = true;
+            this.W0.Location = new System.Drawing.Point(159, 6);
+            this.W0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.W0.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.B2.Name = "B2";
-            this.B2.Size = new System.Drawing.Size(60, 25);
-            this.B2.TabIndex = 60;
+            this.W0.Name = "W0";
+            this.W0.Size = new System.Drawing.Size(60, 25);
+            this.W0.TabIndex = 58;
             // 
-            // B1
+            // J_0
             // 
-            this.B1.Hexadecimal = true;
-            this.B1.Location = new System.Drawing.Point(228, 6);
-            this.B1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.B1.Name = "B1";
-            this.B1.Size = new System.Drawing.Size(60, 25);
-            this.B1.TabIndex = 59;
-            // 
-            // B0
-            // 
-            this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(163, 6);
-            this.B0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B0.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.B0.Name = "B0";
-            this.B0.Size = new System.Drawing.Size(60, 25);
-            this.B0.TabIndex = 58;
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(4, 2);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 31);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "アニメパターン";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0.Location = new System.Drawing.Point(-1, 2);
+            this.J_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_0.Name = "J_0";
+            this.J_0.Size = new System.Drawing.Size(153, 31);
+            this.J_0.TabIndex = 24;
+            this.J_0.Text = "アニメパターン";
+            this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_JUMP_MOVEICON
             // 
@@ -571,6 +541,30 @@
             this.DragTargetPanel2.Size = new System.Drawing.Size(906, 56);
             this.DragTargetPanel2.TabIndex = 58;
             // 
+            // J_2
+            // 
+            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_2.Location = new System.Drawing.Point(-1, 38);
+            this.J_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_2.Name = "J_2";
+            this.J_2.Size = new System.Drawing.Size(153, 31);
+            this.J_2.TabIndex = 202;
+            this.J_2.Text = "サイズ";
+            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_2_COMBO
+            // 
+            this.L_2_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_2_COMBO.FormattingEnabled = true;
+            this.L_2_COMBO.Items.AddRange(new object[] {
+            "0=16x16",
+            "1=16x32",
+            "2=32x32"});
+            this.L_2_COMBO.Location = new System.Drawing.Point(234, 41);
+            this.L_2_COMBO.Name = "L_2_COMBO";
+            this.L_2_COMBO.Size = new System.Drawing.Size(171, 26);
+            this.L_2_COMBO.TabIndex = 203;
+            // 
             // ImageUnitWaitIconFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -598,10 +592,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             this.panel6.ResumeLayout(false);
             this.DragTargetPanel2.ResumeLayout(false);
             this.DragTargetPanel2.PerformLayout();
@@ -626,12 +618,10 @@
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel DragTargetPanel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown B3;
-        private System.Windows.Forms.NumericUpDown B2;
-        private System.Windows.Forms.NumericUpDown B1;
-        private System.Windows.Forms.NumericUpDown B0;
+        private System.Windows.Forms.Label J_0;
+        private System.Windows.Forms.Label J_4;
+        private System.Windows.Forms.NumericUpDown W2;
+        private System.Windows.Forms.NumericUpDown W0;
         private System.Windows.Forms.NumericUpDown P4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown X_ONE_STEP;
@@ -650,5 +640,7 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label JumpToSystemPalette;
+        private System.Windows.Forms.Label J_2;
+        private System.Windows.Forms.ComboBox L_2_COMBO;
     }
 }

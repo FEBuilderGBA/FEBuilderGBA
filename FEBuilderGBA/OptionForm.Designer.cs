@@ -236,6 +236,8 @@
             this.explain_func_write_out_of_range = new System.Windows.Forms.Label();
             this.explain_func_show_class_extends = new System.Windows.Forms.Label();
             this.tabPageFunc3 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.RunTestMessage = new System.Windows.Forms.ComboBox();
             this.explain_func_notify_upper_time = new System.Windows.Forms.Label();
             this.func_notify_upper_time = new System.Windows.Forms.ComboBox();
             this.func_proxy_server_when_connecting = new System.Windows.Forms.ComboBox();
@@ -2741,6 +2743,8 @@
             // tabPageFunc3
             // 
             this.tabPageFunc3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc3.Controls.Add(this.label3);
+            this.tabPageFunc3.Controls.Add(this.RunTestMessage);
             this.tabPageFunc3.Controls.Add(this.explain_func_notify_upper_time);
             this.tabPageFunc3.Controls.Add(this.func_notify_upper_time);
             this.tabPageFunc3.Controls.Add(this.func_proxy_server_when_connecting);
@@ -2770,6 +2774,31 @@
             this.tabPageFunc3.Size = new System.Drawing.Size(842, 703);
             this.tabPageFunc3.TabIndex = 4;
             this.tabPageFunc3.Text = "機能3";
+            // 
+            // label3
+            // 
+            this.label3.AccessibleDescription = "";
+            this.label3.Location = new System.Drawing.Point(2, 197);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(405, 18);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "右上のテスト実行メニュー";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // RunTestMessage
+            // 
+            this.RunTestMessage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RunTestMessage.FormattingEnabled = true;
+            this.RunTestMessage.Items.AddRange(new object[] {
+            "0=初回メッセージ",
+            "1=もうメッセージを表示しない",
+            "2=RunTestを表示しない(再起動後)"});
+            this.RunTestMessage.Location = new System.Drawing.Point(411, 193);
+            this.RunTestMessage.Margin = new System.Windows.Forms.Padding(2);
+            this.RunTestMessage.Name = "RunTestMessage";
+            this.RunTestMessage.Size = new System.Drawing.Size(415, 26);
+            this.RunTestMessage.TabIndex = 52;
             // 
             // explain_func_notify_upper_time
             // 
@@ -2804,7 +2833,7 @@
             this.func_proxy_server_when_connecting.Items.AddRange(new object[] {
             "0=プロキシサーバを利用しない",
             "1=プロキシサーバの自動検出"});
-            this.func_proxy_server_when_connecting.Location = new System.Drawing.Point(411, 388);
+            this.func_proxy_server_when_connecting.Location = new System.Drawing.Point(411, 412);
             this.func_proxy_server_when_connecting.Margin = new System.Windows.Forms.Padding(2);
             this.func_proxy_server_when_connecting.Name = "func_proxy_server_when_connecting";
             this.func_proxy_server_when_connecting.Size = new System.Drawing.Size(415, 26);
@@ -2813,7 +2842,7 @@
             // label47
             // 
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label47.Location = new System.Drawing.Point(8, 309);
+            this.label47.Location = new System.Drawing.Point(8, 333);
             this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(822, 30);
@@ -2824,7 +2853,7 @@
             // label46
             // 
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label46.Location = new System.Drawing.Point(8, 212);
+            this.label46.Location = new System.Drawing.Point(8, 236);
             this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(822, 30);
@@ -2835,7 +2864,7 @@
             // explain_func_proxy_server_when_connecting
             // 
             this.explain_func_proxy_server_when_connecting.AccessibleDescription = "";
-            this.explain_func_proxy_server_when_connecting.Location = new System.Drawing.Point(2, 394);
+            this.explain_func_proxy_server_when_connecting.Location = new System.Drawing.Point(2, 418);
             this.explain_func_proxy_server_when_connecting.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_proxy_server_when_connecting.Name = "explain_func_proxy_server_when_connecting";
             this.explain_func_proxy_server_when_connecting.Size = new System.Drawing.Size(405, 18);
@@ -2857,7 +2886,7 @@
             // label42
             // 
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label42.Location = new System.Drawing.Point(8, 440);
+            this.label42.Location = new System.Drawing.Point(8, 464);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(822, 30);
@@ -2868,7 +2897,7 @@
             // explain_func_auto_update
             // 
             this.explain_func_auto_update.AccessibleDescription = "";
-            this.explain_func_auto_update.Location = new System.Drawing.Point(2, 356);
+            this.explain_func_auto_update.Location = new System.Drawing.Point(2, 380);
             this.explain_func_auto_update.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_auto_update.Name = "explain_func_auto_update";
             this.explain_func_auto_update.Size = new System.Drawing.Size(405, 18);
@@ -2885,7 +2914,7 @@
             "1=1日毎",
             "3=3日毎",
             "7=7日毎"});
-            this.func_auto_update.Location = new System.Drawing.Point(411, 352);
+            this.func_auto_update.Location = new System.Drawing.Point(411, 376);
             this.func_auto_update.Margin = new System.Windows.Forms.Padding(2);
             this.func_auto_update.Name = "func_auto_update";
             this.func_auto_update.Size = new System.Drawing.Size(415, 26);
@@ -2900,7 +2929,7 @@
             "1=zh_TBL(china)",
             "2=en_TBL(english)",
             "3=ar_TBL(arabic)"});
-            this.func_textencoding.Location = new System.Drawing.Point(411, 524);
+            this.func_textencoding.Location = new System.Drawing.Point(411, 548);
             this.func_textencoding.Margin = new System.Windows.Forms.Padding(2);
             this.func_textencoding.Name = "func_textencoding";
             this.func_textencoding.Size = new System.Drawing.Size(415, 26);
@@ -2908,7 +2937,7 @@
             // 
             // explain_func_textencoding
             // 
-            this.explain_func_textencoding.Location = new System.Drawing.Point(8, 526);
+            this.explain_func_textencoding.Location = new System.Drawing.Point(8, 550);
             this.explain_func_textencoding.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_textencoding.Name = "explain_func_textencoding";
             this.explain_func_textencoding.Size = new System.Drawing.Size(400, 18);
@@ -2923,7 +2952,7 @@
             this.func_lookup_feditor.Items.AddRange(new object[] {
             "0=参照しない",
             "1=参照する"});
-            this.func_lookup_feditor.Location = new System.Drawing.Point(411, 252);
+            this.func_lookup_feditor.Location = new System.Drawing.Point(411, 276);
             this.func_lookup_feditor.Margin = new System.Windows.Forms.Padding(2);
             this.func_lookup_feditor.Name = "func_lookup_feditor";
             this.func_lookup_feditor.Size = new System.Drawing.Size(415, 26);
@@ -2933,7 +2962,7 @@
             // 
             this.func_lang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.func_lang.FormattingEnabled = true;
-            this.func_lang.Location = new System.Drawing.Point(411, 484);
+            this.func_lang.Location = new System.Drawing.Point(411, 508);
             this.func_lang.Margin = new System.Windows.Forms.Padding(2);
             this.func_lang.Name = "func_lang";
             this.func_lang.Size = new System.Drawing.Size(415, 26);
@@ -2942,7 +2971,7 @@
             // explain_func_lookup_feditor
             // 
             this.explain_func_lookup_feditor.AccessibleDescription = "";
-            this.explain_func_lookup_feditor.Location = new System.Drawing.Point(2, 255);
+            this.explain_func_lookup_feditor.Location = new System.Drawing.Point(2, 279);
             this.explain_func_lookup_feditor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_lookup_feditor.Name = "explain_func_lookup_feditor";
             this.explain_func_lookup_feditor.Size = new System.Drawing.Size(405, 18);
@@ -2952,7 +2981,7 @@
             // 
             // explain_func_lang
             // 
-            this.explain_func_lang.Location = new System.Drawing.Point(4, 488);
+            this.explain_func_lang.Location = new System.Drawing.Point(4, 512);
             this.explain_func_lang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_lang.Name = "explain_func_lang";
             this.explain_func_lang.Size = new System.Drawing.Size(400, 18);
@@ -3307,5 +3336,7 @@
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Button FECLIB_button;
         private TextBoxEx FECLIB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox RunTestMessage;
     }
 }

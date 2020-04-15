@@ -5572,20 +5572,17 @@ Options
 :初期設定ウィザード
 Initial setup wizard
 
-:バージョン
-Version
+:マニュアル
+Manual
 
-:ヘルプToolStripMenuItem
-Help ToolStripMenuItem
-
-:ヘルプ
-Help
-
-:オンラインヘルプ
-Online Help
+:オンラインマニュアル
+Online Manual
 
 :DiscordコミニティURL
 Discord Community URL
+
+:バージョン
+Version
 
 :マップ変化
 Tile Changes
@@ -5612,7 +5609,7 @@ Game Options
 Unit action pointer.
 
 :OPクラス紹介英語表記
-OP Class Reel English Names
+OP Class Reel Names
 
 :地形背景対応表
 Terrain BG table
@@ -5682,6 +5679,9 @@ Simple Menu
 
 :地形設定
 Terrain Editor
+
+:テスト実行(F5)
+RunTest(F5)
 
 :詳細メニュー
 Advanced Editors
@@ -6426,12 +6426,6 @@ Portrait Generation Tool
 
 :魔法エフェクト作成ツール
 Magic effect creation tool
-
-:問題を報告
-Report
-
-:マニュアル
-Manual
 
 :詳細メニューを開く
 Advanced Editors
@@ -8731,6 +8725,18 @@ Toggle Class Expansion Button
 :機能3
 Function 3
 
+:右上のテスト実行メニュー
+The test run menu in upper right
+
+:0=初回メッセージ
+0=First message.
+
+:1=もうメッセージを表示しない
+1=Don't show the message anymore.
+
+:2=RunTestを表示しない(再起動後)
+2=Don't show RunTest (after reboot).
+
 :画面上のヒントメッセージの表示時間
 Screen hint message display time
 
@@ -8950,8 +8956,8 @@ Author / Source:
 :このパッチは、{0}に更新されました。まだ新しいパッチなので、注意してください。
 This patch has been updated to {0}. This is still a new patch, so please be careful.
 
-:パッチを適応する時は、ひとつ適応する度に動作を確認してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n
-When patches are adapted, please confirm the operation every time Adaptation is done.\r\nIf a problem with a patch is found, please report it!\r\n
+:パッチを適応する時は、ひとつ適応する度にF5キーを押して動作を確認してください。\r\n動作しなければ、保存せずにFEBuilderGBAを終了してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n
+When applying a patch, press the F5 key after each one to check the operation.\r\nIf it doesn't work, please exit FEBuilderGBA without saving.\r\nIf you have a patch with problems, please report the bug to 7743.\r\n
 
 :パッチの名前をクリップボードにコピーしてもよろしいですか？
 Are you sure you want to copy the patch name to the clipboard? 
@@ -11137,6 +11143,18 @@ File for comparison
 :フリースペースはまとめる
 Collect free space.
 
+:エミュレータが設定されていません。\r\n動作テストに利用するエミュレータを設定してください。
+The emulator is not set.\r\nSet the emulator used for the operation test.
+
+:InitWizardで自動設定する
+Automatically set by InitWizard.
+
+:Option画面から手動で設定する
+Set manually from the Option screen.
+
+:エミュレータが設定されていません
+The emulator is not set.
+
 :最新版のEAでは拡張領域のデータがダンプできないことがあるので、その場合は、古いEA ver9を利用してください。
 In the latest version of EA, you may not be able to dump extended area data, so in that case please use the old EA ver9.
 
@@ -11646,6 +11664,18 @@ The ROM to which ROMRebuild is applied, the file name.Save it as gba.
 
 :ROMRebuildを開くために無改造のROMを選択してください。\r\n適応後には、動作を確認するプレイテストを行ってください。
 Please select unmodified ROM to open ROMRebuild.\r\nAfter adaptation, please do play test to confirm the operation.
+
+:テスト実行について\r\n\r\nヒント:\r\nどの画面であっても、F5キーを押せばテストができます。\r\n\r\n開発方法:\r\nテスト実行の段階では、変更点はROMに書き込まれません。\r\nテスト実行し、問題がなければ、MENU->ファイル->保存データで、データを保存してください。\r\nもし、解決できない問題があれば、保存せずにFEBuilderGBAを終了してください。\r\n間違えて保存してしまった場合は、過去のバックアップを参照してください。\r\n\r\nわからないことがあれば、コミニティで質問してください。
+About test run.\r\n\r\nTips :.\r\nYou can test by pressing F5 on any screen.\r\n\r\nDevelopment method :.\r\nChanges are not written to ROM during the test run stage.\r\nRun the test and if there is no problem, save the data with MENU-> File-> Saved data.\r\nIf there is a problem that cannot be solved, please exit FEBuilderGBA without saving.\r\nIf you accidentally saved it, please refer to the previous backup.\r\n\r\nIf you have any questions, please ask in the community.
+
+:これよりテスト実行を開始します。
+This will start the test run.
+
+:このメッセージを再度表示しない
+Do not show this message again.
+
+:テスト実行
+Test run.
 
 :字幕
 subtitles
@@ -12252,9 +12282,6 @@ Checking for updates ...
 
 :FEBuilderGBAの使い方の説明書を見る
 Having troubles? Read the online manual for help
-
-:オンラインマニュアル
-Online Manual
 
 :最後に開いたROM
 Most Recent ROM

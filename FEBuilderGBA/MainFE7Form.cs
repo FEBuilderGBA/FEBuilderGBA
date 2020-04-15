@@ -14,6 +14,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             FixedButton();
+            ToolRunHintMessageForm.RemoveRunTestMenuIfUserWant(this.menuStrip1, this.TestRunStripMenuItem);
             InputFormRef.RecolorMenuStrip(this.menuStrip1);
             MainFormUtil.MakeExplainFunctions(this.ControlPanel);
         }
@@ -852,6 +853,11 @@ namespace FEBuilderGBA
         private void AIPerformItemButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<AIPerformItemForm>();
+        }
+
+        private void TestRunStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolRunHintMessageForm.Run();
         }
     }
 }

@@ -1,0 +1,28 @@
+NAME=ハードブーストを適応しないユニット群
+NAME.en=Units that do not apply hard boost
+
+//アドレスパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+POINTER=0x6BAC4
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+
+//リストに表示されるのはマップIDです
+LISTNAME=$D0:UNIT
+
+//データを定義します
+D0:UNIT=Unit
+D4:DECIMAL=AppendLv
+
+AUTHOR=Tequila https://feuniverse.us/t/fe6-hard-mode-bonuses-for-raigh-douglas-and-hugh/2306
+INFO=ハードブーストを受け取らないユニットを設定します。\r\n\r\nAppendLvを0にすると受け取らなくなります。\r\nAppendLvを変更すると、その値のLVまでは、ハードブーストを受け取ることができるようになります。
+INFO.en=Set the units that do not receive hard boost.\r\n\r\nIf AppendLv is set to 0, it will not be received.\r\nBy changing the AppendLv, you can receive a hard boost up to the LV of that value.
+NAME.zh=不施加强力提升的单位。
+INFO.zh=设置不强加的单位。\r\n\r\n如果AppendLv设置为0，则不会接收到它。\r\n通过更改AppendLv，您可以硬性提高到该值的LV。

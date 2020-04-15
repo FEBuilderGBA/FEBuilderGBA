@@ -93,7 +93,7 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            byte b2 = (byte)B2.Value;
+            byte b2 = (byte)W2.Value;
             uint pic_address = (uint)P4.Value;
             X_ONE_STEP.Value = 0;
 
@@ -104,7 +104,7 @@ namespace FEBuilderGBA
         }
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
-            byte b2 = (byte)B2.Value;
+            byte b2 = (byte)W2.Value;
             uint pic_address = (uint)P4.Value;
             int step = (int)X_ONE_STEP.Value;
             int palette_type = X_PALETTE.SelectedIndex;
@@ -229,7 +229,7 @@ namespace FEBuilderGBA
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            byte b2 = (byte)B2.Value;
+            byte b2 = (byte)W2.Value;
             uint pic_address = (uint)P4.Value;
             X_ONE_STEP.Value = 0;
 
@@ -343,7 +343,7 @@ namespace FEBuilderGBA
             this.InputFormRef.WriteImageData(this.P4, image, true, undodata);
             Program.Undo.Push(undodata);
 
-            this.B2.Value = b2;
+            this.W2.Value = b2;
 
 
             //ポインタの書き込み

@@ -84,6 +84,11 @@
     <Compile Include="EventTemplateImpl.cs" />
     <Compile Include="ImageUtilBorderAP.cs" />
     <Compile Include="PatchUtil.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SongInstrumentDirectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,11 +239,6 @@
     <Compile Include="ProcsScriptInnerControl.Designer.cs">
       <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="RAM.cs" />
     <Compile Include="EmulatorMemoryForm.cs">
       <SubType>Form</SubType>
@@ -263,6 +263,12 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
+    <Compile Include="ToolEmulatorSetupMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolEmulatorSetupMessageForm.Designer.cs">
+      <DependentUpon>ToolEmulatorSetupMessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolInitWizardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,12 @@
     </Compile>
     <Compile Include="ToolUseFlagForm.Designer.cs">
       <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolRunHintMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolRunHintMessageForm.Designer.cs">
+      <DependentUpon>ToolRunHintMessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UseTextID.cs" />
     <Compile Include="TextToSpeechForm.cs">
@@ -2165,6 +2177,9 @@
     <EmbeddedResource Include="ToolDecompileResultInnerControl.resx">
       <DependentUpon>ToolDecompileResultInnerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolEmulatorSetupMessageForm.resx">
+      <DependentUpon>ToolEmulatorSetupMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolExportEAEventForm.resx">
       <DependentUpon>ToolExportEAEventForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2645,6 +2660,9 @@
     <EmbeddedResource Include="ToolUseFlagForm.resx">
       <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolRunHintMessageForm.resx">
+      <DependentUpon>ToolRunHintMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnitCustomBattleAnimeForm.resx">
       <DependentUpon>UnitCustomBattleAnimeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -3013,11 +3031,10 @@
     <Content Include="icon_sunny.ico" />
     <Content Include="icon_translate_subtile.ico" />
     <Content Include="icon_upload.ico" />
+    <None Include="Resources\play_button_green.ico" />
     <None Include="icon_upload1.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="SpeechLib">
       <Guid>{D3C4A7F2-7D27-4332-B41F-593D71E16DB1}</Guid>

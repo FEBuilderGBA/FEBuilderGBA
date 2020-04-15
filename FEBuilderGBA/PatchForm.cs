@@ -389,7 +389,7 @@ namespace FEBuilderGBA
                 {
                     sb.AppendLine(R._("このパッチは、{0}に更新されました。まだ新しいパッチなので、注意してください。", updateTime.ToShortDateString()));
                 }
-                sb.AppendLine(R._("パッチを適応する時は、ひとつ適応する度に動作を確認してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n"));
+                sb.AppendLine(R._("パッチを適応する時は、ひとつ適応する度にF5キーを押して動作を確認してください。\r\n動作しなければ、保存せずにFEBuilderGBAを終了してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n"));
             }
 
             return sb.ToString();

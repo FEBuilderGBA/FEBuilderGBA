@@ -93,36 +93,36 @@ namespace FEBuilderGBA
                 ShortCutValue15.Items.Add(a);
             }
 
-            ShortCutKey1.Text = Program.Config.at("ShortCutKey1", "F5");
-            ShortCutValue1.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue1", "1"));  //F5 エミュレータ
-            ShortCutKey2.Text = Program.Config.at("ShortCutKey2", U.GetCtrlKeyName()+"+F5");
-            ShortCutValue2.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue2", "2"));  //Ctrl+F5 デバッガー
-            ShortCutKey3.Text = Program.Config.at("ShortCutKey3", U.GetCtrlKeyName() + "+K");
-            ShortCutValue3.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue3", "12")); //Ctrl+K 書き込み
-            ShortCutKey4.Text = Program.Config.at("ShortCutKey4", "Pause");
-            ShortCutValue4.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue4", "11")); //Pause メインへ
-            ShortCutKey5.Text = Program.Config.at("ShortCutKey5", "F11");
-            ShortCutValue5.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue5", "3")); //F11 バイナリエディタ
-            ShortCutKey6.Text = Program.Config.at("ShortCutKey6", "F3");
-            ShortCutValue6.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue6", "19")); //リストから次を検索
-            ShortCutKey7.Text = Program.Config.at("ShortCutKey7", "");
-            ShortCutValue7.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue7", ""));
-            ShortCutKey8.Text = Program.Config.at("ShortCutKey8", "");
-            ShortCutValue8.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue8", ""));
-            ShortCutKey9.Text = Program.Config.at("ShortCutKey9", "");
-            ShortCutValue9.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue9", ""));
-            ShortCutKey10.Text = Program.Config.at("ShortCutKey10", "");
-            ShortCutValue10.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue10", ""));
-            ShortCutKey11.Text = Program.Config.at("ShortCutKey11", U.GetCtrlKeyName() + "+W");
-            ShortCutValue11.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue11", "13")); //Ctrl+W 閉じる
-            ShortCutKey12.Text = Program.Config.at("ShortCutKey12", "");
-            ShortCutValue12.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue12", ""));
-            ShortCutKey13.Text = Program.Config.at("ShortCutKey13", "");
-            ShortCutValue13.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue13", ""));
-            ShortCutKey14.Text = Program.Config.at("ShortCutKey14", "");
-            ShortCutValue14.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue14", ""));
-            ShortCutKey15.Text = Program.Config.at("ShortCutKey15", "");
-            ShortCutValue15.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue15", ""));
+            ShortCutKey1.Text = Program.Config.at("ShortCutKey1");
+            ShortCutValue1.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue1"));  //F5 エミュレータ
+            ShortCutKey2.Text = Program.Config.at("ShortCutKey2");
+            ShortCutValue2.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue2"));  //Ctrl+F5 デバッガー
+            ShortCutKey3.Text = Program.Config.at("ShortCutKey3");
+            ShortCutValue3.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue3")); //Ctrl+K 書き込み
+            ShortCutKey4.Text = Program.Config.at("ShortCutKey4");
+            ShortCutValue4.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue4")); //Pause メインへ
+            ShortCutKey5.Text = Program.Config.at("ShortCutKey5");
+            ShortCutValue5.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue5")); //F11 バイナリエディタ
+            ShortCutKey6.Text = Program.Config.at("ShortCutKey6");
+            ShortCutValue6.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue6")); //リストから次を検索
+            ShortCutKey7.Text = Program.Config.at("ShortCutKey7");
+            ShortCutValue7.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue7"));
+            ShortCutKey8.Text = Program.Config.at("ShortCutKey8");
+            ShortCutValue8.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue8"));
+            ShortCutKey9.Text = Program.Config.at("ShortCutKey9");
+            ShortCutValue9.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue9"));
+            ShortCutKey10.Text = Program.Config.at("ShortCutKey10");
+            ShortCutValue10.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue10"));
+            ShortCutKey11.Text = Program.Config.at("ShortCutKey11");
+            ShortCutValue11.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue11")); //Ctrl+W 閉じる
+            ShortCutKey12.Text = Program.Config.at("ShortCutKey12");
+            ShortCutValue12.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue12"));
+            ShortCutKey13.Text = Program.Config.at("ShortCutKey13");
+            ShortCutValue13.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue13"));
+            ShortCutKey14.Text = Program.Config.at("ShortCutKey14");
+            ShortCutValue14.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue14"));
+            ShortCutKey15.Text = Program.Config.at("ShortCutKey15");
+            ShortCutValue15.SelectedIndex = (int)U.atoi(Program.Config.at("ShortCutValue15"));
           
             U.SelectedIndexSafety(func_rom_extends,(int)rom_extends());
             U.SelectedIndexSafety(func_rom_extends_option, rom_extends_option());
@@ -151,6 +151,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_create_nodoll_gba_sym, (int)create_nodoll_gba_sym());
             U.SelectedIndexSafety(func_overraide_simple_error_check, (int)overraide_simple_error_check());
             U.SelectedIndexSafety(func_alert_unk_event_code, (int)alert_unk_event_code());
+            U.SelectedIndexSafety(RunTestMessage, (int)U.atoi(Program.Config.at("RunTestMessage")));
 
             ChangeColorWriteButtonWhenChangingSetting();
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
@@ -304,6 +305,7 @@ namespace FEBuilderGBA
             Program.Config["func_create_nodoll_gba_sym"] = U.SelectValueComboboxText(func_create_nodoll_gba_sym.Text);
             Program.Config["func_overraide_simple_error_check"] = U.SelectValueComboboxText(func_overraide_simple_error_check.Text);
             Program.Config["func_alert_unk_event_code"] = U.SelectValueComboboxText(func_alert_unk_event_code.Text);
+            Program.Config["RunTestMessage"] = U.SelectValueComboboxText(RunTestMessage.Text);
 
             //configの保存
             Program.Config.Save();

@@ -20,6 +20,7 @@ namespace FEBuilderGBA
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
+            ToolRunHintMessageForm.RemoveRunTestMenuIfUserWant(this.menuStrip1, this.TestRunStripMenuItem);
             InputFormRef.RecolorMenuStrip(this.menuStrip1);
 
             this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -1290,10 +1291,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolPortraitMakerForm>();
         }
 
-        private void OnlineHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.GotoManual();
-        }
 
         private void UPSSimpleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1394,11 +1391,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolProblemReportForm>();
         }
 
-        private void DiscordURLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.GotoCommunities();
-        }
-
         private void ToolProblemReportToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolProblemReportForm>();
@@ -1476,6 +1468,21 @@ namespace FEBuilderGBA
         private void WorkSupportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolWorkSupportForm>();
+        }
+
+        private void TestRunStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolRunHintMessageForm.Run();
+        }
+
+        private void OnlineHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoManual();
+        }
+
+        private void DiscordURLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoCommunities();
         }
     }
 }

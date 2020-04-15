@@ -469,6 +469,7 @@ namespace FEBuilderGBA
                 DialogResult dr = R.ShowNoYes("既に({0})のプロセスを実行しています。\r\n二重実行になってしまいますが、続行してもよろしいですか？", run_name);
                 if (dr != DialogResult.Yes)
                 {
+                    SetForcusProcess(run_name, arg1);
                     return null;
                 }
             }
@@ -670,6 +671,37 @@ namespace FEBuilderGBA
             }
             //実行済み
             return true;
+        }
+
+        static void SetForcusProcess(string run_name, string arg1 = "<<ROM>>")
+        {
+            string emulator = Program.Config.at(run_name, "");
+            if (emulator == "" || !File.Exists(emulator))
+            {
+                return ;
+            }
+
+            string tempfilename;
+            if (arg1 == "<<ROM>>")
+            {
+                tempfilename = U.MakeFilename(run_name);
+            }
+            else
+            {
+                tempfilename = arg1;
+            }
+
+            //既に実行しているか？
+            Process p = Program.UpdateWatcher.GetRunning(tempfilename);
+            if (p == null)
+            {//未実行
+                return;
+            }
+            if (p.MainWindowHandle == IntPtr.Zero)
+            {
+                return;
+            }
+            U.SetForegroundWindow(p.MainWindowHandle);
         }
 
         public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>")

@@ -96,6 +96,8 @@ namespace FEBuilderGBA
 
             X_PIC.Image = DrawMoveUnitIcon(pic_address, palette_type);
             X_ONE_PIC.Image = DrawMoveUnitIcon(pic_address, palette_type, 0);
+
+
         }
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
@@ -330,6 +332,13 @@ namespace FEBuilderGBA
                     , addr + 4
                     , name + " AP"
                     , isPointerOnly);
+
+//                string ss = U.To0xHexString(i+1);
+//                uint ap_addr = Program.ROM.p32(addr + 4);
+//                uint length = ImageUtilAP.CalcAPLength(ap_addr);
+//                byte[] aa = Program.ROM.getBinaryData(ap_addr, length);
+//                ss += " " + U.md5(aa) ;
+//                Log.Debug(ss);
             }
         }
         //エラーチェック
