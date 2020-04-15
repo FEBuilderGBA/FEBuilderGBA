@@ -236,7 +236,7 @@ namespace FEBuilderGBA
         public uint monster_wmap_probability_2_pointer() { return 0x0; }
         public uint monster_wmap_probability_after_1_pointer() { return 0x0; }
         public uint monster_wmap_probability_after_2_pointer() { return 0x0; }
-        public uint battle_bg_pointer() { return 0x0; } //戦闘背景
+        public uint battle_bg_pointer() { return 0x5F090; } //戦闘背景
         public uint battle_terrain_pointer() { return 0x44534; } //戦闘地形
         public uint senseki_comment_pointer() { return 0x0; } //戦績コメント
         public uint unit_custom_battle_anime_pointer() { return 0x0; } //ユニット専用アニメ FE7にある

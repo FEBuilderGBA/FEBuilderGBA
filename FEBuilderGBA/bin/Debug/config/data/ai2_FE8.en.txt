@@ -16,7 +16,7 @@
 0B=Move towards [0x5D2DBC] (Target)	{J}
 0B=Move towards [0x5A8EB4] (Target)	{U}
 0C=Go to escape point
-0D=-
+0D=Target terrain (Throne, Gate)
 0E=Move to destroy walls and snags
 0F=Move towards the enemy even if it is blocked by a wall or terrain
 10=Coordinate movement [0x5D2FC8,0x5D2FC9] ​​(Escort)	{J}

@@ -61,6 +61,7 @@
             this.EventCondButton = new System.Windows.Forms.Button();
             this.UnitButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TestRunStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -131,6 +132,7 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ImageBattleFieldButton = new System.Windows.Forms.Button();
             this.AIPerformItemButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
             this.GameOptionButton = new System.Windows.Forms.Button();
@@ -192,7 +194,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.TestRunStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -564,6 +565,15 @@
             this.menuStrip1.Size = new System.Drawing.Size(1644, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // TestRunStripMenuItem
+            // 
+            this.TestRunStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.TestRunStripMenuItem.Image = global::FEBuilderGBA.Properties.Resources.play_button_green1;
+            this.TestRunStripMenuItem.Name = "TestRunStripMenuItem";
+            this.TestRunStripMenuItem.Size = new System.Drawing.Size(167, 31);
+            this.TestRunStripMenuItem.Text = "テスト実行(F5)";
+            this.TestRunStripMenuItem.Click += new System.EventHandler(this.TestRunStripMenuItem_Click);
             // 
             // FileToolStripMenuItem
             // 
@@ -1017,7 +1027,7 @@
             // 
             // ImageUnitPaletteButton
             // 
-            this.ImageUnitPaletteButton.Location = new System.Drawing.Point(616, 329);
+            this.ImageUnitPaletteButton.Location = new System.Drawing.Point(616, 365);
             this.ImageUnitPaletteButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImageUnitPaletteButton.Name = "ImageUnitPaletteButton";
             this.ImageUnitPaletteButton.Size = new System.Drawing.Size(200, 36);
@@ -1061,7 +1071,7 @@
             // 
             // ImageBattleTerrainButton
             // 
-            this.ImageBattleTerrainButton.Location = new System.Drawing.Point(616, 221);
+            this.ImageBattleTerrainButton.Location = new System.Drawing.Point(616, 257);
             this.ImageBattleTerrainButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImageBattleTerrainButton.Name = "ImageBattleTerrainButton";
             this.ImageBattleTerrainButton.Size = new System.Drawing.Size(200, 36);
@@ -1127,6 +1137,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.ImageBattleFieldButton);
             this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
@@ -1234,6 +1245,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1640, 756);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // ImageBattleFieldButton
+            // 
+            this.ImageBattleFieldButton.Location = new System.Drawing.Point(616, 221);
+            this.ImageBattleFieldButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageBattleFieldButton.Name = "ImageBattleFieldButton";
+            this.ImageBattleFieldButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageBattleFieldButton.TabIndex = 143;
+            this.ImageBattleFieldButton.Text = "戦闘背景";
+            this.ImageBattleFieldButton.UseVisualStyleBackColor = true;
+            this.ImageBattleFieldButton.Click += new System.EventHandler(this.ImageBattleFieldButton_Click);
             // 
             // AIPerformItemButton
             // 
@@ -1369,7 +1391,7 @@
             // 
             // ROMAnimeButton
             // 
-            this.ROMAnimeButton.Location = new System.Drawing.Point(616, 437);
+            this.ROMAnimeButton.Location = new System.Drawing.Point(616, 473);
             this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(2);
             this.ROMAnimeButton.Name = "ROMAnimeButton";
             this.ROMAnimeButton.Size = new System.Drawing.Size(200, 36);
@@ -1622,7 +1644,7 @@
             // 
             // Command85PointerButton
             // 
-            this.Command85PointerButton.Location = new System.Drawing.Point(616, 401);
+            this.Command85PointerButton.Location = new System.Drawing.Point(616, 437);
             this.Command85PointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.Command85PointerButton.Name = "Command85PointerButton";
             this.Command85PointerButton.Size = new System.Drawing.Size(200, 36);
@@ -1776,7 +1798,7 @@
             // 
             // BattleScreenButton
             // 
-            this.BattleScreenButton.Location = new System.Drawing.Point(616, 257);
+            this.BattleScreenButton.Location = new System.Drawing.Point(616, 293);
             this.BattleScreenButton.Margin = new System.Windows.Forms.Padding(4);
             this.BattleScreenButton.Name = "BattleScreenButton";
             this.BattleScreenButton.Size = new System.Drawing.Size(200, 36);
@@ -1809,7 +1831,7 @@
             // 
             // ImageMagicButton
             // 
-            this.ImageMagicButton.Location = new System.Drawing.Point(616, 365);
+            this.ImageMagicButton.Location = new System.Drawing.Point(616, 401);
             this.ImageMagicButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImageMagicButton.Name = "ImageMagicButton";
             this.ImageMagicButton.Size = new System.Drawing.Size(200, 36);
@@ -1842,7 +1864,7 @@
             // 
             // ImageChapterTitleButton
             // 
-            this.ImageChapterTitleButton.Location = new System.Drawing.Point(616, 293);
+            this.ImageChapterTitleButton.Location = new System.Drawing.Point(616, 329);
             this.ImageChapterTitleButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImageChapterTitleButton.Name = "ImageChapterTitleButton";
             this.ImageChapterTitleButton.Size = new System.Drawing.Size(200, 36);
@@ -1905,15 +1927,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
-            // 
-            // TestRunStripMenuItem
-            // 
-            this.TestRunStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.TestRunStripMenuItem.Image = global::FEBuilderGBA.Properties.Resources.play_button_green1;
-            this.TestRunStripMenuItem.Name = "TestRunStripMenuItem";
-            this.TestRunStripMenuItem.Size = new System.Drawing.Size(167, 31);
-            this.TestRunStripMenuItem.Text = "テスト実行(F5)";
-            this.TestRunStripMenuItem.Click += new System.EventHandler(this.TestRunStripMenuItem_Click);
             // 
             // MainFE6Form
             // 
@@ -2108,5 +2121,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem TestRunStripMenuItem;
+        private System.Windows.Forms.Button ImageBattleFieldButton;
     }
 }

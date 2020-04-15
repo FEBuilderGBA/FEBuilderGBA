@@ -42,25 +42,13 @@ namespace FEBuilderGBA
                 }
             }
             {
-                if (Program.ROM.RomInfo.version() == 6)
-                {//FE6には背景は存在しない.
-                    List<U.AddrResult> list = new List<U.AddrResult>();
-                    list.Add(new U.AddrResult(1, R._("00 マップを表示")));
-                    list.Add(new U.AddrResult(0x100, R._("100 パレット0")));
-                    list.Add(new U.AddrResult(0x101, R._("101 黒単色")));
-                    U.ConvertComboBox(list, ref this.BattleBG);
-                    U.SelectedIndexSafety(this.BattleBG, 0);
-                }
-                else
-                {
-                    List<U.AddrResult> list = ImageBattleBGForm.MakeList();
-                    list.Insert(0, new U.AddrResult(1, R._("00 マップを表示")));
-                    list.Insert(1, new U.AddrResult(0x100, R._("100 パレット0")));
-                    list.Insert(2, new U.AddrResult(0x101, R._("101 黒単色")));
-                    U.ConvertComboBox(list, ref this.BattleBG);
+                List<U.AddrResult> list = ImageBattleBGForm.MakeList();
+                list.Insert(0, new U.AddrResult(1, R._("00 マップを表示")));
+                list.Insert(1, new U.AddrResult(0x100, R._("100 パレット0")));
+                list.Insert(2, new U.AddrResult(0x101, R._("101 黒単色")));
+                U.ConvertComboBox(list, ref this.BattleBG);
 
-                    U.SelectedIndexSafety(this.BattleBG, 0x4 + 3 - 1);
-                }
+                U.SelectedIndexSafety(this.BattleBG, 0x4 + 3 - 1);
             }
             {
                 List<U.AddrResult> list = new List<U.AddrResult>();

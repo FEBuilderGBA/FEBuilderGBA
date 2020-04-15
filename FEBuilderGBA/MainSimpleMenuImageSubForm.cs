@@ -36,17 +36,7 @@ namespace FEBuilderGBA
             //BattleScreenButton.BackgroundImage = MakeTransparent(ImageSystemIconForm.Allows(8));
             BattleScreenButton.BackgroundImage = MakeTransparent(ImageSystemIconForm.WeaponIcon(0));
 
-            if (Program.ROM.RomInfo.version() == 8
-                || Program.ROM.RomInfo.version() == 7
-                )
-            {
-                ImageBattleFieldButton.BackgroundImage = MakeTransparent(ImageBattleBGForm.DrawBG(2));
-            }
-            else
-            {//FE6
-                ImageBattleFieldButton.Hide();
-            }
-            
+            ImageBattleFieldButton.BackgroundImage = MakeTransparent(ImageBattleBGForm.DrawBG(2));
             ImageBattleTerrainButton.BackgroundImage = MakeTransparent((ImageBattleTerrainForm.Draw(2)));
 
             if (Program.ROM.RomInfo.version() == 8)

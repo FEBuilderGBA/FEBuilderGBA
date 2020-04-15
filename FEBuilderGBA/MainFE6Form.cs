@@ -217,11 +217,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<EDFE6Form>();
         }
 
-        private void ImageBattleFieldButton_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ImageBattleBGForm>();
-            
-        }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
@@ -801,6 +796,11 @@ namespace FEBuilderGBA
         private void TestRunStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolRunHintMessageForm.Run();
+        }
+
+        private void ImageBattleFieldButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ImageBattleBGForm>();
         }
 
     }
