@@ -21,6 +21,8 @@ namespace FEBuilderGBA
             if (DoNotShowThisMessageAgain.Checked)
             {
                 Program.Config["RunTestMessage"] = "1";
+                //configの保存
+                Program.Config.Save();
             }
             this.Close();
             MainFormUtil.RunAs("emulator");
