@@ -2387,7 +2387,8 @@
             this.func_rom_extends.FormattingEnabled = true;
             this.func_rom_extends.Items.AddRange(new object[] {
             "0=拡張を認めない",
-            "1=ROMサイズを32MBまで拡張を認める"});
+            "1=ROMサイズを32MBまで拡張を認める",
+            "2=拡張を認めるが、アドレスは手動管理"});
             this.func_rom_extends.Location = new System.Drawing.Point(420, 390);
             this.func_rom_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends.Name = "func_rom_extends";

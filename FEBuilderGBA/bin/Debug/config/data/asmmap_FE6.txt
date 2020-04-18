@@ -1449,3 +1449,4 @@
 08025b1c	DoSomeBattleWeaponStuff
 080245a0	SetupBattleWeaponData
 08034AC8	AiTryDoSpecialItems
+08016B24	GetWeaponRankLevel

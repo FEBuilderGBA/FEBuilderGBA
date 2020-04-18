@@ -1,0 +1,16 @@
+NAME=武器レベルBになれる武器経験値(差分値)
+NAME.en=Weapon Exp Required for B Rank(Difference value)
+NAME.zh=武器经验值可以是武器级别B(差分値)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16C4C
+HEX=false
+
+AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
+
+INFO=武器レベルバーのグラフを描画するために利用する値です。\r\n一つ前のWEXP+この値=次のレベルのWEXPになるように値を設定してください。\r\nDefault:50
+INFO.en=The value used to draw the graph for the weapon level bar.\r\nSet the value so that WEXP of the previous one + this value = WEXP of the next level.\r\nDefault: 50.
+INFO.zh=用于绘制武器等级栏图形的值。\r\n设置该值，以使上一个的WEXP +此值 = 下一个级别的WEXP。\r\n默认值：50。

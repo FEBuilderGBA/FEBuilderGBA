@@ -1,0 +1,16 @@
+NAME=武器レベルAになれる武器経験値(Plus1)
+NAME.en=Weapon Exp Required for A Rank(Plus1)
+NAME.zh=武器经验值可以是武器级别A(Plus1)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16EF0
+HEX=false
+
+AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
+
+INFO=武器レベルバーのグラフを描画するために利用します。\r\n必要な武器経験値+1の値を設定してください。\r\nDefault:181
+INFO.en=It is used to draw the graph of the weapon level bar.\r\nSet the required weapon experience value + 1.\r\nDefault: 181.
+INFO.zh=用于绘制武器等级栏的图形。\r\n设置所需的武器经验值+1。\r\n默认值：181。

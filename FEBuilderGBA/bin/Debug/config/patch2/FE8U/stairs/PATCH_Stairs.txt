@@ -1,6 +1,6 @@
-NAME=階段
-NAME.en=Stairs
-NAME.zh=楼梯
+NAME=階段 20191031
+NAME.en=Stairs 20191031
+NAME.zh=楼梯 20191031
 TYPE=EA
 TAG=#ENGINE
 

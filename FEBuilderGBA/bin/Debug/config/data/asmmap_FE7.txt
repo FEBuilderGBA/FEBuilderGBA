@@ -1950,7 +1950,7 @@
 08016794	GetUnitEquippedWeaponSlot	{U}
 080167C6	IsItemCoveringRange	{U}
 080167F4	EquipUnitItemByIndex	{U}
-08016946	GetWeaponRankLevel	{U}
+08016948	GetWeaponRankLevel	{U}
 0801697C	GetWRankTextBuffer	{U}
 080169E0	GetWRankText	{U}
 08016A08	GetWTypeTextInStandardBuffer	{U}
@@ -2796,7 +2796,7 @@
 08016BF4	GetUnitEquippedWeaponSlot	{J}
 08016C26	IsItemCoveringRange	{J}
 08016C54	EquipUnitItemByIndex	{J}
-08016DA2	GetWeaponRankLevel	{J}
+08016DA4	GetWeaponRankLevel	{J}
 08016DD8	GetWRankTextBuffer	{J}
 08016E38	GetWRankText	{J}
 08016E60	GetWTypeTextInStandardBuffer	{J}

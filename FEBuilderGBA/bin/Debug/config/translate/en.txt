@@ -5464,6 +5464,9 @@ Chapter Editor
 :ユニット能力
 Character Editor
 
+:テスト実行(F5)
+RunTest(F5)
+
 :ファイル
 File
 
@@ -5679,9 +5682,6 @@ Simple Menu
 
 :地形設定
 Terrain Editor
-
-:テスト実行(F5)
-RunTest(F5)
 
 :詳細メニュー
 Advanced Editors
@@ -8620,6 +8620,9 @@ Set Lint Text Detection. 3 Lines Of Text = Bug
 :1=ROMサイズを32MBまで拡張を認める
 1=Enable ROM Expansion up to 32 MB
 
+:2=拡張を認めるが、アドレスは手動管理
+2=Allows expansion, but manages addresses manually.
+
 :0=変換しない
 0=Do not convert
 
@@ -9420,6 +9423,15 @@ ROM has been changed
 
 :次を検索
 Next
+
+:「データ({0}) 元の長さ({1} {2})」は、長さ({3} {4})のデータとなり、既存のスペースに入りきりません。\r\nこのデータを割り当てる領域を指定してください。\r\n\r\n指定しない場合は、\r\nディフォルトで割り当てられる({5})から変更せずに、割り当てボタンを押してください。
+"Data ({0}) Original length ({1} {2})" becomes data of length ({3} {4}), which cannot fit in the existing space.\r\nSpecify the area to allocate this data.\r\n\r\nIf not specified ,.\r\nPress the Assign button without changing the default assignment ({5}).
+
+:新しい領域
+New area.
+
+:再割り当てアドレスの指定
+Specify reassignment address.
 
 :スキル拡張 SkillSystem の、アイコンを取得できません。
 Skill extension SkillSystem's icon can't be acquired.
@@ -11665,14 +11677,14 @@ The ROM to which ROMRebuild is applied, the file name.Save it as gba.
 :ROMRebuildを開くために無改造のROMを選択してください。\r\n適応後には、動作を確認するプレイテストを行ってください。
 Please select unmodified ROM to open ROMRebuild.\r\nAfter adaptation, please do play test to confirm the operation.
 
-:テスト実行について\r\n\r\nヒント:\r\nどの画面であっても、F5キーを押せばテストができます。\r\n\r\n開発方法:\r\nテスト実行の段階では、変更点はROMに書き込まれません。\r\nテスト実行し、問題がなければ、MENU->ファイル->保存データで、データを保存してください。\r\nもし、解決できない問題があれば、保存せずにFEBuilderGBAを終了してください。\r\n間違えて保存してしまった場合は、過去のバックアップを参照してください。\r\n\r\nわからないことがあれば、コミニティで質問してください。
-About test run.\r\n\r\nTips :.\r\nYou can test by pressing F5 on any screen.\r\n\r\nDevelopment method :.\r\nChanges are not written to ROM during the test run stage.\r\nRun the test and if there is no problem, save the data with MENU-> File-> Saved data.\r\nIf there is a problem that cannot be solved, please exit FEBuilderGBA without saving.\r\nIf you accidentally saved it, please refer to the previous backup.\r\n\r\nIf you have any questions, please ask in the community.
-
 :これよりテスト実行を開始します。
 This will start the test run.
 
 :このメッセージを再度表示しない
 Do not show this message again.
+
+:テスト実行について\r\n\r\nヒント:\r\nどの画面であっても、F5キーを押せばテストができます。\r\n\r\n開発方法:\r\nテスト実行の段階では、変更点はROMに書き込まれません。\r\nテスト実行し、問題がなければ、MENU->ファイル->保存データで、データを保存してください。\r\nもし、解決できない問題があれば、保存せずにFEBuilderGBAを終了してください。\r\n間違えて保存してしまった場合は、過去のバックアップを参照してください。\r\n\r\nわからないことがあれば、コミニティで質問してください。
+About test run.\r\n\r\nTips :.\r\nYou can test by pressing F5 on any screen.\r\n\r\nDevelopment method :.\r\nChanges are not written to ROM during the test run stage.\r\nRun the test and if there is no problem, save the data with MENU-> File-> Saved data.\r\nIf there is a problem that cannot be solved, please exit FEBuilderGBA without saving.\r\nIf you accidentally saved it, please refer to the previous backup.\r\n\r\nIf you have any questions, please ask in the community.
 
 :テスト実行
 Test run.

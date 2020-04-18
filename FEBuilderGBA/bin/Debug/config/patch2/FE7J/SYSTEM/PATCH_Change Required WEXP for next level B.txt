@@ -1,0 +1,14 @@
+NAME=武器レベルBになれる武器経験値
+NAME.en=Weapon Exp Required for B Rank
+NAME.zh=武器经验值可以是武器级别B
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16DBC
+HEX=false
+
+AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
+INFO=Default:120
+

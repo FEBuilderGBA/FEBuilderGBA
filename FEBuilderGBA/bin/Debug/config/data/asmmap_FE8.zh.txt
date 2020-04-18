@@ -7085,6 +7085,7 @@ r3=X tile position of menu of the right	{U}
 03005250	gGlobalTriggerData	{U}
 03005280	gSomeWMEventRelatedStruct	{U}
 03005282	gWMCamera	{U}
+03005291	gWMCurrentNode	{U}
 0300534e	gSaved	{U}
 030067a0	gpReadSramFast	{U}
 030067a4	gpVerifySramFast	{U}
@@ -7198,6 +7199,7 @@ r3=X tile position of menu of the right	{U}
 03005240	gGlobalTriggerData	{J}
 03005270	gSomeWMEventRelatedStruct	{J}
 03005272	gWMCamera	{J}
+03005281	gWMCurrentNode	{J}
 0300533E	gSaved	{J}
 03006790	gpReadSramFast	{J}
 03006794	gpVerifySramFast	{J}
@@ -12694,3 +12696,6 @@ r3=X tile position of menu of the right	{U}
 0808B438	HelpDialog_CalcStringWidth	{J}
 08089CD4	MakeHelpDialog_WeaponDetail	{U}
 080892D0	确定武器的类型。	{U}
+02020988	gGenericTSABuffer
+080999E4	绘图。	旋转箭头。	{J}
+08097700	绘图。	旋转箭头。	{U}

@@ -1,0 +1,13 @@
+NAME=武器レベルDになれる武器経験値
+NAME.en=Weapon Exp Required for D Rank
+NAME.zh=武器经验值可以是武器级别D
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16950 0x16A78
+HEX=false
+
+AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
+INFO=Default:30

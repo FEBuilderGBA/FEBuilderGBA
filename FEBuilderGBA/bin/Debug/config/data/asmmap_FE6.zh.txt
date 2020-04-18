@@ -1249,3 +1249,4 @@
 080245a0	SetupBattleWeaponData
 08025b1c	DoSomeBattleWeaponStuff
 080245a0	SetupBattleWeaponData
+08016B24	GetWeaponRankLevel
