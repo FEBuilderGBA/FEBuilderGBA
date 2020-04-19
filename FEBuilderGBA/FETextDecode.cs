@@ -533,7 +533,7 @@ namespace FEBuilderGBA
 
                 if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FE
-                    if (code >= 0x81 || code == 0x1f)
+                    if (U.IsEnglishSPCode(code))
                     {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                         AppendAtmarkCode(str, code);
                         len += 1;

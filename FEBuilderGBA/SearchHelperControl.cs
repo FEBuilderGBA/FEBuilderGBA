@@ -148,7 +148,7 @@ namespace FEBuilderGBA
 
             //かな入力への配慮
             bool isJP = (this.LangCode == "ja");
-            if (isJP && OptionForm.IsKanaToNumberMode())
+            if (isJP && OptionForm.IsKanaToNumberMode() && U.isAsciiString(search))
             {
                 string t = U.KanaToNumber(search);
                 if (t != "")

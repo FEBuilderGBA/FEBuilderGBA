@@ -3809,7 +3809,7 @@ namespace FEBuilderGBA
         [MethodImpl(256)]
         public static bool IsEnglishSPCode(byte code)
         {
-            return (code >= 0x81 || code == 0x1f);
+            return (code >= 0x81 || code == 0x1f || code == 0x7B || code == 0x7C || code == 0x7D || code == 0x7F);
         }
         [MethodImpl(256)]
         public static bool isUTF8PreCode(byte code, byte code2)

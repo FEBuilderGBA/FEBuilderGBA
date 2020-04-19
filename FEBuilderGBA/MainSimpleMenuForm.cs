@@ -443,6 +443,9 @@ namespace FEBuilderGBA
                 {
                     this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
                 }
+                else
+                {
+                }
             }
             else if (systemErrorList.Count > 0)
             {//エラーを表示する.

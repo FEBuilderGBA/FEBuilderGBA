@@ -4376,7 +4376,7 @@ namespace FEBuilderGBA
 
         private void OBJECT_N07_B4_ValueChanged(object sender, EventArgs e)
         {
-            uint item_id = (uint)OBJECT_N07_B4.Value;
+            uint item_id = (uint)OBJECT_N07_W4.Value;
             uint gold = (uint)OBJECT_N07_W6.Value;
             if (item_id != Program.ROM.RomInfo.item_gold_id()
                 && gold <= 0)
