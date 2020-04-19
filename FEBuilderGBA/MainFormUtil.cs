@@ -1982,16 +1982,29 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            string tempfilename;
+            try
+            {
+                tempfilename = U.WriteTempROM("gbamusripper");
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError(R._("ファイルに書き込めませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}"), e.ToString());
+                return false;
+            }
+            
+
             string tooldir = Path.GetDirectoryName(save_filename);
 
             string args = ""
-                + U.escape_shell_args(Program.ROM.Filename)
+                + U.escape_shell_args(tempfilename)
                 + " "
                 + U.escape_shell_args(save_filename)
                 + " "
                 + U.To0xHexString(songtrack_addr);
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+            File.Delete(tempfilename);
 
             if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
             {//エラーなのでコマンド名もついでに付与
@@ -2028,16 +2041,28 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            string tempfilename;
+            try
+            {
+                tempfilename = U.WriteTempROM("gbamusripper");
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError(R._("ファイルに書き込めませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}"), e.ToString());
+                return false;
+            }
+
             string tooldir = Path.GetDirectoryName(save_filename);
 
             string args = ""
-                + U.escape_shell_args(Program.ROM.Filename)
+                + U.escape_shell_args(tempfilename)
                 + " "
                 + U.escape_shell_args(save_filename)
                 + " "
                 + U.To0xHexString(songtrack_addr);
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+            File.Delete(tempfilename);
 
             if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
             {//エラーなのでコマンド名もついでに付与

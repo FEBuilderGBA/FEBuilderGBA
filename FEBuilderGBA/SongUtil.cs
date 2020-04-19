@@ -3285,15 +3285,17 @@ namespace FEBuilderGBA
             return File.Exists(filename);
         }
 
-        public static void ExportMidiFileByGBAMusRiper(string filename, uint songtrack_addr)
+        public static bool ExportMidiFileByGBAMusRiper(string filename, uint songtrack_addr)
         {
             string error;
             bool r = MainFormUtil.ExportMidiByGBAMusRiper(filename, songtrack_addr, out error);
             if (r == false)
             {
-                R.ShowStopError("プログラムがエラーを返しました。\r\n{0}", error);
-                return;
+                R.ShowStopError("GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}", error);
+
+                return false;
             }
+            return true;
         }
         public static void ExportSoundFontByGBAMusRiper(string filename, uint songtrack_addr)
         {
@@ -3301,7 +3303,7 @@ namespace FEBuilderGBA
             bool r = MainFormUtil.ExportSoundFontByGBAMusRiper(filename, songtrack_addr, out error);
             if (r == false)
             {
-                R.ShowStopError("プログラムがエラーを返しました。\r\n{0}", error);
+                R.ShowStopError("GBAMusRiperがエラーを返しました。\r\n{0}", error);
                 return;
             }
         }

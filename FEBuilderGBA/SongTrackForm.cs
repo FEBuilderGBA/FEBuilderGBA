@@ -284,7 +284,12 @@ namespace FEBuilderGBA
             {
                 if (SongUtil.UseGBAMusRiper())
                 {
-                    SongUtil.ExportMidiFileByGBAMusRiper(filename, (uint)this.Address.Value);
+                    bool r = SongUtil.ExportMidiFileByGBAMusRiper(filename, (uint)this.Address.Value);
+                    if (!r)
+                    {//代用する
+                        SongUtil.ExportMidiFile(filename, songname
+                            , Tracks, NumBlks, Priority, Reverb, instrument_addr);
+                    }
                 }
                 else
                 {
