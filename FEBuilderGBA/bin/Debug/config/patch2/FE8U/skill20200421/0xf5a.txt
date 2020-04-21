@@ -1,0 +1,2 @@
+Lull Spd: Negates the effects
+of rallies on opponent's speed.

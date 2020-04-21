@@ -165,7 +165,7 @@
 412C0000XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
 412C0100XXXXXXXX20300000	Load units from memory and move. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
 402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
-422C0000XXXXXXXX	Load one unit[XXXXXXXX:POINTER_UNIT:Units](LOAD3)
+422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
 402C0100FFFFFFFF	Load reinforcement unit for internal processing(LOW)
 412C0100FFFFFFFF	Load unit for internal processing(LOAD2)(LOW)
 

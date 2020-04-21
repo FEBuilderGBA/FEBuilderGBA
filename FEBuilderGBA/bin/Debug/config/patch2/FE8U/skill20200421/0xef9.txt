@@ -1,0 +1,2 @@
+Hero: +30% skill activation
+rate when HP is below 50%.

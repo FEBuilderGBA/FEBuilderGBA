@@ -1,0 +1,28 @@
+﻿NAME=特定範囲のユニットの数を数える(イベント命令)
+NAME.en=AddEvent: Get the number of Count number of units in a specific range
+NAME.zh=Get the number of Count number of units in a specific range(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+INFO=条件にマッチするユニットの数を数えます。
+INFO.en=Count the number of units that match the conditions.
+INFO.zh=Count the number of units that match the conditions.
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 COUNT_RANGE.dmp=0x70 0xB5 0x00 0x26
+
+EVENTSCRIPT:1=400D0000{$L1:COUNT_RANGE.dmp}	特定範囲のユニットの数を数える(LOW)	{COND}
+EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR400D0000{$L1:COUNT_RANGE.dmp}	範囲[PP:MAPXY:開始範囲][RR:MAPXY:終了範囲 00=ANY]内のユニットの数を数える。条件:[XXXX:UNIT:ユニット条件 00=ANY][YYYY:CLASS:クラス条件 00=ANY][ZZZZ:ITEM:アイテム条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件 FF=ANY]	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:COUNT_RANGE.dmp}	Get the number of Count number of units in a specific range(LOW)	{COND}
+EVENTSCRIPT:2.en=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR400D0000{$L1:COUNT_RANGE.dmp}	Get the number of Count number of units in a specific range If Cond conditions[XXXX:UNIT:CheckUnit 00=ANY][YYYY:CLASS:CheckClass 00=ANY][ZZZZ:ITEM:CheckItem 00=ANY][WWWW:WMAPAFFILIATION:FF=ANY]in[PP:MAPXY:StartRange][RR:MAPXY:EndRange 00=ANY]	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:COUNT_RANGE.dmp}	Get the number of Count number of units in a specific range(LOW)	{COND}
+EVENTSCRIPT:2.zh=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500PPPPPPPP40050600RRRRRRRR400D0000{$L1:COUNT_RANGE.dmp}	Get the number of Count number of units in a specific range If Cond conditions[XXXX:UNIT:CheckUnit 00=ANY][YYYY:CLASS:CheckClass 00=ANY][ZZZZ:ITEM:CheckItem 00=ANY][WWWW:WMAPAFFILIATION:FF=ANY]in[PP:MAPXY:StartRange][RR:MAPXY:EndRange 00=ANY]	{COND}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=COUNT_RANGE.dmp
+
+AUTHOR=7743
+

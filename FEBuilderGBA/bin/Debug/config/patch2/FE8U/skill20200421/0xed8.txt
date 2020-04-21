@@ -1,0 +1,3 @@
+Devil's Pact: Immune to Devil Reversal.
+Curses the enemy with Devil Reversal.
+(31-Luck % chance of Devil Reversal).

@@ -114,7 +114,7 @@ namespace FEBuilderGBA
             }
 
             string parentPatchFilename = Path.Combine(Program.BaseDirectory, "config", "patch2", "FE8U"
-                , "skill20200411", "PATCH_Skill20200411.txt");
+                , "skill20200421", "PATCH_Skill20200421.txt");
             this.ParentPatch = PatchForm.LoadPatch(parentPatchFilename, isScanOnly: false);
             if (this.ParentPatch == null)
             {

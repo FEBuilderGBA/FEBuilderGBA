@@ -1,0 +1,2 @@
+Push Strength: When HP
+is full, gain +5 strength.
