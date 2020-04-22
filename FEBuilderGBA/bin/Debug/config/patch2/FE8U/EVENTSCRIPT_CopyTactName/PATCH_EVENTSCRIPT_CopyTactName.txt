@@ -1,0 +1,23 @@
+NAME=軍師の名前をコピーして設定する(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 CopyTactName.dmp=0x00 0xB5 0x80 0x6B
+
+EVENTSCRIPT:1=400DXXXX{$L1:CopyTactName.dmp}	軍師の名前を[XX:TEXT:SrcText]からコピーして設定する
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=CopyTactName.dmp
+
+AUTHOR=7743
+INFO=軍師のディフォルト名を設定します。\r\n名前入力画面を出す前に設定すればディフォルト名として機能します。\r\n注意:名前の領域は最大9バイトしかないので、長い文字列を指定しないでください。
+
+
+EVENTSCRIPT:1.en=400DXXXX{$L1:CopyTactName.dmp}	Set Name of Tactician by copy from [XX:TEXT:SrcText]
+NAME.en=AddEvent: Set Name of Tactician by copy from Text
+INFO.en=Set the default name of the Tactician.\r\nIf set before the name input screen is displayed, it will function as the default name.\r\nNote: Do not specify long strings, as the name space can only be up to 9 bytes.
+NAME.zh=复制并设置军官的姓名(AddEvent)
+INFO.zh=设置军官的默认名称。\r\n如果在显示名称输入屏幕之前进行设置，它将用作默认名称。\r\n注意：不要指定长字符串，因为名称空间最多只能有9个字节。
+EVENTSCRIPT:1.zh=400DXXXX{$L1:CopyTactName.dmp}	通过从[XX:TEXT:SrcText]复制来设置军官的姓名

@@ -5702,7 +5702,7 @@ Individual Animation
 UnitsMenu
 
 :軍師属性
-Military attribute.
+Tactician attribute
 
 :サウンドルームCG
 Sound room CG.
@@ -6257,7 +6257,7 @@ Set up a function table to determine if AI can use staff.
 Set up a function table to determine if the item is available to AI.
 
 :軍師の属性を決定するテーブルを設定します。
-Set up a table to determine the military attributes.
+Set up a table to determine the Tactician attributes.
 
 :ゲームオプションの表示順番を設定します。
 Set the display order of game options.

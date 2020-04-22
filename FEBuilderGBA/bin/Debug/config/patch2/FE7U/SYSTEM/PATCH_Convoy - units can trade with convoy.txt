@@ -1,0 +1,21 @@
+NAME=プレイヤーが輸送隊とアイテムを交換できるようにする
+NAME.en=Convoy: units can trade with convoy
+
+INFO=プレイヤーユニットが輸送隊とアイテムを交換できるようにします。
+INFO.en=Allows other units to trade with Merlinus\r\n(make players trade convoy)
+
+
+//
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=Satel (from Teq's notes https://feuniverse.us/t/item-storage-without-merlinus/520/12)
+
+COMBO=Default|OFF|Units can trade with convoy|ALL
+OFF:0x23D08=0x00 0x28 0x08 0xD1
+ALL:0x23D08=0xC0 0x46 0xC0 0x46
+
+HINT=輸送体
+HINT.en=convoy,supply,transporter,merlinus,wagon
+NAME.zh=允许玩家与护卫舰交换物品。
+INFO.zh=允许玩家单位与护卫队交换物品。

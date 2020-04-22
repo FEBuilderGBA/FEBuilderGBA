@@ -16,6 +16,5 @@ INFO.en=Set the level at which Merlinus of Supply is Promotion.\r\nHe will autom
 HINT=輸送体
 HINT.en=convoy,supply,transporter,merlinus,wagon
 
-HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=护航码头CC是CC的LV。
 INFO.zh=设置车队码头的CC水平。\r\n超过此级别时，将自动执行CC。
