@@ -1450,3 +1450,5 @@
 080245a0	SetupBattleWeaponData
 08034AC8	AiTryDoSpecialItems
 08016B24	GetWeaponRankLevel
+08022a84	GetROMUnitSupportCount
+08022af0	GetSupportLevelBySupportIndex

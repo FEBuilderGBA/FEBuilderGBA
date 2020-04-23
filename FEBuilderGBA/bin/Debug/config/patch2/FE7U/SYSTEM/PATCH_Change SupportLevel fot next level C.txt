@@ -1,0 +1,13 @@
+NAME=サポートレベルCになるサポート値
+NAME.en=Change SupportLevel fot next level C
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x266AA
+
+INFO=支援レベルCになれるサポート値
+INFO.en=A support value that can reach support level C.
+NAME.zh=达到支撑级别C的支撑值。
+INFO.zh=可以达到支撑级别C的支撑值。

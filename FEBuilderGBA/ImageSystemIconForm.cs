@@ -68,6 +68,7 @@ namespace FEBuilderGBA
             {//FE6
                 systemmenu_goal_panel.Hide();
             }
+            WMTabControl.TabPages.Remove(tabPage3);
 
             if (Program.ROM.RomInfo.version() >= 8)
             {//FE8

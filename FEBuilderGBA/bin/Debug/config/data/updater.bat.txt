@@ -12,13 +12,30 @@ IF NOT EXIST %UPDATE_CHECK% GOTO E4
 IF "%PID%"=="" GOTO NO_ARGS
 
 echo Checking stop of FEBuilderGBA main process..
-ping 127.0.0.1 -n 1 > nul
+ping 127.0.0.1 -n 2 > nul
 
 :PID_LOOP
 tasklist /FI "PID eq %PID%" | find "exe" > nul 2>&1
 if ERRORLEVEL 1 GOTO NEXT_STEP
 echo "WAIT EXIT FOR MAIN PROGRAM"
 ping 127.0.0.1 -n 2 > nul 2>&1
+
+tasklist /FI "PID eq %PID%" | find "exe" > nul 2>&1
+if ERRORLEVEL 1 GOTO NEXT_STEP
+echo "WAIT EXIT FOR MAIN PROGRAM"
+ping 127.0.0.1 -n 2 > nul 2>&1
+
+tasklist /FI "PID eq %PID%" | find "exe" > nul 2>&1
+if ERRORLEVEL 1 GOTO NEXT_STEP
+echo "WAIT EXIT FOR MAIN PROGRAM"
+ping 127.0.0.1 -n 2 > nul 2>&1
+
+tasklist /FI "PID eq %PID%" | find "exe" > nul 2>&1
+if ERRORLEVEL 1 GOTO NEXT_STEP
+echo "WAIT EXIT FOR MAIN PROGRAM"
+ping 127.0.0.1 -n 2 > nul 2>&1
+
+taskkill /pid %PID% /F
 GOTO PID_LOOP
 
 :NO_ARGS
