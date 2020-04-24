@@ -14,6 +14,9 @@ namespace FEBuilderGBA
         public ImagePortraitForm()
         {
             InitializeComponent();
+
+            InputFormRef.markupJumpLabel(LinkInternt);
+
             this.InputFormRef = Init(this);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
@@ -1633,6 +1636,11 @@ namespace FEBuilderGBA
             //アニメgif生成
             ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps);
             return true;
+        }
+
+        private void LinkInternt_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoMoreData();
         }
 
     }

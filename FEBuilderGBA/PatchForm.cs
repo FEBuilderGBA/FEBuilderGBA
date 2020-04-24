@@ -5933,6 +5933,16 @@ namespace FEBuilderGBA
                                 , patchname + " HEADERTSA " + n, false);
                         }
                     }
+                    else if (type == "PatchImage_ZHEADERTSA")
+                    {//画像
+                        uint a = Program.ROM.p32(p);
+                        if (U.isSafetyOffset(a))
+                        {
+                            uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
+                            FEBuilderGBA.Address.AddAddress(list, a, len, p
+                                , patchname + " ZHEADERTSA ", Address.DataTypeEnum.LZ77IMG);
+                        }
+                    }
                     else if (type == "PatchImage_ZTSA")
                     {//画像 ZHEADERTSA
                         uint a = Program.ROM.p32(p);
@@ -5943,7 +5953,7 @@ namespace FEBuilderGBA
                                 , patchname + " ZHEADERTSA " + n, Address.DataTypeEnum.LZ77TSA);
                         }
                     }
-                    else if (type == "PatchImage_Palette")
+                    else if (type == "PatchImage_PALETTE")
                     {//画像 Palette
                         uint a = Program.ROM.p32(p);
                         if (U.isSafetyOffset(a))

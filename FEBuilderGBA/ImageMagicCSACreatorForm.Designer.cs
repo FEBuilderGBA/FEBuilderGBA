@@ -33,6 +33,7 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -151,6 +152,16 @@
             this.panel3.Size = new System.Drawing.Size(1206, 30);
             this.panel3.TabIndex = 115;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(6, 452);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 30;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // ReloadListButton
             // 
             this.ReloadListButton.Location = new System.Drawing.Point(506, -1);
@@ -213,6 +224,7 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.LinkInternt);
             this.DragTargetPanel.Controls.Add(this.MagicComment);
             this.DragTargetPanel.Controls.Add(this.label2);
             this.DragTargetPanel.Controls.Add(this.X_N_JumpEditor);
@@ -642,7 +654,7 @@
             this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImageMagicCSACreatorForm";
-            this.Text = "追加魔法";
+            this.Text = "追加魔法 CSACreator";
             this.Load += new System.EventHandler(this.ImageMagicForm_Load);
             this.panel8.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -710,5 +722,6 @@
         private System.Windows.Forms.Button X_N_JumpEditor;
         private TextBoxEx MagicComment;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LinkInternt;
     }
 }

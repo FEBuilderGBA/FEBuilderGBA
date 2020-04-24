@@ -100,6 +100,7 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -225,6 +226,7 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.LinkInternt);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
             this.DragTargetPanel2.Location = new System.Drawing.Point(280, 692);
@@ -298,7 +300,7 @@
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(310, 0);
+            this.BlockSize.Location = new System.Drawing.Point(310, 1);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";
@@ -1014,6 +1016,16 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(365, 23);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 31;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // ImagePortraitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1033,6 +1045,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.DragTargetPanel2.ResumeLayout(false);
+            this.DragTargetPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
@@ -1140,5 +1153,6 @@
         private LabelEx DescriptionAfterImportLabel;
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label LinkInternt;
     }
 }

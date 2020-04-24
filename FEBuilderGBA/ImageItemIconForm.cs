@@ -34,7 +34,8 @@ namespace FEBuilderGBA
             {
                 this.InputFormRef.CheckProtectionAddrHigh = false;  //かなり手前のアドレスなので確認不可能
             }
-            
+
+            InputFormRef.markupJumpLabel(LinkInternt);
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
@@ -317,6 +318,12 @@ namespace FEBuilderGBA
             }
             //拡張されているので表示する
             return true;
+        }
+
+        private void LinkInternt_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoMoreData();
+
         }
 
 

@@ -17,6 +17,8 @@ namespace FEBuilderGBA
 
             MakeComboBattleAnimeSP(L_1_BATTLEANIMESP_0);
 
+            InputFormRef.markupJumpLabel(LinkInternt);
+
             InputFormRef.LoadComboResource(ShowSectionCombo, U.ConfigDataFilename("battleanime_mode_"));
             U.SelectedIndexSafety(ShowSectionCombo, 0);
             U.SelectedIndexSafety(ShowDirectionComboBox, 0);
@@ -153,11 +155,9 @@ namespace FEBuilderGBA
             U.ForceUpdate(ShowSectionCombo, 0);
             U.ForceUpdate(ShowFrameUpDown, 0);
             DrawSelectedAnime();
-
-            UpdateLZ77Info();
         }
 
-        void UpdateLZ77Info()
+        void UpdateLZ77Info(bool errorOver16Anime)
         {
             string error = "";
             string text = "Un-LZ77 ";
@@ -185,10 +185,16 @@ namespace FEBuilderGBA
                     error += r;
                 }
             }
+            if (errorOver16Anime)
+            {
+                text = R._("16色を超える戦闘アニメーションです。") + " " + text;
+            }
 
             X_LZ77_INFO.Text = text;
             X_LZ77_INFO.ErrorMessage = error;
         }
+
+
 
         void DrawSelectedAnime()
         {
@@ -214,18 +220,21 @@ namespace FEBuilderGBA
                 bitmap = ImageUtil.SwapPalette(bitmap, paletteIndex);
             }
 
+            bool errorOver16Anime;
             int palette_count = ImageUtil.GetPalette16Count(bitmap);
             if (palette_count >= 2)
             {
-                ERROR_OVER16_ANIME.Show();
+                errorOver16Anime = true;
             }
             else
             {
-                ERROR_OVER16_ANIME.Hide();
+                errorOver16Anime = false;
             }
+            UpdateLZ77Info(errorOver16Anime);
 
             X_B_ANIME_PIC2.Image = bitmap;
         }
+
 
         public enum ScaleTrim
         {
@@ -1088,6 +1097,11 @@ namespace FEBuilderGBA
        private void ReadStartAddress_ValueChanged(object sender, EventArgs e)
        {
            ZeroPointerPanel.Visible = InputFormRef.ShowZeroPointerPanel(this.CLASS_LISTBOX, this.ReadStartAddress);
+       }
+
+       private void LinkInternt_Click(object sender, EventArgs e)
+       {
+           MainFormUtil.GotoMoreData();
        }
 
     }

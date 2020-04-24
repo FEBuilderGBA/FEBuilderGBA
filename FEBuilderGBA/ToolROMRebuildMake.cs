@@ -1528,7 +1528,7 @@ namespace FEBuilderGBA
             while (addr < end)
             {
                 List<uint> pointerIndexes = new List<uint>();
-                EventScript.OneCode code = this.EventScriptWithoutPatchDic.DisAseemble(romdata, addr);
+                EventScript.OneCode code = this.EventScriptWithPatchDic.DisAseemble(romdata, addr);
                 for (int i = 0; i < code.Script.Args.Length; i++)
                 {
                     EventScript.Arg arg = code.Script.Args[i];
@@ -1539,15 +1539,23 @@ namespace FEBuilderGBA
                     }
                 }
 
-                code = this.EventScriptWithPatchDic.DisAseemble(romdata, addr);
-                for (int i = 0; i < code.Script.Args.Length; i++)
+                uint inneraddr = addr;
+                uint innerend = addr + (uint)code.Script.Size;
+                uint inneroffset = 0;
+                while (inneraddr < innerend)
                 {
-                    EventScript.Arg arg = code.Script.Args[i];
-                    EventScript.ArgType type = arg.Type;
-                    if (FEBuilderGBA.EventScript.IsPointerArgs(type))
+                    EventScript.OneCode innercode = this.EventScriptWithoutPatchDic.DisAseemble(romdata, inneraddr);
+                    for (int i = 0; i < innercode.Script.Args.Length; i++)
                     {
-                        pointerIndexes.Add((uint)arg.Position);
+                        EventScript.Arg arg = innercode.Script.Args[i];
+                        EventScript.ArgType type = arg.Type;
+                        if (FEBuilderGBA.EventScript.IsPointerArgs(type))
+                        {
+                            pointerIndexes.Add((uint)arg.Position + inneroffset);
+                        }
                     }
+                    inneroffset += (uint)innercode.Script.Size;
+                    inneraddr += (uint)innercode.Script.Size;
                 }
 
                 MixRec(refCmd

@@ -5,9 +5,9 @@ NAME.en=Change SupportLevel fot next level B
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x26B2E
+ADDRESS=0x26B2E 0xC03444
 
-INFO=支援レベルBになれるサポート値
-INFO.en=A support value that can reach support level B.
-NAME.zh=支撑价值达到支撑B级。
-INFO.zh=可以达到支撑级别B的支撑值。
+INFO=支援レベルBになれるサポート値 Default:0xA0
+INFO.en=Support value that can reach support level B. Default:0xA0
+NAME.zh=达到支撑级别B的支撑值。
+INFO.zh=可以达到支撑级别B的支撑值。 Default:0xA0

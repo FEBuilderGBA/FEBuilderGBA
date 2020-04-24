@@ -1,0 +1,3 @@
+Skyguard: +4 defense against
+flying enemies if within 3
+spaces of an ally flier.

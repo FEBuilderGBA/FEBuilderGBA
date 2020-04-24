@@ -1,0 +1,2 @@
+Glacies: Add unit's Resistance
+to damage dealt. (Skill % activation)

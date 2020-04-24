@@ -24,6 +24,8 @@ namespace FEBuilderGBA
                 return;
             }
 
+            InputFormRef.markupJumpLabel(LinkInternt);
+
             U.SelectedIndexSafety(ShowZoomComboBox, 0);
             Dictionary<uint, string> effectDic = U.LoadDicResource(U.ConfigDataFilename("item_anime_effect_"));
             uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
@@ -443,7 +445,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        //全データの取得
+        //エラー検出
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             string name;
@@ -553,6 +555,11 @@ namespace FEBuilderGBA
                     ,ID, filehint, filename);
                 f.Show();
             }
+        }
+
+        private void LinkInternt_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoMoreData();
         }
 
     

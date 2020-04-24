@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel9 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TracksPanel = new System.Windows.Forms.Panel();
             this.TrackLabel16 = new System.Windows.Forms.Label();
@@ -66,21 +66,23 @@
             this.TrackLabel4 = new System.Windows.Forms.Label();
             this.TrackLabel2 = new System.Windows.Forms.Label();
             this.TrackLabel3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.J_0 = new System.Windows.Forms.Label();
+            this.B0 = new System.Windows.Forms.NumericUpDown();
             this.SongExchangeButton = new System.Windows.Forms.Button();
+            this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
             this.J_3 = new System.Windows.Forms.Label();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
             this.J_2 = new System.Windows.Forms.Label();
+            this.J_1 = new System.Windows.Forms.Label();
             this.SONGPLAY = new System.Windows.Forms.Button();
+            this.B1 = new System.Windows.Forms.NumericUpDown();
             this.ExportButton = new System.Windows.Forms.Button();
+            this.B2 = new System.Windows.Forms.NumericUpDown();
             this.ImportButton = new System.Windows.Forms.Button();
             this.B3 = new System.Windows.Forms.NumericUpDown();
-            this.B2 = new System.Windows.Forms.NumericUpDown();
-            this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.J_1 = new System.Windows.Forms.Label();
-            this.P4 = new System.Windows.Forms.NumericUpDown();
-            this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
-            this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.J_0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,22 +97,21 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
             this.TracksPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
@@ -125,18 +126,6 @@
             this.panel9.Size = new System.Drawing.Size(243, 807);
             this.panel9.TabIndex = 194;
             // 
-            // LabelFilter
-            // 
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(241, 33);
-            this.LabelFilter.TabIndex = 107;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddressList
             // 
             this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -149,6 +138,18 @@
             this.AddressList.Size = new System.Drawing.Size(241, 772);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(241, 33);
+            this.LabelFilter.TabIndex = 107;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
@@ -568,6 +569,54 @@
             this.TrackLabel3.Text = "トラック3";
             this.TrackLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.LinkInternt);
+            this.panel5.Controls.Add(this.J_0);
+            this.panel5.Controls.Add(this.B0);
+            this.panel5.Controls.Add(this.SongExchangeButton);
+            this.panel5.Controls.Add(this.J_4_INSTRUMENT_ADDR);
+            this.panel5.Controls.Add(this.J_3);
+            this.panel5.Controls.Add(this.P4);
+            this.panel5.Controls.Add(this.J_2);
+            this.panel5.Controls.Add(this.J_1);
+            this.panel5.Controls.Add(this.SONGPLAY);
+            this.panel5.Controls.Add(this.B1);
+            this.panel5.Controls.Add(this.ExportButton);
+            this.panel5.Controls.Add(this.B2);
+            this.panel5.Controls.Add(this.ImportButton);
+            this.panel5.Controls.Add(this.B3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1649, 79);
+            this.panel5.TabIndex = 201;
+            // 
+            // J_0
+            // 
+            this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0.Location = new System.Drawing.Point(2, 0);
+            this.J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_0.Name = "J_0";
+            this.J_0.Size = new System.Drawing.Size(138, 26);
+            this.J_0.TabIndex = 24;
+            this.J_0.Text = "トラック数";
+            this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // B0
+            // 
+            this.B0.Hexadecimal = true;
+            this.B0.Location = new System.Drawing.Point(145, -1);
+            this.B0.Margin = new System.Windows.Forms.Padding(2);
+            this.B0.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B0.Name = "B0";
+            this.B0.Size = new System.Drawing.Size(71, 25);
+            this.B0.TabIndex = 25;
+            // 
             // SongExchangeButton
             // 
             this.SongExchangeButton.Location = new System.Drawing.Point(401, 35);
@@ -578,6 +627,17 @@
             this.SongExchangeButton.Text = "別ゲームからの曲移植";
             this.SongExchangeButton.UseVisualStyleBackColor = true;
             this.SongExchangeButton.Click += new System.EventHandler(this.SongExchangeButton_Click);
+            // 
+            // J_4_INSTRUMENT_ADDR
+            // 
+            this.J_4_INSTRUMENT_ADDR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(2, 25);
+            this.J_4_INSTRUMENT_ADDR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_4_INSTRUMENT_ADDR.Name = "J_4_INSTRUMENT_ADDR";
+            this.J_4_INSTRUMENT_ADDR.Size = new System.Drawing.Size(138, 26);
+            this.J_4_INSTRUMENT_ADDR.TabIndex = 170;
+            this.J_4_INSTRUMENT_ADDR.Text = "楽器セット";
+            this.J_4_INSTRUMENT_ADDR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_3
             // 
@@ -590,6 +650,20 @@
             this.J_3.Text = "Reverb";
             this.J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // P4
+            // 
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(145, 24);
+            this.P4.Margin = new System.Windows.Forms.Padding(2);
+            this.P4.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(134, 25);
+            this.P4.TabIndex = 171;
+            // 
             // J_2
             // 
             this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -600,6 +674,17 @@
             this.J_2.TabIndex = 196;
             this.J_2.Text = "Priority";
             this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_1
+            // 
+            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_1.Location = new System.Drawing.Point(285, 0);
+            this.J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_1.Name = "J_1";
+            this.J_1.Size = new System.Drawing.Size(111, 26);
+            this.J_1.TabIndex = 173;
+            this.J_1.Text = "NumBlks";
+            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SONGPLAY
             // 
@@ -612,6 +697,20 @@
             this.SONGPLAY.UseVisualStyleBackColor = true;
             this.SONGPLAY.Click += new System.EventHandler(this.SONGPLAY_Click);
             // 
+            // B1
+            // 
+            this.B1.Hexadecimal = true;
+            this.B1.Location = new System.Drawing.Point(401, -1);
+            this.B1.Margin = new System.Windows.Forms.Padding(2);
+            this.B1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B1.Name = "B1";
+            this.B1.Size = new System.Drawing.Size(71, 25);
+            this.B1.TabIndex = 174;
+            // 
             // ExportButton
             // 
             this.ExportButton.Location = new System.Drawing.Point(953, 35);
@@ -622,6 +721,20 @@
             this.ExportButton.Text = "音楽をファイルへ書き出す";
             this.ExportButton.UseVisualStyleBackColor = true;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
+            // B2
+            // 
+            this.B2.Hexadecimal = true;
+            this.B2.Location = new System.Drawing.Point(624, 0);
+            this.B2.Margin = new System.Windows.Forms.Padding(2);
+            this.B2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B2.Name = "B2";
+            this.B2.Size = new System.Drawing.Size(65, 25);
+            this.B2.TabIndex = 175;
             // 
             // ImportButton
             // 
@@ -648,95 +761,6 @@
             this.B3.Size = new System.Drawing.Size(62, 25);
             this.B3.TabIndex = 176;
             // 
-            // B2
-            // 
-            this.B2.Hexadecimal = true;
-            this.B2.Location = new System.Drawing.Point(624, 0);
-            this.B2.Margin = new System.Windows.Forms.Padding(2);
-            this.B2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B2.Name = "B2";
-            this.B2.Size = new System.Drawing.Size(65, 25);
-            this.B2.TabIndex = 175;
-            // 
-            // B1
-            // 
-            this.B1.Hexadecimal = true;
-            this.B1.Location = new System.Drawing.Point(401, -1);
-            this.B1.Margin = new System.Windows.Forms.Padding(2);
-            this.B1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B1.Name = "B1";
-            this.B1.Size = new System.Drawing.Size(71, 25);
-            this.B1.TabIndex = 174;
-            // 
-            // J_1
-            // 
-            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_1.Location = new System.Drawing.Point(285, 0);
-            this.J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(111, 26);
-            this.J_1.TabIndex = 173;
-            this.J_1.Text = "NumBlks";
-            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // P4
-            // 
-            this.P4.Hexadecimal = true;
-            this.P4.Location = new System.Drawing.Point(145, 24);
-            this.P4.Margin = new System.Windows.Forms.Padding(2);
-            this.P4.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.P4.Name = "P4";
-            this.P4.Size = new System.Drawing.Size(134, 25);
-            this.P4.TabIndex = 171;
-            // 
-            // J_4_INSTRUMENT_ADDR
-            // 
-            this.J_4_INSTRUMENT_ADDR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(2, 25);
-            this.J_4_INSTRUMENT_ADDR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_4_INSTRUMENT_ADDR.Name = "J_4_INSTRUMENT_ADDR";
-            this.J_4_INSTRUMENT_ADDR.Size = new System.Drawing.Size(138, 26);
-            this.J_4_INSTRUMENT_ADDR.TabIndex = 170;
-            this.J_4_INSTRUMENT_ADDR.Text = "楽器セット";
-            this.J_4_INSTRUMENT_ADDR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B0
-            // 
-            this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(145, -1);
-            this.B0.Margin = new System.Windows.Forms.Padding(2);
-            this.B0.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B0.Name = "B0";
-            this.B0.Size = new System.Drawing.Size(71, 25);
-            this.B0.TabIndex = 25;
-            // 
-            // J_0
-            // 
-            this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0.Location = new System.Drawing.Point(2, 0);
-            this.J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_0.Name = "J_0";
-            this.J_0.Size = new System.Drawing.Size(138, 26);
-            this.J_0.TabIndex = 24;
-            this.J_0.Text = "トラック数";
-            this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -752,9 +776,19 @@
             this.panel1.Size = new System.Drawing.Size(1894, 28);
             this.panel1.TabIndex = 192;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(952, 4);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 31;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // ReloadListButton
             // 
-            this.ReloadListButton.Location = new System.Drawing.Point(484, -2);
+            this.ReloadListButton.Location = new System.Drawing.Point(480, -2);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(112, 30);
@@ -912,28 +946,6 @@
             this.panel4.Size = new System.Drawing.Size(1651, 807);
             this.panel4.TabIndex = 53;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.J_0);
-            this.panel5.Controls.Add(this.B0);
-            this.panel5.Controls.Add(this.SongExchangeButton);
-            this.panel5.Controls.Add(this.J_4_INSTRUMENT_ADDR);
-            this.panel5.Controls.Add(this.J_3);
-            this.panel5.Controls.Add(this.P4);
-            this.panel5.Controls.Add(this.J_2);
-            this.panel5.Controls.Add(this.J_1);
-            this.panel5.Controls.Add(this.SONGPLAY);
-            this.panel5.Controls.Add(this.B1);
-            this.panel5.Controls.Add(this.ExportButton);
-            this.panel5.Controls.Add(this.B2);
-            this.panel5.Controls.Add(this.ImportButton);
-            this.panel5.Controls.Add(this.B3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1649, 79);
-            this.panel5.TabIndex = 201;
-            // 
             // SongTrackForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -951,11 +963,13 @@
             this.panel9.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.TracksPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -963,7 +977,6 @@
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1038,5 +1051,6 @@
         private ListBoxEx Track13;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label LinkInternt;
     }
 }

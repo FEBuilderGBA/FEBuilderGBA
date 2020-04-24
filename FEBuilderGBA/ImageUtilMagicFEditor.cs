@@ -266,6 +266,7 @@ namespace FEBuilderGBA
         //最後のOAMフレームの終端を求める.
         public static uint calcOAMLength(uint duumyOAMoffset, uint maxOAM)
         {
+            duumyOAMoffset = U.toOffset(duumyOAMoffset);
             if (duumyOAMoffset == 0)
             {
                 return 0;

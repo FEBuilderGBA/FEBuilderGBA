@@ -554,7 +554,7 @@ EXPORT:1=skillGetter.dmp	Skill_Getter
 UPDATE_METHOD=SKILLSYSTEM
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20200421\PATCH_Skill20200421.txt
+UPDATE_PATCH=..\skill20200425\PATCH_Skill20200425.txt
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
 UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt

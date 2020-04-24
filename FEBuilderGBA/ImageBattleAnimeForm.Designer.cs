@@ -60,6 +60,7 @@
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.X_N_JumpEditor = new System.Windows.Forms.Button();
             this.X_N_JumpPalette = new System.Windows.Forms.Button();
-            this.ERROR_OVER16_ANIME = new System.Windows.Forms.Label();
             this.ShowPaletteComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ShowZoomComboBox = new System.Windows.Forms.ComboBox();
@@ -555,6 +555,16 @@
             this.panel3.Size = new System.Drawing.Size(1234, 30);
             this.panel3.TabIndex = 67;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(3, 483);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 30;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // N_ReloadListButton
             // 
             this.N_ReloadListButton.Location = new System.Drawing.Point(484, -1);
@@ -617,12 +627,12 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.LinkInternt);
             this.DragTargetPanel.Controls.Add(this.X_LZ77_INFO);
             this.DragTargetPanel.Controls.Add(this.N_Comment);
             this.DragTargetPanel.Controls.Add(this.label6);
             this.DragTargetPanel.Controls.Add(this.X_N_JumpEditor);
             this.DragTargetPanel.Controls.Add(this.X_N_JumpPalette);
-            this.DragTargetPanel.Controls.Add(this.ERROR_OVER16_ANIME);
             this.DragTargetPanel.Controls.Add(this.ShowPaletteComboBox);
             this.DragTargetPanel.Controls.Add(this.label7);
             this.DragTargetPanel.Controls.Add(this.ShowZoomComboBox);
@@ -720,15 +730,6 @@
             this.X_N_JumpPalette.Text = "汎用色";
             this.X_N_JumpPalette.UseVisualStyleBackColor = true;
             this.X_N_JumpPalette.Click += new System.EventHandler(this.X_N_JumpPalette_Click);
-            // 
-            // ERROR_OVER16_ANIME
-            // 
-            this.ERROR_OVER16_ANIME.AutoSize = true;
-            this.ERROR_OVER16_ANIME.Location = new System.Drawing.Point(3, 483);
-            this.ERROR_OVER16_ANIME.Name = "ERROR_OVER16_ANIME";
-            this.ERROR_OVER16_ANIME.Size = new System.Drawing.Size(273, 18);
-            this.ERROR_OVER16_ANIME.TabIndex = 183;
-            this.ERROR_OVER16_ANIME.Text = "16色を超える戦闘アニメーションです。";
             // 
             // ShowPaletteComboBox
             // 
@@ -1626,7 +1627,6 @@
         private InterpolatedPictureBox X_B_ANIME_PIC2;
         private System.Windows.Forms.ComboBox ShowPaletteComboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label ERROR_OVER16_ANIME;
         private InterpolatedPictureBox L_0_BATTLEANIMEITEMICON_1;
         private System.Windows.Forms.Button X_N_JumpPalette;
         private InterpolatedPictureBox L_2_BATTLEANIMEICON;
@@ -1638,5 +1638,6 @@
         private TextBoxEx N_Comment;
         private System.Windows.Forms.Label label6;
         private TextBoxEx X_LZ77_INFO;
+        private System.Windows.Forms.Label LinkInternt;
     }
 }

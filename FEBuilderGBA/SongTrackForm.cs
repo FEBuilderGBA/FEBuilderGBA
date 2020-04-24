@@ -39,6 +39,8 @@ namespace FEBuilderGBA
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(SONGPLAY, Properties.Resources.icon_music);
 
+            InputFormRef.markupJumpLabel(LinkInternt);
+
             U.AllowDropFilename(this, new string[] { ".S", ".MID", ".MIDI", ".WAV", ".INSTRUMENT" }, (string filename) =>
             {
                 using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
@@ -399,6 +401,11 @@ namespace FEBuilderGBA
             Track14.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel14.Height - 10;
             Track15.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel15.Height - 10;
             Track16.Height = TracksPanel.Height - AllTracksLabel.Height - TrackLabel16.Height - 10;
+        }
+
+        private void LinkInternt_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoMoreData();
         }
 
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
@@ -58,7 +60,6 @@
             this.ItemIconListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.DragTargetPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -74,18 +75,33 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.LinkInternt);
             this.DragTargetPanel2.Controls.Add(this.JumpToSystemPalette);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
             this.DragTargetPanel2.Location = new System.Drawing.Point(286, 418);
             this.DragTargetPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel2.Name = "DragTargetPanel2";
-            this.DragTargetPanel2.Size = new System.Drawing.Size(788, 60);
+            this.DragTargetPanel2.Size = new System.Drawing.Size(810, 60);
             this.DragTargetPanel2.TabIndex = 95;
+            // 
+            // JumpToSystemPalette
+            // 
+            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_ITEMICON_SYSTEM_PALETTE";
+            this.JumpToSystemPalette.AutoSize = true;
+            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JumpToSystemPalette.Location = new System.Drawing.Point(363, 20);
+            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
+            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
+            this.JumpToSystemPalette.TabIndex = 201;
+            this.JumpToSystemPalette.Text = "パレットの変更";
+            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(23, 14);
+            this.ImportButton.Location = new System.Drawing.Point(16, 14);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(160, 30);
@@ -96,7 +112,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(214, 14);
+            this.ExportButton.Location = new System.Drawing.Point(184, 14);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(160, 30);
@@ -159,8 +175,18 @@
             this.panel1.Location = new System.Drawing.Point(16, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 30);
+            this.panel1.Size = new System.Drawing.Size(1078, 30);
             this.panel1.TabIndex = 94;
+            // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(491, 20);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 30;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
             // 
             // ReadCount
             // 
@@ -208,7 +234,7 @@
             this.AddressPanel.Location = new System.Drawing.Point(286, 45);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddressPanel.Name = "AddressPanel";
-            this.AddressPanel.Size = new System.Drawing.Size(786, 30);
+            this.AddressPanel.Size = new System.Drawing.Size(808, 30);
             this.AddressPanel.TabIndex = 93;
             // 
             // WriteButton
@@ -216,7 +242,7 @@
             this.WriteButton.Location = new System.Drawing.Point(619, -2);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(166, 30);
+            this.WriteButton.Size = new System.Drawing.Size(188, 30);
             this.WriteButton.TabIndex = 53;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -282,7 +308,7 @@
             this.DragTargetPanel.Location = new System.Drawing.Point(286, 75);
             this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel.Name = "DragTargetPanel";
-            this.DragTargetPanel.Size = new System.Drawing.Size(787, 333);
+            this.DragTargetPanel.Size = new System.Drawing.Size(809, 333);
             this.DragTargetPanel.TabIndex = 92;
             // 
             // Comment
@@ -312,7 +338,7 @@
             this.X_ICON_REF_ITEM.FormattingEnabled = true;
             this.X_ICON_REF_ITEM.IntegralHeight = false;
             this.X_ICON_REF_ITEM.ItemHeight = 18;
-            this.X_ICON_REF_ITEM.Location = new System.Drawing.Point(525, 9);
+            this.X_ICON_REF_ITEM.Location = new System.Drawing.Point(552, 9);
             this.X_ICON_REF_ITEM.Margin = new System.Windows.Forms.Padding(4);
             this.X_ICON_REF_ITEM.Name = "X_ICON_REF_ITEM";
             this.X_ICON_REF_ITEM.Size = new System.Drawing.Size(256, 318);
@@ -418,20 +444,6 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // JumpToSystemPalette
-            // 
-            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_ITEMICON_SYSTEM_PALETTE";
-            this.JumpToSystemPalette.AutoSize = true;
-            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JumpToSystemPalette.Location = new System.Drawing.Point(525, 20);
-            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
-            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
-            this.JumpToSystemPalette.TabIndex = 201;
-            this.JumpToSystemPalette.Text = "パレットの変更";
-            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
-            // 
             // ImageItemIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -497,5 +509,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.Label JumpToSystemPalette;
+        private System.Windows.Forms.Label LinkInternt;
     }
 }

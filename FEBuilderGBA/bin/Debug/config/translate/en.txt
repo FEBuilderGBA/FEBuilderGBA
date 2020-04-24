@@ -3175,6 +3175,9 @@ Would you like to activate the {0} patch?
 :パッチの自動適応に失敗しました。\r\nパッチ画面にエラーが表示されていないか確認してください。\r\n必須パッチの適応に失敗したということは、FEBuilderGBAの解凍に失敗している可能性があります。\r\nFEBuilderGBAを再インストールしてください。\r\nそれでも問題が解決しない場合は、バグとして報告してください。\r\n
 Automatic patch adaptation failed.\r\nPlease check whether an error is displayed on the patch screen.\r\nFailure to adapt mandatory patches means that it may have failed to decompress FEBuilderGBA.\r\nPlease reinstall FEBuilderGBA.\r\nIf the problem persists, please report it as a bug.\r\n
 
+:16色を超える戦闘アニメーションです。
+It is a battle animation with more than 16 colors.
+
 :0=アイテム指定
 0=item specification
 
@@ -3217,14 +3220,14 @@ Weapon type
 :アニメ番号
 Animation ID
 
+:インターネットから新しいリソースを探す
+Search the Internet for new resources.
+
 :エディタ
 Editor
 
 :汎用色
 Generic Color
-
-:16色を超える戦闘アニメーションです。
-It is a battle animation with more than 16 colors.
 
 :グレー
 Gray
@@ -3439,14 +3442,14 @@ In order to use the item icon in the expanded area, a patch of the item icon ext
 :アイテムアイコンテーブルの拡張に失敗しました。
 Expansion of item icon table failed.
 
+:パレットの変更
+Change Palette
+
 :参照アイテム
 Reference item
 
 :原寸大
 Actual Size
-
-:パレットの変更
-Change Palette
 
 :アイテムアイコン
 Item Icons
@@ -3468,6 +3471,12 @@ Export Magic Animation
 
 :魔法アニメの読込
 Import Magic Animation
+
+:追加魔法 CSACreator
+Magic Extends CSACreator
+
+:追加魔法 FEditorAdvCSA
+Magic Extends FEditorAdvCSA
 
 :パレット No{0}
 paletteNo {0}
@@ -10048,6 +10057,9 @@ Track2
 :トラック3
 Track3
 
+:トラック数
+Tracks
+
 :別ゲームからの曲移植
 Song Import from another game
 
@@ -10059,9 +10071,6 @@ Export Music
 
 :音楽をファイルから読み込む
 Import Music
-
-:トラック数
-Tracks
 
 :mid2agbが設定されていません。\r\n設定画面より、mid2agbの設定をしてください。
 mid2agb is not set.\r\nPlease set mid2agb from setting screen.
