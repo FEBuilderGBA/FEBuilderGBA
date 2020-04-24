@@ -3017,7 +3017,7 @@ namespace FEBuilderGBA
             else
             {//フリーエリアを利用する.
                 bool isProgramArea = true;
-                bool alloc_dataonly_hint = U.stringbool(U.at(patch.Param, "ALLOC_DATAONLY_HINT"));
+                bool alloc_dataonly_hint = U.stringbool(U.at(patch.Param, "ALLOC_DATAONLY_HINT","false"));
                 if (alloc_dataonly_hint)
                 {//プログラムコードではない、データパッチの割り当て。ROMの後ろに割り当ててよい。
                     isProgramArea = false;

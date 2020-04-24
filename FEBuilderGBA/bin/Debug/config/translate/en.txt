@@ -1204,6 +1204,9 @@ Music being played.
 :トラップデータ
 Trap data
 
+:クリアターン数
+Number of clear turns.
+
 :支援フラグ
 Support Flag
 

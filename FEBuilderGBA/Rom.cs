@@ -251,7 +251,9 @@ namespace FEBuilderGBA
         uint workmemory_next_text_buffer_address();  //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ
         uint workmemory_local_flag_address();  //ワークメモリ グローバルフラグ
         uint workmemory_global_flag_address();  //ワークメモリ ローカルフラグ
-        uint workmemory_trap_address();  //ワークメモリ ローカルフラグ
+        uint workmemory_trap_address();  //トラップデータ
+        uint workmemory_clear_turn_address();  //クリアターン数
+        uint workmemory_clear_turn_count();  //クリアターン数 最大数
         uint workmemory_memoryslot_address();  //ワークメモリ メモリスロットFE8
         uint workmemory_eventcounter_address();  //イベントカウンター メモリスロットFE8
         uint workmemory_procs_forest_address();  //ワークメモリ Procs

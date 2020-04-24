@@ -32,7 +32,8 @@ namespace FEBuilderGBA
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
             g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
             g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
-            g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = MapSecondPalette_extends.NoCache;
+            g_Cache_SearchFlag0x28ToMapSecondPalettePatch = MapSecondPalette_extends.NoCache;
+            g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1090,14 +1091,14 @@ namespace FEBuilderGBA
             Flag0x28_45,   
             NoCache = (int)NO_CACHE
         };
-        static MapSecondPalette_extends g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = MapSecondPalette_extends.NoCache;
+        static MapSecondPalette_extends g_Cache_SearchFlag0x28ToMapSecondPalettePatch = MapSecondPalette_extends.NoCache;
         public static MapSecondPalette_extends SearchFlag0x28ToMapSecondPalettePatch()
         {
-            if (g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow == MapSecondPalette_extends.NoCache)
+            if (g_Cache_SearchFlag0x28ToMapSecondPalettePatch == MapSecondPalette_extends.NoCache)
             {
-                g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow = SearchFlag0x28ToMapSecondPalettePatchLow();
+                g_Cache_SearchFlag0x28ToMapSecondPalettePatch = SearchFlag0x28ToMapSecondPalettePatchLow();
             }
-            return g_Cache_SearchFlag0x28ToMapSecondPalettePatchLow;
+            return g_Cache_SearchFlag0x28ToMapSecondPalettePatch;
         }
         static MapSecondPalette_extends SearchFlag0x28ToMapSecondPalettePatchLow()
         {
@@ -1132,6 +1133,52 @@ namespace FEBuilderGBA
                 }
             }
             return MapSecondPalette_extends.NO;
+        }
+
+
+        //クリアターン数2倍
+        public enum ClearTurn2x_extends
+        {
+            NO,             //なし
+            _2x,
+            NoCache = (int)NO_CACHE
+        };
+        static ClearTurn2x_extends g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
+        public static ClearTurn2x_extends SearchCache_ClearTurn2x()
+        {
+            if (g_Cache_ClearTurn2x == ClearTurn2x_extends.NoCache)
+            {
+                g_Cache_ClearTurn2x = SearchCache_ClearTurn2xLow();
+            }
+            return g_Cache_ClearTurn2x;
+        }
+        static ClearTurn2x_extends SearchCache_ClearTurn2xLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="2x",	ver = "FE8J", addr = 0xa8bac,data = new byte[]{0x02}},
+                new PatchTableSt{ name="2x",	ver = "FE8U", addr = 0xA4168,data = new byte[]{0x02}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "2x")
+                {
+                    return ClearTurn2x_extends._2x;
+                }
+            }
+            return ClearTurn2x_extends.NO;
         }
 
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)

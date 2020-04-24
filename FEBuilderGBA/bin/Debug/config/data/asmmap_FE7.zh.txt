@@ -1046,8 +1046,8 @@
 
 @ClearTurn@00	short	章节编号和圈数	匝数<<7+章节ID
 @ClearTurn@02	short	清除时间秒
-0203EBD8	@ClearTurn@[24]	章清除转	{J}
-0203EC00	@ClearTurn@[24]	章清除转	{U}
+0203EBD8	@ClearTurn@[30]	章清除转	{J}
+0203EC00	@ClearTurn@[30]	章清除转	{U}
 
 //@ITEMSTOCK@00	byte	项目ID
 //@ITEMSTOCK@01	byte	项目数量

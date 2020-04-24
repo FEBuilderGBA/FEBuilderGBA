@@ -1,0 +1,4 @@
+FF=ANY
+00=Player
+40=NPC
+80=Enemy

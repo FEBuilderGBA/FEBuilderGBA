@@ -2414,11 +2414,22 @@ namespace FEBuilderGBA
             this.SoundList.DummyAlloc(this.SongWorkingRAMs.Length, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SoundAddress);
 
-            this.TrapCheckBuffer = new byte[8 * 0x40];
             this.TrapList.OwnerDraw(DrawTrapList, DrawMode.OwnerDrawVariable, false);
             this.TrapList.DummyAlloc(0x40, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.TrapAddress);
+
+            this.ClearTurnList.OwnerDraw(DrawClearTurnList, DrawMode.OwnerDrawVariable, false);
+            if (PatchUtil.SearchCache_ClearTurn2x() == PatchUtil.ClearTurn2x_extends._2x)
+            {
+                this.ClearTurnList.DummyAlloc((int)Program.ROM.RomInfo.workmemory_clear_turn_count() * 2, 0);
+            }
+            else
+            {
+                this.ClearTurnList.DummyAlloc((int)Program.ROM.RomInfo.workmemory_clear_turn_count(), 0);
+            }
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ClearTurnList);
         }
+
         //編を求める
         uint GetEdition()
         {
@@ -2532,25 +2543,29 @@ namespace FEBuilderGBA
         {
             byte[] bin = Program.RAM.getBinaryData(
                   Program.ROM.RomInfo.workmemory_trap_address()
-                , this.TrapCheckBuffer.Length);
-            if (U.memcmp(this.TrapCheckBuffer, bin) != 0)
+                , 8 * 0x40);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.TrapCheckSUM)
             {//変更有
-                this.TrapCheckBuffer = bin;
+                this.TrapCheckSUM = sum;
                 this.TrapList.Invalidate();
+            }
+        }
+        void UpdateClearTurn()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_clear_turn_address()
+                , 4 * Program.ROM.RomInfo.workmemory_clear_turn_count());
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.ClearTurnSUM)
+            {//変更有
+                this.ClearTurnSUM = sum;
+                this.ClearTurnList.Invalidate();
             }
         }
         void UpdatePalette()
         {
             byte[] bin = Program.RAM.getBinaryData(
-                  Program.ROM.RomInfo.workmemory_trap_address()
-                , this.TrapCheckBuffer.Length);
-            if (U.memcmp(this.TrapCheckBuffer, bin) != 0)
-            {//変更有
-                this.TrapCheckBuffer = bin;
-                this.TrapList.Invalidate();
-            }
-
-            bin = Program.RAM.getBinaryData(
                   Program.ROM.RomInfo.workmemory_palette_address()
                 , this.PaletteCheckBuffer.Length);
             if (U.memcmp(this.PaletteCheckBuffer, bin) != 0)
@@ -2682,12 +2697,79 @@ namespace FEBuilderGBA
             bounds.Y += (int)lineHeight;
             return new Size(bounds.X, bounds.Y);
         }
+
+        Size DrawClearTurnList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            uint lineHeight = 12;
+
+            uint addr;
+            if (PatchUtil.SearchCache_ClearTurn2x() == PatchUtil.ClearTurn2x_extends._2x)
+            {
+                addr = Program.ROM.RomInfo.workmemory_clear_turn_address() + ((uint)index * 0x2);
+            }
+            else
+            {
+                addr = Program.ROM.RomInfo.workmemory_clear_turn_address() + ((uint)index * 0x4);
+            }
+            uint mix = Program.RAM.u16(addr + 0);
+
+            uint turns;
+            uint mapid;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                turns = mix >> 6;
+                mapid = mix & 0x2f;
+            }
+            else
+            {
+                turns = mix >> 7;
+                mapid = mix & 0x7f;
+            }
+
+            uint seconds = 0;
+            if (PatchUtil.SearchCache_ClearTurn2x() == PatchUtil.ClearTurn2x_extends.NO)
+            {
+                seconds = Program.RAM.u16(addr + 2); 
+            }
+
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            if (mix == 0)
+            {
+                bounds.Y += (int)lineHeight;
+                return new Size(bounds.X, bounds.Y);
+            }
+            string name = U.ToHexString(mapid) +" "+ MapSettingForm.GetMapName(mapid);
+            U.DrawText(name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 200;
+
+            U.DrawText(turns + " Turn", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 80;
+
+            if (PatchUtil.SearchCache_ClearTurn2x() == PatchUtil.ClearTurn2x_extends.NO)
+            {
+                U.DrawText(seconds + " Seconds", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 80;
+            }
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+
+
         uint Edition;
         uint Diffeclty;
         byte[] PaletteCheckBuffer;
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
-        byte[] TrapCheckBuffer;
+        uint TrapCheckSUM;
+        uint ClearTurnSUM;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
         {
@@ -2765,6 +2847,10 @@ namespace FEBuilderGBA
                 MapChangeForm f = (MapChangeForm)InputFormRef.JumpForm<MapChangeForm>();
                 f.JumpToMAPIDAndID( mapid, ext1);
             }
+        }
+        private void ClearTurnList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
 
         private void PARTY_ROMUNITPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -2866,6 +2952,7 @@ namespace FEBuilderGBA
                 PaletteList_MouseDoubleClick(sender, null);
             }
         }
+
 
 
 

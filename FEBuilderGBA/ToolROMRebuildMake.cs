@@ -627,6 +627,9 @@ namespace FEBuilderGBA
             }
 
             //各種スクリプトの辞書を構築.
+            this.EventScriptWithPatchDic = new EventScript();
+            this.EventScriptWithPatchDic.Load(FEBuilderGBA.EventScript.EventScriptType.Event);
+
             this.EventScriptWithoutPatchDic = new EventScript();
             this.EventScriptWithoutPatchDic.Load(FEBuilderGBA.EventScript.EventScriptType.Event_without_Patch);
 
@@ -1518,7 +1521,47 @@ namespace FEBuilderGBA
             NoPointer(refCmd, infsb, romdata, addr, end - addr);
         }
 
-        void EventScript(RefCmd refCmd, StringBuilder infsb, byte[] romdata, uint addr, uint length, EventScript scriptDic)
+        void EventScript1(RefCmd refCmd, StringBuilder infsb, byte[] romdata, uint addr, uint length)
+        {
+            uint startaddr = addr;
+            uint end = Math.Min(addr + length, (uint)romdata.Length);
+            while (addr < end)
+            {
+                List<uint> pointerIndexes = new List<uint>();
+                EventScript.OneCode code = this.EventScriptWithoutPatchDic.DisAseemble(romdata, addr);
+                for (int i = 0; i < code.Script.Args.Length; i++)
+                {
+                    EventScript.Arg arg = code.Script.Args[i];
+                    EventScript.ArgType type = arg.Type;
+                    if (FEBuilderGBA.EventScript.IsPointerArgs(type))
+                    {
+                        pointerIndexes.Add((uint)arg.Position);
+                    }
+                }
+
+                code = this.EventScriptWithPatchDic.DisAseemble(romdata, addr);
+                for (int i = 0; i < code.Script.Args.Length; i++)
+                {
+                    EventScript.Arg arg = code.Script.Args[i];
+                    EventScript.ArgType type = arg.Type;
+                    if (FEBuilderGBA.EventScript.IsPointerArgs(type))
+                    {
+                        pointerIndexes.Add((uint)arg.Position);
+                    }
+                }
+
+                MixRec(refCmd
+                    , infsb
+                    , romdata
+                    , addr
+                    , (uint)code.Script.Size
+                    , pointerIndexes.ToArray());
+
+                addr += (uint)code.Script.Size;
+            }
+        }
+
+        void EventScript2(RefCmd refCmd, StringBuilder infsb, byte[] romdata, uint addr, uint length, EventScript scriptDic)
         {
             uint startaddr = addr;
             uint end = Math.Min(addr + length, (uint)romdata.Length);
@@ -1826,6 +1869,7 @@ namespace FEBuilderGBA
             return maybeEnd - addr;
         }
 
+        EventScript EventScriptWithPatchDic;
         EventScript EventScriptWithoutPatchDic;
 
         RefCmd Mix(Address address)
@@ -1944,17 +1988,17 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.EVENTSCRIPT)
             {
-                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, EventScriptWithoutPatchDic);
+                EventScript1(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.AISCRIPT)
             {
-                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.AIScript);
+                EventScript2(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.AIScript);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.PROCS)
             {
-                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.ProcsScript);
+                EventScript2(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.ProcsScript);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.SONGTRACK)

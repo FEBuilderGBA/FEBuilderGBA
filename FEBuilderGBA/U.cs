@@ -7094,6 +7094,16 @@ namespace FEBuilderGBA
         }
         [DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        public static uint CalcCheckSUM(byte[] data)
+        {
+            uint result = 0;
+            foreach (byte c in data)
+            {
+                result += c;
+            }
+            return result;
+        }
     }
 }
 

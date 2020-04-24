@@ -232,6 +232,10 @@
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.label92 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
+            this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
+            this.label82 = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
@@ -572,6 +576,7 @@
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
@@ -3201,6 +3206,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(785, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -3420,6 +3426,54 @@
             this.label92.TabIndex = 319;
             this.label92.Text = "パレット";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.textBoxEx33);
+            this.tabPage4.Controls.Add(this.ClearTurnList);
+            this.tabPage4.Controls.Add(this.label82);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(853, 844);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "クリアターン数";
+            // 
+            // textBoxEx33
+            // 
+            this.textBoxEx33.ErrorMessage = "";
+            this.textBoxEx33.Location = new System.Drawing.Point(732, 5);
+            this.textBoxEx33.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx33.Name = "textBoxEx33";
+            this.textBoxEx33.Placeholder = "";
+            this.textBoxEx33.ReadOnly = true;
+            this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
+            this.textBoxEx33.TabIndex = 330;
+            // 
+            // ClearTurnList
+            // 
+            this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearTurnList.FormattingEnabled = true;
+            this.ClearTurnList.IntegralHeight = false;
+            this.ClearTurnList.ItemHeight = 18;
+            this.ClearTurnList.Location = new System.Drawing.Point(3, 33);
+            this.ClearTurnList.Name = "ClearTurnList";
+            this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
+            this.ClearTurnList.TabIndex = 329;
+            this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
+            // 
+            // label82
+            // 
+            this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label82.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label82.Location = new System.Drawing.Point(3, 3);
+            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(847, 30);
+            this.label82.TabIndex = 328;
+            this.label82.Text = "クリアターン数";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Party_ControlPanel
             // 
@@ -6630,6 +6684,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.Party_ControlPanel.ResumeLayout(false);
             this.Party_ControlPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
@@ -7174,5 +7230,9 @@
         private ListBoxEx SoundList;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private TextBoxEx textBoxEx33;
+        private ListBoxEx ClearTurnList;
+        private System.Windows.Forms.Label label82;
     }
 }

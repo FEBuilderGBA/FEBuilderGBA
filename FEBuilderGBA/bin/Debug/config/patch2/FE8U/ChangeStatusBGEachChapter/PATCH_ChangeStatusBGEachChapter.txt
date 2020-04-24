@@ -23,7 +23,7 @@ LISTNAME=$B0:MAP
 
 //データを定義します
 B0:MAP_ANYFF=MAPID(0xFF=ANY)
-B1=Allegiance(0xFF=ANY,0x00=Player,0x40=NPC,0x80=Enemy)
+B1:$COMBO AllegianceCombo.txt=Allegiance(0xFF=ANY)
 W2:FLAG=Flag(0x00=ANY)
 P4:PatchImage_ZIMAGE=Image
 P8:PatchImage_ZHEADERTSA=TSA

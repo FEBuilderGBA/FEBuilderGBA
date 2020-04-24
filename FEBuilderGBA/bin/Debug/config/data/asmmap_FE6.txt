@@ -1452,3 +1452,6 @@
 08016B24	GetWeaponRankLevel
 08022a84	GetROMUnitSupportCount
 08022af0	GetSupportLevelBySupportIndex
+@ClearTurn@00	short	章IDとターン数	ターン数 << 7 + 章ID
+@ClearTurn@02	short	クリアタイム秒数
+0203D994	@ClearTurn@[20]	章クリアターン

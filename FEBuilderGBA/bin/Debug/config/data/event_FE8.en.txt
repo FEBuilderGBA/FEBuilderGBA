@@ -557,3 +557,4 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20100200	Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding(EVBIT_MODIFY 2)	{EVBIT}
 20100300	Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 3)	{EVBIT}
 20100400	Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding(EVBIT_MODIFY 4)	{EVBIT}
+2025XXXX	[XX: MAPCHAPTER: Chapter ID] Map switching (LOMA).	{MAP}
