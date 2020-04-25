@@ -1,0 +1,26 @@
+NAME=Change SilverCardList on Bargain Skill (SkillSystems)
+
+IF:$FGREP4 Bargain.dmp=0xC0 0xB4 0x0F 0x48
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+8 Bargain.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはアイテム名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=SilverCard
+
+INFO=If have, specify item that will be discounted.
+
+AUTHOR=SkillSystems Authors

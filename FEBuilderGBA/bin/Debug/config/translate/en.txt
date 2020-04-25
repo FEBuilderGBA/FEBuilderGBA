@@ -3221,7 +3221,7 @@ Weapon type
 Animation ID
 
 :インターネットから新しいリソースを探す
-Search the Internet for new resources.
+Search Internet for new resources
 
 :エディタ
 Editor
@@ -8777,7 +8777,7 @@ Update
 Compatibility
 
 :ネット接続時のプロキシサーバ
-Proxy server when connecting to the Internet
+Proxy server when connecting to Internet
 
 :その他UI
 Other UI
