@@ -513,18 +513,18 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
-                {//F00000 - F67000
-                    if (addr >= 0xF00000 && addr < 0xF67000)
+                {//F00000 - F90000
+                    if (addr >= 0xF00000 && addr < 0xF90000)
                     {
-                        addr = 0xF67000;
+                        addr = 0xF90000;
                         return true;
                     }
                 }
                 else
                 {//1c1ec0 - F00000
-                    if (addr >= 0x1c1ec0 && addr < 0xF00000)
+                    if (addr >= 0x1c1ec0 && addr < 0xC00000)
                     {
-                        addr = 0xF00000;
+                        addr = 0xC00000;
                         return true;
                     }
                 }
@@ -537,12 +537,12 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
-                {//F00000 - F67000
-                    list.Add(new Address(0xF00000, 0xF67000 - 0xF00000, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
+                {//F00000 - F90000
+                    list.Add(new Address(0xF00000, 0xF90000 - 0xF00000, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
                 }
                 else
-                {//1c1ec0 - F00000
-                    list.Add(new Address(0x1c1ec0, 0xF00000 - 0x1c1ec0, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
+                {//1c1ec0 - C00000
+                    list.Add(new Address(0x1c1ec0, 0xC00000 - 0x1c1ec0, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
                 }
             }
         }

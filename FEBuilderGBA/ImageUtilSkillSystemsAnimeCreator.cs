@@ -740,7 +740,7 @@ namespace FEBuilderGBA
             }
             FEBuilderGBA.Address.AddAddress(recycle
                 , anime_address
-                , anime_config_address - anime_address + (4 * 4)
+                , anime_config_address - anime_address + (4 * 5)
                 , U.NOT_FOUND
                 , basename + "POINTER"
                 , Address.DataTypeEnum.POINTER);
