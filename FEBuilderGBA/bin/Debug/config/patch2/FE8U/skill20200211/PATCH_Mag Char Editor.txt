@@ -22,5 +22,5 @@ LISTNAME=UNIT
 B0:DECIMAL=Base Magic
 B1:DECIMAL=Magic Growth
 
-INFO=Mag Char Editor.nmm
+INFO=Mag Char Editor.nmm SkillSystems's Strmag split
 

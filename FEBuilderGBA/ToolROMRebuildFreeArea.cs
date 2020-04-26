@@ -32,6 +32,7 @@ namespace FEBuilderGBA
                 , isUseOtherGraphics: true
                 , isUseOAMSP: true
                 );
+            MoveToFreeSapceForm.AppendSkillSystemsSanctuary(knownList);
 
             Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
             MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE+16+16, data, RebuildAddress, useMap);

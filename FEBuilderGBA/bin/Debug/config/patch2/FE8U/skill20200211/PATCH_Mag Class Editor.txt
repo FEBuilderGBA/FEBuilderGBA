@@ -24,5 +24,5 @@ B1:DECIMAL=Magic Growth
 B2:DECIMAL=Magic Cap
 B3:DECIMAL=Magic Promotion Bonus
 
-INFO=Mag Class Editor.nmm
+INFO=Mag Class Editor.nmm SkillSystems's Strmag split
 

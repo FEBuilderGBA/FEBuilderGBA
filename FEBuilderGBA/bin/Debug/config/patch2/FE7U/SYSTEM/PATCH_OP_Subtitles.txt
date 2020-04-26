@@ -1,0 +1,32 @@
+NAME=OP字幕
+NAME.en=OP subtitles
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0xBCCEC
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//データを定義します
+P0:PatchImage_ZIMAGE=Image
+W4=Args1
+W8=Args2
+
+WIDTH=256
+HEIGHT=16
+//利用パレット数
+PALETTE=1
+
+PALETTE_POINTER=0xBCCE8
+KEEP_PALTTE=1
+
+INFO=OP字幕 "Once, dragons and men coexisted."\r\n背景の色で読みずらいのですが、パレット0を黒に変更すると、よく見えると思います。
+INFO.en=OP Subtitle "Once, dragons and men coexisted.".\r\nIt's hard to read with the background color, but I think it will look better if you change palette 0 to black.
+INFO.zh=OP字幕"Once, dragons and men coexisted."。\r\n很难用背景色来阅读，但是我认为如果将调色板0更改为黑色会更好看。

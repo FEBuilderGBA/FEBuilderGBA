@@ -13,3 +13,7 @@ ZHEADERTSA_POINTER=0x0009C804//0x08A1BAE4
 PALETTE_POINTER=0x00036D2C//0x085B6BB4
 
 KEEPTSA=true
+
+INFO=警告: このパッチで画像を変更すると、クラッシュするという報告がされています。
+INFO.en=Warning: It has been reported that changing the image with this patch causes a crash.
+INFO.zh=Warning: It has been reported that changing the image with this patch causes a crash.

@@ -508,7 +508,7 @@ namespace FEBuilderGBA
             return Program.ROM.RomInfo.compress_image_borderline_address();
         }
         //SkillSystems Reserve
-        static bool IsSkillReserve(ref uint addr)
+        public static bool IsSkillReserve(ref uint addr)
         {
             if (Program.ROM.RomInfo.version() == 8)
             {
@@ -530,6 +530,21 @@ namespace FEBuilderGBA
                 }
             }
             return false;
+        }
+
+        public static void AppendSkillSystemsSanctuary(List<Address> list)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//F00000 - F67000
+                    list.Add(new Address(0xF00000, 0xF67000 - 0xF00000, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
+                }
+                else
+                {//1c1ec0 - F00000
+                    list.Add(new Address(0x1c1ec0, 0xF00000 - 0x1c1ec0, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
+                }
+            }
         }
 
         //移動処理

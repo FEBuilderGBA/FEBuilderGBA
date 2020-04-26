@@ -562,6 +562,27 @@ namespace FEBuilderGBA
             ApplyLog.AppendLine();
         }
 
+        uint SearchShareArea(byte[] bin)
+        {
+            //実はこのデータが既にROMにあったりしますか?
+            uint foundAddr = U.Grep(this.WriteROMData32MB, bin, 0x100, this.WriteOffset, 4);
+            if (foundAddr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+
+            if (MoveToFreeSapceForm.IsSkillReserve(ref foundAddr))
+            {//SkillSystemsのエリアがある場合は再建策
+                foundAddr = U.Grep(this.WriteROMData32MB, bin, foundAddr, this.WriteOffset, 4);
+                if (foundAddr == U.NOT_FOUND)
+                {
+                    return U.NOT_FOUND;
+                }
+            }
+            //既にROMにあるので共有させましょう
+            return foundAddr;
+        }
+
         void Bin(uint addr, string targetfilename, string debugInfo)
         {
             byte[] bin = File.ReadAllBytes(targetfilename);
@@ -579,7 +600,7 @@ namespace FEBuilderGBA
                 if (bin.Length >= 8)
                 {
                     //実はこのデータが既にROMにあったりしますか?
-                    uint foundAddr = U.Grep(this.WriteROMData32MB, bin, 0x100, this.WriteOffset, 4);
+                    uint foundAddr = SearchShareArea(bin);
                     if (foundAddr != U.NOT_FOUND)
                     {//既にROMにあるので共有させましょう
                         writeaddr = foundAddr;

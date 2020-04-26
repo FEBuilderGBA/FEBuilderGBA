@@ -52,12 +52,12 @@ namespace FEBuilderGBA
 
         private void OrignalROMSelectButton_Click(object sender, EventArgs e)
         {
-            TargetFilenameTextBox.Text = OrignalROMOpenFile();
+            OrignalROMTextArea.Text = OrignalROMOpenFile();
         }
 
         private void OrignalROMTextArea_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            TargetFilenameTextBox.Text = OrignalROMOpenFile();
+            OrignalROMTextArea.Text = OrignalROMOpenFile();
         }
         string OrignalROMOpenFile()
         {
