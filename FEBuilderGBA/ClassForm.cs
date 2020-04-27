@@ -1051,6 +1051,8 @@ namespace FEBuilderGBA
 
             U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
             U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+
+            U.SelectedIndexSafety(MagicExtClassBase, -128, 127, (int)MagicExtClassBase.Value);
         }
         void SelectedIndexChangedFE7UMagicExtends(object sender, EventArgs e)
         {
@@ -1075,7 +1077,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            this.MagicExtClassBase.Value = MagicSplitUtil.GetClassBaseMagicExtends(cid, addr);
+            this.MagicExtClassBase.Value = (sbyte)MagicSplitUtil.GetClassBaseMagicExtends(cid, addr);
             this.MagicExtClassGrow.Value = MagicSplitUtil.GetClassGrowMagicExtends(cid, addr);
             this.MagicExtClassLimit.Value = MagicSplitUtil.GetClassLimitMagicExtends(cid, addr);
             this.MagicExtClassPromotionGain.Value = MagicSplitUtil.GetClassPromotionGainMagicExtends(cid, addr);
@@ -1103,7 +1105,7 @@ namespace FEBuilderGBA
                 return;
             }
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, "MagicExtends");
-            MagicSplitUtil.WriteClassBaseMagicExtends(cid, addr, (uint)this.MagicExtClassBase.Value , undodata);
+            MagicSplitUtil.WriteClassBaseMagicExtends(cid, addr, U.ConvertNUDToUint(this.MagicExtClassBase) , undodata);
             MagicSplitUtil.WriteClassGrowMagicExtends(cid, addr, (uint)this.MagicExtClassGrow.Value , undodata);
             MagicSplitUtil.WriteClassLimitMagicExtends(cid, addr, (uint)this.MagicExtClassLimit.Value, undodata);
             MagicSplitUtil.WriteClassPromotionGainMagicExtends(cid, addr, (uint)this.MagicExtClassPromotionGain.Value, undodata);

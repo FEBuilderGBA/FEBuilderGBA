@@ -7104,6 +7104,14 @@ namespace FEBuilderGBA
             }
             return result;
         }
+        static public uint ConvertNUDToUint(NumericUpDown c)
+        {
+            if (c.Value >= 0)
+            {
+                return (uint)c.Value;
+            }
+            return (uint)((int)c.Value);
+        }
     }
 }
 
