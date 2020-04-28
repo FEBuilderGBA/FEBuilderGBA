@@ -1,0 +1,15 @@
+NAME=毒ダメージの最大ブレ幅
+NAME.en=Maximum blur width of poison damage
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x025A36
+DEFAULT=0x03
+HEX=false
+
+INFO=乱数で決定される毒ダメージのブレ幅を設定します。\r\n毒ダメージ=最低毒ダメージ + rand(毒ダメージの最大ブレ幅)
+INFO.en=Sets the blur width of poison damage determined by a random number.\r\nPoison damage \u003d minimum poison damage + rand (maximum blur width of poison damage).
+NAME.zh=毒药损害的最大模糊宽度。
+INFO.zh=设置由随机数确定的毒害损害的模糊宽度。\r\n毒药伤害\u003d最小毒药伤害+兰特（毒药伤害的最大模糊宽度）。

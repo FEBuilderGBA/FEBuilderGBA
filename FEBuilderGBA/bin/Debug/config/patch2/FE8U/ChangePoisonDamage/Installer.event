@@ -1,0 +1,25 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+
+PUSH
+ORG $25A2C
+jumpToHack(ChangePoisonDamage)
+POP
+
+
+ALIGN 4
+ChangePoisonDamage:
+#incbin "ChangePoisonDamage.dmp"
+POIN ChangePoisonDamage_Table
+
+
+ALIGN 4
+#include "ChangePoisonDamage_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

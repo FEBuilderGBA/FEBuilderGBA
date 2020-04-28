@@ -4882,7 +4882,7 @@ r3=X tile position of menu of the right	{U}
 08019F38	GetTerrainRestoreBadStatus	{J}
 08019FBC	RevertMapChangesById	{J}
 0801A05C	FillMovementMapForUnit	{J}
-0801A058	FillMovementMapForUnitAndMovement	{J}
+0801A09C	FillMovementMapForUnitAndMovement	{J}
 0801A0D4	FillMovementMapForUnitPosition	{J}
 0801A108	FillMovementRangeMapSomehow	{J}
 0801A108	FillMovementMapSomehow	{J}

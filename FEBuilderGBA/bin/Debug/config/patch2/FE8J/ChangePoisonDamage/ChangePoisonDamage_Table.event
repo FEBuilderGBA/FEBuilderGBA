@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002,arg003,arg004,arg005,arg006) "BYTE arg000 arg001 arg002 arg003 arg004 arg005; SHORT arg006; "
+
+ChangePoisonDamage_Table:
+csvmacro000(0x0A,0x05,0x00,0x02,0x00,0x00,0x00)  // seth‚¾‚¯‘åƒ_ƒ[ƒW
+csvmacro000(0x00,0x00,0x00,0x00,0x00,0x00,0x00)  // term

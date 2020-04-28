@@ -796,7 +796,7 @@ namespace FEBuilderGBA
         public static string ConvertKanaToNumber(string str)
         {
             string ret = U.table_replace(str, replaceKanaToNumber);
-            if (U.isAsciiString(ret))
+            if (U.isHexString(ret))
             {
                 return ret;
             }

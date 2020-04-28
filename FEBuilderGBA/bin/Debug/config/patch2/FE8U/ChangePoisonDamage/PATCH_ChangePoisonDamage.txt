@@ -1,0 +1,49 @@
+NAME=最低毒ダメージを章ごとに変更する(Editor)
+INFO=毒は、後半になるとヤムチャのように空気になります。このパッチはこれを変更します。\r\n章やユニットごとに最低ダメージを設定でるようにします。\r\nリストは上からマッチさせていくので、一番厳密な条件を上に設置してください。\r\nリストのどれにもマッチしない場合は、ディフォルトの毒ダメージが適応されます。\r\nDamage = Minimum damage + RAND(Maximum random damage)
+
+IF:0x25A2C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangePoisonDamage.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B2:MAP
+
+//データを定義します
+B0:DECIMAL=最低毒ダメージ
+B1:DECIMAL=最大ブレ幅
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:UNIT=UNIT(0xFF=ANY or 0x00=ANY)
+B4:CLASS=CLASS(0xFF=ANY or 0x00=ANY)
+B5:DECIMAL=このMaxHP以上だったら(0x00=ANY)
+W6:FLAG=Flag(0x00=ANY)
+
+B0:DECIMAL.en=Minimum damage
+B1:DECIMAL.en=Maximum random damage
+B2:MAP_ANYFF.en=MAPID(0xFF=ANY)
+B3:UNIT.en=UNIT(0xFF=ANY or 0x00=ANY)
+B4:CLASS.en=CLASS(0xFF=ANY or 0x00=ANY)
+B5:DECIMAL.en=If more than MaxHP(0x00=ANY)
+W6:FLAG.en=Flag(0x00=ANY)
+
+B0:DECIMAL.zh=Minimum damage
+B1:DECIMAL.zh=Maximum random damage
+B2:MAP_ANYFF.zh=MAPID(0xFF=ANY)
+B3:UNIT.zh=UNIT(0xFF=ANY or 0x00=ANY)
+B4:CLASS.zh=CLASS(0xFF=ANY or 0x00=ANY)
+B5:DECIMAL.zh=If more than MaxHP(0x00=ANY)
+W6:FLAG.zh=Flag(0x00=ANY)
+NAME.en=Change minimum poison damage for each chapter (Editor)
+INFO.en=Poison becomes air like yamcha in the latter half.This patch modifies this.\r\nSet the minimum damage for each chapter or unit.\r\nThe list will be matched from the top, so please set the most strict condition above.\r\nIf none of the lists match, the default poison damage is applied.\r\nDamage \u003d Minimum damage + RAND (Maximum random damage).
+NAME.zh=更改每个章节的最小毒害(Install)
+INFO.zh=毒药在下半年像山药一样变成空气。此补丁程序对此进行了修改。\r\n设置每个章节或单元的最小损坏。\r\n该列表将从顶部开始匹配，因此请在上面设置最严格的条件。\r\n如果没有一个列表匹配，则应用默认的毒药损害。\r\n伤害\u003d最小伤害+ RAND（最大随机伤害）。
