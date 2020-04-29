@@ -218,7 +218,14 @@ namespace FEBuilderGBA
             }
 
             MapChange.EndUpdate();
-            U.ForceUpdate(MapChange, selected);
+            if (selected < 0)
+            {
+                //強制変更のイベントを発生させない
+            }
+            else
+            {
+                U.ForceUpdate(MapChange, selected);
+            }
         }
         private void MapStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -2616,6 +2623,12 @@ this.MapObjImage);
 
             //変更マークをクリア
             ClearModifiedFlag();
+
+            if (MapChange.SelectedIndex != 0)
+            {
+                //マップ変化フォームに変更通知
+                NotifyMapChange();
+            }
         }
         string WriteMapChangeData(bool isShowNotifyMessage)
         {
@@ -2826,6 +2839,9 @@ this.MapObjImage);
 
             //マップ変化リストの再選択
             U.SelectedIndexSafety(MapChange, MapChange.Items.Count - 1);
+
+            //マップ変化フォームに変更通知
+            NotifyMapChange();
             return;
         }
 
@@ -2933,6 +2949,16 @@ this.MapObjImage);
             this.MAPCHIPLIST.Invalidate();
         }
 
+        public static void UpdateMapStyleIfOpen()
+        {
+            MapEditorForm f = (MapEditorForm)InputFormRef.GetForm<MapEditorForm>();
+            if (f == null)
+            {//ウィンドウを開いていない
+                return;
+            }
+            f.UpdateMapStyle();
+        }
+
         //マップタイル変更画面で変更があった場合に呼び出されるイベント
         public void OnUpdateMapChangeForm(uint mapid)
         {
@@ -2943,26 +2969,34 @@ this.MapObjImage);
             MapSettingForm.PLists plists = MapSettingForm.GetMapPListsWhereMapID(mapid);
             if (!InputFormRef.IsWriteButtonToYellow(this.WriteButton))
             {//WriteButtonが黄色ではないので、マップ変化をリロードします.
-                ReloadMapChange(mapid,plists, MapChange.SelectedIndex);
+                ClearUndoBuffer();
+                ReloadMapChange(mapid, plists, MapChange.SelectedIndex);
+                ClearModifiedFlag();
                 return;
             }
             //WriteButtonが黄色なので、マップ変化をリロードできません。
-            string q = R._("現在マップエディタで表示されているマップの、タイル変化データが変更されました。\r\n作成中のマップを無視して、再読み込みしてもよろしいですか？\r\n\r\n「はい」の場合は、再読み込みします。\r\n「いいえ」の場合は、何もしません。自分でマップエディタを閉じて、再読み込みしてください。");
+            string q = R._("「マップエディタ」で編集中のマップの「タイル変化」データが変更されました。\r\n作成中のマップを無視して、再読み込みしてもよろしいですか？\r\n\r\n「はい」の場合は、再読み込みします。\r\n「いいえ」の場合は、何もしません。自分でマップエディタを閉じて、再読み込みしてください。");
             DialogResult dr = R.ShowYesNo(q);
             if (dr != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            ReloadMapChange(mapid,plists, MapChange.SelectedIndex);
+            ClearUndoBuffer();
+            ReloadMapChange(mapid, plists, MapChange.SelectedIndex);
+            ClearModifiedFlag();
         }
-        public static void UpdateMapStyleIfOpen()
+        void NotifyMapChange()
         {
-            MapEditorForm f = (MapEditorForm)InputFormRef.GetForm<MapEditorForm>();
+            Form f = InputFormRef.GetForm<MapChangeForm>();
             if (f == null)
-            {//ウィンドウを開いていない
+            {
                 return;
             }
-            f.UpdateMapStyle();
+            uint mapid = (uint)MAPCOMBO.SelectedIndex;
+
+            MapChangeForm mapchange = (MapChangeForm)f;
+            mapchange.OnUpdateMapEditorForm(mapid);
         }
+
     }
 }

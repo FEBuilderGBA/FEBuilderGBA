@@ -1,0 +1,3 @@
+Ignis: Add Def/2 and Res/2
+to damage dealt.
+(Skill % activation)

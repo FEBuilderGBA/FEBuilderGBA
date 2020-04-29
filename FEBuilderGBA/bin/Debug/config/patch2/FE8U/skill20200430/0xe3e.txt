@@ -1,0 +1,2 @@
+Certain Blow: +40 Hit
+when initiating battle.

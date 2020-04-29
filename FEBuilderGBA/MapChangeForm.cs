@@ -249,10 +249,14 @@ namespace FEBuilderGBA
 
             Program.Undo.Push(undodata);
 
-
             U.ReSelectList(this.AddressList);
+            NotifyMapEditor();
         }
         void N_PostWriteEvent(object sender, EventArgs arg)
+        {
+            NotifyMapEditor();
+        }
+        void NotifyMapEditor()
         {
             Form f = InputFormRef.GetForm<MapEditorForm>();
             if (f == null)
@@ -628,6 +632,18 @@ namespace FEBuilderGBA
         private void X_MAPEDITOR_LINK_Click(object sender, EventArgs e)
         {
             X_JUMP_MAPEDITOR_Click(sender, e);
+        }
+
+        //マップエディタからの変更通知
+        public void OnUpdateMapEditorForm(uint mapid)
+        {
+            uint current_mapid = (uint)this.AddressList.SelectedIndex;
+            if (mapid != current_mapid)
+            {//現在変更しているマップではない
+                return;
+            }
+            //強制再読み込み
+            U.ReSelectList(this.AddressList);
         }
 
     }

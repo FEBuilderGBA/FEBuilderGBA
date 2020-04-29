@@ -1,0 +1,33 @@
+NAME=魔法剣リワーク 20200425(Editor)
+NAME.en=Magic Sword Rework 20200425(Editor)
+NAME.zh=Magic Sword Rework 20200425(Editor)
+
+IF:0x2A882=0x02 0x4B 0x9E 0x46 0x70 0x47 0xC0 0x46 0xC0 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+//データへのポインタ
+POINTER=$FGREP4END MagicSwordRework_20200425.dmp
+
+//データサイズ(10進数)
+DATASIZE=3
+
+//データ個数検索
+DATACOUNT=$GREP3 0x00 0x00 0x00
+
+//リストに表示されるのはアイテム名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+h1:$COMBO weaponType.txt=weaponType
+l1:$COMBO alwaysMagic.txt=alwaysMagic(only damage calculation)
+h2:$COMBO behavior.txt=meleeBehavior
+l2:$COMBO behavior.txt=rangeBehavior
+
+AUTHOR=Sme https://feuniverse.us/t/smes-asm-and-miscellany/4445
+INFO=複数の魔法剣を実現します。\r\nバニラでは、ルーンソード、光の剣、風の剣の3つ武器アイテムがありませんが、これらを自由に増やせるようにします。\r\nMEMO: alwaysMagic only makes the weapon use magic weapon type and magic damage calculation at melee range.
+INFO.en=Define multiple magic swords.\r\nIn vanilla, there are only have three weapon items: Runesword, LightBrand, and WindSword, but you can increase them freely.\r\nMEMO: alwaysMagic only makes the weapon use magic weapon type and magic damage calculation at melee range.\r\n
+INFO.zh=Define multiple magic swords.\r\nIn vanilla, there are only have three weapon items: Runesword, LightBrand, and WindSword, but you can increase them freely.\r\nMEMO: alwaysMagic only makes the weapon use magic weapon type and magic damage calculation at melee range.\r\n
+

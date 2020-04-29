@@ -63,8 +63,8 @@
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -544,18 +544,6 @@
             this.panel14.Size = new System.Drawing.Size(258, 568);
             this.panel14.TabIndex = 188;
             // 
-            // LabelFilter
-            // 
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(256, 26);
-            this.LabelFilter.TabIndex = 106;
-            this.LabelFilter.Text = "マップ名";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddressList
             // 
             this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -568,6 +556,18 @@
             this.AddressList.Size = new System.Drawing.Size(256, 540);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(256, 26);
+            this.LabelFilter.TabIndex = 106;
+            this.LabelFilter.Text = "マップ名";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddressPanel
             // 

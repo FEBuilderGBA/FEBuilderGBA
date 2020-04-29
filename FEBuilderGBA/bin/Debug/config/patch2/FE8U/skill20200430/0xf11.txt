@@ -1,0 +1,2 @@
+Blossom: 2x growth rates,
+but 1/2 exp gain.
