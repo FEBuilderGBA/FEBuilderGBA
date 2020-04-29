@@ -2554,7 +2554,7 @@ this.MapObjImage);
         //マップ変化からのジャンプ
         public void JumpTo(uint mapid,uint changeno)
         {
-            MAPCOMBO.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAPCOMBO,mapid);
             if (changeno + 1 >= MapChange.Items.Count)
             {
                 return;
@@ -2565,7 +2565,7 @@ this.MapObjImage);
         //マップからのジャンプ
         public void JumpTo(uint mapid)
         {
-            MAPCOMBO.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAPCOMBO, mapid);
             if (0 >= MapChange.Items.Count)
             {
                 return;

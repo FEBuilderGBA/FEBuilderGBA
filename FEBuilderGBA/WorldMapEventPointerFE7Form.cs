@@ -94,7 +94,7 @@ namespace FEBuilderGBA
         }
         public void JumpTo(uint value)
         {
-            N_AddressList.SelectedIndex = (int)value;
+            U.SelectedIndexSafety(N_AddressList, value);
         }
         public static bool isWorldMapEvent(uint addr)
         {

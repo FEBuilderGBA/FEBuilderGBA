@@ -191,7 +191,7 @@ namespace FEBuilderGBA
             //キャンセル処理で再度 hasTextOnTheWay が呼ばれないように補正する
             this.PrevSelectTextID = U.NOT_FOUND; 
 
-            this.AddressList.SelectedIndex = (int)id;
+            U.SelectedIndexSafety(this.AddressList, id);
 
             this.PrevSelectTextID = id;
             return true;
@@ -1151,7 +1151,7 @@ namespace FEBuilderGBA
             uint pos = code.Code1 - 0x8;
             if (pos < code.Units.Length)
             {
-                combo.SelectedIndex = (int)pos;
+                U.SelectedIndexSafety(combo, pos);
             }
         }
         void MakePortait(ref NumericUpDown nud, TextBlock code)
@@ -1263,14 +1263,14 @@ namespace FEBuilderGBA
             else if (code.isJump)
             {//移動(ジャンプ)
                 TextListSpTab.SelectedTab = this.TextListSpJumpPage;
-                this.TextListSpMoveNewPosComboBox.SelectedIndex = (int)(code.Code3 - 0xA);
+                U.SelectedIndexSafety(this.TextListSpMoveNewPosComboBox, code.Code3 - 0xA);
             }
             else if (IsMoveOrJump(code.Code2, code.Code3))
             {//移動
                 uint newpos = code.Code3 - 0xA;
                 if (newpos < this.TextListSpMoveNewPosComboBox.Items.Count)
                 {
-                    this.TextListSpMoveNewPosComboBox.SelectedIndex = (int)newpos;
+                    U.SelectedIndexSafety(this.TextListSpMoveNewPosComboBox, newpos);
                     TextListSpTab.SelectedTab = this.TextListSpMovePage;
                 }
                 else
@@ -1952,7 +1952,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            this.AddressList.SelectedIndex = (int)v;
+            U.SelectedIndexSafety(this.AddressList, v);
 
             if (this.SimpleList.Count <= 1)
             {

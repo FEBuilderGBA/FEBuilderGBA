@@ -2098,7 +2098,7 @@ namespace FEBuilderGBA
                     uint select = InputFormRef.AddrToSelect(OBJECT_AddressList, addr);
                     if (select != U.NOT_FOUND)
                     {
-                        OBJECT_AddressList.SelectedIndex = (int)select;
+                        U.SelectedIndexSafety(OBJECT_AddressList, select);
                         return;
                     }
                 }
@@ -2109,7 +2109,7 @@ namespace FEBuilderGBA
                         uint select = InputFormRef.AddrToSelect(TALKFE6_AddressList, addr);
                         if (select != U.NOT_FOUND)
                         {
-                            TALKFE6_AddressList.SelectedIndex = (int)select;
+                            U.SelectedIndexSafety(TALKFE6_AddressList, select);
                             return;
                         }
                     }
@@ -2118,7 +2118,7 @@ namespace FEBuilderGBA
                         uint select = InputFormRef.AddrToSelect(TALK_AddressList, addr);
                         if (select != U.NOT_FOUND)
                         {
-                            TALK_AddressList.SelectedIndex = (int)select;
+                            U.SelectedIndexSafety(TALK_AddressList, select);
                             return;
                         }
                     }
@@ -2128,7 +2128,7 @@ namespace FEBuilderGBA
                     uint select = InputFormRef.AddrToSelect(TRAP_AddressList, addr);
                     if (select != U.NOT_FOUND)
                     {
-                        TRAP_AddressList.SelectedIndex = (int)select;
+                        U.SelectedIndexSafety(TRAP_AddressList, select);
                         return;
                     }
                 }
@@ -2137,7 +2137,7 @@ namespace FEBuilderGBA
                     uint select = InputFormRef.AddrToSelect(ALWAYS_AddressList, addr);
                     if (select != U.NOT_FOUND)
                     {
-                        ALWAYS_AddressList.SelectedIndex = (int)select;
+                        U.SelectedIndexSafety(ALWAYS_AddressList, select);
                         return;
                     }
                 }
@@ -2148,7 +2148,7 @@ namespace FEBuilderGBA
                         uint select = InputFormRef.AddrToSelect(NFE702_AddressList, addr);
                         if (select != U.NOT_FOUND)
                         {
-                            NFE702_AddressList.SelectedIndex = (int)select;
+                            U.SelectedIndexSafety(NFE702_AddressList, select);
                             return;
                         }
                     }
@@ -2157,7 +2157,7 @@ namespace FEBuilderGBA
                         uint select = InputFormRef.AddrToSelect(N02_AddressList, addr);
                         if (select != U.NOT_FOUND)
                         {
-                            N02_AddressList.SelectedIndex = (int)select;
+                            U.SelectedIndexSafety(N02_AddressList, select);
                             return;
                         }
                     }
@@ -4939,5 +4939,6 @@ namespace FEBuilderGBA
                 return new Size(listbounds.X, listbounds.Y);
             }
         }
+
     }
 }

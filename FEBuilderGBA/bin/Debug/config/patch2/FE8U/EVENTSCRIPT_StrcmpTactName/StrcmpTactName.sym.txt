@@ -1,0 +1,4 @@
+ReturnTrue=$24
+ReturnFalse=$20
+Exit=$26
+Term=$2A

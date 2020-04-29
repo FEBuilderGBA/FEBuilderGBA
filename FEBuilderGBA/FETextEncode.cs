@@ -454,7 +454,7 @@ namespace FEBuilderGBA
         }
 
         //特殊文字の置換テーブル
-        static List<string> g_RepalceSPCode;
+        static List<string> g_RepalceSPCode = new List<string>();
         static void MakeRepalceSPCode()
         {
             g_RepalceSPCode = new List<string>();

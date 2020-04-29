@@ -583,6 +583,54 @@
             this.label62 = new System.Windows.Forms.Label();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.X_MAP_PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.OBJECT_N05_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label26 = new System.Windows.Forms.Label();
+            this.OBJECT_N06_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label27 = new System.Windows.Forms.Label();
+            this.OBJECT_N07_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label29 = new System.Windows.Forms.Label();
+            this.OBJECT_N08_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label33 = new System.Windows.Forms.Label();
+            this.OBJECT_N0A_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label36 = new System.Windows.Forms.Label();
+            this.TALK_N03_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label37 = new System.Windows.Forms.Label();
+            this.N02_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label40 = new System.Windows.Forms.Label();
+            this.NFE702_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label43 = new System.Windows.Forms.Label();
+            this.ALWAYS_N0B_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label44 = new System.Windows.Forms.Label();
+            this.ALWAYS_N01_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label45 = new System.Windows.Forms.Label();
+            this.ALWAYS_N0E_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label47 = new System.Windows.Forms.Label();
+            this.ALWAYS_N0D_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label49 = new System.Windows.Forms.Label();
+            this.TRAP_N01_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label56 = new System.Windows.Forms.Label();
+            this.TRAP_N04_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label58 = new System.Windows.Forms.Label();
+            this.TRAP_N05_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label59 = new System.Windows.Forms.Label();
+            this.TRAP_N07_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label66 = new System.Windows.Forms.Label();
+            this.TRAP_N0C_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label67 = new System.Windows.Forms.Label();
+            this.TRAP_N08_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label68 = new System.Windows.Forms.Label();
+            this.TRAP_N0B_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label69 = new System.Windows.Forms.Label();
+            this.TRAP_N06_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label70 = new System.Windows.Forms.Label();
+            this.TUTORIAL_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label72 = new System.Windows.Forms.Label();
+            this.TALK_N04_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label73 = new System.Windows.Forms.Label();
+            this.TALKFE6_N04_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label79 = new System.Windows.Forms.Label();
+            this.TALKFE6_N0D_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label80 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.AddressPanel.SuspendLayout();
@@ -1126,6 +1174,8 @@
             // OBJECT_UNIONTAB_N05
             // 
             this.OBJECT_UNIONTAB_N05.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N05.Controls.Add(this.OBJECT_N05_Comment);
+            this.OBJECT_UNIONTAB_N05.Controls.Add(this.label26);
             this.OBJECT_UNIONTAB_N05.Controls.Add(this.OBJECT_N05_EXPLAIN);
             this.OBJECT_UNIONTAB_N05.Controls.Add(this.OBJECT_N05_L_2_FLAG);
             this.OBJECT_UNIONTAB_N05.Controls.Add(this.OBJECT_N05_L_4_NEWALLOC_EVENTORCHEST);
@@ -1333,6 +1383,8 @@
             // OBJECT_UNIONTAB_N06
             // 
             this.OBJECT_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N06.Controls.Add(this.OBJECT_N06_Comment);
+            this.OBJECT_UNIONTAB_N06.Controls.Add(this.label27);
             this.OBJECT_UNIONTAB_N06.Controls.Add(this.OBJECT_N06_L_4_NEWALLOC_EVENT1);
             this.OBJECT_UNIONTAB_N06.Controls.Add(this.OBJECT_N06_W10);
             this.OBJECT_UNIONTAB_N06.Controls.Add(this.OBJECT_N06_J_10);
@@ -1543,6 +1595,8 @@
             // OBJECT_UNIONTAB_N07
             // 
             this.OBJECT_UNIONTAB_N07.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_Comment);
+            this.OBJECT_UNIONTAB_N07.Controls.Add(this.label29);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_J_5);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_B5);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_X_4_GOLD_LABEL);
@@ -1633,7 +1687,7 @@
             // OBJECT_N07_W10
             // 
             this.OBJECT_N07_W10.Hexadecimal = true;
-            this.OBJECT_N07_W10.Location = new System.Drawing.Point(200, 148);
+            this.OBJECT_N07_W10.Location = new System.Drawing.Point(200, 146);
             this.OBJECT_N07_W10.Margin = new System.Windows.Forms.Padding(2);
             this.OBJECT_N07_W10.Maximum = new decimal(new int[] {
             255,
@@ -1648,7 +1702,7 @@
             // 
             this.OBJECT_N07_J_10.AccessibleDescription = "@MAPOBJECTTYPE";
             this.OBJECT_N07_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OBJECT_N07_J_10.Location = new System.Drawing.Point(0, 148);
+            this.OBJECT_N07_J_10.Location = new System.Drawing.Point(0, 146);
             this.OBJECT_N07_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OBJECT_N07_J_10.Name = "OBJECT_N07_J_10";
             this.OBJECT_N07_J_10.Size = new System.Drawing.Size(193, 32);
@@ -1764,7 +1818,7 @@
             this.OBJECT_N07_L_10_COMBO.Items.AddRange(new object[] {
             "14=宝箱",
             "0=--"});
-            this.OBJECT_N07_L_10_COMBO.Location = new System.Drawing.Point(278, 148);
+            this.OBJECT_N07_L_10_COMBO.Location = new System.Drawing.Point(278, 146);
             this.OBJECT_N07_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.OBJECT_N07_L_10_COMBO.Name = "OBJECT_N07_L_10_COMBO";
             this.OBJECT_N07_L_10_COMBO.Size = new System.Drawing.Size(290, 26);
@@ -1819,6 +1873,8 @@
             // OBJECT_UNIONTAB_N08
             // 
             this.OBJECT_UNIONTAB_N08.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N08.Controls.Add(this.OBJECT_N08_Comment);
+            this.OBJECT_UNIONTAB_N08.Controls.Add(this.label33);
             this.OBJECT_UNIONTAB_N08.Controls.Add(this.OBJECT_N08_L_4_NEWALLOC_EVENT5);
             this.OBJECT_UNIONTAB_N08.Controls.Add(this.OBJECT_N08_W10);
             this.OBJECT_UNIONTAB_N08.Controls.Add(this.OBJECT_N08_J_10);
@@ -2029,6 +2085,8 @@
             // OBJECT_UNIONTAB_N0A
             // 
             this.OBJECT_UNIONTAB_N0A.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N0A.Controls.Add(this.OBJECT_N0A_Comment);
+            this.OBJECT_UNIONTAB_N0A.Controls.Add(this.label36);
             this.OBJECT_UNIONTAB_N0A.Controls.Add(this.OBJECT_N0A_L_4_NEWALLOC_ITEMSHOP);
             this.OBJECT_UNIONTAB_N0A.Controls.Add(this.OBJECT_N0A_W10);
             this.OBJECT_UNIONTAB_N0A.Controls.Add(this.OBJECT_N0A_J_10);
@@ -2554,6 +2612,8 @@
             // TALK_UNIONTAB_N03
             // 
             this.TALK_UNIONTAB_N03.BackColor = System.Drawing.SystemColors.Control;
+            this.TALK_UNIONTAB_N03.Controls.Add(this.TALK_N03_Comment);
+            this.TALK_UNIONTAB_N03.Controls.Add(this.label37);
             this.TALK_UNIONTAB_N03.Controls.Add(this.TALK_N03_EXPLAIN);
             this.TALK_UNIONTAB_N03.Controls.Add(this.TALK_N03_L_14_FLAG);
             this.TALK_UNIONTAB_N03.Controls.Add(this.TALK_N03_L_2_FLAG);
@@ -2590,12 +2650,12 @@
             // TALK_N03_EXPLAIN
             // 
             this.TALK_N03_EXPLAIN.ErrorMessage = "";
-            this.TALK_N03_EXPLAIN.Location = new System.Drawing.Point(5, 297);
+            this.TALK_N03_EXPLAIN.Location = new System.Drawing.Point(5, 386);
             this.TALK_N03_EXPLAIN.Multiline = true;
             this.TALK_N03_EXPLAIN.Name = "TALK_N03_EXPLAIN";
             this.TALK_N03_EXPLAIN.Placeholder = "";
             this.TALK_N03_EXPLAIN.ReadOnly = true;
-            this.TALK_N03_EXPLAIN.Size = new System.Drawing.Size(575, 385);
+            this.TALK_N03_EXPLAIN.Size = new System.Drawing.Size(575, 296);
             this.TALK_N03_EXPLAIN.TabIndex = 234;
             this.TALK_N03_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
             // 
@@ -2896,6 +2956,8 @@
             // TALK_UNIONTAB_N04
             // 
             this.TALK_UNIONTAB_N04.BackColor = System.Drawing.SystemColors.Control;
+            this.TALK_UNIONTAB_N04.Controls.Add(this.TALK_N04_Comment);
+            this.TALK_UNIONTAB_N04.Controls.Add(this.label73);
             this.TALK_UNIONTAB_N04.Controls.Add(this.TALK_N04_L_4_NEWALLOC_EVENT4);
             this.TALK_UNIONTAB_N04.Controls.Add(this.TALK_N04_J_9_UNIT);
             this.TALK_UNIONTAB_N04.Controls.Add(this.TALK_N04_J_8_UNIT);
@@ -3115,12 +3177,12 @@
             // TALK_N04_EXPLAIN
             // 
             this.TALK_N04_EXPLAIN.ErrorMessage = "";
-            this.TALK_N04_EXPLAIN.Location = new System.Drawing.Point(2, 253);
+            this.TALK_N04_EXPLAIN.Location = new System.Drawing.Point(2, 343);
             this.TALK_N04_EXPLAIN.Multiline = true;
             this.TALK_N04_EXPLAIN.Name = "TALK_N04_EXPLAIN";
             this.TALK_N04_EXPLAIN.Placeholder = "";
             this.TALK_N04_EXPLAIN.ReadOnly = true;
-            this.TALK_N04_EXPLAIN.Size = new System.Drawing.Size(575, 432);
+            this.TALK_N04_EXPLAIN.Size = new System.Drawing.Size(575, 342);
             this.TALK_N04_EXPLAIN.TabIndex = 233;
             this.TALK_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
             // 
@@ -3424,6 +3486,8 @@
             // TALKFE6_UNIONTAB_N04
             // 
             this.TALKFE6_UNIONTAB_N04.BackColor = System.Drawing.SystemColors.Control;
+            this.TALKFE6_UNIONTAB_N04.Controls.Add(this.TALKFE6_N04_Comment);
+            this.TALKFE6_UNIONTAB_N04.Controls.Add(this.label79);
             this.TALKFE6_UNIONTAB_N04.Controls.Add(this.TALKFE6_N04_EXPLAIN);
             this.TALKFE6_UNIONTAB_N04.Controls.Add(this.TALKFE6_N04_L_2_FLAG);
             this.TALKFE6_UNIONTAB_N04.Controls.Add(this.TALKFE6_N04_L_4_NEWALLOC_EVENT4);
@@ -3454,12 +3518,12 @@
             // TALKFE6_N04_EXPLAIN
             // 
             this.TALKFE6_N04_EXPLAIN.ErrorMessage = "";
-            this.TALKFE6_N04_EXPLAIN.Location = new System.Drawing.Point(5, 249);
+            this.TALKFE6_N04_EXPLAIN.Location = new System.Drawing.Point(5, 348);
             this.TALKFE6_N04_EXPLAIN.Multiline = true;
             this.TALKFE6_N04_EXPLAIN.Name = "TALKFE6_N04_EXPLAIN";
             this.TALKFE6_N04_EXPLAIN.Placeholder = "";
             this.TALKFE6_N04_EXPLAIN.ReadOnly = true;
-            this.TALKFE6_N04_EXPLAIN.Size = new System.Drawing.Size(575, 437);
+            this.TALKFE6_N04_EXPLAIN.Size = new System.Drawing.Size(575, 338);
             this.TALKFE6_N04_EXPLAIN.TabIndex = 234;
             this.TALKFE6_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
             // 
@@ -3684,6 +3748,8 @@
             // TALKFE6_UNIONTAB_N0D
             // 
             this.TALKFE6_UNIONTAB_N0D.BackColor = System.Drawing.SystemColors.Control;
+            this.TALKFE6_UNIONTAB_N0D.Controls.Add(this.TALKFE6_N0D_Comment);
+            this.TALKFE6_UNIONTAB_N0D.Controls.Add(this.label80);
             this.TALKFE6_UNIONTAB_N0D.Controls.Add(this.TALKFE6_N0D_L_4_NEWALLOC_EVENT4);
             this.TALKFE6_UNIONTAB_N0D.Controls.Add(this.TALKFE6_N0D_W2);
             this.TALKFE6_UNIONTAB_N0D.Controls.Add(this.TALKFE6_N0D_P4);
@@ -3755,10 +3821,10 @@
             // 
             this.TALKFE6_N0D_J_8_ASM.AccessibleDescription = "@IFASM";
             this.TALKFE6_N0D_J_8_ASM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N0D_J_8_ASM.Location = new System.Drawing.Point(0, 80);
+            this.TALKFE6_N0D_J_8_ASM.Location = new System.Drawing.Point(2, 80);
             this.TALKFE6_N0D_J_8_ASM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N0D_J_8_ASM.Name = "TALKFE6_N0D_J_8_ASM";
-            this.TALKFE6_N0D_J_8_ASM.Size = new System.Drawing.Size(173, 32);
+            this.TALKFE6_N0D_J_8_ASM.Size = new System.Drawing.Size(171, 32);
             this.TALKFE6_N0D_J_8_ASM.TabIndex = 194;
             this.TALKFE6_N0D_J_8_ASM.Text = "判定ASM関数";
             this.TALKFE6_N0D_J_8_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3803,12 +3869,12 @@
             // TALKFE6_N0D_EXPLAIN
             // 
             this.TALKFE6_N0D_EXPLAIN.ErrorMessage = "";
-            this.TALKFE6_N0D_EXPLAIN.Location = new System.Drawing.Point(2, 209);
+            this.TALKFE6_N0D_EXPLAIN.Location = new System.Drawing.Point(2, 293);
             this.TALKFE6_N0D_EXPLAIN.Multiline = true;
             this.TALKFE6_N0D_EXPLAIN.Name = "TALKFE6_N0D_EXPLAIN";
             this.TALKFE6_N0D_EXPLAIN.Placeholder = "";
             this.TALKFE6_N0D_EXPLAIN.ReadOnly = true;
-            this.TALKFE6_N0D_EXPLAIN.Size = new System.Drawing.Size(575, 481);
+            this.TALKFE6_N0D_EXPLAIN.Size = new System.Drawing.Size(575, 397);
             this.TALKFE6_N0D_EXPLAIN.TabIndex = 233;
             this.TALKFE6_N0D_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
             // 
@@ -3852,6 +3918,8 @@
             // panel18
             // 
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel18.Controls.Add(this.N02_Comment);
+            this.panel18.Controls.Add(this.label40);
             this.panel18.Controls.Add(this.N02_11_EXPLAIN);
             this.panel18.Controls.Add(this.N02_L_2_FLAG);
             this.panel18.Controls.Add(this.N02_L_4_NEWALLOC_EVENT3);
@@ -3876,12 +3944,12 @@
             // N02_11_EXPLAIN
             // 
             this.N02_11_EXPLAIN.ErrorMessage = "";
-            this.N02_11_EXPLAIN.Location = new System.Drawing.Point(3, 281);
+            this.N02_11_EXPLAIN.Location = new System.Drawing.Point(3, 337);
             this.N02_11_EXPLAIN.Multiline = true;
             this.N02_11_EXPLAIN.Name = "N02_11_EXPLAIN";
             this.N02_11_EXPLAIN.Placeholder = "";
             this.N02_11_EXPLAIN.ReadOnly = true;
-            this.N02_11_EXPLAIN.Size = new System.Drawing.Size(589, 423);
+            this.N02_11_EXPLAIN.Size = new System.Drawing.Size(589, 367);
             this.N02_11_EXPLAIN.TabIndex = 232;
             this.N02_11_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
             // 
@@ -4307,6 +4375,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.NFE702_Comment);
+            this.panel3.Controls.Add(this.label43);
             this.panel3.Controls.Add(this.NFE702_12_EXPLAIN);
             this.panel3.Controls.Add(this.NFE702_L_12_COMBO);
             this.panel3.Controls.Add(this.NFE702_L_2_FLAG);
@@ -4334,12 +4404,12 @@
             // NFE702_12_EXPLAIN
             // 
             this.NFE702_12_EXPLAIN.ErrorMessage = "";
-            this.NFE702_12_EXPLAIN.Location = new System.Drawing.Point(4, 285);
+            this.NFE702_12_EXPLAIN.Location = new System.Drawing.Point(4, 366);
             this.NFE702_12_EXPLAIN.Multiline = true;
             this.NFE702_12_EXPLAIN.Name = "NFE702_12_EXPLAIN";
             this.NFE702_12_EXPLAIN.Placeholder = "";
             this.NFE702_12_EXPLAIN.ReadOnly = true;
-            this.NFE702_12_EXPLAIN.Size = new System.Drawing.Size(589, 420);
+            this.NFE702_12_EXPLAIN.Size = new System.Drawing.Size(589, 339);
             this.NFE702_12_EXPLAIN.TabIndex = 231;
             this.NFE702_12_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
             // 
@@ -4927,6 +4997,8 @@
             // ALWAYS_UNIONTAB_N0B
             // 
             this.ALWAYS_UNIONTAB_N0B.BackColor = System.Drawing.SystemColors.Control;
+            this.ALWAYS_UNIONTAB_N0B.Controls.Add(this.ALWAYS_N0B_Comment);
+            this.ALWAYS_UNIONTAB_N0B.Controls.Add(this.label44);
             this.ALWAYS_UNIONTAB_N0B.Controls.Add(this.ALWAYS_N0B_EXPLAIN);
             this.ALWAYS_UNIONTAB_N0B.Controls.Add(this.ALWAYS_N0B_L_2_FLAG);
             this.ALWAYS_UNIONTAB_N0B.Controls.Add(this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2);
@@ -4956,12 +5028,12 @@
             // ALWAYS_N0B_EXPLAIN
             // 
             this.ALWAYS_N0B_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0B_EXPLAIN.Location = new System.Drawing.Point(3, 194);
+            this.ALWAYS_N0B_EXPLAIN.Location = new System.Drawing.Point(3, 253);
             this.ALWAYS_N0B_EXPLAIN.Multiline = true;
             this.ALWAYS_N0B_EXPLAIN.Name = "ALWAYS_N0B_EXPLAIN";
             this.ALWAYS_N0B_EXPLAIN.Placeholder = "";
             this.ALWAYS_N0B_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0B_EXPLAIN.Size = new System.Drawing.Size(581, 490);
+            this.ALWAYS_N0B_EXPLAIN.Size = new System.Drawing.Size(581, 431);
             this.ALWAYS_N0B_EXPLAIN.TabIndex = 230;
             this.ALWAYS_N0B_EXPLAIN.Text = "指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加して" +
     "ください。";
@@ -5151,6 +5223,8 @@
             // ALWAYS_UNIONTAB_N01
             // 
             this.ALWAYS_UNIONTAB_N01.BackColor = System.Drawing.SystemColors.Control;
+            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_Comment);
+            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.label45);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_L_4_NEWALLOC_EVENT6);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_W2);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_J_2_FLAG);
@@ -5259,12 +5333,12 @@
             // ALWAYS_N01_EXPLAIN
             // 
             this.ALWAYS_N01_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N01_EXPLAIN.Location = new System.Drawing.Point(3, 193);
+            this.ALWAYS_N01_EXPLAIN.Location = new System.Drawing.Point(3, 253);
             this.ALWAYS_N01_EXPLAIN.Multiline = true;
             this.ALWAYS_N01_EXPLAIN.Name = "ALWAYS_N01_EXPLAIN";
             this.ALWAYS_N01_EXPLAIN.Placeholder = "";
             this.ALWAYS_N01_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N01_EXPLAIN.Size = new System.Drawing.Size(581, 487);
+            this.ALWAYS_N01_EXPLAIN.Size = new System.Drawing.Size(581, 431);
             this.ALWAYS_N01_EXPLAIN.TabIndex = 230;
             this.ALWAYS_N01_EXPLAIN.Text = "「判定フラグ」が有効だった場合、指定したイベントを実行します。";
             // 
@@ -5305,6 +5379,8 @@
             // ALWAYS_UNIONTAB_N0E
             // 
             this.ALWAYS_UNIONTAB_N0E.BackColor = System.Drawing.SystemColors.Control;
+            this.ALWAYS_UNIONTAB_N0E.Controls.Add(this.ALWAYS_N0E_Comment);
+            this.ALWAYS_UNIONTAB_N0E.Controls.Add(this.label47);
             this.ALWAYS_UNIONTAB_N0E.Controls.Add(this.ALWAYS_N0E_L_4_NEWALLOC_EVENT6);
             this.ALWAYS_UNIONTAB_N0E.Controls.Add(this.ALWAYS_N0E_W2);
             this.ALWAYS_UNIONTAB_N0E.Controls.Add(this.ALWAYS_N0E_J_2_FLAG);
@@ -5424,12 +5500,12 @@
             // ALWAYS_N0E_EXPLAIN
             // 
             this.ALWAYS_N0E_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0E_EXPLAIN.Location = new System.Drawing.Point(9, 193);
+            this.ALWAYS_N0E_EXPLAIN.Location = new System.Drawing.Point(3, 253);
             this.ALWAYS_N0E_EXPLAIN.Multiline = true;
             this.ALWAYS_N0E_EXPLAIN.Name = "ALWAYS_N0E_EXPLAIN";
             this.ALWAYS_N0E_EXPLAIN.Placeholder = "";
             this.ALWAYS_N0E_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0E_EXPLAIN.Size = new System.Drawing.Size(573, 487);
+            this.ALWAYS_N0E_EXPLAIN.Size = new System.Drawing.Size(581, 431);
             this.ALWAYS_N0E_EXPLAIN.TabIndex = 229;
             this.ALWAYS_N0E_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
             // 
@@ -5459,6 +5535,8 @@
             // ALWAYS_UNIONTAB_N0D
             // 
             this.ALWAYS_UNIONTAB_N0D.BackColor = System.Drawing.SystemColors.Control;
+            this.ALWAYS_UNIONTAB_N0D.Controls.Add(this.ALWAYS_N0D_Comment);
+            this.ALWAYS_UNIONTAB_N0D.Controls.Add(this.label49);
             this.ALWAYS_UNIONTAB_N0D.Controls.Add(this.ALWAYS_N0D_W2);
             this.ALWAYS_UNIONTAB_N0D.Controls.Add(this.ALWAYS_N0D_J_2_FLAG);
             this.ALWAYS_UNIONTAB_N0D.Controls.Add(this.ALWAYS_N0D_J_8_ASM);
@@ -5576,12 +5654,12 @@
             // ALWAYS_N0D_EXPLAIN
             // 
             this.ALWAYS_N0D_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0D_EXPLAIN.Location = new System.Drawing.Point(9, 193);
+            this.ALWAYS_N0D_EXPLAIN.Location = new System.Drawing.Point(3, 253);
             this.ALWAYS_N0D_EXPLAIN.Multiline = true;
             this.ALWAYS_N0D_EXPLAIN.Name = "ALWAYS_N0D_EXPLAIN";
             this.ALWAYS_N0D_EXPLAIN.Placeholder = "";
             this.ALWAYS_N0D_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0D_EXPLAIN.Size = new System.Drawing.Size(573, 491);
+            this.ALWAYS_N0D_EXPLAIN.Size = new System.Drawing.Size(581, 431);
             this.ALWAYS_N0D_EXPLAIN.TabIndex = 238;
             this.ALWAYS_N0D_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
             // 
@@ -5746,6 +5824,8 @@
             // TRAP_UNIONTAB_N01
             // 
             this.TRAP_UNIONTAB_N01.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N01.Controls.Add(this.TRAP_N01_Comment);
+            this.TRAP_UNIONTAB_N01.Controls.Add(this.label56);
             this.TRAP_UNIONTAB_N01.Controls.Add(this.TRAP_N01_EXPLAIN);
             this.TRAP_UNIONTAB_N01.Controls.Add(this.TRAP_N01_L_3_COMBO);
             this.TRAP_UNIONTAB_N01.Controls.Add(this.TRAP_N01_L_1_MAPXY_2);
@@ -5769,12 +5849,12 @@
             // TRAP_N01_EXPLAIN
             // 
             this.TRAP_N01_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N01_EXPLAIN.Location = new System.Drawing.Point(2, 157);
+            this.TRAP_N01_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N01_EXPLAIN.Multiline = true;
             this.TRAP_N01_EXPLAIN.Name = "TRAP_N01_EXPLAIN";
             this.TRAP_N01_EXPLAIN.Placeholder = "";
             this.TRAP_N01_EXPLAIN.ReadOnly = true;
-            this.TRAP_N01_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N01_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N01_EXPLAIN.TabIndex = 235;
             this.TRAP_N01_EXPLAIN.Text = "弓兵が利用できる「アーチ」を設置します。";
             // 
@@ -5787,7 +5867,7 @@
             "36=アイアンアーチ",
             "37=キラーアーチ",
             "0=--"});
-            this.TRAP_N01_L_3_COMBO.Location = new System.Drawing.Point(245, 52);
+            this.TRAP_N01_L_3_COMBO.Location = new System.Drawing.Point(245, 49);
             this.TRAP_N01_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TRAP_N01_L_3_COMBO.Name = "TRAP_N01_L_3_COMBO";
             this.TRAP_N01_L_3_COMBO.Size = new System.Drawing.Size(281, 26);
@@ -5807,7 +5887,7 @@
             // TRAP_N01_B3
             // 
             this.TRAP_N01_B3.Hexadecimal = true;
-            this.TRAP_N01_B3.Location = new System.Drawing.Point(170, 52);
+            this.TRAP_N01_B3.Location = new System.Drawing.Point(170, 49);
             this.TRAP_N01_B3.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N01_B3.Maximum = new decimal(new int[] {
             255,
@@ -5821,7 +5901,7 @@
             // TRAP_N01_J_4
             // 
             this.TRAP_N01_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N01_J_4.Location = new System.Drawing.Point(6, 94);
+            this.TRAP_N01_J_4.Location = new System.Drawing.Point(6, 85);
             this.TRAP_N01_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N01_J_4.Name = "TRAP_N01_J_4";
             this.TRAP_N01_J_4.Size = new System.Drawing.Size(158, 32);
@@ -5832,7 +5912,7 @@
             // TRAP_N01_J_3
             // 
             this.TRAP_N01_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N01_J_3.Location = new System.Drawing.Point(6, 53);
+            this.TRAP_N01_J_3.Location = new System.Drawing.Point(6, 50);
             this.TRAP_N01_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N01_J_3.Name = "TRAP_N01_J_3";
             this.TRAP_N01_J_3.Size = new System.Drawing.Size(158, 32);
@@ -5843,7 +5923,7 @@
             // TRAP_N01_B4
             // 
             this.TRAP_N01_B4.Hexadecimal = true;
-            this.TRAP_N01_B4.Location = new System.Drawing.Point(170, 94);
+            this.TRAP_N01_B4.Location = new System.Drawing.Point(170, 85);
             this.TRAP_N01_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N01_B4.Maximum = new decimal(new int[] {
             255,
@@ -5868,7 +5948,7 @@
             // TRAP_N01_B5
             // 
             this.TRAP_N01_B5.Hexadecimal = true;
-            this.TRAP_N01_B5.Location = new System.Drawing.Point(244, 94);
+            this.TRAP_N01_B5.Location = new System.Drawing.Point(244, 85);
             this.TRAP_N01_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N01_B5.Maximum = new decimal(new int[] {
             255,
@@ -5909,6 +5989,8 @@
             // TRAP_UNIONTAB_N04
             // 
             this.TRAP_UNIONTAB_N04.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N04.Controls.Add(this.TRAP_N04_Comment);
+            this.TRAP_UNIONTAB_N04.Controls.Add(this.label58);
             this.TRAP_UNIONTAB_N04.Controls.Add(this.TRAP_N04_J_5);
             this.TRAP_UNIONTAB_N04.Controls.Add(this.TRAP_N04_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N04.Controls.Add(this.TRAP_N04_B3);
@@ -5932,7 +6014,7 @@
             // 
             this.TRAP_N04_J_5.AccessibleDescription = "@TRAP_REPEATTIMER";
             this.TRAP_N04_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N04_J_5.Location = new System.Drawing.Point(6, 122);
+            this.TRAP_N04_J_5.Location = new System.Drawing.Point(6, 119);
             this.TRAP_N04_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N04_J_5.Name = "TRAP_N04_J_5";
             this.TRAP_N04_J_5.Size = new System.Drawing.Size(158, 32);
@@ -5954,7 +6036,7 @@
             // TRAP_N04_B3
             // 
             this.TRAP_N04_B3.Hexadecimal = true;
-            this.TRAP_N04_B3.Location = new System.Drawing.Point(173, 56);
+            this.TRAP_N04_B3.Location = new System.Drawing.Point(173, 55);
             this.TRAP_N04_B3.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N04_B3.Maximum = new decimal(new int[] {
             255,
@@ -5969,7 +6051,7 @@
             // 
             this.TRAP_N04_J_4.AccessibleDescription = "@TRAP_INITTIMER";
             this.TRAP_N04_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N04_J_4.Location = new System.Drawing.Point(6, 86);
+            this.TRAP_N04_J_4.Location = new System.Drawing.Point(6, 84);
             this.TRAP_N04_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N04_J_4.Name = "TRAP_N04_J_4";
             this.TRAP_N04_J_4.Size = new System.Drawing.Size(158, 32);
@@ -5980,7 +6062,7 @@
             // TRAP_N04_J_3
             // 
             this.TRAP_N04_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N04_J_3.Location = new System.Drawing.Point(6, 50);
+            this.TRAP_N04_J_3.Location = new System.Drawing.Point(6, 49);
             this.TRAP_N04_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N04_J_3.Name = "TRAP_N04_J_3";
             this.TRAP_N04_J_3.Size = new System.Drawing.Size(158, 32);
@@ -5991,7 +6073,7 @@
             // TRAP_N04_B4
             // 
             this.TRAP_N04_B4.Hexadecimal = true;
-            this.TRAP_N04_B4.Location = new System.Drawing.Point(173, 89);
+            this.TRAP_N04_B4.Location = new System.Drawing.Point(173, 87);
             this.TRAP_N04_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N04_B4.Maximum = new decimal(new int[] {
             255,
@@ -6016,7 +6098,7 @@
             // TRAP_N04_B5
             // 
             this.TRAP_N04_B5.Hexadecimal = true;
-            this.TRAP_N04_B5.Location = new System.Drawing.Point(173, 124);
+            this.TRAP_N04_B5.Location = new System.Drawing.Point(173, 121);
             this.TRAP_N04_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N04_B5.Maximum = new decimal(new int[] {
             255,
@@ -6057,18 +6139,20 @@
             // TRAP_N04_EXPLAIN
             // 
             this.TRAP_N04_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N04_EXPLAIN.Location = new System.Drawing.Point(0, 171);
+            this.TRAP_N04_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N04_EXPLAIN.Multiline = true;
             this.TRAP_N04_EXPLAIN.Name = "TRAP_N04_EXPLAIN";
             this.TRAP_N04_EXPLAIN.Placeholder = "";
             this.TRAP_N04_EXPLAIN.ReadOnly = true;
-            this.TRAP_N04_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N04_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N04_EXPLAIN.TabIndex = 236;
             this.TRAP_N04_EXPLAIN.Text = "ダメージを与えるトラップを設置します";
             // 
             // TRAP_UNIONTAB_N05
             // 
             this.TRAP_UNIONTAB_N05.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N05.Controls.Add(this.TRAP_N05_Comment);
+            this.TRAP_UNIONTAB_N05.Controls.Add(this.label59);
             this.TRAP_UNIONTAB_N05.Controls.Add(this.TRAP_N05_J_5);
             this.TRAP_UNIONTAB_N05.Controls.Add(this.TRAP_N05_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N05.Controls.Add(this.TRAP_N05_B3);
@@ -6093,7 +6177,7 @@
             // 
             this.TRAP_N05_J_5.AccessibleDescription = "@TRAP_REPEATTIMER";
             this.TRAP_N05_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N05_J_5.Location = new System.Drawing.Point(6, 125);
+            this.TRAP_N05_J_5.Location = new System.Drawing.Point(6, 120);
             this.TRAP_N05_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N05_J_5.Name = "TRAP_N05_J_5";
             this.TRAP_N05_J_5.Size = new System.Drawing.Size(158, 32);
@@ -6115,7 +6199,7 @@
             // TRAP_N05_B3
             // 
             this.TRAP_N05_B3.Hexadecimal = true;
-            this.TRAP_N05_B3.Location = new System.Drawing.Point(170, 54);
+            this.TRAP_N05_B3.Location = new System.Drawing.Point(170, 53);
             this.TRAP_N05_B3.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N05_B3.Maximum = new decimal(new int[] {
             255,
@@ -6130,7 +6214,7 @@
             // 
             this.TRAP_N05_J_4.AccessibleDescription = "@TRAP_INITTIMER";
             this.TRAP_N05_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N05_J_4.Location = new System.Drawing.Point(6, 89);
+            this.TRAP_N05_J_4.Location = new System.Drawing.Point(6, 85);
             this.TRAP_N05_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N05_J_4.Name = "TRAP_N05_J_4";
             this.TRAP_N05_J_4.Size = new System.Drawing.Size(158, 32);
@@ -6141,7 +6225,7 @@
             // TRAP_N05_J_3
             // 
             this.TRAP_N05_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N05_J_3.Location = new System.Drawing.Point(6, 50);
+            this.TRAP_N05_J_3.Location = new System.Drawing.Point(6, 49);
             this.TRAP_N05_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N05_J_3.Name = "TRAP_N05_J_3";
             this.TRAP_N05_J_3.Size = new System.Drawing.Size(158, 32);
@@ -6152,7 +6236,7 @@
             // TRAP_N05_B4
             // 
             this.TRAP_N05_B4.Hexadecimal = true;
-            this.TRAP_N05_B4.Location = new System.Drawing.Point(170, 93);
+            this.TRAP_N05_B4.Location = new System.Drawing.Point(170, 89);
             this.TRAP_N05_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N05_B4.Maximum = new decimal(new int[] {
             255,
@@ -6177,7 +6261,7 @@
             // TRAP_N05_B5
             // 
             this.TRAP_N05_B5.Hexadecimal = true;
-            this.TRAP_N05_B5.Location = new System.Drawing.Point(170, 128);
+            this.TRAP_N05_B5.Location = new System.Drawing.Point(170, 123);
             this.TRAP_N05_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N05_B5.Maximum = new decimal(new int[] {
             255,
@@ -6224,7 +6308,7 @@
             "01=左から右",
             "02=上から下",
             "03=下から上"});
-            this.TRAP_N05_L_3_COMBO.Location = new System.Drawing.Point(245, 54);
+            this.TRAP_N05_L_3_COMBO.Location = new System.Drawing.Point(245, 53);
             this.TRAP_N05_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TRAP_N05_L_3_COMBO.Name = "TRAP_N05_L_3_COMBO";
             this.TRAP_N05_L_3_COMBO.Size = new System.Drawing.Size(329, 26);
@@ -6233,18 +6317,20 @@
             // TRAP_N05_EXPLAIN
             // 
             this.TRAP_N05_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N05_EXPLAIN.Location = new System.Drawing.Point(2, 169);
+            this.TRAP_N05_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N05_EXPLAIN.Multiline = true;
             this.TRAP_N05_EXPLAIN.Name = "TRAP_N05_EXPLAIN";
             this.TRAP_N05_EXPLAIN.Placeholder = "";
             this.TRAP_N05_EXPLAIN.ReadOnly = true;
-            this.TRAP_N05_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N05_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N05_EXPLAIN.TabIndex = 237;
             this.TRAP_N05_EXPLAIN.Text = "毒ガスが噴き出すトラップを設定します。";
             // 
             // TRAP_UNIONTAB_N07
             // 
             this.TRAP_UNIONTAB_N07.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N07.Controls.Add(this.TRAP_N07_Comment);
+            this.TRAP_UNIONTAB_N07.Controls.Add(this.label66);
             this.TRAP_UNIONTAB_N07.Controls.Add(this.TRAP_N07_J_5);
             this.TRAP_UNIONTAB_N07.Controls.Add(this.TRAP_N07_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N07.Controls.Add(this.TRAP_N07_B3);
@@ -6268,7 +6354,7 @@
             // 
             this.TRAP_N07_J_5.AccessibleDescription = "@TRAP_REPEATTIMER";
             this.TRAP_N07_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N07_J_5.Location = new System.Drawing.Point(7, 132);
+            this.TRAP_N07_J_5.Location = new System.Drawing.Point(7, 118);
             this.TRAP_N07_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N07_J_5.Name = "TRAP_N07_J_5";
             this.TRAP_N07_J_5.Size = new System.Drawing.Size(158, 32);
@@ -6290,7 +6376,7 @@
             // TRAP_N07_B3
             // 
             this.TRAP_N07_B3.Hexadecimal = true;
-            this.TRAP_N07_B3.Location = new System.Drawing.Point(171, 54);
+            this.TRAP_N07_B3.Location = new System.Drawing.Point(171, 52);
             this.TRAP_N07_B3.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N07_B3.Maximum = new decimal(new int[] {
             255,
@@ -6305,7 +6391,7 @@
             // 
             this.TRAP_N07_J_4.AccessibleDescription = "@TRAP_INITTIMER";
             this.TRAP_N07_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N07_J_4.Location = new System.Drawing.Point(7, 92);
+            this.TRAP_N07_J_4.Location = new System.Drawing.Point(7, 83);
             this.TRAP_N07_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N07_J_4.Name = "TRAP_N07_J_4";
             this.TRAP_N07_J_4.Size = new System.Drawing.Size(158, 32);
@@ -6316,7 +6402,7 @@
             // TRAP_N07_J_3
             // 
             this.TRAP_N07_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N07_J_3.Location = new System.Drawing.Point(7, 50);
+            this.TRAP_N07_J_3.Location = new System.Drawing.Point(7, 48);
             this.TRAP_N07_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N07_J_3.Name = "TRAP_N07_J_3";
             this.TRAP_N07_J_3.Size = new System.Drawing.Size(158, 32);
@@ -6327,7 +6413,7 @@
             // TRAP_N07_B4
             // 
             this.TRAP_N07_B4.Hexadecimal = true;
-            this.TRAP_N07_B4.Location = new System.Drawing.Point(171, 96);
+            this.TRAP_N07_B4.Location = new System.Drawing.Point(171, 87);
             this.TRAP_N07_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N07_B4.Maximum = new decimal(new int[] {
             255,
@@ -6352,7 +6438,7 @@
             // TRAP_N07_B5
             // 
             this.TRAP_N07_B5.Hexadecimal = true;
-            this.TRAP_N07_B5.Location = new System.Drawing.Point(171, 135);
+            this.TRAP_N07_B5.Location = new System.Drawing.Point(171, 121);
             this.TRAP_N07_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N07_B5.Maximum = new decimal(new int[] {
             255,
@@ -6393,18 +6479,20 @@
             // TRAP_N07_EXPLAIN
             // 
             this.TRAP_N07_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N07_EXPLAIN.Location = new System.Drawing.Point(3, 181);
+            this.TRAP_N07_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N07_EXPLAIN.Multiline = true;
             this.TRAP_N07_EXPLAIN.Name = "TRAP_N07_EXPLAIN";
             this.TRAP_N07_EXPLAIN.Placeholder = "";
             this.TRAP_N07_EXPLAIN.ReadOnly = true;
-            this.TRAP_N07_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N07_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N07_EXPLAIN.TabIndex = 238;
             this.TRAP_N07_EXPLAIN.Text = "Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。";
             // 
             // TRAP_UNIONTAB_N0C
             // 
             this.TRAP_UNIONTAB_N0C.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N0C.Controls.Add(this.TRAP_N0C_Comment);
+            this.TRAP_UNIONTAB_N0C.Controls.Add(this.label67);
             this.TRAP_UNIONTAB_N0C.Controls.Add(this.TRAP_N0C_J_4);
             this.TRAP_UNIONTAB_N0C.Controls.Add(this.TRAP_N0C_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N0C.Controls.Add(this.TRAP_N0C_B5);
@@ -6449,7 +6537,7 @@
             // TRAP_N0C_B5
             // 
             this.TRAP_N0C_B5.Hexadecimal = true;
-            this.TRAP_N0C_B5.Location = new System.Drawing.Point(179, 115);
+            this.TRAP_N0C_B5.Location = new System.Drawing.Point(179, 114);
             this.TRAP_N0C_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N0C_B5.Maximum = new decimal(new int[] {
             255,
@@ -6474,7 +6562,7 @@
             // TRAP_N0C_J_5
             // 
             this.TRAP_N0C_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N0C_J_5.Location = new System.Drawing.Point(4, 112);
+            this.TRAP_N0C_J_5.Location = new System.Drawing.Point(4, 111);
             this.TRAP_N0C_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N0C_J_5.Name = "TRAP_N0C_J_5";
             this.TRAP_N0C_J_5.Size = new System.Drawing.Size(171, 32);
@@ -6551,18 +6639,20 @@
             // TRAP_N0C_EXPLAIN
             // 
             this.TRAP_N0C_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N0C_EXPLAIN.Location = new System.Drawing.Point(4, 165);
+            this.TRAP_N0C_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N0C_EXPLAIN.Multiline = true;
             this.TRAP_N0C_EXPLAIN.Name = "TRAP_N0C_EXPLAIN";
             this.TRAP_N0C_EXPLAIN.Placeholder = "";
             this.TRAP_N0C_EXPLAIN.ReadOnly = true;
-            this.TRAP_N0C_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N0C_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N0C_EXPLAIN.TabIndex = 239;
             this.TRAP_N0C_EXPLAIN.Text = "ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。";
             // 
             // TRAP_UNIONTAB_N08
             // 
             this.TRAP_UNIONTAB_N08.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N08.Controls.Add(this.TRAP_N08_Comment);
+            this.TRAP_UNIONTAB_N08.Controls.Add(this.label68);
             this.TRAP_UNIONTAB_N08.Controls.Add(this.TRAP_N08_J_5);
             this.TRAP_UNIONTAB_N08.Controls.Add(this.TRAP_N08_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N08.Controls.Add(this.TRAP_N08_B3);
@@ -6584,7 +6674,7 @@
             // TRAP_N08_J_5
             // 
             this.TRAP_N08_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N08_J_5.Location = new System.Drawing.Point(3, 121);
+            this.TRAP_N08_J_5.Location = new System.Drawing.Point(3, 117);
             this.TRAP_N08_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N08_J_5.Name = "TRAP_N08_J_5";
             this.TRAP_N08_J_5.Size = new System.Drawing.Size(158, 32);
@@ -6606,7 +6696,7 @@
             // TRAP_N08_B3
             // 
             this.TRAP_N08_B3.Hexadecimal = true;
-            this.TRAP_N08_B3.Location = new System.Drawing.Point(170, 55);
+            this.TRAP_N08_B3.Location = new System.Drawing.Point(170, 53);
             this.TRAP_N08_B3.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N08_B3.Maximum = new decimal(new int[] {
             255,
@@ -6620,7 +6710,7 @@
             // TRAP_N08_J_4
             // 
             this.TRAP_N08_J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N08_J_4.Location = new System.Drawing.Point(3, 85);
+            this.TRAP_N08_J_4.Location = new System.Drawing.Point(3, 82);
             this.TRAP_N08_J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N08_J_4.Name = "TRAP_N08_J_4";
             this.TRAP_N08_J_4.Size = new System.Drawing.Size(158, 32);
@@ -6631,7 +6721,7 @@
             // TRAP_N08_J_3
             // 
             this.TRAP_N08_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N08_J_3.Location = new System.Drawing.Point(3, 49);
+            this.TRAP_N08_J_3.Location = new System.Drawing.Point(3, 47);
             this.TRAP_N08_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_N08_J_3.Name = "TRAP_N08_J_3";
             this.TRAP_N08_J_3.Size = new System.Drawing.Size(158, 32);
@@ -6642,7 +6732,7 @@
             // TRAP_N08_B4
             // 
             this.TRAP_N08_B4.Hexadecimal = true;
-            this.TRAP_N08_B4.Location = new System.Drawing.Point(170, 88);
+            this.TRAP_N08_B4.Location = new System.Drawing.Point(170, 85);
             this.TRAP_N08_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N08_B4.Maximum = new decimal(new int[] {
             255,
@@ -6667,7 +6757,7 @@
             // TRAP_N08_B5
             // 
             this.TRAP_N08_B5.Hexadecimal = true;
-            this.TRAP_N08_B5.Location = new System.Drawing.Point(170, 123);
+            this.TRAP_N08_B5.Location = new System.Drawing.Point(170, 119);
             this.TRAP_N08_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N08_B5.Maximum = new decimal(new int[] {
             255,
@@ -6708,18 +6798,20 @@
             // TRAP_N08_EXPLAIN
             // 
             this.TRAP_N08_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N08_EXPLAIN.Location = new System.Drawing.Point(4, 166);
+            this.TRAP_N08_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N08_EXPLAIN.Multiline = true;
             this.TRAP_N08_EXPLAIN.Name = "TRAP_N08_EXPLAIN";
             this.TRAP_N08_EXPLAIN.Placeholder = "";
             this.TRAP_N08_EXPLAIN.ReadOnly = true;
-            this.TRAP_N08_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N08_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N08_EXPLAIN.TabIndex = 240;
             this.TRAP_N08_EXPLAIN.Text = "炎のトラップを設定します。";
             // 
             // TRAP_UNIONTAB_N0B
             // 
             this.TRAP_UNIONTAB_N0B.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N0B.Controls.Add(this.TRAP_N0B_Comment);
+            this.TRAP_UNIONTAB_N0B.Controls.Add(this.label69);
             this.TRAP_UNIONTAB_N0B.Controls.Add(this.TRAP_N0B_J_5);
             this.TRAP_UNIONTAB_N0B.Controls.Add(this.TRAP_N0B_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N0B.Controls.Add(this.TRAP_N0B_B3);
@@ -6865,18 +6957,20 @@
             // TRAP_N0B_EXPLAIN
             // 
             this.TRAP_N0B_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N0B_EXPLAIN.Location = new System.Drawing.Point(0, 163);
+            this.TRAP_N0B_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N0B_EXPLAIN.Multiline = true;
             this.TRAP_N0B_EXPLAIN.Name = "TRAP_N0B_EXPLAIN";
             this.TRAP_N0B_EXPLAIN.Placeholder = "";
             this.TRAP_N0B_EXPLAIN.ReadOnly = true;
-            this.TRAP_N0B_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N0B_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N0B_EXPLAIN.TabIndex = 241;
             this.TRAP_N0B_EXPLAIN.Text = "地雷のトラップを設定します。";
             // 
             // TRAP_UNIONTAB_N06
             // 
             this.TRAP_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_Comment);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.label70);
             this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_1_MAPXY_2);
             this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B3);
             this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_4_TEXT);
@@ -7008,12 +7102,12 @@
             // TRAP_N06_EXPLAIN
             // 
             this.TRAP_N06_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N06_EXPLAIN.Location = new System.Drawing.Point(2, 162);
+            this.TRAP_N06_EXPLAIN.Location = new System.Drawing.Point(2, 243);
             this.TRAP_N06_EXPLAIN.Multiline = true;
             this.TRAP_N06_EXPLAIN.Name = "TRAP_N06_EXPLAIN";
             this.TRAP_N06_EXPLAIN.Placeholder = "";
             this.TRAP_N06_EXPLAIN.ReadOnly = true;
-            this.TRAP_N06_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N06_EXPLAIN.Size = new System.Drawing.Size(575, 420);
             this.TRAP_N06_EXPLAIN.TabIndex = 253;
             this.TRAP_N06_EXPLAIN.Text = resources.GetString("TRAP_N06_EXPLAIN.Text");
             // 
@@ -7210,6 +7304,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.TUTORIAL_Comment);
+            this.panel4.Controls.Add(this.label72);
             this.panel4.Controls.Add(this.TUTORIAL_EXPLAIN);
             this.panel4.Controls.Add(this.TUTORIAL_L_0_NEWALLOC_EVENT);
             this.panel4.Controls.Add(this.TUTORIAL_P0);
@@ -7697,6 +7793,510 @@
             this.X_MAP_PIC.Size = new System.Drawing.Size(100, 50);
             this.X_MAP_PIC.TabIndex = 0;
             this.X_MAP_PIC.TabStop = false;
+            // 
+            // OBJECT_N05_Comment
+            // 
+            this.OBJECT_N05_Comment.ErrorMessage = "";
+            this.OBJECT_N05_Comment.Location = new System.Drawing.Point(199, 168);
+            this.OBJECT_N05_Comment.Name = "OBJECT_N05_Comment";
+            this.OBJECT_N05_Comment.Placeholder = "";
+            this.OBJECT_N05_Comment.Size = new System.Drawing.Size(384, 25);
+            this.OBJECT_N05_Comment.TabIndex = 245;
+            // 
+            // label26
+            // 
+            this.label26.AccessibleDescription = "@COMMENT";
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Location = new System.Drawing.Point(1, 165);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(193, 32);
+            this.label26.TabIndex = 244;
+            this.label26.Text = "コメント";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N06_Comment
+            // 
+            this.OBJECT_N06_Comment.ErrorMessage = "";
+            this.OBJECT_N06_Comment.Location = new System.Drawing.Point(198, 168);
+            this.OBJECT_N06_Comment.Name = "OBJECT_N06_Comment";
+            this.OBJECT_N06_Comment.Placeholder = "";
+            this.OBJECT_N06_Comment.Size = new System.Drawing.Size(384, 25);
+            this.OBJECT_N06_Comment.TabIndex = 247;
+            // 
+            // label27
+            // 
+            this.label27.AccessibleDescription = "@COMMENT";
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Location = new System.Drawing.Point(0, 165);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(193, 32);
+            this.label27.TabIndex = 246;
+            this.label27.Text = "コメント";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N07_Comment
+            // 
+            this.OBJECT_N07_Comment.ErrorMessage = "";
+            this.OBJECT_N07_Comment.Location = new System.Drawing.Point(198, 191);
+            this.OBJECT_N07_Comment.Name = "OBJECT_N07_Comment";
+            this.OBJECT_N07_Comment.Placeholder = "";
+            this.OBJECT_N07_Comment.Size = new System.Drawing.Size(384, 25);
+            this.OBJECT_N07_Comment.TabIndex = 253;
+            // 
+            // label29
+            // 
+            this.label29.AccessibleDescription = "@COMMENT";
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label29.Location = new System.Drawing.Point(0, 188);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(193, 32);
+            this.label29.TabIndex = 252;
+            this.label29.Text = "コメント";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N08_Comment
+            // 
+            this.OBJECT_N08_Comment.ErrorMessage = "";
+            this.OBJECT_N08_Comment.Location = new System.Drawing.Point(198, 173);
+            this.OBJECT_N08_Comment.Name = "OBJECT_N08_Comment";
+            this.OBJECT_N08_Comment.Placeholder = "";
+            this.OBJECT_N08_Comment.Size = new System.Drawing.Size(384, 25);
+            this.OBJECT_N08_Comment.TabIndex = 255;
+            // 
+            // label33
+            // 
+            this.label33.AccessibleDescription = "@COMMENT";
+            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label33.Location = new System.Drawing.Point(0, 170);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(193, 32);
+            this.label33.TabIndex = 254;
+            this.label33.Text = "コメント";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N0A_Comment
+            // 
+            this.OBJECT_N0A_Comment.ErrorMessage = "";
+            this.OBJECT_N0A_Comment.Location = new System.Drawing.Point(198, 179);
+            this.OBJECT_N0A_Comment.Name = "OBJECT_N0A_Comment";
+            this.OBJECT_N0A_Comment.Placeholder = "";
+            this.OBJECT_N0A_Comment.Size = new System.Drawing.Size(384, 25);
+            this.OBJECT_N0A_Comment.TabIndex = 257;
+            // 
+            // label36
+            // 
+            this.label36.AccessibleDescription = "@COMMENT";
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label36.Location = new System.Drawing.Point(0, 176);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(193, 32);
+            this.label36.TabIndex = 256;
+            this.label36.Text = "コメント";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALK_N03_Comment
+            // 
+            this.TALK_N03_Comment.ErrorMessage = "";
+            this.TALK_N03_Comment.Location = new System.Drawing.Point(177, 332);
+            this.TALK_N03_Comment.Name = "TALK_N03_Comment";
+            this.TALK_N03_Comment.Placeholder = "";
+            this.TALK_N03_Comment.Size = new System.Drawing.Size(394, 25);
+            this.TALK_N03_Comment.TabIndex = 259;
+            // 
+            // label37
+            // 
+            this.label37.AccessibleDescription = "@COMMENT";
+            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label37.Location = new System.Drawing.Point(2, 328);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(170, 32);
+            this.label37.TabIndex = 258;
+            this.label37.Text = "コメント";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N02_Comment
+            // 
+            this.N02_Comment.ErrorMessage = "";
+            this.N02_Comment.Location = new System.Drawing.Point(189, 212);
+            this.N02_Comment.Name = "N02_Comment";
+            this.N02_Comment.Placeholder = "";
+            this.N02_Comment.Size = new System.Drawing.Size(399, 25);
+            this.N02_Comment.TabIndex = 261;
+            // 
+            // label40
+            // 
+            this.label40.AccessibleDescription = "@COMMENT";
+            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label40.Location = new System.Drawing.Point(1, 208);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(184, 32);
+            this.label40.TabIndex = 260;
+            this.label40.Text = "コメント";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NFE702_Comment
+            // 
+            this.NFE702_Comment.ErrorMessage = "";
+            this.NFE702_Comment.Location = new System.Drawing.Point(189, 253);
+            this.NFE702_Comment.Name = "NFE702_Comment";
+            this.NFE702_Comment.Placeholder = "";
+            this.NFE702_Comment.Size = new System.Drawing.Size(399, 25);
+            this.NFE702_Comment.TabIndex = 263;
+            // 
+            // label43
+            // 
+            this.label43.AccessibleDescription = "@COMMENT";
+            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label43.Location = new System.Drawing.Point(1, 249);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(184, 32);
+            this.label43.TabIndex = 262;
+            this.label43.Text = "コメント";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ALWAYS_N0B_Comment
+            // 
+            this.ALWAYS_N0B_Comment.ErrorMessage = "";
+            this.ALWAYS_N0B_Comment.Location = new System.Drawing.Point(197, 188);
+            this.ALWAYS_N0B_Comment.Name = "ALWAYS_N0B_Comment";
+            this.ALWAYS_N0B_Comment.Placeholder = "";
+            this.ALWAYS_N0B_Comment.Size = new System.Drawing.Size(387, 25);
+            this.ALWAYS_N0B_Comment.TabIndex = 265;
+            // 
+            // label44
+            // 
+            this.label44.AccessibleDescription = "@COMMENT";
+            this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label44.Location = new System.Drawing.Point(0, 184);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(194, 32);
+            this.label44.TabIndex = 264;
+            this.label44.Text = "コメント";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ALWAYS_N01_Comment
+            // 
+            this.ALWAYS_N01_Comment.ErrorMessage = "";
+            this.ALWAYS_N01_Comment.Location = new System.Drawing.Point(200, 159);
+            this.ALWAYS_N01_Comment.Name = "ALWAYS_N01_Comment";
+            this.ALWAYS_N01_Comment.Placeholder = "";
+            this.ALWAYS_N01_Comment.Size = new System.Drawing.Size(387, 25);
+            this.ALWAYS_N01_Comment.TabIndex = 267;
+            // 
+            // label45
+            // 
+            this.label45.AccessibleDescription = "@COMMENT";
+            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label45.Location = new System.Drawing.Point(3, 155);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(194, 32);
+            this.label45.TabIndex = 266;
+            this.label45.Text = "コメント";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ALWAYS_N0E_Comment
+            // 
+            this.ALWAYS_N0E_Comment.ErrorMessage = "";
+            this.ALWAYS_N0E_Comment.Location = new System.Drawing.Point(199, 164);
+            this.ALWAYS_N0E_Comment.Name = "ALWAYS_N0E_Comment";
+            this.ALWAYS_N0E_Comment.Placeholder = "";
+            this.ALWAYS_N0E_Comment.Size = new System.Drawing.Size(387, 25);
+            this.ALWAYS_N0E_Comment.TabIndex = 269;
+            // 
+            // label47
+            // 
+            this.label47.AccessibleDescription = "@COMMENT";
+            this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label47.Location = new System.Drawing.Point(2, 160);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(194, 32);
+            this.label47.TabIndex = 268;
+            this.label47.Text = "コメント";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ALWAYS_N0D_Comment
+            // 
+            this.ALWAYS_N0D_Comment.ErrorMessage = "";
+            this.ALWAYS_N0D_Comment.Location = new System.Drawing.Point(200, 164);
+            this.ALWAYS_N0D_Comment.Name = "ALWAYS_N0D_Comment";
+            this.ALWAYS_N0D_Comment.Placeholder = "";
+            this.ALWAYS_N0D_Comment.Size = new System.Drawing.Size(387, 25);
+            this.ALWAYS_N0D_Comment.TabIndex = 271;
+            // 
+            // label49
+            // 
+            this.label49.AccessibleDescription = "@COMMENT";
+            this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label49.Location = new System.Drawing.Point(3, 160);
+            this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(194, 32);
+            this.label49.TabIndex = 270;
+            this.label49.Text = "コメント";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N01_Comment
+            // 
+            this.TRAP_N01_Comment.ErrorMessage = "";
+            this.TRAP_N01_Comment.Location = new System.Drawing.Point(170, 171);
+            this.TRAP_N01_Comment.Name = "TRAP_N01_Comment";
+            this.TRAP_N01_Comment.Placeholder = "";
+            this.TRAP_N01_Comment.Size = new System.Drawing.Size(407, 25);
+            this.TRAP_N01_Comment.TabIndex = 273;
+            // 
+            // label56
+            // 
+            this.label56.AccessibleDescription = "@COMMENT";
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Location = new System.Drawing.Point(6, 167);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(158, 32);
+            this.label56.TabIndex = 272;
+            this.label56.Text = "コメント";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N04_Comment
+            // 
+            this.TRAP_N04_Comment.ErrorMessage = "";
+            this.TRAP_N04_Comment.Location = new System.Drawing.Point(170, 188);
+            this.TRAP_N04_Comment.Name = "TRAP_N04_Comment";
+            this.TRAP_N04_Comment.Placeholder = "";
+            this.TRAP_N04_Comment.Size = new System.Drawing.Size(407, 25);
+            this.TRAP_N04_Comment.TabIndex = 275;
+            // 
+            // label58
+            // 
+            this.label58.AccessibleDescription = "@COMMENT";
+            this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label58.Location = new System.Drawing.Point(6, 184);
+            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(158, 32);
+            this.label58.TabIndex = 274;
+            this.label58.Text = "コメント";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N05_Comment
+            // 
+            this.TRAP_N05_Comment.ErrorMessage = "";
+            this.TRAP_N05_Comment.Location = new System.Drawing.Point(170, 181);
+            this.TRAP_N05_Comment.Name = "TRAP_N05_Comment";
+            this.TRAP_N05_Comment.Placeholder = "";
+            this.TRAP_N05_Comment.Size = new System.Drawing.Size(407, 25);
+            this.TRAP_N05_Comment.TabIndex = 277;
+            // 
+            // label59
+            // 
+            this.label59.AccessibleDescription = "@COMMENT";
+            this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label59.Location = new System.Drawing.Point(6, 177);
+            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(158, 32);
+            this.label59.TabIndex = 276;
+            this.label59.Text = "コメント";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N07_Comment
+            // 
+            this.TRAP_N07_Comment.ErrorMessage = "";
+            this.TRAP_N07_Comment.Location = new System.Drawing.Point(171, 196);
+            this.TRAP_N07_Comment.Name = "TRAP_N07_Comment";
+            this.TRAP_N07_Comment.Placeholder = "";
+            this.TRAP_N07_Comment.Size = new System.Drawing.Size(407, 25);
+            this.TRAP_N07_Comment.TabIndex = 279;
+            // 
+            // label66
+            // 
+            this.label66.AccessibleDescription = "@COMMENT";
+            this.label66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label66.Location = new System.Drawing.Point(7, 192);
+            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(158, 32);
+            this.label66.TabIndex = 278;
+            this.label66.Text = "コメント";
+            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N0C_Comment
+            // 
+            this.TRAP_N0C_Comment.ErrorMessage = "";
+            this.TRAP_N0C_Comment.Location = new System.Drawing.Point(179, 193);
+            this.TRAP_N0C_Comment.Name = "TRAP_N0C_Comment";
+            this.TRAP_N0C_Comment.Placeholder = "";
+            this.TRAP_N0C_Comment.Size = new System.Drawing.Size(399, 25);
+            this.TRAP_N0C_Comment.TabIndex = 281;
+            // 
+            // label67
+            // 
+            this.label67.AccessibleDescription = "@COMMENT";
+            this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label67.Location = new System.Drawing.Point(4, 189);
+            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(171, 32);
+            this.label67.TabIndex = 280;
+            this.label67.Text = "コメント";
+            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N08_Comment
+            // 
+            this.TRAP_N08_Comment.ErrorMessage = "";
+            this.TRAP_N08_Comment.Location = new System.Drawing.Point(170, 183);
+            this.TRAP_N08_Comment.Name = "TRAP_N08_Comment";
+            this.TRAP_N08_Comment.Placeholder = "";
+            this.TRAP_N08_Comment.Size = new System.Drawing.Size(399, 25);
+            this.TRAP_N08_Comment.TabIndex = 283;
+            // 
+            // label68
+            // 
+            this.label68.AccessibleDescription = "@COMMENT";
+            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label68.Location = new System.Drawing.Point(3, 179);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(158, 32);
+            this.label68.TabIndex = 282;
+            this.label68.Text = "コメント";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N0B_Comment
+            // 
+            this.TRAP_N0B_Comment.ErrorMessage = "";
+            this.TRAP_N0B_Comment.Location = new System.Drawing.Point(169, 190);
+            this.TRAP_N0B_Comment.Name = "TRAP_N0B_Comment";
+            this.TRAP_N0B_Comment.Placeholder = "";
+            this.TRAP_N0B_Comment.Size = new System.Drawing.Size(399, 25);
+            this.TRAP_N0B_Comment.TabIndex = 285;
+            // 
+            // label69
+            // 
+            this.label69.AccessibleDescription = "@COMMENT";
+            this.label69.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label69.Location = new System.Drawing.Point(2, 186);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(158, 32);
+            this.label69.TabIndex = 284;
+            this.label69.Text = "コメント";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_Comment
+            // 
+            this.TRAP_N06_Comment.ErrorMessage = "";
+            this.TRAP_N06_Comment.Location = new System.Drawing.Point(171, 180);
+            this.TRAP_N06_Comment.Name = "TRAP_N06_Comment";
+            this.TRAP_N06_Comment.Placeholder = "";
+            this.TRAP_N06_Comment.Size = new System.Drawing.Size(399, 25);
+            this.TRAP_N06_Comment.TabIndex = 287;
+            // 
+            // label70
+            // 
+            this.label70.AccessibleDescription = "@COMMENT";
+            this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label70.Location = new System.Drawing.Point(4, 176);
+            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(158, 32);
+            this.label70.TabIndex = 286;
+            this.label70.Text = "コメント";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TUTORIAL_Comment
+            // 
+            this.TUTORIAL_Comment.ErrorMessage = "";
+            this.TUTORIAL_Comment.Location = new System.Drawing.Point(206, 109);
+            this.TUTORIAL_Comment.Name = "TUTORIAL_Comment";
+            this.TUTORIAL_Comment.Placeholder = "";
+            this.TUTORIAL_Comment.Size = new System.Drawing.Size(383, 25);
+            this.TUTORIAL_Comment.TabIndex = 289;
+            // 
+            // label72
+            // 
+            this.label72.AccessibleDescription = "@COMMENT";
+            this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label72.Location = new System.Drawing.Point(4, 105);
+            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(194, 32);
+            this.label72.TabIndex = 288;
+            this.label72.Text = "コメント";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALK_N04_Comment
+            // 
+            this.TALK_N04_Comment.ErrorMessage = "";
+            this.TALK_N04_Comment.Location = new System.Drawing.Point(177, 291);
+            this.TALK_N04_Comment.Name = "TALK_N04_Comment";
+            this.TALK_N04_Comment.Placeholder = "";
+            this.TALK_N04_Comment.Size = new System.Drawing.Size(394, 25);
+            this.TALK_N04_Comment.TabIndex = 261;
+            // 
+            // label73
+            // 
+            this.label73.AccessibleDescription = "@COMMENT";
+            this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label73.Location = new System.Drawing.Point(2, 287);
+            this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(170, 32);
+            this.label73.TabIndex = 260;
+            this.label73.Text = "コメント";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALKFE6_N04_Comment
+            // 
+            this.TALKFE6_N04_Comment.ErrorMessage = "";
+            this.TALKFE6_N04_Comment.Location = new System.Drawing.Point(177, 240);
+            this.TALKFE6_N04_Comment.Name = "TALKFE6_N04_Comment";
+            this.TALKFE6_N04_Comment.Placeholder = "";
+            this.TALKFE6_N04_Comment.Size = new System.Drawing.Size(394, 25);
+            this.TALKFE6_N04_Comment.TabIndex = 263;
+            // 
+            // label79
+            // 
+            this.label79.AccessibleDescription = "@COMMENT";
+            this.label79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label79.Location = new System.Drawing.Point(2, 236);
+            this.label79.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(170, 32);
+            this.label79.TabIndex = 262;
+            this.label79.Text = "コメント";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALKFE6_N0D_Comment
+            // 
+            this.TALKFE6_N0D_Comment.ErrorMessage = "";
+            this.TALKFE6_N0D_Comment.Location = new System.Drawing.Point(176, 165);
+            this.TALKFE6_N0D_Comment.Name = "TALKFE6_N0D_Comment";
+            this.TALKFE6_N0D_Comment.Placeholder = "";
+            this.TALKFE6_N0D_Comment.Size = new System.Drawing.Size(394, 25);
+            this.TALKFE6_N0D_Comment.TabIndex = 265;
+            // 
+            // label80
+            // 
+            this.label80.AccessibleDescription = "@COMMENT";
+            this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label80.Location = new System.Drawing.Point(1, 161);
+            this.label80.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(171, 32);
+            this.label80.TabIndex = 264;
+            this.label80.Text = "コメント";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EventCondForm
             // 
@@ -8530,5 +9130,53 @@
         private System.Windows.Forms.Label label35;
         private TextBoxEx TRAP_N06_EXPLAIN;
         private TextBoxEx TRAP_N06_L_4_TEXT;
+        private TextBoxEx OBJECT_N05_Comment;
+        private System.Windows.Forms.Label label26;
+        private TextBoxEx OBJECT_N06_Comment;
+        private System.Windows.Forms.Label label27;
+        private TextBoxEx OBJECT_N07_Comment;
+        private System.Windows.Forms.Label label29;
+        private TextBoxEx OBJECT_N08_Comment;
+        private System.Windows.Forms.Label label33;
+        private TextBoxEx OBJECT_N0A_Comment;
+        private System.Windows.Forms.Label label36;
+        private TextBoxEx TALK_N03_Comment;
+        private System.Windows.Forms.Label label37;
+        private TextBoxEx N02_Comment;
+        private System.Windows.Forms.Label label40;
+        private TextBoxEx NFE702_Comment;
+        private System.Windows.Forms.Label label43;
+        private TextBoxEx ALWAYS_N0B_Comment;
+        private System.Windows.Forms.Label label44;
+        private TextBoxEx ALWAYS_N01_Comment;
+        private System.Windows.Forms.Label label45;
+        private TextBoxEx ALWAYS_N0E_Comment;
+        private System.Windows.Forms.Label label47;
+        private TextBoxEx ALWAYS_N0D_Comment;
+        private System.Windows.Forms.Label label49;
+        private TextBoxEx TRAP_N01_Comment;
+        private System.Windows.Forms.Label label56;
+        private TextBoxEx TRAP_N04_Comment;
+        private System.Windows.Forms.Label label58;
+        private TextBoxEx TRAP_N05_Comment;
+        private System.Windows.Forms.Label label59;
+        private TextBoxEx TRAP_N07_Comment;
+        private System.Windows.Forms.Label label66;
+        private TextBoxEx TRAP_N0C_Comment;
+        private System.Windows.Forms.Label label67;
+        private TextBoxEx TRAP_N08_Comment;
+        private System.Windows.Forms.Label label68;
+        private TextBoxEx TRAP_N0B_Comment;
+        private System.Windows.Forms.Label label69;
+        private TextBoxEx TRAP_N06_Comment;
+        private System.Windows.Forms.Label label70;
+        private TextBoxEx TUTORIAL_Comment;
+        private System.Windows.Forms.Label label72;
+        private TextBoxEx TALK_N04_Comment;
+        private System.Windows.Forms.Label label73;
+        private TextBoxEx TALKFE6_N04_Comment;
+        private System.Windows.Forms.Label label79;
+        private TextBoxEx TALKFE6_N0D_Comment;
+        private System.Windows.Forms.Label label80;
     }
 }

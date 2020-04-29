@@ -107,7 +107,7 @@ namespace FEBuilderGBA
 
         public void JumpToMAPIDAndAddr(uint mapid, uint exitindex)
         {
-            AddressList.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(AddressList, mapid);
             U.SelectedIndexSafety(N_AddressList, exitindex, false);
         }
 

@@ -8054,14 +8054,14 @@ namespace FEBuilderGBA
 
             if (selectedID < addressList.Items.Count)
             {
-                addressList.SelectedIndex = (int)selectedID;
+                U.SelectedIndexSafety(addressList, selectedID);
             }
             else if (selectedID != U.NOT_FOUND)
             {
                 uint pid = InputFormRef.AddrToSelect(addressList, selectedID);
                 if (pid < addressList.Items.Count)
                 {
-                    addressList.SelectedIndex = (int)pid;
+                    U.SelectedIndexSafety(addressList, pid);
                 }
             }
 

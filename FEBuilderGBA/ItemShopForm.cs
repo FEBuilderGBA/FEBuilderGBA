@@ -144,7 +144,7 @@ namespace FEBuilderGBA
             uint select = InputFormRef.AddrToSelect(this.SHOP_LIST,addr);
             if (select != U.NOT_FOUND)
             {
-                this.SHOP_LIST.SelectedIndex = (int)select;
+                U.SelectedIndexSafety(this.SHOP_LIST, select);
                 return;
             }
             //店リストになければアドレス直地.

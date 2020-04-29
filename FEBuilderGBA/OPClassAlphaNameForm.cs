@@ -59,7 +59,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            N_AddressList.SelectedIndex = (int)id;
+            U.SelectedIndexSafety(this.N_AddressList, id);
         }
         public static uint ExpandsArea(Form form,uint current_count, uint newdatacount, Undo.UndoData undodata)
         {

@@ -634,7 +634,7 @@ namespace FEBuilderGBA
 
         public void JumpTo(uint id)
         {
-            this.AddressList.SelectedIndex = (int)id;
+            U.SelectedIndexSafety(this.AddressList, id);
         }
 
 

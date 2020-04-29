@@ -335,7 +335,7 @@ namespace FEBuilderGBA
             IsInit = true;
 
             this.ConfigNo.Text = "0x"+U.ToHexString(chipset_id);
-            this.ConfigTerrain.SelectedIndex = (int)terrain_data;
+            U.SelectedIndexSafety(this.ConfigTerrain, terrain_data);
 
             int tile_tsa_index = chipset_id << 1;
             if (tile_tsa_index + 7 >= configUZ.Length)

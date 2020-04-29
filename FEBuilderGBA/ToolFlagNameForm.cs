@@ -99,7 +99,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            this.AddressList.SelectedIndex = (int)selected;
+            U.SelectedIndexSafety(this.AddressList, selected);
         }
 
         private void AddressList_DoubleClick(object sender, EventArgs e)

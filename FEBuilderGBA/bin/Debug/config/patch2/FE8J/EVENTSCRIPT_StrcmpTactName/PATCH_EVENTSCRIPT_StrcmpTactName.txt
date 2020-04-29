@@ -1,0 +1,21 @@
+NAME=軍師の名前を比較する(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 StrcmpTactName.dmp=0x10 0xB5 0x80 0x6B
+EVENTSCRIPT:1=400DXXXX{$L1:StrcmpTactName.dmp}	軍師の名前を[XX:TEXT:TargetText]と比較する
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=StrcmpTactName.dmp
+
+AUTHOR=7743
+INFO=軍師の名前を指定した文字列と比較します。
+
+EVENTSCRIPT:1.en=400DXXXX{$L1:StrcmpTactName.dmp}	Compare Name of Tactician to [XX:TEXT:TargetText]	{COND}
+NAME.en=AddEvent: Compare the names of Tactician
+INFO.en=Compares the Tactician's name with the specified string.
+NAME.zh=比较军官的姓名(AddEvent)
+INFO.zh=将军官的姓名与指定的字符串进行比较。
+EVENTSCRIPT:1.zh=400DXXXX{$L1:StrcmpTactName.dmp}	将军官的姓名与[XX:TEXT:TargetText]进行比较。

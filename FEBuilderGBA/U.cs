@@ -897,7 +897,7 @@ namespace FEBuilderGBA
                 list.SelectedIndex = -1;
                 return false;
             }
-            list.SelectedIndex = (int)id;
+            U.SelectedIndexSafety(list, id);
             return true;
         }
         public static bool FindListAndSelect(ListBox list, string name)
@@ -908,7 +908,7 @@ namespace FEBuilderGBA
                 list.SelectedIndex = -1;
                 return false;
             }
-            list.SelectedIndex = (int)id;
+            U.SelectedIndexSafety(list, id);
             return true;
         }
         public static uint FindComboSelectHexFromValueWhereName(ComboBox list, string name)
@@ -1698,6 +1698,10 @@ namespace FEBuilderGBA
             return (x & 0x3F) | ((y & 0x3F) << 6) | ((ext & 0x3) << 12);
         }
 
+        public static bool SelectedIndexSafety(ListBox list, decimal selectID, bool selectFocus = false)
+        {
+            return SelectedIndexSafety(list, (int)selectID, selectFocus);
+        }
         public static bool SelectedIndexSafety(ListBox list, uint selectID, bool selectFocus = false)
         {
             return SelectedIndexSafety(list, (int)selectID, selectFocus);

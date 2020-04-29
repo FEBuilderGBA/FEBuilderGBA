@@ -165,7 +165,7 @@ namespace FEBuilderGBA
                 this.AddressList.SelectedIndex = -1;
                 return;
             }
-            this.AddressList.SelectedIndex = (int)(a.Value );
+            U.SelectedIndexSafety(this.AddressList, a.Value);
         }
         private void JumpToProbabilitySelect(object sender, EventArgs e)
         {
@@ -188,7 +188,7 @@ namespace FEBuilderGBA
                 this.N1_AddressList.SelectedIndex = -1;
                 return;
             }
-            this.N1_AddressList.SelectedIndex = (int)(a.Value );
+            U.SelectedIndexSafety(this.N1_AddressList, a.Value);
         }
 
         //全データの取得

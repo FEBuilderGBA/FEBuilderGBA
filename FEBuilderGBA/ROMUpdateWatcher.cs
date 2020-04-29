@@ -37,6 +37,11 @@ namespace FEBuilderGBA
         }
         public void RegistOtherProcess(Process process,string fullfilename)
         {
+            if (process.HasExited == true)
+            {
+                return;
+            }
+
             WatchData w = new WatchData();
             //w.FullFilename = fullfilename; //keyに移動する.
             w.Process = process;
