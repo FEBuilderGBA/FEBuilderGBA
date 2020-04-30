@@ -384,10 +384,38 @@ namespace FEBuilderGBA
                         return U.NOT_FOUND;
                     }
                 }
-                else if (code == 0x01 || code == 0x02 || code == 0x03 || code == 0x04 || code == 0x05 ||  code == 0x0D || code == 0x14 || code == 0x16)
+                else if (code == 0x01)
                 {//sarg is null, parg is pointer
                     if (sarg != 0 || !U.isSafetyPointer(parg))
                     {//規約違反
+                        return U.NOT_FOUND;
+                    }
+                    //文字列参照 ASCIIである必要あり
+                    string name = Program.ROM.getString(U.toOffset(parg));
+                    if (!U.isAsciiString(name))
+                    {//規約違反
+                        return U.NOT_FOUND;
+                    }
+                }
+                else if (code == 0x02 || code == 0x03 || code == 0x04 || code == 0x14 || code == 0x16)
+                {//sarg is null, parg is pointer
+                    if (sarg != 0 || !U.isSafetyPointer(parg))
+                    {//規約違反
+                        return U.NOT_FOUND;
+                    }
+                    if (U.IsValueOdd(parg) == false)
+                    {//関数呼び出しなので絶対に奇数でなければならない.
+                        return U.NOT_FOUND;
+                    }
+                }
+                else if (code == 0x05 || code == 0x0D)
+                {//sarg is null, parg is pointer
+                    if (sarg != 0 || !U.isSafetyPointer(parg))
+                    {//規約違反
+                        return U.NOT_FOUND;
+                    }
+                    if (U.IsValueOdd(parg))
+                    {//6C呼び出しなので絶対に偶数でなければならない.
                         return U.NOT_FOUND;
                     }
                 }

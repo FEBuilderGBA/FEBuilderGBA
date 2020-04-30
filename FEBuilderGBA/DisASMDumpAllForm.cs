@@ -138,6 +138,11 @@ namespace FEBuilderGBA
                     string name = pair.Value.Name;
                     name = U.term(name, "\t");
                     name = name.Replace(" ", "_"); //スペースがあるとダメらしい.
+                    name = name.Trim();
+                    if (name == "")
+                    {//名前が空
+                        continue;
+                    }
 
                     if (name.IndexOf("6CStructHeader") >= 0)
                     {//6Cは全部表示する
@@ -155,6 +160,9 @@ namespace FEBuilderGBA
                         }
                     }
 
+                    if (pair.Key == 0x908B95C)
+                    {
+                    }
                     line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);
 
                     writer.WriteLine(line);

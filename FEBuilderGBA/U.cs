@@ -636,9 +636,20 @@ namespace FEBuilderGBA
         {
             for (int i = 0; i < str.Length; i++)
             {
-                if (str[i] >= 0x7f)
+                char c = str[i];
+                if (c >= 0x7f)
                 {
                     return false;
+                }
+                if (c >= 0x01 && c <= 0x1f)
+                {
+                    if (c == 0x09 || c == 0x0a || c == 0x0d)
+                    {//タブと改行を除く
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             return true;
