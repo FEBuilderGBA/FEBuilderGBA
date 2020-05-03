@@ -2894,7 +2894,11 @@ namespace FEBuilderGBA
 
         private void N_B14_ValueChanged(object sender, EventArgs e)
         {
-            CHEAT_WARP_CHPATER_VALUE.Value = N_B14.Value + 1;
+            uint next_chapter = (uint)N_B14.Value + 1;
+            if (next_chapter <= 0xff)
+            {
+                CHEAT_WARP_CHPATER_VALUE.Value = next_chapter;
+            }
         }
 
         private void CHEAT_WARP_CHPATER_VALUE_ValueChanged(object sender, EventArgs e)

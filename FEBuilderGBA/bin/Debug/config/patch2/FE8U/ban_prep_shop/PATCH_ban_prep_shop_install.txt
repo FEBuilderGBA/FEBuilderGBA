@@ -1,0 +1,16 @@
+NAME=特定のマップの進撃準備の店を利用禁止にします(Install)
+INFO=特定のマップで、進撃準備の武器屋を利用禁止にします。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x99414=0x00 0x4B
+EDIT_PATCH=PATCH_ban_prep_shop.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Disables the Prep store for a particular map (Install)
+INFO.en=Disable Prep armory shops on certain maps.
+NAME.zh=禁用特定图的“攻击准备”存储（Install）
+INFO.zh=在某些地图上禁用高级盔甲商店

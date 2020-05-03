@@ -1,0 +1,5 @@
+BAN_PREP_SHOP_TABLE=$3C
+Loop=$08
+Match=$16
+Break=$1C
+Exit=$28

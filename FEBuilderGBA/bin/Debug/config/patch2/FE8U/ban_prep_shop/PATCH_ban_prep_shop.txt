@@ -1,0 +1,28 @@
+NAME=特定のマップの進撃準備の店を利用禁止にします(Editor)
+INFO=特定のマップで、進撃準備の武器屋を利用禁止にします。
+
+IF:0x99414=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ban_prep_shop_on_drawmenu.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 FF が出てくるまで
+DATACOUNT=$GREP1 0xFF
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=MAPID
+
+NAME.en=Disables the Prep store for a particular map (Editor)
+INFO.en=Disable Prep armory shops on certain maps.
+NAME.zh=禁用特定图的“攻击准备”存储（Editor）
+INFO.zh=在某些地图上禁用高级盔甲商店

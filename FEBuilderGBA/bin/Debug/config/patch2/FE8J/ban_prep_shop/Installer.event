@@ -1,0 +1,33 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $9B6EC		//FE8U
+jumpToHack(ban_prep_shop_on_drawmenu)
+ORG $9BB40		//FE8U
+jumpToHack(ban_prep_shop_on_selected)
+POP
+
+
+ALIGN 4
+ban_prep_shop_on_drawmenu:
+#incbin "ban_prep_shop_on_drawmenu.dmp"
+POIN BAN_PREP_SHOP_TABLE
+
+ALIGN 4
+ban_prep_shop_on_selected:
+#incbin "ban_prep_shop_on_selected.dmp"
+POIN BAN_PREP_SHOP_TABLE
+
+ALIGN 4
+BAN_PREP_SHOP_TABLE:
+//BYTE 0x04  //ban ch4 prep shop.
+BYTE 0xFF    //term
+
+ALIGN 4
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

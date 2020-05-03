@@ -1,0 +1,6 @@
+BAN_PREP_SHOP_TABLE=$50
+Loop=$08
+Match=$16
+Break=$2C
+Armory=$28
+Exit=$38

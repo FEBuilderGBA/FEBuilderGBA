@@ -89,7 +89,7 @@
 402FXXXXYYYYZZWW	Set move[YY:UNIT:Character]to[ZZ:MAPX:X][WW:MAPY:Y]with[XXXX:FSEC:Speed](MOVE)	{UNITMOVE}
 412FXXXXYYYYZZZZ	Set move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVEONTO)	{UNITMOVE}
 422FXXXXYYYYZZZZ	Set move[YY:UNIT:Character]one space[ZZ:DIRECTION:Direction]with[XXXX:FSEC:Speed](MOVE_1STEP)	{UNITMOVE}
-432FXXXXYYYYZZZZ	Activate set movement[XX::Value1][YY::Value1][ZZ::Value1](LOW)	{UNITMOVE}
+432FXXXXYYYYZZZZ	Activate set movement[XX::Value1][YY::Value1][ZZ::Value1](MOVEFORCED)(LOW)	{UNITMOVE}
 2029XXXX	[XXXX:FOG:Sight range]Change fog sight distance(VCWF)	{WEATHER}
 2028XXXX	[XX:WEATHER:Weather]Weather change	{WEATHER}
 2128XXXX	[XX:WEATHER:Weather]Weather change 2(WEA1)
