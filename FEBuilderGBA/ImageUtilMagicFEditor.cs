@@ -1263,7 +1263,7 @@ namespace FEBuilderGBA
                     loadbitmap = temp;
                 }
             }
-            else if (loadbitmap.Width < width || loadbitmap.Height < height)
+            else if (loadbitmap.Width < 240 || loadbitmap.Height < 64)
             {
                 errormessage = R.Error("画像サイズが正しくありません。\r\n{4}\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}", loadbitmap.Width, loadbitmap.Height, width, height, imagefilename);
                 loadbitmap.Dispose();
