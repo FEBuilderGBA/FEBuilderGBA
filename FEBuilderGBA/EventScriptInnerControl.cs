@@ -1033,10 +1033,6 @@ namespace FEBuilderGBA
             {//IGNORE_KEYS
                 text = " " + InputFormRef.GetIGNORE_KEYS(v);
             }
-            else if (arg.Type == EventScript.ArgType.COUNTER)
-            {//COUNTER
-                text = " " + "<<" + U.ToHexString(v);
-            }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
                 text = " " + InputFormRef.GetFSEC(v);
@@ -2845,12 +2841,6 @@ namespace FEBuilderGBA
                     {//IGNORE_KEYS
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetIGNORE_KEYS(v));
-                    }
-                    else if (arg.Type == EventScript.ArgType.COUNTER)
-                    {//COUNTER
-                        sb.Append(" ");
-                        sb.Append("<<");
-                        sb.Append(U.ToHexString(v));
                     }
                     else if (arg.Type == EventScript.ArgType.FSEC)
                     {//FSEC

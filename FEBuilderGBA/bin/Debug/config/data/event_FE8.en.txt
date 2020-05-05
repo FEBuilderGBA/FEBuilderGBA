@@ -74,11 +74,11 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
 21070000	SAVETOQUEUE	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
-210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Counter_value]	{VAL}
-220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
-230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter  and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
-210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter  0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
+210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Init_value]	{VAL}
+220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::00]	{VAL}
+230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::00]	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:CounterID][Y::00][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter  and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
+210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID][Y::Init_value][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter  0 if there is no reason.\r\nIn Init_value, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
 
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
 202AXXXX	Return to title screen[XXXX::Value 1](MNTS)	{ENDING}

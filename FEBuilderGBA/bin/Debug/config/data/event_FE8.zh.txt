@@ -293,12 +293,12 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
 21070000	SAVETOQUEUE	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
-210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Counter_value]	{VAL}
-220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
-230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
+210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Init_value]	{VAL}
+220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::00]	{VAL}
+230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::00]	{VAL}
 230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	减少计数器并在它变为零时打开标志
-[X:COUNTER:Counter][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:条件ID]	在满足规定条件后，使用COUNTER进行处理，例如3圈加固。\r\n离开计Counter，Base_operand为0，除非你特别改变它。\r\n对于完成标志，请写入与完成标志设置相同的值对于此事件。\r\n\r\n请将“条件ID"放入此事件的另一个条件ID和一个不适用的唯一值。\r\n如果没有其他分支，则保留0并且没有问题	{VAL}	{FLAG}
-210FXXYY2102WWWW	使用计数器启动活动[X:COUNTER:CounterID][Y::Base_operand][W:FLAG:Flag]	在满足规定的条件后，使用COUNTER开始处理，例如3转加固。\r\n如果没有原因请离开计数器0。\r\n在Base_operand中，设置要操作的转数。如果是3转为3. \r\n对于标志，请设置您要操作的事件的完成标志	{VAL}	{FLAG}
+[X:COUNTER:CounterID][Y::00][W:FLAG:Completion Flag][V:LABEL:条件ID]	在满足规定条件后，使用COUNTER进行处理，例如3圈加固。\r\n离开计CounterID，00为0，除非你特别改变它。\r\n对于完成标志，请写入与完成标志设置相同的值对于此事件。\r\n\r\n请将“条件ID"放入此事件的另一个条件ID和一个不适用的唯一值。\r\n如果没有其他分支，则保留0并且没有问题	{VAL}	{FLAG}
+210FXXYY2102WWWW	使用计数器启动活动[X:COUNTER:CounterID][Y::Init_value][W:FLAG:Flag]	在满足规定的条件后，使用COUNTER开始处理，例如3转加固。\r\n如果没有原因请离开计数器0。\r\n在Init_value中，设置要操作的转数。如果是3转为3. \r\n对于标志，请设置您要操作的事件的完成标志	{VAL}	{FLAG}
 
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	沙漠宝藏[XX:项目:可以拿起的物品][YYYY:LABEL:条件ID]	实施埋在沙漠中的物品。\r\n除了盗贼，还要看好运的参数来判断你是否可以接。\r\n\r\n对于“条件ID"，请包含此事件的另一个条件ID和不适用的唯一值。\r\n如果没有其他分支，请保留0并且没有问题	{ITEM}	{J}
 40A600000000ZZZZ212AXXXX	与世界地图到指定基准并转到下一个地图[ZZ:WMLOCATION:WM基地][XXXX:MAPCHAPTER:下一章ID](WM_SETNEXTLOCATION+MNCH)	{MAP}

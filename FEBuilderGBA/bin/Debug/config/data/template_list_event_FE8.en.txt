@@ -21,6 +21,10 @@ template_event_COND_DEPLOY_FE8.txt	If Unit is deployed
 template_event_COND_UNITINAREA_FE8.txt	If unit is in predetermined coordinate range
 template_event_COND_ACTIVEID_FE8.txt	If you are operating a specific unit
 template_event_COND_Gaiden.txt	Make Gaiden Branch:If clear within 3 turns, goto Gaiden
+template_event_COND_COUNTER_MORE_5_FE8.txt	If COUNTER is 5 or more.
+template_event_COND_COUNTER_LESS_1_FE8.txt	If COUNTER is less than 1.
+template_event_COND_COUNTER_MORE_5_ELSE_FE8.txt	If COUNTER is 5 or more, ELSE
+template_event_COND_COUNTER_LESS_1_ELSE_FE8.txt	If COUNTER is less than 1, ELSE
 template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show frame on unit to display conversation
 template_event_MOVEPOS_AND_FRAME_FE8.txt	Move camera to coordinates, Show frame in coordinates to display conversati
 on

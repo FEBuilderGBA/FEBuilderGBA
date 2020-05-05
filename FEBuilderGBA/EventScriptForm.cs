@@ -1409,11 +1409,6 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetIGNORE_KEYS(v);
                         }
-                        else if (arg.Type == EventScript.ArgType.COUNTER)
-                        {//COUNTER
-                            isENumText = true;
-                            text = " " + "<<" + U.ToHexString(v);
-                        }
                         else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
                         {//RAMUNITSTATUS
                             isENumText = true;

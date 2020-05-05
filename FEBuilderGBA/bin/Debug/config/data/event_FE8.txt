@@ -74,11 +74,11 @@
 21070000	キューに代入する(SAVETOQUEUE)	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:メモリスロット]	{VAL}
 200FXXXX	カウンタの値を取得[X:COUNTER:CounterID](COUNTER_CHECK)	@STOREC	{VAL}	{COND}
-210FXXYY	カウンタの値を設定[X:COUNTER:CounterID][Y::Counter_value](COUNTER_SET)	{VAL}
-220FXXYY	カウンタの値を足す[X:COUNTER:CounterID][Y::Base_operand](COUNTER_ADD)	{VAL}
-230FXXYY	カウンタの値を減らす[X:COUNTER:CounterID][Y::Base_operand](COUNTER_SUBTRACT)	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	カウンタを減らして、ゼロになったらフラグをONにする[X::Counter][Y::Base_operand][W:FLAG:達成フラグ][V:LABEL:条件ID]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を行います。\r\nCounterとBase_operandは特に変更しないならば0のままにしてください。\r\n達成フラグには、このイベントに設定されている達成フラグと同じ値を書いてください。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{VAL}	{FLAG}
-210FXXYY2102WWWW	カウンタを利用したイベントを開始する[X::CounterID][Y::Base_operand][W:FLAG:フラグ]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を開始させます。\r\nCounterは理由がなければ0のままにしてください。\r\nBase_operandには動作させるターン数を設定します。3ターンならば3になります。\r\nフラグには、動作させたいイベントの達成フラグを設定してください。	{VAL}	{FLAG}
+210FXXYY	カウンタの値を設定[X:COUNTER:CounterID][Y::Init_value](COUNTER_SET)	{VAL}
+220FXXYY	カウンタの値を足す[X:COUNTER:CounterID][Y::00](COUNTER_ADD)	{VAL}
+230FXXYY	カウンタの値を減らす[X:COUNTER:CounterID][Y::00](COUNTER_SUBTRACT)	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	カウンタを減らして、ゼロになったらフラグをONにする[X::Counter][Y::00][W:FLAG:達成フラグ][V:LABEL:条件ID]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を行います。\r\nCounterと00は特に変更しないならば0のままにしてください。\r\n達成フラグには、このイベントに設定されている達成フラグと同じ値を書いてください。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{VAL}	{FLAG}
+210FXXYY2102WWWW	カウンタを利用したイベントを開始する[X::CounterID][Y::Init_value][W:FLAG:フラグ]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を開始させます。\r\nCounterIDは理由がなければ0のままにしてください。\r\nInit_valueには動作させるターン数を設定します。3ターンならば3になります。\r\nフラグには、動作させたいイベントの達成フラグを設定してください。	{VAL}	{FLAG}
 40A600000000ZZZZ212AXXXX	ワールドマップあり 拠点を指定して次のマップへ[ZZ:WMLOCATION:WM拠点][XXXX:MAPCHAPTER:次の章ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
 212AXXXX	ワールドマップあり 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNCH)	@MNCHBUG	{MAP}
 222AXXXX	ワールドマップなし 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNC2)	章をクリアして、次の章へ進みます	@MNC2BUG	{MAP}
