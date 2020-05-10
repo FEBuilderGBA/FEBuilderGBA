@@ -12700,3 +12700,5 @@ r3=X tile position of menu of the right	{U}
 080999E4	绘图	旋转箭头。	{J}
 08097700	绘图	旋转箭头。	{U}
 08042e1c	CheckGameLinkArenaBit	{J}
+080A83D0	CopyMiniMapTerrainChips	{U}
+080ACDE8	CopyMiniMapTerrainChips	{J}

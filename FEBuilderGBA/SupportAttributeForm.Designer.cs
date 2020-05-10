@@ -62,8 +62,10 @@
             this.J_1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.LabelFilter = new System.Windows.Forms.Label();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -237,6 +239,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Comment);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.L_0_ATTRIBUTEICON);
             this.panel2.Controls.Add(this.B7);
             this.panel2.Controls.Add(this.J_7);
@@ -444,6 +448,17 @@
             this.AddressList.Size = new System.Drawing.Size(270, 314);
             this.AddressList.TabIndex = 108;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 347);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(270, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // LabelFilter
             // 
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -456,16 +471,26 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressListExpandsButton
+            // Comment
             // 
-            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 347);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(270, 30);
-            this.AddressListExpandsButton.TabIndex = 115;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(180, 190);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(256, 25);
+            this.Comment.TabIndex = 198;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(44, 187);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 31);
+            this.label4.TabIndex = 197;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SupportAttributeForm
             // 
@@ -488,6 +513,7 @@
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_ATTRIBUTEICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
@@ -540,5 +566,7 @@
         private System.Windows.Forms.Label LabelFilter;
         private InterpolatedPictureBox L_0_ATTRIBUTEICON;
         private System.Windows.Forms.Button AddressListExpandsButton;
+        private TextBoxEx Comment;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -33,7 +33,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
-                    return U.ToHexString(i + 1) + " " + InputFormRef.GetAttributeName((uint)i + 1);
+                    return U.ToHexString(i + 1) + " " + InputFormRef.GetAttributeName((uint)i + 1) + InputFormRef.GetCommentSA(addr);
                 }
                 );
         }

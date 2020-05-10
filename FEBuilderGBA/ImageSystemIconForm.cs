@@ -710,7 +710,7 @@ namespace FEBuilderGBA
          //7F=光	        6
          //80=理	        7
          //ただし、パレットは武器アイコンを参照していると思われる.
-            if (type <= 0 || type >= 8)
+            if (type <= 0)
             {
                 return ImageUtil.BlankDummy();
             }

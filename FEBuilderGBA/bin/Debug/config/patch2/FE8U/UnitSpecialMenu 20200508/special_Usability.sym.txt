@@ -1,0 +1,11 @@
+special_table=$88
+Loop=$0A
+CheckUnit=$18
+Break=$78
+CheckClass=$26
+CheckFlags=$34
+CheckItem=$44
+CheckCanto=$5A
+ItemLoop=$4C
+Run=$6E
+Exit=$7A

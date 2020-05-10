@@ -12746,3 +12746,5 @@ r3=X tile position of menu of right	{U}
 080999E4	drawing	Rotating arrow	{J}
 08097700	drawing	Rotating arrow	{U}
 08042e1c	CheckGameLinkArenaBit	{J}
+080A83D0	CopyMiniMapTerrainChips	{U}
+080ACDE8	CopyMiniMapTerrainChips	{J}

@@ -1,7 +1,7 @@
 
-NAME=ユニットごとの特殊技能パッチ(Editor)
-NAME.en=Special Event for each unit(Editor)
-NAME.zh=Special Event for each unit(Editor)
+NAME=ユニットごとの特殊技能パッチ 20200308(Editor)
+NAME.en=Special Event for each unit 20200308(Editor)
+NAME.zh=Special Event for each unit 20200308(Editor)
 
 IF:$FGREP4 special_Effect.dmp=0x30 0xB5 0x1C 0x4D
 

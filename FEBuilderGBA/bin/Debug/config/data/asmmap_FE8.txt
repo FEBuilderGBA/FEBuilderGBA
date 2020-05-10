@@ -12738,3 +12738,5 @@
 080999E4	描画	回転矢印	{J}
 08097700	描画	回転矢印	{U}
 08042e1c	CheckGameLinkArenaBit	{J}
+080A83D0	CopyMiniMapTerrainChips	{U}
+080ACDE8	CopyMiniMapTerrainChips	{J}

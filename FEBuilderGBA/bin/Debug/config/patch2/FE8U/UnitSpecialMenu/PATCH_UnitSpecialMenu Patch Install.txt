@@ -1,6 +1,6 @@
-NAME=ユニットごとの特殊技能パッチ(Install)
-NAME.en=Special Event for each unit(Installer)
-NAME.zh=Special Event for each unit(Installer)
+NAME=ユニットごとの特殊技能パッチ 20200308(Install)
+NAME.en=Special Event for each unit 20200308(Installer)
+NAME.zh=Special Event for each unit 20200308(Installer)
 TYPE=EA
 TAG=#ENGINE
 

@@ -1,0 +1,47 @@
+PUSH
+
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	special_string
+SHORT	0xef3 0xef4		//右がヘルプ指定
+SHORT	$6300 0
+POIN	special_Usability + 1
+POIN	special_Draw + 1
+POIN	special_Effect + 1
+WORD	0 0 0
+
+POP
+
+
+ALIGN 4
+special_Usability:
+#incbin "special_Usability.dmp"
+POIN special_table
+
+ALIGN 4
+special_Effect:
+#incbin "special_Effect.dmp"
+POIN special_table
+
+ALIGN 4
+special_Draw:
+#incbin "special_Draw.dmp"
+POIN special_table
+
+ALIGN 4
+#include "special_table.event"
+
+ALIGN 4
+special_string:
+#incbin "menuname.bin"
+
+TxtData0xef3:
+#incbin "0xef3.bin"
+
+TxtData0xef4:
+#incbin "0xef4.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+setText_WithHuffman(0xef3,TxtData0xef3)
+setText_WithHuffman(0xef4,TxtData0xef4)
+
+ALIGN 4
