@@ -558,7 +558,7 @@ namespace FEBuilderGBA
             }
             File.WriteAllLines(filename, lines);
         }
-        public static bool ImportAllData(string filename)
+        public static bool ImportAllData(string filename,bool recycleConvertSkillTextID)
         {
             InputFormRef InputFormRef;
             if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
@@ -608,6 +608,11 @@ namespace FEBuilderGBA
                     uint textid = U.atoh(sp[0]);
                     if (textid != 0)
                     {
+                        if (recycleConvertSkillTextID)
+                        {
+                            textid = ConvertSkillTextIDWithRecrycle(i, textid);
+                        }
+
                         Program.ROM.write_u16(textAddr + 0, textid);
                     }
 
@@ -626,6 +631,106 @@ namespace FEBuilderGBA
                 }
             }
             return true;
+        }
+
+        static uint ConvertSkillTextIDWithRecrycle(uint skillid, uint textID)
+        {
+            //Vengeance
+            if (skillid == 0x90 && textID == 0xEB1)
+            {
+                return 0xF72;
+            }
+
+            //Imbue
+            if (skillid == 0x91 && textID == 0xEB0)
+            {
+                return 0xF61;
+            }
+
+            //DoubleLion
+            if (skillid == 0x97 && textID == 0xEB9)
+            {
+                return 0xF4C;
+            }
+
+            //Shade        
+            if (skillid == 0x0C && textID == 0xE2B)
+            {
+                return 0xF5F;
+            }
+
+            //Glacies      
+            if (skillid == 0x32 && textID == 0xE52)
+            {
+                return 0xF69;
+            }
+
+            //GreatShild 
+            if (skillid == 0x6D && textID == 0xE8D)
+            {
+                return 0xF70;
+            }
+
+            //SkyBreaker   
+            if (skillid == 0x92 && textID == 0xEAF)
+            {
+                return 0xF54;
+            }
+
+            //BlueFlame  
+            if (skillid == 0x93 && textID == 0xEB2)
+            {
+                return 0xF4B;
+            }
+
+            //Gridmaster   
+            if (skillid == 0xF8 && textID == 0xF41)
+            {
+                return 0xF6A;
+            }
+
+            //Assassinate  
+            if (skillid == 0xF9 && textID == 0xF42)
+            {
+                return 0xF48;
+            }
+            
+            //Corrosion  
+            if ( skillid == 0x7D && textID == 0xE9C)
+            {
+                return 0xF64;
+            }
+
+            //ArcaneBalde 
+            if (skillid == 0x7E && textID == 0xE9D)
+            {
+                return 0xF49;
+            }
+
+            //KeepUp       
+            if (skillid == 0x7F && textID == 0xE9E)
+            {
+                return 0xF65;
+            }
+
+            //NatureRush   
+            if ( skillid == 0xDA && textID == 0xF23)
+            {
+                return 0xF67;
+            }
+
+            //Resourcefull 
+            if (skillid == 0x58 && textID == 0xE78)
+            {
+                return 0xF55;
+            }
+
+            //IndoorMarch           
+            if (skillid == 0x79 && textID == 0xE99)
+            {
+                return 0xF66;
+            }
+            return textID;
         }
 
         //テキストの取得
@@ -888,7 +993,7 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
-                bool r = ImportAllData(filename);
+                bool r = ImportAllData(filename, recycleConvertSkillTextID: false);
                 if (!r)
                 {
                     R.ShowStopError("インポートに失敗しました。");

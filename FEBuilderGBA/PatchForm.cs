@@ -7644,7 +7644,7 @@ namespace FEBuilderGBA
                 }
                 if (File.Exists(SkillConfigSkillSystem))
                 {
-                    SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+                    SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem , recycleConvertSkillTextID: true);
                     File.Delete(SkillConfigSkillSystem);
                 }
                 
