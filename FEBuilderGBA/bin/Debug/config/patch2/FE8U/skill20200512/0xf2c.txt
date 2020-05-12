@@ -1,0 +1,2 @@
+Deviant Avoid: When HP is 25%
+or lower, gain +30 Avoid.

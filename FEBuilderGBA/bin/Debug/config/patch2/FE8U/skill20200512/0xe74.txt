@@ -1,0 +1,2 @@
+Intimidate: -10 Avoid to
+all enemies within 2 tiles.

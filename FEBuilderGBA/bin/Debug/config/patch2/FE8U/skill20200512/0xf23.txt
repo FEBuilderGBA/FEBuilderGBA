@@ -1,0 +1,3 @@
+Quick Riposte: If defending and
+HP is 50% or higher, unit doubles
+and attacker does not double.

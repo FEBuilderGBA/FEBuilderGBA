@@ -14,8 +14,8 @@
 8078FB4=Spider shuffle	{U}
 807B3D0=Mauthe Doog walk	{J}
 8078FBC=Mauthe Doog walk	{U}
-807B3D8=Tarvos hooves	{J}
-8078FC4=Tarvos hooves	{U}
+807B3D8=Tarvos ,Mounts (horses)	{J}
+8078FC4=Tarvos ,Mounts (horses)	{U}
 807B3E0=Gorgon slither	{J}
 8078FCC=Gorgon slither	{U}
 807B3E8=Armorknight,Dragon,Cyclops' heavy sound.	{J}

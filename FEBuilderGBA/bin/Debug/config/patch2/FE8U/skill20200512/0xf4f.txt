@@ -1,0 +1,2 @@
+Push Magic: When HP
+is full, gain +5 magic.

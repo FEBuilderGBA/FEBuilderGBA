@@ -622,7 +622,7 @@ EXPORT:9=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
 
 UPDATE_METHOD=SKILLSYSTEM
 DEPRECATED=1
-UPDATE_PATCH=..\skill20200511\PATCH_Skill20200511.txt
+UPDATE_PATCH=..\skill20200512\PATCH_Skill20200512.txt
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
 UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
