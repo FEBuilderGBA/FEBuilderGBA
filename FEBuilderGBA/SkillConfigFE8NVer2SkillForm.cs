@@ -939,6 +939,7 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
         }
 
+
         //全データの取得
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {

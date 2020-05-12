@@ -1,0 +1,3 @@
+Keep Up: If unit is within 3
+spaces of an ally with Canto
+or Canto+, unit gains +2 Mov.

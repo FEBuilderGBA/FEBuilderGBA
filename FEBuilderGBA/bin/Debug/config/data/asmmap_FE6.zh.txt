@@ -1253,3 +1253,4 @@
 @ClearTurn@00	short	Chapter ID and number of turns	Number of turns<<7+Chapter ID
 @ClearTurn@02	short	Clear time seconds
 0203D994	@ClearTurn@[20]	Chapter Clear Turn
+080877AC	CopyMiniMapTerrainChips

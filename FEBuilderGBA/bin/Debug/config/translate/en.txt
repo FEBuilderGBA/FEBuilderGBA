@@ -12523,3 +12523,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:マップ範囲外
+Out of map range

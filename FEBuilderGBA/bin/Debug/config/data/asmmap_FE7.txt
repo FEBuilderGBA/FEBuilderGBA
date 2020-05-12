@@ -5243,3 +5243,9 @@
 08CE55FC	&OAMREGS	サウンドルーム	コントロール	停止開始ボタン	OAM	{U}
 08CE5604	&OAMREGS	サウンドルーム	コントロール	ランダムモードボタン	OAM	{U}
 08B905F8	&OAMREGS	サウンドルーム	曲名	名前	OAM	{U}
+08B91AD8	CallEvent	戦闘会話と死亡セリフの表示イベント1	{U}
+08B91AE8	CallEvent	戦闘会話と死亡セリフの表示イベント2	{U}
+08C00CE8	CallEvent	戦闘会話と死亡セリフの表示イベント1	{J}
+08C00CF8	CallEvent	戦闘会話と死亡セリフの表示イベント2	{J}
+080A2E6C	CopyMiniMapTerrainChips	{U}
+080A3AE0	CopyMiniMapTerrainChips	{J}

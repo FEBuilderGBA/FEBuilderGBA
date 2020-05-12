@@ -1,0 +1,2 @@
+Bow Range +1: Maximum range
+of equipped bows is increased.

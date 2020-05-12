@@ -1083,6 +1083,7 @@ namespace FEBuilderGBA
                 return new Size(listbounds.X, listbounds.Y);
             }
             SolidBrush brush = new SolidBrush(lb.ForeColor);
+            SolidBrush errorBrush = new SolidBrush(OptionForm.Color_Error_ForeColor());
             Font normalFont = lb.Font;
             Font boldFont = new Font(lb.Font, FontStyle.Bold);
             Rectangle bounds = listbounds;
@@ -1099,6 +1100,16 @@ namespace FEBuilderGBA
             bounds.X += U.DrawText("Y:", g, boldFont, brush, isWithDraw, bounds);
             U.DrawText(p.y.ToString(), g, normalFont, brush, isWithDraw, bounds);
             bounds.X += lineHeight * 2;
+
+            if (this.MapPictureBox.IsMapLoad())
+            {
+                int mapwidth = this.MapPictureBox.GetMapBitmapWidth() / 16;
+                int mapheight = this.MapPictureBox.GetMapBitmapHeight() / 16;
+                if (p.x > mapwidth || p.y > mapheight)
+                {
+                    bounds.X += U.DrawText(R._("マップ範囲外"), g, boldFont, errorBrush, isWithDraw, bounds);
+                }
+            }
 
             if (p.ext != 0)
             {
@@ -1135,6 +1146,7 @@ namespace FEBuilderGBA
             }
 
             brush.Dispose();
+            errorBrush.Dispose();
             boldFont.Dispose();
 
             bounds.Y += maxHeight;

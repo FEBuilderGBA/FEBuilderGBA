@@ -10,6 +10,8 @@
 11000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Continue to display conversation(MORETEXT)	{TEXT}	{U}
 12000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Eliwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionContinuous display of Hedoro's edited conversation(MORETEXTIFEM)	{J}
 12000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Eliwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionContinuous display of Hedoro's edited conversation(MORETEXTIFEM)	{U}
+13000000	_13	{J}
+13000000	_13	{U}
 14000000	Scroll_text(SCRO)	{J}
 14000000	Scroll_text(SCRO)	{U}
 17000000XXXX0000YYYY0000	Conversation branching by gender of military personnel[XXXX:CONVERSATION_TEXT:Male][YYYY:CONVERSATION_TEXT:female](TEXTIFTACTF)	{J}

@@ -1455,3 +1455,4 @@
 @ClearTurn@00	short	章IDとターン数	ターン数 << 7 + 章ID
 @ClearTurn@02	short	クリアタイム秒数
 0203D994	@ClearTurn@[20]	章クリアターン
+080877AC	CopyMiniMapTerrainChips

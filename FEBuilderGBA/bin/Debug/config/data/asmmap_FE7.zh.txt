@@ -4931,3 +4931,9 @@
 08CE55FC	&OAMREGS	声音室	控制。	停止开始按钮。	OAM	{U}
 08CE5604	&OAMREGS	声音室	控制。	随机模式按钮。	OAM	{U}
 08B905F8	&OAMREGS	声音室	歌名	名称	OAM	{U}
+08B91AD8	CallEvent	Battle Quote and Death Quote display event 1	{U}
+08B91AE8	CallEvent	Battle Quote and Death Quote display event 2	{U}
+08C00CE8	CallEvent	Battle Quote and Death Quote display event 1	{J}
+08C00CF8	CallEvent	Battle Quote and Death Quote display event 2	{J}
+080A2E6C	CopyMiniMapTerrainChips	{U}
+080A3AE0	CopyMiniMapTerrainChips	{J}
