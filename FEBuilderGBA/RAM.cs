@@ -507,6 +507,7 @@ namespace FEBuilderGBA
             }
             catch (Exception e)
             {
+                R.Error(R.ExceptionToString(e));
                 this.ErrorMessage = e.ToString();
                 return false;
             }
@@ -699,6 +700,10 @@ namespace FEBuilderGBA
             for (; append_offset < limit; append_offset += 4)
             {
                 uint addr = append_offset + procs_game_main;
+                if (addr + 3 >= buffer.Length)
+                {
+                    continue;
+                }
                 if (buffer[addr + 3] != 0x8)
                 {
                     continue;
@@ -711,12 +716,20 @@ namespace FEBuilderGBA
 
                 //FE6ではこれだけで誤判定するので追加の情報を付与する.
                 addr = append_offset + procs_forest_address;
+                if (addr+3 >= buffer.Length)
+                {
+                    continue;
+                }
                 pointer = U.u32(buffer, addr);
                 if (!U.is_ROMorRAMPointerOrNULL(pointer))
                 {
                     continue;
                 }
                 addr = append_offset + procs_forest_address + 4;
+                if (addr+3 >= buffer.Length)
+                {
+                    continue;
+                }
                 pointer = U.u32(buffer, addr);
                 if (!U.is_ROMorRAMPointerOrNULL(pointer))
                 {
@@ -767,6 +780,10 @@ namespace FEBuilderGBA
             for (; append_offset < limit; append_offset += 4)
             {
                 uint addr = append_offset + user_stack_base;
+                if (addr >= buffer.Length)
+                {
+                    continue;
+                }
                 if (buffer[addr + 3] != 0x8)
                 {
                     continue;
@@ -779,6 +796,10 @@ namespace FEBuilderGBA
 
                 //誤判定をさけるためにプレイヤ操作ユニット領域を確認する
                 addr = append_offset + control_unit_address;
+                if (addr >= buffer.Length)
+                {
+                    continue;
+                }
                 uint pointer = U.u32(buffer, addr);
                 if (!U.is_ROMorRAMPointerOrNULL(pointer))
                 {

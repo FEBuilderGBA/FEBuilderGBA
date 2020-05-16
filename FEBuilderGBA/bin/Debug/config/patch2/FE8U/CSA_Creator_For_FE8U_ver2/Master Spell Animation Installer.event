@@ -18,6 +18,12 @@
   POIN CSATable //needed for the routine
   POP
 
+  //Fix BG 0x35 TSA
+  PUSH
+  ORG $95DF9C
+  WORD 0x895D1A8
+  POP
+
 //Fix dodge to front glitch
 PUSH
 ORG 0x4E9A
