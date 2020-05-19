@@ -708,9 +708,14 @@ namespace FEBuilderGBA
             }
 
             //KeepUp       
-            if (skillid == 0x7F && textID == 0xE9E)
+            if (skillid == 0x79 && textID == 0xE78)
             {
-                return 0xF65;
+                return 0xF66;
+            }
+            //KeepUp       
+            if (skillid == 0x79 && textID == 0xE9E)
+            {
+                return 0xF66;
             }
 
             //NatureRush   
@@ -725,10 +730,10 @@ namespace FEBuilderGBA
                 return 0xF55;
             }
 
-            //IndoorMarch           
-            if (skillid == 0x79 && textID == 0xE99)
+            //Rightful Arch (元に戻す)
+            if (skillid == 0x7F && textID == 0xF65)
             {
-                return 0xF66;
+                return 0xE9E;
             }
             return textID;
         }

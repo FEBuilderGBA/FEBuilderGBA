@@ -1,0 +1,2 @@
+Mercy: Enemies are left
+with at least 1 HP.

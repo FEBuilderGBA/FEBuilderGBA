@@ -1,0 +1,2 @@
+Charge+: If unit has used up
+all movement, gain brave effect.

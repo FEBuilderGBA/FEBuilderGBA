@@ -1,0 +1,3 @@
+Poise: +1 Move.
+Negates enemy hit bonus from
+weapon triangle advantage.

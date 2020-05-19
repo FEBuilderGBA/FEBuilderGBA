@@ -118,13 +118,13 @@
 076=Chivalry
 077=Pragmatic
 078=Armsthrift
-079=IndoorMarch
+079=KeepUp
 07a=Shove
 07b=Smite
 07c=Bane
 07d=Corrosion
 07e=ArcaneBlade
-07f=KeepUp
+07f=RightfulArch
 080=RightfulKing
 081=RightfulGod
 082=LuckySeven

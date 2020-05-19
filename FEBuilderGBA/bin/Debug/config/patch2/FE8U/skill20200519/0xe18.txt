@@ -1,0 +1,2 @@
+Move to opposite side of
+an adjacent ally.

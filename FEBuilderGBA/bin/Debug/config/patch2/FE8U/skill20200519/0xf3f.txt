@@ -1,0 +1,2 @@
+Corona: Negate enemy resistance.
+(Skill% activation)

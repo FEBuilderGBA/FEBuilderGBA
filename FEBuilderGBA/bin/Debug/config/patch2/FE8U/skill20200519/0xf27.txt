@@ -1,0 +1,2 @@
+Daunt: -5 Hit and Crit to all
+enemy units in a 3-tile radius.
