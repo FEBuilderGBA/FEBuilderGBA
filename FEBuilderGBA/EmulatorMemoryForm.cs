@@ -2391,8 +2391,13 @@ namespace FEBuilderGBA
 
         void InitPaletteEtc()
         {
+            if (Program.ROM.RomInfo.version() < 8)
+            {
+                X_ETC_WorldmapNode_Text.Hide();
+            }
             this.Edition = U.NOT_FOUND;
             this.Diffeclty = U.NOT_FOUND;
+            this.WorldmapNode = U.NOT_FOUND;
             this.PaletteCheckBuffer = new byte[2 * 16 * 16 * 2];
             this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawVariable, false);
             this.PaletteList.DummyAlloc(32, 0);
@@ -2430,90 +2435,32 @@ namespace FEBuilderGBA
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ClearTurnList);
         }
 
-        //編を求める
-        uint GetEdition()
-        {
-            if (Program.ROM.RomInfo.version() == 6)
-            {//6には編が存在しない.
-                return U.NOT_FOUND;
-            }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-            uint ramPointer = stageStructAddr + 0x1B;
-            return Program.RAM.u8(ramPointer);
-        }
-        string ConvertEditionToString(uint v)
-        {
-            if (v == U.NOT_FOUND)
-            {
-                return "";
-            }
-            string ret = U.ToHexString(v);
-            string edition = InputFormRef.GetEditon(v);
-            if (edition == "")
-            {
-                edition = "???";
-            }
-            return ret +"=" + edition;
-        }
-        //難易度を求める.
-        uint GetDiffecly()
-        {
-            uint ret = 0;
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-
-            uint ramPointer1 = stageStructAddr + 0x14;
-            uint v = Program.RAM.u8(ramPointer1);
-            if ((v & 0x40) == 0x40)
-            {
-                ret = ret | 0x40;//難しい
-            }
-
-            uint ramPointer2 = stageStructAddr + 0x42;
-            v = Program.RAM.u8(ramPointer2);
-            if ((v & 0x20) == 0x20)
-            {
-                ret = ret | 0x20;//初めてではない
-            }
-
-            return ret;
-        }
-        string ConvertDiffeclyToString(uint v)
-        {
-            string ret = "";
-            if ((v & 0x40) == 0x40)
-            {
-                ret += R._("難易度:難しい");
-                ret += " ";
-            }
-            if ((v & 0x20) != 0x20)
-            {
-                ret += R._("難易度:初めて");
-                ret += " ";
-            }
-            if (ret == "")
-            {
-                ret += R._("難易度:普通");
-                ret += " ";
-            }
-            return ret;
-        }
         void UpdateEditon()
         {
             {
-                uint v = GetEdition();
+                uint v = EmulatorMemoryUtil.GetEdition();
                 if (v != this.Edition)
                 {
                     this.Edition = v;
-                    this.X_ETC_Edition_Text.Text = ConvertEditionToString(v);
-                    this.CHEAT_WARP_EDTION_VALUE.Value = GetEdition();
+                    this.X_ETC_Edition_Text.Text = EmulatorMemoryUtil.ConvertEditionToString(v);
+                    this.CHEAT_WARP_EDTION_VALUE.Value = EmulatorMemoryUtil.GetEdition();
                 }
             }
             {
-                uint v = GetDiffecly();
+                uint v = EmulatorMemoryUtil.GetDiffecly();
                 if (v != this.Diffeclty)
                 {
                     this.Diffeclty = v;
-                    this.X_ETC_Diffculty_Text.Text = ConvertDiffeclyToString(v);
+                    this.X_ETC_Diffculty_Text.Text = EmulatorMemoryUtil.ConvertDiffeclyToString(v);
+                }
+            }
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                uint v = EmulatorMemoryUtil.GetCurrentWorldmapNode();
+                if (v != this.WorldmapNode)
+                {
+                    this.WorldmapNode = v;
+                    this.X_ETC_WorldmapNode_Text.Text = EmulatorMemoryUtil.ConvertWorldmapNodeToString(v);
                 }
             }
         }
@@ -2765,6 +2712,7 @@ namespace FEBuilderGBA
 
         uint Edition;
         uint Diffeclty;
+        uint WorldmapNode;
         byte[] PaletteCheckBuffer;
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
@@ -2956,11 +2904,5 @@ namespace FEBuilderGBA
                 PaletteList_MouseDoubleClick(sender, null);
             }
         }
-
-
-
-
-
-
     }
 }

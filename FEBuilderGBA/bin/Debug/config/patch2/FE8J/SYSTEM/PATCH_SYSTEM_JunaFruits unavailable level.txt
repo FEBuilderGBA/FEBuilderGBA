@@ -1,0 +1,15 @@
+NAME=ジュナの実 不可レベル
+NAME.en=Minimum JunaFruits Level
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x294B6
+DEFAULT=0x09
+
+INFO=ジュナの実を使えないレベルを変更します。\r\nこのレベルを超えれば、ジュナの実を使えるレベルになります。
+INFO.en=Specifies the minimum level that units can use at by using JunaFruits items.\r\nMinimum level is value specified + 1. Default is (9+1) 10.
+HEX=false
+NAME.zh=虚幻的Juna水平。
+INFO.zh=更改无法使用Juna水果的水平。\r\n超出此级别后，您将可以使用Juna的水果。

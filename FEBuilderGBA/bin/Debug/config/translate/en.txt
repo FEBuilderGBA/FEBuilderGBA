@@ -1172,7 +1172,7 @@ Running event
 Map ID
 
 :フラグ
-flag
+Flag
 
 :メモリスロット
 Memory slot
@@ -2677,6 +2677,9 @@ Specify the coordinates to place the unit.\r\nYou can change the value by double
 :ユニットの座標の生データです。デバッグ用に表示しています。\r\n値の内容は、以下の通りです。\r\n1.配置前座標をushortにパックしたもの、\r\n2.配置後座標の件数、\r\n3.配置後座標のポインタ。\r\n
 It is raw data of unit coordinates.It is displayed for debugging.\r\nThe contents of the value are as follows.\r\n1.Packed in ushort coordinates before arrangement,.\r\n2.Number of coordinates after placement,.\r\n3. A pointer to the coordinates after placement.\r\n
 
+:マップ範囲外
+Out of map range
+
 :特殊
 Special
 
@@ -2749,15 +2752,6 @@ Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare 
 :ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
 In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 
-:特殊:
-Special:
-
-:移動後座標
-After Moving
-
-:配置後座標格納アドレス
-Post-place coordinate storage
-
 :/60秒
 /60sec
 
@@ -2766,6 +2760,15 @@ Post-place coordinate storage
 
 :1=鈍足
 1=Heavy Steps
+
+:特殊:
+Special:
+
+:移動後座標
+After Moving
+
+:配置後座標格納アドレス
+Post-place coordinate storage
 
 :アイテムドロップする
 Drop item
@@ -12523,5 +12526,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:マップ範囲外
-Out of map range

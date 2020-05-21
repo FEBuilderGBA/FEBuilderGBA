@@ -12702,3 +12702,7 @@ r3=X tile position of menu of the right	{U}
 08042e1c	CheckGameLinkArenaBit	{J}
 080A83D0	CopyMiniMapTerrainChips	{U}
 080ACDE8	CopyMiniMapTerrainChips	{J}
+0802F92C	ExecJunaFruits	{J}
+0802F8C4	DecrementLevel_JunaFruits	{J}
+0802F9E0	ExecJunaFruits	{U}
+0802F978	DecrementLevel_JunaFruits	{U}
