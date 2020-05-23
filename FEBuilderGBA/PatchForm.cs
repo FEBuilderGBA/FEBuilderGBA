@@ -7224,20 +7224,17 @@ namespace FEBuilderGBA
                     }
 
                     uint o = U.at(orignalROM, addr); //パッチを含んでいないROMの内容
-                    uint x = U.at(map.bin, i);       //パッチで変更される内容
-                    uint c = Program.ROM.u8(addr);   //現在のROMの内容
+//                    uint x = U.at(map.bin, i);       //パッチで変更される内容
+//                    uint c = Program.ROM.u8(addr);   //現在のROMの内容
 
-                    if (c == x)
-                    {//現在のROMの内容が、パッチの内容と同一の場合、含んでいないROMの内容で上書きして消去する
+//                    if (c == x)
+//                    {//現在のROMの内容が、パッチの内容と同一の場合、含んでいないROMの内容で上書きして消去する
                         Program.ROM.write_u8(addr, o, undodata);
-                    }
-                    //   ori P1  P2  Cur  NOW
-                    //    1  A            A
-                    //    2  B   X        X
-                    //    3      X        X
-                    //    4      X   C    C
-                    //                    ^------もしXXを消す場合 A B 3 C
-                    //                    ^------もしABを消す場合 1 X X C
+//                    }
+//                    else if (o != c)
+//                    {//現在のROMの内容が、戻すパッチと同じではない場合、含んでいないROMの内容で上書きして消去する
+//                        Program.ROM.write_u8(addr, o, undodata);
+//                    }
                 }
 
                 if (map.key == "MENU")

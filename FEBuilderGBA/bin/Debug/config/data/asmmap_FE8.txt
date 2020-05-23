@@ -12744,3 +12744,11 @@
 0802F8C4	DecrementLevel_JunaFruits	{J}
 0802F9E0	ExecJunaFruits	{U}
 0802F978	DecrementLevel_JunaFruits	{U}
+0808ec60	地形回避率等の描画	{J}
+08A933D8	&HEADERTSA	FillTileRectされるタイル	地形回避率等	{J}
+080131f0	GetTerrainTypeID	{J}
+0808C964	地形回避率等の描画	{U}
+08A1768C	&HEADERTSA	FillTileRectされるタイル	地形回避率等	{U}
+08013138	GetTerrainTypeID	{U}
+08028C0C	ItemEffect_ErrorMessage	{U}
+08028BB8	ItemEffect_ErrorMessage	{J}

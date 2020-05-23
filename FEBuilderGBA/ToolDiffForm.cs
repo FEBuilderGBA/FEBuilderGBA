@@ -135,6 +135,10 @@ namespace FEBuilderGBA
                         missCount = 0;
                         continue;
                     }
+                    if (i >= endFreeSpace)
+                    {
+                        break;
+                    }
 
                     if (U.at(currentBIN, i) != U.at(otherBIN, i))
                     {
@@ -192,12 +196,12 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.is_multibyte())
             {//FE8J
                 beginFreeSpace = 0xEFB2E0;
-                endFreeSpace   = 0xF90000;
+                endFreeSpace   = 0xF90000 - 4;
             }
             else
             {//FE8U
                 beginFreeSpace = 0xB2A610;
-                endFreeSpace =   0xC00000;
+                endFreeSpace =   0xB88560 - 4;
             }
             return true;
         }

@@ -1147,15 +1147,6 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
-:難易度:難しい
-Difficulty: Hard
-
-:難易度:初めて
-Difficulty: Easy
-
-:難易度:普通
-Difficulty: Normal
-
 :このバージョンでは、章ワープを利用できません。
 Chapter warp is not available in this version.
 
@@ -1167,9 +1158,6 @@ Event
 
 :実行しているイベント
 Running event
-
-:マップID
-Map ID
 
 :フラグ
 Flag
@@ -1197,6 +1185,9 @@ General Purpose
 
 :編
 Editing
+
+:マップID
+Map ID
 
 :再生されている音楽
 Music being played.
@@ -1431,6 +1422,18 @@ Clear the current chapter.(Hotkey: Ctrl + U)
 
 :エミュレータへ接続
 Connect to emulator
+
+:難易度:難しい
+Difficulty: Hard
+
+:難易度:初めて
+Difficulty: Easy
+
+:難易度:普通
+Difficulty: Normal
+
+:拠点
+World Map Nodes
 
 :MNC2の修正パッチを適応していないので、章ワープを利用できません。
 Chapter warp is not available because the patch for MNC2 has not been applied.
@@ -5737,9 +5740,6 @@ Support Thresholds
 :道
 Roads
 
-:拠点
-World Map Nodes
-
 :OP字幕
 OP Subtitle
 
@@ -9373,6 +9373,9 @@ Warning: The data has ended prematurely.addr: {0} data.Length: {1} countI: {2}.
 :エミュレータが動作していません。
 The emulator is not working.
 
+:OverflowException! 32bitバージョンのエミュレータを利用していますか?
+OverflowException! Are you using a 32bit version of emulator?
+
 :OpenProcess APIが失敗ました。
 The OpenProcess API failed.
 
@@ -12268,14 +12271,14 @@ UPS file corrupted. It doesn't meet the minimum size requirement.
 :UPSファイルが壊れています。ヘッダUPS1がありません。
 UPS file corrupted. Header UPS 1 missing.
 
-:UPSファイルが壊れています。CRCが一致しません。
-UPS file corrupted. CRC do not match.
+:UPSファイルが壊れています。CRCが一致しません。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
+UPS file corrupted. CRC do not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :現在開いているROMには適応できません。CRCが一致しません。
 Patch can't be applied to the open ROM. CRC do not match.
 
-:UPSを適応した結果が正しくありません。CRCが不一致です。
-The result of adapting the UPS is incorrect. CRC does not match.
+:UPSを適応した結果が正しくありません。CRCが不一致です。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
+The result of adapting the UPS is incorrect. CRC does not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :チェックをつけたメニューを無効にします。
 Disables the checked menu.

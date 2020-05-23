@@ -1455,4 +1455,14 @@
 @ClearTurn@00	short	章IDとターン数	ターン数 << 7 + 章ID
 @ClearTurn@02	short	クリアタイム秒数
 0203D994	@ClearTurn@[20]	章クリアターン
+080169e4	EquipUnitItemByIndex
+08041fa4	Menu_CallTextBox
 080877AC	CopyMiniMapTerrainChips
+0801FA14	UseCommandUsability
+0801FB00	UseCommandUsability
+08022A20	EquipCommandUsability
+0801FB68	EquipCommandEffect
+0801F444	TradeCommandUsability
+0801FBA8	TradeCommandEffect
+0801FACC	DiscardCommandUsability
+0801FBDC	DiscardCommandEffect

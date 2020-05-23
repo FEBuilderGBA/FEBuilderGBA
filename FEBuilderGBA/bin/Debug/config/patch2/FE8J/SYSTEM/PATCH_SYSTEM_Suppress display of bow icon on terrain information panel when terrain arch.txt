@@ -1,0 +1,15 @@
+NAME=地形をアーチにした時に、地形情報パネルに弓のアイコンが表示されるのを抑制する
+NAME.en=Suppress display of bow icon on terrain information panel when terrain arch
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Show|DEF|Fix: Off|OFF
+DEF:0x8ED3C=0x4A 0xDA
+OFF:0x8ED3C=0x00 0x00
+
+INFO=地形で、アーチや、ロングを選択した場合に表示される、弓矢アイコンの表示を抑制します。
+INFO.en=In terrain, suppress the display of the bow and arrow icon that is displayed when arch or long is selected.
+NAME.zh=当地形变成拱形时，禁止在地形信息面板上显示弓形图标。
+INFO.zh=在地形中，抑制选择弓形或长形时显示的弓箭图标的显示。

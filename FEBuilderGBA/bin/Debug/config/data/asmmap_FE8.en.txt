@@ -12752,3 +12752,11 @@ r3=X tile position of menu of right	{U}
 0802F8C4	DecrementLevel_JunaFruits	{J}
 0802F9E0	ExecJunaFruits	{U}
 0802F978	DecrementLevel_JunaFruits	{U}
+0808ec60	Drawing of terrain avoidance rate, etc	{J}
+08A933D8	&HEADERTSA	Tile that will be FillTileRect	Terrain avoid rate, etc	{J}
+080131f0	GetTerrainTypeID	{J}
+0808C964	Drawing of terrain avoidance rate, etc	{U}
+08A1768C	&HEADERTSA	Tile that will be FillTileRect	Terrain avoid rate, etc	{U}
+08013138	GetTerrainTypeID	{U}
+08028C0C	ItemEffect_ErrorMessage	{U}
+08028BB8	ItemEffect_ErrorMessage	{J}

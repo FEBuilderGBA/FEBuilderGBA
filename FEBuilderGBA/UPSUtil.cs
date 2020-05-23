@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
 using System.Text;
+using System.Windows.Forms;
 
 namespace FEBuilderGBA
 {
@@ -43,8 +44,11 @@ namespace FEBuilderGBA
                 uint patch_crc32 = U.u32(patch, (uint)(patch.Length - 4));
                 if (patch_calc_crc32 != patch_crc32)
                 {
-                    R.ShowStopError("UPSファイルが壊れています。CRCが一致しません。");
-                    return false;
+                    DialogResult dr = R.ShowNoYes("UPSファイルが壊れています。CRCが一致しません。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n");
+                    if (dr != DialogResult.Yes)
+                    {
+                        return false;
+                    }
                 }
             }
             {
@@ -91,7 +95,11 @@ namespace FEBuilderGBA
             uint dest_crc32 = U.u32(patch, (uint)(patch.Length - 8));
             if (dest_calc_crc32 != dest_crc32)
             {
-                R.ShowStopError("UPSを適応した結果が正しくありません。CRCが不一致です。");
+                DialogResult dr = R.ShowNoYes("UPSを適応した結果が正しくありません。CRCが不一致です。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n");
+                if (dr != DialogResult.Yes)
+                {
+                    return false;
+                }
                 return false;
             }
 
