@@ -5308,6 +5308,9 @@ Growth rate correction
 :能力補正 Venno Extends
 Ability correctionVennoExtends
 
+:関連項目
+Related item.
+
 :このバージョンのFEでは利用しません。
 Unused in this version of FE.
 
@@ -5338,8 +5341,8 @@ ASM pointer
 :7=ドーピングアイテムとCCアイテムかどうかを定義する
 7=Define whether it is Stat Booster and Promotion Items
 
-:関連項目
-Related item.
+:8=利用時のエラーメッセージを定義する
+8=Define error message when using.
 
 :アイテム利用効果
 Item "Use" Effect

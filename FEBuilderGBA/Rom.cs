@@ -320,6 +320,8 @@ namespace FEBuilderGBA
         uint item_statbooster1_array_switch2_address();
         uint item_statbooster2_array_pointer();    //ドーピングアイテムとCCアイテムかどうかを定義する
         uint item_statbooster2_array_switch2_address();
+        uint item_errormessage_array_pointer();    //アイテム利用時のエラーメッセージ
+        uint item_errormessage_array_switch2_address();
         uint event_function_pointer_table_pointer();    //イベント命令ポインタ
         uint event_function_pointer_table2_pointer();    //イベント命令ポインタ2 ワールドマップ
         uint item_effect_pointer_table_pointer();   //間接エフェクトポインタ

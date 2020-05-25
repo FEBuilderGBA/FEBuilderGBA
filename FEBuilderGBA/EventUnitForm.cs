@@ -1105,7 +1105,7 @@ namespace FEBuilderGBA
             {
                 int mapwidth = this.MapPictureBox.GetMapBitmapWidth() / 16;
                 int mapheight = this.MapPictureBox.GetMapBitmapHeight() / 16;
-                if (p.x > mapwidth || p.y > mapheight)
+                if (p.x >= mapwidth || p.y >= mapheight)
                 {
                     bounds.X += U.DrawText(R._("マップ範囲外"), g, boldFont, errorBrush, isWithDraw, bounds);
                 }
@@ -1978,7 +1978,7 @@ namespace FEBuilderGBA
             int mapwidth = this.MapPictureBox.GetMapBitmapWidth() / 16;
             int mapheight = this.MapPictureBox.GetMapBitmapHeight() / 16;
 
-            if (F_X.Value > mapwidth || F_Y.Value > mapheight)
+            if (F_X.Value >= mapwidth || F_Y.Value >= mapheight)
             {
                 COORD_PANEL.ErrorMessage = R._("座標がマップの範囲外です。");
             }

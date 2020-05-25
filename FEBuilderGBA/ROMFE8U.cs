@@ -322,6 +322,8 @@ namespace FEBuilderGBA
         public uint item_statbooster1_array_switch2_address() { return 0x2F8A4; }
         public uint item_statbooster2_array_pointer() { return 0x29F30; }    //ドーピングアイテムとCCアイテムかどうかを定義する
         public uint item_statbooster2_array_switch2_address() { return 0x29F1C; }
+        public uint item_errormessage_array_pointer() { return 0x28C28; }    //アイテム利用時のエラーメッセージ
+        public uint item_errormessage_array_switch2_address() { return 0x28C16; }
         public uint event_function_pointer_table_pointer() { return 0x0CEE0; }    //イベント命令ポインタ
         public uint event_function_pointer_table2_pointer() { return 0x0CF08; }   //イベント命令ポインタ2 ワールドマップ
         public uint item_effect_pointer_table_pointer() { return 0x05B3F8; }   //間接エフェクトポインタ

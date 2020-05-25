@@ -1264,3 +1264,6 @@
 0801FBA8	TradeCommandEffect
 0801FACC	DiscardCommandUsability
 0801FBDC	DiscardCommandEffect
+08023278	ItemEffect_ErrorMessage
+0802348C	ItemEffect_Call
+08041678	ClearBG0BG1

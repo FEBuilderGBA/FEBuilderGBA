@@ -1,0 +1,17 @@
+08027578=-	{J}
+0802750C=Torch	{J}
+0802750C=Stat Booster	{J}
+0802754C=Promotion Items	{J}
+08027514=Chest Key	{J}
+0802751C=Door Key	{J}
+08027522=Lockpick	{J}
+0802750C=Vulnerary, Elixir	{J}
+
+080270F0=-	{U}
+08027084=Torch	{U}
+08027084=Stat Booster	{U}
+080270C6=Promotion Items	{U}
+0802708C=Chest Key	{U}
+08027094=Door Key	{U}
+0802709C=Lockpick	{U}
+08027084=Vulnerary, Elixir	{U}

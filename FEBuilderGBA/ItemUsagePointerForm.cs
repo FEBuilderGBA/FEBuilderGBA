@@ -74,6 +74,10 @@ namespace FEBuilderGBA
                     {
                         itemID = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address()) + (uint)i;
                     }
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_errormessage_array_pointer()))
+                    {
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address()) + (uint)i;
+                    }
                     else
                     {
                         return "";
@@ -132,6 +136,10 @@ namespace FEBuilderGBA
                     break;
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する
                     configFilename = (U.ConfigDataFilename("item_statbooster2_array_"));
+                    StatBoosterItemExplain.Show();
+                    break;
+                case 8: //8=エラーメッセージを定義する
+                    configFilename = (U.ConfigDataFilename("item_errormessage_array_"));
                     StatBoosterItemExplain.Show();
                     break;
             }
@@ -233,6 +241,12 @@ namespace FEBuilderGBA
                     count = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address()+2);
                     enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_statbooster2_array_switch2_address());
                     break;
+                case 8: //8=エラーメッセージを定義する
+                    pointer = Program.ROM.RomInfo.item_errormessage_array_pointer();
+                    addr = Program.ROM.p32(pointer);
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address() + 2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_errormessage_array_switch2_address());
+                    break;
             }
             if (enable == false)
             {
@@ -251,7 +265,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list)
         {
             InputFormRef InputFormRef = Init(null);
-            for (int n = 0; n < 8; n++)
+            for (int n = 0; n < 9; n++)
             {
                 uint addr = ReInit(n, InputFormRef);
                 if (addr == U.NOT_FOUND)
@@ -349,6 +363,13 @@ namespace FEBuilderGBA
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する
                     PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_statbooster2_array_pointer()
                         , Program.ROM.RomInfo.item_statbooster2_array_switch2_address()
+                        , newCount
+                        , defAddr
+                        , undodata);
+                    break;
+                case 8: //8=エラーメッセージを定義する
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_errormessage_array_pointer()
+                        , Program.ROM.RomInfo.item_errormessage_array_switch2_address()
                         , newCount
                         , defAddr
                         , undodata);
