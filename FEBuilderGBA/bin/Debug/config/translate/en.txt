@@ -2833,12 +2833,6 @@ Event "{0}" Jumping to nonexistent label "{1}".
 :ポインタ「{0}」が無効です。
 The pointer "{0}" is invalid.
 
-:序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-The main Lord unit (Unit ID 0x01 or 0x02 or 0x03) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
-
-:序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-The main Lord unit (Unit ID 0x01) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
-
 :イベントポインタ「{0}」が無効です。
 Event pointer '{0}' is invalid.
 
@@ -9951,6 +9945,9 @@ ALERT\r\nThe map BGM must be set to 0x00010001 priority in the song table.\r\nTh
 
 :警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
 ALERT\r\nThe sound effects must to specify a value greater than 0x00030003 in priority in the song table.\r\nThe current setting is:  {0}.
+
+:ソングテーブルが極端に少ないです。破損している可能性があります。
+There are extremely few song tables.It may be damaged.
 
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
 Displays the instrument table that composes songs.\r\nNormally this doesn't need to be edited.\r\nUseful for developers.

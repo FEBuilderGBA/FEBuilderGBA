@@ -456,6 +456,10 @@ namespace FEBuilderGBA
             {
                 text = R._("終章セリフ");
             }
+            else if (dataType == FELint.Type.SONGTABLE)
+            {
+                text = R._("ソングテーブル");
+            }
             else
             {
                 text = R._("不明");
@@ -866,6 +870,11 @@ namespace FEBuilderGBA
                 {
                     InputFormRef.JumpForm<SoundRoomForm>(tag);
                 }
+                return;
+            }
+            else if (dataType == FELint.Type.SONGTABLE)
+            {
+                InputFormRef.JumpForm<SongTableForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.SENSEKI)

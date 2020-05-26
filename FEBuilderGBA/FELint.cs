@@ -82,6 +82,7 @@ namespace FEBuilderGBA
             ,POINTER_TALKGROUP
             ,POINTER_MENUEXTENDS
             ,POINTER_UNITSSHORTTEXT
+            ,SONGTABLE
             ,EVENT_FINAL_SERIF
             ,TEXTID_FOR_SYSTEM  //テキストID システム予約
             ,TEXTID_FOR_USER    //テキストID ユーザ定義
@@ -265,66 +266,6 @@ namespace FEBuilderGBA
         public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
         {
             CheckEventPointer(event_addr, errors, EventCondToType(cond), addr, isFixedEvent, tracelist);
-        }
-
-        public static void CheckPrologeEventPointer(uint mapid, List<ErrorSt> errors)
-        {
-/*
-            現代では無意味なチェックなので、やらなくてもいいと思う。
-            ClassExpansion利用時の問題だと思います。
-
-            List < U.AddrResult > units = EventCondForm.MakeUnitPointer(mapid);
-            for (int i = 0; i < units.Count; i++)
-            {
-                uint addr = units[i].addr;
-                uint pageSize = Program.ROM.RomInfo.eventunit_data_size();
-                for (; Program.ROM.u8(addr) != 0x0; addr += pageSize )
-                {
-                    if (!U.isSafetyOffset(addr + pageSize))
-                    {
-                        break;
-                    }
-                    uint unitGrow = Program.ROM.u8(addr + 3);
-                    uint assign = U.ParseUnitGrowAssign(unitGrow);
-                    if (assign != 0)
-                    {//自軍でないなら関係ない.
-                        continue;
-                    }
-
-                    uint unit_id = Program.ROM.u8(addr);
-                    if (! UnitForm.isMainUnit(unit_id) )
-                    {
-                        continue;
-                    }
-
-                    if (!UnitForm.isLoadClass(unit_id))
-                    {
-                        uint class_id = Program.ROM.u8(addr + 1);
-                        if (class_id == 0)
-                        {//未入力の場合は推測します.
-                            class_id = UnitForm.GetClassID(unit_id);
-                        }
-                        if (!ClassForm.isLoadClass(class_id))
-                        {
-                            continue;
-                        }
-                    }
-                    //条件にマッチするロードユニットを発見
-                    return ;
-                }
-            }
-
-            if (Program.ROM.RomInfo.version() == 7)
-            {
-                errors.Add(new FELint.ErrorSt(EventCondForm.CONDTYPE.PLAYER_UNIT, U.NOT_FOUND
-                    , R._("序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。")));
-            }
-            else
-            {
-                errors.Add(new FELint.ErrorSt(EventCondForm.CONDTYPE.PLAYER_UNIT, U.NOT_FOUND
-                    , R._("序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。")));
-            }
-*/
         }
 
         public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
@@ -720,7 +661,7 @@ namespace FEBuilderGBA
                 if (mapid == 0)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointer(0, errors);
+                    //FELint.CheckPrologeEventPointer(0, errors);
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)
@@ -731,7 +672,7 @@ namespace FEBuilderGBA
                 if (mapid == 0)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointer(0, errors);
+                    //FELint.CheckPrologeEventPointer(0, errors);
                 }
             }
             else
@@ -742,7 +683,7 @@ namespace FEBuilderGBA
                 if (mapid == 1)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointer(1, errors);
+                    //FELint.CheckPrologeEventPointer(1, errors);
                 }
             }
 
@@ -821,12 +762,15 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "ScanSystem MenuDefinition")) return;
             MenuDefinitionForm.MakeCheckError(errors);
 
-            if (InputFormRef.DoEvents(null, "ScanSystem EventUnitForm")) return;
+            if (InputFormRef.DoEvents(null, "ScanSystem EventUnit")) return;
             EventUnitForm.MakeCheckError(errors);
 
             if (InputFormRef.DoEvents(null, "ScanSystem AIScript")) return;
             AIScriptForm.MakeCheckError(errors);
 
+            if (InputFormRef.DoEvents(null, "ScanSystem SongTable")) return;
+            SongTableForm.MakeCheckError(errors);
+           
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (InputFormRef.DoEvents(null, "ScanSystem SoundFootStepsForm")) return;

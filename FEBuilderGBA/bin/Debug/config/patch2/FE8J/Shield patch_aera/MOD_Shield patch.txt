@@ -1,0 +1,9 @@
+IF:0x2b3b0=0x00 0x48 0x87 0x46
+
+FORM=ItemForm
+L_11_BIT_02=盾パッチ(aera)
+L_11_BIT_02.en=Shield patch(aera)
+L_11_BIT_02.zh=盾补丁(aera)
+L_11_BIT_04=お守り
+L_11_BIT_04.en=Omamori
+L_11_BIT_04.zh=Omamori
