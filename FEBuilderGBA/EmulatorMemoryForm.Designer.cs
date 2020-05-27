@@ -225,19 +225,19 @@
             this.SoundList = new FEBuilderGBA.ListBoxEx();
             this.label91 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TrapList = new FEBuilderGBA.ListBoxEx();
             this.label62 = new System.Windows.Forms.Label();
             this.TrapAddress = new FEBuilderGBA.TextBoxEx();
-            this.TrapList = new FEBuilderGBA.ListBoxEx();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
-            this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
             this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
             this.label82 = new System.Windows.Forms.Label();
             this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
-            this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
@@ -3120,9 +3120,9 @@
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
             this.EtcPage.Controls.Add(this.tabControl1);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
-            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PartyListBox);
+            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
             this.EtcPage.Name = "EtcPage";
             this.EtcPage.Padding = new System.Windows.Forms.Padding(3);
@@ -3343,6 +3343,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "トラップデータ";
             // 
+            // TrapList
+            // 
+            this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TrapList.FormattingEnabled = true;
+            this.TrapList.IntegralHeight = false;
+            this.TrapList.ItemHeight = 18;
+            this.TrapList.Location = new System.Drawing.Point(3, 33);
+            this.TrapList.Name = "TrapList";
+            this.TrapList.Size = new System.Drawing.Size(847, 808);
+            this.TrapList.TabIndex = 329;
+            this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
+            this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
+            this.TrapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrapList_MouseDoubleClick);
+            // 
             // label62
             // 
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3366,20 +3380,6 @@
             this.TrapAddress.Size = new System.Drawing.Size(116, 25);
             this.TrapAddress.TabIndex = 330;
             // 
-            // TrapList
-            // 
-            this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TrapList.FormattingEnabled = true;
-            this.TrapList.IntegralHeight = false;
-            this.TrapList.ItemHeight = 18;
-            this.TrapList.Location = new System.Drawing.Point(3, 33);
-            this.TrapList.Name = "TrapList";
-            this.TrapList.Size = new System.Drawing.Size(847, 808);
-            this.TrapList.TabIndex = 329;
-            this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
-            this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
-            this.TrapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrapList_MouseDoubleClick);
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -3394,6 +3394,20 @@
             this.tabPage3.Size = new System.Drawing.Size(853, 844);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "パレット";
+            // 
+            // PaletteList
+            // 
+            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PaletteList.FormattingEnabled = true;
+            this.PaletteList.IntegralHeight = false;
+            this.PaletteList.ItemHeight = 18;
+            this.PaletteList.Location = new System.Drawing.Point(3, 33);
+            this.PaletteList.Name = "PaletteList";
+            this.PaletteList.Size = new System.Drawing.Size(847, 808);
+            this.PaletteList.TabIndex = 321;
+            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
+            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
+            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
             // 
             // PaletteSearchButton
             // 
@@ -3416,20 +3430,6 @@
             this.label92.TabIndex = 319;
             this.label92.Text = "パレット";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PaletteList
-            // 
-            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PaletteList.FormattingEnabled = true;
-            this.PaletteList.IntegralHeight = false;
-            this.PaletteList.ItemHeight = 18;
-            this.PaletteList.Location = new System.Drawing.Point(3, 33);
-            this.PaletteList.Name = "PaletteList";
-            this.PaletteList.Size = new System.Drawing.Size(847, 808);
-            this.PaletteList.TabIndex = 321;
-            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
-            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
-            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
             // 
             // PaletteAddress
             // 
@@ -3464,6 +3464,18 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "クリアターン数";
             // 
+            // ClearTurnList
+            // 
+            this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearTurnList.FormattingEnabled = true;
+            this.ClearTurnList.IntegralHeight = false;
+            this.ClearTurnList.ItemHeight = 18;
+            this.ClearTurnList.Location = new System.Drawing.Point(3, 33);
+            this.ClearTurnList.Name = "ClearTurnList";
+            this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
+            this.ClearTurnList.TabIndex = 329;
+            this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
+            // 
             // label82
             // 
             this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3486,18 +3498,6 @@
             this.textBoxEx33.ReadOnly = true;
             this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
             this.textBoxEx33.TabIndex = 330;
-            // 
-            // ClearTurnList
-            // 
-            this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearTurnList.FormattingEnabled = true;
-            this.ClearTurnList.IntegralHeight = false;
-            this.ClearTurnList.ItemHeight = 18;
-            this.ClearTurnList.Location = new System.Drawing.Point(3, 33);
-            this.ClearTurnList.Name = "ClearTurnList";
-            this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
-            this.ClearTurnList.TabIndex = 329;
-            this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
             // 
             // Party_ControlPanel
             // 
