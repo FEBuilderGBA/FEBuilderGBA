@@ -6663,6 +6663,11 @@ namespace FEBuilderGBA
             Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
             return GetInfoByBitFlag(num, dic);
         }
+        public static string GetPressKEYS(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
 
         static ConcurrentDictionary<string, Dictionary<uint, string>> Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
         public static Dictionary<uint, string> ConfigDataDatanameCache(string type)

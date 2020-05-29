@@ -462,7 +462,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	WMAPに出したユニットの
 
 2031XXXX	[XXXX:UNIT:ユニット]の移動と攻撃範囲を表示する(SHOW_ATTACK_RANGE)
 21310000	現在表示されている移動と攻撃範囲を隠す(HIDE_ATTACK_RANGE)
-203C0000	カーソルの位置を取得(CHECK_CURSOR)	ゲーム中のカーソルの位置を取得しSlotCに返します。@STOREC	{COND}
+203C0000	カーソルの位置を取得(CHECK_CURSOR)	ゲーム中のカーソルの位置を取得しSlotCに返します。	@STOREC	{COND}
 213CFFFF	カーソルの位置をSlotBの位置に移動(SET_CURSOR)	ゲーム中のカーソルの位置を設定
 213CXXYY	カーソルの位置を[XX:MAPX:X],[XX:MAPY:Y]に移動(SET_CURSOR)	ゲーム中のカーソルの位置を設定
 

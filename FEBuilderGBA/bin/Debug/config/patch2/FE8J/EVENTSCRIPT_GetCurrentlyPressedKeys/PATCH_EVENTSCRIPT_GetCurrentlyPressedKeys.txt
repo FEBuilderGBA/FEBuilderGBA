@@ -1,0 +1,24 @@
+NAME=キー入力の取得(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 GetCurrentlyPressedKeys.dmp=0x03 0x48 0x81 0x88
+EVENTSCRIPT:1=400D0000{$L1:GetCurrentlyPressedKeys.dmp}	入力されているキーを取得(GetCurrentlyPressedKeys)	@STOREC
+EVENTSCRIPT:2=400D0000{$L1:GetCurrentlyPressedKeys.dmp}40050700YYYYYYYY2506CC07	キー[YYYY:KEYS:Keys]が入力されているか確認(GetCurrentlyPressedKeys)	いずれかのキーが押されていればSlotCには0以外の値が格納されます。どれも押されていなければ0がSlotCに代入されます	@STOREC
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=GetCurrentlyPressedKeys.dmp
+
+INFO=入力されているキーを取得します。
+
+EVENTSCRIPT:1.en=400D0000{$L1:GetCurrentlyPressedKeys.dmp}	GetCurrentlyPressedKeys	{COND}
+NAME.en=AddEvent: GetCurrentlyPressedKeys
+INFO.en=Get the entered key.
+EVENTSCRIPT:2.en=400D0000{$L1:GetCurrentlyPressedKeys.dmp}40050700YYYYYYYY2506CC07	Check if [YYYY:KEYS:Keys] has been pressed(GetCurrentlyPressedKeys)	If any key is pressed, SlotC will store a non-zero value. If none are pressed, 0 is assigned to SlotC.	@STOREC
+
+EVENTSCRIPT:1.zh=400D0000{$L1:GetCurrentlyPressedKeys.dmp}	GetCurrentlyPressedKeys	{COND}
+EVENTSCRIPT:2.zh=400D0000{$L1:GetCurrentlyPressedKeys.dmp}40050700YYYYYYYY2506CC07	Check if [YYYY:KEYS:Keys] has been pressed(GetCurrentlyPressedKeys)	If any key is pressed, SlotC will store a non-zero value. If none are pressed, 0 is assigned to SlotC.	@STOREC
+NAME.zh=AddEvent: GetCurrentlyPressedKeys
+INFO.zh=Get the entered key.

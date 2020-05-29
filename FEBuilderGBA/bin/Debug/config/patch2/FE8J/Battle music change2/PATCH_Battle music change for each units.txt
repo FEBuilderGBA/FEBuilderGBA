@@ -1,6 +1,6 @@
-NAME=ユニットごとに戦闘音楽変更
-NAME.en=Unique Battle Music Per Unit Editor
-NAME.zh=每人物战斗音乐变更
+NAME=ユニットごとに戦闘音楽変更 20180814(Editor)
+NAME.en=Unique Battle Music Per Unit 20180814(Editor)
+NAME.zh=每人物战斗音乐变更 20180814(Editor)
 
 IF:0x74ba6=0x00 0x00 0x00 0x4B 0x18 0x47
 

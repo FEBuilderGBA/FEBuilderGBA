@@ -47,6 +47,11 @@ namespace FEBuilderGBA
                 this.MESSAGE.Text = R._("チェックをつけたキーを無効にします。");
                 dataname = "IGNORE_KEYS_checkbox_";
             }
+            else if (argtype == EventScript.ArgType.KEYS)
+            {
+                this.MESSAGE.Text = R._("チェックをつけたキーコードを返します。");
+                dataname = "IGNORE_KEYS_checkbox_";
+            }
             else
             {
                 return;

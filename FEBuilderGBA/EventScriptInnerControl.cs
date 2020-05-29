@@ -1033,6 +1033,10 @@ namespace FEBuilderGBA
             {//IGNORE_KEYS
                 text = " " + InputFormRef.GetIGNORE_KEYS(v);
             }
+            else if (arg.Type == EventScript.ArgType.KEYS)
+            {//KEYS
+                text = " " + InputFormRef.GetPressKEYS(v);
+            }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
                 text = " " + InputFormRef.GetFSEC(v);
@@ -1470,6 +1474,7 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS
                   || arg.Type == EventScript.ArgType.DISABLEWEAPONS
                   || arg.Type == EventScript.ArgType.IGNORE_KEYS
+                  || arg.Type == EventScript.ArgType.KEYS
                 )
             {
                 UshortBitFlagForm f = (UshortBitFlagForm)InputFormRef.JumpForm<UshortBitFlagForm>();
@@ -2841,6 +2846,11 @@ namespace FEBuilderGBA
                     {//IGNORE_KEYS
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetIGNORE_KEYS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.KEYS)
+                    {//KEYS
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetPressKEYS(v));
                     }
                     else if (arg.Type == EventScript.ArgType.FSEC)
                     {//FSEC

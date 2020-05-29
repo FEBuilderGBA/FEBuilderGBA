@@ -4964,7 +4964,7 @@
 0801A998	FillMapAttackRangeForUnit	{J}
 0801B13C	FillRangeByRangeMask	{J}
 0801B2F4	FillMapStaffRangeForUnit	{J}
-0801B4E6	ApplyStuffToRangeMaps	{J}
+0801B4E8	ApplyStuffToRangeMaps	{J}
 0801B668	SetSubjectMap	{J}
 0801b9a4	FillRangeMap	{J}
 0801B6B0	GetCurrentMovCostTable	{J}
@@ -12752,3 +12752,4 @@
 08013138	GetTerrainTypeID	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
+0801B4E8	CalcDangerZone	{J}

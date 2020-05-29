@@ -1,6 +1,6 @@
-NAME=ユニットごとに戦闘音楽変更(Install)
-NAME.en=Unique Battle Music Per Unit Installer
-NAME.zh=每人物战斗音乐变更(Install)
+NAME=ユニットごとに戦闘音楽変更 20180814(Install)
+NAME.en=Unique Battle Music Per Unit 20180814(Installer)
+NAME.zh=每人物战斗音乐变更 20180814(Install)
 
 TYPE=EA
 TAG=#ENGINE #SOUND
@@ -18,3 +18,6 @@ INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。
 
 CONFLICT_IF:0x74ba6=0x0D 0x4E 0xB0 0x7B 0xBF 0xF7 0xB9 0xFC 0xF1 0x7B 0x1C 0x30 0x4A 0x06 0x14 0xD4
 CONFLICT_MESSAGE=Change Battle BGM By Chapter
+
+DEPRECATED=1
+UPDATE_PATCH=..\Battle music change2 20200529\PATCH_Battle music change for each units installer.txt

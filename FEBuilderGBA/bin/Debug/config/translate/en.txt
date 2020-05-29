@@ -3370,11 +3370,11 @@ CG Images
 :セーブ画像
 Save image
 
-:セーブ画像取出し
-Export Saved Image
-
 :セーブ画像読込
 Import Saved image
+
+:セーブ画像取出し
+Export Saved Image
 
 :章タイトル
 Chapter Title
@@ -12285,6 +12285,9 @@ Disables the checked menu.
 
 :チェックをつけたキーを無効にします。
 Disables the checked key.
+
+:チェックをつけたキーコードを返します。
+Returns the checked key code.
 
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks, \r\nwhich let the matching character use the weapon at Level E, no matter what its normal rank is.

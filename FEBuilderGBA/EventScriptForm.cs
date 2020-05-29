@@ -220,6 +220,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.KEYS)
+            {
+                isLabelJump = true;
+            }
 
             if (isLabelJump)
             {
@@ -1408,6 +1412,11 @@ namespace FEBuilderGBA
                         {//IGNORE_KEYS
                             isENumText = true;
                             text = " " + InputFormRef.GetIGNORE_KEYS(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.KEYS)
+                        {//KEYS
+                            isENumText = true;
+                            text = " " + InputFormRef.GetPressKEYS(v);
                         }
                         else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
                         {//RAMUNITSTATUS

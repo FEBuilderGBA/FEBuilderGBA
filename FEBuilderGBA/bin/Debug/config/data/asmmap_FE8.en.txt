@@ -4962,7 +4962,7 @@ r3=X tile position of menu of right	{U}
 0801A998	FillMapAttackRangeForUnit	{J}
 0801B13C	FillRangeByRangeMask	{J}
 0801B2F4	FillMapStaffRangeForUnit	{J}
-0801B4E6	ApplyStuffToRangeMaps	{J}
+0801B4E8	ApplyStuffToRangeMaps	{J}
 0801B668	SetSubjectMap	{J}
 0801b9a4	FillRangeMap	{J}
 0801B6B0	GetCurrentMovCostTable	{J}
