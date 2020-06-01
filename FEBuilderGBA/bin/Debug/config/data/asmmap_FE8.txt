@@ -7488,7 +7488,7 @@
 030036F0	&ARM	gStart_IRAMCodeCopied_CallARM	{J}
 03004910	gOAMAllocIt	{J}
 03004920	gpFaceProcs	{J}
-03004950	gpSubjectMap	{J}
+03004940	gpSubjectMap	{J}
 03004E00	gMovementFillConfig	{J}
 03004F00	gpAiPerformer	{J}
 03004F9C	gCurrentUnitIndex	{J}
@@ -12752,4 +12752,3 @@
 08013138	GetTerrainTypeID	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
-0801B4E8	CalcDangerZone	{J}

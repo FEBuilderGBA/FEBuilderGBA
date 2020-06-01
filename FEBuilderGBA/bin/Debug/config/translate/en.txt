@@ -1861,6 +1861,9 @@ Turn:
 :常時条件:
 Flag Cond:
 
+:常に実行
+AlwaysFire
+
 :範囲条件:
 Range:
 
@@ -11832,6 +11835,18 @@ Save only the changed text file.\r\nConversations that exist in unmodified ROM c
 
 :ROMに収録されていないフォントを自動的に生成します。
 It automatically generates fonts not included in ROM.
+
+:無改造 FE8U
+Unmodified FE8U
+
+:無改造 FE8J
+Unmodified FE8J
+
+:無改造 FE7U
+Unmodified FE7U
+
+:無改造 FE7J
+Unmodified FE7J
 
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using Japanese ROM and English ROM.\r\n\r\nIn simplified mode, it translates fully automatically.\r\nIt automatically adjusts the missing font import, menu length etc etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.

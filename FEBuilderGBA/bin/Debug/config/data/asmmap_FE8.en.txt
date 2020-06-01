@@ -7227,7 +7227,7 @@ r3=X tile position of menu of right	{U}
 030036F0	gStart_IRAMCodeCopied_CallARM	{J}
 03004910	gOAMAllocIt	{J}
 03004920	gpFaceProcs	{J}
-03004950	gpSubjectMap	{J}
+03004940	gpSubjectMap	{J}
 03004E00	gMovementFillConfig	{J}
 03004F00	gpAiPerformer	{J}
 03004F9C	gCurrentUnitIndex	{J}
@@ -12760,3 +12760,4 @@ r3=X tile position of menu of right	{U}
 08013138	GetTerrainTypeID	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
+03004940	SetSubjectMap_Array	{J}

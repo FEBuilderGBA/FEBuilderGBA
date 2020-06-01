@@ -3453,7 +3453,11 @@ namespace FEBuilderGBA
                 text = R._("常時条件:");
                 bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
 
-                if (Program.FlagCache.TryGetValue(flag, out text))
+                if (flag == 0)
+                {
+                    text = U.To0xHexString(flag) + "(" + R._("常に実行") + ")";
+                }
+                else if (Program.FlagCache.TryGetValue(flag, out text))
                 {
                     text = U.To0xHexString(flag) + "(" + text + ")";
                 }

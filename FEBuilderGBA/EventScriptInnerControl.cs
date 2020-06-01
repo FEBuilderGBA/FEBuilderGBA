@@ -1090,6 +1090,10 @@ namespace FEBuilderGBA
             {
                 text = " " + InputFormRef.GetEditon(v);
             }
+            else if (arg.Type == EventScript.ArgType.DIFFICULTY)
+            {
+                text = " " + InputFormRef.GetDifficulty(v);
+            }
             else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
             {
                 text = " " + InputFormRef.GetSuportLevel(v);
@@ -2919,6 +2923,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetEditon(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.DIFFICULTY)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetDifficulty(v));
                     }
                     else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                     {

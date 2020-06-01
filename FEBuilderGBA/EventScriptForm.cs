@@ -1470,6 +1470,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetEditon(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.DIFFICULTY)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetDifficulty(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                         {
                             isENumText = true;

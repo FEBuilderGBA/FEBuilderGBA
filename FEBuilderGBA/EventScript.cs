@@ -98,6 +98,7 @@ namespace FEBuilderGBA
             , FSEC              //フレーム秒
             , TILE              //マップのタイル名
             , EDITION           //編
+            , DIFFICULTY        //難易度
             , SUPPORT_LEVEL     //支援レベル
             , GAMEOPTION        //ゲームオプション
             , GAMEOPTION_VALUE  //ゲームオプションの値
@@ -692,6 +693,9 @@ namespace FEBuilderGBA
                  break;
              case "EDITION":
                  type = ArgType.EDITION;
+                 break;
+             case "DIFFICULTY":
+                 type = ArgType.DIFFICULTY;
                  break;
              case "SUPPORT_LEVEL":
                  type = ArgType.SUPPORT_LEVEL;

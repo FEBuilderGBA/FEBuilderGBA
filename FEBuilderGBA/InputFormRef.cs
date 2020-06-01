@@ -6913,6 +6913,22 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static string GetDifficulty(uint v)
+        {
+            if (v == 0)
+            {
+                return R._("Easy");
+            }
+            if (v == 1)
+            {
+                return R._("Normal");
+            }
+            if (v == 2)
+            {
+                return R._("Hard");
+            }
+            return "";
+        }
 
         public static string GetSuportLevel(uint num)
         {
