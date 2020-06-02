@@ -189,6 +189,7 @@ namespace FEBuilderGBA
         public uint systemmenu_badstatus_old_image_pointer() { return 0; } //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
 
         public uint bigcg_pointer() { return 0xB65F0; } // CG
+        public uint end_cg_address() { return 0x206C08; } // END CG FE8のみ
         public uint worldmap_big_image_pointer() { return 0xBA7FC; } //ワールドマップ フィールドになるでかい奴  
         public uint worldmap_big_palette_pointer() { return 0xBA808; } //ワールドマップ フィールドになるでかい奴 パレット  
         public uint worldmap_big_dpalette_pointer() { return 0xBF7B0; } //ワールドマップ フィールドになるでかい奴 闇パレット  
@@ -381,6 +382,7 @@ namespace FEBuilderGBA
         public uint menu_J12_hide_address() { return 0x4F450; }   //メニューの表示判定関数 表示しない
         public uint status_game_option_pointer() { return 0xB17D8; } //ゲームオプション
         public uint status_game_option_order_pointer() { return 0xB16F8; } //ゲームオプションの並び順
+        public uint status_game_option_order2_pointer() { return 0x0; } //ゲームオプションの並び順2 FE7のみ
         public uint status_game_option_order_count_address() { return 0xB1A32; } //ゲームオプションの個数
         public uint status_units_menu_pointer() { return 0x92290; } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0x0; } //軍師属性(FE7のみ)

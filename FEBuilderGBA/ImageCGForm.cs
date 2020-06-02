@@ -168,6 +168,7 @@ namespace FEBuilderGBA
                 this.InputFormRef.WriteImageData10(this.P0, image, undodata);
                 this.InputFormRef.WriteImageData(this.P4, tsa, false, undodata);
                 this.InputFormRef.WriteImageData(this.P8, palette, false, undodata);
+
                 Program.Undo.Push(undodata);
             }
 
@@ -262,6 +263,48 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             return InputFormRef.GetComment(id);
+        }
+
+        private void WriteButton_Click(object sender, EventArgs e)
+        {
+            WriteEDData();
+        }
+
+        void WriteEDData()
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return;
+            }
+            uint cgid = (uint)this.AddressList.SelectedIndex;
+            if (cgid >= 0xA)
+            {
+                return;
+            }
+            uint writeaddr = Program.ROM.RomInfo.end_cg_address();
+            writeaddr = writeaddr + (cgid * 0x34);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this,new string[]{"ENDING CG"});
+            if (U.isSafetyPointer((uint)this.P0.Value))
+            {
+                uint addr = U.toOffset((uint)this.P0.Value);
+                for (uint n = 0; n < 10 * 4; n += 4)
+                {
+                    uint addr_parts = Program.ROM.p32(addr + n);
+                    Program.ROM.write_p32(writeaddr + n, addr_parts);
+                }
+            }
+            if (U.isSafetyPointer((uint)this.P4.Value))
+            {
+                uint addr = U.toOffset((uint)this.P4.Value);
+                Program.ROM.write_p32(writeaddr + (10 * 4), addr);
+            }
+            if (U.isSafetyPointer((uint)this.P8.Value))
+            {
+                uint addr = U.toOffset((uint)this.P8.Value);
+                Program.ROM.write_p32(writeaddr + (11 * 4), addr);
+            }
+            Program.Undo.Push(undodata);
         }
     }
 }

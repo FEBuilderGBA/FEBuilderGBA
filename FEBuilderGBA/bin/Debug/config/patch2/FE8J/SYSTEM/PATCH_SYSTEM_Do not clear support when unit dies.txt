@@ -1,0 +1,15 @@
+NAME=ユニットが死亡しても支援をクリアしない
+NAME.en=Do not clear support when unit dies
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|DEF|Fix (Do not clear)|FIX
+DEF:0x18136=0x10 0xF0 0x1D 0xF9
+FIX:0x18136=0x00 0x00 0x00 0x00
+
+INFO=ユニットが死亡した時に、ユニットの支援をクリアしないようにします。\r\n通常は、ユニットが死亡すると、そのユニットに関係した支援は消滅します。
+INFO.en=Don't clear the unit's support when the unit dies.\r\nNormally, when a unit dies, the support associated with that unit disappears.
+NAME.zh=单位死亡时不要清除支持。
+INFO.zh=装置死亡时，请勿清除其支撑。\r\n通常，当一个单位死亡时，与该单位相关的支持就会消失。

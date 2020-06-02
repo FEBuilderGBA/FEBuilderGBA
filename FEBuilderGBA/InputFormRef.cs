@@ -9835,9 +9835,9 @@ namespace FEBuilderGBA
         public uint WriteImageData10(NumericUpDown numObj, byte[] image, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
             uint addr = U.toOffset((uint)numObj.Value);
-            if (!CheckZeroAddressWrite(addr))
+            if (!U.isSafetyOffset(addr))
             {
-                return U.NOT_FOUND;
+                addr = 0;
             }
 
             //データサイズは必ず 0x800ブロックずつにしないといけない.
@@ -9846,7 +9846,15 @@ namespace FEBuilderGBA
             byte[] addrMap = new byte[10*4];
             for(int i = 0 ; i < 10 ; i++)
             {
-                uint paddr = Program.ROM.p32( (uint)(addr + (i * 4)) );
+                uint paddr;
+                if (addr == 0)
+                {
+                    paddr = 0;
+                }
+                else
+                {
+                    paddr = Program.ROM.p32((uint)(addr + (i * 4)));
+                }
                 byte[] pimage = U.subrange(image
                     , (uint)(splitByte * i)
                     , (uint)(splitByte * (i + 1)));

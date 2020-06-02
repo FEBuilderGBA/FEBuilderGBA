@@ -189,6 +189,7 @@ namespace FEBuilderGBA
         uint systemmenu_badstatus_old_image_pointer(); //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
 
         uint bigcg_pointer(); // CG
+        uint end_cg_address(); // END CG FE8のみ
         uint worldmap_big_image_pointer(); //ワールドマップ フィールドになるでかい奴  
         uint worldmap_big_palette_pointer(); //ワールドマップ フィールドになるでかい奴 パレット  
         uint worldmap_big_dpalette_pointer(); //ワールドマップ フィールドになるでかい奴 闇パレット  
@@ -379,6 +380,7 @@ namespace FEBuilderGBA
         uint menu_J12_hide_address();   //メニューの表示判定関数 表示しない
         uint status_game_option_pointer(); //ゲームオプション
         uint status_game_option_order_pointer(); //ゲームオプションの並び順
+        uint status_game_option_order2_pointer(); //ゲームオプションの並び順2 FE7のみ
         uint status_game_option_order_count_address(); //ゲームオプションの個数
         uint status_units_menu_pointer(); //部隊メニュー
         uint tactician_affinity_pointer(); //軍師属性(FE7のみ)
