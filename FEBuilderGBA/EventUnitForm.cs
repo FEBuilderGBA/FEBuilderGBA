@@ -1179,9 +1179,15 @@ namespace FEBuilderGBA
                 case 2:
                     return R._("アイテムドロップ");
                 case 3:
-                    return R._("魔物ランダム");
+                    return R._("魔物3");
                 case 4:
-                    return R._("何かの指定");
+                    return R._("不明4");
+                case 5:
+                    return R._("魔物5");
+                case 6:
+                    return R._("不明6");
+                case 7:
+                    return R._("魔物7");
                 default:
                     return R._("不明") + U.To0xHexString(ext);
             }
@@ -2546,7 +2552,7 @@ namespace FEBuilderGBA
                 ext = this.FE8CoordList[0].ext;
             }
 
-            if (ext == 1 )
+            if ( (ext & 0x1) == 0x01 )
             {
                 return true;
             }

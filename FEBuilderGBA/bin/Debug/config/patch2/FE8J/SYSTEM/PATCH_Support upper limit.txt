@@ -16,3 +16,5 @@ INFO.en=Set the number of support conversations to be -1.Up to 9 (Supports 10 su
 NAME.zh=支援对话限制
 INFO.zh=将支援对话的数量设置为-1。最多9个（支持10个支援对话）
 
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

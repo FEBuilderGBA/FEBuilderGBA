@@ -18,3 +18,6 @@ AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:
 INFO=ボスに対して瞬殺が発動する確率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
 INFO.en=Modifies the Silencer activation rate vs boss units in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
 INFO.zh=设置瞬间杀人的概率给老板。\r\n要设置的值是一次致命一击是瞬发击杀的概率。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

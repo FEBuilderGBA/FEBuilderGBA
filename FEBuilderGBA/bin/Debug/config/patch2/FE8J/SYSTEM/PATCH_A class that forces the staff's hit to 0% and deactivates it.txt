@@ -18,5 +18,5 @@ INFO.en=These classes have a hit rate of 0% for Sleep, Berserk, and Silence. By 
 NAME.zh=强制甘蔗击中0％并停用它的类。
 INFO.zh=Sleep，Bataque和Siles的这些类的命中率为0％。\r\n默认情况下，设置为0x66。
 
-CONFLICT_IF:0x2CC72=0xFE 0xF7 0x55 0xFB
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends

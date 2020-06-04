@@ -31,3 +31,6 @@ DEFAULT:0x2ACF2=0x06 0x31 0x08 0x88
 DEFAULT:0x2ACF8=0x08 0x80
 INFO.en=A correction bonus is added to this value at weapon level S.
 INFO.zh=在武器等级S处将该校正加值添加到该值。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

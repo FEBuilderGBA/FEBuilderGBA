@@ -6543,6 +6543,17 @@ namespace FEBuilderGBA
             errorMessae = R._("メモリスロットは、0x00～0x0D までです。");
             return R._("警告: 下限を超えています");
         }
+        //FE8のカウンター
+        public static string GetCOUNTER(uint num, out string errorMessae)
+        {
+            if (num <= 0x7)
+            {
+                errorMessae = "";
+                return "Counter" + num;
+            }
+            errorMessae = R._("カウンターは、0x00～0x07 までです。");
+            return R._("警告: 下限を超えています");
+        }
 
         public static string GetPACKED_MEMORYSLOT(uint num, string op, out string errorMessae)
         {

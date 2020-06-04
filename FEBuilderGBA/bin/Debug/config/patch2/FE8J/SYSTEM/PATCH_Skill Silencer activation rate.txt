@@ -9,15 +9,13 @@ ADDRESS=0x002ac8e
 HEX=false
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 NAME.zh=瞬杀率_正常的瞬杀率
-
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
-
 
 INFO=一般兵に対する瞬殺が発動する確率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
 INFO.en=Modifies the Silencer activation rate vs most units in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
 INFO.zh=设定对一般士兵发动瞬间杀戮的概率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

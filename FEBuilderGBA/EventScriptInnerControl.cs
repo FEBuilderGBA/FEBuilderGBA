@@ -1009,6 +1009,10 @@ namespace FEBuilderGBA
             {//MemorySlot
                 text = " " + InputFormRef.GetMEMORYSLOT(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.COUNTER)
+            {//Counter
+                text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
             {//MemorySlotPacked
                 text = " " + InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out errormessage);
@@ -1122,6 +1126,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
             {
                 text = " " + AIASMCALLTALKForm.GetUnit2Preview(v);
+            }
+            else if (arg.Type == EventScript.ArgType.COUNTER)
+            {//Counter
+                text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
@@ -2819,6 +2827,12 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(InputFormRef.GetMEMORYSLOT(v, out dummy));
+                    }
+                    else if (arg.Type == EventScript.ArgType.COUNTER)
+                    {//Counter
+                        sb.Append(" ");
+                        string dummy;
+                        sb.Append(InputFormRef.GetCOUNTER(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
                     {//MemorySlotPacked

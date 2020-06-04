@@ -12,3 +12,6 @@ HEX=false
 INFO=武器レベルSの時に、指定した項目にこの補正ボーナスが加わります
 INFO.en=At weapon level S, this correction bonus is added to the specified item.
 INFO.zh=在武器等级S，此修正加值被添加到指定项目。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

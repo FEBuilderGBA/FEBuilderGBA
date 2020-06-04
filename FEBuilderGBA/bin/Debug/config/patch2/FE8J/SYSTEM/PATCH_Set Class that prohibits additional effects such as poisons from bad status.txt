@@ -14,5 +14,5 @@ INFO=ディフォルトではClass ID:0x66 魔王が設定されています。\
 INFO.en=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
 INFO.zh=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
 
-CONFLICT_IF:0x2B57E=0xFF 0xF7 0xCF 0xFE
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends

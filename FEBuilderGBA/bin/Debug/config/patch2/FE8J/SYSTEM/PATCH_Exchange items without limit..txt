@@ -40,3 +40,6 @@ AUTHOR=aera
 INFO=GBA FEでは、アイテム交換を各ユニットごとに1ターンに付き1回しかりようできません。\r\nSFC FEは、無制限にアイテムを交換することができます。\r\nこのパッチは、SFC FEのように、何度でもアイテムを交換できるようにします。\r\nアーマーキラーなどの特殊武器を使いまわしやすくなります。\r\n
 INFO.zh=在GBA FE中，每个人物每回合不能进行一次物品交换。\r\nSFC FE可以无限期交换项目。\r\n该修补程序允许您以SFC FE的次数交换项目。\r\n重甲特殊等武器变得容易。\r\n
 INFO.en=Sets whether item trading is restricted to once per turn (Default) or is limitless (Patched)\r\nThis patch removes the item trade limit, making trade similar to the SNES Trade rules.
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

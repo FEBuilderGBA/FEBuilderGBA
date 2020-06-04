@@ -1111,6 +1111,9 @@ Image
 :スタッフロール
 Endgame Credits
 
+:行方不明のラベル({0})が存在します。
+Missing label ({0}) exists.
+
 :準備しています
 preparing...
 
@@ -2708,13 +2711,22 @@ Unknown
 None
 
 :魔物
-Monster
+1=Monster
 
-:魔物ランダム
-Random Monster
+:魔物3
+Monster3
 
-:何かの指定
-Designation of Something
+:不明4
+Unknown4
+
+:魔物5
+Monster5
+
+:不明6
+Unknown6
+
+:魔物7
+Monster7
 
 :追加AI:
 Additional AI:
@@ -2758,6 +2770,15 @@ Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare 
 :ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
 In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 
+:特殊:
+Special:
+
+:移動後座標
+After Moving
+
+:配置後座標格納アドレス
+Post-place coordinate storage
+
 :/60秒
 /60sec
 
@@ -2767,14 +2788,26 @@ In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 :1=鈍足
 1=Heavy Steps
 
-:特殊:
-Special:
+:1=魔物
+1=1=Monster
 
-:移動後座標
-After Moving
+:2=アイテムドロップ
+2=Item Drop
 
-:配置後座標格納アドレス
-Post-place coordinate storage
+:3=魔物3
+3=Monster3
+
+:4=不明4
+4=Unknown4
+
+:5=魔物5
+5=Monster5
+
+:6=不明6
+6=Unknown6
+
+:7=魔物7
+7=Monster7
 
 :アイテムドロップする
 Drop item
@@ -4188,6 +4221,9 @@ The memory slot is from 0x00 to 0x0D.
 
 :警告: 下限を超えています
 Warning:The lower limit is exceeded
+
+:カウンターは、0x00～0x07 までです。
+The counter is from 0x00 to 0x07.
 
 :警告: MemorySlot0に書き込もうとしています。
 Warning: Write to MemorySlot 0.
@@ -10371,6 +10407,12 @@ Reference data.
 
 :順番
 In order.
+
+:魔物ランダム
+Random Monster
+
+:何かの指定
+Designation of Something
 
 :00=標的00
 00=Target 00
