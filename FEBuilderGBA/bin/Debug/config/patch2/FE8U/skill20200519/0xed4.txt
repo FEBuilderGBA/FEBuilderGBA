@@ -1,0 +1,2 @@
+Liquid Ooze: Attackers trying to gain HP
+from attacking this unit lose it instead.

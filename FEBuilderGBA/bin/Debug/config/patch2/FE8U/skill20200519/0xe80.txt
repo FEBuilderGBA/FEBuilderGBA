@@ -1,0 +1,2 @@
+Expertise: Reduce bonus damage
+from critical hits by 50%.
