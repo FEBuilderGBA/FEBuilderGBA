@@ -322,6 +322,7 @@ namespace FEBuilderGBA
                 AIUnitsForm f = (AIUnitsForm)InputFormRef.JumpFormLow<AIUnitsForm>();
                 f.JumpTo(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, f.GetBaseAddress());
             }
         }

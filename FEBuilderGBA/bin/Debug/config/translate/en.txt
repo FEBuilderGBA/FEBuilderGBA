@@ -19,6 +19,9 @@ Execute a conversation event from enemy AI.
 :新規に座標データを作成しますか？
 Do you want to create new coordinate data? 
 
+:データが損傷しているようです。\r\n危険なので、新規にデータ領域を確保してもよろしいですか？
+The data seems to be damaged.\r\nIs it safe to allocate a new data area? 
+
 :座標の領域が確保されていません。
 Coordinate area is not secured.
 
@@ -4050,6 +4053,9 @@ The battle anime palette is damaged.
 
 :戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。
 Battle animation Mode: {0} is broken.Frame data is insufficient.
+
+:戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。
+The first command of Mode:{0} in battle animation is not 03 of 85 Command.
 
 :戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。
 There is corruption in the rightToLeftOAM data of Mode: {0} of battle animation.

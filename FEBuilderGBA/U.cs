@@ -7127,6 +7127,16 @@ namespace FEBuilderGBA
             }
             return (uint)((int)c.Value);
         }
+
+        public static void SetActiveControl(Control c)
+        {
+            Form f = ControlToParentForm(c);
+            if (f == null)
+            {
+                return;
+            }
+            f.ActiveControl = c;
+        }
     }
 }
 

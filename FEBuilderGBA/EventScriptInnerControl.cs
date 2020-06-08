@@ -1430,6 +1430,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
@@ -1438,6 +1439,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
@@ -1446,6 +1448,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
@@ -1454,6 +1457,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpTo(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_TEXT)
