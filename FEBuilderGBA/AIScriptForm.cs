@@ -313,11 +313,13 @@ namespace FEBuilderGBA
             this.Script.Items.Clear();
             if (!U.isSafetyOffset(baseaddr))
             {
+                this.N_ReadCount.Value = 0;
                 return;
             }
             uint addr = Program.ROM.p32(baseaddr);
             if (!U.isSafetyOffset(addr))
             {
+                this.N_ReadCount.Value = 0;
                 return;
             }
             this.Address.Value = addr;
@@ -1380,6 +1382,68 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        uint GetWriteAddr(uint baseaddr)
+        {
+            uint addr = Program.ROM.p32(baseaddr);
+            if (! U.isSafetyOffset(addr))
+            {
+                return 0;
+            }
+            if (U.isPointer(addr))
+            {
+                addr = U.toOffset(addr);
+            }
+            if (!U.CheckZeroAddressWriteHigh(addr))
+            {
+                return 0;
+            }
+            if (!U.CheckPaddingALIGN4(addr))
+            {
+                return 0;
+            }
+
+            bool r = IsDuplicateAddr(addr, baseaddr);
+            if (!r)
+            {
+                return 0;
+            }
+            return addr;
+        }
+        bool IsDuplicateAddr(uint current_addr,uint baseaddr)
+        {
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer(), Program.ROM.RomInfo.ai2_pointer()};
+
+            for (int aiType = 0; aiType < addlist.Length; aiType++)
+            {
+                uint aiAddr = addlist[aiType];
+                if (aiAddr == 0)
+                {
+                    continue;
+                }
+                InputFormRef IFR = Init(null);
+                IFR.ReInitPointer(aiAddr);
+                uint p = InputFormRef.BaseAddress;
+                for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+                {
+                    if (p == baseaddr)
+                    {//自分自身
+                        continue;
+                    }
+                    if (!U.isSafetyOffset(p))
+                    {
+                        continue;
+                    }
+                    uint addr = Program.ROM.p32(p);
+                    if (addr == current_addr)
+                    {//自分以外で使われている
+                        return true;
+                    }
+                }
+            }
+            //自分しか使っていない
+            return false;
+        }
+
 
         private void AllWriteButton_Click(object sender, EventArgs e)
         {
@@ -1408,24 +1472,9 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint addr = Program.ROM.p32(baseaddr);
-            if (U.isSafetyOffset(addr))
-            {
-                if (U.isPointer(addr))
-                {
-                    addr = U.toOffset(addr);
-                }
-                if (!U.CheckZeroAddressWriteHigh(addr))
-                {
-                    addr = 0;
-                }
-                if (!U.CheckPaddingALIGN4(addr))
-                {
-                    addr = 0;
-                }
-            }
+            uint addr = GetWriteAddr(baseaddr);
 
-
+            //終端コードの探索
             List<byte> databyte = new List<byte>();
             byte lastCode=0;
             for (int i = 0; i < this.AIAsm.Count; i++)

@@ -3607,7 +3607,6 @@ namespace FEBuilderGBA
                     );
             }
 
-            int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));
             for (int mode = 0; mode < 12; mode++)
             {
                 uint i = U.u32(sectionData, (uint)mode * 4);
@@ -3619,69 +3618,113 @@ namespace FEBuilderGBA
                         );
                     return;
                 }
+                MakeCheckError_Frame(errors, battleanime_baseaddress, id, seatNumberList,
+                    mode, sectionData, frameData_UZ, rightToLeftOAM_UZ);
+//                MakeCheckError_AnimaStartCommand(errors, battleanime_baseaddress, id, mode, sectionData, frameData_UZ, rightToLeftOAM_UZ);
+            }
+        }
+        static void MakeCheckError_AnimaStartCommand(List<FELint.ErrorSt> errors, uint battleanime_baseaddress, uint id, int mode, byte[] sectionData, byte[] frameData_UZ, byte[] rightToLeftOAM_UZ)
+        {
+            int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));
 
-                bool haveImage = false;
-                for (; i < frameLimit; i += 4)
+            uint i = U.u32(sectionData, (uint)mode * 4);
+            Debug.Assert(i < frameData_UZ.Length);
+
+            if (   mode == 1 - 1  //Mode 1  直接攻撃
+                || mode == 3 - 1  //Mode 3  遠隔攻撃
+                || mode == 12 - 1 //Mode 11 攻撃ミス
+                )
+            {
+                if (i + 4 >= frameData_UZ.Length)
                 {
-                    if (i + 4 >= frameData_UZ.Length)
-                    {
-                        break;
-                    }
-                    if (frameData_UZ[i + 3] == 0x80)
-                    {
-                        break;
-                    }
-                    if (frameData_UZ[i + 3] == 0x85)
-                    {
-                        FELint.Check85Command(errors, frameData_UZ, i, FELint.Type.BATTLE_ANIME, battleanime_baseaddress , id);
-                        continue;
-                    }
-                    
-                    if (frameData_UZ[i + 3] != 0x86)
-                    {
-                        continue;
-                    }
-                    haveImage = true;
-
-                    //シートのサイズを検証
-                    uint imageOffset = U.u32(frameData_UZ, (uint)(i + 4));
-                    if (U.isPointer(imageOffset))
-                    {
-                        imageOffset = U.toOffset(imageOffset);
-                        if (seatNumberList.IndexOf(imageOffset) < 0)
-                        {
-                            FELint.CheckLZ77(imageOffset, errors, FELint.Type.BATTLE_ANIME, battleanime_baseaddress, id);
-                            seatNumberList.Add(imageOffset);
-                        }
-                    }
-                    uint OAMAbsoStart = U.u32(frameData_UZ, i + 8);
-                    DrawOAM oam = new DrawOAM();
-                    string oamErrorMessage = oam.Lint(rightToLeftOAM_UZ, OAMAbsoStart);
-                    if (oamErrorMessage != "")
-                    {
-                        errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
-                            , R._("戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。", mode+1) + "\r\n" + oamErrorMessage, id)
-                            );
-                        return;
-                    }
-
-                    i = i + 4 + 4; // 4+4+ 4 = 12
+                    return;
                 }
-                if (!haveImage)
+                if (frameData_UZ[i + 3] != 0x85)
                 {
-                    if (mode + 1 == 12)
-                    {//ミス時のモーションは存在しなくてもエラーにはならないならしい
-                    }
-                    else
-                    {
-                        errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
-                            , R._("戦闘アニメのMode:{0}に画像がありません。", mode + 1), id)
-                            );
-                    }
+                    errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                        , R._("戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。", mode + 1), id)
+                        );
+                    return;
+                }
+                if (frameData_UZ[i + 0] != 0x3)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                        , R._("戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。", mode + 1), id)
+                        );
                     return;
                 }
             }
+            return;
         }
 
+        static void MakeCheckError_Frame(List<FELint.ErrorSt> errors,uint battleanime_baseaddress,uint id,List<uint> seatNumberList,
+            int mode, byte[] sectionData, byte[] frameData_UZ, byte[] rightToLeftOAM_UZ)
+        {
+            int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));
+
+            uint i = U.u32(sectionData, (uint)mode * 4);
+            Debug.Assert(i < frameData_UZ.Length);
+
+            bool haveImage = false;
+            for (; i < frameLimit; i += 4)
+            {
+                if (i + 4 >= frameData_UZ.Length)
+                {
+                    break;
+                }
+                if (frameData_UZ[i + 3] == 0x80)
+                {
+                    break;
+                }
+                if (frameData_UZ[i + 3] == 0x85)
+                {
+                    FELint.Check85Command(errors, frameData_UZ, i, FELint.Type.BATTLE_ANIME, battleanime_baseaddress , id);
+                    continue;
+                }
+                    
+                if (frameData_UZ[i + 3] != 0x86)
+                {
+                    continue;
+                }
+                haveImage = true;
+
+                //シートのサイズを検証
+                uint imageOffset = U.u32(frameData_UZ, (uint)(i + 4));
+                if (U.isPointer(imageOffset))
+                {
+                    imageOffset = U.toOffset(imageOffset);
+                    if (seatNumberList.IndexOf(imageOffset) < 0)
+                    {
+                        FELint.CheckLZ77(imageOffset, errors, FELint.Type.BATTLE_ANIME, battleanime_baseaddress, id);
+                        seatNumberList.Add(imageOffset);
+                    }
+                }
+                uint OAMAbsoStart = U.u32(frameData_UZ, i + 8);
+                DrawOAM oam = new DrawOAM();
+                string oamErrorMessage = oam.Lint(rightToLeftOAM_UZ, OAMAbsoStart);
+                if (oamErrorMessage != "")
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                        , R._("戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。", mode+1) + "\r\n" + oamErrorMessage, id)
+                        );
+                    return;
+                }
+
+                i = i + 4 + 4; // 4+4+ 4 = 12
+            }
+            if (!haveImage)
+            {
+                if (mode + 1 == 12)
+                {//ミス時のモーションは存在しなくてもエラーにはならないならしい
+                }
+                else
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                        , R._("戦闘アニメのMode:{0}に画像がありません。", mode + 1), id)
+                        );
+                }
+                return;
+            }
+        }
     }
 }

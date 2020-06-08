@@ -2529,7 +2529,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        text = GetChaptorModeName(id);
+                        text = GetEditon(id);
                     }
 
                     link_object.Text = text;
@@ -6392,27 +6392,6 @@ namespace FEBuilderGBA
             return "-";
         }
 
-        //編
-        public static string GetChaptorModeName(uint num)
-        {
-            if (num == 0x01)
-            {
-                return R._("01=序盤");
-            }
-            if (num == 0x02)
-            {
-                return R._("02=エイリーク編");
-            }
-            if (num == 0x03)
-            {
-                return R._("03=エフラム編");
-            }
-            if (num == 0xFF)
-            {
-                return R._("FF=無条件");
-            }
-            return "";
-        }
         //トラップデータ
         public static string GetTrapName(uint num)
         {
@@ -6921,6 +6900,10 @@ namespace FEBuilderGBA
                 {
                     return R._("ヘクトル編");
                 }
+            }
+            if (v == 0xFF)
+            {
+                return R._("FF=無条件");
             }
             return "";
         }

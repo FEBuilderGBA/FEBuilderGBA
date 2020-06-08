@@ -10,3 +10,6 @@ ADDRESS_TYPE=UNIT
 
 AUTHOR=Source: https://feuniverse.us/t/fe7-replace-hector-mode/3169/8
 NAME.zh=MODESELECT可以保护的英雄Eliwood版
+
+CONFLICT_IF:0x34884=0x00 0x4B
+CONFLICT_MESSAGE=Multi Seize Patch

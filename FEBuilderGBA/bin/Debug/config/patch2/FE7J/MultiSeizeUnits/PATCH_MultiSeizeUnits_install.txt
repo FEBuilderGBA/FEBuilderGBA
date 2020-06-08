@@ -1,0 +1,16 @@
+NAME=制圧できるユニットを複数持てるように変更する(Install)
+INFO=制圧できるユニットを複数設定できるように変更します。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x34D5C=0x00 0x4B
+EDIT_PATCH=PATCH_MultiSeizeUnits.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Change to have multiple units that can be seize(Install)
+INFO.en=Change so that multiple units can be seize.
+NAME.zh=更改为具有多个可以抑制的人物(Install)
+INFO.zh=进行更改，以便可以控制多个人物。
