@@ -2716,20 +2716,17 @@ None
 :魔物
 1=Monster
 
-:魔物3
-Monster3
+:魔物+アイテムドロップ
+Monster+ItemDrop
 
-:不明4
-Unknown4
+:特殊+魔物
+Special+Monster
 
-:魔物5
-Monster5
+:特殊+アイテムドロップ
+Special+ItemDrop
 
-:不明6
-Unknown6
-
-:魔物7
-Monster7
+:特殊+魔物+アイテムドロップ
+Special+Monster+ItemDrop
 
 :追加AI:
 Additional AI:
@@ -2773,15 +2770,6 @@ Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare 
 :ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
 In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 
-:特殊:
-Special:
-
-:移動後座標
-After Moving
-
-:配置後座標格納アドレス
-Post-place coordinate storage
-
 :/60秒
 /60sec
 
@@ -2797,20 +2785,29 @@ Post-place coordinate storage
 :2=アイテムドロップ
 2=Item Drop
 
-:3=魔物3
-3=Monster3
+:3=魔物+アイテムドロップ
+3=Monster+ItemDrop
 
-:4=不明4
-4=Unknown4
+:4=特殊
+4=Special
 
-:5=魔物5
-5=Monster5
+:5=特殊+魔物
+5=Special+Monster
 
-:6=不明6
-6=Unknown6
+:6=特殊+アイテムドロップ
+6=Special+ItemDrop
 
-:7=魔物7
-7=Monster7
+:7=特殊+魔物+アイテムドロップ
+7=Special+Monster+ItemDrop
+
+:特殊:
+Special:
+
+:移動後座標
+After Moving
+
+:配置後座標格納アドレス
+Post-place coordinate storage
 
 :アイテムドロップする
 Drop item
@@ -4897,8 +4894,8 @@ When recovering, specify whether or not the AI will retreat.\r\nSetting 0x20 pre
 :ユニットを制御するAIを指定します。\r\nAI3は主に性格を定義します。\r\n残りHPでの回復アイテムを使うようになります。\r\n
 Specify AI to control the unit.\r\nAI 3 mainly defines personality.\r\nYou will be using restore items on the rest HP.\r\n
 
-:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\nそれ以外はよくわっていません。\r\n
-None: Specify this usually.\r\nItem Drop: Enemies will drop items.The item to be dropped is the item in the bottom item column.\r\nMonster: Place monsters according to the probability table.The class ID acts as an ID into the probability table.\r\nOther than that, I'm not doing well.\r\n
+:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\n「特殊」:イベント命令_0x2B21を使って、敵ユニットの位置をランダム化します。\r\n
+None: Specify this usually.\r\nItem Drop: Enemies will drop items.The item to be dropped is the item in the bottom item column.\r\nMonster: Place monsters according to the probability table.\r\nThe class ID acts as an ID into the probability table.\r\nSpecial: Use event command _0x2B21 to randomize the location of enemy units.
 
 :ユニットを最終的に登場させる座標を指定します。\r\nユニットは、配置前座標から登場し、\r\nイベントで移動開始命令が指定されると、配置後座標まで移動します。\r\n
 Specify the coordinates to make the unit finally appear.\r\nThe unit appears from the coordinates before arrangement,\r\nWhen a movement start instruction is specified in an event, it moves to the post-placement coordinates.\r\n

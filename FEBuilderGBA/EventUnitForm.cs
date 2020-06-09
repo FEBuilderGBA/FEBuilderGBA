@@ -1179,15 +1179,15 @@ namespace FEBuilderGBA
                 case 2:
                     return R._("アイテムドロップ");
                 case 3:
-                    return R._("魔物3");
+                    return R._("魔物+アイテムドロップ");
                 case 4:
-                    return R._("不明4");
+                    return R._("特殊");
                 case 5:
-                    return R._("魔物5");
+                    return R._("特殊+魔物");
                 case 6:
-                    return R._("不明6");
+                    return R._("特殊+アイテムドロップ");
                 case 7:
-                    return R._("魔物7");
+                    return R._("特殊+魔物+アイテムドロップ");
                 default:
                     return R._("不明") + U.To0xHexString(ext);
             }
@@ -2467,13 +2467,13 @@ namespace FEBuilderGBA
             PushUndo();
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                this.FE8CoordList[0].ext = 2;
+                this.FE8CoordList[0].ext |= 0x2;
             }
             else if (dr == System.Windows.Forms.DialogResult.No)
             {
-                if (this.FE8CoordList[0].ext == 2)
+                if ((this.FE8CoordList[0].ext & 0x2) == 0x2)
                 {
-                    this.FE8CoordList[0].ext = 0;
+                    this.FE8CoordList[0].ext -= 0x2;
                 }
             }
             //移動リストの再描画
@@ -2506,7 +2506,7 @@ namespace FEBuilderGBA
                 ext = this.FE8CoordList[0].ext;
             }
 
-            if (ext == 2)
+            if ((ext & 0x2) == 0x2)
             {//アイテムドロップ
                 X_ITEMDROP.Text = R._("アイテムドロップ: ドロップする");
                 X_ITEMDROP.ForeColor = OptionForm.Color_ControlComment_ForeColor();
