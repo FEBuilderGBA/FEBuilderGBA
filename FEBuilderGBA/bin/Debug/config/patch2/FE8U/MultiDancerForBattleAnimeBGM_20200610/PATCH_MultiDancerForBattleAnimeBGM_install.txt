@@ -1,0 +1,14 @@
+NAME=戦闘アニメでの踊り子のBGMを複数設定する 20200610(Install)
+NAME.en=Setting battle BGM of a many dancer in battle animetion 20200610(Installer)
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x727FC=0x00 0x4B
+EDIT_PATCH=PATCH_MultiDancerForBattleAnimeBGM.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.zh=在战斗动画中设置多个舞者BGM 20200610(Install)

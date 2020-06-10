@@ -1,7 +1,7 @@
 #include "Extensions/Hack Installation.txt"
 
 PUSH
-ORG $74CD8
+ORG $727FC
 jumpToHack(HackLocation)
 POP
 

@@ -1,8 +1,0 @@
-MultiDancerClassTable=$5C
-Loop=$04
-NotMatch=$46
-CheckUnit=$0C
-CheckClass=$1A
-CheckDanceOrPlay=$28
-Match=$34
-Exit=$48

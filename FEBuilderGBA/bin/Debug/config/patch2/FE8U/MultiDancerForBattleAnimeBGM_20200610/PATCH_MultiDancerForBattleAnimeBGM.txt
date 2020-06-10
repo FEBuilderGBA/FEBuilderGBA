@@ -1,8 +1,8 @@
-NAME=戦闘アニメでの踊り子のBGMを複数設定する 20190119
-NAME.en=Setting battle BGM of a many dancer in battle animetion 20190119
+NAME=戦闘アニメでの踊り子のBGMを複数設定する 20200610
+NAME.en=Setting battle BGM of a many dancer in battle animetion 20200610
 
 
-IF:0x74CD8=0x00 0x4B
+IF:0x727FC=0x00 0x4B
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
@@ -24,4 +24,4 @@ LISTNAME=$B1:CLASS
 B0:UNIT=Unit(00=ANY)
 B1:CLASS=Class(00=ANY)
 W2:SONG=DanceSE
-NAME.zh=在战斗动画中设置多个舞者的BGM。 20190119
+NAME.zh=在战斗动画中设置多个舞者的BGM。 20200610
