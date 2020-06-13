@@ -118,7 +118,7 @@
 076=Chivalry
 077=Pragmatic
 078=Armsthrift
-079=KeepUp
+079=Moonbow
 07a=Shove
 07b=Smite
 07c=Bane

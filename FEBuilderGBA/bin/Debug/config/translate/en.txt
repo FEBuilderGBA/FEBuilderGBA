@@ -1726,6 +1726,9 @@ Map
 :22=階段拡張
 22=Stairs Hack
 
+:C0=第4軍ターンに実行
+C0=Executed on the 4th Army turn.
+
 :0F=制圧
 0F=Seize
 
@@ -4048,11 +4051,11 @@ The battle animation's palette length is incorrect.
 :戦闘アニメのパレットのが破損しています。
 The battle anime palette is damaged.
 
-:戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。
-Battle animation Mode: {0} is broken.Frame data is insufficient.
-
 :戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。
 The first command of Mode:{0} in battle animation is not 03 of 85 Command.
+
+:戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。
+Battle animation Mode: {0} is broken.Frame data is insufficient.
 
 :戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。
 There is corruption in the rightToLeftOAM data of Mode: {0} of battle animation.

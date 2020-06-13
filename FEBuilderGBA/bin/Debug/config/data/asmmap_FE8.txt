@@ -7529,6 +7529,7 @@
 0203B1F0	:0203B1FF	UnitSelectSFXパッチ	ユニット選択時に音を再生するパッチで利用	{U}
 0203AAC0	:0203ABB7	Battle Buffer expansion (Skill System)(0xF8 bytes)	{U}
 0203ED40	:0203EF00	(Where debuffs for the skill system begin)Debuff glitch fix(Skill system)	{U}
+02026E30	:02027268	Extends PurpleUnitFreeSpace	Fourth-Allegiance	{U}
 
 //thanks hypergammaspaces
 //Class Change (Promotion)
@@ -12752,3 +12753,5 @@
 08013138	GetTerrainTypeID	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
+08095970	IsFormationMenuEnable	{U}
+08097C50	IsFormationMenuEnable	{J}

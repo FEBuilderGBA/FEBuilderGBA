@@ -9,7 +9,7 @@ TAG=#IMAGE
 
 //幅と高さ
 WIDTH=256
-HEIGHT=160
+HEIGHT=48
 //利用パレット数
 PALETTE=1
 

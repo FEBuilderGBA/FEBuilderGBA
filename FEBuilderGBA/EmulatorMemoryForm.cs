@@ -2171,23 +2171,26 @@ namespace FEBuilderGBA
 
         uint GetShowRAMPartyUnitsAddr()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return Program.ROM.RomInfo.workmemory_npc_units_address();
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return Program.ROM.RomInfo.workmemory_enemy_units_address();
             }
+
             return Program.ROM.RomInfo.workmemory_player_units_address();
         }
         int GetShowPartyClassPaletteType()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return 1;
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return 2;
             }
@@ -2195,11 +2198,12 @@ namespace FEBuilderGBA
         }
         uint GetLimitRAMPartyUnits()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return 0x20;
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return 50;
             }

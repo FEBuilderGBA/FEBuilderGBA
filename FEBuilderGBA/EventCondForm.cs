@@ -129,7 +129,6 @@ namespace FEBuilderGBA
             N02_L_10_COMBO.AddIcon(0x0, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1, 0, true)); //00=プレイヤ
             N02_L_10_COMBO.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             N02_L_10_COMBO.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
-
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8.
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("11=制圧"));
@@ -174,6 +173,11 @@ namespace FEBuilderGBA
                 if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     TRAP_L_0_COMBO.Items.Insert(4, R._("06=DragonVein"));
+                }
+                if (PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+                {
+                    N02_L_10_COMBO.Items.Add("C0=第4軍ターンに実行");
+                    N02_L_10_COMBO.AddIcon(0xC0, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(10, 4, true)); //C0=第4軍
                 }
 
                 return;

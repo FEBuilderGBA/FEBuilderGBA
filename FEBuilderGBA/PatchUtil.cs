@@ -34,6 +34,7 @@ namespace FEBuilderGBA
             g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
             g_Cache_SearchFlag0x28ToMapSecondPalettePatch = MapSecondPalette_extends.NoCache;
             g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
+            g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1179,6 +1180,50 @@ namespace FEBuilderGBA
                 }
             }
             return ClearTurn2x_extends.NO;
+        }
+
+        //Fourth-Allegiance
+        public enum FourthAllegiance_extends
+        {
+            NO,             //なし
+            FourthAllegiance,
+            NoCache = (int)NO_CACHE
+        };
+        static FourthAllegiance_extends g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
+        public static FourthAllegiance_extends SearchCache_FourthAllegiance()
+        {
+            if (g_Cache_FourthAllegiance == FourthAllegiance_extends.NoCache)
+            {
+                g_Cache_FourthAllegiance = SearchCache_FourthAllegianceLow();
+            }
+            return g_Cache_FourthAllegiance;
+        }
+        static FourthAllegiance_extends SearchCache_FourthAllegianceLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="FourthAllegiance",	ver = "FE8U", addr = 0x17BDC,data = new byte[]{0xC0, 0x20, 0xF8, 0xE7}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "FourthAllegiance")
+                {
+                    return FourthAllegiance_extends.FourthAllegiance;
+                }
+            }
+            return FourthAllegiance_extends.NO;
         }
 
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)

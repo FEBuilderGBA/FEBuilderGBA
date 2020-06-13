@@ -7266,6 +7266,8 @@ r3=X tile position of menu of right	{U}
 0203B1F0	:0203B1FF	UnitSelectSFX patch	Use as patch to reproduce sound when unit is selected	{U}
 0203AAC0	:0203ABB7	Battle Buffer expansion (Skill System)(0xF8 bytes)	{U}
 0203ED40	:0203EF00	(Where debuffs for skill system begin)Debuff glitch fix(Skill system)	{U}
+02026E30	:02027268	Extends PurpleUnitFreeSpace	Fourth-Allegiance	{U}
+
 0203A530	Right side with battle animation.Additional information unknown 1.	{J}
 0203A531	Right side with battle animation.Additional information unknown 2.	{J}
 0203A532	Right side with battle animation.Additional information unknown 3.	{J}
@@ -12761,3 +12763,5 @@ r3=X tile position of menu of right	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
 03004940	SetSubjectMap_Array	{J}
+08095970	IsFormationMenuEnable	{U}
+08097C50	IsFormationMenuEnable	{J}

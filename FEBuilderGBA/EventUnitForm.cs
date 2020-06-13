@@ -489,8 +489,12 @@ namespace FEBuilderGBA
                 class_id = UnitForm.GetClassID(unit_id);
             }
 
-
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3 
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
             return ClassForm.DrawWaitIcon(class_id, palette_type,true);
         }
 
@@ -535,6 +539,11 @@ namespace FEBuilderGBA
             List<MapPictureBox.StaticItem> list = new List<MapPictureBox.StaticItem>();
 
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
@@ -638,6 +647,11 @@ namespace FEBuilderGBA
             MapPictureBox.StaticItem st;
 
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 

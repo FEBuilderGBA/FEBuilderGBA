@@ -7229,6 +7229,8 @@ r3=X tile position of menu of the right	{U}
 0203B1F0	:0203B1FF	UnitSelectSFX补丁	选择单位时用作音色重现声音	{U}
 0203AAC0	:0203ABB7	Battle Buffer expansion (Skill System)(0xF8 bytes)	{U}
 0203ED40	:0203EF00	(Where debuffs for the skill system begin)Debuff glitch fix(Skill system)	{U}
+02026E30	:02027268	Extends PurpleUnitFreeSpace	Fourth-Allegiance	{U}
+
 0203A530	右侧有战斗动画。其他信息未知1	{J}
 0203A531	右侧有战斗动画。未知其他信息2	{J}
 0203A532	右侧有战斗动画。其他信息未知3	{J}
@@ -12715,3 +12717,5 @@ r3=X tile position of menu of the right	{U}
 08028C0C	ItemEffect_ErrorMessage	{U}
 08028BB8	ItemEffect_ErrorMessage	{J}
 03004940	SetSubjectMap_Array	{J}
+08095970	IsFormationMenuEnable	{U}
+08097C50	IsFormationMenuEnable	{J}

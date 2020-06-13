@@ -1,0 +1,236 @@
+PUSH
+ORG 0x8B08B6
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*1))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*2))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*3))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*4))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*5))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*6))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*7))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*8))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*9))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*10))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*11))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*12))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*13))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*14))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*15))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*16))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*17))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*18))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*19))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*20))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*21))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*22))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*23))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*24))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*25))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*26))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*27))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*28))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*29))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*30))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*31))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*32))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*33))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*34))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*35))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*36))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*37))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*38))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*39))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*40))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*41))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*42))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*43))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*44))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*45))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*46))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*47))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*48))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*49))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*50))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*51))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*52))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*53))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*54))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*55))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*56))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*57))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*58))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*59))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*60))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*61))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*62))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*63))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*64))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*65))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*66))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*67))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*68))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*69))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*70))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*71))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*72))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*73))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*74))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*75))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*76))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+ORG (0x8B08B6+(148*77))
+FactionRelations( /* Blue Units */ TRUE, TRUE, FALSE, FALSE, /* Green Units */ TRUE, TRUE, FALSE, FALSE, /* Red Units */ FALSE, FALSE, TRUE, FALSE, /* Purple Units */ FALSE, FALSE, FALSE, TRUE) // Blue, Green, Red, Gray
+
+POP
