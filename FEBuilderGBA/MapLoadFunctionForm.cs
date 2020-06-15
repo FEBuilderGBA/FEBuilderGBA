@@ -147,6 +147,22 @@ namespace FEBuilderGBA
             List<U.AddrResult> arlist = InputFormRef.MakeList();
             FEBuilderGBA.Address.AddFunctions(list, arlist, 0, name);
         }
+        public static bool IsEnterChapterAlways(uint chapterID)
+        {
+            InputFormRef InputFormRef = Init(null);
+            ReInit(InputFormRef);
+            uint addr = InputFormRef.BaseAddress + (chapterID * InputFormRef.BlockSize);
+            uint p = Program.ROM.u32(addr);
+
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                return p != 0x80C1FB4;
+            }
+            else
+            {
+                return p != 0x80BD1A8;
+            }
+        }
 
     
     }

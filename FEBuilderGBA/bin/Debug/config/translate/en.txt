@@ -1441,11 +1441,14 @@ Difficulty: Normal
 :拠点
 World Map Nodes
 
-:MNC2の修正パッチを適応していないので、章ワープを利用できません。
-Chapter warp is not available because the patch for MNC2 has not been applied.
+:MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。
+Chapter warp is not available because the patch for MNC2 has not been applied.\r\nTo use this function, the patch of MNC2 Fix is \u200b\u200brequired.
+
+:MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
+Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be in the chapter to use this feature.
 
 :MAPTASK Procsの位置を特定できませんでした
-The location of MAPTASK Procs could not be determined.
+Could not locate MAPTASK Procs.
 
 :ROMのバージョン情報:
 ROM version information:
@@ -1727,7 +1730,7 @@ Map
 22=Stairs Hack
 
 :C0=第4軍ターンに実行
-C0=Executed on the 4th Army turn.
+C0=Run on 4th Army.
 
 :0F=制圧
 0F=Seize

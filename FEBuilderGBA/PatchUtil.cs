@@ -1616,5 +1616,18 @@ namespace FEBuilderGBA
             }
             return addr;
         }
+        public static bool IsWarpChapterFE8(uint chapterID)
+        {
+            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
+            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
+            {
+                if (MapLoadFunctionForm.IsEnterChapterAlways(chapterID))
+                {
+                    return true;
+                }
+            }
+
+            return true;
+        }
     }
 }

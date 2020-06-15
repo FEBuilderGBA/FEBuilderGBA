@@ -133,10 +133,9 @@ namespace FEBuilderGBA
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
 
-            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
-            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
+            if (! PatchUtil.IsWarpChapterFE8(warp_chapter))
             {
-                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。");
+                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。");
                 return;
             }
             if (Program.ROM.RomInfo.is_multibyte())
@@ -158,7 +157,7 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
 
