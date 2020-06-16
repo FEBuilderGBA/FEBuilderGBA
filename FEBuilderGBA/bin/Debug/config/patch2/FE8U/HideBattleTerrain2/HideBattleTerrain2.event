@@ -1,0 +1,11 @@
+#include "Extensions/Hack Installation.txt" 
+
+PUSH
+//ORG 0x5B830	//{J}
+ORG 0x5AA8C	//{U}
+jumpToHack(HideBattleTerrain2)
+POP
+
+ALIGN 4
+HideBattleTerrain2:
+#incbin "HideBattleTerrain2.dmp"

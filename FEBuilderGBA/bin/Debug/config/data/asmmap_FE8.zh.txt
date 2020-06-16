@@ -12719,3 +12719,9 @@ r3=X tile position of menu of the right	{U}
 03004940	SetSubjectMap_Array	{J}
 08095970	IsFormationMenuEnable	{U}
 08097C50	IsFormationMenuEnable	{J}
+020145c8	:020165c8	SomeBGBuffer	{U}
+020145C8	:020165C8	SomeBGBuffer	{J}
+08077EE8	DrawBattleBG_Low	{J}
+08077F0C	DrawBattleBG	{J}
+08075AB4	DrawBattleBG_Low	{U}
+08075AD8	DrawBattleBG	{U}

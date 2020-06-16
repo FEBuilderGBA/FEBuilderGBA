@@ -39,8 +39,8 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     //0 と 4 がポインタであればデータがあると考える.
-                    return U.isPointerOrNULL(Program.ROM.u32(addr + 0))
-                        && U.isPointerOrNULL(Program.ROM.u32(addr + 4));
+                    return U.isPointer(Program.ROM.u32(addr + 0))
+                        && U.isPointer(Program.ROM.u32(addr + 4));
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
