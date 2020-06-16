@@ -23,7 +23,7 @@ ldrb r1,[r1,r3]	@Get Anime settings
 mov	r3, #0x6	@(if both 2 and 4 are set, combat animations are on with backgrounds on)
 and r1,r3
 cmp r1,#0x6
-beq DrawBackground
+beq DrawBattleBackground
 
 mov	r3, #0x4	@04=Combat animations solo
 and r1,r3
@@ -33,11 +33,11 @@ bne FalseReturn
 @Battle Animation Solo Setting 
 @ldr r3,=0x0203a4e8	@BattleUnit	gBattleActor	{J}
 ldr r3,=0x0203A4EC	@BattleUnit	gBattleActor	{U}
-ldrb r0,[r3,#0x9]	@BattleUnit->Status2
-mov  r1,#0x40       @+40=単独アニメ2
+ldrb r0,[r3,#0xD]	@BattleUnit->Status2
+mov  r1,#0x40       @+40=単独アニメ1
 and  r0,r1
-cmp  r1,#0x40
-bne  FalseReturn
+cmp  r0,#0x40
+beq  FalseReturn
 
 DrawBattleBackground:
 
