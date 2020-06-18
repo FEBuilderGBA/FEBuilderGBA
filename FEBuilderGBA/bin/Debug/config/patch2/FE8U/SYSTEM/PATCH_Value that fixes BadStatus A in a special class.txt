@@ -1,0 +1,15 @@
+NAME=特殊クラスで、BadStatusに固定する値
+NAME.en=Value that is fixed to BadStatus in a special class
+
+INFO=バニラでは、ゴーゴンの卵は、バッドステータスAを5ターンに固定されます。
+INFO.en=In vanilla, Gorgon's eggs fixed to Bad Status A until 5 turn.
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17C0A
+HEX=FALSE
+
+AUTHOR=7743
+NAME.zh=在特殊类中固定于BadStatus的值。
+INFO.zh=在香草中，org实的鸡蛋被钉在不良状态A下5圈。

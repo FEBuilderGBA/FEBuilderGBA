@@ -4,11 +4,12 @@ NAME.zh=每人物战斗音乐变更 20200603(Editor)
 
 IF:0x74ba6=0x00 0x00 0x00 0x4B 0x18 0x47
 
-INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。
-INFO.en=In order to use "Sound: Unique Battle Music Per Unit Installer" must be installed.\r\nThis editor modifies the new unit music list.\r\nAllows for custom battle music based on unit, chapter, battle anime, and event flags.\r\n
+INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。\r\n\r\n選曲ルール\r\n1.\r\n優先順位はボスBGMよりも低くなっています。\r\nボスBGMが指定されている場合、ボスBGMが最優先されます。\r\n
+\r\n2.\r\n指定したユニットが自分から敵を攻撃する場合にのみ使用します。\r\n3.\r\n一致するものがなければ、章設定で定義されたバトルバックグラウンドミュージックを再生します。\r\n
+INFO.en=In order to use "Sound: Unique Battle Music Per Unit Installer" must be installed.\r\nThis editor modifies the new unit music list.\r\nAllows for custom battle music based on unit, chapter, battle anime, and event flags.\r\n\r\n\r\nMusic selection rules\r\nRules\r\n1.\r\nIt has a lower priority than Boss Music.\r\nIf Boss Music is specified, Boss Music has the highest priority.\r\n2.\r\nIt is used only when the specified unit attacks an enemy from hisself.\r\n3.\r\nIf none match, play the battle background music defined in the chapter editor.
 
 AUTHOR=7743
-INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。
+INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。\r\n\r\nMusic selection rules\r\nRules\r\n1.\r\nIt has a lower priority than Boss Music.\r\nIf Boss Music is specified, Boss Music has the highest priority.\r\n2.\r\nIt is used only when the specified unit attacks an enemy from hisself.\r\n3.\r\nIf none match, play the battle background music defined in the chapter editor.
 HINT=BGM
 
 //STRUCTパッチとして実装します

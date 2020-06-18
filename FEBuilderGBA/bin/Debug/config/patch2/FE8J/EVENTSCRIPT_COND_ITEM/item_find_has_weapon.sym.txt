@@ -1,0 +1,9 @@
+GetUnitInfoBySVAL1=$20
+GetUnitInfoByCoord=$26
+GetUnitInfoByCurrent=$1A
+GetUnitInfo=$28
+Term=$54
+item_loop=$3C
+Found=$58
+character_item_next=$50
+MakeResult=$5A

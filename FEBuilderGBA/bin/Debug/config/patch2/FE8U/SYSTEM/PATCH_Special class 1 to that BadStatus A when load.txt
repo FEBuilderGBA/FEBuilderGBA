@@ -1,0 +1,15 @@
+NAME=Load時に、バッドステータス 0xA に固定する特殊クラス1
+NAME.en=Special class 1 to that BadStatus A when load
+
+INFO=バニラでは、ゴーゴンの卵は、バッドステータスAを5ターンに固定されます。
+INFO.en=In vanilla, Gorgon's eggs fixed to Bad Status A until 5 turn.
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17C00
+ADDRESS_TYPE=CLASS
+
+AUTHOR=7743
+NAME.zh=特殊类，可在加载1时将不良状态固定为0xA。
+INFO.zh=在香草中，org实的鸡蛋被钉在不良状态A下5圈。

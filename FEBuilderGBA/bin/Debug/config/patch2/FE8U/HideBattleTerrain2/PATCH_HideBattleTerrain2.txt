@@ -10,5 +10,5 @@ AUTHOR=7743
 
 PATCHED_IF:0x5AA8C=0x00 0x4B 0x18 0x47
 INFO.en=Do not draw the battle terrain when displaying the battle background.\r\nThis gives you the option of both terrain alone and background.
-NAME.zh=请勿绘制战斗地形2。
+NAME.zh=请勿绘制战斗地形2
 INFO.zh=显示战斗背景时，请勿绘制战斗地形。\r\n这使您可以选择仅地形还是背景。
