@@ -11,7 +11,7 @@ PATCHED_IF:$FGREP4 item_find_has_weapon.dmp=0x70 0xB5 0x84 0x6B
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=item_find_has_weapon.dmp
 
-INFO=特定のアイテムをユニットがもっているかという条件式を作る.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+INFO=イベント命令で、ユニットが装備できるアイテムを持っているかどうか判定する条件式を追加する.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
 AUTHOR=7743
 
 EVENTSCRIPT:1=400DXX00{$L1:item_find_has_weapon.dmp}	[XX:UNIT:ユニット]が武器をもっているかチェック	{COND}
@@ -31,5 +31,5 @@ EVENTSCRIPT:2.zh=410D0000{$L1:item_find_has_weapon.dmp}	Check if Slot1's Unit ha
 EVENTSCRIPT:3.zh=4B0D0000{$L1:item_find_has_weapon.dmp}	Check if Coord SlotB's Unit have weapon item that can equip(LOW)	{COND}
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:item_find_has_weapon.dmp}	Check if Coord [ZZ:MAPX:X][WW:MAPY:Y] Unit have weapon item that can equip	{COND}
 EVENTSCRIPT:5.zh=212E00002006C100410D0000{$L1:item_find_has_weapon.dmp}	Check if Current Unit have weapon item that can equip	{COND}
-INFO.en=Make a conditional expression that the unit has a specific item.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
-INFO.zh=进行条件式表示该单位具有特定项目。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+INFO.en=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+INFO.zh=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
