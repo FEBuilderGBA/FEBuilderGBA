@@ -2610,7 +2610,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr, List<uint> tracelist)
+        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr,string info, List<uint> tracelist)
         {
             uint lastBranchAddr = 0;
             int unknown_count = 0;
@@ -2654,7 +2654,7 @@ namespace FEBuilderGBA
                             )
                         {//テキスト関係の命令.
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, "", v, event_addr);
+                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_MENUEXTENDS)
                         {//分岐メニュー拡張
@@ -2681,7 +2681,7 @@ namespace FEBuilderGBA
                                 )
                             {
                                 tracelist.Add(v);
-                                MakeTextIDEventScan(list, v, tracelist);
+                                MakeTextIDEventScan(list, v, info,tracelist);
                             }
                         }
                     }
@@ -4452,7 +4452,8 @@ namespace FEBuilderGBA
                 for (int i = 0; i < count; i++)
                 {
                     U.AddrResult ar = eventCondList[i];
-                    EventCondForm.MakeTextIDEventScan(list, ar.addr, tracelist);
+                    string info = "MAP " + U.ToHexString(mapid) + " " + ar.name;
+                    EventCondForm.MakeTextIDEventScan(list, ar.addr, info , tracelist);
                 }
 
             }
@@ -4474,7 +4475,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            EventCondForm.MakeTextIDEventScan(list, event_addr, tracelist);
+            EventCondForm.MakeTextIDEventScan(list, event_addr, name, tracelist);
         }
 
         public static uint GetMapID(List<Control> parentControls)
