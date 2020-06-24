@@ -593,7 +593,7 @@ Class Base Stats
 Movement Speed
 
 :待機アイコン
-Hover Map Anime
+Standing Map Anims
 
 :一般兵顔
 Generic Enemy Portrait
@@ -2210,7 +2210,7 @@ Vertical Arrow
 Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
 
 :ゴーゴンの卵
-Gorgon's Egg
+Gorgon Egg
 
 :羽化開始
 Hatching Starts
@@ -2231,7 +2231,7 @@ Mine
 Make a Mine trap.
 
 :SkillSystemsで追加されたDragonVeinを設定します。\r\n\r\nこのトラップを動作させるには、DragonVeinEffectIDを設定する必要があります。\r\nDragonVeinEffectは、Patchから設定します。\r\nこのトラップが発動した時に動作するイベントを記述します。\r\n\r\nゲーム中で、このトラップを有効にするには、Dragon's Bloodスキルを持ったユニットが訪れる必要があります。\r\n
-Set DragonVein added by SkillSystems.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
+Set DragonVein added by Skill System.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
 
 :選択されている開始/終了イベントを、イベント編集画面で開く
 Open the selected start / end event in the Event edit screen
@@ -2756,7 +2756,7 @@ After placement coordinates, all data is FF.: {0} Count: {1}.
 You assigned different classes to the unit.\r\nWith this, you will mix proximity and magic at the weapon level.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.
 
 :ユニットを読込 {0} 、SkillSystemsを利用している場合、16人以上のユニットを同時にロードできません。
-Reading Units {0} If you are using SkillSystems, you can not load more than 16 units simultaneously.
+Reading Units {0} If you are using Skill System, you can not load more than 16 units simultaneously.
 
 :ユニットを読込 {0} 、50人以上のユニットを同時にロードできません。
 Load unit {0}, can not load more than 50 units simultaneously.
@@ -3200,7 +3200,7 @@ To extend the icon, you need to apply a patch before extending the table.\r\nDo 
 Skill extension FE8N is required.\r\nWould you like to enable it?
 
 :スキル拡張 SkillSystems が必要です。\r\n有効にしますか？
-Skill extension SkillSystems is required.\r\nWould you like to enable it?
+Skill extension Skill System is required.\r\nWould you like to enable it?
 
 :FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？
 A patch is required to move the map of FE 8 without going through the world map.\r\nWould you like to enable it?
@@ -3803,7 +3803,7 @@ Import AP
 Export AP
 
 :移動アイコン
-Moving Map Anime
+Moving Map Anims
 
 :チェックされている場合、敵やNPCの時のパレットにも同じパレットに設定します。\r\nこのパレットを利用するユニットが、自軍以外で登場する場合は、それぞれのパレットも用意する必要があります。\r\n例えば、敵軍として登場する場合は、敵軍用のパレットを用意する必要があります。\r\nこのチェックがされている場合、自動的にそれらのパレットにも同じ値を設定します。
 If checked, the enemy and NPC's palettes will also be set to the same palette.\r\nIf units using this pallet appear outside of palyer army, you will need to prepare each pallet as well.\r\nFor example, if the unit appear as an enemy army, you need to prepare a palette for the enemy army.\r\nIf this check is done, automatically set the same value to those palettes.
@@ -5507,10 +5507,10 @@ Weapon Effectiveness
 Magic Animations
 
 :支援効果
-Support Stat Boosts
+Affinity Support Boosts
 
 :支援会話
-Support Convo's
+Support Convos
 
 :支援相手
 Supporting partner
@@ -9203,7 +9203,7 @@ Could not install new patch.
 This patch is an old patch.\r\nIt is left for compatibility.\r\nDo not use normally.\r\n\r\nAre you sure you want to install it? 
 
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
-SkillSystems is already installed in this ROM.\r\nOverinstalling SkillSystems is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
+Skill System is already installed in this ROM.\r\nOverinstalling Skill System is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
 
 :パッチファイルを開く
 Open patch file
@@ -11117,13 +11117,13 @@ Complete.
 Not implemented yet !.
 
 :SkillSystemsがインストールされていません。
-SkillSystems is not installed.
+Skill System is not installed.
 
 :スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。\r\n\r\n詳細な説明と、スキル拡張のソースコードのダウンロードは、以下のURLを参照してください。\r\n
-Build and install SkillSystems from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.\r\n\r\nPlease refer to the following URL for detailed explanation and download of source code of skill extension.\r\n
+Build and install Skill System from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.\r\n\r\nPlease refer to the following URL for detailed explanation and download of source code of skill extension.\r\n
 
 :ターゲット:ビルドするスキル拡張
-Target: SkillSystems to build.
+Target: Skill System to build.
 
 :ビルド開始
 Build Started

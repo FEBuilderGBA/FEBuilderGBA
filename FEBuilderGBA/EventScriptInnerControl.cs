@@ -2595,6 +2595,12 @@ namespace FEBuilderGBA
         {
             StringBuilder sb = new StringBuilder();
             EventScript.OneCode code = this.EventAsm[number];
+            return EventScriptInnerControl.EventToTextOne(code);
+        }
+
+        static public string EventToTextOne(EventScript.OneCode code)
+        {
+            StringBuilder sb = new StringBuilder();
             for (int n = 0; n < code.ByteData.Length; n++)
             {
                 sb.Append(U.ToHexString(code.ByteData[n]));
@@ -2633,7 +2639,7 @@ namespace FEBuilderGBA
 
                     sb.Append(hexstring);
 
-                    if (arg.Type == EventScript.ArgType.TEXT 
+                    if (arg.Type == EventScript.ArgType.TEXT
                         || arg.Type == EventScript.ArgType.CONVERSATION_TEXT
                         || arg.Type == EventScript.ArgType.SYSTEM_TEXT
                         || arg.Type == EventScript.ArgType.ONELINE_TEXT
@@ -2800,13 +2806,13 @@ namespace FEBuilderGBA
                     {//フラグ
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetFlagName(v,out dummy));
+                        sb.Append(InputFormRef.GetFlagName(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.MAGVELY)
                     {//FE8の世界地図の移動 -8 ～ 52の範囲
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetMagvelYName((short)v,out dummy));
+                        sb.Append(InputFormRef.GetMagvelYName((short)v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
                     {//PROC
@@ -2842,7 +2848,7 @@ namespace FEBuilderGBA
                     {//MemorySlotPacked
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0],out dummy));
+                        sb.Append(InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
                     {//RAM_UNIT_STATE
@@ -2985,12 +2991,16 @@ namespace FEBuilderGBA
                     sb.Append("]");
                     break;
                 }
+
+                if (i + 1 < code.Script.Info.Length)
+                {
+                    sb.Append(code.Script.Info[i + 1]);
+                }
             }
             sb.AppendLine("");
 
             return sb.ToString();
         }
-
 
 
         private void EventToFileButton_Click(object sender, EventArgs ee)
