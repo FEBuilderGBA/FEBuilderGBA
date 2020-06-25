@@ -55,5 +55,39 @@ namespace FEBuilderGBA
         {
 
         }
+
+        private void OrignalSelectButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("無改造ROMを選択してください");
+            string filter = R._("GBA ROMs|*.gba|Binary files|*.bin|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            if (Program.LastSelectedFilename != null)
+            {
+                Program.LastSelectedFilename.Load(this, "", open);
+            }
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+
+            if (Program.LastSelectedFilename != null)
+            {
+                Program.LastSelectedFilename.Save(this, "", open);
+            }
+            OrignalFilename.Text = open.FileNames[0];
+        }
+
+        private void OrignalFilename_DoubleClick(object sender, EventArgs e)
+        {
+            OrignalSelectButton.PerformClick();
+        }
     }
 }

@@ -1389,7 +1389,7 @@
             // 
             // SystemIconButton
             // 
-            this.SystemIconButton.Location = new System.Drawing.Point(1017, 333);
+            this.SystemIconButton.Location = new System.Drawing.Point(1017, 369);
             this.SystemIconButton.Margin = new System.Windows.Forms.Padding(2);
             this.SystemIconButton.Name = "SystemIconButton";
             this.SystemIconButton.Size = new System.Drawing.Size(200, 36);
@@ -1400,7 +1400,7 @@
             // 
             // WorldMapRoadEditorbutton
             // 
-            this.WorldMapRoadEditorbutton.Location = new System.Drawing.Point(1017, 370);
+            this.WorldMapRoadEditorbutton.Location = new System.Drawing.Point(1017, 406);
             this.WorldMapRoadEditorbutton.Margin = new System.Windows.Forms.Padding(2);
             this.WorldMapRoadEditorbutton.Name = "WorldMapRoadEditorbutton";
             this.WorldMapRoadEditorbutton.Size = new System.Drawing.Size(200, 36);
@@ -1411,7 +1411,7 @@
             // 
             // WorldMapRoadMoveEditorbutton
             // 
-            this.WorldMapRoadMoveEditorbutton.Location = new System.Drawing.Point(1017, 408);
+            this.WorldMapRoadMoveEditorbutton.Location = new System.Drawing.Point(1017, 444);
             this.WorldMapRoadMoveEditorbutton.Margin = new System.Windows.Forms.Padding(2);
             this.WorldMapRoadMoveEditorbutton.Name = "WorldMapRoadMoveEditorbutton";
             this.WorldMapRoadMoveEditorbutton.Size = new System.Drawing.Size(200, 36);
@@ -1592,7 +1592,7 @@
             this.ControlPanel.Controls.Add(this.WorldMapEventPointerButton);
             this.ControlPanel.Controls.Add(this.WorldMapEventPointButton);
             this.ControlPanel.Controls.Add(this.WorldMapRoadButton);
-            this.ControlPanel.Location = new System.Drawing.Point(8, 80);
+            this.ControlPanel.Location = new System.Drawing.Point(9, 80);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
@@ -1743,7 +1743,7 @@
             // 
             // LinkArenaDenyUnitButton
             // 
-            this.LinkArenaDenyUnitButton.Location = new System.Drawing.Point(1018, 521);
+            this.LinkArenaDenyUnitButton.Location = new System.Drawing.Point(1018, 557);
             this.LinkArenaDenyUnitButton.Margin = new System.Windows.Forms.Padding(2);
             this.LinkArenaDenyUnitButton.Name = "LinkArenaDenyUnitButton";
             this.LinkArenaDenyUnitButton.Size = new System.Drawing.Size(200, 36);
@@ -1776,7 +1776,7 @@
             // 
             // ExtraUnitButton
             // 
-            this.ExtraUnitButton.Location = new System.Drawing.Point(1017, 483);
+            this.ExtraUnitButton.Location = new System.Drawing.Point(1017, 519);
             this.ExtraUnitButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExtraUnitButton.Name = "ExtraUnitButton";
             this.ExtraUnitButton.Size = new System.Drawing.Size(200, 36);
@@ -1886,7 +1886,7 @@
             // 
             // MonsterWMapProbabilityButton
             // 
-            this.MonsterWMapProbabilityButton.Location = new System.Drawing.Point(1017, 224);
+            this.MonsterWMapProbabilityButton.Location = new System.Drawing.Point(1017, 225);
             this.MonsterWMapProbabilityButton.Margin = new System.Windows.Forms.Padding(2);
             this.MonsterWMapProbabilityButton.Name = "MonsterWMapProbabilityButton";
             this.MonsterWMapProbabilityButton.Size = new System.Drawing.Size(200, 36);
@@ -2139,7 +2139,7 @@
             // 
             // SummonsDemonKingButton
             // 
-            this.SummonsDemonKingButton.Location = new System.Drawing.Point(1017, 297);
+            this.SummonsDemonKingButton.Location = new System.Drawing.Point(1017, 261);
             this.SummonsDemonKingButton.Margin = new System.Windows.Forms.Padding(2);
             this.SummonsDemonKingButton.Name = "SummonsDemonKingButton";
             this.SummonsDemonKingButton.Size = new System.Drawing.Size(200, 36);
@@ -2161,7 +2161,7 @@
             // 
             // MapLoadFunction
             // 
-            this.MapLoadFunction.Location = new System.Drawing.Point(1017, 447);
+            this.MapLoadFunction.Location = new System.Drawing.Point(1017, 483);
             this.MapLoadFunction.Margin = new System.Windows.Forms.Padding(2);
             this.MapLoadFunction.Name = "MapLoadFunction";
             this.MapLoadFunction.Size = new System.Drawing.Size(200, 36);
@@ -2271,7 +2271,7 @@
             // 
             // SummonButton
             // 
-            this.SummonButton.Location = new System.Drawing.Point(1017, 224);
+            this.SummonButton.Location = new System.Drawing.Point(1017, 333);
             this.SummonButton.Margin = new System.Windows.Forms.Padding(2);
             this.SummonButton.Name = "SummonButton";
             this.SummonButton.Size = new System.Drawing.Size(200, 36);
