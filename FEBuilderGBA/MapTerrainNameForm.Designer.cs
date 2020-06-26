@@ -62,7 +62,7 @@
             this.panel4.Location = new System.Drawing.Point(286, 83);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(933, 274);
+            this.panel4.Size = new System.Drawing.Size(933, 668);
             this.panel4.TabIndex = 80;
             // 
             // label2
@@ -225,7 +225,7 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(20, 53);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(260, 304);
+            this.panel6.Size = new System.Drawing.Size(260, 698);
             this.panel6.TabIndex = 146;
             // 
             // LabelFilter
@@ -249,7 +249,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(259, 274);
+            this.AddressList.Size = new System.Drawing.Size(259, 668);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -257,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1237, 369);
+            this.ClientSize = new System.Drawing.Size(1237, 752);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
