@@ -83,6 +83,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
@@ -147,6 +149,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_Comment);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.X_MAPEDITOR_LINK);
             this.panel3.Controls.Add(this.N_B6);
             this.panel3.Controls.Add(this.N_L_5_FLAG);
@@ -776,6 +780,27 @@
             this.panel7.Size = new System.Drawing.Size(156, 538);
             this.panel7.TabIndex = 190;
             // 
+            // N_Comment
+            // 
+            this.N_Comment.ErrorMessage = "";
+            this.N_Comment.Location = new System.Drawing.Point(164, 343);
+            this.N_Comment.Name = "N_Comment";
+            this.N_Comment.Placeholder = "";
+            this.N_Comment.Size = new System.Drawing.Size(240, 25);
+            this.N_Comment.TabIndex = 209;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(2, 340);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 31);
+            this.label4.TabIndex = 208;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MapChangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -875,5 +900,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        private TextBoxEx N_Comment;
+        private System.Windows.Forms.Label label4;
     }
 }

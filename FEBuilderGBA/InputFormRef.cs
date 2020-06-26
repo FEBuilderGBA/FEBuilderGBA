@@ -4964,6 +4964,7 @@ namespace FEBuilderGBA
             SkillConfigFE8NVer2SkillForm.ClearCache();
             SkillConfigSkillSystemForm.ClearCache();
             FE8SpellMenuExtendsForm.ClearCache();
+            MapChangeForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
             PatchUtil.ClearCache();
@@ -6711,6 +6712,15 @@ namespace FEBuilderGBA
             uint x = ((num & 0xffff0000) >> 16);
             uint y = ((num & 0x0000ffff) );
             return String.Format("({0},{1})", x, y);
+        }
+
+        public static string GetMapChangeName(uint mapid, uint changeid)
+        {
+            if (changeid == 0xFFFE)
+            {
+                return R._("アクティブユニットの座標");
+            }
+            return MapChangeForm.GetName(mapid, changeid);
         }
 
         //RAM UNIT PARAM

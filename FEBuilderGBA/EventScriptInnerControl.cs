@@ -961,6 +961,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAP_CHANGE)
             {
+                text = InputFormRef.GetMapChangeName(this.MapID, v);
                 if (isOrderOfHuman)
                 {
                     uint mapid = ScanMAPID();

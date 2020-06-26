@@ -4252,6 +4252,9 @@ teleportation.
 :フレーム秒({0}秒)
 frame sec({0} sec)
 
+:アクティブユニットの座標
+active unit's coordinate
+
 :10進数
 Decimal
 

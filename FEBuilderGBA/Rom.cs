@@ -386,7 +386,6 @@ namespace FEBuilderGBA
         uint tactician_affinity_pointer(); //軍師属性(FE7のみ)
         uint event_final_serif_pointer(); //終章セリフ(FE7のみ)
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
-        uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
         uint patch_C01_hack(out uint enable_value); //C01 patch
         uint patch_C48_hack(out uint enable_value); //C48 patch
         uint patch_16_tracks_12_sounds(out uint enable_value); //16_tracks_12_sounds patch

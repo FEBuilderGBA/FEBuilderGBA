@@ -389,7 +389,6 @@ namespace FEBuilderGBA
         public uint event_final_serif_pointer() { return 0x0; } //終章セリフ(FE7のみ)
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
 
-        public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x0FC2B500; return 0x2BA4; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0x47004800; return 0x5138; } //C01 patch
         public uint patch_C48_hack(out uint enable_value) { enable_value = 0x08059698; return 0x58d64; } //C48 patch
         public uint patch_16_tracks_12_sounds(out uint enable_value) { enable_value = 0x00000010; return 0x022440c; } //16_tracks_12_sounds patch

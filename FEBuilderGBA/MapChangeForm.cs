@@ -63,7 +63,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    return U.ToHexString(i);
+                    return U.ToHexString(i) + InputFormRef.GetCommentSA(addr) ;
                 }
                 );
         }
@@ -646,5 +646,47 @@ namespace FEBuilderGBA
             U.ReSelectList(this.AddressList);
         }
 
+        //名前は、IDでよく参照されるのでキャッシュする
+        static Dictionary<uint , string> g_MapChangeName_Cache = new Dictionary<uint,string>();
+        public static void ClearCache()
+        {
+            g_MapChangeName_Cache = new Dictionary<uint, string>();
+        }
+        public static string GetName(uint mapid, uint changeid)
+        {
+            string ret;
+            uint key = (mapid * 256) + changeid;
+            if (g_MapChangeName_Cache.TryGetValue(key, out ret))
+            {
+                return ret;
+            }
+
+            ret = GetNameLow(mapid, changeid);
+            g_MapChangeName_Cache[key] = ret;
+            return ret;
+        }
+
+        static string GetNameLow(uint mapid, uint changeid)
+        {
+            uint pointer;
+            uint change_addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid, out pointer);
+            if (change_addr == U.NOT_FOUND)
+            {
+                return "";
+            }
+
+            InputFormRef N_InputFormRef = N_Init(null);
+            N_InputFormRef.ReInitPointer(pointer);
+            for (int i = 0; i < N_InputFormRef.DataCount; i++)
+            {
+                uint no = Program.ROM.u8(change_addr + 0);
+                if (no == changeid)
+                {
+                    return Program.CommentCache.At(change_addr);
+                }
+                change_addr += N_InputFormRef.BlockSize;
+            }
+            return "";
+        }
     }
 }

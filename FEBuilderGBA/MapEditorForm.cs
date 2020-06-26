@@ -212,7 +212,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    name = R._("マップ変化ID:") + U.To0xHexString( this.ChangeList[i].no);
+                    name = R._("マップ変化ID:") + U.To0xHexString(this.ChangeList[i].no) + InputFormRef.GetCommentSA(this.ChangeList[i].self_change_addr);
                 }
                 MapChange.Items.Add(name);
             }
