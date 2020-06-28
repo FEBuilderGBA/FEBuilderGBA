@@ -398,9 +398,9 @@
             this.PARTY_P0 = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label56 = new System.Windows.Forms.Label();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
+            this.label56 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
             this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
             this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
@@ -3383,10 +3383,10 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.PaletteAddress);
             this.tabPage3.Controls.Add(this.PaletteList);
             this.tabPage3.Controls.Add(this.PaletteSearchButton);
             this.tabPage3.Controls.Add(this.label92);
-            this.tabPage3.Controls.Add(this.PaletteAddress);
             this.tabPage3.Controls.Add(this.SelectPalette);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
@@ -3411,7 +3411,7 @@
             // 
             // PaletteSearchButton
             // 
-            this.PaletteSearchButton.Location = new System.Drawing.Point(660, 1);
+            this.PaletteSearchButton.Location = new System.Drawing.Point(659, 1);
             this.PaletteSearchButton.Name = "PaletteSearchButton";
             this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
             this.PaletteSearchButton.TabIndex = 324;
@@ -3434,7 +3434,7 @@
             // PaletteAddress
             // 
             this.PaletteAddress.ErrorMessage = "";
-            this.PaletteAddress.Location = new System.Drawing.Point(739, 4);
+            this.PaletteAddress.Location = new System.Drawing.Point(734, 5);
             this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
             this.PaletteAddress.Name = "PaletteAddress";
             this.PaletteAddress.Placeholder = "";
@@ -5585,17 +5585,6 @@
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label56
-            // 
-            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(1, 8);
-            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(778, 42);
-            this.label56.TabIndex = 310;
-            this.label56.Text = "パーティー";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // PartyCombo
             // 
             this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -5623,6 +5612,17 @@
             this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
+            // 
+            // label56
+            // 
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Location = new System.Drawing.Point(1, 8);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(778, 42);
+            this.label56.TabIndex = 310;
+            this.label56.Text = "パーティー";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheatPage
             // 
