@@ -507,7 +507,7 @@ namespace FEBuilderGBA
             }
             catch (OverflowException e)
             {
-                R.Error(R.ExceptionToString(e));
+//                R.Error(R.ExceptionToString(e));
                 this.ErrorMessage = R._("OverflowException! 32bitバージョンのエミュレータを利用していますか?");
                 return false;
             }

@@ -454,41 +454,30 @@ namespace FEBuilderGBA
                     && ramaddr == this.RAMAddr;
             }
         }
+        byte[] ProcsDataArray = new byte[0x6c * 0x40];
         List<ProcsData> ProcsTree;
         void UpdateProcs()
         {
+            uint addr = Program.ROM.RomInfo.workmemory_procs_pool_address();
+            byte[] bin = Program.RAM.getBinaryData(addr, this.ProcsDataArray.Length);
+            if (U.memcmp(this.ProcsDataArray, bin) == 0)
+            {//変更なし
+                return;
+            }
+            this.ProcsDataArray = bin;
+
+            //木の生成.
             List<ProcsData> tree = new List<ProcsData>();
             uint ramaddr = Program.ROM.RomInfo.workmemory_procs_forest_address();
             for (uint i = 0; i < 8; i++, ramaddr += 4)
             {
                 MakeProcNode(tree, ramaddr, i , 0);
             }
-            //現在のツリーと変更があったか?
-            if (this.ProcsTree.Count == tree.Count)
-            {
-                bool isChange = false;
-                for (int i = 0; i < tree.Count; i++)
-                {
-                    if (! this.ProcsTree[i].Compare(tree[i]) )
-                    {
-                        isChange = true;
-                        break;
-                    }
-                }
-
-                if (isChange)
-                {
-                    //木の更新.
-                    this.ProcsTree = tree;
-
-                    //PROCツリーを再描画.
-                    this.ProcsListBox.Invalidate();
-                }
-                return;
-            }
-
             //木の更新.
             this.ProcsTree = tree;
+
+            //PROCツリーを再描画.
+            this.ProcsListBox.Invalidate();
 
             //個数が違うので変更があった
             this.ProcsListBox.DummyAlloc(tree.Count, this.ProcsListBox.SelectedIndex);

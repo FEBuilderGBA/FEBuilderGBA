@@ -12761,3 +12761,6 @@
 08077F0C	DrawBattleBG	{J}
 08075AB4	DrawBattleBG_Low	{U}
 08075AD8	DrawBattleBG	{U}
+08057888	New_6C_ekrUnitKakudai	{J}
+08075A08	レベルアップ項目の決定	{J}
+08081694	MapAnimLevelUp_レベルアップのダイアログを下げる	{J}
