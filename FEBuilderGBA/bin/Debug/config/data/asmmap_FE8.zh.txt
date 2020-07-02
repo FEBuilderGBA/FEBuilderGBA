@@ -12725,3 +12725,13 @@ r3=X tile position of menu of the right	{U}
 08077F0C	DrawBattleBG	{J}
 08075AB4	DrawBattleBG_Low	{U}
 08075AD8	DrawBattleBG	{U}
+08057888	New_6C_ekrUnitKakudai	{J}
+08075A08	确定升级项目。	{J}
+08081694	MapAnimLevelUp_Lower升级对话框。	{J}
+08053E94	StartEfxDeadAlpha	闪烁对死亡的影响。	{J}
+08053F7C	StartEfxDeadDragonAlpha	{J}
+080578FC	ekrUnitKakudai_InitBattleUnits	{J}
+08057AF4	ekrUnitKakudai_ZoomInEffect	{J}
+08057CA0	ekrUnitKakudai_NOP	{J}
+08012E84	Something_MysteriousCalculation	{J}
+08057424	StartEkrBaseKaiten	发光的旋转地板。	{J}
