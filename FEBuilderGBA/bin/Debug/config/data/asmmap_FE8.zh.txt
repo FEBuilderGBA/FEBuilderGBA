@@ -6725,10 +6725,6 @@ r3=X tile position of menu of the right	{U}
 08A176BC	&HEADERTSA	平铺FillTileRect的东西	17	{U}
 08A1C8B4	&HEADERTSA	平铺FillTileRect的东西	18	{U}
 08A25ECC	&HEADERTSA	平铺FillTileRect的东西	19	{U}
-08A2C4C8	&HEADERTSA	平铺FillTileRect的东西	20	{U}
-08A2C5A8	&HEADERTSA	平铺FillTileRect的东西	21	{U}
-08A2C4C8	&HEADERTSA	平铺FillTileRect的东西	22	{U}
-08A2C5A8	&HEADERTSA	平铺FillTileRect的东西	23	{U}
 08A2C92C	&HEADERTSA	平铺FillTileRect的东西	24	{U}
 08A2C7A4	&HEADERTSA	平铺FillTileRect的东西	25	{U}
 08A30978	&HEADERTSA	平铺FillTileRect的东西	26	{U}
@@ -6765,10 +6761,6 @@ r3=X tile position of menu of the right	{U}
 08A93408	&HEADERTSA	平铺FillTileRect的东西	17	{J}
 08A9934C	&HEADERTSA	平铺FillTileRect的东西	18	{J}
 08AA2E34	&HEADERTSA	平铺FillTileRect的东西	19	{J}
-08AAA658	&HEADERTSA	平铺FillTileRect的东西	20	{J}
-08AAA738	&HEADERTSA	平铺FillTileRect的东西	21	{J}
-08AAA658	&HEADERTSA	平铺FillTileRect的东西	22	{J}
-08AAA738	&HEADERTSA	平铺FillTileRect的东西	23	{J}
 08AAAABC	&HEADERTSA	平铺FillTileRect的东西	24	{J}
 08AAA934	&HEADERTSA	平铺FillTileRect的东西	25	{J}
 08AB17A4	&HEADERTSA	平铺FillTileRect的东西	26	{J}
@@ -12739,3 +12731,15 @@ r3=X tile position of menu of the right	{U}
 080727e4	IsBattleByDragon	{J}
 08071AB0	SomePlaySound_After	{U}
 08070234	IsBattleByDragon	{U}
+080756FC	StartEfxClasschgCLONE	{J}
+08073220	StartEfxClasschgCLONE	{U}
+08099A2C	StartMenuScroll	{J}
+080B1F40	StartDrawBlueBarInPrepScreenMenu	{J}
+08AAA658	&HEADERTSA	Sound Room	Control window	{J}
+08AAA738	&HEADERTSA	Sound Room	Song list window	{J}
+080b40f0	Sound Room	Achievement rate display	{J}
+08097748	StartMenuScroll	{U}
+080AD4A0	StartDrawBlueBarInPrepScreenMenu	{U}
+08A2C4C8	&HEADERTSA	Sound Room	Control window	{U}
+08A2C5A8	&HEADERTSA	Sound Room	Song list window	{U}
+080af4d0	Sound Room	Achievement rate display	{U}
