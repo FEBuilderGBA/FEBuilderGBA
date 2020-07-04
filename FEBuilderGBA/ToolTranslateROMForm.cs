@@ -376,17 +376,17 @@ namespace FEBuilderGBA
             {
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
-                    LabelSimpleTranslateFromROMFilename.Text = R._("無改造 FE8U");
-                    LabelSimpleTranslateToROMFilename.Text = R._("無改造 FE8J");
-                    LabelTranslateFormROMFilename.Text = R._("無改造 FE8U");
-                    LabelTranslateToROMFilename.Text = R._("無改造 FE8J");
-                }
-                else
-                {
                     LabelSimpleTranslateFromROMFilename.Text = R._("無改造 FE8J");
                     LabelSimpleTranslateToROMFilename.Text = R._("無改造 FE8U");
                     LabelTranslateFormROMFilename.Text = R._("無改造 FE8J");
                     LabelTranslateToROMFilename.Text = R._("無改造 FE8U");
+                }
+                else
+                {
+                    LabelSimpleTranslateFromROMFilename.Text = R._("無改造 FE8U");
+                    LabelSimpleTranslateToROMFilename.Text = R._("無改造 FE8J");
+                    LabelTranslateFormROMFilename.Text = R._("無改造 FE8U");
+                    LabelTranslateToROMFilename.Text = R._("無改造 FE8J");
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)

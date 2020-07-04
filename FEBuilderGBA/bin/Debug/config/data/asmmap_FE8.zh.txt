@@ -3712,21 +3712,6 @@ r3=X tile position of menu of the right	{U}
 08055bd4	BeginAnimsOnBattleAnimations	{U}
 08055c68	MainUpdate_8055C68	{U}
 08055cdc	NewEkrBattleStarting	{U}
-08055cf0	ekrBattleStarting_8055CF0	{U}
-08055df4	ekrBattleStarting_8055DF4	{U}
-08055f00	ekrBattleStarting_8055F00	{U}
-08055fa0	ekrBattleStarting_8055FA0	{U}
-08055fe8	ekrBattleStarting_8055FE8	{U}
-08056024	ekrBattleStarting_8056024	{U}
-08056078	ekrBattleStarting_8056078	{U}
-080560f0	ekrBattleEnding_80560F0	{U}
-08056170	ekrBattleEnding_8056170	{U}
-080561c8	ekrBattleEnding_80561C8	{U}
-08056228	ekrBattleEnding_8056228	{U}
-08056288	ekrBattleEnding_8056288	{U}
-08056310	ekrBattleEnding_8056310	{U}
-08056390	ekrBattleEnding_8056390	{U}
-08056484	ekrBattleEnding_8056484	{U}
 08056d24	NewEkrWindowAppear	{U}
 08056e10	NewEkrNamewinAppear	{U}
 08056ff8	PrepareBattleGraphicsMaybe	{U}
@@ -5494,21 +5479,6 @@ r3=X tile position of menu of the right	{U}
 08056B5C	BeginAnimsOnBattleAnimations	{J}
 08056BF0	MainUpdate_8055C68	{J}
 08056C64	NewEkrBattleStarting	{J}
-08056C78	ekrBattleStarting_8055CF0	{J}
-08056D7C	ekrBattleStarting_8055DF4	{J}
-08056E88	ekrBattleStarting_8055F00	{J}
-08056F28	ekrBattleStarting_8055FA0	{J}
-08056F70	ekrBattleStarting_8055FE8	{J}
-08056FAC	ekrBattleStarting_8056024	{J}
-08057000	ekrBattleStarting_8056078	{J}
-08057078	ekrBattleEnding_80560F0	{J}
-080570F8	ekrBattleEnding_8056170	{J}
-08057150	ekrBattleEnding_80561C8	{J}
-080571B0	ekrBattleEnding_8056228	{J}
-08057210	ekrBattleEnding_8056288	{J}
-08057298	ekrBattleEnding_8056310	{J}
-08057318	ekrBattleEnding_8056390	{J}
-0805740C	ekrBattleEnding_8056484	{J}
 08057CAC	NewEkrWindowAppear	{J}
 08057D98	NewEkrNamewinAppear	{J}
 08057F80	PrepareBattleGraphicsMaybe	{J}
@@ -12726,12 +12696,46 @@ r3=X tile position of menu of the right	{U}
 08075AB4	DrawBattleBG_Low	{U}
 08075AD8	DrawBattleBG	{U}
 08057888	New_6C_ekrUnitKakudai	{J}
-08075A08	确定升级项目。	{J}
-08081694	MapAnimLevelUp_Lower升级对话框。	{J}
-08053E94	StartEfxDeadAlpha	闪烁对死亡的影响。	{J}
+08075A08	Determining level-up status	{J}
+08081694	MapAnimLevelUp_Lower升级对话框	{J}
+08053E94	StartEfxDeadAlpha	闪烁对死亡的影响	{J}
 08053F7C	StartEfxDeadDragonAlpha	{J}
 080578FC	ekrUnitKakudai_InitBattleUnits	{J}
 08057AF4	ekrUnitKakudai_ZoomInEffect	{J}
 08057CA0	ekrUnitKakudai_NOP	{J}
 08012E84	Something_MysteriousCalculation	{J}
-08057424	StartEkrBaseKaiten	发光的旋转地板。	{J}
+08057424	StartEkrBaseKaiten	发光的旋转地板	{J}
+08057318	ekrBattleEnding_FadeGrayToNormal	{J}
+08057298	ekrBattleEnding_RedrawUnits	{J}
+08057210	ekrBattleEnding_ReDrawMapSomething	{J}
+080571B0	ekrBattleEnding_ZoomOutEffect	{J}
+0805740C	ekrBattleEnding_Destructor	{J}
+08056F28	ekrBattleStarting_InitsBattleUnits	{J}
+08056E88	ekrBattleStarting_InitsBattleScreen	{J}
+08056D7C	ekrBattleStarting_HideMapOtherUnits	{J}
+08056C78	ekrBattleStarting_InitBattle	{J}
+08057000	ekrBattleStarting_BattleBG_FadeIn_Palette	{J}
+08056900	New_6C_ekrUnitKakudai	{U}
+0807352C	Determining level-up status	{U}
+0807F354	MapAnimLevelUp_Lower升级对话框	{U}
+080531A4	StartEfxDeadAlpha	闪烁对死亡的影响	{U}
+0805328C	StartEfxDeadDragonAlpha	{U}
+08056390	ekrBattleEnding_FadeGrayToNormal	{U}
+08056310	ekrBattleEnding_RedrawUnits	{U}
+08056288	ekrBattleEnding_ReDrawMapSomething	{U}
+08056228	ekrBattleEnding_ZoomOutEffect	{U}
+08056484	ekrBattleEnding_Destructor	{U}
+08056974	ekrUnitKakudai_InitBattleUnits	{U}
+08056B70	ekrUnitKakudai_ZoomInEffect	{U}
+08056D18	ekrUnitKakudai_NOP	{U}
+08055FA0	ekrBattleStarting_InitsBattleUnits	{U}
+08055F00	ekrBattleStarting_InitsBattleScreen	{U}
+08055DF4	ekrBattleStarting_HideMapOtherUnits	{U}
+08055CF0	ekrBattleStarting_InitBattle	{U}
+08056078	ekrBattleStarting_BattleBG_FadeIn_Palette	{U}
+08012DCC	Something_MysteriousCalculation	{U}
+0805649C	StartEkrBaseKaiten	发光的旋转地板	{U}
+08073f94	SomePlaySound_After	{J}
+080727e4	IsBattleByDragon	{J}
+08071AB0	SomePlaySound_After	{U}
+08070234	IsBattleByDragon	{U}

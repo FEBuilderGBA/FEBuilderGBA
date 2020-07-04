@@ -11890,11 +11890,11 @@ Save only the changed text file.\r\nConversations that exist in unmodified ROM c
 :ROMに収録されていないフォントを自動的に生成します。
 It automatically generates fonts not included in ROM.
 
-:無改造 FE8U
-Unmodified FE8U
-
 :無改造 FE8J
 Unmodified FE8J
+
+:無改造 FE8U
+Unmodified FE8U
 
 :無改造 FE7U
 Unmodified FE7U
