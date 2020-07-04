@@ -547,6 +547,9 @@ Before Promotion
 :選択中のクラス
 Selected Class
 
+:この値を0にしないでください
+Do not set this value to 0.
+
 :CC分岐
 Promotion Branches
 

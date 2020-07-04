@@ -3629,12 +3629,15 @@ namespace FEBuilderGBA
             }
 
             uint add_routine_addr = U.NOT_FOUND;
-            foreach (BinBlock bb in binBlocks)
-            {
-                if (bb.filename == filename)
+            if (File.Exists(filename))
+            {//ファイル名として存在しているなら、そのファイルのアドレスを求める.
+                foreach (BinBlock bb in binBlocks)
                 {
-                    add_routine_addr = (uint)(((int)bb.addr) + addaddr);
-                    break;
+                    if (bb.filename == filename)
+                    {
+                        add_routine_addr = (uint)(((int)bb.addr) + addaddr);
+                        break;
+                    }
                 }
             }
             if (add_routine_addr == U.NOT_FOUND)

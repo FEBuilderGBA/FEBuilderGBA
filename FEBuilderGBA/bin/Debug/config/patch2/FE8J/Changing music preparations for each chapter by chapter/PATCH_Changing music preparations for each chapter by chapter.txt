@@ -2,7 +2,7 @@ NAME=章ごとに進撃準備の音楽変更
 NAME.en=Set Preparation BGM By Chapter
 NAME.zh=每章进击准备的音乐变更
 
-PATCHED_IF:0x988c2=0x9B 0xF7 0x03 0xFC
+PATCHED_IF:0x340cc=0x64 0xF0 0xFC 0xFB
 TYPE=BIN
 TAG=#ENGINE #SOUND
 

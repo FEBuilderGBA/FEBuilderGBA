@@ -31,39 +31,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.X_CC3Patch = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.X_SELECT_UPCC6_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_SELECT_UPCC5_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_L_CC3_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_SELECT_UPCC6_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC6_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_UPCC5_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC5_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.X_L_CC3_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_CC3 = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_UPCC4_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_SELECT_UPCC3_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_SELECT_UPCC2_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_SELECT_UPCC1_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_1_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.J_ID_OPCLASSALPHANAME_CLASSID = new System.Windows.Forms.Label();
-            this.CLASS_LISTBOX = new ListBoxEx();
-            this.X_SELECT_UPCC4_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC4_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_UPCC3_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC3_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_UPCC2_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC2_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_UPCC1_CLASS = new FEBuilderGBA.TextBoxEx();
             this.X_SELECT_UPCC1_CLASSID = new System.Windows.Forms.NumericUpDown();
-            this.L_1_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.X_SELECT_CLASS = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,29 +50,42 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.ERROR_CC3_0 = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_SELECT_UPCC6_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_SELECT_UPCC5_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_L_CC3_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_SELECT_UPCC6_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_UPCC5_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_L_CC3_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_UPCC4_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_SELECT_UPCC3_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_SELECT_UPCC2_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_SELECT_UPCC1_CLASSNAME = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_1_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.CLASS_LISTBOX = new FEBuilderGBA.ListBoxEx();
+            this.X_SELECT_UPCC4_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_UPCC3_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_UPCC2_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_UPCC1_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.L_1_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_SELECT_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel2.SuspendLayout();
             this.X_CC3Patch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_L_CC3_CLASSICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_CC3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC1_CLASSNAME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSID)).BeginInit();
@@ -106,6 +98,15 @@
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_L_CC3_CLASSICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC1_CLASSNAME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -144,6 +145,7 @@
             // X_CC3Patch
             // 
             this.X_CC3Patch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_CC3Patch.Controls.Add(this.ERROR_CC3_0);
             this.X_CC3Patch.Controls.Add(this.label4);
             this.X_CC3Patch.Controls.Add(this.X_SELECT_UPCC6_CLASSNAME);
             this.X_CC3Patch.Controls.Add(this.X_SELECT_UPCC5_CLASSNAME);
@@ -169,47 +171,6 @@
             this.label4.TabIndex = 160;
             this.label4.Text = "CC3分岐パッチよって追加された値です。\r\n上の2つの同じであれば無視されます。\r\nこの値は、クラスデータの「クラスチェンジ」に保存されます。";
             // 
-            // X_SELECT_UPCC6_CLASSNAME
-            // 
-            this.X_SELECT_UPCC6_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC6_CLASSNAME.Location = new System.Drawing.Point(586, 47);
-            this.X_SELECT_UPCC6_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC6_CLASSNAME.Name = "X_SELECT_UPCC6_CLASSNAME";
-            this.X_SELECT_UPCC6_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC6_CLASSNAME.TabIndex = 159;
-            this.X_SELECT_UPCC6_CLASSNAME.TabStop = false;
-            // 
-            // X_SELECT_UPCC5_CLASSNAME
-            // 
-            this.X_SELECT_UPCC5_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC5_CLASSNAME.Location = new System.Drawing.Point(586, 7);
-            this.X_SELECT_UPCC5_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC5_CLASSNAME.Name = "X_SELECT_UPCC5_CLASSNAME";
-            this.X_SELECT_UPCC5_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC5_CLASSNAME.TabIndex = 158;
-            this.X_SELECT_UPCC5_CLASSNAME.TabStop = false;
-            // 
-            // X_L_CC3_CLASSICON
-            // 
-            this.X_L_CC3_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_L_CC3_CLASSICON.Location = new System.Drawing.Point(263, 6);
-            this.X_L_CC3_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.X_L_CC3_CLASSICON.Name = "X_L_CC3_CLASSICON";
-            this.X_L_CC3_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.X_L_CC3_CLASSICON.TabIndex = 157;
-            this.X_L_CC3_CLASSICON.TabStop = false;
-            // 
-            // X_SELECT_UPCC6_CLASS
-            // 
-            this.X_SELECT_UPCC6_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC6_CLASS.Location = new System.Drawing.Point(410, 49);
-            this.X_SELECT_UPCC6_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC6_CLASS.Name = "X_SELECT_UPCC6_CLASS";
-            this.X_SELECT_UPCC6_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC6_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC6_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC6_CLASS.TabIndex = 156;
-            // 
             // X_SELECT_UPCC6_CLASSID
             // 
             this.X_SELECT_UPCC6_CLASSID.Hexadecimal = true;
@@ -224,17 +185,6 @@
             this.X_SELECT_UPCC6_CLASSID.ReadOnly = true;
             this.X_SELECT_UPCC6_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC6_CLASSID.TabIndex = 155;
-            // 
-            // X_SELECT_UPCC5_CLASS
-            // 
-            this.X_SELECT_UPCC5_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC5_CLASS.Location = new System.Drawing.Point(410, 12);
-            this.X_SELECT_UPCC5_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC5_CLASS.Name = "X_SELECT_UPCC5_CLASS";
-            this.X_SELECT_UPCC5_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC5_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC5_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC5_CLASS.TabIndex = 154;
             // 
             // X_SELECT_UPCC5_CLASSID
             // 
@@ -251,17 +201,6 @@
             this.X_SELECT_UPCC5_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC5_CLASSID.TabIndex = 153;
             // 
-            // X_L_CC3_CLASS
-            // 
-            this.X_L_CC3_CLASS.ErrorMessage = "";
-            this.X_L_CC3_CLASS.Location = new System.Drawing.Point(87, 12);
-            this.X_L_CC3_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_L_CC3_CLASS.Name = "X_L_CC3_CLASS";
-            this.X_L_CC3_CLASS.Placeholder = "";
-            this.X_L_CC3_CLASS.ReadOnly = true;
-            this.X_L_CC3_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_L_CC3_CLASS.TabIndex = 152;
-            // 
             // X_CC3
             // 
             this.X_CC3.Hexadecimal = true;
@@ -277,66 +216,6 @@
             this.X_CC3.TabIndex = 151;
             this.X_CC3.ValueChanged += new System.EventHandler(this.UpdateClass);
             // 
-            // X_SELECT_UPCC4_CLASSNAME
-            // 
-            this.X_SELECT_UPCC4_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC4_CLASSNAME.Location = new System.Drawing.Point(932, 124);
-            this.X_SELECT_UPCC4_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC4_CLASSNAME.Name = "X_SELECT_UPCC4_CLASSNAME";
-            this.X_SELECT_UPCC4_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC4_CLASSNAME.TabIndex = 150;
-            this.X_SELECT_UPCC4_CLASSNAME.TabStop = false;
-            // 
-            // X_SELECT_UPCC3_CLASSNAME
-            // 
-            this.X_SELECT_UPCC3_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC3_CLASSNAME.Location = new System.Drawing.Point(932, 84);
-            this.X_SELECT_UPCC3_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC3_CLASSNAME.Name = "X_SELECT_UPCC3_CLASSNAME";
-            this.X_SELECT_UPCC3_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC3_CLASSNAME.TabIndex = 149;
-            this.X_SELECT_UPCC3_CLASSNAME.TabStop = false;
-            // 
-            // X_SELECT_UPCC2_CLASSNAME
-            // 
-            this.X_SELECT_UPCC2_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC2_CLASSNAME.Location = new System.Drawing.Point(932, 41);
-            this.X_SELECT_UPCC2_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC2_CLASSNAME.Name = "X_SELECT_UPCC2_CLASSNAME";
-            this.X_SELECT_UPCC2_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC2_CLASSNAME.TabIndex = 148;
-            this.X_SELECT_UPCC2_CLASSNAME.TabStop = false;
-            // 
-            // X_SELECT_UPCC1_CLASSNAME
-            // 
-            this.X_SELECT_UPCC1_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SELECT_UPCC1_CLASSNAME.Location = new System.Drawing.Point(932, 3);
-            this.X_SELECT_UPCC1_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC1_CLASSNAME.Name = "X_SELECT_UPCC1_CLASSNAME";
-            this.X_SELECT_UPCC1_CLASSNAME.Size = new System.Drawing.Size(32, 32);
-            this.X_SELECT_UPCC1_CLASSNAME.TabIndex = 147;
-            this.X_SELECT_UPCC1_CLASSNAME.TabStop = false;
-            // 
-            // L_1_CLASSICON
-            // 
-            this.L_1_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_1_CLASSICON.Location = new System.Drawing.Point(609, 83);
-            this.L_1_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_1_CLASSICON.Name = "L_1_CLASSICON";
-            this.L_1_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.L_1_CLASSICON.TabIndex = 145;
-            this.L_1_CLASSICON.TabStop = false;
-            // 
-            // L_0_CLASSICON
-            // 
-            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_CLASSICON.Location = new System.Drawing.Point(609, 3);
-            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
-            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_CLASSICON.TabIndex = 144;
-            this.L_0_CLASSICON.TabStop = false;
-            // 
             // J_ID_OPCLASSALPHANAME_CLASSID
             // 
             this.J_ID_OPCLASSALPHANAME_CLASSID.AutoSize = true;
@@ -347,28 +226,6 @@
             this.J_ID_OPCLASSALPHANAME_CLASSID.Size = new System.Drawing.Size(323, 18);
             this.J_ID_OPCLASSALPHANAME_CLASSID.TabIndex = 143;
             this.J_ID_OPCLASSALPHANAME_CLASSID.Text = "CC時に表示されるクラスの英語表記へJump";
-            // 
-            // CLASS_LISTBOX
-            // 
-            this.CLASS_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CLASS_LISTBOX.FormattingEnabled = true;
-            this.CLASS_LISTBOX.ItemHeight = 18;
-            this.CLASS_LISTBOX.Location = new System.Drawing.Point(5, 37);
-            this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
-            this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(159, 508);
-            this.CLASS_LISTBOX.TabIndex = 0;
-            // 
-            // X_SELECT_UPCC4_CLASS
-            // 
-            this.X_SELECT_UPCC4_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC4_CLASS.Location = new System.Drawing.Point(756, 126);
-            this.X_SELECT_UPCC4_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC4_CLASS.Name = "X_SELECT_UPCC4_CLASS";
-            this.X_SELECT_UPCC4_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC4_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC4_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC4_CLASS.TabIndex = 142;
             // 
             // X_SELECT_UPCC4_CLASSID
             // 
@@ -385,17 +242,6 @@
             this.X_SELECT_UPCC4_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC4_CLASSID.TabIndex = 141;
             // 
-            // X_SELECT_UPCC3_CLASS
-            // 
-            this.X_SELECT_UPCC3_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC3_CLASS.Location = new System.Drawing.Point(756, 89);
-            this.X_SELECT_UPCC3_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC3_CLASS.Name = "X_SELECT_UPCC3_CLASS";
-            this.X_SELECT_UPCC3_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC3_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC3_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC3_CLASS.TabIndex = 140;
-            // 
             // X_SELECT_UPCC3_CLASSID
             // 
             this.X_SELECT_UPCC3_CLASSID.Hexadecimal = true;
@@ -410,17 +256,6 @@
             this.X_SELECT_UPCC3_CLASSID.ReadOnly = true;
             this.X_SELECT_UPCC3_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC3_CLASSID.TabIndex = 139;
-            // 
-            // X_SELECT_UPCC2_CLASS
-            // 
-            this.X_SELECT_UPCC2_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC2_CLASS.Location = new System.Drawing.Point(756, 44);
-            this.X_SELECT_UPCC2_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC2_CLASS.Name = "X_SELECT_UPCC2_CLASS";
-            this.X_SELECT_UPCC2_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC2_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC2_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC2_CLASS.TabIndex = 138;
             // 
             // X_SELECT_UPCC2_CLASSID
             // 
@@ -437,17 +272,6 @@
             this.X_SELECT_UPCC2_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC2_CLASSID.TabIndex = 137;
             // 
-            // X_SELECT_UPCC1_CLASS
-            // 
-            this.X_SELECT_UPCC1_CLASS.ErrorMessage = "";
-            this.X_SELECT_UPCC1_CLASS.Location = new System.Drawing.Point(756, 7);
-            this.X_SELECT_UPCC1_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_UPCC1_CLASS.Name = "X_SELECT_UPCC1_CLASS";
-            this.X_SELECT_UPCC1_CLASS.Placeholder = "";
-            this.X_SELECT_UPCC1_CLASS.ReadOnly = true;
-            this.X_SELECT_UPCC1_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.X_SELECT_UPCC1_CLASS.TabIndex = 136;
-            // 
             // X_SELECT_UPCC1_CLASSID
             // 
             this.X_SELECT_UPCC1_CLASSID.Hexadecimal = true;
@@ -462,17 +286,6 @@
             this.X_SELECT_UPCC1_CLASSID.ReadOnly = true;
             this.X_SELECT_UPCC1_CLASSID.Size = new System.Drawing.Size(67, 25);
             this.X_SELECT_UPCC1_CLASSID.TabIndex = 135;
-            // 
-            // L_1_CLASS
-            // 
-            this.L_1_CLASS.ErrorMessage = "";
-            this.L_1_CLASS.Location = new System.Drawing.Point(433, 89);
-            this.L_1_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_1_CLASS.Name = "L_1_CLASS";
-            this.L_1_CLASS.Placeholder = "";
-            this.L_1_CLASS.ReadOnly = true;
-            this.L_1_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.L_1_CLASS.TabIndex = 134;
             // 
             // B1
             // 
@@ -489,17 +302,6 @@
             this.B1.TabIndex = 133;
             this.B1.ValueChanged += new System.EventHandler(this.UpdateClass);
             // 
-            // L_0_CLASS
-            // 
-            this.L_0_CLASS.ErrorMessage = "";
-            this.L_0_CLASS.Location = new System.Drawing.Point(433, 5);
-            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASS.Name = "L_0_CLASS";
-            this.L_0_CLASS.Placeholder = "";
-            this.L_0_CLASS.ReadOnly = true;
-            this.L_0_CLASS.Size = new System.Drawing.Size(172, 25);
-            this.L_0_CLASS.TabIndex = 132;
-            // 
             // B0
             // 
             this.B0.Hexadecimal = true;
@@ -514,17 +316,6 @@
             this.B0.Size = new System.Drawing.Size(67, 25);
             this.B0.TabIndex = 131;
             this.B0.ValueChanged += new System.EventHandler(this.UpdateClass);
-            // 
-            // X_SELECT_CLASS
-            // 
-            this.X_SELECT_CLASS.ErrorMessage = "";
-            this.X_SELECT_CLASS.Location = new System.Drawing.Point(178, 41);
-            this.X_SELECT_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.X_SELECT_CLASS.Name = "X_SELECT_CLASS";
-            this.X_SELECT_CLASS.Placeholder = "";
-            this.X_SELECT_CLASS.ReadOnly = true;
-            this.X_SELECT_CLASS.Size = new System.Drawing.Size(175, 25);
-            this.X_SELECT_CLASS.TabIndex = 130;
             // 
             // label11
             // 
@@ -547,18 +338,6 @@
             this.label5.TabIndex = 60;
             this.label5.Text = "選択中のクラス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(255, 562);
-            this.AddressList.TabIndex = 143;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -608,7 +387,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(344, 1);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
@@ -645,17 +423,6 @@
             this.AddressPanel.Size = new System.Drawing.Size(975, 30);
             this.AddressPanel.TabIndex = 62;
             // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(311, -1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -666,17 +433,6 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(523, -2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -748,6 +504,264 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ERROR_CC3_0
+            // 
+            this.ERROR_CC3_0.AutoSize = true;
+            this.ERROR_CC3_0.ForeColor = System.Drawing.Color.Red;
+            this.ERROR_CC3_0.Location = new System.Drawing.Point(16, 61);
+            this.ERROR_CC3_0.Name = "ERROR_CC3_0";
+            this.ERROR_CC3_0.Size = new System.Drawing.Size(198, 18);
+            this.ERROR_CC3_0.TabIndex = 161;
+            this.ERROR_CC3_0.Text = "この値を0にしないでください";
+            this.ERROR_CC3_0.Visible = false;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(255, 562);
+            this.AddressList.TabIndex = 143;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // X_SELECT_UPCC6_CLASSNAME
+            // 
+            this.X_SELECT_UPCC6_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC6_CLASSNAME.Location = new System.Drawing.Point(586, 47);
+            this.X_SELECT_UPCC6_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC6_CLASSNAME.Name = "X_SELECT_UPCC6_CLASSNAME";
+            this.X_SELECT_UPCC6_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC6_CLASSNAME.TabIndex = 159;
+            this.X_SELECT_UPCC6_CLASSNAME.TabStop = false;
+            // 
+            // X_SELECT_UPCC5_CLASSNAME
+            // 
+            this.X_SELECT_UPCC5_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC5_CLASSNAME.Location = new System.Drawing.Point(586, 7);
+            this.X_SELECT_UPCC5_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC5_CLASSNAME.Name = "X_SELECT_UPCC5_CLASSNAME";
+            this.X_SELECT_UPCC5_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC5_CLASSNAME.TabIndex = 158;
+            this.X_SELECT_UPCC5_CLASSNAME.TabStop = false;
+            // 
+            // X_L_CC3_CLASSICON
+            // 
+            this.X_L_CC3_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_L_CC3_CLASSICON.Location = new System.Drawing.Point(263, 6);
+            this.X_L_CC3_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
+            this.X_L_CC3_CLASSICON.Name = "X_L_CC3_CLASSICON";
+            this.X_L_CC3_CLASSICON.Size = new System.Drawing.Size(32, 32);
+            this.X_L_CC3_CLASSICON.TabIndex = 157;
+            this.X_L_CC3_CLASSICON.TabStop = false;
+            // 
+            // X_SELECT_UPCC6_CLASS
+            // 
+            this.X_SELECT_UPCC6_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC6_CLASS.Location = new System.Drawing.Point(410, 49);
+            this.X_SELECT_UPCC6_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC6_CLASS.Name = "X_SELECT_UPCC6_CLASS";
+            this.X_SELECT_UPCC6_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC6_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC6_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC6_CLASS.TabIndex = 156;
+            // 
+            // X_SELECT_UPCC5_CLASS
+            // 
+            this.X_SELECT_UPCC5_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC5_CLASS.Location = new System.Drawing.Point(410, 12);
+            this.X_SELECT_UPCC5_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC5_CLASS.Name = "X_SELECT_UPCC5_CLASS";
+            this.X_SELECT_UPCC5_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC5_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC5_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC5_CLASS.TabIndex = 154;
+            // 
+            // X_L_CC3_CLASS
+            // 
+            this.X_L_CC3_CLASS.ErrorMessage = "";
+            this.X_L_CC3_CLASS.Location = new System.Drawing.Point(87, 12);
+            this.X_L_CC3_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_L_CC3_CLASS.Name = "X_L_CC3_CLASS";
+            this.X_L_CC3_CLASS.Placeholder = "";
+            this.X_L_CC3_CLASS.ReadOnly = true;
+            this.X_L_CC3_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_L_CC3_CLASS.TabIndex = 152;
+            // 
+            // X_SELECT_UPCC4_CLASSNAME
+            // 
+            this.X_SELECT_UPCC4_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC4_CLASSNAME.Location = new System.Drawing.Point(932, 124);
+            this.X_SELECT_UPCC4_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC4_CLASSNAME.Name = "X_SELECT_UPCC4_CLASSNAME";
+            this.X_SELECT_UPCC4_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC4_CLASSNAME.TabIndex = 150;
+            this.X_SELECT_UPCC4_CLASSNAME.TabStop = false;
+            // 
+            // X_SELECT_UPCC3_CLASSNAME
+            // 
+            this.X_SELECT_UPCC3_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC3_CLASSNAME.Location = new System.Drawing.Point(932, 84);
+            this.X_SELECT_UPCC3_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC3_CLASSNAME.Name = "X_SELECT_UPCC3_CLASSNAME";
+            this.X_SELECT_UPCC3_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC3_CLASSNAME.TabIndex = 149;
+            this.X_SELECT_UPCC3_CLASSNAME.TabStop = false;
+            // 
+            // X_SELECT_UPCC2_CLASSNAME
+            // 
+            this.X_SELECT_UPCC2_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC2_CLASSNAME.Location = new System.Drawing.Point(932, 41);
+            this.X_SELECT_UPCC2_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC2_CLASSNAME.Name = "X_SELECT_UPCC2_CLASSNAME";
+            this.X_SELECT_UPCC2_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC2_CLASSNAME.TabIndex = 148;
+            this.X_SELECT_UPCC2_CLASSNAME.TabStop = false;
+            // 
+            // X_SELECT_UPCC1_CLASSNAME
+            // 
+            this.X_SELECT_UPCC1_CLASSNAME.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SELECT_UPCC1_CLASSNAME.Location = new System.Drawing.Point(932, 3);
+            this.X_SELECT_UPCC1_CLASSNAME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC1_CLASSNAME.Name = "X_SELECT_UPCC1_CLASSNAME";
+            this.X_SELECT_UPCC1_CLASSNAME.Size = new System.Drawing.Size(32, 32);
+            this.X_SELECT_UPCC1_CLASSNAME.TabIndex = 147;
+            this.X_SELECT_UPCC1_CLASSNAME.TabStop = false;
+            // 
+            // L_1_CLASSICON
+            // 
+            this.L_1_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_1_CLASSICON.Location = new System.Drawing.Point(609, 83);
+            this.L_1_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_1_CLASSICON.Name = "L_1_CLASSICON";
+            this.L_1_CLASSICON.Size = new System.Drawing.Size(32, 32);
+            this.L_1_CLASSICON.TabIndex = 145;
+            this.L_1_CLASSICON.TabStop = false;
+            // 
+            // L_0_CLASSICON
+            // 
+            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_CLASSICON.Location = new System.Drawing.Point(609, 3);
+            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
+            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_CLASSICON.TabIndex = 144;
+            this.L_0_CLASSICON.TabStop = false;
+            // 
+            // CLASS_LISTBOX
+            // 
+            this.CLASS_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CLASS_LISTBOX.FormattingEnabled = true;
+            this.CLASS_LISTBOX.IntegralHeight = false;
+            this.CLASS_LISTBOX.ItemHeight = 18;
+            this.CLASS_LISTBOX.Location = new System.Drawing.Point(5, 37);
+            this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
+            this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(159, 508);
+            this.CLASS_LISTBOX.TabIndex = 0;
+            // 
+            // X_SELECT_UPCC4_CLASS
+            // 
+            this.X_SELECT_UPCC4_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC4_CLASS.Location = new System.Drawing.Point(756, 126);
+            this.X_SELECT_UPCC4_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC4_CLASS.Name = "X_SELECT_UPCC4_CLASS";
+            this.X_SELECT_UPCC4_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC4_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC4_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC4_CLASS.TabIndex = 142;
+            // 
+            // X_SELECT_UPCC3_CLASS
+            // 
+            this.X_SELECT_UPCC3_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC3_CLASS.Location = new System.Drawing.Point(756, 89);
+            this.X_SELECT_UPCC3_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC3_CLASS.Name = "X_SELECT_UPCC3_CLASS";
+            this.X_SELECT_UPCC3_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC3_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC3_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC3_CLASS.TabIndex = 140;
+            // 
+            // X_SELECT_UPCC2_CLASS
+            // 
+            this.X_SELECT_UPCC2_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC2_CLASS.Location = new System.Drawing.Point(756, 44);
+            this.X_SELECT_UPCC2_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC2_CLASS.Name = "X_SELECT_UPCC2_CLASS";
+            this.X_SELECT_UPCC2_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC2_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC2_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC2_CLASS.TabIndex = 138;
+            // 
+            // X_SELECT_UPCC1_CLASS
+            // 
+            this.X_SELECT_UPCC1_CLASS.ErrorMessage = "";
+            this.X_SELECT_UPCC1_CLASS.Location = new System.Drawing.Point(756, 7);
+            this.X_SELECT_UPCC1_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_UPCC1_CLASS.Name = "X_SELECT_UPCC1_CLASS";
+            this.X_SELECT_UPCC1_CLASS.Placeholder = "";
+            this.X_SELECT_UPCC1_CLASS.ReadOnly = true;
+            this.X_SELECT_UPCC1_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.X_SELECT_UPCC1_CLASS.TabIndex = 136;
+            // 
+            // L_1_CLASS
+            // 
+            this.L_1_CLASS.ErrorMessage = "";
+            this.L_1_CLASS.Location = new System.Drawing.Point(433, 89);
+            this.L_1_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_1_CLASS.Name = "L_1_CLASS";
+            this.L_1_CLASS.Placeholder = "";
+            this.L_1_CLASS.ReadOnly = true;
+            this.L_1_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.L_1_CLASS.TabIndex = 134;
+            // 
+            // L_0_CLASS
+            // 
+            this.L_0_CLASS.ErrorMessage = "";
+            this.L_0_CLASS.Location = new System.Drawing.Point(433, 5);
+            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASS.Name = "L_0_CLASS";
+            this.L_0_CLASS.Placeholder = "";
+            this.L_0_CLASS.ReadOnly = true;
+            this.L_0_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.L_0_CLASS.TabIndex = 132;
+            // 
+            // X_SELECT_CLASS
+            // 
+            this.X_SELECT_CLASS.ErrorMessage = "";
+            this.X_SELECT_CLASS.Location = new System.Drawing.Point(178, 41);
+            this.X_SELECT_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.X_SELECT_CLASS.Name = "X_SELECT_CLASS";
+            this.X_SELECT_CLASS.Placeholder = "";
+            this.X_SELECT_CLASS.ReadOnly = true;
+            this.X_SELECT_CLASS.Size = new System.Drawing.Size(175, 25);
+            this.X_SELECT_CLASS.TabIndex = 130;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(311, -1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(523, -2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
             // CCBranchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -766,18 +780,9 @@
             this.panel2.PerformLayout();
             this.X_CC3Patch.ResumeLayout(false);
             this.X_CC3Patch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_L_CC3_CLASSICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_CC3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC1_CLASSNAME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSID)).EndInit();
@@ -791,6 +796,15 @@
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC6_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC5_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_L_CC3_CLASSICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC4_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC3_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC2_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SELECT_UPCC1_CLASSNAME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,5 +863,6 @@
         private System.Windows.Forms.NumericUpDown X_SELECT_UPCC5_CLASSID;
         private TextBoxEx X_L_CC3_CLASS;
         private System.Windows.Forms.NumericUpDown X_CC3;
+        private System.Windows.Forms.Label ERROR_CC3_0;
     }
 }
