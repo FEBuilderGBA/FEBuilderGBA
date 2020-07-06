@@ -1,0 +1,35 @@
+NAME=装備できる武器アイテム持っているかチェック 20200706 (ユニット単位)(イベント命令)
+NAME.en=Add Event Condition: Check if unit have weapon item that can equip 20200706 (Unit)
+NAME.zh=Check if unit have weapon item that can equip 20200706 (人物)(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 item_find_has_weapon20200706.dmp=0x70 0xB5 0x84 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_find_has_weapon20200706.dmp
+
+INFO=イベント命令で、ユニットが装備できるアイテムを持っているかどうか判定する条件式を追加する.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DXX00{$L1:item_find_has_weapon20200706.dmp}	[XX:UNIT:ユニット]が武器をもっているかチェック	{COND}
+EVENTSCRIPT:2=410D0000{$L1:item_find_has_weapon20200706.dmp}	SVAL1のユニットが武器をもっているかチェック(LOW)	{COND}
+EVENTSCRIPT:3=4B0D0000{$L1:item_find_has_weapon20200706.dmp}	SVALBの座標のユニットが武器をもっているかチェック(LOW)	{COND}
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:item_find_has_weapon20200706.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットが武器をもっているかチェック	{COND}
+EVENTSCRIPT:5=212E00002006C100410D0000{$L1:item_find_has_weapon20200706.dmp}	現在操作しているユニットが武器をもっているかチェック	{COND}
+
+EVENTSCRIPT:1.en=400DXX00{$L1:item_find_has_weapon20200706.dmp}	Check if [XX:UNIT:Unit] have weapon item that can equip	{COND}
+EVENTSCRIPT:2.en=410D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Slot1's Unit have weapon item that can equip(LOW)	{COND}
+EVENTSCRIPT:3.en=4B0D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Coord SlotB's Unit have weapon item that can equip(LOW)	{COND}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Coord [ZZ:MAPX:X][WW:MAPY:Y] Unit have weapon item that can equip	{COND}
+EVENTSCRIPT:5.en=212E00002006C100410D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Current Unit have weapon item that can equip	{COND}
+
+EVENTSCRIPT:1.zh=400DXX00{$L1:item_find_has_weapon20200706.dmp}	Check if [XX:UNIT:Unit] have weapon item that can equip	{COND}
+EVENTSCRIPT:2.zh=410D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Slot1's Unit have weapon item that can equip(LOW)	{COND}
+EVENTSCRIPT:3.zh=4B0D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Coord SlotB's Unit have weapon item that can equip(LOW)	{COND}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Coord [ZZ:MAPX:X][WW:MAPY:Y] Unit have weapon item that can equip	{COND}
+EVENTSCRIPT:5.zh=212E00002006C100410D0000{$L1:item_find_has_weapon20200706.dmp}	Check if Current Unit have weapon item that can equip	{COND}
+INFO.en=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+INFO.zh=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z

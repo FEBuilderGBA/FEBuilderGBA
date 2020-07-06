@@ -1,6 +1,6 @@
-NAME=装備できる武器アイテム持っているかチェック(ユニット単位)(イベント命令)
-NAME.en=Add Event Condition: Check if unit have weapon item that can equip(Unit)
-NAME.zh=Check if unit have weapon item that can equip(人物)(Add Event)
+NAME=装備できる武器アイテム持っているかチェック 20200619 (ユニット単位)(イベント命令)
+NAME.en=Add Event Condition: Check if unit have weapon item that can equip 20200619 (Unit)
+NAME.zh=Check if unit have weapon item that can equip 20200619 (人物)(Add Event)
 
 TYPE=BIN
 TAG=#EVENT
@@ -33,3 +33,4 @@ EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:item_find_has_weapon.dmp}	Check if
 EVENTSCRIPT:5.zh=212E00002006C100410D0000{$L1:item_find_has_weapon.dmp}	Check if Current Unit have weapon item that can equip	{COND}
 INFO.en=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
 INFO.zh=In the event command, add a conditional expression to judge whether the unit has an item that can be equipped.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/723203661957955625/FE8U_item_find_has_weapon.7z
+DEPRECATED=1
