@@ -1,0 +1,13 @@
+
+NAME=たからのかぎ79のアイテムID
+NAME.en=Chest Key79 ItemID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x187EC
+ADDRESS_TYPE=ITEM
+AUTHOR=Suusuke
+
+NAME.zh=宝箱钥匙79 ItemID

@@ -1,0 +1,31 @@
+NAME=進撃準備画面から、拠点に戻れるようにする
+NAME.en=return to base point from preparation screen
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x9783C=0x00 0x4B 0x18 0x47
+
+INFO=進撃準備画面から、お店がある拠点マップに戻れるようにします。\r\nBボタンで代用できる「マップに進む」の選択肢を潰して、代わりに「拠点に戻る」という選択子を追加します。\r\nディフォルトでは、0x38 メレカナ海岸に戻ります。\r\nメレカナ海岸で、次のステージに進む処理を書けば、元に戻ります。\r\n\r\n拠点から、さらに拠点に戻れなくするために、フラグ 0xA4 を利用しています。\r\nもし、手動で、メレカナ海岸から、次のステージに進むときには、 フラグ 0xA4 をオフにしてからMNC2を発行してください。\r\n\r\nASMC_reverse_base_to_chapter を呼び出すことで、拠点を呼び出したマップに戻ることもできます。\r\nこちらは、自動的にフラグ 0xA4 と 0x3 をオフにして、元のステージに復帰させます。\r\n\r\nひとつ前の章を記録するために、A5-ACの8つのフラグを利用しています。(mapidが1バイトだから8つ利用します。)\r\nフラグ A5-ACは、危険なのでさわらないでください。
+
+EA=goto_base_install.event
+
+USEFLAG=0xA4
+//FLAG:0xA5=ReserveGotoBasePointValue
+//FLAG:0xA6=ReserveGotoBasePointValue
+//FLAG:0xA7=ReserveGotoBasePointValue
+//FLAG:0xA8=ReserveGotoBasePointValue
+//FLAG:0xA9=ReserveGotoBasePointValue
+//FLAG:0xAA=ReserveGotoBasePointValue
+//FLAG:0xAB=ReserveGotoBasePointValue
+//FLAG:0xAC=ReserveGotoBasePointValue
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_reverse_base_to_chapter.dmp}	拠点マップから元の章のマップに復帰させる
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_reverse_base_to_chapter.dmp}	Return to original chapter map from the base point map
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_reverse_base_to_chapter.dmp}	Return to original chapter map from the base point map
+INFO.en=Allows you to return to the base point map where the shop is located from the preparation screen.\r\nCrush the "Go to map" option that can be substituted with the B button, and add a "Back to base" selector instead.\r\nBy default, return to 0x38 Merekana coast.\r\nIf you write the process to move to the next stage on the Merekana coast, it will be back.\r\n\r\nThe flag 0xA4 is used to prevent the site from returning to the site.\r\nIf you want to manually proceed from Merekana coast to the next stage, turn off flag 0xA4 and then issue MNC2.\r\n\r\nYou can also return to the map that called the base by calling ASMC_reverse_base_to_chapter.\r\nThis will automatically turn off flags 0xA4 and 0x3 and restore the original stage.\r\n\r\nIt uses the eight flags of A5-AC to record the previous chapter.(Because the mapid is 1 byte, 8 will be used.).\r\nFlag A5-AC is dangerous and should not be touched.
+
+NAME.zh=return to base point from preparation screen
+INFO.zh=Allows you to return to the base point map where the shop is located from the preparation screen.\r\nCrush the "Go to map" option that can be substituted with the B button, and add a "Back to base" selector instead.\r\nBy default, return to 0x38 Merekana coast.\r\nIf you write the process to move to the next stage on the Merekana coast, it will be back.\r\n\r\nThe flag 0xA4 is used to prevent the site from returning to the site.\r\nIf you want to manually proceed from Merekana coast to the next stage, turn off flag 0xA4 and then issue MNC2.\r\n\r\nYou can also return to the map that called the base by calling ASMC_reverse_base_to_chapter.\r\nThis will automatically turn off flags 0xA4 and 0x3 and restore the original stage.\r\n\r\nIt uses the eight flags of A5-AC to record the previous chapter.(Because the mapid is 1 byte, 8 will be used.).\r\nFlag A5-AC is dangerous and should not be touched.

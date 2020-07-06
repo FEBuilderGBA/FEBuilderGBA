@@ -602,7 +602,7 @@ Standing Map Anims
 Generic Enemy Portrait
 
 :クラスチェンジクラス
-Promotes to:
+Menu Class:
 
 :詳細
 Details

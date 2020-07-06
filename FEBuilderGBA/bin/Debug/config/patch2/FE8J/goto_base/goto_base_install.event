@@ -1,0 +1,34 @@
+#include "Extensions/Hack Installation.txt" 
+
+PUSH
+//Hook Point
+ORG 0x97868	//{J}
+POIN GotoBase|1
+
+ORG 0x9783C	//{J}
+jumpToHack(IsGotoBase)
+
+#define setText_Huffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP"
+setText_Huffman(0x50C,TxtData0x50C)
+setText_Huffman(0x53E,TxtData0x53E)
+POP
+
+TxtData0x50C:
+#incbin "text_menu_name_FE8J_50C.bin"
+TxtData0x53E:
+#incbin "text_menu_name_FE8J_53E.bin"
+
+ALIGN 4
+IsGotoBase:
+#incbin "is_goto_base.dmp"
+
+ALIGN 4
+ASMC_reverse_base_to_chapter:
+#incbin "ASMC_reverse_base_to_chapter.dmp"
+
+ALIGN 4
+GotoBase:
+#incbin "goto_base.dmp"
+WORD 0x39		//メレカナ海岸	Merekana coast.
+
+ALIGN 4

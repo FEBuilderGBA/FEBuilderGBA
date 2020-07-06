@@ -12743,3 +12743,14 @@ r3=X tile position of menu of the right	{U}
 08A2C4C8	&HEADERTSA	Sound Room	Control window	{U}
 08A2C5A8	&HEADERTSA	Sound Room	Song list window	{U}
 080af4d0	Sound Room	Achievement rate display	{U}
+080A7D70	IsEnableExtraMenuSupportViewer	{J}
+080A82B4	IsEnableExtraMenuSupportViewerLow	{J}
+080A7D6C	IsEnableExtraMenuSoundRoom	{J}
+080A7D34	IsEnableExtraMenuNetworkArena	{J}
+080A7E30	IsEnableExtraMenuFreemap	{J}
+080A332C	IsEnableExtraMenuSupportViewer	{U}
+080A3870	IsEnableExtraMenuSupportViewerLow	{U}
+080A3328	IsEnableExtraMenuSoundRoom	{U}
+080A32F0	IsEnableExtraMenuNetworkArena	{U}
+080A33EC	IsEnableExtraMenuFreemap	{U}
+08095240	PrepMenu_PressStart_To_Battle	{U}

@@ -246,6 +246,10 @@ typedef struct {
                 {//システム用?
                     continue;
                 }
+                if (st_shndx == 1)
+                {//最初のエントリー
+                    continue;
+                }
 
                 sb.AppendLine(R._("行方不明のラベル({0})が存在します。",name2));
             }

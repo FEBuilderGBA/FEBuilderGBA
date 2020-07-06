@@ -1,0 +1,16 @@
+TYPE=EA
+TAG=#ENGINE
+NAME=FillAIDangerMapの効率修正
+NAME.en=FillAIDangerMap Efficiency Fix
+NAME.zh=FillAIDangerMap Efficiency Fix
+
+EA=FillAIDangerMap.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x3E2B0=0xF0 0xB5 0x57 0x46 0x4E 0x46 0x45 0x46 0x5C 0x46 0xF0 0xB4 0x00 0x20 0x80 0x46
+
+INFO=AIがユニットの動作を検討する時に、ゲームはネストされたforループを使用して各敵ユニットをループ処理し、次のターンに到達する可能性があるすべての味方ユニットの強さをチェックします。これにより、ゲームで多少の遅延が発生しますが、モジュラースタットゲッター（特にスキルシステムを使用）を使用するハックの場合、強度ゲッターは1つの関数呼び出しから数十のネストされた関数呼び出しまで複雑になり、負荷がかかります。この関数がこのネストされたループ内に配置されていると、AIがユニットを移動するたびに何百回も呼び出される可能性があり、同じ味方ユニットに対する複数の呼び出しが含まれるため、読み込み時間が数秒になることがあります。\r\n\r\nこのハックは、FillAIDangerMapを書き換えてGetUnitPowerの結果をキャッシュし、計算ごとに味方ユニットごとに1回だけ実行されるようにします。これにより、AIの決定速度が50％以上向上します。
+INFO.en=When generating AI units' movement, the game uses a nested for loop to iterate through each red unit, and then check the strength of every ally unit that could potentially reach it in the next turn. This causes a small amount of lag in the vanilla games, but for hacks using the Modular Stat Getters (especially with skill system), the strength getter increases in complexity from a single function call to dozens of nested function calls, ballooning the load on the CPU. With this function located inside this nested loop, it can potentially get called hundreds of times each time the AI moves a unit, including multiple calls for the same ally unit, causing noticeable loading times of several seconds.\r\n\r\nThis hack rewrites FillAIDangerMap to cache the result of GetUnitPower so that it only runs once per ally unit per calculation. This improves AI decision speed by 50% or more.
+INFO.zh=When generating AI units' movement, the game uses a nested for loop to iterate through each red unit, and then check the strength of every ally unit that could potentially reach it in the next turn. This causes a small amount of lag in the vanilla games, but for hacks using the Modular Stat Getters (especially with skill system), the strength getter increases in complexity from a single function call to dozens of nested function calls, ballooning the load on the CPU. With this function located inside this nested loop, it can potentially get called hundreds of times each time the AI moves a unit, including multiple calls for the same ally unit, causing noticeable loading times of several seconds.\r\n\r\nThis hack rewrites FillAIDangerMap to cache the result of GetUnitPower so that it only runs once per ally unit per calculation. This improves AI decision speed by 50% or more.
+
+AUTHOR=HyperGammaSpaces https://feuniverse.us/t/hypergammaspaces-assorted-asm/4085/8
