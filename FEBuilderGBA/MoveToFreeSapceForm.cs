@@ -429,7 +429,7 @@ namespace FEBuilderGBA
             //02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
             //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
             //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
-            const int LTRIM_SPACE_SIZE = 8;
+            const int LTRIM_SPACE_SIZE = 16;
             uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
             addr = Program.ROM.FindFreeSpace(searchStart, needSize);
             if (addr != U.NOT_FOUND)
@@ -521,10 +521,10 @@ namespace FEBuilderGBA
                     }
                 }
                 else
-                {//1c1ec0 - F00000
-                    if (addr >= 0x1c1ec0 && addr < 0xC00000)
+                {//1c1ec0 - C00000
+                    if (addr >= 0x1c1ec0 && addr < 0xB88560)
                     {
-                        addr = 0xC00000;
+                        addr = 0xB88560;
                         return true;
                     }
                 }
@@ -542,7 +542,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {//1c1ec0 - C00000
-                    list.Add(new Address(0x1c1ec0, 0xC00000 - 0x1c1ec0, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
+                    list.Add(new Address(0x1c1ec0, 0xB88560 - 0x1c1ec0, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
                 }
             }
         }

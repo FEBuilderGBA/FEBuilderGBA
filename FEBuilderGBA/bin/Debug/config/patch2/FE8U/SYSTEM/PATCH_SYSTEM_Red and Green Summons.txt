@@ -1,0 +1,25 @@
+NAME=召喚するユニットを、敵とNPCに変更する
+NAME.en=Red and Green Summons
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default (Player: Blue)|DEF|Enemy: Red|ENE|NPC: Green|GRN
+DEF:0x7ADE6=0x45 0x57
+DEF:0x244AA=0x3F 0x2C
+
+ENE:0x7ADE6=0x80 0x25
+ENE:0x244AA=0xFF 0x2C
+
+GRN:0x7ADE6=0x40 0x25
+GRN:0x244AA=0xFF 0x2C
+
+DETERMINATION_ADDRESS=0x7ADE6
+
+AUTHOR=Pikmin https://feuniverse.us/t/pikmin-asm/8148/20
+
+INFO=召喚で、緑(友軍)または赤(敵軍)のユニットを召喚できるようにします。
+INFO.en=Allows for summons to be made into green(NPC) or red(Enemy) units.
+NAME.zh=将召唤的单位改为敌人和NPC。
+INFO.zh=允许召唤绿色（友善）或红色（敌人）单位。

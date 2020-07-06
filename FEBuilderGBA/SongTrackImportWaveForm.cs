@@ -21,7 +21,7 @@ namespace FEBuilderGBA
             this.Strip.SelectedIndex = 1;
             this.Chunnel.SelectedIndex = 1;
             this.Volume.SelectedIndex = 9;
-            this.LoopComboBox.SelectedIndex = 1;
+            this.LoopComboBox.SelectedIndex = 0;
             PreviewResult.Text = R._("結果を見るには、Previewボタンを押してください。");
         }
         public void Dettach()

@@ -454,41 +454,30 @@ namespace FEBuilderGBA
                     && ramaddr == this.RAMAddr;
             }
         }
+        byte[] ProcsDataArray = new byte[0x6c * 0x40];
         List<ProcsData> ProcsTree;
         void UpdateProcs()
         {
+            uint addr = Program.ROM.RomInfo.workmemory_procs_pool_address();
+            byte[] bin = Program.RAM.getBinaryData(addr, this.ProcsDataArray.Length);
+            if (U.memcmp(this.ProcsDataArray, bin) == 0)
+            {//変更なし
+                return;
+            }
+            this.ProcsDataArray = bin;
+
+            //木の生成.
             List<ProcsData> tree = new List<ProcsData>();
             uint ramaddr = Program.ROM.RomInfo.workmemory_procs_forest_address();
             for (uint i = 0; i < 8; i++, ramaddr += 4)
             {
                 MakeProcNode(tree, ramaddr, i , 0);
             }
-            //現在のツリーと変更があったか?
-            if (this.ProcsTree.Count == tree.Count)
-            {
-                bool isChange = false;
-                for (int i = 0; i < tree.Count; i++)
-                {
-                    if (! this.ProcsTree[i].Compare(tree[i]) )
-                    {
-                        isChange = true;
-                        break;
-                    }
-                }
-
-                if (isChange)
-                {
-                    //木の更新.
-                    this.ProcsTree = tree;
-
-                    //PROCツリーを再描画.
-                    this.ProcsListBox.Invalidate();
-                }
-                return;
-            }
-
             //木の更新.
             this.ProcsTree = tree;
+
+            //PROCツリーを再描画.
+            this.ProcsListBox.Invalidate();
 
             //個数が違うので変更があった
             this.ProcsListBox.DummyAlloc(tree.Count, this.ProcsListBox.SelectedIndex);
@@ -2171,23 +2160,26 @@ namespace FEBuilderGBA
 
         uint GetShowRAMPartyUnitsAddr()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return Program.ROM.RomInfo.workmemory_npc_units_address();
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return Program.ROM.RomInfo.workmemory_enemy_units_address();
             }
+
             return Program.ROM.RomInfo.workmemory_player_units_address();
         }
         int GetShowPartyClassPaletteType()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return 1;
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return 2;
             }
@@ -2195,11 +2187,12 @@ namespace FEBuilderGBA
         }
         uint GetLimitRAMPartyUnits()
         {
-            if (this.PartyCombo.SelectedIndex == 1)
+            int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
+            if (partyComboSelectedIndex == 1)
             {
                 return 0x20;
             }
-            if (this.PartyCombo.SelectedIndex == 2)
+            if (partyComboSelectedIndex == 2)
             {
                 return 50;
             }
@@ -2391,8 +2384,13 @@ namespace FEBuilderGBA
 
         void InitPaletteEtc()
         {
+            if (Program.ROM.RomInfo.version() < 8)
+            {
+                X_ETC_WorldmapNode_Text.Hide();
+            }
             this.Edition = U.NOT_FOUND;
             this.Diffeclty = U.NOT_FOUND;
+            this.WorldmapNode = U.NOT_FOUND;
             this.PaletteCheckBuffer = new byte[2 * 16 * 16 * 2];
             this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawVariable, false);
             this.PaletteList.DummyAlloc(32, 0);
@@ -2430,90 +2428,32 @@ namespace FEBuilderGBA
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ClearTurnList);
         }
 
-        //編を求める
-        uint GetEdition()
-        {
-            if (Program.ROM.RomInfo.version() == 6)
-            {//6には編が存在しない.
-                return U.NOT_FOUND;
-            }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-            uint ramPointer = stageStructAddr + 0x1B;
-            return Program.RAM.u8(ramPointer);
-        }
-        string ConvertEditionToString(uint v)
-        {
-            if (v == U.NOT_FOUND)
-            {
-                return "";
-            }
-            string ret = U.ToHexString(v);
-            string edition = InputFormRef.GetEditon(v);
-            if (edition == "")
-            {
-                edition = "???";
-            }
-            return ret +"=" + edition;
-        }
-        //難易度を求める.
-        uint GetDiffecly()
-        {
-            uint ret = 0;
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
-
-            uint ramPointer1 = stageStructAddr + 0x14;
-            uint v = Program.RAM.u8(ramPointer1);
-            if ((v & 0x40) == 0x40)
-            {
-                ret = ret | 0x40;//難しい
-            }
-
-            uint ramPointer2 = stageStructAddr + 0x42;
-            v = Program.RAM.u8(ramPointer2);
-            if ((v & 0x20) == 0x20)
-            {
-                ret = ret | 0x20;//初めてではない
-            }
-
-            return ret;
-        }
-        string ConvertDiffeclyToString(uint v)
-        {
-            string ret = "";
-            if ((v & 0x40) == 0x40)
-            {
-                ret += R._("難易度:難しい");
-                ret += " ";
-            }
-            if ((v & 0x20) != 0x20)
-            {
-                ret += R._("難易度:初めて");
-                ret += " ";
-            }
-            if (ret == "")
-            {
-                ret += R._("難易度:普通");
-                ret += " ";
-            }
-            return ret;
-        }
         void UpdateEditon()
         {
             {
-                uint v = GetEdition();
+                uint v = EmulatorMemoryUtil.GetEdition();
                 if (v != this.Edition)
                 {
                     this.Edition = v;
-                    this.X_ETC_Edition_Text.Text = ConvertEditionToString(v);
-                    this.CHEAT_WARP_EDTION_VALUE.Value = GetEdition();
+                    this.X_ETC_Edition_Text.Text = EmulatorMemoryUtil.ConvertEditionToString(v);
+                    this.CHEAT_WARP_EDTION_VALUE.Value = EmulatorMemoryUtil.GetEdition();
                 }
             }
             {
-                uint v = GetDiffecly();
+                uint v = EmulatorMemoryUtil.GetDiffecly();
                 if (v != this.Diffeclty)
                 {
                     this.Diffeclty = v;
-                    this.X_ETC_Diffculty_Text.Text = ConvertDiffeclyToString(v);
+                    this.X_ETC_Diffculty_Text.Text = EmulatorMemoryUtil.ConvertDiffeclyToString(v);
+                }
+            }
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                uint v = EmulatorMemoryUtil.GetCurrentWorldmapNode();
+                if (v != this.WorldmapNode)
+                {
+                    this.WorldmapNode = v;
+                    this.X_ETC_WorldmapNode_Text.Text = EmulatorMemoryUtil.ConvertWorldmapNodeToString(v);
                 }
             }
         }
@@ -2765,6 +2705,7 @@ namespace FEBuilderGBA
 
         uint Edition;
         uint Diffeclty;
+        uint WorldmapNode;
         byte[] PaletteCheckBuffer;
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
@@ -2956,11 +2897,5 @@ namespace FEBuilderGBA
                 PaletteList_MouseDoubleClick(sender, null);
             }
         }
-
-
-
-
-
-
     }
 }

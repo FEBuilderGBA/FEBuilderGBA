@@ -252,6 +252,7 @@
             this.WriteButton.TabIndex = 55;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
             // panel6
             // 

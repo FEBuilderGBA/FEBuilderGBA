@@ -1,0 +1,2 @@
+Staff Savant: Maximum range
+of staves is increased by 1.

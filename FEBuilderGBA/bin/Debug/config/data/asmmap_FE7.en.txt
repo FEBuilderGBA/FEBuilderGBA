@@ -4956,3 +4956,22 @@
 08C00CF8	CallEvent	Battle Quote and Death Quote display event 2	{J}
 080A2E6C	CopyMiniMapTerrainChips	{U}
 080A3AE0	CopyMiniMapTerrainChips	{J}
+080229A8	UseCommandUsability	{J}
+08022A20	EquipCommandUsability	{J}
+08022A68	DiscardCommandUsability	{J}
+08022A9C	UseCommandEffect	{J}
+08022B28	EquipCommandEffect	{J}
+08005320	SetFont	{J}
+08005308	Font_ResetAllocation	{J}
+080270C0	SwapUnitStats	{J}
+080273D4	ItemEffect_ErrorMessage	{J}
+
+08022530	UseCommandUsability	{U}
+080225A8	EquipCommandUsability	{U}
+080225F0	DiscardCommandUsability	{U}
+08022624	UseCommandEffect	{U}
+080226B0	EquipCommandEffect	{U}
+08005450	SetFont	{U}
+08005438	Font_ResetAllocation	{U}
+08026C38	SwapUnitStats	{U}
+08026F4C	ItemEffect_ErrorMessage	{U}

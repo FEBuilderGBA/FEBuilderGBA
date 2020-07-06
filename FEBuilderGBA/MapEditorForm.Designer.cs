@@ -272,7 +272,7 @@
             // 
             // SaveASbutton
             // 
-            this.SaveASbutton.Location = new System.Drawing.Point(2, 11);
+            this.SaveASbutton.Location = new System.Drawing.Point(2, 9);
             this.SaveASbutton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveASbutton.Name = "SaveASbutton";
             this.SaveASbutton.Size = new System.Drawing.Size(207, 34);
@@ -292,7 +292,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(246, 12);
+            this.WriteButton.Location = new System.Drawing.Point(246, 10);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(207, 62);
@@ -303,7 +303,7 @@
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(2, 44);
+            this.LoadButton.Location = new System.Drawing.Point(2, 42);
             this.LoadButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(207, 35);
@@ -406,7 +406,7 @@
             this.MapChange.Location = new System.Drawing.Point(477, 4);
             this.MapChange.Margin = new System.Windows.Forms.Padding(2);
             this.MapChange.Name = "MapChange";
-            this.MapChange.Size = new System.Drawing.Size(235, 26);
+            this.MapChange.Size = new System.Drawing.Size(283, 26);
             this.MapChange.TabIndex = 20;
             this.MapChange.SelectedIndexChanged += new System.EventHandler(this.MapChange_SelectedIndexChanged);
             // 

@@ -1,0 +1,12 @@
+NAME=サウンドルーム コントロールパネルを消す
+NAME.en=SoundRoom: Turn off the sound room control panel.
+
+TYPE=EA
+EA=SoundRoom_Remove control panel.event
+
+PATCHED_IF:0xB034C=0x62 0xD0
+
+INFO=サウンドルームの左側にある、ボタン操作のヘルプボックスを消します。
+INFO.en=Turns off the button help box on the left side of the sound room.
+NAME.zh=关闭声音室控制面板。
+INFO.zh=关闭声音室左侧的按钮帮助框。

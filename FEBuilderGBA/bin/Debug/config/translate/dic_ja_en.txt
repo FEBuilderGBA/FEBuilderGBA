@@ -3819,7 +3819,6 @@ and defeating an enemy.
 ダリス	Darth
 ミスラ	Mythra
 リオン	Leon
-ムルヴァ	Morva
 オルソン	Orson
 ロザリー	Rosalie
 アリシア	Alicia
@@ -4859,3 +4858,160 @@ and defeating an enemy.
 　全預け＋	 GiveAll+
 　移動補助	 SubMenu
 　補助	 SubMenu
+　離脱	 Escape
+　到着	 Arrival
+アリア	Aria
+ベーター	Bertha
+デイモン	Damon
+ビリー	Billy
+マイル	Miles
+メアリー	Mary
+リチャード	Richard
+ジーナ	Jeana
+ヘレナ	Helena
+ボイド	Boyd
+ピート	Pitt
+リエル	Ryel
+サブリナ	Sabrina
+ザック	Zach
+オーロラ	Aurora
+レイア	Leia
+ブラン	Bran
+ビアンカ	Bianca
+ニコラ	Nicola
+ディラン	Dylan
+クラリス	Chris
+レイド	Reyd
+ノエル	Noel
+クロエ	Chloe
+オリーヴ	Olive
+ロドニー	Rodney
+パーシー	Percy
+ホレイシオ	Horaceio
+オスニエル	Osneill
+エラ	Ella
+ドロシア	Dorothea
+ネイサン	Neyson
+ジェーン	Jane
+マイナ	Mina
+アンナ	Anna
+アマリア	Amalia
+ジェイク	Jake
+ベサニー	Bethany
+ピエトロ	Pietro
+ライカ	Reika
+プリチオ	Priccio
+スージー	Suzie
+ルイ	Louis
+ジェフ	Jeff
+アール	Al
+リリー	Lilly
+シェリー	Sherry
+ゲンブ	Genbu
+ビャッコ	Byakko
+リリー	Lilly
+ムルヴァ	Morva
+アカギ	Akagi
+タイホウ	Taihou
+ケルン	Cairn
+ネックス	Nex
+ベイス	Base
+モーリス	Maurice
+ウーロン	Eulon
+オイゲン	Eugen
+グレゴリー	Gregory
+テウカイ	Teukai
+アカシ	Akashi
+シラヌイ	Shiranui
+ルバート	Rubert
+ダルヤー	Darya
+エルネスト	Ernest
+カガ	Kaga
+シラヌイ	Shiranui
+アイオン	Aion
+テトリフ	Tetliff
+ミカサ	Mikasa
+ジェゼール	Jessele
+スペード	Spade
+フュン	Fyon
+ダンカン	Duncan
+ダール	Dahl
+オーロラ	Aurora
+アリア	Aria
+チュレン	Turen
+デカーゴ	Decargo
+ドス	Doth
+ガザック	Gazzak
+ムツ	Mutsu
+バラン	Baran
+ヤマト	Yamato
+リリー	Lilly
+ナガト	Nagato
+シェリー	Sherry
+ゴルバ	Golba
+ルサハ	Lucifer
+ダミアン	Damian
+トラース	Doras
+ダーリーン	Darlene
+リデール	Riddell
+ネミー	Nemi
+タリー	Tary
+守護兵	Guardian
+ニコミナ	Nicomina
+ビラク	Vyland
+セイリュウ	Seiryu
+コウリュウ	Koryu
+ヒバチ	Hibachi
+バルグ	Valg
+フォデス	Fomortiis
+マルレーヌ	Marlene
+漆黒の騎士	Black Knight
+セドリック	Cedric
+ヘイデン	Hayden
+クリムト	Klimt
+ダラ	Dara
+アステヌ	Asthene
+天馬の伝令	Messenger
+メシュキー	Meshky
+ボゾルグ	Bozorg
+ゼルゼレイ	Zelzery
+ガルブ	Galv
+精霊	Spirit
+光の壁	Light Barrier
+ウルフ	Wolf
+ミカサ	Mikasa
+スザク	Suzaku
+プリンセス	Princess
+ボウナイト	Bow Knight
+リンドブルム	Lindwurm
+ダークペガサス	Dark Flier
+ダークマージ	Dark Mage
+トリックスター	Trickster
+ハルバーディア	Halberdier
+負の女王	Dark　Queen
+シルバーナイト	Silver Knight
+ゴールドナイト	Gold　Knight
+グリフォンナイト	Griffon Rider
+グリフォンナイト	Griffon Rider
+ダークセイジ	Dark　Sage
+ダークセイジ	Dark　Sage
+バトルモンク	War Monk
+バトルシスター	War Cleric
+バロン	Baron
+魔戦士	DreFighter
+エレファント	Elepanter
+タグエル	Taguel
+ソロモン	Solomon
+魔女	Witch
+ヴァンガード	Vanguard
+タイタニア	Titania
+シューター	Ballistae
+ホースメン	Horseman
+精霊	Spirit
+ハンター	Hunter
+正の女神	Dark　Goddess
+光の壁	Light　Barrier
+漆黒の騎士	Black Knight
+リンドブルム	Lindwurm
+バトルメイド	Battle　Maid
+皇帝	Emperor

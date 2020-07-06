@@ -764,3 +764,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 080AFAB0=Sound Room Sub Procs	{U}	//08A21308
 08005EC8=BgFaceBlink	{U}	//08591204
 08005DCC=BgFaceBlink	{J}	//085B8F9C
+080B4B44=SoundRoomUI	{J}	//08A9E2A0

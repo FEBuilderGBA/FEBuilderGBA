@@ -11,3 +11,6 @@ AUTHOR=7743
 PATCHED_IF:0x5B846=0x00 0x00 0x00 0x00
 NAME.zh=不要绘制战斗地形。
 INFO.zh=避免绘制战斗地形。对于想要创建战斗背景的人。
+
+DEPRECATED=1
+UPDATE_PATCH=..\HideBattleTerrain2\PATCH_HideBattleTerrain2.txt

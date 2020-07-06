@@ -1,5 +1,5 @@
-4005020001000000400A0000D402A608	//[ユニット:0x1 エイリーク]	{J}
-400A0000249D5B08400503008800000020370100	//[ユニット:0x1 エイリーク][アイテム:0x88 マスタープルフ]	{J}
+4005020001000000400A0000D402A608	//When[Character:0x1 エイリーク]	{J}
+20150000400502002500000040050300CD080000400A00004804A60821150000	//Lower volume and display dialog (conversation) with BG [background:0x25 ][conversation text:0x8CD エイリーク様　こちらです。 グラド兵の]	{J}
 
-4005020001000000400A0000D402A608	//[ユニット:0x1 エイリーク]	{U}
-400A0000401F5908400503008800000020370100	//[ユニット:0x1 エイリーク][アイテム:0x88 マスタープルフ]	{U}
+4005020001000000400A00009CE19E08	//When[Character:0x1 Eirika]	{U}
+201500004005020025000000400503000D090000400A000010E39E0821150000	//Lower volume and display dialog (conversation) with BG [background:0x25 ][conversation text:0x90D Princess Eirika! Thi]	{U}

@@ -153,6 +153,17 @@ namespace FEBuilderGBA
             {//CC3分岐パッチが導入されている場合
                 uint cc_class3 = (uint)X_CC3.Value;
 
+                uint cc_class1 = (uint)B0.Value;
+                uint cc_class2 = (uint)B1.Value;
+                if (cc_class3 == 0 && (cc_class1 != 0 || cc_class2 != 0))
+                {
+                    ERROR_CC3_0.Show();
+                }
+                else
+                {
+                    ERROR_CC3_0.Hide();
+                }
+
                 if (cc_class3 <= 0 || cc_class3 >= this.InputFormRef.DataCount)
                 {//変なクラス
                     U.ForceUpdate(X_SELECT_UPCC5_CLASSID, (int)0);

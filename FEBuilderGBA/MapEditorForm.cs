@@ -212,7 +212,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    name = R._("マップ変化ID:") + U.To0xHexString( this.ChangeList[i].no);
+                    name = R._("マップ変化ID:") + U.To0xHexString(this.ChangeList[i].no) + InputFormRef.GetCommentSA(this.ChangeList[i].self_change_addr);
                 }
                 MapChange.Items.Add(name);
             }
@@ -1963,9 +1963,19 @@ this.MapObjImage);
             string path = Path.Combine(Path.GetDirectoryName(mapfilepath), stylename + ".png");
 
             Bitmap mapchipset =  BuildMapchipSet();
-            ImageUtil.BlackOutUnnecessaryColors(mapchipset, 5);
-            U.BitmapSave(mapchipset, path);
-            mapchipset.Dispose();
+            int count = ImageUtil.GetPalette16Count(mapchipset);
+            if (count > 5)
+            {//10パレット利用するマップデータ
+                ImageUtil.BlackOutUnnecessaryColors(mapchipset, 10);
+                U.BitmapSave(mapchipset, path);
+                mapchipset.Dispose();
+            }
+            else
+            {//通常の5パレット
+                ImageUtil.BlackOutUnnecessaryColors(mapchipset, 5);
+                U.BitmapSave(mapchipset, path);
+                mapchipset.Dispose();
+            }
         }
         
 
@@ -2074,18 +2084,29 @@ this.MapObjImage);
                 basemap = MapSettingForm.DrawMap(mapid);
             }
 
-            {
+            int count = ImageUtil.GetPalette16Count(basemap);
+            if (count > 5)
+            {//10パレット利用するマップデータ
                 Bitmap frontBitmap = (Bitmap)basemap.Clone();
-                ImageUtil.BlackOutUnnecessaryColors(frontBitmap, 5);
+                ImageUtil.BlackOutUnnecessaryColors(frontBitmap, 10);
                 U.BitmapSave(frontBitmap, filename);
                 frontBitmap.Dispose();
             }
+            else
             {
-                Bitmap fogBitmap = ImageUtil.SwapPalette(basemap, 5, 0x10 * 5);
-                ImageUtil.BlackOutUnnecessaryColors(fogBitmap, 5);
-                string fogFilename = U.ChangeExtFilename(filename , ".png","_fog");
-                U.BitmapSave(fogBitmap, fogFilename);
-                fogBitmap.Dispose();
+                {
+                    Bitmap frontBitmap = (Bitmap)basemap.Clone();
+                    ImageUtil.BlackOutUnnecessaryColors(frontBitmap, 5);
+                    U.BitmapSave(frontBitmap, filename);
+                    frontBitmap.Dispose();
+                }
+                {
+                    Bitmap fogBitmap = ImageUtil.SwapPalette(basemap, 5, 0x10 * 5);
+                    ImageUtil.BlackOutUnnecessaryColors(fogBitmap, 5);
+                    string fogFilename = U.ChangeExtFilename(filename, ".png", "_fog");
+                    U.BitmapSave(fogBitmap, fogFilename);
+                    fogBitmap.Dispose();
+                }
             }
             basemap.Dispose();
         }

@@ -1,0 +1,2 @@
+Relief: Recover 20% HP each turn if
+there are no allies within 2 tiles.

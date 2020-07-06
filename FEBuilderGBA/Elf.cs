@@ -14,12 +14,12 @@ namespace FEBuilderGBA
             this.ProgramBIN = new byte[0];
             this.UseHookMode = useHookMode;
 
-            byte[] bin = File.ReadAllBytes(filename);
-            if (!CheckELF(bin))
+            this.ElfBIN = File.ReadAllBytes(filename);
+            if (!CheckELF(this.ElfBIN))
             {
                 return;
             }
-            ParseSHDR(bin);
+            ParseSHDR(this.ElfBIN);
         }
 
         bool CheckELF(byte[] bin)
@@ -39,6 +39,7 @@ namespace FEBuilderGBA
         }
         public List<Sym> SymList { get; private set; }
         public byte[] ProgramBIN { get; private set; }
+        public byte[] ElfBIN { get; private set; }
         bool UseHookMode;
 
 /*
@@ -163,6 +164,96 @@ typedef struct {
 
                 this.SymList.Add(sym);
             }
+        }
+        //不明なラベルを警告する
+        public string CheckLostLabel()
+        {
+            StringBuilder sb = new StringBuilder();
+            const uint SHT_SYMTAB = 0x02;
+            const uint SHT_DYNSYM = 0x04;
+
+            uint e_shoff = U.u32(this.ElfBIN, 0x20);
+            uint e_shnum = U.u16(this.ElfBIN, 0x30);
+
+            for (uint i = 0; i < e_shnum; i++)
+            {
+                uint addr = e_shoff + (i * Elf32_Shdr_Size);
+                if (addr + 0x04 > this.ElfBIN.Length)
+                {
+                    continue;
+                }
+
+                uint sh_type = U.u32(this.ElfBIN, addr + 0x04);
+                if (sh_type == SHT_SYMTAB || sh_type == SHT_DYNSYM)
+                {//シンボルテーブル
+                    string errorMessage = CheckLostLabelSYM(this.ElfBIN, addr, e_shoff);
+                    sb.Append(errorMessage);
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        //不明なラベルを警告する
+        string CheckLostLabelSYM(byte[] bin, uint baseaddr, uint e_shoff)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (baseaddr + 0x1C > bin.Length)
+            {
+                return sb.ToString();
+            }
+
+            uint addr = baseaddr;
+            uint sh_link = U.u32(bin, addr + 0x18);
+            uint sh_size = U.u32(bin, addr + 0x14);
+            uint sh_offset = U.u32(bin, addr + 0x10);
+
+            //sh_link番目にあるデータに文字列テーブルがあるらしい.
+            addr = e_shoff + sh_link * Elf32_Shdr_Size;
+            uint shdr_linksecsion_sh_offset = U.u32(bin, addr + 0x10);
+
+            //現在のSHDRテーブルを読む
+            const uint Elf32_Sym_Size = 0x10;
+            uint nloop_count = sh_size / Elf32_Sym_Size;
+            for (uint n = 0; n < nloop_count; n++)
+            {
+                addr = sh_offset + (n * Elf32_Sym_Size);
+                if (addr + 0x08 > bin.Length)
+                {
+                    break;
+                }
+
+                uint st_name = U.u32(bin, addr + 0x00);
+                uint st_value = U.u32(bin, addr + 0x04);
+                uint st_shndx = U.u16(bin, addr + 0x0E);
+
+                if (st_name == 0)
+                {
+                    continue;
+                }
+                if (st_value != 0)
+                {//問題なし
+                    continue;
+                }
+                uint nameaddr2 = shdr_linksecsion_sh_offset + st_name;
+                string name2 = U.getASCIIString(bin, nameaddr2);
+                if (name2 == "")
+                {//名前がない
+                    continue;
+                }
+                if (name2[0] == '$')
+                {//システム用?
+                    continue;
+                }
+                if (st_shndx == 1)
+                {//最初のエントリー
+                    continue;
+                }
+
+                sb.AppendLine(R._("行方不明のラベル({0})が存在します。",name2));
+            }
+            return sb.ToString();
         }
 
         void ParseProgbits(byte[] bin, uint baseaddr)

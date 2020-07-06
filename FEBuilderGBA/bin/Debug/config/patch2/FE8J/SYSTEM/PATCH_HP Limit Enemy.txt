@@ -12,3 +12,6 @@ NAME.zh=敌军HP上限
 
 INFO.en=Change value in decimal.
 HINT=HP caps
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

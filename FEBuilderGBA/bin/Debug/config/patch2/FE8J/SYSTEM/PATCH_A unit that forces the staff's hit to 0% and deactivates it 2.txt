@@ -16,4 +16,6 @@ INFO.en=These unit have a hit rate of 0% for Sleep, Berserk, and Silence. By def
 
 
 NAME.zh=一个单位，迫使手杖达到0％并停用它。
-INFO.zh=这些单位的睡眠，Bataque和Siles的命中率为0％。\r\n默认情况下，设置0x​​6c Rion。
+INFO.zh=这些人物的睡眠，Bataque和Siles的命中率为0％。\r\n默认情况下，设置0x​​6c Rion。
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

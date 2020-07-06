@@ -34,6 +34,8 @@ namespace FEBuilderGBA
             g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
             g_Cache_SearchFlag0x28ToMapSecondPalettePatch = MapSecondPalette_extends.NoCache;
             g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
+            g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
+            g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -181,18 +183,45 @@ namespace FEBuilderGBA
             return class_type_enum.NO;
         }
 
+        public enum AntiHuffmanEnum
+        {
+            NO,             //なし
+            Enable,
+            NoCache = (int)NO_CACHE
+        };
+        static AntiHuffmanEnum g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NoCache;
+        
         //un-Huffmanの判別.
         public static bool SearchAntiHuffmanPatch()
         {
-            uint check_value;
-            uint address = Program.ROM.RomInfo.patch_anti_Huffman(out check_value);
-            if (address == 0)
+            if (g_Cache_AntiHuffmanEnum == AntiHuffmanEnum.NoCache)
             {
-                return false;
+                if (SearchAntiHuffmanPatch_Low())
+                {
+                    g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.Enable;
+                }
+                else
+                {
+                    g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NO;
+                }
             }
-            uint a = Program.ROM.u32(address);
-            return (a == check_value);
+
+            return g_Cache_AntiHuffmanEnum == AntiHuffmanEnum.Enable;
         }
+        static bool SearchAntiHuffmanPatch_Low()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="AntiHuffman",	ver = "FE6", addr = 0x384c,data = new byte[]{0x03, 0xB5, 0x02, 0xB0}},
+                new PatchTableSt{ name="AntiHuffman",	ver = "FE7J", addr = 0x13324,data = new byte[]{0x02, 0x49, 0x28 , 0x1C}},
+                new PatchTableSt{ name="AntiHuffman",	ver = "FE8J", addr = 0x2af4,data = new byte[]{0x00 ,0xB5 ,0xC2 ,0x0F}},
+                new PatchTableSt{ name="AntiHuffman",	ver = "FE7U", addr = 0x12C6C,data = new byte[]{0x02, 0x49, 0x28 , 0x1C}},
+                new PatchTableSt{ name="AntiHuffman",	ver = "FE8U", addr = 0x2BA4,data = new byte[]{0x00, 0xB5, 0xC2, 0x0F}},
+                new PatchTableSt{ name="AntiHuffman_snake1",	ver = "FE8U", addr = 0x2ba4,data = new byte[]{0x78 ,0x47 ,0xC0 ,0x46}},
+            };
+
+            return SearchPatchBool(table);
+        }
+
         //フォントの描画ルーチン
         public enum draw_font_enum
         {
@@ -1181,6 +1210,50 @@ namespace FEBuilderGBA
             return ClearTurn2x_extends.NO;
         }
 
+        //Fourth-Allegiance
+        public enum FourthAllegiance_extends
+        {
+            NO,             //なし
+            FourthAllegiance,
+            NoCache = (int)NO_CACHE
+        };
+        static FourthAllegiance_extends g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
+        public static FourthAllegiance_extends SearchCache_FourthAllegiance()
+        {
+            if (g_Cache_FourthAllegiance == FourthAllegiance_extends.NoCache)
+            {
+                g_Cache_FourthAllegiance = SearchCache_FourthAllegianceLow();
+            }
+            return g_Cache_FourthAllegiance;
+        }
+        static FourthAllegiance_extends SearchCache_FourthAllegianceLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="FourthAllegiance",	ver = "FE8U", addr = 0x17BDC,data = new byte[]{0xC0, 0x20, 0xF8, 0xE7}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "FourthAllegiance")
+                {
+                    return FourthAllegiance_extends.FourthAllegiance;
+                }
+            }
+            return FourthAllegiance_extends.NO;
+        }
+
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
             int length = 0;
@@ -1570,6 +1643,19 @@ namespace FEBuilderGBA
                 return 0;
             }
             return addr;
+        }
+        public static bool IsWarpChapterFE8(uint chapterID)
+        {
+            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
+            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
+            {
+                if (MapLoadFunctionForm.IsEnterChapterAlways(chapterID))
+                {
+                    return true;
+                }
+            }
+
+            return true;
         }
     }
 }

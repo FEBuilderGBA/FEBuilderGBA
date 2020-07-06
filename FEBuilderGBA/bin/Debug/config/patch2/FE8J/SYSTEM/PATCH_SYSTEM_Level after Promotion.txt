@@ -15,3 +15,6 @@ INFO=通常、CCすると、レベルは1になります。\r\nこのパッチ�
 INFO.en=Normally, CC will be level 1.\r\nThis patch changes this to a specific level.
 INFO.zh=通常，CC将为1级。\r\n此补丁将其更改为特定级别。
 HEX=false
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

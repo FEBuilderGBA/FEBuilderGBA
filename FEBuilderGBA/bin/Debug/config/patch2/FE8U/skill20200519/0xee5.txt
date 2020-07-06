@@ -1,0 +1,2 @@
+Barricade: Damage taken is
+halved after first being struck.

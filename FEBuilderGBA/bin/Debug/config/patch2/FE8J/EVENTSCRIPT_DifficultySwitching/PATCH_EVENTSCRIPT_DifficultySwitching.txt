@@ -1,0 +1,30 @@
+﻿NAME=難易度を変更する(イベント命令)
+NAME.en=Add Event: DifficultySwitching
+NAME.zh=Add Event: DifficultySwitching
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 fe8difficultyswitching.dmp=0x10 0xB5 0x0D 0x4A
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=fe8difficultyswitching.dmp
+
+AUTHOR=Brendor https://github.com/BMorgenstern/FE8-Difficulty-Switching   https://feuniverse.us/t/asm-changing-difficulty-on-the-fly/8333
+
+EVENTSCRIPT:01=400D0000{$L1:fe8difficultyswitching.dmp}	Slot1で指定された難易度に変更する(LOW)
+EVENTSCRIPT:02=40050100XX000000400D0000{$L1:fe8difficultyswitching.dmp}	難易度を変更する[XX:DIFFICULTY:難易度]
+
+EVENTSCRIPT:01.en=400D0000{$L1:fe8difficultyswitching.dmp}	Difficulty Switching by Slot1(LOW)
+EVENTSCRIPT:02.en=40050100XX000000400D0000{$L1:fe8difficultyswitching.dmp}	Difficulty Switching[XX:DIFFICULTY:Difficulty]
+
+EVENTSCRIPT:01.zh=400D0000{$L1:fe8difficultyswitching.dmp}	Difficulty Switching by Slot1(LOW)
+EVENTSCRIPT:02.zh=40050100XX000000400D0000{$L1:fe8difficultyswitching.dmp}	Difficulty Switching[XX:DIFFICULTY:Difficulty]
+
+
+INFO=難易度をイベントから切り替えます。\r\nmode can be either 0 for Easy mode, 1 for normal mode, and 2 for hard mode.
+INFO.en=Change the difficulty level from the event.\r\nmode can be either 0 for Easy mode, 1 for normal mode, and 2 for hard mode.
+INFO.zh=Change the difficulty level from the event.\r\nmode can be either 0 for Easy mode, 1 for normal mode, and 2 for hard mode.
+
+

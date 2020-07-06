@@ -1,0 +1,2 @@
+Switch places with opponent
+after combat.

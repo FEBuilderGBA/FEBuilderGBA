@@ -1,0 +1,13 @@
+
+NAME=とびらのかぎのアイテムID
+NAME.en=Door Key ItemID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x187F4
+ADDRESS_TYPE=ITEM
+AUTHOR=Suusuke
+
+NAME.zh=门钥匙 ItemID

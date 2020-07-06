@@ -220,7 +220,7 @@
             this.ImportButton1.Name = "ImportButton1";
             this.ImportButton1.Size = new System.Drawing.Size(268, 30);
             this.ImportButton1.TabIndex = 60;
-            this.ImportButton1.Text = "セーブ画像取出し";
+            this.ImportButton1.Text = "セーブ画像読込";
             this.ImportButton1.UseVisualStyleBackColor = true;
             this.ImportButton1.Click += new System.EventHandler(this.ImportButton1_Click);
             // 
@@ -231,7 +231,7 @@
             this.ExportButton1.Name = "ExportButton1";
             this.ExportButton1.Size = new System.Drawing.Size(268, 30);
             this.ExportButton1.TabIndex = 59;
-            this.ExportButton1.Text = "セーブ画像読込";
+            this.ExportButton1.Text = "セーブ画像取出し";
             this.ExportButton1.UseVisualStyleBackColor = true;
             this.ExportButton1.Click += new System.EventHandler(this.ExportButton1_Click);
             // 

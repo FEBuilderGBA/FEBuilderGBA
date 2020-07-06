@@ -961,6 +961,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAP_CHANGE)
             {
+                text = InputFormRef.GetMapChangeName(this.MapID, v);
                 if (isOrderOfHuman)
                 {
                     uint mapid = ScanMAPID();
@@ -1009,6 +1010,10 @@ namespace FEBuilderGBA
             {//MemorySlot
                 text = " " + InputFormRef.GetMEMORYSLOT(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.COUNTER)
+            {//Counter
+                text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
             {//MemorySlotPacked
                 text = " " + InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out errormessage);
@@ -1032,6 +1037,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
             {//IGNORE_KEYS
                 text = " " + InputFormRef.GetIGNORE_KEYS(v);
+            }
+            else if (arg.Type == EventScript.ArgType.KEYS)
+            {//KEYS
+                text = " " + InputFormRef.GetPressKEYS(v);
             }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
@@ -1086,6 +1095,10 @@ namespace FEBuilderGBA
             {
                 text = " " + InputFormRef.GetEditon(v);
             }
+            else if (arg.Type == EventScript.ArgType.DIFFICULTY)
+            {
+                text = " " + InputFormRef.GetDifficulty(v);
+            }
             else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
             {
                 text = " " + InputFormRef.GetSuportLevel(v);
@@ -1114,6 +1127,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
             {
                 text = " " + AIASMCALLTALKForm.GetUnit2Preview(v);
+            }
+            else if (arg.Type == EventScript.ArgType.COUNTER)
+            {//Counter
+                text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
@@ -1414,6 +1431,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
@@ -1422,6 +1440,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
@@ -1430,6 +1449,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
@@ -1438,6 +1458,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpTo(value);
                 f.ShowDialog();
+                U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_TEXT)
@@ -1470,6 +1491,7 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS
                   || arg.Type == EventScript.ArgType.DISABLEWEAPONS
                   || arg.Type == EventScript.ArgType.IGNORE_KEYS
+                  || arg.Type == EventScript.ArgType.KEYS
                 )
             {
                 UshortBitFlagForm f = (UshortBitFlagForm)InputFormRef.JumpForm<UshortBitFlagForm>();
@@ -2574,6 +2596,12 @@ namespace FEBuilderGBA
         {
             StringBuilder sb = new StringBuilder();
             EventScript.OneCode code = this.EventAsm[number];
+            return EventScriptInnerControl.EventToTextOne(code);
+        }
+
+        static public string EventToTextOne(EventScript.OneCode code)
+        {
+            StringBuilder sb = new StringBuilder();
             for (int n = 0; n < code.ByteData.Length; n++)
             {
                 sb.Append(U.ToHexString(code.ByteData[n]));
@@ -2612,7 +2640,7 @@ namespace FEBuilderGBA
 
                     sb.Append(hexstring);
 
-                    if (arg.Type == EventScript.ArgType.TEXT 
+                    if (arg.Type == EventScript.ArgType.TEXT
                         || arg.Type == EventScript.ArgType.CONVERSATION_TEXT
                         || arg.Type == EventScript.ArgType.SYSTEM_TEXT
                         || arg.Type == EventScript.ArgType.ONELINE_TEXT
@@ -2779,13 +2807,13 @@ namespace FEBuilderGBA
                     {//フラグ
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetFlagName(v,out dummy));
+                        sb.Append(InputFormRef.GetFlagName(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.MAGVELY)
                     {//FE8の世界地図の移動 -8 ～ 52の範囲
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetMagvelYName((short)v,out dummy));
+                        sb.Append(InputFormRef.GetMagvelYName((short)v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
                     {//PROC
@@ -2811,11 +2839,17 @@ namespace FEBuilderGBA
                         string dummy;
                         sb.Append(InputFormRef.GetMEMORYSLOT(v, out dummy));
                     }
+                    else if (arg.Type == EventScript.ArgType.COUNTER)
+                    {//Counter
+                        sb.Append(" ");
+                        string dummy;
+                        sb.Append(InputFormRef.GetCOUNTER(v, out dummy));
+                    }
                     else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
                     {//MemorySlotPacked
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0],out dummy));
+                        sb.Append(InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
                     {//RAM_UNIT_STATE
@@ -2841,6 +2875,11 @@ namespace FEBuilderGBA
                     {//IGNORE_KEYS
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetIGNORE_KEYS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.KEYS)
+                    {//KEYS
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetPressKEYS(v));
                     }
                     else if (arg.Type == EventScript.ArgType.FSEC)
                     {//FSEC
@@ -2910,6 +2949,11 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetEditon(v));
                     }
+                    else if (arg.Type == EventScript.ArgType.DIFFICULTY)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetDifficulty(v));
+                    }
                     else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                     {
                         sb.Append(" ");
@@ -2948,12 +2992,16 @@ namespace FEBuilderGBA
                     sb.Append("]");
                     break;
                 }
+
+                if (i + 1 < code.Script.Info.Length)
+                {
+                    sb.Append(code.Script.Info[i + 1]);
+                }
             }
             sb.AppendLine("");
 
             return sb.ToString();
         }
-
 
 
         private void EventToFileButton_Click(object sender, EventArgs ee)

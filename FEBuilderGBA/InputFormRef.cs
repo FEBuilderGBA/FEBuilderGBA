@@ -2529,7 +2529,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        text = GetChaptorModeName(id);
+                        text = GetEditon(id);
                     }
 
                     link_object.Text = text;
@@ -4964,6 +4964,7 @@ namespace FEBuilderGBA
             SkillConfigFE8NVer2SkillForm.ClearCache();
             SkillConfigSkillSystemForm.ClearCache();
             FE8SpellMenuExtendsForm.ClearCache();
+            MapChangeForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
             PatchUtil.ClearCache();
@@ -6392,27 +6393,6 @@ namespace FEBuilderGBA
             return "-";
         }
 
-        //編
-        public static string GetChaptorModeName(uint num)
-        {
-            if (num == 0x01)
-            {
-                return R._("01=序盤");
-            }
-            if (num == 0x02)
-            {
-                return R._("02=エイリーク編");
-            }
-            if (num == 0x03)
-            {
-                return R._("03=エフラム編");
-            }
-            if (num == 0xFF)
-            {
-                return R._("FF=無条件");
-            }
-            return "";
-        }
         //トラップデータ
         public static string GetTrapName(uint num)
         {
@@ -6543,6 +6523,17 @@ namespace FEBuilderGBA
             errorMessae = R._("メモリスロットは、0x00～0x0D までです。");
             return R._("警告: 下限を超えています");
         }
+        //FE8のカウンター
+        public static string GetCOUNTER(uint num, out string errorMessae)
+        {
+            if (num <= 0x7)
+            {
+                errorMessae = "";
+                return "Counter" + num;
+            }
+            errorMessae = R._("カウンターは、0x00～0x07 までです。");
+            return R._("警告: 下限を超えています");
+        }
 
         public static string GetPACKED_MEMORYSLOT(uint num, string op, out string errorMessae)
         {
@@ -6663,6 +6654,11 @@ namespace FEBuilderGBA
             Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
             return GetInfoByBitFlag(num, dic);
         }
+        public static string GetPressKEYS(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
 
         static ConcurrentDictionary<string, Dictionary<uint, string>> Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
         public static Dictionary<uint, string> ConfigDataDatanameCache(string type)
@@ -6716,6 +6712,15 @@ namespace FEBuilderGBA
             uint x = ((num & 0xffff0000) >> 16);
             uint y = ((num & 0x0000ffff) );
             return String.Format("({0},{1})", x, y);
+        }
+
+        public static string GetMapChangeName(uint mapid, uint changeid)
+        {
+            if (changeid == 0xFFFE)
+            {
+                return R._("アクティブユニットの座標");
+            }
+            return MapChangeForm.GetName(mapid, changeid);
         }
 
         //RAM UNIT PARAM
@@ -6905,6 +6910,26 @@ namespace FEBuilderGBA
                 {
                     return R._("ヘクトル編");
                 }
+            }
+            if (v == 0xFF)
+            {
+                return R._("FF=無条件");
+            }
+            return "";
+        }
+        public static string GetDifficulty(uint v)
+        {
+            if (v == 0)
+            {
+                return R._("Easy");
+            }
+            if (v == 1)
+            {
+                return R._("Normal");
+            }
+            if (v == 2)
+            {
+                return R._("Hard");
             }
             return "";
         }
@@ -9814,9 +9839,9 @@ namespace FEBuilderGBA
         public uint WriteImageData10(NumericUpDown numObj, byte[] image, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
             uint addr = U.toOffset((uint)numObj.Value);
-            if (!CheckZeroAddressWrite(addr))
+            if (!U.isSafetyOffset(addr))
             {
-                return U.NOT_FOUND;
+                addr = 0;
             }
 
             //データサイズは必ず 0x800ブロックずつにしないといけない.
@@ -9825,7 +9850,15 @@ namespace FEBuilderGBA
             byte[] addrMap = new byte[10*4];
             for(int i = 0 ; i < 10 ; i++)
             {
-                uint paddr = Program.ROM.p32( (uint)(addr + (i * 4)) );
+                uint paddr;
+                if (addr == 0)
+                {
+                    paddr = 0;
+                }
+                else
+                {
+                    paddr = Program.ROM.p32((uint)(addr + (i * 4)));
+                }
                 byte[] pimage = U.subrange(image
                     , (uint)(splitByte * i)
                     , (uint)(splitByte * (i + 1)));
@@ -10874,7 +10907,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@EVENTUNIT_OPTION_FE8")
             {
-                str = R._("「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\nそれ以外はよくわっていません。\r\n");
+                str = R._("「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\n「特殊」:イベント命令_0x2B21を使って、敵ユニットの位置をランダム化します。\r\n");
             }
             else if (str == "@EVENTUNIT_AFTER_FE7")
             {

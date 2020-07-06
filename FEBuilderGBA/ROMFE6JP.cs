@@ -198,6 +198,7 @@ namespace FEBuilderGBA
         public uint systemmenu_badstatus_old_image_pointer() { return 0x732EC; } //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
 
         public uint bigcg_pointer() { return 0x0; } // CG
+        public uint end_cg_address() { return 0x0; } // END CG FE8のみ
         public uint worldmap_big_image_pointer() { return 0x68C2DC; } //ワールドマップ フィールドになるでかい奴  
         public uint worldmap_big_palette_pointer() { return 0x68C2E0; } //ワールドマップ フィールドになるでかい奴 パレット  
         public uint worldmap_big_dpalette_pointer() { return 0x0; } //ワールドマップ フィールドになるでかい奴 闇パレット  
@@ -329,6 +330,8 @@ namespace FEBuilderGBA
         public uint item_statbooster1_array_switch2_address() { return 0x27ed2; }
         public uint item_statbooster2_array_pointer() { return 0x0; }    //ドーピングアイテムとCCアイテムかどうかを定義する  (FE6にはない)
         public uint item_statbooster2_array_switch2_address() { return 0x0; }
+        public uint item_errormessage_array_pointer() { return 0x23294; }    //アイテム利用時のエラーメッセージ
+        public uint item_errormessage_array_switch2_address() { return 0x23282; }
         public uint event_function_pointer_table_pointer() { return 0x0E038; }    //イベント命令ポインタ
         public uint event_function_pointer_table2_pointer() { return 0x0; }   //イベント命令ポインタ2 (FE8のみ)
         public uint item_effect_pointer_table_pointer() { return 0x04C8C8; }   //間接エフェクトポインタ
@@ -386,13 +389,13 @@ namespace FEBuilderGBA
         public uint menu_J12_hide_address() { return 0x0; }   //メニューの表示判定関数 表示しない
         public uint status_game_option_pointer() { return 0x8C490; } //ゲームオプション
         public uint status_game_option_order_pointer() { return 0x68AAE8; } //ゲームオプションの並び順
+        public uint status_game_option_order2_pointer() { return 0x0; } //ゲームオプションの並び順2 FE7のみ
         public uint status_game_option_order_count_address() { return 0x68AAE4; } //ゲームオプションの個数
         public uint status_units_menu_pointer() { return 0;  } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0; } //軍師属性(FE7のみ)
         public uint event_final_serif_pointer() { return 0x0; } //終章セリフ(FE7のみ)
         public uint compress_image_borderline_address() { return 0xF9D80; } //これ以降に圧縮画像が登場するというアドレス
 
-        public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0xB002B503; return 0x384c; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0xFD32F568; return 0x2DBF5C; } //C01 patch
         public uint patch_C48_hack(out uint enable_value) { enable_value = 0x082DBF74;  return 0x4A768; } //C48 patch
         public uint patch_16_tracks_12_sounds(out uint enable_value) { enable_value = 0x0; return 0x0; } //16_tracks_12_sounds patch

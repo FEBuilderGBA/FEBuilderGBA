@@ -3607,6 +3607,82 @@ namespace FEBuilderGBA
                     );
             }
 
+            bool isAttackAnimation = MakeCheckError_IsAttackAnimation(sectionData, frameData_UZ, rightToLeftOAM_UZ);
+//            if (isAttackAnimation)
+//            {
+//                MakeCheckError_AnimaStartCommand(errors, battleanime_baseaddress, id, sectionData, frameData_UZ, rightToLeftOAM_UZ);
+//            }
+            MakeCheckError_Frame(errors, battleanime_baseaddress, id, seatNumberList,isAttackAnimation,
+                sectionData, frameData_UZ, rightToLeftOAM_UZ);
+
+        }
+
+        //攻撃アニメーションを有するデータ
+        static bool MakeCheckError_IsAttackAnimation(byte[] sectionData, byte[] frameData_UZ, byte[] rightToLeftOAM_UZ)
+        {
+            for (int mode = 0; mode < 12; mode++)
+            {
+                if (mode == 1 - 1  //Mode 1  直接攻撃
+                    || mode == 3 - 1  //Mode 3  遠隔攻撃
+                    )
+                {
+                    uint i = U.u32(sectionData, (uint)mode * 4);
+
+                    if (i + 4 >= frameData_UZ.Length)
+                    {
+                        return false;
+                    }
+
+                    if (frameData_UZ[i + 3] != 0x85)
+                    {
+                        continue;
+                    }
+                    uint code = frameData_UZ[i + 0];
+                    if (code == 0x3 || code == 0x7)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        static void MakeCheckError_AnimaStartCommand(List<FELint.ErrorSt> errors, uint battleanime_baseaddress, uint id, byte[] sectionData, byte[] frameData_UZ, byte[] rightToLeftOAM_UZ)
+        {
+            for (int mode = 0; mode < 12; mode++)
+            {
+                if (mode == 1 - 1  //Mode 1  直接攻撃
+                    || mode == 3 - 1  //Mode 3  遠隔攻撃
+                    || mode == 12 - 1 //Mode 11 攻撃ミス
+                    )
+                {
+                    uint i = U.u32(sectionData, (uint)mode * 4);
+
+                    if (i + 4 >= frameData_UZ.Length)
+                    {
+                        return;
+                    }
+                    if (frameData_UZ[i + 3] != 0x85)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                            , R._("戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。", mode + 1), id)
+                            );
+                        continue;
+                    }
+                    uint code = frameData_UZ[i + 0];
+                    if (!(code == 0x3 || code == 0x7 || code == 0x53 || code == 0x4))
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                            , R._("戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。", mode + 1), id)
+                            );
+                        continue;
+                    }
+                }
+            }
+        }
+
+        static void MakeCheckError_Frame(List<FELint.ErrorSt> errors, uint battleanime_baseaddress, uint id, List<uint> seatNumberList,bool isAttackAnimation,
+            byte[] sectionData, byte[] frameData_UZ, byte[] rightToLeftOAM_UZ)
+        {
             int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));
             for (int mode = 0; mode < 12; mode++)
             {
@@ -3615,7 +3691,7 @@ namespace FEBuilderGBA
                 if (i >= frameData_UZ.Length)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
-                        , R._("戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。", mode+1), id)
+                        , R._("戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。", mode + 1), id)
                         );
                     return;
                 }
@@ -3633,10 +3709,10 @@ namespace FEBuilderGBA
                     }
                     if (frameData_UZ[i + 3] == 0x85)
                     {
-                        FELint.Check85Command(errors, frameData_UZ, i, FELint.Type.BATTLE_ANIME, battleanime_baseaddress , id);
+                        FELint.Check85Command(errors, frameData_UZ, i, FELint.Type.BATTLE_ANIME, battleanime_baseaddress, id);
                         continue;
                     }
-                    
+
                     if (frameData_UZ[i + 3] != 0x86)
                     {
                         continue;
@@ -3660,7 +3736,7 @@ namespace FEBuilderGBA
                     if (oamErrorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
-                            , R._("戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。", mode+1) + "\r\n" + oamErrorMessage, id)
+                            , R._("戦闘アニメのMode:{0}のrightToLeftOAMデータに破損があります。", mode + 1) + "\r\n" + oamErrorMessage, id)
                             );
                         return;
                     }
@@ -3670,7 +3746,10 @@ namespace FEBuilderGBA
                 if (!haveImage)
                 {
                     if (mode + 1 == 12)
-                    {//ミス時のモーションは存在しなくてもエラーにはならないならしい
+                    {//ミス時のモーションは存在しなくてもエラーにはならないならしい.
+                    }
+                    else if (isAttackAnimation == false && mode + 1 == 11)
+                    {//攻撃アニメーションでなければ、mode11に画像がなくてもいいらしい.
                     }
                     else
                     {
@@ -3678,10 +3757,8 @@ namespace FEBuilderGBA
                             , R._("戦闘アニメのMode:{0}に画像がありません。", mode + 1), id)
                             );
                     }
-                    return;
                 }
             }
         }
-
     }
 }

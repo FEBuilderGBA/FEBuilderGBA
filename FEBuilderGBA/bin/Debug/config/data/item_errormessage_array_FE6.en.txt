@@ -1,0 +1,8 @@
+08023480=-
+08023410=Torch
+0802750C=Stat Booster
+08023454=Promotion Items
+08023418=Chest Key
+0802341E=Door Key
+08023428=Lockpick
+08023410=Vulnerary, Elixir

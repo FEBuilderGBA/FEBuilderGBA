@@ -12,3 +12,6 @@ INFO.en=This is the base value used to calculate the kill experience.The default
 
 NAME.zh=击败经验基础值20。
 INFO.zh=这是用于计算击杀经验的基本值。默认值为20。\r\n相关词：破坏经验附加点，经验值计算公式。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

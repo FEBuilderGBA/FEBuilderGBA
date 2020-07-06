@@ -14,3 +14,6 @@ INFO=移動力は、15より以上にしてはいけません。\r\nよって、
 INFO.en=Movement force should not be more than 15.\r\nTherefore, it is possible to lower this value, but do not raise it.\r\nIf it exceeds 15, the game system will be broken.
 NAME.zh=移动力的上限
 INFO.zh=运动力不应超过15。\r\n因此，可以降低此值，但不要提高它。\r\n如果超过15，游戏系统将被破坏。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

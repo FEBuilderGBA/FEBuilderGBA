@@ -1,0 +1,12 @@
+NAME=サウンドルーム 達成率パネルを消す
+NAME.en=SoundRoom: Turn off the achievement rate panel
+
+TYPE=EA
+EA=SoundRoom_Remove Achievement panel.event
+
+PATCHED_IF:0xAF69C=0x00 0x00 0x00 0x00
+
+INFO=サウンドルームの達成率の欄を消去します。
+INFO.en=Clear the Sound Room Achievement column.
+NAME.zh=关闭“声音室”达成率面板。
+INFO.zh=清除“声音室成就”列。

@@ -1,0 +1,143 @@
+#include "Extensions\Hack Installation.txt"
+
+#define PurpleUnitCount 20
+
+PUSH
+
+ORG 0x17BDC 
+BYTE 0xC0 0x20 0xF8 0xE7 // Fix 4th allegiance units not being loaded
+
+ORG 0x59EEC0 
+BYTE $90 $42 $0B $35 $B5 $76 $9C $7F $8F $29 $38 $26 $FF $67 $0B $31 $90 $49 $77 $72 $1A $7F $5D $0C $FF $17 $30 $3A $FF $7F $A9 $20
+
+//Fix Enemies being able to go through purple units
+ORG $800 //modifies movement ARM code
+WORD 0xE59FC000 0xE12FFF1C //ldr r12,pc+8; bx r12
+POIN NewMovementCheck|1
+
+ORG 0x3D60A
+BYTE 0xFF // Fix attack AI not targetting purple units
+
+ORG 0x30E3C
+BYTE 0xC0 // Makes turn 0 start on Neutral Phase, so it can properly switch to player phase on turn 1
+
+ORG 0x1F326
+SHORT 0xE00D
+ORG 0x1F344
+jumpToHack(LoadEnemyOrNeutralPhaseGraphics)
+
+ORG 0x15470
+SHORT 0xE004
+ORG 0x1DF2C
+SHORT 0xE004 // Hopefully making phase 0xC0 work
+
+ORG 0x3E642
+SHORT 0xB084 // Expand the stack
+ORG 0x3E694
+POIN gPhaseUnitCountTable // Add the neutral unit count
+ORG 0x3E64C
+SHORT 0xC878 0xC178 // Add one more unit count to the array
+ORG 0x3E686
+SHORT 0xB004 // Expand the stack
+
+ORG 0x399B6
+SHORT 0xB084
+ORG 0x39A44
+POIN gPhaseUnitCountTable
+ORG 0x399C8
+SHORT 0xC8D8 0xC1D8
+ORG 0x39A2E
+SHORT 0xB004
+
+ORG 0x397B6
+SHORT 0xB084
+ORG 0x39840
+POIN gPhaseUnitCountTable
+ORG 0x397C4
+SHORT 0xC8D8 0xC1D8
+ORG 0x39830
+SHORT 0xB004
+
+ORG 0x10150
+POIN CheckAllegianceFix
+
+ORG 0x3E8A0
+SHORT 0xE006 // Make purple units use the green units escape point table
+
+// Minimug box palette
+ORG 0x8C2E4
+SHORT 0xE004
+ORG 0x8C2F0
+jumpToHack(LoadEnemyOrNeutralMinimugBoxPalette)
+
+ORG 0x8B08B6
+SHORT 0
+
+ORG 0x3125A
+BYTE 0xC0 + PurpleUnitCount // Clearing units after chapter end
+
+ORG 0x1A0C0
+BYTE 0xC0 + PurpleUnitCount // Loading units(RefreshUnitMapAndVision)
+
+ORG 0x27284
+BYTE 0xC0 + PurpleUnitCount // Standing map sprites showing up
+
+#include "NewUnitRAMPointerSetter.event"
+
+POP
+
+#include "FourthAllegiance/FourthAllegiance.event"
+
+
+
+ALIGN 4
+#define FactionRelations(blue, green, red, purple, blue2, green2, red2, purple2, blue3, green3, red3, purple3, blue4, green4, red4, purple4) "SHORT blue|(green<<1)|(red<<2)|(purple<<3)|(blue2<<4)|(green2<<5)|(red2<<6)|(purple2<<7)|(blue3<<8)|(green3<<9)|(red3<<10)|(purple3<<11)|(blue4<<12)|(green4<<13)|(red4<<14)|(purple4<<15)"
+#define TRUE 1
+#define FALSE 0
+
+#include "VanillaFactionRelationsSetter.event"
+
+ALIGN 4
+
+MESSAGE AreAllegiancesAllied
+
+#include "ExpandedModularSave/ExModularSave.event"
+
+ALIGN 4
+NewMovementCheck:
+#incbin "asm/NewMovementCheck.dmp"
+POIN AreAllegiancesAllied
+
+ALIGN 4
+LoadEnemyOrNeutralPhaseGraphics:
+#incbin "asm/LoadEnemyOrNeutralPhaseGraphics.dmp"
+POIN NeutralPhaseBannerGraphics
+POIN NeutralPhaseBannerPalette
+
+ALIGN 4
+CheckAllegianceFix:
+#incbin "asm/CheckAllegianceFix.dmp"
+
+ALIGN 4
+LoadEnemyOrNeutralMinimugBoxPalette:
+#incbin "asm/LoadEnemyOrNeutralMinimugBoxPalette.dmp"
+POIN NeutralMinimugBoxPalette
+
+ALIGN 4
+NeutralPhaseBannerGraphics:
+#incext Png2Dmp "NeutralPhaseBanner.png" --lz77
+
+ALIGN 4
+NeutralPhaseBannerPalette:
+#incext Png2Dmp "NeutralPhaseBanner.png" --palette-only
+
+ALIGN 4
+NeutralMinimugBoxPalette:
+#incext Png2Dmp "NeutralMinimugBox.png" --palette-only
+
+ALIGN 4
+gPhaseUnitCountTable: // Originally at 0xD8680
+WORD 62 // Player
+WORD 20 // NPC
+WORD 50 // Enemy
+WORD PurpleUnitCount // Neutral

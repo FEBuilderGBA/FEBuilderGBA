@@ -1,0 +1,15 @@
+NAME=ASMC2をスタートボタンでスキップしないように修正する
+NAME.en=Modify ASMC2 not to skip with start button
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|DEF|Fix (Do not skip)|FIX
+DEF:0xDD8E=0x03 0xE0
+FIX:0xDD8E=0x00 0x00
+
+INFO=ASMC2でスタートボタンでスキップしないように修正します。\r\nFEBuilderGBAのいくつかのパッチでは、ASM2を意図しない形で使ってしまっているので、スタートボタンを押すとスキップされてしまうという問題が発生します。\r\nこのパッチは、それを修正します。
+INFO.en=Modify the ASMC2 so that the start button does not skip.\r\nSome patches of FEBuilderGBA use ASM2 unintentionally, which causes the problem of being skipped when the start button is pressed.\r\nThis patch fixes that.
+NAME.zh=修复ASMC2不要跳过开始按钮的问题。
+INFO.zh=修改ASMC2，以便不会跳过开始按钮。\r\nFEBuilderGBA的某些修补程序无意中使用了ASM2，这导致按下开始按钮时被跳过的问题。\r\n此补丁修复了该问题。

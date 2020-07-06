@@ -92,6 +92,7 @@
             this.OrignalFilename.Placeholder = "";
             this.OrignalFilename.Size = new System.Drawing.Size(801, 25);
             this.OrignalFilename.TabIndex = 3;
+            this.OrignalFilename.DoubleClick += new System.EventHandler(this.OrignalFilename_DoubleClick);
             // 
             // OrignalSelectButton
             // 
@@ -102,14 +103,15 @@
             this.OrignalSelectButton.TabIndex = 1;
             this.OrignalSelectButton.Text = "ファイル選択";
             this.OrignalSelectButton.UseVisualStyleBackColor = true;
+            this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
             // 
-            // WorkSupport_SelectUPSForm
+            // ToolWorkSupport_SelectUPSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 221);
             this.Controls.Add(this.customColorGroupBox1);
-            this.Name = "WorkSupport_SelectUPSForm";
+            this.Name = "ToolWorkSupport_SelectUPSForm";
             this.Text = "UPSを開く";
             this.Load += new System.EventHandler(this.WorkSupport_SelectUPSForm_Load);
             this.Shown += new System.EventHandler(this.WorkSupport_SelectUPSForm_Shown);

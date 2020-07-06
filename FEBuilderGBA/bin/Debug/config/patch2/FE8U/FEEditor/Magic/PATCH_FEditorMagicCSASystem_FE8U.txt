@@ -3,6 +3,8 @@ TAG=#ENGINE
 
 PATCHED_IF:0x95d780=0x01 0x00 0x00 0x00 0x90 0xD7 0x95 0x08 0x03 0x00 0x00 0x00 0x39 0xD9 0x95 0x08
 BIN:0x95d780=CSA System.dmp
+BIN:0x95DF9C=0x895D1A8.dmp
+
 
 INFO=このパッチは、カスタム魔法システムを導入します。\r\nFEの魔法はASM+Procでハードコーディングされています。\r\nそのため戦闘アニメーションのように利用するのがとても困難です。\r\nこのパッチは、独自の魔法システムを構築します。\r\nそのシステムを利用することで、戦闘アニメーションのように、魔法アニメーションを作ることができるようになります。\r\nカスタム魔法システムを支える重要なパッチです。
 INFO.en=Patches the ROM to use the Custom Spell Animation system.\r\nBecause spell animations are hard-coded via ASM and Proc, it is very difficult to create new native animations.\r\nThis patch allows for creating and inserting spell animations using the CSA System in a manner similar to battle animations.\r\nWithout this, custom spell animations are nearly impossible.\r\n

@@ -3780,21 +3780,6 @@ r3=X tile position of menu of right	{U}
 08055bd4	BeginAnimsOnBattleAnimations	{U}
 08055c68	MainUpdate_8055C68	{U}
 08055cdc	NewEkrBattleStarting	{U}
-08055cf0	ekrBattleStarting_8055CF0	{U}
-08055df4	ekrBattleStarting_8055DF4	{U}
-08055f00	ekrBattleStarting_8055F00	{U}
-08055fa0	ekrBattleStarting_8055FA0	{U}
-08055fe8	ekrBattleStarting_8055FE8	{U}
-08056024	ekrBattleStarting_8056024	{U}
-08056078	ekrBattleStarting_8056078	{U}
-080560f0	ekrBattleEnding_80560F0	{U}
-08056170	ekrBattleEnding_8056170	{U}
-080561c8	ekrBattleEnding_80561C8	{U}
-08056228	ekrBattleEnding_8056228	{U}
-08056288	ekrBattleEnding_8056288	{U}
-08056310	ekrBattleEnding_8056310	{U}
-08056390	ekrBattleEnding_8056390	{U}
-08056484	ekrBattleEnding_8056484	{U}
 08056d24	NewEkrWindowAppear	{U}
 08056e10	NewEkrNamewinAppear	{U}
 08056ff8	PrepareBattleGraphicsMaybe	{U}
@@ -4962,7 +4947,7 @@ r3=X tile position of menu of right	{U}
 0801A998	FillMapAttackRangeForUnit	{J}
 0801B13C	FillRangeByRangeMask	{J}
 0801B2F4	FillMapStaffRangeForUnit	{J}
-0801B4E6	ApplyStuffToRangeMaps	{J}
+0801B4E8	ApplyStuffToRangeMaps	{J}
 0801B668	SetSubjectMap	{J}
 0801b9a4	FillRangeMap	{J}
 0801B6B0	GetCurrentMovCostTable	{J}
@@ -5562,21 +5547,6 @@ r3=X tile position of menu of right	{U}
 08056B5C	BeginAnimsOnBattleAnimations	{J}
 08056BF0	MainUpdate_8055C68	{J}
 08056C64	NewEkrBattleStarting	{J}
-08056C78	ekrBattleStarting_8055CF0	{J}
-08056D7C	ekrBattleStarting_8055DF4	{J}
-08056E88	ekrBattleStarting_8055F00	{J}
-08056F28	ekrBattleStarting_8055FA0	{J}
-08056F70	ekrBattleStarting_8055FE8	{J}
-08056FAC	ekrBattleStarting_8056024	{J}
-08057000	ekrBattleStarting_8056078	{J}
-08057078	ekrBattleEnding_80560F0	{J}
-080570F8	ekrBattleEnding_8056170	{J}
-08057150	ekrBattleEnding_80561C8	{J}
-080571B0	ekrBattleEnding_8056228	{J}
-08057210	ekrBattleEnding_8056288	{J}
-08057298	ekrBattleEnding_8056310	{J}
-08057318	ekrBattleEnding_8056390	{J}
-0805740C	ekrBattleEnding_8056484	{J}
 08057CAC	NewEkrWindowAppear	{J}
 08057D98	NewEkrNamewinAppear	{J}
 08057F80	PrepareBattleGraphicsMaybe	{J}
@@ -6789,10 +6759,6 @@ r3=X tile position of menu of right	{U}
 08A176BC	&HEADERTSA	Something tiled FillTileRect	17	{U}
 08A1C8B4	&HEADERTSA	Something tiled FillTileRect	18	{U}
 08A25ECC	&HEADERTSA	Something tiled FillTileRect	19	{U}
-08A2C4C8	&HEADERTSA	Something tiled FillTileRect	20	{U}
-08A2C5A8	&HEADERTSA	Something tiled FillTileRect	21	{U}
-08A2C4C8	&HEADERTSA	Something tiled FillTileRect	22	{U}
-08A2C5A8	&HEADERTSA	Something tiled FillTileRect	23	{U}
 08A2C92C	&HEADERTSA	Something tiled FillTileRect	24	{U}
 08A2C7A4	&HEADERTSA	Something tiled FillTileRect	25	{U}
 08A30978	&HEADERTSA	Something tiled FillTileRect	26	{U}
@@ -6829,10 +6795,6 @@ r3=X tile position of menu of right	{U}
 08A93408	&HEADERTSA	Something tiled FillTileRect	17	{J}
 08A9934C	&HEADERTSA	Something tiled FillTileRect	18	{J}
 08AA2E34	&HEADERTSA	Something tiled FillTileRect	19	{J}
-08AAA658	&HEADERTSA	Something tiled FillTileRect	20	{J}
-08AAA738	&HEADERTSA	Something tiled FillTileRect	21	{J}
-08AAA658	&HEADERTSA	Something tiled FillTileRect	22	{J}
-08AAA738	&HEADERTSA	Something tiled FillTileRect	23	{J}
 08AAAABC	&HEADERTSA	Something tiled FillTileRect	24	{J}
 08AAA934	&HEADERTSA	Something tiled FillTileRect	25	{J}
 08AB17A4	&HEADERTSA	Something tiled FillTileRect	26	{J}
@@ -7227,7 +7189,7 @@ r3=X tile position of menu of right	{U}
 030036F0	gStart_IRAMCodeCopied_CallARM	{J}
 03004910	gOAMAllocIt	{J}
 03004920	gpFaceProcs	{J}
-03004950	gpSubjectMap	{J}
+03004940	gpSubjectMap	{J}
 03004E00	gMovementFillConfig	{J}
 03004F00	gpAiPerformer	{J}
 03004F9C	gCurrentUnitIndex	{J}
@@ -7266,6 +7228,8 @@ r3=X tile position of menu of right	{U}
 0203B1F0	:0203B1FF	UnitSelectSFX patch	Use as patch to reproduce sound when unit is selected	{U}
 0203AAC0	:0203ABB7	Battle Buffer expansion (Skill System)(0xF8 bytes)	{U}
 0203ED40	:0203EF00	(Where debuffs for skill system begin)Debuff glitch fix(Skill system)	{U}
+02026E30	:02027268	Extends PurpleUnitFreeSpace	Fourth-Allegiance	{U}
+
 0203A530	Right side with battle animation.Additional information unknown 1.	{J}
 0203A531	Right side with battle animation.Additional information unknown 2.	{J}
 0203A532	Right side with battle animation.Additional information unknown 3.	{J}
@@ -12748,3 +12712,91 @@ r3=X tile position of menu of right	{U}
 08042e1c	CheckGameLinkArenaBit	{J}
 080A83D0	CopyMiniMapTerrainChips	{U}
 080ACDE8	CopyMiniMapTerrainChips	{J}
+0802F92C	ExecJunaFruits	{J}
+0802F8C4	DecrementLevel_JunaFruits	{J}
+0802F9E0	ExecJunaFruits	{U}
+0802F978	DecrementLevel_JunaFruits	{U}
+0808ec60	Drawing of terrain avoidance rate, etc	{J}
+08A933D8	&HEADERTSA	Tile that will be FillTileRect	Terrain avoid rate, etc	{J}
+080131f0	GetTerrainTypeID	{J}
+0808C964	Drawing of terrain avoidance rate, etc	{U}
+08A1768C	&HEADERTSA	Tile that will be FillTileRect	Terrain avoid rate, etc	{U}
+08013138	GetTerrainTypeID	{U}
+08028C0C	ItemEffect_ErrorMessage	{U}
+08028BB8	ItemEffect_ErrorMessage	{J}
+03004940	SetSubjectMap_Array	{J}
+08095970	IsFormationMenuEnable	{U}
+08097C50	IsFormationMenuEnable	{J}
+020145c8	:020165c8	SomeBGBuffer	{U}
+020145C8	:020165C8	SomeBGBuffer	{J}
+08077EE8	DrawBattleBG_Low	{J}
+08077F0C	DrawBattleBG	{J}
+08075AB4	DrawBattleBG_Low	{U}
+08075AD8	DrawBattleBG	{U}
+08057888	New_6C_ekrUnitKakudai	{J}
+08075A08	Determining level-up status	{J}
+08081694	MapAnimLevelUp_Lower level up dialog	{J}
+08053E94	StartEfxDeadAlpha	Flashing effect on death	{J}
+08053F7C	StartEfxDeadDragonAlpha	{J}
+080578FC	ekrUnitKakudai_InitBattleUnits	{J}
+08057AF4	ekrUnitKakudai_ZoomInEffect	{J}
+08057CA0	ekrUnitKakudai_NOP	{J}
+08012E84	Something_MysteriousCalculation	{J}
+08057424	StartEkrBaseKaiten	Glowing rotating floor	{J}
+08057318	ekrBattleEnding_FadeGrayToNormal	{J}
+08057298	ekrBattleEnding_RedrawUnits	{J}
+08057210	ekrBattleEnding_ReDrawMapSomething	{J}
+080571B0	ekrBattleEnding_ZoomOutEffect	{J}
+0805740C	ekrBattleEnding_Destructor	{J}
+08056F28	ekrBattleStarting_InitsBattleUnits	{J}
+08056E88	ekrBattleStarting_InitsBattleScreen	{J}
+08056D7C	ekrBattleStarting_HideMapOtherUnits	{J}
+08056C78	ekrBattleStarting_InitBattle	{J}
+08057000	ekrBattleStarting_BattleBG_FadeIn_Palette	{J}
+08056900	New_6C_ekrUnitKakudai	{U}
+0807352C	Determining level-up status	{U}
+0807F354	MapAnimLevelUp_Lower level up dialog	{U}
+080531A4	StartEfxDeadAlpha	Flashing effect on death	{U}
+0805328C	StartEfxDeadDragonAlpha	{U}
+08056390	ekrBattleEnding_FadeGrayToNormal	{U}
+08056310	ekrBattleEnding_RedrawUnits	{U}
+08056288	ekrBattleEnding_ReDrawMapSomething	{U}
+08056228	ekrBattleEnding_ZoomOutEffect	{U}
+08056484	ekrBattleEnding_Destructor	{U}
+08056974	ekrUnitKakudai_InitBattleUnits	{U}
+08056B70	ekrUnitKakudai_ZoomInEffect	{U}
+08056D18	ekrUnitKakudai_NOP	{U}
+08055FA0	ekrBattleStarting_InitsBattleUnits	{U}
+08055F00	ekrBattleStarting_InitsBattleScreen	{U}
+08055DF4	ekrBattleStarting_HideMapOtherUnits	{U}
+08055CF0	ekrBattleStarting_InitBattle	{U}
+08056078	ekrBattleStarting_BattleBG_FadeIn_Palette	{U}
+08012DCC	Something_MysteriousCalculation	{U}
+0805649C	StartEkrBaseKaiten	Glowing rotating floor	{U}
+08073f94	SomePlaySound_After	{J}
+080727e4	IsBattleByDragon	{J}
+08071AB0	SomePlaySound_After	{U}
+08070234	IsBattleByDragon	{U}
+080756FC	StartEfxClasschgCLONE	{J}
+08073220	StartEfxClasschgCLONE	{U}
+08099A2C	StartMenuScroll	{J}
+080B1F40	StartDrawBlueBarInPrepScreenMenu	{J}
+08AAA658	&HEADERTSA	Sound Room	Control window	{J}
+08AAA738	&HEADERTSA	Sound Room	Song list window	{J}
+080b40f0	Sound Room	Achievement rate display	{J}
+08097748	StartMenuScroll	{U}
+080AD4A0	StartDrawBlueBarInPrepScreenMenu	{U}
+08A2C4C8	&HEADERTSA	Sound Room	Control window	{U}
+08A2C5A8	&HEADERTSA	Sound Room	Song list window	{U}
+080af4d0	Sound Room	Achievement rate display	{U}
+080A7D70	IsEnableExtraMenuSupportViewer	{J}
+080A82B4	IsEnableExtraMenuSupportViewerLow	{J}
+080A7D6C	IsEnableExtraMenuSoundRoom	{J}
+080A7D34	IsEnableExtraMenuNetworkArena	{J}
+080A7E30	IsEnableExtraMenuFreemap	{J}
+080A332C	IsEnableExtraMenuSupportViewer	{U}
+080A3870	IsEnableExtraMenuSupportViewerLow	{U}
+080A3328	IsEnableExtraMenuSoundRoom	{U}
+080A32F0	IsEnableExtraMenuNetworkArena	{U}
+080A33EC	IsEnableExtraMenuFreemap	{U}
+08095240	PrepMenu_PressStart_To_Battle	{U}

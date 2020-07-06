@@ -636,15 +636,17 @@
             this.F_EXT.FormattingEnabled = true;
             this.F_EXT.Items.AddRange(new object[] {
             "なし",
-            "魔物",
-            "アイテムドロップ",
-            "魔物ランダム",
-            "何かの指定",
-            "不明"});
-            this.F_EXT.Location = new System.Drawing.Point(403, 1);
+            "1=魔物",
+            "2=アイテムドロップ",
+            "3=魔物+アイテムドロップ",
+            "4=特殊",
+            "5=特殊+魔物",
+            "6=特殊+アイテムドロップ",
+            "7=特殊+魔物+アイテムドロップ"});
+            this.F_EXT.Location = new System.Drawing.Point(401, 1);
             this.F_EXT.Margin = new System.Windows.Forms.Padding(5);
             this.F_EXT.Name = "F_EXT";
-            this.F_EXT.Size = new System.Drawing.Size(220, 26);
+            this.F_EXT.Size = new System.Drawing.Size(223, 26);
             this.F_EXT.TabIndex = 3;
             this.F_EXT.SelectedIndexChanged += new System.EventHandler(this.F_EXT_SelectedIndexChanged);
             // 

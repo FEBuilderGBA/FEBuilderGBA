@@ -13,3 +13,6 @@ NAME.zh=禁止额外影响的类别，例如异常情况下的毒药。
 INFO=ディフォルトではClass ID:0x66 魔王が設定されています。\r\n毒や状態異常剣パッチのスリープなどを抑制できます。ただし、石化は抑制できません。
 INFO.en=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
 INFO.zh=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

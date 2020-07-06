@@ -1,0 +1,3 @@
+Blue Flame: Attack +2 to this
+unit. When adjacent to an ally
+with this skill, gain Attack +2.

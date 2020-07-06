@@ -102,7 +102,7 @@ namespace FEBuilderGBA
                 {//重複している
                     //p |---------------------|
                     //p2                   |------------|
-                    Log.Error("重複だが結合できる ", i.ToString(), "P:", U.ToHexString(p.Addr), " l:", U.ToHexString(p.Length), " P2:", U.ToHexString(p2.Addr), " l:", U.ToHexString(p.Length));
+                    Log.Error(R._("重複だが結合できる "), i.ToString(), "P:", U.ToHexString(p.Addr), " l:", U.ToHexString(p.Length), " P2:", U.ToHexString(p2.Addr), " l:", U.ToHexString(p.Length));
 
                     Debug.Assert((p_end - p2.Addr) >= 0);
                     Debug.Assert(p2.Length >= (p_end - p2.Addr));

@@ -1,0 +1,15 @@
+NAME=進撃準備の並び替えメニューを強制的に有効にする
+NAME.en=Forcibly activate the Formation menu for preparation
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|DEF|Fix (Force Enable)|FIX
+DEF:0x33594=0x01 0x22
+FIX:0x33594=0x00 0x22
+
+INFO=進撃準備画面にある、並び替えメニューを強制的に有効にします。\r\n何かの理由により、並び替えメニューが無効になることがあります。\r\nこのパッチは並び替えメニューを強制的に有効にします。\r\n
+INFO.en=Forcibly activate the Formation menu on the preparation screen.\r\nThe Formation menu may be disabled for some reason.\r\nThis patch forces the Formation menu to be enabled.
+NAME.zh=强制激活重新排列菜单以准备攻击。
+INFO.zh=在攻击准备屏幕上强制激活重新排列菜单。\r\n由于某些原因，排序菜单可能被禁用。\r\n此修补程序强制启用排序菜单。\r\n

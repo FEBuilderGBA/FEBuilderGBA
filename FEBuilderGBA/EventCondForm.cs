@@ -129,7 +129,6 @@ namespace FEBuilderGBA
             N02_L_10_COMBO.AddIcon(0x0, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1, 0, true)); //00=プレイヤ
             N02_L_10_COMBO.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             N02_L_10_COMBO.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
-
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8.
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("11=制圧"));
@@ -174,6 +173,11 @@ namespace FEBuilderGBA
                 if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     TRAP_L_0_COMBO.Items.Insert(4, R._("06=DragonVein"));
+                }
+                if (PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+                {
+                    N02_L_10_COMBO.Items.Add("C0=第4軍ターンに実行");
+                    N02_L_10_COMBO.AddIcon(0xC0, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(10, 4, true)); //C0=第4軍
                 }
 
                 return;
@@ -2606,7 +2610,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr, List<uint> tracelist)
+        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr,string info, List<uint> tracelist)
         {
             uint lastBranchAddr = 0;
             int unknown_count = 0;
@@ -2650,7 +2654,7 @@ namespace FEBuilderGBA
                             )
                         {//テキスト関係の命令.
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, "", v, event_addr);
+                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_MENUEXTENDS)
                         {//分岐メニュー拡張
@@ -2677,7 +2681,7 @@ namespace FEBuilderGBA
                                 )
                             {
                                 tracelist.Add(v);
-                                MakeTextIDEventScan(list, v, tracelist);
+                                MakeTextIDEventScan(list, v, info,tracelist);
                             }
                         }
                     }
@@ -3453,7 +3457,11 @@ namespace FEBuilderGBA
                 text = R._("常時条件:");
                 bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
 
-                if (Program.FlagCache.TryGetValue(flag, out text))
+                if (flag == 0)
+                {
+                    text = U.To0xHexString(flag) + "(" + R._("常に実行") + ")";
+                }
+                else if (Program.FlagCache.TryGetValue(flag, out text))
                 {
                     text = U.To0xHexString(flag) + "(" + text + ")";
                 }
@@ -4444,7 +4452,8 @@ namespace FEBuilderGBA
                 for (int i = 0; i < count; i++)
                 {
                     U.AddrResult ar = eventCondList[i];
-                    EventCondForm.MakeTextIDEventScan(list, ar.addr, tracelist);
+                    string info = "MAP " + U.ToHexString(mapid) + " " + ar.name;
+                    EventCondForm.MakeTextIDEventScan(list, ar.addr, info , tracelist);
                 }
 
             }
@@ -4466,7 +4475,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            EventCondForm.MakeTextIDEventScan(list, event_addr, tracelist);
+            EventCondForm.MakeTextIDEventScan(list, event_addr, name, tracelist);
         }
 
         public static uint GetMapID(List<Control> parentControls)

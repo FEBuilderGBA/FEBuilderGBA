@@ -19,6 +19,9 @@ Execute a conversation event from enemy AI.
 :新規に座標データを作成しますか？
 Do you want to create new coordinate data? 
 
+:データが損傷しているようです。\r\n危険なので、新規にデータ領域を確保してもよろしいですか？
+The data seems to be damaged.\r\nIs it safe to allocate a new data area? 
+
 :座標の領域が確保されていません。
 Coordinate area is not secured.
 
@@ -544,6 +547,9 @@ Before Promotion
 :選択中のクラス
 Selected Class
 
+:この値を0にしないでください
+Do not set this value to 0.
+
 :CC分岐
 Promotion Branches
 
@@ -590,13 +596,13 @@ Class Base Stats
 Movement Speed
 
 :待機アイコン
-Hover Map Anime
+Standing Map Anims
 
 :一般兵顔
 Generic Enemy Portrait
 
 :クラスチェンジクラス
-Promotes to:
+Menu Class:
 
 :詳細
 Details
@@ -1111,6 +1117,9 @@ Image
 :スタッフロール
 Endgame Credits
 
+:行方不明のラベル({0})が存在します。
+Missing label ({0}) exists.
+
 :準備しています
 preparing...
 
@@ -1147,15 +1156,6 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
-:難易度:難しい
-Difficulty: Hard
-
-:難易度:初めて
-Difficulty: Easy
-
-:難易度:普通
-Difficulty: Normal
-
 :このバージョンでは、章ワープを利用できません。
 Chapter warp is not available in this version.
 
@@ -1168,11 +1168,8 @@ Event
 :実行しているイベント
 Running event
 
-:マップID
-Map ID
-
 :フラグ
-flag
+Flag
 
 :メモリスロット
 Memory slot
@@ -1197,6 +1194,9 @@ General Purpose
 
 :編
 Editing
+
+:マップID
+Map ID
 
 :再生されている音楽
 Music being played.
@@ -1432,11 +1432,26 @@ Clear the current chapter.(Hotkey: Ctrl + U)
 :エミュレータへ接続
 Connect to emulator
 
-:MNC2の修正パッチを適応していないので、章ワープを利用できません。
-Chapter warp is not available because the patch for MNC2 has not been applied.
+:難易度:難しい
+Difficulty: Hard
+
+:難易度:初めて
+Difficulty: Easy
+
+:難易度:普通
+Difficulty: Normal
+
+:拠点
+World Map Nodes
+
+:MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。
+Chapter warp is not available because the patch for MNC2 has not been applied.\r\nTo use this function, the patch of MNC2 Fix is \u200b\u200brequired.
+
+:MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
+Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be in the chapter to use this feature.
 
 :MAPTASK Procsの位置を特定できませんでした
-The location of MAPTASK Procs could not be determined.
+Could not locate MAPTASK Procs.
 
 :ROMのバージョン情報:
 ROM version information:
@@ -1717,6 +1732,9 @@ Map
 :22=階段拡張
 22=Stairs Hack
 
+:C0=第4軍ターンに実行
+C0=Run on 4th Army.
+
 :0F=制圧
 0F=Seize
 
@@ -1857,6 +1875,9 @@ Turn:
 
 :常時条件:
 Flag Cond:
+
+:常に実行
+AlwaysFire
 
 :範囲条件:
 Range:
@@ -2192,7 +2213,7 @@ Vertical Arrow
 Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
 
 :ゴーゴンの卵
-Gorgon's Egg
+Gorgon Egg
 
 :羽化開始
 Hatching Starts
@@ -2213,7 +2234,7 @@ Mine
 Make a Mine trap.
 
 :SkillSystemsで追加されたDragonVeinを設定します。\r\n\r\nこのトラップを動作させるには、DragonVeinEffectIDを設定する必要があります。\r\nDragonVeinEffectは、Patchから設定します。\r\nこのトラップが発動した時に動作するイベントを記述します。\r\n\r\nゲーム中で、このトラップを有効にするには、Dragon's Bloodスキルを持ったユニットが訪れる必要があります。\r\n
-Set DragonVein added by SkillSystems.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
+Set DragonVein added by Skill System.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
 
 :選択されている開始/終了イベントを、イベント編集画面で開く
 Open the selected start / end event in the Event edit screen
@@ -2677,6 +2698,9 @@ Specify the coordinates to place the unit.\r\nYou can change the value by double
 :ユニットの座標の生データです。デバッグ用に表示しています。\r\n値の内容は、以下の通りです。\r\n1.配置前座標をushortにパックしたもの、\r\n2.配置後座標の件数、\r\n3.配置後座標のポインタ。\r\n
 It is raw data of unit coordinates.It is displayed for debugging.\r\nThe contents of the value are as follows.\r\n1.Packed in ushort coordinates before arrangement,.\r\n2.Number of coordinates after placement,.\r\n3. A pointer to the coordinates after placement.\r\n
 
+:マップ範囲外
+Out of map range
+
 :特殊
 Special
 
@@ -2699,13 +2723,19 @@ Unknown
 None
 
 :魔物
-Monster
+1=Monster
 
-:魔物ランダム
-Random Monster
+:魔物+アイテムドロップ
+Monster+ItemDrop
 
-:何かの指定
-Designation of Something
+:特殊+魔物
+Special+Monster
+
+:特殊+アイテムドロップ
+Special+ItemDrop
+
+:特殊+魔物+アイテムドロップ
+Special+Monster+ItemDrop
 
 :追加AI:
 Additional AI:
@@ -2729,7 +2759,7 @@ After placement coordinates, all data is FF.: {0} Count: {1}.
 You assigned different classes to the unit.\r\nWith this, you will mix proximity and magic at the weapon level.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.
 
 :ユニットを読込 {0} 、SkillSystemsを利用している場合、16人以上のユニットを同時にロードできません。
-Reading Units {0} If you are using SkillSystems, you can not load more than 16 units simultaneously.
+Reading Units {0} If you are using Skill System, you can not load more than 16 units simultaneously.
 
 :ユニットを読込 {0} 、50人以上のユニットを同時にロードできません。
 Load unit {0}, can not load more than 50 units simultaneously.
@@ -2749,15 +2779,6 @@ Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare 
 :ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
 In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 
-:特殊:
-Special:
-
-:移動後座標
-After Moving
-
-:配置後座標格納アドレス
-Post-place coordinate storage
-
 :/60秒
 /60sec
 
@@ -2766,6 +2787,36 @@ Post-place coordinate storage
 
 :1=鈍足
 1=Heavy Steps
+
+:1=魔物
+1=1=Monster
+
+:2=アイテムドロップ
+2=Item Drop
+
+:3=魔物+アイテムドロップ
+3=Monster+ItemDrop
+
+:4=特殊
+4=Special
+
+:5=特殊+魔物
+5=Special+Monster
+
+:6=特殊+アイテムドロップ
+6=Special+ItemDrop
+
+:7=特殊+魔物+アイテムドロップ
+7=Special+Monster+ItemDrop
+
+:特殊:
+Special:
+
+:移動後座標
+After Moving
+
+:配置後座標格納アドレス
+Post-place coordinate storage
 
 :アイテムドロップする
 Drop item
@@ -2826,12 +2877,6 @@ Event "{0}" Jumping to nonexistent label "{1}".
 
 :ポインタ「{0}」が無効です。
 The pointer "{0}" is invalid.
-
-:序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-The main Lord unit (Unit ID 0x01 or 0x02 or 0x03) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
-
-:序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-The main Lord unit (Unit ID 0x01) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
 
 :イベントポインタ「{0}」が無効です。
 Event pointer '{0}' is invalid.
@@ -3158,7 +3203,7 @@ To extend the icon, you need to apply a patch before extending the table.\r\nDo 
 Skill extension FE8N is required.\r\nWould you like to enable it?
 
 :スキル拡張 SkillSystems が必要です。\r\n有効にしますか？
-Skill extension SkillSystems is required.\r\nWould you like to enable it?
+Skill extension Skill System is required.\r\nWould you like to enable it?
 
 :FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？
 A patch is required to move the map of FE 8 without going through the world map.\r\nWould you like to enable it?
@@ -3370,11 +3415,11 @@ CG Images
 :セーブ画像
 Save image
 
-:セーブ画像取出し
-Export Saved Image
-
 :セーブ画像読込
 Import Saved image
+
+:セーブ画像取出し
+Export Saved Image
 
 :章タイトル
 Chapter Title
@@ -3761,7 +3806,7 @@ Import AP
 Export AP
 
 :移動アイコン
-Moving Map Anime
+Moving Map Anims
 
 :チェックされている場合、敵やNPCの時のパレットにも同じパレットに設定します。\r\nこのパレットを利用するユニットが、自軍以外で登場する場合は、それぞれのパレットも用意する必要があります。\r\n例えば、敵軍として登場する場合は、敵軍用のパレットを用意する必要があります。\r\nこのチェックがされている場合、自動的にそれらのパレットにも同じ値を設定します。
 If checked, the enemy and NPC's palettes will also be set to the same palette.\r\nIf units using this pallet appear outside of palyer army, you will need to prepare each pallet as well.\r\nFor example, if the unit appear as an enemy army, you need to prepare a palette for the enemy army.\r\nIf this check is done, automatically set the same value to those palettes.
@@ -4012,6 +4057,9 @@ The battle animation's palette length is incorrect.
 :戦闘アニメのパレットのが破損しています。
 The battle anime palette is damaged.
 
+:戦闘アニメのMode:{0}の冒頭のコマンドが 85 Command の 03 でありません。
+The first command of Mode:{0} in battle animation is not 03 of 85 Command.
+
 :戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。
 Battle animation Mode: {0} is broken.Frame data is insufficient.
 
@@ -4186,6 +4234,9 @@ The memory slot is from 0x00 to 0x0D.
 :警告: 下限を超えています
 Warning:The lower limit is exceeded
 
+:カウンターは、0x00～0x07 までです。
+The counter is from 0x00 to 0x07.
+
 :警告: MemorySlot0に書き込もうとしています。
 Warning: Write to MemorySlot 0.
 
@@ -4203,6 +4254,9 @@ teleportation.
 
 :フレーム秒({0}秒)
 frame sec({0} sec)
+
+:アクティブユニットの座標
+active unit's coordinate
 
 :10進数
 Decimal
@@ -4852,8 +4906,8 @@ When recovering, specify whether or not the AI will retreat.\r\nSetting 0x20 pre
 :ユニットを制御するAIを指定します。\r\nAI3は主に性格を定義します。\r\n残りHPでの回復アイテムを使うようになります。\r\n
 Specify AI to control the unit.\r\nAI 3 mainly defines personality.\r\nYou will be using restore items on the rest HP.\r\n
 
-:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\nそれ以外はよくわっていません。\r\n
-None: Specify this usually.\r\nItem Drop: Enemies will drop items.The item to be dropped is the item in the bottom item column.\r\nMonster: Place monsters according to the probability table.The class ID acts as an ID into the probability table.\r\nOther than that, I'm not doing well.\r\n
+:「なし」: 通常はこれを指定してください。\r\n「アイテムドロップ」:敵がアイテムを落とすようになります。落とすアイテムは、一番下のアイテム欄にあるアイテムです。\r\n「魔物」:確率テーブルに従って魔物を設置します。クラスIDは確率テーブルへのIDとして動作します。\r\n「特殊」:イベント命令_0x2B21を使って、敵ユニットの位置をランダム化します。\r\n
+None: Specify this usually.\r\nItem Drop: Enemies will drop items.The item to be dropped is the item in the bottom item column.\r\nMonster: Place monsters according to the probability table.\r\nThe class ID acts as an ID into the probability table.\r\nSpecial: Use event command _0x2B21 to randomize the location of enemy units.
 
 :ユニットを最終的に登場させる座標を指定します。\r\nユニットは、配置前座標から登場し、\r\nイベントで移動開始命令が指定されると、配置後座標まで移動します。\r\n
 Specify the coordinates to make the unit finally appear.\r\nThe unit appears from the coordinates before arrangement,\r\nWhen a movement start instruction is specified in an event, it moves to the post-placement coordinates.\r\n
@@ -5302,6 +5356,9 @@ Growth rate correction
 :能力補正 Venno Extends
 Ability correctionVennoExtends
 
+:関連項目
+Related item.
+
 :このバージョンのFEでは利用しません。
 Unused in this version of FE.
 
@@ -5332,8 +5389,8 @@ ASM pointer
 :7=ドーピングアイテムとCCアイテムかどうかを定義する
 7=Define whether it is Stat Booster and Promotion Items
 
-:関連項目
-Related item.
+:8=利用時のエラーメッセージを定義する
+8=Define error message when using.
 
 :アイテム利用効果
 Item "Use" Effect
@@ -5456,10 +5513,10 @@ Weapon Effectiveness
 Magic Animations
 
 :支援効果
-Support Stat Boosts
+Affinity Support Boosts
 
 :支援会話
-Support Convo's
+Support Convos
 
 :支援相手
 Supporting partner
@@ -5733,9 +5790,6 @@ Support Thresholds
 
 :道
 Roads
-
-:拠点
-World Map Nodes
 
 :OP字幕
 OP Subtitle
@@ -9155,7 +9209,7 @@ Could not install new patch.
 This patch is an old patch.\r\nIt is left in for compatibility.\r\nDo not use it normally.\r\n\r\nAre you sure you want to install it? 
 
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
-SkillSystems is already installed in this ROM.\r\nReinstalling SkillSystems is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
+Skill System is already installed in this ROM.\r\nOverinstalling Skill System is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
 
 :パッチファイルを開く
 Open patch file
@@ -9369,6 +9423,9 @@ Warning: The data has ended prematurely.addr: {0} data.Length: {1} countI: {2}.
 
 :エミュレータが動作していません。
 The emulator is not working.
+
+:OverflowException! 32bitバージョンのエミュレータを利用していますか?
+OverflowException! Are you using a 32bit version of emulator?
 
 :OpenProcess APIが失敗ました。
 The OpenProcess API failed.
@@ -9943,6 +10000,9 @@ ALERT\r\nThe map BGM must be set to 0x00010001 priority in the song table.\r\nTh
 :警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
 ALERT\r\nThe sound effects must specify a priority greater than 0x00030003 in the song table.\r\nThe current setting is:  {0}.
 
+:ソングテーブルが極端に少ないです。破損している可能性があります。
+There are extremely few song tables.It may be damaged.
+
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
 Displays the instrument table that composes songs.\r\nNormally, this doesn't need to be edited.\r\nUseful for developers or those wanting to add new instruments.
 
@@ -10362,6 +10422,12 @@ Reference data.
 
 :順番
 In order.
+
+:魔物ランダム
+Random Monster
+
+:何かの指定
+Designation of Something
 
 :00=標的00
 00=Target 00
@@ -11057,13 +11123,13 @@ Complete.
 Not implemented yet !.
 
 :SkillSystemsがインストールされていません。
-SkillSystems is not installed.
+Skill System is not installed.
 
 :スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。\r\n\r\n詳細な説明と、スキル拡張のソースコードのダウンロードは、以下のURLを参照してください。\r\n
-Build and install SkillSystems from source code.\r\nThis feature is risky, so be sure to make a backup before running it.\r\nAlso, be sure to perform a playtest after making changes.\r\nIf the playtest test fails, close FEBuilderGBA without saving because the ROM may be broken.\r\n\r\nPlease refer to the following URL for a detailed explanation and download of the source code of SkillSystems.\r\n
+Build and install Skill System from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.\r\n\r\nPlease refer to the following URL for detailed explanation and download of source code of skill extension.\r\n
 
 :ターゲット:ビルドするスキル拡張
-Target: SkillSystems to build.
+Target: Skill System to build.
 
 :ビルド開始
 Build Started
@@ -11827,6 +11893,18 @@ Save only the changed text file.\r\nConversations that exist in unmodified ROM c
 :ROMに収録されていないフォントを自動的に生成します。
 It automatically generates fonts not included in ROM.
 
+:無改造 FE8J
+Unmodified FE8J
+
+:無改造 FE8U
+Unmodified FE8U
+
+:無改造 FE7U
+Unmodified FE7U
+
+:無改造 FE7J
+Unmodified FE7J
+
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using Japanese ROM and English ROM.\r\n\r\nIn simplified mode, it translates automatically.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
@@ -12265,20 +12343,23 @@ UPS file corrupted. It doesn't meet the minimum size requirement.
 :UPSファイルが壊れています。ヘッダUPS1がありません。
 UPS file corrupted. Header UPS 1 missing.
 
-:UPSファイルが壊れています。CRCが一致しません。
-UPS file corrupted. CRC do not match.
+:UPSファイルが壊れています。CRCが一致しません。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
+UPS file corrupted. CRC do not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :現在開いているROMには適応できません。CRCが一致しません。
 Patch can't be applied to the open ROM. CRC do not match.
 
-:UPSを適応した結果が正しくありません。CRCが不一致です。
-The result of adapting the UPS is incorrect. CRC does not match.
+:UPSを適応した結果が正しくありません。CRCが不一致です。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
+The result of adapting the UPS is incorrect. CRC does not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :チェックをつけたメニューを無効にします。
 Disables the checked menu.
 
 :チェックをつけたキーを無効にします。
 Disables the checked key.
+
+:チェックをつけたキーコードを返します。
+Returns the checked key code.
 
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks.\r\n It lets the matching character use the weapon at Level E, no matter what its normal rank is.
@@ -12523,5 +12604,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:マップ範囲外
-Out of map range

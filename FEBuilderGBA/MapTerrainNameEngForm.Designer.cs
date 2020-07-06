@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.L_0_TEXT_TERRAINNAME1 = new FEBuilderGBA.TextBoxEx();
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.TextWriteButton = new System.Windows.Forms.Button();
+            this.WriteButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,11 +41,12 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.AddressPointer = new FEBuilderGBA.TextBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.L_0_TEXT_TERRAINNAME1 = new FEBuilderGBA.TextBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             this.panel3.SuspendLayout();
@@ -54,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -65,19 +66,8 @@
             this.panel4.Location = new System.Drawing.Point(286, 79);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(933, 278);
+            this.panel4.Size = new System.Drawing.Size(933, 531);
             this.panel4.TabIndex = 80;
-            // 
-            // L_0_TEXT_TERRAINNAME1
-            // 
-            this.L_0_TEXT_TERRAINNAME1.ErrorMessage = "";
-            this.L_0_TEXT_TERRAINNAME1.Location = new System.Drawing.Point(235, 5);
-            this.L_0_TEXT_TERRAINNAME1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_TEXT_TERRAINNAME1.Name = "L_0_TEXT_TERRAINNAME1";
-            this.L_0_TEXT_TERRAINNAME1.Placeholder = "";
-            this.L_0_TEXT_TERRAINNAME1.ReadOnly = true;
-            this.L_0_TEXT_TERRAINNAME1.Size = new System.Drawing.Size(169, 25);
-            this.L_0_TEXT_TERRAINNAME1.TabIndex = 80;
             // 
             // W0
             // 
@@ -112,14 +102,14 @@
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TextWriteButton
+            // WriteButton
             // 
-            this.TextWriteButton.Location = new System.Drawing.Point(765, -2);
-            this.TextWriteButton.Name = "TextWriteButton";
-            this.TextWriteButton.Size = new System.Drawing.Size(167, 30);
-            this.TextWriteButton.TabIndex = 9;
-            this.TextWriteButton.Text = "書き込み";
-            this.TextWriteButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Location = new System.Drawing.Point(765, -2);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(167, 30);
+            this.WriteButton.TabIndex = 9;
+            this.WriteButton.Text = "書き込み";
+            this.WriteButton.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -157,7 +147,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(265, 1);
+            this.label9.Location = new System.Drawing.Point(265, -1);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 30);
             this.label9.TabIndex = 24;
@@ -192,7 +182,7 @@
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(-1, 0);
+            this.label16.Location = new System.Drawing.Point(-1, -1);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 30);
             this.label16.TabIndex = 1;
@@ -202,37 +192,15 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.AddressPointer);
+            this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.BlockSize);
-            this.panel5.Controls.Add(this.TextWriteButton);
+            this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(286, 49);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(934, 30);
             this.panel5.TabIndex = 78;
-            // 
-            // AddressPointer
-            // 
-            this.AddressPointer.ErrorMessage = "";
-            this.AddressPointer.Location = new System.Drawing.Point(92, 3);
-            this.AddressPointer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.AddressPointer.Name = "AddressPointer";
-            this.AddressPointer.Placeholder = "";
-            this.AddressPointer.ReadOnly = true;
-            this.AddressPointer.Size = new System.Drawing.Size(169, 25);
-            this.AddressPointer.TabIndex = 54;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(386, -2);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 53;
             // 
             // panel6
             // 
@@ -241,7 +209,7 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(20, 53);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(258, 304);
+            this.panel6.Size = new System.Drawing.Size(258, 557);
             this.panel6.TabIndex = 146;
             // 
             // LabelFilter
@@ -256,22 +224,59 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // Address
+            // 
+            this.Address.Hexadecimal = true;
+            this.Address.Location = new System.Drawing.Point(90, 3);
+            this.Address.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(125, 25);
+            this.Address.TabIndex = 81;
+            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(258, 274);
+            this.AddressList.Size = new System.Drawing.Size(258, 527);
             this.AddressList.TabIndex = 0;
+            // 
+            // L_0_TEXT_TERRAINNAME1
+            // 
+            this.L_0_TEXT_TERRAINNAME1.ErrorMessage = "";
+            this.L_0_TEXT_TERRAINNAME1.Location = new System.Drawing.Point(235, 5);
+            this.L_0_TEXT_TERRAINNAME1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_TEXT_TERRAINNAME1.Name = "L_0_TEXT_TERRAINNAME1";
+            this.L_0_TEXT_TERRAINNAME1.Placeholder = "";
+            this.L_0_TEXT_TERRAINNAME1.ReadOnly = true;
+            this.L_0_TEXT_TERRAINNAME1.Size = new System.Drawing.Size(169, 25);
+            this.L_0_TEXT_TERRAINNAME1.TabIndex = 80;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(386, -2);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 53;
             // 
             // MapTerrainNameEngForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1237, 369);
+            this.ClientSize = new System.Drawing.Size(1237, 622);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -289,6 +294,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +303,7 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button TextWriteButton;
+        private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label8;
@@ -311,8 +317,8 @@
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label J_0_TEXT;
         private FEBuilderGBA.TextBoxEx BlockSize;
-        private FEBuilderGBA.TextBoxEx AddressPointer;
         private FEBuilderGBA.TextBoxEx L_0_TEXT_TERRAINNAME1;
         private System.Windows.Forms.NumericUpDown W0;
+        private System.Windows.Forms.NumericUpDown Address;
     }
 }

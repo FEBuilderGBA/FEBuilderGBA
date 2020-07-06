@@ -1,0 +1,19 @@
+08028E00=-	{J}
+08028D88=Torch	{J}
+08028D88=Stat Booster	{J}
+08028DCC=Promotion Items	{J}
+08028D90=Chest Key	{J}
+08028D98=Door Key	{J}
+08028DA0=Lockpick	{J}
+08028D88=Vulnerary, Elixir	{J}
+08028DF8=Juna Fruit	{J}
+
+08028E54=-	{U}
+08028DDC=Torch	{U}
+08028DDC=Stat Booster	{U}
+08028E20=Promotion Items	{U}
+08028DE4=Chest Key	{U}
+08028DEC=Door Key	{U}
+08028DF4=Lockpick	{U}
+08028DDC=Vulnerary, Elixir	{U}
+08028E4C=Juna Fruit	{U}

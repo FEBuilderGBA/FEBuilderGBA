@@ -12,3 +12,5 @@ EA=Installer.event
 
 AUTHOR=7743
 NAME.zh=在战斗动画中设置多个舞者BGM 20191020(Install)
+DEPRECATED=1
+UPDATE_PATCH=..\MultiDancerForBattleAnimeBGM_20200610\PATCH_MultiDancerForBattleAnimeBGM_install.txt

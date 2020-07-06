@@ -555,7 +555,7 @@ EXPORT:1=skillGetter.dmp	Skill_Getter
 UPDATE_METHOD=SKILLSYSTEM
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20200512\PATCH_Skill20200512.txt
+UPDATE_PATCH=..\skill20200604\PATCH_Skill20200604.txt
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
 UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
@@ -567,5 +567,5 @@ UPDATE_UNINSTALL:8=..\SummonEXP\PATCH_SummonEXP.txt
 UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
 UPDATE_UNINSTALL:10=..\Use Item Might for Healing\PATCH_Use Item Might for healing.txt
 UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
-UPDATE_UNINSTALL:12=..\class_save_fix\PATCH_class_save_fix.txt
-UPDATE_UNINSTALL:13=..\Class expansion\PATCH_class_save_fix.txt
+
+

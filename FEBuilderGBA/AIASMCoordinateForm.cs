@@ -26,11 +26,36 @@ namespace FEBuilderGBA
                 DialogResult dr = R.ShowYesNo(alllocQMessage);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    src.Value = U.toPointer(NewAlloc());
+                    uint addr = U.toPointer(NewAlloc());
+                    U.ForceUpdate(src, addr);
+                }
+            }
+            else if (IsBrokenData((uint)src.Value))
+            {
+                string alllocQMessage = R._("データが損傷しているようです。\r\n危険なので、新規にデータ領域を確保してもよろしいですか？");
+                DialogResult dr = R.ShowYesNo(alllocQMessage);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    uint addr = U.toPointer(NewAlloc());
+                    U.ForceUpdate(src, addr);
                 }
             }
             return (uint)src.Value;
         }
+        bool IsBrokenData(uint addr)
+        {
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr + 4))
+            {
+                return true;
+            }
+            if (Program.ROM.u16(addr + 2) == 0)
+            {//問題なし
+                return false;
+            }
+            return true;
+        }
+
         public void JumpToAddr(uint addr)
         {
             addr = U.toOffset(addr);

@@ -22,6 +22,13 @@ namespace FEBuilderGBA
             }
 
             //不明な場合は、現在の拠点IDを返す.
+            return GetCurrentWorldmapNode();
+        }
+        public static uint GetCurrentWorldmapNode()
+        {
+            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+
+            //不明な場合は、現在の拠点IDを返す.
             uint gSomeWMEventRelatedStruct;
             if (Program.ROM.RomInfo.is_multibyte())
             {//FE8J
@@ -31,8 +38,89 @@ namespace FEBuilderGBA
             {//FE8U
                 gSomeWMEventRelatedStruct = 0x03005280;
             }
-            nodeid = Program.RAM.u8(gSomeWMEventRelatedStruct + 0x11);
+            uint nodeid = Program.RAM.u8(gSomeWMEventRelatedStruct + 0x11);
             return nodeid;
+        }
+        //編を求める
+        public static uint GetEdition()
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {//6には編が存在しない.
+                return U.NOT_FOUND;
+            }
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint ramPointer = stageStructAddr + 0x1B;
+            return Program.RAM.u8(ramPointer);
+        }
+        public static string ConvertEditionToString(uint v)
+        {
+            if (v == U.NOT_FOUND)
+            {
+                return "";
+            }
+            string ret = U.ToHexString(v);
+            string edition = InputFormRef.GetEditon(v);
+            if (edition == "")
+            {
+                edition = "???";
+            }
+            return ret + "=" + edition;
+        }
+        //難易度を求める.
+        public static uint GetDiffecly()
+        {
+            uint ret = 0;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+
+            uint ramPointer1 = stageStructAddr + 0x14;
+            uint v = Program.RAM.u8(ramPointer1);
+            if ((v & 0x40) == 0x40)
+            {
+                ret = ret | 0x40;//難しい
+            }
+
+            uint ramPointer2 = stageStructAddr + 0x42;
+            v = Program.RAM.u8(ramPointer2);
+            if ((v & 0x20) == 0x20)
+            {
+                ret = ret | 0x20;//初めてではない
+            }
+
+            return ret;
+        }
+        public static string ConvertDiffeclyToString(uint v)
+        {
+            string ret = "";
+            if ((v & 0x40) == 0x40)
+            {
+                ret += R._("難易度:難しい");
+                ret += " ";
+            }
+            if ((v & 0x20) != 0x20)
+            {
+                ret += R._("難易度:初めて");
+                ret += " ";
+            }
+            if (ret == "")
+            {
+                ret += R._("難易度:普通");
+                ret += " ";
+            }
+            return ret;
+        }
+        public static string ConvertWorldmapNodeToString(uint v)
+        {
+            if (v == U.NOT_FOUND)
+            {
+                return "";
+            }
+            string ret = U.ToHexString(v);
+            string edition = WorldMapPointForm.GetWorldMapPointName(v);
+            if (edition == "")
+            {
+                edition = "???";
+            }
+            return R._("拠点") + ": " + ret + "=" + edition;
         }
 
         public static void CHEAT_WARP_FE8(EmulatorMemoryForm form, uint warp_chapter, uint edtion, uint worldmap_node)
@@ -45,10 +133,9 @@ namespace FEBuilderGBA
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
 
-            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
-            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
+            if (! PatchUtil.IsWarpChapterFE8(warp_chapter))
             {
-                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。");
+                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。");
                 return;
             }
             if (Program.ROM.RomInfo.is_multibyte())
@@ -70,7 +157,7 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
 

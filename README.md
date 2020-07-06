@@ -1,42 +1,44 @@
 FE_Builder_GBA
 ===
-This is a ROM editor of FE GBA trilogy.  
-Support to FE8J FE7J FE6 FE8U FE7U.  
+This is a ROM hacking suite for the Trilogy of Fire Emblem games for the Game Boy Advance.
+The editor supports
+ * FE6 (The Binding Blade)
+ * FE7J/FE7U (The Blazing Blade)
+ * FE8J/FE8U (The Sacred Stones)
+Essentially, both Japanese and North American releases of all games (with the exception of FE6 being Japan-only) are supported.
 
-With reference to the screen of Project_FE_GBA,  
-We support a wide range of functions from image display, import export, map remodeling.  
+Starting from the main screen, FEBuilder supports a wide range of functions from image displaying, importing and export of most data, map remodeling, table editing, community patch management, music insertion, and much more. 
 
-I wanted this kind of function I thought when making a Kaitou patch!  
+This suite was made at first to help make my Kaitou patch easier to create!
 
 The origin of the name is from 某LAND.  
-However, the development language is C#. (People inside are together ...)  
+However, the development language is C#. (We're in this together...)  
 
-Naturally, open source.  
+Of course, it's open source.
 The license of the source code is GPL3.  
-Please use it freely.  
+Please use it freely with no limitations.
 
-To make this, I referred to various data and Communities.  
-We would like to thank our predecessors who released the analyzed data.  
+Much of this project's functions are thanks to the data collected by various communities and people.
+We would like to thank our hacking predecessors who have publicly shared any analyzed data. 
 
-
-Details (There is a commentary at the bottom of the page)  
+Details (There is a commentary at the bottom of the page, and the wiki provides other instructions)  
 https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:index
 
+This software has no association with the official products.  
+We do not need any donations as we are making this software non-commercial. 
 
-This software has nothing to do with official.  
-We do not need donation as we are making this software Non commercial.  
-
-If you really want to donate,donate to the charitable organization supporting the freedom of speech on the Internet, Freedom of Expression, including the EFF Electronic Frontier Foundation.  
+If you really want to donate to someone, donate to the charitable organization supporting the freedom of speech on the Internet, **Freedom of Expression**, including the **EFF Electronic Frontier Foundation**. 
 
 Of course, you are free to write articles about FEBuilderGBA.  
-In some cases, you may earn pocket money with affiliate. :)  
+In some cases, you may earn some pocket money through affiliates. :)  
 However, please do it at your own risk. :(  
 
-If you have something you do not understand from hackrom, please read "Manual" in "Help".  
-If you find a bug that you can not solve by any means, please create report.7z from 'File' -> 'Menu' -> 'Create Report Issue' and consult with the community.(Do NOT send the ROM)  
+If you have something you do not understand through hacking or the editor, please read "Manual" in "Help".  
+If you find a bug that you can not solve by any means, please create report.7z from 'File' -> 'Menu' -> 'Create Report Issue' and consult with the community.
+https://discordapp.com/invite/Yzztqqa
+Do NOT send your ROM (.gba) directly.
 
 https://github.com/FEBuilderGBA/FEBuilderGBA
-
 
 FE_Builder_GBA
 ===
@@ -73,7 +75,9 @@ https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:index
 ただし、あなたの責任において実施してください。 :(  
 
 もし、hackromでわからないことがあれば、「ヘルプ」の「マニュアル」を読んでください。  
-どうしても解決しないバグが発生した場合は、「メニュー」の「ファイル」->「問題報告ツール」から、report.7zを作成して、コミニティに相談してください。(ROMは送信しないでください。)  
+どうしても解決しないバグが発生した場合は、「メニュー」の「ファイル」->「問題報告ツール」から、report.7zを作成して、コミニティに相談してください。
+https://discordapp.com/invite/Yzztqqa
+(ROMは送信しないでください。)  
 
 https://github.com/FEBuilderGBA/FEBuilderGBA
 
@@ -114,5 +118,7 @@ https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:index
 但是，请自行承担风险。 :(  
 
 如果你有一些你从hackrom不能理解的东西，请阅读“帮助”中的“手册”。  
-如果您发现无法解决的错误，请在'菜单'的'文件' -> '问题报告工具'中创建report.7z，并咨询社区。（请不要发送ROM。）  
+如果您发现无法解决的错误，请在'菜单'的'文件' -> '问题报告工具'中创建report.7z，并咨询社区。
+https://discordapp.com/invite/Yzztqqa
+（请不要发送ROM。）  
 https://github.com/FEBuilderGBA/FEBuilderGBA

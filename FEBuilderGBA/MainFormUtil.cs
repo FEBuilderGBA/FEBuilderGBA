@@ -857,6 +857,12 @@ namespace FEBuilderGBA
             }
 
             Elf elf = new Elf(output_temp_filename , useHookMode: false);
+            string lostLabelErrorMessage = elf.CheckLostLabel();
+            if (lostLabelErrorMessage != "")
+            {
+                output = lostLabelErrorMessage;
+                return false;
+            }
             out_symbol = elf.ToEASymbol();
 
             //Extract raw assembly binary (text section) from elf
@@ -868,7 +874,7 @@ namespace FEBuilderGBA
             Log.Notify(out_symbol);
 
             output = output_temp_filename;
-            if (compileType == CompileType.KEEP_ELF)
+            if (compileType != CompileType.KEEP_ELF)
             {
                 File.Delete(target + ".elf");
             }

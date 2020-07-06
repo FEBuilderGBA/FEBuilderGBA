@@ -1,0 +1,15 @@
+NAME=Load時に、HPを5に固定する特殊クラス1
+NAME.en=Special class 1 to that fixes HP to 5 when load
+
+INFO=バニラでは、ゴーゴンの卵は、HPを5に固定されます。
+INFO.en=In vanilla, Gorgon's eggs are fixed at 5 HP
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17CF8
+ADDRESS_TYPE=CLASS
+
+AUTHOR=7743
+NAME.zh=特殊类，可在加载1时将HP固定为5。
+INFO.zh=在香草中，G实的卵固定为5 HP。

@@ -1,0 +1,11 @@
+NAME=画像 戦闘開始時の回転する床
+NAME.en=Image: Rotating floor at start of battle.
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=64
+
+ZIMAGE_POINTER=0x5E3DD8//0x0E0E2C
+PALETTE_POINTER=0x057514//0x0E186C
+NAME.zh=Image战斗开始时旋转的地板。

@@ -8,3 +8,5 @@ HEIGHT=32
 
 ZIMAGE_POINTER=0x0A8400//0xA1FBD8
 PALETTE_POINTER=0x0A8408//0xA1FFB0
+INFO.en=Map tiles used for the minimap.
+INFO.zh=用于小地图的地图图块。

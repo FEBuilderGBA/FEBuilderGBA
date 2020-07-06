@@ -62,7 +62,7 @@
             this.ChangeComboBox.Location = new System.Drawing.Point(550, -1);
             this.ChangeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.ChangeComboBox.Name = "ChangeComboBox";
-            this.ChangeComboBox.Size = new System.Drawing.Size(148, 26);
+            this.ChangeComboBox.Size = new System.Drawing.Size(198, 26);
             this.ChangeComboBox.TabIndex = 6;
             this.ChangeComboBox.SelectedIndexChanged += new System.EventHandler(this.ChangeComboBox_SelectedIndexChanged);
             // 

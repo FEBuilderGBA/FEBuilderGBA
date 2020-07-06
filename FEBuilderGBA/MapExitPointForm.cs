@@ -17,7 +17,9 @@ namespace FEBuilderGBA
 
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.N_InputFormRef.CheckProtectionAddrHigh = false;
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false;
 
             //マップを最前面に移動する.
             MapPictureBox.BringToFront();

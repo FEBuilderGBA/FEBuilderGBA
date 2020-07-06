@@ -1,0 +1,6 @@
+PUSH
+//Efficiency fix for FillAIDangerMap
+	ORG $3E320
+	#incbin "FillAIDangerMap.dmp"
+POP
+

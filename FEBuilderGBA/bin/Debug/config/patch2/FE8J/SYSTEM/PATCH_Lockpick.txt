@@ -1,0 +1,13 @@
+
+NAME=とうぞくのかぎのアイテムID
+NAME.en=Lockpick ItemID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x187CC
+ADDRESS_TYPE=ITEM
+AUTHOR=Suusuke
+
+NAME.zh=盗贼钥匙 ItemID

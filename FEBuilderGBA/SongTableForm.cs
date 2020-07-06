@@ -183,6 +183,27 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+            if (InputFormRef.DataCount < 10)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SONGTABLE, U.NOT_FOUND
+                    , R._("ソングテーブルが極端に少ないです。破損している可能性があります。")));
+            }
+
+            uint songtable_addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, songtable_addr += InputFormRef.BlockSize)
+            {
+                uint song_header = Program.ROM.u32(songtable_addr + 0);
+                if (song_header == 0)
+                {
+                    continue;
+                }
+                FELint.CheckPointerAlien4(song_header, errors, FELint.Type.SONGTABLE, songtable_addr, i);
+            }
+        }
+
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {

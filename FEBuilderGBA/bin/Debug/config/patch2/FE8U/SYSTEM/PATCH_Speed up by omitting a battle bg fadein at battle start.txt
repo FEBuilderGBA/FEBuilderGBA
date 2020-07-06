@@ -1,0 +1,22 @@
+NAME=戦闘開始時の戦闘背景のフェードインを省略し速度を上げる
+NAME.en=Speed up by omitting a battle bg fadein at battle start
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|omit: FAST|ONN
+
+DETERMINATION_ADDRESS=0x560A6
+
+//バトル2の背景描画を高速化する
+OFF:0x560A6=0x1B 0xF0 0x03 0xF9
+ONN:0x560A6=0x00 0x00 0x00 0x00
+OFF:0x560BA=0x04 0xD1
+ONN:0x560BA=0x00 0x00
+
+AUTHOR=7743
+INFO=戦闘開始時には、周囲を暗くして、床とユニットを拡大して、表示するという処理が入ります。だいたい1-2秒程度ですが、この演出をできる限り省略して高速化します。
+INFO.en=At the start of the battle, the process of darkening the surroundings and enlarging the floor and units to display them will occur.It takes about 1-2 seconds, but I will omit this production as much as possible to speed up.
+NAME.zh=在战斗开始时忽略战斗背景的淡入，并提高速度。
+INFO.zh=在战斗开始时，将发生使周围环境变暗，扩大地板和单位以显示周围环境的过程。这大约需要1-2秒，但我会尽可能省略此制作以加快速度。

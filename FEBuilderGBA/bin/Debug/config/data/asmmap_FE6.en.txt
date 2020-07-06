@@ -587,10 +587,10 @@
 @ChapterData@15	byte	Weather	(0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 @ChapterData@16	short	Number of support points gained this chapter?
 @ChapterData@1B	byte	Mode	(1=prologue-8, 2=Eirika 3=Ephraim)
-@ChapterData@40	byte	Option1	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
+@ChapterData@1C	byte	Option1	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
 &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
-@ChapterData@41	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
-@ChapterData@42	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
+@ChapterData@1D	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
+@ChapterData@1E	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
 202AA48	@ChapterData	ChapterData
 @CharacterBattleStatistic@00	byte	Losses
 @CharacterBattleStatistic@01	short	Number of times a unit performs an action (seems to increase by 2) (non-aligned halfword)
@@ -1464,4 +1464,17 @@
 @ClearTurn@00	short	Chapter ID and number of turns	Number of turns<<7+Chapter ID
 @ClearTurn@02	short	Clear time seconds
 0203D994	@ClearTurn@[20]	Chapter Clear Turn
+080169e4	EquipUnitItemByIndex
+08041fa4	Menu_CallTextBox
 080877AC	CopyMiniMapTerrainChips
+0801FA14	UseCommandUsability
+0801FB00	UseCommandUsability
+08022A20	EquipCommandUsability
+0801FB68	EquipCommandEffect
+0801F444	TradeCommandUsability
+0801FBA8	TradeCommandEffect
+0801FACC	DiscardCommandUsability
+0801FBDC	DiscardCommandEffect
+08023278	ItemEffect_ErrorMessage
+0802348C	ItemEffect_Call
+08041678	ClearBG0BG1

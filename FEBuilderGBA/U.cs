@@ -1702,11 +1702,11 @@ namespace FEBuilderGBA
         public static uint ParseFE8UnitPosExtraBit(uint unitpos)
         {
             Debug.Assert(Program.ROM.RomInfo.version() >= 8); //FE8限定
-            return (unitpos >> 12) & 0x3;
+            return (unitpos >> 12) & 0x7;
         }
         public static uint MakeFe8UnitPos(uint x, uint y, uint ext)
         {
-            return (x & 0x3F) | ((y & 0x3F) << 6) | ((ext & 0x3) << 12);
+            return (x & 0x3F) | ((y & 0x3F) << 6) | ((ext & 0x7) << 12);
         }
 
         public static bool SelectedIndexSafety(ListBox list, decimal selectID, bool selectFocus = false)
@@ -7126,6 +7126,16 @@ namespace FEBuilderGBA
                 return (uint)c.Value;
             }
             return (uint)((int)c.Value);
+        }
+
+        public static void SetActiveControl(Control c)
+        {
+            Form f = ControlToParentForm(c);
+            if (f == null)
+            {
+                return;
+            }
+            f.ActiveControl = c;
         }
     }
 }

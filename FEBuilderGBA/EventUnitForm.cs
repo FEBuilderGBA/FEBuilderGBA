@@ -489,8 +489,12 @@ namespace FEBuilderGBA
                 class_id = UnitForm.GetClassID(unit_id);
             }
 
-
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3 
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
             return ClassForm.DrawWaitIcon(class_id, palette_type,true);
         }
 
@@ -535,6 +539,11 @@ namespace FEBuilderGBA
             List<MapPictureBox.StaticItem> list = new List<MapPictureBox.StaticItem>();
 
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
@@ -638,6 +647,11 @@ namespace FEBuilderGBA
             MapPictureBox.StaticItem st;
 
             int palette_type = (int)U.ParseUnitGrowAssign(unitgrow);
+            if (palette_type == 3
+                && PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                palette_type = 4; //第4の忠誠
+            }
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
@@ -1105,7 +1119,7 @@ namespace FEBuilderGBA
             {
                 int mapwidth = this.MapPictureBox.GetMapBitmapWidth() / 16;
                 int mapheight = this.MapPictureBox.GetMapBitmapHeight() / 16;
-                if (p.x > mapwidth || p.y > mapheight)
+                if (p.x >= mapwidth || p.y >= mapheight)
                 {
                     bounds.X += U.DrawText(R._("マップ範囲外"), g, boldFont, errorBrush, isWithDraw, bounds);
                 }
@@ -1179,9 +1193,15 @@ namespace FEBuilderGBA
                 case 2:
                     return R._("アイテムドロップ");
                 case 3:
-                    return R._("魔物ランダム");
+                    return R._("魔物+アイテムドロップ");
                 case 4:
-                    return R._("何かの指定");
+                    return R._("特殊");
+                case 5:
+                    return R._("特殊+魔物");
+                case 6:
+                    return R._("特殊+アイテムドロップ");
+                case 7:
+                    return R._("特殊+魔物+アイテムドロップ");
                 default:
                     return R._("不明") + U.To0xHexString(ext);
             }
@@ -1978,7 +1998,7 @@ namespace FEBuilderGBA
             int mapwidth = this.MapPictureBox.GetMapBitmapWidth() / 16;
             int mapheight = this.MapPictureBox.GetMapBitmapHeight() / 16;
 
-            if (F_X.Value > mapwidth || F_Y.Value > mapheight)
+            if (F_X.Value >= mapwidth || F_Y.Value >= mapheight)
             {
                 COORD_PANEL.ErrorMessage = R._("座標がマップの範囲外です。");
             }
@@ -2461,13 +2481,13 @@ namespace FEBuilderGBA
             PushUndo();
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                this.FE8CoordList[0].ext = 2;
+                this.FE8CoordList[0].ext |= 0x2;
             }
             else if (dr == System.Windows.Forms.DialogResult.No)
             {
-                if (this.FE8CoordList[0].ext == 2)
+                if ((this.FE8CoordList[0].ext & 0x2) == 0x2)
                 {
-                    this.FE8CoordList[0].ext = 0;
+                    this.FE8CoordList[0].ext -= 0x2;
                 }
             }
             //移動リストの再描画
@@ -2500,7 +2520,7 @@ namespace FEBuilderGBA
                 ext = this.FE8CoordList[0].ext;
             }
 
-            if (ext == 2)
+            if ((ext & 0x2) == 0x2)
             {//アイテムドロップ
                 X_ITEMDROP.Text = R._("アイテムドロップ: ドロップする");
                 X_ITEMDROP.ForeColor = OptionForm.Color_ControlComment_ForeColor();
@@ -2546,7 +2566,7 @@ namespace FEBuilderGBA
                 ext = this.FE8CoordList[0].ext;
             }
 
-            if (ext == 1 )
+            if ( (ext & 0x1) == 0x01 )
             {
                 return true;
             }

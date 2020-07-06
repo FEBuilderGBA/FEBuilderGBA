@@ -189,6 +189,7 @@ namespace FEBuilderGBA
         uint systemmenu_badstatus_old_image_pointer(); //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
 
         uint bigcg_pointer(); // CG
+        uint end_cg_address(); // END CG FE8のみ
         uint worldmap_big_image_pointer(); //ワールドマップ フィールドになるでかい奴  
         uint worldmap_big_palette_pointer(); //ワールドマップ フィールドになるでかい奴 パレット  
         uint worldmap_big_dpalette_pointer(); //ワールドマップ フィールドになるでかい奴 闇パレット  
@@ -320,6 +321,8 @@ namespace FEBuilderGBA
         uint item_statbooster1_array_switch2_address();
         uint item_statbooster2_array_pointer();    //ドーピングアイテムとCCアイテムかどうかを定義する
         uint item_statbooster2_array_switch2_address();
+        uint item_errormessage_array_pointer();    //アイテム利用時のエラーメッセージ
+        uint item_errormessage_array_switch2_address();
         uint event_function_pointer_table_pointer();    //イベント命令ポインタ
         uint event_function_pointer_table2_pointer();    //イベント命令ポインタ2 ワールドマップ
         uint item_effect_pointer_table_pointer();   //間接エフェクトポインタ
@@ -377,12 +380,12 @@ namespace FEBuilderGBA
         uint menu_J12_hide_address();   //メニューの表示判定関数 表示しない
         uint status_game_option_pointer(); //ゲームオプション
         uint status_game_option_order_pointer(); //ゲームオプションの並び順
+        uint status_game_option_order2_pointer(); //ゲームオプションの並び順2 FE7のみ
         uint status_game_option_order_count_address(); //ゲームオプションの個数
         uint status_units_menu_pointer(); //部隊メニュー
         uint tactician_affinity_pointer(); //軍師属性(FE7のみ)
         uint event_final_serif_pointer(); //終章セリフ(FE7のみ)
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
-        uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
         uint patch_C01_hack(out uint enable_value); //C01 patch
         uint patch_C48_hack(out uint enable_value); //C48 patch
         uint patch_16_tracks_12_sounds(out uint enable_value); //16_tracks_12_sounds patch

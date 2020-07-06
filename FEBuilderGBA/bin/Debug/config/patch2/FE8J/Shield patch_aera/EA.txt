@@ -1,0 +1,104 @@
+
+
+PUSH
+//////////MAX HPage
+ORG 0x18EBA
+SHORT	$2200
+WORD	$469F4B00
+POIN	TANTE_hose
+
+//////////力age
+//ORG 0x18EDA
+//SHORT	$2201
+//WORD	$469F4B00
+//POIN	TANTE_hose
+//力age 魔力分離パッチと同時に動くようにする
+//ORG 0x18ED4
+//WORD	$469F4B00
+//POIN	TANTE_hose_power
+ORG 0x161DA
+BYTE    0 0
+WORD	$469F4B00
+POIN	TANTE_hose_power2
+
+//////////技age
+ORG 0x18F1A
+SHORT	$2202
+WORD	$469F4B00
+POIN	TANTE_hose
+
+//////////速さage
+ORG 0x18F5A
+SHORT	$2203
+WORD	$469F4B00
+POIN	TANTE_hose
+
+//////////幸運age
+ORG 0x18FC2
+SHORT	$2206
+WORD	$469F4B00
+POIN	TANTE_hose
+
+//////////魔力age
+//SHORT	$2208
+//WORD	$469F4B00
+//POIN	TANTE_hose
+
+//////////移動age
+//SHORT	$2207
+//WORD	$469F4B00
+//POIN	TANTE_hose
+
+
+//////////守備age
+
+ORG 0x18f7a
+SHORT	$2204
+WORD	$469F4B00
+POIN	TANTE_hose
+
+
+//////////魔防age
+
+ORG	0x18fa2
+SHORT	$2205
+WORD	$469F4B00
+POIN	TANTE_hose
+
+POP
+
+ALIGN 4
+TANTE_hose:
+#incbin "hose.dmp"
+
+ALIGN 4
+TANTE_hose_power2:
+#incbin "hose_power2.dmp"
+POIN TANTE_hose
+
+///////////破損
+
+PUSH
+//ORG 0x2aec0 突撃パッチと被ったのでずらす
+ORG 0x02aec8
+WORD	$46874800
+POIN	TANTE_hasso
+POP
+
+ALIGN 4
+TANTE_hasso:
+#incbin "hason.dmp"
+
+
+//////////盾計算
+PUSH
+ORG 0x2b3b0
+WORD	$46874800
+POIN	TANTE_tan
+POP
+
+ALIGN 4
+TANTE_tan:
+#incbin "tan.dmp"
+
+ALIGN 4
