@@ -9,3 +9,6 @@ AUTHOR=Venno
 
 INFO.en=Give the item the effect of changing Growth Rate.\r\nYou need Passive Boosts Patches for this patch to work.\r\nIf you set 1 to Growth_Mod of the 34nd byte of an item, you can have the effect of growth rate correction.\r\nThis patch requires more data than a normal statbooster.\r\nAfter setting this extension flag to 1, secure the statbooster area.\r\nIf you have already secured, set the statbooster address to 0 and reserve it again.\r\n
 INFO.zh=给项目改变增长率的效果。\r\n如果将1设置为项目的第34个字节的Growth_Mod，则可以获得增长率修正的效果。\r\n您需要Passive Boosts补丁才能使用此补丁。\r\n此补丁需要比普通statbooster更多的数据。\r\n将此扩展标志设置为1后，保护statbooster区域。\r\n如果您已经安全，请将statbooster地址设置为0并再次保留。\r\n
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

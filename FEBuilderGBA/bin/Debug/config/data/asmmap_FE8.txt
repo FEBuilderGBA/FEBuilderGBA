@@ -11004,7 +11004,7 @@
 0803ba10	AiTryMoveTowards	{J}
 0803bd70	FindClosestBestPosition	{J}
 0803BF14	AiIsCharacterOnMap	{J}
-0803BF66	AiArePointsWithinDistance	{J}
+0803BF60	AiArePointsWithinDistance	{J}
 0803BFA4	AiIsPositionLootable	{J}
 0803C420	AiFillMovementMapForUnit	{J}
 0803C44C	AiExecAi1	{J}
@@ -12792,3 +12792,19 @@
 080A32F0	IsEnableExtraMenuNetworkArena	{U}
 080A33EC	IsEnableExtraMenuFreemap	{U}
 08095240	PrepMenu_PressStart_To_Battle	{U}
+089EE97C	&EVENT	塔や遺跡を出た時のイベント	{U}
+08037CA0	&EVENT	塔や遺跡内で、敵を200撃破した場合、RievとHaydenを加入するフラグをONにする	{U}
+030017ac	gBeforeDungeonState	{U}
+030017C4	gDungeonSomething	{U}
+08037E4C	SaveBeforeDungeonState	{U}
+08037E64	LoadBeforeDungeonState	{U}
+08037E08	SaveDungeonState	{U}
+08037E30	LoadDungeonState	{U}
+08A60AB4	&EVENT	塔や遺跡を出た時のイベント	{J}
+08037D38	&EVENT	塔や遺跡内で、敵を200撃破した場合、RievとHaydenを加入するフラグをONにする	{J}
+030017A4	gBeforeDungeonState	{J}
+030017BC	gDungeonSomething	{J}
+08037F34	SaveDungeonState	{J}
+08037F5C	LoadDungeonState	{J}
+08037F78	SaveBeforeDungeonState	{J}
+08037F90	LoadBeforeDungeonState	{J}
