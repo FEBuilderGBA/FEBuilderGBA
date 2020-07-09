@@ -1,0 +1,42 @@
+NAME=ユニット同士の距離を求める(イベント命令)
+NAME.en=Add Event: GetUnitDistance
+NAME.zh=Add Event: GetUnitDistance
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetUnitDistance.dmp=0x70 0xB5 0x11 0x4E
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetUnitDistance.dmp
+BIN:$FREEAREA:2=ASMC_GetUnitDistanceCoord.dmp
+
+AUTHOR=Snakey1 https://feuniverse.us/t/asm-request-suggestion-get-unit-distance/8640
+
+INFO=ユニット同士の距離を求めてSlotCに返します。
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetUnitDistance.dmp}	Slot1とSlot2のユニットの距離を求める(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	[XX:UNIT:Unit1]と[YY:UNIT:Unit2]の距離を求める	@STOREC	{COND}
+EVENTSCRIPT:3=40050100FFFFFFFF40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	操作中のユニットと[YY:UNIT:Unit]の距離を求める	@STOREC	{COND}
+EVENTSCRIPT:11=400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Slot1のユニットとSlotBの座標の距離を求める(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12=40050100ZZZZZZZZ40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	[ZZ:UNIT:Unit]と[XX:MAPX:X][YY:MAPY:Y]の距離を求める	@STOREC	{COND}
+EVENTSCRIPT:13=40050100FFFFFFFF40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	操作中のユニットと[XX:MAPX:X][YY:MAPY:Y]の距離を求める	@STOREC	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in Slot1 and Slot2(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2.en=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in [XX:UNIT:Unit1] and [YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:3.en=40050100FFFFFFFF40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in CurrentUnit and [YY:UNIT:Unit]	@STOREC	{COND}
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between Unit of Slot1 and Coordinates of SlotB(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12.en=40050100ZZZZZZZZ40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between [ZZ:UNIT:Unit] and Coordinates of [XX:MAPX:X][YY:MAPY:Y]	@STOREC	{COND}
+
+EVENTSCRIPT:13.en=40050100FFFFFFFF40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between CurrentUnit and Coordinates of [XX:MAPX:X][YY:MAPY:Y]	@STOREC	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in Slot1 and Slot2(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2.zh=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in [XX:UNIT:Unit1] and [YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:3.zh=40050100FFFFFFFF40050200YYYYYYYY400D0000{$L1:ASMC_GetUnitDistance.dmp}	Get Distance between Units in CurrentUnit and [YY:UNIT:Unit]	@STOREC	{COND}
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between Unit of Slot1 and Coordinates of SlotB(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12.zh=40050100ZZZZZZZZ40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between [ZZ:UNIT:Unit] and Coordinates of [XX:MAPX:X][YY:MAPY:Y]	@STOREC	{COND}
+
+EVENTSCRIPT:13.zh=40050100FFFFFFFF40050B00XXXXYYYY400D0000{$L1:ASMC_GetUnitDistanceCoord.dmp}	Get Distance between CurrentUnit and Coordinates of [XX:MAPX:X][YY:MAPY:Y]	@STOREC	{COND}
+INFO.en=Calculate the distance between units and return to SlotC.
+INFO.zh=计算单位之间的距离并返回到SlotC。

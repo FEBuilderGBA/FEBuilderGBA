@@ -1,0 +1,4 @@
+Error=$32
+NotNegative1=$20
+NotNegative2=$2E
+Exit=$34

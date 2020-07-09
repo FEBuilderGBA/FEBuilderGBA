@@ -1,0 +1,15 @@
+NAME=ExtraUnit アーヴ加入のために、ダンジョン内で倒す敵の数
+NAME.en=Number of enemies killed in dungeon to join ExtraUnit Riev
+NAME.zh=Number of enemies killed in dungeon to join ExtraUnit Riev
+
+AUTHOR=Sme https://feuniverse.us/t/fe8-creature-campaign-units/8644
+INFO=塔や遺跡で、指定数を超える数の敵を倒すと、アーヴが加入します。(ディフォルト:199)
+INFO.en=Riev joins when you defeat more than the specified number of enemies in the towers and ruins.(Default: 199)
+INFO.zh=Riev joins when you defeat more than the specified number of enemies in the towers and ruins.(Default: 199)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x37CC6
+HEX=FALSE

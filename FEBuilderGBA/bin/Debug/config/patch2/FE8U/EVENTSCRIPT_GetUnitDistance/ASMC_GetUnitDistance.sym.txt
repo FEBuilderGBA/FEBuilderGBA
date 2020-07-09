@@ -1,0 +1,4 @@
+Error=$3C
+NotNegative1=$2C
+NotNegative2=$38
+Exit=$3E
