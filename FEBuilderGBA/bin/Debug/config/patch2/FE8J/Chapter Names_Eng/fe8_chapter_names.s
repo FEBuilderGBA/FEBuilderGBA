@@ -576,6 +576,7 @@ b       end_80822a4
 chapter_text:
 mov     r0,r4
 bl chapertileid_to_chapterid
+mov     r4,r0
 @blh     0x8034618                 @GetChapterDefinition {U}
 blh     0x8034520                 @GetChapterDefinition {J}
 mov     r5, r0
@@ -583,9 +584,6 @@ mov     r5, r0
 ldr     r1,=0x2020188      @gGenericBuffer	{U}	{J} common
 mov     r0,#0x0
 strb    r0,[r1]            @gBuffer[0]=0x0
-
-mov     r0, #0x80
-ldrb    r0, [r5 , r0]             @MapSetting->ChapterID
 
 CheckSpecialChapter:              @終章や序章等の特殊な章のチェック
 ldr     r3, SpecialChapterPtr
