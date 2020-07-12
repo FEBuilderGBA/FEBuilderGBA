@@ -1,0 +1,4 @@
+Chname=$1955C6C
+ChFont=$1956088
+ChTable=$1956A68
+SpecialChapter=$1956C78

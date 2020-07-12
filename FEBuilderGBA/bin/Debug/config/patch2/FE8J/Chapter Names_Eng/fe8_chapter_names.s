@@ -15,16 +15,16 @@ b main
 
 strcat_gBuffer_with_decode:
 push {lr}
-blh     0x800a240         @GetStringFromIndex	{J}
-@blh     0x8009fa8         @GetStringFromIndex	{U}
+@blh     0x800a240         @GetStringFromIndex	{J}
+blh     0x8009fa8         @GetStringFromIndex	{U}
 bl      strcat_gBuffer
 pop {r0}
 bx r0
 
 strcat_onechar:
 push {lr}
-ldr     r1,=0x202A6AC           @TextBufferOffset	{U}
-@ldr     r1,=0x202A6A8           @TextBufferOffset	{J}
+@ldr     r1,=0x202A6AC           @TextBufferOffset	{U}
+ldr     r1,=0x202A6A8           @TextBufferOffset	{J}
 strb    r0,[r1]            @gBuffer[0]=0x0
 mov     r0,#0x0
 strb    r0,[r1,#0x01]            @gBuffer[1]=0x0
@@ -121,8 +121,8 @@ push    {r4,lr}
 mov     r4,r0
 
 mov     r0,#0x0
-blh     0x8034618                 @GetChapterDefinition {U}
-@blh     0x8034520                 @GetChapterDefinition {J}
+@blh     0x8034618                 @GetChapterDefinition {U}
+blh     0x8034520                 @GetChapterDefinition {J}
 
 mov     r1,#0x00
 chapertileid_to_chapterid_Loop:
@@ -419,6 +419,7 @@ bx      r14
 .ltorg
 
 
+
 main:
 @r0 is 0xb40 (position?)
 @r1 is chapter number. 0x54 is no data?
@@ -441,8 +442,8 @@ bl      sub_8082224
 lsl     r0,r0,#0x18
 lsr     r5,r0,#0x18
 mov     r6,r5
-ldr     r1,=0x203E78C	@gChapterTitleGrahicsWorkBuffer	{U}
-@ldr     r1,=0x0203E788	@gChapterTitleGrahicsWorkBuffer	{J}
+@ldr     r1,=0x203E78C	@gChapterTitleGrahicsWorkBuffer	{U}
+ldr     r1,=0x0203E788	@gChapterTitleGrahicsWorkBuffer	{J}
 ldr     r2,=0x3FF
 mov     r0,r2
 and     r4,r0
@@ -457,8 +458,8 @@ swi #0xC
 
 ldr     r0, Font_Graphic_Ptr
 ldr     r1,=0x2020188      @gGenericBuffer	{U}	{J} common
-blh      0x8012f50         @UnLZ77Decompress	{U}
-@blh      0x8013008         @UnLZ77Decompress	{J}
+@blh      0x8012f50         @UnLZ77Decompress	{U}
+blh      0x8013008         @UnLZ77Decompress	{J}
 b       loc_80823C6
   .ltorg
  
@@ -543,40 +544,40 @@ bge     worldmap_node_text
 b       chapter_text
 
 nodata_text:
-mov     r0,#0xCC      @NO DATA	{U}
-@mov     r0,#0x61      @NO DATA	{J}
-blh     0x800a240         @GetStringFromIndex	{J}
-@blh     0x8009fa8         @GetStringFromIndex	{U}
+@mov     r0,#0xCC      @NO DATA	{U}
+mov     r0,#0x61      @NO DATA	{J}
+@blh     0x800a240         @GetStringFromIndex	{J}
+blh     0x8009fa8         @GetStringFromIndex	{U}
 b       end_80822a4
 
 epilogue_text:
-ldr     r0,=0x7cf     @Epilogue (song name) {U}
-@ldr     r0,=0x746     @Epilogue (song name) {J}
-blh     0x800a240         @GetStringFromIndex	{J}
-@blh     0x8009fa8         @GetStringFromIndex	{U}
+@ldr     r0,=0x7cf     @Epilogue (song name) {U}
+ldr     r0,=0x746     @Epilogue (song name) {J}
+@blh     0x800a240         @GetStringFromIndex	{J}
+blh     0x8009fa8         @GetStringFromIndex	{U}
 b       end_80822a4
 
 worldmap_node_text:
-ldr     r0,=0x03005280  @gSomeWMEventRelatedStruct	{U}
-@ldr     r0,=0x03005270  @gSomeWMEventRelatedStruct	{J}
+@ldr     r0,=0x03005280  @gSomeWMEventRelatedStruct	{U}
+ldr     r0,=0x03005270  @gSomeWMEventRelatedStruct	{J}
 ldrb    r0,[r0,#0x11]
-blh     0x080BBA28      @GetWorldMapNodeName	{U}
-@blh     0x080c086c      @GetWorldMapNodeName	{J}
+@blh     0x080BBA28      @GetWorldMapNodeName	{U}
+blh     0x080c086c      @GetWorldMapNodeName	{J}
 b       end_80822a4
 
 postgame_text:
-ldr     r0,=0x7D0     @ blank	{U}
-@ldr     r0,=0x0       @ blank	{J}	候補がない
-blh     0x800a240         @GetStringFromIndex	{J}
-@blh     0x8009fa8         @GetStringFromIndex	{U}
+@ldr     r0,=0x7D0     @ blank	{U}
+ldr     r0,=0xE5       @ blank	{J}	候補がない.とりあえず、章異伝でも
+@blh     0x800a240         @GetStringFromIndex	{J}
+blh     0x8009fa8         @GetStringFromIndex	{U}
 b       end_80822a4
 .ltorg
 
 chapter_text:
 mov     r0,r4
 bl chapertileid_to_chapterid
-blh     0x8034618                 @GetChapterDefinition {U}
-@blh     0x8034520                 @GetChapterDefinition {J}
+@blh     0x8034618                 @GetChapterDefinition {U}
+blh     0x8034520                 @GetChapterDefinition {J}
 mov     r5, r0
 
 ldr     r1,=0x2020188      @gGenericBuffer	{U}	{J} common
@@ -605,14 +606,14 @@ b       Space_Text
 
 
 CheckTowerOrRuins:
-blh     0x080BD068        @GetChapterThing {U}
-@blh     0x080C1E74        @GetChapterThing {J}
+@blh     0x080BD068        @GetChapterThing {U}
+blh     0x080C1E74        @GetChapterThing {J}
 cmp     r0,#0x0
 bne     Chapter_Main_Text   @塔やタワーならば本文を表示しない
 
 NormalChapter:
-ldr     r0, =0x157        @第 Ch	{U}
-@ldr     r0, =0xdf        @第 Ch	{J}
+@ldr     r0, =0x157        @第 Ch	{U}
+ldr     r0, =0xdf        @第 Ch	{J}
 bl      strcat_gBuffer_with_decode
 
 AppendChaperNumber:
@@ -632,11 +633,10 @@ cmp     r1,#0x00
 beq     Space_Text
 
 AppendGaiden:     @外伝の追加
-ldr r0 ,=0x158    @外伝	{U}
-@ldr r0 ,=0xe1     @外伝	{J}
+@ldr r0 ,=0x158    @外伝	{U}
+ldr r0 ,=0xe1     @外伝	{J}
 bl      strcat_gBuffer_with_decode
 b       Space_Text
-
 
 Space_Text: @Append Space 余白
 mov     r0,#0x3a		@: ASCI CODE
@@ -652,11 +652,11 @@ ldrh    r0,[r5,r0]
 bl      strcat_gBuffer_with_decode
 
 Reverse_strcpy_TextBuffer:
-ldr     r0,=0x202A6AC           @TextBufferOffset	{U}
-@ldr     r0,=0x202A6A8           @TextBufferOffset	{J}
+@ldr     r0,=0x202A6AC           @TextBufferOffset	{U}
+ldr     r0,=0x202A6A8           @TextBufferOffset	{J}
 ldr     r1,=0x2020188           @gGenericBuffer	{U}	{J} common
-blh     0x080D1D3C	@strcpy   return r0=TextBufferOffset	{U}
-@blh     0x080d69bc	@strcpy   return r0=TextBufferOffset	{J}
+@blh     0x080D1D3C	@strcpy   return r0=TextBufferOffset	{U}
+blh     0x080d69bc	@strcpy   return r0=TextBufferOffset	{J}
 
 end_80822a4:
 pop     {r4,r5}
@@ -664,6 +664,7 @@ pop     {r1}
 bx      r1
 
 .ltorg
+
 
 .align
 Font_Graphic_Ptr:

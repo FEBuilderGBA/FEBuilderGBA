@@ -1,0 +1,19 @@
+NAME=Convert Chapter Titles to Text_ver2(Install)
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:$FGREP4 fe8_chapter_names.dmp=0x3D 0xE1 0x00 0xB5
+EA=fe8_chnames.event
+
+INFO=章タイトルを画像から読み込むのではなく、章設定の章名テキストが自動生成します。\r\nアルファベットの身サポートしています。\r\nこのパッチは、英語翻訳バージョンを作るときに利用することを想定しています。
+
+INFO.en=Patches the ROM to use text for all chapter titles rather than images.\r\nEdit Chapter name in Chapter Editor to rename.\r\nThis version also displays the number of chapters.\r\nIt is supposed to be used when making an English translation version.
+
+
+AUTHOR=circleseverywhere,7743
+TEXT:0xDF=Ch.
+TEXT:0xE1=x(gaiden)
+TEXT:0x61=NO DATA
+TEXT:0x746=Epilogue
+TEXT:0xE5=Creature Campaign(Trial)
+INFO.zh=无需从图像中加载章节标题，而是会自动生成章节设置中的章节名称文本。\r\n支持字母的主体。\r\n该补丁旨在用于创建英文翻译版本时使用。
