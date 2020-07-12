@@ -2057,12 +2057,12 @@ namespace FEBuilderGBA
             uint packedimage_pos = 0;
             uint tsaindex = 0;
 
-            if (tsa_width_margin >= 1)
+            if (tsa_width_margin == 0xff)
+            {//絶対に先方にullを作らない(マップチップ用)
+                tsa_width_margin = 0;
+            }
+            else if (tsa_width_margin >= 1)
             {//header付きTSAの場合、右側に余白ができる. 余白部分を最初に格納するのが一番問題が少ないようだ
-//                Debug.Assert(width / 8 > tsa_width_margin);
-//                int margine_pos = (width / 8 - tsa_width_margin) * BLOCK_SIZE;
-//                byte[] tile = U.getBinaryData(image, (uint)(margine_pos), BLOCK_SIZE);
-//                Array.Copy(tile, 0, packedimage, (int)0, BLOCK_SIZE);
                 packedimage_pos += BLOCK_SIZE;
             }
             else if (width >= 230)
@@ -2636,6 +2636,10 @@ namespace FEBuilderGBA
             if (width == 0)
             {
                 width = bitmap.Width;
+            }
+            if (height == 0)
+            {
+                height = bitmap.Height;
             }
 
             bitmap = ConvertDecolorUI(bitmap, width, height, useTSA, maxPalette, isReserve1StPalette);

@@ -1,0 +1,4 @@
+Chname=$1000000
+ChFont=$1000428
+ChTable=$1000E08
+SpecialChapter=$1001018

@@ -31,9 +31,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.MapStyle = new System.Windows.Forms.ComboBox();
             this.MAPCHIPLISTPanel = new System.Windows.Forms.Panel();
+            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.MapPanel = new System.Windows.Forms.Panel();
             this.ChipsetConfigAddress = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.ConfigNo = new FEBuilderGBA.TextBoxEx();
             this.label30 = new System.Windows.Forms.Label();
             this.Config_L_6_TSA_Y = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,6 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Config_L_0_TSA_PALETTE = new System.Windows.Forms.ComboBox();
             this.Config_L_0_TSA_FLIP = new System.Windows.Forms.ComboBox();
+            this.ConfigPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.ConfigTerrain = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Config_W6 = new System.Windows.Forms.NumericUpDown();
@@ -69,12 +72,12 @@
             this.J_2 = new System.Windows.Forms.Label();
             this.Config_W0 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
-            this.ConfigWriteButton = new System.Windows.Forms.Button();
+            this.Config_WriteButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ObjImportOption = new System.Windows.Forms.ComboBox();
             this.ObjAddress2 = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
+            this.MAP = new FEBuilderGBA.MapPictureBox();
             this.ObjImportButton = new System.Windows.Forms.Button();
             this.ObjExportButton = new System.Windows.Forms.Button();
             this.ObjAddress = new System.Windows.Forms.NumericUpDown();
@@ -183,11 +186,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.MapChipImportButton = new System.Windows.Forms.Button();
             this.MapChipExportButton = new System.Windows.Forms.Button();
-            this.MAP = new FEBuilderGBA.MapPictureBox();
-            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
-            this.ConfigNo = new FEBuilderGBA.TextBoxEx();
-            this.ConfigPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.MAPCHIPLISTPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChipsetConfigAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_6_TSA_Y)).BeginInit();
@@ -198,6 +198,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_2_TSA_X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_Y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W2)).BeginInit();
@@ -257,8 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -293,6 +292,21 @@
             this.MAPCHIPLISTPanel.Name = "MAPCHIPLISTPanel";
             this.MAPCHIPLISTPanel.Size = new System.Drawing.Size(678, 787);
             this.MAPCHIPLISTPanel.TabIndex = 1;
+            // 
+            // MAPCHIPLIST
+            // 
+            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
+            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
+            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
+            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MAPCHIPLIST.TabIndex = 0;
+            this.MAPCHIPLIST.TabStop = false;
+            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
+            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
+            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
+            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
             // 
             // MapPanel
             // 
@@ -336,7 +350,7 @@
             this.MapPanel.Controls.Add(this.J_2);
             this.MapPanel.Controls.Add(this.Config_W0);
             this.MapPanel.Controls.Add(this.J_0);
-            this.MapPanel.Controls.Add(this.ConfigWriteButton);
+            this.MapPanel.Controls.Add(this.Config_WriteButton);
             this.MapPanel.Location = new System.Drawing.Point(696, 12);
             this.MapPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MapPanel.Name = "MapPanel";
@@ -367,6 +381,17 @@
             this.label5.TabIndex = 388;
             this.label5.Text = "アドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ConfigNo
+            // 
+            this.ConfigNo.ErrorMessage = "";
+            this.ConfigNo.Location = new System.Drawing.Point(124, 14);
+            this.ConfigNo.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfigNo.Name = "ConfigNo";
+            this.ConfigNo.Placeholder = "";
+            this.ConfigNo.ReadOnly = true;
+            this.ConfigNo.Size = new System.Drawing.Size(100, 25);
+            this.ConfigNo.TabIndex = 65;
             // 
             // label30
             // 
@@ -699,6 +724,17 @@
             this.Config_L_0_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
             this.Config_L_0_TSA_FLIP.TabIndex = 40;
             // 
+            // ConfigPictureBox
+            // 
+            this.ConfigPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ConfigPictureBox.Location = new System.Drawing.Point(838, 44);
+            this.ConfigPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfigPictureBox.Name = "ConfigPictureBox";
+            this.ConfigPictureBox.Size = new System.Drawing.Size(152, 152);
+            this.ConfigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ConfigPictureBox.TabIndex = 39;
+            this.ConfigPictureBox.TabStop = false;
+            // 
             // ConfigTerrain
             // 
             this.ConfigTerrain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -825,16 +861,16 @@
             this.J_0.Text = "左上";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ConfigWriteButton
+            // Config_WriteButton
             // 
-            this.ConfigWriteButton.Location = new System.Drawing.Point(815, 5);
-            this.ConfigWriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ConfigWriteButton.Name = "ConfigWriteButton";
-            this.ConfigWriteButton.Size = new System.Drawing.Size(176, 30);
-            this.ConfigWriteButton.TabIndex = 16;
-            this.ConfigWriteButton.Text = "ROM書き込み";
-            this.ConfigWriteButton.UseVisualStyleBackColor = true;
-            this.ConfigWriteButton.Click += new System.EventHandler(this.WriteButton_Click);
+            this.Config_WriteButton.Location = new System.Drawing.Point(815, 5);
+            this.Config_WriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.Config_WriteButton.Name = "Config_WriteButton";
+            this.Config_WriteButton.Size = new System.Drawing.Size(176, 30);
+            this.Config_WriteButton.TabIndex = 16;
+            this.Config_WriteButton.Text = "ROM書き込み";
+            this.Config_WriteButton.UseVisualStyleBackColor = true;
+            this.Config_WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
             // ControlPanel
             // 
@@ -849,7 +885,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.ObjImportOption);
             this.panel1.Controls.Add(this.ObjAddress2);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.MAP);
@@ -862,19 +897,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(513, 674);
             this.panel1.TabIndex = 2;
-            // 
-            // ObjImportOption
-            // 
-            this.ObjImportOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ObjImportOption.FormattingEnabled = true;
-            this.ObjImportOption.Items.AddRange(new object[] {
-            "パレットはインポートしない",
-            "パレットもインポートする"});
-            this.ObjImportOption.Location = new System.Drawing.Point(7, 590);
-            this.ObjImportOption.Margin = new System.Windows.Forms.Padding(2);
-            this.ObjImportOption.Name = "ObjImportOption";
-            this.ObjImportOption.Size = new System.Drawing.Size(272, 26);
-            this.ObjImportOption.TabIndex = 444;
             // 
             // ObjAddress2
             // 
@@ -901,12 +923,21 @@
             this.label32.Text = "オブジェクト";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // MAP
+            // 
+            this.MAP.AutoScroll = true;
+            this.MAP.Location = new System.Drawing.Point(4, 2);
+            this.MAP.Margin = new System.Windows.Forms.Padding(2);
+            this.MAP.Name = "MAP";
+            this.MAP.Size = new System.Drawing.Size(508, 578);
+            this.MAP.TabIndex = 442;
+            // 
             // ObjImportButton
             // 
-            this.ObjImportButton.Location = new System.Drawing.Point(7, 556);
+            this.ObjImportButton.Location = new System.Drawing.Point(3, 584);
             this.ObjImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ObjImportButton.Name = "ObjImportButton";
-            this.ObjImportButton.Size = new System.Drawing.Size(271, 30);
+            this.ObjImportButton.Size = new System.Drawing.Size(271, 33);
             this.ObjImportButton.TabIndex = 441;
             this.ObjImportButton.Text = "画像読込";
             this.ObjImportButton.UseVisualStyleBackColor = true;
@@ -914,10 +945,10 @@
             // 
             // ObjExportButton
             // 
-            this.ObjExportButton.Location = new System.Drawing.Point(294, 556);
+            this.ObjExportButton.Location = new System.Drawing.Point(292, 584);
             this.ObjExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ObjExportButton.Name = "ObjExportButton";
-            this.ObjExportButton.Size = new System.Drawing.Size(213, 61);
+            this.ObjExportButton.Size = new System.Drawing.Size(215, 33);
             this.ObjExportButton.TabIndex = 440;
             this.ObjExportButton.Text = "画像取出";
             this.ObjExportButton.UseVisualStyleBackColor = true;
@@ -1087,7 +1118,7 @@
             this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(2, 584);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Name = "PALETTE_TO_CLIPBOARD_BUTTON";
-            this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(148, 30);
+            this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(148, 33);
             this.PALETTE_TO_CLIPBOARD_BUTTON.TabIndex = 441;
             this.PALETTE_TO_CLIPBOARD_BUTTON.Text = "クリップボード";
             this.PALETTE_TO_CLIPBOARD_BUTTON.UseVisualStyleBackColor = true;
@@ -1098,7 +1129,7 @@
             this.PaletteImportButton.Location = new System.Drawing.Point(156, 584);
             this.PaletteImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteImportButton.Name = "PaletteImportButton";
-            this.PaletteImportButton.Size = new System.Drawing.Size(162, 30);
+            this.PaletteImportButton.Size = new System.Drawing.Size(162, 33);
             this.PaletteImportButton.TabIndex = 440;
             this.PaletteImportButton.Text = "パレット読込";
             this.PaletteImportButton.UseVisualStyleBackColor = true;
@@ -1109,7 +1140,7 @@
             this.PaletteExportButton.Location = new System.Drawing.Point(319, 584);
             this.PaletteExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteExportButton.Name = "PaletteExportButton";
-            this.PaletteExportButton.Size = new System.Drawing.Size(157, 30);
+            this.PaletteExportButton.Size = new System.Drawing.Size(157, 33);
             this.PaletteExportButton.TabIndex = 439;
             this.PaletteExportButton.Text = "パレット取出";
             this.PaletteExportButton.UseVisualStyleBackColor = true;
@@ -1147,10 +1178,10 @@
             // 
             // PaletteWriteButton
             // 
-            this.PaletteWriteButton.Location = new System.Drawing.Point(299, 641);
+            this.PaletteWriteButton.Location = new System.Drawing.Point(299, 638);
             this.PaletteWriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.PaletteWriteButton.Name = "PaletteWriteButton";
-            this.PaletteWriteButton.Size = new System.Drawing.Size(172, 30);
+            this.PaletteWriteButton.Size = new System.Drawing.Size(172, 33);
             this.PaletteWriteButton.TabIndex = 435;
             this.PaletteWriteButton.Text = "ROM書き込み";
             this.PaletteWriteButton.UseVisualStyleBackColor = true;
@@ -2493,10 +2524,10 @@
             // 
             // MapChipImportButton
             // 
-            this.MapChipImportButton.Location = new System.Drawing.Point(4, -1);
+            this.MapChipImportButton.Location = new System.Drawing.Point(2, -1);
             this.MapChipImportButton.Margin = new System.Windows.Forms.Padding(4);
             this.MapChipImportButton.Name = "MapChipImportButton";
-            this.MapChipImportButton.Size = new System.Drawing.Size(328, 28);
+            this.MapChipImportButton.Size = new System.Drawing.Size(328, 33);
             this.MapChipImportButton.TabIndex = 1;
             this.MapChipImportButton.Text = "マップチップ割り当ての読込";
             this.MapChipImportButton.UseVisualStyleBackColor = true;
@@ -2504,60 +2535,14 @@
             // 
             // MapChipExportButton
             // 
-            this.MapChipExportButton.Location = new System.Drawing.Point(340, -1);
+            this.MapChipExportButton.Location = new System.Drawing.Point(339, -1);
             this.MapChipExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.MapChipExportButton.Name = "MapChipExportButton";
-            this.MapChipExportButton.Size = new System.Drawing.Size(335, 28);
+            this.MapChipExportButton.Size = new System.Drawing.Size(335, 33);
             this.MapChipExportButton.TabIndex = 0;
             this.MapChipExportButton.Text = "マップチップ割り当ての保存";
             this.MapChipExportButton.UseVisualStyleBackColor = true;
             this.MapChipExportButton.Click += new System.EventHandler(this.MapChipExportButton_Click);
-            // 
-            // MAP
-            // 
-            this.MAP.AutoScroll = true;
-            this.MAP.Location = new System.Drawing.Point(4, 2);
-            this.MAP.Margin = new System.Windows.Forms.Padding(2);
-            this.MAP.Name = "MAP";
-            this.MAP.Size = new System.Drawing.Size(508, 551);
-            this.MAP.TabIndex = 442;
-            // 
-            // MAPCHIPLIST
-            // 
-            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
-            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
-            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
-            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.MAPCHIPLIST.TabIndex = 0;
-            this.MAPCHIPLIST.TabStop = false;
-            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
-            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
-            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
-            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
-            // 
-            // ConfigNo
-            // 
-            this.ConfigNo.ErrorMessage = "";
-            this.ConfigNo.Location = new System.Drawing.Point(124, 14);
-            this.ConfigNo.Margin = new System.Windows.Forms.Padding(2);
-            this.ConfigNo.Name = "ConfigNo";
-            this.ConfigNo.Placeholder = "";
-            this.ConfigNo.ReadOnly = true;
-            this.ConfigNo.Size = new System.Drawing.Size(100, 25);
-            this.ConfigNo.TabIndex = 65;
-            // 
-            // ConfigPictureBox
-            // 
-            this.ConfigPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ConfigPictureBox.Location = new System.Drawing.Point(838, 44);
-            this.ConfigPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ConfigPictureBox.Name = "ConfigPictureBox";
-            this.ConfigPictureBox.Size = new System.Drawing.Size(152, 152);
-            this.ConfigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ConfigPictureBox.TabIndex = 39;
-            this.ConfigPictureBox.TabStop = false;
             // 
             // MapStyleEditorForm
             // 
@@ -2577,6 +2562,7 @@
             this.Load += new System.EventHandler(this.MapStyleEditorForm_Load);
             this.MAPCHIPLISTPanel.ResumeLayout(false);
             this.MAPCHIPLISTPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
             this.MapPanel.ResumeLayout(false);
             this.MapPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChipsetConfigAddress)).EndInit();
@@ -2588,6 +2574,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_2_TSA_X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_Y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W2)).EndInit();
@@ -2648,8 +2635,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2661,7 +2646,7 @@
         private System.Windows.Forms.Panel MAPCHIPLISTPanel;
         private System.Windows.Forms.Panel MapPanel;
         private System.Windows.Forms.Panel ControlPanel;
-        private System.Windows.Forms.Button ConfigWriteButton;
+        private System.Windows.Forms.Button Config_WriteButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown Config_W6;
         private System.Windows.Forms.Label J_6;
@@ -2806,7 +2791,6 @@
         private System.Windows.Forms.NumericUpDown ChipsetConfigAddress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown ObjAddress2;
-        private System.Windows.Forms.ComboBox ObjImportOption;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button MapChipImportButton;
         private System.Windows.Forms.Button MapChipExportButton;

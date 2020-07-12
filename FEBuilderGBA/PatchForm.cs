@@ -2788,6 +2788,15 @@ namespace FEBuilderGBA
                 byte[] need = MakeXGrepData(value,out mask);
                 return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
             }
+            m = RegexCache.Match(value, @"^XGREP([0-9]+)END\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
+            {
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                bool[] mask;
+                byte[] need = MakeXGrepData(value, out mask);
+                return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, true);
+            }
 
             if (value.IndexOf("GREP4END+A ") == 0)
             {//下位互換のため

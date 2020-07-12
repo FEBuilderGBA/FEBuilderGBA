@@ -48,6 +48,7 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertYohaku,  2 * 8);
                 U.ForceUpdate(this.ConvertPaletteNo, 8);
                 U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
                 IgnoreTSA.Checked = false;
             }
             else if (Method.SelectedIndex == 2)
@@ -57,6 +58,7 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertYohaku, 0);
                 U.ForceUpdate(this.ConvertPaletteNo, 8);
                 U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
                 IgnoreTSA.Checked = false;
             }
             else if (Method.SelectedIndex == 3)
@@ -68,6 +70,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 0);
                     U.ForceUpdate(this.ConvertPaletteNo, 4);
                     U.ForceUpdate(this.ConvertReserveColor, 1);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                 }
                 else if (Program.ROM.RomInfo.version() == 7)
                 {
@@ -76,6 +79,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 0);
                     U.ForceUpdate(this.ConvertPaletteNo, 4);
                     U.ForceUpdate(this.ConvertReserveColor, 1);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                 }
                 else if (Program.ROM.RomInfo.version() == 6)
                 {//256色なので不要
@@ -84,6 +88,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 0);
                     U.ForceUpdate(this.ConvertPaletteNo, 16);
                     U.ForceUpdate(this.ConvertReserveColor, 0);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                 }
                 IgnoreTSA.Checked = false;
             }
@@ -96,6 +101,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 2 * 8);
                     U.ForceUpdate(this.ConvertPaletteNo, 4);
                     U.ForceUpdate(this.ConvertReserveColor, 1);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                     IgnoreTSA.Checked = false;
                 }
                 else if (Program.ROM.RomInfo.version() == 7)
@@ -105,6 +111,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 2 * 8);
                     U.ForceUpdate(this.ConvertPaletteNo, 4);
                     U.ForceUpdate(this.ConvertReserveColor, 1);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                     IgnoreTSA.Checked = false;
                 }
                 else if (Program.ROM.RomInfo.version() == 6)
@@ -114,6 +121,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertYohaku, 0);
                     U.ForceUpdate(this.ConvertPaletteNo, 16);
                     U.ForceUpdate(this.ConvertReserveColor, 0);
+                    U.ForceUpdate(this.ConvertSizeMethod, 1);
                     IgnoreTSA.Checked = false;
                 }
             }
@@ -124,6 +132,7 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertYohaku, 0);
                 U.ForceUpdate(this.ConvertPaletteNo, 16);
                 U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
                 IgnoreTSA.Checked = true;
             }
             else if (Method.SelectedIndex == 6)
@@ -133,6 +142,17 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertYohaku, 0);
                 U.ForceUpdate(this.ConvertPaletteNo, 4);
                 U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
+                IgnoreTSA.Checked = false;
+            }
+            else if (Method.SelectedIndex == 7)
+            {//一枚絵マップチップ
+                U.ForceUpdate(this.ConvertWidth, 512);
+                U.ForceUpdate(this.ConvertHeight, 512);
+                U.ForceUpdate(this.ConvertYohaku, 0);
+                U.ForceUpdate(this.ConvertPaletteNo, 5);
+                U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 0);
                 IgnoreTSA.Checked = false;
             }
         }

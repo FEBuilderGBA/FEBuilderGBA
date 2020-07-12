@@ -623,7 +623,7 @@ namespace FEBuilderGBA
                 InputFormRef.ReInitPointer(GetBasePointer(PLIST_TYPE.CHANGE));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MAPPOINTERS_WMAP_EVENT", new uint[] { 0 });
             }
-            
+
             List<U.AddrResult> mapSetting = MapSettingForm.MakeMapIDList();
             for (int mapid = 0; mapid < mapSetting.Count; mapid++)
             {
@@ -659,6 +659,17 @@ namespace FEBuilderGBA
                 {
                     uint pointer = objList[(int)plists.palette_plist].addr;
                     string name = "MAP:" + U.ToHexString(mapid) + " PALETTE:" + U.ToHexString(plists.palette_plist);
+                    uint size = 0x20 * MapStyleEditorForm.MAX_MAP_PALETTE_COUNT;
+                    FEBuilderGBA.Address.AddPointer(list
+                        , pointer + 0
+                        , size
+                        , name
+                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                }
+                if (plists.palette2_plist > 0 && plists.palette2_plist < objList.Count)
+                {
+                    uint pointer = objList[(int)plists.palette2_plist].addr;
+                    string name = "MAP:" + U.ToHexString(mapid) + " SECOND PALETTE:" + U.ToHexString(plists.palette2_plist);
                     uint size = 0x20 * MapStyleEditorForm.MAX_MAP_PALETTE_COUNT;
                     FEBuilderGBA.Address.AddPointer(list
                         , pointer + 0

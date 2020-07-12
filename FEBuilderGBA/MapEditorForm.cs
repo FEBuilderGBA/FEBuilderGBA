@@ -121,7 +121,7 @@ namespace FEBuilderGBA
         int[] SelectChipset;
 
         //チップセット(マップチップの画像をどう解釈するか定義するデータ)
-        byte[] configUZ;
+        byte[] ConfigUZ;
 
         //マップデータ
         UInt16[] MAR;
@@ -257,10 +257,10 @@ namespace FEBuilderGBA
                 this.MapObjImage = ImageUtil.BlankDummy();
             }
             //チップセットの読込(マップチップの画像をどう解釈するか定義するデータ)
-            this.configUZ = ImageUtilMap.UnLZ77ChipsetData(config_plist);
-            if (this.configUZ == null)
+            this.ConfigUZ = ImageUtilMap.UnLZ77ChipsetData(config_plist);
+            if (this.ConfigUZ == null)
             {
-                this.configUZ = new byte[0];
+                this.ConfigUZ = new byte[0];
             }
 
             //タイルセットの取得
@@ -286,7 +286,7 @@ namespace FEBuilderGBA
             {
                 for (int x = 0; x < 32; x++)
                 {
-                    ImageUtil.BitBlt(mapObjCels, x * 16, y * 16, 16, 16, ImageUtilMap.DrawOneChipset(chip << 2, this.configUZ, this.MapObjImage), 0, 0);
+                    ImageUtil.BitBlt(mapObjCels, x * 16, y * 16, 16, 16, ImageUtilMap.DrawOneChipset(chip << 2, this.ConfigUZ, this.MapObjImage), 0, 0);
 
                     chip++;
                 }
@@ -478,7 +478,7 @@ this.MapObjImage);
             int y = 0;
             for (int i = 0; i < MAR.Length; i++)
             {
-                Bitmap chip = ImageUtilMap.DrawOneChipset(MAR[i], this.configUZ, this.MapObjImage);
+                Bitmap chip = ImageUtilMap.DrawOneChipset(MAR[i], this.ConfigUZ, this.MapObjImage);
                 ImageUtil.BitBlt(map, x * 16, y * 16, 16, 16, chip, 0, 0);
 
                 x++;
@@ -576,7 +576,7 @@ this.MapObjImage);
         }
         void DrawMapChipInfo(int chipset_id, int x, int y, PaintEventArgs e)
         {
-            DrawMapChipInfoLow(chipset_id, x, y, e, this.configUZ, this.Font, this.ForeBrush, this.BackBrush);
+            DrawMapChipInfoLow(chipset_id, x, y, e, this.ConfigUZ, this.Font, this.ForeBrush, this.BackBrush);
         }
 
         static public void DrawMapChipInfoLow(int chipset_id, int x, int y, PaintEventArgs e, byte[] configUZ, Font font, SolidBrush foreBrush, SolidBrush backBrush)
@@ -674,7 +674,7 @@ this.MapObjImage);
             string text = R._("座標 X:{0} Y:{1}", x, y);
 
             //このチップセットの名前を問い合わせる.
-            uint terrain_data = ImageUtilMap.GetChipsetID(chipset_id, this.configUZ);
+            uint terrain_data = ImageUtilMap.GetChipsetID(chipset_id, this.ConfigUZ);
             if (terrain_data == U.NOT_FOUND)
             {
                 return text;

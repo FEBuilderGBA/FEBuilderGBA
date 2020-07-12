@@ -3,7 +3,7 @@ TYPE=BIN
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x2E51E=When tile change to set flag
+PATCHED_IF:0x2E51E=0x00 0x00 0x00 0x48 0x87 0x46
 
 
 //本体をフリーエリアにいれる.

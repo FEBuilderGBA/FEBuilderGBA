@@ -83,6 +83,12 @@
     <Compile Include="EmulatorMemoryUtil.cs" />
     <Compile Include="EventTemplateImpl.cs" />
     <Compile Include="ImageUtilBorderAP.cs" />
+    <Compile Include="MapStyleEditorImportImageOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapStyleEditorImportImageOptionForm.Designer.cs">
+      <DependentUpon>MapStyleEditorImportImageOptionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatchUtil.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2085,6 +2091,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
       <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapStyleEditorImportImageOptionForm.resx">
+      <DependentUpon>MapStyleEditorImportImageOptionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectAllocAreaForm.resx">
       <DependentUpon>SelectAllocAreaForm.cs</DependentUpon>

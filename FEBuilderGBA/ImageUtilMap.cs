@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FEBuilderGBA
 {
@@ -976,5 +977,82 @@ namespace FEBuilderGBA
                 , tsaUZ, 0
                 );
         }
+
+        public static byte[] ConvertTSAToMapConfig(byte[] tsa)
+        {
+            byte[] config = new byte[0x2400];
+
+            //TSAは横に並んでいるので、4マスこどに並べなおす必要がある
+            //TSA1 TSA2 TSA3 TSA4
+            //-->
+            //TSA1 TSA2 TSA40 TSA41
+
+            //TSAは横に並んでいるので、4マスこどに並べなおす必要がある
+            //TSA1 TSA2 TSA3 TSA4
+            //-->
+            //TSA1 TSA2 TSA40 TSA41
+
+            int srcx = 0;
+            int destx = 0;
+            int innerx = 0;
+            while (srcx < tsa.Length)
+            {
+                if (innerx >= 0x80)
+                {
+                    innerx = 0;
+                    srcx += 0x80;
+                    destx += 0x0;
+                }
+                int srcy = srcx / 0x80;
+                int n = ((srcy + 1) * 0x80) + (innerx);
+                if (n >= tsa.Length)
+                {
+                    break;
+                }
+                if (destx >= 0x2000)
+                {
+                    break;
+                }
+                config[destx] = tsa[srcx];
+                config[destx + 1] = tsa[srcx + 1];
+      
+                config[destx + 2] = tsa[srcx + 2];
+                config[destx + 3] = tsa[srcx + 3];
+                
+                config[destx + 4] = tsa[n];
+                config[destx + 5] = tsa[n + 1];
+                
+                config[destx + 6] = tsa[n + 2];
+                config[destx + 7] = tsa[n + 3];
+
+                destx += 8;
+                srcx += 4;
+                innerx += 4;
+            }
+            for (int i = 0x2000; i < config.Length; i++)
+            {
+                config[i] = 0x01; //草原
+            }
+
+            return config;
+        }
+
+#if DEBUG
+        public static void TEST_ConvertTSAToMapConfig_1()
+        {
+            byte[] tsa = File.ReadAllBytes( Program.GetTestData("plain.mapchip_config") );
+            byte[] r = ConvertTSAToMapConfig(tsa);
+            Debug.Assert(r[0x0] == 0x00);
+            Debug.Assert(r[0x1] == 0x00);
+            Debug.Assert(r[0x2] == 0x01);
+            Debug.Assert(r[0x3] == 0x00);
+            Debug.Assert(r[0x4] == 0x40);
+            Debug.Assert(r[0x5] == 0x00);
+
+            Debug.Assert(r[0x100] == 0x80);
+            Debug.Assert(r[0x102] == 0x81);
+            Debug.Assert(r[0x104] == 0xc0);
+        }
+#endif
     }
 }

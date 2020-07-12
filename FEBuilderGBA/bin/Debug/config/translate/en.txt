@@ -823,6 +823,9 @@ Type
 :06=ステータス画面の背景(FE8)
 06=Status screen background (FE 8)
 
+:07=一枚絵マップチップ
+07=Single picture map chip.
+
 :出力ファイル
 Output file
 
@@ -7606,6 +7609,12 @@ To define a new map design, assign a style with PLSIT.\r\nPLIST is a list contai
 :マップスタイルPLIST割当
 Map style PLIST assignment
 
+:画像サイズが正しくありません。\r\nWidth:{2}以下 Height:{3}以下、でなければなりません。\r\nまた、幅は8で割り切れる必要があります。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}
+The image size is incorrect.\r\nIt must be less than Width:{2} and less than Height:{3}.\r\nAlso, the width must be divisible by 8.\r\n\r\nThe size of the selected image Width:{0} Height:{1}.
+
+:マップが広すぎて、0x8000バイトに収まりませんでした。\r\n入力されたサイズ:  {0}\r\n\r\nもっと小さいマップにするか、圧縮率を上げるために共通のパーツを増やしてください。
+The map was too wide to fit in 0x8000 bytes.\r\nEntered size: {0}.\r\n\r\nTry a smaller map, or add more common parts for better compression.
+
 :これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします
 Is this the data on clear weather?\r\nOr is it fog data?\r\n\r\nIn case of "Yes" to import clear weather palette.\\r\nIn case of "No" to import fog palette.
 
@@ -7642,12 +7651,6 @@ File size is too small. Requires 9216 bytes.
 :0C00=横縦反転
 0C00=Flip Vertically & Horizontally
 
-:パレットはインポートしない
-Don't Import Palette
-
-:パレットもインポートする
-Import palette at same time
-
 :0=通常
 0=Normal
 
@@ -7671,6 +7674,24 @@ Export Tile Config
 
 :マップスタイルエディタ
 Tileset Palette
+
+:画像と同時にパレットもインポートする(推奨)
+Import the palette at the same time as the image (recommended).
+
+:画像だけをインポートする。(パレットはインポートしない)
+Import images only.(Do not import palettes).
+
+:一枚絵としてインポートする。(この画像からmap_configを自動生成する)
+Import as a single picture.(Automatically generate map_config from this image).
+
+:マップチップのインポート
+Map tip import.
+
+:一枚絵のインポート
+Import a single picture.
+
+:インポートオプション
+Import options.
 
 :値
 value
