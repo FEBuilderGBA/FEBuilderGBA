@@ -1,0 +1,21 @@
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+PUSH
+//ORG $2AB28	//{J}
+ORG $2ABB8	//{U}
+jumpToHack(hit_mashimashi)
+
+POP
+
+ALIGN 4
+hit_mashimashi:
+#incbin "hit_mashimashi.dmp"
+POIN hit_mashimashi_TABLE
+
+ALIGN 4
+hit_mashimashi_TABLE:
+BYTE 30  0xFF 0x02 0x01 0x0 0x0 0x0 0x0 //難易度ハードでは、下級職はHIT+30
+BYTE 25  0xFF 0x02 0x02 0x0 0x0 0x0 0x0 //難易度ハードでは、上級職はHIT+25
+WORD 0xff 0x0 //Term
+
+ALIGN 4

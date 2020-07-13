@@ -2,7 +2,7 @@ NAME=敵の命中率を底上げする(Editor)
 NAME.en=Increase Enemy's hit rate(Editor)
 
 TYPE=STRUCT
-IF:0x2AB28=0x00 0x4B 0x18 0x47
+IF:0x2ABB8=0x00 0x4B 0x18 0x47
 
 //データへのポインタ
 POINTER=$FGREP4END hit_mashimashi.dmp
