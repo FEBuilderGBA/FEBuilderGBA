@@ -1,0 +1,45 @@
+NAME=敵の命中率を底上げする(Editor)
+NAME.en=Increase Enemy's hit rate(Editor)
+
+TYPE=STRUCT
+IF:0x2AB28=0x00 0x4B 0x18 0x47
+
+//データへのポインタ
+POINTER=$FGREP4END hit_mashimashi.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはTEXTです
+LISTNAME=$B0:DECIMAL
+
+//データを定義します
+B0:DECIMAL:.ja=追加する命中率
+B1:MAP_ANYFF:.ja=MAPID(FF=ANY)
+B2:$COMBO Combo_Difficulty.ja.txt:.ja=難易度
+B3:$COMBO Combo_Promoted.ja.txt:.ja=上級職
+B4:$COMBO Combo_Phase.ja.txt:.ja=フェーズ
+B5=00
+W6:FLAG:.ja=FLAG(00=ANY)
+
+B0:DECIMAL:.en=Additional hit rate
+B1:MAP_ANYFF:.en=MAPID(FF=ANY)
+B2:$COMBO Combo_Difficulty.en.txt:.en=Difficulty
+B3:$COMBO Combo_Promoted.en.txt:.en=Promoted
+B4:$COMBO Combo_Phase.en.txt:.en=Phase
+B5=00
+W6:FLAG:.en=FLAG(00=ANY)
+
+B0:DECIMAL:.zh=Additional hit rate
+B1:MAP_ANYFF:.zh=MAPID(FF=ANY)
+B2:$COMBO Combo_Difficulty.zh.txt:.zh=Difficulty
+B3:$COMBO Combo_Promoted.en.txt:.zh=Promoted
+B4:$COMBO Combo_Phase.en.txt:.zh=Phase
+B5=00
+W6:FLAG:.zh=FLAG(00=ANY)
+
+AUTHOR=7743
+NAME.zh=提高敌人的准确性（编辑器）。

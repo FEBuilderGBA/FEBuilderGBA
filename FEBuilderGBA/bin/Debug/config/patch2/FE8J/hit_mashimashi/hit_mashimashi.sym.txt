@@ -1,0 +1,17 @@
+Skip=$AC
+TABLE=$C4
+Loop=$0E
+Break=$A6
+CheckMap=$16
+CheckDifficulty=$24
+CheckPromoted=$56
+CheckDifficulty_Normal=$4C
+CheckDifficulty_Hard=$52
+CheckPhase=$7A
+CheckPromoted_Promoted=$76
+CheckPromoted_UnPromoted=$70
+CheckFlag=$92
+CheckPhase_Enemy=$8E
+CheckPhase_Player=$88
+Found=$A2
+Exit=$A8

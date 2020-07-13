@@ -1,0 +1,8 @@
+NAME=敵の命中率を底上げする(Install)
+NAME.en=Increase Enemy's hit rate(Install)
+
+TYPE=EA
+EA=hit_mashimashi_installer.event
+
+PATCHED_IF:0x2AB28=0x00 0x4B 0x18 0x47
+NAME.zh=提高敌人的命中率（安装）。

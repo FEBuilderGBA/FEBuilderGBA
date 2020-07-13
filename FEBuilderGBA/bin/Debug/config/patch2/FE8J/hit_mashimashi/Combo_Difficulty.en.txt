@@ -1,0 +1,4 @@
+0=ANY
+1=Normal
+2=Normal or Hard
+3=Hard

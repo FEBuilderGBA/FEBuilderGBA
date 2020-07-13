@@ -1,0 +1,3 @@
+0=ANY
+1=Only Player Phase
+2=Only Enemy Phase
