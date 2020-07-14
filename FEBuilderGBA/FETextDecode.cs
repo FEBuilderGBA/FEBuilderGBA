@@ -194,13 +194,6 @@ namespace FEBuilderGBA
                         i += AppendSJIS(str, code, code2);
                         continue;
                     }
-//                    else if (IsStrangeSmallFontMapping(code, code2))
-//                    {//マルチバイトROMに対して、変な割り当てをされた短いフォント
-//                        AppendAtmarkCode(str, code);
-//                        AppendAtmarkCode(str, code2);
-//                        i += 2;
-//                        continue;
-//                    }
 
                     //unHuffman patchでは可変長デコードらしい.
                     //@0009 -> 0x09

@@ -8,7 +8,8 @@ ORG $8B894	//{J}
 jumpToHack(Chname)
 ORG $8B8DC	//{J}
 jumpToHack(Chname)	//{J}
-
+ORG $8b9dc	//{J}
+BYTE 0x1E 0xE0 //skip check
 POP
 
 Chname:

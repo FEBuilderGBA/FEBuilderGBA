@@ -22,7 +22,7 @@ B1:MAP_ANYFF:.ja=MAPID(FF=ANY)
 B2:$COMBO Combo_Difficulty.ja.txt:.ja=難易度
 B3:$COMBO Combo_Promoted.ja.txt:.ja=上級職
 B4:$COMBO Combo_Phase.ja.txt:.ja=フェーズ
-B5=00
+B5:.ja=00
 W6:FLAG:.ja=FLAG(00=ANY)
 
 B0:DECIMAL:.en=Additional hit rate
@@ -30,7 +30,7 @@ B1:MAP_ANYFF:.en=MAPID(FF=ANY)
 B2:$COMBO Combo_Difficulty.en.txt:.en=Difficulty
 B3:$COMBO Combo_Promoted.en.txt:.en=Promoted
 B4:$COMBO Combo_Phase.en.txt:.en=Phase
-B5=00
+B5:.en=00
 W6:FLAG:.en=FLAG(00=ANY)
 
 B0:DECIMAL:.zh=Additional hit rate
@@ -38,7 +38,7 @@ B1:MAP_ANYFF:.zh=MAPID(FF=ANY)
 B2:$COMBO Combo_Difficulty.zh.txt:.zh=Difficulty
 B3:$COMBO Combo_Promoted.en.txt:.zh=Promoted
 B4:$COMBO Combo_Phase.en.txt:.zh=Phase
-B5=00
+B5:.zh=00
 W6:FLAG:.zh=FLAG(00=ANY)
 
 AUTHOR=7743
