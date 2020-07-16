@@ -149,7 +149,6 @@
             this.FlagNameTextBox.ErrorMessage = "";
             this.FlagNameTextBox.Location = new System.Drawing.Point(3, 77);
             this.FlagNameTextBox.Name = "FlagNameTextBox";
-            this.FlagNameTextBox.Placeholder = "フラグの名前";
             this.FlagNameTextBox.Size = new System.Drawing.Size(580, 25);
             this.FlagNameTextBox.TabIndex = 1;
             // 

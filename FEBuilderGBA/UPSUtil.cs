@@ -147,11 +147,36 @@ namespace FEBuilderGBA
             return value;
         }
 
+        static byte[] WriteBuildVersion(byte[] d)
+        {
+            uint addr = Program.ROM.RomInfo.builddate_address();
+            if (!U.isSafetyOffset(addr))
+            {
+                return d;
+            }
+
+            byte[] newd = new byte[d.Length];
+            Array.Copy(d, newd, d.Length);
+
+            System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en-US");
+            string version = DateTime.Now.ToString("yyyy/MM/dd(ddd) HH:mm:ss",ci).ToUpper() + "\0";
+            byte[] str = System.Text.Encoding.ASCII.GetBytes(version);
+            U.write_range(newd,addr, str);
+
+            return newd;
+        }
 
         static public void MakeUPS(string orignalROMFilename, string upsFilename)
         {
             byte[] s = File.ReadAllBytes(orignalROMFilename);
             byte[] d = Program.ROM.Data;
+
+            bool r = PatchUtil.IsWriteBuildVersion();
+            if (r)
+            {
+                d = WriteBuildVersion(d);
+            }
+
             MakeUPS(s, d, upsFilename);
         }
 

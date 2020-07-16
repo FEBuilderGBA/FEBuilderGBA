@@ -12818,3 +12818,5 @@
 0808C0F8	MakeTextForSaveMenuRtextData	{J}
 0203E78C	gChapterTitleGrahicsWorkBuffer	{U}
 0203E788	gChapterTitleGrahicsWorkBuffer	{J}
+080DEF00	&CSTRING	END	{J}
+08048BDC	Debug_Display_END_String	{J}

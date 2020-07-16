@@ -1,0 +1,14 @@
+NAME=状態異常の毒などの追加効果を禁止するクラスを複数定義する(Install)
+NAME.en=Define multiple classes that prohibit additional effects such as poisons bad status(Install)
+
+INFO=毒や状態異常剣パッチのスリープなどのバッドステータスを抑制できます。ただし、石化は抑制できません。
+INFO.en=You can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+INFO.zh=You can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+
+
+
+TYPE=EA
+EA=prohibits_bad_status_installer.event
+
+PATCHED_IF:0x2B624=0x00 0x4B 0x18 0x47
+NAME.zh=定义多个禁止出现状态毒药之类的附加作用的类(Install)

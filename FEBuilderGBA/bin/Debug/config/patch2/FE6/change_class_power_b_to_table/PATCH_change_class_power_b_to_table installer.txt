@@ -13,4 +13,4 @@ EDIT_PATCH=PATCH_change_class_power_b_to_table.txt
 EA=change_class_power_b_to_table.event
 
 AUTHOR=7743
-NAME.zh=将等级修改B更改为表格（安装）。
+NAME.zh=将等级修改B更改为表格(Install)

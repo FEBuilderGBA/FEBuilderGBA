@@ -1657,5 +1657,15 @@ namespace FEBuilderGBA
 
             return true;
         }
+        public static bool IsWriteBuildVersion()
+        {
+            uint enable_value;
+            uint addr = Program.ROM.RomInfo.patch_write_build_version(out enable_value);
+            if (addr == 0)
+            {
+                return false;
+            }
+            return (Program.ROM.u32(addr) == enable_value);
+        }
     }
 }

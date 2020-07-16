@@ -1,0 +1,30 @@
+NAME=タイトル画面にビルド時間を表示する(Editor)
+NAME.en=Display build time on title screen(Editor)
+
+INFO=タイトル画面にビルド時間を表示します。\r\nビルド時間は、upsを作るたびに自動的に更新されます。\r\nF5実行した場合は、DEBUG BUILDと表示されます。\r\nFEBuilderGBAでupsを作成すると、その部分に日付が入力されます。
+
+
+TYPE=STRUCT
+IF:0xC54B0=0x00 0x4B 0x18 0x47
+
+//データへのポインタ
+POINTER=$FGREP4END display_version.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=1
+MAX_EXPLANDS_SIZE=1
+
+
+//データを定義します
+B0:DECIMAL=X
+B1:DECIMAL=Y
+B2=PAL
+B3=Show
+
+AUTHOR=7743
+INFO.en=The build time is displayed on the title screen.\r\nThe build time is automatically updated every time you make an ups.\r\nIf you execute F5, DEBUG BUILD is displayed.\r\nWhen you create ups with FEBuilderGBA, the date is entered in that part.
+NAME.zh=在标题屏幕上显示构建时间(Editor)
+INFO.zh=生成时间显示在标题屏幕上。\r\n每次化妆时，构建时间都会自动更新。\r\n如果执行F5，将显示DEBUG BUILD。\r\n当您使用FEBuilderGBA创建更新时，在该部分中输入日期。

@@ -15,5 +15,5 @@ AUTHOR=7743
 NAME.en=Drop menu is displayed in Gray if capturing enemies with items(Install)
 INFO.en=This is a function to prevent troubles caused by forgetting to release enemy items and releasing them.\r\nWrite the address where the switch was installed in the drawing routine pointer of the menu to be unloaded.\r\nBecause it is ASM, you need to add address +1.
 
-NAME.zh=如果要捕获有物品的敌人，则要卸载的菜单将显示为灰色（安装）。
+NAME.zh=如果要捕获有物品的敌人，则要卸载的菜单将显示为灰色(Install)
 INFO.zh=此功能可以防止因忘记释放敌人物品而释放它们而引起的麻烦。\r\n在要卸载的菜单的绘图例程指针中写入安装此修补程序的地址。\r\n由于它是ASM，因此必须添加地址+1。\r\n

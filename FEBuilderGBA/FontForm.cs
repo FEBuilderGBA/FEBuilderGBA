@@ -1152,8 +1152,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                if (a.Addr >= Program.ROM.RomInfo.font_default_begin()
-                    && a.Addr <= Program.ROM.RomInfo.font_default_end())
+                if (a.Addr <= Program.ROM.RomInfo.font_default_end())
                 {//規定のフォント
                     continue;
                 }

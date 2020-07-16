@@ -67,3 +67,5 @@ AD774=Sound Room CG	{J}	//08DAEEF0
 2F948=MovingUnitGfx	{U}	//8C9D00C
 07384=BgFaceBlink	{J}	//08BFFA20
 074F4=BgFaceBlink	{U}	//08B90870
+BB5F8=OPTitleLogoMain	{J}	//08DB8ED8
+BB7D4=OPTitleLogoUI	{J}	//08DB8F80

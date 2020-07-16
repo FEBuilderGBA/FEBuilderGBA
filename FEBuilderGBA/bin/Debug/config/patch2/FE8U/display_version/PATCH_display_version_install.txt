@@ -1,0 +1,11 @@
+NAME=タイトル画面にビルド時間を表示する(Install)
+NAME.en=Display build time on title screen(Install)
+
+INFO=タイトル画面にビルド時間を表示します。\r\nビルド時間はupsを作るたびに自動的に更新されます。
+
+TYPE=EA
+EA=display_version_install.event
+PATCHED_IF:0xC54B0=0x00 0x4B 0x18 0x47
+INFO.en=The build time is displayed on the title screen.\r\nThe build time will be updated automatically every time you make an ups.
+NAME.zh=在标题屏幕上显示构建时间(Install)
+INFO.zh=生成时间显示在标题屏幕上。\r\n每次化妆时，构建时间都会自动更新。

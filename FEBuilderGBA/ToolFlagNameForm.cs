@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            this.FlagNameTextBox.Placeholder = R._("フラグの名前");
         }
 
 

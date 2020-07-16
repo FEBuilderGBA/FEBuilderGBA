@@ -32,5 +32,5 @@ B1:DECIMAL.zh=Promoted
 
 INFO=クラス階級修正を計算ではなく、テーブルを利用して算出するようにします。
 INFO.en=Try to calculate class class correction using a table instead of a calculation.
-NAME.zh=将您的等级修改B更改为表（编辑器）。
+NAME.zh=将您的等级修改B更改为表(Editor)。
 INFO.zh=尝试使用表而不是计算来计算类的类更正。

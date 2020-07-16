@@ -393,6 +393,8 @@ namespace FEBuilderGBA
         uint patch_generic_enemy_portrait_extends(out uint enable_value);//一般兵の顔 拡張
         uint patch_stairs_hack(out uint enable_value); //階段拡張
         uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
+        uint patch_write_build_version(out uint enable_value); //ビルドバージョンを書き込む
+        uint builddate_address();
         byte[] defualt_event_script_term_code(); //イベント命令を終了させるディフォルトコード
         byte[] defualt_event_script_toplevel_code(); //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
         byte[] defualt_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)

@@ -35,5 +35,5 @@ B3:$COMBO ChangeSaveSlotColor_Color_Combo.en.txt:.en=Color
 B3:$COMBO ChangeSaveSlotColor_Color_Combo.en.txt:.zh=Color
 
 INFO.en=Change the color of the save slot.\r\nIn a work that has three levels of difficulty, it is possible to prevent a normal difficulty save slot from being easily distinguished from a eazy difficulty save slot.\r\nSpecial 26 refers to Hack Chrome where 0x26 is specified in the difficulty setting.It seems that this value is stored when both the hardware and tutorial flags are turned on.\r\nFlag 0x8A is a flag that is activated when Mulders arrive at Frelia Castle and become friends.Somehow, this flag can contribute to save slot color specification.Is it a remnant of the FE7 Hector version? \r\n
-NAME.zh=更改每个难度级别（编辑器）的保存菜单的颜色。
+NAME.zh=更改每个难度级别(Editor)的保存菜单的颜色。
 INFO.zh=更改保存插槽的颜色。\r\n在具有三个难度等级的作品中，可以防止将普通的难度保存槽与简单的难度保存槽容易地区分开。\r\n特殊26是指在难度设置中指定为0x26的Hack Chrome。似乎在打开硬件和教程标志时都存储了该值。\r\n标志0x8A是当Mulders到达Frelia Castle并成为朋友时激活的标志。不知何故，此标志可以有助于节省插槽颜色。它是FE7 Hector版本的残余吗？ \r\n

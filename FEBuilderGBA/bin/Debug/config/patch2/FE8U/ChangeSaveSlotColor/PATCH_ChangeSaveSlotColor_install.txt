@@ -9,5 +9,5 @@ AUTHOR=7743
 TYPE=EA
 EA=ChangeSaveSlotColor.event
 INFO.en=Change the color of the save slot.\r\nIn a work that has three levels of difficulty, it is possible to prevent a normal difficulty save slot from being easily distinguished from a eazy difficulty save slot.
-NAME.zh=更改每个难度级别的保存菜单的颜色（安装）。
+NAME.zh=更改每个难度级别的保存菜单的颜色(Install)
 INFO.zh=更改保存插槽的颜色。\r\n在具有三个难度等级的作品中，可以防止将普通的难度保存槽与简单的难度保存槽容易地区分开。

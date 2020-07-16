@@ -5258,7 +5258,6 @@
 08005308	Font_ResetAllocation	{J}
 080270C0	SwapUnitStats	{J}
 080273D4	ItemEffect_ErrorMessage	{J}
-
 08022530	UseCommandUsability	{U}
 080225A8	EquipCommandUsability	{U}
 080225F0	DiscardCommandUsability	{U}
@@ -5268,3 +5267,7 @@
 08005438	Font_ResetAllocation	{U}
 08026C38	SwapUnitStats	{U}
 08026F4C	ItemEffect_ErrorMessage	{U}
+0800515C	SetupDebugFontForOBJ	{J}
+080051E8	PrintDebugStringAsOBJ	{J}
+08005280	SetupDebugFontForOBJ	{U}
+0800530C	PrintDebugStringAsOBJ	{U}
