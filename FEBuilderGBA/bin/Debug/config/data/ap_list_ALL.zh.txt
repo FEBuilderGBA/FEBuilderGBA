@@ -1,0 +1,29 @@
+AP1-1 Lord Paladin Myrmidon-male Thief Armor Peg Druid Wight ,etc	fbd01a258b6e81aae1798d20e8d99b16
+AP1-2 Ranger Fighter MageKnight Shaman GreatKnight Valkyrie ,etc	f3122dc06748e6b27007ba72f9d3d7c1
+AP1-3 Mercenary Archer Myrmidon-female	6bee18df2d026fdb0989c1d37879d1e6
+AP1-4 Sage-male	9dbd3f29082ac9d474a8f123ee36bef5
+AP1-5 Sniper-female Zephiel-King	3881b24069b31276d62f2eba5eb70d55
+AP1-6 Mage	d73c51d23cac3aba7d06cd66e706c8f5
+AP1-7 Sage-male	e0b5c9de4ea8c47be5ef7b5c199fb593
+AP1-8 Sage-female	91aa09367fb0891c98cd6764da45f47e
+AP1-9 DeamonKing	fb327e729e0801ee3472c41870230bf3
+AP1-A Gargoyle	9ae9f63cfa7e019136066b637a8858b9
+AP1-B Berserker of Hawkeye	9eeee5432cbd2a13c91b063fb447f5c7
+AP2-1 GreatLord Bishop BladeLord	4ef3b160f3437e39d6e94975b4cb59e7
+AP2-2 General	69afc70dd2b4e7e0d3c7ba9db08f8632
+AP2-3 Cyclops	75d342cfa59228606bdaf5744cb25bb2
+AP2-4 Hero	284a86d1a06f31c84e11705c2e674580
+AP2-5 Swordmaster	fad8a8ca042557ec887bf25b144f6e6c
+AP2-6 WyvernRider-male	bce2bb828f95a7fa213e3852331210f7
+AP2-7 WyvernRider-female	93bf488d44ba7132eca721e72d8451a8
+AP2-8 Swordmaster	f754b0edf9dc6de86705796263f75d97
+AP2-9 Journeyman	36181a545dcc99ef477dcb223eaa477a
+AP2-A WyvernKn.	0de43c799cc03db5374f5b6eb9bde0d6
+AP3-1 GreatLord of Hector	8718a092062b259f0260503da3f809e9
+AP4-1 WyvernLord	44744729a0707d69a16d333a5883a062
+AP5-1 Dancer of Ninian	d2c2d56eec51f0cff30edce4b2629837
+AP6-1 Dancer of Laram and Thetis	c35b1687d5f9745bb3019b984ea5f2fe
+AP7-1 Bard. Compatible with AP1. this AP anyone can dance.	22e234e7b3bc2b7146315e16597217da
+AP8-1 Fleet Roy's Lord Roy's Great Lord ballista	38176b48e0c1d784d2298e208a072825
+AP9-1 FireDragon of FE6	c82fafaea6aaa38a89355a121e23a072
+AP10-1 DivineDragon of FE6	aaf90ea19c48af5d927b6f1e6ba1187c

@@ -86,6 +86,16 @@ namespace FEBuilderGBA
 
         private void ImageUnitMoveIconFrom_Load(object sender, EventArgs e)
         {
+            MakeAPAddressDic();
+
+            this.APComboDic = U.LoadTSVResourcePair(U.ConfigDataFilename("ap_list_"));
+            this.X_APCOMBO.BeginUpdate();
+            this.X_APCOMBO.Items.Clear();
+            foreach (var pair in this.APComboDic)
+            {
+                this.X_APCOMBO.Items.Add(pair.Value);
+            }
+            this.X_APCOMBO.EndUpdate();
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,8 +107,10 @@ namespace FEBuilderGBA
             X_PIC.Image = DrawMoveUnitIcon(pic_address, palette_type);
             X_ONE_PIC.Image = DrawMoveUnitIcon(pic_address, palette_type, 0);
 
-
+            SelectAPComboFromAPAddresss((uint)P4.Value);
         }
+
+
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
             uint pic_address = (uint)P0.Value;
@@ -334,6 +346,7 @@ namespace FEBuilderGBA
                     , isPointerOnly);
 
 //                string ss = U.To0xHexString(i+1);
+//                ss += " " + ClassForm.GetClassName((uint)i + 1);
 //                uint ap_addr = Program.ROM.p32(addr + 4);
 //                uint length = ImageUtilAP.CalcAPLength(ap_addr);
 //                byte[] aa = Program.ROM.getBinaryData(ap_addr, length);
@@ -408,6 +421,12 @@ namespace FEBuilderGBA
                 byte[] ap = File.ReadAllBytes(filename);
                 uint ap_address = U.toOffset((uint)P4.Value);
 
+                List<uint> pointers = U.GrepPointerAll(Program.ROM.Data, U.toPointer(ap_address), this.InputFormRef.BaseAddress, this.InputFormRef.BaseAddress + this.InputFormRef.BlockSize * this.InputFormRef.DataCount);
+                if (pointers.Count >= 2)
+                {//他からも参照されているので、上書き禁止
+                    ap_address = 0;
+                }
+
                 string undoname = this.Text + " AP:" + U.ToHexString(ap_address);
                 Undo.UndoData undodata = Program.Undo.NewUndoData(undoname);
 
@@ -470,6 +489,122 @@ namespace FEBuilderGBA
         {
             ImageSystemIconForm f = (ImageSystemIconForm)InputFormRef.JumpForm<ImageSystemIconForm>();
             f.JumpToPage(1);
+        }
+
+        //どのアドレスがAPMD5に対応しているかのマップ
+        Dictionary<uint, string> APAddressDic = new Dictionary<uint, string>();
+        //現在知られているAPリストのマップ ap_list_ALL.txt
+        Dictionary<string, string> APComboDic = new Dictionary<string,string>();
+
+        void MakeAPAddressDic()
+        {
+            this.APAddressDic = new Dictionary<uint, string>();
+            InputFormRef InputFormRef = Init(null);
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                uint ap_addr = Program.ROM.p32(addr + 4);
+                if (this.APAddressDic.ContainsKey(ap_addr))
+                {
+                    continue;
+                }
+
+                string ap_md5 = CalcAPMD5(ap_addr);
+                this.APAddressDic[ap_addr] = ap_md5;
+            }
+        }
+        static string CalcAPMD5(uint ap_addr)
+        {
+            uint length = ImageUtilAP.CalcAPLength(ap_addr);
+            byte[] ap_bin = Program.ROM.getBinaryData(ap_addr, length);
+
+            string ap_md5 = U.md5(ap_bin);
+            return ap_md5;
+        }
+
+        bool AP_UpdateUILock = false;
+        void SelectAPComboFromAPAddresss(uint ap_addr)
+        {
+            ap_addr = U.toOffset(ap_addr);
+
+            string ap_md5 = CalcAPMD5(ap_addr);
+            X_AP_MD5.Text = "AP_MD5: " + ap_md5;
+
+            if (this.AP_UpdateUILock)
+            {
+                return;
+            }
+            this.AP_UpdateUILock = true;
+
+            string value;
+            if (APComboDic.TryGetValue(ap_md5, out value))
+            {
+                X_APCOMBO.SelectedIndex = X_APCOMBO.FindString(value);
+            }
+            else
+            {
+                X_APCOMBO.SelectedIndex = -1;
+            }
+
+            this.AP_UpdateUILock = false;
+        }
+        void SelectAPAddresssFromAPCombo()
+        {
+            if (this.AP_UpdateUILock)
+            {
+                return;
+            }
+            this.AP_UpdateUILock = true;
+
+            uint ap_addr = SelectAPAddresssFromAPComboLow();
+            if (ap_addr == U.NOT_FOUND)
+            {
+                R.ShowStopError("このROMには、このAPが指定されたクラスが存在しないため、アドレスを見つけられませんでした。\r\n手動でAPのアドレスを入力するか、インポートを行ってください。");
+            }
+            else
+            {
+                this.P4.Value = U.toPointer(ap_addr);
+            }
+
+            this.AP_UpdateUILock = false;
+        }
+        uint SelectAPAddresssFromAPComboLow()
+        {
+            string ap_md5 = "";
+            string target = X_APCOMBO.Text;
+            foreach (var pair in this.APComboDic)
+            {
+                if (pair.Value == target)
+                {
+                    ap_md5 = pair.Key;
+                    break;
+                }
+            }
+
+            if (ap_md5.Length <= 0)
+            {
+                return U.NOT_FOUND;
+            }
+
+            foreach (var pair in this.APAddressDic)
+            {
+                if (pair.Value == ap_md5)
+                {
+                    return pair.Key;
+                }
+            }
+            return U.NOT_FOUND;
+        }
+
+        private void P4_ValueChanged(object sender, EventArgs e)
+        {
+            SelectAPComboFromAPAddresss((uint)P4.Value);
+        }
+
+        private void X_APCOMBO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectAPAddresssFromAPCombo();
         }
     }
 }

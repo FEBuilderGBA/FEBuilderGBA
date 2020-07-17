@@ -233,7 +233,7 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
 
@@ -300,7 +300,7 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
 
@@ -444,7 +444,7 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
-                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした");
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
 

@@ -1453,9 +1453,6 @@ Chapter warp is not available because the patch for MNC2 has not been applied.\r
 :MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
 Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be in the chapter to use this feature.
 
-:MAPTASK Procsの位置を特定できませんでした
-Could not locate MAPTASK Procs.
-
 :ROMのバージョン情報:
 ROM version information:
 
@@ -3781,11 +3778,14 @@ In order to use moving animation in the expanded area, a moving animation expans
 :読込むファイル名を選択してください
 Please select the file name to be read
 
+:このROMには、このAPが指定されたクラスが存在しないため、アドレスを見つけられませんでした。\r\n手動でAPのアドレスを入力するか、インポートを行ってください。
+The address could not be found because the class with this AP does not exist in this ROM.\r\nEnter the AP address manually or import.
+
 :待機アイコンへJump
 Hover Map Icons
 
-:ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。\r\n\r\nAPは特殊クラスの踊り子(バード)以外は、全員同じデータなので変更する必要はありません。\r\n特殊クラスを移植したい場合のみ、APもインポートしてください。
-Define the animation when the unit moves.\r\nIn GBAFE, the value of ClassID is the data of the moving icon to use as it is.\r\n\r\nAp is not the special class dancer (bird) except for all the same data so you do not need to change it.\r\nPlease import AP only if you want to port special classes.
+:ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。
+Define the animation when the unit moves.\r\nIn GBAFE, the value of ClassID is the data of the moving icon to use as it is.
 
 :0=自軍
 0=Player
@@ -11329,6 +11329,9 @@ No errors were automatically detected in this ROM.
 :以下のマップにエラーが存在します。
 There are errors in the following maps.
 
+:フラグの名前
+Custom Flag Name
+
 :章内で利用しているフラグの確認
 Check the flags used in the chapter.
 
@@ -11337,9 +11340,6 @@ Use this tool to create personal names for Event Flags so that they are easier t
 
 :ディフォルトに戻す
 Erase Custom Flag
-
-:フラグの名前
-Custom Flag Name
 
 :フラグに名前設定
 Event Flag Namer
