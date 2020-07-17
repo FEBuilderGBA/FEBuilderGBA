@@ -382,7 +382,7 @@
             // L_8_GENERICENEMYPORTRAIT
             // 
             this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(759, 101);
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(663, 69);
             this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1);
             this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
             this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(43, 43);
@@ -538,7 +538,7 @@
             // L_9_ATTRIBUTEICON
             // 
             this.L_9_ATTRIBUTEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(654, 123);
+            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(663, 116);
             this.L_9_ATTRIBUTEICON.Margin = new System.Windows.Forms.Padding(2);
             this.L_9_ATTRIBUTEICON.Name = "L_9_ATTRIBUTEICON";
             this.L_9_ATTRIBUTEICON.Size = new System.Drawing.Size(21, 21);
@@ -549,9 +549,9 @@
             // 
             this.J_ID_UNITPALETTEFE8.AccessibleDescription = "@UNIT_FE8_CLASS_PALETTE";
             this.J_ID_UNITPALETTEFE8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(491, 147);
+            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(494, 141);
             this.J_ID_UNITPALETTEFE8.Name = "J_ID_UNITPALETTEFE8";
-            this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(160, 28);
+            this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(163, 34);
             this.J_ID_UNITPALETTEFE8.TabIndex = 8;
             this.J_ID_UNITPALETTEFE8.Text = "ユニット別パレットへジャンプ";
             this.J_ID_UNITPALETTEFE8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -559,7 +559,7 @@
             // L_6_PORTRAIT_AUTO
             // 
             this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(678, 75);
+            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(713, 69);
             this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1);
             this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
             this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(79, 69);
@@ -570,7 +570,7 @@
             // B10
             // 
             this.B10.Hexadecimal = true;
-            this.B10.Location = new System.Drawing.Point(603, 105);
+            this.B10.Location = new System.Drawing.Point(609, 95);
             this.B10.Margin = new System.Windows.Forms.Padding(1);
             this.B10.Maximum = new decimal(new int[] {
             255,
@@ -586,7 +586,7 @@
             this.J_10.AccessibleDescription = "@UNIT_SORT_ORDER";
             this.J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_10.Location = new System.Drawing.Point(491, 106);
+            this.J_10.Location = new System.Drawing.Point(494, 97);
             this.J_10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_10.Name = "J_10";
             this.J_10.Size = new System.Drawing.Size(111, 18);
@@ -597,7 +597,7 @@
             // B8
             // 
             this.B8.Hexadecimal = true;
-            this.B8.Location = new System.Drawing.Point(603, 86);
+            this.B8.Location = new System.Drawing.Point(609, 73);
             this.B8.Margin = new System.Windows.Forms.Padding(1);
             this.B8.Maximum = new decimal(new int[] {
             255,
@@ -611,7 +611,7 @@
             // W6
             // 
             this.W6.Hexadecimal = true;
-            this.W6.Location = new System.Drawing.Point(603, 68);
+            this.W6.Location = new System.Drawing.Point(609, 52);
             this.W6.Margin = new System.Windows.Forms.Padding(1);
             this.W6.Maximum = new decimal(new int[] {
             65535,
@@ -626,7 +626,7 @@
             // 
             this.J_8_GENERICENEMYPORTRAIT.AccessibleDescription = "@UNIT_MINI_PORTRAIT";
             this.J_8_GENERICENEMYPORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(491, 87);
+            this.J_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(494, 75);
             this.J_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_8_GENERICENEMYPORTRAIT.Name = "J_8_GENERICENEMYPORTRAIT";
             this.J_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(111, 18);
@@ -639,7 +639,7 @@
             this.J_6_PORTRAIT.AccessibleDescription = "@UNIT_PORTRAIT";
             this.J_6_PORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_6_PORTRAIT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_6_PORTRAIT.Location = new System.Drawing.Point(491, 68);
+            this.J_6_PORTRAIT.Location = new System.Drawing.Point(494, 53);
             this.J_6_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_6_PORTRAIT.Name = "J_6_PORTRAIT";
             this.J_6_PORTRAIT.Size = new System.Drawing.Size(111, 18);
@@ -650,18 +650,18 @@
             // L_5_CLASS
             // 
             this.L_5_CLASS.ErrorMessage = "";
-            this.L_5_CLASS.Location = new System.Drawing.Point(654, 50);
+            this.L_5_CLASS.Location = new System.Drawing.Point(663, 32);
             this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(1);
             this.L_5_CLASS.Name = "L_5_CLASS";
             this.L_5_CLASS.Placeholder = "";
             this.L_5_CLASS.ReadOnly = true;
-            this.L_5_CLASS.Size = new System.Drawing.Size(103, 20);
+            this.L_5_CLASS.Size = new System.Drawing.Size(129, 20);
             this.L_5_CLASS.TabIndex = 23;
             // 
             // B5
             // 
             this.B5.Hexadecimal = true;
-            this.B5.Location = new System.Drawing.Point(603, 49);
+            this.B5.Location = new System.Drawing.Point(609, 31);
             this.B5.Margin = new System.Windows.Forms.Padding(1);
             this.B5.Maximum = new decimal(new int[] {
             255,
@@ -675,7 +675,7 @@
             // B9
             // 
             this.B9.Hexadecimal = true;
-            this.B9.Location = new System.Drawing.Point(603, 124);
+            this.B9.Location = new System.Drawing.Point(609, 117);
             this.B9.Margin = new System.Windows.Forms.Padding(1);
             this.B9.Maximum = new decimal(new int[] {
             255,
@@ -695,7 +695,7 @@
             // 
             this.L_9_ATTRIBUTE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_9_ATTRIBUTE.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_9_ATTRIBUTE.Location = new System.Drawing.Point(491, 125);
+            this.L_9_ATTRIBUTE.Location = new System.Drawing.Point(494, 119);
             this.L_9_ATTRIBUTE.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_9_ATTRIBUTE.Name = "L_9_ATTRIBUTE";
             this.L_9_ATTRIBUTE.Size = new System.Drawing.Size(111, 18);
@@ -707,7 +707,7 @@
             // 
             this.J_5_CLASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_5_CLASS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_5_CLASS.Location = new System.Drawing.Point(491, 49);
+            this.J_5_CLASS.Location = new System.Drawing.Point(494, 31);
             this.J_5_CLASS.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_5_CLASS.Name = "J_5_CLASS";
             this.J_5_CLASS.Size = new System.Drawing.Size(111, 18);
@@ -2569,7 +2569,7 @@
             this.SelectAddress.Name = "SelectAddress";
             this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(169, 20);
+            this.SelectAddress.Size = new System.Drawing.Size(183, 20);
             this.SelectAddress.TabIndex = 40;
             // 
             // label22
