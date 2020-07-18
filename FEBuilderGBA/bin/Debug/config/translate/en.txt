@@ -5180,7 +5180,7 @@ When Used
 Effect
 
 :ダメージ追加効果
-Damage Ddditional Effect
+Additional Damage Type
 
 :進撃準備店
 Preparation Price
@@ -5218,6 +5218,12 @@ Price Per Use
 :性能
 Weapon Stats
 
+:耐久
+Uses
+
+:攻撃2
+Might
+
 :命中
 Hit
 
@@ -5226,9 +5232,6 @@ Range
 
 :重さ
 Weight
-
-:耐久
-Uses
 
 :特効効果\r\n新規割当
 New\r\nEffectiveness
@@ -5240,7 +5243,7 @@ Effectiveness\r\nAddress
 New\r\nStat Booster
 
 :能力補正値
-Stat Booster
+Stat Boosts:
 
 :能力修正\r\n格納アドレス
 Stat Boosts\r\nAddress
@@ -5312,7 +5315,7 @@ The indirect effect is set to 0xFFFF even though it is a weapon that can be atta
 Item data is extremely low.It may be damaged.
 
 :武器LV熟練度
-WEXP Gain
+WEXP Per Hit
 
 :3F=射程3-15(ロングアーチ)
 3F=3-15 Range (Ballista)

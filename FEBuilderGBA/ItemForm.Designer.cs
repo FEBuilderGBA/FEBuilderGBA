@@ -809,10 +809,10 @@
             "3F=射程3-15(ロングアーチ)",
             "10=魔法/2(リザーブの杖)",
             "FF=全体(ラトナ)"});
-            this.L_25_COMBO.Location = new System.Drawing.Point(395, 186);
+            this.L_25_COMBO.Location = new System.Drawing.Point(385, 186);
             this.L_25_COMBO.Margin = new System.Windows.Forms.Padding(1);
             this.L_25_COMBO.Name = "L_25_COMBO";
-            this.L_25_COMBO.Size = new System.Drawing.Size(136, 21);
+            this.L_25_COMBO.Size = new System.Drawing.Size(146, 21);
             this.L_25_COMBO.TabIndex = 46;
             // 
             // label28
@@ -829,7 +829,7 @@
             // 
             // B21
             // 
-            this.B21.Location = new System.Drawing.Point(303, 164);
+            this.B21.Location = new System.Drawing.Point(299, 164);
             this.B21.Margin = new System.Windows.Forms.Padding(1);
             this.B21.Maximum = new decimal(new int[] {
             255,
@@ -845,12 +845,12 @@
             // 
             this.J_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_21.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_21.Location = new System.Drawing.Point(303, 146);
+            this.J_21.Location = new System.Drawing.Point(299, 146);
             this.J_21.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_21.Name = "J_21";
             this.J_21.Size = new System.Drawing.Size(43, 17);
             this.J_21.TabIndex = 38;
-            this.J_21.Text = "攻撃";
+            this.J_21.Text = "攻撃2";
             this.J_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.J_21.Click += new System.EventHandler(this.J_21_Click);
             // 
@@ -864,7 +864,7 @@
             0,
             0});
             this.B20.Name = "B20";
-            this.B20.Size = new System.Drawing.Size(51, 20);
+            this.B20.Size = new System.Drawing.Size(47, 20);
             this.B20.TabIndex = 29;
             this.B20.ValueChanged += new System.EventHandler(this.W26_ValueChanged);
             // 
@@ -872,17 +872,17 @@
             // 
             this.J_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_22.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_22.Location = new System.Drawing.Point(348, 146);
+            this.J_22.Location = new System.Drawing.Point(346, 146);
             this.J_22.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_22.Name = "J_22";
-            this.J_22.Size = new System.Drawing.Size(43, 17);
+            this.J_22.Size = new System.Drawing.Size(35, 17);
             this.J_22.TabIndex = 39;
             this.J_22.Text = "命中";
             this.J_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B23
             // 
-            this.B23.Location = new System.Drawing.Point(395, 164);
+            this.B23.Location = new System.Drawing.Point(385, 164);
             this.B23.Margin = new System.Windows.Forms.Padding(1);
             this.B23.Maximum = new decimal(new int[] {
             255,
@@ -890,7 +890,7 @@
             0,
             0});
             this.B23.Name = "B23";
-            this.B23.Size = new System.Drawing.Size(42, 20);
+            this.B23.Size = new System.Drawing.Size(52, 20);
             this.B23.TabIndex = 32;
             // 
             // B24
@@ -938,10 +938,10 @@
             // 
             this.J_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_23.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_23.Location = new System.Drawing.Point(395, 146);
+            this.J_23.Location = new System.Drawing.Point(385, 146);
             this.J_23.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_23.Name = "J_23";
-            this.J_23.Size = new System.Drawing.Size(42, 17);
+            this.J_23.Size = new System.Drawing.Size(52, 17);
             this.J_23.TabIndex = 40;
             this.J_23.Text = "重さ";
             this.J_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -966,14 +966,14 @@
             this.J_20.Location = new System.Drawing.Point(250, 146);
             this.J_20.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_20.Name = "J_20";
-            this.J_20.Size = new System.Drawing.Size(51, 17);
+            this.J_20.Size = new System.Drawing.Size(47, 17);
             this.J_20.TabIndex = 37;
             this.J_20.Text = "耐久";
             this.J_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B22
             // 
-            this.B22.Location = new System.Drawing.Point(348, 164);
+            this.B22.Location = new System.Drawing.Point(346, 164);
             this.B22.Margin = new System.Windows.Forms.Padding(1);
             this.B22.Maximum = new decimal(new int[] {
             255,
@@ -981,7 +981,7 @@
             0,
             0});
             this.B22.Name = "B22";
-            this.B22.Size = new System.Drawing.Size(43, 20);
+            this.B22.Size = new System.Drawing.Size(35, 20);
             this.B22.TabIndex = 31;
             // 
             // L_16_NEWALLOC_EFFECTIVENESS
