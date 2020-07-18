@@ -727,17 +727,6 @@ namespace FEBuilderGBA
                 Match m = RegexCache.Match(a, regex);
                 string r = m.Groups[1].ToString();
                 Debug.Assert(r == "Mon, 27 Jan 2020 07:06:32 GMT");
-
-                DateTime d = DateTime.Parse(r);
-                r = d.ToString();
-                Debug.Assert(r == "2020/01/27 16:06:32");
-            }
-            {
-                string r = "20/01/27 20:04";
-
-                DateTime d = DateTime.Parse(r, new CultureInfo("ja-JP", false));
-                r = d.ToString();
-                Debug.Assert(r == "2020/01/27 20:04:00");
             }
         }
 #endif //DEBUG

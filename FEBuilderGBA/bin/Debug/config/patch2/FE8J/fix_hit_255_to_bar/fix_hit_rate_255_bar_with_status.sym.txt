@@ -1,0 +1,3 @@
+display_number=$18
+display_bar=$22
+Exit=$2A

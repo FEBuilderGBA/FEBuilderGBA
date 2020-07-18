@@ -1,0 +1,23 @@
+NAME=命中率255がbarになってしまう問題を修正する(FE8N)
+NAME.en=Fixed an issue where the accuracy of 255 is bar(FE8N)
+NAME.zh=Fixed an issue where the accuracy of 255 is bar(FE8N)
+
+INFO=バニラでは、命中率が255になると、barになってしまいます。\r\nこのパッチはその問題を解決します。ユニットが攻撃力を持っている場合は、命中率255を正しく表示します。逆に、攻撃力を持って入れば、--と表示するように修正します。\r\nこのパッチはFE8N専用のパッチです。
+
+
+
+TYPE=BIN
+PATCHED_IF:0x089800=0x00 0x4B 0x9F 0x46
+//ステータス画面
+BIN:$FREEAREA:1=fix_hit_rate_255_bar_with_status.dmp
+JUMP:0x089800:$r3=fix_hit_rate_255_bar_with_status.dmp
+//攻撃時の画面
+BIN:$FREEAREA:2=fix_hit_rate_255_bar_with_item.dmp
+JUMP:0x01E5EC:$r3=fix_hit_rate_255_bar_with_item.dmp
+
+AUTHOR=7743
+
+CONFLICT_IF:0x89800=0x20 0x1C 0x02 0x21
+CONFLICT_MESSAGE=FE8N is not installed.
+INFO.en=In vanilla, when the hit rate is 255, it becomes bar.\r\nThis patch resolves that issue.If the unit has attack power, it will correctly show a hit rate of 255.On the contrary, if you enter with attack power, it will be corrected to display as --.\r\nThis patch is for FE8N only.
+INFO.zh=在香草中，当命中率是255时，它变成小节。\r\n此修补程序解决了该问题。如果单位有攻击力，它将正确显示255的命中率。相反，如果您具有攻击力，则将其更正为显示为-。\r\n该补丁仅适用于FE8N。
