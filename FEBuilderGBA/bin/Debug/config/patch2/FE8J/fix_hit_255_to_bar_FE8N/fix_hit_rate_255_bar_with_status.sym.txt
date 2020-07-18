@@ -1,0 +1,3 @@
+display_number=$1A
+display_bar=$24
+Exit=$2C

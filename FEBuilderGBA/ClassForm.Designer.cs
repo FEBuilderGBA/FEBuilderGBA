@@ -391,7 +391,7 @@
             // 
             // panel5
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.MagicExtClassGrow);
             this.panel5.Controls.Add(this.MagicExtClassGrowLabel);
             this.panel5.Controls.Add(this.B33);
@@ -956,7 +956,7 @@
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.MagicExtClassBase);
             this.panel4.Controls.Add(this.MagicExtClassBaseLabel);
             this.panel4.Controls.Add(this.B18);
@@ -2000,7 +2000,7 @@
             // 
             // panel7
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.MagicExtClassLimit);
             this.panel7.Controls.Add(this.MagicExtClassLimitLabel);
             this.panel7.Controls.Add(this.B26);

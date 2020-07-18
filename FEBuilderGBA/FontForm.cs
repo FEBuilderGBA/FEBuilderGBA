@@ -361,6 +361,8 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            string target = this.SearchChar.Text;
+            target = TextForm.ConvertFEditorToEscape(target);
 
             Bitmap fontSampleBitmap;
 
@@ -376,7 +378,7 @@ namespace FEBuilderGBA
                 uint search_char;
                 if (this.FontSample.Text[i] == '@')
                 {
-                    search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
+                    search_char = U.ConvertMojiCharToUnitFast(target, priorityCode);
                 }
                 else
                 {
@@ -415,8 +417,11 @@ namespace FEBuilderGBA
         //検索して表示
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            string target = this.SearchChar.Text;
+            target = TextForm.ConvertFEditorToEscape(target);
+
             PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
-            uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
+            uint search_char = U.ConvertMojiCharToUnitFast(target, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
 
@@ -544,17 +549,20 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            string target = this.SearchChar.Text;
+            target = TextForm.ConvertFEditorToEscape(target);
+
             PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             if (this.FontType.SelectedIndex == 0)
             {
                 //アイテム
-                Bitmap bitmap = FontForm.DrawFont(this.SearchChar.Text, true, priorityCode);
+                Bitmap bitmap = FontForm.DrawFont(target, true, priorityCode);
                 ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(this, "Item_" + this.SearchChar.Text), 8);
             }
             else
             {
                 //セリフ
-                Bitmap bitmap = FontForm.DrawFont(this.SearchChar.Text, false, priorityCode);
+                Bitmap bitmap = FontForm.DrawFont(target, false, priorityCode);
                 ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(this, "Serif_" + this.SearchChar.Text), 8);
             }
 

@@ -6437,7 +6437,7 @@ Text ID System reservation.
 Text ID User defined.
 
 :会話グループ
-Conversation group
+Conversation Group
 
 :分岐拡張
 Branch extension.
@@ -12243,75 +12243,6 @@ Unit data is extremely small. It may be damaged.
 
 :ユニット別パレットへジャンプ
 Jump To Unit Palette
-
-:鎧△
-Triangle Attack 2
-
-:天馬△
-Triangle Attack 1
-
-:選択不可
-Can't Select Unit
-
-:専用1(魔物用)
-Monster Weapon Lock
-
-:専用3
-Weapon Lock (Myrmidon Archetypes)
-
-:専用2
-Weapon Lock (Lords)
-
-:杖:-
-STF:-
-
-:闇:-
-DRK:-
-
-:光:-
-LGT:-
-
-:理:-
-ANM:-
-
-:弓:-
-BOW:-
-
-:斧:-
-AXE:-
-
-:槍:-
-LNC:-
-
-:剣:-
-SWD:-
-
-:敵将化
-Boss
-
-:女性化
-Female
-
-:制圧可能
-Seize Ability
-
-:救出(ペガサスマーク)
-Pegasus Unit
-
-:救出(飛龍マーク)
-Wyvern Unit
-
-:救出(馬マーク)
-Horse Unit
-
-:輸送体コマンド
-Supply (Merlinus)
-
-:上級クラス(武器S可)
-Promoted Unit
-
-:01で経験値無
-01=with no experience value
 
 :{0}=背を伸ばさない
 {0}=Do not raise
