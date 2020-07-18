@@ -571,6 +571,9 @@ SKL
 :攻撃
 POW
 
+:魔力
+MAG
+
 :敵成長率(%)
 Enemy Growths
 
@@ -645,9 +648,6 @@ At the weapon level, proximity and magic are mixed.\r\nIf combining proximity an
 
 :「移動速度」に2以上が設定されています。「移動速度」が、2以上になっているユニットは移動した時に正しく描画されません。
 "Movement Speed" is set to 2 or more.Units whose "Movement Speed" is 2 or more will not be drawn correctly when moving.
-
-:魔力
-Magic
 
 :スキル
 Skill
