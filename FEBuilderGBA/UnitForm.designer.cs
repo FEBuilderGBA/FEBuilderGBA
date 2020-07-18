@@ -303,7 +303,7 @@
             this.J_0_TEXT.AccessibleDescription = "@NAME";
             this.J_0_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_0_TEXT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_0_TEXT.Location = new System.Drawing.Point(163, 52);
+            this.J_0_TEXT.Location = new System.Drawing.Point(163, 57);
             this.J_0_TEXT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_0_TEXT.Name = "J_0_TEXT";
             this.J_0_TEXT.Size = new System.Drawing.Size(55, 18);
@@ -314,7 +314,7 @@
             // W0
             // 
             this.W0.Hexadecimal = true;
-            this.W0.Location = new System.Drawing.Point(221, 51);
+            this.W0.Location = new System.Drawing.Point(221, 56);
             this.W0.Margin = new System.Windows.Forms.Padding(1);
             this.W0.Maximum = new decimal(new int[] {
             65535,
@@ -330,7 +330,7 @@
             this.J_2_TEXT.AccessibleDescription = "@DETAIL";
             this.J_2_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_2_TEXT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_2_TEXT.Location = new System.Drawing.Point(164, 75);
+            this.J_2_TEXT.Location = new System.Drawing.Point(164, 79);
             this.J_2_TEXT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_2_TEXT.Name = "J_2_TEXT";
             this.J_2_TEXT.Size = new System.Drawing.Size(55, 18);
@@ -341,7 +341,7 @@
             // W2
             // 
             this.W2.Hexadecimal = true;
-            this.W2.Location = new System.Drawing.Point(221, 74);
+            this.W2.Location = new System.Drawing.Point(221, 78);
             this.W2.Margin = new System.Windows.Forms.Padding(1);
             this.W2.Maximum = new decimal(new int[] {
             65535,
@@ -356,7 +356,7 @@
             // 
             this.J_4.AccessibleDescription = "@UNIT_ID";
             this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4.Location = new System.Drawing.Point(389, 54);
+            this.J_4.Location = new System.Drawing.Point(392, 57);
             this.J_4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_4.Name = "J_4";
             this.J_4.Size = new System.Drawing.Size(26, 18);
@@ -370,7 +370,7 @@
             this.HardCodingWarningLabel.AutoSize = true;
             this.HardCodingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HardCodingWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.HardCodingWarningLabel.Location = new System.Drawing.Point(162, 97);
+            this.HardCodingWarningLabel.Location = new System.Drawing.Point(162, 101);
             this.HardCodingWarningLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HardCodingWarningLabel.Name = "HardCodingWarningLabel";
             this.HardCodingWarningLabel.Size = new System.Drawing.Size(71, 15);
@@ -383,7 +383,7 @@
             // 
             this.L_8_GENERICENEMYPORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(749, 90);
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(765, 90);
             this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1);
             this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
             this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(43, 43);
@@ -394,7 +394,7 @@
             // B4
             // 
             this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(417, 53);
+            this.B4.Location = new System.Drawing.Point(420, 56);
             this.B4.Margin = new System.Windows.Forms.Padding(1);
             this.B4.Maximum = new decimal(new int[] {
             255,
@@ -551,7 +551,7 @@
             // 
             this.J_ID_UNITPALETTEFE8.AccessibleDescription = "@UNIT_FE8_CLASS_PALETTE";
             this.J_ID_UNITPALETTEFE8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(494, 99);
+            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(510, 99);
             this.J_ID_UNITPALETTEFE8.Name = "J_ID_UNITPALETTEFE8";
             this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(163, 34);
             this.J_ID_UNITPALETTEFE8.TabIndex = 8;
@@ -562,7 +562,7 @@
             // 
             this.L_6_PORTRAIT_AUTO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(663, 64);
+            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(679, 64);
             this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1);
             this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
             this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(79, 69);
@@ -600,7 +600,7 @@
             // B8
             // 
             this.B8.Hexadecimal = true;
-            this.B8.Location = new System.Drawing.Point(609, 73);
+            this.B8.Location = new System.Drawing.Point(625, 73);
             this.B8.Margin = new System.Windows.Forms.Padding(1);
             this.B8.Maximum = new decimal(new int[] {
             255,
@@ -614,7 +614,7 @@
             // W6
             // 
             this.W6.Hexadecimal = true;
-            this.W6.Location = new System.Drawing.Point(609, 52);
+            this.W6.Location = new System.Drawing.Point(625, 52);
             this.W6.Margin = new System.Windows.Forms.Padding(1);
             this.W6.Maximum = new decimal(new int[] {
             65535,
@@ -629,7 +629,7 @@
             // 
             this.J_8_GENERICENEMYPORTRAIT.AccessibleDescription = "@UNIT_MINI_PORTRAIT";
             this.J_8_GENERICENEMYPORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(494, 75);
+            this.J_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(510, 75);
             this.J_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_8_GENERICENEMYPORTRAIT.Name = "J_8_GENERICENEMYPORTRAIT";
             this.J_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(111, 18);
@@ -642,7 +642,7 @@
             this.J_6_PORTRAIT.AccessibleDescription = "@UNIT_PORTRAIT";
             this.J_6_PORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_6_PORTRAIT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_6_PORTRAIT.Location = new System.Drawing.Point(494, 53);
+            this.J_6_PORTRAIT.Location = new System.Drawing.Point(510, 53);
             this.J_6_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_6_PORTRAIT.Name = "J_6_PORTRAIT";
             this.J_6_PORTRAIT.Size = new System.Drawing.Size(111, 18);
@@ -653,7 +653,7 @@
             // L_5_CLASS
             // 
             this.L_5_CLASS.ErrorMessage = "";
-            this.L_5_CLASS.Location = new System.Drawing.Point(663, 32);
+            this.L_5_CLASS.Location = new System.Drawing.Point(679, 32);
             this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(1);
             this.L_5_CLASS.Name = "L_5_CLASS";
             this.L_5_CLASS.Placeholder = "";
@@ -664,7 +664,7 @@
             // B5
             // 
             this.B5.Hexadecimal = true;
-            this.B5.Location = new System.Drawing.Point(609, 31);
+            this.B5.Location = new System.Drawing.Point(625, 31);
             this.B5.Margin = new System.Windows.Forms.Padding(1);
             this.B5.Maximum = new decimal(new int[] {
             255,
@@ -710,7 +710,7 @@
             // 
             this.J_5_CLASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_5_CLASS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_5_CLASS.Location = new System.Drawing.Point(494, 31);
+            this.J_5_CLASS.Location = new System.Drawing.Point(510, 31);
             this.J_5_CLASS.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_5_CLASS.Name = "J_5_CLASS";
             this.J_5_CLASS.Size = new System.Drawing.Size(111, 18);
@@ -721,7 +721,7 @@
             // L_0_TEXT_NAME1
             // 
             this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(277, 53);
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(280, 56);
             this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(1);
             this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
             this.L_0_TEXT_NAME1.Placeholder = "";
@@ -732,7 +732,7 @@
             // L_2_TEXT_DETAIL3
             // 
             this.L_2_TEXT_DETAIL3.ErrorMessage = "";
-            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(277, 75);
+            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(280, 78);
             this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(1);
             this.L_2_TEXT_DETAIL3.Multiline = true;
             this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
@@ -2539,17 +2539,17 @@
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(316, 29);
+            this.BlockSize.Location = new System.Drawing.Point(433, 31);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(90, 20);
+            this.BlockSize.Size = new System.Drawing.Size(69, 20);
             this.BlockSize.TabIndex = 52;
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(277, 28);
+            this.label3.Location = new System.Drawing.Point(392, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 21);
@@ -2560,7 +2560,7 @@
             // SelectAddress
             // 
             this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(609, 6);
+            this.SelectAddress.Location = new System.Drawing.Point(625, 6);
             this.SelectAddress.Name = "SelectAddress";
             this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
@@ -2570,7 +2570,7 @@
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Location = new System.Drawing.Point(494, 5);
+            this.label22.Location = new System.Drawing.Point(510, 5);
             this.label22.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(111, 21);
@@ -2592,7 +2592,7 @@
             // Address
             // 
             this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(163, 29);
+            this.Address.Location = new System.Drawing.Point(280, 31);
             this.Address.Margin = new System.Windows.Forms.Padding(1);
             this.Address.Maximum = new decimal(new int[] {
             -559939585,
@@ -2600,16 +2600,16 @@
             54,
             0});
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(107, 20);
+            this.Address.Size = new System.Drawing.Size(109, 20);
             this.Address.TabIndex = 0;
             // 
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(5, 29);
+            this.label23.Location = new System.Drawing.Point(162, 31);
             this.label23.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(151, 20);
+            this.label23.Size = new System.Drawing.Size(110, 20);
             this.label23.TabIndex = 1;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2617,7 +2617,7 @@
             // ReloadListButton
             // 
             this.ReloadListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReloadListButton.Location = new System.Drawing.Point(410, 5);
+            this.ReloadListButton.Location = new System.Drawing.Point(421, 5);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(1);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(82, 21);
@@ -2639,7 +2639,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(277, 5);
+            this.label2.Location = new System.Drawing.Point(280, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 21);
@@ -2649,7 +2649,7 @@
             // 
             // ReadCount
             // 
-            this.ReadCount.Location = new System.Drawing.Point(361, 6);
+            this.ReadCount.Location = new System.Drawing.Point(364, 7);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(1);
             this.ReadCount.Maximum = new decimal(new int[] {
             255,
@@ -2673,7 +2673,7 @@
             0,
             0,
             0});
-            this.ReadStartAddress.Location = new System.Drawing.Point(163, 6);
+            this.ReadStartAddress.Location = new System.Drawing.Point(162, 6);
             this.ReadStartAddress.Margin = new System.Windows.Forms.Padding(1);
             this.ReadStartAddress.Maximum = new decimal(new int[] {
             -559939585,
@@ -2681,13 +2681,13 @@
             54,
             0});
             this.ReadStartAddress.Name = "ReadStartAddress";
-            this.ReadStartAddress.Size = new System.Drawing.Size(107, 20);
+            this.ReadStartAddress.Size = new System.Drawing.Size(110, 20);
             this.ReadStartAddress.TabIndex = 0;
             // 
             // LabelFilter
             // 
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(6, 52);
+            this.LabelFilter.Location = new System.Drawing.Point(6, 31);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(151, 18);
@@ -2699,9 +2699,9 @@
             // 
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
-            this.AddressList.Location = new System.Drawing.Point(5, 74);
+            this.AddressList.Location = new System.Drawing.Point(5, 53);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(152, 464);
+            this.AddressList.Size = new System.Drawing.Size(152, 485);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
