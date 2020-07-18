@@ -306,7 +306,7 @@
             this.J_0_TEXT.Location = new System.Drawing.Point(163, 52);
             this.J_0_TEXT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_0_TEXT.Name = "J_0_TEXT";
-            this.J_0_TEXT.Size = new System.Drawing.Size(65, 18);
+            this.J_0_TEXT.Size = new System.Drawing.Size(55, 18);
             this.J_0_TEXT.TabIndex = 10;
             this.J_0_TEXT.Text = "名前";
             this.J_0_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,7 +314,7 @@
             // W0
             // 
             this.W0.Hexadecimal = true;
-            this.W0.Location = new System.Drawing.Point(230, 51);
+            this.W0.Location = new System.Drawing.Point(221, 51);
             this.W0.Margin = new System.Windows.Forms.Padding(1);
             this.W0.Maximum = new decimal(new int[] {
             65535,
@@ -330,10 +330,10 @@
             this.J_2_TEXT.AccessibleDescription = "@DETAIL";
             this.J_2_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_2_TEXT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.J_2_TEXT.Location = new System.Drawing.Point(163, 75);
+            this.J_2_TEXT.Location = new System.Drawing.Point(164, 75);
             this.J_2_TEXT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_2_TEXT.Name = "J_2_TEXT";
-            this.J_2_TEXT.Size = new System.Drawing.Size(65, 18);
+            this.J_2_TEXT.Size = new System.Drawing.Size(55, 18);
             this.J_2_TEXT.TabIndex = 12;
             this.J_2_TEXT.Text = "詳細";
             this.J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,7 +341,7 @@
             // W2
             // 
             this.W2.Hexadecimal = true;
-            this.W2.Location = new System.Drawing.Point(230, 76);
+            this.W2.Location = new System.Drawing.Point(221, 74);
             this.W2.Margin = new System.Windows.Forms.Padding(1);
             this.W2.Maximum = new decimal(new int[] {
             65535,
@@ -356,7 +356,7 @@
             // 
             this.J_4.AccessibleDescription = "@UNIT_ID";
             this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4.Location = new System.Drawing.Point(393, 53);
+            this.J_4.Location = new System.Drawing.Point(389, 54);
             this.J_4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_4.Name = "J_4";
             this.J_4.Size = new System.Drawing.Size(26, 18);
@@ -381,8 +381,9 @@
             // 
             // L_8_GENERICENEMYPORTRAIT
             // 
+            this.L_8_GENERICENEMYPORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(663, 69);
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(749, 90);
             this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1);
             this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
             this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(43, 43);
@@ -393,7 +394,7 @@
             // B4
             // 
             this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(421, 52);
+            this.B4.Location = new System.Drawing.Point(417, 53);
             this.B4.Margin = new System.Windows.Forms.Padding(1);
             this.B4.Maximum = new decimal(new int[] {
             255,
@@ -538,10 +539,11 @@
             // L_9_ATTRIBUTEICON
             // 
             this.L_9_ATTRIBUTEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(663, 116);
+            this.L_9_ATTRIBUTEICON.Location = new System.Drawing.Point(876, 97);
             this.L_9_ATTRIBUTEICON.Margin = new System.Windows.Forms.Padding(2);
             this.L_9_ATTRIBUTEICON.Name = "L_9_ATTRIBUTEICON";
-            this.L_9_ATTRIBUTEICON.Size = new System.Drawing.Size(21, 21);
+            this.L_9_ATTRIBUTEICON.Size = new System.Drawing.Size(24, 24);
+            this.L_9_ATTRIBUTEICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.L_9_ATTRIBUTEICON.TabIndex = 46;
             this.L_9_ATTRIBUTEICON.TabStop = false;
             // 
@@ -549,7 +551,7 @@
             // 
             this.J_ID_UNITPALETTEFE8.AccessibleDescription = "@UNIT_FE8_CLASS_PALETTE";
             this.J_ID_UNITPALETTEFE8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(494, 141);
+            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(494, 99);
             this.J_ID_UNITPALETTEFE8.Name = "J_ID_UNITPALETTEFE8";
             this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(163, 34);
             this.J_ID_UNITPALETTEFE8.TabIndex = 8;
@@ -558,8 +560,9 @@
             // 
             // L_6_PORTRAIT_AUTO
             // 
+            this.L_6_PORTRAIT_AUTO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(713, 69);
+            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(663, 64);
             this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1);
             this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
             this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(79, 69);
@@ -570,7 +573,7 @@
             // B10
             // 
             this.B10.Hexadecimal = true;
-            this.B10.Location = new System.Drawing.Point(609, 95);
+            this.B10.Location = new System.Drawing.Point(818, 54);
             this.B10.Margin = new System.Windows.Forms.Padding(1);
             this.B10.Maximum = new decimal(new int[] {
             255,
@@ -578,7 +581,7 @@
             0,
             0});
             this.B10.Name = "B10";
-            this.B10.Size = new System.Drawing.Size(48, 20);
+            this.B10.Size = new System.Drawing.Size(55, 20);
             this.B10.TabIndex = 6;
             // 
             // J_10
@@ -586,10 +589,10 @@
             this.J_10.AccessibleDescription = "@UNIT_SORT_ORDER";
             this.J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_10.Location = new System.Drawing.Point(494, 97);
+            this.J_10.Location = new System.Drawing.Point(818, 34);
             this.J_10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_10.Name = "J_10";
-            this.J_10.Size = new System.Drawing.Size(111, 18);
+            this.J_10.Size = new System.Drawing.Size(106, 18);
             this.J_10.TabIndex = 28;
             this.J_10.Text = "ユニットソート順";
             this.J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,7 +658,7 @@
             this.L_5_CLASS.Name = "L_5_CLASS";
             this.L_5_CLASS.Placeholder = "";
             this.L_5_CLASS.ReadOnly = true;
-            this.L_5_CLASS.Size = new System.Drawing.Size(129, 20);
+            this.L_5_CLASS.Size = new System.Drawing.Size(79, 20);
             this.L_5_CLASS.TabIndex = 23;
             // 
             // B5
@@ -675,7 +678,7 @@
             // B9
             // 
             this.B9.Hexadecimal = true;
-            this.B9.Location = new System.Drawing.Point(609, 117);
+            this.B9.Location = new System.Drawing.Point(818, 99);
             this.B9.Margin = new System.Windows.Forms.Padding(1);
             this.B9.Maximum = new decimal(new int[] {
             255,
@@ -683,7 +686,7 @@
             0,
             0});
             this.B9.Name = "B9";
-            this.B9.Size = new System.Drawing.Size(48, 20);
+            this.B9.Size = new System.Drawing.Size(55, 20);
             this.B9.TabIndex = 5;
             this.B9.Value = new decimal(new int[] {
             8,
@@ -695,10 +698,10 @@
             // 
             this.L_9_ATTRIBUTE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_9_ATTRIBUTE.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_9_ATTRIBUTE.Location = new System.Drawing.Point(494, 119);
+            this.L_9_ATTRIBUTE.Location = new System.Drawing.Point(818, 78);
             this.L_9_ATTRIBUTE.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_9_ATTRIBUTE.Name = "L_9_ATTRIBUTE";
-            this.L_9_ATTRIBUTE.Size = new System.Drawing.Size(111, 18);
+            this.L_9_ATTRIBUTE.Size = new System.Drawing.Size(106, 18);
             this.L_9_ATTRIBUTE.TabIndex = 19;
             this.L_9_ATTRIBUTE.Text = "属性:-";
             this.L_9_ATTRIBUTE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -718,7 +721,7 @@
             // L_0_TEXT_NAME1
             // 
             this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(281, 52);
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(277, 53);
             this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(1);
             this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
             this.L_0_TEXT_NAME1.Placeholder = "";
@@ -729,7 +732,7 @@
             // L_2_TEXT_DETAIL3
             // 
             this.L_2_TEXT_DETAIL3.ErrorMessage = "";
-            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(281, 74);
+            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(277, 75);
             this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(1);
             this.L_2_TEXT_DETAIL3.Multiline = true;
             this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
@@ -1523,7 +1526,7 @@
             this.J_48_TALKGROUP.AccessibleDescription = "@UNIT_CONVERSATION_GROUP";
             this.J_48_TALKGROUP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_48_TALKGROUP.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_48_TALKGROUP.Location = new System.Drawing.Point(818, 94);
+            this.J_48_TALKGROUP.Location = new System.Drawing.Point(818, 171);
             this.J_48_TALKGROUP.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_48_TALKGROUP.Name = "J_48_TALKGROUP";
             this.J_48_TALKGROUP.Size = new System.Drawing.Size(107, 18);
@@ -1574,7 +1577,7 @@
             // B48
             // 
             this.B48.Hexadecimal = true;
-            this.B48.Location = new System.Drawing.Point(818, 113);
+            this.B48.Location = new System.Drawing.Point(818, 190);
             this.B48.Margin = new System.Windows.Forms.Padding(1);
             this.B48.Maximum = new decimal(new int[] {
             255,
@@ -1602,7 +1605,7 @@
             // P44
             // 
             this.P44.Hexadecimal = true;
-            this.P44.Location = new System.Drawing.Point(818, 70);
+            this.P44.Location = new System.Drawing.Point(818, 147);
             this.P44.Margin = new System.Windows.Forms.Padding(1);
             this.P44.Maximum = new decimal(new int[] {
             -559939585,
@@ -1617,7 +1620,7 @@
             // 
             this.J_44_SUPPORTUNIT.AccessibleDescription = "@UNIT_SUPPORT";
             this.J_44_SUPPORTUNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_44_SUPPORTUNIT.Location = new System.Drawing.Point(818, 51);
+            this.J_44_SUPPORTUNIT.Location = new System.Drawing.Point(818, 128);
             this.J_44_SUPPORTUNIT.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_44_SUPPORTUNIT.Name = "J_44_SUPPORTUNIT";
             this.J_44_SUPPORTUNIT.Size = new System.Drawing.Size(106, 18);
@@ -1757,7 +1760,7 @@
             // 
             // MagicExtUnitGrow
             // 
-            this.MagicExtUnitGrow.Location = new System.Drawing.Point(648, 236);
+            this.MagicExtUnitGrow.Location = new System.Drawing.Point(648, 237);
             this.MagicExtUnitGrow.Margin = new System.Windows.Forms.Padding(1);
             this.MagicExtUnitGrow.Maximum = new decimal(new int[] {
             255,
@@ -1773,7 +1776,7 @@
             // 
             this.MagicExtUnitGrowLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MagicExtUnitGrowLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtUnitGrowLabel.Location = new System.Drawing.Point(648, 218);
+            this.MagicExtUnitGrowLabel.Location = new System.Drawing.Point(648, 219);
             this.MagicExtUnitGrowLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.MagicExtUnitGrowLabel.Name = "MagicExtUnitGrowLabel";
             this.MagicExtUnitGrowLabel.Size = new System.Drawing.Size(43, 17);
@@ -1784,7 +1787,7 @@
             // 
             // B34
             // 
-            this.B34.Location = new System.Drawing.Point(599, 237);
+            this.B34.Location = new System.Drawing.Point(599, 238);
             this.B34.Margin = new System.Windows.Forms.Padding(1);
             this.B34.Maximum = new decimal(new int[] {
             255,
@@ -1797,7 +1800,7 @@
             // 
             // B30
             // 
-            this.B30.Location = new System.Drawing.Point(412, 237);
+            this.B30.Location = new System.Drawing.Point(412, 238);
             this.B30.Margin = new System.Windows.Forms.Padding(1);
             this.B30.Maximum = new decimal(new int[] {
             255,
@@ -1810,7 +1813,7 @@
             // 
             // B33
             // 
-            this.B33.Location = new System.Drawing.Point(552, 237);
+            this.B33.Location = new System.Drawing.Point(552, 238);
             this.B33.Margin = new System.Windows.Forms.Padding(1);
             this.B33.Maximum = new decimal(new int[] {
             255,
@@ -1823,7 +1826,7 @@
             // 
             // B29
             // 
-            this.B29.Location = new System.Drawing.Point(365, 237);
+            this.B29.Location = new System.Drawing.Point(365, 238);
             this.B29.Margin = new System.Windows.Forms.Padding(1);
             this.B29.Maximum = new decimal(new int[] {
             255,
@@ -1836,7 +1839,7 @@
             // 
             // B32
             // 
-            this.B32.Location = new System.Drawing.Point(505, 237);
+            this.B32.Location = new System.Drawing.Point(505, 238);
             this.B32.Margin = new System.Windows.Forms.Padding(1);
             this.B32.Maximum = new decimal(new int[] {
             255,
@@ -1849,7 +1852,7 @@
             // 
             // B28
             // 
-            this.B28.Location = new System.Drawing.Point(320, 237);
+            this.B28.Location = new System.Drawing.Point(320, 238);
             this.B28.Margin = new System.Windows.Forms.Padding(1);
             this.B28.Maximum = new decimal(new int[] {
             255,
@@ -1862,7 +1865,7 @@
             // 
             // B31
             // 
-            this.B31.Location = new System.Drawing.Point(460, 237);
+            this.B31.Location = new System.Drawing.Point(460, 238);
             this.B31.Margin = new System.Windows.Forms.Padding(1);
             this.B31.Maximum = new decimal(new int[] {
             255,
@@ -1877,7 +1880,7 @@
             // 
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_34.Location = new System.Drawing.Point(599, 219);
+            this.J_34.Location = new System.Drawing.Point(599, 220);
             this.J_34.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_34.Name = "J_34";
             this.J_34.Size = new System.Drawing.Size(43, 17);
@@ -1889,7 +1892,7 @@
             // 
             this.J_33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_33.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_33.Location = new System.Drawing.Point(552, 219);
+            this.J_33.Location = new System.Drawing.Point(552, 220);
             this.J_33.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_33.Name = "J_33";
             this.J_33.Size = new System.Drawing.Size(43, 17);
@@ -1901,7 +1904,7 @@
             // 
             this.J_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_32.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_32.Location = new System.Drawing.Point(505, 219);
+            this.J_32.Location = new System.Drawing.Point(505, 220);
             this.J_32.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_32.Name = "J_32";
             this.J_32.Size = new System.Drawing.Size(43, 17);
@@ -1913,7 +1916,7 @@
             // 
             this.J_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_31.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_31.Location = new System.Drawing.Point(460, 219);
+            this.J_31.Location = new System.Drawing.Point(460, 220);
             this.J_31.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_31.Name = "J_31";
             this.J_31.Size = new System.Drawing.Size(43, 17);
@@ -1925,7 +1928,7 @@
             // 
             this.J_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_30.Location = new System.Drawing.Point(412, 219);
+            this.J_30.Location = new System.Drawing.Point(412, 220);
             this.J_30.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_30.Name = "J_30";
             this.J_30.Size = new System.Drawing.Size(43, 17);
@@ -1937,7 +1940,7 @@
             // 
             this.J_29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_29.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_29.Location = new System.Drawing.Point(365, 219);
+            this.J_29.Location = new System.Drawing.Point(365, 220);
             this.J_29.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_29.Name = "J_29";
             this.J_29.Size = new System.Drawing.Size(43, 17);
@@ -1949,7 +1952,7 @@
             // 
             this.J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_28.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_28.Location = new System.Drawing.Point(320, 219);
+            this.J_28.Location = new System.Drawing.Point(320, 220);
             this.J_28.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.J_28.Name = "J_28";
             this.J_28.Size = new System.Drawing.Size(43, 17);
@@ -1961,7 +1964,7 @@
             // 
             this.X_GROW.AccessibleDescription = "@UNITGROW";
             this.X_GROW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_GROW.Location = new System.Drawing.Point(163, 219);
+            this.X_GROW.Location = new System.Drawing.Point(163, 220);
             this.X_GROW.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.X_GROW.Name = "X_GROW";
             this.X_GROW.Size = new System.Drawing.Size(101, 38);
@@ -2237,7 +2240,7 @@
             this.X_SIM_LABEL.Location = new System.Drawing.Point(163, 261);
             this.X_SIM_LABEL.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.X_SIM_LABEL.Name = "X_SIM_LABEL";
-            this.X_SIM_LABEL.Size = new System.Drawing.Size(101, 36);
+            this.X_SIM_LABEL.Size = new System.Drawing.Size(101, 38);
             this.X_SIM_LABEL.TabIndex = 13;
             this.X_SIM_LABEL.Text = "シミュレーション";
             this.X_SIM_LABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2245,93 +2248,85 @@
             // systemIconPictureBox8
             // 
             this.systemIconPictureBox8.IconNumber = ((uint)(7u));
-            this.systemIconPictureBox8.Location = new System.Drawing.Point(608, 303);
+            this.systemIconPictureBox8.Location = new System.Drawing.Point(608, 305);
             this.systemIconPictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox8.Name = "systemIconPictureBox8";
             this.systemIconPictureBox8.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox8.TabIndex = 35;
             this.systemIconPictureBox8.TabStop = false;
             // 
             // systemIconPictureBox7
             // 
             this.systemIconPictureBox7.IconNumber = ((uint)(6u));
-            this.systemIconPictureBox7.Location = new System.Drawing.Point(561, 303);
+            this.systemIconPictureBox7.Location = new System.Drawing.Point(561, 305);
             this.systemIconPictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox7.Name = "systemIconPictureBox7";
             this.systemIconPictureBox7.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox7.TabIndex = 34;
             this.systemIconPictureBox7.TabStop = false;
             // 
             // systemIconPictureBox6
             // 
             this.systemIconPictureBox6.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox6.Location = new System.Drawing.Point(514, 303);
+            this.systemIconPictureBox6.Location = new System.Drawing.Point(514, 305);
             this.systemIconPictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox6.Name = "systemIconPictureBox6";
             this.systemIconPictureBox6.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox6.TabIndex = 33;
             this.systemIconPictureBox6.TabStop = false;
             // 
             // systemIconPictureBox5
             // 
             this.systemIconPictureBox5.IconNumber = ((uint)(4u));
-            this.systemIconPictureBox5.Location = new System.Drawing.Point(470, 303);
+            this.systemIconPictureBox5.Location = new System.Drawing.Point(470, 305);
             this.systemIconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox5.Name = "systemIconPictureBox5";
             this.systemIconPictureBox5.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox5.TabIndex = 32;
             this.systemIconPictureBox5.TabStop = false;
             // 
             // systemIconPictureBox4
             // 
             this.systemIconPictureBox4.IconNumber = ((uint)(3u));
-            this.systemIconPictureBox4.Location = new System.Drawing.Point(421, 303);
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(421, 305);
             this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox4.Name = "systemIconPictureBox4";
             this.systemIconPictureBox4.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox4.TabIndex = 31;
             this.systemIconPictureBox4.TabStop = false;
             // 
             // systemIconPictureBox3
             // 
             this.systemIconPictureBox3.IconNumber = ((uint)(2u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(375, 303);
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(375, 305);
             this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox3.Name = "systemIconPictureBox3";
             this.systemIconPictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox3.TabIndex = 30;
             this.systemIconPictureBox3.TabStop = false;
             // 
             // systemIconPictureBox2
             // 
             this.systemIconPictureBox2.IconNumber = ((uint)(1u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(329, 303);
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(329, 305);
             this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox2.Name = "systemIconPictureBox2";
             this.systemIconPictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox2.TabIndex = 29;
             this.systemIconPictureBox2.TabStop = false;
             // 
             // systemIconPictureBox1
             // 
-            this.systemIconPictureBox1.Location = new System.Drawing.Point(282, 303);
+            this.systemIconPictureBox1.Location = new System.Drawing.Point(282, 305);
             this.systemIconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox1.Name = "systemIconPictureBox1";
             this.systemIconPictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.systemIconPictureBox1.TabIndex = 28;
             this.systemIconPictureBox1.TabStop = false;
             // 
             // B24
             // 
-            this.B24.Location = new System.Drawing.Point(460, 321);
+            this.B24.Location = new System.Drawing.Point(460, 325);
             this.B24.Margin = new System.Windows.Forms.Padding(1);
             this.B24.Maximum = new decimal(new int[] {
             255,
@@ -2344,7 +2339,7 @@
             // 
             // B23
             // 
-            this.B23.Location = new System.Drawing.Point(412, 321);
+            this.B23.Location = new System.Drawing.Point(412, 325);
             this.B23.Margin = new System.Windows.Forms.Padding(1);
             this.B23.Maximum = new decimal(new int[] {
             255,
@@ -2357,7 +2352,7 @@
             // 
             // B27
             // 
-            this.B27.Location = new System.Drawing.Point(599, 321);
+            this.B27.Location = new System.Drawing.Point(599, 325);
             this.B27.Margin = new System.Windows.Forms.Padding(1);
             this.B27.Maximum = new decimal(new int[] {
             255,
@@ -2370,7 +2365,7 @@
             // 
             // B22
             // 
-            this.B22.Location = new System.Drawing.Point(365, 321);
+            this.B22.Location = new System.Drawing.Point(365, 325);
             this.B22.Margin = new System.Windows.Forms.Padding(1);
             this.B22.Maximum = new decimal(new int[] {
             255,
@@ -2383,7 +2378,7 @@
             // 
             // B26
             // 
-            this.B26.Location = new System.Drawing.Point(552, 321);
+            this.B26.Location = new System.Drawing.Point(552, 325);
             this.B26.Margin = new System.Windows.Forms.Padding(1);
             this.B26.Maximum = new decimal(new int[] {
             255,
@@ -2396,7 +2391,7 @@
             // 
             // B21
             // 
-            this.B21.Location = new System.Drawing.Point(320, 321);
+            this.B21.Location = new System.Drawing.Point(320, 325);
             this.B21.Margin = new System.Windows.Forms.Padding(1);
             this.B21.Maximum = new decimal(new int[] {
             255,
@@ -2409,7 +2404,7 @@
             // 
             // B25
             // 
-            this.B25.Location = new System.Drawing.Point(505, 321);
+            this.B25.Location = new System.Drawing.Point(505, 325);
             this.B25.Margin = new System.Windows.Forms.Padding(1);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -2424,10 +2419,10 @@
             // 
             this.L_24_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_24_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_24_WEAPON.Location = new System.Drawing.Point(460, 303);
+            this.L_24_WEAPON.Location = new System.Drawing.Point(460, 302);
             this.L_24_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_24_WEAPON.Name = "L_24_WEAPON";
-            this.L_24_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_24_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_24_WEAPON.TabIndex = 27;
             this.L_24_WEAPON.Text = "- ";
             this.L_24_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2436,10 +2431,10 @@
             // 
             this.L_27_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_27_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_27_WEAPON.Location = new System.Drawing.Point(599, 303);
+            this.L_27_WEAPON.Location = new System.Drawing.Point(599, 302);
             this.L_27_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_27_WEAPON.Name = "L_27_WEAPON";
-            this.L_27_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_27_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_27_WEAPON.TabIndex = 25;
             this.L_27_WEAPON.Text = "- ";
             this.L_27_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2448,10 +2443,10 @@
             // 
             this.L_26_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_26_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_26_WEAPON.Location = new System.Drawing.Point(552, 303);
+            this.L_26_WEAPON.Location = new System.Drawing.Point(552, 302);
             this.L_26_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_26_WEAPON.Name = "L_26_WEAPON";
-            this.L_26_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_26_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_26_WEAPON.TabIndex = 22;
             this.L_26_WEAPON.Text = "- ";
             this.L_26_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2460,10 +2455,10 @@
             // 
             this.L_25_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_25_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_25_WEAPON.Location = new System.Drawing.Point(505, 303);
+            this.L_25_WEAPON.Location = new System.Drawing.Point(505, 302);
             this.L_25_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_25_WEAPON.Name = "L_25_WEAPON";
-            this.L_25_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_25_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_25_WEAPON.TabIndex = 21;
             this.L_25_WEAPON.Text = "- ";
             this.L_25_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2472,10 +2467,10 @@
             // 
             this.L_23_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_23_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_23_WEAPON.Location = new System.Drawing.Point(412, 303);
+            this.L_23_WEAPON.Location = new System.Drawing.Point(412, 302);
             this.L_23_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_23_WEAPON.Name = "L_23_WEAPON";
-            this.L_23_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_23_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_23_WEAPON.TabIndex = 18;
             this.L_23_WEAPON.Text = "- ";
             this.L_23_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2484,17 +2479,17 @@
             // 
             this.L_22_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_22_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_22_WEAPON.Location = new System.Drawing.Point(365, 303);
+            this.L_22_WEAPON.Location = new System.Drawing.Point(365, 302);
             this.L_22_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_22_WEAPON.Name = "L_22_WEAPON";
-            this.L_22_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_22_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_22_WEAPON.TabIndex = 17;
             this.L_22_WEAPON.Text = "- ";
             this.L_22_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // B20
             // 
-            this.B20.Location = new System.Drawing.Point(273, 321);
+            this.B20.Location = new System.Drawing.Point(273, 325);
             this.B20.Margin = new System.Windows.Forms.Padding(1);
             this.B20.Maximum = new decimal(new int[] {
             255,
@@ -2509,10 +2504,10 @@
             // 
             this.L_21_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_21_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_21_WEAPON.Location = new System.Drawing.Point(320, 303);
+            this.L_21_WEAPON.Location = new System.Drawing.Point(320, 302);
             this.L_21_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_21_WEAPON.Name = "L_21_WEAPON";
-            this.L_21_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_21_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_21_WEAPON.TabIndex = 15;
             this.L_21_WEAPON.Text = "- ";
             this.L_21_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2521,10 +2516,10 @@
             // 
             this.L_20_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_20_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_20_WEAPON.Location = new System.Drawing.Point(273, 303);
+            this.L_20_WEAPON.Location = new System.Drawing.Point(273, 302);
             this.L_20_WEAPON.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.L_20_WEAPON.Name = "L_20_WEAPON";
-            this.L_20_WEAPON.Size = new System.Drawing.Size(43, 17);
+            this.L_20_WEAPON.Size = new System.Drawing.Size(43, 22);
             this.L_20_WEAPON.TabIndex = 14;
             this.L_20_WEAPON.Text = "- ";
             this.L_20_WEAPON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2533,10 +2528,10 @@
             // 
             this.X_WEAPON_LV.AccessibleDescription = "@WEAPONLV";
             this.X_WEAPON_LV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_WEAPON_LV.Location = new System.Drawing.Point(163, 303);
+            this.X_WEAPON_LV.Location = new System.Drawing.Point(163, 302);
             this.X_WEAPON_LV.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.X_WEAPON_LV.Name = "X_WEAPON_LV";
-            this.X_WEAPON_LV.Size = new System.Drawing.Size(101, 35);
+            this.X_WEAPON_LV.Size = new System.Drawing.Size(101, 43);
             this.X_WEAPON_LV.TabIndex = 13;
             this.X_WEAPON_LV.Text = "武器LV";
             this.X_WEAPON_LV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2544,17 +2539,17 @@
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(421, 29);
+            this.BlockSize.Location = new System.Drawing.Point(316, 29);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(59, 20);
+            this.BlockSize.Size = new System.Drawing.Size(90, 20);
             this.BlockSize.TabIndex = 52;
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(381, 27);
+            this.label3.Location = new System.Drawing.Point(277, 28);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 21);
@@ -2586,10 +2581,10 @@
             // WriteButton
             // 
             this.WriteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WriteButton.Location = new System.Drawing.Point(810, 6);
+            this.WriteButton.Location = new System.Drawing.Point(818, 6);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(1);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(114, 20);
+            this.WriteButton.Size = new System.Drawing.Size(107, 20);
             this.WriteButton.TabIndex = 1;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -2597,7 +2592,7 @@
             // Address
             // 
             this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(284, 29);
+            this.Address.Location = new System.Drawing.Point(163, 29);
             this.Address.Margin = new System.Windows.Forms.Padding(1);
             this.Address.Maximum = new decimal(new int[] {
             -559939585,
@@ -2605,22 +2600,23 @@
             54,
             0});
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(87, 20);
+            this.Address.Size = new System.Drawing.Size(107, 20);
             this.Address.TabIndex = 0;
             // 
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(162, 27);
+            this.label23.Location = new System.Drawing.Point(5, 29);
             this.label23.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(118, 21);
+            this.label23.Size = new System.Drawing.Size(151, 20);
             this.label23.TabIndex = 1;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReloadListButton
             // 
+            this.ReloadListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReloadListButton.Location = new System.Drawing.Point(410, 5);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(1);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -2691,7 +2687,7 @@
             // LabelFilter
             // 
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(5, 30);
+            this.LabelFilter.Location = new System.Drawing.Point(6, 52);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(151, 18);
@@ -2703,9 +2699,9 @@
             // 
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
-            this.AddressList.Location = new System.Drawing.Point(5, 49);
+            this.AddressList.Location = new System.Drawing.Point(5, 74);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(152, 489);
+            this.AddressList.Size = new System.Drawing.Size(152, 464);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -2714,7 +2710,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(935, 542);
+            this.ClientSize = new System.Drawing.Size(932, 542);
             this.Controls.Add(this.J_44_SUPPORTUNIT);
             this.Controls.Add(this.J_50);
             this.Controls.Add(this.J_38);
