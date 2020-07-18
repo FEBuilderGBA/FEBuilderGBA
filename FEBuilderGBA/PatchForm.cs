@@ -1795,7 +1795,7 @@ namespace FEBuilderGBA
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, address_type +"ICON", new string[0]);
                 }
-                else if (address_type == "TEXT" || address_type == "MAP")
+                else if (address_type == "TEXT" || address_type == "MAP" || address_type == "FLAG")
                 {
                     link.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(link);

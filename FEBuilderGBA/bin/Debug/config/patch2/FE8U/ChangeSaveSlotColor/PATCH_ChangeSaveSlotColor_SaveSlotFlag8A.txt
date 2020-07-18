@@ -1,0 +1,16 @@
+NAME=セーブメニューの色を難易度ごとに変更する(セーブスロットフラグ8A)
+NAME.en=Change color of save menu for each difficulty level(SaveSlot flag 8A)
+
+INFO=セーブスロットフラグ0x8Aを変更します。\r\nおそらく、このフラグはFE7のヘクトル編の名残だと思われます。これを変更することでセーブスロットの色分けを変えることが目的です。\r\n例えば、0xB0のカジュアルモードフラグを指定して、カジュアルモードが有効な場合は、セーブスロットの色を変えるなどです。
+
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xA52A2
+ADDRESS_TYPE=FLAG
+INFO.en=Change the save slot flag 0x8A.\r\nPerhaps this flag is a remnant of FE7's Hector edition.The purpose is to change the color coding of save slots by changing this.\r\nFor example, specify the 0xB0 casual mode flag and change the save slot color when casual mode is enabled.
+NAME.zh=更改每个难度级别的保存菜单颜色（保存插槽标志8A）。
+INFO.zh=更改保存插槽标志0x8A。\r\n也许这个标志是FE7的Hector版本的残余。目的是通过更改保存插槽的颜色编码。\r\n例如，指定0xB0休闲模式标志并在启用休闲模式时更改保存插槽的颜色。

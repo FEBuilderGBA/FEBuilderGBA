@@ -163,6 +163,7 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -396,7 +397,7 @@
             this.X_SKILL_BUTTON9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON9.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON9.Location = new System.Drawing.Point(665, 196);
+            this.X_SKILL_BUTTON9.Location = new System.Drawing.Point(665, 191);
             this.X_SKILL_BUTTON9.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON9.Name = "X_SKILL_BUTTON9";
             this.X_SKILL_BUTTON9.Size = new System.Drawing.Size(40, 40);
@@ -410,7 +411,7 @@
             this.X_SKILL_BUTTON8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON8.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON8.Location = new System.Drawing.Point(623, 196);
+            this.X_SKILL_BUTTON8.Location = new System.Drawing.Point(623, 191);
             this.X_SKILL_BUTTON8.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON8.Name = "X_SKILL_BUTTON8";
             this.X_SKILL_BUTTON8.Size = new System.Drawing.Size(40, 40);
@@ -424,7 +425,7 @@
             this.X_SKILL_BUTTON7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON7.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON7.Location = new System.Drawing.Point(583, 196);
+            this.X_SKILL_BUTTON7.Location = new System.Drawing.Point(583, 191);
             this.X_SKILL_BUTTON7.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON7.Name = "X_SKILL_BUTTON7";
             this.X_SKILL_BUTTON7.Size = new System.Drawing.Size(40, 40);
@@ -438,7 +439,7 @@
             this.X_SKILL_BUTTON6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON6.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON6.Location = new System.Drawing.Point(542, 196);
+            this.X_SKILL_BUTTON6.Location = new System.Drawing.Point(542, 191);
             this.X_SKILL_BUTTON6.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON6.Name = "X_SKILL_BUTTON6";
             this.X_SKILL_BUTTON6.Size = new System.Drawing.Size(40, 40);
@@ -452,7 +453,7 @@
             this.X_SKILL_BUTTON5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON5.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON5.Location = new System.Drawing.Point(500, 196);
+            this.X_SKILL_BUTTON5.Location = new System.Drawing.Point(500, 191);
             this.X_SKILL_BUTTON5.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON5.Name = "X_SKILL_BUTTON5";
             this.X_SKILL_BUTTON5.Size = new System.Drawing.Size(40, 40);
@@ -466,7 +467,7 @@
             this.X_SKILL_BUTTON4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON4.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON4.Location = new System.Drawing.Point(459, 196);
+            this.X_SKILL_BUTTON4.Location = new System.Drawing.Point(459, 191);
             this.X_SKILL_BUTTON4.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON4.Name = "X_SKILL_BUTTON4";
             this.X_SKILL_BUTTON4.Size = new System.Drawing.Size(40, 40);
@@ -480,7 +481,7 @@
             this.X_SKILL_BUTTON3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON3.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON3.Location = new System.Drawing.Point(419, 196);
+            this.X_SKILL_BUTTON3.Location = new System.Drawing.Point(419, 191);
             this.X_SKILL_BUTTON3.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON3.Name = "X_SKILL_BUTTON3";
             this.X_SKILL_BUTTON3.Size = new System.Drawing.Size(40, 40);
@@ -493,7 +494,7 @@
             // 
             this.X_UNITSKILL.AccessibleDescription = "@X_UNITSKILL";
             this.X_UNITSKILL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_UNITSKILL.Location = new System.Drawing.Point(246, 206);
+            this.X_UNITSKILL.Location = new System.Drawing.Point(246, 199);
             this.X_UNITSKILL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_UNITSKILL.Name = "X_UNITSKILL";
             this.X_UNITSKILL.Size = new System.Drawing.Size(82, 26);
@@ -508,7 +509,7 @@
             this.X_SKILL_BUTTON2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON2.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON2.Location = new System.Drawing.Point(377, 196);
+            this.X_SKILL_BUTTON2.Location = new System.Drawing.Point(377, 191);
             this.X_SKILL_BUTTON2.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON2.Name = "X_SKILL_BUTTON2";
             this.X_SKILL_BUTTON2.Size = new System.Drawing.Size(40, 40);
@@ -522,7 +523,7 @@
             this.X_SKILL_BUTTON1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X_SKILL_BUTTON1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_SKILL_BUTTON1.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_SKILL_BUTTON1.Location = new System.Drawing.Point(337, 196);
+            this.X_SKILL_BUTTON1.Location = new System.Drawing.Point(337, 191);
             this.X_SKILL_BUTTON1.Margin = new System.Windows.Forms.Padding(4);
             this.X_SKILL_BUTTON1.Name = "X_SKILL_BUTTON1";
             this.X_SKILL_BUTTON1.Size = new System.Drawing.Size(40, 40);
@@ -535,7 +536,7 @@
             // 
             this.J_ID_UNITPALETTEFE8.AccessibleDescription = "@UNIT_FE8_CLASS_PALETTE";
             this.J_ID_UNITPALETTEFE8.AutoSize = true;
-            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(767, 213);
+            this.J_ID_UNITPALETTEFE8.Location = new System.Drawing.Point(767, 209);
             this.J_ID_UNITPALETTEFE8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_ID_UNITPALETTEFE8.Name = "J_ID_UNITPALETTEFE8";
             this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(198, 18);
@@ -2043,6 +2044,15 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(246, 231);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(944, 1);
+            this.panel1.TabIndex = 109;
+            // 
             // J_43
             // 
             this.J_43.BorderColor = System.Drawing.Color.Empty;
@@ -2572,7 +2582,7 @@
             // L_8_GENERICENEMYPORTRAIT
             // 
             this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(938, 142);
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(938, 139);
             this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(2);
             this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
             this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(64, 64);
@@ -2602,7 +2612,7 @@
             // L_6_PORTRAIT_AUTO
             // 
             this.L_6_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(1016, 86);
+            this.L_6_PORTRAIT_AUTO.Location = new System.Drawing.Point(1016, 89);
             this.L_6_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(2);
             this.L_6_PORTRAIT_AUTO.Name = "L_6_PORTRAIT_AUTO";
             this.L_6_PORTRAIT_AUTO.Size = new System.Drawing.Size(172, 143);
@@ -2712,6 +2722,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1377, 815);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.J_44_SUPPORTUNIT);
             this.Controls.Add(this.J_50);
             this.Controls.Add(this.J_38);
@@ -3153,5 +3164,6 @@
         private System.Windows.Forms.Label X_SIM_MAGICEX_Label;
         private InterpolatedPictureBox L_8_GENERICENEMYPORTRAIT;
         private System.Windows.Forms.Label HardCodingWarningLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }
