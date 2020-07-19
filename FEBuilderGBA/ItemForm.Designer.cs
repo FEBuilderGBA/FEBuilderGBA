@@ -587,7 +587,7 @@
             "B",
             "A",
             "S"});
-            this.L_28_WEAPON.Location = new System.Drawing.Point(734, 174);
+            this.L_28_WEAPON.Location = new System.Drawing.Point(734, 175);
             this.L_28_WEAPON.Margin = new System.Windows.Forms.Padding(2);
             this.L_28_WEAPON.Name = "L_28_WEAPON";
             this.L_28_WEAPON.Size = new System.Drawing.Size(62, 26);
@@ -595,7 +595,7 @@
             // 
             // B28
             // 
-            this.B28.Location = new System.Drawing.Point(664, 174);
+            this.B28.Location = new System.Drawing.Point(664, 175);
             this.B28.Margin = new System.Windows.Forms.Padding(2);
             this.B28.Maximum = new decimal(new int[] {
             255,
