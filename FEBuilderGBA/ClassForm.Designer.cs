@@ -89,9 +89,6 @@
             this.J_11 = new System.Windows.Forms.Label();
             this.X_BASE = new System.Windows.Forms.Label();
             this.HardCodingWarningLabel = new System.Windows.Forms.Label();
-            this.X_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
-            this.L_4_ID = new FEBuilderGBA.PanelEx();
-            this.B4 = new System.Windows.Forms.NumericUpDown();
             this.X_SKILL_BUTTON9 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON8 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON7 = new System.Windows.Forms.Button();
@@ -99,7 +96,6 @@
             this.X_SKILL_BUTTON5 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON4 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON3 = new System.Windows.Forms.Button();
-            this.L_6_CLASSICONSRC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_CLASSSKILL = new System.Windows.Forms.Label();
             this.X_SKILL_BUTTON2 = new System.Windows.Forms.Button();
             this.B7 = new System.Windows.Forms.NumericUpDown();
@@ -107,27 +103,15 @@
             this.J_7 = new System.Windows.Forms.Label();
             this.B6 = new System.Windows.Forms.NumericUpDown();
             this.J_6_WAITICON = new System.Windows.Forms.Label();
-            this.L_8_PORTRAIT_CLASS = new FEBuilderGBA.InterpolatedPictureBox();
             this.J_8_PORTRAIT = new System.Windows.Forms.Label();
-            this.L_5_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B5 = new System.Windows.Forms.NumericUpDown();
             this.J_5 = new System.Windows.Forms.Label();
             this.J_2_TEXT = new System.Windows.Forms.Label();
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.J_4_MOVEICON = new System.Windows.Forms.Label();
             this.W0 = new System.Windows.Forms.NumericUpDown();
-            this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
-            this.L_2_TEXT_DETAIL3 = new FEBuilderGBA.TextBoxEx();
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.systemIconPictureBox8 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox7 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox6 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
-            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
             this.B48 = new System.Windows.Forms.NumericUpDown();
             this.B47 = new System.Windows.Forms.NumericUpDown();
             this.B51 = new System.Windows.Forms.NumericUpDown();
@@ -195,9 +179,7 @@
             this.J_ID_MOVECOST2_CLASSID = new System.Windows.Forms.Label();
             this.P60 = new System.Windows.Forms.NumericUpDown();
             this.J_ID_MOVECOST3_CLASSID = new System.Windows.Forms.Label();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
@@ -207,7 +189,23 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.ReloadListButton = new System.Windows.Forms.Button();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.X_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
+            this.L_4_ID = new FEBuilderGBA.PanelEx();
+            this.B4 = new System.Windows.Forms.NumericUpDown();
+            this.L_6_CLASSICONSRC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_8_PORTRAIT_CLASS = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_5_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
+            this.L_2_TEXT_DETAIL3 = new FEBuilderGBA.TextBoxEx();
+            this.systemIconPictureBox8 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox7 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox6 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
             this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -218,6 +216,8 @@
             this.L_43_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_43_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B43 = new System.Windows.Forms.NumericUpDown();
+            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
+            this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
             this.J_42 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_42_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_42_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -228,6 +228,7 @@
             this.L_42_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_42_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B42 = new System.Windows.Forms.NumericUpDown();
+            this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
             this.J_41 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_41_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_41_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -248,7 +249,6 @@
             this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B40 = new System.Windows.Forms.NumericUpDown();
-            this.ReloadListButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.B29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MagicExtClassGrow)).BeginInit();
@@ -278,23 +278,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.B15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B14)).BeginInit();
-            this.L_4_ID.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_6_CLASSICONSRC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_PORTRAIT_CLASS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B48)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B47)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B51)).BeginInit();
@@ -330,10 +318,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
+            this.L_4_ID.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_6_CLASSICONSRC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_PORTRAIT_CLASS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
             this.J_43.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
             this.J_42.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             this.J_41.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B41)).BeginInit();
             this.J_40.SuspendLayout();
@@ -351,7 +351,7 @@
             0});
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(64, 25);
-            this.B29.TabIndex = 35;
+            this.B29.TabIndex = 33;
             // 
             // B32
             // 
@@ -364,7 +364,7 @@
             0});
             this.B32.Name = "B32";
             this.B32.Size = new System.Drawing.Size(64, 25);
-            this.B32.TabIndex = 38;
+            this.B32.TabIndex = 36;
             // 
             // MagicExtClassGrow
             // 
@@ -377,7 +377,7 @@
             0});
             this.MagicExtClassGrow.Name = "MagicExtClassGrow";
             this.MagicExtClassGrow.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtClassGrow.TabIndex = 40;
+            this.MagicExtClassGrow.TabIndex = 38;
             this.MagicExtClassGrow.Visible = false;
             // 
             // MagicExtClassGrowLabel
@@ -404,7 +404,7 @@
             0});
             this.B33.Name = "B33";
             this.B33.Size = new System.Drawing.Size(64, 25);
-            this.B33.TabIndex = 39;
+            this.B33.TabIndex = 37;
             // 
             // B28
             // 
@@ -417,7 +417,7 @@
             0});
             this.B28.Name = "B28";
             this.B28.Size = new System.Drawing.Size(64, 25);
-            this.B28.TabIndex = 34;
+            this.B28.TabIndex = 32;
             // 
             // B31
             // 
@@ -430,7 +430,7 @@
             0});
             this.B31.Name = "B31";
             this.B31.Size = new System.Drawing.Size(64, 25);
-            this.B31.TabIndex = 37;
+            this.B31.TabIndex = 35;
             // 
             // B27
             // 
@@ -443,7 +443,7 @@
             0});
             this.B27.Name = "B27";
             this.B27.Size = new System.Drawing.Size(64, 25);
-            this.B27.TabIndex = 33;
+            this.B27.TabIndex = 31;
             // 
             // B30
             // 
@@ -456,7 +456,7 @@
             0});
             this.B30.Name = "B30";
             this.B30.Size = new System.Drawing.Size(64, 25);
-            this.B30.TabIndex = 36;
+            this.B30.TabIndex = 34;
             // 
             // J_33
             // 
@@ -566,7 +566,7 @@
             this.X_SIM_LUCK.Name = "X_SIM_LUCK";
             this.X_SIM_LUCK.ReadOnly = true;
             this.X_SIM_LUCK.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_LUCK.TabIndex = 48;
+            this.X_SIM_LUCK.TabIndex = 46;
             // 
             // X_SIM_SKILL
             // 
@@ -580,7 +580,7 @@
             this.X_SIM_SKILL.Name = "X_SIM_SKILL";
             this.X_SIM_SKILL.ReadOnly = true;
             this.X_SIM_SKILL.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_SKILL.TabIndex = 44;
+            this.X_SIM_SKILL.TabIndex = 42;
             // 
             // X_SIM_RES
             // 
@@ -594,7 +594,7 @@
             this.X_SIM_RES.Name = "X_SIM_RES";
             this.X_SIM_RES.ReadOnly = true;
             this.X_SIM_RES.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_RES.TabIndex = 47;
+            this.X_SIM_RES.TabIndex = 45;
             // 
             // X_SIM_STR
             // 
@@ -608,7 +608,7 @@
             this.X_SIM_STR.Name = "X_SIM_STR";
             this.X_SIM_STR.ReadOnly = true;
             this.X_SIM_STR.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_STR.TabIndex = 43;
+            this.X_SIM_STR.TabIndex = 41;
             // 
             // X_SIM_DEF
             // 
@@ -622,7 +622,7 @@
             this.X_SIM_DEF.Name = "X_SIM_DEF";
             this.X_SIM_DEF.ReadOnly = true;
             this.X_SIM_DEF.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_DEF.TabIndex = 46;
+            this.X_SIM_DEF.TabIndex = 44;
             // 
             // X_SIM_HP
             // 
@@ -636,7 +636,7 @@
             this.X_SIM_HP.Name = "X_SIM_HP";
             this.X_SIM_HP.ReadOnly = true;
             this.X_SIM_HP.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_HP.TabIndex = 42;
+            this.X_SIM_HP.TabIndex = 40;
             // 
             // X_SIM_SPD
             // 
@@ -650,7 +650,7 @@
             this.X_SIM_SPD.Name = "X_SIM_SPD";
             this.X_SIM_SPD.ReadOnly = true;
             this.X_SIM_SPD.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_SPD.TabIndex = 45;
+            this.X_SIM_SPD.TabIndex = 43;
             // 
             // label58
             // 
@@ -735,7 +735,7 @@
             0});
             this.X_SIM.Name = "X_SIM";
             this.X_SIM.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM.TabIndex = 41;
+            this.X_SIM.TabIndex = 39;
             // 
             // label65
             // 
@@ -785,7 +785,7 @@
             this.X_SIM_MAGICEX_Value.Name = "X_SIM_MAGICEX_Value";
             this.X_SIM_MAGICEX_Value.ReadOnly = true;
             this.X_SIM_MAGICEX_Value.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM_MAGICEX_Value.TabIndex = 50;
+            this.X_SIM_MAGICEX_Value.TabIndex = 47;
             this.X_SIM_MAGICEX_Value.Visible = false;
             // 
             // X_SIM_MAGICEX_Label
@@ -839,7 +839,7 @@
             0});
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(60, 25);
-            this.B10.TabIndex = 14;
+            this.B10.TabIndex = 11;
             // 
             // J_10
             // 
@@ -865,7 +865,7 @@
             0});
             this.W8.Name = "W8";
             this.W8.Size = new System.Drawing.Size(74, 25);
-            this.W8.TabIndex = 11;
+            this.W8.TabIndex = 8;
             // 
             // MagicExtClassBase
             // 
@@ -878,7 +878,7 @@
             0});
             this.MagicExtClassBase.Name = "MagicExtClassBase";
             this.MagicExtClassBase.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtClassBase.TabIndex = 23;
+            this.MagicExtClassBase.TabIndex = 20;
             this.MagicExtClassBase.Visible = false;
             // 
             // MagicExtClassBaseLabel
@@ -905,7 +905,7 @@
             0});
             this.B18.Name = "B18";
             this.B18.Size = new System.Drawing.Size(64, 25);
-            this.B18.TabIndex = 22;
+            this.B18.TabIndex = 21;
             // 
             // J_18
             // 
@@ -930,7 +930,7 @@
             0});
             this.B17.Name = "B17";
             this.B17.Size = new System.Drawing.Size(64, 25);
-            this.B17.TabIndex = 21;
+            this.B17.TabIndex = 18;
             // 
             // B13
             // 
@@ -943,7 +943,7 @@
             0});
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(64, 25);
-            this.B13.TabIndex = 17;
+            this.B13.TabIndex = 14;
             // 
             // B16
             // 
@@ -956,7 +956,7 @@
             0});
             this.B16.Name = "B16";
             this.B16.Size = new System.Drawing.Size(64, 25);
-            this.B16.TabIndex = 20;
+            this.B16.TabIndex = 17;
             // 
             // B12
             // 
@@ -969,7 +969,7 @@
             0});
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(64, 25);
-            this.B12.TabIndex = 16;
+            this.B12.TabIndex = 13;
             // 
             // B15
             // 
@@ -982,7 +982,7 @@
             0});
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(64, 25);
-            this.B15.TabIndex = 19;
+            this.B15.TabIndex = 16;
             // 
             // B11
             // 
@@ -995,7 +995,7 @@
             0});
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(64, 25);
-            this.B11.TabIndex = 15;
+            this.B11.TabIndex = 12;
             // 
             // B14
             // 
@@ -1008,7 +1008,7 @@
             0});
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(64, 25);
-            this.B14.TabIndex = 18;
+            this.B14.TabIndex = 15;
             // 
             // J_17
             // 
@@ -1120,41 +1120,6 @@
             this.HardCodingWarningLabel.Visible = false;
             this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
-            // X_CLASSTYPE
-            // 
-            this.X_CLASSTYPE.ErrorMessage = "";
-            this.X_CLASSTYPE.Location = new System.Drawing.Point(808, 177);
-            this.X_CLASSTYPE.Margin = new System.Windows.Forms.Padding(2);
-            this.X_CLASSTYPE.Name = "X_CLASSTYPE";
-            this.X_CLASSTYPE.Placeholder = "";
-            this.X_CLASSTYPE.ReadOnly = true;
-            this.X_CLASSTYPE.Size = new System.Drawing.Size(272, 25);
-            this.X_CLASSTYPE.TabIndex = 104;
-            this.X_CLASSTYPE.Visible = false;
-            // 
-            // L_4_ID
-            // 
-            this.L_4_ID.Controls.Add(this.B4);
-            this.L_4_ID.ErrorMessage = "";
-            this.L_4_ID.Location = new System.Drawing.Point(682, 74);
-            this.L_4_ID.Name = "L_4_ID";
-            this.L_4_ID.Size = new System.Drawing.Size(84, 32);
-            this.L_4_ID.TabIndex = 103;
-            // 
-            // B4
-            // 
-            this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(4, 4);
-            this.B4.Margin = new System.Windows.Forms.Padding(2);
-            this.B4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(76, 25);
-            this.B4.TabIndex = 0;
-            // 
             // X_SKILL_BUTTON9
             // 
             this.X_SKILL_BUTTON9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -1253,17 +1218,6 @@
             this.X_SKILL_BUTTON3.UseVisualStyleBackColor = true;
             this.X_SKILL_BUTTON3.Visible = false;
             // 
-            // L_6_CLASSICONSRC
-            // 
-            this.L_6_CLASSICONSRC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_CLASSICONSRC.Location = new System.Drawing.Point(1268, 164);
-            this.L_6_CLASSICONSRC.Margin = new System.Windows.Forms.Padding(2);
-            this.L_6_CLASSICONSRC.Name = "L_6_CLASSICONSRC";
-            this.L_6_CLASSICONSRC.Size = new System.Drawing.Size(64, 64);
-            this.L_6_CLASSICONSRC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_6_CLASSICONSRC.TabIndex = 102;
-            this.L_6_CLASSICONSRC.TabStop = false;
-            // 
             // X_CLASSSKILL
             // 
             this.X_CLASSSKILL.AccessibleDescription = "@X_CLASSSKILL";
@@ -1304,7 +1258,7 @@
             0});
             this.B7.Name = "B7";
             this.B7.Size = new System.Drawing.Size(74, 25);
-            this.B7.TabIndex = 12;
+            this.B7.TabIndex = 9;
             // 
             // X_SKILL_BUTTON1
             // 
@@ -1344,7 +1298,7 @@
             0});
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(74, 25);
-            this.B6.TabIndex = 13;
+            this.B6.TabIndex = 10;
             // 
             // J_6_WAITICON
             // 
@@ -1356,17 +1310,6 @@
             this.J_6_WAITICON.TabIndex = 31;
             this.J_6_WAITICON.Text = "待機アイコン";
             this.J_6_WAITICON.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_8_PORTRAIT_CLASS
-            // 
-            this.L_8_PORTRAIT_CLASS.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_PORTRAIT_CLASS.Location = new System.Drawing.Point(1086, 76);
-            this.L_8_PORTRAIT_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_8_PORTRAIT_CLASS.Name = "L_8_PORTRAIT_CLASS";
-            this.L_8_PORTRAIT_CLASS.Size = new System.Drawing.Size(168, 152);
-            this.L_8_PORTRAIT_CLASS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_8_PORTRAIT_CLASS.TabIndex = 30;
-            this.L_8_PORTRAIT_CLASS.TabStop = false;
             // 
             // J_8_PORTRAIT
             // 
@@ -1380,17 +1323,6 @@
             this.J_8_PORTRAIT.Text = "一般兵顔";
             this.J_8_PORTRAIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_5_CLASS
-            // 
-            this.L_5_CLASS.ErrorMessage = "";
-            this.L_5_CLASS.Location = new System.Drawing.Point(1086, 40);
-            this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_5_CLASS.Name = "L_5_CLASS";
-            this.L_5_CLASS.Placeholder = "";
-            this.L_5_CLASS.ReadOnly = true;
-            this.L_5_CLASS.Size = new System.Drawing.Size(110, 25);
-            this.L_5_CLASS.TabIndex = 23;
-            // 
             // B5
             // 
             this.B5.Hexadecimal = true;
@@ -1403,7 +1335,7 @@
             0});
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(74, 25);
-            this.B5.TabIndex = 10;
+            this.B5.TabIndex = 7;
             // 
             // J_5
             // 
@@ -1468,29 +1400,6 @@
             this.W0.Size = new System.Drawing.Size(74, 25);
             this.W0.TabIndex = 5;
             // 
-            // L_0_TEXT_NAME1
-            // 
-            this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(460, 74);
-            this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
-            this.L_0_TEXT_NAME1.Placeholder = "";
-            this.L_0_TEXT_NAME1.ReadOnly = true;
-            this.L_0_TEXT_NAME1.Size = new System.Drawing.Size(162, 25);
-            this.L_0_TEXT_NAME1.TabIndex = 6;
-            // 
-            // L_2_TEXT_DETAIL3
-            // 
-            this.L_2_TEXT_DETAIL3.ErrorMessage = "";
-            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(460, 108);
-            this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_TEXT_DETAIL3.Multiline = true;
-            this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
-            this.L_2_TEXT_DETAIL3.Placeholder = "";
-            this.L_2_TEXT_DETAIL3.ReadOnly = true;
-            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(306, 68);
-            this.L_2_TEXT_DETAIL3.TabIndex = 8;
-            // 
             // W2
             // 
             this.W2.Hexadecimal = true;
@@ -1503,7 +1412,7 @@
             0});
             this.W2.Name = "W2";
             this.W2.Size = new System.Drawing.Size(74, 25);
-            this.W2.TabIndex = 7;
+            this.W2.TabIndex = 6;
             // 
             // WriteButton
             // 
@@ -1516,85 +1425,6 @@
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
             // 
-            // systemIconPictureBox8
-            // 
-            this.systemIconPictureBox8.IconNumber = ((uint)(7u));
-            this.systemIconPictureBox8.Location = new System.Drawing.Point(1023, 540);
-            this.systemIconPictureBox8.Name = "systemIconPictureBox8";
-            this.systemIconPictureBox8.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox8.TabIndex = 51;
-            this.systemIconPictureBox8.TabStop = false;
-            // 
-            // systemIconPictureBox7
-            // 
-            this.systemIconPictureBox7.IconNumber = ((uint)(6u));
-            this.systemIconPictureBox7.Location = new System.Drawing.Point(956, 540);
-            this.systemIconPictureBox7.Name = "systemIconPictureBox7";
-            this.systemIconPictureBox7.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox7.TabIndex = 50;
-            this.systemIconPictureBox7.TabStop = false;
-            // 
-            // systemIconPictureBox6
-            // 
-            this.systemIconPictureBox6.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox6.Location = new System.Drawing.Point(884, 540);
-            this.systemIconPictureBox6.Name = "systemIconPictureBox6";
-            this.systemIconPictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox6.TabIndex = 49;
-            this.systemIconPictureBox6.TabStop = false;
-            // 
-            // systemIconPictureBox5
-            // 
-            this.systemIconPictureBox5.IconNumber = ((uint)(4u));
-            this.systemIconPictureBox5.Location = new System.Drawing.Point(808, 540);
-            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
-            this.systemIconPictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox5.TabIndex = 48;
-            this.systemIconPictureBox5.TabStop = false;
-            // 
-            // systemIconPictureBox4
-            // 
-            this.systemIconPictureBox4.IconNumber = ((uint)(3u));
-            this.systemIconPictureBox4.Location = new System.Drawing.Point(741, 540);
-            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
-            this.systemIconPictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox4.TabIndex = 47;
-            this.systemIconPictureBox4.TabStop = false;
-            // 
-            // systemIconPictureBox3
-            // 
-            this.systemIconPictureBox3.IconNumber = ((uint)(2u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(670, 540);
-            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
-            this.systemIconPictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox3.TabIndex = 46;
-            this.systemIconPictureBox3.TabStop = false;
-            // 
-            // systemIconPictureBox2
-            // 
-            this.systemIconPictureBox2.IconNumber = ((uint)(1u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(598, 540);
-            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
-            this.systemIconPictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox2.TabIndex = 45;
-            this.systemIconPictureBox2.TabStop = false;
-            // 
-            // systemIconPictureBox1
-            // 
-            this.systemIconPictureBox1.Location = new System.Drawing.Point(530, 540);
-            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
-            this.systemIconPictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemIconPictureBox1.TabIndex = 44;
-            this.systemIconPictureBox1.TabStop = false;
-            // 
             // B48
             // 
             this.B48.Location = new System.Drawing.Point(796, 571);
@@ -1606,7 +1436,7 @@
             0});
             this.B48.Name = "B48";
             this.B48.Size = new System.Drawing.Size(64, 25);
-            this.B48.TabIndex = 62;
+            this.B48.TabIndex = 59;
             // 
             // B47
             // 
@@ -1619,7 +1449,7 @@
             0});
             this.B47.Name = "B47";
             this.B47.Size = new System.Drawing.Size(64, 25);
-            this.B47.TabIndex = 61;
+            this.B47.TabIndex = 58;
             // 
             // B51
             // 
@@ -1632,7 +1462,7 @@
             0});
             this.B51.Name = "B51";
             this.B51.Size = new System.Drawing.Size(64, 25);
-            this.B51.TabIndex = 65;
+            this.B51.TabIndex = 62;
             // 
             // B46
             // 
@@ -1645,7 +1475,7 @@
             0});
             this.B46.Name = "B46";
             this.B46.Size = new System.Drawing.Size(64, 25);
-            this.B46.TabIndex = 60;
+            this.B46.TabIndex = 57;
             // 
             // B50
             // 
@@ -1658,7 +1488,7 @@
             0});
             this.B50.Name = "B50";
             this.B50.Size = new System.Drawing.Size(64, 25);
-            this.B50.TabIndex = 64;
+            this.B50.TabIndex = 61;
             // 
             // B45
             // 
@@ -1671,7 +1501,7 @@
             0});
             this.B45.Name = "B45";
             this.B45.Size = new System.Drawing.Size(64, 25);
-            this.B45.TabIndex = 59;
+            this.B45.TabIndex = 56;
             // 
             // B49
             // 
@@ -1684,7 +1514,7 @@
             0});
             this.B49.Name = "B49";
             this.B49.Size = new System.Drawing.Size(64, 25);
-            this.B49.TabIndex = 63;
+            this.B49.TabIndex = 60;
             // 
             // L_48_WEAPON
             // 
@@ -1769,7 +1599,7 @@
             0});
             this.B44.Name = "B44";
             this.B44.Size = new System.Drawing.Size(64, 25);
-            this.B44.TabIndex = 58;
+            this.B44.TabIndex = 55;
             // 
             // L_45_WEAPON
             // 
@@ -1818,7 +1648,7 @@
             0});
             this.MagicExtClassLimit.Name = "MagicExtClassLimit";
             this.MagicExtClassLimit.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtClassLimit.TabIndex = 32;
+            this.MagicExtClassLimit.TabIndex = 29;
             this.MagicExtClassLimit.Visible = false;
             // 
             // MagicExtClassLimitLabel
@@ -1845,7 +1675,7 @@
             0});
             this.B26.Name = "B26";
             this.B26.Size = new System.Drawing.Size(64, 25);
-            this.B26.TabIndex = 31;
+            this.B26.TabIndex = 30;
             // 
             // J_26
             // 
@@ -1871,7 +1701,7 @@
             0});
             this.B25.Name = "B25";
             this.B25.Size = new System.Drawing.Size(64, 25);
-            this.B25.TabIndex = 30;
+            this.B25.TabIndex = 28;
             // 
             // B21
             // 
@@ -1884,7 +1714,7 @@
             0});
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(64, 25);
-            this.B21.TabIndex = 26;
+            this.B21.TabIndex = 24;
             // 
             // B24
             // 
@@ -1897,7 +1727,7 @@
             0});
             this.B24.Name = "B24";
             this.B24.Size = new System.Drawing.Size(64, 25);
-            this.B24.TabIndex = 29;
+            this.B24.TabIndex = 27;
             // 
             // B20
             // 
@@ -1910,7 +1740,7 @@
             0});
             this.B20.Name = "B20";
             this.B20.Size = new System.Drawing.Size(64, 25);
-            this.B20.TabIndex = 25;
+            this.B20.TabIndex = 23;
             // 
             // B23
             // 
@@ -1923,7 +1753,7 @@
             0});
             this.B23.Name = "B23";
             this.B23.Size = new System.Drawing.Size(64, 25);
-            this.B23.TabIndex = 28;
+            this.B23.TabIndex = 26;
             // 
             // B19
             // 
@@ -1936,7 +1766,7 @@
             0});
             this.B19.Name = "B19";
             this.B19.Size = new System.Drawing.Size(64, 25);
-            this.B19.TabIndex = 24;
+            this.B19.TabIndex = 22;
             // 
             // B22
             // 
@@ -1949,7 +1779,7 @@
             0});
             this.B22.Name = "B22";
             this.B22.Size = new System.Drawing.Size(64, 25);
-            this.B22.TabIndex = 27;
+            this.B22.TabIndex = 25;
             // 
             // J_25
             // 
@@ -2058,7 +1888,7 @@
             0});
             this.MagicExtClassPromotionGain.Name = "MagicExtClassPromotionGain";
             this.MagicExtClassPromotionGain.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtClassPromotionGain.TabIndex = 57;
+            this.MagicExtClassPromotionGain.TabIndex = 54;
             this.MagicExtClassPromotionGain.Visible = false;
             // 
             // MagicExtClassPromotionGainLabel
@@ -2085,7 +1915,7 @@
             0});
             this.B36.Name = "B36";
             this.B36.Size = new System.Drawing.Size(64, 25);
-            this.B36.TabIndex = 53;
+            this.B36.TabIndex = 50;
             // 
             // B39
             // 
@@ -2098,7 +1928,7 @@
             0});
             this.B39.Name = "B39";
             this.B39.Size = new System.Drawing.Size(64, 25);
-            this.B39.TabIndex = 56;
+            this.B39.TabIndex = 53;
             // 
             // B35
             // 
@@ -2111,7 +1941,7 @@
             0});
             this.B35.Name = "B35";
             this.B35.Size = new System.Drawing.Size(64, 25);
-            this.B35.TabIndex = 52;
+            this.B35.TabIndex = 49;
             // 
             // B38
             // 
@@ -2124,7 +1954,7 @@
             0});
             this.B38.Name = "B38";
             this.B38.Size = new System.Drawing.Size(64, 25);
-            this.B38.TabIndex = 55;
+            this.B38.TabIndex = 52;
             // 
             // B34
             // 
@@ -2137,7 +1967,7 @@
             0});
             this.B34.Name = "B34";
             this.B34.Size = new System.Drawing.Size(64, 25);
-            this.B34.TabIndex = 51;
+            this.B34.TabIndex = 48;
             // 
             // B37
             // 
@@ -2150,7 +1980,7 @@
             0});
             this.B37.Name = "B37";
             this.B37.Size = new System.Drawing.Size(64, 25);
-            this.B37.TabIndex = 54;
+            this.B37.TabIndex = 51;
             // 
             // J_39
             // 
@@ -2248,7 +2078,7 @@
             0});
             this.P52.Name = "P52";
             this.P52.Size = new System.Drawing.Size(153, 25);
-            this.P52.TabIndex = 66;
+            this.P52.TabIndex = 67;
             // 
             // J_ID_BATTLEANIME_CLASSID
             // 
@@ -2286,7 +2116,7 @@
             0});
             this.D80.Name = "D80";
             this.D80.Size = new System.Drawing.Size(153, 25);
-            this.D80.TabIndex = 73;
+            this.D80.TabIndex = 75;
             // 
             // P72
             // 
@@ -2300,7 +2130,7 @@
             0});
             this.P72.Name = "P72";
             this.P72.Size = new System.Drawing.Size(153, 25);
-            this.P72.TabIndex = 71;
+            this.P72.TabIndex = 72;
             // 
             // J_ID_MOVECOST6_CLASSID
             // 
@@ -2338,7 +2168,7 @@
             0});
             this.P76.Name = "P76";
             this.P76.Size = new System.Drawing.Size(153, 25);
-            this.P76.TabIndex = 72;
+            this.P76.TabIndex = 74;
             // 
             // J_80
             // 
@@ -2347,7 +2177,7 @@
             this.J_80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_80.Name = "J_80";
             this.J_80.Size = new System.Drawing.Size(153, 32);
-            this.J_80.TabIndex = 53;
+            this.J_80.TabIndex = 73;
             this.J_80.Text = "???";
             this.J_80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2363,7 +2193,7 @@
             0});
             this.P68.Name = "P68";
             this.P68.Size = new System.Drawing.Size(153, 25);
-            this.P68.TabIndex = 70;
+            this.P68.TabIndex = 71;
             // 
             // J_ID_MOVECOST5_CLASSID
             // 
@@ -2389,7 +2219,7 @@
             0});
             this.P64.Name = "P64";
             this.P64.Size = new System.Drawing.Size(153, 25);
-            this.P64.TabIndex = 69;
+            this.P64.TabIndex = 70;
             // 
             // P56
             // 
@@ -2403,7 +2233,7 @@
             0});
             this.P56.Name = "P56";
             this.P56.Size = new System.Drawing.Size(153, 25);
-            this.P56.TabIndex = 67;
+            this.P56.TabIndex = 68;
             // 
             // J_ID_MOVECOST2_CLASSID
             // 
@@ -2429,7 +2259,7 @@
             0});
             this.P60.Name = "P60";
             this.P60.Size = new System.Drawing.Size(153, 25);
-            this.P60.TabIndex = 68;
+            this.P60.TabIndex = 69;
             // 
             // J_ID_MOVECOST3_CLASSID
             // 
@@ -2443,17 +2273,6 @@
             this.J_ID_MOVECOST3_CLASSID.Text = "移動コスト(雪)";
             this.J_ID_MOVECOST3_CLASSID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(728, 42);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(66, 25);
-            this.BlockSize.TabIndex = 9;
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2464,17 +2283,6 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(952, 4);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(246, 25);
-            this.SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -2577,6 +2385,17 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ReloadListButton
+            // 
+            this.ReloadListButton.Font = new System.Drawing.Font("MS UI Gothic", 9F);
+            this.ReloadListButton.Location = new System.Drawing.Point(666, 3);
+            this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ReloadListButton.Name = "ReloadListButton";
+            this.ReloadListButton.Size = new System.Drawing.Size(128, 32);
+            this.ReloadListButton.TabIndex = 3;
+            this.ReloadListButton.Text = "再取得";
+            this.ReloadListButton.UseVisualStyleBackColor = true;
+            // 
             // AddressList
             // 
             this.AddressList.FormattingEnabled = true;
@@ -2588,6 +2407,169 @@
             this.AddressList.Size = new System.Drawing.Size(270, 778);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(728, 42);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(66, 25);
+            this.BlockSize.TabIndex = 9;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(952, 4);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(246, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
+            // X_CLASSTYPE
+            // 
+            this.X_CLASSTYPE.ErrorMessage = "";
+            this.X_CLASSTYPE.Location = new System.Drawing.Point(808, 177);
+            this.X_CLASSTYPE.Margin = new System.Windows.Forms.Padding(2);
+            this.X_CLASSTYPE.Name = "X_CLASSTYPE";
+            this.X_CLASSTYPE.Placeholder = "";
+            this.X_CLASSTYPE.ReadOnly = true;
+            this.X_CLASSTYPE.Size = new System.Drawing.Size(272, 25);
+            this.X_CLASSTYPE.TabIndex = 104;
+            this.X_CLASSTYPE.Visible = false;
+            // 
+            // L_4_ID
+            // 
+            this.L_4_ID.Controls.Add(this.B4);
+            this.L_4_ID.ErrorMessage = "";
+            this.L_4_ID.Location = new System.Drawing.Point(682, 74);
+            this.L_4_ID.Name = "L_4_ID";
+            this.L_4_ID.Size = new System.Drawing.Size(84, 32);
+            this.L_4_ID.TabIndex = 103;
+            // 
+            // B4
+            // 
+            this.B4.Hexadecimal = true;
+            this.B4.Location = new System.Drawing.Point(4, 4);
+            this.B4.Margin = new System.Windows.Forms.Padding(2);
+            this.B4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(76, 25);
+            this.B4.TabIndex = 0;
+            // 
+            // L_6_CLASSICONSRC
+            // 
+            this.L_6_CLASSICONSRC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_6_CLASSICONSRC.Location = new System.Drawing.Point(1268, 164);
+            this.L_6_CLASSICONSRC.Margin = new System.Windows.Forms.Padding(2);
+            this.L_6_CLASSICONSRC.Name = "L_6_CLASSICONSRC";
+            this.L_6_CLASSICONSRC.Size = new System.Drawing.Size(64, 64);
+            this.L_6_CLASSICONSRC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_6_CLASSICONSRC.TabIndex = 102;
+            this.L_6_CLASSICONSRC.TabStop = false;
+            // 
+            // L_8_PORTRAIT_CLASS
+            // 
+            this.L_8_PORTRAIT_CLASS.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_8_PORTRAIT_CLASS.Location = new System.Drawing.Point(1086, 76);
+            this.L_8_PORTRAIT_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_8_PORTRAIT_CLASS.Name = "L_8_PORTRAIT_CLASS";
+            this.L_8_PORTRAIT_CLASS.Size = new System.Drawing.Size(168, 152);
+            this.L_8_PORTRAIT_CLASS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_8_PORTRAIT_CLASS.TabIndex = 30;
+            this.L_8_PORTRAIT_CLASS.TabStop = false;
+            // 
+            // L_5_CLASS
+            // 
+            this.L_5_CLASS.ErrorMessage = "";
+            this.L_5_CLASS.Location = new System.Drawing.Point(1086, 40);
+            this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_5_CLASS.Name = "L_5_CLASS";
+            this.L_5_CLASS.Placeholder = "";
+            this.L_5_CLASS.ReadOnly = true;
+            this.L_5_CLASS.Size = new System.Drawing.Size(110, 25);
+            this.L_5_CLASS.TabIndex = 23;
+            // 
+            // L_0_TEXT_NAME1
+            // 
+            this.L_0_TEXT_NAME1.ErrorMessage = "";
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(460, 74);
+            this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
+            this.L_0_TEXT_NAME1.Placeholder = "";
+            this.L_0_TEXT_NAME1.ReadOnly = true;
+            this.L_0_TEXT_NAME1.Size = new System.Drawing.Size(162, 25);
+            this.L_0_TEXT_NAME1.TabIndex = 6;
+            // 
+            // L_2_TEXT_DETAIL3
+            // 
+            this.L_2_TEXT_DETAIL3.ErrorMessage = "";
+            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(460, 108);
+            this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_TEXT_DETAIL3.Multiline = true;
+            this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
+            this.L_2_TEXT_DETAIL3.Placeholder = "";
+            this.L_2_TEXT_DETAIL3.ReadOnly = true;
+            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(306, 68);
+            this.L_2_TEXT_DETAIL3.TabIndex = 8;
+            // 
+            // systemIconPictureBox8
+            // 
+            this.systemIconPictureBox8.IconNumber = ((uint)(7u));
+            this.systemIconPictureBox8.Location = new System.Drawing.Point(1023, 540);
+            this.systemIconPictureBox8.Name = "systemIconPictureBox8";
+            this.systemIconPictureBox8.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox8.TabIndex = 51;
+            this.systemIconPictureBox8.TabStop = false;
+            // 
+            // systemIconPictureBox7
+            // 
+            this.systemIconPictureBox7.IconNumber = ((uint)(6u));
+            this.systemIconPictureBox7.Location = new System.Drawing.Point(956, 540);
+            this.systemIconPictureBox7.Name = "systemIconPictureBox7";
+            this.systemIconPictureBox7.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox7.TabIndex = 50;
+            this.systemIconPictureBox7.TabStop = false;
+            // 
+            // systemIconPictureBox6
+            // 
+            this.systemIconPictureBox6.IconNumber = ((uint)(5u));
+            this.systemIconPictureBox6.Location = new System.Drawing.Point(884, 540);
+            this.systemIconPictureBox6.Name = "systemIconPictureBox6";
+            this.systemIconPictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox6.TabIndex = 49;
+            this.systemIconPictureBox6.TabStop = false;
+            // 
+            // systemIconPictureBox5
+            // 
+            this.systemIconPictureBox5.IconNumber = ((uint)(4u));
+            this.systemIconPictureBox5.Location = new System.Drawing.Point(808, 540);
+            this.systemIconPictureBox5.Name = "systemIconPictureBox5";
+            this.systemIconPictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox5.TabIndex = 48;
+            this.systemIconPictureBox5.TabStop = false;
+            // 
+            // systemIconPictureBox4
+            // 
+            this.systemIconPictureBox4.IconNumber = ((uint)(3u));
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(741, 540);
+            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
+            this.systemIconPictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox4.TabIndex = 47;
+            this.systemIconPictureBox4.TabStop = false;
             // 
             // J_43
             // 
@@ -2606,7 +2588,7 @@
             this.J_43.Name = "J_43";
             this.J_43.Padding = new System.Windows.Forms.Padding(2);
             this.J_43.Size = new System.Drawing.Size(242, 273);
-            this.J_43.TabIndex = 62;
+            this.J_43.TabIndex = 76;
             this.J_43.TabStop = false;
             this.J_43.Text = "特性4";
             // 
@@ -2712,6 +2694,26 @@
             this.B43.Size = new System.Drawing.Size(60, 25);
             this.B43.TabIndex = 0;
             // 
+            // systemIconPictureBox3
+            // 
+            this.systemIconPictureBox3.IconNumber = ((uint)(2u));
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(670, 540);
+            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
+            this.systemIconPictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox3.TabIndex = 46;
+            this.systemIconPictureBox3.TabStop = false;
+            // 
+            // systemIconPictureBox2
+            // 
+            this.systemIconPictureBox2.IconNumber = ((uint)(1u));
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(598, 540);
+            this.systemIconPictureBox2.Name = "systemIconPictureBox2";
+            this.systemIconPictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox2.TabIndex = 45;
+            this.systemIconPictureBox2.TabStop = false;
+            // 
             // J_42
             // 
             this.J_42.BorderColor = System.Drawing.Color.Empty;
@@ -2729,7 +2731,7 @@
             this.J_42.Name = "J_42";
             this.J_42.Padding = new System.Windows.Forms.Padding(2);
             this.J_42.Size = new System.Drawing.Size(244, 273);
-            this.J_42.TabIndex = 61;
+            this.J_42.TabIndex = 65;
             this.J_42.TabStop = false;
             this.J_42.Text = "特性3";
             // 
@@ -2835,6 +2837,15 @@
             this.B42.Size = new System.Drawing.Size(60, 25);
             this.B42.TabIndex = 0;
             // 
+            // systemIconPictureBox1
+            // 
+            this.systemIconPictureBox1.Location = new System.Drawing.Point(525, 540);
+            this.systemIconPictureBox1.Name = "systemIconPictureBox1";
+            this.systemIconPictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.systemIconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox1.TabIndex = 44;
+            this.systemIconPictureBox1.TabStop = false;
+            // 
             // J_41
             // 
             this.J_41.BorderColor = System.Drawing.Color.Empty;
@@ -2852,7 +2863,7 @@
             this.J_41.Name = "J_41";
             this.J_41.Padding = new System.Windows.Forms.Padding(2);
             this.J_41.Size = new System.Drawing.Size(219, 273);
-            this.J_41.TabIndex = 60;
+            this.J_41.TabIndex = 64;
             this.J_41.TabStop = false;
             this.J_41.Text = "特性2";
             // 
@@ -2975,7 +2986,7 @@
             this.J_40.Name = "J_40";
             this.J_40.Padding = new System.Windows.Forms.Padding(2);
             this.J_40.Size = new System.Drawing.Size(237, 273);
-            this.J_40.TabIndex = 59;
+            this.J_40.TabIndex = 63;
             this.J_40.TabStop = false;
             this.J_40.Text = "特性1";
             // 
@@ -3080,17 +3091,6 @@
             this.B40.Name = "B40";
             this.B40.Size = new System.Drawing.Size(60, 25);
             this.B40.TabIndex = 0;
-            // 
-            // ReloadListButton
-            // 
-            this.ReloadListButton.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.ReloadListButton.Location = new System.Drawing.Point(666, 3);
-            this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ReloadListButton.Name = "ReloadListButton";
-            this.ReloadListButton.Size = new System.Drawing.Size(128, 32);
-            this.ReloadListButton.TabIndex = 3;
-            this.ReloadListButton.Text = "再取得";
-            this.ReloadListButton.UseVisualStyleBackColor = true;
             // 
             // ClassForm
             // 
@@ -3316,23 +3316,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.B15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B14)).EndInit();
-            this.L_4_ID.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_6_CLASSICONSRC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_PORTRAIT_CLASS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B48)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B47)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B51)).EndInit();
@@ -3368,12 +3356,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
+            this.L_4_ID.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_6_CLASSICONSRC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_PORTRAIT_CLASS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
             this.J_43.ResumeLayout(false);
             this.J_43.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
             this.J_42.ResumeLayout(false);
             this.J_42.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             this.J_41.ResumeLayout(false);
             this.J_41.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B41)).EndInit();

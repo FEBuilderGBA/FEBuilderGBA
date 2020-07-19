@@ -250,7 +250,7 @@
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(174, 30);
-            this.ReloadListButton.TabIndex = 2;
+            this.ReloadListButton.TabIndex = 3;
             this.ReloadListButton.Text = "再取得";
             this.ReloadListButton.UseVisualStyleBackColor = true;
             // 
@@ -282,7 +282,7 @@
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
             this.ReadCount.Size = new System.Drawing.Size(84, 25);
-            this.ReadCount.TabIndex = 1;
+            this.ReadCount.TabIndex = 2;
             // 
             // ReadStartAddress
             // 
@@ -296,7 +296,7 @@
             0});
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(134, 25);
-            this.ReadStartAddress.TabIndex = 0;
+            this.ReadStartAddress.TabIndex = 1;
             // 
             // label3
             // 
@@ -343,7 +343,7 @@
             0});
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(229, 25);
-            this.Address.TabIndex = 3;
+            this.Address.TabIndex = 4;
             // 
             // label55
             // 
@@ -380,7 +380,7 @@
             0});
             this.B35.Name = "B35";
             this.B35.Size = new System.Drawing.Size(135, 25);
-            this.B35.TabIndex = 22;
+            this.B35.TabIndex = 30;
             this.B35.ValueChanged += new System.EventHandler(this.B35_ValueChanged);
             // 
             // J_35
@@ -408,7 +408,7 @@
             0});
             this.B34.Name = "B34";
             this.B34.Size = new System.Drawing.Size(138, 25);
-            this.B34.TabIndex = 25;
+            this.B34.TabIndex = 33;
             // 
             // J_34
             // 
@@ -434,7 +434,7 @@
             0});
             this.B33.Name = "B33";
             this.B33.Size = new System.Drawing.Size(120, 25);
-            this.B33.TabIndex = 24;
+            this.B33.TabIndex = 32;
             // 
             // J_33
             // 
@@ -535,7 +535,7 @@
             0});
             this.B32.Name = "B32";
             this.B32.Size = new System.Drawing.Size(135, 25);
-            this.B32.TabIndex = 23;
+            this.B32.TabIndex = 31;
             // 
             // J_32
             // 
@@ -562,7 +562,7 @@
             0});
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(100, 25);
-            this.B29.TabIndex = 8;
+            this.B29.TabIndex = 7;
             // 
             // J_29_ICON
             // 
@@ -1299,7 +1299,7 @@
             0});
             this.P12.Name = "P12";
             this.P12.Size = new System.Drawing.Size(139, 25);
-            this.P12.TabIndex = 26;
+            this.P12.TabIndex = 22;
             this.P12.ValueChanged += new System.EventHandler(this.P12_ValueChanged);
             // 
             // J_12_ITEMSTATBOOSTER
@@ -1339,7 +1339,7 @@
             0});
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(84, 25);
-            this.B6.TabIndex = 5;
+            this.B6.TabIndex = 8;
             // 
             // J_0_TEXT
             // 
@@ -1388,7 +1388,7 @@
             0});
             this.W0.Name = "W0";
             this.W0.Size = new System.Drawing.Size(100, 25);
-            this.W0.TabIndex = 4;
+            this.W0.TabIndex = 5;
             // 
             // B7
             // 
@@ -1544,7 +1544,7 @@
             this.J_11.Name = "J_11";
             this.J_11.Padding = new System.Windows.Forms.Padding(2);
             this.J_11.Size = new System.Drawing.Size(294, 268);
-            this.J_11.TabIndex = 66;
+            this.J_11.TabIndex = 26;
             this.J_11.TabStop = false;
             this.J_11.Text = "特性4";
             // 
@@ -1691,7 +1691,7 @@
             this.J_10.Name = "J_10";
             this.J_10.Padding = new System.Windows.Forms.Padding(2);
             this.J_10.Size = new System.Drawing.Size(315, 268);
-            this.J_10.TabIndex = 65;
+            this.J_10.TabIndex = 25;
             this.J_10.TabStop = false;
             this.J_10.Text = "特性3";
             // 
@@ -1814,7 +1814,7 @@
             this.J_9.Name = "J_9";
             this.J_9.Padding = new System.Windows.Forms.Padding(2);
             this.J_9.Size = new System.Drawing.Size(272, 268);
-            this.J_9.TabIndex = 64;
+            this.J_9.TabIndex = 24;
             this.J_9.TabStop = false;
             this.J_9.Text = "特性2";
             // 
@@ -1949,7 +1949,7 @@
             this.J_8.Name = "J_8";
             this.J_8.Padding = new System.Windows.Forms.Padding(2);
             this.J_8.Size = new System.Drawing.Size(230, 268);
-            this.J_8.TabIndex = 63;
+            this.J_8.TabIndex = 23;
             this.J_8.TabStop = false;
             this.J_8.Text = "特性1";
             // 

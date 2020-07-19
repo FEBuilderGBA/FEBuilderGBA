@@ -351,7 +351,7 @@
             0});
             this.W2.Name = "W2";
             this.W2.Size = new System.Drawing.Size(74, 25);
-            this.W2.TabIndex = 7;
+            this.W2.TabIndex = 6;
             // 
             // J_4
             // 
@@ -390,7 +390,7 @@
             0});
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(65, 25);
-            this.B4.TabIndex = 9;
+            this.B4.TabIndex = 7;
             // 
             // X_SKILL_BUTTON9
             // 
@@ -540,7 +540,7 @@
             this.J_ID_UNITPALETTEFE8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_ID_UNITPALETTEFE8.Name = "J_ID_UNITPALETTEFE8";
             this.J_ID_UNITPALETTEFE8.Size = new System.Drawing.Size(198, 18);
-            this.J_ID_UNITPALETTEFE8.TabIndex = 13;
+            this.J_ID_UNITPALETTEFE8.TabIndex = 11;
             this.J_ID_UNITPALETTEFE8.Text = "ユニット別パレットへジャンプ";
             this.J_ID_UNITPALETTEFE8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -556,7 +556,7 @@
             0});
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(82, 25);
-            this.B10.TabIndex = 14;
+            this.B10.TabIndex = 12;
             // 
             // J_10
             // 
@@ -583,7 +583,7 @@
             0});
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(72, 25);
-            this.B8.TabIndex = 12;
+            this.B8.TabIndex = 10;
             // 
             // W6
             // 
@@ -597,7 +597,7 @@
             0});
             this.W6.Name = "W6";
             this.W6.Size = new System.Drawing.Size(72, 25);
-            this.W6.TabIndex = 11;
+            this.W6.TabIndex = 9;
             // 
             // J_8_GENERICENEMYPORTRAIT
             // 
@@ -636,7 +636,7 @@
             0});
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(72, 25);
-            this.B5.TabIndex = 10;
+            this.B5.TabIndex = 8;
             // 
             // B9
             // 
@@ -650,7 +650,7 @@
             0});
             this.B9.Name = "B9";
             this.B9.Size = new System.Drawing.Size(82, 25);
-            this.B9.TabIndex = 15;
+            this.B9.TabIndex = 13;
             this.B9.Value = new decimal(new int[] {
             8,
             0,
@@ -692,7 +692,7 @@
             0});
             this.MagicExtUnitBase.Name = "MagicExtUnitBase";
             this.MagicExtUnitBase.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtUnitBase.TabIndex = 25;
+            this.MagicExtUnitBase.TabIndex = 22;
             this.MagicExtUnitBase.Visible = false;
             // 
             // MagicExtUnitBaseLabel
@@ -719,7 +719,7 @@
             0});
             this.b19.Name = "b19";
             this.b19.Size = new System.Drawing.Size(64, 25);
-            this.b19.TabIndex = 24;
+            this.b19.TabIndex = 23;
             // 
             // b18
             // 
@@ -732,7 +732,7 @@
             0});
             this.b18.Name = "b18";
             this.b18.Size = new System.Drawing.Size(64, 25);
-            this.b18.TabIndex = 23;
+            this.b18.TabIndex = 21;
             // 
             // b14
             // 
@@ -745,7 +745,7 @@
             0});
             this.b14.Name = "b14";
             this.b14.Size = new System.Drawing.Size(64, 25);
-            this.b14.TabIndex = 19;
+            this.b14.TabIndex = 17;
             // 
             // b17
             // 
@@ -758,7 +758,7 @@
             0});
             this.b17.Name = "b17";
             this.b17.Size = new System.Drawing.Size(64, 25);
-            this.b17.TabIndex = 22;
+            this.b17.TabIndex = 20;
             // 
             // b13
             // 
@@ -771,7 +771,7 @@
             0});
             this.b13.Name = "b13";
             this.b13.Size = new System.Drawing.Size(64, 25);
-            this.b13.TabIndex = 18;
+            this.b13.TabIndex = 16;
             // 
             // b16
             // 
@@ -784,7 +784,7 @@
             0});
             this.b16.Name = "b16";
             this.b16.Size = new System.Drawing.Size(64, 25);
-            this.b16.TabIndex = 21;
+            this.b16.TabIndex = 19;
             // 
             // b12
             // 
@@ -797,7 +797,7 @@
             0});
             this.b12.Name = "b12";
             this.b12.Size = new System.Drawing.Size(64, 25);
-            this.b12.TabIndex = 17;
+            this.b12.TabIndex = 15;
             // 
             // b15
             // 
@@ -810,7 +810,7 @@
             0});
             this.b15.Name = "b15";
             this.b15.Size = new System.Drawing.Size(64, 25);
-            this.b15.TabIndex = 20;
+            this.b15.TabIndex = 18;
             // 
             // J_19
             // 
@@ -907,7 +907,7 @@
             0});
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(64, 25);
-            this.B11.TabIndex = 16;
+            this.B11.TabIndex = 14;
             // 
             // J_12
             // 
@@ -994,7 +994,7 @@
             0});
             this.B49.Name = "B49";
             this.B49.Size = new System.Drawing.Size(82, 25);
-            this.B49.TabIndex = 61;
+            this.B49.TabIndex = 52;
             // 
             // J_49
             // 
@@ -1020,7 +1020,7 @@
             0});
             this.B51.Name = "B51";
             this.B51.Size = new System.Drawing.Size(82, 25);
-            this.B51.TabIndex = 63;
+            this.B51.TabIndex = 55;
             // 
             // B48
             // 
@@ -1034,7 +1034,7 @@
             0});
             this.B48.Name = "B48";
             this.B48.Size = new System.Drawing.Size(82, 25);
-            this.B48.TabIndex = 53;
+            this.B48.TabIndex = 46;
             // 
             // B50
             // 
@@ -1048,7 +1048,7 @@
             0});
             this.B50.Name = "B50";
             this.B50.Size = new System.Drawing.Size(82, 25);
-            this.B50.TabIndex = 62;
+            this.B50.TabIndex = 53;
             // 
             // P44
             // 
@@ -1062,7 +1062,7 @@
             0});
             this.P44.Name = "P44";
             this.P44.Size = new System.Drawing.Size(141, 25);
-            this.P44.TabIndex = 52;
+            this.P44.TabIndex = 45;
             // 
             // J_44_SUPPORTUNIT
             // 
@@ -1100,7 +1100,7 @@
             0});
             this.B39.Name = "B39";
             this.B39.Size = new System.Drawing.Size(82, 25);
-            this.B39.TabIndex = 58;
+            this.B39.TabIndex = 51;
             // 
             // J_37
             // 
@@ -1150,7 +1150,7 @@
             0});
             this.B38.Name = "B38";
             this.B38.Size = new System.Drawing.Size(82, 25);
-            this.B38.TabIndex = 57;
+            this.B38.TabIndex = 50;
             // 
             // B37
             // 
@@ -1164,7 +1164,7 @@
             0});
             this.B37.Name = "B37";
             this.B37.Size = new System.Drawing.Size(82, 25);
-            this.B37.TabIndex = 56;
+            this.B37.TabIndex = 49;
             // 
             // B36
             // 
@@ -1178,7 +1178,7 @@
             0});
             this.B36.Name = "B36";
             this.B36.Size = new System.Drawing.Size(82, 25);
-            this.B36.TabIndex = 55;
+            this.B36.TabIndex = 48;
             // 
             // B35
             // 
@@ -1192,7 +1192,7 @@
             0});
             this.B35.Name = "B35";
             this.B35.Size = new System.Drawing.Size(82, 25);
-            this.B35.TabIndex = 54;
+            this.B35.TabIndex = 47;
             // 
             // J_35
             // 
@@ -1217,7 +1217,7 @@
             0});
             this.MagicExtUnitGrow.Name = "MagicExtUnitGrow";
             this.MagicExtUnitGrow.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtUnitGrow.TabIndex = 33;
+            this.MagicExtUnitGrow.TabIndex = 31;
             this.MagicExtUnitGrow.Visible = false;
             // 
             // MagicExtUnitGrowLabel
@@ -1244,7 +1244,7 @@
             0});
             this.B34.Name = "B34";
             this.B34.Size = new System.Drawing.Size(64, 25);
-            this.B34.TabIndex = 32;
+            this.B34.TabIndex = 30;
             // 
             // B30
             // 
@@ -1257,7 +1257,7 @@
             0});
             this.B30.Name = "B30";
             this.B30.Size = new System.Drawing.Size(64, 25);
-            this.B30.TabIndex = 28;
+            this.B30.TabIndex = 26;
             // 
             // B33
             // 
@@ -1270,7 +1270,7 @@
             0});
             this.B33.Name = "B33";
             this.B33.Size = new System.Drawing.Size(64, 25);
-            this.B33.TabIndex = 31;
+            this.B33.TabIndex = 29;
             // 
             // B29
             // 
@@ -1283,7 +1283,7 @@
             0});
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(64, 25);
-            this.B29.TabIndex = 27;
+            this.B29.TabIndex = 25;
             // 
             // B32
             // 
@@ -1296,7 +1296,7 @@
             0});
             this.B32.Name = "B32";
             this.B32.Size = new System.Drawing.Size(64, 25);
-            this.B32.TabIndex = 30;
+            this.B32.TabIndex = 28;
             // 
             // B28
             // 
@@ -1309,7 +1309,7 @@
             0});
             this.B28.Name = "B28";
             this.B28.Size = new System.Drawing.Size(64, 25);
-            this.B28.TabIndex = 26;
+            this.B28.TabIndex = 24;
             // 
             // B31
             // 
@@ -1322,7 +1322,7 @@
             0});
             this.B31.Name = "B31";
             this.B31.Size = new System.Drawing.Size(64, 25);
-            this.B31.TabIndex = 29;
+            this.B31.TabIndex = 27;
             // 
             // J_34
             // 
@@ -1655,7 +1655,7 @@
             0});
             this.X_SIM.Name = "X_SIM";
             this.X_SIM.Size = new System.Drawing.Size(64, 25);
-            this.X_SIM.TabIndex = 34;
+            this.X_SIM.TabIndex = 32;
             // 
             // label65
             // 
@@ -1704,7 +1704,7 @@
             0});
             this.B24.Name = "B24";
             this.B24.Size = new System.Drawing.Size(64, 25);
-            this.B24.TabIndex = 48;
+            this.B24.TabIndex = 37;
             // 
             // B23
             // 
@@ -1717,7 +1717,7 @@
             0});
             this.B23.Name = "B23";
             this.B23.Size = new System.Drawing.Size(64, 25);
-            this.B23.TabIndex = 47;
+            this.B23.TabIndex = 36;
             // 
             // B27
             // 
@@ -1730,7 +1730,7 @@
             0});
             this.B27.Name = "B27";
             this.B27.Size = new System.Drawing.Size(64, 25);
-            this.B27.TabIndex = 51;
+            this.B27.TabIndex = 40;
             // 
             // B22
             // 
@@ -1743,7 +1743,7 @@
             0});
             this.B22.Name = "B22";
             this.B22.Size = new System.Drawing.Size(64, 25);
-            this.B22.TabIndex = 46;
+            this.B22.TabIndex = 35;
             // 
             // B26
             // 
@@ -1756,7 +1756,7 @@
             0});
             this.B26.Name = "B26";
             this.B26.Size = new System.Drawing.Size(64, 25);
-            this.B26.TabIndex = 50;
+            this.B26.TabIndex = 39;
             // 
             // B21
             // 
@@ -1769,7 +1769,7 @@
             0});
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(64, 25);
-            this.B21.TabIndex = 45;
+            this.B21.TabIndex = 34;
             // 
             // B25
             // 
@@ -1782,7 +1782,7 @@
             0});
             this.B25.Name = "B25";
             this.B25.Size = new System.Drawing.Size(64, 25);
-            this.B25.TabIndex = 49;
+            this.B25.TabIndex = 38;
             // 
             // L_24_WEAPON
             // 
@@ -1867,7 +1867,7 @@
             0});
             this.B20.Name = "B20";
             this.B20.Size = new System.Drawing.Size(64, 25);
-            this.B20.TabIndex = 44;
+            this.B20.TabIndex = 33;
             // 
             // L_21_WEAPON
             // 
@@ -2070,7 +2070,7 @@
             this.J_43.Name = "J_43";
             this.J_43.Padding = new System.Windows.Forms.Padding(2);
             this.J_43.Size = new System.Drawing.Size(236, 265);
-            this.J_43.TabIndex = 3;
+            this.J_43.TabIndex = 44;
             this.J_43.TabStop = false;
             this.J_43.Text = "特性4";
             // 
@@ -2193,7 +2193,7 @@
             this.J_42.Name = "J_42";
             this.J_42.Padding = new System.Windows.Forms.Padding(2);
             this.J_42.Size = new System.Drawing.Size(234, 265);
-            this.J_42.TabIndex = 2;
+            this.J_42.TabIndex = 43;
             this.J_42.TabStop = false;
             this.J_42.Text = "特性3";
             // 
@@ -2316,7 +2316,7 @@
             this.J_41.Name = "J_41";
             this.J_41.Padding = new System.Windows.Forms.Padding(2);
             this.J_41.Size = new System.Drawing.Size(219, 265);
-            this.J_41.TabIndex = 1;
+            this.J_41.TabIndex = 42;
             this.J_41.TabStop = false;
             this.J_41.Text = "特性2";
             // 
@@ -2439,7 +2439,7 @@
             this.J_40.Name = "J_40";
             this.J_40.Padding = new System.Windows.Forms.Padding(2);
             this.J_40.Size = new System.Drawing.Size(237, 265);
-            this.J_40.TabIndex = 0;
+            this.J_40.TabIndex = 41;
             this.J_40.TabStop = false;
             this.J_40.Text = "特性1";
             // 
