@@ -43,7 +43,6 @@ namespace FEBuilderGBA
             , MeleeAndMagicFix_By_Unit
             , MagicPatch_By_Menu
             , Skill
-            , SkipWorldmapFix
             , ItemIconExpands
             , CAMERA_Event_OutOfBand_Fix
             , CAMERA_Event_NotExistsUnit_Fix
@@ -154,23 +153,6 @@ namespace FEBuilderGBA
                     patchName1 = "Skill20200604";///No Translate
                     patchName2 = "Skill20200604";///No Translate
                 }
-            }
-            else if (type == TYPE.SkipWorldmapFix)
-            {
-                if (Program.ROM.RomInfo.version() != 8)
-                {
-                    return false;
-                }
-
-                checkFunc = () =>
-                {
-                    return PatchUtil.SearchSkipWorldMapPatch() != PatchUtil.mnc2_fix_enum.NO;
-                };
-                reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
-                patchName1 = "MNC2Fix";///No Translate
-                patchName2 = "MNC2Fix";///No Translate
-                patchShowName = "Skip Worldmap";///No Translate
-                patchCombo = "fix";///No Translate
             }
             else if (type == TYPE.CAMERA_Event_OutOfBand_Fix)
             {

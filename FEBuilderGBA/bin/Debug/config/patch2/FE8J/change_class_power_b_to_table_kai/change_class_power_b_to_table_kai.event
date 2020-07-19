@@ -1,0 +1,21 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $2C2F0
+BYTE $00 $49 $8F $46
+POIN change_class_power_b_to_table_kaijump
+POP
+
+change_class_power_b_to_table_kaijump:
+#incbin "change_class_power_b_to_table_kai.dmp"
+POIN change_class_power_b_to_table_Table_kai
+
+#include "change_class_power_b_to_table_Table_kai.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

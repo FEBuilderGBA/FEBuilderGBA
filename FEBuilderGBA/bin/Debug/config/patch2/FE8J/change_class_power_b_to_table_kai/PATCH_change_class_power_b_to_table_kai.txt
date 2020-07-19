@@ -1,0 +1,31 @@
+NAME=自分の階級修正Bをテーブルに変更する・改(editor)
+
+IF:0x2C2F0=0x00 0x49 0x8F 0x46
+AUTHOR=match
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END change_class_power_b_to_table_kai.dmp
+
+//データサイズ(10進数)
+DATASIZE=3
+
+//データ個数
+DATACOUNT=$GREP3 0x00 0x00 0x00
+
+//リストに表示されるのはレート
+LISTNAME=B0:CLASS
+
+//データを定義します
+B0:CLASS=クラス
+B1:UNIT=ユニット / ANY=0x00
+B2:DECIMAL=補正値
+
+INFO=クラスとユニットが一致した場合、クラス階級修正Bを変更します。設定されてないクラスの階級修正値は上級職=60、その他=0になります。
+INFO.en=If the class and unit match, change class rank modifier B.\r\nThe class modification value of the class that is not set is 60 for senior jobs and 0 for others.\r\n\r\nWhat is changed in this patch is the part enclosed by {}.\r\nUndefeated EXP  = (31 + enemy's Level + enemy's Promoted Bonus - your LV - your Promoted Bonus) / your Relative Power\r\nBasic defeat EXP= (enemy's Level * enemy's Relative Power + {{enemy's Class bonus B}}) - (your LV * your Relative Power + {{your Class bonus B}}) / Mode coefficient\r\nDefeat EXP      = Undefeated EXP + max(0,Basic defeat EXP + 20 + boss Bonus + theif Bonus + revenant Bonus) * silencer Bonus\r\n
+INFO.zh=If the class and unit match, change class rank modifier B.\r\nThe class modification value of the class that is not set is 60 for senior jobs and 0 for others.\r\n\r\n在此补丁中所做的更改是用{}括起来的部分。\r\n不败经验值\u003d（31 +对手的LV +对手的高级位置校正自己的LV-自身高级位置校正）÷自己的经验值校正值。\r\n基本失败经验值\u003d（对手的LV x对手的经验值校正值+{{对手的等级校正B}}）-（自己的LV x自己的经验值校正值+{{自己的等级校正B}}）÷游戏模式系数。\r\n失败经验值\u003d不失败经验值+最大值（0，基本失败经验值+ 20 + boss修改 ++ Thief修改+ mommy修改）x瞬时击杀系数。\r\n
+NAME.en=change class power b to table KAI(Editor)
+NAME.zh=将等级修改B更改为表格 KAI(Editor)

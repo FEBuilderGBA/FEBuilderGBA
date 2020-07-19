@@ -35,7 +35,7 @@ namespace FEBuilderGBA
         {
               MagicPatch_By_Menu
             , DrawFont_By_Translate
-
+            , SkipWorldmapFix
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -46,10 +46,12 @@ namespace FEBuilderGBA
             string patchName1 = "";
             string patchName2 = "";
             string patchShowName = null;
+            string patchCombo1 = "";
 
             string patchName3 = "";
             string patchName4 = "";
             string patchShowName3 = null;
+            string patchCombo3 = "";
             if (type == TYPE.MagicPatch_By_Menu)
             {
                 checkFunc = ()=>{
@@ -115,6 +117,28 @@ namespace FEBuilderGBA
                     reason += R._("日本語以外へ翻訳する場合は、DrawUTF8 を選択してください\r\n");
                 }
             }
+            else if (type == TYPE.SkipWorldmapFix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchSkipWorldMapPatch() != PatchUtil.mnc2_fix_enum.NO;
+                };
+                title = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
+                reason  = R._("フリーマップを無効にしてよいならば、強力なEliminateを選択してください。\r\n");
+                reason += R._("フリーマップを使いたい場合は、MNC2Fix を選択してください。\r\n");
+
+                patchName1 = "Eliminate";///No Translate
+                patchName2 = "Eliminate the constraint of freezing unless it enters from the world map.";///No Translate
+                patchCombo1 = "fix";///No Translate
+
+                patchName3 = "MNC2Fix";///No Translate
+                patchName4 = "MNC2Fix";///No Translate
+            }
 
             Debug.Assert(checkFunc != null);
             Debug.Assert(title != "");
@@ -147,7 +171,7 @@ namespace FEBuilderGBA
                     f.Close();
 
                     PatchForm patchF = (PatchForm)InputFormRef.JumpForm<PatchForm>();
-                    patchF.ApplyPatch(patchName1, patchName2); ///No Translate
+                    patchF.ApplyPatch(patchName1, patchName2, patchCombo1); ///No Translate
                 };
             }
 
@@ -163,7 +187,7 @@ namespace FEBuilderGBA
                     f.Close();
 
                     PatchForm patchF = (PatchForm)InputFormRef.JumpForm<PatchForm>();
-                    patchF.ApplyPatch(patchName3, patchName4); ///No Translate
+                    patchF.ApplyPatch(patchName3, patchName4, patchCombo3); ///No Translate
                 };
             }
 

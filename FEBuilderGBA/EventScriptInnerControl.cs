@@ -2197,7 +2197,7 @@ namespace FEBuilderGBA
             string command = ScriptCodeName.Text;
             if (command.IndexOf("(MNC2)") >= 0 || command.IndexOf("(MNC3)") >= 0)
             {
-                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.SkipWorldmapFix);
+                HowDoYouLikePatch2Form.CheckAndShowPopupDialog(HowDoYouLikePatch2Form.TYPE.SkipWorldmapFix);
             }
         }
 

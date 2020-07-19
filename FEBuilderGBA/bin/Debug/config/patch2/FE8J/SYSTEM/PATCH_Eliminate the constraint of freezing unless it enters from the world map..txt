@@ -12,6 +12,8 @@ COMBO=Default|OFF|fix|ONN
 
 COMBO.zh=默认|OFF|修复|ONN
 
+DETERMINATION_ADDRESS=0xc1e7c
+
 //Allows MNC2 To jump to any chapter ID.
 ONN:0xc1e7c=0xB8 0xE0
 OFF:0xc1e7c=0x47 0x2D
@@ -32,4 +34,3 @@ INFO=FE8には、イベント命令の次のマップへ移動する命令を使
 INFO.zh=即使您使用该指令移至事件命令的下一个地图，也有一张地图无法移至FE 8。\r\n一些地图只能从世界地图上移动。\r\n如果你从世界地图以外的地图移动到这些地图，游戏将会崩溃。\r\n此修补程序释放其限制。\r\n移至所有地图。\r\n即使在FE 8中，也可以像FE 7那样使用，而不使用世界地图。\r\n
 INFO.en=Toggles whether certain chapters must be entered via the World Map (Default) or if they can skip the map (Patched)\r\nBy default, the game crashes when attempting to skip the world map for incompatable chapters.\r\nThis patch removes the limitation and allows direct jumping to all maps.\r\nThis allows FE8 to have a campaign without a world map like FE6/7.\r\nFix MNC2 Freezing glitch (breaks skirmishes!)
 
-DEPRECATED=1

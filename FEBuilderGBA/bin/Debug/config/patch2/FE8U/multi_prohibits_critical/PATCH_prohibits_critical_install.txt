@@ -1,0 +1,12 @@
+NAME=必殺を禁止するクラスを複数定義する(Install)
+NAME.en=Define multiple classes that prohibit critical(Install)
+NAME.zh=Define multiple classes that prohibit critical(Install)
+
+INFO=指定したクラスまたはユニットへの必殺を無効にします。
+INFO.en=Disables critical for the specified class or unit.
+INFO.zh=Disables critical for the specified class or unit.
+
+TYPE=EA
+EA=prohibits_critical_installer.event
+
+PATCHED_IF:0x2ACAC=0x00 0x4B 0x18 0x47
