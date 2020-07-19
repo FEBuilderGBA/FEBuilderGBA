@@ -1,6 +1,6 @@
-NAME=フリーマップから入らないとフリーズする制約を消す 20190505
-NAME.en=Skip World Map Fix 20190505
-NAME.zh=消除冻结的限制，除非从免费地图进入 20190505
+NAME=フリーマップから入らないとフリーズする制約を消す(For World Map Users)
+NAME.en=Skip World Map Fix (For World Map Users)
+NAME.zh=Skip World Map Fix (For World Map Users)
 
 TYPE=EA
 TAG=#ENGINE

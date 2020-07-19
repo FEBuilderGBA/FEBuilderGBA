@@ -1,5 +1,5 @@
-NAME=オートカーソルで選択される主人公を複数持てるように変更する
-INFO=オートカーソルで選択される主人公を複数設定できるように変更します。
+NAME=(OLD)オートカーソルで選択される主人公を複数持てるように変更する
+INFO=(OLD)オートカーソルで選択される主人公を複数設定できるように変更します。
 
 IF:0x3325C=0x00 0x4B
 
@@ -26,7 +26,7 @@ B3:CHAPTORMODE_ANYFF=Edtion(0xFF=ANY)
 W4:FLAG=Flag(0x00=ANY)
 W6=00
 
-NAME.en=Change to have multiple main characters selected by auto cursor.
-INFO.en=Change so that you can set multiple heroes selected by auto cursor.
-NAME.zh=更改为使用自动光标选择多个英雄。
-INFO.zh=进行更改，以便您可以设置由自动光标选择的多个英雄。
+NAME.en=(OLD)Change to have multiple main characters selected by auto cursor.
+INFO.en=(OLD)Change so that you can set multiple heroes selected by auto cursor.
+NAME.zh=(OLD)更改为使用自动光标选择多个英雄。
+INFO.zh=(OLD)进行更改，以便您可以设置由自动光标选择的多个英雄。

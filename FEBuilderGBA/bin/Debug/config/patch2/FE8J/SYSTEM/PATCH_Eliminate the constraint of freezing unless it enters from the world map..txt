@@ -1,7 +1,7 @@
 
-NAME=フリーマップから入らないとフリーズする制約を消す 20180909
-NAME.en=Skip World Map Fix 20180909
-NAME.zh=消除冻结的限制，除非从免费地图进入 20180909
+NAME=フリーマップから入らないとフリーズする制約を消す(Remove World Map Completely)
+NAME.en=Skip World Map Fix (Remove World Map Completely)
+NAME.zh=Skip World Map Fix (Remove World Map Completely)
 
 //アドレスパッチとして実装します
 TYPE=SWITCH

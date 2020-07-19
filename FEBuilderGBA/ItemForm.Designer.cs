@@ -326,7 +326,7 @@
             this.WriteButton.Location = new System.Drawing.Point(1208, 8);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(0);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(176, 30);
+            this.WriteButton.Size = new System.Drawing.Size(182, 30);
             this.WriteButton.TabIndex = 9;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -921,7 +921,7 @@
             // 
             // L_16_NEWALLOC_EFFECTIVENESS
             // 
-            this.L_16_NEWALLOC_EFFECTIVENESS.Location = new System.Drawing.Point(1228, 295);
+            this.L_16_NEWALLOC_EFFECTIVENESS.Location = new System.Drawing.Point(1238, 295);
             this.L_16_NEWALLOC_EFFECTIVENESS.Name = "L_16_NEWALLOC_EFFECTIVENESS";
             this.L_16_NEWALLOC_EFFECTIVENESS.Size = new System.Drawing.Size(142, 68);
             this.L_16_NEWALLOC_EFFECTIVENESS.TabIndex = 33;
@@ -931,7 +931,7 @@
             // P16
             // 
             this.P16.Hexadecimal = true;
-            this.P16.Location = new System.Drawing.Point(1255, 44);
+            this.P16.Location = new System.Drawing.Point(1265, 44);
             this.P16.Margin = new System.Windows.Forms.Padding(2);
             this.P16.Maximum = new decimal(new int[] {
             -559939585,
@@ -939,7 +939,7 @@
             54,
             0});
             this.P16.Name = "P16";
-            this.P16.Size = new System.Drawing.Size(115, 25);
+            this.P16.Size = new System.Drawing.Size(114, 25);
             this.P16.TabIndex = 29;
             this.P16.ValueChanged += new System.EventHandler(this.P16_ValueChanged);
             // 
@@ -947,17 +947,17 @@
             // 
             this.J_16_EFFECTIVENESS.AccessibleDescription = "@ITEM_EFFECTIVENESS";
             this.J_16_EFFECTIVENESS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_16_EFFECTIVENESS.Location = new System.Drawing.Point(1086, 40);
+            this.J_16_EFFECTIVENESS.Location = new System.Drawing.Point(1137, 40);
             this.J_16_EFFECTIVENESS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_16_EFFECTIVENESS.Name = "J_16_EFFECTIVENESS";
-            this.J_16_EFFECTIVENESS.Size = new System.Drawing.Size(165, 30);
+            this.J_16_EFFECTIVENESS.Size = new System.Drawing.Size(123, 30);
             this.J_16_EFFECTIVENESS.TabIndex = 14;
             this.J_16_EFFECTIVENESS.Text = "特効";
             this.J_16_EFFECTIVENESS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MagicExtUnitBase
             // 
-            this.MagicExtUnitBase.Location = new System.Drawing.Point(1150, 506);
+            this.MagicExtUnitBase.Location = new System.Drawing.Point(1148, 506);
             this.MagicExtUnitBase.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtUnitBase.Maximum = new decimal(new int[] {
             65535,
@@ -979,7 +979,7 @@
             // 
             this.MagicExtUnitBaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MagicExtUnitBaseLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(1150, 476);
+            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(1148, 476);
             this.MagicExtUnitBaseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MagicExtUnitBaseLabel.Name = "MagicExtUnitBaseLabel";
             this.MagicExtUnitBaseLabel.Size = new System.Drawing.Size(65, 26);
@@ -990,7 +990,7 @@
             // 
             // L_12_NEWALLOC_ITEMSTATBOOSTER
             // 
-            this.L_12_NEWALLOC_ITEMSTATBOOSTER.Location = new System.Drawing.Point(1223, 475);
+            this.L_12_NEWALLOC_ITEMSTATBOOSTER.Location = new System.Drawing.Point(1233, 475);
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.Name = "L_12_NEWALLOC_ITEMSTATBOOSTER";
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.Size = new System.Drawing.Size(142, 62);
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.TabIndex = 31;
@@ -999,7 +999,7 @@
             // 
             // X_SIM_BODY
             // 
-            this.X_SIM_BODY.Location = new System.Drawing.Point(1081, 506);
+            this.X_SIM_BODY.Location = new System.Drawing.Point(1079, 506);
             this.X_SIM_BODY.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_BODY.Maximum = new decimal(new int[] {
             65535,
@@ -1020,7 +1020,7 @@
             // 
             this.X_SIM_BODY_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_BODY_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_BODY_Label.Location = new System.Drawing.Point(1081, 476);
+            this.X_SIM_BODY_Label.Location = new System.Drawing.Point(1079, 476);
             this.X_SIM_BODY_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_BODY_Label.Name = "X_SIM_BODY_Label";
             this.X_SIM_BODY_Label.Size = new System.Drawing.Size(65, 26);
@@ -1030,7 +1030,7 @@
             // 
             // X_SIM_MOVE
             // 
-            this.X_SIM_MOVE.Location = new System.Drawing.Point(1007, 506);
+            this.X_SIM_MOVE.Location = new System.Drawing.Point(1008, 506);
             this.X_SIM_MOVE.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_MOVE.Maximum = new decimal(new int[] {
             65535,
@@ -1051,7 +1051,7 @@
             // 
             this.X_SIM_MOV_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_MOV_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_MOV_Label.Location = new System.Drawing.Point(1007, 476);
+            this.X_SIM_MOV_Label.Location = new System.Drawing.Point(1008, 476);
             this.X_SIM_MOV_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_MOV_Label.Name = "X_SIM_MOV_Label";
             this.X_SIM_MOV_Label.Size = new System.Drawing.Size(65, 26);
@@ -1099,7 +1099,7 @@
             // 
             // X_SIM_RES
             // 
-            this.X_SIM_RES.Location = new System.Drawing.Point(867, 506);
+            this.X_SIM_RES.Location = new System.Drawing.Point(868, 506);
             this.X_SIM_RES.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_RES.Maximum = new decimal(new int[] {
             65535,
@@ -1137,7 +1137,7 @@
             // 
             // X_SIM_DEF
             // 
-            this.X_SIM_DEF.Location = new System.Drawing.Point(797, 506);
+            this.X_SIM_DEF.Location = new System.Drawing.Point(798, 506);
             this.X_SIM_DEF.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_DEF.Maximum = new decimal(new int[] {
             65535,
@@ -1208,7 +1208,7 @@
             // 
             this.X_SIM_RES_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_RES_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_RES_Label.Location = new System.Drawing.Point(867, 476);
+            this.X_SIM_RES_Label.Location = new System.Drawing.Point(868, 476);
             this.X_SIM_RES_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_RES_Label.Name = "X_SIM_RES_Label";
             this.X_SIM_RES_Label.Size = new System.Drawing.Size(65, 26);
@@ -1220,7 +1220,7 @@
             // 
             this.X_SIM_DEF_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_DEF_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_DEF_Label.Location = new System.Drawing.Point(797, 476);
+            this.X_SIM_DEF_Label.Location = new System.Drawing.Point(798, 476);
             this.X_SIM_DEF_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_DEF_Label.Name = "X_SIM_DEF_Label";
             this.X_SIM_DEF_Label.Size = new System.Drawing.Size(65, 26);
@@ -1511,7 +1511,7 @@
             this.L_4_TEXT_ITEM2.Name = "L_4_TEXT_ITEM2";
             this.L_4_TEXT_ITEM2.Placeholder = "";
             this.L_4_TEXT_ITEM2.ReadOnly = true;
-            this.L_4_TEXT_ITEM2.Size = new System.Drawing.Size(260, 84);
+            this.L_4_TEXT_ITEM2.Size = new System.Drawing.Size(314, 84);
             this.L_4_TEXT_ITEM2.TabIndex = 37;
             // 
             // L_2_TEXT_ITEMX
@@ -1523,7 +1523,7 @@
             this.L_2_TEXT_ITEMX.Name = "L_2_TEXT_ITEMX";
             this.L_2_TEXT_ITEMX.Placeholder = "";
             this.L_2_TEXT_ITEMX.ReadOnly = true;
-            this.L_2_TEXT_ITEMX.Size = new System.Drawing.Size(260, 84);
+            this.L_2_TEXT_ITEMX.Size = new System.Drawing.Size(314, 84);
             this.L_2_TEXT_ITEMX.TabIndex = 36;
             // 
             // J_11
@@ -2060,10 +2060,10 @@
             this.CLASS_LISTBOX.FormattingEnabled = true;
             this.CLASS_LISTBOX.IntegralHeight = false;
             this.CLASS_LISTBOX.ItemHeight = 18;
-            this.CLASS_LISTBOX.Location = new System.Drawing.Point(1086, 76);
+            this.CLASS_LISTBOX.Location = new System.Drawing.Point(1137, 76);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(2);
             this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(284, 214);
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(242, 214);
             this.CLASS_LISTBOX.TabIndex = 30;
             // 
             // L_29_ITEMICONSRC
