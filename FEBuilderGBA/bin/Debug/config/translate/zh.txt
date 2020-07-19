@@ -5233,17 +5233,14 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :特効効果\r\n新規割当
 新的\r\n特殊效果
 
-:特効効果\r\n格納アドレス
-特殊效果\r\n存储地址
+:特効効果
+特殊效果
 
 :能力補正\r\n新規割当
 新的\r\n能力修正值
 
 :能力補正値
 能力修正值
-
-:能力修正\r\n格納アドレス
-能力修正\r\n存储地址
 
 :種別
 种别
@@ -5511,6 +5508,9 @@ ASM指针
 
 :特効効果
 特効效果
+
+:特効
+特効
 
 :間接エフェクト
 间接效果

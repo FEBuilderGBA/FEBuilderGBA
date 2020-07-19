@@ -5183,7 +5183,7 @@ Effect
 Additional Damage Type
 
 :進撃準備店
-Preparation Price
+Preparation
 
 :店での買値
 Normal Price
@@ -5221,9 +5221,6 @@ Weapon Stats
 :耐久
 Uses
 
-:攻撃2
-Might
-
 :命中
 Hit
 
@@ -5236,17 +5233,14 @@ Weight
 :特効効果\r\n新規割当
 New\r\nEffectiveness
 
-:特効効果\r\n格納アドレス
-Effectiveness\r\nAddress
+:特効効果
+Effectiveness
 
 :能力補正\r\n新規割当
 New\r\nStat Booster
 
 :能力補正値
 Stat Boosts:
-
-:能力修正\r\n格納アドレス
-Stat Boosts\r\nAddress
 
 :種別
 Item Type
@@ -5514,6 +5508,9 @@ Battle Quotes
 
 :特効効果
 Weapon Effectiveness
+
+:特効
+Effectiveness
 
 :間接エフェクト
 Magic Animations
