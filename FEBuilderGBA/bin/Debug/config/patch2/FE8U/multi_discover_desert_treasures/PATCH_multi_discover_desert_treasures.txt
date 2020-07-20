@@ -1,5 +1,5 @@
-NAME=砂漠の財宝を発見できるクラスを複数定義する
-NAME.en=Define multiple classes that can discover desert treasures
+NAME=砂漠の財宝を発見できるクラスを複数定義する(Editor)
+NAME.en=Define multiple classes that can discover desert treasures(Editor)
 
 INFO=砂漠の財宝を確実に発見できるクラスを複数登録できるようにします。\r\nディフォルトは、盗賊とローグだけですが、他のクラスを追加することができるようにします。
 
@@ -23,6 +23,6 @@ LISTNAME=$B0:CLASS
 
 //データを定義します
 B0:CLASS=Class
-NAME.zh=可以定义多个舞者（战斗动画效果）
+NAME.zh=可以定义多个舞者（战斗动画效果）(Editor)
 INFO.zh=该补丁还允许您注册一个以上的舞者。\r\n在FE 8中，如果您设置了“ClassID:0x4D dancer"以外的舞者，则不会显示用于恢复在战斗动画中恢复的动画。\r\n此重塑可让您将恢复效果设置为多个类别。\r\n注册一位指定的舞者，请设置舞蹈或唱歌与字符1。\r\n然后，请用战斗动画的神奇动作指定舞蹈的战斗动画。\r\n
 INFO.en=This patch also allow you to register multiple classes that can reliably discover desert treasures.\r\nThe default is only thieves and rogues, but we will be able to add other classes.

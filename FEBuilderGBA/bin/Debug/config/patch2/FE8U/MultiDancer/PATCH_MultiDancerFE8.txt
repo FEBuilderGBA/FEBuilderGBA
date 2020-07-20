@@ -1,5 +1,5 @@
-NAME=複数の踊り子を定義できるようにする(戦闘アニメのエフェクト)
-NAME.en=Define Multiple dancers(Battle animation effect)
+NAME=複数の踊り子を定義できるようにする(戦闘アニメのエフェクト)(Editor)
+NAME.en=Define Multiple dancers(Battle animation effect)(Editor)
 
 INFO=踊り子を複数登録できるようにします。\r\nFE8では踊り子を「ClassID:0x4D 踊り子」以外に設定すると、戦闘アニメで行動力を回復するためのアニメーションが表示されません。\r\nこの改造は、その回復エフェクトを複数のクラスに設定できるようにするものです。\r\n指定した踊り子を登録するためには、特性1で踊り、または歌うを設定してください。\r\nそして、戦闘アニメの理魔法のモーションで踊りの戦闘アニメを指定してください。\r\n
 INFO.en=You can register multiple dancer.\r\nWith FE 8, if you set dancer to something other than "ClassID: 0x4D Dancer", no animation will be displayed for recovering the ability to respond with battle animation.\r\nThis remodeling allows you to set the recovery effect to multiple classes.\r\nTo register the specified dancer, set Dance or Play in Ability 1.\r\nAnd, please designate Dance 's battle animation with battle animation' s Anima magic motion.
@@ -24,5 +24,5 @@ LISTNAME=$B0:CLASS
 
 //データを定義します
 B0:CLASS=Class
-NAME.zh=可以定义多个舞者（战斗动画效果）
+NAME.zh=可以定义多个舞者（战斗动画效果）(Editor)
 INFO.zh=该补丁还允许您注册一个以上的舞者。\r\n在FE 8中，如果您设置了“ClassID:0x4D dancer"以外的舞者，则不会显示用于恢复在战斗动画中恢复的动画。\r\n此重塑可让您将恢复效果设置为多个类别。\r\n注册一位指定的舞者，请设置舞蹈或唱歌与字符1。\r\n然后，请用战斗动画的神奇动作指定舞蹈的战斗动画。\r\n

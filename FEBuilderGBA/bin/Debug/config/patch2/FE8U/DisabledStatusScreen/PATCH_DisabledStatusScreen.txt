@@ -1,4 +1,4 @@
-NAME=ステータス表示を抑制するクラスを複数定義する
+NAME=ステータス表示を抑制するクラスを複数定義する(Editor)
 TYPE=STRUCT
 TAG=#ENGINE
 
@@ -19,5 +19,5 @@ LISTNAME=$B0:CLASS
 
 //データを定義します
 B0:CLASS=Class
-NAME.en=Define multiple classes to suppress status display.
-NAME.zh=定义多个类以禁止状态显示。
+NAME.en=Define multiple classes to suppress status display(Editor)
+NAME.zh=定义多个类以禁止状态显示(Editor)

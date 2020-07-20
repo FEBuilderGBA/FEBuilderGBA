@@ -333,7 +333,7 @@ namespace FEBuilderGBA
             bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
             bitmap.Dispose();
 
-            string[] parsers = new string[] { " -> ", " <- ", " ?? ", " & " };
+            string[] parsers = new string[] { " -> ", " <- ", " ?? ", " & " , " - "};
             bool found = false;
             foreach (string parser in parsers)
             {

@@ -1339,6 +1339,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "W_UNITCLASS")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawUnitAndClassAndText, DrawMode.OwnerDrawFixed);
+            }
             else if (listname == "ITEM")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
@@ -1398,6 +1402,12 @@ namespace FEBuilderGBA
             else if (listname == "CLASS")
             {
                 appendname = U.ToHexString(i) + " " + ClassForm.GetClassName((uint)i);
+            }
+            else if (listname == "W_UNITCLASS")
+            {
+                uint unitid = (uint)(i & 0xff);
+                uint classid = (uint)((i >> 8) & 0xff);
+                appendname = U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid) + " - " + U.ToHexString(classid) + " " + ClassForm.GetClassName(classid);
             }
             else if (listname == "ITEM")
             {
