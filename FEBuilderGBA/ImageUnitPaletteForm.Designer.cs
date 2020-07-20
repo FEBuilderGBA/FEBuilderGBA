@@ -174,6 +174,8 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.REDOButton = new System.Windows.Forms.Button();
+            this.UNDOButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -847,6 +849,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.REDOButton);
+            this.panel1.Controls.Add(this.UNDOButton);
             this.panel1.Controls.Add(this.PaletteOverradeALL);
             this.panel1.Controls.Add(this.AutoScrollPanel);
             this.panel1.Controls.Add(this.PaletteZoomComboBox);
@@ -1013,7 +1017,7 @@
             // 
             // PALETTE_TO_CLIPBOARD_BUTTON
             // 
-            this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(8, 407);
+            this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(8, 416);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Name = "PALETTE_TO_CLIPBOARD_BUTTON";
             this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(174, 30);
@@ -1052,7 +1056,7 @@
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(195, 407);
+            this.ImportButton.Location = new System.Drawing.Point(195, 416);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(200, 30);
@@ -1063,7 +1067,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(405, 407);
+            this.ExportButton.Location = new System.Drawing.Point(405, 416);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(205, 30);
@@ -2369,6 +2373,28 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // REDOButton
+            // 
+            this.REDOButton.Location = new System.Drawing.Point(473, 382);
+            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.REDOButton.Name = "REDOButton";
+            this.REDOButton.Size = new System.Drawing.Size(136, 30);
+            this.REDOButton.TabIndex = 280;
+            this.REDOButton.Text = "REDO";
+            this.REDOButton.UseVisualStyleBackColor = true;
+            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
+            // 
+            // UNDOButton
+            // 
+            this.UNDOButton.Location = new System.Drawing.Point(330, 382);
+            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UNDOButton.Name = "UNDOButton";
+            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
+            this.UNDOButton.TabIndex = 279;
+            this.UNDOButton.Text = "UNDO";
+            this.UNDOButton.UseVisualStyleBackColor = true;
+            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
+            // 
             // ImageUnitPaletteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2613,5 +2639,7 @@
         private System.Windows.Forms.Label X_BATTLEANIME_LABEL;
         private TextBoxEx X_BATTLEANIME_INFO;
         private System.Windows.Forms.CheckBox PaletteOverradeALL;
+        private System.Windows.Forms.Button REDOButton;
+        private System.Windows.Forms.Button UNDOButton;
     }
 }

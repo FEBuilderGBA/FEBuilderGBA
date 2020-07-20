@@ -1323,7 +1323,7 @@ this.MapObjImage);
                 return errormessage;
             }
             uint palette_plist = this.MapEditConf[this.MapStyle.SelectedIndex].palette_plist;
-            bool r = MapStyleEditorForm.MapPaletteImport(this, bitmap, palette_plist);
+            bool r = MapPaletteImport(bitmap, palette_plist);
             if (!r)
             {
                 return "";
@@ -3019,5 +3019,84 @@ this.MapObjImage);
             mapchange.OnUpdateMapEditorForm(mapid);
         }
 
+        public const int PARTS_MAP_PALETTE_COUNT = 5;  //パレットは5種類
+        public const int MAX_MAP_PALETTE_COUNT = PARTS_MAP_PALETTE_COUNT * 2; //通常と霧がある
+        bool MapPaletteImport(Bitmap bitmap, uint palette_plist)
+        {
+            int palette_count = MAX_MAP_PALETTE_COUNT;
+            int bitmap_palette_count = ImageUtil.GetPalette16Count(bitmap);
+            if (palette_count <= 1)
+            {
+                R.ShowStopError("パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類", bitmap_palette_count, palette_count);
+                return false;
+            }
+
+            if (bitmap_palette_count < palette_count)
+            {
+                DialogResult dr = R.ShowQ("これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします");
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    return PaletteImportOne(bitmap, palette_plist, false);
+                }
+                else if (dr == System.Windows.Forms.DialogResult.No)
+                {
+                    return PaletteImportOne(bitmap, palette_plist, true);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                //全部のパレットを入れ替える
+                return PaletteImportFull(bitmap, palette_plist);
+            }
+        }
+
+        bool PaletteImportFull(Bitmap bitmap, uint palette_plist)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+
+            //パレット情報の書き込み.
+            uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
+            if (palette_address == 0)
+            {//未割り当てならば新規確保しようか
+                palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(MAX_MAP_PALETTE_COUNT), undodata);
+            }
+
+            //拡張領域に書き込んでいる可能性もあるので plstを更新する.
+            bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
+            if (!r)
+            {
+                Program.Undo.Rollback(undodata);
+                return false;
+            }
+
+            Program.Undo.Push(undodata);
+            return true;
+        }
+        bool PaletteImportOne(Bitmap bitmap, uint palette_plist, bool isFog)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+
+            //パレット情報の書き込み.
+            uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
+            if (palette_address == 0)
+            {//未割り当てならば新規確保しようか
+                palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(MAX_MAP_PALETTE_COUNT), undodata);
+            }
+
+            //拡張領域に書き込んでいる可能性もあるので plstを更新する.
+            bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
+            if (!r)
+            {
+                Program.Undo.Rollback(undodata);
+                return false;
+            }
+
+            Program.Undo.Push(undodata);
+            return true;
+        }
     }
 }

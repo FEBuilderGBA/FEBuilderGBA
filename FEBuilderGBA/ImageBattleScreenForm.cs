@@ -45,7 +45,8 @@ namespace FEBuilderGBA
 
             uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
             U.ForceUpdate(PALETTE_ADDRESS, palette);
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor , GetSampleBitmap);
+            this.PFR = new PaletteFormRef(this);
+            PFR.MakePaletteUI(OnChangeColor , GetSampleBitmap);
             this.PaletteIndexComboBox.SelectedIndex = 0;
 
             InitLoadChipsetInfo();
@@ -55,6 +56,7 @@ namespace FEBuilderGBA
 //            MakeBattleScreen(); //TSA描画
             Zoom.SelectedIndex = 1; //2倍拡大
         }
+        PaletteFormRef PFR;
 
         void SetupTileAddr()
         {
@@ -732,7 +734,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            PaletteFormRef.MakePaletteROMToUI(this, (uint)PALETTE_ADDRESS.Value,false , this.PaletteIndexComboBox.SelectedIndex);
+            PFR.MakePaletteROMToUI((uint)PALETTE_ADDRESS.Value,false , this.PaletteIndexComboBox.SelectedIndex);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
         }
         private void PaletteIndexComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -742,7 +744,7 @@ namespace FEBuilderGBA
 
         private void PaletteWriteButton_Click(object sender, EventArgs e)
         {
-            uint addr = PaletteFormRef.MakePaletteUIToROM(this, (uint)PALETTE_ADDRESS.Value,false, this.PaletteIndexComboBox.SelectedIndex );
+            uint addr = PFR.MakePaletteUIToROM((uint)PALETTE_ADDRESS.Value,false, this.PaletteIndexComboBox.SelectedIndex );
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
             InputFormRef.ShowWriteNotifyAnimation(this, addr);
@@ -1045,7 +1047,7 @@ namespace FEBuilderGBA
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.PALETTE_TO_CLIPBOARD_BUTTON_Click(this);
+            bool r = PFR.PALETTE_TO_CLIPBOARD_BUTTON_Click();
             if (r)
             {
                 //書き込み
@@ -1081,5 +1083,16 @@ namespace FEBuilderGBA
                 BackBrush = null;
             }
         }
+
+        private void UndoPatlleButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunUndo();
+        }
+
+        private void RedoPaletteButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunRedo();
+        }
+
     }
 }

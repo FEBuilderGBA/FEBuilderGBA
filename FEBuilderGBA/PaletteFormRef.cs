@@ -11,8 +11,19 @@ namespace FEBuilderGBA
 {
     public class PaletteFormRef
     {
+        private PaletteFormRef()
+        {
+        }
+        public PaletteFormRef(Form self)
+        {
+            this.SelfForm = self;
+            this.Controls = InputFormRef.GetAllControls(self);
+            ClearUndoBuffer();
+        }
+        Form SelfForm;
+        List<Control> Controls;
 
-        public static void SpoitTool_SelectPalette(PictureBox pic, List<Control> controls, int options, MouseEventArgs e)
+        public void SpoitTool_SelectPalette(PictureBox pic, int options, MouseEventArgs e)
         {
             if (pic.Image == null)
             {
@@ -38,9 +49,9 @@ namespace FEBuilderGBA
 
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
                 uint dr = (uint)((uint)r.Value & 0xFD);
                 uint dg = (uint)((uint)g.Value & 0xFD);
@@ -74,28 +85,10 @@ namespace FEBuilderGBA
             }
         }
 
-        public static PictureBox MakePaletteUI_FindSampleImage(List<Control> controls)
+
+        NumericUpDown FindNUD(string symbol, int paletteno)
         {
-            foreach (Control info in controls)
-            {
-                if (info.Width < 128 || info.Height < 128)
-                {//小さすぎ
-                    continue;
-                }
-
-                if (!(info is PictureBox))
-                {
-                    continue;
-                }
-
-                return (PictureBox)info;
-            }
-            return null;
-        }
-
-        public static Control MakePaletteUI_FindObject<_TYPE>(List<Control> controls, string symbol, int paletteno)
-        {
-            foreach (Control info in controls)
+            foreach (Control info in Controls)
             {
                 string[] sp = info.Name.Split('_');
                 if (sp.Length < 3)
@@ -115,16 +108,46 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                if (!(info is _TYPE))
+                if (!(info is NumericUpDown))
                 {
                     continue;
                 }
-                return info;
+                return (NumericUpDown)info;
+            }
+            return null;
+        }
+        Label FindLabel(string symbol, int paletteno)
+        {
+            foreach (Control info in Controls)
+            {
+                string[] sp = info.Name.Split('_');
+                if (sp.Length < 3)
+                {
+                    continue;
+                }
+                if (sp[0] != "PALETTE")
+                {
+                    continue;
+                }
+                if (paletteno != U.atoi(sp[2]))
+                {
+                    continue;
+                }
+
+                if (sp[1] != symbol)
+                {
+                    continue;
+                }
+                if (!(info is Label))
+                {
+                    continue;
+                }
+                return (Label)info;
             }
             return null;
         }
 
-        static MouseEventHandler MakePaletteUI_Label_MouseClickEvent(Form self, List<Control> controls, Label obj, int paletteno)
+        MouseEventHandler Label_MouseClickEvent(Label obj, int paletteno)
         {
             return (sender, e) =>
             {
@@ -140,17 +163,22 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
+
+                PushUndo();
+                this.UndoLock = true;
+
                 //選択された色の取得
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
                 r.Value = (cd.Color.R >> 3) << 3;
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
                 g.Value = (cd.Color.G >> 3) << 3;
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
                 b.Value = (cd.Color.B >> 3) << 3;
-            }
-            ;
+
+                this.UndoLock = false;
+            };
         }
-        static EventHandler MakePaletteUI_Label_ColorSwap(Form self, List<Control> controls, Label obj, int paletteno)
+        EventHandler Label_ColorSwap(Label obj, int paletteno)
         {
             return (sender, e) =>
             {
@@ -159,9 +187,9 @@ namespace FEBuilderGBA
                 Color[] colormap = new Color[16 + 1];
                 for (int i = 1; i <= 16; i++)
                 {
-                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    NumericUpDown r = FindNUD("R", i);
+                    NumericUpDown g = FindNUD("G", i);
+                    NumericUpDown b = FindNUD("B", i);
                     form.SetColor(i, (int)r.Value, (int)g.Value, (int)b.Value);
                     colormap[i] = Color.FromArgb((int)r.Value, (int)g.Value, (int)b.Value);
                 }
@@ -172,11 +200,13 @@ namespace FEBuilderGBA
                 }
                 int selected = form.GetSelectedColorIndex();
 
+                PushUndo();
+                this.UndoLock = true;
                 for (int i = 1; i <= 16; i++)
                 {
-                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    NumericUpDown r = FindNUD("R", i);
+                    NumericUpDown g = FindNUD("G", i);
+                    NumericUpDown b = FindNUD("B", i);
 
                     if (selected == i)
                     {
@@ -191,11 +221,12 @@ namespace FEBuilderGBA
                         b.Value = colormap[selected].B;
                     }
                 }
+                this.UndoLock = false;
             }
             ;
         }
 
-        static EventHandler MakePaletteUI_Label_ColorChanges(Form self, List<Control> controls, Label obj, int paletteno, Func<Bitmap> getSampleBitmap)
+        EventHandler Label_ColorChanges(Label obj, int paletteno, Func<Bitmap> getSampleBitmap)
         {
             return (sender, e) =>
             {
@@ -211,9 +242,9 @@ namespace FEBuilderGBA
                 Color[] colormap = new Color[16 + 1];
                 for (int i = 1; i <= 16; i++)
                 {
-                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    NumericUpDown r = FindNUD("R", i);
+                    NumericUpDown g = FindNUD("G", i);
+                    NumericUpDown b = FindNUD("B", i);
                     form.SetColor(i, (int)r.Value, (int)g.Value, (int)b.Value);
                     colormap[i] = Color.FromArgb((int)r.Value, (int)g.Value, (int)b.Value);
                 }
@@ -223,26 +254,33 @@ namespace FEBuilderGBA
                     return;
                 }
 
+                PushUndo();
+                this.UndoLock = true;
+
                 for (int i = 1; i <= 16; i++)
                 {
-                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    NumericUpDown r = FindNUD("R", i);
+                    NumericUpDown g = FindNUD("G", i);
+                    NumericUpDown b = FindNUD("B", i);
 
                     Color rgb = form.GetColor(i);
                     r.Value = rgb.R;
                     g.Value = rgb.G;
                     b.Value = rgb.B;
                 }
+
+                this.UndoLock = false;
             }
             ;
         }
-        public static EventHandler MakePaletteUI_NumericUpDown_ChangeEvent(Form self, List<Control> controls, NumericUpDown obj, string symbol, int paletteno, Func<Color, int, bool> onChangeColor)
+        EventHandler NumericUpDown_ChangeEvent(NumericUpDown obj, string symbol, int paletteno, Func<Color, int, bool> onChangeColor)
         {
             return (sender, e) =>
             {
-                Label p = (Label)MakePaletteUI_FindObject<Label>(controls, "P", paletteno);
+                PushUndo();
+                Label p = (Label)FindLabel("P", paletteno);
                 int v = (int)obj.Value;
+                obj.Tag = (uint)v;
                 if (symbol == "R")
                 {
                     obj.BackColor = Color.FromArgb(v, 0, 0);
@@ -272,79 +310,65 @@ namespace FEBuilderGBA
         }
 
 
-        public static void MakePaletteUI(Form self, Func<Color, int, bool> onChangeColor, Func<Bitmap> getSampleBitmap)
+        public void MakePaletteUI(Func<Color, int, bool> onChangeColor, Func<Bitmap> getSampleBitmap)
         {
-            List<Control> controls = InputFormRef.GetAllControls(self);
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                Label p = (Label)MakePaletteUI_FindObject<Label>(controls, "P", paletteno);
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                Label p = (Label)FindLabel("P", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
-                p.MouseClick += MakePaletteUI_Label_MouseClickEvent(self, controls, p, paletteno);
+                p.MouseClick += Label_MouseClickEvent(p, paletteno);
                 p.Cursor = Cursors.Hand;
 
                 ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
                 MenuItem menuItem;
 
                 menuItem = new MenuItem(R._("色の交換"));
-                menuItem.Click += MakePaletteUI_Label_ColorSwap(self, controls, p, paletteno);
+                menuItem.Click += Label_ColorSwap(p, paletteno);
                 contextMenu.MenuItems.Add(menuItem);
                 menuItem = new MenuItem(R._("色違いを作る"));
-                menuItem.Click += MakePaletteUI_Label_ColorChanges(self, controls, p, paletteno, getSampleBitmap);
+                menuItem.Click += Label_ColorChanges(p, paletteno, getSampleBitmap);
                 contextMenu.MenuItems.Add(menuItem);
 
                 p.ContextMenu = contextMenu;
 
-                EventHandler r_eh = MakePaletteUI_NumericUpDown_ChangeEvent(self, controls, r, "R", paletteno, onChangeColor);
+                EventHandler r_eh = NumericUpDown_ChangeEvent(r, "R", paletteno, onChangeColor);
                 r.ValueChanged += r_eh;
-                r.Tag = r_eh;
                 r.Increment = 1 << 3;
 
-                EventHandler g_eh = MakePaletteUI_NumericUpDown_ChangeEvent(self, controls, g, "G", paletteno, onChangeColor);
+                EventHandler g_eh = NumericUpDown_ChangeEvent(g, "G", paletteno, onChangeColor);
                 g.ValueChanged += g_eh;
-                g.Tag = g_eh;
                 g.Increment = 1 << 3;
 
-                EventHandler b_eh = MakePaletteUI_NumericUpDown_ChangeEvent(self, controls, b, "B", paletteno, onChangeColor);
+                EventHandler b_eh = NumericUpDown_ChangeEvent(b, "B", paletteno, onChangeColor);
                 b.ValueChanged += b_eh;
-                b.Tag = b_eh;
                 b.Increment = 1 << 3;
             }
         }
         //現在選択されている色を全適応
-        public static void MakePaletteUIApplyEvent(Form self)
+        void MakePaletteUIApplyEvent()
         {
-            List<Control> controls = InputFormRef.GetAllControls(self);
+            PushUndo();
+            this.UndoLock = true;
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
-                if (r.Tag != null)
-                {
-                    EventHandler r_eh = (EventHandler)r.Tag;
-                    r_eh(self, null);
-                }
-                if (g.Tag != null)
-                {
-                    EventHandler g_eh = (EventHandler)g.Tag;
-                    g_eh(self, null);
-                }
-                if (b.Tag != null)
-                {
-                    EventHandler b_eh = (EventHandler)b.Tag;
-                    b_eh(self, null);
-                }
+                U.ForceUpdate(r, r.Value);
+                U.ForceUpdate(g, g.Value);
+                U.ForceUpdate(b, b.Value);
             }
+            this.UndoLock = false;
         }
-        public static bool MakePaletteBitmapToUIEx(Form self, int palette_index, Bitmap hintBitmap)
+        public bool MakePaletteBitmapToUIEx(int palette_index, Bitmap hintBitmap)
         {
             Debug.Assert(ImageUtil.Is16ColorBitmap(hintBitmap));
 
-            string imagefilename = ImageFormRef.OpenFilenameDialogFullColor(self);
+            string imagefilename = ImageFormRef.OpenFilenameDialogFullColor(this.SelfForm);
             if (imagefilename == "")
             {
                 return false;
@@ -451,23 +475,25 @@ namespace FEBuilderGBA
                 }
             }
 
-            PaletteFormRef.MakePaletteBitmapToUI(self, bitmap, palette_index);
+            MakePaletteBitmapToUI(bitmap, palette_index);
             fullColor.Dispose();
             bitmap.Dispose();
             return true;
         }
 
 
-        public static void MakePaletteBitmapToUI(Form self, Bitmap bitmap, int palette_index)
+        public void MakePaletteBitmapToUI(Bitmap bitmap, int palette_index)
         {
             ColorPalette pal = bitmap.Palette;
 
-            List<Control> controls = InputFormRef.GetAllControls(self);
+            PushUndo();
+            this.UndoLock = true;
+
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
 
                 int index = palette_index * 0x10 + (paletteno - 1);
@@ -492,15 +518,15 @@ namespace FEBuilderGBA
                 }
                 b.Value = db;
             }
+            this.UndoLock = false;
         }
-        static void MakePaletteByteGBAToUI(Form self, byte[] bin)
+        void MakePaletteByteGBAToUI(byte[] bin)
         {
-            List<Control> controls = InputFormRef.GetAllControls(self);
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
                 uint p = U.u16(bin,(uint)(paletteno-1)*2);
                 byte dr = (byte)((p & 0x1F) << 3);
@@ -525,7 +551,7 @@ namespace FEBuilderGBA
                 b.Value = db;
             }
         }
-        public static void MakePaletteROMToUI(Form self, uint palette_address, bool isCompress, int palette_index)
+        public void MakePaletteROMToUI(uint palette_address, bool isCompress, int palette_index)
         {
             uint addr = U.toOffset(palette_address);
             byte[] palttebyte;
@@ -548,12 +574,12 @@ namespace FEBuilderGBA
                 palttebyte = Program.ROM.Data;
             }
 
-            List<Control> controls = InputFormRef.GetAllControls(self);
+            this.UndoLock = true;
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
                 uint read_addr = addr + (uint)((paletteno - 1) * 2) + (uint)(palette_index * 0x20);
                 if (read_addr >= palttebyte.Length)
@@ -583,17 +609,19 @@ namespace FEBuilderGBA
                 }
                 b.Value = db << 3;
             }
+
+            this.UndoLock = false;
+            ClearUndoBuffer();
         }
-        public static byte[] MakePaletteUIToByte(Form self)
+        public byte[] MakePaletteUIToByte()
         {
             byte[] palttebyte = new byte[16 * 2];
 
-            List<Control> controls = InputFormRef.GetAllControls(self);
             for (int paletteno = 1; paletteno <= 16; paletteno++)
             {
-                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
 
                 uint dr = (((uint)r.Value) >> 3) & 0x1F;
                 uint dg = (((uint)g.Value) >> 3) & 0x1F;
@@ -605,9 +633,33 @@ namespace FEBuilderGBA
             return palttebyte;
         }
 
+        byte[] MakePaletteUIToByte_OldValue()
+        {
+            byte[] palttebyte = new byte[16 * 2];
+
+            for (int paletteno = 1; paletteno <= 16; paletteno++)
+            {
+                NumericUpDown r = FindNUD("R", paletteno);
+                NumericUpDown g = FindNUD("G", paletteno);
+                NumericUpDown b = FindNUD("B", paletteno);
+
+                uint oldr = r.Tag is uint ? (uint)r.Tag : 0;
+                uint oldg = g.Tag is uint ? (uint)g.Tag : 0;
+                uint oldb = b.Tag is uint ? (uint)b.Tag : 0;
+
+                uint dr = (oldr >> 3) & 0x1F;
+                uint dg = (oldg >> 3) & 0x1F;
+                uint db = (oldb >> 3) & 0x1F;
+
+                uint dp = dr + (dg << 5) + (db << 10);
+                U.write_u16(palttebyte, (uint)((paletteno - 1) * 2), dp);
+            }
+            return palttebyte;
+        }
+
         public const int OVERRAIDE_ALL_PALETTE = 0xff;
 
-        public static uint MakePaletteUIToROM(Form self, uint palette_address, bool isCompress,int palette_index)
+        public uint MakePaletteUIToROM(uint palette_address, bool isCompress,int palette_index)
         {
             uint addr = U.toOffset(palette_address);
             if (!U.CheckZeroAddressWriteHigh(addr))
@@ -617,7 +669,7 @@ namespace FEBuilderGBA
 
             string undo_name = "PALETTE " + U.To0xHexString(palette_address);
 
-            byte[] palttebyte = MakePaletteUIToByte(self);
+            byte[] palttebyte = MakePaletteUIToByte();
             if (isCompress)
             {//戦闘アニメのパレットは圧縮されている
                 //現パレットの解凍
@@ -656,7 +708,7 @@ namespace FEBuilderGBA
 
                 //圧縮されているということは、サイズが可変なわけで、元の場所に書き込めるか、拡張領域かを検討しないといけない。
                 Undo.UndoData undodata = Program.Undo.NewUndoData(undo_name);
-                uint newaddr = InputFormRef.WriteBinaryData(self,addr, palettebyteZ, InputFormRef.get_data_pos_callback_lz77, undodata);
+                uint newaddr = InputFormRef.WriteBinaryData(this.SelfForm, addr, palettebyteZ, InputFormRef.get_data_pos_callback_lz77, undodata);
                 if (newaddr == U.NOT_FOUND)
                 {
                     return U.NOT_FOUND;
@@ -681,16 +733,16 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakePaletteBitmapToROM(Form self, Bitmap bitmap, uint palette_address, int palette_count,Undo.UndoData undodata)
+        public void MakePaletteBitmapToROM(Bitmap bitmap, uint palette_address, int palette_count,Undo.UndoData undodata)
         {
             ColorPalette pal = bitmap.Palette;
-            MakePaletteColorPaletteToROM(self, pal, palette_address, palette_count,undodata);
+            MakePaletteColorPaletteToROM(pal, palette_address, palette_count, undodata);
         }
         public static byte[] NewNullPalette(int palette_count = 1)
         {
             return new byte[16 * 2 * palette_count];
         }
-        public static void MakePaletteColorPaletteToROM(Form self, ColorPalette pal, uint palette_address, int palette_count, Undo.UndoData undodata)
+        public void MakePaletteColorPaletteToROM(ColorPalette pal, uint palette_address, int palette_count, Undo.UndoData undodata)
         {
             uint addr = U.toOffset(palette_address);
             if (!U.CheckZeroAddressWriteHigh(palette_address))
@@ -715,11 +767,11 @@ namespace FEBuilderGBA
 
             //無圧縮パレットとして書き込む
             Program.ROM.write_range(addr, palttebyte, undodata);
-            InputFormRef.ShowWriteNotifyAnimation(self, palette_address);
+            InputFormRef.ShowWriteNotifyAnimation(this.SelfForm, palette_address);
         }
-        public static bool PALETTE_TO_CLIPBOARD_BUTTON_Click(Form self)
+        public bool PALETTE_TO_CLIPBOARD_BUTTON_Click()
         {
-            byte[] palttebyte = MakePaletteUIToByte(self);
+            byte[] palttebyte = MakePaletteUIToByte();
             if (palttebyte.Length < 2 * 16)
             {
                 return false;
@@ -747,8 +799,72 @@ namespace FEBuilderGBA
 
                 U.write_big16(palttebyte, n * 2, hex);
             }
-            MakePaletteByteGBAToUI(self, palttebyte);
+            MakePaletteByteGBAToUI(palttebyte);
             return true;
+        }
+
+        class UndoData
+        {
+            //UNDO サイズも小さいから、差分よりすべて記録する. 
+            public byte[] PaletteBIN;
+        };
+
+        bool UndoLock;
+
+        List<UndoData> UndoBuffer;
+        int UndoPosstion;
+        //Undo履歴のクリア
+        public void ClearUndoBuffer()
+        {
+            this.UndoBuffer = new List<UndoData>();
+            this.UndoPosstion = 0;
+        }
+        public void PushUndo()
+        {
+            if (UndoLock)
+            {
+                return;
+            }
+
+            if (this.UndoPosstion < this.UndoBuffer.Count)
+            {//常に先頭に追加したいので、リスト中に戻っている場合は、それ以降を消す.
+                this.UndoBuffer.RemoveRange(this.UndoPosstion, this.UndoBuffer.Count - this.UndoPosstion);
+            }
+            UndoData p = new UndoData();
+            p.PaletteBIN = MakePaletteUIToByte_OldValue();
+            this.UndoBuffer.Add(p);
+            this.UndoPosstion = this.UndoBuffer.Count;
+        }
+        public void RunUndo()
+        {
+            if (this.UndoPosstion <= 0)
+            {
+                return; //無理
+            }
+            if (this.UndoPosstion == this.UndoBuffer.Count)
+            {//現在が、undoがない最新版だったら、redoできるように、現状を保存する.
+                PushUndo();
+                this.UndoPosstion = UndoPosstion - 1;
+            }
+
+            this.UndoPosstion = UndoPosstion - 1;
+            RunUndoRollback(this.UndoBuffer[UndoPosstion]);
+
+        }
+        public void RunRedo()
+        {
+            if (this.UndoPosstion + 1 >= this.UndoBuffer.Count)
+            {
+                return; //無理
+            }
+            this.UndoPosstion = UndoPosstion + 1;
+            RunUndoRollback(this.UndoBuffer[UndoPosstion]);
+        }
+        void RunUndoRollback(UndoData u)
+        {
+            this.UndoLock = true;
+            MakePaletteByteGBAToUI(u.PaletteBIN);
+            this.UndoLock = false;
         }
     }
 }

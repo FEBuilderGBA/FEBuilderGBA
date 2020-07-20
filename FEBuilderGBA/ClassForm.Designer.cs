@@ -2448,7 +2448,7 @@
             this.L_4_ID.ErrorMessage = "";
             this.L_4_ID.Location = new System.Drawing.Point(682, 74);
             this.L_4_ID.Name = "L_4_ID";
-            this.L_4_ID.Size = new System.Drawing.Size(84, 32);
+            this.L_4_ID.Size = new System.Drawing.Size(86, 32);
             this.L_4_ID.TabIndex = 103;
             // 
             // B4
@@ -2462,7 +2462,7 @@
             0,
             0});
             this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(76, 25);
+            this.B4.Size = new System.Drawing.Size(79, 25);
             this.B4.TabIndex = 0;
             // 
             // L_6_CLASSICONSRC
@@ -2518,7 +2518,7 @@
             this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
             this.L_2_TEXT_DETAIL3.Placeholder = "";
             this.L_2_TEXT_DETAIL3.ReadOnly = true;
-            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(306, 68);
+            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(308, 66);
             this.L_2_TEXT_DETAIL3.TabIndex = 8;
             // 
             // systemIconPictureBox8

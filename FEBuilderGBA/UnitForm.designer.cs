@@ -381,7 +381,7 @@
             // B4
             // 
             this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(656, 86);
+            this.B4.Location = new System.Drawing.Point(653, 85);
             this.B4.Margin = new System.Windows.Forms.Padding(2);
             this.B4.Maximum = new decimal(new int[] {
             255,
@@ -389,7 +389,7 @@
             0,
             0});
             this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(65, 25);
+            this.B4.Size = new System.Drawing.Size(79, 25);
             this.B4.TabIndex = 7;
             // 
             // X_SKILL_BUTTON9
@@ -2660,7 +2660,7 @@
             this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
             this.L_2_TEXT_DETAIL3.Placeholder = "";
             this.L_2_TEXT_DETAIL3.ReadOnly = true;
-            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(298, 66);
+            this.L_2_TEXT_DETAIL3.Size = new System.Drawing.Size(308, 66);
             this.L_2_TEXT_DETAIL3.TabIndex = 8;
             // 
             // systemIconPictureBox6

@@ -32,11 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.RedoPaletteButton = new System.Windows.Forms.Button();
+            this.UndoPlaetteButton = new System.Windows.Forms.Button();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
@@ -130,6 +129,9 @@
             this.image1_Export = new System.Windows.Forms.Button();
             this.image1_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
+            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
             this.RedoButton = new System.Windows.Forms.Button();
             this.UndoButton = new System.Windows.Forms.Button();
             this.PaletteIndexComboBox = new System.Windows.Forms.ComboBox();
@@ -138,8 +140,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).BeginInit();
@@ -194,6 +194,8 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -212,7 +214,7 @@
             this.panel1.Controls.Add(this.CHIPLIST);
             this.panel1.Location = new System.Drawing.Point(12, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(91, 847);
+            this.panel1.Size = new System.Drawing.Size(91, 860);
             this.panel1.TabIndex = 3;
             // 
             // CHIPLIST
@@ -235,41 +237,8 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(104, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1289, 847);
+            this.panel2.Size = new System.Drawing.Size(1289, 860);
             this.panel2.TabIndex = 4;
-            // 
-            // TSAInfo
-            // 
-            this.TSAInfo.ErrorMessage = "";
-            this.TSAInfo.Location = new System.Drawing.Point(5, 597);
-            this.TSAInfo.Name = "TSAInfo";
-            this.TSAInfo.Placeholder = "";
-            this.TSAInfo.ReadOnly = true;
-            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
-            this.TSAInfo.TabIndex = 361;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.Battle);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1289, 594);
-            this.panel3.TabIndex = 360;
-            // 
-            // Battle
-            // 
-            this.Battle.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.Battle.Location = new System.Drawing.Point(0, 0);
-            this.Battle.Name = "Battle";
-            this.Battle.Size = new System.Drawing.Size(32, 32);
-            this.Battle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Battle.TabIndex = 1;
-            this.Battle.TabStop = false;
-            this.Battle.Paint += new System.Windows.Forms.PaintEventHandler(this.WorldMap_Paint);
-            this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TSAEditor_MouseDown);
-            this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
             // 
             // tabControl1
             // 
@@ -278,12 +247,14 @@
             this.tabControl1.Location = new System.Drawing.Point(5, 628);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1285, 216);
+            this.tabControl1.Size = new System.Drawing.Size(1285, 232);
             this.tabControl1.TabIndex = 359;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.RedoPaletteButton);
+            this.tabPage1.Controls.Add(this.UndoPlaetteButton);
             this.tabPage1.Controls.Add(this.PALETTE_TO_CLIPBOARD_BUTTON);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.PALETTE_ADDRESS);
@@ -374,9 +345,31 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1277, 184);
+            this.tabPage1.Size = new System.Drawing.Size(1277, 200);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "パレット";
+            // 
+            // RedoPaletteButton
+            // 
+            this.RedoPaletteButton.Location = new System.Drawing.Point(1042, 167);
+            this.RedoPaletteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RedoPaletteButton.Name = "RedoPaletteButton";
+            this.RedoPaletteButton.Size = new System.Drawing.Size(136, 30);
+            this.RedoPaletteButton.TabIndex = 360;
+            this.RedoPaletteButton.Text = "REDO";
+            this.RedoPaletteButton.UseVisualStyleBackColor = true;
+            this.RedoPaletteButton.Click += new System.EventHandler(this.RedoPaletteButton_Click);
+            // 
+            // UndoPlaetteButton
+            // 
+            this.UndoPlaetteButton.Location = new System.Drawing.Point(899, 167);
+            this.UndoPlaetteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UndoPlaetteButton.Name = "UndoPlaetteButton";
+            this.UndoPlaetteButton.Size = new System.Drawing.Size(139, 30);
+            this.UndoPlaetteButton.TabIndex = 359;
+            this.UndoPlaetteButton.Text = "UNDO";
+            this.UndoPlaetteButton.UseVisualStyleBackColor = true;
+            this.UndoPlaetteButton.Click += new System.EventHandler(this.UndoPlaetteButton_Click);
             // 
             // PALETTE_TO_CLIPBOARD_BUTTON
             // 
@@ -1650,7 +1643,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1277, 184);
+            this.tabPage2.Size = new System.Drawing.Size(1277, 200);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "メイン画像";
             // 
@@ -1709,6 +1702,39 @@
             this.label12.TabIndex = 104;
             this.label12.Text = "画像";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TSAInfo
+            // 
+            this.TSAInfo.ErrorMessage = "";
+            this.TSAInfo.Location = new System.Drawing.Point(5, 597);
+            this.TSAInfo.Name = "TSAInfo";
+            this.TSAInfo.Placeholder = "";
+            this.TSAInfo.ReadOnly = true;
+            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
+            this.TSAInfo.TabIndex = 361;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.Battle);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1289, 594);
+            this.panel3.TabIndex = 360;
+            // 
+            // Battle
+            // 
+            this.Battle.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.Battle.Location = new System.Drawing.Point(0, 0);
+            this.Battle.Name = "Battle";
+            this.Battle.Size = new System.Drawing.Size(32, 32);
+            this.Battle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Battle.TabIndex = 1;
+            this.Battle.TabStop = false;
+            this.Battle.Paint += new System.Windows.Forms.PaintEventHandler(this.WorldMap_Paint);
+            this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TSAEditor_MouseDown);
+            this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
             // 
             // RedoButton
             // 
@@ -1789,7 +1815,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1395, 886);
+            this.ClientSize = new System.Drawing.Size(1395, 900);
             this.Controls.Add(this.Info);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Zoom);
@@ -1807,9 +1833,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1866,6 +1889,9 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1980,5 +2006,7 @@
         private System.Windows.Forms.ComboBox Zoom;
         private TextBoxEx TSAInfo;
         private TextBoxEx Info;
+        private System.Windows.Forms.Button RedoPaletteButton;
+        private System.Windows.Forms.Button UndoPlaetteButton;
     }
 }

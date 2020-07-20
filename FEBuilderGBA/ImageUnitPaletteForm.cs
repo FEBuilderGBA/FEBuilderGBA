@@ -32,11 +32,13 @@ namespace FEBuilderGBA
 
             this.PaletteZoomComboBox.SelectedIndex = 0;
             this.PaletteIndexComboBox.SelectedIndex = 0;
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor,GetSampleBitmap);
+            this.PFR = new PaletteFormRef(this);
+            PFR.MakePaletteUI(OnChangeColor,GetSampleBitmap);
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
+        PaletteFormRef PFR;
 
         void SetExplain()
         {
@@ -79,12 +81,11 @@ namespace FEBuilderGBA
                 );
         }
 
-        List<Control> CurrntControls;
         private void ImageUnitPaletteForm_Load(object sender, EventArgs e)
         {
-            this.CurrntControls = InputFormRef.GetAllControls(this);
+            List<Control>  controls = InputFormRef.GetAllControls(this);
             InputFormRef.makeJumpEventHandler(this.X_BATTLEANIME, this.X_BATTLEANIME_LABEL, "BATTLEANIME", new string[] { "MINUS1" });
-            InputFormRef.makeLinkEventHandler("X_", this.CurrntControls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
+            InputFormRef.makeLinkEventHandler("X_", controls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
 
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
@@ -203,7 +204,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            PaletteFormRef.MakePaletteROMToUI(this, addr, true, this.PaletteIndexComboBox.SelectedIndex);
+            PFR.MakePaletteROMToUI(addr, true, this.PaletteIndexComboBox.SelectedIndex);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
             uint class_id = InputFormRef.SelectToAddr(this.UNITCLASS_LIST);
@@ -301,7 +302,7 @@ namespace FEBuilderGBA
             {//全部同じパレットにする
                 paletteIndex = PaletteFormRef.OVERRAIDE_ALL_PALETTE;
             }
-            uint newAddr = PaletteFormRef.MakePaletteUIToROM(this, (uint)PALETTE_ADDRESS.Value, true, paletteIndex);
+            uint newAddr = PFR.MakePaletteUIToROM((uint)PALETTE_ADDRESS.Value, true, paletteIndex);
             if (newAddr == U.NOT_FOUND)
             {
                 return;
@@ -346,7 +347,7 @@ namespace FEBuilderGBA
 
         private void ImportButton_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.MakePaletteBitmapToUIEx(this, 0, this.DrawBitmap);
+            bool r = PFR.MakePaletteBitmapToUIEx(0, this.DrawBitmap);
             if (!r)
             {
                 return;
@@ -386,7 +387,7 @@ namespace FEBuilderGBA
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.PALETTE_TO_CLIPBOARD_BUTTON_Click(this);
+            bool r = PFR.PALETTE_TO_CLIPBOARD_BUTTON_Click();
             if (r)
             {
                 //書き込み
@@ -461,7 +462,17 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            PaletteFormRef.SpoitTool_SelectPalette(this.X_PIC, this.CurrntControls, this.PaletteZoomComboBox.SelectedIndex, e);
+            PFR.SpoitTool_SelectPalette(this.X_PIC, this.PaletteZoomComboBox.SelectedIndex, e);
+        }
+
+        private void UNDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunUndo();
+        }
+
+        private void REDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunRedo();
         }
 
 

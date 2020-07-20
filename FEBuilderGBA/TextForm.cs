@@ -2685,6 +2685,15 @@ namespace FEBuilderGBA
 
         public static string GetErrorMessage(string text,uint textid ,string arg1)
         {
+            if (textid == 0 || textid >= 0xFFFE)
+            {
+                return "";
+            }
+            if (textid > TextForm.GetDataCount())
+            {
+                return R._("警告:\r\n範囲外のTextID:{0}を参照しています。", U.ToHexString(textid));
+            }
+
             if (text == "")
             {
                 return "";

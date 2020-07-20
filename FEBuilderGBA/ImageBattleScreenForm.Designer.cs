@@ -35,6 +35,8 @@
             this.TSAInfo = new FEBuilderGBA.TextBoxEx();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.RedoPaletteButton = new System.Windows.Forms.Button();
+            this.UndoPatlleButton = new System.Windows.Forms.Button();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
@@ -125,6 +127,16 @@
             this.PALETTE_P_9 = new System.Windows.Forms.Label();
             this.PALETTE_R_10 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tile5_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile4_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile3_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile2_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile1_addr = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image1_Import = new System.Windows.Forms.Button();
             this.image1_Export = new System.Windows.Forms.Button();
@@ -161,16 +173,6 @@
             this.Zoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tile1_addr = new System.Windows.Forms.NumericUpDown();
-            this.tile2_addr = new System.Windows.Forms.NumericUpDown();
-            this.tile3_addr = new System.Windows.Forms.NumericUpDown();
-            this.tile5_addr = new System.Windows.Forms.NumericUpDown();
-            this.tile4_addr = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
@@ -226,6 +228,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -241,11 +248,6 @@
             this.tabPage5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -264,7 +266,7 @@
             this.panel1.Controls.Add(this.CHIPLIST);
             this.panel1.Location = new System.Drawing.Point(12, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(144, 871);
+            this.panel1.Size = new System.Drawing.Size(144, 896);
             this.panel1.TabIndex = 3;
             // 
             // CHIPLIST
@@ -286,7 +288,7 @@
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Location = new System.Drawing.Point(158, 31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1228, 845);
+            this.panel2.Size = new System.Drawing.Size(1228, 870);
             this.panel2.TabIndex = 4;
             // 
             // TSAInfo
@@ -309,12 +311,14 @@
             this.tabControl1.Location = new System.Drawing.Point(4, 629);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1221, 216);
+            this.tabControl1.Size = new System.Drawing.Size(1221, 241);
             this.tabControl1.TabIndex = 359;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.RedoPaletteButton);
+            this.tabPage1.Controls.Add(this.UndoPatlleButton);
             this.tabPage1.Controls.Add(this.PALETTE_TO_CLIPBOARD_BUTTON);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.PALETTE_ADDRESS);
@@ -407,9 +411,31 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1213, 184);
+            this.tabPage1.Size = new System.Drawing.Size(1213, 209);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "パレット";
+            // 
+            // RedoPaletteButton
+            // 
+            this.RedoPaletteButton.Location = new System.Drawing.Point(1036, 172);
+            this.RedoPaletteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RedoPaletteButton.Name = "RedoPaletteButton";
+            this.RedoPaletteButton.Size = new System.Drawing.Size(136, 30);
+            this.RedoPaletteButton.TabIndex = 359;
+            this.RedoPaletteButton.Text = "REDO";
+            this.RedoPaletteButton.UseVisualStyleBackColor = true;
+            this.RedoPaletteButton.Click += new System.EventHandler(this.RedoPaletteButton_Click);
+            // 
+            // UndoPatlleButton
+            // 
+            this.UndoPatlleButton.Location = new System.Drawing.Point(893, 172);
+            this.UndoPatlleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UndoPatlleButton.Name = "UndoPatlleButton";
+            this.UndoPatlleButton.Size = new System.Drawing.Size(139, 30);
+            this.UndoPatlleButton.TabIndex = 358;
+            this.UndoPatlleButton.Text = "UNDO";
+            this.UndoPatlleButton.UseVisualStyleBackColor = true;
+            this.UndoPatlleButton.Click += new System.EventHandler(this.UndoPatlleButton_Click);
             // 
             // PALETTE_TO_CLIPBOARD_BUTTON
             // 
@@ -1736,9 +1762,139 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1213, 184);
+            this.tabPage2.Size = new System.Drawing.Size(1213, 209);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "メイン画像";
+            // 
+            // tile5_addr
+            // 
+            this.tile5_addr.Hexadecimal = true;
+            this.tile5_addr.Location = new System.Drawing.Point(1090, 137);
+            this.tile5_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile5_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile5_addr.Name = "tile5_addr";
+            this.tile5_addr.ReadOnly = true;
+            this.tile5_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile5_addr.TabIndex = 120;
+            // 
+            // tile4_addr
+            // 
+            this.tile4_addr.Hexadecimal = true;
+            this.tile4_addr.Location = new System.Drawing.Point(1090, 106);
+            this.tile4_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile4_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile4_addr.Name = "tile4_addr";
+            this.tile4_addr.ReadOnly = true;
+            this.tile4_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile4_addr.TabIndex = 119;
+            // 
+            // tile3_addr
+            // 
+            this.tile3_addr.Hexadecimal = true;
+            this.tile3_addr.Location = new System.Drawing.Point(1090, 75);
+            this.tile3_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile3_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile3_addr.Name = "tile3_addr";
+            this.tile3_addr.ReadOnly = true;
+            this.tile3_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile3_addr.TabIndex = 118;
+            // 
+            // tile2_addr
+            // 
+            this.tile2_addr.Hexadecimal = true;
+            this.tile2_addr.Location = new System.Drawing.Point(1090, 46);
+            this.tile2_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile2_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile2_addr.Name = "tile2_addr";
+            this.tile2_addr.ReadOnly = true;
+            this.tile2_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile2_addr.TabIndex = 117;
+            // 
+            // tile1_addr
+            // 
+            this.tile1_addr.Hexadecimal = true;
+            this.tile1_addr.Location = new System.Drawing.Point(1090, 14);
+            this.tile1_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile1_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile1_addr.Name = "tile1_addr";
+            this.tile1_addr.ReadOnly = true;
+            this.tile1_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile1_addr.TabIndex = 116;
+            // 
+            // label14
+            // 
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Location = new System.Drawing.Point(890, 134);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(194, 31);
+            this.label14.TabIndex = 115;
+            this.label14.Text = "Tile5";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(890, 104);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(194, 31);
+            this.label11.TabIndex = 114;
+            this.label11.Text = "Tile4";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Location = new System.Drawing.Point(890, 74);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(194, 31);
+            this.label13.TabIndex = 113;
+            this.label13.Text = "Tile3";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(890, 44);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(194, 31);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "Tile2";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(890, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(194, 31);
+            this.label9.TabIndex = 111;
+            this.label9.Text = "Tile1";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // image1_Picture
             // 
@@ -1810,7 +1966,7 @@
             this.tabPage3.Controls.Add(this.image2_Picture);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1213, 184);
+            this.tabPage3.Size = new System.Drawing.Size(1213, 209);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "左側";
             // 
@@ -1941,7 +2097,7 @@
             this.tabPage4.Controls.Add(this.image4_Picture);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1213, 184);
+            this.tabPage4.Size = new System.Drawing.Size(1213, 209);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "右側";
             // 
@@ -2066,7 +2222,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1213, 184);
+            this.tabPage5.Size = new System.Drawing.Size(1213, 209);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Import/Export";
             // 
@@ -2160,142 +2316,12 @@
             this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorldMap_MouseDown);
             this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
             // 
-            // label9
-            // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(890, 14);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 31);
-            this.label9.TabIndex = 111;
-            this.label9.Text = "Tile1";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(890, 44);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(194, 31);
-            this.label10.TabIndex = 112;
-            this.label10.Text = "Tile2";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(890, 104);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 31);
-            this.label11.TabIndex = 114;
-            this.label11.Text = "Tile4";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(890, 74);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(194, 31);
-            this.label13.TabIndex = 113;
-            this.label13.Text = "Tile3";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label14
-            // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(890, 134);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(194, 31);
-            this.label14.TabIndex = 115;
-            this.label14.Text = "Tile5";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tile1_addr
-            // 
-            this.tile1_addr.Hexadecimal = true;
-            this.tile1_addr.Location = new System.Drawing.Point(1090, 14);
-            this.tile1_addr.Margin = new System.Windows.Forms.Padding(2);
-            this.tile1_addr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.tile1_addr.Name = "tile1_addr";
-            this.tile1_addr.ReadOnly = true;
-            this.tile1_addr.Size = new System.Drawing.Size(120, 25);
-            this.tile1_addr.TabIndex = 116;
-            // 
-            // tile2_addr
-            // 
-            this.tile2_addr.Hexadecimal = true;
-            this.tile2_addr.Location = new System.Drawing.Point(1090, 46);
-            this.tile2_addr.Margin = new System.Windows.Forms.Padding(2);
-            this.tile2_addr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.tile2_addr.Name = "tile2_addr";
-            this.tile2_addr.ReadOnly = true;
-            this.tile2_addr.Size = new System.Drawing.Size(120, 25);
-            this.tile2_addr.TabIndex = 117;
-            // 
-            // tile3_addr
-            // 
-            this.tile3_addr.Hexadecimal = true;
-            this.tile3_addr.Location = new System.Drawing.Point(1090, 75);
-            this.tile3_addr.Margin = new System.Windows.Forms.Padding(2);
-            this.tile3_addr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.tile3_addr.Name = "tile3_addr";
-            this.tile3_addr.ReadOnly = true;
-            this.tile3_addr.Size = new System.Drawing.Size(120, 25);
-            this.tile3_addr.TabIndex = 118;
-            // 
-            // tile5_addr
-            // 
-            this.tile5_addr.Hexadecimal = true;
-            this.tile5_addr.Location = new System.Drawing.Point(1090, 137);
-            this.tile5_addr.Margin = new System.Windows.Forms.Padding(2);
-            this.tile5_addr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.tile5_addr.Name = "tile5_addr";
-            this.tile5_addr.ReadOnly = true;
-            this.tile5_addr.Size = new System.Drawing.Size(120, 25);
-            this.tile5_addr.TabIndex = 120;
-            // 
-            // tile4_addr
-            // 
-            this.tile4_addr.Hexadecimal = true;
-            this.tile4_addr.Location = new System.Drawing.Point(1090, 106);
-            this.tile4_addr.Margin = new System.Windows.Forms.Padding(2);
-            this.tile4_addr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.tile4_addr.Name = "tile4_addr";
-            this.tile4_addr.ReadOnly = true;
-            this.tile4_addr.Size = new System.Drawing.Size(120, 25);
-            this.tile4_addr.TabIndex = 119;
-            // 
             // ImageBattleScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1395, 888);
+            this.ClientSize = new System.Drawing.Size(1395, 901);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Zoom);
             this.Controls.Add(this.panel2);
@@ -2366,6 +2392,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -2384,11 +2415,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2538,5 +2564,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button RedoPaletteButton;
+        private System.Windows.Forms.Button UndoPatlleButton;
     }
 }

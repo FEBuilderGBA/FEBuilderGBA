@@ -423,7 +423,13 @@ namespace FEBuilderGBA
             string savFilename = Path.Combine(dir, file + needExt);
             if (! File.Exists(savFilename))
             {
-                return false;
+                //一部のエミュレータでは、spaceが_に置換されることがあるらしい
+                file = file.Replace(" ", "_");
+                savFilename = Path.Combine(dir, file + needExt);
+                if (!File.Exists(savFilename))
+                {
+                    return false;
+                }
             }
             string destFilename = Path.Combine(tempdir, file + needExt);
             File.Copy(savFilename, destFilename, true);

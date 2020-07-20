@@ -18,7 +18,8 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.PaletteZoomComboBox.SelectedIndex = 0;
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor, GetSampleBitmap);
+            this.PFR = new PaletteFormRef(this);
+            this.PFR.MakePaletteUI(OnChangeColor, GetSampleBitmap);
             
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
@@ -31,7 +32,7 @@ namespace FEBuilderGBA
                 }
             });
         }
-
+        PaletteFormRef PFR;
         private void PALETTE_POINTER_ValueChanged(object sender, EventArgs e)
         {
             if (PALETTE_ADDRESS.Value == 0)
@@ -39,7 +40,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            PaletteFormRef.MakePaletteROMToUI(this, (uint)PALETTE_ADDRESS.Value, false, this.PaletteIndexComboBox.SelectedIndex);
+            PFR.MakePaletteROMToUI((uint)PALETTE_ADDRESS.Value, false, this.PaletteIndexComboBox.SelectedIndex);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
         }
         private void PaletteIndexComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace FEBuilderGBA
 
         private void PaletteWriteButton_Click(object sender, EventArgs e)
         {
-            uint newAddr = PaletteFormRef.MakePaletteUIToROM(this, (uint)PALETTE_ADDRESS.Value, false, this.PaletteIndexComboBox.SelectedIndex );
+            uint newAddr = PFR.MakePaletteUIToROM((uint)PALETTE_ADDRESS.Value, false, this.PaletteIndexComboBox.SelectedIndex );
             if (newAddr == U.NOT_FOUND)
             {
                 return;
@@ -114,7 +115,7 @@ namespace FEBuilderGBA
 
         private void ImportButton_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.MakePaletteBitmapToUIEx(this, this.PaletteIndexComboBox.SelectedIndex, this.DrawBitmap);
+            bool r = PFR.MakePaletteBitmapToUIEx(this.PaletteIndexComboBox.SelectedIndex, this.DrawBitmap);
             if (!r)
             {
                 return;
@@ -167,15 +168,13 @@ namespace FEBuilderGBA
         }
 
 
-        List<Control> CurrntControls;
         private void ImagePalletForm_Load(object sender, EventArgs e)
         {
-            this.CurrntControls = InputFormRef.GetAllControls(this);
         }
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.PALETTE_TO_CLIPBOARD_BUTTON_Click(this);
+            bool r = PFR.PALETTE_TO_CLIPBOARD_BUTTON_Click();
             if (r)
             {
                 //書き込み
@@ -203,8 +202,19 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            PaletteFormRef.SpoitTool_SelectPalette(this.X_PIC, this.CurrntControls, this.PaletteZoomComboBox.SelectedIndex, e);
+            PFR.SpoitTool_SelectPalette(this.X_PIC,this.PaletteZoomComboBox.SelectedIndex, e);
         }
+
+        private void UNDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunUndo();
+        }
+
+        private void REDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunRedo();
+        }
+
 
 
 

@@ -77,7 +77,8 @@ namespace FEBuilderGBA
             this.MAP.SetDefualtIcon(black);
 
             //パレット
-            PaletteFormRef.MakePaletteUI(this,OnChangeColor, GetSampleBitmap);
+            this.PFR = new PaletteFormRef(this);
+            PFR.MakePaletteUI(OnChangeColor, GetSampleBitmap);
             U.SelectedIndexSafety(this.PaletteCombo, 0);
 
             //TSA変更のイベント適応.
@@ -107,6 +108,8 @@ namespace FEBuilderGBA
                 }
             });
         }
+
+        PaletteFormRef PFR;
 
         Bitmap GetSampleBitmap()
         {
@@ -426,7 +429,8 @@ namespace FEBuilderGBA
                 return;
             }
 
-            PaletteFormRef.MakePaletteBitmapToUI(this, this.MapObjImage, (int)palIndex);
+            PFR.MakePaletteBitmapToUI(this.MapObjImage, (int)palIndex);
+            PFR.ClearUndoBuffer();
 
             Bitmap newbitmap = ImageUtil.SwapPalette(this.MapObjImage, (int)palIndex);
             this.MAP.LoadMap(newbitmap);
@@ -441,7 +445,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            PaletteFormRef.MakePaletteBitmapToUI(this, this.MapObjImage, (int)palIndex);
+            PFR.MakePaletteBitmapToUI(this.MapObjImage, (int)palIndex);
 
             Bitmap newbitmap = ImageUtil.SwapPalette(this.MapObjImage, (int)palIndex);
             this.MAP.LoadMap(newbitmap);
@@ -923,7 +927,7 @@ namespace FEBuilderGBA
                 {//未割り当てならば新規確保しようか
                     palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(palette_count), undodata);
                 }
-                PaletteFormRef.MakePaletteBitmapToROM(this, bitmap, palette_address, palette_count, undodata);
+                PFR.MakePaletteBitmapToROM(bitmap, palette_address, palette_count, undodata);
 
                 //拡張領域に書き込んでいる可能性もあるので plstを更新する.
                 bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
@@ -967,7 +971,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            bool r = MapPaletteImport(this,bitmap , palette_plist);
+            bool r = MapPaletteImport(bitmap , palette_plist);
             if (!r)
             {
                 return;
@@ -991,7 +995,7 @@ namespace FEBuilderGBA
             MapEditorForm.UpdateMapStyleIfOpen();
         }
 
-        public static bool MapPaletteImport(Form self,Bitmap bitmap, uint palette_plist)
+        bool MapPaletteImport(Bitmap bitmap, uint palette_plist)
         {
             int palette_count = MAX_MAP_PALETTE_COUNT;
             int bitmap_palette_count = ImageUtil.GetPalette16Count(bitmap);
@@ -1006,11 +1010,11 @@ namespace FEBuilderGBA
                 DialogResult dr = R.ShowQ("これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします");
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    return PaletteImportOne(self, bitmap, palette_plist, false);
+                    return PaletteImportOne(bitmap, palette_plist, false);
                 }
                 else if (dr == System.Windows.Forms.DialogResult.No)
                 {
-                    return PaletteImportOne(self, bitmap, palette_plist, true);
+                    return PaletteImportOne(bitmap, palette_plist, true);
                 }
                 else
                 {
@@ -1020,13 +1024,13 @@ namespace FEBuilderGBA
             else
             {
                 //全部のパレットを入れ替える
-                return PaletteImportFull(self, bitmap, palette_plist);
+                return PaletteImportFull(bitmap, palette_plist);
             }
         }
 
-        static bool PaletteImportFull(Form self, Bitmap bitmap, uint palette_plist)
+        bool PaletteImportFull(Bitmap bitmap, uint palette_plist)
         {
-            Undo.UndoData undodata = Program.Undo.NewUndoData(self);
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
             //パレット情報の書き込み.
             uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
@@ -1034,7 +1038,7 @@ namespace FEBuilderGBA
             {//未割り当てならば新規確保しようか
                 palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(MAX_MAP_PALETTE_COUNT), undodata);
             }
-            PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address, MAX_MAP_PALETTE_COUNT, undodata);
+            PFR.MakePaletteBitmapToROM(bitmap, palette_address, MAX_MAP_PALETTE_COUNT, undodata);
 
             //拡張領域に書き込んでいる可能性もあるので plstを更新する.
             bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
@@ -1047,9 +1051,9 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
             return true;
         }
-        static bool PaletteImportOne(Form self,Bitmap bitmap, uint palette_plist, bool isFog)
+        bool PaletteImportOne(Bitmap bitmap, uint palette_plist, bool isFog)
         {
-            Undo.UndoData undodata = Program.Undo.NewUndoData(self);
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
             //パレット情報の書き込み.
             uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
@@ -1060,11 +1064,11 @@ namespace FEBuilderGBA
 
             if (isFog)
             {
-                PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address + (0x20 * PARTS_MAP_PALETTE_COUNT), PARTS_MAP_PALETTE_COUNT, undodata);
+                PFR.MakePaletteBitmapToROM(bitmap, palette_address + (0x20 * PARTS_MAP_PALETTE_COUNT), PARTS_MAP_PALETTE_COUNT, undodata);
             }
             else
             {
-                PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address, PARTS_MAP_PALETTE_COUNT, undodata);
+                PFR.MakePaletteBitmapToROM(bitmap, palette_address, PARTS_MAP_PALETTE_COUNT, undodata);
             }
 
 
@@ -1098,7 +1102,7 @@ namespace FEBuilderGBA
                 palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(palette_count), undodata);
             }
 
-            PaletteFormRef.MakePaletteColorPaletteToROM(this, this.MapObjImage.Palette, palette_address, palette_count, undodata);
+            PFR.MakePaletteColorPaletteToROM(this.MapObjImage.Palette, palette_address, palette_count, undodata);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
             //拡張領域に書き込んでいる可能性もあるので plstを更新する.
@@ -1261,12 +1265,22 @@ namespace FEBuilderGBA
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)
         {
-            bool r = PaletteFormRef.PALETTE_TO_CLIPBOARD_BUTTON_Click(this);
+            bool r = PFR.PALETTE_TO_CLIPBOARD_BUTTON_Click();
             if (r)
             {
                 //書き込み
                 PaletteWriteButton.PerformClick();
             }
+        }
+
+        private void UNDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunUndo();
+        }
+
+        private void REDOButton_Click(object sender, EventArgs e)
+        {
+            PFR.RunRedo();
         }
     }
 }

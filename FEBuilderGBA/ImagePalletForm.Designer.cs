@@ -127,6 +127,8 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.REDOButton = new System.Windows.Forms.Button();
+            this.UNDOButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.AutoScrollPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
@@ -184,6 +186,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.REDOButton);
+            this.panel1.Controls.Add(this.UNDOButton);
             this.panel1.Controls.Add(this.AutoScrollPanel);
             this.panel1.Controls.Add(this.PaletteZoomComboBox);
             this.panel1.Controls.Add(this.label1);
@@ -370,7 +374,7 @@
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(196, 424);
+            this.ImportButton.Location = new System.Drawing.Point(190, 424);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(212, 30);
@@ -381,7 +385,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(414, 424);
+            this.ExportButton.Location = new System.Drawing.Point(408, 424);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(212, 30);
@@ -1687,6 +1691,28 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // REDOButton
+            // 
+            this.REDOButton.Location = new System.Drawing.Point(483, 390);
+            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.REDOButton.Name = "REDOButton";
+            this.REDOButton.Size = new System.Drawing.Size(136, 30);
+            this.REDOButton.TabIndex = 284;
+            this.REDOButton.Text = "REDO";
+            this.REDOButton.UseVisualStyleBackColor = true;
+            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
+            // 
+            // UNDOButton
+            // 
+            this.UNDOButton.Location = new System.Drawing.Point(340, 390);
+            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UNDOButton.Name = "UNDOButton";
+            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
+            this.UNDOButton.TabIndex = 283;
+            this.UNDOButton.Text = "UNDO";
+            this.UNDOButton.UseVisualStyleBackColor = true;
+            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
+            // 
             // ImagePalletForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1856,5 +1882,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel AutoScrollPanel;
         private InterpolatedPictureBox X_PIC;
+        private System.Windows.Forms.Button REDOButton;
+        private System.Windows.Forms.Button UNDOButton;
     }
 }

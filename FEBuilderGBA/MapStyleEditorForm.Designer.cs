@@ -186,6 +186,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.MapChipImportButton = new System.Windows.Forms.Button();
             this.MapChipExportButton = new System.Windows.Forms.Button();
+            this.REDOButton = new System.Windows.Forms.Button();
+            this.UNDOButton = new System.Windows.Forms.Button();
             this.MAPCHIPLISTPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.MapPanel.SuspendLayout();
@@ -982,6 +984,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.REDOButton);
+            this.panel2.Controls.Add(this.UNDOButton);
             this.panel2.Controls.Add(this.PaletteTypeCombo);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.PALETTE_TO_CLIPBOARD_BUTTON);
@@ -2544,6 +2548,28 @@
             this.MapChipExportButton.UseVisualStyleBackColor = true;
             this.MapChipExportButton.Click += new System.EventHandler(this.MapChipExportButton_Click);
             // 
+            // REDOButton
+            // 
+            this.REDOButton.Location = new System.Drawing.Point(338, 550);
+            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.REDOButton.Name = "REDOButton";
+            this.REDOButton.Size = new System.Drawing.Size(136, 30);
+            this.REDOButton.TabIndex = 445;
+            this.REDOButton.Text = "REDO";
+            this.REDOButton.UseVisualStyleBackColor = true;
+            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
+            // 
+            // UNDOButton
+            // 
+            this.UNDOButton.Location = new System.Drawing.Point(195, 550);
+            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UNDOButton.Name = "UNDOButton";
+            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
+            this.UNDOButton.TabIndex = 444;
+            this.UNDOButton.Text = "UNDO";
+            this.UNDOButton.UseVisualStyleBackColor = true;
+            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
+            // 
             // MapStyleEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2799,6 +2825,8 @@
         private System.Windows.Forms.Button PALETTE_TO_CLIPBOARD_BUTTON;
         private System.Windows.Forms.ComboBox PaletteTypeCombo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button REDOButton;
+        private System.Windows.Forms.Button UNDOButton;
 
 
     }

@@ -7441,12 +7441,11 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                CheckDoubleInstall(patch, (uint)i, errors);
+                CheckStructData(patch, (uint)i, errors);
             }
         }
 
-        //二重にインストールしていないか確認します.
-        static void CheckDoubleInstall(PatchSt patch, uint loopI , List<FELint.ErrorSt> errors)
+        static void CheckStructData(PatchSt patch, uint loopI , List<FELint.ErrorSt> errors)
         {
             string pointer_str = U.at(patch.Param, "POINTER");
             if (pointer_str == "")
@@ -7471,18 +7470,77 @@ namespace FEBuilderGBA
                     , R._("「{0}」パッチがインストールされていますが、設定画面のポインタを取得できません。パッチが壊れていると思われます。", name), loopI));
                 return;
             }
-/*
-            uint second_pointer = convertBinAddressString(pointer_str, 8, struct_pointer + 4, basedir);
-            if (second_pointer != U.NOT_FOUND
-                && struct_pointer != second_pointer)
+
+            uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+            if (datasize <= 0)
             {
-                string name = U.at(patch.Param, "NAME");
-                errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, search_start
-                    , R._("「{0}」パッチを2重にインストールしています。\r\n1st({1}),2nd({2})"
-                    , name, U.To0xHexString(struct_pointer), U.To0xHexString(second_pointer)), loopI));
                 return;
             }
-*/
+
+            uint datacount;
+            string datacount_str = U.at(patch.Param, "DATACOUNT");
+            if (datacount_str.Length > 0 && datacount_str[0] == '$')
+            {//grep等
+                datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
+                if (datacount == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (datacount >= struct_address)
+                {
+                    datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+
+                if (datacount >= 0xffff)
+                {
+                    Debug.Assert(false);
+                    return;
+                }
+            }
+            else
+            {//直値
+                datacount = U.atoi0x(datacount_str);
+            }
+            if (datacount <= 0)
+            {
+                if (datacount_str == "")
+                {
+                    return;
+                }
+            }
+            string[] typeArray;
+            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray);
+
+            string patchname = patch.Name + "@STRUCT";
+
+            List<uint> tracelist = new List<uint>();
+            uint addr = struct_address;
+            for (int i = 0; i < datacount; i++, addr += datasize)
+            {
+                for (int n = 0; n < pointerIndexes.Length; n++)
+                {
+                    uint p = addr + pointerIndexes[n];
+                    string name = patchname + " DATA " + n;
+
+                    string type = typeArray[n];
+                    if (type == "FLAG")
+                    {
+                        uint flag = Program.ROM.u16(p);
+                        FELint.CheckFlag(flag, errors, FELint.Type.PATCH, p, loopI);
+                    }
+                    else if (type == "EVENT")
+                    {
+                        uint event_addr = Program.ROM.u32(p);
+                        FELint.CheckEventPointer(event_addr, errors, FELint.Type.PATCH, p, false, tracelist);
+                    }
+                    else if (type == "TEXT")
+                    {
+                        uint textid = Program.ROM.u16(p);
+                        FELint.CheckText(textid, "", errors, FELint.Type.PATCH, p, loopI);
+                    }
+                }
+            }
+
             //問題なし
             return;
         }

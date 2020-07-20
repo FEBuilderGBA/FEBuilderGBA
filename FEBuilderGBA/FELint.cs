@@ -409,6 +409,7 @@ namespace FEBuilderGBA
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage), tag));
             }
         }
+
         public static void CheckID(uint eqID, uint id, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (id != eqID)
