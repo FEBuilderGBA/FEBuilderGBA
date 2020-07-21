@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001 ;SHORT arg002; "
+
+change_class_Promoted_bonus_to_table_Table:
+csvmacro000(0x2,0x1,15)
+csvmacro000(0x0,0x0,0x0)

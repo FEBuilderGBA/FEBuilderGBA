@@ -1,0 +1,31 @@
+NAME=経験値_自分の上級職補正を変更する(editor)
+
+IF:0x2C294=0x00 0x4A 0x97 0x46
+AUTHOR=match
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END change_class_Promoted_bonus_to_table.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはレート
+LISTNAME=B0:CLASS
+
+//データを定義します
+B0:CLASS=クラス
+B1:UNIT=ユニット / ANY=0x00
+B2:DECIMAL=補正値
+
+INFO=クラスとユニットが一致した場合、上級職補正値を変更します。上級職以外でも適応されます。設定されてないクラスの上級職補正値は上級職=20、その他=0になります。
+NAME.en=Experience value_Change your senior position correction (editor).
+INFO.en=If the class and unit match, change the senior position compensation value.It is also applicable to non-senior positions.The correction values \u200b\u200bfor senior jobs for classes that are not set are senior jobs \u003d 20 and other jobs \u003d 0.
+NAME.zh=经验值_更改您的高级职位更正（编辑）。
+INFO.zh=如果等级和单位匹配，请更改高级位置补偿值。它也适用于非高级职位。未设置类别的高级职位的校正值是高级职位\u003d 20，其他职位\u003d 0。

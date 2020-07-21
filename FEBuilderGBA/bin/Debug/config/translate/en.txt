@@ -7633,6 +7633,24 @@ Select file to load
 :ファイルサイズが小さすぎます. 9216バイト必要です。
 File size is too small. Requires 9216 bytes.
 
+:コピーした情報を張り付けてROMに書き込みます。
+Paste the copied information and write it to ROM.
+
+:張り付け(Alt + V)
+Paste (Alt + V)
+
+:タイルの情報をクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
+Save the tile information to the clipboard.\\\\r\\\\nSelect the copy destination tile from the tile palette on the left and press Ctrl + V.
+
+:タイルのコピー(Alt + T) 
+Copy tile (Alt + T)
+
+:タイルの種類だけをクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
+Save only the tile type to the clipboard.\\\\r\\\\nSelect the copy destination tile from the tile palette on the left and press Ctrl + V.
+
+:種類のコピー(Alt + C)
+Copy type (Alt + C)
+
 :0000=0番目パレット
 0000=0 palette
 

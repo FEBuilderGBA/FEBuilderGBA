@@ -33,6 +33,9 @@
             this.MAPCHIPLISTPanel = new System.Windows.Forms.Panel();
             this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.MapPanel = new System.Windows.Forms.Panel();
+            this.PasteButton = new System.Windows.Forms.Button();
+            this.CopyTileButton = new System.Windows.Forms.Button();
+            this.CopyTypeButton = new System.Windows.Forms.Button();
             this.ChipsetConfigAddress = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.ConfigNo = new FEBuilderGBA.TextBoxEx();
@@ -83,6 +86,8 @@
             this.ObjAddress = new System.Windows.Forms.NumericUpDown();
             this.label34 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.REDOButton = new System.Windows.Forms.Button();
+            this.UNDOButton = new System.Windows.Forms.Button();
             this.PaletteTypeCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -186,8 +191,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.MapChipImportButton = new System.Windows.Forms.Button();
             this.MapChipExportButton = new System.Windows.Forms.Button();
-            this.REDOButton = new System.Windows.Forms.Button();
-            this.UNDOButton = new System.Windows.Forms.Button();
             this.MAPCHIPLISTPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.MapPanel.SuspendLayout();
@@ -313,6 +316,9 @@
             // MapPanel
             // 
             this.MapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MapPanel.Controls.Add(this.PasteButton);
+            this.MapPanel.Controls.Add(this.CopyTileButton);
+            this.MapPanel.Controls.Add(this.CopyTypeButton);
             this.MapPanel.Controls.Add(this.ChipsetConfigAddress);
             this.MapPanel.Controls.Add(this.label5);
             this.MapPanel.Controls.Add(this.ConfigNo);
@@ -356,13 +362,49 @@
             this.MapPanel.Location = new System.Drawing.Point(696, 12);
             this.MapPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MapPanel.Name = "MapPanel";
-            this.MapPanel.Size = new System.Drawing.Size(996, 199);
+            this.MapPanel.Size = new System.Drawing.Size(996, 233);
             this.MapPanel.TabIndex = 0;
+            // 
+            // PasteButton
+            // 
+            this.PasteButton.AccessibleDescription = "コピーした情報を張り付けてROMに書き込みます。";
+            this.PasteButton.Location = new System.Drawing.Point(587, 196);
+            this.PasteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PasteButton.Name = "PasteButton";
+            this.PasteButton.Size = new System.Drawing.Size(247, 30);
+            this.PasteButton.TabIndex = 447;
+            this.PasteButton.Text = "張り付け(Alt + V)";
+            this.PasteButton.UseVisualStyleBackColor = true;
+            this.PasteButton.Click += new System.EventHandler(this.PasteButton_Click);
+            // 
+            // CopyTileButton
+            // 
+            this.CopyTileButton.AccessibleDescription = "タイルの情報をクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。";
+            this.CopyTileButton.Location = new System.Drawing.Point(351, 196);
+            this.CopyTileButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CopyTileButton.Name = "CopyTileButton";
+            this.CopyTileButton.Size = new System.Drawing.Size(225, 30);
+            this.CopyTileButton.TabIndex = 446;
+            this.CopyTileButton.Text = "タイルのコピー(Alt + T) ";
+            this.CopyTileButton.UseVisualStyleBackColor = true;
+            this.CopyTileButton.Click += new System.EventHandler(this.CopyTileButton_Click);
+            // 
+            // CopyTypeButton
+            // 
+            this.CopyTypeButton.AccessibleDescription = "タイルの種類だけをクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。";
+            this.CopyTypeButton.Location = new System.Drawing.Point(122, 196);
+            this.CopyTypeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CopyTypeButton.Name = "CopyTypeButton";
+            this.CopyTypeButton.Size = new System.Drawing.Size(225, 30);
+            this.CopyTypeButton.TabIndex = 445;
+            this.CopyTypeButton.Text = "種類のコピー(Alt + C)";
+            this.CopyTypeButton.UseVisualStyleBackColor = true;
+            this.CopyTypeButton.Click += new System.EventHandler(this.CopyTypeButton_Click);
             // 
             // ChipsetConfigAddress
             // 
             this.ChipsetConfigAddress.Hexadecimal = true;
-            this.ChipsetConfigAddress.Location = new System.Drawing.Point(646, 8);
+            this.ChipsetConfigAddress.Location = new System.Drawing.Point(646, 1);
             this.ChipsetConfigAddress.Margin = new System.Windows.Forms.Padding(2);
             this.ChipsetConfigAddress.Maximum = new decimal(new int[] {
             -1,
@@ -376,7 +418,7 @@
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(518, 5);
+            this.label5.Location = new System.Drawing.Point(518, -2);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 32);
@@ -387,7 +429,7 @@
             // ConfigNo
             // 
             this.ConfigNo.ErrorMessage = "";
-            this.ConfigNo.Location = new System.Drawing.Point(124, 14);
+            this.ConfigNo.Location = new System.Drawing.Point(124, 3);
             this.ConfigNo.Margin = new System.Windows.Forms.Padding(2);
             this.ConfigNo.Name = "ConfigNo";
             this.ConfigNo.Placeholder = "";
@@ -398,7 +440,7 @@
             // label30
             // 
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(-1, 10);
+            this.label30.Location = new System.Drawing.Point(-1, -1);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(121, 32);
@@ -408,7 +450,7 @@
             // 
             // Config_L_6_TSA_Y
             // 
-            this.Config_L_6_TSA_Y.Location = new System.Drawing.Point(431, 168);
+            this.Config_L_6_TSA_Y.Location = new System.Drawing.Point(431, 157);
             this.Config_L_6_TSA_Y.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_Y.Maximum = new decimal(new int[] {
             -1,
@@ -422,7 +464,7 @@
             // label12
             // 
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(390, 163);
+            this.label12.Location = new System.Drawing.Point(390, 152);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 32);
@@ -432,7 +474,7 @@
             // 
             // Config_L_6_TSA_X
             // 
-            this.Config_L_6_TSA_X.Location = new System.Drawing.Point(302, 166);
+            this.Config_L_6_TSA_X.Location = new System.Drawing.Point(302, 155);
             this.Config_L_6_TSA_X.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_X.Maximum = new decimal(new int[] {
             -1,
@@ -446,7 +488,7 @@
             // label13
             // 
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(260, 163);
+            this.label13.Location = new System.Drawing.Point(260, 152);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 32);
@@ -464,7 +506,7 @@
             "2000=2番目パレット",
             "3000=3番目パレット",
             "4000=4番目パレット"});
-            this.Config_L_6_TSA_PALETTE.Location = new System.Drawing.Point(661, 167);
+            this.Config_L_6_TSA_PALETTE.Location = new System.Drawing.Point(661, 156);
             this.Config_L_6_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_PALETTE.Name = "Config_L_6_TSA_PALETTE";
             this.Config_L_6_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -480,7 +522,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_6_TSA_FLIP.Location = new System.Drawing.Point(518, 166);
+            this.Config_L_6_TSA_FLIP.Location = new System.Drawing.Point(518, 155);
             this.Config_L_6_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_FLIP.Name = "Config_L_6_TSA_FLIP";
             this.Config_L_6_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -488,7 +530,7 @@
             // 
             // Config_L_4_TSA_Y
             // 
-            this.Config_L_4_TSA_Y.Location = new System.Drawing.Point(431, 137);
+            this.Config_L_4_TSA_Y.Location = new System.Drawing.Point(431, 126);
             this.Config_L_4_TSA_Y.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_Y.Maximum = new decimal(new int[] {
             -1,
@@ -502,7 +544,7 @@
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(390, 132);
+            this.label14.Location = new System.Drawing.Point(390, 121);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(36, 32);
@@ -512,7 +554,7 @@
             // 
             // Config_L_4_TSA_X
             // 
-            this.Config_L_4_TSA_X.Location = new System.Drawing.Point(302, 134);
+            this.Config_L_4_TSA_X.Location = new System.Drawing.Point(302, 123);
             this.Config_L_4_TSA_X.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_X.Maximum = new decimal(new int[] {
             -1,
@@ -526,7 +568,7 @@
             // label15
             // 
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(260, 132);
+            this.label15.Location = new System.Drawing.Point(260, 121);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(36, 32);
@@ -544,7 +586,7 @@
             "2000=2番目パレット",
             "3000=3番目パレット",
             "4000=4番目パレット"});
-            this.Config_L_4_TSA_PALETTE.Location = new System.Drawing.Point(661, 136);
+            this.Config_L_4_TSA_PALETTE.Location = new System.Drawing.Point(661, 125);
             this.Config_L_4_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_PALETTE.Name = "Config_L_4_TSA_PALETTE";
             this.Config_L_4_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -560,7 +602,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_4_TSA_FLIP.Location = new System.Drawing.Point(518, 134);
+            this.Config_L_4_TSA_FLIP.Location = new System.Drawing.Point(518, 123);
             this.Config_L_4_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_FLIP.Name = "Config_L_4_TSA_FLIP";
             this.Config_L_4_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -568,7 +610,7 @@
             // 
             // Config_L_2_TSA_Y
             // 
-            this.Config_L_2_TSA_Y.Location = new System.Drawing.Point(431, 108);
+            this.Config_L_2_TSA_Y.Location = new System.Drawing.Point(431, 97);
             this.Config_L_2_TSA_Y.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_Y.Maximum = new decimal(new int[] {
             -1,
@@ -582,7 +624,7 @@
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(390, 103);
+            this.label10.Location = new System.Drawing.Point(390, 92);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 32);
@@ -592,7 +634,7 @@
             // 
             // Config_L_2_TSA_X
             // 
-            this.Config_L_2_TSA_X.Location = new System.Drawing.Point(302, 106);
+            this.Config_L_2_TSA_X.Location = new System.Drawing.Point(302, 95);
             this.Config_L_2_TSA_X.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_X.Maximum = new decimal(new int[] {
             -1,
@@ -606,7 +648,7 @@
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(260, 103);
+            this.label11.Location = new System.Drawing.Point(260, 92);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 32);
@@ -624,7 +666,7 @@
             "2000=2番目パレット",
             "3000=3番目パレット",
             "4000=4番目パレット"});
-            this.Config_L_2_TSA_PALETTE.Location = new System.Drawing.Point(661, 107);
+            this.Config_L_2_TSA_PALETTE.Location = new System.Drawing.Point(661, 96);
             this.Config_L_2_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_PALETTE.Name = "Config_L_2_TSA_PALETTE";
             this.Config_L_2_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -640,7 +682,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_2_TSA_FLIP.Location = new System.Drawing.Point(518, 106);
+            this.Config_L_2_TSA_FLIP.Location = new System.Drawing.Point(518, 95);
             this.Config_L_2_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_FLIP.Name = "Config_L_2_TSA_FLIP";
             this.Config_L_2_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -648,7 +690,7 @@
             // 
             // Config_L_0_TSA_Y
             // 
-            this.Config_L_0_TSA_Y.Location = new System.Drawing.Point(431, 77);
+            this.Config_L_0_TSA_Y.Location = new System.Drawing.Point(431, 66);
             this.Config_L_0_TSA_Y.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_0_TSA_Y.Maximum = new decimal(new int[] {
             -1,
@@ -662,7 +704,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(390, 72);
+            this.label9.Location = new System.Drawing.Point(390, 61);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 32);
@@ -672,7 +714,7 @@
             // 
             // Config_L_0_TSA_X
             // 
-            this.Config_L_0_TSA_X.Location = new System.Drawing.Point(302, 74);
+            this.Config_L_0_TSA_X.Location = new System.Drawing.Point(302, 63);
             this.Config_L_0_TSA_X.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_0_TSA_X.Maximum = new decimal(new int[] {
             -1,
@@ -686,7 +728,7 @@
             // label8
             // 
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(260, 72);
+            this.label8.Location = new System.Drawing.Point(260, 61);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 32);
@@ -704,7 +746,7 @@
             "2000=2番目パレット",
             "3000=3番目パレット",
             "4000=4番目パレット"});
-            this.Config_L_0_TSA_PALETTE.Location = new System.Drawing.Point(661, 76);
+            this.Config_L_0_TSA_PALETTE.Location = new System.Drawing.Point(661, 65);
             this.Config_L_0_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_0_TSA_PALETTE.Name = "Config_L_0_TSA_PALETTE";
             this.Config_L_0_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -720,7 +762,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_0_TSA_FLIP.Location = new System.Drawing.Point(518, 74);
+            this.Config_L_0_TSA_FLIP.Location = new System.Drawing.Point(518, 63);
             this.Config_L_0_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_0_TSA_FLIP.Name = "Config_L_0_TSA_FLIP";
             this.Config_L_0_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -741,7 +783,7 @@
             // 
             this.ConfigTerrain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ConfigTerrain.FormattingEnabled = true;
-            this.ConfigTerrain.Location = new System.Drawing.Point(125, 44);
+            this.ConfigTerrain.Location = new System.Drawing.Point(125, 33);
             this.ConfigTerrain.Margin = new System.Windows.Forms.Padding(2);
             this.ConfigTerrain.Name = "ConfigTerrain";
             this.ConfigTerrain.Size = new System.Drawing.Size(386, 26);
@@ -751,7 +793,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(-1, 41);
+            this.label6.Location = new System.Drawing.Point(-1, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 32);
@@ -762,7 +804,7 @@
             // Config_W6
             // 
             this.Config_W6.Hexadecimal = true;
-            this.Config_W6.Location = new System.Drawing.Point(124, 169);
+            this.Config_W6.Location = new System.Drawing.Point(124, 158);
             this.Config_W6.Margin = new System.Windows.Forms.Padding(2);
             this.Config_W6.Maximum = new decimal(new int[] {
             -1,
@@ -777,7 +819,7 @@
             // J_6
             // 
             this.J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_6.Location = new System.Drawing.Point(-1, 164);
+            this.J_6.Location = new System.Drawing.Point(-1, 153);
             this.J_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_6.Name = "J_6";
             this.J_6.Size = new System.Drawing.Size(121, 32);
@@ -788,7 +830,7 @@
             // Config_W4
             // 
             this.Config_W4.Hexadecimal = true;
-            this.Config_W4.Location = new System.Drawing.Point(124, 138);
+            this.Config_W4.Location = new System.Drawing.Point(124, 127);
             this.Config_W4.Margin = new System.Windows.Forms.Padding(2);
             this.Config_W4.Maximum = new decimal(new int[] {
             -1,
@@ -803,7 +845,7 @@
             // J_4
             // 
             this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4.Location = new System.Drawing.Point(-1, 134);
+            this.J_4.Location = new System.Drawing.Point(-1, 123);
             this.J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_4.Name = "J_4";
             this.J_4.Size = new System.Drawing.Size(121, 32);
@@ -814,7 +856,7 @@
             // Config_W2
             // 
             this.Config_W2.Hexadecimal = true;
-            this.Config_W2.Location = new System.Drawing.Point(124, 107);
+            this.Config_W2.Location = new System.Drawing.Point(124, 96);
             this.Config_W2.Margin = new System.Windows.Forms.Padding(2);
             this.Config_W2.Maximum = new decimal(new int[] {
             -1,
@@ -829,7 +871,7 @@
             // J_2
             // 
             this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(-1, 103);
+            this.J_2.Location = new System.Drawing.Point(-1, 92);
             this.J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_2.Name = "J_2";
             this.J_2.Size = new System.Drawing.Size(121, 32);
@@ -840,7 +882,7 @@
             // Config_W0
             // 
             this.Config_W0.Hexadecimal = true;
-            this.Config_W0.Location = new System.Drawing.Point(124, 76);
+            this.Config_W0.Location = new System.Drawing.Point(124, 65);
             this.Config_W0.Margin = new System.Windows.Forms.Padding(2);
             this.Config_W0.Maximum = new decimal(new int[] {
             -1,
@@ -855,7 +897,7 @@
             // J_0
             // 
             this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0.Location = new System.Drawing.Point(-1, 72);
+            this.J_0.Location = new System.Drawing.Point(-1, 61);
             this.J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_0.Name = "J_0";
             this.J_0.Size = new System.Drawing.Size(121, 32);
@@ -865,7 +907,7 @@
             // 
             // Config_WriteButton
             // 
-            this.Config_WriteButton.Location = new System.Drawing.Point(815, 5);
+            this.Config_WriteButton.Location = new System.Drawing.Point(815, 0);
             this.Config_WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.Config_WriteButton.Name = "Config_WriteButton";
             this.Config_WriteButton.Size = new System.Drawing.Size(176, 30);
@@ -894,16 +936,16 @@
             this.panel1.Controls.Add(this.ObjExportButton);
             this.panel1.Controls.Add(this.ObjAddress);
             this.panel1.Controls.Add(this.label34);
-            this.panel1.Location = new System.Drawing.Point(696, 217);
+            this.panel1.Location = new System.Drawing.Point(696, 249);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 674);
+            this.panel1.Size = new System.Drawing.Size(513, 628);
             this.panel1.TabIndex = 2;
             // 
             // ObjAddress2
             // 
             this.ObjAddress2.Hexadecimal = true;
-            this.ObjAddress2.Location = new System.Drawing.Point(292, 641);
+            this.ObjAddress2.Location = new System.Drawing.Point(294, 598);
             this.ObjAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.ObjAddress2.Maximum = new decimal(new int[] {
             -1,
@@ -931,12 +973,12 @@
             this.MAP.Location = new System.Drawing.Point(4, 2);
             this.MAP.Margin = new System.Windows.Forms.Padding(2);
             this.MAP.Name = "MAP";
-            this.MAP.Size = new System.Drawing.Size(508, 578);
+            this.MAP.Size = new System.Drawing.Size(508, 540);
             this.MAP.TabIndex = 442;
             // 
             // ObjImportButton
             // 
-            this.ObjImportButton.Location = new System.Drawing.Point(3, 584);
+            this.ObjImportButton.Location = new System.Drawing.Point(-1, 551);
             this.ObjImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ObjImportButton.Name = "ObjImportButton";
             this.ObjImportButton.Size = new System.Drawing.Size(271, 33);
@@ -947,7 +989,7 @@
             // 
             // ObjExportButton
             // 
-            this.ObjExportButton.Location = new System.Drawing.Point(292, 584);
+            this.ObjExportButton.Location = new System.Drawing.Point(288, 551);
             this.ObjExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ObjExportButton.Name = "ObjExportButton";
             this.ObjExportButton.Size = new System.Drawing.Size(215, 33);
@@ -959,7 +1001,7 @@
             // ObjAddress
             // 
             this.ObjAddress.Hexadecimal = true;
-            this.ObjAddress.Location = new System.Drawing.Point(126, 641);
+            this.ObjAddress.Location = new System.Drawing.Point(128, 598);
             this.ObjAddress.Margin = new System.Windows.Forms.Padding(2);
             this.ObjAddress.Maximum = new decimal(new int[] {
             -1,
@@ -973,7 +1015,7 @@
             // label34
             // 
             this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Location = new System.Drawing.Point(-2, 637);
+            this.label34.Location = new System.Drawing.Point(0, 594);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(120, 32);
@@ -1086,11 +1128,33 @@
             this.panel2.Controls.Add(this.PALETTE_B_1);
             this.panel2.Controls.Add(this.PALETTE_G_1);
             this.panel2.Controls.Add(this.PALETTE_R_1);
-            this.panel2.Location = new System.Drawing.Point(1215, 217);
+            this.panel2.Location = new System.Drawing.Point(1215, 249);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(476, 674);
+            this.panel2.Size = new System.Drawing.Size(476, 628);
             this.panel2.TabIndex = 3;
+            // 
+            // REDOButton
+            // 
+            this.REDOButton.Location = new System.Drawing.Point(355, 512);
+            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.REDOButton.Name = "REDOButton";
+            this.REDOButton.Size = new System.Drawing.Size(119, 30);
+            this.REDOButton.TabIndex = 445;
+            this.REDOButton.Text = "REDO";
+            this.REDOButton.UseVisualStyleBackColor = true;
+            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
+            // 
+            // UNDOButton
+            // 
+            this.UNDOButton.Location = new System.Drawing.Point(228, 512);
+            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UNDOButton.Name = "UNDOButton";
+            this.UNDOButton.Size = new System.Drawing.Size(122, 30);
+            this.UNDOButton.TabIndex = 444;
+            this.UNDOButton.Text = "UNDO";
+            this.UNDOButton.UseVisualStyleBackColor = true;
+            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
             // 
             // PaletteTypeCombo
             // 
@@ -1119,7 +1183,7 @@
             // 
             // PALETTE_TO_CLIPBOARD_BUTTON
             // 
-            this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(2, 584);
+            this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(1, 551);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Name = "PALETTE_TO_CLIPBOARD_BUTTON";
             this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(148, 33);
@@ -1130,7 +1194,7 @@
             // 
             // PaletteImportButton
             // 
-            this.PaletteImportButton.Location = new System.Drawing.Point(156, 584);
+            this.PaletteImportButton.Location = new System.Drawing.Point(155, 551);
             this.PaletteImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteImportButton.Name = "PaletteImportButton";
             this.PaletteImportButton.Size = new System.Drawing.Size(162, 33);
@@ -1141,7 +1205,7 @@
             // 
             // PaletteExportButton
             // 
-            this.PaletteExportButton.Location = new System.Drawing.Point(319, 584);
+            this.PaletteExportButton.Location = new System.Drawing.Point(318, 551);
             this.PaletteExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteExportButton.Name = "PaletteExportButton";
             this.PaletteExportButton.Size = new System.Drawing.Size(157, 33);
@@ -1182,7 +1246,7 @@
             // 
             // PaletteWriteButton
             // 
-            this.PaletteWriteButton.Location = new System.Drawing.Point(299, 638);
+            this.PaletteWriteButton.Location = new System.Drawing.Point(298, 593);
             this.PaletteWriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.PaletteWriteButton.Name = "PaletteWriteButton";
             this.PaletteWriteButton.Size = new System.Drawing.Size(172, 33);
@@ -1863,7 +1927,7 @@
             // PaletteAddress
             // 
             this.PaletteAddress.Hexadecimal = true;
-            this.PaletteAddress.Location = new System.Drawing.Point(128, 643);
+            this.PaletteAddress.Location = new System.Drawing.Point(127, 598);
             this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
             this.PaletteAddress.Maximum = new decimal(new int[] {
             -1,
@@ -1877,7 +1941,7 @@
             // label20
             // 
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(2, 638);
+            this.label20.Location = new System.Drawing.Point(-1, 593);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(120, 32);
@@ -2548,28 +2612,6 @@
             this.MapChipExportButton.UseVisualStyleBackColor = true;
             this.MapChipExportButton.Click += new System.EventHandler(this.MapChipExportButton_Click);
             // 
-            // REDOButton
-            // 
-            this.REDOButton.Location = new System.Drawing.Point(338, 550);
-            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
-            this.REDOButton.Name = "REDOButton";
-            this.REDOButton.Size = new System.Drawing.Size(136, 30);
-            this.REDOButton.TabIndex = 445;
-            this.REDOButton.Text = "REDO";
-            this.REDOButton.UseVisualStyleBackColor = true;
-            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
-            // 
-            // UNDOButton
-            // 
-            this.UNDOButton.Location = new System.Drawing.Point(195, 550);
-            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
-            this.UNDOButton.Name = "UNDOButton";
-            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
-            this.UNDOButton.TabIndex = 444;
-            this.UNDOButton.Text = "UNDO";
-            this.UNDOButton.UseVisualStyleBackColor = true;
-            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
-            // 
             // MapStyleEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2586,6 +2628,7 @@
             this.Name = "MapStyleEditorForm";
             this.Text = "マップスタイルエディタ";
             this.Load += new System.EventHandler(this.MapStyleEditorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapStyleEditorForm_KeyDown);
             this.MAPCHIPLISTPanel.ResumeLayout(false);
             this.MAPCHIPLISTPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
@@ -2827,6 +2870,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button REDOButton;
         private System.Windows.Forms.Button UNDOButton;
+        private System.Windows.Forms.Button CopyTileButton;
+        private System.Windows.Forms.Button CopyTypeButton;
+        private System.Windows.Forms.Button PasteButton;
 
 
     }

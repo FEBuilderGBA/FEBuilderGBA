@@ -1,0 +1,7 @@
+Class_Bonus_Start=$64
+adr=$64
+Loop=$16
+Normal=$52
+Unit=$2C
+GetValue=$44
+end=$5A

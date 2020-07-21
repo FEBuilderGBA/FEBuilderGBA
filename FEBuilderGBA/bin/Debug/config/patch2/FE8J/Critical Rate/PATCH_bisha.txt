@@ -1,4 +1,4 @@
-NAME=必殺補正値をクラスごとに設定する
+NAME=必殺補正値をクラスごとに設定する(Editor)
 TYPE=STRUCT
 TAG=#ENGINE
 
@@ -29,5 +29,5 @@ B0:DECIMAL:.zh=必杀
 AUTHOR=アインズ・ウール・ゴウン
 AUTHOR.en=Ainz Ooal Gown
 AUTHOR.zh=Ainz Ooal Gown
-NAME.en=Set the deadly correction value for each class.
-NAME.zh=设置每个类的致命校正值。
+NAME.en=Set the deadly correction value for each class(Editor)
+NAME.zh=设置每个类的致命校正值(Editor)

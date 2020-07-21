@@ -1,0 +1,21 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $2C294
+BYTE $00 $4A $97 $46
+POIN change_class_Promoted_bonus_to_tablejump
+POP
+
+change_class_Promoted_bonus_to_tablejump:
+#incbin "change_class_Promoted_bonus_to_table.dmp"
+POIN change_class_Promoted_bonus_to_table_Table
+
+#include "change_class_Promoted_bonus_to_table_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

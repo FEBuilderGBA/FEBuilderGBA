@@ -1282,5 +1282,70 @@ namespace FEBuilderGBA
         {
             PFR.RunRedo();
         }
+
+        private void CopyTypeButton_Click(object sender, EventArgs e)
+        {
+            string str = this.Name + "\t" + "TypeOnly" 
+                + "\t" + (ConfigTerrain.SelectedIndex);
+            U.SetClipboardText(str);
+        }
+
+        private void CopyTileButton_Click(object sender, EventArgs e)
+        {
+            string str = this.Name + "\t" + "Tile" 
+                + "\t" + (ConfigTerrain.SelectedIndex)
+                + "\t" + (Config_W0.Value)
+                + "\t" + (Config_W2.Value)
+                + "\t" + (Config_W4.Value)
+                + "\t" + (Config_W6.Value);
+            U.SetClipboardText(str);
+        }
+
+        private void PasteButton_Click(object sender, EventArgs e)
+        {
+            string str = Clipboard.GetText();
+            string[] arr = str.Split('\t');
+            if (arr.Length <= 2)
+            {
+                return;
+            }
+            if (arr[0] != this.Name)
+            {
+                return;
+            }
+            if (arr[1] == "TypeOnly")
+            {
+                U.SelectedIndexSafety(ConfigTerrain, U.atoi(arr[2]));
+            }
+            if (arr[1] == "Tile" && arr.Length >= 7)
+            {
+                U.SelectedIndexSafety(ConfigTerrain, U.atoi(arr[2]));
+                U.SelectedIndexSafety(Config_W0, U.atoi(arr[3]));
+                U.SelectedIndexSafety(Config_W2, U.atoi(arr[4]));
+                U.SelectedIndexSafety(Config_W4, U.atoi(arr[5]));
+                U.SelectedIndexSafety(Config_W6, U.atoi(arr[6]));
+            }
+            Config_WriteButton.PerformClick();
+        }
+
+        private void MapStyleEditorForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.C)
+            {
+                CopyTypeButton.PerformClick();
+                return;
+            }
+            else if (e.Alt && e.KeyCode == Keys.T)
+            {
+                CopyTileButton.PerformClick();
+                return;
+            }
+            else if (e.Alt && e.KeyCode == Keys.V)
+            {
+                PasteButton.PerformClick();
+                return;
+            }
+        }
+
     }
 }

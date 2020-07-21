@@ -1,4 +1,4 @@
-#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001 arg002; "
+#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001 ;SHORT arg002; "
 
 change_class_power_b_to_table_Table_kai:
 csvmacro000(0x17,0x0,40)
@@ -8,4 +8,5 @@ csvmacro000(0x2C,0x0,40)
 csvmacro000(0x4C,0x0,40)
 csvmacro000(0x59,0x0,40)
 csvmacro000(0x5C,0x0,40)
-csvmacro000(0x0,0x0,0)
+csvmacro000(0x2,0x1,5)
+csvmacro000(0x0,0x0,0x0)
