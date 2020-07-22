@@ -276,6 +276,11 @@ namespace FEBuilderGBA
             f.JumpTo("HARDCODING_UNIT=" + U.ToHexString2(this.AddressList.SelectedIndex + 1), 0);
         }
 
+        private void UnitFE6Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

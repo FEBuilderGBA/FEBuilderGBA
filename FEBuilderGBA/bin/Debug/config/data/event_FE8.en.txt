@@ -98,7 +98,8 @@
 482F0000YYYYZZWW	Set move (ver2)[YY:UNIT:Character][ZZ:MAPX:X][WW:MAPY:Y]
 221A0000	Conversation start of CG scene(CGTEXTSTART)
 251A0000	_0x1A25
-4121XXXXYYYYZZZZ	_0x2141[XXXX::Value1][YY::Value2][ZZ::Value3]
+4121XXXXYYYYZZZZ	_0x2141 ReplaceBackgound[XXXX:BG:Backgound][YY::TargetTextType][ZZ:FSEC:Speed]
+4221XXXXYYYYZZZZ	_0x2142[XXXX:BG:Backgound][YY::SourceColor][ZZ:FSEC:Speed]
 2813XXXX	Return screen with[XXXX:FSEC:Speed]	{SCREENDADE}	{MAPEFFECT}
 2026XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y] but, it seems not the center(CAM2)	{CAMERA}
 2926XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1)	{CAMERA}
