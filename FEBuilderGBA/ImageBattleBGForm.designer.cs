@@ -31,6 +31,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.X_REF = new FEBuilderGBA.ListBoxEx();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.D0 = new System.Windows.Forms.NumericUpDown();
@@ -99,6 +100,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.X_REF);
             this.panel2.Controls.Add(this.Comment);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.D0);
@@ -111,8 +113,19 @@
             this.panel2.Location = new System.Drawing.Point(273, 76);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(860, 381);
+            this.panel2.Size = new System.Drawing.Size(1034, 470);
             this.panel2.TabIndex = 1;
+            // 
+            // X_REF
+            // 
+            this.X_REF.FormattingEnabled = true;
+            this.X_REF.IntegralHeight = false;
+            this.X_REF.ItemHeight = 18;
+            this.X_REF.Location = new System.Drawing.Point(775, 5);
+            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
+            this.X_REF.Name = "X_REF";
+            this.X_REF.Size = new System.Drawing.Size(256, 459);
+            this.X_REF.TabIndex = 201;
             // 
             // Comment
             // 
@@ -213,7 +226,7 @@
             // X_BG_PIC
             // 
             this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_BG_PIC.Location = new System.Drawing.Point(393, 7);
+            this.X_BG_PIC.Location = new System.Drawing.Point(390, 7);
             this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
             this.X_BG_PIC.Name = "X_BG_PIC";
             this.X_BG_PIC.Size = new System.Drawing.Size(384, 288);
@@ -244,7 +257,7 @@
             this.AddressPanel.Location = new System.Drawing.Point(273, 47);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddressPanel.Name = "AddressPanel";
-            this.AddressPanel.Size = new System.Drawing.Size(860, 30);
+            this.AddressPanel.Size = new System.Drawing.Size(1034, 30);
             this.AddressPanel.TabIndex = 70;
             // 
             // SelectAddress
@@ -271,10 +284,10 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(700, -1);
+            this.WriteButton.Location = new System.Drawing.Point(810, -1);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(160, 30);
+            this.WriteButton.Size = new System.Drawing.Size(220, 30);
             this.WriteButton.TabIndex = 9;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -321,10 +334,10 @@
             this.panel3.Controls.Add(this.DecreaseColorTSAToolButton);
             this.panel3.Controls.Add(this.ExportButton);
             this.panel3.Controls.Add(this.ImportButton);
-            this.panel3.Location = new System.Drawing.Point(271, 467);
+            this.panel3.Location = new System.Drawing.Point(273, 556);
             this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(861, 43);
+            this.panel3.Size = new System.Drawing.Size(1034, 43);
             this.panel3.TabIndex = 73;
             // 
             // DecreaseColorTSAToolButton
@@ -381,7 +394,7 @@
             this.panel1.Location = new System.Drawing.Point(14, 18);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 30);
+            this.panel1.Size = new System.Drawing.Size(1292, 30);
             this.panel1.TabIndex = 71;
             // 
             // ReadCount
@@ -414,12 +427,12 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(14, 47);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(252, 463);
+            this.panel6.Size = new System.Drawing.Size(252, 552);
             this.panel6.TabIndex = 71;
             // 
             // AddressListExpandsButton_255
             // 
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(3, 432);
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(3, 521);
             this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
             this.AddressListExpandsButton_255.Size = new System.Drawing.Size(240, 30);
             this.AddressListExpandsButton_255.TabIndex = 114;
@@ -430,7 +443,7 @@
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Location = new System.Drawing.Point(0, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(251, 26);
@@ -444,10 +457,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Location = new System.Drawing.Point(0, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(251, 400);
+            this.AddressList.Size = new System.Drawing.Size(251, 490);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -456,7 +469,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1146, 522);
+            this.ClientSize = new System.Drawing.Size(1314, 604);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.AddressPanel);
@@ -518,5 +531,6 @@
         private System.Windows.Forms.Button DecreaseColorTSAToolButton;
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label4;
+        private ListBoxEx X_REF;
     }
 }

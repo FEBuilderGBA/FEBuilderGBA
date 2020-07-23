@@ -553,6 +553,9 @@ ASM编辑
 :CC分岐
 转职分岐
 
+:魔力
+魔力
+
 :幸運
 幸运
 
@@ -645,9 +648,6 @@ ASM编辑
 
 :「移動速度」に2以上が設定されています。「移動速度」が、2以上になっているユニットは移動した時に正しく描画されません。
 "移动速度"设定为2或更大。移动时，"移动速度"为2或更大的人物将无法正确绘制。
-
-:魔力
-魔力
 
 :スキル
 技能
@@ -5179,14 +5179,11 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :間接エフェクト Jump
 跳转到间接效果
 
-:使った場合
-使用时
-
-:効果
-效果
-
 :ダメージ追加効果
 损害附加效果
+
+:使った場合
+使用时
 
 :進撃準備店
 进击准备店
@@ -5196,9 +5193,6 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 
 :売却価格
 售价
-
-:価格
-价格
 
 :単価
 单价
@@ -5221,6 +5215,15 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :3A=射程3-10(サンダーストーム)
 3A=射程3-10（雷暴）
 
+:3F=射程3-15(ロングアーチ)
+3F=射程3-15（弩）
+
+:10=魔法/2(リザーブの杖)
+10=魔术/2(生命之杖)
+
+:FF=全体(ラトナ)
+FF=全体(拉特娜)
+
 :性能
 能力
 
@@ -5239,8 +5242,8 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :特効効果\r\n新規割当
 新的\r\n特殊效果
 
-:特効効果\r\n格納アドレス
-特効效果\r\n储存地址。
+:特効
+特効
 
 :能力補正\r\n新規割当
 新的\r\n能力修正值
@@ -5248,8 +5251,8 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :能力補正値
 能力修正值
 
-:能力修正\r\n格納アドレス
-能力修改。\r\n储存地址。
+:能力補正
+能力修正
 
 :種別
 种别
@@ -5319,21 +5322,6 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 
 :武器LV熟練度
 武器LV熟练度
-
-:3F=射程3-15(ロングアーチ)
-3F=射程3-15（弩）
-
-:10=魔法/2(リザーブの杖)
-10=魔术/2(生命之杖)
-
-:FF=全体(ラトナ)
-FF=全体(拉特娜)
-
-:特効
-特効
-
-:能力補正
-能力修正
 
 :CCアイテムの名前
 转职道具名称
@@ -12232,6 +12220,9 @@ UnitAction补丁适用于此ROM。
 :顔
 一张脸
 
+:支援クラス
+支援职业
+
 :ユニット別能力
 人物能力
 
@@ -12246,9 +12237,6 @@ UnitAction补丁适用于此ROM。
 
 :上級職
 高级职位
-
-:支援クラス
-支援职业
 
 :上級専用アニメ
 高级职业专用动画

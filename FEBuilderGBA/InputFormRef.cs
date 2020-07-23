@@ -10036,6 +10036,21 @@ namespace FEBuilderGBA
             return ret;
         }
 
+        public static void AppendNameString(List<U.AddrResult> list
+            , string pre_name,string before_name = "")
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (pre_name != "")
+                {
+                    list[i].name = pre_name + " " + list[i].name;
+                }
+                if (before_name != "")
+                {
+                    list[i].name = list[i].name + " " + before_name;
+                }
+            }
+        }
 
         public void ClearSelect(bool clearReadStartAddress)
         {

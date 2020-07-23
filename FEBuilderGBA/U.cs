@@ -7137,6 +7137,16 @@ namespace FEBuilderGBA
             }
             f.ActiveControl = c;
         }
+        public static List<string> DictionaryToValuesList(Dictionary<uint,string> d)
+        {
+            List<string> ret = new List<string>();
+            var values = d.Values;
+            foreach (var dd in values)
+            {
+                ret.Add(dd);
+            }
+            return ret;
+        }
     }
 }
 

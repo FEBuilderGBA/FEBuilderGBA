@@ -56,6 +56,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             X_BG_PIC.Image = Draw((uint)D12.Value, (uint)D16.Value);
+            U.ConvertListBox(MapTerrainFloorLookupTableForm.MakeListByUseTerrain((uint)this.AddressList.SelectedIndex), ref this.X_REF);
         }
         public static Bitmap Draw(uint image, uint palette)
         {

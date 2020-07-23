@@ -51,6 +51,29 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + U.ToHexString(i), new uint[] { });
             }
         }
+        public static List<U.AddrResult> MakeListByUseTerrain(uint terrainid)
+        {
+            List<U.AddrResult> ret = new List<U.AddrResult>();
+
+            InputFormRef InputFormRef = Init(null);
+            var terrain_set_list = U.DictionaryToValuesList(InputFormRef.MakeTerrainSet());
+            uint[] pointers = GetPointers();
+            for (int i = 0; i < pointers.Length; i++)
+            {
+                InputFormRef.ReInitPointer(pointers[i]);
+                List<U.AddrResult> a = InputFormRef.MakeList((uint addr) =>
+                {
+                    uint icon = Program.ROM.u8(addr + 0);
+                    icon = icon - 1;
+                    return (icon == terrainid);
+                });
+                string name = terrain_set_list[i];
+                InputFormRef.AppendNameString(a, "",name);
+
+                ret.AddRange(a);
+            }
+            return ret;
+        }
 
         private void MapTerrainFloorLookupTableForm_Load(object sender, EventArgs e)
         {

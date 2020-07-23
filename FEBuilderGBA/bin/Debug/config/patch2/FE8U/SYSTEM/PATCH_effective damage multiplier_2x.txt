@@ -1,0 +1,15 @@
+NAME=特効ダメージを3倍から2倍に変更する
+NAME.en=effective damage multiplier 2x
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 3x|3XX|2|2XX
+
+3XX:0x2AB44=0x40 0x18
+2XX:0x2AB44=0x00 0x00
+
+AUTHOR=krib
+
+NAME.zh=effective damage multiplier 2x

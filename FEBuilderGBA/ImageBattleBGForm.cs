@@ -56,6 +56,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             X_BG_PIC.Image = DrawBG((uint)D0.Value, (uint)D8.Value, (uint)D4.Value);
+            U.ConvertListBox(MapTerrainBGLookupTableForm.MakeListByUseTerrain((uint)this.AddressList.SelectedIndex), ref this.X_REF);
         }
 
         public static Bitmap DrawBG(uint image, uint palette,uint tsa)
@@ -203,5 +204,6 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             return InputFormRef.GetComment(id);
         }
+
     }
 }
