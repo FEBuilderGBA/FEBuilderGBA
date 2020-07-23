@@ -113,10 +113,10 @@ namespace FEBuilderGBA
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 , 12 });
+            UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 , 12 });
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {

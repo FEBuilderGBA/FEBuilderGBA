@@ -57,11 +57,11 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             {
                 InputFormRef InputFormRef = N2_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 ,2 , 4, 6 });
+                UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 ,2 , 4, 6 });
             }
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)

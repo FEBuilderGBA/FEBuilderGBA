@@ -1051,7 +1051,7 @@ namespace FEBuilderGBA
         }
 
         //テキストの取得
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef ifr;
             if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.FE8N_ver2)
@@ -1070,7 +1070,7 @@ namespace FEBuilderGBA
             }
 
             ifr = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
+            UseValsID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
         }
 
     }

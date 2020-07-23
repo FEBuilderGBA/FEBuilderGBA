@@ -288,7 +288,7 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             List<uint> tracelist = new List<uint>();
             {
@@ -300,7 +300,7 @@ namespace FEBuilderGBA
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = basename + U.To0xHexString((uint)i);
-                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                    EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
                 }
             }
 
@@ -312,23 +312,23 @@ namespace FEBuilderGBA
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = "WorldMapEvent After " + U.To0xHexString((uint)i);
-                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                    EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
                 }
             }
             {
                 uint p = Program.ROM.RomInfo.oping_event_pointer();
                 string name = R._("オープニングイベント");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending1_event_pointer();
                 string name = R._("エイリークエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending2_event_pointer();
                 string name = R._("エフラムエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
         }
 

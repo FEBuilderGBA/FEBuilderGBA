@@ -11606,5 +11606,81 @@ namespace FEBuilderGBA
                 f.ShowDialog();
             };
         }
+        public static Size DrawRefTextList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            UseValsID t = (UseValsID)lb.Items[index];
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            SolidBrush keywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
+
+            Font normalFont = lb.Font;
+            Font boldFont = new Font(lb.Font, FontStyle.Bold);
+
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+            int maxWidth = 0;
+
+            string text = MainSimpleMenuEventErrorForm.TypeToString(t.DataType, t.Addr, t.Tag);
+
+            U.DrawText(text, g, boldFont, keywordBrush, isWithDraw, bounds);
+            bounds.Y += lineHeight;
+
+            text = t.Info;
+            bounds.X = listbounds.X;
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+            brush.Dispose();
+            boldFont.Dispose();
+
+            bounds.X = maxWidth;
+            bounds.Y += lineHeight + lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+        public static void GotoRef(ListBox refListBox)
+        {
+            int index = refListBox.SelectedIndex;
+            if (index < 0 || index >= refListBox.Items.Count)
+            {
+                return;
+            }
+            UseValsID t = (UseValsID)refListBox.Items[index];
+            MainSimpleMenuEventErrorForm.GotoEvent(t.DataType, t.Addr, t.Tag, U.NOT_FOUND);
+        }
+        public static bool UpdateRef(ListBox refListBox, uint id,UseValsID.TargetTypeEnum targetType)
+        {
+            AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
+            List<UseValsID> textIDList = map.GetVarsIDArray();
+            if (textIDList == null)
+            {
+                refListBox.BeginUpdate();
+                refListBox.Items.Clear();
+                refListBox.Items.Add(UseValsID.GetNowMeasuring());
+                refListBox.EndUpdate();
+                return false;
+            }
+
+            refListBox.BeginUpdate();
+            refListBox.Items.Clear();
+
+            int count = textIDList.Count;
+            for (int i = 0; i < count; i++)
+            {
+                UseValsID t = textIDList[i];
+                if (t.TargetType != targetType
+                    || t.ID != id)
+                {
+                    continue;
+                }
+                refListBox.Items.Add(t);
+            }
+
+            refListBox.EndUpdate();
+            return true;
+        }
     }
 }

@@ -19,7 +19,9 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
-//            this.Icon = Properties.Resources.icon_music;
+            this.X_REF.ItemHeight = (int)(this.X_REF.Font.Height * 2.4);
+            this.X_REF.OwnerDraw(InputFormRef.DrawRefTextList, DrawMode.OwnerDrawFixed, false);
+            //            this.Icon = Properties.Resources.icon_music;
         }
 
         U.FixDocsBugs fixDocsBugs;
@@ -353,6 +355,46 @@ namespace FEBuilderGBA
             }
             //拡張されているので表示する
             return true;
+        }
+        void UpdateRef(uint id)
+        {
+            bool r = InputFormRef.UpdateRef(this.X_REF, id, UseValsID.TargetTypeEnum.SONG);
+            if (r == false)
+            {
+                return;
+            }
+
+            if (id == 0)
+            {
+                return;
+            }
+
+            //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
+            if (!SoundEffectList.ContainsKey(id))
+            {
+                return;
+            }
+
+            var t = new UseValsID(FELint.Type.SE_SYSTEM, U.NOT_FOUND, SoundEffectList[id], id, UseValsID.TargetTypeEnum.SONG, id);
+            this.X_REF.Items.Add(t);
+        }
+
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateRef((uint)this.AddressList.SelectedIndex);
+        }
+
+        private void X_REF_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            InputFormRef.GotoRef(this.X_REF);
+        }
+
+        private void X_REF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                InputFormRef.GotoRef(this.X_REF);
+            }
         }
     }
 }

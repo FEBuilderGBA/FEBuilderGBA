@@ -220,5 +220,22 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.PAL);
             }
         }
+        void JumpToRef()
+        {
+            MapTerrainFloorLookupTableForm.JumpToRef(X_REF.Text);
+        }
+
+        private void X_REF_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            JumpToRef();
+        }
+
+        private void X_REF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                JumpToRef();
+            }
+        }
     }
 }

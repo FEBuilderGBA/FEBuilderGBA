@@ -159,7 +159,7 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            map.MakeTextIDArray(); //全テキストIDの検出
+            map.MakeVarsIDArray(); //全テキストIDの検出
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
@@ -726,10 +726,10 @@ namespace FEBuilderGBA
             }
             return this.LDRMapCache;
         }
-        public void MakeTextIDArray(List<UseTextID> list)
+        public void MakeVarsIDArray(List<UseValsID> list)
         {
             AsmMapFile map = GetAsmMapFile();
-            map.MakeTextIDArray(list);
+            map.MakeVarsIDArray(list);
         }
 
         //ハードコーディングされたユニット、クラス、アイテムの警告

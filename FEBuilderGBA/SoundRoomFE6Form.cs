@@ -72,10 +72,11 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 4 , 8});
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 4,8 });
+            UseValsID.AppendTextID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 4,8 });
+            UseValsID.AppendSongID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 0 });
         }
 
     }

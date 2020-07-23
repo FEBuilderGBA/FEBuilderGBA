@@ -142,7 +142,7 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             List<uint> tracelist = new List<uint>();
             uint mapmax = MapSettingForm.GetDataCount();
@@ -162,7 +162,7 @@ namespace FEBuilderGBA
                 }
 
                 string name = "WorldMapEvent " + U.To0xHexString(mapid) + " ";
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
 
         }

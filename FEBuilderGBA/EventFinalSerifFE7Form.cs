@@ -47,10 +47,10 @@ namespace FEBuilderGBA
             string name = "EventFinalserif";
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.EVENT_FINAL_SERIF, InputFormRef, new uint[] { 4 });
+            UseValsID.AppendTextID(list, FELint.Type.EVENT_FINAL_SERIF, InputFormRef, new uint[] { 4 });
         }
 
         private void EventFinalSerifFE7Form_Load(object sender, EventArgs e)

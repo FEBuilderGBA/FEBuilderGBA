@@ -1112,10 +1112,10 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.CLASS, InputFormRef, new uint[] { 0, 2 });
+            UseValsID.AppendTextID(list, FELint.Type.CLASS, InputFormRef, new uint[] { 0, 2 });
         }
 
         void InitFE8ClassType(List<Control> controls)

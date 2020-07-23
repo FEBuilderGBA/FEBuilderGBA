@@ -312,11 +312,11 @@ namespace FEBuilderGBA
                 FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU, p, i);
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
+        public static void MakeVarsIDArray(List<UseValsID> list, uint pointer)
         {
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(pointer);
-            UseTextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4, 6 });
+            UseValsID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4, 6 });
         }
 
         void Explain()

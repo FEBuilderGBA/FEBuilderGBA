@@ -144,19 +144,19 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_3b", new uint[] { });
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             {
                 InputFormRef InputFormRef = N1_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
+                UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
             }
             {
                 InputFormRef InputFormRef = N2_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
+                UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
 
                 InputFormRef.ReInitPointer
                     ((Program.ROM.RomInfo.ed_3b_pointer()));
-                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
+                UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
             }
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)

@@ -137,10 +137,10 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 6 });
+            UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 6 });
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {

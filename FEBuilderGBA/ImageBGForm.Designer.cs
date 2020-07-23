@@ -60,6 +60,8 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_REF = new FEBuilderGBA.ListBoxEx();
+            this.label8 = new System.Windows.Forms.Label();
             this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
@@ -88,6 +90,9 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.X_REF);
+            this.DragTargetPanel.Controls.Add(this.X_BG_PIC);
+            this.DragTargetPanel.Controls.Add(this.label8);
             this.DragTargetPanel.Controls.Add(this.Comment);
             this.DragTargetPanel.Controls.Add(this.label4);
             this.DragTargetPanel.Controls.Add(this.P0);
@@ -96,11 +101,10 @@
             this.DragTargetPanel.Controls.Add(this.J_8);
             this.DragTargetPanel.Controls.Add(this.J_4);
             this.DragTargetPanel.Controls.Add(this.J_0);
-            this.DragTargetPanel.Controls.Add(this.X_BG_PIC);
             this.DragTargetPanel.Location = new System.Drawing.Point(274, 76);
             this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel.Name = "DragTargetPanel";
-            this.DragTargetPanel.Size = new System.Drawing.Size(823, 340);
+            this.DragTargetPanel.Size = new System.Drawing.Size(1051, 560);
             this.DragTargetPanel.TabIndex = 1;
             // 
             // Comment
@@ -109,7 +113,7 @@
             this.Comment.Location = new System.Drawing.Point(132, 134);
             this.Comment.Name = "Comment";
             this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(256, 25);
+            this.Comment.Size = new System.Drawing.Size(253, 25);
             this.Comment.TabIndex = 196;
             // 
             // label4
@@ -127,7 +131,7 @@
             // P0
             // 
             this.P0.Hexadecimal = true;
-            this.P0.Location = new System.Drawing.Point(251, 10);
+            this.P0.Location = new System.Drawing.Point(247, 10);
             this.P0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.P0.Maximum = new decimal(new int[] {
             -559939585,
@@ -141,7 +145,7 @@
             // P4
             // 
             this.P4.Hexadecimal = true;
-            this.P4.Location = new System.Drawing.Point(251, 49);
+            this.P4.Location = new System.Drawing.Point(247, 49);
             this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.P4.Maximum = new decimal(new int[] {
             -559939585,
@@ -155,7 +159,7 @@
             // P8
             // 
             this.P8.Hexadecimal = true;
-            this.P8.Location = new System.Drawing.Point(251, 90);
+            this.P8.Location = new System.Drawing.Point(247, 90);
             this.P8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.P8.Maximum = new decimal(new int[] {
             -559939585,
@@ -172,7 +176,7 @@
             this.J_8.Location = new System.Drawing.Point(3, 90);
             this.J_8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_8.Name = "J_8";
-            this.J_8.Size = new System.Drawing.Size(243, 31);
+            this.J_8.Size = new System.Drawing.Size(240, 31);
             this.J_8.TabIndex = 70;
             this.J_8.Text = "パレット";
             this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +187,7 @@
             this.J_4.Location = new System.Drawing.Point(3, 49);
             this.J_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_4.Name = "J_4";
-            this.J_4.Size = new System.Drawing.Size(243, 31);
+            this.J_4.Size = new System.Drawing.Size(240, 31);
             this.J_4.TabIndex = 69;
             this.J_4.Text = "ヘッダ付きTSA";
             this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +198,7 @@
             this.J_0.Location = new System.Drawing.Point(3, 10);
             this.J_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_0.Name = "J_0";
-            this.J_0.Size = new System.Drawing.Size(243, 31);
+            this.J_0.Size = new System.Drawing.Size(240, 31);
             this.J_0.TabIndex = 68;
             this.J_0.Text = "画像";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,10 +206,10 @@
             // X_BG_PIC
             // 
             this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_BG_PIC.Location = new System.Drawing.Point(400, 7);
+            this.X_BG_PIC.Location = new System.Drawing.Point(390, 7);
             this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
             this.X_BG_PIC.Name = "X_BG_PIC";
-            this.X_BG_PIC.Size = new System.Drawing.Size(416, 288);
+            this.X_BG_PIC.Size = new System.Drawing.Size(404, 317);
             this.X_BG_PIC.TabIndex = 67;
             this.X_BG_PIC.TabStop = false;
             // 
@@ -233,7 +237,7 @@
             this.AddressPanel.Location = new System.Drawing.Point(274, 47);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddressPanel.Name = "AddressPanel";
-            this.AddressPanel.Size = new System.Drawing.Size(824, 30);
+            this.AddressPanel.Size = new System.Drawing.Size(1051, 30);
             this.AddressPanel.TabIndex = 70;
             // 
             // SelectAddress
@@ -260,10 +264,10 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(663, -1);
+            this.WriteButton.Location = new System.Drawing.Point(794, -1);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(160, 30);
+            this.WriteButton.Size = new System.Drawing.Size(248, 30);
             this.WriteButton.TabIndex = 9;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -299,10 +303,10 @@
             this.DragTargetPanel2.Controls.Add(this.DecreaseColorTSAToolButton);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
-            this.DragTargetPanel2.Location = new System.Drawing.Point(273, 426);
+            this.DragTargetPanel2.Location = new System.Drawing.Point(274, 646);
             this.DragTargetPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel2.Name = "DragTargetPanel2";
-            this.DragTargetPanel2.Size = new System.Drawing.Size(825, 43);
+            this.DragTargetPanel2.Size = new System.Drawing.Size(1051, 43);
             this.DragTargetPanel2.TabIndex = 73;
             // 
             // DecreaseColorTSAToolButton
@@ -381,7 +385,7 @@
             this.panel1.Location = new System.Drawing.Point(14, 18);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 30);
+            this.panel1.Size = new System.Drawing.Size(1311, 30);
             this.panel1.TabIndex = 71;
             // 
             // ReadCount
@@ -414,12 +418,12 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(14, 47);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(258, 422);
+            this.panel6.Size = new System.Drawing.Size(258, 642);
             this.panel6.TabIndex = 71;
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(2, 396);
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 608);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
             this.AddressListExpandsButton.Size = new System.Drawing.Size(248, 30);
             this.AddressListExpandsButton.TabIndex = 114;
@@ -428,7 +432,6 @@
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -440,23 +443,46 @@
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 28);
+            this.AddressList.Location = new System.Drawing.Point(-1, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(256, 364);
+            this.AddressList.Size = new System.Drawing.Size(258, 573);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // X_REF
+            // 
+            this.X_REF.FormattingEnabled = true;
+            this.X_REF.IntegralHeight = false;
+            this.X_REF.ItemHeight = 18;
+            this.X_REF.Location = new System.Drawing.Point(794, 29);
+            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
+            this.X_REF.Name = "X_REF";
+            this.X_REF.Size = new System.Drawing.Size(256, 522);
+            this.X_REF.TabIndex = 197;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(794, 4);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(257, 26);
+            this.label8.TabIndex = 201;
+            this.label8.Text = "参照箇所";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ImageBGForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1111, 472);
+            this.ClientSize = new System.Drawing.Size(1332, 693);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.AddressPanel);
@@ -518,5 +544,7 @@
         private System.Windows.Forms.Button DecreaseColorTSAToolButton;
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label4;
+        private ListBoxEx X_REF;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -400,9 +400,9 @@ namespace FEBuilderGBA
             MenuDefinitionForm.MakeAllDataLength(recycle, script_pointer , isDirectAddress: true);
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list, uint script_pointer)
+        public static void MakeVarsIDArray(List<UseValsID> list, uint script_pointer)
         {
-            MenuDefinitionForm.MakeTextIDArray(list, script_pointer, isDirectAddress: true);
+            MenuDefinitionForm.MakeVarsIDArray(list, script_pointer, isDirectAddress: true);
         }
 
     }

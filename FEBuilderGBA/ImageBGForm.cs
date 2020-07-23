@@ -26,6 +26,9 @@ namespace FEBuilderGBA
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
 
+            this.X_REF.ItemHeight = (int)(this.X_REF.Font.Height * 2.4);
+            this.X_REF.OwnerDraw(InputFormRef.DrawRefTextList, DrawMode.OwnerDrawFixed, false);
+
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
                 using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
@@ -62,6 +65,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             X_BG_PIC.Image = DrawBG((uint)P0.Value, (uint)P8.Value, (uint)P4.Value);
+            UpdateRef((uint)this.AddressList.SelectedIndex);
         }
 
         public static string GetComment(uint id)
@@ -203,6 +207,22 @@ namespace FEBuilderGBA
                 }
             }
         }
+        void UpdateRef(uint id)
+        {
+            InputFormRef.UpdateRef(this.X_REF, id, UseValsID.TargetTypeEnum.BG);
+        }
 
+        private void X_REF_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            InputFormRef.GotoRef(this.X_REF);
+        }
+
+        private void X_REF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                InputFormRef.GotoRef(this.X_REF);
+            }
+        }
     }
 }

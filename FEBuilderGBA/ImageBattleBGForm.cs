@@ -205,5 +205,22 @@ namespace FEBuilderGBA
             return InputFormRef.GetComment(id);
         }
 
+        void JumpToRef()
+        {
+            MapTerrainBGLookupTableForm.JumpToRef(X_REF.Text);
+        }
+        private void X_REF_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            JumpToRef();
+        }
+
+        private void X_REF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                JumpToRef();
+            }
+        }
+
     }
 }

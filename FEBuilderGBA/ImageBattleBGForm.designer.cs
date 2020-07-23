@@ -61,6 +61,7 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -100,6 +101,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.X_REF);
             this.panel2.Controls.Add(this.Comment);
             this.panel2.Controls.Add(this.label4);
@@ -121,11 +123,13 @@
             this.X_REF.FormattingEnabled = true;
             this.X_REF.IntegralHeight = false;
             this.X_REF.ItemHeight = 18;
-            this.X_REF.Location = new System.Drawing.Point(775, 5);
+            this.X_REF.Location = new System.Drawing.Point(775, 33);
             this.X_REF.Margin = new System.Windows.Forms.Padding(4);
             this.X_REF.Name = "X_REF";
-            this.X_REF.Size = new System.Drawing.Size(256, 459);
+            this.X_REF.Size = new System.Drawing.Size(256, 431);
             this.X_REF.TabIndex = 201;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
             // 
             // Comment
             // 
@@ -464,6 +468,17 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(775, 8);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(257, 26);
+            this.label5.TabIndex = 202;
+            this.label5.Text = "参照箇所";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ImageBattleBGForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -532,5 +547,6 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label4;
         private ListBoxEx X_REF;
+        private System.Windows.Forms.Label label5;
     }
 }

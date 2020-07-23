@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -37,29 +38,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
-            this.X_ICON_REF_ITEM = new FEBuilderGBA.ListBoxEx();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.X_ICON_BIG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.X_ICON_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ItemIconListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.X_ICON_REF_ITEM = new FEBuilderGBA.ListBoxEx();
+            this.X_ICON_BIG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_ICON_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.DragTargetPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -67,9 +67,9 @@
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.DragTargetPanel.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_ICON_BIG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ICON_PIC)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // DragTargetPanel2
@@ -84,6 +84,16 @@
             this.DragTargetPanel2.Name = "DragTargetPanel2";
             this.DragTargetPanel2.Size = new System.Drawing.Size(810, 60);
             this.DragTargetPanel2.TabIndex = 95;
+            // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(491, 20);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 30;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
             // 
             // JumpToSystemPalette
             // 
@@ -178,16 +188,6 @@
             this.panel1.Size = new System.Drawing.Size(1078, 30);
             this.panel1.TabIndex = 94;
             // 
-            // LinkInternt
-            // 
-            this.LinkInternt.AutoSize = true;
-            this.LinkInternt.Location = new System.Drawing.Point(491, 20);
-            this.LinkInternt.Name = "LinkInternt";
-            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
-            this.LinkInternt.TabIndex = 30;
-            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
-            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
-            // 
             // ReadCount
             // 
             this.ReadCount.Location = new System.Drawing.Point(361, 1);
@@ -209,17 +209,6 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 0;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(303, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(71, 25);
-            this.BlockSize.TabIndex = 52;
             // 
             // AddressPanel
             // 
@@ -246,17 +235,6 @@
             this.WriteButton.TabIndex = 53;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(503, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(107, 25);
-            this.SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -311,15 +289,6 @@
             this.DragTargetPanel.Size = new System.Drawing.Size(809, 333);
             this.DragTargetPanel.TabIndex = 92;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(174, 219);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(344, 25);
-            this.Comment.TabIndex = 200;
-            // 
             // label6
             // 
             this.label6.AccessibleDescription = "@COMMENT";
@@ -331,18 +300,6 @@
             this.label6.TabIndex = 199;
             this.label6.Text = "コメント";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // X_ICON_REF_ITEM
-            // 
-            this.X_ICON_REF_ITEM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_ICON_REF_ITEM.FormattingEnabled = true;
-            this.X_ICON_REF_ITEM.IntegralHeight = false;
-            this.X_ICON_REF_ITEM.ItemHeight = 18;
-            this.X_ICON_REF_ITEM.Location = new System.Drawing.Point(552, 9);
-            this.X_ICON_REF_ITEM.Margin = new System.Windows.Forms.Padding(4);
-            this.X_ICON_REF_ITEM.Name = "X_ICON_REF_ITEM";
-            this.X_ICON_REF_ITEM.Size = new System.Drawing.Size(256, 318);
-            this.X_ICON_REF_ITEM.TabIndex = 92;
             // 
             // label5
             // 
@@ -366,17 +323,6 @@
             this.label4.Text = "拡大";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_ICON_BIG_PIC
-            // 
-            this.X_ICON_BIG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_ICON_BIG_PIC.Location = new System.Drawing.Point(176, 48);
-            this.X_ICON_BIG_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_ICON_BIG_PIC.Name = "X_ICON_BIG_PIC";
-            this.X_ICON_BIG_PIC.Size = new System.Drawing.Size(80, 77);
-            this.X_ICON_BIG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.X_ICON_BIG_PIC.TabIndex = 69;
-            this.X_ICON_BIG_PIC.TabStop = false;
-            // 
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -387,16 +333,6 @@
             this.label7.TabIndex = 68;
             this.label7.Text = "原寸大";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // X_ICON_PIC
-            // 
-            this.X_ICON_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_ICON_PIC.Location = new System.Drawing.Point(175, 8);
-            this.X_ICON_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_ICON_PIC.Name = "X_ICON_PIC";
-            this.X_ICON_PIC.Size = new System.Drawing.Size(40, 38);
-            this.X_ICON_PIC.TabIndex = 67;
-            this.X_ICON_PIC.TabStop = false;
             // 
             // panel6
             // 
@@ -444,6 +380,70 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(303, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(71, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(503, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(107, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(174, 219);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(344, 25);
+            this.Comment.TabIndex = 200;
+            // 
+            // X_ICON_REF_ITEM
+            // 
+            this.X_ICON_REF_ITEM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.X_ICON_REF_ITEM.FormattingEnabled = true;
+            this.X_ICON_REF_ITEM.IntegralHeight = false;
+            this.X_ICON_REF_ITEM.ItemHeight = 18;
+            this.X_ICON_REF_ITEM.Location = new System.Drawing.Point(552, 9);
+            this.X_ICON_REF_ITEM.Margin = new System.Windows.Forms.Padding(4);
+            this.X_ICON_REF_ITEM.Name = "X_ICON_REF_ITEM";
+            this.X_ICON_REF_ITEM.Size = new System.Drawing.Size(256, 318);
+            this.X_ICON_REF_ITEM.TabIndex = 92;
+            // 
+            // X_ICON_BIG_PIC
+            // 
+            this.X_ICON_BIG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_ICON_BIG_PIC.Location = new System.Drawing.Point(176, 48);
+            this.X_ICON_BIG_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_ICON_BIG_PIC.Name = "X_ICON_BIG_PIC";
+            this.X_ICON_BIG_PIC.Size = new System.Drawing.Size(80, 77);
+            this.X_ICON_BIG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.X_ICON_BIG_PIC.TabIndex = 69;
+            this.X_ICON_BIG_PIC.TabStop = false;
+            // 
+            // X_ICON_PIC
+            // 
+            this.X_ICON_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_ICON_PIC.Location = new System.Drawing.Point(175, 8);
+            this.X_ICON_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_ICON_PIC.Name = "X_ICON_PIC";
+            this.X_ICON_PIC.Size = new System.Drawing.Size(40, 38);
+            this.X_ICON_PIC.TabIndex = 67;
+            this.X_ICON_PIC.TabStop = false;
+            // 
             // ImageItemIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -469,9 +469,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.DragTargetPanel.ResumeLayout(false);
             this.DragTargetPanel.PerformLayout();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.X_ICON_BIG_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ICON_PIC)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

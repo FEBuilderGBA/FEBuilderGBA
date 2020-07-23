@@ -1667,5 +1667,36 @@ namespace FEBuilderGBA
             }
             return (Program.ROM.u32(addr) == enable_value);
         }
+
+        public static bool IsPreparationBGMByChapter()
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+
+            if (Program.ROM.RomInfo.is_multibyte() == true)
+            {
+                uint addr = 0x340cc;
+                uint enable_value = 0xFBFCF064;
+                uint r = Program.ROM.u32(addr);
+                if (r == enable_value)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                uint addr = 0x341C4;
+                uint enable_value = 0xFA0EF062;
+                uint r = Program.ROM.u32(addr);
+                if (r == enable_value)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

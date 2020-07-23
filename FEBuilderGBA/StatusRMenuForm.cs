@@ -266,13 +266,13 @@ namespace FEBuilderGBA
                 MakeAllDataLengthSub(list, p, pointer, foundDic, pointerIndexes);
             }
         }
-        static void MakeTextIDArraySub(List<UseTextID> list, uint p,uint pointer,Dictionary<uint, bool> foundDic)
+        static void MakeVarsIDArraySub(List<UseValsID> list, uint p,uint pointer,Dictionary<uint, bool> foundDic)
         {
             string name = "RMENU " + U.To0xHexString(Program.ROM.u16(p + 18));
             if (!foundDic.ContainsKey(p))
             {
                 uint id = Program.ROM.u16(p + 18);
-                UseTextID.AppendTextID(list, FELint.Type.RMENU, p + 18, "RMENU", id, p);
+                UseValsID.AppendTextID(list, FELint.Type.RMENU, p + 18, "RMENU", id, p);
             }
             foundDic[p] = true;
 
@@ -280,27 +280,27 @@ namespace FEBuilderGBA
             pp = Program.ROM.p32(p + 0);
             if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
             {
-                MakeTextIDArraySub(list, pp, p + 0, foundDic);
+                MakeVarsIDArraySub(list, pp, p + 0, foundDic);
             }
             pp = Program.ROM.p32(p + 4);
             if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
             {
-                MakeTextIDArraySub(list, pp, p + 4, foundDic);
+                MakeVarsIDArraySub(list, pp, p + 4, foundDic);
             }
             pp = Program.ROM.p32(p + 8);
             if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
             {
-                MakeTextIDArraySub(list, pp, p + 8, foundDic);
+                MakeVarsIDArraySub(list, pp, p + 8, foundDic);
             }
             pp = Program.ROM.p32(p + 12);
             if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
             {
-                MakeTextIDArraySub(list, pp, p + 12, foundDic);
+                MakeVarsIDArraySub(list, pp, p + 12, foundDic);
             }
         }
 
         //全データの取得
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
             uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu1_pointer()
@@ -319,7 +319,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 uint p = Program.ROM.p32(pointer + 0);
-                MakeTextIDArraySub(list, p, pointer, foundDic);
+                MakeVarsIDArraySub(list, p, pointer, foundDic);
             }
         }
     }

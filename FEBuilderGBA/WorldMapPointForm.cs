@@ -198,10 +198,10 @@ namespace FEBuilderGBA
 
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.WMAP_BASE_POINT, InputFormRef, new uint[] { 28 });
+            UseValsID.AppendTextID(list, FELint.Type.WMAP_BASE_POINT, InputFormRef, new uint[] { 28 });
         }
 
         void MakeExplainFunctions()

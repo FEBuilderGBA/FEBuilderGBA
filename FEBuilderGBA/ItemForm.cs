@@ -565,10 +565,10 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.ITEM, InputFormRef, new uint[] { 0 , 2, 4 });
+            UseValsID.AppendTextID(list, FELint.Type.ITEM, InputFormRef, new uint[] { 0 , 2, 4 });
         }
 
         private void JumpToITEMEFFECT_Click(object sender, EventArgs e)

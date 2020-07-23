@@ -166,7 +166,7 @@ namespace FEBuilderGBA
 
         }
         //テキストIDの取得
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             List<uint> tracelist = new List<uint>();
             {
@@ -179,18 +179,18 @@ namespace FEBuilderGBA
                 for (int i = 0; i < ifr.DataCount; i++, p += ifr.BlockSize)
                 {
                     string name = basename + U.To0xHexString((uint)i);
-                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                    EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
                 }
             }
             {
                 uint p = Program.ROM.RomInfo.ending1_event_pointer();
                 string name = R._("エリウッドエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending2_event_pointer();
                 string name = R._("ヘクトルエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
         }
 

@@ -2610,7 +2610,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr,string info, List<uint> tracelist)
+        static void MakeVarsIDEventScan(List<UseValsID> list, uint event_addr,string info, List<uint> tracelist)
         {
             uint lastBranchAddr = 0;
             int unknown_count = 0;
@@ -2654,22 +2654,22 @@ namespace FEBuilderGBA
                             )
                         {//テキスト関係の命令.
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
+                            UseValsID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_MENUEXTENDS)
                         {//分岐メニュー拡張
                             uint v = EventScript.GetArgValue(code, arg);
-                            MenuExtendSplitMenuForm.MakeTextIDArray(list, v);
+                            MenuExtendSplitMenuForm.MakeVarsIDArray(list, v);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
                         {//unitに関連付けられたshort型データ
                             uint v = EventScript.GetArgValue(code, arg);
-                            UnitsShortTextForm.MakeTextIDArray(list, v);
+                            UnitsShortTextForm.MakeVarsIDArray(list, v);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_TALKGROUP)
                         {//会話グループ拡張
                             uint v = EventScript.GetArgValue(code, arg);
-                            EventTalkGroupFE7Form.MakeTextIDArray(list, v);
+                            EventTalkGroupFE7Form.MakeVarsIDArray(list, v);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
                         {//イベント命令へジャンプするものをもっているらしい.
@@ -2681,8 +2681,18 @@ namespace FEBuilderGBA
                                 )
                             {
                                 tracelist.Add(v);
-                                MakeTextIDEventScan(list, v, info,tracelist);
+                                MakeVarsIDEventScan(list, v, info,tracelist);
                             }
+                        }
+                        else if (arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MUSIC)
+                        {//音楽
+                            uint v = EventScript.GetArgValue(code, arg);
+                            UseValsID.AppendSongID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
+                        }
+                        else if (arg.Type == EventScript.ArgType.BG)
+                        {//BG
+                            uint v = EventScript.GetArgValue(code, arg);
+                            UseValsID.AppendBGID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
                         }
                     }
                 }
@@ -2694,7 +2704,7 @@ namespace FEBuilderGBA
                 MakeTextIDEventScanFE8SPEvent(list, event_addr, addr);
             }
         }
-        static void MakeTextIDEventScanFE8SPEvent(List<UseTextID> list, uint event_addr, uint end_addr)
+        static void MakeTextIDEventScanFE8SPEvent(List<UseValsID> list, uint event_addr, uint end_addr)
         {
             byte[][] table = new byte[][] { 
                  //ヴィガルドさんたちの悪巧み
@@ -2723,7 +2733,7 @@ namespace FEBuilderGBA
                     }
 
                     string name = event_addr.ToString();
-                    List<UseTextID> tempList = new List<UseTextID>();
+                    List<UseValsID> tempList = new List<UseValsID>();
                     for (uint i = 0; i < bin.Length; i += 2)
                     {
                         if (bin[i] != 0xFF)
@@ -2737,7 +2747,7 @@ namespace FEBuilderGBA
                             tempList.Clear();
                             break;
                         }
-                        UseTextID.AppendTextID(tempList, FELint.Type.EVENTSCRIPT, addr + i, "", textid, event_addr);
+                        UseValsID.AppendTextID(tempList, FELint.Type.EVENTSCRIPT, addr + i, "", textid, event_addr);
                     }
 
                     if (tempList.Count <= 0)
@@ -4432,13 +4442,13 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得.
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             List<uint> tracelist = new List<uint>();
             uint mapmax = MapSettingForm.GetDataCount();
             for (uint mapid = 0; mapid < mapmax; mapid++)
             {
-                if (InputFormRef.DoEvents(null, "MakeTextIDArray "+ U.ToHexString(mapid))) return;
+                if (InputFormRef.DoEvents(null, "MakeVarsIDArray "+ U.ToHexString(mapid))) return;
 
                 List<U.AddrResult> eventCondList = MakeEventScriptPointer(mapid);
 
@@ -4453,12 +4463,12 @@ namespace FEBuilderGBA
                 {
                     U.AddrResult ar = eventCondList[i];
                     string info = "MAP " + U.ToHexString(mapid) + " " + ar.name;
-                    EventCondForm.MakeTextIDEventScan(list, ar.addr, info , tracelist);
+                    EventCondForm.MakeVarsIDEventScan(list, ar.addr, info , tracelist);
                 }
 
             }
         }
-        public static void MakeTextIDArrayByEventPointer(List<UseTextID> list, uint event_pointer, string name, List<uint> tracelist)
+        public static void MakeVarsIDArrayByEventPointer(List<UseValsID> list, uint event_pointer, string name, List<uint> tracelist)
         {
             event_pointer = U.toOffset(event_pointer);
             if (!U.isSafetyOffset(event_pointer))
@@ -4466,16 +4476,16 @@ namespace FEBuilderGBA
                 return;
             }
             uint event_addr = Program.ROM.p32(event_pointer);
-            MakeTextIDArrayByEventAddress(list,event_addr , name , tracelist);
+            MakeVarsIDArrayByEventAddress(list,event_addr , name , tracelist);
         }
-        public static void MakeTextIDArrayByEventAddress(List<UseTextID> list, uint event_addr, string name, List<uint> tracelist)
+        public static void MakeVarsIDArrayByEventAddress(List<UseValsID> list, uint event_addr, string name, List<uint> tracelist)
         {
             if (!U.isSafetyOffset(event_addr))
             {
                 return;
             }
 
-            EventCondForm.MakeTextIDEventScan(list, event_addr, name, tracelist);
+            EventCondForm.MakeVarsIDEventScan(list, event_addr, name, tracelist);
         }
 
         public static uint GetMapID(List<Control> parentControls)

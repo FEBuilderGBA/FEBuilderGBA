@@ -2574,55 +2574,55 @@ namespace FEBuilderGBA
                 OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
             }
         }
-        public static List<UseTextID> MakeTextIDArray()
+        public static List<UseValsID> MakeVarsIDArray()
         {
-            List<UseTextID> list = new List<UseTextID>();
-            if (InputFormRef.DoEvents(null, "MakeTextIDArray 1")) return list;
+            List<UseValsID> list = new List<UseValsID>();
+            if (InputFormRef.DoEvents(null, "MakeVarsIDArray 1")) return list;
 
-            UnitForm.MakeTextIDArray(list);
-            ClassForm.MakeTextIDArray(list);
-            ItemForm.MakeTextIDArray(list);
-            EventCondForm.MakeTextIDArray(list);
+            UnitForm.MakeVarsIDArray(list);
+            ClassForm.MakeVarsIDArray(list);
+            ItemForm.MakeVarsIDArray(list);
+            EventCondForm.MakeVarsIDArray(list);
 
-            if (InputFormRef.DoEvents(null, "MakeTextIDArray 2")) return list;
-            WorldMapEventPointerForm.MakeTextIDArray(list);
-
-            if (InputFormRef.DoEvents(null, "MakeTextIDArray 3")) return list;
+            if (InputFormRef.DoEvents(null, "MakeVarsIDArray 2")) return list;
             if (Program.ROM.RomInfo.is_multibyte())
             {
             }
             else
             {
-                StatusParamForm.MakeTextIDArray(list);
-                MapTerrainNameEngForm.MakeTextIDArray(list);
+                StatusParamForm.MakeVarsIDArray(list);
+                MapTerrainNameEngForm.MakeVarsIDArray(list);
             }
-            MenuDefinitionForm.MakeTextIDArray(list);
-            StatusRMenuForm.MakeTextIDArray(list);
+            MenuDefinitionForm.MakeVarsIDArray(list);
+            StatusRMenuForm.MakeVarsIDArray(list);
+            SoundBossBGMForm.MakeVarsIDArray(list);
 
-            if (InputFormRef.DoEvents(null, "MakeTextIDArray 4")) return list;
+            if (InputFormRef.DoEvents(null, "MakeVarsIDArray 3")) return list;
             if (Program.ROM.RomInfo.version() == 8)
             {
-                StatusOptionForm.MakeTextIDArray(list);
-                StatusUnitsMenuForm.MakeTextIDArray(list);
-                MapSettingForm.MakeTextIDArray(list);
-                SupportTalkForm.MakeTextIDArray(list);
-                EDForm.MakeTextIDArray(list);
-                EventHaikuForm.MakeTextIDArray(list);
-                EventBattleTalkForm.MakeTextIDArray(list);
-                SoundRoomForm.MakeTextIDArray(list);
-                WorldMapPointForm.MakeTextIDArray(list);
-                TextDicForm.MakeTextIDArray(list);
+                WorldMapEventPointerForm.MakeVarsIDArray(list);
+                StatusOptionForm.MakeVarsIDArray(list);
+                StatusUnitsMenuForm.MakeVarsIDArray(list);
+                MapSettingForm.MakeVarsIDArray(list);
+                SupportTalkForm.MakeVarsIDArray(list);
+                EDForm.MakeVarsIDArray(list);
+                EventHaikuForm.MakeVarsIDArray(list);
+                EventBattleTalkForm.MakeVarsIDArray(list);
+                SoundRoomForm.MakeVarsIDArray(list);
+                WorldMapPointForm.MakeVarsIDArray(list);
+                TextDicForm.MakeVarsIDArray(list);
+                WorldMapBGMForm.MakeVarsIDArray(list);
 
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
-                    OPClassDemoForm.MakeTextIDArray(list);
-                    SkillConfigFE8NSkillForm.MakeTextIDArray(list);
-                    SkillConfigFE8NVer2SkillForm.MakeTextIDArray(list);
+                    OPClassDemoForm.MakeVarsIDArray(list);
+                    SkillConfigFE8NSkillForm.MakeVarsIDArray(list);
+                    SkillConfigFE8NVer2SkillForm.MakeVarsIDArray(list);
                 }
                 else
                 {
-                    OPClassDemoFE8UForm.MakeTextIDArray(list);
-                    SkillConfigSkillSystemForm.MakeTextIDArray(list);
+                    OPClassDemoFE8UForm.MakeVarsIDArray(list);
+                    SkillConfigSkillSystemForm.MakeVarsIDArray(list);
                 }
 
             }
@@ -2630,40 +2630,43 @@ namespace FEBuilderGBA
             {//7
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
-                    MapSettingFE7Form.MakeTextIDArray(list);
-                    OPClassDemoFE7Form.MakeTextIDArray(list);
+                    MapSettingFE7Form.MakeVarsIDArray(list);
+                    OPClassDemoFE7Form.MakeVarsIDArray(list);
                 }
                 else
                 {
-                    MapSettingFE7UForm.MakeTextIDArray(list);
-                    OPClassDemoFE7UForm.MakeTextIDArray(list);
+                    MapSettingFE7UForm.MakeVarsIDArray(list);
+                    OPClassDemoFE7UForm.MakeVarsIDArray(list);
                 }
-                StatusOptionForm.MakeTextIDArray(list);
-                StatusUnitsMenuForm.MakeTextIDArray(list);
-                SupportTalkFE7Form.MakeTextIDArray(list);
-                EDFE7Form.MakeTextIDArray(list);
-                EventHaikuFE7Form.MakeTextIDArray(list);
-                EventBattleTalkFE7Form.MakeTextIDArray(list);
-                SoundRoomForm.MakeTextIDArray(list);
-                EDSensekiCommentForm.MakeTextIDArray(list);
-                EventFinalSerifFE7Form.MakeTextIDArray(list);
-                WorldMapEventPointerFE7Form.MakeTextIDArray(list);
+                StatusOptionForm.MakeVarsIDArray(list);
+                StatusUnitsMenuForm.MakeVarsIDArray(list);
+                SupportTalkFE7Form.MakeVarsIDArray(list);
+                EDFE7Form.MakeVarsIDArray(list);
+                EventHaikuFE7Form.MakeVarsIDArray(list);
+                EventBattleTalkFE7Form.MakeVarsIDArray(list);
+                SoundRoomForm.MakeVarsIDArray(list);
+                EDSensekiCommentForm.MakeVarsIDArray(list);
+                EventFinalSerifFE7Form.MakeVarsIDArray(list);
+                WorldMapEventPointerFE7Form.MakeVarsIDArray(list);
             }
             else
             {//6
-                MapSettingFE6Form.MakeTextIDArray(list);
-//                OPClassDemoFE6Form.MakeTextIDArray(list);
-                SupportTalkFE6Form.MakeTextIDArray(list);
-                EDFE6Form.MakeTextIDArray(list);
-                EventHaikuFE6Form.MakeTextIDArray(list);
-                EventBattleTalkFE6Form.MakeTextIDArray(list);
-                SoundRoomFE6Form.MakeTextIDArray(list);
-                WorldMapEventPointerFE6Form.MakeTextIDArray(list);
+                MapSettingFE6Form.MakeVarsIDArray(list);
+//                OPClassDemoFE6Form.MakeVarsIDArray(list);
+                SupportTalkFE6Form.MakeVarsIDArray(list);
+                EDFE6Form.MakeVarsIDArray(list);
+                EventHaikuFE6Form.MakeVarsIDArray(list);
+                EventBattleTalkFE6Form.MakeVarsIDArray(list);
+                SoundRoomFE6Form.MakeVarsIDArray(list);
+                WorldMapEventPointerFE6Form.MakeVarsIDArray(list);
             }
-            if (InputFormRef.DoEvents(null, "MakeTextIDArray 2")) return list;
-            PatchForm.MakeTextIDArray(list);
+            if (InputFormRef.DoEvents(null, "MakeVarsIDArray 4")) return list;
+            PatchForm.MakeVarsIDArray(list);
 
-            Program.AsmMapFileAsmCache.MakeTextIDArray(list);
+            Program.AsmMapFileAsmCache.MakeVarsIDArray(list);
+
+            if (InputFormRef.DoEvents(null, "MakeVarsIDArray 5")) return list;
+            UseValsID.RemoveDuplicates(list);
 
             return list;
         }

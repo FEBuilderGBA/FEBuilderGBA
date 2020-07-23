@@ -190,16 +190,17 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
+            List<uint> tracelist = new List<uint>();
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 } , 8);
+            UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 }, 8, tracelist);
 
             InputFormRef N1_InputFormRef = N1_Init(null);
             N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4);
+            UseValsID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4, tracelist);
             N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4);
+            UseValsID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4, tracelist);
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {

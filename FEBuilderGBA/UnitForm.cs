@@ -691,10 +691,10 @@ namespace FEBuilderGBA
             return (is_melee && is_range);
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.UNIT, InputFormRef, new uint[] { 0 , 2});
+            UseValsID.AppendTextID(list, FELint.Type.UNIT, InputFormRef, new uint[] { 0 , 2});
         }
 
         public static void MakeCheckError(List<FELint.ErrorSt> errors)

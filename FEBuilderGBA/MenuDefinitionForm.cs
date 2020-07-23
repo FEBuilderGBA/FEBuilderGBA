@@ -268,16 +268,16 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             uint[] pointers = GetPointers();
 
             for (int n = 0; n < pointers.Length; n++)
             {
-                MakeTextIDArray(list, pointers[n], isDirectAddress: false);
+                MakeVarsIDArray(list, pointers[n], isDirectAddress: false);
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list, uint pointer,bool isDirectAddress)
+        public static void MakeVarsIDArray(List<UseValsID> list, uint pointer,bool isDirectAddress)
         {
             if (pointer == 0)
             {
@@ -302,7 +302,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                MenuCommandForm.MakeTextIDArray(list, 8 + p);
+                MenuCommandForm.MakeVarsIDArray(list, 8 + p);
             }
 
         }

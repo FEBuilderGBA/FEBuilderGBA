@@ -47,7 +47,7 @@ namespace FEBuilderGBA
             TranslateLanguageAutoSelect();
 
             this.RefListBox.ItemHeight = (int)(this.RefListBox.Font.Height * 2.4);
-            this.RefListBox.OwnerDraw(DrawRefTextList, DrawMode.OwnerDrawFixed, false);
+            this.RefListBox.OwnerDraw(InputFormRef.DrawRefTextList, DrawMode.OwnerDrawFixed, false);
 
             InitRichEditEx(this.TextArea);
             InitRichEditEx(this.TextListSpTextTextBox);
@@ -3180,7 +3180,7 @@ namespace FEBuilderGBA
         void UpdateRef(uint id)
         {
             AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
-            List<UseTextID> textIDList = map.GetTextIDArray();
+            List<UseValsID> textIDList = map.GetVarsIDArray();
             if (textIDList == null)
             {
                 RefCountTextBox.Text = R._("計測中...");
@@ -3196,8 +3196,9 @@ namespace FEBuilderGBA
             int count = textIDList.Count;
             for (int i = 0; i < count; i++)
             {
-                UseTextID t = textIDList[i];
-                if (t.ID != id)
+                UseValsID t = textIDList[i];
+                if (t.TargetType != UseValsID.TargetTypeEnum.TEXTID
+                    || t.ID != id)
                 {
                     continue;
                 }
@@ -3207,7 +3208,7 @@ namespace FEBuilderGBA
             }
 
             {
-                UseTextID t = Program.UseTextIDCache.MakeUseTextID(id);
+                UseValsID t = Program.UseTextIDCache.MakeUseTextID(id);
                 if (t != null)
                 {
                     refCount++;
@@ -3226,41 +3227,6 @@ namespace FEBuilderGBA
             {
                 this.RefNotFoundPanel.Hide();
             }
-        }
-        private Size DrawRefTextList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
-        {
-            if (index < 0 || index >= lb.Items.Count)
-            {
-                return new Size(listbounds.X, listbounds.Y);
-            }
-            UseTextID t = (UseTextID)lb.Items[index];
-
-            SolidBrush brush = new SolidBrush(lb.ForeColor);
-            SolidBrush keywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
-
-            Font normalFont = lb.Font;
-            Font boldFont = new Font(lb.Font, FontStyle.Bold);
-
-            Rectangle bounds = listbounds;
-
-            int lineHeight = (int)lb.Font.Height;
-            int maxWidth = 0;
-
-            string text = MainSimpleMenuEventErrorForm.TypeToString(t.DataType, t.Addr, t.Tag);
-
-            U.DrawText(text, g, boldFont, keywordBrush, isWithDraw, bounds);
-            bounds.Y += lineHeight;
-
-            text = t.Info;
-            bounds.X = listbounds.X;
-            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
-
-            brush.Dispose();
-            boldFont.Dispose();
-
-            bounds.X = maxWidth;
-            bounds.Y += lineHeight + lineHeight;
-            return new Size(bounds.X, bounds.Y);
         }
 
         //アドレスリストのテキストを遅延描画
@@ -3301,7 +3267,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            UseTextID t = (UseTextID)this.RefListBox.Items[index];
+            UseValsID t = (UseValsID)this.RefListBox.Items[index];
             if (t.DataType == FELint.Type.TEXTID_FOR_USER)
             {
                 ShowRefAddDialog();
@@ -3427,7 +3393,7 @@ namespace FEBuilderGBA
             }
 
             AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
-            List<UseTextID> textIDList = map.GetTextIDArray();
+            List<UseValsID> textIDList = map.GetVarsIDArray();
             if (textIDList == null)
             {
                 R.ShowStopError("現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。");
@@ -3440,7 +3406,7 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                Dictionary<uint, bool> textmap = UseTextID.ConvertMaps(textIDList);
+                Dictionary<uint, bool> textmap = UseValsID.ConvertMaps(textIDList);
 
                 FETextDecode textdecoder = new FETextDecode();
                 uint id = 0;
@@ -3556,11 +3522,6 @@ namespace FEBuilderGBA
 
             TextListSpShowCharPictureBox.Image =
                 ImagePortraitForm.DrawPortraitAuto(portraitID);
-        }
-
-        private void TextListSpShowCharComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
 

@@ -37,6 +37,8 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_REF = new FEBuilderGBA.ListBoxEx();
+            this.label8 = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label7 = new System.Windows.Forms.Label();
             this.L_4_COMBO = new System.Windows.Forms.ComboBox();
@@ -61,10 +63,11 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -78,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -92,7 +96,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1413, 30);
+            this.panel3.Size = new System.Drawing.Size(1489, 30);
             this.panel3.TabIndex = 79;
             // 
             // ReloadListButton
@@ -177,6 +181,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.Comment);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.L_4_COMBO);
@@ -192,8 +197,34 @@
             this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(887, 711);
+            this.panel4.Size = new System.Drawing.Size(963, 711);
             this.panel4.TabIndex = 80;
+            // 
+            // X_REF
+            // 
+            this.X_REF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.X_REF.FormattingEnabled = true;
+            this.X_REF.IntegralHeight = false;
+            this.X_REF.ItemHeight = 18;
+            this.X_REF.Location = new System.Drawing.Point(0, 26);
+            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
+            this.X_REF.Name = "X_REF";
+            this.X_REF.Size = new System.Drawing.Size(257, 683);
+            this.X_REF.TabIndex = 199;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(257, 26);
+            this.label8.TabIndex = 200;
+            this.label8.Text = "参照箇所";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Comment
             // 
@@ -232,7 +263,7 @@
             "00080008=Lowest2 (SFX)"});
             this.L_4_COMBO.Location = new System.Drawing.Point(357, 36);
             this.L_4_COMBO.Name = "L_4_COMBO";
-            this.L_4_COMBO.Size = new System.Drawing.Size(435, 26);
+            this.L_4_COMBO.Size = new System.Drawing.Size(313, 26);
             this.L_4_COMBO.TabIndex = 191;
             // 
             // panel8
@@ -242,7 +273,7 @@
             this.panel8.Controls.Add(this.J_ID_INSTRUMENT_SONGID);
             this.panel8.Location = new System.Drawing.Point(3, 479);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(789, 129);
+            this.panel8.Size = new System.Drawing.Size(667, 129);
             this.panel8.TabIndex = 190;
             // 
             // label6
@@ -273,7 +304,7 @@
             this.panel7.Controls.Add(this.J_ID_SONGTRACK);
             this.panel7.Location = new System.Drawing.Point(3, 339);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(789, 132);
+            this.panel7.Size = new System.Drawing.Size(667, 132);
             this.panel7.TabIndex = 188;
             // 
             // label2
@@ -304,7 +335,7 @@
             this.panel1.Controls.Add(this.J_ID_SOUNDROOM);
             this.panel1.Location = new System.Drawing.Point(3, 205);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 128);
+            this.panel1.Size = new System.Drawing.Size(667, 128);
             this.panel1.TabIndex = 187;
             // 
             // label1
@@ -378,13 +409,13 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(887, 30);
+            this.panel5.Size = new System.Drawing.Size(963, 30);
             this.panel5.TabIndex = 78;
             // 
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(342, 1);
+            this.BlockSize.Location = new System.Drawing.Point(347, 1);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";
@@ -406,12 +437,12 @@
             // SelectAddress
             // 
             this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(562, 1);
+            this.SelectAddress.Location = new System.Drawing.Point(565, 1);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
             this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.Size = new System.Drawing.Size(108, 25);
             this.SelectAddress.TabIndex = 57;
             // 
             // label22
@@ -430,7 +461,7 @@
             this.WriteButton.Location = new System.Drawing.Point(703, -1);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(165, 30);
+            this.WriteButton.Size = new System.Drawing.Size(233, 30);
             this.WriteButton.TabIndex = 55;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -473,6 +504,19 @@
             this.panel6.Size = new System.Drawing.Size(526, 741);
             this.panel6.TabIndex = 147;
             // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(524, 683);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
             // AddressListExpandsButton_32766
             // 
             this.AddressListExpandsButton_32766.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -496,18 +540,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(524, 683);
-            this.AddressList.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -515,15 +547,25 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(526, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(887, 741);
+            this.panel2.Size = new System.Drawing.Size(963, 741);
             this.panel2.TabIndex = 148;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.X_REF);
+            this.panel9.Controls.Add(this.label8);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(704, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(257, 709);
+            this.panel9.TabIndex = 201;
             // 
             // SongTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1413, 771);
+            this.ClientSize = new System.Drawing.Size(1489, 771);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
@@ -549,6 +591,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -592,5 +635,8 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
+        private ListBoxEx X_REF;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel9;
     }
 }

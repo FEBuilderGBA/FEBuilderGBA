@@ -67,7 +67,11 @@ namespace FEBuilderGBA
                     icon = icon - 1;
                     return (icon == terrainid);
                 });
-                string name = terrain_set_list[i];
+                if (i >= terrain_set_list.Count)
+                {
+                    continue;
+                }
+                string name = U.ToHexString(i) + ":" + terrain_set_list[i];
                 InputFormRef.AppendNameString(a, "",name);
 
                 ret.AddRange(a);
@@ -132,5 +136,19 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(FilterComboBox, filterSelected);
             U.SelectedIndexSafety(AddressList, listSelected);
         }
+        public static void JumpToRef(string text)
+        {
+            string[] ptrn = RegexCache.Split(text , @"([0-9a-zA-Z]+) .+? ([0-9a-zA-Z]+):");
+            if (ptrn.Length <= 2)
+            {
+                return;
+            }
+            uint listSelected = U.atoh(ptrn[1]);
+            uint filterSelected = U.atoh(ptrn[2]);
+            MapTerrainFloorLookupTableForm f = (MapTerrainFloorLookupTableForm)
+                InputFormRef.JumpForm<MapTerrainFloorLookupTableForm>();
+            f.JumpTo(filterSelected, listSelected);
+        }
+
     }
 }

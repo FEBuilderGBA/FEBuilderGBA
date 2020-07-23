@@ -835,10 +835,18 @@ namespace FEBuilderGBA
             B9.Value = f.GetANIME1PLIST();
             B10.Value = f.GetANIME2PLIST();
         }
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112,114,136,138 });
+            UseValsID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112,114,136,138 });
+            if (PatchUtil.IsPreparationBGMByChapter())
+            {
+                UseValsID.AppendSongID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 });
+            }
+            else
+            {
+                UseValsID.AppendSongID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 22, 24, 26, 28, 30, 32, 34, 36, 40, 42 });
+            }
         }
 
         private void X_JUMP_SHINAN_Click(object sender, EventArgs e)

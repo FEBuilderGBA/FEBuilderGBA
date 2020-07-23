@@ -123,19 +123,19 @@ namespace FEBuilderGBA
         }
 
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             {
                 InputFormRef InputFormRef = Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 2,4 });
+                UseValsID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 2,4 });
             }
             {
                 InputFormRef InputFormRef = N1_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 0 });
+                UseValsID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 0 });
             }
             {
                 InputFormRef InputFormRef = N2_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 0 });
+                UseValsID.AppendTextID(list, FELint.Type.DIC, InputFormRef, new uint[] { 0 });
             }
         }
         

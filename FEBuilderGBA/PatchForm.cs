@@ -6175,7 +6175,7 @@ namespace FEBuilderGBA
             return U.stringbool(v);
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list)
+        public static void MakeVarsIDArray(List<UseValsID> list)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -6196,19 +6196,19 @@ namespace FEBuilderGBA
 
                 if (type == "ADDR")
                 {
-                    MakeTextIDArrayForAddr(list, patch , i);
+                    MakeVarsIDArrayForAddr(list, patch , i);
                 }
                 else if (type == "STRUCT")
                 {
-                    MakeTextIDArrayForStruct(list, patch, i);
+                    MakeVarsIDArrayForStruct(list, patch, i);
                 }
 //                else if (type == "BIN" || type == "EA")
 //                {
-//                    MakeTextIDArrayForBIN(list, patch, i);
+//                    MakeVarsIDArrayForBIN(list, patch, i);
 //                }
             }
         }
-        public static void MakeTextIDArrayForBIN(List<UseTextID> list, PatchSt patch, int tag)
+        public static void MakeVarsIDArrayForBIN(List<UseValsID> list, PatchSt patch, int tag)
         {
             string usetext = U.at(patch.Param, "USETEXT");
 
@@ -6228,14 +6228,14 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                UseTextID.AppendTextID(list, FELint.Type.PATCH, U.NOT_FOUND, name, textid, (uint)tag);
+                UseValsID.AppendTextID(list, FELint.Type.PATCH, U.NOT_FOUND, name, textid, (uint)tag);
             }
         }
 
-        public static void MakeTextIDArrayForAddr(List<UseTextID> list, PatchSt patch , int tag)
+        public static void MakeVarsIDArrayForAddr(List<UseValsID> list, PatchSt patch , int tag)
         {
             string addressType = U.at(patch.Param, "ADDRESS_TYPE");
-            if (addressType != "TEXT")
+            if (addressType != "TEXT" && addressType != "SONG")
             {
                 return;
             }
@@ -6247,10 +6247,18 @@ namespace FEBuilderGBA
             }
             string name = U.at(patch.Param, "NAME");
 
-            uint textid = Program.ROM.u16(addr);
-            UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+            if (addressType == "TEXT")
+            {
+                uint textid = Program.ROM.u16(addr);
+                UseValsID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+            }
+            else if (addressType == "SONG")
+            {
+                uint songid = Program.ROM.u8(addr);
+                UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
+            }
         }
-        static void MakeTextIDArrayForStruct(List<UseTextID> list, PatchSt patch, int tag)
+        static void MakeVarsIDArrayForStruct(List<UseValsID> list, PatchSt patch, int tag)
         {
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             uint struct_address = 0;
@@ -6337,13 +6345,19 @@ namespace FEBuilderGBA
                     if (type == "EVENT")
                     {//イベント呼び出し
                         string name = patchname + " DATA " + n;
-                        EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                        EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
                     }
                     else if (type == "TEXT")
-                    {//イベント呼び出し
+                    {
                         uint textid = Program.ROM.u16(p);
                         string name = patchname + " DATA " + n;
-                        UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                        UseValsID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                    }
+                    else if (type == "SONG")
+                    {
+                        uint songid = Program.ROM.u16(p);
+                        string name = patchname + " SONG " + n;
+                        UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
                     }
                 }
             }
@@ -6472,7 +6486,7 @@ namespace FEBuilderGBA
                 string type = U.at(sp, 1);
                 string value = pair.Value;
 
-                if (type != "TEXT" && type != "EVENT")
+                if (type != "TEXT" && type != "EVENT" && type != "SONG" && type != "FLAG")
                 {
                     continue;
                 }

@@ -73,7 +73,7 @@ namespace FEBuilderGBA
                 );
         }
 
-        public static void MakeTextIDArray(List<UseTextID> list, uint script_addr)
+        public static void MakeVarsIDArray(List<UseValsID> list, uint script_addr)
         {
             script_addr = U.toOffset(script_addr);
             if (!U.isSafetyOffset(script_addr))
@@ -84,7 +84,7 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInit(script_addr);
 
-            UseTextID.AppendTextID(list, FELint.Type.POINTER_TALKGROUP, InputFormRef, new uint[] { 0 }  );
+            UseValsID.AppendTextID(list, FELint.Type.POINTER_TALKGROUP, InputFormRef, new uint[] { 0 }  );
         }
 
         public void MakeAddressListExpandsCallback(EventHandler eventHandler)

@@ -64,6 +64,11 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
         }
+        public static void MakeVarsIDArray(List<UseValsID> list)
+        {
+            InputFormRef InputFormRef = Init(null);
+            UseValsID.AppendSongID(list, FELint.Type.WORLDMAP_BGM, InputFormRef, new uint[] { 0, 2 });
+        }
 
         private void MapPictureBox_Load(object sender, EventArgs e)
         {

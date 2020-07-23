@@ -111,7 +111,7 @@ namespace FEBuilderGBA
         {
             FEBuilderGBA.Address.AddPointer(recycle, script_pointer, 2 * DATAMAX, "UnitsShortText", FEBuilderGBA.Address.DataTypeEnum.BIN);
         }
-        public static void MakeTextIDArray(List<UseTextID> list, uint script_addr)
+        public static void MakeVarsIDArray(List<UseValsID> list, uint script_addr)
         {
             script_addr = U.toOffset(script_addr);
             if (!U.isSafetyOffset(script_addr))
@@ -122,7 +122,7 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInit(script_addr);
 
-            UseTextID.AppendTextID(list, FELint.Type.POINTER_UNITSSHORTTEXT, InputFormRef, new uint[] { 0 });
+            UseValsID.AppendTextID(list, FELint.Type.POINTER_UNITSSHORTTEXT, InputFormRef, new uint[] { 0 });
         }
 
     }

@@ -311,7 +311,7 @@
     <Compile Include="ToolRunHintMessageForm.Designer.cs">
       <DependentUpon>ToolRunHintMessageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UseTextID.cs" />
+    <Compile Include="UseValsID.cs" />
     <Compile Include="TextToSpeechForm.cs">
       <SubType>Form</SubType>
     </Compile>

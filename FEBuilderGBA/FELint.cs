@@ -83,9 +83,13 @@ namespace FEBuilderGBA
             ,POINTER_MENUEXTENDS
             ,POINTER_UNITSSHORTTEXT
             ,SONGTABLE
+            ,BOSS_BGM
+            ,WORLDMAP_BGM
             ,EVENT_FINAL_SERIF
             ,TEXTID_FOR_SYSTEM  //テキストID システム予約
             ,TEXTID_FOR_USER    //テキストID ユーザ定義
+            ,SE_SYSTEM  //SongID システム予約
+            ,FELINTBUZY_MESSAGE //計測中
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)

@@ -75,6 +75,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.X_REF = new FEBuilderGBA.ListBoxEx();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -342,6 +343,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.X_REF);
             this.panel2.Controls.Add(this.Comment);
             this.panel2.Controls.Add(this.label4);
@@ -674,11 +676,24 @@
             this.X_REF.FormattingEnabled = true;
             this.X_REF.IntegralHeight = false;
             this.X_REF.ItemHeight = 18;
-            this.X_REF.Location = new System.Drawing.Point(694, 4);
+            this.X_REF.Location = new System.Drawing.Point(694, 41);
             this.X_REF.Margin = new System.Windows.Forms.Padding(4);
             this.X_REF.Name = "X_REF";
-            this.X_REF.Size = new System.Drawing.Size(256, 635);
+            this.X_REF.Size = new System.Drawing.Size(256, 603);
             this.X_REF.TabIndex = 199;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(692, 16);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(257, 26);
+            this.label8.TabIndex = 201;
+            this.label8.Text = "参照箇所";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ImageBattleTerrainForm
             // 
@@ -773,5 +788,6 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label4;
         private ListBoxEx X_REF;
+        private System.Windows.Forms.Label label8;
     }
 }

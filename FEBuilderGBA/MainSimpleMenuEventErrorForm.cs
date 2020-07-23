@@ -440,6 +440,10 @@ namespace FEBuilderGBA
             {
                 text = R._("テキストID ユーザ定義");
             }
+            else if (dataType == FELint.Type.SE_SYSTEM)
+            {
+                text = R._("SE");
+            }
             else if (dataType == FELint.Type.POINTER_TALKGROUP)
             {
                 text = R._("会話グループ");
@@ -459,6 +463,18 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.SONGTABLE)
             {
                 text = R._("ソングテーブル");
+            }
+            else if (dataType == FELint.Type.BOSS_BGM)
+            {
+                text = R._("ボスBGM");
+            }
+            else if (dataType == FELint.Type.WORLDMAP_BGM)
+            {
+                text = R._("ワールドマップBGM");
+            }
+            else if (dataType == FELint.Type.FELINTBUZY_MESSAGE)
+            {
+                text = R._("計測中...");
             }
             else
             {
@@ -531,6 +547,20 @@ namespace FEBuilderGBA
         }
         public static void GotoEvent(FELint.Type dataType, uint addr, uint tag,uint mapid)
         {
+            if (mapid == U.NOT_FOUND)
+            {
+                mapid = tag;
+            }
+
+            if (dataType == FELint.Type.FELINTBUZY_MESSAGE)
+            {
+                return;
+            }
+            else if (dataType == FELint.Type.SE_SYSTEM)
+            {
+                return;
+            }
+
             if (dataType == FELint.Type.EVENTSCRIPT
               || dataType == FELint.Type.WORLDMAP_EVENT)
             {//イベント内で発生したエラー
@@ -875,6 +905,16 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.SONGTABLE)
             {
                 InputFormRef.JumpForm<SongTableForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.BOSS_BGM)
+            {
+                InputFormRef.JumpForm<SoundBossBGMForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.WORLDMAP_BGM)
+            {
+                InputFormRef.JumpForm<WorldMapBGMForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.SENSEKI)

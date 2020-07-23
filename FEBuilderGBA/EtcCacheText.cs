@@ -37,15 +37,15 @@ namespace FEBuilderGBA
         }
 
         //マージ専用
-        public void AppendList(List<UseTextID> list)
+        public void AppendList(List<UseValsID> list)
         {
             foreach (var pair in this.EtcTextID)
             {
-                UseTextID.AppendTextID(list, FELint.Type.TEXTID_FOR_USER, U.NOT_FOUND, pair.Value, pair.Key);
+                UseValsID.AppendTextID(list, FELint.Type.TEXTID_FOR_USER, U.NOT_FOUND, pair.Value, pair.Key);
             }
             foreach (var pair in this.TextID)
             {
-                UseTextID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, pair.Value, pair.Key);
+                UseValsID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, pair.Value, pair.Key);
             }
 
             if (Program.ROM.RomInfo.version() == 8)
@@ -54,28 +54,28 @@ namespace FEBuilderGBA
                 {
                     for (uint textid = 0xE00; textid <= 0xEFF; textid++)
                     {
-                        UseTextID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, "", textid);
+                        UseValsID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, "", textid);
                     }
                 }
                 else
                 {
                     for (uint textid = 0xE00; textid <= 0xFFF; textid++)
                     {
-                        UseTextID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, "", textid);
+                        UseValsID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, "", textid);
                     }
                 }
             }
         }
-        public UseTextID MakeUseTextID(uint textid)
+        public UseValsID MakeUseTextID(uint textid)
         {
             string name;
             if (this.EtcTextID.TryGetValue(textid , out name))
             {
-                return new UseTextID(FELint.Type.TEXTID_FOR_USER, U.NOT_FOUND, name, textid);
+                return new UseValsID(FELint.Type.TEXTID_FOR_USER, U.NOT_FOUND, name, textid, UseValsID.TargetTypeEnum.TEXTID);
             }
             if (this.TextID.TryGetValue(textid, out name))
             {
-                return new UseTextID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid);
+                return new UseValsID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid, UseValsID.TargetTypeEnum.TEXTID);
             }
             if (Program.ROM.RomInfo.version() == 8)
             {
@@ -83,14 +83,14 @@ namespace FEBuilderGBA
                 {
                     if (textid >= 0xE00 && textid <= 0xEFF)
                     {
-                        return new UseTextID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid);
+                        return new UseValsID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid, UseValsID.TargetTypeEnum.TEXTID);
                     }
                 }
                 else
                 {
                     if (textid >= 0xE00 && textid <= 0xFFF)
                     {
-                        return new UseTextID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid);
+                        return new UseValsID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid, UseValsID.TargetTypeEnum.TEXTID);
                     }
                 }
             }
@@ -100,7 +100,7 @@ namespace FEBuilderGBA
 
         public string GetName(uint textid)
         {
-            UseTextID p = MakeUseTextID(textid);
+            UseValsID p = MakeUseTextID(textid);
             if (p == null)
             {
                 return "";
