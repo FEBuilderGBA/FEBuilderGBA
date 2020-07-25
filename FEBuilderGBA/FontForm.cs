@@ -1169,7 +1169,8 @@ namespace FEBuilderGBA
                 byte[] fontbyte = ReadFontData(a.Addr, out out_width);
                 Bitmap bitmap = ImageUtil.ByteToImage4(16, 16, fontbyte, 0, bgcolor);
                 ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
-                string font_filename = Path.Combine(basedir,a.Info + ".png");
+                string name = U.escape_filename(a.Info);
+                string font_filename = Path.Combine(basedir,name + ".png");
                 U.BitmapSave(bitmap, font_filename);
                 bitmap.Dispose();
 

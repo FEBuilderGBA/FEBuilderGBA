@@ -5847,10 +5847,29 @@ namespace FEBuilderGBA
 
         public static string mktempdir()
         {
-            string tempdir = Path.GetTempFileName();
-            File.Delete(tempdir);
-            U.mkdir(tempdir);
-            return tempdir;
+            for (int retry = 0; retry < 4; retry++)
+            {
+                string tempdir = Path.GetTempFileName();
+                try
+                {
+                    File.Delete(tempdir);
+                    U.mkdir(tempdir);
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                return tempdir;
+            }
+
+            //最後にもう一回試す.
+            //これは失敗した場合に例外を飛ばすためです。
+            {
+                string tempdir = Path.GetTempFileName();
+                File.Delete(tempdir);
+                U.mkdir(tempdir);
+                return tempdir;
+            }
         }
         public static string mktemp(string ext)
         {
@@ -7225,6 +7244,7 @@ namespace FEBuilderGBA
             }
             return ret;
         }
+
     }
 }
 

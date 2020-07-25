@@ -122,6 +122,19 @@ namespace FEBuilderGBA
             }
             return R._("拠点") + ": " + ret + "=" + edition;
         }
+        static bool IsWarpChapterFE8(uint chapterID)
+        {
+            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
+            if (use_mnc2 == PatchUtil.mnc2_fix_enum.NO)
+            {
+                if (MapLoadFunctionForm.IsEnterChapterAlways(chapterID))
+                {
+                    return true;
+                }
+            }
+
+            return true;
+        }
 
         public static void CHEAT_WARP_FE8(EmulatorMemoryForm form, uint warp_chapter, uint edtion, uint worldmap_node)
         {
@@ -133,11 +146,6 @@ namespace FEBuilderGBA
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
 
-            if (! PatchUtil.IsWarpChapterFE8(warp_chapter))
-            {
-                R.ShowStopError("MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。");
-                return;
-            }
             if (Program.ROM.RomInfo.is_multibyte())
             {//FE8J
                 gSomeWMEventRelatedStruct = 0x03005270;
@@ -175,8 +183,31 @@ namespace FEBuilderGBA
             0x4C, 0xF4, 0x08, 0x08, 
             0x40, 0xD3, 0x00, 0x08  //eventExecuteFucntion
             };
-            //章ID
-            U.write_u16(warpCode, 0x26, warp_chapter);
+
+            PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
+            if (use_mnc2 != PatchUtil.mnc2_fix_enum.NO
+                || MapLoadFunctionForm.IsEnterChapterAlways(warp_chapter))
+            {//MNC2でワープ可能
+                //章ID
+                U.write_u16(warpCode, 0x26, warp_chapter);
+            }
+            else
+            {//MNCHが必要
+                uint worldmap_node_minus1 = 0;
+                if (worldmap_node > 0)
+                {
+                    worldmap_node_minus1 = worldmap_node - 1;
+                }
+
+                byte[] mnch_code = {
+                    0x40, 0xA6, 0x00, 0x00,
+                    0x00, 0x00, (byte)worldmap_node_minus1, 0x00,
+                    0x21, 0x2A, (byte)warp_chapter, 0x00,
+                    0x20, 0x01, 0x00, 0x00,
+                }; 
+                U.write_range(warpCode,0x24,mnch_code);
+            }
+
             //Procsで実行を指定するASMコードの位置
             U.write_u32(warpCode, 0x38, work_address + 1);
 
