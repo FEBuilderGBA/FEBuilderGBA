@@ -571,48 +571,48 @@ namespace FEBuilderGBA
             }
         }
 
-        public static bool isalhpa(char a)
-        {
-            return isalhpa((byte)a);
-        }
         public static bool isalhpa(byte a)
+        {
+            return isalhpa((char)a);
+        }
+        public static bool isalhpa(char a)
         {
             return ((a >= 'a' && a <= 'z')
                 || (a >= 'A' && a <= 'Z')
                 );
         }
-        public static bool isalhpanum(char a)
-        {
-            return isalhpanum((byte)a);
-        }
         public static bool isalhpanum(byte a)
+        {
+            return isalhpanum((char)a);
+        }
+        public static bool isalhpanum(char a)
         {
             return (a >= 'a' && a <= 'z')
                 || (a >= 'A' && a <= 'Z')
                 || (a >= '0' && a <= '9')
                 ;
         }
-        public static bool isnum_f(char a)
-        {
-            return isnum_f((byte)a);
-        }
         public static bool isnum_f(byte a)
+        {
+            return isnum_f((char)a);
+        }
+        public static bool isnum_f(char a)
         {
             return ((a >= '0' && a <= '9') || a == '.');
         }
-        public static bool isnum(char a)
-        {
-            return isnum((byte)a);
-        }
         public static bool isnum(byte a)
+        {
+            return isnum((char)a);
+        }
+        public static bool isnum(char a)
         {
             return (a >= '0' && a <= '9');
         }
-        public static bool ishex(char a)
-        {
-            return ishex((byte)a);
-        }
         public static bool ishex(byte a)
+        {
+            return ishex((char)a);
+        }
+        public static bool ishex(char a)
         {
             return (a >= '0' && a <= '9') || (a >= 'a' && a <= 'f') || (a >= 'A' && a <= 'F');
         }
@@ -4883,6 +4883,11 @@ namespace FEBuilderGBA
             return str;
         }
 
+        static string ToNarrowFontToAlpha(string str)
+        {
+            return MultiByteJPUtil.ConvertNarrowFontToAlpha(str);
+        }
+
 
         static Dictionary<string, string> CleanupFindStringCache = new Dictionary<string, string>();
         public static string CleanupFindString(string str, bool isJP)
@@ -4896,6 +4901,73 @@ namespace FEBuilderGBA
             CleanupFindStringCache[str] = s;
             return s;
         }
+#if DEBUG
+        public static void TEST_CleanupFindStringLow_Narrow()
+        {
+            string r = "[_B][_r][_o]t[_h][_e][_r] [_S]w[_o][_r][_d]";
+            r = CleanupFindString(r, isJP:false);
+            Debug.Assert(r == "brother sword");
+        }
+#endif //DEBUG
+        public static string ConvertNarrowFont(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < str.Length; i++)
+            {
+                char c = str[i];
+                if (U.isalhpa(c))
+                {
+                    sb.Append("[_");
+                    sb.Append(c);
+                    sb.Append("]");
+                }
+                else if (c == '[')
+                {
+                    for (; i < str.Length; i++)
+                    {
+                        sb.Append(str[i]);
+                        if (str[i] == ']')
+                        {
+                            break;
+                        }
+                    }
+                }
+                else if (c == '@')
+                {
+                    sb.Append(c);
+                    sb.Append(str[i++]);
+                    sb.Append(str[i++]);
+                    sb.Append(str[i++]);
+                    sb.Append(str[i]);
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+
+            }
+            return sb.ToString();
+        }
+#if DEBUG
+        public static void TEST_ConvertNarrowFont()
+        {
+            {
+                string r = "foo";
+                r = ConvertNarrowFont(r);
+                Debug.Assert(r == "[_f][_o][_o]");
+            }
+            {
+                string r = "[_f]oo";
+                r = ConvertNarrowFont(r);
+                Debug.Assert(r == "[_f][_o][_o]");
+            }
+            {
+                string r = "あいうえお";
+                r = ConvertNarrowFont(r);
+                Debug.Assert(r == "あいうえお");
+            }
+        }
+#endif //DEBUG
 
         static Dictionary<string, string> CleanupFindKanaInputStringCache = new Dictionary<string, string>();
         public static string KanaToNumber(string str)
@@ -4912,7 +4984,8 @@ namespace FEBuilderGBA
 
         static string CleanupFindStringLow(string str, bool isJP)
         {
-            string a = str.ToLower();
+            string a = MultiByteJPUtil.ConvertNarrowFontToAlpha(str);
+            a = a.ToLower();
             if (isJP)
             {
                 a = RegexCache.Replace(a, @"[\[\]、,，]", "");    ///No Translate
@@ -4923,9 +4996,11 @@ namespace FEBuilderGBA
             {
                 a = RegexCache.Replace(a, @"[\[\]、,，]", " ");   ///No Translate
             }
+
             a = RegexCache.Replace(a, @"\s+", " ");//連続するスペースを1つにする. ///No Translate
             return a;
         }
+
 
         static string KanaToNumberLow(string str)
         {

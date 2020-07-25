@@ -802,6 +802,59 @@ namespace FEBuilderGBA
             }
             return "";
         }
-    
+
+        //Narrow fontの変換
+        static string[] replaceNarrowFontToAlpha = new string[]{
+		         "@0081","a"    ///No Translate
+		        ,"@0082","b"    ///No Translate
+		        ,"@0083","c"    ///No Translate
+		        ,"@0084","d"    ///No Translate
+		        ,"@0085","e"    ///No Translate
+		        ,"@0086","f"    ///No Translate
+		        ,"@0087","g"    ///No Translate
+		        ,"@0088","h"    ///No Translate
+		        ,"@0089","j"    ///No Translate
+		        ,"@008A","k"    ///No Translate
+		        ,"@008B","n"    ///No Translate
+		        ,"@008C","o"    ///No Translate
+		        ,"@008D","p"    ///No Translate
+		        ,"@008E","q"    ///No Translate
+		        ,"@008F","r"    ///No Translate
+		        ,"@0090","s"    ///No Translate
+		        ,"@0095","t"    ///No Translate
+		        ,"@0096","u"    ///No Translate
+		        ,"@0097","v"    ///No Translate
+		        ,"@0098","x"    ///No Translate
+		        ,"@0099","y"    ///No Translate
+		        ,"@009A","z"    ///No Translate
+		        ,"@009B","A"    ///No Translate
+		        ,"@009C","B"    ///No Translate
+		        ,"@009D","C"    ///No Translate
+		        ,"@009E","D"    ///No Translate
+		        ,"@009F","E"    ///No Translate
+		        ,"@00A0","F"    ///No Translate
+		        ,"@00A2","G"    ///No Translate
+		        ,"@00A3","H"    ///No Translate
+		        ,"@00A4","J"    ///No Translate
+		        ,"@00A5","K"    ///No Translate
+		        ,"@00A6","L"    ///No Translate
+		        ,"@00A7","O"    ///No Translate
+		        ,"@00A8","P"    ///No Translate
+		        ,"@00A9","Q"    ///No Translate
+		        ,"@00AC","R"    ///No Translate
+		        ,"@00AD","S"    ///No Translate
+		        ,"@00AE","U"    ///No Translate
+		        ,"@00AF","V"    ///No Translate
+		        ,"@00B0","X"    ///No Translate
+		        ,"@00B1","Y"    ///No Translate
+		        ,"@00B2","Z"    ///No Translate
+		        ,"@00BC"," "    ///No Translate
+	        };
+        public static string ConvertNarrowFontToAlpha(string str)
+        {
+            //arrow fontの解決
+            string ret = RegexCache.Replace(str, @"\[_([a-zA-Z0-9])\]", "$1");   ///No Translate
+            return U.table_replace(ret, replaceNarrowFontToAlpha);
+        }
     }
 }

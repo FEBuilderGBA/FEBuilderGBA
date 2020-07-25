@@ -63,6 +63,11 @@ namespace FEBuilderGBA
         {
             editor.AppendContentMenuBar();
             editor.AppendContentMenu(R._("読み上げ"), new EventHandler(OptionTextToSpeechByRichText));
+            if (PatchUtil.SearchIrregularFontPatch() == PatchUtil.IrregularFont_enum.NarrowFont)
+            {
+                editor.AppendContentMenuBar();
+                editor.AppendContentMenu(R._("NarrowFont変換"), new EventHandler(OptionConvertAnrrowFont));
+            }
             editor.AppendContentMenuBar();
             editor.AppendContentMenu(R._("エスケープコード(&N)"), new EventHandler(SelectEscapeText));
             editor.CutCallback += OnPasteOrUndoOrCutText;
@@ -1882,6 +1887,33 @@ namespace FEBuilderGBA
             }
             RichTextBoxEx editor = (RichTextBoxEx)sender;
             TextToSpeechForm.OptionTextToSpeech(editor.Text2);
+        }
+        void OptionConvertAnrrowFont(Object sender, EventArgs e)
+        {
+            if ((sender is MenuItem))
+            {
+                sender = ((MenuItem)sender).GetContextMenu().SourceControl;
+            }
+            if (!(sender is RichTextBoxEx))
+            {
+                return;
+            }
+            RichTextBoxEx editor = (RichTextBoxEx)sender;
+            string str = editor.Text2;
+            if (str.Length <= 0)
+            {
+                return;
+            }
+            if (str.IndexOf("[_") >= 0)
+            {
+                str = MultiByteJPUtil.ConvertNarrowFontToAlpha(str);
+            }
+            else
+            {
+                str = U.ConvertNarrowFont(str);
+            }
+
+            editor.Text = str;
         }
 
         public const int MAX_SERIF_WIDTH = 214;

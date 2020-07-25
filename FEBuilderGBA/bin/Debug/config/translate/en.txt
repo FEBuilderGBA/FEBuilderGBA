@@ -1628,7 +1628,7 @@ Load Script
 Read the event script in the Event Assembler and adapt it to the current ROM.
 
 :スクリプトのアンインストール
-Uninstall the script.
+Uninstall Script
 
 :Event Assemblerで追加
 Insert Events Via Event Assembler
@@ -10663,6 +10663,9 @@ Title
 :読み上げ
 Text to Speech
 
+:NarrowFont変換
+NarrowFont conversion
+
 :エスケープコード(&N)
 Script Notation(&N)
 
@@ -12183,6 +12186,9 @@ Mediafire Download button not found.\r\nThe specification seems to have changed.
 
 :Google DriveのIDが見つかりません
 Google Drive ID not found.
+
+:あいうえお
+AIUEO.
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
