@@ -1588,6 +1588,12 @@ Unable to execute process.\r\nfilename: {0}\r\n{1}
 :変更をユーザーが取り消しました
 User canceled changes
 
+:アンインストールするeventファイルを選択してください
+Select the event file to uninstall.
+
+:更新されたプログラムを再コンパイル
+Recompile the updated program.
+
 :0=シンボルを利用しない
 0=Do not use symbols
 
@@ -1621,8 +1627,8 @@ Load Script
 :Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。
 Read the event script in the Event Assembler and adapt it to the current ROM.
 
-:更新されたプログラムを再コンパイル
-Recompile the updated program.
+:スクリプトのアンインストール
+Uninstall the script.
 
 :Event Assemblerで追加
 Insert Events Via Event Assembler
@@ -3220,6 +3226,9 @@ Do you want to install a patch that fixes a bug that causes the camera to move o
 :存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？
 Do you want to install a patch that fixes a bug that freezes when you specify a non-existing unit? 
 
+:ローカリゼーションパッチをインストールしますか？
+Do you want to install the localization patch? 
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 
@@ -3354,6 +3363,9 @@ Battle Animation Palette
 
 :画像取出し
 Export
+
+:参照箇所
+Reference place
 
 :戦闘背景
 Battle Backgrounds
@@ -5113,6 +5125,9 @@ There is hard coding for this data.\r\nClick the label to see the associated pat
 :壊れる壁と古木のHPを設定します。\r\n最大で120まで設定できます。\r\n
 Set broken wall and Srag HP.\r\nUp to 120 can be set.\r\n
 
+:直近にインストールしたスクリプトを消す場合は、Undoを選択してください。\r\n過去にインストールしたスクリプトを消す場合は、アンインストールを選択してください。\r\n
+If you want to erase the most recently installed script, select Undo.\r\nIf you want to erase the script installed in the past, select uninstall.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6442,6 +6457,9 @@ Branch extension.
 :ユニットのセリフ
 Unit dialogue.
 
+:計測中...
+Measuring.
+
 :このエラーは非表示になっています。理由:「{0}」
 This error is hidden.Reason: "{0}".
 
@@ -6459,9 +6477,6 @@ Hide This Error?
 
 :エラーを非表示にする
 Hide Errors
-
-:計測中...
-Measuring.
 
 :{0}個のエラーがあります
 There are {0} errors.
@@ -10866,9 +10881,6 @@ zh-CN=Chinese
 
 :google translateに投げて、翻訳しますw\r\n負荷をかけすぎないように、忖度してください。
 Be careful not to overload google translate; please be patient.
-
-:参照箇所
-Reference place
 
 :参照情報の追加
 Add reference information.

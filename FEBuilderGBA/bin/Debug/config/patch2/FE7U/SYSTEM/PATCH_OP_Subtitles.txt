@@ -25,7 +25,7 @@ HEIGHT=16
 PALETTE=1
 
 PALETTE_POINTER=0xBCCE8
-KEEP_PALTTE=1
+KEEPPALETTE=1
 
 INFO=OP字幕 "Once, dragons and men coexisted."\r\n背景の色で読みずらいのですが、パレット0を黒に変更すると、よく見えると思います。
 INFO.en=OP Subtitle "Once, dragons and men coexisted.".\r\nIt's hard to read with the background color, but I think it will look better if you change palette 0 to black.

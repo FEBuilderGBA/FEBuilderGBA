@@ -690,7 +690,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    FELint.CheckLZ77ImageErrors(obj_offset, errors, FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr, 256, 120);
+                    FELint.CheckLZ77ImageErrors(obj_offset, errors, FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr, 256, 16);
                 }
 
                 if (obj2_plist > 0)
@@ -703,7 +703,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        FELint.CheckLZ77ImageErrors(obj2_offset, errors, FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr, 256, 120);
+                        FELint.CheckLZ77ImageErrors(obj2_offset, errors, FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr, 256, 16);
                     }
                 }
             }

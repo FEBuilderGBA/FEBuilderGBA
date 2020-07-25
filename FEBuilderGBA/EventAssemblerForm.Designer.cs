@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AutoReCompile = new System.Windows.Forms.CheckBox();
             this.DebugSymbolComboBox = new System.Windows.Forms.ComboBox();
             this.DebugSymbol = new System.Windows.Forms.Label();
+            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.SRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.FREEARE_PANEL = new System.Windows.Forms.Panel();
@@ -40,8 +42,7 @@
             this.UndoButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.J_2_TEXT = new System.Windows.Forms.Label();
-            this.AutoReCompile = new System.Windows.Forms.CheckBox();
-            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
+            this.UninstallButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.FREEARE_PANEL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FREEAREA)).BeginInit();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.UninstallButton);
             this.panel1.Controls.Add(this.AutoReCompile);
             this.panel1.Controls.Add(this.DebugSymbolComboBox);
             this.panel1.Controls.Add(this.DebugSymbol);
@@ -64,6 +66,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 398);
             this.panel1.TabIndex = 0;
+            // 
+            // AutoReCompile
+            // 
+            this.AutoReCompile.AutoSize = true;
+            this.AutoReCompile.Checked = true;
+            this.AutoReCompile.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoReCompile.Location = new System.Drawing.Point(13, 357);
+            this.AutoReCompile.Name = "AutoReCompile";
+            this.AutoReCompile.Size = new System.Drawing.Size(280, 22);
+            this.AutoReCompile.TabIndex = 108;
+            this.AutoReCompile.Text = "更新されたプログラムを再コンパイル";
+            this.AutoReCompile.UseVisualStyleBackColor = true;
             // 
             // DebugSymbolComboBox
             // 
@@ -90,6 +104,16 @@
             this.DebugSymbol.TabIndex = 106;
             this.DebugSymbol.Text = "デバッグ用のシンボル ";
             this.DebugSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SRCFilename
+            // 
+            this.SRCFilename.ErrorMessage = "";
+            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
+            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SRCFilename.Name = "SRCFilename";
+            this.SRCFilename.Placeholder = "";
+            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
+            this.SRCFilename.TabIndex = 93;
             // 
             // SRCSelectButton
             // 
@@ -165,6 +189,7 @@
             // 
             // UndoButton
             // 
+            this.UndoButton.AccessibleDescription = "@UNINSTALL_EA";
             this.UndoButton.Location = new System.Drawing.Point(664, 186);
             this.UndoButton.Name = "UndoButton";
             this.UndoButton.Size = new System.Drawing.Size(215, 51);
@@ -196,27 +221,16 @@
             this.J_2_TEXT.Text = "Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。";
             this.J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // AutoReCompile
+            // UninstallButton
             // 
-            this.AutoReCompile.AutoSize = true;
-            this.AutoReCompile.Checked = true;
-            this.AutoReCompile.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AutoReCompile.Location = new System.Drawing.Point(423, 259);
-            this.AutoReCompile.Name = "AutoReCompile";
-            this.AutoReCompile.Size = new System.Drawing.Size(280, 22);
-            this.AutoReCompile.TabIndex = 108;
-            this.AutoReCompile.Text = "更新されたプログラムを再コンパイル";
-            this.AutoReCompile.UseVisualStyleBackColor = true;
-            // 
-            // SRCFilename
-            // 
-            this.SRCFilename.ErrorMessage = "";
-            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
-            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SRCFilename.Name = "SRCFilename";
-            this.SRCFilename.Placeholder = "";
-            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
-            this.SRCFilename.TabIndex = 93;
+            this.UninstallButton.AccessibleDescription = "@UNINSTALL_EA";
+            this.UninstallButton.Location = new System.Drawing.Point(486, 328);
+            this.UninstallButton.Name = "UninstallButton";
+            this.UninstallButton.Size = new System.Drawing.Size(393, 51);
+            this.UninstallButton.TabIndex = 109;
+            this.UninstallButton.Text = "スクリプトのアンインストール";
+            this.UninstallButton.UseVisualStyleBackColor = true;
+            this.UninstallButton.Click += new System.EventHandler(this.UninstallButton_Click);
             // 
             // EventAssemblerForm
             // 
@@ -253,5 +267,6 @@
         private System.Windows.Forms.ComboBox DebugSymbolComboBox;
         private System.Windows.Forms.Label DebugSymbol;
         private System.Windows.Forms.CheckBox AutoReCompile;
+        private System.Windows.Forms.Button UninstallButton;
     }
 }

@@ -7169,7 +7169,7 @@ namespace FEBuilderGBA
             return r;
         }
 
-        bool UnInstallPatch(PatchSt patch, bool isAutomatic)
+        public bool UnInstallPatch(PatchSt patch, bool isAutomatic)
         {
             string type = U.at(patch.Param, "TYPE");
             if (type != "BIN" && type != "EA")
@@ -8607,6 +8607,16 @@ namespace FEBuilderGBA
 
             }
         }
-
+        public static PatchSt MakeInstantEAToPatch(string filename)
+        {
+            PatchSt patch = new PatchSt();
+            patch.Name = "EA UNINSTALL";
+            patch.PatchFileName = Path.Combine(Path.GetDirectoryName(filename),"PATCH_UninstallInstatant.txt");
+            patch.Param = new Dictionary<string, string>();
+            patch.Param["NAME"] = "EA UNINSTALL";
+            patch.Param["TYPE"] = "EA";
+            patch.Param["EA"] = filename;
+            return patch;
+        }
     }
 }

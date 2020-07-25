@@ -109,7 +109,7 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
 
             UndoButton.Show();
-            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
+//            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
         }
 
         private void UndoButton_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace FEBuilderGBA
             UndoButton.Hide();
 
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
-            U.ForceUpdate(FREEAREA,InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
+            //U.ForceUpdate(FREEAREA,InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
         }
 
         private void EventAssemblerForm_Load(object sender, EventArgs e)
@@ -350,6 +350,33 @@ namespace FEBuilderGBA
             }
 
             return "";
+        }
+
+        private void UninstallButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("アンインストールするeventファイルを選択してください");
+            string filter = R._("event file|*.event;*.txt|event|*.event|text|*.txt|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+            Program.LastSelectedFilename.Save(this, "", open);
+            string EAFilename = open.FileNames[0];
+
+            PatchForm f = (PatchForm)InputFormRef.JumpFormLow<PatchForm>();
+            f.Show();
+            PatchForm.PatchSt patchSt = PatchForm.MakeInstantEAToPatch(EAFilename);
+            f.UnInstallPatch(patchSt, true);
         }
 
     }

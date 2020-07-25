@@ -25,7 +25,7 @@ HEIGHT=16
 PALETTE=1
 
 PALETTE_POINTER=0xBD704
-KEEP_PALTTE=1
+KEEPPALETTE=1
 
 INFO=OP字幕 "かつて「人」と「竜」が共存する大陸があった。"\r\n背景の色で読みずらいのですが、パレット0を黒に変更すると、よく見えると思います。
 INFO.en=OP subtitle "かつて「人」と「竜」が共存する大陸があった。".\r\nIt's hard to read with the background color, but I think it will look better if you change palette 0 to black.

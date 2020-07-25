@@ -638,6 +638,15 @@ namespace FEBuilderGBA
             return SearchPatchBool(table);
         }
 
+        public static bool SearchStatusToLocalization_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="StatusToLocalization",	ver = "FE8J", addr = 0x286BC,data = new byte[]{0x00, 0x20}},
+            };
+            return SearchPatchBool(table);
+        }
+
+
         //存在ユニットを選択したときフリーズしないように
         public static bool SearchCAMERA_Event_NotExistsUnit_FixPatch()
         {

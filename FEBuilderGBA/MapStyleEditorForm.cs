@@ -753,7 +753,7 @@ namespace FEBuilderGBA
 
             if (image.Length > 0x8000)
             {
-                R.ShowStopError("マップが広すぎて、0x8000バイトに収まりませんでした。\r\n入力されたサイズ:  {0}\r\n\r\nもっと小さいマップにするか、圧縮率を上げるために共通のパーツを増やしてください。", image.Length);
+                R.ShowStopError("マップが広すぎて、0x8000バイトに収まりませんでした。\r\n入力されたサイズ:  {0}\r\n\r\nもっと小さいマップにするか、圧縮率を上げるために共通のパーツを増やしてください。", U.To0xHexString(image.Length) );
                 return;
             }
 

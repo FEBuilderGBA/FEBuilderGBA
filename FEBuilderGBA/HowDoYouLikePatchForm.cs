@@ -49,6 +49,7 @@ namespace FEBuilderGBA
             , UnitGetStateEvent_0x33_Fix
             , UnitUpdateStateEvent_0x34_Fix
             , WakuEvent_0x3B_Fix
+            , StatusToLocalization
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -237,6 +238,27 @@ namespace FEBuilderGBA
                 patchName1 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
                 patchName2 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
                 patchShowName = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
+            }
+            else if (type == TYPE.StatusToLocalization)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+                if (Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchStatusToLocalization_FixPatch();
+                };
+                reason = R._("ローカリゼーションパッチをインストールしますか？");
+                patchName1 = "StatusToLocalization";///No Translate
+                patchName2 = "StatusToLocalization";///No Translate
+                patchShowName = "StatusToLocalization";///No Translate
                 patchCombo = "Fix";///No Translate
             }
 

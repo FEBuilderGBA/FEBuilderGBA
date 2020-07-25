@@ -73,6 +73,10 @@ namespace FEBuilderGBA
         {
             HowDoYouLikePatch2Form.CheckAndShowPopupDialog(HowDoYouLikePatch2Form.TYPE.DrawFont_By_Translate);
         }
+        void ApplyStatusToLocalizationPatch()
+        {
+            HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.StatusToLocalization);
+        }
 
         public void CheckTextImportPatch(bool checkDrawFontPatch)
         {
@@ -81,6 +85,7 @@ namespace FEBuilderGBA
             {
                 ApplyDrawFontPatch();
             }
+            ApplyStatusToLocalizationPatch();
         }
 
         //パッチの適用
