@@ -1,0 +1,20 @@
+NAME=ModularMinimugBoxV2: Vesly Style(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xA0198C=0x4D 0x4D 0x42 0x32 0x30 0x31 0x38 0x00
+EA=Installers/MMBInstallerVesly.event
+
+AUTHOR=ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)
+INFO=左上のパネルを拡張して、さまざなま情報を出力できるようにします。\r\nこれは、ModularMinimugBoxV2: Veslyのスタイルです。\r\nhttps://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\nなお、インストールには、EAの追加モジュールとしてLynが必要です。\r\nhttps://github.com/StanHash/lyn/
+
+EDIT_PATCH:1=../ModularMinimugBox/PATCH_MMB SubData_MMBBuildRoutines.txt
+EDIT_PATCH:2=../ModularMinimugBox/PATCH_MMB SubData_MMBDynamicRoutines.txt
+EDIT_PATCH:3=../ModularMinimugBox/PATCH_MMB SubData_MMBLabelTable.txt
+EDIT_PATCH:4=../ModularMinimugBox/PATCH_MMB SubData_MMBTilemap.txt
+EDIT_PATCH:5=../ModularMinimugBox/PATCH_MMB SubData_NumberTable.txt
+INFO.en=Expand the upper left panel so that information can be output throughout the time.\r\nThis is the style of ModularMinimugBoxV2: Vesly.\r\nhttps://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\nFor installation, Lyn is required as an additional module of EA.\r\nhttps://github.com/StanHash/lyn/
+
+INFO.zh=展开左上方面板，以便在整个时间内输出信息。\r\n这是ModularMinimugBoxV2的样式：Vesly。\r\nhttps://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\n对于安装，Lyn需要作为EA的附加模块。\r\nhttps://github.com/StanHash/lyn/
+

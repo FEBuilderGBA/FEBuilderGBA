@@ -2695,6 +2695,11 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
             length -= (uint)need.Length;
+            if (data.Length < length)
+            {
+                length = (uint)data.Length;
+            }
+
             byte needfirst = need[0];
             bool isSkipfirst = isSkip[0];
 

@@ -1,0 +1,803 @@
+
+#ifndef MODULAR_MMB
+	#define MODULAR_MMB
+
+	MESSAGE MMB code begins at CURRENTOFFSET
+
+/*
+
+Comment out (by typing // before a line's #define) or delete module options you don't want.
+
+After each set of module options are definitions that you can use to adjust the module.
+
+*/
+
+// Some helper definitions:
+
+#define TextWhite  0
+#define TextGray   1
+#define TextBlue   2
+#define TextYellow 3
+#define TextGreen  4
+#define TextBlack  5
+
+// Tilemap modules
+
+	#define MMBStandardTilemap
+		/*
+		 * This draws the background tilemap of
+		 * the minimug box.
+		 */
+
+// Tilemap options
+
+	// In 8x8 pixel tiles
+	#define MMBHeight 8
+	#define MMBWidth 16
+	#define MMBTilemapPaletteIndex 3
+
+	ALIGN 4
+
+	MMBTilemap:
+	BYTE (MMBWidth - 1) (MMBHeight - 1) // Don't touch these
+
+	// Edit this as you see fit
+	// The tilemap is 'upside-down' with the bottom row being first
+	// and the top row being last
+
+	SHORT $1A $1B $1C $1C $1C $1C $1C $1C $1C $1C $1C $1C $1C $1D $1E $1F // Rows 8 (Bottom)
+	SHORT $0B $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $52 $54 $56 $57 // Rows 7
+	SHORT $0B $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $52 $54 $56 $57 // Rows 6
+	SHORT $0B $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $52 $54 $56 $57 // Rows 5
+	SHORT $0B $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $52 $54 $55 // Rows 4
+	SHORT $0B $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $52 $53 // Rows 3
+	SHORT $17 $18 $19 $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $0E $50 $51 // Rows 2
+	SHORT $10 $11 $12 $13 $03 $03 $03 $03 $03 $03 $03 $03 $03 $03 $04 $05 // Rows 1 (Top)
+
+	ALIGN 4
+
+// Unit name modules
+
+	#define MMBName
+		/*
+		 * Draws the unit's name to [MMBNameX, MMBNameY]
+		 * using MMBNameColor.
+		 */
+
+	//#define MMBNameCentered
+		/*
+		 * Draws the unit's name to [MMBNameX, MMBNameY]
+		 * using MMBNameColor, centering it within the
+		 * number of tiles specified by MMBNameWidth.
+		 */
+
+	//#define MMBNameAffinityShifted
+		/*
+		 * Draws the unit's name to [MMBNameX, MMBNameY]
+		 * using MMBNameColor. If the unit has an affinity,
+		 * the name is shifted 2 tiles to the right.
+		 */
+
+// Unit name options
+
+	// Coordinates and widths are in 8x8 pixel tiles
+	#define MMBNameWidth 7
+	#define MMBNameColor TextBlack
+	#define MMBNameX 5
+	#define MMBNameY 3
+
+// Minimug modules
+
+	//#define MMBMinimug
+		/*
+		 * Draws the unit's minimug to [MMBMinimugX, MMBMinimugY].
+		 */
+
+	#define MMBMinimugEnemyFlip
+		/*
+		 * Draws the unit's minimug to [MMBMinimugX, MMBMinimugY].
+		 * Enemies have thier minimugs horizontally flipped.
+		 */
+
+// Minimug options
+
+	// Coordinates are in 8x8 pixel tiles
+	#define MMBMinimugX 1
+	#define MMBMinimugY 1
+	#define MMBMinimugTileIndexStart 0xF0
+	#define MMBMinimugPaletteIndex 4
+
+// Inventory modules
+
+	// Only one of these modules may be selected
+	// at a time. Incompatible with the individual
+	// item modules.
+
+	//#define MMBFullInventory
+		/*
+		 * Draws the unit's full inventory starting at
+		 * [MMBInventoryX, MMBInventoryY] and drawing
+		 * icons past the first to [MMBInventoryX+(16*n), MMBInventoryY].
+		 */
+
+	//#define MMBEquippedWeapon
+		/*
+		 * Draws a unit's equipped weapon, if they have one,
+		 * to [MMBInventoryX, MMBInventoryY].
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaff
+		/*
+		 * Draws a unit's equipped weapon, if they have one,
+		 * to [MMBInventoryX, MMBInventoryY]. If the unit does
+		 * not have a weapon equipped, it tries to display
+		 * first first usable staff in the unit's inventory.
+		 */
+
+	//#define MMBEquippedWeaponIfPlayerOrInventory
+		/*
+		 * If the unit is a player unit, functions as MMBEquippedWeapon.
+		 * If they are not a player unit, functions as MMBFullInventory.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+		/*
+		 * If the unit is a player unit, functions as MMBEquippedWeaponOrFirstStaff.
+		 * If they are not a player unit, functions as MMBFullInventory.
+		 */
+
+// Individual item modules
+
+	// Any combination of these modules may be selected.
+	// Incompatible with the inventory modules
+
+	#define MMBItem1
+	#define MMBItem2
+	#define MMBItem3
+	//#define MMBItem4
+	//#define MMBItem5
+		/*
+		 * Draws the item in the specified item slot to
+		 * [MMBItem#X, MMBItem#Y] if there is an item in
+		 * that slot.
+		 */
+
+	//#define MMBItem1Alternate
+	//#define MMBItem2Alternate
+	//#define MMBItem3Alternate
+	//#define MMBItem4Alternate
+	//#define MMBItem5Alternate
+		/*
+		 * Draws an icon to [MMBInventoryAlternateX, MMBInventoryAlternateY]
+		 * cycling between all selected items. Each is shown for 64 frames.
+		 */
+
+// Item name modules
+
+	// Only one of these modules may be selected
+	// at a time. Each one uses the alt text.
+
+	//#define MMBEquippedWeaponName
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffName
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor. If the unit does not have a
+		 * weapon equipped, tries to draw the first
+		 * equippable staff's name.
+		 */
+
+	//#define MMBEquippedWeaponNameCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor. The text is centered within the
+		 * space specified by MMBAltTextWidth.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffNameCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor. If the unit does not have a
+		 * weapon equipped, tries to draw the first
+		 * equippable staff's name. The text is centered
+		 * within the space specified by MMBAltTextWidth.
+		 */
+
+	//#define MMBEquippedWeaponNameIfPlayer
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor if the unit is a player unit.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffNameIfPlayer
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor if the unit is a player unit.
+		 * If the unit does not have a weapon equipped,
+		 * tries to draw the first equippable staff's name.
+		 */
+
+	//#define MMBEquippedWeaponNameIfPlayerCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor if the unit is a player unit.
+		 * The text is centered within the
+		 * space specified by MMBAltTextWidth.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffNameIfPlayerCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY] using
+		 * MMBTextAltColor if the unit is a player unit.
+		 * If the unit does not have a weapon equipped,
+		 * tries to draw the first equippable staff's name.
+		 * The text is centered within the
+		 * space specified by MMBAltTextWidth.
+		 */
+
+	//#define MMBEquippedWeaponNameWithWarning
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY].
+		 * The text is drawn using MMBTextWarningColor
+		 * if its durability is at or below
+		 * MMBItemDurabilityThreshold percent of its max
+		 * durability, otherwise it is drawn using
+		 * MMBTextAltColor.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffNameWithWarning
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY].
+		 * If the unit does not have a weapon equipped,
+		 * tries to draw the first equippable staff's name.
+		 * The text is drawn using MMBTextWarningColor
+		 * if its durability is at or below
+		 * MMBItemDurabilityThreshold percent of its max
+		 * durability, otherwise it is drawn using
+		 * MMBTextAltColor.
+		 */
+
+	//#define MMBEquippedWeaponNameWithWarningCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY].
+		 * The text is drawn using MMBTextWarningColor
+		 * if its durability is at or below
+		 * MMBItemDurabilityThreshold percent of its max
+		 * durability, otherwise it is drawn using
+		 * MMBTextAltColor. The text is centered within the
+		 * space specified by MMBAltTextWidth.
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+		/*
+		 * Draws the equipped weapon's name, if any,
+		 * to [MMBInventoryTextX, MMBInventoryTextY].
+		 * If the unit does not have a weapon equipped,
+		 * tries to draw the first equippable staff's name.
+		 * The text is drawn using MMBTextWarningColor
+		 * if its durability is at or below
+		 * MMBItemDurabilityThreshold percent of its max
+		 * durability, otherwise it is drawn using
+		 * MMBTextAltColor. The text is centered within the
+		 * space specified by MMBAltTextWidth.
+		 */
+
+// Inventory combination modules
+
+	// Only one of these modules may be selected
+	// at a time. Each one uses the alt text.
+
+	//#define MMBEquippedWeaponAndName
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeapon
+		 * #define MMBEquippedWeaponName
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndName
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaff
+		 * #define MMBEquippedWeaponOrFirstStaffName
+		 */
+
+	//#define MMBEquippedWeaponAndNameCentered
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeapon
+		 * #define MMBEquippedWeaponNameCentered
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndNameCentered
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaff
+		 * #define MMBEquippedWeaponOrFirstStaffNameCentered
+		 */
+
+	//#define MMBEquippedWeaponAndNameIfPlayerOrInventory
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponNameIfPlayer
+		 * #define MMBEquippedWeaponIfPlayerOrInventory
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndNameIfPlayerOrInventory
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaffNameIfPlayer
+		 * #define MMBEquippedWeaponIfPlayerOrInventory
+		 */
+
+	//#define MMBEquippedWeaponAndNameIfPlayerCenteredOrInventory
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponNameIfPlayerCentered
+		 * #define MMBEquippedWeaponIfPlayerOrInventory
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndNameIfPlayerCenteredOrInventory
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaffNameIfPlayerCentered
+		 * #define MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+		 */
+
+	//#define MMBEquippedWeaponAndNameWithWarning
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeapon
+		 * #define MMBEquippedWeaponNameWithWarning
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndNameWithWarning
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaff
+		 * #define MMBEquippedWeaponOrFirstStaffNameWithWarning
+		 */
+
+	//#define MMBEquippedWeaponAndNameWithWarningCentered
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeapon
+		 * #define MMBEquippedWeaponNameWithWarningCentered
+		 */
+
+	//#define MMBEquippedWeaponOrFirstStaffAndNameWithWarningCentered
+		/*
+		 * Shorthand for:
+		 * #define MMBEquippedWeaponOrFirstStaff
+		 * #define MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+		 */
+
+// Inventory options
+
+	#define MMBInventoryObjectPaletteIndex 4
+
+	#define MMBInventoryTileIndex 0x300
+
+	// Coordinates are in pixels
+	#define MMBInventoryX 40
+	#define MMBInventoryY 8
+
+	#define MMBItem1X 40
+	#define MMBItem1Y 8
+
+	#define MMBItem2X 56
+	#define MMBItem2Y 8
+
+	#define MMBItem3X 72
+	#define MMBItem3Y 8
+
+	#define MMBItem4X 88
+	#define MMBItem4Y 8
+
+	#define MMBItem5X 104
+	#define MMBItem5Y 8
+
+	#define MMBInventoryAlternateX 40
+	#define MMBInventoryAlternateY 8
+
+	// Used for item text
+	// Coordinates are in 8x8 pixel tiles
+	#define MMBInventoryTextX 7
+	#define MMBInventoryTextY 1
+	#define MMBAltTextWidth 7
+	#define MMBTextAltColor TextBlack
+
+	#define MMBTextWarningColor TextYellow
+
+	#define MMBItemDurabilityThreshold 50 // percent of max durability
+
+// Combination modules
+
+	//#define MMBHPStatus
+		/*
+		 * Alternates between drawing HP. ## / ##
+		 * and the unit's current status, if they have one,
+		 * to [MMBHPStatusX, MMBHPStatusY] every 64 frames.
+		 */
+
+	//#define MMBDEFRES
+		/*
+		 * Alternates between drawing DEF ## and
+		 * RES ## to [MMBDEFRESX, MMBDEFRESY] every 64
+		 * frames.
+		 */
+
+	//#define MMBAVODOD
+		/*
+		 * Alternates between drawing AVO ## and
+		 * DOD ## to [MMBAVODODX, MMBAVODODY] every 64
+		 * frames.
+		 */
+
+	//#define MMBHP
+		/*
+		 * Draws HP ## / ## to [MMBHPX, MMBHPY].
+		 */
+
+// Combination options
+
+	// Coordinates are in 8x8 pixel tiles
+
+	// HP/Status options
+	#define MMBHPStatusX 1
+	#define MMBHPStatusY 5
+
+	// HP options
+	#define MMBHPX 1
+	#define MMBHPY 5
+
+	// DEF/RES options
+	#define MMBDEFRESX 9
+	#define MMBDEFRESY 5
+	#define MMBDEFRESVRAMTile 0x10A
+	#define MMBDEFRESPaletteIndex 2
+
+	// AVO/DOD options
+	#define MMBAVODODX 9
+	#define MMBAVODODY 6
+	#define MMBAVODODVRAMTile 0x104
+	#define MMBAVODODPaletteIndex 2
+
+// Bar modules
+
+	//#define MMBHPBar
+		/*
+		 * Draws a HP bar of tile width MMBHPBarTileWidth
+		 * to [MMBHPBarX, MMBHPBarY].
+		 */
+
+	//#define MMBHPBarStatus
+		/*
+		 * Alternates between a HP bar of tile width
+		 * MMBHPBarTileWidth and the unit's status, if
+		 * they have one, to [MMBHPBarX, MMBHPBarY].
+		 */
+
+// Bar options
+
+	// Coordinates and widths are in 8x8 pixel tiles
+
+	// HP bar options
+	#define MMBHPBarX 5
+	#define MMBHPBarY 4
+	#define MMBHPBarTileWidth 7
+	#define MMBHPBarBase 0x1140
+
+// Affinity modules
+
+	//#define MMBAffinity
+		/*
+		 * Draws the unit's affinity, if they
+		 * have one, to [MMBAffinityX, MMBAffinityY].
+		 */
+
+// Affinity options
+
+	// Coordinates are in pixels
+
+	#define MMBAffinityX 40
+	#define MMBAffinityY 24
+	#define MMBAffinityTile 0x30A
+
+// Skills modules (requires skill system)
+
+	//#define MMBFullSkills
+		/*
+		 * Draws the unit's full skill list starting at
+		 * [MMBSkillsX, MMBSkillsY] and drawing
+		 * icons past the first to [MMBSkillsX+(16*n), MMBSkillsY].
+		 * Overrides the MMBSkill# modules.
+		 */
+
+	#define MMBSkill1
+	#define MMBSkill2
+	#define MMBSkill3
+	#define MMBSkill4
+	//#define MMBSkill5
+	//#define MMBSkill6
+		/*
+		 * Draws the skill in the specified skill slot to
+		 * [MMBSkill#X, MMBSkill#Y] if there is an skill in
+		 * that slot.
+		 */
+
+	//#define MMBSkill1Alternate
+	//#define MMBSkill2Alternate
+	//#define MMBSkill3Alternate
+	//#define MMBSkill4Alternate
+	#define MMBSkill5Alternate
+	#define MMBSkill6Alternate
+		/*
+		 * Draws an icon to [MMBSkillsAlternateX, MMBSkillsAlternateY]
+		 * cycling between all selected skills. Each is shown for 64 frames.
+		 */
+
+	//#define MMBEquippedWeaponSkill
+		/*
+		 * Draws the skill icon of the equipped weapon to
+		 * [MMBEquippedItemSkillX, MMBEquippedItemSkillY] if the weapon
+		 * has a skill.
+		 */
+
+// Skills options
+
+	// Coordinates are in pixels
+
+	#define MMBSkillObjectPaletteIndex 4
+	#define MMBSkillTile 0x30C
+
+	#define MMBSkillsX 120
+	#define MMBSkillsY 8
+
+	#define MMBSkill1X 8
+	#define MMBSkill1Y 40
+
+	#define MMBSkill2X 24
+	#define MMBSkill2Y 40
+
+	#define MMBSkill3X 40
+	#define MMBSkill3Y 40
+
+	#define MMBSkill4X 56
+	#define MMBSkill4Y 40
+
+	#define MMBSkill5X 174
+	#define MMBSkill5Y 8
+
+	#define MMBSkill6X 180
+	#define MMBSkill6Y 8
+
+	#define MMBSkillsAlternateX 72
+	#define MMBSkillsAlternateY 40
+
+	#define MMBEquippedItemSkillTileIndex 0x318
+
+	#define MMBEquippedItemSkillX 8
+	#define MMBEquippedItemSkillY 8
+
+// Number modules
+
+	#define MMBASNumber
+	#define MMBATKNumber
+	//#define MMBAVONumber
+	//#define MMBCHRNumber // Useless without skill system
+	//#define MMBCRTNumber
+	#define MMBDEFNumber
+	//#define MMBDODNumber
+	//#define MMBEXPNumber
+	#define MMBHITNumber
+	//#define MMBLevelNumber
+	#define MMBRESNumber
+	//#define MMBRTGNumber
+	#define MMBCurrentHPNumber
+	//#define MMBMaxHPNumber
+		/*
+		 * Draws the number for the specified stat
+		 * to [MMB(STAT)X, MMB(STAT)Y].
+		 */
+
+// Number options
+
+	// Coordinates are in pixels
+	// Coordinates are for the rightmost digit
+
+	// AS Number
+	#define MMBASX 112
+	#define MMBASY 32
+
+	// ATK Number
+	#define MMBATKX 112
+	#define MMBATKY 16
+
+	// AVO Number
+	#define MMBAVOX 96
+	#define MMBAVOY 8
+
+	// CHR Number
+	#define MMBCHRX 96
+	#define MMBCHRY 16
+
+	// CRT Number
+	#define MMBCRTX 128
+	#define MMBCRTY 40
+
+	// DEF Number
+	#define MMBDEFX 112
+	#define MMBDEFY 40
+
+	// DOD Number
+	#define MMBDODX 128
+	#define MMBDODY 24
+
+	// EXP number
+	#define MMBEXPX 57
+	#define MMBEXPY 48
+
+	// HIT Number
+	#define MMBHITX 112
+	#define MMBHITY 24
+
+	// Level number
+	#define MMBLevelX 32
+	#define MMBLevelY 48
+
+	// RES number
+	#define MMBRESX 112
+	#define MMBRESY 48
+
+	// RTG number
+	#define MMBRTGX 103
+	#define MMBRTGY 48
+
+	// Current HP number
+	#define MMBCurrentHPX 112
+	#define MMBCurrentHPY 8
+
+	// Max HP number
+	#define MMBMaxHPX 112
+	#define MMBMaxHPY 8
+
+// Label modules
+
+	#define MMBASLabel
+	#define MMBATKLabel
+	//#define MMBAVOLabel
+	//#define MMBCHRLabel
+	//#define MMBCRTLabel
+	#define MMBDEFLabel
+	//#define MMBDODLabel
+	//#define MMBEXPLabel
+	#define MMBHITLabel
+	//#define MMBLevelLabel
+	#define MMBRESLabel
+	//#define MMBRTGLabel
+	#define MMBHPLabel
+		/*
+		 * Draws the label for the specified stat
+		 * to [MMB(STAT)LabelX, MMB(STAT)LabelY] using
+		 * the palette index MMB(STAT)PaletteIndex.
+		 */
+
+// Label options
+
+	// Coordinates are in 8x8 pixel tiles
+
+	// AS label
+	#define MMBASLabelX 11
+	#define MMBASLabelY 4
+	#define MMBASLabelVRAMTile 0x100
+	#define MMBASLabelPaletteIndex 2
+	#define MMBASLabelTileCount 2
+
+	// ATK label
+	#define MMBATKLabelX 11
+	#define MMBATKLabelY 2
+	#define MMBATKLabelVRAMTile 0x102
+	#define MMBATKLabelPaletteIndex 2
+	#define MMBATKLabelTileCount 2
+
+	// AVO label
+	#define MMBAVOLabelX 9
+	#define MMBAVOLabelY 1
+	#define MMBAVOLabelVRAMTile 0x104
+	#define MMBAVOLabelPaletteIndex 2
+	#define MMBAVOLabelTileCount 2
+
+	// CHR label
+	#define MMBCHRLabelX 9
+	#define MMBCHRLabelY 2
+	#define MMBCHRLabelVRAMTile 0x106
+	#define MMBCHRLabelPaletteIndex 2
+	#define MMBCHRLabelTileCount 2
+
+	// CRT label
+	#define MMBCRTLabelX 13
+	#define MMBCRTLabelY 5
+	#define MMBCRTLabelVRAMTile 0x108
+	#define MMBCRTLabelPaletteIndex 2
+	#define MMBCRTLabelTileCount 2
+
+	// DEF label
+	#define MMBDEFLabelX 11
+	#define MMBDEFLabelY 5
+	#define MMBDEFLabelVRAMTile 0x10A
+	#define MMBDEFLabelPaletteIndex 2
+	#define MMBDEFLabelTileCount 2
+
+	// DOD label
+	#define MMBDODLabelX 13
+	#define MMBDODLabelY 3
+	#define MMBDODLabelVRAMTile 0x10C
+	#define MMBDODLabelPaletteIndex 2
+	#define MMBDODLabelTileCount 2
+
+	// EXP label
+	#define MMBEXPLabelX 5
+	#define MMBEXPLabelY 6
+	#define MMBEXPLabelVRAMTile 0x160
+	#define MMBEXPLabelPaletteIndex 2
+	#define MMBEXPLabelTileCount 2
+
+	// HIT label
+	#define MMBHITLabelX 11
+	#define MMBHITLabelY 3
+	#define MMBHITLabelVRAMTile 0x10E
+	#define MMBHITLabelPaletteIndex 2
+	#define MMBHITLabelTileCount 2
+
+	// Level label
+	#define MMBLevelLabelX 1
+	#define MMBLevelLabelY 6
+	#define MMBLevelLabelVRAMTile 0x162
+	#define MMBLevelLabelPaletteIndex 2
+	#define MMBLevelLabelTileCount 2
+
+	// RES label
+	#define MMBRESLabelX 11
+	#define MMBRESLabelY 6
+	#define MMBRESLabelVRAMTile 0x164
+	#define MMBRESLabelPaletteIndex 2
+	#define MMBRESLabelTileCount 2
+
+	// RTG label
+	#define MMBRTGLabelX 9
+	#define MMBRTGLabelY 6
+	#define MMBRTGLabelVRAMTile 0x166
+	#define MMBRTGLabelPaletteIndex 2
+	#define MMBRTGLabelTileCount 2
+
+	// HP label
+	#define MMBHPLabelX 11
+	#define MMBHPLabelY 1
+	#define MMBHPLabelVRAMTile 0x120
+	#define MMBHPLabelPaletteIndex 2
+	#define MMBHPLabelTileCount 2
+
+ALIGN 4
+
+#include "../MMBCore.event"
+
+MESSAGE MMB code ends at CURRENTOFFSET
+
+#endif // MODULAR_MMB
+
+

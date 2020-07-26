@@ -1,0 +1,1570 @@
+
+	#include "EAstdlib.event"
+	#include "Extensions/Hack Installation.txt"
+
+	#include "Internal/UI1ProcCode.event"
+
+	#include "Internal/MMBInit.lyn.event"
+	WORD MMBNameWidth
+	WORD MMBAltTextWidth
+
+	#include "Internal/MMBSetup.lyn.event"
+
+	#include "Internal/MMBGetUnitAtCursor.lyn.event"
+
+	#include "Internal/MMBBuildWindow.lyn.event"
+	WORD ((1 << 24) | ((0x40 * MMBHeight * 2) >> 3))
+
+	#include "Internal/MMBBuildDynamics.lyn.event"
+
+	#include "Internal/MMBSetWindowPosition.lyn.event"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#include "Internal/MMBClearScrolledWindow.lyn.event"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#include "Internal/MMBExtendWindow.lyn.event"
+
+	#include "Internal/MMBRetractWindow.lyn.event"
+
+	#include "Internal/MMBCheckCursor.lyn.event"
+
+	#include "Internal/MMBRedrawTilemap.lyn.event"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#include "Internal/MMBUpdateInfo.lyn.event"
+
+	ALIGN 4
+
+	MMBExtendTable:
+	BYTE (MMBWidth/2) ((MMBWidth*3)/4) ((MMBWidth*9)/10) MMBWidth
+
+	MMBRetractTable:
+	BYTE ((MMBWidth*3)/4) (MMBWidth/2) 0
+
+	ALIGN 4
+
+	// Module inclusions
+
+	// Tilemap modules
+
+		#ifdef MMBStandardTilemap
+			#include "Modules/MMBDrawTilemap.lyn.event"
+			POIN MMBTilemap
+			WORD MMBTilemapPaletteIndex
+		#endif // MMBStandardTilemap
+
+	// Unit name modules
+
+		#ifdef MMBName
+			#include "Modules/MMBDrawNameUncentered.lyn.event"
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBName
+
+		#ifdef MMBNameCentered
+			#include "Modules/MMBDrawNameCentered.lyn.event"
+			WORD MMBNameWidth * 8
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBNameCentered
+
+		#ifdef MMBNameAffinityShifted
+			#include "Modules/MMBDrawNameAffinityShifted.lyn.event"
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBNameAffinityShifted
+
+	// Inventory modules
+
+		// Combination modules
+
+			#ifdef MMBEquippedWeaponAndName
+				#ifndef MMBEquippedWeaponName
+					#define MMBEquippedWeaponName
+				#endif // MMBEquippedWeaponName
+				#ifndef MMBEquippedWeapon
+					#define MMBEquippedWeapon
+				#endif // MMBEquippedWeapon
+			#endif // MMBEquippedWeaponAndName
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndName
+				#ifndef MMBEquippedWeaponOrFirstStaffName
+					#define MMBEquippedWeaponOrFirstStaffName
+				#endif // MMBEquippedWeaponOrFirstStaffName
+				#ifndef MMBEquippedWeaponOrFirstStaff
+					#define MMBEquippedWeaponOrFirstStaff
+				#endif // MMBEquippedWeaponOrFirstStaff
+			#endif // MMBEquippedWeaponOrFirstStaffAndName
+
+			#ifdef MMBEquippedWeaponAndNameCentered
+				#ifndef MMBEquippedWeaponNameCentered
+					#define MMBEquippedWeaponNameCentered
+				#endif // MMBEquippedWeaponNameCentered
+				#ifndef MMBEquippedWeapon
+					#define MMBEquippedWeapon
+				#endif // MMBEquippedWeapon
+			#endif // MMBEquippedWeaponAndNameCentered
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndNameCentered
+				#ifndef MMBEquippedWeaponOrFirstStaffNameCentered
+					#define MMBEquippedWeaponOrFirstStaffNameCentered
+				#endif // MMBEquippedWeaponOrFirstStaffNameCentered
+				#ifndef MMBEquippedWeaponOrFirstStaff
+					#define MMBEquippedWeaponOrFirstStaff
+				#endif // MMBEquippedWeaponOrFirstStaff
+			#endif // MMBEquippedWeaponOrFirstStaffAndName
+
+			#ifdef MMBEquippedWeaponAndNameIfPlayerOrInventory
+				#ifndef MMBEquippedWeaponNameIfPlayer
+					#define MMBEquippedWeaponNameIfPlayer
+				#endif // MMBEquippedWeaponNameIfPlayer
+				#ifndef MMBRenderEquippedWeaponIfPlayerOrInventory
+					#define MMBRenderEquippedWeaponIfPlayerOrInventory
+				#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+			#endif // MMBEquippedWeaponAndNameIfPlayerOrInventory
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndNameIfPlayerOrInventory
+				#ifndef MMBEquippedWeaponOrFirstStaffNameIfPlayer
+					#define MMBEquippedWeaponOrFirstStaffNameIfPlayer
+				#endif // MMBEquippedWeaponOrFirstStaffNameIfPlayer
+				#ifndef MMBRenderEquippedWeaponIfPlayerOrInventory
+					#define MMBRenderEquippedWeaponIfPlayerOrInventory
+				#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+			#endif // MMBEquippedWeaponOrFirstStaffAndNameIfPlayerOrInventory
+
+			#ifdef MMBEquippedWeaponAndNameIfPlayerCenteredOrInventory
+				#ifndef MMBEquippedWeaponNameIfPlayerCentered
+					#define MMBEquippedWeaponNameIfPlayerCentered
+				#endif // MMBEquippedWeaponNameIfPlayerCentered
+				#ifndef MMBEquippedWeaponIfPlayerOrInventory
+					#define MMBEquippedWeaponIfPlayerOrInventory
+				#endif // MMBEquippedWeaponIfPlayerOrInventory
+			#endif // MMBEquippedWeaponAndNameIfPlayerCenteredOrInventory
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndNameIfPlayerCenteredOrInventory
+				#ifndef MMBEquippedWeaponNameIfPlayerCentered
+					#define MMBEquippedWeaponNameIfPlayerCentered
+				#endif // MMBEquippedWeaponNameIfPlayerCentered
+				#ifndef MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+					#define MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+				#endif // MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+			#endif // MMBEquippedWeaponOrFirstStaffAndNameIfPlayerCenteredOrInventory
+
+			#ifdef MMBEquippedWeaponAndNameWithWarning
+				#ifndef MMBEquippedWeaponNameWithWarning
+					#define MMBEquippedWeaponNameWithWarning
+				#endif // MMBEquippedWeaponNameWithWarning
+				#ifndef MMBEquippedWeapon
+					#define MMBEquippedWeapon
+				#endif // MMBEquippedWeapon
+			#endif // MMBEquippedWeaponAndNameWithWarning
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndNameWithWarning
+				#ifndef MMBEquippedWeaponOrFirstStaffNameWithWarning
+					#define MMBEquippedWeaponOrFirstStaffNameWithWarning
+				#endif // MMBEquippedWeaponOrFirstStaffNameWithWarning
+				#ifndef MMBEquippedWeaponOrFirstStaff
+					#define MMBEquippedWeaponOrFirstStaff
+				#endif // MMBEquippedWeaponOrFirstStaff
+			#endif // MMBEquippedWeaponOrFirstStaffAndNameWithWarning
+
+			#ifdef MMBEquippedWeaponAndNameWithWarningCentered
+				#ifndef MMBEquippedWeaponNameWithWarningCentered
+					#define MMBEquippedWeaponNameWithWarningCentered
+				#endif // MMBEquippedWeaponNameWithWarningCentered
+				#ifndef MMBEquippedWeapon
+					#define MMBEquippedWeapon
+				#endif // MMBEquippedWeapon
+			#endif // MMBEquippedWeaponAndNameWithWarningCentered
+
+			#ifdef MMBEquippedWeaponOrFirstStaffAndNameWithWarningCentered
+				#ifndef MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+					#define MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+				#endif // MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+				#ifndef MMBEquippedWeaponOrFirstStaff
+					#define MMBEquippedWeaponOrFirstStaff
+				#endif // MMBEquippedWeaponOrFirstStaff
+			#endif // MMBEquippedWeaponOrFirstStaffAndNameWithWarning
+
+		// Item name modules
+
+			#ifdef MMBEquippedWeaponName
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameInternal
+					#define MMBEquippedWeaponNameInternal
+				#endif // MMBEquippedWeaponNameInternal
+			#endif // MMBEquippedWeaponName
+
+			#ifdef MMBEquippedWeaponOrFirstStaffName
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameInternal
+					#define MMBEquippedWeaponNameInternal
+				#endif // MMBEquippedWeaponNameInternal
+			#endif // MMBEquippedWeaponOrFirstStaffName
+
+			#ifdef MMBEquippedWeaponNameCentered
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameCenteredInternal
+					#define MMBEquippedWeaponNameCenteredInternal
+				#endif // MMBEquippedWeaponNameCenteredInternal
+			#endif // MMBEquippedWeaponNameCentered
+
+			#ifdef MMBEquippedWeaponOrFirstStaffNameCentered
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameCenteredInternal
+					#define MMBEquippedWeaponNameCenteredInternal
+				#endif // MMBEquippedWeaponNameCenteredInternal
+			#endif // MMBEquippedWeaponOrFirstStaffNameCentered
+
+			#ifdef MMBEquippedWeaponNameIfPlayer
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameIfPlayerInternal
+					#define MMBEquippedWeaponNameIfPlayerInternal
+				#endif // MMBEquippedWeaponNameIfPlayerInternal
+			#endif // MMBEquippedWeaponNameIfPlayer
+
+			#ifdef MMBEquippedWeaponOrFirstStaffNameIfPlayer
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameIfPlayerInternal
+					#define MMBEquippedWeaponNameIfPlayerInternal
+				#endif // MMBEquippedWeaponNameIfPlayerInternal
+			#endif // MMBEquippedWeaponOrFirstStaffNameIfPlayer
+
+			#ifdef MMBEquippedWeaponNameIfPlayerCentered
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameIfPlayerCenteredInternal
+					#define MMBEquippedWeaponNameIfPlayerCenteredInternal
+				#endif // MMBEquippedWeaponNameIfPlayerCenteredInternal
+			#endif // MMBEquippedWeaponNameIfPlayerCentered
+
+			#ifdef MMBEquippedWeaponOrFirstStaffNameIfPlayerCentered
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameIfPlayerCenteredInternal
+					#define MMBEquippedWeaponNameIfPlayerCenteredInternal
+				#endif // MMBEquippedWeaponNameIfPlayerCenteredInternal
+			#endif // MMBEquippedWeaponOrFirstStaffNameIfPlayerCentered
+
+			#ifdef MMBEquippedWeaponNameWithWarning
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameWithWarningInternal
+					#define MMBEquippedWeaponNameWithWarningInternal
+				#endif // MMBEquippedWeaponNameWithWarningInternal
+			#endif // MMBEquippedWeaponNameWithWarning
+
+			#ifdef MMBEquippedWeaponOrFirstStaffNameWithWarning
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameWithWarningInternal
+					#define MMBEquippedWeaponNameWithWarningInternal
+				#endif // MMBEquippedWeaponNameWithWarningInternal
+			#endif // MMBEquippedWeaponOrFirstStaffNameWithWarning
+
+			#ifdef MMBEquippedWeaponNameWithWarningCentered
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+				#ifndef MMBEquippedWeaponNameWithWarningCenteredInternal
+					#define MMBEquippedWeaponNameWithWarningCenteredInternal
+				#endif // MMBEquippedWeaponNameWithWarningCenteredInternal
+			#endif // MMBEquippedWeaponNameWithWarningCentered
+
+			#ifdef MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+				#ifndef MMBEquippedWeaponNameWithWarningCenteredInternal
+					#define MMBEquippedWeaponNameWithWarningCenteredInternal
+				#endif // MMBEquippedWeaponNameWithWarningCenteredInternal
+			#endif // MMBEquippedWeaponOrFirstStaffNameWithWarningCentered
+
+		// Inventory modules
+
+			#ifdef MMBFullInventory
+				#ifndef MMBRenderInventory
+					#define MMBRenderInventory
+				#endif // MMBRenderInventory
+				#ifndef MMBInventory
+					#define MMBInventory
+				#endif // MMBInventory
+			#endif // MMBFullInventory
+
+			#ifdef MMBEquippedWeaponIfPlayerOrInventory
+				#ifndef MMBRenderEquippedWeaponIfPlayerOrInventory
+					#define MMBRenderEquippedWeaponIfPlayerOrInventory
+				#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+				#ifndef MMBEquippedItemPrep
+					#define MMBEquippedItemPrep
+				#endif // MMBEquippedItemPrep
+			#endif // MMBEquippedWeaponIfPlayerOrInventory
+
+			#ifdef MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+				#ifndef MMBRenderEquippedWeaponIfPlayerOrInventory
+					#define MMBRenderEquippedWeaponIfPlayerOrInventory
+				#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+				#ifndef MMBEquippedItemOrStaffPrep
+					#define MMBEquippedItemOrStaffPrep
+				#endif // MMBEquippedItemOrStaffPrep
+			#endif // MMBEquippedWeaponOrFirstStaffIfPlayerOrInventory
+
+		#ifdef MMBItem1
+			#ifndef MMBRenderInventory
+				#define MMBRenderInventory
+			#endif // MMBRenderInventory
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBItem1
+
+		#ifdef MMBItem2
+			#ifndef MMBRenderInventory
+				#define MMBRenderInventory
+			#endif // MMBRenderInventory
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBItem2
+
+		#ifdef MMBItem3
+			#ifndef MMBRenderInventory
+				#define MMBRenderInventory
+			#endif // MMBRenderInventory
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBItem3
+
+		#ifdef MMBItem4
+			#ifndef MMBRenderInventory
+				#define MMBRenderInventory
+			#endif // MMBRenderInventory
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBItem4
+
+		#ifdef MMBItem5
+			#ifndef MMBRenderInventory
+				#define MMBRenderInventory
+			#endif // MMBRenderInventory
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBItem5
+
+		#ifdef MMBEquippedWeapon
+			#ifndef MMBRenderEquippedWeaponIcon
+				#define MMBRenderEquippedWeaponIcon
+			#endif // MMBRenderEquippedWeaponIcon
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+			#ifndef MMBEquippedItemPrep
+				#define MMBEquippedItemPrep
+			#endif // MMBEquippedItemPrep
+		#endif // MMBEquippedWeapon
+
+		#ifdef MMBEquippedWeaponOrFirstStaff
+			#ifndef MMBRenderEquippedWeaponIcon
+				#define MMBRenderEquippedWeaponIcon
+			#endif // MMBRenderEquippedWeaponIcon
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+			#ifndef MMBEquippedItemOrStaffPrep
+				#define MMBEquippedItemOrStaffPrep
+			#endif // MMBEquippedItemOrStaffPrep
+		#endif // MMBEquippedWeaponOrFirstStaff
+
+		#ifdef MMBItem1Alternate
+			#ifndef MMBRenderInventoryAlternate
+				#define MMBRenderInventoryAlternate
+			#endif // MMBRenderInventoryAlternate
+		#endif // MMBItem1Alternate
+
+		#ifdef MMBItem2Alternate
+			#ifndef MMBRenderInventoryAlternate
+				#define MMBRenderInventoryAlternate
+			#endif // MMBRenderInventoryAlternate
+		#endif // MMBItem2Alternate
+
+		#ifdef MMBItem3Alternate
+			#ifndef MMBRenderInventoryAlternate
+				#define MMBRenderInventoryAlternate
+			#endif // MMBRenderInventoryAlternate
+		#endif // MMBItem3Alternate
+
+		#ifdef MMBItem4Alternate
+			#ifndef MMBRenderInventoryAlternate
+				#define MMBRenderInventoryAlternate
+			#endif // MMBRenderInventoryAlternate
+		#endif // MMBItem4Alternate
+
+		#ifdef MMBItem5Alternate
+			#ifndef MMBRenderInventoryAlternate
+				#define MMBRenderInventoryAlternate
+			#endif // MMBRenderInventoryAlternate
+		#endif // MMBItem5Alternate
+
+		#ifdef MMBRenderInventoryAlternate
+			#include "Modules/MMBResetDisplayedItemIndex.lyn.event"
+			#include "Modules/MMBRenderInventoryAlternateObj.lyn.event"
+			SHORT (MMBInventoryObjectPaletteIndex << 12) | MMBInventoryTileIndex
+			BYTE MMBInventoryAlternateX MMBInventoryAlternateY
+			ALIGN 4
+			MMBAlternatingItemListTable:
+			#ifdef MMBItem1Alternate
+				BYTE 0
+			#endif // MMBItem1Alternate
+			#ifdef MMBItem2Alternate
+				BYTE 1
+			#endif // MMBItem2Alternate
+			#ifdef MMBItem3Alternate
+				BYTE 2
+			#endif // MMBItem3Alternate
+			#ifdef MMBItem4Alternate
+				BYTE 3
+			#endif // MMBItem4Alternate
+			#ifdef MMBItem5Alternate
+				BYTE 4
+			#endif // MMBItem5Alternate
+			BYTE -1
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBRenderInventoryAlternate
+
+	// Inventory helpers
+
+		#ifdef MMBEquippedWeaponNameInternal
+			#include "Modules/MMBDrawEquippedWeaponName.lyn.event"
+			SHORT MMBTextAltColor
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+		#endif // MMBEquippedWeaponNameInternal
+
+		#ifdef MMBEquippedWeaponNameCenteredInternal
+			#include "Modules/MMBDrawEquippedWeaponNameCentered.lyn.event"
+			SHORT MMBTextAltColor
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+			BYTE (8 * MMBAltTextWidth)
+		#endif // MMBEquippedWeaponNameCenteredInternal
+
+		#ifdef MMBEquippedWeaponNameIfPlayerInternal
+			#include "Modules/MMBDrawEquippedWeaponNameIfPlayer.lyn.event"
+			SHORT MMBTextAltColor
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+		#endif // MMBEquippedWeaponNameIfPlayerInternal
+
+		#ifdef MMBEquippedWeaponNameIfPlayerCenteredInternal
+			#include "Modules/MMBDrawEquippedWeaponNameIfPlayerCentered.lyn.event"
+			SHORT MMBTextAltColor
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+			BYTE (8 * MMBAltTextWidth)
+		#endif // MMBEquippedWeaponNameIfPlayerCenteredInternal
+
+		#ifdef MMBEquippedWeaponNameWithWarningInternal
+			#include "Modules/MMBDrawEquippedWeaponNameWithWarning.lyn.event"
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+			BYTE MMBTextAltColor MMBTextWarningColor
+			BYTE MMBItemDurabilityThreshold
+		#endif // MMBEquippedWeaponNameWithWarningInternal
+
+		#ifdef MMBEquippedWeaponNameWithWarningCenteredInternal
+			#include "Modules/MMBDrawEquippedWeaponNameWithWarningCentered.lyn.event"
+			SHORT (2 * ((32 * MMBInventoryTextY) + MMBInventoryTextX))
+			BYTE MMBTextAltColor MMBTextWarningColor
+			BYTE MMBItemDurabilityThreshold
+			BYTE MMBAltTextWidth * 8
+		#endif // MMBEquippedWeaponNameWithWarningCenteredInternal
+
+	// Minimug modules
+
+		#ifdef MMBMinimug
+			#include "Modules/MMBDrawMinimug.lyn.event"
+			WORD MMBMinimugX
+			WORD MMBMinimugY
+			WORD MMBMinimugTileIndexStart
+			WORD MMBMinimugPaletteIndex
+		#endif // MMBMinimug
+
+		#ifdef MMBMinimugEnemyFlip
+			#include "Modules/MMBDrawMinimugEnemyFlip.lyn.event"
+			WORD MMBMinimugX
+			WORD MMBMinimugY
+			WORD MMBMinimugTileIndexStart
+			WORD MMBMinimugPaletteIndex
+		#endif // MMBMinimugEnemyFlip
+
+	// Combination modules
+
+		#ifdef MMBHPStatus
+			#include "Modules/MMBDrawHPStatus.lyn.event"
+			WORD MMBHPStatusX
+			WORD MMBHPStatusY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHPStatus
+
+		#ifdef MMBHP
+			#include "Modules/MMBDrawHP.lyn.event"
+			WORD MMBHPX
+			WORD MMBHPY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHP
+
+		#ifdef MMBDEFRES
+			#include "Modules/MMBDrawDEFRES.lyn.event"
+			WORD (2 * ((32 * MMBDEFRESY) + MMBDEFRESX))
+			SHORT ((MMBDEFRESX+3)*8) (MMBDEFRESY*8)
+			WORD MMBHeight
+			WORD ((MMBDEFRESPaletteIndex << 12) | MMBDEFRESVRAMTile)
+			POIN MMBDEFLabelGraphic
+			POIN MMBRESLabelGraphic
+			ALIGN 4
+			MMBDEFLabelGraphic:
+			#incbin "Modules/DEFLabel.4bpp"
+			ALIGN 4
+			MMBRESLabelGraphic:
+			#incbin "Modules/RESLabel.4bpp"
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBDEFRES
+
+		#ifdef MMBAVODOD
+			#include "Modules/MMBDrawAVODOD.lyn.event"
+			WORD (2 * ((32 * MMBAVODODY) + MMBAVODODX))
+			SHORT ((MMBAVODODX+3)*8) (MMBAVODODY*8)
+			WORD MMBHeight
+			WORD ((MMBAVODODPaletteIndex << 12) | MMBAVODODVRAMTile)
+			POIN MMBAVOLabelGraphic
+			POIN MMBDODLabelGraphic
+			ALIGN 4
+			MMBAVOLabelGraphic:
+			#incbin "Modules/AVOLabel.4bpp"
+			ALIGN 4
+			MMBDODLabelGraphic:
+			#incbin "Modules/DODLabel.4bpp"
+			#include "Modules/MMBAVOGetter.lyn.event"
+			#include "Modules/MMBDODGetter.lyn.event"
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBAVODOD
+
+	// Bar modules
+
+		#ifdef MMBHPBar
+			#include "Modules/MMBDrawHPBar.lyn.event"
+			WORD MMBHPBarX
+			WORD MMBHPBarY
+			WORD MMBHPBarTileWidth
+			WORD MMBHPBarBase
+			#ifndef MMBBarDrawing
+				#define MMBBarDrawing
+			#endif // MMBBarDrawing
+		#endif // MMBHPBar
+
+		#ifdef MMBHPBarStatus
+			#include "Modules/MMBDrawHPBarStatus.lyn.event"
+			WORD MMBHPBarX
+			WORD MMBHPBarY
+			WORD MMBHPBarTileWidth
+			WORD MMBHPBarBase
+			#ifndef MMBBarDrawing
+				#define MMBBarDrawing
+			#endif // MMBBarDrawing
+		#endif // MMBHPBarStatus
+
+	// Affinity modules
+
+		#ifdef MMBAffinity
+			#include "Modules/MMBDrawAffinity.lyn.event"
+			WORD MMBAffinityTile
+			BYTE MMBAffinityX MMBAffinityY
+			#ifdef HAX_ICON_REWORK
+				BYTE 2 // Affinity icon sheet
+			#else
+				BYTE 0 // Default icon sheet
+			#endif // HAX_ICON_REWORK
+			ALIGN 4
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBAffinityObjs
+				#define MMBAffinityObjs
+			#endif // MMBAffinityObjs
+		#endif // MMBAffinity
+
+	// Skills modules
+
+		#ifdef MMBFullSkills
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBFullSkills
+
+		#ifdef MMBSkill1
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBSkill1
+
+		#ifdef MMBSkill2
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBSkill2
+
+		#ifdef MMBSkill3
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBSkill3
+
+		#ifdef MMBSkill4
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBSkill4
+
+		#ifdef MMBSkill5
+			#ifndef MMBRenderSkills
+				#define MMBRenderSkills
+			#endif // MMBRenderSkills
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBSkill5
+
+		#ifdef MMBSkill1Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill1Alternate
+
+		#ifdef MMBSkill2Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill2Alternate
+
+		#ifdef MMBSkill3Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill3Alternate
+
+		#ifdef MMBSkill4Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill4Alternate
+
+		#ifdef MMBSkill5Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill5Alternate
+
+		#ifdef MMBSkill6Alternate
+			#ifndef MMBRenderSkillsAlternate
+				#define MMBRenderSkillsAlternate
+			#endif // MMBRenderSkillsAlternate
+		#endif // MMBSkill6Alternate
+
+		#ifdef MMBRenderSkillsAlternate
+			#include "Modules/MMBResetDisplayedSkillIndex.lyn.event"
+			#include "Modules/MMBRenderSkillsAlternateObj.lyn.event"
+			SHORT (MMBSkillObjectPaletteIndex << 12) | MMBSkillTile
+			BYTE MMBSkillsAlternateX MMBSkillsAlternateY
+			ALIGN 4
+			MMBAlternatingSkillListTable:
+			#ifdef MMBSkill1Alternate
+				BYTE 0
+			#endif // MMBSkill1Alternate
+			#ifdef MMBSkill2Alternate
+				BYTE 1
+			#endif // MMBSkill2Alternate
+			#ifdef MMBSkill3Alternate
+				BYTE 2
+			#endif // MMBSkill3Alternate
+			#ifdef MMBSkill4Alternate
+				BYTE 3
+			#endif // MMBSkill4Alternate
+			#ifdef MMBSkill5Alternate
+				BYTE 4
+			#endif // MMBSkill5Alternate
+			#ifdef MMBSkill6Alternate
+				BYTE 5
+			#endif // MMBSkill6Alternate
+			BYTE -1
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+			#ifndef MMBSkills
+				#define MMBSkills
+			#endif // MMBSkills
+		#endif // MMBRenderSkillsAlternate
+
+		#ifdef MMBEquippedWeaponSkill
+			#ifndef MMBEquippedWeaponSkillPrep
+				#define MMBEquippedWeaponSkillPrep
+			#endif // MMBEquippedWeaponSkillPrep
+			#ifndef MMBRenderEquippedWeaponSkill
+				#define MMBRenderEquippedWeaponSkill
+			#endif // MMBRenderEquippedWeaponSkill
+		#endif // MMBEquippedWeaponSkill
+
+	// Label modules
+
+	// Label drawing switchboard
+
+		#ifdef MMBASLabel
+			ALIGN 4
+			MMBASLabelGraphic:
+			#incbin "Modules/ASLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBASLabel
+
+		#ifdef MMBATKLabel
+			ALIGN 4
+			MMBATKLabelGraphic:
+			#incbin "Modules/ATKLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBATKLabel
+
+		#ifdef MMBAVOLabel
+			ALIGN 4
+			MMBAVOLabelGraphic:
+			#incbin "Modules/AVOLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBAVOLabel
+
+		#ifdef MMBCHRLabel
+			ALIGN 4
+			MMBCHRLabelGraphic:
+			#incbin "Modules/CHRLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBCHRLabel
+
+		#ifdef MMBCRTLabel
+			ALIGN 4
+			MMBCRTLabelGraphic:
+			#incbin "Modules/CRTLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBCRTLabel
+
+		#ifdef MMBDEFLabel
+			ALIGN 4
+			MMBDEFLabelGraphic:
+			#incbin "Modules/DEFLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBDEFLabel
+
+		#ifdef MMBDODLabel
+			ALIGN 4
+			MMBDODLabelGraphic:
+			#incbin "Modules/DODLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBDODLabel
+
+		#ifdef MMBEXPLabel
+			ALIGN 4
+			MMBEXPLabelGraphic:
+			#incbin "Modules/EXPLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBEXPLabel
+
+		#ifdef MMBHITLabel
+			ALIGN 4
+			MMBHITLabelGraphic:
+			#incbin "Modules/HITLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBHITLabel
+
+		#ifdef MMBLevelLabel
+			ALIGN 4
+			MMBLevelLabelGraphic:
+			#incbin "Modules/LevelLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBLevelLabel
+
+		#ifdef MMBRESLabel
+			ALIGN 4
+			MMBRESLabelGraphic:
+			#incbin "Modules/RESLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBRESLabel
+
+		#ifdef MMBRTGLabel
+			ALIGN 4
+			MMBRTGLabelGraphic:
+			#incbin "Modules/RTGLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBRTGLabel
+
+		#ifdef MMBHPLabel
+			ALIGN 4
+			MMBHPLabelGraphic:
+			#incbin "Modules/HPLabel.4bpp"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBHPLabel
+
+	// Number modules
+
+		#ifdef MMBLevelNumber
+			#include "Modules/MMBDrawLevelNumber.lyn.event"
+			WORD MMBLevelX
+			WORD MMBLevelY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBLevelNumber
+
+		#ifdef MMBEXPNumber
+			#include "Modules/MMBDrawEXPNumber.lyn.event"
+			WORD MMBEXPX
+			WORD MMBEXPY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBEXPNumber
+
+	// Number drawing switchboard
+
+		#ifdef MMBASNumber
+			#include "Modules/MMBASGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBASNumber
+
+		#ifdef MMBATKNumber
+			#include "Modules/MMBATKGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBATKNumber
+
+		#ifdef MMBAVONumber
+			#include "Modules/MMBAVOGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBAVONumber
+
+		#ifdef MMBCHRNumber
+			#include "Modules/MMBCHRGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBCHRNumber
+
+		#ifdef MMBCRTNumber
+			#include "Modules/MMBCRTGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBCRTNumber
+
+		#ifdef MMBDEFNumber
+			#include "Modules/MMBDEFGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBDEFNumber
+
+		#ifdef MMBDODNumber
+			#include "Modules/MMBDODGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBDODNumber
+
+		#ifdef MMBHITNumber
+			#include "Modules/MMBHITGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHITNumber
+
+		#ifdef MMBRESNumber
+			#include "Modules/MMBRESGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBRESNumber
+
+		#ifdef MMBRTGNumber
+			#include "Modules/MMBRTGGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBRTGNumber
+
+		#ifdef MMBCurrentHPNumber
+			#include "Modules/MMBCurrentHPGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBCurrentHPNumber
+
+		#ifdef MMBMaxHPNumber
+			#include "Modules/MMBMaxHPGetter.lyn.event"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBMaxHPNumber
+
+	// Module helpers
+
+		#ifdef MMBEquippedItemPrep
+			#include "Internal/MMBSetEquippedWeapon.lyn.event"
+		#endif // MMBEquippedItemPrep
+
+		#ifdef MMBEquippedItemOrStaffPrep
+			#include "Internal/MMBSetEquippedWeaponOrFirstStaff.lyn.event"
+		#endif // MMBEquippedItemOrStaffPrep
+
+		#ifdef MMBRenderInventory
+			#include "Internal/MMBRenderItemList.lyn.event"
+			SHORT (MMBInventoryObjectPaletteIndex << 12) | MMBInventoryTileIndex
+			ALIGN 4
+			MMBInventoryListTable:
+			#ifdef MMBFullInventory
+				BYTE 0 (MMBInventoryX + 00) MMBInventoryY
+				BYTE 1 (MMBInventoryX + 16) MMBInventoryY
+				BYTE 2 (MMBInventoryX + 32) MMBInventoryY
+				BYTE 3 (MMBInventoryX + 48) MMBInventoryY
+				BYTE 4 (MMBInventoryX + 64) MMBInventoryY
+			#else
+				#ifdef MMBItem1
+					BYTE 0 MMBItem1X MMBItem1Y
+				#endif // MMBItem1
+				#ifdef MMBItem2
+					BYTE 1 MMBItem2X MMBItem2Y
+				#endif // MMBItem2
+				#ifdef MMBItem3
+					BYTE 2 MMBItem3X MMBItem3Y
+				#endif // MMBItem3
+				#ifdef MMBItem4
+					BYTE 3 MMBItem4X MMBItem4Y
+				#endif // MMBItem4
+				#ifdef MMBItem5
+					BYTE 4 MMBItem5X MMBItem5Y
+				#endif // MMBItem5
+			#endif // MMBFullInventory
+			BYTE -1
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+		#endif // MMBRenderInventory
+
+		#ifdef MMBRenderEquippedWeaponIfPlayerOrInventory
+			#include "Internal/MMBRenderEquippedWeaponIfPlayerOrInventoryObj.lyn.event"
+			SHORT (MMBInventoryObjectPaletteIndex << 12) | MMBInventoryTileIndex
+			BYTE MMBInventoryX MMBInventoryY
+			ALIGN 4
+			MMBInventoryListTable:
+			BYTE 0 (MMBInventoryX + 00) MMBInventoryY
+			BYTE 1 (MMBInventoryX + 16) MMBInventoryY
+			BYTE 2 (MMBInventoryX + 32) MMBInventoryY
+			BYTE 3 (MMBInventoryX + 48) MMBInventoryY
+			BYTE 4 (MMBInventoryX + 64) MMBInventoryY
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+			#ifndef MMBInventory
+				#define MMBInventory
+			#endif // MMBInventory
+		#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+
+		#ifdef MMBRenderSkills
+			#include "Internal/MMBRenderSkillList.lyn.event"
+			SHORT (MMBSkillObjectPaletteIndex << 12) | MMBSkillTile
+			ALIGN 4
+			MMBSkillListTable:
+			#ifdef MMBFullSkills
+				BYTE 0 (MMBSkillsX + 00) MMBSkillsY
+				BYTE 1 (MMBSkillsX + 16) MMBSkillsY
+				BYTE 2 (MMBSkillsX + 32) MMBSkillsY
+				BYTE 3 (MMBSkillsX + 48) MMBSkillsY
+				BYTE 4 (MMBSkillsX + 64) MMBSkillsY
+				BYTE 5 (MMBSkillsX + 80) MMBSkillsY
+			#else
+				#ifdef MMBSkill1
+					BYTE 0 MMBSkill1X MMBSkill1Y
+				#endif // MMBSkill1
+				#ifdef MMBSkill2
+					BYTE 1 MMBSkill2X MMBSkill2Y
+				#endif // MMBSkill2
+				#ifdef MMBSkill3
+					BYTE 2 MMBSkill3X MMBSkill3Y
+				#endif // MMBSkill3
+				#ifdef MMBSkill4
+					BYTE 3 MMBSkill4X MMBSkill4Y
+				#endif // MMBSkill4
+				#ifdef MMBSkill5
+					BYTE 4 MMBSkill5X MMBSkill5Y
+				#endif // MMBSkill5
+				#ifdef MMBSkill6
+					BYTE 5 MMBSkill6X MMBSkill6Y
+				#endif // MMBSkill6
+			#endif // MMBFullSkills
+			BYTE -1
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+		#endif // MMBRenderSkills
+
+		#ifdef MMBSkills
+			#include "Internal/MMBDrawSkills.lyn.event"
+			SHORT MMBSkillTile
+			BYTE MMBSkillObjectPaletteIndex + 0x10
+			#ifdef HAX_ICON_REWORK
+				BYTE 1 // Skill icon sheet
+			#else
+				BYTE 1
+			#endif // HAX_ICON_REWORK
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+		#endif // MMBSkills
+
+		#ifdef MMBEquippedWeaponSkillPrep
+			#include "Internal/MMBDrawEquippedWeaponSkill.lyn.event"
+			SHORT MMBEquippedItemSkillTileIndex
+			BYTE MMBSkillObjectPaletteIndex + 0x10
+			#ifdef HAX_ICON_REWORK
+				BYTE 1 // Skill icon sheet
+			#else
+				BYTE 1
+			#endif // HAX_ICON_REWORK
+		#endif // MMBEquippedWeaponSkillPrep
+
+		#ifdef MMBRenderEquippedWeaponSkill
+			#include "Internal/MMBRenderEquippedWeaponSkillObj.lyn.event"
+			SHORT (MMBSkillObjectPaletteIndex << 12) | MMBEquippedItemSkillTileIndex
+			BYTE MMBEquippedItemSkillX MMBEquippedItemSkillY
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+		#endif // MMBRenderEquippedWeaponSkill
+
+		#ifdef MMBRenderEquippedWeaponIcon
+			#include "Internal/MMBRenderEquippedWeapon.lyn.event"
+			SHORT (MMBInventoryObjectPaletteIndex << 12) | MMBInventoryTileIndex
+			BYTE MMBInventoryX MMBInventoryY
+			#ifndef MMBRenderIcon
+				#define MMBRenderIcon
+			#endif // MMBRenderIcon
+		#endif // MMBRenderEquippedWeaponIcon
+
+		#ifdef MMBInventory
+			#include "Internal/MMBDrawInventory.lyn.event"
+			SHORT MMBInventoryTileIndex
+			BYTE MMBInventoryObjectPaletteIndex + 0x10
+			#ifdef HAX_ICON_REWORK
+				BYTE 0 // Item icon sheet
+			#else
+				BYTE 0 // Default icon sheet
+			#endif // HAX_ICON_REWORK
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+		#endif // MMBInventory
+
+		#ifdef MMBRenderIcon
+			#include "Internal/MMBRenderIconObj.lyn.event"
+			WORD MMBHeight
+		#endif // MMBRenderIcon
+
+		#ifdef MMBNumberDrawing
+			#include "Internal/MMBDrawNumberOAM.lyn.event"
+			#include "Internal/MMBDrawUnsignedNumber.lyn.event"
+			#include "Internal/MMBDrawSignedNumber.lyn.event"
+		#endif // MMBNumberDrawing
+
+		#ifdef MMBBarDrawing
+			#include "Internal/MMBDrawBar.lyn.event"
+		#endif // MMBBarDrawing
+
+		#ifdef MMBBattleStruct
+			#include "Internal/MMBPrepStats.lyn.event"
+		#endif // MMBBattleStruct
+
+		#ifdef MMBIconPrep
+			#include "Internal/MMBPrepIcons.lyn.event"
+		#endif // MMBIconPrep
+
+		#ifdef MMBAffinityObjs
+			#include "Internal/MMBDrawAffinityObjs.lyn.event"
+			WORD MMBHeight
+		#endif // MMBAffinityObjs
+
+		ALIGN 4
+
+		#ifdef MMBNumberListDrawing
+			#include "Internal/MMBDrawNumberList.lyn.event"
+			WORD MMBHeight
+			ALIGN 4
+			MMBNumberTable:
+			#ifdef MMBASNumber
+				POIN MMBASGetter
+				SHORT MMBASX
+				SHORT MMBASY
+			#endif // MMBASNumber
+			#ifdef MMBATKNumber
+				POIN MMBATKGetter
+				SHORT MMBATKX
+				SHORT MMBATKY
+			#endif // MMBATKNumber
+			#ifdef MMBAVONumber
+				POIN MMBAVOGetter
+				SHORT MMBAVOX
+				SHORT MMBAVOY
+			#endif // MMBAVONumber
+			#ifdef MMBCHRNumber
+				POIN MMBCHRGetter
+				SHORT MMBCHRX
+				SHORT MMBCHRY
+			#endif // MMBCHRNumber
+			#ifdef MMBCRTNumber
+				POIN MMBCRTGetter
+				SHORT MMBCRTX
+				SHORT MMBCRTY
+			#endif // MMBCRTNumber
+			#ifdef MMBDEFNumber
+				POIN MMBDEFGetter
+				SHORT MMBDEFX
+				SHORT MMBDEFY
+			#endif // MMBDEFNumber
+			#ifdef MMBDODNumber
+				POIN MMBDODGetter
+				SHORT MMBDODX
+				SHORT MMBDODY
+			#endif // MMBDODNumber
+			#ifdef MMBHITNumber
+				POIN MMBHITGetter
+				SHORT MMBHITX
+				SHORT MMBHITY
+			#endif // MMBHITNumber
+			#ifdef MMBRESNumber
+				POIN MMBRESGetter
+				SHORT MMBRESX
+				SHORT MMBRESY
+			#endif // MMBRESNumber
+			#ifdef MMBRTGNumber
+				POIN MMBRTGGetter
+				SHORT MMBRTGX
+				SHORT MMBRTGY
+			#endif // MMBRTGNumber
+			#ifdef MMBCurrentHPNumber
+				POIN MMBCurrentHPGetter
+				SHORT MMBCurrentHPX
+				SHORT MMBCurrentHPY
+			#endif // MMBCurrentHPNumber
+			#ifdef MMBMaxHPNumber
+				POIN MMBMaxHPGetter
+				SHORT MMBMaxHPX
+				SHORT MMBMaxHPY
+			#endif // MMBMaxHPNumber
+			WORD 0
+		#endif // MMBNumberListDrawing
+
+		ALIGN 4
+
+		#ifdef MMBLabelDrawing
+			#include "Internal/MMBDrawLabelList.lyn.event"
+			ALIGN 4
+			MMBLabelTable:
+			#ifdef MMBASLabel
+				POIN MMBASLabelGraphic
+				SHORT ((MMBASLabelPaletteIndex << 12) | MMBASLabelVRAMTile)
+				SHORT (2 * ((32 * MMBASLabelY) + MMBASLabelX)) | ((MMBASLabelTileCount << 12))
+			#endif // MMBASLabel
+			#ifdef MMBATKLabel
+				POIN MMBATKLabelGraphic
+				SHORT ((MMBATKLabelPaletteIndex << 12) | MMBATKLabelVRAMTile)
+				SHORT (2 * ((32 * MMBATKLabelY) + MMBATKLabelX)) | ((MMBATKLabelTileCount << 12))
+			#endif // MMBATKLabel
+			#ifdef MMBAVOLabel
+				POIN MMBAVOLabelGraphic
+				SHORT ((MMBAVOLabelPaletteIndex << 12) | MMBAVOLabelVRAMTile)
+				SHORT (2 * ((32 * MMBAVOLabelY) + MMBAVOLabelX)) | ((MMBAVOLabelTileCount << 12))
+			#endif // MMBAVOLabel
+			#ifdef MMBCHRLabel
+				POIN MMBCHRLabelGraphic
+				SHORT ((MMBCHRLabelPaletteIndex << 12) | MMBCHRLabelVRAMTile)
+				SHORT (2 * ((32 * MMBCHRLabelY) + MMBCHRLabelX)) | ((MMBCHRLabelTileCount << 12))
+			#endif // MMBCHRLabel
+			#ifdef MMBCRTLabel
+				POIN MMBCRTLabelGraphic
+				SHORT ((MMBCRTLabelPaletteIndex << 12) | MMBCRTLabelVRAMTile)
+				SHORT (2 * ((32 * MMBCRTLabelY) + MMBCRTLabelX)) | ((MMBCRTLabelTileCount << 12))
+			#endif // MMBCRTLabel
+			#ifdef MMBDEFLabel
+				POIN MMBDEFLabelGraphic
+				SHORT ((MMBDEFLabelPaletteIndex << 12) | MMBDEFLabelVRAMTile)
+				SHORT (2 * ((32 * MMBDEFLabelY) + MMBDEFLabelX)) | ((MMBDEFLabelTileCount << 12))
+			#endif // MMBDEFLabel
+			#ifdef MMBDODLabel
+				POIN MMBDODLabelGraphic
+				SHORT ((MMBDODLabelPaletteIndex << 12) | MMBDODLabelVRAMTile)
+				SHORT (2 * ((32 * MMBDODLabelY) + MMBDODLabelX)) | ((MMBDODLabelTileCount << 12))
+			#endif // MMBDODLabel
+			#ifdef MMBEXPLabel
+				POIN MMBEXPLabelGraphic
+				SHORT ((MMBEXPLabelPaletteIndex << 12) | MMBEXPLabelVRAMTile)
+				SHORT (2 * ((32 * MMBEXPLabelY) + MMBEXPLabelX)) | ((MMBEXPLabelTileCount << 12))
+			#endif // MMBEXPLabel
+			#ifdef MMBHITLabel
+				POIN MMBHITLabelGraphic
+				SHORT ((MMBHITLabelPaletteIndex << 12) | MMBHITLabelVRAMTile)
+				SHORT (2 * ((32 * MMBHITLabelY) + MMBHITLabelX)) | ((MMBHITLabelTileCount << 12))
+			#endif // MMBHITLabel
+			#ifdef MMBLevelLabel
+				POIN MMBLevelLabelGraphic
+				SHORT ((MMBLevelLabelPaletteIndex << 12) | MMBLevelLabelVRAMTile)
+				SHORT (2 * ((32 * MMBLevelLabelY) + MMBLevelLabelX)) | ((MMBLevelLabelTileCount << 12))
+			#endif // MMBLevelLabel
+			#ifdef MMBRESLabel
+				POIN MMBRESLabelGraphic
+				SHORT ((MMBRESLabelPaletteIndex << 12) | MMBRESLabelVRAMTile)
+				SHORT (2 * ((32 * MMBRESLabelY) + MMBRESLabelX)) | ((MMBRESLabelTileCount << 12))
+			#endif // MMBRESLabel
+			#ifdef MMBRTGLabel
+				POIN MMBRTGLabelGraphic
+				SHORT ((MMBRTGLabelPaletteIndex << 12) | MMBRTGLabelVRAMTile)
+				SHORT (2 * ((32 * MMBRTGLabelY) + MMBRTGLabelX)) | ((MMBRTGLabelTileCount << 12))
+			#endif // MMBRTGLabel
+			#ifdef MMBHPLabel
+				POIN MMBHPLabelGraphic
+				SHORT ((MMBHPLabelPaletteIndex << 12) | MMBHPLabelVRAMTile)
+				SHORT (2 * ((32 * MMBHPLabelY) + MMBHPLabelX)) | ((MMBHPLabelTileCount << 12))
+			#endif // MMBHPLabel
+			WORD 0
+		#endif // MMBLabelDrawing
+
+	ALIGN 4
+
+	MMBBuildRoutines:
+
+		#ifdef MMBRenderInventoryAlternate
+			POIN MMBResetDisplayedItemIndex
+		#endif // MMBRenderInventoryAlternate
+
+		#ifdef MMBIconPrep
+			POIN MMBPrepIcons
+		#endif // MMBIconPrep
+
+		#ifdef MMBEquippedItemPrep
+			POIN MMBSetEquippedWeapon
+		#endif // MMBEquippedItemPrep
+
+		#ifdef MMBEquippedItemOrStaffPrep
+			POIN MMBSetEquippedWeaponOrFirstStaff
+		#endif // MMBEquippedItemOrStaffPrep
+
+		#ifdef MMBEquippedWeaponSkillPrep
+			POIN MMBDrawEquippedWeaponSkill
+		#endif // MMBEquippedWeaponSkillPrep
+
+		#ifdef MMBEquippedWeaponNameIfPlayerInternal
+			POIN MMBDrawEquippedWeaponNameIfPlayer
+		#endif // MMBEquippedWeaponNameIfPlayerInternal
+
+		#ifdef MMBEquippedWeaponNameIfPlayerCenteredInternal
+			POIN MMBDrawEquippedWeaponNameIfPlayerCentered
+		#endif // MMBEquippedWeaponNameIfPlayerCenteredInternal
+
+		#ifdef MMBEquippedWeaponNameWithWarningInternal
+			POIN MMBDrawEquippedWeaponNameWithWarning
+		#endif // MMBEquippedWeaponNameWithWarningInternal
+
+		#ifdef MMBEquippedWeaponNameWithWarningCenteredInternal
+			POIN MMBDrawEquippedWeaponNameWithWarningCentered
+		#endif // MMBEquippedWeaponNameWithWarningCenteredInternal
+
+		#ifdef MMBStandardTilemap
+			POIN MMBDrawTilemap
+		#endif // MMBStandardTilemap
+
+		#ifdef MMBName
+			POIN MMBDrawNameUncentered
+		#endif // MMBName
+
+		#ifdef MMBNameCentered
+			POIN MMBDrawNameCentered
+		#endif // MMBNameCentered
+
+		#ifdef MMBNameAffinityShifted
+			POIN MMBDrawNameAffinityShifted
+		#endif // MMBNameAffinityShifted
+
+		#ifdef MMBMinimug
+			POIN MMBDrawMinimug
+		#endif // MMBMinimug
+
+		#ifdef MMBMinimugEnemyFlip
+			POIN MMBDrawMinimugEnemyFlip
+		#endif // MMBMinimugEnemyFlip
+
+		#ifdef MMBInventory
+			POIN MMBDrawInventory
+		#endif // MMBInventory
+
+		#ifdef MMBEquippedWeaponNameInternal
+			POIN MMBDrawEquippedWeaponName
+		#endif // MMBEquippedWeaponNameInternal
+
+		#ifdef MMBEquippedWeaponNameCenteredInternal
+			POIN MMBDrawEquippedWeaponNameCentered
+		#endif // MMBEquippedWeaponNameCenteredInternal
+
+		#ifdef MMBHPBar
+			POIN MMBDrawHPBar
+		#endif // MMBHPBar
+
+		#ifdef MMBLabelDrawing
+			POIN MMBDrawLabelList
+		#endif // MMBLabelDrawing
+
+		#ifdef MMBAffinity
+			POIN MMBDrawAffinity
+		#endif // MMBAffinity
+
+		#ifdef MMBSkills
+			POIN MMBDrawSkills
+		#endif // MMBSkills
+
+	WORD 0
+
+	ALIGN 4
+
+	MMBDynamicRoutines:
+
+		#ifdef MMBBattleStruct
+			POIN MMBPrepStats
+		#endif // MMBBattleStruct
+
+		#ifdef MMBHPStatus
+			POIN MMBDrawHPStatus
+		#endif // MMBHPStatus
+
+		#ifdef MMBHP
+			POIN MMBDrawHP
+		#endif // MMBHP
+
+		#ifdef MMBDEFRES
+			POIN MMBDrawDEFRES
+		#endif // MMBDEFRES
+
+		#ifdef MMBAVODOD
+			POIN MMBDrawAVODOD
+		#endif // MMBAVODOD
+
+		#ifdef MMBLevelNumber
+			POIN MMBDrawLevelNumber
+		#endif // MMBLevelNumber
+
+		#ifdef MMBEXPNumber
+			POIN MMBDrawEXPNumber
+		#endif // MMBEXPNumber
+
+		#ifdef MMBNumberListDrawing
+			POIN MMBDrawNumberList
+		#endif // MMBNumberListDrawing
+
+		#ifdef MMBAffinityObjs
+			POIN MMBDrawAffinityObjs
+		#endif // MMBAffinityObjs
+
+		#ifdef MMBRenderInventoryAlternate
+			POIN MMBRenderInventoryAlternateObj
+		#endif // MMBRenderInventoryAlternate
+
+		#ifdef MMBRenderInventory
+			POIN MMBRenderItemList
+		#endif // MMBRenderInventory
+
+		#ifdef MMBRenderSkills
+			POIN MMBRenderSkillList
+		#endif // MMBRenderSkills
+
+		#ifdef MMBRenderEquippedWeaponIcon
+			POIN MMBRenderEquippedWeapon
+		#endif // MMBRenderEquippedWeaponIcon
+
+		#ifdef MMBRenderEquippedWeaponIfPlayerOrInventory
+			POIN MMBRenderEquippedWeaponIfPlayerOrInventoryObj
+		#endif // MMBRenderEquippedWeaponIfPlayerOrInventory
+
+		#ifdef MMBRenderSkillsAlternate
+			POIN MMBRenderSkillsAlternateObj
+		#endif // MMBRenderSkillsAlternate
+
+		#ifdef MMBHPBarStatus
+			POIN MMBDrawHPBarStatus
+		#endif // MMBHPBarStatus
+
+		#ifdef MMBRenderEquippedWeaponSkill
+			POIN MMBRenderEquippedWeaponSkillObj
+		#endif // MMBRenderEquippedWeaponSkill
+
+	WORD 0
