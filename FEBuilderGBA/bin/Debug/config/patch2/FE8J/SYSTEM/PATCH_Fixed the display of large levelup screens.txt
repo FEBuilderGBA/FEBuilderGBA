@@ -1,0 +1,23 @@
+NAME=サイズの大きいレベルアップ画面を表示できるように修正する
+NAME.en=Fixed the display of large level-up screens
+NAME.zh=Fixed the display of large level-up screens
+
+INFO=VRAM内のテキストタイルを移動して、バトルスクリーンの大きいタイルを上書きしないようにします。
+INFO.en=Move the text tiles in vram so that they don't overwrite the battle screen's larger tiles
+INFO.zh=Move the text tiles in vram so that they don't overwrite the battle screen's larger tiles
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+OFF:0x75C30=0xC0 0x28 0x00 0x06
+OFF:0x761B4=0x8C 0x22 0x12 0x01
+OFF:0x75BFE=0xA3 0x22
+
+FIX:0x75C30=0x00 0x3C 0x00 0x06
+FIX:0x761B4=0x1C 0x22 0x12 0x02
+FIX:0x75BFE=0xF0 0x22
+
+AUTHOR=Tequila

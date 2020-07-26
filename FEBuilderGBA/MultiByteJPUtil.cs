@@ -849,6 +849,8 @@ namespace FEBuilderGBA
 		        ,"@00B1","Y"    ///No Translate
 		        ,"@00B2","Z"    ///No Translate
 		        ,"@00BC"," "    ///No Translate
+		        ,"[_SP]"," "    ///No Translate
+		        ,"[_2X]","  "    ///No Translate
 	        };
         public static string ConvertNarrowFontToAlpha(string str)
         {

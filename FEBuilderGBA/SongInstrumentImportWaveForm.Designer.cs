@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ImportButNoChange = new System.Windows.Forms.Button();
             this.Volume = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Chunnel = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MyCancelButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
-            this.ImportButNoChange = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(672, 462);
             this.panel1.TabIndex = 0;
+            // 
+            // ImportButNoChange
+            // 
+            this.ImportButNoChange.Location = new System.Drawing.Point(370, 77);
+            this.ImportButNoChange.Margin = new System.Windows.Forms.Padding(4);
+            this.ImportButNoChange.Name = "ImportButNoChange";
+            this.ImportButNoChange.Size = new System.Drawing.Size(298, 37);
+            this.ImportButNoChange.TabIndex = 200;
+            this.ImportButNoChange.Text = "最適化せずにインポート";
+            this.ImportButNoChange.UseVisualStyleBackColor = true;
+            this.ImportButNoChange.Click += new System.EventHandler(this.ImportButNoChange_Click);
             // 
             // Volume
             // 
@@ -241,17 +252,6 @@
             this.OKButton.Text = "インポート";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
-            // 
-            // ImportButNoChange
-            // 
-            this.ImportButNoChange.Location = new System.Drawing.Point(370, 77);
-            this.ImportButNoChange.Margin = new System.Windows.Forms.Padding(4);
-            this.ImportButNoChange.Name = "ImportButNoChange";
-            this.ImportButNoChange.Size = new System.Drawing.Size(298, 37);
-            this.ImportButNoChange.TabIndex = 200;
-            this.ImportButNoChange.Text = "最適化せずにインポート";
-            this.ImportButNoChange.UseVisualStyleBackColor = true;
-            this.ImportButNoChange.Click += new System.EventHandler(this.ImportButNoChange_Click);
             // 
             // SongInstrumentImportWaveForm
             // 

@@ -12820,3 +12820,4 @@
 0203E788	gChapterTitleGrahicsWorkBuffer	{J}
 080DEF00	&CSTRING	END	{J}
 08048BDC	Debug_Display_END_String	{J}
+08032D40	LoadArrowSystemImages	{J}

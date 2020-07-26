@@ -1,0 +1,10 @@
+#define ItemImage 0x0C5EA4
+#define ItemPalette 0x0CBEA4
+#define ItemTable 0xBE222C
+#define TextTable 0xB808AC
+#define PortraitTable 0xC96584
+#define AI1Table 0xB98994
+#define AI2Table 0xB98908
+ORG 0x01000000
+#include "C:\dropbox\FE8Edit7743\github\FEBuilderGBA\bin\Debug\config\patch2\FE7U\AllInstrumentEA\../../FE7U/AllInstrumentEA/AllInstrument.event"
+

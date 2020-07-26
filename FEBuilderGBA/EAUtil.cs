@@ -566,10 +566,31 @@ namespace FEBuilderGBA
             return (file.IndexOf("_FBG_Temp_") == 0);
         }
 
+        static bool IsInjectHackInstallation(string target_text)
+        {
+            if (target_text.IndexOf("jumpToHack") < 0)
+            {
+                return false;
+            }
+            if (target_text.IndexOf("Hack Installation.txt") < 0)
+            {
+                return true;
+            }
+            
+            return false;
+        }
 
         public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
         {
+
             StringBuilder sb = new StringBuilder();
+
+            string target_text = File.ReadAllText(target_filename);
+            if (IsInjectHackInstallation(target_text))
+            {
+                sb.AppendLine("#include \"Extensions/Hack Installation.txt\"");
+            }
+
             if (freearea == U.NOT_FOUND && org_sp == U.NOT_FOUND)
             {
                 sb.AppendLine(String.Format("#include \"{0}\"\r\n"

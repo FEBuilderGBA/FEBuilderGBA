@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Volume = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Chunnel = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.LoopComboBox = new System.Windows.Forms.ComboBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
-            this.Volume = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(672, 611);
             this.panel1.TabIndex = 0;
+            // 
+            // Volume
+            // 
+            this.Volume.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Volume.FormattingEnabled = true;
+            this.Volume.Items.AddRange(new object[] {
+            "0=変更しない",
+            "120=120%",
+            "130=130%",
+            "150=150%",
+            "170=170%",
+            "200=200%",
+            "230=230%",
+            "250=250%",
+            "270=270%",
+            "300=300%",
+            "320=320%",
+            "340=340%",
+            "360=360%",
+            "380=380%",
+            "400=400%",
+            "420=420%",
+            "440=440%",
+            "460=460%",
+            "480=480%",
+            "500=500%"});
+            this.Volume.Location = new System.Drawing.Point(211, 222);
+            this.Volume.Name = "Volume";
+            this.Volume.Size = new System.Drawing.Size(449, 26);
+            this.Volume.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AccessibleDescription = "Waveの音質を下げると、容量を小さくできます。";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 18);
+            this.label7.TabIndex = 199;
+            this.label7.Text = "音量";
             // 
             // Chunnel
             // 
@@ -250,46 +290,6 @@
             this.J_4_INSTRUMENT_ADDR.TabIndex = 178;
             this.J_4_INSTRUMENT_ADDR.Text = "楽譜";
             this.J_4_INSTRUMENT_ADDR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Volume
-            // 
-            this.Volume.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Volume.FormattingEnabled = true;
-            this.Volume.Items.AddRange(new object[] {
-            "0=変更しない",
-            "120=120%",
-            "130=130%",
-            "150=150%",
-            "170=170%",
-            "200=200%",
-            "230=230%",
-            "250=250%",
-            "270=270%",
-            "300=300%",
-            "320=320%",
-            "340=340%",
-            "360=360%",
-            "380=380%",
-            "400=400%",
-            "420=420%",
-            "440=440%",
-            "460=460%",
-            "480=480%",
-            "500=500%"});
-            this.Volume.Location = new System.Drawing.Point(211, 222);
-            this.Volume.Name = "Volume";
-            this.Volume.Size = new System.Drawing.Size(449, 26);
-            this.Volume.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AccessibleDescription = "Waveの音質を下げると、容量を小さくできます。";
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 18);
-            this.label7.TabIndex = 199;
-            this.label7.Text = "音量";
             // 
             // SongTrackImportWaveForm
             // 
