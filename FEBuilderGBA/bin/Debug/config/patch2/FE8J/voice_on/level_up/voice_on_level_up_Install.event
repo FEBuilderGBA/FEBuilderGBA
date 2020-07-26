@@ -1,0 +1,24 @@
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $76730	//{J}
+//ORG $742A8	//{U}
+jumpToHack(voice_on_level_up)
+
+ORG $81704	//{J}
+//ORG $7F3C4	//{U}
+jumpToHack(voice_on_level_up_mapanime)
+POP
+
+ALIGN 4
+voice_on_level_up:
+#incbin "voice_on_level_up.dmp"
+POIN voice_on_level_up_Table
+
+ALIGN 4
+voice_on_level_up_mapanime:
+#incbin "voice_on_level_up_mapanime.dmp"
+POIN voice_on_level_up_Table
+
+#include "voice_on_level_up_Table.event"

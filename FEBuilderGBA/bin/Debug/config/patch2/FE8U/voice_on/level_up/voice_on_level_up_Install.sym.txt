@@ -1,0 +1,3 @@
+voice_on_level_up=$1000460
+voice_on_level_up_mapanime=$1000568
+voice_on_level_up_Table=$1000670

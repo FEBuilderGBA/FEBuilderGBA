@@ -1,0 +1,34 @@
+NAME=ユニットを選択した時に音声を再生する(Editor)
+NAME.en=voice on level up(Editor)
+
+IF:0x76730=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END voice_on_level_up.dmp
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:UNIT
+B0:UNIT=Unit / ANY=0x00
+B1:CLASS=Class / ANY=0x00
+W2:FLAG=Flag / ANY=0x00
+W4:SONG=Normal Grow1
+W6:SONG=Normal Grow2
+W8:SONG=Bad Grow1
+W10:SONG=Bad Grow2
+W12:SONG=Good Grow1
+W14:SONG=Good Grow2
+
+INFO=レベルアップした時に音声を再生します。\r\n普通成長、クソ成長、神成長ごとに音声を設定できます。\r\n2ピン以下はクソ成長。5ピン以上が神成長です。\r\n音声データは、0x60006(Low SFX)で入れてください。
+INFO.en=Play the sound when you level up.\r\nYou can set the voice for normal growth, fucking growth, and god growth.\r\n2 pins or less bad grows. 5 pins or more is good growth.\r\nFor voice data, enter 0x60006 (Low SFX).
+NAME.zh=选择一个装置时播放音频（Editor）
+INFO.zh=升级时播放声音。\r\n您可以为正常成长，他妈的成长和上帝成长设定声音。\r\n2个或更少的针脚会长大。5针以上是上帝的成长。\r\nFor voice data, enter 0x60006 (Low SFX).

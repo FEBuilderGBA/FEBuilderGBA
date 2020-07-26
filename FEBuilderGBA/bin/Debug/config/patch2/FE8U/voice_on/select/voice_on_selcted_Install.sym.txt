@@ -1,0 +1,2 @@
+voice_on_selcted=$18AD9C4
+Voice_On_Selected_Table=$18ADA64

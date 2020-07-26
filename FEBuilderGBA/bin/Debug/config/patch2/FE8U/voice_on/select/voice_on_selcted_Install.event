@@ -1,0 +1,15 @@
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+//ORG $1C710	//{J}
+ORG $1CAA8	//{U}
+jumpToHack(voice_on_selcted)
+POP
+
+ALIGN 4
+voice_on_selcted:
+#incbin "voice_on_selcted.dmp"
+POIN Voice_On_Selected_Table
+
+#include "voice_On_Selected_Table.event"

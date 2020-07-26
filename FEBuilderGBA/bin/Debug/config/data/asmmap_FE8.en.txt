@@ -12815,3 +12815,17 @@ r3=X tile position of menu of right	{U}
 08037F5C	LoadDungeonState	{J}
 08037F78	SaveBeforeDungeonState	{J}
 08037F90	LoadBeforeDungeonState	{J}
+080BBA28	GetWorldMapNodeName	{U}
+0203EF66	gSaveMenuRTextData.CurrentWorldmapNodeID	{U}
+080AA768	GetWorldmapNodeNameForSaveMenuRtextData	{U}
+08089DE8	MakeTextForSaveMenuRtextData	{U}
+080c086c	GetWorldMapNodeName	{J}
+0203EF62	gSaveMenuRTextData.CurrentWorldmapNodeID	{J}
+080AF248	GetWorldmapNodeNameForSaveMenuRtextData	{J}
+0808C0F8	MakeTextForSaveMenuRtextData	{J}
+0203E78C	gChapterTitleGrahicsWorkBuffer	{U}
+0203E788	gChapterTitleGrahicsWorkBuffer	{J}
+080DEF00	&CSTRING	END	{J}
+08048BDC	Debug_Display_END_String	{J}
+08032D40	LoadArrowSystemImages	{J}
+08032E28	LoadArrowSystemImages	{U}

@@ -1,0 +1,15 @@
+NAME=レベルアップした時に音声を再生する(Install)
+NAME.en=voice on level up(Install)
+
+PATCHED_IF:0x76730=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=EA
+TAG=#ENGINE
+
+EA=voice_on_level_up_Install.event
+
+INFO=レベルアップした時に音声を再生します。\r\n普通成長、クソ成長、神成長ごとに音声を設定できます。
+INFO.en=Play the sound when you level up.\r\nYou can set the voice for normal growth, fucking growth, and god growth.
+NAME.zh=升级时播放声音（安装）。
+INFO.zh=升级时播放声音。\r\n您可以为正常成长，他妈的成长和上帝成长设定声音。

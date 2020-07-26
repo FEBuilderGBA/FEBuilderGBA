@@ -1,0 +1,15 @@
+NAME=ユニットを選択した時に音声を再生する(Install)
+NAME.en=voice on selcted(Install)
+
+PATCHED_IF:0x1CAA8=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=EA
+TAG=#ENGINE
+
+EA=voice_on_selcted_Install.event
+
+INFO=ユニットを選択した時に、音声を再生します。\r\nUnit Select SFXとの違いは、複数の音声を再生できることです。
+INFO.en=Plays audio when a unit is selected.\r\nThe difference from Unit Select SFX is that it can play multiple audio.
+NAME.zh=选择一个装置时播放音频（安装）。
+INFO.zh=选择一个装置时播放音频。\r\n与Unit Select SFX的区别在于它可以播放多个音频。

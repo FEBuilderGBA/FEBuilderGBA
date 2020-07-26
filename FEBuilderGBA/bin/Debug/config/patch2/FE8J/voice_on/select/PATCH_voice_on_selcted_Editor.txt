@@ -1,0 +1,40 @@
+NAME=ユニットを選択した時に音声を再生する(Editor)
+NAME.en=voice on selcted(Editor)
+
+IF:0x1C710=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END voice_on_selcted.dmp
+
+//データサイズ(10進数)
+DATASIZE=24
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP24 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:UNIT
+B0:UNIT=Unit / ANY=0x00
+B1:CLASS=Class / ANY=0x00
+W2:FLAG=Flag / ANY=0x00
+W4:SONG=Voice1
+W6:SONG=Voice2
+W8:SONG=Voice3
+W10:SONG=Voice4
+
+W12:SONG=Voice5
+W14:SONG=Voice6
+W16:SONG=Voice7
+W18:SONG=Voice8
+W20:SONG=Voice9
+W22:SONG=Voice10
+
+
+INFO=ユニットを選択した時に、音声を再生します。\r\nVoice2以降が設定されている場合は、ランダムで切り替えます。\r\n音声データは、0x60006(Low SFX)で入れてください。\r\n毎回しゃべるのが、うざい場合は、余白として0x7FFFを入れてください。
+INFO.en=Plays audio when a unit is selected.\r\nIf Voice2 or later is set, it will be switched randomly.\r\nFor voice data, enter 0x60006 (Low SFX).\r\nIf you don't like to speak every time, please insert 0x7FFF as a margin.\r\n
+NAME.zh=选择一个装置时播放音频（编辑器）。
+INFO.zh=选择一个装置时播放音频。\r\n如果设置了Voice2或更高版本，它将被随机切换。\r\nFor voice data, enter 0x60006 (Low SFX).\r\nIf you don't like to speak every time, please insert 0x7FFF as a margin.\r\n

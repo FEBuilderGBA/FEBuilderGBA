@@ -1,0 +1,10 @@
+Term=$7E
+Table=$A0
+Loop=$1C
+CheckUnit=$24
+CheckClass=$32
+CheckFlag=$40
+CheckVoice1=$50
+PlayVoice1=$72
+CheckVoiceData=$6A
+Play=$78
