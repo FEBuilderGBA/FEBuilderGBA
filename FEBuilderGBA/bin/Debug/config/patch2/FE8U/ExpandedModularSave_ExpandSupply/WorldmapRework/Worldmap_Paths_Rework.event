@@ -1,0 +1,157 @@
+#ifndef WORLDMAP_PATHS_REWORK
+#define WORLDMAP_PATHS_REWORK
+//Paths rework
+
+//Offset in WMDataStruct to start reading path data from
+#define PathsStartOffset 0x84
+#define PathsSize 0x40
+#define PathDrawingBuffer 0x02019d00 //was 2019d00
+#define gPathMap 0x2028C50 //was 201AFF0
+#define gPathfindingBuffer 0x2028BF8 //was 201B0D8
+#define gWmRoutes "0x03005280+PathsStartOffset" //was 03005324
+
+//ASSERT PathsStartOffset+PathsSize = 0xC4
+
+//TODO: fix save chapter name at Thief Shrine
+//fix first path disappearing on suspend + reload
+//Valley Approach and Dead Man's Mire are too long.
+
+
+PUSH
+	//fix world map path drawing twice
+	//If using this, need to clear out old route data before loading! This is why first path keeps disappearing
+	ORG $BC8BC
+	#incbin "SetupNewWMRoute_Fix.dmp"
+
+	//Setting start offset 
+	ORG $0C16E
+	BYTE PathsStartOffset
+	ORG $0C1A2
+	BYTE PathsStartOffset
+	ORG $BAC18
+	WORD gWmRoutes
+	ORG $BC832
+	BYTE PathsStartOffset
+	ORG $BF596
+	BYTE PathsStartOffset
+	
+	//BBC54 has something to do with drawing the paths to BG2.
+	//02019d00 seems to be the buffer. looks like it goes all the way up to 201A660 (or possibly 201AFF0??). Shouldn't need repointing but i'm putting it here just in case.
+	ORG $BBC80
+	WORD PathDrawingBuffer
+	ORG $BBCC4
+	WORD PathDrawingBuffer
+	ORG $BBD44
+	WORD PathDrawingBuffer
+	ORG $BBE2C
+	WORD PathDrawingBuffer
+	ORG $BBE78
+	WORD PathDrawingBuffer
+	
+	//B9260
+	ORG $B924C
+	BYTE PathsSize-1
+	ORG $B9254
+	BYTE PathsSize-1
+	ORG $B925A
+	BYTE PathsSize
+	
+	ORG $BBCAA
+	BYTE PathsSize
+
+	ORG $BCE24
+	BYTE PathsSize-1
+	
+	//BC898 clears out all existing paths.
+	//(writes 0xFF to all and sets nodecount to 0)
+	ORG $BC8AA
+	BYTE PathsSize-1
+	ORG $BC8B0
+	BYTE PathsSize
+	
+	//BC8BC SetupNewWMRoute
+	ORG $BC8BE
+	BYTE PathsSize
+	
+	//BC8EC WM_RemovePath
+	ORG $BC8F4
+	BYTE PathsSize
+	ORG $BC932
+	BYTE PathsSize
+	
+	//BC970 - i think this is a pathfinding algorithm
+	ORG $BC990
+	BYTE PathsStartOffset
+	//99C, r1=total count->r12, r2=counter
+	//9a8 nodeID
+	ORG $BCA04
+	WORD $05000080 //CPUSet param
+	
+	//Repointing the pathmap and pathfinding buffers to allow more space.
+	ORG $BCA18
+	WORD gPathMap
+	
+	ORG $BD288
+	WORD gPathfindingBuffer
+	ORG $BD298
+	WORD gPathfindingBuffer
+	ORG $BD2A4
+	WORD gPathfindingBuffer
+	
+	/*
+	//Uncomment this if you are NOT changing the size of the pathfinding buffer.
+	ORG $BCD8C
+	WORD gPathMap
+	ORG $BCDBC
+	WORD gPathMap
+	ORG $BCD84
+	WORD gPathfindingBuffer
+	ORG $BCDE0
+	WORD gPathfindingBuffer
+	*/
+	
+	//==================================//
+	// TO DOUBLE THE PATHFINDING BUFFER //
+	//==================================//
+	ORG $BCAB8
+	#incbin "Pathfinding1_BCAB8.dmp"
+	ORG $BCBAC
+	#incbin "Pathfinding2_BCBAC.dmp"
+	ORG $BCCFC
+	#incbin "MovePlayerToNode.dmp"
+	WORD gPathMap
+	WORD gPathfindingBuffer
+	ORG $BD29E
+	SHORT $6C00
+	
+POP
+
+
+//201AFF0 - what does this do? Map pathfinding? also search 201AFF8
+//path count, then list of IDs that can be walked to from that node
+//ends at 201B0D8
+//0xE4 bytes, yeah thats a hard 1C limit
+//BCA0C has a pointer to it @BCA18
+//BCCFC seems to deal with this and load all the pointers. (pointer at BCD8C/BCDBC) - gets called if you press A on a node that is not your current node. r0 = current, r1 = destination
+
+//(Calls BCA54 with 201b100 in r0)
+//same with BCA90, check if monster is in the way
+//I think this is just an array of sprites on the map, count then byte[7] nodeIDs. shouldn't need repointing.
+
+//bc29c starts the animation for path drawing
+
+//2019d00??? is this the route drawing buffer?
+
+//201b0d8 - pointer at BCD84, BCDE0, BD288, BD298, BD2A4
+//The two CPUSet instructions get called with 0x00s so it gets cleared out for 0x20 bytes.
+//r7 is current node? @BCD56 - gets stored at +$0 and +$10
+//+10 is where it works out an alternate path.
+//BCBAC gets passed 201B0D8, see what it does with it.
+//same with BCAB8. (BCB22 is hit when there is a match) (THIS IS RECURSIVE)
+//it's at least 0x24 bytes long...
+//+0x20 seems to be "how many moves to get to the destination"
+//So 201b0d8 seems to be a list of nodes to traverse (0x10 bytes duplicated) and then at +0x20 it's a movement count. This gets compared to 0xF at BCDC6 because default max is 0x10.
+//To be safe, we should double this size as well. BCAB8, BCBAC, BCCFC, BD29C will all need some offsets changed.
+//BCD28 should be safe to branch away from using r6.
+
+#endif //WORLDMAP_PATHS_REWORK

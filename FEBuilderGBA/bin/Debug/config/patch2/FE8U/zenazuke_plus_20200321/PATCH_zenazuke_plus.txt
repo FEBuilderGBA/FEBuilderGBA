@@ -12,7 +12,7 @@ INFO.zh=Send anything other than not equipped weapons and staffs to Supply.\r\nI
 
 
 //既に適応されたかどうか
-PATCHED_IF:$FGREP4 zenazuke_plus_Usability.dmp=0x00 0xB5 0x2D 0x4B
+PATCHED_IF:$FGREP4 zenazuke_plus_Usability.dmp=0x00 0xB5 0x37 0x4B
 EA_EXTENDS_UNITMENU:0x01=0x40
 EXTENDS:0x1100=TEXT
 

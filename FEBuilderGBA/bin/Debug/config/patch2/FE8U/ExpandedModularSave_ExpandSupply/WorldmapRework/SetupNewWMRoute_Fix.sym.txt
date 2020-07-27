@@ -1,0 +1,4 @@
+Loop=$08
+TrueExit=$26
+NotFound=$1C
+Exit=$28

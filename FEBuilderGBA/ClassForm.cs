@@ -798,7 +798,7 @@ namespace FEBuilderGBA
         {
             InputFormRef.ExpandsEventArgs eventarg = (InputFormRef.ExpandsEventArgs)e;
 
-            DialogResult dr = R.ShowNoYes("クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ(Class Expansion)\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n");
+            DialogResult dr = R.ShowNoYes("クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n");
             if (dr != DialogResult.Yes)
             {//キャンセル.
                 eventarg.IsCancel = true;

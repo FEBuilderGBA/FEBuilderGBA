@@ -343,6 +343,33 @@ namespace FEBuilderGBA
                 );
         }
 
+        public static uint SearchMenu(Form form, uint menu_id)
+        {
+            uint r = SearchMenuLow(MenuDefinitionForm.GetUnitMenuPointer(), menu_id);
+            if (r != U.NOT_FOUND)
+            {
+                return r;
+            }
+            r = SearchMenuLow(MenuDefinitionForm.GetGameMenuPointer(), menu_id);
+            return r;
+        }
+        static uint SearchMenuLow(uint pointer,uint searchCommandID)
+        {
+            InputFormRef ifr = Init(null);
+            ifr.ReInitPointer(pointer);
+
+            uint addr = ifr.BaseAddress;
+            for (int i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
+            {
+                uint id = Program.ROM.u8(addr + 0x9);
+                if (id == searchCommandID)
+                {
+                    return addr;
+                }
+            }
+            return U.NOT_FOUND;
+        }
+
         public static uint ExpandsArea(Form form, string typename, uint newdatacount, Undo.UndoData undodata)
         {
             uint pointer;

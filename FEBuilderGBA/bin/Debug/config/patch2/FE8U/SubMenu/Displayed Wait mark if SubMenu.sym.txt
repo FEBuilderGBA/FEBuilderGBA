@@ -1,0 +1,9 @@
+Skip2=$2C
+ShouldSpecialName=$7A
+DrawString=$42
+SubMenuCheckLoop=$80
+HideMenu=$9E
+NextLoop=$9A
+ShowMenu=$A2
+Exit=$AA
+WaitName=$CC

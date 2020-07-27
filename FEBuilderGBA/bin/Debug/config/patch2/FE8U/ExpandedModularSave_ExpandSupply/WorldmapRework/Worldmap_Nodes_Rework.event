@@ -1,0 +1,230 @@
+#ifndef WORLDMAP_NODES_REWORK
+#define WORLDMAP_NODES_REWORK
+
+//File for making worldmap data save at various sizes.
+
+//Put your actual node count here (not your maximum)
+//Vanilla is 0x1C.
+#define Worldmap_Node_Count 0x35
+
+//==================//
+// SIZE DEFINITIONS //
+//==================//
+
+//For datasize of 1 byte per node (Recommended)
+//Allows 0x74 nodes without restructuring path data.
+//With 2x paths expansion, allows 0x54 nodes.
+#define Worldmap_Data_Size 0x1
+#define RegisterShiftValue 0x0
+
+/*
+//For datasize of 2 bytes (short) per node
+//Allows 0x3A nodes without restructuring path data.
+//With 2x paths expansion, allows 0x2A nodes.
+#define Worldmap_Data_Size 0x2
+#define RegisterShiftValue 0x40
+*/
+
+/*
+//For datasize of 4 bytes (word) per node
+//this is how vanilla does it; allows 0x1D nodes without restructuring path data.
+#define Worldmap_Data_Size 0x4
+#define RegisterShiftValue 0x80
+*/
+
+//Reference comments at end of file for opcodes.
+
+#define LeftshiftZeroZero "$00 | RegisterShiftValue" 
+#define LeftshiftZeroOne "$08 | RegisterShiftValue"
+#define LeftshiftZeroTwo "$10 | RegisterShiftValue"
+#define LeftshiftZeroThree "$18 | RegisterShiftValue"
+#define LeftshiftZeroFour "$20 | RegisterShiftValue"
+#define LeftshiftZeroFive "$28 | RegisterShiftValue"
+#define LeftshiftZeroSix "$30 | RegisterShiftValue"
+#define LeftshiftOneOne "$09 | RegisterShiftValue"
+#define LeftshiftOneTwo "$11 | RegisterShiftValue"
+#define LeftshiftOneThree "$19 | RegisterShiftValue"
+#define LeftshiftOneFour "$21 | RegisterShiftValue"
+#define LeftshiftOneFive "$29 | RegisterShiftValue"
+#define LeftshiftOneSix "$31 | RegisterShiftValue"
+#define LeftshiftOneSeven "$39 | RegisterShiftValue"
+#define LeftshiftTwoTwo "$12 | RegisterShiftValue"
+
+PUSH
+	//Bitshift operations - will change based on data size (size >>1 = bits to shift).
+	//Event wrappers
+	ORG $0C1D2 
+		SHORT LeftshiftOneOne //lsl r1, r1, #0x1
+	ORG $0C1EE
+		SHORT LeftshiftOneOne //lsl r1, r1, #0x1
+	ORG $0C218 
+		SHORT LeftshiftOneTwo //lsl r1, r2, #0x1
+	ORG $0C22E 
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $0C26E 
+		SHORT LeftshiftZeroThree //lsl r0, r3, #0x1
+	ORG $0C290 
+		SHORT LeftshiftZeroThree //lsl r0, r3, #0x1
+	ORG $0C2B0 
+		SHORT LeftshiftZeroThree //lsl r0, r3, #0x1
+	ORG $0C33C 
+		SHORT LeftshiftZeroSix //lsl r0, r6, #0x1
+	ORG $0C386 
+		SHORT LeftshiftZeroSix //lsl r0, r6, #0x1
+	ORG $0C3AA 
+		SHORT LeftshiftZeroSix //lsl r0, r6, #0x1
+	ORG $0C3CA 
+		SHORT LeftshiftOneSix //lsl r1, r6, #0x1
+	ORG $0C418 
+		SHORT LeftshiftOneSix //lsl r1, r6, #0x1
+	ORG $0C476 
+		SHORT LeftshiftZeroFive //lsl r0, r5, #0x1
+	ORG $0C4CE
+		SHORT LeftshiftOneOne //lsl r1, r1, #0x1
+	ORG $0C4FC
+		SHORT LeftshiftOneFour //lsl r1, r4, #0x1
+	ORG $0C530 
+		SHORT LeftshiftTwoTwo //lsl r2, r2, #0x1
+		 
+	//Actual getters/setters
+	ORG $B8B66 
+		SHORT LeftshiftZeroThree //lsl r0, r3, #0x1
+	ORG $B8C02 
+		SHORT LeftshiftZeroZero //lsl r0, r0, #0x1
+	ORG $B92DE 
+		SHORT LeftshiftZeroFour //lsl r0, r4, #0x1
+	ORG $B9376 
+		SHORT LeftshiftZeroFour //lsl r0, r4, #0x1
+	ORG $B93B2 
+		SHORT LeftshiftZeroFour //lsl r0, r4, #0x1
+	ORG $B9586
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $B95CE 
+		SHORT LeftshiftZeroFour //lsl r0, r4, #0x1
+	ORG $BB644 
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $BB7C8 
+		SHORT LeftshiftOneSeven //lsl r1, r7, #0x1
+	ORG $BB8B6 
+		SHORT LeftshiftOneSeven //lsl r1, r7, #0x1
+	ORG $BB940
+		SHORT LeftshiftZeroZero //lsl r0, r0, #0x1
+	ORG $BC67A
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $BC6B2
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $BC6EA 
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $BC732 
+		SHORT LeftshiftZeroZero //lsl r0, r0, #0x1
+	ORG $BC75A 
+		SHORT LeftshiftZeroZero //lsl r0, r0, #0x1
+	ORG $BD1CE 
+		SHORT LeftshiftZeroFour //lsl r0, r4, #0x1
+	ORG $BE9DE 
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	ORG $BF836 
+		SHORT LeftshiftOneOne //lsl r1, r1, #0x1
+	ORG $BF90A 
+		SHORT LeftshiftZeroZero //lsl r0, r0, #0x1
+	ORG $BFA26 
+		SHORT LeftshiftZeroTwo //lsl r0, r2, #0x1
+	
+	//Add instructions, we can just write byte directly
+	ORG $B9144
+	BYTE Worldmap_Data_Size
+	ORG $BCFC8
+	BYTE Worldmap_Data_Size
+	ORG $BD036
+	BYTE Worldmap_Data_Size
+	
+	//Cmp instructions, we can just write byte directly
+	ORG $B9148
+	BYTE Worldmap_Node_Count
+	ORG $B9566
+	BYTE Worldmap_Node_Count
+	ORG $B957A
+	BYTE Worldmap_Node_Count
+	ORG $B957E
+	BYTE Worldmap_Node_Count+1
+	ORG $B95A2
+	BYTE Worldmap_Node_Count
+	ORG $B9602
+	BYTE Worldmap_Node_Count
+	ORG $BB6E2
+	BYTE Worldmap_Node_Count
+	ORG $BB896
+	BYTE Worldmap_Node_Count
+	ORG $BBA2A
+	BYTE Worldmap_Node_Count
+	ORG $BCFBE
+	BYTE Worldmap_Node_Count
+	ORG $BD03A
+	BYTE Worldmap_Node_Count
+	
+	//Map size scroll controls
+	//Check out B9472 for where to break to troubleshoot.
+	ORG $B94E6
+	SHORT $DA03//bge b94f0
+	BYTE $0 //mov r2, #0x0
+	ORG $B94f0
+	BYTE $1C		//(map width -2) <<4
+	ORG $B94f4
+	BYTE $1C		//(map width -2) <<4
+	ORG $B9502
+	BYTE $13		//(map height -1) <<4
+	ORG $B9506
+	BYTE $13		//(map height -1) <<4
+
+POP
+
+//Opcode refs:
+//lsl r0, r0, #0x0 = $0000
+//lsl r0, r0, #0x1 = $0040
+//lsl r0, r0, #0x2 = $0080
+
+//lsl r0, r2, #0x0 = $0010
+//lsl r0, r2, #0x1 = $0050
+//lsl r0, r2, #0x2 = $0090
+
+//lsl r0, r3, #0x0 = $0018
+//lsl r0, r3, #0x1 = $0058
+//lsl r0, r3, #0x2 = $0098
+
+//lsl r0, r4, #0x0 = $0020
+//lsl r0, r4, #0x1 = $0060
+//lsl r0, r4, #0x2 = $00A0
+
+//lsl r0, r5, #0x0 = $0028
+//lsl r0, r5, #0x1 = $0068
+//lsl r0, r5, #0x2 = $00A8
+
+//lsl r0, r6, #0x0 = $0030
+//lsl r0, r6, #0x1 = $0070
+//lsl r0, r6, #0x2 = $00B0
+
+//lsl r1, r1, #0x0 = $0009
+//lsl r1, r1, #0x1 = $0049
+//lsl r1, r1, #0x2 = $0089
+
+//lsl r1, r2, #0x0 = $0011
+//lsl r1, r2, #0x1 = $0051
+//lsl r1, r2, #0x2 = $0091
+
+//lsl r1, r4, #0x0 = $0021
+//lsl r1, r4, #0x1 = $0061
+//lsl r1, r4, #0x2 = $00A1
+
+//lsl r1, r6, #0x0 = $0031
+//lsl r1, r6, #0x1 = $0071
+//lsl r1, r6, #0x2 = $00B1
+
+//lsl r1, r7, #0x0 = $0039
+//lsl r1, r7, #0x1 = $0079
+//lsl r1, r7, #0x2 = $00B9
+
+//lsl r2, r2, #0x0 = $0012
+//lsl r2, r2, #0x1 = $0052
+//lsl r2, r2, #0x2 = $0092
+
+#endif //WORLDMAP_NODES_REWORK

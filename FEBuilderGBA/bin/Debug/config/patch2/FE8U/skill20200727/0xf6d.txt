@@ -1,0 +1,3 @@
+Armorboost: +4 attack and defense
+against armored enemies if within
+3 spaces of an armored ally.

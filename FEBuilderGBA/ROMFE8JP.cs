@@ -403,6 +403,7 @@ namespace FEBuilderGBA
         public byte[] defualt_event_script_mapterm_code() { return new byte[] { 0x20, 0x01, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード
         public uint main_menu_width_address() { return 0x5C56F6; } //メインメニューの幅
         public uint map_default_count() { return 0x4F; }    // ディフォルトのマップ数
+        public uint wait_menu_command_id() { return 0x6B; } //WaitメニューのID
         public uint font_default_begin() { return 0x579CDC; }
         public uint font_default_end() { return 0x5B8CDC; }
         public string get_shop_name(uint shop_object)//店の名前

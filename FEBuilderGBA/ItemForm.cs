@@ -646,10 +646,10 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            if (PatchUtil.SearchFE8UItemSkill() == PatchUtil.FE8UItemSkill_enum.NO)
-            {
-                return false;
-            }
+//            if (PatchUtil.SearchFE8UItemSkill() == PatchUtil.FE8UItemSkill_enum.NO)
+//            {
+//                return false;
+//            }
             return true;
         }
 

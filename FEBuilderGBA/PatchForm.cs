@@ -2944,7 +2944,16 @@ namespace FEBuilderGBA
             return grepdata.ToArray();
         }
 
-        uint DefEASPORG(PatchSt patch
+        uint DefEASPORG_SearchMenuID(PatchSt patch
+            , string key
+            , string addrstring
+            , string value)
+        {
+            uint addr = MenuCommandForm.SearchMenu(this, U.atoi0x(value) );
+            return addr;
+        }
+
+        uint DefEASPORG_Expands(PatchSt patch
             , string key
             , string addrstring
             , string value
@@ -3019,9 +3028,16 @@ namespace FEBuilderGBA
                         }
                     }
                 }
+                else if (key == "EA_SEARCH_MENU_ID")
+                {
+                    out_sp_org = DefEASPORG_SearchMenuID(patch
+                        , key
+                        , addrstring
+                        , value);
+                }
                 else if (key == "EA_EXTENDS_UNITMENU" || key == "EA_EXTENDS_GAMEMENU")
                 {
-                    out_sp_org = DefEASPORG(patch
+                    out_sp_org = DefEASPORG_Expands(patch
                         , key
                         , addrstring
                         , value

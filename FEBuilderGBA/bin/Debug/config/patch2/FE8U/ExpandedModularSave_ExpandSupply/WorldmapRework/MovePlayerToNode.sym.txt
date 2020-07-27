@@ -1,0 +1,9 @@
+CPUSet=$01497C
+gPathfindingBuffer=$E0
+gPathMap=$DC
+SkipStoreToBuffer=$36
+UsePathfind_BCAB8=$86
+CheckPathfindResult=$A4
+NotFound=$B6
+ExitFunc=$C4
+GetResult=$C2

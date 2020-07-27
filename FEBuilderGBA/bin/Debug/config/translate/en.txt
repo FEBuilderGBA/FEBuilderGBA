@@ -637,8 +637,8 @@ Terrain DEF
 :クラス能力
 Class Editor
 
-:クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ(Class Expansion)\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n
-Extension of class list can cause various problems.\r\nIt should be avoided if possible.\r\nIf you still want to extend the class, please apply the following patch to avoid problems.\r\n\r\nThe Class Expansion patch makes it possible to record extended classes 0x80 and later in saved data (ClassExpansion)\r\nThe Extended Moving Map Animation patch enables map animation after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
+:クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n
+Extension of class list can cause various problems.\r\nIt should be avoided if possible.\r\nIf you still want to extend the class, please apply the following patch to avoid problems.\r\n\r\nThe patch makes it possible to record extended classes 0x80 and later in saved data (ClassExpansion)\r\nThe Extended Moving Map Animation patch enables map animation after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
 
 :クラスデータが極端に少ないです。破損している可能性があります。
 Class data is extremely small.It may be damaged.
@@ -1446,9 +1446,6 @@ Difficulty: Normal
 
 :拠点
 World Map Nodes
-
-:MNC2の修正パッチを適応していないので、章ワープを利用できません。\r\nこの機能を使うには、MNC2 Fixのパッチが必要です。
-Chapter warp is not available because the patch for MNC2 has not been applied.\r\nTo use this function, the patch of MNC2 Fix is \u200b\u200brequired.
 
 :MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
 Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be in the chapter to use this feature.
@@ -9473,7 +9470,7 @@ Warning: The data has ended prematurely.addr: {0} data.Length: {1} countI: {2}.
 The emulator is not working.
 
 :OverflowException! 32bitバージョンのエミュレータを利用していますか?
-OverflowException! Are you using a 32bit version of emulator?
+OverflowException! Please use the 32bit version of the emulator.
 
 :OpenProcess APIが失敗ました。
 The OpenProcess API failed.
@@ -10000,6 +9997,9 @@ To see the result, press the Preview button.
 :ファイルサイズ {0} -> {1} ({2}%)
 File size {0}-> {1} ({2}%)
 
+:最適化せずにインポート
+Import without optimization.
+
 :0=変更しない
 0=Not change
 
@@ -10032,9 +10032,6 @@ Optimisation
 
 :Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
 Since Wave files consume a lot of space, it is recommended that you convert to lower quality and import.
-
-:最適化せずにインポート
-Import without optimization.
 
 :Waveのインポート
 Wave import.

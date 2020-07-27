@@ -23,19 +23,9 @@ ORG 0x04F39C	//{U}
 BYTE 0x00 0x4B 0x9F 0x46
 POIN flipmenu+1
 
-ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
-	POIN	TxtData0xF17_sjis
-	SHORT	$0F17 $0F18
-	SHORT	$4F00 0
-	POIN	IsSubMenuShow+1
-	WORD	0
-	POIN	ShowSubMenu+1
-	WORD	0 
-	WORD	0
-	WORD	0
-
+ORG	FEBUILDER_EXTRA_ORG	+0x10	//Wait Menu -> Draw Routine Pointer
+POIN DisplayedWaitmarkIfSubMenu+1
 POP
-
 
 ALIGN 4
 IsSubMenuShow:
@@ -51,27 +41,24 @@ ALIGN 4
 ShowMenu:
 #incbin "ShowMenu.dmp"
 
+ALIGN 4
 ShowSubMenu:
 #incbin "ShowSubMenu.dmp"
 POIN ShowMenu+1
 
 
 ALIGN 4
-TxtData0xF17_sjis:
-#incbin "0xF17.sjis.bin"
+DisplayedWaitmarkIfSubMenu:
+#incbin "Displayed Wait mark if SubMenu.dmp"
+WORD 0xF17  //Text "Wait >>"
 
 ALIGN 4
 TxtData0xF17:
 #incbin "0xF17.bin"
 
-ALIGN 4
-TxtData0xF18:
-#incbin "0xF18.bin"
+#define setText_WithAntiHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (0x80000000+offset); POP"
 
-#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
-
-setText_WithHuffman(0xF17,TxtData0xF17)
-setText_WithHuffman(0xF18,TxtData0xF18)
+setText_WithAntiHuffman(0xF17,TxtData0xF17)
 
 ALIGN 4
 SubMenuSample:

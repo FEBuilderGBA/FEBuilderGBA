@@ -1,0 +1,60 @@
+//Doubles the amount of worldmap paths that can be saved.
+//Meant to work with Worldmap_Nodes_Rework and Worldmap_Paths_Rework, which handle the expansion of the data in WRAM and IRAM. This installer just handles SRAM. Place it AFTER Worldmap_Nodes_Rework and Worldmap_Paths_Rework in your buildfile!
+
+//It still seems unstable.
+//#include "WorldmapRework/Worldmap_Nodes_Rework.event"
+//#include "WorldmapRework/Worldmap_Paths_Rework.event"
+
+//Definitions in case Worldmap_Nodes_Rework and Worldmap_Paths_Rework aren't installed.
+		
+	#ifndef Worldmap_Node_Count
+		#define Worldmap_Node_Count 0x1C
+	#endif
+	#ifndef PathsStartOffset
+		#define PathsStartOffset 0xA4
+	#endif
+	#ifndef PathsSize
+		#define PathsSize 0x20
+	#endif
+	//Conditional opcodes so you can adjust node datasize on the fly!
+	//Vanilla shifts register left by <<2, as the datasize is WORD. So in vanilla, the opcode used is [lsl r0, r0, #0x2]
+	#ifndef LeftshiftZeroZero
+		#define LeftshiftZeroZero $0080
+	#endif
+
+ALIGN 4
+	
+#include "SrcModules/SaveWMStuff.lyn.event"
+	
+PUSH
+	//Save data fixes
+	ORG $A70B0
+		LynJump(MS_SaveExpandedWMData)
+	ORG SaveWM_ShiftByNodeDatasize
+		SHORT LeftshiftZeroZero
+	ORG SaveWM_NodeCount
+		BYTE Worldmap_Node_Count
+	ORG $A6EB8
+		SHORT $1DE0 //add r0, r4, #0x7
+	ORG $A6ED4
+		BYTE PathsStartOffset
+	ORG $A7048
+		BYTE $02 //change this if you expand skirmish data
+
+	//Load data fixes
+	ORG $A7138
+		LynJump(MS_LoadExpandedWMData)
+	ORG LoadWMPaths_PathsStartOffset1
+		BYTE PathsStartOffset
+	ORG LoadWMPaths_PathsStartOffset2
+		BYTE PathsStartOffset
+	ORG LoadWMPaths_PathsSize
+		BYTE PathsSize-1
+	ORG $A6E3C
+		SHORT LeftshiftZeroZero
+	ORG $A6EA0
+		BYTE Worldmap_Node_Count
+	ORG $A7068
+		BYTE $02 //change this if you expand skirmish data
+	
+POP

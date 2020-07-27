@@ -1,0 +1,3 @@
+Aether: First strike absorbs HP,
+second strike negates defenses.
+(Skill/2 % activation)

@@ -1,0 +1,10 @@
+EndReturnFalse=$DC
+StartLoop=$4E
+CheckNextNode=$CC
+NotMatch=$6A
+DontCheckMonsters=$7E
+label3=$B4
+BreakReturnTrue=$B0
+StoreNewCount=$AA
+LoopPoint=$9C
+ExitFunc=$DE

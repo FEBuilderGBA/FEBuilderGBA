@@ -424,6 +424,7 @@ namespace FEBuilderGBA
             return "";
         }
         public uint map_default_count() { return 0x43; }    // ディフォルトのマップ数
+        public uint wait_menu_command_id() { return 0x67; } //WaitメニューのID
         public uint extends_address() { return 0x09000000; }  //拡張領域
         public uint orignal_crc32() { return 0x2a524221; } //無改造ROMのCRC32
         public bool is_multibyte() { return false; }    // マルチバイトを利用するか？

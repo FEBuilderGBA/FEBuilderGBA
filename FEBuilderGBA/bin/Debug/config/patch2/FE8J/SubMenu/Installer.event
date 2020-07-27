@@ -3,11 +3,11 @@
 PUSH
 //サブメニューの幅 Submenu's width
 ORG 0x5C5492	//{J}
-ORG 0x59CFB2	//{U}
+//ORG 0x59CFB2	//{U}
 BYTE 0x8
 
 ORG 0x5C5498	//{J}
-ORG 0x59CFB8	//{U}
+//ORG 0x59CFB8	//{U}
 POIN SubMenuSample
 
 
@@ -23,19 +23,9 @@ ORG 0x050110	//{J}
 BYTE 0x00 0x4B 0x9F 0x46
 POIN flipmenu+1
 
-ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
-	POIN	TxtData0xefb_sjis
-	SHORT	$0efb $0efc
-	SHORT	$4F00 0
-	POIN	IsSubMenuShow+1
-	WORD	0
-	POIN	ShowSubMenu+1
-	WORD	0 
-	WORD	0
-	WORD	0
-
+ORG	FEBUILDER_EXTRA_ORG	+0x10	//Wait Menu -> Draw Routine Pointer
+POIN DisplayedWaitmarkIfSubMenu+1
 POP
-
 
 ALIGN 4
 IsSubMenuShow:
@@ -51,27 +41,23 @@ ALIGN 4
 ShowMenu:
 #incbin "ShowMenu.dmp"
 
+ALIGN 4
 ShowSubMenu:
 #incbin "ShowSubMenu.dmp"
 POIN ShowMenu+1
 
+ALIGN 4
+DisplayedWaitmarkIfSubMenu:
+#incbin "Displayed Wait mark if SubMenu.dmp"
+WORD 0xEFB  //Text "Wait >>"
 
 ALIGN 4
-TxtData0xefb_sjis:
-#incbin "0xefb.sjis.bin"
-
-ALIGN 4
-TxtData0xefb:
-#incbin "0xefb.bin"
-
-ALIGN 4
-TxtData0xefc:
-#incbin "0xefc.bin"
+TxtData0xEFB:
+#incbin "0xEFB.bin"
 
 #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
 
-setText_WithHuffman(0xefb,TxtData0xefb)
-setText_WithHuffman(0xefc,TxtData0xefc)
+setText_WithHuffman(0xEFB,TxtData0xEFB)
 
 ALIGN 4
 SubMenuSample:
