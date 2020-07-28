@@ -39,14 +39,33 @@ namespace FEBuilderGBA
                 return;
             }
 
-            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode(rom);
-            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
+            if (textencoding == OptionForm.textencoding_enum.Auto)
+            {//自動選択
+                PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode(rom);
+                if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
+                {
+                    this.Encoder = System.Text.Encoding.GetEncoding("UTF-8");
+                }
+                else if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
+                {
+                    this.Encoder = System.Text.Encoding.GetEncoding("iso-8859-1");
+                }
+                else
+                {
+                    //ディフォルトは日本語.
+                    this.Encoder = System.Text.Encoding.GetEncoding("Shift_JIS");
+                }
+            }
+            else if (textencoding == OptionForm.textencoding_enum.LAT1)
+            {
+                this.Encoder = System.Text.Encoding.GetEncoding("iso-8859-1");
+            }
+            else if (textencoding == OptionForm.textencoding_enum.UTF8)
             {
                 this.Encoder = System.Text.Encoding.GetEncoding("UTF-8");
             }
-            else
+            else if (textencoding == OptionForm.textencoding_enum.Shift_JIS)
             {
-                //ディフォルトは日本語.
                 this.Encoder = System.Text.Encoding.GetEncoding("Shift_JIS");
             }
 

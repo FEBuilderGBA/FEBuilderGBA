@@ -7249,7 +7249,6 @@ namespace FEBuilderGBA
             }
             return ret;
         }
-
     }
 }
 

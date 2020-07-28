@@ -446,6 +446,10 @@ namespace FEBuilderGBA
                 {
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
+                if (IsUnknownCollision(ref addr, newSize))
+                {//未知の衝突防止
+                    return SearchFreeSpaceOneLow(newSize, addr);
+                }
 
                 return addr + LTRIM_SPACE_SIZE;
             }
@@ -507,6 +511,34 @@ namespace FEBuilderGBA
         {
             return Program.ROM.RomInfo.compress_image_borderline_address();
         }
+        //未知の衝突
+        static bool IsUnknownCollision(ref uint addr, uint newSize)
+        {
+            uint a = U.toPointer(addr);
+            uint add_addr = a + newSize;
+
+            Dictionary<uint, AsmMapFile.AsmMapSt> map = Program.AsmMapFileAsmCache.GetAsmMapFile().GetAsmMap();
+            foreach(var pair in map)
+            {
+                if (pair.Value.IsFreeArea)
+                {
+                    continue;
+                }
+
+                uint start = pair.Key; 
+                uint end = pair.Key + pair.Value.Length;
+                if ((a >= start && a < end)
+                    || (add_addr >= start && add_addr < end))
+                {
+                    Log.Notify("MoveToFreeSpace IsUnknownCollision", "Addr:", U.To0xHexString(addr), "Length:", U.To0xHexString(newSize), "Collision:", pair.Value.Name, U.To0xHexString(start), U.To0xHexString(end));
+                    addr = U.toOffset(end + 4);
+                    return true;
+                }
+            }
+            //衝突していない
+            return false;
+        }
+
         //SkillSystems Reserve
         public static bool IsSkillReserve(ref uint addr)
         {

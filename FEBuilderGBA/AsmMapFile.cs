@@ -248,6 +248,7 @@ namespace FEBuilderGBA
             public string TypeName = "";
             public uint Length = 0;
             public bool IsPointer = false;
+            public bool IsFreeArea = false;
 
             public string ToStringInfo()
             {
@@ -947,6 +948,10 @@ namespace FEBuilderGBA
                 p.ResultAndArgs = "";
                 p.Length = list[i].Length;
                 p.TypeName = typeName;
+                if (list[i].DataType == Address.DataTypeEnum.FFor00)
+                {//フリーエリア
+                    p.IsFreeArea = true;
+                }
 
                 if (p.Name == "")
                 {

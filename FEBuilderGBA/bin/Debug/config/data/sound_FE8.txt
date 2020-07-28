@@ -133,7 +133,7 @@
 00E7=SE:Brigand battle cry @C85_33
 00EA=SE:Axe falling @C85_42
 00EB=SE:Axe rising @C85_41
-00ED=SE:C86_48
+00ED=SE:C86_48 エルフィンの鳥の鳴き声
 00EF=SE:Dance/Play effect
 00F0=SE:Divine weapon shine
 00F1=SE:Fire charge @C85_3E
@@ -205,6 +205,7 @@
 0140=SE:Demon King' s appearance 2
 0141=SE:Demon King' s appearance 3 @C85_29
 0142=SE:Dying Demon King @C85_2A
+0145=SE:FE6イドゥンの鳴き声 無音
 0147=SE:カチッ Single lightning strike (promotion/Bolting)
 014A=SE:@C85_1B Play quick "heavy step" SFE
 014B=SE:@C85_1B

@@ -1367,6 +1367,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "PTEXT")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
             else if (listname == "DECIMAL")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -1430,6 +1434,10 @@ namespace FEBuilderGBA
                 appendname = U.ToHexString(i);
             }
             else if (listname == "TEXT")
+            {
+                appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
+            }
+            else if (listname == "PTEXT")
             {
                 appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
             }
@@ -1813,6 +1821,15 @@ namespace FEBuilderGBA
 
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
+                }
+                else if (address_type == "PTEXT")
+                {
+                    link.Name = "L_" + 0 + "_" + "TEXT";
+                    PatchPage.Controls.Add(link);
+                    x += 200;
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, "TEXT", new string[0]);
                 }
                 else if (address_type == "PORTRAIT")
                 {

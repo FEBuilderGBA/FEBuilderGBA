@@ -130,7 +130,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_auto_backup, (int)auto_backup());
             U.SelectedIndexSafety(func_first_form,(int)first_form());
             U.SelectedIndexSafety(func_lang,(int)FindComboboxText(Program.Config.at("func_lang", "auto"), func_lang));
-            U.SelectedIndexSafety(func_textencoding,(int)textencoding());
+            U.SelectedIndexSafety(func_textextencodingtencoding,(int)textencoding());
             U.SelectedIndexSafety(func_auto_update,(int)FindComboboxText( auto_update().ToString(), func_auto_update));
             U.SelectedIndexSafety(func_text_escape,(int)text_escape());
             U.SelectedIndexSafety(func_write_notify_time,(int)FindComboboxText(write_notify_time().ToString(), func_write_notify_time));
@@ -283,7 +283,7 @@ namespace FEBuilderGBA
             Program.Config["func_auto_backup"] = func_auto_backup.SelectedIndex.ToString();
             Program.Config["func_first_form"] = func_first_form.SelectedIndex.ToString();
             Program.Config["func_lang"] = U.SelectValueComboboxText(func_lang.Text);
-            Program.Config["func_textencoding"] = func_textencoding.SelectedIndex.ToString();
+            Program.Config["func_textencoding"] = func_textextencodingtencoding.SelectedIndex.ToString();
             Program.Config["func_auto_update"] = U.atoi(func_auto_update.Text).ToString();
             Program.Config["func_text_escape"] = func_text_escape.SelectedIndex.ToString();
             Program.Config["func_write_notify_time"] = U.SelectValueComboboxText(func_write_notify_time.Text);
@@ -1007,10 +1007,13 @@ namespace FEBuilderGBA
         }
         public enum textencoding_enum
         {
-            Shift_JIS = 0
-          , ZH_TBL = 1
-          , EN_TBL = 2
-          , AR_TBL = 3
+            Auto = 0
+          , LAT1 = 1
+          , Shift_JIS = 2
+          , UTF8 = 3
+          , ZH_TBL = 4
+          , EN_TBL = 5
+          , AR_TBL = 6
           , NoChace = 99
         };
         static textencoding_enum g_Cache_textencoding;
@@ -1138,11 +1141,11 @@ namespace FEBuilderGBA
             //平地は普通　変更しないだろうから
             //NAME	VER	enc	POINTER VALUE
             TBLTableSt[] table = new TBLTableSt[]{
-                new TBLTableSt{name = "FE6U" ,ver = 6,enc = 2,pointer = 0x60D010,data = new byte[]{0x82, 0xBD, 0x82 ,0xE6}},
-                new TBLTableSt{name = "FE6CN",ver = 6,enc = 1,pointer = 0x60D010,data = new byte[]{0x8C ,0xE2 ,0x85 ,0xE1}},
-                new TBLTableSt{name = "FE7CN",ver = 7,enc = 1,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFC ,0x86 ,0x87}},
-                new TBLTableSt{name = "FE7CN",ver = 7,enc = 1,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFB ,0x86 ,0x86}},
-                new TBLTableSt{name = "FE8CN",ver = 8,enc = 1,pointer = 0x8617CC,data = new byte[]{0x8D ,0xBD ,0x85 ,0xF9}}
+                new TBLTableSt{name = "FE6U" ,ver = 6,enc = 5,pointer = 0x60D010,data = new byte[]{0x82, 0xBD, 0x82 ,0xE6}},
+                new TBLTableSt{name = "FE6CN",ver = 6,enc = 4,pointer = 0x60D010,data = new byte[]{0x8C ,0xE2 ,0x85 ,0xE1}},
+                new TBLTableSt{name = "FE7CN",ver = 7,enc = 4,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFC ,0x86 ,0x87}},
+                new TBLTableSt{name = "FE7CN",ver = 7,enc = 4,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFB ,0x86 ,0x86}},
+                new TBLTableSt{name = "FE8CN",ver = 8,enc = 4,pointer = 0x8617CC,data = new byte[]{0x8D ,0xBD ,0x85 ,0xF9}}
             }; 
 
             uint version = (uint)Program.ROM.RomInfo.version();

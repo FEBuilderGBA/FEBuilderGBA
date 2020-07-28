@@ -9771,6 +9771,38 @@ namespace FEBuilderGBA
             return newAddr;
         }
 
+        //未知の衝突
+        static bool IsUnknownCollision(uint addr, uint newSize)
+        {
+            uint a = U.toPointer(addr);
+            uint add_addr = a + newSize;
+
+            Dictionary<uint, AsmMapFile.AsmMapSt> map = Program.AsmMapFileAsmCache.GetAsmMapFile().GetAsmMap();
+            foreach (var pair in map)
+            {
+                if (pair.Value.IsFreeArea)
+                {
+                    continue;
+                }
+
+                uint start = pair.Key;
+                if (a == start)
+                {//自分自身
+                    continue;
+                }
+
+                uint end = pair.Key + pair.Value.Length;
+                if ((a >= start && a < end)
+                    || (add_addr >= start && add_addr < end))
+                {
+                    Log.Notify("InputFormRef IsUnknownCollision", "Addr:", U.To0xHexString(addr), "Length:", U.To0xHexString(newSize), "Collision:", pair.Value.Name, U.To0xHexString(start), U.To0xHexString(end));
+                    return true;
+                }
+            }
+            //衝突していない
+            return false;
+        }
+
         //画像みたいなデータの書き込み.
         public uint WriteImageData(uint addr, byte[] image, bool useLZ77, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
@@ -9805,8 +9837,15 @@ namespace FEBuilderGBA
                     }
                     else
                     {//固定長
-                        Program.ROM.write_range(U.toOffset(addr), image, undodata);
-                        newAddr = U.toOffset(addr);
+                        if (IsUnknownCollision(addr, (uint)image.Length))
+                        {//未知の衝突の検出されたので追記します.
+                            newAddr = AppendBinaryData(image, undodata);
+                        }
+                        else
+                        {
+                            Program.ROM.write_range(U.toOffset(addr), image, undodata);
+                            newAddr = U.toOffset(addr);
+                        }
                     }
                 }
                 else

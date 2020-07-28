@@ -88,7 +88,7 @@
 00D5=SE:Kill (map)
 00D6=SE:Death (map)
 00D7=SE:Miss (realtime)
-00D8=SE:Crumbling? @C85_1F @C85_20 @C85_21
+00D8=SE:Critical Hit @C85_1F @C85_20 @C85_21
 00DC=SE:Mamkute transform
 00DD=SE:Mamkute de-transform
 00DE=SE:Mamkute yowl
@@ -100,7 +100,7 @@
 00E7=SE:Brigand battle cry @C85_33
 00EA=SE:Axe falling @C85_42
 00EB=SE:Axe rising @C85_41
-00ED=SE:C86_48
+00ED=SE:C86_48 Elphin's birds chirping
 00EF=SE:Dance/Play effect
 00F0=SE:Divine weapon shine
 00F1=SE:Fire charge @C85_3E
