@@ -1,0 +1,6 @@
+0=--
+7A=Shove
+7B=Smite
+88=Pivot
+89=Reposition
+8A=Swap

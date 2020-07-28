@@ -2253,7 +2253,7 @@ this.MapObjImage);
                             {
                                 uint tileAddr = ChangeList[n].addr + (uint)index * 2;
 
-                                if (!U.isSafetyOffset(tileAddr + 2))
+                                if (!U.isSafetyOffset(tileAddr + 1))
                                 {
                                     R.Error("Out of memory n:{0},i:{1} ,x:{2} ,y:{3} , index:{4} tileAddr:{5}", n, i, x, y, index, U.ToHexString8(tileAddr));
                                     line = "  <tile gid=\"0\"/>";

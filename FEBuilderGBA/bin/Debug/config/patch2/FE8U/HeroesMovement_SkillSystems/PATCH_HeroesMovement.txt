@@ -1,0 +1,26 @@
+NAME=HeroesMovement With SkillSystems
+NAME.en=HeroesMovement With SkillSystems
+NAME.zh=HeroesMovement With SkillSystems
+
+IF:$FGREP4 CheckHasSkillOrList.dmp=0x70 0xB5 0x4 0x1C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END CheckHasSkillOrList.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO HeroesMovement_combo.txt=SkillID
+
+INFO.zh=设置一个可以使用FEH移动技能的人物。\r\n您可以设置是否可以使用具有各种要求的技能，例如人物，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。

@@ -1047,8 +1047,37 @@ namespace FEBuilderGBA
 
             ReadStartAddress.Tag = ifr;
             ifr.MakeGeneralAddressListContextMenu(true);
+            ifr.AddressListExpandsEvent += PatchStruct_AddressListExpandsEvent;
 
             U.SelectedIndexSafety(AddressList, 0, false);
+        }
+
+        //リストが拡張されたとき
+        void PatchStruct_AddressListExpandsEvent(object sender, EventArgs arg)
+        {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            if (eearg.OldDataCount != 0)
+            {
+                return;
+            }
+            //0件から拡張すると、nullとなり、終端と区別がつかなくなるので、適当な値を入れます。
+
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            //戦闘アニメーションを0クリアしておきます。トラブルを避けるため
+            //クラスIDもちゃんと割り振ろう
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearBattleAnimationPointer");
+            addr = addr + (eearg.OldDataCount * eearg.BlockSize);
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                //クラスID
+                Program.ROM.write_u8(addr + 0, 1, undodata);
+
+                addr += eearg.BlockSize;
+            }
+
+            Program.Undo.Push(undodata);
         }
 
         uint LoadFixedPalette(PatchSt patch

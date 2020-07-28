@@ -1,0 +1,18 @@
+NAME=トラキアのように、救出しているユニットを、無限に引受け、引渡しできるようにする
+NAME.en=Thracia Rescue Trading AKA Infinite Give and Take
+NAME.zh=Change increases support level continuously even with one map
+
+INFO=This patch allows you to give and take unlimited units of rescued units, like Thrace.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Onces|OFF|Fix: Infinite Give&Take|FIX
+
+OFF:0x229A8=0x10 0xD1
+OFF:0x22A10=0x10 0xD1
+FIX:0x229A8=0x00 0x1C
+FIX:0x22A10=0x00 0x1C
+
+AUTHOR=MintX https://feuniverse.us/t/mintxs-crappy-asm/8951/3
