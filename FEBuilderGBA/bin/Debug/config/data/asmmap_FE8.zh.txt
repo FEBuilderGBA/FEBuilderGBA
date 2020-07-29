@@ -12783,3 +12783,5 @@ r3=X tile position of menu of the right	{U}
 08048BDC	Debug_Display_END_String	{J}
 08032D40	LoadArrowSystemImages	{J}
 08032E28	LoadArrowSystemImages	{U}
+0803ACF8	IsDoNotTragetUnitIDInList	{U}
+0803AD18	IsDoNotTragetUnitIDInList	{J}
