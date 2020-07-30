@@ -1,0 +1,2 @@
+Death Blow: +6 Attack
+when initiating battle.

@@ -17,6 +17,12 @@ WORD 0x8050295 //{J}
 //ORG 0x59CFCC	//{U}
 //WORD 0x804F521 //{U}
 
+//DrawHelpBox
+ORG 0x5C54B0	//{J}
+WORD 0x80501CD   //{J}
+//ORG 0x4F459	//{U}
+//WORD 0x804F459 //{U}
+
 //Hook
 ORG 0x050110	//{J}
 //ORG 0x04F39C	//{U}

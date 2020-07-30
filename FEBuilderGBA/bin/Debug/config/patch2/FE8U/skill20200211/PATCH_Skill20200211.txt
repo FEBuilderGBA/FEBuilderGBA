@@ -838,7 +838,7 @@ TEXTADV:0xf14=0xf14.txt
 TEXTADV:0xf15=0xf15.txt
 TEXTADV:0xf16=0xf16.txt
 //0xF17 submenu
-//0xF18 submenu
+
 //0xf19 free
 TEXTADV:0xf1a=0xf1a.txt
 TEXTADV:0xf1b=0xf1b.txt
@@ -993,7 +993,7 @@ SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20200727\PATCH_Skill20200727.txt
+UPDATE_PATCH=..\Skill20200730\PATCH_Skill20200730.txt
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
 UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt

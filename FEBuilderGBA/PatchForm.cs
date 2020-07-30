@@ -1078,6 +1078,8 @@ namespace FEBuilderGBA
             }
 
             Program.Undo.Push(undodata);
+
+            eearg.IsReload = true;
         }
 
         uint LoadFixedPalette(PatchSt patch

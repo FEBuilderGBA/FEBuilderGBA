@@ -1,7 +1,7 @@
 NAME=NarrowFont
 INFO=Supported Small font
 
-AUTHOR=Scraiza https://feuniverse.us/t/scraizas-crazy-asm/5624/2
+AUTHOR=Scraiza https://feuniverse.us/t/scraizas-crazy-asm/5624/2 ,MintX
 
 TYPE=EA
 EA=Narrowfont installer.event
@@ -72,6 +72,8 @@ TEXTESCAPE:163=@00B8	[AnimaIcon]	Small Font Icon	{NON-UTF-8}
 TEXTESCAPE:164=@00B7	[LightIcon]	Small Font Icon	{NON-UTF-8}
 TEXTESCAPE:165=@00B9	[DarkIcon]	Small Font Icon	{NON-UTF-8}
 TEXTESCAPE:166=@00BA	[StaffIcon]	Small Font Icon	{NON-UTF-8}
+TEXTESCAPE:167=@00BD	[LockIcon]	Small Font Icon	From Narrow Number	{NON-UTF-8}
+TEXTESCAPE:168=@00BE	[MonsterIcon]	Small Font Icon	From Narrow Number	{NON-UTF-8}
 
 TEXTESCAPE:201=@00C2@0081	[_a]	Small Font	{UTF-8}
 TEXTESCAPE:202=@00C2@0082	[_b]	Small Font	{UTF-8}
@@ -138,6 +140,8 @@ TEXTESCAPE:263=@00C2@00B8	[AnimaIcon]	Small Font Icon	{UTF-8}
 TEXTESCAPE:264=@00C2@00B7	[LightIcon]	Small Font Icon	{UTF-8}
 TEXTESCAPE:265=@00C2@00B9	[DarkIcon]	Small Font Icon	{UTF-8}
 TEXTESCAPE:266=@00C2@00BA	[StaffIcon]	Small Font Icon	{UTF-8}
+TEXTESCAPE:267=@00C2@00BD	[LockIcon]	Small Font Icon	From Narrow Number	{UTF-8}
+TEXTESCAPE:268=@00C2@00BE	[MonsterIcon]	Small Font Icon	From Narrow Number	{UTF-8}
 
 
 PATCHED_IF:$FGREP4 MenuLowercase/z.img.bin=0x00 0x00 0x00 0x00

@@ -1,0 +1,3 @@
+Poison Strike: Deals damage equal to
+20% of the enemy's max HP after
+battle this unit initiates.

@@ -833,7 +833,7 @@ TEXTADV:0xf14=0xf14.txt
 TEXTADV:0xf15=0xf15.txt
 TEXTADV:0xf16=0xf16.txt
 //0xF17 submenu
-//0xF18 submenu
+
 //0xf19 free
 TEXTADV:0xf1a=0xf1a.txt
 TEXTADV:0xf1b=0xf1b.txt
@@ -1002,3 +1002,17 @@ EDIT_PATCH:11=../skill20200223/PATCH_Leadership Param Skillsystems Version.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM
+
+DEPRECATED=1
+UPDATE_PATCH=..\Skill20200730\PATCH_Skill20200730.txt
+UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
+UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
+UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
+UPDATE_UNINSTALL:4=..\FE8-Capture\PATCH_FE8-Capture.txt
+UPDATE_UNINSTALL:5=..\autosave\PATCH_autosave.txt
+UPDATE_UNINSTALL:6=..\display-all-weapon-ranks-your-character-has\PATCH_display-all-weapon-ranks-your-character-has.txt
+UPDATE_UNINSTALL:7=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
+UPDATE_UNINSTALL:8=..\SummonEXP\PATCH_SummonEXP.txt
+UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
+UPDATE_UNINSTALL:10=..\Use Item Might for Healing\PATCH_Use Item Might for healing.txt
+UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt

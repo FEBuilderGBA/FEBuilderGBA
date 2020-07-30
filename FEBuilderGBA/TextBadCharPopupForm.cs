@@ -33,7 +33,10 @@ namespace FEBuilderGBA
 
         public static bool CheckTBLAndAntiHuffman()
         {
-            if (OptionForm.textencoding() == OptionForm.textencoding_enum.Shift_JIS)
+            if (OptionForm.textencoding() == OptionForm.textencoding_enum.Auto
+                || OptionForm.textencoding() == OptionForm.textencoding_enum.Shift_JIS
+                || OptionForm.textencoding() == OptionForm.textencoding_enum.LAT1
+                || OptionForm.textencoding() == OptionForm.textencoding_enum.UTF8)
             {
                 return true;
             }

@@ -1,0 +1,3 @@
+Vengeance: Add half of damage
+taken to damage dealt.
+(Skill % activation)
