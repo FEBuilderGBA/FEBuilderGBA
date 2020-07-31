@@ -20,7 +20,7 @@ WORD 0x804F521 //{U}
 //DrawHelpBox
 //ORG 0x5C54B0	//{J}
 //WORD 0x80501CD   //{J}
-ORG 0x4F459	//{U}
+ORG 0x59CFD0	//{U}
 WORD 0x804F459 //{U}
 
 

@@ -1,0 +1,13 @@
+
+NAME=メティスの書(アフアの雫)アイテムID
+NAME.en=Metis's Tome(Afa's Drops) ItemID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02F740
+ADDRESS_TYPE=ITEM
+AUTHOR=7743
+
+NAME.zh=Metis's Tome(Afa's Drops) ItemID

@@ -13,11 +13,11 @@ PATCHED_IF:$FGREP4 RemoveTrap.dmp=0x10 0xB5 0x80 0x6B
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=RemoveTrap.dmp
 
-EVENTSCRIPT:1=400DTT00{$L1:RemoveTrap.dmp}	トラップを削除[TT:TRAP:トラップ](LOW)	{MAP}
+EVENTSCRIPT:1=400DTT00{$L1:RemoveTrap.dmp}	SlotBの位置の、トラップを削除[TT:TRAP:トラップ](LOW)	{MAP}
 EVENTSCRIPT:2=40050B00XXXXYYYY400DTT00{$L1:RemoveTrap.dmp}	トラップを削除[TT:TRAP:トラップ][XX:MAPX:X][YY:MAPY:Y]	{MAP}
-EVENTSCRIPT:1.en=400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap](LOW)	{MAP}
+EVENTSCRIPT:1.en=400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap] by In SlotB Coord(LOW)	{MAP}
 EVENTSCRIPT:2.en=40050B00XXXXYYYY400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap][XX:MAPX:X][YY:MAPY:Y]	{MAP}
 
-EVENTSCRIPT:1.zh=400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap](LOW)	{MAP}
+EVENTSCRIPT:1.zh=400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap] by In SlotB Coord(LOW)	{MAP}
 EVENTSCRIPT:2.zh=40050B00XXXXYYYY400DTT00{$L1:RemoveTrap.dmp}	Remove Trap[TT:TRAP:Trap][XX:MAPX:X][YY:MAPY:Y]	{MAP}
 
