@@ -29,6 +29,7 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので警告不可能
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false; //ALIGN 4である必要はない.
 
             for (int i = 0; i < this.TrackLabels.Length ; i++ )
             {
