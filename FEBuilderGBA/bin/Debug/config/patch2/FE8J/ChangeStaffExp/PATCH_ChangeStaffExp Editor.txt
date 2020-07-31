@@ -1,0 +1,37 @@
+NAME=杖の経験値を固定化する(Editor)
+
+INFO=杖を振ったときの経験値を固定化します。\r\nトーチでの無限稼ぎをしにくくするのが目的です。\r\n杖ごとに取得できる経験値を指定できます。\r\n取得経験値に0を指定すると、ディフォルトの動作になります。\r\nリストにない杖もディフォルトの動作になります。
+
+NAME.en=Fixed Exo value of staff(Editor)
+INFO.en=Fix Exp of staff.\r\nThe goal is to make it harder to earn an infinite amount of exp with the torch.\r\nYou can specify how much experience you can get with each.\r\nIf you specify 0 for GetExp you can get with the, the action is defaulted to 0. \r\nIf staff is not in the list of a restaurant, the default action is also set to 0.
+NAME.zh=Fixed Exo value of staff(Editor)
+INFO.zh=Fix Exp of staff.\r\nThe goal is to make it harder to earn an infinite amount of exp with the torch.\r\nYou can specify how much experience you can get with each.\r\nIf you specify 0 for GetExp you can get with the, the action is defaulted to 0. \r\nIf staff is not in the list of a restaurant, the default action is also set to 0.
+
+IF:0x2C588=0x00 0x4B 0x18 0x47
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeStaffExp.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 00 が出てくるまで
+DATACOUNT=$GREP2 0x00 0x00
+
+//リストに表示されるのは
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=アイテム
+B1:DECIMAL=取得経験値
+
+B0:ITEM.en=Item
+B1:DECIMAL.en=GetExp
+
+B0:ITEM.zh=Item
+B1:DECIMAL.zh=GetExp

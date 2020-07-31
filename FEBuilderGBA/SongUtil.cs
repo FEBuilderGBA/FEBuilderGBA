@@ -601,7 +601,12 @@ namespace FEBuilderGBA
                                 w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
                             }
                         }
-
+                        if (code.type == 0xb3)
+                        {//PATTなので強制的に小節をわける
+                            lastTuneWait = 0;
+                            tune++;
+                            w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
+                        }
 
                         if (code.type == LOOP_LABEL_CODE)
                         {//LOOP_LABEL_CODE

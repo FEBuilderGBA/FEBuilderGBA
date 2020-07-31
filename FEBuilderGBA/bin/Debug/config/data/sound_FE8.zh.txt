@@ -601,3 +601,4 @@
 03E5=SE:Using Promotion SE1
 03E6=SE:Using Promotion SE2 maybe
 7FFF=将BGM静音
+0145=SE：FE6 Idon的哭声没有声音。
