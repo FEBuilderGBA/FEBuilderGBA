@@ -11054,7 +11054,7 @@ Termination
 Defines the end of the mode.
 
 :背景の拡大
-Enlarging the background
+Zoom BG
 
 :不透明レベル
 opacity level
