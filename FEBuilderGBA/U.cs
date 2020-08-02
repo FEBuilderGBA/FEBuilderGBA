@@ -7249,6 +7249,30 @@ namespace FEBuilderGBA
             }
             return ret;
         }
+        public static string HexsToString(byte[] data)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sb.Append(' ');
+                sb.Append(data[i].ToString("X"));
+            }
+            if (sb.Length >= 1)
+            {
+                return sb.ToString(1,sb.Length - 1);
+            }
+            return sb.ToString();
+        }
+        public static byte[] StringToHexs(string text)
+        {
+            string[] sp = text.Split(' ');
+            List<byte> data = new List<byte>();
+            for (int i = 0; i < sp.Length; i++)
+            {
+                data.Add((byte)U.atoh(sp[i]));
+            }
+            return data.ToArray();
+        }
     }
 }
 

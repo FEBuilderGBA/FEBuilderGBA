@@ -565,6 +565,7 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImportAllData");
 
             string basedir = Path.GetDirectoryName(filename);
             string[] lines = File.ReadAllLines(filename);
@@ -613,13 +614,13 @@ namespace FEBuilderGBA
                             textid = ConvertSkillTextIDWithRecrycle(i, textid);
                         }
 
-                        Program.ROM.write_u16(textAddr + 0, textid);
+                        Program.ROM.write_u16(textAddr + 0, textid, undodata);
                     }
 
                     uint animePAddr = U.atoh(sp[1]);
                     if (animePAddr == 0)
                     {//0の値が設定されている場合は、アニメ未指定になっているので0を書き込みます.
-                        Program.ROM.write_p32(anime, 0);
+                        Program.ROM.write_p32(anime, 0, undodata);
                         continue;
                     }
                     string anime_filename = Path.Combine(basedir, "anime" + U.ToHexString(i), "anime.txt");
@@ -630,6 +631,7 @@ namespace FEBuilderGBA
                     //それ以外の値の場合、ディフォルト設定だとして、最新の値を採用します.
                 }
             }
+            Program.Undo.Push(undodata);
             return true;
         }
 
@@ -1009,5 +1011,116 @@ namespace FEBuilderGBA
             R.ShowOK("データのインポートが完了しました。");
         }
 
+        public static void ExportExtraMenu(string filename)
+        {
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+            StringBuilder sb = new StringBuilder();
+            uint addr;
+            uint[] menus = { 
+                               0x4F, 0xF00, //全預け+ Give All+
+                               0x63, 0xF75, //特殊
+                               0x6B, 0x6BF, //待機
+                           };
+            for (int i = 0; i < menus.Length; i += 2)
+            {
+                uint menuid = menus[i+0];
+                uint helpid = menus[i+1];
+
+                addr = MenuCommandForm.SearchMenuUnitOrGame(menuid, helpid);
+                if (addr != U.NOT_FOUND)
+                {
+                    byte[] bin = Program.ROM.getBinaryData(addr, MenuCommandForm.MENU_SIZE);
+                    sb.AppendLine(U.HexsToString(bin));
+                }
+            }
+            File.WriteAllText(filename, sb.ToString());
+        }
+        public static void ImportExtraMenu(string filename)
+        {
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+            if (! File.Exists(filename))
+            {
+                return;
+            }
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImportExtraMenu");
+            string[] lines = File.ReadAllLines(filename);
+            foreach (string line in lines)
+            {
+                byte[] bin = U.StringToHexs(line);
+                if (bin.Length < MenuCommandForm.MENU_SIZE)
+                {
+                    continue;
+                }
+                uint menuID = U.u8(bin, 0x9);
+                uint helpID = U.u16(bin, 0x6);
+                uint addr = MenuCommandForm.SearchMenuUnitOrGame(menuID, helpID);
+                if (addr != U.NOT_FOUND)
+                {
+                    if (menuID == 0x6B && helpID == 0x6BF)
+                    {//wait
+                        Program.ROM.write_range(addr, bin, undodata);
+                    }
+                    continue;
+                }
+                //空き部分に追加.
+                addr = MenuCommandForm.SearchMenuUnitOrGame(0x0, 0x0);
+                if (addr == U.NOT_FOUND)
+                {//空きがない
+                    continue;
+                }
+                Program.ROM.write_range(addr, bin, undodata);
+            }
+            Program.Undo.Push(undodata);
+
+            CopySubMenu();
+        }
+        static void CopySubMenu()
+        {
+            uint[] menus = { 
+                    0x4E, 0xf07,
+                    0x4E, 0xf09,
+                    0x4E, 0xE12,
+                    0x4E, 0xE0C,
+                    0x4E, 0xE0E,
+                    0x4E, 0xE10,
+                    0x4E, 0xEDB,
+                    0x4E, 0xE0A,
+                    0x4E, 0xEE0,
+                    0x4E, 0xE14,
+                    0x4E, 0xE16,
+                    0x4E, 0xE18,
+                    0x4E, 0xE1A,
+                    0x4E, 0xE1C,
+                    0x4E, 0xF77,
+            };
+            Undo.UndoData undodata = Program.Undo.NewUndoData("CopySubMenu");
+            for (int i = 0; i < menus.Length; i += 2)
+            {
+                uint menuid = menus[i + 0];
+                uint helpid = menus[i + 1];
+
+                uint dest = MenuCommandForm.SearchMenu("DEBUG1", menuid, helpid);
+                if (dest == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                uint src = MenuCommandForm.SearchMenuUnitOrGame(menuid, helpid);
+                if (src == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                byte[] bin = Program.ROM.getBinaryData(src, MenuCommandForm.MENU_SIZE);
+                Program.ROM.write_range(dest, bin, undodata);
+            }
+            Program.Undo.Push(undodata);
+        }
     }
 }

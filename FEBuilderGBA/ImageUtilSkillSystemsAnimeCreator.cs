@@ -542,7 +542,7 @@ namespace FEBuilderGBA
             RecycleOldAnime(ref recycle, basename, false, anime_address);
             RecycleAddress ra = new RecycleAddress(recycle);
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData("");
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImageUtilSkillSystemsAnimeCreator.Import");
 
             List<byte> image_list = new List<byte>();
             List<byte> tsa_list = new List<byte>();

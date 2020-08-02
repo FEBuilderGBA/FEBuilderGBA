@@ -1697,6 +1697,7 @@ namespace FEBuilderGBA
                     throw new SyntaxException(R.Error("更新するべきデータがありません keyword:{0}", keyword));
                 }
 
+                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -2089,6 +2090,7 @@ namespace FEBuilderGBA
                         Program.ROM.write_u32(addr, (uint)AddrValue.Value, undodata);
                     }
                 }
+                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
@@ -2277,6 +2279,8 @@ namespace FEBuilderGBA
                     addr = U.toOffset(U.atoi0x(address_sp[i]));
                     Program.ROM.write_range(addr, value, undodata);
                 }
+
+                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
@@ -2997,7 +3001,7 @@ namespace FEBuilderGBA
             , string addrstring
             , string value)
         {
-            uint addr = MenuCommandForm.SearchMenu(this, U.atoi0x(value) );
+            uint addr = MenuCommandForm.SearchMenuUnitOrGame(U.atoi0x(value) , U.NOT_FOUND);
             return addr;
         }
 
@@ -3215,6 +3219,7 @@ namespace FEBuilderGBA
                 }
                 ReplacePointers(patch, undodata);
 
+                Log.Notify("パッチ({0})をインストールしました。{1} {PATCH INSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -3381,6 +3386,7 @@ namespace FEBuilderGBA
 
                     ReplacePointers(patch,undodata);
 
+                    Log.Notify("パッチ({0})をインストールしました。{1} {PATCH INSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -7270,6 +7276,8 @@ namespace FEBuilderGBA
                     R.ShowStopError("アンインストールに失敗しました.\r\n\r\n{0}", error);
                     return false;
                 }
+
+                Log.Notify("パッチ({0})をアンインストールしました。{1} {PATCH UNINSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 Program.ReLoadSetting();
@@ -7770,9 +7778,11 @@ namespace FEBuilderGBA
                 string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
                 string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
+                string ExtraMenu = Path.Combine(tempdir, "Extra.txt");
                 SkillAssignmentClassSkillSystemForm.ExportAllData(SkillAssignmentClassSkillSystem);
                 SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
+                SkillConfigSkillSystemForm.ExportExtraMenu(ExtraMenu);
             }
             ExportPatchAll(patch, tempdir);
         }
@@ -7787,6 +7797,8 @@ namespace FEBuilderGBA
                 string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
                 string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
+                string ExtraMenu = Path.Combine(tempdir, "Extra.txt");
+
                 if (File.Exists(SkillAssignmentClassSkillSystem))
                 {
                     SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
@@ -7801,6 +7813,11 @@ namespace FEBuilderGBA
                 {
                     SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem , recycleConvertSkillTextID: true);
                     File.Delete(SkillConfigSkillSystem);
+                }
+                if (File.Exists(ExtraMenu))
+                {
+                    SkillConfigSkillSystemForm.ImportExtraMenu(ExtraMenu);
+                    File.Delete(ExtraMenu);
                 }
                 
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
@@ -8013,6 +8030,7 @@ namespace FEBuilderGBA
                     pleaseWait.DoEvents(R._("UpdateEmbedFunction"));
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
                 }
+                Log.Notify("パッチ({0})を更新しました。{1} {PATCH UPDATE}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
             }
 
             

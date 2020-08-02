@@ -221,7 +221,7 @@ namespace FEBuilderGBA
         private void MenuButton_Click(object sender, EventArgs e)
         {
             MenuCommandForm f = (MenuCommandForm)InputFormRef.JumpForm<MenuCommandForm>();
-            f.JumpToAddr(Program.ROM.p32(Program.ROM.RomInfo.menu1_pointer()));
+            f.JumpToAddr(Program.ROM.p32(Program.ROM.RomInfo.menu_unit_pointer()));
         }
 
         private void ItemCCButton_Click(object sender, EventArgs e)

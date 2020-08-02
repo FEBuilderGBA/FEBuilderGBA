@@ -172,11 +172,11 @@ namespace FEBuilderGBA
             int selected = this.FilterComboBox.SelectedIndex;
             if (selected == 0)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu1_pointer()) );
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_unit_pointer()) );
             }
             else if (selected == 1)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu2_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_game_pointer()));
             }
             else if (selected == 2)
             {
@@ -247,8 +247,8 @@ namespace FEBuilderGBA
         {
             Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
             uint[] pointerIndexes = new uint[] { 0, 4, 8, 12, 20, 24 };
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu1_pointer()
-                , Program.ROM.RomInfo.status_rmenu2_pointer()
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer()
+                , Program.ROM.RomInfo.status_rmenu_game_pointer()
                 , Program.ROM.RomInfo.status_rmenu3_pointer()
                 , Program.ROM.RomInfo.status_rmenu4_pointer()
                 , Program.ROM.RomInfo.status_rmenu5_pointer()
@@ -303,8 +303,8 @@ namespace FEBuilderGBA
         public static void MakeVarsIDArray(List<UseValsID> list)
         {
             Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu1_pointer()
-                , Program.ROM.RomInfo.status_rmenu2_pointer()
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer()
+                , Program.ROM.RomInfo.status_rmenu_game_pointer()
                 , Program.ROM.RomInfo.status_rmenu3_pointer()
                 , Program.ROM.RomInfo.status_rmenu4_pointer()
                 , Program.ROM.RomInfo.status_rmenu5_pointer()

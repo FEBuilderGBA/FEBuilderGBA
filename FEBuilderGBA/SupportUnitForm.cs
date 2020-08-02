@@ -169,6 +169,10 @@ namespace FEBuilderGBA
             {
                 return ;
             }
+            if (! U.isSafetyOffset(addr))
+            {
+                return;
+            }
             uint target_limit = addr + SUPPORT_LIMIT;
             for (; addr < target_limit; addr++)
             {

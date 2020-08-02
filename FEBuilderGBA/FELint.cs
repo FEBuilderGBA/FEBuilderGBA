@@ -86,6 +86,7 @@ namespace FEBuilderGBA
             ,BOSS_BGM
             ,WORLDMAP_BGM
             ,EVENT_FINAL_SERIF
+            ,ROM_HEADER
             ,TEXTID_FOR_SYSTEM  //テキストID システム予約
             ,TEXTID_FOR_USER    //テキストID ユーザ定義
             ,SE_SYSTEM  //SongID システム予約
@@ -711,7 +712,7 @@ namespace FEBuilderGBA
             uint logo_crc32 = crc32.Calc(logo);
             if (logo_crc32 != 0x96b08a28)
             {
-                errors.Add(new FELint.ErrorSt(FELint.Type.FELINT_SYSTEM_ERROR, U.NOT_FOUND
+                errors.Add(new FELint.ErrorSt(FELint.Type.ROM_HEADER, U.NOT_FOUND
                     , R._("ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。"
                 )));
             }

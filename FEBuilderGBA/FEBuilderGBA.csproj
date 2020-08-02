@@ -2052,6 +2052,12 @@
     <Compile Include="AIPerformItemForm.Designer.cs">
       <DependentUpon>AIPerformItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolAutomaticRecoveryROMHeaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolAutomaticRecoveryROMHeaderForm.Designer.cs">
+      <DependentUpon>ToolAutomaticRecoveryROMHeaderForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3036,6 +3042,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIPerformItemForm.resx">
       <DependentUpon>AIPerformItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolAutomaticRecoveryROMHeaderForm.resx">
+      <DependentUpon>ToolAutomaticRecoveryROMHeaderForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

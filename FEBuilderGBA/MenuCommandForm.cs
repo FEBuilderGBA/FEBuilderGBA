@@ -11,6 +11,7 @@ namespace FEBuilderGBA
 {
     public partial class MenuCommandForm : Form
     {
+        public static uint MENU_SIZE = 36;
         public MenuCommandForm()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace FEBuilderGBA
             return new InputFormRef(self
                 , ""
                 , 0
-                , 36
+                , MENU_SIZE
                 , (int i, uint addr) =>
                 {
                     return U.isPointer(Program.ROM.u32(addr+0xc));
@@ -343,17 +344,40 @@ namespace FEBuilderGBA
                 );
         }
 
-        public static uint SearchMenu(Form form, uint menu_id)
+        public static uint SearchMenuUnitOrGame(uint menuID, uint helpID)
         {
-            uint r = SearchMenuLow(MenuDefinitionForm.GetUnitMenuPointer(), menu_id);
+            uint r = SearchMenuLow(MenuDefinitionForm.GetUnitMenuPointer(), menuID, helpID);
             if (r != U.NOT_FOUND)
             {
                 return r;
             }
-            r = SearchMenuLow(MenuDefinitionForm.GetGameMenuPointer(), menu_id);
+            r = SearchMenuLow(MenuDefinitionForm.GetGameMenuPointer(), menuID, helpID);
             return r;
         }
-        static uint SearchMenuLow(uint pointer,uint searchCommandID)
+
+        public static uint SearchMenu(string typename,uint menuID, uint helpID)
+        {
+            uint pointer;
+            if (typename == "UNITMENU")
+            {
+                pointer = MenuDefinitionForm.GetUnitMenuPointer();
+            }
+            else if (typename == "GAMEMENU")
+            {
+                pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else if (typename == "DEBUG1")
+            {
+                pointer = MenuDefinitionForm.GetDebug1MenuPointer();
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
+            return SearchMenuLow(pointer, menuID, helpID);
+        }
+
+        static uint SearchMenuLow(uint pointer, uint menuID, uint helpID)
         {
             InputFormRef ifr = Init(null);
             ifr.ReInitPointer(pointer);
@@ -361,15 +385,26 @@ namespace FEBuilderGBA
             uint addr = ifr.BaseAddress;
             for (int i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
             {
-                uint id = Program.ROM.u8(addr + 0x9);
-                if (id == searchCommandID)
+                if (menuID != U.NOT_FOUND)
                 {
-                    return addr;
+                    uint id = Program.ROM.u8(addr + 0x9);
+                    if (id != menuID)
+                    {
+                        continue;
+                    }
                 }
+                if (helpID != U.NOT_FOUND)
+                {
+                    uint id = Program.ROM.u16(addr + 0x6);
+                    if (id != helpID)
+                    {
+                        continue;
+                    }
+                }
+                return addr;
             }
             return U.NOT_FOUND;
         }
-
         public static uint ExpandsArea(Form form, string typename, uint newdatacount, Undo.UndoData undodata)
         {
             uint pointer;
@@ -380,6 +415,10 @@ namespace FEBuilderGBA
             else if (typename == "GAMEMENU")
             {
                 pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else if (typename == "DEBUG1")
+            {
+                pointer = MenuDefinitionForm.GetDebug1MenuPointer();
             }
             else
             {
@@ -426,7 +465,7 @@ namespace FEBuilderGBA
 
         public static void WriteNullMenu(uint addr, Undo.UndoData undodata)
         {
-            if (! U.isSafetyOffset(addr + 36))
+            if (!U.isSafetyOffset(addr + MENU_SIZE))
             {
                 return;
             }
@@ -462,7 +501,7 @@ namespace FEBuilderGBA
             addr = addr + (eearg.OldDataCount * eearg.BlockSize);
             for (int i = (int)eearg.OldDataCount; i < count - 1; i++)
             {
-                if (addr + 36 > rom_length)
+                if (addr + MENU_SIZE > rom_length)
                 {
                     break;
                 }
@@ -506,6 +545,10 @@ namespace FEBuilderGBA
             else if (typename == "GAMEMENU")
             {
                 pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else if (typename == "DEBUG1")
+            {
+                pointer = MenuDefinitionForm.GetDebug1MenuPointer();
             }
             else
             {
@@ -560,6 +603,5 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
-
     }
 }

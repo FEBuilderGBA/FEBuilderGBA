@@ -1009,7 +1009,7 @@ namespace FEBuilderGBA
                 return R._("書き込むアニメーションがありません");
             }
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData("");
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImageRomAnimeForm.Import");
 
             List<Address> recycle = new List<FEBuilderGBA.Address>();
             MakeRecycleList(ref recycle , "", false);

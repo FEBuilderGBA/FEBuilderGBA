@@ -4653,6 +4653,9 @@ namespace FEBuilderGBA
                     }
                 }
             }
+
+            //コメントがあれば設定する
+            UI_ReadUIToComment(addr, prefix, controls);
         }
 
         public bool IsSurrogateStructure;
@@ -4734,6 +4737,51 @@ namespace FEBuilderGBA
                     Program.ROM.write_u4(addr + id, value, true);
                 }
             }
+            UI_WriteCommentToUI(addr, prefix, controls);
+        }
+        void UI_WriteCommentToUI(uint addr, String prefix, List<Control> controls)
+        {
+            foreach (Control info in controls)
+            {
+                if (!(info is TextBoxEx))
+                {
+                    continue;
+                }
+                TextBoxEx info_object = ((TextBoxEx)info);
+
+                String name = SkipPrefixName(info.Name, prefix);
+                if (name.Length <= 0)
+                {
+                    continue;
+                }
+                if (name == "Comment")
+                {
+                    Program.CommentCache.Update(addr, info_object.Text);
+                    return;
+                }
+            }
+        }
+        void UI_ReadUIToComment(uint addr, String prefix, List<Control> controls)
+        {
+            foreach (Control info in controls)
+            {
+                if (!(info is TextBoxEx))
+                {
+                    continue;
+                }
+                TextBoxEx info_object = ((TextBoxEx)info);
+
+                String name = SkipPrefixName(info.Name, prefix);
+                if (name.Length <= 0)
+                {
+                    continue;
+                }
+                if (name == "Comment")
+                {
+                    info_object.Text = Program.CommentCache.At(addr);
+                    return;
+                }
+            }
         }
 
         public uint BasePointer { get; private set; }
@@ -4767,7 +4815,6 @@ namespace FEBuilderGBA
         TextBoxEx BlockSizeTextBox;
         TextBoxEx SelectAddressTextBox;
         public List<String> UnionPrefixList { get; private set; }
-        TextBoxEx CommentTextBox;
         public List<Control> Controls { get; private set; }
 
         public EventHandler PreAddressListExpandsEvent; //リストを拡張しようとした時のイベント
@@ -5232,11 +5279,6 @@ namespace FEBuilderGBA
                     this.UnionTab = (TabControl)info;
                     continue;
                 }
-                else if (name == "Comment" && info is TextBoxEx)
-                {
-                    this.CommentTextBox = (TextBoxEx)info;
-                    continue;
-                }
             }
 
             List<string> searchPrefixNames = MakeSearchPrefixNames(prefix, unionPrefixList);
@@ -5443,11 +5485,6 @@ namespace FEBuilderGBA
             {
                 WriteButtonToYellow(this.WriteButton, false);
             }
-
-            if (this.CommentTextBox != null)
-            {
-                this.CommentTextBox.Text = Program.CommentCache.At(addr);
-            }
         }
 
         void DisplaySelectBoxToAddressHandler(object sender, EventArgs e)
@@ -5586,10 +5623,6 @@ namespace FEBuilderGBA
             if (UnionTab != null)
             {
                 UIToRom(addr, ConvertUniTabPageToSelectedUnionPrefixName(UnionTab), this.Controls);
-            }
-            if (this.CommentTextBox != null)
-            {//コメント
-                Program.CommentCache.Update(addr, this.CommentTextBox.Text);
             }
 
             ShowWriteNotifyAnimation(this.SelfForm, addr);

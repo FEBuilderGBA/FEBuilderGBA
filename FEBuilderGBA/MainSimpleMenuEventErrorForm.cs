@@ -407,6 +407,11 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("ゲームオプション");
             }
+            else if (dataType == FELint.Type.ROM_HEADER)
+            {
+                show_tag = tag;
+                text = R._("ROM HEADER");
+            }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
             {
                 show_tag = tag;
@@ -1110,6 +1115,11 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.STATUS_GAME_OPTION)
             {
                 InputFormRef.JumpForm<StatusOptionForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.ROM_HEADER)
+            {
+                InputFormRef.JumpForm<ToolAutomaticRecoveryROMHeaderForm>();
                 return;
             }
 

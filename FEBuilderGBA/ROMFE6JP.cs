@@ -161,12 +161,13 @@ namespace FEBuilderGBA
         public uint menu_definiton_split_pointer() { return 0x0; }  //FE8にある分岐メニュー
         public uint menu_definiton_worldmap_pointer() { return 0x0; } //FE8のワールドマップのメニュー
         public uint menu_definiton_worldmap_shop_pointer() { return 0x0; } //FE8のワールドマップ店のメニュー        
-        public uint menu1_pointer() { return 0x5c7608; } // ユニットメニュー
-        public uint menu2_pointer() { return 0x5C7650; } // ゲームメニュー
+        public uint menu_unit_pointer() { return  0x5c7608; } // ユニットメニュー
+        public uint menu_game_pointer() { return  0x5C7650; } // ゲームメニュー
+        public uint menu_debug1_pointer() { return 0x5C73EC; }  // デバッグメニュー
         public uint MenuCommand_UsabilityAlways() { return 0x041E6C; } //メニューを開くという値を返す関数のアドレス
         public uint MenuCommand_UsabilityNever() { return 0x0; } //メニューを開かないという値を返す関数のアドレス       
-        public uint status_rmenu1_pointer() { return 0x70344; } // ステータス RMENU1
-        public uint status_rmenu2_pointer() { return 0x7034c; } // ステータス RMENU2
+        public uint status_rmenu_unit_pointer() { return 0x70344; } // ステータス RMENU1
+        public uint status_rmenu_game_pointer() { return 0x7034c; } // ステータス RMENU2
         public uint status_rmenu3_pointer() { return 0x70364; } // ステータス RMENU3
         public uint status_rmenu4_pointer() { return 0x2E420; } // 戦闘予測 RMENU4
         public uint status_rmenu5_pointer() { return 0x2E438; } // 戦闘予測 RMENU5

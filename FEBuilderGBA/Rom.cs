@@ -152,12 +152,13 @@ namespace FEBuilderGBA
         uint menu_definiton_split_pointer();  //FE8にある分岐メニュー
         uint menu_definiton_worldmap_pointer(); //FE8のワールドマップのメニュー
         uint menu_definiton_worldmap_shop_pointer(); //FE8のワールドマップ店のメニュー        
-        uint menu1_pointer(); // ユニットメニュー
-        uint menu2_pointer(); // ゲームメニュー
+        uint menu_unit_pointer(); // ユニットメニュー
+        uint menu_game_pointer(); // ゲームメニュー
+        uint menu_debug1_pointer(); // デバッグメニュー
         uint MenuCommand_UsabilityAlways(); //メニューを開くという値を返す関数のアドレス
         uint MenuCommand_UsabilityNever(); //メニューを開かないという値を返す関数のアドレス       
-        uint status_rmenu1_pointer(); // ステータス RMENU1
-        uint status_rmenu2_pointer(); // ステータス RMENU2
+        uint status_rmenu_unit_pointer(); // ステータス RMENU1
+        uint status_rmenu_game_pointer(); // ステータス RMENU2
         uint status_rmenu3_pointer(); // ステータス RMENU3
         uint status_rmenu4_pointer(); // 戦闘予測 RMENU4
         uint status_rmenu5_pointer(); // 戦闘予測 RMENU5
