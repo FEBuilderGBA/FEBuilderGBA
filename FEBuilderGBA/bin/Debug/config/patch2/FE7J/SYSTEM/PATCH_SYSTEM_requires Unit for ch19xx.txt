@@ -1,0 +1,15 @@
+NAME=19章異伝にいくためのユニット
+NAME.en=Chapter 19xx branch: requires Unit
+NAME.zh=Chapter 19xx branch: requires Unit
+
+INFO=19章異伝にいくためにレベルを比較されるユニットを指定します。(ディフォルトは 0x26 ニルス)
+INFO.en=Unlocking chapter 19xx requires Unit. (This level +1, the default is 0x26 Nils)
+INFO.zh=Unlocking chapter 19xx requires Unit. (This level +1, the default is  0x26 Nils)
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07DDDE
+ADDRESS_TYPE=UNIT
+
+AUTHOR=7743

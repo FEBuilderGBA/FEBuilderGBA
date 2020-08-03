@@ -12840,3 +12840,4 @@
 080A03C4	WorldmapItemSell_YesNoDialog_OnCancel	{U}
 080A0570	WorldmapItemSell_Show_YesNoDialog	{U}
 08071A7C	StopMusicPlayerInfo0	{U}
+08004c64	DrawUiBar__	{J}

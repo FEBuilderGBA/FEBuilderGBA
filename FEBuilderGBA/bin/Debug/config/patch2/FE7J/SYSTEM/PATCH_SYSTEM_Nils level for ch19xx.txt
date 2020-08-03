@@ -1,0 +1,15 @@
+NAME=19章異伝にいけるニルスの最低レベル
+NAME.en=Chapter 19xx branch: Nils' minimum level
+NAME.zh=Chapter 19xx branch: Nils' minimum level
+
+INFO=19章異伝にいけるニルスの最低レベルを指定します。(このレベル+1の数字でいける。ディフォルトは 6+1=7)
+INFO.en=Unlocking chapter 19xx requires Nils to be at a certain level. (This level +1, the default is 6+1=7)
+INFO.zh=Unlocking chapter 19xx requires Nils to be at a certain level. (This level +1, the default is 6+1=7)
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7DDEE
+HEX=FALSE
+
+AUTHOR=Satel

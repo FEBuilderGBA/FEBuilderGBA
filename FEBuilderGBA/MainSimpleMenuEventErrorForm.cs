@@ -469,6 +469,10 @@ namespace FEBuilderGBA
             {
                 text = R._("ソングテーブル");
             }
+            else if (dataType == FELint.Type.SONGTRACK)
+            {
+                text = R._("ソングトラック");
+            }
             else if (dataType == FELint.Type.BOSS_BGM)
             {
                 text = R._("ボスBGM");
@@ -910,6 +914,11 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.SONGTABLE)
             {
                 InputFormRef.JumpForm<SongTableForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.SONGTRACK)
+            {
+                InputFormRef.JumpForm<SongTrackForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.BOSS_BGM)

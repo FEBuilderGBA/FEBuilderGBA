@@ -2932,8 +2932,8 @@ An internal error occurred.\r\nPlease send report 7z.\r\n{0}
 :ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。
 ROM capacity exceeds 32 MB.\r\nWith GBA, ROM that exceeds 32 MB can not be executed.
 
-:ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。
-The logo area at the top of the ROM is destroyed.\r\nNormally, this area can not be rewritten.
+:ROM先頭にあるロゴ領域が破壊されています。\r\n自動修正する場合は、ここをクリックしてください。
+The logo area at the top of the ROM is destroyed.\r\nClick here for automatic correction.
 
 :@0080の後に、@命令が続いていません。@001Cで補正します。
 There is no @ command following @0080. Fix with @001C.
@@ -10122,6 +10122,18 @@ Track editor
 
 :インポートする音楽ファイルを選択してください
 Please select the music file to import.
+
+:SongID {0}のトラックは常に0である必要があります。現在値:{1}
+SongID {0} track must always be 0.Current value: {1}.
+
+:SongID {0}のトラックは常に16以内である必要があります。現在値:{1}
+SongID {0} tracks must always be under 16.Current value: {1}.
+
+:SongID {0}の楽器ポインタ「{1}」は無効です。
+The instrument pointer "{1}" of SongID {0} is invalid.
+
+:SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？
+The pointer "{2}" of track {1} with SongID {0} is invalid.\r\nIs the number of tracks wrong? 
 
 :トラック16
 Track 16

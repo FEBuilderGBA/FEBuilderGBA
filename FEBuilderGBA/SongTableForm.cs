@@ -203,6 +203,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 FELint.CheckPointerAlien4(song_header, errors, FELint.Type.SONGTABLE, songtable_addr, i);
+                SongTrackForm.MakeCheckError(errors, i , U.toOffset(song_header));
             }
         }
 

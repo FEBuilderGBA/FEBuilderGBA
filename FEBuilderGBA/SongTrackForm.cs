@@ -408,6 +408,57 @@ namespace FEBuilderGBA
         {
             MainFormUtil.GotoMoreData();
         }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint i, uint songaddr)
+        {
+            if (songaddr == 0)
+            {
+                return;
+            }
+            if (! U.isSafetyOffset(songaddr))
+            {
+                return;
+            }
+            uint track = Program.ROM.u8(songaddr + 0);
+            if (i == 0)
+            {
+                if (track != 0)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SONGTABLE, songaddr
+                        , R._("SongID {0}のトラックは常に0である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(track)), i));
+
+                }
+                return;
+            }
+            if (track > 16)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SONGTABLE, songaddr
+                    , R._("SongID {0}のトラックは常に16以内である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(track)), i));
+            }
+            if (track == 0)
+            {//トラック数が0のダミートラックの場合、チェックしない
+                return;
+            }
+
+            //楽器のチェック
+            uint instPointer = Program.ROM.u32(songaddr + 4);
+            if (!U.isSafetyPointer(instPointer))
+            {//無効なポインタ
+                errors.Add(new FELint.ErrorSt(FELint.Type.SONGTABLE, U.toOffset(songaddr)
+                    , R._("SongID {0}の楽器ポインタ「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(instPointer)), i));
+                return;
+            }
+
+            //トラックのポインタチェック
+            for (uint n = 0; n < track; n++)
+            {
+                uint trackPointer = Program.ROM.u32(songaddr + 4 + (n * 4) );
+                if (!U.isSafetyPointer(trackPointer))
+                {//無効なポインタ
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SONGTABLE, U.toOffset(songaddr)
+                        , R._("SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？", U.To0xHexString(i), n, U.To0xHexString(trackPointer)), i));
+                }
+            }
+        }
 
 
     }

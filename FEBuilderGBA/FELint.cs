@@ -83,6 +83,7 @@ namespace FEBuilderGBA
             ,POINTER_MENUEXTENDS
             ,POINTER_UNITSSHORTTEXT
             ,SONGTABLE
+            ,SONGTRACK
             ,BOSS_BGM
             ,WORLDMAP_BGM
             ,EVENT_FINAL_SERIF
@@ -713,7 +714,7 @@ namespace FEBuilderGBA
             if (logo_crc32 != 0x96b08a28)
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.ROM_HEADER, U.NOT_FOUND
-                    , R._("ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。"
+                    , R._("ROM先頭にあるロゴ領域が破壊されています。\r\n自動修正する場合は、ここをクリックしてください。"
                 )));
             }
         }
