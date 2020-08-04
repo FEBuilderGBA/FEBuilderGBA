@@ -96,7 +96,7 @@
 00BF=SE:Fire tile
 00C4=SE:[[Unknown,Tell me if you know!]]
 00C5=SE:[[Unknown,Tell me if you know!]]
-00C6=SE:[[Unknown,Tell me if you know!]]
+00C6=SE:MAP0x12 Sound effects that freeze the river
 00C7=SE:GBA version of Zelda:OoT future Hyrule Castle winds
 00C8=SE:Small plunk? @C85_23
 00C9=SE:Light plunk? @C85_22

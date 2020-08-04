@@ -1,0 +1,14 @@
+NAME=マイナスのstatboosterを作ったときの表示の修正
+NAME.en=fix display for minus statbooster
+NAME.zh=fix display for minus statbooster
+
+INFO=マイナスのstatboosterを作ったときに、2桁から1桁に減算が発生した時に、画面の10の位が更新されない問題を解決します。\r\n10から-1されて、9になったときに、19と表示される問題を解決します。
+
+TYPE=BIN
+BIN:$FREEAREA=fix_display_for_minus_statbooster.dmp
+JUMP:0x004B54:$r3=fix_display_for_minus_statbooster.dmp
+
+PATCHED_IF:0x004B54=0x00 0x4B 0x9F 0x46
+AUTHOR=7743
+INFO.en=Solves the problem that the tens digit of the screen is not updated when subtraction from 2 digits occurs when making a minus statbooster.\r\nResolves an issue where 19 is displayed when it is -1 from 10 to 9.
+INFO.zh=解决了在减号为statbooster时发生两位数减法时屏幕的十位数未更新的问题。\r\n解决了从10到9为-1时显示19的问题。
