@@ -26,7 +26,9 @@ Start:
 @壊すコードの再送
 cmp r4, #0x0
 bne NormalExit
-    mov r2 ,r6
+    mov r0 ,r5
+    mov r1 ,r7
+    mov r2 ,r6	@<-0
 @    blh 0x08004a14   @DrawSpecialUiChar	{J}
     blh 0x08004b0c   @DrawSpecialUiChar	{U}
     
