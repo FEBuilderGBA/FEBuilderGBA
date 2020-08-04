@@ -10,6 +10,8 @@
 
 cmp r4, #0xA
 bge Start
+cmp r6, #0x0
+bne Start
 
 	@Draw space
     mov r2 ,#0xff  @space
