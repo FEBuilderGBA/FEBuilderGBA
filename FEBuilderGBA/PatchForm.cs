@@ -3272,6 +3272,7 @@ namespace FEBuilderGBA
                ,"SLIDE"       //データのスライド移動
                ,"TEXT"        //テキストデータ
                ,"TEXTADV"     //テキストデータ FEditorAdv形式
+               ,"TEXT_IMPORT" //テキスト一括
                ,"EXTENDS"     //拡張
                ,"JUMP"        //割り込みコード生成(必ず最後に書かないとダメ)
             };
@@ -3470,6 +3471,10 @@ namespace FEBuilderGBA
             else if (keyword == "TEXT" || keyword == "TEXTADV")
             {
                 BinWriteTEXT(sp, filename, binBlocks, undodata);
+            }
+            else if (keyword == "TEXT_IMPORT")
+            {
+                BinWriteTEXT_IMPORT(sp, filename, binBlocks, undodata);
             }
             else if (keyword == "EXTENDS")
             {
@@ -3829,6 +3834,15 @@ namespace FEBuilderGBA
             }
 
             binBlocks.Add(new BinBlock(addr, filename));
+        }
+        void BinWriteTEXT_IMPORT(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)
+        {
+            string basedir = Path.GetDirectoryName(filename);
+
+            ToolTranslateROM trans = new ToolTranslateROM();
+            trans.ImportAllText(this, filename);
+
+//            binBlocks.Add(new BinBlock(U.NOT_FOUND, filename));
         }
         void BinWriteExtebds(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)
         {
@@ -7526,23 +7540,22 @@ namespace FEBuilderGBA
                 }
 
                 string type = U.at(patch.Param, "TYPE");
-                if (type != "STRUCT")
+                if (type == "STRUCT")
                 {
-                    continue;
+                    MakeCheckError_CheckStruct(patch, (uint)i, errors);
                 }
 
-                string checkIF = CheckIFFast(patch);
-                if (checkIF == "E")
-                {
-                    continue;
-                }
-
-                CheckStructData(patch, (uint)i, errors);
             }
         }
 
-        static void CheckStructData(PatchSt patch, uint loopI , List<FELint.ErrorSt> errors)
+        static void MakeCheckError_CheckStruct(PatchSt patch, uint loopI, List<FELint.ErrorSt> errors)
         {
+            string checkIF = CheckIFFast(patch);
+            if (checkIF == "E")
+            {
+                return;
+            }
+
             string pointer_str = U.at(patch.Param, "POINTER");
             if (pointer_str == "")
             {//不明

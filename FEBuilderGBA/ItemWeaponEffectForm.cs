@@ -25,7 +25,7 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
-        Dictionary<uint, string> MakeItemEffectAndAppendMagic()
+        static Dictionary<uint, string> MakeItemEffectAndAppendMagic()
         {
             ImageUtilMagic.magic_system_enum magic = ImageUtilMagic.SearchMagicSystem();
             if (magic == ImageUtilMagic.magic_system_enum.FEDITOR_ADV)
@@ -151,6 +151,43 @@ namespace FEBuilderGBA
             }
             return ret;
         }
-        
+
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+            if (InputFormRef.DataCount < 10)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.NOT_FOUND
+                    , R._("アイテムエフェクトが極端に少ないです。破損している可能性があります。")));
+            }
+            Dictionary<uint, string> magic_effect_dic = MakeItemEffectAndAppendMagic();
+
+            uint addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                uint id = Program.ROM.u8(addr);
+                uint magic_effectid = Program.ROM.u16(addr + 4);
+                if (! magic_effect_dic.ContainsKey(magic_effectid))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
+                        , R._("アイテム {0}のエフェクトID「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(magic_effectid)), id));
+                }
+
+                uint map_effect_procs = Program.ROM.u32(addr + 8);
+                if (map_effect_procs != 0)
+                {
+                    if (!U.isSafetyPointer(map_effect_procs) )
+                    {//無効なポインタ
+                        errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
+                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(map_effect_procs)), id));
+                    }
+                    if (map_effect_procs % 4 != 0)
+                    {//無効なポインタ
+                        errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
+                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」が4で割り切れません。この数字は0または4で割り切れるポインタである必要があります", U.To0xHexString(i), U.To0xHexString(map_effect_procs)), id));
+                    }
+                }
+            }
+        }
     }
 }

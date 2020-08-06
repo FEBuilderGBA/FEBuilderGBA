@@ -342,12 +342,27 @@ namespace FEBuilderGBA
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("ASM関数ポインタ「{0}」が無効です。", U.To0xHexString(asm)),tag));
+                return;
             }
-            else if (U.IsValueOdd(asm) == false)
+            if (U.IsValueOdd(asm) == false)
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
+                return;
             }
+
+            uint a = U.toOffset(asm - 1);
+
+            DisassemblerTrumb.VM vm = new DisassemblerTrumb.VM();
+            DisassemblerTrumb dis = new DisassemblerTrumb();
+            DisassemblerTrumb.Code code = 
+            dis.Disassembler(Program.ROM.Data, a, 0, vm);
+            if (code.Type == DisassemblerTrumb.CodeType.Unknown)
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("ASM関数ポインタ「{0}」の先に無効な命令が存在します。ASMが壊れている可能性があります。", U.To0xHexString(asm)), tag));
+            }
+            return;
         }
         public static void CheckASMPointerOrNull(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
@@ -777,6 +792,9 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem SongTable")) return;
             SongTableForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ItemWeaponEffect")) return;
+            ItemWeaponEffectForm.MakeCheckError(errors);
            
             if (Program.ROM.RomInfo.version() == 8)
             {

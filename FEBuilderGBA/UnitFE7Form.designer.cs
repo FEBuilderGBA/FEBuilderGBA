@@ -212,6 +212,7 @@
             this.B37 = new System.Windows.Forms.NumericUpDown();
             this.B35 = new System.Windows.Forms.NumericUpDown();
             this.B36 = new System.Windows.Forms.NumericUpDown();
+            this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
@@ -288,6 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B36)).BeginInit();
+            this.L_4_ID_PLUS1.SuspendLayout();
             this.SuspendLayout();
             // 
             // J_0_TEXT
@@ -372,8 +374,8 @@
             // B4
             // 
             this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(653, 85);
-            this.B4.Margin = new System.Windows.Forms.Padding(2);
+            this.B4.Location = new System.Drawing.Point(0, 3);
+            this.B4.Margin = new System.Windows.Forms.Padding(0);
             this.B4.Maximum = new decimal(new int[] {
             255,
             0,
@@ -2579,12 +2581,22 @@
             this.B36.Size = new System.Drawing.Size(59, 25);
             this.B36.TabIndex = 49;
             // 
+            // L_4_ID_PLUS1
+            // 
+            this.L_4_ID_PLUS1.Controls.Add(this.B4);
+            this.L_4_ID_PLUS1.ErrorMessage = "";
+            this.L_4_ID_PLUS1.Location = new System.Drawing.Point(653, 84);
+            this.L_4_ID_PLUS1.Name = "L_4_ID_PLUS1";
+            this.L_4_ID_PLUS1.Size = new System.Drawing.Size(86, 32);
+            this.L_4_ID_PLUS1.TabIndex = 143;
+            // 
             // UnitFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1393, 815);
+            this.Controls.Add(this.L_4_ID_PLUS1);
             this.Controls.Add(this.L_36_UNITPALETTE);
             this.Controls.Add(this.L_35_UNITPALETTE);
             this.Controls.Add(this.panel1);
@@ -2612,7 +2624,6 @@
             this.Controls.Add(this.J_49);
             this.Controls.Add(this.J_41);
             this.Controls.Add(this.B49);
-            this.Controls.Add(this.B4);
             this.Controls.Add(this.J_40);
             this.Controls.Add(this.AddressList);
             this.Controls.Add(this.ReloadListButton);
@@ -2819,6 +2830,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B36)).EndInit();
+            this.L_4_ID_PLUS1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3010,5 +3022,6 @@
         private System.Windows.Forms.NumericUpDown B37;
         private System.Windows.Forms.NumericUpDown B35;
         private System.Windows.Forms.NumericUpDown B36;
+        private PanelEx L_4_ID_PLUS1;
     }
 }

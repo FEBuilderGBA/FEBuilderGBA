@@ -1,0 +1,1170 @@
+[0E00]
+Learned  
+[0E01]
+Talk
+[0E02]
+Skills
+[0E03]
+Character with whom this unit
+may talk on the battlefield.
+[0E04]
+Special abilities that can do
+many different things.
+[0E05]
+No skill description found.
+[0E06]
+Press Select to toggle
+between stats and growths.
+[0E07]
+This unit's personal
+stats and skills.
+[0E08]
+SkillSystems Spanish translation resource
+[0E09]
+ Rally
+[0E0A]
+Buff nearby allies.
+[0E0B]
+ Lunge
+[0E0C]
+Switch places with opponent
+after combat.
+[0E0D]
+ Mercy
+[0E0E]
+Leave opponent with
+at least 1 HP.
+[0E0F]
+ Gamble
+[0E10]
+2x crit rate, 0.5x hit rate.
+[0E11]
+ Dragon Vein
+[0E12]
+Use the power of dragons.
+[0E13]
+ Shove
+[0E14]
+Push an adjacent unit one
+tile away.
+[0E15]
+ Smite
+[0E16]
+Push an adjacent unit two
+tiles away.
+[0E17]
+ Pivot
+[0E18]
+Move to opposite side of
+an adjacent ally.
+[0E19]
+ Reposition
+[0E1A]
+Move adjacent ally to this
+unit's opposite side.
+[0E1B]
+ Swap
+[0E1C]
+Swap positions with adjacent
+ally.
+[0E1D]
+[OpenMidRight][LoadFace][0xFFFF]Nothing to see here.[A]
+[0E1E]
+[OpenMidRight][LoadFace][0x1FF][0x00FF]These look useful.[A]
+[0E1F]
+Freeze all enemies
+for one turn
+[0E20]
+Salvador: Si la unidad rescata a un
+aliado, esta no sufrirá penalizaciones.
+[0E21]
+Adepto: La unidad podrá ejecutar
+un ataque consecutivo.
+(Velocidad = probabilidad de activarse).
+[0E22]
+Acrobacia: La unidad puede cruzar por
+terrenos inaccesibles para unidades a pie.
+(No tiene efecto ante ciertas casillas).
+[0E23]
+Pasar: La unidad puede atravesar
+casillas ocupadas por rivales.
+[0E24]
+Canto+: La unidad se puede mover
+luego de un ataque o ciertas acciones.
+[0E25]
+Previsor: Impide ataques dobles
+tanto de la unidad como del rival.
+[0E26]
+Tiro Seguro: La unidad acertará el
+golpe y su daño aumentará en un 50%.
+(Habilidad = probabilidad de activarse).
+[0E27]
+Provocar: Los enemigos tienen más
+probabilidad de ir directo a la unidad.
+[0E28]
+Piedad: La unidad puede dejar
+al enemigo con al menos 1 HP.
+[0E29]
+Frenesí: Por cada 4 HP perdidos, la
+unidad obtiene fuerza en combate +1.
+[0E2A]
+Canto: La unidad se puede mover
+luego de ciertas acciones.
+[0E2B]
+Cunning: Can steal items, pick
+locks, and see in darkness.
+[0E2C]
+Letalidad: La unidad matará
+instantáneamente al enemigo.
+(Habilidad = probabilidad de activarse).
+[0E2D]
+Perdición: Deja al enemigo con 1 HP.
+(Habilidad = probabilidad de activarse).
+[0E2E]
+Luna: Niega las defensas del enemigo.
+(Habilidad = probabilidad de activarse).
+[0E2F]
+Helios: Restaura tanto HP como HP
+perdido del enemigo durante el combate.
+(Habilidad = probabilidad de activarse).
+[0E30]
+Eter: Absorbe HP del enemigo en el primer
+ataque, en el segundo, niega sus defensas.
+(Habilidad = probabilidad de activarse).
+[0E31]
+Astrea: La unidad ataca cinco veces,
+pero su daño se reduce en un 50%.
+(Habilidad = probabilidad de activarse).
+[0E32]
+Disciplina: La unidad obtiene el doble
+de puntos de experiencia de armas.
+[0E33]
+Antiespadas: Si el enemigo usa una espada,
+la unidad obtiene Pre../Eva. +50.
+[0E34]
+Quiebralanzas: Si el enemigo usa una
+lanza, la unidad obtiene Pre./Eva. +50.
+[0E35]
+Rompehachas: Si el enemigo usa una
+hacha, la unidad obtiene Pre./Eva. +50.
+[0E36]
+Rompearcos: Si el enemigo usa un
+arco, la unidad obtiene Pre./Eva. +50.
+[0E37]
+Rajalibros: Si el enemigo usa alguna
+magia, la unidad obtiene Pre./Eva. +50.
+[0E38]
+Égida: Anula un ataque mágico.
+(Habilidad = probabilidad de activarse).
+[0E39]
+Pavés: Anula un ataque físico.
+(Habilidad = probabilidad de activarse).
+[0E3A]
+Golpe Duelista: Evasión +30 durante
+un ataque si lo inicia la unidad.
+[0E3B]
+Golpe Asesino: Crítico +20 durante
+un ataque si lo inicia la unidad.
+[0E3C]
+Golpe Fugaz: Velocidad en combate +5
+durante un ataque si lo inicia la unidad.
+[0E3D]
+Golpe Protector: Resistencia en combate
++20 durante un ataque si lo inicia la
+unidad.
+[0E3E]
+Golpe Certero: Precisión +40 durante
+un ataque si lo inicia la unidad.
+[0E3F]
+Golpe Blindado: Defensa en combate +10
+durante un ataque si lo inicia la unidad.
+[0E40]
+Ventaja: Con HP<50%, la unidad ataca
+primero cuando el rival inicie el ataque.
+[0E41]
+Arremetida: Si la unidad acomete primero
+al enemigo con HP<50%, atacara dos
+veces de manera inmediata si es posible.
+[0E42]
+Rabia: Con HP<50%, crítico +20.
+[0E43]
+Contra Física: Si el rival inicia el ataque,
+y usa armas fisicas, este pierde tanto
+HP como HP perdido por la unidad.
+[0E44]
+Contra Mágica: Si el rival inicia el ataque,
+y usa armas magicas, este pierde tanto
+HP como HP perdido por la unidad.
+[0E45]
+Milagro: Con HP>50, la unidad sobrevive
+a un ataque mortal con 1 HP restante.
+[0E46]
+Espada+: Fuerza +4 si
+se equipa una espada.
+[0E47]
+Lanza+: Fuerza +4 si
+se equipa una lanza.
+[0E48]
+Hacha+: Fuerza +4 si
+se equipa una hacha.
+[0E49]
+Arco+: Fuerza +4 si
+se equipa un arco.
+[0E4A]
+Libro+: Magia +4 si se
+equipa un libro mágico.
+[0E4B]
+Crítico+: Crítico +15.
+[0E4C]
+Purgar: La unidad es efectiva
+contra unidades monstruosas.
+[0E4D]
+Invocar: La unidad puede invocar un
+fantasma soldado para luchar junto a ti.
+[0E4E]
+Animar: Otorga al objetivo
+una acción adicional.
+[0E4F]
+Tomar Vida: Restaura hasta un 50% de HP
+luego de atacar y derrotar a un enemigo.
+[0E50]
+Asalto Impetuoso: Si la unidad inicia un
+ataque, tendrá una acción adicional a
+continuación. (Solo una vez por turno).
+[0E51]
+Recuperación: Devuelve 30% del HP
+maximo al principio de cada turno.
+[0E52]
+Buena Verga: La putamare
+wn tienes un buen pene.
++50 en todo por papasito.
+[0E53]
+Damisela: Los aliados masculinos
+en un radio de 2 casillas obtienen
+Def./Res. +2 durante un combate.
+[0E54]
+Caballero: Los aliados femeninos
+en un radio de 2 casillas obtienen
+Def./Res. +2 durante un combate.
+[0E55]
+Aura Maléfica: Los enemigos en
+un radio de 2 casillas obtienen
+magia +2 durante el combate.
+[0E56]
+Inspiración: Los alidos en un radio de
+2 casillas obtienen Fuer./Mag./Def/Res.
++2 durante el combate.
+[0E57]
+Encanto: Los aliados en un
+radio de 2 casillas obtienen
+fuerza en combate +2.
+[0E58]
+Voz de Paz: Los enemigos en un
+radio de 2 casillas obtienen
+fuerza en combate -2
+[0E59]
+Amaterasu: Los aliados en un radio de
+2 casillas recuperan el 20% de su
+HP maximo al inicio de cada turno.
+[0E5A]
+Mejora Fuerza: Fuerza en combate
++4 a los aliados adyacentes
+durante ataques.
+[0E5B]
+Mejora Magia: Magia en combate
++4 a los aliados adyacentes
+durante ataques.
+[0E5C]
+Mejora Velocidad: Velocidad en
+combate +4 a los aliados
+adyacentes durante ataques.
+[0E5D]
+Mejora Defensa: Defensa en combate
++4 a los aliados adyacentes
+durante ataques.
+[0E5E]
+Mejora Resistencia: Resistencia en
++4 a los aliados adyacentes durante
+ataques.
+[0E5F]
+Nihil: En combate, anula las
+habilidades del enemigo.
+[0E60]
+Inmunidad: La unidad está protegida
+de todos los ataques efectivos.
+[0E61]
+Paragón: La unidad recibe
+el doble de EXP. obtenida.
+[0E62]
+Atravesar: La fuerza en combate
+de la unidad aumenta en un 400%.
+(Habilidad = probabilidad de activarse).
+[0E63]
+Coloso: La fuerza y maga de la
+unidad aumentan en un 300%.
+(Habilidad = probabilidad de activarse).
+[0E64]
+Potenciar Fuerza: Fuerza +4 a los
+aliados en un radio de 2 casillas.
+[0E65]
+Potenciar Magia: Magia +4 a los
+aliados en un radio de 2 casillas.
+[0E66]
+Potenciar Habilidad: Hab. +4 a los
+aliados en un radio de 2 casillas.
+[0E67]
+Potenciar Velocidad: Vel. +4 a los
+aliados en un radio de 2 casillas.
+[0E68]
+Potenciar Suerte: Suerte +4 a los
+aliados en un radio de 2 casillas.
+[0E69]
+Potenciar Defensa: Def. +4 a los
+aliados en un radio de 2 casillas.
+[0E6A]
+Potenciar Resistencia: Res. +4 a los
+aliados en un radio de 2 casillas.
+[0E6B]
+Potenciar Movimiento: Mov. +1 a los
+aliados en un radio de 2 casillas.
+[0E6C]
+Espectro Potenciador: +2 en todas las
+estadísticas a los aliados en un
+radio de 2 casillas.
+[0E6D]
+Arco Heroico: Si la unidad usa un arco,
+su rango de arma maximo aumenta en 1.
+[0E6E]
+Bastón Heroico: Si la unidad usa
+un bastón, su rango de arma
+maximo aumenta en 1.
+[0E6F]
+Vivir para Servir: Al usar un bastón para
+curar a un aliado, la unidad recupera
+tanto HP como HP restaurado al aliado.
+[0E70]
+Vulcano: Convierte la defensa
+de la unidad en fuerza en combate.
+(Habillidad = probabilidad de activarse).
+[0E71]
+Vida y Muerte: Otorga +10 de
+fuerza en combate tanto a la
+unidad como al enemigo.
+[0E72]
+Picardia: La unidad puede abrir
+cerraduras sin llaves o ganzuas.
+[0E73]
+Permutar: Tras un ataque iniciado
+por la unidad, esta y el rival
+intercambian posiciones.
+[0E74]
+Intimidar: -10 de evasión a los
+enemigos en un radio de 2 casillas.
+[0E75]
+Oportunista: La unidad obtiene
+fuerza en combate +4 si el enemigo
+no puede contraatacar.
+[0E76]
+Pisotear: La unidad obtiene fuerza en
+combate +5 si el enemigo es una
+unidad no montada.
+[0E77]
+Camaraderia: La unidad recupera 10%
+de su HP maximo cada turno si hay
+aliados en un radio de 2 casillas.
+[0E78]
+Foreign Princess: Foreign army units
+take -2/+2 damage dealt/taken.
+[0E79]
+Golpe Salvaje: Tras un ataque los
+rivales en un radio de 2 casillas
+pierden HP iguales al 20% del daño.
+[0E7A]
+Alivio: La unidad recupera 20% de
+su HP maximo si no hay aliados
+en un radio 2 casillas.
+[0E7B]
+Evitar: Si no hay aliados en un radio
+de 3 casillas, otorga Pre./Eva. +10.
+[0E7C]
+Atención: Si no hay aliados en un radio
+de 3 casillas, otorga crítico +10.
+[0E7D]
+Lazo de Vida: Los aliados en un radio de
+3 casillas recuperan el 10% de su HP
+maximo al inicio de cada turno.
+[0E7E]
+Anathema: Los enemigos en un radio de
+3 casillas obtienen -10 de evasión y
+evasión de golpes críticos.
+[0E7F]
+Equilibrio Bendito: Los aliados adyacentes
+obtienen Fuer./Mag. en combate +1
+y Def./Res. en combate +3.
+[0E80]
+Experto: Reduce en un 50% el
+daño del enemigo cuando este
+realiza golpes críticos.
+[0E81]
+Celeridad: Otorga movimiento +2.
+[0E82]
+Sangre Ardiente: Si la unidad tiene
+HP<100%, obtiene +4 de fuerza
+en combate.
+[0E83]
+Esquina: La unidad obtiene +3 de fuerza
+en combate si está en terreno abierto.
+[0E84]
+Cubierta Natural: La unidad obtiene
+Def./Res +3 si está ubicada en una
+casilla que tenga algun efecto.
+[0E85]
+Sellar Fuerza: Tras un ataque,
+el enemigo obtiene fuerza -6.
+(Se recupera luego de un turno).
+[0E86]
+Sellar Habilidad: Tras un ataque,
+el enemigo obtiene habilidad -6.
+(Se recupera luego de un turno).
+[0E87]
+Sellar Velocidad: Tras un ataque,
+el enemigo obtiene velocidad -6.
+(Se recupera luego de un turno).
+[0E88]
+Sellar Suerte: Tras un ataque,
+el enemigo obtiene suerte -6.
+(Se recupera luego de un turno).
+[0E89]
+Sellar Defensa: Tras un ataque,
+el enemigo obtiene defensa -6.
+(Se recupera luego de un turno).
+[0E8A]
+Sellar Resistencia: Tras un ataque,
+el enemigo obtiene resistencia -6.
+(Se recupera luego de un turno).
+[0E8B]
+Apostar: La unidad ejecuta un ataque
+imprudente, la precisión se reduce a la
+mitad pero el crítico se duplica.
+[0E8C]
+Sangre de Dragon: La unidad es capaz
+de activar las "Venas de Dragon".
+[0E8D]
+Nice Personality: This unit has
+a deep and engaging character,
+bursting at the seams with development.
+[0E8E]
+Ataque Rapido: Fuerza en combate +4
+durante un ataque si lo inicia la unidad.
+[0E8F]
+Disciplina del Viento: Si la unidad
+tiene HP<100%, obtiene precisión
+y evasión +10.
+[0E90]
+Intranquilo: Fuerza en combate +3
+cuando la unidad sufre un ataque.
+[0E91]
+Paciencia: Evasión +10
+cuando la unidad sufre un ataque.
+[0E92]
+Perseguir: Velocidad en combate +2
+cuando la unidad sufre un ataque.
+[0E93]
+Peso Ligero: Si la unidad tiene
+3 objetos o menos, obtiene
+velocidad en combate +3.
+[0E94]
+Máquina de Matar: La probabilidad de
+golpes críticos de la unidad se duplica.
+[0E95]
+Forzar Crítico: Si se ejecutan golpes
+críticos, la habilidad de la unidad
+se multiplica x1.5.
+[0E96]
+Caballeria: Si el enemigo tiene
+HP=100%, la unidad obtiene
+Fuer./Def./Res +2.
+[0E97]
+Pragmatico: Si el enemigo tiene
+HP<100%, la unidad obtiene
+fuerza +3 y Def./Res. +1.
+[0E98]
+Ahorra Arma: No se consumirá
+la durabilidad del arma.
+(Suerte = probabilidad de activarse).
+[0E99]
+Moonbow: Enemy Def/Res is
+reduced by 25%. Charge: 2
+[0E9A]
+Empujar: Aleja a un aliado
+a una casilla de distancia.
+[0E9B]
+Choque: Aleja a un aliado
+a dos casillas de distancia.
+[0E9C]
+Down with Arch: If the hit lands,
+instantly kill the enemy unit.
+(Only if name starts with "Arch")
+[0E9D]
+Up with Arch: Adjacent ally units gain
+might equal to half this unit's might.
+(Only if name starts with "Arch")
+[0E9E]
+Espectro Legitimo: +100% de
+probabilidad de activar habilidades
+que tengan una tasa de activación.
+[0E9F]
+Rey Legitimo: +10% de probabilidad
+de activar habilidades que
+tengan una tasa de activación.
+[0EA0]
+Dios Legitimo: +30% de probabilidad
+de activar habilidades que
+tengan una tasa de activación.
+[0EA1]
+Suerte Septima: La unidad obtiene
+Pre./Esq. +20 hasta el turno 7.
+[0EA2]
+Ritmo Impar: La unidad obtiene
+Pre./Esq. +10 al comienzo de
+los turnos con un numero impar.
+[0EA3]
+Ritmo Par: La unidad obtiene
+Pre./Esq. +10 al comienzo de
+los turnos con un numero par.
+[0EA4]
+Grabado Rapido: La unidad obtiene
+Pre./Esq. +15, la bonificación va a
+disminuir conforme pasen los turnos.
+[0EA5]
+Grabado Lento: La unidad obtiene
+Pre./Esq. +1, la bonificación va a
+aumentar cada turno hasta llegar a 15.
+[0EA6]
+Despojar: La unidad obtiene una Gema
+Roja al atacar y derrotar a un enemigo.
+(Suerte = probabilidad de activarse).
+[0EA7]
+Pivote: Desplaza a la unidad
+desde una casilla adyacente
+a un aliado a su opuesta.
+[0EA8]
+Refugio: Desplaza a un aliado
+desde una casilla adyacente
+a la unidad a su opuesta.
+[0EA9]
+Intercambiar: La unidad y un aliado
+adyacente intercambian posiciones.
+[0EAA]
+Soplo de Vida: Tras un ataque de la
+unidad, los aliados en un radio de 2
+casillas recuperan el 20% de su HP.
+[0EAB]
+Furia: Fuer./Vel./Def./Res. +2. La
+unidad pierde 6 HP tras un ataque.
+[0EAC]
+Deslumbrar: Los oponentes
+no pueden contraatacar.
+[0EAD]
+Triadepto: Duplica los efectos de
+ventaja o desventaja de armas.
+[0EAE]
+Suministro: Esta unidad tiene
+acceso a el almacen.
+[0EAF]
+Quantum Visage: Face changes
+every time it's looked at.
+[0EB0]
+Trace: During Battle, copies
+the first Skill of the enemy.
+[0EB1]
+1d12: Gain 1 of 12 random proc
+Skills during battle.
+(Proc % based on original skills).
+[0EB2]
+Identity Problems: This unit can't
+decide on a name or face.
+[0EB6]
+Carisma: Otorga Pre./Eva. +10 a todos
+los aliados en un radio de 3 casillas.
+[0EB7]
+Golpe Mortal: Fuerza en combate +6
+durante un ataque si lo inicia la unidad.
+[0EB8]
+Dar y Tomar: Otorga Fuer./Mag./Vel.
++5, pero inflige Def./Res. -5.
+[0EB9]
+Catch 'Em All: Grants
+the user every skill.
+[0EBA]
+Ventaja+: La unidad ataca primero
+cuando el rival inicie el ataque.
+Tambien niega los críticos.
+[0EBB]
+Ojo de Halcón: La unidad
+siempre acertara el golpe.
+[0EBC]
+Solidaridad: Crítico y evasión de golpes
+críticos +10 a los aliados adyacentes.
+[0EBD]
+Postura Muralla: Si el rival inicia el
+ataque, la unidad obtiene Def./Res.+4.
+[0EBE]
+Postura Dúplice: Si el rival inicia el
+ataque, la unidad obtiene Vel. +6.
+[0EBF]
+Postura Feroz: Si el rival inicia
+el ataque, la unidad obtiene
+Fuer./Mag. +6.
+[0EC0]
+Postura Gorrión: Si el rival inicia
+el ataque, la unidad obtiene
+Fuer./Mag./Vel +4.
+[0EC1]
+Postura Espejo: Si el rival inicia
+el ataque, la unidad obtiene
+Fuer./Mag./Res. +4.
+[0EC2]
+Postura Preparada: Si el rival inicia el
+ataque, la unidad obtiene Vel./Def. +4.
+[0EC3]
+Postura Firme: Si el rival inicia el
+ataque, la unidad obtiene Def. +6.
+[0EC4]
+Postura Dura: Si el rival inicia
+el ataque, la unidad obtiene
+Fuer./Mag./Def. +4.
+[0EC5]
+Postura Veloz: Si el rival inicia
+el ataque, la unidad obtiene
+Vel./Res. +4
+[0EC6]
+Postura Protectora: Si el rival inicia
+el ataque, la unidad obtiene Res. +6.
+[0EC7]
+Postura Espectro: Si el rival inicia
+el ataque, la unidad obtiene
+Fuer./Mag./Vel./Def./Res. +4.
+[0EC8]
+Robar: La unidad puede
+robar objetos del enemigo.
+[0EC9]
+Robar+: La unidad puede robar armas
+no equipadas si su constitución es
+mayor que el peso de la arma a robar.
+[0ECA]
+Capturar: La unidad puede capturar
+a un enemigo derrotado, pero con
+estadísticas reducidas.
+[0ECB]
+Magia Negra: Inflige un estado
+alterado aleatorio al enemigo.
+(Habilidad = probabilidad de activarse).
+[0ECC]
+Bastión Defensa: Otorga Def. +3,
+inflige Fuer./Mag. -3.
+[0ECD]
+Bastión Resistencia: Otorga Res. +3,
+inflige Fuer./Mag. -3.
+[0ECE]
+Precavido: La unidad evita los golpes
+críticos enemigos y las habilidades que
+tienen una probabilidad de activarse.
+[0ECF]
+Fe del Hacha: Las hachas no
+pierden durabilidad y si se usa
+un hacha, otorga Hab. +(Suer.x1.5).
+[0ED0]
+Marcha Muralla: Al inicio del turno, si
+hay un aliado acorazado adyacente
+a la unidad, ambos obtienen Mov. +2.
+[0ED1]
+Melodia Inspiradora: Si la unidad
+otorga un turno adicional a un aliado,
+el objetivo obtiene Fuer./Mag./Def. +2.
+[0ED2]
+Buscador: La unidad recupera el 20%
+de su HP maximo cada turno si está en
+una llanura, bosque o montaña.
+[0ED3]
+Cuerpo Metálico: La unidad es
+inmune a las habilidades "Sellar".
+(Ejemplo: Sellar Ataque.).
+[0ED4]
+Rezumar: Los enemigos que intenten
+recuperar HP al atacar a la unidad,
+en su lugar, la perderán.
+[0ED5]
+Regalo Sombrio: La unidad puede usar
+Magia Oscura con el rango más alto.
+[0ED6]
+Regalo Bendito: La unidad puede usar
+Magia Bendita con el rango más alto.
+[0ED7]
+Suerte Demoníaca: Si la unidad va a
+perder HP por alguna arma demoníaca,
+anula el efecto y lo transfiere al enemigo.
+[0ED8]
+Pacto Demoníaco: La unidad no podrá
+perder HP por armas demoníacas, pero
+el enemigo siempre podrá hacerlo.
+[0ED9]
+Capricho Demoníaco: Si la unidad va
+a perder HP por alguna arma demoníaca,
+el enemigo tambien lo perderá.
+[0EDA]
+ Capture
+[0EDB]
+Strike a fatal blow with reduced
+stats to capture an enemy.
+[0EDF]
+ Stairs
+[0EE0]
+Take this staircase to
+the connecting end.
+[0EE1]
+The staircase is blocked
+from the other side.
+[0EE2]
+Asalto Toxico: Tras un ataque iniciado
+por la unidad, el enemigo pierde HP
+iguales al 20% de su HP maximo.
+[0EE3]
+Herida Gris: Tras un ataque sin importar
+quien lo inicio, el enemigo pierde HP
+iguales al 20% de su HP maximo.
+[0EE4]
+Maleficio: Inflige evasión -15 a
+todos los enemigos adyacentes.
+[0EE5]
+Barricada: La unidad sufre la
+mitad de daño despues de ser
+golpeada por primera vez.
+[0EE6]
+Barricada+: La unidad sufre la
+mitad de daño despues de ser
+golpeada por ultima vez.
+[0EE7]
+Punto en Blanco: El rango minimo al
+equiparse un arco se establece a 1.
+[0EE8]
+Perfeccionista: Pre./Eva. +15
+si la unidad tiene HP=100%.
+[0EE9]
+Potenciamiento: Fuerza en combate +3
+si la fuerza de la unidad es mayor que
+la del enemigo.
+[0EEC]
+Veterano de Guerra: Otorga fuerza
+en combate +1 y precisión +5 por
+cada 10 niveles de la unidad.
+[0EED]
+Aura Bendita: Otorga fuerza en
+combate +1 y Pre./Esq./Cri. +5
+si se usa magia bendita.
+[0EEE]
+Orgullo Oculto: Otorga fuerza en
+combate +2 y Def./Res. +2 por
+cada 25% de su HP maximo.
+[0EEF]
+Lealtad: Si la unidad está en un radio
+de 2 casillas de un lord, obtiene
+Def./Res. +3 y precisión +15.
+[0EF0]
+Peso Trueno: Si el arma de la unidad
+es más pesada que la del rival, esta
+obtiene daño +2, Pre. +15 y Cri. +5.
+[0EF1]
+Escoltar: Otorga Def./Res. +1 y
+Cri. +3 por cada casilla movida.
+[0EF2]
+Golpe Pesado: El peso del arma de la
+unidad se convierte en probabilidad
+de ejecutar un golpe crítico.
+[0EF3]
+Carga: Fuerza en combate +1
+por cada dos casillas movidas.
+[0EF4]
+Infiltrador: Si en un radio de 2 casillas de
+la unidad hay 2 o más enemigos, obtiene
+fuerza en combate +3 y precisión +15.
+[0EF5]
+Vanidad: La unidad obtiene fuerza en
+combate +2 y precisión +10 si lucha
+con un enemigo a distancia.
+[0EF6]
+Mata Magos: La unidad obtiene fuerza
+en combate +2 y crítico +10 si se
+enfrenta a enemigos mágicos.
+[0EF7]
+Escudero: Si la unidad tiene
+HP>75%, obtiene fuerza en
+combate +2 y evasión +15.
+[0EF8]
+Vigilante: La unidad no puede
+ser capturada o robada.
+[0EF9]
+Heroe: Si la unidad tiene HP<50%,
+sus habilidades con una tasa de
+activación tienen +30% de posibilidad.
+[0EFA]
+Bendición: Cura los problemas de
+estado al comienzo de cada turno.
+[0EFB]
+Re-Mover: La unidad
+podrá moverse otra vez.
+(Suerte = probabilidad de activarse).
+[0EFC]
+Bastón Poderoso: Si la unidad
+usa un bastón, tendrá otra
+acción luego de usarlo.
+[0EFD]
+Disciplina+: La unidad obtiene el doble
+de puntos de experiencia de armas y
+puede tener rango S en varias armas.
+[0F06]
+ Escape
+[0F07]
+Have this unit
+leave this chapter.
+[0F08]
+ Arrive
+[0F09]
+Complete this chapter
+by having this unit arrive.
+[0F0A]
+Impulsar Fuerza: Fuerza +4 a
+los aliados en un radio de 2
+casillas durante ataques.
+[0F0B]
+Impulsar Magia: Magia +4 a
+los aliados en un radio de 2
+casillas durante ataques.
+[0F0C]
+Impulsar Habilidad: Habilidad +4
+a los aliados en un radio de 2
+casillas durante ataques.
+[0F0D]
+Impulsar Velocidad: Velocidad +4
+a los aliados en un radio de 2
+casillas durante ataques.
+[0F0E]
+Impulsar Suerte: Suerte +4 a
+los aliados en un radio de 2
+casillas durante ataques.
+[0F0F]
+Impulsar Defensa: Defensa +4
+a los aliados en un radio de 2
+casillas durante ataques.
+[0F10]
+Impulsar Resistencia: Resistencia +4
+a los aliados en un radio de 2
+casillas durante ataques.
+[0F11]
+Florecer: Duplica los crecimientos
+de la unidad, pero reduce a la
+mitad la experiencia obtenida.
+[0F12]
+Aptitud: Otorga 20% adicionales
+a los crecimientos de la unidad.
+Aptitude: +20% to
+all growth rates.
+[0F13]
+Sellar Magia: Tras un ataque,
+el enemigo obtiene magia -6.
+(Se recupera luego de un turno).
+[0F14]
+Total number of leadership stars
+for ally units.
+[0F15]
+Total number of leadership stars
+for enemy units.
+[0F16]
+Liderazgo: Otorga precisión +5
+y esquivar +3 a todos los
+aliados por cada estrella.
+[0F1A]
+Likes:
+[0F1B]
+[_D]i[_s]li[_k][_e][_s]:
+[0F1C]
+Height:
+[0F1D]
+Age:
+[0F1E]
+Mov
+[0F1F]
+A list of things this[OpenLeft]character enjoys.
+[0F20]
+A list of things this
+character does not enjoy.
+[0F21]
+This character's current age.
+[0F22]
+This character's height.
+[0F23]
+Quick Riposte: If defending and
+HP is 50% or higher, unit doubles
+and attacker does not double.
+[0F24]
+Resolver: Si la unidad tiene HP<50%,
+Fuer./Mag./Hab./Vel. x1.5.
+[0F25]
+Visión: Precisión +20.
+[0F26]
+Vigilancia: Evasión +20.
+[0F27]
+Intimidar: Los enemigos en un radio
+de 3 casillas obtienen Pre./Cri. -5.
+[0F28]
+Marea de Sangre: Fuerza en comate y
+precisión +5 a los aliados adyacentes.
+[0F29]
+Marea Blanca: Fuerza y velocidad en
+combate +5 a los aliados adyacentes.
+[0F2A]
+Marea Negra: Defensa y resistencia
++5 a los aliados adyacentes.
+[0F2B]
+Presciencia: Al inicio del combate,
+precisión y evasión +15.
+[0F2C]
+Desviar Evasión: Si la unidad tiene
+HP<25%, obtiene evasión +30.
+[0F2D]
+Desviar Crítico: Si la unidad tiene
+HP<25%, obtiene crítico +30.
+[0F2E]
+Desviar Fuerza: Si la unidad tiene
+HP<25%, obtiene fuerza +4.
+[0F2F]
+Desviar Magia: Si la unidad tiene
+HP<25%, obtiene magia +4.
+[0F30]
+Desviar Habilidad: Si la unidad tiene
+HP<25%, obtiene habilidad +4.
+[0F31]
+Desviar Velocidad: Si la unidad tiene
+HP<25%, obtiene velocidad +4.
+[0F32]
+Desviar Suerte: Si la unidad tiene
+HP<25%, obtiene suerte +4.
+[0F33]
+Desviar Defensa: Si la unidad tiene
+HP<25%, obtiene defensa +4.
+[0F34]
+Desviar Resistencia: Si la unidad tiene
+HP<25%, obtiene resistencia +4.
+[0F35]
+Negociar: Reduce a la
+mitad los precios en las tiendas.
+[0F36]
+Defensa Contigua: Otorga
+defensa +6 al recibir un
+ataque cuerpo a cuerpo.
+[0F37]
+Defensa a Distancia: Otorga
+defensa +6 al recibir un
+ataque a largo rango.
+[0F38]
+Defensa a Distancia+: La unidad
+no pierde HP al recibir ataques
+a larga distancia.
+[0F39]
+Maldición de Vacio: Al morir,
+la unidad no otorga experiencia.
+[0F3A]
+Luchador Interior: Pre./Eva. +10
+si la unidad lucha en interiores.
+[0F3B]
+Luchador Exterior: Pre./Eva. +10
+si la unidad lucha en exteriores.
+[0F3C]
+Magia Heroica: Si la unidad usa magia,
+su rango de arma maximo aumenta en 1.
+[0F3D]
+Postura Alerta: Si el rival inicia el
+ataque, la unidad obtiene eva. +15.
+[0F3E]
+Postura Alerta+: Si el rival inicia el
+ataque, la unidad obtiene eva. +30.
+
+[0F3F]
+Llamarada+: Niega la
+resistencia del enemigo.
+(Habilidad = probabilidad de activarse).
+[0F40]
+Llamarada: Reduce a la mitad
+la resistencia del enemigo.
+(Habilidad = probabilidad de activarse).
+[0F41]
+Tempest: Double biorhythm effects.
+[0F42]
+Serenity: Halve biorhythm effects.
+[0F43]
+Petrificar: Convierte en piedra a el
+enemigo luego del combate.
+(Habilidad = probabilidad de activarse).
+[0F44]
+Enloquecer: Inflige locura en el
+enemigo luego del combate.
+(Habilidad = probabilidad de activarse).
+[0F45]
+Ojo Letal: Duplica la precisión
+y habrá (habilidad)% de dormir
+al rival luego del combate.
+[0F46]
+Colmillo Dragon: Multiplica la
+fuerza en combate x1.5.
+(Habilidad = probabilidad de activarse).
+[0F47]
+Fortuna: Niega la probabilidad de
+ejecutar un golpe crítico del enemigo
+[0F48]
+Asesinato: En los combates cuerpo a
+cuerpo, fuerza en combate +2  y los
+ataques dobles se ejecutaran antes.
+[0F49]
+Hoja Arcana: Al inicio de un combate
+de rango 1. Suma 3+(Mag./2) a la
+precisión y a la probabilidad de crítico.
+[0F4A]
+Poise: +1 Move.
+Negates enemy hit bonus from
+weapon triangle advantage.
+[0F4B]
+Llama Azul: +2 de fueza en combate.
+Si hay un aliado adyacente a la unidad,
++4 de fuerza en combate en su lugar.
+[0F4C]
+León Doble: La unidad
+ataca dos veces siempre.
+[0F4D]
+Ataque Triangular: Permite a esta
+unidad realizar con otras dos
+unidades que tengan esta habilidad.
+[0F4E]
+Push Strength: When HP
+is full, gain +5 strength.
+[0F4F]
+Push Magic: When HP
+is full, gain +5 magic.
+[0F50]
+Push Skill: When HP
+is full, gain +5 skill.
+[0F51]
+Push Speed: When HP
+is full, gain +5 speed.
+[0F52]
+Push Defense: When HP
+is full, gain +5 defense.
+[0F53]
+Push Resistance: When HP is
+full, gain +5 resistance.
+[0F54]
+Desgarrar Cielo: La unidad se vuelve
+eficaz contra unidades voladoras.
+(Bug).
+[0F55]
+Ingenioso: Aumenta la fuerza de la
+unidad si tiene efectividad de arma.
+[0F56]
+Cultured: If attacking next to a unit
+with Nice Thighs, move again.
+-50 hit against units with Nice Thighs.
+[0F57]
+Lull Str: Negates the effects of
+rallies on opponent's strength.
+[0F58]
+Lull Mag: Negates the effects of
+rallies on opponent's magic.
+[0F59]
+Lull Skl: Negates the effects of
+rallies on opponent's skill.
+[0F5A]
+Lull Spd: Negates the effects
+of rallies on opponent's speed.
+[0F5B]
+Lull Luck: Negates the effects
+of rallies on opponent's luck.
+[0F5C]
+Lull Def: Negates the effects of
+rallies on opponent's defense.
+[0F5D]
+Lull Res: Negates the effects of
+rallies on opponent's resistance.
+[0F5E]
+Lull Spectrum: Negates the
+effects of rallies on opponent.
+[0F5F]
+Sombra: Los enemigos tienen menos
+probabilidad de ir directo a la unidad.
+[0F60]
+Sombra+: Los enemigos
+no iran directo a la unidad.
+[0F61]
+Imbuir: La unidad recupera
+tanto HP como total de magia
+al inicio de cada turno.
+[0F62]
+Thighdeology: If a unit within
+3 tiles has Nice Thighs, gain
++2 Attack and +20 Hit.
+[0F63]
+Thotslayer: +15 crit against units
+with Nice Thighs or Personality.
+[0F64]
+Corrosión: Disminuye la durabilidad del
+arma del enemigo por nivel del usuario.
+(Habilidad = probabilidad de activarse).
+[0F65]
+Mantención: Si en un radio de 3
+casillas hay algun aliado con Canto o
+Canto+, la unidad gana Mov. +2.
+[0F66]
+Indoor March: If unit is on
+indoor terrain, unit gains +2 Mov.
+[0F67]
+Acometida Natural: Si la unidad está
+en terreno irregular, obtiene Mov. +2.
+[0F68]
+Amische: This unit's religion prevents
+them from using non-Iron weaponry.
+[0F69]
+Glaciar: Convierte la resistencia
+de la unidad en fuerza en combate.
+(Habillidad = probabilidad de activarse).
+[0F6A]
+Maestro Casillero: Las habilidades de
+movimiento no terminaran tu acción.
+[0F6B]
+Skyguard: +4 defense against
+flying enemies if within 3
+spaces of an ally flier.
+[0F6C]
+Horseguard: +4 defense against
+horseback enemies if within 3
+spaces of an ally horse rider.
+[0F6D]
+Triangle Adept+: Doubles
+weapon triangle effects.
+[0F6F]
+Charge+: If unit has used up
+all movement, gain brave effect.
+[0F70]
+Gran Escudo: La unidad no pierde HP.
+(Defensa = probabilidad de activarse).
+[0F71]
+Moonlight: Cannot double but
+opponent cannot counterattack.
+[0F72]
+Venganza: Aumenta fuerza en combate
+tanto como el total de HP perdido.
+(Habilidad = probabilidad de activarse).
+[0F73]
+Eclipse: Leave opponent with 1 HP.
+(Skill % activation)
+[0F76]
+ Swarp
+[0F77]
+Swap positions with a distant[OpenLeft]ally.

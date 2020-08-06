@@ -2570,7 +2570,7 @@ r3=X tile position of menu of right	{U}
 08002274	SomethingSoundRelated_8002274	{U}
 080022ec	SomethingSoundRelated_80022EC	{U}
 0800231c	SoundStuff_800231C	{U}
-080023e0	SoundStuff_80023E0	{U}
+080023e0	FadeOutChannelForSoundSE	{U}
 08002730	ISuspectThisToBeMusicRelated_8002730	{U}
 0800281c	Some6CMusicRelatedWaitCallback	{U}
 08002858	Exec6CSomeWaitIfMusicOn	{U}
@@ -4371,7 +4371,7 @@ r3=X tile position of menu of right	{U}
 080021C4	SomethingSoundRelated_8002274	{J}
 0800223C	SomethingSoundRelated_80022EC	{J}
 0800226C	SoundStuff_800231C	{J}
-08002330	SoundStuff_80023E0	{J}
+08002330	FadeOutChannelForSoundSE	{J}
 08002680	ISuspectThisToBeMusicRelated_8002730	{J}
 0800276C	Some6CMusicRelatedWaitCallback	{J}
 080027A8	Exec6CSomeWaitIfMusicOn	{J}
@@ -12847,3 +12847,9 @@ r3=X tile position of menu of right	{U}
 080A03C4	WorldmapItemSell_YesNoDialog_OnCancel	{U}
 080A0570	WorldmapItemSell_Show_YesNoDialog	{U}
 08071A7C	StopMusicPlayerInfo0	{U}
+08004c64	DrawUiBar__	{J}
+08004D5C	DrawUiBar__	{U}
+08012cec	StartEarthquake	{J}
+08012C34	StartEarthquake	{U}
+08012D40	EndEarthquake	{J}
+08012C88	EndEarthquake	{U}

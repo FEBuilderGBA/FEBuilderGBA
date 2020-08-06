@@ -2893,6 +2893,9 @@ ASM function pointer "{0}" is invalid.
 :ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。
 The ASM function pointer "{0}" is an even number.\r\nIt must be Pointer + 1 to call Thumb instructions.
 
+:ASM関数ポインタ「{0}」の先に無効な命令が存在します。ASMが壊れている可能性があります。
+An invalid instruction exists before the ASM function pointer "{0}".ASM may be corrupted.
+
 :Procs関数ポインタ「{0}」が無効です。
 Procs function pointer '{0}' is invalid.
 
@@ -5406,6 +5409,18 @@ ASM pointer
 
 :アイテム利用効果
 Item "Use" Effect
+
+:アイテムエフェクトが極端に少ないです。破損している可能性があります。
+There are extremely few item effects.It may be damaged.
+
+:アイテム {0}のエフェクトID「{1}」は無効です。
+The effect id "{1}" for item {0} is invalid.
+
+:アイテム {0}のマップ使用時エフェクトポインタ「{1}」は無効です。
+Effect pointer "{1}" is invalid when using map for item {0}.
+
+:アイテム {0}のマップ使用時エフェクトポインタ「{1}」が4で割り切れません。この数字は0または4で割り切れるポインタである必要があります
+Effect pointer "{1}" is not divisible by 4 when using map for item {0}.This number must be a pointer divisible by 0 or 4.
 
 :1=マップだけのアニメーション
 1=Maps only animation

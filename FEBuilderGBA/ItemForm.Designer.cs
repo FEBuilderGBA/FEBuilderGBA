@@ -172,6 +172,7 @@
             this.L_29_ITEMICONSRC = new FEBuilderGBA.InterpolatedPictureBox();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
+            this.L_6_ID = new FEBuilderGBA.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -220,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
+            this.L_6_ID.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddressListExpandsButton_256
@@ -1330,7 +1332,7 @@
             // B6
             // 
             this.B6.Hexadecimal = true;
-            this.B6.Location = new System.Drawing.Point(660, 78);
+            this.B6.Location = new System.Drawing.Point(0, 4);
             this.B6.Margin = new System.Windows.Forms.Padding(2);
             this.B6.Maximum = new decimal(new int[] {
             255,
@@ -2099,13 +2101,22 @@
             this.SKILLNAME.TabIndex = 121;
             this.SKILLNAME.Visible = false;
             // 
+            // L_6_ID
+            // 
+            this.L_6_ID.Controls.Add(this.B6);
+            this.L_6_ID.ErrorMessage = "";
+            this.L_6_ID.Location = new System.Drawing.Point(660, 73);
+            this.L_6_ID.Name = "L_6_ID";
+            this.L_6_ID.Size = new System.Drawing.Size(86, 32);
+            this.L_6_ID.TabIndex = 145;
+            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1392, 818);
-            this.Controls.Add(this.B6);
+            this.Controls.Add(this.L_6_ID);
             this.Controls.Add(this.HardCodingWarningLabel);
             this.Controls.Add(this.ReloadListButton);
             this.Controls.Add(this.BlockSize);
@@ -2268,6 +2279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
+            this.L_6_ID.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2418,5 +2430,6 @@
         private System.Windows.Forms.Label MagicExtUnitBaseLabel;
         private TextBoxEx VennouWeaponLockArray_Display;
         private System.Windows.Forms.Label HardCodingWarningLabel;
+        private PanelEx L_6_ID;
     }
 }
