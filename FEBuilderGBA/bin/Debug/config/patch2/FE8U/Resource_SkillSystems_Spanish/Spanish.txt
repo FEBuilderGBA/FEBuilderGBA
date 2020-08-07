@@ -1,79 +1,84 @@
 [0E00]
-Learned  
+Aprendida
 [0E01]
-Talk
+Hablar
 [0E02]
-Skills
+Habil.
 [0E03]
-Character with whom this unit
-may talk on the battlefield.
+Personaje con el que esta
+unidad puede hablar
 [0E04]
-Special abilities that can do
-many different things.
+Habilidades especiales que pueden
+hacer muchas cosas diferentes.
 [0E05]
-No skill description found.
+No se ha encontrado ninguna
+descripción de la habilidad.
 [0E06]
-Press Select to toggle
-between stats and growths.
+Presiona SELECT para
+alternar entre estadísticas
+y crecimientos.
 [0E07]
-This unit's personal
-stats and skills.
+Estadísticas y habilidades
+personales de la unidad.
 [0E08]
 SkillSystems Spanish translation resource
 [0E09]
- Rally
+Potenciar
 [0E0A]
-Buff nearby allies.
+Otorga bonificaciones
+a los aliados.
 [0E0B]
- Lunge
+Permutar
 [0E0C]
-Switch places with opponent
-after combat.
+Intercambia posiciones con
+el rival luego del combate.
 [0E0D]
- Mercy
+Piedad
 [0E0E]
-Leave opponent with
-at least 1 HP.
+Deja al enemigo
+con 1 HP.
 [0E0F]
- Gamble
+Apostar
 [0E10]
-2x crit rate, 0.5x hit rate.
+Critico x2,
+Pre. -50%.
 [0E11]
- Dragon Vein
+Vena de Dragón
 [0E12]
-Use the power of dragons.
+Usar poder
+dragontino.
 [0E13]
- Shove
+Empujar
 [0E14]
-Push an adjacent unit one
-tile away.
+Aleja a un aliado
+a una casilla.
 [0E15]
- Smite
+Choque
 [0E16]
-Push an adjacent unit two
-tiles away.
+Aleja a un aliado
+a dos casillas.
 [0E17]
- Pivot
+Pivote
 [0E18]
-Move to opposite side of
-an adjacent ally.
+Muévete a la otra casilla
+adyacente de un aliado.
 [0E19]
- Reposition
+Refugio
 [0E1A]
-Move adjacent ally to this
-unit's opposite side.
+Mueve a un aliado adyacente
+a una casilla adyacente tuya.
 [0E1B]
- Swap
+Intercambiar
 [0E1C]
-Swap positions with adjacent
-ally.
+Intercambia posiciones
+con un aliado.
 [0E1D]
-[OpenMidRight][LoadFace][0xFFFF]Nothing to see here.[A]
+[OpenMidRight][LoadFace][0xFFFF]Nada que ver aquí.
 [0E1E]
-[OpenMidRight][LoadFace][0x1FF][0x00FF]These look useful.[A]
+[OpenMidRight][LoadFace][0x1FF][0x00FF]Esto parece útil.
 [0E1F]
-Freeze all enemies
-for one turn
+Congela todos los
+enemigos por un turno.
 [0E20]
 Salvador: Si la unidad rescata a un
 aliado, esta no sufrirá penalizaciones.
@@ -128,7 +133,7 @@ Helios: Restaura tanto HP como HP
 perdido del enemigo durante el combate.
 (Habilidad = probabilidad de activarse).
 [0E30]
-Eter: Absorbe HP del enemigo en el primer
+Éter: Absorbe HP del enemigo en el primer
 ataque, en el segundo, niega sus defensas.
 (Habilidad = probabilidad de activarse).
 [0E31]
@@ -233,11 +238,11 @@ ataque, tendrá una acción adicional a
 continuación. (Solo una vez por turno).
 [0E51]
 Recuperación: Devuelve 30% del HP
-maximo al principio de cada turno.
+máximo al principio de cada turno.
 [0E52]
-Buena Verga: La putamare
-wn tienes un buen pene.
-+50 en todo por papasito.
+Buena Verga: Tienes un buen
+pene, +50 en todo por cada
+cm. de tu pene.
 [0E53]
 Damisela: Los aliados masculinos
 en un radio de 2 casillas obtienen
@@ -265,7 +270,7 @@ fuerza en combate -2
 [0E59]
 Amaterasu: Los aliados en un radio de
 2 casillas recuperan el 20% de su
-HP maximo al inicio de cada turno.
+HP máximo al inicio de cada turno.
 [0E5A]
 Mejora Fuerza: Fuerza en combate
 +4 a los aliados adyacentes
@@ -333,11 +338,11 @@ estadísticas a los aliados en un
 radio de 2 casillas.
 [0E6D]
 Arco Heroico: Si la unidad usa un arco,
-su rango de arma maximo aumenta en 1.
+su rango de arma máximo aumenta en 1.
 [0E6E]
 Bastón Heroico: Si la unidad usa
 un bastón, su rango de arma
-maximo aumenta en 1.
+máximo aumenta en 1.
 [0E6F]
 Vivir para Servir: Al usar un bastón para
 curar a un aliado, la unidad recupera
@@ -351,7 +356,7 @@ Vida y Muerte: Otorga +10 de
 fuerza en combate tanto a la
 unidad como al enemigo.
 [0E72]
-Picardia: La unidad puede abrir
+Picardía: La unidad puede abrir
 cerraduras sin llaves o ganzuas.
 [0E73]
 Permutar: Tras un ataque iniciado
@@ -369,8 +374,8 @@ Pisotear: La unidad obtiene fuerza en
 combate +5 si el enemigo es una
 unidad no montada.
 [0E77]
-Camaraderia: La unidad recupera 10%
-de su HP maximo cada turno si hay
+Camaradería: La unidad recupera 10%
+de su HP máximo cada turno si hay
 aliados en un radio de 2 casillas.
 [0E78]
 Foreign Princess: Foreign army units
@@ -381,7 +386,7 @@ rivales en un radio de 2 casillas
 pierden HP iguales al 20% del daño.
 [0E7A]
 Alivio: La unidad recupera 20% de
-su HP maximo si no hay aliados
+su HP máximo si no hay aliados
 en un radio 2 casillas.
 [0E7B]
 Evitar: Si no hay aliados en un radio
@@ -392,7 +397,7 @@ de 3 casillas, otorga crítico +10.
 [0E7D]
 Lazo de Vida: Los aliados en un radio de
 3 casillas recuperan el 10% de su HP
-maximo al inicio de cada turno.
+máximo al inicio de cada turno.
 [0E7E]
 Anathema: Los enemigos en un radio de
 3 casillas obtienen -10 de evasión y
@@ -447,14 +452,14 @@ Apostar: La unidad ejecuta un ataque
 imprudente, la precisión se reduce a la
 mitad pero el crítico se duplica.
 [0E8C]
-Sangre de Dragon: La unidad es capaz
-de activar las "Venas de Dragon".
+Sangre de Dragón: La unidad es capaz
+de activar las "Venas de Dragón".
 [0E8D]
 Nice Personality: This unit has
 a deep and engaging character,
 bursting at the seams with development.
 [0E8E]
-Ataque Rapido: Fuerza en combate +4
+Ataque Rápido: Fuerza en combate +4
 durante un ataque si lo inicia la unidad.
 [0E8F]
 Disciplina del Viento: Si la unidad
@@ -481,11 +486,11 @@ Forzar Crítico: Si se ejecutan golpes
 críticos, la habilidad de la unidad
 se multiplica x1.5.
 [0E96]
-Caballeria: Si el enemigo tiene
+Caballería: Si el enemigo tiene
 HP=100%, la unidad obtiene
 Fuer./Def./Res +2.
 [0E97]
-Pragmatico: Si el enemigo tiene
+Pragmático: Si el enemigo tiene
 HP<100%, la unidad obtiene
 fuerza +3 y Def./Res. +1.
 [0E98]
@@ -510,19 +515,19 @@ Up with Arch: Adjacent ally units gain
 might equal to half this unit's might.
 (Only if name starts with "Arch")
 [0E9E]
-Espectro Legitimo: +100% de
+Espectro Legítimo: +100% de
 probabilidad de activar habilidades
 que tengan una tasa de activación.
 [0E9F]
-Rey Legitimo: +10% de probabilidad
+Rey Legítimo: +10% de probabilidad
 de activar habilidades que
 tengan una tasa de activación.
 [0EA0]
-Dios Legitimo: +30% de probabilidad
+Dios Legítimo: +30% de probabilidad
 de activar habilidades que
 tengan una tasa de activación.
 [0EA1]
-Suerte Septima: La unidad obtiene
+Suerte Séptima: La unidad obtiene
 Pre./Esq. +20 hasta el turno 7.
 [0EA2]
 Ritmo Impar: La unidad obtiene
@@ -533,7 +538,7 @@ Ritmo Par: La unidad obtiene
 Pre./Esq. +10 al comienzo de
 los turnos con un numero par.
 [0EA4]
-Grabado Rapido: La unidad obtiene
+Grabado Rápido: La unidad obtiene
 Pre./Esq. +15, la bonificación va a
 disminuir conforme pasen los turnos.
 [0EA5]
@@ -570,7 +575,7 @@ Triadepto: Duplica los efectos de
 ventaja o desventaja de armas.
 [0EAE]
 Suministro: Esta unidad tiene
-acceso a el almacen.
+acceso a el almacén.
 [0EAF]
 Quantum Visage: Face changes
 every time it's looked at.
@@ -584,6 +589,12 @@ Skills during battle.
 [0EB2]
 Identity Problems: This unit can't
 decide on a name or face.
+[0EB3]
+Camus
+[0EB4]
+Sirius
+[0EB5]
+Zeke
 [0EB6]
 Carisma: Otorga Pre./Eva. +10 a todos
 los aliados en un radio de 3 casillas.
@@ -679,12 +690,12 @@ Marcha Muralla: Al inicio del turno, si
 hay un aliado acorazado adyacente
 a la unidad, ambos obtienen Mov. +2.
 [0ED1]
-Melodia Inspiradora: Si la unidad
+Melodía Inspiradora: Si la unidad
 otorga un turno adicional a un aliado,
 el objetivo obtiene Fuer./Mag./Def. +2.
 [0ED2]
 Buscador: La unidad recupera el 20%
-de su HP maximo cada turno si está en
+de su HP máximo cada turno si está en
 una llanura, bosque o montaña.
 [0ED3]
 Cuerpo Metálico: La unidad es
@@ -695,7 +706,7 @@ Rezumar: Los enemigos que intenten
 recuperar HP al atacar a la unidad,
 en su lugar, la perderán.
 [0ED5]
-Regalo Sombrio: La unidad puede usar
+Regalo Sombrío: La unidad puede usar
 Magia Oscura con el rango más alto.
 [0ED6]
 Regalo Bendito: La unidad puede usar
@@ -713,26 +724,27 @@ Capricho Demoníaco: Si la unidad va
 a perder HP por alguna arma demoníaca,
 el enemigo tambien lo perderá.
 [0EDA]
- Capture
+Captura
 [0EDB]
-Strike a fatal blow with reduced
-stats to capture an enemy.
+Ejecuta un golpe fatal con
+bajas estadísticas para
+capturar a un enemigo.
 [0EDF]
- Stairs
+Estrellas
 [0EE0]
-Take this staircase to
-the connecting end.
+Toma esta escalera para
+terminar la conexión.
 [0EE1]
-The staircase is blocked
-from the other side.
+Esta escalera se encuentra
+bloqueada por el otro lado.
 [0EE2]
 Asalto Toxico: Tras un ataque iniciado
 por la unidad, el enemigo pierde HP
-iguales al 20% de su HP maximo.
+iguales al 20% de su HP máximo.
 [0EE3]
 Herida Gris: Tras un ataque sin importar
 quien lo inicio, el enemigo pierde HP
-iguales al 20% de su HP maximo.
+iguales al 20% de su HP máximo.
 [0EE4]
 Maleficio: Inflige evasión -15 a
 todos los enemigos adyacentes.
@@ -745,7 +757,7 @@ Barricada+: La unidad sufre la
 mitad de daño despues de ser
 golpeada por ultima vez.
 [0EE7]
-Punto en Blanco: El rango minimo al
+Punto en Blanco: El rango mínimo al
 equiparse un arco se establece a 1.
 [0EE8]
 Perfeccionista: Pre./Eva. +15
@@ -765,7 +777,7 @@ si se usa magia bendita.
 [0EEE]
 Orgullo Oculto: Otorga fuerza en
 combate +2 y Def./Res. +2 por
-cada 25% de su HP maximo.
+cada 25% de su HP máximo.
 [0EEF]
 Lealtad: Si la unidad está en un radio
 de 2 casillas de un lord, obtiene
@@ -804,7 +816,7 @@ combate +2 y evasión +15.
 Vigilante: La unidad no puede
 ser capturada o robada.
 [0EF9]
-Heroe: Si la unidad tiene HP<50%,
+Héroe: Si la unidad tiene HP<50%,
 sus habilidades con una tasa de
 activación tienen +30% de posibilidad.
 [0EFA]
@@ -823,15 +835,15 @@ Disciplina+: La unidad obtiene el doble
 de puntos de experiencia de armas y
 puede tener rango S en varias armas.
 [0F06]
- Escape
+Escapar
 [0F07]
-Have this unit
-leave this chapter.
+La unidad dejará
+este capítulo.
 [0F08]
- Arrive
+Llegar
 [0F09]
-Complete this chapter
-by having this unit arrive.
+Completa este capítulo haciendo
+que llegue esta unidad.
 [0F0A]
 Impulsar Fuerza: Fuerza +4 a
 los aliados en un radio de 2
@@ -874,34 +886,35 @@ Sellar Magia: Tras un ataque,
 el enemigo obtiene magia -6.
 (Se recupera luego de un turno).
 [0F14]
-Total number of leadership stars
-for ally units.
+Número total de estrellas de
+liderazgo de los aliados.
 [0F15]
-Total number of leadership stars
-for enemy units.
+Número total de estrellas de
+liderazo de los enemigos..
 [0F16]
 Liderazgo: Otorga precisión +5
 y esquivar +3 a todos los
 aliados por cada estrella.
 [0F1A]
-Likes:
+Gustos:
 [0F1B]
-[_D]i[_s]li[_k][_e][_s]:
+[_D]i[_s]g[_u]s[_t]o[_s]:
 [0F1C]
-Height:
+Altura:
 [0F1D]
-Age:
+Edad:
 [0F1E]
-Mov
+Mov.
 [0F1F]
-A list of things this[OpenLeft]character enjoys.
+Una lista de cosas que
+este personaje disfruta.
 [0F20]
-A list of things this
-character does not enjoy.
+Una lista de cosas que
+este personaje odia.
 [0F21]
-This character's current age.
+La edad de este personaje.
 [0F22]
-This character's height.
+La altura de este personaje.
 [0F23]
 Quick Riposte: If defending and
 HP is 50% or higher, unit doubles
@@ -981,14 +994,13 @@ Luchador Exterior: Pre./Eva. +10
 si la unidad lucha en exteriores.
 [0F3C]
 Magia Heroica: Si la unidad usa magia,
-su rango de arma maximo aumenta en 1.
+su rango de arma máximo aumenta en 1.
 [0F3D]
 Postura Alerta: Si el rival inicia el
 ataque, la unidad obtiene eva. +15.
 [0F3E]
 Postura Alerta+: Si el rival inicia el
 ataque, la unidad obtiene eva. +30.
-
 [0F3F]
 Llamarada+: Niega la
 resistencia del enemigo.
@@ -1014,7 +1026,7 @@ Ojo Letal: Duplica la precisión
 y habrá (habilidad)% de dormir
 al rival luego del combate.
 [0F46]
-Colmillo Dragon: Multiplica la
+Colmillo Dragón: Multiplica la
 fuerza en combate x1.5.
 (Habilidad = probabilidad de activarse).
 [0F47]
@@ -1062,7 +1074,7 @@ is full, gain +5 defense.
 Push Resistance: When HP is
 full, gain +5 resistance.
 [0F54]
-Desgarrar Cielo: La unidad se vuelve
+Rompe Cielo: La unidad se vuelve
 eficaz contra unidades voladoras.
 (Bug).
 [0F55]
@@ -1165,6 +1177,7 @@ tanto como el total de HP perdido.
 Eclipse: Leave opponent with 1 HP.
 (Skill % activation)
 [0F76]
- Swarp
+Intercambiar
 [0F77]
-Swap positions with a distant[OpenLeft]ally.
+Cambia posiciones
+con un aliado.
