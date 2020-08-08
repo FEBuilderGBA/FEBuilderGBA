@@ -44,7 +44,7 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     String name = Program.ROM.getString(addr, 11);
-                    return U.ToHexString(i + 1) + U.SA(name) + InputFormRef.GetCommentSA(addr);
+                    return U.ToHexString(i) + U.SA(name) + InputFormRef.GetCommentSA(addr);
                 }
                 );
         }

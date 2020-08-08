@@ -2695,7 +2695,7 @@ namespace FEBuilderGBA
                 }
             }
             if (linktype == "TILE")
-            {//ユニット名とリンク.
+            {//タイル名
                 TextBoxEx link_object = ((TextBoxEx)link_info);
                 src_object.ValueChanged += (sender, e) =>
                 {

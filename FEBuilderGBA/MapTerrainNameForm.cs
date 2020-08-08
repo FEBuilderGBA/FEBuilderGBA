@@ -33,7 +33,7 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
                     string name = Program.ROM.getString(Program.ROM.p32(addr));
-                    return U.ToHexString(i + 1) + " " + name;
+                    return U.ToHexString(i) + " " + name;
                 }
                 );
         }

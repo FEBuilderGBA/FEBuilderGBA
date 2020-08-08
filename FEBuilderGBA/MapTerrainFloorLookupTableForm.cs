@@ -33,7 +33,7 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
                     string name = MapTerrainNameForm.GetName((uint)i);
-                    return U.ToHexString(i + 1) + " " + name; 
+                    return U.ToHexString(i) + " " + name; 
                 }
                 );
         }

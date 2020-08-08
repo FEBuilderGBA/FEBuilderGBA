@@ -33,7 +33,7 @@ namespace FEBuilderGBA
                 {//リストボックスに乗せる項目
                     uint text_id = Program.ROM.u16(addr);
 
-                    return U.ToHexString(i + 1) + " " + text_id.ToString("X04") + " " + TextForm.Direct(text_id); 
+                    return U.ToHexString(i) + " " + text_id.ToString("X04") + " " + TextForm.Direct(text_id); 
                 }
                 );
         }

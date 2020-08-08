@@ -701,7 +701,7 @@ this.MapObjImage);
                 }
             }
 
-            return text + " " + terrain_name + " " + terrain_kaihi + " " + terrain_kaifuku + " " + terrain_tuukou;
+            return text + " " + terrain_name + "(" + U.To0xHexString(terrain_data) + ") " + terrain_kaihi + " " + terrain_kaifuku + " " + terrain_tuukou;
         }
 
         Point MAPCHIPLISTMouseCursor = new Point(-1, -1);

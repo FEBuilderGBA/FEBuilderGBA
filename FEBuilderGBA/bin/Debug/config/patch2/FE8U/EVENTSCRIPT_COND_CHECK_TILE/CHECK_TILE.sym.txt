@@ -1,0 +1,9 @@
+UseCurrentUnit=$16
+UseSlotB=$24
+UseUnit=$0E
+LoadUnitCorrd=$1A
+NotFound=$48
+GetTile=$28
+Loop=$3C
+Found=$4C
+Exit=$4E

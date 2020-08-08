@@ -1014,6 +1014,10 @@ namespace FEBuilderGBA
             {//Counter
                 text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
             }
+            if (arg.Type == EventScript.ArgType.TILE)
+            {//タイル名
+                text = " " + MapTerrainNameForm.GetName(v);
+            }
             else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
             {//MemorySlotPacked
                 text = " " + InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out errormessage);
@@ -1132,6 +1136,11 @@ namespace FEBuilderGBA
             {//Counter
                 text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
             }
+            if (arg.Type == EventScript.ArgType.TILE)
+            {//タイル名
+                text = " " + MapTerrainNameForm.GetName(v);
+            }
+
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
@@ -2844,6 +2853,11 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(InputFormRef.GetCOUNTER(v, out dummy));
+                    }
+                    if (arg.Type == EventScript.ArgType.TILE)
+                    {//タイル名
+                        sb.Append(" ");
+                        sb.Append(MapTerrainNameForm.GetName(v));
                     }
                     else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
                     {//MemorySlotPacked

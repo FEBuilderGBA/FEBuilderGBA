@@ -43,3 +43,7 @@ W6:FLAG:.zh=FLAG(00=ANY)
 
 AUTHOR=7743
 NAME.zh=提高敌人的命中率(Editor)
+
+INFO=敵が攻撃する時の命中率を底上げします。\r\nもし、命中率が30%だったとして、このパッチで20を指定した場合、20+30=50%の命中率になります。\r\nこのパッチは、マップや敵の種類、難易度ごとに敵の命中率を補正します。
+INFO.en=Increases the hit rate when the enemy attacks.\r\nIf the hit rate is 30% and you specify 20 in this patch, the hit rate is 20+30 = 50%.\r\nThis patch corrects the enemy's hit rate for each map, enemy type, and difficulty level.
+INFO.zh=Increases the hit rate when the enemy attacks.\r\nIf the hit rate is 30% and you specify 20 in this patch, the hit rate is 20+30 = 50%.\r\nThis patch corrects the enemy's hit rate for each map, enemy type, and difficulty level.
