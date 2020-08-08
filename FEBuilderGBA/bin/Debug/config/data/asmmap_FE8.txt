@@ -12846,3 +12846,15 @@
 08012C34	StartEarthquake	{U}
 08012D40	EndEarthquake	{J}
 08012C88	EndEarthquake	{U}
+080727C4	IsBattleByDemonKing	{J}
+080799A8	Start_ekrDragonTunkFace	{J}
+08054364	Start_efxQuakePure	{J}
+08054404	Start_efxHitQuakePure	{J}
+0807A548	Start_efxSelfThunderBG	{J}
+0807A468	Start_efxSelfThunder	{J}
+08070214	IsBattleByDemonKing	{U}
+08077584	Start_ekrDragonTunkFace	{U}
+08053678	Start_efxQuakePure	{U}
+08053718	Start_efxHitQuakePure	{U}
+08078124	Start_efxSelfThunderBG	{U}
+08078044	Start_efxSelfThunder	{U}

@@ -1,0 +1,11 @@
+NAME=魔王を倒したときの顔1
+NAME.en=DeamonKingFaceWhenDefeated1
+NAME.zh=DeamonKingFaceWhenDefeated1
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=64
+
+ZIMAGE_POINTER=0x079A08//0x8539E0
+PALETTE_POINTER=0x079A04//0x855D38
