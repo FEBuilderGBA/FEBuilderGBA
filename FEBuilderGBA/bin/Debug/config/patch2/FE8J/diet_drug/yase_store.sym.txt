@@ -1,2 +1,2 @@
-Skip=$0A
-Exit=$0E
+Skip=$10
+Exit=$12

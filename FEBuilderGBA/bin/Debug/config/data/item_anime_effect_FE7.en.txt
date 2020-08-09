@@ -47,7 +47,7 @@
 2E=Sleep
 2F=Hammerne 
 30=Berserk
-31= Barrier
+31=Barrier
 32=(Reserved for Promo/Boost items)
 33=Shine
 34=Luna
