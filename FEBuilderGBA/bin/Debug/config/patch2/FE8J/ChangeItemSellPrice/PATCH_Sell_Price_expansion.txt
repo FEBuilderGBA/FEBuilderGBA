@@ -1,5 +1,5 @@
-NAME=売値拡張
-NAME.en=Sell Price expansion
+NAME=売値拡張(Editor)
+NAME.en=Sell Price expansion(Editor)
 
 IF:0xB9DEC=0x00 0x4B 0x18 0x47
 
@@ -25,7 +25,7 @@ LISTNAME=$B0:ITEM
 B0:ITEM=Item
 B1:DECIMAL=Sell(%)
 W2:FLAG=Flag / ANY=0x00
-NAME.zh=扩张价格
+NAME.zh=扩张价格(Editor)
 
 INFO=リストにあるアイテムは、売値を一律半額ではなく指定した売値(%)にします。\r\n100%で買値と同じになります。\r\n200%にすると買った時の倍で売れます。\r\n売値が上限の65535を超えた場合は自動的に補正されます。\r\n何も設定しない場合は、通常通りf50%を指定したことになります。\r\nフラグでどのレートを利用するかの設定も可能です。街ごとに変えて交易を作ってみるのも面白いでしょう。
 

@@ -6,7 +6,7 @@ NAME.zh=Change formula of automatic growth auto level of enemy.
 TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
-COMBO=Default|OFF|((growth * level_count) + 50) / 100|FIX1
+COMBO=Default|OFFF|((growth * level_count) + 50) / 100|FIX1
 
 DETERMINATION_ADDRESS=0x02B9C4
 OFFF:0x02B9C4=0x10 0xB5 0x04 0x1C 0x4C 0x43 0x20 0x1C 0x00 0x2C 0x00 0xDA 0xE0 0x1C 0x80 0x10
