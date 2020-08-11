@@ -12637,3 +12637,20 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
+:[空宝箱]
+[Empty]
+
+:[壊れる壁]
+[Damaged]
+
+:[回復床]
+[Heal]
+
+:[丸太橋]
+[Log]
+
+:[はね橋]
+[Draw]
+
+:[閉じ村]
+[Close]

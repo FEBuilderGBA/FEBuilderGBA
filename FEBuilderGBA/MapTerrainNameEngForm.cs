@@ -32,8 +32,8 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
                     uint text_id = Program.ROM.u16(addr);
-
-                    return U.ToHexString(i) + " " + text_id.ToString("X04") + " " + TextForm.Direct(text_id); 
+                    string hint = MapTerrainNameForm.MakeHint_Full((uint)i);
+                    return U.ToHexString(i) + " " + text_id.ToString("X04") + " " + TextForm.Direct(text_id) + hint; 
                 }
                 );
         }

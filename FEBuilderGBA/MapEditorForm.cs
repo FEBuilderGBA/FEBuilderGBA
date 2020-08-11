@@ -681,7 +681,7 @@ this.MapObjImage);
             }
             const uint test_class = 1; //主人公クラス
 
-            string terrain_name = MapTerrainNameForm.GetName(terrain_data);
+            string terrain_name = MapTerrainNameForm.GetName(terrain_data, true);
             string terrain_kaihi = R._("地形回避") + ":" + MoveCostForm.GetMoveCost(test_class, terrain_data, 3).ToString(); //地形回避
             string terrain_kaifuku = R._("地形回復") + ":" + MoveCostForm.GetMoveCost(test_class, terrain_data, 6).ToString(); //地形回復
 

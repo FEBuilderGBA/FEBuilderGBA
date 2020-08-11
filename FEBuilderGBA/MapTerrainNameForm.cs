@@ -33,7 +33,8 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
                     string name = Program.ROM.getString(Program.ROM.p32(addr));
-                    return U.ToHexString(i) + " " + name;
+                    string hint = MakeHint_Full((uint)i);
+                    return U.ToHexString(i) + " " + name + hint;
                 }
                 );
         }
@@ -78,13 +79,14 @@ namespace FEBuilderGBA
             return InputFormRef.MakeList();
         }
 
-        public static string GetName(uint id)
+        public static string GetName(uint id, bool with_hint_full = false)
         {
+            string hint = with_hint_full ? MakeHint_Full(id) :MakeHint_Simple(id);
             if (!Program.ROM.RomInfo.is_multibyte())
             {
                 string name = MapTerrainNameEngForm.GetName(id);
                 name = TextForm.StripAllCode(name);
-                return name;
+                return name + hint;
             }
 
             InputFormRef InputFormRef = Init(null);
@@ -98,8 +100,49 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            return Program.ROM.getString(c_addr);
+            return Program.ROM.getString(c_addr) + hint;
         }
+        //見た目でわからない地形のヒントを表示します
+        public static string MakeHint_Simple(uint id)
+        {
+            if (id == 0x18)
+            {
+                return R._("[回復床]");
+            }
+
+            return "";
+        }
+
+        //見た目でわかるけど、名前が紛らわしいものにヒントを追加します
+        public static string MakeHint_Full(uint id)
+        {
+            if (Program.ROM.RomInfo.is_multibyte() == false)
+            {//英語版だと、empty Chestsの区別がないので追記する
+                if (id == 0x20)
+                {
+                    return R._("[空宝箱]");
+                }
+                if (id == 0x34)
+                {
+                    return R._("[丸太橋]");
+                }
+                if (id == 0x14)
+                {
+                    return R._("[はね橋]");
+                }
+                if (id == 0x4)
+                {
+                    return R._("[閉じ村]");
+                }
+            }
+            if (id == 0x1B)
+            {
+                return R._("[壊れる壁]");
+            }
+
+            return MakeHint_Simple(id);
+        }
+
         public static string GetNameExcept00(uint id)
         {
             if (id == 0)
