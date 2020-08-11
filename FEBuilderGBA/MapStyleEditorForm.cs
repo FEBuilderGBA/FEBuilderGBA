@@ -41,6 +41,8 @@ namespace FEBuilderGBA
             U.SetIcon(ObjImportButton, Properties.Resources.icon_upload);
             U.SetIcon(PaletteExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(PaletteImportButton, Properties.Resources.icon_upload);
+
+            SetExplainText();
         }
         void MakeMapStyleCombo()
         {
@@ -474,6 +476,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (select >= 5)
+            {
+                return;
+            }
             this.PaletteCombo.SelectedIndex = select;
         }
 
@@ -772,7 +778,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            r = WriteMapChipPalette(bitmap, true, undodata);
+            r = WriteMapChipPalette(bitmap, true,palette_count, undodata);
             if (!r)
             {
                 return;
@@ -790,9 +796,9 @@ namespace FEBuilderGBA
         }
         void ImportObj(Bitmap bitmap, bool importObjWithPalette)
         {
+            const int palette_count = MAX_MAP_PALETTE_COUNT;
             int width = 32 * 8;
             int height = 32 * 8;
-            const int palette_count = MAX_MAP_PALETTE_COUNT;
             if (bitmap.Width != width || bitmap.Height < 128)
             {
                 R.ShowStopError("画像サイズが正しくありません。\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}", bitmap.Width, bitmap.Height, width, height);
@@ -808,6 +814,7 @@ namespace FEBuilderGBA
                     R.ShowStopError("パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類", bitmap_palette_count, palette_count);
                     return;
                 }
+
                 bitmap = PaletteSwapper(bitmap);
             }
 
@@ -823,7 +830,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            r = WriteMapChipPalette(bitmap,importObjWithPalette, undodata);
+            r = WriteMapChipPalette(bitmap,importObjWithPalette,palette_count, undodata);
             if (!r)
             {
                 return;
@@ -910,9 +917,8 @@ namespace FEBuilderGBA
             }
             return true;
         }
-        bool WriteMapChipPalette(Bitmap bitmap,bool importObjWithPalette, Undo.UndoData undodata)
+        bool WriteMapChipPalette(Bitmap bitmap,bool importObjWithPalette,int palette_count, Undo.UndoData undodata)
         {
-            const int palette_count = MAX_MAP_PALETTE_COUNT;
             if (importObjWithPalette)
             {//パレットもインポートする場合
                 //パレットの交換
@@ -1346,6 +1352,11 @@ namespace FEBuilderGBA
                 return;
             }
         }
+        void SetExplainText()
+        {
+            this.Explain_MapPalette.AccessibleDescription = R._("地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。");
+        }
+
 
     }
 }

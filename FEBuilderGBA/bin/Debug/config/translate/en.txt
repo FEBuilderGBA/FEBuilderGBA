@@ -824,7 +824,10 @@ Type
 06=Status screen background (FE 8)
 
 :07=一枚絵マップチップ
-07=Single picture map chip.
+07=Single picture map chip
+
+:08=一枚絵マップチップ(10パレット)
+08=Single picture map chip(10 palettes)
 
 :出力ファイル
 Output file
@@ -12654,3 +12657,27 @@ Placement Flag
 
 :[閉じ村]
 [Close]
+
+:[遺跡]
+[Remains]
+
+:地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。
+The map is available with 5 pallets.\r\nPalettes 6-9 is the daytime palette.\r\nPalettes 6-9 is the fog pallets.\r\n\r\nIf you don't use the fog, \r\nyou can also use the 6-9 palette,\r\nalthough it's Out of regulation.\r\n
+
+:5000=(規定外)5パレット
+5000=(Out)5 pallets
+
+:6000=(規定外)6パレット
+6000=(Out)6 pallets
+
+:7000=(規定外)7パレット
+7000=(Out)7 pallets
+
+:8000=(規定外)8パレット
+8000=(Out)8 pallets
+
+:9000=(規定外)9パレット
+9000=(Out)9 pallets
+
+:この画像には、{0}パレットが存在します。\r\n地図のパレットは5パレットしか使えませんが、霧のパレットも利用すれば10パレットまで表示できます。\r\n\r\n霧パレットを潰して、インポートしてもよろしいですか？\r\n
+The {0} palette is present in this image.\r\nYou can only use 5 palettes for the map palette,\r\nbut you can also use the fog palette to display up to 10 palettes.\r\n\r\nCan you overwrite the fog palette and import it?\r\n

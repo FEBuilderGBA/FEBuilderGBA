@@ -821,10 +821,13 @@ OP字体
 05=256色不使用TSA
 
 :06=ステータス画面の背景(FE8)
-06=状态屏幕背景（FE 8）
+06=状态屏幕背景（FE8）
 
 :07=一枚絵マップチップ
-07=单张图片地图芯片。
+07=单张图片地图芯片
+
+:08=一枚絵マップチップ(10パレット)
+08=单张图片地图芯片(10 palettes)
 
 :出力ファイル
 输出文件
@@ -7724,16 +7727,16 @@ Copy Type（Alt + C）
 仅导入图像。（不导入调色板）。
 
 :一枚絵としてインポートする。(この画像からmap_configを自動生成する)
-导入为单张图片。（从该图像自动生成map_config）。
+导入为单张图片（从该图像自动生成map_config）。
 
 :マップチップのインポート
-地图提示导入。
+地图提示导入
 
 :一枚絵のインポート
-导入单张图片。
+导入单张图片
 
 :インポートオプション
-导入选项。
+导入选项
 
 :値
 值
@@ -12654,3 +12657,27 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 
 :[閉じ村]
 [Close]
+
+:[遺跡]
+[Remains]
+
+:地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。
+该地图有5个调色板。\r\n0-5调色板是白天的调色板。\r\n6-9号调色板是雾气调色板。\r\n\r\n如果你不用雾气，\r\n你也可以用6-9的调色板，\r\n不过这不是常规的。\r\n
+
+:5000=(規定外)5パレット
+5000=(Out)5 pallets
+
+:6000=(規定外)6パレット
+6000=(Out)6 pallets
+
+:7000=(規定外)7パレット
+7000=(Out)7 pallets
+
+:8000=(規定外)8パレット
+8000=(Out)8 pallets
+
+:9000=(規定外)9パレット
+9000=(Out)9 pallets
+
+:この画像には、{0}パレットが存在します。\r\n地図のパレットは5パレットしか使えませんが、霧のパレットも利用すれば10パレットまで表示できます。\r\n\r\n霧パレットを潰して、インポートしてもよろしいですか？\r\n
+The {0} palette is present in this image.\r\nYou can only use 5 palettes for the map palette,\r\nbut you can also use the fog palette to display up to 10 palettes.\r\n\r\nCan you overwrite the fog palette and import it?\r\n

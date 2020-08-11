@@ -155,6 +155,16 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertSizeMethod, 0);
                 IgnoreTSA.Checked = false;
             }
+            else if (Method.SelectedIndex == 8)
+            {//一枚絵マップチップ 10色
+                U.ForceUpdate(this.ConvertWidth, 512);
+                U.ForceUpdate(this.ConvertHeight, 512);
+                U.ForceUpdate(this.ConvertYohaku, 0);
+                U.ForceUpdate(this.ConvertPaletteNo, 10);
+                U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 0);
+                IgnoreTSA.Checked = false;
+            }
         }
 
         private void AFileSelectButton_Click(object sender, EventArgs e)

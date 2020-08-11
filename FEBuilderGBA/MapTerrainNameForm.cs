@@ -134,6 +134,10 @@ namespace FEBuilderGBA
                 {
                     return R._("[閉じ村]");
                 }
+                if (id == 0x37)
+                {
+                    return R._("[遺跡]");
+                }
             }
             if (id == 0x1B)
             {

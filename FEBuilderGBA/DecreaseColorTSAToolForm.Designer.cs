@@ -349,7 +349,8 @@
             "04=ワールドマップ(イベント用)",
             "05=TSAを利用しない256色",
             "06=ステータス画面の背景(FE8)",
-            "07=一枚絵マップチップ"});
+            "07=一枚絵マップチップ",
+            "08=一枚絵マップチップ(10パレット)"});
             this.Method.Location = new System.Drawing.Point(316, 87);
             this.Method.Name = "Method";
             this.Method.Size = new System.Drawing.Size(638, 26);

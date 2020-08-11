@@ -33,6 +33,8 @@
             this.MAPCHIPLISTPanel = new System.Windows.Forms.Panel();
             this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.MapPanel = new System.Windows.Forms.Panel();
+            this.Explain_MapPalette = new FEBuilderGBA.LabelEx();
+            this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.PasteButton = new System.Windows.Forms.Button();
             this.CopyTileButton = new System.Windows.Forms.Button();
             this.CopyTypeButton = new System.Windows.Forms.Button();
@@ -316,6 +318,8 @@
             // MapPanel
             // 
             this.MapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MapPanel.Controls.Add(this.Explain_MapPalette);
+            this.MapPanel.Controls.Add(this.labelEx2);
             this.MapPanel.Controls.Add(this.PasteButton);
             this.MapPanel.Controls.Add(this.CopyTileButton);
             this.MapPanel.Controls.Add(this.CopyTypeButton);
@@ -364,6 +368,26 @@
             this.MapPanel.Name = "MapPanel";
             this.MapPanel.Size = new System.Drawing.Size(996, 233);
             this.MapPanel.TabIndex = 0;
+            // 
+            // Explain_MapPalette
+            // 
+            this.Explain_MapPalette.AutoSize = true;
+            this.Explain_MapPalette.ErrorMessage = "";
+            this.Explain_MapPalette.Location = new System.Drawing.Point(770, 38);
+            this.Explain_MapPalette.Name = "Explain_MapPalette";
+            this.Explain_MapPalette.Size = new System.Drawing.Size(62, 18);
+            this.Explain_MapPalette.TabIndex = 449;
+            this.Explain_MapPalette.Text = "Palette";
+            // 
+            // labelEx2
+            // 
+            this.labelEx2.AutoSize = true;
+            this.labelEx2.ErrorMessage = "";
+            this.labelEx2.Location = new System.Drawing.Point(620, 37);
+            this.labelEx2.Name = "labelEx2";
+            this.labelEx2.Size = new System.Drawing.Size(35, 18);
+            this.labelEx2.TabIndex = 448;
+            this.labelEx2.Text = "Flip";
             // 
             // PasteButton
             // 
@@ -505,7 +529,12 @@
             "1000=1番目パレット",
             "2000=2番目パレット",
             "3000=3番目パレット",
-            "4000=4番目パレット"});
+            "4000=4番目パレット",
+            "5000=(規定外)5パレット",
+            "6000=(規定外)6パレット",
+            "7000=(規定外)7パレット",
+            "8000=(規定外)8パレット",
+            "9000=(規定外)9パレット"});
             this.Config_L_6_TSA_PALETTE.Location = new System.Drawing.Point(661, 156);
             this.Config_L_6_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_PALETTE.Name = "Config_L_6_TSA_PALETTE";
@@ -522,7 +551,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_6_TSA_FLIP.Location = new System.Drawing.Point(518, 155);
+            this.Config_L_6_TSA_FLIP.Location = new System.Drawing.Point(518, 156);
             this.Config_L_6_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_6_TSA_FLIP.Name = "Config_L_6_TSA_FLIP";
             this.Config_L_6_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -585,8 +614,13 @@
             "1000=1番目パレット",
             "2000=2番目パレット",
             "3000=3番目パレット",
-            "4000=4番目パレット"});
-            this.Config_L_4_TSA_PALETTE.Location = new System.Drawing.Point(661, 125);
+            "4000=4番目パレット",
+            "5000=(規定外)5パレット",
+            "6000=(規定外)6パレット",
+            "7000=(規定外)7パレット",
+            "8000=(規定外)8パレット",
+            "9000=(規定外)9パレット"});
+            this.Config_L_4_TSA_PALETTE.Location = new System.Drawing.Point(661, 126);
             this.Config_L_4_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_PALETTE.Name = "Config_L_4_TSA_PALETTE";
             this.Config_L_4_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -602,7 +636,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_4_TSA_FLIP.Location = new System.Drawing.Point(518, 123);
+            this.Config_L_4_TSA_FLIP.Location = new System.Drawing.Point(518, 126);
             this.Config_L_4_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_4_TSA_FLIP.Name = "Config_L_4_TSA_FLIP";
             this.Config_L_4_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -665,8 +699,13 @@
             "1000=1番目パレット",
             "2000=2番目パレット",
             "3000=3番目パレット",
-            "4000=4番目パレット"});
-            this.Config_L_2_TSA_PALETTE.Location = new System.Drawing.Point(661, 96);
+            "4000=4番目パレット",
+            "5000=(規定外)5パレット",
+            "6000=(規定外)6パレット",
+            "7000=(規定外)7パレット",
+            "8000=(規定外)8パレット",
+            "9000=(規定外)9パレット"});
+            this.Config_L_2_TSA_PALETTE.Location = new System.Drawing.Point(661, 94);
             this.Config_L_2_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_PALETTE.Name = "Config_L_2_TSA_PALETTE";
             this.Config_L_2_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -682,7 +721,7 @@
             "0400=横反転",
             "0800=縦反転",
             "0C00=横縦反転"});
-            this.Config_L_2_TSA_FLIP.Location = new System.Drawing.Point(518, 95);
+            this.Config_L_2_TSA_FLIP.Location = new System.Drawing.Point(518, 94);
             this.Config_L_2_TSA_FLIP.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_2_TSA_FLIP.Name = "Config_L_2_TSA_FLIP";
             this.Config_L_2_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
@@ -745,8 +784,13 @@
             "1000=1番目パレット",
             "2000=2番目パレット",
             "3000=3番目パレット",
-            "4000=4番目パレット"});
-            this.Config_L_0_TSA_PALETTE.Location = new System.Drawing.Point(661, 65);
+            "4000=4番目パレット",
+            "5000=(規定外)5パレット",
+            "6000=(規定外)6パレット",
+            "7000=(規定外)7パレット",
+            "8000=(規定外)8パレット",
+            "9000=(規定外)9パレット"});
+            this.Config_L_0_TSA_PALETTE.Location = new System.Drawing.Point(661, 63);
             this.Config_L_0_TSA_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.Config_L_0_TSA_PALETTE.Name = "Config_L_0_TSA_PALETTE";
             this.Config_L_0_TSA_PALETTE.Size = new System.Drawing.Size(171, 26);
@@ -2873,6 +2917,8 @@
         private System.Windows.Forms.Button CopyTileButton;
         private System.Windows.Forms.Button CopyTypeButton;
         private System.Windows.Forms.Button PasteButton;
+        private LabelEx Explain_MapPalette;
+        private LabelEx labelEx2;
 
 
     }
