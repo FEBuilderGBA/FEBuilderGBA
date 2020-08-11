@@ -348,14 +348,22 @@ namespace FEBuilderGBA
                 url = m.Groups[1].ToString();
             }
 
+            Program.UpdateWatcher.Stop();
             //少し時間がかかるので、しばらくお待ちください表示.
-            DownloadAndExtract(url, pleaseWait);
+            bool r = DownloadAndExtract(url, pleaseWait);
+            if (!r)
+            {
+                Program.UpdateWatcher.Resume();
+                return;
+            }
 
             R.ShowOK("アップデートが完了しました。\r\nROMを再読み込みします。\r\n");
             MainFormUtil.Open(this, Program.ROM.Filename, true, "");
+
+            Program.UpdateWatcher.Resume();
         }
 
-        void DownloadAndExtract(string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        bool DownloadAndExtract(string download_url, InputFormRef.AutoPleaseWait pleaseWait)
         {
             string romdir = Path.GetDirectoryName(Program.ROM.Filename);
             string update7z = Path.GetTempFileName();
@@ -368,18 +376,18 @@ namespace FEBuilderGBA
             catch (Exception ee)
             {
                 BrokenDownload(R.ExceptionToString(ee));
-                return;
+                return false;
             }
             if (!File.Exists(update7z))
             {
                 BrokenDownload(R._("ダウンロードしたはずのファイルがありません。"));
-                return;
+                return false;
             }
             if (U.GetFileSize(update7z) <= 256)
             {
                 BrokenDownload(R._("ダウンロードしたファイルが小さすぎます。"));
                 File.Delete(update7z);
-                return;
+                return false;
             }
 
             pleaseWait.DoEvents("Extract...");
@@ -400,7 +408,7 @@ namespace FEBuilderGBA
                         if (r != "")
                         {
                             BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);
-                            return;
+                            return false;
                         }
                         U.CopyDirectory1Trim(t.Dir, romdir);
                     }
@@ -409,7 +417,7 @@ namespace FEBuilderGBA
                 {
                     BrokenDownload(R.ExceptionToString(ee));
                     File.Delete(update7z);
-                    return;
+                    return false;
                 }
             }
             File.Delete(update7z);
@@ -419,21 +427,21 @@ namespace FEBuilderGBA
             if (ups_files.Length <= 0)
             {
                 BrokenDownload(R._("UPSファイルが見つかりませんでした") );
-                return;
+                return false;
             }
 
             ToolWorkSupport_SelectUPSForm f = (ToolWorkSupport_SelectUPSForm)InputFormRef.JumpFormLow<ToolWorkSupport_SelectUPSForm>();
             f.OpenUPS(ups_files[0]);
             if (f.ShowDialog() != System.Windows.Forms.DialogResult.OK)
             {
-                return;
+                return false;
             }
 
             pleaseWait.DoEvents("UPS");
             string orignalROMFilename = f.GetOrignalFilename();
             if (orignalROMFilename == "")
             {
-                return;
+                return false;
             }
 
             for (int i = 0; i < ups_files.Length; i++)
@@ -444,7 +452,7 @@ namespace FEBuilderGBA
                 if (!rr)
                 {
                     R.ShowStopError("未対応のROMです。\r\ngame version={0}", version);
-                    return;
+                    return false;
                 }
 
                 rr = UPSUtil.ApplyUPS(rom, ups_files[i]);
@@ -459,6 +467,7 @@ namespace FEBuilderGBA
 
             pleaseWait.DoEvents("ReOpen...");
             MainFormUtil.ForceReopen();
+            return true;
         }
         void BrokenDownload(string errormessage)
         {

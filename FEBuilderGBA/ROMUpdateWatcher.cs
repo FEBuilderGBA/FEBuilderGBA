@@ -20,10 +20,12 @@ namespace FEBuilderGBA
             public DateTime LastModified; //最後の更新時刻.
         };
         Dictionary<string,WatchData> WatchDataDic;
+        bool StopWatcher;
 
         public ROMUpdateWatcher()
         {
             WatchDataDic = new Dictionary<string, WatchData>();
+            this.StopWatcher = false;
         }
 
         public void RegistMain(string fullfilename)
@@ -59,6 +61,16 @@ namespace FEBuilderGBA
             return watch.Process;
         }
 
+        public void Stop()
+        {
+            this.StopWatcher = true;
+        }
+        public void Resume()
+        {
+            this.StopWatcher = false;
+        }
+
+
         //セーブしたとかで更新があったとき
         public void UpdateLastModified(DateTime time)
         {
@@ -82,6 +94,11 @@ namespace FEBuilderGBA
         }
         void CheckALLLow()
         {
+            if (this.StopWatcher)
+            {
+                return;
+            }
+
             foreach (var pair in WatchDataDic)
             {
                 string fullfilename = pair.Key;

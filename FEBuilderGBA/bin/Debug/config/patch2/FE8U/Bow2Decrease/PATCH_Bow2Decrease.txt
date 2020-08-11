@@ -3,7 +3,7 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x2B74C=0x00 0x4B 0x9F 0x46
+PATCHED_IF:0x2B804=0x00 0x4B 0x9F 0x46
 EA=EA.txt
 
 INFO=弓などの間接武器を、ミスして外した場合も、耐久を1つ減らすように変更します。
@@ -13,3 +13,6 @@ NAME.en=Even if you mistake the bow, will be reduced
 INFO.en=Even if you mistake weapon such as a bow, change it to reduce durability by one.
 NAME.zh=即使你取下弓，它也会减少
 INFO.zh=即使你误认并移除了诸如弓之类的间接武器，也要改变它以减少耐久性。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

@@ -1,0 +1,13 @@
+PUSH
+
+ORG	0x2B804
+WORD	$469F4B00
+POIN	BowDecrease
+
+////////////////
+POP
+
+BowDecrease:
+#incbin "Bow2Decrease.bin"
+ALIGN 4
+
