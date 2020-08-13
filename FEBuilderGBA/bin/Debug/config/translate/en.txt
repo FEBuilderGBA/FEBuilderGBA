@@ -823,8 +823,8 @@ Type
 :06=ステータス画面の背景(FE8)
 06=Status screen background (FE 8)
 
-:07=一枚絵マップチップ
-07=Single picture map chip
+:07=一枚絵マップチップ(5パレット)
+07=Single picture map chip(5 palettes)
 
 :08=一枚絵マップチップ(10パレット)
 08=Single picture map chip(10 palettes)
@@ -6547,6 +6547,9 @@ There is now a C01 hack, so you do not need to set it up.\r\n\r\nThe cloak is se
 :マント設定
 Cloak setting
 
+:よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。
+If you're not sure, don't change this setting.\r\nIt causes a bug.
+
 :マップ変化({0})のIDが重複しています
 ID of tile change ({0}) is duplicated
 
@@ -7651,6 +7654,9 @@ Select file to load
 :ファイルサイズが小さすぎます. 9216バイト必要です。
 File size is too small. Requires 9216 bytes.
 
+:地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。
+The map is available with 5 pallets.\r\nPalettes 6-9 is the daytime palette.\r\nPalettes 6-9 is the fog pallets.\r\n\r\nIf you don't use the fog, \r\nyou can also use the 6-9 palette,\r\nalthough it's Out of regulation.\r\n
+
 :コピーした情報を張り付けてROMに書き込みます。
 Paste the copied information and write it to ROM.
 
@@ -7683,6 +7689,21 @@ Copy type (Alt + C)
 
 :4000=4番目パレット
 4000=4 Palette
+
+:5000=(規定外)5パレット
+5000=(Out)5 pallets
+
+:6000=(規定外)6パレット
+6000=(Out)6 pallets
+
+:7000=(規定外)7パレット
+7000=(Out)7 pallets
+
+:8000=(規定外)8パレット
+8000=(Out)8 pallets
+
+:9000=(規定外)9パレット
+9000=(Out)9 pallets
 
 :0000=普通
 0000=usually
@@ -7749,6 +7770,27 @@ Jump to the background of battle animation
 
 :地形名(英語)
 Location Name (English)
+
+:[回復床]
+[Heal]
+
+:[空宝箱]
+[Empty]
+
+:[丸太橋]
+[Log]
+
+:[はね橋]
+[Draw]
+
+:[閉じ村]
+[Close]
+
+:[遺跡]
+[Remains]
+
+:[壊れる壁]
+[Damaged]
 
 :地形名
 Location Name
@@ -12640,44 +12682,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:[空宝箱]
-[Empty]
-
-:[壊れる壁]
-[Damaged]
-
-:[回復床]
-[Heal]
-
-:[丸太橋]
-[Log]
-
-:[はね橋]
-[Draw]
-
-:[閉じ村]
-[Close]
-
-:[遺跡]
-[Remains]
-
-:地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。
-The map is available with 5 pallets.\r\nPalettes 6-9 is the daytime palette.\r\nPalettes 6-9 is the fog pallets.\r\n\r\nIf you don't use the fog, \r\nyou can also use the 6-9 palette,\r\nalthough it's Out of regulation.\r\n
-
-:5000=(規定外)5パレット
-5000=(Out)5 pallets
-
-:6000=(規定外)6パレット
-6000=(Out)6 pallets
-
-:7000=(規定外)7パレット
-7000=(Out)7 pallets
-
-:8000=(規定外)8パレット
-8000=(Out)8 pallets
-
-:9000=(規定外)9パレット
-9000=(Out)9 pallets
-
-:この画像には、{0}パレットが存在します。\r\n地図のパレットは5パレットしか使えませんが、霧のパレットも利用すれば10パレットまで表示できます。\r\n\r\n霧パレットを潰して、インポートしてもよろしいですか？\r\n
-The {0} palette is present in this image.\r\nYou can only use 5 palettes for the map palette,\r\nbut you can also use the fog palette to display up to 10 palettes.\r\n\r\nCan you overwrite the fog palette and import it?\r\n

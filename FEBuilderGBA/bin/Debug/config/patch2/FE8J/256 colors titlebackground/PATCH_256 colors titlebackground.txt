@@ -1,5 +1,5 @@
-NAME=OPタイトルに256色の画像を利用する。
-NAME.en=256 Color Title Background Editor
+NAME=OPタイトルに256色の画像を利用する。(Editor)
+NAME.en=256 Color Title Background(Editor)
 
 IF:0xCA4F4=0x00 0x4B 0x18 0x47
 

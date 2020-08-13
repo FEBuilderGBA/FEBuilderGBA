@@ -1,4 +1,4 @@
-﻿NAME=リザイアのパレットを新しいものに変更する(編集)
+﻿NAME=リザイアのパレットを新しいものに変更する(Editor)
 NAME.en=Resire's new palette(Edit)
 NAME.zh=Resire's new palette(Edit)
 

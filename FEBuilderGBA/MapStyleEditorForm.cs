@@ -1319,7 +1319,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (arr[1] == "TypeOnly")
+            if (arr[1] == "TypeOnly" && arr.Length >= 1)
             {
                 U.SelectedIndexSafety(ConfigTerrain, U.atoi(arr[2]));
             }

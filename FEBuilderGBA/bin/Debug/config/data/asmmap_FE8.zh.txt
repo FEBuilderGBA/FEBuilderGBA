@@ -11505,11 +11505,11 @@ r3=X tile position of menu of the right	{U}
 080A2BF8	战绩评论	顶部	{J}
 080A3118	战绩评论	加载面部图形	{J}
 080A3228	战绩评论	获取文字	0x7B7-	{J}
-080913FC	显示文字的演讲	{J}
+080913FC	显示文字的演讲	r0=x	r1=y	r2=width	r3=height	sp0=EnableSyncByMask	sp4=workvram	sp8=?	spC=?	{J}
 0800783c	加载面部图形	r0=面部识别码	r1=?	r2=?	r3=?	{J}
 08A95438	&TEXTBATCH	男孩记录评论项目的文本	{J}
 08A9A4E4	&PALETTE2	评论球记录背景调色板	{J}
-0808F128	显示文字的演讲	{U}
+0808F128	显示文字的演讲	r0=x	r1=y	r2=width	r3=height	sp0=EnableSyncByMask	sp4=workvram	sp8=?	spC=?	{U}
 08007938	加载面部图形	r0=面部识别码	r1=?	r2=?	r3=?	{U}
 08AAB4A0	&LZ77	启动数据	模式	ONLY FE8J	{J}
 08AAC5A8	&LZ77	启动数据	菜单救济	ONLY FE8J	{J}

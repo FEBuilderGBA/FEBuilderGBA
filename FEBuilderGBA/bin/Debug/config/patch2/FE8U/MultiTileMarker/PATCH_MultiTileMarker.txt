@@ -1,6 +1,6 @@
-NAME=MultiTileMarker マップに複数の離脱マーカーを表示する
-NAME.en=MultiTileMarker Display multiple exit markers on the map.
-NAME.zh=MultiTileMarker 在地图上显示多个转义标记
+NAME=MultiTileMarker マップに複数の離脱マーカーを表示する(Editor)
+NAME.en=MultiTileMarker Display multiple exit markers on the map(Editor)
+NAME.zh=MultiTileMarker 在地图上显示多个转义标记(Editor)
 
 IF:0x027534=0x00 0x4B 0x18 0x47
 

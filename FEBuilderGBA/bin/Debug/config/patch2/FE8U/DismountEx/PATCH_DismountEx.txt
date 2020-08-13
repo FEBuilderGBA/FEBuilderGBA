@@ -1,5 +1,5 @@
-NAME=DismountEx 乗り降りを可能にする
-NAME.en=DismountEx Enable to Rade and Exit
+NAME=DismountEx 乗り降りを可能にする(Editor)
+NAME.en=DismountEx Enable to Rade and Exit(Editor)
 
 IF:0x0248C8=0x00 0x4B 0x18 0x47
 
@@ -29,5 +29,5 @@ W10=00
 INFO=乗り降りできるユニットを設定します。
 AUTHOR=7743
 INFO.en=Set up a unit that can get on and off.
-NAME.zh=DismountEx打开和关闭
+NAME.zh=DismountEx打开和关闭(Editor)
 INFO.zh=设置一个可以开启和关闭的人物。

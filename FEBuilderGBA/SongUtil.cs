@@ -1352,30 +1352,51 @@ namespace FEBuilderGBA
             ,bool ignoreLFOS
             )
         {
+            if (ignoreMOD)
+            {
+                LevelingSFileLow(filename, "MOD");
+            }
+            if (ignoreBEND)
+            {
+                LevelingSFileLow(filename, "BEND");
+            }
+            if (ignoreLFOS)
+            {
+                LevelingSFileLow(filename, "LFOS");
+            }
+
+            return true;
+        }
+
+        static bool LevelingSFileLow(string filename
+            , string matchName
+            )
+        {
             string[] lines = File.ReadAllLines(filename);
             List<string> outLines = new List<string>(lines.Length);
+            string needString = ".byte		" + matchName;
 
+            bool is_match = false;
             foreach (string l in lines)
             {
-                if (ignoreMOD)
+
+                if (l.IndexOf(needString) >= 0)
                 {
-                    if (l.IndexOf(".byte		MOD") >= 0)
-                    {
+                    is_match = true;
+                    continue;
+                }
+                if (is_match)
+                {
+                    if (l.IndexOf(".byte		        c_v") >= 0)
+                    {//直後の命令には、BENDやMODは含まれないので、これで消す
                         continue;
                     }
-                }
-                if (ignoreBEND)
-                {
-                    if (l.IndexOf(".byte		BEND") >= 0)
-                    {
-                        continue;
+                    else if (l.IndexOf(".byte	W") >= 0)
+                    {//直前のwaitはそのままにしてよい.
                     }
-                }
-                if (ignoreLFOS)
-                {
-                    if (l.IndexOf(".byte		LFOS") >= 0)
+                    else
                     {
-                        continue;
+                        is_match = false;
                     }
                 }
                 outLines.Add(l);

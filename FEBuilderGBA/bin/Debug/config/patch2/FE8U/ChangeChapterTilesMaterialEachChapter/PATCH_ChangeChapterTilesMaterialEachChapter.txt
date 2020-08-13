@@ -1,5 +1,5 @@
-NAME=章タイトルを表示する時のフレームなどの素材画像を章ごとに変更する
-NAME.en=Change material frames image when chapter titles for each chapter
+NAME=章タイトルを表示する時のフレームなどの素材画像を章ごとに変更する(Editor)
+NAME.en=Change material frames image when chapter titles for each chapter(Editor)
 
 INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
 
@@ -33,5 +33,5 @@ HEIGHT=32
 //利用パレット数
 PALETTE=1
 INFO.en=To import a new image, please set the address, PALETTE to 0 or FFFFFFFF, then import it.\r\nOtherwise, overwrite the existing image and change it.
-NAME.zh=在为每个章节显示章节标题时，更改帧等素材图像
+NAME.zh=在为每个章节显示章节标题时，更改帧等素材图像(Editor)
 INFO.zh=要导入新图像，请将地址PALETTE设置为0或FFFFFFFF，然后导入。\r\n否则，覆盖现有图像并进行更改。

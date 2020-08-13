@@ -1,4 +1,4 @@
-NAME=(OLD)全預け+メニュー 20190916
+NAME=(OLD)全預け+メニュー 20190916(Installer)
 TYPE=EA
 TAG=#ENGINE
 

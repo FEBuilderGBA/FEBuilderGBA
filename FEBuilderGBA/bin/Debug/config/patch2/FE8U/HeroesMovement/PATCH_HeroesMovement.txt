@@ -1,6 +1,6 @@
-NAME=HeroesMovement Standalone 設定
-NAME.en=HeroesMovement Standalone (Setting)
-NAME.zh=HeroesMovement Standalone Setting
+NAME=HeroesMovement Standalone(Editor)
+NAME.en=HeroesMovement Standalone (Editor)
+NAME.zh=HeroesMovement Standalone (Editor)
 
 IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
 

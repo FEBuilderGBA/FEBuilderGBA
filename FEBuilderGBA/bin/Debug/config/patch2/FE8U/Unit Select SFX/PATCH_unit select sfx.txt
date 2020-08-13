@@ -1,6 +1,6 @@
-NAME=ユニットを選択した時に音声を再生する
-NAME.en=Unit Select SFX Editor
-NAME.zh=选择人物时播放音频
+NAME=ユニットを選択した時に音声を再生する(Editor)
+NAME.en=Unit Select SFX(Editor)
+NAME.zh=选择人物时播放音频(Editor)
 
 IF:0x186B0=0x00 0x4B 0x18 0x47
 

@@ -1,6 +1,6 @@
-NAME=OPタイトルに256色の画像を利用する。
-NAME.en=256 Color Title Background Editor
-NAME.zh=使用具有256种颜色的图像作为OP标题。
+NAME=OPタイトルに256色の画像を利用する。(Editor)
+NAME.en=256 Color Title Background(Editor)
+NAME.zh=使用具有256种颜色的图像作为OP标题(Editor)
 
 IF:0xC5724=0x00 0x4B 0x18 0x47
 

@@ -1,5 +1,5 @@
-NAME=攻撃速度と回避計算から体格を除外し、FE3と同じ計算式にする
-NAME.en=Exclude Con from Attack Speed calculus
+NAME=攻撃速度と回避計算から体格を除外し、FE3と同じ計算式にする(Editor)
+NAME.en=Exclude Con from Attack Speed calculus(Editor)
 INFO="攻撃速度=速度-(体格-武器の重さ)"、この計算式から、体格を無視して、\r\n"攻撃速度=速度-武器の重さ" とします。\r\nこれは、FE3と同じ計算式になります。
 INFO.en=With this patch, the weapons added in the weapon list will ignore the Con of the unit using it during Attack Speed calculus. \r\nIt's using the same formula as FE3 : Attack Speed = Speed - Weapon Weight instead of Attack Speed = Speed - (Weapon Weight - Consitution)
 
@@ -27,5 +27,5 @@ B0:ITEM=Item
 
 AUTHOR=kao
 
-NAME.zh=从攻击速度和规避计算中排除体格，并使其与FE 3具有相同的公式。
+NAME.zh=从攻击速度和规避计算中排除体格，并使其与FE 3具有相同的公式(Editor)
 INFO.zh="攻撃速度=速度 - （体格 - 武器的重量）“，忽略了这个公式的体质。\r\n“攻击速度=速度 - 武器重量"。\r\n这与FE 3的计算公式相同。

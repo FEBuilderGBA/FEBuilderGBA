@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
             this.JUMP_TO_BATTLEANIME = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel6.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-2, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -75,6 +77,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.JUMP_TO_BATTLEANIME);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.P0);
@@ -144,7 +147,6 @@
             // 
             // WriteButton
             // 
-
             this.WriteButton.Location = new System.Drawing.Point(755, 0);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
@@ -155,7 +157,6 @@
             // 
             // ReloadListButton
             // 
-
             this.ReloadListButton.Location = new System.Drawing.Point(480, 0);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -200,9 +201,11 @@
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(314, 4);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 58;
@@ -220,9 +223,11 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(532, 2);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(150, 25);
             this.SelectAddress.TabIndex = 57;
@@ -279,7 +284,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(339, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -331,6 +335,15 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(927, 34);
             this.panel5.TabIndex = 86;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(379, 36);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。";
             // 
             // MantAnimationForm
             // 
@@ -385,5 +398,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label JUMP_TO_BATTLEANIME;
+        private System.Windows.Forms.Label label2;
     }
 }
