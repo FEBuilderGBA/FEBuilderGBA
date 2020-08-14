@@ -1,0 +1,16 @@
+NAME=神器フラッシュの簡易設定2(Install)
+NAME.en=Simple setting of Sacred Weapons2(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x53BA6=0x00 0x00 0x00 0x28 0x06 0xD0
+EDIT_PATCH=PATCH_weapon_battle_flash2.txt
+EA=weapon_battle_flash.event
+
+
+AUTHOR=7743
+INFO=神将器フラッシュを簡易設定できるようにします。\r\n指定したアイテムIDでフラッシュを表示できるようにします。
+INFO.en=Simple setting of "A Sacred Twin tome"\r\nEnables you to display the flash with the specified item ID.
+NAME.zh=神圣闪光的简化设置2(Install)
+INFO.zh=该补丁还更容易设置biloba冲洗。\r\n使您可以显示具有指定项目ID的闪存。

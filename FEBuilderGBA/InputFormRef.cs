@@ -4305,7 +4305,7 @@ namespace FEBuilderGBA
         }
         static bool CheckVennoExtendsStatBooster(NumericUpDown value)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (PatchUtil.SearchGrowsMod() != PatchUtil.growth_mod_enum.Vennou)
             {
                 return false;
             }
@@ -5702,7 +5702,7 @@ namespace FEBuilderGBA
             OptionForm.write_out_of_range_enum option = OptionForm.write_out_of_range();
             if (option == OptionForm.write_out_of_range_enum.NoWarning)
             {
-                Log.Notify(R._("アドレス{0}は範囲外ですが、設定により、警告はしません",U.ToHexString8(addr)) );
+                R.Notify("アドレス{0}は範囲外ですが、設定により、警告はしません",U.ToHexString8(addr) );
                 return true;
             }
             if (option == OptionForm.write_out_of_range_enum.Warning)

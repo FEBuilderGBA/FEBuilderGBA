@@ -36,6 +36,7 @@ namespace FEBuilderGBA
             g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
             g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
             g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NoCache;
+            g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -79,12 +80,45 @@ namespace FEBuilderGBA
                 {//不明なので31とする
                     g_LevelMaxCaps = 31;
                 }
+                if (PatchUtil.SearchGrowsMod() == PatchUtil.growth_mod_enum.Vennou)
+                {//不明なので31とする
+                    g_LevelMaxCaps = 31;
+                }
                 else
                 {
                     g_LevelMaxCaps = Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
                 }
             }
             return g_LevelMaxCaps;
+        }
+
+        //スキルシステムの判別. ちょっとだけコストがかかる.
+        public enum growth_mod_enum
+        {
+            NO,             //なし
+            Vennou,    //for FE8U
+            NoCache = (int)NO_CACHE
+        };
+        static growth_mod_enum g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
+        public static growth_mod_enum SearchGrowsMod()
+        {
+            if (g_Cache_grows_mod_enum == growth_mod_enum.NoCache)
+            {
+                g_Cache_grows_mod_enum = SearchGrowsModLow();
+            }
+            return g_Cache_grows_mod_enum;
+        }
+        static growth_mod_enum SearchGrowsModLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="GrowsMod",	ver = "FE8U", addr = 0x02BA2A,data = new byte[]{0x4E, 0x46, 0x45, 0x46, 0x60, 0xB4, 0x8B, 0xB0, 0x07, 0x1C, 0xFF, 0xF7, 0xDE, 0xFF, 0x00, 0x06, 0x00, 0x28 ,0x00 ,0xD1 ,0x8E ,0xE0 ,0x78 ,0x7A ,0x63 ,0x28 ,0x00 ,0xD8 ,0x8A ,0xE0 ,0x03 ,0x1C ,0x64 ,0x3B ,0x7B ,0x72 ,0x38 ,0x7A ,0x42 ,0x1C ,0x3A ,0x72 ,0x38 ,0x68 ,0x79 ,0x68 ,0x80 ,0x6A ,0x89 ,0x6A ,0x08 ,0x43 ,0x80 ,0x21 ,0x09 ,0x03 ,0x08 ,0x40 ,0x00 ,0x28 ,0x04 ,0xD0 ,0x10 ,0x06 ,0x00 ,0x16 ,0x0A ,0x28 ,0x0B ,0xD1 ,0x03 ,0xE0 ,0x10 ,0x06 ,0x00,}},
+            };
+            //FE8U
+            if ( SearchPatchBool(table) )
+            {
+                return growth_mod_enum.Vennou;
+            }
+            return growth_mod_enum.NO;
         }
 
         //スキルシステムの判別. ちょっとだけコストがかかる.

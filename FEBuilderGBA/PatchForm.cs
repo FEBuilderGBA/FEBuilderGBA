@@ -1697,7 +1697,7 @@ namespace FEBuilderGBA
                     throw new SyntaxException(R.Error("更新するべきデータがありません keyword:{0}", keyword));
                 }
 
-                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})を適応しました。{1} PATCH APPLY", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -2090,7 +2090,7 @@ namespace FEBuilderGBA
                         Program.ROM.write_u32(addr, (uint)AddrValue.Value, undodata);
                     }
                 }
-                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})を適応しました。{1} PATCH APPLY", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
@@ -2280,7 +2280,7 @@ namespace FEBuilderGBA
                     Program.ROM.write_range(addr, value, undodata);
                 }
 
-                Log.Notify("パッチ({0})を適応しました。{1} {PATCH APPLY}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})を適応しました。{1} PATCH APPLY", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
@@ -3219,7 +3219,7 @@ namespace FEBuilderGBA
                 }
                 ReplacePointers(patch, undodata);
 
-                Log.Notify("パッチ({0})をインストールしました。{1} {PATCH INSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})をインストールしました。{1} PATCH INSTALL", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -3387,7 +3387,7 @@ namespace FEBuilderGBA
 
                     ReplacePointers(patch,undodata);
 
-                    Log.Notify("パッチ({0})をインストールしました。{1} {PATCH INSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                    R.Notify("パッチ({0})をインストールしました。{1} PATCH INSTALL", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -7291,7 +7291,7 @@ namespace FEBuilderGBA
                     return false;
                 }
 
-                Log.Notify("パッチ({0})をアンインストールしました。{1} {PATCH UNINSTALL}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})をアンインストールしました。{1} PATCH UNINSTALL", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
                 Program.ReLoadSetting();
@@ -7688,7 +7688,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                pleaseWait.DoEvents(R.Notify("ポインタ更新しています。{0}: {1}->{2}",src.Filename, U.ToHexString8(src.Addr),U.ToHexString8(src.Addr) ));
+                pleaseWait.DoEvents(R.Notify(R._("ポインタ更新しています。{0}: {1}->{2}",src.Filename, U.ToHexString8(src.Addr),U.ToHexString8(src.Addr))));
                 foreach(var addr in src.OldValueList)
                 {
                     uint oldValue = Program.ROM.p32(addr);
@@ -8043,7 +8043,7 @@ namespace FEBuilderGBA
                     pleaseWait.DoEvents(R._("UpdateEmbedFunction"));
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
                 }
-                Log.Notify("パッチ({0})を更新しました。{1} {PATCH UPDATE}", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
+                R.Notify("パッチ({0})を更新しました。{1} PATCH UPDATE", patch.Name, Path.GetFileNameWithoutExtension(patch.PatchFileName));
             }
 
             

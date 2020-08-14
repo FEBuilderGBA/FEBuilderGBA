@@ -12865,3 +12865,9 @@ r3=X tile position of menu of right	{U}
 08053718	Start_efxHitQuakePure	{U}
 08078124	Start_efxSelfThunderBG	{U}
 08078044	Start_efxSelfThunder	{U}
+0800E574	StartDialogueBoxPossitonBySlotB	{J}
+0800E4E8	StartDialogueBoxBottomByCGScene	{J}
+08090CAC	SetDialogueBoxSomeStyleMaybe	{J}
+0800e31c	StartDialogueBoxPossitonBySlotB	{U}
+0800E290	StartDialogueBoxBottomByCGScene	{U}
+0808e9d8	SetDialogueBoxSomeStyleMaybe	{U}

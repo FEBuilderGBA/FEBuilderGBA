@@ -1106,7 +1106,7 @@ namespace FEBuilderGBA
                 {
                     height = 64;
                     //FEditor Magic
-                    Log.Notify(R._("これはFEditorの小さいBG形式です。"));
+                    Log.Notify("これはFEditorの小さいBG形式です。");
                 }
                 else if ((loadbitmap.Width >= 240 && loadbitmap.Width <= 264)
                     && loadbitmap.Height == 160)

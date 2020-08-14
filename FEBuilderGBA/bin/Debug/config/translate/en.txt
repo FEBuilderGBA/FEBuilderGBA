@@ -9166,8 +9166,8 @@ This address is dangerous.
 :更新するべきデータがありません keyword:{0}
 There is no data to updatekeyword: {0}
 
-:パッチ({0})を適応しました。{1} {PATCH APPLY}
-Adapted the patch ({0}).{1} {PATCH APPLY}.
+:パッチ({0})を適応しました。{1} PATCH APPLY
+Adapted the patch ({0}).{1} PATCH APPLY.
 
 :アドレス指定がありません.\r\n\r\n例:\r\nADDRESS=0x1234
 There is no address specification.\r\n\r\nEx:\r\nADDRESS=0x1234
@@ -9196,8 +9196,8 @@ Area 0x {1} pointed to by pointer {0} can't be accessed
 :アドレス指定が正しくありません。 値:0x{0}
 Incorrect Address specification. Value:0x{0}
 
-:パッチ({0})をインストールしました。{1} {PATCH INSTALL}
-Installed the patch ({0}).{1} {PATCH INSTALL}.
+:パッチ({0})をインストールしました。{1} PATCH INSTALL
+Installed the patch ({0}).{1} PATCH INSTALL.
 
 :不明なキーワードです : {0}
 Unknown Keyword: {0}
@@ -9286,8 +9286,8 @@ Patches other than BIN or EA can not be uninstalled.
 :アンインストールに失敗しました.\r\n\r\n{0}
 Uninstallation failed.\r\n\r\n{0}
 
-:パッチ({0})をアンインストールしました。{1} {PATCH UNINSTALL}
-The patch ({0}) has been uninstalled.{1} {PATCH UNINSTALL}.
+:パッチ({0})をアンインストールしました。{1} PATCH UNINSTALL
+The patch ({0}) has been uninstalled.{1} PATCH UNINSTALL.
 
 :アンインストール中です。進捗:{1}/{2} アドレス:{0}
 Uninstalling.... Progress:{1}/{2}  Address:{0}
@@ -9319,8 +9319,8 @@ User canceled processing.
 :新しいパッチをインストールできませんでした。
 Could not install new patch.
 
-:パッチ({0})を更新しました。{1} {PATCH UPDATE}
-The patch ({0}) has been updated.{1} {PATCH UPDATE}.
+:パッチ({0})を更新しました。{1} PATCH UPDATE
+The patch ({0}) has been updated.{1} PATCH UPDATE.
 
 :このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
 This patch is an old patch.\r\nIt is left in for compatibility.\r\nDo not use it normally.\r\n\r\nAre you sure you want to install it? 
