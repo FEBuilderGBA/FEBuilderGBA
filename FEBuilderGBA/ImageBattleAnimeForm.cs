@@ -973,6 +973,13 @@ namespace FEBuilderGBA
                     }
                 }
 
+                if (PatchUtil.SearchCache_HandAxsWildCard() == PatchUtil.HandAxsWildCard_extends.Enable)
+                {
+                    if (axsList.IndexOf(0x28) >= 0)
+                    {//手斧モーションで代用可
+                        continue;
+                    }
+                }
                 errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME_CLASS, ifr.BaseAddress
                     , R._("クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。"
                     , classList[(int)cid].name
@@ -1008,12 +1015,9 @@ namespace FEBuilderGBA
                        continue;
                    }
 
-                   if (PatchUtil.SearchCache_HandAxsWildCard() != PatchUtil.HandAxsWildCard_extends.Enable)
-                   {
-                       InputFormRef.ReInit(addr);
-                       MakeCheckErrorAxs(InputFormRef
-                           , handAxsItems, classList, cid, errors);
-                   }
+                    InputFormRef.ReInit(addr);
+                    MakeCheckErrorAxs(InputFormRef
+                        , handAxsItems, classList, cid, errors);
                }
            }
 
