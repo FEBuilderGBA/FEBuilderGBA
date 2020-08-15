@@ -1008,9 +1008,12 @@ namespace FEBuilderGBA
                        continue;
                    }
 
-                   InputFormRef.ReInit(addr);
-                   MakeCheckErrorAxs(InputFormRef
-                       , handAxsItems, classList, cid, errors);
+                   if (PatchUtil.SearchCache_HandAxsWildCard() != PatchUtil.HandAxsWildCard_extends.Enable)
+                   {
+                       InputFormRef.ReInit(addr);
+                       MakeCheckErrorAxs(InputFormRef
+                           , handAxsItems, classList, cid, errors);
+                   }
                }
            }
 

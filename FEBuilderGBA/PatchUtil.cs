@@ -37,6 +37,7 @@ namespace FEBuilderGBA
             g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
             g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NoCache;
             g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
+            g_Cache_HandAxsWildCard = HandAxsWildCard_extends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1208,6 +1209,39 @@ namespace FEBuilderGBA
             }
             return MapSecondPalette_extends.NO;
         }
+
+        //手斧の汎用モーション化
+        public enum HandAxsWildCard_extends
+        {
+            NO,             //なし
+            Enable,
+            NoCache = (int)NO_CACHE
+        };
+        static HandAxsWildCard_extends g_Cache_HandAxsWildCard = HandAxsWildCard_extends.NoCache;
+        public static HandAxsWildCard_extends SearchCache_HandAxsWildCard()
+        {
+            if (g_Cache_HandAxsWildCard == HandAxsWildCard_extends.NoCache)
+            {
+                g_Cache_HandAxsWildCard = SearchCache_HandAxsWildCardLow();
+            }
+            return g_Cache_HandAxsWildCard;
+        }
+        static HandAxsWildCard_extends SearchCache_HandAxsWildCardLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="HandAxsWildCard",	ver = "FE8J", addr = 0x596F0,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+                new PatchTableSt{ name="HandAxsWildCard",	ver = "FE8U", addr = 0x588C0,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+            };
+
+            bool r = SearchPatchBool(table);
+            if (r)
+            {
+                return HandAxsWildCard_extends.Enable;
+            }
+            return HandAxsWildCard_extends.NO;
+        }
+
+        
 
 
         //クリアターン数2倍

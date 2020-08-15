@@ -1,0 +1,10 @@
+PUSH
+ORG 0x588C0
+jumpToHack(handaxs_wildcard)
+POP
+
+ALIGN 4
+handaxs_wildcard:
+#incbin "handaxs_wildcard.dmp"
+
+ALIGN 4

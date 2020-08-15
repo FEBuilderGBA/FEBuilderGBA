@@ -111,14 +111,14 @@
 76	Recorder	b2effb64748cea85e3973c35cef200e2
 77	Pan Flute	806c84219415fa577c5c2e129be274ab
 78	Blown Bottle	744e2ab4ced5792d3377af3e6377759e
-86	Lead 5 (charang)	e05da7589f6ff7ea974c583b03b42dc7
-88	Lead 7 (fifths)	6f4ea30c0a4626ac23654fdd5c4953a1
-89	Lead 8 (bass + lead)	125a264c3fade53ed4b88ce2642815e0
+86	Another Trombone	e05da7589f6ff7ea974c583b03b42dc7
+88	Pad (synthbrass2)	6f4ea30c0a4626ac23654fdd5c4953a1
+89	Pad (warm)	125a264c3fade53ed4b88ce2642815e0
 91	Pad 2 (warm)	272ba3ab817b30ff89ede6268e4dc5e7
 92	Pad 3 (polysynth)	9576369d9b3e4514644d7b11c873bfaa
 93	Pad 4 (choir)	471f14246ce011537189b667430aabea
 94	Pad 5 (bowed)	ee98d84f5355f313451f488e2daa6a57
-95	Pad 6 (metallic)		8048e2312b978630a5ad413a11b2416f
+95	Pad 6 (square)		8048e2312b978630a5ad413a11b2416f
 98	FX 1 (ice rain)	a141a5564f04f28dceccdcaa1ac888e9
 99	FX 2 (soundtrack)	b41e8e406c2d4b9d05994c3fb74bb34b
 100	FX 3 (crystal)	7ad886ae6cf2ef4e732ece3dc2add96b
@@ -209,12 +209,12 @@
 87	Lead 2 (sawtooth)	46f8809a81e082d28b470d720a4fd460
 88	Pad 1 (new age)	518f0175a7fb9fd878aec285700fb9b6
 89	Pad 2 (warm)	df1250d644559c5fc00978b350cd7204
-90	Pad 3 (polysynth)	390b702215e67c645f1084742a7f6357
-91	Pad 4 (choir)	f404f492272a074f767e1131bc7ae16c
-92	Pad 5 bowed	f9af78284210d1a68b90ce9a098b4cd5
-93	Pad 6 (metallic)	e8dc20b35d53265a3e5c3dad38d2d80f
+90	Pad 4 (choir)	390b702215e67c645f1084742a7f6357
+91	Pad 5 (bowed)	f404f492272a074f767e1131bc7ae16c
+92	Pad 6 (metallic)	f9af78284210d1a68b90ce9a098b4cd5
+93	Pad 7 (halo)	e8dc20b35d53265a3e5c3dad38d2d80f
 94	Pad 7 halo	3c7a244a97a0b6f5cd344ab2ec022d48
-95	Pad 7 (halo)	29af6f16b13d065f323c21051312cfd5
+95	Pad (square)	29af6f16b13d065f323c21051312cfd5
 97	FX 2 (soundtrack)	bf80dee98011d2e1004c3300360afacc
 98	FX 3 (crystal)	d7fe2352f2796d6dcbce7d41001e1ad3
 99	FX 4 (atmosphere)	5fc76ec07915281c30b9869f295ee879
