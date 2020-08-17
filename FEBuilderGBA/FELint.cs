@@ -258,7 +258,7 @@ namespace FEBuilderGBA
                     , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)), tag));
                 return;
             }
-            CheckAlien4(event_addr, errors, cond, addr);
+            CheckAlien4(event_addr, errors, cond, addr, tag);
         }
         public static void CheckPointerOrNull(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {

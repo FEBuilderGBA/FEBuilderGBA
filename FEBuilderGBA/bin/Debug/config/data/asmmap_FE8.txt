@@ -12864,3 +12864,5 @@
 0800e31c	StartDialogueBoxPossitonBySlotB	{U}
 0800E290	StartDialogueBoxBottomByCGScene	{U}
 0808e9d8	SetDialogueBoxSomeStyleMaybe	{U}
+080A8DF0	GetGameClearTimeByEachChapter	{J}
+080A43AC	GetGameClearTimeByEachChapter	{U}

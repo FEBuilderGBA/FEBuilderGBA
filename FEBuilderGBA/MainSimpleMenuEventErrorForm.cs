@@ -439,10 +439,12 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.TEXTID_FOR_SYSTEM)
             {
+                show_tag = tag;
                 text = R._("テキストID システム予約");
             }
             else if (dataType == FELint.Type.TEXTID_FOR_USER)
             {
+                show_tag = tag;
                 text = R._("テキストID ユーザ定義");
             }
             else if (dataType == FELint.Type.SE_SYSTEM)
@@ -467,18 +469,22 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SONGTABLE)
             {
+                show_tag = tag;
                 text = R._("ソングテーブル");
             }
             else if (dataType == FELint.Type.SONGTRACK)
             {
+                show_tag = tag;
                 text = R._("ソングトラック");
             }
             else if (dataType == FELint.Type.BOSS_BGM)
             {
+                show_tag = tag;
                 text = R._("ボスBGM");
             }
             else if (dataType == FELint.Type.WORLDMAP_BGM)
             {
+                show_tag = tag;
                 text = R._("ワールドマップBGM");
             }
             else if (dataType == FELint.Type.FELINTBUZY_MESSAGE)

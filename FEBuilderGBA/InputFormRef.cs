@@ -460,6 +460,44 @@ namespace FEBuilderGBA
                 U.SelectedIndexSafety(link_object, 0);
                 return;
             }
+            if (linktype == "CHECKADDRESS")
+            {//アドレスチェック
+                //元データが変更されたら、リンクデータも変更する.
+                if (link_info is TextBoxEx)
+                {
+                    TextBoxEx link_object = ((TextBoxEx)link_info);
+                    src_object.ValueChanged += (sender, e) =>
+                    {
+                        uint id = (uint)src_object.Value;
+                        if (U.isOffset(id) && U.IsOrderOfHuman(sender))
+                        {//人間が、オフセット値を書いた場合、自動補正する
+                            id = U.toPointer(id);
+                        }
+
+                        string text = "";
+                        string errormessage = "";
+                        if (!U.isPadding4(id))
+                        {
+                            text = R._("アドレスが4の倍数ではありません。");
+                            errormessage = R._("アドレスは4で割り切れる数字である必要があります。\r\nアドレスが4の倍数でないとゲーム中で再生できないことがあります。\r\nもしsappyでは再生できる場合は、再インポートすることをお勧めします。\r\n");
+                        }
+                        else if (!U.isSafetyPointer(id))
+                        {
+                            text = R._("このアドレスは危険です。");
+                            errormessage = R._("指定したアドレスは範囲外です。");
+                        }
+                        if (text == "")
+                        {
+                            link_object.Hide();
+                            return;
+                        }
+                        link_object.Show();
+                        link_object.Text = text;
+                        link_object.ErrorMessage = errormessage;
+                    };
+                    return;
+                }
+            }
             if (linktype == "ATTRIBUTE")
             {//属性とリンク
                 Label link_object = ((Label)link_info);

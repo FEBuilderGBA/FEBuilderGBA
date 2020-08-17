@@ -37,6 +37,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.X_REF = new FEBuilderGBA.ListBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
@@ -67,12 +68,13 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.L_0_CHECKADDRESS = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -181,6 +182,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.L_0_CHECKADDRESS);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.Comment);
             this.panel4.Controls.Add(this.label7);
@@ -199,6 +201,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(963, 711);
             this.panel4.TabIndex = 80;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.X_REF);
+            this.panel9.Controls.Add(this.label8);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(704, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(257, 709);
+            this.panel9.TabIndex = 201;
             // 
             // X_REF
             // 
@@ -550,15 +562,14 @@
             this.panel2.Size = new System.Drawing.Size(963, 741);
             this.panel2.TabIndex = 148;
             // 
-            // panel9
+            // L_0_CHECKADDRESS
             // 
-            this.panel9.Controls.Add(this.X_REF);
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(704, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(257, 709);
-            this.panel9.TabIndex = 201;
+            this.L_0_CHECKADDRESS.ErrorMessage = "";
+            this.L_0_CHECKADDRESS.Location = new System.Drawing.Point(357, 2);
+            this.L_0_CHECKADDRESS.Name = "L_0_CHECKADDRESS";
+            this.L_0_CHECKADDRESS.Placeholder = "";
+            this.L_0_CHECKADDRESS.Size = new System.Drawing.Size(316, 25);
+            this.L_0_CHECKADDRESS.TabIndex = 203;
             // 
             // SongTableForm
             // 
@@ -579,6 +590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -591,7 +603,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -638,5 +649,6 @@
         private ListBoxEx X_REF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
+        private TextBoxEx L_0_CHECKADDRESS;
     }
 }

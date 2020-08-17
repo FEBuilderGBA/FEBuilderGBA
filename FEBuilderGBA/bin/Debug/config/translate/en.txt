@@ -4096,6 +4096,18 @@ There is no image in Battle Anime Mode: {0}.
 :アドレスが無効です
 Address is invalid
 
+:アドレスが4の倍数ではありません。
+The address is not a multiple of 4.
+
+:アドレスは4で割り切れる数字である必要があります。\r\nアドレスが4の倍数でないとゲーム中で再生できないことがあります。\r\nもしsappyでは再生できる場合は、再インポートすることをお勧めします。\r\n
+The address must be a number divisible by 4.\r\nIf the address is not a multiple of 4, it may not be played in the game.\r\nIf you can play it with sappy, we recommend you to re-import it.\r\n
+
+:このアドレスは危険です。
+This address is dangerous.
+
+:指定したアドレスは範囲外です。
+The specified address is out of range.
+
 :0x80以上のパレットを指定しても無視されます。
 If you specify a palette of 0x80 or more, it will be ignored.
 
@@ -9159,9 +9171,6 @@ There is no data count definition.\r\n\r\nEx:\r\nDATACOUNT=4\r\nor\r\nDATACOUNT=
 
 :選択アドレス
 Selected address
-
-:このアドレスは危険です。
-This address is dangerous.
 
 :更新するべきデータがありません keyword:{0}
 There is no data to updatekeyword: {0}
