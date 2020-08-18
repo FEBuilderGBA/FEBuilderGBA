@@ -22,23 +22,21 @@ mov r2,#0x10	@Resuce Flag
 and r1,r2
 bne FalseExit
 
-ldrb r1, [r0, #0x1b] @AID
-cmp r1,#0x00
+ldrb r0, [r0, #0x1b] @AID
+cmp r0,#0x00
 beq FalseExit
 
-sub r1,r1,#0x1
-mov r2,#0x48
-mul r1,r2
+@ldr r1, =0x0859A5D0 @{U}	RAMSlotTable This is a table of pointers, with one for every deployment slot in RAM )
+ldr r1, =0x085C2A50 @{J}	RAMSlotTable This is a table of pointers, with one for every deployment slot in RAM )
+lsl r0 ,r0 ,#0x2
+add r0 ,r0, r1
 
-@ldr r2, =0x202be4c	@{U}
-ldr r2, =0x202BE48	@{J}
-add r2,r1
-
-ldr r1,[r2,#0x0]
-cmp r1, #0x0
+ldr r0, [r0, #0x0]
+ldr r0, [r0, #0x0]
+cmp r0, #0x00
 beq FalseExit
 
-ldrb r0,[r1,#0x04]
+ldrb r0,[r0,#0x04]
 
 b   Exit
 

@@ -1,2 +1,2 @@
-FalseExit=$32
-Exit=$34
+FalseExit=$30
+Exit=$32
