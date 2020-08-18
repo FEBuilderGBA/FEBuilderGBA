@@ -57,6 +57,8 @@ namespace FEBuilderGBA
             U.SetIcon(Export, Properties.Resources.icon_arrow);
             U.SetIcon(Import, Properties.Resources.icon_upload);
 
+            X_ExportFilterCombo.SelectedIndex = 0;
+
             InputFormRef.markupJumpLabel(this.TextListSpShowCharLabel);
         }
         void InitRichEditEx(RichTextBoxEx editor)
@@ -2622,6 +2624,7 @@ namespace FEBuilderGBA
         private void Export_Click(object sender, EventArgs e)
         {
             ToolTranslateROM trans = new ToolTranslateROM();
+            trans.InitExportFilter((uint)X_ExportFilterCombo.SelectedIndex);
             trans.ExportallText(this);
         }
 

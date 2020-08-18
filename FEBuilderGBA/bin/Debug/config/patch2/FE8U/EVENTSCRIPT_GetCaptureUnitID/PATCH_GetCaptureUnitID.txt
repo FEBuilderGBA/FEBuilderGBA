@@ -1,0 +1,42 @@
+NAME=誰を救出しているか、誰が救出しているのか(イベント命令)
+NAME.en=Add Event: Get unit ID rescued by / Get unit ID that rescues
+NAME.zh=Add Event: Get unit ID rescued by / Get unit ID that rescues
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_Who_are_rescued_from.dmp=0x00 0xB5 0x0E 0x49
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_Who_are_rescued_from.dmp
+BIN:$FREEAREA:2=ASMC_Who_is_rescued.dmp
+
+AUTHOR=7743
+
+INFO=救出しているユニットID、または、救出されているユニットIDをSlotCに返します。\r\nエラー時は0x00 が返ります。
+INFO.en=Returns the rescued unit ID or the rescued unit ID to SlotC.\r\n0x00 is returned when an error occurs.
+INFO.zh=Returns the rescued unit ID or the rescued unit ID to SlotC.\r\n0x00 is returned when an error occurs.
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Slot1のユニットが救出しているユニットIDを返す(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2=40050100XXXXXXXX400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	[XX:UNIT:Unit]が救出しているユニットIDを返す	@STOREC	{COND}
+EVENTSCRIPT:3=40050100FFFFFFFF400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	操作中のユニットが救出しているユニットIDを返す	@STOREC	{COND}
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_Who_is_rescued.dmp}	Slot1のユニットを救出しているユニットIDを返す(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12=40050100XXXXXXXX400D0000{$L1:ASMC_Who_is_rescued.dmp}	[XX:UNIT:Unit]を救出しているユニットIDを返す	@STOREC	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by unit in Slot1(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2.en=40050100XXXXXXXX400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by [XX:UNIT:Unit]	@STOREC	{COND}
+EVENTSCRIPT:3.en=40050100FFFFFFFF400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by Current Unit	@STOREC	{COND}
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues unit in Slot1(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12.en=40050100XXXXXXXX400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues [XX:UNIT:Unit]	@STOREC	{COND}
+
+
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by unit in Slot1(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2.zh=40050100XXXXXXXX400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by [XX:UNIT:Unit]	@STOREC	{COND}
+EVENTSCRIPT:3.zh=40050100FFFFFFFF400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get unit ID rescued by Current Unit	@STOREC	{COND}
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues unit in Slot1(LOW)	@STOREC	{COND}
+EVENTSCRIPT:12.zh=40050100XXXXXXXX400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues [XX:UNIT:Unit]	@STOREC	{COND}

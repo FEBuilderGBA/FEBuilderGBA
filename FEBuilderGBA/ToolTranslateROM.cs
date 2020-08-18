@@ -281,6 +281,61 @@ namespace FEBuilderGBA
             writer.Write(translatetext + "\r\n");
         }
 
+        Dictionary<int, bool> ExportFilterArray = null;
+        public void InitExportFilter(uint filter)
+        {
+            List<UseValsID> list = new List<UseValsID>();
+            if (filter == 1)
+            {//ユニット関係のみ
+                UnitForm.MakeVarsIDArray(list);
+            }
+            else if (filter == 2)
+            {//クラス関係のみ
+                ClassForm.MakeVarsIDArray(list);
+            }
+            else if (filter == 3)
+            {//アイテム関係のみ
+                ItemForm.MakeVarsIDArray(list);
+            }
+            else if (filter == 4)
+            {//サウンドルーム関係のみ
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    SoundRoomFE6Form.MakeVarsIDArray(list);
+                }
+                else
+                {
+                    SoundRoomForm.MakeVarsIDArray(list);
+                }
+            }
+            else if (filter == 5)
+            {//支援会話関係
+                SupportTalkForm.MakeVarsIDArray(list);
+            }
+            else if (filter == 6)
+            {//スキル関係
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    SkillConfigFE8NSkillForm.MakeVarsIDArray(list);
+                    SkillConfigFE8NVer2SkillForm.MakeVarsIDArray(list);
+                }
+                else
+                {
+                    SkillConfigSkillSystemForm.MakeVarsIDArray(list);
+                }
+            }
+            else
+            {//all
+                ExportFilterArray = null;
+                return;
+            }
+
+            ExportFilterArray = new Dictionary<int,bool>();
+            foreach (UseValsID val in list)
+            {
+                ExportFilterArray[(int)val.ID] = true;
+            }
+        }
 
         public void ExportallText(Form self
             , string writeTextFileName
@@ -296,13 +351,38 @@ namespace FEBuilderGBA
                 FETextDecode decode = new FETextDecode();
 
                 Dictionary<string, string> transDic = TranslateTextUtil.MakeFixedDic(tralnslate_from, tralnslate_to , rom_from , rom_to);
+                if (ExportFilterArray != null)
+                {
+                    using (StreamWriter writer = new StreamWriter(writeTextFileName))
+                    {
+                        List<U.AddrResult> list = TextForm.MakeItemList();
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            if (! ExportFilterArray.ContainsKey(i))
+                            {
+                                continue;
+                            }
+                            string text = decode.Decode((uint)i);
+
+                            pleaseWait.DoEvents("Text:" + U.To0xHexString((uint)i));
+                            ExportText(writer, (uint)i, text, tralnslate_from, tralnslate_to, transDic, isModifiedTextOnly, isOneLiner);
+                        }
+                    }
+                    return;
+                }
+
                 using (StreamWriter writer = new StreamWriter(writeTextFileName))
                 {
+
                     //テキスト
                     {
                         List<U.AddrResult> list = TextForm.MakeItemList();
                         for (int i = 0; i < list.Count; i++)
                         {
+                            if (ExportFilterArray != null && ExportFilterArray[i] != false)
+                            {
+                                continue;
+                            }
                             string text = decode.Decode((uint)i);
 
                             pleaseWait.DoEvents("Text:" + U.To0xHexString((uint)i));

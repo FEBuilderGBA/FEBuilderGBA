@@ -112,6 +112,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.RefListBox = new FEBuilderGBA.ListBoxEx();
+            this.label6 = new System.Windows.Forms.Label();
+            this.X_ExportFilterCombo = new System.Windows.Forms.ComboBox();
             this.AddressPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -929,6 +931,8 @@
             // ImportPage
             // 
             this.ImportPage.BackColor = System.Drawing.SystemColors.Control;
+            this.ImportPage.Controls.Add(this.X_ExportFilterCombo);
+            this.ImportPage.Controls.Add(this.label6);
             this.ImportPage.Controls.Add(this.textBox1);
             this.ImportPage.Controls.Add(this.Export);
             this.ImportPage.Controls.Add(this.Import);
@@ -1143,6 +1147,32 @@
             this.RefListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RefListBox_KeyDown);
             this.RefListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RefListBox_MouseDoubleClick);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(477, 285);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 18);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "エクスポート制限";
+            // 
+            // X_ExportFilterCombo
+            // 
+            this.X_ExportFilterCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.X_ExportFilterCombo.FormattingEnabled = true;
+            this.X_ExportFilterCombo.Items.AddRange(new object[] {
+            "0=すべてエクスポートする",
+            "1=ユニットだけエクスポートする",
+            "2=クラスだけエクスポートする",
+            "3=アイテムだけエクスポートする",
+            "4=サウンドルームだけエクスポートする",
+            "5=支援会話だけエクスポートする",
+            "6=スキル関係だけエクスポートする"});
+            this.X_ExportFilterCombo.Location = new System.Drawing.Point(480, 306);
+            this.X_ExportFilterCombo.Name = "X_ExportFilterCombo";
+            this.X_ExportFilterCombo.Size = new System.Drawing.Size(310, 26);
+            this.X_ExportFilterCombo.TabIndex = 12;
+            // 
             // TextForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1286,5 +1316,7 @@
         private LabelEx labelEx2;
         private System.Windows.Forms.NumericUpDown TextListSpShowCharNumericUpDown;
         private TextBoxEx TextListSpShowCharText;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox X_ExportFilterCombo;
     }
 }

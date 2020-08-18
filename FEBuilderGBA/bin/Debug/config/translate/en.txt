@@ -10987,6 +10987,30 @@ Where this text is used
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
 
+:エクスポート制限
+Export limit
+
+:0=すべてエクスポートする
+0=Export all
+
+:1=ユニットだけエクスポートする
+1=Export only units
+
+:2=クラスだけエクスポートする
+2=Export only classes
+
+:3=アイテムだけエクスポートする
+3=Export only items
+
+:4=サウンドルームだけエクスポートする
+4=Export only the sound room
+
+:5=支援会話だけエクスポートする
+5=Export only support conversations
+
+:6=スキル関係だけエクスポートする
+6=Export only skills
+
 :参照される場所について説明してください
 Please explain where it is referenced.
 
