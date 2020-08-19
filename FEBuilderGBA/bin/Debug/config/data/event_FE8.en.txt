@@ -243,7 +243,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 213BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds][]frames[XXXX:UNIT:Character]is highlighted(CUMO)	{WAKU}
 40050100XXYY00002039ZZ00	Change AI[ZZ:UNIT:Character][XX:AI1:AI1][YY:AI2:AI2]	{UNIT}
 40050300XX0000002037YYYY	Give Item[XX:ITEM:item]to[YYYY:UNIT:Character](LOW)	{ITEM}
-40050300XX0000002037FFFF	Give Item to active (visiting) unit[XX:ITEM:item](LOW)	{ITEM}
+40050300XX0000002037FFFF	Give Item to active (visiting/current) unit[XX:ITEM:item](LOW)	{ITEM}
 40050300XXXX000021370000	Give Gold[XXXX:DECIMAL:GOLD](LOW)	Give Money	{GOLD}	{ITME}
 400A0000249D5B0840050300XXXX000021370000	Give Gold[XXXX:DECIMAL:GOLD]	Give Money	{GOLD}	{ITEM}	{J}
 400A0000401F590840050300XXXX000021370000	Give Gold[XXXX:DECIMAL:GOLD]	Give Money	{GOLD}	{ITEM}	{U}
@@ -375,11 +375,13 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 21190000	Checks chapter number(CHECK_CHAPTER_NUMBER)	Returns the current chapter's ID	OldName is CHECK_SOMETHING	@STOREC	{COND}
 2103XXXX	Checks whether the flag is set[XXXX:FLAG:Flag](CHECK_EVENTID)	returns 1 if it is valid, 0 otherwise	@STOREC	CHECK_FLAG	{COND}	{FLAG}
 2003XXXX	Checks whether the EVBIT is set[XXXX:EVBIT:Bit](CHECK_EVBIT)	returns 1 if it is valid, 0 otherwise	@STOREC	{COND}	{EVBIT}
-2133FFFF	Get the conversation group of the active (visiting) unit(CHECK_STATUS)	@STOREC	{UNITCOND}
-2733FFFF	Get the class ID of the active (visiting) unit(CHECK_CLASS)	@STOREC	{UNITCOND}
-2633FFFF	Get the coordinates of the active (visiting) unit(CHECK_COORDS)	@STOREC	{UNITCOND}
-2833FFFF	Get the luck stat of the active (visiting) unit(CHECK_LUCK)	@STOREC	{UNITCOND}
-212E0000	Get the unit ID of the active (visiting) unit(CHECK_ACTIVE)	@STOREC	{UNITCOND}
+2133FFFF	Get the conversation group of the active (visiting/current) unit(CHECK_STATUS)	@STOREC	{UNITCOND}
+2733FFFF	Get the class ID of the active (visiting/current) unit(CHECK_CLASS)	@STOREC	{UNITCOND}
+2633FFFF	Get the coordinates of the active (visiting/current) unit(CHECK_COORDS)	@STOREC	{UNITCOND}
+2833FFFF	Get the luck stat of the active (visiting/current) unit(CHECK_LUCK)	@STOREC	{UNITCOND}
+2533FFFF	Get the allegiance of the active (visiting/current)(CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
+212E0000	Get the unit ID of the active (visiting/current) unit(CHECK_ACTIVE)	@STOREC	{UNITCOND}
+
 2133XXXX	Get the conversation group of the specified [XXXX:UNIT:Character](CHECK_STATUS)	@STOREC
 2633XXXX	Get the coordinates of the specified [XXXX:UNIT:Character](CHECK_COORDS)	@STOREC	{UNITCOND}
 2733XXXX	Get the class ID of the specified [XXXX:UNIT:Character](CHECK_CLASS)	@STOREC	{UNITCOND}
@@ -387,7 +389,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2033XXXX	Check if exists [XXXX:UNIT:Character](CHECK_EXISTS)	Returns 1 if the unit is in your party and 0 otherwise	@STOREC	CHECK_EXISTS	{UNITCOND}
 2233XXXX	Checks if alive the [XXXX:UNIT:Character](CHECK_ALIVE)	Returns 1 if the unit is alive and 0 otherwise	@STOREC	{UNITCOND}
 2333XXXX	Checks if deployment the [XXXX:UNIT:Character](CHECK_DEPLOYED)	Returns 1 if the unit is deployed in this chapter and 0 otherwise	@STOREC	{UNITCOND}
-2433XXXX	checks if active unit matches given [XXXX:UNIT:Character](CHECK_ACTIVEID)	Returns 1 if the unit(character) is active (visiting) and 0 otherwise	@STOREC	{UNITCOND}
+2433XXXX	checks if active unit matches given [XXXX:UNIT:Character](CHECK_ACTIVEID)	Returns 1 if the unit(character) is active (visiting/current) and 0 otherwise	@STOREC	{UNITCOND}
 2533XXXX	Get the allegiance of the [XXXX:UNIT:Character](CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
 
 4021XXXX00000000	BACG[XXXX:BG:Background]Changes background to value in Slot_2(LOW)
@@ -451,8 +453,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 400A0000249D5B08	Fade Screen In From Black	{J}
 400A0000401F5908	Fade Screen In From Black	{U}
-400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting) unit.	{ITEM}	{J}
-400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting) unit.	{ITEM}	{U}
+400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit.	{ITEM}	{J}
+400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit.	{ITEM}	{U}
 400A0000249D5B0840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{J}
 400A0000401F590840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{U}
 202DXX00	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color]

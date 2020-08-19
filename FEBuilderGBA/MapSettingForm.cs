@@ -668,7 +668,6 @@ namespace FEBuilderGBA
         {
             return R._("obj,pal,configの3つがマップチップセットの主要な構成要素です。\r\nマップチップセットは、マップスタイルエディタから、変更できます。\r\n");
         }
-
         //エラー検出
         public static void MakeCheckErrors(uint mapid, List<FELint.ErrorSt> errors)
         {
@@ -759,13 +758,13 @@ namespace FEBuilderGBA
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
                                 , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", mapsize.Width, mapsize.Height, limitWidth)
-                                ));
+                                , mapid));
                     }
                     else if (mapsize.Width > limitWidth)
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
                                 , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", mapsize.Width, mapsize.Height, limitWidth)
-                                ));
+                                ,mapid));
                     }
                 }
             }
@@ -774,7 +773,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(pal_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_PALETTE, mapaddr
-                        , R._("PLIST({0})が無効です", plists.palette_plist)));
+                        , R._("PLIST({0})が無効です", plists.palette_plist), mapid));
                 }
             }
 
@@ -784,7 +783,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(mapchange_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAPCHANGE, mapaddr
-                        , R._("PLIST({0})が無効です", plists.mapchange_plist)));
+                        , R._("PLIST({0})が無効です", plists.mapchange_plist), mapid));
                 }
             }
             if (plists.anime1_plist != 0)
@@ -793,7 +792,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(anime1_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_ANIMETION1, mapaddr
-                        , R._("PLIST({0})が無効です", plists.anime1_plist)));
+                        , R._("PLIST({0})が無効です", plists.anime1_plist), mapid));
                 }
             }
             if (plists.anime2_plist != 0)
@@ -802,7 +801,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(anime2_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_ANIMETION2, mapaddr
-                        , R._("PLIST({0})が無効です", plists.anime2_plist)));
+                        , R._("PLIST({0})が無効です", plists.anime2_plist), mapid));
                 }
             }
         }

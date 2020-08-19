@@ -12825,3 +12825,7 @@ r3=X tile position of menu of the right	{U}
 0800e31c	StartDialogueBoxPossitonBySlotB	{U}
 0800E290	StartDialogueBoxBottomByCGScene	{U}
 0808e9d8	SetDialogueBoxSomeStyleMaybe	{U}
+080A8DF0	GetGameClearTimeByEachChapter	{J}
+080A43AC	GetGameClearTimeByEachChapter	{U}
+08000D14	ConvertFrameSecToSecStrng	{J}
+08000D64	ConvertFrameSecToSecStrng	{U}

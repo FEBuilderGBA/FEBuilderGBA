@@ -228,16 +228,7 @@ namespace FEBuilderGBA
 
         static int GetHight(uint count)
         {
-            int height;
-            if (count >= 0x1000)
-            {
-                height = (int)(count / (32 * 8 / 2) / 8) * 8;
-            }
-            else
-            {
-                height = 1 * 8;
-            }
-            return height;
+            return ImageUtil.CalcHeight(256, (int)count);
         }
 
         static Bitmap GetTileAnime1(uint data_pointer,uint count,uint palette,int palette_index)
@@ -529,7 +520,13 @@ namespace FEBuilderGBA
                         , imgFilename , filename , i);
                 }
                 byte[] bitmapByte = ImageUtil.ImageToByte16Tile(bitmap,bitmap.Width,bitmap.Height);
-                uint newaddr = ra.Write(bitmapByte,undodata);
+                uint length = (uint)bitmapByte.Length;
+                if (sp.Length >= 3)
+                {
+                    length = U.atoi(sp[2]);
+                    bitmapByte = U.subrange(bitmapByte, 0, length);
+                }
+                uint newaddr = ra.Write(bitmapByte, undodata);
                 if (newaddr == U.NOT_FOUND)
                 {
                     return R.Error("タイルアニメーション({0})を書き込めませんでした。\r\n\r\nスクリプト:{1}\r\n行数:{2}"
@@ -538,7 +535,7 @@ namespace FEBuilderGBA
                 bitmap.Dispose();
 
                 U.append_u16(writedata, wait);  //wait
-                U.append_u16(writedata, (uint)bitmapByte.Length);   //length
+                U.append_u16(writedata, length);   //length
                 U.append_u32(writedata, U.toPointer(newaddr)); //画像ポインタ
             }
             //終端データ
@@ -599,7 +596,7 @@ namespace FEBuilderGBA
                 string imgfilename = file + "_" + i.ToString("000") + ".png";
                 bitmap.Save(Path.Combine(dir,imgfilename));
 
-                string line = w0 + "\t" + imgfilename;
+                string line = w0 + "\t" + imgfilename + "\t" + length;
                 lines.Add(line);
             }
 

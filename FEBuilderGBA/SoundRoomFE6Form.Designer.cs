@@ -32,6 +32,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_8_TEXT_SOUND1 = new FEBuilderGBA.TextBoxEx();
             this.D8 = new System.Windows.Forms.NumericUpDown();
             this.J_8_TEXT = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
@@ -123,6 +123,17 @@
             this.panel6.Size = new System.Drawing.Size(839, 690);
             this.panel6.TabIndex = 80;
             // 
+            // L_0_SONG
+            // 
+            this.L_0_SONG.ErrorMessage = "";
+            this.L_0_SONG.Location = new System.Drawing.Point(361, 3);
+            this.L_0_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_SONG.Name = "L_0_SONG";
+            this.L_0_SONG.Placeholder = "";
+            this.L_0_SONG.ReadOnly = true;
+            this.L_0_SONG.Size = new System.Drawing.Size(337, 25);
+            this.L_0_SONG.TabIndex = 186;
+            // 
             // L_8_TEXT_SOUND1
             // 
             this.L_8_TEXT_SOUND1.ErrorMessage = "";
@@ -186,6 +197,7 @@
             // 
             // J_0_SONG
             // 
+            this.J_0_SONG.AccessibleDescription = "@SOUNDROOM_SONGID";
             this.J_0_SONG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_0_SONG.Location = new System.Drawing.Point(-1, 0);
             this.J_0_SONG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -403,17 +415,6 @@
             this.label23.TabIndex = 53;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_0_SONG
-            // 
-            this.L_0_SONG.ErrorMessage = "";
-            this.L_0_SONG.Location = new System.Drawing.Point(361, 3);
-            this.L_0_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_SONG.Name = "L_0_SONG";
-            this.L_0_SONG.Placeholder = "";
-            this.L_0_SONG.ReadOnly = true;
-            this.L_0_SONG.Size = new System.Drawing.Size(337, 25);
-            this.L_0_SONG.TabIndex = 186;
             // 
             // SoundRoomFE6Form
             // 

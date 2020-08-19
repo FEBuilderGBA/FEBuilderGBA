@@ -317,10 +317,10 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 7C00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{U}
 84000000	_86	{J}
 86000000	_86	{U}
-840000009100000059000000XX000000	Give Item to active (visiting) unit[XX:ITEM:Item]	Get Item	{ITEM}	{J}
-86000000930000005B000000XX000000	Give Item to active (visiting) unit[XX:ITEM:Item]	Get Item	{ITEM}	{U}
-84000000910000005B000000XX000000	Give Item to active (visiting) unit 2[XX:ITEM:Item]	{J}
-86000000930000005D000000XX000000	Give Item to active (visiting) unit 2[XX:ITEM:Item]	{U}
+840000009100000059000000XX000000	Give Item to active (visiting/current) unit[XX:ITEM:Item]	Get Item	{ITEM}	{J}
+86000000930000005B000000XX000000	Give Item to active (visiting/current) unit[XX:ITEM:Item]	Get Item	{ITEM}	{U}
+84000000910000005B000000XX000000	Give Item to active (visiting/current) unit 2[XX:ITEM:Item]	{J}
+86000000930000005D000000XX000000	Give Item to active (visiting/current) unit 2[XX:ITEM:Item]	{U}
 84000000910000005A000000XX000000YY000000	Give Item[YY:ITEM:Item]to[XX:UNIT:Unit]	Get Item	{ITEM}	{J}
 86000000930000005C000000XX000000YY000000	Give Item[YY:ITEM:Item]to[XX:UNIT:Unit]	Get Item	{ITEM}	{U}
 84000000910000005C000000XXXX0000	[XX:DECIMAL:Amount]Get Gold	{ITEM}	Give Money	{GOLD}	{J}

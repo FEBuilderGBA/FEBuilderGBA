@@ -12866,3 +12866,7 @@
 0808e9d8	SetDialogueBoxSomeStyleMaybe	{U}
 080A8DF0	GetGameClearTimeByEachChapter	{J}
 080A43AC	GetGameClearTimeByEachChapter	{U}
+08000D14	ConvertFrameSecToSecStrng	{J}
+08000D64	ConvertFrameSecToSecStrng	{U}
+080BA8E0	ASMC_ExecuteSuppendSave	{J}
+080B5D5C	ASMC_ExecuteSuppendSave	{U}

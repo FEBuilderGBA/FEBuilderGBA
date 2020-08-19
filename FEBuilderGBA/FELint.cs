@@ -31,6 +31,7 @@ namespace FEBuilderGBA
             ,MAPSETTING_PLIST_MAPCHANGE
             ,MAPSETTING_PLIST_ANIMETION1
             ,MAPSETTING_PLIST_ANIMETION2
+            ,MAPSETTING_PLIST_EVENT
             ,WORLDMAP_EVENT
             ,BATTLE_ANIME
             ,BATTLE_ANIME_CLASS

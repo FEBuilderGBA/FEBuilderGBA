@@ -14,6 +14,11 @@ namespace FEBuilderGBA
         public SoundRoomFE6Form()
         {
             InitializeComponent();
+            if (PatchUtil.SearchSoundRoomUnlock() == PatchUtil.soundroom_unlock_enum.Enable)
+            {
+                J_0_SONG.AccessibleDescription = "";
+            }
+
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }

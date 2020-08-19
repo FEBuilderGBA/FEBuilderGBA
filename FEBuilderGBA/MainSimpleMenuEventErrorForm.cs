@@ -210,6 +210,10 @@ namespace FEBuilderGBA
             {
                 text = R._("マップ設定のタイルアニメーション2");
             }
+            else if (dataType == FELint.Type.MAPSETTING_PLIST_EVENT)
+            {
+                text = R._("マップ設定のイベント");
+            }
             else if (dataType == FELint.Type.MAPSETTING_PLIST_PALETTE)
             {
                 text = R._("マップ設定のパレット");
@@ -620,6 +624,7 @@ namespace FEBuilderGBA
                 || dataType == FELint.Type.MAPSETTING_PLIST_MAPCHANGE
                 || dataType == FELint.Type.MAPSETTING_PLIST_ANIMETION1
                 || dataType == FELint.Type.MAPSETTING_PLIST_ANIMETION2
+                || dataType == FELint.Type.MAPSETTING_PLIST_EVENT
                 || dataType == FELint.Type.MAPSETTING_WORLDMAP
                 || dataType == FELint.Type.MAPSETTING
                 )

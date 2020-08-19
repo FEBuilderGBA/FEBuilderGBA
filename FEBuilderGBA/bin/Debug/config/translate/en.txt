@@ -2413,6 +2413,9 @@ Safety is a number that prevents you from stopping on a dangerous tile attacked 
 :この領域は利用できません
 Unable to use this area.
 
+:マップ({0})のイベントPLISTIDが0です。\r\nこのマップを呼び出すとフリーズします。\r\nイベントPLISTに適切な値を設定してください。
+The event PLIST ID for map ({0}) is 0.\r\nCalling this map freezes.\r\nSet an appropriate value in the event PLIST.
+
 :マップ{0}にMNC2で移動するには「Skip Worldmap」パッチが必要です。
 In order to move to map {0} with MNC2, the "Skip Worldmap" patch is required.
 
@@ -5143,6 +5146,9 @@ Set broken wall and Srag HP.\r\nUp to 120 can be set.\r\n
 :直近にインストールしたスクリプトを消す場合は、Undoを選択してください。\r\n過去にインストールしたスクリプトを消す場合は、アンインストールを選択してください。\r\n
 If you want to erase the most recently installed script, select Undo.\r\nIf you want to erase the script installed in the past, select uninstall.\r\n
 
+:サウンドルームに登録できるのは、SongID 0x7fまでの曲です。\r\nそれ以上のSongIDを使う場合は、「サウンドルーム全開」パッチを利用してください。\r\nそうしないと、それらの曲はUnLockされない可能性があります。\r\n
+Songs up to SongID 0x7f can be registered in the sound room.\r\nIf you want to use more SongIDs, please use the "Sound Room Full Open" patch.\r\nOtherwise, those songs may not be UnLocked.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6444,6 +6450,9 @@ Map setting tile animation 1
 
 :マップ設定のタイルアニメーション2
 Map setting tile animation 2
+
+:マップ設定のイベント
+Map setting event.
 
 :マップ設定のパレット
 Palette for map setting

@@ -170,7 +170,7 @@ namespace FEBuilderGBA
                 if (! magic_effect_dic.ContainsKey(magic_effectid))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
-                        , R._("アイテム {0}のエフェクトID「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(magic_effectid)), id));
+                        , R._("アイテム {0}のエフェクトID「{1}」は無効です。", U.To0xHexString(id), U.To0xHexString(magic_effectid)), id));
                 }
 
                 uint map_effect_procs = Program.ROM.u32(addr + 8);
@@ -179,12 +179,12 @@ namespace FEBuilderGBA
                     if (!U.isSafetyPointer(map_effect_procs) )
                     {//無効なポインタ
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
-                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(map_effect_procs)), id));
+                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」は無効です。", U.To0xHexString(id), U.To0xHexString(map_effect_procs)), id));
                     }
                     if (map_effect_procs % 4 != 0)
                     {//無効なポインタ
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, U.toOffset(addr)
-                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」が4で割り切れません。この数字は0または4で割り切れるポインタである必要があります", U.To0xHexString(i), U.To0xHexString(map_effect_procs)), id));
+                            , R._("アイテム {0}のマップ使用時エフェクトポインタ「{1}」が4で割り切れません。この数字は0または4で割り切れるポインタである必要があります", U.To0xHexString(id), U.To0xHexString(map_effect_procs)), id));
                     }
                 }
             }

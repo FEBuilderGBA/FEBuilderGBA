@@ -38,6 +38,7 @@ namespace FEBuilderGBA
             g_Cache_AntiHuffmanEnum = AntiHuffmanEnum.NoCache;
             g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
             g_Cache_HandAxsWildCard = HandAxsWildCard_extends.NoCache;
+            g_Cache_soundroom_unlock_enum = soundroom_unlock_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -92,8 +93,38 @@ namespace FEBuilderGBA
             }
             return g_LevelMaxCaps;
         }
+        //サウンドルーム全開の判別. ちょっとだけコストがかかる.
+        public enum soundroom_unlock_enum
+        {
+            NO,             //なし
+            Enable,
+            NoCache = (int)NO_CACHE
+        };
+        static soundroom_unlock_enum g_Cache_soundroom_unlock_enum = soundroom_unlock_enum.NoCache;
+        public static soundroom_unlock_enum SearchSoundRoomUnlock()
+        {
+            if (g_Cache_soundroom_unlock_enum == soundroom_unlock_enum.NoCache)
+            {
+                g_Cache_soundroom_unlock_enum = SearchSoundRoomUnlockLow();
+            }
+            return g_Cache_soundroom_unlock_enum;
+        }
+        static soundroom_unlock_enum SearchSoundRoomUnlockLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="SoundRoomUnlock",	ver = "FE8U", addr = 0xaede0,data = new byte[]{0xFF,}},
+                new PatchTableSt{ name="SoundRoomUnlock",	ver = "FE8J", addr = 0xB3A00,data = new byte[]{0xC0, 0x46,}},
+                new PatchTableSt{ name="SoundRoomUnlock",	ver = "FE7U", addr = 0xa6d96,data = new byte[]{0x00, 0x00,}},
+                new PatchTableSt{ name="SoundRoomUnlock",	ver = "FE7J", addr = 0xA60EA,data = new byte[]{0x00, 0x00,}},
+            };
+            if (SearchPatchBool(table))
+            {
+                return soundroom_unlock_enum.Enable;
+            }
+            return soundroom_unlock_enum.NO;
+        }
 
-        //スキルシステムの判別. ちょっとだけコストがかかる.
+        //grows_modの判別. ちょっとだけコストがかかる.
         public enum growth_mod_enum
         {
             NO,             //なし

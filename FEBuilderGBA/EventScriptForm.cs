@@ -828,12 +828,31 @@ namespace FEBuilderGBA
                 {//MNC2
                     CheckMNC2(v, out errormessage);
                 }
+                CheckCallebleFromEvent(v, ref errormessage);
             }
 
             return errormessage;
         }
 
-        public static void CheckMNC2(uint mapid,out string errormessage)
+        //エラー検出
+        static void CheckCallebleFromEvent(uint mapid, ref string errormessage)
+        {
+            uint mapaddr = MapSettingForm.GetMapAddr(mapid);
+            if (mapaddr == U.NOT_FOUND)
+            {
+                return;
+            }
+            MapSettingForm.PLists plists = MapSettingForm.GetMapPListsWhereAddr(mapaddr);
+            if (plists.event_plist == 0)
+            {
+                errormessage = R._("マップ({0})のイベントPLISTIDが0です。\r\nこのマップを呼び出すとフリーズします。\r\nイベントPLISTに適切な値を設定してください。", U.To0xHexString(mapid));
+                return;
+            }
+
+            return;
+        }
+
+        public static void CheckMNC2(uint mapid, out string errormessage)
         {
             errormessage = "";
             if (Program.ROM.RomInfo.version() != 8)

@@ -1,0 +1,17 @@
+PUSH
+ORG 0x2879C	//{U}
+jumpToHack(Change_increases_support_level_continuously_even_with_one_map_ex)
+
+POP
+
+ALIGN 4
+Change_increases_support_level_continuously_even_with_one_map_ex:
+#incbin "Change increases support level continuously even with one map_ex.dmp"
+POIN Change_increases_support_level_continuously_even_with_one_map_TABLE
+
+ALIGN 4
+Change_increases_support_level_continuously_even_with_one_map_TABLE:
+BYTE 0x38 0x39 0xFF
+//Enable MapID 0x38 0x39
+
+ALIGN 4

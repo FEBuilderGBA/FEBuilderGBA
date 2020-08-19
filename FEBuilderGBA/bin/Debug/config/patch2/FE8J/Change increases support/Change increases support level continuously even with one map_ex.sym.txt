@@ -1,0 +1,4 @@
+TABLE=$20
+Loop=$0A
+NotFound=$1A
+Match=$18
