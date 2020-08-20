@@ -2170,7 +2170,7 @@ namespace FEBuilderGBA
                 }
                 break;
             }
-            return addr - start;
+            return addr;
         }
 
         public static uint GrepEnd(byte[] data, byte[] need, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)

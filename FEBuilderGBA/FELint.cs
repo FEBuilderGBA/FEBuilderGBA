@@ -270,12 +270,12 @@ namespace FEBuilderGBA
             CheckPointer(event_addr, errors, cond, addr , tag);
         }
 
-        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
+        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist, uint tag = U.NOT_FOUND)
         {
-            CheckEventPointer(event_addr, errors, EventCondToType(cond), addr, isFixedEvent, tracelist);
+            CheckEventPointer(event_addr, errors, EventCondToType(cond), addr, isFixedEvent, tracelist, tag);
         }
 
-        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
+        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist, uint tag = U.NOT_FOUND)
         {
             if (isFixedEvent == false)
             {
@@ -287,7 +287,7 @@ namespace FEBuilderGBA
             if (!U.isSafetyPointer(event_addr))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("イベントポインタ「{0}」が無効です。", U.To0xHexString(event_addr))));
+                    , R._("イベントポインタ「{0}」が無効です。", U.To0xHexString(event_addr)),tag));
                 return;
             }
 

@@ -688,5 +688,43 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        //複数個所で参照されているタイル変化IDかどうか求める
+        public static uint CountRefence(uint addr, List<Address> list)
+        {
+            uint count = 0;
+            addr = U.toOffset(addr);
+
+            foreach (Address a in list)
+            {
+                if (a.Addr == addr)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        //複数個所で参照されているタイル変化IDかどうか求める
+        public static uint SearchSameData(byte[] data, List<Address> list)
+        {
+            foreach (Address a in list)
+            {
+                if (a.DataType != Address.DataTypeEnum.BIN)
+                {
+                    continue;
+                }
+                if (a.Length != data.Length)
+                {
+                    continue;
+                }
+                byte[] bin = Program.ROM.getBinaryData(a.Addr, a.Length);
+                if (U.memcmp(data, bin) != 0)
+                {
+                    continue;
+                }
+                return a.Addr;
+            }
+            return U.NOT_FOUND;
+        }
     }
 }

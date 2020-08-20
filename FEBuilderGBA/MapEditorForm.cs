@@ -2659,8 +2659,17 @@ this.MapObjImage);
                 U.write_u16(data, (uint)( (i * 2)), (uint)this.MAR[i]);
             }
 
+            List<Address> mapchange_list = new List<Address>();
+            MapChangeForm.MakeAllDataLength(mapchange_list);
+
             uint addr = (uint)this.MapAddress.Value;
             addr = U.toOffset(addr);
+
+            //複数個所から参照されている場合
+            if (MapChangeForm.CountRefence(addr, mapchange_list) >= 2)
+            {//使いまわしてはいけない
+                addr = 0;
+            }
 
             int mapid = this.MAPCOMBO.SelectedIndex;
             if (mapid < 0)
@@ -2701,11 +2710,18 @@ this.MapObjImage);
                 return p;
             };
 
-            uint newaddr = InputFormRef.WriteBinaryData(this,addr, data, get_original_size, undodata);
+            //まったく同じマップ変化があるならば共有する
+            uint newaddr = MapChangeForm.SearchSameData(data, mapchange_list);
             if (newaddr == U.NOT_FOUND)
             {
-                Program.Undo.Rollback(undodata);
-                return R.Error("アドレス({0})にデータを書き込めませんでした", addr);
+                //まったく同じデータがない
+                //よって、新たに書き込みます
+                newaddr = InputFormRef.WriteBinaryData(this, addr, data, get_original_size, undodata);
+                if (newaddr == U.NOT_FOUND)
+                {
+                    Program.Undo.Rollback(undodata);
+                    return R.Error("アドレス({0})にデータを書き込めませんでした", addr);
+                }
             }
 
             //マップ変化の本体データへの書き込み アドレス 幅高さ等が変わっている可能性があるので、必ず書き込む.

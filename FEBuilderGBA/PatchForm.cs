@@ -3544,7 +3544,7 @@ namespace FEBuilderGBA
             byte[] rom = ReadOrignalROMWithCache();
             if (rom == null)
             {
-                throw new PatchException(R.Error("アンインストールするための無改造ROMが見つかりません。"));
+                throw new PatchException(R.Error("アンインストールするための無改造ROMが見つかりません。\r\nアンインストールするために、無改造ROMが必要です。\r\nこのROMと同じ場所または、FEBuilderGBA.exeと同じディレクトリに無改造ROM.gbaを設置してください。"));
             }
 
             uint addr = U.atoi0x(U.at(sp, 1));
@@ -7640,7 +7640,7 @@ namespace FEBuilderGBA
                     else if (type == "EVENT")
                     {
                         uint event_addr = Program.ROM.u32(p);
-                        FELint.CheckEventPointer(event_addr, errors, FELint.Type.PATCH, p, false, tracelist);
+                        FELint.CheckEventPointer(event_addr, errors, FELint.Type.PATCH, p, false, tracelist, loopI);
                     }
                     else if (type == "TEXT")
                     {

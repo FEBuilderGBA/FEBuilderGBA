@@ -5147,7 +5147,7 @@ Set broken wall and Srag HP.\r\nUp to 120 can be set.\r\n
 If you want to erase the most recently installed script, select Undo.\r\nIf you want to erase the script installed in the past, select uninstall.\r\n
 
 :サウンドルームに登録できるのは、SongID 0x7fまでの曲です。\r\nそれ以上のSongIDを使う場合は、「サウンドルーム全開」パッチを利用してください。\r\nそうしないと、それらの曲はUnLockされない可能性があります。\r\n
-Songs up to SongID 0x7f can be registered in the sound room.\r\nIf you want to use more SongIDs, please use the "Sound Room Full Open" patch.\r\nOtherwise, those songs may not be UnLocked.\r\n
+Songs up to SongID 0x7f can be registered in the sound room.\r\nIf you want to use more SongIDs, please use the "Sound Room Unlock" patch.\r\nOtherwise, those songs may not be UnLocked.\r\n
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -9223,8 +9223,8 @@ Unknown Keyword: {0}
 :32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}
 You can not allocate more than 32MB (0x02000000).\r\nRequested size: {0}.
 
-:アンインストールするための無改造ROMが見つかりません。
-Unmodified ROM to uninstall was not found.
+:アンインストールするための無改造ROMが見つかりません。\r\nアンインストールするために、無改造ROMが必要です。\r\nこのROMと同じ場所または、FEBuilderGBA.exeと同じディレクトリに無改造ROM.gbaを設置してください。
+Unmodified ROM to uninstall was not found.\r\nA non-modified ROM is required to uninstall.\r\nPlease install unmodified ROM.gba in the same location as this ROM or in the same directory as FEBuilderGBA.exe.
 
 :アンインストールするアドレスの指定が正しくありません dest:{0}
 Invalid uninstall address specification dest: {0}.
