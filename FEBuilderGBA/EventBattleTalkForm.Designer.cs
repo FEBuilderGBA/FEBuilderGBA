@@ -181,7 +181,7 @@
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(328, 0);
+            this.BlockSize.Location = new System.Drawing.Point(328, 1);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";

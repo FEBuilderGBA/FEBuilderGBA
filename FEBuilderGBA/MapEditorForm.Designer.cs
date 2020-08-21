@@ -31,16 +31,13 @@
             this.Zoom = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SizeChangeButton = new System.Windows.Forms.Button();
-            this.MapSizeText = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.MapStyle = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MAPCOMBO = new System.Windows.Forms.ComboBox();
             this.MAPCHIPLISTPanel = new System.Windows.Forms.Panel();
-            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.MapPanel = new System.Windows.Forms.Panel();
-            this.MAP = new FEBuilderGBA.InterpolatedPictureBox();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.SaveASbutton = new System.Windows.Forms.Button();
@@ -57,19 +54,23 @@
             this.MapChange = new System.Windows.Forms.ComboBox();
             this.StyleChangeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MapChipInfo = new FEBuilderGBA.TextBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.MAP = new FEBuilderGBA.InterpolatedPictureBox();
+            this.MapChipInfo = new FEBuilderGBA.TextBoxEx();
+            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
+            this.MapSizeText = new FEBuilderGBA.TextBoxEx();
             this.MAPCHIPLISTPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.MapPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAP)).BeginInit();
             this.ControlPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MapAddress)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.SuspendLayout();
             // 
             // Zoom
@@ -81,7 +82,7 @@
             "2倍ズーム",
             "3倍ズーム",
             "4倍ズーム"});
-            this.Zoom.Location = new System.Drawing.Point(890, 67);
+            this.Zoom.Location = new System.Drawing.Point(895, 67);
             this.Zoom.Margin = new System.Windows.Forms.Padding(2);
             this.Zoom.Name = "Zoom";
             this.Zoom.Size = new System.Drawing.Size(264, 26);
@@ -91,7 +92,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(764, 1);
+            this.label4.Location = new System.Drawing.Point(769, 1);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 32);
@@ -101,7 +102,7 @@
             // 
             // SizeChangeButton
             // 
-            this.SizeChangeButton.Location = new System.Drawing.Point(1013, 36);
+            this.SizeChangeButton.Location = new System.Drawing.Point(1018, 36);
             this.SizeChangeButton.Margin = new System.Windows.Forms.Padding(2);
             this.SizeChangeButton.Name = "SizeChangeButton";
             this.SizeChangeButton.Size = new System.Drawing.Size(140, 31);
@@ -110,21 +111,10 @@
             this.SizeChangeButton.UseVisualStyleBackColor = true;
             this.SizeChangeButton.Click += new System.EventHandler(this.SizeChangeButton_Click);
             // 
-            // MapSizeText
-            // 
-            this.MapSizeText.ErrorMessage = "";
-            this.MapSizeText.Location = new System.Drawing.Point(892, 38);
-            this.MapSizeText.Margin = new System.Windows.Forms.Padding(2);
-            this.MapSizeText.Name = "MapSizeText";
-            this.MapSizeText.Placeholder = "";
-            this.MapSizeText.ReadOnly = true;
-            this.MapSizeText.Size = new System.Drawing.Size(116, 25);
-            this.MapSizeText.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(764, 32);
+            this.label3.Location = new System.Drawing.Point(769, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 32);
@@ -185,23 +175,8 @@
             this.MAPCHIPLISTPanel.Location = new System.Drawing.Point(0, 0);
             this.MAPCHIPLISTPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MAPCHIPLISTPanel.Name = "MAPCHIPLISTPanel";
-            this.MAPCHIPLISTPanel.Size = new System.Drawing.Size(762, 858);
+            this.MAPCHIPLISTPanel.Size = new System.Drawing.Size(771, 858);
             this.MAPCHIPLISTPanel.TabIndex = 1;
-            // 
-            // MAPCHIPLIST
-            // 
-            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
-            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
-            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
-            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.MAPCHIPLIST.TabIndex = 0;
-            this.MAPCHIPLIST.TabStop = false;
-            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
-            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
-            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
-            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
             // 
             // MapPanel
             // 
@@ -212,23 +187,8 @@
             this.MapPanel.Location = new System.Drawing.Point(0, 0);
             this.MapPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MapPanel.Name = "MapPanel";
-            this.MapPanel.Size = new System.Drawing.Size(1017, 828);
+            this.MapPanel.Size = new System.Drawing.Size(1008, 828);
             this.MapPanel.TabIndex = 0;
-            // 
-            // MAP
-            // 
-            this.MAP.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.MAP.Location = new System.Drawing.Point(0, 0);
-            this.MAP.Margin = new System.Windows.Forms.Padding(2);
-            this.MAP.Name = "MAP";
-            this.MAP.Size = new System.Drawing.Size(32, 32);
-            this.MAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.MAP.TabIndex = 0;
-            this.MAP.TabStop = false;
-            this.MAP.Paint += new System.Windows.Forms.PaintEventHandler(this.MAP_Paint);
-            this.MAP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAP_MouseDown);
-            this.MAP.MouseLeave += new System.EventHandler(this.MAP_MouseLeave);
-            this.MAP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAP_MouseMove);
             // 
             // ControlPanel
             // 
@@ -272,7 +232,7 @@
             // 
             // SaveASbutton
             // 
-            this.SaveASbutton.Location = new System.Drawing.Point(2, 9);
+            this.SaveASbutton.Location = new System.Drawing.Point(2, 8);
             this.SaveASbutton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveASbutton.Name = "SaveASbutton";
             this.SaveASbutton.Size = new System.Drawing.Size(207, 34);
@@ -284,7 +244,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(246, 79);
+            this.label7.Location = new System.Drawing.Point(246, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 18);
             this.label7.TabIndex = 32;
@@ -292,7 +252,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(246, 10);
+            this.WriteButton.Location = new System.Drawing.Point(246, 9);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(207, 62);
@@ -303,7 +263,7 @@
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(2, 42);
+            this.LoadButton.Location = new System.Drawing.Point(2, 41);
             this.LoadButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(207, 35);
@@ -315,7 +275,7 @@
             // MapAddress
             // 
             this.MapAddress.Hexadecimal = true;
-            this.MapAddress.Location = new System.Drawing.Point(334, 76);
+            this.MapAddress.Location = new System.Drawing.Point(334, 75);
             this.MapAddress.Margin = new System.Windows.Forms.Padding(2);
             this.MapAddress.Maximum = new decimal(new int[] {
             -1,
@@ -360,7 +320,7 @@
             this.NewMapChange.Location = new System.Drawing.Point(477, 65);
             this.NewMapChange.Margin = new System.Windows.Forms.Padding(2);
             this.NewMapChange.Name = "NewMapChange";
-            this.NewMapChange.Size = new System.Drawing.Size(283, 31);
+            this.NewMapChange.Size = new System.Drawing.Size(290, 31);
             this.NewMapChange.TabIndex = 29;
             this.NewMapChange.Text = "マップ変化追加";
             this.NewMapChange.UseVisualStyleBackColor = true;
@@ -368,7 +328,7 @@
             // 
             // RedoButton
             // 
-            this.RedoButton.Location = new System.Drawing.Point(1013, 2);
+            this.RedoButton.Location = new System.Drawing.Point(1018, 2);
             this.RedoButton.Margin = new System.Windows.Forms.Padding(2);
             this.RedoButton.Name = "RedoButton";
             this.RedoButton.Size = new System.Drawing.Size(74, 31);
@@ -379,7 +339,7 @@
             // 
             // UndoButon
             // 
-            this.UndoButon.Location = new System.Drawing.Point(892, 2);
+            this.UndoButon.Location = new System.Drawing.Point(897, 2);
             this.UndoButon.Margin = new System.Windows.Forms.Padding(2);
             this.UndoButon.Name = "UndoButon";
             this.UndoButon.Size = new System.Drawing.Size(116, 31);
@@ -391,7 +351,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(764, 62);
+            this.label6.Location = new System.Drawing.Point(769, 62);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 32);
@@ -406,7 +366,7 @@
             this.MapChange.Location = new System.Drawing.Point(477, 4);
             this.MapChange.Margin = new System.Windows.Forms.Padding(2);
             this.MapChange.Name = "MapChange";
-            this.MapChange.Size = new System.Drawing.Size(283, 26);
+            this.MapChange.Size = new System.Drawing.Size(290, 26);
             this.MapChange.TabIndex = 20;
             this.MapChange.SelectedIndexChanged += new System.EventHandler(this.MapChange_SelectedIndexChanged);
             // 
@@ -415,7 +375,7 @@
             this.StyleChangeButton.Location = new System.Drawing.Point(477, 34);
             this.StyleChangeButton.Margin = new System.Windows.Forms.Padding(2);
             this.StyleChangeButton.Name = "StyleChangeButton";
-            this.StyleChangeButton.Size = new System.Drawing.Size(283, 31);
+            this.StyleChangeButton.Size = new System.Drawing.Size(290, 31);
             this.StyleChangeButton.TabIndex = 17;
             this.StyleChangeButton.Text = "スタイル編集";
             this.StyleChangeButton.UseVisualStyleBackColor = true;
@@ -427,22 +387,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 828);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 30);
+            this.panel1.Size = new System.Drawing.Size(1008, 30);
             this.panel1.TabIndex = 3;
-            // 
-            // MapChipInfo
-            // 
-            this.MapChipInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MapChipInfo.ErrorMessage = "";
-            this.MapChipInfo.Location = new System.Drawing.Point(0, 0);
-            this.MapChipInfo.Name = "MapChipInfo";
-            this.MapChipInfo.Placeholder = "";
-            this.MapChipInfo.ReadOnly = true;
-            this.MapChipInfo.Size = new System.Drawing.Size(1017, 25);
-            this.MapChipInfo.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.splitter1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.MAPCHIPLISTPanel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -456,10 +406,70 @@
             this.panel3.Controls.Add(this.MapPanel);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(762, 0);
+            this.panel3.Location = new System.Drawing.Point(771, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1017, 858);
+            this.panel3.Size = new System.Drawing.Size(1008, 858);
             this.panel3.TabIndex = 5;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(771, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 858);
+            this.splitter1.TabIndex = 6;
+            this.splitter1.TabStop = false;
+            // 
+            // MAP
+            // 
+            this.MAP.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.MAP.Location = new System.Drawing.Point(0, 0);
+            this.MAP.Margin = new System.Windows.Forms.Padding(2);
+            this.MAP.Name = "MAP";
+            this.MAP.Size = new System.Drawing.Size(32, 32);
+            this.MAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MAP.TabIndex = 0;
+            this.MAP.TabStop = false;
+            this.MAP.Paint += new System.Windows.Forms.PaintEventHandler(this.MAP_Paint);
+            this.MAP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAP_MouseDown);
+            this.MAP.MouseLeave += new System.EventHandler(this.MAP_MouseLeave);
+            this.MAP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAP_MouseMove);
+            // 
+            // MapChipInfo
+            // 
+            this.MapChipInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MapChipInfo.ErrorMessage = "";
+            this.MapChipInfo.Location = new System.Drawing.Point(0, 0);
+            this.MapChipInfo.Name = "MapChipInfo";
+            this.MapChipInfo.Placeholder = "";
+            this.MapChipInfo.ReadOnly = true;
+            this.MapChipInfo.Size = new System.Drawing.Size(1008, 25);
+            this.MapChipInfo.TabIndex = 0;
+            // 
+            // MAPCHIPLIST
+            // 
+            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
+            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
+            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
+            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MAPCHIPLIST.TabIndex = 0;
+            this.MAPCHIPLIST.TabStop = false;
+            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
+            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
+            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
+            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
+            // 
+            // MapSizeText
+            // 
+            this.MapSizeText.ErrorMessage = "";
+            this.MapSizeText.Location = new System.Drawing.Point(897, 38);
+            this.MapSizeText.Margin = new System.Windows.Forms.Padding(2);
+            this.MapSizeText.Name = "MapSizeText";
+            this.MapSizeText.Placeholder = "";
+            this.MapSizeText.ReadOnly = true;
+            this.MapSizeText.Size = new System.Drawing.Size(116, 25);
+            this.MapSizeText.TabIndex = 5;
             // 
             // MapEditorForm
             // 
@@ -477,10 +487,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapEditorForm_KeyDown);
             this.MAPCHIPLISTPanel.ResumeLayout(false);
             this.MAPCHIPLISTPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
             this.MapPanel.ResumeLayout(false);
             this.MapPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAP)).EndInit();
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -490,6 +498,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MAP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,6 +538,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Splitter splitter1;
 
 
     }

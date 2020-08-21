@@ -3114,5 +3114,6 @@ this.MapObjImage);
             Program.Undo.Push(undodata);
             return true;
         }
+
     }
 }
