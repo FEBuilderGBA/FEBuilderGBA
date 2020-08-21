@@ -1,0 +1,28 @@
+NAME=特定の章のクリアターン数を取得する(イベント命令)
+NAME.en=AddEvent: Get number of clear turns for chapter
+NAME.zh=Get number of clear turns for chapter(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetTurnByChapter.dmp=0x70 0xB5 0x0E 0x4B
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetTurnByChapter.dmp}	Slot1の章のクリアターン数を取得する(LOW)	{COND}
+EVENTSCRIPT:2=40050100XXXX0000400D0000{$L1:ASMC_GetTurnByChapter.dmp}	[XX:MAPCHAPTER:マップ]のクリアターン数を取得する	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetTurnByChapter.dmp}	Get number of clear turns for Slot1 chapter(LOW)	{COND}
+EVENTSCRIPT:2.en=40050100XXXX0000400D0000{$L1:ASMC_GetTurnByChapter.dmp}	Get number of clear turns for [XX:MAPCHAPTER:Chapter]	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetTurnByChapter.dmp}	Get number of clear turns for Slot1 chapter(LOW)	{COND}
+EVENTSCRIPT:2.zh=40050100XXXX0000400D0000{$L1:ASMC_GetTurnByChapter.dmp}	Get number of clear turns for [XX:MAPCHAPTER:Chapter]	{COND}
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetTurnByChapter.dmp
+
+AUTHOR=7743
+
+INFO=指定した章のクリアターン数を取得します。\r\n例えば、序章を6ターンでクリアした場合は、6がSlotCに返されます。
+INFO.en=Gets the number of clear turns for the specified chapter.\r\nFor example, if you clear the introduction in 6 turns, 6 will be returned to SlotC.
+INFO.zh=获取指定章节的透明转数。\r\n例如，如果您在6个回合中清除了简介，则会将6个返回给SlotC。

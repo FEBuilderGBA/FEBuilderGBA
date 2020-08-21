@@ -1,0 +1,22 @@
+NAME=ゲームのトータルターン数を取得する(イベント命令)
+NAME.en=AddEvent: Get the total number of turns in game
+NAME.zh=Get the total number of turns in game(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetGameTotalTurnCount.dmp=0x00 0xB5 0x03 0x4B
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetGameTotalTurnCount.dmp}	ゲームのトータルターン数を取得する	{COND}
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetGameTotalTurnCount.dmp}	Get the total number of turns in game	{COND}
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetGameTotalTurnCount.dmp}	Get the total number of turns in game	{COND}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetGameTotalTurnCount.dmp
+
+AUTHOR=7743
+
+INFO=ゲーム全体のクリアターン数の合計を求めます。\r\nこれはエンディングのトータルターン数に表示される値と同じ値です。\r\n注意:現在の章は、まだクリアしていないので、この数字には含まれません。
+INFO.en=Find the total number of clear turns for the entire game.\r\nThis is the same value displayed for the ending total turns.\r\nNote: The current chapter is not included in this number as it has not been cleared yet.
+INFO.zh=找到整个游戏的净回合总数。\r\n对于结束的总匝数，此显示的值相同。\r\n注意：当前章节未包括在此编号中，因为尚未清除。

@@ -19,4 +19,4 @@ AUTHOR=7743
 
 EVENTSCRIPT:1=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	[YY:MEMORYSLOT:メモリスロット]の値を文字列に変換
 EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	Convert [YY:MEMORYSLOT:MemorySlot] value to string
-EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_MemorySlotToString	.dmp}	Convert [YY:MEMORYSLOT:MemorySlot] value to string
+EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	Convert [YY:MEMORYSLOT:MemorySlot] value to string

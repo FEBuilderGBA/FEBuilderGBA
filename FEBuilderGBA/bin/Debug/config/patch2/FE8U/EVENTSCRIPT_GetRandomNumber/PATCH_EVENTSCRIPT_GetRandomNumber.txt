@@ -1,0 +1,28 @@
+NAME=指定範囲の乱数を取得(イベント命令)
+NAME.en=AddEvent: Get random number in specified range
+NAME.zh=Get random number in specified range(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetRandomNumber.dmp=0x10 0xB5 0x0B 0x4B
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetRandomNumber.dmp}	Slot1とSlot2の範囲の乱数を取得(LOW)	{COND}
+EVENTSCRIPT:2=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetRandomNumber.dmp}	[XX:DECIMAL:Begin]から[YY:DECIMAL:End]の範囲の乱数を取得	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetRandomNumber.dmp}	Get random number in range of Slot1 and Slot2(LOW)	{COND}
+EVENTSCRIPT:2.en=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetRandomNumber.dmp}	Get random number in range of [XX:DECIMAL:Begin] and [YY:DECIMAL:End]	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetRandomNumber.dmp}	Get random number in range of Slot1 and Slot2(LOW)	{COND}
+EVENTSCRIPT:2.zh=40050100XXXXXXXX40050200YYYYYYYY400D0000{$L1:ASMC_GetRandomNumber.dmp}	Get random number in range of [XX:DECIMAL:Begin] and [YY:DECIMAL:End]	{COND}
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetRandomNumber.dmp
+
+AUTHOR=7743
+
+INFO=特定の範囲の乱数を求めます。\r\n例えば、 ASMC_GetRandomNumber(10,20) だと、 10以上20以下の間の数字をSlotCに返します。
+INFO.en=Find a random number in a specific range.\r\nFor example, ASMC_GetRandomNumber(10,20) returns a number between 10 and 20 to SlotC.
+INFO.zh=查找特定范围内的随机数。\r\n例如，ASMC_GetRandomNumber(10,20) 将10到20之间的数字返回给SlotC。
