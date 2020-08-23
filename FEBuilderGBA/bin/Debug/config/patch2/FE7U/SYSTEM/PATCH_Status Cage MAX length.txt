@@ -11,6 +11,7 @@ HEX=FALSE
 
 NAME.zh=状态菜单最大长度
 
+HINT.en=changes the size of stat caps
 
 INFO=ステータスメニューに表示される棒グラフの最大値を変更します。\r\nFEでは、ステータス31以上は保存されません。\r\nしかし、ステータスの上限を変更するパッチにより31を超えることができるようになりました。\r\nただ、グラフは31を上限として描画されるため、高いパラメータを設定すると、グラフが突き抜けてしまいます。\r\nこれを修正するパッチです。\r\n
 INFO.en=Modifies the maximum value that the yellow stat bars properly display\r\nThese bars by default have errors after exceeding 31.\r\nThis patch allows the bars to display 63 in each stat.\r\nHowever, if this is set too high, the bar will expand beyond the statbox on the Status Screen.

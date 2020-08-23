@@ -135,7 +135,7 @@ namespace FEBuilderGBA
                 , (int)B34.Value //luck
                 , 0
                 );
-            ClassForm.GetSim(ref sim
+            ClassForm.SetSimClass(ref sim
                 , (uint)B5.Value //支援クラス
             );
 
@@ -152,7 +152,7 @@ namespace FEBuilderGBA
             using (U.ActiveControlSave uac = new U.ActiveControlSave(this))
             {
                 GrowSimulator sim = BuildSim();
-                sim.Grow((int)X_SIM.Value, true);
+                sim.Grow((int)X_SIM.Value, GrowSimulator.GrowOptionEnum.UnitGrow);
 
                 X_SIM.Value = sim.sim_lv;
                 U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);

@@ -122,6 +122,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.label12 = new System.Windows.Forms.Label();
+            this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.panel3.SuspendLayout();
             this.EVENTUNIT_AFTER_COORD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
@@ -165,6 +166,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.X_Sim);
             this.panel3.Controls.Add(this.L_14_AI3_HYOUTEKI);
             this.panel3.Controls.Add(this.L_14_AI3_KAIFUKU);
             this.panel3.Controls.Add(this.EVENTUNIT_AFTER_COORD);
@@ -1320,6 +1322,14 @@
             this.label12.Text = "マップ名前";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // X_Sim
+            // 
+            this.X_Sim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_Sim.Location = new System.Drawing.Point(263, 93);
+            this.X_Sim.Name = "X_Sim";
+            this.X_Sim.Size = new System.Drawing.Size(478, 75);
+            this.X_Sim.TabIndex = 172;
+            // 
             // EventUnitFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1479,5 +1489,6 @@
         private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.ComboBox L_14_AI3_HYOUTEKI;
         private System.Windows.Forms.ComboBox L_14_AI3_KAIFUKU;
+        private EventUnitSimUserControl X_Sim;
     }
 }

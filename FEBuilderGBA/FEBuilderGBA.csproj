@@ -80,6 +80,12 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="EventUnitSimUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventUnitSimUserControl.Designer.cs">
+      <DependentUpon>EventUnitSimUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmulatorMemoryUtil.cs" />
     <Compile Include="EventTemplateImpl.cs" />
     <Compile Include="ImageUtilBorderAP.cs" />
@@ -2094,6 +2100,9 @@
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitSimUserControl.resx">
+      <DependentUpon>EventUnitSimUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
       <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>

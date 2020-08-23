@@ -119,7 +119,7 @@ namespace FEBuilderGBA
 
 
 
-        public static void GetSim(ref GrowSimulator sim, uint uid)
+        public static void SetSimUnit(ref GrowSimulator sim, uint uid)
         {
             if (uid == 0 || uid == U.NOT_FOUND)
             {
@@ -134,14 +134,14 @@ namespace FEBuilderGBA
             }
 
             sim.SetUnitBase((int)Program.ROM.u8(addr+11) //LV
-                , (int)Program.ROM.u8(addr + 12) //hp
-                , (int)Program.ROM.u8(addr + 13) //str
-                , (int)Program.ROM.u8(addr + 14) //skill
-                , (int)Program.ROM.u8(addr + 15) //spd
-                , (int)Program.ROM.u8(addr + 16) //def
-                , (int)Program.ROM.u8(addr + 17) //res
-                , (int)Program.ROM.u8(addr + 18) //luck
-                , (int)MagicSplitUtil.GetUnitBaseMagicExtends(uid,addr) //magic ext
+                , (int)(sbyte)Program.ROM.u8(addr + 12) //hp
+                , (int)(sbyte)Program.ROM.u8(addr + 13) //str
+                , (int)(sbyte)Program.ROM.u8(addr + 14) //skill
+                , (int)(sbyte)Program.ROM.u8(addr + 15) //spd
+                , (int)(sbyte)Program.ROM.u8(addr + 16) //def
+                , (int)(sbyte)Program.ROM.u8(addr + 17) //res
+                , (int)(sbyte)Program.ROM.u8(addr + 18) //luck
+                , (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr) //magic ext
                 );
             sim.SetUnitGrow(
                   (int)Program.ROM.u8(addr + 28) //hp
@@ -177,7 +177,7 @@ namespace FEBuilderGBA
                 , (int)B34.Value //luck
                 , (int)MagicExtUnitGrow.Value //magic ext
                 );
-            ClassForm.GetSim(ref sim
+            ClassForm.SetSimClass(ref sim
                 , (uint)B5.Value //支援クラス
             );
 
@@ -194,7 +194,7 @@ namespace FEBuilderGBA
             using (U.ActiveControlSave uac = new U.ActiveControlSave(this))
             {
                 GrowSimulator sim = BuildSim();
-                sim.Grow((int)X_SIM.Value, true);
+                sim.Grow((int)X_SIM.Value, GrowSimulator.GrowOptionEnum.UnitGrow);
 
                 X_SIM.Value = sim.sim_lv;
                 U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
@@ -866,6 +866,26 @@ namespace FEBuilderGBA
 
             uint flag2 = Program.ROM.u8(addr + 41);
             return ((flag2 & 0x20) == 0x20);
+        }
+
+        //上位クラスかどうかの判定
+        public static bool isHighClass(uint uid)
+        {
+            if (uid <= 0)
+            {
+                return false;
+            }
+            uid--;
+
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (addr == U.NOT_FOUND)
+            {
+                return false;
+            }
+
+            uint flag2 = Program.ROM.u8(addr + 41);
+            return ((flag2 & 0x01) == 0x01);
         }
 
         //支援の付け替え

@@ -137,7 +137,18 @@ namespace FEBuilderGBA
             this.class_grow_ext_magic = ext_magic;
         }
 
-        public void Grow(int lv,bool isUnitGrow)
+        public void SetUnitLv1()
+        {
+            this.unit_lv = 1;
+        }
+
+        public enum GrowOptionEnum
+        {
+            None,
+            UnitGrow,
+            ClassGrow,
+        }
+        public void Grow(int lv, GrowOptionEnum growOption)
         {
             this.sim_lv = this.unit_lv;
             this.sim_hp = this.unit_hp + this.class_hp;
@@ -157,7 +168,7 @@ namespace FEBuilderGBA
             int grow_res = this.unit_grow_res;
             int grow_luck = this.unit_grow_luck;
             int grow_ext_magic = this.unit_grow_ext_magic;
-            if (!isUnitGrow)
+            if (growOption == GrowOptionEnum.ClassGrow)
             {
                 grow_hp = this.class_grow_hp;
                 grow_str = this.class_grow_str;
@@ -167,6 +178,17 @@ namespace FEBuilderGBA
                 grow_res = this.class_grow_res;
                 grow_luck = this.class_grow_luck;
                 grow_ext_magic = this.class_grow_ext_magic;
+            }
+            else if (growOption == GrowOptionEnum.None)
+            {
+                grow_hp = 0;
+                grow_str = 0;
+                grow_skill = 0;
+                grow_spd = 0;
+                grow_def = 0;
+                grow_res = 0;
+                grow_luck = 0;
+                grow_ext_magic = 0;
             }
 
             if (this.sim_lv < lv)

@@ -52,7 +52,12 @@ namespace FEBuilderGBA
                 new PatchUtil.PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}},
                 new PatchUtil.PatchTableSt{ name="FE8UMAGIC",	ver = "FE8U", addr = 0x2BB44,data = new byte[]{0x01 ,0x4B ,0xA5 ,0xF0 ,0xC1 ,0xFE}},
             };
-
+#if DEBUG
+            if (Program.ROM == null)
+            {
+                return magic_split_enum.NO;
+            }
+#endif
             string version = Program.ROM.RomInfo.VersionToFilename();
             foreach(PatchUtil.PatchTableSt t in table)
             {

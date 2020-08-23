@@ -388,7 +388,7 @@ namespace FEBuilderGBA
             CheckHardCodingWarning();
         }
 
-        public static void GetSim(ref GrowSimulator sim,uint cid)
+        public static void SetSimClass(ref GrowSimulator sim,uint cid)
         {
             InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(cid);
@@ -397,13 +397,13 @@ namespace FEBuilderGBA
                 return;
             }
             sim.SetClassBase(
-                  (int)Program.ROM.u8(addr + 11) //hp
-                , (int)Program.ROM.u8(addr + 12) //str
-                , (int)Program.ROM.u8(addr + 13) //skill
-                , (int)Program.ROM.u8(addr + 14) //spd
-                , (int)Program.ROM.u8(addr + 15) //def
-                , (int)Program.ROM.u8(addr + 16) //res
-                , (int)MagicSplitUtil.GetClassBaseMagicExtends(cid, addr) //ext_magic
+                  (int)(sbyte)Program.ROM.u8(addr + 11) //hp
+                , (int)(sbyte)Program.ROM.u8(addr + 12) //str
+                , (int)(sbyte)Program.ROM.u8(addr + 13) //skill
+                , (int)(sbyte)Program.ROM.u8(addr + 14) //spd
+                , (int)(sbyte)Program.ROM.u8(addr + 15) //def
+                , (int)(sbyte)Program.ROM.u8(addr + 16) //res
+                , (int)(sbyte)MagicSplitUtil.GetClassBaseMagicExtends(cid, addr) //ext_magic
                 );
             sim.SetClassGrow(
                   (int)Program.ROM.u8(addr + 27) //hp
@@ -422,7 +422,7 @@ namespace FEBuilderGBA
             uint uid = 0;
 
             GrowSimulator sim = new GrowSimulator();
-            UnitForm.GetSim(ref sim
+            UnitForm.SetSimUnit(ref sim
                 , uid //支援クラス
             );
             sim.SetClassBase(
@@ -458,7 +458,7 @@ namespace FEBuilderGBA
             using (U.ActiveControlSave uac = new U.ActiveControlSave(this))
             {
                 GrowSimulator sim = BuildSim();
-                sim.Grow((int)X_SIM.Value, false);
+                sim.Grow((int)X_SIM.Value, GrowSimulator.GrowOptionEnum.ClassGrow);
 
                 X_SIM.Value = sim.sim_lv;
                 U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);

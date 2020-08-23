@@ -36,9 +36,15 @@ namespace FEBuilderGBA
 
             this.MapPictureBox.MapMouseDownEvent += MapMouseDownEvent;
 
-//            //ユニットID重複チェック
-//            //ダメ、重複が許されるケースがあった
-//            this.B0.ValueChanged += EventUnitForm_CheckDuplicatePlayerUnits;
+            this.L_3_UNITGROW_LV.ValueChanged += Sim_Change_EventHandler;
+            this.L_3_UNITGROW_GROW.SelectedIndexChanged += Sim_Change_EventHandler;
+
+            this.L_3_UNITGROW_LV.Enter += Sim_Show_EventHandler;
+            this.L_3_UNITGROW_GROW.Enter += Sim_Show_EventHandler;
+
+            this.L_3_UNITGROW_LV.Leave += Sim_Hide_EventHandler;
+            this.L_3_UNITGROW_GROW.Leave += Sim_Hide_EventHandler;
+            this.X_Sim.Hide();
         }
 
         public InputFormRef InputFormRef;
@@ -189,19 +195,6 @@ namespace FEBuilderGBA
         {
             EventHaikuFE7Form f = (EventHaikuFE7Form)InputFormRef.JumpForm<EventHaikuFE7Form>(U.NOT_FOUND);
             f.JumpTo((uint)B0.Value, (uint)MAP_LISTBOX.SelectedIndex);
-        }
-
-        public GrowSimulator BuildSim()
-        {
-            GrowSimulator sim = new GrowSimulator();
-            UnitForm.GetSim(ref sim
-                , (uint)B0.Value //ユニット
-            );
-            ClassForm.GetSim(ref sim
-                , (uint)B1.Value //クラス
-            );
-
-            return sim;
         }
         
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -731,6 +724,33 @@ namespace FEBuilderGBA
             U.ReSelectList(listbox);
 
             InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
+        }
+        private void Sim_Change_EventHandler(object sender, EventArgs e)
+        {
+            if (!X_Sim.Visible)
+            {
+                return;
+            }
+
+            uint lv = (uint)this.L_3_UNITGROW_LV.Value;
+            uint grow = (uint)this.L_3_UNITGROW_GROW.SelectedIndex;
+            uint unitid = (uint)this.B0.Value;
+            uint classid = (uint)this.B1.Value;
+            this.X_Sim.SetParam(lv, grow, unitid, classid);
+        }
+        private void Sim_Show_EventHandler(object sender, EventArgs e)
+        {
+            if (X_Sim.Visible)
+            {
+                return;
+            }
+
+            this.X_Sim.Show();
+            Sim_Change_EventHandler(sender, e);
+        }
+        private void Sim_Hide_EventHandler(object sender, EventArgs e)
+        {
+            this.X_Sim.Hide();
         }
 
     }

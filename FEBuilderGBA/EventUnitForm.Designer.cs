@@ -158,6 +158,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_50 = new System.Windows.Forms.Button();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.panel3.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.F_POST_COORD_PANEL.SuspendLayout();
@@ -1840,12 +1841,22 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // X_Sim
+            // 
+            this.X_Sim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_Sim.Location = new System.Drawing.Point(266, 555);
+            this.X_Sim.Name = "X_Sim";
+            this.X_Sim.Size = new System.Drawing.Size(478, 75);
+            this.X_Sim.TabIndex = 162;
+            this.X_Sim.Visible = false;
+            // 
             // EventUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1714, 1014);
+            this.Controls.Add(this.X_Sim);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel12);
@@ -2049,5 +2060,6 @@
         private System.Windows.Forms.Label X_ITEMDROP;
         private TextBoxEx X_RANDOMMONSTER_VIEW;
         private System.Windows.Forms.Panel X_RANDOMMONSTER;
+        private EventUnitSimUserControl X_Sim;
     }
 }

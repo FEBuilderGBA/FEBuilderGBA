@@ -40,21 +40,22 @@ namespace FEBuilderGBA
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
 
-//            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
-//            {//SkillSystemsがインストールされている場合、同時にロードできるユニット数は16体
-//                this.InputFormRef.AddressListExpandsMax = 16;
-//            }
-
             this.MapPictureBox.MapMouseDownEvent += MapMouseDownEvent;
             this.MapPictureBox.MapMouseDownEvent += MapDoubleClickEvent;
 
-//            //ユニットID重複チェック
-//            //ダメ、重複が許されるケースがあった
-//            this.B0.ValueChanged += EventUnitForm_CheckDuplicatePlayerUnits;
+
+            this.L_3_UNITGROW_LV.ValueChanged += Sim_Change_EventHandler;
+            this.L_3_UNITGROW_GROW.SelectedIndexChanged += Sim_Change_EventHandler;
+
+            this.L_3_UNITGROW_LV.Enter += Sim_Show_EventHandler;
+            this.L_3_UNITGROW_GROW.Enter += Sim_Show_EventHandler;
+
+            this.L_3_UNITGROW_LV.Leave += Sim_Hide_EventHandler;
+            this.L_3_UNITGROW_GROW.Leave += Sim_Hide_EventHandler;
+            this.X_Sim.Hide();
 
             InitCoordMainPanel();
         }
-
         int MoveCallback(int x,int y)
         {
             ControlPanel.Show();
@@ -317,19 +318,7 @@ namespace FEBuilderGBA
             f.JumpTo((uint)B0.Value, (uint)MAP_LISTBOX.SelectedIndex);
         }
 
-        public GrowSimulator BuildSim()
-        {
-            GrowSimulator sim = new GrowSimulator();
-            UnitForm.GetSim(ref sim
-                , (uint)B0.Value //ユニット
-            );
-            ClassForm.GetSim(ref sim
-                , (uint)B1.Value //クラス
-            );
-
-            return sim;
-        }
-        
+     
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -2671,7 +2660,33 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<MonsterProbabilityForm>((uint)this.B1.Value,"AddressList",this.B1);
         }
-        
+        private void Sim_Change_EventHandler(object sender, EventArgs e)
+        {
+            if (! X_Sim.Visible)
+            {
+                return;
+            }
+
+            uint lv = (uint)this.L_3_UNITGROW_LV.Value;
+            uint grow = (uint)this.L_3_UNITGROW_GROW.SelectedIndex;
+            uint unitid = (uint)this.B0.Value;
+            uint classid = (uint)this.B1.Value;
+            this.X_Sim.SetParam(lv,grow, unitid, classid);
+        }
+        private void Sim_Show_EventHandler(object sender, EventArgs e)
+        {
+            if (X_Sim.Visible)
+            {
+                return;
+            }
+
+            this.X_Sim.Show();
+            Sim_Change_EventHandler(sender, e);
+        }
+        private void Sim_Hide_EventHandler(object sender, EventArgs e)
+        {
+            this.X_Sim.Hide();
+        }
     }
 
 }

@@ -1,6 +1,6 @@
-﻿NAME=指定したタイルかどうか判定する(イベント命令)
-NAME.en=AddEvent: Check Map Tile
-NAME.zh=Check Map Tile(Add Event)
+﻿NAME=(OLD)指定したタイルかどうか判定する 20200808(イベント命令)
+NAME.en=(OLD)AddEvent: Check Map Tile 20200808
+NAME.zh=(OLD)Check Map Tile 20200808(Add Event)
 
 TYPE=BIN
 TAG=#EVENT
@@ -29,3 +29,4 @@ BIN:$FREEAREA:1=CHECK_TILE.dmp
 
 AUTHOR=7743
 
+DEPRECATED=1
