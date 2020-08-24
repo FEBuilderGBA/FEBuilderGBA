@@ -7544,7 +7544,87 @@ namespace FEBuilderGBA
                 {
                     MakeCheckError_CheckStruct(patch, (uint)i, errors);
                 }
+                else if (type == "EA" || type == "BIN")
+                {
+                    MakeCheckError_CheckBINorEA(patch, (uint)i, errors);
+                }
 
+            }
+        }
+
+        static void MakeCheckError_CheckBINorEA(PatchSt patch, uint loopI, List<FELint.ErrorSt> errors)
+        {
+            string checkIF = CheckIFFast(patch);
+            if (checkIF == "E")
+            {
+                return;
+            }
+
+            List<BinMapping> binMappings = TracePatchedMapping(patch);
+            foreach(BinMapping b in binMappings)
+            {
+                if (!U.isSafetyOffset(b.addr))
+                {
+                    continue;
+                }
+                if (b.type == FEBuilderGBA.Address.DataTypeEnum.MIX)
+                {
+                    if (b.key != "ORG")
+                    {
+                        continue;
+                    }
+                }
+                else if (b.type == FEBuilderGBA.Address.DataTypeEnum.JUMPTOHACK)
+                {
+                }
+                else
+                {
+                    continue;
+                }
+
+                if (b.addr % 4 != 0)
+                {
+                    b.addr += 2;
+                    if (b.addr % 4 != 0)
+                    {
+                        continue;
+                    }
+                }
+
+                uint pasm;
+                uint jumpcode = Program.ROM.u16(b.addr);
+                if (jumpcode == 0x4B00)
+                {//JumpToHook or FEBuilderGBAHook
+                    if (!U.isSafetyOffset(b.addr + 8))
+                    {
+                        continue;
+                    }
+                    pasm = b.addr + 4;
+                }
+                else if (jumpcode == 0x4778)
+                {//lynhook
+                    if (!U.isSafetyOffset(b.addr + 12))
+                    {
+                        continue;
+                    }
+                    pasm = b.addr + 12;
+                }
+                else
+                {
+                    continue;
+                }
+
+                uint asm = Program.ROM.u32(pasm);
+                if (!U.isSafetyPointer(asm))
+                {
+                    continue;
+                }
+                if (FELint.IsASMCode(asm) == false)
+                {
+                    string name = U.at(patch.Param, "NAME");
+                    errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, U.NOT_FOUND
+                        , R._("パッチ「(0)」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。", name, U.To0xHexString(pasm)), loopI));
+                }
             }
         }
 

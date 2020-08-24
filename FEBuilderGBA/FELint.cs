@@ -352,7 +352,21 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint a = U.toOffset(asm - 1);
+
+            if (IsASMCode(asm) == false)
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("ASM関数ポインタ「{0}」の先に無効な命令が存在します。ASMが壊れている可能性があります。", U.To0xHexString(asm)), tag));
+            }
+            return;
+        }
+        public static bool IsASMCode(uint asm)
+        {
+            if (U.IsValueOdd(asm))
+            {
+                asm = asm - 1;
+            }
+            uint a = U.toOffset(asm);
 
             DisassemblerTrumb.VM vm = new DisassemblerTrumb.VM();
             DisassemblerTrumb dis = new DisassemblerTrumb();
@@ -360,10 +374,9 @@ namespace FEBuilderGBA
             dis.Disassembler(Program.ROM.Data, a, 0, vm);
             if (code.Type == DisassemblerTrumb.CodeType.Unknown)
             {
-                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ASM関数ポインタ「{0}」の先に無効な命令が存在します。ASMが壊れている可能性があります。", U.To0xHexString(asm)), tag));
+                return false;
             }
-            return;
+            return true;
         }
         public static void CheckASMPointerOrNull(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {

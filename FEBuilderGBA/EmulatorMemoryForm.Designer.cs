@@ -208,6 +208,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
+            this.PartyCount = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -229,10 +230,10 @@
             this.label62 = new System.Windows.Forms.Label();
             this.TrapAddress = new FEBuilderGBA.TextBoxEx();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
             this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
-            this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
             this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
@@ -3118,6 +3119,7 @@
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EtcPage.Controls.Add(this.PartyCount);
             this.EtcPage.Controls.Add(this.tabControl1);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
             this.EtcPage.Controls.Add(this.PartyCombo);
@@ -3129,6 +3131,15 @@
             this.EtcPage.Size = new System.Drawing.Size(1646, 888);
             this.EtcPage.TabIndex = 4;
             this.EtcPage.Text = "Etc";
+            // 
+            // PartyCount
+            // 
+            this.PartyCount.AutoSize = true;
+            this.PartyCount.Location = new System.Drawing.Point(96, 20);
+            this.PartyCount.Name = "PartyCount";
+            this.PartyCount.Size = new System.Drawing.Size(94, 18);
+            this.PartyCount.TabIndex = 333;
+            this.PartyCount.Text = "PartyCount";
             // 
             // tabControl1
             // 
@@ -3395,6 +3406,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "パレット";
             // 
+            // PaletteAddress
+            // 
+            this.PaletteAddress.ErrorMessage = "";
+            this.PaletteAddress.Location = new System.Drawing.Point(734, 5);
+            this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.PaletteAddress.Name = "PaletteAddress";
+            this.PaletteAddress.Placeholder = "";
+            this.PaletteAddress.ReadOnly = true;
+            this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
+            this.PaletteAddress.TabIndex = 327;
+            // 
             // PaletteList
             // 
             this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3430,17 +3452,6 @@
             this.label92.TabIndex = 319;
             this.label92.Text = "パレット";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PaletteAddress
-            // 
-            this.PaletteAddress.ErrorMessage = "";
-            this.PaletteAddress.Location = new System.Drawing.Point(734, 5);
-            this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.PaletteAddress.Name = "PaletteAddress";
-            this.PaletteAddress.Placeholder = "";
-            this.PaletteAddress.ReadOnly = true;
-            this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
-            this.PaletteAddress.TabIndex = 327;
             // 
             // SelectPalette
             // 
@@ -5593,7 +5604,7 @@
             "00=PLAYER",
             "40=NPC",
             "80=Enemy"});
-            this.PartyCombo.Location = new System.Drawing.Point(320, 10);
+            this.PartyCombo.Location = new System.Drawing.Point(318, 10);
             this.PartyCombo.Name = "PartyCombo";
             this.PartyCombo.Size = new System.Drawing.Size(459, 26);
             this.PartyCombo.TabIndex = 313;
@@ -6697,6 +6708,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).EndInit();
             this.EtcPage.ResumeLayout(false);
+            this.EtcPage.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -7260,5 +7272,6 @@
         private TextBoxEx N_L_14_MAP;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label PartyCount;
     }
 }

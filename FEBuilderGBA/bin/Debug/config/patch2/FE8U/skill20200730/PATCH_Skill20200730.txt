@@ -1006,6 +1006,8 @@ EDIT_PATCH:14=../HeroesMovement_SkillSystems/PATCH_HeroesMovement ShoveClassList
 EDIT_PATCH:15=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SmiteClassList.txt
 EDIT_PATCH:16=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SwapClassList.txt
 EDIT_PATCH:17=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SwarpClassList.txt
+EDIT_PATCH:18=../ArmorMarchList/PATCH_ArmorMarchList.txt
+
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM

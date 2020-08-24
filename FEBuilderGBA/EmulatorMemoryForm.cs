@@ -1945,6 +1945,7 @@ namespace FEBuilderGBA
             }
 
             this.PartyListBox.DummyAlloc((int)lastZeroPoint, this.PartyListBox.SelectedIndex);
+            this.PartyCount.Text = R._("合計: {0}人", lastZeroPoint);
 
             if (isDetail)
             {

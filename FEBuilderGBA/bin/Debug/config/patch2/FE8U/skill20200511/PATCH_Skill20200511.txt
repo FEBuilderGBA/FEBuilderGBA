@@ -958,6 +958,7 @@ EDIT_PATCH:8=../skill20200211/PATCH_Mag Char Editor.txt
 EDIT_PATCH:9=../skill20200211/PATCH_Mag Class Editor.txt
 EDIT_PATCH:10=../WeaponLockArray_SkillSystems/PATCH_WeaponLockArray_SkillSystems.txt
 EDIT_PATCH:11=../skill20200223/PATCH_Leadership Param Skillsystems Version.txt
+EDIT_PATCH:18=../ArmorMarchList/PATCH_ArmorMarchList.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM

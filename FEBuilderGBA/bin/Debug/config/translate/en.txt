@@ -1153,6 +1153,9 @@ This unit already has five items, so can not have it any more.
 :エミュレータでユニットを選択していません。Aボタンを押してユニットの移動範囲が表示されている状態にしてください。
 Have not selected the unit with the emulator.Please press the A button to make the unit movement range display.
 
+:合計: {0}人
+Total: {0} people
+
 :破損:{0}
 Corrupt: {0}
 
@@ -9315,6 +9318,9 @@ Optimizing the end of the ROM
 
 :完了
 Done
+
+:パッチ「(0)」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。
+An invalid instruction exists before the ASM function pointer "{1}" in patch "(0)".You may need to reinstall the patch.
 
 :「{0}」パッチがインストールされていますが、設定画面のポインタを取得できません。パッチが壊れていると思われます。
 "{0}" patch is installed, but you cannot get the settings screen pointer. It seems that the patch is broken.
