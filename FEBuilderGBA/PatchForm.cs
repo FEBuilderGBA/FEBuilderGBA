@@ -4424,6 +4424,182 @@ namespace FEBuilderGBA
         }
 
         //BINパッチがどこにマップされたのか追跡して表示する.
+        static List<BinMapping> TracePatchedMappingJumpCodeOnly(PatchSt patch)
+        {
+            List<BinMapping> binMappings = new List<BinMapping>();
+
+            string type = U.at(patch.Param, "TYPE");
+            if (type == "BIN")
+            {//BINパッチ. 
+                return TraceBINPatchedMappingJumpCodeOnly(patch);
+            }
+            if (type == "EA")
+            {//EAパッチ. 
+                return TraceEAPatchedMappingJumpCodeOnly(patch);
+            }
+
+            return binMappings;
+        }
+
+        static List<BinMapping> TraceBINPatchedMappingJumpCodeOnly(PatchSt patch)
+        {
+            string type = U.at(patch.Param, "TYPE");
+            Debug.Assert(type == "BIN");
+
+            List<BinMapping> binMappings = new List<BinMapping>();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+
+            Dictionary<string, bool> jumpMatch = new Dictionary<string, bool>();
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string value = pair.Value;
+
+                if (key != "JUMP")
+                {
+                    continue;
+                }
+
+                string basedir = Path.GetDirectoryName(patch.PatchFileName);
+                uint addr = convertBinAddressString(sp[1], 0, 0x100, basedir);
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+
+                uint length;
+                Address.DataTypeEnum datatype;
+                string sp2 = U.at(sp, 2);
+                if (sp2 == "$NONE")
+                {//ジャンプ命令ではなく
+                    continue;
+                }
+                else if (sp2 == "$B")
+                {//B Jump
+                    continue;
+                }
+                else if (sp2 == "$BL")
+                {//BL Jump
+                    continue;
+                }
+                else
+                {//ジャンプコードを生成する
+                    if (addr % 4 != 0)
+                    {//4バイトアライメントをみたせない場合 NOPを追加
+                        length = 10;
+                    }
+                    else
+                    {
+                        length = 8;
+                    }
+                    datatype = Address.DataTypeEnum.JUMPTOHACK;
+                }
+
+                if (addr != U.NOT_FOUND)
+                {
+                    BinMapping b = new BinMapping();
+                    b.key = pair.Key;
+                    b.filename = "$JUMP:" + pair.Value;
+                    b.addr = addr;
+                    b.length = length;
+                    b.type = datatype;
+                    b.bin = Program.ROM.getBinaryData(addr, length);
+                    b.mask = new bool[b.length]; //all false
+
+                    binMappings.Add(b);
+
+                    jumpMatch[pair.Value] = true;
+                }
+
+            }
+
+            return binMappings;
+        }
+
+        //EAパッチがどこにマップされたのか追跡して表示する.
+        static List<BinMapping> TraceEAPatchedMappingJumpCodeOnly(PatchSt patch)
+        {
+            string type = U.at(patch.Param, "TYPE");
+            Debug.Assert(type == "EA");
+
+            List<BinMapping> binMappings = new List<BinMapping>();
+            string dir = Path.GetDirectoryName(patch.PatchFileName);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.event", SearchOption.AllDirectories);
+
+            //メイン処理のファイルが.txtなどで発見できていない場合、追加してあげる.
+            {
+                string ea = U.at(patch.Param, "EA");
+                if (U.GetFilenameExt(ea) != ".EVENT")
+                {
+                    ea = Path.Combine(dir, ea);
+                    files = U.AddIfNotExist(files, ea);
+                }
+            }
+
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+
+            foreach (string fullfilename in files)
+            {
+                if (EAUtil.IsFBGTemp(fullfilename))
+                {
+                    continue;
+                }
+
+                EAUtil ea = new EAUtil(fullfilename);
+                for (int n = 0; n < ea.DataList.Count; n++)
+                {
+                    EAUtil.Data data = ea.DataList[n];
+                    if (data.DataType == EAUtil.DataEnum.ORG)
+                    {
+                        uint addr = data.ORGAddr;
+
+                        BinMapping b = new BinMapping();
+                        b.key = "ORG";
+                        b.filename = "";
+                        b.addr = addr;
+                        b.length = 0; //不明
+                        b.type = Address.DataTypeEnum.MIX;
+
+                        if (U.isSafetyOffset(addr + 64))
+                        {//長さが不明なので比較するとき困るので適当に64バイトほど取得します.
+                            b.bin = Program.ROM.getBinaryData(addr, 64);
+                            b.mask = MakeMaskAddress(b.bin, addr);
+                        }
+                        else
+                        {
+                            b.bin = new byte[0] { };
+                            b.mask = new bool[0] { };
+                        }
+
+                        binMappings.Add(b);
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.LYNHOOK)
+                    {
+                        uint addr = data.ORGAddr;
+                        uint length = (uint)20;
+
+                        BinMapping b = new BinMapping();
+                        b.key = "ORG";
+                        b.filename = "";
+                        b.addr = data.ORGAddr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeMaskAddress(b.bin, addr);
+                        b.type = Address.DataTypeEnum.PATCH_ASM;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                }
+            }
+            return binMappings;
+        }
+
+
+        //BINパッチがどこにマップされたのか追跡して表示する.
         static List<BinMapping> TraceBINPatchedMapping(PatchSt patch)
         {
             string type = U.at(patch.Param, "TYPE");
@@ -7560,7 +7736,8 @@ namespace FEBuilderGBA
                 return;
             }
 
-            List<BinMapping> binMappings = TracePatchedMapping(patch);
+            //処理を早くするためにJumpCodeだけを探索します
+            List<BinMapping> binMappings = TracePatchedMappingJumpCodeOnly(patch);
             foreach(BinMapping b in binMappings)
             {
                 if (!U.isSafetyOffset(b.addr))
@@ -7961,7 +8138,7 @@ namespace FEBuilderGBA
                 if (isASMC)
                 {//ASMC呼び出しの場合は必ずASMポインタ
                     searchaddr = U.ConvertPointer(searchaddr, isASM: true);
-                    movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
+                    movepointerlist = MoveToFreeSapceForm.SearchPointer(searchaddr, isSilent: true);
                     list.Add(new MappingConvert(filename, searchaddr, true, movepointerlist));
                     return;
                 }
