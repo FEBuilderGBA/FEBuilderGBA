@@ -395,7 +395,7 @@
 21310000	Hides currently displayed movement & attack range(HIDE_ATTACK_RANGE)
 203C0000	Gets player cursor position in SlotC(CHECK_CURSOR)	@STOREC	{COND}
 213CFFFF	Move player cursor position to SlotB(SET_CURSOR)
-213CXXYY	Move player cursor position to [XX:MAPX:X],[XX:MAPY:Y](SET_CURSOR)
+213CXXYY	Move player cursor position to [XX:MAPX:X],[YY:MAPY:Y](SET_CURSOR)
 
 40050B00XXXXYYYY2D34FEFF	[XXXX:MAPX:X][YYYY:MAPY:Y]坐标的人物擦除。有一个下降的声音(SET_SOMETHING)	@WARNING_DISA
 40050B00XXXXYYYY2E34FEFF	[XXXX:MAPX:X][YYYY:MAPY:Y]坐标的人物擦除。没有下降的声音(DISA_IF)	@WARNING_DISA

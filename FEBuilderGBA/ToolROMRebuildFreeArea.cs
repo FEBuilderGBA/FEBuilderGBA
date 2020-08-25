@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
         {
             List<Address> knownList = U.MakeAllStructPointersList(false);
-            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+            List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
             U.AppendAllASMStructPointersList(knownList
                 , ldrmap
                 , isPatchInstallOnly: true

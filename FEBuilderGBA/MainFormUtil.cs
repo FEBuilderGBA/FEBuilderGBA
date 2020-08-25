@@ -505,10 +505,23 @@ namespace FEBuilderGBA
                     //no$gba debuggerの場合は、
                     if (isNoDollGBADebugger(emulator))
                     {
-                        //セーブファイルを転送してあげる.
-                        CopyToNoDollGBADebugger(emulator, tempfilename);
-                        //シンボルを生成してあげよう.
-                        MakeSymNoDollGBA(tempfilename , wait);
+                        try
+                        {//セーブファイルを転送してあげる.
+                            CopyToNoDollGBADebugger(emulator, tempfilename);
+                        }
+                        catch(Exception e)
+                        {
+                            R.ShowStopError(R._("no$gba debugerにsavファイルを転送できませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}"), e.ToString());
+                        }
+
+                        try
+                        {//シンボルを生成してあげよう.
+                            MakeSymNoDollGBA(tempfilename, wait);
+                        }
+                        catch (Exception e)
+                        {
+                            R.ShowStopError(R._("no$gba debuger用のsymbolファイルを転送できませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}"), e.ToString());
+                        }
                     }
                 }
                 else

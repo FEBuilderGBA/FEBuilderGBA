@@ -724,6 +724,11 @@ namespace FEBuilderGBA
                 this.LDRMapCache = ldrmap;
                 return ldrmap;
             }
+#if DEBUG
+            //一応、キャッシュと同じかどうかのテストをしておく.
+            List<DisassemblerTrumb.LDRPointer> ldrmaplow = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+            Debug.Assert(this.LDRMapCache.Count == ldrmaplow.Count);
+#endif
             return this.LDRMapCache;
         }
         public void MakeVarsIDArray(List<UseValsID> list)

@@ -436,7 +436,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 213DXXXX	Disable weapon items.[XXXX:DISABLEWEAPONS:WeaponBits](DISABLEWEAPONS)	Mainly used for tutorial events.
 203C0000	Gets player cursor position in SlotC(CHECK_CURSOR)	@STOREC	{COND}
 213CFFFF	Move player cursor position to SlotB(SET_CURSOR)
-213CXXYY	Move player cursor position to [XX:MAPX:X],[XX:MAPY:Y](SET_CURSOR)
+213CXXYY	Move player cursor position to [XX:MAPX:X],[YY:MAPY:Y](SET_CURSOR)
 2114XXXX	[XXXX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}
 2011XXXX	IGNORE_KEYS[XXXX:IGNORE_KEYS:KeyMask]	Write a value to 03000010(STORETOSOMETHING)	Mainly used for tutorial events.
 

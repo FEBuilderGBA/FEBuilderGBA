@@ -5944,6 +5944,12 @@ Starting process: {0}
 :ファイルに書き込めませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}
 Could not write to file.\r\nThe file may be in use by another application.\r\n{0}.
 
+:no$gba debugerにsavファイルを転送できませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}
+Could not transfer sav file to no$gba debuger.\r\nThe file may be in use by another application.\r\n{0}.
+
+:no$gba debuger用のsymbolファイルを転送できませんでした。\r\nファイルが他アプリケーションで利用中の可能性があります。\r\n{0}
+Could not transfer the symbol file for the no$gba debuger.\r\nThe file may be in use by another application.\r\n{0}.
+
 :Sappyが存在しません。\r\n設定->オプションから正しいパスを設定してください。
 Sappy does not exist.\r\nPlease set the correct path from the setting -> option.
 
@@ -11482,8 +11488,8 @@ Output changes made to this ROM this time
 :UndoBufferのエクスポート
 Export UndoBuffer
 
-://エラー:{0}個のエラーがあります
-//Error: There are {0} errors
+:エラー:{0}個のエラーがあります
+Error: There are {0} errors.
 
 :ROMが読みこまれていないので実行できません
 ROM can't be executed because it hasn't been read.

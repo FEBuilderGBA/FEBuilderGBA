@@ -2574,6 +2574,7 @@ namespace FEBuilderGBA
                 OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
             }
         }
+
         public static List<UseValsID> MakeVarsIDArray()
         {
             List<UseValsID> list = new List<UseValsID>();

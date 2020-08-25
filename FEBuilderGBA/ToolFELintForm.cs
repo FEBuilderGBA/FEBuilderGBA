@@ -49,7 +49,7 @@ namespace FEBuilderGBA
             bounds.X += U.DrawText(ar.name, g, boldFont, brush, isWithDraw, bounds);
             bounds.X += 20;
 
-            text = R._("//エラー:{0}個のエラーがあります", ar.tag );
+            text = "//" + R._("エラー:{0}個のエラーがあります", ar.tag);
             bounds.X += U.DrawText(text, g, boldFont, errorBrush, isWithDraw, bounds);
 
 
@@ -71,7 +71,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < errorMapUI.Count; i++)
             {
                 U.AddrResult ar = errorMapUI[i];
-                string text = R._("//エラー:{0}個のエラーがあります", ar.tag );
+                string text = "//" + R._("エラー:{0}個のエラーがあります", ar.tag);
                 U.echo(ar.name + text);
             }
 

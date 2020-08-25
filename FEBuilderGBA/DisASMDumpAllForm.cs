@@ -96,7 +96,7 @@ namespace FEBuilderGBA
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
 
 
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
                 List<Address> structlist = new List<Address>();
                 //no$gbaは32546lines以上の symを読みこむと落ちるので手加減する.
@@ -160,9 +160,6 @@ namespace FEBuilderGBA
                         }
                     }
 
-                    if (pair.Key == 0x908B95C)
-                    {
-                    }
                     line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);
 
                     writer.WriteLine(line);
@@ -282,7 +279,7 @@ namespace FEBuilderGBA
 
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
 
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
                 List<Address> structlist = U.MakeAllStructPointersList(false); //既存の構造体
                 U.AppendAllASMStructPointersList(structlist
@@ -474,9 +471,7 @@ namespace FEBuilderGBA
 
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
 
-
-
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
                 List<Address> structlist = U.MakeAllStructPointersList(false); //既存の構造体
                 U.AppendAllASMStructPointersList(structlist
