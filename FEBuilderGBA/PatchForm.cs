@@ -7800,7 +7800,7 @@ namespace FEBuilderGBA
                 {
                     string name = U.at(patch.Param, "NAME");
                     errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, U.NOT_FOUND
-                        , R._("パッチ「(0)」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。", name, U.To0xHexString(pasm)), loopI));
+                        , R._("パッチ「{0}」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。", name, U.To0xHexString(pasm)), loopI));
                 }
             }
         }
