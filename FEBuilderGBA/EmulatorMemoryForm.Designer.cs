@@ -37,25 +37,18 @@
             this.EventPage = new System.Windows.Forms.TabPage();
             this.SubtileButton = new System.Windows.Forms.Button();
             this.SpeechButton = new System.Windows.Forms.Button();
-            this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.label93 = new System.Windows.Forms.Label();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.RunningEventListBox = new FEBuilderGBA.ListBoxEx();
             this.RunningEventListBoxLabel = new System.Windows.Forms.Label();
-            this.FlagListBox = new FEBuilderGBA.ListBoxEx();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
-            this.MemorySlotListBox = new FEBuilderGBA.ListBoxEx();
             this.MemorySlotLabel = new System.Windows.Forms.Label();
             this.EventHistoryPage = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.EventHistoryListBox = new FEBuilderGBA.ListBoxEx();
             this.ProcPage = new System.Windows.Forms.TabPage();
             this.Proc_ControlPanel = new System.Windows.Forms.Panel();
             this.PROCS_Address = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.PROCS_AddressLabel = new System.Windows.Forms.Label();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
@@ -107,47 +100,26 @@
             this.PROCS_B93 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B77 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B85 = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_L_104_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_96_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_88_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_80_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_72_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_64_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_100_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_92_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_84_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_76_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_68_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_60_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_56_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_52_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_48_DWORD = new FEBuilderGBA.TextBoxEx();
-            this.PROCS_L_44_DWORD = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PROCS_B41 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B43 = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_CURSOL_CODE = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B42 = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_L_16_TEXT = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_44 = new System.Windows.Forms.Label();
             this.PROCS_P16 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B104 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_16_TEXT = new System.Windows.Forms.Label();
             this.PROCS_B44 = new System.Windows.Forms.NumericUpDown();
-            this.textBoxEx16 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_104 = new System.Windows.Forms.Label();
             this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_48 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.PROCS_B48 = new System.Windows.Forms.NumericUpDown();
-            this.textBoxEx17 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_52 = new System.Windows.Forms.Label();
             this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B52 = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.PROCS_J_56 = new System.Windows.Forms.Label();
-            this.textBoxEx18 = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B56 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_60 = new System.Windows.Forms.Label();
@@ -169,44 +141,36 @@
             this.PROCS_B96 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_36 = new System.Windows.Forms.Label();
             this.PROCS_J_72 = new System.Windows.Forms.Label();
-            this.PROCS_L_32_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_96 = new System.Windows.Forms.Label();
             this.PROCS_P32 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B72 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_32_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_B92 = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_L_28_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_J_76 = new System.Windows.Forms.Label();
             this.PROCS_P28 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_92 = new System.Windows.Forms.Label();
             this.PROCS_J_28_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_B76 = new System.Windows.Forms.NumericUpDown();
-            this.PROCS_L_24_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B88 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_P24 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_80 = new System.Windows.Forms.Label();
             this.PROCS_J_24_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_J_88 = new System.Windows.Forms.Label();
-            this.PROCS_L_20_RAMPROCS = new FEBuilderGBA.TextBoxEx();
             this.PROCS_B80 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_P20 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_B84 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_20_RAMPROCS = new System.Windows.Forms.Label();
             this.PROCS_J_84 = new System.Windows.Forms.Label();
-            this.PROCS_L_12_ASM = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P12 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_12_ASM = new System.Windows.Forms.Label();
-            this.PROCS_L_8_ASM = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P8 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_8_ASM = new System.Windows.Forms.Label();
             this.PROCS_P4 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_JUMP_CURSOL_CODE = new System.Windows.Forms.Label();
-            this.PROCS_NAME = new FEBuilderGBA.TextBoxEx();
             this.PROCS_P0 = new System.Windows.Forms.NumericUpDown();
             this.PROCS_J_0_PROCS = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
             this.PartyCount = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -214,46 +178,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label58 = new System.Windows.Forms.Label();
             this.N_J_14_MAP = new System.Windows.Forms.Label();
-            this.X_ETC_WorldmapNode_Text = new FEBuilderGBA.TextBoxEx();
-            this.BGMName = new FEBuilderGBA.TextBoxEx();
-            this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
             this.N_B14 = new System.Windows.Forms.NumericUpDown();
-            this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
-            this.N_L_14_MAP = new FEBuilderGBA.TextBoxEx();
             this.BGM = new System.Windows.Forms.NumericUpDown();
             this.J_BGM = new System.Windows.Forms.Label();
-            this.SoundAddress = new FEBuilderGBA.TextBoxEx();
-            this.SoundList = new FEBuilderGBA.ListBoxEx();
             this.label91 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.TrapList = new FEBuilderGBA.ListBoxEx();
             this.label62 = new System.Windows.Forms.Label();
-            this.TrapAddress = new FEBuilderGBA.TextBoxEx();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
-            this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
-            this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
             this.label82 = new System.Windows.Forms.Label();
-            this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
-            this.PARTY_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.PARTY_AI2_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_AI1_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_PORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_38_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_36_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_34_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_32_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.PARTY_L_30_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.PARTY_B71 = new System.Windows.Forms.NumericUpDown();
             this.label89 = new System.Windows.Forms.Label();
             this.PARTY_B70 = new System.Windows.Forms.NumericUpDown();
@@ -318,27 +259,22 @@
             this.label41 = new System.Windows.Forms.Label();
             this.PARTY_B40 = new System.Windows.Forms.NumericUpDown();
             this.label38 = new System.Windows.Forms.Label();
-            this.PARTY_L_38_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B39 = new System.Windows.Forms.NumericUpDown();
             this.label34 = new System.Windows.Forms.Label();
             this.PARTY_B38 = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
-            this.PARTY_L_36_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B37 = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.PARTY_B36 = new System.Windows.Forms.NumericUpDown();
             this.label29 = new System.Windows.Forms.Label();
-            this.PARTY_L_34_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B35 = new System.Windows.Forms.NumericUpDown();
             this.label31 = new System.Windows.Forms.Label();
             this.PARTY_B34 = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
-            this.PARTY_L_32_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B33 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.PARTY_B32 = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.PARTY_L_30_ITEM = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B31 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.PARTY_B30 = new System.Windows.Forms.NumericUpDown();
@@ -347,7 +283,6 @@
             this.label66 = new System.Windows.Forms.Label();
             this.PARTY_B29 = new System.Windows.Forms.NumericUpDown();
             this.label65 = new System.Windows.Forms.Label();
-            this.PARTY_RAMUNITAID = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B27 = new System.Windows.Forms.NumericUpDown();
             this.label64 = new System.Windows.Forms.Label();
             this.PARTY_B26 = new System.Windows.Forms.NumericUpDown();
@@ -362,17 +297,12 @@
             this.label59 = new System.Windows.Forms.Label();
             this.PARTY_B21 = new System.Windows.Forms.NumericUpDown();
             this.label57 = new System.Windows.Forms.Label();
-            this.PARTY_RAMUNITSTATE = new FEBuilderGBA.TextBoxEx();
-            this.PARTY_ROMCLASSPOINTER = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B10 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBoxEx52 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown59 = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBoxEx53 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown61 = new System.Windows.Forms.NumericUpDown();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBoxEx54 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown64 = new System.Windows.Forms.NumericUpDown();
             this.label33 = new System.Windows.Forms.Label();
             this.PARTY_B19 = new System.Windows.Forms.NumericUpDown();
@@ -395,14 +325,14 @@
             this.label53 = new System.Windows.Forms.Label();
             this.PARTY_P4 = new System.Windows.Forms.NumericUpDown();
             this.label54 = new System.Windows.Forms.Label();
-            this.PARTY_ROMUNITPOINTER = new FEBuilderGBA.TextBoxEx();
             this.PARTY_P0 = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
-            this.PartyListBox = new FEBuilderGBA.ListBoxEx();
             this.label56 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
+            this.label94 = new System.Windows.Forms.Label();
+            this.CHEAT_TURN_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_TURN = new System.Windows.Forms.Button();
             this.CHEAT_WARP_NODE_VALUE = new System.Windows.Forms.NumericUpDown();
             this.CHEAT_WARP_NODE_JUMP = new System.Windows.Forms.Label();
             this.CHEAT_ALL_ENEMY_DO_NOT_MOVE = new System.Windows.Forms.Button();
@@ -439,6 +369,79 @@
             this.label11 = new System.Windows.Forms.Label();
             this.CHEAT_UNIT_GROW = new System.Windows.Forms.Button();
             this.CHEAT_SET_FLAG03 = new System.Windows.Forms.Button();
+            this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.RunningEventListBox = new FEBuilderGBA.ListBoxEx();
+            this.FlagListBox = new FEBuilderGBA.ListBoxEx();
+            this.MemorySlotListBox = new FEBuilderGBA.ListBoxEx();
+            this.EventHistoryListBox = new FEBuilderGBA.ListBoxEx();
+            this.PROCS_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_104_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_96_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_88_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_80_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_72_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_64_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_100_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_92_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_84_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_76_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_68_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_60_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_56_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_52_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_48_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_44_DWORD = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_CURSOL_CODE = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_16_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx16 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx17 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx18 = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_32_RAMPROCS = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_28_RAMPROCS = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_24_RAMPROCS = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_20_RAMPROCS = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_12_ASM = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_L_8_ASM = new FEBuilderGBA.TextBoxEx();
+            this.PROCS_NAME = new FEBuilderGBA.TextBoxEx();
+            this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
+            this.X_ETC_WorldmapNode_Text = new FEBuilderGBA.TextBoxEx();
+            this.BGMName = new FEBuilderGBA.TextBoxEx();
+            this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
+            this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
+            this.N_L_14_MAP = new FEBuilderGBA.TextBoxEx();
+            this.SoundAddress = new FEBuilderGBA.TextBoxEx();
+            this.SoundList = new FEBuilderGBA.ListBoxEx();
+            this.TrapList = new FEBuilderGBA.ListBoxEx();
+            this.TrapAddress = new FEBuilderGBA.TextBoxEx();
+            this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
+            this.PaletteList = new FEBuilderGBA.ListBoxEx();
+            this.SelectPalette = new FEBuilderGBA.TextBoxEx();
+            this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
+            this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_AI2_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_AI1_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_PORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_38_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_36_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_34_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_32_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_30_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.PARTY_L_38_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_L_36_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_L_34_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_L_32_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_L_30_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_RAMUNITAID = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_RAMUNITSTATE = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_ROMCLASSPOINTER = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx52 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx53 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx54 = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_ROMUNITPOINTER = new FEBuilderGBA.TextBoxEx();
+            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
+            this.PartyListBox = new FEBuilderGBA.ListBoxEx();
             this.CHEAT_WARP_NODE_NAME = new FEBuilderGBA.TextBoxEx();
             this.systemIconPictureBox5 = new FEBuilderGBA.SystemIconPictureBox();
             this.CHEAT_WARP_EDTION_NAME = new FEBuilderGBA.TextBoxEx();
@@ -583,12 +586,6 @@
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B71)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B70)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B69)).BeginInit();
@@ -656,6 +653,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).BeginInit();
             this.CheatPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_TURN_VALUE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).BeginInit();
@@ -664,6 +662,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
@@ -767,20 +771,6 @@
             this.SpeechButton.UseVisualStyleBackColor = true;
             this.SpeechButton.Click += new System.EventHandler(this.SpeechButton_Click);
             // 
-            // CurrentTextBox
-            // 
-            this.CurrentTextBox.ErrorMessage = "";
-            this.CurrentTextBox.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CurrentTextBox.Location = new System.Drawing.Point(-1, 29);
-            this.CurrentTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.CurrentTextBox.Name = "CurrentTextBox";
-            this.CurrentTextBox.Placeholder = "";
-            this.CurrentTextBox.ReadOnly = true;
-            this.CurrentTextBox.Size = new System.Drawing.Size(584, 163);
-            this.CurrentTextBox.TabIndex = 309;
-            this.CurrentTextBox.Text = "";
-            this.CurrentTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CurrentTextBox_MouseDoubleClick);
-            // 
             // label93
             // 
             this.label93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -791,31 +781,6 @@
             this.label93.TabIndex = 312;
             this.label93.Text = "Text";
             this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // N_SelectAddress
-            // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(166, 195);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(240, 25);
-            this.N_SelectAddress.TabIndex = 307;
-            // 
-            // RunningEventListBox
-            // 
-            this.RunningEventListBox.FormattingEnabled = true;
-            this.RunningEventListBox.HorizontalScrollbar = true;
-            this.RunningEventListBox.IntegralHeight = false;
-            this.RunningEventListBox.ItemHeight = 18;
-            this.RunningEventListBox.Location = new System.Drawing.Point(588, 30);
-            this.RunningEventListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.RunningEventListBox.Name = "RunningEventListBox";
-            this.RunningEventListBox.Size = new System.Drawing.Size(1058, 850);
-            this.RunningEventListBox.TabIndex = 168;
-            this.RunningEventListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RunningEventListBox_KeyDown);
-            this.RunningEventListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RunningEventListBox_MouseDoubleClick);
             // 
             // RunningEventListBoxLabel
             // 
@@ -829,20 +794,6 @@
             this.RunningEventListBoxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RunningEventListBoxLabel.Click += new System.EventHandler(this.J_CurrentEventAddress_Click);
             // 
-            // FlagListBox
-            // 
-            this.FlagListBox.FormattingEnabled = true;
-            this.FlagListBox.IntegralHeight = false;
-            this.FlagListBox.ItemHeight = 18;
-            this.FlagListBox.Location = new System.Drawing.Point(0, 220);
-            this.FlagListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.FlagListBox.Name = "FlagListBox";
-            this.FlagListBox.Size = new System.Drawing.Size(407, 660);
-            this.FlagListBox.TabIndex = 16;
-            this.FlagListBox.SelectedIndexChanged += new System.EventHandler(this.FlagListBox_SelectedIndexChanged);
-            this.FlagListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlagListBox_KeyDown);
-            this.FlagListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FlagListBox_MouseDoubleClick);
-            // 
             // N1_LabelFilter
             // 
             this.N1_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -853,18 +804,6 @@
             this.N1_LabelFilter.TabIndex = 108;
             this.N1_LabelFilter.Text = "フラグ";
             this.N1_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MemorySlotListBox
-            // 
-            this.MemorySlotListBox.FormattingEnabled = true;
-            this.MemorySlotListBox.IntegralHeight = false;
-            this.MemorySlotListBox.ItemHeight = 18;
-            this.MemorySlotListBox.Location = new System.Drawing.Point(410, 220);
-            this.MemorySlotListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MemorySlotListBox.Name = "MemorySlotListBox";
-            this.MemorySlotListBox.Size = new System.Drawing.Size(173, 660);
-            this.MemorySlotListBox.TabIndex = 14;
-            this.MemorySlotListBox.SelectedIndexChanged += new System.EventHandler(this.MemorySlotListBox_SelectedIndexChanged);
             // 
             // MemorySlotLabel
             // 
@@ -941,20 +880,6 @@
             this.label6.Text = "より古い↓";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // EventHistoryListBox
-            // 
-            this.EventHistoryListBox.FormattingEnabled = true;
-            this.EventHistoryListBox.HorizontalScrollbar = true;
-            this.EventHistoryListBox.IntegralHeight = false;
-            this.EventHistoryListBox.ItemHeight = 18;
-            this.EventHistoryListBox.Location = new System.Drawing.Point(26, 70);
-            this.EventHistoryListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.EventHistoryListBox.Name = "EventHistoryListBox";
-            this.EventHistoryListBox.Size = new System.Drawing.Size(1613, 814);
-            this.EventHistoryListBox.TabIndex = 109;
-            this.EventHistoryListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventHistoryListBox_KeyDown);
-            this.EventHistoryListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventHistoryListBox_MouseDoubleClick);
-            // 
             // ProcPage
             // 
             this.ProcPage.BackColor = System.Drawing.SystemColors.Control;
@@ -998,17 +923,6 @@
             this.PROCS_Address.ReadOnly = true;
             this.PROCS_Address.Size = new System.Drawing.Size(161, 25);
             this.PROCS_Address.TabIndex = 304;
-            // 
-            // PROCS_SelectAddress
-            // 
-            this.PROCS_SelectAddress.ErrorMessage = "";
-            this.PROCS_SelectAddress.Location = new System.Drawing.Point(490, 4);
-            this.PROCS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PROCS_SelectAddress.Name = "PROCS_SelectAddress";
-            this.PROCS_SelectAddress.Placeholder = "";
-            this.PROCS_SelectAddress.ReadOnly = true;
-            this.PROCS_SelectAddress.Size = new System.Drawing.Size(210, 25);
-            this.PROCS_SelectAddress.TabIndex = 303;
             // 
             // label22
             // 
@@ -1905,182 +1819,6 @@
             this.PROCS_B85.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B85.TabIndex = 97;
             // 
-            // PROCS_L_104_DWORD
-            // 
-            this.PROCS_L_104_DWORD.ErrorMessage = "";
-            this.PROCS_L_104_DWORD.Location = new System.Drawing.Point(908, 572);
-            this.PROCS_L_104_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_104_DWORD.Name = "PROCS_L_104_DWORD";
-            this.PROCS_L_104_DWORD.Placeholder = "";
-            this.PROCS_L_104_DWORD.ReadOnly = true;
-            this.PROCS_L_104_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_104_DWORD.TabIndex = 122;
-            // 
-            // PROCS_L_96_DWORD
-            // 
-            this.PROCS_L_96_DWORD.ErrorMessage = "";
-            this.PROCS_L_96_DWORD.Location = new System.Drawing.Point(908, 542);
-            this.PROCS_L_96_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_96_DWORD.Name = "PROCS_L_96_DWORD";
-            this.PROCS_L_96_DWORD.Placeholder = "";
-            this.PROCS_L_96_DWORD.ReadOnly = true;
-            this.PROCS_L_96_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_96_DWORD.TabIndex = 109;
-            // 
-            // PROCS_L_88_DWORD
-            // 
-            this.PROCS_L_88_DWORD.ErrorMessage = "";
-            this.PROCS_L_88_DWORD.Location = new System.Drawing.Point(908, 512);
-            this.PROCS_L_88_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_88_DWORD.Name = "PROCS_L_88_DWORD";
-            this.PROCS_L_88_DWORD.Placeholder = "";
-            this.PROCS_L_88_DWORD.ReadOnly = true;
-            this.PROCS_L_88_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_88_DWORD.TabIndex = 91;
-            // 
-            // PROCS_L_80_DWORD
-            // 
-            this.PROCS_L_80_DWORD.ErrorMessage = "";
-            this.PROCS_L_80_DWORD.Location = new System.Drawing.Point(908, 481);
-            this.PROCS_L_80_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_80_DWORD.Name = "PROCS_L_80_DWORD";
-            this.PROCS_L_80_DWORD.Placeholder = "";
-            this.PROCS_L_80_DWORD.ReadOnly = true;
-            this.PROCS_L_80_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_80_DWORD.TabIndex = 79;
-            // 
-            // PROCS_L_72_DWORD
-            // 
-            this.PROCS_L_72_DWORD.ErrorMessage = "";
-            this.PROCS_L_72_DWORD.Location = new System.Drawing.Point(908, 451);
-            this.PROCS_L_72_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_72_DWORD.Name = "PROCS_L_72_DWORD";
-            this.PROCS_L_72_DWORD.Placeholder = "";
-            this.PROCS_L_72_DWORD.ReadOnly = true;
-            this.PROCS_L_72_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_72_DWORD.TabIndex = 65;
-            // 
-            // PROCS_L_64_DWORD
-            // 
-            this.PROCS_L_64_DWORD.ErrorMessage = "";
-            this.PROCS_L_64_DWORD.Location = new System.Drawing.Point(908, 422);
-            this.PROCS_L_64_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_64_DWORD.Name = "PROCS_L_64_DWORD";
-            this.PROCS_L_64_DWORD.Placeholder = "";
-            this.PROCS_L_64_DWORD.ReadOnly = true;
-            this.PROCS_L_64_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_64_DWORD.TabIndex = 53;
-            // 
-            // PROCS_L_100_DWORD
-            // 
-            this.PROCS_L_100_DWORD.ErrorMessage = "";
-            this.PROCS_L_100_DWORD.Location = new System.Drawing.Point(422, 576);
-            this.PROCS_L_100_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_100_DWORD.Name = "PROCS_L_100_DWORD";
-            this.PROCS_L_100_DWORD.Placeholder = "";
-            this.PROCS_L_100_DWORD.ReadOnly = true;
-            this.PROCS_L_100_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_100_DWORD.TabIndex = 115;
-            // 
-            // PROCS_L_92_DWORD
-            // 
-            this.PROCS_L_92_DWORD.ErrorMessage = "";
-            this.PROCS_L_92_DWORD.Location = new System.Drawing.Point(422, 546);
-            this.PROCS_L_92_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_92_DWORD.Name = "PROCS_L_92_DWORD";
-            this.PROCS_L_92_DWORD.Placeholder = "";
-            this.PROCS_L_92_DWORD.ReadOnly = true;
-            this.PROCS_L_92_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_92_DWORD.TabIndex = 103;
-            // 
-            // PROCS_L_84_DWORD
-            // 
-            this.PROCS_L_84_DWORD.ErrorMessage = "";
-            this.PROCS_L_84_DWORD.Location = new System.Drawing.Point(422, 512);
-            this.PROCS_L_84_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_84_DWORD.Name = "PROCS_L_84_DWORD";
-            this.PROCS_L_84_DWORD.Placeholder = "";
-            this.PROCS_L_84_DWORD.ReadOnly = true;
-            this.PROCS_L_84_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_84_DWORD.TabIndex = 85;
-            // 
-            // PROCS_L_76_DWORD
-            // 
-            this.PROCS_L_76_DWORD.ErrorMessage = "";
-            this.PROCS_L_76_DWORD.Location = new System.Drawing.Point(422, 480);
-            this.PROCS_L_76_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_76_DWORD.Name = "PROCS_L_76_DWORD";
-            this.PROCS_L_76_DWORD.Placeholder = "";
-            this.PROCS_L_76_DWORD.ReadOnly = true;
-            this.PROCS_L_76_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_76_DWORD.TabIndex = 72;
-            // 
-            // PROCS_L_68_DWORD
-            // 
-            this.PROCS_L_68_DWORD.ErrorMessage = "";
-            this.PROCS_L_68_DWORD.Location = new System.Drawing.Point(422, 450);
-            this.PROCS_L_68_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_68_DWORD.Name = "PROCS_L_68_DWORD";
-            this.PROCS_L_68_DWORD.Placeholder = "";
-            this.PROCS_L_68_DWORD.ReadOnly = true;
-            this.PROCS_L_68_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_68_DWORD.TabIndex = 59;
-            // 
-            // PROCS_L_60_DWORD
-            // 
-            this.PROCS_L_60_DWORD.ErrorMessage = "";
-            this.PROCS_L_60_DWORD.Location = new System.Drawing.Point(422, 422);
-            this.PROCS_L_60_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_60_DWORD.Name = "PROCS_L_60_DWORD";
-            this.PROCS_L_60_DWORD.Placeholder = "";
-            this.PROCS_L_60_DWORD.ReadOnly = true;
-            this.PROCS_L_60_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_60_DWORD.TabIndex = 47;
-            // 
-            // PROCS_L_56_DWORD
-            // 
-            this.PROCS_L_56_DWORD.ErrorMessage = "";
-            this.PROCS_L_56_DWORD.Location = new System.Drawing.Point(908, 392);
-            this.PROCS_L_56_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_56_DWORD.Name = "PROCS_L_56_DWORD";
-            this.PROCS_L_56_DWORD.Placeholder = "";
-            this.PROCS_L_56_DWORD.ReadOnly = true;
-            this.PROCS_L_56_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_56_DWORD.TabIndex = 40;
-            // 
-            // PROCS_L_52_DWORD
-            // 
-            this.PROCS_L_52_DWORD.ErrorMessage = "";
-            this.PROCS_L_52_DWORD.Location = new System.Drawing.Point(422, 392);
-            this.PROCS_L_52_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_52_DWORD.Name = "PROCS_L_52_DWORD";
-            this.PROCS_L_52_DWORD.Placeholder = "";
-            this.PROCS_L_52_DWORD.ReadOnly = true;
-            this.PROCS_L_52_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_52_DWORD.TabIndex = 34;
-            // 
-            // PROCS_L_48_DWORD
-            // 
-            this.PROCS_L_48_DWORD.ErrorMessage = "";
-            this.PROCS_L_48_DWORD.Location = new System.Drawing.Point(908, 362);
-            this.PROCS_L_48_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_48_DWORD.Name = "PROCS_L_48_DWORD";
-            this.PROCS_L_48_DWORD.Placeholder = "";
-            this.PROCS_L_48_DWORD.ReadOnly = true;
-            this.PROCS_L_48_DWORD.Size = new System.Drawing.Size(101, 25);
-            this.PROCS_L_48_DWORD.TabIndex = 28;
-            // 
-            // PROCS_L_44_DWORD
-            // 
-            this.PROCS_L_44_DWORD.ErrorMessage = "";
-            this.PROCS_L_44_DWORD.Location = new System.Drawing.Point(422, 362);
-            this.PROCS_L_44_DWORD.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_44_DWORD.Name = "PROCS_L_44_DWORD";
-            this.PROCS_L_44_DWORD.Placeholder = "";
-            this.PROCS_L_44_DWORD.ReadOnly = true;
-            this.PROCS_L_44_DWORD.Size = new System.Drawing.Size(102, 25);
-            this.PROCS_L_44_DWORD.TabIndex = 22;
-            // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -2132,17 +1870,6 @@
             this.PROCS_B43.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B43.TabIndex = 16;
             // 
-            // PROCS_CURSOL_CODE
-            // 
-            this.PROCS_CURSOL_CODE.ErrorMessage = "";
-            this.PROCS_CURSOL_CODE.Location = new System.Drawing.Point(338, 35);
-            this.PROCS_CURSOL_CODE.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_CURSOL_CODE.Name = "PROCS_CURSOL_CODE";
-            this.PROCS_CURSOL_CODE.Placeholder = "";
-            this.PROCS_CURSOL_CODE.ReadOnly = true;
-            this.PROCS_CURSOL_CODE.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_CURSOL_CODE.TabIndex = 300;
-            // 
             // PROCS_B42
             // 
             this.PROCS_B42.Hexadecimal = true;
@@ -2157,17 +1884,6 @@
             this.PROCS_B42.ReadOnly = true;
             this.PROCS_B42.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B42.TabIndex = 298;
-            // 
-            // PROCS_L_16_TEXT
-            // 
-            this.PROCS_L_16_TEXT.ErrorMessage = "";
-            this.PROCS_L_16_TEXT.Location = new System.Drawing.Point(338, 120);
-            this.PROCS_L_16_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_16_TEXT.Name = "PROCS_L_16_TEXT";
-            this.PROCS_L_16_TEXT.Placeholder = "";
-            this.PROCS_L_16_TEXT.ReadOnly = true;
-            this.PROCS_L_16_TEXT.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_16_TEXT.TabIndex = 295;
             // 
             // PROCS_J_44
             // 
@@ -2234,17 +1950,6 @@
             this.PROCS_B44.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B44.TabIndex = 18;
             // 
-            // textBoxEx16
-            // 
-            this.textBoxEx16.ErrorMessage = "";
-            this.textBoxEx16.Location = new System.Drawing.Point(329, 830);
-            this.textBoxEx16.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx16.Name = "textBoxEx16";
-            this.textBoxEx16.Placeholder = "";
-            this.textBoxEx16.ReadOnly = true;
-            this.textBoxEx16.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx16.TabIndex = 289;
-            // 
             // PROCS_J_104
             // 
             this.PROCS_J_104.Location = new System.Drawing.Point(533, 576);
@@ -2305,17 +2010,6 @@
             this.PROCS_B48.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B48.TabIndex = 24;
             // 
-            // textBoxEx17
-            // 
-            this.textBoxEx17.ErrorMessage = "";
-            this.textBoxEx17.Location = new System.Drawing.Point(329, 802);
-            this.textBoxEx17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx17.Name = "textBoxEx17";
-            this.textBoxEx17.Placeholder = "";
-            this.textBoxEx17.ReadOnly = true;
-            this.textBoxEx17.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx17.TabIndex = 286;
-            // 
             // PROCS_J_52
             // 
             this.PROCS_J_52.Location = new System.Drawing.Point(49, 396);
@@ -2375,17 +2069,6 @@
             this.PROCS_J_56.TabIndex = 35;
             this.PROCS_J_56.Text = "56(0x38)";
             this.PROCS_J_56.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxEx18
-            // 
-            this.textBoxEx18.ErrorMessage = "";
-            this.textBoxEx18.Location = new System.Drawing.Point(329, 773);
-            this.textBoxEx18.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx18.Name = "textBoxEx18";
-            this.textBoxEx18.Placeholder = "";
-            this.textBoxEx18.ReadOnly = true;
-            this.textBoxEx18.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx18.TabIndex = 283;
             // 
             // PROCS_B56
             // 
@@ -2652,17 +2335,6 @@
             this.PROCS_J_72.Text = "72(0x48)";
             this.PROCS_J_72.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PROCS_L_32_RAMPROCS
-            // 
-            this.PROCS_L_32_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_32_RAMPROCS.Location = new System.Drawing.Point(338, 234);
-            this.PROCS_L_32_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_32_RAMPROCS.Name = "PROCS_L_32_RAMPROCS";
-            this.PROCS_L_32_RAMPROCS.Placeholder = "";
-            this.PROCS_L_32_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_32_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_32_RAMPROCS.TabIndex = 223;
-            // 
             // PROCS_J_96
             // 
             this.PROCS_J_96.Location = new System.Drawing.Point(533, 546);
@@ -2728,17 +2400,6 @@
             this.PROCS_B92.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B92.TabIndex = 93;
             // 
-            // PROCS_L_28_RAMPROCS
-            // 
-            this.PROCS_L_28_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_28_RAMPROCS.Location = new System.Drawing.Point(338, 206);
-            this.PROCS_L_28_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_28_RAMPROCS.Name = "PROCS_L_28_RAMPROCS";
-            this.PROCS_L_28_RAMPROCS.Placeholder = "";
-            this.PROCS_L_28_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_28_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_28_RAMPROCS.TabIndex = 220;
-            // 
             // PROCS_J_76
             // 
             this.PROCS_J_76.Location = new System.Drawing.Point(49, 484);
@@ -2799,17 +2460,6 @@
             this.PROCS_B76.Size = new System.Drawing.Size(67, 25);
             this.PROCS_B76.TabIndex = 68;
             // 
-            // PROCS_L_24_RAMPROCS
-            // 
-            this.PROCS_L_24_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_24_RAMPROCS.Location = new System.Drawing.Point(338, 176);
-            this.PROCS_L_24_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_24_RAMPROCS.Name = "PROCS_L_24_RAMPROCS";
-            this.PROCS_L_24_RAMPROCS.Placeholder = "";
-            this.PROCS_L_24_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_24_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_24_RAMPROCS.TabIndex = 217;
-            // 
             // PROCS_B88
             // 
             this.PROCS_B88.Hexadecimal = true;
@@ -2869,17 +2519,6 @@
             this.PROCS_J_88.TabIndex = 86;
             this.PROCS_J_88.Text = "88(0x58)";
             this.PROCS_J_88.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PROCS_L_20_RAMPROCS
-            // 
-            this.PROCS_L_20_RAMPROCS.ErrorMessage = "";
-            this.PROCS_L_20_RAMPROCS.Location = new System.Drawing.Point(338, 149);
-            this.PROCS_L_20_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_20_RAMPROCS.Name = "PROCS_L_20_RAMPROCS";
-            this.PROCS_L_20_RAMPROCS.Placeholder = "";
-            this.PROCS_L_20_RAMPROCS.ReadOnly = true;
-            this.PROCS_L_20_RAMPROCS.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_20_RAMPROCS.TabIndex = 214;
             // 
             // PROCS_B80
             // 
@@ -2946,17 +2585,6 @@
             this.PROCS_J_84.Text = "84(0x54)";
             this.PROCS_J_84.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PROCS_L_12_ASM
-            // 
-            this.PROCS_L_12_ASM.ErrorMessage = "";
-            this.PROCS_L_12_ASM.Location = new System.Drawing.Point(338, 91);
-            this.PROCS_L_12_ASM.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_12_ASM.Name = "PROCS_L_12_ASM";
-            this.PROCS_L_12_ASM.Placeholder = "";
-            this.PROCS_L_12_ASM.ReadOnly = true;
-            this.PROCS_L_12_ASM.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_12_ASM.TabIndex = 211;
-            // 
             // PROCS_P12
             // 
             this.PROCS_P12.Hexadecimal = true;
@@ -2981,17 +2609,6 @@
             this.PROCS_J_12_ASM.TabIndex = 210;
             this.PROCS_J_12_ASM.Text = "Loop Routine";
             this.PROCS_J_12_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PROCS_L_8_ASM
-            // 
-            this.PROCS_L_8_ASM.ErrorMessage = "";
-            this.PROCS_L_8_ASM.Location = new System.Drawing.Point(338, 62);
-            this.PROCS_L_8_ASM.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_L_8_ASM.Name = "PROCS_L_8_ASM";
-            this.PROCS_L_8_ASM.Placeholder = "";
-            this.PROCS_L_8_ASM.ReadOnly = true;
-            this.PROCS_L_8_ASM.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_L_8_ASM.TabIndex = 208;
             // 
             // PROCS_P8
             // 
@@ -3044,17 +2661,6 @@
             this.PROCS_JUMP_CURSOL_CODE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PROCS_JUMP_CURSOL_CODE.Click += new System.EventHandler(this.PROCS_JUMP_CURSOL_CODE_Click);
             // 
-            // PROCS_NAME
-            // 
-            this.PROCS_NAME.ErrorMessage = "";
-            this.PROCS_NAME.Location = new System.Drawing.Point(338, 6);
-            this.PROCS_NAME.Margin = new System.Windows.Forms.Padding(2);
-            this.PROCS_NAME.Name = "PROCS_NAME";
-            this.PROCS_NAME.Placeholder = "";
-            this.PROCS_NAME.ReadOnly = true;
-            this.PROCS_NAME.Size = new System.Drawing.Size(671, 25);
-            this.PROCS_NAME.TabIndex = 202;
-            // 
             // PROCS_P0
             // 
             this.PROCS_P0.Hexadecimal = true;
@@ -3102,29 +2708,15 @@
             this.label1.Text = "Procs";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ProcsListBox
-            // 
-            this.ProcsListBox.FormattingEnabled = true;
-            this.ProcsListBox.IntegralHeight = false;
-            this.ProcsListBox.ItemHeight = 18;
-            this.ProcsListBox.Location = new System.Drawing.Point(14, 28);
-            this.ProcsListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ProcsListBox.Name = "ProcsListBox";
-            this.ProcsListBox.Size = new System.Drawing.Size(1629, 850);
-            this.ProcsListBox.TabIndex = 161;
-            this.ProcsListBox.SelectedIndexChanged += new System.EventHandler(this.ProcsListBox_SelectedIndexChanged);
-            this.ProcsListBox.DoubleClick += new System.EventHandler(this.ProcsListBox_DoubleClick);
-            this.ProcsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsListBox_KeyDown);
-            // 
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
             this.EtcPage.Controls.Add(this.PartyCount);
             this.EtcPage.Controls.Add(this.tabControl1);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
+            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PartyListBox);
-            this.EtcPage.Controls.Add(this.label56);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
             this.EtcPage.Name = "EtcPage";
             this.EtcPage.Padding = new System.Windows.Forms.Padding(3);
@@ -3207,39 +2799,6 @@
             this.N_J_14_MAP.Text = "マップID";
             this.N_J_14_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_ETC_WorldmapNode_Text
-            // 
-            this.X_ETC_WorldmapNode_Text.ErrorMessage = "";
-            this.X_ETC_WorldmapNode_Text.Location = new System.Drawing.Point(546, 2);
-            this.X_ETC_WorldmapNode_Text.Margin = new System.Windows.Forms.Padding(2);
-            this.X_ETC_WorldmapNode_Text.Name = "X_ETC_WorldmapNode_Text";
-            this.X_ETC_WorldmapNode_Text.Placeholder = "";
-            this.X_ETC_WorldmapNode_Text.ReadOnly = true;
-            this.X_ETC_WorldmapNode_Text.Size = new System.Drawing.Size(297, 25);
-            this.X_ETC_WorldmapNode_Text.TabIndex = 319;
-            // 
-            // BGMName
-            // 
-            this.BGMName.ErrorMessage = "";
-            this.BGMName.Location = new System.Drawing.Point(243, 59);
-            this.BGMName.Margin = new System.Windows.Forms.Padding(2);
-            this.BGMName.Name = "BGMName";
-            this.BGMName.Placeholder = "";
-            this.BGMName.ReadOnly = true;
-            this.BGMName.Size = new System.Drawing.Size(600, 25);
-            this.BGMName.TabIndex = 338;
-            // 
-            // X_ETC_Edition_Text
-            // 
-            this.X_ETC_Edition_Text.ErrorMessage = "";
-            this.X_ETC_Edition_Text.Location = new System.Drawing.Point(151, 2);
-            this.X_ETC_Edition_Text.Margin = new System.Windows.Forms.Padding(2);
-            this.X_ETC_Edition_Text.Name = "X_ETC_Edition_Text";
-            this.X_ETC_Edition_Text.Placeholder = "";
-            this.X_ETC_Edition_Text.ReadOnly = true;
-            this.X_ETC_Edition_Text.Size = new System.Drawing.Size(225, 25);
-            this.X_ETC_Edition_Text.TabIndex = 316;
-            // 
             // N_B14
             // 
             this.N_B14.Hexadecimal = true;
@@ -3258,28 +2817,6 @@
             0,
             0,
             0});
-            // 
-            // X_ETC_Diffculty_Text
-            // 
-            this.X_ETC_Diffculty_Text.ErrorMessage = "";
-            this.X_ETC_Diffculty_Text.Location = new System.Drawing.Point(380, 2);
-            this.X_ETC_Diffculty_Text.Margin = new System.Windows.Forms.Padding(2);
-            this.X_ETC_Diffculty_Text.Name = "X_ETC_Diffculty_Text";
-            this.X_ETC_Diffculty_Text.Placeholder = "";
-            this.X_ETC_Diffculty_Text.ReadOnly = true;
-            this.X_ETC_Diffculty_Text.Size = new System.Drawing.Size(162, 25);
-            this.X_ETC_Diffculty_Text.TabIndex = 318;
-            // 
-            // N_L_14_MAP
-            // 
-            this.N_L_14_MAP.ErrorMessage = "";
-            this.N_L_14_MAP.Location = new System.Drawing.Point(243, 31);
-            this.N_L_14_MAP.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_14_MAP.Name = "N_L_14_MAP";
-            this.N_L_14_MAP.Placeholder = "";
-            this.N_L_14_MAP.ReadOnly = true;
-            this.N_L_14_MAP.Size = new System.Drawing.Size(599, 25);
-            this.N_L_14_MAP.TabIndex = 336;
             // 
             // BGM
             // 
@@ -3306,30 +2843,6 @@
             this.J_BGM.Text = "BGM";
             this.J_BGM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SoundAddress
-            // 
-            this.SoundAddress.ErrorMessage = "";
-            this.SoundAddress.Location = new System.Drawing.Point(730, 95);
-            this.SoundAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.SoundAddress.Name = "SoundAddress";
-            this.SoundAddress.Placeholder = "";
-            this.SoundAddress.ReadOnly = true;
-            this.SoundAddress.Size = new System.Drawing.Size(116, 25);
-            this.SoundAddress.TabIndex = 331;
-            // 
-            // SoundList
-            // 
-            this.SoundList.FormattingEnabled = true;
-            this.SoundList.IntegralHeight = false;
-            this.SoundList.ItemHeight = 18;
-            this.SoundList.Location = new System.Drawing.Point(3, 123);
-            this.SoundList.Name = "SoundList";
-            this.SoundList.Size = new System.Drawing.Size(851, 175);
-            this.SoundList.TabIndex = 326;
-            this.SoundList.SelectedIndexChanged += new System.EventHandler(this.SoundList_SelectedIndexChanged);
-            this.SoundList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SoundList_KeyDown);
-            this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
-            // 
             // label91
             // 
             this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3344,8 +2857,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.TrapList);
             this.tabPage2.Controls.Add(this.label62);
+            this.tabPage2.Controls.Add(this.TrapList);
             this.tabPage2.Controls.Add(this.TrapAddress);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
@@ -3353,20 +2866,6 @@
             this.tabPage2.Size = new System.Drawing.Size(853, 844);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "トラップデータ";
-            // 
-            // TrapList
-            // 
-            this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TrapList.FormattingEnabled = true;
-            this.TrapList.IntegralHeight = false;
-            this.TrapList.ItemHeight = 18;
-            this.TrapList.Location = new System.Drawing.Point(3, 33);
-            this.TrapList.Name = "TrapList";
-            this.TrapList.Size = new System.Drawing.Size(847, 808);
-            this.TrapList.TabIndex = 329;
-            this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
-            this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
-            this.TrapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrapList_MouseDoubleClick);
             // 
             // label62
             // 
@@ -3380,24 +2879,13 @@
             this.label62.Text = "トラップデータ";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // TrapAddress
-            // 
-            this.TrapAddress.ErrorMessage = "";
-            this.TrapAddress.Location = new System.Drawing.Point(732, 5);
-            this.TrapAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.TrapAddress.Name = "TrapAddress";
-            this.TrapAddress.Placeholder = "";
-            this.TrapAddress.ReadOnly = true;
-            this.TrapAddress.Size = new System.Drawing.Size(116, 25);
-            this.TrapAddress.TabIndex = 330;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.PaletteAddress);
-            this.tabPage3.Controls.Add(this.PaletteList);
             this.tabPage3.Controls.Add(this.PaletteSearchButton);
             this.tabPage3.Controls.Add(this.label92);
+            this.tabPage3.Controls.Add(this.PaletteAddress);
+            this.tabPage3.Controls.Add(this.PaletteList);
             this.tabPage3.Controls.Add(this.SelectPalette);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
@@ -3405,31 +2893,6 @@
             this.tabPage3.Size = new System.Drawing.Size(853, 844);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "パレット";
-            // 
-            // PaletteAddress
-            // 
-            this.PaletteAddress.ErrorMessage = "";
-            this.PaletteAddress.Location = new System.Drawing.Point(734, 5);
-            this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.PaletteAddress.Name = "PaletteAddress";
-            this.PaletteAddress.Placeholder = "";
-            this.PaletteAddress.ReadOnly = true;
-            this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
-            this.PaletteAddress.TabIndex = 327;
-            // 
-            // PaletteList
-            // 
-            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PaletteList.FormattingEnabled = true;
-            this.PaletteList.IntegralHeight = false;
-            this.PaletteList.ItemHeight = 18;
-            this.PaletteList.Location = new System.Drawing.Point(3, 33);
-            this.PaletteList.Name = "PaletteList";
-            this.PaletteList.Size = new System.Drawing.Size(847, 808);
-            this.PaletteList.TabIndex = 321;
-            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
-            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
-            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
             // 
             // PaletteSearchButton
             // 
@@ -3453,20 +2916,11 @@
             this.label92.Text = "パレット";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // SelectPalette
-            // 
-            this.SelectPalette.ErrorMessage = "";
-            this.SelectPalette.Location = new System.Drawing.Point(98, 4);
-            this.SelectPalette.Name = "SelectPalette";
-            this.SelectPalette.Placeholder = "";
-            this.SelectPalette.Size = new System.Drawing.Size(556, 25);
-            this.SelectPalette.TabIndex = 322;
-            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.ClearTurnList);
             this.tabPage4.Controls.Add(this.label82);
+            this.tabPage4.Controls.Add(this.ClearTurnList);
             this.tabPage4.Controls.Add(this.textBoxEx33);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
@@ -3474,18 +2928,6 @@
             this.tabPage4.Size = new System.Drawing.Size(853, 844);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "クリアターン数";
-            // 
-            // ClearTurnList
-            // 
-            this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearTurnList.FormattingEnabled = true;
-            this.ClearTurnList.IntegralHeight = false;
-            this.ClearTurnList.ItemHeight = 18;
-            this.ClearTurnList.Location = new System.Drawing.Point(3, 33);
-            this.ClearTurnList.Name = "ClearTurnList";
-            this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
-            this.ClearTurnList.TabIndex = 329;
-            this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
             // 
             // label82
             // 
@@ -3498,17 +2940,6 @@
             this.label82.TabIndex = 328;
             this.label82.Text = "クリアターン数";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxEx33
-            // 
-            this.textBoxEx33.ErrorMessage = "";
-            this.textBoxEx33.Location = new System.Drawing.Point(732, 5);
-            this.textBoxEx33.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx33.Name = "textBoxEx33";
-            this.textBoxEx33.Placeholder = "";
-            this.textBoxEx33.ReadOnly = true;
-            this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
-            this.textBoxEx33.TabIndex = 330;
             // 
             // Party_ControlPanel
             // 
@@ -3552,17 +2983,6 @@
             this.PARTY_Address.ReadOnly = true;
             this.PARTY_Address.Size = new System.Drawing.Size(160, 25);
             this.PARTY_Address.TabIndex = 304;
-            // 
-            // PARTY_SelectAddress
-            // 
-            this.PARTY_SelectAddress.ErrorMessage = "";
-            this.PARTY_SelectAddress.Location = new System.Drawing.Point(444, 4);
-            this.PARTY_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PARTY_SelectAddress.Name = "PARTY_SelectAddress";
-            this.PARTY_SelectAddress.Placeholder = "";
-            this.PARTY_SelectAddress.ReadOnly = true;
-            this.PARTY_SelectAddress.Size = new System.Drawing.Size(259, 25);
-            this.PARTY_SelectAddress.TabIndex = 303;
             // 
             // label2
             // 
@@ -3745,96 +3165,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(777, 695);
             this.panel3.TabIndex = 0;
-            // 
-            // PARTY_AI2_TEXT
-            // 
-            this.PARTY_AI2_TEXT.ErrorMessage = "";
-            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(620, 558);
-            this.PARTY_AI2_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_AI2_TEXT.Multiline = true;
-            this.PARTY_AI2_TEXT.Name = "PARTY_AI2_TEXT";
-            this.PARTY_AI2_TEXT.Placeholder = "";
-            this.PARTY_AI2_TEXT.ReadOnly = true;
-            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(154, 68);
-            this.PARTY_AI2_TEXT.TabIndex = 435;
-            // 
-            // PARTY_AI1_TEXT
-            // 
-            this.PARTY_AI1_TEXT.ErrorMessage = "";
-            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(620, 497);
-            this.PARTY_AI1_TEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_AI1_TEXT.Multiline = true;
-            this.PARTY_AI1_TEXT.Name = "PARTY_AI1_TEXT";
-            this.PARTY_AI1_TEXT.Placeholder = "";
-            this.PARTY_AI1_TEXT.ReadOnly = true;
-            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(154, 57);
-            this.PARTY_AI1_TEXT.TabIndex = 434;
-            // 
-            // PARTY_PORTRAIT
-            // 
-            this.PARTY_PORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_PORTRAIT.Location = new System.Drawing.Point(260, 153);
-            this.PARTY_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.PARTY_PORTRAIT.Name = "PARTY_PORTRAIT";
-            this.PARTY_PORTRAIT.Size = new System.Drawing.Size(118, 104);
-            this.PARTY_PORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_PORTRAIT.TabIndex = 433;
-            this.PARTY_PORTRAIT.TabStop = false;
-            // 
-            // PARTY_L_38_ITEMICON
-            // 
-            this.PARTY_L_38_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(590, 386);
-            this.PARTY_L_38_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_38_ITEMICON.Name = "PARTY_L_38_ITEMICON";
-            this.PARTY_L_38_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_38_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_38_ITEMICON.TabIndex = 432;
-            this.PARTY_L_38_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_36_ITEMICON
-            // 
-            this.PARTY_L_36_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(590, 354);
-            this.PARTY_L_36_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_36_ITEMICON.Name = "PARTY_L_36_ITEMICON";
-            this.PARTY_L_36_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_36_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_36_ITEMICON.TabIndex = 431;
-            this.PARTY_L_36_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_34_ITEMICON
-            // 
-            this.PARTY_L_34_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(590, 323);
-            this.PARTY_L_34_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_34_ITEMICON.Name = "PARTY_L_34_ITEMICON";
-            this.PARTY_L_34_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_34_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_34_ITEMICON.TabIndex = 430;
-            this.PARTY_L_34_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_32_ITEMICON
-            // 
-            this.PARTY_L_32_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(590, 291);
-            this.PARTY_L_32_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_32_ITEMICON.Name = "PARTY_L_32_ITEMICON";
-            this.PARTY_L_32_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_32_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_32_ITEMICON.TabIndex = 429;
-            this.PARTY_L_32_ITEMICON.TabStop = false;
-            // 
-            // PARTY_L_30_ITEMICON
-            // 
-            this.PARTY_L_30_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(590, 260);
-            this.PARTY_L_30_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_30_ITEMICON.Name = "PARTY_L_30_ITEMICON";
-            this.PARTY_L_30_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.PARTY_L_30_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PARTY_L_30_ITEMICON.TabIndex = 428;
-            this.PARTY_L_30_ITEMICON.TabStop = false;
             // 
             // PARTY_B71
             // 
@@ -4621,17 +3951,6 @@
             this.label38.Text = "剣 EXP";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_L_38_ITEM
-            // 
-            this.PARTY_L_38_ITEM.ErrorMessage = "";
-            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(430, 376);
-            this.PARTY_L_38_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_38_ITEM.Name = "PARTY_L_38_ITEM";
-            this.PARTY_L_38_ITEM.Placeholder = "";
-            this.PARTY_L_38_ITEM.ReadOnly = true;
-            this.PARTY_L_38_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_38_ITEM.TabIndex = 363;
-            // 
             // PARTY_B39
             // 
             this.PARTY_B39.Location = new System.Drawing.Point(353, 380);
@@ -4680,17 +3999,6 @@
             this.label37.TabIndex = 359;
             this.label37.Text = "アイテムID5";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_L_36_ITEM
-            // 
-            this.PARTY_L_36_ITEM.ErrorMessage = "";
-            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(430, 348);
-            this.PARTY_L_36_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_36_ITEM.Name = "PARTY_L_36_ITEM";
-            this.PARTY_L_36_ITEM.Placeholder = "";
-            this.PARTY_L_36_ITEM.ReadOnly = true;
-            this.PARTY_L_36_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_36_ITEM.TabIndex = 358;
             // 
             // PARTY_B37
             // 
@@ -4741,17 +4049,6 @@
             this.label29.Text = "アイテムID4";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_L_34_ITEM
-            // 
-            this.PARTY_L_34_ITEM.ErrorMessage = "";
-            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(430, 323);
-            this.PARTY_L_34_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_34_ITEM.Name = "PARTY_L_34_ITEM";
-            this.PARTY_L_34_ITEM.Placeholder = "";
-            this.PARTY_L_34_ITEM.ReadOnly = true;
-            this.PARTY_L_34_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_34_ITEM.TabIndex = 353;
-            // 
             // PARTY_B35
             // 
             this.PARTY_B35.Location = new System.Drawing.Point(353, 324);
@@ -4801,17 +4098,6 @@
             this.label32.Text = "アイテムID3";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_L_32_ITEM
-            // 
-            this.PARTY_L_32_ITEM.ErrorMessage = "";
-            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(430, 294);
-            this.PARTY_L_32_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_32_ITEM.Name = "PARTY_L_32_ITEM";
-            this.PARTY_L_32_ITEM.Placeholder = "";
-            this.PARTY_L_32_ITEM.ReadOnly = true;
-            this.PARTY_L_32_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_32_ITEM.TabIndex = 333;
-            // 
             // PARTY_B33
             // 
             this.PARTY_B33.Location = new System.Drawing.Point(353, 297);
@@ -4860,17 +4146,6 @@
             this.label23.TabIndex = 329;
             this.label23.Text = "アイテムID2";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_L_30_ITEM
-            // 
-            this.PARTY_L_30_ITEM.ErrorMessage = "";
-            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(430, 268);
-            this.PARTY_L_30_ITEM.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_30_ITEM.Name = "PARTY_L_30_ITEM";
-            this.PARTY_L_30_ITEM.Placeholder = "";
-            this.PARTY_L_30_ITEM.ReadOnly = true;
-            this.PARTY_L_30_ITEM.Size = new System.Drawing.Size(155, 25);
-            this.PARTY_L_30_ITEM.TabIndex = 328;
             // 
             // PARTY_B31
             // 
@@ -4968,18 +4243,6 @@
             this.label65.TabIndex = 321;
             this.label65.Text = "移動＋";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_RAMUNITAID
-            // 
-            this.PARTY_RAMUNITAID.ErrorMessage = "";
-            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
-            this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
-            this.PARTY_RAMUNITAID.Placeholder = "";
-            this.PARTY_RAMUNITAID.ReadOnly = true;
-            this.PARTY_RAMUNITAID.Size = new System.Drawing.Size(157, 25);
-            this.PARTY_RAMUNITAID.TabIndex = 319;
-            this.PARTY_RAMUNITAID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_RAMUNITAID_MouseDoubleClick);
             // 
             // PARTY_B27
             // 
@@ -5150,29 +4413,6 @@
             this.label57.Text = "技";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_RAMUNITSTATE
-            // 
-            this.PARTY_RAMUNITSTATE.ErrorMessage = "";
-            this.PARTY_RAMUNITSTATE.Location = new System.Drawing.Point(280, 65);
-            this.PARTY_RAMUNITSTATE.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_RAMUNITSTATE.Name = "PARTY_RAMUNITSTATE";
-            this.PARTY_RAMUNITSTATE.Placeholder = "";
-            this.PARTY_RAMUNITSTATE.ReadOnly = true;
-            this.PARTY_RAMUNITSTATE.Size = new System.Drawing.Size(482, 25);
-            this.PARTY_RAMUNITSTATE.TabIndex = 302;
-            // 
-            // PARTY_ROMCLASSPOINTER
-            // 
-            this.PARTY_ROMCLASSPOINTER.ErrorMessage = "";
-            this.PARTY_ROMCLASSPOINTER.Location = new System.Drawing.Point(280, 34);
-            this.PARTY_ROMCLASSPOINTER.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_ROMCLASSPOINTER.Name = "PARTY_ROMCLASSPOINTER";
-            this.PARTY_ROMCLASSPOINTER.Placeholder = "";
-            this.PARTY_ROMCLASSPOINTER.ReadOnly = true;
-            this.PARTY_ROMCLASSPOINTER.Size = new System.Drawing.Size(481, 25);
-            this.PARTY_ROMCLASSPOINTER.TabIndex = 300;
-            this.PARTY_ROMCLASSPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMCLASSPOINTER_MouseDoubleClick);
-            // 
             // PARTY_B10
             // 
             this.PARTY_B10.Hexadecimal = true;
@@ -5197,17 +4437,6 @@
             this.label21.TabIndex = 294;
             this.label21.Text = "回復モード";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxEx52
-            // 
-            this.textBoxEx52.ErrorMessage = "";
-            this.textBoxEx52.Location = new System.Drawing.Point(329, 830);
-            this.textBoxEx52.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx52.Name = "textBoxEx52";
-            this.textBoxEx52.Placeholder = "";
-            this.textBoxEx52.ReadOnly = true;
-            this.textBoxEx52.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx52.TabIndex = 289;
             // 
             // numericUpDown59
             // 
@@ -5234,17 +4463,6 @@
             this.label28.Text = "UserSpace3";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxEx53
-            // 
-            this.textBoxEx53.ErrorMessage = "";
-            this.textBoxEx53.Location = new System.Drawing.Point(329, 802);
-            this.textBoxEx53.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx53.Name = "textBoxEx53";
-            this.textBoxEx53.Placeholder = "";
-            this.textBoxEx53.ReadOnly = true;
-            this.textBoxEx53.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx53.TabIndex = 286;
-            // 
             // numericUpDown61
             // 
             this.numericUpDown61.Hexadecimal = true;
@@ -5269,17 +4487,6 @@
             this.label30.TabIndex = 285;
             this.label30.Text = "UserSpace2";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxEx54
-            // 
-            this.textBoxEx54.ErrorMessage = "";
-            this.textBoxEx54.Location = new System.Drawing.Point(329, 773);
-            this.textBoxEx54.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx54.Name = "textBoxEx54";
-            this.textBoxEx54.Placeholder = "";
-            this.textBoxEx54.ReadOnly = true;
-            this.textBoxEx54.Size = new System.Drawing.Size(291, 25);
-            this.textBoxEx54.TabIndex = 283;
             // 
             // numericUpDown64
             // 
@@ -5549,18 +4756,6 @@
             this.label54.Text = "ROM Class";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_ROMUNITPOINTER
-            // 
-            this.PARTY_ROMUNITPOINTER.ErrorMessage = "";
-            this.PARTY_ROMUNITPOINTER.Location = new System.Drawing.Point(280, 5);
-            this.PARTY_ROMUNITPOINTER.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_ROMUNITPOINTER.Name = "PARTY_ROMUNITPOINTER";
-            this.PARTY_ROMUNITPOINTER.Placeholder = "";
-            this.PARTY_ROMUNITPOINTER.ReadOnly = true;
-            this.PARTY_ROMUNITPOINTER.Size = new System.Drawing.Size(481, 25);
-            this.PARTY_ROMUNITPOINTER.TabIndex = 202;
-            this.PARTY_ROMUNITPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMUNITPOINTER_MouseDoubleClick);
-            // 
             // PARTY_P0
             // 
             this.PARTY_P0.Hexadecimal = true;
@@ -5596,34 +4791,6 @@
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // PartyCombo
-            // 
-            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PartyCombo.FormattingEnabled = true;
-            this.PartyCombo.Items.AddRange(new object[] {
-            "00=PLAYER",
-            "40=NPC",
-            "80=Enemy"});
-            this.PartyCombo.Location = new System.Drawing.Point(318, 10);
-            this.PartyCombo.Name = "PartyCombo";
-            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
-            this.PartyCombo.TabIndex = 313;
-            // 
-            // PartyListBox
-            // 
-            this.PartyListBox.FormattingEnabled = true;
-            this.PartyListBox.HorizontalScrollbar = true;
-            this.PartyListBox.IntegralHeight = false;
-            this.PartyListBox.ItemHeight = 18;
-            this.PartyListBox.Location = new System.Drawing.Point(0, 49);
-            this.PartyListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.PartyListBox.Name = "PartyListBox";
-            this.PartyListBox.Size = new System.Drawing.Size(778, 832);
-            this.PartyListBox.TabIndex = 311;
-            this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
-            this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
-            this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
-            // 
             // label56
             // 
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -5638,6 +4805,9 @@
             // CheatPage
             // 
             this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CheatPage.Controls.Add(this.label94);
+            this.CheatPage.Controls.Add(this.CHEAT_TURN_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_TURN);
             this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_VALUE);
             this.CheatPage.Controls.Add(this.CHEAT_WARP_NODE_JUMP);
             this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_DO_NOT_MOVE);
@@ -5694,6 +4864,52 @@
             this.CheatPage.TabIndex = 3;
             this.CheatPage.Text = "チート";
             // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(889, 369);
+            this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(66, 18);
+            this.label94.TabIndex = 332;
+            this.label94.Text = "ターン数";
+            // 
+            // CHEAT_TURN_VALUE
+            // 
+            this.CHEAT_TURN_VALUE.Hexadecimal = true;
+            this.CHEAT_TURN_VALUE.Location = new System.Drawing.Point(1041, 362);
+            this.CHEAT_TURN_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_TURN_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_TURN_VALUE.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CHEAT_TURN_VALUE.Name = "CHEAT_TURN_VALUE";
+            this.CHEAT_TURN_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_TURN_VALUE.TabIndex = 331;
+            this.CHEAT_TURN_VALUE.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CHEAT_TURN
+            // 
+            this.CHEAT_TURN.Location = new System.Drawing.Point(887, 312);
+            this.CHEAT_TURN.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_TURN.Name = "CHEAT_TURN";
+            this.CHEAT_TURN.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_TURN.TabIndex = 330;
+            this.CHEAT_TURN.Text = "ターン数を変更";
+            this.CHEAT_TURN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_TURN.UseVisualStyleBackColor = true;
+            this.CHEAT_TURN.Click += new System.EventHandler(this.CHEAT_TURN_Click);
+            // 
             // CHEAT_WARP_NODE_VALUE
             // 
             this.CHEAT_WARP_NODE_VALUE.Hexadecimal = true;
@@ -5711,7 +4927,7 @@
             // CHEAT_WARP_NODE_JUMP
             // 
             this.CHEAT_WARP_NODE_JUMP.AutoSize = true;
-            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(890, 190);
+            this.CHEAT_WARP_NODE_JUMP.Location = new System.Drawing.Point(889, 190);
             this.CHEAT_WARP_NODE_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CHEAT_WARP_NODE_JUMP.Name = "CHEAT_WARP_NODE_JUMP";
             this.CHEAT_WARP_NODE_JUMP.Size = new System.Drawing.Size(139, 18);
@@ -5747,7 +4963,7 @@
             // CHEAT_WARP_EDTION_JUMP
             // 
             this.CHEAT_WARP_EDTION_JUMP.AutoSize = true;
-            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(890, 157);
+            this.CHEAT_WARP_EDTION_JUMP.Location = new System.Drawing.Point(889, 157);
             this.CHEAT_WARP_EDTION_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CHEAT_WARP_EDTION_JUMP.Name = "CHEAT_WARP_EDTION_JUMP";
             this.CHEAT_WARP_EDTION_JUMP.Size = new System.Drawing.Size(26, 18);
@@ -5772,7 +4988,7 @@
             // CHEAT_WARP_CHPATER_JUMP
             // 
             this.CHEAT_WARP_CHPATER_JUMP.AutoSize = true;
-            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(890, 124);
+            this.CHEAT_WARP_CHPATER_JUMP.Location = new System.Drawing.Point(889, 124);
             this.CHEAT_WARP_CHPATER_JUMP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CHEAT_WARP_CHPATER_JUMP.Name = "CHEAT_WARP_CHPATER_JUMP";
             this.CHEAT_WARP_CHPATER_JUMP.Size = new System.Drawing.Size(98, 18);
@@ -5830,7 +5046,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(890, 457);
+            this.label35.Location = new System.Drawing.Point(889, 555);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 18);
@@ -5840,7 +5056,7 @@
             // CHEAT_WEATHER_VALUE
             // 
             this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
-            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 452);
+            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1041, 548);
             this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
             255,
@@ -5863,7 +5079,7 @@
             "05=マグマ",
             "06=砂嵐",
             "07=曇り(非推奨)"});
-            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 451);
+            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1123, 547);
             this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
             this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
@@ -5871,7 +5087,7 @@
             // 
             // CHEAT_WEATHER
             // 
-            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 402);
+            this.CHEAT_WEATHER.Location = new System.Drawing.Point(887, 498);
             this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
             this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 40);
@@ -5895,7 +5111,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1120, 363);
+            this.label18.Location = new System.Drawing.Point(1120, 460);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(313, 18);
@@ -5905,7 +5121,7 @@
             // CHEAT_FOG_VALUE
             // 
             this.CHEAT_FOG_VALUE.Hexadecimal = true;
-            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 361);
+            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1038, 458);
             this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
             255,
@@ -6028,7 +5244,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(887, 363);
+            this.label15.Location = new System.Drawing.Point(889, 460);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 18);
@@ -6056,7 +5272,7 @@
             // 
             // CHEAT_FOG
             // 
-            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 312);
+            this.CHEAT_FOG.Location = new System.Drawing.Point(887, 409);
             this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_FOG.Name = "CHEAT_FOG";
             this.CHEAT_FOG.Size = new System.Drawing.Size(742, 40);
@@ -6145,6 +5361,843 @@
             this.CHEAT_SET_FLAG03.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHEAT_SET_FLAG03.UseVisualStyleBackColor = true;
             this.CHEAT_SET_FLAG03.Click += new System.EventHandler(this.CHEAT_SET_FLAG03_Click);
+            // 
+            // CurrentTextBox
+            // 
+            this.CurrentTextBox.ErrorMessage = "";
+            this.CurrentTextBox.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CurrentTextBox.Location = new System.Drawing.Point(-1, 29);
+            this.CurrentTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.CurrentTextBox.Name = "CurrentTextBox";
+            this.CurrentTextBox.Placeholder = "";
+            this.CurrentTextBox.ReadOnly = true;
+            this.CurrentTextBox.Size = new System.Drawing.Size(584, 163);
+            this.CurrentTextBox.TabIndex = 309;
+            this.CurrentTextBox.Text = "";
+            this.CurrentTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CurrentTextBox_MouseDoubleClick);
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(166, 195);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(240, 25);
+            this.N_SelectAddress.TabIndex = 307;
+            // 
+            // RunningEventListBox
+            // 
+            this.RunningEventListBox.FormattingEnabled = true;
+            this.RunningEventListBox.HorizontalScrollbar = true;
+            this.RunningEventListBox.IntegralHeight = false;
+            this.RunningEventListBox.ItemHeight = 18;
+            this.RunningEventListBox.Location = new System.Drawing.Point(588, 30);
+            this.RunningEventListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RunningEventListBox.Name = "RunningEventListBox";
+            this.RunningEventListBox.Size = new System.Drawing.Size(1058, 850);
+            this.RunningEventListBox.TabIndex = 168;
+            this.RunningEventListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RunningEventListBox_KeyDown);
+            this.RunningEventListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RunningEventListBox_MouseDoubleClick);
+            // 
+            // FlagListBox
+            // 
+            this.FlagListBox.FormattingEnabled = true;
+            this.FlagListBox.IntegralHeight = false;
+            this.FlagListBox.ItemHeight = 18;
+            this.FlagListBox.Location = new System.Drawing.Point(0, 220);
+            this.FlagListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FlagListBox.Name = "FlagListBox";
+            this.FlagListBox.Size = new System.Drawing.Size(407, 660);
+            this.FlagListBox.TabIndex = 16;
+            this.FlagListBox.SelectedIndexChanged += new System.EventHandler(this.FlagListBox_SelectedIndexChanged);
+            this.FlagListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FlagListBox_KeyDown);
+            this.FlagListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FlagListBox_MouseDoubleClick);
+            // 
+            // MemorySlotListBox
+            // 
+            this.MemorySlotListBox.FormattingEnabled = true;
+            this.MemorySlotListBox.IntegralHeight = false;
+            this.MemorySlotListBox.ItemHeight = 18;
+            this.MemorySlotListBox.Location = new System.Drawing.Point(410, 220);
+            this.MemorySlotListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MemorySlotListBox.Name = "MemorySlotListBox";
+            this.MemorySlotListBox.Size = new System.Drawing.Size(173, 660);
+            this.MemorySlotListBox.TabIndex = 14;
+            this.MemorySlotListBox.SelectedIndexChanged += new System.EventHandler(this.MemorySlotListBox_SelectedIndexChanged);
+            // 
+            // EventHistoryListBox
+            // 
+            this.EventHistoryListBox.FormattingEnabled = true;
+            this.EventHistoryListBox.HorizontalScrollbar = true;
+            this.EventHistoryListBox.IntegralHeight = false;
+            this.EventHistoryListBox.ItemHeight = 18;
+            this.EventHistoryListBox.Location = new System.Drawing.Point(26, 70);
+            this.EventHistoryListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EventHistoryListBox.Name = "EventHistoryListBox";
+            this.EventHistoryListBox.Size = new System.Drawing.Size(1613, 814);
+            this.EventHistoryListBox.TabIndex = 109;
+            this.EventHistoryListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventHistoryListBox_KeyDown);
+            this.EventHistoryListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventHistoryListBox_MouseDoubleClick);
+            // 
+            // PROCS_SelectAddress
+            // 
+            this.PROCS_SelectAddress.ErrorMessage = "";
+            this.PROCS_SelectAddress.Location = new System.Drawing.Point(490, 4);
+            this.PROCS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.PROCS_SelectAddress.Name = "PROCS_SelectAddress";
+            this.PROCS_SelectAddress.Placeholder = "";
+            this.PROCS_SelectAddress.ReadOnly = true;
+            this.PROCS_SelectAddress.Size = new System.Drawing.Size(210, 25);
+            this.PROCS_SelectAddress.TabIndex = 303;
+            // 
+            // PROCS_L_104_DWORD
+            // 
+            this.PROCS_L_104_DWORD.ErrorMessage = "";
+            this.PROCS_L_104_DWORD.Location = new System.Drawing.Point(908, 572);
+            this.PROCS_L_104_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_104_DWORD.Name = "PROCS_L_104_DWORD";
+            this.PROCS_L_104_DWORD.Placeholder = "";
+            this.PROCS_L_104_DWORD.ReadOnly = true;
+            this.PROCS_L_104_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_104_DWORD.TabIndex = 122;
+            // 
+            // PROCS_L_96_DWORD
+            // 
+            this.PROCS_L_96_DWORD.ErrorMessage = "";
+            this.PROCS_L_96_DWORD.Location = new System.Drawing.Point(908, 542);
+            this.PROCS_L_96_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_96_DWORD.Name = "PROCS_L_96_DWORD";
+            this.PROCS_L_96_DWORD.Placeholder = "";
+            this.PROCS_L_96_DWORD.ReadOnly = true;
+            this.PROCS_L_96_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_96_DWORD.TabIndex = 109;
+            // 
+            // PROCS_L_88_DWORD
+            // 
+            this.PROCS_L_88_DWORD.ErrorMessage = "";
+            this.PROCS_L_88_DWORD.Location = new System.Drawing.Point(908, 512);
+            this.PROCS_L_88_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_88_DWORD.Name = "PROCS_L_88_DWORD";
+            this.PROCS_L_88_DWORD.Placeholder = "";
+            this.PROCS_L_88_DWORD.ReadOnly = true;
+            this.PROCS_L_88_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_88_DWORD.TabIndex = 91;
+            // 
+            // PROCS_L_80_DWORD
+            // 
+            this.PROCS_L_80_DWORD.ErrorMessage = "";
+            this.PROCS_L_80_DWORD.Location = new System.Drawing.Point(908, 481);
+            this.PROCS_L_80_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_80_DWORD.Name = "PROCS_L_80_DWORD";
+            this.PROCS_L_80_DWORD.Placeholder = "";
+            this.PROCS_L_80_DWORD.ReadOnly = true;
+            this.PROCS_L_80_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_80_DWORD.TabIndex = 79;
+            // 
+            // PROCS_L_72_DWORD
+            // 
+            this.PROCS_L_72_DWORD.ErrorMessage = "";
+            this.PROCS_L_72_DWORD.Location = new System.Drawing.Point(908, 451);
+            this.PROCS_L_72_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_72_DWORD.Name = "PROCS_L_72_DWORD";
+            this.PROCS_L_72_DWORD.Placeholder = "";
+            this.PROCS_L_72_DWORD.ReadOnly = true;
+            this.PROCS_L_72_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_72_DWORD.TabIndex = 65;
+            // 
+            // PROCS_L_64_DWORD
+            // 
+            this.PROCS_L_64_DWORD.ErrorMessage = "";
+            this.PROCS_L_64_DWORD.Location = new System.Drawing.Point(908, 422);
+            this.PROCS_L_64_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_64_DWORD.Name = "PROCS_L_64_DWORD";
+            this.PROCS_L_64_DWORD.Placeholder = "";
+            this.PROCS_L_64_DWORD.ReadOnly = true;
+            this.PROCS_L_64_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_64_DWORD.TabIndex = 53;
+            // 
+            // PROCS_L_100_DWORD
+            // 
+            this.PROCS_L_100_DWORD.ErrorMessage = "";
+            this.PROCS_L_100_DWORD.Location = new System.Drawing.Point(422, 576);
+            this.PROCS_L_100_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_100_DWORD.Name = "PROCS_L_100_DWORD";
+            this.PROCS_L_100_DWORD.Placeholder = "";
+            this.PROCS_L_100_DWORD.ReadOnly = true;
+            this.PROCS_L_100_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_100_DWORD.TabIndex = 115;
+            // 
+            // PROCS_L_92_DWORD
+            // 
+            this.PROCS_L_92_DWORD.ErrorMessage = "";
+            this.PROCS_L_92_DWORD.Location = new System.Drawing.Point(422, 546);
+            this.PROCS_L_92_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_92_DWORD.Name = "PROCS_L_92_DWORD";
+            this.PROCS_L_92_DWORD.Placeholder = "";
+            this.PROCS_L_92_DWORD.ReadOnly = true;
+            this.PROCS_L_92_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_92_DWORD.TabIndex = 103;
+            // 
+            // PROCS_L_84_DWORD
+            // 
+            this.PROCS_L_84_DWORD.ErrorMessage = "";
+            this.PROCS_L_84_DWORD.Location = new System.Drawing.Point(422, 512);
+            this.PROCS_L_84_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_84_DWORD.Name = "PROCS_L_84_DWORD";
+            this.PROCS_L_84_DWORD.Placeholder = "";
+            this.PROCS_L_84_DWORD.ReadOnly = true;
+            this.PROCS_L_84_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_84_DWORD.TabIndex = 85;
+            // 
+            // PROCS_L_76_DWORD
+            // 
+            this.PROCS_L_76_DWORD.ErrorMessage = "";
+            this.PROCS_L_76_DWORD.Location = new System.Drawing.Point(422, 480);
+            this.PROCS_L_76_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_76_DWORD.Name = "PROCS_L_76_DWORD";
+            this.PROCS_L_76_DWORD.Placeholder = "";
+            this.PROCS_L_76_DWORD.ReadOnly = true;
+            this.PROCS_L_76_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_76_DWORD.TabIndex = 72;
+            // 
+            // PROCS_L_68_DWORD
+            // 
+            this.PROCS_L_68_DWORD.ErrorMessage = "";
+            this.PROCS_L_68_DWORD.Location = new System.Drawing.Point(422, 450);
+            this.PROCS_L_68_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_68_DWORD.Name = "PROCS_L_68_DWORD";
+            this.PROCS_L_68_DWORD.Placeholder = "";
+            this.PROCS_L_68_DWORD.ReadOnly = true;
+            this.PROCS_L_68_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_68_DWORD.TabIndex = 59;
+            // 
+            // PROCS_L_60_DWORD
+            // 
+            this.PROCS_L_60_DWORD.ErrorMessage = "";
+            this.PROCS_L_60_DWORD.Location = new System.Drawing.Point(422, 422);
+            this.PROCS_L_60_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_60_DWORD.Name = "PROCS_L_60_DWORD";
+            this.PROCS_L_60_DWORD.Placeholder = "";
+            this.PROCS_L_60_DWORD.ReadOnly = true;
+            this.PROCS_L_60_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_60_DWORD.TabIndex = 47;
+            // 
+            // PROCS_L_56_DWORD
+            // 
+            this.PROCS_L_56_DWORD.ErrorMessage = "";
+            this.PROCS_L_56_DWORD.Location = new System.Drawing.Point(908, 392);
+            this.PROCS_L_56_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_56_DWORD.Name = "PROCS_L_56_DWORD";
+            this.PROCS_L_56_DWORD.Placeholder = "";
+            this.PROCS_L_56_DWORD.ReadOnly = true;
+            this.PROCS_L_56_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_56_DWORD.TabIndex = 40;
+            // 
+            // PROCS_L_52_DWORD
+            // 
+            this.PROCS_L_52_DWORD.ErrorMessage = "";
+            this.PROCS_L_52_DWORD.Location = new System.Drawing.Point(422, 392);
+            this.PROCS_L_52_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_52_DWORD.Name = "PROCS_L_52_DWORD";
+            this.PROCS_L_52_DWORD.Placeholder = "";
+            this.PROCS_L_52_DWORD.ReadOnly = true;
+            this.PROCS_L_52_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_52_DWORD.TabIndex = 34;
+            // 
+            // PROCS_L_48_DWORD
+            // 
+            this.PROCS_L_48_DWORD.ErrorMessage = "";
+            this.PROCS_L_48_DWORD.Location = new System.Drawing.Point(908, 362);
+            this.PROCS_L_48_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_48_DWORD.Name = "PROCS_L_48_DWORD";
+            this.PROCS_L_48_DWORD.Placeholder = "";
+            this.PROCS_L_48_DWORD.ReadOnly = true;
+            this.PROCS_L_48_DWORD.Size = new System.Drawing.Size(101, 25);
+            this.PROCS_L_48_DWORD.TabIndex = 28;
+            // 
+            // PROCS_L_44_DWORD
+            // 
+            this.PROCS_L_44_DWORD.ErrorMessage = "";
+            this.PROCS_L_44_DWORD.Location = new System.Drawing.Point(422, 362);
+            this.PROCS_L_44_DWORD.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_44_DWORD.Name = "PROCS_L_44_DWORD";
+            this.PROCS_L_44_DWORD.Placeholder = "";
+            this.PROCS_L_44_DWORD.ReadOnly = true;
+            this.PROCS_L_44_DWORD.Size = new System.Drawing.Size(102, 25);
+            this.PROCS_L_44_DWORD.TabIndex = 22;
+            // 
+            // PROCS_CURSOL_CODE
+            // 
+            this.PROCS_CURSOL_CODE.ErrorMessage = "";
+            this.PROCS_CURSOL_CODE.Location = new System.Drawing.Point(338, 35);
+            this.PROCS_CURSOL_CODE.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_CURSOL_CODE.Name = "PROCS_CURSOL_CODE";
+            this.PROCS_CURSOL_CODE.Placeholder = "";
+            this.PROCS_CURSOL_CODE.ReadOnly = true;
+            this.PROCS_CURSOL_CODE.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_CURSOL_CODE.TabIndex = 300;
+            // 
+            // PROCS_L_16_TEXT
+            // 
+            this.PROCS_L_16_TEXT.ErrorMessage = "";
+            this.PROCS_L_16_TEXT.Location = new System.Drawing.Point(338, 120);
+            this.PROCS_L_16_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_16_TEXT.Name = "PROCS_L_16_TEXT";
+            this.PROCS_L_16_TEXT.Placeholder = "";
+            this.PROCS_L_16_TEXT.ReadOnly = true;
+            this.PROCS_L_16_TEXT.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_16_TEXT.TabIndex = 295;
+            // 
+            // textBoxEx16
+            // 
+            this.textBoxEx16.ErrorMessage = "";
+            this.textBoxEx16.Location = new System.Drawing.Point(329, 830);
+            this.textBoxEx16.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx16.Name = "textBoxEx16";
+            this.textBoxEx16.Placeholder = "";
+            this.textBoxEx16.ReadOnly = true;
+            this.textBoxEx16.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx16.TabIndex = 289;
+            // 
+            // textBoxEx17
+            // 
+            this.textBoxEx17.ErrorMessage = "";
+            this.textBoxEx17.Location = new System.Drawing.Point(329, 802);
+            this.textBoxEx17.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx17.Name = "textBoxEx17";
+            this.textBoxEx17.Placeholder = "";
+            this.textBoxEx17.ReadOnly = true;
+            this.textBoxEx17.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx17.TabIndex = 286;
+            // 
+            // textBoxEx18
+            // 
+            this.textBoxEx18.ErrorMessage = "";
+            this.textBoxEx18.Location = new System.Drawing.Point(329, 773);
+            this.textBoxEx18.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx18.Name = "textBoxEx18";
+            this.textBoxEx18.Placeholder = "";
+            this.textBoxEx18.ReadOnly = true;
+            this.textBoxEx18.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx18.TabIndex = 283;
+            // 
+            // PROCS_L_32_RAMPROCS
+            // 
+            this.PROCS_L_32_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_32_RAMPROCS.Location = new System.Drawing.Point(338, 234);
+            this.PROCS_L_32_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_32_RAMPROCS.Name = "PROCS_L_32_RAMPROCS";
+            this.PROCS_L_32_RAMPROCS.Placeholder = "";
+            this.PROCS_L_32_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_32_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_32_RAMPROCS.TabIndex = 223;
+            // 
+            // PROCS_L_28_RAMPROCS
+            // 
+            this.PROCS_L_28_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_28_RAMPROCS.Location = new System.Drawing.Point(338, 206);
+            this.PROCS_L_28_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_28_RAMPROCS.Name = "PROCS_L_28_RAMPROCS";
+            this.PROCS_L_28_RAMPROCS.Placeholder = "";
+            this.PROCS_L_28_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_28_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_28_RAMPROCS.TabIndex = 220;
+            // 
+            // PROCS_L_24_RAMPROCS
+            // 
+            this.PROCS_L_24_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_24_RAMPROCS.Location = new System.Drawing.Point(338, 176);
+            this.PROCS_L_24_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_24_RAMPROCS.Name = "PROCS_L_24_RAMPROCS";
+            this.PROCS_L_24_RAMPROCS.Placeholder = "";
+            this.PROCS_L_24_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_24_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_24_RAMPROCS.TabIndex = 217;
+            // 
+            // PROCS_L_20_RAMPROCS
+            // 
+            this.PROCS_L_20_RAMPROCS.ErrorMessage = "";
+            this.PROCS_L_20_RAMPROCS.Location = new System.Drawing.Point(338, 149);
+            this.PROCS_L_20_RAMPROCS.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_20_RAMPROCS.Name = "PROCS_L_20_RAMPROCS";
+            this.PROCS_L_20_RAMPROCS.Placeholder = "";
+            this.PROCS_L_20_RAMPROCS.ReadOnly = true;
+            this.PROCS_L_20_RAMPROCS.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_20_RAMPROCS.TabIndex = 214;
+            // 
+            // PROCS_L_12_ASM
+            // 
+            this.PROCS_L_12_ASM.ErrorMessage = "";
+            this.PROCS_L_12_ASM.Location = new System.Drawing.Point(338, 91);
+            this.PROCS_L_12_ASM.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_12_ASM.Name = "PROCS_L_12_ASM";
+            this.PROCS_L_12_ASM.Placeholder = "";
+            this.PROCS_L_12_ASM.ReadOnly = true;
+            this.PROCS_L_12_ASM.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_12_ASM.TabIndex = 211;
+            // 
+            // PROCS_L_8_ASM
+            // 
+            this.PROCS_L_8_ASM.ErrorMessage = "";
+            this.PROCS_L_8_ASM.Location = new System.Drawing.Point(338, 62);
+            this.PROCS_L_8_ASM.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_L_8_ASM.Name = "PROCS_L_8_ASM";
+            this.PROCS_L_8_ASM.Placeholder = "";
+            this.PROCS_L_8_ASM.ReadOnly = true;
+            this.PROCS_L_8_ASM.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_L_8_ASM.TabIndex = 208;
+            // 
+            // PROCS_NAME
+            // 
+            this.PROCS_NAME.ErrorMessage = "";
+            this.PROCS_NAME.Location = new System.Drawing.Point(338, 6);
+            this.PROCS_NAME.Margin = new System.Windows.Forms.Padding(2);
+            this.PROCS_NAME.Name = "PROCS_NAME";
+            this.PROCS_NAME.Placeholder = "";
+            this.PROCS_NAME.ReadOnly = true;
+            this.PROCS_NAME.Size = new System.Drawing.Size(671, 25);
+            this.PROCS_NAME.TabIndex = 202;
+            // 
+            // ProcsListBox
+            // 
+            this.ProcsListBox.FormattingEnabled = true;
+            this.ProcsListBox.IntegralHeight = false;
+            this.ProcsListBox.ItemHeight = 18;
+            this.ProcsListBox.Location = new System.Drawing.Point(14, 28);
+            this.ProcsListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ProcsListBox.Name = "ProcsListBox";
+            this.ProcsListBox.Size = new System.Drawing.Size(1629, 850);
+            this.ProcsListBox.TabIndex = 161;
+            this.ProcsListBox.SelectedIndexChanged += new System.EventHandler(this.ProcsListBox_SelectedIndexChanged);
+            this.ProcsListBox.DoubleClick += new System.EventHandler(this.ProcsListBox_DoubleClick);
+            this.ProcsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsListBox_KeyDown);
+            // 
+            // X_ETC_WorldmapNode_Text
+            // 
+            this.X_ETC_WorldmapNode_Text.ErrorMessage = "";
+            this.X_ETC_WorldmapNode_Text.Location = new System.Drawing.Point(546, 2);
+            this.X_ETC_WorldmapNode_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.X_ETC_WorldmapNode_Text.Name = "X_ETC_WorldmapNode_Text";
+            this.X_ETC_WorldmapNode_Text.Placeholder = "";
+            this.X_ETC_WorldmapNode_Text.ReadOnly = true;
+            this.X_ETC_WorldmapNode_Text.Size = new System.Drawing.Size(297, 25);
+            this.X_ETC_WorldmapNode_Text.TabIndex = 319;
+            // 
+            // BGMName
+            // 
+            this.BGMName.ErrorMessage = "";
+            this.BGMName.Location = new System.Drawing.Point(243, 59);
+            this.BGMName.Margin = new System.Windows.Forms.Padding(2);
+            this.BGMName.Name = "BGMName";
+            this.BGMName.Placeholder = "";
+            this.BGMName.ReadOnly = true;
+            this.BGMName.Size = new System.Drawing.Size(600, 25);
+            this.BGMName.TabIndex = 338;
+            // 
+            // X_ETC_Edition_Text
+            // 
+            this.X_ETC_Edition_Text.ErrorMessage = "";
+            this.X_ETC_Edition_Text.Location = new System.Drawing.Point(151, 2);
+            this.X_ETC_Edition_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.X_ETC_Edition_Text.Name = "X_ETC_Edition_Text";
+            this.X_ETC_Edition_Text.Placeholder = "";
+            this.X_ETC_Edition_Text.ReadOnly = true;
+            this.X_ETC_Edition_Text.Size = new System.Drawing.Size(225, 25);
+            this.X_ETC_Edition_Text.TabIndex = 316;
+            // 
+            // X_ETC_Diffculty_Text
+            // 
+            this.X_ETC_Diffculty_Text.ErrorMessage = "";
+            this.X_ETC_Diffculty_Text.Location = new System.Drawing.Point(380, 2);
+            this.X_ETC_Diffculty_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.X_ETC_Diffculty_Text.Name = "X_ETC_Diffculty_Text";
+            this.X_ETC_Diffculty_Text.Placeholder = "";
+            this.X_ETC_Diffculty_Text.ReadOnly = true;
+            this.X_ETC_Diffculty_Text.Size = new System.Drawing.Size(162, 25);
+            this.X_ETC_Diffculty_Text.TabIndex = 318;
+            // 
+            // N_L_14_MAP
+            // 
+            this.N_L_14_MAP.ErrorMessage = "";
+            this.N_L_14_MAP.Location = new System.Drawing.Point(243, 31);
+            this.N_L_14_MAP.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_14_MAP.Name = "N_L_14_MAP";
+            this.N_L_14_MAP.Placeholder = "";
+            this.N_L_14_MAP.ReadOnly = true;
+            this.N_L_14_MAP.Size = new System.Drawing.Size(599, 25);
+            this.N_L_14_MAP.TabIndex = 336;
+            // 
+            // SoundAddress
+            // 
+            this.SoundAddress.ErrorMessage = "";
+            this.SoundAddress.Location = new System.Drawing.Point(730, 95);
+            this.SoundAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundAddress.Name = "SoundAddress";
+            this.SoundAddress.Placeholder = "";
+            this.SoundAddress.ReadOnly = true;
+            this.SoundAddress.Size = new System.Drawing.Size(116, 25);
+            this.SoundAddress.TabIndex = 331;
+            // 
+            // SoundList
+            // 
+            this.SoundList.FormattingEnabled = true;
+            this.SoundList.IntegralHeight = false;
+            this.SoundList.ItemHeight = 18;
+            this.SoundList.Location = new System.Drawing.Point(3, 123);
+            this.SoundList.Name = "SoundList";
+            this.SoundList.Size = new System.Drawing.Size(851, 175);
+            this.SoundList.TabIndex = 326;
+            this.SoundList.SelectedIndexChanged += new System.EventHandler(this.SoundList_SelectedIndexChanged);
+            this.SoundList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SoundList_KeyDown);
+            this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
+            // 
+            // TrapList
+            // 
+            this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TrapList.FormattingEnabled = true;
+            this.TrapList.IntegralHeight = false;
+            this.TrapList.ItemHeight = 18;
+            this.TrapList.Location = new System.Drawing.Point(3, 3);
+            this.TrapList.Name = "TrapList";
+            this.TrapList.Size = new System.Drawing.Size(847, 838);
+            this.TrapList.TabIndex = 329;
+            this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
+            this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
+            this.TrapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrapList_MouseDoubleClick);
+            // 
+            // TrapAddress
+            // 
+            this.TrapAddress.ErrorMessage = "";
+            this.TrapAddress.Location = new System.Drawing.Point(732, 5);
+            this.TrapAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.TrapAddress.Name = "TrapAddress";
+            this.TrapAddress.Placeholder = "";
+            this.TrapAddress.ReadOnly = true;
+            this.TrapAddress.Size = new System.Drawing.Size(116, 25);
+            this.TrapAddress.TabIndex = 330;
+            // 
+            // PaletteAddress
+            // 
+            this.PaletteAddress.ErrorMessage = "";
+            this.PaletteAddress.Location = new System.Drawing.Point(734, 5);
+            this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.PaletteAddress.Name = "PaletteAddress";
+            this.PaletteAddress.Placeholder = "";
+            this.PaletteAddress.ReadOnly = true;
+            this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
+            this.PaletteAddress.TabIndex = 327;
+            // 
+            // PaletteList
+            // 
+            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PaletteList.FormattingEnabled = true;
+            this.PaletteList.IntegralHeight = false;
+            this.PaletteList.ItemHeight = 18;
+            this.PaletteList.Location = new System.Drawing.Point(3, 3);
+            this.PaletteList.Name = "PaletteList";
+            this.PaletteList.Size = new System.Drawing.Size(847, 838);
+            this.PaletteList.TabIndex = 321;
+            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
+            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
+            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
+            // 
+            // SelectPalette
+            // 
+            this.SelectPalette.ErrorMessage = "";
+            this.SelectPalette.Location = new System.Drawing.Point(98, 4);
+            this.SelectPalette.Name = "SelectPalette";
+            this.SelectPalette.Placeholder = "";
+            this.SelectPalette.Size = new System.Drawing.Size(556, 25);
+            this.SelectPalette.TabIndex = 322;
+            // 
+            // ClearTurnList
+            // 
+            this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearTurnList.FormattingEnabled = true;
+            this.ClearTurnList.IntegralHeight = false;
+            this.ClearTurnList.ItemHeight = 18;
+            this.ClearTurnList.Location = new System.Drawing.Point(3, 3);
+            this.ClearTurnList.Name = "ClearTurnList";
+            this.ClearTurnList.Size = new System.Drawing.Size(847, 838);
+            this.ClearTurnList.TabIndex = 329;
+            this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
+            // 
+            // textBoxEx33
+            // 
+            this.textBoxEx33.ErrorMessage = "";
+            this.textBoxEx33.Location = new System.Drawing.Point(732, 5);
+            this.textBoxEx33.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx33.Name = "textBoxEx33";
+            this.textBoxEx33.Placeholder = "";
+            this.textBoxEx33.ReadOnly = true;
+            this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
+            this.textBoxEx33.TabIndex = 330;
+            // 
+            // PARTY_SelectAddress
+            // 
+            this.PARTY_SelectAddress.ErrorMessage = "";
+            this.PARTY_SelectAddress.Location = new System.Drawing.Point(444, 4);
+            this.PARTY_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.PARTY_SelectAddress.Name = "PARTY_SelectAddress";
+            this.PARTY_SelectAddress.Placeholder = "";
+            this.PARTY_SelectAddress.ReadOnly = true;
+            this.PARTY_SelectAddress.Size = new System.Drawing.Size(259, 25);
+            this.PARTY_SelectAddress.TabIndex = 303;
+            // 
+            // PARTY_AI2_TEXT
+            // 
+            this.PARTY_AI2_TEXT.ErrorMessage = "";
+            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(620, 558);
+            this.PARTY_AI2_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_AI2_TEXT.Multiline = true;
+            this.PARTY_AI2_TEXT.Name = "PARTY_AI2_TEXT";
+            this.PARTY_AI2_TEXT.Placeholder = "";
+            this.PARTY_AI2_TEXT.ReadOnly = true;
+            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(154, 68);
+            this.PARTY_AI2_TEXT.TabIndex = 435;
+            // 
+            // PARTY_AI1_TEXT
+            // 
+            this.PARTY_AI1_TEXT.ErrorMessage = "";
+            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(620, 497);
+            this.PARTY_AI1_TEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_AI1_TEXT.Multiline = true;
+            this.PARTY_AI1_TEXT.Name = "PARTY_AI1_TEXT";
+            this.PARTY_AI1_TEXT.Placeholder = "";
+            this.PARTY_AI1_TEXT.ReadOnly = true;
+            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(154, 57);
+            this.PARTY_AI1_TEXT.TabIndex = 434;
+            // 
+            // PARTY_PORTRAIT
+            // 
+            this.PARTY_PORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_PORTRAIT.Location = new System.Drawing.Point(260, 153);
+            this.PARTY_PORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.PARTY_PORTRAIT.Name = "PARTY_PORTRAIT";
+            this.PARTY_PORTRAIT.Size = new System.Drawing.Size(118, 104);
+            this.PARTY_PORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_PORTRAIT.TabIndex = 433;
+            this.PARTY_PORTRAIT.TabStop = false;
+            // 
+            // PARTY_L_38_ITEMICON
+            // 
+            this.PARTY_L_38_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(590, 386);
+            this.PARTY_L_38_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_38_ITEMICON.Name = "PARTY_L_38_ITEMICON";
+            this.PARTY_L_38_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_38_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_38_ITEMICON.TabIndex = 432;
+            this.PARTY_L_38_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_36_ITEMICON
+            // 
+            this.PARTY_L_36_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(590, 354);
+            this.PARTY_L_36_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_36_ITEMICON.Name = "PARTY_L_36_ITEMICON";
+            this.PARTY_L_36_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_36_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_36_ITEMICON.TabIndex = 431;
+            this.PARTY_L_36_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_34_ITEMICON
+            // 
+            this.PARTY_L_34_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(590, 323);
+            this.PARTY_L_34_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_34_ITEMICON.Name = "PARTY_L_34_ITEMICON";
+            this.PARTY_L_34_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_34_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_34_ITEMICON.TabIndex = 430;
+            this.PARTY_L_34_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_32_ITEMICON
+            // 
+            this.PARTY_L_32_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(590, 291);
+            this.PARTY_L_32_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_32_ITEMICON.Name = "PARTY_L_32_ITEMICON";
+            this.PARTY_L_32_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_32_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_32_ITEMICON.TabIndex = 429;
+            this.PARTY_L_32_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_30_ITEMICON
+            // 
+            this.PARTY_L_30_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(590, 260);
+            this.PARTY_L_30_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_30_ITEMICON.Name = "PARTY_L_30_ITEMICON";
+            this.PARTY_L_30_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.PARTY_L_30_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PARTY_L_30_ITEMICON.TabIndex = 428;
+            this.PARTY_L_30_ITEMICON.TabStop = false;
+            // 
+            // PARTY_L_38_ITEM
+            // 
+            this.PARTY_L_38_ITEM.ErrorMessage = "";
+            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(430, 376);
+            this.PARTY_L_38_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_38_ITEM.Name = "PARTY_L_38_ITEM";
+            this.PARTY_L_38_ITEM.Placeholder = "";
+            this.PARTY_L_38_ITEM.ReadOnly = true;
+            this.PARTY_L_38_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_38_ITEM.TabIndex = 363;
+            // 
+            // PARTY_L_36_ITEM
+            // 
+            this.PARTY_L_36_ITEM.ErrorMessage = "";
+            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(430, 348);
+            this.PARTY_L_36_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_36_ITEM.Name = "PARTY_L_36_ITEM";
+            this.PARTY_L_36_ITEM.Placeholder = "";
+            this.PARTY_L_36_ITEM.ReadOnly = true;
+            this.PARTY_L_36_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_36_ITEM.TabIndex = 358;
+            // 
+            // PARTY_L_34_ITEM
+            // 
+            this.PARTY_L_34_ITEM.ErrorMessage = "";
+            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(430, 323);
+            this.PARTY_L_34_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_34_ITEM.Name = "PARTY_L_34_ITEM";
+            this.PARTY_L_34_ITEM.Placeholder = "";
+            this.PARTY_L_34_ITEM.ReadOnly = true;
+            this.PARTY_L_34_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_34_ITEM.TabIndex = 353;
+            // 
+            // PARTY_L_32_ITEM
+            // 
+            this.PARTY_L_32_ITEM.ErrorMessage = "";
+            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(430, 294);
+            this.PARTY_L_32_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_32_ITEM.Name = "PARTY_L_32_ITEM";
+            this.PARTY_L_32_ITEM.Placeholder = "";
+            this.PARTY_L_32_ITEM.ReadOnly = true;
+            this.PARTY_L_32_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_32_ITEM.TabIndex = 333;
+            // 
+            // PARTY_L_30_ITEM
+            // 
+            this.PARTY_L_30_ITEM.ErrorMessage = "";
+            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(430, 268);
+            this.PARTY_L_30_ITEM.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_L_30_ITEM.Name = "PARTY_L_30_ITEM";
+            this.PARTY_L_30_ITEM.Placeholder = "";
+            this.PARTY_L_30_ITEM.ReadOnly = true;
+            this.PARTY_L_30_ITEM.Size = new System.Drawing.Size(155, 25);
+            this.PARTY_L_30_ITEM.TabIndex = 328;
+            // 
+            // PARTY_RAMUNITAID
+            // 
+            this.PARTY_RAMUNITAID.ErrorMessage = "";
+            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
+            this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
+            this.PARTY_RAMUNITAID.Placeholder = "";
+            this.PARTY_RAMUNITAID.ReadOnly = true;
+            this.PARTY_RAMUNITAID.Size = new System.Drawing.Size(157, 25);
+            this.PARTY_RAMUNITAID.TabIndex = 319;
+            this.PARTY_RAMUNITAID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_RAMUNITAID_MouseDoubleClick);
+            // 
+            // PARTY_RAMUNITSTATE
+            // 
+            this.PARTY_RAMUNITSTATE.ErrorMessage = "";
+            this.PARTY_RAMUNITSTATE.Location = new System.Drawing.Point(280, 65);
+            this.PARTY_RAMUNITSTATE.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_RAMUNITSTATE.Name = "PARTY_RAMUNITSTATE";
+            this.PARTY_RAMUNITSTATE.Placeholder = "";
+            this.PARTY_RAMUNITSTATE.ReadOnly = true;
+            this.PARTY_RAMUNITSTATE.Size = new System.Drawing.Size(482, 25);
+            this.PARTY_RAMUNITSTATE.TabIndex = 302;
+            // 
+            // PARTY_ROMCLASSPOINTER
+            // 
+            this.PARTY_ROMCLASSPOINTER.ErrorMessage = "";
+            this.PARTY_ROMCLASSPOINTER.Location = new System.Drawing.Point(280, 34);
+            this.PARTY_ROMCLASSPOINTER.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_ROMCLASSPOINTER.Name = "PARTY_ROMCLASSPOINTER";
+            this.PARTY_ROMCLASSPOINTER.Placeholder = "";
+            this.PARTY_ROMCLASSPOINTER.ReadOnly = true;
+            this.PARTY_ROMCLASSPOINTER.Size = new System.Drawing.Size(481, 25);
+            this.PARTY_ROMCLASSPOINTER.TabIndex = 300;
+            this.PARTY_ROMCLASSPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMCLASSPOINTER_MouseDoubleClick);
+            // 
+            // textBoxEx52
+            // 
+            this.textBoxEx52.ErrorMessage = "";
+            this.textBoxEx52.Location = new System.Drawing.Point(329, 830);
+            this.textBoxEx52.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx52.Name = "textBoxEx52";
+            this.textBoxEx52.Placeholder = "";
+            this.textBoxEx52.ReadOnly = true;
+            this.textBoxEx52.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx52.TabIndex = 289;
+            // 
+            // textBoxEx53
+            // 
+            this.textBoxEx53.ErrorMessage = "";
+            this.textBoxEx53.Location = new System.Drawing.Point(329, 802);
+            this.textBoxEx53.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx53.Name = "textBoxEx53";
+            this.textBoxEx53.Placeholder = "";
+            this.textBoxEx53.ReadOnly = true;
+            this.textBoxEx53.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx53.TabIndex = 286;
+            // 
+            // textBoxEx54
+            // 
+            this.textBoxEx54.ErrorMessage = "";
+            this.textBoxEx54.Location = new System.Drawing.Point(329, 773);
+            this.textBoxEx54.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEx54.Name = "textBoxEx54";
+            this.textBoxEx54.Placeholder = "";
+            this.textBoxEx54.ReadOnly = true;
+            this.textBoxEx54.Size = new System.Drawing.Size(291, 25);
+            this.textBoxEx54.TabIndex = 283;
+            // 
+            // PARTY_ROMUNITPOINTER
+            // 
+            this.PARTY_ROMUNITPOINTER.ErrorMessage = "";
+            this.PARTY_ROMUNITPOINTER.Location = new System.Drawing.Point(280, 5);
+            this.PARTY_ROMUNITPOINTER.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_ROMUNITPOINTER.Name = "PARTY_ROMUNITPOINTER";
+            this.PARTY_ROMUNITPOINTER.Placeholder = "";
+            this.PARTY_ROMUNITPOINTER.ReadOnly = true;
+            this.PARTY_ROMUNITPOINTER.Size = new System.Drawing.Size(481, 25);
+            this.PARTY_ROMUNITPOINTER.TabIndex = 202;
+            this.PARTY_ROMUNITPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMUNITPOINTER_MouseDoubleClick);
+            // 
+            // PartyCombo
+            // 
+            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PartyCombo.FormattingEnabled = true;
+            this.PartyCombo.Items.AddRange(new object[] {
+            "00=PLAYER",
+            "40=NPC",
+            "80=Enemy"});
+            this.PartyCombo.Location = new System.Drawing.Point(318, 10);
+            this.PartyCombo.Name = "PartyCombo";
+            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
+            this.PartyCombo.TabIndex = 313;
+            // 
+            // PartyListBox
+            // 
+            this.PartyListBox.FormattingEnabled = true;
+            this.PartyListBox.HorizontalScrollbar = true;
+            this.PartyListBox.IntegralHeight = false;
+            this.PartyListBox.ItemHeight = 18;
+            this.PartyListBox.Location = new System.Drawing.Point(0, 49);
+            this.PartyListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PartyListBox.Name = "PartyListBox";
+            this.PartyListBox.Size = new System.Drawing.Size(778, 832);
+            this.PartyListBox.TabIndex = 311;
+            this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
+            this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
+            this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
             // 
             // CHEAT_WARP_NODE_NAME
             // 
@@ -6727,12 +6780,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B71)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B70)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B69)).EndInit();
@@ -6801,6 +6848,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).EndInit();
             this.CheatPage.ResumeLayout(false);
             this.CheatPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_TURN_VALUE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_NODE_VALUE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_EDTION_VALUE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WARP_CHPATER_VALUE)).EndInit();
@@ -6809,6 +6857,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_MONEY_VALUE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_34_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_32_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_30_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
@@ -7273,5 +7327,8 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label PartyCount;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.NumericUpDown CHEAT_TURN_VALUE;
+        private System.Windows.Forms.Button CHEAT_TURN;
     }
 }

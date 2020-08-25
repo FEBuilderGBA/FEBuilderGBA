@@ -2898,5 +2898,18 @@ namespace FEBuilderGBA
                 PaletteList_MouseDoubleClick(sender, null);
             }
         }
+
+        private void CHEAT_TURN_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnectShowError())
+            {
+                return;
+            }
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint writeRAMPointer = stageStructAddr + 0x10;
+            Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_TURN_VALUE.Value);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
+        }
     }
 }

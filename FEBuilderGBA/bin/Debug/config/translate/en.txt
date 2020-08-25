@@ -1339,6 +1339,12 @@ Party
 :チート
 Cheat
 
+:ターン数
+Turns
+
+:ターン数を変更
+Change turns
+
 :ワールドマップ拠点
 World Map Nodes
 

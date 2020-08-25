@@ -1,0 +1,11 @@
+NAME=輸送隊の馬車のミニ顔画像
+NAME.en=Mini Mug Portrait of Supply carriage wagon
+NAME.zh=Mini Mug Portrait of Supply carriage wagon
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x9F9A8
+
+ADDRESS_TYPE=PORTRAIT

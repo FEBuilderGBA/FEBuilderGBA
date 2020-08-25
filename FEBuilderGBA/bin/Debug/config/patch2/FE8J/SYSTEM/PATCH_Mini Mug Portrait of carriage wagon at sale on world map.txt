@@ -1,0 +1,11 @@
+NAME=ワールドマップでの売却時の馬車のミニ顔画像
+NAME.en=Mini Mug Portrait of carriage wagon at sale on world map
+NAME.zh=Mini Mug Portrait of carriage wagon at sale on world map
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xA2354
+
+ADDRESS_TYPE=PORTRAIT
