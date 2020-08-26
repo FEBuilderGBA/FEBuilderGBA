@@ -1,0 +1,16 @@
+NAME=状況ウィンドウで表示されるヘルプ画像
+INFO=周目、所持金、クリア条件、ターン
+
+NAME.en=Help image displayed in the status window
+INFO.en=Count, Funds, Goal, Turns
+NAME.zh=Help image displayed in the status window
+INFO.zh=Count, Funds, Goal, Turns
+
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x090AE0//0xAAEB40
+PALETTE_POINTER=0x090AD8//0xAAEE7C

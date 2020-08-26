@@ -14,3 +14,6 @@ INFO=武器レベルバーのグラフを描画するために利用します。
 
 INFO.en=It is used to draw the graph of the weapon level bar.\r\nSet the required weapon experience value + 1.\r\nDefault: 31.
 INFO.zh=用于绘制武器等级栏的图形。\r\n设置所需的武器经验值+1。\r\n默认值：31
+
+CONFLICT_IF:0x16d5c=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=WeaponRankEx

@@ -14,3 +14,6 @@ AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-lev
 INFO=武器レベルバーのグラフを描画するために利用する値です。\r\n一つ前のWEXP+この値=次のレベルのWEXPになるように値を設定してください。\r\nDefault:40
 INFO.en=The value used to draw the graph for the weapon level bar.\r\nSet the value so that WEXP of the previous one + this value = WEXP of the next level.\r\nDefault: 40.
 INFO.zh=用于绘制武器等级栏图形的值。\r\n设置该值，以使上一个的WEXP +此值 = 下一个级别的WEXP。\r\n默认值：40
+
+CONFLICT_IF:0x16d5c=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=WeaponRankEx

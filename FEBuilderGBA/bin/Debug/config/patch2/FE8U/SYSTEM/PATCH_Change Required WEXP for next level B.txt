@@ -12,3 +12,5 @@ HEX=false
 AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
 INFO=Default:120
 
+CONFLICT_IF:0x16d5c=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=WeaponRankEx
