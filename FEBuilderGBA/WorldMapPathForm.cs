@@ -222,7 +222,6 @@ namespace FEBuilderGBA
             {
                 if (!U.isSafetyOffset(p + 4))
                 {
-                    Debug.Assert(false);
                     return p - addr;
                 }
 
