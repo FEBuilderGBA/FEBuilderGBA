@@ -12870,3 +12870,5 @@
 08000D64	ConvertFrameSecToSecStrng	{U}
 080BA8E0	ASMC_ExecuteSuppendSave	{J}
 080B5D5C	ASMC_ExecuteSuppendSave	{U}
+0801A278	PrepareBlankTile	{U}
+08019F48	PrepareBlankTile	{J}

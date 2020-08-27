@@ -1,0 +1,23 @@
+NAME=Kill PrepareBlankTile
+NAME.en=Kill PrepareBlankTile
+NAME.zh=Kill PrepareBlankTile
+
+INFO=1枚絵のマップを利用した時に、0,0のタイルが0,0,0,0のブランク(空白)のタイルでない場合、メニューから会話や交換を選んだ場合に、画面のタイルの一部が黒くなる現象を抑制します。\r\nこれは、PrepareBlankTile関数ないで、RegisterBlankTileが呼ばれ、0,0のタイルで利用しているタイルをワイプするためです。\r\nこのパッチは、PrepareBlankTile関数を呼び出さないように修正することで、この問題を解決させます。\r\n副作用はまだよくわかっていません。
+
+INFO.en=When you use Single Picture maps and 0,0 tiles are not 0,0,0,0 blank tiles, you can suppress  blackening of some of tiles on  screen when you choose Talk or ItemExchange from  menu.\r\nThis is because  PrepareBlankTile function is called without  PrepareBlankTile function, but rar  RegisterBlankTile is called to wipe  tiles used by  0,0 tiles.\r\nThis patch solves this problem by fixing it so that  PrepareBlankTile function is not called.\r\nside-effects are not yet well understood.\r\n
+INFO.zh=When you use Single Picture maps and 0,0 tiles are not 0,0,0,0 blank tiles, you can suppress  blackening of some of tiles on  screen when you choose Talk or ItemExchange from  menu.\r\nThis is because  PrepareBlankTile function is called without  PrepareBlankTile function, but rar  RegisterBlankTile is called to wipe  tiles used by  0,0 tiles.\r\nThis patch solves this problem by fixing it so that  PrepareBlankTile function is not called.\r\nside-effects are not yet well understood.\r\n
+
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: use RegisterBlankTile |OFF|Fix: Stop RegisterBlankTile|FIX
+
+OFF:0x3582E=0xE4 0xF7 0x8B 0xFB
+FIX:0x3582E=0x00 0x00 0x00 0x00
+
+OFF:0x35630=0xE4 0xF7 0x8A 0xFC
+FIX:0x35630=0x00 0x00 0x00 0x00
+
+AUTHOR=7743
