@@ -2654,7 +2654,7 @@ namespace FEBuilderGBA
                             )
                         {//テキスト関係の命令.
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseValsID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
+                            UseValsID.AppendTextID(list, FELint.Type.EVENTSCRIPT, event_addr, info, v, addr);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_MENUEXTENDS)
                         {//分岐メニュー拡張
@@ -2687,12 +2687,12 @@ namespace FEBuilderGBA
                         else if (arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MUSIC)
                         {//音楽
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseValsID.AppendSongID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
+                            UseValsID.AppendSongID(list, FELint.Type.EVENTSCRIPT, event_addr, info, v, addr);
                         }
                         else if (arg.Type == EventScript.ArgType.BG)
                         {//BG
                             uint v = EventScript.GetArgValue(code, arg);
-                            UseValsID.AppendBGID(list, FELint.Type.EVENTSCRIPT, addr, info, v, event_addr);
+                            UseValsID.AppendBGID(list, FELint.Type.EVENTSCRIPT, event_addr, info, v, addr);
                         }
                     }
                 }
