@@ -97,9 +97,7 @@ namespace FEBuilderGBA
             }
 
             systemmenu_terrain = new ImageFormRef(this, "systemmenu_terrain", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer(), Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer(), Program.ROM.RomInfo.systemmenu_common_palette_pointer());
-
             systemmenu_name = new ImageFormRef(this, "systemmenu_name", 256, 256, 4, Program.ROM.RomInfo.systemmenu_name_image_pointer(), Program.ROM.RomInfo.systemmenu_name_tsa_pointer(), Program.ROM.RomInfo.systemmenu_name_palette_pointer());
-
             systemmenu_battlepreview = new ImageFormRef(this, "systemmenu_battlepreview", 256, 256, 4, Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer());
 
             systemarea_move_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer());
@@ -109,6 +107,14 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(X_Jump_Patch);
             InputFormRef.markupJumpLabel(X_GraphicsTool);
             InputFormRef.markupJumpLabel(X_Internet);
+
+            InputFormRef.markupJumpLabel(unit_icon_Label);
+            InputFormRef.markupJumpLabel(unit_icon_enemy_Label);
+            InputFormRef.markupJumpLabel(unit_icon_npc_Label);
+            InputFormRef.markupJumpLabel(unit_icon_four_Label);
+            InputFormRef.markupJumpLabel(unit_icon_gray_Label);
+            InputFormRef.markupJumpLabel(icon_palette_Label);
+
             systemIconPictureBox1.Image = ImageSystemIconForm.Allows(8);
             systemIconPictureBox2.Image = ImageSystemIconForm.Fort();
             systemIconPictureBox3.Image = ImageSystemIconForm.Vendor();
@@ -130,6 +136,8 @@ namespace FEBuilderGBA
             unit_icon_four_PALETTE.Value = Program.ROM.RomInfo.unit_icon_four_palette_address();
             unit_icon_gray_PALETTE.Value = Program.ROM.RomInfo.unit_icon_gray_palette_address();
             item_icon_PALETTE.Value = Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer());
+//                    public uint system_weapon_icon_palette_pointer() { return 0x91178; }//剣　斧　弓などの武器属性アイコン集のパレット
+
         }
 
         const int ICON_COUNT = 10;
@@ -293,7 +301,6 @@ namespace FEBuilderGBA
         {
             Import_Palette_By_Address(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer()));
         }
-
 
         //よく使うのでキャッシュする.
         static Bitmap SystemIconCache;
@@ -964,6 +971,50 @@ namespace FEBuilderGBA
         {
             MainFormUtil.GotoMoreData();
         }
+
+        void OpenPaletteEditor(Bitmap baseBitmap, uint addr)
+        {
+            ImagePalletForm f = (ImagePalletForm)InputFormRef.JumpForm<ImagePalletForm>(U.NOT_FOUND);
+
+            f.JumpTo(baseBitmap, addr, 1);
+            f.FormClosed += (s, ee) =>
+            {
+                if (this.IsDisposed)
+                {
+                    return;
+                }
+            };
+        }
+        private void unit_icon_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawUnits(0), (uint)unit_icon_PALETTE.Value);
+        }
+
+        private void unit_icon_enemy_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawUnits(2), (uint)unit_icon_enemy_PALETTE.Value);
+        }
+
+        private void unit_icon_npc_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawUnits(1), (uint)unit_icon_npc_PALETTE.Value);
+        }
+
+        private void unit_icon_four_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawUnits(4), (uint)unit_icon_four_PALETTE.Value);
+        }
+
+        private void unit_icon_gray_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawUnits(3), (uint)unit_icon_gray_PALETTE.Value);
+        }
+
+        private void icon_palette_Label_Click(object sender, EventArgs e)
+        {
+            OpenPaletteEditor(DrawItemIcons(), (uint)item_icon_PALETTE.Value);
+        }
+
 
 
 

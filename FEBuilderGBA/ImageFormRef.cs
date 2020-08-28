@@ -33,6 +33,7 @@ namespace FEBuilderGBA
         Button AllWriteButton = null;
         Button JumpGraphicsToolButton = null;
         Button JumpDecreaseColorToolButton = null;
+        Label PaletteEditorLabel = null;
         int Width;
         int Height;
         int PaletteCount;
@@ -226,6 +227,11 @@ namespace FEBuilderGBA
                     AllWriteButton = (Button)info;
                     continue;
                 }
+                if (name.IndexOf("PaletteEditorLabel") >= 0 && info is Label)
+                {
+                    PaletteEditorLabel = (Label)info;
+                    continue;
+                }
             }
             DrawPictureBox();
 
@@ -255,6 +261,12 @@ namespace FEBuilderGBA
             if (JumpDecreaseColorToolButton != null)
             {
                 JumpDecreaseColorToolButton.Click += OnJumpDecreaseColorTool;
+            }
+            if (PaletteEditorLabel != null)
+            {
+                Debug.Assert(ZPALETTE == null); //圧縮パレットはここでは変更できない
+                PaletteEditorLabel.Click += OnPalette;
+                InputFormRef.markupJumpLabel(PaletteEditorLabel);
             }
         }
         public void UpdatePointers(uint image_pointer, uint tsa_pointer, uint palette_pointer, uint image2_pointer = 0)

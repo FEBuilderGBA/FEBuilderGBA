@@ -3754,6 +3754,9 @@ Fourth
 :システムメニュー
 System Menu
 
+:パレットの変更は、パッチの中にあります。こちらをクリックしてください。
+The palette change is in the patch. Please click here.
+
 :ステータス画面の背景は、パッチの中にあります。こちらをクリックしてください。
 The background of the status screen is in the patch. Please click here.
 
@@ -3783,9 +3786,6 @@ If there is no patch, it may be an undiscovered image.\r\nIn that case, please s
 
 :ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
 Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
-
-:パレットの変更は、パッチの中にあります。こちらをクリックしてください。
-The palette change is in the patch. Please click here.
 
 :システムアイコン
 System Icon

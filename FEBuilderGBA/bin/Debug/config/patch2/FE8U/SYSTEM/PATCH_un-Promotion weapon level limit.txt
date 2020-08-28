@@ -9,5 +9,9 @@ TAG=#ENGINE
 ADDRESS=0x2c1a2 0x2c1a6
 DEFAULT=0xB5
 
-INFO.en=Sets the maximum amount of weapon experience unpromoted classes can have in hex. Default is B5 (A Rank)\r\nConvert to decimal for specific value.
+AUTHOR=7743
+
+INFO=下級職の武器レベル制限を設定します。ディフォルトは、181(0xB5/A Rank)です。
+INFO.en=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)
+INFO.zh=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)
 HEX=false

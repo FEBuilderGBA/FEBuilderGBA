@@ -11,3 +11,8 @@ HEADERTSA_POINTER=0x00038414//0x08A25ECC
 PALETTE_POINTER=0x00038410//0x08A25DCC
 NAME.en=Save screen background
 NAME.zh=保存屏幕背景
+
+PALETTE=8
+INFO=セーブ画面の背景です。エンディングのターン数一覧の背景にも使われます。\r\nこの画像は、パレットは8パレットまで利用できるようです。
+INFO.en=The background of the save screen.It is also used as the background for the ending turn number list.\r\nThis image seems to be available up to 8 palettes.
+INFO.zh=保存屏幕的背景。它也用作结束转弯号码列表的背景。\r\n该图像似乎最多可以使用8个调色板。

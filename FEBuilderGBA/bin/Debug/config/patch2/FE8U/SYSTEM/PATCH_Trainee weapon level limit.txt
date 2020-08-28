@@ -1,0 +1,17 @@
+NAME=見習い武器レベル制限
+NAME.en=Max Weapon Level for Trainee Classes/Units
+NAME.zh=Max Weapon Level for Trainee Classes/Units
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2C19A 0x2C19E
+DEFAULT=0x47
+
+AUTHOR=7743
+
+INFO=見習い(研修生/MaxLevel10)の武器レベル制限を行います。ディフォルトは、71(0x47/Level C)です。
+INFO.en=Set Weapon level limit for trainee(Max Level 10). The default is 71(0x47/Level C).
+INFO.zh=Set Weapon level limit for trainee(Max Level 10). The default is 71(0x47/Level C).
+HEX=false

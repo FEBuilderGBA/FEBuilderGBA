@@ -32,18 +32,18 @@
             this.WMTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.system_music_icon_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.system_music_icon_icon_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.system_music_icon_icon_Import = new System.Windows.Forms.Button();
             this.system_music_icon_icon_Export = new System.Windows.Forms.Button();
             this.system_music_icon_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.system_music_icon_icon_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.system_weapon_icon_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.system_weapon_icon_icon_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.system_move_allowicon_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.system_move_allowicon_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.system_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.system_icon_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.system_weapon_icon_icon_Import = new System.Windows.Forms.Button();
             this.system_weapon_icon_icon_Export = new System.Windows.Forms.Button();
             this.system_move_allowicon_Import = new System.Windows.Forms.Button();
@@ -62,13 +62,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.unit_icon_gray_Export = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
+            this.unit_icon_gray_Label = new System.Windows.Forms.Label();
             this.unit_icon_gray_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_gray_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_gray_Import = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.unit_icon_four_Export = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
+            this.unit_icon_four_Label = new System.Windows.Forms.Label();
             this.unit_icon_four_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_four_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_four_Import = new System.Windows.Forms.Button();
@@ -76,11 +76,11 @@
             this.icon_palette_Export = new System.Windows.Forms.Button();
             this.item_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.icon_palette_Import = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.icon_palette_Label = new System.Windows.Forms.Label();
             this.item_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
             this.unit_icon_npc_Export = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.unit_icon_npc_Label = new System.Windows.Forms.Label();
             this.unit_icon_npc_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_npc_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_npc_Import = new System.Windows.Forms.Button();
@@ -88,15 +88,16 @@
             this.unit_icon_enemy_Export = new System.Windows.Forms.Button();
             this.unit_icon_enemy_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_enemy_Import = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.unit_icon_enemy_Label = new System.Windows.Forms.Label();
             this.unit_icon_enemy_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.unit_icon_Export = new System.Windows.Forms.Button();
             this.unit_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_Import = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.unit_icon_Label = new System.Windows.Forms.Label();
             this.unit_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.X_SystemMenuPaletteLink = new System.Windows.Forms.Label();
             this.X_StatusBackgroundLink = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -107,7 +108,7 @@
             this.systemmenu_name_Export = new System.Windows.Forms.Button();
             this.systemmenu_name_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_name_Import_KeepTSA = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
+            this.systemmenu_name_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.systemmenu_terrain_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -117,7 +118,7 @@
             this.systemmenu_terrain_Export = new System.Windows.Forms.Button();
             this.systemmenu_terrain_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_terrain_Import_KeepTSA = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
+            this.systemmenu_terrain_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.systemmenu_goal_panel = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.systemmenu_goal_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -127,7 +128,7 @@
             this.systemmenu_goal_Export = new System.Windows.Forms.Button();
             this.systemmenu_goal_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_goal_Import_KeepTSA = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
+            this.systemmenu_goal_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.systemarea_staff_gradation_palette_Button = new System.Windows.Forms.Button();
             this.systemarea_staff_gradation_palette = new System.Windows.Forms.NumericUpDown();
@@ -141,7 +142,7 @@
             this.systemmenu_battlepreview_HEADERTSA = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.systemmenu_battlepreview_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
+            this.systemmenu_battlepreview_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.systemmenu_battlepreview_Import_KeepTSA = new System.Windows.Forms.Button();
             this.systemmenu_battlepreview_Export = new System.Windows.Forms.Button();
             this.systemmenu_battlepreview_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -153,7 +154,7 @@
             this.systemmenu_old_badstatus_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.systemmenu_old_badstatus_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_old_badstatus_ZIMAGE = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
+            this.systemmenu_old_badstatus_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.systemmenu_old_badstatus_Export = new System.Windows.Forms.Button();
             this.systemmenu_old_badstatus_Import = new System.Windows.Forms.Button();
             this.systemmenu_badstatus_panel = new System.Windows.Forms.Panel();
@@ -162,7 +163,7 @@
             this.systemmenu_badstatus_IMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_badstatus_Export = new System.Windows.Forms.Button();
             this.systemmenu_badstatus_Import = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
+            this.systemmenu_badstatus_PaletteEditorLabel = new System.Windows.Forms.Label();
             this.systemmenu_badstatus_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
@@ -171,7 +172,6 @@
             this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
             this.X_GraphicsTool = new System.Windows.Forms.Label();
             this.X_Jump_Patch = new System.Windows.Forms.Label();
-            this.X_SystemMenuPaletteLink = new System.Windows.Forms.Label();
             this.WMTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_PALETTE)).BeginInit();
@@ -276,18 +276,18 @@
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.AllWriteButton);
             this.tabPage1.Controls.Add(this.system_music_icon_icon_PALETTE);
-            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.system_music_icon_icon_PaletteEditorLabel);
             this.tabPage1.Controls.Add(this.system_music_icon_icon_Import);
             this.tabPage1.Controls.Add(this.system_music_icon_icon_Export);
             this.tabPage1.Controls.Add(this.system_music_icon_icon_Picture);
             this.tabPage1.Controls.Add(this.system_music_icon_icon_ZIMAGE);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.system_weapon_icon_icon_PALETTE);
-            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.system_weapon_icon_icon_PaletteEditorLabel);
             this.tabPage1.Controls.Add(this.system_move_allowicon_PALETTE);
-            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.system_move_allowicon_PaletteEditorLabel);
             this.tabPage1.Controls.Add(this.system_icon_PALETTE);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.system_icon_PaletteEditorLabel);
             this.tabPage1.Controls.Add(this.system_weapon_icon_icon_Import);
             this.tabPage1.Controls.Add(this.system_weapon_icon_icon_Export);
             this.tabPage1.Controls.Add(this.system_move_allowicon_Import);
@@ -324,16 +324,16 @@
             this.system_music_icon_icon_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.system_music_icon_icon_PALETTE.TabIndex = 130;
             // 
-            // label6
+            // system_music_icon_icon_PaletteEditorLabel
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(19, 395);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 31);
-            this.label6.TabIndex = 129;
-            this.label6.Text = "パレット";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.system_music_icon_icon_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.system_music_icon_icon_PaletteEditorLabel.Location = new System.Drawing.Point(19, 395);
+            this.system_music_icon_icon_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.system_music_icon_icon_PaletteEditorLabel.Name = "system_music_icon_icon_PaletteEditorLabel";
+            this.system_music_icon_icon_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.system_music_icon_icon_PaletteEditorLabel.TabIndex = 129;
+            this.system_music_icon_icon_PaletteEditorLabel.Text = "パレット";
+            this.system_music_icon_icon_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // system_music_icon_icon_Import
             // 
@@ -404,16 +404,16 @@
             this.system_weapon_icon_icon_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.system_weapon_icon_icon_PALETTE.TabIndex = 123;
             // 
-            // label3
+            // system_weapon_icon_icon_PaletteEditorLabel
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(19, 272);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 31);
-            this.label3.TabIndex = 122;
-            this.label3.Text = "パレット";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.system_weapon_icon_icon_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.system_weapon_icon_icon_PaletteEditorLabel.Location = new System.Drawing.Point(19, 272);
+            this.system_weapon_icon_icon_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.system_weapon_icon_icon_PaletteEditorLabel.Name = "system_weapon_icon_icon_PaletteEditorLabel";
+            this.system_weapon_icon_icon_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.system_weapon_icon_icon_PaletteEditorLabel.TabIndex = 122;
+            this.system_weapon_icon_icon_PaletteEditorLabel.Text = "パレット";
+            this.system_weapon_icon_icon_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // system_move_allowicon_PALETTE
             // 
@@ -429,16 +429,16 @@
             this.system_move_allowicon_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.system_move_allowicon_PALETTE.TabIndex = 121;
             // 
-            // label2
+            // system_move_allowicon_PaletteEditorLabel
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(19, 156);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 31);
-            this.label2.TabIndex = 120;
-            this.label2.Text = "パレット";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.system_move_allowicon_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.system_move_allowicon_PaletteEditorLabel.Location = new System.Drawing.Point(19, 156);
+            this.system_move_allowicon_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.system_move_allowicon_PaletteEditorLabel.Name = "system_move_allowicon_PaletteEditorLabel";
+            this.system_move_allowicon_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.system_move_allowicon_PaletteEditorLabel.TabIndex = 120;
+            this.system_move_allowicon_PaletteEditorLabel.Text = "パレット";
+            this.system_move_allowicon_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // system_icon_PALETTE
             // 
@@ -454,16 +454,16 @@
             this.system_icon_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.system_icon_PALETTE.TabIndex = 119;
             // 
-            // label1
+            // system_icon_PaletteEditorLabel
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(19, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 31);
-            this.label1.TabIndex = 118;
-            this.label1.Text = "パレット";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.system_icon_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.system_icon_PaletteEditorLabel.Location = new System.Drawing.Point(19, 49);
+            this.system_icon_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.system_icon_PaletteEditorLabel.Name = "system_icon_PaletteEditorLabel";
+            this.system_icon_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.system_icon_PaletteEditorLabel.TabIndex = 118;
+            this.system_icon_PaletteEditorLabel.Text = "パレット";
+            this.system_icon_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // system_weapon_icon_icon_Import
             // 
@@ -651,11 +651,11 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.unit_icon_gray_Export);
-            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.unit_icon_gray_Label);
             this.panel5.Controls.Add(this.unit_icon_gray_Picture);
             this.panel5.Controls.Add(this.unit_icon_gray_PALETTE);
             this.panel5.Controls.Add(this.unit_icon_gray_Import);
-            this.panel5.Location = new System.Drawing.Point(8, 340);
+            this.panel5.Location = new System.Drawing.Point(8, 331);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(914, 75);
@@ -672,16 +672,17 @@
             this.unit_icon_gray_Export.UseVisualStyleBackColor = true;
             this.unit_icon_gray_Export.Click += new System.EventHandler(this.unit_icon_gray_Export_Click);
             // 
-            // label33
+            // unit_icon_gray_Label
             // 
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Location = new System.Drawing.Point(-1, -1);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(242, 31);
-            this.label33.TabIndex = 125;
-            this.label33.Text = "グレー";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_gray_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unit_icon_gray_Label.Location = new System.Drawing.Point(-1, -1);
+            this.unit_icon_gray_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unit_icon_gray_Label.Name = "unit_icon_gray_Label";
+            this.unit_icon_gray_Label.Size = new System.Drawing.Size(242, 31);
+            this.unit_icon_gray_Label.TabIndex = 125;
+            this.unit_icon_gray_Label.Text = "グレー";
+            this.unit_icon_gray_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_gray_Label.Click += new System.EventHandler(this.unit_icon_gray_Label_Click);
             // 
             // unit_icon_gray_Picture
             // 
@@ -724,11 +725,11 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.unit_icon_four_Export);
-            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.unit_icon_four_Label);
             this.panel1.Controls.Add(this.unit_icon_four_Picture);
             this.panel1.Controls.Add(this.unit_icon_four_PALETTE);
             this.panel1.Controls.Add(this.unit_icon_four_Import);
-            this.panel1.Location = new System.Drawing.Point(8, 259);
+            this.panel1.Location = new System.Drawing.Point(8, 252);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(914, 75);
@@ -745,16 +746,17 @@
             this.unit_icon_four_Export.UseVisualStyleBackColor = true;
             this.unit_icon_four_Export.Click += new System.EventHandler(this.unit_icon_four_Export_Click);
             // 
-            // label32
+            // unit_icon_four_Label
             // 
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Location = new System.Drawing.Point(-1, -1);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(242, 31);
-            this.label32.TabIndex = 125;
-            this.label32.Text = "4軍";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_four_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unit_icon_four_Label.Location = new System.Drawing.Point(-1, -1);
+            this.unit_icon_four_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unit_icon_four_Label.Name = "unit_icon_four_Label";
+            this.unit_icon_four_Label.Size = new System.Drawing.Size(242, 31);
+            this.unit_icon_four_Label.TabIndex = 125;
+            this.unit_icon_four_Label.Text = "4軍";
+            this.unit_icon_four_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_four_Label.Click += new System.EventHandler(this.unit_icon_four_Label_Click);
             // 
             // unit_icon_four_Picture
             // 
@@ -799,9 +801,9 @@
             this.panel6.Controls.Add(this.icon_palette_Export);
             this.panel6.Controls.Add(this.item_icon_Picture);
             this.panel6.Controls.Add(this.icon_palette_Import);
-            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.icon_palette_Label);
             this.panel6.Controls.Add(this.item_icon_PALETTE);
-            this.panel6.Location = new System.Drawing.Point(7, 423);
+            this.panel6.Location = new System.Drawing.Point(7, 415);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(914, 75);
@@ -840,16 +842,17 @@
             this.icon_palette_Import.UseVisualStyleBackColor = true;
             this.icon_palette_Import.Click += new System.EventHandler(this.icon_palette_Import_Click);
             // 
-            // label8
+            // icon_palette_Label
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(-1, -1);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(242, 31);
-            this.label8.TabIndex = 125;
-            this.label8.Text = "アイテム";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.icon_palette_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.icon_palette_Label.Location = new System.Drawing.Point(-1, -1);
+            this.icon_palette_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.icon_palette_Label.Name = "icon_palette_Label";
+            this.icon_palette_Label.Size = new System.Drawing.Size(242, 31);
+            this.icon_palette_Label.TabIndex = 125;
+            this.icon_palette_Label.Text = "アイテム";
+            this.icon_palette_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.icon_palette_Label.Click += new System.EventHandler(this.icon_palette_Label_Click);
             // 
             // item_icon_PALETTE
             // 
@@ -870,11 +873,11 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.unit_icon_npc_Export);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.unit_icon_npc_Label);
             this.panel4.Controls.Add(this.unit_icon_npc_Picture);
             this.panel4.Controls.Add(this.unit_icon_npc_PALETTE);
             this.panel4.Controls.Add(this.unit_icon_npc_Import);
-            this.panel4.Location = new System.Drawing.Point(7, 176);
+            this.panel4.Location = new System.Drawing.Point(7, 171);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(914, 75);
@@ -891,16 +894,17 @@
             this.unit_icon_npc_Export.UseVisualStyleBackColor = true;
             this.unit_icon_npc_Export.Click += new System.EventHandler(this.unit_icon_npc_Export_Click);
             // 
-            // label7
+            // unit_icon_npc_Label
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(-1, -1);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 31);
-            this.label7.TabIndex = 125;
-            this.label7.Text = "友軍";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_npc_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unit_icon_npc_Label.Location = new System.Drawing.Point(-1, -1);
+            this.unit_icon_npc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unit_icon_npc_Label.Name = "unit_icon_npc_Label";
+            this.unit_icon_npc_Label.Size = new System.Drawing.Size(242, 31);
+            this.unit_icon_npc_Label.TabIndex = 125;
+            this.unit_icon_npc_Label.Text = "友軍";
+            this.unit_icon_npc_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_npc_Label.Click += new System.EventHandler(this.unit_icon_npc_Label_Click);
             // 
             // unit_icon_npc_Picture
             // 
@@ -945,9 +949,9 @@
             this.panel3.Controls.Add(this.unit_icon_enemy_Export);
             this.panel3.Controls.Add(this.unit_icon_enemy_Picture);
             this.panel3.Controls.Add(this.unit_icon_enemy_Import);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.unit_icon_enemy_Label);
             this.panel3.Controls.Add(this.unit_icon_enemy_PALETTE);
-            this.panel3.Location = new System.Drawing.Point(7, 94);
+            this.panel3.Location = new System.Drawing.Point(7, 91);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(914, 75);
@@ -986,16 +990,17 @@
             this.unit_icon_enemy_Import.UseVisualStyleBackColor = true;
             this.unit_icon_enemy_Import.Click += new System.EventHandler(this.unit_icon_enemy_Import_Click);
             // 
-            // label5
+            // unit_icon_enemy_Label
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(-1, -1);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(242, 31);
-            this.label5.TabIndex = 125;
-            this.label5.Text = "敵軍";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_enemy_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unit_icon_enemy_Label.Location = new System.Drawing.Point(-1, -1);
+            this.unit_icon_enemy_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unit_icon_enemy_Label.Name = "unit_icon_enemy_Label";
+            this.unit_icon_enemy_Label.Size = new System.Drawing.Size(242, 31);
+            this.unit_icon_enemy_Label.TabIndex = 125;
+            this.unit_icon_enemy_Label.Text = "敵軍";
+            this.unit_icon_enemy_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_enemy_Label.Click += new System.EventHandler(this.unit_icon_enemy_Label_Click);
             // 
             // unit_icon_enemy_PALETTE
             // 
@@ -1018,7 +1023,7 @@
             this.panel2.Controls.Add(this.unit_icon_Export);
             this.panel2.Controls.Add(this.unit_icon_Picture);
             this.panel2.Controls.Add(this.unit_icon_Import);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.unit_icon_Label);
             this.panel2.Controls.Add(this.unit_icon_PALETTE);
             this.panel2.Location = new System.Drawing.Point(7, 11);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -1059,16 +1064,17 @@
             this.unit_icon_Import.UseVisualStyleBackColor = true;
             this.unit_icon_Import.Click += new System.EventHandler(this.unit_icon_Import_Click);
             // 
-            // label4
+            // unit_icon_Label
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(-1, -1);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(242, 31);
-            this.label4.TabIndex = 125;
-            this.label4.Text = "自軍";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.unit_icon_Label.Location = new System.Drawing.Point(-1, -1);
+            this.unit_icon_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unit_icon_Label.Name = "unit_icon_Label";
+            this.unit_icon_Label.Size = new System.Drawing.Size(242, 31);
+            this.unit_icon_Label.TabIndex = 125;
+            this.unit_icon_Label.Text = "自軍";
+            this.unit_icon_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unit_icon_Label.Click += new System.EventHandler(this.unit_icon_Label_Click);
             // 
             // unit_icon_PALETTE
             // 
@@ -1100,6 +1106,16 @@
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "システムメニュー";
             // 
+            // X_SystemMenuPaletteLink
+            // 
+            this.X_SystemMenuPaletteLink.AutoSize = true;
+            this.X_SystemMenuPaletteLink.Location = new System.Drawing.Point(9, 470);
+            this.X_SystemMenuPaletteLink.Name = "X_SystemMenuPaletteLink";
+            this.X_SystemMenuPaletteLink.Size = new System.Drawing.Size(477, 18);
+            this.X_SystemMenuPaletteLink.TabIndex = 154;
+            this.X_SystemMenuPaletteLink.Text = "パレットの変更は、パッチの中にあります。こちらをクリックしてください。";
+            this.X_SystemMenuPaletteLink.Click += new System.EventHandler(this.X_SystemMenuPaletteLink_Click);
+            // 
             // X_StatusBackgroundLink
             // 
             this.X_StatusBackgroundLink.AutoSize = true;
@@ -1120,7 +1136,7 @@
             this.panel8.Controls.Add(this.systemmenu_name_Export);
             this.panel8.Controls.Add(this.systemmenu_name_PALETTE);
             this.panel8.Controls.Add(this.systemmenu_name_Import_KeepTSA);
-            this.panel8.Controls.Add(this.label18);
+            this.panel8.Controls.Add(this.systemmenu_name_PaletteEditorLabel);
             this.panel8.Location = new System.Drawing.Point(3, 6);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(924, 131);
@@ -1220,16 +1236,16 @@
             this.systemmenu_name_Import_KeepTSA.Text = "画像読込";
             this.systemmenu_name_Import_KeepTSA.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // systemmenu_name_PaletteEditorLabel
             // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(9, 72);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(148, 31);
-            this.label18.TabIndex = 145;
-            this.label18.Text = "パレット";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_name_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_name_PaletteEditorLabel.Location = new System.Drawing.Point(9, 72);
+            this.systemmenu_name_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_name_PaletteEditorLabel.Name = "systemmenu_name_PaletteEditorLabel";
+            this.systemmenu_name_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_name_PaletteEditorLabel.TabIndex = 145;
+            this.systemmenu_name_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_name_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
@@ -1241,7 +1257,7 @@
             this.panel7.Controls.Add(this.systemmenu_terrain_Export);
             this.panel7.Controls.Add(this.systemmenu_terrain_PALETTE);
             this.panel7.Controls.Add(this.systemmenu_terrain_Import_KeepTSA);
-            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.systemmenu_terrain_PaletteEditorLabel);
             this.panel7.Location = new System.Drawing.Point(3, 143);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(924, 131);
@@ -1341,16 +1357,16 @@
             this.systemmenu_terrain_Import_KeepTSA.Text = "画像読込";
             this.systemmenu_terrain_Import_KeepTSA.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // systemmenu_terrain_PaletteEditorLabel
             // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(9, 72);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(148, 31);
-            this.label15.TabIndex = 145;
-            this.label15.Text = "パレット";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_terrain_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_terrain_PaletteEditorLabel.Location = new System.Drawing.Point(9, 72);
+            this.systemmenu_terrain_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_terrain_PaletteEditorLabel.Name = "systemmenu_terrain_PaletteEditorLabel";
+            this.systemmenu_terrain_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_terrain_PaletteEditorLabel.TabIndex = 145;
+            this.systemmenu_terrain_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_terrain_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // systemmenu_goal_panel
             // 
@@ -1362,7 +1378,7 @@
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_Export);
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_PALETTE);
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_Import_KeepTSA);
-            this.systemmenu_goal_panel.Controls.Add(this.label20);
+            this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_PaletteEditorLabel);
             this.systemmenu_goal_panel.Location = new System.Drawing.Point(0, 280);
             this.systemmenu_goal_panel.Name = "systemmenu_goal_panel";
             this.systemmenu_goal_panel.Size = new System.Drawing.Size(924, 131);
@@ -1462,16 +1478,16 @@
             this.systemmenu_goal_Import_KeepTSA.Text = "画像読込";
             this.systemmenu_goal_Import_KeepTSA.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // systemmenu_goal_PaletteEditorLabel
             // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(9, 72);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(148, 31);
-            this.label20.TabIndex = 145;
-            this.label20.Text = "パレット";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_goal_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_goal_PaletteEditorLabel.Location = new System.Drawing.Point(9, 72);
+            this.systemmenu_goal_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_goal_PaletteEditorLabel.Name = "systemmenu_goal_PaletteEditorLabel";
+            this.systemmenu_goal_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_goal_PaletteEditorLabel.TabIndex = 145;
+            this.systemmenu_goal_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_goal_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage4
             // 
@@ -1488,7 +1504,7 @@
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_HEADERTSA);
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_PALETTE);
-            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.systemmenu_battlepreview_PaletteEditorLabel);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_Import_KeepTSA);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_Export);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_ZIMAGE);
@@ -1648,16 +1664,16 @@
             this.systemmenu_battlepreview_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_battlepreview_PALETTE.TabIndex = 136;
             // 
-            // label23
+            // systemmenu_battlepreview_PaletteEditorLabel
             // 
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(7, 72);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(148, 31);
-            this.label23.TabIndex = 135;
-            this.label23.Text = "パレット";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_battlepreview_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_battlepreview_PaletteEditorLabel.Location = new System.Drawing.Point(7, 72);
+            this.systemmenu_battlepreview_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_battlepreview_PaletteEditorLabel.Name = "systemmenu_battlepreview_PaletteEditorLabel";
+            this.systemmenu_battlepreview_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_battlepreview_PaletteEditorLabel.TabIndex = 135;
+            this.systemmenu_battlepreview_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_battlepreview_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // systemmenu_battlepreview_Import_KeepTSA
             // 
@@ -1731,7 +1747,7 @@
             this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_Picture);
             this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_PALETTE);
             this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_ZIMAGE);
-            this.systemmenu_old_badstatus_panel.Controls.Add(this.label30);
+            this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_PaletteEditorLabel);
             this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_Export);
             this.systemmenu_old_badstatus_panel.Controls.Add(this.systemmenu_old_badstatus_Import);
             this.systemmenu_old_badstatus_panel.Location = new System.Drawing.Point(3, 280);
@@ -1789,16 +1805,16 @@
             this.systemmenu_old_badstatus_ZIMAGE.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_old_badstatus_ZIMAGE.TabIndex = 128;
             // 
-            // label30
+            // systemmenu_old_badstatus_PaletteEditorLabel
             // 
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(4, 34);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(148, 31);
-            this.label30.TabIndex = 132;
-            this.label30.Text = "パレット";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_old_badstatus_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_old_badstatus_PaletteEditorLabel.Location = new System.Drawing.Point(4, 34);
+            this.systemmenu_old_badstatus_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_old_badstatus_PaletteEditorLabel.Name = "systemmenu_old_badstatus_PaletteEditorLabel";
+            this.systemmenu_old_badstatus_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_old_badstatus_PaletteEditorLabel.TabIndex = 132;
+            this.systemmenu_old_badstatus_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_old_badstatus_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // systemmenu_old_badstatus_Export
             // 
@@ -1827,7 +1843,7 @@
             this.systemmenu_badstatus_panel.Controls.Add(this.systemmenu_badstatus_IMAGE);
             this.systemmenu_badstatus_panel.Controls.Add(this.systemmenu_badstatus_Export);
             this.systemmenu_badstatus_panel.Controls.Add(this.systemmenu_badstatus_Import);
-            this.systemmenu_badstatus_panel.Controls.Add(this.label28);
+            this.systemmenu_badstatus_panel.Controls.Add(this.systemmenu_badstatus_PaletteEditorLabel);
             this.systemmenu_badstatus_panel.Controls.Add(this.systemmenu_badstatus_PALETTE);
             this.systemmenu_badstatus_panel.Location = new System.Drawing.Point(3, 3);
             this.systemmenu_badstatus_panel.Name = "systemmenu_badstatus_panel";
@@ -1890,16 +1906,16 @@
             this.systemmenu_badstatus_Import.Text = "画像読込";
             this.systemmenu_badstatus_Import.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // systemmenu_badstatus_PaletteEditorLabel
             // 
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Location = new System.Drawing.Point(4, 33);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(148, 31);
-            this.label28.TabIndex = 125;
-            this.label28.Text = "パレット";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.systemmenu_badstatus_PaletteEditorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.systemmenu_badstatus_PaletteEditorLabel.Location = new System.Drawing.Point(4, 33);
+            this.systemmenu_badstatus_PaletteEditorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.systemmenu_badstatus_PaletteEditorLabel.Name = "systemmenu_badstatus_PaletteEditorLabel";
+            this.systemmenu_badstatus_PaletteEditorLabel.Size = new System.Drawing.Size(148, 31);
+            this.systemmenu_badstatus_PaletteEditorLabel.TabIndex = 125;
+            this.systemmenu_badstatus_PaletteEditorLabel.Text = "パレット";
+            this.systemmenu_badstatus_PaletteEditorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // systemmenu_badstatus_PALETTE
             // 
@@ -1993,16 +2009,6 @@
             this.X_Jump_Patch.Text = "ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択して" +
     "ください。";
             this.X_Jump_Patch.Click += new System.EventHandler(this.X_Jump_Patch_Click);
-            // 
-            // X_SystemMenuPaletteLink
-            // 
-            this.X_SystemMenuPaletteLink.AutoSize = true;
-            this.X_SystemMenuPaletteLink.Location = new System.Drawing.Point(9, 470);
-            this.X_SystemMenuPaletteLink.Name = "X_SystemMenuPaletteLink";
-            this.X_SystemMenuPaletteLink.Size = new System.Drawing.Size(477, 18);
-            this.X_SystemMenuPaletteLink.TabIndex = 154;
-            this.X_SystemMenuPaletteLink.Text = "パレットの変更は、パッチの中にあります。こちらをクリックしてください。";
-            this.X_SystemMenuPaletteLink.Click += new System.EventHandler(this.X_SystemMenuPaletteLink_Click);
             // 
             // ImageSystemIconForm
             // 
@@ -2109,34 +2115,34 @@
         private System.Windows.Forms.NumericUpDown system_icon_ZIMAGE;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown system_icon_PALETTE;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label system_icon_PaletteEditorLabel;
         private System.Windows.Forms.NumericUpDown system_move_allowicon_PALETTE;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label system_move_allowicon_PaletteEditorLabel;
         private System.Windows.Forms.NumericUpDown system_weapon_icon_icon_PALETTE;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label system_weapon_icon_icon_PaletteEditorLabel;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button unit_icon_enemy_Export;
         private System.Windows.Forms.Button unit_icon_enemy_Import;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label unit_icon_enemy_Label;
         private System.Windows.Forms.NumericUpDown unit_icon_enemy_PALETTE;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button unit_icon_Export;
         private System.Windows.Forms.Button unit_icon_Import;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label unit_icon_Label;
         private System.Windows.Forms.NumericUpDown unit_icon_PALETTE;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button icon_palette_Export;
         private System.Windows.Forms.Button icon_palette_Import;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label icon_palette_Label;
         private System.Windows.Forms.NumericUpDown item_icon_PALETTE;
         private System.Windows.Forms.Button unit_icon_npc_Export;
         private System.Windows.Forms.Button unit_icon_npc_Import;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label unit_icon_npc_Label;
         private System.Windows.Forms.NumericUpDown unit_icon_npc_PALETTE;
         private System.Windows.Forms.NumericUpDown system_music_icon_icon_PALETTE;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label system_music_icon_icon_PaletteEditorLabel;
         private System.Windows.Forms.Button system_music_icon_icon_Import;
         private System.Windows.Forms.Button system_music_icon_icon_Export;
         private System.Windows.Forms.NumericUpDown system_music_icon_icon_ZIMAGE;
@@ -2153,7 +2159,7 @@
         private System.Windows.Forms.NumericUpDown systemmenu_goal_HEADERTSA;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown systemmenu_goal_PALETTE;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label systemmenu_goal_PaletteEditorLabel;
         private System.Windows.Forms.Button systemmenu_goal_Import_KeepTSA;
         private System.Windows.Forms.Button systemmenu_goal_Export;
         private InterpolatedPictureBox systemmenu_goal_Picture;
@@ -2167,7 +2173,7 @@
         private System.Windows.Forms.NumericUpDown systemmenu_battlepreview_HEADERTSA;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown systemmenu_battlepreview_PALETTE;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label systemmenu_battlepreview_PaletteEditorLabel;
         private InterpolatedPictureBox systemmenu_battlepreview_Picture;
         private System.Windows.Forms.NumericUpDown systemmenu_battlepreview_ZIMAGE;
         private System.Windows.Forms.Label label24;
@@ -2187,7 +2193,7 @@
         private System.Windows.Forms.Button systemmenu_name_Export;
         private System.Windows.Forms.NumericUpDown systemmenu_name_PALETTE;
         private System.Windows.Forms.Button systemmenu_name_Import_KeepTSA;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label systemmenu_name_PaletteEditorLabel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown systemmenu_terrain_ZIMAGE;
@@ -2197,18 +2203,18 @@
         private System.Windows.Forms.Button systemmenu_terrain_Export;
         private System.Windows.Forms.NumericUpDown systemmenu_terrain_PALETTE;
         private System.Windows.Forms.Button systemmenu_terrain_Import_KeepTSA;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label systemmenu_terrain_PaletteEditorLabel;
         private System.Windows.Forms.Panel systemmenu_goal_panel;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.NumericUpDown systemmenu_badstatus_PALETTE;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label systemmenu_badstatus_PaletteEditorLabel;
         private System.Windows.Forms.Button systemmenu_badstatus_Import;
         private System.Windows.Forms.Button systemmenu_badstatus_Export;
         private InterpolatedPictureBox systemmenu_badstatus_Picture;
         private System.Windows.Forms.NumericUpDown systemmenu_badstatus_IMAGE;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.NumericUpDown systemmenu_old_badstatus_PALETTE;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label systemmenu_old_badstatus_PaletteEditorLabel;
         private System.Windows.Forms.Button systemmenu_old_badstatus_Import;
         private System.Windows.Forms.Button systemmenu_old_badstatus_Export;
         private InterpolatedPictureBox systemmenu_old_badstatus_Picture;
@@ -2218,13 +2224,13 @@
         private System.Windows.Forms.Panel systemmenu_old_badstatus_panel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button unit_icon_four_Export;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label unit_icon_four_Label;
         private InterpolatedPictureBox unit_icon_four_Picture;
         private System.Windows.Forms.NumericUpDown unit_icon_four_PALETTE;
         private System.Windows.Forms.Button unit_icon_four_Import;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button unit_icon_gray_Export;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label unit_icon_gray_Label;
         private InterpolatedPictureBox unit_icon_gray_Picture;
         private System.Windows.Forms.NumericUpDown unit_icon_gray_PALETTE;
         private System.Windows.Forms.Button unit_icon_gray_Import;

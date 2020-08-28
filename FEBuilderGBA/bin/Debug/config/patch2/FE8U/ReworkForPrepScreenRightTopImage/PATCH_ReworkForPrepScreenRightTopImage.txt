@@ -1,5 +1,5 @@
-NAME=進撃準備の右上の画像を変更する
-NAME.en=Change image in upper right of the preparations
+NAME=進撃準備の右上の画像を変更する(Editor)
+NAME.en=Change image in upper right of the preparations(Editor)
 
 INFO=進撃準備の右上に表示されている、"Chapter NN","Tower NN","Ruins NN","Extra Map"の定義を自由に変更でるようにします。
 
@@ -22,9 +22,9 @@ DATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
 LISTNAME=$B0:MAP
 
 //データを定義します
-B0:MAP_ANYFF=MAPID(0xFF=ANY)
+B0:MAP_ANYFF=MAPID
 B1:$COMBO ReworkForPrepScreenRightTopImage_combo.txt=Type
 W2:FLAG=Flag(0x00=ANY)
 INFO.en=The definition of "Chapter NN", "Tower NN", "Ruins NN", "Extra Map" displayed at the upper right of the advance preparation can be changed freely.
-NAME.zh=在预先准备的右上方更改图像。
+NAME.zh=在预先准备的右上方更改图像(Editor)
 INFO.zh=可以在预先准备的右上方显示“第NN章"，“ Tower NN"，“ Ruins NN"，“ Extra Map"的定义。
