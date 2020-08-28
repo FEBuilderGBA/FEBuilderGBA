@@ -644,9 +644,9 @@ namespace FEBuilderGBA
             }
 
             this.MainTab.Add(name, f, addr);
-            f.Navigation += OnNavigation;
-
             EventScriptForm_Resize(null, null);
+
+            f.Navigation += OnNavigation;
 
             f.SetFocus();
         }

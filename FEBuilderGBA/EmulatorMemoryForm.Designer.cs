@@ -208,6 +208,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
+            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyCount = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -399,9 +400,8 @@
             this.PARTY_P0 = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label56 = new System.Windows.Forms.Label();
-            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
+            this.label56 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
             this.label94 = new System.Windows.Forms.Label();
             this.CHEAT_TURN_VALUE = new System.Windows.Forms.NumericUpDown();
@@ -3136,6 +3136,19 @@
             this.EtcPage.TabIndex = 4;
             this.EtcPage.Text = "Etc";
             // 
+            // PartyCombo
+            // 
+            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PartyCombo.FormattingEnabled = true;
+            this.PartyCombo.Items.AddRange(new object[] {
+            "00=PLAYER",
+            "40=NPC",
+            "80=Enemy"});
+            this.PartyCombo.Location = new System.Drawing.Point(318, 10);
+            this.PartyCombo.Name = "PartyCombo";
+            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
+            this.PartyCombo.TabIndex = 313;
+            // 
             // PartyCount
             // 
             this.PartyCount.AutoSize = true;
@@ -3348,8 +3361,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.label62);
             this.tabPage2.Controls.Add(this.TrapList);
+            this.tabPage2.Controls.Add(this.label62);
             this.tabPage2.Controls.Add(this.TrapAddress);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
@@ -3376,9 +3389,9 @@
             this.TrapList.FormattingEnabled = true;
             this.TrapList.IntegralHeight = false;
             this.TrapList.ItemHeight = 18;
-            this.TrapList.Location = new System.Drawing.Point(3, 3);
+            this.TrapList.Location = new System.Drawing.Point(3, 33);
             this.TrapList.Name = "TrapList";
-            this.TrapList.Size = new System.Drawing.Size(847, 838);
+            this.TrapList.Size = new System.Drawing.Size(847, 808);
             this.TrapList.TabIndex = 329;
             this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
             this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
@@ -3398,10 +3411,10 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.PaletteList);
             this.tabPage3.Controls.Add(this.PaletteSearchButton);
             this.tabPage3.Controls.Add(this.label92);
             this.tabPage3.Controls.Add(this.PaletteAddress);
-            this.tabPage3.Controls.Add(this.PaletteList);
             this.tabPage3.Controls.Add(this.SelectPalette);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
@@ -3449,9 +3462,9 @@
             this.PaletteList.FormattingEnabled = true;
             this.PaletteList.IntegralHeight = false;
             this.PaletteList.ItemHeight = 18;
-            this.PaletteList.Location = new System.Drawing.Point(3, 3);
+            this.PaletteList.Location = new System.Drawing.Point(3, 33);
             this.PaletteList.Name = "PaletteList";
-            this.PaletteList.Size = new System.Drawing.Size(847, 838);
+            this.PaletteList.Size = new System.Drawing.Size(847, 808);
             this.PaletteList.TabIndex = 321;
             this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
             this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
@@ -3469,8 +3482,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.label82);
             this.tabPage4.Controls.Add(this.ClearTurnList);
+            this.tabPage4.Controls.Add(this.label82);
             this.tabPage4.Controls.Add(this.textBoxEx33);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
@@ -3497,9 +3510,9 @@
             this.ClearTurnList.FormattingEnabled = true;
             this.ClearTurnList.IntegralHeight = false;
             this.ClearTurnList.ItemHeight = 18;
-            this.ClearTurnList.Location = new System.Drawing.Point(3, 3);
+            this.ClearTurnList.Location = new System.Drawing.Point(3, 33);
             this.ClearTurnList.Name = "ClearTurnList";
-            this.ClearTurnList.Size = new System.Drawing.Size(847, 838);
+            this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
             this.ClearTurnList.TabIndex = 329;
             this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
             // 
@@ -5600,30 +5613,6 @@
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label56
-            // 
-            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(1, 8);
-            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(778, 42);
-            this.label56.TabIndex = 310;
-            this.label56.Text = "パーティー";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PartyCombo
-            // 
-            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PartyCombo.FormattingEnabled = true;
-            this.PartyCombo.Items.AddRange(new object[] {
-            "00=PLAYER",
-            "40=NPC",
-            "80=Enemy"});
-            this.PartyCombo.Location = new System.Drawing.Point(318, 10);
-            this.PartyCombo.Name = "PartyCombo";
-            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
-            this.PartyCombo.TabIndex = 313;
-            // 
             // PartyListBox
             // 
             this.PartyListBox.FormattingEnabled = true;
@@ -5638,6 +5627,17 @@
             this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
+            // 
+            // label56
+            // 
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Location = new System.Drawing.Point(1, 8);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(778, 42);
+            this.label56.TabIndex = 310;
+            this.label56.Text = "パーティー";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheatPage
             // 

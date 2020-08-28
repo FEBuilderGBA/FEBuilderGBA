@@ -1,0 +1,26 @@
+NAME=辞書の条件にユニットの加入を追加する
+
+TYPE=BIN
+TAG=#ENGINE
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=check1.dmp
+JUMP:0xCE440:$r3=check1.dmp
+
+BIN:$FREEAREA:2=check2.dmp
+JUMP:0xCEB10:$r3=check2.dmp
+
+BIN:$FREEAREA:3=check3.dmp
+JUMP:0xCEBD4:$r3=check3.dmp
+
+//既に適応されたかどうか
+PATCHED_IF:0xCE440=0x00 0x4B 0x9F 0x46
+
+
+AUTHOR=7743
+
+INFO=辞書の項目は、フラグによって管理されていますが、この条件にユニットの加入を追加します。\r\nこれによりユニットが加入していれば、辞書項目を表示するといったことがより簡単にできるようになります。\r\n登場人物の解説に辞書を使いたい場合は、利用するとよいと思います。
+NAME.en=Add unit subscriptions to dictionary terms.
+INFO.en=Items in the dictionary(Guide) are controlled by flags, but add unit subscriptions to this condition.\r\nThis makes it easier to view dictionary entries, etc. if the unit is subscribed.\r\nIf you want to use a dictionary to explain the characters, I think you should use it.
+NAME.zh=将单位订阅添加到词典术语中。
+INFO.zh=字典中的项目受标志控制，但在这种情况下添加了单元订阅。\r\n如果订阅了该单元，则可以更轻松地查看字典条目等。\r\n如果您想使用字典来解释字符，我认为您应该使用它。

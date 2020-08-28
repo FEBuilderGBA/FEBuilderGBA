@@ -66,10 +66,12 @@ namespace FEBuilderGBA
             }
             Program.FlagCache.Update(ar.addr, name, this.BaseFlag[ar.addr]);
 
+            int selected = this.AddressList.SelectedIndex;
+
             //読み直し.
             Init();
             //再選択
-            U.ReSelectList(this.AddressList);
+            U.ForceUpdate(this.AddressList, selected);
 
             InputFormRef.ShowWriteNotifyAnimation(this, U.NOT_FOUND);
         }
