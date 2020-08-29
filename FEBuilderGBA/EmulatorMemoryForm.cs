@@ -205,6 +205,7 @@ namespace FEBuilderGBA
             UpdateEditon();
             UpdateSong();
             UpdateTrap();
+            UpdateBWL();
             UpdatePalette();
         }
         void UpdateUserStack()
@@ -2393,7 +2394,8 @@ namespace FEBuilderGBA
             this.Diffeclty = U.NOT_FOUND;
             this.WorldmapNode = U.NOT_FOUND;
             this.PaletteCheckBuffer = new byte[2 * 16 * 16 * 2];
-            this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawVariable, false);
+            this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawFixed, false);
+            this.PaletteList.ItemHeight = 12;
             this.PaletteList.DummyAlloc(32, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.PaletteAddress);
 
@@ -2409,15 +2411,23 @@ namespace FEBuilderGBA
                 ,Program.ROM.RomInfo.workmemory_sound_player_08_address()
             };
             this.SongIDBuffer = new uint[this.SongWorkingRAMs.Length];
-            this.SoundList.OwnerDraw(DrawSongList, DrawMode.OwnerDrawVariable, false);
+            this.SoundList.OwnerDraw(DrawSongList, DrawMode.OwnerDrawFixed, false);
+            this.SoundList.ItemHeight = 12;
             this.SoundList.DummyAlloc(this.SongWorkingRAMs.Length, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SoundAddress);
 
-            this.TrapList.OwnerDraw(DrawTrapList, DrawMode.OwnerDrawVariable, false);
+            this.TrapList.OwnerDraw(DrawTrapList, DrawMode.OwnerDrawFixed, false);
+            this.TrapList.ItemHeight = 12;
             this.TrapList.DummyAlloc(0x40, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.TrapAddress);
 
-            this.ClearTurnList.OwnerDraw(DrawClearTurnList, DrawMode.OwnerDrawVariable, false);
+            this.BWLList.OwnerDraw(DrawBWLList, DrawMode.OwnerDrawFixed, false);
+            this.BWLList.ItemHeight = 16;
+            this.BWLList.DummyAlloc(0x45, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.BWLAddress);
+
+            this.ClearTurnList.OwnerDraw(DrawClearTurnList, DrawMode.OwnerDrawFixed, false);
+            this.ClearTurnList.ItemHeight = 12;
             if (PatchUtil.SearchCache_ClearTurn2x() == PatchUtil.ClearTurn2x_extends._2x)
             {
                 this.ClearTurnList.DummyAlloc((int)Program.ROM.RomInfo.workmemory_clear_turn_count() * 2, 0);
@@ -2490,6 +2500,18 @@ namespace FEBuilderGBA
             {//変更有
                 this.TrapCheckSUM = sum;
                 this.TrapList.Invalidate();
+            }
+        }
+        void UpdateBWL()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_bwl_address() + 16
+                , 16 * 0x45);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.BWLCheckSUM)
+            {//変更有
+                this.BWLCheckSUM = sum;
+                this.BWLList.Invalidate();
             }
         }
         void UpdateClearTurn()
@@ -2639,6 +2661,70 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
+        Size DrawBWLList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            index = index + 1;
+            Rectangle bounds = listbounds;
+            uint lineHeight = 16;
+
+            uint addr = Program.ROM.RomInfo.workmemory_bwl_address() + ((uint)index * 16);
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            uint b = Program.RAM.u16(addr + 0xc);
+            b = ((b << 0x12) >> 0x14);
+
+            uint w = Program.RAM.u8(addr + 0xb);
+            uint w_2 = Program.RAM.u8(addr + 0xc);
+            w_2 = (w_2 & 0x3) << 0x8;
+            w = w | w_2;
+
+            uint l = Program.RAM.u8(addr + 0x0);
+
+            U.DrawText("B:" + b.ToString(), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 35;
+
+            U.DrawText("W:" + w.ToString(), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 35;
+
+            U.DrawText("L:" + l.ToString(), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 25;
+
+            
+            uint uid = (uint)index;
+            Bitmap icon = UnitForm.DrawUnitMapFacePicture(uid);
+            U.MakeTransparent(icon);
+            Rectangle bb = bounds;
+            bb.Width = (int)lineHeight;
+            bb.Height = (int)lineHeight;
+            bounds.X += U.DrawPicture(icon, g, isWithDraw, bb);
+            bounds.X += 2;
+            icon.Dispose();
+
+            U.DrawText(UnitForm.GetUnitNameWithID(uid), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 75;
+
+            for (uint i = 0; i < 16; i++)
+            {
+                uint v;
+                v = Program.RAM.u8(addr + i);
+                U.DrawText(U.ToHexString2(v), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 16;
+
+                i++;
+                v = Program.RAM.u8(addr + i);
+                U.DrawText(U.ToHexString2(v), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 20;
+            }
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+
         Size DrawClearTurnList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
             if (index < 0 || index >= lb.Items.Count)
@@ -2711,6 +2797,7 @@ namespace FEBuilderGBA
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
         uint TrapCheckSUM;
+        uint BWLCheckSUM;
         uint ClearTurnSUM;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
@@ -2792,7 +2879,16 @@ namespace FEBuilderGBA
         }
         private void ClearTurnList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            int index = TrapList.SelectedIndex;
+            if (index < 0 || index >= TrapList.Items.Count)
+            {
+                return;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_trap_address() + ((uint)index * 0x8);
 
+            PointerToolCopyToForm f = (PointerToolCopyToForm)InputFormRef.JumpFormLow<PointerToolCopyToForm>();
+            f.Init(addr);
+            f.ShowDialog();
         }
 
         private void PARTY_ROMUNITPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -2910,6 +3006,32 @@ namespace FEBuilderGBA
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_TURN_VALUE.Value);
 
             InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
+        }
+
+        private void BWLList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = BWLList.SelectedIndex;
+            if (index < 0 || index >= BWLList.Items.Count)
+            {
+                BWLAddress.Text = "";
+                return;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_bwl_address() + 16 + ((uint)index * 16);
+            BWLAddress.Text = U.ToHexString(addr);
+        }
+
+        private void BWLList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = BWLList.SelectedIndex;
+            if (index < 0 || index >= BWLList.Items.Count)
+            {
+                return;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_bwl_address() + 16 + ((uint)index * 16);
+
+            PointerToolCopyToForm f = (PointerToolCopyToForm)InputFormRef.JumpFormLow<PointerToolCopyToForm>();
+            f.Init(addr);
+            f.ShowDialog();
         }
     }
 }

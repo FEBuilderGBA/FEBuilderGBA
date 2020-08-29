@@ -48,7 +48,7 @@ namespace FEBuilderGBA
             this.N3_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
             this.InputFormRef = Init(this);
-            this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.MakeGeneralAddressListContextMenu(false);
             this.AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
 
 

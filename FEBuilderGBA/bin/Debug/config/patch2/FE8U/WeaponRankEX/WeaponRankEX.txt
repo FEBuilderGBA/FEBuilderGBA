@@ -1,0 +1,383 @@
+//FE8 WeaponRankEX
+//By Beansy
+
+#ifndef _FE8_
+    ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+ALIGN 4  
+WRItemText: //These are the text entries that are for the RText for when you [R] on an item. The final entry should always be made "Prf".
+WORD $00000001 $0000014D $0000014E $0000014F $00000150 $00000151 $00000152 $00000153 $00000154 $00000155 $00000531 $00000530 $0000052F $0000052E $0000052D $00000532 $00000000
+
+
+#define WEXPArray 0x0203E899
+#define WEXPRFix 0x0203E89A
+
+
+PUSH
+
+ORG $2AD74 //Changes the rank required to give the S Rank Bonuses
+jumpToHack(Fix2AD) 
+//BYTE lMaxRank
+//BYTE $28
+
+ORG $16DFA //Writes to the number of ranks able to check to stack.
+SHORT $B084
+
+ORG $16E02 //Changes the number of glyphs to count
+SHORT $220F
+
+ORG $16E12 //Moves the stack back to where it was
+SHORT $B004
+
+ORG $16e1c //Glyphs to add in ascending order from - to max
+Poin GlyphList
+
+ORG $4Ac8 //Repointed StatusFont Glyphs
+Poin GlyphDraw
+
+ORG $2C0B4 //2c1b0 //DidWeaponRankGoUp1
+jumpToHack(WeaponLevelUp)
+SHORT $4708
+
+ORG $16D94
+jumpToHack(WRankBufferNew)
+
+ORG $16D5C
+jumpToHack(WeaponLevel)
+
+ORG $A474C //Kill BWL spaces moved
+BYTE $70 $47
+
+ORG $A478C //Kill BWL stat screen views
+BYTE $70 $47
+
+ORG $A4A34 //Kill BWL Favoritism
+BYTE $70 $47
+
+ORG $A47CC //Kill BWL Deployment count
+BYTE $70 $47
+
+ORG $A481C //Kill BWL Tiles Moved2
+BYTE $70 $47
+
+ORG $A487C //Kill BWL EXP Gained
+BYTE $70 $47
+
+ORG $A4684 //Kill BWL Win/loss
+BYTE $70 $47
+
+ORG $A4534 //Kill BWL Battle Count
+BYTE $70 $47
+
+ORG $A44C8 //Kill BWL Battle Count 2
+BYTE $70 $47
+
+ORG $A4140 //Writes 0's to the bwl table at game start instead of 20's
+SHORT 0
+
+ORG $a464c //Only save 1 byte when dying (as opposed to 3)
+BYTE 1
+
+ORG $877BC
+jumpToHack(Fix877)
+//BYTE lMaxRank 
+//BYTE $2D 
+//SHORT $DB00
+
+ORG $16E50
+jumpToHack(WRBarNew)
+
+ORG $590B44
+#include WeaponRankEX_Tables.txt
+
+
+POP
+
+ALIGN 4
+Fix2AD:
+#include RankCode\2AD74.event
+
+ALIGN 4
+Fix877:
+#include RankCode\877BE.event
+
+ALIGN 4
+ArrayLoopCount:
+SHORT $01F7
+
+ALIGN 4
+StartWEXP:
+WORD WEXPArray
+
+ALIGN 4
+lWEXPRFix:
+WORD WEXPRFix
+
+ALIGN 4
+WRBarNew:
+#include RankCode\RankBar.event
+
+ALIGN 4
+NewWXPRoutine:
+#include RankCode\XPRoutine.event
+
+ALIGN 4
+//Code for acquiring Unit's weapon level
+WeaponLevel:
+#include RankCode\GetWeaponRank.event
+
+ALIGN 4
+WRankBufferNew:
+#include RankCode\WRankTBuffer.event
+
+ALIGN 4
+WeaponLevelUp:
+#include RankCode\WeaponLevelUpRedone.event
+
+ALIGN 4
+SetBases:
+#include RankCode\SetBaseWEXP.event
+
+ALIGN 4
+lEXPRCheck:
+#include RankCode\XPRoCheck.event
+
+ALIGN 4
+Zero:
+#incbin Glyphs\0.img.bin
+One: 
+#incbin Glyphs\1.img.bin
+Two:
+#incbin Glyphs\2.img.bin
+Three:
+#incbin Glyphs\3.img.bin
+Four:
+#incbin Glyphs\4.img.bin
+Five:
+#incbin Glyphs\5.img.bin
+Six:
+#incbin Glyphs\6.img.bin
+Seven:
+#incbin Glyphs\7.img.bin
+Eight:
+#incbin Glyphs\8.img.bin
+Nine:
+#incbin Glyphs\9.img.bin
+Short0:
+#incbin Glyphs\Short0.img.bin
+Short1:
+#incbin Glyphs\Short1.img.bin
+Short2:
+#incbin Glyphs\Short2.img.bin
+Short3:
+#incbin Glyphs\Short3.img.bin
+Short4:
+#incbin Glyphs\Short4.img.bin
+Short5:
+#incbin Glyphs\Short5.img.bin
+Short6:
+#incbin Glyphs\Short6.img.bin
+Short7:
+#incbin Glyphs\Short7.img.bin
+Short8:
+#incbin Glyphs\Short8.img.bin
+Short9:
+#incbin Glyphs\Short9.img.bin
+Hyphen:
+#incbin Glyphs\-.img.bin
+Plus:
+#incbin Glyphs\+.img.bin
+Slsh:
+#incbin Glyphs\Slsh.img.bin
+Tilde:
+#incbin Glyphs\~.img.bin
+S:
+#incbin Glyphs\S.img.bin
+A:
+#incbin Glyphs\A.img.bin
+B:
+#incbin Glyphs\B.img.bin
+C:
+#incbin Glyphs\C.img.bin
+D:
+#incbin Glyphs\D.img.bin
+E:
+#incbin Glyphs\E.img.bin
+G:
+#incbin Glyphs\G.img.bin
+K:
+#incbin Glyphs\K.img.bin
+colon:
+#incbin Glyphs\colon.img.bin
+dot:
+#incbin Glyphs\dot.img.bin
+H:
+#incbin Glyphs\H.img.bin
+P:
+#incbin Glyphs\P.img.bin
+lvl:
+#incbin Glyphs\lvl.img.bin
+lvv:
+#incbin Glyphs\lvv.img.bin
+arrow:
+#incbin Glyphs\arrow.img.bin
+heart:
+#incbin Glyphs\heart.img.bin
+hundone:
+#incbin Glyphs\10010.img.bin
+hundtwo:
+#incbin Glyphs\1000.img.bin
+Percent:
+#incbin Glyphs\%.img.bin
+ec:
+#incbin Glyphs\ec.img.bin
+dot2:
+#incbin Glyphs\dot2.img.bin
+mam:
+#incbin Glyphs\mam.img.bin
+maa:
+#incbin Glyphs\maa.img.bin
+littlem:
+#incbin Glyphs\littlem.img.bin
+N:
+#incbin Glyphs\N.img.bin
+L2:
+#incbin Glyphs\L2.img.bin
+iv:
+#incbin Glyphs\iv.img.bin
+vdot:
+#incbin Glyphs\vdot.img.bin
+Edot:
+#incbin Glyphs\Edot.img.bin
+littlee:
+#incbin Glyphs\littlee.img.bin
+littlea:
+#incbin Glyphs\littlea.img.bin
+mh:
+#incbin Glyphs\mh.img.bin
+hp:
+#incbin Glyphs\hp.img.bin
+F:
+#incbin Glyphs\F.img.bin
+I:
+#incbin Glyphs\I.img.bin
+J:
+#incbin Glyphs\J.img.bin
+L:
+#incbin Glyphs\L.img.bin
+M:
+#incbin Glyphs\M.img.bin
+O:
+#incbin Glyphs\O.img.bin
+Q:
+#incbin Glyphs\Q.img.bin
+R:
+#incbin Glyphs\R.img.bin
+T:
+#incbin Glyphs\T.img.bin
+U:
+#incbin Glyphs\U.img.bin
+V:
+#incbin Glyphs\V.img.bin
+W:
+#incbin Glyphs\W.img.bin
+X:
+#incbin Glyphs\X.img.bin
+Y:
+#incbin Glyphs\Y.img.bin
+Z:
+#incbin Glyphs\Z.img.bin
+SS:
+#incbin Glyphs\SS.img.bin
+Star:
+#incbin Glyphs\Star.img.bin
+Star2:
+#incbin Glyphs\Star2.img.bin
+Omega:
+#incbin Glyphs\Omega.img.bin
+arch:
+#incbin Glyphs\arch.img.bin
+
+ALIGN 4
+GlyphDraw:
+Poin Zero //Large 0 glyph
+Poin One //Large 1 glyph
+Poin Two //Large 2 glyph
+Poin Three //Large 3 glyph
+Poin Four //Large 4 glyph
+Poin Five //Large 5 glyph
+Poin Six //Large 6 glyph
+Poin Seven //Large 7 glyph
+Poin Eight //Large 8 glyph
+Poin Nine //Large 9 glyph
+Poin Short0 //Small 0 glyph
+Poin Short1 //Small 1 glyph
+Poin Short2 //Small 2 glyph
+Poin Short3 //Small 3 glyph
+Poin Short4 //Small 4 glyph
+Poin Short5 //Small 5 glyph
+Poin Short6 //Small 6 glyph
+Poin Short7 //Small 7 glyph
+Poin Short8 //Small 8 glyph
+Poin Short9 //Small 9 glyph
+Poin Hyphen //"-" Symbol used for no rank
+Poin Plus //"+" symbol. Not sure where it's used
+Poin Slsh // "/" Symbol. Between Min and Max hp
+Poin Tilde //"~" symbol. Not sure where it's used.
+Poin S // S Rank Symbol
+Poin A // A Rank Symbol
+Poin B // B Rank Symbol
+Poin C // C Rank Symbol
+Poin D // D Rank Symbol
+Poin E // E Rank Symbol, also used for experience
+Poin G // G Symbol, not sure where it's used.
+Poin K // K Symbol, not sure where it's used.
+Poin colon // ":" symbol, not sure where it's used.
+Poin dot // Centered "." symbol. Not sure where it's used.
+Poin H // H symbol in HP, also usable for a rank
+Poin P // P symbol in HP, also usable for a rank
+Poin lvl // L symbol in LV, not usable for a rank
+Poin lvv // V symbol in LV, not usable for a rank
+Poin arrow // Arrow pointing right, not sure where it's used.
+Poin heart // Heart symbol, not sure where it's used.
+Poin hundone // The 10 in a 100 symbol, not sure where it's used.
+Poin hundtwo // The last 0 in a 100 symbol, not sure where it's used.
+Poin Percent // Percent symbol, not sure where it's used.
+Poin ec // "Ec" symbol, not sure where it's used.
+Poin dot2 // Left justified "." symbol, not sure where it's used.
+Poin mam // M symbol in the "ma" symbol, not sure where it's used.
+Poin maa // A symbol in the "ma" symbol, not sure where it's used.
+Poin littlem // A lowercase "M" symbol, not sure where it's used.
+Poin N // N Symbol
+Poin L2 // L symbol with some stray pixels, not usable for a rank.
+Poin iv // "iv" symbol, not sure where it's used.
+Poin vdot // "v" symbol with a dot, not sure where it's used.
+Poin Edot // "E." symbol, not sure where it's used.
+Poin littlee //Smaller "E" Symbol
+Poin littlea //Smaller "A" Symbol
+Poin mh // First halp of the MHP symbol
+Poin hp // Second half of the MHP symbol
+Poin F // F Symbol
+Poin I // I Symbol
+Poin J // J Symbol
+Poin L // L Symbol
+Poin M // M Symbol
+Poin O // O Symbol
+Poin Q // Q Symbol
+Poin R // R Symbol
+Poin T // T Symbol
+Poin U // U Symbol
+Poin V // V Symbol
+Poin W // W Symbol
+Poin X // X Symbol
+Poin Y // Y Symbol
+Poin Z // Z Symbol
+Poin SS // SS Symbol
+Poin Star // Bigger star symbol
+Poin Star2 // Smaller star symbol
+Poin Omega // Omega Symbol
+Poin arch // Up arrow for Arch

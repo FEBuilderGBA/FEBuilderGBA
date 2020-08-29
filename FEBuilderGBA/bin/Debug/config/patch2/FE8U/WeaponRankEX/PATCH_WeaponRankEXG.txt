@@ -1,0 +1,19 @@
+NAME=WeaponRankEX (Glyph Editor)
+
+IF:0x16d5c=0x00 0x4B 0x18 0x47
+
+AUTHOR=Beansy
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+POINTER=0x08590b48
+
+DATASIZE=1
+
+DATACOUNT=$GREP1 0x00
+
+LISTNAME=$COMBO RankNameGlyphCombo.txt
+B0=Weapon_Rank_Glyph
+
+INFO=Change Which glyphs show for each weapon rank.

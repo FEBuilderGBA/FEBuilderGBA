@@ -254,6 +254,7 @@ namespace FEBuilderGBA
         uint workmemory_local_flag_address();  //ワークメモリ グローバルフラグ
         uint workmemory_global_flag_address();  //ワークメモリ ローカルフラグ
         uint workmemory_trap_address();  //トラップデータ
+        uint workmemory_bwl_address();  //BWLデータ
         uint workmemory_clear_turn_address();  //クリアターン数
         uint workmemory_clear_turn_count();  //クリアターン数 最大数
         uint workmemory_memoryslot_address();  //ワークメモリ メモリスロットFE8

@@ -768,3 +768,5 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 080CB38C=OPTitleLogoMain	{J}	//08B3F024
 080CA63C=OPTitleLogoUI	{J}	//08B3EDD0
 080A29BC=WorldmapItemSell	{J}	//08A9526C
+0807DA84=MapAnimForSteelAnim	{J}	//08A13950
+0807DADC=MapAnimForSummonAnim	{J} //08A13A20

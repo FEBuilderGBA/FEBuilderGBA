@@ -1,0 +1,20 @@
+NAME=WeaponRankEX (XP Editor)
+
+IF:0x16d5c=0x00 0x4B 0x18 0x47
+
+AUTHOR=Beansy
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+POINTER=0x08590b44
+
+DATASIZE=1
+
+DATACOUNT=$GREP1 0x00
+
+LISTNAME=$COMBO RankNameCombo.txt
+
+B0:DECIMAL=Weapon_XP_for_next_rank
+
+INFO=Change the Weapon Experience needed to raise the weapon level.

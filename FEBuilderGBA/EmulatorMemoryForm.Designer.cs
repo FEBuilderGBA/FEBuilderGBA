@@ -227,19 +227,23 @@
             this.SoundList = new FEBuilderGBA.ListBoxEx();
             this.label91 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label62 = new System.Windows.Forms.Label();
             this.TrapList = new FEBuilderGBA.ListBoxEx();
+            this.label62 = new System.Windows.Forms.Label();
             this.TrapAddress = new FEBuilderGBA.TextBoxEx();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
-            this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label82 = new System.Windows.Forms.Label();
             this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
+            this.label82 = new System.Windows.Forms.Label();
             this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.BWLList = new FEBuilderGBA.ListBoxEx();
+            this.label95 = new System.Windows.Forms.Label();
+            this.BWLAddress = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
@@ -583,6 +587,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
@@ -3164,6 +3169,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(785, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -3371,18 +3377,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "トラップデータ";
             // 
-            // label62
-            // 
-            this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label62.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label62.Location = new System.Drawing.Point(3, 3);
-            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(847, 30);
-            this.label62.TabIndex = 328;
-            this.label62.Text = "トラップデータ";
-            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // TrapList
             // 
             this.TrapList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3396,6 +3390,18 @@
             this.TrapList.SelectedIndexChanged += new System.EventHandler(this.TrapList_SelectedIndexChanged);
             this.TrapList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrapList_KeyDown);
             this.TrapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrapList_MouseDoubleClick);
+            // 
+            // label62
+            // 
+            this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label62.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label62.Location = new System.Drawing.Point(3, 3);
+            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(847, 30);
+            this.label62.TabIndex = 328;
+            this.label62.Text = "トラップデータ";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TrapAddress
             // 
@@ -3422,6 +3428,20 @@
             this.tabPage3.Size = new System.Drawing.Size(853, 844);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "パレット";
+            // 
+            // PaletteList
+            // 
+            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PaletteList.FormattingEnabled = true;
+            this.PaletteList.IntegralHeight = false;
+            this.PaletteList.ItemHeight = 18;
+            this.PaletteList.Location = new System.Drawing.Point(3, 33);
+            this.PaletteList.Name = "PaletteList";
+            this.PaletteList.Size = new System.Drawing.Size(847, 808);
+            this.PaletteList.TabIndex = 321;
+            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
+            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
+            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
             // 
             // PaletteSearchButton
             // 
@@ -3456,20 +3476,6 @@
             this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
             this.PaletteAddress.TabIndex = 327;
             // 
-            // PaletteList
-            // 
-            this.PaletteList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PaletteList.FormattingEnabled = true;
-            this.PaletteList.IntegralHeight = false;
-            this.PaletteList.ItemHeight = 18;
-            this.PaletteList.Location = new System.Drawing.Point(3, 33);
-            this.PaletteList.Name = "PaletteList";
-            this.PaletteList.Size = new System.Drawing.Size(847, 808);
-            this.PaletteList.TabIndex = 321;
-            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
-            this.PaletteList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaletteList_KeyDown);
-            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
-            // 
             // SelectPalette
             // 
             this.SelectPalette.ErrorMessage = "";
@@ -3492,18 +3498,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "クリアターン数";
             // 
-            // label82
-            // 
-            this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label82.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label82.Location = new System.Drawing.Point(3, 3);
-            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(847, 30);
-            this.label82.TabIndex = 328;
-            this.label82.Text = "クリアターン数";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ClearTurnList
             // 
             this.ClearTurnList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3516,6 +3510,18 @@
             this.ClearTurnList.TabIndex = 329;
             this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
             // 
+            // label82
+            // 
+            this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label82.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label82.Location = new System.Drawing.Point(3, 3);
+            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(847, 30);
+            this.label82.TabIndex = 328;
+            this.label82.Text = "クリアターン数";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // textBoxEx33
             // 
             this.textBoxEx33.ErrorMessage = "";
@@ -3526,6 +3532,52 @@
             this.textBoxEx33.ReadOnly = true;
             this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
             this.textBoxEx33.TabIndex = 330;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.BWLList);
+            this.tabPage5.Controls.Add(this.label95);
+            this.tabPage5.Controls.Add(this.BWLAddress);
+            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(853, 844);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "BWL";
+            // 
+            // BWLList
+            // 
+            this.BWLList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BWLList.FormattingEnabled = true;
+            this.BWLList.IntegralHeight = false;
+            this.BWLList.ItemHeight = 18;
+            this.BWLList.Location = new System.Drawing.Point(3, 33);
+            this.BWLList.Name = "BWLList";
+            this.BWLList.Size = new System.Drawing.Size(847, 808);
+            this.BWLList.TabIndex = 330;
+            this.BWLList.SelectedIndexChanged += new System.EventHandler(this.BWLList_SelectedIndexChanged);
+            this.BWLList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BWLList_MouseDoubleClick);
+            // 
+            // label95
+            // 
+            this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label95.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label95.Location = new System.Drawing.Point(3, 3);
+            this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(847, 30);
+            this.label95.TabIndex = 329;
+            this.label95.Text = "戦闘データ";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BWLAddress
+            // 
+            this.BWLAddress.AutoSize = true;
+            this.BWLAddress.Location = new System.Drawing.Point(770, 9);
+            this.BWLAddress.Name = "BWLAddress";
+            this.BWLAddress.Size = new System.Drawing.Size(0, 18);
+            this.BWLAddress.TabIndex = 331;
             // 
             // Party_ControlPanel
             // 
@@ -6775,6 +6827,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.Party_ControlPanel.ResumeLayout(false);
             this.Party_ControlPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
@@ -7330,5 +7384,9 @@
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.NumericUpDown CHEAT_TURN_VALUE;
         private System.Windows.Forms.Button CHEAT_TURN;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label95;
+        private ListBoxEx BWLList;
+        private System.Windows.Forms.Label BWLAddress;
     }
 }
