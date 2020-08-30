@@ -600,6 +600,11 @@ namespace FEBuilderGBA
 
             f.Dettach();
 
+            if (! U.isSafetyOffset(addr))
+            {
+                addr = 0;
+            }
+
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"Instrument Wave");
             uint newaddr = InputFormRef.WriteBinaryData(this, addr, gbawave, gbawave_length, undodata);
             Program.Undo.Push(undodata);

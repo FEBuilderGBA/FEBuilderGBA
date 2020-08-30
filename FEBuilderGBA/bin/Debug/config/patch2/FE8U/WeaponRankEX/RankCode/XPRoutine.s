@@ -69,13 +69,15 @@ pop {r2}
 pop {r3,r4,r5,r6,r7}
 bx r2
 
+REnd2:
+b REnd
 	R1: @//Start of first weapon rank
 	cmp r1, #0x1
 	bgt R2 
 		ldr r3,=lWEXPRank1
 		ldrb r3, [r3, #0x0]
 		cmp r2, r3 @//Weapon Exp Required for Rank 2@ADDRESS
-		blt Skip @Check for if the xp has moved past the threshold
+		blt REnd2 @Check for if the xp has moved past the threshold
 			add r0, #0x1 @Increase Weapon Rank
 			add r1, #0x1
 			sub r2, r2, r3 @//Weapon Exp Required for Rank 2@ADDRESS
