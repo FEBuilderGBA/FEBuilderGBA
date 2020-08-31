@@ -103,6 +103,8 @@ After each set of module options are definitions that you can use to adjust the 
 	#define MMBWeaponNameY 40
 	#define MMBWeaponNameCenteredWarningColor_Parcent	35		//<= 35%
 	#define MMBWeaponNameCenteredWarningColor_Color		TextYellow
+	#define MMBWeaponNameCenteredWarningColor_Parcent2	20		//<= 20%
+	#define MMBWeaponNameCenteredWarningColor_Color2		TextBlue
 
 	#define MMBHPStatusNoCombination
 

@@ -10,6 +10,20 @@ SET_FUNC StatScreenStruct, (0x02003C08)
 
 
 push {r4,r5,r6,lr}   //GetWRankBarData
+mov r3, r9
+push {r3}
+add sp, #0x40
+ldrb r3, [sp]
+sub sp, #0x40
+cmp r3, #0x28
+blt RBCont
+cmp r3, #0x2f
+bgt RBCont
+sub r3, #0x28
+mov r9, r3
+
+
+RBCont:
 mov r5 ,r0
 mov r4 ,r1
 mov r6 ,r2
@@ -159,6 +173,8 @@ RBEnd1:
 RBEnd2:
     str r0, [r6, #0x0]
 RBEnd3:
+pop {r3}
+mov r9, r3
 pop {r4,r5,r6}
 pop {r0}
 bx r0

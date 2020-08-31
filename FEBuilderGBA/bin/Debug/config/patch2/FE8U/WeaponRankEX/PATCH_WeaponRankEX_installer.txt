@@ -11,7 +11,7 @@ EDIT_PATCH=PATCH_WeaponRankEX.txt
 EA=WeaponRankEX.txt
 
 AUTHOR=Beansy
-INFO=Allows the expansion of weapon ranks from 6(E,D,C,B,A,S) to 14(1,2,3,4,5,6,7,8,9,A,B,C,D,S).\r\nAllows the expansion of the Weapon Rank system. This expansion allows up to 14 ranks total and lets you choose the maximum rank for both promoted and unprompted units, how much experience is needed to raise each individual rank and what symbol a Weapon Rank appears as. \r\nThis patch changes which Weapon Rank value decides a rank, so instead of being 1-31-71-121-181-251. It is 1-2-3-4-5-6-7-8-9-10-11-12-13-14 for each rank.\r\nPlease refer to the following URL for details.\r\nhttps://feuniverse.us/t/weaponrankex-documentation-for-febuilder/9304/
+INFO=Allows the expansion of the Weapon Rank system. This expansion allows up to 14 ranks total and lets you choose the maximum rank for both promoted and unprompted units, how much experience is needed to raise each individual rank and what symbol a Weapon Rank appears as. \r\nThis patch changes which Weapon Rank value decides a rank, so instead of being 1-31-71-121-181-251. It is 1-2-3-4-5-6-7-8-9-10-11-12-13-14 for each rank.\r\nPlease refer to the following URL for details.\r\nhttps://feuniverse.us/t/weaponrankex-documentation-for-febuilder/9304/
 
 
 

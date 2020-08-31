@@ -13,6 +13,8 @@ MMBDrawWeaponNameCenteredWarningColor:
 	.set MMBItemNamePosition,	EALiterals + 4
 	.set MMBTextWarningParsent,	EALiterals + 8
 	.set MMBTextWarningColor,	EALiterals + 10
+	.set MMBTextWarningParsent2,EALiterals + 12
+	.set MMBTextWarningColor2,	EALiterals + 14
 
 	@ Inputs:
 	@ r0: pointer to proc state
@@ -67,6 +69,11 @@ MMBDrawWeaponNameCenteredWarningColor:
 
 	@ Switch the color with the rest of the weapon.
 
+	ldr		r1, =MMBTextWarningParsent2
+	ldrh	r1, [r1]
+	cmp		r0,r1
+	ble		WarningColor2
+
 	ldr		r1, =MMBTextWarningParsent
 	ldrh	r1, [r1]
 	cmp		r0,r1
@@ -80,7 +87,12 @@ NormalColor:
 WarningColor:
 	ldr		r2, =MMBTextWarningColor
 	ldrh	r5, [r2]
-@	b       ColorJoin
+	b       ColorJoin
+
+WarningColor2:
+	ldr		r2, =MMBTextWarningColor2
+	ldrh	r5, [r2]
+@	b       ColorJoin2
 
 ColorJoin:
 
@@ -160,3 +172,5 @@ EALiterals:
 	@ MMBItemNamePosition
 	@ MMBTextWarningColor
 	@ MMBTextWarningParsent
+	@ MMBTextWarningColor2
+	@ MMBTextWarningParsent2

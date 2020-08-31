@@ -144,6 +144,8 @@
 			WORD (2 * ((32 * (MMBWeaponNameY/8)) + (MMBWeaponNameX/8))) + 4
 			SHORT MMBWeaponNameCenteredWarningColor_Parcent
 			SHORT MMBWeaponNameCenteredWarningColor_Color
+			SHORT MMBWeaponNameCenteredWarningColor_Parcent2
+			SHORT MMBWeaponNameCenteredWarningColor_Color2
 		#endif // MMBWeaponNameCenteredWarningColor
 
 
