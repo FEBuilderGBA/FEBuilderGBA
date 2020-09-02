@@ -144,7 +144,8 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             if (isDirectAddress)
             {
-                InputFormRef.ReInit(pointer);
+//                InputFormRef.ReInit(pointer);
+                InputFormRef.ReInitPointer(pointer , 1);
             }
             else
             {
