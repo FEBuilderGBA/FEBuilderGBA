@@ -112,10 +112,10 @@
 4132XXXXFFFE0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate(SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXFFFE0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate(SPAWN_ENEMY)(LOW)	{LOADUNIT}
 4F32XXXXFFFE0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate, unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
-4032XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ALLY)	{LOADUNIT}
-4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)	{LOADUNIT}
-4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)	{LOADUNIT}
-4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)	{LOADUNIT}
+4032XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ALLY)(LOW)	{LOADUNIT}
+4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)(LOW)	{LOADUNIT}
+4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)(LOW)	{LOADUNIT}
+4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
 4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C.	@STOREC	{COND}
 202EXXYY	Get unit ID of the unit at the given coordinates(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y]	returns unit ID if there is a unit at coordinates	@STOREC	{COND}
 2F41XXXX	_0x412F[XXXX::Value1]
@@ -162,9 +162,9 @@
 22370000	GIVETOSLOT3(LOW)
 402C0100XXXXXXXX20300000	Load units and move. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
 402C0100XXXXXXXX	Load units without moving. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
-412C0100XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
-412C0000XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
-412C0100XXXXXXXX20300000	Load units from memory and move. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
+412C0100XXXXXXXX	Load units from memory without moving. [XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
+412C0000XXXXXXXX	Load units from memory without moving. [XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
+412C0100XXXXXXXX20300000	Load units from memory and move. [XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
 402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
 422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
 402C0100FFFFFFFF	Load reinforcement unit for internal processing(LOW)
@@ -489,7 +489,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
 2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
-2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
+2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off. Used for returning party members.(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
 40050B00XXXXYYYY2F34FEFF	Erase unit at coordinates [XXXX:MAPX:X][YYYY:MAPY:Y]	@WARNING_DISA
 40050300XXXX000022370000	Take [XXXX:DECIMAL:GOLD] gold from the player(GIVETOSLOT3)	{GOLD}	{ITME}
 40050200XXXXXXXX40050300YYYY0000400A00004405A008	Ending scene 1 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{U}

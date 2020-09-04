@@ -324,10 +324,10 @@
 4132XXXXFFFE0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate(SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXFFFE0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate(SPAWN_ENEMY)(LOW)	{LOADUNIT}
 4F32XXXXFFFE0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at SlotB Coordinate, unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
-4032XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ALLY)	{LOADUNIT}
-4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)	{LOADUNIT}
-4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)	{LOADUNIT}
-4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)	{LOADUNIT}
+4032XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ALLY)(LOW)	{LOADUNIT}
+4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)(LOW)	{LOADUNIT}
+4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)(LOW)	{LOADUNIT}
+4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
 2F41XXXX	_0x412F[XXXX::Value1]
 4084XXXXYYYY0000	ID显示附近的地图详细规范[XXXX::值1][YY::值2]
 8088XXXXYYYYZZZZWWWWVVVV00000000	_0x8880[XXXX::Value1][YY::Value2][ZZ::Value3][WW::Value4][VV::Value5]
