@@ -1,0 +1,14 @@
+NAME=画面左端にトーチの杖を利用した時の画像が乱れるバグの修正
+INFO=画面の左端にトーチを利用すると、トーチの炎の絵の代わりに壊れたグラフィックが表示されてしまう問題を修正します。\r\nこれは、炎を表示する座標がマイナスになってしまうためです。\r\nこの問題はFE8Jのみで、FE8Uでは修正されています。
+
+TYPE=BIN
+AUTHOR=7743
+
+BIN:$FREEAREA:1=fix_tourch_staff_graphics_glitch.dmp
+JUMP:0x7FF8C:$r3=fix_tourch_staff_graphics_glitch.dmp
+
+PATCHED_IF:0x7FF8C=0x00 0x4B 0x9F 0x46
+NAME.en=Fixed a bug that the image is distorted when using the torch staff on the left edge of the screen.
+INFO.en=Fixes an issue where using a torch on the left edge of the screen would display a broken graphic instead of the torch flame drawing.\r\nThis is because the flame display coordinates are negative.\r\nThis issue is only in FE8J and has been fixed in FE8U.
+NAME.zh=修复了使用屏幕左边缘的手电筒时图像变形的错误。
+INFO.zh=修复了以下问题：在屏幕的左边缘使用手电筒会显示损坏的图形，而不是手电筒火焰图。\r\n这是因为火焰显示坐标为负。\r\n此问题仅在FE8J中，并已在FE8U中修复。

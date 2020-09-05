@@ -73,6 +73,7 @@ namespace FEBuilderGBA
             ToolTipEx tooltip = InputFormRef.GetToolTip<ItemForm>();
             InputFormRef.LoadCheckboxesResource("item_checkbox_", controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
 
+            FE8UPassiveItem(tooltip);
             FE8UItemSkill();
 
             //英語版の魔法分離パッチ
@@ -646,11 +647,32 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-//            if (PatchUtil.SearchFE8UItemSkill() == PatchUtil.FE8UItemSkill_enum.NO)
-//            {
-//                return false;
-//            }
             return true;
+        }
+
+        void FE8UPassiveItem(ToolTipEx tooltip)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return;
+            }
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//FE8J
+            }
+            else
+            {//FE8U
+                if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
+                {
+                    string hint;
+                    L_10_BIT_40.Text = "DoubleWeaponTriangle";
+                    hint = R._("武器の3すくみを2倍にします。");
+                    tooltip.SetToolTip(L_10_BIT_40, hint);
+                    
+                    L_10_BIT_80.Text = "PassiveBoosts";
+                    hint = R._("もっているだけでStatBoosterで指定した補正値を得られるアイテムになります。");
+                    tooltip.SetToolTip(L_10_BIT_80, hint);
+                }
+            }
         }
 
         void FE8UItemSkill()

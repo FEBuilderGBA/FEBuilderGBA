@@ -1,7 +1,0 @@
-IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1 0xCD 0x23 0xB5 0x8
-
-FORM=ItemForm
-L_10_BIT_80=PassiveBoosts
-L_10_BIT_80:HINT=もっているだけでStatBoosterで指定した補正値を得られるアイテムになります。
-L_10_BIT_80:HINT.en=It becomes an item which can obtain the correction value specified by StatBooster just by having it.
-

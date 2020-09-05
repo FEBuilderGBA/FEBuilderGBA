@@ -5368,6 +5368,12 @@ The indirect effect is set to 0xFFFF even though it is a weapon that can be atta
 :アイテムデータが極端に少ないです。破損している可能性があります。
 Item data is extremely low.It may be damaged.
 
+:武器の3すくみを2倍にします。
+Double the 3 frees of the weapon.
+
+:もっているだけでStatBoosterで指定した補正値を得られるアイテムになります。
+It becomes an item that can obtain the correction value specified by StatBooster just by holding it.
+
 :武器LV熟練度
 WEXP Per Hit
 
