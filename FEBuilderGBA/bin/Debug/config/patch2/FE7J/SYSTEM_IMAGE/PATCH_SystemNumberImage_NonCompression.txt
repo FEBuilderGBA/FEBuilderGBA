@@ -1,0 +1,11 @@
+NAME=システムで利用する数字 無圧縮
+NAME.en=SystemNumberImage_NonCompression
+NAME.zh=SystemNumberImage_NonCompression
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+IMAGE_POINTER=0x0006A9B4//0x081EBC44
+PALETTE_POINTER=0x0004080C//0x081CD938

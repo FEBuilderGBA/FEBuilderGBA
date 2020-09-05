@@ -12829,3 +12829,102 @@ r3=X tile position of menu of the right	{U}
 080A43AC	GetGameClearTimeByEachChapter	{U}
 08000D14	ConvertFrameSecToSecStrng	{J}
 08000D64	ConvertFrameSecToSecStrng	{U}
+080BA8E0	ASMC_ExecuteSuppendSave	{J}
+080B5D5C	ASMC_ExecuteSuppendSave	{U}
+0801A278	PrepareBlankTile	{U}
+08019F48	PrepareBlankTile	{J}
+08630928	&LZ77	ELFIRE_TSA_1	{J}
+08630AD8	&LZ77	ELFIRE_TSA_2	{J}
+08614EE0	&LZ77	CriticalBG_TSA_1	{J}
+08615380	&LZ77	CriticalBG_TSA_2	{J}
+085FAC50	&LZ77	PierceCriticalBG_TSA_1	{J}
+085FAF10	&LZ77	PierceCriticalBG_TSA_2	{J}
+086158BC	&LZ77	SRankWeaponEffectBG_TSA	{J}
+080E8934	&LZ77	Something's TSA	29	{J}
+080E8A48	&LZ77	Something's TSA	30	{J}
+080E8B6C	&LZ77	Something's TSA	31	{J}
+080E8C44	&LZ77	Something's TSA	32	{J}
+080E8D60	&LZ77	Something's TSA	33	{J}
+080E8E84	&LZ77	Something's TSA	34	{J}
+085E982C	&LZ77	Something's TSA	35	{J}
+0861BE44	&LZ77	MagfcastBG_TSA_1	{J}
+0861BEE0	&LZ77	MagfcastBG_TSA_2	{J}
+0861BF7C	&LZ77	MagfcastBG_TSA_3	{J}
+0861C01C	&LZ77	MagfcastBG_TSA_4	{J}
+0861C0C0	&LZ77	MagfcastBG_TSA_5	{J}
+0861C174	&LZ77	MagfcastBG_TSA_6	{J}
+08698E90	&LZ77	Something's TSA	36	{J}
+086991F0	&LZ77	Something's TSA	37	{J}
+08699544	&LZ77	Something's TSA	38	{J}
+08699854	&LZ77	Something's TSA	39	{J}
+08699B38	&LZ77	Something's TSA	40	{J}
+08699E08	&LZ77	Something's TSA	41	{J}
+0869A0A0	&LZ77	Something's TSA	42	{J}
+0869A338	&LZ77	Something's TSA	43	{J}
+0869A564	&LZ77	Something's TSA	44	{J}
+0869A818	&LZ77	Something's TSA	45	{J}
+0869AAD8	&LZ77	Something's TSA	46	{J}
+0869AE08	&LZ77	Something's TSA	47	{J}
+0869B158	&LZ77	Something's TSA	48	{J}
+0869B4D0	&LZ77	Something's TSA	49	{J}
+0869B858	&LZ77	Something's TSA	50	{J}
+086E945C	&LZ77	Something's TSA	51	{J}
+086E96D0	&LZ77	Something's TSA	52	{J}
+086E9948	&LZ77	Something's TSA	53	{J}
+086E9BC0	&LZ77	Something's TSA	54	{J}
+087526C8	&LZ77	FirebreathBG_TSA_1	{J}
+08761324	&LZ77	Something's TSA	55	{J}
+0877B080	&LZ77	Something's TSA	56	{J}
+0877B4DC	&LZ77	Something's TSA	57	{J}
+
+08603D50	&LZ77	ELFIRE_TSA_1	{U}
+08603F00	&LZ77	ELFIRE_TSA_2	{U}
+085E8308	&LZ77	CriticalBG_TSA_1	{U}
+085E87A8	&LZ77	CriticalBG_TSA_2	{U}
+085D0A20	&LZ77	PierceCriticalBG_TSA_1	{U}
+085D0CE0	&LZ77	PierceCriticalBG_TSA_2	{U}
+085E8CE4	&LZ77	SRankWeaponEffectBG_TSA	{U}
+080E3554	&LZ77	Something's TSA	29	{U}
+080E3668	&LZ77	Something's TSA	30	{U}
+080E378C	&LZ77	Something's TSA	31	{U}
+080E3864	&LZ77	Something's TSA	32	{U}
+080E3980	&LZ77	Something's TSA	33	{U}
+080E3AA4	&LZ77	Something's TSA	34	{U}
+085BF5FC	&LZ77	Something's TSA	35	{U}
+085EF26C	&LZ77	MagfcastBG_TSA_1	{U}
+085EF308	&LZ77	MagfcastBG_TSA_2	{U}
+085EF3A4	&LZ77	MagfcastBG_TSA_3	{U}
+085EF444	&LZ77	MagfcastBG_TSA_4	{U}
+085EF4E8	&LZ77	MagfcastBG_TSA_5	{U}
+085EF59C	&LZ77	MagfcastBG_TSA_6	{U}
+0866C2B8	&LZ77	Something's TSA	36	{U}
+0866C618	&LZ77	Something's TSA	37	{U}
+0866C96C	&LZ77	Something's TSA	38	{U}
+0866CC7C	&LZ77	Something's TSA	39	{U}
+0866CF60	&LZ77	Something's TSA	40	{U}
+0866D230	&LZ77	Something's TSA	41	{U}
+0866D4C8	&LZ77	Something's TSA	42	{U}
+0866D760	&LZ77	Something's TSA	43	{U}
+0866D98C	&LZ77	Something's TSA	44	{U}
+0866DC40	&LZ77	Something's TSA	45	{U}
+0866DF00	&LZ77	Something's TSA	46	{U}
+0866E230	&LZ77	Something's TSA	47	{U}
+0866E580	&LZ77	Something's TSA	48	{U}
+0866E8F8	&LZ77	Something's TSA	49	{U}
+0866EC80	&LZ77	Something's TSA	50	{U}
+086BC884	&LZ77	Something's TSA	51	{U}
+086BCD70	&LZ77	Something's TSA	52	{U}
+086BCFE8	&LZ77	Something's TSA	53	{U}
+086BCAF8	&LZ77	Something's TSA	54	{U}
+08725AF0	&LZ77	FirebreathBG_TSA_1	{U}
+08732368	&LZ77	Something's TSA	55	{U}
+08745B74	&LZ77	Something's TSA	56	{U}
+08745FD0	&LZ77	Something's TSA	57	{U}
+08083F38	StartTourchStaffMapAnim	{J}
+080835DC	EndTourchStaffMapAnim_Back	{J}
+0807FEEC	StartProcForTourchStaffMapAnim	{J}
+080819E8	StartTourchStaffMapAnim	{U}
+08081278	EndTourchStaffMapAnim_Back	{U}
+0807DBA8	StartProcForTourchStaffMapAnim	{U}
+08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
+08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}

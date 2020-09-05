@@ -4965,7 +4965,6 @@
 08005308	Font_ResetAllocation	{J}
 080270C0	SwapUnitStats	{J}
 080273D4	ItemEffect_ErrorMessage	{J}
-
 08022530	UseCommandUsability	{U}
 080225A8	EquipCommandUsability	{U}
 080225F0	DiscardCommandUsability	{U}
@@ -4975,3 +4974,87 @@
 08005438	Font_ResetAllocation	{U}
 08026C38	SwapUnitStats	{U}
 08026F4C	ItemEffect_ErrorMessage	{U}
+08210350	&LZ77	ELFIRE_TSA	{J}
+081F87B8	&LZ77	CriticalBG_TSA_1	{J}
+081F8C58	&LZ77	CriticalBG_TSA_2	{J}
+081F9194	&LZ77	SRankWeaponEffectBG_TSA	{J}
+0820A6DC	&LZ77	ELFIRE_TSA	{U}
+081F2B44	&LZ77	CriticalBG_TSA_1	{U}
+081F2FE4	&LZ77	CriticalBG_TSA_2	{U}
+081F3520	&LZ77	SRankWeaponEffectBG_TSA	{U}
+
+08210350	&LZ77	ELFIRE_TSA_1	{J}
+081F7440	&LZ77	ELFIRE_TSA_2	{J}
+081F87B8	&LZ77	CriticalBG_TSA_1	{J}
+081F8C58	&LZ77	CriticalBG_TSA_2	{J}
+081F9194	&LZ77	SRankWeaponEffectBG_TSA	{J}
+082ED718	&LZ77	Something's TSA	29	{J}
+082ED82C	&LZ77	Something's TSA	30	{J}
+082ED950	&LZ77	Something's TSA	31	{J}
+082EDA28	&LZ77	Something's TSA	32	{J}
+082EDB44	&LZ77	Something's TSA	33	{J}
+082EDC68	&LZ77	Something's TSA	34	{J}
+081FED14	&LZ77	MagfcastBG_TSA_1	{J}
+081FEDB0	&LZ77	MagfcastBG_TSA_2	{J}
+081FEE4C	&LZ77	MagfcastBG_TSA_3	{J}
+081FEEEC	&LZ77	MagfcastBG_TSA_4	{J}
+081FEF90	&LZ77	MagfcastBG_TSA_5	{J}
+081FF044	&LZ77	MagfcastBG_TSA_6	{J}
+0826C950	&LZ77	Something's TSA	36	{J}
+0826CCB0	&LZ77	Something's TSA	37	{J}
+0826D004	&LZ77	Something's TSA	38	{J}
+0826D314	&LZ77	Something's TSA	39	{J}
+0826D5F8	&LZ77	Something's TSA	40	{J}
+0826D8C8	&LZ77	Something's TSA	41	{J}
+0826DB60	&LZ77	Something's TSA	42	{J}
+0826DDF8	&LZ77	Something's TSA	43	{J}
+0826E024	&LZ77	Something's TSA	44	{J}
+0826E2D8	&LZ77	Something's TSA	45	{J}
+0826E598	&LZ77	Something's TSA	46	{J}
+0826E8C8	&LZ77	Something's TSA	47	{J}
+0826EC18	&LZ77	Something's TSA	48	{J}
+0826EF90	&LZ77	Something's TSA	49	{J}
+0826F318	&LZ77	Something's TSA	50	{J}
+0828CEAC	&LZ77	Something's TSA	54	{J}
+08281C9C	&LZ77	FirebreathBG_TSA_1	{J}
+082A1DD0	&LZ77	Something's TSA	55	{J}
+082B9E7C	&LZ77	Something's TSA	56	{J}
+082BA2D8	&LZ77	Something's TSA	57	{J}
+
+0820A6DC	&LZ77	ELFIRE_TSA_1	{U}
+081F17CC	&LZ77	ELFIRE_TSA_2	{U}
+081F2B44	&LZ77	CriticalBG_TSA_1	{U}
+081F2FE4	&LZ77	CriticalBG_TSA_2	{U}
+081F3520	&LZ77	SRankWeaponEffectBG_TSA	{U}
+082E7A4C	&LZ77	Something's TSA	29	{U}
+082E7B60	&LZ77	Something's TSA	30	{U}
+082E7C84	&LZ77	Something's TSA	31	{U}
+082E7D5C	&LZ77	Something's TSA	32	{U}
+082E7E78	&LZ77	Something's TSA	33	{U}
+082E7F9C	&LZ77	Something's TSA	34	{U}
+081F90A0	&LZ77	MagfcastBG_TSA_1	{U}
+081F913C	&LZ77	MagfcastBG_TSA_2	{U}
+081F91D8	&LZ77	MagfcastBG_TSA_3	{U}
+081F9278	&LZ77	MagfcastBG_TSA_4	{U}
+081F931C	&LZ77	MagfcastBG_TSA_5	{U}
+081F93D0	&LZ77	MagfcastBG_TSA_6	{U}
+08266CDC	&LZ77	Something's TSA	36	{U}
+0826703C	&LZ77	Something's TSA	37	{U}
+08267390	&LZ77	Something's TSA	38	{U}
+082676A0	&LZ77	Something's TSA	39	{U}
+08267984	&LZ77	Something's TSA	40	{U}
+08267C54	&LZ77	Something's TSA	41	{U}
+08267EEC	&LZ77	Something's TSA	42	{U}
+08268184	&LZ77	Something's TSA	43	{U}
+082683B0	&LZ77	Something's TSA	44	{U}
+08268664	&LZ77	Something's TSA	45	{U}
+08268924	&LZ77	Something's TSA	46	{U}
+08268C54	&LZ77	Something's TSA	47	{U}
+08268FA4	&LZ77	Something's TSA	48	{U}
+0826931C	&LZ77	Something's TSA	49	{U}
+082696A4	&LZ77	Something's TSA	50	{U}
+08287238	&LZ77	Something's TSA	54	{U}
+0827C028	&LZ77	FirebreathBG_TSA_1	{U}
+0829C15C	&LZ77	Something's TSA	55	{U}
+082B4208	&LZ77	Something's TSA	56	{U}
+082B4664	&LZ77	Something's TSA	57	{U}

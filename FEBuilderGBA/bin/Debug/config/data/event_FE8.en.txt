@@ -160,15 +160,15 @@
 413FXXXXYYYYZZZZ	Execute event battle (41)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG2)	{BATTLE}	{MAPEFFECT}
 423FXXXXYYYYZZZZ	Execute event battle (42)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ::Unknown](FIG3)	{BATTLE}	{MAPEFFECT}
 22370000	GIVETOSLOT3(LOW)
-402C0100XXXXXXXX20300000	Load units and move. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
-402C0100XXXXXXXX	Load units without moving. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
-412C0100XXXXXXXX	Load units from memory without moving. [XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
-412C0000XXXXXXXX	Load units from memory without moving. [XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
-412C0100XXXXXXXX20300000	Load units from memory and move. [XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
-402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
+402C0100XXXXXXXX20300000	Load units and move. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
+402C0100XXXXXXXX	Load units. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
+412C0100XXXXXXXX	Load units. Used mainly for enemy and NPC.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
+412C0000XXXXXXXX	Load units. Used mainly for enemy and NPC.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
+412C0100XXXXXXXX20300000	Load units and move. Used mainly for enemy and NPC.[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
+402C0000XXXXXXXX	Load units(ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
 422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
 402C0100FFFFFFFF	Load reinforcement unit for internal processing(LOW)
-412C0100FFFFFFFF	Load unit for internal processing(LOAD2)(LOW)
+412C0100FFFFFFFF	Load unit for internal processing. Used mainly for enemy and NPC.(LOAD2)(LOW)
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]
