@@ -1,0 +1,12 @@
+NAME=システムで利用するステータスアップの数字 無圧縮
+NAME.en=SystemNumberImage_StatusUp_NonCompression
+NAME.zh=SystemNumberImage_StatusUp_NonCompression
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+IMAGE_POINTER=0x0770F8//0xA1D320
+PALETTE_POINTER=0x077020//0xA1D030
+KEEPPALETTE=true

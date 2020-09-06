@@ -3231,6 +3231,77 @@ namespace FEBuilderGBA
             };
         }
 
+        int LoadPatchBinSub(PatchSt patch, string[] keywords,Panel panel)
+        {
+            int yy = 0;
+            int bincount = 0;
+            foreach (var pair in patch.Param)
+            {
+                string basedir = Path.GetDirectoryName(patch.PatchFileName);
+                foreach (string keyword in keywords)
+                {
+                    string[] sp = pair.Key.Split(':');
+                    string key = sp[0];
+                    string addrstring = U.at(sp, 1);
+                    string value = pair.Value;
+
+                    if (key != keyword)
+                    {
+                        continue;
+                    }
+
+                    convertBinAddressString(addrstring, 0, 0x100, basedir); //check only.
+
+                    if (keyword != "JUMP" 
+                        && keyword != "COPY" 
+                        && keyword != "SLIDE"
+                        && keyword != "EXTENDS"
+                        && keyword != "UNINSTALL"
+                        && keyword != "CLEAR")
+                    {
+                        string filename = Path.Combine(basedir, value);
+                        if (!File.Exists(filename))
+                        {
+                            throw new PatchException(keyword + "(" + filename + ") file can not found.\r\n" + pair.Key + "=" + pair.Value);
+                        }
+                    }
+
+                    Label label = new Label();
+                    label.Text = pair.Key;
+                    label.BorderStyle = BorderStyle.FixedSingle;
+                    label.Location = new Point(0, yy);
+                    label.Size = new Size(300, CONTROL_HEIGHT);
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    panel.Controls.Add(label);
+
+                    TextBoxEx binfilename = new TextBoxEx();
+                    binfilename.Location = new Point(300, yy);
+                    binfilename.Size = new Size(200, CONTROL_HEIGHT);
+                    binfilename.ReadOnly = true;
+                    binfilename.Text = value;
+                    panel.Controls.Add(binfilename);
+
+                    yy += CONTROL_HEIGHT;
+                    bincount++;
+
+                    if (bincount >= 20)
+                    {
+                        label = new Label();
+                        label.Text = R._("ファイル数が多すぎるので以下省略します。");
+                        label.BorderStyle = BorderStyle.FixedSingle;
+                        label.Location = new Point(0, yy);
+                        label.Size = new Size(300+200, CONTROL_HEIGHT);
+                        label.TextAlign = ContentAlignment.MiddleCenter;
+                        panel.Controls.Add(label);
+                        yy += CONTROL_HEIGHT;
+                        bincount++;
+                        return bincount;
+                    }
+                }
+            }
+            return bincount;
+        }
+
         void LoadPatchBin(PatchSt patch)
         {
             PatchPage.Controls.Clear();
@@ -3277,58 +3348,7 @@ namespace FEBuilderGBA
                ,"JUMP"        //割り込みコード生成(必ず最後に書かないとダメ)
             };
 
-            int yy = 0;
-            int bincount = 0;
-            foreach (var pair in patch.Param)
-            {
-                string basedir = Path.GetDirectoryName(patch.PatchFileName);
-                foreach (string keyword in keywords)
-                {
-                    string[] sp = pair.Key.Split(':');
-                    string key = sp[0];
-                    string addrstring = U.at(sp, 1);
-                    string value = pair.Value;
-
-                    if (key != keyword)
-                    {
-                        continue;
-                    }
-
-                    convertBinAddressString(addrstring, 0, 0x100, basedir); //check only.
-
-                    if (keyword != "JUMP" 
-                        && keyword != "COPY" 
-                        && keyword != "SLIDE"
-                        && keyword != "EXTENDS"
-                        && keyword != "UNINSTALL"
-                        && keyword != "CLEAR")
-                    {
-                        string filename = Path.Combine(basedir, value);
-                        if (!File.Exists(filename))
-                        {
-                            throw new PatchException(keyword + "(" + filename + ") file can not found.\r\n" + pair.Key + "=" + pair.Value);
-                        }
-                    }
-
-                    label = new Label();
-                    label.Text = pair.Key;
-                    label.BorderStyle = BorderStyle.FixedSingle;
-                    label.Location = new Point(0, yy);
-                    label.Size = new Size(300, CONTROL_HEIGHT);
-                    label.TextAlign = ContentAlignment.MiddleCenter;
-                    panel.Controls.Add(label);
-
-                    TextBoxEx binfilename = new TextBoxEx();
-                    binfilename.Location = new Point(300, yy);
-                    binfilename.Size = new Size(200, CONTROL_HEIGHT);
-                    binfilename.ReadOnly = true;
-                    binfilename.Text = value;
-                    panel.Controls.Add(binfilename);
-
-                    yy += CONTROL_HEIGHT;
-                    bincount++;
-                }
-            }
+            int bincount = LoadPatchBinSub(patch, keywords,panel);
             panel.AutoScroll = true;
             PatchPage.Controls.Add(panel);
 

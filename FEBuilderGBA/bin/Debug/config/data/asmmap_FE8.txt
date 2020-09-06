@@ -11807,7 +11807,6 @@
 0860754C	:086078C5	不明なデータ	OAMSP Maybe	10	{J}
 0860821C	:086094B3	不明なデータ	OAMSP Maybe	11	{J}
 0874E5D4	:0874F211	不明なデータ	OAMSP Maybe	12	{J}
-08A1D320	:08A1D8BF	不明なデータ	OAMSP Maybe	13	{J}
 0808B93C	セーブメニューの項目の背景	{J}
 0808B8DC	LoadChapterTitleGfx2	{J}
 0808BAAC	章名を出すために、読込むべき章タイトルIDの取得	{J}
@@ -12967,3 +12966,7 @@
 0807DBA8	StartProcForTourchStaffMapAnim	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
+08076fc8	DrawStatusUP_ValueMain	{J}
+08081330	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{J}
+08074B90	DrawStatusUP_ValueMain	{U}
+0807EFF0	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{U}

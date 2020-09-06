@@ -9241,6 +9241,9 @@ Incorrect Address specification. Value:0x{0}
 :パッチ({0})をインストールしました。{1} PATCH INSTALL
 Installed the patch ({0}).{1} PATCH INSTALL.
 
+:ファイル数が多すぎるので以下省略します。
+There are too many files, so I will omit them below.
+
 :不明なキーワードです : {0}
 Unknown Keyword: {0}
 
