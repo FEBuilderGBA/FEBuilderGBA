@@ -7,6 +7,9 @@ AUTHOR=7743
 BIN:$FREEAREA:1=Fix_StatusUp_BigNumber.dmp
 JUMP:0x7EFFC:$r3=Fix_StatusUp_BigNumber.dmp
 
+BIN:$FREEAREA:2=Fix_StatusUp_BigNumber_CC.dmp
+JUMP:0x74C7C:$r3=Fix_StatusUp_BigNumber_CC.dmp
+
 PATCHED_IF:0x7EFFC=0x00 0x4B 0x9F 0x46
 NAME.en=Addressing the problem that the display is disturbed at 11 or more with status up.
 INFO.en=We will temporarily fix the problem that the display is distorted when growing more than 11 when stats up.\r\nWhen this patch is applied, only the + mark and the up arrow will be displayed for the status up display of 11 or more overflows.\r\n(Other display such as +1 is not changed.).\r\nIt is a fix that is better than an overflow and strange display.
