@@ -2440,7 +2440,10 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                InputFormRef.DoEvents(null, "Lines:" + i);
+                if (i % 128 == 0)
+                {
+                    InputFormRef.DoEvents(null, "Lines:" + i);
+                }
 
                 //トークン分割   RemoveEmptyEntries で空値は無視.
                 string[] token = line.Split(new string[] { " ", "\t", "," }, StringSplitOptions.RemoveEmptyEntries);
@@ -2479,6 +2482,7 @@ namespace FEBuilderGBA
                 {
                     if (globalName != null)
                     {
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error("global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
                     globalName = token[1];
@@ -2489,6 +2493,7 @@ namespace FEBuilderGBA
                 {//ラベル
                     if (globalName == null)
                     {
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error("ラベルを書く前に、global 情報を定義してください.\r\nこのラベルがグローバルなのか、ローカルなのか調べるのに必要です。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
 
@@ -2497,6 +2502,7 @@ namespace FEBuilderGBA
                     {
                         if (findGlobal(global, name) >= 0)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             return R.Error("グローバルラベル{2} すべてに利用されています。\r\n\r\nFile:{0} Line:{1}", filename, i + 1, name);
                         }
                         current = new SongInnerDataSt();
@@ -2510,6 +2516,7 @@ namespace FEBuilderGBA
                     {
                         if (current == null)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             return R.Error("グローバルラベルがないのに、ローカルラベルが使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                         }
                     }
@@ -2522,11 +2529,13 @@ namespace FEBuilderGBA
                 {//byte単位で書き込む.
                     if (current == null)
                     {
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error("グローバルラベルがないのに、 .byte命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
 
                     if (token.Length <= 1)
                     {//エラー
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error(".byteは1つ以上の引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
                     for (int n = 1; n < token.Length; n++)
@@ -2538,11 +2547,13 @@ namespace FEBuilderGBA
                         }
                         catch (SyntaxErrorException e)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
                             return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
                         catch (EvaluateException e)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
                             return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
@@ -2554,11 +2565,13 @@ namespace FEBuilderGBA
                     //
                     if (current == null)
                     {
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error("グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
 
                     if (token.Length <= 1)
                     {//エラー
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error(".wordは1つ以上のラベル引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
                     for (int n = 1; n < token.Length; n++)
@@ -2575,11 +2588,13 @@ namespace FEBuilderGBA
                         }
                         catch (SyntaxErrorException e)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
                             return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
                         catch (EvaluateException e)
                         {
+                            InputFormRef.DoEvents(null, "Lines:" + i);
                             string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
                             return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
@@ -2591,12 +2606,14 @@ namespace FEBuilderGBA
                 {
                     if (current == null)
                     {
+                        InputFormRef.DoEvents(null, "Lines:" + i);
                         return R.Error("グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}", filename, i + 1);
                     }
                     U.append_u32(current.list, 0);
                     break;
                 }
             }
+            InputFormRef.DoEvents(null, "Term..");
 
             //書き込む前の事前チェック
             //ソングテーブルがあるかどうか確認.

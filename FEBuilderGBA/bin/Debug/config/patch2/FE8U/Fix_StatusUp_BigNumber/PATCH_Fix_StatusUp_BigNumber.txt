@@ -11,7 +11,7 @@ BIN:$FREEAREA:2=Fix_StatusUp_BigNumber_CC.dmp
 JUMP:0x74C7C:$r3=Fix_StatusUp_BigNumber_CC.dmp
 
 PATCHED_IF:0x7EFFC=0x00 0x4B 0x9F 0x46
-NAME.en=Addressing the problem that the display is disturbed at 11 or more with status up.
-INFO.en=We will temporarily fix the problem that the display is distorted when growing more than 11 when stats up.\r\nWhen this patch is applied, only the + mark and the up arrow will be displayed for the status up display of 11 or more overflows.\r\n(Other display such as +1 is not changed.).\r\nIt is a fix that is better than an overflow and strange display.
+NAME.en=Fix problem that display is disturbed at 11 or more with status up.
+INFO.en=This Patch will temporarily fix the problem that the display is distorted when growing more than 11 when stats up.\r\nWhen this patch is applied, only the + mark and the up arrow will be displayed for the status up display of 11 or more overflows.\r\n(Other display such as +1 is not changed.).\r\nIt is a fix that is better than an overflow and strange display.
 NAME.zh=解决状态为11或更高时显示受到干扰的问题。
 INFO.zh=我们将暂时解决以下问题：当统计数据增长到11以上时，显示屏会变形。\r\n应用此补丁程序时，对于11次或更多溢出的状态向上显示，将仅显示+标记和向上箭头。\r\n（+1之类的其他显示不会更改。）。\r\n此修复程序比溢出和奇怪的显示要好。

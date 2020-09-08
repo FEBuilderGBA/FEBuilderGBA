@@ -12970,3 +12970,20 @@
 08081330	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{J}
 08074B90	DrawStatusUP_ValueMain	{U}
 0807EFF0	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{U}
+080abfe0	SaveMenu_DrawDifficultyHintText	{U}
+080A8C2C	SaveMenu_Init	{U}
+080A8CD4	SaveMenu_LoadBackGround	{U}
+080A8F04	SaveMenu_LoadExtraMenuGraphics	{U}
+080AC3E0	SaveMenu_StartNewGameDifficultySelect	{U}
+080AA458	SaveMenu_Check_ValidDifficultySelected	{U}
+080AD5B4	SaveMenu_Something_LCD_Registers	{U}
+080AA30C	SaveMenu_Setup_Graphics_DifficultySelect	{U}
+080AA1EC	SaveMenu_Setup_IORegisters_DifficultySelect	{U}
+080B0A94	SaveMenu_DrawDifficultyHintText	{J}
+080AD644	SaveMenu_Init	{J}
+080AD6EC	SaveMenu_LoadBackGround	{J}
+080AD91C	SaveMenu_LoadExtraMenuGraphics	{J}
+080B0E88	SaveMenu_StartNewGameDifficultySelect	{J}
+080AEF3C	SaveMenu_Check_ValidDifficultySelected	{J}
+080AEDF0	SaveMenu_Setup_Graphics_DifficultySelect	{J}
+080AECD0	SaveMenu_Setup_IORegisters_DifficultySelect	{J}

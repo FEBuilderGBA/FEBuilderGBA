@@ -830,6 +830,10 @@ namespace FEBuilderGBA
                     , "devkitpro_eabi " + compiler);
                 return false;
             }
+            if (compileType == CompileType.CONVERT_LYN)
+            {//LYNに変換する場合、ELFを作るのとは別の処理になる.
+                return ConvertLYN(target_filename, out output);
+            }
 
             string output_temp_filename = target + ".elf";
             string target_filedir = Path.GetDirectoryName(target_filename);
@@ -845,11 +849,6 @@ namespace FEBuilderGBA
             {
                 args += " " + OptionForm.GetCFLAGS();
             }
-            //add Lyn Option
-            if (compileType == CompileType.CONVERT_LYN)
-            {
-                args += " -mlong-calls -S ";
-            }
             string FEClib = OptionForm.GetFECLIB();
             if (File.Exists(FEClib))
             {
@@ -862,11 +861,6 @@ namespace FEBuilderGBA
             {//エラーなのでコマンド名もついでに付与
                 output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
                 return false;
-            }
-
-            if (compileType == CompileType.CONVERT_LYN)
-            {//LYNに変換する場合、ELFを作るのとは別の処理になる.
-                return ConvertLYN(output_temp_filename , out output);
             }
 
             Elf elf = new Elf(output_temp_filename , useHookMode: false);
@@ -903,8 +897,9 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            target_filename = output;
-            r = ConvertLYN_O_to_Event(target_filename, out output);
+            string obj_filename = output;
+            r = ConvertLYN_O_to_Event(obj_filename, out output);
+            File.Delete(obj_filename);
             if (r == false || !File.Exists(output))
             {
                 return false;
@@ -915,10 +910,6 @@ namespace FEBuilderGBA
 
         static bool ConvertLYN_S_to_O(string target_filename, out string output)
         {
-            string old_target_filename = target_filename;
-            target_filename = U.ChangeExtFilename(target_filename, ".s");
-            U.Move(old_target_filename, target_filename);
-
             string devkitpro_eabi = Program.Config.at("devkitpro_eabi", "");
             string tooldir = Path.GetDirectoryName(devkitpro_eabi);
             string target = Path.Combine(Path.GetDirectoryName(target_filename), Path.GetFileNameWithoutExtension(target_filename));
