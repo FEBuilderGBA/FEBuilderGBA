@@ -2,9 +2,9 @@ NAME=1マップでも連続して支援レベルが上がるようにするEX(In
 NAME.en=Change increases support level continuously even with one map_ex(Install)
 NAME.zh=Change increases support level continuously even with one map_ex(Install)
 
-INFO=通常、支援レベルは1つのマップで一人に付き1回しか上げられません。\r\nこのパッチは、それを変更して、一つのマップで連続して支援レベルが上げられるようにします。\r\nすべてのマップでなく、特定のマップにだけこれを適応します。\r\n
-INFO.en=Normally, the level of support can only be increased once per person on one map.\r\nThis patch modifies it to allow you to continuously increase your support level on one map.\r\nApply this only to specific maps, not all maps.\r\n
-INFO.zh=Normally, the level of support can only be increased once per person on one map.\r\nThis patch modifies it to allow you to continuously increase your support level on one map.\r\nApply this only to specific maps, not all maps.\r\n
+INFO=通常、支援レベルは1つのマップで一人に付き1回しか上げられません。\r\nこのパッチは、それを変更して、一つのマップで連続して支援レベルが上げられるようにします。\r\nすべてのマップでなく、特定のマップにだけこれを適応します。\r\n街や拠点のマップに利用してください。\r\n
+INFO.en=Normally, the level of support can only be increased once per person on one map.\r\nThis patch modifies it to allow you to continuously increase your support level on one map.\r\nApply this only to specific maps, not all maps.\r\nPlease use it for maps of towns and bases.\r\n
+INFO.zh=Normally, the level of support can only be increased once per person on one map.\r\nThis patch modifies it to allow you to continuously increase your support level on one map.\r\nApply this only to specific maps, not all maps.\r\nPlease use it for maps of towns and bases.\r\n
 
 AUTHOR=7743
 

@@ -1,0 +1,34 @@
+NAME=特定のマップで得られる支援ポイントを倍にする(Editor)
+INFO=このパッチは、街などの特定のマップで、支援ポイントを数倍入手できるようにします。\r\nつ通常のマップは、1ポイントだけど、拠点や街だったら2倍の支援ポイントを入手するなどのようなことができます。\r\n注意: 得られる支援ポイントは30を超えない方が良いと思います。\r\nもし、1支援ポイントを得られるなら、増やせたとしても30倍までに抑えておいた方が良いと思う。
+
+IF:0x0282A0=0x00 0x4B 0x18 0x47
+
+//データへのポインタ
+POINTER=$FGREP4END sakariba.dmp
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0x00 0x00
+
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=マップ
+B1:DECIMAL=倍数(1-30)
+
+B0:MAP.en=Map
+B1:DECIMAL.en=Multiple(1-30)
+
+B0:MAP.zh=Map
+B1:DECIMAL.zh=Multiple(1-30)
+NAME.en=Double the support points you get on a particular map (Editor).
+INFO.en=This patch allows you to get multiple times more support points on certain maps, such as cities.\r\nOne normal map is 1 point, but if it is a base or town, you can get double support points and so on.\r\nNote: I think you shouldn't get more than 30 support points.\r\nIf you can get 1 support point, I think it is better to keep it up to 30 times even if you can increase it.
+NAME.zh=将您在特定地图（编辑器）上获得的支持点加倍。
+INFO.zh=此修补程序使您可以在某些地图（例如城市）上获得更多倍的支持点。\r\n一个法线地图为1点，但是如果它是基地或城镇，则可以获得双重支持点，依此类推。\r\n注意：我认为您获得的支持点不应超过30个。\r\n如果您能获得1个支持点，我认为最好增加30次，即使您可以增加它。

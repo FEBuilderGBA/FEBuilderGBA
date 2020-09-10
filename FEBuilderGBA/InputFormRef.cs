@@ -1727,6 +1727,18 @@ namespace FEBuilderGBA
                     U.MakeTransparent(bitmap);
                     link_object.Image = bitmap;
                 };
+                if (arg1 == "WEAPON" || arg1 == "SKILLFE8NVer2")
+                {
+                }
+                else
+                {
+                    link_info.Cursor = Cursors.Hand;
+                    link_info.Click += (sender, e) =>
+                    {
+                        JumpTo(src_object, link_info, "ICON", new string[] { });
+                    };
+                }
+
                 return;
             }
             if (linktype == "OPCLASSDEMOFONT")

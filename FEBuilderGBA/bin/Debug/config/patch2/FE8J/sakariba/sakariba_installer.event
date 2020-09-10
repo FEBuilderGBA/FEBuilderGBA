@@ -1,0 +1,15 @@
+PUSH
+ORG 0x028234	//{J}
+//ORG 0x0282A0	//{U}
+jumpToHack(sakariba)
+POP
+
+ALIGN 4
+sakariba:
+#incbin "sakariba.dmp"
+POIN sakariba_table
+
+
+ALIGN 4
+sakariba_table:
+BYTE 0x00 0x00 //term
