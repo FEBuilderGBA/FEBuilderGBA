@@ -12676,6 +12676,12 @@ World Map Node ID (Start/End Point)
 :道データへのポインタ
 Pointer to Road Data
 
+:速度
+Speed
+
+:速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動します。
+Speed is the time to stop at some point along the way.\r\nThe maximum value is 4096.The minimum value is 0.\r\nThe smaller it is, the longer it will stop.\r\n\r\nNote: If the maximum value is exceeded, it will teleport.
+
 :秘密の店
 Secret Shop
 

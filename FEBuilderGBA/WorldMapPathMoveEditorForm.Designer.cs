@@ -44,13 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
-            this.B3 = new System.Windows.Forms.NumericUpDown();
-            this.J_3 = new System.Windows.Forms.Label();
-            this.B2 = new System.Windows.Forms.NumericUpDown();
-            this.J_2 = new System.Windows.Forms.Label();
-            this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.J_1 = new System.Windows.Forms.Label();
-            this.B0 = new System.Windows.Forms.NumericUpDown();
+            this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.W6 = new System.Windows.Forms.NumericUpDown();
             this.J_6 = new System.Windows.Forms.Label();
@@ -63,15 +57,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).BeginInit();
             this.panel5.SuspendLayout();
@@ -193,6 +185,7 @@
             // 
             // MapPictureBox
             // 
+            this.MapPictureBox.AutoScroll = true;
             this.MapPictureBox.Location = new System.Drawing.Point(2, -30);
             this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.MapPictureBox.Name = "MapPictureBox";
@@ -259,94 +252,18 @@
             this.label22.Text = "選択アドレス:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // B3
+            // D0
             // 
-            this.B3.Hexadecimal = true;
-            this.B3.Location = new System.Drawing.Point(155, 103);
-            this.B3.Margin = new System.Windows.Forms.Padding(2);
-            this.B3.Maximum = new decimal(new int[] {
+            this.D0.Location = new System.Drawing.Point(155, 9);
+            this.D0.Margin = new System.Windows.Forms.Padding(2);
+            this.D0.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B3.Name = "B3";
-            this.B3.Size = new System.Drawing.Size(101, 25);
-            this.B3.TabIndex = 36;
-            // 
-            // J_3
-            // 
-            this.J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_3.Location = new System.Drawing.Point(6, 99);
-            this.J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_3.Name = "J_3";
-            this.J_3.Size = new System.Drawing.Size(140, 32);
-            this.J_3.TabIndex = 35;
-            this.J_3.Text = "00";
-            this.J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B2
-            // 
-            this.B2.Hexadecimal = true;
-            this.B2.Location = new System.Drawing.Point(155, 72);
-            this.B2.Margin = new System.Windows.Forms.Padding(2);
-            this.B2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B2.Name = "B2";
-            this.B2.Size = new System.Drawing.Size(101, 25);
-            this.B2.TabIndex = 34;
-            // 
-            // J_2
-            // 
-            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(6, 68);
-            this.J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(140, 32);
-            this.J_2.TabIndex = 33;
-            this.J_2.Text = "00";
-            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B1
-            // 
-            this.B1.Hexadecimal = true;
-            this.B1.Location = new System.Drawing.Point(155, 40);
-            this.B1.Margin = new System.Windows.Forms.Padding(2);
-            this.B1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B1.Name = "B1";
-            this.B1.Size = new System.Drawing.Size(101, 25);
-            this.B1.TabIndex = 32;
-            // 
-            // J_1
-            // 
-            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_1.Location = new System.Drawing.Point(6, 37);
-            this.J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(140, 32);
-            this.J_1.TabIndex = 31;
-            this.J_1.Text = "??";
-            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B0
-            // 
-            this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(155, 9);
-            this.B0.Margin = new System.Windows.Forms.Padding(2);
-            this.B0.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B0.Name = "B0";
-            this.B0.Size = new System.Drawing.Size(101, 25);
-            this.B0.TabIndex = 30;
+            this.D0.Name = "D0";
+            this.D0.Size = new System.Drawing.Size(101, 25);
+            this.D0.TabIndex = 30;
             // 
             // J_0
             // 
@@ -356,13 +273,13 @@
             this.J_0.Name = "J_0";
             this.J_0.Size = new System.Drawing.Size(140, 32);
             this.J_0.TabIndex = 4;
-            this.J_0.Text = "??";
+            this.J_0.Text = "速度";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W6
             // 
             this.W6.ForeColor = System.Drawing.Color.Red;
-            this.W6.Location = new System.Drawing.Point(155, 166);
+            this.W6.Location = new System.Drawing.Point(155, 84);
             this.W6.Margin = new System.Windows.Forms.Padding(2);
             this.W6.Maximum = new decimal(new int[] {
             65535,
@@ -376,7 +293,7 @@
             // J_6
             // 
             this.J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_6.Location = new System.Drawing.Point(6, 161);
+            this.J_6.Location = new System.Drawing.Point(6, 79);
             this.J_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_6.Name = "J_6";
             this.J_6.Size = new System.Drawing.Size(140, 32);
@@ -387,7 +304,7 @@
             // W4
             // 
             this.W4.ForeColor = System.Drawing.Color.Red;
-            this.W4.Location = new System.Drawing.Point(155, 135);
+            this.W4.Location = new System.Drawing.Point(155, 53);
             this.W4.Margin = new System.Windows.Forms.Padding(2);
             this.W4.Maximum = new decimal(new int[] {
             65535,
@@ -401,7 +318,7 @@
             // L_4_MAPXY_6
             // 
             this.L_4_MAPXY_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_4_MAPXY_6.Location = new System.Drawing.Point(6, 130);
+            this.L_4_MAPXY_6.Location = new System.Drawing.Point(6, 48);
             this.L_4_MAPXY_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_4_MAPXY_6.Name = "L_4_MAPXY_6";
             this.L_4_MAPXY_6.Size = new System.Drawing.Size(140, 32);
@@ -411,18 +328,13 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.J_0);
             this.panel5.Controls.Add(this.W6);
-            this.panel5.Controls.Add(this.B3);
             this.panel5.Controls.Add(this.J_6);
-            this.panel5.Controls.Add(this.B0);
+            this.panel5.Controls.Add(this.D0);
             this.panel5.Controls.Add(this.W4);
-            this.panel5.Controls.Add(this.J_3);
             this.panel5.Controls.Add(this.L_4_MAPXY_6);
-            this.panel5.Controls.Add(this.J_1);
-            this.panel5.Controls.Add(this.B2);
-            this.panel5.Controls.Add(this.B1);
-            this.panel5.Controls.Add(this.J_2);
             this.panel5.Location = new System.Drawing.Point(137, 268);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(276, 392);
@@ -496,6 +408,17 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(4, 154);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(270, 238);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動" +
+    "します。";
+            // 
             // WorldMapPathMoveEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -519,10 +442,7 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -546,13 +466,7 @@
         private ListBoxEx AddressList;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label J_0;
-        private System.Windows.Forms.NumericUpDown B3;
-        private System.Windows.Forms.Label J_3;
-        private System.Windows.Forms.NumericUpDown B2;
-        private System.Windows.Forms.Label J_2;
-        private System.Windows.Forms.NumericUpDown B1;
-        private System.Windows.Forms.Label J_1;
-        private System.Windows.Forms.NumericUpDown B0;
+        private System.Windows.Forms.NumericUpDown D0;
         private System.Windows.Forms.NumericUpDown W6;
         private System.Windows.Forms.Label J_6;
         private System.Windows.Forms.NumericUpDown W4;
@@ -570,5 +484,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ReadCount;
         private System.Windows.Forms.NumericUpDown ReadStartAddress;
+        private System.Windows.Forms.Label label6;
     }
 }

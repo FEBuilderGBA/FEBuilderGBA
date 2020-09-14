@@ -5765,7 +5765,6 @@
             // 
             // CHEAT_TURN_VALUE
             // 
-            this.CHEAT_TURN_VALUE.Hexadecimal = true;
             this.CHEAT_TURN_VALUE.Location = new System.Drawing.Point(1041, 362);
             this.CHEAT_TURN_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CHEAT_TURN_VALUE.Maximum = new decimal(new int[] {
