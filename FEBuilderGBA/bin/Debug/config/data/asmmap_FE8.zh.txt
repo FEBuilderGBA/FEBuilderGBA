@@ -12948,3 +12948,5 @@ r3=X tile position of menu of the right	{U}
 080AEF3C	SaveMenu_Check_ValidDifficultySelected	{J}
 080AEDF0	SaveMenu_Setup_Graphics_DifficultySelect	{J}
 080AECD0	SaveMenu_Setup_IORegisters_DifficultySelect	{J}
+080025C0	RestoreMapBGM	{J}
+08002670	RestoreMapBGM	{U}

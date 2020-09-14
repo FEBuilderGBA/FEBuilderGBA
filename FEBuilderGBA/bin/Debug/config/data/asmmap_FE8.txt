@@ -10496,8 +10496,8 @@
 03001850	gStr_3001850	{U}
 03001C38	gSummonedUnitDefinitionBuffer	{U}
 03004BB0	gCurrentMovCostTable	{U}
-03006440	@MusicPlayer	gMusicPlayerInfo1	{U}
-03006650	@MusicPlayer	gMusicPlayerInfo2	{U}
+03006440	@MusicPlayer	gMusicPlayerInfo0	{U}
+03006650	@MusicPlayer	gMusicPlayerInfo1	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -12987,3 +12987,5 @@
 080AEF3C	SaveMenu_Check_ValidDifficultySelected	{J}
 080AEDF0	SaveMenu_Setup_Graphics_DifficultySelect	{J}
 080AECD0	SaveMenu_Setup_IORegisters_DifficultySelect	{J}
+080025C0	RestoreMapBGM	{J}
+08002670	RestoreMapBGM	{U}

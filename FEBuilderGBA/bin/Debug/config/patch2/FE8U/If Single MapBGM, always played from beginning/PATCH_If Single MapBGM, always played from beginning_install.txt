@@ -1,0 +1,16 @@
+NAME=SingleBGMの場合、戦闘後のBGMは常に最初から再生する
+INFO=wavを利用したSingleBGMの場合、戦闘BGMからマップBGMに復帰した時に、無音空間に復帰することがあります。\r\nこのパッチは、SingleBGMを再生している場合は、常に最初から再生するようにします。
+
+TYPE=BIN
+PATCHED_IF:0x02698=0x00 0x4B 0x9F 0x46
+TAG=#ENGINE
+
+BIN:$FREEAREA:1=If Single MapBGM, always played from beginning.dmp
+JUMP:0x02698:$r3=If Single MapBGM, always played from beginning.dmp
+
+AUTHOR=7743
+NAME.en=If Single MapBGM, always played from beginning.
+INFO.en=In the case of SingleBGM using wav, when you revert from battle background music to map background music, you may revert to silent space.\r\nThis patch ensures that if you are playing SingleBGM, it will always play from the beginning.
+
+NAME.zh=If Single MapBGM, always played from beginning.
+INFO.zh=In the case of SingleBGM using wav, when you revert from battle background music to map background music, you may revert to silent space.\r\nThis patch ensures that if you are playing SingleBGM, it will always play from the beginning.

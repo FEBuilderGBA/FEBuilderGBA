@@ -1028,7 +1028,7 @@ namespace FEBuilderGBA
 
         private void Color_List_SelectedColor_reset_button_Click(object sender, EventArgs e)
         {
-            Color_List_SelectedColor_button.BackColor = Color.FromName("Highlight");
+            Color_List_SelectedColor_button.BackColor = Color.FromArgb(51, 164, 255);
         }
 
         private void Color_List_HoverColor_reset_button_Click(object sender, EventArgs e)
@@ -1061,7 +1061,7 @@ namespace FEBuilderGBA
                 Color_NotifyWrite_ForeColor_button.BackColor = U.ColorFromName("Black");
                 Color_Error_BackColor_button.BackColor = U.ColorFromName("Control");
                 Color_Error_ForeColor_button.BackColor = U.ColorFromName("Red");
-                Color_List_SelectedColor_button.BackColor = U.ColorFromName("Highlight");
+                Color_List_SelectedColor_button.BackColor = Color.FromArgb(51, 164, 255);
                 Color_List_HoverColor_button.BackColor = U.ColorFromName("WhiteSmoke");
                 Color_Keyword_BackColor_button.BackColor = U.ColorFromName("Window");
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("Blue");
