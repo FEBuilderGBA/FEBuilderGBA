@@ -52,6 +52,11 @@ namespace FEBuilderGBA
                 this.MESSAGE.Text = R._("チェックをつけたキーコードを返します。");
                 dataname = "IGNORE_KEYS_checkbox_";
             }
+            else if (argtype == EventScript.ArgType.ATTACK_TYPE)
+            {
+                this.MESSAGE.Text = R._("チェックをつけた攻撃を行います。");
+                dataname = "EVENTBATTLE_checkbox_";
+            }
             else
             {
                 return;

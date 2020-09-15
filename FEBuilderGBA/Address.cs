@@ -119,6 +119,14 @@ namespace FEBuilderGBA
                 length = 0;
             }
 
+            if (! U.isPadding4(addr))
+            {
+                Log.Notify("アドレスが端数値なので補正します。", U.To0xHexString(addr));
+                uint diff = 4 - (addr % 4);
+                addr += diff;
+                length -= diff;
+            }
+
             this.Addr = addr;
             this.Length = length;
             Debug.Assert(this.Addr != U.NOT_FOUND);

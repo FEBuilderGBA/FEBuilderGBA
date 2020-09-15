@@ -224,6 +224,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.ATTACK_TYPE)
+            {
+                isLabelJump = true;
+            }
 
             if (isLabelJump)
             {

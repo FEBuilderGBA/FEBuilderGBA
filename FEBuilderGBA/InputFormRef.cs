@@ -7348,28 +7348,12 @@ namespace FEBuilderGBA
         }
         public static string GetATTACK_TYPE(uint num)
         {
-            switch (num)
+            if (num == 0)
             {
-                case 0x0000:
-                    return R._("当てる");
-                case 0x0001:
-                    return R._("必殺");
-                case 0x0002:
-                    return R._("ミス");
-                case 0x0008:
-                    return R._("必殺");
-                case 0x0080:
-                    return R._("毒");
-                case 0x0040:
-                    return R._("デビルアクス");
-                case 0x0100:
-                    return R._("HP Restoring?");
-                case 0x0200:
-                    return R._("HP Halving?");
-                case 0x0800:
-                    return R._("瞬殺");
+                return R._("当てる");
             }
-            return "";
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("EVENTBATTLE_checkbox_");
+            return GetInfoByBitFlag(num, dic);
         }
 
         public static string GetMENUCOMMAND(uint num)

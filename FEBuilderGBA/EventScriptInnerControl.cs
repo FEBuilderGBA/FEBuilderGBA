@@ -1501,6 +1501,7 @@ namespace FEBuilderGBA
                   || arg.Type == EventScript.ArgType.DISABLEWEAPONS
                   || arg.Type == EventScript.ArgType.IGNORE_KEYS
                   || arg.Type == EventScript.ArgType.KEYS
+                  || arg.Type == EventScript.ArgType.ATTACK_TYPE
                 )
             {
                 UshortBitFlagForm f = (UshortBitFlagForm)InputFormRef.JumpForm<UshortBitFlagForm>();

@@ -3518,7 +3518,14 @@ namespace FEBuilderGBA
             }
             public void Dispose()
             {
-                CurrentForm.ActiveControl = CurrentControl;
+                try
+                {
+                    CurrentForm.ActiveControl = CurrentControl;
+                }
+                catch(Exception e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                }
             }
         }
 
