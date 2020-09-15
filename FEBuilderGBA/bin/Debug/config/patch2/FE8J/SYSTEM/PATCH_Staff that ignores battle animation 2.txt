@@ -1,0 +1,16 @@
+NAME=戦闘アニメを無視する杖2
+NAME.en=Staff that ignores battle animation 2
+NAME.zh=Staff that ignores battle animation 2
+
+INFO=ディフォルト値 0x58 (アンロック)\r\nバニラでは、ワープ(0x54)、レスキュー(0x55)、トーチ(0x56)、アンロック(0x58)の4つの杖は戦闘アニメーションの魔法エフェクトを強制的にnullに設定します。
+INFO.en=Default value 0x58 (Unlock)\r\nIn vanilla, the four staffs Warp (0x54), Rescue (0x55), Torch (0x56), and Unlock (0x58) force the magic effect of the battle animation to null.
+INFO.zh=Default value 0x58 (Unlock)\r\nIn vanilla, the four staffs Warp (0x54), Rescue (0x55), Torch (0x56), and Unlock (0x58) force the magic effect of the battle animation to null.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x059020
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743

@@ -12996,3 +12996,5 @@ r3=X tile position of menu of right	{U}
 080AECD0	SaveMenu_Setup_IORegisters_DifficultySelect	{J}
 080025C0	RestoreMapBGM	{J}
 08002670	RestoreMapBGM	{U}
+08058FE8	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock	{J}
+080581A0	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock	{U}
