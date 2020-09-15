@@ -140,13 +140,32 @@ namespace FEBuilderGBA
                 if (p.Length >= write_data.Length)
                 {
                     uint use_addr = p.Addr;
+                    uint left_size = p.Length;
+                    if (!U.isPadding4(use_addr))
+                    {//padding4ではないと端数が出てしまうので補正する
+                        if (left_size < 4)
+                        {//空きがなさすぎるため利用しない
+                            Log.Notify("アドレスが端数値なので補正しようとしましたが、サイズが4未満なので利用しません", U.To0xHexString(p.Addr));
+                            continue;
+                        }
+                        uint diff = 4 - (use_addr % 4);
+                        use_addr += diff;
+                        left_size -= diff;
+                        Debug.Assert(U.isPadding4(use_addr));
+                        if (left_size < write_data.Length)
+                        {//align 4補正したらサイズが足りん!
+                            Log.Notify("アドレスが端数値なので補正しようとしたらサイズ不足になりました", U.To0xHexString(p.Addr));
+                            continue;
+                        }
+                        Log.Notify("アドレスが端数値なので補正します。", U.To0xHexString(p.Addr));
+                    }
 
                     //ちょうど良い領域があったので利用しよう
                     Program.ROM.write_range(use_addr, write_data, undodata);
-                    uint addr = U.Padding4(p.Addr + (uint)write_data.Length);
-                    uint length = U.Sub(p.Length, (addr - use_addr));
+                    uint next_addr = U.Padding4(use_addr + (uint)write_data.Length);
+                    left_size = U.Sub(left_size, (next_addr - use_addr));
 
-                    p.ResizeAddress(addr, length);
+                    p.ResizeAddress(next_addr, left_size);
                     if (p.Length < 4)
                     {//もう空きがない.
                         this.Recycle.RemoveAt(i);
