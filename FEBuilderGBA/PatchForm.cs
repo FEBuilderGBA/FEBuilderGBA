@@ -6618,8 +6618,9 @@ namespace FEBuilderGBA
                     return;
                 }
             }
+            uint[] lengthArray;
             string[] typeArray;
-            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray);
+            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray, out lengthArray);
 
             string patchname = patch.Name + "@STRUCT";
 
@@ -6630,23 +6631,42 @@ namespace FEBuilderGBA
                 for (int n = 0; n < pointerIndexes.Length; n++)
                 {
                     uint p = addr + pointerIndexes[n];
+                    uint length = lengthArray[n];
                     string type = typeArray[n];
-                    if (type == "EVENT")
-                    {//イベント呼び出し
-                        string name = patchname + " DATA " + n;
-                        EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
+                    if (length == 1)
+                    {//FlagやTextを1バイトで表現しているクソパッチ用の回避ルーチン
+                        if (type == "TEXT")
+                        {
+                            uint textid = Program.ROM.u8(p);
+                            string name = patchname + " DATA " + n;
+                            UseValsID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                        }
+                        else if (type == "SONG")
+                        {
+                            uint songid = Program.ROM.u8(p);
+                            string name = patchname + " SONG " + n;
+                            UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
+                        }
                     }
-                    else if (type == "TEXT")
+                    else
                     {
-                        uint textid = Program.ROM.u16(p);
-                        string name = patchname + " DATA " + n;
-                        UseValsID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
-                    }
-                    else if (type == "SONG")
-                    {
-                        uint songid = Program.ROM.u16(p);
-                        string name = patchname + " SONG " + n;
-                        UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
+                        if (type == "EVENT")
+                        {//イベント呼び出し
+                            string name = patchname + " DATA " + n;
+                            EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
+                        }
+                        else if (type == "TEXT")
+                        {
+                            uint textid = Program.ROM.u16(p);
+                            string name = patchname + " DATA " + n;
+                            UseValsID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                        }
+                        else if (type == "SONG")
+                        {
+                            uint songid = Program.ROM.u16(p);
+                            string name = patchname + " SONG " + n;
+                            UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
+                        }
                     }
                 }
             }
@@ -6764,10 +6784,12 @@ namespace FEBuilderGBA
 
         static uint[] MakeTextIndexes(PatchSt patch
             , out string[] out_typeArray
+            , out uint[] out_lengthArray
             )
         {
             List<string> typeArray = new List<string>();
             List<uint> pointerIndexes = new List<uint>();
+            List<uint> lengthArray = new List<uint>();
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
@@ -6787,9 +6809,11 @@ namespace FEBuilderGBA
                 int datanum = (int)U.atoi(key.Substring(1));
                 pointerIndexes.Add((uint)datanum);
                 typeArray.Add(type);
+                lengthArray.Add(InputFormRef.GetTypeLength(key[0]));
             }
 
             out_typeArray = typeArray.ToArray();
+            out_lengthArray = lengthArray.ToArray();
             return pointerIndexes.ToArray();
         }
 
@@ -7903,8 +7927,9 @@ namespace FEBuilderGBA
                     return;
                 }
             }
+            uint[] lengthArray;
             string[] typeArray;
-            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray);
+            uint[] pointerIndexes = MakeTextIndexes(patch, out typeArray, out lengthArray);
 
             string patchname = patch.Name + "@STRUCT";
 
@@ -7917,21 +7942,38 @@ namespace FEBuilderGBA
                     uint p = addr + pointerIndexes[n];
                     string name = patchname + " DATA " + n;
 
+                    uint length = lengthArray[n];
                     string type = typeArray[n];
-                    if (type == "FLAG")
-                    {
-                        uint flag = Program.ROM.u16(p);
-                        FELint.CheckFlag(flag, errors, FELint.Type.PATCH, p, loopI);
+                    if (length == 1)
+                    {//FlagやTextを1バイトで表現しているクソパッチ用の回避ルーチン
+                        if (type == "FLAG")
+                        {
+                            uint flag = Program.ROM.u8(p);
+                            FELint.CheckFlag(flag, errors, FELint.Type.PATCH, p, loopI);
+                        }
+                        else if (type == "TEXT")
+                        {
+                            uint textid = Program.ROM.u8(p);
+                            FELint.CheckText(textid, "", errors, FELint.Type.PATCH, p, loopI);
+                        }
                     }
-                    else if (type == "EVENT")
+                    else
                     {
-                        uint event_addr = Program.ROM.u32(p);
-                        FELint.CheckEventPointer(event_addr, errors, FELint.Type.PATCH, p, false, tracelist, loopI);
-                    }
-                    else if (type == "TEXT")
-                    {
-                        uint textid = Program.ROM.u16(p);
-                        FELint.CheckText(textid, "", errors, FELint.Type.PATCH, p, loopI);
+                        if (type == "FLAG")
+                        {
+                            uint flag = Program.ROM.u16(p);
+                            FELint.CheckFlag(flag, errors, FELint.Type.PATCH, p, loopI);
+                        }
+                        else if (type == "TEXT")
+                        {
+                            uint textid = Program.ROM.u16(p);
+                            FELint.CheckText(textid, "", errors, FELint.Type.PATCH, p, loopI);
+                        }
+                        if (type == "EVENT")
+                        {
+                            uint event_addr = Program.ROM.u32(p);
+                            FELint.CheckEventPointer(event_addr, errors, FELint.Type.PATCH, p, false, tracelist, loopI);
+                        }
                     }
                 }
             }

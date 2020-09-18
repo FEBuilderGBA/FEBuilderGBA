@@ -4499,7 +4499,21 @@ namespace FEBuilderGBA
                 || c == 'h'
                 ;
         }
-        public static uint GetStructID(string prefix,string name)
+        public static uint GetTypeLength(char c)
+        {
+            switch(c)
+            {
+                case 'B': return 1;
+                case 'b': return 1;
+                case 'W': return 2;
+                case 'D': return 4;
+                case 'P': return 4;
+                case 'l': return 1;
+                case 'h': return 1;
+            }
+            return 0;
+        }
+        public static uint GetStructID(string prefix, string name)
         {
             string nname = SkipPrefixName(name,prefix);
             if (nname.Length <= 0)

@@ -4528,18 +4528,6 @@ Tremor
 :当てる
 Hit
 
-:ミス
-Miss
-
-:毒
-Poison
-
-:デビルアクス
-Devil Effect
-
-:瞬殺
-Silencer
-
 :左上
 Upper Left
 
@@ -9631,6 +9619,15 @@ Overlap
 :重複だが結合できる 
 Can duplicate or merge
 
+:アドレスが端数値なので補正しようとしましたが、サイズが4未満なので利用しません
+I tried to correct it because the address is a fractional number, but I don't use it because the size is less than 4.
+
+:アドレスが端数値なので補正しようとしたらサイズ不足になりました
+Since the address is a fractional number, the size was insufficient when I tried to correct it.
+
+:アドレスが端数値なので補正します。
+Since the address is a fractional value, correct it.
+
 :切り取り(&X)
 Cut(&X)
 
@@ -12439,6 +12436,9 @@ Memory slot 2 UnitID
 :ユニットデータが極端に少ないです。破損している可能性があります。
 Unit data is extremely small. It may be damaged.
 
+:ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。
+The support pointer for unit 0x01 is invalid.This value is the starting point for support.Do not change from the vanilla value.
+
 :ユニット別パレットへジャンプ
 Jump To Unit Palette
 
@@ -12510,6 +12510,9 @@ Disables the checked key.
 
 :チェックをつけたキーコードを返します。
 Returns the checked key code.
+
+:チェックをつけた攻撃を行います。
+Perform a checked attack.
 
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks.\r\n It lets the matching character use the weapon at Level E, no matter what its normal rank is.

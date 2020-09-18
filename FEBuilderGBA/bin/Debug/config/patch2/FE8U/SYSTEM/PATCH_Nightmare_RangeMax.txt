@@ -2,9 +2,9 @@ NAME=漆黒の悪夢の最大射程
 NAME.en=The maximum range of Item Nightmare
 NAME.zh=The maximum range of Item Nightmare
 
-INFO=魔王が使う"漆黒の悪夢"の最大射程を設定します。ディフォルトは3です。\r\n(この射程は、自分から攻撃した場合にのみ利用されます。反撃時は常に1です。)\r\nこの指定範囲のユニットを対象と、杖の命中率で乱数判定を行い、相手を眠らせます。
-INFO.en=Sets the maximum range of the "Nightmare" used by the Demon King. The default is 3.\r\n\r\n(This range is only used if you attack yourself. It is always 1 when counterattacking.)\r\nTargeting units in this specified range, random number judgment is performed based on the accuracy of the cane, and the opponent is put to sleep.
-INFO.zh=Sets the maximum range of the "Nightmare" used by the Demon King. The default is 3.\r\n\r\n(This range is only used if you attack yourself. It is always 1 when counterattacking.)\r\nTargeting units in this specified range, random number judgment is performed based on the accuracy of the cane, and the opponent is put to sleep.
+INFO=魔王が使う"漆黒の悪夢"の最大射程を設定します。ディフォルトは3です。\r\n(この射程は、自分から攻撃した場合にのみ利用されます。)\r\nこの指定範囲のユニットを対象と、杖の命中率で乱数判定を行い、相手を眠らせます。
+INFO.en=Sets the maximum range of the "Nightmare" used by the Demon King. The default is 3.\r\n\r\n(This range is only used if you attack yourself.)\r\nTargeting units in this specified range, random number judgment is performed based on the accuracy of the cane, and the opponent is put to sleep.
+INFO.zh=Sets the maximum range of the "Nightmare" used by the Demon King. The default is 3.\r\n\r\n(This range is only used if you attack yourself.)\r\nTargeting units in this specified range, random number judgment is performed based on the accuracy of the cane, and the opponent is put to sleep.
 
 TYPE=ADDR
 ADDRESS=0x025F68
