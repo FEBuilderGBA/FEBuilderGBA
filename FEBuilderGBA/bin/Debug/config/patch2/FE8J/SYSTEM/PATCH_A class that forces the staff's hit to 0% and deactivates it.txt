@@ -12,7 +12,7 @@ AUTHOR=7743
 
 INFO=これらのクラスは、スリープ、バサーク、サイレスの命中率の命中率を0%にします。\r\nディフォルトでは、0x66 魔王が設定されています。
 INFO.en=These classes have a hit rate of 0% for Sleep, Berserk, and Silence. By default, 0x66 Deamon King.
-
+DEFAULT=0x66
 
 
 NAME.zh=强制甘蔗击中0％并停用它的类。

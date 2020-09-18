@@ -1,0 +1,12 @@
+NAME=杖の命中率に基礎値を利用せずに弱体化するクラス
+NAME.en=Class that weakens the staff's hit rate without using the base value
+NAME.zh=Class that weakens the staff's hit rate without using the base value
+
+INFO=杖の命中率を計算するときに基礎値を利用しないクラスを設定します。基礎値を使わないので、より弱体化され命中率が下がります。\r\nディフォルトは0x66(魔王)です。
+INFO.en=Set class that does not use the base value when calculating the staff hit rate.\r\nSince it does not use the base value, it is more weakened and the hit rate is reduced.\r\nThe default is 0x66 (Demon King).
+INFO.zh=Set class that does not use the base value when calculating the staff hit rate.\r\nSince it does not use the base value, it is more weakened and the hit rate is reduced.\r\nThe default is 0x66 (Demon King).
+
+TYPE=ADDR
+ADDRESS=0x02CD22
+DEFAULT=0x66
+ADDRESS_TYPE=CLASS

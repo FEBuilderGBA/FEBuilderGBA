@@ -1957,6 +1957,15 @@ namespace FEBuilderGBA
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "ITEMICONSRC", new string[] { "WEAPON" });
                 }
+                else if (address_type == "BADSTATUS")
+                {
+                    link.Name = "L_" + 0 + "_" + address_type;
+                    PatchPage.Controls.Add(link);
+                    x += 200;
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
+                }
                 else
                 {
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);

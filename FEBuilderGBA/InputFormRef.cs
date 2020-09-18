@@ -2799,6 +2799,15 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "BADSTATUS")
+            {//バッドステータス
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = GetBADSTATUS((uint)src_object.Value);
+                };
+                return;
+            }
             
             
 #if DEBUG            
@@ -7280,6 +7289,8 @@ namespace FEBuilderGBA
                     return R._("必殺") + turnString;
                 case 0x08:
                     return R._("回避") + turnString;
+                case 0x0A:
+                    return R._("卵") + turnString;
                 case 0x0B:
                     return R._("ストーン") + turnString;
             }

@@ -12,7 +12,7 @@ AUTHOR=7743
 
 INFO=これらのユニットは、スリープ、バサーク、サイレスの命中率の命中率を0%にします。\r\nディフォルトでは、0x40 リオンが設定されています。
 INFO.en=These unit have a hit rate of 0% for Sleep, Berserk, and Silence. By default, 0x40 Lyon.
-
+DEFAULT=0x40
 
 
 NAME.zh=一个单位，迫使手杖达到0％并停用它。

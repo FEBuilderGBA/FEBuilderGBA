@@ -1,0 +1,12 @@
+NAME=漆黒の悪夢の効果
+NAME.en=Effect of Item Nightmare
+NAME.zh=Effect of Item Nightmare
+
+INFO=魔王が使う"漆黒の悪夢"の効果を指定します。ディフォルトは2(睡眠)です。
+INFO.en=Specifies the effect of the "Nightmare" used by the Demon King. The default is 2 (sleep).
+INFO.zh=Specifies the effect of the "Nightmare" used by the Demon King. The default is 2 (sleep).
+
+TYPE=ADDR
+ADDRESS=0x02F18A 0x3223C
+DEFAULT=2
+ADDRESS_TYPE=BADSTATUS

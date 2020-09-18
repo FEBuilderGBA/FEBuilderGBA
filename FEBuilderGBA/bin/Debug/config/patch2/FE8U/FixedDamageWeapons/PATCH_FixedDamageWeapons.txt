@@ -26,3 +26,5 @@ AUTHOR=sme https://feuniverse.us/t/smes-asm-and-miscellany/4445/53
 INFO=ユニットの攻撃力を無視した武器を作ります。誰が利用しても、武器の攻撃力だけが利用されます。
 INFO.en=Create a weapon that ignores the attack power of the unit.No matter who uses it, only the attack power of the weapon is used.
 INFO.zh=制造一种忽略单位攻击力的武器。无论是谁使用它，都只会使用武器的攻击力。
+
+HINT=FixedDamageWeaponList
