@@ -6646,6 +6646,7 @@ r3=X tile position of menu of the right	{U}
 080057C0	决定使用哪个脸部图像OAM	{U}
 
 @BGMSTRUCT@00	byte	音乐相关标志1
+@BGMSTRUCT@02	short	Stand-by BGM
 @BGMSTRUCT@04	short	播放BGM
 @BGMSTRUCT@06	byte	音乐相关标志2
 @BGMSTRUCT@07	byte	音乐相关标志3

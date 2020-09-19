@@ -3673,6 +3673,7 @@
 08004960	_6CSleepLoop	{J}
 08004A84	_6CSleepLoop	{U}
 @BGMSTRUCT@00	byte	Music related flag 1
+@BGMSTRUCT@02	short	Stand-by BGM
 @BGMSTRUCT@04	short	Playing BGM
 @BGMSTRUCT@06	byte	Music related flag 2
 @BGMSTRUCT@07	byte	Music related flag 3

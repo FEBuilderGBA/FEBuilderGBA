@@ -6685,6 +6685,7 @@ r3=X tile position of menu of right	{U}
 080056C8	Decide which face image OAM to use	{J}
 080057C0	Decide which face image OAM to use	{U}
 @BGMSTRUCT@00	byte	Music related flag 1
+@BGMSTRUCT@02	short	Stand-by BGM
 @BGMSTRUCT@04	short	Playing BGM
 @BGMSTRUCT@06	byte	Music related flag 2
 @BGMSTRUCT@07	byte	Music related flag 3

@@ -6650,6 +6650,7 @@
 
 
 @BGMSTRUCT@00	byte	音楽関係のフラグ1
+@BGMSTRUCT@02	short	待機しているBGM
 @BGMSTRUCT@04	short	再生しているBGM
 @BGMSTRUCT@06	byte	音楽関係のフラグ2
 @BGMSTRUCT@07	byte	音楽関係のフラグ3

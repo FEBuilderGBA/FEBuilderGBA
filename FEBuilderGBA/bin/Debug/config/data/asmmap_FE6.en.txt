@@ -1023,6 +1023,7 @@
 08002d6c	OAM2BufferSync void
 08003908	Initialize6CEngine Zeroes all 6C headers in Pool. Called on game startup.
 @BGMSTRUCT@00	byte	Music related flag 1
+@BGMSTRUCT@02	short	Stand-by BGM
 @BGMSTRUCT@04	short	Playing BGM
 @BGMSTRUCT@06	byte	Music related flag 2
 @BGMSTRUCT@07	byte	Music related flag 3
