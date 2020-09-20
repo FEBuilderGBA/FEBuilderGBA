@@ -1,0 +1,26 @@
+NAME=セーブスロットのプレイ時間100時間越えの表示バグの修正
+NAME.en=Fixed display glitch where save slots when play time of over 100 hours
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x0AA8B4
+
+OFF:0xAA8B4=0x00 0x04 0x00 0x0C 0x70 0x43 0x24 0x1A 0x2C 0x80
+FIX:0xAA8B4=0x70 0x43 0x24 0x1a 0x2c 0x80 0x20 0x1c 0x03 0xe0
+
+//-->to->
+//mul r0 ,r6
+//sub r4 ,r4, r0
+//strh r4, [r5, #0x0]
+//mov  r0, r4
+//b    0x080AA8C6
+
+AUTHOR=7743
+INFO=セーブ画面のプレイタイムで、100時間を超え110時間未満の場合、10の位が表示されないバグを修正します。
+INFO.en=Fixed a bug that the tens place is not displayed when the play time of the save screen is more than 100 hours and less than 110 hours.
+NAME.zh=修复了保存槽播放时间超过100小时的显示错误。
+INFO.zh=修复了保存屏幕的播放时间大于100小时且小于110小时时不显示十位的错误。

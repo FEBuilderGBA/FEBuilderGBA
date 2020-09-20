@@ -12992,3 +12992,5 @@
 08002670	RestoreMapBGM	{U}
 08058FE8	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock	{J}
 080581A0	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock	{U}
+080AF2CC	SaveSlot_Display_PlayTime	{J}
+080AA7EC	SaveSlot_Display_PlayTime	{U}
