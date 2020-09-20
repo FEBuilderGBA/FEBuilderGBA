@@ -43,7 +43,9 @@
 @001B	是否继续在商店进行交易[ShopContinue]	{CHOOSE}
 @001C	SendToBack[SendToBack]	{CHOOSE}
 @001D	快速显示字符串2 [FastPrint2]	{SPEED}
-@001F	填写字符串边距(仅限英文版)[.]	{DISPLAY}
+@001F	填写字符串边距(仅限英文版)[.]	{DISPLAY}	{U}
+@0093	显示“(仅限英文版)[OpenQuote]	{DISPLAY}	{U}
+@0094	显示”(仅限英文版)[CloseQuote]	{DISPLAY}	{U}
 @0040	显示@ [@]	{DISPLAY}
 @0010	加载下一张肖像[LoadFace]	{MOVE_LOAD}
 @0080@000A	移到最左边[MoveFarLeft]	{MOVE_LOAD}

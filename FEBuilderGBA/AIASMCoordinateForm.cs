@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.makeLinkEventHandler("", controls, this.B0, this.J_0, 0, "MAPXY", new string[] { "1" });
+            U.AddCancelButton(this);
         }
 
         public uint AllocIfNeed(NumericUpDown src)

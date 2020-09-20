@@ -17,6 +17,7 @@ namespace FEBuilderGBA
 
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.MakeLinkEvent("", controls);
+            U.AddCancelButton(this);
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)

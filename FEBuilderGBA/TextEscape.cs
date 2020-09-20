@@ -94,9 +94,11 @@ namespace FEBuilderGBA
 		        ,"@001B","[ShopContinue]"    ///No Translate
                 ,"@001C","[SendToBack]"    ///No Translate
                 ,"@001D","[FastPrint2]"    ///No Translate
-                ,"@001F","[.]"    ///No Translate
+                ,"@001F","[.]"    ///No Translate 英語版のみ
                 ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
                 ,"@0040","[@]"    ///No Translate  @を出す
+                ,"@0093","[OpenQuote]"    ///No Translate 英語版のみ
+                ,"@0094","[CloseQuote]"    ///No Translate 英語版のみ
         };
         public bool Find(string parts)
         {

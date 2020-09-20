@@ -43,7 +43,9 @@
 @001B	Shop,Continue trading[ShopContinue]	{CHOOSE}
 @001C	[SendToBack]	{CHOOSE}
 @001D	Display a character string quickly 2 [FastPrint2]	{SPEED}
-@001F	Fill in the string margin[.]	{DISPLAY}
+@001F	Fill in the string margin[.]	{DISPLAY}	{U}
+@0093	Display of Opening Quote “[OpenQuote]	{DISPLAY}	{U}
+@0094	Display of Closing Quote ”[CloseQuote]	{DISPLAY}	{U}
 @0040	Display of @[@]	{DISPLAY}
 @0010	Loading the next Portrait [LoadFace]	{MOVE_LOAD}
 @0080@000A	Move to the far left [MoveFarLeft]	{MOVE_LOAD}

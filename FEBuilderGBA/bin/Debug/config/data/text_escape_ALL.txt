@@ -43,7 +43,9 @@
 @001B	店での売買の継続の是非[ShopContinue]	{CHOOSE}
 @001C	SendToBack[SendToBack]	{CHOOSE}
 @001D	文字列を早く表示する2[FastPrint2]	{SPEED}
-@001F	文字列余白を埋める(英語版のみ)[.]	{DISPLAY}
+@001F	文字列余白を埋める(英語版のみ)[.]	{DISPLAY}	{U}
+@0093	開始引用符“(英語版のみ)[OpenQuote]	{DISPLAY}	{U}
+@0094	終了引用符”(英語版のみ)[CloseQuote]	{DISPLAY}	{U}
 @0040	@の表示[@]	{DISPLAY}
 @0010	次の顔画像のロード[LoadFace]	{MOVE_LOAD}
 @0080@000A	左奥へ移動[MoveFarLeft]	{MOVE_LOAD}

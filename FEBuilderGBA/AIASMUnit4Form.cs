@@ -23,6 +23,7 @@ namespace FEBuilderGBA
             InputFormRef.makeLinkEventHandler("", controls, this.B2, this.L_2_UNITICON, 2, "UNITICON", new string[] { "" });
             InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNIT, 3, "UNIT", new string[] { "" });
             InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNITICON, 3, "UNITICON", new string[] { "" });
+            U.AddCancelButton(this);
         }
 
         public uint AllocIfNeed(NumericUpDown src)
