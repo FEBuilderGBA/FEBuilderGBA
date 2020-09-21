@@ -4072,6 +4072,9 @@ File is broken. OAM end point is missing.
 :フレームを定義するファイルがありません\r\n{0}
 There is no File defining the Frame\r\n{0}
 
+:画像シートが一枚もありません\r\n{0}
+There is no image sheet.\r\n{0}.
+
 :パレットがほかと異なります\r\n\r\n画像ファイル名:{0}
 Palette is different from others\r\n\r\nImageFilname:{0}
 

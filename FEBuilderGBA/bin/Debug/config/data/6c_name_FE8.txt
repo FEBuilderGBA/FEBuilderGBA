@@ -776,3 +776,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 080C586C=OPTitleLogoUI	{U}	//08AA67FC
 080A0720=WorldmapItemSell	{U}	//08A19528
 0807DBD8=MapAnimForTourch	{U}	//089A3C24
+080B1148=SaveMenuCursol	{J}	//08A9DA84

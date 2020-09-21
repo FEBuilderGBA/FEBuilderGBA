@@ -32,3 +32,4 @@ AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/shinan
 
 CONFLICT_IF:$FGREP4 ../ShinanEA/Shinan.dmp=0x00 0xB5 0x26 0x20
 CONFLICT_MESSAGE=Shinan EA
+DEPRECATED=1

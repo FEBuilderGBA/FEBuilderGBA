@@ -3243,7 +3243,7 @@ namespace FEBuilderGBA
             oam_start += (0xC * 4);
 
             //次のデータへ
-            oam_start = oam_start +  footer_skip;
+            oam_start = oam_start + footer_skip;
 
             //終端位置.
             uint end_data = U.Grep(oamBIN, footer, oam_start);
@@ -3257,7 +3257,7 @@ namespace FEBuilderGBA
             List<byte> rightToLeftOAM = new List<byte>(U.subrange(oamBIN, oam_start, end_data));
 
             //次のデータへ
-            oam_start = end_data +  footer_skip;
+            oam_start = end_data + footer_skip;
 
             //終端位置その2.
             end_data = U.Grep(oamBIN, footer, oam_start);
@@ -3271,7 +3271,7 @@ namespace FEBuilderGBA
             List<byte> leftToRightOAM = new List<byte>(U.subrange(oamBIN, oam_start, end_data));
 
             //終端にあるのはパレット?
-            uint palette_start = end_data +  footer_skip;
+            uint palette_start = end_data + footer_skip;
             byte[] order_palette = U.subrange(oamBIN, palette_start, (uint)oamBIN.Length);
 
 
@@ -3285,6 +3285,16 @@ namespace FEBuilderGBA
             }
             byte[] frameBIN = File.ReadAllBytes(frameDataFilename);
             List<byte> frame = new List<byte>(frameBIN);
+
+            {
+                int i = 1;
+                string imagefilename = Path.Combine(basedir, basename + " Sheet " + i + ".png");
+                if (!File.Exists(imagefilename))
+                {
+                    return R.Error("画像シートが一枚もありません\r\n{0}", imagefilename);
+                }
+            }
+
 
             //画像シート
             byte[] palette = new byte[0x20];
@@ -3355,14 +3365,14 @@ namespace FEBuilderGBA
 
             //上書きされる古いアニメデータの領域を使いまわす.
             List<Address> recycle = new List<Address>();
-            RecycleOldAnime(ref recycle ,battleanime_baseaddress);
+            RecycleOldAnime(ref recycle, battleanime_baseaddress);
 
             RecycleAddress ra = new RecycleAddress(recycle);
             subConfilctArea(ra, battleanime_baseaddress, top_battleanime_baseaddress, bottum_battleanime_baseaddress);
 
             Dictionary<uint, ReColorMap> reColorMap = LoadReColorRule();
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData("ImportBattleAnimeOnFEditorSerialize",Path.GetFileName(filename));
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImportBattleAnimeOnFEditorSerialize", Path.GetFileName(filename));
 
             //圧縮して書き込みます.
             byte[] z;
@@ -3381,7 +3391,7 @@ namespace FEBuilderGBA
             }
             else
             {//パレットが指定されていない場合は、自分で作る.
-                z = MakeBattle4Palette_Z("",palette, reColorMap);
+                z = MakeBattle4Palette_Z("", palette, reColorMap);
             }
             addr = InputFormRef.AppendBinaryData(z, undodata);
             ra.WriteAndWritePointer(battleanime_baseaddress + 28, z, undodata);
