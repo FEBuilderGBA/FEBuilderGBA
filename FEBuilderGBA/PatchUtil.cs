@@ -245,6 +245,12 @@ namespace FEBuilderGBA
                 {
                     return class_type_enum.SkillSystems_Rework;
                 }
+                r = Program.ROM.CompareByte(0x2AAEC
+                    , new byte[] { 0x01, 0x4B, 0xA6, 0xF0, 0xED, 0xFE, 0x01, 0xE0 });
+                if (r)
+                {
+                    return class_type_enum.SkillSystems_Rework;
+                }
             }
             return class_type_enum.NO;
         }
