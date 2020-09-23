@@ -11145,7 +11145,7 @@ r3=X tile position of menu of right	{U}
 080A97C4	UpdateLastUsedGameSaveSlot	{J}
 080A97E4	GetLastUsedGameSaveSlot	{J}
 080A984C	CopyGameSave	{J}
-080A98B2	SaveNewGame	{J}
+080A98B4	SaveNewGame	{J}
 080A9C30	SaveMetadata_CheckId	{J}
 080A9C44	LoadSavedChapterState	{J}
 080A9C64	LoadSavedBonusClaimFlags	{J}

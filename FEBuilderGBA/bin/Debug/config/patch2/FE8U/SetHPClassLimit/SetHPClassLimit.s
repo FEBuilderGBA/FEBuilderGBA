@@ -25,7 +25,7 @@ Join:
 ldrb  r2,[r2]        @HPCaps
 
 mov  r1, #0x12
-ldrb r1, [r4, r1]    @Current MAX HP
+ldrb r1, [r4, r1]    @MAX HP
 
 cmp   r1,#0xF0       @MAXHPをたくさん減らすしてマイナス地になったときの対処
 bge   SetHP1
@@ -43,6 +43,8 @@ mov  r2,#0x1         @HPが0なので1に補正する
 Fix:
 mov  r1,r2           @ HPCapsを超えているので、補正する
 mov  r2, #0x12
+strb r1, [r4, r2]    @MAX HP
+mov  r2, #0x13
 strb r1, [r4, r2]    @Current MAX HP
 
 GoBack:
