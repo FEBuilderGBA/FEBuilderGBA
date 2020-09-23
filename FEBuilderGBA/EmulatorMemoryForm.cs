@@ -529,17 +529,21 @@ namespace FEBuilderGBA
         }
         string GetProcName(uint procHeaderP,uint startCode)
         {
+            string name = Program.AsmMapFileAsmCache.GetProcsName(startCode);
+            if (name != "")
+            {
+                return name;
+            }
             uint nameP = Program.RAM.u32(procHeaderP + 0x10);
             if (U.isSafetyPointer(nameP))
             {
-                return Program.ROM.getString(U.toOffset(nameP)).Trim();
+                name = Program.ROM.getString(U.toOffset(nameP)).Trim();
+                if (U.isAsciiString(name))
+                {
+                    return name;
+                }
             }
-            string name = Program.AsmMapFileAsmCache.GetProcsName(startCode);
-            if (name == "")
-            {
-                return U.To0xHexString(startCode);
-            }
-            return name;
+            return U.To0xHexString(startCode);
         }
         string GetCursolProcCode(uint procHeaderP, uint startCode)
         {
