@@ -5015,3 +5015,5 @@ and defeating an enemy.
 リンドブルム	Lindwurm
 バトルメイド	Battle　Maid
 皇帝	Emperor
+ユニットが死亡しても\r\n次の章で復帰します。\r\nヌルゲーマーと\r\nノーリセプレーしたい人に\r\nおすすめです。	Fallen units return\r\nin next chapter.\r\nRecommended for \r\nCasual Gamer and\r\nIronMan player.
+死亡したユニットは、\r\n消滅します。\r\n手ごわいシミュレーション\r\nをしたい方向けに\r\nおすすめです。	Fallen units are\r\ngone and disappear.\r\nRecommended for \r\nyou want to play\r\ntough simulations.

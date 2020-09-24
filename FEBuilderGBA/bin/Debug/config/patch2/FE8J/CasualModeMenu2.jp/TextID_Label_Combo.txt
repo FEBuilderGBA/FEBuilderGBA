@@ -1,0 +1,2 @@
+0=Casual
+1=Classic

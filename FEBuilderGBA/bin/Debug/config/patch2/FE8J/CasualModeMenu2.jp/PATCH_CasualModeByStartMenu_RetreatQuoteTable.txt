@@ -1,0 +1,24 @@
+NAME=カジュアルモード(ゲーム開始時にメニュー)(RetreatQuoteTable)
+TYPE=STRUCT
+TAG=#ENGINE
+
+//既に適応されたかどうか
+IF:0x30CF8=0x00 0x4B 0x18 0x47
+
+INFO=最初から始める時に、難易度選択の後にカジュアルモード選択の画面を表示します。\r\nこのパッチでは、撤退時に表示するメッセージを設定できます。\r\n撤退テキストが用意されていない場合は、ディフォルトの死亡セリフが利用されます。
+
+AUTHOR=HyperGammaSpaces
+
+
+POINTER=$GREP4END 0x50 0x78 0xFF 0x28 0x03 0xD0 0x0B 0x49 0x89 0x7B 0x88 0x42 0x06 0xD1 0x50 0x88 0x00 0x28 0x03 0xD0 0x08 0x4B 0x9E 0x46 0x00 0xF8 0x03 0xE0 0x04 0x32 0xEA 0xE7 0x06 0x4B 0x18 0x47 0x06 0x4B 0x18 0x47 0x60 0x59 0x08 0x08 0x24 0x24 0x00 0x08
+
+DATASIZE=4
+DATACOUNT=$GREP4 0x0
+LISTNAME=$B0:UNIT
+B0:UNIT=Unit
+B1:MAP_ANYFF=MAP(FF=ANY)
+W2:TEXT=Text
+NAME.en=Casual mode(Menu at game start)(RetreatQuoteTable)
+INFO.en=When starting from the beginning, the casual mode selection screen is displayed after the difficulty level selection.\r\nWith this patch, you can set the message to display when withdrawing.\r\nIf no withdrawal text is available, the default death line will be used.
+NAME.zh=Casual mode(Menu at game start)(RetreatQuoteTable)
+INFO.zh=When starting from the beginning, the casual mode selection screen is displayed after the difficulty level selection.\r\nWith this patch, you can set the message to display when withdrawing.\r\nIf no withdrawal text is available, the default death line will be used.

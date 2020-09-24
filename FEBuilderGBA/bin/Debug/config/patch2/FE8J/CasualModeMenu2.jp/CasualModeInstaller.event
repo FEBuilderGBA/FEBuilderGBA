@@ -1,0 +1,109 @@
+// option byte 0x42&40 enables Casual Mode (fallen units come back next chapter).
+// hack by circleseverywhere, GameOption port by 7743, menu and retreat quote table by hypergammaspaces
+
+  PUSH
+	//Actually unkill the unit
+//    ORG $18418	//{U}
+      ORG $1812C	//{J}
+      jumpToHack(CasualMode_Main)
+	  
+	//Display retreat quote for allies rather than death quote
+//	ORG $83620	//{U}
+	ORG $85958	//{J}
+	  jumpToHack(CallRetreatQuote)
+
+	//Setup new save to recognize casual mode
+//	ORG $30DAC	//{U}
+	ORG $30CF8	//{J}
+	  jumpToHack(CasualMode_SetFlag)
+
+	//Hijack the last null stub of NewGameDiffilcultySelect and move it to Casual Mode Select Procs.
+//	ORG 0xA20A88	//{U}
+	ORG 0xA9D9F0	//{J}
+	BYTE $06 $00 $01 $00; POIN CasualModeSelectProc	//Call new Child Procs [POINTER_PROCS:Child Procs] And Yield
+	POP
+
+//Include ASMC for Check CasualMode from events
+ALIGN 4
+#define CasualCheckASMC "SHORT $0D40 $0; POIN CasualCheck_ASMC+1"
+
+ALIGN 4
+//based on A20A10	{U}
+CasualModeSelectProc: 
+WORD $00001; POIN NAME_NewGameCasualModeSelect
+
+//WORD $00004 $080AC078+1 //set destructor	//{U}
+WORD $00004 $080B0B2C+1 //set destructor	//{J}
+
+WORD $00002; POIN CM_Kill_SaveMenuCursol+1	//Cursol is displayed twice, so turn it off.
+
+//WORD $00002 $080AD5B4+1 //call routine (i/o register setup)	//{U}
+WORD $00002 $080B2054+1 //call routine (i/o register setup)	//{J}
+
+WORD $0000E $0 //sleep 0frame
+WORD $00002; POIN CM_CallGraphicsSetup+1 //call routine
+WORD $1000E $0 //sleep 1frame
+
+//WORD $00002 $080AD5D8+1 //call routine EnableAllGfx	//{U}
+WORD $00002 $080B2078+1 //call routine EnableAllGfx	//{J}
+//WORD $80018 $080AE2D0+1 //call routine NewFadeIn	//{U}
+WORD $80018 $080B2D4C+1 //call routine NewFadeIn	//{J}
+//WORD $00014 $080AE2A0+1 //call routine FadeInExists	//{U}
+WORD $00014 $080B2D1C+1 //call routine FadeInExists	//{J}
+
+WORD $0000B $0 //label 0
+WORD $00003; POIN CM_HandleUserInput+1 //set loop routine
+WORD $1000B $0 //label 1
+WORD $A000E $0 //sleep 10frame
+WORD $2000B $0 //label 2
+
+//WORD $80018 $080AE2F4+1 //call routine NewFadeOut	//{U}
+WORD $80018 $080B2D70+1 //call routine NewFadeOut	//{J}
+//WORD $00014 $080AE2B8+1 //call routine FadeOutExists	//{U}
+WORD $00014 $080B2D34+1 //call routine FadeOutExists	//{J}
+
+WORD $00002; POIN CM_Finish+1 //call routine
+WORD $0 $0 //term
+
+//ASM functions
+#include "asm/CasualMode.lyn.event"
+ALIGN 4
+
+NAME_NewGameCasualModeSelect:
+String(NewGameCasualModeSelect)
+ALIGN 4
+
+//Graphics
+CasualModeButtons:
+#incbin "Graphics/casualmode.en.png.dmp"
+ALIGN 4
+
+//Change Difficulty Select graphic to say "Select Difficulty" instead of "Select Mode"
+PUSH
+//  ORG $AC188	//{U}
+	ORG $B0C34	//{J}
+	POIN NewDifficultyButtons
+POP
+NewDifficultyButtons:
+#incbin "Graphics/difficulty.en.png.dmp"
+
+ALIGN 4
+RetreatQuoteTable:
+WORD 0
+
+ALIGN 4
+CMTextIDs:
+SHORT 0xef5 0xef6
+
+ALIGN 4
+TxtData0xef5:	//CasualModeMenuOption
+#incbin "0xef5.bin"
+
+TxtData0xef6:	//ClassicModeMenuOption
+#incbin "0xef6.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+setText_WithHuffman(0xef5,TxtData0xef5)
+setText_WithHuffman(0xef6,TxtData0xef6)
+
+ALIGN 4
