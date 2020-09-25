@@ -778,3 +778,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0007DBD8=MapAnimForTourch	{U}	//089A3C24
 000B1148=SaveMenuCursol	{J}	//08A9DA84
 000AC6A8=SaveMenuCursol	{U}	//08A20B1C
+0008C424=DrawDialog	{J}	//08A73708

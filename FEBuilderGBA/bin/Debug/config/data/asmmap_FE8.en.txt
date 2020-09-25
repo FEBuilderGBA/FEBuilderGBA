@@ -10350,7 +10350,7 @@ r3=X tile position of menu of right	{U}
 0203E1A4	gBattleAnimBoolLockSheetGraphicsMaybe	{U}
 0203E1AC	gBattleHpDisplayedValue	{U}
 0203EDB4	gBonusContentFlags	{U}
-0203EF64	gSaveMenuRTextData	{U}
+0203EF64	@SAVEMENURTEXTDATA	gSaveMenuRTextData	{U}
 03000000	gRNState	{U}
 03000044	gpMusicProcB	{U}
 030017E0	gSioBaudRate	{U}
@@ -11700,7 +11700,10 @@ r3=X tile position of menu of right	{U}
 0203E1A0	gBattleAnimBoolLockSheetGraphicsMaybe	{J}
 0203E1A8	gBattleHpDisplayedValue	{J}
 0203EDB0	gBonusContentFlags	{J}
-0203EF60	gSaveMenuRTextData	{J}
+0203EF60	@SAVEMENURTEXTDATA	gSaveMenuRTextData	{J}
+@SAVEMENURTEXTDATA@00	&SongHeader	songHeader
+@SAVEMENURTEXTDATA@01	byte	HeroLevel
+@SAVEMENURTEXTDATA@02	byte	WorldmapNodeID
 03000000	gRNState	{J}
 03000038	gpMusicProcA	{J}
 0300003C	gpMusicProcB	{J}
@@ -12816,11 +12819,9 @@ r3=X tile position of menu of right	{U}
 08037F78	SaveBeforeDungeonState	{J}
 08037F90	LoadBeforeDungeonState	{J}
 080BBA28	GetWorldMapNodeName	{U}
-0203EF66	gSaveMenuRTextData.CurrentWorldmapNodeID	{U}
 080AA768	GetWorldmapNodeNameForSaveMenuRtextData	{U}
 08089DE8	MakeTextForSaveMenuRtextData	{U}
 080c086c	GetWorldMapNodeName	{J}
-0203EF62	gSaveMenuRTextData.CurrentWorldmapNodeID	{J}
 080AF248	GetWorldmapNodeNameForSaveMenuRtextData	{J}
 0808C0F8	MakeTextForSaveMenuRtextData	{J}
 0203E78C	gChapterTitleGrahicsWorkBuffer	{U}
@@ -13001,3 +13002,17 @@ r3=X tile position of menu of right	{U}
 080581A0	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock	{U}
 080AF2CC	SaveSlot_Display_PlayTime	{J}
 080AA7EC	SaveSlot_Display_PlayTime	{U}
+0808C0BC	SaveMemu_RButton_DrawLabel	{J}
+0808C40C	StartDrawDialogProcs	{J}
+080af224	GetHeroLevelForSaveMenuRtextData	{J}
+080AD368	MakeDialogDataForSaveMenuRtextData	{J}
+08090710	ChapterStatusScreen_DrawGoldAmountAndTurns	{J}
+0809020C	ChapterStatusScreen_MakeData	{J}
+08090780	ChapterStatusScreen_DrawMain	{J}
+08089DB0	SaveMemu_RButton_DrawLabel	{U}
+0808A0FC	StartDrawDialogProcs	{U}
+080AA744	GetHeroLevelForSaveMenuRtextData	{U}
+080A8950	MakeDialogDataForSaveMenuRtextData	{U}
+0808E43C	ChapterStatusScreen_DrawGoldAmountAndTurns	{U}
+0808DF24	ChapterStatusScreen_MakeData	{U}
+0808E4AC	ChapterStatusScreen_DrawMain	{U}
