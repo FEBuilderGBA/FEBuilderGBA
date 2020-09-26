@@ -1,0 +1,88 @@
+//This patch will display the difficulty level in the status menu and the R button in the save slot.
+//このパッチは、状況メニューと、セーブスロットのRボタンで、難易度を表示するようにします。
+
+PUSH
+//状況画面のフック
+ORG 0x90898	//{J}
+//ORG 0x8E5C4	//{U}
+jumpToHack(ShowDifficultyOnStatusScreen)
+
+//セーブスロットの上でRボタンを押したときにも難易度を表示する
+//LV表記を消す
+ORG 0x8C0E0	//{J}
+//ORG 0x89DD6	//{U}
+WORD 0x0
+
+//データを作る
+ORG 0xAD386	//{J}
+//ORG 0xA896E	//{U}
+BYTE 0x00 0x00
+jumpToHack(ShowDifficultyOnSaveSlot_MakeData)
+
+//データ表示
+ORG 0x8C0F8	//{J}
+//ORG 0x89DE8	//{U}
+jumpToHack(ShowDifficultyOnSaveSlot_ShowData)
+
+POP
+
+ALIGN 4
+ShowDifficultyOnSaveSlot_MakeData:
+#incbin "ShowDifficultyOnSaveSlot_MakeData.dmp"
+
+ALIGN 4
+ShowDifficultyOnSaveSlot_ShowData:
+#incbin "ShowDifficultyOnSaveSlot_ShowData.dmp"
+POIN ShowDifficultyTable
+
+
+ShowDifficultyOnStatusScreen:
+#incbin "ShowDifficultyOnStatusScreen.dmp"
+POIN ShowDifficultyTable
+
+
+ShowDifficultyTable:
+//TextID   SaveSlotPopupTextColor  StatusScreenTextColor
+SHORT 0xEF7; BYTE 0x7; BYTE 0x0; //Easy Casual
+SHORT 0xEF8; BYTE 0x7; BYTE 0x0; //Easy Classic
+SHORT 0xEF9; BYTE 0x7; BYTE 0x0; //Normal Casual
+SHORT 0xEFA; BYTE 0x1; BYTE 0x0; //Normal Classic
+SHORT 0xEFB; BYTE 0x7; BYTE 0x4; //Hard Casual
+SHORT 0xEFC; BYTE 0x1; BYTE 0x4; //Hard Classic
+
+ALIGN 4
+TxtData0xEF7:
+#incbin "0xEF7.bin"
+
+ALIGN 4
+TxtData0xEF8:
+#incbin "0xEF8.bin"
+
+ALIGN 4
+TxtData0xEF9:
+#incbin "0xEF9.bin"
+
+ALIGN 4
+TxtData0xEFA:
+#incbin "0xEFA.bin"
+
+ALIGN 4
+TxtData0xEFB:
+#incbin "0xEFB.bin"
+
+ALIGN 4
+TxtData0xEFC:
+#incbin "0xEFC.bin"
+
+ALIGN 4
+TxtData0x821:
+#incbin "0x821.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+setText_WithHuffman(0xEF7,TxtData0xEF7)
+setText_WithHuffman(0xEF8,TxtData0xEF8)
+setText_WithHuffman(0xEF9,TxtData0xEF9)
+setText_WithHuffman(0xEFA,TxtData0xEFA)
+setText_WithHuffman(0xEFB,TxtData0xEFB)
+setText_WithHuffman(0xEFC,TxtData0xEFC)
+setText_WithHuffman(0x821,TxtData0x821)

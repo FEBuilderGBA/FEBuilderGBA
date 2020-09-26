@@ -1,0 +1,6 @@
+HardMode=$10
+AddIfCasualMode=$22
+LunaticMode=$20
+CasualMode=$32
+ClassicMode=$2E
+Exit=$32

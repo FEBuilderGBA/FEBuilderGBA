@@ -1,0 +1,28 @@
+NAME=状況画面と、セーブスロットのRボタンで、難易度を表示する(Editor)
+NAME.en=display difficulty level in status menu and R button in save slot(Editor)
+NAME.zh=display difficulty level in status menu and R button in save slot(Editor)
+TYPE=STRUCT
+TAG=#ENGINE
+HINT=CasualMode
+
+//既に適応されたかどうか
+IF:0x8E5C4=0x00 0x4B 0x18 0x47
+
+INFO=状況画面と、セーブスロットのRボタンで、難易度を表示するようにします。\r\nこのパッチを使うには、"カジュアルモード(ゲーム開始時にメニュー)"が必要です。
+INFO.en=This patch will display difficulty level in status screen and R button in save slot.\r\n"Casual mode(Menu at game start)" is required to use this patch.
+INFO.zh=This patch will display difficulty level in status screen and R button in save slot.\r\n"Casual mode(Menu at game start)" is required to use this patch.
+
+AUTHOR=7743
+
+POINTER=$FGREP4END ShowDifficultyOnStatusScreen.dmp
+
+DATASIZE=4
+DATACOUNT=6
+LISTNAME=$W0:TEXT
+W0:TEXT=Text
+B2:$COMBO COMBO_SaveSlotPopupTextColor.ja.txt:.ja=SaveSlotPopupTextColor
+B3:$COMBO COMBO_StatusScreenTextColor.ja.txt:.ja=StatusScreenTextColor
+B2:$COMBO COMBO_SaveSlotPopupTextColor.en.txt:.en=SaveSlotPopupTextColor
+B3:$COMBO COMBO_StatusScreenTextColor.en.txt:.en=StatusScreenTextColor
+B2:$COMBO COMBO_SaveSlotPopupTextColor.en.txt:.zh=SaveSlotPopupTextColor
+B3:$COMBO COMBO_StatusScreenTextColor.en.txt:.zh=StatusScreenTextColor

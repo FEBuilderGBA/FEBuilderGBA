@@ -1,0 +1,6 @@
+0=white
+1=gray and black
+2=Light blue
+3=yellow
+4=green
+5=monochromatic black

@@ -1,0 +1,12 @@
+GetDifficulty=$3C
+GetTextData=$68
+Exit=$2E
+GetDifficulty_HardMode=$40
+GetDifficulty_LunaticMode=$50
+GetDifficulty_AddIfCasualMode=$52
+GetDifficulty_CasualMode=$62
+GetDifficulty_ClassicMode=$5E
+GetDifficulty_Exit=$62
+GetTextData_Error=$76
+Table=$90
+GetTextData_Exit=$78

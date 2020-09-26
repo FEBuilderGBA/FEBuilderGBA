@@ -1,0 +1,23 @@
+NAME=状況画面と、セーブスロットのRボタンで、難易度を表示する(Installer)
+NAME.en=display difficulty level in status menu and R button in save slot(Installer)
+NAME.zh=display difficulty level in status menu and R button in save slot(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+//required
+IF:0x30DAC=0x00 0x4B 0x18 0x47
+
+//既に適応されたかどうか
+PATCHED_IF:0x8E5C4=0x00 0x4B 0x18 0x47
+
+EA=ShowDifficulty.event
+EXTENDS:0x1100=TEXT
+
+INFO=状況画面と、セーブスロットのRボタンで、難易度を表示するようにします。\r\nこのパッチを使うには、"カジュアルモード(ゲーム開始時にメニュー)"が必要です。
+INFO.en=This patch will display difficulty level in status screen and R button in save slot.\r\n"Casual mode(Menu at game start)" is required to use this patch.
+INFO.zh=This patch will display difficulty level in status screen and R button in save slot.\r\n"Casual mode(Menu at game start)" is required to use this patch.
+
+AUTHOR=7743
+HINT=CasualMode
+
+EDIT_PATCH:1=PATCH_ShowDifficulty_Text.txt

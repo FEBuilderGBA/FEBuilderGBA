@@ -1,0 +1,6 @@
+GetTextData=$38
+ShowBar=$1A
+Show=$26
+GetTextData_Error=$46
+Table=$5C
+GetTextData_Exit=$48

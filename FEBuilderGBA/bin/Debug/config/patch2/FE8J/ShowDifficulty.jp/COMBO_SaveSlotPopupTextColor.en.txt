@@ -1,0 +1,8 @@
+0=yellow green(deprecated)
+1=blue
+2=yellow(deprecated)
+3=black and yellow
+4=gray and black
+5=pale yellow
+6=gray and black
+7=Light blue

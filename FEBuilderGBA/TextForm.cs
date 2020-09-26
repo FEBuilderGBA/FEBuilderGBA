@@ -290,24 +290,14 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version() == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (textid >= 0xE00 && textid <= 0xFFF)
                 {
-                    if (textid >= 0xE00 && textid <= 0xEFF)
-                    {
-                        return true;
-                    }
-                }
-                else
-                {
-                    if (textid >= 0xE00 && textid <= 0xFFF)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
-                if (textid >= 0x1E00 && textid <= 0x1EFF)
+                if (textid >= 0x1E00 && textid <= 0x1FFF)
                 {
                     return true;
                 }
