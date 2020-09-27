@@ -566,5 +566,6 @@ UPDATE_UNINSTALL:8=..\SummonEXP\PATCH_SummonEXP.txt
 UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
 UPDATE_UNINSTALL:10=..\Use Item Might for Healing\PATCH_Use Item Might for healing.txt
 UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
+UPDATE_UNINSTALL:12=..\bad_status_sword\PATCH_bad_status_sword.txt
 
 

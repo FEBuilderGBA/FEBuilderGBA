@@ -1,0 +1,19 @@
+NAME=救出している味方を降ろした時に即行動できるようにする
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x180bb
+COMBO=降ろしたら待機(Default)|0xD1|降ろしても非待機|0xE0
+COMBO.en=Wait at Drop(Default)|0xD1|Active at Drop(Default)|0xE0
+COMBO.zh=Wait at Drop(Default)|0xD1|Active at Drop(Default)|0xE0
+
+
+NAME.en=Change can act immediately when you drop off PlayerUnit are rescuing.
+INFO.en=This patch Drop you from rescuing an ally to a non-waiting state where you can act immediately when you drop them off.\r\nThe ally that is brought down will be placed in standby state by the ally that is brought down.
+NAME.zh=Change can act immediately when you drop off PlayerUnit are rescuing.
+INFO.zh=This patch Drop you from rescuing an ally to a non-waiting state where you can act immediately when you drop them off.\r\nThe ally that is brought down will be placed in standby state by the ally that is brought down.
+
+HINT=同行 Join(Refuge)
+
+AUTHOR=aera
+

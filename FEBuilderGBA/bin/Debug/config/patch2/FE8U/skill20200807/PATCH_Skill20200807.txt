@@ -1012,3 +1012,15 @@ EDIT_PATCH:18=../ArmorMarchList/PATCH_ArmorMarchList.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM
+UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
+UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
+UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
+UPDATE_UNINSTALL:4=..\FE8-Capture\PATCH_FE8-Capture.txt
+UPDATE_UNINSTALL:5=..\autosave\PATCH_autosave.txt
+UPDATE_UNINSTALL:6=..\display-all-weapon-ranks-your-character-has\PATCH_display-all-weapon-ranks-your-character-has.txt
+UPDATE_UNINSTALL:7=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
+UPDATE_UNINSTALL:8=..\SummonEXP\PATCH_SummonEXP.txt
+UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
+UPDATE_UNINSTALL:10=..\Use Item Might for Healing\PATCH_Use Item Might for healing.txt
+UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
+UPDATE_UNINSTALL:12=..\bad_status_sword\PATCH_bad_status_sword.txt

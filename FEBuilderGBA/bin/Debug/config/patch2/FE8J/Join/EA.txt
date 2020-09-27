@@ -83,7 +83,7 @@ List:
 POIN	Join8+1
 WORD	0 0
 POIN	Join9+1
-	#incbin "second/data.bin"
+	#incbin "second/data.bin"	//HINT=BIN
 ALIGN	4
 Join8:
 	#incbin "second/Join_final.bin"

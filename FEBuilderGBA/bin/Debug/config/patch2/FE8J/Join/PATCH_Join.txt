@@ -8,10 +8,10 @@ EA=EA.txt
 EA_EXTENDS_UNITMENU:0x01=0x40
 EXTENDS:0x1100=TEXT
 
-INFO=ユニットを救出するのではなく、相手側から同行で救出してもらうことができるようになります。\r\nこのコマンドは"奏でる"を""同行"に変化させます。\r\n
+INFO=ユニットを救出するのではなく、相手側から同行で救出してもらうことができるようになります。
 
 AUTHOR=aera
 NAME.en=Join(Refuge) command
-INFO.en=Instead of rescuing units, you will be able to rescue them from the other side with you.\r\nThis command changes "playing" to "Join(Refuge)".\r\n
+INFO.en=Instead of rescuing units, you will be able to rescue them from the other side with you.
 NAME.zh=同行命令
-INFO.zh=您可以从另一侧救出他们，而不是救出人物。\r\n此命令将“播放"更改为“同行"。\r\n
+INFO.zh=您可以从另一侧救出他们，而不是救出人物。

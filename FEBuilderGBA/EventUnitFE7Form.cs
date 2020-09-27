@@ -199,6 +199,10 @@ namespace FEBuilderGBA
         
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
             DrawAllUnits();
             PosSyncCheck();
 

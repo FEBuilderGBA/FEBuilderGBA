@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.L_14_AI3_HYOUTEKI = new System.Windows.Forms.ComboBox();
             this.L_14_AI3_KAIFUKU = new System.Windows.Forms.ComboBox();
             this.EVENTUNIT_AFTER_COORD = new FEBuilderGBA.PanelEx();
@@ -122,7 +123,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.label12 = new System.Windows.Forms.Label();
-            this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.panel3.SuspendLayout();
             this.EVENTUNIT_AFTER_COORD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
@@ -218,6 +218,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(889, 458);
             this.panel3.TabIndex = 47;
+            // 
+            // X_Sim
+            // 
+            this.X_Sim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_Sim.Location = new System.Drawing.Point(263, 93);
+            this.X_Sim.Name = "X_Sim";
+            this.X_Sim.Size = new System.Drawing.Size(478, 75);
+            this.X_Sim.TabIndex = 172;
             // 
             // L_14_AI3_HYOUTEKI
             // 
@@ -744,7 +752,7 @@
             // 
             this.L_13_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_13_COMBO.FormattingEnabled = true;
-            this.L_13_COMBO.Location = new System.Drawing.Point(206, 125);
+            this.L_13_COMBO.Location = new System.Drawing.Point(206, 128);
             this.L_13_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_13_COMBO.Name = "L_13_COMBO";
             this.L_13_COMBO.Size = new System.Drawing.Size(676, 26);
@@ -1321,14 +1329,6 @@
             this.label12.TabIndex = 157;
             this.label12.Text = "マップ名前";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // X_Sim
-            // 
-            this.X_Sim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_Sim.Location = new System.Drawing.Point(263, 93);
-            this.X_Sim.Name = "X_Sim";
-            this.X_Sim.Size = new System.Drawing.Size(478, 75);
-            this.X_Sim.TabIndex = 172;
             // 
             // EventUnitFE6Form
             // 
