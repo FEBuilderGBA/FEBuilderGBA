@@ -1,0 +1,24 @@
+NAME=イベント命令から戦闘背景の強制変更(イベント命令)
+NAME.en=Add Event: Forced change of battle background from event command
+NAME.zh=Add Event: Forced change of battle background from event command
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_Force_ChangeBattleBG.dmp=0x10 0xB5 0x80 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_Force_ChangeBattleBG.dmp
+
+
+
+
+INFO=このパッチは、戦闘会話でイベントを指定した時にのみ利用できます。\r\n会話イベントの最中に、戦闘BGを強制的に変更します。
+INFO.en=This patch is only available when you specify an event in Battle Quote.\r\nForce the combat BG to change during conversation event.
+INFO.zh=This patch is only available when you specify an event in Battle Quote.\r\nForce the combat BG to change during conversation event.
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DYY00{$L1:ASMC_Force_ChangeBattleBG.dmp}	イベント命令から戦闘背景の強制変更[YY::BattleBG](戦闘会話イベント戦闘)
+EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_Force_ChangeBattleBG.dmp}	Forced change of battle background from event command[YY::BattleBG](OnlyBattleQuoteEvent)
+EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_Force_ChangeBattleBG.dmp}	Forced change of battle background from event command[YY::BattleBG](OnlyBattleQuoteEvent)

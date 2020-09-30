@@ -3956,7 +3956,7 @@
 08079558	GetMOVEUNITGraphicsBuffer	{U}
 08079574	GetMovingMapSpriteGfxPtrFromMOVEUNIT	{U}
 08079588	MMS_GetROMTCS	{U}
-0807959c	MOVEUNIT6C_807959C	{U}
+0807959c	StartMoveUnitDeathBlend2	{U}
 08079618	BlendTimer6C_MainLoop	{U}
 080797d4	SetMOVEUNITField40To1	{U}
 080797e4	MOVEUNIT6C_SetDisplayPos	{U}
@@ -5718,7 +5718,7 @@
 0807B96C	GetMOVEUNITGraphicsBuffer	{J}
 0807B988	GetMovingMapSpriteGfxPtrFromMOVEUNIT	{J}
 0807B99C	MMS_GetROMTCS	{J}
-0807B9B0	MOVEUNIT6C_807959C	{J}
+0807B9B0	StartMoveUnitDeathBlend2	{J}
 0807BA2C	BlendTimer6C_MainLoop	{J}
 0807BBE8	SetMOVEUNITField40To1	{J}
 0807BBF8	MOVEUNIT6C_SetDisplayPos	{J}
@@ -13012,3 +13012,9 @@
 0808E43C	ChapterStatusScreen_DrawGoldAmountAndTurns	{U}
 0808DF24	ChapterStatusScreen_MakeData	{U}
 0808E4AC	ChapterStatusScreen_DrawMain	{U}
+08077E84	LoadBattleBG_ImgToVRAM	{J}
+08075A50	LoadBattleBG_ImgToVRAM	{U}
+0203E0FA	CurrentBattleBG	{J}
+0203E0FE	CurrentBattleBG	{U}
+0804CCEC	StartMoveUnitDeathBlend1	{J}
+0804BF4C	StartMoveUnitDeathBlend1	{U}

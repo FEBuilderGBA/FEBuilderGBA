@@ -1,0 +1,15 @@
+NAME=クリアターン一覧のクラッシュ防止(Install)
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xB78CC=0x00 0x48 0x87 0x46
+
+EA=install.event
+
+AUTHOR=7743
+INFO=エンディングのクリアターン一覧で、クリアターンを記録するテーブルに、まれにノイズが含まれていると、クラッシュしてしまう問題を解決します。\r\nこのパッチは、予防のためのパッチです。\r\nもし、変なデータが格納されていた場合は、無視するようにします。\r\nディフォルトは、MapIDの最後の値0x4Fを設定します。\r\nMapID: 0x4F以降のデータが含まれていた場合、ノイズと判断してスキップするようにします。
+NAME.en=Crash prevention in the clear turn list(Installer)
+INFO.en=This patch solves the problem of crashing in the ending clear turn list when the table that records the clear turns contains rare noise.\r\nThis patch is a preventive patch.\r\nIf any strange data is stored, it should be ignored.\r\nThe default is to set the last value of MapID to 0x4F.\r\nMapID: If any data after 0x4F is included, it will be considered as noise and will be skipped.
+
+NAME.zh=Crash prevention in the clear turn list(Installer)
+INFO.zh=This patch solves the problem of crashing in the ending clear turn list when the table that records the clear turns contains rare noise.\r\nThis patch is a preventive patch.\r\nIf any strange data is stored, it should be ignored.\r\nThe default is to set the last value of MapID to 0x4F.\r\nMapID: If any data after 0x4F is included, it will be considered as noise and will be skipped.

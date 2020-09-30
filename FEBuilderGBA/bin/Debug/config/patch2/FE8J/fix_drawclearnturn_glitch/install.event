@@ -1,0 +1,12 @@
+#ifndef jumpToHack_r0//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#endif //jumpToHack_r0
+
+PUSH
+ORG 0xBC370	//{J}
+jumpToHack_r0(fix_drawclearnturn_glitch)
+POP
+
+fix_drawclearnturn_glitch:
+#incbin "fix_drawclearnturn_glitch.dmp"
+WORD 0x4f
