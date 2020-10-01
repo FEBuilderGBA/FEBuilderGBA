@@ -1,0 +1,17 @@
+
+NAME=古木の敵のユニットID
+NAME.en=SnagUnitID
+NAME.zh=SnagUnitID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002C936
+ADDRESS_TYPE=UNIT
+AUTHOR=7743
+
+INFO=マップ上の破壊できる古木のユニットIDです。ディフォルト値は、UnitID:0xFF が利用されます。
+DEFAULT=0xFF
+INFO.en=The unit ID of an old tree that can be destroyed on the map.UnitID: 0xFF is used as the default value.
+INFO.zh=可以在地图上销毁的老树的单位ID。UnitID：0xFF用作默认值。

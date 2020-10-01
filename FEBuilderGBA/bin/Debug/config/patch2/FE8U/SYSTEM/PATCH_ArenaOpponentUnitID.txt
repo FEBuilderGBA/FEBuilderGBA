@@ -1,0 +1,17 @@
+
+NAME=闘技場の敵のユニットID
+NAME.en=ArenaOpponentUnitID
+NAME.zh=ArenaOpponentUnitID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0031A8E
+ADDRESS_TYPE=UNIT
+AUTHOR=7743
+
+INFO=闘技場の敵のUnitIDです。ディフォルト値は、UnitID:0xFD が利用されます。
+DEFAULT=0xFD
+INFO.en=The Unit ID of the enemy in the arena.UnitID: 0xFD is used as the default value.
+INFO.zh=竞技场中敌人的单位ID。UnitID：0xFD用作默认值。

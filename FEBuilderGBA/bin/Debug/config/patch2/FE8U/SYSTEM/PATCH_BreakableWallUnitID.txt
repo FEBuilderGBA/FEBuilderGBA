@@ -1,0 +1,17 @@
+
+NAME=壊れる壁のユニットID
+NAME.en=BreakableWallUnitID
+NAME.zh=BreakableWallUnitID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02C92C
+ADDRESS_TYPE=UNIT
+AUTHOR=7743
+
+INFO=マップ上の破壊できる壁(壊れる壁)のユニットIDです。ディフォルト値は、UnitID:0xFE が利用されます。
+DEFAULT=0xFE
+INFO.en=The unit ID of a destructible wall (breakable wall) on the map.UnitID: 0xFE is used as the default value.
+INFO.zh=地图上可破坏墙壁（易碎墙壁）的单位ID。UnitID：0xFE用作默认值。
