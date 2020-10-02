@@ -1,0 +1,14 @@
+NAME=瞬殺を即死からHP1に変更
+NAME.en=Change from death to HP1 with Lethality
+NAME.zh=Change from death to HP1 with Lethality
+
+INFO=瞬殺を即死からHP1に弱体化します
+INFO.en=Weak Lethality from instant death to HP1.
+INFO.zh=Weak Lethality from instant death to HP1.
+
+AUTHOR=FE girls
+TYPE=BIN
+
+PATCHED_IF:0x02B438=0x00 0x48 0x87 0x46
+BIN:$FREEAREA=Change from death to HP1 with Lethality.dmp
+JUMP:0x02B438:$r0=Change from death to HP1 with Lethality.dmp

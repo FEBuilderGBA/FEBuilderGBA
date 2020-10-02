@@ -956,7 +956,7 @@
             this.Config_WriteButton.Name = "Config_WriteButton";
             this.Config_WriteButton.Size = new System.Drawing.Size(176, 30);
             this.Config_WriteButton.TabIndex = 16;
-            this.Config_WriteButton.Text = "ROM書き込み";
+            this.Config_WriteButton.Text = "書き込み";
             this.Config_WriteButton.UseVisualStyleBackColor = true;
             this.Config_WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
@@ -1295,7 +1295,7 @@
             this.PaletteWriteButton.Name = "PaletteWriteButton";
             this.PaletteWriteButton.Size = new System.Drawing.Size(172, 33);
             this.PaletteWriteButton.TabIndex = 435;
-            this.PaletteWriteButton.Text = "ROM書き込み";
+            this.PaletteWriteButton.Text = "書き込み";
             this.PaletteWriteButton.UseVisualStyleBackColor = true;
             this.PaletteWriteButton.Click += new System.EventHandler(this.PaletteWriteButton_Click);
             // 

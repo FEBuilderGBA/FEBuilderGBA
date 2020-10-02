@@ -93,7 +93,7 @@
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(176, 30);
             this.WriteButton.TabIndex = 17;
-            this.WriteButton.Text = "ROM書き込み";
+            this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
             // 
