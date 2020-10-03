@@ -5179,11 +5179,11 @@ Editing Comments(&/)
 :直接編集(&N)
 Direct Edit(&N)
 
-:↑データ入れ替え(Ctrl + Alt + Up)
-↑ Change data (Ctrl+Alt+Up)
+:↑データ入れ替え(Ctrl + Up)
+↑ Change data (Ctrl+Up)
 
-:↓データ入れ替え(Ctrl + Alt + Down)
-↓ Change data (Ctrl+Alt+Down)
+:↓データ入れ替え(Ctrl + Down)
+↓ Change data (Ctrl+Down)
 
 :無効化する(DEL)
 Invalidate (DEL)

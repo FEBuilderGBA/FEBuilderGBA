@@ -5983,19 +5983,19 @@ namespace FEBuilderGBA
             {
                 ClipbordToPaste();
             }
-            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Up)
-            {
-                ShiftData(false);
-            }
-            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Down)
-            {
-                ShiftData(true);
-            }
-            else if (e.Control && e.Alt && e.KeyCode == Keys.Up)
+//            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Up)
+//            {
+//                ShiftData(false);
+//            }
+//            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Down)
+//            {
+//                ShiftData(true);
+//            }
+            else if (e.Control && e.KeyCode == Keys.Up)
             {
                 SwapData(false);
             }
-            else if (e.Control && e.Alt && e.KeyCode == Keys.Down)
+            else if (e.Control && e.KeyCode == Keys.Down)
             {
                 SwapData(true);
             }
@@ -6151,11 +6151,11 @@ namespace FEBuilderGBA
 
             if (isDown)
             {
-                U.SelectedIndexSafety(this.AddressList, selected + 1);
+                U.SelectedIndexSafety(this.AddressList, selected );
             }
             else
             {
-                U.SelectedIndexSafety(this.AddressList, selected - 1);
+                U.SelectedIndexSafety(this.AddressList, selected );
             }
         }
 
@@ -11621,11 +11621,11 @@ namespace FEBuilderGBA
                 menuItem = new MenuItem("-");
                 contextMenu.MenuItems.Add(menuItem);
 
-                menuItem = new MenuItem(R._("↑データ入れ替え(Ctrl + Alt + Up)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Up));
+                menuItem = new MenuItem(R._("↑データ入れ替え(Ctrl + Up)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Up));
                 contextMenu.MenuItems.Add(menuItem);
-                menuItem = new MenuItem(R._("↓データ入れ替え(Ctrl + Alt + Down)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Down));
+                menuItem = new MenuItem(R._("↓データ入れ替え(Ctrl + Down)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
             }
             if (useClear)

@@ -5179,11 +5179,11 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 :直接編集(&N)
 直接编辑(&N)
 
-:↑データ入れ替え(Ctrl + Alt + Up)
-↑更改数据（Ctrl+Alt+Up）
+:↑データ入れ替え(Ctrl + Up)
+↑更改数据（Ctrl+Up）
 
-:↓データ入れ替え(Ctrl + Alt + Down)
-↓更改数据（Ctrl+Alt+Down）
+:↓データ入れ替え(Ctrl + Down)
+↓更改数据（Ctrl+Down）
 
 :無効化する(DEL)
 无效（DEL）
