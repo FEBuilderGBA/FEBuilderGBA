@@ -1,0 +1,17 @@
+
+NAME=太陽の腕輪のアイテムID
+NAME.en=Item ID of Solar Brace
+NAME.zh=Item ID of Solar Brace
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02916E
+ADDRESS_TYPE=ITEM
+AUTHOR=7743
+
+INFO=ディフォルトは、太陽の腕輪(ItemID=0x99)が指定されています。\r\nUnitID:0x0F エフラムのユニットのクラスチェンジに利用するアイテムです。
+INFO.en=The default is Solar Brace (ItemID=0x99).\r\nThis item is used to promotion the UnitID: 0x0F Ephraim.
+INFO.zh=The default is Solar Brace (ItemID=0x99).\r\nThis item is used to promotion the UnitID: 0x0F Ephraim.
+DEFAULT=0x99

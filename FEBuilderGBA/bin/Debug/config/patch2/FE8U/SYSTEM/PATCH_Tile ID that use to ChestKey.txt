@@ -1,0 +1,17 @@
+
+NAME=たからの鍵をりようできるタイルID
+NAME.en=Tile ID that use to ChestKey
+NAME.zh=Tile ID that use to ChestKey
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x29114
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、宝箱(TileID=0x21)が指定されています。
+INFO.en=The default is Chest (TileID=0x21).
+INFO.zh=The default is Chest (TileID=0x21).
+DEFAULT=0x21

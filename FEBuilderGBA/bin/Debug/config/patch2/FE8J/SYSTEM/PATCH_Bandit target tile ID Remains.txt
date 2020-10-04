@@ -1,0 +1,16 @@
+NAME=盗賊のターゲットになるタイルID: 遺跡
+NAME.en=Bandit target tile ID: Remains
+NAME.zh=Bandit target tile ID: Remains
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x3BFD4
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、遺跡(TileID=0x37)が指定されています。\r\n注意:0x21 宝箱より小さい値を指定してはいけません。
+INFO.en=The default is Remains (TileID=0x37).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+INFO.zh=The default is Remains (TileID=0x37).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+DEFAULT=0x37

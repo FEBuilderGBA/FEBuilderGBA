@@ -1,0 +1,17 @@
+
+NAME=とびらの鍵をりようできるタイルID
+NAME.en=Tile ID that use to DoorKey
+NAME.zh=Tile ID that use to DoorKey
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2913A
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、扉(TileID=0x1E)が指定されています。
+INFO.en=The default is Door (TileID=0x1E).
+INFO.zh=The default is Door (TileID=0x1E).
+DEFAULT=0x1E

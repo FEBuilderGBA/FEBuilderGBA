@@ -1,0 +1,17 @@
+
+NAME=月の腕輪のアイテムID
+NAME.en=Item ID of Lunar Brace
+NAME.zh=Item ID of Lunar Brace
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2916A
+ADDRESS_TYPE=ITEM
+AUTHOR=7743
+
+INFO=ディフォルトは、月の腕輪(ItemID=0x98)が指定されています。\r\nUnitID:0x01 エイリークのユニットのクラスチェンジに利用するアイテムです。
+INFO.en=The default is Lunar Brace (ItemID=0x98).\r\nThis item is used to promotion the UnitID: 0x01 Eirika.
+INFO.zh=The default is Lunar Brace (ItemID=0x98).\r\nThis item is used to promotion the UnitID: 0x01 Eirika.
+DEFAULT=0x98

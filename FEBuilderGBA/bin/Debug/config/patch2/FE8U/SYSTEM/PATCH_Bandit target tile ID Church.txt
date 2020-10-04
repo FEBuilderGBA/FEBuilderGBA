@@ -1,0 +1,17 @@
+NAME=盗賊のターゲットになるタイルID: 教会
+NAME.en=Bandit target tile ID: Church
+NAME.zh=Bandit target tile ID: Church
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x3C040
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、教会(TileID=0x24)が指定されています。\r\nFE8では利用されていません。\r\n注意:0x21 宝箱より小さい値を指定してはいけません。
+Not used in FE8.\r\n Note: Do not specify a value smaller than the treasure chest 0x21.
+INFO.en=The default is Church (TileID=0x24).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+INFO.zh=The default is Church (TileID=0x24).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+DEFAULT=0x24

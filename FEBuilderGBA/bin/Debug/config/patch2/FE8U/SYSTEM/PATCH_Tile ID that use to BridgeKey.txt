@@ -1,0 +1,17 @@
+
+NAME=はねばしの鍵をりようできるタイルID
+NAME.en=Tile ID that use to BridgeKey
+NAME.zh=Tile ID that use to BridgeKey
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2914E
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、はね橋(TileID=0x14)が指定されています。\r\nただし、FE8では、利用されていません。
+INFO.en=The default is Bridge (TileID=0x14).\r\nHowever, it is not used in FE8.
+INFO.zh=The default is Bridge (TileID=0x14).\r\nHowever, it is not used in FE8.
+DEFAULT=0x14

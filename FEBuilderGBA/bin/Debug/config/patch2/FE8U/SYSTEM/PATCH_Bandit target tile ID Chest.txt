@@ -1,0 +1,16 @@
+NAME=盗賊のターゲットになるタイルID: 宝箱
+NAME.en=Bandit target tile ID: Chest
+NAME.zh=Bandit target tile ID: Chest
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x3C02C
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、宝箱(TileID=0x21)が指定されています。
+INFO.en=The default is Bridge (TileID=0x21).
+INFO.zh=The default is Bridge (TileID=0x21).
+DEFAULT=0x21

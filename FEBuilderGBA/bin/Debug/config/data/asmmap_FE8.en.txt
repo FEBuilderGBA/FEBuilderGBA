@@ -13022,3 +13022,5 @@ r3=X tile position of menu of right	{U}
 0203E0FE	CurrentBattleBG	{U}
 0804CCEC	StartMoveUnitDeathBlend1	{J}
 0804BF4C	StartMoveUnitDeathBlend1	{U}
+080944C4	DrawColumnByUnitMenu	{J}
+080921CC	DrawColumnByUnitMenu	{U}

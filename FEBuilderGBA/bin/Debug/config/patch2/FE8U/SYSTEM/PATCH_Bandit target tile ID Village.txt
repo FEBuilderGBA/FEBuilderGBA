@@ -1,0 +1,16 @@
+NAME=盗賊のターゲットになるタイルID: 村
+NAME.en=Bandit target tile ID: Village
+NAME.zh=Bandit target tile ID: Village
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x3C034
+ADDRESS_TYPE=TILE
+AUTHOR=7743
+
+INFO=ディフォルトは、村(TileID=0x03)が指定されています。\r\n注意:0x21 宝箱より大きい値を指定してはいけません。
+INFO.en=The default is Village (TileID=0x03).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+INFO.zh=The default is Village (TileID=0x03).\r\nNote: Do not specify a value greater than the treasure chest 0x21.
+DEFAULT=0x3

@@ -1,0 +1,11 @@
+NAME=魔王のデータ領域をカットしてリビルド領域に回す
+NAME.en=Clear the Demon King's data area and turn it to the rebuild area.
+
+PATCHED_IF:0x848CF0=0x00 0x00 0x00 0x00
+
+ASMMAP=false //このパッチは既存の領域を消すパッチなので、ASMMAPに含めてはいけません
+
+TYPE=BIN
+CLEAR:0x848CF0:0xD24C=0x848CF0  //魔王関係データを全部消す
+
+INFO=あなたの改造作品が魔王のアニメーションを利用しない場合、魔王のデータ領域をまるごと潰して、リビルド時にデータを格納する領域に回すことができます。\r\n53836バイトほど追加で確保できます。\r\nこのパッチを使う場合、Class:0x66(DeamonKing)は利用てきなくなります。
