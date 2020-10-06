@@ -139,8 +139,29 @@ namespace FEBuilderGBA
         }
         public static void MakeVarsIDArray(List<UseValsID> list)
         {
+            string infobase = R._("死亡セリフ");
+
             InputFormRef InputFormRef = Init(null);
-            UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 6 });
+            List<uint> tracelist = new List<uint>();
+            uint haiku_addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, haiku_addr += InputFormRef.BlockSize)
+            {
+                uint unitid = Program.ROM.u8(haiku_addr + 0);
+
+                string info = infobase + " " + UnitForm.GetUnitName(unitid);
+                uint textid = Program.ROM.u16(haiku_addr + 6);
+
+                if (textid <= 0)
+                {
+                    uint event_addr = Program.ROM.p32(haiku_addr + 8);
+                    EventCondForm.MakeVarsIDArrayByEventAddress(list, event_addr, info, tracelist);
+                }
+                else
+                {
+                    UseValsID.AppendTextID(list, FELint.Type.HAIKU, haiku_addr, info, textid, i);
+                }
+            }
+//            UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 6 });
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {

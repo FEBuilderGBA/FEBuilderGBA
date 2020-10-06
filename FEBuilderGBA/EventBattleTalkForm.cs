@@ -149,15 +149,36 @@ namespace FEBuilderGBA
         }
         public static void MakeVarsIDArray(List<UseValsID> list)
         {
+            string infobase = R._("交戦会話");
+
             InputFormRef InputFormRef = Init(null);
-            UseValsID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 8 });
+            List<uint> tracelist = new List<uint>();
+            uint haiku_addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, haiku_addr += InputFormRef.BlockSize)
+            {
+                uint unitid = Program.ROM.u8(haiku_addr + 0);
+                uint unitid2 = Program.ROM.u8(haiku_addr + 2);
+
+                string info = infobase + " " + UnitForm.GetUnitName(unitid) + " " + UnitForm.GetUnitName(unitid2);
+                uint textid = Program.ROM.u16(haiku_addr + 8);
+
+                if (textid <= 0)
+                {
+                    uint event_addr = Program.ROM.p32(haiku_addr + 12);
+                    EventCondForm.MakeVarsIDArrayByEventAddress(list, event_addr, info, tracelist);
+                }
+                else
+                {
+                    UseValsID.AppendTextID(list, FELint.Type.BATTTLE_TALK, haiku_addr, info, textid, i);
+                }
+            }
+
+//            UseValsID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 8 });
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {
-            {
-                InputFormRef InputFormRef = Init(null);
-                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 6, 4);
-            }
+            InputFormRef InputFormRef = Init(null);
+            UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 6, 4);
         }
     }
 }
