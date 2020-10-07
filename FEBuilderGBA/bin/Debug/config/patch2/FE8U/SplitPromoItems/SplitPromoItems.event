@@ -1,0 +1,141 @@
+#ifdef _FE8_
+#ifndef SPLIT_PROMO_ITEMS
+
+#include "FE8 Definitions.txt"
+
+PUSH
+ORG $CC5F6
+SHORT 0x46C0 //nop
+jumpToHack(SplitPromoItems)
+ORG $CC5DE
+SHORT 0x46C0 //nop
+jumpToHack(SplitPromoItemsPrep)
+POP
+
+#include "SplitPromoItems.lyn.event"
+#include "SplitPromoPrepScreen.lyn.event"
+
+
+#define PromoItemEntry(itemID,promoList) "BYTE itemID 0 0 0; POIN promoList"
+#define PromoItemsEnd "WORD 0 0"
+
+ALIGN 4
+PromoItemsList:
+PromoItemEntry(HeroCrest,HeroCrestPromoList)
+PromoItemEntry(KnightCrest,KnightCrestPromoList)
+PromoItemEntry(OrionsBolt,OrionsBoltPromoList)
+PromoItemEntry(ElysianWhip,ElysianWhipPromoList)
+PromoItemEntry(GuidingRing,GuidingRingPromoList)
+PromoItemEntry(OceanSeal,OceanSealPromoList)
+PromoItemEntry(SolarBracelet,SolarBracePromoList)
+PromoItemEntry(LunarBracelet,LunarBracePromoList)
+PromoItemsEnd
+
+ALIGN 4
+SplitPromoItemsList:
+BYTE MasterSeal 
+BYTE 0
+
+#define PromoListEntry(baseClass,promoClass) "BYTE baseClass promoClass"
+#define PromoListEnd "SHORT 0"
+
+ALIGN 4
+HeroCrestPromoList:
+PromoListEntry(Mercenary,Hero)
+PromoListEntry(Mercenary_F,Hero_F)
+PromoListEntry(Myrmidon,Swordmaster)
+PromoListEntry(Myrmidon_F,Swordmaster_F)
+PromoListEntry(Fighter,Hero)
+PromoListEntry(Journeyman_2,Warrior)
+
+PromoListEntry(Cavalier,Paladin)
+PromoListEntry(Cavalier_F,Paladin_F)
+PromoListEntry(Knight,General)
+PromoListEntry(Knight_F,General_F)
+PromoListEnd
+
+ALIGN 4
+KnightCrestPromoList:
+PromoListEntry(Cavalier,GreatKnight)
+PromoListEntry(Cavalier_F,GreatKnight_F)
+PromoListEntry(Knight,GreatKnight)
+PromoListEntry(Knight_F,GreatKnight_F)
+PromoListEntry(Recruit_2,Paladin)
+
+PromoListEntry(Archer,Ranger)
+PromoListEntry(Archer_F,Ranger_F)
+PromoListEntry(PegasusKnight,WyvernKnight_F)
+PromoListEntry(WyvernRider,WyvernKnight)
+PromoListEntry(WyvernRider_F,WyvernKnight_F)
+PromoListEntry(Troubadour,Valkyrie)
+PromoListEntry(Mage,MageKnight)
+PromoListEntry(Mage_F,MageKnight_F)
+PromoListEntry(Priest,MageKnight)
+PromoListEntry(Cleric,Valkyrie)
+PromoListEnd
+
+ALIGN 4
+OrionsBoltPromoList:
+PromoListEntry(Archer,Sniper)
+PromoListEntry(Archer_F,Sniper_F)
+
+PromoListEntry(Mercenary,Ranger)
+PromoListEntry(Mercenary_F,Ranger_F)
+PromoListEntry(Fighter,Warrior)
+PromoListEntry(Brigand,Warrior)
+PromoListEntry(Pirate,Warrior)
+PromoListEnd
+
+ALIGN 4
+ElysianWhipPromoList:
+PromoListEntry(PegasusKnight,FalcoKnight)
+PromoListEntry(WyvernRider,WyvernLord)
+PromoListEntry(WyvernRider_F,WyvernLord_F)
+PromoListEntry(Thief,Rogue)
+PromoListEnd
+
+ALIGN 4
+GuidingRingPromoList:
+PromoListEntry(Priest,Bishop)
+PromoListEntry(Cleric,Bishop_F)
+PromoListEntry(Mage,Sage)
+PromoListEntry(Mage_F,Sage_F)
+PromoListEntry(Monk,Bishop)
+PromoListEntry(Shaman,Druid)
+PromoListEntry(Shaman_F,Druid_F)
+PromoListEntry(Troubadour,Valkyrie)
+PromoListEntry(Pupil_2,Sage)
+
+
+PromoListEnd
+
+ALIGN 4
+OceanSealPromoList:
+PromoListEntry(Brigand,Berserker)
+PromoListEntry(Pirate,Berserker)
+PromoListEntry(Thief,Assassin)
+
+PromoListEntry(Myrmidon,Assassin)
+PromoListEntry(Myrmidon_F,Assassin_F)
+PromoListEntry(Journeyman_2,Journeyman_3)
+PromoListEntry(Recruit_2,Recruit_3)
+PromoListEntry(Pupil_2,Pupil_3)
+PromoListEntry(Shaman,Summoner)
+PromoListEntry(Shaman_F,Summoner_F)
+PromoListEntry(Monk,Sage)
+PromoListEnd
+
+ALIGN 4
+LunarBracePromoList:
+PromoListEntry(EirikaLord,EirikaMasterLord)
+PromoListEnd
+
+ALIGN 4
+SolarBracePromoList:
+PromoListEntry(EphraimLord,EphraimMasterLord)
+PromoListEnd
+
+#endif // SPLIT_PROMO_ITEMS
+#else
+ERROR Split Promo Items is only for FE8!
+#endif // _FE8_

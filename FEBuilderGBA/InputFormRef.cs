@@ -2808,6 +2808,23 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "SMEPROMOLIST")
+            {//smeのCC分岐
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = SMEPromoListForm.GetNames(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "SMEPROMOLIST", new string[] { });
+                };
+                return;
+            }
             
             
 #if DEBUG            
@@ -3069,6 +3086,12 @@ namespace FEBuilderGBA
                 alllocQMessage = R._("新規に、専用武器のデータを割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。専用武器を割り振ってください。");
                 alloc = new byte[] { 0x01, 0x01, 0x02, 0x03, 0x04, 0x05, 0x00 };
+            }
+            else if (arg1 == "SMEPROMOLIST")
+            {
+                alllocQMessage = R._("新規に、Promotionのデータを割り振りますか？");
+                alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
+                alloc = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00 };
             }
             else
             {//リンクミス.
@@ -3789,6 +3812,17 @@ namespace FEBuilderGBA
                 }
 
                 VennouWeaponLockForm f = (VennouWeaponLockForm)InputFormRef.JumpForm<VennouWeaponLockForm>(U.NOT_FOUND);
+                f.JumpTo(value);
+            }
+            else if (linktype == "SMEPROMOLIST")
+            {//smeのCC分岐
+                value = CheckAndAlloc(src_object, value, linktype);
+                if (value == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                SMEPromoListForm f = (SMEPromoListForm)InputFormRef.JumpForm<SMEPromoListForm>(U.NOT_FOUND);
                 f.JumpTo(value);
             }
             else if (linktype == "MOVECOST1")

@@ -2064,6 +2064,12 @@
     <Compile Include="ToolAutomaticRecoveryROMHeaderForm.Designer.cs">
       <DependentUpon>ToolAutomaticRecoveryROMHeaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SMEPromoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMEPromoListForm.Designer.cs">
+      <DependentUpon>SMEPromoListForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3054,6 +3060,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolAutomaticRecoveryROMHeaderForm.resx">
       <DependentUpon>ToolAutomaticRecoveryROMHeaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMEPromoListForm.resx">
+      <DependentUpon>SMEPromoListForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

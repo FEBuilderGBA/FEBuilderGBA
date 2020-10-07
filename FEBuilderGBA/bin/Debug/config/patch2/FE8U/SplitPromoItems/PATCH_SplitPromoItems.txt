@@ -1,0 +1,9 @@
+NAME=Split Promotion Items(Installer)
+TYPE=EA
+EA=SplitPromoItems.event
+PATCHED_IF:0xCC5F6=0xC0 0x46
+
+AUTHOR=SME https://feuniverse.us/t/smes-asm-and-miscellany/4445/48
+INFO=CCアイテムごとにCCするクラスをもっと細かく分岐させます。\r\nDSFEのElysianWhipと同様に、さまざまなプロモーションアイテムを使用すると、使用時にさまざまなクラスになります。\r\nまた、バニラFE8のCC分岐の機能も保持しているため、マスターシールなどのアイテムに選択肢を与えたり、プロモーションアイテムを分けたりして、どちらか一方を強制的に選択することができます。
+INFO.en=For each Promotion item, branch the promotion class into smaller pieces.\r\nAllows the usage of different promo items to result in different classes when used, similar to the Elysian Whip in DSFE.\r\nIt also retains the function of vanilla FE8 split promotions, so you can have items like the Master Seal give a choice and separate promotion items to force one or the other pick.
+INFO.zh=For each Promotion item, branch the promotion class into smaller pieces.\r\nAllows the usage of different promo items to result in different classes when used, similar to the Elysian Whip in DSFE.\r\nIt also retains the function of vanilla FE8 split promotions, so you can have items like the Master Seal give a choice and separate promotion items to force one or the other pick.

@@ -7281,6 +7281,14 @@ namespace FEBuilderGBA
             }
             return data.ToArray();
         }
+        public static string ToString_StringBuilder(StringBuilder sb)
+        {
+            if (sb.Length <= 0)
+            {
+                return "";
+            }
+            return sb.ToString(1, sb.Length - 1);
+        }
     }
 }
 
