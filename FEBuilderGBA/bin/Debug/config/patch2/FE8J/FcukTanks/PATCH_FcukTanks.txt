@@ -1,12 +1,12 @@
 NAME=ダメージを与えられない場合、攻撃しないように戦闘AIを修正する
 NAME.en=Change combat AI to NOT attack If can't damage.
 
-INFO=FE3,FE4の戦闘AIのように、攻撃してダメージが与えられない場合は、相手を攻撃しないように修正します。
-INFO.en=If the damage is not dealt by attacking like FE3, FE4 battle AI, it will be modified to not attack the opponent.
+INFO=FE3,FE4の戦闘AIのように、攻撃してダメージが与えられない場合は、相手を攻撃しないように修正します。\r\n注意:このパッチを使うと敵の弓兵がバリスタを利用しなくなるというバグが報告されています。
+INFO.en=If the damage is not dealt by attacking like FE3, FE4 battle AI, it will be modified to not attack the opponent.\r\nNote: Bug has been reported that uses this patch to prevent enemy archers from using Ballista.
 AUTHOR=Stan https://feuniverse.us/t/fe8u-stans-asm-stuff/2376/27
 TYPE=EA
 EA=FcukTanks.event
 
 PATCHED_IF:0x03DEA0=0x00 0x4B 0x18 0x47
 NAME.zh=如果无法造成伤害，请修改战斗AI以使其不发动攻击。
-INFO.zh=如果不是像FE3，FE4战斗AI这样的攻击造成伤害，则将其修改为不攻击对手。
+INFO.zh=如果不是像FE3，FE4战斗AI这样的攻击造成伤害，则将其修改为不攻击对手。\r\nNote: Bug has been reported that uses this patch to prevent enemy archers from using Ballista.

@@ -197,14 +197,14 @@ namespace FEBuilderGBA
                 , this.MapEditConf[id].config_plist
                 );
 
-            //霧なし.
-            PaletteTypeCombo.SelectedIndex = 0;
 
             //左上のを選択する.
             MAPCHIPLISTMouseCursor.X = 0;
             MAPCHIPLISTMouseCursor.Y = 0;
             MAPCHIPLIST_MouseDown(null, null);
 
+            //霧なしで再描画
+            U.ForceUpdate(PaletteTypeCombo, 0);
         }
         void ReloadMap_Obj_Config_Palette(uint obj_plist, uint palette_plist,uint config_plist)
         {
