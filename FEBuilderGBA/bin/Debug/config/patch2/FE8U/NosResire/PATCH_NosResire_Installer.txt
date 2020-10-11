@@ -1,0 +1,9 @@
+NAME=NosResire
+TYPE=EA
+EA=NosResire.event
+AUTHOR=SME https://feuniverse.us/t/smes-asm-and-miscellany/4445/55
+PATCHED_IF:0x5F568=0x00 0x4B 0x18 0x47
+
+INFO=武器にリザイアの魔法アニメーションがあり、武器タイプとして光または杖の場合は、明るいパレットが魔法モーションとして使用されます。\r\nそれ以外の場合は、標準の闇魔法のリザイアのパレットを使用します。
+INFO.en=If a weapon has the Nosferatu spell anim and has Light or Staff as its weapon type, it will use the lighter palette. Otherwise, it will use the standard Nosferatu palette.
+INFO.zh=If a weapon has the Nosferatu spell anim and has Light or Staff as its weapon type, it will use the lighter palette. Otherwise, it will use the standard Nosferatu palette.

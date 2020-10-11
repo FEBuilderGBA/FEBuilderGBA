@@ -41,8 +41,11 @@ namespace FEBuilderGBA
         public uint unit_icon_npc_palette_address() { return 0x5c7380; } // ユニット(友軍)のパレットのアドレス
         public uint unit_icon_gray_palette_address() { return 0x5c73A0; } // ユニット(グレー))のパレットの開始位置
         public uint unit_icon_four_palette_address() { return 0x5c73C0; } // ユニット(4軍))のパレットの開始位置
+        public uint unit_icon_lightrune_palette_address() { return 0x5C73E0; } // ユニット(光の結界)のパレットの開始位置
+        public uint unit_icon_sepia_palette_address() { return 0x5C7400; } // ユニット(セピア)のパレットの開始位置
 
         public uint unit_move_icon_pointer() { return 0x07B998; } // ユニット移動アイコンの開始位置
+        public uint lightrune_uniticon_id() { return 0x66; } // ユニット(光の結界)のユニットアイコンのID
         public uint map_setting_pointer() { return 0x0BAB1C; }  // マップ設定の開始位置
         public uint map_setting_datasize() { return 148; } //マップ設定のデータサイズ
         public uint map_setting_event_plist_pos() { return 116; } //event plistの場所 

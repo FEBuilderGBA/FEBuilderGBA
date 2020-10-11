@@ -9,3 +9,6 @@ TYPE=BIN
 CLEAR:0x7F4798:0xD24C=0x7F4798  //魔王関係データを全部消す
 
 INFO=あなたの改造作品が魔王のアニメーションを利用しない場合、魔王のデータ領域をまるごと潰して、リビルド時にデータを格納する領域に回すことができます。\r\n53836バイトほど追加で確保できます。\r\nこのパッチを使う場合、Class:0x66(DeamonKing)は利用てきなくなります。
+INFO.en=If your mod doesn't take advantage of the Demon King's animation, you can crush the Demon King's entire data area and turn it into an area to store data when rebuilding.\r\nYou can reserve an additional 53836 bytes.\r\nIf you use this patch, Class: 0x66 (Deamon King) will not be available.
+NAME.zh=剪切恶魔之王的数据区域并将其变成重建区域。
+INFO.zh=如果您的国防部没有利用“恶魔王”的动画，则可以粉碎整个“恶魔王”的数据区域，并在重建时将其变成存储数据的区域。\r\n您可以保留额外的53836字节。\r\n如果您使用此修补程序，则将无法使用Class：0x66（Deamon King）。

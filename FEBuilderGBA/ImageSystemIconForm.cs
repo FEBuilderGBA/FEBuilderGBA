@@ -67,6 +67,7 @@ namespace FEBuilderGBA
             else
             {//FE6
                 systemmenu_goal_panel.Hide();
+                WMTabControl.TabPages.Remove(SystemIcon2tabPage);
             }
             WMTabControl.TabPages.Remove(tabPage3);
 
@@ -136,8 +137,14 @@ namespace FEBuilderGBA
             unit_icon_four_PALETTE.Value = Program.ROM.RomInfo.unit_icon_four_palette_address();
             unit_icon_gray_PALETTE.Value = Program.ROM.RomInfo.unit_icon_gray_palette_address();
             item_icon_PALETTE.Value = Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer());
-//                    public uint system_weapon_icon_palette_pointer() { return 0x91178; }//剣　斧　弓などの武器属性アイコン集のパレット
 
+            if (Program.ROM.RomInfo.version() >= 7)
+            {
+                unit_icon_lightrune_Picture.Image = DrawUnits2(5, Program.ROM.RomInfo.lightrune_uniticon_id());
+                unit_icon_sepia_Picture.Image = DrawUnits(6);
+                unit_icon_lightrune_PALETTE.Value = Program.ROM.RomInfo.unit_icon_lightrune_palette_address();
+                unit_icon_sepia_PALETTE.Value = Program.ROM.RomInfo.unit_icon_sepia_palette_address();
+            }
         }
 
         const int ICON_COUNT = 10;
@@ -154,6 +161,27 @@ namespace FEBuilderGBA
                 if (ImageUtil.IsBlankBitmap(a))
                 {
                     a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i + 1) * 2, palette_type, true);
+                }
+                ImageUtil.BitBlt(bitmap, i * 16, 0, 16, 16, a, 0, 0);
+            }
+            return bitmap;
+        }
+        Bitmap DrawUnits2(int palette_type, uint icon_id)
+        {
+            Bitmap first = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(icon_id), palette_type, true);
+            Bitmap bitmap = ImageUtil.Blank(16 * ICON_COUNT, 16, first);
+            ImageUtil.BitBlt(bitmap, 0, 0, 16, 16, first, 0, 0);
+
+            for (int i = 1; i < ICON_COUNT; i++)
+            {
+                Bitmap a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i), palette_type, true);
+                if (bitmap == null)
+                {
+                    bitmap = ImageUtil.Blank(16 * ICON_COUNT, 16, a);
+                }
+                if (ImageUtil.IsBlankBitmap(a))
+                {
+                    a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i) * 2, palette_type, true);
                 }
                 ImageUtil.BitBlt(bitmap, i * 16, 0, 16, 16, a, 0, 0);
             }

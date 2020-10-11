@@ -170,6 +170,14 @@ namespace FEBuilderGBA
             {//グレー
                 palette = Program.ROM.RomInfo.unit_icon_gray_palette_address();
             }
+            else if (palette_type == 5)
+            {//光の結界
+                palette = Program.ROM.RomInfo.unit_icon_lightrune_palette_address();
+            }
+            else if (palette_type == 6)
+            {//セピア
+                palette = Program.ROM.RomInfo.unit_icon_sepia_palette_address();
+            }
             else 
             {//自軍
                palette = Program.ROM.RomInfo.unit_icon_palette_address();

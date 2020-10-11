@@ -8409,7 +8409,7 @@ r3=X tile position of menu of right	{U}
 08A26E90	&LZ77	Something small compressed data	106	{J}
 08A27044	&LZ77	Something small compressed data	107	{J}
 085B0F2C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{U}
-080DA2F4	&PALETTE	Something's palette	129	{U}
+080DA2F4	:080DA313	Menu tile data	{U}
 080DA334	&PALETTE	Something's palette	130	{U}
 080DA354	&PALETTE	Something's palette	131	{U}
 080DA314	&PALETTE	Something's palette	132	{U}
@@ -8423,7 +8423,7 @@ r3=X tile position of menu of right	{U}
 085B6C14	&PALETTE	Something's palette	140	{U}
 085DD518	&LZ77	I think that it is an image of a snowstorm	{U}
 085DB10C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{J}
-080DF2E0	&PALETTE	Something's palette	129	{J}
+080DF2E0	:080DF2FF	Menu tile data	{J}
 080DF320	&PALETTE	Something's palette	130	{J}
 080DF340	&PALETTE	Something's palette	131	{J}
 080DF300	&PALETTE	Something's palette	132	{J}
@@ -13024,3 +13024,15 @@ r3=X tile position of menu of right	{U}
 0804BF4C	StartMoveUnitDeathBlend1	{U}
 080944C4	DrawColumnByUnitMenu	{J}
 080921CC	DrawColumnByUnitMenu	{U}
+08078960	Start_ekrDragonTunkBegin	{J}
+08076540	Start_ekrDragonTunkBegin	{U}
+08079ED0	Start_ekrWhiteINOUT	{J}
+08070568	Start_ekrWhiteINOUT	{U}
+08079984	Start_ekrDragonTunkBG_Base	{J}
+08077560	Start_ekrDragonTunkBG_Base	{U}
+08079AFC	LoadDemonKingTSATogSomeTSABuffer	{J}
+080776D8	LoadDemonKingTSATogSomeTSABuffer	{U}
+08077CD4	Start_efxTriangleQUAKE	{J}
+0807589C	Start_efxTriangleQUAKE	{U}
+0807293C	Start_ekrDragonQuake	{J}
+0807038C	Start_ekrDragonQuake	{U}

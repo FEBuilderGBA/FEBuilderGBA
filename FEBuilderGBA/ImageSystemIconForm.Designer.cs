@@ -96,6 +96,19 @@
             this.unit_icon_Import = new System.Windows.Forms.Button();
             this.unit_icon_Label = new System.Windows.Forms.Label();
             this.unit_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
+            this.SystemIcon2tabPage = new System.Windows.Forms.TabPage();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.unit_icon_sepia_Export = new System.Windows.Forms.Button();
+            this.unit_icon_sepia_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.unit_icon_sepia_Import = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.unit_icon_sepia_PALETTE = new System.Windows.Forms.NumericUpDown();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.unit_icon_lightrune_Export = new System.Windows.Forms.Button();
+            this.unit_icon_lightrune_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.unit_icon_lightrune_Import = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.unit_icon_lightrune_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.X_SystemMenuPaletteLink = new System.Windows.Forms.Label();
             this.X_StatusBackgroundLink = new System.Windows.Forms.Label();
@@ -205,6 +218,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_PALETTE)).BeginInit();
+            this.SystemIcon2tabPage.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_sepia_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_sepia_PALETTE)).BeginInit();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_lightrune_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_lightrune_PALETTE)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_ZIMAGE)).BeginInit();
@@ -260,6 +280,7 @@
             // 
             this.WMTabControl.Controls.Add(this.tabPage1);
             this.WMTabControl.Controls.Add(this.tabPage2);
+            this.WMTabControl.Controls.Add(this.SystemIcon2tabPage);
             this.WMTabControl.Controls.Add(this.tabPage3);
             this.WMTabControl.Controls.Add(this.tabPage4);
             this.WMTabControl.Controls.Add(this.tabPage5);
@@ -1090,6 +1111,161 @@
             this.unit_icon_PALETTE.Name = "unit_icon_PALETTE";
             this.unit_icon_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.unit_icon_PALETTE.TabIndex = 126;
+            // 
+            // SystemIcon2tabPage
+            // 
+            this.SystemIcon2tabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.SystemIcon2tabPage.Controls.Add(this.panel13);
+            this.SystemIcon2tabPage.Controls.Add(this.panel14);
+            this.SystemIcon2tabPage.Location = new System.Drawing.Point(4, 28);
+            this.SystemIcon2tabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.SystemIcon2tabPage.Name = "SystemIcon2tabPage";
+            this.SystemIcon2tabPage.Padding = new System.Windows.Forms.Padding(4);
+            this.SystemIcon2tabPage.Size = new System.Drawing.Size(930, 572);
+            this.SystemIcon2tabPage.TabIndex = 9;
+            this.SystemIcon2tabPage.Text = "システムパレット2";
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.unit_icon_sepia_Export);
+            this.panel13.Controls.Add(this.unit_icon_sepia_Picture);
+            this.panel13.Controls.Add(this.unit_icon_sepia_Import);
+            this.panel13.Controls.Add(this.label5);
+            this.panel13.Controls.Add(this.unit_icon_sepia_PALETTE);
+            this.panel13.Location = new System.Drawing.Point(7, 91);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(914, 75);
+            this.panel13.TabIndex = 133;
+            // 
+            // unit_icon_sepia_Export
+            // 
+            this.unit_icon_sepia_Export.Location = new System.Drawing.Point(210, 41);
+            this.unit_icon_sepia_Export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.unit_icon_sepia_Export.Name = "unit_icon_sepia_Export";
+            this.unit_icon_sepia_Export.Size = new System.Drawing.Size(161, 30);
+            this.unit_icon_sepia_Export.TabIndex = 124;
+            this.unit_icon_sepia_Export.Text = "画像取出";
+            this.unit_icon_sepia_Export.UseVisualStyleBackColor = true;
+            // 
+            // unit_icon_sepia_Picture
+            // 
+            this.unit_icon_sepia_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_sepia_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_sepia_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_sepia_Picture.Name = "unit_icon_sepia_Picture";
+            this.unit_icon_sepia_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_sepia_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_sepia_Picture.TabIndex = 122;
+            this.unit_icon_sepia_Picture.TabStop = false;
+            // 
+            // unit_icon_sepia_Import
+            // 
+            this.unit_icon_sepia_Import.Location = new System.Drawing.Point(4, 42);
+            this.unit_icon_sepia_Import.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.unit_icon_sepia_Import.Name = "unit_icon_sepia_Import";
+            this.unit_icon_sepia_Import.Size = new System.Drawing.Size(199, 30);
+            this.unit_icon_sepia_Import.TabIndex = 123;
+            this.unit_icon_sepia_Import.Text = "画像からパレット読込";
+            this.unit_icon_sepia_Import.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(-1, -1);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(242, 31);
+            this.label5.TabIndex = 125;
+            this.label5.Text = "セピア";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // unit_icon_sepia_PALETTE
+            // 
+            this.unit_icon_sepia_PALETTE.Enabled = false;
+            this.unit_icon_sepia_PALETTE.Hexadecimal = true;
+            this.unit_icon_sepia_PALETTE.Location = new System.Drawing.Point(247, -1);
+            this.unit_icon_sepia_PALETTE.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_sepia_PALETTE.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.unit_icon_sepia_PALETTE.Name = "unit_icon_sepia_PALETTE";
+            this.unit_icon_sepia_PALETTE.Size = new System.Drawing.Size(120, 25);
+            this.unit_icon_sepia_PALETTE.TabIndex = 126;
+            // 
+            // panel14
+            // 
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.unit_icon_lightrune_Export);
+            this.panel14.Controls.Add(this.unit_icon_lightrune_Picture);
+            this.panel14.Controls.Add(this.unit_icon_lightrune_Import);
+            this.panel14.Controls.Add(this.label6);
+            this.panel14.Controls.Add(this.unit_icon_lightrune_PALETTE);
+            this.panel14.Location = new System.Drawing.Point(7, 11);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(914, 75);
+            this.panel14.TabIndex = 132;
+            // 
+            // unit_icon_lightrune_Export
+            // 
+            this.unit_icon_lightrune_Export.Location = new System.Drawing.Point(210, 40);
+            this.unit_icon_lightrune_Export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.unit_icon_lightrune_Export.Name = "unit_icon_lightrune_Export";
+            this.unit_icon_lightrune_Export.Size = new System.Drawing.Size(161, 30);
+            this.unit_icon_lightrune_Export.TabIndex = 124;
+            this.unit_icon_lightrune_Export.Text = "画像取出";
+            this.unit_icon_lightrune_Export.UseVisualStyleBackColor = true;
+            // 
+            // unit_icon_lightrune_Picture
+            // 
+            this.unit_icon_lightrune_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_lightrune_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_lightrune_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_lightrune_Picture.Name = "unit_icon_lightrune_Picture";
+            this.unit_icon_lightrune_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_lightrune_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_lightrune_Picture.TabIndex = 122;
+            this.unit_icon_lightrune_Picture.TabStop = false;
+            // 
+            // unit_icon_lightrune_Import
+            // 
+            this.unit_icon_lightrune_Import.Location = new System.Drawing.Point(4, 41);
+            this.unit_icon_lightrune_Import.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.unit_icon_lightrune_Import.Name = "unit_icon_lightrune_Import";
+            this.unit_icon_lightrune_Import.Size = new System.Drawing.Size(199, 30);
+            this.unit_icon_lightrune_Import.TabIndex = 123;
+            this.unit_icon_lightrune_Import.Text = "画像からパレット読込";
+            this.unit_icon_lightrune_Import.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(-1, -1);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(242, 31);
+            this.label6.TabIndex = 125;
+            this.label6.Text = "光の結界";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // unit_icon_lightrune_PALETTE
+            // 
+            this.unit_icon_lightrune_PALETTE.Enabled = false;
+            this.unit_icon_lightrune_PALETTE.Hexadecimal = true;
+            this.unit_icon_lightrune_PALETTE.Location = new System.Drawing.Point(247, 0);
+            this.unit_icon_lightrune_PALETTE.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_lightrune_PALETTE.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.unit_icon_lightrune_PALETTE.Name = "unit_icon_lightrune_PALETTE";
+            this.unit_icon_lightrune_PALETTE.Size = new System.Drawing.Size(120, 25);
+            this.unit_icon_lightrune_PALETTE.TabIndex = 126;
             // 
             // tabPage3
             // 
@@ -2054,6 +2230,13 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_PALETTE)).EndInit();
+            this.SystemIcon2tabPage.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_sepia_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_sepia_PALETTE)).EndInit();
+            this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_lightrune_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_lightrune_PALETTE)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -2243,5 +2426,18 @@
         private SystemIconPictureBox systemIconPictureBox3;
         private System.Windows.Forms.Label X_Internet;
         private System.Windows.Forms.Label X_SystemMenuPaletteLink;
+        private System.Windows.Forms.TabPage SystemIcon2tabPage;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button unit_icon_sepia_Export;
+        private InterpolatedPictureBox unit_icon_sepia_Picture;
+        private System.Windows.Forms.Button unit_icon_sepia_Import;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown unit_icon_sepia_PALETTE;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button unit_icon_lightrune_Export;
+        private InterpolatedPictureBox unit_icon_lightrune_Picture;
+        private System.Windows.Forms.Button unit_icon_lightrune_Import;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown unit_icon_lightrune_PALETTE;
     }
 }

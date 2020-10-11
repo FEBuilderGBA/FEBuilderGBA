@@ -1,0 +1,44 @@
+PUSH
+ORG $16E28
+SHORT 0x46C0 0x46C0 0x46C0 0x46C0 0x46C0 0x46C0 0x46C0 0x46C0
+SHORT 0x0080
+SHORT 0x1840
+ORG $16E4C
+POIN WeaponTypeTextIDArray
+POP
+
+ALIGN 4
+WeaponTypeTextIDArray:
+WORD 0x505    //Fire 0 icon 70
+WORD 0x506    //Water 1 71
+WORD 0x507    //FakeGrass 2 (LINT wants axe animations)
+WORD 0x508    //Electric 3
+WORD 0x509    //StaffIce 4 (no weapon details)
+WORD 0x50A    //Fighting 5
+WORD 0x50B    //Poison 6
+WORD 0x50C    //Ground 7
+WORD 0x50D    //ItemFlying 8
+WORD 0x50E    //BllstaPsychic 9 (no weapon details)
+WORD 0x50F    //Rock A
+WORD 0x208    //Monster B (cannot examine once this is inserted)
+WORD 0xCD    //Ring C (no weapon details)
+WORD 0xCD    //Ghost D
+WORD 0xCD    //Normal E
+WORD 0xCD    //Bug F icon 7F
+WORD 0xCD    //Dragon 10
+WORD 0xCD    //Dark 11
+WORD 0xCD    //Steel 12
+WORD 0xCD    //Fairy 13 (dunno if should use tbh)
+WORD 0xCD    //Grass 14
+WORD 0xCD    //Ice 15 icon 85 (silver card)
+WORD 0xCD    //Flying 16
+WORD 0xCD    //Psychic 17
+WORD 0xCD    //Dark 18 
+WORD 0xCD    //Steel 19
+WORD 0xCD    //Fairy 1A
+WORD 0xCD    //Psychic 1B (duplicates below)
+WORD 0xCD    //Psychic 1C
+WORD 0xCD    //Psychic 1D
+WORD 0xCD    //Psychic 1E
+WORD 0xCD    //Psychic 1F
+WORD 0x0    //Terminator just in case ?

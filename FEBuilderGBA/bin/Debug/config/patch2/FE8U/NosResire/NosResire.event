@@ -1,0 +1,13 @@
+PUSH
+	ORG $5F568
+	jumpToHack(NosResirePal1Func)
+	ORG $5F4E4
+	jumpToHack(NosResirePal2Func)
+POP
+
+
+#include "NosResire.lyn.event"
+
+ResirePalette: //Palette by Tequila
+#incbin "Resire.pal.bin"
+//#incext Png2Dmp "Resire.png" --palette-only

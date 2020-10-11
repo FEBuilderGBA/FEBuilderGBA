@@ -39,7 +39,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.L_14_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.L_13_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
-            this.L_8_ITEMEFFECT_00ANY = new FEBuilderGBA.TextBoxEx();
             this.L_7_BATTLEANIME_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.L_4_UNITPALETTE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.W10 = new System.Windows.Forms.NumericUpDown();
@@ -77,7 +76,7 @@
             this.J_13_TERRAINBATTLE = new System.Windows.Forms.Label();
             this.J_10 = new System.Windows.Forms.Label();
             this.W8 = new System.Windows.Forms.NumericUpDown();
-            this.J_8_ITEMEFFECT = new System.Windows.Forms.Label();
+            this.J_8 = new System.Windows.Forms.Label();
             this.B7 = new System.Windows.Forms.NumericUpDown();
             this.J_7_BATTLEANIME = new System.Windows.Forms.Label();
             this.B6 = new System.Windows.Forms.NumericUpDown();
@@ -107,6 +106,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.L_8_COMBO = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_14_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_13_TERRAINBATTLEICON_PLUS1)).BeginInit();
@@ -143,6 +143,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.L_8_COMBO);
             this.panel2.Controls.Add(this.L_14_TERRAINBATTLEICON_PLUS1);
             this.panel2.Controls.Add(this.L_13_TERRAINBATTLEICON_PLUS1);
             this.panel2.Controls.Add(this.B12);
@@ -153,7 +154,6 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.L_14_TERRAINBATTLE_PLUS1);
             this.panel2.Controls.Add(this.L_13_TERRAINBATTLE_PLUS1);
-            this.panel2.Controls.Add(this.L_8_ITEMEFFECT_00ANY);
             this.panel2.Controls.Add(this.L_7_BATTLEANIME_PLUS1);
             this.panel2.Controls.Add(this.L_4_UNITPALETTE_PLUS1);
             this.panel2.Controls.Add(this.W10);
@@ -166,7 +166,7 @@
             this.panel2.Controls.Add(this.J_13_TERRAINBATTLE);
             this.panel2.Controls.Add(this.J_10);
             this.panel2.Controls.Add(this.W8);
-            this.panel2.Controls.Add(this.J_8_ITEMEFFECT);
+            this.panel2.Controls.Add(this.J_8);
             this.panel2.Controls.Add(this.B7);
             this.panel2.Controls.Add(this.J_7_BATTLEANIME);
             this.panel2.Controls.Add(this.B6);
@@ -253,7 +253,7 @@
             this.L_6_COMBO.Location = new System.Drawing.Point(281, 180);
             this.L_6_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_6_COMBO.Name = "L_6_COMBO";
-            this.L_6_COMBO.Size = new System.Drawing.Size(215, 26);
+            this.L_6_COMBO.Size = new System.Drawing.Size(228, 26);
             this.L_6_COMBO.TabIndex = 4;
             // 
             // B15
@@ -289,7 +289,7 @@
             this.L_14_TERRAINBATTLE_PLUS1.Name = "L_14_TERRAINBATTLE_PLUS1";
             this.L_14_TERRAINBATTLE_PLUS1.Placeholder = "";
             this.L_14_TERRAINBATTLE_PLUS1.ReadOnly = true;
-            this.L_14_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(213, 25);
+            this.L_14_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(228, 25);
             this.L_14_TERRAINBATTLE_PLUS1.TabIndex = 182;
             // 
             // L_13_TERRAINBATTLE_PLUS1
@@ -300,19 +300,8 @@
             this.L_13_TERRAINBATTLE_PLUS1.Name = "L_13_TERRAINBATTLE_PLUS1";
             this.L_13_TERRAINBATTLE_PLUS1.Placeholder = "";
             this.L_13_TERRAINBATTLE_PLUS1.ReadOnly = true;
-            this.L_13_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(213, 25);
+            this.L_13_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(228, 25);
             this.L_13_TERRAINBATTLE_PLUS1.TabIndex = 181;
-            // 
-            // L_8_ITEMEFFECT_00ANY
-            // 
-            this.L_8_ITEMEFFECT_00ANY.ErrorMessage = "";
-            this.L_8_ITEMEFFECT_00ANY.Location = new System.Drawing.Point(281, 244);
-            this.L_8_ITEMEFFECT_00ANY.Margin = new System.Windows.Forms.Padding(2);
-            this.L_8_ITEMEFFECT_00ANY.Name = "L_8_ITEMEFFECT_00ANY";
-            this.L_8_ITEMEFFECT_00ANY.Placeholder = "";
-            this.L_8_ITEMEFFECT_00ANY.ReadOnly = true;
-            this.L_8_ITEMEFFECT_00ANY.Size = new System.Drawing.Size(213, 25);
-            this.L_8_ITEMEFFECT_00ANY.TabIndex = 180;
             // 
             // L_7_BATTLEANIME_PLUS1
             // 
@@ -322,7 +311,7 @@
             this.L_7_BATTLEANIME_PLUS1.Name = "L_7_BATTLEANIME_PLUS1";
             this.L_7_BATTLEANIME_PLUS1.Placeholder = "";
             this.L_7_BATTLEANIME_PLUS1.ReadOnly = true;
-            this.L_7_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(213, 25);
+            this.L_7_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(228, 25);
             this.L_7_BATTLEANIME_PLUS1.TabIndex = 179;
             // 
             // L_4_UNITPALETTE_PLUS1
@@ -333,7 +322,7 @@
             this.L_4_UNITPALETTE_PLUS1.Name = "L_4_UNITPALETTE_PLUS1";
             this.L_4_UNITPALETTE_PLUS1.Placeholder = "";
             this.L_4_UNITPALETTE_PLUS1.ReadOnly = true;
-            this.L_4_UNITPALETTE_PLUS1.Size = new System.Drawing.Size(213, 25);
+            this.L_4_UNITPALETTE_PLUS1.Size = new System.Drawing.Size(228, 25);
             this.L_4_UNITPALETTE_PLUS1.TabIndex = 178;
             // 
             // W10
@@ -785,16 +774,16 @@
             this.W8.Size = new System.Drawing.Size(85, 25);
             this.W8.TabIndex = 6;
             // 
-            // J_8_ITEMEFFECT
+            // J_8
             // 
-            this.J_8_ITEMEFFECT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8_ITEMEFFECT.Location = new System.Drawing.Point(2, 244);
-            this.J_8_ITEMEFFECT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_8_ITEMEFFECT.Name = "J_8_ITEMEFFECT";
-            this.J_8_ITEMEFFECT.Size = new System.Drawing.Size(175, 32);
-            this.J_8_ITEMEFFECT.TabIndex = 160;
-            this.J_8_ITEMEFFECT.Text = "魔法エフェクト";
-            this.J_8_ITEMEFFECT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_8.Location = new System.Drawing.Point(2, 244);
+            this.J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_8.Name = "J_8";
+            this.J_8.Size = new System.Drawing.Size(175, 32);
+            this.J_8.TabIndex = 160;
+            this.J_8.Text = "魔法エフェクト";
+            this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B7
             // 
@@ -857,7 +846,7 @@
             this.L_5_CLASS.Name = "L_5_CLASS";
             this.L_5_CLASS.Placeholder = "";
             this.L_5_CLASS.ReadOnly = true;
-            this.L_5_CLASS.Size = new System.Drawing.Size(213, 25);
+            this.L_5_CLASS.Size = new System.Drawing.Size(228, 25);
             this.L_5_CLASS.TabIndex = 155;
             // 
             // B5
@@ -1147,6 +1136,26 @@
             this.AddressList.Size = new System.Drawing.Size(250, 775);
             this.AddressList.TabIndex = 0;
             // 
+            // L_8_COMBO
+            // 
+            this.L_8_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_8_COMBO.FormattingEnabled = true;
+            this.L_8_COMBO.Items.AddRange(new object[] {
+            "00=なし",
+            "01=ファイアー",
+            "02=サンダー",
+            "03=ライブ",
+            "04=ライト",
+            "05=ミィル",
+            "06=マムクート変身",
+            "07=魔物の魔法",
+            "08=ストーン"});
+            this.L_8_COMBO.Location = new System.Drawing.Point(281, 244);
+            this.L_8_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_8_COMBO.Name = "L_8_COMBO";
+            this.L_8_COMBO.Size = new System.Drawing.Size(228, 26);
+            this.L_8_COMBO.TabIndex = 189;
+            // 
             // OPClassDemoFE8UForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1246,7 +1255,7 @@
         private System.Windows.Forms.Label J_13_TERRAINBATTLE;
         private System.Windows.Forms.Label J_10;
         private System.Windows.Forms.NumericUpDown W8;
-        private System.Windows.Forms.Label J_8_ITEMEFFECT;
+        private System.Windows.Forms.Label J_8;
         private System.Windows.Forms.NumericUpDown B7;
         private System.Windows.Forms.Label J_7_BATTLEANIME;
         private System.Windows.Forms.NumericUpDown B6;
@@ -1270,7 +1279,6 @@
         private FEBuilderGBA.TextBoxEx L_7_BATTLEANIME_PLUS1;
         private FEBuilderGBA.TextBoxEx L_14_TERRAINBATTLE_PLUS1;
         private FEBuilderGBA.TextBoxEx L_13_TERRAINBATTLE_PLUS1;
-        private FEBuilderGBA.TextBoxEx L_8_ITEMEFFECT_00ANY;
         private System.Windows.Forms.NumericUpDown B15;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox L_6_COMBO;
@@ -1280,5 +1288,6 @@
         private System.Windows.Forms.Label J_12;
         private InterpolatedPictureBox L_14_TERRAINBATTLEICON_PLUS1;
         private InterpolatedPictureBox L_13_TERRAINBATTLEICON_PLUS1;
+        private System.Windows.Forms.ComboBox L_8_COMBO;
     }
 }

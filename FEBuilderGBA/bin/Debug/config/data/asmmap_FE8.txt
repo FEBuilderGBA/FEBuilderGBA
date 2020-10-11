@@ -8383,7 +8383,7 @@
 08A26E90	&LZ77	何か小さい圧縮データ	106	{J}
 08A27044	&LZ77	何か小さい圧縮データ	107	{J}
 085B0F2C	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	5	{U}
-080DA2F4	&PALETTE	何かのパレット	129	{U}
+080DA2F4	:080DA313	メニューのタイルデータ	{U}
 080DA334	&PALETTE	何かのパレット	130	{U}
 080DA354	&PALETTE	何かのパレット	131	{U}
 080DA314	&PALETTE	何かのパレット	132	{U}
@@ -8397,7 +8397,7 @@
 085B6C14	&PALETTE	何かのパレット	140	{U}
 085DD518	&LZ77	吹雪の画像だと思う	{U}
 085DB10C	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	5	{J}
-080DF2E0	&PALETTE	何かのパレット	129	{J}
+080DF2E0	:080DF2FF	メニューのタイルデータ	{J}
 080DF320	&PALETTE	何かのパレット	130	{J}
 080DF340	&PALETTE	何かのパレット	131	{J}
 080DF300	&PALETTE	何かのパレット	132	{J}
@@ -13020,3 +13020,15 @@
 0804BF4C	StartMoveUnitDeathBlend1	{U}
 080944C4	DrawColumnByUnitMenu	{J}
 080921CC	DrawColumnByUnitMenu	{U}
+08078960	Start_ekrDragonTunkBegin	{J}
+08076540	Start_ekrDragonTunkBegin	{U}
+08079ED0	Start_ekrWhiteINOUT	{J}
+08070568	Start_ekrWhiteINOUT	{U}
+08079984	Start_ekrDragonTunkBG_Base	{J}
+08077560	Start_ekrDragonTunkBG_Base	{U}
+08079AFC	LoadDemonKingTSATogSomeTSABuffer	{J}
+080776D8	LoadDemonKingTSATogSomeTSABuffer	{U}
+08077CD4	Start_efxTriangleQUAKE	{J}
+0807589C	Start_efxTriangleQUAKE	{U}
+0807293C	Start_ekrDragonQuake	{J}
+0807038C	Start_ekrDragonQuake	{U}

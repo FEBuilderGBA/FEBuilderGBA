@@ -3409,9 +3409,6 @@ Data to be written on the way has ended.i: {0} readPos: {1} bigbitmap: {2}.
 :書き込みに失敗しました。i: {0} readPos:{1} bigbitmap:{2}
 Write failed.i: {0} readPos: {1} bigbitmap: {2}.
 
-:ROM書き込み
-Write to ROM
-
 :戦闘画面を一括でインポートします。\r\nTSAがあるので、共通タイルは1つにまとめられるという制約があります。
 Import battle screens in bulk.\r\nBecause there is a TSA, there are constraints that common tiles can be grouped together.
 
@@ -3789,6 +3786,15 @@ If there is no patch, it may be an undiscovered image.\r\nIn that case, please s
 
 :ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
 Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
+
+:システムパレット2
+System palette 2
+
+:セピア
+Sepia
+
+:光の結界
+LightRune
 
 :システムアイコン
 System Icon
@@ -4177,6 +4183,12 @@ Do you want to allocate new weapon data?
 :領域を割り振りました。専用武器を割り振ってください。
 Allocated area.Allocate a special weapon.
 
+:新規に、Promotionのデータを割り振りますか？
+Do you want to allocate new Promotion data? 
+
+:領域を割り振りました。データを割り振ってください。
+Allocated space.Allocate the data.
+
 :PLISTが0です。\r\n新規に割り当てますか？\r\n
 PLIST is 0.\r\nDo you want to assign it newly?\r\n
 
@@ -4341,9 +4353,6 @@ Mine
 
 :卵
 Egg
-
-:光の結界
-LightRune
 
 :序盤
 Tutorial Mode
@@ -4518,9 +4527,6 @@ Red
 
 :緑
 Green
-
-:セピア
-Sepia
 
 :横揺
 Sway
@@ -8373,6 +8379,30 @@ Japanese name start position
 
 :日本語名アドレス
 Japanese name address
+
+:01=ファイアー
+01=Fire
+
+:02=サンダー
+02=Thunder
+
+:03=ライブ
+03=Heal
+
+:04=ライト
+04=Light
+
+:05=ミィル
+05=Flux
+
+:06=マムクート変身
+06=Manakete Transform
+
+:07=魔物の魔法
+07=Monster's magic
+
+:08=ストーン
+08=Stone
 
 :OPクラスデモ FE7
 Class Reel FE7
