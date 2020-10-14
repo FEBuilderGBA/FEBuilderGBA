@@ -14,6 +14,4 @@ HEIGHT=64
 ZIMAGE_POINTER=0x0C5808//0xAAC5AC
 PALETTE_ADDRESS=0xAADBA8
 
-KEEPPALETTE=true
-
 INFO=Edit and import the Series Logo image of the Title Screen.

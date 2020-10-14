@@ -2112,6 +2112,7 @@ r3=X tile position of menu of right	{U}
 03000108	@APHandle	gApPool	{U}
 03000100	@APHandle	gApPool	{J}
 
+//AISStruct
 @AnimationInterpreter@00	short	state
 @AnimationInterpreter@02	short	xPosition
 @AnimationInterpreter@04	short	yPosition
@@ -13036,3 +13037,13 @@ r3=X tile position of menu of right	{U}
 0807589C	Start_efxTriangleQUAKE	{U}
 0807293C	Start_ekrDragonQuake	{J}
 0807038C	Start_ekrDragonQuake	{U}
+0806FA04	Start_efxFlashFX	{J}
+080737a4	FadeInPalette	r0=PaletteAddress	r1=StartPaletteCount	r2=EndPaletteCount	r3=CangeValue	{J}
+08012954	Start_EVENT18_FadeColorBG	{J}
+0806D6E8	Start_efxFlashFX	{U}
+080712B0	FadeInPalette	r0=PaletteAddress	r1=StartPaletteCount	r2=EndPaletteCount	r3=CangeValue	{U}
+08012890	Start_EVENT18_FadeColorBG	{U}
+08077F9C	PlaySound_SE_WeaponBroke	{J}
+08077F8C	PlaySound_SE_Show_Dialog_GetItem	{J}
+08075B68	PlaySound_SE_WeaponBroke	{U}
+08075B58	PlaySound_SE_Show_Dialog_GetItem	{U}
