@@ -13,7 +13,7 @@ BIN:$FREEAREA:2=c2p.bin
 
 //JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行ているみたいです.
 //JUMP:0x988c6:$B=0x9893a	//FE8J
-JUMP:0x965E2:$B=0x9893a		//FE8U
+JUMP:0x965E2:$B=0x96656		//FE8U
 //JUMP:0x988c8:$r0=c0p.bin	//FE8J
 JUMP:0x965E4:$r0=c0p.bin	//FE8U
 

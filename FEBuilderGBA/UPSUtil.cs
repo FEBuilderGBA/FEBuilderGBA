@@ -100,7 +100,6 @@ namespace FEBuilderGBA
                 {
                     return false;
                 }
-                return false;
             }
 
             retrom.SwapNewROMDataDirect(bin);
