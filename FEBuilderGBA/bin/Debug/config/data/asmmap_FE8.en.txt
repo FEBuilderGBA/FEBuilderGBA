@@ -13047,3 +13047,7 @@ r3=X tile position of menu of right	{U}
 08077F8C	PlaySound_SE_Show_Dialog_GetItem	{J}
 08075B68	PlaySound_SE_WeaponBroke	{U}
 08075B58	PlaySound_SE_Show_Dialog_GetItem	{U}
+08009840	Get_OP_ClassReel_LotteryTableShift	{J}
+080096D8	Get_MapIDToChapterID_For_OP_ClassReel_LotteryTableShift	{J}
+08009950	Get_OP_ClassReel_LotteryTableShift	{U}
+080097e8	Get_MapIDToChapterID_For_OP_ClassReel_LotteryTableShift	{U}

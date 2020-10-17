@@ -1,6 +1,6 @@
 
 NAME=杖の命中を強制的に0%にして、無効化するユニット2
-NAME.en=These unit force the staff to hit 0% and deactivate it #2
+NAME.en=These unit force the staff to hit 0% and deactivate 2
 
 //アドレスパッチとして実装します
 TYPE=ADDR
