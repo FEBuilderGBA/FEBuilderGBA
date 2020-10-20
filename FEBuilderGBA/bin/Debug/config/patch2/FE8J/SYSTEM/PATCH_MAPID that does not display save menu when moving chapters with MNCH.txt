@@ -1,0 +1,13 @@
+NAME=MNCHで章移動時にセーブメニューを出さないMAPID
+INFO=MNCHで章を移動した時に、セーブメニューを表示しない章IDを指定します。\r\nディフォルトは、0x38(フレリア城)です。\r\nこの部分は、MNC2でも評価されます。\r\nですが、MNC2には、セーブメニューを表示しないMNC3があるため、実質的に、MNCH専用の仕掛けです。\r\nこの章へ移動するMNCHは、セーブメニューを表示しません。
+
+TYPE=ADDR
+ADDRESS=0x9D4C
+ADDRESS_TYPE=MAP
+
+AUTHOR=7743
+TAG=#ENGINE
+NAME.en=MAPID that does not display the save menu when moving chapters with MNCH.
+INFO.en=Specify the chapter ID that does not display the save menu when moving chapters with MNCH.\r\nThe default is 0x38 (Frelia Castle).\r\nThis part is also evaluated by MNC2.\r\nHowever, since MNC2 has MNC3 that does not display the save menu, it is practically a mechanism dedicated to MNCH.\r\nMNCH moving to this chapter does not display the save menu.
+NAME.zh=使用MNCH移动章节时，不显示保存菜单的MAPID。
+INFO.zh=使用MNCH移动章节时，指定不显示保存菜单的章节ID。\r\n默认值为0x38（Frelia Castle）。\r\n该零件也由MNC2评估。\r\n但是，由于MNC2具有不显示保存菜单的MNC3，因此实际上是专用于MNCH的机制。\r\n移至本章的MNCH不显示保存菜单。

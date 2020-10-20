@@ -65,7 +65,7 @@ Address
 AI's Item Usage
 
 :AIがアイテムを使用するかどうか判定する関数を指定します。\r\nなお、章ごとにアイテムを使えるかどうかの設定は、「AIの章ごとの設定」にあります。
-Specify a function that determines whether the AI \u200b\u200buses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "AI's Item Usage".
+Specify a function that determines whether the AI uses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "AI's Item Usage".
 
 :アイテム
 Item Editor
@@ -2401,6 +2401,9 @@ Compare the memory slot C where the previous conditional expression result is st
 :10(最速)>>>>>01
 10 (Fastest) >>>>> 01
 
+:Speedは、移動する速度を指定します。\r\n大きい数字を入れるほど早く移動します。\r\n注意:移動できないタイルへ移動させるとフリーズします。\r\n例えば、ジェネラルは山を越えられないので、山のタイルへ移動せよと命令するとフリーズします。
+Speed specifies the speed of movement.\r\nThe larger the number, the faster it will move.\r\nNote: Moving to a tile that cannot be moved freezes.\r\nFor example, a general cannot cross a mountain, so if you order it to move to a mountain tile, it will freeze.
+
 :マップによってはワールドマップから入らなければ、フリーズするものがあります。\r\nその場合は、「フリーマップから入らないとフリーズする制約を消す」パッチを利用してください。
 Some maps freeze unless you enter from the world map.\r\nIn that case, please use the patch "Eliminate the constraint of freezing unless it enters from the world map" patch.
 
@@ -3751,6 +3754,15 @@ Import Palette
 :4軍
 Fourth
 
+:システムパレット2
+System palette 2
+
+:セピア
+Sepia
+
+:光の結界
+LightRune
+
 :システムメニュー
 System Menu
 
@@ -3786,15 +3798,6 @@ If there is no patch, it may be an undiscovered image.\r\nIn that case, please s
 
 :ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
 Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
-
-:システムパレット2
-System palette 2
-
-:セピア
-Sepia
-
-:光の結界
-LightRune
 
 :システムアイコン
 System Icon
@@ -12315,6 +12318,9 @@ Date ({0}) could not be parsed.\r\nI can't help but always update to the latest 
 
 :このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？
 A new version of this game has been released.\r\nAutomatically update to the latest version? 
+
+:自動更新をキャンセルした後に、手動で更新したい場合は、「メニュー」->「実行」->「作品支援」を利用してください。
+If you want to update manually after canceling the automatic update, please use "Menu"-> "Run"-> "Work Support".
 
 :フィードバックを保存するファイル名を選択してください
 Choose a file name to save the feedback.

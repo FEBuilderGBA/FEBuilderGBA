@@ -1,0 +1,15 @@
+NAME=DeadMotion(Install)
+TYPE=EA
+TAG=#ENGINE
+
+EDIT_PATCH=PATCH_DeadMotion.txt
+
+EA=Installer.event
+PATCHED_IF:0x53D58=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+INFO=敵の死亡モーションを独自に設定できるようにします。\r\n注意:魔王とドラゴンのモーションには適応されません。\r\n敵の死亡モーションだけ変更できます。敵以外のユニットへは適応されません。
+INFO.en=Allows you to set your own death motion for the enemy.\r\nNote: Not applicable to Demon King and Dragon motions.\r\nThis is Only the enemy's death motion can be changed.\r\nIt does not apply to units other than enemies.
+
+INFO.zh=允许您为敌人设置自己的死亡动作。\r\n注意：不适用于恶魔王和龙的动作。\r\nThis is Only the enemy's death motion can be changed.\r\nIt does not apply to units other than enemies.

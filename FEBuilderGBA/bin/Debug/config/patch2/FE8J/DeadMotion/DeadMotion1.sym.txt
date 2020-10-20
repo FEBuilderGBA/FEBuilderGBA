@@ -1,0 +1,4 @@
+Proc_CustomDeadMotion_Flush_And_Pika=$24
+Normal_EfxDeadPika=$0A
+EALiterals=$20
+DeadMotionTable=$20

@@ -1,0 +1,7 @@
+Proc_CustomDeadMotion_RedAplha=$50
+RunCustomProcs=$1E
+Exit_PlayDeadSound=$14
+Normal_EfxDeadAlpha=$0A
+Exit_NoSound=$1A
+EALiterals=$4C
+DeadMotionTable=$4C

@@ -594,12 +594,19 @@ namespace FEBuilderGBA
 
         private void UpdateThreadCallBackEvent(object sender, EventArgs e)
         {
+            bool wasSlientMode = this.IsSlientMode;
+
             this.IsSlientMode = false;
             //ダイアログを表示して、更新ボタンを押す.
             this.Show();
             InputFormRef.DoEvents();
 
-            DialogResult dr = R.ShowYesNo("このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？");
+            string msg = R._("このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？");
+            if (wasSlientMode)
+            {
+                msg += "\r\n\r\n" + R._("自動更新をキャンセルした後に、手動で更新したい場合は、「メニュー」->「実行」->「作品支援」を利用してください。");
+            }
+            DialogResult dr = R.ShowYesNo(msg);
             if (dr != System.Windows.Forms.DialogResult.No)
             {
                 this.UpdateButton.PerformClick();
@@ -616,6 +623,11 @@ namespace FEBuilderGBA
             {//仮想ROMは更新できない
                 return;
             }
+            if (UpdateCheck.IsAutoUpdateTime()
+                || InputFormRef.GetForm<ToolUpdateDialogForm>() != null)
+            {//FEBuilderGBAの更新があるので、今は自動確認してはいけない。
+                return;
+            }
 
             ToolWorkSupportForm f = (ToolWorkSupportForm)InputFormRef.JumpFormLow<ToolWorkSupportForm>();
             f.IsSlientMode = true;
@@ -625,9 +637,9 @@ namespace FEBuilderGBA
         {
             if (!Open(romfilename))
             {
-                return ;
+                return;
             }
-            if (!CheckUpdateToday(romfilename))
+            if (!CheckUpdateTodayAndOverraideTime(romfilename))
             {
                 return;
             }
@@ -668,7 +680,7 @@ namespace FEBuilderGBA
             s1.Start();
         }
         //更新チェックをしてもよいか?
-        bool CheckUpdateToday(string romfilename)
+        bool CheckUpdateTodayAndOverraideTime(string romfilename)
         {
             int func_auto_update = OptionForm.auto_update();
             if (func_auto_update == 0)

@@ -81,20 +81,29 @@ namespace FEBuilderGBA
             //Configのセーブ.
             Program.Config.Save();
         }
-
-        public EventHandler EventHandler;
-        public void CheckUpdateThread()
+        //自動アップデート確認をしてもいいの?
+        public static bool IsAutoUpdateTime()
         {
             int func_auto_update = OptionForm.auto_update();
             if (func_auto_update == 0)
             {//自動アップデート確認をしない.
-                return;
+                return false;
             }
 
             DateTime dt = DateTime.Now.AddDays(-func_auto_update);
             uint now = U.atoi(dt.ToString("yyyyMMdd"));
             uint LastUpdateCheck = U.atoi(Program.Config.at("LastUpdateCheck", "0"));
             if (now <= LastUpdateCheck)
+            {//まだアップデート確認する時間じゃない.
+                return false;
+            }
+            return true;
+        }
+
+        public EventHandler EventHandler;
+        public void CheckUpdateThread()
+        {
+            if (!IsAutoUpdateTime())
             {//まだアップデート確認する時間じゃない.
                 return;
             }

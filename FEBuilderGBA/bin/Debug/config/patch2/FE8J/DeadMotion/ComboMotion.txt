@@ -1,0 +1,4 @@
+0=Default Pika+Alpha
+1=Flush+Pika+Alpha
+2=Smash(EnemyOnly)
+3=FlushOnly

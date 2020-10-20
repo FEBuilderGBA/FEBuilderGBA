@@ -278,8 +278,8 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 
 
 01000000	_01
-0200XX00	[XX:DECIMAL:frame seconds]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
-0400XXXX	Wait for CG scenes[XXXX:DECIMAL:Frame seconds](CGSTAL)	{WAIT}	{MAPEFFECT}
+0200XX00	[XX:FSEC:Duration (1/60 second)]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
+0400XXXX	Wait for CG scenes[XXXX:FSEC:Duration (1/60 second)](CGSTAL)	{WAIT}	{MAPEFFECT}
 0500XX00	Background change[XX:BG:BG](BACG)(LOW)	{BG}
 05005B007F000E000200010001000000	Chapter clear judgment
 08000000	Change the background and change BGM to 0x2C (in sorrow)
@@ -531,7 +531,7 @@ DB000000	Removes_brown_text-boxes(RETB)	{J}
 D8000000	Removes_brown_text-boxes(RETB)	{U}
 DF000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 DB000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{U}
-0200XXXX	[XX:DECIMAL:frame seconds]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
+0200XXXX	[XX:FSEC:Duration (1/60 second)]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
 64000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{J}
 66000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{U}
 65000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:unit]	{WAKU}	{J}

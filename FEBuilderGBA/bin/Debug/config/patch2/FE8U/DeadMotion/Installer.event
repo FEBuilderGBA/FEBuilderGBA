@@ -1,0 +1,73 @@
+PUSH
+//ORG 0x53D58	//{J}
+ORG 0x53068	//{U}
+jumpToHack(DeadMotion1)
+
+//ORG 0x53DC4	//{J}
+ORG 0x530D4	//{U}
+jumpToHack(DeadMotion2)
+
+POP
+
+ALIGN 4
+DeadMotion1:
+#incbin "DeadMotion1.dmp"
+POIN DeadMotionTable
+POIN Proc_CustomDeadMotion_Flush_And_Pika
+POIN Proc_CustomDeadMotion_Flush_Only
+
+ALIGN 4
+DeadMotion2:
+#incbin "DeadMotion2.dmp"
+POIN DeadMotionTable
+POIN Proc_CustomDeadMotion_Smash
+
+ALIGN 4
+DeadMotionTable:
+//Unit //Class //MapID //Motion
+WORD 0x00
+
+
+ALIGN 4
+CustomDeadMotion_Flush_And_Pika:
+#incbin "CustomDeadMotion_Flush_And_Pika.dmp"
+
+ALIGN 4
+Proc_CustomDeadMotion_Flush_And_Pika_String:
+String(Proc_CustomDeadMotion_Flush_And_Pika)
+
+ALIGN 4
+Proc_CustomDeadMotion_Flush_And_Pika:
+WORD 0x1;  POIN Proc_CustomDeadMotion_Flush_And_Pika_String;	//Text
+WORD 0x3;  POIN CustomDeadMotion_Flush_And_Pika|1				//Set Loop routine And Yield
+WORD 0x0 0x0;
+
+
+ALIGN 4
+CustomDeadMotion_Flush_Only:
+#incbin "CustomDeadMotion_Flush_Only.dmp"
+
+ALIGN 4
+CustomDeadMotion_Flush_Only_String:
+String(Proc_CustomDeadMotion_Flush_Only)
+
+ALIGN 4
+Proc_CustomDeadMotion_Flush_Only:
+WORD 0x1;  POIN CustomDeadMotion_Flush_Only_String;	//Text
+WORD 0x3;  POIN CustomDeadMotion_Flush_Only|1				//Set Loop routine And Yield
+WORD 0x0 0x0;
+
+
+ALIGN 4
+CustomDeadMotion_Smash:
+#incbin "CustomDeadMotion_Smash.dmp"
+
+ALIGN 4
+CustomDeadMotion_Smash_String:
+String(Proc_CustomDeadMotion_Smash)
+
+ALIGN 4
+Proc_CustomDeadMotion_Smash:
+WORD 0x1;  POIN CustomDeadMotion_Smash_String;	//Text
+WORD 0x3;  POIN CustomDeadMotion_Smash|1				//Set Loop routine And Yield
+WORD 0x0 0x0;

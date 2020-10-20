@@ -1,0 +1,3 @@
+Flush=$34
+Exit=$50
+Break=$1E
