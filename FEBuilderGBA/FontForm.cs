@@ -465,7 +465,9 @@ namespace FEBuilderGBA
 
             string undo_name = "FONT " + this.SearchChar.Text;
             PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
-            uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
+            string target = this.SearchChar.Text;
+            target = TextForm.ConvertFEditorToEscape(target);
+            uint search_char = U.ConvertMojiCharToUnitFast(target, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
 
