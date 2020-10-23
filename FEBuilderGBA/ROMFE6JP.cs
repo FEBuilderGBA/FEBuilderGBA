@@ -402,7 +402,7 @@ namespace FEBuilderGBA
         public uint compress_image_borderline_address() { return 0xF9D80; } //これ以降に圧縮画像が登場するというアドレス
 
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0xFD32F568; return 0x2DBF5C; } //C01 patch
-        public uint patch_C48_hack(out uint enable_value) { enable_value = 0x082DBF74;  return 0x4A768; } //C48 patch
+        public uint patch_C48_hack(out uint enable_value) { enable_value = 0x0804AD76;  return 0x4A768; } //C48 patch
         public uint patch_16_tracks_12_sounds(out uint enable_value) { enable_value = 0x0; return 0x0; } //16_tracks_12_sounds patch
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x8DB8; } //一般兵の顔 拡張
