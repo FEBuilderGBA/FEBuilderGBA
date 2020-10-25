@@ -150,7 +150,7 @@
             this.EasyPenalty.Location = new System.Drawing.Point(434, 122);
             this.EasyPenalty.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.EasyPenalty.Maximum = new decimal(new int[] {
-            16,
+            15,
             0,
             0,
             0});
@@ -164,7 +164,7 @@
             this.HardBoost.Location = new System.Drawing.Point(434, 34);
             this.HardBoost.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.HardBoost.Maximum = new decimal(new int[] {
-            16,
+            15,
             0,
             0,
             0});
@@ -178,7 +178,7 @@
             this.NormalPenalty.Location = new System.Drawing.Point(434, 86);
             this.NormalPenalty.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.NormalPenalty.Maximum = new decimal(new int[] {
-            16,
+            15,
             0,
             0,
             0});
