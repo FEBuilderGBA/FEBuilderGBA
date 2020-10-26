@@ -1,0 +1,18 @@
+NAME=簡易CANT修正
+NAME.en=Simple CANTO Fix
+NAME.zh=Simple CANTO Fix
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x01D270
+
+OFF:0x01D270=0x03 0x29 0x01 0xDC 0x01 0x29 0x0F 0xDA
+FIX:0x01D270=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+INFO=騎士の再移動(CANTO)を、攻撃した後にも利用できるようにします。
+INFO.en=This patch makes Knight Removal (CANTO) available even after an attack.
+INFO.zh=This patch makes Knight Removal (CANTO) available even after an attack.

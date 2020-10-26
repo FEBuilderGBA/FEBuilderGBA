@@ -64,8 +64,8 @@ ldrh r0, [r5,#0x2]
 cmp  r0, #0x0
 beq  CheckVoice1
 
-@blh #0x080860D0	@CheckFlag {J}
-blh #0x08083DA8	@CheckFlag {U}
+@blh 0x080860D0	@CheckFlag {J}
+blh 0x08083DA8	@CheckFlag {U}
 cmp r0, #0x0
 bne Loop
 

@@ -1,5 +1,5 @@
-Term=$7E
-Table=$A0
+Term=$84
+Table=$A8
 Loop=$1C
 CheckUnit=$24
 CheckClass=$32
