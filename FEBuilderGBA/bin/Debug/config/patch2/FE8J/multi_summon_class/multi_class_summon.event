@@ -9,7 +9,7 @@
 PUSH
 //Phantom Check ユニット死亡時
 ORG 0x18120
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
@@ -17,14 +17,14 @@ ORG 0x18120
 
 //ClearTemporaryUnits
 ORG 0x18BEE
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
 
 //ChapterEndUnitCleanup
 ORG 0x31176
-#incbin "check_summonflag_ChapterEndUnitCleanup.dmp"	//HINT=ASM
+#incbin "check_summonflag_ChapterEndUnitCleanup.dmp"	//HINT=BIN
 //ldrb r0, [r1, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
@@ -32,7 +32,7 @@ ORG 0x31176
 
 //TryAddUnitToTradeTargetList
 ORG 0x251EA
-#incbin "check_summonflag_TryAddUnitToTradeTargetList.dmp"	//HINT=ASM
+#incbin "check_summonflag_TryAddUnitToTradeTargetList.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //bne #0x8025274
@@ -44,7 +44,7 @@ ORG 0x251EA
 
 //TryAddUnitToRescueTargetList
 ORG 0x25312
-#incbin "check_summonflag_TryAddUnitToRescueTargetList.dmp"	//HINT=ASM
+#incbin "check_summonflag_TryAddUnitToRescueTargetList.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //bne #0x802535a
@@ -57,7 +57,7 @@ ORG 0x25312
 
 //VisitCommandUsability
 ORG 0x2300E
-#incbin "check_summonflag_VisitCommandUsability.dmp"	//HINT=ASM
+#incbin "check_summonflag_VisitCommandUsability.dmp"	//HINT=BIN
 //mov r4 ,r0
 //ldrb r1, [r2, #0xF] @ramunit->status4
 //lsr  r1,#0x7
@@ -65,35 +65,35 @@ ORG 0x2300E
 
 //ItemCommandUsability
 ORG 0x23290
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
 
 //SupplyUsability
 ORG 0x23F30
-#incbin "check_summonflag_SupplyUsability.dmp"	//HINT=ASM
+#incbin "check_summonflag_SupplyUsability.dmp"	//HINT=BIN
 //ldrb r0, [r0, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
 
 //ArmoryCommandUsability
 ORG 0x23F9A
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
 
 //VendorCommandUsability
 ORG 0x23FF6
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
 
 //SecretCommandUsability
 ORG 0x24052
-#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=BIN
 //ldrb r0, [r2, #0xF] @ramunit->status4
 //lsr  r0,#0x7
 //cmp r0,#0x01
@@ -102,7 +102,7 @@ ORG 0x24052
 //NAME=一般兵の場合にはアイテム選択画面に顔画像を描画しない
 //NAME.en=Don't draw portrait on item select menu if unit is generic
 ORG 0x022BB0
-BYTE 0x08 0x68 0xC0 0x88 0x00 0x28
+BYTE 0x08 0x68 0xC0 0x88 0x00 0x28	//HINT=BIN
 
 ORG 0x7D118
 jumpToHack_r1(set_summonclass);

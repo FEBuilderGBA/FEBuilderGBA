@@ -4985,6 +4985,7 @@ namespace FEBuilderGBA
                         }
 
                         binMappings.Add(b);
+                        lastMatchAddr = addr;
                     }
                     else if (data.DataType == EAUtil.DataEnum.ASM
                         || data.DataType == EAUtil.DataEnum.MIX)
@@ -5019,6 +5020,7 @@ namespace FEBuilderGBA
                             b.type = Address.DataTypeEnum.MIX;
                         }
 
+                        EraseORG(binMappings, b);
                         binMappings.Add(b);
 
                         //最後に発見したアドレスを追加
@@ -5047,6 +5049,7 @@ namespace FEBuilderGBA
                         b.mask = isSkip;
                         b.type = Address.DataTypeEnum.PATCH_ASM;
 
+                        EraseORG(binMappings, b);
                         binMappings.Add(b);
 
                         //最後に発見したアドレスを追加
@@ -5103,6 +5106,7 @@ namespace FEBuilderGBA
                         b.mask = MakeFullMask(length);
                         b.type = Address.DataTypeEnum.POINTER_ARRAY;
 
+                        EraseORG(binMappings, b);
                         binMappings.Add(b);
 
                         //最後に発見したアドレスを追加
@@ -5138,6 +5142,7 @@ namespace FEBuilderGBA
                         b.mask = MakeFullMask(length);
                         b.type = Address.DataTypeEnum.PROCS;
 
+                        EraseORG(binMappings, b);
                         binMappings.Add(b);
 
                         //最後に発見したアドレスを追加
@@ -5159,9 +5164,17 @@ namespace FEBuilderGBA
                         b.addr = addr;
                         b.length = length;
                         b.bin = data.BINData;
-                        b.mask = MakeMaskAddress(b.bin, addr);
+                        if (data.DataType == EAUtil.DataEnum.BIN)
+                        {
+                            b.mask = new bool[length];
+                        }
+                        else
+                        {
+                            b.mask = MakeMaskAddress(b.bin, addr);
+                        }
                         b.type = Address.DataTypeEnum.BIN;
 
+                        EraseORG(binMappings, b);
                         binMappings.Add(b);
 
                         //最後に発見したアドレスを追加
@@ -5177,6 +5190,24 @@ namespace FEBuilderGBA
             AppendNewTargetSelectionStruct(patch, binMappings);
             return binMappings;
         }
+        static void EraseORG(List<BinMapping> binMappings, BinMapping b)
+        {
+            for (int i = 0; i < binMappings.Count; i++)
+            {
+                BinMapping a = binMappings[i];
+                if (a.addr != b.addr)
+                {
+                    continue;
+                }
+                if (a.key == "ORG")
+                {
+                    binMappings.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+            }
+        }
+
         //ターゲット選択構造体の追加
         static void AppendNewTargetSelectionStruct(PatchSt patch, List<BinMapping> binMappings)
         {

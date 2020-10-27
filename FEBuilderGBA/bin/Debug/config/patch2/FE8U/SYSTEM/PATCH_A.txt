@@ -13,6 +13,6 @@ DETERMINATION_ADDRESS=0x01D270
 OFF:0x01D270=0x03 0x29 0x01 0xDC 0x01 0x29 0x0F 0xDA
 FIX:0x01D270=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 
-INFO=騎士の再移動(CANTO)を、攻撃した後にも利用できるようにします。
-INFO.en=This patch makes Knight Removal (CANTO) available even after an attack.
-INFO.zh=This patch makes Knight Removal (CANTO) available even after an attack.
+INFO=騎士の再移動(CANTO)を、攻撃した後にも利用できるようにします。\r\nsuper canto or canto+
+INFO.en=This patch makes Knight Removal (CANTO) available even after an attack.\r\nsuper canto or canto+
+INFO.zh=This patch makes Knight Removal (CANTO) available even after an attack.\r\nsuper canto or canto+
