@@ -118,7 +118,7 @@ ldsb	r0,[r4,r0]
 mov		r1,#maximum_hp
 ldsb	r1,[r4,r1]
 cmp		r0,r1
-beq		CheckIfSelected			@if hp is max, don't show the bar
+bge		CheckIfSelected			@if hp is max, don't show the bar
 sub		r0,r1,r0				@r0 = damage
 mov		r2,#11
 mul		r0,r2
