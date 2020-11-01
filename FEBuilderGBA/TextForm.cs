@@ -2083,6 +2083,7 @@ namespace FEBuilderGBA
             UpdateDataCountCache(InputFormRef);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 }, Address.DataTypeEnum.TEXTPOINTERS);
 
+            name = "Text ";
             FETextDecode textdecoder = new FETextDecode();
             List<U.AddrResult> arlist = InputFormRef.MakeList();
             for(int i = 0 ; i < arlist.Count ; i++)
@@ -2100,7 +2101,7 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list,unhuffman_addr
                         , (uint)size
                         , arlist[i].addr
-                        , name
+                        , name + U.ToHexString(i)
                         , FEBuilderGBA.Address.DataTypeEnum.BIN);
                 }
                 else if (U.isPointer(paddr))
@@ -2113,7 +2114,7 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list,addr
                         , (uint)size
                         , arlist[i].addr
-                        , name
+                        , name + U.ToHexString(i)
                         , FEBuilderGBA.Address.DataTypeEnum.BIN);
                 }
             }

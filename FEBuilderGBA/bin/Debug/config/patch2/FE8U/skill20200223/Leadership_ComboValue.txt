@@ -4,3 +4,4 @@
 3=EnemyStarAvoidBonus(not use)
 4=NPCStarHitBonus
 5=NPCStarAvoidBonus
+6=CancelOutOpposingLeadership

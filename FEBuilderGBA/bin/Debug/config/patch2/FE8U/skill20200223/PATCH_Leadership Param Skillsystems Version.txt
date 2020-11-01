@@ -15,7 +15,7 @@ POINTER=$GREP4END 0x0C 0x00 0x01 0x00 0xBC 0xCF 0x02 0x02 0x4C 0xBE 0x02 0x02 0x
 DATASIZE=1
 
 //データ個数 00 が出てくるまで
-DATACOUNT=6
+DATACOUNT=7
 
 //リストに表示されるのはユニットIDです
 LISTNAME=$COMBO Leadership_ComboValue.txt
@@ -23,6 +23,8 @@ LISTNAME=$COMBO Leadership_ComboValue.txt
 //データを定義します
 B0:DECIMAL=Value
 
-INFO=Leadership. Grants +5 Hit +3 Avo to all ally units per star.\r\nNote:\r\nEnemyStarAvoidBonus is not referenced in the bug.\r\nNPCStarAvoidBonus is used instead of EnemyStarAvoidBonus.\r\nNPCStarAvoidBonus is used for both red and green.\r\n
+INFO=Leadership. Grants +5 Hit +3 Avo to all ally units per star.\r\nNote:\r\nEnemyStarAvoidBonus is not referenced in the bug.\r\nNPCStarAvoidBonus is used instead of EnemyStarAvoidBonus.\r\nNPCStarAvoidBonus is used for both red and green.\r\n\r\nCancelOutOpposingLeadership takes a bool value of 0 or 1.
+
+\r\n0に設定すると、
 
 AUTHOR=Zeta
