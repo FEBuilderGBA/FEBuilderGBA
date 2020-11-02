@@ -8,7 +8,7 @@ TYPE=STRUCT
 TAG=#ENGINE
 
 //データへのポインタ
-POINTER=$FGREP4END DM_RideCommandUsability.dmp
+POINTER=$FGREP4END DM_RideCommandEffect.dmp
 
 //データサイズ(10進数)
 DATASIZE=12

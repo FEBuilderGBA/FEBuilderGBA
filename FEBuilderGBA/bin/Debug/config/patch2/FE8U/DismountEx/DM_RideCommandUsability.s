@@ -55,7 +55,7 @@ ldrb r0,[r4,#0x03]  @     B0:MAP=MAPID(0xFF=ANY)
 cmp  r0,#0xFF       @     ANY MAPID ?
 beq  CheckFlag
 
-ldr  r2,=#0x202BCF0 @ Chaptor Pointer  (@ChapterData)
+ldr  r2,=0x202BCF0 @ Chaptor Pointer  (@ChapterData)
 ldrb r1,[r2,#0xE]   @     ChapterData->MAPID
 cmp  r0,r1
 bne  Loop           @     条件不一致なので、次のループへ continue;
@@ -80,7 +80,7 @@ mov pc,r1
 NotMatch:
 MOV r2, r5         @壊す命令の再送
 LDR r0, [r2, #0x0]
-LDR r1, [r2, #0x4]
+ldr r0, [r0, #0x28]
 LDR r1, [r2, #0x4]
 
 LDR r3, =0x080248D0  @ バリスタチェックの続きを行う
