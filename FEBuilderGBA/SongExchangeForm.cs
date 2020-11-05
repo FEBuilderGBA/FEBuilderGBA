@@ -60,7 +60,7 @@ namespace FEBuilderGBA
                 U.echo("曲をインポートする場所を「--tosong」で指定してください。");
                 return -2;
             }
-            U.SelectedIndexSafety(f.SongTable, tosong - 1);
+            U.SelectedIndexSafety(f.SongTable, tosong);
 
             uint fromsong = U.atoi0x(U.at(Program.ArgsDic, "--fromsong"));
             if (fromsong <= 0)
@@ -68,7 +68,7 @@ namespace FEBuilderGBA
                 U.echo("曲をエクスポートする場所を「--fromsong」で指定してください。");
                 return -2;
             }
-            U.SelectedIndexSafety(f.OtherROMSongTable, fromsong - 1);
+            U.SelectedIndexSafety(f.OtherROMSongTable, fromsong);
 
             f.ConvertButton_Click(null, null);
 
@@ -109,10 +109,17 @@ namespace FEBuilderGBA
                 R.Error("インポートする曲がリストから選択されていません.");
                 return;
             }
-            DialogResult dr = R.ShowYesNo("この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？", OtherROMSongTable.Text, SongTable.Text);
-            if (dr != System.Windows.Forms.DialogResult.Yes)
+            if (SongTable.SelectedIndex == 0)
             {
+                R.ShowStopError("SongID: 0x0に書き込むことはできません");
                 return;
+            }
+            {
+                DialogResult dr = R.ShowYesNo("この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？", OtherROMSongTable.Text, SongTable.Text);
+                if (dr != System.Windows.Forms.DialogResult.Yes)
+                {
+                    return;
+                }
             }
 
             ConvertSong(OtherROMData, OtherSongList[OtherROMSongTable.SelectedIndex], Program.ROM.Data, MySongList[SongTable.SelectedIndex]);
@@ -193,11 +200,11 @@ namespace FEBuilderGBA
             {
                 return sonlist;
             }
-            songlist += 8;
-            for (int i = 1; true; i++, songlist += 8)
+//            songlist += 8;
+            for (int i = 0; true; i++, songlist += 8)
             {
                 uint header = U.u32(data, songlist);
-                if (!U.isPointer(header))
+                if (i != 0 && !U.isPointer(header))
                 {
                     break;
                 }
@@ -841,7 +848,7 @@ namespace FEBuilderGBA
 
         private void SongTable_DoubleClick(object sender, EventArgs e)
         {
-            uint song_id = (uint)(SongTable.SelectedIndex + 1);
+            uint song_id = (uint)(SongTable.SelectedIndex);
             if (song_id <= 0)
             {
                 return;
@@ -851,7 +858,7 @@ namespace FEBuilderGBA
 
         private void OtherROMSongTable_MouseDoubleClick(object sender, MouseEventArgs ee)
         {
-            uint song_id = (uint)(OtherROMSongTable.SelectedIndex + 1);
+            uint song_id = (uint)(OtherROMSongTable.SelectedIndex);
             if (song_id <= 0)
             {
                 return;
