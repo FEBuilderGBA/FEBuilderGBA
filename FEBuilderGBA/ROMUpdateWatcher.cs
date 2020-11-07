@@ -60,6 +60,16 @@ namespace FEBuilderGBA
             }
             return watch.Process;
         }
+        public void KillProcess(string fullfilename)
+        {
+            WatchData watch;
+            if (!WatchDataDic.TryGetValue(fullfilename, out watch))
+            {
+                return;
+            }
+            watch.Process.CloseMainWindow();
+            WatchDataDic.Remove(fullfilename);
+        }
 
         public void Stop()
         {

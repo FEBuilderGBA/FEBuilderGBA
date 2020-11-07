@@ -452,7 +452,7 @@ namespace FEBuilderGBA
 
         }
 
-        public static Process RunAs(string run_name, string arg1 = "<<ROM>>")
+        public static Process RunAs(string run_name, string arg1 = "<<ROM>>", string arg2 = "")
         {
             if (run_name == "binary_editor")
             {
@@ -536,6 +536,10 @@ namespace FEBuilderGBA
                 if (emulator_arg != "")
                 {
                     args = string.Format(emulator_arg, s_tempfilename);
+                }
+                if (arg2 != "")
+                {
+                    args = arg2 + " " + args;
                 }
 
                 Process p;
@@ -657,6 +661,27 @@ namespace FEBuilderGBA
 
             return sb.ToString();
         }
+        static void KillProcessIfRunning(string run_name, string arg1 = "<<ROM>>")
+        {
+            string emulator = Program.Config.at(run_name, "");
+            if (emulator == "" || !File.Exists(emulator))
+            {
+                return ;
+            }
+
+            string tempfilename;
+            if (arg1 == "<<ROM>>")
+            {
+                tempfilename = U.MakeFilename(run_name);
+            }
+            else
+            {
+                tempfilename = arg1;
+            }
+
+            //強制終了
+            Program.UpdateWatcher.KillProcess(tempfilename);
+        }
 
         static bool IsAlreadyRunningProcess(string run_name, string arg1 = "<<ROM>>")
         {
@@ -717,7 +742,7 @@ namespace FEBuilderGBA
             U.SetForegroundWindow(p.MainWindowHandle);
         }
 
-        public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>")
+        public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>", string arg2 = "")
         {
             string emulator = Program.Config.at(run_name, "");
             if (emulator == "" || !File.Exists(emulator))
@@ -745,9 +770,14 @@ namespace FEBuilderGBA
             Process p = Program.UpdateWatcher.GetRunning(tempfilename);
             if (p == null)
             {//未実行なので実行する
-                return RunAs(run_name, arg1);
+                return RunAs(run_name, arg1 , arg2);
             }
             return p;
+        }
+        static bool CheckVGMusicStudio(string path)
+        {
+            string name = Path.GetFileNameWithoutExtension(path);
+            return (name == "VG Music Studio");
         }
         
         public static void RunAsSappy(uint song_id)
@@ -761,32 +791,50 @@ namespace FEBuilderGBA
                 return;
             }
 
+
+            string sappyexe = Program.Config.at("sappy", "");
+            if (sappyexe == "" || !File.Exists(sappyexe))
             {
-                string sappyexe = Program.Config.at("sappy", "");
-                if (sappyexe == "" || !File.Exists(sappyexe))
+                R.ShowStopError("Sappyが存在しません。\r\n設定->オプションから正しいパスを設定してください。");
+                return;
+            }
+            bool isVGMusicStudio = CheckVGMusicStudio(sappyexe);
+
+            if (isVGMusicStudio)
+            {
+                KillProcessIfRunning("sappy", "<<ROM>>");
+
+                try
                 {
-                    R.ShowStopError("Sappyが存在しません。\r\n設定->オプションから正しいパスを設定してください。");
+                    string args2 = String.Format("-mp2k -songid {0} -filename", song_id);
+                    MainFormUtil.RunAs("sappy", "<<ROM>>", args2);
+                }
+                catch (Exception e)
+                {
+                    R.ShowStopError("VGMusicStudioプロセスを実行できません。\r\n{0}", e.ToString());
                     return;
                 }
             }
+            else
+            {
+                Process p;
+                try
+                {
+                    p = MainFormUtil.PoolRunAs("sappy");
+                }
+                catch (Exception e)
+                {
+                    R.ShowStopError("Sappyプロセスを実行できません。\r\n{0}", e.ToString());
+                    return;
+                }
+                if (p == null)
+                {
+                    return;
+                }
 
-            Process p;
-            try
-            {
-                p = MainFormUtil.PoolRunAs("sappy");
+                SappyPlaying sappy = new SappyPlaying();
+                sappy.StartPlay(p, song_id);
             }
-            catch (Exception e)
-            {
-                R.ShowStopError("Sappyプロセスを実行できません。\r\n{0}", e.ToString());
-                return;
-            }
-            if (p == null)
-            {
-                return;
-            }
-
-            SappyPlaying sappy = new SappyPlaying();
-            sappy.StartPlay(p, song_id);
         }
 
 

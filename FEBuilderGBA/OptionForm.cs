@@ -449,7 +449,7 @@ namespace FEBuilderGBA
 
         private void sappy_button_Click(object sender, EventArgs e)
         {
-            string r = EXESearch("SAPPY.EXE|sappy.exe|");
+            string r = EXESearch("SAPPY,VGMusicStudio|sappy.exe;VG Music Studio.exe|");
             if (r != "")
             {
                 sappy.Text = r;
@@ -1356,7 +1356,7 @@ namespace FEBuilderGBA
             explain_func_alert_unk_event_code.AccessibleDescription = R._("イベントを解析したときに不明な命令が連続していたら、壊れていると警告を出します。\r\n数字を下げると、壊れたイベントを検知しやすくなりますが、未知の命令を誤認する可能性もあります。\r\nFE8とFE6はほぼすべての命令を解析されているので厳し目の値にしてもいい。\r\nFE7はまだ未知の命令があるので下げ過ぎると誤認識があります。\r\n");
             X_EXPLAIN_VBA_M.AccessibleDescription = R._("エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。");
             X_EXPLAIN_NODOLL_GBA_DEBUGGER.AccessibleDescription = R._("Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。");
-            X_EXPLAIN_SAPPY.AccessibleDescription = R._("sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。");
+            X_EXPLAIN_SAPPY.AccessibleDescription = R._("音楽プレイヤを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyまたはVGMusicStudioに対応しています。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。\r\nVGMusicStudioは起動オプションに対応しているバージョンを利用してください。");
             X_EXPLAIN_EA.AccessibleDescription = R._("FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。");
             explain_func_show_chapter_extends.AccessibleDescription = R._("章テーブルを拡張するボタンを表示します。\r\n章を拡張するときは、PLISTの構造について理解している必要があります。");
             explain_func_show_worldmap_node_extends.AccessibleDescription = R._("FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");

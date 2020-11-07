@@ -5968,6 +5968,9 @@ Could not transfer the symbol file for the no$gba debuger.\r\nThe file may be in
 :Sappyが存在しません。\r\n設定->オプションから正しいパスを設定してください。
 Sappy does not exist.\r\nPlease set the correct path from the setting -> option.
 
+:VGMusicStudioプロセスを実行できません。\r\n{0}
+Unable to run VGMusicStudio process.\r\n{0}.
+
 :Sappyプロセスを実行できません。\r\n{0}
 Unable to execute Sappy process.\r\n{0}
 
@@ -8512,8 +8515,8 @@ When you set up the emulator, you can test it with the F5 key.\r\nAlso, data can
 :Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。
 Set the debugger to be started when Ctrl + F5 is pressed.\r\nFEBuilderGBA can transfer save data and automatically generate symbols to no$gba debugger.
 
-:sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。
-When sappy is set, you can play BGM when you click the note button.\r\nWhen installing sappy, it is convenient to use the installer written in the manual.
+:音楽プレイヤを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyまたはVGMusicStudioに対応しています。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。\r\nVGMusicStudioは起動オプションに対応しているバージョンを利用してください。
+If you set a music player, you can play background music when you click the note button.\r\nCompatible with sappy or VG Music Studio.\r\nWhen installing sappy, it is convenient to use the installer described in the manual.\r\nPlease use the version of VGMusicStudio that supports the startup option.
 
 :FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。
 In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlease install EA Ver 11 or higher.
@@ -8578,14 +8581,17 @@ Set when using mid2agb for Midi conversion.
 :Event Assemblerと連動させる場合は、設定してください。
 Set to enable Event Assembler functionality.
 
-:音楽を再生するときに利用するsappyを設定してください。
-Set to enable Sappy music functionality.
+:音楽を再生するときに利用するsappy(or VGMusicStudio)を設定してください。
+Please set the sappy (or VG Music Studio) to be used when playing music.
 
 :他に使うエミュレータがあれば設定してください。おすすめは、no$gba-debuggerです。
 Set to link FEBuilderGBA with a secondary emulator. No$GBA-Debugger is recommended for debugging.
 
 :メインで利用するエミュレータを設定してください。おすすめは、VBA-Mです。
 Set to link FEBuilderGBA with a primary emulator. VBA-M is recommended.
+
+:音楽プレイヤ
+Music player
 
 :エミュレーター2
 Emulator 2
@@ -10029,6 +10035,9 @@ The song to export is not selected from the list.
 
 :インポートする曲がリストから選択されていません.
 The song to import is not selected from the list.
+
+:SongID: 0x0に書き込むことはできません
+SongID: Cannot write to 0x0.
 
 :この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？
 Are you sure you want to port this music ({0}) to (1) in ROM?
