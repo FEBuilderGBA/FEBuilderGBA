@@ -185,6 +185,11 @@ namespace FEBuilderGBA
                     error += r;
                 }
             }
+            if (error != "")
+            {
+                error = error + "\r\n" + R._("これは警告であり、エラーではありません。\r\n大きいアニメーションは動かないことがあるので警告を表示しています。\r\n警告が出ていても動作することもあります。");
+            }
+
             if (errorOver16Anime)
             {
                 text = R._("16色を超える戦闘アニメーションです。") + " " + text;

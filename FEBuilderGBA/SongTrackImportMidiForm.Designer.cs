@@ -31,20 +31,23 @@
             this.OKButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.customColorGroupBox3 = new FEBuilderGBA.CustomColorGroupBox();
+            this.IgnoreBACKCheckBox = new System.Windows.Forms.CheckBox();
+            this.IgnoreHEADCheckBox = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.Mid2agbV = new System.Windows.Forms.NumericUpDown();
             this.Explain_mid2agb = new System.Windows.Forms.TextBox();
             this.Mid2AGBOKButton = new System.Windows.Forms.Button();
             this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
+            this.UseMidfix4agb_checkBox = new System.Windows.Forms.CheckBox();
+            this.WARNING_midfix4agb_label = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.IgnoreLFOSCheckBox = new System.Windows.Forms.CheckBox();
             this.IgnoreBENDCheckBox = new System.Windows.Forms.CheckBox();
             this.IgnoreMODCheckBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.customColorGroupBox3 = new FEBuilderGBA.CustomColorGroupBox();
-            this.IgnoreBACKCheckBox = new System.Windows.Forms.CheckBox();
-            this.IgnoreHEADCheckBox = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.InstrumentSelectComboBox = new System.Windows.Forms.ComboBox();
@@ -52,10 +55,10 @@
             this.Instrument = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.customColorGroupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mid2agbV)).BeginInit();
             this.customColorGroupBox2.SuspendLayout();
-            this.customColorGroupBox3.SuspendLayout();
             this.customColorGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Instrument)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +69,7 @@
             this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(264, 28);
-            this.OKButton.TabIndex = 175;
+            this.OKButton.TabIndex = 0;
             this.OKButton.Text = "選択する";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
@@ -75,11 +78,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(13, 398);
+            this.tabControl1.Location = new System.Drawing.Point(13, 489);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(688, 259);
-            this.tabControl1.TabIndex = 178;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -92,6 +95,49 @@
             this.tabPage1.Size = new System.Drawing.Size(680, 227);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "FEBuilderGBAでインポート";
+            // 
+            // customColorGroupBox3
+            // 
+            this.customColorGroupBox3.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox3.Controls.Add(this.IgnoreBACKCheckBox);
+            this.customColorGroupBox3.Controls.Add(this.IgnoreHEADCheckBox);
+            this.customColorGroupBox3.Controls.Add(this.label3);
+            this.customColorGroupBox3.Location = new System.Drawing.Point(6, 11);
+            this.customColorGroupBox3.Name = "customColorGroupBox3";
+            this.customColorGroupBox3.Size = new System.Drawing.Size(672, 155);
+            this.customColorGroupBox3.TabIndex = 177;
+            this.customColorGroupBox3.TabStop = false;
+            this.customColorGroupBox3.Text = "トリミング";
+            // 
+            // IgnoreBACKCheckBox
+            // 
+            this.IgnoreBACKCheckBox.AutoSize = true;
+            this.IgnoreBACKCheckBox.Location = new System.Drawing.Point(10, 104);
+            this.IgnoreBACKCheckBox.Name = "IgnoreBACKCheckBox";
+            this.IgnoreBACKCheckBox.Size = new System.Drawing.Size(287, 22);
+            this.IgnoreBACKCheckBox.TabIndex = 2;
+            this.IgnoreBACKCheckBox.Text = "楽譜の後方の無音区間を無視する";
+            this.IgnoreBACKCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // IgnoreHEADCheckBox
+            // 
+            this.IgnoreHEADCheckBox.AutoSize = true;
+            this.IgnoreHEADCheckBox.Location = new System.Drawing.Point(10, 71);
+            this.IgnoreHEADCheckBox.Name = "IgnoreHEADCheckBox";
+            this.IgnoreHEADCheckBox.Size = new System.Drawing.Size(287, 22);
+            this.IgnoreHEADCheckBox.TabIndex = 1;
+            this.IgnoreHEADCheckBox.Text = "楽譜の前方の無音区間を無視する";
+            this.IgnoreHEADCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(184, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "無音区間を除去します。";
             // 
             // tabPage2
             // 
@@ -156,99 +202,88 @@
             // customColorGroupBox2
             // 
             this.customColorGroupBox2.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox2.Controls.Add(this.UseMidfix4agb_checkBox);
+            this.customColorGroupBox2.Controls.Add(this.WARNING_midfix4agb_label);
+            this.customColorGroupBox2.Controls.Add(this.label5);
             this.customColorGroupBox2.Controls.Add(this.IgnoreLFOSCheckBox);
             this.customColorGroupBox2.Controls.Add(this.IgnoreBENDCheckBox);
             this.customColorGroupBox2.Controls.Add(this.IgnoreMODCheckBox);
             this.customColorGroupBox2.Controls.Add(this.label2);
             this.customColorGroupBox2.Location = new System.Drawing.Point(13, 228);
             this.customColorGroupBox2.Name = "customColorGroupBox2";
-            this.customColorGroupBox2.Size = new System.Drawing.Size(687, 163);
+            this.customColorGroupBox2.Size = new System.Drawing.Size(687, 242);
             this.customColorGroupBox2.TabIndex = 176;
             this.customColorGroupBox2.TabStop = false;
             this.customColorGroupBox2.Text = "みょーん補正";
             // 
+            // UseMidfix4agb_checkBox
+            // 
+            this.UseMidfix4agb_checkBox.AutoSize = true;
+            this.UseMidfix4agb_checkBox.Location = new System.Drawing.Point(10, 65);
+            this.UseMidfix4agb_checkBox.Name = "UseMidfix4agb_checkBox";
+            this.UseMidfix4agb_checkBox.Size = new System.Drawing.Size(191, 22);
+            this.UseMidfix4agb_checkBox.TabIndex = 0;
+            this.UseMidfix4agb_checkBox.Text = "midfix4agbを利用する";
+            this.UseMidfix4agb_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // WARNING_midfix4agb_label
+            // 
+            this.WARNING_midfix4agb_label.AutoSize = true;
+            this.WARNING_midfix4agb_label.Location = new System.Drawing.Point(34, 67);
+            this.WARNING_midfix4agb_label.Name = "WARNING_midfix4agb_label";
+            this.WARNING_midfix4agb_label.Size = new System.Drawing.Size(310, 18);
+            this.WARNING_midfix4agb_label.TabIndex = 7;
+            this.WARNING_midfix4agb_label.Text = "midfix4agbのPATHが設定されていません。";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 109);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(426, 18);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "それでも改善しない場合は、次のオプションも利用できます。";
+            // 
             // IgnoreLFOSCheckBox
             // 
             this.IgnoreLFOSCheckBox.AutoSize = true;
-            this.IgnoreLFOSCheckBox.Location = new System.Drawing.Point(10, 131);
+            this.IgnoreLFOSCheckBox.Location = new System.Drawing.Point(10, 205);
             this.IgnoreLFOSCheckBox.Name = "IgnoreLFOSCheckBox";
             this.IgnoreLFOSCheckBox.Size = new System.Drawing.Size(252, 22);
-            this.IgnoreLFOSCheckBox.TabIndex = 4;
+            this.IgnoreLFOSCheckBox.TabIndex = 3;
             this.IgnoreLFOSCheckBox.Text = "LFOS,LFODL命令を無視する";
             this.IgnoreLFOSCheckBox.UseVisualStyleBackColor = true;
             // 
             // IgnoreBENDCheckBox
             // 
             this.IgnoreBENDCheckBox.AutoSize = true;
-            this.IgnoreBENDCheckBox.Location = new System.Drawing.Point(10, 98);
+            this.IgnoreBENDCheckBox.Location = new System.Drawing.Point(10, 172);
             this.IgnoreBENDCheckBox.Name = "IgnoreBENDCheckBox";
             this.IgnoreBENDCheckBox.Size = new System.Drawing.Size(254, 22);
-            this.IgnoreBENDCheckBox.TabIndex = 3;
+            this.IgnoreBENDCheckBox.TabIndex = 2;
             this.IgnoreBENDCheckBox.Text = "BEND,BENDR命令を無視する";
             this.IgnoreBENDCheckBox.UseVisualStyleBackColor = true;
             // 
             // IgnoreMODCheckBox
             // 
             this.IgnoreMODCheckBox.AutoSize = true;
-            this.IgnoreMODCheckBox.Location = new System.Drawing.Point(10, 65);
+            this.IgnoreMODCheckBox.Location = new System.Drawing.Point(10, 139);
             this.IgnoreMODCheckBox.Name = "IgnoreMODCheckBox";
             this.IgnoreMODCheckBox.Size = new System.Drawing.Size(240, 22);
-            this.IgnoreMODCheckBox.TabIndex = 2;
+            this.IgnoreMODCheckBox.TabIndex = 1;
             this.IgnoreMODCheckBox.Text = "MOD,MODT命令を無視する";
             this.IgnoreMODCheckBox.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 30);
+            this.label2.Location = new System.Drawing.Point(7, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(388, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "音が「みょーん」となる場合は、有効にしてみてください。";
-            // 
-            // customColorGroupBox3
-            // 
-            this.customColorGroupBox3.BorderColor = System.Drawing.Color.Empty;
-            this.customColorGroupBox3.Controls.Add(this.IgnoreBACKCheckBox);
-            this.customColorGroupBox3.Controls.Add(this.IgnoreHEADCheckBox);
-            this.customColorGroupBox3.Controls.Add(this.label3);
-            this.customColorGroupBox3.Location = new System.Drawing.Point(6, 11);
-            this.customColorGroupBox3.Name = "customColorGroupBox3";
-            this.customColorGroupBox3.Size = new System.Drawing.Size(672, 155);
-            this.customColorGroupBox3.TabIndex = 177;
-            this.customColorGroupBox3.TabStop = false;
-            this.customColorGroupBox3.Text = "トリミング";
-            // 
-            // IgnoreBACKCheckBox
-            // 
-            this.IgnoreBACKCheckBox.AutoSize = true;
-            this.IgnoreBACKCheckBox.Location = new System.Drawing.Point(10, 104);
-            this.IgnoreBACKCheckBox.Name = "IgnoreBACKCheckBox";
-            this.IgnoreBACKCheckBox.Size = new System.Drawing.Size(287, 22);
-            this.IgnoreBACKCheckBox.TabIndex = 3;
-            this.IgnoreBACKCheckBox.Text = "楽譜の後方の無音区間を無視する";
-            this.IgnoreBACKCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // IgnoreHEADCheckBox
-            // 
-            this.IgnoreHEADCheckBox.AutoSize = true;
-            this.IgnoreHEADCheckBox.Location = new System.Drawing.Point(10, 71);
-            this.IgnoreHEADCheckBox.Name = "IgnoreHEADCheckBox";
-            this.IgnoreHEADCheckBox.Size = new System.Drawing.Size(287, 22);
-            this.IgnoreHEADCheckBox.TabIndex = 2;
-            this.IgnoreHEADCheckBox.Text = "楽譜の前方の無音区間を無視する";
-            this.IgnoreHEADCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 34);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 18);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "無音区間を除去します。";
             // 
             // customColorGroupBox1
             // 
@@ -283,7 +318,7 @@
             this.InstrumentSelectComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.InstrumentSelectComboBox.Name = "InstrumentSelectComboBox";
             this.InstrumentSelectComboBox.Size = new System.Drawing.Size(325, 26);
-            this.InstrumentSelectComboBox.TabIndex = 174;
+            this.InstrumentSelectComboBox.TabIndex = 1;
             this.InstrumentSelectComboBox.SelectedIndexChanged += new System.EventHandler(this.InstrumentSelectComboBox_SelectedIndexChanged);
             // 
             // J_4_INSTRUMENT_ADDR
@@ -309,7 +344,7 @@
             0});
             this.Instrument.Name = "Instrument";
             this.Instrument.Size = new System.Drawing.Size(134, 25);
-            this.Instrument.TabIndex = 173;
+            this.Instrument.TabIndex = 0;
             // 
             // SongTrackImportMidiForm
             // 
@@ -317,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(712, 672);
+            this.ClientSize = new System.Drawing.Size(712, 756);
             this.Controls.Add(this.customColorGroupBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.customColorGroupBox1);
@@ -327,13 +362,13 @@
             this.Load += new System.EventHandler(this.SongTrackImportMidiForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.customColorGroupBox3.ResumeLayout(false);
+            this.customColorGroupBox3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mid2agbV)).EndInit();
             this.customColorGroupBox2.ResumeLayout(false);
             this.customColorGroupBox2.PerformLayout();
-            this.customColorGroupBox3.ResumeLayout(false);
-            this.customColorGroupBox3.PerformLayout();
             this.customColorGroupBox1.ResumeLayout(false);
             this.customColorGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Instrument)).EndInit();
@@ -365,5 +400,8 @@
         private System.Windows.Forms.TextBox Explain_mid2agb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown Mid2agbV;
+        private System.Windows.Forms.CheckBox UseMidfix4agb_checkBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label WARNING_midfix4agb_label;
     }
 }

@@ -182,6 +182,15 @@ namespace FEBuilderGBA
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
+                    if (f.UseMidfix4agb())
+                    {
+                        filename = SongUtil.ConvertMidfix4agb(filename);
+                        if (filename == "")
+                        {
+                            return;
+                        }
+                    }
+
                     if (f.GetUseMID2AGB() == SongTrackImportMidiForm.ImportMethod.FEBuilderGBA)
                     {//FEBuilderGBAでimport
                         error = SongUtil.ImportMidiFile(filename, songtable_address

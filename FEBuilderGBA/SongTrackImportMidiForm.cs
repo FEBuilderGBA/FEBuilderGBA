@@ -32,6 +32,10 @@ namespace FEBuilderGBA
         {
             return (uint)Instrument.Value;
         }
+        public bool UseMidfix4agb()
+        {
+            return UseMidfix4agb_checkBox.Checked;
+        }
         public bool GetIgnoreMOD()
         {
             return IgnoreMODCheckBox.Checked;
@@ -125,6 +129,17 @@ namespace FEBuilderGBA
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.NIMAP_By_SongTrack);
                 PickupInstrument();
             }
+            if (OptionForm.GetMidfix4agb() == "")
+            {
+                UseMidfix4agb_checkBox.Hide();
+                WARNING_midfix4agb_label.Show();
+            }
+            else
+            {
+                WARNING_midfix4agb_label.Hide();
+                UseMidfix4agb_checkBox.Show();
+            }
+
             if (MainFormUtil.CanUseMID2AGB())
             {//mid2agbを利用できる.
                 if (OptionForm.midi_importer() == OptionForm.midi_importer_enum.MID2AGB)

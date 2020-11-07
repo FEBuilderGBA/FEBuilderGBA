@@ -3256,6 +3256,9 @@ Would you like to activate the {0} patch?
 :パッチの自動適応に失敗しました。\r\nパッチ画面にエラーが表示されていないか確認してください。\r\n必須パッチの適応に失敗したということは、FEBuilderGBAの解凍に失敗している可能性があります。\r\nFEBuilderGBAを再インストールしてください。\r\nそれでも問題が解決しない場合は、バグとして報告してください。\r\n
 Automatic patch adaptation failed.\r\nPlease check whether an error is displayed on the patch screen.\r\nFailure to adapt mandatory patches means that it may have failed to decompress FEBuilderGBA.\r\nPlease reinstall FEBuilderGBA.\r\nIf the problem persists, please report it as a bug.\r\n
 
+:これは警告であり、エラーではありません。\r\n大きいアニメーションは動かないことがあるので警告を表示しています。\r\n警告が出ていても動作することもあります。
+This is a warning, not an error.\r\nLarge animations may not work, so a warning is displayed.\r\nIt may work even if there is a warning.
+
 :16色を超える戦闘アニメーションです。
 It is a battle animation with more than 16 colors.
 
@@ -10360,6 +10363,18 @@ select
 :FEBuilderGBAでインポート
 Import with FEBuilderGBA
 
+:トリミング
+trimming
+
+:楽譜の後方の無音区間を無視する
+Ignore silent section behind score
+
+:楽譜の前方の無音区間を無視する
+Ignore silent section ahead of score
+
+:無音区間を除去します。
+Remove silent sections
+
 :mid2agbでインポート
 Import with mid2agb
 
@@ -10372,6 +10387,15 @@ Music will be imported with mid2agb.\r\nTo create a loop, set a loop label in mi
 :みょーん補正
 Pitch Correction
 
+:midfix4agbを利用する
+Use midfix4agb.
+
+:midfix4agbのPATHが設定されていません。
+The PATH of midfix4agb is not set.
+
+:それでも改善しない場合は、次のオプションも利用できます。
+If that doesn't help, the following options are also available:
+
 :LFOS,LFODL命令を無視する
 Ignore LFOS, LFODL instruction
 
@@ -10383,18 +10407,6 @@ Ignore MOD and MODT instructions
 
 :音が「みょーん」となる場合は、有効にしてみてください。
 If the sound is strange (wonky, "mi~yoon")
-
-:トリミング
-trimming
-
-:楽譜の後方の無音区間を無視する
-Ignore silent section behind score
-
-:楽譜の前方の無音区間を無視する
-Ignore silent section ahead of score
-
-:無音区間を除去します。
-Remove silent sections
 
 :楽器
 Instrument
@@ -10518,6 +10530,9 @@ GBAMusRiper returned an error.\r\nFEBuilderGBA side substitutes.\r\n\r\nGBA MusR
 
 :GBAMusRiperがエラーを返しました。\r\n{0}
 GBAMusRiper returned an error.\r\n{0}.
+
+:midfix4agbがエラーになりました。\r\n{0}
+midfix4agb got an error.\r\n{0}.
 
 :曲番号
 Song Number

@@ -3359,6 +3359,16 @@ namespace FEBuilderGBA
                 return;
             }
         }
-        
+        public static string ConvertMidfix4agb(string filename)
+        {
+            string error;
+            bool r = MainFormUtil.ConvertMidfix4agb(filename, out error);
+            if (r == false)
+            {
+                R.ShowStopError("midfix4agbがエラーになりました。\r\n{0}", error);
+                return "";
+            }
+            return error;
+        }
     }
 }

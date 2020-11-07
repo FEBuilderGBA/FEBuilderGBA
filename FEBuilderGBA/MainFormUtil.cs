@@ -2195,6 +2195,47 @@ namespace FEBuilderGBA
             return true;
         }
 
+        //Midfix4agbでmidiを補正
+        public static bool ConvertMidfix4agb(string filename, out string output)
+        {
+            output = "";
+
+            string compiler_exe = OptionForm.GetMidfix4agb();
+            if (compiler_exe == "" || !File.Exists(compiler_exe))
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "midfix4agb");
+                return false;
+            }
+            if (!File.Exists(compiler_exe))
+            {
+                output = R.Error(("ファイルがありません。\r\nファイル名:{0}"), compiler_exe);
+                return false;
+            }
+
+            string middir = Path.GetDirectoryName(filename);
+            string output_target = Path.Combine(middir, Path.GetFileNameWithoutExtension(filename) + "_FINAL.mid");
+            if (File.Exists(output_target))
+            {
+                File.Delete(output_target);
+            }
+
+            string tooldir = Path.GetDirectoryName(compiler_exe);
+
+            string args = ""
+                + U.escape_shell_args(filename)
+                ;
+
+            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+
+            if (!File.Exists(output_target) || U.GetFileSize(output_target) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = output_target;
+            return true;
+        }
 
         public static byte[] OpenROMToByte(string path, string orignalFile = "")
         {

@@ -53,6 +53,7 @@ namespace FEBuilderGBA
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
             gba_mus_riper.Text = Program.Config.at("gba_mus_riper");
             sox.Text = Program.Config.at("sox");
+            midfix4agb.Text = Program.Config.at("midfix4agb");
             FECLIB.Text = Program.Config.at("FECLIB");
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
@@ -229,6 +230,7 @@ namespace FEBuilderGBA
             Program.Config["python3"] = python3.Text;
             Program.Config["gba_mus_riper"] = gba_mus_riper.Text;
             Program.Config["sox"] = sox.Text;
+            Program.Config["midfix4agb"] = midfix4agb.Text;
             Program.Config["FECLIB"] = FECLIB.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
@@ -1471,5 +1473,23 @@ namespace FEBuilderGBA
             FECLIB_button.PerformClick();
         }
 
+        public static string GetMidfix4agb()
+        {
+            return Program.Config.at("midfix4agb", "");
+        }
+
+        private void midfix4agb_button_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("midfix4agb|midfix4agb.exe|");
+            if (r != "")
+            {
+                midfix4agb.Text = r;
+            }
+        }
+
+        private void midfix4agb_DoubleClick(object sender, EventArgs e)
+        {
+            midfix4agb_button.PerformClick();
+        }
     }
 }
