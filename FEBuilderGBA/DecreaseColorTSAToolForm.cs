@@ -268,6 +268,10 @@ namespace FEBuilderGBA
             {
                 R.ShowStopError(R.ExceptionToString(ee));
             }
+            catch (System.ArgumentException ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+            }
         }
 
         private void AFilename_DoubleClick(object sender, EventArgs e)
@@ -287,7 +291,7 @@ namespace FEBuilderGBA
 
         private void ConvertPaletteNo_ValueChanged(object sender, EventArgs e)
         {
-            IgnoreTSA.Visible = (ConvertPaletteNo.Value == 16);
+            IgnoreTSA.Visible = (ConvertPaletteNo.Value >= 4);
         }
 
     }

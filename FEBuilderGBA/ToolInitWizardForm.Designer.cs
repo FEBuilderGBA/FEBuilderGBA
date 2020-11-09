@@ -68,6 +68,8 @@
             this.label11 = new FEBuilderGBA.LabelEx();
             this.label5 = new FEBuilderGBA.LabelEx();
             this.Step3Page = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.Step3PrevButton = new System.Windows.Forms.Button();
             this.RefSappyButton = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -116,6 +118,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EndButton = new System.Windows.Forms.Button();
+            this.midfix4agbButton = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.midfix4agb_TextBox = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.BeginPage.SuspendLayout();
@@ -537,6 +542,8 @@
             // Step3Page
             // 
             this.Step3Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step3Page.Controls.Add(this.button11);
+            this.Step3Page.Controls.Add(this.label26);
             this.Step3Page.Controls.Add(this.Step3PrevButton);
             this.Step3Page.Controls.Add(this.RefSappyButton);
             this.Step3Page.Controls.Add(this.button9);
@@ -553,6 +560,25 @@
             this.Step3Page.Size = new System.Drawing.Size(860, 591);
             this.Step3Page.TabIndex = 5;
             this.Step3Page.Text = "Step3Page";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(18, 459);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(795, 36);
+            this.button11.TabIndex = 119;
+            this.button11.Text = "VGMusicStudioをダウンロードする";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(24, 425);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(63, 18);
+            this.label26.TabIndex = 118;
+            this.label26.Text = "または、";
             // 
             // Step3PrevButton
             // 
@@ -576,7 +602,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(18, 484);
+            this.button9.Location = new System.Drawing.Point(16, 552);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(795, 36);
             this.button9.TabIndex = 115;
@@ -587,7 +613,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 450);
+            this.label15.Location = new System.Drawing.Point(22, 518);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 18);
             this.label15.TabIndex = 114;
@@ -818,6 +844,9 @@
             // Step5Page
             // 
             this.Step5Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step5Page.Controls.Add(this.midfix4agbButton);
+            this.Step5Page.Controls.Add(this.label27);
+            this.Step5Page.Controls.Add(this.midfix4agb_TextBox);
             this.Step5Page.Controls.Add(this.Step5PrevButton);
             this.Step5Page.Controls.Add(this.RefSOXButton);
             this.Step5Page.Controls.Add(this.label22);
@@ -850,7 +879,7 @@
             // 
             // RefSOXButton
             // 
-            this.RefSOXButton.Location = new System.Drawing.Point(725, 240);
+            this.RefSOXButton.Location = new System.Drawing.Point(725, 194);
             this.RefSOXButton.Name = "RefSOXButton";
             this.RefSOXButton.Size = new System.Drawing.Size(88, 31);
             this.RefSOXButton.TabIndex = 119;
@@ -861,7 +890,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(13, 243);
+            this.label22.Location = new System.Drawing.Point(13, 197);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(33, 18);
             this.label22.TabIndex = 117;
@@ -869,7 +898,7 @@
             // 
             // Refgba_mus_riperButton
             // 
-            this.Refgba_mus_riperButton.Location = new System.Drawing.Point(725, 194);
+            this.Refgba_mus_riperButton.Location = new System.Drawing.Point(725, 148);
             this.Refgba_mus_riperButton.Name = "Refgba_mus_riperButton";
             this.Refgba_mus_riperButton.Size = new System.Drawing.Size(88, 31);
             this.Refgba_mus_riperButton.TabIndex = 116;
@@ -918,7 +947,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(13, 197);
+            this.label25.Location = new System.Drawing.Point(13, 151);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(108, 18);
             this.label25.TabIndex = 110;
@@ -937,7 +966,7 @@
             // sox_TextBox
             // 
             this.sox_TextBox.ErrorMessage = "";
-            this.sox_TextBox.Location = new System.Drawing.Point(146, 243);
+            this.sox_TextBox.Location = new System.Drawing.Point(146, 197);
             this.sox_TextBox.Name = "sox_TextBox";
             this.sox_TextBox.Placeholder = "";
             this.sox_TextBox.Size = new System.Drawing.Size(559, 25);
@@ -946,7 +975,7 @@
             // gba_mus_riper_TextBox
             // 
             this.gba_mus_riper_TextBox.ErrorMessage = "";
-            this.gba_mus_riper_TextBox.Location = new System.Drawing.Point(146, 197);
+            this.gba_mus_riper_TextBox.Location = new System.Drawing.Point(146, 151);
             this.gba_mus_riper_TextBox.Name = "gba_mus_riper_TextBox";
             this.gba_mus_riper_TextBox.Placeholder = "";
             this.gba_mus_riper_TextBox.Size = new System.Drawing.Size(559, 25);
@@ -1041,6 +1070,34 @@
             this.EndButton.Text = "完了";
             this.EndButton.UseVisualStyleBackColor = true;
             this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
+            // 
+            // midfix4agbButton
+            // 
+            this.midfix4agbButton.Location = new System.Drawing.Point(725, 237);
+            this.midfix4agbButton.Name = "midfix4agbButton";
+            this.midfix4agbButton.Size = new System.Drawing.Size(88, 31);
+            this.midfix4agbButton.TabIndex = 123;
+            this.midfix4agbButton.Text = "参照";
+            this.midfix4agbButton.UseVisualStyleBackColor = true;
+            this.midfix4agbButton.Click += new System.EventHandler(this.midfix4agbButton_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(13, 240);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(86, 18);
+            this.label27.TabIndex = 121;
+            this.label27.Text = "midfix4agb";
+            // 
+            // midfix4agb_TextBox
+            // 
+            this.midfix4agb_TextBox.ErrorMessage = "";
+            this.midfix4agb_TextBox.Location = new System.Drawing.Point(146, 240);
+            this.midfix4agb_TextBox.Name = "midfix4agb_TextBox";
+            this.midfix4agb_TextBox.Placeholder = "";
+            this.midfix4agb_TextBox.Size = new System.Drawing.Size(559, 25);
+            this.midfix4agb_TextBox.TabIndex = 122;
             // 
             // ToolInitWizardForm
             // 
@@ -1164,5 +1221,10 @@
         private TextBoxEx gba_mus_riper_TextBox;
         private LabelEx labelEx6;
         private LabelEx labelEx7;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button midfix4agbButton;
+        private System.Windows.Forms.Label label27;
+        private TextBoxEx midfix4agb_TextBox;
     }
 }

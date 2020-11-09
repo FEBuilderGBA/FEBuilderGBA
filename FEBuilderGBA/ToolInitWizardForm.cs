@@ -140,6 +140,11 @@ namespace FEBuilderGBA
             this.Step3 = Step3_Enum.DOWNLOAD_SAPPY;
             this.MainTab.SelectedTab = this.Step4Page;
         }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Step3 = Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO;
+            this.MainTab.SelectedTab = this.Step4Page;
+        }
         private void button9_Click(object sender, EventArgs e)
         {
             this.Step3 = Step3_Enum.DO_NOT_SELECT;
@@ -192,7 +197,7 @@ namespace FEBuilderGBA
 
         private void RefSappyButton_Click(object sender, EventArgs e)
         {
-            string r = OptionForm.EXESearch("SAPPY.EXE|sappy.exe|");
+            string r = OptionForm.EXESearch("SAPPY,VGMusicStudio|sappy.exe;VG Music Studio.exe|");
             if (r != "")
             {
                 this.SappyTextBox.Text = r;
@@ -348,6 +353,18 @@ namespace FEBuilderGBA
                 RunSappyInstaller(dir);
                 sappy = r;
             }
+            else if (this.Step3 == Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO)
+            {
+                string dir = Path.Combine(Program.BaseDirectory, "app", "GBAMusicStdio");
+                string url = "https://cdn.discordapp.com/attachments/145137778710151168/774580025188941844/VGMusicStudio-luncherOption.7z";
+                string r = DownloadProgram_Direct(url, dir, "VG Music Studio.exe");
+                if (IsErrorResult(r))
+                {
+                    R.ShowStopError(r);
+                    return;
+                }
+                sappy = r;
+            }
             else if (this.Step3 == Step3_Enum.DO_NOT_SELECT)
             {
                 return;
@@ -355,6 +372,19 @@ namespace FEBuilderGBA
 
             Program.Config["sappy"] = sappy;
 
+            if (this.Step3 == Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO)
+            {//GBA MUSIC SUDIOの場合でもsappyをダウンロードしておきます。
+                string dir = Path.Combine(Program.BaseDirectory, "app", "sappy");
+                //                string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20200316.21/SappyInstaller.7z";
+                string url = "https://www.dropbox.com/sh/723s9jdkfkx7pwa/AABrXCMghyx2f74fme6iDoTEa?dl=1";
+                string r = DownloadProgram_Direct(url, dir, "sappy.exe");
+                if (IsErrorResult(r))
+                {
+                    R.ShowStopError(r);
+                    return;
+                }
+                sappy = r;
+            }
             //もしmid2agbがあれば同時に設定する.
             {
                 string r = GrepFile(Path.GetDirectoryName(sappy), "mid2agb.exe");
@@ -413,10 +443,12 @@ namespace FEBuilderGBA
         {
             string gba_mus_riper = "";
             string sox = "";
+            string midfix4agb = "";
             if (this.Step5 == Step5_Enum.Path)
             {
                 gba_mus_riper = this.gba_mus_riper_TextBox.Text;
                 sox = this.sox_TextBox.Text;
+                midfix4agb = this.midfix4agb_TextBox.Text;
             }
             else if (this.Step5 == Step5_Enum.DOWNLOAD_BOTH)
             {
@@ -442,6 +474,17 @@ namespace FEBuilderGBA
                     }
                     sox = r;
                 }
+                {
+                    string dir = Path.Combine(Program.BaseDirectory, "app", "midfix4agb");
+                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/775008685360807956/midfix4agb.7z";
+                    string r = DownloadProgram_Direct(url, dir, "midfix4agb.exe");
+                    if (IsErrorResult(r))
+                    {
+                        R.ShowStopError(r);
+                        return;
+                    }
+                    midfix4agb = r;
+                }
             }
             else if (this.Step5 == Step5_Enum.DO_NOT_SELECT)
             {
@@ -450,6 +493,7 @@ namespace FEBuilderGBA
 
             Program.Config["sox"] = sox;
             Program.Config["gba_mus_riper"] = gba_mus_riper;
+            Program.Config["midfix4agb"] = midfix4agb;
         }
 
         string DownloadProgram_DirectOneFile(string url, string path, string filename)
@@ -692,13 +736,31 @@ namespace FEBuilderGBA
 
         private void Refgba_mus_riperButton_Click(object sender, EventArgs e)
         {
-
+            string r = OptionForm.EXESearch("song_riper|song_riper.exe|");
+            if (r != "")
+            {
+                this.gba_mus_riper_TextBox.Text = r;
+            }
         }
 
         private void RefSOXButton_Click(object sender, EventArgs e)
         {
-
+            string r = OptionForm.EXESearch("sox|sox.exe|");
+            if (r != "")
+            {
+                this.sox_TextBox.Text = r;
+            }
         }
+
+        private void midfix4agbButton_Click(object sender, EventArgs e)
+        {
+            string r = OptionForm.EXESearch("midfix4agb|midfix4agb.exe|");
+            if (r != "")
+            {
+                this.midfix4agb_TextBox.Text = r;
+            }
+        }
+
 
     }
 }

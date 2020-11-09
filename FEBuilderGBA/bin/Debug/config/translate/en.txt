@@ -11668,6 +11668,9 @@ Download the latest version of EA
 :EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
 Please set Event Assembler.\r\nSome patches are written in EA, so you need EA to use them.
 
+:VGMusicStudioをダウンロードする
+Download VGMusicStudio.
+
 :Sappyを設定しない
 Do not set Sappy
 
