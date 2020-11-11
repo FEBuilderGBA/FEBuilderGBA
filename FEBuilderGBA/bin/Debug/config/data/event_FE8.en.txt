@@ -565,3 +565,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400D000039270208	Waiting for current player unit in current position	Use this if you want the unit to wait for a special menu.\r\nThis will put it in a moving position compared to SET_ENDTURN	{U}
 400D0000A5900708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{U}
 400D0000B9B40708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{J}
+20230000	Hide all units on the map.(HIDEMAP)
+20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP

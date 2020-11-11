@@ -103,4 +103,10 @@ PUSH
   ORG $B4738
   BYTE $C7
   
+  //need this
+  ORG $A324A
+  BYTE $C7
+  
+  ORG $A32D2
+  BYTE $C7
 POP

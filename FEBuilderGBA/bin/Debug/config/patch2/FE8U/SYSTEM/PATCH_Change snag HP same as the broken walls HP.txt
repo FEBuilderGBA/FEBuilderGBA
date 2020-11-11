@@ -1,0 +1,18 @@
+NAME=古木のHPを壊れる壁のHPと同じにする
+NAME.en=Change snag HP same as the broken walls HP
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x02E3D8
+
+OFF:0x02E3D8=0x1A 0xD0
+FIX:0x02E3D8=0x04 0xD0
+
+INFO=破壊できる古木のHPを、壊れる壁のHPと同じに設定します。
+INFO=Set the HP of Snag that can be destroyed to the same as the HP of walls that can be destroyed.
+AUTOR=Kirito
+NAME.zh=使旧树的HP与破墙的HP相同。

@@ -1,0 +1,13 @@
+NAME=古木のHP
+NAME.en=Snag's HP
+NAME.zh=Snag's HP
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+ADDRESS=0x2BC26
+
+INFO=破壊できる古木のHPを設定します。\r\rディフォルト値は、20です。
+INFO.en=Set the HP of snag that can be destroyed.\r\rThe default value is 20.
+INFO.zh=设置可以毁坏的老树的HP。\\ r \\ r默认值为20。
