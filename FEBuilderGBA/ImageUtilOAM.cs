@@ -2797,17 +2797,8 @@ namespace FEBuilderGBA
         }
         public static string checkOAMSizeSimple(int size)
         {
-            int limit;
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                //ちょっとだけ厳しくみておくかね.
-                limit = 13000;
-            }
-            else
-            {
-                //かなり甘めのチェックでいいと思う.
-                limit = 23000; //もっと甘めにしよう
-            }
+            //tikiが言うには、22512(0x57F0)らしい
+            int limit = 22512;
 
             if (size > limit)
             {
@@ -2833,7 +2824,7 @@ namespace FEBuilderGBA
         public static string checkFrameSizeSimple(int size)
         {
             int limit;
-            limit = 8000;
+            limit = 10200;
 
             if (size > limit)
             {
