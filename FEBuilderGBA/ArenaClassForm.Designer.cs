@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_FE8J_COMMENT = new System.Windows.Forms.Label();
-            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_CLASS = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,9 +38,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,8 +50,12 @@
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -65,19 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             this.SuspendLayout();
-            // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(305, 608);
-            this.AddressList.TabIndex = 0;
             // 
             // panel4
             // 
@@ -94,16 +82,6 @@
             this.panel4.Size = new System.Drawing.Size(878, 632);
             this.panel4.TabIndex = 88;
             // 
-            // L_0_CLASSICON
-            // 
-            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_CLASSICON.Location = new System.Drawing.Point(363, 2);
-            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
-            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_CLASSICON.TabIndex = 102;
-            this.L_0_CLASSICON.TabStop = false;
-            // 
             // X_FE8J_COMMENT
             // 
             this.X_FE8J_COMMENT.AutoSize = true;
@@ -114,17 +92,6 @@
             this.X_FE8J_COMMENT.TabIndex = 42;
             this.X_FE8J_COMMENT.Text = "上級職、下級職は自動で調整されます。\r\n闘技場で敵として使用されるユニットは、0xFD 対戦相手です。\r\nほかのユニットが出ることはないようです。";
             this.X_FE8J_COMMENT.Visible = false;
-            // 
-            // L_0_CLASS
-            // 
-            this.L_0_CLASS.ErrorMessage = "";
-            this.L_0_CLASS.Location = new System.Drawing.Point(212, 7);
-            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASS.Name = "L_0_CLASS";
-            this.L_0_CLASS.Placeholder = "";
-            this.L_0_CLASS.ReadOnly = true;
-            this.L_0_CLASS.Size = new System.Drawing.Size(147, 25);
-            this.L_0_CLASS.TabIndex = 41;
             // 
             // B0
             // 
@@ -218,17 +185,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -239,17 +195,6 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
             // 
             // label22
             // 
@@ -321,6 +266,7 @@
             this.FilterComboBox.FormattingEnabled = true;
             this.FilterComboBox.Items.AddRange(new object[] {
             "近距離武器",
+            "魔法武器",
             "遠距離武器"});
             this.FilterComboBox.Location = new System.Drawing.Point(80, 2);
             this.FilterComboBox.Margin = new System.Windows.Forms.Padding(2);
@@ -394,6 +340,61 @@
             this.panel1.Size = new System.Drawing.Size(878, 666);
             this.panel1.TabIndex = 90;
             // 
+            // L_0_CLASSICON
+            // 
+            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_CLASSICON.Location = new System.Drawing.Point(363, 2);
+            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
+            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_CLASSICON.TabIndex = 102;
+            this.L_0_CLASSICON.TabStop = false;
+            // 
+            // L_0_CLASS
+            // 
+            this.L_0_CLASS.ErrorMessage = "";
+            this.L_0_CLASS.Location = new System.Drawing.Point(212, 7);
+            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASS.Name = "L_0_CLASS";
+            this.L_0_CLASS.Placeholder = "";
+            this.L_0_CLASS.ReadOnly = true;
+            this.L_0_CLASS.Size = new System.Drawing.Size(147, 25);
+            this.L_0_CLASS.TabIndex = 41;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(305, 608);
+            this.AddressList.TabIndex = 0;
+            // 
             // ArenaClassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -409,7 +410,6 @@
             this.Load += new System.EventHandler(this.ArenaClassForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
@@ -419,6 +419,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             this.ResumeLayout(false);
 
         }

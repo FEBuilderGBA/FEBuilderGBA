@@ -146,6 +146,7 @@ namespace FEBuilderGBA
 
         public uint arena_class_near_weapon_pointer() { return 0x31898; } //闘技場 近接武器クラス 
         public uint arena_class_far_weapon_pointer() { return 0x318a4; } // 闘技場 遠距離武器クラス
+        public uint arena_class_magic_weapon_pointer() { return 0x318F4; } // 闘技場 魔法武器クラス
         public uint arena_enemy_weapon_basic_pointer() { return 0x31B04; } // 闘技場 敵武器テーブル基本武器
         public uint arena_enemy_weapon_rankup_pointer() { return 0x31B24; } // 闘技場 敵武器テーブルランクアップ武器
         public uint link_arena_deny_unit_pointer() { return 0x9A164; } //通信闘技場 禁止ユニット 

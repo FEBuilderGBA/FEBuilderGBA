@@ -12829,3 +12829,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:魔法武器
+Magic Weapon

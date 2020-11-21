@@ -145,6 +145,7 @@ namespace FEBuilderGBA
         uint op_prologue_palette_color_pointer(); // OP字幕のパレット
         uint arena_class_near_weapon_pointer(); //闘技場 近接武器クラス 
         uint arena_class_far_weapon_pointer(); // 闘技場 遠距離武器クラス
+        uint arena_class_magic_weapon_pointer(); // 闘技場 魔法武器クラス
         uint arena_enemy_weapon_basic_pointer(); // 闘技場 敵武器テーブル基本武器
         uint arena_enemy_weapon_rankup_pointer(); // 闘技場 敵武器テーブルランクアップ武器
         uint link_arena_deny_unit_pointer(); //通信闘技場 禁止ユニット 

@@ -57,11 +57,14 @@ namespace FEBuilderGBA
             {//近距離
                 this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_near_weapon_pointer()) );
             }
-            else
+            else if (FilterComboBox.SelectedIndex == 1)
+            {//魔法
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer()));
+            }
+            else if (FilterComboBox.SelectedIndex == 2)
             {//遠距離
                 this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer()));
             }
-
         }
 
         //全データの取得
@@ -74,6 +77,9 @@ namespace FEBuilderGBA
 
             InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer()));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "AreaClassForm far weapon", new uint[] { });
+
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer()));
+            FEBuilderGBA.Address.AddAddress(list, InputFormRef, "AreaClassForm magic weapon", new uint[] { });
         }
 
         private void ArenaClassForm_Load(object sender, EventArgs e)
