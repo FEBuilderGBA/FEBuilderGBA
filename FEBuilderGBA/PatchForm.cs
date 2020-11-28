@@ -7197,6 +7197,10 @@ namespace FEBuilderGBA
                         Debug.Assert(false);
                         continue;
                     }
+                    if (address_string.IndexOf(";;") >= 0)
+                    {
+                        continue;
+                    }
 
                     string[] address_sp;
                     uint addr;
