@@ -1,0 +1,17 @@
+NAME=ドロップ可能なアイテムの制限を緩和する
+NAME.en=Remove restriction on droppable items
+NAME.zh=Remove restriction on droppable items
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+
+
+ADDRESS=0x32942
+COMBO=Default Enemy+NPC|0xC0|Enemy|0x40|NPC|0x80|AllUnits|0x0
+
+AUTHOR=Suusuke https://discord.com/channels/144670830150811649/470029781795078175/781056168574451722
+INFO=バニラでは、DropItemを指定できるのは、EnemyとNPCだけです。
+INFO.en=In vanilla, DropItems can only be specified by Enemy and NPCs.
+INFO.zh=在香草中，DropItem只能由敌人和NPC指定。

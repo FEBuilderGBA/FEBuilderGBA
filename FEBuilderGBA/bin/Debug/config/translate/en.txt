@@ -280,6 +280,9 @@ Cond:
 :近距離武器
 Melee Weapon
 
+:魔法武器
+Magic Weapon
+
 :遠距離武器
 Ranged Weapon
 
@@ -12829,5 +12832,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:魔法武器
-Magic Weapon

@@ -13051,3 +13051,8 @@ r3=X tile position of menu of right	{U}
 080096D8	Get_MapIDToChapterID_For_OP_ClassReel_LotteryTableShift	{J}
 08009950	Get_OP_ClassReel_LotteryTableShift	{U}
 080097e8	Get_MapIDToChapterID_For_OP_ClassReel_LotteryTableShift	{U}
+0807223c	LoadDragonZombieTSATogSomeTSABuffer	{J}
+08023eac	IsAdjacentForSupply	{J}
+0806FC8C	LoadDragonZombieTSATogSomeTSABuffer	{U}
+08023EF0	IsAdjacentForSupply	{U}
+020111CC	Buffer_ReorderPlayerUnitsBasedOnDeployment

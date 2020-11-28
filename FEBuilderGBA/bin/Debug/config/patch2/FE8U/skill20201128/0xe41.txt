@@ -1,0 +1,2 @@
+Desperation: If HP < 50%,
+double attacks occur immediately.

@@ -280,6 +280,9 @@ AI的目标人物
 :近距離武器
 近距离武器
 
+:魔法武器
+魔法武器
+
 :遠距離武器
 远距离武器
 
@@ -12829,5 +12832,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:魔法武器
-魔法武器

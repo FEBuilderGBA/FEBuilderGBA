@@ -17,13 +17,13 @@ namespace FEBuilderGBA
         public MainSimpleMenuForm()
         {
             InitializeComponent();
+            this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
             ToolRunHintMessageForm.RemoveRunTestMenuIfUserWant(this.menuStrip1, this.TestRunStripMenuItem);
             InputFormRef.RecolorMenuStrip(this.menuStrip1);
 
-            this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.EventList.OwnerDraw(DrawEventList, DrawMode.OwnerDrawFixed);
             InputFormRef.markupJumpLabel(this.EventCond_Label);
             U.ConvertListBox(MapSettingForm.MakeMapIDList(), ref  this.MAP_LISTBOX);

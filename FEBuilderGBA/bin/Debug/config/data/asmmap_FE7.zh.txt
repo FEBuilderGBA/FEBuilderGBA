@@ -5038,3 +5038,43 @@
 0829C15C	&LZ77	Something's TSA	55	{U}
 082B4208	&LZ77	Something's TSA	56	{U}
 082B4664	&LZ77	Something's TSA	57	{U}
+0807A820	if Ninian is alive	{J}
+0807A810	if Merlinus is alive	{J}
+0807A840	if Nino is alive	{J}
+0807A850	if Jaffar is alive	{J}
+0807A860	if Priscilla is alive	{J}
+0807A890	if Erk is alive	{J}
+0807A8B0	if Kent 0x17 is alive	{J}
+0807A8C0	if Kent 0x2f is alive	{J}
+0807A8D0	if Sain 0x18 is alive	{J}
+0807A8E0	if Sain 0x30 is alive	{J}
+0807A8F0	if Wil 0x0D is alive	{J}
+0807A900	if Wil 0x2E is alive	{J}
+0807A910	if Florina 0x1D is alive	{J}
+0807A920	if Florina 0x31 is alive	{J}
+0807A930	if Dart is alive	{J}
+0807A940	if Pent is alive	{J}
+0807A950	if Louise is alive	{J}
+0807A960	if Legault is alive	{J}
+0807A980	if Athos is alive	{J}
+0807AB20	if Erik is alive	{J}
+08079DAC	if Ninian is alive	{U}
+08079D9C	if Merlinus is alive	{U}
+08079DCC	if Nino is alive	{U}
+08079DDC	if Jaffar is alive	{U}
+08079DEC	if Priscilla is alive	{U}
+08079E1C	if Erk is alive	{U}
+08079E3C	if Kent 0x17 is alive	{U}
+08079E4C	if Kent 0x2f is alive	{U}
+08079E5C	if Sain 0x18 is alive	{U}
+08079E6C	if Sain 0x30 is alive	{U}
+08079E7C	if Wil 0x0D is alive	{U}
+08079E8C	if Wil 0x2E is alive	{U}
+08079E9C	if Florina 0x1D is alive	{U}
+08079EAC	if Florina 0x31 is alive	{U}
+08079EBC	if Dart is alive	{U}
+08079ECC	if Pent is alive	{U}
+08079EDC	if Louise is alive	{U}
+08079EEC	if Legault is alive	{U}
+08079F0C	if Athos is alive	{U}
+0807A0AC	if Erik is alive	{U}

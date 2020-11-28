@@ -1,0 +1,2 @@
+Great Shield: Negate all damage.
+(Defense % activation)

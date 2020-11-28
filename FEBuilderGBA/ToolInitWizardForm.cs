@@ -28,6 +28,7 @@ namespace FEBuilderGBA
             EATextBox.Text = Program.Config.at("event_assembler");
             gba_mus_riper_TextBox.Text = Program.Config.at("gba_mus_riper");
             sox_TextBox.Text = Program.Config.at("sox");
+            midfix4agb_TextBox.Text = Program.Config.at("midfix4agb");
 
             this.LANG_EN_Button.Text = "English"; ///No Translate
             this.LANG_JP_Button.Text = "日本語"; ///No Translate
