@@ -57,6 +57,10 @@ namespace FEBuilderGBA
             {//2重割り込み禁止
                 return;
             }
+            if (!CheckRebuildAddress((uint)this.RebuildAddress.Value))
+            {
+                return;
+            }
 
             if (this.DefragCheckBox.Checked)
             {
@@ -226,6 +230,29 @@ namespace FEBuilderGBA
             this.RebuildAddress.Value = U.toOffset(Program.ROM.RomInfo.extends_address());
         }
 
+        static bool CheckRebuildAddress(uint rebuildAddress)
+        {
+            if (!U.isPadding4(rebuildAddress))
+            {
+                R.ShowStopError("このアドレス({0})はリビルドに利用できません。\r\nアドレスが4で割り切れません。", U.To0xHexString(rebuildAddress));
+                return false;
+            }
+            if (! U.isSafetyOffset(rebuildAddress))
+            {
+                R.ShowStopError("このアドレス({0})はリビルドに利用できません。\r\nアドレスの範囲が危険です。", U.To0xHexString(rebuildAddress));
+                return false;
+            }
+            if (rebuildAddress < U.toOffset(Program.ROM.RomInfo.extends_address()))
+            {
+                DialogResult dr = R.ShowNoYes("拡張領域({0})より下のアドレス({1})をrebuildするのは危険です。\r\n続行してもよろしいですか?"
+                    , U.To0xHexString(U.toOffset(Program.ROM.RomInfo.extends_address())), U.To0xHexString(rebuildAddress));
+                if (dr != DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
     }
 }

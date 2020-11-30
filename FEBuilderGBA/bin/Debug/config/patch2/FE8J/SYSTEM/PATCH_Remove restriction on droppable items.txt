@@ -13,5 +13,5 @@ COMBO=Default Enemy+NPC|0xC0|Enemy|0x40|NPC|0x80|AllUnits|0x0
 
 AUTHOR=Suusuke https://discord.com/channels/144670830150811649/470029781795078175/781056168574451722
 INFO=バニラでは、DropItemを指定できるのは、EnemyとNPCだけです。
-INFO.en=In vanilla, DropItems can only be specified by Enemy and NPCs.
+INFO.en=Allow enemies and/or NPCs to get droppable items when they kill a unit with the "Drops Last Item" status.
 INFO.zh=在香草中，DropItem只能由敌人和NPC指定。

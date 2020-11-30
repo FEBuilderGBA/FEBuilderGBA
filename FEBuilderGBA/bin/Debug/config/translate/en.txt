@@ -11980,6 +11980,15 @@ Since this ROM does not use the extended area, it can not be rebuilt.
 :警告\r\nこのROMにはシステムエラーがあるので、リビルドを実行するべきではありません。\r\n危険を承知した上でも、それでも実行しますか？
 Alert\r\nThere is a system error in this ROM, so you should not perform a rebuild.\r\nDo you still do it despite the danger?
 
+:このアドレス({0})はリビルドに利用できません。\r\nアドレスが4で割り切れません。
+This address ({0}) is not available for rebuild.\r\nThe address is not divisible by 4.
+
+:このアドレス({0})はリビルドに利用できません。\r\nアドレスの範囲が危険です。
+This address ({0}) is not available for rebuild.\r\nThe address range is dangerous.
+
+:拡張領域({0})より下のアドレス({1})をrebuildするのは危険です。\r\n続行してもよろしいですか?
+It is dangerous to rebuild the address ({1}) below the extended area ({0}).\r\nAre you sure you want to continue ?.
+
 :変更点をファイルに書きだす
 Write changes to a file
 
