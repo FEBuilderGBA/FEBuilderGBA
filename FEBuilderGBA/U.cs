@@ -457,6 +457,18 @@ namespace FEBuilderGBA
         {
             return a % 4 == 0;
         }
+        public static uint SubPadding4(uint p)
+        {
+            uint mod = p % 4;
+            if (mod == 0)
+            {
+                return p;
+            }
+            else
+            {
+                return p - mod;
+            }
+        }
 
 
         [MethodImpl(256)]

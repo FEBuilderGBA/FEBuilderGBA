@@ -9257,7 +9257,7 @@ namespace FEBuilderGBA
                 , writeindex
                 , get_data_pos_callback
                 );
-            if (original_size >= 5000)//5000 byte over
+            if (original_size >= 20000)//20000 byte over
             {//長すぎる.
                 R.Error("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません", U.To0xHexString(write_addr), original_size);
                 original_size = 0;

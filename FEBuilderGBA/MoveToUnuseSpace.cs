@@ -389,6 +389,40 @@ namespace FEBuilderGBA
 
             return length;
         }
+
+        //Text領域にASMを配置しているハックがあるらしい
+        //そういうのがないかどうかチェックします。
+        static uint ConvertSafetyLength2(uint length
+            , uint aal_length
+            , uint data_s)
+        {
+            if (length <= aal_length)
+            {
+                return length;
+            }
+
+            uint addr = data_s + aal_length;
+            uint end = data_s + length;
+            uint truelength = aal_length;
+            for (; addr < end; addr++)
+            {
+                uint d = Program.ROM.u8(addr);
+                if (d != 0x00)
+                {
+                    uint sub_padding_addr = U.SubPadding4(addr);
+                    if (sub_padding_addr < data_s)
+                    {
+                        return truelength;
+                    }
+                    else
+                    {
+                        return sub_padding_addr - data_s;
+                    }
+                }
+            }
+            return truelength;
+        }
+
         public static  uint OriginalDataSize(
                uint index_start_addr //indexの開始
              , uint index_end_addr   //indexの終端
@@ -422,8 +456,8 @@ namespace FEBuilderGBA
             {//ポインタではない　単体データ
                 if (!FETextEncode.IsUnHuffmanPatchPointer(data_s))
                 {
-                    MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, false);
-                    return ConvertSafetyLength(aal.length,index_start_addr,index_end_addr,data_s);
+                    MoveToUnuseSpace.ADDR_AND_LENGTH aal_untihuffman = get_data_pos_callback(data_s, false);
+                    return ConvertSafetyLength(aal_untihuffman.length, index_start_addr, index_end_addr, data_s);
                 }
                 //unHuffman patch適応データ
                 useUnHuffmanPatch = true;
@@ -431,9 +465,9 @@ namespace FEBuilderGBA
             }
 
             data_s = U.toOffset(data_s);
-            if (data_s < data_start_addr || data_s >= data_end_addr )
+            MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, useUnHuffmanPatch);
+            if (data_s < data_start_addr || data_s >= data_end_addr)
             {//拡張領域にあるらしいので基底サイズは不明. 自サイズしかわからない.
-                MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, useUnHuffmanPatch);
                 return ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
             }
 
@@ -448,7 +482,6 @@ namespace FEBuilderGBA
                 {
                     if (!FETextEncode.IsUnHuffmanPatchPointer(data_s_next))
                     {//次のポインタが不明なので自サイズしかわからない.
-                        MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, useUnHuffmanPatch);
                         return ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
                     }
                     //unHuffman patch適応データ
@@ -464,7 +497,6 @@ namespace FEBuilderGBA
                 if (data_s_next < data_s)
                 {
                     //アドレスが逆転してます. 危険なので自分のデータの長さだけを求めます.input
-                    MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s,useUnHuffmanPatch);
                     return ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
                 }
                 break;
@@ -472,7 +504,11 @@ namespace FEBuilderGBA
             while(true);
 
             uint length = data_s_next - data_s;
-            return ConvertSafetyLength(length, index_start_addr, index_end_addr, data_s);
+            //共有の可能性を排除
+            length = ConvertSafetyLength(length, index_start_addr, index_end_addr, data_s);
+            //text領域にASMを設置している可能性を排除
+            length = ConvertSafetyLength2(length, aal.length, data_s);
+            return length;
          }
     }
 }

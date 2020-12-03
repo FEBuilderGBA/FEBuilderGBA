@@ -446,10 +446,10 @@ namespace FEBuilderGBA
                 {
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
-                if (IsTextAreaReserrve(ref addr))
-                {
-                    return SearchFreeSpaceOneLow(newSize, addr);
-                }
+//                if (IsTextAreaReserrve(ref addr))
+//                {
+//                    return SearchFreeSpaceOneLow(newSize, addr);
+//                }
                 if (IsUnknownCollision(ref addr, newSize))
                 {//未知の衝突防止
                     return SearchFreeSpaceOneLow(newSize, addr);
