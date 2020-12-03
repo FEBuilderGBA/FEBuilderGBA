@@ -446,6 +446,10 @@ namespace FEBuilderGBA
                 {
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
+                if (IsTextAreaReserrve(ref addr))
+                {
+                    return SearchFreeSpaceOneLow(newSize, addr);
+                }
                 if (IsUnknownCollision(ref addr, newSize))
                 {//未知の衝突防止
                     return SearchFreeSpaceOneLow(newSize, addr);
@@ -536,6 +540,16 @@ namespace FEBuilderGBA
                 }
             }
             //衝突していない
+            return false;
+        }
+
+        static bool IsTextAreaReserrve(ref uint addr)
+        {
+            if (addr >= Program.ROM.RomInfo.text_data_start_address() && addr < Program.ROM.RomInfo.text_data_end_address())
+            {
+                addr = Program.ROM.RomInfo.text_data_end_address();
+                return true;
+            }
             return false;
         }
 
