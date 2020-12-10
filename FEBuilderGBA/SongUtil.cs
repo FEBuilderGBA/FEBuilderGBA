@@ -395,7 +395,7 @@ namespace FEBuilderGBA
 
             if (track.codes.Count <= 0)
             {
-                listbox.Items.Add(string.Format("-{0}"));
+                listbox.Items.Add(string.Format("-{0}",0));
             }
             else
             {

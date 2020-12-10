@@ -150,9 +150,9 @@
 @BattleHit@00	word	attributes_info_hpChange
 
 @ActionData@00	short	_u00
-@ActionData@06	short	unk6
-@ActionData@08	short	unk8
-@ActionData@0A	short	unkA
+@ActionData@06	short	Unknown6
+@ActionData@08	short	Unknown8
+@ActionData@0A	short	UnknownA
 @ActionData@0C	byte	subjectIndex
 @ActionData@0D	byte	targetIndex
 @ActionData@0E	byte	xMove
@@ -165,7 +165,7 @@
 @ActionData@15	byte	trapType
 @ActionData@16	byte	suspendPointType
 @ActionData@18	&BattleHit	scriptedBattleHits
-@ActionData@1C	byte	_Unk1C
+@ActionData@1C	byte	_Unknown1C
 
 @Vec2@00	short	x
 @Vec2@02	short	y
@@ -179,18 +179,18 @@
 @BattleMapState@00	byte	boolMainLoopEnded
 @BattleMapState@01	byte	proc2LockCount
 @BattleMapState@02	byte	gfxLockCount
-@BattleMapState@03	byte	_unk03
+@BattleMapState@03	byte	_Unknown03
 @BattleMapState@04	byte	statebits 0x10=Prep
 @BattleMapState@06	short	savedVCount
-@BattleMapState@08	word	_unk08
+@BattleMapState@08	word	_Unknown08
 @BattleMapState@08	@Vec2u	cameraRealPos
 @BattleMapState@0C	@Vec2u	cameraRealPos
-@BattleMapState@10	@Vec2u	_unk10
+@BattleMapState@10	@Vec2u	_Unknown10
 @BattleMapState@14	@Vec2u	cursorMapPos
 @BattleMapState@18	@Vec2u	cursorMapPosPrev
-@BattleMapState@1C	@Vec2u	_unk1C
+@BattleMapState@1C	@Vec2u	_Unknown1C
 @BattleMapState@20	@Vec2u	cursorDisplayRealPos
-@BattleMapState@24	@Vec2u	_unk24
+@BattleMapState@24	@Vec2u	_Unknown24
 @BattleMapState@28	byte	_pad28
 @BattleMapState@3c	byte	_pad3c
 @BattleMapState@3d	byte	partialActionTaken
@@ -513,13 +513,13 @@
 @AnimationInterpreter@15	byte	commandQueue
 @AnimationInterpreter@20	word	pCurrentFrame
 @AnimationInterpreter@24	word	pStartFrame
-@AnimationInterpreter@28	word	pUnk28
-@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@28	word	pUnknown28
+@AnimationInterpreter@2c	word	pUnknown2C
 @AnimationInterpreter@30	word	pStartObjData
 @AnimationInterpreter@34	&AnimationInterpreter	pPrev
 @AnimationInterpreter@38	&AnimationInterpreter	pNext
-@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
-@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+@AnimationInterpreter@40	&AnimationInterpreter	pUnknown40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnknown44
 
 @WaveData@00	short	type
 @WaveData@02	short	status
@@ -1569,7 +1569,7 @@
 @Unit@19	byte	運
 @Unit@1A	byte	体格＋	(5bit)
 @Unit@1B	byte	同行者ID
-@Unit@1C	byte	nazo1	(tmp?)
+@Unit@1C	byte	Unknown1	(tmp?)
 @Unit@1D	byte	移動＋	(5bit)
 @Unit@1E	byte	アイテムID1
 @Unit@1F	byte	アイテム数1
@@ -1599,20 +1599,20 @@
 @Unit@37	byte	支援6
 @Unit@38	byte	支援7
 @Unit@39	byte	支援フラグ
-@Unit@3A	byte	nazo2	maybe blank
-@Unit@3B	byte	nazo3	maybe blank
-@Unit@3C	byte	nazo4
-@Unit@3D	byte	nazo5
-@Unit@3E	byte	nazo6
-@Unit@3F	byte	nazo7
+@Unit@3A	byte	Unknown2	maybe blank
+@Unit@3B	byte	Unknown3	maybe blank
+@Unit@3C	byte	Unknown4
+@Unit@3D	byte	Unknown5
+@Unit@3E	byte	Unknown6
+@Unit@3F	byte	Unknown7
 @Unit@40	byte	AI 3
 @Unit@41	byte	AI 4
 @Unit@42	byte	AI 1
 @Unit@43	byte	AI 1 Counter
 @Unit@44	byte	AI 2
 @Unit@45	byte	AI 2 Counter
-@Unit@46	byte	nazo8	(tmp)
-@Unit@47	byte	nazo9	(blank)
+@Unit@46	byte	Unknown8	(tmp)
+@Unit@47	byte	Unknown9	(blank)
 
 0202BE48	@Unit@[3E]	味方	{J}
 0202CFB8	@Unit@[32]	敵	{J}
@@ -1872,7 +1872,7 @@
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
 
 @ChapterData@00	word	Clock
-@ChapterData@04	word	Unk4
+@ChapterData@04	word	Unknown4
 @ChapterData@08	word	所持金
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	霧の濃さ (0なら霧なし)
@@ -1890,18 +1890,18 @@
 @ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
 @ChapterData@20	byte	tactician name(0x20-0x2B)
 @ChapterData@2B	word	tactician name term 0x00
-@ChapterData@2C	word	unk2C
+@ChapterData@2C	word	Unknown2C
 @ChapterData@30	word	fundsTotalDifference
-@ChapterData@34	word	unk34
+@ChapterData@34	word	Unknown34
 @ChapterData@38	short	padding_38
 @ChapterData@40	byte	CONFIGの設定 カーソル等	 &01=個別カラー(未使用)	&02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
  &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
 @ChapterData@41	byte	CONFIGの設定 効果音	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
 @ChapterData@42	byte	CONFIGの設定 アニメ設定 難易度	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat) &20=NotEasy
-@ChapterData@43	byte	Unk43
-@ChapterData@44	word	Unk44
-@ChapterData@48	short	Unk48
-@ChapterData@4A	short	Unk4A
+@ChapterData@43	byte	Unknown43
+@ChapterData@44	word	Unknown44
+@ChapterData@48	short	Unknown48
+@ChapterData@4A	short	Unknown4A
 0202BCF0	@ChapterData	ステージの領域	{U}
 0202BCEC	@ChapterData	ステージの領域	{J}
 
@@ -1915,7 +1915,7 @@
 @CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
 @CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with the bottom 6 bits of 0xD, are battles
 @CharacterBattleStatistic@0E	byte	Character number of the most recent killer
-@CharacterBattleStatistic@0F	byte	Unk
+@CharacterBattleStatistic@0F	byte	Unknown F
 
 
 0203E894	@CharacterBattleStatistic@[46]	Unit	{U}
@@ -6300,7 +6300,7 @@
 08587A40	:0858823F	デバッグ用のフォント画像	{U}
 080DC43C	:080DC52B	顔画像TSA	{J}
 080D77FC	:080D78EB	顔画像TSA	{U}
-08FFF000	:08FFF7FF	NAZO C00009FF	{U}
+08FFF000	:08FFF7FF	Unknown C00009FF	{U}
 0801964C	LoadChapterMapPaletteOnly	{J}
 08030B90	LoadTitleAnimations2Only	{J}
 08019974	LoadChapterMapPaletteOnly	{U}
@@ -8556,8 +8556,8 @@
 085DCC84	&PALETTE	何かのパレット	201	{U}
 085E8CC4	&PALETTE	何かのパレット	202	{U}
 08792194	&PALETTE	何かのパレット	203	{U}
-089A37E8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{U}
-089A3770	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{U}
+089A37E8	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	1	{U}
+089A3770	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	2	{U}
 085DF4B8	&HEADERTSA	何かのTSA	2	{J}
 085DF554	&HEADERTSA	何かのTSA	3	{J}
 08A74308	&HEADERTSA	何かのTSA	4	{J}
@@ -9409,10 +9409,10 @@
 085E4570	&LZ77	何かの画像	2	{J}
 085E49E4	&LZ77	何かの画像	3	{J}
 085E4570	&LZ77	何かの画像	4	{J}
-08A13E70	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{J}
-08A13DF8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{J}
-085A7F94	&ASM_POINTER_ARRAY	NAZO1 Script Function	{U}
-085D1E9C	&ASM_POINTER_ARRAY	NAZO1 Script Function	{J}
+08A13E70	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	1	{J}
+08A13DF8	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	2	{J}
+085A7F94	&ASM_POINTER_ARRAY	Unknown1 Script Function	{U}
+085D1E9C	&ASM_POINTER_ARRAY	Unknown1 Script Function	{J}
 087A5800	:087A582D	不明なデータ	OAMSP Maybe	1	{U}
 087A5A1C	:087A5A49	不明なデータ	OAMSP Maybe	2	{U}
 087A64F8	:087A6669	不明なデータ	OAMSP Maybe	3	{U}
@@ -9436,8 +9436,8 @@
 080DED10	&TEXTBATCH	NetworkMessage	{J}
 08045CEC	ShowNetworkMessage	{U}
 08045C8C	ShowNetworkMessage	{J}
-080DC760	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{J}
-080D7AB4	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{U}
+080DC760	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{J}
+080D7AB4	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{U}
 081F6D2C	&TEXTBATCH	見習いCCセリフ	{J}
 0820707C	&TEXTBATCH	見習いCCセリフ	{U}
 080D779C	&CSTRING	Hex	{U}
@@ -9791,7 +9791,7 @@
 080057A8	GetFaceDisplayBitsById	{U}
 08006438	SetFaceBlinkControl	{U}
 08006458	SetFaceBlinkControlById	{U}
-08006470	GetFaceBlinkProcUnk8006470	{U}
+08006470	GetFaceBlinkProcUnknown8006470	{U}
 080064F4	NewFace2	{U}
 080067E8	Dialogue_ClearFaceReferences	{U}
 0800680C	Dialogue_InitGfx	{U}
@@ -10762,7 +10762,7 @@
 080056B0	GetFaceDisplayBitsById	{J}
 0800633C	SetFaceBlinkControl	{J}
 0800635C	SetFaceBlinkControlById	{J}
-08006374	GetFaceBlinkProcUnk8006470	{J}
+08006374	GetFaceBlinkProcUnknown8006470	{J}
 080063F8	NewFace2	{J}
 080066EC	Dialogue_ClearFaceReferences	{J}
 08006710	Dialogue_InitGfx	{J}
@@ -11878,8 +11878,8 @@
 080950E8	メニューの枠の描画	{U}
 080A15B0	支援会話を閲覧する画面	メインループ	{U}
 080CF480	辞書	新規項目があるか判定	{U}
-08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
-08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
+08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{U}
+08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{J}
 0808BA78	セーブスロットに表示する章IDの取得	r0=@ChapterData	{J}
 08089768	セーブスロットに表示する章IDの取得	r0=@ChapterData	{U}
 08095024	PrepScreenTextHandler	{U}
@@ -12973,9 +12973,9 @@
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
 08076fc8	DrawStatusUP_ValueMain	{J}
-08081330	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{J}
+08081330	DrawStatusUP_Value_Number	r0=Unknown	r1=Unknown	r2=GrowValue	{J}
 08074B90	DrawStatusUP_ValueMain	{U}
-0807EFF0	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{U}
+0807EFF0	DrawStatusUP_Value_Number	r0=Unknown	r1=Unknown	r2=GrowValue	{U}
 080abfe0	SaveMenu_DrawDifficultyHintText	{U}
 080A8C2C	SaveMenu_Init	{U}
 080A8CD4	SaveMenu_LoadBackGround	{U}

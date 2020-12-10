@@ -3927,7 +3927,7 @@
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(65, 18);
             this.label89.TabIndex = 426;
-            this.label89.Text = "nazo9";
+            this.label89.Text = "??? 9";
             this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B70
@@ -3952,7 +3952,7 @@
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(65, 18);
             this.label90.TabIndex = 424;
-            this.label90.Text = "nazo8";
+            this.label90.Text = "??? 8";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B69
@@ -4127,7 +4127,7 @@
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(57, 18);
             this.label69.TabIndex = 410;
-            this.label69.Text = "nazo7";
+            this.label69.Text = "??? 7";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B62
@@ -4152,7 +4152,7 @@
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(57, 18);
             this.label78.TabIndex = 408;
-            this.label78.Text = "nazo6";
+            this.label78.Text = "??? 6";
             this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B61
@@ -4177,7 +4177,7 @@
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(57, 18);
             this.label79.TabIndex = 406;
-            this.label79.Text = "nazo5";
+            this.label79.Text = "??? 5";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B60
@@ -4202,7 +4202,7 @@
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(57, 18);
             this.label80.TabIndex = 404;
-            this.label80.Text = "nazo4";
+            this.label80.Text = "??? 4";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B59
@@ -4227,7 +4227,7 @@
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(57, 18);
             this.label81.TabIndex = 402;
-            this.label81.Text = "nazo3";
+            this.label81.Text = "??? 3";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B58
@@ -4252,7 +4252,7 @@
             this.PARTY_J_58.Name = "PARTY_J_58";
             this.PARTY_J_58.Size = new System.Drawing.Size(57, 18);
             this.PARTY_J_58.TabIndex = 400;
-            this.PARTY_J_58.Text = "nazo2";
+            this.PARTY_J_58.Text = "??? 2";
             this.PARTY_J_58.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B57
@@ -5011,7 +5011,7 @@
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(106, 18);
             this.label66.TabIndex = 323;
-            this.label66.Text = "nazo1";
+            this.label66.Text = "??? 1";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B29

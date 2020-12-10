@@ -292,7 +292,7 @@ namespace FEBuilderGBA
                     clipbord = "[" + U.ToHexString(text_id) + "]";
                 }
                 clipbord += this.CurrentText;
-                Clipboard.SetText(clipbord);
+                U.SetClipboardText(clipbord);
 
                 try
                 {

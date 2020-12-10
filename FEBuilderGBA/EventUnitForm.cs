@@ -2105,7 +2105,7 @@ namespace FEBuilderGBA
                 + "@" + U.ToHexString(pos.unk2)
                 + "@" + U.ToHexString(pos.wait)
                 + "@" + this.Name + "FE8CoordList";
-            Clipboard.SetText(text);
+            U.SetClipboardText(text);
         }
         public void FE8CoordListBox_ClipbordToPaste()
         {
@@ -2454,7 +2454,8 @@ namespace FEBuilderGBA
             sp[10 + 1] = "0";
             sp[11 + 1] = "0";
             text = String.Join(" ", sp);
-            Clipboard.SetText(text);
+
+            U.SetClipboardText(text);
         }
 
         public const uint INVALIDATE_UNIT_POINTER = 0xFFFFFF;

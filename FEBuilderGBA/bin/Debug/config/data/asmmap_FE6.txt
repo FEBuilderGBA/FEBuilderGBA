@@ -468,15 +468,15 @@
 
 
 //FEU\Stan\_notes\GameDataStruct.txt
-@GameData@00	byte	nazo1
+@GameData@00	byte	Unknown1
 @GameData@01	byte	6C Main 2 Skip Counted	(Main 2 6C Exec will be skipped if this is non 0)
-@GameData@02	byte	nazo2
+@GameData@02	byte	Unknown2
 @GameData@03	byte	GameData State bitfield	&0x01:? &0x02:? &0x04:? &0x08:? &0x10:? &0x20:? &0x40:When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?) &0x80:?
 @GameData@04	short	VerticalCounter	(IOReg:04000006) state at the end of the last main loop iteration
 @GameData@0C	word	Current Real Camera Pos?
-@GameData@10	word	nazo3
+@GameData@10	word	Unknown3
 @GameData@14	word	Target Map Camera Pos?
-@GameData@18	word	nazo4
+@GameData@18	word	Unknown4
 @GameData@1C	word	Another Real Camera Pos?
 @GameData@20	word	ANOTHER Real Camera Pos.
 @GameData@24	word	Some Real Camera *Offset* (Used When Setting Up Backgrounds)
@@ -569,7 +569,7 @@
 @CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
 @CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with the bottom 6 bits of 0xD, are battles
 @CharacterBattleStatistic@0E	byte	Character number of the most recent killer
-@CharacterBattleStatistic@0F	byte	Unk
+@CharacterBattleStatistic@0F	byte	Unknown F
 
 203D524	@CharacterBattleStatistic@[46]	Unit
 

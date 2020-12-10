@@ -190,7 +190,7 @@
 @Unit@19	byte	Luck
 @Unit@1A	byte	Physique correction	(5bit)
 @Unit@1B	byte	Trv Unit ID
-@Unit@1C	byte	nazo1	(tmp?)
+@Unit@1C	byte	Unknown1	(tmp?)
 @Unit@1D	byte	Move correction	(5bit)
 @Unit@1E	byte	ItemID1
 @Unit@1F	byte	ItemStock1
@@ -220,20 +220,20 @@
 @Unit@37	byte	Support6
 @Unit@38	byte	Support7
 @Unit@39	byte	SupportFlag
-@Unit@3A	byte	nazo2	maybe blank
-@Unit@3B	byte	nazo3	maybe blank
-@Unit@3C	byte	nazo4
-@Unit@3D	byte	nazo5
-@Unit@3E	byte	nazo6
-@Unit@3F	byte	nazo7
+@Unit@3A	byte	Unknown2	maybe blank
+@Unit@3B	byte	Unknown3	maybe blank
+@Unit@3C	byte	Unknown4
+@Unit@3D	byte	Unknown5
+@Unit@3E	byte	Unknown6
+@Unit@3F	byte	Unknown7
 @Unit@40	byte	AI 3
 @Unit@41	byte	AI 4
 @Unit@42	byte	AI 1
 @Unit@43	byte	AI 1 Counter
 @Unit@44	byte	AI 2
 @Unit@45	byte	AI 2 Counter
-@Unit@46	byte	nazo8	(tmp)
-@Unit@47	byte	nazo9	(blank)
+@Unit@46	byte	Unknown8	(tmp)
+@Unit@47	byte	Unknown9	(blank)
 
 0202BE48	@Unit@[3E]	Player	{J}
 0202CFB8	@Unit@[32]	Enemy	{J}
@@ -1179,9 +1179,9 @@ r3=X tile position of menu of right	{U}
 @BattleHit@00	word	attributes_info_hpChange
 
 @ActionData@00	short	_u00
-@ActionData@06	short	unk6
-@ActionData@08	short	unk8
-@ActionData@0A	short	unkA
+@ActionData@06	short	Unknown6
+@ActionData@08	short	Unknown8
+@ActionData@0A	short	UnknownA
 @ActionData@0C	byte	subjectIndex
 @ActionData@0D	byte	targetIndex
 @ActionData@0E	byte	xMove
@@ -1194,7 +1194,7 @@ r3=X tile position of menu of right	{U}
 @ActionData@15	byte	trapType
 @ActionData@16	byte	suspendPointType
 @ActionData@18	&BattleHit	scriptedBattleHits
-@ActionData@1C	byte	_Unk1C
+@ActionData@1C	byte	_Unknown1C
 
 @Vec2@00	short	x
 @Vec2@02	short	y
@@ -1208,18 +1208,18 @@ r3=X tile position of menu of right	{U}
 @BattleMapState@00	byte	boolMainLoopEnded
 @BattleMapState@01	byte	proc2LockCount
 @BattleMapState@02	byte	gfxLockCount
-@BattleMapState@03	byte	_unk03
+@BattleMapState@03	byte	_Unknown03
 @BattleMapState@04	byte	statebits
 @BattleMapState@06	short	savedVCount
-@BattleMapState@08	word	_unk08
+@BattleMapState@08	word	_Unknown08
 @BattleMapState@08	@Vec2u	cameraRealPos
 @BattleMapState@0C	@Vec2u	cameraRealPos
-@BattleMapState@10	@Vec2u	_unk10
+@BattleMapState@10	@Vec2u	_Unknown10
 @BattleMapState@14	@Vec2u	cursorMapPos
 @BattleMapState@18	@Vec2u	cursorMapPosPrev
-@BattleMapState@1C	@Vec2u	_unk1C
+@BattleMapState@1C	@Vec2u	_Unknown1C
 @BattleMapState@20	@Vec2u	cursorDisplayRealPos
-@BattleMapState@24	@Vec2u	_unk24
+@BattleMapState@24	@Vec2u	_Unknown24
 @BattleMapState@28	byte	_pad28
 @BattleMapState@3c	byte	_pad3c
 @BattleMapState@3d	byte	partialActionTaken
@@ -1343,7 +1343,7 @@ r3=X tile position of menu of right	{U}
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
 @ChapterData@00	word	Clock
-@ChapterData@04	word	Unk4
+@ChapterData@04	word	Unknown4
 @ChapterData@08	word	Money
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)
@@ -1361,18 +1361,18 @@ r3=X tile position of menu of right	{U}
 @ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
 @ChapterData@20	byte	tactician name(0x20-0x2B)
 @ChapterData@2B	word	tactician name term 0x00
-@ChapterData@2C	word	unk2C
+@ChapterData@2C	word	Unknown2C
 @ChapterData@30	word	fundsTotalDifference
-@ChapterData@34	word	unk34
+@ChapterData@34	word	Unknown34
 @ChapterData@38	short	padding_38
 @ChapterData@40	byte	Option1	 &01=Controller(unused) &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
 &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
 @ChapterData@41	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
 @ChapterData@42	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat) &20=RankDisplay(unused)
-@ChapterData@43	byte	Unk43
-@ChapterData@44	word	Unk44
-@ChapterData@48	short	Unk48
-@ChapterData@4A	short	Unk4A
+@ChapterData@43	byte	Unknown43
+@ChapterData@44	word	Unknown44
+@ChapterData@48	short	Unknown48
+@ChapterData@4A	short	Unknown4A
 0202BCF0	@ChapterData	gChapterData	{U}
 0202BCEC	@ChapterData	gChapterData	{J}
 
@@ -1385,7 +1385,7 @@ r3=X tile position of menu of right	{U}
 @CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
 @CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with bottom 6 bits of 0xD, are battles
 @CharacterBattleStatistic@0E	byte	Character number of most recent killer
-@CharacterBattleStatistic@0F	byte	Unk
+@CharacterBattleStatistic@0F	byte	Unknown F
 
 0203E894	@CharacterBattleStatistic@[46]	Unit	{U}
 0203E890	@CharacterBattleStatistic@[46]	Unit	{J}
@@ -2128,13 +2128,13 @@ r3=X tile position of menu of right	{U}
 @AnimationInterpreter@15	byte	commandQueue
 @AnimationInterpreter@20	word	pCurrentFrame
 @AnimationInterpreter@24	word	pStartFrame
-@AnimationInterpreter@28	word	pUnk28
-@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@28	word	pUnknown28
+@AnimationInterpreter@2c	word	pUnknown2C
 @AnimationInterpreter@30	word	pStartObjData
 @AnimationInterpreter@34	&AnimationInterpreter	pPrev
 @AnimationInterpreter@38	&AnimationInterpreter	pNext
-@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
-@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+@AnimationInterpreter@40	&AnimationInterpreter	pUnknown40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnknown44
 
 @WaveData@00	short	type
 @WaveData@02	short	status
@@ -6338,7 +6338,7 @@ r3=X tile position of menu of right	{U}
 08587A40	:0858823F	Font image for debugging	{U}
 080DC43C	:080DC52B	Portrait TSA(FE8Only)	{J}
 080D77FC	:080D78EB	Portrait TSA(FE8Only)	{U}
-08FFF000	:08FFF7FF	NAZO C00009FF	{U}
+08FFF000	:08FFF7FF	Unknown C00009FF	{U}
 0801964C	LoadChapterMapPaletteOnly	{J}
 08030B90	LoadTitleAnimations2Only	{J}
 08019974	LoadChapterMapPaletteOnly	{U}
@@ -7686,14 +7686,14 @@ r3=X tile position of menu of right	{U}
 08081B40	Set up scar damage recovery effect	{U}
 08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}
 089AFF78	:089AFFF7	Restoration of wound medicine Effect pallet Animation	{U}
-08BBD970	:08BC39FF	UNUSED DATA NAZO 1	{J}
-08BBB6C8	:08BBD3F7	UNUSED DATA NAZO 2	{J}
-08BB8ED0	:08BBB33C	UNUSED DATA NAZO 3	{J}
+08BBD970	:08BC39FF	UNUSED DATA Unknown 1	{J}
+08BBB6C8	:08BBD3F7	UNUSED DATA Unknown 2	{J}
+08BB8ED0	:08BBB33C	UNUSED DATA Unknown 3	{J}
 08BB310C	:08BB8787	Network Arena Data	{J}
 08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{J}
 08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{J}
-08B1FE7C	:08B2A5D3	UNUSED DATA NAZO 1	{U}
-08B1A0B8	:08B1FA3B	UNUSED DATA NAZO 2	{U}
+08B1FE7C	:08B2A5D3	UNUSED DATA Unknown 1	{U}
+08B1A0B8	:08B1FA3B	UNUSED DATA Unknown 2	{U}
 08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{U}
 08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{U}
 080837b0	Forced game over	{U}
@@ -8850,8 +8850,8 @@ r3=X tile position of menu of right	{U}
 08A9A604	&PALETTE	Something's palette	221	{J}
 08694968	&PALETTE	Something's palette	222	{J}
 08592170	&EVENT	Any event function	Mystery	13	{U}
-089A37E8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{U}
-089A3770	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{U}
+089A37E8	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	1	{U}
+089A3770	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	2	{U}
 08678740	&PALETTE	Something's palette	223	unused	{U}
 08678760	&PALETTE	Something's palette	224	unused	{U}
 08678780	&PALETTE	Something's palette	225	unused	{U}
@@ -9419,10 +9419,10 @@ r3=X tile position of menu of right	{U}
 085E4570	&LZ77	Image of something	2	{J}
 085E49E4	&LZ77	Image of something	3	{J}
 085E4570	&LZ77	Image of something	4	{J}
-08A13E70	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{J}
-08A13DF8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{J}
-085A7F94	&ASM_POINTER_ARRAY	NAZO1 Script Function	{U}
-085D1E9C	&ASM_POINTER_ARRAY	NAZO1 Script Function	{J}
+08A13E70	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	1	{J}
+08A13DF8	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	2	{J}
+085A7F94	&ASM_POINTER_ARRAY	Unknown1 Script Function	{U}
+085D1E9C	&ASM_POINTER_ARRAY	Unknown1 Script Function	{J}
 087A5800	:087A582D	Unknown data	OAMSP Maybe	1	{U}
 087A5A1C	:087A5A49	Unknown data	OAMSP Maybe	2	{U}
 087A64F8	:087A6669	Unknown data	OAMSP Maybe	3	{U}
@@ -9446,8 +9446,8 @@ r3=X tile position of menu of right	{U}
 080DED10	&TEXTBATCH	NetworkMessage	{J}
 08045CEC	ShowNetworkMessage	{U}
 08045C8C	ShowNetworkMessage	{J}
-080DC760	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{J}
-080D7AB4	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{U}
+080DC760	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{J}
+080D7AB4	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{U}
 081F6D2C	&TEXTBATCH	Apprentice CC serif	{J}
 0820707C	&TEXTBATCH	Apprentice CC serif	{U}
 080D779C	&CSTRING	Hex	{U}
@@ -9664,7 +9664,7 @@ r3=X tile position of menu of right	{U}
 080057A8	GetFaceDisplayBitsById	{U}
 08006438	SetFaceBlinkControl	{U}
 08006458	SetFaceBlinkControlById	{U}
-08006470	GetFaceBlinkProcUnk8006470	{U}
+08006470	GetFaceBlinkProcUnknown8006470	{U}
 080064F4	NewFace2	{U}
 080067E8	Dialogue_ClearFaceReferences	{U}
 0800680C	Dialogue_InitGfx	{U}
@@ -10622,7 +10622,7 @@ r3=X tile position of menu of right	{U}
 080056B0	GetFaceDisplayBitsById	{J}
 0800633C	SetFaceBlinkControl	{J}
 0800635C	SetFaceBlinkControlById	{J}
-08006374	GetFaceBlinkProcUnk8006470	{J}
+08006374	GetFaceBlinkProcUnknown8006470	{J}
 080063F8	NewFace2	{J}
 080066EC	Dialogue_ClearFaceReferences	{J}
 08006710	Dialogue_InitGfx	{J}
@@ -11868,8 +11868,8 @@ r3=X tile position of menu of right	{U}
 080A15B0	browsing support conversation.	Main loop.	{U}
 080D4178	Dictionary	It is judged whether there is a new item.	{J}
 080CF480	Dictionary	It is judged whether there is a new item.	{U}
-08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
-08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
+08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{U}
+08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{J}
 0808BA78	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{J}
 08089768	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{U}
 08095024	PrepScreenTextHandler	{U}
@@ -12977,9 +12977,9 @@ r3=X tile position of menu of right	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
 08076fc8	DrawStatusUP_ValueMain	{J}
-08081330	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{J}
+08081330	DrawStatusUP_Value_Number	r0=Unknown	r1=Unknown	r2=GrowValue	{J}
 08074B90	DrawStatusUP_ValueMain	{U}
-0807EFF0	DrawStatusUP_Value_Number	r0=Unk	r1=Unk	r2=GrowValue	{U}
+0807EFF0	DrawStatusUP_Value_Number	r0=Unknown	r1=Unknown	r2=GrowValue	{U}
 080abfe0	SaveMenu_DrawDifficultyHintText	{U}
 080A8C2C	SaveMenu_Init	{U}
 080A8CD4	SaveMenu_LoadBackGround	{U}

@@ -191,6 +191,11 @@ namespace FEBuilderGBA
 
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
+                    //画像データの重複を判定する
+                    if (IsImageDuplicate((uint)this.P4.Value, (uint)this.AddressList.SelectedIndex))
+                    {
+                        this.P4.Value = 0;
+                    }
                     //画像等データの書き込み
                     Undo.UndoData undodata = Program.Undo.NewUndoData(this);
                     this.InputFormRef.WriteImageData10(this.P4, image, undodata);
@@ -210,6 +215,27 @@ namespace FEBuilderGBA
                 return;
             }
 
+        }
+        //画像データの重複を判定する
+        static bool IsImageDuplicate(uint imageAddrP, uint currentIndex)
+        {
+            imageAddrP = U.toPointer(imageAddrP);
+
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                if (i == currentIndex)
+                {//自分自身なので無視.
+                    continue;
+                }
+                uint img = Program.ROM.u32(addr + 4);
+                if (img == imageAddrP)
+                {//重複している
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void ExportButton_Click(object sender, EventArgs e)

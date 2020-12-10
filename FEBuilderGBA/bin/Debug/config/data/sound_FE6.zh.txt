@@ -1,7 +1,7 @@
 0000=NULL
-0040=BGM:[[Unknown,Tell me if you know!]]
+0040=BGM:Lalum getting attacked
 0044=SE:[[Unknown,Tell me if you know!]]
-0045=SE:[[Unknown,Tell me if you know!]]
+0045=BGM:When a non-roy unit dies
 0046=SE:闘技場での勝利のファンファーレ?
 004A=BGM:[[Unknown,Tell me if you know!]]
 004F=SE:[[Unknown,Tell me if you know!]]
