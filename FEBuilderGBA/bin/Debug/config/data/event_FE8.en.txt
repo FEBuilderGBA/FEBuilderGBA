@@ -158,7 +158,7 @@
 2C340000	Clear All Enemy units(CLEE)	{CLEAR}	{UNITREMOVE}
 20300000	Wait for end of unit movement(ENUN)	{WAIT}	{UNITMOVE}
 403FXXXXYYYYZZZZ	Execute event battle[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG1)	{BATTLE}	{MAPEFFECT}
-413FXXXXYYYYZZZZ	Execute event battle (41)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG2)	{BATTLE}	{MAPEFFECT}
+413FXXXXYYYYZZZZ	Execute event battle (MapBattle)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG2)	Execute Map Battle. event battle 41	{BATTLE}	{MAPEFFECT}
 423FXXXXYYYYZZZZ	Execute event battle (42)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ::Unknown](FIG3)	{BATTLE}	{MAPEFFECT}
 22370000	GIVETOSLOT3(LOW)
 402C0100XXXXXXXX20300000	Load units and move. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
@@ -475,7 +475,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 4005XXXXYYYY04002025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map(LOMA)	{MAP}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle  Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
-40050D00000000004005010000WWVVVV21070000413FXXXXYYYYZZZZ	Set and execute event battle (41)  Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
+40050D00000000004005010000WWVVVV21070000413FXXXXYYYYZZZZ	Set and execute event battle (MapBattle)  Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	Execute Map Battle. event battle 41	{BATTLE}	{MAPEFFECT}
 40050100XXYY00002039ZZZZ	Change the AI ​​of[ZZ:UNIT:Character]to[XX:AI1:AI 1][YY:AI2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050100XXYY00002139ZZWW	Change the AI ​​of unit at coordinates[ZZ:MAPX:MAPX][WW:MAPY:Y]to[XX:AI1:AI 1][YY:AI 2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050B00XXXXYYYY2025WWWW	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map (LOMA)	{MAP}

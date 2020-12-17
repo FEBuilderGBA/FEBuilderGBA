@@ -7,8 +7,8 @@
 04=Attack village and treasure, then move towards enemy
 05=Attack village and treasure, then move to escape point
 06=If possible to attack in 2 actions, move towards enemy
-07=If possibla to attack in 2 actions, move towards enemy (except [0x0DD340])	{J}
-07=If possibla to attack in 2 actions, move towards enemy (except [0x0D8664])	{U}
+07=If possible to attack in 2 actions, move towards enemy (except [0x0DD340])	{J}
+07=If possible to attack in 2 actions, move towards enemy (except [0x0D8664])	{U}
 08=-
 09=Random Movement
 0A=Move towards [0x5D2D0C] (Target)	{J}

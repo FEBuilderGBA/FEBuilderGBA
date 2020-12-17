@@ -11426,10 +11426,10 @@ Build Started
 Takeover of skill assignment.
 
 :0=引き継がない
-0=No Take over
+0=No Take over(Replace Data)
 
 :1=引き継ぐ
-1=Take over
+1=Take over(Use Current ROM Data)
 
 :カスタムビルド
 Custom build
