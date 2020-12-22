@@ -1,0 +1,49 @@
+Player level = Enemy level: 30 Exp for kill, 10 for damage
+
+Player 1 level higher: 26 Exp, 9 for damage 
+
+Player 2 levels higher: 23 Exp,  for damage
+
+Player 3 levels higher: 20 Exp,  for damage 
+
+Player 4 levels higher: 16 Exp,  for damage
+
+Player 5 levels higher: 12 Exp, 5 for damage
+
+Player 6 levels higher:  Exp for kill,  for damage
+
+Player 7 levels higher:  Exp for kill, 3 for damage?
+
+Player 8 levels higher: 4 Exp for kill
+
+For defeating an enemy:
+If Player >= Enemy: max(1,floor(30 - 7/2*lvlDiff))
+If Player < Enemy: round((levelDiff * 10) / 3) + 30 = floor((levelDiff*10+1)/3)+30
+
+For damaging enemy:
+If Player >= Enemy: max(0, 10-lvlDiff)
+if Player <= Enemy: floor(10 + lvlDiff/2)
+
+Player 3 lvls higher: 26 for killing a pair up with -1lvl enemy
+Player 7 lvls higher: 3 EXP for damaging a unit paired up with a -5lvls enemy
+
+For hitting enemy: if enemy lvl higher: Seems to be floor(10 + lvldiff/2)
+
+Lunatic Mode:
+Player level = Enemy level: 30 Exp for kill, 10 for damage
+
+Player 1 level higher: 25 Exp, 9 for damage
+
+Player 2 levels higher: 19 Exp, 7 for damage
+
+Player 3 levels higher: 13 Exp, 4 for damage
+
+Player 4 levels higher: 8 Exp, 2 for damage
+
+Player 5 levels higher: 3? Exp, 1 for damage 
+
+Player 6+ levels higher: 1 Exp for kill, no Exp for damage
+
+floor 26-9/2*lvldiff?
+94->19
+for hitting: round(10-5/3*lvldiff?)

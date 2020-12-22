@@ -7856,7 +7856,11 @@ Copy Type（Alt + C）
 （伤害）。
 
 :マップアニメ1|*.mapanime1.txt|All files|*
-地图动画1 | *。mapanime 1。txt |所有文件| *。
+地图动画1|*.mapanime1.txt|All files|*
+
+:マップアニメ1|*.mapanime1.txt|GifAnime|*.gif|All files|*
+地图动画1|*.mapanime1.txt|GifAnime|*.gif|All files|*
+
 
 :タイルアニメーションのPLISTを特定できません
 无法识别拼贴动画PLIST
@@ -7909,11 +7913,11 @@ Copy Type（Alt + C）
 :タイルアニメーション2 パレットアニメ:{0}
 平铺动画2调色板动画：{0}
 
-:マップアニメ1|*.mapanime2.txt|All files|*
-地图动画1 | *。mapanime 2。txt |所有文件| *。
+:マップアニメ2|*.mapanime2.txt|GifAnime|*.gif|All files|*
+地图动画2|*.mapanime2.txt|GifAnime|*.gif|All files|*
 
 :マップアニメ2|*.mapanime2.txt|All files|*
-地图动画2 | *。mapanime 2。txt |所有文件| *。
+地图动画2|*.mapanime2.txt|All files|*
 
 :タイルアニメーション2を書き込めませんでした。\r\n\r\nスクリプト:{1}\r\n行数:{2}
 我无法写瓦片动画2。\r\n\r\n脚本：{1}\r\n行数：{2}

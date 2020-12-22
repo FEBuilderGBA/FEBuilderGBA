@@ -7856,7 +7856,10 @@ Tile animation 1: {0}
 (Corruption).
 
 :マップアニメ1|*.mapanime1.txt|All files|*
-Map animation 1 | *.mapanime 1.txt | All files | *.
+Map animation 1|*.mapanime1.txt|All files|*
+
+:マップアニメ1|*.mapanime1.txt|GifAnime|*.gif|All files|*
+Map animation 1|*.mapanime1.txt|GifAnime|*.gif|All files|*
 
 :タイルアニメーションのPLISTを特定できません
 Unable to identify tile animation PLIST
@@ -7909,11 +7912,11 @@ Map Tile Animation 1
 :タイルアニメーション2 パレットアニメ:{0}
 Tile Animation 2 Palette Animation: {0}
 
-:マップアニメ1|*.mapanime2.txt|All files|*
-Map animation 1 | *.mapanime 2.txt | All files | *.
+:マップアニメ2|*.mapanime2.txt|GifAnime|*.gif|All files|*
+Map animation 2|*.mapanime2.txt|GifAnime|*.gif|All files|*
 
 :マップアニメ2|*.mapanime2.txt|All files|*
-Map animation 2 | *.mapanime 2.txt | All files | *.
+Map animation 2|*.mapanime2.txt|All files|*
 
 :タイルアニメーション2を書き込めませんでした。\r\n\r\nスクリプト:{1}\r\n行数:{2}
 Could not write tile animation 2.\r\n\r\nScript: {1}\r\nNumber of rows: {2}

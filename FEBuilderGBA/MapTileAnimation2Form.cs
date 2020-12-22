@@ -316,7 +316,7 @@ namespace FEBuilderGBA
         private void ExportAllButton_Click(object sender, EventArgs e)
         {
             string title = R._("保存するファイル名を選択してください");
-            string filter = R._("マップアニメ1|*.mapanime2.txt|All files|*");
+            string filter = R._("マップアニメ2|*.mapanime2.txt|GifAnime|*.gif|All files|*");
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;
@@ -339,7 +339,69 @@ namespace FEBuilderGBA
             }
             string filename = save.FileNames[0];
             Program.LastSelectedFilename.Save(this, "", save);
+            string ext = U.GetFilenameExt(filename);
+            if (ext == ".GIF")
+            {
+                ExportGif(filename);
+            }
+            else
+            {
+                ExportBatchTxt(filename);
+            }
+        }
 
+        private void ExportGif(string filename)
+        {
+            uint mapid = this.MapPictureBox.GetMapID();
+            if (mapid == U.NOT_FOUND)
+            {
+                return;
+            }
+            MapSettingForm.PLists plist = MapSettingForm.GetMapPListsWhereMapID(mapid);
+            if (plist.palette_plist == 0)
+            {
+                return;
+            }
+            uint palette = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, plist.palette_plist);
+            if (palette == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            uint addr = InputFormRef.BaseAddress;
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            //同じアニメを何度も出力しないように記録する.
+            List<ImageUtilAnimeGif.Frame> bitmaps = new List<ImageUtilAnimeGif.Frame>();
+
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                uint p0 = Program.ROM.p32(addr + 0);
+                uint wait = Program.ROM.u8(addr + 4);
+                uint count = Program.ROM.u8(addr + 5);
+                uint startindex = Program.ROM.u8(addr + 6);
+                if (!U.isSafetyOffset(p0))
+                {
+                    continue;
+                }
+
+                MapSettingForm.MapAnimations anime = new MapSettingForm.MapAnimations();
+                anime.change_palette_bytes = GetTileAnime2(p0, count);
+                anime.change_palette_start_index = startindex;
+
+                Bitmap mapBitmap = MapSettingForm.DrawMap(mapid, anime);
+                bitmaps.Add(new ImageUtilAnimeGif.Frame(mapBitmap, wait));
+            }
+
+            //アニメgif生成
+            ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps);
+            U.SelectFileByExplorer(filename);
+        }
+        void ExportBatchTxt(string filename)
+        {
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
                 ExportAll(filename, InputFormRef);

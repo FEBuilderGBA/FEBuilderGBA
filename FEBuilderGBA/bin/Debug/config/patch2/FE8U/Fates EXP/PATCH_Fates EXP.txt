@@ -1,0 +1,8 @@
+NAME=Fates EXP
+INFO=Replaces the exp formula to be the one used in fe: fates.\r\nOverleveled units stop gaining exp, while underleveled units gain loads of exp.\r\nPlease see the example table for details.\r\nhttps://drive.google.com/file/d/13Y1arNrT_D8AM7hf9pYWCzwogXp1F4sm/view?usp=sharing
+
+AUTHOR=Crazycolor https://www.dropbox.com/sh/zymc1h221nnxpm9/AACYZDVWXOXjfU_Dsg55bKNMa/Crazycolorz5%27s%20Stuff/Fates%20EXP
+TYPE=EA
+EA=Installer.txt
+
+PATCHED_IF:0x2C534=0x10 0xB5 0x03 0x4C 0x00 0xF0 0x03 0xF8 0x10 0xBC 0x02 0xBC 0x08 0x47 0x20 0x47
