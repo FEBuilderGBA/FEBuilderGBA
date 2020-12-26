@@ -242,6 +242,8 @@ namespace FEBuilderGBA
 
             //シンボル情報のコピー
             CopySYM(skill_CustomBuildDirectory);
+            //他のバイナリファイルのコピー
+            CopySomeDumpFiles(skill_CustomBuildDirectory);
 
             //ビルドしたROMとバニラを比較して、差分を作る
             string custombuild = Path.Combine(skill_CustomBuildDirectory, "PATCH_SkillSystem_CustomBuild.txt");
@@ -268,6 +270,30 @@ namespace FEBuilderGBA
             string dest = Path.Combine(skillCustomBuildDirectory, "symbol.sym");
             U.CopyFile(src, dest);
         }
+        void CopySomeDumpFiles(string skillCustomBuildDirectory)
+        {
+            string target_filename = this.TargetFilenameTextBox.Text;
+            string basedir = Path.GetDirectoryName(target_filename);
+
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "ASMC_ForgetSkill.dmp", "ASMC_ForgetSkill.bin");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "ASMC_HasSkill.dmp", "ASMC_HasSkill.bin");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "ASMC_LearnSkill.dmp", "ASMC_LearnSkill.bin");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "GetSkills.dmp", "GetSkills.dmp");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "nihilTester.dmp", "nihilTester.dmp");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "rtextloop.dmp", "rtextloop.dmp");
+            CopySomeDumpFile(basedir, skillCustomBuildDirectory, "skillDescGetter.dmp", "skillDescGetter.dmp");
+        }
+        void CopySomeDumpFile(string srcdir,string destdir,string srcfilename,string destfilename)
+        {
+            string src = U.FindFileOne(srcdir, srcfilename);
+            if (src == "")
+            {
+                return;
+            }
+            string dest = Path.Combine(destdir, destfilename);
+            U.CopyFile(src, dest);
+        }
+
         void MargePatch(string custombuild, string curentPatchFileName, uint takeoverSkillAssignment)
         {
             StringBuilder sb = new StringBuilder();

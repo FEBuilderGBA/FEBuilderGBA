@@ -1,0 +1,14 @@
+NAME=ステータス画面の上の方にあるアニメーションを表示しない
+NAME.en=Hide Animation in the upper part of the status screen
+NAME.zh=Hide Animation in the upper part of the status screen
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x88590
+COMBO=Default(Show)|0x4E 0xF0 0x86 0xFF|Hide|0x0 0x0 0x0 0x0
+
+INFO=ステータス画面の上の方にある魔法陣のアニメーションを非表示にします。
+INFO.en=Hides the magic circle animation at the top of the status screen.
+INFO.zh=Hides the magic circle animation at the top of the status screen.
