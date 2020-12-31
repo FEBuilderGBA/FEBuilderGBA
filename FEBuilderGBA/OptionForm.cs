@@ -1422,6 +1422,10 @@ namespace FEBuilderGBA
             {//ファイルがないので判別不可能
                 return false;
             }
+            if (MainFormUtil.IsColorzCore(EAFilename))
+            {//colorzcoreなので判別不可能
+                return false;
+            }
             double version = U.GetOtherProgramVersion(EAFilename);
             if (version < CurrentEAVersion)
             {//古い

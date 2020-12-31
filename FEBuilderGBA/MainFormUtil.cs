@@ -1048,14 +1048,29 @@ namespace FEBuilderGBA
 
             return list[0];
         }
+        public static bool IsColorzCore(string core_path)
+        {
+            string filename = Path.GetFileName(core_path);
+            return filename == "ColorzCore.exe";
+        }
 
         static string CompilerEventAssemblerInner(string compiler_exe ,string tooldir,string  freeareadef_targetfile_fullpath,string  output_target_rom,string  output_symFile)
         {
+            bool isColorzCore = IsColorzCore(compiler_exe);
+
             string args = "A "
                 + Program.ROM.RomInfo.TitleToFilename() + " "
                 + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
-                + U.escape_shell_args("-output:" + output_target_rom) + " "
-                + U.escape_shell_args("-symOutput:" + output_symFile);
+                + U.escape_shell_args("-output:" + output_target_rom) + " ";
+            if (isColorzCore)
+            {
+                args += U.escape_shell_args("--nocash-sym:" + output_symFile);
+            }
+            else
+            {
+                args += U.escape_shell_args("-symOutput:" + output_symFile);
+            }
+
             Log.Notify(args);
             string output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
             Log.Notify("=== OUTPUT ===");
@@ -1074,7 +1089,8 @@ namespace FEBuilderGBA
                 return output;
             }
 
-            if (output.IndexOf("symOutput doesn't exist.") >= 0)
+            if (output.IndexOf("symOutput doesn't exist.") >= 0
+                || output.IndexOf("Unrecognized flag: symOutput") >= 0)
             {//古いEAらしいので、symOutputを外して実行する
                 args = "A "
                     + Program.ROM.RomInfo.TitleToFilename() + " "
