@@ -2612,10 +2612,10 @@ Are you sure you want to delete this unit and end the data?
 04=Not in recovery mode
 
 :配置後座標
-Post-placement
+PostPlacement
 
 :配置前座標
-Pre-placement
+PrePlacement
 
 :配置後も同時に変更
 Change at the same time after placement

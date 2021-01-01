@@ -344,22 +344,24 @@ namespace FEBuilderGBA
                 int sheet_x = (oam[index + 4] & 0x1F);
                 int sheet_y = (((oam[index + 4]) & 0xE0) >> 5);
 
-                int vram_x = (sbyte)(oam[index + 6]);
-                int vram_y = (sbyte)(oam[index + 8]);
+//                int vram_x = (sbyte)(oam[index + 6]);
+//                int vram_y = (sbyte)(oam[index + 8]);
+                int vram_x = (short)U.u16(oam, index + 6);
+                int vram_y = (short)U.u16(oam, index + 8);
 
                 int image_x;
                 int image_y = ((vram_y + bitmap_addy) / tile_scale);
                 if (this.IsMagicOAM)
                 {
                     image_x = ((vram_x + bitmap_spell_addx) / tile_scale);
-                    if (image_x > 256)
-                    {
-                        image_x = image_x & 0xff;
-                    }
                 }
                 else
                 {
                     image_x = ((vram_x + bitmap_addx) / tile_scale);
+                }
+                if (image_x >= 256)
+                {
+                    image_x = image_x & 0xff;
                 }
 
                 if (paletteShift >= 4)

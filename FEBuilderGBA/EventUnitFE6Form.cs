@@ -115,6 +115,9 @@ namespace FEBuilderGBA
 
         private void EVENT_LISTBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //ディフォルトは別
+            PosSyncUpdateComboBox.SelectedIndex = 1;
+
             U.AddrResult ar = InputFormRef.SelectToAddrResult(this.EVENT_LISTBOX);
             if (!U.isSafetyOffset(ar.addr))
             {
@@ -200,11 +203,11 @@ namespace FEBuilderGBA
                 return;
             }
 
+            CheckCoord();
             DrawAllUnits();
             PosSyncCheck();
 
             SetNotifyMode();
-            CheckCoord();
         }
 
         void CheckCoord()
@@ -415,6 +418,11 @@ namespace FEBuilderGBA
 
         private void B4_ValueChanged(object sender, EventArgs e)
         {
+            if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
+
             if (PosSyncUpdateComboBox.SelectedIndex == 0)
             {//配置後も自動変更 X
                 U.ForceUpdate(B6,B4.Value);
@@ -427,6 +435,11 @@ namespace FEBuilderGBA
 
         private void B5_ValueChanged(object sender, EventArgs e)
         {
+            if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
+
             if (PosSyncUpdateComboBox.SelectedIndex == 0)
             {//配置後も自動変更 Y
                 U.ForceUpdate(B7, B5.Value);
