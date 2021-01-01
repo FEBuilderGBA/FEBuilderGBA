@@ -1145,6 +1145,9 @@ namespace FEBuilderGBA
             freeareadef_targetfile_fullpath = Path.GetFullPath(freeareadef_targetfile_fullpath);
 
             U.WriteAllText(freeareadef_targetfile_fullpath, autoDef);
+            Log.Notify("_FBG_Temp_");
+            Log.Notify(autoDef);
+            Log.Notify("-----------------");
 
             if (!File.Exists(freeareadef_targetfile_fullpath))
             {
