@@ -1137,8 +1137,9 @@ namespace FEBuilderGBA
                 output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "event_assembler core.exe");
                 return false;
             }
+            bool isColorzCore = MainFormUtil.IsColorzCore(compiler_exe);
 
-            string autoDef = EAUtil.MakeEAAutoDef(target_filename, freearea, org_sp);
+            string autoDef = EAUtil.MakeEAAutoDef(target_filename, freearea, org_sp, isColorzCore);
 
             string freeareadef_targetfile = "_FBG_Temp_" +　DateTime.Now.Ticks.ToString() + ".event";
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);

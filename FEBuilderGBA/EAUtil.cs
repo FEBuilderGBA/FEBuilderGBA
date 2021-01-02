@@ -580,9 +580,8 @@ namespace FEBuilderGBA
             return false;
         }
 
-        public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
+        public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp, bool isColorzCore)
         {
-
             StringBuilder sb = new StringBuilder();
 
             string target_text = File.ReadAllText(target_filename);
@@ -629,7 +628,7 @@ namespace FEBuilderGBA
                     + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer())));
                 if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
-                    SkillConfigSkillSystemForm.Export(sb);
+                    SkillConfigSkillSystemForm.Export(sb, isColorzCore);
                 }
             }
             sb.AppendLine("#define AI1Table "
@@ -644,7 +643,7 @@ namespace FEBuilderGBA
                 sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));
             }
 
-            Program.ExportFunction.ExportEA(sb);
+            Program.ExportFunction.ExportEA(sb, isColorzCore);
 
             if (freearea != 0)
             {

@@ -21,27 +21,30 @@ namespace FEBuilderGBA
         {
             return this.Dic;
         }
-        public void ExportEA(StringBuilder sb)
+        public void ExportEA(StringBuilder sb, bool isLabelOnlyWithoutORG)
         {
             foreach (var pair in this.Dic)
             {
                 string name = pair.Key;
                 uint addr = U.toOffset(pair.Value);
-                One(sb, name, addr);
+                One(sb, name, addr, isLabelOnlyWithoutORG);
             }
         }
-        public static void One(StringBuilder sb,string name,uint addr)
+        public static void One(StringBuilder sb, string name, uint addr, bool isColorzCore)
         {
             if (!U.isSafetyOffset(addr))
             {
                 return;
             }
-            sb.AppendLine("PUSH");
-            sb.Append("ORG ");
-            sb.AppendLine(U.To0xHexString(addr));
-            sb.Append(name);
-            sb.AppendLine(":");
-            sb.AppendLine("POP");
+            if (isColorzCore == false)
+            {
+                sb.AppendLine("PUSH");
+                sb.Append("ORG ");
+                sb.AppendLine(U.To0xHexString(addr));
+                sb.Append(name);
+                sb.AppendLine(":");
+                sb.AppendLine("POP");
+            }
             sb.AppendLine("#define " + name + " " + U.To0xHexString(addr));
         }
 

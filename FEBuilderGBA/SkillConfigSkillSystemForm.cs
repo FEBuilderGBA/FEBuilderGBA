@@ -939,7 +939,7 @@ namespace FEBuilderGBA
             //ShadowGiftを消して、WeaponLockExのフックを復活させる.
             Program.ROM.write_range(0x16738, new byte[] { 0x28, 0x30, 0x40, 0x18, 0x00, 0x4B, 0x18, 0x47 });
         }
-        public static void Export(StringBuilder sb)
+        public static void Export(StringBuilder sb, bool isColorzCore)
         {
             uint iconP = FindIconPointer();
 
@@ -948,7 +948,7 @@ namespace FEBuilderGBA
                 return;
             }
             uint iconBaseAddress = Program.ROM.p32(iconP);
-            ExportFunction.One(sb, "SkillIcons", iconBaseAddress);
+            ExportFunction.One(sb, "SkillIcons", iconBaseAddress, isColorzCore);
         }
 
         private void ExportAllButton_Click(object sender, EventArgs e)
