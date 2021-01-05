@@ -1,5 +1,5 @@
 NAME=ノーマルモードペナルティをノーマルモードボーナスに変更する
-NAME.en=Change NormalPenalty to NormalModeBonus
+NAME.en=Change Easy and Normal modes level penalty into level bonus
 
 INFO=ノーマルモードで敵を弱体化させるノーマルモードペナルティを廃止して、ノーマルモード専用のハードブート機能に変更します。
 
@@ -15,6 +15,6 @@ OFF:0x0180FA=0xFF 0xF7 0xB3 0xFF
 ONN:0x0180FA=0xFF 0xF7 0x63 0xFF
 
 AUTHOR=Shuusuke
-INFO.en=The normal mode penalty that weakens the enemy in normal mode is abolished, and it is changed to the hard boot function only for normal mode.
+INFO.en=The easy and normal modes level penalty is changed to a bonus, as is the case for hard mode.\r\nOldname: Change NormalPenalty to NormalModeBonus
 NAME.zh=将普通模式惩罚改为普通模式奖励。
 INFO.zh=在普通模式下削弱敌人的普通模式惩罚将被取消，硬启动功能将变为普通模式。

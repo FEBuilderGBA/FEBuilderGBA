@@ -896,6 +896,13 @@ namespace FEBuilderGBA
                 , Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer()
                 , "systemmenu_battlepreview pal"
                 , Address.DataTypeEnum.PAL);
+            if (Program.ROM.RomInfo.version() == 8)
+            {//FE8の場合、画像イメージは4つのポインタがあります。
+                uint other_image_p = Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer();
+                FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 4, "systemmenu_battlepreview_enemy", isPointerOnly,Address.DataTypeEnum.LZ77IMG);
+                FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 8, "systemmenu_battlepreview_npc", isPointerOnly, Address.DataTypeEnum.LZ77IMG);
+                FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 12, "systemmenu_battlepreview_4th", isPointerOnly, Address.DataTypeEnum.LZ77IMG);
+            }
 
             palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer());
             FEBuilderGBA.Address.AddAddress(list,palette

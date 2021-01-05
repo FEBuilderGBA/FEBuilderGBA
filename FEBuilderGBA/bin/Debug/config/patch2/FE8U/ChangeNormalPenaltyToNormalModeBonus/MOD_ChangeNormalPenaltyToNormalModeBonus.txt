@@ -7,3 +7,10 @@ J_NormalPenalty.zh=Normal Mode Boost
 J_NormalPenalty:HINT=難易度で普通を選んだ場合に、敵を強くするボーナス値を指定します。
 J_NormalPenalty:HINT.en=When choosing normal with difficulty level, , this value determines reinforcement bonus given to the enemy army.
 J_NormalPenalty:HINT.zh=When choosing normal with difficulty level, , this value determines reinforcement bonus given to the enemy army.
+
+J_EasyPenalty=簡易モードブースト
+J_EasyPenalty.en=Easy Mode Boost
+J_EasyPenalty.zh=Easy Mode Boost
+J_EasyPenalty:HINT=難易度で簡単を選んだ場合に、敵を強くするボーナス値を指定します。
+J_EasyPenalty:HINT.en=When choosing eazy with difficulty level, , this value determines reinforcement bonus given to the enemy army.
+J_EasyPenalty:HINT.zh=When choosing eazy with difficulty level, , this value determines reinforcement bonus given to the enemy army.
