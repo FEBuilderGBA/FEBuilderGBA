@@ -2825,6 +2825,29 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "SKILL")
+            {//SKILL名を表示
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = SkillUtil.GetSkillName((uint)src_object.Value);
+                };
+
+                return;
+            }
+            if (linktype == "SKILLICON")
+            {//SKILL名からアイコン表示
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    PictureBox link_object = ((PictureBox)link_info);
+
+                    Bitmap bitmap = SkillUtil.DrawIcon((uint)src_object.Value);
+                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
+
+                return;
+            }
             
             
 #if DEBUG            

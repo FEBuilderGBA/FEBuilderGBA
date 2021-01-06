@@ -948,6 +948,7 @@ namespace FEBuilderGBA
                         || type == "BATTLEANIME" 
                         || type == "BATTLEANIMEPOINTER" 
                         || type == "CLASSTYPEICON"
+                        || type == "SKILL"
                         )
                     {
                         PictureBox pic = new PictureBox();
@@ -1388,7 +1389,7 @@ namespace FEBuilderGBA
             }
             else if (listname == "CG")
             {
-                addressList.OwnerDraw(ListBoxEx.DrawCGAndText, DrawMode.OwnerDrawFixed);
+                addressList.OwnerDraw(ListBoxEx.DrawSkillAndText, DrawMode.OwnerDrawFixed);
             }
             else if (listname == "BG")
             {
@@ -1401,6 +1402,10 @@ namespace FEBuilderGBA
             else if (listname == "PTEXT")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
+            else if (listname == "SKILL")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawSkillAndText, DrawMode.OwnerDrawFixed);
             }
             else if (listname == "DECIMAL")
             {
@@ -1471,6 +1476,10 @@ namespace FEBuilderGBA
             else if (listname == "PTEXT")
             {
                 appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
+            }
+            else if (listname == "SKILL")
+            {
+                appendname = U.ToHexString(i) + " " + SkillUtil.GetSkillName((uint)i);
             }
             else if (listname == "DECIMAL")
             {

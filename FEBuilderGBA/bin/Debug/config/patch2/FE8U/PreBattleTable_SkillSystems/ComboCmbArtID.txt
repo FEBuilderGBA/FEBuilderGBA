@@ -1,0 +1,16 @@
+00=Always have that effect
+01=Rescue
+02=Pair Up
+03=Lunge
+04=Mercy
+05=Gamble
+06=Adept
+07=Aether
+08=Astra
+09=Dragon Fang
+0A=Glacies
+0B=Ignis
+0C=Luna
+0D=Sol
+0E=Sure Shot
+FF=Never have any effect

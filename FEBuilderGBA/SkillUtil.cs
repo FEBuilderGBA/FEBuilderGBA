@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Text;
 using System.IO;
+using System.Drawing;
 
 namespace FEBuilderGBA
 {
@@ -123,6 +124,44 @@ namespace FEBuilderGBA
             SkillUtil.ApplyModButton(buttons, skillCount);
         }
 
+        public static Bitmap DrawIcon(uint skillid)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return ImageUtil.BlankDummy();
+            }
+            PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+            if (skillsystem == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                Bitmap bitmap = SkillConfigSkillSystemForm.DrawSkillIcon(skillid);
+                return bitmap;
+            }
+            else if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver2)
+            {
+                Bitmap bitmap = SkillConfigFE8NVer2SkillForm.DrawSkillIcon(skillid);
+                return bitmap;
+            }
+            return ImageUtil.BlankDummy();
+        }
 
+        public static string GetSkillName(uint skillid)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return "";
+            }
+            PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+            if (skillsystem == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                string name = SkillConfigSkillSystemForm.GetSkillName(skillid);
+                return name;
+            }
+            else if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver2)
+            {
+                string name = SkillConfigFE8NVer2SkillForm.GetSkillText(skillid);
+                return name;
+            }
+            return "";
+        }
     }
 }

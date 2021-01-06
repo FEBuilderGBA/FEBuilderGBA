@@ -1,0 +1,1 @@
+00=Nothing5A=Attack5C=Defense5E=Attack Speed60=Hit62=Avoid64=Hit-avoid(Battle Hit)66=Crit68=Crit avoid6A=Crit-crit avoid(Battle Crit)

@@ -1,0 +1,1 @@
+00=Nothing01=Addition02=Subtraction03=Fraction04=LsFraction
