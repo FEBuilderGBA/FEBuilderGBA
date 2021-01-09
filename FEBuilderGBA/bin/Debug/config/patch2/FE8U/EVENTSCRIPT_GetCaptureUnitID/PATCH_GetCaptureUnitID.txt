@@ -1,6 +1,6 @@
-NAME=誰を救出しているか、誰が救出しているのか(イベント命令)
-NAME.en=Add Event: Get unit ID rescued by / Get unit ID that rescues
-NAME.zh=Add Event: Get unit ID rescued by / Get unit ID that rescues
+NAME=誰を救出しているか、誰が救出しているのか(イベント命令) 20200818
+NAME.en=Add Event: Get unit ID rescued by / Get unit ID that rescues 20200818
+NAME.zh=Add Event: Get unit ID rescued by / Get unit ID that rescues 20200818
 
 TYPE=BIN
 TAG=#EVENT
@@ -40,3 +40,5 @@ EVENTSCRIPT:3.zh=40050100FFFFFFFF400D0000{$L1:ASMC_Who_are_rescued_from.dmp}	Get
 
 EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues unit in Slot1(LOW)	@STOREC	{COND}
 EVENTSCRIPT:12.zh=40050100XXXXXXXX400D0000{$L1:ASMC_Who_is_rescued.dmp}	Get unit ID that rescues [XX:UNIT:Unit]	@STOREC	{COND}
+
+DEPRECATED=1
