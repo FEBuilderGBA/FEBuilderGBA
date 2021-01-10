@@ -1,0 +1,8 @@
+CheckNormal=$2C
+IsEnemy=$1A
+FalseExit=$7C
+CheckPhantom=$2C
+CheckCav=$40
+CheckSupply=$48
+CheckCanUnitRescue=$60
+Match=$6E
