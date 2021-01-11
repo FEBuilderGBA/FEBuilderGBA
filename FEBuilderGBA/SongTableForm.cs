@@ -24,13 +24,33 @@ namespace FEBuilderGBA
             //            this.Icon = Properties.Resources.icon_music;
         }
 
+        public static uint GetSoundTablePointer()
+        {
+            uint p = Program.ROM.RomInfo.sound_table_pointer();
+            uint a = Program.ROM.u32(p);
+            if (U.isSafetyPointer(a))
+            {
+                return p;
+            }
+            p = SongExchangeForm.FindSongTablePointer(Program.ROM.Data);
+            if (U.isSafetyOffset(p))
+            {
+                a = Program.ROM.u32(p);
+                if (U.isSafetyPointer(a))
+                {
+                    return p;
+                }
+            }
+            return 0;
+        }
+
         U.FixDocsBugs fixDocsBugs;
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.sound_table_pointer()
+                , GetSoundTablePointer()
                 , 8
                 , (int i, uint addr) =>
                 {//読込最大値検索

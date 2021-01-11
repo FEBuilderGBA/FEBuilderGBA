@@ -166,7 +166,7 @@ namespace FEBuilderGBA
 
         }
 
-        public static uint FindSongTable(byte[] data)
+        public static uint FindSongTablePointer(byte[] data)
         {
             byte[] search = new byte[] {
                 0x00, 0xB5, 0x00, 0x04, 0x07, 0x4A, 0x08, 0x49,
@@ -181,6 +181,18 @@ namespace FEBuilderGBA
             }
             uint songpointer = foundPoint + (uint)search.Length + 10;
             songpointer = U.toOffset(songpointer);
+
+            uint songlist = U.u32(data, songpointer);
+            if (!U.isPointer(songlist))
+            {
+                return U.NOT_FOUND;
+            }
+            return songpointer;
+        }
+
+        static uint FindSongTable(byte[] data)
+        {
+            uint songpointer = FindSongTablePointer(data);
 
             uint songlist = U.u32(data,songpointer);
             if (!U.isPointer(songlist))
