@@ -43,6 +43,9 @@
             this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.ExportAllButton = new System.Windows.Forms.Button();
+            this.ImportAllButton = new System.Windows.Forms.Button();
             this.ZeroPointerPanel = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.IndependencePanel = new System.Windows.Forms.Panel();
@@ -84,9 +87,7 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.ExportAllButton = new System.Windows.Forms.Button();
-            this.ImportAllButton = new System.Windows.Forms.Button();
+            this.X_LEARNINFO = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -96,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).BeginInit();
             this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.ZeroPointerPanel.SuspendLayout();
             this.IndependencePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).BeginInit();
@@ -109,7 +111,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -286,6 +287,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.X_LEARNINFO);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.ZeroPointerPanel);
             this.panel8.Controls.Add(this.IndependencePanel);
@@ -300,6 +302,36 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(657, 449);
             this.panel8.TabIndex = 124;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.ExportAllButton);
+            this.panel10.Controls.Add(this.ImportAllButton);
+            this.panel10.Location = new System.Drawing.Point(-2, 409);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(658, 37);
+            this.panel10.TabIndex = 153;
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ExportAllButton.TabIndex = 117;
+            this.ExportAllButton.Text = "一括エクスポート";
+            this.ExportAllButton.UseVisualStyleBackColor = true;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
+            // 
+            // ImportAllButton
+            // 
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Name = "ImportAllButton";
+            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ImportAllButton.TabIndex = 116;
+            this.ImportAllButton.Text = "一括インポート";
+            this.ImportAllButton.UseVisualStyleBackColor = true;
+            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
             // 
             // ZeroPointerPanel
             // 
@@ -772,35 +804,15 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // panel10
+            // X_LEARNINFO
             // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.ExportAllButton);
-            this.panel10.Controls.Add(this.ImportAllButton);
-            this.panel10.Location = new System.Drawing.Point(-2, 409);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(658, 37);
-            this.panel10.TabIndex = 153;
-            // 
-            // ExportAllButton
-            // 
-            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
-            this.ExportAllButton.Name = "ExportAllButton";
-            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
-            this.ExportAllButton.TabIndex = 117;
-            this.ExportAllButton.Text = "一括エクスポート";
-            this.ExportAllButton.UseVisualStyleBackColor = true;
-            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
-            // 
-            // ImportAllButton
-            // 
-            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
-            this.ImportAllButton.Name = "ImportAllButton";
-            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
-            this.ImportAllButton.TabIndex = 116;
-            this.ImportAllButton.Text = "一括インポート";
-            this.ImportAllButton.UseVisualStyleBackColor = true;
-            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
+            this.X_LEARNINFO.AutoSize = true;
+            this.X_LEARNINFO.Location = new System.Drawing.Point(9, 316);
+            this.X_LEARNINFO.Name = "X_LEARNINFO";
+            this.X_LEARNINFO.Size = new System.Drawing.Size(393, 18);
+            this.X_LEARNINFO.TabIndex = 154;
+            this.X_LEARNINFO.Text = "習得レベルとスキルの詳細は、ここをクリックしてください。";
+            this.X_LEARNINFO.Click += new System.EventHandler(this.X_LEARNINFO_Click);
             // 
             // SkillAssignmentUnitSkillSystemForm
             // 
@@ -826,6 +838,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ZeroPointerPanel.ResumeLayout(false);
             this.IndependencePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).EndInit();
@@ -841,7 +854,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -907,5 +919,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button ExportAllButton;
         private System.Windows.Forms.Button ImportAllButton;
+        private System.Windows.Forms.Label X_LEARNINFO;
     }
 }

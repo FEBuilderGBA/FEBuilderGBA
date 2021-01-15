@@ -61,6 +61,7 @@ namespace FEBuilderGBA
 
             U.SetIcon(ExportAllButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportAllButton, Properties.Resources.icon_upload);
+            InputFormRef.markupJumpLabel(X_LEARNINFO);
         }
 
         public InputFormRef InputFormRef;
@@ -715,6 +716,12 @@ namespace FEBuilderGBA
             }
             U.ReSelectList(this.AddressList);
             R.ShowOK("データのインポートが完了しました。");
+        }
+
+        private void X_LEARNINFO_Click(object sender, EventArgs e)
+        {
+            string url = "https://dw.ngmansion.xyz/doku.php?id=en:guide_febuildergba_learnskillinfo";
+            U.OpenURLOrFile(url);
         }
 
 

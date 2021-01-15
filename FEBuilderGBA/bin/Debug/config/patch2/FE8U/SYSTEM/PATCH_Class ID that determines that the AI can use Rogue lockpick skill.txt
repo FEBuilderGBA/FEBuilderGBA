@@ -1,0 +1,16 @@
+NAME=AIがローグのlockpickを使えると判定するクラスID
+NAME.en=Class ID that determines that the AI can use Rogue lockpick skill
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x40C6A
+ADDRESS_TYPE=CLASS
+AUTHOR=Kirito
+
+INFO=これらのクラスを割り当てられた盗賊AIは、鍵がなくても宝箱などを開けることができます。
+DEFAULT=0x33
+INFO.en=Thieves AI assigned to these classes can open treasure chests, etc. without a key.
+NAME.zh=确定AI可以使用Rogue的密码锁的类ID。
+INFO.zh=分配给这些班级的盗贼AI无需钥匙即可打开宝箱等。

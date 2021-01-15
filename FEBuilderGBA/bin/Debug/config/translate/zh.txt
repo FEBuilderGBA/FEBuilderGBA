@@ -7855,18 +7855,17 @@ Copy Type（Alt + C）
 :(破損)
 （伤害）。
 
-:マップアニメ1|*.mapanime1.txt|All files|*
-地图动画1|*.mapanime1.txt|All files|*
-
 :マップアニメ1|*.mapanime1.txt|GifAnime|*.gif|All files|*
 地图动画1|*.mapanime1.txt|GifAnime|*.gif|All files|*
-
 
 :タイルアニメーションのPLISTを特定できません
 无法识别拼贴动画PLIST
 
 :タイルアニメーションのPLISTからポインタを求められません。\r\nPLIST:{0}
 我不能要求一个来自tile动画PLIST的指针。\r\nPLIST：{0}
+
+:マップアニメ1|*.mapanime1.txt|All files|*
+地图动画1|*.mapanime1.txt|All files|*
 
 :タイルアニメーション({0})が見つかりません。\r\n\r\nスクリプト:{1}\r\n行数:{2}
 无法找到平铺动画（{0}）。\r\n\r\n脚本：{1}\r\n行数：{2}
@@ -9739,6 +9738,9 @@ ROM已被更改
 
 :クラススキル
 职业技能
+
+:習得レベルとスキルの詳細は、ここをクリックしてください。
+单击此处了解有关学习水平和技能的更多信息。
 
 :スキル1
 技能1

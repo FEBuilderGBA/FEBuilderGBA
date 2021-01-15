@@ -86,6 +86,7 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_LEARNINFO = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -214,6 +215,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.X_LEARNINFO);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.ZeroPointerPanel);
             this.panel8.Controls.Add(this.IndependencePanel);
@@ -793,6 +795,16 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // X_LEARNINFO
+            // 
+            this.X_LEARNINFO.AutoSize = true;
+            this.X_LEARNINFO.Location = new System.Drawing.Point(5, 313);
+            this.X_LEARNINFO.Name = "X_LEARNINFO";
+            this.X_LEARNINFO.Size = new System.Drawing.Size(393, 18);
+            this.X_LEARNINFO.TabIndex = 153;
+            this.X_LEARNINFO.Text = "習得レベルとスキルの詳細は、ここをクリックしてください。";
+            this.X_LEARNINFO.Click += new System.EventHandler(this.X_LEARNINFO_Click);
+            // 
             // SkillAssignmentClassSkillSystemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -896,5 +908,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button ExportAllButton;
         private System.Windows.Forms.Button ImportAllButton;
+        private System.Windows.Forms.Label X_LEARNINFO;
     }
 }

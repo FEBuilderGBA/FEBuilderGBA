@@ -13052,3 +13052,5 @@
 0806FC8C	LoadDragonZombieTSATogSomeTSABuffer	{U}
 08023EF0	IsAdjacentForSupply	{U}
 020111CC	Buffer_ReorderPlayerUnitsBasedOnDeployment
+080A7A0C	GetMiniMapTypeFromCoordinateXY	{U}
+080A7BF8	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}

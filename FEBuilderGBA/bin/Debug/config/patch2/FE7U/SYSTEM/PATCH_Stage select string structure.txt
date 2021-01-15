@@ -21,6 +21,10 @@ D0:TEXT=名前
 D4:TEXT=詳細
 D8:TEXT=武器タイプ名
 
+D0:TEXT.en=Name
+D4:TEXT.en=Details
+D8:TEXT.en=WeaponTypeName
+
 INFO=ステージセレクトのテキストを変更します
 AUTHOR=Source: Tequila https://feuniverse.us/t/fe7-replace-hector-mode/3169/6
 

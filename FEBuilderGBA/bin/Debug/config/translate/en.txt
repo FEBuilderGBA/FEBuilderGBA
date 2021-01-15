@@ -7855,9 +7855,6 @@ Tile animation 1: {0}
 :(破損)
 (Corruption).
 
-:マップアニメ1|*.mapanime1.txt|All files|*
-Map animation 1|*.mapanime1.txt|All files|*
-
 :マップアニメ1|*.mapanime1.txt|GifAnime|*.gif|All files|*
 Map animation 1|*.mapanime1.txt|GifAnime|*.gif|All files|*
 
@@ -7866,6 +7863,9 @@ Unable to identify tile animation PLIST
 
 :タイルアニメーションのPLISTからポインタを求められません。\r\nPLIST:{0}
 Can not ask for a pointer from the tile animation PLIST.\r\nPLIST: {0}
+
+:マップアニメ1|*.mapanime1.txt|All files|*
+Map animation 1|*.mapanime1.txt|All files|*
 
 :タイルアニメーション({0})が見つかりません。\r\n\r\nスクリプト:{1}\r\n行数:{2}
 Tile animation ({0}) can not be found.\r\n\r\nScript: {1}\r\nNumber of rows: {2}
@@ -9738,6 +9738,9 @@ Leading address of skill to acquire in level up
 
 :クラススキル
 Class Skill
+
+:習得レベルとスキルの詳細は、ここをクリックしてください。
+Click here for more information on learning levels and skills.
 
 :スキル1
 Skill 1

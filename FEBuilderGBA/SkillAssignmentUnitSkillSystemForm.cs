@@ -61,6 +61,8 @@ namespace FEBuilderGBA
             N1_InputFormRef = N1_Init(this, this.SkillNames);
             N1_InputFormRef.AddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
             N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            InputFormRef.markupJumpLabel(X_LEARNINFO);
         }
 
 
@@ -597,6 +599,12 @@ namespace FEBuilderGBA
             }
             U.ReSelectList(this.AddressList);
             R.ShowOK("データのインポートが完了しました。");
+        }
+
+        private void X_LEARNINFO_Click(object sender, EventArgs e)
+        {
+            string url = "https://dw.ngmansion.xyz/doku.php?id=en:guide_febuildergba_learnskillinfo";
+            U.OpenURLOrFile(url);
         }
     }
 }
