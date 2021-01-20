@@ -10243,8 +10243,8 @@ Sound Room Editor
 :ソングヘッダー
 Song header
 
-:楽器 {0}({1}) -> {2}({3})
-Instrument{0}({1}) -> {2}({3})
+:楽器 {0}({1}) -> {2}({3}) #{4}
+Instrument{0}({1}) -> {2}({3}) #{4}
 
 :PAN補正
 PAN Correction

@@ -6,7 +6,7 @@ NAME.zh=武器经验值可以是武器级别C(Plus1)
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x16ea0
+ADDRESS=0x16EDC
 HEX=false
 
 AUTHOR=Blademaster https://feuniverse.us/t/fe8-change-required-wexp-for-next-level/7895
