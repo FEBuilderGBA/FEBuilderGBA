@@ -125,9 +125,8 @@ namespace FEBuilderGBA
             {
                 return ;
             }
-            uid--;
             InputFormRef InputFormRef = Init(null);
-            uint addr = InputFormRef.IDToAddr(uid);
+            uint addr = InputFormRef.IDToAddr(uid - 1);
             if (!U.isSafetyOffset(addr))
             {
                 return;
