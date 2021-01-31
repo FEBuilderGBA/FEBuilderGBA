@@ -1648,7 +1648,7 @@ Uninstall Script
 :Event Assemblerで追加
 Insert Events Via Event Assembler
 
-:もし、リストを縮めたい場合は、\"攻撃側\"で\"戦闘終了\"を選択してください。
+:もし、リストを縮めたい場合は、「攻撃側」で「戦闘終了」を選択してください。
 To shrink the list select "Battle end" with "Attacker".
 
 :0000=攻撃

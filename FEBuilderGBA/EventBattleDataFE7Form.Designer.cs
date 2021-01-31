@@ -93,7 +93,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(540, 18);
             this.label1.TabIndex = 100;
-            this.label1.Text = "もし、リストを縮めたい場合は、\"攻撃側\"で\"戦闘終了\"を選択してください。";
+            this.label1.Text = "もし、リストを縮めたい場合は、「攻撃側」で「戦闘終了」を選択してください。";
             // 
             // L_0_COMBO
             // 
