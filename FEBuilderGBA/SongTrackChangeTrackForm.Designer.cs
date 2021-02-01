@@ -29,27 +29,28 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Address = new System.Windows.Forms.NumericUpDown();
             this.ChangeButton = new System.Windows.Forms.Button();
             this.customColorGroupBox3 = new FEBuilderGBA.CustomColorGroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PanNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
+            this.ChangeVelocitycheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.VolNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.VoiceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.VoiceListbox = new FEBuilderGBA.ListBoxEx();
-            this.Address = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.customColorGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanNumericUpDown)).BeginInit();
             this.customColorGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VolNumericUpDown)).BeginInit();
             this.customColorGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VoiceNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +62,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(717, 46);
             this.panel1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(11, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "アドレス";
+            // 
+            // Address
+            // 
+            this.Address.Hexadecimal = true;
+            this.Address.Location = new System.Drawing.Point(197, 11);
+            this.Address.Margin = new System.Windows.Forms.Padding(2);
+            this.Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Size = new System.Drawing.Size(134, 25);
+            this.Address.TabIndex = 172;
             // 
             // ChangeButton
             // 
@@ -77,9 +101,9 @@
             this.customColorGroupBox3.BorderColor = System.Drawing.Color.Empty;
             this.customColorGroupBox3.Controls.Add(this.label3);
             this.customColorGroupBox3.Controls.Add(this.PanNumericUpDown);
-            this.customColorGroupBox3.Location = new System.Drawing.Point(12, 375);
+            this.customColorGroupBox3.Location = new System.Drawing.Point(12, 389);
             this.customColorGroupBox3.Name = "customColorGroupBox3";
-            this.customColorGroupBox3.Size = new System.Drawing.Size(717, 83);
+            this.customColorGroupBox3.Size = new System.Drawing.Size(717, 69);
             this.customColorGroupBox3.TabIndex = 2;
             this.customColorGroupBox3.TabStop = false;
             this.customColorGroupBox3.Text = "PAN補正";
@@ -113,14 +137,26 @@
             // customColorGroupBox2
             // 
             this.customColorGroupBox2.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox2.Controls.Add(this.ChangeVelocitycheckBox);
             this.customColorGroupBox2.Controls.Add(this.label1);
             this.customColorGroupBox2.Controls.Add(this.VolNumericUpDown);
             this.customColorGroupBox2.Location = new System.Drawing.Point(12, 286);
             this.customColorGroupBox2.Name = "customColorGroupBox2";
-            this.customColorGroupBox2.Size = new System.Drawing.Size(717, 83);
+            this.customColorGroupBox2.Size = new System.Drawing.Size(717, 97);
             this.customColorGroupBox2.TabIndex = 1;
             this.customColorGroupBox2.TabStop = false;
             this.customColorGroupBox2.Text = "音量補正";
+            // 
+            // ChangeVelocitycheckBox
+            // 
+            this.ChangeVelocitycheckBox.AccessibleDescription = "@CHANGEVELOCITY";
+            this.ChangeVelocitycheckBox.AutoSize = true;
+            this.ChangeVelocitycheckBox.Location = new System.Drawing.Point(197, 69);
+            this.ChangeVelocitycheckBox.Name = "ChangeVelocitycheckBox";
+            this.ChangeVelocitycheckBox.Size = new System.Drawing.Size(180, 22);
+            this.ChangeVelocitycheckBox.TabIndex = 3;
+            this.ChangeVelocitycheckBox.Text = "ベロシティも補正する";
+            this.ChangeVelocitycheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -186,35 +222,13 @@
             // VoiceListbox
             // 
             this.VoiceListbox.FormattingEnabled = true;
+            this.VoiceListbox.IntegralHeight = false;
             this.VoiceListbox.ItemHeight = 18;
             this.VoiceListbox.Location = new System.Drawing.Point(6, 24);
             this.VoiceListbox.Name = "VoiceListbox";
             this.VoiceListbox.Size = new System.Drawing.Size(612, 238);
             this.VoiceListbox.TabIndex = 0;
             this.VoiceListbox.SelectedIndexChanged += new System.EventHandler(this.VoiceListbox_SelectedIndexChanged);
-            // 
-            // Address
-            // 
-            this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(197, 11);
-            this.Address.Margin = new System.Windows.Forms.Padding(2);
-            this.Address.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Size = new System.Drawing.Size(134, 25);
-            this.Address.TabIndex = 172;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(11, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 18);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "アドレス";
             // 
             // SongTrackChangeTrackForm
             // 
@@ -230,6 +244,7 @@
             this.Text = "トラックエディタ";
             this.Load += new System.EventHandler(this.SongTrackChangeTrackForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.customColorGroupBox3.ResumeLayout(false);
             this.customColorGroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanNumericUpDown)).EndInit();
@@ -239,7 +254,6 @@
             this.customColorGroupBox1.ResumeLayout(false);
             this.customColorGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VoiceNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,5 +274,6 @@
         private System.Windows.Forms.NumericUpDown VoiceNumericUpDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown Address;
+        private System.Windows.Forms.CheckBox ChangeVelocitycheckBox;
     }
 }

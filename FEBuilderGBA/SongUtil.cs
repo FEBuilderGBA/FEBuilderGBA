@@ -3134,6 +3134,7 @@ namespace FEBuilderGBA
             , int changeVol
             , int changePan
             , int changeTempo
+            , bool changeVelocity
             )
         {
             Undo.UndoData undodata = Program.Undo.NewUndoData("ChangeTrack");
@@ -3173,52 +3174,53 @@ namespace FEBuilderGBA
 
                         continue;
                     }
-                    /*
-                                        else if (c.type >= TIE && c.type <= (uint)NOTE_END)
-                                        {// N24, Dn3 ,v100
-                                         // N24, Dn3
-                                            if (c.value != U.NOT_FOUND)
-                                            {
-                                                if (c.value2 != U.NOT_FOUND)
-                                                {//ベロシティも変更する.
-                                                    int a = (int)c.value2;
-                                                    a += changeVol;
-                                                    if (a > 127)
-                                                    {
-                                                        a = 127;
-                                                    }
-                                                    else if (a < 0)
-                                                    {
-                                                        a = 0;
-                                                    }
-                                                    c.value2 = (uint)a;
+                    else if (changeVelocity)
+                    {
+                        if (c.type >= TIE && c.type <= (uint)NOTE_END)
+                        {// N24, Dn3 ,v100
+                            // N24, Dn3
+                            if (c.value != U.NOT_FOUND)
+                            {
+                                if (c.value2 != U.NOT_FOUND)
+                                {//ベロシティも変更する.
+                                    int a = (int)c.value2;
+                                    a += changeVol;
+                                    if (a > 127)
+                                    {
+                                        a = 127;
+                                    }
+                                    else if (a < 0)
+                                    {
+                                        a = 0;
+                                    }
+                                    c.value2 = (uint)a;
 
-                                                    Program.ROM.write_u8(c.addr + 2, c.value2,undodata);
-                                                }
-                                            }
-                                        }
-                                        else if (c.type <= 127)
-                                        {// Dn3 ,v100
-                                         // Dn3
-                                            if (c.value != U.NOT_FOUND)
-                                            {//ベロシティも変更する.
-                                                int a = (int)c.value;
-                                                a += changeVol;
-                                                if (a > 127)
-                                                {
-                                                    a = 127;
-                                                }
-                                                else if (a < 0)
-                                                {
-                                                    a = 0;
-                                                }
-                                                c.value = (uint)a;
+                                    Program.ROM.write_u8(c.addr + 2, c.value2, undodata);
+                                }
+                            }
+                        }
+                        else if (c.type <= 127)
+                        {// Dn3 ,v100
+                            // Dn3
+                            if (c.value != U.NOT_FOUND)
+                            {//ベロシティも変更する.
+                                int a = (int)c.value;
+                                a += changeVol;
+                                if (a > 127)
+                                {
+                                    a = 127;
+                                }
+                                else if (a < 0)
+                                {
+                                    a = 0;
+                                }
+                                c.value = (uint)a;
 
-                                                undodata.list.Add(new Undo.UndoPostion(c.addr + 1, 1));
-                                                Program.ROM.write_u8(c.addr + 1, c.value);
-                                            }
-                                        }
-                    */
+                                undodata.list.Add(new Undo.UndoPostion(c.addr + 1, 1));
+                                Program.ROM.write_u8(c.addr + 1, c.value);
+                            }
+                        }
+                    }
                 }
                 if (changePan != 0 && c.type == 0xbf)
                 {//PAN

@@ -364,6 +364,7 @@ namespace FEBuilderGBA
                 , f.GetChangeVol()
                 , f.GetChangePan()
                 , 0
+                , f.IsChangeVelocity()
                 );
             this.WriteButton.PerformClick();
 
@@ -386,6 +387,7 @@ namespace FEBuilderGBA
                     , f.GetChangeVol()
                     , f.GetChangePan()
                     , f.GetChangeTempo()
+                    , false
                     );
             }
             this.WriteButton.PerformClick();

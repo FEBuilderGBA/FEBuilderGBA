@@ -5167,6 +5167,9 @@ If you want to erase the most recently installed script, select Undo.\r\nIf you 
 :サウンドルームに登録できるのは、SongID 0x7fまでの曲です。\r\nそれ以上のSongIDを使う場合は、「サウンドルーム全開」パッチを利用してください。\r\nそうしないと、それらの曲はUnLockされない可能性があります。\r\n
 Songs up to SongID 0x7f can be registered in the sound room.\r\nIf you want to use more SongIDs, please use the "Sound Room Unlock" patch.\r\nOtherwise, those songs may not be UnLocked.\r\n
 
+:通常は利用しないでください。\r\nボリュームを変更しても、音量がまったく反映されない場合にのみ利用してください。\r\n
+Please do not use it normally.\r\nUse it only when the volume is not reflected at all even if you change the volume.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -10273,8 +10276,14 @@ Add the specified value to the overall tempo of all tracks.\r\nThe higher the nu
 :全トラックの変更
 Change all tracks
 
+:楽器 {0}({1}) -> {2}({3})
+Instrument {0} ({1})-> {2} ({3}).
+
 :このトラックのPANに、指定された値を足します。\r\nマイナスは左側、プラスは右側です。
 Add the specified value to the overall stereo PAN of this track.\r\nMinus = left speaker, Plus = right speaker.
+
+:ベロシティも補正する
+Velocity is also corrected.
 
 :このトラックの音量に、指定された値を足しこみます。\r\n大きくするほど、大きな音になります。
 Add the specified value to the overall volume of this track.\r\nThe larger the value, the louder the notes.

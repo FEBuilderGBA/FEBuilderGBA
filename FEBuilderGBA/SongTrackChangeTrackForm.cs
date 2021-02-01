@@ -65,6 +65,10 @@ namespace FEBuilderGBA
         {
             return (int)this.PanNumericUpDown.Value;
         }
+        public bool IsChangeVelocity()
+        {
+            return this.ChangeVelocitycheckBox.Checked;
+        }
 
         private void VoiceListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
