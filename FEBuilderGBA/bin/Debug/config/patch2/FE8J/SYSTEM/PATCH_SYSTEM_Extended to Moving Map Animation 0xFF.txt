@@ -43,3 +43,4 @@ AUTHOR=Icecube https://feuniverse.us/t/max-number-of-standing-map-sprites/773/10
 NAME.zh=将移动图标扩展到FF
 
 INFO.en=Toggles whether to limit class moving animations to 127 (Default) or 255 (Extended)\r\nIf moving map animations exceed 127 without being patched, there will be errors.\r\n
+HINT=fixed standing map animations

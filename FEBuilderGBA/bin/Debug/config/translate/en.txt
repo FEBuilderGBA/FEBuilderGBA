@@ -4228,11 +4228,8 @@ Are you sure you want to overwrite with clipboard data?
 :{0}と{1}を入れ替えもよろしいですか？
 Are you sure you want to replace {0} with {1}?
 
-:リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。
-Are you sure you want to slide the list down one? \r\nThe bottom item is pushed out and becomes the current line.
-
-:リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。
-Are you sure you want to slide the list up one? \r\nThe top item is extruded and becomes the current line.
+:{0}を{1}の位置に移動してもよろしいですか？
+Are you sure you want to move {0} to the position of {1}? 
 
 :アドレス({0}+{1})は、終端(2)を超えるので表示できません。
 The address ({0} + {1}) exceeds the termination (2) and can't be displayed.
@@ -5205,6 +5202,9 @@ Direct Edit(&N)
 
 :無効化する(DEL)
 Invalidate (DEL)
+
+:00のデータの変更は許可されていません。
+Modification of 00 data is not allowed.
 
 :該当アイテム
 Usable Item

@@ -6215,63 +6215,54 @@ namespace FEBuilderGBA
                 U.SelectedIndexSafety(this.AddressList, selected );
             }
         }
-
-        public void ShiftData(bool isDown)
+        void DragAndDropData(int startIndex, int targetIndex)
         {
             if (this.AddressList == null)
             {
                 return;
             }
             int totalCount = this.AddressList.Items.Count;
-            int selected = this.AddressList.SelectedIndex;
-            if (selected < 0)
+            if (targetIndex < 0 || targetIndex > totalCount)
+            {
+                return;
+            }
+            if (startIndex < 0 || startIndex > totalCount)
+            {
+                return;
+            }
+            if (targetIndex == startIndex)
+            {
+                return;
+            }
+            U.AddrResult targetAR = SelectToAddrResult(this.AddressList, targetIndex);
+            U.AddrResult startAR = SelectToAddrResult(this.AddressList, startIndex);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm, "D&D");
+
+            DialogResult dr = R.ShowYesNo(R._("{0}を{1}の位置に移動してもよろしいですか？", startAR.name, targetAR.name));
+            if (dr != DialogResult.Yes)
             {
                 return;
             }
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm, "Shift");
+            byte[] currentData = Program.ROM.getBinaryData(startAR.addr, this.BlockSize);
+            if (targetIndex > startIndex)
+            {//下にドラッグした
+                byte[] shiftData = Program.ROM.getBinaryData(startAR.addr + this.BlockSize, (uint)(targetIndex - startIndex) * this.BlockSize);
 
-            U.AddrResult current = SelectToAddrResult(this.AddressList, selected);
-            if (isDown)
-            {
-                if (selected >= totalCount)
-                {
-                    return;
-                }
-                DialogResult dr = R.ShowYesNo(R._("リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。"));
-                if (dr != DialogResult.Yes)
-                {
-                    return;
-                }
-                uint addr = current.addr + this.BlockSize;
-                byte[] last = Program.ROM.getBinaryData(this.BaseAddress + (uint)((totalCount - 1) * this.BlockSize), this.BlockSize);
-                byte[] move = Program.ROM.getBinaryData(current.addr, (uint)((totalCount - selected - 1) * this.BlockSize));
-
-                Program.ROM.write_range(current.addr + this.BlockSize, move, undodata);
-                Program.ROM.write_range(current.addr, last, undodata);
+                Program.ROM.write_range(startAR.addr, shiftData, undodata);
+                Program.ROM.write_range(targetAR.addr, currentData, undodata);
             }
             else
-            {
-                if (selected <= 0)
-                {
-                    return;
-                }
-                DialogResult dr = R.ShowYesNo(R._("リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。"));
-                if (dr != DialogResult.Yes)
-                {
-                    return;
-                }
+            {//上にドラッグした
+                byte[] shiftData = Program.ROM.getBinaryData(targetAR.addr, (uint)(startIndex - targetIndex) * this.BlockSize);
 
-                uint addr = this.BaseAddress + this.BlockSize;
-                byte[] last = Program.ROM.getBinaryData(this.BaseAddress, this.BlockSize);
-                byte[] move = Program.ROM.getBinaryData(this.BaseAddress + this.BlockSize, (uint)((selected) * this.BlockSize));
-
-                Program.ROM.write_range(this.BaseAddress, move, undodata);
-                Program.ROM.write_range(current.addr, last, undodata);
+                Program.ROM.write_range(targetAR.addr + this.BlockSize, shiftData, undodata);
+                Program.ROM.write_range(targetAR.addr, currentData, undodata);
             }
 
             Program.Undo.Push(undodata);
-            ShowWriteNotifyAnimation(this.SelfForm, current.addr);
+            ShowWriteNotifyAnimation(this.SelfForm, startAR.addr);
             ReloadAddressList();
             this.AddressList.Refresh();
         }
@@ -11688,6 +11679,12 @@ namespace FEBuilderGBA
                 menuItem = new MenuItem(R._("↓データ入れ替え(Ctrl + Down)"));
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
+
+                this.AddressList.AllowDrop = true;
+                this.AddressList.MouseDown += new MouseEventHandler(ListBoxDD_MouseDown);
+                this.AddressList.MouseMove += new MouseEventHandler(ListBoxDD_MouseMove);
+                this.AddressList.DragEnter += new DragEventHandler(ListBoxDD_DragEnter);
+                this.AddressList.DragDrop += new DragEventHandler(ListBoxDD_DragDrop);
             }
             if (useClear)
             {
@@ -11704,6 +11701,107 @@ namespace FEBuilderGBA
             this.AddressList.ContextMenu = contextMenu;
         }
 
+        Rectangle DragBoxFromMouseDown = Rectangle.Empty;
+        private void ListBoxDD_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (this.AddressList.SelectedItem == null)
+            {
+                this.DragBoxFromMouseDown = Rectangle.Empty;
+                return;
+            }
+            if (e.Button != MouseButtons.Left)
+            {
+                this.DragBoxFromMouseDown = Rectangle.Empty;
+                return;
+            }
+            // Remember the point where the mouse down occurred. The DragSize indicates
+            // the size that the mouse can move before a drag event should be started.                
+            Size dragSize = SystemInformation.DragSize;
+
+            // Create a rectangle using the DragSize, with the mouse position being
+            // at the center of the rectangle.
+            this.DragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2),
+                                                           e.Y - (dragSize.Height / 2)), dragSize);
+        }
+
+        void ListBoxDD_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) != MouseButtons.Left)
+            {
+                this.DragBoxFromMouseDown = Rectangle.Empty;
+                return;
+            }
+            // If the mouse moves outside the rectangle, start the drag.
+            if (this.DragBoxFromMouseDown == Rectangle.Empty ||
+                this.DragBoxFromMouseDown.Contains(e.X, e.Y))
+            {
+                return ;
+            }
+
+            //ドラッグを許可するので、マウスの位置は初期化する
+            this.DragBoxFromMouseDown = Rectangle.Empty;
+
+            int startIndex = this.AddressList.SelectedIndex;
+            if (startIndex < 0)
+            {
+                return;
+            }
+            if (this.UseWriteProtectionID00)
+            {
+                if (startIndex == 0)
+                {
+                    return;
+                }
+            }
+
+            this.AddressList.DoDragDrop(this.GetHashCode(), DragDropEffects.Move);
+        }
+
+        private void ListBoxDD_DragEnter(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(typeof(int)))
+            {
+                e.Effect = DragDropEffects.None;
+                return;
+            }
+            int hash = (int)e.Data.GetData(typeof(int));
+            if (hash != this.GetHashCode())
+            {
+                e.Effect = DragDropEffects.None;
+                return;
+            }
+
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void ListBoxDD_DragDrop(object sender, DragEventArgs e)
+        {
+            this.DragBoxFromMouseDown = Rectangle.Empty;
+
+            Point point = this.AddressList.PointToClient(new Point(e.X, e.Y));
+            int targetIndex = this.AddressList.IndexFromPoint(point);
+            if (targetIndex < 0)
+            {
+                targetIndex = this.AddressList.Items.Count - 1;
+            }
+
+            int startIndex = this.AddressList.SelectedIndex;
+            if (startIndex == targetIndex)
+            {
+                return;
+            }
+
+            if (this.UseWriteProtectionID00)
+            {
+                if (targetIndex == 0 || startIndex == 0)
+                {
+                    R.ShowStopError(R._("00のデータの変更は許可されていません。"));
+                    return;
+                }
+            }
+
+            DragAndDropData(startIndex, targetIndex);
+        }
 
         void ShowDumpSelectDialogHandler(Object sender,EventArgs e)
         {
