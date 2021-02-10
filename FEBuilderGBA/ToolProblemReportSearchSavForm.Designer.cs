@@ -86,6 +86,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ToolProblemReportSearchSavForm";
             this.Text = "savファイルがありません";
+            this.Load += new System.EventHandler(this.ToolProblemReportSearchSavForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

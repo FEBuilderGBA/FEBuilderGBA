@@ -10564,6 +10564,18 @@ Song Name
 :サウンドルームが極端に少ないです。破損している可能性があります。
 The Sound Room data is extremely small. It may be damaged.
 
+:{0}列目、左
+{0} column, left
+
+:{0}列目、左中
+{0} column, middle left
+
+:{0}列目、右中
+{0} column, middle right
+
+:{0}列目、右
+{0} column, right
+
 :曲の長さ
 Song Length
 

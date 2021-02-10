@@ -45,7 +45,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    return U.ToHexString(i) + " " + SoundRoomForm.GetSongName((uint)i);
+                    return (i + 1).ToString("D3") + " " + SoundRoomForm.GetSongName((uint)i);
                 }
                 );
         }
@@ -82,6 +82,11 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             UseValsID.AppendTextID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 4,8 });
             UseValsID.AppendSongID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 0 });
+        }
+
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            X_RoomPosstionLabel.Text = SoundRoomForm.ConvertPosstion(this.AddressList.SelectedIndex);
         }
 
     }

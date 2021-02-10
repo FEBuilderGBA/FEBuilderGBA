@@ -57,6 +57,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
+            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
@@ -107,6 +108,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.X_RoomPosstionLabel);
             this.panel6.Controls.Add(this.L_0_SONG);
             this.panel6.Controls.Add(this.L_8_TEXT_SOUND1);
             this.panel6.Controls.Add(this.D8);
@@ -240,6 +242,7 @@
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(394, 652);
             this.AddressList.TabIndex = 108;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // LabelFilter
             // 
@@ -416,6 +419,16 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // X_RoomPosstionLabel
+            // 
+            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 119);
+            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
+            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
+            this.X_RoomPosstionLabel.TabIndex = 188;
+            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SoundRoomFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -477,6 +490,7 @@
         private System.Windows.Forms.NumericUpDown D8;
         private System.Windows.Forms.Label J_8_TEXT;
         private TextBoxEx L_0_SONG;
+        private System.Windows.Forms.Label X_RoomPosstionLabel;
 
     }
 }

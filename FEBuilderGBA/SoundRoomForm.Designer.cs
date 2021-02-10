@@ -63,6 +63,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.D12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -156,6 +157,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.X_RoomPosstionLabel);
             this.panel6.Controls.Add(this.L_0_SONG);
             this.panel6.Controls.Add(this.L_4_MSEC);
             this.panel6.Controls.Add(this.L_8_ASM);
@@ -283,6 +285,7 @@
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(428, 686);
             this.AddressList.TabIndex = 108;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // AddressListExpandsButton_255
             // 
@@ -499,6 +502,16 @@
             this.panel7.Size = new System.Drawing.Size(829, 70);
             this.panel7.TabIndex = 186;
             // 
+            // X_RoomPosstionLabel
+            // 
+            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 156);
+            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
+            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
+            this.X_RoomPosstionLabel.TabIndex = 187;
+            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SoundRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -569,6 +582,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label X_RoomPosstionLabel;
 
     }
 }

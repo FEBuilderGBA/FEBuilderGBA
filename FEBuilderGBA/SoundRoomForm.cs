@@ -45,7 +45,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    return U.ToHexString(i) + " " + GetSongName((uint)i);
+                    return (i + 1).ToString("D3") + " " + GetSongName((uint)i);
                 }
                 );
         }
@@ -171,6 +171,36 @@ namespace FEBuilderGBA
                     FELint.CheckASMPointer(asm, errors, FELint.Type.SOUNDROOM, soundroom_addr);
                 }
             }
+        }
+
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            X_RoomPosstionLabel.Text = SoundRoomForm.ConvertPosstion(this.AddressList.SelectedIndex);
+        }
+
+        public static string ConvertPosstion(int selected)
+        {
+            if (selected < 0)
+            {
+                return "";
+            }
+
+            int i = selected;
+            int mod = i % 4;
+            int line = i / 4 + 1;
+            switch(mod)
+            {
+                case 0:
+                    return R._("{0}列目、左", line);
+                case 1:
+                    return R._("{0}列目、左中", line);
+                case 2:
+                    return R._("{0}列目、右中", line);
+                case 3:
+                    return R._("{0}列目、右", line);
+            }
+
+            return "";
         }
     }
 }

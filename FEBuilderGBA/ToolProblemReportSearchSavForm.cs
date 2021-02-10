@@ -47,5 +47,10 @@ namespace FEBuilderGBA
         {
             return SavFilename.Text;
         }
+
+        private void ToolProblemReportSearchSavForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
