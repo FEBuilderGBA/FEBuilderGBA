@@ -114,7 +114,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindAssignPersonalSkillPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindAssignPersonalSkillPointer = FindSkillPointerToPointer("ASSIGN", 0);
+                g_Cache_FindAssignPersonalSkillPointer = FindSkillPointer("ASSIGN", 0);
             }
             return g_Cache_FindAssignPersonalSkillPointer;
         }
@@ -124,7 +124,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindAssignClassSkillPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindAssignClassSkillPointer = FindSkillPointerToPointer("ASSIGN", 4);
+                g_Cache_FindAssignClassSkillPointer = FindSkillPointer("ASSIGN", 4);
             }
             return g_Cache_FindAssignClassSkillPointer;
         }
@@ -134,7 +134,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindAssignClassLevelUpSkillPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindAssignClassLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 0);
+                g_Cache_FindAssignClassLevelUpSkillPointer = FindSkillPointer("LEVELUP", 0);
             }
             return g_Cache_FindAssignClassLevelUpSkillPointer;
         }
@@ -144,7 +144,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindAssignUnitLevelUpSkillPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindAssignUnitLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 4);
+                g_Cache_FindAssignUnitLevelUpSkillPointer = FindSkillPointer("LEVELUP", 4);
             }
             return g_Cache_FindAssignUnitLevelUpSkillPointer;
         }
@@ -154,7 +154,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindIconPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindIconPointer = FindSkillPointerToPointer("ICON", 0);
+                g_Cache_FindIconPointer = FindSkillPointer("ICON", 0);
             }
             return g_Cache_FindIconPointer;
         }
@@ -164,7 +164,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindTextPointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindTextPointer = FindSkillPointerToPointer("TEXT", 0);
+                g_Cache_FindTextPointer = FindSkillPointer("TEXT", 0);
             }
             return g_Cache_FindTextPointer;
         }
@@ -174,26 +174,11 @@ namespace FEBuilderGBA
         {
             if (g_Cache_FindAnimePointer == PatchUtil.NO_CACHE)
             {
-                g_Cache_FindAnimePointer = FindSkillPointerToPointer("ANIME", 0);
+                g_Cache_FindAnimePointer = FindSkillPointer("ANIME", 0);
             }
             return g_Cache_FindAnimePointer;
         }
 
-        static uint FindSkillPointerToPointer(string type,uint skip = 0)
-        {
-            uint a = FindSkillPointer(type);
-            if (a == U.NOT_FOUND)
-            {
-                return U.NOT_FOUND;
-            }
-            uint p = Program.ROM.u32(a + skip);
-            if (!U.isSafetyPointer(p))
-            {
-                return U.NOT_FOUND;
-            }
-            //ポインタで返す.
-            return a + skip;
-        }
 
         static Dictionary<uint, string> g_Cache_SkillName = new Dictionary<uint,string>();
         public static Dictionary<uint, string> LoadSkillNames()
@@ -211,7 +196,7 @@ namespace FEBuilderGBA
             public uint skip;
             public byte[] data;
         };
-        static uint FindSkillPointer(string type)
+        static uint FindSkillPointer(string type, uint skip)
         {
             SkillSystemsTableSt[] table = new SkillSystemsTableSt[] { 
                 new SkillSystemsTableSt{ name="ASSIGN", skip =	16, data = new byte[]{0x01,0x35,0x02,0x36,0xF1,0xE7,0x00,0x20,0x28,0x70,0x29,0x1C,0x02,0x48,0x09,0x1A}},
@@ -221,6 +206,7 @@ namespace FEBuilderGBA
                 new SkillSystemsTableSt{ name="ANIME", skip =	32, data = new byte[]{0x00,0x2B,0x00,0xD1,0x06,0x4B,0x38,0x1C,0x9E,0x46,0x00,0xF8,0x05,0x48,0x00,0x47}},
                 new SkillSystemsTableSt{ name="ICON", skip =	24, data = new byte[]{0x02,0x40,0x09,0x4C,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47}},
                 new SkillSystemsTableSt{ name="ICON", skip =	8, data = new byte[]{0x08,0x42,0x04,0xD1,0x12,0x79,0xAA,0x42,0x01,0xD1,0x01,0x20,0x03,0xE0,0x01,0x34,0xBF,0x2C,0xEA,0xDD,0x00,0x20,0x30,0xBC,0x02,0xBC,0x08,0x47}},
+                new SkillSystemsTableSt{ name="ICON", skip =	0, data = new byte[]{0xFF,0xFF,0x0F,0x00,0x05,0x49,0x00,0x29,0x01,0xD1,0x03,0x49,0x09,0x68,0x00,0x06,0x40,0x0C,0x40,0x18,0x70,0x47,0x00,0x00,0x88,0x37,0x00,0x08}},
                 new SkillSystemsTableSt{ name="TEXT", skip =	16, data = new byte[]{0x07,0x49,0x40,0x00,0x40,0x18,0x00,0x88,0x00,0x28,0x00,0xD1,0x06,0x48,0x21,0x1C}},
                 new SkillSystemsTableSt{ name="LEVELUP", skip =	0, data = new byte[]{0xE4,0x58,0x00,0x2C,0x0C,0xD0,0x23,0x78,0x00,0x2B,0x09,0xD0,0x8B,0x42,0x01,0xDD,0x93,0x42,0x01,0xDD,0x02,0x34,0xF6,0xE7,0x63,0x78,0x33,0x70,0x01,0x36,0xF9,0xE7,0x00,0x20,0x30,0x70,0x71,0xBC,0x70,0x47}},
                 new SkillSystemsTableSt{ name="LEVELUP", skip =	0, data = new byte[]{0x06,0xDD,0x14,0x3B,0x8B,0x42,0x01,0xDD,0x93,0x42,0x01,0xDD,0x02,0x34,0xEF,0xE7,0x63,0x78,0x33,0x70,0x01,0x36,0xF9,0xE7,0x0B,0x4C,0x43,0x68,0x1B,0x79,0x9B,0x00,0xE4,0x58,0x00,0x2C,0x0C,0xD0,0x23,0x78,0x00,0x2B,0x09,0xD0,0x8B,0x42,0x01,0xDD,0x93,0x42,0x01,0xDD,0x02,0x34,0xF6,0xE7,0x63,0x78,0x33,0x70,0x01,0x36,0xF9,0xE7,0x00,0x20,0x30,0x70,0x71,0xBC,0x70,0x47}},
@@ -241,7 +227,19 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                return (uint)(found + t.data.Length + t.skip);
+                uint a = (uint)(found + t.data.Length + t.skip);
+                a = a + skip;
+                if (!U.isSafetyOffset(a))
+                {
+                    continue;
+                }
+                uint p = Program.ROM.u32(a);
+                if (!U.isSafetyPointer(p))
+                {
+                    continue;
+                }
+                //ポインタで返す.
+                return a + skip;
             }
             return U.NOT_FOUND;
         }

@@ -11,6 +11,6 @@ PATCHED_IF:0x1828E=0x00 0x00 0x00 0x4B 0x18 0x47
 USEFLAG=0xA0
 
 AUTHOR=circleseverywhere
-INFO.en=Even if the player unit dies while the global flag 0xB0 is set to ON, it will be automatically restored in the next chapter.
+INFO.en=Even if the player unit dies while the global flag 0xA0 is set to ON, it will be automatically restored in the next chapter.
 NAME.zh=休闲模式
-INFO.zh=即使播放器人物在全局标志0xB0设置为ON时死亡，它也将在下一章中自动恢复。
+INFO.zh=即使播放器人物在全局标志0xA0设置为ON时死亡，它也将在下一章中自动恢复。
