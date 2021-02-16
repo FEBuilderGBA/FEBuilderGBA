@@ -239,7 +239,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 //ポインタで返す.
-                return a + skip;
+                return a;
             }
             return U.NOT_FOUND;
         }
