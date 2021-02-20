@@ -113,14 +113,15 @@ namespace FEBuilderGBA
         {
             string name = "UnitIncreaseHeight";
 
-            InputFormRef InputFormRef = Init(null);
+            InputFormRef ifr = Init(null);
+            ReInit(ifr);
             FEBuilderGBA.Address.AddAddress(list
-                , InputFormRef
+                , ifr
                 , name
                 , new uint[] { 0 }
                 , FEBuilderGBA.Address.DataTypeEnum.InputFormRef_ASM);
 
-            List<U.AddrResult> arlist = InputFormRef.MakeList();
+            List<U.AddrResult> arlist = ifr.MakeList();
             FEBuilderGBA.Address.AddFunctions(list, arlist, 0, name);
         }
     

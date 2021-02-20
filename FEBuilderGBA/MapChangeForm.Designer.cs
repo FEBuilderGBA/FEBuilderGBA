@@ -32,6 +32,8 @@
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.N_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.X_MAPEDITOR_LINK = new System.Windows.Forms.Label();
             this.N_B6 = new System.Windows.Forms.NumericUpDown();
             this.N_L_5_FLAG = new FEBuilderGBA.TextBoxEx();
@@ -83,8 +85,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.N_Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
@@ -179,6 +179,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(412, 472);
             this.panel3.TabIndex = 1;
+            // 
+            // N_Comment
+            // 
+            this.N_Comment.ErrorMessage = "";
+            this.N_Comment.Location = new System.Drawing.Point(164, 343);
+            this.N_Comment.Name = "N_Comment";
+            this.N_Comment.Placeholder = "";
+            this.N_Comment.Size = new System.Drawing.Size(240, 25);
+            this.N_Comment.TabIndex = 209;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(2, 340);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 31);
+            this.label4.TabIndex = 208;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_MAPEDITOR_LINK
             // 
@@ -428,6 +449,7 @@
             // 
             // X_JUMP_MAPEDITOR
             // 
+            this.X_JUMP_MAPEDITOR.AccessibleDescription = "@MAPEDITOR_ID";
             this.X_JUMP_MAPEDITOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_JUMP_MAPEDITOR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_JUMP_MAPEDITOR.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -779,27 +801,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(156, 538);
             this.panel7.TabIndex = 190;
-            // 
-            // N_Comment
-            // 
-            this.N_Comment.ErrorMessage = "";
-            this.N_Comment.Location = new System.Drawing.Point(164, 343);
-            this.N_Comment.Name = "N_Comment";
-            this.N_Comment.Placeholder = "";
-            this.N_Comment.Size = new System.Drawing.Size(240, 25);
-            this.N_Comment.TabIndex = 209;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(2, 340);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 31);
-            this.label4.TabIndex = 208;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapChangeForm
             // 

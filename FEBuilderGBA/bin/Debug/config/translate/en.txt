@@ -5167,6 +5167,9 @@ Songs up to SongID 0x7f can be registered in the sound room.\r\nIf you want to u
 :通常は利用しないでください。\r\nボリュームを変更しても、音量がまったく反映されない場合にのみ利用してください。\r\n
 Please do not use it normally.\r\nUse it only when the volume is not reflected at all even if you change the volume.\r\n
 
+:タイル変化のIDです。\r\n無駄な混乱を避けるためリストの並び順と同じIDを割り振ることを推奨します。\r\nこの値を0xFFにするとリスト終端として扱われます。
+The ID of the tile change.\r\nIt is recommended to assign the same ID as the list order to avoid unnecessary confusion.\r\nIf this value is set to 0xFF, it will be treated as the end of the list.
+
 :元に戻す(&Z)
 Undo(&Z)
 
