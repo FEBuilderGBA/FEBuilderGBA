@@ -22,6 +22,9 @@ namespace FEBuilderGBA
         ImageFormRef system_weapon_icon_icon;
         ImageFormRef system_music_icon_icon;
 
+        ImageFormRef unit_icon_lightrune;
+        ImageFormRef unit_icon_sepia;
+
         ImageFormRef systemmenu_goal;
         ImageFormRef systemmenu_terrain;
         ImageFormRef systemmenu_name;
@@ -277,6 +280,17 @@ namespace FEBuilderGBA
             ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(this, "item_icon"));
         }
 
+        private void unit_icon_lightrune_Export_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = DrawUnits(5);
+            ImageFormRef.ExportImage(this, bitmap, InputFormRef.MakeSaveImageFilename(this, "unit_icon_lightrune"));
+        }
+        private void unit_icon_sepia_Export_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = DrawUnits(6);
+            ImageFormRef.ExportImage(this, bitmap, InputFormRef.MakeSaveImageFilename(this, "unit_icon_sepia"));
+        }
+
         private void Import_Palette_By_Address(uint palette_address)
         {
             Bitmap bitmap = ImageFormRef.ImportFilenameDialog(this);
@@ -323,6 +337,14 @@ namespace FEBuilderGBA
         private void unit_icon_gray_Import_Click(object sender, EventArgs e)
         {
             Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_gray_palette_address());
+        }
+        private void unit_icon_lightrune_Import_Click(object sender, EventArgs e)
+        {
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_lightrune_palette_address());
+        }
+        private void unit_icon_sepia_Import_Click(object sender, EventArgs e)
+        {
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_sepia_palette_address());
         }
 
         private void icon_palette_Import_Click(object sender, EventArgs e)
@@ -1049,6 +1071,7 @@ namespace FEBuilderGBA
         {
             OpenPaletteEditor(DrawItemIcons(), (uint)item_icon_PALETTE.Value);
         }
+
 
 
 

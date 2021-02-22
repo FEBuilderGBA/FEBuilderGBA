@@ -1148,6 +1148,7 @@
             this.unit_icon_sepia_Export.TabIndex = 124;
             this.unit_icon_sepia_Export.Text = "画像取出";
             this.unit_icon_sepia_Export.UseVisualStyleBackColor = true;
+            this.unit_icon_sepia_Export.Click += new System.EventHandler(this.unit_icon_sepia_Export_Click);
             // 
             // unit_icon_sepia_Picture
             // 
@@ -1169,6 +1170,7 @@
             this.unit_icon_sepia_Import.TabIndex = 123;
             this.unit_icon_sepia_Import.Text = "画像からパレット読込";
             this.unit_icon_sepia_Import.UseVisualStyleBackColor = true;
+            this.unit_icon_sepia_Import.Click += new System.EventHandler(this.unit_icon_sepia_Import_Click);
             // 
             // label5
             // 
@@ -1219,6 +1221,7 @@
             this.unit_icon_lightrune_Export.TabIndex = 124;
             this.unit_icon_lightrune_Export.Text = "画像取出";
             this.unit_icon_lightrune_Export.UseVisualStyleBackColor = true;
+            this.unit_icon_lightrune_Export.Click += new System.EventHandler(this.unit_icon_lightrune_Export_Click);
             // 
             // unit_icon_lightrune_Picture
             // 
@@ -1240,6 +1243,7 @@
             this.unit_icon_lightrune_Import.TabIndex = 123;
             this.unit_icon_lightrune_Import.Text = "画像からパレット読込";
             this.unit_icon_lightrune_Import.UseVisualStyleBackColor = true;
+            this.unit_icon_lightrune_Import.Click += new System.EventHandler(this.unit_icon_lightrune_Import_Click);
             // 
             // label6
             // 
