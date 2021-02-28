@@ -727,14 +727,14 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-
-                    Size mapsize = ImageUtilMap.GetMapSize(plists.obj_plist, plists.palette_plist, plists.config_plist, plists.mappointer_plist);
+                    string error;
+                    Size mapsize = ImageUtilMap.GetMapSize(plists.obj_plist, plists.palette_plist, plists.config_plist, plists.mappointer_plist, out error);
                     if (mapsize.Width <= 0 || mapsize.Height <= 0)
                     {
                         //LZ77に失敗してそうだからチェックする
                         FELint.CheckLZ77(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                            , R._("マップが破損しています。")
+                            , R._("マップが破損しています。{0}", error)
                             , mapid));
                     }
 

@@ -150,5 +150,9 @@ namespace FEBuilderGBA
             }
             return data.ToArray();
         }
+        public Dictionary<string, uint> GetEncodeDicLow()
+        {
+            return EncodeDic;
+        }
     }
 }

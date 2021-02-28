@@ -166,5 +166,9 @@ namespace FEBuilderGBA
             byte[] sjisstr = this.SJISEncoder.GetBytes(key);
             return sjisstr;
         }
+        public Dictionary<string, uint> GetEncodeDicLow()
+        {
+            return new Dictionary<string,uint>();
+        }
     }
 }

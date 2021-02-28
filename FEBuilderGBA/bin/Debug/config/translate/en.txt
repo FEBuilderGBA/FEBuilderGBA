@@ -2986,6 +2986,12 @@ Automatic generation of font failed. There is no corresponding Japanese font.
 :フォントを自動生成しました。\r\nROMに書き込みますか？\r\n\r\n「はい」ならば、ROMに書き込みます。\r\n「いいえ」ならば、画像ファイルとして保存します。\r\n
 Font was automatically generated.\r\nWrite to ROM? \r\n\r\nIf "Yes", write to ROM.\r\nIf "No", save it as an image file.\r\n
 
+:ユーザが追加したフォントだけをエクスポートしますか？\r\n\r\n「はい」を選択した場合、ユーザが追加したフォントだけをエクスポートします。\r\n「いいえ」を選択すれば、すべてのフォントをエクスポートします。
+Do you want to export only user-added fonts? \r\n\r\nIf you select Yes, only user-added fonts will be exported.\r\nSelect No to export all fonts.
+
+:空き領域の確保に失敗しました。
+Failed to secure free space.
+
 :アイテムフォント
 Item Font
 
@@ -3016,20 +3022,26 @@ Sample
 :フォント幅
 Font Width
 
-:自動生成
-Automatic Generation
+:一括インポート/エクスポート
+Bulk import / export.
 
-:利用フォント
-Used font
+:一括インポート
+Bulk import
 
-:自動作成
-Automatic creation
+:一括エクスポート
+Bulk export
 
 :インポート/エクスポート
 Import / Export
 
-:追加フォントをすべて取出
-Extract all additional fonts
+:自動作成
+Automatic creation
+
+:利用フォント
+Used font
+
+:自動生成
+Automatic Generation
 
 :フォント
 Font
@@ -4008,6 +4020,21 @@ Image size is incorrect.\r\n{4}\r\nImage must be Width:{2} Height:{3}\r\n\r\nSiz
 
 :FEditorAdvにインポートする時には各行の#以降を削除してください。
 When importing to FEditorAdv delete # and after each line.
+
+:チップセット(plist config)を読み込めませんでした。
+The chipset (plist config) could not be loaded.
+
+:マップデータ(plist map)を読み込めませんでした。
+The map data (plist map) could not be read.
+
+:マップデータ(plist map)のデータの長さが2バイト以下です。
+The length of the map data (plist map) is 2 bytes or less.
+
+:マップデータ(plist map)のデータのサイズが正しくありません。幅({0}),高さ({1})。
+The size of the data in the map data (plist map) is incorrect.Width ({0}), height ({1}).
+
+:マップデータ(plist map)のデータ中に不正なタイル({0})が(X:{1},Y:{2})にあります。
+There is an invalid tile ({0}) in (X: {1}, Y: {2}) in the data of the map data (plist map).
 
 :OAMが壊れています。データ長が範囲外を参照しています。 OAMサイズ:{0} 参照:{1}
 OAM is broken.Data length refers to out of range.OAM size: {0} See: {1}.
@@ -7570,8 +7597,8 @@ Object Type, Palette, and Tileset Config primarily determine map appearance (Til
 :PLIST({0})が無効です
 PLIST ({0}) is invalid
 
-:マップが破損しています。
-Map is damaged.
+:マップが破損しています。{0}
+Map is damaged. {0}
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
@@ -7905,12 +7932,6 @@ Data Size
 
 :アニメーション間隔
 Animation Interval
-
-:一括エクスポート
-Bulk export
-
-:一括インポート
-Bulk import
 
 :マップタイルアニメーション1
 Map Tile Animation 1

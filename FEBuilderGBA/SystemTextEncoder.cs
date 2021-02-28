@@ -11,6 +11,8 @@ namespace FEBuilderGBA
         string Decode(byte[] str);
         string Decode(byte[] str, int start, int len);
         byte[] Encode(string str);
+
+        Dictionary<string, uint> GetEncodeDicLow();
     }
     public class SystemTextEncoder
     {
@@ -161,5 +163,16 @@ namespace FEBuilderGBA
             }
         }
 
+        public Dictionary<string, uint> GetTBLEncodeDicLow()
+        {
+            if (this.Encoder == null)
+            {
+                return this.TBLEncode.GetEncodeDicLow();
+            }
+            else
+            {
+                return new Dictionary<string, uint>();
+            }
+        }
     }
 }

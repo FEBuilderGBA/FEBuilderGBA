@@ -1,0 +1,13 @@
+NAME=占い師がch14の進撃準備でしゃべるセリフ1
+NAME.en=Text1 that fortune teller speaks in preparation of ch14
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08FE5C
+ADDRESS_TYPE=TEXT
+DATASIZE=4
+
+NAME.zh=Text1 that fortune teller speaks in preparation of ch14

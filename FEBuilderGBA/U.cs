@@ -5791,13 +5791,9 @@ namespace FEBuilderGBA
             return (addr - first);
         }
 
-        public static byte ToCharOneHex(byte a)
+        public static string ToCharOneHex(byte a)
         {
-            if (a >= 10)
-            {
-                return (byte)(a + ((byte)'A' - 10));
-            }
-            return (byte)(a + ((byte)'0'));
+            return a.ToString("X02");
         }
         public static Dictionary<string, string> LoadTSVResourcePair(string fullfilename)
         {

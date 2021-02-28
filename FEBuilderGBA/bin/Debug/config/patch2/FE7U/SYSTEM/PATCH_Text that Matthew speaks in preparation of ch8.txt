@@ -1,0 +1,12 @@
+NAME=マシューがch8の進撃準備でしゃべるセリフ
+NAME.en=Text that Matthew speaks in preparation of ch8
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08F430
+ADDRESS_TYPE=TEXT
+DATASIZE=4
+
+NAME.zh=Text that Matthew speaks in preparation of ch8

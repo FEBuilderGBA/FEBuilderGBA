@@ -171,17 +171,18 @@ namespace FEBuilderGBA
                     continue;
                 }
                 string one = text.Substring(n, 1);
+                bool isSquareFont = false;
 
                 if (!this.ProcessedFont.ContainsKey(one))
                 {
-                    FontImporterOne(one, true);
-                    FontImporterOne(one, false);
+                    FontImporterOne(one, true, isSquareFont);
+                    FontImporterOne(one, false, isSquareFont);
                     this.ProcessedFont[one] = true;
                 }
                 n++;
             }
         }
-        void FontImporterOne(string one, bool isItemFont)
+        void FontImporterOne(string one, bool isItemFont, bool isSquareFont)
         {
             uint moji = U.ConvertMojiCharToUnit(one, this.MyselfPriorityCode);
             if (moji < 0x20 || moji == 0x80)
@@ -254,6 +255,7 @@ namespace FEBuilderGBA
                 Bitmap autogen = ImageUtil.AutoGenerateFont(one
                     , this.UseAutoGenFont
                     , isItemFont
+                    , isSquareFont
                     , out font_width);
                 if (autogen == null)
                 {//ない

@@ -298,12 +298,15 @@ namespace FEBuilderGBA
             , uint palette_plist    //palette
             , uint config_plist    //tsa
             , uint mappointer_plist //mar
+            , out string out_error
             )
         {
+            out_error= "";
             //チップセットの読込(マップチップの画像をどう解釈するか定義するデータ)
             byte[] configUZ = UnLZ77ChipsetData(config_plist);
             if (configUZ == null)
             {
+                out_error = R._("チップセット(plist config)を読み込めませんでした。");
                 return new Size(0, 0);
             }
 
@@ -311,11 +314,13 @@ namespace FEBuilderGBA
             byte[] mappointerUZ = UnLZ77MapData(mappointer_plist);
             if (mappointerUZ == null)
             {
+                out_error = R._("マップデータ(plist map)を読み込めませんでした。");
                 return new Size(0, 0);
             }
 
             if (mappointerUZ.Length < 2)
             {
+                out_error = R._("マップデータ(plist map)のデータの長さが2バイト以下です。");
                 return new Size(0, 0);
             }
 
@@ -326,6 +331,7 @@ namespace FEBuilderGBA
 
             if (width <= 0 || height <= 0)
             {//サイズが不正
+                out_error = R._("マップデータ(plist map)のデータのサイズが正しくありません。幅({0}),高さ({1})。", width, height);
                 return new Size(0, 0);
             }
 
@@ -340,6 +346,7 @@ namespace FEBuilderGBA
                 int tile_tsa_index = m << 1;
                 if (tile_tsa_index + 7 >= configUZ.Length)
                 {//不正なTSA
+                    out_error = R._("マップデータ(plist map)のデータ中に不正なタイル({0})が(X:{1},Y:{2})にあります。", U.To0xHexString(tile_tsa_index), x/2,y/2 );
                     return new Size(0, 0);
                 }
 

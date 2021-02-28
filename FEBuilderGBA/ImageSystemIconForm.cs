@@ -22,9 +22,6 @@ namespace FEBuilderGBA
         ImageFormRef system_weapon_icon_icon;
         ImageFormRef system_music_icon_icon;
 
-        ImageFormRef unit_icon_lightrune;
-        ImageFormRef unit_icon_sepia;
-
         ImageFormRef systemmenu_goal;
         ImageFormRef systemmenu_terrain;
         ImageFormRef systemmenu_name;

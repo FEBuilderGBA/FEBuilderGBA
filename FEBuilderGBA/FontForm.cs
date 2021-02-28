@@ -21,6 +21,8 @@ namespace FEBuilderGBA
             this.FontType.SelectedIndex = 0;
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(ExportALLButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportAllButton, Properties.Resources.icon_upload);
 
             UseFontNameTextEdit.Text = UseFontNameTextEdit.Font.FontFamily.ToString();
             AutoGenbutton.AccessibleDescription = R._("ROMに存在しいフォントをPCに存在するフォントから自動的に作成します。\r\nまとめて複数のフォントを一気に作りたい場合は、ROM翻訳ツールから作ることをお勧めします。");
@@ -790,6 +792,16 @@ namespace FEBuilderGBA
 
         public static void MakeAllDataLength(List<Address> list)
         {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
+                if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
+                {
+                    FontZHForm.MakeAllDataLength(list);
+                    return;
+                }
+            }
+
             //アイテム
             MakeAllDataLengthInner(true, ref list);
             //セリフ
@@ -848,6 +860,68 @@ namespace FEBuilderGBA
                             ,p, 8 + 64
                             ,before_pointer
                             ,name + FontChar(moji2, moji1, priorityCode)
+                            ,FEBuilderGBA.Address.DataTypeEnum.FONT);
+
+
+                        uint next = Program.ROM.p32(p);
+                        if (next == 0)
+                        {//リスト終端.
+                            break;
+                        }
+
+                        if (!U.isSafetyOffset(next))
+                        {//リストが壊れている.
+                            break;
+                        }
+
+                        before_pointer = p;
+
+                        //次のリストへ進む.
+                        p = next;
+                    }
+                }
+            }
+            else if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
+            {//UTF-8
+                FEBuilderGBA.Address.AddAddress(list, topaddress
+                    , 4 * (0xff)
+                    , U.NOT_FOUND
+                    , name
+                    , FEBuilderGBA.Address.DataTypeEnum.POINTER);
+
+                for (uint moji1 = 0x0; moji1 <= 0xff; moji1++)
+                {
+                    uint fontlist = topaddress + (moji1 << 2);
+                    if (!U.isSafetyOffset(fontlist))
+                    {
+                        continue;
+                    }
+                    uint p = Program.ROM.p32(fontlist);
+                    if (!U.isSafetyOffset(p))
+                    {
+                        continue;
+                    }
+
+                    uint before_pointer = fontlist;
+
+                    //同一ハッシュキーがあるため、リストをたどりながら目的のフォントを探します.
+                    //struct{
+                    //    void* next;
+                    //    byte  moji2
+                    //    byte  width
+                    //    byte  nazo3
+                    //    byte  nazo4
+                    //} //sizeof()==8
+                    //+64byte bitmap(4pp)
+                    while (p > 0)
+                    {
+                        uint moji2 = Program.ROM.u8(p + 4);
+                        uint moji3 = Program.ROM.u8(p + 6);
+                        uint moji4 = Program.ROM.u8(p + 7);
+                        FEBuilderGBA.Address.AddAddress(list, p
+                            , 8 + 64
+                            , before_pointer
+                            , name + FontCharUTF8(moji1, moji2, moji3, moji4)
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
@@ -971,6 +1045,14 @@ namespace FEBuilderGBA
                     str[2] = 0;
                     return encoder.Decode(str, 0, 2);
                 }
+                //アルファベットマップ
+                if (moji1 > 0 && moji2 == 0x40)
+                {
+                    byte[] str = new byte[2];
+                    str[0] = (byte)moji1;
+                    str[1] = 0;
+                    return encoder.Decode(str, 0, 1);
+                }
             }
 
             if (moji1 == 0)
@@ -980,8 +1062,21 @@ namespace FEBuilderGBA
                 str[1] = 0;
                 return encoder.Decode(str, 0, 1);
             }
+
             //意味不明な文字
-            return U.ToCharOneHex((byte)moji1) + "_" + U.ToCharOneHex((byte)moji2);
+            return "@" + U.ToCharOneHex((byte)moji2) + U.ToCharOneHex((byte)moji1);
+        }
+        static string FontCharUTF8(uint moji1, uint moji2, uint moji3, uint moji4)
+        {
+            byte[] str = new byte[5];
+            str[0] = (byte)moji1;
+            str[1] = (byte)moji2;
+            str[2] = (byte)moji3;
+            str[3] = (byte)moji4;
+            str[4] = 0;
+
+            string c = System.Text.Encoding.GetEncoding("UTF-32").GetString(str,0, 4);
+            return c;
         }
 
         private void AutoGenbutton_Click(object sender, EventArgs e)
@@ -994,8 +1089,9 @@ namespace FEBuilderGBA
                 return;
             }
             bool isItemFont = this.FontType.SelectedIndex == 0;
+            bool isSquareFont = false;
             int font_width;
-            Bitmap autogen = ImageUtil.AutoGenerateFont(mojiText, UseFontNameTextEdit.Font, isItemFont, out font_width);
+            Bitmap autogen = ImageUtil.AutoGenerateFont(mojiText, UseFontNameTextEdit.Font, isItemFont, isSquareFont, out font_width);
             if (autogen == null)
             {
                 R.ShowStopError("フォントの自動生成に失敗しました。対応する日本語フォントがありません。");
@@ -1115,6 +1211,9 @@ namespace FEBuilderGBA
                 return;
             }
 
+            DialogResult dr = R.ShowYesNo("ユーザが追加したフォントだけをエクスポートしますか？\r\n\r\n「はい」を選択した場合、ユーザが追加したフォントだけをエクスポートします。\r\n「いいえ」を選択すれば、すべてのフォントをエクスポートします。");
+            bool isUserFontOnly = (dr == DialogResult.Yes);
+
             string title = R._("保存するファイル名を選択してください");
             string filter = R._("TXT|*.fontall.txt|All files|*");
 
@@ -1122,9 +1221,9 @@ namespace FEBuilderGBA
             save.Title = title;
             save.Filter = filter;
             save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, this.FontType.Text);
+            Program.LastSelectedFilename.Load(this, "", save, "font");
 
-            DialogResult dr = save.ShowDialog();
+            dr = save.ShowDialog();
             if (dr != DialogResult.OK)
             {
                 return ;
@@ -1140,15 +1239,16 @@ namespace FEBuilderGBA
                 string basedir = Path.GetDirectoryName(filename);
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: true));
-                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: false));
+                sb.AppendLine("//char\ttype\tWidth\tFilename");
+                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: true, isUserFontOnly: isUserFontOnly));
+                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: false,isUserFontOnly: isUserFontOnly));
 
                 File.WriteAllText(filename, sb.ToString());
             }
             Program.LastSelectedFilename.Save(this, "", save);
 
         }
-        StringBuilder ExportALL(InputFormRef.AutoPleaseWait pleaseWait, string basedir, bool isItemFont)
+        StringBuilder ExportALL(InputFormRef.AutoPleaseWait pleaseWait, string basedir, bool isItemFont, bool isUserFontOnly)
         {
             List<Address> list = new List<Address>();
             MakeAllDataLengthInner(isItemFont, ref list);
@@ -1162,13 +1262,20 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                if (a.Addr <= Program.ROM.RomInfo.font_default_end())
+
+                if (isUserFontOnly 
+                    && a.Addr <= Program.ROM.RomInfo.font_default_end())
                 {//規定のフォント
                     continue;
                 }
 
-                int out_width;
-                byte[] fontbyte = ReadFontData(a.Addr, out out_width);
+                int width;
+                byte[] fontbyte = ReadFontData(a.Addr, out width);
+                if (width == 0)
+                {
+                    continue;
+                }
+
                 Bitmap bitmap = ImageUtil.ByteToImage4(16, 16, fontbyte, 0, bgcolor);
                 ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
                 string name = U.escape_filename(a.Info);
@@ -1176,10 +1283,146 @@ namespace FEBuilderGBA
                 U.BitmapSave(bitmap, font_filename);
                 bitmap.Dispose();
 
+                string ch = GetFontCharFromExportName(a.Info);
+                string type = (isItemFont ? "item" : "text");
+
+                sb.Append(ch);
+                sb.Append("\t");
+                sb.Append(type);
+                sb.Append("\t");
+                sb.Append(width);
+                sb.Append("\t");
                 sb.AppendLine(a.Info + ".png");
             }
 
             return sb;
+        }
+        static string GetFontCharFromExportName(string name)
+        {
+            string a = name.Substring(8);
+            return a;
+        }
+
+        private void ImportAllButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("TXT|*.fontall.txt|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            open.AddExtension = true;
+            Program.LastSelectedFilename.Load(this, "", open);
+
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (open.FileNames.Length <= 0 || !U.CanWriteFileRetry(open.FileNames[0]))
+            {
+                return;
+            }
+            string filename = open.FileNames[0];
+
+            using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
+            {
+                string errorMessage = ImportAll(wait, filename);
+                if (errorMessage != "")
+                {
+                    R.ShowStopError(errorMessage);
+                    return;
+                }
+            }
+        }
+        static string ImportAll(InputFormRef.AutoPleaseWait wait, string filename)
+        {
+            string dir = Path.GetDirectoryName(filename);
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
+            Undo.UndoData undodata = Program.Undo.NewUndoData("FontImportAll");
+
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (U.IsComment(line) || U.OtherLangLine(line))
+                {
+                    continue;
+                }
+                line = U.ClipComment(line);
+                if (line == "")
+                {
+                    continue;
+                }
+                string[] sp = line.Split('\t');
+                if (sp.Length < 4)
+                {
+                    continue;
+                }
+                string ch = sp[0];
+                string type = sp[1];
+                uint width = U.atoi(sp[2]);
+                string font_filename = sp[3];
+                font_filename = Path.Combine(dir, font_filename);
+
+                bool isItemFont = (type == "item" ? true : false);
+
+                uint moji = U.ConvertMojiCharToUnit(ch, priorityCode);
+                if (moji < 0x20 || moji == 0x80)
+                {//制御文字なので無視
+                    continue;
+                }
+
+                Color bgcolor = GetFontColor(isItemFont);
+                Bitmap paletteHint = ImageUtil.ByteToImage4(16, 16, new byte[64], 0, bgcolor);
+                string errormessage;
+                Bitmap bitmap = ImageUtil.OpenBitmap(font_filename
+                    , paletteHint
+                    , out errormessage);
+                if (bitmap == null)
+                {
+                    Program.Undo.Rollback(undodata);
+                    return errormessage;
+                }
+
+                //画像
+                byte[] fontimage = ImageUtil.Image4ToByte(bitmap);
+
+                uint topaddress = FontForm.GetFontPointer(isItemFont);
+                uint prevaddress;
+                uint fontaddress = FontForm.FindFontData(topaddress
+                    , moji
+                    , out prevaddress
+                    , priorityCode);
+                if (fontaddress != U.NOT_FOUND)
+                {//既にある
+                    Program.ROM.write_u8(fontaddress + 5, width, undodata);
+                    Program.ROM.write_range(fontaddress + 8, fontimage , undodata); //64バイト書き込み
+                }
+                else
+                {//ない
+                    byte[] newFontData = FontForm.MakeNewFontData(moji
+                        , width
+                        , fontimage
+                        , Program.ROM
+                        , priorityCode);
+
+                    U.write_u32(newFontData, 0, 0);   //NULL リストの末尾に追加するので.
+
+                    uint newaddr = InputFormRef.AppendBinaryData(newFontData, undodata);
+                    if (newaddr == U.NOT_FOUND)
+                    {//エラー
+                        Program.Undo.Rollback(undodata);
+                        return R.Error("空き領域の確保に失敗しました。");
+                    }
+
+                    //ひとつ前のフォントリストのポインタを、現在追加した最後尾にすげかえる.
+                    Program.ROM.write_u32(prevaddress + 0, U.toPointer(newaddr), undodata);
+                }
+            }
+
+            Program.Undo.Push(undodata);
+            return "";
         }
 
     }

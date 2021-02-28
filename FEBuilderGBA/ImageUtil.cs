@@ -3693,7 +3693,7 @@ namespace FEBuilderGBA
         }
 
         //足りないフォントの生成.
-        public static Bitmap AutoGenerateFont(string moji, Font font, bool isItemFont, out int out_width)
+        public static Bitmap AutoGenerateFont(string moji, Font font, bool isItemFont, bool isSquareFont, out int out_width)
         {
             if (isItemFont)
             {
