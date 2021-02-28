@@ -489,11 +489,22 @@ namespace FEBuilderGBA
 
         private void BORDER_ImportButton_Click(object sender, EventArgs e)
         {
+            uint origin_x = (uint)BORDER_W8.Value;
+            uint origin_y = (uint)BORDER_W10.Value;
+            if (origin_x >= 60)
+            {
+                origin_x = 60;
+            }
+            if (origin_y >= 50)
+            {
+                origin_y = 50;
+            }
+
             byte[] image ;
             byte[] oam ;
             bool r = ImageUtilBorderAP.ImportBorder(this,
-                (uint)BORDER_W8.Value,
-                (uint)BORDER_W10.Value,
+                origin_x,
+                origin_y,
                 out image , out oam);
             if (!r)
             {
