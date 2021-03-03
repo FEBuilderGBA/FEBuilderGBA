@@ -17,6 +17,7 @@ namespace FEBuilderGBA
 
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.N_InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
         }
 
 

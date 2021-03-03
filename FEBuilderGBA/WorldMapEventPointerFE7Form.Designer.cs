@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.EventWriteButton = new System.Windows.Forms.Button();
+            this.ENDING2_EVENT = new System.Windows.Forms.NumericUpDown();
+            this.ENDING1_EVENT = new System.Windows.Forms.NumericUpDown();
+            this.JUMP_ENDING2_EVENT = new System.Windows.Forms.Label();
+            this.JUMP_ENDING1_EVENT = new System.Windows.Forms.Label();
             this.N_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.N_P0 = new System.Windows.Forms.NumericUpDown();
             this.N_J_0_EVENT = new System.Windows.Forms.Label();
@@ -47,16 +53,14 @@
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N_AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.EventWriteButton = new System.Windows.Forms.Button();
-            this.ENDING2_EVENT = new System.Windows.Forms.NumericUpDown();
-            this.ENDING1_EVENT = new System.Windows.Forms.NumericUpDown();
-            this.JUMP_ENDING2_EVENT = new System.Windows.Forms.Label();
-            this.JUMP_ENDING1_EVENT = new System.Windows.Forms.Label();
-            this.N_AddressListExpandsButton_255 = new System.Windows.Forms.Button();
+            this.N_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ENDING2_EVENT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ENDING1_EVENT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_P0)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_ReadCount)).BeginInit();
@@ -64,14 +68,12 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).BeginInit();
             this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ENDING2_EVENT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ENDING1_EVENT)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_L_0_NEWALLOC_EVENT);
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.N_L_0_EVENT);
             this.panel3.Controls.Add(this.N_P0);
@@ -81,6 +83,87 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(908, 650);
             this.panel3.TabIndex = 188;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.EventWriteButton);
+            this.panel8.Controls.Add(this.ENDING2_EVENT);
+            this.panel8.Controls.Add(this.ENDING1_EVENT);
+            this.panel8.Controls.Add(this.JUMP_ENDING2_EVENT);
+            this.panel8.Controls.Add(this.JUMP_ENDING1_EVENT);
+            this.panel8.Location = new System.Drawing.Point(273, 558);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(631, 88);
+            this.panel8.TabIndex = 193;
+            // 
+            // EventWriteButton
+            // 
+            this.EventWriteButton.Location = new System.Drawing.Point(451, 7);
+            this.EventWriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventWriteButton.Name = "EventWriteButton";
+            this.EventWriteButton.Size = new System.Drawing.Size(167, 30);
+            this.EventWriteButton.TabIndex = 15;
+            this.EventWriteButton.Text = "書き込み";
+            this.EventWriteButton.UseVisualStyleBackColor = true;
+            this.EventWriteButton.Click += new System.EventHandler(this.EventWriteButton_Click);
+            // 
+            // ENDING2_EVENT
+            // 
+            this.ENDING2_EVENT.Hexadecimal = true;
+            this.ENDING2_EVENT.Location = new System.Drawing.Point(242, 37);
+            this.ENDING2_EVENT.Margin = new System.Windows.Forms.Padding(2);
+            this.ENDING2_EVENT.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ENDING2_EVENT.Name = "ENDING2_EVENT";
+            this.ENDING2_EVENT.Size = new System.Drawing.Size(130, 25);
+            this.ENDING2_EVENT.TabIndex = 14;
+            // 
+            // ENDING1_EVENT
+            // 
+            this.ENDING1_EVENT.Hexadecimal = true;
+            this.ENDING1_EVENT.Location = new System.Drawing.Point(242, 10);
+            this.ENDING1_EVENT.Margin = new System.Windows.Forms.Padding(2);
+            this.ENDING1_EVENT.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ENDING1_EVENT.Name = "ENDING1_EVENT";
+            this.ENDING1_EVENT.Size = new System.Drawing.Size(130, 25);
+            this.ENDING1_EVENT.TabIndex = 13;
+            // 
+            // JUMP_ENDING2_EVENT
+            // 
+            this.JUMP_ENDING2_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JUMP_ENDING2_EVENT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JUMP_ENDING2_EVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JUMP_ENDING2_EVENT.Location = new System.Drawing.Point(2, 37);
+            this.JUMP_ENDING2_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.JUMP_ENDING2_EVENT.Name = "JUMP_ENDING2_EVENT";
+            this.JUMP_ENDING2_EVENT.Size = new System.Drawing.Size(234, 30);
+            this.JUMP_ENDING2_EVENT.TabIndex = 12;
+            this.JUMP_ENDING2_EVENT.Text = "ヘクトルエンディング";
+            this.JUMP_ENDING2_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.JUMP_ENDING2_EVENT.Click += new System.EventHandler(this.JUMP_ENDING2_EVENT_Click);
+            // 
+            // JUMP_ENDING1_EVENT
+            // 
+            this.JUMP_ENDING1_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JUMP_ENDING1_EVENT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JUMP_ENDING1_EVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JUMP_ENDING1_EVENT.Location = new System.Drawing.Point(2, 7);
+            this.JUMP_ENDING1_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.JUMP_ENDING1_EVENT.Name = "JUMP_ENDING1_EVENT";
+            this.JUMP_ENDING1_EVENT.Size = new System.Drawing.Size(234, 30);
+            this.JUMP_ENDING1_EVENT.TabIndex = 11;
+            this.JUMP_ENDING1_EVENT.Text = "エリウッドエンディング";
+            this.JUMP_ENDING1_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.JUMP_ENDING1_EVENT.Click += new System.EventHandler(this.JUMP_ENDING1_EVENT_Click);
             // 
             // N_L_0_EVENT
             // 
@@ -294,6 +377,16 @@
             this.panel7.Size = new System.Drawing.Size(344, 678);
             this.panel7.TabIndex = 190;
             // 
+            // N_AddressListExpandsButton_255
+            // 
+            this.N_AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 648);
+            this.N_AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.N_AddressListExpandsButton_255.Name = "N_AddressListExpandsButton_255";
+            this.N_AddressListExpandsButton_255.Size = new System.Drawing.Size(331, 30);
+            this.N_AddressListExpandsButton_255.TabIndex = 154;
+            this.N_AddressListExpandsButton_255.Text = "リストの拡張";
+            this.N_AddressListExpandsButton_255.UseVisualStyleBackColor = true;
+            // 
             // N_AddressList
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -318,96 +411,14 @@
             this.N_LabelFilter.Text = "名前";
             this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel8
+            // N_L_0_NEWALLOC_EVENT
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.EventWriteButton);
-            this.panel8.Controls.Add(this.ENDING2_EVENT);
-            this.panel8.Controls.Add(this.ENDING1_EVENT);
-            this.panel8.Controls.Add(this.JUMP_ENDING2_EVENT);
-            this.panel8.Controls.Add(this.JUMP_ENDING1_EVENT);
-            this.panel8.Location = new System.Drawing.Point(273, 558);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(631, 88);
-            this.panel8.TabIndex = 193;
-            // 
-            // EventWriteButton
-            // 
-            this.EventWriteButton.Location = new System.Drawing.Point(451, 7);
-            this.EventWriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EventWriteButton.Name = "EventWriteButton";
-            this.EventWriteButton.Size = new System.Drawing.Size(167, 30);
-            this.EventWriteButton.TabIndex = 15;
-            this.EventWriteButton.Text = "書き込み";
-            this.EventWriteButton.UseVisualStyleBackColor = true;
-            this.EventWriteButton.Click += new System.EventHandler(this.EventWriteButton_Click);
-            // 
-            // ENDING2_EVENT
-            // 
-            this.ENDING2_EVENT.Hexadecimal = true;
-            this.ENDING2_EVENT.Location = new System.Drawing.Point(242, 37);
-            this.ENDING2_EVENT.Margin = new System.Windows.Forms.Padding(2);
-            this.ENDING2_EVENT.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.ENDING2_EVENT.Name = "ENDING2_EVENT";
-            this.ENDING2_EVENT.Size = new System.Drawing.Size(130, 25);
-            this.ENDING2_EVENT.TabIndex = 14;
-            // 
-            // ENDING1_EVENT
-            // 
-            this.ENDING1_EVENT.Hexadecimal = true;
-            this.ENDING1_EVENT.Location = new System.Drawing.Point(242, 10);
-            this.ENDING1_EVENT.Margin = new System.Windows.Forms.Padding(2);
-            this.ENDING1_EVENT.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.ENDING1_EVENT.Name = "ENDING1_EVENT";
-            this.ENDING1_EVENT.Size = new System.Drawing.Size(130, 25);
-            this.ENDING1_EVENT.TabIndex = 13;
-            // 
-            // JUMP_ENDING2_EVENT
-            // 
-            this.JUMP_ENDING2_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.JUMP_ENDING2_EVENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JUMP_ENDING2_EVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_ENDING2_EVENT.Location = new System.Drawing.Point(2, 37);
-            this.JUMP_ENDING2_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.JUMP_ENDING2_EVENT.Name = "JUMP_ENDING2_EVENT";
-            this.JUMP_ENDING2_EVENT.Size = new System.Drawing.Size(234, 30);
-            this.JUMP_ENDING2_EVENT.TabIndex = 12;
-            this.JUMP_ENDING2_EVENT.Text = "ヘクトルエンディング";
-            this.JUMP_ENDING2_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.JUMP_ENDING2_EVENT.Click += new System.EventHandler(this.JUMP_ENDING2_EVENT_Click);
-            // 
-            // JUMP_ENDING1_EVENT
-            // 
-            this.JUMP_ENDING1_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.JUMP_ENDING1_EVENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JUMP_ENDING1_EVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_ENDING1_EVENT.Location = new System.Drawing.Point(2, 7);
-            this.JUMP_ENDING1_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.JUMP_ENDING1_EVENT.Name = "JUMP_ENDING1_EVENT";
-            this.JUMP_ENDING1_EVENT.Size = new System.Drawing.Size(234, 30);
-            this.JUMP_ENDING1_EVENT.TabIndex = 11;
-            this.JUMP_ENDING1_EVENT.Text = "エリウッドエンディング";
-            this.JUMP_ENDING1_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.JUMP_ENDING1_EVENT.Click += new System.EventHandler(this.JUMP_ENDING1_EVENT_Click);
-            // 
-            // N_AddressListExpandsButton_255
-            // 
-            this.N_AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 648);
-            this.N_AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
-            this.N_AddressListExpandsButton_255.Name = "N_AddressListExpandsButton_255";
-            this.N_AddressListExpandsButton_255.Size = new System.Drawing.Size(331, 30);
-            this.N_AddressListExpandsButton_255.TabIndex = 154;
-            this.N_AddressListExpandsButton_255.Text = "リストの拡張";
-            this.N_AddressListExpandsButton_255.UseVisualStyleBackColor = true;
+            this.N_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(325, 65);
+            this.N_L_0_NEWALLOC_EVENT.Name = "N_L_0_NEWALLOC_EVENT";
+            this.N_L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(300, 28);
+            this.N_L_0_NEWALLOC_EVENT.TabIndex = 249;
+            this.N_L_0_NEWALLOC_EVENT.Text = "新規イベント";
+            this.N_L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
             // 
             // WorldMapEventPointerFE7Form
             // 
@@ -425,6 +436,9 @@
             this.Load += new System.EventHandler(this.WorldMapEventPointerFE7Form_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ENDING2_EVENT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ENDING1_EVENT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_P0)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N_ReadCount)).EndInit();
@@ -433,9 +447,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ENDING2_EVENT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ENDING1_EVENT)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +481,6 @@
         private System.Windows.Forms.Label JUMP_ENDING2_EVENT;
         private System.Windows.Forms.Label JUMP_ENDING1_EVENT;
         private System.Windows.Forms.Button N_AddressListExpandsButton_255;
+        private System.Windows.Forms.Button N_L_0_NEWALLOC_EVENT;
     }
 }

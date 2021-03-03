@@ -43,6 +43,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.OBJECT_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.panel8 = new System.Windows.Forms.Panel();
             this.EventWriteButton = new System.Windows.Forms.Button();
             this.ENDING2_EVENT = new System.Windows.Forms.NumericUpDown();
@@ -55,6 +56,7 @@
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_EVENT = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.OBJECT_N_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.panel9 = new System.Windows.Forms.Panel();
             this.X_JUMP_ROAD = new System.Windows.Forms.Label();
             this.X_JUMP_WORLDMAP_POINT = new System.Windows.Forms.Label();
@@ -83,8 +85,8 @@
             this.N_AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
-            this.OBJECT_N_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.N_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
+            this.L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -274,6 +276,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.L_0_NEWALLOC_EVENT);
             this.panel2.Controls.Add(this.OBJECT_EXPLAIN);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.L_0_EVENT);
@@ -284,6 +287,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(842, 338);
             this.panel2.TabIndex = 184;
+            // 
+            // OBJECT_EXPLAIN
+            // 
+            this.OBJECT_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_EXPLAIN.Location = new System.Drawing.Point(3, 65);
+            this.OBJECT_EXPLAIN.Multiline = true;
+            this.OBJECT_EXPLAIN.Name = "OBJECT_EXPLAIN";
+            this.OBJECT_EXPLAIN.Placeholder = "";
+            this.OBJECT_EXPLAIN.ReadOnly = true;
+            this.OBJECT_EXPLAIN.Size = new System.Drawing.Size(786, 144);
+            this.OBJECT_EXPLAIN.TabIndex = 246;
+            this.OBJECT_EXPLAIN.Text = "マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。";
             // 
             // panel8
             // 
@@ -436,6 +451,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_L_0_NEWALLOC_EVENT);
             this.panel3.Controls.Add(this.OBJECT_N_EXPLAIN);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.N_L_0_EVENT);
@@ -446,6 +462,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(840, 354);
             this.panel3.TabIndex = 188;
+            // 
+            // OBJECT_N_EXPLAIN
+            // 
+            this.OBJECT_N_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N_EXPLAIN.Location = new System.Drawing.Point(4, 75);
+            this.OBJECT_N_EXPLAIN.Multiline = true;
+            this.OBJECT_N_EXPLAIN.Name = "OBJECT_N_EXPLAIN";
+            this.OBJECT_N_EXPLAIN.Placeholder = "";
+            this.OBJECT_N_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N_EXPLAIN.Size = new System.Drawing.Size(785, 167);
+            this.OBJECT_N_EXPLAIN.TabIndex = 245;
+            this.OBJECT_N_EXPLAIN.Text = "ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステー" +
+    "ジの紹介は、拠点を選択した瞬間に行う必要があります。";
             // 
             // panel9
             // 
@@ -778,30 +807,23 @@
             this.N_LabelFilter.Text = "名前";
             this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // OBJECT_N_EXPLAIN
+            // N_L_0_NEWALLOC_EVENT
             // 
-            this.OBJECT_N_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N_EXPLAIN.Location = new System.Drawing.Point(4, 75);
-            this.OBJECT_N_EXPLAIN.Multiline = true;
-            this.OBJECT_N_EXPLAIN.Name = "OBJECT_N_EXPLAIN";
-            this.OBJECT_N_EXPLAIN.Placeholder = "";
-            this.OBJECT_N_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N_EXPLAIN.Size = new System.Drawing.Size(785, 167);
-            this.OBJECT_N_EXPLAIN.TabIndex = 245;
-            this.OBJECT_N_EXPLAIN.Text = "ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステー" +
-    "ジの紹介は、拠点を選択した瞬間に行う必要があります。";
+            this.N_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(552, 2);
+            this.N_L_0_NEWALLOC_EVENT.Name = "N_L_0_NEWALLOC_EVENT";
+            this.N_L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(208, 28);
+            this.N_L_0_NEWALLOC_EVENT.TabIndex = 250;
+            this.N_L_0_NEWALLOC_EVENT.Text = "新規イベント";
+            this.N_L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
             // 
-            // OBJECT_EXPLAIN
+            // L_0_NEWALLOC_EVENT
             // 
-            this.OBJECT_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_EXPLAIN.Location = new System.Drawing.Point(3, 65);
-            this.OBJECT_EXPLAIN.Multiline = true;
-            this.OBJECT_EXPLAIN.Name = "OBJECT_EXPLAIN";
-            this.OBJECT_EXPLAIN.Placeholder = "";
-            this.OBJECT_EXPLAIN.ReadOnly = true;
-            this.OBJECT_EXPLAIN.Size = new System.Drawing.Size(786, 144);
-            this.OBJECT_EXPLAIN.TabIndex = 246;
-            this.OBJECT_EXPLAIN.Text = "マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。";
+            this.L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(552, 2);
+            this.L_0_NEWALLOC_EVENT.Name = "L_0_NEWALLOC_EVENT";
+            this.L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(208, 28);
+            this.L_0_NEWALLOC_EVENT.TabIndex = 251;
+            this.L_0_NEWALLOC_EVENT.Text = "新規イベント";
+            this.L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
             // 
             // WorldMapEventPointerForm
             // 
@@ -910,5 +932,7 @@
         private System.Windows.Forms.Button N_AddressListExpandsButton_255;
         private TextBoxEx OBJECT_N_EXPLAIN;
         private TextBoxEx OBJECT_EXPLAIN;
+        private System.Windows.Forms.Button L_0_NEWALLOC_EVENT;
+        private System.Windows.Forms.Button N_L_0_NEWALLOC_EVENT;
     }
 }

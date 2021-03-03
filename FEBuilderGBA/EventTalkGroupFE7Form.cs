@@ -50,6 +50,38 @@ namespace FEBuilderGBA
             this.InputFormRef.ReInit(addr);
         }
 
+        public uint AllocIfNeed(NumericUpDown src)
+        {
+            if (src.Value == 0 || src.Value == U.NOT_FOUND)
+            {
+                string alllocQMessage = R._("新規にデータを作成しますか？");
+                DialogResult dr = R.ShowYesNo(alllocQMessage);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    src.Value = U.toPointer(NewAlloc());
+                }
+            }
+            return (uint)src.Value;
+        }
+        uint NewAlloc()
+        {
+            byte[] alloc = new byte[4*0xE];
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc");
+            uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
+            if (addr == U.NOT_FOUND)
+            {//割り当て失敗
+                return U.NOT_FOUND;
+            }
+
+            //新規に追加した分のデータを書き込み.
+            Program.Undo.Push(undodata);
+
+            InputFormRef.WriteButtonToYellow(this.WriteButton, false);
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
+            return addr;
+        }
+
         //全データの取得
         public static void RecycleOldData(ref List<Address> recycle, uint script_pointer)
         {

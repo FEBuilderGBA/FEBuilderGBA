@@ -563,6 +563,10 @@ namespace FEBuilderGBA
             {//長さが判明しているということはおそらくASM関数ではない.
                 return false;
             }
+            if (a.Name.IndexOf("_address") > 0)
+            {//おそらくただのデータ
+                return false;
+            }
             if (plainAddr >= Program.ROM.RomInfo.compress_image_borderline_address())
             {//画像ボーダーよりも向こう側
                 return false;

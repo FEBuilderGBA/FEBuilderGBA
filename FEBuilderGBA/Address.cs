@@ -81,9 +81,9 @@ namespace FEBuilderGBA
 
             Debug.Assert(U.isSafetyOffset(this.Addr));
 
-            if (! U.isSafetyLength(this.Addr, length))
+            if (! U.isSafetyLength(this.Addr, length) )
             {//あまりにも長すぎる.
-                length = 0;
+                this.Length = 0;
             }
 
             if (pointer == U.NOT_FOUND)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.N_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.N_P0 = new System.Windows.Forms.NumericUpDown();
             this.N_J_0_EVENT = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -39,16 +38,18 @@
             this.N_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.N_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label7 = new System.Windows.Forms.Label();
             this.N_WriteButton = new System.Windows.Forms.Button();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
+            this.N_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.N_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
+            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_P0)).BeginInit();
             this.panel4.SuspendLayout();
@@ -62,6 +63,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_L_0_NEWALLOC_EVENT);
             this.panel3.Controls.Add(this.N_L_0_EVENT);
             this.panel3.Controls.Add(this.N_P0);
             this.panel3.Controls.Add(this.N_J_0_EVENT);
@@ -70,18 +72,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(908, 679);
             this.panel3.TabIndex = 188;
-            // 
-            // N_L_0_EVENT
-            // 
-            this.N_L_0_EVENT.ErrorMessage = "";
-            this.N_L_0_EVENT.Location = new System.Drawing.Point(460, 4);
-            this.N_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_L_0_EVENT.Name = "N_L_0_EVENT";
-            this.N_L_0_EVENT.Placeholder = "";
-            this.N_L_0_EVENT.ReadOnly = true;
-            this.N_L_0_EVENT.Size = new System.Drawing.Size(438, 25);
-            this.N_L_0_EVENT.TabIndex = 245;
-            this.N_L_0_EVENT.Visible = false;
             // 
             // N_P0
             // 
@@ -192,17 +182,6 @@
             this.panel5.Size = new System.Drawing.Size(910, 30);
             this.panel5.TabIndex = 185;
             // 
-            // N_BlockSize
-            // 
-            this.N_BlockSize.ErrorMessage = "";
-            this.N_BlockSize.Location = new System.Drawing.Point(325, 4);
-            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_BlockSize.Name = "N_BlockSize";
-            this.N_BlockSize.Placeholder = "";
-            this.N_BlockSize.ReadOnly = true;
-            this.N_BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.N_BlockSize.TabIndex = 52;
-            // 
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -223,17 +202,6 @@
             this.N_WriteButton.TabIndex = 9;
             this.N_WriteButton.Text = "書き込み";
             this.N_WriteButton.UseVisualStyleBackColor = true;
-            // 
-            // N_SelectAddress
-            // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(542, -2);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.N_SelectAddress.TabIndex = 40;
             // 
             // label8
             // 
@@ -282,6 +250,27 @@
             this.panel7.Size = new System.Drawing.Size(337, 710);
             this.panel7.TabIndex = 190;
             // 
+            // N_LabelFilter
+            // 
+            this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_LabelFilter.Location = new System.Drawing.Point(-1, 0);
+            this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_LabelFilter.Name = "N_LabelFilter";
+            this.N_LabelFilter.Size = new System.Drawing.Size(337, 26);
+            this.N_LabelFilter.TabIndex = 107;
+            this.N_LabelFilter.Text = "名前";
+            this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // N_L_0_NEWALLOC_EVENT
+            // 
+            this.N_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(460, 36);
+            this.N_L_0_NEWALLOC_EVENT.Name = "N_L_0_NEWALLOC_EVENT";
+            this.N_L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(300, 28);
+            this.N_L_0_NEWALLOC_EVENT.TabIndex = 248;
+            this.N_L_0_NEWALLOC_EVENT.Text = "新規イベント";
+            this.N_L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
+            // 
             // N_AddressList
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -294,17 +283,39 @@
             this.N_AddressList.Size = new System.Drawing.Size(336, 677);
             this.N_AddressList.TabIndex = 108;
             // 
-            // N_LabelFilter
+            // N_L_0_EVENT
             // 
-            this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_LabelFilter.Location = new System.Drawing.Point(-1, 0);
-            this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N_LabelFilter.Name = "N_LabelFilter";
-            this.N_LabelFilter.Size = new System.Drawing.Size(337, 26);
-            this.N_LabelFilter.TabIndex = 107;
-            this.N_LabelFilter.Text = "名前";
-            this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.N_L_0_EVENT.ErrorMessage = "";
+            this.N_L_0_EVENT.Location = new System.Drawing.Point(460, 4);
+            this.N_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_L_0_EVENT.Name = "N_L_0_EVENT";
+            this.N_L_0_EVENT.Placeholder = "";
+            this.N_L_0_EVENT.ReadOnly = true;
+            this.N_L_0_EVENT.Size = new System.Drawing.Size(438, 25);
+            this.N_L_0_EVENT.TabIndex = 245;
+            this.N_L_0_EVENT.Visible = false;
+            // 
+            // N_BlockSize
+            // 
+            this.N_BlockSize.ErrorMessage = "";
+            this.N_BlockSize.Location = new System.Drawing.Point(325, 4);
+            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
+            this.N_BlockSize.ReadOnly = true;
+            this.N_BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.N_BlockSize.TabIndex = 52;
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(542, -2);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.N_SelectAddress.TabIndex = 40;
             // 
             // WorldMapEventPointerFE6Form
             // 
@@ -357,5 +368,6 @@
         private ListBoxEx N_AddressList;
         private System.Windows.Forms.Label N_LabelFilter;
         private TextBoxEx N_L_0_EVENT;
+        private System.Windows.Forms.Button N_L_0_NEWALLOC_EVENT;
     }
 }

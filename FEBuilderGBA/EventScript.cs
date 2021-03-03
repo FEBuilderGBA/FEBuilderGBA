@@ -1749,8 +1749,10 @@ namespace FEBuilderGBA
         //ポインタの更新の通知
         public static void NotifyChangePointer(List<EventScript.OneCode> list, uint oldaddr, uint newaddr)
         {
-            Debug.Assert(U.isPointer(oldaddr));
-            Debug.Assert(U.isPointer(newaddr));
+            if (!U.isPointer(oldaddr) || !U.isPointer(newaddr))
+            {
+                return;
+            }
             for (int i = 0; i < list.Count; i++)
             {
                 EventScript.OneCode code = list[i];
@@ -1759,8 +1761,10 @@ namespace FEBuilderGBA
         }
         static void NotifyChangePointer(EventScript.OneCode code, uint oldaddr, uint newaddr)
         {
-            Debug.Assert(U.isPointer(oldaddr));
-            Debug.Assert(U.isPointer(newaddr));
+            if (!U.isPointer(oldaddr) || !U.isPointer(newaddr))
+            {
+                return;
+            }
 
             EventScript.Arg[] args = code.Script.Args;
             for (int i = 0; i < args.Length; i++)

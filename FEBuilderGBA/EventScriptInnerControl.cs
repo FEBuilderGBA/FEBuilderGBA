@@ -1413,18 +1413,21 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_EVENTBATTLEDATA)
             {
                 EventBattleDataFE7Form f = (EventBattleDataFE7Form)InputFormRef.JumpForm<EventBattleDataFE7Form>(U.NOT_FOUND);
+                value = f.AllocIfNeed(src_object);
                 f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                 f.JumpToAddr(value);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_EVENTMOVEDATA)
             {
                 EventMoveDataFE7Form f = (EventMoveDataFE7Form)InputFormRef.JumpForm<EventMoveDataFE7Form>(U.NOT_FOUND);
+                value = f.AllocIfNeed(src_object);
                 f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                 f.JumpToAddr(value);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_TALKGROUP)
             {
                 EventTalkGroupFE7Form f = (EventTalkGroupFE7Form)InputFormRef.JumpForm<EventTalkGroupFE7Form>(U.NOT_FOUND);
+                value = f.AllocIfNeed(src_object);
                 f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                 f.JumpToAddr(value);
             }
@@ -3552,8 +3555,10 @@ namespace FEBuilderGBA
         //ポインタの更新の通知
         public void NotifyChangePointer(uint oldaddr, uint newaddr)
         {
-            Debug.Assert(U.isPointer(oldaddr));
-            Debug.Assert(U.isPointer(newaddr));
+            if (!U.isPointer(oldaddr) || ! U.isPointer(newaddr))
+            {
+                return;
+            }
             EventScript.NotifyChangePointer(this.EventAsm , oldaddr , newaddr);
         }
 
