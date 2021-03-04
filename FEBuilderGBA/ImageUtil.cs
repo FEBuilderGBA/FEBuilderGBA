@@ -532,16 +532,19 @@ namespace FEBuilderGBA
             {
                 for (int headerx = 0; headerx <= master_headerx; headerx++)
                 {
+                    if (i+1 >= length)
+                    {//途中でデータがなくなった...
+                        return tile;
+                    }
+                    if (n >= tile.Length)
+                    {
+                        return tile;
+                    }
                     UInt16 tsadata = (UInt16)(tsa[i] + ((UInt16)tsa[i + 1] << 8));
                     tile[n] = (UInt16)(tsadata );
 
                     i += 2;
                     n++;
-
-                    if (i >= length)
-                    {//途中でデータがなくなった...
-                        return tile;
-                    }
                 }
                 n = n - master_headerx ;
                 n = n - (0x42 / 2);
@@ -4577,6 +4580,17 @@ namespace FEBuilderGBA
             uint master_headerx = (uint)(data[pos]) + 1;
             uint master_headery = (uint)(data[pos+1]) + 1;
             return 2 + (master_headerx * master_headery * 2);
+        }
+
+        public static Size CalcSizeForHeaderTSAData(byte[] data, int pos)
+        {
+            if (pos + 2 >= data.Length)
+            {//無効
+                return new Size(0,0);
+            }
+            uint master_headerx = (uint)(data[pos]) + 1;
+            uint master_headery = (uint)(data[pos + 1]) + 1;
+            return new Size((int)master_headerx, (int)master_headery);
         }
 
         public static Bitmap ConvertSizeFormat(Bitmap bitmap,int width,int height)

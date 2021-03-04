@@ -513,8 +513,19 @@ namespace FEBuilderGBA
 
         private void ImageOption_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                SetupImageOption();
+            }
+            catch (Exception ee)
+            {
+                R.Error(R.ExceptionToString(ee));
+            }
             Draw();
+        }
 
+        void SetupImageOption()
+        {
             if (ImageOption.SelectedIndex == 1)
             {
                 SecondImagePanel.Hide();
@@ -541,6 +552,46 @@ namespace FEBuilderGBA
             else
             {
                 KeepTSAComboBox.Show();
+            }
+        }
+        private void TSA_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SetupTSAOption();
+            }
+            catch (Exception ee)
+            {
+                R.Error(R.ExceptionToString(ee));
+            }
+
+            ImageOption_SelectedIndexChanged(sender, e);
+        }
+        void SetupTSAOption()
+        {
+            Size size = new Size(0, 0);
+            if (TSAOption.SelectedIndex == 2)
+            {//圧縮ヘッダ付きTSAを利用する
+                byte[] tsa = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)TSA.Value));
+                size = ImageUtil.CalcSizeForHeaderTSAData(tsa, 0);
+            }
+            else if (TSAOption.SelectedIndex == 3)
+            {
+                size = ImageUtil.CalcSizeForHeaderTSAData(Program.ROM.Data, (int)U.toOffset((uint)TSA.Value));
+            }
+            if (size.Width > 0 && size.Height > 0)
+            {
+                //幅高さ自動計算
+                if (size.Width >= 30)
+                {
+                    size.Width = 32;
+                }
+                if (size.Height >= 32)
+                {
+                    size.Height = 32;
+                }
+                this.PicWidth.Value = size.Width;
+                this.PicHeight.Value = size.Height;
             }
         }
 
@@ -1107,6 +1158,7 @@ namespace FEBuilderGBA
 
             this.Image.Focus();
         }
+
 
     }
 }
