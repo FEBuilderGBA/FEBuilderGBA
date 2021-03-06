@@ -12709,8 +12709,14 @@ Eirika Ending
 :エフラムエンディング
 Ephraim Ending
 
+:マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。
+Specify the event to be executed when the map is cleared.\r\nThe next node appears on the world map, then the road to it is drawn.
+
 :前の拠点クリア後に発生するイベント
 Events Post-World Map Node
+
+:ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステージの紹介は、拠点を選択した瞬間に行う必要があります。
+Set the event that is executed when World Map Node is selected from the map.\r\nIn FE8, the player can move around the world map freely.\r\nTherefore, an introduction when selecting the newest stage is required.
 
 :ワールドマップ道へJump
 Jump to World Map Roads
@@ -12720,12 +12726,6 @@ Jump to World Map Nodes
 
 :拠点選択後に発生するイベント
 Events Post-World-Map-Choice
-
-:ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステージの紹介は、拠点を選択した瞬間に行う必要があります。
-Set the event that is executed when World Map Node is selected from the map.\r\nIn FE8, the player can move around the world map freely.\r\nTherefore, an introduction when selecting the newest stage is required.
-
-:マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。
-Specify the event to be executed when the map is cleared.\r\nThe next node appears on the world map, then the road to it is drawn.
 
 :256色画像
 256 Color Image

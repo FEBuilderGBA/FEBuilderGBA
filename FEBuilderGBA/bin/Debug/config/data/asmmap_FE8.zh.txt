@@ -7383,7 +7383,6 @@ r3=X tile position of menu of the right	{U}
 085B7580	&PALETTE	Something's palette	33	{U}
 085B9244	&PALETTE	Something's palette	34	{U}
 0868716C	&PALETTE	Something's palette	35	{U}
-08803590	&PALETTE	Something's palette	36	{U}
 08803B10	&PALETTE	Something's palette	37	{U}
 089A232C	&PALETTE	Something's palette	38	{U}
 089A28E0	&PALETTE	Something's palette	39	{U}
@@ -7482,7 +7481,6 @@ r3=X tile position of menu of the right	{U}
 085E1760	&PALETTE	Something's palette	33	{J}
 085E3424	&PALETTE	Something's palette	34	{J}
 086B3D44	&PALETTE	Something's palette	35	{J}
-08857AE8	&PALETTE	Something's palette	36	{J}
 08858068	&PALETTE	Something's palette	37	{J}
 08A12AA0	&PALETTE	Something's palette	38	{J}
 08A12F68	&PALETTE	Something's palette	39	{J}

@@ -18,6 +18,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionAddrHigh = false;
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
         }
 
@@ -52,12 +53,12 @@ namespace FEBuilderGBA
 
         void AddressListExpandsEvent(object sender, EventArgs arg)
         {//アイテムテーブルの途中にある参照を変更する必要がある
-//            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
-//            uint addr = eearg.NewBaseAddress;
-//
-//            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-//            Program.ROM.write_p32(Program.ROM.RomInfo.ai_preform_staff_asm_pointer() , addr + 4, undodata);
-//            Program.Undo.Push(undodata);
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ai_preform_item_direct_asm_pointer(), addr + 4, undodata);
+            Program.Undo.Push(undodata);
         }
 
         private void AIPerformItemForm_Load(object sender, EventArgs e)

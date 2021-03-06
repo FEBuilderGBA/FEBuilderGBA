@@ -4,7 +4,7 @@ TAG=#ENGINE
 
 EA=EA.txt
 
-INFO=離脱メニューを表示する。\r\n離脱メニューを表示して、指定されたイベントを実行します。\r\n離脱メニューを作るには、イベント条件のマップオブジェクトで、「制圧ポイントと村」を選択し、種類に0x13を選んでください。\r\n制圧用のイベントが実行されます。\r\n今まで、範囲条件で作っていた離脱をメニューで行うことができるようになります。\r\n\r\nこのパッチには、到着メニューも表示する機能もあります。\r\nこちらは、制圧と同じ機能です。\r\n制圧を作るときと同様にマップオブジェクトを作成し、種類を0x19にしてください。\r\nサンプルupsと解説:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
+INFO=離脱メニューを表示する。\r\n離脱メニューを表示して、指定されたイベントを実行します。\r\n離脱メニューを作るには、イベント条件のマップオブジェクトで、「制圧ポイントと村」を選択し、種類に0x13を選んでください。\r\n制圧用のイベントが実行されます。\r\n今まで、範囲条件で作っていた離脱をメニューで行うことができるようになります。\r\n\r\nこのパッチには、到着メニューも表示する機能もあります。\r\nこちらは、制圧と同じ機能です。\r\n制圧を作るときと同様にマップオブジェクトを作成し、種類を0x19にしてください。\r\nサンプルupsと解説:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 
 AUTHOR=7743
 
@@ -13,8 +13,8 @@ EXTENDS:0x1100=TEXT
 
 PATCHED_IF:$FGREP4 IsLoca0x13.dmp=0x10 0xB5 0x0B 0x4C
 NAME.en=Display Escape menu
-INFO.en=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x19.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
+INFO.en=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x19.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 
 NAME.zh=Display Escape menu
-INFO.zh=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x19.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
+INFO.zh=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x19.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 

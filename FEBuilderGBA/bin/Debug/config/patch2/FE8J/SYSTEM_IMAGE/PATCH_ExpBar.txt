@@ -1,5 +1,6 @@
 NAME=経験値バーの枠の画像
 NAME.en=Experience bar Frame
+INFO=この画像のパレットは、レベルアップ時のステータス画面表示のパレットにも利用されます。
 
 TYPE=IMAGE
 
@@ -10,3 +11,5 @@ IMAGE_POINTER=0x00051508//0x0885729C
 TSA_POINTER=0x00051510//0x08857A7C
 PALETTE_POINTER=0x00051518//0x08857AE8
 NAME.zh=体验栏框架的图像。
+INFO.en=This image palette is also used for the status screen display palette when leveling up.
+INFO.zh=升级时，此图像调色板也用于状态屏幕显示调色板。

@@ -8,7 +8,7 @@ PATCHED_IF:$FGREP4 ASMC_SimpleEscape.dmp=0x10 0xB5 0x45 0x4C
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=ASMC_SimpleEscape.dmp
 
-INFO=複雑なスクリプトではなく、たった1行のスクリプトで離脱コマンドを実装できるようにします。\r\nこのパッチと、"離脱メニューの表示"パッチを組み合わせると、メニュー付きの離脱コマンドを作れます。
+INFO=複雑なスクリプトではなく、たった1行のスクリプトで離脱コマンドを実装できるようにします。\r\nこのパッチと、"離脱メニューの表示"パッチを組み合わせると、メニュー付きの離脱コマンドを作れます。\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 
 EVENTSCRIPT:1=400501000000000040050200XXXXXXXX400D0000{$L1:ASMC_SimpleEscape.dmp}	全員が離脱するとクリア[XX:POINTER_UNITSSHORTTEXT:ユニット達のセリフ]	簡易離脱イベント
 
@@ -19,7 +19,7 @@ EVENTSCRIPT:3=400501000200000040050200XXXXXXXX40050300YY000000400D0000{$L1:ASMC_
 
 AUTHOR=7743 , aera
 NAME.en=(OLD)Add Event: Simple Escape event that can be easily created 20191023
-INFO.en=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
+INFO.en=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 
 EVENTSCRIPT:1.en=400501000000000040050200XXXXXXXX400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when everyone Escape[XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
 
@@ -29,7 +29,7 @@ EVENTSCRIPT:3.en=400501000200000040050200XXXXXXXX40050300YY000000400D0000{$L1:AS
 
 
 NAME.zh=(OLD)Add Event: Simple Escape event that can be easily created 20191023
-INFO.zh=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
+INFO.zh=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474\r\nhttps://feuniverse.us/t/how-to-make-range-event-and-escape-event/8513
 
 EVENTSCRIPT:1.zh=400501000000000040050200XXXXXXXX400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when everyone Escape[XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
 
