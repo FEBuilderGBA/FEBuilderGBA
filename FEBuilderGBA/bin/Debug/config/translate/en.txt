@@ -3215,10 +3215,10 @@ When translating to other than Japanese, please select DrawUTF8\r\n
 A patch is required to move the map of FE 8 without going through the world map.\r\nWould you like to enable it?
 
 :フリーマップを無効にしてよいならば、強力なEliminateを選択してください。\r\n
-If you'd like to disable the free map, choose the powerful Eliminate.\r\n
+If you'd like to disable the world map skirmishes, choose the powerful Eliminate.\r\n
 
 :フリーマップを使いたい場合は、MNC2Fix を選択してください。\r\n
-If you want to use the free map, select MNC2Fix.\r\n
+If you want to use the world map skirmishes, select MNC2Fix.\r\n
 
 :{0}パッチを有効にする
 Enable {0}
@@ -4907,7 +4907,7 @@ Determines the victory conditions that appear in the status menu.\r\n
 Determines the menu in the upper right.\r\n"Rout Enemy": Displays the remaining number of enemies.\r\n"Defend": Displays current turn / turns to defend.\r\n"Seize": Displays seize point.\r\n"Defeat Boss": Displays boss to defeat.
 
 :ただし、FE8では、敵全滅とボス撃破を選択した場合、敵ユニットがいなくなると自動的に終了イベントが呼ばれることがあります。\r\nこれはフリーマップのルーチンが関係しています。\r\nこれらの条件のマップでは、敵がいなくなる状態を作らないでください。
-However, in FE 8, when you select enemy extinction and boss defeat, when the enemy unit disappears, the end event may be called automatically.\r\nThis is related to the free map routines.\r\nIn the map of these conditions, please do not make a state where enemies disappear.
+However, in FE 8, when you select enemy extinction and boss defeat, when the enemy unit disappears, the end event may be called automatically.\r\nThis is related to the world map skirmishes routines.\r\nIn the map of these conditions, please do not make a state where enemies disappear.
 
 :「特殊表示」で「ターン防衛」を選択した時に利用されます。\r\n指定したターン数 - 1 == 「最終のターン」\r\nに、なります。\r\nもちろん、表示だけで、実際にそれが最終ターンなのかは、イベントで定義されます。\r\n
 Used when "turn defense" is selected in "Mini-Objective Display".\r\nTurns Specified -1 = Last turn of chapter.\r\nThis is display only and must be defined in the events to be functional.\r\n
@@ -6852,6 +6852,15 @@ Position
 
 :マップリサイズ
 Resize Map
+
+:これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。
+This is the enemy's escape point.\r\nFE6 only has an enemy escape.
+
+:これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。
+This is Enemy's escape point.\r\nFor NPC, switch the combo box on upper left.
+
+:これはNPCのエスケープポイントです。\r\n敵用は、左上のコンボボックスを切り替えてください。
+This is NPC's escape point.\r\nFor Enemy, switch the combo box on upper left.
 
 :離脱ポイントが大量に存在します({0})。データが壊れていませんか？
 There are a large number of exit points ({0}).Is the data broken? 

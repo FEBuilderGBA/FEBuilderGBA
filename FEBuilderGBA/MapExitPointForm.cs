@@ -14,6 +14,10 @@ namespace FEBuilderGBA
         public MapExitPointForm()
         {
             InitializeComponent();
+            FilterComboBox.Items.Add("Enemy Escape Point");
+            FilterComboBox.Items.Add("NPC Escape Point");
+            //フィルターの指定を忘れる人が多いので、アイコンをつけて目立たせる.
+            this.FilterComboBox.OwnerDraw(DrawFilterCombo, DrawMode.OwnerDrawFixed);
 
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
@@ -27,11 +31,78 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 6)
             {//たぶんFE6には、NPC離脱ポインタは存在しない
                 FilterComboBox.Hide();
+                Set_X_Filter_Note_Message(0);
             }
             else
             {
                 FilterComboBox.SelectedIndex = 0;
             }
+        }
+        static Bitmap GetFilterSymbolIconBitmap(int index)
+        {
+            Bitmap bitmap;
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (index == 0)
+                {//Enemy
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x8, 2, true);
+                }
+                else
+                {//NPC
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x61, 1, true);
+                }
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (index == 0)
+                {//Enemy
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x32, 2, true);
+                }
+                else
+                {//NPC
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x3E, 1, true);
+                }
+            }
+            else
+            {//FE6には敵の離脱ポイントしかないです
+                bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x2F, 2, true);
+            }
+            U.MakeTransparent(bitmap);
+            return bitmap;
+        }
+
+        //イベント条件の指定を忘れる人が多いので、アイコンをつけて目立たせる.
+        public static Size DrawFilterCombo(ComboBoxEx lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            string text = lb.Items[index].ToString();
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            Font normalFont = lb.Font;
+            Rectangle bounds = listbounds;
+
+            int textmargineY = (ComboBoxEx.OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
+
+            Bitmap bitmap = GetFilterSymbolIconBitmap(index);
+
+            //アイコンを描く
+            Rectangle b = bounds;
+            b.Width = ComboBoxEx.OWNER_DRAW_ICON_SIZE;
+            b.Height = ComboBoxEx.OWNER_DRAW_ICON_SIZE;
+            bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+            bitmap.Dispose();
+
+            //見つからなかったので、普通にテキストを描く.
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+
+            brush.Dispose();
+
+            bounds.Y += ComboBoxEx.OWNER_DRAW_ICON_SIZE;
+            return new Size(bounds.X, bounds.Y);
         }
 
         public InputFormRef InputFormRef;
@@ -144,17 +215,38 @@ namespace FEBuilderGBA
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.FilterComboBox.SelectedIndex == 0)
-            {//自軍
+            {//敵軍
                 this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.map_exit_point_pointer()));
-
+                Set_X_Filter_Note_Message(0);
             }
             else
             {//友軍
                 this.InputFormRef.ReInit(
                     Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer()) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd()));
                     ;
+                Set_X_Filter_Note_Message(1);
             }
         }
+        void Set_X_Filter_Note_Message(int index)
+        {
+            X_Filter_Note_Message_Picture.Image = GetFilterSymbolIconBitmap(index);
+            if (index == 0)
+            {//敵軍
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    X_Filter_Note_Message_Label.Text = R._("これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。");
+                }
+                else
+                {
+                    X_Filter_Note_Message_Label.Text = R._("これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。");
+                }
+            }
+            else
+            {//友軍
+                X_Filter_Note_Message_Label.Text = R._("これはNPCのエスケープポイントです。\r\n敵用は、左上のコンボボックスを切り替えてください。");
+            }
+        }
+
         public static void MakeCheckError(uint mapid, List<FELint.ErrorSt> errors)
         {
             List<U.AddrResult> list = MakeList(mapid);//効率は悪いが理解しやすさからマップ単位で見ましょう.
@@ -281,6 +373,7 @@ namespace FEBuilderGBA
 
             U.ReSelectList(AddressList);
         }
+
 
 
     
