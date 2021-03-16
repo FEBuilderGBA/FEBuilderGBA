@@ -1822,8 +1822,8 @@ Although it is a door, "{0}" is set in kind.
 :店なのに、種類で「{0}」が設定されています。
 Although it is a shop, "{0}" is set for the type.
 
-:お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
-"{0}" is set in the shop.\r\nWith this setting, once you enter the store, you can not enter again again.\r\nYou should not set "{0}" here unless you are doing intentionally.
+:お店に「{0}」が設定されています。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
+"{0}" is set in the shop.\r\nYou should not set "{0}" here unless you are doing it intentionally.
 
 :マップオブジェクトに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
 The map object has incorrect termination data.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
@@ -1947,6 +1947,9 @@ Range:
 
 :07=神の矢
 07=Vertical Arrow
+
+:お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
+"{0}" is set in the shop.\r\nWith this setting, once you enter the store, you can not enter again again.\r\nYou should not set "{0}" here unless you are doing intentionally.
 
 :このイベントを無効化してもよろしいですか？
 Are you sure you want to disable this event?

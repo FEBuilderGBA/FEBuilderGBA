@@ -72,23 +72,41 @@ namespace FEBuilderGBA
                 eearg.IsCancel = true;
                 return;
             }
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "SummonRepointExtraData");
+
+            //table+1のアドレスを指定している部分があるので、その部分も書き換える必要あり
+            {
+                uint[] write_count_addr;
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//For FE8J
+                    write_count_addr = new uint[] { 0x024450, 0x07D14C };
+                }
+                else
+                {//For FE8U
+                    write_count_addr = new uint[] { 0x0244A0, 0x07AE04 };
+                }
+                for (int i = 0; i < write_count_addr.Length; i++)
+                {
+                    Program.ROM.write_u8(write_count_addr[i], U.toPointer(eearg.NewBaseAddress+1));
+                }
+            }
 
             //件数を書く必要があるらしい.
-            uint[] write_count_addr;
-            if (Program.ROM.RomInfo.is_multibyte())
-            {//For FE8J
-                write_count_addr = new uint[] { 0x07D0B6, 0x0243EA };
-            }
-            else
-            {//For FE8U
-                write_count_addr = new uint[] { 0x07AD66, 0x024436 };
-            }
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this,"SummonCount");
-            for (int i = 0; i < write_count_addr.Length; i++)
             {
-                Program.ROM.write_u8(write_count_addr[i], (uint)(count - 1));
+                uint[] write_count_addr;
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//For FE8J
+                    write_count_addr = new uint[] { 0x07D0B6, 0x0243EA };
+                }
+                else
+                {//For FE8U
+                    write_count_addr = new uint[] { 0x07AD66, 0x024436 };
+                }
+                for (int i = 0; i < write_count_addr.Length; i++)
+                {
+                    Program.ROM.write_u8(write_count_addr[i], (uint)(count - 1));
+                }
             }
-
             Program.Undo.Push(undodata);
         }
     }

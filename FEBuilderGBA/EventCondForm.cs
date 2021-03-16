@@ -1080,7 +1080,7 @@ namespace FEBuilderGBA
                     if (flag > 0)
                     {//お店なのに達成フラグが設定されている
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。", GetNameOfAchievementFlag())));
+                            , R._("お店に「{0}」が設定されています。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。", GetNameOfAchievementFlag())));
                     }
                 }
                 else if (type == 0x00 && flag > 0)

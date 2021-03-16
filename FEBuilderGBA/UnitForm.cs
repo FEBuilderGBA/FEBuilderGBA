@@ -709,7 +709,7 @@ namespace FEBuilderGBA
             if (!U.isSafetyPointer(base_pointer))
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.UNIT, U.NOT_FOUND
-                    , R._("ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。"),0x1));
+                    , R._("ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。")));
                 return;
             }
 

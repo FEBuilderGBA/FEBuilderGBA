@@ -115,11 +115,11 @@ namespace FEBuilderGBA
             {//2重割り込み禁止
                 return;
             }
-            if (AddressList.SelectedIndex <= 0)
+            if (!this.InputFormRef.CheckWriteProtectionID00())
             {
                 return;
             }
-            if (!this.InputFormRef.CheckWriteProtectionID00())
+            if (AddressList.SelectedIndex < 0)
             {
                 return;
             }

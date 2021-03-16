@@ -446,16 +446,7 @@ namespace FEBuilderGBA
         {
             addr = U.toOffset(addr);
 
-            uint length;
-            if (Program.ROM.u32(addr) == 0x0)
-            {//道データがnull 必須0x01 があるので 0はありえない
-                length = 0;
-            }
-            else
-            {
-                length = Program.ROM.getBlockDataCount(addr, 4, (i, p) => { return Program.ROM.u32(p) != 0xFF; });
-                length = (length + 1) ;
-            }
+            uint length = WorldMapPathForm.CalcPathDataLength(addr);
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = length;
