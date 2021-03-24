@@ -2137,11 +2137,11 @@ Turn Condition FE 7
 :3=エリウッド編ハードモードのみ
 3=Eliwood Hard Mode
 
-:4=ハードモードのみ
-4=Hard mode only.
+:5=ハードモードのみ
+5=Hard mode only
 
-:5=ヘクトル編ハードモードのみ
-5=Hector edition Hard mode only.
+:4=ヘクトル編ハードモードのみ
+4=Hector edition Hard mode only
 
 :常時条件
 Flag Conditional
