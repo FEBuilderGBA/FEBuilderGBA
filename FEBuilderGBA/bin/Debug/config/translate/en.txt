@@ -775,6 +775,9 @@ Ignore TSA
 :01=拡縮
 01=Scaling
 
+:02=サイズの変更を行わない
+02=Do not resize.
+
 :サイズ補正方法
 Size correction method
 
@@ -2135,10 +2138,10 @@ Turn Condition FE 7
 3=Eliwood Hard Mode
 
 :4=ハードモードのみ
-4=Hard Mode
+4=Hard mode only.
 
 :5=ヘクトル編ハードモードのみ
-5=Hector Hard Mode
+5=Hector edition Hard mode only.
 
 :常時条件
 Flag Conditional

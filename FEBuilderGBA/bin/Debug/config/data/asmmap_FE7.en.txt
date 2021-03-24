@@ -5099,3 +5099,7 @@
 08079EEC	if Legault is alive	{U}
 08079F0C	if Athos is alive	{U}
 0807A0AC	if Erik is alive	{U}
+08093CD0	DrawPickupUnitsList_PrepScreen	{J}
+08093DC8	DrawCountOfPickupUnits_PrepScreen	{J}
+080933C4	DrawPickupUnitsList_PrepScreen	{U}
+080934BC	DrawCountOfPickupUnits_PrepScreen	{U}

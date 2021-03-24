@@ -5389,3 +5389,7 @@
 08079EEC	ラガルトが生存しているか判定	{U}
 08079F0C	アトスが生存しているか判定	{U}
 0807A0AC	エリックが生存しているか判定	{U}
+08093CD0	DrawPickupUnitsList_PrepScreen	{J}
+08093DC8	DrawCountOfPickupUnits_PrepScreen	{J}
+080933C4	DrawPickupUnitsList_PrepScreen	{U}
+080934BC	DrawCountOfPickupUnits_PrepScreen	{U}

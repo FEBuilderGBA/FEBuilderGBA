@@ -13052,3 +13052,9 @@
 020111CC	Buffer_ReorderPlayerUnitsBasedOnDeployment
 080A7A0C	GetMiniMapTypeFromCoordinateXY	{U}
 080A7BF8	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}
+08035804	ExecFortSelfHealMotion	{U}
+08035904	ExecFortSelfHealMotion	{J}
+0809CDBC	DrawCountOfPickupUnits_PrepScreen	{J}
+0809CCC4	DrawPickupUnitsList_PrepScreen	{J}
+0809AAF0)	DrawCountOfPickupUnits_PrepScreen	{U}
+0809A9F8)	DrawPickupUnitsList_PrepScreen	{U}

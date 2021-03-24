@@ -1,0 +1,17 @@
+NAME=砦の回復モーションに利用するアイテムID
+NAME.en=Item ID used for the recovery motion of the fort
+NAME.zh=Item ID used for the recovery motion of the fort
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x035916
+ADDRESS_TYPE=ITEM
+DEFAULT=0x6c
+
+INFO=バニラでは、回復モーションは、きずぐすり(0x6C)を利用したことにして回復モーションが表示されます。\r\nもし、きずぐすりを0x6Cから移動しているような変なことをしている場合は、この値を調整する必要があります。\r\n通常は変更する必要はありません。
+INFO.en=In vanilla, the recovery motion will pretend that you used Vulnerary(0x6C) to display the recovery motion. \r\nIf you're doing something weird like moving the Vulnerary from 0x6C, you'll need to adjust this value. \r\normally, you do not need to change it.
+INFO.zh=In vanilla, the recovery motion will pretend that you used Vulnerary(0x6C) to display the recovery motion. \r\nIf you're doing something weird like moving the Vulnerary from 0x6C, you'll need to adjust this value. \r\normally, you do not need to change it.
+
+AUTHOR=Beansy

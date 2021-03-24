@@ -13054,3 +13054,9 @@ r3=X tile position of menu of right	{U}
 0806FC8C	LoadDragonZombieTSATogSomeTSABuffer	{U}
 08023EF0	IsAdjacentForSupply	{U}
 020111CC	Buffer_ReorderPlayerUnitsBasedOnDeployment
+08035804	ExecFortSelfHealMotion	{U}
+08035904	ExecFortSelfHealMotion	{J}
+0809CDBC	DrawCountOfPickupUnits_PrepScreen	{J}
+0809CCC4	DrawPickupUnitsList_PrepScreen	{J}
+0809AAF0)	DrawCountOfPickupUnits_PrepScreen	{U}
+0809A9F8)	DrawPickupUnitsList_PrepScreen	{U}

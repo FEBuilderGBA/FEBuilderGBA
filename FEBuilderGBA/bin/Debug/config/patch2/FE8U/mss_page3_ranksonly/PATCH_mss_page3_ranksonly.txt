@@ -8,8 +8,8 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0x47 0x46 0x80 0xB4 0x94 0xB0 0x29 0x4F 0x2A 0x4D 0x
 
 EA=Buildfile.event
 
-INFO=ステータス画面3にすべての武器のランクを表示します。 SkillSystemsを利用していても動作します。
-INFO.en=Patches the ROM's Status Menu to display all 8 Weapon Ranks.\r\nCompatable with the Skill System Patch.\r\n
+INFO=ステータス画面3にすべての武器のランクを表示します。 SkillSystemsを利用していても動作します。\r\nただし、支援の表示がなくなるので注意してください。\r\n
+INFO.en=Patches the ROM's Status Menu to display all 8 Weapon Ranks.\r\nCompatable with the Skill System Patch.\r\nHowever, please note that the support display will disappear.\r\n
 INFO.zh=状态屏幕3显示所有武器的等级。即使你使用技能系统，它也可以工作。
 
 AUTHOR=Kirb

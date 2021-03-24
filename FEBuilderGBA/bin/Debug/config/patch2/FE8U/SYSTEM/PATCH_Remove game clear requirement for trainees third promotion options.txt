@@ -1,6 +1,6 @@
-NAME=Œ©K‚¢‚Ì3”Ô–Ú‚ÌCCƒIƒvƒVƒ‡ƒ“‚ÌƒQ[ƒ€ƒNƒŠƒA—vŒ‚ğíœ‚·‚é
-INFO=’ÊíAƒƒXAƒAƒƒŠƒAAƒ†ƒƒ“‚ÍAƒGƒCƒŠ[ƒN‚ÆƒGƒtƒ‰ƒCƒ€‚Ì—¼•û‚Ìƒ‹[ƒg‚ğ­‚È‚­‚Æ‚à1‰ñƒNƒŠƒA‚µ‚½Œã‚É‚Ì‚İA3”Ô–Ú‚ÌCCƒIƒvƒVƒ‡ƒ“iuSuper TraineevƒNƒ‰ƒX‚Ö‚Ìj‚ÉƒAƒNƒZƒX‚Å‚«‚Ü‚·B\r\n‚±‚Ìƒpƒbƒ`‚Í‚»‚Ì§ŒÀ‚ğ‰ğœ‚µ‚Ü‚·B\r\nÅ‰‚©‚ç3”Ô–Ú‚ÌCCƒIƒvƒVƒ‡ƒ“‚ğ•\¦‚µ‚Ü‚·B
-B
+NAME=è¦‹ç¿’ã„ã®3ç•ªç›®ã®CCã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®ã‚²ãƒ¼ãƒ ã‚¯ãƒªã‚¢è¦ä»¶ã‚’å‰Šé™¤ã™ã‚‹
+INFO=é€šå¸¸ã€ãƒ­ã‚¹ã€ã‚¢ãƒ¡ãƒªã‚¢ã€ãƒ¦ãƒ¯ãƒ³ã¯ã€ã‚¨ã‚¤ãƒªãƒ¼ã‚¯ã¨ã‚¨ãƒ•ãƒ©ã‚¤ãƒ ã®ä¸¡æ–¹ã®ãƒ«ãƒ¼ãƒˆã‚’å°‘ãªãã¨ã‚‚1å›ã‚¯ãƒªã‚¢ã—ãŸå¾Œã«ã®ã¿ã€3ç•ªç›®ã®CCã‚ªãƒ—ã‚·ãƒ§ãƒ³ï¼ˆã€ŒSuper Traineeã€ã‚¯ãƒ©ã‚¹ã¸ã®ï¼‰ã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã¾ã™ã€‚\r\nã“ã®ãƒ‘ãƒƒãƒã¯ãã®åˆ¶é™ã‚’è§£é™¤ã—ã¾ã™ã€‚\r\næœ€åˆã‹ã‚‰3ç•ªç›®ã®CCã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+ã€‚
 NAME.en=Remove game clear requirement for trainees third promotion options
 INFO.en=Ordinarily, Ross, Amelia, and Ewan are only able to access their third promotion options (into the "Super Trainee" classes) after the game has been cleared on both Eirika's and Ephraim's routes at least once.\r\nRemove that restriction on this patch.
 
