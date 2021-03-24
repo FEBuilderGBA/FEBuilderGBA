@@ -6416,7 +6416,7 @@ Assemble (compile) ASM and insert ASM directly into ROM.
 Reduce the color of the image.\r\nFEBuilderGBA allows smart color reduction processing according to TSA rules.
 
 :原因不明のバグが発生した場合、このツールを利用して、report.7zを作成して、コミニティに投稿してください。\r\nreport.7zには、問題を再現するためのupsデータが入っています。\r\nこれを利用すればバグを素早く再現し、修正することができるでしょう。
-If an unknown bug occurs, please use this tool to create report.7z and post it to the community.\r\nreport.7z contains ups data to reproduce the problem.\r\nUse this to quickly reproduce and fix bugs.
+If an unknown bug occurs, please use this tool to create report.7z and post it to the Discord server.\r\nreport.7z contains ups data to reproduce the problem.\r\nUse this to quickly reproduce and fix bugs.
 
 :ゲームシステムを拡張するさまざまなパッチを利用することができます。\r\nFEBuilderGBAではパッチを簡単に導入できるようにライブラリ化しています。\r\nパッチを作ってくれた皆様に感謝いたします。\r\n\r\nパッチによっては不安定なものもあるので、バックアップを取ってから利用してください。
 Use various patches to extend the game system.\r\nFEBuilder GBA library is created so that patches can be easily installed.\r\nI thank everyone who made the patch.\r\n\r\nSome patches are unstable, so please take a backup and use it.
@@ -9140,7 +9140,7 @@ Yes
 Show error.
 
 :ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nTo remove this message, correct the detected error(s).\r\nOr, in the settings, when you save your ROM, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are having trouble with an unresolvable error, create a report7z and consult with the community.
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nTo remove this message, correct the detected error(s).\r\nOr, in the settings, when you save your ROM, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are having trouble with an unresolvable error, create a report7z and consult with the Discord server.
 
 :リセット
 Reset
@@ -9770,19 +9770,19 @@ Skill extension SkillSystem's class skills can't be acquired.
 Skill enhancement SkillSystem's level up skill can't be acquired.
 
 :(Lv{0}で習得)
-(Learned with Lv {0})
+(Learned from Lv {0})
 
 :インポートに失敗しました。
 Import failed.
 
 :レベルアップで取得するスキルの先頭アドレス
-Leading address of skill to acquire in level up
+The first address of the skill to be acquired by leveling up.
 
 :クラススキル
 Class Skill
 
 :習得レベルとスキルの詳細は、ここをクリックしてください。
-Click here for more information on learning levels and skills.
+Click here for more information on learning skills and levels.
 
 :スキル1
 Skill 1
@@ -9794,10 +9794,10 @@ Skill 2
 Personal Skill
 
 :スキルFE8N
-Skill FE 8N
+FE8N Skill
 
 :スキル拡張 SkillSystem の、個人スキルを取得できません。
-Skill extension SkillSystem's personal skills can't be acquired.
+Skill Extension SkillSystem's personal skills can't be acquired.
 
 :ユニット16
 Unit 16
@@ -9980,19 +9980,19 @@ Other 2
 Other 1
 
 :ユニットとして解釈
-Interpret as a unit
+Interpret as Unit
 
 :クラスとして解釈
-Interpret as a class
+Interpret as Class
 
 :アイテムとして解釈
-Interpret as an item
+Interpret as Item
 
 :それ以外
 other than that
 
 :注意:アイコン表示条件は、ただアイコンを表示するだけの設定です。\r\nここを変えたからといってスキルが設定されるわけではありません。\r\n条件の中身は、ユニットIDかクラスIDか特性1-4かアイテムIDです。\r\nパッチのバージョンで内容が変わるらしく、統一規格はありません。
-Note: The icon display condition is just setting the icon.\r\nChanging here does not mean that the skill is set.\r\nThe contents of the condition are unit ID or class ID or characteristic 1-4 or item ID.\r\nIt seems that the contents will change with the patch version, there is no unified standard.
+Note: The icon display condition is purely cosmetic.\r\nChanging this does not mean that the skill is set.\r\nThe determinators of the condition are unit ID, class ID, characteristics 1-4, or item ID.\r\nAs these can change per version, there is no unified standard.
 
 :アイコン表示条件
 Icon Condition
@@ -10001,34 +10001,34 @@ Icon Condition
 Skill Name
 
 :スキル拡張 FE8Nver2 のポインタを取得できませんでした
-Skill extensionFE 8 Nver 2Failed to get pointer of
+Failed to get the pointers from Skill Extension FE8Nver 2.
 
 :スキル拡張 FE8Nver2 のポインタが所定の数だけありません。\r\n{0}個必要ですが、{1}個しかありません。
-There is not a specified number of pointers for skill extension FE 8 Nver 2.\r\n{0} items are needed but only {1} items.
+Skill Extension FE8Nver 2 does not have the needed number of pointers.\r\n{0} entries are needed but there's only {1}.
 
 :(自軍時のみ)
-(Only for Player army troops)
+(Only for Player Army troops)
 
 :(敵軍時のみ)
-(Only for Enemy army)
+(Only for Enemy Army)
 
 :(友軍時のみ)
-(Only for NPC(ally) army)
+(Only for NPC Army)
 
 :スキルアニメスクリプト|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
-Skill animation script|*.txt|animation GIF|*.gif|Dump All|*.txt|All files|*
+Skill Animation Script|*.txt|Animated GIF|*.gif|Dump All|*.txt|All files|*
 
 :スキルアニメスクリプト|*.txt|All files|*
-Skill animation script|*.txt|All files|*
+Skill Animation Script|*.txt|All files|*
 
 :ユニットスキル建設予定地
-Unit skill Construction site
+Unit Skill Construction
 
 :武器アイテムスキル
 Weapon Item Skill
 
 :アニメ
-Anime
+Animation
 
 :アニメーション取出
 Export Animation
@@ -10037,37 +10037,37 @@ Export Animation
 Import Animation
 
 :所持アイテムスキル
-Owned item skills
+Owned Item Skills
 
 : スキル割り当て
-Skill assignment
+Skill Assignment
 
 :スキル拡張 SkillSystem の、アニメを取得できません。
-Skill extension SkillSystem's animation can't be acquired.
+SkillSystem's animation can't be acquired.
 
 :アニメーション
 Animation
 
 :アーマー系
-ArmorType
+Armor Type
 
 :騎兵系
-HorseType
+Horse Type
 
 :飛行系
-FlierType
+Flier Type
 
 :ドラゴン系
-DragonType
+Dragon Type
 
 :モンスター系
-MonsterType
+Monster Type
 
 :ソード系
-SwordType
+Sword Type
 
 :クラス分類
-Classification.
+Classification
 
 :曲を取り出すROMを「--fromrom」で指定してください。
 Specify the ROM from which the song is to be extracted with "--fromrom".
@@ -10100,94 +10100,94 @@ Are you sure you want to port this music ({0}) to (1) in ROM?
 The song has been imported.
 
 :この曲のデータ構造は壊れているようです。\r\nインポートを強行しますか？\r\n強行する場合は、正しく認識できたトラックのみをインポートします。
-The data structure of this song seems to be broken.\r\nDo you want to force import? \r\nIf you want to force, only the tracks that were recognized correctly will be imported.
+The data structure of this song seems to be broken.\r\nDo you want to forcibly import? \r\nOnly the tracks that were recognized correctly will be imported.
 
 :この曲のデータ構造は壊れているため、Rip出来ませんでした。
-I could not Rip because the data structure of this song is broken.
+Could not rip data because the structure of this song is broken.
 
 :データサイズを({0})確保できません。\r\nROM容量がもうないか、音楽のパースに失敗しています。
-Unable to allocate data size ({0}).\r\nThere was an error parsing the music because there is no ROM capacity anymore.
+Unable to allocate data size ({0}).\r\nThere was an error parsing the music because ROM capacity has been reached.
 
 :DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size
-There was strange data in DirectSound.I will ignore it.sample_location: {0}> {1} ROM Size.
+There was strange data in DirectSound. Ignored. sample_location: {0}> {1} ROM Size.
 
 :Multi または Drumの中に、おかしなデータがありました。無視します。 OverHZ Sample:{0} bytes ({1} *1024 hz)
-There was strange data in Multi or Drum. It has been removed from song.OverHZ Sample: {0} bytes ({1} * 1024 hz).
+There was strange data in Multi or Drum. It has been removed from song. OverHZ Sample: {0} bytes ({1} * 1024 hz).
 
 :MultiSampleの中に、おかしなデータがありました。無視します。 multisample_voices:{0} sample_location:{1} > {2} ROM Size
-There was strange data in MultiSample.I will ignore it.multisample_voices: {0} sample_location: {1}> {2} ROM Size.
+There was strange data in MultiSample. Ignored. multisample_voices: {0} sample_location: {1}> {2} ROM Size.
 
 :Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n
-There was also Multi or Drum in Multi or Drum.\r\nIgnoring such complicated things can't be dealt with.\r\n
+Found Multi or Drum in Multi or Drum.\r\nCan't deal with these complicated things, so they're ignored.\r\n
 
 :<---------\r\n選択した曲を\r\n移植する\r\n<---------
 <---------\r\nImport the\r\nselected song\r\n<---------
 
 :別ROMを開く
-Open another ROM
+Open Another ROM
 
 :サウンドテーブル
-Sound table
+Sound Table
 
 :領域が確保されていません。
-The area is not secured.
+The area has not been reserved.
 
 :これより下のアドレスには、waveデータが、LengthByteだけ格納されています。
-Wave data is stored in LengthByte below this address.
+Wave data is stored as LengthByte below this address.
 
 :SquareWave(消音プチノイズ)
-Square Wave (silent petit noise)
+Square Wave (Silent, Small)
 
 :Wave Memory(消音プチノイズ)
 Wave Memory
 
 :Noise(消音プチノイズ)
-Noise (silent petit noise)
+Noise (Silent, Small)
 
 :インポートするwavファイルを選択してください
-Please select wav file to import
+Select the WAV File to Import
 
 :データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目
-The data format is incorrect.\r\nAt least {1} data is required.\r\n{0} line
+The data format is incorrect.\r\nAt least {1} data is required.\r\nLine: {0}
 
 :楽器データ({1})がありません。\r\n{0}行目
-Musical instrument data ({1}) is missing.\r\n{0} line
+Musical instrument data ({1}) is missing.\r\nLine: {0}
 
 :ネストする楽器データ({1})を登録できません。\r\n{0}行目
-Unable to register nested instrument data ({1}).\r\n{0} line
+Unable to register nested instrument data ({1}).\r\nLine: {0}
 
 :09=SquareWave(消音プチノイズ)
-09=Square Wave (silent petit noise)
+09=Square Wave (Silent, Small)
 
 :0A=SquareWave(消音プチノイズ)
-0A=Square Wave (silent petit noise)
+0A=Square Wave (Silent, Small)
 
 :0B=Wave Memory(消音プチノイズ)
 0B=Wave Memory
 
 :0C=Noise(消音プチノイズ)
-0C=Noise (silent petit noise)
+0C=Noise (Silent, Small)
 
 :音データ 書出
-Export Wav Data
+Export WAV Data
 
 :音データ 読込
-Import Wav Data
+Import WAV Data
 
 :パンポット
 Pan Pot
 
 :0=PAN強制しない
-0=PAN not forced
+0=Non-Forced PAN
 
 :1=PAN強制
-1=PAN Forced
+1=Forced PAN
 
 :音データ
 Sound Data
 
 :PAN強制
-PAN Forced
+Forced PAN
 
 :基準ノート値
 Ref Note Value
@@ -10196,7 +10196,7 @@ Ref Note Value
 Waveform Data
 
 :8=PAN強制
-8=PAN Forced
+8=Forced PAN
 
 :キー割り当て
 Key Assignment
@@ -10208,49 +10208,49 @@ Instrument Set
 Drum Set
 
 :結果を見るには、Previewボタンを押してください。
-To see the result, press the Preview button.
+To hear the result, press the Preview button.
 
 :ファイルサイズ {0} -> {1} ({2}%)
-File size {0}-> {1} ({2}%)
+File size {0} -> {1} ({2}%)
 
 :最適化せずにインポート
-Import without optimization.
+Import Without Optimisations
 
 :0=変更しない
-0=Not change
+0=No Change
 
 :Waveの音質を下げると、容量を小さくできます。
 Decreasing the sound quality of Wave can reduce the file size.
 
 :音量
-Volume.
+Volume
 
 :チャンネル
 Channel
 
 :0=除去しない
-0=Do not modify
+0=No Change
 
 :1=無音を除去する
 1=Remove Silence
 
 :2=もっと強力に無音を除去する
-2=Remove Silence more powerfully
+2=Powerful Silence Removal
 
 :前後の無音除去
 Remove Silence
 
 :音質を下げる
-Reduce sound quality
+Reduce Sound Quality
 
 :最適化
 Optimisation
 
 :Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
-Since Wave files consume a lot of space, it is recommended that you convert to lower quality and import.
+Since Wave files consume a lot of space, it is recommended that you convert to a lower quality first.
 
 :Waveのインポート
-Wave import.
+Wave Import
 
 :[空きトラック]
 [Empty Track]
@@ -10262,10 +10262,10 @@ ALERT\r\nThe map BGM must be set to 0x00010001 priority in the song table.\r\nTh
 ALERT\r\nThe sound effects must specify a priority greater than 0x00030003 in the song table.\r\nThe current setting is:  {0}.
 
 :ソングテーブルが極端に少ないです。破損している可能性があります。
-There are extremely few song tables.It may be damaged.
+Song table is extremely small. It may be damaged.
 
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
-Displays the instrument table that composes songs.\r\nNormally, this doesn't need to be edited.\r\nUseful for developers or those wanting to add new instruments.
+Displays the instrument table that contains sounds.\r\nNormally, this doesn't need to be edited.\r\nUseful for those wanting to add new instruments.
 
 :楽器テーブルへ
 Instrument Table Editor
@@ -10277,13 +10277,13 @@ Display the score of the song.\r\nUsed to import and export songs.
 Song Track Editor
 
 :サウンドルームに曲を登録すると、曲名をつけられます。\r\nFEには、曲と効果音の違いはありません。\r\n
-Edit the songs registered in the Sound Room.\r\nA song in the sound room can be renamed.\r\nThere is no difference between songs and sound effects.\r\n.
+Edit the songs registered in the Sound Room.\r\nA song in the sound room can be renamed.\r\nThere is no difference between songs and sound effects.\r\nNote that a song in the Sound Room will have its name from there be displayed across FEBuilderGBA.
 
 :サウンドルームへ
 Sound Room Editor
 
 :ソングヘッダー
-Song header
+Song Header
 
 :楽器 {0}({1}) -> {2}({3}) #{4}
 Instrument{0}({1}) -> {2}({3}) #{4}
@@ -10292,13 +10292,13 @@ Instrument{0}({1}) -> {2}({3}) #{4}
 PAN Correction
 
 :全トラックのPANに、指定された値を足します。\r\nマイナスは左側、プラスは右側です。
-Add the specified value to the overall stereo PAN of all tracks.\r\nMinus = left, Plus = right.
+Adds the specified value to the overall stereo panning of this track.\r\nMinus = Left Speaker ; Plus = Right Speaker
 
 :音量補正
 Volume Correction
 
 :全トラックの音量に、指定された値を足しこみます。\r\n大きくするほど、大きな音になります。
-Add the specified value to the overall volume of all tracks.\r\nThe larger the value, the louder the notes.
+Adds the specified value to the overall volume of all tracks.\r\nThe larger the value, the louder the notes.
 
 :楽器変更
 Instrument Change
@@ -10310,34 +10310,34 @@ Change to
 Tempo Correction
 
 :全トラックのテンポに、指定された値を足します。\r\n大きくするほど早くなります。
-Add the specified value to the overall tempo of all tracks.\r\nThe higher the number, the faster the song.
+Adds the specified value to the overall tempo of all tracks.\r\nThe higher the number, the faster the song.
 
 :全トラックの変更
-Change all tracks
+Change All Tracks
 
 :楽器 {0}({1}) -> {2}({3})
 Instrument {0} ({1})-> {2} ({3}).
 
 :このトラックのPANに、指定された値を足します。\r\nマイナスは左側、プラスは右側です。
-Add the specified value to the overall stereo PAN of this track.\r\nMinus = left speaker, Plus = right speaker.
+Adds the specified value to the overall stereo panning of this track.\r\nMinus = Left Speaker ; Plus = Right Speaker
 
 :ベロシティも補正する
 Velocity is also corrected.
 
 :このトラックの音量に、指定された値を足しこみます。\r\n大きくするほど、大きな音になります。
-Add the specified value to the overall volume of this track.\r\nThe larger the value, the louder the notes.
+Adds the specified value to the overall volume of this song.\r\nThe larger the value, the louder the notes.
 
 :トラックエディタ
-Track editor
+Track Editor
 
 :インポートする音楽ファイルを選択してください
 Please select the music file to import.
 
 :SongID {0}のトラックは常に0である必要があります。現在値:{1}
-SongID {0} track must always be 0.Current value: {1}.
+SongID {0} track must always be 0. Current value: {1}.
 
 :SongID {0}のトラックは常に16以内である必要があります。現在値:{1}
-SongID {0} tracks must always be under 16.Current value: {1}.
+SongID {0} tracks must always be under 16. Current value: {1}.
 
 :SongID {0}の楽器ポインタ「{1}」は無効です。
 The instrument pointer "{1}" of SongID {0} is invalid.
@@ -10361,7 +10361,7 @@ Track 10
 Track 15
 
 :楽譜
-Musical score
+Music Score
 
 :トラック14
 Track 14
@@ -10400,7 +10400,7 @@ Track 3
 Tracks
 
 :別ゲームからの曲移植
-Import from another GBA game
+Import from another GBA Game
 
 :Sappyで再生
 Play with Sappy
@@ -10412,25 +10412,25 @@ Export Music
 Import Music
 
 :mid2agbが設定されていません。\r\n設定画面より、mid2agbの設定をしてください。
-mid2agb is not set.\r\nPlease set mid2agb's path from the setting screen.
+mid2agb is not set.\r\nPlease set mid2agb's path from the Options screen.
 
 :選択する
-select
+Select
 
 :FEBuilderGBAでインポート
 Import with FEBuilderGBA
 
 :トリミング
-trimming
+Trimming
 
 :楽譜の後方の無音区間を無視する
-Ignore silent section behind score
+Remove Leading (Intro) Silence
 
 :楽譜の前方の無音区間を無視する
-Ignore silent section ahead of score
+Remove Trailing (Outtro) Silence
 
 :無音区間を除去します。
-Remove silent sections
+Remove Silent Sections
 
 :mid2agbでインポート
 Import with mid2agb
@@ -10439,7 +10439,7 @@ Import with mid2agb
 Master Volume
 
 :mid2agbで音楽をインポートします。\r\nループを作りたい場合は、DTMソフトでmidiにループラベルを入れてください。\r\n[ と ] のラベルを入れると、その間がループとして変換されます。
-Music will be imported with mid2agb.\r\nTo create a loop, set a loop label in midi with DTM software (Anvil for example).\r\nThe label is "[" and "]"
+Music will be imported with mid2agb.\r\nTo create a loop, set two labels using DTM software (Anvil Studio, Domino).\r\nThe labels needed are "[" and "]".
 
 :みょーん補正
 Pitch Correction
@@ -10454,34 +10454,34 @@ The PATH of midfix4agb is not set.
 If that doesn't help, the following options are also available:
 
 :LFOS,LFODL命令を無視する
-Ignore LFOS, LFODL instruction
+Ignore LFOS and LFODL Instructions
 
 :BEND,BENDR命令を無視する
-Ignore the BEND and BENDR instructions
+Ignore the BEND and BENDR Instructions
 
 :MOD,MODT命令を無視する
-Ignore MOD and MODT instructions
+Ignore MOD and MODT Instructions
 
 :音が「みょーん」となる場合は、有効にしてみてください。
-If the sound is strange (wonky, "mi~yoon")
+For if the sound is strange (wonky, "mi~yoon").
 
 :楽器
 Instrument
 
 :曲を演奏するときに利用する楽器を選択してください。\r\nディフォルトは現在の曲の楽器アドレスになっています。\r\n\r\nmidi楽器とFEの楽器は、並び順が違うので、注意してください。\r\n自分で楽器の順番を調整するか、\r\nNIMAP(Native Instrument Map)パッチを利用してください。
-Please select the instrument to use when playing the song.\r\nThe default is the instrument address of the current song from vanilla FE.\r\n\r\nPlease note that MIDI instruments and FE instruments are arranged in different order in terms of instrument numbers.\r\nAdjust the order of musical instruments yourself or accomodate in your MIDIs.\r\nPlease use NIMAP (Native Instrument Map) patch.
+Please select the instrument to use when playing the song.\r\nDefaults to the current song's instruments (from vanilla FE if unmodified).\r\n\r\nPlease note that MIDI instruments and FE/GBA instruments are ordered differently.\r\nAdjust the order of the musical instruments yourself.\r\nPlease use the NIMAP2 (Native Instrument Map) patch for easier organizing.
 
 :midiインポート設定
-midi import settings
+MIDI Import Settings
 
 :楽器を選択してください
-Please select an instrument
+Please Select an Instrument
 
 :歌などを入れる場合は、ループが必要です。\r\n楽器データの場合は不要です。\r\nインポート後に、楽譜データから変更することもできます。
-If you want to put a song, you need a loop.\r\nNot required for instrument data.\r\nYou can also change the score data after importing.
+If you want to import a song, you need a loop.\r\nNot required for instrument data.\r\nYou can also partially change the music's data after importing.
 
 :楽譜のループ
-Score loop
+Music Loop
 
 :Waveファイルは効果音に使うことを想定しています。\r\nそれを、音楽に利用すると、大量に容量を消費しますが、インポートしてもよろしいですか？
 Wave files are ideal for sound effects.\r\nTypically, when used for music, large amounts of data are used. Continue with the import?
@@ -10493,64 +10493,64 @@ Don't Loop
 Loop
 
 :このmidiはkeyが127以上です. {0}
-This midi key has more than 127.{0}.
+This midi has a key greater than 127. {0}
 
 :このmidiはvelocityが127以上です. {0}
-This midi has velocity> 127.{0}.
+This midi has velocity greater than 127. {0}
 
 :loopStartがないのに、loopEndがありました。無視します。
-There was loopEnd without loopStart. It will be ignored.
+There was a loopEnd label without loopStart. It will be ignored.
 
 :mid2agbがエラーになりました。\r\n
-mid2agb failed.\r\n
+mid2agb execution failed.
 
 :midiヘッダーがありません
-Midi header is missing
+Midi header is missing.
 
 :指揮トラックしかありません
-There is only a command track
+There is only a command track.
 
 :未対応の midi formatです
-UnsupportedmidiIt is format
+Unsupported MIDI format.
 
 :トラック数が16トラックを超えています。GBAでは、最大16トラックまでしか利用できません。
 The number of tracks exceeds 16 tracks. Due to GBA limitations, you can only use up to 16 tracks.
 
 :.equは2つの引数が必要です.\r\n例: .equ name, value\r\n\r\nFile:{0} Line:{1}
-.equ requires two arguments ..\r\nExample: .equ name, value\r\n\r\nFile:{0} Line:{1}
+.equ requires two arguments.\r\nExample: .equ name, value\r\n\r\nFile: {0} Line: {1}
 
 :説明:\r\n
-Description:.\r\n
+Description:\r\n
 
 :global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
-global has been defined twice.
+global has been defined twice. File: {0} Line: {1}
 
 :ラベルを書く前に、global 情報を定義してください.\r\nこのラベルがグローバルなのか、ローカルなのか調べるのに必要です。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
-Please define the global information before writing the label ..\r\nIt is necessary to check whether this label is global or local.\r\nExample: global aaa\r\n\r\nFile:{0} Line:{1}
+Please define the global information before writing the label.\r\nIt is necessary to check whether this label is global or local.\r\nExample: global aaa\r\n\r\nFile: {0} Line: {1}
 
 :グローバルラベル{2} すべてに利用されています。\r\n\r\nFile:{0} Line:{1}
-Used for all global labels {2}.\r\n\r\nFile:{0} Line:{1}
+Used for all global labels {2}.\r\n\r\nFile: {0} Line: {1}
 
 :グローバルラベルがないのに、ローカルラベルが使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
-A local label was used without a global label.\r\nPlease define global label first. \r\n\r\nFile:{0} Line:{1}
+A local label was used without a global label.\r\nPlease define global label first. \r\n\r\nFile: {0} Line: {1}
 
 :グローバルラベルがないのに、 .byte命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
-The .byte instruction was used without a global label.\r\nPlease define global label first. \r\n\r\nFile:{0} Line:{1}
+The .byte instruction was used without a global label.\r\nPlease define global label first. \r\n\r\nFile: {0} Line: {1}
 
 :.byteは1つ以上の引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}
-.byte requires one or more arguments ..\r\nExample:.byte arg1.\r\n\r\nFile:{0} Line:{1}
+".byte" requires one or more arguments.\r\nExample: .byte arg1.\r\n\r\nFile: {0} Line: {1}
 
 :.byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
-byte Error during parsing {2} \r\n{3}\r\nFile:{0} Line:{1}
+".byte" Error during parsing {2}.\r\n{3}\r\nFile: {0} Line: {1}
 
-:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
-The .word instruction was used without a global label.\r\nPlease define global label first..\r\n\r\nFile: {0}Line: {1}
+:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。\r\n\r\nFile:{0} Line:{1}
+The .word instruction was used without a global label.\r\nPlease define global label first.\r\n\r\nFile: {0} Line: {1}
 
 :.wordは1つ以上のラベル引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}
-word requires one or more label arguments.\r\nExample:.byte arg1.\r\n\r\nFile: {0}Line: {1}
+".word" requires one or more label arguments.\r\nExample:.byte arg1.\r\n\r\nFile: {0} Line: {1}
 
 :.wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
-Error during error parsing. {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
+Error during error parsing. {2} \r\n{3}\r\n\r\nFile: {0} Line: {1}
 
 :ソングテーブルがありません。\r\n\r\nglobal sss\r\nsss:\r\nこのようなデータが必要です。\r\n
 There is no song table.\r\n\r\nglobal sss\r\nsss:\r\nSuch data is necessary.\r\n
@@ -10559,7 +10559,7 @@ There is no song table.\r\n\r\nglobal sss\r\nsss:\r\nSuch data is necessary.\r\n
 There is no song header in the song table.
 
 :数式以外の文字が入っています。 expr:{0}
-Characters other than mathematical expressions are included. expr:{0} (Try repairing MIDI?)
+Characters other than mathematical expressions are included. expr:{0} (Try repairing the MIDI?)
 
 :Waveファイルではありません. RIFFヘッダがありません
 Not a WAV file. There is no RIFF header.
@@ -10571,10 +10571,10 @@ Not a WAV file. Data is too small.
 Not a WAV file. data_chunk_size ({0}) is too small.
 
 :Waveファイルが高音質すぎます。{0}bit\r\n品質は、8bit 12khz monoぐらいにしてください。
-Wave file is too high-quality.{0} bit.\r\nQuality should be about 8bit 12khz mono.
+Wave file is too "high-quality" at {0} bit.\r\nThe format of the WAV should be 8-bit mono (perhaps 12khz).
 
 :このWavファイルはとても大きく{0}バイトも消費しますが、本当にインポートしてもよろしいですか？
-This WAV file consumes a very large {0} bytes! Proceed with importing regardless?
+This WAV file consumes a very large size of {0} bytes! Proceed with importing anyway?
 
 :Waveファイルのインポートを取りやめました
 Canceled WAV importing.
@@ -10583,19 +10583,19 @@ Canceled WAV importing.
 Could not import instrument data.
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
-GBAMusRiper returned an error.\r\nFEBuilderGBA side substitutes.\r\n\r\nGBA MusRiper error message.\r\n{0}.
+GBAMusRiper returned an error.\r\nFEBuilderGBA will substitute.\r\n\r\nGBAMusRiper error message:\r\n{0}.
 
 :GBAMusRiperがエラーを返しました。\r\n{0}
 GBAMusRiper returned an error.\r\n{0}.
 
 :midfix4agbがエラーになりました。\r\n{0}
-midfix4agb got an error.\r\n{0}.
+midfix4agb returned an error.\r\n{0}.
 
 :曲番号
 Song Number
 
 :リストの中身はあまり変更しない方がよさそうです。\r\nフリーズの原因になることがあります。
-It seems better not to change the contents of this list.\r\nIt may cause freezing.
+It's probably best not to change the contents of the list too much.\r\nIt may cause freezing.
 
 :曲名
 Song Name
@@ -10625,7 +10625,7 @@ Display Condition ASM
 Icon (value * 8)
 
 :ASM関数
-ASM function
+ASM Function
 
 :選択子4不明2
 Selector 4 Unknown 2
@@ -10634,7 +10634,7 @@ Selector 4 Unknown 2
 Selector 4 Display position
 
 :選択子4テキスト
-Selector 4 text
+Selector 4 Text
 
 :選択子4ヘルプ
 Selector 4 Help
@@ -10643,10 +10643,10 @@ Selector 4 Help
 Selector 3 Unknown 2
 
 :選択子3表示位地
-Selector 3 Display position
+Selector 3 Display Position
 
 :選択子3テキスト
-Selector 3 text
+Selector 3 Text
 
 :選択子3ヘルプ
 Selector 3 Help
@@ -10658,7 +10658,7 @@ Selector 2 Unknown 2
 Selector 2 Display position
 
 :選択子2テキスト
-Selector 2 text
+Selector 2 Text
 
 :選択子2ヘルプ
 Selector 2 Help
@@ -10667,10 +10667,10 @@ Selector 2 Help
 Selector 1 Unknown 2
 
 :選択子1表示位地
-Selector 1 Display position
+Selector 1 Display Position
 
 :選択子1テキスト
-Selector 1 text
+Selector 1 Text
 
 :選択子1ヘルプ
 Selector 1 Help
@@ -10685,10 +10685,10 @@ Item Name
 1=Items Possessed
 
 :2=武器レベル 武器
-2=Weapon Levelweapon
+2=Physical Weapon Level
 
 :3=武器レベル 魔法
-3=Weapon Levelmagic
+3=Magic Weapon Level
 
 :字下げ
 Indentation
@@ -10706,7 +10706,7 @@ String Pointer
 4=Battle Forecast 2
 
 :5=状況画面
-5=Status screen
+5=Status Screen
 
 :上 RMenuPointer
 Up RMenu Pointer
@@ -10721,34 +10721,34 @@ Left RMenu Pointer
 Right RMenu Pointer
 
 :参照データ
-Reference data.
+Reference Data
 
 :順番
-In order.
+In Order
 
 :魔物ランダム
 Random Monster
 
 :何かの指定
-Designation of Something
+Designation
 
 :00=標的00
 00=Target 00
 
 :08=標的08
-08=target 08
+08=Target 08
 
 :10=標的10
 10=Target 10
 
 :18=標的18
-18=target 18
+18=Target 18
 
 :20=標的20
-20=target 20
+20=Target 20
 
 :28=標的28
-28=target 28
+28=Target 28
 
 :ユニット依存
 Unit Dependent
@@ -10781,19 +10781,19 @@ Support Partner 2
 Support Partner 1
 
 :A会話
-A Conversation
+A-Rank Conversation
 
 :B会話
-B Conversation
+B-Rank Conversation
 
 :C会話
-C Conversation
+C-Rank Conversation
 
 :このデータは支援テーブルの外にあります。
 This data is outside the support table.
 
 :C    51からB0まで\r\nB    B1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
-Unranked    0 to 50\r\nC    51 to B0\r\nB    B1 to F0\r\nA    F1 and up\r\n\r\nEach support partner begins at the "initial value".\r\nSupport level increases from there when partners are near based on "Growth".\r\nWhen support points exceed rank thresholds, a command and conversation will occur.
+Unranked    0 to 50\r\nC    51 to B0\r\nB    B1 to F0\r\nA    F1 and up\r\n\r\nEach pair has their values starting at the Initial Value.\r\nThe support level increases from there while partners are near each other via the Growth Value.\r\nWhen support rank thresholds are met, a the support command and conversation are available.
 
 :支援相手10
 Support Partner 10
@@ -10808,7 +10808,7 @@ Support Partner 8
 Separator
 
 :支援人数
-# Partners
+# of Partners
 
 :進行度
 Growth
@@ -10832,85 +10832,85 @@ Support Partner 4
 Support Partner 3
 
 :このチェックボックスを有効にしている場合、\r\n初期値、進行値を変更すると、\r\nその相手の初期値、進行値も自動的に調整します。\r\n(ただし、相手の支援データが存在している必要があります。)
-When this check box is enabled, hanging the initial \r\ncand increased value automatically adjusts for two units.\r\n(However, the other party's support data must be present.)
+When this check box is enabled, the initial value \r\ncand growth value automatically sync for these units.\r\nHowever, the other unit's support data must be present.
 
 :ユニット({0})->ユニット({1})へ支援と、その逆の、ユニット({1})->ユニット({0})へ支援の設定値が違います。\r\n初期値({2} vs {3})、進行度({4} vs {5})\r\n初期値と進行度は、同じ値にする必要があります。
-Support setting to unit ({1}) -> unit ({0}) is different from support to unit ({0}) -> unit ({1}) and vice versa.\r\nInitial value ({2}vs{3}), increase rate ({4}vs{5})\r\nThe initial value and the increase rate must be the same value.
+Support from unit ({1}) to unit ({0}) is different than from unit ({0}) to unit ({1}).\r\nInitial value ({2} vs {3}), increase rate ({4} vs {5})\r\nThe initial value and the increase rate must be the same value.
 
 :ユニット({0})->ユニット({1})への支援はありますが、逆に、ユニット({1})->ユニット({0})への支援がありません。
-Supports must be defined in both units' support lists in order to function.\r\nThe support between unit ({0}) and unit ({1}) has been defined,\r\nbut not defined between unit ({1}) and unit ({0}).\r\nPlease ensure that the support data exists for both units.
+Supports must be defined in both units' support lists in order to function.\r\nThe support from unit ({0}) to unit ({1}) has been defined,\r\nbut not from unit ({1}) to unit ({0}).\r\nPlease ensure that the support data exists for both units.
 
 :ユニット({0})が、ユニット({1})への支援は、支援相手のユニットがUnitID:0x45を超えているので、敵ユニット同士の支援だと思われますが、「進行度」が({2})に設定されています。\r\n敵ユニットの支援ポイントが増えることはないので、0にするべきです。\r\n(UnitID:0x45を超えるデータに仲間になるユニットを配置してはいけません)
-Support to unit ({1}) from unit ({0}) seems to regard enemy units because ({1}) exceeds ID 0x45.\r\nSince the number of support points for enemy units never increases, they should be set to 0.\r\n(UnitID: Do not place units that will become companions for data exceeding 0x45)
+Support of unit ({1}) from unit ({0}) seems to be for an enemy unit because ({1}) exceeds ID 0x45.\r\nSince the number of support points for enemy units never increases, they should be set to 0.\r\n(UnitID: Do not place units that will become companions for data exceeding 0x45)
 
 :ユニット({0})の支援人数が正しくありません。支援人数が{1}人なのに、実際のデータには、{2}人の支援があります。
-The support amount of the unit ({0}) is incorrect. There are {2} people 's support in actual data, although the number of people to support is {1}.
+The support amount of the unit ({0}) is incorrect. There are {2} unit's support in the data, although the number of people supported is {1}.
 
 :支援で登録できる人数は7人までです。それを上回る({0})人を、データ({1})で、指定しています。
-You can register up to 7 people with support. More ({0}) people are specified by data ({1}).
+You can register up to 7 units forsupport. The number of exceeded units ({0}) are specified by data ({1}).
 
 :支援を登録できるのは7人までです
-Up to 7 people can be used for supports.
+Up to 7 units can be supported.
 
 :支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。
-Structure size of support data is not enough.\r\nInvalid address ({0}) is specified.
+The structure size of the support data is insufficient.\r\nInvalid address ({0}) is specified.
 
 :支援データにめちゃくちゃな値({0})が格納されています。\r\n支援ポインタが正しくない値を指しているようです。\r\nこのユニットの支援ポインタを0に変更し、設定し直すことを推奨します。
-Corrupted values({0}) are used as support data.\r\nThe support pointer seems to point to an incorrect value.\r\nIt is recommended to change the support pointer of this unit to 0 and reset it.
+Corrupted values({0}) are used as support data.\r\nThe support pointer seems to point to an incorrect value.\r\nIt is recommended to set the pointer of this unit to 0 to reset it.
 
 :既に別のアドレスで定義されています
 Already defined with a different address.
 
 :支援元
-Src Support
+Support
 
 :相手の初期値も自動調整する
-Automatically adjust the other patner's value
+Automatically Adjust Partner Values
 
 :誕生月
-Birth Month.
+Birth Month
 
 :血液型
-Blood Type.
+Blood Type
 
 :現在TBLを利用しています。\r\nTBLを利用しながらun-haffman patchを利用すると予期しないトラブルが発生することがあります。\r\n「はい」を選択すると、パッチのインストールを強行します。\r\n「いいえ」を選択すると、パッチ適応を取りやめます。(推奨)\r\n\r\nどうしますか？
-Currently using TBL.\r\nIf you use the anti-Huffman patch while using TBL, unexpected troubles may occur.\r\nSelect "Yes" to force installation of the patch.\r\nSelect "No" to cancel patch adaptation. (Recommended).\r\n\r\nContinue?
+Currently using TBL.\r\nIf you use the Anti-Huffman patch while using TBL, unexpected bugs may occur.\r\nSelect "Yes" to force installation of the patch.\r\nSelect "No" to cancel patch adaptation (Recommended).
 
 :FEの文字コードはハフマン符号化テーブルに登録されている必要があります。\r\n\r\n・方法1.\r\nあきらめて、システムに登録されている別の文字に変更する。\r\n再編集して、別の利用します。\r\n\r\n・方法2.\r\nAnti-Huffman Patchを利用して符号テーブルを無視することができます。\r\nパッチ画面を開きますので、Anti-Huffman Patchを適用した上で、再書き込みしてください。\r\n\r\n・方法3.\r\n符号テーブル画面を開いて、符号テーブルを変更します。\r\n不要な文字を潰して、この文字コードを利用します。(日本語で特に有効です)\r\n\r\nおすすめは、 方法2 == 方法1  > 方法3 です。
-The character code of FE must be registered in the Huffman coding table.\r\n\r\nMethod 1:\r\nGive up and change to another character registered in the system.\r\nRelease and use another.\r\n\r\nMethod 2 (Recommended):\r\nYou can ignore the Huffman code table using the Anti-Huffman Patch.\r\nTo open the patch screen, apply the Anti-Huffman Patch and rewrite it.\r\n\r\nMethod 3.\r\nOpen the code table screen and change the sign table.\r\nUse this character code by crushing unnecessary characters.\r\n\r\nThe recommendation order is method 2 == method 1 >> method 3.
+The character code of FE must be registered in the Huffman Encoding Table.\r\n\r\nMethod 1:\r\nGive up and change to another character registered in the system.\r\nHowever, this is not the standard.\r\n\r\nMethod 2 (Recommended):\r\nYou can ignore the Huffman Encoding Table using the Anti-Huffman Patch.\r\nOpen the patch screen, apply the Anti-Huffman Patch and rewrite data.\r\n\r\nMethod 3.\r\nOpen the Encoding Table screen and change the sign table.\r\nUse this character code by removing unnecessary characters.\r\n\r\nThe recommendation order is method 2 == method 1 >> method 3.
 
 :方法1  あきらめる
-Method1 Give Up
+Method 1: Give Up
 
 :方法2 Anti-Huffman
-Method2 Anti-Huffman
+Method 2: Anti-Huffman (Standard)
 
 :方法3 符号テーブル
-Method3 Code Table
+Method 3: Code Table
 
 :符号テーブルに登録されていません
-Not registered in the code table
+Not Registered in the Encoding Table
 
 :使用回数検索
-Search Char Frequency
+Search Character Frequency
 
 :回以下しか出現しない文字取得
 Character appears x times or less
 
 :番号 文字 回数　登場会話ID
-Number of time character appears in text, Conversation ID
+Number of time a Character appears in text, Conversation ID
 
 :文字文字
 Letter
 
 :文字検索
-Character search
+Character Search
 
 :既読フラグ
-Read flag
+Read Flag
 
 :表示フラグ
-Display flag
+Display Flag
 
 :タイトル
 Title
@@ -10919,19 +10919,19 @@ Title
 Text to Speech
 
 :NarrowFont変換
-NarrowFont conversion
+Narrow Font conversion
 
 :エスケープコード(&N)
-Script Notation(&N)
+Script Notation (&N)
 
 :書き込んでいないテキストがありますが、テキストを切り替えてもよろしいですか？
-You have modified text that is not written to the ROM.\r\nUnsaved changes will be lost. Do you want to switch?
+You have modified text that is not written to the ROM. Unsaved changes will be lost.\r\nAre you sure you want to switch text entries?
 
 :この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。
-This area is reserved as a string area for patches that extend the system.\r\nDo NOT use if you do not know what you are doing.
+This area is reserved as a string area for patches that extend system functionality.\r\nDo NOT use if you do not know what you are doing.
 
 :以下のテキストにエラーがあります。\r\nエラーを修正して、「書き込み」ボタンを押してください。
-There is an error in the following text.\r\nCorrect the error and push the "Write" button.
+There is an error in the following text.\r\nCorrect the error and click the "Write" button.
 
 :RAMエリアのため、書き込めません.
 Cannot write because of RAM area.
@@ -10949,7 +10949,7 @@ Unable to write data because it is out of the character table range.\r\nTextID:{
 Unable to write to RAM area.\r\nTextID:{0}
 
 :ユニットの位置が0x08から0xFの範囲にありません。
-Unit position is not in the range 0x08 to 0xF.
+Unit position is not in the range of 0x08 to 0xF.
 
 :[表示]
 [Display]
@@ -10970,16 +10970,16 @@ Unit position is not in the range 0x08 to 0xF.
 Left End
 
 :左中
-Left Middle
+Left-Middle
 
 :左右
-Left Right
+Left-Right
 
 :右左
-Right Left
+Right-Left
 
 :右中
-Right Middle
+Right-Middle
 
 :右端
 Right End
@@ -10997,25 +10997,25 @@ FFFF Visiting Character
 Warning:\r\nThere is no font\r\n"{0}"
 
 :警告:\r\n最大文字幅が\r\nセリフ上限を\r\n超えています。
-Warning:\r\nmaximum character\r\nwidth exceeds the\r\nserif upper limit\r\n(is text too wide?)
+Warning:\r\nmaximum character\r\nwidth exceeds the\r\nwidth limit\r\n(Too much text?)
 
 :警告:\r\nセリフが\r\n3行以上に\r\nなっています
-Warning:\r\nThere are \r\nmore than 3 lines\r\nof serif\r\n(did you miss an [A]?)
+Warning:\r\nThere are \r\nmore than 3 lines\r\nof serif\r\n(Did you miss an [A]?)
 
 :Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n\r\n{0}
-Google translation returned an error.\r\nI sent the translation request too much.\r\n\r\n{0}
+Google Translation returned an error.\r\nToo many requests.\r\n\r\n{0}
 
 :改行やエスケープシーケンを入れてはいけません。\r\n
-Do not insert newlines or escape sequences.\r\n
+Do not insert newlines or escape symbols.\r\n
 
 :最大で2行まで書くことができます。\r\n
-Up to two lines can be written.\r\n
+Up to 2 lines can be written.\r\n
 
 :最大で3行まで書くことができます。\r\n
 Up to 3 lines can be written.\r\n
 
 :FEでは文字列は、文字列テーブルのIDで管理されています。\r\n
-In FE, the text string is managed by the ID of the text string table.\r\n
+In FE, text strings are handled by IDs in the text string table.\r\n
 
 :警告:\r\n範囲外のTextID:{0}を参照しています。
 warning:.\r\nReferences TextID:{0} out of range.
@@ -11024,13 +11024,13 @@ warning:.\r\nReferences TextID:{0} out of range.
 Warning: There is no font.\r\nCharacters: {0}\r\n{1}
 
 :警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
-Warning: Text is too long in the side.\r\nEstimated number of dots: ({0},{1})\r\n{2}
+Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\r\n{2}
 
 :警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
-Warning: Too many lines of text.\r\nEstimated dot number ({0},{1})\r\n{2}
+Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
 
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
-Warning:\r\nAlthough it is text for conversation, there are no symbols such as @0003.
+Warning:\r\nAlthough it is text for conversations, there are no symbols such as @0003.
 
 :警告:\r\nシステムメッセージなのに{0}があります。
 Warning:\r\nThere is {0} even though it is a system message.
@@ -11039,7 +11039,7 @@ Warning:\r\nThere is {0} even though it is a system message.
 Warning:\r\nThere is a {0} line message but {1}.
 
 :現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。
-Currently, the text being referenced is being branched.\r\nPlease execute again after the branch processing is completed.
+Currently, the text being referenced is being branched.\r\nRun it again after the branching process is finished.
 
 :話す人:
 Talk:
@@ -11072,7 +11072,7 @@ Source Location:
 Jump
 
 :ジャンプする場所:
-Place to jump:
+Place to Jump:
 
 :新規追加
 New Addition
@@ -11081,16 +11081,16 @@ New Addition
 Source Text
 
 :未参照の空き領域の探索
-Search for\r\nunreferenced free space
+Search for u\Unreferenced Free Space
 
 :ID テキスト
-ID Text
+Text ID
 
 :検索ワード
 Search
 
 :すべてのテキストをファイルに取り出して保存したり、ファイルから読みこむことができます。\r\n文字列の置換を行いたい場合は、この機能を利用してください。
-Use "Export All Text" to save the game's text to a file.\r\nUse "Import All Text" to retrieve all the text from a file.\r\nThis function replaces the designated parts of the text.
+Use "Export All Text" to dump the game's text to a file.\r\nUse "Import All Text" to apply all text from a file.\r\nThis function replaces text based on ID.
 
 :すべてのテキストをファイルに書きだす
 Export All Text
@@ -11132,49 +11132,49 @@ ru=Russian
 fr=French
 
 :eo=エスペランド語
-eo=Esperan
+eo=Esperanto
 
 :zh-CN=中国語
 zh-CN=Chinese
 
 :google translateに投げて、翻訳しますw\r\n負荷をかけすぎないように、忖度してください。
-Be careful not to overload google translate; please be patient.
+Be careful not to overload Google Translate; please be patient.
 
 :参照情報の追加
-Add reference information.
+Add Reference Information
 
 :この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。
-This string doesn't seem to be referenced from anywhere.\r\nIf it is referenced, please enter the information.
+This string doesn't seem to be referenced anywhere.\r\nIf it is referenced, please enter where.
 
 :このテキストを利用している箇所
 Where this text is used
 
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
-This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
+This string is referenced from the following location.\r\nHowever, there are some references from programs and patches that cannot be detected.
 
 :エクスポート制限
-Export limit
+Export Limit
 
 :0=すべてエクスポートする
-0=Export all
+0=Export Everything
 
 :1=ユニットだけエクスポートする
-1=Export only units
+1=Export Only Units
 
 :2=クラスだけエクスポートする
-2=Export only classes
+2=Export Only Classes
 
 :3=アイテムだけエクスポートする
-3=Export only items
+3=Export Only Items
 
 :4=サウンドルームだけエクスポートする
-4=Export only the sound room
+4=Export Only the Sound Room
 
 :5=支援会話だけエクスポートする
-5=Export only support conversations
+5=Export Only Support Conversations
 
 :6=スキル関係だけエクスポートする
-6=Export only skills
+6=Export Only Skills
 
 :参照される場所について説明してください
 Please explain where it is referenced.
@@ -11183,16 +11183,16 @@ Please explain where it is referenced.
 Do you want to add a reference to this string? 
 
 :参照の更新
-Reference update
+Reference Update
 
 :文字列の参照を追加
-Add string reference
+Add String Reference
 
 :テキスト-エスケープコード選択
-Text - Escape code selection
+Text-Escape Code Selection
 
 :合成音声エンジンで自動的にテキストを読み上げます。\r\nタイプミスを見つけるには音読するのが一番です。
-The synthetic voice engine automatically reads the text.\r\nIt is best to read aloud to find typos.
+The synthetic voice engine automatically reads the text.\r\nIt is best to read things out loud to find typos.
 
 :読み上げ開始
 Start Text to Speech
@@ -11201,10 +11201,10 @@ Start Text to Speech
 Stop Speech
 
 :読み上げ速度
-Speech speed
+Speech Speed
 
 :このサイズ以上の文字列を読み上げる
-Speak that is larger than this size
+Read out strings larger than this size
 
 :読み上げエンジン
 Speech Engine
@@ -11213,28 +11213,28 @@ Speech Engine
 Speech Setting
 
 :更新チェック
-Check for updates
+Check for Updates
 
 :すべての作品
-All works
+All Works
 
 :アニメーションエディタ
-Animation editor
+Animation Editor
 
 :00 表示しない
-00Do not show
+00 Do Not Show
 
 :00 マップを表示
-00Show map
+00 Show Map
 
 :100 パレット0
-100Palette 0
+100 Palette 0
 
 :101 黒単色
-101Black single color
+101 Black single color
 
 :01 戦闘画面
-01Battle screen
+01 Battle screen
 
 :効果音
 Sound Effect
@@ -11246,25 +11246,25 @@ Code
 Loop Start
 
 :ミスした場合の終端
-Termination in case of miss
+Miss Termination
 
 :防衛スキル
-Defense skill
+Defense Skill
 
 :戦闘アニメーションには、Mode1,Mode3,5,6,7,8,9,10,11,12 のモードが必要になります。
-Mode 1, Mode 3, 5, 6, 7, 8, 9, 10, 11, 12 are required for battle animation.
+Mode 1, 3, 5, 6, 7, 8, 9, 10, 11, and 12 are required for battle animation.
 
 :魔法アニメーションには、ミス終端として利用されます。\r\n攻撃がミスの場合は、ミス終端で終了します。\r\nミス終端以降に、命中したアニメーションを定義できます。
-Magic animation is used as a mistake termination.\r\nIf the attack is a mistake, it ends at the mistake end.\r\nAfter the mistake termination, you can define the hit animation.
+Magic animation is used as a Miss termination.\r\nIf the attack misses, it ends at the Miss termination.\r\nAfter the Miss, you can define the hit animation.
 
 :魔法の発動
 Activate magic
 
 :魔法が命中
-Magic hits
+Magic Hits
 
 :アニメーションの停止
-Stop animation
+Stop Animation
 
 :アニメーションを再生
 Play Animation
@@ -11276,46 +11276,46 @@ Please choose a background.
 Please select an image.
 
 :今はまだ、別アニメーションの画像をコピーできません。\r\nそのアニメーションをエクスポートして、画像単体で追加してください。
-Can not copy images of another animation yet.\r\nPlease export that animation and add it by itself.
+Cannot copy images from different animations.\r\nPlease export the animation and add the images manually.
 
 :画像({0})がリスト存在しないため、ペーストできません。
-Paste can not be done because the image ({0}) does not have a list.
+Pasting can not be done because the image ({0}) does not have a list.
 
 :背景の取出し
-Export background
+Export Background
 
 :画像の取出し
-Export image
+Export Image
 
 :1/60秒
-1/60 sec
+1/60 Sec
 
 :背景の追加
-Import background
+Import Background
 
 :画像の追加
-Import image
+Import Image
 
 :表示時間
 Wait
 
 :ソングテーブルへジャンプ
-Jump To SongTable
+Jump to SongTable
 
 :Command48ハックを利用して効果音を再生します。\r\nアニメーションの最中に指定した効果音を再生します。
 Use the Command 48 hack to play sound effects.\r\nPlay the specified sound effect during animation.
 
 :スキル発動時のアニメーションを定義します。\r\nスキルの先頭で1回だけ指定します。
-Define animation at skill activation.\r\nYou specify it only once at the beginning of the skill.
+Define the animation at skill activation.\r\nYou specify it only once at the beginning of the skill.
 
 :通常スキル
-Normal skill
+Normal Skill
 
 :ループ
 Loop
 
 :Command01 Hackで実装されるループ開始を定義します。\r\n\r\nC01でHPが減っている間、\r\nループで指定したアニメーションからC01の直前までのアニメションを繰り返します。\r\n主に魔道士のマントのはためきに利用されます。
-Command01 Defines the loop start implemented by Hack.\r\n\r\nWhile HP is decreasing at C 01,\r\nI repeat the animation from the animation specified by the loop to just before C 01.\r\nIt is primarily used for the mage 's fluttering of mage.
+Command01 defines the start of the loop implemented by Hack.\r\n\r\nWhile HP is decreasing during C01,\r\nRepeats the animation specified in the loop to just before C01.\r\nThis is mainly used for the fluttering of the Mage's cape.
 
 :終端
 Termination
@@ -11327,10 +11327,10 @@ Defines the end of the mode.
 Zoom BG
 
 :不透明レベル
-opacity level
+Opacity level
 
 :輝度レベル
-brightness
+Brightness
 
 :地形
 Terrain
@@ -11342,10 +11342,10 @@ Focus
 Melee
 
 :遠隔 プレイヤ寄り
-Range to the player
+Range to Player
 
 :遠隔 敵寄り
-Range to the Enemy
+Range to Enemy
 
 :標的
 Target
@@ -11354,82 +11354,82 @@ Target
 Player
 
 :0x100以下への書き込みは、危険なのでできません。
-Writing to 0x100 or less is not possible because it is dangerous.
+Writing to 0x100 or less is not possible due to instability.
 
 :ASMコードの直編集
-Direct editing of ASM code
+Direct ASM Editor
 
 :フックするアドレス
-Address to hook
+Address to Hook
 
 :lyn.eventを作成する時は、ROMに書き込むことはできません。
-When creating lyn.event, you cannot write to ROM.
+It is not possible to write to ROM when creating lyn.event.
 
 :エラーが返されました。\r\n{0}
 An error was returned.\r\n{0}
 
 :ファイルがゼロバイトです。\r\nファイル名:{0}
-The file is zero bytes.\r\nFile name: {0}
+The file is zero bytes.\r\nFile Name: {0}
 
 :このファイルは {0}バイトも書き換えますが、本当によろしいですか？\r\n\r\n(ORG指定を間違って利用していませんか?)\r\nファイル名:{1}
-This fileI will also rewrite the {0} byte, is it really okay?\r\n\r\n(Do you misuse ORG designation?)\r\nFile name: {1}
+This file also rewrites {0} bytes, are you sure you want to do that?\r\n\r\n(Are you using the wrong ORG specification?)\r\nFile Name: {1}
 
 :コンパイルした結果のファイルがないので、パッチを作成できません。
-Unable to create patch since there is no compiled result file.
+Unable to create patch since there is no file with compiled results.
 
 :フックするのに利用するレジスタを選択します。\r\nr3を利用するとEAのJumToHackと同じ意味になります。
 Select the register to use for hooking.\r\nUsing r3 is equivalent to EA's JumToHack.
 
 :データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。
-Define the area where data is stored.\r\nBy default, the end of ROM is automatically specified.
+Define the area to store data.\r\nBy default, the end of ROM is chosen.
 
 :0=中間ファイルは利用しないので消去する
-0=Deletes the intermediate file because it does not use it
+0=Delete the intermediate files as they will not be used.
 
 :2=ELFを保存する
 2=Save ELF
 
 :3=ELFとシンボルを両方とも保存
-3=Save both ELF and symbols
+3=Save both ELF and Symbols
 
 :4=lyn.eventとして保存する
-4=lyn.Save as event.
+4=Save as lyn.event
 
 :中間ファイル
-Intermediate file
+Intermediate File
 
 :フックに利用するレジスタ
-Register used for hook
+Register used for Hook
 
 :アセンブリ(コンパイル)に成功した場合は、ROMに埋め込みますか?
 If assembly (compiling) succeeded, will it be embedded in ROM?
 
 :いいえ、ROMには干渉しません
-No, it does not interfere with ROM
+Do not embed (Does not interfere with ROM data)
 
 :所定のアドレスに埋め込みます
-Embed at given address
+Embed at Given Address
 
 :フリー領域に配置してジャンプコードを埋め込みます
-Place it in the free area and embed the jump code
+Place in Free Space and embed Jump Code
 
 :無改造ROMを選択してください
-Please select unmodified ROM
+Please select an unmodified ROM.
 
 :無改造ROMを指定してください。
-Please specify the unmodified ROM.
+Please select an unmodified ROM.
 
 :ROMヘッダーを復旧させました
-Restored the ROM header.
+Restored the ROM header!
 
 :{0}に適合する元ファイルを自動検索中・・・
-Auto searching for source files conforming to {0} · · ·
+Searching for source files that match {0}...
 
 :ROMヘッダーの自動復旧
-Automatic recovery of ROM header.
+Automatic ROM Header Recovery
 
 :ROMヘッダーを自動復旧する
-Automatically recover ROM header.
+Automatic ROM Header Recovery
 
 :無改造ROM
 Unmodified ROM
@@ -11438,13 +11438,13 @@ Unmodified ROM
 Automatically restore damaged ROM headers 0x0-0x100.
 
 :変更したデータが保存されていません。\r\n名前を変更する前に、データを保存してください。
-The changed data has not been saved.\r\nSave the data before changing the name.
+Changed data has not been saved.\r\nSave the data before changing the name.
 
 :仮想ROMの名前を変更することはできません。
 You can not change the name of virtual ROM.
 
 :ファイル名として利用できない文字が含まれています
-Contains characters that can not be used as file names
+Contains characters that can not be used as file names.
 
 :現在の名前
 Current Name
@@ -11456,10 +11456,10 @@ New Name
 Change Project Name
 
 :プロジェクトのファイル名の変更を安全に行います。\r\n過去のバックアップの名前も行います。
-Safely change the project file name. \r\nThe name of the past backup is also done.
+Safely change the project file name. \r\nBackups will also be renamed.
 
 :どちらのボタンをクリックしますか？
-Which button do you click?
+Which button will you click?
 
 :ターゲット({0})が見つかりませんでした。
 Target ({0}) was not found.
@@ -11471,19 +11471,19 @@ Unmodified ROM ({0}) was not found.
 The base system ({0}) was not found.
 
 :完成
-Complete.
+Complete!
 
 :まだ未実装です!
-Not implemented yet !.
+Not implemented yet!
 
 :SkillSystemsがインストールされていません。
 Skill System is not installed.
 
 :スキル拡張をソースコードからビルドしてインストールします。\r\nこの機能は危険なので、実行前に必ずバックアップを取ってください。\r\nまた、変更後に必ず動作テストをしてください。\r\nもし、動作テストに不合格だった場合は、危険なので保全せずにFEBuilderGBAを終了してください。\r\n\r\n詳細な説明と、スキル拡張のソースコードのダウンロードは、以下のURLを参照してください。\r\n
-Build and install Skill System from source code.\r\nThis feature is dangerous, so be sure to make a backup before running it.\r\nAlso, be sure to perform an operation test after making changes.\r\nIf the operation test fails, close FEBuilderGBA without maintenance because it is dangerous.\r\n\r\nPlease refer to the following URL for detailed explanation and download of source code of skill extension.\r\n
+Build and install Skill System from source code.\r\nThis feature is unstable, so be sure to make a backup before running it.\r\nAlso, be sure to perform a playtest after making changes.\r\nIf playtesting fails, close FEBuilderGBA without saving.\r\n\r\nPlease refer to the following URL for a detailed explanation and download of the source code.\r\n
 
 :ターゲット:ビルドするスキル拡張
-Target: Skill System to build.
+Target: Skill System Build
 
 :ビルド開始
 Build Started
@@ -11492,16 +11492,16 @@ Build Started
 Takeover of skill assignment.
 
 :0=引き継がない
-0=No Take over(Replace Data)
+0=Don't Take Over (Replace Data)
 
 :1=引き継ぐ
-1=Take over(Use Current ROM Data)
+1=Take Over (Use Current ROM Data)
 
 :カスタムビルド
 Custom build
 
 :逆コンパイル中です。しばらくお待ちください。
-Currently decompiling. Please wait.
+Currently decompiling. Please wait...
 
 :ファイルを読めませんでした。
 The file could not be read.
@@ -11513,58 +11513,58 @@ Processing result is empty.
 Unable to get file name because it is a virtual ROM.
 
 :バックアップがある場所を指定してください。
-Please specify the location where the backup is located.
+Please specify the location where the backup is.
 
 :ファイル名:\r\n{0}\r\n\r\n更新日付:\r\n{1}
-Filename:\r\n{0}\r\n\r\nUpdate date:\r\n{1}
+Filename:\r\n{0}\r\n\r\nDate:\r\n{1}
 
 :エミュレータにロードするROMを作れませんでした。\r\n{0}
 Unable to create a ROM to load into the emulator.\r\n{0}
 
 :直前のバックアップだと、現在のROMとの2点DIFFだけとなり、精度が落ちます。
-If it is the last backup, there are only two difference comparisons, so the accuracy drops.
+If it is the last backup, there are only two samples to compare, leading to less accuracy.
 
 :相違点がありません。\r\n比較条件を変えてください。\r\n比較条件を変えても変わらない場合、比較対象のROMを見直してください。
-There is no difference.\r\nPlease change the comparison condition.\r\nIf the comparison condition does not change even after changing the comparison condition, please check the ROM needing to be compared.
+There is no difference.\r\nPlease change the comparison condition.\r\nIf the comparison condition does not change even after changing it, please double-check the ROM.
 
 :探索するprefix
-Search prefix
+Search Prefix
 
 :バックアップROMがある場所を追加
-Add location where backup ROM is located
+Add Location for Backup ROM
 
 :バックアップ履歴(上が最新) 
-Backup history (above is the latest)
+Backup History (Descending Date)
 
 :バックアップを利用して、バイナリ比較で問題点を推測するツールです。\r\n\r\n正しく動いていた最後のROM(OK ROM)と、その次の世代である正しく動かなくなった最初のROM(NG ROM)、そして現在のROM(CURRENT)から、3点DIFFを取得し、相違点を計算します。\r\n\r\n一番最後に正しく動作していたROMはどれでしょうか？\r\nROM名をダブルクリックすると、そのROMをエミュレータで動作させます。\r\n現在問題になっているバグが発生しない、最後に正しく動いていたROMを見つけてください。
-This is a tool to estimate problems through binary comparison using backups.\r\n\r\nThree different points are acquired, from the last ROM (OK ROM) that was working correctly, the first ROM (NG ROM) that had issues, and the current ROM (CURRENT) opened ROM.\r\n\r\nWhich ROM ran correctly at first?\r\nDouble-click on the ROM name to test the ROM with the emulator.\r\nPlease find the ROM that has no issues.
+This is a tool to solve problems through binary comparison using backups.\r\n\r\nThree different samples are acquired - the last ROM that was working correctly (OK ROM), the first ROM that had issues (NG ROM), and the currently open ROM with your changes (CURRENT).\r\n\r\nWhich ROM ran correctly at first?\r\nDouble-click on the ROM name to test the ROM with the emulator.\r\nPlease find the ROM that has no issues.
 
 :選択しているROMをエミュレータでテストプレイする
-Playtest selected ROM with the emulator
+Playtest selected ROM
 
 :このROMが最後に安定していたROMとして、\r\n相違点を取得する
-Acquire the difference as the ROM where this ROM was last stable
+This was the last stable ROM (Get Differences)
 
 :選択されているROM情報
-Selected ROM information
+Selected ROM Information
 
 :どの比較方法を利用しますか？\r\n\r\n正しく動いていた最後のROM(OK ROM) : {1}\r\nその次の世代の正しく動かなくなった最初のROM(NG ROM) : {1}\r\n現在のROM(CURRENT)\r\n
-Which comparison method would you use?\r\n\r\nThe last ROM that was working correctly (OK ROM):{1}\r\nThe first ROM that failed to function properly for the next generation (NG ROM):{1}\r\nCurrent ROM (CURRENT)\r\n
+Which comparison method would you use?\r\n\r\nThe last ROM that was working correctly (OK ROM):{1}\r\nThe first ROM that failed to function properly (NG ROM):{1}\r\nCurrent ROM (CURRENT)\r\n
 
 :OK ROMとNG ROMで値が違うもの\r\n且つ、OK ROMとCURRENTで値が違うもの\r\n且つ、NG ROMとCURRENTで値が同じもの\r\n(NG ROMとCURRENTで同じバグが発生する場合はこちらを選択してください)
-"OK ROM" and "NG ROM" have different values\r\nAnd "OK ROM" and "CURRENT" have different values\r\nAnd "NG ROM" and "CURRENT" have some value.\r\n(Please select here if the same bug occurs on "NG ROM" and "CURRENT")
+- "OK ROM" and "NG ROM" have different values\r\n- "OK ROM" and "CURRENT" have different values\r\n- "NG ROM" and "CURRENT" have the same values\r\n(Choose this if the issue is both on "NG ROM" and "CURRENT")
 
 :OK ROMとNG ROMで値が違うもの\r\n且つ、OK ROMとCURRENTで値が違うもの\r\n(NG ROMとCURRENTでバグの内容が違う場合はこちらを選択してください)
-"OK ROM" and "NG ROM" have different values\r\nAnd "OK ROM" and "CURRENT" have different values\r\n(Please select here if the content of bug is different on "NG ROM" and "CURRENT")
+- "OK ROM" and "NG ROM" have different values\r\n- "OK ROM" and "CURRENT" have different values\r\n(Choose this if the issue is different between "NG ROM" and "CURRENT")
 
 :3者差分
-Three-way difference
+Three-Way difference
 
 :容認差異
 Acceptable Difference
 
 :AとBにあって、自分にだけないもの
-Things in A and B, not only for you
+What A and B have that CURRENT doesn't
 
 :差分をBINパッチとして作成する
 Create the difference as a BIN patch
@@ -11576,10 +11576,10 @@ Comparison File B
 Comparison File A
 
 :バイナリ差分
-Binary difference
+Binary Difference
 
 :比較ファイル
-File for comparison
+File for Comparison
 
 :フリースペースはまとめる
 Collect free space.
@@ -11591,31 +11591,31 @@ The emulator is not set.\r\nSet the emulator used for playtesting.
 Automatically set by InitWizard.
 
 :Option画面から手動で設定する
-Set manually from the Option screen.
+Set manually from the Options screen.
 
 :エミュレータが設定されていません
-The emulator is not set.
+Emulator is not set.
 
 :最新版のEAでは拡張領域のデータがダンプできないことがあるので、その場合は、古いEA ver9を利用してください。
-In the latest version of EA, you may not be able to dump extended area data, so in that case, please use the old EA ver9.
+In the latest version of EA, you may not be able to dump extended area data. In that case, please use the old EA ver9.
 
 :データ
-data
+Data
 
 :ユニットやクラス、アイテムなどのテーブルをダンプします。
-Dump tables, such as units, classes, items.
+Dump tables for things like units, classes, and items.
 
 :主要テーブルのエクスポート
-Export of main table
+Export of Main Table
 
 :インポートは、メニューの「実行」->「Event Assemblerで追加」で追加から実行してください。
-To import events in EA format, return to the main menu and navigate to "Run" -> "Insert Events Via Event Assembler."
+To import events in EA format, return to the main menu and select "Run" -> "Insert Events Via Event Assembler".
 
 :エクスポート時にaddEndGuardsを付与する
 Add End Guards
 
 :EA形式でワールドマップイベント(選択時)をエクスポート
-Export Selected World Map Event in EA Format
+Export Selected World Map Events in EA Format
 
 :EA形式でワールドマップイベントをエクスポート
 Export World Map Events in EA Format
@@ -11624,10 +11624,10 @@ Export World Map Events in EA Format
 Export Events in EA Format
 
 :EA形式でイベントをエクスポートします。
-Export events in EA format.
+Export events in EA format
 
 :今回このROMに行った変更点を出力します
-Output changes made to this ROM this time
+Output changes made to this ROM
 
 :UndoBufferのエクスポート
 Export UndoBuffer
@@ -11636,22 +11636,22 @@ Export UndoBuffer
 Error: There are {0} errors.
 
 :ROMが読みこまれていないので実行できません
-ROM can't be executed because it hasn't been read.
+The ROM can't be executed because it hasn't been read.
 
 :システムチェック中
-During system check
+During System Check
 
 :システム
 System
 
 :調査中 {0}/{1}
-investigating... {0}/{1}
+Investigating... {0}/{1}
 
 :もし、原因不明のエラーに悩んでいる場合は、「ツール」->「比較デバッグツール」を使ってみてください。\r\nバックアップデータから、正しく動くROMと、正しく動かないROMを比較して自動的にバグを検出します。
 If you are experiencing an unknown error, try using "Tools" -> "Difference Debug Tool".\r\nFrom the backup data, bugs are automatically detected by comparing a functional ROM's data with one that doesn't work properly.
 
 :このROMには、自動的に検出できるエラーは存在しません。
-No errors were automatically detected in this ROM.
+No errors were detected in this ROM.
 
 :以下のマップにエラーが存在します。
 There are errors in the following maps.
@@ -11660,10 +11660,10 @@ There are errors in the following maps.
 Custom Flag Name
 
 :章内で利用しているフラグの確認
-Check the flags used in the chapter.
+Check Flag Usage in Chapters
 
 :フラグに名前を設定すると、より理解しやすくなります。\r\nフラグの名前は、ROMごとに別ファイルに保存します。
-Use this tool to create personal names for Event Flags so that they are easier to understand for you.\r\nThe flags are saved in a separate file for each ROM, so nothing will be modified.
+Use this tool to create personal names for Event Flags so that you can remember them.\r\nThe flags are saved externally for each ROM, so the ROM is untouched.
 
 :ディフォルトに戻す
 Erase Custom Flag
@@ -11693,16 +11693,16 @@ The download destination could not be found.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindE
 It seems that VB6 runtime has already been installed.\r\nDo you want to skip runtime installation? 
 
 :SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
-Sappy is written in VB6, so you need to install the runtime.\r\nLaunch the runtime installer.
+Sappy is written in Visual Basic 6, so you need to install the runtime.\r\nLaunch the runtime installer.
 
 :FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「設定」->「初期設定ウィザード」を選択してください。
-Welcome to FEBuilderGBA.\r\n\r\nHere, initial setup is performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to execute it again, please select "Menu"-> "Settings"-> "Initial Setup Wizard".
+Welcome to FEBuilderGBA.\r\n\r\nHere, initial setup is performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to go through it again, please go to "Settings" -> "Initial Setup Wizard".
 
 :黒背景
-Black background
+Black Background
 
 :白背景
-White background
+White Background
 
 :始める
 Start
@@ -11723,25 +11723,25 @@ Download stable VBA-M
 Emulator:
 
 :設定して次へ
-Set up and go next
+Set up and Continue
 
 :テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。
-Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the ROM.\r\nIf there is no problem while testing with the emulator, you can write to ROM.
+Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the ROM with a debugger.\r\nIf there is no problem while testing with the emulator, you can save your changes.
 
 :設定しない
-Not set
+Not Set
 
 :最新版のEAをダウンロードする
 Download the latest version of EA
 
 :EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
-Please set Event Assembler.\r\nSome patches are written in EA, so you need EA to use them.
+Please set up Event Assembler.\r\nSome patches are written with EA, so you need the program to apply them.
 
 :VGMusicStudioをダウンロードする
 Download VGMusicStudio.
 
 :Sappyを設定しない
-Do not set Sappy
+Do Not set Sappy
 
 :Sappyをダウンロードする
 Download Sappy
@@ -11768,7 +11768,7 @@ Set up a utility to convert music.
 Downloading and setting the necessary programs.
 
 :開発のやり方\r\n\r\n何か変更したら、F5キーを押して、エミュレータを起動します。\r\n動作を確認します。\r\n\r\n期待通りに動作していたら、「メニュー」->「ファイル」->「上書き保存」でセーブします。\r\n\r\nもし、予想外の動作をしていたら、保存せずにFEBuilderGBAを終了してください。\r\nそうすれば、ROMを壊すことなく開発できるでしょう。\r\n\r\nどうしても解決できない問題が発生した場合は、report7zをコミニティに送ってください。\r\nreport7zを作成するには、「メニュー」->「ファイル」->「問題報告ツール」を選択してください。
-How to test:.\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nPlaytest your changes\r\n\r\nIf all works as expected, save it with "Menu" -> "File" -> "Save".\r\n\r\nIf something is wrong, try to reverse changes or quit FEBuilderGBA without saving.\r\nThen you can develop without breaking the ROM.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the community.\r\nTo create report7z, select "Menu" -> "File" -> "Create Report Issue".
+How to test:\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nPlaytest your changes\r\n\r\n\r\nIf you're satisfied with your changes after playtesting, save them under File -> Save.\r\nIf there is a problem that cannot be solved, exit without saving and/or generate a report7z.\r\nIf you accidentally saved data, go to a prior backup or undo your changes from the .emulator.gba copy.\r\nAlso, if you accidentally closed FEBuilderGBA while working, you can open the .emulator.gba copy as it is not ever removed.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the Discord Server.\r\nTo create report7z, select "Menu" -> "File" -> "Create Report Issue".
 
 :すべての設定が完了しました。
 All settings are complete.
@@ -11786,58 +11786,58 @@ Initial Address
 Compress
 
 :消去
-Erase.
+Erase
 
 :この領域をゼロクリア
-Clear this area to zero.
+Clear this Area to Zero
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*
 
 :RPGツクールのエフェクトを変換します
-Convert RPG Maker Magic effect
+Convert RPG Maker XP Magic effect
 
 :パーツの大きさ
-Part size
+Part Size
 
 :変換先
 Destination
 
 :発動時効果音
-Sound Effect Sound
+Sound Effect
 
 :リサイズ
-resize
+Resize
 
 :開始位置
-Start position
+Start Position
 
 :クラススキル(FE8U:防衛スキル)
-Class Skill (FE 8U: Defense Skill)
+Class Skill (FE8U: Defense Skill)
 
 :魔法(FEditor) (画面中央)
-Magic (FEditor)(Center of screen)
+Magic (FEditor) (Screen Center)
 
 :魔法(CSA) (画面中央)
-Magic (CSA)(Center of screen)
+Magic (CSA) (Screen Center)
 
 :魔法(FEditor) (ユニットの位置)
-Magic (FEditor)(Position of unit)
+Magic (FEditor) (Unit Pos)
 
 :魔法(CSA) (ユニットの位置)
-Magic (CSA)(Position of unit)
+Magic (CSA) (Unit Pos)
 
 :生成開始
-Generation start
+Start Generating
 
 :フレーム間隔
-Frame interval
+Frame Interval
 
 :魔法の命中音
-Magical hit sound
+Magical Hit Sound
 
 :魔法エフェクトの変換ツール
-Magical effects conversion tool
+Magical Effects Conversion
 
 :目の位置が、複数のセルに分断されています。一つのセルに収める必要があります。
 The eye position is divided into multiple cells. It needs to fit in one cell.
@@ -11891,7 +11891,7 @@ Width of Exp Height
 Flip Horizontally
 
 :切り抜き倍率%
-Scale Factor%
+Scale Factor (%)
 
 :眼の位置H
 Eye Position H
@@ -11906,7 +11906,7 @@ Mouth Position H
 Mouth Position W
 
 :RPGツクールの顔画像を変換します(テスト)
-Convert RPG Maker Portraits (test function)
+Convert RPG Maker XP/FEXNA Portraits (Beta)
 
 :表情テスト
 Facial Exp Test
@@ -11933,7 +11933,7 @@ Facial Exp Test
 7=Eyes Closed
 
 :16色減色
-16 Color Reduction
+16-Color Reduction
 
 :0=傾けない
 0=Can't Tilt
@@ -11960,31 +11960,31 @@ Example: "When my characters battle, the animations freeze.\r\nIt happens even w
 Please describe the problem.
 
 :レポートを保存するファイル名を選択してください
-Please select a file name to save the report
+Please select a file name for the report.
 
 :レポートを作れませんでした。\r\n{0}
-Could not create report.\r\n{0}
+Could not create report7z.\r\n{0}
 
 :7z圧縮中
-7z compression...
+7z Compression...
 
 :添付データ
-Attachment data
+Attachments
 
 :サイズが大きすぎます。2MBまでにしてください。\r\n間違えてROMを添付できないように、サイズを制限しています。
-The size is too big.Please set it to 2MB.\r\nThe size is limited to not accidentally attach a ROM.
+The filesize is too large; please limit it to 2MB.\r\nThe size is limited to prevent accidental .GBA sharing.
 
 :どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
-In which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nThis is asked because there are too many people who do not mention which chapter a problem occurs despite being potentially important.
+In which chapter/map does the error occur?\r\nIn order to reproduce the problem, we need to know who did what and what bugs will occur in which chapter.\r\nThis is asked because there are too many people who do not mention which chapter contains issues despite being a vital clue.
 
 :この機能の説明
-Explanation of this function.
+Explanation of this Function
 
 :どの章？
-Which chapter? 
+Which Chapter? 
 
 :次へ
-next
+Next
 
 :完了ボタンでDiscordコミニティURLを開く
 Open Discord Community URL with Complete button
@@ -11993,58 +11993,58 @@ Open Discord Community URL with Complete button
 Who?
 
 :このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is used to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved on your own, please create a report with this tool and ask the community for help.\r\n\r\nBy using this tool, you can reproduce and isolate the problem and easily create data to resolve the issue.
+This tool is used to create a compiled report on issues that are present in your ROM.\r\nIf there is a problem that you can't solve on your own, please create a report7z with this tool and ask the Discord server for help.\r\n\r\nBy using this tool, we can reproduce and isolate the problem and easily create data or steps to resolve the issue.
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
-Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not relevant.\r\nUp to 2 MB can be attached.
+Attach any files (ie. battle animations, image data) to reproduce your problems.\r\nPlease leave it blank if irrelevant.\r\nUp to 2 MB of data can be attached.
 
 :どんな問題がありますか？\r\n問題を具体的に説明してください。
-What kind of problems are there?\r\nPlease explain the problem concretely and state how to reproduce.
+What are the issues present?\r\nPlease explain the problem clearly and state the steps to reproduce them.
 
 :多くの国では、ROMを公開することは違法です。\r\nそのため、あなたの改造だけを取り出したupsパッチという差分データを作ります。\r\nupsパッチは、無改造ROMと、あなたのROMを比較して、あなたの改造だけを取り出します。
-It is illegal to publish ROM in many countries.\r\nTherefore, we will make difference data called a ups patch which isolates changed data.\r\nThe ups patch compares your ROM with unmodified ROM and applies your changes.
+It is illegal to publish ROMs in most countries.\r\nTherefore, we need to make differential data called a UPS patch which isolates changed data.\r\nThe UPS patch compares your edits to an unmodified ROM and applies them like a recipe.
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
-To reproduce and investigate the problem, we need an ups patch.\r\nTo make a ups patch, please designate the original unmodified ROM.
+To reproduce and investigate the problem, we need a UPS patch.\r\nTo make a UPS patch, please choose a vanilla ROM.
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
-Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask for assistance.
+Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the Discord server and ask for assistance.
 
 :過去のバックアップが1つもありません。\r\n過去のバックアップが別名で保存されていますか？\r\n問題が発生ずに、正しく動作するバックアップがある場合は、パスを指定してください。
-There is no past backup.\r\nAre past backups saved under another name? \r\nIf you have a backup that works properly without problems, specify a path.
+There is no past backup.\r\nAre past backups saved under another name?\r\nIf you have a backup that has no issues, specify its path.
 
 :過去のバックアップがありません
 There is no past backup.
 
 :savファイルが含まれていないようです。\r\n問題を確実に再現するためには、savファイルが必要です。\r\n対応するsavがある場合は、パスを指定してください。
-The sav file not included.\r\nIn order to reproduce the problem reliably, we need a sav file.\r\nIf there is a corresponding sav, please specify the path.
+The .SAV file not included.\r\nIn order to reproduce the problem, we need a .SAV file.\r\nIf there is a corresponding .SAV, please specify its path.
 
 :savファイルがありません
-There is no sav file.
+There is no .SAV file.
 
 :ファイル({1})がありません。\r\n行数:{0}\r\n
 File ({1}) is missing.\r\nNumber of rows: {0}\r\n
 
 :適応した結果にエラーがあるようです。\r\nログを確認してください。\r\nログ:{0}
-There seems to be an error in the adaptation result.\r\nPlease check the log.\r\nLog: {0}
+There seems to be an error in the adaptation.\r\nPlease check the log.\r\nLog: {0}
 
 :デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n
-When defragmentation is executed, data not saved is lost.\r\nPlease save it and try again.\r\n
+When defragmentation is executed, unsaved data is lost.\r\nPlease save your changes and try again.\r\n
 
 :作成するROMRebuildファイル名を選択してください
-Please name the ROMRebuild file name to be created.
+Please name the new ROMRebuild file.
 
 :デフラグ処理が完了しました。\r\n動作を検証するためクリアテストをお勧めします。\r\n\r\nデフラグされた新しいROM:\r\n{0}\r\n\r\nOKボタンを押すと、この新しいROMを開きます。
-Defragmentation processing is completed.\r\nPlaytesting is recommended to verify ROM operation.\r\n\r\nDefragmented new ROM:\r\n{0}\r\n\r\nPress the OK button to open this new ROM.
+Defragmentation processing is completed.\r\nPlaytesting is recommended to verify the ROM's operation.\r\n\r\nDefragmented new ROM:\r\n{0}\r\n\r\nPress the OK button to open this new ROM.
 
 :このROMの変更点を、すべてファイルに書きだしました。\r\nこのファイルをFEBuilderGBAから開いてください。\r\nファイル:{0}\r\n\r\n
-Written all the changes in this ROM to a file.\r\nPlease open this file from FEBuilderGBA.\r\nFile: {0}\r\n\r\n
+Wrote all the changes in this ROM to a file.\r\nPlease open this file using FEBuilderGBA.\r\nFile: {0}\r\n\r\n
 
 :このROMは拡張領域を利用していないので、リビルドできません。
 Since this ROM does not use the extended area, it can not be rebuilt.
 
 :警告\r\nこのROMにはシステムエラーがあるので、リビルドを実行するべきではありません。\r\n危険を承知した上でも、それでも実行しますか？
-Alert\r\nThere is a system error in this ROM, so you should not perform a rebuild.\r\nDo you still do it despite the danger?
+Alert!\r\nThere is a system error in this ROM, so rebuilding is not recommended.\r\nDo you still want to perform it regardless?
 
 :このアドレス({0})はリビルドに利用できません。\r\nアドレスが4で割り切れません。
 This address ({0}) is not available for rebuild.\r\nThe address is not divisible by 4.
@@ -12053,37 +12053,37 @@ This address ({0}) is not available for rebuild.\r\nThe address is not divisible
 This address ({0}) is not available for rebuild.\r\nThe address range is dangerous.
 
 :拡張領域({0})より下のアドレス({1})をrebuildするのは危険です。\r\n続行してもよろしいですか?
-It is dangerous to rebuild the address ({1}) below the extended area ({0}).\r\nAre you sure you want to continue ?.
+It is dangerous to rebuild the address ({1}) below the extended area ({0}).\r\nAre you sure you want to continue?
 
 :変更点をファイルに書きだす
-Write changes to a file
+Write Changes to a File
 
 :0=フリー領域を再利用しません
-0=Do not reuse free areas
+0=Do Not Reuse Free Space
 
 :1=再構築アドレスより下のアドレスで、空いている領域があれば利用する
-1=Use an address below the rebuild address if there is an available area
+1=Use an address below the rebuild address; if there is free space, use it.
 
 :2=0x01000000より下のアドレスで、空いている領域があれば利用する
-2=Use an address below 0x01000000; if there is an empty area, use it
+2=Use an address below 0x01000000; if there is empty free, use it.
 
 :フリー領域の利用
-Use of free area
+Use of Free Space
 
 :通称は変更しないでください。\r\n再構築するエリアを指定します。
-Do not change the common name.\r\nSpecify the area to be rebuilt.
+Do not change the name.\r\nSpecify the area to be rebuilt.
 
 :再構築アドレス
-Rebuild address
+Rebuild Address
 
 :自動適応
-Automatic adaptation
+Automatic Adaptation
 
 :書出しが終わったらインポートを行う(デフラグを実行する)
-When you finish writing the import (perform defragmentation)
+After exporting, import later (Run Defragmentation)
 
 :変更されている設定をファイルに書きだします。\r\n\r\nUPSパッチと比較して以下のメリットがあります。\r\n無改造ROMにこのデータをインポートすることで、断片化した無駄な領域を節約できます。\r\n\r\n逆に以下のデメリットがあります。\r\nFEBuilderGBAが知らないデータは、ダンプされません。\r\nたとえばバイナリエディタで変更した内容などは保存されません。
-Write the changed settings to a file.\r\n\r\nCompared to the UPS patch, it has the following advantages.\r\nBy importing this data to unmodified ROM, you can save fragmented, useless space.\r\n\r\nConversely, there are the following disadvantages.\r\nData not known by FEBuilderGBA will not be dumped.\r\nFor example, contents changed by the binary editor are not saved.
+Write the changed settings to a file.\r\n\r\nCompared to UPS patching, it has the following advantages.\r\nBy importing this data to an unmodified ROM, you can save space.\r\n\r\nConversely, there are the following disadvantages.\r\nData not known by FEBuilderGBA will not be dumped.\r\nFor example, contents changed through hex or external means are not accounted for.
 
 :データを最適化中... {0}({1})
 Optimizing data.{0} ({1}).
@@ -12092,40 +12092,40 @@ Optimizing data.{0} ({1}).
 Could not create directory.\r\nDirectory: {0}
 
 :ポインタ検出中...
-Pointer is being detected.
+Pointer is being detected...
 
 :未知のハックを探索中...
-Searching for unknown hacks.
+Searching for unknown hacks...
 
 :対象とする無改造ROMのCRC32ハッシュ
 CRC32 hash of target non-remodeled ROM
 
 :再構築を開始するアドレス。このアドレス以降を再構築します。
-Address to start rebuilding. Will rebuild this address and later.
+Starting Address - the address and onward will be rebuilt.
 
 :ROMRebuildを開く
 Open ROMRebuild
 
 :ROMRebuildを適応したROMを、ファイル名.gbaとして保存する
-Name the ROM to which ROMRebuild is applied. Save it as gba.
+Name the ROM to which ROMRebuild is applied. Save it as .GBA.
 
 :ROMRebuildを開くために無改造のROMを選択してください。\r\n適応後には、動作を確認するプレイテストを行ってください。
-Please select an unmodified ROM to open ROMRebuild.\r\nAfter adaptation, please playtest to confirm the ROM's operation.
+Please select an unmodified ROM to open ROMRebuild.\r\nAfter completion, please playtest to confirm the ROM's operation.
 
 :これよりテスト実行を開始します。
-This will start the test run.
+This will start playtesting.
 
 :このメッセージを再度表示しない
-Do not show this message again.
+Do not show this message again
 
 :テスト実行について\r\n\r\nヒント:\r\nどの画面であっても、F5キーを押せばテストができます。\r\n\r\n開発方法:\r\nテスト実行の段階では、変更点はROMに書き込まれません。\r\nテスト実行し、問題がなければ、MENU->ファイル->保存データで、データを保存してください。\r\nもし、解決できない問題があれば、保存せずにFEBuilderGBAを終了してください。\r\n間違えて保存してしまった場合は、過去のバックアップを参照してください。\r\n\r\nわからないことがあれば、コミニティで質問してください。
-Regarding test run;\r\n\r\nTips :.\r\nYou can test by pressing F5 on any screen.\r\n\r\nDevelopment method :.\r\nChanges are not written to ROM during the test run stage as a copy named "name.emulator.gba" is made.\r\nRun the test, and if there is no problem, save the data with MENU-> File-> Save.\r\nIf there is a problem that cannot be solved, exit without saving or send report7z.\r\nIf you accidentally saved it, please refer to the previous backup or examine an earlier emulator.gba.\r\n\r\nIf you have any questions, please ask in the community.
+Regarding playtesting;\r\nYou can playtest by pressing F5 on any screen.\r\n\r\nDevelopment method :\r\nUnsaved changes are not written to your ROM - a copy with your current changes (name.emulator.gba) is made and opened.\r\nIf you're satisfied with your changes after playtesting, save them under File -> Save.\r\nIf there is a problem that cannot be solved, exit without saving and/or generate a report7z.\r\nIf you accidentally saved data, go to a prior backup or undo your changes from the .emulator.gba copy.\r\nAlso, if you accidentally closed FEBuilderGBA while working, you can open the .emulator.gba copy as it is not ever removed.\r\n\r\nIf you have any questions, please ask in our Discord server.
 
 :テスト実行
-Test run.
+Test Run
 
 :字幕
-subtitles
+Subtitles
 
 :定型文を抽出するROMを選択してください
 Please select ROM to extract fixed phrases
@@ -12134,7 +12134,7 @@ Please select ROM to extract fixed phrases
 Please specify translation data
 
 :翻訳データ
-Translation data
+Translation Data
 
 :定型文ROM TO
 Fixed String TO
@@ -12143,16 +12143,16 @@ Fixed String TO
 Fixed String FROM
 
 :字幕がない時でもウィンドウを表示する
-Display windows even when there is no subtitle
+Display Windows even when there's no Subtitle
 
 :字幕表示
-Subtitle display
+Subtitle Display
 
 :非表示
 Hide
 
 :字幕設定
-Subtitle setting
+Subtitle Setting
 
 :比較ツールを終了してもよろしいですか？\r\n現在、一部分だけ修正した状態になっています。\r\nこのままツールを閉じてもよろしいですか？\r\n\r\nマージをやめる場合、変更をすべてキャンセルして、終了してください。
 Are you sure you want to exit the comparison tool?\r\nCurrently, only a part has been corrected.\r\nClose the tool anyway?\r\n\r\nIf you decide not to merge, please cancel all changes and exit.
@@ -12185,13 +12185,13 @@ Switch Mark(&M)
 Show Mark List(&L)
 
 :以下100件のデータを、{0}のデータで上書き(Ctrl + 1)
-Overwrite 100 data below with data of {0} (Ctrl+1)
+Overwrite 100 entries below with data of {0} (Ctrl+1)
 
 :以下100件のデータを、{0}のデータで上書き(Ctrl + 2)
-Overwrite 100 data below with data of {0} (Ctrl+2)
+Overwrite 100 entries below with data of {0} (Ctrl+2)
 
 :以下100件のデータを、{0}のデータで上書き換えマークを消す(Ctrl + 0)
-The following 100 items of data are deleted with the data of {0} (Ctrl+0)
+The following 100 entries of data are deleted with the data of {0} (Ctrl+0)
 
 :{0}のデータで上書きし書き換えマークを消す(&0)
 Overwrite with data of {0} and erase rewrite mark (&0)
@@ -12209,7 +12209,7 @@ Checking data {0}/{1}
 Building a map file for hints
 
 :相違点をリストにまとめています
-Summarizing the differences in a list
+Summary of Differences
 
 :変更点をすべてキャンセルして、Diffツール開始時のROMまで巻き戻してもよろしいですか？
 Are you sure to cancel all the changes and rewind to the ROM at the start of the Diff tool?
@@ -12221,10 +12221,10 @@ Merge Difference: {0}
 Merge the differences into the current ROM. After writing, open the emulator with F5 and test changes.
 
 :アドレス,長さ,対処法,ヒント
-Address, length, remedy, hint
+Address, length, remedy, Tips
 
 :変更をすべてキャンセルする
-Cancel all changes
+Cancel All Changes
 
 :マージ
 Merge
@@ -12236,13 +12236,13 @@ Unknown Character String
 Google Translate returned an error.\r\nToo many translation requests sent.\r\nProcessing halted.\r\n\r\n{0}
 
 :フォントを抽出するROMを選択してください
-Please select ROM to extract fonts from
+Please select the ROM to extract fonts from.
 
 :無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。
 This function gets text translated by using an unmodified ROM, a translation dictionary, and a translation site.
 
 :変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。
-Save only the changed text file.\r\nConversations that exist in unmodified ROM can be edited automatically and there is no need to translate.\r\nSpecify them to reduce translation data.
+Save only the changed text file.\r\nConversations that exist in the unmodified ROM can be edited automatically, so there is no need to translate.\r\nSpecify them to reduce translation data.
 
 :ROMに収録されていないフォントを自動的に生成します。
 It automatically generates fonts not included in ROM.
@@ -12260,13 +12260,13 @@ Unmodified FE7U
 Unmodified FE7J
 
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
-Translate the ROM.\r\nAutomatically convert unchanged text using Japanese ROM and English ROM.\r\n\r\nIn simplified mode, it translates automatically.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
+Translate the ROM.\r\nAutomatically convert unchanged text using a Japanese ROM and an English ROM.\r\n\r\nIn Simplified mode, translation is automatic.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
 :翻訳開始
 Translation Start
 
 :足りないフォントの自動生成
-Automatic generation of missing fonts
+Automatic Generation of Missing Fonts
 
 :フォント取込
 Import Font
@@ -12275,19 +12275,19 @@ Import Font
 Copy fonts from a specified ROM file into the currently open ROM.
 
 :全テキストの書出し
-Export ALL Text
+Export All Text
 
 :翻訳して書き出す
 Translate to Export
 
 :改造されたテキストのみ取得する
-Acquire only remodeled text
+Acquire only Remodeled Text
 
 :定型文の翻訳(FROM ROMと TO ROMから、定型文を取得し、翻訳の参考にする)
-Fixed String (Get fixed string from FROM ROM and TO ROM ,reference for translation)
+Fixed String (Get fixed string from FROM ROM and TO ROM, for translation)
 
 :すべてのテキストをテキストファイルに書きだします。
-Writes all text to a single text file.
+Extracts all text to a single text file.
 
 :全テキストの読込
 Overwrite All Text
@@ -12296,22 +12296,22 @@ Overwrite All Text
 Rewrite the ROM's text with the contents of the specified file.\r\nThe anti-Huffman and DrawMultibye / DrawSingleByte patches must be applied for it to work.\r\nAny missing fonts must be imported after the text import is complete.
 
 :履歴(上が最新)
-History (Top is the Latest)
+History (Descending Date)
 
 :このバージョンに戻す
-Revert to This Version
+Revert to this Version
 
 :このバージョンをエミュレータでテストプレイ
-Test This Version With Emulator
+Test this Version with the Emulator
 
 :このバージョン({0})に戻してもよろしいですか？
-Confirm Revert to This Version ({0})
+Confirm reversion to this version: ({0})
 
 :会話グループを選択してください
-Please select a conversation group
+Select a Conversation Group
 
 :未保存の変更があるようです。\r\n保存してもよろしいですか？
-There seems to be an unsaved change.\r\nDo you want to save it?
+You have some unsaved changes.\r\nDo you want to save?
 
 :アップデーターのバッチファイルがありません。\r\n{0}
 There is no updater batch file.\r\n{0}
@@ -12335,10 +12335,10 @@ There was no executable file while decompressing the downloaded file.
 The executable file that was in the decompressed downloaded file is too small.
 
 :エラーにより自動アップデートできませんでした。\r\n代わりにURLをブラウザで表示します。\r\n手動でダウンロードしてください。\r\n{0}
-Automatic update failed due to an error.\r\nPlease download manually.\r\n{0}
+Automatic update failed due to an error.\r\nPlease download it manually.\r\n{0}
 
 :最新版({0})があるようです。\r\nアップデートしますか？\r\n\r\n{1}
-FEBuilderGBA has an available update{0}.\r\nWould you like to update?\r\n\r\n{1}
+FEBuilderGBA has a new update{0}.\r\nWould you like to update?\r\n\r\n{1}
 
 :アップデートしません
 Ignore
@@ -12350,34 +12350,34 @@ Open URL in Browser
 Automatic Update
 
 :UPSを開く
-Open UPS.
+Open UPS
 
 :UPSパッチを適応したROMを、UPSファイル名.gbaとして保存する
-The UPS file name which adapted the UPS patch. Save it as gba.
+The name of the patched ROM. Save it as .GBA.
 
 :UPSパッチを開くために無改造のROMを選択してください
-Please select a clean ROM to apply UPS patch to.
+Please select a clean ROM to apply the UPS patch to.
 
 :UPSパッチを開く
-Open UPS patch
+Open UPS Patch
 
 :作成するUPSファイル名を選択してください
-Please name the UPS file name to create.
+Please name the UPS file.
 
 :UPSで保存する
 Save as UPS
 
 :現在のデータをUPSパッチとして保存します。\r\n特別な理由がない限り、通常の保存をしたあとで利用してください。
-Save the current data as a UPS patch.\r\nUse it after saving your ROM unless you have no reason to.
+Save the current data as a UPS patch.\r\nUse it after saving your ROM for distribution.
 
 :差分をUPSパッチとして作成する
-Save modifications as a UPS patch
+Save Modifications as a UPS Patch
 
 :全マップ共通のフラグも表示する
 Also display flags common to all maps.
 
 :章で利用しているフラグ
-Flags used in the chapter.
+Flags Used in the Chapter
 
 :仮想ROMなので更新できません
 It cannot be updated because it is a virtual ROM.
@@ -12398,7 +12398,7 @@ There is no UPDATE_REGEX item.
 No data matched by UPDATE_REGEX.\r\n{0}.
 
 :アップデートが完了しました。\r\nROMを再読み込みします。\r\n
-Update completed.\r\nReload the ROM.\r\n
+Update complete.\r\nReload the ROM.\r\n
 
 :UPSファイルが見つかりませんでした
 The UPS file could not be found.
@@ -12416,22 +12416,22 @@ There is no CHECK_REGEX item.
 No data matched by CHECK_REGEX.\r\n{0}.
 
 :Last-Modifiedを検知できませんでした。\r\n仕方がないので、常に最新版に更新します。
-Last-Modified could not be detected.\r\nI can't help but always update to the latest version.
+Last-Modified could not be detected.\r\nTry updating to the latest version.
 
 :日付({0})をパースできませんでした。\r\n仕方がないので、常に最新版に更新します。
-Date ({0}) could not be parsed.\r\nI can't help but always update to the latest version.
+Date ({0}) could not be parsed.\r\nTry updating to the latest version.
 
 :このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？
-A new version of this game has been released.\r\nAutomatically update to the latest version? 
+A new version of this game has been released!\r\nAutomatically update to the latest version? 
 
 :自動更新をキャンセルした後に、手動で更新したい場合は、「メニュー」->「実行」->「作品支援」を利用してください。
-If you want to update manually after canceling the automatic update, please use "Menu"-> "Run"-> "Work Support".
+If you want to update manually after canceling the automatic update, please use "Menu" -> "Run" -> "Work Support".
 
 :フィードバックを保存するファイル名を選択してください
 Choose a file name to save the feedback.
 
 :フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。
-A feedback report has been created.\r\nSend this file to the community.
+A feedback report has been created.\r\nSend this file to the Discord server.
 
 :このゲームを最新版に更新します。
 Update this game to the latest version.
@@ -12443,13 +12443,13 @@ Access the development community.\r\nSend feedback and feedback on the game and 
 Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
 
 :最新バージョンに更新する
-Update to latest version
+Update to Latest Version
 
 :開発コミニティにアクセスする
-Access development community
+Join Development Community
 
 :フィードバックのレポート作成する
-Create feedback report
+Create Feedback Report
 
 :著者
 Author
@@ -12458,16 +12458,16 @@ Author
 Community
 
 :他の作品を表示する
-Display other works
+Display Other Works
 
 :現在のバージョンが最新です。更新する必要はありません。version:{0}
-The current version is up to date. No need to update. version: {0}.
+The current version is up to date! No need to update. version: {0}.
 
 :強制アップデート
-Forced update
+Forced Update
 
 :現在のバージョンが最新です
-The current version is the latest.
+The current version is the latest!
 
 :。
 。
@@ -12476,7 +12476,7 @@ The current version is the latest.
 You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile - editing may break the ROM.
 
 :書き込もうとしているアドレスが4の倍数でないので、書き込みを拒否します。\r\nあなたが書き込もうとしたアドレス:{0}\r\n4の倍数でないアドレスへの書き込みは、ほぼ間違っています。
-Denied writing because the address you are trying to write is not a multiple of four.\r\nThe address you tried to write: {0}.\r\nWriting to an address that is not a multiple of 4 is erroneous.
+Writing access denied because the address you are trying to write to is not a multiple of four.\r\nThe address you tried to write: {0}.\r\nWriting to an address that is not a multiple of 4 is impossible.
 
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.
@@ -12494,7 +12494,7 @@ Mediafire Download button not found.\r\nThe specification seems to have changed.
 Google Drive ID not found.
 
 :あいうえお
-AIUEO.
+ABCDE
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
@@ -12506,7 +12506,7 @@ There is no file.\r\nFile name: {0}\r\nDo you want to try again?
 The file can not be read.\r\nDo you want to try again?\r\nFile: {0}\r\n\r\n{1}
 
 :必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}
-Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}
+Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease redownload.\r\n{0}
 
 :を
 To
@@ -12518,16 +12518,16 @@ The directory could not be created.\r\n{0}.\r\n\r\n{1}.
 The file could not be copied.\r\nSrc: {0}.\r\nDest: {1}.\r\n\r\n{2}.
 
 :最新版
-Latest edition
+Latest Edition
 
 :このROMには、UnitAction Patchが適応されています。
 UnitAction Patch is applied to this ROM.
 
 :関数ポインタ
-Function pointer.
+Function Pointer
 
 :アニメ内容の先頭アドレス
-Start address of animation content
+Start address of animation data
 
 :専用アニメポインタの書き込み
 Write a dedicated animation pointer
@@ -12536,7 +12536,7 @@ Write a dedicated animation pointer
 Anime Settings
 
 :ユニット専用戦闘アニメ
-Unit Only Battle Animation
+Unit-Only Battle Animation
 
 :ユニットソート順
 Unit Sort Order
@@ -12569,7 +12569,7 @@ Unique Promo Anime
 Unique Base Anime
 
 :操作しているユニット
-Operating unit
+Controlled Unit
 
 :メモリスロットB 座標
 Memory slot B Coordinate
@@ -12581,19 +12581,19 @@ Memory slot 2 UnitID
 Unit data is extremely small. It may be damaged.
 
 :ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。
-The support pointer for unit 0x01 is invalid.This value is the starting point for support.Do not change from the vanilla value.
+The support pointer for unit 0x01 is invalid. This value is the starting point for support data. Do not change from the vanilla value.
 
 :ユニット別パレットへジャンプ
-Jump To Unit Palette
+Jump to Unit Palette
 
 :{0}=背を伸ばさない
-{0}=Do not raise
+{0}=Do Not Raise
 
 :{0}=背を伸ばす
 {0}=Raise
 
 :ステータス画面で背丈を伸ばす補正をするか？
-Raise portrait height on stat screen?
+Raise Portrait Height on Stat Screen?
 
 :身長を伸ばす顔ID
 Portrait Height Editor
@@ -12611,19 +12611,19 @@ Promoted Class 3
 Promoted Class 2
 
 :見習いクラス(見習いキャラのみ)
-Trainee Class (Trainees only)
+Trainee Class (Trainees Only)
 
 :基本クラス2(見習いキャラのみ)
-Base Class 2 (Trainees only)
+Base Class 2 (Trainees Only)
 
 :基本クラス1
 Base Class 1
 
 :FE8では、CC分岐があるため、複雑な指定になります。\r\nもし、ユニットが指定されていたクラスだった場合、上で割り当てたパレットが適応されます。\r\n指定したクラスではない場合、パレット指定が0だった場合には、ディフォルトの汎用パレットが利用されます。
-Due to the promotion branch in FE8, each character has a class-palette list.\r\nIf the unit has a palette for a given class, the palette will be used.\r\nIf a non-specified class is used or the palette is set to 0, the default class palette will be used.
+Due to the promotion branchs in FE8, each character has a unique class-palette list.\r\nIf the unit has a palette for a given class, the palette will be used.\r\nIf a non-specified class is used or the palette is set to 0, the default class palette will be used.
 
 :Webサイトにアクセスできません。 URL:{0} Message:{1}
-Can not access the website.URL: {0} Message: {1}.
+Can not access the website. URL: {0} Message: {1}.
 
 :サイトの結果が期待外でした。\r\n{0}
 The results of the site were unexpected.\r\n{0}
@@ -12632,19 +12632,19 @@ The results of the site were unexpected.\r\n{0}
 FEBuilderGBA is up to date. Version:{0}
 
 :UPSファイルが壊れています。最低サイズ以下です。
-UPS file corrupted. It doesn't meet the minimum size requirement.
+UPS file corrupted. It doesn't meet the minimum size requirement!
 
 :UPSファイルが壊れています。ヘッダUPS1がありません。
-UPS file corrupted. Header UPS 1 missing.
+UPS file corrupted. Header UPS 1 missing!
 
 :UPSファイルが壊れています。CRCが一致しません。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
-UPS file corrupted. CRC do not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
+The UPS file corrupted. CRC does not match.\r\n\r\nThe CRC of the .UPS created by NUPS may be corrupt.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :現在開いているROMには適応できません。CRCが一致しません。
-Patch can't be applied to the open ROM. CRC do not match.
+Patch can't be applied to the open ROM. CRC does not match.
 
 :UPSを適応した結果が正しくありません。CRCが不一致です。\r\n\r\nnupsで作成したupsはCRCが壊れていることがあります。\r\nファイルのCRCが破損していますが、処理を続行しますか？\r\n
-The result of adapting the UPS is incorrect. CRC does not match.\r\n\r\nThe CRC of the ups created by nups may be broken.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
+The result of adapting the UPS is incorrect. CRC does not match.\r\n\r\nThe CRC of the .UPS created by NUPS may be corrupt.\r\nThe CRC of the file is corrupted. Do you want to continue? \r\n
 
 :チェックをつけたメニューを無効にします。
 Disables the checked menu.
@@ -12662,43 +12662,43 @@ Perform a checked attack.
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks.\r\n It lets the matching character use the weapon at Level E, no matter what its normal rank is.
 
 :専用武器 Vennou
-Special weapon Vennou.
+Special Weapon Vennou
 
 :{1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nこのソフトウェアはオープンソースのフリーソフトウェアです。\r\nGPLv3に従ってご自由にお使いください。
 {1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nThis software is open source.\r\nPlease use it freely according to GPLv3.
 
 :[このROMは正規品の無改造ROMです。]
-[This ROM is a genuine ROM without modifications.]
+[This ROM is a genuine, unmodified copy.]
 
 :現在利用しているバージョンから、1か月以上が経過しています。\r\n新しいバージョンが出ていないか確認してください。
-One month or more has passed since the version currently being used.\r\nPlease check if there is a new version.
+Over a month has passed since the last update of FEBuilderGBA.\r\nPlease check if there is a new update.
 
 :開発者機能: 翻訳
 Developer Function: Translation
 
 :{0} を開く(最後に開いたROMを開く)
-{0} (Open last used ROM)
+{0} (Open last saved ROM)
 
 :デバッグビルドはバージョンが取れないので、常に最新版があると回答します。
-Debug build can't be updated; It will always view itself as up to date.
+The debug build can't be updated; It will always view itself as up to date.
 
 :アップデートがあるか確認しています・・・
 Checking for updates...
 
 :FEBuilderGBAの使い方の説明書を見る
-Having troubles? Read the online manual for help
+Having troubles? Read the online manual for help!
 
 :最後に開いたROM
-Most Recent ROM
+Recently Saved ROM
 
 :FEBuilderGBAを最新版へ更新する
-Update FEBuilderGBA to the latest version
+Update FEBuilderGBA to the Latest Version
 
 :他のFE ROMを開く
-Open Other FE ROM
+Open Another FE ROM
 
 :アップデートチェック
-Update Check
+Check for Updates
 
 :ROMを開く
 Open ROM
@@ -12731,7 +12731,7 @@ Specify the event to be executed when the map is cleared.\r\nThe next node appea
 Events Post-World Map Node
 
 :ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステージの紹介は、拠点を選択した瞬間に行う必要があります。
-Set the event that is executed when World Map Node is selected from the map.\r\nIn FE8, the player can move around the world map freely.\r\nTherefore, an introduction when selecting the newest stage is required.
+Set the event that is executed when the World Map Node is selected from the map.\r\nIn FE8, the player can move around the world map freely.\r\nTherefore, an introduction when selecting the newest stage is required.
 
 :ワールドマップ道へJump
 Jump to World Map Roads
@@ -12740,7 +12740,7 @@ Jump to World Map Roads
 Jump to World Map Nodes
 
 :拠点選択後に発生するイベント
-Events Post-World-Map-Choice
+Events Post-World-Map
 
 :256色画像
 256 Color Image
@@ -12800,19 +12800,19 @@ Dark Palette
 Border
 
 :描画例
-Drawing example.
+Preview
 
 :アイコン用のデータ
-Data for the icon.
+Data for the Icon
 
 :画像シート番号
-Image sheet number.
+Image Sheet Number
 
 :右端のパネルは消しゴムです。\r\n道を消す場合は消しゴムを選択して、上書きしてください。
 The rightmost column is an eraser.\r\nSelect it and click on a road to erase it.
 
 :NULLの場合、拠点間を直線で通る
-0 if Node to Node is straight. Else: Pointer
+0 if Node-to-Node is a straight path. Else: Pointer
 
 :道を移動するパスのポインタ
 Movement Path Pointer
@@ -12827,43 +12827,43 @@ Pointer to Road Data
 Speed
 
 :速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動します。
-Speed is the time to stop at some point along the way.\r\nThe maximum value is 4096.The minimum value is 0.\r\nThe smaller it is, the longer it will stop.\r\n\r\nNote: If the maximum value is exceeded, it will teleport.
+Speed is the "Waiting Time" at a point along the way.\r\nThe maximum value is 4096. The minimum value is 0.\r\nThe smaller it is, the longer the wait.\r\n\r\nNote: If the maximum value is exceeded, teleportation will occur.
 
 :秘密の店
 Secret Shop
 
 :この拠点の場所に移動して、章を開始したときにロードされるマップを指定します。\r\nまた、ワールドマップから読み込まれたときに呼び出される、ワールドマップイベントテーブルの参照位置にも関係します。
-The map which is loaded when this location is moved to and a chapter is started.\r\nThis also corresponds to the "World Map Events" entry which is called when the location is loaded on the map.
+The map which is loaded when this location is moved and a chapter is started.\r\nThis also corresponds to the "World Map Events" entry which is called when the location is loaded on the map.
 
 :もし、イベント分岐用フラグが、TRUEであれば、2回目が評価されます。\r\n例えば、主人公がエイリークで、イベント分岐用フラグがTRUEであれば、次の拠点ID(エイリーク2回目)が利用されます。
-"Event Conditional Flag" controls whether Eirika 1/Ephraim 1 or Eirika 2/Ephraim 2 is loaded.\r\n(1 if FALSE, 2 if TRUE).\r\nMaybe it could be called "Flag to check for Next Location 2".\r\nFFFF means do not check a flag.
+"Event Conditional Flag" controls whether Eirika 1/Ephraim 1 or Eirika 2/Ephraim 2 is loaded.\r\n(1 if FALSE, 2 if TRUE).\r\nConsider it a "Flag to check for Next Location 2".\r\nFFFF means to not check for a flag.
 
 :章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。
-This is the destination which you will go to when ChapterID is completed.\r\nDifferent destinations can be specified for Ephraim and Eirika mode, and Event Conditional Flag can be used to specify 2 more destinations.\r\nA value of 0xFF means there is no "next chapter" (used for Tower, Ruins, extra map Melkaen Coast).\r\n*To make the map able to be visited any number of times (like the Tower or Ruins),\r\n"Next Location" all values must be 0xFF and "Placement Flag" value must be 0x03.
+This is the destination which you will go to when ChapterID is completed.\r\nDifferent destinations can be specified for Ephraim and Eirika's modes, and Event Conditional Flags can be used to specify 2 more destinations.\r\nA value of 0xFF means there is no "next chapter" (used for Tower, Ruins, Melkaen Coast).\r\n*To make the node visitable any number of times (like the Tower or Ruins),\r\n"Next Location" value must be 0xFF and "Placement Flag" value must be 0x03.
 
 :この座標はカーソルで選択しにくい可能性があります。\r\nカーソルは16ドット単位で移動します。\r\nそのため、16ドットより幅が小さいオブジェクトは、設置位地を調整する必要があります。
-This coordinate may be difficult to select with the cursor.\r\nThe cursor moves in units of 16 dots.\r\nTherefore, objects smaller than 16 dots need to be adjusted.
+This coordinate may be difficult to select with the cursor.\r\nThe cursor moves per 16-pixel movements.\r\nTherefore, objects smaller than 16 pixels need adjustments.
 
 :0=移動に船を利用しない
-0=Do not use Ship to travel.
+0=Do Not Travel by Ship
 
 :1=移動に船を利用する
-1=Use ship to travel.
+1=Travel by Ship
 
 :1=モンスターなし
-1=NO Monsters
+1=No Monster Appearances
 
 :2=モンスターが出現可能
 2=Monsters can appear
 
 :3=タワーと遺跡
-3=Tower/Ruins behavior
+3=Tower/Ruins Behavior
 
 :0=イベントの時のみ
 0=With Progression Event
 
 :1=フレリア城
-1=Frelia Castle.
+1=Frelia Castle
 
 :2=魔物がいるときのみ
 2=With Monster Spawn
