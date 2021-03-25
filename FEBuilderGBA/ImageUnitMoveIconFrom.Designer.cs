@@ -35,15 +35,20 @@
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.X_AP_MD5 = new FEBuilderGBA.TextBoxEx();
+            this.X_APCOMBO = new FEBuilderGBA.ComboBoxEx();
             this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.X_ONE_STEP = new System.Windows.Forms.NumericUpDown();
+            this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,27 +58,25 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ImportAPButton = new System.Windows.Forms.Button();
             this.ExportAPButton = new System.Windows.Forms.Button();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_AP_MD5 = new FEBuilderGBA.TextBoxEx();
-            this.X_APCOMBO = new FEBuilderGBA.ComboBoxEx();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.DragTargetPanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -81,8 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
             this.DragTargetPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -182,6 +183,26 @@
             this.DragTargetPanel.Size = new System.Drawing.Size(902, 406);
             this.DragTargetPanel.TabIndex = 101;
             // 
+            // X_AP_MD5
+            // 
+            this.X_AP_MD5.ErrorMessage = "";
+            this.X_AP_MD5.Location = new System.Drawing.Point(307, 55);
+            this.X_AP_MD5.Name = "X_AP_MD5";
+            this.X_AP_MD5.Placeholder = "";
+            this.X_AP_MD5.ReadOnly = true;
+            this.X_AP_MD5.Size = new System.Drawing.Size(324, 25);
+            this.X_AP_MD5.TabIndex = 205;
+            // 
+            // X_APCOMBO
+            // 
+            this.X_APCOMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.X_APCOMBO.FormattingEnabled = true;
+            this.X_APCOMBO.Location = new System.Drawing.Point(-1, 89);
+            this.X_APCOMBO.Name = "X_APCOMBO";
+            this.X_APCOMBO.Size = new System.Drawing.Size(632, 26);
+            this.X_APCOMBO.TabIndex = 204;
+            this.X_APCOMBO.SelectedIndexChanged += new System.EventHandler(this.X_APCOMBO_SelectedIndexChanged);
+            // 
             // JumpToSystemPalette
             // 
             this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
@@ -207,6 +228,15 @@
             this.label4.TabIndex = 203;
             this.label4.Text = "ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。";
             // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(170, 157);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(338, 25);
+            this.Comment.TabIndex = 202;
+            // 
             // label8
             // 
             this.label8.AccessibleDescription = "@COMMENT";
@@ -227,6 +257,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(90, 400);
             this.panel4.TabIndex = 106;
+            // 
+            // X_PIC
+            // 
+            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC.Location = new System.Drawing.Point(0, 0);
+            this.X_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_PIC.Name = "X_PIC";
+            this.X_PIC.Size = new System.Drawing.Size(90, 400);
+            this.X_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.X_PIC.TabIndex = 67;
+            this.X_PIC.TabStop = false;
             // 
             // X_PALETTE
             // 
@@ -296,6 +337,17 @@
             this.X_ONE_STEP.Size = new System.Drawing.Size(60, 25);
             this.X_ONE_STEP.TabIndex = 70;
             this.X_ONE_STEP.ValueChanged += new System.EventHandler(this.X_ONE_STEP_ValueChanged);
+            // 
+            // X_ONE_PIC
+            // 
+            this.X_ONE_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_ONE_PIC.Location = new System.Drawing.Point(735, 89);
+            this.X_ONE_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_ONE_PIC.Name = "X_ONE_PIC";
+            this.X_ONE_PIC.Size = new System.Drawing.Size(136, 136);
+            this.X_ONE_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.X_ONE_PIC.TabIndex = 68;
+            this.X_ONE_PIC.TabStop = false;
             // 
             // ReloadListButton
             // 
@@ -403,6 +455,28 @@
             this.AddressPanel.Size = new System.Drawing.Size(902, 30);
             this.AddressPanel.TabIndex = 99;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(308, 0);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(83, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(550, -1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(138, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -441,6 +515,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressListExpandsButton_255);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(13, 34);
@@ -460,6 +535,19 @@
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 27);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(313, 460);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // ImportAPButton
             // 
@@ -497,91 +585,15 @@
             this.DragTargetPanel2.Size = new System.Drawing.Size(902, 78);
             this.DragTargetPanel2.TabIndex = 102;
             // 
-            // AddressList
+            // AddressListExpandsButton_255
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 27);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(313, 488);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // X_AP_MD5
-            // 
-            this.X_AP_MD5.ErrorMessage = "";
-            this.X_AP_MD5.Location = new System.Drawing.Point(307, 55);
-            this.X_AP_MD5.Name = "X_AP_MD5";
-            this.X_AP_MD5.Placeholder = "";
-            this.X_AP_MD5.ReadOnly = true;
-            this.X_AP_MD5.Size = new System.Drawing.Size(324, 25);
-            this.X_AP_MD5.TabIndex = 205;
-            // 
-            // X_APCOMBO
-            // 
-            this.X_APCOMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.X_APCOMBO.FormattingEnabled = true;
-            this.X_APCOMBO.Location = new System.Drawing.Point(-1, 89);
-            this.X_APCOMBO.Name = "X_APCOMBO";
-            this.X_APCOMBO.Size = new System.Drawing.Size(632, 26);
-            this.X_APCOMBO.TabIndex = 204;
-            this.X_APCOMBO.SelectedIndexChanged += new System.EventHandler(this.X_APCOMBO_SelectedIndexChanged);
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(170, 157);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(338, 25);
-            this.Comment.TabIndex = 202;
-            // 
-            // X_PIC
-            // 
-            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(0, 0);
-            this.X_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(90, 400);
-            this.X_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.X_PIC.TabIndex = 67;
-            this.X_PIC.TabStop = false;
-            // 
-            // X_ONE_PIC
-            // 
-            this.X_ONE_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_ONE_PIC.Location = new System.Drawing.Point(735, 89);
-            this.X_ONE_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_ONE_PIC.Name = "X_ONE_PIC";
-            this.X_ONE_PIC.Size = new System.Drawing.Size(136, 136);
-            this.X_ONE_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.X_ONE_PIC.TabIndex = 68;
-            this.X_ONE_PIC.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(308, 0);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(83, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(550, -1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(138, 25);
-            this.SelectAddress.TabIndex = 40;
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(2, 483);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(307, 30);
+            this.AddressListExpandsButton_255.TabIndex = 115;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // ImageUnitMoveIconFrom
             // 
@@ -603,8 +615,10 @@
             this.DragTargetPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -614,8 +628,6 @@
             this.panel6.ResumeLayout(false);
             this.DragTargetPanel2.ResumeLayout(false);
             this.DragTargetPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,6 +675,7 @@
         private System.Windows.Forms.Label JumpToSystemPalette;
         private ComboBoxEx X_APCOMBO;
         private TextBoxEx X_AP_MD5;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
 
     }
 }
