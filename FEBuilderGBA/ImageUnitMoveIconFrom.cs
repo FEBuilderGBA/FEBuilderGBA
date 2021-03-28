@@ -378,12 +378,15 @@ namespace FEBuilderGBA
         public static void OnPreClassExtendsWarningHandler(object sender, EventArgs e)
         {
             InputFormRef.ExpandsEventArgs eventarg = (InputFormRef.ExpandsEventArgs)e;
-
-            DialogResult dr = R.ShowNoYes("拡張した領域にある移動アニメーションを利用するには、移動アニメーション拡張のパッチが別途必要です。\r\n移動アニメーションを拡張してもよろしいですか？\r\n");
-            if (dr != DialogResult.Yes)
-            {//キャンセル.
-                eventarg.IsCancel = true;
-                return;
+            bool r = HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.ExtendedMovingMapAnimationList);
+            if (!r)
+            {
+                DialogResult dr = R.ShowNoYes("拡張した領域にある移動アニメーションを利用するには、移動アニメーション拡張のパッチが別途必要です。\r\n移動アニメーションを拡張してもよろしいですか？\r\n");
+                if (dr != DialogResult.Yes)
+                {//キャンセル.
+                    eventarg.IsCancel = true;
+                    return;
+                }
             }
         }
 
@@ -606,6 +609,7 @@ namespace FEBuilderGBA
         {
             SelectAPAddresssFromAPCombo();
         }
+
 
     }
 }

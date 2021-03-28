@@ -50,6 +50,7 @@ namespace FEBuilderGBA
             , UnitUpdateStateEvent_0x34_Fix
             , WakuEvent_0x3B_Fix
             , StatusToLocalization
+            , ExtendedMovingMapAnimationList
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -260,6 +261,23 @@ namespace FEBuilderGBA
                 patchName2 = "StatusToLocalization";///No Translate
                 patchShowName = "StatusToLocalization";///No Translate
                 patchCombo = "Fix";///No Translate
+            }
+            else if (type == TYPE.ExtendedMovingMapAnimationList)
+            {
+                if (Program.ROM.RomInfo.version() == 6)
+                {//FE6のパッチはないです
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchExtendedMovingMapAnimationListPatch();
+                };
+                reason = R._("ユニット移動アイコンを拡張するには、テーブルを拡張するパッチを適応する必要があります。\r\n有効にしますか？");
+                patchName1 = "Extended Moving Map Animation List";///No Translate
+                patchName2 = "Extended Moving Map Animation List";///No Translate
+                patchShowName = "Extended to Moving Map Animation 0xFF";///No Translate
+                patchCombo = "Extend 0xFF";///No Translate
             }
 
             Debug.Assert(checkFunc != null);

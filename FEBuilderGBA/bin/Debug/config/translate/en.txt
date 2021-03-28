@@ -775,9 +775,6 @@ Ignore TSA
 :01=拡縮
 01=Scaling
 
-:02=サイズの変更を行わない
-02=Do not resize.
-
 :サイズ補正方法
 Size correction method
 
@@ -2137,11 +2134,11 @@ Turn Condition FE 7
 :3=エリウッド編ハードモードのみ
 3=Eliwood Hard Mode
 
+:4=ヘクトル編ハードモードのみ
+4=Hector Hard mode only
+
 :5=ハードモードのみ
 5=Hard mode only
-
-:4=ヘクトル編ハードモードのみ
-4=Hector edition Hard mode only
 
 :常時条件
 Flag Conditional
@@ -3270,6 +3267,9 @@ Do you want to install a patch that fixes a bug that freezes when you specify a 
 
 :ローカリゼーションパッチをインストールしますか？
 Do you want to install the localization patch? 
+
+:ユニット移動アイコンを拡張するには、テーブルを拡張するパッチを適応する必要があります。\r\n有効にしますか？
+To extend the unit move icon, you need to apply a patch that extends the table.\r\nDo you want to enable it? 
 
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?

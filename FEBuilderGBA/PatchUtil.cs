@@ -704,8 +704,19 @@ namespace FEBuilderGBA
         public static bool SearchCAMERA_Event_OutOfBand_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
-                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8J", addr = 0x15D5E,data = new byte[]{0x14}},
-                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8U", addr = 0x15D52,data = new byte[]{0x14}},
+                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8J", addr = 0x15D5E,data = new byte[]{0xE}},
+                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8U", addr = 0x15D52,data = new byte[]{0xE}},
+            };
+            return SearchPatchBool(table);
+        }
+        //移動アイコンを0xffまで拡張するパッチの堅守
+        public static bool SearchExtendedMovingMapAnimationListPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Extended Moving Map Animation List",	ver = "FE8J", addr = 0x266AA,data = new byte[]{0xFF}},
+                new PatchTableSt{ name="Extended Moving Map Animation List",	ver = "FE8U", addr = 0x26706,data = new byte[]{0xFF}},
+                new PatchTableSt{ name="Extended Moving Map Animation List",	ver = "FE7J", addr = 0x25202,data = new byte[]{0xFF}},
+                new PatchTableSt{ name="Extended Moving Map Animation List",	ver = "FE7U", addr = 0x24D76,data = new byte[]{0xFF}},
             };
             return SearchPatchBool(table);
         }
