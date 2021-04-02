@@ -13,7 +13,7 @@
 13=Monster Lock	Restricts item use to only those with the Monster Lock set.\r\nBy default, this is set for dragonstones, claws, talons, etc. Not set for Mogall Spells.
 14=Weapon Lock 1	Restricts item use to only those with the Weapon Lock 1 set.\r\nBy default, this is unused. Use for custom unique weapons.
 15=Myrmidon/Swordmaster Lock	Restricts item use to only those with the Myrmidon/Swordmaster lock set.\r\nBy default, this is set for Shamshir.
-16=Hide Weapon Info	Hides all weapon info except for the Prf mark.
+16=Show Prf only	Displays the weapon level as Prf.\r\nIf you turn this setting on,\r\nbe sure to set weapon level of this item to 0 as well.\r\nIf you do so, the weapon level will be Prf.\r\nWhether or not the item can actually be equipped is set in another section.\r\n
 17=Negate Flying Effectiveness	When equipped, negates Bow effectiveness against Flying units.\r\nBy default, this is set for the Fili Shield.
 18=Negate Criticals	When equipped, prevents enemy critical hits.\r\nBy default, this is set for the Hoplon Guard.
 //特性3

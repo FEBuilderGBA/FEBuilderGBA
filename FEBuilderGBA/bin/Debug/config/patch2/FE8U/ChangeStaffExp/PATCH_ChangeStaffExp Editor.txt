@@ -3,9 +3,9 @@ NAME=杖の経験値を固定化する(Editor)
 INFO=杖を振ったときの経験値を固定化します。\r\nトーチでの無限稼ぎをしにくくするのが目的です。\r\n杖ごとに取得できる経験値を指定できます。\r\n取得経験値に0を指定すると、ディフォルトの動作になります。\r\nリストにない杖もディフォルトの動作になります。
 
 NAME.en=Fixed Exp value of staff(Editor)
-INFO.en=Fix Exp of staff.\r\nThe goal is to make it harder to earn an infinite amount of exp with the torch.\r\nYou can specify how much experience you can get with each.\r\nIf you specify 0 for GetExp you can get with the, the action is defaulted to 0. \r\nIf staff is not in the list of a restaurant, the default action is also set to 0.
+INFO.en=Fix the experience value when use staff.\r\nThe purpose of this is to make it harder to earn infinite exp with the torch staff.\r\nYou can specify the experience value that can be obtained for each staff.\r\nIf you specify 0 for the experience gained, the default behavior will be used.\r\nIf the staff is not listed, it will also default behavior.
 NAME.zh=Fixed Exp value of staff(Editor)
-INFO.zh=Fix Exp of staff.\r\nThe goal is to make it harder to earn an infinite amount of exp with the torch.\r\nYou can specify how much experience you can get with each.\r\nIf you specify 0 for GetExp you can get with the, the action is defaulted to 0. \r\nIf staff is not in the list of a restaurant, the default action is also set to 0.
+INFO.zh=Fix the experience value when use staff.\r\nThe purpose of this is to make it harder to earn infinite exp with the torch staff.\r\nYou can specify the experience value that can be obtained for each staff.\r\nIf you specify 0 for the experience gained, the default behavior will be used.\r\nIf the staff is not listed, it will also default behavior.
 
 IF:0x2C650=0x00 0x4B 0x18 0x47
 AUTHOR=7743

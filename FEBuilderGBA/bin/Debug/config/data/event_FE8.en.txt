@@ -448,7 +448,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2126XXXX253BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a SHINY []frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+)	{WAKU}	{CAMERA}
 243BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds] SHINY []frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted.	{WAKU}
 482FZZZZWW00XXYY	Set[WW:UNIT:Character]to warp to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP)	@MOVESPEED	{UNITMOVE}
-482FZZZZWW00XXYY20300000	[WW:UNIT:Character]warps to coordintates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	@MOVESPEED	{UNITMOVE}
+482FZZZZWW00XXYY20300000	[WW:UNIT:Character]warps to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	@MOVESPEED	{UNITMOVE}
 40050D00000000004005010000WWVVVV2107000040050100FFFFFFFF21070000403FXXXXYYYYZZZZ	Set and execute event battle(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:method of attacker][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Event battle setting and execution(No counterattack)[WW:DECIMAL:Damage given by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 
