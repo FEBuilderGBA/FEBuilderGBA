@@ -1057,6 +1057,13 @@ namespace FEBuilderGBA
 
             F_X.Value = pos.x;
             F_Y.Value = pos.y;
+            F_EXT.SelectedIndex = (int)pos.ext;
+            F_SPEED.Value = 0;
+            F_UNITID.Value = 0;
+            F_WAIT.Value = 0;
+            F_UNK1.Value = (int)pos.unk1;
+            F_UNK2.Value = (int)pos.unk2;
+
             int count = (int)B7.Value;
             uint addr = U.toOffset((uint)P8.Value);
             for (int i = 0; i < count; i++ , addr += 8)
