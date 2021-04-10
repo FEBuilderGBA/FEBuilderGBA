@@ -569,3 +569,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400D0000B9B40708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{J}
 20230000	Hide all units on the map.(HIDEMAP)
 20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP
+Duration
+400D00003D7F0808	Congratulations! Directed display when the towers and ruins are cleared to the end.	{J}
+400D0000715C0808	Congratulations! Directed display when the towers and ruins are cleared to the end.	{U}

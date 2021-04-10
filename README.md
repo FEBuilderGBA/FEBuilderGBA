@@ -24,6 +24,13 @@ We would like to thank our hacking predecessors who have publicly shared any ana
 Details (There is a commentary at the bottom of the page, and the wiki provides other instructions)  
 https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:index
 
+Some poorly designed anti-virus software may misidentify FEBuilderGBA as a virus.
+This is because FEBuilderGBA uses the WindowsDebugAPI to communicate with the emulator.
+Please configure your anti-virus to exclude the FEBuilderGBA directory.
+FEBuilderGBA is NOT virus. 
+The source code is all available on github, so you can build it yourself if you are worried.
+
+
 This software has no association with the official products.  
 We do not need any donations as we are making this software non-commercial. 
 
@@ -64,6 +71,12 @@ C#でありますが、特にパフォーマンスに注意しているので、
 
 詳細 (ページ下部に解説集があるよ)  
 https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:index
+
+一部の出来の悪いアンチウイルスソフトが、FEBuilderGBAをウイルスと誤認することがあるようです。
+これは、FEBuilderGBAがエミュレータと通信するためにWindowsDebugAPIを利用しているからだと思います。
+もしそうなったら、アンチウイルスの設定で、FEBuilderGBAディレクトリを除外してください。
+FEBuilderGBAはウイルスではありません。
+ソースコードはすべてgithubで公開しているので、心配な場合は自分でビルドしてください。
 
 
 このソフトウェアは、公式とは一切関係ありません。  
@@ -106,6 +119,12 @@ FE_Builder_GBA
 
 详细信息（页面底部有评论）  
 https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:index
+
+Some poorly designed anti-virus software may misidentify FEBuilderGBA as a virus.
+This is because FEBuilderGBA uses the WindowsDebugAPI to communicate with the emulator.
+Please configure your anti-virus to exclude the FEBuilderGBA directory.
+FEBuilderGBA is NOT virus. 
+The source code is all available on github, so you can build it yourself if you are worried.
 
 
 这个软件与官方无关。  

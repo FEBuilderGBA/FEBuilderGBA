@@ -359,7 +359,7 @@
             this.EXPLAIN.ReadOnly = true;
             this.EXPLAIN.Size = new System.Drawing.Size(859, 155);
             this.EXPLAIN.TabIndex = 242;
-            this.EXPLAIN.Text = "C    51からB0まで\r\nB    B1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加してい" +
+            this.EXPLAIN.Text = "C    51からA0まで\r\nB    A1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加してい" +
     "きます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。";
             // 
             // L_9_UNITICON

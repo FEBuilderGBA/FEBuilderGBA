@@ -10792,8 +10792,8 @@ C Conversation
 :このデータは支援テーブルの外にあります。
 This data is outside the support table.
 
-:C    51からB0まで\r\nB    B1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
-Unranked    0 to 50\r\nC    51 to B0\r\nB    B1 to F0\r\nA    F1 and up\r\n\r\nEach support partner begins at the "initial value".\r\nSupport level increases from there when partners are near based on "Growth".\r\nWhen support points exceed rank thresholds, a command and conversation will occur.
+:C    51からA0まで\r\nB    A1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
+Unranked    0 to 50\r\nC    51 to A0\r\nB    A1 to F0\r\nA    F1 and up\r\n\r\nEach support partner begins at the "initial value".\r\nSupport level increases from there when partners are near based on "Growth".\r\nWhen support points exceed rank thresholds, a command and conversation will occur.
 
 :支援相手10
 Support Partner 10
