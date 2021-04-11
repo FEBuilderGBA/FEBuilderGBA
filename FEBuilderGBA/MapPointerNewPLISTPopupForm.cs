@@ -95,7 +95,7 @@ namespace FEBuilderGBA
                     {//オブジェクトはパレットも調べる
                         maps = MapSettingForm.GetMapIDsWherePlist(MapPointerForm.PLIST_TYPE.PALETTE, plist);
                     }
-                    if (this.SearchType == MapPointerForm.PLIST_TYPE.ANIMATION)
+                    else if (this.SearchType == MapPointerForm.PLIST_TYPE.ANIMATION)
                     {//ANIMATION1はANIMATION2も調べる
                         maps = MapSettingForm.GetMapIDsWherePlist(MapPointerForm.PLIST_TYPE.ANIMATION2, plist);
                     }
