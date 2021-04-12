@@ -1,11 +1,9 @@
-NAME=ユニットまたはクラスのAIをまとめて変更する(イベント命令)
+NAME=ユニットまたはクラスのAIをまとめて変更する(イベント命令) 20180703
 TYPE=BIN
 TAG=#EVENT
 
 //既に適応されたかどうか
-PATCHED_IF:$GREP4 0x70 0xB5 0x84 0x6B 0x20 0x78 0x0F 0x21 0x08 0x40 0x00 0x28 0x02 0xD1 0x11 0x4D 0x11 0x4E 0x01 0xE0 0x10 0x4D 0x11 0x4E 0x28 0x68 0x00 0x28 0x15 0xD0 0xA2 0x78 0x00 0x2A 0x02 0xD0 0x01 0x79 0x91 0x42 0x0F 0xD1 0x68 0x68 0x00 0x28 0xFE 0xD0=0x70 0xB5 0x84 0x6B
-
-
+PATCHED_IF:$FGREP4 change_ai_all.dmp=0x70 0xB5 0x84 0x6B
 
 EVENTSCRIPT:1=400DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての敵軍のAIをSVAL1の内容に変更(LOW)[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
 EVENTSCRIPT:2=410DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての友軍のAIをSVAL1の内容に変更(LOW)[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
@@ -19,17 +17,18 @@ BIN:$FREEAREA:1=change_ai_all.dmp
 INFO=特定の条件にマッチする、すべてのユニットまたはクラスのユニットのAIを一気に変更します。\r\nFE4,FE5でよく使われる敵将を説得したら配下を離脱AIにするなどを、GBAFEでも簡単に使えるようにします。
 
 AUTHOR=7743
-NAME.en=Add Event: Change AI of unit or class at once
+NAME.en=Add Event: Change AI of unit or class at once 20180703
 INFO.en=Change AI ​​of all units or class units at a stroke that matches a specific condition.\r\nWhen persuading the common enemy generals commonly used for FE 4 and FE 5, it makes it easy for GBAFE to use such as to leave subordinate to withdrawal AI.
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all enemy forces that match the condition to the contents of SVAL1 (LOW)[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
 EVENTSCRIPT:2.en=410DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all ally who match the condition to the contents of SVAL1 (LOW)[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
 EVENTSCRIPT:3.en=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all enemy forces matching the condition to the contents of [ZZ:AI1:AI1][WW:AI2:AI2]. [XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:4.en=40050100ZZWW0000410DXXYY{$L1:change_ai_all.dmp}	Changed the AI ​​of all ally who match the conditions to the contents of [ZZ:AI1:AI1][WW:AI2:AI2]. [XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 
-NAME.zh=事件命令一次更改人物或班级的AI(Add Event)
+NAME.zh=事件命令一次更改人物或班级的AI(Add Event) 20180703
 INFO.zh=以符合特定条件的笔划更改所有人物或类人物的AI。\r\n在说服常用于FE 4和FE 5的敌人将军时，GBAFE很容易使用，例如让下属撤回AI。
 EVENTSCRIPT:1.zh=400DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有敌军的AI更改为SVAL1(LOW)的内容。[XX:UNIT:人物(00=ANY)][YY:CLASS:class(00=ANY)]
 EVENTSCRIPT:2.zh=410DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有朋友的AI更改为SVAL1(LOW)的内容。[XX:UNIT:人物(00=ANY)][YY:CLASS:class(00=ANY)]
 EVENTSCRIPT:3.zh=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有敌方力量的AI更改为[ZZ:AI1:AI1][WW:AI2:AI2]的内容。[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:4.zh=40050100ZZWW0000410DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有朋友的AI更改为[ZZ:AI1:AI1][WW:AI2:AI2]的内容。[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 
+DEPRECATED=1
