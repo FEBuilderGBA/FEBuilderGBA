@@ -1,0 +1,6 @@
+EachAlly=$14
+Each=$18
+NextLoop=$4A
+CheckClass=$2A
+Change=$3C
+Term=$50

@@ -2957,7 +2957,7 @@ namespace FEBuilderGBA
         public static uint PreciseEevntCondArea(uint mapid)
         {
             MapPointerNewPLISTPopupForm f = (MapPointerNewPLISTPopupForm)InputFormRef.JumpFormLow<MapPointerNewPLISTPopupForm>();
-            f.Init(MapPointerForm.PLIST_TYPE.CHANGE);
+            f.Init(MapPointerForm.PLIST_TYPE.EVENT);
             DialogResult dr = f.ShowDialog();
             if (dr != System.Windows.Forms.DialogResult.OK)
             {

@@ -108,9 +108,10 @@
 412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)
 20430000	用剑中风杀死的动画	{J}
 2043XXXX	RESUMM[XXXX:UNIT:人物]
-40050B00XXXXYYYY2041ZZZZ	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y][ZZZZ:UNIT:人物](LOW)
-2041XXXX	WARP_OUT[XXXX:UNIT:人物](LOW)
-2141XXXX	WARP_IN[XXXX:UNIT:人物](LOW)
+2041XXYY	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y](LOW)
+2141XXYY	WARP_IN[XXXX:MAPX:X][YYYY:MAPY:Y](LOW)
+2041FFFF	WARP_OUT SlotB(LOW)
+2141FFFF	WARP_IN SlotB(LOW)
 40ADXXXXYYYY0000	_SATURATE_COLORS[XXXX::Value1][YY::Value2]
 40B2000000000000	WM_FADEOUT
 60B4XXXXYYYYZZZZWWWW0000	世界地图显示[XXXX::Value 1][YY::XX][ZZ::YY][WW::Map](WM_SHOWDRAWNMAP)	{WMAPMOVE}
@@ -308,7 +309,7 @@
 232AXXXX	没有世界地图转到下一个地图(不保存)[XXXX:MAPCHAPTER:下一章ID](MNC3)	清除这一章并继续下一章	@MNC2BUG	{MAP}
 2113FF7F	静音，擦除BGM(_MUSICSOMETHING 0x7FFF)	{MUSIC}
 2113XXXX	_MUSICSOMETHING[XXXX:MUSIC:歌曲]	{MUSIC}
-482F0000YYYYZZWW	人物移动设置2[YY:UNIT:人物][ZZ:MAPX:X][WW:MAPY:Y]
+482F0000YYYYZZWW	人物移动设置2[YY:UNIT:人物][ZZ:MAPX:X][WW:MAPY:Y](LOW)
 221A0000	CG场景的对话开始(CGTEXTSTART)
 251A0000	_0x1320
 4121XXXXYYYYZZZZ	_0x2141 ReplaceBackgound[XXXX:BG:Backgound][YY::TargetTextType][ZZ:FSEC:Speed]
@@ -329,7 +330,8 @@
 4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)(LOW)	{LOADUNIT}
 4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
-2F41XXXX	_0x412F[XXXX::Value1]
+2F410000	ENDWARP
+2F41XXXX	ENDWARP[XXXX::Value1](LOW)
 4084XXXXYYYY0000	ID显示附近的地图详细规范[XXXX::值1][YY::值2]
 8088XXXXYYYYZZZZWWWWVVVV00000000	_0x8880[XXXX::Value1][YY::Value2][ZZ::Value3][WW::Value4][VV::Value5]
 409BXXXXYYYY0000	_0x9B40[XXXX::Value1][YY::Value2]
@@ -557,3 +559,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	向WMAP发出的人物移动[YY
 400D0000B9B40708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{J}
 20230000	Hide all units on the map.(HIDEMAP)
 20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP
+400D00003D7F0808	Display of Congratulations! Directed when the towers and ruins are cleared to end	{J}
+400D0000715C0808	Display of Congratulations! Directed when the towers and ruins are cleared to end	{U}

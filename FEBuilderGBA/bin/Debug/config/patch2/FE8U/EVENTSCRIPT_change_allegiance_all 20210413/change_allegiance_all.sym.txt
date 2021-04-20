@@ -1,0 +1,6 @@
+AllyToEnemy=$16
+Each=$1C
+NextLoop=$4A
+CheckClass=$2E
+Change=$40
+Term=$50

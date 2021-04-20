@@ -6,7 +6,7 @@
 06=Unknown06
 07=Poison
 08=DevilReversal
-11=ResireEnemyAttack
+11=NosferatuEffect
 12=Unknown12
 13=Unknown13
 14=Silencer

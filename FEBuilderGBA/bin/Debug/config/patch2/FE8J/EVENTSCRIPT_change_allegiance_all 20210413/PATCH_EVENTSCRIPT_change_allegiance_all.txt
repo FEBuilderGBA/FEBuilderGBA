@@ -1,9 +1,11 @@
-NAME=ユニットまたはクラスの所属をまとめて変更する(イベント命令) 20180703
+NAME=ユニットまたはクラスの所属をまとめて変更する(イベント命令) 20210413
 TYPE=BIN
 TAG=#EVENT
 
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 change_allegiance_all.dmp=0xF0 0xB5 0x84 0x6B
+
+
 
 EVENTSCRIPT:1=400DXXYY{$L1:change_allegiance_all.dmp}	条件にマッチするすべての敵軍を友軍に変更する。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:2=410DXXYY{$L1:change_allegiance_all.dmp}	条件にマッチするすべての友軍を敵軍に変更する。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]	{UNITPERSOLNAL}
@@ -14,14 +16,12 @@ BIN:$FREEAREA:1=change_allegiance_all.dmp
 INFO=特定の条件にマッチする、すべてのユニットまたはクラスのユニットの所属を一気に変更します。\r\nFE4,FE5でよく使われる敵将を説得したら配下を友軍にするなどを、GBAFEでも簡単に使えるようにします。\r\nただし、GBAFEでは、友軍は20体までしか登場できません。\r\nそれ以降は無視されるので注意してください。\r\n
 
 AUTHOR=7743
-NAME.en=Add Event: Change unit / class affiliation at once 20180703
+NAME.en=Add Event: Change unit / class affiliation at once 20210413
 INFO.en=Change affiliation of all units or classes of units matching specific conditions at once.\r\nWhen persuading the common enemy general used in FE 4, FE 5, it makes it easy for GBAFE to use such as making a subordinate a ally ally.\r\nHowever, with GBAFE, only 20 ally troops can appear.\r\nPlease note that since it will be ignored.\r\n
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_allegiance_all.dmp}	Change all enemy forces that match the condition to ally.[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}.
 EVENTSCRIPT:2.en=410DXXYY{$L1:change_allegiance_all.dmp}	Change all ally forces matching the conditions to enemy forces.[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}.
 
-NAME.zh=事件命令一次更改人物/类关联(Add Event) 20180703
+NAME.zh=事件命令一次更改人物/类关联(Add Event) 20210413
 INFO.zh=一次更改符合特定条件的所有人物或人物类别的从属关系。\r\n在说服FE 4，FE 5中使用的共同敌人时，它使GBAFE易于使用，例如使下属成为友军。\r\n但是，对于GBAFE，只能出现20名友军。\r\n请注意，因为它会被忽略。\r\n
 EVENTSCRIPT:1.zh=400DXXYY{$L1:change_allegiance_all.dmp}	将符合条件的所有敌方力量更改为友军。[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.zh=410DXXYY{$L1:change_allegiance_all.dmp}	将符合条件的所有友方力量更改为敌军。[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
-
-DEPRECATED=1

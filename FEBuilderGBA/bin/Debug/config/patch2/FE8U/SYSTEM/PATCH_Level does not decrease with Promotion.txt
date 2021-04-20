@@ -23,3 +23,6 @@ NAME.zh=CC不会降低等级
 INFO.zh=更改CC，使其不会将级别重置为1。
 
 AUTHOR=7743
+
+CONFLICT_IF:0x2F8FC=0x13 0x25 0x05 0xE0 0x14 0x25 0x03 0xE0
+CONFLICT_MESSAGE=SkillSystems StrmagSplit
