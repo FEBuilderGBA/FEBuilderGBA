@@ -764,7 +764,7 @@ String written directly to ROM
 Direct string editing
 
 :16色を超える画像を利用したい場合は、減色ツールを利用してください。\r\nTSAを考慮して減色することで、16色*8パレット利用できます。\r\n
-To use more than 16 colors, use the subtractive color tool.\r\nYou can use 16 color * 8 palette by decreasing color considering TSA.\r\n
+To use more than 16 colors, use the Decrease Color Tool.\r\nYou can use 16 color * 8 palette by decreasing color considering TSA.\r\n
 
 :TSAを無視
 Ignore TSA
