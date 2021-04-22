@@ -410,7 +410,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2127XXXX	Revert tile change[XXXX:MAP_CHANGE:tile change ID](TILEREVERSE)	{MAPCHANGE}
 40050B00XXXXYYYY2027FFFF	Execute tile change[XXXX:MAPX:X][YYYY:MAPY:Y](TILECHANGE)	{MAPCHANGE}
 40050B00XXXXYYYY2127FFFF	Revert tile change[XXXX:MAPX:X][YYYY:MAPY:Y](TILEREVERSE)	{MAPCHANGE}
-2025XX00	[XX:MAPCHAPTER:Chapter_ID]Change map(LOMA)	{MAP}
 2025FFFF	Change Map to memory slot 2 value(LOMA)(LOW)	{MAP}
 2004XXXX	Get a random number[XXXX::Maximum_Number](RANDOMNUMBER)	@STOREC	{COND}
 601800000000000000000000	STARTFADE	{FADE}
@@ -474,7 +473,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2317XXXX	Fade the screen to white with[XXXX:FSEC:Speed] Normal->White (FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
 2217XXXX	Fade the screen back from white with[XXXX:FSEC:Speed] White->Normal (FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
 
-4005XXXXYYYY04002025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map(LOMA)	{MAP}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle  Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000413FXXXXYYYYZZZZ	Set and execute event battle (MapBattle)(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	Execute Map Battle. event battle 41	{BATTLE}	{MAPEFFECT}
@@ -562,7 +560,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20100200	Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding(EVBIT_MODIFY 2)	{EVBIT}
 20100300	Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 3)	{EVBIT}
 20100400	Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding(EVBIT_MODIFY 4)	{EVBIT}
-2025XXXX	[XX: MAPCHAPTER: Chapter ID] Map switching (LOMA).	{MAP}
+2025XXXX	[XX:MAPCHAPTER:Chapter ID] Map switching (LOMA).	{MAP}
 400D000001270208	Waiting for current player unit in current position	Use this if you want the unit to wait for a special menu.\r\nThis will put it in a moving position compared to SET_ENDTURN	{J}
 400D000039270208	Waiting for current player unit in current position	Use this if you want the unit to wait for a special menu.\r\nThis will put it in a moving position compared to SET_ENDTURN	{U}
 400D0000A5900708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{U}
