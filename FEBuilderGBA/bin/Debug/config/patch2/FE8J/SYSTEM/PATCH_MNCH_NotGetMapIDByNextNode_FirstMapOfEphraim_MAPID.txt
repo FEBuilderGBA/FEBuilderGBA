@@ -1,0 +1,15 @@
+NAME=MNCH_次のノードから取得しないMapID_エフラム編の最初のマップ
+INFO=MNCHでマッフを移動した時に、セーブメニューが表示されますが、ここでセーブに書き込んだときに表示される章名には、次のワールドマップ拠点から取得されます。\r\nただし、最初のマップは、次のワールドマップノードが設定できないません。\r\nこの時、常にMap 0x00 が選択されるという問題があります。\r\nそのため、最初のマップは次のワールドマップ拠点から値を取得しません。\r\n通常はMapID 0x17 が設定されています。これはエフラム編の最初のマップです。
+
+
+TYPE=ADDR
+ADDRESS=0xAD56E
+ADDRESS_TYPE=MAP
+DEAFULT=0x17
+
+
+TAG=#ENGINE
+NAME.en=MNCH_MapID not obtained from the next node_The first map of Ephraim.
+INFO.en=When you move your muff in MNCH, the save menu will appear, and the chapter name that appears when you write to a save here will be taken from the next world map node.\r\nHowever, the first map will not be able to set the next world map node.\r\nThe problem is that Map 0x00 is always selected at this time.\r\nTherefore, the first map will not get the value from the next world map node.\r\nNormally, MapID 0x17 is set. This is the first map of Ephraim.
+NAME.zh=MNCH_未从Efram版本的下一个节点MapID_First地图获得。
+INFO.zh=用MNCH移动套管时，将显示保存菜单，但是从下一个世界地图上获取在此处写入以保存时显示的章节名称。\r\n但是，第一个地图无法与下一个世界地图节点一起配置。\r\n此时，存在始终选择映射0x00的问题。\r\n因此，第一张地图不会从下一个世界地图位置获取值。\r\n通常会设置MapID 0x17。这是Efram的第一张地图。

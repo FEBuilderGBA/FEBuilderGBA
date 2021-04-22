@@ -13,3 +13,6 @@ INFO.en=This Patch make the following corrections.\r\nStaff exp varies depends o
 
 AUTHOR=Tequila
 INFO.zh=该补丁还进行以下更正。\r\n手杖的经验值取决于手杖的重量。\r\n恢复的量取决于手杖的力量。
+
+CONFLICT_IF:0x2F8FC=0x13 0x25 0x05 0xE0 0x14 0x25 0x03 0xE0
+CONFLICT_MESSAGE=SkillSystems StrmagSplit

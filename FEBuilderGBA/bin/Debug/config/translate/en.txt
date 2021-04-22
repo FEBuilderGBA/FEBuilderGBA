@@ -10543,8 +10543,8 @@ The .byte instruction was used without a global label.\r\nPlease define global l
 :.byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
 ".byte" Error during parsing {2}.\r\n{3}\r\nFile: {0} Line: {1}
 
-:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。\r\n\r\nFile:{0} Line:{1}
-The .word instruction was used without a global label.\r\nPlease define global label first.\r\n\r\nFile: {0} Line: {1}
+:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
+The .word instruction was used without the global label.\r\nFirst, define a global label...\r\n\r\nFile: {0} Line: {1}.
 
 :.wordは1つ以上のラベル引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}
 ".word" requires one or more label arguments.\r\nExample:.byte arg1.\r\n\r\nFile: {0} Line: {1}
@@ -10792,8 +10792,8 @@ C-Rank Conversation
 :このデータは支援テーブルの外にあります。
 This data is outside the support table.
 
-:C    51からB0まで\r\nB    B1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
-Unranked    0 to 50\r\nC    51 to B0\r\nB    B1 to F0\r\nA    F1 and up\r\n\r\nEach pair has their values starting at the Initial Value.\r\nThe support level increases from there while partners are near each other via the Growth Value.\r\nWhen support rank thresholds are met, a the support command and conversation are available.
+:C    51からA0まで\r\nB    A1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
+From C 51 to A 0.\r\nB From A1 to F0.\r\nA F1 or later.\r\n\r\nThe support value starts from the initial value and increases according to the progress when the characters are adjacent.\r\nWhen a certain number of support values \u200b\u200bare accumulated, support commands are displayed, and you can advance to the next level by having a support conversation.
 
 :支援相手10
 Support Partner 10
