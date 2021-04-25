@@ -40,6 +40,7 @@ template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Attack->Attack-> No Co
 template_event_BATTLE_FromEnemy_Attack.txt	BattleEvent From Enemy Attack->No Counterattack
 template_event_RedFadeout.txt	background fades out to red
 template_event_WarpIN_FE8.txt	Make a unit appear in warp
+template_event_COND_Coord_WarpOUT_WarpIN_FE8.txt	Warp a unit with specific coordinates
 template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
 template_event_GAMEOVER_FE8.txt	Call game over
 template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call Preparation
