@@ -61,6 +61,7 @@ namespace FEBuilderGBA
             //頻繁にリストを更新するのでBrushをキャッシュする.
             this.ListBoxForeBrush = new SolidBrush(OptionForm.Color_Control_ForeColor());
             this.ListBoxForeKeywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
+            this.ListBoxForeDecBrush = new SolidBrush(OptionForm.Color_InputDecimal_ForeColor());
             this.BoldFont = new Font(this.FlagListBox.Font, FontStyle.Bold);
             this.YubiYokoCursor = ImageSystemIconForm.YubiYoko();
             U.MakeTransparent(this.YubiYokoCursor);
@@ -104,6 +105,7 @@ namespace FEBuilderGBA
         //頻繁に更新するのでキャッシュしておこう.
         SolidBrush ListBoxForeBrush;
         SolidBrush ListBoxForeKeywordBrush;
+        SolidBrush ListBoxForeDecBrush;
         Font BoldFont;
         Bitmap YubiYokoCursor;
 
@@ -206,6 +208,7 @@ namespace FEBuilderGBA
             UpdateSong();
             UpdateTrap();
             UpdateBWL();
+            UpdateChapterData();
             UpdatePalette();
         }
         void UpdateUserStack()
@@ -275,7 +278,7 @@ namespace FEBuilderGBA
             uint currntBGMStructAddr = Program.ROM.RomInfo.workmemory_bgm_address();
             BGM.Value = Program.RAM.u16(currntBGMStructAddr + 4);
 
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             this.N_InputFormRef.ReInit(stageStructAddr, 1);
         }
 
@@ -914,6 +917,11 @@ namespace FEBuilderGBA
                 this.ListBoxForeKeywordBrush.Dispose();
                 this.ListBoxForeKeywordBrush = null;
             }
+            if (this.ListBoxForeDecBrush != null)
+            {
+                this.ListBoxForeDecBrush.Dispose();
+                this.ListBoxForeDecBrush = null;
+            }
             if (this.BoldFont != null)
             {
                 this.BoldFont.Dispose();
@@ -1426,7 +1434,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0x8;
             Program.RAM.write_u32(writeRAMPointer, (uint)CHEAT_MONEY_VALUE.Value);
 
@@ -1439,7 +1447,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0xD;
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_FOG_VALUE.Value);
 
@@ -2295,7 +2303,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0x15;
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_WEATHER_VALUE.Value);
 
@@ -2441,6 +2449,11 @@ namespace FEBuilderGBA
                 this.ClearTurnList.DummyAlloc((int)Program.ROM.RomInfo.workmemory_clear_turn_count(), 0);
             }
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ClearTurnList);
+
+            this.ChapterDataList.OwnerDraw(DrawChapterDataList, DrawMode.OwnerDrawFixed, false);
+            this.ChapterDataList.ItemHeight = 12;
+            this.ChapterDataList.DummyAlloc(ChapterDataStruct.Count, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ChapterDataAddress);
         }
 
         void UpdateEditon()
@@ -2518,6 +2531,19 @@ namespace FEBuilderGBA
                 this.BWLList.Invalidate();
             }
         }
+        void UpdateChapterData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_chapterdata_address()
+                , 0x4c);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.ChapterDataCheckSUM)
+            {//変更有
+                this.ChapterDataCheckSUM = sum;
+                this.ChapterDataList.Invalidate();
+            }
+        }
+
         void UpdateClearTurn()
         {
             byte[] bin = Program.RAM.getBinaryData(
@@ -2729,6 +2755,41 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
+        Size DrawChapterDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count || index >= ChapterDataStruct.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            uint lineHeight = 12;
+
+            EmulatorMemoryUtil.AddressList a = ChapterDataStruct[index];
+
+            uint addr = Program.ROM.RomInfo.workmemory_chapterdata_address() + a.Plus;
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            U.DrawText( "(+"+U.ToHexString2(a.Plus)+")", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 40;
+
+            U.DrawText(a.Name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 120;
+
+            string r = EmulatorMemoryUtil.GetChapterData(a);
+            if (a.Type == "DEC")
+            {
+                U.DrawText(r, g, lb.Font, this.ListBoxForeDecBrush, isWithDraw, bounds);
+            }
+            else
+            {
+                U.DrawText(r, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            }
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+
         Size DrawClearTurnList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
             if (index < 0 || index >= lb.Items.Count)
@@ -2802,6 +2863,7 @@ namespace FEBuilderGBA
         uint[] SongWorkingRAMs;
         uint TrapCheckSUM;
         uint BWLCheckSUM;
+        uint ChapterDataCheckSUM;
         uint ClearTurnSUM;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
@@ -3005,7 +3067,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0x10;
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_TURN_VALUE.Value);
 
@@ -3032,6 +3094,35 @@ namespace FEBuilderGBA
                 return;
             }
             uint addr = Program.ROM.RomInfo.workmemory_bwl_address() + 16 + ((uint)index * 16);
+
+            PointerToolCopyToForm f = (PointerToolCopyToForm)InputFormRef.JumpFormLow<PointerToolCopyToForm>();
+            f.Init(addr);
+            f.ShowDialog();
+        }
+
+        List<EmulatorMemoryUtil.AddressList> ChapterDataStruct = EmulatorMemoryUtil.GetChapterDataStruct();
+        private void ChapterDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = ChapterDataList.SelectedIndex;
+            if (index < 0 || index >= ChapterDataList.Items.Count || index >= ChapterDataStruct.Count)
+            {
+                ChapterDataAddress.Text = "";
+                return;
+            }
+            EmulatorMemoryUtil.AddressList a = ChapterDataStruct[index];
+            uint addr = Program.ROM.RomInfo.workmemory_chapterdata_address() + a.Plus;
+            ChapterDataAddress.Text = U.ToHexString(addr);
+        }
+
+        private void ChapterDataAddress_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = ChapterDataList.SelectedIndex;
+            if (index < 0 || index >= ChapterDataList.Items.Count || index >= ChapterDataStruct.Count)
+            {
+                return;
+            }
+            EmulatorMemoryUtil.AddressList  a = ChapterDataStruct[index];
+            uint addr = Program.ROM.RomInfo.workmemory_chapterdata_address() + a.Plus;
 
             PointerToolCopyToForm f = (PointerToolCopyToForm)InputFormRef.JumpFormLow<PointerToolCopyToForm>();
             f.Init(addr);

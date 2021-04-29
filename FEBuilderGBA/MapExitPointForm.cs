@@ -28,15 +28,7 @@ namespace FEBuilderGBA
             //マップを最前面に移動する.
             MapPictureBox.BringToFront();
 
-            if (Program.ROM.RomInfo.version() == 6)
-            {//たぶんFE6には、NPC離脱ポインタは存在しない
-                FilterComboBox.Hide();
-                Set_X_Filter_Note_Message(0);
-            }
-            else
-            {
                 FilterComboBox.SelectedIndex = 0;
-            }
         }
         static Bitmap GetFilterSymbolIconBitmap(int index)
         {
@@ -64,8 +56,15 @@ namespace FEBuilderGBA
                 }
             }
             else
-            {//FE6には敵の離脱ポイントしかないです
-                bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x2F, 2, true);
+            {
+                if (index == 0)
+                {//Enemy
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x2F, 2, true);
+                }
+                else
+                {//NPC
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x3A, 1, true);
+                }
             }
             U.MakeTransparent(bitmap);
             return bitmap;
@@ -232,14 +231,7 @@ namespace FEBuilderGBA
             X_Filter_Note_Message_Picture.Image = GetFilterSymbolIconBitmap(index);
             if (index == 0)
             {//敵軍
-                if (Program.ROM.RomInfo.version() == 6)
-                {
-                    X_Filter_Note_Message_Label.Text = R._("これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。");
-                }
-                else
-                {
-                    X_Filter_Note_Message_Label.Text = R._("これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。");
-                }
+                X_Filter_Note_Message_Label.Text = R._("これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。");
             }
             else
             {//友軍
@@ -320,10 +312,6 @@ namespace FEBuilderGBA
             }
 
             //NPC離脱
-            if (Program.ROM.RomInfo.version() == 6)
-            {//たぶんFE6には、NPC離脱ポインタは存在しない
-                return;
-            }
             InputFormRef.ReInit(
                 Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer()) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd()));
             FEBuilderGBA.Address.AddAddressButIgnorePointer(list, InputFormRef, "MapExit NPC", new uint[] { 0 });

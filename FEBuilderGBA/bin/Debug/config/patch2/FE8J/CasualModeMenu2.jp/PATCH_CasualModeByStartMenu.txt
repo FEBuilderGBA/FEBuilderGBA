@@ -23,3 +23,7 @@ INFO.zh=When starting from the beginning, the casual mode selection screen is di
 EDIT_PATCH:1=PATCH_CasualModeByStartMenu_ModeSelectGraphics.txt
 EDIT_PATCH:2=PATCH_CasualModeByStartMenu_RetreatQuoteTable.txt
 EDIT_PATCH:3=PATCH_CasualModeByStartMenu_Text.txt
+
+CONFLICT_IF:0x1812C=0x00 0x4B 0x18 0x47
+CONFLICT_IF:0x8F3D8=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+CONFLICT_MESSAGE=Other Casual Mode Patch

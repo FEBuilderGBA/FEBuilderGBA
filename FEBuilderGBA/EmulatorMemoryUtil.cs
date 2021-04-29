@@ -48,7 +48,7 @@ namespace FEBuilderGBA
             {//6には編が存在しない.
                 return U.NOT_FOUND;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint ramPointer = stageStructAddr + 0x1B;
             return Program.RAM.u8(ramPointer);
         }
@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         public static uint GetDiffecly()
         {
             uint ret = 0;
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
 
             uint ramPointer1 = stageStructAddr + 0x14;
             uint v = Program.RAM.u8(ramPointer1);
@@ -228,7 +228,7 @@ namespace FEBuilderGBA
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
             //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             Program.RAM.write_u8(stageStructAddr + 0x1b, edtion);
 
             //拠点
@@ -308,7 +308,7 @@ namespace FEBuilderGBA
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
             //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             Program.RAM.write_u8(stageStructAddr + 0x1b, edtion);
 
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
@@ -517,6 +517,137 @@ namespace FEBuilderGBA
 
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
             return;
+        }
+        public class AddressList
+        {
+            public string Name;
+            public string Type;
+            public uint   Size;
+            public uint   Plus;
+            public AddressList(uint plus,string name,string type,uint size)
+            {
+                this.Name = name;
+                this.Type = type;
+                this.Size = size;
+                this.Plus = plus;
+            }
+        }
+        static public List<EmulatorMemoryUtil.AddressList> GetChapterDataStruct()
+        {
+            List<AddressList> ret = new List<AddressList>();
+            if (Program.ROM.RomInfo.version() == 6)
+            {//FE6
+                ret.Add(new AddressList(0x00, "Clock", "", 4));
+                ret.Add(new AddressList(0x04, "Unknown4", "", 4));
+                ret.Add(new AddressList(0x08, "Gold", "DEC", 4));
+                ret.Add(new AddressList(0x0C, "SaveSlotIndex", "", 1));
+                ret.Add(new AddressList(0x0D, "Fog", "FOG", 1));
+                ret.Add(new AddressList(0x0E, "MapID", "MAP", 1));
+                ret.Add(new AddressList(0x0F, "Phase", "PHASE", 1));
+                ret.Add(new AddressList(0x10, "Turns", "DEC", 2));
+                ret.Add(new AddressList(0x12, "CorsolX", "DEC", 1));
+                ret.Add(new AddressList(0x13, "CorsolY", "DEC", 1));
+                ret.Add(new AddressList(0x14, "ChapterStuff", "CHAPTERSTUFF", 1));
+                ret.Add(new AddressList(0x15, "Weather", "WEATHER", 1));
+                ret.Add(new AddressList(0x16, "Support Gain Total", "", 2));
+                ret.Add(new AddressList(0x18, "PlaythroughId", "", 2));
+                ret.Add(new AddressList(0x1A, "LastUnitListSortType", "", 1));
+                ret.Add(new AddressList(0x1B, "Editon", "EDITON", 1));
+                ret.Add(new AddressList(0x1C, "Config", "CONFIG", 0x4));
+            }
+            else
+            {//FE7 , FE8
+                ret.Add(new AddressList(0x00, "Clock", "", 4));
+                ret.Add(new AddressList(0x04, "Unknown4", "", 4));
+                ret.Add(new AddressList(0x08, "Gold", "DEC", 4));
+                ret.Add(new AddressList(0x0C, "SaveSlotIndex", "", 1));
+                ret.Add(new AddressList(0x0D, "Fog", "FOG", 1));
+                ret.Add(new AddressList(0x0E, "MapID", "MAP", 1));
+                ret.Add(new AddressList(0x0F, "Phase", "PHASE", 1));
+                ret.Add(new AddressList(0x10, "Turns", "DEC", 2));
+                ret.Add(new AddressList(0x12, "CorsolX", "DEC", 1));
+                ret.Add(new AddressList(0x13, "CorsolY", "DEC", 1));
+                ret.Add(new AddressList(0x14, "ChapterStuff", "CHAPTERSTUFF", 1));
+                ret.Add(new AddressList(0x15, "Weather", "WEATHER", 1));
+                ret.Add(new AddressList(0x16, "SupportGainTotal", "", 2));
+                ret.Add(new AddressList(0x18, "PlaythroughId", "", 2));
+                ret.Add(new AddressList(0x1A, "LastUnitListSortType", "", 1));
+                ret.Add(new AddressList(0x1B, "Editon", "EDITON", 1));
+                ret.Add(new AddressList(0x1C, "WeaponTypeLookup", "", 4));
+                ret.Add(new AddressList(0x20, "TacticianName", "STRING", 0xB));
+                ret.Add(new AddressList(0x2C, "Unknown2C", "", 0x4));
+                ret.Add(new AddressList(0x30, "FundsTotalDifference", "", 0x4));
+                ret.Add(new AddressList(0x34, "Unknown34", "", 0x4));
+                ret.Add(new AddressList(0x38, "Padding_38", "", 0x2));
+                ret.Add(new AddressList(0x40, "Config", "CONFIG", 0x4));
+                ret.Add(new AddressList(0x44, "Unknown44", "", 0x4));
+                ret.Add(new AddressList(0x48, "Unknown48", "", 0x2));
+                ret.Add(new AddressList(0x4A, "Unknown4A", "", 0x2));
+            }
+
+            return ret;
+        }
+        public static string GetChapterData(AddressList a)
+        {
+            uint addr = Program.ROM.RomInfo.workmemory_chapterdata_address() + a.Plus;
+            uint v = 0;
+            if (a.Size == 1)
+            {
+                v = Program.RAM.u8(addr);
+            }
+            else if (a.Size == 2)
+            {
+                v = Program.RAM.u16(addr);
+            }
+            else if (a.Size == 4)
+            {
+                v = Program.RAM.u32(addr);
+            }
+
+            if (a.Type == "DEC")
+            {
+                return v.ToString();
+            }
+            else if (a.Type == "MAP")
+            {
+                return U.To0xHexString(v) + " (" + MapSettingForm.GetMapName(v) + ")";
+            }
+            else if (a.Type == "FOG")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetFOG(v)  + ")";
+            }
+            else if (a.Type == "PHASE")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetPHASE(v) + ")";
+            }
+            else if (a.Type == "CHAPTERSTUFF")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetChatperStaff(v) + ")";
+            }
+            else if (a.Type == "EDITON")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetEditon(v) + ")";
+            }
+            else if (a.Type == "WEATHER")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetWEATHER(v) + ")";
+            }
+            else if (a.Type == "STRING")
+            {
+                FETextDecode decoder = new FETextDecode();
+                uint len = Program.RAM.strlen(addr);
+                len = Math.Min(len,0xb);
+                byte[] srcdata = Program.RAM.getBinaryData(addr, len);
+                return decoder.UnHffmanPatchDecodeLow(srcdata);
+            }
+            else if (a.Type == "CONFIG")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetChapterDataConfig(v) + ")";
+            }
+            else
+            {
+                return U.To0xHexString(v);
+            }
         }
     }
 }

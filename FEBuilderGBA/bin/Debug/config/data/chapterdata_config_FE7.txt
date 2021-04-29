@@ -1,0 +1,36 @@
+//Option1
+01=Individual color	unused
+02=Terrain window Off	set=off, not set=on
+03=Unit window1	set=burst, not set=panel
+04=Unit window2	set=off, not set=panel
+05=Autocursor Off	set=off, not set=on
+06=Text speed Normal	set=normal, not set=slow
+07=Text speed1	set=fast, not set=slow
+08=Game speed2	 set=fast, not set=normal
+//Option2
+11=Music Off	set=off, not set=on
+12=Sound effects Off	set=off, not set=on
+13=Window color1	set=orange, not set=blue
+14=Window color2	set=black, not set=?
+15=Display BWL on StatScreen
+16=Unk16
+17=Autoend turns Off	set=off, not set=on
+18=Subtitle help Off	set=off, not set=on
+//Option3
+21=Show objective Off	set=off, not set=on
+22=Combat animations off	if both 2 and 4 are set, combat animations are on with backgrounds on
+23=Combat animations solo	if both 2 and 4 are not set, combat animations are on with backgrounds off
+24=Combat info window1	set=detail, not set=strat
+25=Combat info window2	 (set=off, not set=strat)
+26=NotEasy
+27=Unk27
+28=Unk28
+//Option4
+31=Show objective Off	set=off, not set=on
+32=Combat animations off	if both 2 and 4 are set, combat animations are on with backgrounds on
+33=Unk33
+34=Unk34
+35=Unk35
+36=Unk36
+37=Unk37
+38=Unk38

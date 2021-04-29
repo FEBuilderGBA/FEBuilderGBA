@@ -7293,6 +7293,19 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static string GetPHASE(uint num)
+        {
+            switch (num)
+            {
+                case 0x0:
+                    return R._("自軍(青)");
+                case 0x40:
+                    return R._("友軍(緑)");
+                case 0x80:
+                    return R._("敵軍(赤)");
+            }
+            return "";
+        }
         public static string GetWEATHER(uint num)
         {
             switch (num)
@@ -7316,6 +7329,39 @@ namespace FEBuilderGBA
             }
             return "";
         }
+
+        public static string GetChatperStaff(uint num)
+        {
+            string r = "";
+            if ( (num & 0x1) == 0x1)
+            {
+                r += " ,0x01 Stat screen page 1 (Inventory)";
+            }
+            else if ((num & 0x2) == 0x2)
+            {
+                r += " ,0x02 Stat screen page 2 (Difficulty)";
+            }
+            else if ((num & 0x10) == 0x10)
+            {
+                r += " ,0x10 Set when on prep screen";
+            }
+            else if ((num & 0x40) == 0x40)
+            {
+                r += " ,0x40 Set for hard mode";
+            }
+            else if ((num & 0x80) == 0x80)
+            {
+                r += " ,0x80 Don't gain weapon exp";
+            }
+            return U.substr(r, 2);
+        }
+        public static string GetChapterDataConfig(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("chapterdata_config_");
+            return GetInfoByBitFlag(num, dic);
+        }
+
+
         public static string GetBADSTATUS(uint num)
         {
             uint status = (num & 0x0f);

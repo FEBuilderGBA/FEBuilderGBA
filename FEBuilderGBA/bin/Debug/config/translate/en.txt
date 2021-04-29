@@ -12907,3 +12907,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:章データ
+ChapterData

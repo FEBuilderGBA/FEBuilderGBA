@@ -254,7 +254,9 @@ namespace FEBuilderGBA
         public uint workmemory_player_units_address() { return 0x0202BE48; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_enemy_units_address() { return 0x0202CFB8; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_npc_units_address() { return 0x0202DDC8; }    //ワークメモリ PLAYER UNIT
+        public uint workmemory_chapterdata_address() { return workmemory_mapid_address() - 0xE; } //ワークメモリ章データ
         public uint workmemory_mapid_address() { return 0x0202BCFA; }    //ワークメモリ マップID
+        public uint workmemory_chapterdata_size() { return 0x4C; }    //ワークメモリ 章データのサイズ
         public uint workmemory_last_string_address() { return 0x0202B6A8; }  //ワークメモリ 最後に表示した文字列
         public uint workmemory_text_buffer_address() { return 0x0202A6A8; }  //ワークメモリ デコードされたテキスト
         public uint workmemory_next_text_buffer_address() { return 0x03000040; }  //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ
