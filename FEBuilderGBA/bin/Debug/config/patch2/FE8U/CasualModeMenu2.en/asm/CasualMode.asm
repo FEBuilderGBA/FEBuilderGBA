@@ -38,9 +38,13 @@ CM_Main:
 	orr  r0,r1
 	str  r0,[r4,#0xc]
 	mov  r0,r4
-	ldr  r3,=0x80283e0|1	@{U}
-@	ldr  r3,=0x8028374|1	@{J}
-	bl   goto_r3
+
+	cmp r3, #9
+	beq SkipClearSupports
+	ldr r3,=0x80283e1
+	bl goto_r3
+	SkipClearSupports:
+
 	pop  {r4}
 	ldr  r3,=0x801842c|1	@{U}
 @	ldr  r3,=0x8018140|1	@{J}

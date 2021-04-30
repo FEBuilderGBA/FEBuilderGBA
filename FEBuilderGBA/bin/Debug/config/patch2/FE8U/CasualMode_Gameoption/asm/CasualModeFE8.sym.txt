@@ -1,5 +1,6 @@
-CasualCheck=$2E
+CasualCheck=$32
 Retreat=$10
 Main=$12
-goto_r3=$2C
-CasualCheck_exit=$3C
+SkipClearSupports=$2C
+goto_r3=$30
+CasualCheck_exit=$40
