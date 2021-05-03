@@ -25,6 +25,7 @@ PALETTE_POINTER=$GREP4END+4 0x00 0x00 0x00 0x06 0x00 0x02 0x00 0x00 0x68 0x0D 0x
 
 WIDTH=240
 HEIGHT=160
+CHECK_IMAGE_ADDRESS_FOR_FELINT=true
 NAME.zh=使用具有256种颜色的图像作为OP标题。
 INFO=OPタイトルの背景に256色の画像を利用できるようにします。\r\nFEBuilderGBAの減色ツールで作る場合は、「種類」で、「05=TSAを利用しない256色」を利用してください。\r\n他の方法で用意する場合、256色、240x160の画像を用意してください。この時パレットの最初の色は利用してはいけません。
 INFO.en="256 Color Title Background Installer" must be patched onto the current ROM to use.\r\nEditor that allows for the insertion of 256 color title background images.\r\nWhen creating with the color reduction tool of FEBuilderGBA, use "05 = 256 colors not using TSA" in "type".\r\nWhen preparing by other methods, prepare 256 colors, 240 x 160 images.\r\nDo not use the first color of the palette at this time.\r\n

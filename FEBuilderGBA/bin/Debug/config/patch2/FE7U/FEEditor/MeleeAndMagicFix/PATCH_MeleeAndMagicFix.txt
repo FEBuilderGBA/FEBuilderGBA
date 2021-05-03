@@ -4,6 +4,6 @@ TAG=#ENGINE
 //既に適応されたかどうか
 PATCHED_IF:0x184DC=0x00 0xB5 0xFE 0xF7
 
-BIN:0x184DC=184DC.bin
+BIN:0x184DC=MeleeAndMagicFix_FE7U.dmp
 
 AUTHOR=melee and magic fix  Hextator,Tequila  Transplant:7743

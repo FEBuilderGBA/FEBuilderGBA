@@ -46,3 +46,4 @@ template_event_CALL_END_EVENT_FE8.txt	清除这一章
 template_event_GAMEOVER_FE8.txt	打电话给游戏
 template_event_PREPARATION_FE8.txt	读你的军队和敌军，并呼吁进攻
 template_event_Turn_off_background_FE8.txt	背景をオフにして消すときにフェードアウトを入れて画面を乱さない
+template_event_COND_Coord_WarpOUT_WarpIN_FE8.txt	具有特定坐标的变形单位。

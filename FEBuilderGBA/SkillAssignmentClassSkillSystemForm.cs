@@ -723,7 +723,5 @@ namespace FEBuilderGBA
             string url = "https://dw.ngmansion.xyz/doku.php?id=en:guide_febuildergba_learnskillinfo";
             U.OpenURLOrFile(url);
         }
-
-
     }
 }

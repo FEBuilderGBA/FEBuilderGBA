@@ -4,7 +4,7 @@ TAG=#ENGINE
 //既に適応されたかどうか
 PATCHED_IF:0x188CC=0x00 0xB5 0xFE 0xF7
 
-BIN:0x188CC=188CC.bin
+BIN:0x188CC=MeleeAndMagicFix_FE7J.dmp
 
 AUTHOR=melee and magic fix  Hextator,Tequila,7743
 INFO=武器魔法を同時に利用できるパッチ

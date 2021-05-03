@@ -665,9 +665,6 @@ namespace FEBuilderGBA
                 return;
             }
 
-            //同じアニメを何度も出力しないように記録する.
-            Dictionary<uint, Bitmap> animeHash = new Dictionary<uint, Bitmap>();
-
             //圧縮されていないデータなので、事故防止のため リミッターをかける.
             uint limitter = frames + 1024 * 1024; //1MBサーチしたらもうあきらめる.
             limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);

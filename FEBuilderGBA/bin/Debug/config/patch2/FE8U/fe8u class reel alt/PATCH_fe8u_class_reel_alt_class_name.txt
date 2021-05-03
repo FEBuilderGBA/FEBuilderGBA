@@ -1,4 +1,4 @@
-NAME=fe8u_class_reel_alt_class_name(Editor)
+NAME=fe8u class reel alt class name(Editor)
 
 IF:0xB369C=0x00 0x4B 0x18 0x47
 
@@ -7,6 +7,10 @@ AUTHOR=7743
 //STRUCTパッチとして実装します
 TYPE=STRUCT
 TAG=#ENGINE
+
+INFO=OP CLASS REELで、非ASCIIの文字列でクラス名が書かれていた時のために、新しいクラス名を取得できるデータを追加します。\r\nこのパッチを追加すると、クラス名を別テーブルに定義したTextIDから取得します。\r\nこの値が設定されていると、クラス名の代わりに、こちらの名前を利用します。\r\n0で未定義の場合は、今まで通りクラスの名前を参照します。\r\n
+INFO.en=In OP CLASS REEL, add data that can get a new class name for when a class name is written with a non-ASCII character string.\r\nWhen you add this patch, we get the class name from the TextID defined in another table.\r\nIf this value is set, this name will be used instead of the class name.\r\nIf it is undefined by 0, I will refer to the name of the class as before.\r\n
+INFO.zh=在OP CLASS REEL中，添加可以在使用非ASCII字符串写入类名时获取新类名的数据。\r\n添加此补丁时，我们从另一个表中定义的TextID中获取类名。\r\n如果设置了此值，则将使用此名称而不是类名。\r\n如果未定义为0，像以前一样引用类的名称。\r\n
 
 //データへのポインタ
 POINTER=$GREP4END 0x00 0x28 0x04 0xD0 0x09 0x49 0x09 0x68 0x09 0x4B 0x9E 0x46 0x00 0xF8 0x20 0x1C 0x10 0xBC 0x02 0xBC 0x08 0x47 0x00 0x00 0x44 0x94 0x01 0x08 0x40 0xA2 0x00 0x08 0x80 0xA2 0x00 0x08 0xD8 0x36 0x0B 0x08 0xCC 0x1D 0x0D 0x08 0xDC 0x36 0x0B 0x08 0xFC 0x1C 0x0D 0x08

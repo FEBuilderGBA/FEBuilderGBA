@@ -1,4 +1,4 @@
-NAME=fe8u class reel alt class name (installer)
+NAME=fe8u class reel alt class name(Installer)
 
 TYPE=EA
 TAG=#ENGINE

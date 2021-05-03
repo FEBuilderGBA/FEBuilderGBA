@@ -29,7 +29,7 @@ namespace FEBuilderGBA
 
             //自プロセスのパスから、ベースディレクトリを特定します.
             Program.BaseDirectory = MakeBaseDirectory();
- 
+
             Log.TouchLogDirectory();
 
             //設定の読み込み
@@ -603,7 +603,7 @@ namespace FEBuilderGBA
 #if DEBUG
                     R.ShowStopError("The Config directory does not exist.\r\nIf you built the program, copy the Config directory under the Debug directory.\r\nConfigディレクトリがありません。\r\nあなたがプログラムをビルドした場合は、Debugディレクトリの下にConfigディレクトリをコピーしてください。\r\n\r\n{0}", configdir); ///No Translate
 #else
-                R.ShowStopError("The Config directory does not exist.\r\nYou have failed to decompress 7z. Please try again.\r\nConfigディレクトリがありません。\r\n7zの解凍に失敗しています。やり直してください。\r\n\r\n{0}", configdir); ///No Translate
+                    R.ShowStopError("The Config directory does not exist.\r\nYou have failed to decompress 7z. Please try again.\r\nConfigディレクトリがありません。\r\n7zの解凍に失敗しています。やり直してください。\r\n\r\n{0}", configdir); ///No Translate
 #endif
                     return false;
                 }
@@ -618,7 +618,7 @@ namespace FEBuilderGBA
 #if DEBUG
                 R.ShowStopError("The 7-zip32.dll does not exist.\r\nIf you built the program, copy the 7-zip32.dll under the Debug directory.\r\n7-zip32.dllがありません。\r\nあなたがプログラムをビルドした場合は、Debugディレクトリの下に7-zip32.dllをコピーしてください。\r\n\r\n{0}", sevenzip); ///No Translate
 #else
-                R.ShowStopError("The 7-zip32.dll directory does not exist.\r\nYou have failed to decompress 7z. Please try again.\r\n7-zip32.dllがありません。\r\n7zの解凍に失敗しています。やり直してください。\r\n\r\n{0}", sevenzip); ///No Translate
+                R.ShowStopError("The 7-zip32.dll directory does not exist.\r\nYou have failed to extract 7z. Please try unzip again.\r\n7-zip32.dllがありません。\r\n7zの解凍に失敗しています。やり直してください。\r\n\r\n{0}", sevenzip); ///No Translate
 #endif
                 return false;
             }

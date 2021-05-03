@@ -835,6 +835,11 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
                 EDForm.MakeCheckError(errors);
+
+//                if (Program.ROM.RomInfo.is_multibyte() == false)
+//                {
+//                    SkillConfigSkillSystemForm.MakeCheckError(errors);
+//                }
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {

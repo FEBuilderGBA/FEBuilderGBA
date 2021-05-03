@@ -7,7 +7,7 @@ TAG=#ENGINE
 //既に適応されたかどうか
 PATCHED_IF:0x18A58=0x00 0xB5 0xFE 0xF7
 
-BIN:0x18A58=18A58.bin
+BIN:0x18A58=MeleeAndMagicFix_FE8U.dmp
 
 INFO.en=Enables hybrid weapon/spell units.\r\nAdjusts status screen to display weapon ranks and MAG vs STR based on first weapon equipped.\r\nSeveral known bugs, including the STR display.\r\n
 

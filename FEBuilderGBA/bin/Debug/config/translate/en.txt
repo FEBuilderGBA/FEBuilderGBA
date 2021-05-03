@@ -1222,6 +1222,9 @@ Clear turns
 :戦闘データ
 Battle data.
 
+:章データ
+ChapterData
+
 :支援フラグ
 Support Flag
 
@@ -4507,6 +4510,15 @@ No fog
 :マップ初期値
 Map initial value
 
+:自軍(青)
+Player(blue)
+
+:友軍(緑)
+Ally(green)
+
+:敵軍(赤)
+Enemy(red)
+
 :晴れ
 Sunny
 
@@ -4656,15 +4668,6 @@ Rausten
 
 :ポカラ
 Pokhara
-
-:自軍(青)
-Player(blue)
-
-:友軍(緑)
-Ally(green)
-
-:敵軍(赤)
-Enemy(red)
 
 :自軍通常(青)
 Player Army Normal(blue)
@@ -6858,9 +6861,6 @@ Position
 
 :マップリサイズ
 Resize Map
-
-:これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。
-This is the enemy's escape point.\r\nFE6 only has an enemy escape.
 
 :これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。
 This is Enemy's escape point.\r\nFor NPC, switch the combo box on upper left.
@@ -12907,5 +12907,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:章データ
-ChapterData

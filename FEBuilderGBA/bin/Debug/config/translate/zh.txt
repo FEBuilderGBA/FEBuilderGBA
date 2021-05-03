@@ -1222,6 +1222,9 @@ Eliwood版
 :戦闘データ
 战斗数据。
 
+:章データ
+ChapterData
+
 :支援フラグ
 协助国旗
 
@@ -4507,6 +4510,15 @@ Disallows scene skipping and dialogue skipping, But allows dialogue fast-forward
 :マップ初期値
 地图初始值
 
+:自軍(青)
+自军（蓝色）
+
+:友軍(緑)
+友军（绿色）
+
+:敵軍(赤)
+敌军（红色）
+
 :晴れ
 晴天
 
@@ -4656,15 +4668,6 @@ Rosuton
 
 :ポカラ
 博卡拉
-
-:自軍(青)
-自军（蓝色）
-
-:友軍(緑)
-友军（绿色）
-
-:敵軍(赤)
-敌军（红色）
 
 :自軍通常(青)
 自军正常（蓝色）
@@ -6858,9 +6861,6 @@ MAR阅读
 
 :マップリサイズ
 地图大小调整
-
-:これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。
-这是敌人的逃生点。\r\nFE6只有一个敌人逃生。
 
 :これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。
 这是敌人的逃生点。\r\n对于NPC，请切换左上方的组合框。
@@ -12907,5 +12907,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:章データ
-ChapterData

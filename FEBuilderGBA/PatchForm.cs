@@ -7826,8 +7826,65 @@ namespace FEBuilderGBA
                 {
                     MakeCheckError_CheckBINorEA(patch, (uint)i, errors);
                 }
-
+                else if (type == "IMAGE")
+                {
+                    MakeCheckError_CheckImage(patch, (uint)i, errors);
+                }
             }
+        }
+
+        static void MakeCheckError_CheckImage_CheckWarning(PatchSt patch, uint loopI, List<FELint.ErrorSt> errors, string keyname , bool islz77)
+        {
+            uint p = atOffset(patch.Param, keyname);
+            if (U.isSafetyOffset(p))
+            {
+                uint a = Program.ROM.p32(p);
+                if (!U.isSafetyOffset(a) || ! U.isPadding4(a) )
+                {
+                    string name = U.at(patch.Param, "NAME");
+                    errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, U.NOT_FOUND
+                        , R._("パッチ「{0}」の画像のポインタ(「{1}」)は、正しくありません。\r\n画像をインポートしなおすことをお勧めします。", name, U.To0xHexString(a)), loopI));
+                }
+                else if (islz77)
+                {
+                    if (!LZ77.iscompress(Program.ROM.Data, a))
+                    {
+                        string name = U.at(patch.Param, "NAME");
+                        errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, U.NOT_FOUND
+                            , R._("パッチ「{0}」の画像のポインタ(「{1}」)は、正しくありません。\r\n画像をインポートしなおすことをお勧めします。", name, U.To0xHexString(a)), loopI));
+                    }
+                }
+            }
+        }
+
+        static void MakeCheckError_CheckImage(PatchSt patch, uint loopI, List<FELint.ErrorSt> errors)
+        {
+            string check_image_address_for_felint_string = U.at(patch.Param, "CHECK_IMAGE_ADDRESS_FOR_FELINT");
+            if (check_image_address_for_felint_string == "")
+            {//FELintの対象外
+                return;
+            }
+            bool check_image_address_for_felint = U.stringbool(check_image_address_for_felint_string);
+            if (!check_image_address_for_felint)
+            {//FELintの対象外
+                return;
+            }
+
+            string checkIF = CheckIFFast(patch);
+            if (checkIF == "E")
+            {
+                return;
+            }
+
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "IMAGE_POINTER" , false);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "ZIMAGE_POINTER", true);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "Z256IMAGE_POINTER", true);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "Z2IMAGE_POINTER", true);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "TSA_POINTER", false);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "ZTSA_POINTER", true);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "HEADERTSA_POINTER", false);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "ZHEADERTSA_POINTER", true);
+            MakeCheckError_CheckImage_CheckWarning(patch, loopI, errors, "PALETTE_POINTER", false);
         }
 
         static void MakeCheckError_CheckBINorEA(PatchSt patch, uint loopI, List<FELint.ErrorSt> errors)

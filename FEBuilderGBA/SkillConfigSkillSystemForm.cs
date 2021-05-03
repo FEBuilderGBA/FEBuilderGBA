@@ -506,6 +506,56 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            InputFormRef ifr;
+            uint baseiconP = FindIconPointer();
+            uint basetextP = FindTextPointer();
+            uint baseanimeP = FindAnimePointer();
+
+            if (baseiconP == U.NOT_FOUND)
+            {
+                return;
+            }
+            if (basetextP == U.NOT_FOUND)
+            {
+                return;
+            }
+            if (baseanimeP == U.NOT_FOUND)
+            {
+                return;
+            }
+            ifr = Init(null, basetextP);
+            uint skill_addr = ifr.BaseAddress;
+            for (uint i = 0; i < ifr.DataCount; i++, skill_addr += ifr.BlockSize)
+            {
+                uint name = Program.ROM.u16(skill_addr + 0);
+                if (name == 0 || name == 0xFFFF)
+                {
+                    continue;
+                }
+                FELint.CheckText(name, "DETAIL3", errors, FELint.Type.SKILL_CONFIG, skill_addr, i);
+            }
+
+            uint anime = Program.ROM.p32(baseanimeP);
+            for (uint i = 0; i < ifr.DataCount; i++, anime += 4)
+            {
+                if (!U.isSafetyOffset(anime))
+                {
+                    break;
+                }
+                uint addr = Program.ROM.p32(anime);
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+            }
+        }
         public static void ExportAllData(string filename)
         {
             InputFormRef InputFormRef;
