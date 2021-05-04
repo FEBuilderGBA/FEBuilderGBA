@@ -4777,6 +4777,12 @@ namespace FEBuilderGBA
 
         public static string table_replace(string target, string[] table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Length; i += 2)
             {
@@ -4786,6 +4792,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_rev(string target, string[] table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Length; i += 2)
             {
@@ -4795,6 +4807,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_regex(string target, string[] table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Length; i += 2)
             {
@@ -4804,6 +4822,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_regex_rev(string target, string[] table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Length; i += 2)
             {
@@ -4814,6 +4838,12 @@ namespace FEBuilderGBA
 
         public static string table_replace(string target, List<string> table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Count; i += 2)
             {
@@ -4823,6 +4853,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_rev(string target, List<string> table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Count; i += 2)
             {
@@ -4832,6 +4868,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_regex(string target, List<string> table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Count; i += 2)
             {
@@ -4841,6 +4883,12 @@ namespace FEBuilderGBA
         }
         public static string table_replace_regex_rev(string target, List<string> table)
         {
+            if (table == null)
+            {
+                Debug.Assert(false);
+                return target;
+            }
+
             string r = target;
             for (int i = 0; i < table.Count; i += 2)
             {
@@ -5120,10 +5168,17 @@ namespace FEBuilderGBA
                 throw new Exception(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name ,obj.Items.Count));
 #else
                 Log.Error(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
-                value = obj.Items.Count - 1;
-                if (value < 0)
+                if (obj.Items.Count == 0)
                 {
-                    value = 0;
+                    value = -1;
+                }
+                else
+                {
+                    value = obj.Items.Count - 1;
+                    if (value < 0)
+                    {
+                        value = 0;
+                    }
                 }
 #endif
             }
@@ -5156,10 +5211,17 @@ namespace FEBuilderGBA
                 throw new Exception(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
 #else
                 Log.Error(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
-                value = obj.Items.Count - 1;
-                if (value < 0)
+                if (obj.Items.Count == 0)
                 {
-                    value = 0;
+                    value = -1;
+                }
+                else
+                {
+                    value = obj.Items.Count - 1;
+                    if (value < 0)
+                    {
+                        value = 0;
+                    }
                 }
 #endif
             }

@@ -554,6 +554,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                ImageUtilSkillSystemsAnimeCreator.MakeCheckError(errors, addr, i);
             }
         }
         public static void ExportAllData(string filename)

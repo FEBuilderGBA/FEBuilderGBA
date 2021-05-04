@@ -521,7 +521,16 @@ namespace FEBuilderGBA
         }
         string DownloadProgram_Direct(string url, string dir, string findEXE)
         {
-            string tempFilename = Path.GetTempFileName();
+            string tempFilename;
+            try
+            {
+                tempFilename = Path.GetTempFileName();
+            }
+            catch (Exception e)
+            {
+                return R.Error("ダウンロードするためのテンポラリファイルを作成できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE) + "\r\n" + e.ToString();
+            }
+
             try
             {
                 U.HttpDownload(tempFilename, url, U.GetURLBaseDir(url), this.SettingPleaseWait);

@@ -527,16 +527,17 @@ namespace FEBuilderGBA
                {
                    continue;
                }
-               for (int i = 0; true; i += 4)
+               for (uint i = 0; true; i += 4)
                {
-                   if ( ! U.isSafetyOffset(addr + 3))
+                   uint a = addr + i;
+                   if ( ! U.isSafetyOffset(a + 3))
                    {
                        break;
                    }
 
-                   uint item = Program.ROM.u8((uint)(addr + i + 0 ));
-                   uint sp = Program.ROM.u8((uint)(addr + i + 1));
-                   uint anime = Program.ROM.u16((uint)(addr + i + 2));
+                   uint item = Program.ROM.u8(a + 0 );
+                   uint sp = Program.ROM.u8(a + 1);
+                   uint anime = Program.ROM.u16(a + 2);
                    if (item == 0 && sp == 0 && anime == 0)
                    {
                        break;

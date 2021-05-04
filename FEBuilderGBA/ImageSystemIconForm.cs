@@ -84,13 +84,13 @@ namespace FEBuilderGBA
             else if (Program.ROM.RomInfo.version() >= 7)
             {//FE7
                 systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 32, 8 * 4, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
-                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
+                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer());
                 X_StatusBackgroundLink.Hide();
                 X_SystemMenuPaletteLink.Hide();
             }
             else
             {//FE6
-                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
+                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer());
                 systemmenu_badstatus_panel.Hide();
                 systemmenu_old_badstatus_panel.Location = systemmenu_badstatus_panel.Location;
                 X_StatusBackgroundLink.Hide();

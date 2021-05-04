@@ -193,6 +193,10 @@ namespace FEBuilderGBA
         static uint FindSongTable(byte[] data)
         {
             uint songpointer = FindSongTablePointer(data);
+            if (songpointer == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
 
             uint songlist = U.u32(data,songpointer);
             if (!U.isPointer(songlist))

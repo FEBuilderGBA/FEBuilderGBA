@@ -765,5 +765,125 @@ namespace FEBuilderGBA
                 , Address.DataTypeEnum.POINTER);
         }
 
+        //エラーチェック
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint anime_address, uint skillindex = U.NOT_FOUND)
+        {
+            anime_address = U.toOffset(anime_address);
+            if (!U.isSafetyOffset(anime_address))
+            {
+                return;
+            }
+
+            string basename = "SkillAnime:" + U.To0xHexString(skillindex) + " " + R._("スキルアニメーションが破損しています。\r\n");
+
+            string programCode;
+            AnimeType animeType;
+            uint anime_config_address = SkipCode(anime_address, out programCode, out animeType);
+            if (anime_config_address == U.NOT_FOUND)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("SkipCodeに失敗しました"), skillindex));
+                return;
+            }
+            if (anime_config_address + (4 * 5) >= Program.ROM.Data.Length)
+            {//範囲外
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("データがROM末尾より先に書かれています。"), skillindex));
+                return;
+            }
+
+            //POIN Frames
+            //POIN TSAList
+            //POIN GraphicsList
+            //POIN PalettesList
+            //WORD 0x3d1 //sound id
+            uint frames = Program.ROM.p32(anime_config_address + (4 * 0));
+            uint tsalist = Program.ROM.p32(anime_config_address + (4 * 1));
+            uint graphiclist = Program.ROM.p32(anime_config_address + (4 * 2));
+            uint palettelist = Program.ROM.p32(anime_config_address + (4 * 3));
+            //uint sound_id = Program.ROM.u32(anime_config_address + (4 * 4));
+
+            if (!U.isSafetyOffset(frames))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("framesが取得できません。"), skillindex));
+                return;
+            }
+            if (!U.isSafetyOffset(tsalist))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("tsalistが取得できません。"), skillindex));
+                return;
+            }
+            if (!U.isSafetyOffset(graphiclist))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("graphiclistが取得できません。"), skillindex));
+                return;
+            }
+            if (!U.isSafetyOffset(palettelist))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("palettelistが取得できません。"), skillindex));
+                return;
+            }
+
+            //圧縮されていないデータなので、事故防止のため リミッターをかける.
+            uint limitter = frames + 1024 * 1024; //1MBサーチしたらもうあきらめる.
+            limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);
+
+            uint count = 0;
+            uint n;
+            for (n = frames; n < limitter; n += 4)
+            {
+                uint id = Program.ROM.u16(n + 0);
+                uint wait = Program.ROM.u16(n + 2);
+                if (id == 0xFFFF)
+                {
+                    break;
+                }
+
+                uint objPointer = graphiclist + (id * 4);
+                uint tsaPointer = tsalist + (id * 4);
+                uint palPointer = palettelist + (id * 4);
+                count++;
+
+                if (!U.isSafetyOffset(objPointer + 4))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("objPointerを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+                if (!U.isSafetyOffset(tsaPointer + 4))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("tsaPointerを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+                if (!U.isSafetyOffset(palPointer + 4))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("palPointerを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+                uint objOffset = Program.ROM.p32(objPointer);
+                uint tsaOffset = Program.ROM.p32(tsaPointer);
+                uint palOffset = Program.ROM.p32(palPointer);
+                if (!U.isSafetyOffset(objOffset))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("objOffsetを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+                if (!U.isSafetyOffset(tsaOffset))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("tsaOffsetを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+                if (!U.isSafetyOffset(palOffset + 0x20))
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("palOffsetを取得中にエラーが発生しました。"), skillindex));
+                    return;
+                }
+
+                FELint.CheckLZ77(objOffset, errors, FELint.Type.SKILL_CONFIG, anime_config_address, skillindex);
+                FELint.CheckLZ77(tsaOffset, errors, FELint.Type.SKILL_CONFIG, anime_config_address, skillindex);
+            }
+            if (n >= limitter)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("データ終端がありませんでした。"), skillindex));
+                return;
+            }
+        }
     }
 }

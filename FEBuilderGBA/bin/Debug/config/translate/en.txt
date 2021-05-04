@@ -4165,6 +4165,48 @@ There is no image in Battle Anime Mode: {0}.
 :アドレスが無効です
 Address is invalid
 
+:スキルアニメーションが破損しています。\r\n
+The skill animation is corrupted.\r\n
+
+:SkipCodeに失敗しました
+SkipCode failed.
+
+:データがROM末尾より先に書かれています。
+The data is written before the end of the ROM.
+
+:framesが取得できません。
+I can't get frames.
+
+:tsalistが取得できません。
+Unable to get tsalist.
+
+:graphiclistが取得できません。
+I can't get the graphic list.
+
+:palettelistが取得できません。
+Unable to get palettelist.
+
+:objPointerを取得中にエラーが発生しました。
+An error occurred while getting the objPointer.
+
+:tsaPointerを取得中にエラーが発生しました。
+An error occurred while retrieving tsaPointer.
+
+:palPointerを取得中にエラーが発生しました。
+An error occurred while getting the palPointer.
+
+:objOffsetを取得中にエラーが発生しました。
+An error occurred while getting the objOffset.
+
+:tsaOffsetを取得中にエラーが発生しました。
+An error occurred while getting the tsaOffset.
+
+:palOffsetを取得中にエラーが発生しました。
+An error occurred while getting the palOffset.
+
+:データ終端がありませんでした。
+There was no data termination.
+
 :アドレスが4の倍数ではありません。
 The address is not a multiple of 4.
 
@@ -9424,6 +9466,9 @@ Optimizing the end of the ROM
 :完了
 Done
 
+:パッチ「{0}」の画像のポインタ(「{1}」)は、正しくありません。\r\n画像をインポートしなおすことをお勧めします。
+The image pointer ("{1}") for patch "{0}" is incorrect.\r\nWe recommend that you re-import the image.
+
 :パッチ「{0}」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。
 An invalid instruction exists before the ASM function pointer "{1}" in patch "{0}".You may need to reinstall the patch.
 
@@ -11673,6 +11718,9 @@ Event Flag Namer
 
 :ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}
 Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfilename: {2}.
+
+:ダウンロードするためのテンポラリファイルを作成できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+Could not create a temporary file to download.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
 :ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
 Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.

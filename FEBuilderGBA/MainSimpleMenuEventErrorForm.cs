@@ -1004,14 +1004,14 @@ namespace FEBuilderGBA
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
                     {
-                        InputFormRef.JumpForm<SkillConfigSkillSystemForm>();
+                        InputFormRef.JumpForm<SkillConfigSkillSystemForm>(tag);
                     }
                     else if (skill == PatchUtil.skill_system_enum.FE8N
                         || skill == PatchUtil.skill_system_enum.yugudora
                         || skill == PatchUtil.skill_system_enum.FE8N_ver2
                         )
                     {
-                        InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();
+                        InputFormRef.JumpForm<SkillConfigFE8NSkillForm>(tag);
                     }
                 }
                 return;

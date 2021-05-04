@@ -192,6 +192,7 @@ namespace FEBuilderGBA
         uint systemmenu_badstatus_image_pointer(); //無圧縮のバッドステータス画像
         uint systemmenu_badstatus_palette_pointer(); //バッドステータスのパレット
         uint systemmenu_badstatus_old_image_pointer(); //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
+        uint systemmenu_badstatus_old_palette_pointer(); //昔の圧縮のバッドステータス画像のパレット FE7 FE6
 
         uint bigcg_pointer(); // CG
         uint end_cg_address(); // END CG FE8のみ
