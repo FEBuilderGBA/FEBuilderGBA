@@ -1,0 +1,18 @@
+NAME=アニメオフ竜石で攻撃した時に使う移動アイコンID
+NAME.en=Movement icon ID used when attacking with dragon stone when the animation off
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x007cfee
+ADDRESS_TYPE=MOVEICON
+AUTHOR=aera
+
+INFO=マップ戦闘で、マムクート変身して攻撃するときに利用する移動アニメを指定します。ディフォルトは、0xEです。
+INFO.en=In map battle, specify the moving map anime to be used when transforming and attacking Manakete. Default is 0xE.
+DEFAULT=0x0E
+
+
+NAME.zh=Movement icon ID used when attacking with dragon stone when the animation off
+INFO.zh=In map battle, specify the moving map anime to be used when transforming and attacking Manakete. Default is 0xE.

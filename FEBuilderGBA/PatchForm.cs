@@ -1966,6 +1966,32 @@ namespace FEBuilderGBA
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "ITEMICONSRC", new string[] { "WEAPON" });
                 }
+                else if (address_type == "WAITICON")
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(x, y);
+                    pic.Size = new Size(CONTROL_HEIGHT * 2, CONTROL_HEIGHT * 2);
+                    x += CONTROL_HEIGHT * 2;
+
+                    pic.Name = "L_" + 0 + "_CLASSICONSRC";
+                    PatchPage.Controls.Add(pic);
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "CLASSICONSRC", new string[0]);
+                }
+                else if (address_type == "MOVEICON")
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(x, y);
+                    pic.Size = new Size(CONTROL_HEIGHT * 2, CONTROL_HEIGHT * 2);
+                    x += CONTROL_HEIGHT * 2;
+
+                    pic.Name = "L_" + 0 + "_CLASSMOVEICONSRC";
+                    PatchPage.Controls.Add(pic);
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "CLASSMOVEICONSRC", new string[0]);
+                }
                 else if (address_type == "BADSTATUS")
                 {
                     link.Name = "L_" + 0 + "_" + address_type;
