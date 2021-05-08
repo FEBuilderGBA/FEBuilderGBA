@@ -2221,7 +2221,6 @@ namespace FEBuilderGBA
                 end = (uint)data.Length;
             }
 
-            Debug.Assert(need.Length > 0);
             if (need.Length <= 0)
             {
                 return U.NOT_FOUND;

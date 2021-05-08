@@ -1,6 +1,6 @@
-//This data is made with aim of being readable by machine fast.
+//This data is made with aim of being readable by machine fast	
 //
-//address	name	RET=return	r0=arg0	//Argument Return value is not yet used and should not trust so much.
+//address	name	RET=return	r0=arg0	//Argument Return value is not yet used and should not trust so much	
 //address	@STRUCTNAME	name			//struct STRUCTNAME name;
 //address	@STRUCTNAME@[size]	name	//struct STRUCTNAME name[size];
 //address	:address2	name			//range data from address to address2
@@ -83,8 +83,8 @@
 0203ECF0	Chapter number chapter and number of turns in introduction Turn << 7 + MAPID	{J}
 0203ECF2	clear time clear time (seconds) of introduction is entered	{J}
 0300007C	Numbers such as price Numbers that can be obtained with @0080@0005 in text	{J}
-030004B0	MemorySlot00 Always be 0.	{J}
-030004B8	MemorySlot00 Always be 0.	{U}
+030004B0	MemorySlot00 Always be 0		{J}
+030004B8	MemorySlot00 Always be 0		{U}
 030004B4	MemorySlot01	{J}
 030004BC	MemorySlot01	{U}
 030004B8	MemorySlot02	{J}
@@ -97,18 +97,18 @@
 030004CC	MemorySlot05	{U}
 030004C8	MemorySlot06	{J}
 030004D0	MemorySlot06	{U}
-030004CC	MemorySlot07 It is often used as a temporary variable.	{J}
-030004D4	MemorySlot07 It is often used as a temporary variable.	{U}
+030004CC	MemorySlot07 It is often used as a temporary variable		{J}
+030004D4	MemorySlot07 It is often used as a temporary variable		{U}
 030004D0	MemorySlot08	{J}
 030004D8	MemorySlot08	{U}
 030004D4	MemorySlot09	{J}
 030004DC	MemorySlot09	{U}
 030004D8	MemorySlot0A	{J}
 030004E0	MemorySlot0A	{U}
-030004DC	MemorySlot0B It is mainly used for reading coordinates.	{J}
-030004E4	MemorySlot0B It is mainly used for reading coordinates.	{U}
-030004E0	MemorySlot0C results of processing are mainly returned.	{J}
-030004E8	MemorySlot0C results of processing are mainly returned.	{U}
+030004DC	MemorySlot0B It is mainly used for reading coordinates		{J}
+030004E4	MemorySlot0B It is mainly used for reading coordinates		{U}
+030004E0	MemorySlot0C results of processing are mainly returned		{J}
+030004E8	MemorySlot0C results of processing are mainly returned		{U}
 //030004E4	MemorySlot0D size of queue	{J}
 //030004EC	MemorySlot0D size of queue	{U}
 03005315	Road data to display on road data screen	{J}
@@ -349,13 +349,13 @@
 0202BCF8	Possession money	{U}
 0202BD01	Fog density	{U}
 0202BD02	Map ID	{U}
-0202BD02	Phase. 0=Your army, 0x40 = ally, 0x80 = enemy army	{U}
+0202BD02	Phase	 0=Your army, 0x40 = ally, 0x80 = enemy army	{U}
 0202BD03	Number of turns	{U}
 0202BD02	Map cursor X axis	{U}
 0202BD03	Map cursor Y axis	{U}
 0202BD04	Status of chapter	0x10=Prepare for attack0x40 = hard mode	{U}
 0202BD05	Weather	{U}
-0202BD0B	Specified edition. 1=Prologue-Ch8,2=Eirika,3=Ephraim
+0202BD0B	Specified edition	 1=Prologue-Ch8,2=Eirika,3=Ephraim
 08031450	Pointer to contents of transport team	{J}
 08031504	Pointer to contents of transport team	{U}
 03001C80	Event address being executed? (Except start event)	{U}
@@ -533,10 +533,10 @@ r3=X tile position of menu of right	{U}
 0802E3A8	AddSnagsAndWalls	Goes through terrain map and adds all snag & wall traps where relevant	{U}
 0802E9F8	HandleTrapDecay	Handle Turn count down for Light Runes & Torch Lights	{J}
 0802EAC0	HandleTrapDecay	Handle Turn count down for Light Runes & Torch Lights	{U}
-0802E530	TriggerMapChange	Adds a map change trap. /!\ it doesn't actually *apply* map change, just sets trigger on.	void	r0=Map Change Id	{J}
-0802E5F8	TriggerMapChange	Adds a map change trap. /!\ it doesn't actually *apply* map change, just sets trigger on.	void	r0=Map Change Id	{U}
-0802E544	UntriggerMapChange	Removes a map change trap. /!\ it doesn't actually *apply* map change, just sets trigger off.	void	r0=Map Change Id	{J}
-0802E60C	UntriggerMapChange	Removes a map change trap. /!\ it doesn't actually *apply* map change, just sets trigger off.	void	r0=Map Change Id	{U}
+0802E530	TriggerMapChange	Adds a map change trap	 /!\ it doesn't actually *apply* map change, just sets trigger on		void	r0=Map Change Id	{J}
+0802E5F8	TriggerMapChange	Adds a map change trap	 /!\ it doesn't actually *apply* map change, just sets trigger on		void	r0=Map Change Id	{U}
+0802E544	UntriggerMapChange	Removes a map change trap	 /!\ it doesn't actually *apply* map change, just sets trigger off		void	r0=Map Change Id	{J}
+0802E60C	UntriggerMapChange	Removes a map change trap	 /!\ it doesn't actually *apply* map change, just sets trigger off		void	r0=Map Change Id	{U}
 0802E368	ApplyTrapMapChanges	Applies all triggered map changes (used on suspend load maybe?)	{J}
 0802E430	ApplyTrapMapChanges	Applies all triggered map changes (used on suspend load maybe?)	{U}
 0802E288	AddArrowTrap Adds/Creates Arrow Trap	void	r0=x	r1=Initial Turn Countdown	r2=Reset Turn Countdown	{J}
@@ -1098,7 +1098,7 @@ r3=X tile position of menu of right	{U}
 @DrawFont@10	short	base value for text tiles (containing base tile index & palette mask)
 @DrawFont@12	short	current tile index (local/relative to root)
 @DrawFont@14	short	palette index
-@DrawFont@16	byte	idk	 (set from byte at 02028E74, which is initialized at 1 at start of game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
+@DrawFont@16	byte	idk	 (set from byte at 02028E74, which is initialized at 1 at start of game and never changed again	 My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
 @DrawFont@17	byte	idk
 02028E58	@DrawFont	Default font struct	{U}
 02028E58	@DrawFont	Default font struct	{J}
@@ -1242,13 +1242,13 @@ r3=X tile position of menu of right	{U}
 085775CC	KeyStatusBuffer Pointer	{J}
 
 
-//https://www.dropbox.com/sh/zymc1h221nnxpm9/AAA1sHR4hvxFxZYqOF3zqkG6a/Stan/_Notes?dl=0&preview=World+Map+Notes.txt
+//https://www	dropbox	com/sh/zymc1h221nnxpm9/AAA1sHR4hvxFxZYqOF3zqkG6a/Stan/_Notes?dl=0&preview=World+Map+Notes	txt
 @GmapMUsData@00	byte	some bitfield (&1=set when linked Gmap MU prim is used?, &2=Use class (char otherwise))
 @GmapMUsData@01	byte	Current WM Location Index?
 @GmapMUsData@02	short	Char/Class ID
 03005290	@GmapMUsData	GmapMUsData	{U}
 
-//http://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F
+//http://ngmansion	xyz/wiki/hackfe/index	php?%E8%A7%A3%E8%AA%AC/%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F
 03005314	Worldmap Show RoadID 0	{J}
 03005316	Worldmap Show RoadID 2	{J}
 03005317	Worldmap Show RoadID 3	{J}
@@ -1312,12 +1312,73 @@ r3=X tile position of menu of right	{U}
 03005342	Worldmap Show RoadID 29	{U}
 03005343	Worldmap Show RoadID 30	{U}
 03005344	Worldmap Road Count	{U}
+
+030052A0	Worldmap Node00	Border Mulan	{J}
+030052A4	Worldmap Node01	Castle Frelia	{J}
+030052A8	Worldmap Node02	Ide	{J}
+030052AC	Worldmap Node03	Borgo Ridge	{J}
+030052B0	Worldmap Node04	Zaha Woods	{J}
+030052B4	Worldmap Node05	Serafew	{J}
+030052B8	Worldmap Node06	Adlas Plains	{J}
+030052BC	Worldmap Node07	Renvall	{J}
+030052C0	Worldmap Node08	Renvall	{J}
+030052C4	Worldmap Node09	Port Kiris	{J}
+030052C8	Worldmap Node0A	Teraz Plateau	{J}
+030052CC	Worldmap Node0B	Caer Pelyn	{J}
+030052D0	Worldmap Node0C	Hamill Canyon	{J}
+030052D4	Worldmap Node0D	Jehanna Hall	{J}
+030052D8	Worldmap Node0E	Fort Rigwald	{J}
+030052DC	Worldmap Node0F	Bethroen	{J}
+030052E0	Worldmap Node10	Taizel	{J}
+030052E4	Worldmap Node11	Zaalbul Marsh	{J}
+030052E8	Worldmap Node12	Grado Keep	{J}
+030052EC	Worldmap Node13	Jehanna Hall	{J}
+030052F0	Worldmap Node14	Renais Castle	{J}
+030052F4	Worldmap Node15	Narube River	{J}
+030052F8	Worldmap Node16	Neleras Peak	{J}
+030052FC	Worldmap Node17	Rausten Court	{J}
+03005300	Worldmap Node18	Darkling Woods	{J}
+03005304	Worldmap Node19	Black Temple	{J}
+03005308	Worldmap Node1A	Tower of Valni	{J}
+0300530C	Worldmap Node1B	Lagdou Ruins	{J}
+03005310	Worldmap Node1C	Melkaen Coast	{J}
+
+030052B0	Worldmap Node00	Border Mulan	{U}
+030052B4	Worldmap Node01	Castle Frelia	{U}
+030052B8	Worldmap Node02	Ide	{U}
+030052BC	Worldmap Node03	Borgo Ridge	{U}
+030052C0	Worldmap Node04	Zaha Woods	{U}
+030052C4	Worldmap Node05	Serafew	{U}
+030052C8	Worldmap Node06	Adlas Plains	{U}
+030052CC	Worldmap Node07	Renvall	{U}
+030052D0	Worldmap Node08	Renvall	{U}
+030052D4	Worldmap Node09	Port Kiris	{U}
+030052D8	Worldmap Node0A	Teraz Plateau	{U}
+030052DC	Worldmap Node0B	Caer Pelyn	{U}
+030052E0	Worldmap Node0C	Hamill Canyon	{U}
+030052E4	Worldmap Node0D	Jehanna Hall	{U}
+030052E8	Worldmap Node0E	Fort Rigwald	{U}
+030052EC	Worldmap Node0F	Bethroen	{U}
+030052F0	Worldmap Node10	Taizel	{U}
+030052F4	Worldmap Node11	Zaalbul Marsh	{U}
+030052F8	Worldmap Node12	Grado Keep	{U}
+030052FC	Worldmap Node13	Jehanna Hall	{U}
+03005300	Worldmap Node14	Renais Castle	{U}
+03005304	Worldmap Node15	Narube River	{U}
+03005308	Worldmap Node16	Neleras Peak	{U}
+0300530C	Worldmap Node17	Rausten Court	{U}
+03005310	Worldmap Node18	Darkling Woods	{U}
+03005314	Worldmap Node19	Black Temple	{U}
+03005318	Worldmap Node1A	Tower of Valni	{U}
+0300531C	Worldmap Node1B	Lagdou Ruins	{U}
+03005320	Worldmap Node1C	Melkaen Coast	{U}
+
 @MapSize@0	short	Width
 @MapSize@2	short	Height
 0202E4D4	@MapSize	MapSize	{U}
 0202E4D0	@MapSize	MapSize	{J}
 @BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@02	short	Type of animation?	No idea, really	 -Appears to be range
 @BattleStats@04	short	Damage	(Attack - defense)
 @BattleStats@06	short	Attack
 @BattleStats@08	short	Defense
@@ -1471,19 +1532,19 @@ r3=X tile position of menu of right	{U}
 02003BFC	Stat screen data	{U}
 02003BFC	Stat screen data	{J}
 
-//https://www.dropbox.com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions.txt
-0801A4CC	Copies movement	cost entry (0x40 bytes long) from rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{U}
-0801A198	Copies movement	cost entry (0x40 bytes long) from rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{J}
+//https://www	dropbox	com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions	txt
+0801A4CC	Copies movement	cost entry (0x40 bytes long) from rom to 3004BB0, for use in calculating which squares can be moved to		r0=movement cost entry pointer	{U}
+0801A198	Copies movement	cost entry (0x40 bytes long) from rom to 3004BB0, for use in calculating which squares can be moved to		r0=movement cost entry pointer	{J}
 
-08019430	Get_Char_Data	Given allegiance byte (0xB in unit data), returns beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte	{U}
-08019108	Get_Char_Data	Given allegiance byte (0xB in unit data), returns beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte	{J}
+08019430	Get_Char_Data	Given allegiance byte (0xB in unit data), returns beginning of said data	 Used for looping through units		RET=RAM character data pointer	r0=allegiance byte	{U}
+08019108	Get_Char_Data	Given allegiance byte (0xB in unit data), returns beginning of said data	 Used for looping through units		RET=RAM character data pointer	r0=allegiance byte	{J}
 
-08018D4C	checks if character is riding a ballista and what weather is	Usually called before calling 1A4CC, this function checks if character is riding a ballista and what weather is.	movement cost table entry	r0=ram char data ptr	{U}
-08018A60	checks if character is riding a ballista and what weather is	Usually called , this function checks if character is riding a ballista and what weather is.	movement cost table entry	r0=ram char data ptr	{J}
+08018D4C	checks if character is riding a ballista and what weather is	Usually called before calling 1A4CC, this function checks if character is riding a ballista and what weather is		movement cost table entry	r0=ram char data ptr	{U}
+08018A60	checks if character is riding a ballista and what weather is	Usually called , this function checks if character is riding a ballista and what weather is		movement cost table entry	r0=ram char data ptr	{J}
 
 
-08019150	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{U}
-08018E64	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{J}
+08019150	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp		Character's current hp	r0=ram char data ptr	{U}
+08018E64	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp		Character's current hp	r0=ram char data ptr	{J}
 
 08019190	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr	{U}
 08018EA4	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr	{J}
@@ -1536,8 +1597,8 @@ r3=X tile position of menu of right	{U}
 
 08019464	Get_Rom_Character_Data	RET=beginning of character data, or 0 if passed 0	r0=character number	{U}
 0801913C	Get_Rom_Character_Data	RET=beginning of character data, or 0 if passed 0	r0=character number	{J}
-0801829C	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{U}
-08017FB0	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
+0801829C	Find_Character	Useful for supports, I guess		RET=Ram char data ptr	r0=character number (rom character, that is)	{U}
+08017FB0	Find_Character	Useful for supports, I guess		RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
 
 
 08016FB8	Heal_Amount_Getter	RET=Amount to heal	r0=ram char data ptr	r1=item id/uses	{U}
@@ -1572,8 +1633,8 @@ r3=X tile position of menu of right	{U}
 08016968	Shuffle_Used_Item	r0=char data ptr	r1=invetory slot	{J}
 
 
-080197E4	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{U}
-080194BC	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{J}
+080197E4	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc)	 Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{U}
+080194BC	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc)	 Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{J}
 08024D50	Count_Faction_With_Criteria		RET=number of units in a faction that do NOT have any of those bits set	r0=faction bit (0 for player, 80 for enemy, 40 for npc), r1 = word to AND with unit's turn status word (+0xC)	{U}
 08024D00	Count_Faction_With_Criteria		RET=number of units in a faction that do NOT have any of those bits set	r0=faction bit (0 for player, 80 for enemy, 40 for npc), r1 = word to AND with unit's turn status word (+0xC)	{J}
 
@@ -1584,7 +1645,7 @@ r3=X tile position of menu of right	{U}
 08858288	UnitsID:0	{J}
 
 
-//from https://doc.feuniverse.us/static/stan/GraphicsBuffersEtc.txt
+//from https://doc	feuniverse	us/static/stan/GraphicsBuffersEtc	txt
 08000E4C	FlushLCDControl DON'T CALL THIS YOURSELF (called on VBlank); Does magic	{J}
 08000E9C	FlushLCDControl DON'T CALL THIS YOURSELF (called on VBlank); Does magic	{U}
 08000EF4	GetBackgroundControlBufferPtr	{J}
@@ -1698,7 +1759,7 @@ r3=X tile position of menu of right	{U}
 
 0800217C	FlushPrimaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends primary OAM buffer data to actual OAM	{U}
 08002138	FlushSecondaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends secondary OAM buffer data to actual OAM	{U}
-08002BCC	PushToPrimaryOAM	Pushes data to primary OAM.   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{U}
+08002BCC	PushToPrimaryOAM	Pushes data to primary OAM	   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{U}
 08002BB8	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM (pointed by 03003130, originally at 08000494, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{U}
 080021B0	WriteOAMRotScaleData	Writes Rotation/Scale data for a fixed index	r0=index	r1=PA	r2=PB	r3=PC	[sp+0]=PD	{U}
 080020FC	SetupOAMBufferSplice	Sets up OAM buffers	r0=Size (in number of entries) of Primary buffer	{U}
@@ -1714,7 +1775,7 @@ r3=X tile position of menu of right	{U}
 
 080020CC	FlushPrimaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends primary OAM buffer data to actual OAM	{J}
 08002088	FlushSecondaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends secondary OAM buffer data to actual OAM	{J}
-08002B1C	PushToPrimaryOAM	Pushes data to primary OAM.   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
+08002B1C	PushToPrimaryOAM	Pushes data to primary OAM	   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
 08002B08	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM (pointed by 03003130, originally at 08000494, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
 08002100	WriteOAMRotScaleData	Writes Rotation/Scale data for a fixed index	r0=index	r1=PA	r2=PB	r3=PC	[sp+0]=PD	{J}
 0800204C	SetupOAMBufferSplice	Sets up OAM buffers	r0=Size (in number of entries) of Primary buffer	{J}
@@ -1743,7 +1804,7 @@ r3=X tile position of menu of right	{U}
 080052AC	ClearIntermediateOAMBuffer	DON'T CALL THIS YOURSELF (called in main loop); resets buffers	{J}
 
 
-//DEBUG STUFF NOTES.txt
+//DEBUG STUFF NOTES	txt
 0801C090	Debug Startup routine	following EA code will replace standard one	{U}
 0801BD20	Debug Startup routine	following EA code will replace standard one	{J}
 
@@ -1772,19 +1833,19 @@ r3=X tile position of menu of right	{U}
 08003C44	Another Print idk	{U}
 
 
-//BWLEntry.txt
+//BWLEntry	txt
 080A481C	BWL_AddTilesMoved	r0=Char Id	r1=Tiles moved	{U}
 080A9260	BWL_AddTilesMoved	r0=Char Id	r1=Tiles moved	{J}
 080A4A34	BWL_AddFavoritismValue	r0=Char Id	r1=Value	{U}
 080A9478	BWL_AddFavoritismValue	r0=Char Id	r1=Value	{J}
 
 
-//6CNotes.txt
+//6CNotes	txt
 @6CStructHeader@00	word	Pointer to start of code	(I used to misrefer this as "struct type")
 @6CStructHeader@04	word	Pointer to code cursor
 @6CStructHeader@08	word	Pointer to Destructor routine	(called when struct is destroyed)
 @6CStructHeader@0C	word	Pointer to Loop Routine	(this is called instead of code when it is not null)
-@6CStructHeader@10	word	Pointer to name	(Probably for debug purpose. Still set in FE8. /!\ Never cleared)
+@6CStructHeader@10	word	Pointer to name	(Probably for debug purpose	 Still set in FE8	 /!\ Never cleared)
 @6CStructHeader@14	word	Pointer to Parent 6C	(If Struct is Main 6C, Main 6C Array Index instead)
 @6CStructHeader@18	word	Pointer to First Child Struct (0 if none)
 @6CStructHeader@1C	word	Pointer to Previous Struct (0 if first)
@@ -1851,7 +1912,7 @@ r3=X tile position of menu of right	{U}
 08002F6C	Set6CDestructor	{U}
 08002F70	ForAll6C	Executes routine (A:r0) for each existing 6C (r0 passes 6C pointer)	{U}
 08002F98	ForEach6C	Executes routine (A:r0) for each 6C whose code pointer matches argument (A:r1) (r0 passes 6C pointer)	{U}
-08002FC0	ForEach6CMarked	Included for sake of completeness. Doesn't seem to be ever used (at least in FE8U)	{U}
+08002FC0	ForEach6CMarked	Included for sake of completeness	 Doesn't seem to be ever used (at least in FE8U)	{U}
 08002FEC	BlockEach6CMarked	{U}
 08003014	UnblockEach6CMarked	{U}
 08003040	DeleteEach6CMarked	{U}
@@ -1889,7 +1950,7 @@ r3=X tile position of menu of right	{U}
 08002EBC	Set6CDestructor	{J}
 08002EC0	ForAll6C	Executes routine (A:r0) for each existing 6C (r0 passes 6C pointer)	{J}
 08002EE8	ForEach6C	Executes routine (A:r0) for each 6C whose code pointer matches argument (A:r1) (r0 passes 6C pointer)	{J}
-08002F10	ForEach6CMarked	Included for sake of completeness. Doesn't seem to be ever used (at least in FE8U)	{J}
+08002F10	ForEach6CMarked	Included for sake of completeness	 Doesn't seem to be ever used (at least in FE8U)	{J}
 08002F3C	BlockEach6CMarked	{J}
 08002F64)	UnblockEach6CMarked	{J}
 08002F90	DeleteEach6CMarked	{J}
@@ -1900,11 +1961,11 @@ r3=X tile position of menu of right	{U}
 08002FF4	ForAll6CFollowing	{J}
 
 
-//https://doc.feuniverse.us/static/stan/HiddenMapFlags.txt
+//https://doc	feuniverse	us/static/stan/HiddenMapFlags	txt
 0202E4EC	maps to each tile a set of flags	&0x01 <=> A unit is hidden here	&0x02 <=> A trap is hidden here?	{U}
 0202E4E8	maps to each tile a set of flags	&0x01 <=> A unit is hidden here	&0x02 <=> A trap is hidden here?	{J}
 
-//https://doc.feuniverse.us/static/stan/HardcodedChecks.txt
+//https://doc	feuniverse	us/static/stan/HardcodedChecks	txt
 08078D6C	Hardcoded Class checks for lots of stuff	{U}
 08078D86	Hardcoded Class checks for lots of stuff	{U}
 080347D4	Hardcoded Class check for Demon King & Manakete2	{U}
@@ -1989,7 +2050,7 @@ r3=X tile position of menu of right	{U}
 0203a568	@BattleUnit	gBattleTarget	Copy unit data of Left	{J}
 0203A56C	@BattleUnit	gBattleTarget	Copy unit data of Left	{U}
 
-//Circles\ASM\Modular Stat Screens\mss_defs.s
+//Circles\ASM\Modular Stat Screens\mss_defs	s
 080870BC	Stat Screens DrawBar	{U}
 08089354	Stat Screens DrawBar	{J}
 02003c2c	Stat Screens TileBufferBase	{U}
@@ -2273,11 +2334,11 @@ r3=X tile position of menu of right	{U}
 @Song@06	short	me
 
 03000008	Call blah and put value??	{U}
-030000E8	render_info: for cutscenes.	{U}
+030000E8	render_info: for cutscenes		{U}
 030000F0	When dialogue is displayed	{U}
 030004E8	0xC slot of setval??	{U}
-030004EC	indicates how many words are stored. stored with SAVETOQUEUE.	{U}
-030004F0	Queue00 Stores word located at MemorySlot with SAVETOQUEUE.	{U}
+030004EC	indicates how many words are stored	 stored with SAVETOQUEUE		{U}
+030004F0	Queue00 Stores word located at MemorySlot with SAVETOQUEUE		{U}
 030004F4	Queue01 Stores word located at MemorySlot	{U}
 030004F8	Queue02 Stores word located at MemorySlot	{U}
 030004FC	Queue03 Stores word located at MemorySlot	{U}
@@ -2285,7 +2346,7 @@ r3=X tile position of menu of right	{U}
 03000504	Queue05 Stores word located at MemorySlot	{U}
 03000508	Queue06 Stores word located at MemorySlot	{U}
 0300050C	Queue07 Stores word located at MemorySlot	{U}
-03000510	Queue08 Stores word located at MemorySlot(It is unknown how many are there.)	{U}
+03000510	Queue08 Stores word located at MemorySlot(It is unknown how many are there	)	{U}
 03000570	Allocated stack for event code branch returns	{U}
 030005F0	&UNIT	PopUP Dialog 6C / pointer to relevant Unit Struct	{U}
 030005F4	PopUP Dialog 6C / item short / weapon type index	{U}
@@ -2293,45 +2354,45 @@ r3=X tile position of menu of right	{U}
 02020140	Popup 6C pointers seem to be stored	{U}
 
 030000E8	When dialogue is displayed	{J}
-030004E4	indicates how many words are stored. stored with SAVETOQUEUE.	{J}
-030004E8	Queue00 Stores word located at MemorySlot.stored with SAVETOQUEUE.	{J}
-030004EC	Queue01 Stores word located at MemorySlot.	{J}
-030004F0	Queue02 Stores word located at MemorySlot.	{J}
-030004F4	Queue03 Stores word located at MemorySlot.	{J}
-030005F8	Queue04 Stores word located at MemorySlot.	{J}
-030005FC	Queue05 Stores word located at MemorySlot.	{J}
-03000600	Queue06 Stores word located at MemorySlot.	{J}
-03000604	Queue07 Stores word located at MemorySlot.	{J}
-03000608	Queue08 Stores word located at MemorySlot.(It is unknown how many are there.)	{J}
+030004E4	indicates how many words are stored	 stored with SAVETOQUEUE		{J}
+030004E8	Queue00 Stores word located at MemorySlot	stored with SAVETOQUEUE		{J}
+030004EC	Queue01 Stores word located at MemorySlot		{J}
+030004F0	Queue02 Stores word located at MemorySlot		{J}
+030004F4	Queue03 Stores word located at MemorySlot		{J}
+030005F8	Queue04 Stores word located at MemorySlot		{J}
+030005FC	Queue05 Stores word located at MemorySlot		{J}
+03000600	Queue06 Stores word located at MemorySlot		{J}
+03000604	Queue07 Stores word located at MemorySlot		{J}
+03000608	Queue08 Stores word located at MemorySlot	(It is unknown how many are there	)	{J}
 0300060C	Allocated stack for event code branch returns	{J}
 02020140	Popup 6C pointers seem to be stored	{J}
 
 
-//Zane's Stuff\Doc\Master MMB Doc.txt
-02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will BG Maps be written to.	{U}
-0808CCC8	MMBSetup	This is main routine for setting up minimug box. It determines where to put box and things on it.	{U}
-0202E4D8	BaseRowPointer	This is part of a system for getting elements on map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to first 'row pointer'. .set value above is this pointer to first row pointer. I think an example would demonstrate better.	{U}
+//Zane's Stuff\Doc\Master MMB Doc	txt
+02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will BG Maps be written to		{U}
+0808CCC8	MMBSetup	This is main routine for setting up minimug box	 It determines where to put box and things on it		{U}
+0202E4D8	BaseRowPointer	This is part of a system for getting elements on map	  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to first 'row pointer'	 	set value above is this pointer to first row pointer	 I think an example would demonstrate better		{U}
 08A01828	Table of bytes, either 0x00, 0x01, or 0xFF for determining position of windows such as  minimug box, goal window, or terrain window	{U}
-08A018AC	MMBStructType	This is type of 0x6C struct used when drawing box.	{U}
+08A018AC	MMBStructType	This is type of 0x6C struct used when drawing box		{U}
 0859A5D0	:0859A9D8	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM	{U}
-0808BBCC	WindowPosCheck	This returns 0-3 based on cursor position. Uses same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{U}
-0808BBAC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending. on whether r0 and r1 are negative, positive, or zero, from box control table. Used when determining where to draw terrain, goal, and minimug windows.	{U}
-0808C5D0	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself.	{U}
+0808BBCC	WindowPosCheck	This returns 0-3 based on cursor position	 Uses same misc	 RAM data	 This function is used by all window elements	 here (goal, terrain, minimug), so don't edit it		{U}
+0808BBAC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending	 on whether r0 and r1 are negative, positive, or zero, from box control table	 Used when determining where to draw terrain, goal, and minimug windows		{U}
+0808C5D0	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself		{U}
 02003D2C	ERAMBGBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{U}
 02003E36	MMBBarRAMBuffer	This is buffer area for HP bar	{U}
 0200422C	MMBTilemapRAMBuffer	This is where box's tilemap is written to to accomplish scrolling effect	{U}
-08A17484	MMBTilemap	This is where rilemap for minimug box is.	{U}
-0202A6AC	TextBufferOffset	This is buffer text is written to.	{U}
+08A17484	MMBTilemap	This is where rilemap for minimug box is		{U}
+0202A6AC	TextBufferOffset	This is buffer text is written to		{U}
 03004150	WRAMRoutinePointer	{U}
-08003F90	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space.	RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{U}
+08003F90	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space		RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{U}
 02028E70	TextParams	{U}
-08003DC8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to.	{U}
+08003DC8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to		{U}
 08004218	DefaultTextDraw	This is default drawing routine There's a pointer to it at 2028E60	{U}
 02028E60	DefaultTextDrawPointer	{U}
 08004208	TextPalSelecter	{U}
-08002B90	WRAMRoutineGetter	This routine grabs and branches to a routine written in WRAM. This one draws text.	{U}
+08002B90	WRAMRoutineGetter	This routine grabs and branches to a routine written in WRAM	 This one draws text		{U}
 03003740	WRAMPointer	There's a pointer to routine here	{U}
-03003A8C	TextImageWriter	This is an ARM routine in WRAM that draws text. It's hard to follow, so you might want to skip it. I'll have plenty of notes here. 	r0=font	r1=location to write to	r2=character image	r3=overlap with last character	{U}
+03003A8C	TextImageWriter	This is an ARM routine in WRAM that draws text	 It's hard to follow, so you might want to skip it	 I'll have plenty of notes here	 	r0=font	r1=location to write to	r2=character image	r3=overlap with last character	{U}
 08588240	:08588273	FontColorTable	Shape Data Pointer table	{U}
 08577EF0	:08577F23	FontColorTable	Shape Data Pointer table	{J}
 08000540	CharSizeTable	{U}
@@ -2342,7 +2403,7 @@ r3=X tile position of menu of right	{U}
 08005F9C	GenericMMPalGetter	{U}
 08005514	PortraitEntryGetter	{U}
 08005894	TilemapWriter	Writes a tilemap	r0=destination	r1=tile table	r2=base tile	r3=flag for flipping	{U}
-0808C45C	DrawHPNumbers	This routine draws HP numbers to minimug box. It handles displaying statuses, too. Warning: This routine is called every frame by another routine in order to keep displaying OAM	{U}
+0808C45C	DrawHPNumbers	This routine draws HP numbers to minimug box	 It handles displaying statuses, too	 Warning: This routine is called every frame by another routine in order to keep displaying OAM	{U}
 08590F44	:08591153	OAMTable	This is a table of size/shape	data and number of sprites to draw	{U}
 06002DE0	StatusVRAM	{U}
 08016574	EquippableCheck:	returns 0 or 1 if a unit can equip and use an item checks for silenced units	{U}
@@ -2356,16 +2417,16 @@ r3=X tile position of menu of right	{U}
 0808BC10	HPBarLeftEnd	{U}
 0808BC2C	HPBarMiddle	{U}
 0808BC68	HPBarRightEnd	{U}
-0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{U}
+0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine	 that draws a tilemap	 For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{U}
 0808C2CC	MMBPalSelect	Routine selects a palette and  writes it based on unit's allegiance after ANDing unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively	{U}
 
 08A1738C	:08A173AB	MMBAllyPalette	{U}
 08A173AC	:08A173CB	MMBEnemyPalette	{U}
 08A173CC	:08A173EB	MMBNPCPal	{U}
-0802713C	ChapterMapSpritePal	Map sprite palette routine Called to determine map sprite palettes  in chapter maps. World map uses a  different routine. Called whenever a map sprite changes state, i.e. moving, being selected. Used every frame in unit menu	RET=r0 0x0B-0x0F 0x0B is light rune 0x0C is blue 0x0D is red 0x0E is green 0x0F is gray	r0=character in ram	{U}
-08027168	CMSPAllegianceCheck	Allegiance check is pretty much an extension of above routine. You could call it to get palette of a unit.	{U}
+0802713C	ChapterMapSpritePal	Map sprite palette routine Called to determine map sprite palettes  in chapter maps	 World map uses a  different routine	 Called whenever a map sprite changes state, i	e	 moving, being selected	 Used every frame in unit menu	RET=r0 0x0B-0x0F 0x0B is light rune 0x0C is blue 0x0D is red 0x0E is green 0x0F is gray	r0=character in ram	{U}
+08027168	CMSPAllegianceCheck	Allegiance check is pretty much an extension of above routine	 You could call it to get palette of a unit		{U}
 
-080271A0	MSUnk1Start	following routine comes directly after, andmore research is needed on it. It's called when a sprite is updated. i.e. moving or something	{U}
+080271A0	MSUnk1Start	following routine comes directly after, andmore research is needed on it	 It's called when a sprite is updated	 i	e	 moving or something	{U}
 0203A4C8	UnkEntryPtr	{U}
 0203A018	UnkOAMTablePtr	{U}
 
@@ -2396,19 +2457,19 @@ r3=X tile position of menu of right	{U}
 
 
 03000008	Call blah and put value??	{U}
-030000E8	render_info: for cutscenes.	{U}
+030000E8	render_info: for cutscenes		{U}
 030000F0(00006840->030000E8	When dialogue is displayed	{U}
 030004E8(000109B8->030004E0	0xC slot of setval??	{U}
-030004EC	indicates how many words are stored. stored with SAVETOQUEUE.	{U}
-030004F0(00010B5C->030004E8	Stores word located at MemorySlot00.stored with SAVETOQUEUE.	{U}
-030004F4	Stores word located at MemorySlot01.	{U}
-030004F8	Stores word located at MemorySlot02.	{U}
-030004FC	Stores word located at MemorySlot03.	{U}
-03000500	Stores word located at MemorySlot04.	{U}
-03000504	Stores word located at MemorySlot05.	{U}
-03000508	Stores word located at MemorySlot06.	{U}
-0300050C	Stores word located at MemorySlot07.	{U}
-03000510	Stores word located at MemorySlot08.(It is unknown how many are there.)	{U}
+030004EC	indicates how many words are stored	 stored with SAVETOQUEUE		{U}
+030004F0(00010B5C->030004E8	Stores word located at MemorySlot00	stored with SAVETOQUEUE		{U}
+030004F4	Stores word located at MemorySlot01		{U}
+030004F8	Stores word located at MemorySlot02		{U}
+030004FC	Stores word located at MemorySlot03		{U}
+03000500	Stores word located at MemorySlot04		{U}
+03000504	Stores word located at MemorySlot05		{U}
+03000508	Stores word located at MemorySlot06		{U}
+0300050C	Stores word located at MemorySlot07		{U}
+03000510	Stores word located at MemorySlot08	(It is unknown how many are there	)	{U}
 03000570	Allocated stack for event code branch returns	{U}
 030005F0	&UNIT	PopUP Dialog 6C / pointer to relevant Unit Struct	{U}
 030005F4	PopUP Dialog 6C / item short / weapon type index	{U}
@@ -2416,28 +2477,28 @@ r3=X tile position of menu of right	{U}
 02020140(00077F88->02020140	Popup 6C pointers seem to be stored	{U}
 
 
-//Zane's Stuff\Doc\Master MMB Doc.txt
-02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will BG Maps be written to.	{J}
-0808EFC4	MMBSetup	This is main routine for setting up minimug box. It determines where to put box and things on it.	{J}
+//Zane's Stuff\Doc\Master MMB Doc	txt
+02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will BG Maps be written to		{J}
+0808EFC4	MMBSetup	This is main routine for setting up minimug box	 It determines where to put box and things on it		{J}
 0202BCAC	MiscRAMData	This section of memory has information on cursor position,  phases, chapter number, gold, and a bunch of other things	{J}
-0202E4D4	BaseRowPointer	This is part of a system for getting elements on map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to first 'row pointer'. .set value above is this pointer to first row pointer. I think an example would demonstrate better.	{J}
+0202E4D4	BaseRowPointer	This is part of a system for getting elements on map	  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to first 'row pointer'	 	set value above is this pointer to first row pointer	 I think an example would demonstrate better		{J}
 08A738E0	Table of bytes, either 0x00, 0x01, or 0xFF for determining position of windows such as  minimug box, goal window, or terrain window	{J}
-08A73964	MMBStructType	This is type of 0x6C struct used when drawing box.	{J}
+08A73964	MMBStructType	This is type of 0x6C struct used when drawing box		{J}
 085C2A50	:085C2E58	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM	{J}
-0808DEDC	WindowPosCheck	This returns 0-3 based on cursor position. Uses same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{J}
-0808DEBC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending. on whether r0 and r1 are negative, positive, or zero, from box control table. Used when determining where to draw terrain, goal, and minimug windows.	{J}
-0808E8CC	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself.	{J}
+0808DEDC	WindowPosCheck	This returns 0-3 based on cursor position	 Uses same misc	 RAM data	 This function is used by all window elements	 here (goal, terrain, minimug), so don't edit it		{J}
+0808DEBC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending	 on whether r0 and r1 are negative, positive, or zero, from box control table	 Used when determining where to draw terrain, goal, and minimug windows		{J}
+0808E8CC	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself		{J}
 02003D2C	ERAMBGBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{J}
 0200422C	MMBTilemapRAMBuffer	This is where box's tilemap is written to to accomplish scrolling effect	{J}
-08A931D0	MMBTilemap	This is where rilemap for minimug box is.	{J}
-0202A6A8	TextBufferOffset	This is buffer text is written to.	{J}
+08A931D0	MMBTilemap	This is where rilemap for minimug box is		{J}
+0202A6A8	TextBufferOffset	This is buffer text is written to		{J}
 030040F0	WRAMRoutinePointer	{J}
-08003EAC	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space.	RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{J}
+08003EAC	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space		RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{J}
 02028E70	TextParams	{J}
-08003CF8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to.	{J}
+08003CF8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to		{J}
 08004150	DefaultTextDraw	This is default drawing routine There's a pointer to it at 2028E60	{J}
 08004140	TextPalSelecter	{J}
-08002AE0	WRAMRoutineGetter	This routine grabs and branches to a routine written in WRAM. This one draws text.	{J}
+08002AE0	WRAMRoutineGetter	This routine grabs and branches to a routine written in WRAM	 This one draws text		{J}
 030036E0	WRAMPointer	There's a pointer to routine here	{J}
 08000540	CharSizeTable	{J}
 08018FEC	MinimugGetter	Determines a unit's minimug	{J}
@@ -2446,7 +2507,7 @@ r3=X tile position of menu of right	{U}
 08005EA0	GenericMMPalGetter	{J}
 0800541C	PortraitEntryGetter	{J}
 0800579CTilemapWriter	Writes a tilemap	r0=destination	r1=tile table	r2=base tile	r3=flag for flipping	{J}
-0808E75E	DrawHPNumbers	This routine draws HP numbers to minimug box. It handles displaying statuses, too. Warning: This routine is called every frame by another routine in order to keep displaying OAM	{J}
+0808E75E	DrawHPNumbers	This routine draws HP numbers to minimug box	 It handles displaying statuses, too	 Warning: This routine is called every frame by another routine in order to keep displaying OAM	{J}
 085B8CDC	:085B8EEB	OAMTable	This is a table of size/shape	data and number of sprites to draw	{J}
 0801631C	EquippableCheck:	returns 0 or 1 if a unit can equip and use an item checks for silenced units	{J}
 08017254	UnusableItem	For when an item has ability 2, unusable set	{J}
@@ -2459,16 +2520,16 @@ r3=X tile position of menu of right	{U}
 0808BC10	HPBarLeftEnd	{J}
 0808DF38	HPBarMiddle	{J}
 0808BC68	HPBarRightEnd	{J}
-0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{J}
+0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine	 that draws a tilemap	 For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{J}
 0808E5CC	MMBPalSelect	Routine selects a palette and  writes it based on unit's allegiance after ANDing unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively	{J}
 
 08A930D8	:08A930F7	MMBAllyPalette	{J}
 08A930F8	:08A93117	MMBEnemyPalette	{J}
 08A93118	:08A93137	MMBNPCPal	{J}
-080270E0	ChapterMapSpritePal	Map sprite palette routine Called to determine map sprite palettes  in chapter maps. World map uses a  different routine. Called whenever a map sprite changes state, i.e. moving, being selected. Used every frame in unit menu	RET=r0 0x0B-0x0F 0x0B is light rune 0x0C is blue 0x0D is red 0x0E is green 0x0F is gray	r0=character in ram	{J}
-0802710C	CMSPAllegianceCheck	Allegiance check is pretty much an extension of above routine. You could call it to get palette of a unit.	{J}
+080270E0	ChapterMapSpritePal	Map sprite palette routine Called to determine map sprite palettes  in chapter maps	 World map uses a  different routine	 Called whenever a map sprite changes state, i	e	 moving, being selected	 Used every frame in unit menu	RET=r0 0x0B-0x0F 0x0B is light rune 0x0C is blue 0x0D is red 0x0E is green 0x0F is gray	r0=character in ram	{J}
+0802710C	CMSPAllegianceCheck	Allegiance check is pretty much an extension of above routine	 You could call it to get palette of a unit		{J}
 
-08027144	MSUnk1Start	following routine comes directly after, andmore research is needed on it. It's called when a sprite is updated. i.e. moving or something	{J}
+08027144	MSUnk1Start	following routine comes directly after, andmore research is needed on it	 It's called when a sprite is updated	 i	e	 moving or something	{J}
 0203A4C4	UnkEntryPtr	{J}
 0203A014	UnkOAMTablePtr	{J}
 
@@ -5551,7 +5612,7 @@ r3=X tile position of menu of right	{U}
 08057CAC	NewEkrWindowAppear	{J}
 08057D98	NewEkrNamewinAppear	{J}
 08057F80	PrepareBattleGraphicsMaybe	{J}
-080D1D1C	LoadBattleSpritesForBranchScreen	runs once per frame while on branched promotion screen.	{J}
+080D1D1C	LoadBattleSpritesForBranchScreen	runs once per frame while on branched promotion screen		{J}
 08058E44	GetSpellAnimId	{J}
 08059678	GetBattleAnimationId	{J}
 08059790	SomethingFilterBattleAnimId	{J}
@@ -6314,7 +6375,7 @@ r3=X tile position of menu of right	{U}
 //08B35820	&LZ77	Something using TSA	{J}
 //08B3B014	&LZ77	Something round	{J}
 08BBB340	&LZ77	Guide letters	{J}
-08BBB3E4	&LZ77	Status of lower left of screen etc.	{J}
+08BBB3E4	&LZ77	Status of lower left of screen etc		{J}
 08BBD3F8	&LZ77	Relief at start of chapter	{J}
 08A588C0	&LZ77	To Be Continued	{J}
 08780574	&LZ77	Something's effect	{J}
@@ -7033,7 +7094,7 @@ r3=X tile position of menu of right	{U}
 0203e118	gBattleSpellAnimationId1	{U}
 0203e11a	gBattleSpellAnimationId2	{U}
 0203e120	gSomethingRelatedToAnimAndDistance	{U}
-0203e12a	gaAISRelatedShorts	array of "battle anim round types". Each entry is actually a pair of shorts: one for the right unit, and one for the left unit (which one is which is TODO: invertigate)	{U}
+0203e12a	gaAISRelatedShorts	array of "battle anim round types"	 Each entry is actually a pair of shorts: one for the right unit, and one for the left unit (which one is which is TODO: invertigate)	{U}
 0203e182	gStoredBattleAnimId11Ptr	{U}
 0203e184	gStoredBattleAnimId12Ptr	{U}
 0203e1e4	gBoolIsArena	{U}
@@ -7082,9 +7143,6 @@ r3=X tile position of menu of right	{U}
 03004f10	gpAiPerformer	{U}
 03004fac	gCurrentUnitIndex	{U}
 03005250	gGlobalTriggerData	{U}
-03005280	gSomeWMEventRelatedStruct	{U}
-03005282	gWMCamera	{U}
-03005291	gWMCurrentNode	{U}
 0300534e	gSaved	{U}
 030067a0	gpReadSramFast	{U}
 030067a4	gpVerifySramFast	{U}
@@ -7148,7 +7206,7 @@ r3=X tile position of menu of right	{U}
 0203E114	gBattleSpellAnimationId1	{J}
 0203E116	gBattleSpellAnimationId2	{J}
 0203E11C	gSomethingRelatedToAnimAndDistance	{J}
-0203E126	gaAISRelatedShorts	array of "battle anim round types". Each entry is actually a pair of shorts: one for the right unit, and one for the left unit (which one is which is TODO: invertigate)	{J}
+0203E126	gaAISRelatedShorts	array of "battle anim round types"	 Each entry is actually a pair of shorts: one for the right unit, and one for the left unit (which one is which is TODO: invertigate)	{J}
 0203E17E	gStoredBattleAnimId11Ptr	{J}
 0203e180	gStoredBattleAnimId12Ptr	{J}
 0203e1e0	gBoolIsArena	{J}
@@ -7196,9 +7254,26 @@ r3=X tile position of menu of right	{U}
 03004F00	gpAiPerformer	{J}
 03004F9C	gCurrentUnitIndex	{J}
 03005240	gGlobalTriggerData	{J}
-03005270	gSomeWMEventRelatedStruct	{J}
-03005272	gWMCamera	{J}
-03005281	gWMCurrentNode	{J}
+
+//03005280	gSomeWMEventRelatedStruct	{U}
+//03005282	gWMCamera	{U}
+//03005291	gWMCurrentNode	{U}
+//03005270	gSomeWMEventRelatedStruct	{J}
+//03005272	gWMCamera	{J}
+//03005281	gWMCurrentNode	{J}
+03005280	@WMEventRelatedStruct	gSomeWMEventRelatedStruct	{U}
+03005270	@WMEventRelatedStruct	gSomeWMEventRelatedStruct	{J}
+@WMEventRelatedStruct@00	Unk00	byte
+@WMEventRelatedStruct@01	Unk00	byte
+@WMEventRelatedStruct@02	gWMCamera	short
+@WMEventRelatedStruct@04	Unk00	short
+@WMEventRelatedStruct@06	Unk00	short
+@WMEventRelatedStruct@08	Unk08	word
+@WMEventRelatedStruct@0C	Unk0C	word
+@WMEventRelatedStruct@10	Unk10	byte
+@WMEventRelatedStruct@11	gWMCurrentNode	byte
+@WMEventRelatedStruct@12	Unk12	short
+
 0300533E	gSaved	{J}
 03006790	gpReadSramFast	{J}
 03006794	gpVerifySramFast	{J}
@@ -7232,43 +7307,43 @@ r3=X tile position of menu of right	{U}
 0203ED40	:0203EF00	(Where debuffs for skill system begin)Debuff glitch fix(Skill system)	{U}
 02026E30	:02027268	Extends PurpleUnitFreeSpace	Fourth-Allegiance	{U}
 
-0203A530	Right side with battle animation.Additional information unknown 1.	{J}
-0203A531	Right side with battle animation.Additional information unknown 2.	{J}
-0203A532	Right side with battle animation.Additional information unknown 3.	{J}
-0203A533	Right side with battle animation.Additional information unknown 4.	{J}
-0203A534	Right side with battle animation.Additional Information Flag 1 0x01 = Attacked 0x40 = Range with a Magic Sword.	{J}
-0203A535	Right side with battle animation.Additional information flag 2.	{J}
-0203A536	Right side with battle animation.Additional information flag 3.	{J}
-0203A537	Right side with battle animation.Additional information flag 4.	{J}
-0203A542	Right side with battle animation.Attack	{J}
-0203A544	Right side with battle animation.Defence	{J}
-0203A546	Right side with battle animation.Speed	{J}
-0203A548	Right side with battle animation.Hit	{J}
-0203A54a	Right side with battle animation.Avoid	{J}
-0203A54c	Right side with battle animation.(AttackerHit - DefinerAvoid)	{J}
-0203A54e	Right side with battle animation.Crital	{J}
-0203A550	Right side with battle animation.Luck	{J}
+0203A530	Right side with battle animation	Additional information unknown 1		{J}
+0203A531	Right side with battle animation	Additional information unknown 2		{J}
+0203A532	Right side with battle animation	Additional information unknown 3		{J}
+0203A533	Right side with battle animation	Additional information unknown 4		{J}
+0203A534	Right side with battle animation	Additional Information Flag 1 0x01 = Attacked 0x40 = Range with a Magic Sword		{J}
+0203A535	Right side with battle animation	Additional information flag 2		{J}
+0203A536	Right side with battle animation	Additional information flag 3		{J}
+0203A537	Right side with battle animation	Additional information flag 4		{J}
+0203A542	Right side with battle animation	Attack	{J}
+0203A544	Right side with battle animation	Defence	{J}
+0203A546	Right side with battle animation	Speed	{J}
+0203A548	Right side with battle animation	Hit	{J}
+0203A54a	Right side with battle animation	Avoid	{J}
+0203A54c	Right side with battle animation	(AttackerHit - DefinerAvoid)	{J}
+0203A54e	Right side with battle animation	Crital	{J}
+0203A550	Right side with battle animation	Luck	{J}
 
 
-0203A534	Right side with battle animation.Additional information unknown 1.	{U}
-0203A535	Right side with battle animation.Additional information unknown 2.	{U}
-0203A536	Right side with battle animation.Additional information unknown 3.	{U}
-0203A537	Right side with battle animation.Additional information unknown 4.	{U}
-0203A538	Right side with battle animation.Additional Information Flag 1 0x01 = Attacked 0x40 = Range with a Magic Sword.	{U}
-0203A539	Right side with battle animation.Additional information flag 2.	{U}
-0203A53A	Right side with battle animation.Additional information flag 3.	{U}
-0203A53B	Right side with battle animation.Additional information flag 4.	{U}
-0203A535	Right side with battle animation.Additional information flag 2.	{J}
-0203A536	Right side with battle animation.Additional information flag 3.	{J}
-0203A537	Right side with battle animation.Additional information flag 4.	{J}
-0203A546	Right side with battle animation.Attack	{U}
-0203A548	Right side with battle animation.Defence	{U}
-0203A54a	Right side with battle animation.Speed	{U}
-0203A54c	Right side with battle animation.Hit	{U}
-0203A54e	Right side with battle animation.Avoid	{U}
-0203A550	Right side with battle animation.(AttackerHit - DefinerAvoid)	{U}
-0203A552	Right side with battle animation.Crital	{U}
-0203A554	Right side with battle animation.Luck	{U}
+0203A534	Right side with battle animation	Additional information unknown 1		{U}
+0203A535	Right side with battle animation	Additional information unknown 2		{U}
+0203A536	Right side with battle animation	Additional information unknown 3		{U}
+0203A537	Right side with battle animation	Additional information unknown 4		{U}
+0203A538	Right side with battle animation	Additional Information Flag 1 0x01 = Attacked 0x40 = Range with a Magic Sword		{U}
+0203A539	Right side with battle animation	Additional information flag 2		{U}
+0203A53A	Right side with battle animation	Additional information flag 3		{U}
+0203A53B	Right side with battle animation	Additional information flag 4		{U}
+0203A535	Right side with battle animation	Additional information flag 2		{J}
+0203A536	Right side with battle animation	Additional information flag 3		{J}
+0203A537	Right side with battle animation	Additional information flag 4		{J}
+0203A546	Right side with battle animation	Attack	{U}
+0203A548	Right side with battle animation	Defence	{U}
+0203A54a	Right side with battle animation	Speed	{U}
+0203A54c	Right side with battle animation	Hit	{U}
+0203A54e	Right side with battle animation	Avoid	{U}
+0203A550	Right side with battle animation	(AttackerHit - DefinerAvoid)	{U}
+0203A552	Right side with battle animation	Crital	{U}
+0203A554	Right side with battle animation	Luck	{U}
 
 (攻撃側の命中－防御側の回避)
 
@@ -7279,33 +7354,33 @@ r3=X tile position of menu of right	{U}
 //Class Change (Promotion)
 08B1271C	ccramify	PROCS	Promotion(Class Change)	{U}
 08B12A08	CCRamifyMenuSelect	PROCS	Promotion(Class Change)	{U}
-080CCD48	SetupPromotionScreen	Master function for building promotion menu. Sets up map buffers for BG0, BG1 and BG2 and calls most of child functions below	{U}
+080CCD48	SetupPromotionScreen	Master function for building promotion menu	 Sets up map buffers for BG0, BG1 and BG2 and calls most of child functions below	{U}
 080CD47C	SomethingToDoWithButtonPresses	{U}
 080CCBF4	LoadUIForPromoScreen	{U}
 080CCCE0	SomeKindOfLoop	{U}
 080CD408	LoadSomeTextOnPromoScreen	{U}
-080CD570	LoadClassBattleSprite	Loads battle animation data for given class, given items in unit's current inventory it determines what (if any) weapon should be shown equipped.	{U}
-080CCCA4	SomethingToDoWithUnlockingThirdOption	This seems to be function that checks if game has been beaten in order to unlock third promotion option for trainee classes.	{U}
-080CCAAC	LoadClassReelFontPalette	Loads palette/LZ77 data for fancy font in top left. This is called once.	{U}
-080CCB40	LoadClassNameInClassReelFont	References some data after Opening Class Reel data to load class name in curly font used at top of screen.	{U}
-080CDDDC	Make6C_PromotionMenuSelect	Pretty straightforward: starts proc CCRamifyMenuSelect as a child proc of ccramify.	{U}
+080CD570	LoadClassBattleSprite	Loads battle animation data for given class, given items in unit's current inventory it determines what (if any) weapon should be shown equipped		{U}
+080CCCA4	SomethingToDoWithUnlockingThirdOption	This seems to be function that checks if game has been beaten in order to unlock third promotion option for trainee classes		{U}
+080CCAAC	LoadClassReelFontPalette	Loads palette/LZ77 data for fancy font in top left	 This is called once		{U}
+080CCB40	LoadClassNameInClassReelFont	References some data after Opening Class Reel data to load class name in curly font used at top of screen		{U}
+080CDDDC	Make6C_PromotionMenuSelect	Pretty straightforward: starts proc CCRamifyMenuSelect as a child proc of ccramify		{U}
 08B12A08	CCRamifyMenuSelect	{U}
 080CDD78	BuildPromotionMenu	{U}
 08B129E4	PromotionMenuDefs	{U}
-080CDB1C	SomePromoMenuStartRoutine	Calls some func that calls BG_EnableSyncByMask. Returns 0 in r0.	{U}
+080CDB1C	SomePromoMenuStartRoutine	Calls some func that calls BG_EnableSyncByMask	 Returns 0 in r0		{U}
 080CDB28	PromoMenu_RPressHandler	{U}
 080CDC14	PromoMenu_BPressHandler	{U}
 08B12954	PromotionMenuCommandDefs	{U}
-080CDCC4	PopulateClassNamesFrom6CStorage	This function takes a class ID and pulls string for class name so it can be used to populate menu.	{U}
+080CDCC4	PopulateClassNamesFrom6CStorage	This function takes a class ID and pulls string for class name so it can be used to populate menu		{U}
 080CDB34	Promotion_Actual	Opens "Change/Cancel" menu	{U}
 080CDD00	PromotionSelect_OnHover	{U}
-080CDD38	HardCodedCheckForThirdOptionUsability	Checks unit's character ID and current class against hard-coded list of trainee classes to see if unit is able to use third option if it exists.	{U}
-080CCF60	SomeFuncThatDoesBGImageStuff	This looks like it draws everything to screen.	{U}
-080CD014	LoadBattleSpritesForBranchScreen	runs once per frame while on branched promotion screen.	{U}
-080CD294	MoveToLabelInParent6C_Unknown1	This probably jumps around to different parts of ccramify 6C based on state changes, but I wasn't able to see this in action. There seem to be three valid states it checks for.	{U}
-080CD1D4	DeleteSome6Cs	Based on a state variable, if state is 2 or greater, delete some 6Cs from proc tree. I also couldn't get this to trigger in my test case.	{U}
-080CD2CC	MoveToLabelInParent6C_Unknown2	Another one that jumps to some label in ccramify 6C, also wasn't able to trigger in wild. States 0 and 1 go to label 5 while states 2 and above break out of 6C loop.	{U}
-080CD618	Make6C_ccramify_end	Starts a new ccramify_end 6C, which presumably cleans stuff up and returns to te previous game state. This doesn't seem to trigger on autopromotion.	{U}
+080CDD38	HardCodedCheckForThirdOptionUsability	Checks unit's character ID and current class against hard-coded list of trainee classes to see if unit is able to use third option if it exists		{U}
+080CCF60	SomeFuncThatDoesBGImageStuff	This looks like it draws everything to screen		{U}
+080CD014	LoadBattleSpritesForBranchScreen	runs once per frame while on branched promotion screen		{U}
+080CD294	MoveToLabelInParent6C_Unknown1	This probably jumps around to different parts of ccramify 6C based on state changes, but I wasn't able to see this in action	 There seem to be three valid states it checks for		{U}
+080CD1D4	DeleteSome6Cs	Based on a state variable, if state is 2 or greater, delete some 6Cs from proc tree	 I also couldn't get this to trigger in my test case		{U}
+080CD2CC	MoveToLabelInParent6C_Unknown2	Another one that jumps to some label in ccramify 6C, also wasn't able to trigger in wild	 States 0 and 1 go to label 5 while states 2 and above break out of 6C loop		{U}
+080CD618	Make6C_ccramify_end	Starts a new ccramify_end 6C, which presumably cleans stuff up and returns to te previous game state	 This doesn't seem to trigger on autopromotion		{U}
 080CCA64	ChangeClassDescription	{U}
 020256D8	CCRamifyMenuSelect's proc storage starts	{U}
 
@@ -7315,22 +7390,22 @@ r3=X tile position of menu of right	{U}
 080D216C	SomethingToDoWithButtonPresses	{J}
 080D18F0	LoadUIForPromoScreen	{J}
 080D2100	LoadSomeTextOnPromoScreen	{J}
-080D2260	LoadClassBattleSprite	Loads battle animation data for given class, given items in unit's current inventory it determines what (if any) weapon should be shown equipped.	{J}
-080D19A0	SomethingToDoWithUnlockingThirdOption	This seems to be function that checks if game has been beaten in order to unlock third promotion option for trainee classes.	{J}
-080D2AD8	Make6C_PromotionMenuSelect	Pretty straightforward: starts proc CCRamifyMenuSelect as a child proc of ccramify.	{J}
+080D2260	LoadClassBattleSprite	Loads battle animation data for given class, given items in unit's current inventory it determines what (if any) weapon should be shown equipped		{J}
+080D19A0	SomethingToDoWithUnlockingThirdOption	This seems to be function that checks if game has been beaten in order to unlock third promotion option for trainee classes		{J}
+080D2AD8	Make6C_PromotionMenuSelect	Pretty straightforward: starts proc CCRamifyMenuSelect as a child proc of ccramify		{J}
 08BABA58	CCRamifyMenuSelect	{J}
 080D2A74	BuildPromotionMenu	{J}
-080D280C	SomePromoMenuStartRoutine	Calls some func that calls BG_EnableSyncByMask. Returns 0 in r0.	{J}
+080D280C	SomePromoMenuStartRoutine	Calls some func that calls BG_EnableSyncByMask	 Returns 0 in r0		{J}
 080D2818	PromoMenu_RPressHandler	{J}
 080D2904	PromoMenu_BPressHandler	{J}
-080D29C0	PopulateClassNamesFrom6CStorage	This function takes a class ID and pulls string for class name so it can be used to populate menu.	{J}
+080D29C0	PopulateClassNamesFrom6CStorage	This function takes a class ID and pulls string for class name so it can be used to populate menu		{J}
 080D2824	Promotion_Actual	Opens "Change/Cancel" menu	{J}
 080D29FC	PromotionSelect_OnHover	{J}
-080D2A34	HardCodedCheckForThirdOptionUsability	Checks unit's character ID and current class against hard-coded list of trainee classes to see if unit is able to use third option if it exists.	{J}
-080D1C68	SomeFuncThatDoesBGImageStuff	This looks like it draws everything to screen.	{J}
-080D1F8C	MoveToLabelInParent6C_Unknown1	This probably jumps around to different parts of ccramify 6C based on state changes, but I wasn't able to see this in action. There seem to be three valid states it checks for.	{J}
-080D1ECC	DeleteSome6Cs	Based on a state variable, if state is 2 or greater, delete some 6Cs from proc tree. I also couldn't get this to trigger in my test case.	{J}
-080D1FC4	MoveToLabelInParent6C_Unknown2	Another one that jumps to some label in ccramify 6C, also wasn't able to trigger in wild. States 0 and 1 go to label 5 while states 2 and above break out of 6C loop.	{J}
+080D2A34	HardCodedCheckForThirdOptionUsability	Checks unit's character ID and current class against hard-coded list of trainee classes to see if unit is able to use third option if it exists		{J}
+080D1C68	SomeFuncThatDoesBGImageStuff	This looks like it draws everything to screen		{J}
+080D1F8C	MoveToLabelInParent6C_Unknown1	This probably jumps around to different parts of ccramify 6C based on state changes, but I wasn't able to see this in action	 There seem to be three valid states it checks for		{J}
+080D1ECC	DeleteSome6Cs	Based on a state variable, if state is 2 or greater, delete some 6Cs from proc tree	 I also couldn't get this to trigger in my test case		{J}
+080D1FC4	MoveToLabelInParent6C_Unknown2	Another one that jumps to some label in ccramify 6C, also wasn't able to trigger in wild	 States 0 and 1 go to label 5 while states 2 and above break out of 6C loop		{J}
 080D1780	ChangeClassDescription	{J}
 08070390	Silencer animation	{J}
 0806E078	Silencer animation	{U}
@@ -7383,8 +7458,8 @@ r3=X tile position of menu of right	{U}
 0809A14C	Link Arena deny unit judgment	{J}
 08086AC4	Obtaining start position of structure of support conversation	{J}
 080847F8	Obtaining start position of structure of support conversation	{U}
-08086A58	Designation of BGM for supporting conversation	However, songs to be played are limited to IDs.Substantially unusable.	{J}
-0808478C	Designation of BGM for supporting conversation	However, songs to be played are limited to IDs.Substantially unusable.	{U}
+08086A58	Designation of BGM for supporting conversation	However, songs to be played are limited to IDs	Substantially unusable		{J}
+0808478C	Designation of BGM for supporting conversation	However, songs to be played are limited to IDs	Substantially unusable		{U}
 080598F8	Scarlet weapon's Flash	{J}
 08058AC8	Scarlet weapon's Flash	{U}
 0203F080	:0203F084	Reserve Gaiden Style Magic Menu	{U}
@@ -8680,7 +8755,7 @@ r3=X tile position of menu of right	{U}
 085C4220	&EVENT	Tutorial	Inventory change	4	{J}
 085D3E50	&EVENT	For debugging	Would you like to delete all saved data?	{J}
 085D4358	&EVENT	Communication stadium	Do you surrender?	{J}
-085D437C	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{J}
+085D437C	&EVENT	Communication stadium	I can not give damage	Do you want to end it? 	{J}
 08A71E1C	&EVENT	For debugging	Mysterious branch	{J}
 08A71FC0	&EVENT	For debugging	Branch	1	{J}
 08A72038	&EVENT	For debugging	Branch	2	{J}
@@ -8702,7 +8777,7 @@ r3=X tile position of menu of right	{U}
 0859BD40	&EVENT	Tutorial	Inventory change	4	{U}
 085A9F48	&EVENT	For debugging	Would you like to delete all saved data?	{U}
 085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
-085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
+085AA2D8	&EVENT	Communication stadium	I can not give damage	Do you want to end it? 	{U}
 089FFC30	&EVENT	skirmish beginning events	{U}
 089FFE84	&EVENT	For debugging	Branch	1	{U}
 089FFF14	&EVENT	For debugging	Branch	2	{U}
@@ -9491,7 +9566,7 @@ r3=X tile position of menu of right	{U}
 0803830C	Battle record display	{J}
 080381E0	Battle record display	{U}
 080BD02C	Draw capture assessment	ending	{J}
-080BCC90	Setting background of screen for evaluating capture	ending	I have a bug.	{J}
+080BCC90	Setting background of screen for evaluating capture	ending	I have a bug		{J}
 080BC044	Display Fin screen Procs launch	{J}
 08AC5558	&PALETTE2	Palette of tactics evaluation screen	1	{J}
 08AC6C58	&PALETTE2	Palette of tactics evaluation screen	2	{J}
@@ -10281,17 +10356,17 @@ r3=X tile position of menu of right	{U}
 080D0CC8	CgbModVol	{U}
 080D188C	llsl_thumb	{U}
 080D1990	nullsub_1	{U}
-080D1CC0	.gcc2_compiled._11	{U}
+080D1CC0		gcc2_compiled	_11	{U}
 080D1D3C	strcpy	{U}
 080D1DCC	strstr	{U}
-080D1E10	.gcc2_compiled._15	{U}
-080D3EB0	.gcc2_compiled._19	{U}
-080D46D4	.gcc2_compiled._26	{U}
+080D1E10		gcc2_compiled	_15	{U}
+080D3EB0		gcc2_compiled	_19	{U}
+080D46D4		gcc2_compiled	_26	{U}
 080D4D24	nullsub_3	{U}
 080D4D28	nullsub_4	{U}
-080D578C	.gcc2_compiled._35	{U}
-080D5CA4	.gcc2_compiled._39	{U}
-080D5D34	.gcc2_compiled._43	{U}
+080D578C		gcc2_compiled	_35	{U}
+080D5CA4		gcc2_compiled	_39	{U}
+080D5D34		gcc2_compiled	_43	{U}
 02000004	gAISBackLeft	{U}
 02000008	gAISFrontRight	{U}
 0200000C	gAISBackRight	{U}
@@ -11174,10 +11249,10 @@ r3=X tile position of menu of right	{U}
 080D59C0	CgbModVol	{J}
 080D6588	llsl_thumb	{J}
 080D69BC	strcpy	{J}
-080D6A80	.gcc2_compiled._15	{J}
-080D9310	.gcc2_compiled._26	{J}
-080DA8E0	.gcc2_compiled._39	{J}
-080DA970	.gcc2_compiled._43	{J}
+080D6A80		gcc2_compiled	_15	{J}
+080D9310		gcc2_compiled	_26	{J}
+080DA8E0		gcc2_compiled	_39	{J}
+080DA970		gcc2_compiled	_43	{J}
 080DC3F0	psZero	{J}
 080DC41C	gpGenericMiniMugPalettes	{J}
 080DC52C	gpDialogueTextBoxGfx	{J}
@@ -11622,22 +11697,22 @@ r3=X tile position of menu of right	{U}
 0808F270	DeleteSerifProcs	{U}
 0808F284	IsExistSerifProcs	{U}
 0808F2A0	GotoLabel0BySerifProcs	{U}
-080E1184	&LZ77	Something's TSA.	26	{U}
-080E1400	&LZ77	An image of something.	1	{U}
-080E6564	&LZ77	Something's TSA.	26	{J}
-080E67E0	&LZ77	An image of something.	1	{J}
+080E1184	&LZ77	Something's TSA		26	{U}
+080E1400	&LZ77	An image of something		1	{U}
+080E6564	&LZ77	Something's TSA		26	{J}
+080E67E0	&LZ77	An image of something		1	{J}
 02029D84	gpAISFirst	{J}
 08022f50	TradeCommandEffect2	{J}
 08022BD8	AttackCommandEffect_DrawFace	{U}
 08022BA0	AttackCommandEffect_DrawFace	{J}
-08023550	When I selected belongings menu.	Give a list of belongings.	{U}
-08023514	When I selected belongings menu.	Give a list of belongings.	{J}
-08073CE8	Display level up screen.	{U}
-08076170	Display level up screen.	{J}
-080BBF78	Switch BGM (another command No. 6).	r0=BGM number: MUSIC.	{J}
-080B74CC	Switch BGM (another command No. 6).	r0=BGM number: MUSIC.	{U}
-08021668	Redraw map at end of event effect.	{U}
-08021360	Redraw map at end of event effect.	{J}
+08023550	When I selected belongings menu		Give a list of belongings		{U}
+08023514	When I selected belongings menu		Give a list of belongings		{J}
+08073CE8	Display level up screen		{U}
+08076170	Display level up screen		{J}
+080BBF78	Switch BGM (another command No	 6)		r0=BGM number: MUSIC		{J}
+080B74CC	Switch BGM (another command No	 6)		r0=BGM number: MUSIC		{U}
+08021668	Redraw map at end of event effect		{U}
+08021360	Redraw map at end of event effect		{J}
 02017728	gBattleAnimeCounter
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
@@ -11717,97 +11792,97 @@ r3=X tile position of menu of right	{U}
 04000300	Undocumented_PostBootFlag	{J}
 04000301	Undocumented_PowerDownControl	{J}
 08032114	UpdateMapAndUnit	{J}
-0807E160	Draw a map animation graph dialog.	{J}
-0807DFF0	A routine for managing frames of map animation.	{J}
-0807DD70	Draw numbers on map animation bar graph.	{J}
+0807E160	Draw a map animation graph dialog		{J}
+0807DFF0	A routine for managing frames of map animation		{J}
+0807DD70	Draw numbers on map animation bar graph		{J}
 080321C8	UpdateMapAndUnit	{U}
-0807BE1C	Draw a map animation graph dialog.	{U}
-0807BCA8	A routine for managing frames of map animation.	{U}
-0807BA28	Draw numbers on map animation bar graph.	{U}
-0803581C	Display a message at bottom of screen.	BB function.	{J}
-08035EDC	start of recovery demonstration.	{J}
+0807BE1C	Draw a map animation graph dialog		{U}
+0807BCA8	A routine for managing frames of map animation		{U}
+0807BA28	Draw numbers on map animation bar graph		{U}
+0803581C	Display a message at bottom of screen		BB function		{J}
+08035EDC	start of recovery demonstration		{J}
 08038320	When clearing towers and ruins	Show record display	{J}
-0804B1CC	Display item selection menu.	{J}
-08082354	Effect when using stone 2.	It is different from instruction called from event instruction.	{J}
-080943D4	Draw screen of unit selected from menu.	{J}
-0809442C	Display an animation setting individual animation setting screen.	{J}
-0809445C	Draw screen of unit selected from menu 2.	{J}
-0809448C	Draw screen of unit selected from menu 3.	{J}
-0809E124	Item exchanges between units called from attack advancement screen.	{J}
-080A4868	Make screen brighten momentarily unnaturally.	{J}
-080AD1E0	Display MiniMap.	Non-Blocking	{J}
-080AD1F4	Display MiniMap.	Blocking	{J}
+0804B1CC	Display item selection menu		{J}
+08082354	Effect when using stone 2		It is different from instruction called from event instruction		{J}
+080943D4	Draw screen of unit selected from menu		{J}
+0809442C	Display an animation setting individual animation setting screen		{J}
+0809445C	Draw screen of unit selected from menu 2		{J}
+0809448C	Draw screen of unit selected from menu 3		{J}
+0809E124	Item exchanges between units called from attack advancement screen		{J}
+080A4868	Make screen brighten momentarily unnaturally		{J}
+080AD1E0	Display MiniMap		Non-Blocking	{J}
+080AD1F4	Display MiniMap		Blocking	{J}
 080B2D94	Run FadeIn Procs	{J}
 080B2DB8	Run FadeOut Procs	{J}
 080B2E74	Run FadeIn Procs2	{J}
 080B2E98	Run FadeOut Procs2	{J}
-080B4B34	Show sound room screen.	{J}
-080BE718	Display dictionary screen.	{J}
-080BE794	Display setting screen.	{J}
-080BE810	Display of status map of world map.	{J}
-080CA1D4	OP subtitle is displayed.	{J}
-080CB370	Display game title OP.	{J}
-080CB390	Display game title OP 2.	{J}
-080CB3A8	Show OP after displaying ring of light.	{J}
-08035DDC	start of recovery demonstration.	{U}
+080B4B34	Show sound room screen		{J}
+080BE718	Display dictionary screen		{J}
+080BE794	Display setting screen		{J}
+080BE810	Display of status map of world map		{J}
+080CA1D4	OP subtitle is displayed		{J}
+080CB370	Display game title OP		{J}
+080CB390	Display game title OP 2		{J}
+080CB3A8	Show OP after displaying ring of light		{J}
+08035DDC	start of recovery demonstration		{U}
 080381F4	When clearing towers and ruins	Show record display	{U}
-0804A430	Display item selection menu.	{U}
-08080014	Effect when using stone 2.	It is different from instruction called from event instruction.	{U}
-0809BE60	Item exchanges between units called from attack advancement screen.	{U}
-080A87C8	Display MiniMap.	Non-Blocking	{U}
-080A87DC	Display MiniMap.	Blocking	{U}
+0804A430	Display item selection menu		{U}
+08080014	Effect when using stone 2		It is different from instruction called from event instruction		{U}
+0809BE60	Item exchanges between units called from attack advancement screen		{U}
+080A87C8	Display MiniMap		Non-Blocking	{U}
+080A87DC	Display MiniMap		Blocking	{U}
 080AE318	Run FadeIn Procs	{U}
 080AE33C	Run FadeOut Procs	{U}
 080AE3F8	Run FadeIn Procs2	{U}
 080AE41C	Run FadeOut Procs2	{U}
-080AFF1C	Show sound room screen.	{U}
-080C541C	OP subtitle is displayed.	{U}
-080C6424	Display game title OP.	{U}
-080C6444	Display game title OP 2.	{U}
-080C645C	Show OP after displaying ring of light.	{U}
-0203E0EC	Unknown flag for battle 4 bytes.	{J}
-080868F4	Turn on flag 0x82.	{J}
-08086900	Status acquisition of flag 0x82.	{J}
-08050ABC	Set a value for "unknown flag for battle 4 bytes".	{J}
-08050AC8	Get "unknown flag for battle 4 bytes".	{J}
-08059938	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92).	{J}
-08084628	Turn on flag 0x82.	{U}
-08084634	Status acquisition of flag 0x82.	{U}
-0804FD48	Set a value for "unknown flag for battle 4 bytes".	{U}
-0804FD54	Get "unknown flag for battle 4 bytes".	{U}
-08058B08	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92).	{U}
+080AFF1C	Show sound room screen		{U}
+080C541C	OP subtitle is displayed		{U}
+080C6424	Display game title OP		{U}
+080C6444	Display game title OP 2		{U}
+080C645C	Show OP after displaying ring of light		{U}
+0203E0EC	Unknown flag for battle 4 bytes		{J}
+080868F4	Turn on flag 0x82		{J}
+08086900	Status acquisition of flag 0x82		{J}
+08050ABC	Set a value for "unknown flag for battle 4 bytes"		{J}
+08050AC8	Get "unknown flag for battle 4 bytes"		{J}
+08059938	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92)		{J}
+08084628	Turn on flag 0x82		{U}
+08084634	Status acquisition of flag 0x82		{U}
+0804FD48	Set a value for "unknown flag for battle 4 bytes"		{U}
+0804FD54	Get "unknown flag for battle 4 bytes"		{U}
+08058B08	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92)		{U}
 080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
 080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with previous, 120% alone)	{J}
 080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
-080B3FE8	SoundRoom	Show song ID.	{J}
-080B4414	SoundRoom	Play specified song.	{J}
-080B4A0C	SoundRoom	Display playing time.	{J}
-080B4B48	SoundRoom	Show song title.	{J}
-080B4C30	SoundRoom	Show song title 2.	{J}
-080B4F3C	SoundRoom	Drawing relation of sound room.	{J}
+080B3FE8	SoundRoom	Show song ID		{J}
+080B4414	SoundRoom	Play specified song		{J}
+080B4A0C	SoundRoom	Display playing time		{J}
+080B4B48	SoundRoom	Show song title		{J}
+080B4C30	SoundRoom	Show song title 2		{J}
+080B4F3C	SoundRoom	Drawing relation of sound room		{J}
 080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
 080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with previous, 120% alone)	{U}
 080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
-080AF3C8	SoundRoom	Show song ID.	{U}
-080AF7F4	SoundRoom	Play specified song.	{U}
-080AFDF4	SoundRoom	Display playing time.	{U}
-080AFF30	SoundRoom	Show song title.	{U}
-080B0018	SoundRoom	Show song title 2.	{U}
-080B0324	SoundRoom	Drawing relation of sound room.	{U}
-08A73924	:08A7394B	Something's FillTileRect tile table.	{J}
-08A9D64C	:08A9D667	A text ID such as "start".	{J}
-0860754C	:086078C5	Unknown data.	OAMSP Maybe	10	{J}
-0860821C	:086094B3	Unknown data.	OAMSP Maybe	11	{J}
-0874E5D4	:0874F211	Unknown data.	OAMSP Maybe	12	{J}
-0808B93C	background of save menu item.	{J}
+080AF3C8	SoundRoom	Show song ID		{U}
+080AF7F4	SoundRoom	Play specified song		{U}
+080AFDF4	SoundRoom	Display playing time		{U}
+080AFF30	SoundRoom	Show song title		{U}
+080B0018	SoundRoom	Show song title 2		{U}
+080B0324	SoundRoom	Drawing relation of sound room		{U}
+08A73924	:08A7394B	Something's FillTileRect tile table		{J}
+08A9D64C	:08A9D667	A text ID such as "start"		{J}
+0860754C	:086078C5	Unknown data		OAMSP Maybe	10	{J}
+0860821C	:086094B3	Unknown data		OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	Unknown data		OAMSP Maybe	12	{J}
+0808B93C	background of save menu item		{J}
 0808B8DC	LoadChapterTitleGfx2	{J}
 02000000	gAISFrontLeft	{U}
 02000000	gAISFrontLeft	{J}
-0808BAAC	To obtain chapter names, obtain chapter title IDs to be read.	{J}
-0808BA30	To obtain chapter name of save slot, obtain chapter title ID to be read.	{J}
-08089678	background of save menu item.	{U}
-0808979C	To obtain chapter names, obtain chapter title IDs to be read.	{U}
-08089720	To obtain chapter name of save slot, obtain chapter title ID to be read.	{U}
+0808BAAC	To obtain chapter names, obtain chapter title IDs to be read		{J}
+0808BA30	To obtain chapter name of save slot, obtain chapter title ID to be read		{J}
+08089678	background of save menu item		{U}
+0808979C	To obtain chapter names, obtain chapter title IDs to be read		{U}
+08089720	To obtain chapter name of save slot, obtain chapter title ID to be read		{U}
 08000228	&ARM	gStart_ARMCopy	{U}
 080003e0	&ARM	ARM_BgMapCopyRect	{U}
 08000228	&ARM	gStart_ARMCopy	{J}
@@ -11830,46 +11905,46 @@ r3=X tile position of menu of right	{U}
 080D36E4	guMess3ReWrite_80CE9E8	{J}
 080D3C0C	Guide_80CEF10	{J}
 080D4140	Guide_80CF448	{J}
-08083688	Play sound effect (0x2d5) when playing on map.	{J}
-080836C4	Play sound effect (0x2d6) when dancing on map.	{J}
-08083600	Register sound effects to play when dancing / playing on map.	{J}
-08081348	Play sound effect (0x2d5) when playing on map.	{U}
-08081348	Play sound effect (0x2d6) when dancing on map.	{U}
-080812C0	Register sound effects to play when dancing / playing on map.	{U}
-08000AE8	Display build version and release year.	{J}
-08000B10	Display build version and release year.	{U}
-080286A4	Get character string of unit attribute.	{J}
-080DC94C	&TEXTBATCH	Attributes of unit.	{J}
-08072454	Load dragon zombie fighting animation data.	{J}
-0806FEA4	Load dragon zombie fighting animation data.	{U}
+08083688	Play sound effect (0x2d5) when playing on map		{J}
+080836C4	Play sound effect (0x2d6) when dancing on map		{J}
+08083600	Register sound effects to play when dancing / playing on map		{J}
+08081348	Play sound effect (0x2d5) when playing on map		{U}
+08081348	Play sound effect (0x2d6) when dancing on map		{U}
+080812C0	Register sound effects to play when dancing / playing on map		{U}
+08000AE8	Display build version and release year		{J}
+08000B10	Display build version and release year		{U}
+080286A4	Get character string of unit attribute		{J}
+080DC94C	&TEXTBATCH	Attributes of unit		{J}
+08072454	Load dragon zombie fighting animation data		{J}
+0806FEA4	Load dragon zombie fighting animation data		{U}
 080BA2F0	ActionArena	{J}
 080B576C	ActionArena	{U}
-080B9DA4	Acquisition of selling price of shop.	{J}
-080B5220	Acquisition of selling price of shop.	{U}
-080A4DD0	browsing support conversation.	Draw achievement rate.	{J}
-080A7F88	browsing support conversation.	Acquisition of support conversation achievement rate.	{J}
-080a7f44	browsing support conversation.	Acquisition of support conversation achievement number (numerator).	{J}
-080a7f10	browsing support conversation.	Acquisition of total number of support conversations (denominator).	{J}
-080A5774	browsing support conversation.	Draw unit name (color changes depending on state of support).	{J}
-080A5048	browsing support conversation.	Top of functions to draw.	{J}
-080A4CA8	browsing support conversation.	Draw a unit icon.	{J}
-0809af14	Drawing frame of menu.	{J}
-080A5388	browsing support conversation.	Main loop.	{J}
-080A0FE8	browsing support conversation.	Draw achievement rate.	{U}
-080A3544	browsing support conversation.	Acquisition of support conversation achievement rate.	{U}
-080A3500	browsing support conversation.	Acquisition of support conversation achievement number (numerator).	{U}
-080A34CC	browsing support conversation.	Acquisition of total number of support conversations (denominator).	{U}
-080A199C	browsing support conversation.	Draw unit name (color changes depending on state of support).	{U}
-080A1270	browsing support conversation.	Top of functions to draw.	{U}
-080A0EC0	browsing support conversation.	Draw a unit icon.	{U}
-080950E8	Drawing frame of menu.	{U}
-080A15B0	browsing support conversation.	Main loop.	{U}
-080D4178	Dictionary	It is judged whether there is a new item.	{J}
-080CF480	Dictionary	It is judged whether there is a new item.	{U}
+080B9DA4	Acquisition of selling price of shop		{J}
+080B5220	Acquisition of selling price of shop		{U}
+080A4DD0	browsing support conversation		Draw achievement rate		{J}
+080A7F88	browsing support conversation		Acquisition of support conversation achievement rate		{J}
+080a7f44	browsing support conversation		Acquisition of support conversation achievement number (numerator)		{J}
+080a7f10	browsing support conversation		Acquisition of total number of support conversations (denominator)		{J}
+080A5774	browsing support conversation		Draw unit name (color changes depending on state of support)		{J}
+080A5048	browsing support conversation		Top of functions to draw		{J}
+080A4CA8	browsing support conversation		Draw a unit icon		{J}
+0809af14	Drawing frame of menu		{J}
+080A5388	browsing support conversation		Main loop		{J}
+080A0FE8	browsing support conversation		Draw achievement rate		{U}
+080A3544	browsing support conversation		Acquisition of support conversation achievement rate		{U}
+080A3500	browsing support conversation		Acquisition of support conversation achievement number (numerator)		{U}
+080A34CC	browsing support conversation		Acquisition of total number of support conversations (denominator)		{U}
+080A199C	browsing support conversation		Draw unit name (color changes depending on state of support)		{U}
+080A1270	browsing support conversation		Top of functions to draw		{U}
+080A0EC0	browsing support conversation		Draw a unit icon		{U}
+080950E8	Drawing frame of menu		{U}
+080A15B0	browsing support conversation		Main loop		{U}
+080D4178	Dictionary	It is judged whether there is a new item		{J}
+080CF480	Dictionary	It is judged whether there is a new item		{U}
 08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{U}
 08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unknown	{J}
-0808BA78	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{J}
-08089768	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{U}
+0808BA78	Get chapter ID to be displayed in Save Slot		r0=@ChapterData	{J}
+08089768	Get chapter ID to be displayed in Save Slot		r0=@ChapterData	{U}
 08095024	PrepScreenTextHandler	{U}
 08095524	PrepScreenHandler	{U}
 08097304	PrepScreenTextHandler	{J}
@@ -11899,39 +11974,39 @@ r3=X tile position of menu of right	{U}
 080B1F1C	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
 08A9D904	&OAMREGS_ARRAY	Unk OAMREGS	25	{J}
 08A2099C	&OAMREGS_ARRAY	Unk OAMREGS	25	{U}
-08AD1734	&LZ77	Boot data.	A fragment of the CG of FE 7.	{J}
-08AD1EC8	&PALETTE8	Boot data.	Remnants of FE 7 CG pallet.	{J}
-08AD1FC8	&HEADERTSA	Boot data.	Remnants of TSE of CG of FE 7.	{J}
-0802D664	When exchanging items actually by item exchange.	{J}
+08AD1734	&LZ77	Boot data		A fragment of the CG of FE 7		{J}
+08AD1EC8	&PALETTE8	Boot data		Remnants of FE 7 CG pallet		{J}
+08AD1FC8	&HEADERTSA	Boot data		Remnants of TSE of CG of FE 7		{J}
+0802D664	When exchanging items actually by item exchange		{J}
 080358A8	AutoRestoreBadStatus	{J}
 080357A8	AutoRestoreBadStatus	{U}
-080134E4	Unused function 1.	{J}
+080134E4	Unused function 1		{J}
 080DC56C	:080DC583	Event34_MessWithUnitState_Data	{J}
-080DC584	:080DC593	Data referenced from unused function 1.	{J}
+080DC584	:080DC593	Data referenced from unused function 1		{J}
 080DC6C8	&ASM_POINTER_ARRAY	DebugMenuCommand	{J}
-0801342C	Unused function 1.	{U}
+0801342C	Unused function 1		{U}
 080D793C	:080D7953	Event34_MessWithUnitState_Data	{U}
-080D7954	:080D7963	Data referenced from unused function 1.	{U}
-085E4E84	&LZ77	An image of something.	5	{J}
+080D7954	:080D7963	Data referenced from unused function 1		{U}
+085E4E84	&LZ77	An image of something		5	{J}
 08023D5C	SetUnitActionToSupport_Code0xF	{J}
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
-0203F101	For judgment of parallel extension.	{J}
-080A5E48	Support screen.	Display the number of remaining supportive conversations.	(If remaining in the game / from the extra menu, the number of conversations not reached yet).	{J}
-080A5F9C	Support screen.	Display support list of target units.	{J}
-080A48BC	Support screen.	Get support status achieved by the unit from gStringBufferAlt.	{J}
-080A4A28	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{J}
-080A8030	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{J}
-080A207C	Support screen.	Display the number of remaining supportive conversations.	(If remaining in the game / from the extra menu, the number of conversations not reached yet).	{U}
-080A21D0	Support screen.	Display support list of target units.	{U}
-080A0AD4	Support screen.	Get support status achieved by the unit from gStringBufferAlt.	{U}
-080A0C40	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{U}
-080A35EC	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}
-08A93F50	&TEXTBATCH	Prep screen 1.	{J}
-08A18204	&TEXTBATCH	Prep screen 1.	{U}
-08A93F7C	&TEXTBATCH	Prep screen 2.	{J}
-08A18230	&TEXTBATCH	Prep screen 2.	{U}
+0203F101	For judgment of parallel extension		{J}
+080A5E48	Support screen		Display the number of remaining supportive conversations		(If remaining in the game / from the extra menu, the number of conversations not reached yet)		{J}
+080A5F9C	Support screen		Display support list of target units		{J}
+080A48BC	Support screen		Get support status achieved by the unit from gStringBufferAlt		{J}
+080A4A28	Support screen		Construct a gStringBufferAlt that caches the support relationships of units		Maine		{J}
+080A8030	Support screen		Construct a gStringBufferAlt that caches the support relationships of units		1 unit		{J}
+080A207C	Support screen		Display the number of remaining supportive conversations		(If remaining in the game / from the extra menu, the number of conversations not reached yet)		{U}
+080A21D0	Support screen		Display support list of target units		{U}
+080A0AD4	Support screen		Get support status achieved by the unit from gStringBufferAlt		{U}
+080A0C40	Support screen		Construct a gStringBufferAlt that caches the support relationships of units		Maine		{U}
+080A35EC	Support screen		Construct a gStringBufferAlt that caches the support relationships of units		1 unit		{U}
+08A93F50	&TEXTBATCH	Prep screen 1		{J}
+08A18204	&TEXTBATCH	Prep screen 1		{U}
+08A93F7C	&TEXTBATCH	Prep screen 2		{J}
+08A18230	&TEXTBATCH	Prep screen 2		{U}
 08A9463C	&TEXTBATCH	&TEXTBATCH5	{J}
 0808B128	HelpDialog	{J}
 08088E9C	HelpDialog	{U}
@@ -11939,13 +12014,13 @@ r3=X tile position of menu of right	{U}
 080B9554	Shop	Do you need anything else?	{J}
 080B9580	Shop	Come back again	{J}
 080B95C8	Shop	Welcome to the armory! These are the weapons we have for sale	{J}
-080B8EB4	Shop	Welcome to the armory.I deal in all sorts of goods.	{J}
+080B8EB4	Shop	Welcome to the armory	I deal in all sorts of goods		{J}
 080B92FC	Shop	What do you want to sell?	{J}
 080B92E8	Shop	Anything else?	{J}
 080B92D4	Shop	Your storage is full, too! Rearrange your things!	{J}
-080B92A4	Shop	Right. I'll send it now.	{J}
-080B9254	Shop	No? Too bad. You could take it if you made room.	{J}
-080B91D4	Shop	Looks like you're full.Send it to storage?	{J}
+080B92A4	Shop	Right	 I'll send it now		{J}
+080B9254	Shop	No? Too bad	 You could take it if you made room		{J}
+080B91D4	Shop	Looks like you're full	Send it to storage?	{J}
 080B9030	Shop	Buy event	/	How does @0080@0005 sound to you?	{J}
 080B8F30	Shop	What would you like?	{J}
 080B8ED8	Shop	Sell event	/	You've got nothing to sell!	{J}
@@ -11954,25 +12029,25 @@ r3=X tile position of menu of right	{U}
 080B49CC	Shop	Do you need anything else?	{U}
 080B49F8	Shop	Come back again	{U}
 080B4494	Shop	Welcome to the armory! These are the weapons we have for sale	{U}
-080B432C	Shop	Welcome to the armory.I deal in all sorts of goods.	{U}
+080B432C	Shop	Welcome to the armory	I deal in all sorts of goods		{U}
 080B4774	Shop	What do you want to sell?	{U}
 080B4760	Shop	Anything else?	{U}
 080B474C	Shop	Your storage is full, too! Rearrange your things!	{U}
-080B471C	Shop	Right. I'll send it now.	{U}
-080B46CC	Shop	No? Too bad. You could take it if you made room.	{U}
-080B464C	Shop	Looks like you're full.Send it to storage?	{U}
+080B471C	Shop	Right	 I'll send it now		{U}
+080B46CC	Shop	No? Too bad	 You could take it if you made room		{U}
+080B464C	Shop	Looks like you're full	Send it to storage?	{U}
 080B44A8	Shop	Buy event	/	How does @0080@0005 sound to you?	{U}
 080B43A8	Shop	What would you like?	{U}
 080B4350	Shop	Sell event	/	You've got nothing to sell!	{U}
 080B4168	Shop	Show the conversation	{U}
 0203f100	:0203f9FF	DebuffTable	{U}
 08A95410	&TEXTBATCH	TextBatch4	{J}
-08006ED4	ParseTextEscape	Processing escape sequences in text.	{J}
-08007758	ParseLoadFaceOnText	A perspective on reading face images in the text.	{J}
-08006FD0	ParseTextEscape	Processing escape sequences in text.	{U}
-08007854	ParseLoadFaceOnText	A perspective on reading face images in the text.	{U}
+08006ED4	ParseTextEscape	Processing escape sequences in text		{J}
+08007758	ParseLoadFaceOnText	A perspective on reading face images in the text		{J}
+08006FD0	ParseTextEscape	Processing escape sequences in text		{U}
+08007854	ParseLoadFaceOnText	A perspective on reading face images in the text		{U}
 0808B824	LoadChapterTitlePalette	{J}
-080B083C	Palette selection on save slot selection screen.	{J}
+080B083C	Palette selection on save slot selection screen		{J}
 
 
 08A029A8	&LZ77	YellowTextBox	{U}
@@ -12165,7 +12240,6 @@ r3=X tile position of menu of right	{U}
 0203EF44	gTrialMapData	{U}
 0300000C	gSoftResetEnabled	{U}
 03000428	gEvent1EData	{U}
-030017A0	gDungeonState	{U}
 080D793F	gMenuCommandEventDisableList	{U}
 080D794E	gMenuCommandEventGrayList	{U}
 
@@ -12328,7 +12402,6 @@ r3=X tile position of menu of right	{U}
 0203DDE0	gPreviousHandCursorUpdateTime	{J}
 0203E784	gHelpTextOriginTile	{J}
 0203EF40	gTrialMapData	{J}
-03001798	gDungeonState	{J}
 080DC56F	gMenuCommandEventDisableList	{J}
 080DC57E	gMenuCommandEventGrayList	{J}
 0202bcb1	gGameLogicSemaphore	{U}
@@ -12343,37 +12416,37 @@ r3=X tile position of menu of right	{U}
 0202bcd8	gSomeRealCameraOffsetTarget	{U}
 0202bcdc	gItemGotButNotYet	{U}
 0202bcde	gThatsAnItem2	{U}
-08BB1DBC	:08BB1F27	Mysterious data.	It seems to be related to the chapter title display at the beginning of the chapter.	{J}
-081F5674	:081F567b	Mysterious data.	8 bytes.	{J}
-081F5680	:081F5687	Mysterious data.	8 bytes.	{J}
-081F5690	:081F5697	Mysterious data.	8 bytes.	{J}
-08B18D68	:08B18ED3	Mysterious data.	It seems to be related to the chapter title display at the beginning of the chapter.	{U}
-080BB240	ending.	Unit results.	If the unit has died.	Get the string "At, the end is over".	{J}
-080B6768	ending.	Unit results.	If the unit has died.	Get the string "At, the end is over".	{U}
-080B3564	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{J}
-080b6674	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{U}
-080B7800	Clear turn list drawing.	{U}
+08BB1DBC	:08BB1F27	Mysterious data		It seems to be related to the chapter title display at the beginning of the chapter		{J}
+081F5674	:081F567b	Mysterious data		8 bytes		{J}
+081F5680	:081F5687	Mysterious data		8 bytes		{J}
+081F5690	:081F5697	Mysterious data		8 bytes		{J}
+08B18D68	:08B18ED3	Mysterious data		It seems to be related to the chapter title display at the beginning of the chapter		{U}
+080BB240	ending		Unit results		If the unit has died		Get the string "At, the end is over"		{J}
+080B6768	ending		Unit results		If the unit has died		Get the string "At, the end is over"		{U}
+080B3564	ending		Unit results		Format the name of the chapter where the unit died		Perform special notation such as end chapter / beginning		{J}
+080b6674	ending		Unit results		Format the name of the chapter where the unit died		Perform special notation such as end chapter / beginning		{U}
+080B7800	Clear turn list drawing		{U}
 080b3538	AppendTextBuffer_080b3538	{J}
 080aeabc	AppendTextBuffer_080aeabc	{U}
 080AEBEC	Div10_Safe	{U}
-080797BC	Reproduce the click sound click.	SongID:0x147	{J}
-08077398	Reproduce the click sound click.	SongID:0x147	{U}
+080797BC	Reproduce the click sound click		SongID:0x147	{J}
+08077398	Reproduce the click sound click		SongID:0x147	{U}
 03006680	@MusicPlayer	gMusicSEPlayerInfo2	{J}
 030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
 03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
 03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
-0800D5C8	CallEvent	Event "Support level has risen".	{J}
-0800D5F4	CallEvent	Event "Fade in, fade out and talk".	{J}
-0800D618	CallEvent	Event "Do you want to retreat?".	{J}
-0800D640	CallEvent	Event "Do you want to abort?".	{J}
-0800D568	CallEvent	Event "Perform Map Change Execute 0xFFFD".	{J}
-0800D524	CallEvent	Event "Conversation 0xFFFF".	{J}
-0800D304	CallEvent	Event "Support level has risen".	{U}
-0800D330	CallEvent	Event "Fade in, fade out and talk".	{U}
-0800D354	CallEvent	Event "Do you want to retreat?".	{U}
-0800D37C	CallEvent	Event "Do you want to abort?".	{U}
-0800D2A4	CallEvent	Event "Perform Map Change Execute 0xFFFD".	{U}
-0800D260	CallEvent	Event "Conversation 0xFFFF".	{U}
+0800D5C8	CallEvent	Event "Support level has risen"		{J}
+0800D5F4	CallEvent	Event "Fade in, fade out and talk"		{J}
+0800D618	CallEvent	Event "Do you want to retreat?"		{J}
+0800D640	CallEvent	Event "Do you want to abort?"		{J}
+0800D568	CallEvent	Event "Perform Map Change Execute 0xFFFD"		{J}
+0800D524	CallEvent	Event "Conversation 0xFFFF"		{J}
+0800D304	CallEvent	Event "Support level has risen"		{U}
+0800D330	CallEvent	Event "Fade in, fade out and talk"		{U}
+0800D354	CallEvent	Event "Do you want to retreat?"		{U}
+0800D37C	CallEvent	Event "Do you want to abort?"		{U}
+0800D2A4	CallEvent	Event "Perform Map Change Execute 0xFFFD"		{U}
+0800D260	CallEvent	Event "Conversation 0xFFFF"		{U}
 0805B80C	StartAnime_EkrUnitMain	{J}
 0805AA68	StartAnime_EkrUnitMain	{U}
 085F14DC	:085F1567	StartEkrsubAnime1Data1	{J}
@@ -12492,8 +12565,8 @@ r3=X tile position of menu of right	{U}
 0203AA87	AIScript Result2	{J}
 0203AA8A	AIScript Result1	{U}
 0203AA8B	AIScript Result2	{U}
-08A9A9E0	Something TSA.	27	{J}
-080BBF18	Display a FIN image.	{J}
+08A9A9E0	Something TSA		27	{J}
+080BBF18	Display a FIN image		{J}
 0802EC8C	Use_MBarrierStaff	{U}
 0802EBC4	Use_MBarrierStaff	{J}
 
@@ -12551,7 +12624,7 @@ r3=X tile position of menu of right	{U}
 08050E40	LoadHPBarImage	{U}
 0809EB38	CallSupply1	{U}
 0809EB58	CallSupply2	{U}
-08A92410	&LZ77	Some TSA data.	1	{J}
+08A92410	&LZ77	Some TSA data		1	{J}
 080B6B7C	SetGameOption	r0=OptionIndex	r1=OptionValue	{J}
 080B1F64	SetGameOption	r0=OptionIndex	r1=OptionValue	{U}
 080B6A00	GetGameOption	RET=OptionValue	r0=OptionIndex	{J}
@@ -12625,8 +12698,8 @@ r3=X tile position of menu of right	{U}
 03006CB0	:0300788F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
 0203AE00	:0203AEC7	Hp bars with cached warning	by circles and Tequila (included in Skill System)	{U}
 //02026A90	:02026AAF	IconRework (or CIconDisplay)	{U}
-//02026E30	AutoNewline	Amount of space used is variable, since it copies textIDs there for processing. Location can be changed in installer.event	{U}
-//203AAC0	ArenaLimits	Amount of space used is also variable, since it copies user defined text strings there (but only a couple sentences, so far less than AutoNewline). Location can also be changed in installer.event	{U}
+//02026E30	AutoNewline	Amount of space used is variable, since it copies textIDs there for processing	 Location can be changed in installer	event	{U}
+//203AAC0	ArenaLimits	Amount of space used is also variable, since it copies user defined text strings there (but only a couple sentences, so far less than AutoNewline)	 Location can also be changed in installer	event	{U}
 080BB4AC	LoadEDCharactersDataTo0x30_0x34	{J}
 080B696C	LoadEDCharactersDataTo0x30_0x34	{U}
 080BB58C	GetCharacterSupportA	r0=unit:UNIT	{J}
@@ -12636,13 +12709,13 @@ r3=X tile position of menu of right	{U}
 08017d84	StoreUnitStats	{J}
 0807D074	GenerateSummonedCharacter	{J}
 0807AD1C	GenerateSummonedCharacter	{U}
-0203AB40    :0203AB44	Skill animation display Use as work memory for skill animation display {J}.
-0203AB48    :0203AD3C	Extended convoy Use in patch to expand convoy 250 (250 * 2 \u003d 500 bytes) {J}.
+0203AB40    :0203AB44	Skill animation display Use as work memory for skill animation display {J}	
+0203AB48    :0203AD3C	Extended convoy Use in patch to expand convoy 250 (250 * 2 \u003d 500 bytes) {J}	
 08074A4C	IsHealStaff	{J}
 08072570	IsHealStaff	{U}
 08014BF8	Fade out music at the beginning of the clear turn list	{J}
 08014BD0	Fade out music at the beginning of the clear turn list	{U}
-0203AB40    :0203AB43	(Old) Skill animation display Use as work memory for skill animation display {J}.
+0203AB40    :0203AB43	(Old) Skill animation display Use as work memory for skill animation display {J}	
 08014328	SomeDrawNumber	{J}
 08014270	SomeDrawNumber	{U}
 0802F370	Use_PureWater	{J}
@@ -12656,10 +12729,10 @@ r3=X tile position of menu of right	{U}
 0803F4EC	Execute conversation event from enemy AI	{U}
 08079BB4	New_Procs_ekrDragonTunk	{J}
 08077790	New_Procs_ekrDragonTunk	{U}
-08088868	Level adjustment for units leaving the party.	{J}
-0808659C	Level adjustment for units leaving the party.	{U}
-080DCCC6	:080DCCDF	Menu TSA when exchanging items.	{J}
-080D7F92	:080D7FAB	Menu TSA when exchanging items.	{U}
+08088868	Level adjustment for units leaving the party		{J}
+0808659C	Level adjustment for units leaving the party		{U}
+080DCCC6	:080DCCDF	Menu TSA when exchanging items		{J}
+080D7F92	:080D7FAB	Menu TSA when exchanging items		{U}
 0801F3D8	ShowBrokenWallEffect	{J}
 0801F780	ShowBrokenWallEffect	{U}
 080B4144	SoundRoom_DrawScreen_With_BackgoundImage	{J}
@@ -12678,14 +12751,14 @@ r3=X tile position of menu of right	{U}
 0805A740	Forcibly overwrite the palette of the archer's battle animation	{J}
 08005CA4	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{U}
 08005BA8	DisplayBgFaceCore	r0=bgOut	r1=portrait	r2=tileId	r3=palId	{J}
-080B4E1C	Sound Room	Draw a sound waveform.	{J}
-080B4D94	Sound Room	Draw sound waveform LOW.	{J}
-080b4e58	Sound Room	RANDOM MODE Time display.	{J}
-080B4CA0	Sound Room	Display of song title.	{J}
-080B0204	Sound Room	Draw a sound waveform.	{U}
-080B017C	Sound Room	Draw sound waveform LOW.	{U}
-080B0240	Sound Room	RANDOM MODE Time display.	{U}
-080B0088	Sound Room	Display of song title.	{U}
+080B4E1C	Sound Room	Draw a sound waveform		{J}
+080B4D94	Sound Room	Draw sound waveform LOW		{J}
+080b4e58	Sound Room	RANDOM MODE Time display		{J}
+080B4CA0	Sound Room	Display of song title		{J}
+080B0204	Sound Room	Draw a sound waveform		{U}
+080B017C	Sound Room	Draw sound waveform LOW		{U}
+080B0240	Sound Room	RANDOM MODE Time display		{U}
+080B0088	Sound Room	Display of song title		{U}
 
 08A9E3A8	&OAMREGS	Sound Room	Control	PlayButton	OAM	{J}
 08A9E3B6	&OAMREGS	Sound Room	Control	StopButton	OAM	{J}
@@ -12802,17 +12875,37 @@ r3=X tile position of menu of right	{U}
 080A32F0	IsEnableExtraMenuNetworkArena	{U}
 080A33EC	IsEnableExtraMenuFreemap	{U}
 08095240	PrepMenu_PressStart_To_Battle	{U}
-089EE97C	&EVENT	An event when you leave a tower or ruins.	{U}
-08037CA0	&EVENT	If you destroy 200 enemies in a tower or ruins, turn on the flag to join Riev and Hayden.	{U}
-030017ac	gBeforeDungeonState	{U}
+089EE97C	&EVENT	An event when you leave a tower or ruins		{U}
+08037CA0	If you destroy 200 enemies in a tower or ruins, turn on the flag to join Riev and Hayden		{U}
+
+030017A0	@DUNGEON_STRUCT_STRUCT	gDungeonState	{U}
+030017ac	@DUNGEON_STRUCT_STRUCT	gBeforeDungeonState	{U}
+030017B8	gDungeonSomething00	{U}
+030017BC	gDungeonSomething04	{U}
+030017C0	gDungeonSomething08	{U}
+030017C4	gDungeonType	00=Tower 01=Ruins	{U}
+
+03001798	@DUNGEON_STRUCT_STRUCT	gDungeonState	{J}
+030017A4	@DUNGEON_STRUCT_STRUCT	gBeforeDungeonState	{J}
+030017B0	gDungeonSomething00	{J}
+030017B4	gDungeonSomething04	{J}
+030017B8	gDungeonSomething08	{J}
+030017BC	gDungeonType	00=Tower 01=Ruins	{J}
+
+@DUNGEON_STRUCT_STRUCT@00	short	GetExps
+@DUNGEON_STRUCT_STRUCT@02	byte	DeployUnits
+@DUNGEON_STRUCT_STRUCT@03	byte	ClearTurns
+@DUNGEON_STRUCT_STRUCT@04	short	Unk4
+@DUNGEON_STRUCT_STRUCT@06	short	DefeatsCount
+@DUNGEON_STRUCT_STRUCT@09	byte	Unk9
+@DUNGEON_STRUCT_STRUCT@0A	byte	UnkA
+@DUNGEON_STRUCT_STRUCT@0B	byte	UnkB
 08037E4C	SaveBeforeDungeonState	{U}
 08037E64	LoadBeforeDungeonState	{U}
 08037E08	SaveDungeonState	{U}
 08037E30	LoadDungeonState	{U}
-08A60AB4	&EVENT	An event when you leave a tower or ruins.	{J}
-08037D38	&EVENT	If you destroy 200 enemies in a tower or ruins, turn on the flag to join Riev and Hayden.	{J}
-030017A4	gBeforeDungeonState	{J}
-030017BC	gDungeonSomething	{J}
+08A60AB4	&EVENT	An event when you leave a tower or ruins		{J}
+08037D38	If you destroy 200 enemies in a tower or ruins, turn on the flag to join Riev and Hayden		{J}
 08037F34	SaveDungeonState	{J}
 08037F5C	LoadDungeonState	{J}
 08037F78	SaveBeforeDungeonState	{J}
@@ -13060,3 +13153,5 @@ r3=X tile position of menu of right	{U}
 0809CCC4	DrawPickupUnitsList_PrepScreen	{J}
 0809AAF0)	DrawCountOfPickupUnits_PrepScreen	{U}
 0809A9F8)	DrawPickupUnitsList_PrepScreen	{U}
+08037cd8	InitializeDungeonState	{J}
+08037C40	InitializeDungeonState	{U}

@@ -575,3 +575,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	WMAPに出したユニットの
 20240000	マップのすべてのユニットの非表示を解除する(SHOWMAP)	HIDEMAPの解除
 400D00003D7F0808	塔や遺跡を最後までクリアした時のCongratulations!演出の表示	{J}
 400D0000715C0808	塔や遺跡を最後までクリアした時のCongratulations!演出の表示	{U}
+400D0000257F0808	遺跡開始時に記録を開始するためDungeonStateをクリアする	{J}
+400D0000197F0808	塔開始時に記録を開始するためDungeonStateをクリアする	{J}
+400D0000595C0808	遺跡開始時に記録を開始するためDungeonStateをクリアする	{U}
+400D00004D5C0808	塔開始時に記録を開始するためDungeonStateをクリアする	{U}

@@ -574,5 +574,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20230000	Hide all units on the map.(HIDEMAP)
 20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP
 Duration
-400D00003D7F0808	Congratulations! Directed display when the towers and ruins are cleared to the end.	{J}
-400D0000715C0808	Congratulations! Directed display when the towers and ruins are cleared to the end.	{U}
+400D00003D7F0808	Congratulations! Directed display when the tower and ruins are cleared to the end.	{J}
+400D0000715C0808	Congratulations! Directed display when the tower and ruins are cleared to the end.	{U}
+400D0000257F0808	Clear DungeonState to start recording when ruins start	{J}
+400D0000197F0808	Clear DungeonState to start recording when tower start	{J}
+400D0000595C0808	Clear DungeonState to start recording when ruins start	{U}
+400D00004D5C0808	Clear DungeonState to start recording when tower start	{U}

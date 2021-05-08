@@ -566,3 +566,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	向WMAP发出的人物移动[YY
 20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP
 400D00003D7F0808	Display of Congratulations! Directed when the towers and ruins are cleared to end	{J}
 400D0000715C0808	Display of Congratulations! Directed when the towers and ruins are cleared to end	{U}
+400D0000257F0808	Clear DungeonState to start recording when ruins start	{J}
+400D0000197F0808	Clear DungeonState to start recording when tower start	{J}
+400D0000595C0808	Clear DungeonState to start recording when ruins start	{U}
+400D00004D5C0808	Clear DungeonState to start recording when tower start	{U}
