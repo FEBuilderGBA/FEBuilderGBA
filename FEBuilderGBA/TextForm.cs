@@ -21,6 +21,7 @@ namespace FEBuilderGBA
 
             public string Error;
             public bool isJump;
+
             public uint[] Units;
 
             public TextBlock()
