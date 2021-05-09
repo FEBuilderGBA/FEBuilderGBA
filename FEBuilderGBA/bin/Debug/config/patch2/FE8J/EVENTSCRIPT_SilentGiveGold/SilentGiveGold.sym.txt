@@ -1,0 +1,7 @@
+SubGold=$28
+SetGold=$22
+AddGold=$12
+AddGold_Main=$18
+StoreGold=$36
+SubGold_Main=$34
+Term=$38

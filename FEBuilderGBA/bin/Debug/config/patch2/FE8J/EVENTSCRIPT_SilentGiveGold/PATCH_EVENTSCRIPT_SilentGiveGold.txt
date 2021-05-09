@@ -1,0 +1,45 @@
+NAME=ゴールドを密かに渡す(イベント命令)
+NAME.en=Add Event: SilentGiveGold
+NAME.zh=Add Event: SilentGiveGold
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 SilentGiveGold.dmp=0x30 0xB5 0x0F 0x4C
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=SilentGiveGold.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400D0000{$L1:SilentGiveGold.dmp}	Slot2のお金を静かに渡します(LOW)	{GOLD}
+EVENTSCRIPT:2=40050200XXXXXXXX400D0000{$L1:SilentGiveGold.dmp}	[XX:DECIMAL:GOLD]ゴールドのお金を静かに渡します	{GOLD}
+
+EVENTSCRIPT:3=400D0100{$L1:SilentGiveGold.dmp}	Slot2のお金を静かに減らします(LOW)	{GOLD}
+EVENTSCRIPT:4=40050200XXXXXXXX400D0100{$L1:SilentGiveGold.dmp}	[XX:DECIMAL:GOLD]ゴールドのお金を静かに減らします	{GOLD}
+
+EVENTSCRIPT:5=400D0200{$L1:SilentGiveGold.dmp}	Slot2の金額にお金を再設定します(LOW)	{GOLD}
+EVENTSCRIPT:6=40050200XXXXXXXX400D0200{$L1:SilentGiveGold.dmp}	[XX:DECIMAL:GOLD]ゴールドにお金を再設定します	{GOLD}
+
+EVENTSCRIPT:1.en=400D0000{$L1:SilentGiveGold.dmp}	Give Slot2 money silent(LOW)	add money.	{GOLD}
+EVENTSCRIPT:2.en=40050200XXXXXXXX400D0000{$L1:SilentGiveGold.dmp}	Give [XX:DECIMAL:GOLD] money silent	add money.	{GOLD}
+
+EVENTSCRIPT:3.en=400D0100{$L1:SilentGiveGold.dmp}	Decrease slot2 money silent(LOW)	Subtract money(Lose money).	{GOLD}
+EVENTSCRIPT:4.en=40050200XXXXXXXX400D0100{$L1:SilentGiveGold.dmp}	Decrease [XX:DECIMAL:GOLD] money silent	Subtract money(Lose money).	{GOLD}
+
+EVENTSCRIPT:5.en=400D0200{$L1:SilentGiveGold.dmp}	Reset money to amount in Slot2(LOW)	{GOLD}
+EVENTSCRIPT:6.en=40050200XXXXXXXX400D0200{$L1:SilentGiveGold.dmp}	Reset money to amount in [XX:DECIMAL:GOLD] Gold	{GOLD}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:SilentGiveGold.dmp}	Give Slot2 money silent(LOW)	add money.	{GOLD}
+EVENTSCRIPT:2.zh=40050200XXXXXXXX400D0000{$L1:SilentGiveGold.dmp}	Give [XX:DECIMAL:GOLD] money silent	add money.	{GOLD}
+
+EVENTSCRIPT:3.zh=400D0100{$L1:SilentGiveGold.dmp}	Decrease slot2 money silent(LOW)	Subtract money(Lose money).	{GOLD}
+EVENTSCRIPT:4.zh=40050200XXXXXXXX400D0100{$L1:SilentGiveGold.dmp}	Decrease [XX:DECIMAL:GOLD] money silent	Subtract money(Lose money).	{GOLD}
+
+EVENTSCRIPT:5.zh=400D0200{$L1:SilentGiveGold.dmp}	Reset money to amount in Slot2(LOW)	{GOLD}
+EVENTSCRIPT:6.zh=40050200XXXXXXXX400D0200{$L1:SilentGiveGold.dmp}	Reset money to amount in [XX:DECIMAL:GOLD] Gold	{GOLD}
+
+INFO=静かにお金を渡します。\r\n渡すだけではなく、お金を増減することもできます。お金の増減で0または999999ゴールドを超える場合は自動的に調整がされます。\r\nお金を所定の額に再設定することもできます。
+INFO.en=Give money silently. \r\nYou can increase or decrease the money as well as give. If you increase or decrease the money and it exceeds 0 or 999999 gold, it will be automatically adjusted.\r\nYou can also reset the money to a predetermined amount.
+INFO.zh=Give the money silently. \r\nYou can increase or decrease the money as well as give. If you increase or decrease the money and it exceeds 0 or 999999 gold, it will be automatically adjusted.\r\nYou can also reset the money to a predetermined amount.
