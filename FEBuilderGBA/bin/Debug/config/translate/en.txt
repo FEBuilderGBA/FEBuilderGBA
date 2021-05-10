@@ -2,10 +2,10 @@
 Do you want to create new data? 
 
 :データの領域が確保されていません。
-Data area is not allocated.
+The data area has not been allocated.
 
 :FE7のファリナのように、敵AIから会話イベントを実行する設定を作ります。\r\n章に会話イベントが設定されていれば、敵AIは会話イベントを呼び出します。
-Create a setting to execute a conversation event from enemy AI like FE7's Farina.\r\nIf a conversation event is set in the chapter, the enemy AI calls the conversation event.
+Create a setting to allow an Enemy's AI to Talk to an allied unit, like FE7's Farina.\r\nIf a Talk event is set in the chapter, the Enemy AI uses the conversation event.
 
 :書き込み
 Write to ROM
@@ -14,25 +14,25 @@ Write to ROM
 Hex Address
 
 :敵AIから会話イベントを実行する
-Execute a conversation event from enemy AI.
+Allow Enemy AI to Talk
 
 :新規に座標データを作成しますか？
 Do you want to create new coordinate data? 
 
 :データが損傷しているようです。\r\n危険なので、新規にデータ領域を確保してもよろしいですか？
-The data seems to be damaged.\r\nIs it safe to allocate a new data area? 
+The data seems to be corrupt.\r\nSince this is dangerous, should new data area be made instead?
 
 :座標の領域が確保されていません。
-Coordinate area is not secured.
+Coordinate area is not allocated.
 
 :AIの座標指定
-Specify AI coordinates.
+AI Coordinate Designation
 
 :AIのユニット指定
-AI unit designation.
+AI Unit Designation
 
 :章ごとにAIが実行できる行動を定義します。\r\n例えば、扉の鍵をドロップするAIがいるのに、敵AIが扉の鍵を利用可能にすると、敵は勝手に扉を開けてしまいます。
-Define the actions that AI can execute for each chapter.\r\nFor example, if you have an AI that drops a door key, enemy AI makes the door key available, the enemy opens the door without permission.
+Define the actions that the AI can execute per chapter.\r\nFor example, if you have an enemy AI that drops a door key, they can use it themselves and open doors without permission.
 
 :特性4
 Ability 4
@@ -65,22 +65,22 @@ Address
 AI's Item Usage
 
 :AIがアイテムを使用するかどうか判定する関数を指定します。\r\nなお、章ごとにアイテムを使えるかどうかの設定は、「AIの章ごとの設定」にあります。
-Specify a function that determines whether the AI uses the item.\r\nIn addition, the setting of whether the item can be used for each chapter is in "AI's Item Usage".
+Specifies the function to determine if the AI will use the item.\r\nNote that the settings for whether or not you can use items for each chapter can be found in the "AI chapter settings" section.
 
 :アイテム
 Item Editor
 
 :リストの拡張
-Extended list
+Data Expansion
 
 :AIのアイテム利用判定
-AI's Item
+AI Item Usage
 
 :杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
-Specify a function to decide whether AI that can use Staff.
+Specifies a function to determine if the AI can use a staff.
 
 :AIの杖利用判定
-AI's Staff
+AI Staff Usage
 
 :カテゴリ
 Category
@@ -95,31 +95,31 @@ Search
 Event Editor (Adv) - Instruction Selection
 
 :AI1のデータが極端に少ないです。破損している可能性があります。
-The data of AI1 is extremely small.It may be damaged.
+The data of AI1 is extremely small. It may be corrupted.
 
 :AI2のデータが極端に少ないです。破損している可能性があります。
-The data of AI2 is extremely small.It may be damaged.
+The data of AI2 is extremely small. It may be corrupted.
 
 :ラベルをクリックして領域を確保してください
-Please click on the label to reserve space
+Please click on the label to reserve space.
 
 :AI0を書き換えるのは危険です。\r\nAI0を書き換えると敵フェーズでフリーズすることがあります。\r\nそれでも、続行してもよろしいですか？
-Rewriting AI 0 is dangerous.\r\nRewriting AI 0 may freeze in the enemy phase.\r\nStill, are you sure to proceed?
+Rewriting AI 0 is dangerous.\r\nRewriting AI 0 can cause freezing during the enemy phase.\r\nDo you wish to continue?
 
 :リストが空なので書き込めません
-The list is empty and can't be written.
+Can't write because the list is empty.
 
 :保存するファイル名を選択してください
-Save
+Choose a filename to save to.
 
 :開くファイル名を選択してください
-Open
+Choose a file to load from.
 
 :ファイルへエクスポート
-Export To File
+Export to File
 
 :ファイルからインポート
-Import from file
+Import from File
 
 :コメント
 Comment
@@ -158,13 +158,13 @@ Parameter 3
 Parameter 1
 
 :読込バイト数
-Read Bytes
+No. of Bytes Read
 
 :切替
-switching
+Switching
 
 :盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。
-Thieves Set the priority of items used by AI to steal items.\r\nThe top of the list will be the item with the highest priority.
+Sets the priority of items that the thief AI will aim for when stealing items.\r\nThe top of the list will be the item with the highest steal priority.
 
 :盗む対象アイテム
 Stealable item
@@ -194,34 +194,34 @@ Target AI 30
 Target AI 38
 
 :もし致死ダメージを与えられる敵なら、この項目のTPは50固定です（優先度無視）\r\n\r\n致死ダメージを与えられない場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n加算されるTP上限は40です。（上限は優先度を乗算した値にかかります）
-If the enemies are given lethal damage, the TP of this item is fixed at 50 (ignoring priority).\r\n\r\nTP when not giving lethal damage calculates the value of "Accuracy x Damage / 100".The pursuit is not considered in this calculation.\r\nThe upper limit of TP to be added is 40.(The upper limit takes the value multiplied by the priority).
+If the enemy can deal a finishing blow, the TP for this item is fixed at 50 (ignoring priority).\r\n\r\nTP for non-lethal damage is calculated as "Hit Points x Damage/100". Note that follow-up attacks aren't accounted for.\r\nThe maximum TP that can be added is 40. (The limit is multiplied by the priority)
 
 :「20-敵の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。この計算が0以下になれば0です。\r\n例を挙げると、HP30の敵に25ダメージを与えられるとすると、敵の残りHPは5なので、20-5=15で「15」が計算結果です。
-It is calculated by "20 - enemy's rest HP".We will calculate assuming that all attacks are hit.It is 0 if this calculation falls below 0.\r\nFor example, suppose that you can give 25 enemies to HP 30 enemies,\r\nthe enemy's remaining HP is 5, so 20-5 = 15 and "15" is the calculation result.
+Calculated as "20 - enemy's remaining HP", while assuming that all attacks will hit. If this calculation is equal or less than 0, it's set to 0.\r\nFor example, suppose that you deal 25 damage to an enemy with 30 HP.\r\nThe enemy's remaining HP is 5, so 20-5 = 15, so 15 is the final result.
 
 :動く前の位置関係もTPに加算されます。\r\n 加算されるTP上限は10です。\r\n
-The positional relationship before moving is also added to TP.\r\nThe upper limit of TP to be added is 10.\r\n
+The positional relationship before the move is added to the TP.\r\nThe maximum TP that can be added is 10.\r\n
 
 :優先して狙うクラスの設定ができます。項目00～09に設定してある値と優先度を乗算したものがTPです。\r\n優先クラス設定のポインタ以降にあり、敵がどのクラスでもない場合は、09（ゼロ）を乗算します。\r\n\r\n指定されたクラスはこの値と「01の値」を乗算したものがTPです。\r\nただし、烈火・聖魔ではポインタのクラス指定がすべてゼロなので、意味がありません。封印だけに設定されています。\r\n\r\n加算されるTP上限は20です。
-You can preferentially target classes.TP multiplied by the value set for item 00 to 09 and priority.\r\nIf it is after the pointer of the priority class setting and the enemy is not in any class, it is multiplied by 09 (zero).\r\n\r\nThe specified class is TP multiplied by this value and "01 value".\r\nHowever, since it is all zeros of pointer class designation in FE7 or FE8, it is meaningless.It is set only for FE6.\r\n\r\nThe upper limit of TP to be added is 20.
+You can set the class to be targeted with priority. TP is the value set in items 00 through 09 multiplied by priority.\r\nIf it is after the pointer of the priority class setting and the enemy is not any class, it will be multiplied by 09 (zero).\r\n\r\nThe specified class is TP multiplied by this value and the value of ID 01.\r\nHowever, this is useless for FE7 and FE8, since all class designations for the pointers are zero. It is set only for FE6.\r\n\r\nThe maximum TP that can be added is 20.
 
 :現在のターン数がTPに加算されます
-The current turn number is added to TP.
+The current number of turns will be added to the TP.
 
 :反撃されない場合は、10の優先ポイントとなります。（警戒度無視）\r\n反撃を受ける場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n\r\n減算されるTP下限は40です。
-If not striking back, it will be a priority point of 10.(Ignore the alertness).\r\nWhen receiving a counterattack, TP will calculate the value of "Accuracy * Damage / 100".The pursuit is not considered in this calculation.\r\n\r\nThe lower TP limit subtracted is 40.
+If you are not hit by a counterattack, your TP will be 10 priority points (Ignore Vigilance).\r\nIf you are hit by a counterattack, the TP is calculated as "Hit Points x Damage / 100". Follow-up attacks are not considered in the calculation.\r\n\r\nThe minimum that TP can be subtracted by is 40.
 
 :標的AIには攻撃するときの位置取りにも影響します。\r\n攻撃すると敵の攻撃範囲に入る場合、\r\n敵ごとに「力+一番強い武器の威力/2」の値を計算し、それを合算した値を8で除算した結果をTPから減算します。\r\n\r\n減算されるTP下限は20です。
 Target AI also affects positioning when attacking.\r\nWhen entering the attack range of an enemy when it attacks, the value of "power + power of the strongest weapon / 2" is calculated for each enemy,\r\nand the result obtained by dividing the sum by 8 is subtracted from TP.\r\n\r\nThe lower TP limit subtracted is 20.
 
 :「20-自分の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。\r\nこの計算が0以下になれば0です。
-It is calculated as "20 - your remaining HP".We will calculate assuming that all attacks are hit.\r\nIt is 0 if this calculation falls below 0.
+It is calculated as "20 - your remaining HP". It is calculated assuming that all attacks will hit.\r\nIf this calculation is 0=<, then it is simply 0.
 
 :AIは、ターゲットポイント（TP）を計算し、それがもっとも高くなった攻撃対象を攻撃します。\r\nTPの計算は、手持ちの装備を上から順に計算します。\r\nそして、装備ごとに範囲内の敵を出撃表の上から順に計算します。\r\nTPの量が被った場合は、武器、出撃表、共に下にある物を優先します。\r\n\r\nそれぞれの値を計算し、合計したものを40倍したものが合計TPです。\r\n\r\n出典 FEUniverse Crazycolorz5 / 翻訳 ngmansion aera\r\n詳細はリンクをクリックしてください。
-AI calculates the target point (TP) and attacks the attack target that is the highest.\r\nTo calculate TP, calculate the equipment on hand from the top.\r\nAnd calculate enemies within range for each equipment in order from the top of the scoring table.\r\nIf the amount of TP suffered, weapons, sorting charts, and things underneath will be given priority.\r\n\r\nTotal TP is calculated by calculating each value and multiplying the total by 40 times.\r\n\r\nSource FEUniverse Crazycolorz5 / translation ngmansion aera.\r\nFor details, please click the link.
+The AI calculates target points (TP) and attacks the unit with the highest TP.\r\nTo calculate TP, the equipment in your unit's possession is retrieved from top to bottom. \r\nThen, for each equipment, enemies within range are calculated in order from the top of the deployment table.\r\nIf there is an overlap in the amount of TP, both the weapon and the deployment table will give priority to the bottom-most entry.\r\n\r\nCalculate the value of each and multiply the sum by 40 to get the total TP.\r\n1\r\nSource: FEUniverse Crazycolorz5 / Translation: ngmansion aera\r\nClick on the link for more information.
 
 :それぞれのAIが何を優先するか指定します。詳細はこちらをクリック。
-Specify what each AI takes precedence.For details click here.
+Specify what each AI will prioritize. Click here for more information.
 
 :自分の残りHP警戒度
 Penalty: Attacker's remaining HP
@@ -251,25 +251,25 @@ Bonus: Lethal damage + attacker's expected damage
 Target AI
 
 :タイル
-tile
+Tile
 
 :AIの対象タイル
-Target tile of AI
+Target Tile of AI
 
 :ユニット
 Unit
 
 :AIの対象ユニット
-Target unit of AI
+Target Unit of AI
 
 :7z解凍中にエラーが発生しました。\r\nターゲットファイル:{0}\r\n{1}
 An error occurred while decompressing 7z.\r\nTarget file: {0}\r\n{1}
 
 :7z圧縮中にエラーが発生しました。\r\n{0}
-7z An error occurred during compression.\r\n{0}
+An error occurred during 7z compression.\r\n{0}
 
 :上級職、下級職は自動で調整されます。\r\n闘技場で敵として使用されるユニットは、0xFD 対戦相手です。\r\nほかのユニットが出ることはないようです。
-Promoted and unpromoted foes are automatically adjusted.\r\nArena enemies base their stats on Unit 0xFD.\r\nThere seems to be no other enemy unit used.
+Promoted and unpromoted foes are automatically adjusted.\r\nArena enemies base their stats on Unit 0xFD.\r\nThere seems to be no other unit ID used.
 
 :クラス
 Class
@@ -290,55 +290,55 @@ Ranged Weapon
 Class Appearance
 
 :剣の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena sword weapon. Set to E rank.
+The base arena sword level. Set to E rank for basic use.
 
 :基本武器:剣
 Base Weapon: Sword
 
 :槍の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena lance weapon. Set to E rank.
+The base arena lance level. Set to E rank for basic use
 
 :基本武器:槍
 Basic Weapon: Lance
 
 :斧の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena axe weapon. Set to E rank.
+The base arena axe level. Set to E rank for basic use.
 
 :基本武器:斧
 Basic Weapon: Axe
 
 :弓の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena bow weapon. Set to E rank.
+The base arena bow level. Set to E rank for basic use.
 
 :基本武器:弓
 Basic Weapon: Bow
 
 :杖の基本となる武器です。(闘技場では利用できないので、0x00である必要があります)
-The base arena staff. Can't be used in the arena and must be set to 0x00.
+The base arena staff level. Must be set to 0x00 as it cannot be used in the arena.
 
 :基本武器:杖
 Staff
 
 :理魔法の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena anima magic. Set to E rank.
+The base arena anima level. Set to E rank for basic use.
 
 :基本武器:理魔法
 Basic Magic: Anima
 
 :光魔法の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena light magic. Set to E rank.
+The base arena light magic level. Set to E rank for basic use.
 
 :基本武器:光魔法
 Basic Magic: Light
 
 :闇魔法の基本となる武器です。誰でも使えるEランク武器を設定してください。
-The base arena dark magic. Set to E rank.
+The base arena dark magic level. Set to E rank for basic use.
 
 :基本武器:闇魔法
 Basic Magic: Dark
 
 :基本武器:剣と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Weapon: Sword. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Sword rank. Otherwise, the search will fail.
 
 :ランクアップ:剣0
 Sword Base Rank
@@ -362,7 +362,7 @@ Delimiter. Leave as 0x00.
 Separator 0x00
 
 :基本武器:槍と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Weapon: Lance. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Lance rank. Otherwise, the search will fail.
 
 :ランクアップ:槍0
 Lance Base Rank
@@ -380,7 +380,7 @@ Set the strongest lance for arena foes to use.
 Rank up: Lance 2
 
 :基本武器:斧と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Weapon: Axe. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Axe rank. Otherwise, the search will fail.
 
 :ランクアップ:斧0
 Axe Base Rank
@@ -398,7 +398,7 @@ Set the strongest axe for arena foes to use.
 Rank up: Axe 2
 
 :基本武器:弓と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Weapon: Bow. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Bow rank. Otherwise, the search will fail.
 
 :ランクアップ:弓0
 Bow Base Rank
@@ -416,7 +416,7 @@ Set the strongest bow for arena foes to use.
 Rank up: Bow 2
 
 :基本武器:理魔法と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Magic: Anima. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Anima rank. Otherwise, the search will fail.
 
 :ランクアップ:理魔法0
 Anima Base Rank
@@ -434,7 +434,7 @@ Set the strongest anima spell for arena foes to use.
 Rank up: Anima Magic 2
 
 :基本武器:光魔法と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Magic: Light. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Light rank. Otherwise, the search will fail.
 
 :ランクアップ:光魔法0
 Light Base Rank
@@ -446,7 +446,7 @@ Set the strongest light spell for arena foes to use
 Rank up: Light Magic 1
 
 :基本武器:闇魔法と同じ武器にしてください。そうしないと、探索に失敗します。
-Set identical to Basic Magic: Dark. Otherwise, it will fail.
+It should be the same weapon as the Basic Weapon: Dark rank. Otherwise, the search will fail.
 
 :ランクアップ:闇魔法0
 Dark Base Rank
@@ -461,52 +461,52 @@ Termination 0xFF
 Basic Weapon
 
 :ランクアップ武器
-Rank up weapon
+Rank Up Weapon
 
 :闘技場武器ランク
 Arena Weapons Rank
 
 :読み込む
-Read in.
+Read Data
 
 :コード数
-Number of codes.
+Number of Codes
 
 :モード
-mode.
+Mode
 
 :書き込む
 Write
 
 :ファイルへセーブ
-Save to file.
+Save to File
 
 :ファイルからロード
-Load from file.
+Load from File
 
 :構文
-syntax.
+Syntax
 
 :エミュレート
-emulate.
+Emulate
 
 :セーブ
-save.
+Save
 
 :ロード
-Road.
+Load
 
 :制限
-Restriction.
+Restriction
 
 :実行コード数
-Number of executed codes.
+No. of Executable Codes
 
 :タイムアウト(s)
-Timeout (s).
+Timeout (s)
 
 :ASM編集
-ASM editing.
+ASM Editing
 
 : =>　
  =>
@@ -515,16 +515,16 @@ ASM editing.
 Destination code: {0}
 
 :危険なポインタです。\r\nここはswitch文のため、+1してはいけません。
-It is a dangerous pointer.\r\nSince it is a switch statement, it should not be + 1.
+This is a dangerous pointer.\r\nSince it is a switch statement, it should not be + 1.
 
 :危険なポインタ
 Dangerous Pointer
 
 :危険なポインタです。\r\nThumb命令で呼び出すため、ポインタに1を足した値を書く必要があります。
-This is a dangerous pointer.\r\nIn order to call with a Thumb instruction, you need to write pointer + one.
+This is a dangerous pointer.\r\nIn order to call it with the Thumb instruction, the value of the pointer + 1 must be written.
 
 :無効なポインタです。\r\nこの設定は危険です。
-Invalid pointer.\r\nThis setting is dangerous.
+Invalid pointer.\r\nThis setup is dangerous.
 
 :無効なポインタ
 Invalid Pointer
@@ -536,10 +536,10 @@ Dummy Event
 Palette
 
 :10分割画像
-10 Div Images
+10-Part Image
 
 :CC3分岐パッチよって追加された値です。\r\n上の2つの同じであれば無視されます。\r\nこの値は、クラスデータの「クラスチェンジ」に保存されます。
-This is the value added by the Promotion 3 Branch patch.\r\nIgnored if the above two are the same.\r\nThis value is stored in "Promotes to" of class data.
+This is the value added by the 3-Branch Promotion patch.\r\nIgnored if the two fields are the same.\r\nThis value is stored in "Promotes to" section in the class editor.
 
 :CC時に表示されるクラスの英語表記へJump
 Jump to Class Name at Promotion Screen
@@ -584,7 +584,7 @@ Enemy Growths
 Stat Calculator
 
 :合計%
-SumGrwths
+G% Sum
 
 :ソート順
 Sort Order
@@ -608,19 +608,19 @@ Standing Map Anims
 Generic Enemy Portrait
 
 :クラスチェンジクラス
-Menu Class:
+Menu Class
 
 :詳細
 Details
 
 :武器LV
-Base WLVL
+Base WLV
 
 :経験値補正値
-Class Relative Power
+Relative Power
 
 :クラス能力最大値
-Class Max Stats
+Max Stats
 
 :戦闘時アニメ
 Animation Pointer
@@ -641,22 +641,22 @@ Terrain DEF
 Class Editor
 
 :クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n
-Extension of class list can cause various problems.\r\nIt should be avoided if possible.\r\nIf you still want to extend the class, please apply the following patch to avoid problems.\r\n\r\nThe patch makes it possible to record extended classes 0x80 and later in saved data (ClassExpansion)\r\nThe Extended Moving Map Animation patch enables map animation after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
+Extension of the Class list can cause various problems.\r\nIt should not be done outside of specific cases.\r\nIf you still want to extend this data, please apply the following patch (ClassExpansion) to avoid some problems.\r\n\r\nThe patch makes it possible to record class IDs 0x80 and later in the save data.\r\nThe Extended Moving Map Animation patch enables map animations after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
 
 :クラスデータが極端に少ないです。破損している可能性があります。
-Class data is extremely small.It may be damaged.
+Class data is extremely small. It may be corrupt.
 
 :武器レベルで、近接と魔法を混在させています。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。
-At the weapon level, proximity and magic are mixed.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.
+The weapon levels for both melee and magic are active.\r\nIf you enable both melee and magic without applying patches to allow mixing, the combat animations will not work correctly.
 
 :「移動速度」に2以上が設定されています。「移動速度」が、2以上になっているユニットは移動した時に正しく描画されません。
-"Movement Speed" is set to 2 or more.Units whose "Movement Speed" is 2 or more will not be drawn correctly when moving.
+Movement Speed is set to 2 or more. If the "Movement Speed" is greater than 2, the unit will not be drawn correctly when it moves.
 
 :スキル
 Skill
 
 :CCした時に得られるボーナス値です。
-Stats units gain upon promotion to this class.
+Stats gained by units upon promotion to this class.
 
 :CCボーナス
 Promotion Gains
@@ -671,13 +671,13 @@ Snow Move Cost
 Japanese Name Pointer
 
 :日本語名\r\nポインタ書き込み
-Write Japanese Name Pointer.
+Japanese Name\r\nPointer Writing
 
 :アニメ指定のポインタ先
 Pointer Specified by Animation
 
 :アニメ指定共有
-Anime Designation
+Anim Designation
 
 :アニメ指定\r\nポインタ書き込み
 Write Animation Designation Pointer
@@ -689,16 +689,16 @@ Write Animation Designation Pointer
 02=Critical
 
 :03=間接や魔法剣
-03=Ranged/Target Res
+03=Ranged/Targets RES
 
 :00固定
-Always 0
+Always 00
 
 :アニメの特殊指定
 Special Animation
 
 :/60 (秒)
-/60sec
+x/60 sec
 
 :ウェイト
 Weight
@@ -710,22 +710,22 @@ Always 05
 Animation Pointer
 
 :表示地形右半分
-Disp Terrain Right 1/2
+Right Half of Terrain
 
 :表示地形左半分
-Disp Terrain Left 1/2
+Left Half of Terrain
 
 :魔法エフェクト
-Magical Effect
+Magic Effects
 
 :戦闘アニメ
 Battle Animations
 
 :敵味方カラー
-Enemy Player Color
+Enemy Color
 
 :使用可能表示武器
-Usable Display Weapon
+Weapon Useability Display
 
 :パレットID
 Palette ID
@@ -746,25 +746,25 @@ English Pointer
 OP Font
 
 :イベント命令の関数ポインタテーブル
-Function instruction pointer table of event instruction
+Function pointer table for event instructions
 
 :85Commandポインタテーブル
-85 Command Pointer Table
+Pointer Table for 85Command
 
 :設定ファイルに書き込めません。\r\n{0}\r\n{1}
 Unable to write to the configuration file.\r\n{0}\r\n{1}
 
 :設定ファイルが壊れています。\r\n設定ファイルを利用せずに、ディフォルトの設定で起動させます。\r\nこのエラーが何度も出る場合は、連絡してください。\r\n\r\n{0}\r\n{1}
-The configuration file is corrupted.\r\nActivate with the default setting without using the setting file.\r\nIf this error occurs many times, please contact.\r\n\r\n{0}.\r\n{1}.
+The configuration file is corrupted.\r\nStart with the default settings, without using a configuration file.\r\nIf this error continues to persist, please ask for assistance.\r\n\r\n{0}\r\n{1}
 
 :直接ROMに書き込まれた文字列
-String written directly to ROM
+String Written Directly to ROM
 
 :文字列直編集
-Direct string editing
+Direct String Editing
 
 :16色を超える画像を利用したい場合は、減色ツールを利用してください。\r\nTSAを考慮して減色することで、16色*8パレット利用できます。\r\n
-To use more than 16 colors, use the Decrease Color Tool.\r\nYou can use 16 color * 8 palette by decreasing color considering TSA.\r\n
+To use more than 16 colors, use the color reduction tool.\r\nYou can use 16 colors * 8 with colour reduction, taking TSA into account.\r\n
 
 :TSAを無視
 Ignore TSA
@@ -775,26 +775,29 @@ Ignore TSA
 :01=拡縮
 01=Scaling
 
+:02=サイズの変更を行わない
+02=Do not resize
+
 :サイズ補正方法
-Size correction method
+Size Correction Method
 
 :00=16色すべて利用する
-00=16colors. Use all 
+00=Use all 16 colors
 
 :01=15色 0番目は背景色として予約
-01=15colors. 0th is reserved color
+01=Use 15 colors, save 0 for the background
 
 :透過色
-Transparent color
+Transparent Color
 
 :+余白
 +Margin
 
 :パレット数
-PaletteNo
+Palette No.
 
 :元ファイル
-Original file
+Original File
 
 :ファイル選択
 Select
@@ -809,7 +812,7 @@ Type
 00=Decide by yourself
 
 :01=背景(CG)
-01=Background(CG)
+01=Background (CG)
 
 :02=戦闘背景
 02=Battle Backgrounds
@@ -821,19 +824,19 @@ Type
 04=World map (for events)
 
 :05=TSAを利用しない256色
-05=256 colors not using TSA
+05=256 colors (no TSA)
 
 :06=ステータス画面の背景(FE8)
-06=Status screen background (FE 8)
+06=Status Screen Background (FE8)
 
 :07=一枚絵マップチップ(5パレット)
-07=Single picture map chip(5 palettes)
+07=Single-Image Map Chip (5 palettes)
 
 :08=一枚絵マップチップ(10パレット)
-08=Single picture map chip(10 palettes)
+08=Single-Image Map Chip (10 palettes)
 
 :出力ファイル
-Output file
+Output File
 
 :幅
 Width
@@ -842,16 +845,16 @@ Width
 start
 
 :減色ツール
-Decrease Color Tool
+Color Reduction Tool
 
 :翻訳言語を指定してください。\r\njaとautoは選択できません。
-Please specify the translation language.\r\nYou can't select ja and auto.
+Please specify the translation language.\r\nja and auto cannot be selected.
 
 :翻訳完了。ツールを再起動してください。
 Translation completed. Please restart the tool.
 
 :ソースコードのディレクトリを選択してください
-Please select the source code directory
+Please select the source code directory.
 
 :言語
 Language
@@ -860,22 +863,22 @@ Language
 Translation
 
 :日本語ではなく、可能な限り英語から翻訳する
-Translate from English, not as much as possible
+Translate from English if possible, not Japanese
 
 :データを準備中...
-Preparing data.
+Preparing data...
 
 :Grepする逆アセンブラソースを選択してください
-Please select the disassembler source to be Grep
+Please select the disassembler source for Grep
 
 :逆アセンブルしたソースコードを対象に引数の検索を行います。\r\n例えば、 m4aSongNumStart のr0引数を探せば効果音のリストが作れます。\r\nmov r0,#0x6a\r\nbl m4aSongNumStart
-Search arguments for disassembled source code.\r\nFor example, you can create a list of sound effects by searching the r0 argument of m4aSongNumStart.\r\nmovr0, # 0x6a\r\nblm4aSongNumStart
+The following is a list of arguments for the disassembled source code. \r\nFor example, looking at the r0 argument of m4aSongNumStart, a list of sound effects can be made.\r\nmov r0,#0x6a\r\nbl m4aSongNumStart
 
 :検索開始
-Start search
+Start Search
 
 :結果の成型
-Molding of results
+Form of Results
 
 :用途が判明していない関数呼び出しのみ表示
 Display only function calls whose purpose is unknown
@@ -887,52 +890,52 @@ Do not include function calls in search results
 Function to check
 
 :m4aSongNumStart または、D01FC
-m4aSongNumStartAlternatively, D 01 F
+m4aSongNumStart, or D01FC
 
 :blまたはb呼び出しの関数名\r\nまたは、関数のアドレスを指定ください。
-Function name of bl or b call\r\nOr specify the address of the function.
+Function name of bl or b call.\r\nAlternatively, specify the address of the function.
 
 :探す引数
-Search arguments
+Search Arguments
 
 :許容する行数
-Number of allowed rows
+Number of Allowed Rows
 
 :探すレジスタ
-Search register
+Search Register
 
 :Grepする逆アセンブラソース
-Disassembler source to be Grep
+Disassembler source for Grep
 
 :事前に逆アセンブラによって、ソースコードをすべて逆アセンブルしてください。
-Disassemble all source code in advance by disassembler.
+Please disassemble all he source code by the disassembler beforehand.
 
 :参照
-Ref
+Reference
 
 :逆アセンブラ
 Disassembler
 
 :このゲームのプログラムデータをすべてファイルに出力します。\r\n処理には時間がかかるものがあります。
-All program data of this game will be exported to a file.\r\nProcessing may take time.
+All programming data of the game will be exported to a file.\r\nProcessing may take some time.
 
 :全部逆アセンブルして保存する
-Disassemble all and save
+Disassemble All and Save
 
 :すべてのコードを逆アセンブルしてファイルに保存します。
-Disassemble all the code and save it in a file.
+Disassemble all the code and save it to a file.
 
 :IDAにimportできる形式でMAPファイルを生成します。
-Generate a MAP file in a format that can be imported into IDA.
+Generate a MAP file in a format that can be imported into IDA debugger.
 
 :no$gba debuggerで利用できるsym形式のMAPファイルを作成します。\r\nROMと同じディレクトリに設置してください。
-Create a sym file of MAP files that can be used with no$gba debugger.\r\nPlease install in the same directory as ROM.
+Create a sym file of MAP files that can be used with NO$GBA debugger.\r\nPlease install in the same directory as ROM.
 
 :特定の関数の引数だけを抽出します。
 Extract only the arguments of a specific function.
 
 :全部ファイルに保存
-Save all to file
+Save All to File
 
 :ジャンプ(&J)
 Jump(&J)
@@ -941,58 +944,58 @@ Jump(&J)
 Details (ENTER)
 
 :RetDec逆コンパイラが設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるためにRetDecの設定をしてください。
-RetDec Decompiler not set.\r\nPlease set up RetDec in order to operate RetDec from the setup pass 2 screen.
+RetDec Decompiler not set.\r\nPlease set RetDec's working directory from the Path 2 section in settings.
 
 :python3が設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるために必要なpythonの設定をしてください。
-python 3 is not set.\r\nPlease set the python necessary to operate RetDec from the setting screen of pass 2.
+python3 is not set.\r\nPlease set python3's working directory from the Path 2 section in settings to use RetDec.
 
 :「アドレス」の項目に有効なアドレスを入力してください。
 Please enter a valid address in the "Address" field.
 
 :「読込バイト数」の項目に有効な逆アセンブルするバイト数を入力してください。
-Please enter the number of bytes to be disassembled that are valid in the "Number of bytes to read" field.
+Please enter the number of valid bytes to be disassembled in the "Number of bytes to read" field.
 
 :C言語へ逆コンパイル
-Decompile to C language.
+Decompile as C Language
 
 :ASMコードの直編集(&N)
-Direct editing of ASM code(&N)
+Directly Edit ASM Code (&N)
 
 :リンクをクリックするか、Jで関数に移動します
-Click the link or move to the function with J
+Click the link or J to go to the function.
 
 :クリックボードへ(Ctrl+C)
-To the click board (Ctrl+C)
+Copy to Clipboard (Ctrl+C)
 
 :TSV形式|*.tsv|CSV形式|*.csv|All files|*
-TSV format|*.tsv|CSV format|*.csv|All files|*
+TSV Format|*.tsv|CSV Format|*.csv|All files|*
 
 :データのインポートが完了しました。
-The import of data is completed.
+Data importing completed.
 
 :件数が足りませんが、処理を続行しますか？\r\n現在{0}件しかテーブルを確保していませんが、インポートしようとしているファイルには、{1}件のデータがあります。\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
-There are not enough cases, but will you continue processing? \r\nCurrently only {0} tables are allocated, but the file you are trying to import has {1} data.\r\n\r\nContinue processing and import until where you can import? 
+File does not have enough entries.\r\nCurrently, only {0} tables are allocated, but the file you are trying to import has {1} entriesin it.\r\n\r\nDo you want to process and import as much as possible anyway?
 
 :{0}行目のカラム数が想定の物と違いますが、処理を続行しますか？\r\nこの項目には、{1}件のデータカラム数が必要ですが、インポートしようとしているファイルには、{2}件のデータカラム数があります。\r\nこのファイルは正しいダンプファイルですか？\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
-The number of columns on line {0} is different from the expected one, but will you continue processing? \r\nThis item requires {1} data columns, but the file you are trying to import has {2} data columns.\r\nIs this file a correct dump file? \r\n\r\nContinue processing and import until where you can import? 
+The number of columns on line {0} is different from the expected amount.\r\nThis item requires {1} data columns, but the file you are trying to import has {2} data columns.\r\nPerhaps the dump is incorrect?\r\n\r\nContinue processing and import as far as possible regardless? 
 
 :ファイル({0})の内容をインポートしてもよろしいですか？
 Are you sure you want to import the contents of the file ({0})? 
 
 :選択しているアドレスをバイナリエディタで表示
-Open selected address in Hex Editor
+Open Selected Address in Hex Editor
 
 :表示しているリストにあるすべてのデータのEA形式を取得
-Dump displayed list in EA format
+Dump Displayed List to EA format
 
 :表示しているリストにあるすべてのデータのTSV形式を取得
-Dump displayed list in TSV format
+Dump Displayed List to TSV format
 
 :表示しているリストにあるすべてのデータのCSV形式を取得
-Dump displayed list in CSV format
+Dump Displayed List to CSV format
 
 :C言語の構造体の表示
-Detailed Byte Layout in C
+Display Byte Structure in C
 
 :NightmareModule nmmファイルの作成
 Create Nightmare .nmm File
@@ -1010,7 +1013,7 @@ Copy as Little Endian Pointer
 Copy as Pointer
 
 :クリップボードへコピー
-Copy
+Copy to Clipboard
 
 :クリップボード
 Clipboard
@@ -1028,13 +1031,13 @@ Select:
 Import
 
 :ダンプしていたデータのインポート
-Importing dumped data
+Import Dumped Data
 
 :データを表示
 Data Address Editor
 
 :ファイルに保存する
-Save to file
+Save to File
 
 :閉じる
 Close
@@ -1049,7 +1052,7 @@ Short Version
 Roy A Support
 
 :ロング版
-Long version
+Long Version
 
 :ED関係
 Character Endings
@@ -1067,52 +1070,52 @@ Contents
 1=Alone
 
 :2=支援
-2=With A Support
+2=with A Support
 
 :指定
 Specify
 
 :エリウッド編
-Eliwood's Tale
+Eliwood's Route
 
 :ヘクトル編
-Hector's Tale
+Hector's Route
 
 :リン編ユニット
-Lyn's Tale Units
+Lyn's Route Units
 
 :クリア後　その後　
-After clear
+After Clearing
 
 :撤退時　その後　
-After Retreat
+After Retreating
 
 :撤退指定 02
-Retreat designation 02
+Retreat Designation 02
 
 :エイリーク編
-Eirika's Tale
+Eirika's Route
 
 :エフラム編
-Ephraim's Tale
+Ephraim's Route
 
 :戦績悪
 Lose Record
 
 :戦績普通
-Battle average
+Battle Record
 
 :戦績良
 Win Record
 
 :戦績コメント
-Bonding Comment
+Comments on the Battle
 
 :画像サイズが正しくありません。\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}
-Image size is incorrect.\r\nit must be Width:{2} Height:{3}.\r\n\r\nThe size of the image you selected: Width:{0} Height:{1}
+Image size is incorrect.\r\nMust be of Width:{2} Height:{3}.\r\n\r\nThe size of the image you selected is: Width:{0} Height:{1}
 
 :パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類
-The number of palettes is incorrect.\r\nIt must be {1} or less (16 colors * {1} kinds).\r\n\r\nThe number of palettes of the image you specified:{0} type.
+The number of palettes is incorrect.\r\nThere must be no more than 16 colours (16 colours*{1} type).\r\n\r\nThe number of palettes of the image you specified:{0} types.
 
 :画像読込
 Import Image
@@ -1127,106 +1130,103 @@ Image
 Endgame Credits
 
 :行方不明のラベル({0})が存在します。
-Missing label ({0}) exists.
+There's a missing label ({0}).
 
 :準備しています
-preparing...
+Preparing...
 
 :追加スキル
-Add skill
+Extra Skills
 
 :MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}
-Infinite recursion with MakeProcNode ramaddr: {0} topTreeIndex: {1}.
+Infinite recursion in MakeProcNode. ramaddr: {0} topTreeIndex: {1}
 
 :エミュレータと接続できませんでした。
 Could not connect to the emulator.
 
 :フラグ「{0}」を下しますか？
-Would you like to flag "{0}"?
+Would you like pass the flag "{0}"?
 
 :フラグ「{0}」を立てますか
 Would you like to set the flag "{0}"?
 
 :ユニットが選択されていません
-Unit is not selected
+Unit not selected
 
 :このユニットは、すでにアイテムを5つ持っているので、これ以上持たせられません。
-This unit already has five items, so can not have it any more.
+This unit already has five items. It cannot hold any more.
 
 :エミュレータでユニットを選択していません。Aボタンを押してユニットの移動範囲が表示されている状態にしてください。
-Have not selected the unit with the emulator.Please press the A button to make the unit movement range display.
+You haven't selected the unit with the emulator in-game. Please press the A button over them as to display the unit's movement range.
 
 :合計: {0}人
-Total: {0} people
+Total: {0} People
 
 :破損:{0}
-Corrupt: {0}
+Corrupted: {0}
 
 :Windowsのテキスト読み上げ機能を利用して、文章を合成音声で読み上げます。\r\n利用するには、OSに合成音声ライブラリがインストールされている必要があります。
-Read texts with synthesized speech using Windows text-to-speech function.\r\nIn order to use it, the synthetic audio library must be installed in the OS.
+Read text with synthesized speech using Window's text-to-speech function.\r\nIn order to use it, the synthetic voice library must be installed on the OS.
 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
 :このバージョンでは、章ワープを利用できません。
-Chapter warp is not available in this version.
+Chapter warping is not available in this version.
 
 :自動的に更新する
-Automatically update
+Automatically Update
 
 :イベント
 Event
 
 :実行しているイベント
-Running event
+Currently Running Event
 
 :フラグ
 Flag
 
 :メモリスロット
-Memory slot
+Memory Slots
 
 :イベント履歴
-Event history
+Event History
 
 :イベント履歴(上が最新)\r\n時刻,イベント開始アドレス,実行中のアドレス,イベント
-Event history (above is the latest)\r\nTime, event start address, running address, event
+Event History (latest, descending order)\r\ntime, event start address, running address, event
 
 :定期的にエミュレータから取得したデータから記録したイベントの呼び出し履歴です。\r\n変更があった部分のみ記録しています。ダブルクリックでイベントエディタを開きます。
-This is the call history of events recorded from data acquired from the emulator on a regular basis.\r\nOnly the part where change was made is recorded.Double-click to open event editor.
+This displays a list of commands/events executed, and is always obtained from the emulator.\r\nOnly the part where changes have been made is recorded. Double-click an entry to open the event editor.
 
 :↑最新
-↑latest
+↑Newest
 
 :より古い↓
-Older↓
+Oldest↓
 
 :汎用
 General Purpose
 
 :編
-Editing
+Route
 
 :マップID
 Map ID
 
 :再生されている音楽
-Music being played.
+Sounds Playing
 
 :トラップデータ
-Trap data
+Trap Data
 
 :クリアターン数
-Clear turns
+Cleared Turn Count
 
 :戦闘データ
-Battle data.
-
-:章データ
-ChapterData
+Battle Data
 
 :支援フラグ
-Support Flag
+Support Flags
 
 :支援7
 Support 7
@@ -1250,28 +1250,28 @@ Support 2
 Support 1
 
 :聖水松明
-HolyWater/Torch
+Holy Water/Torch
 
 :状態とターン
-State and turn
+State and Turn
 
 :闇 EXP
-DarkEXP
+Dark EXP
 
 :光 EXP
-LightEXP
+Light EXP
 
 :理 EXP
-AlmaEXP
+Anima EXP
 
 :杖 EXP
-StaffEXP
+Staff EXP
 
 :弓 EXP
 Bow EXP
 
 :斧 EXP
-Axs EXP
+Axe EXP
 
 :槍 EXP
 Lance EXP
@@ -1280,31 +1280,31 @@ Lance EXP
 Sword EXP
 
 :アイテム数5
-at
+Uses Left
 
 :アイテムID5
 Item ID 5
 
 :アイテム数4
-at
+Uses Left
 
 :アイテムID4
 Item ID 4
 
 :アイテム数3
-at
+Uses Left
 
 :アイテムID3
 Item ID 3
 
 :アイテム数2
-at
+Uses Left
 
 :アイテムID2
 Item ID 2
 
 :アイテム数1
-at
+Uses Left
 
 :アイテムID1
 Item ID 1
@@ -1313,19 +1313,19 @@ Item ID 1
 Move +
 
 :同行者ID
-AID
+Rescue Peer ID
 
 :体格＋
-Physique +
+Con. +
 
 :運
-luck
+Luck
 
 :技
 Skill
 
 :回復モード
-Recovery mode
+Recovery Mode
 
 :現在HP
 Current HP
@@ -1340,7 +1340,7 @@ Max HP
 State
 
 :部隊表ID
-Unit table ID
+Unit ID
 
 :パーティー
 Party
@@ -1352,28 +1352,28 @@ Cheat
 Turns
 
 :ターン数を変更
-Change turns
+Change Turn Count
 
 :ワールドマップ拠点
 World Map Nodes
 
 :すべての敵ユニットAIを「移動しない」に設定にします。
-Set all enemy units AI to "do not move".
+Set all enemy unit AIs to "Do Not Move"
 
 :ワープする章
-Warp chapter
+Chapter ID
 
 :この章へワープする
-Warp to this chapter.
+Warp to Chapter with Settings
 
 :すべての敵ユニットのHPを1にします。
-Set HP of all enemy units to 1.
+Set the HP of all enemy units to 1
 
 :敵を含めて、すべてのユニットを最強にします
-Including enemies, Grow ALL units strongest.
+Max out the stats of EVERY unit on the map (including enemies)
 
 :すべての味方ユニットを最強にします。(Hotkey Ctrl + G)
-Grow all Player units strongest.(Hotkey Ctrl + G)
+Max out the stats of all player units (Hotkey: Ctrl + G)
 
 :天気
 Weather
@@ -1397,64 +1397,64 @@ Weather
 06=Sandstorm
 
 :07=曇り(非推奨)
-07=Cloudy(Don't use)
+07=Cloudy (Unused)
 
 :天気を変更(次のターンから適用されます。)
-Change weather (applied from next turn)
+Change Weather (Applied Next Turn)
 
 :デバッグ用に便利なチート機能です
-Useful cheating function for debugging
+Useful Cheats for Debugging Purposes
 
 :0で霧なし。1が視界1マスの最大の霧です。
-0 is no fog.1 is the largest fog of 1 sight of sight.
+0 for no fog. 1 is the minimum, with only one tile of visibility.
 
 :個数
 Number
 
 :解析者向けの機能
-Functions for analysts
+Functions for Analysts
 
 :メモリをダンプしてファイルに書き込む 0x03000000
-Dump memory and write to file0x03000000
+Dump memory and write to file 0x03000000
 
 :メモリをダンプしてファイルに書き込む 0x02000000
-Dump memory and write to file0x02000000
+Dump memory and write to file 0x02000000
 
 :霧レベル
-Fog level
+Fog Level
 
 :クリアフラグ以外の、他のフラグを変更したい場合は、イベント画面から、変更したいフラグをダブルクリックしてください。
-If you want to change other flags other than the clear flag, double-click the flag you want to change from the event screen.
+If you want to toggle flags other than the Clear flag, go to the Event tab and double-click one from the list.
 
 :所持金
 Gold
 
 :霧レベルを変更(次のターンから適用されます。)
-Change fog level (applied from next turn)
+Change Fog Level (Applied next turn, or select and deselect a unit)
 
 :所持金を以下の値に変更する
-Change your money to the following value
+Change Gold to the following value
 
 :持たせるアイテム
-Items to give
+Item ID to Give
 
 :このユニットに以下のアイテムをもたせる
-Give this unit the following items
+Give selected unit the following item
 
 :このユニットのHPを1にする。
-Set HP of this unit to 1.
+Set the HP of this unit to 1
 
 :現在、操作しているユニット
-Currently operating unit
+Currently Selected Unit
 
 :このユニットのパラメータをカンストさせる。
-Counter Stop the parameters of this unit
+Max out all of this unit's stats
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
-Clear the current chapter.(Hotkey: Ctrl + U)
+Clear and End the Current Chapter (Hotkey: Ctrl + U)
 
 :エミュレータへ接続
-Connect to emulator
+Emulator Debugger - 
 
 :難易度:難しい
 Difficulty: Hard
@@ -1466,16 +1466,16 @@ Difficulty: Easy
 Difficulty: Normal
 
 :拠点
-World Map Nodes
+World Map Node
 
 :MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
-Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be in the chapter to use this feature.
+Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be playing a chapter to use this feature.
 
 :ROMのバージョン情報:
-ROM version information:
+ROM Version Information:
 
 :不明なバージョンのROM
-Unknown version of ROM
+Unknown Version of ROM
 
 :キャンセル
 Cancel
@@ -1484,19 +1484,19 @@ Cancel
 Load as FE6
 
 :英語版FE7Uとして読み込む
-Load as English version FE7U
+Load as English Version FE7U
 
 :英語版FE8Uとして読み込む
-Load as English version FE8U
+Load as English Version FE8U
 
 :日本語版FE8Jとして読み込む
-Load as Japanese version FE8J
+Load as Japanese Version FE8J
 
 :日本語版FE7Jとして読み込む
-Load as Japanese version FE7J
+Load as Japanese Version FE7J
 
 :このROMには規定のバージョン情報がありません。\r\nこれは正しいGBAFEのROMですか？\r\nもし、GBAFEのROMであれば、バージョンを指定してください。\r\n
-There is no prescribed version information in this ROM.\r\nIs this the correct GBAFE ROM?\r\nIf it is a GBAFE ROM, please specify the version.\r\n
+Could not find version information in this ROM.\r\nIs this really a GBA FE ROM?\r\nIf you're sure it is, you can specify the version.\r\n
 
 :以下のエラーが発生しました。
 The following error occurred.
@@ -1505,133 +1505,133 @@ The following error occurred.
 Error
 
 :できるだけ元の画像を再現できるように再構築をしてインポートします。
-Image will be rebuilt and imported as close to the original image as possible.
+Your image will be reprocessed and imported to be as close as the original as much as possible.
 
 :規定値で再構築してインポート
-Import by reconstructing with specified value
+Rebuild and import following default values
 
 :並び順が違うようですが、このまま強引にインポートします。
-The order appears different, but the image will be imported as-is.
+The order is different, but import it as-is
 
 :無視して強行
-Ignore
+Ignore and force import
 
 :インポート処理をキャンセルします.
-Cancel the import process.
+Cancel importing process
 
 :パレットの並び順が違います。
-The order of palettes is different.
+Palette order/values do not align.
 
 :できるだけ規定値2になるように再構築をしてインポートします。
-Image will be rebuilt and imported using the prescribed value 2 as much as possible.
+Your image will be reprocessed and imported to be as close as the original using secondary values.
 
 :規定値2で再構築してインポート
-Import by reconstructing with specified value 2
+Rebuild and import following secondary default values
 
 :できるだけ規定値になるように再構築をしてインポートします。
-Image will be reconstructed so that it becomes the specified value as much as possible and import it.
+Your image will be reprocessed and imported to be as close as the original as much as possible.
 
 :規定値と違いますが、このまま強引にインポートします。
-Image is different from the specified value, but it will be imported as-is.
+The order is different, but import it as-is
 
 :パレットが規定値と違います。
-Palette is different from the specified value.
+Palette order/values do not align.
 
 :通常、1番最初のパレットを背景の透過色にするべきですが、この画像はそうなっていないように思われます。\r\n背景の透過色はどれですか？
-The first color of a palette is normally the transparent background, but it isn't with this image.\r\nWhat is the transparent background color?
+In a palette, the first color in its index will usually be used as a transparent background, but it doesn't seem to be the care here.\r\nWhat is the background color of this image?
 
 :パレットの透過色はどれですか？
-What is the transparent color of the palette?
+What is the transparent color in this palette?
 
 :例:戦闘アニメをインポートしようとしたら、エラーが表示された。\r\n試した戦闘アニメは、 http://mydata.example.com/aaa/ から、ダウンロードしたものだ。\r\nバグってるだろうおおおお\r\n
-Here is an example of an attempt to import an animation that failed.\r\nThe battle animation was downloaded from http://mydata.example.com/aaa/bbb.zip.\r\n
+Example: I tried to import a battle animation and received an error message.\r\nThe battle animation was downloaded from http://web.site.com/example/.\r\nThere's a buuuuug~
 
 :エラー報告ありがとうございます。\r\n\r\nバグの原因がわかったら、ソフトウェアのアップデートしたいと思います。
-Thank you for your error report.\r\n\r\nOnce you know the cause of the bug, I'd like to update the software.
+Thank you for your report.\r\n\r\nOnce the cause of the bug is found, FEBuilderGBA will be updated with fixes.
 
 :未知のエラーが発生しました。開発者までご連絡ください。
 An unknown error occurred. Please contact the developer.
 
 :何をしたらエラーが起きたのか教えてください
-Please describe what you did before the error occurred.
+Please describe what you did before the error occurred for replication.
 
 :エラーを開発者に報告する
-Report errors to the developer
+Report bugs to the developer
 
 :スタックトレース
-Stack trace
+Stack Trace
 
 :エラーメッセージ
-Error message
+Error Message
 
 :このボタンを押して開発者にエラーを報告してください。 ---->
-Please press this button and error report to developer.--->
+Please press this button to report an error to developer. --->
 
 :アップデートを確認してください
-Please check the update
+Please check for updates.
 
 :減色処理や、パレットの入れ替えを行い、自動的に形式を満たせる形式に変換します
-Reduction color processing and palette replacement are carried out, and it converts to the form which can satisfy the format automatically
+Automatically converts the image to the format required for insertion by reducing color amounts and rearranging the palette.
 
 :自動変換してインポート
-Automatic conversion and import
+Automatic Convert and Import
 
 :この画像は、必要な形式の基準を満たしていません。
-This image does not meet the criteria of the required format.
+This image does not meet the formatting requirements.
 
 :画像の形式が基準を満たしていません。
 The image format does not meet the criteria.
 
 :EAを実行するときに、書き込み始める領域を指定します。
-When executing EA, specify the area to start writing.
+When executing EA processing, specify the area in data to begin writing.
 
 :このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。
-If the source code of the program referenced in this event file has been updated, it will be recompiled automatically.\r\nIt does something like the make command.
+If the source code of the program referenced in this event file has been updated, it will automatically recompile.\r\nIt does something like the "make" command.
 
 :インポートするeventファイルを選択してください
-Please select the event file to import
+Please select an .event file to import
 
 :最後の動作を取り消してよろしいですか？
 Are you sure you want to cancel the last action?
 
 :UNDO確認
-UNDO confirmation
+UNDO Confirmation
 
 :{0}の設定がありません。 設定->オプションから、{0}を設定してください。
-There is no setting of {0}. Please set {0} from setting -> option.
+{0} is not set up. Please set the path of {0} within Settings -> Options.
 
 :プロセスを実行できません。\r\nfilename:{0}\r\n{1}
-Unable to execute process.\r\nfilename: {0}\r\n{1}
+Unable to execute process.\r\nFilename: {0}\r\n{1}
 
 :変更をユーザーが取り消しました
-User canceled changes
+User Revoked Changes
 
 :アンインストールするeventファイルを選択してください
-Select the event file to uninstall.
+Select the .event file to uninstall
 
 :更新されたプログラムを再コンパイル
-Recompile the updated program.
+Recompile the updated program
 
 :0=シンボルを利用しない
 0=Do not use symbols
 
 :1=.sym.txtとしてファイルにシンボルを保存する
-1=Save the symbol in the file as sym.txt.
+1=Save symbols in a sym.txt file
 
 :2=FEBuilderGBAのコメントで設定する
-2=Set by FEBuilderGBA comment
+2=Set up FEBuilderGBA comments
 
 :3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)
-3=Both (Save .sym.txt and set comment of FEBuilderGBA)
+3=Both (Save as .sym.txt + set FEBuilderGBA comments)
 
 :デバッグ用のシンボル 
-Symbol for debugging
+Symbols for Debugging
 
 :別ファイル選択
-Open
+Select File
 
 :スクリプト
-script
+Script
 
 :フリーエリアの定義
 Free Area
@@ -1643,16 +1643,16 @@ Define a Free Area
 Load Script
 
 :Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。
-Read the event script in the Event Assembler and adapt it to the current ROM.
+Load the .event script in Event Assembler and adapt it into the current ROM.
 
 :スクリプトのアンインストール
 Uninstall Script
 
 :Event Assemblerで追加
-Insert Events Via Event Assembler
+Insert Events via Event Assembler
 
 :もし、リストを縮めたい場合は、「攻撃側」で「戦闘終了」を選択してください。
-To shrink the list select "Battle end" with "Attacker".
+To shrink the list, set "Attacker" as "End Combat".
 
 :0000=攻撃
 0000=Attack
@@ -1661,34 +1661,34 @@ To shrink the list select "Battle end" with "Attacker".
 0001=Critical
 
 :0002=ミス
-0002=Mistake
+0002=Miss
 
 :0040=毒
 0040=Poison
 
 :0080=デビルアクス
-0080=Devil Ax
+0080=Devil Axe
 
 :0800=瞬殺
 0800=Silencer
 
 :00=攻撃側から攻撃開始
-00=Attack initiates from attacker
+00=Attacker initiates battle
 
 :01=攻撃側から攻撃開始(次は相手が攻撃)
-01=Attack initiates from attacker (next opponent attacks)
+01=Attacker initiates battle (Opponent counter-attacks)
 
 :08=反撃側から攻撃開始
-08=Attack started from Defender side
+08=Defender initiates battle
 
 :09=反撃側から攻撃開始(次は相手が攻撃)
-09=Attack started from the Defender side (Next partner attacks)
+09=Defender initiates battle (Opponent counter-attacks)
 
 :0A=反撃側から攻撃開始2
-0A=Attack starting from Defender side 2
+0A=Defender attacks twice
 
 :80=戦闘終端
-80=Combat Termination
+80=End of Combat
 
 :ダメージ
 Damage
@@ -1703,28 +1703,28 @@ Attack Method
 Event Battle
 
 :交戦会話が極端に少ないです。破損している可能性があります。
-Confrontation Conversation is extremely few.It may be damaged.
+Battle Conversation data is extremely small. It may be corrupt.
 
 :指定したユニット同士が、指定した章で戦闘を行った時の設定をします。\r\n戦闘に入ると、「テキスト」を表示し、「達成フラグ」が有効になります。\r\nボスとの戦闘の場合、フラグは、0x01 「ボス会話フラグ」 が利用されることが多いです。
-Set when the specified units battle in the specified chapter.\r\nWhen entering battle, "Text" is displayed and "Completion Flag" will be set.\r\n"Completion Flag" is often 0x01 for generic boss conversations.\r\nSet "Completion Flag" to 0xYY (NOT 0x01) for unique boss conversations.
+Configure settings for when specified units fight each other (in a given chapter).\r\nWhen the two units fight, Battle Dialogue plays out and the "Completion Flag" will be set.\r\nThe Completion Flag is typically flag 0x01 for generic boss conversations,\r\nbut it can be any flag (0xYY) which can be linked to other events.
 
 :達成フラグ
 Completion Flag
 
 :テキスト
-Text
+Source
 
 :章ID
 Chapter ID
 
 :交戦会話
-Battle conversation
+Battle Conversation
 
 :FE7では、特別に、会話時に発動するイベントをここでも設定できます。
-In FE7, you can set events that trigger during a conversation here.
+For FE7, you can set events to be triggered during conversations.
 
 :新規イベント
-New event
+New Event
 
 :反撃側ユニット
 Defending Unit
@@ -1739,7 +1739,7 @@ Map
 11=Seize
 
 :20=村の中心(盗賊のターゲット)
-20=Village Center (Thief target)
+20=Village Center (Thief Target)
 
 :10=民家
 10=Home
@@ -1751,13 +1751,13 @@ Map
 13=Escape
 
 :19=到着
-19=arrival.
+19=Arrival
 
 :22=階段拡張
 22=Stairs Hack
 
 :C0=第4軍ターンに実行
-C0=Run on 4th Army.
+C0=Run on 4th Army Phase
 
 :0F=制圧
 0F=Seize
@@ -1769,10 +1769,10 @@ C0=Run on 4th Army.
 0E=Home
 
 :12=イベント付き宝箱
-12=Chest with an event
+12=Chest w/ Event
 
 :0=不明
-0=unknown
+0=Unknown
 
 :12=宝箱
 12=Chest
@@ -1790,94 +1790,94 @@ C0=Run on 4th Army.
 15=Secret Shop
 
 :0D=ASM条件
-0D=ASM condition
+0D=ASM Condition
 
 :{0}を定義します。\r\n
 Define {0}.\r\n
 
 :仲間にしたことがないユニットがいれば、基本的に自動的に加入します。\r\n
-If a unit isn't recruited they will automatically join.\r\n
+If there is a unit that has not been recruited, it will join the team automatically.\r\n
 
 :開始イベントは、章開始時に、ゲームシステムから自動的に呼び出されるイベントです。\r\n章開始時の演出を行い、自軍配置のユニットをロードします。\r\n必要であれば、{0}を表示します。\r\n
-startEvent is an Event that is automatically called from the game system at the start of the chapter.\r\nPerform chapter chapter direction and load PlayerPlacement's Unit.\r\nDisplay {0} if necessary.\r\n
+Start Events are events that are automatically called at the start of a chapter.\r\nThis is where you should stage the chapter, loading units, displaying the Preparations screen, dialogue, and so on.\r\nDisplay {0} if necessary.\r\n
 
 :進撃準備画面
-Attack preparation screen
+Preparation Screen
 
 :終了イベントは、章終了時に呼び出す必要があるイベントです。\r\nフラグ03 「{0}」を有効にして、終了イベントを呼び出すと章をクリアになります。\r\n終了イベントには、次の章へ進む処理を記述する必要があります。\r\n\r\nフラグ03「{0}」を有効にして、ユニットを待機させるとシステムから自動的に呼ばれます。\r\nターン防衛などで、待機させられない場合は、フラグ03「{0}」を有効にした後で、直接呼ぶこともできます。\r\n(フラグ03「{0}」を有効にしてから呼ばないとクリアターン数が保存されないなどの問題があることがあります。)\r\n
-EndEvent is an Event that needs to be called at the end of the chapter.\r\nEnable flag 03 "{0}" and call EndEvent to clear the chapter.\r\nFor EndEvent, you need to write Anima to go to the next chapter.\r\n\r\nActivating flag 03 "{0}" and waiting Unit will be called automatically by the system.\r\nIf you can't let Wait by turn defense etc, you can call it directly after flag 03 "{0}" is valid.\r\n(There may be problems such as the number of clear turns not being saved if you do not call it after enabling flag 03 "{0}".)\r\n
+End Events are events that are called at the end of the chapter, once flag 03 is set.\r\nFor example, this is after Seizing, routing all enemies, setting a Survive count, etc.\r\nFor End Events, you need to write commands to properly let the game proceed to the next chapter.\r\n\r\nHaving a unit Wait while flag 03 {0} is on will end the chapter.\r\nIf you can't let Wait by turn defense etc, you can call it directly after flag 03 "{0}" is valid.\r\n(There may be problems such as the number of clear turns not being saved if you do not call it after enabling flag 03 "{0}".)\r\n
 
 :制圧フラグ
-Seize flag
+Seize Flag
 
 :「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。
-Although it is a "Suppression points and private houses", "{0}" is set for the type.
+A Home/Visit event exists, though "{0}" is set as its type.
 
 :宝箱なのに、種類で「{0}」が設定されています。
-Although it is a chest, "{0}" is set for the type.
+A chest event has "{0}" set as its type.
 
 :ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n
-Gold and item settings are inappropriate.\r\n\r\nIf you want to make a treasure box with gold, you have to make the item "{0} Gold".\r\nConversely, if the treasure box contains items instead of gold, please set the gold column to 0.\r\n
+The gold and item settings are incorrect.\r\n\r\nTo make a treasure chest with just gold in it, set the item obtained by it as the "{0} Gold" item.\r\nConversely, if the treasure box contain an item instead of gold, the field for gold should be at 0 if present.\r\n
 
 :ドアなのに、種類で「{0}」が設定されています。
-Although it is a door, "{0}" is set in kind.
+There is a Door event, but "{0}" is set as the type.
 
 :店なのに、種類で「{0}」が設定されています。
-Although it is a shop, "{0}" is set for the type.
+There is a Shop event, but "{0}" is set as the type.
 
 :お店に「{0}」が設定されています。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
-"{0}" is set in the shop.\r\nYou should not set "{0}" here unless you are doing it intentionally.
+The Shop is set to "{0}".\r\n"{0}" should not be used here unless you know what you're doing.
 
 :マップオブジェクトに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
-The map object has incorrect termination data.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+The map object has incorrect termination data.\r\nThe trigger type is 0, but uses the "{0}" flag type.\r\nIn the case of termination data, the flag needs to be 0 or else critical errors may occur.
 
 :マップオブジェクトに不明なタイプ「{0}」が利用されました。
-An unknown type "{0}" was used for the map object.
+An unknown type "{0}" was used for a Map Object.
 
 :会話イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
-The conversation event has incorrect termination data.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+The conversation event has incorrect termination data.\r\nThe trigger type is 0, but uses the "{0}" flag type.\r\nIn the case of termination data, the flag needs to be 0 or else critical errors may occur.
 
 :会話イベントに不明なタイプ「{0}」が利用されました。
-An unknown type "{0}" was used for the conversation event.
+An unknown type "{0}" was used for a Conversation Event.
 
 :ターンイベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
-There is incorrect termination data in the turn event.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+A turn event has incorrect termination data.\r\nThe trigger type is 0, but uses the "{0}" flag type.\r\nIn the case of termination data, the flag needs to be 0 or else critical errors may occur.
 
 :ターンイベントに不明なタイプ「{0}」が利用されました。
-An unknown type "{0}" was used for the turn event.
+An unknown type "{0}" was used for a Turn Event.
 
 :常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
-There is incorrect termination data in the constant Flag Conditional event at all times.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+A conditional event has incorrect termination data.\r\nThe trigger type is 0, but uses the "{0}" flag type.\r\nIn the case of termination data, the flag needs to be 0 or else critical errors may occur.
 
 :常時条件イベントに不明なタイプ「{0}」が利用されました。
-An unknown type "{0}" was used for the Flag Conditional event.
+An unknown type "{0}" was used for a Conditional Flag event.
 
 :新規にイベント命令の領域を割り当てますか？
-Allocate the area of ​​the event instruction to new space?
+Do you want to allocate area for a new Event instruction?
 
 :領域を割り振りました。イベント命令画面からイベントを作ってください。
-Space Allocated.\r\nPlease make an event from the event instruction screen.
+Space has been allocated.\r\nPlease create the event from the Event Editor screen.
 
 :イベントが発動すると有効になります。\r\n一度、「{0}」で指定されたフラグが有効になると、再度イベント動作条件を満たしても、もうイベントは動作しなくなります。\r\nもし、何度でもイベントを発動させたい場合は、「{0}」に 0 を指定してください。\r\n
-It becomes effective when an event is activated.\r\nOnce the flag specified by "{0}" becomes valid, the event no longer operates even if the event operation condition is satisfied again.\r\nIf you want to trigger an event any number of times, please specify 0 for "{0}".\r\n
+The event will turn ON this flag when it executes.\r\nOnce the "{0}" turns on, this event will no longer get triggered even if other conditions are satisfied.\r\nIf you wish to continuously trigger the event, set the {0} to 0.\r\n
 
 :トラップの発動条件は、タイマーでターン単位で判断されます。\r\nタイマーは、初期タイマーからターンが経過する度に値が減り、0 になるとトラップが発動します。\r\nトラップが発動すると、タイマーはリピートタイマに設定されます。\r\n
-The triggering condition of the trap is judged on a turn by timer basis.\r\nThe timer decreases whenever a turn passes from the initial timer, and when the timer becomes 0, the trap is activated.\r\nWhen a trap is activated, the timer is set as a repeat timer.\r\n
+The conditions for triggering the trap are via a Turn-based timer.\r\nThe timer value decreases every turn, until it reaches 0 and triggers the trap.\r\nWhen a trap is activated, the timer is set to the Repeat Timer value.\r\n
 
 :ただし、以下の条件時は実行しません。\r\nもし、{0}が0ではなく、且つ、{0}が既に有効だった場合は、イベントを実行しません。\r\n
-However, it is not executed under the following conditions.\r\nIf {0} is not 0 and {0} is already valid, the event will not be executed.\r\n
+The event is not executed under the following conditions:\r\nIf {0} is not 0 and {0} is already valid, the event will not be executed.\r\nBy using a Completion Flag, you can make the event run just once, but you can trigger other events that require a flag that is ON (or disable other events with the same Completion Flag).
 
 :\r\nまた、{0}が0でなければ、\r\nイベントを実行する前に、条件を達成したとして、{0}を有効にしてから、イベントを実行します。\r\nこの場合、{0}が有効になるので、次は実行されなくなります。\r\n
-\r\nAlso, if {0} is not 0,\r\nBefore executing the event, since the condition is satisfied, the event is executed with the {0} enabled.\r\nIn this case, {0} becomes valid, so the next will not be executed.\r\n
+\r\nIf the {0} is not 0, then it's assumed that the condition is met, and the {0} is enabled before the event is executed.\r\nBecause of this, {0} is valid and therefore the next one will not be executed.\r\n
 
 :もし、編が指定されたものでない場合は、イベントを実行しません。\r\n
-If the editing is not specified, the event won't be executed.\r\n
+If the "editing" is not the same one specified, the event won't be executed.\r\n
 
 :もし、追加判定で「判定フラグ」が指定されていた場合、且つ、「判定フラグ」が無効であれば、実行されません。\r\n
-If "Completion Flag" and "Trigger Flag" are set, it won't be executed.\r\n
+If both "Completion Flag" and "Trigger Flag" are set, it cannot be executed.\r\n
 
 :もし、判定ASM関数の戻り値r0が1でなければ、実行されません。\r\n
-If the return value r0 of the "Trigger ASM function" is not 1, it will not be executed.\r\n
+While using "Trigger ASM Function", if the returning value of r0 is not 1, it cannot be executed.\r\n
 
 :ターン:
 Turn:
@@ -1889,7 +1889,7 @@ Turn:
 (Player Turn)
 
 :(友軍ターン)
-(NPC turn)
+(NPC Turn)
 
 :(敵軍ターン)
 (Enemy Turn)
@@ -1901,13 +1901,13 @@ Turn:
 Flag Cond:
 
 :常に実行
-AlwaysFire
+Always On
 
 :範囲条件:
-Range:
+Range Cond:
 
 :)～(
-) ~ (
+)～(
 
 :14=宝箱
 14=Chest Contents
@@ -1925,7 +1925,7 @@ Range:
 18=Secret Shop
 
 :35=ロングアーチ
-35=Long Ballista
+35=Ballista
 
 :36=アイアンアーチ
 36=Iron Ballista
@@ -1952,25 +1952,25 @@ Range:
 07=Vertical Arrow
 
 :お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
-"{0}" is set in the shop.\r\nWith this setting, once you enter the store, you can not enter again again.\r\nYou should not set "{0}" here unless you are doing intentionally.
+The shop is set to {0}.\r\nWith this configuration, once you enter this shop, you won't be able to visit it again.\r\nYou should not set "{0}" here unless you're doing it on purpose. 
 
 :このイベントを無効化してもよろしいですか？
 Are you sure you want to disable this event?
 
 :オブジェクトのサイズを特定できませんでした
-Could not determine the size of the object
+Could not determine the size of the object.
 
 :階段ID
 Stair ID
 
 :1を設定
-Set 1
+Set to 1
 
 :宝箱の中身
 Chest Contents
 
 :イベント種類
-Event type
+Event Type
 
 :イベントポインタ書き込み
 Write Event Pointer
@@ -1982,7 +1982,7 @@ Event Pointer
 Map Object
 
 :05=制圧ポイントと民家
-05=Seize or Visit Home
+05=Seize/Visit Home
 
 :06=訪問村
 06=Visit Village
@@ -1997,22 +1997,22 @@ Map Object
 0A=Shop
 
 :発生タイプ
-Generation Type
+Event Type
 
 :制圧ポイントと民家
-Suppression points and private houses
+Seize Points/Houses
 
 :制圧ポイントと民家を設定します。\r\n制圧: 「制圧」コマンドで章をクリアできる制圧拠点を作成します。制圧拠点は城門などに設置されることが多いですが、どこにでも設置できます。また、複数設置もできます。通常は、制圧コマンド時は、「達成フラグ」で0x03を有効にして、イベントを0x1のダミーを指定します。フラグ0x03が指定され主人公が制圧で待機するので自動的に「終了イベント」が呼び出され、章クリアとなります。\r\n村の中心: 盗賊が狙う村の中心を作成します。\r\n民家: 情報を聞ける民家イベントを作成します。村訪問は発生タイプが違います。
-Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
+Create a Seize Point.\r\nA tile with this can be used to complete the chapter. They're typically set at castle gates/thrones, but they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nUsually, when using the Seize event, you should set the Completion Flag to 3 to end the chapter, and set the Event to 1 (Dummy).\r\nWhen a unit navigates to the tile and Seizes, the Chapter End Events are automatically loaded, so there is no reason to declare an event in this case.\r\nFor Village Centers, you can create a point for thieves and brigands to target.\r\nHomes allow you to create House events. If you want to create a Village event, they have a different Occurence Type (6).
 
 :座標
-Coordinate
+Coordinates
 
 :訪問村
 Visit Village
 
 :尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
-In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 "Home" event; this is the event that makes the "Visit" command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 "Village Center" event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
+Villages usually require 2 seperate events to function.\r\n\r\n1) A Type-10 (Home) event, which is the tile that actually lets the character "Visit" the village with a command at the village's bottom entrance. Once the event is done, Tile Changes will automatically occur (typically the "closed gate" tile to prevent access).\r\n2) A Type-20 (Village Center) is required for thieves/bandits to target and destroy the village once it is reached. This event is placed in the middle of the village. If destroyed, Tile Changes placed over the village will automatically occur (typically the ruined village tiles).\r\nYou do not actually require the second event if your chapter does not contain any threats towards your Villages.
 
 :宝箱
 Chest
@@ -2021,19 +2021,19 @@ Chest
 Gold
 
 :宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
-Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
+Creates a Chest.\r\nWhen a unit opens the chest, they will obtain the specified item.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
 
 :扉
 Door
 
 :扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であれば、0x01の何もしないダミーイベントを設定してください。
-Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door position is executed and it will be able to pass.\r\nEvents can also be set, but if you do not need special effects such as conversation, please set a dummy event that does not do 0x01.
+Creates a Door.\r\nWhen a unit unlocks and opens the door, any Tile Change set at the door's position is executed, removing the obstacle.\r\nEvents can also be set to occur after unlocking, such as for conversations, unit loading, etc., but otherwise, the Event should be set to 1 (Dummy).
 
 :店
 Shop/Armory Editor
 
 :新規確保
-New Allocate
+Allocate New
 
 :店の種類
 Shop Types
@@ -2042,37 +2042,37 @@ Shop Types
 Items Sold
 
 :座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。
-Shops will be set at the coordinates.\r\nHere units can purchase the items specified in "Shops/Armories".\r\nThe "Completion Flag" can be set, but this limits the player to one visit. As such, generally set 0x0.
+A shop will be set up at the specified coordinates.\r\nUnits can visit the tile and purchase items from shops and armories.\r\nIf desired, the Completion Flag can be set, but this will the player to one visit. So, it is generally set to 0 for infinite visits.
 
 :話す条件
-Conditions to talk
+Talk Conditions
 
 :03=話す条件
-03=Talk Condition
+03=Conversation
 
 :04=話す条件ASM
-04=Talk Condition(ASM)
+04=Talk Condition (ASM)
 
 :会話条件
-Talk condition
+Conversation Cond.
 
 :会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。
-Create a conversation event.\r\nAn event is generated when "conversation source" talks to "conversation destination".
+Creates a Conversation event.\r\nAn event is executed when a unit uses the Talk command towards another. Typically, the event will just have a single Conversation command, and for recruitments, will change the BGM, change alliances, and so on - events are not limited to just dialogue. Usually, especially if you control both units, you should create a pair of talk events between the two units, as Talk events are unilateral in function.
 
 :会話先
-To
+Talking To
 
 :会話元
-From
+"Talk"er
 
 :00=追加条件なし
-00=No Additional Condition
+00=None
 
 :03=判定フラグがONならば
-03=Require "Trigger Flag" Condition(s)
+03=Require Trigger Flag
 
 :このフラグが有効な場合に、会話イベントが有効になります。
-When this flag is enabled, the conversation Event is enabled.
+The talk command is unavailable at first. If the Trigger Flag is ON, then the unit may Talk.
 
 :判定フラグ
 Trigger Flag
@@ -2081,25 +2081,25 @@ Trigger Flag
 Additional Condition
 
 :ASM会話条件
-ASM Talk Condition
+ASM Talk Conditions
 
 :判定ASM関数
-Trigger ASM Function
+ASM Function Trigger
 
 :話す条件FE6
-Talk Condition FE 6
+FE6 Talk Conditions
 
 :04=話す条件
 04=Conditions to Talk
 
 :0D=話す条件ASM
-0D=Talk Condition ASM
+0D=ASM Talk Condition
 
 :ターン条件
 Turn Condition
 
 :「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。
-Turn events run upon "Turn Start" or "Turn End".
+Run events dependent on a "Starting Turn" and an "Ending Turn" declarations. When the Starting Turn arrives, during the Phase it is active, the event will play out, until the Ending Turn value has passed. If ST is 2 and ET is 4, the event will run during turns 2, 3 and 4. To run the event nonstop every turn, set ST to  and ET to 255. If you wanted to run the event for one turn, you can set both ST and ET to 2 (ET can also be lower than ST with the same effect).
 
 :終了ターン
 Turn End
@@ -2123,7 +2123,7 @@ Turn Start
 2=Turn Condition
 
 :ターン条件FE7
-Turn Condition FE 7
+FE7 Turn Conditions
 
 :0=常に有効
 0=All
@@ -2137,17 +2137,17 @@ Turn Condition FE 7
 :3=エリウッド編ハードモードのみ
 3=Eliwood Hard Mode
 
-:4=ヘクトル編ハードモードのみ
-4=Hector Hard mode only
-
 :5=ハードモードのみ
-5=Hard mode only
+5=Hard Mode Only
+
+:4=ヘクトル編ハードモードのみ
+4=Hector Hard Mode
 
 :常時条件
-Flag Conditional
+Conditional Flag
 
 :01=常時条件
-01=Flag Conditional(AFEV)
+01=Flag Condition (AFEV)
 
 :0B=範囲条件
 0B=Range Condition
@@ -2159,28 +2159,28 @@ Flag Conditional
 Range Condition
 
 :指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加してください。
-When a unit enters the specified range, the event is activated.\r\nTrigger is set whether unit is an enemy or ally.\r\nAdd a trigger within the event script to restrict to only enemy or ally units.
+When a unit enters the specified (rectangular) range, the event is activated.\r\nA trigger can be set for whether the unit is an enemy or an ally through the event's commands, among other checks.
 
 :範囲開始
-Start Range
+First Point
 
 :範囲終了
-End Range
+Second Point
 
 :このフラグが有効に場合に、イベントが動作します。
-If this flag is enabled, the event will work.
+If this flag is ON, the event will run.
 
 :「判定フラグ」が有効だった場合、指定したイベントを実行します。
-If "Trigger Flag" is set, executes the specified event.
+If a Trigger Flag is ON, this event will be executed.
 
 :ASM条件
 ASM Condition
 
 :ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。
-Executes the ASM function and executes the specified event if the return value r0 is true.
+Executes an ASM function, and runs the specified event if the returned value of r0 is true (1).
 
 :ASM条件FE6
-ASM condition FE 6
+FE6 ASM Condition
 
 :トラップ
 Trap
@@ -2192,10 +2192,10 @@ Trap
 Ballista Arrangement
 
 :弓兵が利用できる「アーチ」を設置します。
-Make a Ballista that archers can use.
+Make a Ballista that archers can mount on and use.
 
 :配置座標
-Coordinate
+Coordinates
 
 :アーチの種類
 Ballista Type
@@ -2216,7 +2216,7 @@ It will set up a trap that deals damage
 Poison Gas
 
 :ガスの方向
-Gas direction
+Gas Flow
 
 :00=右から左
 00=Right to Left
@@ -2237,16 +2237,16 @@ Place a Poison Gas trap.
 Vertical Arrow
 
 :Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。
-Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
+Place a Vertical Arrow trap that damages any unit it hits along the Y-axis.\r\nBecause the arrow travels vertically, you need to only declare where it is on the X-axis.
 
 :ゴーゴンの卵
 Gorgon Egg
 
 :羽化開始
-Hatching Starts
+Turns Until Hatch
 
 :ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。
-Place a Gorgon Egg.\r\nWhen enough turns have elapsed, it will hatch from the egg ("emergence start" time)
+Places a Gorgon Egg.\r\nWhen the turn count designated has elapsed, a Gorgon will hatch from the egg.
 
 :炎
 Fire
@@ -2261,22 +2261,22 @@ Mine
 Make a Mine trap.
 
 :SkillSystemsで追加されたDragonVeinを設定します。\r\n\r\nこのトラップを動作させるには、DragonVeinEffectIDを設定する必要があります。\r\nDragonVeinEffectは、Patchから設定します。\r\nこのトラップが発動した時に動作するイベントを記述します。\r\n\r\nゲーム中で、このトラップを有効にするには、Dragon's Bloodスキルを持ったユニットが訪れる必要があります。\r\n
-Set DragonVein added by Skill System.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
+Set a Dragon Vein added by SkillSystem.\r\n\r\nYou need to set the DragonVeinEffect ID for the trap to work.\r\nDragonVeinEffect is configured from its Patch page.\r\nIndicate the event that occurs when this trap is triggered.\r\n\r\nIn order for this trap to work in the game, it must be visited by a unit with the Dragon's Blood Skill.\r\n
 
 :選択されている開始/終了イベントを、イベント編集画面で開く
-Open the selected start / end event in the Event edit screen
+Open this Start/End Event with the Event Editor
 
 :配置
 Placement
 
 :選択されている配置情報を、ユニット配置画面で開く
-Open the selected placement information in the Unit Placer screen
+Open this Placement Information with the Unit Placer Screen
 
 :チュートリアル
 Tutorial
 
 :FE8のチュートリアルイベントを設定します。\r\nチュートリアルは謎が多く、まだ解析されていません。\r\nここで指定する自動実行されるチュートリアルイベントと、ターンイベントなどで設定されるイベントの中にあるチュートリアル分岐は、密接に結びついており、片方を変えるともう片方に影響します。
-Create the tutorial event of FE8.\r\nThe tutorial has many mysteries and has not been analyzed yet.\r\nThe tutorial event to be automatically executed here and the tutorial branch in the event set by the turn event etc. are closely related, and changing one side will affect the other side.
+Create a tutorial event using FE8's system.\r\nThe Tutorial functions are not fully understood or analyzed.\r\nThe automatic tutorial events you specify here and branches you set up in those such as turn events are closely linked, so changing one will affect the other.
 
 :マップ名
 Map Name
@@ -2285,19 +2285,19 @@ Map Name
 Event Condition
 
 :セリフ
-Serif
+Text
 
 :終章セリフ
-The last chapter serif.
+Chapter End Text
 
 :強制出撃ポイント再取得
-Reload Forced Sorting Points
+Reload Forced Deployment Pointers
 
 :強制出撃ポインタ書き込み
-Forced Sort Pointer Writing
+Write Forced Deployment Pointers
 
 :強制出撃ポインタ
-Forced Sorting Pointer
+Forced Sortie Pointer
 
 :強制出撃
 Forced Deployment
@@ -2306,10 +2306,10 @@ Forced Deployment
 01=Tutorial Mode
 
 :02=エイリーク編
-02=Eirika Mode
+02=Eirika Route
 
 :03=エフラム編
-03=Ephraim Mode
+03=Ephraim Route
 
 :FF=無条件
 FF=Unconditional
@@ -2318,34 +2318,34 @@ FF=Unconditional
 Event Instruction Pointer Table
 
 :0=イベント命令関数ポインタ
-0=Event Function Pointer
+0=Event Instruction Function Pointer
 
 :1=ワールドマップ イベント命令関数ポインタ
-1=World Map Event Function Pointer
+1=World Map Event Instruction Function Pointer
 
 :死亡セリフが極端に少ないです。破損している可能性があります。
-Death serifs are extremely few.It may be damaged.
+Death Dialogue is extremely small in size. It may be corrupt.
 
 :ユニットが、指定した章で死亡した時に、設定をします。\r\nユニットが死亡すると、「テキスト」を表示し、「達成フラグ」が有効になります。\r\n「達成フラグ」を、「常時条件」で拾うことで、ボス撃破のイベントや、ユニット生存に失敗イベントなどを実装できます。\r\nボス撃破には、通常はフラグ0x02を利用します。
-When the unit dies in the specified chapter, their death quote will trigger.\r\nWhen the unit dies, "Completion Flag" is set and "Text" will display.\r\nEvents like boss defeat or unit survival by using both "Completion Flag" and "Flag Condition" Events.\r\nFor boss defeat, flag 0x02 is normally used.
+When a declared unit dies given the set conditions, they will have dialogue upon death.\r\nOnce this occurs, a Completion Flag can also turn ON.\r\nFor example, you can make a boss's death clear the chapter, or have an NPC's death cause a Game Over by using both Completion Flags and Flag Conditions.\r\nBy default, for a single boss's death, flag 0x02 is used, but it is only one reserved flag and many other temporary flags can be used in a single chapter.
 
 :終章
 Final Chapter
 
 :死亡時
-Death
+At Death
 
 :死亡セリフ
-Death Quotes
+Death Quote
 
 :0=リン編チュートリアルでの死亡セリフ
-0=Death Quote in Lyn edition.
+0=Death Quotes in Lyn's Story
 
 :1=エリウッド編チュートリアルでの死亡セリフ
-1=Death Quote in Eliwood edition.
+1=Death Quotes in Eliwood's Story
 
 :変化データポインタ
-Change data pointer
+Change Data Pointer
 
 :サイズ
 Size
@@ -2354,40 +2354,40 @@ Size
 Number
 
 :変化データ\r\nポインタ先へのインポート
-Import to change data
+Change Data\r\nImport at defined pointer
 
 :マップ名前
-Map name
+Map Name
 
 :時間または速度
-Time or speed
+Time/Speed
 
 :00=左
-00=left
+00=Left
 
 :01=右
-01=right
+01=Right
 
 :02=下
-02=under
+02=Down
 
 :03=上
 03=Up
 
 :09=ハイライト
-09=highlight
+09=Highlight
 
 :0A=敵と衝突した！マーク
 0A=Hit the enemy! 
 
 :0C=速度変更
-0C=Speed ​​change
+0C=Speed ​​Change
 
 :移動方向
-Direction of movement
+Direction of Movement
 
 :イベント移動
-Event movement
+Event Movement
 
 :引数{0}({1})は、ポインタなのに、4バイトのサイズが確保されていません。{2}bytesです。\r\n{3}
 The argument {0} ({1}) is a pointer, but a size of 4 bytes is not allocated.It is {2} bytes.\r\n{3}
@@ -3270,9 +3270,6 @@ Do you want to install a patch that fixes a bug that freezes when you specify a 
 
 :ローカリゼーションパッチをインストールしますか？
 Do you want to install the localization patch? 
-
-:ユニット移動アイコンを拡張するには、テーブルを拡張するパッチを適応する必要があります。\r\n有効にしますか？
-To extend the unit move icon, you need to apply a patch that extends the table.\r\nDo you want to enable it? 
 
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
@@ -4165,48 +4162,6 @@ There is no image in Battle Anime Mode: {0}.
 :アドレスが無効です
 Address is invalid
 
-:スキルアニメーションが破損しています。\r\n
-The skill animation is corrupted.\r\n
-
-:SkipCodeに失敗しました
-SkipCode failed.
-
-:データがROM末尾より先に書かれています。
-The data is written before the end of the ROM.
-
-:framesが取得できません。
-I can't get frames.
-
-:tsalistが取得できません。
-Unable to get tsalist.
-
-:graphiclistが取得できません。
-I can't get the graphic list.
-
-:palettelistが取得できません。
-Unable to get palettelist.
-
-:objPointerを取得中にエラーが発生しました。
-An error occurred while getting the objPointer.
-
-:tsaPointerを取得中にエラーが発生しました。
-An error occurred while retrieving tsaPointer.
-
-:palPointerを取得中にエラーが発生しました。
-An error occurred while getting the palPointer.
-
-:objOffsetを取得中にエラーが発生しました。
-An error occurred while getting the objOffset.
-
-:tsaOffsetを取得中にエラーが発生しました。
-An error occurred while getting the tsaOffset.
-
-:palOffsetを取得中にエラーが発生しました。
-An error occurred while getting the palOffset.
-
-:データ終端がありませんでした。
-There was no data termination.
-
 :アドレスが4の倍数ではありません。
 The address is not a multiple of 4.
 
@@ -4552,15 +4507,6 @@ No fog
 :マップ初期値
 Map initial value
 
-:自軍(青)
-Player(blue)
-
-:友軍(緑)
-Ally(green)
-
-:敵軍(赤)
-Enemy(red)
-
 :晴れ
 Sunny
 
@@ -4710,6 +4656,15 @@ Rausten
 
 :ポカラ
 Pokhara
+
+:自軍(青)
+Player(blue)
+
+:友軍(緑)
+Ally(green)
+
+:敵軍(赤)
+Enemy(red)
 
 :自軍通常(青)
 Player Army Normal(blue)
@@ -6904,6 +6859,9 @@ Position
 :マップリサイズ
 Resize Map
 
+:これは敵のエスケープポイントです。\r\nFE6には敵用のエスケープしかありません。
+This is the enemy's escape point.\r\nFE6 only has an enemy escape.
+
 :これは敵のエスケープポイントです。\r\nNPC用は、左上のコンボボックスを切り替えてください。
 This is Enemy's escape point.\r\nFor NPC, switch the combo box on upper left.
 
@@ -8306,31 +8264,31 @@ In LDR and event, the corresponding pointer value was not found.\r\nWhen binary 
 Select a free area
 
 :書き換えるポインタを一つは選択してください
-Select one pointer to rewrite
+Select at least one pointer to rewrite
 
 :空き領域のポインタまたはサイズが正しくありません
-Incorrect Free Space Pointer or size
+Pointer or size of free space is incorrect
 
 :コピー元のアドレス指定が正しくありません
-Incorrect copy source address specificatio
+Address of the Copy source is incorrect
 
 :影響を受けるポインタが正しくありません
-Incorrect affected Pointer
+Affected pointers are incorrect
 
 :空き領域のポインタまたはサイズが正しくありません。0x0 - 0x100までの領域は危険なので移動できません
-Incorrect Free Space Pointer or size. 
+The pointer or size of the free space is incorrect. 0x0 - 0x100 are dangerous locations and cannot be moved.
 
 :既存のデータ数
-Number of existing data
+No. of Existing data
 
 :既存から
-From existing
+From Existing
 
 :新データサイズ
-New data size
+New Data Size
 
 :新規に領域を確保します。\r\n確保したい個数を入力してください。\r\n\r\n以前の画面は、複雑だったため、「詳細」タブの方に移動しました。
-Allocating a new area.\r\nPlease enter the number you want to allocate.\r\n\r\nSince the previous screen was complicated, It moved to the "Details" tab.
+Allocate a new area.\r\nPlease enter the number of units you want to allocate.\r\n\r\nSince the previous screen was complicated, it was moved to the "Details" tab.
 
 :移動処理を実行する
 Reallocate data and repoint
@@ -8342,34 +8300,34 @@ Total number of new data to allocate
 1. Data to be moved (Source)
 
 :データを移動させるため、\r\n現在の場所をさしているポインタを\r\nすべて書き換える必要があります。\r\n書き換えるポインタをリストから\r\n選択してください。\r\n\r\n通常はすべて選択してください。
-In order to move the data, it is necessary to rewrite all the\r\npointers that point to the current location.\r\nSelect a pointer to rewrite\r\nfrom the list.\r\n\r\nPlease select all normally.
+To move the data, it is necessary to rewrite all the\r\npointers that are pointing to the current location.\r\nSelect the pointers to rewrite from the list.\r\n\r\nIn most cases, you should select them all.
 
 :00=余白を作らない
 00=Do not make margins
 
 :01=移動後の領域には前方16バイトの余白を作る
-01=Make a front 16 byte margin in the newly allocated space 
+01=Make a 16-byte margin in front of the newly allocated space  
 
 :02=移動後の領域には前方32バイトの余白を作る
-02=Make a front 32 byte margin in the newly allocated space 
+02=Make a 32-byte margin in front of the newly allocated space  
 
 :03=移動後の領域には前方64バイトの余白を作る
-03=Make a front 64 byte margin in the newly allocated space 
+03=Make a 64-byte margin in front of the newly allocated space  
 
 :04=移動後の領域には前方128バイトの余白を作る
-04=Make a front 128 byte margin in the newly allocated space
+04=Make a 128-byte margin in front of the newly allocated space  
 
 :05=移動後の領域には前方256バイトの余白を作る
-05=Make a front 256 byte margin in the newly allocated space 
+05=Make a 256-byte margin in front of the newly allocated space  
 
 :06=移動後の領域には前方512バイトの余白を作る
-06=Make a front 512 byte margin in the newly allocated space 
+06=Make a 512-byte margin in front of the newly allocated space  
 
 :07=移動後の領域には前方1024バイトの余白を作る
-07=Make a front 1024 byte margin in the newly allocated space  
+07=Make a 1024-byte margin in front of the newly allocated space  
 
 :余白
-margin
+Margin
 
 :00=移動前のデータは0x00でクリア
 00=Old data is filled with 0x00s
@@ -8384,13 +8342,13 @@ margin
 Treatment of old data
 
 :00=新規確保部分はデータの1番目で埋める
-00=The newly allocate part is filled with the first data
+00=Fill the newly allocated data with the 1nd part of the data
 
 :01=新規確保領域は00で埋める
-01=The new allocate area is filled with 00
+01=Fill the newly allocated data with 00s
 
 :02=新規確保部分はデータの2番目で埋める
-02=The new allocate portion can be filled with the second of the data
+02=Fill the newly allocated data with the 2nd part of the data
 
 :新規確保領域の初期値
 Initial value of new allocated area
@@ -8411,22 +8369,22 @@ Search affected pointers
 2. Free Space Search (Dest)
 
 :表示されている空き領域の中から、\r\n移動させる場所を選択してください。
-Please select the location to move.
+From the free space shown,\r\nplease select the location to move.
 
 :00=ファイル末尾
 00=End of file
 
 :01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
-01=At 0x1000000, Search for an area filled with 0x00s the size of the new data
+01=Past 0x09000000, Search for an area where 0x00 is the number + the size of new data
 
 :02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
-02=At 0x1000000, Search for an area filled with 0xFFs the size of the new data
+02=Past 0x09000000, Search for an area where 0xFF is the number + the size of new data
 
 :03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
-03=At 0x0000000, Search for an area filled with 0x00s the size of the new data
+03=Past 0x08000000, Search for an area where 0x00 is the number + the size of new data
 
 :04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
-04=At 0x0000000, Search for an area filled with 0xFFs the size of the new data
+04=Past 0x08000000, Search for an area where 0xFF is the number + the size of new data
 
 :空き領域の定義
 Free space definition
@@ -8444,13 +8402,13 @@ Move to extended area
 　
 
 : で、=にヒットさせたくない. 
- で、=I do not want to hit..
+ で=I don't want it to hit
 
 :このリストをダブルクリックで選択できます
-You can select this list by double clicking
+You can select this list by double-clicking on it
 
 :しばらくお待ちください....
-Please wait....
+Please wait...
 
 :データを書き込みました
 Data written
@@ -8459,13 +8417,13 @@ Data written
 Written to address {}.
 
 :ROM内に存在する無圧縮の特殊OAMデータです。\r\n魔法などのエフェクトや、C26/C27命令などの特殊効果、その他いろいろから利用されます。\r\n利用は、6CStructとセットになることが多いです。\r\n現在は、まだデータを見ることにしかできません。(OAMで操作される画像のアドレスが不明なためです。)
-Uncompressed special OAM data existing in ROM.\r\nIt is used with miscellaneous effects, special effects such as C26 / C27 instructions, and others.\r\nUsage is often set with 6CStruct.\r\nCurrently it's not possible to edit this data.(The address of the image operated by OAM is unknown.)
+Uncompressed special OAM data that exists in the ROM.\r\nIt can be used for effects such as magic, special effects (ex. C26/C27 commands), and many others.\r\nUse is often combined with 6CStruct.\r\nAt the moment, the data is read-only becuase the image's address being manipulated by the OAM is unknown.
 
 :警告:アルファベット以外の文字が入っています。
-Warning: Characters other than alphabets are included.
+Warning: Characters other than Latin are included.
 
 :分岐CC選択時のクラス名
-Class name when branch Promotion is selected
+Class Name when using Branch Promotion
 
 :00=自軍
 00=Player Army
@@ -8474,10 +8432,10 @@ Class name when branch Promotion is selected
 01=Enemy Army
 
 :日本語名 開始位置
-Japanese name start position
+Japanese Name Start Position
 
 :日本語名アドレス
-Japanese name address
+Japanese Name Address
 
 :01=ファイアー
 01=Fire
@@ -8495,10 +8453,10 @@ Japanese name address
 05=Flux
 
 :06=マムクート変身
-06=Manakete Transform
+06=Manakete Transformation
 
 :07=魔物の魔法
-07=Monster's magic
+07=Monster's Magic
 
 :08=ストーン
 08=Stone
@@ -8522,10 +8480,10 @@ Class Reel Name Font FE8U
 Class Reel Font
 
 :ディレクトリの場所を開く
-Open directory location
+Open Directory Location
 
 :関連付けされたアプリケーションで開く
-Open with associated application
+Open with Associated Application
 
 :auto=自動判別
 auto=Automatic
@@ -8534,157 +8492,157 @@ auto=Automatic
 The latest version is {0}.
 
 :ツールを選択してください
-Please select a tool
+Please Select a Tool
 
 :可変長データを更新した時に、元のデータより長くなってしまったときに、\r\n自動的にリポイントするかを決定します。
-When updating the variable length data, if it becomes longer than the original data,\r\nDecide whether to automatically repaint.
+Decides if the program should automatically repoint a group of data when it's re-written and becomes larger than the original size.
 
 :ROMを拡張するときに、どのアドレスから拡張を開始するかを決定します。
-When extending ROM, decide from which address to start expansion.
+Determines from which address to begin from when wanting to expand the ROM's data.
 
 :プログラムを設置するアドレスを決定します。\r\n上位にしておくとリビルドに成功しやすいです。\r\n通常のアドレスにすると、画像とかを配置する拡張領域に割り当てます。
-Determine the address where the program will be installed.\r\nIf you set it higher, it will be easier to rebuild.\r\nIf it is a normal address, it is assigned to the extended area where the image is placed.
+Determine the starting address where new patches will be installed.\r\nIf you set it high, it will be easier to use the Rebuild feature.\r\nIf it's at a typical lower address, it is assigned to the same extended area where images and such are placed.
 
 :ROMを上書きした時に自動的にバックアップを取るかを決定します。\r\n必ずバックアップを取ることをお勧めします。
-Decide whether to automatically back up when ROM is overwritten.\r\nWe recommended that you always back up.
+Decide whether to automatically make a backup when you save your ROM.\r\nBackups are strongly recommended, though you should also manually remove backups\r\nwith very trivial changes (minor text changes and so on) if you save often.
 
 :ROMを開いたとの最初の画面を決定します。\r\nディフォルトは、マップを表示する簡易メニューです。\r\n
-Determine the first screen that ROM is opened.\r\nThe default is a simple menu that displays a map.\r\n
+Determine the first screen to show when a ROM is opened.\r\nThe default choice is the menu that displays a map, chapter+event list, and navigation buttons, but you can show every editor instead on load.\r\n
 
 :このソフトウェアを自動的に更新する更新間隔を設定します。
-Set the refresh interval to update this software automatically.
+Set the refresh interval to check for FEBuilderGBA updates.
 
 :テキストに利用するエスケープシーケンスをどうするかを決定します。\r\nProjectFEGBA形式(@0003)、\r\nFEditor形式[A]、\r\nどちらを利用するかを決定します
-Decide what to do with escape sequence to use for text.\r\nProjectFEGBA format (@0003),\r\nFEditor format [A],\r\nWill decide which to use
+This changes which escape sequence ("tag" or "label") style to use in FEBuilderGBA.\r\nProjectFEGBA Format (@0003, @0002)\r\nFEditor Format ([A],[Clear])\r\nFEditor is recommended for readability.
 
 :データを書き込んだときに、書き込み増したという通知を画面下に出しますが、\r\nあの表示の表示時間を決定します
-When data is written, a notification that writing has been increased will be displayed at the bottom of the screen,\r\nDecide display time of that display
+When data is written to the ROM, a notification confirming this will be displayed at the bottom of the window.\r\nYou can change low long this notification lasts for.
 
 :範囲外に書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。
-When it seems to be out of range,\r\nDecide whether to automatically reject, issue a warning or do nothing.
+When you're about to write out of the ROM's range, you can\r\ncancel writing automatically, get a warning, or ignore such errors.
 
 :ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します
-After exporting the file,\r\nDecide whether to open the location where that file is located in Explorer and select it
+After exporting data from a ROM using this program, you can allow FEBuilderGBA\r\nto open the directory of where the file was saved to each time.
 
 :既存の改造ROMを開くときの設定です。\r\n通常はオフにしてください。\r\n他の改造ツールで作られた既存ROMを開くときだけ利用してください。\r\n\r\nFEditorは、アドレスの枠外(開始アドレス-4)にデータの個数を書き込みます。\r\nこの値を参考にするかどうかを決定します。
-This is setting when opening an existing modified ROM.\r\nNormally turn it off.\r\nPlease use it only when opening an existing ROM made with another remodeling tool.\r\n\r\nFEditor writes the number of data to the outside of the address (start address -4).\r\nDecide whether to refer to this value.
+This is used while opening an existing previously-modified ROM.\r\nIt should be disabled in most cases.\r\nThis is to be used when you've previously modified the ROM with older tools.\r\n\r\nFEditor writes the number of data that's outside an address range (starting address ~4).\r\nDecide whether to refer to this number.
 
 :Lintが改行などが正しくないテキストもバグとして報告するかどうかを決定します。\r\n例えば、セリフは2行しか利用できませんが、そこに3行目を入れた場合、バグとして検出します。\r\n
-Lint decides whether to report incorrect text, such as line breaks, as a bug.\r\nFor example, speech can only use two lines, but if you put the third line there, it will be detected as a bug.\r\n
+Lint can report incorrect text (i.e. line breaks) as a bug.\r\nFor example, dialog can only be two lines tall before an A-press, but if you put a third line, Lint will declare it a bug.\r\n
 
 :クラス拡張ボタンを表示するかどうかを決定します。\r\nクラス拡張はさまざまな問題を引き起こしますので、ディフォルトは非表示になっています。\r\n私は、クラスを拡張しないことをお勧めします。FEには利用されていないクラスがたくさんあります。\r\n危険を伴うクラスの拡張ではなく、利用されていないクラスを再利用するべきです。
-Determines whether to display the class extension button.\r\nSince class expansion causes various problems, the default is hidden.\r\nI encourage you not to extend the class.There are many classes that FE does not use.\r\nYou should reuse unused classes, not extensions of risky classes.
+Allows expanding the number of Classes and its data.\r\nSince Class expansion can cause various problems due to repointing, it's hidden by default.\r\nIt is strongly encouraged to reuse unused or useless classes first, which there are many of.\r\nDon't use this if you don't know what you're doing.
 
 :マルチバイト圏用の設定です。シングルバイト圏では利用しません。\r\n半角スペースで入力されたテキストを倍角スペースに自動変換するかどうかを設定します。\r\nマルチバイト圏では、マルチバイト用のスペースが存在するためです。\r\n
-This is a setting for multibyte area.It is not used in single-byte sphere.\r\nSets whether to automatically convert text entered in single-byte space to double space.\r\nIn multi-byte space, there is space for multi-byte.\r\n
+This setting is for multi-byte areas. It is not used in single-byte workspaces (English ROMs).\r\nSets whether text entered with half-width spaces will be automatically converted to double-width spaces for consistency.\r\n\r\n
 
 :F5で実行しているエミュレータからイベントやProcsの値を取り出して画面に表示するかかどうかを設定します。\r\nエミュレータから値を取得すると、イベントのデバッグがとても楽になります。\r\n
-Whether to display the event or Procs value from the emulator running in F5 and display it on the screen.\r\nObtaining values ​​from the emulator makes debugging the event very easy.\r\n
+Whether to show the debugger when playtesting through F5.\r\nIt shows things such as current Event Commands, text, unit RAM, and some debug cheats among other things.\r\nIt should be a very powerful tool for fixing issues and balancing gameplay.
 
 :ネット接続にプロキシサーバを利用するか選択します。\r\nプロキシサーバの自動プロキシ検出にすると、IEのプロキシサーバの設定を利用します。\r\nただし、自動検出には少し時間がかかります。\r\n
-Select whether to use a proxy server for net connection.\r\nWhen proxy server's automatic proxy detection is used, IE's proxy server setting is used.\r\nHowever, automatic detection takes a while.\r\n
+Select whether to use a proxy server for connections.\r\nWhen enabled, IE's proxy server setting is used.\r\nHowever, automatic detection takes a while.\r\n
 
 :FEBuilderGBAの画面の表示に利用する言語を切り替えます。\r\n\r\n翻訳データは、「config/data/func_lang_ALL.*.txt」と「config/translate」です。\r\nあなたの国の言語で表示させたい場合、翻訳データを送ってください。\r\nお待ちしています。\r\n
-Switch the language used to display the screen of FEBuilderGBA.\r\n\r\nThe translation data is "config/data/func_lang_ALL.*.txt" and "config/translate".\r\nIf you want to display in the language of your country, please send me the translation data.\r\nLook forward to.\r\n
+Switch the language within the FEBuilderGBA editor.\r\n\r\nThe translation data is in "config/data/func_lang_ALL.*.txt" and "config/translate".\r\nIf you want to help out with translating a language, visit the Github repository and go from there.\r\nWe look forward to it!\r\n
 
 :ゲーム内で利用する言語を設定します。\r\nFE6の英語版、及び中国語版は、日本語版をtblデータを利用して翻訳したファンサブです。\r\nこれらを利用する場合に設定します。\r\n(現在は、これらのROMを開くと、自動的に適用されるので、手動で変更しなくても問題ありません。)\r\n
-Set the language to use in the game.\r\nThe English version and Chinese version of FE 6 are fansub translated Japanese version using tbl data.\r\nSet these when using these.\r\n(Currently, these ROMs are automatically applied when you open them, so you do not have to change them manually.)\r\n
+Set the language to use in-game.\r\nThe English version and Chinese version of FE6 are fan translations of the original Japanese version using tbl data.\r\nSet this if you want to use them.\r\n(When you open these ROMs, they translations automatically applied, so you don't have to change them manually.)\r\n
 
 :参照リンクから飛んだ場合に、\r\n画面の上に、「このリストをダブルクリックで選択できます」というメッセージの通知を行う時間を設定します。\r\n
-When jumping from the reference link,\r\nOn the top of the screen, set the time to notify of the message "You can select this list by double clicking".\r\n
+Set the time you want to be notified about "You can select this list by double-clicking on it"\r\nat the top of the screen when you jump from a reference link.\r\n
 
 :no$gba debuggerを起動したときに、現在のROMのSYMを自動的に作るかどうかを設定します。\r\n自動的に作る場合は、ROMが変更されていれば、SYMを作成します。\r\nSYMの作成には少し時間がかかります。
-Sets whether or not SYM of the current ROM is automatically created when no$gba debugger is activated.\r\nIn case of automatic creation, if ROM is changed, create SYM.\r\nCreating SYM takes a while.
+Sets whether or not SYM of the current ROM is automatically created when NO$GBA debugger is launched.\r\nSYM is automatically created when the ROM is changed.\r\nCreating the SYM takes a while.
 
 :上書き時に、簡易メニュー画面にエラーが表示されている場合、警告を出すようにします。\r\nすべての章を確認するエラーチェック違い、システムエラーと現在の章のエラーしかチェックできませんが、高速に動作します。
-When overwriting, if an error is displayed on the simple menu screen, issue a warning.\r\nCheck all chapters Only errors check errors, system errors and errors in the current chapter can be checked, but it works faster.
+If an error is displayed on the simple menu screen where the events are listed, and the ROM is being saved, a warning will show.\r\nUnlike the other error check, which checks all chapters, this only checks for system errors and errors in the current chapter, but it's faster.
 
 :イベントを解析したときに不明な命令が連続していたら、壊れていると警告を出します。\r\n数字を下げると、壊れたイベントを検知しやすくなりますが、未知の命令を誤認する可能性もあります。\r\nFE8とFE6はほぼすべての命令を解析されているので厳し目の値にしてもいい。\r\nFE7はまだ未知の命令があるので下げ過ぎると誤認識があります。\r\n
-If unknown instructions are consecutive when analyzing an event, a warning is issued if it is broken.\r\nDecreasing the number makes it easier to detect broken events, but there is also the possibility of misidentifying unknown commands.\r\nSince FE 8 and FE 6 have almost all instructions analyzed, they can be set as strict values.\r\nSince FE 7 has an unknown command yet, it is false recognition if it goes down too much.\r\n
+When an event is analyzed, if there is a stream of unknown commands, it will be considered corrupt.\r\nDecreasing the number makes it easier to detect corrupt events, but there is also the slim possibility of false positives.\r\nSince FE8 and FE6 commands are almost all understood, this can be set as strict values.\r\nThis is not so much the case for FE7, so be wary.\r\n
 
 :エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。
-When you set up the emulator, you can test it with the F5 key.\r\nAlso, data can be displayed by accessing the RAM area of ​​the emulator.\r\nIt corresponds to VBA-M (sourceforge), mGBA, no$gba, etc.\r\n\r\nHowever, it can not be connected to the RAM area of ​​VBA-M (github).
+When you set up an emulator, you can test your ROM using the F5 key.\r\nAlso, useful data in RAM can be displayed with a debugger.\r\nIt works with VBA-M (sourceforge), mGBA, NO$GBA, and maybe others.\r\n\r\nHowever, it cannot connect to VBA-M (github).
 
 :Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。
-Set the debugger to be started when Ctrl + F5 is pressed.\r\nFEBuilderGBA can transfer save data and automatically generate symbols to no$gba debugger.
+Set the debugger to be started when Ctrl + F5 is pressed.\r\nFEBuilderGBA can transfer save data and automatically generate symbols for NO$GBA-debugger.
 
 :音楽プレイヤを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyまたはVGMusicStudioに対応しています。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。\r\nVGMusicStudioは起動オプションに対応しているバージョンを利用してください。
-If you set a music player, you can play background music when you click the note button.\r\nCompatible with sappy or VG Music Studio.\r\nWhen installing sappy, it is convenient to use the installer described in the manual.\r\nPlease use the version of VGMusicStudio that supports the startup option.
+If you set a music player, you can play background music when you click the note button.\r\nCompatible with sappy or VG Music Studio.\r\nWhen installing sappy, it is convenient to use the installer described in the manual.\r\nPlease use the version of VGMusicStudio that supports this startup option.
 
 :FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。
 In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlease install EA Ver 11 or higher.
 
 :章テーブルを拡張するボタンを表示します。\r\n章を拡張するときは、PLISTの構造について理解している必要があります。
-Displays a button to expand the chapter table.\r\nWhen expanding chapters, you should understand the structure of PLIST.
+Allows expansion of the Chapter/Map table and data.\r\nWhen expanding chapters, you should understand the structure of PLIST,\r\nso it is preferred you edit the default chapters if you're unsure.
 
 :FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
-An extended button is also displayed at World Map Node of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 Nodes.\r\nDetails are still not well understood.\r\nDo NOT use it except for research.
+Allows expanding data for the amount of nodes on FE8's world map.\r\nHow save data is written needs to be modified to increase this.\r\nThat said, there is no need for the casual user to attempt this.\r\nDo NOT use this unless you certainly know what you're doing.
 
 :FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
-An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nDo NOT use it except for research.
+Allows expanding data for the amount of roads on FE8's world map.\r\nHow save data is written needs to be modified to increase this.\r\nThat said, there is no need for the casual user to attempt this.\r\nDo NOT use this unless you certainly know what you're doing.
 
 :FE7とFE6のアイテムアイコンにも拡張ボタンを表示します。\r\nアイテムアイコンを拡張するには、パッチが必要です。\r\nFE8のパッチは存在しますが、FE7とFE6用には不安定なものしか存在しません。
-An extension button is also displayed on the item icons of FE7 and FE6.\r\nPatches are required to expand item icons.\r\nThere are FE8 patches, but there are only unstable ones for FE7 and FE6.
+Allows expanding the amount of item icons of FE7 and FE6.\r\nPatches are required to expand item icons.\r\nWhile it's fine for FE8, 6 and 7 only have unstable patches, so be careful.
 
 :SongTableを拡張するボタンを表示します。\r\nSongTableをrepointするとsapplyでは認識できなくなります。\r\nSongTableには空き領域がたくさんあるので拡張する必要はほとんどありません。
-Displays a button that extends SongTable.\r\nIf you repoint SongTable, sapply will not recognize it.\r\nSince SongTable has a lot of free space, there is almost no need to expand it.
+Displays a button that can expand the SongTable list.\r\nIf you repoint the SongTable, sappy will not recognize it.\r\nSince the SongTable has a lot of free space and empty fields, there is typically no reason to expand it.
 
 :逆コンパイラを指定します。\r\nただ、あまり期待しない方がいいですよ。\r\n
-Specify the decompiler.\r\nHowever, you should not expect too much.\r\n
+Specify the decompiler.\r\nHowever, these are rarely used.\r\n
 
 :C言語を利用してパッチを作る場合に使用する項目を設定します。\r\n\r\nCFLAGSは、gccに渡すオプションを指定します。\r\nたいていの場合、ディフォルト値から変更する必要は特にありません。\r\n\r\nFE-CLibには、ヘッダーファイルのライブラリを渡すします。\r\n現在は、FE8Uバージョンのみが開発されています。\r\n
-Set the items used when creating a patch using the C language.\r\n\r\nCFLAGS specifies options to pass to gcc.\r\nIn most cases, there is no need to change from the default value.\r\n\r\nPass the header file library to FE-CLib.\r\nCurrently, only the FE8U version is being developed.\r\n
+Set the items used when creating a patch using the C language.\r\n\r\nCFLAGS specifies options to pass to gcc.\r\nIn most cases, there is no need to change the default value.\r\n\r\nPass the header file library to FE-CLib.\r\nCurrently, it's only used for FE8U.\r\n
 
 :ASMやC言語をマシン語バイナリに変換するコンパイラー(アセンブラ)を設定します。\r\ndevkitProは、現在よく使われている処理系です。\r\n言語系は、gnu asmです。\r\ndevkitProを公式サイトからダウンロードして、インストールすると、gccも利用できます。\r\n\r\ngoldroadは、昔使われていた処理系です。\r\n言語系は、MASMに似ています。\r\n\r\n\r\nFEBuilderGBAは両者をソースコードにより自動的に切り替えて利用します。
-Set the compiler (assembler) that converts ASM and C language into machine language binary.\r\ndevkitPro is a commonly used processing system.\r\nThe language system is gnu asm.\r\nIf you download devkitPro from the official website and install it, you can also use gcc.\r\n\r\ngoldroad is an old processing system.\r\nThe language system is similar to MASM.\r\n\r\n\r\nFEBuilderGBA automatically switches between them according to the source code.
+Set the compiler (assembler) that converts ASM and C into machine language.\r\ndevkitPro is a commonly used build system.\r\nThe language system GNU ASM.\r\nIf you download devkitPro from the official website and install it, you can also use gcc.\r\n\r\ngoldroad is an old processing system.\r\nThe language system is similar to MASM.\r\n\r\n\r\nFEBuilderGBA automatically switches between them according to the source code.
 
 :FEBuilderGBAから動作させたいプログラムがあれば指定してください。\r\nたいていの場合は、特に設定する必要はありません。
 Please specify if you want to run the program from FEBuilderGBA.\r\nIn most cases, you do not need to set anything.
 
 :音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n
-Set music conversion tools.\r\ngba_mus_riper is used to export to midi and to export soundfont.\r\nsox is used to remove frequencies and margins when importing wavs.\r\n
+Set music conversion tools.\r\ngba_mus_riper is used to export MIDI and soundfonts from GBA games.\r\nsox is used to compress frequencies and margins when importing WAVs.\r\n
 
 :Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。
-Please set if you use mid2agb when importing Midi.\r\nIn most cases, conversion using mid2agb will give better results.
+Please set the path to mid2agb.\r\nIt is highly recommended for importing music, and should be chosen.
 
 :パス
 Path
 
 :警告: Event Assemblerのバージョンが古いです。
-Warning: Event Assembler version is outdated.
+Warning: Your Event Assembler version is outdated.
 
 :Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。
-Press Ctrl + F5 to start up this emulator and debug.
+Press Ctrl + F5 to playtest with this emulator.
 
 :F5キーを押すと、このエミュレータを起動して、テストプレイを行います。
-Press the F5 key to start up this emulator and perform test play.
+Press the F5 key to start this emulator for playtesting.
 
 :それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
 For details on where to obtain each program, please refer to this manual.
 
 :mid2agbをmidi取り込みのディフォルトにする
-Make mid2agb the default for midi import
+Make mid2agb the default for MIDI importing
 
 :音楽を変換するためのツールを設定してください。
-Set up the tool to convert music.
+Set up the tools for converting music.
 
 :Midiの変換にmid2agbを利用する場合は、選択してください。
-Set when using mid2agb for Midi conversion.
+Set for using mid2agb for MIDI conversion.
 
 :Event Assemblerと連動させる場合は、設定してください。
 Set to enable Event Assembler functionality.
 
 :音楽を再生するときに利用するsappy(or VGMusicStudio)を設定してください。
-Please set the sappy (or VG Music Studio) to be used when playing music.
+Please set Sappy (or VG Music Studio) to be used for playing music.
 
 :他に使うエミュレータがあれば設定してください。おすすめは、no$gba-debuggerです。
-Set to link FEBuilderGBA with a secondary emulator. No$GBA-Debugger is recommended for debugging.
+A secondary emulator. No$GBA-Debugger is good for pros, mGBA for testing accuracy.
 
 :メインで利用するエミュレータを設定してください。おすすめは、VBA-Mです。
 Set to link FEBuilderGBA with a primary emulator. VBA-M is recommended.
 
 :音楽プレイヤ
-Music player
+Music Player
 
 :エミュレーター2
 Emulator 2
@@ -8696,16 +8654,16 @@ Emulator
 Path 2
 
 :コンパイラを利用してC言語を利用する場合は設定してください。
-Set this when using C language with a compiler.
+C Lang Compiler
 
 :逆コンパイラを利用する場合は設定してください。
-Please set it when using the decompiler.
+Decompiler Paths
 
 :コンパイラ、アセンブラを利用する場合は設定してください。
-Set to use the specified compiler/assembler.
+Compiler/Assembler Paths
 
 :他に連動させたいプログラムがあれば設定してください。
-Set paths to use desired alternative programs not yet mentioned
+Alternative Program Paths (For Shortcuts)
 
 :任意のプログラム1
 Program 1
@@ -8798,7 +8756,7 @@ Shortcut Key 12
 Shortcut Key 11
 
 :<-ここにフォースを当ててキーを押すとコードを表示します 。\r\nショートカットキーに書くキーコードの調査にご利用ください。
-Type a key combo here and assign to shortcuts as needed.
+Type a key combo here if you need to copy one.\r\nPaste it above and assign shortcuts as needed.
 
 :ショートカットキー10
 Shortcut Key 10
@@ -8831,19 +8789,19 @@ Shortcut Key 2
 0=Nothing
 
 :1=エミュレーターで実行
-1=Run in Emulator
+1=Playtest
 
 :2=エミュレーター2で実行
-2=Run in Emulator 2
+2=Playtest with Alternative Emulator
 
 :3=バイナリエディタ
 3=Hex Editor
 
 :4=最後に利用したファイル
-4=Open Last Used File
+4=Open Last-Saved File
 
 :9=UNDO表示
-9=Open Revision History
+9=Open UNDO History
 
 :10=ログ
 10=Log
@@ -8870,16 +8828,16 @@ Shortcut Key 2
 18=Save If Error-Free
 
 :19=リストから次を検索
-19=Search next from list
+19=Search Next in List
 
 :20=ユニット画面を開く
-20=Open the unit screen.
+20=Open Unit Editor
 
 :21=クラス画面を開く
-21=Open the class screen.
+21=Open Class Editor
 
 :22=アイテム画面を開く
-22=Open the item screen.
+22=Open Item Editor
 
 :ショートカットキー1
 Shortcut Key 1
@@ -8888,121 +8846,121 @@ Shortcut Key 1
 Function
 
 :プログラム割り当ての開始位置
-Start position for program assignment.
+Starting Addresses for Program/Patches
 
 :0=上位アドレスを利用
-0=Use upper address
+0=Use High/Later Addresses
 
 :1=通常の拡張領域を利用
-1=Use normal area
+1=Use Common Addresses
 
 :0=チェックしない
-0=Do not check
+0=No Warnings
 
 :1=最高レベル
-1=The highest level.
+1=Highest Amount
 
 :6=通常レベル
-6=Normal level.
+6=Average Amount
 
 :9=最低レベル
-9=The lowest level.
+9=Lowest Amount
 
 :Lintで警告する不明な命令の連続数
-Continuous number of unknown instructions warning by Lint.
+Scale of Unknown Lint Warnings 
 
 :0=SYMファイルを作成しない
-0=Do not create SYM file
+0=Do Nothing
 
 :1=自動的にSYMファイル作成する
-1=Automatically create SYM file
+1=Automatically Create SYM File
 
 :no$gba用のsymファイルの作成
-Create sym file for no $ gba
+Create SYM file for NO$GBA?
 
 :リポイント
-Re-point
+Repointing
 
 :デバッグ支援
 Debugging Support
 
 :テキストエスケープ
-Game Script Notation
+Conversation Script Notation
 
 :0=@0003表記 ProjectFEGBA
-0=ProjectFEGBA Style @0003,@etc
+0=ProjectFEGBA Style (@0003, @etc)
 
 :1=[A]表記 FEditorAdv
-1=FEditorAdv Style [A],[X],[etc]
+1=FEditorAdv Style ([A], [X], [etc])
 
 :開発補助
-Development aid
+Development Aid
 
 :サイズ不足の時のROMサイズの拡張
 ROM Expansion Settings
 
 :Lintで会話が3行をバグとして検出する
-Set Lint Text Detection. 3 Lines Of Text = Bug
+Set Lint Text Detection (3 Lines of Text = Bug)
 
 :0=行数をチェックしない
 0=Disable Line Detection
 
 :1=4行以上をバグとして検出する
-1=Detect 4 or More Lines As a Bug
+1=Detect 4+ Lines as a bug
 
 :2=検出するが、無改造ROMのバグを除く
-2=Detect, But Exclude Bugs in Vanilla
+2=Detect, exclude Vanilla bugs
 
 :3=検出する
-3=Detect
+3=Detect All
 
 :0=拡張を認めない
 0=Disable ROM Expansion
 
 :1=ROMサイズを32MBまで拡張を認める
-1=Enable ROM Expansion up to 32 MB
+1=Enable ROM Expansion up to 32MB
 
 :2=拡張を認めるが、アドレスは手動管理
-2=Allow expansion, but manage addresses manually.
+2=Allow expansion, but manage addresses manually
 
 :0=変換しない
-0=Do not convert
+0=No Conversion
 
 :1=ROMの言語設定で自動変換
-1=Automatic conversion by ROM language setting
+1=Auto Conversion using ROM Language Setting
 
 :半角スペースと倍角スペースの自動変換
-Automatic conversion of single/double-byte space
+Automatic Conversion of Single/Double-byte Space
 
 :0=エミュレータへ接続しない
-0=Don't Open With Emulator
+0=Don't Open with Emulator
 
 :1=自動接続
-1=Open With Emulator
+1=Open with Emulator
 
 :2=自動接続し、自動終了
-2=Open and Close With Emulator
+2=Open and Close alongside Emulator
 
 :エミュレータへ自動接続
-Emulator Debugger Settings
+Emulator Debugging
 
 :ROM拡張時の探索開始位置
-Search starting position at ROM expansion
+ROM Expansion Starting Address
 
 :0=ファイル末尾
 0=End of File
 
 :1=0x09000000以降 0x00が規定数連続
-1=0x09000000 or later 0x00 is many Continuous
+1=From 0x09000000 onwards, using 0x00 padding
 
 :2=0x09000000以降 0xFFが規定数連続
-2=0x09000000 or later 0xFF is many Continuous
+2=From 0x09000000 onwards, using 0xFF padding
 
 :3=0x08000000以降 0x00が規定数連続
-3=0x08000000 or later 0x00 is many Continuous
+3=From 0x08000000 onwards, using 0x00 padding
 
 :4=0x08000000以降 0xFFが規定数連続
-4=0x08000000 or later 0xFF is many Continuous
+4=From 0x08000000 onwards, using 0xFF padding
 
 :機能2
 Function 2
@@ -9014,19 +8972,19 @@ Function 2
 1=Displayed
 
 :SongTable拡張ボタンの表示
-SongTable expansion button display
+Song Table Data Expansion
 
 :FE6 FE7 アイテムアイコン拡張ボタンの表示
-FE6 FE7 Item icon expansion button display
+FE6 FE7 Item Icon Data Expansion
 
 :FE8ワールドマップ道の拡張ボタンを表示する
-Toggle FE8 WorldMap Path Expansion Button
+Toggle FE8 World Map Path Data Expansion
 
 :FE8ワールドマップ拠点の拡張ボタンを表示する
-Toggle FE8 WorldMap Node Expansion Button
+Toggle FE8 World Map Node Data Expansion
 
 :拡張ボタン
-Expansion button
+Expansion Button
 
 :データ保護
 Data Protection
@@ -9041,25 +8999,25 @@ Toggle Chapter Expansion Button
 0=Don't Automatically Backup
 
 :1=保存する前にバックアップを作成する
-1=Auto Backup Before Saving
+1=Auto Backup Before Saving (.gba)
 
 :2=保存する前にバックアップを作成する(7z圧縮)
-2=Auto Backup Before Saving (7Zip Compressed)
+2=Auto Backup Before Saving (7Zip Compression)
 
 :上書き時の簡易チェック
-Simple check at overwrite
+Simple Check at Overwrite
 
 :0=警告も何もしない(推奨しません)
-0=Disable Out of Range User Warnings (Not Recommended)
+0=Ignore Out of Range Warnings (Not Recommended)
 
 :1=書き込みを警告する
-1=Warn User Upon Attempt to Write Out of Range
+1=Warn for Writing Out of Range
 
 :2=書き込みを禁止する
 2=Don't Allow Writing Out of Range
 
 :1=簡易エラーチェックをする
-1=Perform a simple error check
+1=Perform a Simple Error Check
 
 :範囲外書き込みについて
 Out of Range Options
@@ -9071,19 +9029,19 @@ Toggle Class Expansion Button
 Function 3
 
 :右上のテスト実行メニュー
-The test run menu in upper right
+Playtest Button (Top Right) Dialog
 
 :0=初回メッセージ
-0=First message.
+0=First Message
 
 :1=もうメッセージを表示しない
-1=Don't show the message anymore.
+1=Don't Show Again
 
 :2=RunTestを表示しない(再起動後)
-2=Don't show RunTest (after reboot).
+2=Hide Playtest Button
 
 :画面上のヒントメッセージの表示時間
-Screen hint message display time
+Display time for hint messages
 
 :1=1秒
 1=1 Second
@@ -9095,10 +9053,10 @@ Screen hint message display time
 3=3 Seconds
 
 :0=プロキシサーバを利用しない
-0=Do not use proxy server
+0=Do not use a proxy server
 
 :1=プロキシサーバの自動検出
-1=Automatic detection of proxy server
+1=Automatic detection of proxy servers
 
 :アップデート
 Update
@@ -9107,16 +9065,16 @@ Update
 Compatibility
 
 :ネット接続時のプロキシサーバ
-Proxy server when connecting to Internet
+Proxy Server for Internet Connection
 
 :その他UI
 Other UI
 
 :自動アップデート間隔
-Automatic Update Interval
+Automatic Update Checking
 
 :0=自動的に確認しない
-0=Don't Automatically Check For Updates
+0=Don't Check For Updates
 
 :1=1日毎
 1=Every Day
@@ -9131,13 +9089,13 @@ Automatic Update Interval
 Text Encoding in ROM
 
 :0=参照しない
-0=Disable
+0=Disabled
 
 :1=参照する
-1=Enable
+1=Enabled
 
 :FEditorの個数ヒント値を参照する
-Refer to the number hint value of FEditor
+Use Address Hint Value from FEditor
 
 :ツールの画面表示に使う言語
 FEBuilderGBA Language
@@ -9146,22 +9104,22 @@ FEBuilderGBA Language
 Default Startup Screen
 
 :書き込み通知の表示時間
-Write Confirmation Displayed For
+"Write to ROM" Confirmation Display Length
 
 :0=簡易画面
-0=Simple w/ Chapter Focus
+0=Simple with Chapter Map
 
 :1=詳細メニュー
-1=Advanced Editors
+1=Advanced Editor Page
 
 :エクスポート時に、エクスプローラで自動選択する
 When exporting a file...
 
 :0=エクスプローラーで選択しない
-0=Don't Open File Location
+0=Do Nothing
 
 :1=エクスプローラーを起動して選択する
-1=Open Exported File Location
+1=Explorer to Exported Directory
 
 :保存
 Save
@@ -9170,7 +9128,7 @@ Save
 Other ROM Direct Text
 
 :このROMには、エラーがありますが、保存してもよろしいですか？
-There is an error in this ROM - are you sure to save it?
+There is an error in this ROM - are you sure you want to save it?
 
 :ヒント
 Tips
@@ -9179,10 +9137,10 @@ Tips
 Yes
 
 :エラーを表示
-Show error.
+Show Error
 
 :ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nTo remove this message, correct the detected error(s).\r\nOr, in the settings, when you save your ROM, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are having trouble with an unresolvable error, create a report7z and consult with the Discord server.
+Even if you don't save your changes, you can still playtest using F5.\r\nBackups are saved in date format within the same directory as the ROM.\r\n\r\nTo remove this message, correct the detected error(s).\r\nOr, in the settings, when you save your ROM, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are having trouble with an unresolvable error, create a report7z and consult with the Discord server.
 
 :リセット
 Reset
@@ -9191,7 +9149,7 @@ Reset
 Preview
 
 :連動して変更する色
-Color to change in conjunction
+Color to be changed in conjunction with
 
 :新しい色
 New Color
@@ -9200,13 +9158,13 @@ New Color
 Target Color
 
 :似た色を連動して置き換える
-Interlocking and replacing similar colors.
+Replace similar colors in conjunction with each other
 
 :文字列のサイズが{0}ではありません
 String size is not {0}
 
 :現在のパレットの設定をテキストデータとして保存できます。\r\nこの数字をメモしておけば、いつでも同じパレットに復元することができます。\r\nこの文字列は、FE Recolorのカラー文字列と互換性があります。
-The current palette setting can be saved as text data.\r\nIf saved, it can be restored to the same palette at any time.\r\nThis string is compatible with FE Recolor's color string values.
+The current palette setting can be saved as text data.\r\nThe palette can be restored with said data later.\r\nThis string is compatible with FE Recolor's string values.
 
 :パレット値
 Palette Value
@@ -9215,85 +9173,85 @@ Palette Value
 Digitize Palette
 
 :色の交換
-Color exchange.
+Color Swap
 
 :色違いを作る
-Make a color difference.
+Color Offset
 
 :この画像のパレットは破壊されています。\r\n復元しようとしましたが、元画像と異なる画像のため、復元できませんでした。\r\n無視して強引にインポートすることは可能ですが、継続しますか？
-The palette of this image has been destroyed.\r\nA restoration was attempted, but it is too different from the original image.\r\nIgnore and import anyway?
+The palette of this image has been corrupted.\r\nA restoration was attempted, but it is too different from the original image.\r\nIgnore and import anyway?
 
 :パレットをlz77解凍できません.
-Unable to decompress lz 77 palette.
+Unable to decompress lz77 palette.
 
 :パレットを解凍できません.
 Unable to decompress the palette.
 
 :無圧縮パレットなので、すべて同じパレットにすることはできません。
-It is an uncompressed palette, so it can not all be the same palette.
+Since it is an uncompressed palette, it cannot all be the same palette.
 
 :R:{0}, G:{1}, B:{2} (現在選択中)
 R:{0}, G:{1}, B:{2} (Currently selected)
 
 :場所を入れ替える色を選択してください
-Please select a color to change places
+Please select a color to swap places
 
 :パレットの入れ替え
-Replacing palette
+Replacing Plette
 
 :インストール済みのパッチ(!)
-Installed patch (!)
+Installed Patches (!)
 
 :画像(#IMAGE)
 Image (#IMAGE)
 
 :音楽(#SOUND)
-Music (#SOUND)
+Audio (#SOUND)
 
 :エンジン(#ENGINE)
-Engine (# ENGINE)
+Engine (#ENGINE)
 
 :フィルタ解除
-Unfilter
+No Filter
 
 :イベント命令(#EVENT)
-Event instruction (#EVENT)
+Event Commands (#EVENT)
 
 :定番の修正(#ESSENTIALFIXES)
-Essential Fixes(#ESSENTIALFIXES)
+Essential Fixes (#ESSENTIALFIXES)
 
 :ソート
 Sort
 
 :ソートしない
-Do not sort
+No Filter
 
 :新しい日付でソート
-Sort by New date
+Sort by New -> Old
 
 :古い日付でソート
-Sort by Old date
+Sort by Old -> New
 
 :名前でソート
 Sort by Name
 
 :フィルタの適応
-Apply filter
+Apply Filter
 
 :FEBuilderGBAを設置しているディレクトリが深すぎます。\r\nファイルのパスの最大数260文字を越えました。\r\nパッチの探索を実行できません。\r\n{0}
-The directory where FEBuilderGBA is installed is too deep.\r\nThe maximum number of file paths exceeded 260 characters.\r\nPatch search can not be executed.\r\n{0}.
+The directory where FEBuilderGBA is installed is way too deep.\r\nThe maximum number of file paths exceeded 260 characters, which hits a limitation in Windows.\r\nPatch searching cannot be executed.\r\n{0}
 
 :このパッチを利用した時にフリーズする等のバグが報告されています。\r\n特別な理由がない限り、利用しないでください。\r\n
-Bugs such as freezing when using this patch are reported.\r\nDo NOT use unless there is a special reason.\r\n
+Bugs such as freezing when using this patch have been reported.\r\nDo not install this unless you know what you're doing.\r\n
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
-This patch is an old patch.\r\nWe recommend using a new patch.\r\n
+This patch is outdated.\r\nSee if there is a recent/alternative version.\r\n
 
 :このパッチは、内部処理用に作られたものです。通常は利用しないでください。
-This patch was made for internal processing. Do NOT use usually.
+This patch was designed for internal processing. Don't use it normally.
 
 :パッチ名:
-Patch name:
+Patch Name:
 
 :著者/出典元:
 Author / Source:
@@ -9302,37 +9260,37 @@ Author / Source:
 This patch has been updated to {0}. This is still a new patch, so please be careful.
 
 :パッチを適応する時は、ひとつ適応する度にF5キーを押して動作を確認してください。\r\n動作しなければ、保存せずにFEBuilderGBAを終了してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n
-When applying a patch, press the F5 key after each one to check the ROM's operation.\r\nIf it doesn't work, please exit FEBuilderGBA without saving.\r\nIf you have a patch with problems, please report the bug to 7743.\r\n
+When applying patches, press the F5 key after each one to playtest the ROM.\r\nIf things seem fine, you may save your changes. If there's an issue, exit FEBuilderGBA without saving.\r\nIf there are further issues, create a report7z and send it.\r\n
 
 :パッチの名前をクリップボードにコピーしてもよろしいですか？
-Are you sure you want to copy the patch name to the clipboard? 
+Copy the patch name to the clipboard? 
 
 :このポインタ({0})は危険です.\r\n
-This pointer ({0}) is dangerous.
+The pointer ({0}) is dangerous.
 
 :このポインタ({1})から指されるアドレス({0})は危険です.\r\n
-The address ({0}) pointed to by this pointer ({1}) is dangerous.
+The address ({0}) pointed to by the pointer ({1}) is dangerous.
 
 :POINTERまたはADDRESSの指定がありません
-POINTER or ADDRESS is not specified
+POINTER or ADDRESS is not specified.
 
 :データサイズ定義がありません。\r\n\r\n例:\r\nDATASIZE=4
 There is no data size definition.\r\n\r\nEx:\r\nDATASIZE=4
 
 :データ件数を調べようとしましたが、終端データを取得できません。
-Checked the number of data items, but Can not get the termination data.
+Tried to check for the number of data entries, but couldn't find the termination data.
 
 :データ個数定義がありません。\r\n\r\n例:\r\nDATACOUNT=4\r\nor\r\nDATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
 There is no data count definition.\r\n\r\nEx:\r\nDATACOUNT=4\r\nor\r\nDATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
 
 :選択アドレス
-Selected address
+Selected Address
 
 :更新するべきデータがありません keyword:{0}
-There is no data to updatekeyword: {0}
+There is no data to update. Keyword: {0}
 
 :パッチ({0})を適応しました。{1} PATCH APPLY
-Adapted the patch ({0}).{1} PATCH APPLY.
+Installed the patch "({0})". {1} PATCH APPLY.
 
 :アドレス指定がありません.\r\n\r\n例:\r\nADDRESS=0x1234
 There is no address specification.\r\n\r\nEx:\r\nADDRESS=0x1234
@@ -9344,58 +9302,58 @@ COMBO length is insufficient. It needs to have 4 bytes or more.
 There is no width setting.\r\n\r\nEx:\r\nWIDTH=16
 
 :画像として指定されたポインタ 0x{0} は、ROM終端を超えています。
-The pointer 0x{0} specified as an image exceeds the ROM end.
+The pointer 0x{0} specified as an image points past the ROM's end.
 
 :画像指定がありません。\r\n\r\nFile:{0} Line:{1}\r\n
-There is no image specification.\r\n\r\nFile:{0} Line:{1}\r\n
+There is no image specified.\r\n\r\nFile:{0} Line:{1}
 
 :画像として指定されたポインタ 0x{0} アドレス0x{1}が指している画像の高さが0です。
-Pointer specified as image 0x{0} The height of the image pointed to by address 0x{1} is 0.
+Pointer specified as image 0x{0} - The height of the image pointed to by address 0x{1} is 0.
 
 :画像として指定されたポインタ 0x{0} が指しているアドレス0x{1}は危険です。
-The address 0x{1} pointed to by the pointer 0x{0} specified as the image is dangerous.
+The address 0x{1} pointed to by the pointer 0x{0} specified as an image is dangerous.
 
 :ポインタ{0}が指す領域 0x{1}にはアクセスできません
-Area 0x {1} pointed to by pointer {0} can't be accessed
+Area 0x {1} pointed to by pointer {0} can't be accessed.
 
 :アドレス指定が正しくありません。 値:0x{0}
-Incorrect Address specification. Value:0x{0}
+Incorrect address specification. Value:0x{0}
 
 :パッチ({0})をインストールしました。{1} PATCH INSTALL
-Installed the patch ({0}).{1} PATCH INSTALL.
+Installed the patch "({0})". {1} PATCH INSTALL
 
 :ファイル数が多すぎるので以下省略します。
-There are too many files, so I will omit them below.
+The list is truncated due to too many files.
 
 :不明なキーワードです : {0}
 Unknown Keyword: {0}
 
 :32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}
-You can not allocate more than 32MB (0x02000000).\r\nRequested size: {0}.
+You cannot allocate more than 32MB (0x02000000) of space. \r\nRequested Size: {0}
 
 :アンインストールするための無改造ROMが見つかりません。\r\nアンインストールするために、無改造ROMが必要です。\r\nこのROMと同じ場所または、FEBuilderGBA.exeと同じディレクトリに無改造ROM.gbaを設置してください。
-Unmodified ROM to uninstall was not found.\r\nA non-modified ROM is required to uninstall.\r\nPlease install unmodified ROM.gba in the same location as this ROM or in the same directory as FEBuilderGBA.exe.
+Unmodified ROM for uninstallation not found.\r\nYou need a clean ROM to uninstall the patch.\r\nPlease move an unmodified ROM where your project ROM is or in the same working folder as FEBuilderGBA.exe.
 
 :アンインストールするアドレスの指定が正しくありません dest:{0}
-Invalid uninstall address specification dest: {0}.
+Uninstallation address is incorrect. Destination: {0}
 
 :コピー先アドレスの指定が正しくありません dest:{0}
-Copy destination address specification incorrectdest: {0}
+The destination address is wrongly specified. Destination: {0}
 
 :コピー元のアドレスの指定が正しくありません
-Copy source address specified incorrectly
+The destination address is wrongly specified.
 
 :コピー先のアドレスの指定が正しくありません
-Copy destination address specification is incorrect
+The destination address is wrongly specified.
 
 :SLIDE先アドレスの指定が正しくありません dest:{0}
-The SLIDE destination address specification is incorrectdest: {0}
+The SLIDE destination address specification is incorrect. Destination: {0}
 
 :SLIDE元のアドレスの指定が正しくありません
-SLIDE Invalid source address specification
+SLIDE Invalid source address specification.
 
 :SLIDE先のアドレスの指定が正しくありません
-Address specification of SLIDE destination is incorrect
+Address specification of SLIDE destination is incorrect.
 
 :割り込み元のアドレス 0x{0} は2で割り切れる偶数である必要があります
 Interrupt source address 0x {0} must be an even number.
@@ -9404,286 +9362,283 @@ Interrupt source address 0x {0} must be an even number.
 Register specification is incorrect.\r\nDefine as JUMP: addr: $ r7 = filename.
 
 :アドレス補正値が正しくありません.\r\nJUMP:addr:$r7:+0x100=filename ように定義してください.
-The address correction value is incorrect.\r\nDefine as JUMP:addr:$r7:+0x100=filename.
+The address correction value is wrong.\r\nDefine as JUMP:addr:$r7:+0x100=filename.
 
 :ジャンプ先のファイル名 {0} がありません
-Jump destination file name {0} is missing
+No filename {0} exists to jump to.
 
 :不明な命令です
-Unknown command
+Unknown command.
 
 :アドレスの指定が正しくありません dest:{0}
-The address specification is incorrectdest: {0}
+The address specification is incorrect. Destination: {0}
 
 :ポインタではありません
-This is not a pointer
+Not a pointer.
 
 :書き込みに失敗しました
-Write failed.
+Failed to write.
 
 :拡張の指定が正しくありません type:{0}
-Expansion specification is incorrecttype: {0}
+Expansion specification is incorrect. Type: {0}
 
 :{0}テーブルの拡張に失敗しました
 Extension of {0} table failed
 
 :前提条件となるパッチ等がないようです。\r\n{0}\r\n
-There seems to be no prerequisite patch etc.\r\n{0}
+There seems to be no patch prerequisites.\r\n{0}
 
 :IFパースエラー、このアドレス({2})は危険です。\r\n{0}={1}
-IF parse error, this address ({2}) is dangerous.\r\n{0}={1}\r\n{0} = {1}
+IF parse error. Address ({2}) is dangerous.\r\n{0}={1}\r\n{0} = {1}
 
 :IFパースエラー、この値にはスペースがありません\r\n{0}={1}
-IF parse error, this value has no space.\r\n{0}={1}
+IF parse error. No space for this value.\r\n{0}={1}
 
 :パッチのデータが壊れています。データサイズ1MBを超えました
-The patch data is broken.Data size exceeded 1 MB.
+The patch data is corrupt. Data size exceeded 1 MB.
 
 :以下の競合するパッチのいずれかがインストールされているため、利用できません。
-It can not be used because one of the following conflicting patches is installed.
+Cannot be installed as it conflicts with the following patches:
 
 :パッチを適応しました
-Applied the patch.
+Patch Installed
 
 :拡張命令:
 From Patch:
 
 :BINかEA以外のパッチはアンインストールできません。
-Patches other than BIN or EA can not be uninstalled.
+Patches that are not either BIN or EA format cannot be uninstalled.
 
 :アンインストールに失敗しました.\r\n\r\n{0}
 Uninstallation failed.\r\n\r\n{0}
 
 :パッチ({0})をアンインストールしました。{1} PATCH UNINSTALL
-The patch ({0}) has been uninstalled.{1} PATCH UNINSTALL.
+The patch ({0}) has been uninstalled. {1} PATCH UNINSTALL
 
 :アンインストール中です。進捗:{1}/{2} アドレス:{0}
-Uninstalling.... Progress:{1}/{2}  Address:{0}
+Uninstalling... Progress:{1}/{2} Address:{0}
 
 :ROM末尾の最適化をしています
-Optimizing the end of the ROM
+Optimizing the end of ROM
 
 :完了
 Done
 
-:パッチ「{0}」の画像のポインタ(「{1}」)は、正しくありません。\r\n画像をインポートしなおすことをお勧めします。
-The image pointer ("{1}") for patch "{0}" is incorrect.\r\nWe recommend that you re-import the image.
-
 :パッチ「{0}」のASM関数ポインタ「{1}」の先に無効な命令が存在します。パッチを再インストールする必要があるかもしれません。
-An invalid instruction exists before the ASM function pointer "{1}" in patch "{0}".You may need to reinstall the patch.
+An invalid instruction exists past the ASM pointer "{1}" in patch "{0}". You may need to reinstall the patch.
 
 :「{0}」パッチがインストールされていますが、設定画面のポインタを取得できません。パッチが壊れていると思われます。
-"{0}" patch is installed, but you cannot get the settings screen pointer. It seems that the patch is broken.
+"{0}" patch is installed, but there was a failure getting the pointer for its configuration. The patch may be broken.
 
 :ポインタ更新しています。{0}: {1}->{2}
-Pointer updated.{0}: {1} -> {2}.
+Pointer updated. {0}: {1}->{2}
 
 :BINかEA以外のパッチはアップデートできません。
-Patches other than BIN or EA can not be updated.
+Patches that are not either BIN or EA format cannot be updated.
 
 :新しいパッチが存在しません。
 There is no new patch.
 
 :現在のパッチを「{0}」を、新しいパッチ「{1}」にアップデートしてもよろしいですか？\r\n\r\nアップデート前にバックアップを取得してください。\r\nまた、アップデート後は、必ず動作テストをしてください。
-Are you sure you want to update the current patch "{0}" to the new patch "{1}"?\r\n\r\nPlease get backup before updating.\r\nAlso, be sure to test the ROM's operation after updating.
+Are you sure you want to update the selected patch "{0}" to the newer "{1}"?\r\n\r\nReminder to make a backup beforehand.\r\nAlso, be sure to playtest after updating.
 
 :ユーザが処理をキャンセルしました。
 User canceled processing.
 
 :新しいパッチをインストールできませんでした。
-Could not install new patch.
+Could not install the new patch.
 
 :パッチ({0})を更新しました。{1} PATCH UPDATE
-The patch ({0}) has been updated.{1} PATCH UPDATE.
+The patch ({0}) has been updated. {1} PATCH UPDATE
 
 :このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
-This patch is an old patch.\r\nIt is left in for compatibility.\r\nDo not use it normally.\r\n\r\nAre you sure you want to install it? 
+This patch is outdated.\r\nIt has been left in place for compatibility.\r\nIt should not be used normally if newer options are available.\r\n\r\nAre you sure you want to install this?
 
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
-Skill System is already installed in this ROM.\r\nOverinstalling Skill System is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
+SkillSystems is already installed in this ROM.\r\nOverwriting SkillSystems can be dangerous.\r\nPlease make sure to follow the correct updating procedures.\r\n\r\nAre you sure you want to continue?
 
 :パッチファイルを開く
-Open patch file
+Open Patch File
 
 :パッチリロード
 Reload Patch
 
 :エラーが発生しているため、このパッチは利用できません
-An error occurred while attempting to install patch. Unable to patch.
+Unavailable due to an error.
 
 :以下の条件を満たしていないため利用できません。
-This can't be used because it doesn't meet the following conditions.
+Cannot be installed as the following prerequisites are not met.
 
 :アンインストール
 Uninstall
 
 :すでに適応済みです
-Already adapted
+Already Installed
 
 :競合するパッチがあるため、利用できません
-It is not available because there are conflicting patches
+Unavailable due to conflicting patches.
 
 :アンインストールしたパッチを含んでいないROMを選択してください
-Please select ROM that does not contain uninstalled patch
+Select a ROM that does not contain the patch you uninstalled.
 
 :無改造ROMなので利用できます
-It can be used because it is unmodified ROM
+Usable as it is an unmodified ROM.
 
 :このROMはアンインストール対象のパッチを含んでいるので利用できません。
-This ROM can not be used because it contains patches to be uninstalled.
+This ROM cannot be used because it has patches that are to be uninstalled.
 
 :パッチを含まないバックアップを探索中。進捗:{1}/{2} {0}
-Searching for backups without patches in progress... {1}/{2} {0}
+Searching for backups not containing patches... {1}/{2} {0}
 
 :パッチを含んでいないROMを指定してください。\r\nわからない場合は、無改造のROMを指定してください。\r\n\r\nもし、カレントディレクトリ等に無改造ROMがあれば自動的に選択されるので、無改造ROMをカレントディレクトリに置いておくことをお勧めします。
 Please specify the ROM that does not contain the patch.\r\nIf impossible, please specify ROM without modification.\r\n\r\nIf there is an unmodified ROM in the current directory, it will be selected automatically, so we recommend putting unmodified ROM in the current directory.
 
 :復旧用に、このパッチをインストールする前のROMを選択してください。\r\n\r\nこの機能は、確実なアンインストールを約束するものではありません。\r\n失敗するかもしれないので、事前にバックアップを取ってください。\r\nまた、パッチ本体は消せますが、付属するデータは消せない時があります。\r\nその場合、数百バイト程度のロスになりますが、ご了承ください。
-For recovery, please select the ROM before installing this patch.\r\n\r\nThis function does not promise an reliable uninstallation.\r\nBecause it may fail, please backup in advance.\r\nAlso, although you can erase the patch itself, there are times when you can not erase the attached data.\r\nIn that case, there will be about several hundred bytes of loss.
+Choose a recovery ROM before installing this patch.\r\n\r\nThis feature's uninstallation is not guaranteed.\r\nIt may fail, so please make a backup beforehand.\r\nAlso, although you can erase the patch itself, sometimes its data cannot be removed\r\nIn that case, you may lose a few hundred bytes of writable data.
 
 :パッチのアンインストール
-Uninstall patch
+Uninstall Patch
 
 :パッチを含んでいないROM
-ROM without patch
+ROMs without Patches
 
 :{0}のデータを、分離独立させますか？
-Do you want to separate the data of {0} to be independent?
+Do you want to seperate {0}'s data?
 
 :既に十分な数を確保しています。\r\nあなたの要求:{0} 既存サイズ:{1}+{2}={3}
-ROM already contains a sufficient number.\r\nYour request: {0}Existing size: {1} + {2} = {3}
+The ROM already contains the suitable number.\r\nYour request:{0} Existing Size: {1}+{2}={3}
 
 :別のパッチでオペコードを書き換えられているので、拡張できません\r\nアドレス:{0} オペコード:{1}
-Since the opcode has been rewritten with another patch, it can't be expanded\r\nAddress: {0}Op code: {1}
+Cannot extend since the Opcode is written in another patch.\r\nAddress:{0} Opcode: {1}
 
 :配列を {0}まで拡張してもよろしいですか？
-ArrayAre you sure you want to extend it to {0}?
+Are you sure you want to extend the array to {0}?
 
 :一括アドレス変換
-Batch address translation
+Bulk Address Translation
 
 :コピー方法
-Copy method
+Copy Method
 
 :自動追跡 {0}/{1}
-Automatic tracking{0} / {1}
+Automatic Tracking {0}/{1}
 
 :編集するROMを選択してください
-Select ROM to edit
+Select the ROM to be edited
 
 :別ゲームROM:{0}
-Another game ROM: {0}
+Another Game ROM: {0}
 
 :アドレス{0}は {1} 領域です。
 Address {0} is a {1} area.
 
 :--targetで、相手のROMを指定してください。
---targetで、相手のROMを指定してください。
+Specify the other ROM.
 
 :先に、ターゲットのROMを読込んでください。
-Please read the target ROM first.
+Please load the target ROM first.
 
 :この場所への最初の参照
-First Reference to This Location
+First Reference to this Location
 
 :別ROM読込
 Load Another ROM
 
 :上記データの参照場所
-Reference Location of Above Data
+Reference Location for Above Data
 
 :アドレス値の参照先の\r\nデータがある場所
-Location of Data
+Where the data referenced by\r\nthe address is located
 
 :ポインタ化
 Pointerization
 
 :アドレスがポインタの場合の\r\n指されるデータ位置
-The data position pointed to by\r\nwhen the address is a pointer
+Data position to be pointed to \r\nwhen the address is a pointer
 
 :警告:0地帯です
 Warning: 0 Zone
 
 :アドレスの種類判定
-Type judgment of address
+Address Type Determination
 
 :バッチ (一括処理)
-batch(batch processing)
+Batch Processing
 
 :参照値から追跡\r\nマッチアドレス
-Track from reference value\r\nMatch address
+Tracked from reference value\r\nMatching address
 
 :警告:元データと離れすぎ
-Alert: too far from the original data
+Warning: Too far from the original data
 
 :検索オプション
-Search options
+Search Options
 
 :警告をエラーにする
-Warnings an Error
+Turn Warnings into Errors
 
 :参照あれば警告を無視する
-Ignore warning if reference
+Ignore Warning if Reference Exists
 
 :警告を無視する
-Ignore all warnings
+Ignore All Warnings
 
 :警告システム
-Warning system
+Warning System
 
 :自動追跡システム
-Automatic tracking system
+Automatic Tracking System
 
 :0000=自動追跡しない
-0000=Do not auto-track
+0000=No Automatic Tracking
 
 :0500=サイズだけ追記1
-0500=Add only size 1
+0500=Add Only Size 1
 
 :0A00=サイズだけ追記2
-0A00=Add only size 2
+0A00=Add Only Size 2
 
 :0F00=サイズだけ追記3
-0F00=Add only size 3
+0F00=Add Only Size 3
 
 :0502=追跡レベル2
-0502=Tracking level 2
+0502=Tracking Level 2
 
 :0505=追跡レベル3
-0505=Tracking level 3
+0505=Tracking Level 3
 
 :0A02=追跡レベル4
-0A02=Tracking level 4
+0A02=Tracking Level 4
 
 :0A05=追跡レベル5
-0A05=Tracking level 5
+0A05=Tracking Level 5
 
 :0A07=追跡レベル6
-0A07=Tracking level 6
+0A07=Tracking Level 6
 
 :0F07=追跡レベル7
-0F07=Tracking level 7
+0F07=Tracking Level 7
 
 :スライドして追加検索
-Slide Match
+Slide to Search
 
 :0=追加検索しない
-0=no additional search
+0=No Additional Searching
 
 :現在のROMと、\r\n他のバージョンのROMをバイナリ比較して、\r\n特定のデータがどこにあるかを特定します。\r\nたとえば、画像やプログラムなどは\r\nFE7,FE8共通して使われているので、\r\nどこに移動したか検索することができます。
-Binary comparison between\r\nthe current ROM and\r\nother versions of ROM to\r\ndetermine where\r\nspecific data is located.\r\nFor example, images, programs, etc.\r\nare used in common with FE7 and FE8,\r\nso you can search where you moved data.
+Use binary comparison between\r\nthe current ROM and\r\nother versions of the ROM to\r\ndetermine where\r\nspecific data is located.\r\nFor example, images, processes, and so on\r\nmay be shared between FE7 and FE8,\r\nso you can search where they're differently located.
 
 :比較方法
 Comparison Method
 
 :0=完全一致
-0=Perfect Matching
+0=Perfect Match
 
 :1=パターンマッチ
 1=Pattern Match
 
 :比較サイズ
-Comparison size
+Comparison Size
 
 :探索にASMMapを利用する
 Use ASMMap for searching
@@ -9692,88 +9647,88 @@ Use ASMMap for searching
 Searching
 
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
-Incompatible ROM.\r\ngameversion = {0}\r\nSize = {1}
+Incompatible ROM.\r\nGame Version = {0}\r\nSize = {1}
 
 :GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n{3}
-GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, please send report7z.\r\nErrorCode: {0} {1}.\r\nMessage :.\r\n{2}.\r\n{3}.
+GDI + Exception occurred.\r\nPlease try again.\r\nIf this reoccurs, please send a report7z.\r\nErrorCode: {0} {1}\r\nMessage:\r\n{2}\r\n{3}
 
 :System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
-A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+A System.UnauthorizedAccessException error has occurred.\r\nIf this reoccurs, please send a report7z.\r\nMessage:\r\n{0}\r\n{1}
 
 :System.OutOfMemoryExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
-A System.OutOfMemoryException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+A System.OutOfMemoryException error has occurred.\r\nIf this reoccurs, please send a report7z.\r\nMessage:\r\n{0}\r\n{1}
 
 :例外が発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
-Exception occured.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+Exception occured.\r\nIf this reoccurs, please send a report7z.\r\nMessage:\r\n{0}\r\n{1}
 
 :警告
-Alert
+Warning
 
 :警告:データが途中で終わってしまいました。 addr:{0} data.Length:{1} countI:{2}
-Warning: The data has ended prematurely.addr: {0} data.Length: {1} countI: {2}.
+Warning: The data has unexpectedly ended. addr: {0} data.Length: {1} countI: {2}
 
 :エミュレータが動作していません。
-The emulator is not working.
+Emulator is not running
 
 :OverflowException! 32bitバージョンのエミュレータを利用していますか?
-OverflowException! Please use the 32bit version of the emulator.
+OverflowException! Please use the 32-bit version of the emulator.
 
 :OpenProcess APIが失敗ました。
-The OpenProcess API failed.
+The OpenProcess API has failed.
 
 :読込むメモリを特定できませんでした。(Page02,Page03)
-Could not determine the memory to read.(Page 02, Page 03).
+Could not identify what memeory to load. (Page 02, Page 03)
 
 :読込むメモリを特定できませんでした。(Page02)
-Could not determine the memory to read.(Page 02).
+Could not identify what memeory to load. (Page 02)
 
 :読込むメモリを特定できませんでした。(Page03)
-Could not determine the memory to read.(Page 03).
+Could not identify what memeory to load. (Page 03)
 
 :Page02を読めませんでした。bytesRead:{0},MemBasicInfo02.RegionSize:{1},
-Could not read Page02.bytesRead: {0}, MemBasicInfo02.RegionSize: {1},.
+Could not read Page02. bytesRead: {0}, MemBasicInfo02.RegionSize: {1},
 
 :Page02に必須の値がありません。procs_game_main:{0},data:{1},rom_procs_game_main:{2},
-Page02 has no mandatory value.procs_game_main: {0}, data: {1}, rom_procs_game_main: {2},.
+Page02 does not have the required value. procs_game_main: {0}, data: {1}, rom_procs_game_main: {2},
 
 :Page03を読めませんでした。bytesRead:{0},MemBasicInfo03.RegionSize:{1},
-Could not read Page 03.bytesRead: {0}, MemBasicInfo03.RegionSize: {1},.
+Could not read Page 03. bytesRead: {0}, MemBasicInfo03.RegionSize: {1},
 
 :Page03に必須の値がありません。user_stack_base:{0},data:{1},function_fe_main_return_address:{2},
-Page 03 has no mandatory value.user_stack_base: {0}, data: {1}, function_fe_main_return_address: {2},.
+Page 03 does not have the required value. user_stack_base: {0}, data: {1}, function_fe_main_return_address: {2},
 
 :Page02に書き込めません。bytesWrite:{0},size:{1}
-Can not write to Page02.bytesWrite: {0}, size: {1}.
+Cannot write to Page02. bytesWrite: {0}, size: {1}
 
 :Page03に書き込めません。bytesWrite:{0},size:{1}
-Can not write to Page03.bytesWrite: {0}, size: {1}.
+Cannot write to Page03. bytesWrite: {0}, size: {1}
 
 :RAM上のユニットの特性を指定してください。
-Please specify the characteristics of the unit in the RAM.
+Specify the characteristics of the unit in RAM.
 
 :重複 
-Overlap
+Duplicate
 
 :重複だが結合できる 
-Can duplicate or merge
+Duplicate, can be merged
 
 :アドレスが端数値なので補正しようとしましたが、サイズが4未満なので利用しません
-I tried to correct it because the address is a fractional number, but I don't use it because the size is less than 4.
+The address is a fractional value. An attempt was made to fix this, but it failed as the size is less than 4.
 
 :アドレスが端数値なので補正しようとしたらサイズ不足になりました
-Since the address is a fractional number, the size was insufficient when I tried to correct it.
+The address is a fractional value and must be corrected. An attempt was made to correct it, but there was insufficient data.
 
 :アドレスが端数値なので補正します。
-Since the address is a fractional value, correct it.
+The address is a fractional value and must be corrected.
 
 :切り取り(&X)
-Cut(&X)
+Cut (&X)
 
 :すべて選択(&A)
-SelectAll(&A)
+Select All (&A)
 
 :event_assemblerが、0x0 - 0x100 の領域を書き換えました。\r\nこの領域への書き込みは危険です。\r\nこの内容を本当に適応してもよろしいですか？\r\n\r\n「はい」ならば適応します。\r\nそれ以外ならば変更を破棄します。
-Are you sure you want to adapt this content?
+Event Assembler has written to 0x0 to 0x100.\r\nWriting to this area is very dangerous.\r\nAre you sure you want to install this content?\r\nIf you know what you are doing, press "Yes" to adapt these changes - else, discard them.
 
 :武器屋
 Armory
@@ -9782,7 +9737,7 @@ Armory
 Vendor
 
 :秘密屋
-Secret shop
+Secret Shop
 
 :現在開いているROMが外部プログラムで変更されています。\r\n変更されたROMを再読み込みしますか？
 The ROM currently open has been changed by an external program.\r\nWould you like to reread the modified ROM?
@@ -9791,28 +9746,28 @@ The ROM currently open has been changed by an external program.\r\nWould you lik
 ROM has been changed.
 
 :次を検索
-Next
+Search Next
 
 :「データ({0}) 元の長さ({1} {2})」は、長さ({3} {4})のデータとなり、既存のスペースに入りきりません。\r\nこのデータを割り当てる領域を指定してください。\r\n\r\n指定しない場合は、\r\nディフォルトで割り当てられる({5})から変更せずに、割り当てボタンを押してください。
-"Data ({0}) Original length ({1} {2})" becomes data of length ({3} {4}), which cannot fit in the existing space.\r\nSpecify the area to allocate this data.\r\n\r\nIf not specified ,.\r\nPress the Assign button without changing the default assignment ({5}).
+"Data ({0}), Original length ({1} {2})" becomes the length of ({3} {4}), which cannot fit into the existing space.\r\nSpecify the area to reallocate this data.\r\n\r\nIf not specified, press the Assign button\r\nwithout changing the default assignment ({5}).
 
 :新しい領域
-New area.
+New Area
 
 :再割り当てアドレスの指定
-Specify reassignment address.
+Specify New Address
 
 :スキル拡張 SkillSystem の、アイコンを取得できません。
-Skill extension SkillSystem's icon can't be acquired.
+Skill Extensions cannot get SkillSystem's Icons.
 
 :スキル拡張 SkillSystem の、テキストを取得できません。
-Skill extension SkillSystem's text can't be acquired.
+Skill Extensions cannot get SkillSystem's Text.
 
 :スキル拡張 SkillSystem の、クラススキルを取得できません。
-Skill extension SkillSystem's class skills can't be acquired.
+Skill Extensions cannot get SkillSystem's Class Skills.
 
 :スキル拡張 SkillSystem の、レベルアップスキルを取得できません。
-Skill enhancement SkillSystem's level up skill can't be acquired.
+Skill Extensions cannot get SkillSystem's Level-Up Skills.
 
 :(Lv{0}で習得)
 (Learned from Lv {0})
@@ -9842,7 +9797,7 @@ Personal Skill
 FE8N Skill
 
 :スキル拡張 SkillSystem の、個人スキルを取得できません。
-Skill Extension SkillSystem's personal skills can't be acquired.
+Skill Extensions cannot get SkillSystem's Personal Skills.
 
 :ユニット16
 Unit 16
@@ -10034,7 +9989,7 @@ Interpret as Class
 Interpret as Item
 
 :それ以外
-other than that
+Otherwise
 
 :注意:アイコン表示条件は、ただアイコンを表示するだけの設定です。\r\nここを変えたからといってスキルが設定されるわけではありません。\r\n条件の中身は、ユニットIDかクラスIDか特性1-4かアイテムIDです。\r\nパッチのバージョンで内容が変わるらしく、統一規格はありません。
 Note: The icon display condition is purely cosmetic.\r\nChanging this does not mean that the skill is set.\r\nThe determinators of the condition are unit ID, class ID, characteristics 1-4, or item ID.\r\nAs these can change per version, there is no unified standard.
@@ -10052,7 +10007,7 @@ Failed to get the pointers from Skill Extension FE8Nver 2.
 Skill Extension FE8Nver 2 does not have the needed number of pointers.\r\n{0} entries are needed but there's only {1}.
 
 :(自軍時のみ)
-(Only for Player Army troops)
+(Only for Player Army)
 
 :(敵軍時のみ)
 (Only for Enemy Army)
@@ -10588,8 +10543,8 @@ The .byte instruction was used without a global label.\r\nPlease define global l
 :.byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
 ".byte" Error during parsing {2}.\r\n{3}\r\nFile: {0} Line: {1}
 
-:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
-The .word instruction was used without the global label.\r\nFirst, define a global label...\r\n\r\nFile: {0} Line: {1}.
+:グローバルラベルがないのに、 .word命令が使われました。\r\nまずはグローバルラベルを定義してください。\r\n\r\nFile:{0} Line:{1}
+The .word instruction was used without a global label.\r\nPlease define global label first.\r\n\r\nFile: {0} Line: {1}
 
 :.wordは1つ以上のラベル引数が必要です.\r\n例: .byte arg1....\r\n\r\nFile:{0} Line:{1}
 ".word" requires one or more label arguments.\r\nExample:.byte arg1.\r\n\r\nFile: {0} Line: {1}
@@ -11718,9 +11673,6 @@ Event Flag Namer
 
 :ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}
 Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfilename: {2}.
-
-:ダウンロードするためのテンポラリファイルを作成できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
-Could not create a temporary file to download.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
 :ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
 Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
@@ -12954,4 +12906,3 @@ Map Skirmish Type
 
 :いつでも入れるかどうか
 Placement Flag
-
