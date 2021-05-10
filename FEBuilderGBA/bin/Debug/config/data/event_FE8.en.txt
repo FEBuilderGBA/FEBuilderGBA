@@ -171,6 +171,7 @@
 422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
 402C0100FFFFFFFF	Load reinforcements of memory slot 2(LOW)
 412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)
+412C0000FFFFFFFF	Load units of memory slot 2(LOAD1)(LOW)
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]

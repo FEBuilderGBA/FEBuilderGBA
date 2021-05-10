@@ -106,6 +106,7 @@
 422C0000XXXXXXXX	人物读数 For cutscenes[XXXXXXXX:POINTER_UNIT:人物信息](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
 402C0100FFFFFFFF	Load reinforcements of memory slot 2(LOW)
 412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)
+412C0000FFFFFFFF	Load units of memory slot 2(LOAD1)(LOW)
 20430000	用剑中风杀死的动画	{J}
 2043XXXX	RESUMM[XXXX:UNIT:人物]
 2041XXYY	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y](LOW)

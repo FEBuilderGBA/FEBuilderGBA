@@ -22,13 +22,6 @@ namespace FEBuilderGBA
             public string Error;
             public bool isJump;
 
-            public bool isTeqExtends;
-            public uint Code4;
-            public uint Code5;
-            public uint Code6;
-            public uint Code7;
-            public uint Code8;
-
             public uint[] Units;
 
             public TextBlock()
@@ -601,89 +594,6 @@ namespace FEBuilderGBA
         {
             return (str == "@0008" || str == "@0009" || str == "@000a" || str == "@000b" || str == "@000c" || str == "@000d" || str == "@000e" || str == "@000f" || str == "@000A" || str == "@000B" || str == "@000C" || str == "@000D" || str == "@000E" || str == "@000F");
         }
-        static uint GetNextCharIfAtMark(string srctext,int len,ref int next_i)
-        {
-            Debug.Assert(len == srctext.Length);
-
-            uint code2 = 0;
-            if (next_i <= len - 5 && srctext[next_i] == '@')
-            {//次もコード
-                code2 = U.atoh(U.substr(srctext, next_i + 1, 4));
-                next_i += 5;
-            }
-            return code2;
-        }
-        static uint GetNextCharEvenForce(string srctext, int len, ref int next_i)
-        {
-            Debug.Assert(len == srctext.Length);
-
-            uint code2 = 0;
-            if (next_i <= len - 5 && srctext[next_i] == '@')
-            {//次もコード
-                code2 = U.atoh(U.substr(srctext, next_i + 1, 4));
-                next_i += 5;
-            }
-            else if (next_i <= len - 1)
-            {
-                code2 = srctext[next_i];
-                next_i += 1;
-            }
-            return code2;
-        }
-        static bool IsTeqTextEngineRework(uint code1, uint code2)
-        {
-            return code1 == 0x80 && (code2 >= 0x26 && code2 <= 0x38) 
-                && PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TextEngineRework;
-        }
-
-        static TextBlock MakeTextBlockForTeqTextEngineRework(uint code1, uint code2, string srctext, int len, ref int i, int codestart, uint lastPosstion)
-        {
-            Debug.Assert(IsTeqTextEngineRework(code1,code2));
-            //コード部分の保存.
-            uint code3 = 0;
-            uint code4 = 0;
-            uint code5 = 0;
-            uint code6 = 0;
-            uint code7 = 0;
-            if (code2 == 0x26 || code2 == 0x29 || code2 == 0x2A || code2 == 0x2B || code2 == 0x2C || code2 >= 0x38)
-            {//add 1byte
-                code3 = GetNextCharEvenForce(srctext, len, ref i);
-            }
-            else if (code2 == 0x27 || code2 == 0x28 || code2 == 0x2E)
-            {//add 2byte
-                code3 = GetNextCharEvenForce(srctext, len, ref i);
-                code4 = GetNextCharEvenForce(srctext, len, ref i);
-            }
-            else if (code2 == 0x2D)
-            {//add 4byte
-                code3 = GetNextCharEvenForce(srctext, len, ref i);
-                code4 = GetNextCharEvenForce(srctext, len, ref i);
-                code5 = GetNextCharEvenForce(srctext, len, ref i);
-                code6 = GetNextCharEvenForce(srctext, len, ref i);
-            }
-            else if (code2 == 0x2F)
-            {//add 5byte
-                code3 = GetNextCharEvenForce(srctext, len, ref i);
-                code4 = GetNextCharEvenForce(srctext, len, ref i);
-                code5 = GetNextCharEvenForce(srctext, len, ref i);
-                code6 = GetNextCharEvenForce(srctext, len, ref i);
-                code7 = GetNextCharEvenForce(srctext, len, ref i);
-            }
-
-            string codetext = U.substr(srctext, codestart, i - codestart);
-            TextBlock current = new TextForm.TextBlock();
-            current.SrcText = codetext;
-            current.Code1 = lastPosstion;
-            current.Code2 = code1;  //0x80
-            current.Code3 = code2;
-            current.Code4 = code3;
-            current.Code5 = code4;
-            current.Code6 = code5;
-            current.Code7 = code6;
-            current.Code8 = code7;
-            current.isTeqExtends = true;
-            return current;
-        }
 
         //テキストをパースする
         static void ParseTextList(string srctext, out List<TextBlock> simpleList)
@@ -710,8 +620,13 @@ namespace FEBuilderGBA
                 //1コード分先読みする.
                 int next_i = i;
 
+                uint code2 = 0;
                 next_i += skip_linebreak(srctext, next_i); //FE7では、いきなり改行されるときがある.
-                uint code2 = GetNextCharIfAtMark(srctext, len, ref next_i);
+                if (next_i <= len - 5 && srctext[next_i] == '@')
+                {//次もコード
+                    code2 = U.atoh(U.substr(srctext, next_i + 1, 4));
+                    next_i += 5;
+                }
 
                 if ((code1 >= 8 && code1 <= 0xF))
                 {//場所を定義するコード @0008 - @000F
@@ -738,11 +653,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if ( (code1 == 0x0010 && code2 > 0x100) 
-                    || IsMoveOrJump(code1,code2) 
-                    || code1 == 0x11
-                    || IsTeqTextEngineRework(code1, code2)
-                    )
+                if ( (code1 == 0x0010 && code2 > 0x100) || IsMoveOrJump(code1,code2) || code1 == 0x11)
                 {
                     i = next_i;
 
@@ -775,6 +686,7 @@ namespace FEBuilderGBA
                             code2 = 0;
                         }
                     }
+
                     
                     if (seriftext != "" && CheckPosCodeOnly(seriftext) == false)
                     {
@@ -784,16 +696,6 @@ namespace FEBuilderGBA
                         current.Code2 = 0;
                         current.Code3 = 0;
                         simpleList.Add(current);
-                    }
-
-                    //Teqによるテキストエンジンリワーク
-                    if (IsTeqTextEngineRework(code1, code2))
-                    {
-                        TextBlock current = MakeTextBlockForTeqTextEngineRework(code1, code2
-                            , srctext, len, ref i, codestart, lastPosstion);
-                        simpleList.Add(current);
-                        textstart = i;
-                        continue;
                     }
 
                     //コード部分の保存.
@@ -1535,14 +1437,14 @@ namespace FEBuilderGBA
             HideFloatingControlpanel();
         }
 
-        static String ConvertSimpleListToText(List<TextBlock> simpleList)
+        String ConvertSimpleListToText(List<TextBlock> simpleList)
         {
-            StringBuilder sb = new StringBuilder();
+            string ret = "";
             for (int i = 0; i < simpleList.Count; i++)
             {
-                sb.Append(simpleList[i].SrcText);
+                ret += simpleList[i].SrcText;
             }
-            return sb.ToString();
+            return ret;
         }
 
 
@@ -2956,6 +2858,254 @@ namespace FEBuilderGBA
             }
             return "";
         }
+
+        enum CheckBlockResult
+        {
+             NoError
+            ,ErrorWidth
+            ,ErrorHeight
+            ,ErrorFont
+        }
+
+        class CheckText
+        {
+            public string ErrorString { get; private set; }
+            public string ErrorFont { get; private set; }
+
+            bool FoundUnkownFont;
+            bool IsMultiByte;
+            bool HasAutoNewLine;
+            OptionForm.textencoding_enum TextEncoding;
+            OptionForm.lint_text_skip_bug_enum LintTextSkipBug;
+
+            public CheckText(string mainText)
+            {
+                this.TextEncoding = OptionForm.textencoding();
+                this.LintTextSkipBug = OptionForm.lint_text_skip_bug();
+                this.IsMultiByte = Program.ROM.RomInfo.is_multibyte();
+                this.HasAutoNewLine = CheckHasAutoNewLine(mainText);
+            }
+
+            bool CheckHasAutoNewLine(string text)
+            {
+                if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                {//自動改行が入っている場合は、長さのチェックをしない
+                    if (text.IndexOf("@0080@0090") >= 0
+                        || text.IndexOf("@0080@0091") >= 0
+                        )
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            public CheckBlockResult CheckBlockBox(string text, int widthLimit, int heightLimit,bool isItemFont)
+            {
+                if (this.TextEncoding == OptionForm.textencoding_enum.ZH_TBL)
+                {//中国語の場合、今のところフォントデータが取れないので何もチェックできない.
+                    return CheckBlockResult.NoError;
+                }
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//日本語の場合 (.+?)を消す. (ワイバーンナイト)とか
+                    text = RegexCache.Replace(text, @"\(.+?\)", "");
+                }
+                this.FoundUnkownFont = false;
+
+                string[] blocks = text.Split(new string[] { "@0002", "@0004", "@0005", "@0006", "@0007" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int n = 0; n < blocks.Length; n++)
+                {
+                    Size size = MeasureTextMultiLine(blocks[n], isItemFont);
+                    if (this.FoundUnkownFont)
+                    {
+                        if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.DetectButExceptForVanilla)
+                        {//検出するが、無改造ROMにある、もとからあるものは除く
+                            if (IsOrignalBug(blocks[n], n, size))
+                            {
+                                continue;
+                            }
+                        }
+
+                        this.ErrorString = R._("警告:フォントがありません。\r\n文字:{0}\r\n{1}", this.ErrorFont, blocks[n]);
+                        return CheckBlockResult.ErrorFont;
+                    }
+                    if (size.Width > widthLimit)
+                    {
+                        if (this.HasAutoNewLine)
+                        {//自動改行が入っている場合は、長さのチェックをしない
+                        }
+                        else
+                        {
+                            this.ErrorString = R._("警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}", size.Width, size.Height, blocks[n]);
+                            return CheckBlockResult.ErrorWidth;
+                        }
+                    }
+                    if (size.Height > heightLimit)
+                    {
+                        if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.None)
+                        {//設定により無視
+                            continue;
+                        }
+                        else if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.MoreThan4Lines)
+                        {//4行以上
+                            if (size.Height / 16 < 4)
+                            {
+                                continue;
+                            }
+                        }
+                        else if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.DetectButExceptForVanilla)
+                        {//検出するが、無改造ROMにある、もとからあるものは除く
+                            if (IsOrignalBug(blocks[n], n, size))
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {//すべて検出する.
+                        }
+
+                        this.ErrorString = R._("警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}", size.Width, size.Height, blocks[n]);
+                        return CheckBlockResult.ErrorHeight;
+                    }
+                }
+                return CheckBlockResult.NoError;
+            }
+
+            bool IsOrignalBug(string str,int n, Size size)
+            {
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    if (Program.ROM.RomInfo.is_multibyte())
+                    {
+                        if (n == 0 && size.Width==156 && size.Height==48 &&
+                            str.IndexOf("エイリーク様はヒーニアス王子救出に\r\n") >= 0) ///No Translate
+                        {
+                            return true;
+                        }
+                        if (n == 0 && size.Width == 172 && size.Height == 48 &&
+                            str.IndexOf("それに、せっかくここにいるのに、\r\n") >= 0) ///No Translate
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else if (Program.ROM.RomInfo.version() == 7)
+                {
+                    if (Program.ROM.RomInfo.is_multibyte())
+                    {
+                        if (n == 0 && size.Width == 107 && size.Height == 48 &&
+                            str.IndexOf("狭い通路と出入り口を\r\n") > 0) ///No Translate
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        if (n == 5 && size.Width == 171 && size.Height == 48 &&
+                            str.IndexOf("But I'm so young,") > 0) ///No Translate
+                        {
+                            return true;
+                        }
+                        if (n == 0 && size.Width == 126 && size.Height == 48 &&
+                            str.IndexOf("My name is Serra.") > 0) ///No Translate
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else
+                {//FE6
+                    if (str == "官吏") ///No Translate
+                    {
+                        return true;
+                    }
+
+                }
+                return false;
+            }
+
+            //フォントで描画した場合の幅と高さを求める.
+            Size MeasureTextMultiLine(string str, bool IsItemFont)
+            {
+                uint maxwidth = 0;
+                uint maxheight = 0;
+
+                string[] lines = str.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                uint height = 0;
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string line = lines[i];
+                    int code0003Pos = line.IndexOf("@0003");
+
+                    line = TextForm.StripAllCode(line);
+                    if (height == 0 && line == "")
+                    {//最初の空行なので無視が妥当.
+                        continue;
+                    }
+
+                    height++;
+                    if (code0003Pos == 0)
+                    {//冒頭に@0003がある場合は行に含めてはいけない.
+                        height--;
+                    }
+                    if (code0003Pos >= 0)
+                    {
+                        if (height > maxheight)
+                        {
+                            maxheight = height;
+                        }
+                        height = 0;
+                    }
+
+                    uint width = MeasureTextWidthOneLine(line, IsItemFont);
+                    if (code0003Pos > 0)
+                    {//@0003がある場合、2ドット使えるサイズが小さいらしい.
+                        width += 2;
+                    }
+                    if (width > maxwidth)
+                    {
+                        maxwidth = width;
+                    }
+                }
+
+                //最後の残り
+                if (height > maxheight)
+                {
+                    maxheight = height;
+                }
+                return new Size((int)maxwidth, 16 * (int)maxheight);
+            }
+            //フォントで描画した場合の幅を求める.
+            uint MeasureTextWidthOneLine(string str, bool IsItemFont)
+            {
+                uint sum = 0;
+                uint[] widths = FontForm.MeasureTextWidthOneLineInts(str, IsItemFont);
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    if (widths[i] <= 0)
+                    {
+                        char o = str[i];
+                        if (o == 0x001F)
+                        {
+                            continue;
+                        }
+                        if (this.IsMultiByte == false)
+                        {//シングルバイト圏ではこのチェックをしない.
+                            continue;
+                        }
+                        this.FoundUnkownFont = true;
+                        this.ErrorFont = o.ToString();
+                        break;
+                    }
+                    else
+                    {
+                        sum += widths[i];
+                    }
+                }
+                return sum;
+            }
+        }
+
         //会話テキストのエラーチェック
         public static string CheckConversationTextMessage(string text, int widthLimit)
         {

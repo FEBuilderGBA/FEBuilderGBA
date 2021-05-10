@@ -1820,16 +1820,16 @@ End Events are events that are called at the end of the chapter, once flag 03 is
 Seize Flag
 
 :壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-Although it is Broken Wall, but the tile change of map is not set. x:{0} y:{0}
+There is a Broken Wall, but the tile change of map is not set. x:{0} y:{0}
 
 :古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-Although it is Srag, but the tile change of map is not set. x:{0} y:{0}
+There is a Srag, but the tile change of map is not set. x:{0} y:{0}
 
 :「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。
 A Home/Visit event exists, though "{0}" is set as its type.
 
 :村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-Even though it is a village, the tile change of the map is not set.x: {0} y: {0}.
+There is a Village event, the tile change of the map is not set. x:{0} y:{0}
 
 :宝箱なのに、種類で「{0}」が設定されています。
 A chest event has "{0}" set as its type.
@@ -1838,13 +1838,13 @@ A chest event has "{0}" set as its type.
 The gold and item settings are incorrect.\r\n\r\nTo make a treasure chest with just gold in it, set the item obtained by it as the "{0} Gold" item.\r\nConversely, if the treasure box contain an item instead of gold, the field for gold should be at 0 if present.\r\n
 
 :宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-Although it is treasure chest, but the tile change of map is not set. x:{0} y:{0}
+There is a Chest event, but the tile change of map is not set. x:{0} y:{0}
 
 :ドアなのに、種類で「{0}」が設定されています。
 There is a Door event, but "{0}" is set as the type.
 
 :ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-Even though it is a door, the tile change of the map is not set.x: {0} y: {0}.
+There is a Door event, the tile change of the map is not set. x:{0} y:{0}
 
 :店なのに、種類で「{0}」が設定されています。
 There is a Shop event, but "{0}" is set as the type.
