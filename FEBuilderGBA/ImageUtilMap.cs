@@ -106,6 +106,36 @@ namespace FEBuilderGBA
             return configUZ;
         }
 
+        //マップのタイルの種類だけの配列を作る
+        public static byte[] LoadMapTileIDs(uint mapid, out int outMapWidth, out int outMapHeight)
+        {
+            MapSettingForm.PLists plists = MapSettingForm.GetMapPListsWhereMapID(mapid);
+            ushort[] mar = ImageUtilMap.UnLZ77MapDataUShort(plists.mappointer_plist, out outMapWidth, out outMapHeight);
+            if (mar == null)
+            {
+                return null;
+            }
+
+            byte[] configUZ = ImageUtilMap.UnLZ77ChipsetData(plists.config_plist);
+            if (configUZ == null)
+            {
+                return null;
+            }
+
+            int size = outMapWidth * outMapHeight;
+            byte[] tiles = new byte[size];
+            for (int i = 0; i < size; i++)
+            {
+                uint terrain_data = ImageUtilMap.GetChipsetID(mar[i], configUZ);
+                if (terrain_data == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                tiles[i] = (byte)terrain_data;
+            }
+            return tiles;
+        }
+
         public static UInt16[] UnLZ77MapDataUShort(uint mappointer_plist, out int out_width, out int out_height)
         {
             //マップ配置データの読込
@@ -1034,5 +1064,12 @@ namespace FEBuilderGBA
             Debug.Assert(r[0x104] == 0xc0);
         }
 #endif
+
+        public const uint VisitVillageTileID = 0x03;
+        public const uint TreasureChestTileID = 0x21;
+        public const uint DoorTileID = 0x1E;
+        public const uint BrokenWallTileID = 0x1B;
+        public const uint BrokenSnagTileID = 0x33; //FE8 or FE7 only
+
     }
 }

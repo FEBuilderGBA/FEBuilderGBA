@@ -39,6 +39,7 @@ namespace FEBuilderGBA
             g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
             g_Cache_HandAxsWildCard = HandAxsWildCard_extends.NoCache;
             g_Cache_soundroom_unlock_enum = soundroom_unlock_enum.NoCache;
+            g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -938,6 +939,34 @@ namespace FEBuilderGBA
                 return AutoNewLine_enum.AutoNewLine;
             }
             return AutoNewLine_enum.NO;
+        }
+
+        //TextEngineRework
+        public enum TextEngineRework_enum
+        {
+            NO,             //なし
+            TextEngineRework,
+            NoCache = (int)NO_CACHE
+        };
+        static TextEngineRework_enum g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
+        public static TextEngineRework_enum SearchTextEngineReworkPatch()
+        {
+            if (g_Cache_TextEngineRework_enum == TextEngineRework_enum.NoCache)
+            {
+                g_Cache_TextEngineRework_enum = SearchTextEngineReworkPatchLow();
+            }
+            return g_Cache_TextEngineRework_enum;
+        }
+        static TextEngineRework_enum SearchTextEngineReworkPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="TextEngineRework",	ver = "FE8U", addr = 0x6FD0,data = new byte[]{0xF0, 0xB5, 0x82, 0xB0}},
+            };
+            if (SearchPatchBool(table))
+            {
+                return TextEngineRework_enum.TextEngineRework;
+            }
+            return TextEngineRework_enum.NO;
         }
 
         //指南パッチの設定アドレスの場所

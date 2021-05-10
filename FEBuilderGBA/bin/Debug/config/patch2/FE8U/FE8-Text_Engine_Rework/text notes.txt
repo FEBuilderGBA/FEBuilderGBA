@@ -1,0 +1,373 @@
+FE8 text engine rework
+
+Things added in the previous version:
+- Custom fonts, and a tool to insert them (bold, italics).
+- Can use the entirety of the text palette, rather than just normal and ToggleRed (allows up to 5 text colors at the same time)
+- Different pitched boops
+- Can change text palette
+- Can change text box palette
+- Can play sounds without needing to interrupt text execution
+
+Problems with previous version:
+- Functions that calculate text box width don't take font changes into account, leading to too large or too small boxes
+	Solution: Edit GetStringTextWidthWithDialogueCodes to take font changes into account
+- Text box palette doesn't update right away; it gets loaded in the original color and then switches, which looks bad
+	Solution: Not sure; shouldn't be hard, though
+- Encoding the sound id (which is a short) is not intuitive. Current method is as follows: split short into two bytes. First byte is the bottom 7 bits, or'd with 0x80. Second byte is the next 7 bits, also or'd with 0x80. The top two bits are discarded because there's no room. Top bits must be set in case either value is 00, which would be interpreted as the text terminator.
+Example: Sound id 0x137. This is (in binary) 0000 0001 0011 0111. First byte consists of the bottom 7 bits (011 0111 = 0x37)|0x80 = 0xB7. Second byte is the next 7 bits (00 0001 0 = 0x2)|0x80 = 0x82. Final encoding is B7 82.
+	Solution: Split the short into 4 bytes, each containing 4 bits with the top bit set. This is much easier to visualize because each digit becomes a byte. 0x137 breaks down to 7 3 1 0 (due to endianess). Add 0x80 to each byte, giving the encoding as 87 83 81 80.
+
+New features I'd like to add:
+- Change the text palette hack to only update a specific block, consisting of 3 colors, rather than the entire palette bank.
+- Custom text box shapes? ToggleColorInvert already makes a box without the tail that shows who's talking. Possibilities include thought bubbles and ANGRY SPIKES.
+- New attributes (text color, bg color, box shape, boop pitch, font) can be set once in the scene struct (each position has one) and remembered, rather than needing to set attributes each time a new box is opened.
+	- LoadFace sets each attribute to default
+	- when using OpenMidRight, etc, compare the new struct's parameters to the old struct's parameters to see whether anything needs to be changed
+	- MoveMidRight, etc, need to copy attributes over when switching structs
+
+Things to watch out for:
+- Don't break default text
+- Zeta's AutoNewLine hack will need to take font into account when calculating the size of the box
+
+FP - 3-line boxes if possible.
+FP - having an additional portrait in the position, or 2 that are more centered than [OpenRight] and [OpenLeft]
+FP - possibility of changing speed which portrait moves across the screen when using [MoveMidRight] and whatnot
+Teq - can flip orientation of portraits, regardless of what side they're loaded on?
+
+TODO:
+
+-All:
+Repoint tables at 8DEC (GetStringTextWidthWithDialogueCodes) and 75B0 (HandleTextCode) to handle the new text codes
+CurrentValues: Find free RAM to store Current Values (font, text palette group, bg palette, boop pitch, box type) (possibility: gDialogueState+0x40 - +0x80 looks free?)
+CurrentFaceAttributes: Find free space in each FaceProc to store their own Current Values (same as above), so that you don't need to reset those values each time the speaker changes; just do [OpenRight] or whatever and the game uses that face's most recent attributes
+Edit [LoadFace] to set default attributes
+Edit [OpenLeft] and its ilk to replace CurrentValues with CurrentFaceAttributes, calling whatever functions necessary to update things that have changed
+
+-Custom fonts:
+Make a table with pointers to font; first one is the default font.
+Syntax: 80 26 XX, XX goes from 1 to 255. XX indexes the above table
+Edit GetWidth to save the current font at the beginning
+Call Font_SetGlyphSet with r0=pointer to glyph set
+Edit GetWidth to call Font_SetGlyphSet with the original font glyph pointer at the end (ok nvm it only takes 0 or 1 as arguments, so do this manually)
+HandleText does the same thing, but doesn't restore the original font later
+HandleText also sets the current font ID in CurrentValues and CurrentFaceAttributes
+Zahlman's tool can create an installer based on a png; include Bold and Italics with the hack
+Update font id in CurrentValues and CurrentFaceAttributes, if applicable
+
+-Change text palette
+Make a table of 6-byte entries consisting of 3 colors (2 bytes each; 5 bits each for red/green/blue and 1 empty)
+Syntax: 80 27 XX YY, XX goes from 1 to 5, YY goes from 1 to 255. Rather than modify the entire palette bank, we swap out 1 "text palette group" (3 colors) at a time. XX is the text palette group, YY is the index for the above table
+Current font's palette index can be found at +14 (short) of the font struct (no getter afaik). Call CopyToPaletteBuffer
+Might need to return something to update palette asap
+
+-Change which text palette group is used (basically ToggleRed with more choices)
+Syntax: 80 28 XX, XX is the text palette group (goes from 1 to 5)
+Update text palette group id in CurrentValues and CurrentFaceAttributes, if applicable
+[ToggleRed] calls 6F00; reference this/rewrite it to take arguments
+
+-Change text box palette
+Make a table of pointers to a table of palette banks (0x20 bytes)
+Syntax: 80 29 XX, XX goes from 1 to 255
+Update text box palette id in CurrentValues and CurrentFaceAttributes, if applicable
+Call CopyToPaletteBuffer, r1=60
+
+-Change text box type
+Make a table of pointers to graphics. D78EC has pointers to the default box; there's 6 of them, 2 per frame (ok actually there's 7; null pointer used as a terminator)
+Syntax: 80 2A XX, XX goes from 1 to 127. Top bit (0x80) is set if the tail should NOT be displayed
+83F8 gets and decompresses the correct graphics with a copy to the stack; should be room to do this inline
+
+-Set text box height
+Syntax: 80 2B XX, XX goes from 1 to 3
+gDialogueState+0xA is max number of lines in the box, so just write to this
+88D8 hardcodes box height to 6; replace this with a check to the above
+Write mov r5,#3 to 6848 to ensure 3 text structs (1 per line) are always cleared
+
+-Different text boops
+Make a table of different pitched boops (already done)
+Syntax: 80 2C XX, XX goes from 1 to 25. This spans 2 octaves, with 1 being the lowest tone and 25 the highest; 13 is the normal pitch
+Update boop pitch id in CurrentValues and CurrentFaceAttributes, if applicable
+Sound is played in DialogueMain_OnLoop; may need to rewrite a portion to insert a hook due to lots of branches. Call to m4aSongNumStart at 6D7A; replace with call to MPlayStart and get the song data from the table
+
+-Play sounds
+Syntax: 80 2D 8D 8C 8B 8A for sound if 0xABCD (little endian is used here to match portrait loading endianness)
+Call m4aSongNumStart. Not terribly hard
+
+-Change the location of the portraits
+591570 contains x coordinates in tiles of each position (FarFarLeft, FarLeft, etc). The values are 3 (FL), 6 (ML), 9 (L), 15 (R), 18 (MR), 1B (FR), -8 (FFL), 26 (FFR). The numbers seem to refer to the coordinate of the mouth object, not the portrait itself
+Syntax: 80 2E XX YY; XX is the position id (1-8), and YY is the coordinate in tiles
+Edit some function that only gets run once (DialogueMain_OnInit is most likely candidate) to write these values somewhere in RAM, then have this command edit them
+Keeping the coordinates as tiles rather than pixels for simplicity's sake; far too many calls to the position getter (8934) to change this easily
+
+-LoadFace with portrait flipping and eyes closed
+Portraits loaded on the left side of the screen (mouth at <=0xE tiles) are automatically flipped when using LoadFace. In addition, if using CloseEyes immediately, you have to wait for the portrait to finish fading in (~7 frames) before the close eyes effect takes.
+Syntax: 80 2F XX XX AA BB CC DD EE FF
+XX XX is the portrait id, in the same format as the regular [LoadFace]
+AA: bit 1 will be used to denote flipping (0 for non-flipped, 1 for flipped), and bit 2 will be used to denote eyes closed (0 for open, 1 for closed). 0x3 = flip + eyes closed
+BB is font, CC is text color group, DD is text box palette, EE is text box type, and FF is text boop pitch; same as the commands that edit them individually
+Edit 7854 to take an argument in r1 as to whether it should check for flipping or not
+For eyes closed, call 64D4 with r0=FaceProc and r1=2
+
+-Variable speeds when using MoveLeft and their ilk
+Syntax: 80 (30-37) XX; XX goes from 1 to 255, and is the number of frames it takes to get from A to B. Default values are 0x20 for distances more than 12 tiles, and 0x10 for less.
+30-37 refers to the position; same order as regular MoveLeft (80 30 XX would be MoveFarLeft, 80 31 XX would be MoveMidLeft, etc)
+At 7A58, store 0 at +5C. Make a text code for "move with adjustable speed"; store the speed here. In 7AB0, skip the function if non-zero.
+
+-Change text speed
+Syntax: 80 38 XX; XX goes from 1 to 255, where 0xFF means "use default setting"
+Sets gDialogueState+0x13 to XX, which is the number of frames between characters
+
+Current text codes:
+00 Terminator
+01 Newline
+02 2 newlines
+03 Press A to continue
+04 Short pause
+05 Longer pause
+06 Even longer pause
+07 Longest pause
+08 open far left
+09 open mid left
+0A open left
+0B open right
+0C open mid right
+0D open far right
+0E open far far left
+0F open far far right
+10 load face (73AC)
+11 clear face
+12 ? (fe6 only)
+13 ? (fe6 only)
+14 close speech bubble quickly
+15 close speech bubble slowly
+16 toggle mouth move
+17 toggle smile
+18 yes/no, default to yes
+19 yes/no, default to no
+1A buy/sell (glitches if no shop, apparently)
+1B shopcontinue, fe8 only
+1C send selected character to back
+1D FastPrint, whatever the heck that is
+1E unused
+1F [.] aka nothing
+20-7F are ascii symbols
+There are more codes preceded by 0x80
+80 00
+80 01
+80 02
+80 03
+80 04 [LoadOverworldFaces], which seems to be more "pause text and go back to event execution"
+80 05 Print monetary amount [G]
+80 06 (7708)
+80 07
+80 08
+80 09
+80 0A move far left
+80 0B move mid left
+80 0C move left
+80 0D move right
+80 0E move mid right
+80 0F move far right
+80 10 move far far left
+80 11 move far far right
+80 12
+80 13
+80 14
+80 15
+80 16 enable blinking
+80 17
+80 18 delay blinking
+80 19 pause blinking
+80 1A
+80 1B disable blinking
+80 1C open eyes
+80 1D close eyes
+80 1E half close eyes
+80 1F wink
+80 20 tactician's name (76F0)
+80 21 toggle red (7658)
+80 22 display name of item [Item]
+80 23 [SetName]
+80 24
+80 25 toggle color invert (76AC)
+
+GetStringTextWidthWithDialogueCodes
+Normal codes handled at table 8B80
+80 XX codes handled at table 8DF4
+
+6FD0 (HandleTextCode)
+Normal codes handled at table 7030
+80 XX codes handled at table 75B0
+
+First order of business is to understand how the thing works in the first place.
+Begin by calling 800A240 (String_GetFromIndex), which copies text from the rom to gCurrentTextString = 202A6AC
+CurrentTextIndex = 202B6AC
+[gDialogueState] = [859133C] = 3000048; +0x18 has pointers to each position state?; +0x80 is a short with flags
+StartDialogueFromIndex (6A30) takes r0=1, r1=1, r2=text id. Not sure what the first two parameters refer to.
+	This calls StartDialogue (698C) with the same r0 and r1, r2=beginning of text buffer, r3=0 (r3 is either 0 to start a regular proc, or a proc pointer to start a blocking proc)
+		r0 is strb'd to gDialogueState+0xC, r1 is strb'd to +0xD, text buffer to +0x0, 0 is str'd to +0x4, 1 to +0x8, 0 to +0x9, 0 to 0xB, 0 to +0x82
+		text speed (8/4/1/0) to +0x13 (presumably number of frames between letter)
+		0 to +x01
+		start gProc_DialogueMain (591358)
+
+gProc_DialogueMain:
+_6C_SET_MARK(5)
+_6C_SET_DESTRUCTOR(0x8007C0D)
+_6C_SLEEP(1)
+_6C_CALL_ROUTINE(0x8006C01) (DialogueMain_OnInit)
+_6C_LOOP_ROUTINE(0x8006C35) (DialogueMain_OnLoop)
+
+DialogueMain_OnInit creates gProc_DialogueSkipInputListener (591340), which is
+_6C_SET_MARK(5)
+_6C_LOOP_ROUTINE(0x8006B4D) (DialogueSkipInputListener_OnLoop) (this checks button presses among other things)
+
+3000048: (gDialogueState)
+00	word	pointer to place in text buffer
+04	word	alternate text buffer
+08	byte	text color
+09	byte	Current line number
+0A	byte	number of lines before needing to scroll
+0B	byte	number of lines already scrolled?
+0C	byte	text x coordinate in tiles
+0D	byte	text y coordinate in tiles
+0E	byte	width of text box in tiles
+0F	sbyte	speaking face position
+10	byte	same as 0xE?
+11	byte	active face position
+12	sbyte	set to 1 when pressing A or arrow keys (means we don't check frame count to see whether to interpret the next text byte)
+13	byte	text speed (number of frames between characters
+14	byte	suspected counter for ^
+15	byte	Bool; text is ready to be drawn? Set to 1 at 6E6A
+16	byte	something about ToggleMouthMove
+17	byte	something about ToggleSmile (if set, sets bit 8 in FaceDisplayBits (word at 0x30 of FaceProc)
+18	word	proc for far left
+1C	word	proc for mid left
+20	word	proc for left
+24	word	proc for right
+28	word	proc for mid right
+2C	word	proc for far right
+30	word	proc for far far left
+34	word	proc for far far left
+38	word	?
+
+80	short	flags (0x20 skips a call to LoadObjUIGfx and resetting the position of layer 0 and layer 1)
+	0x0001	don't do the text scrolling upward thing?
+	
+82	byte
+83	byte	0x1 is set if ToggleInvert is currently set, 0x2 is set if ToggleInvert is to be set (do the palette changes)
+
+GetStringTextWidthWithDialogueCodes (8B44): Takes r0=pointer to text, r1=? (currently 0)
+r4=r0=text buffer
+r8=r1
+r9=byte at +0F
+r5=byte at +11
+r6=0
+r7=18 (minimum width?)
+	Gotta update the current font struct here; the rest we can just skip, so we repoint and expand a table at 8DF4
+r7 is current max width, r7 is previous max width
+
+6FD0 (handle_text) reads from text buffer; takes r0=proc. Called at 6C82
+
+
+####### Making 3-line box
+gDialogueState+0x0E (tile width of new box) is read at 88CC and strh'd at proc+0x68
+The proc is 591540 and is called as a blocking proc, consisting of
+_6C_SET_MARK(5)
+_6C_SET_DESTRUCTOR(0x80087A5) just returns, doesn't actually do anything
+_6C_CALL_ROUTINE(0x80087A9) nullsub_74 (fiddles with blending and windows)
+_6C_LOOP_ROUTINE(0x800880D) calls 82A4 with r0=x tile position of the tail, relative to top left tile of box, r1=y coordinate of box?, r2=box width (tiles), r3=box height (tiles)
+_6C_LOOP_ROUTINE(0x8008841) 
+_6C_END
+
+proc+6A has height in tiles; changing it from 6 to 8 doesn't seem to cause any issues, so the box should be easy enough to change
+88D8 sets the height to 6 tiles
+
+6E5C calls Text_Draw for the text in the box at the beginning of each line (part of DialogueMain_UpdateDisplay, 6DA0, which in turn is called from DialogueMain_OnLoop when a letter is to be drawn)
+
+gDialogueText is 30000D0; this is where the text structs are (1 for each line)
+
+Dialogue_InitGfx (680C) gets passed r1=max number of lines, which is 2, and is written to DialogueState+0xA. Make [OpenMidRight], etc, write 0x2 here, so that you don't need to manually set it, and have a code to change lines to 1 or 3 as needed?
+To ensure 3 text structs are always initiated, write mov r5,#3 to 6848, manually write 3 to 3000048+A, and set tile box to 8
+
+[MoveMidRight] etc go to 7720
+8934 seems to get tile location of mug, given position id
+3004980 is called gpFaceProcs. I think these are sorted by creation time. They appear to be the same procs at gDialogueState+0x18, which are indexed by position. +0x34 is a signed short, presumably x coord; seems to be x coord of the mouth "chunk"
+Proc_85913B0 does the moving:
+strh +64 index of the face's proc at gpFaceProcs
+strh +66 new position (signed)
+strh +68 the short from the face proc+0x34, which is current position
+strh +6A a bool; seems to be true if there was another face at the new position (ie, 2 mugs swapping places)
+7AB0 compares the shorts at 66 and 68; if difference is >0x18, mov r0,#0x20; else, mov r0,#0x10; str r0,proc+5C
+the 0x20 is the number of frames it takes to get from point A to point B
+Potential solution: 7A58, store 0 at +5C. Make a text code for "move with adjustable speed"; store the speed here. In 7AB0, skip the function if non-zero.
+
+Adjustable positions:
+8008934 reads a table to find the tile position. Change the offset to ram and copy the default values of the table to ram during some initial function; then have a text code edit these values when necessary.
+
+Flipping portraits independant of which side of the screen they're on:
+Make a custom [LoadFace] with argument for blink and orientation.
+StartFaceAuto: portrait is flipped if r3 && 0x1
+Starting with eyes closed: refer to 77E2  (namely,call 64D4 with r0=position proc and r1=2)
+Need to rewrite 7854 to accept an argument of some sort
+r1=0xFF means vanilla behavior (figure out whether to flip or not based on location); otherwise 0 for no flip, 2 for flip
+something else for start with eyes closed (say, 1)
+
+2000 = something about palettes? checked at 5682
+1000 = no blinking (56F0)
+1 = flipped
+4 doesn't display the bottom part? (the bottom 2 32x16s become 32x8)
+
+ApplyFaceDisplayBitChange (57C0)
+this thing is and'd with 0x807
+valid things are: 0 (FaceObj1), 1 (FaceObj2), 2 (FaceObj3), 3 (FaceObj4), 4 (FaceObj5), 5 (FaceObj6), 800 (FaceObj 7), 801 (FaceObj8)
+
+
+Custom text speed:
+Set +13. Say 0xFF to reset to normal speed?
+
+
+
+Box and maximum lines are set; now I just need a font struct
+Types of text:
+ordinary conversation
+little brown box
+tutorial box
+parchment scroll thingy
+boss/death quotes
+world map text
+guide
+
+
+animate_text.asm is called DialogueMain_OnLoop
+first call 7A3C, which could be called DoesMovingFacesProcExist (Proc_85913B0 could be called Proc_MovingFaces)
+
+returns from HandleTextCode:
+0 breaks the loop
+1 draw text?
+2 if 0x12 is nonzero, go back to loop (calls HandleTextCode again). If 0x13 (text speed) is 0 or less (max?) go back to loop. Otherwise, end
+3 sets frame counter (0x14) to text speed (0x13) and zeroes out 0x12 (bool for skipping counter)
+
+27 calls to 6AA8, aka SetDialogueFlag
+10 - 7432 - set in text code 1C, which is SendToBack, and unset in 1D
+04 - CD7C - EventC6_ (C640 is WM_Text)
+04 - E276 - function after Event1A_TEXTSTART 
+08 - E286 - ^
+01, 02, 04 - 45C98 - may be related to name selection screen in link arena
+01, 02, 04, 08, 40 - B3ACE - not sure
+01, 02, 04 - B419E - related to shops?
+01, 02, 04 - B5C2A - not sure
+01, 04, 20, 80 - C36CA - world map text
+01, 02, 04, 08, 40 - CCA80 - promotion menu
+
+FaceProc:
+2C	word	portrait data pointer
+30	word	face display bits
+34	short	x position of middle
+36	short	y position
+38	word	rom oam data pointer
+3C	short	palette bank/tile number
+
+41	byte	root node index
+
+4C+ looks free in face procs to store stuff in
+
+82A4 draws the text box

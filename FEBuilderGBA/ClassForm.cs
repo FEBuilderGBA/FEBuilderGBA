@@ -644,11 +644,9 @@ namespace FEBuilderGBA
             }
 
             InputFormRef InputFormRef = Init(null);
-            List<U.AddrResult> list = InputFormRef.MakeList();
-            for (int i = 0; i < list.Count; i++)
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                uint addr = list[i].addr;
-
                 uint p;
                 if (Program.ROM.RomInfo.version() == 6)
                 {//FE6
@@ -658,7 +656,6 @@ namespace FEBuilderGBA
                 {//FE7 FE8
                     p = Program.ROM.p32(addr + 52);
                 }
-
 
                 if (p == find_address)
                 {

@@ -409,10 +409,9 @@ namespace FEBuilderGBA
                 string name = "MapChange map:" + U.To0xHexString(mapid) ;
                 FEBuilderGBA.Address.AddAddress(list, N_InputFormRef, name, new uint[] { 8 });
 
-                List<U.AddrResult> arlist = N_InputFormRef.MakeList();
-                for (int n = 0; n < arlist.Count; n++)
+                uint addr = N_InputFormRef.BaseAddress;
+                for (int i = 0; i < N_InputFormRef.DataCount; i++, addr += N_InputFormRef.BlockSize)
                 {
-                    uint addr = arlist[n].addr;
                     uint w = Program.ROM.u8((uint)addr + 3); //サイズw
                     uint h = Program.ROM.u8((uint)addr + 4); //サイズh
                     uint change_mar = Program.ROM.p32((uint)addr + 8); //変化ポインタ
@@ -420,7 +419,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    name = "MapChange map:" + U.To0xHexString(mapid) + " n:" + U.To0xHexString(n);
+                    name = "MapChange map:" + U.To0xHexString(mapid) + " n:" + U.To0xHexString(i);
                     FEBuilderGBA.Address.AddAddress(list,change_mar
                         , w * h * 2
                         , addr + 8

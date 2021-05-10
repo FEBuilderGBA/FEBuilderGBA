@@ -1,0 +1,29 @@
+NAME=Text_Engine_Rework
+
+AUTHOR=Tequila, Zahlman, Stan, Black Mage and Eliwan, The Awful Emblem team https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/118
+
+TYPE=EA
+EA=_FE8-Text_Engine_Rework_EA.event
+TAG=#ENGINE
+
+TEXTESCAPE:101=@0080@0026	[Font]	[Font][XX]
+TEXTESCAPE:102=@0080@0027	[TextPalette]	[TextPalette][XX][YY]
+TEXTESCAPE:103=@0080@0028	[ColorGroup]	[ColorGroup][XX][YY]
+TEXTESCAPE:104=@0080@0029	[BoxBgPalette]	[BoxBgPalette][XX]
+TEXTESCAPE:105=@0080@002A	[BoxType]	[BoxType][XX]
+TEXTESCAPE:106=@0080@002B	[BoxHeight]	[BoxHeight][XX]
+TEXTESCAPE:107=@0080@002C	[BoopPitch]	[BoopPitch][XX]
+TEXTESCAPE:108=@0080@002D	[PlaySound]	[PlaySound][0x8D][0x8C][0x8B][0x8A]
+TEXTESCAPE:109=@0080@002E	[MugLoc]	[MugLoc][XX][YY]
+TEXTESCAPE:111=@0080@002F	[LoadFaceFancy]	[LoadFaceFancy][OPTION]
+TEXTESCAPE:112=@0080@0030	[MFL2]	[MFL2][YY]	FarLeft
+TEXTESCAPE:113=@0080@0031	[MML2]	[MML2][YY]	MidLeft
+TEXTESCAPE:114=@0080@0032	[ML2]	[ML2][YY]	Left
+TEXTESCAPE:115=@0080@0033	[MR2]	[MR2][YY]	Right
+TEXTESCAPE:116=@0080@0034	[MMR2]	[MMR2][YY]	MidRight
+TEXTESCAPE:117=@0080@0035	[MFR2]	[MFR2][YY]	FarRight
+TEXTESCAPE:118=@0080@0036	[MFFL2]	[MFFL2][YY]	FarFarLeft
+TEXTESCAPE:119=@0080@0037	[MFFR2]	[MFFR2][YY]	FarFarRight
+TEXTESCAPE:120=@0080@0038	[TextSpeed]	[TextSpeed][YY]
+
+PATCHED_IF:0x6FD0=0xF0 0xB5 0x82 0xB0

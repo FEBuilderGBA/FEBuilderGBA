@@ -974,6 +974,69 @@ namespace FEBuilderGBA
             }
             return list;
         }
+
+        //壊れる壁と古木もチェック
+        static void CheckBrokenWallSnag(uint mapid, List<FELint.ErrorSt> errors, byte[] tilesArray, int mapWidth,int mapHeight, List<MapChangeForm.ChangeSt> changeList)
+        {
+            int i = 0;
+            for (int y = 0; y < mapHeight; y++)
+            {
+                for (int x = 0; x < mapWidth; x++ , i++)
+                {
+                    if (tilesArray[i] == ImageUtilMap.BrokenWallTileID)
+                    {
+                        if (!IsExistsTileChange((uint)x, (uint)y, changeList))
+                        {
+                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
+                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                        }
+                    }
+                    else if (tilesArray[i] == ImageUtilMap.BrokenSnagTileID)
+                    {
+                        if (!IsExistsTileChange((uint)x, (uint)y, changeList))
+                        {
+                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
+                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                        }
+                    }
+                }
+            }
+        }
+        //そのobjectはタイル変化を持っていますか?
+        static bool DoesObjectHaveTileChanges(uint x, uint y, uint tileid, byte[] tilesArray, int width, List<MapChangeForm.ChangeSt> changeList)
+        {
+            if (tilesArray == null)
+            {//データが読めないので判別不能 とりあえずOKと言っておこうか
+                return true;
+            }
+            if (x >= width)
+            {//範囲外 とりあえずOK
+                return true;
+            }
+            uint index = x + (y * (uint)width);
+            if (index >= tilesArray.Length)
+            {//範囲外 とりあえずOK
+                return true;
+            }
+            uint tile = tilesArray[index];
+            if (tile != tileid)
+            {//目的のタイルではない とりあえずOK
+                return true;
+            }
+            return IsExistsTileChange(x, y, changeList);
+        }
+        static bool IsExistsTileChange(uint x, uint y, List<MapChangeForm.ChangeSt> changeList)
+        {
+            foreach (var f in changeList)
+            {
+                if (x >= f.x && x <= f.x + f.width && y >= f.y && y <= f.y + f.height)
+                {//タイル変化がある
+                    return true;
+                }
+            }
+            //タイル変化がありません
+            return false;
+        }
         
         //エラー検出
         public static void MakeCheckErrors(uint mapid,List<FELint.ErrorSt> errors)
@@ -1005,9 +1068,11 @@ namespace FEBuilderGBA
                 objectTypeOfVendor = 0x14;
                 objectTypeOfSecret = 0x15;
             }
+            List<MapChangeForm.ChangeSt> changeList = MapChangeForm.MakeChangeList(mapid);
+            int mapWidth, mapHeight;
+            byte[] tilesArray = ImageUtilMap.LoadMapTileIDs(mapid, out mapWidth, out mapHeight);
 
-            List<U.AddrResult> list;
-            list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
+            List<U.AddrResult> list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
@@ -1041,6 +1106,14 @@ namespace FEBuilderGBA
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
                             , R._("「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
                     }
+                    if (flag != 0)
+                    {
+                        if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.VisitVillageTileID, tilesArray, mapWidth, changeList))
+                        {
+                            errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                                , R._("村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                        }
+                    }
                 }
                 else if (type == 0x7)
                 {//07=宝箱
@@ -1059,6 +1132,11 @@ namespace FEBuilderGBA
                             , U.ToHexString(Program.ROM.RomInfo.item_gold_id()))
                         ));
                     }
+                    if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.TreasureChestTileID, tilesArray, mapWidth, changeList))
+                    {
+                        errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                            , R._("宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                    }
                 }
                 else if (type == 0x8)
                 {//08=扉
@@ -1067,6 +1145,11 @@ namespace FEBuilderGBA
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
                             , R._("ドアなのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
+                    }
+                    if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.DoorTileID, tilesArray, mapWidth, changeList))
+                    {
+                        errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                            , R._("ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}",x,y)));
                     }
                 }
                 else if (type == 0xA)
@@ -1327,7 +1410,11 @@ namespace FEBuilderGBA
                 FELint.CheckPointer(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 4)));
                 FELint.CheckPointer(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 5)));
             }
+
+            //壊れる壁と古木もチェック
+            CheckBrokenWallSnag(mapid, errors, tilesArray, mapWidth, mapHeight, changeList);
         }
+
 
         static void CheckAlien4(List<U.AddrResult> list, List<FELint.ErrorSt> errors, EventCondForm.CONDTYPE cond)
         {

@@ -556,6 +556,15 @@ Do not set this value to 0.
 :CC分岐
 Promotion Branches
 
+:警告:フォントがありません。\r\n文字:{0}\r\n{1}
+Warning: There is no font.\r\nCharacters: {0}\r\n{1}
+
+:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
+Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\r\n{2}
+
+:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
+Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
+
 :魔力
 MAG
 
@@ -1810,20 +1819,35 @@ EndEvent is an Event that needs to be called at the end of the chapter.\r\nEnabl
 :制圧フラグ
 Seize flag
 
+:壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
+Although it is Broken Wall, but the tile change of map is not set. x:{0} y:{0}
+
+:古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
+Although it is Srag, but the tile change of map is not set. x:{0} y:{0}
+
 :「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。
-Although it is a "Suppression points and private houses", "{0}" is set for the type.
+Although it is "Seize points and private houses", but "{0}" is set for the type.
+
+:村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
+Although it is village, but the tile change of map is not set. x:{0} y:{0}
 
 :宝箱なのに、種類で「{0}」が設定されています。
-Although it is a chest, "{0}" is set for the type.
+Although it is chest, but "{0}" is set for the type.
 
 :ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n
 Gold and item settings are inappropriate.\r\n\r\nIf you want to make a treasure box with gold, you have to make the item "{0} Gold".\r\nConversely, if the treasure box contains items instead of gold, please set the gold column to 0.\r\n
 
+:宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
+Although it is treasure chest, but the tile change of map is not set. x:{0} y:{0}
+
 :ドアなのに、種類で「{0}」が設定されています。
-Although it is a door, "{0}" is set in kind.
+Although it is door, but "{0}" is set in kind.
+
+:ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
+Although it is door, but the tile change of map is not set. x:{0} y:{0}
 
 :店なのに、種類で「{0}」が設定されています。
-Although it is a shop, "{0}" is set for the type.
+Although it is shop, but "{0}" is set for the type.
 
 :お店に「{0}」が設定されています。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
 "{0}" is set in the shop.\r\nYou should not set "{0}" here unless you are doing it intentionally.
@@ -11064,15 +11088,6 @@ In FE, text strings are handled by IDs in the text string table.\r\n
 
 :警告:\r\n範囲外のTextID:{0}を参照しています。
 warning:.\r\nReferences TextID:{0} out of range.
-
-:警告:フォントがありません。\r\n文字:{0}\r\n{1}
-Warning: There is no font.\r\nCharacters: {0}\r\n{1}
-
-:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
-Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\r\n{2}
-
-:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
-Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
 
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
 Warning:\r\nAlthough it is text for conversations, there are no symbols such as @0003.

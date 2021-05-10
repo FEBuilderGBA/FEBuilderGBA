@@ -1,0 +1,195 @@
+//FE8 Text engine rework
+//By Tequila, with help from Zahlman
+
+#ifndef _FE8_
+	ERROR This isn't FE8
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+#include "Extensions/6CDefinitions.txt"
+
+//#ifndef FreeSpace
+//	#define FreeSpace 0xB2B000
+//	ORG FreeSpace
+//#endif
+
+PUSH
+
+//Rewrite the function that parses each text code (Bonus: it's about 35% smaller)
+ORG $6FD0
+#include "DialogueInterpret.lyn.event"
+
+//Copy the new speaker's text attributes to CurrentAttributesStruct (moved here from the [OpenLeft] group so that palette updates would take effect at the right time)
+ORG $83F4
+POIN gProc_DialogueBoxAppearingAnimation
+
+//Also have to rewrite the function that calculates how wide the box is
+ORG $8B44
+#include "GetStringTextWidthWithDialogueCodes.lyn.event"
+
+//Change text color (modifies ToggleRed too)
+ORG $6F00
+#include "ChangeTextColorID.lyn.event"
+
+//Decompress text box graphics
+ORG $83F8
+#include "DecompressTextBoxGraphics.lyn.event"
+
+//Change text box height
+ORG $6848 //number of text structs to initiate
+SHORT 0x2503 //mov r5,#3 (hardcode that to 3, even if we don't use them all, since we can't know how many lines will actually be used)
+ORG $88CE //how high the text box should be
+SHORT 0x8091 0x7A81 0x0049 0x3102 0x80D1 0x46C0 0x46C0 //strh r1,[r2,#4]; ldrb r1,[r0,#0xA]; lsl r1,#1; add r1,#2; strh r1,[r2,#6]; nop; nop
+ORG $7D42 //fix [2NL] scrolling for multiple lines (possibly)
+SHORT 0x3006
+ORG $7FA6 //fix normal scrolling for 3-line box (hopefully)
+SHORT 0x3006
+
+//PlayTextBoop
+ORG $6D70
+callHack_r3(PlayTextBoop)
+SHORT 0
+
+//ChangePortraitPosition: Write the table of face positions to gDialogueState+50 (part of a buffer but it should be fine) during DialogueMain_OnInit
+ORG $6C28
+jumpToHack(WriteFaceXPosTableToRAM)
+ORG $8950
+SHORT 0x1900 0x2100 0x5640 //add r0,r4; mov r1,#0; ldsb r0,[r0,r1]
+ORG $895C
+WORD 0x3000048+0x50
+
+//LoadFace takes an argument in r1: 0xFF = normal check, 0=don't flip, 1=flip (argument is 0xFF when using LoadFaceNormal and can be set using LoadFaceFancy)
+ORG $7858
+#include "LoadFaceFlipping.lyn.event"
+
+//MoveFaceWithVariableSpeed: If FaceProc+0x5C != 0, skip the rest of Func_7AB0, because the speed (number of frames) has already been calculated
+ORG $7AB4
+SHORT 0x6DF0 0x2800 0xD125 0x1C34 0x3466 0x8820 //ldr r0,[r6,#0x5C]; cmp r0,#0; bne End; mov r4,r6; add r4,#0x66; ldrh r0,[r4]
+ORG $7A96 //make sure CreateMovingFaceProc returns the newly created proc
+SHORT 0x0639 0x1609 0x1C18 0x336A 0x8019 0xBCF0 0xBC02 0x4708 //lsl r1,r7,#0x18; asr r1,#0x18; mov r0,r3; add r3,#0x6A; strh r1,[r3]; pop {r4-r7}; pop {r1}; bx r1
+
+//Change the font before GetStringWidth is called
+ORG $6DC4
+callHack_r3(UpdateFontBeforeBoxWidthCalc)
+SHORT 0x46C0
+
+POP
+
+ALIGN 4
+WriteFaceXPosTableToRAM:
+#include "WriteFaceXPosTableToRAM.lyn.event"
+
+ALIGN 4
+PlayTextBoop:
+#include "PlayTextBoop.lyn.event"
+
+ALIGN 4
+gProc_DialogueBoxAppearingAnimation:
+_6C_CALL_ROUTINE(Copy_Text_Attributes|1)
+_6C_LOOP_ROUTINE(0x83F9)
+_6C_END
+
+ALIGN 4
+Copy_Text_Attributes:
+#include "Copy_Text_Attributes.lyn.event"
+
+ALIGN 4
+UpdateFontBeforeBoxWidthCalc:
+#include "UpdateFontBeforeBoxWidthCalc.lyn.event"
+
+ALIGN 4
+HandleNormalTextCodesTable:
+POIN TerminateString		//00 [X]
+POIN NewLine				//01 [NL]
+POIN TwoNewLines			//02 [2NL]
+POIN WaitForAPress			//03 [A]
+POIN PauseText				//04 [4.]
+POIN PauseText				//05 [5.]
+POIN PauseText				//06 [6.]
+POIN PauseText				//07 [7.]
+POIN SetPositionActive		//08 [OpenFarLeft]
+POIN SetPositionActive		//09 [OpenMidLeft]
+POIN SetPositionActive		//0A [OpenLeft]
+POIN SetPositionActive		//0B [OpenRight]
+POIN SetPositionActive		//0C [OpenMidRight]
+POIN SetPositionActive		//0D [OpenFarRight]
+POIN SetPositionActive		//0E [OpenFarFarLeft]
+POIN SetPositionActive		//0F [OpenFarFarRight]
+POIN LoadFaceNormal			//10 [LoadFace]
+POIN ClearFace				//11 [ClearFace]
+POIN MakeNewTextBox			//12 (supposedly fe6 only)
+POIN MakeNewTextBox			//13 ^
+POIN MakeNewTextBox			//14 [CloseSpeechFast]
+POIN ClearTextBox			//15 [CloseSpeechSlow]
+POIN ToggleMouthMove		//16 [ToggleMouthMove]
+POIN ToggleSmile			//17 [ToggleSmile]
+POIN ConvoChoiceYes			//18 [Yes]
+POIN ConvoChoiceNo			//19 [No]
+POIN ConvoChoiceBuy			//1A [Buy]
+POIN ConvoChoiceSell		//1B [ShopContinue]
+POIN SendFaceToBack			//1C [SendFaceToBack]
+POIN Case_0x1D				//1D (undoes 1C?)
+
+ALIGN 4
+HandleExtendedTextCodesTable:
+POIN VanillaChangeColor		//80 00 (would terminate anyway)
+POIN VanillaChangeColor		//80 01
+POIN VanillaChangeColor		//80 02
+POIN VanillaChangeColor		//80 03
+POIN PauseDialogueExecution	//80 04 [LoadOverworldFaces]
+POIN PrintMonetaryAmount	//80 05 [G]
+POIN SwitchToMiniTextBuffer	//80 06
+POIN RetThree				//80 07
+POIN RetThree				//80 08
+POIN RetZero				//80 09
+POIN MoveFaceToPosition		//80 0A [MoveFarLeft]
+POIN MoveFaceToPosition		//80 0B [MoveMidLeft]
+POIN MoveFaceToPosition		//80 0C [MoveLeft]
+POIN MoveFaceToPosition		//80 0D [MoveRight]
+POIN MoveFaceToPosition		//80 0E [MoveMidRight]
+POIN MoveFaceToPosition		//80 0F [MoveFarRight]
+POIN MoveFaceToPosition		//80 10 [MoveFarFarLeft]
+POIN MoveFaceToPosition		//80 11 [MoveFarFarRight]
+POIN RetZero				//80 12
+POIN RetZero				//80 13
+POIN RetZero				//80 14
+POIN RetZero				//80 15
+POIN DefaultBlinking		//80 16 [EnableBlinking]
+POIN MediumPauseBetweenBlinks	//80 17
+POIN LongPauseBetweenBlinks	//80 18 [DelayBlinking]
+POIN ShortPauseBetweenBlinks	//80 19 [PauseBlinking]
+POIN BlinkNow				//80 1A
+POIN StopBlinking			//80 1B [DisableBlinking]
+POIN OpenEyes				//80 1C [OpenEyes]
+POIN CloseEyes				//80 1D [CloseEyes]
+POIN HalfCloseEyes			//80 1E [HalfCloseEyes]
+POIN WinkEyes				//80 1F [Wink]
+POIN TacticianName			//80 20 [Tact]
+POIN ToggleRed				//80 21 [ToggleRed]
+POIN RetZero				//80 22 [Item]
+POIN RetZero				//80 23 [SetName]
+POIN ExecuteSomeRoutine		//80 24
+POIN ToggleColorInvert		//80 25 [ToggleColorInvert]
+//NEW STUFF
+POIN ChangeFont				//80 26
+POIN ChangeTextPalette		//80 27
+POIN ChangeTextColorGroup	//80 28
+POIN ChangeTextBoxBgPalette	//80 29
+POIN ChangeTextBoxType		//80 2A
+POIN ChangeTextBoxHeight	//80 2B
+POIN ChangeTextBoopPitch	//80 2C
+POIN PlaySound				//80 2D
+POIN ChangePortraitPosition	//80 2E
+POIN LoadFaceFancy			//80 2F
+POIN MoveFaceToPositionVariableSpeed	//80 30 (MoveFarLeft with variable speed)
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed
+POIN MoveFaceToPositionVariableSpeed	//80 37 (MoveFarFarRight with variable speed)
+POIN ChangeTextSpeed		//80 38
+
+#include "_Text_Engine_Tables.txt"
