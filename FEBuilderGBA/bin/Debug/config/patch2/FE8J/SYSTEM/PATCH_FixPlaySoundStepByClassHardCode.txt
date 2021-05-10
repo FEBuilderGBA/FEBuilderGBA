@@ -15,3 +15,6 @@ AUTHOR=7743
 INFO.en=Free data that is hard-coded with data to play with footsteps.Modify the footsteps of all classes to refer to the table where the user can set finely.
 NAME.zh=确定PlaySoundStepByClass（脚步声）硬编码
 INFO.zh=免费数据，使用数据进行硬编码以播放足迹。修改所有类的足迹以引用用户可以精确设置的表。
+HINT=ペガサス ファルコン 移動音 歩行音
+HINT.en=Pegasus Falcon Moving sound Walking sound
+HINT.zh=飞马座 鹘 动感的声音 步行声

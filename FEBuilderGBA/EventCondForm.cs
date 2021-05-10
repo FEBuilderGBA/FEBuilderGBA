@@ -975,6 +975,30 @@ namespace FEBuilderGBA
             return list;
         }
 
+        //FE7には、壊れる壁が存在するカットシーンマップがあるので、そこのエラーは検知しないように補正する
+        static bool IsSkipVanillaBug_ForCheckBrokenWallSnag(uint mapid, uint x, uint y)
+        {
+            if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (mapid == 0x39)
+                {
+                    if (x == 0x1 && y == 0x6)
+                    {
+                        return true;
+                    }
+                }
+                else if (mapid == 0x33)
+                {
+                    if (x == 0x5 && y == 0x6)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         //壊れる壁と古木もチェック
         static void CheckBrokenWallSnag(uint mapid, List<FELint.ErrorSt> errors, byte[] tilesArray, int mapWidth,int mapHeight, List<MapChangeForm.ChangeSt> changeList)
         {
@@ -987,8 +1011,13 @@ namespace FEBuilderGBA
                     {
                         if (!IsExistsTileChange((uint)x, (uint)y, changeList))
                         {
+                            if (IsSkipVanillaBug_ForCheckBrokenWallSnag(mapid, (uint)x, (uint)y))
+                            {
+                                continue;
+                            }
+
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
-                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
                         }
                     }
                     else if (tilesArray[i] == ImageUtilMap.BrokenSnagTileID)
@@ -996,7 +1025,7 @@ namespace FEBuilderGBA
                         if (!IsExistsTileChange((uint)x, (uint)y, changeList))
                         {
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
-                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
                         }
                     }
                 }
@@ -1111,7 +1140,7 @@ namespace FEBuilderGBA
                         if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.VisitVillageTileID, tilesArray, mapWidth, changeList))
                         {
                             errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                                , R._("村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                                , R._("村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
                         }
                     }
                 }
@@ -1135,7 +1164,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.TreasureChestTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}", x, y)));
+                            , R._("宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
                     }
                 }
                 else if (type == 0x8)
@@ -1149,7 +1178,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.DoorTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}",x,y)));
+                            , R._("ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}",x,y)));
                     }
                 }
                 else if (type == 0xA)

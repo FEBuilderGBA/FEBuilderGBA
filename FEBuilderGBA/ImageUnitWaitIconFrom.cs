@@ -44,6 +44,10 @@ namespace FEBuilderGBA
                 , addr 
                     + 0x2 + (0x8 * Program.ROM.RomInfo.unit_wait_barista_id())
             );
+            if (count > 128)
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.ExtendedMovingMapAnimationList);
+            }
         }
 
         public InputFormRef InputFormRef;

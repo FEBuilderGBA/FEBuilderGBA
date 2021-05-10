@@ -202,7 +202,7 @@ namespace FEBuilderGBA
         public uint systemmenu_badstatus_image_pointer() { return 0; } //無圧縮のバッドステータス画像
         public uint systemmenu_badstatus_palette_pointer() { return 0x70EE8; } //バッドステータスのパレット
         public uint systemmenu_badstatus_old_image_pointer() { return 0x732EC; } //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
-        public uint systemmenu_badstatus_old_palette_pointer() { return systemmenu_badstatus_palette_pointer(); } //昔の圧縮のバッドステータス画像のパレット FE7 FE6
+        public uint systemmenu_badstatus_old_palette_pointer() { return 0x6388; } //昔の圧縮のバッドステータス画像のパレット FE7 FE6
 
         public uint bigcg_pointer() { return 0x0; } // CG
         public uint end_cg_address() { return 0x0; } // END CG FE8のみ

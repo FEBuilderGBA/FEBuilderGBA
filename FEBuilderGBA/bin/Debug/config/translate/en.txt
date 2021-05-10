@@ -1819,17 +1819,17 @@ End Events are events that are called at the end of the chapter, once flag 03 is
 :制圧フラグ
 Seize Flag
 
-:壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-There is a Broken Wall, but the tile change of map is not set. x:{0} y:{0}
+:壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+There is a Broken Wall, but the tile change of map is not set. x:{0} y:{1}
 
-:古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-There is a Srag, but the tile change of map is not set. x:{0} y:{0}
+:古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+There is a Srag, but the tile change of map is not set. x:{0} y:{1}
 
 :「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。
 A Home/Visit event exists, though "{0}" is set as its type.
 
-:村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-There is a Village event, the tile change of the map is not set. x:{0} y:{0}
+:村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+There is a Village event, the tile change of the map is not set. x:{0} y:{1}
 
 :宝箱なのに、種類で「{0}」が設定されています。
 A chest event has "{0}" set as its type.
@@ -1837,14 +1837,14 @@ A chest event has "{0}" set as its type.
 :ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n
 The gold and item settings are incorrect.\r\n\r\nTo make a treasure chest with just gold in it, set the item obtained by it as the "{0} Gold" item.\r\nConversely, if the treasure box contain an item instead of gold, the field for gold should be at 0 if present.\r\n
 
-:宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-There is a Chest event, but the tile change of map is not set. x:{0} y:{0}
+:宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+There is a Chest event, but the tile change of map is not set. x:{0} y:{1}
 
 :ドアなのに、種類で「{0}」が設定されています。
 There is a Door event, but "{0}" is set as the type.
 
-:ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{0}
-There is a Door event, the tile change of the map is not set. x:{0} y:{0}
+:ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+There is a Door event, the tile change of the map is not set. x:{0} y:{1}
 
 :店なのに、種類で「{0}」が設定されています。
 There is a Shop event, but "{0}" is set as the type.
@@ -12814,8 +12814,8 @@ Main Field Map
 :ワールドマップ画像
 World Map Image
 
-:12分割のx:{0} y:{0} w:256 h:256の部分の中で問題がありました
-There was a problem within 12 parts x: {0} y: {0} w: 256 h: 256
+:12分割のx:{0} y:{1} w:256 h:256の部分の中で問題がありました
+There was a problem within 12 parts x:{0} y:{1} w:256 h:256
 
 :イベント用
 For Events

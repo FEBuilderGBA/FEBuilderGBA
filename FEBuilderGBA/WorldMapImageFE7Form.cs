@@ -97,7 +97,7 @@ namespace FEBuilderGBA
                         );
                     if (error_string != "")
                     {
-                        R.ShowStopError("12分割のx:{0} y:{0} w:256 h:256の部分の中で問題がありました"
+                        R.ShowStopError("12分割のx:{0} y:{1} w:256 h:256の部分の中で問題がありました"
                             , x * 256, y * 256
                             , error_string);
                         return;
@@ -128,7 +128,7 @@ namespace FEBuilderGBA
                         );
                     if (error_string != "")
                     {
-                        R.ShowStopError("12分割のx:{0} y:{0} w:256 h:256の部分の中で問題がありました"
+                        R.ShowStopError("12分割のx:{0} y:{1} w:256 h:256の部分の中で問題がありました"
                             , x * 256, y * 256
                             , error_string);
                         return;
