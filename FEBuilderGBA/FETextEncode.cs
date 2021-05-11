@@ -546,7 +546,6 @@ namespace FEBuilderGBA
                     g_RepalceSPCode.Add("û"); g_RepalceSPCode.Add("@00FB");///No Translate
                     g_RepalceSPCode.Add("ü"); g_RepalceSPCode.Add("@00FC");///No Translate
                 }
-                    
             }
         }
 

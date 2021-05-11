@@ -749,6 +749,14 @@ namespace FEBuilderGBA
         {
             return a.ToString("X08");
         }
+        public static string ToHexString4(int a)
+        {
+            return a.ToString("X04");
+        }
+        public static string ToHexString4(uint a)
+        {
+            return a.ToString("X04");
+        }
         public static string ToHexString2(int a)
         {
             return a.ToString("X02");
@@ -1796,12 +1804,12 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            string ret = "";
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < list.Items.Count; i++)
             {
-                ret += list.Items[i].ToString() + "\r\n";
+                sb.AppendLine(list.Items[i].ToString());
             }
-            return ret;
+            return sb.ToString();
         }
 
         public static void SetClipboardText(string text)
@@ -5549,12 +5557,12 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            string ret = "";
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < jisage; i++)
             {
-                ret += "    ";
+                sb.Append("    ");
             }
-            return ret;
+            return sb.ToString();
         }
 
         //奇数かどうか

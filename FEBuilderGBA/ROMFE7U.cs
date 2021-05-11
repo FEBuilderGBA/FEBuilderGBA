@@ -50,6 +50,8 @@ namespace FEBuilderGBA
         public uint map_setting_datasize() { return 152; } //マップ設定のデータサイズ
         public uint map_setting_event_plist_pos() { return 120; } //event plistの場所 
         public uint map_setting_worldmap_plist_pos() { return 121; } //woldmap event plistの場所 
+        public uint map_setting_clear_conditon_text_pos() { return 0x8E; } //マップの右上に表示されているクリア条件の定義場所 
+        public uint map_setting_name_text_pos() { return 0x74; } //マップ名のテキスト定義場所 
         public uint map_config_pointer() { return 0x191C8; }      //マップ設定の開始位置(config)
         public uint map_obj_pointer() { return 0x019230; }         //マップ設定の開始位置(obj) objとpalは同時参照があるので、同一値である必要がある 
         public uint map_pal_pointer() { return 0x019264; }         //マップ設定の開始位置(pal) objとpalは同時参照があるので、同一値である必要がある 

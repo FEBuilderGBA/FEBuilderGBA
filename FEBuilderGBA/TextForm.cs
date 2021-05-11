@@ -1439,12 +1439,12 @@ namespace FEBuilderGBA
 
         String ConvertSimpleListToText(List<TextBlock> simpleList)
         {
-            string ret = "";
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < simpleList.Count; i++)
             {
-                ret += simpleList[i].SrcText;
+                sb.Append(simpleList[i].SrcText);
             }
-            return ret;
+            return sb.ToString();
         }
 
 
@@ -2494,6 +2494,10 @@ namespace FEBuilderGBA
         }
         public static string ConvertEscapeText(string text)
         {
+//            if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+//            {
+//                text = ConvertTeqTextEngineRework(text);
+//            }
             if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
             {
                 return ConvertEscapeToFEditor(text);
@@ -2524,6 +2528,7 @@ namespace FEBuilderGBA
             {
                 text = AutoConvertSpaceByLang(text);
             }
+
             //text = ConvertUnicodeDirect(text);
             if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
             {
@@ -3549,6 +3554,112 @@ namespace FEBuilderGBA
 
             TextListSpShowCharPictureBox.Image =
                 ImagePortraitForm.DrawPortraitAuto(portraitID);
+        }
+
+        static uint GetOneCharOrAtCode(string text,ref int ref_i)
+        {
+            if (text[ref_i] == '@')
+            {
+                uint code = U.atoh(U.substr(text, ref_i + 1, 4));
+                ref_i += 5;
+                return code;
+            }
+            else if (text[ref_i] == '\r' && text[ref_i+1] == '\n')
+            {
+                uint code = 1;
+                ref_i+=2;
+                return code;
+            }
+            else
+            {
+                uint code = text[ref_i];
+                ref_i++;
+                return code;
+            }
+        }
+
+        //Teqのreworkは、既存ルールと重複しているのがあるので、いい感じに調整する.
+        static string ConvertTeqTextEngineRework(string text)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            int text_stsrt = 0;
+            int len = text.Length;
+            for (int i = 0; i < len; )
+            {
+                uint code1 = GetOneCharOrAtCode(text, ref i);
+                if (code1 != 0x80)
+                {
+                    continue;
+                }
+
+                uint code2 = GetOneCharOrAtCode(text, ref i);
+                if (code2 == 0x26 || (code2 >= 0x28 && code2 <= 0x2C) || (code2 >= 0x30 && code2 <= 0x38))
+                {
+                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    sb.Append(block);
+
+                    uint code3 = GetOneCharOrAtCode(text, ref i);
+                    sb.Append("@" + U.ToHexString4(code3));
+
+                    text_stsrt = i;
+                }
+                else if (code2 == 0x27 || code2 == 0x2E)
+                {
+                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    sb.Append(block);
+
+                    uint code3 = GetOneCharOrAtCode(text, ref i);
+                    uint code4 = GetOneCharOrAtCode(text, ref i);
+                    sb.Append("@" + U.ToHexString4(code3));
+                    sb.Append("@" + U.ToHexString4(code4));
+
+                    text_stsrt = i;
+                }
+                else if (code2 == 0x2D)
+                {
+                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    sb.Append(block);
+
+                    uint code3 = GetOneCharOrAtCode(text, ref i);
+                    uint code4 = GetOneCharOrAtCode(text, ref i);
+                    uint code5 = GetOneCharOrAtCode(text, ref i);
+                    uint code6 = GetOneCharOrAtCode(text, ref i);
+                    sb.Append("@" + U.ToHexString4(code3));
+                    sb.Append("@" + U.ToHexString4(code4));
+                    sb.Append("@" + U.ToHexString4(code5));
+                    sb.Append("@" + U.ToHexString4(code6));
+
+                    text_stsrt = i;
+                }
+                else if (code2 == 0x2F)
+                {
+                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    sb.Append(block);
+
+                    uint code3 = GetOneCharOrAtCode(text, ref i);
+                    uint code4 = GetOneCharOrAtCode(text, ref i);
+                    uint code5 = GetOneCharOrAtCode(text, ref i);
+                    uint code6 = GetOneCharOrAtCode(text, ref i);
+                    uint code7 = GetOneCharOrAtCode(text, ref i);
+                    uint code8 = GetOneCharOrAtCode(text, ref i);
+                    sb.Append("@" + U.ToHexString4(code3));
+                    sb.Append("@" + U.ToHexString4(code4));
+                    sb.Append("@" + U.ToHexString4(code5));
+                    sb.Append("@" + U.ToHexString4(code6));
+                    sb.Append("@" + U.ToHexString4(code7));
+                    sb.Append("@" + U.ToHexString4(code8));
+
+                    text_stsrt = i;
+                }
+            }
+            //最後っ屁
+            {
+                string block = U.substr(text, text_stsrt);
+                sb.Append(block);
+            }
+
+            return sb.ToString();
         }
 
 

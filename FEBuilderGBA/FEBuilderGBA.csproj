@@ -79,7 +79,6 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckText.cs" />
     <Compile Include="EAUtilLynDumpMode.cs" />
     <Compile Include="EventUnitSimUserControl.cs">
       <SubType>UserControl</SubType>

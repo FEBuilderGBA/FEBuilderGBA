@@ -91,18 +91,23 @@ namespace FEBuilderGBA
             this.N_InputFormRef.ReInit(change_addr);
         }
 
-        void SelectMapID(uint mapid)
+        bool SelectMapID(uint mapid)
         {
             MapSettingForm.PLists plist = MapSettingForm.GetMapPListsWhereMapID((uint)mapid);
+            if (plist.mapchange_plist == 0)
+            {//タイルチェンジが設定されていない
+                return false;
+            }
             uint change_plist_addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.CHANGE , plist.mapchange_plist);
 
             uint selected = InputFormRef.AddrToSelect(this.AddressList, change_plist_addr);
             if (selected == U.NOT_FOUND)
             {
-                return;
+                return false;
             }
 
             U.SelectedIndexSafety(this.AddressList, selected);
+            return true;
         }
 
         public void JumpToMAPID(uint mapid)
@@ -111,7 +116,12 @@ namespace FEBuilderGBA
         }
         public void JumpToMAPIDAndAddr(uint mapid,uint addr)
         {
-            SelectMapID(mapid);
+            bool r = SelectMapID(mapid);
+            if (!r)
+            {//とりあえず最初のマップを選択しておく.
+                U.SelectedIndexSafety(this.AddressList, 0);
+                return;
+            }
 
             uint id = this.N_InputFormRef.AddrToID(addr);
             if (id == U.NOT_FOUND)

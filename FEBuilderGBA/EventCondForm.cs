@@ -975,33 +975,14 @@ namespace FEBuilderGBA
             return list;
         }
 
-        //FE7には、壊れる壁が存在するカットシーンマップがあるので、そこのエラーは検知しないように補正する
-        static bool IsSkipVanillaBug_ForCheckBrokenWallSnag(uint mapid, uint x, uint y)
-        {
-            if (Program.ROM.RomInfo.version() == 7)
-            {
-                if (mapid == 0x39)
-                {
-                    if (x == 0x1 && y == 0x6)
-                    {
-                        return true;
-                    }
-                }
-                else if (mapid == 0x33)
-                {
-                    if (x == 0x5 && y == 0x6)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
         //壊れる壁と古木もチェック
         static void CheckBrokenWallSnag(uint mapid, List<FELint.ErrorSt> errors, byte[] tilesArray, int mapWidth,int mapHeight, List<MapChangeForm.ChangeSt> changeList)
         {
+            if (MapSettingForm.IsCutCutsceneMapID(mapid))
+            {//カットシーンなので調査しない
+                return;
+            }
+
             int i = 0;
             for (int y = 0; y < mapHeight; y++)
             {
@@ -1011,21 +992,18 @@ namespace FEBuilderGBA
                     {
                         if (!IsExistsTileChange((uint)x, (uint)y, changeList))
                         {
-                            if (IsSkipVanillaBug_ForCheckBrokenWallSnag(mapid, (uint)x, (uint)y))
-                            {
-                                continue;
-                            }
-
-                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
-                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
+                            uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
+                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
+                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y),mapid));
                         }
                     }
                     else if (tilesArray[i] == ImageUtilMap.BrokenSnagTileID)
                     {
                         if (!IsExistsTileChange((uint)x, (uint)y, changeList))
                         {
-                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, U.NOT_FOUND
-                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
+                            uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
+                            errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
+                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y), mapid));
                         }
                     }
                 }

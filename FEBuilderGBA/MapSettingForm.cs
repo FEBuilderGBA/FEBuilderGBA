@@ -460,6 +460,12 @@ namespace FEBuilderGBA
             }
             uint mapchange_plist = (uint)Program.ROM.u8(addr + 11);
             uint mapchangeaddr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.CHANGE, mapchange_plist,out out_pointer);
+            if (!U.isSafetyOffset(mapchangeaddr))
+            {
+                out_pointer = U.NOT_FOUND;
+                return U.NOT_FOUND;
+            }
+
             return mapchangeaddr;
         }
 
@@ -882,6 +888,30 @@ namespace FEBuilderGBA
                 return true;
             }
             return (OptionForm.show_chapter_extends() == OptionForm.show_extends_enum.Show);
+        }
+
+        //カットシーン用のマップかどうか判定します.
+        //カットシーンとは、DetailClearConditonが0に設定されているマップとします
+        public static bool IsCutCutsceneMapID(uint mapid)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(mapid);
+            if (!U.isSafetyOffset(addr))
+            {//不明
+                return false;
+            }
+
+            uint clear_cond_text_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_clear_conditon_text_pos());
+            if (clear_cond_text_id == 0)
+            {
+                return true;
+            }
+            uint nametext_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_name_text_pos());
+            if (nametext_id == 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

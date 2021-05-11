@@ -945,7 +945,7 @@ namespace FEBuilderGBA
         public enum TextEngineRework_enum
         {
             NO,             //なし
-            TextEngineRework,
+            TeqTextEngineRework,
             NoCache = (int)NO_CACHE
         };
         static TextEngineRework_enum g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
@@ -964,7 +964,7 @@ namespace FEBuilderGBA
             };
             if (SearchPatchBool(table))
             {
-                return TextEngineRework_enum.TextEngineRework;
+                return TextEngineRework_enum.TeqTextEngineRework;
             }
             return TextEngineRework_enum.NO;
         }
