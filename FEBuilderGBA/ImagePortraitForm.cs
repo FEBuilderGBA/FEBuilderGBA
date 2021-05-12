@@ -1504,6 +1504,12 @@ namespace FEBuilderGBA
                     }
                     else
                     {//無圧縮
+                        string headerError = CheckFaceHeader(seet_image);
+                        if (headerError != "")
+                        {
+                            errors.Add(new FELint.ErrorSt(FELint.Type.PORTRAIT, portrait_addr
+                                , headerError , id));
+                        }
                     }
                 }
                 if (seet_image == 0)
@@ -1514,6 +1520,46 @@ namespace FEBuilderGBA
                     }
                 }
             }
+        }
+        static string CheckFaceHeader(uint seet_image)
+        {
+            //圧縮   FE7U FE6
+            //無圧縮 FE7 FE8 FE8U
+            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
+                //ヘッダはないので常にOKを返す
+                return "";
+            }
+            //無圧縮
+            uint head1 = Program.ROM.u8(seet_image + 0);
+            uint head2 = Program.ROM.u8(seet_image + 1);
+            uint head3 = Program.ROM.u8(seet_image + 2);
+            uint head4 = Program.ROM.u8(seet_image + 3);
+            if (head1 != 0x00)
+            {
+                return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。", U.To0xHexString(seet_image + 0), U.To0xHexString(head1));
+            }
+            if (head2 != 0x04)
+            {
+                return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。", U.To0xHexString(seet_image + 1), U.To0xHexString(head2));
+            }
+            if (head3 != 0x10)
+            {
+                PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
+                if (portraitExtends == PatchUtil.portrait_extends.HALFBODY)
+                {
+                    if (head3 != 0x20)
+                    {
+                        return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。", U.To0xHexString(seet_image + 2), U.To0xHexString(head3));
+                    }
+                }
+                return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。", U.To0xHexString(seet_image + 2), U.To0xHexString(head3));
+            }
+            if (head4 != 0x00)
+            {
+                return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。", U.To0xHexString(seet_image + 3), U.To0xHexString(head4));
+            }
+            return "";
         }
 
         private void X_MUG_EXCEED_Button_Click(object sender, EventArgs e)

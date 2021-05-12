@@ -6731,7 +6731,7 @@ Pointer ({1}) of tile change ({0}) is dangerous.
 The tile change ({0}) pointer ({1}) or the map change size specification is incorrect.
 
 :マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。
-Illegal tile data ({2}) in the destination data pointer ({1}) of tile change ({0}).
+Broken tile data ({2}) in the destination data pointer ({1}) of tile change ({0}).
 
 :マップエディタ Jump
 Map Editor Jump.
@@ -12970,3 +12970,18 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader1: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
+
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.

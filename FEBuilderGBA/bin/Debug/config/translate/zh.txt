@@ -12970,3 +12970,14 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.

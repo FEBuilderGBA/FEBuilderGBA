@@ -982,6 +982,10 @@ namespace FEBuilderGBA
             {//カットシーンなので調査しない
                 return;
             }
+            if (tilesArray == null)
+            {
+                return;
+            }
 
             int i = 0;
             for (int y = 0; y < mapHeight; y++)

@@ -79,6 +79,8 @@ notTraineeDefender:
 and r0, r1
 cmp r0, #0x0
 bne unpromotedDefender
+mov r1, #0x1
+lsl r1, #0x8            @Promoted
 and r2, r1
 cmp r2, #0x0
 beq unpromotedDefender
