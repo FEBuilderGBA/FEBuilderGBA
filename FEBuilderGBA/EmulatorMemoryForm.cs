@@ -2943,6 +2943,17 @@ namespace FEBuilderGBA
                 f.JumpToMAPIDAndID( mapid, ext1);
             }
         }
+        private void ClearTurnList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = TrapList.SelectedIndex;
+            if (index < 0 || index >= TrapList.Items.Count)
+            {
+                return;
+            }
+            uint addr = Program.ROM.RomInfo.workmemory_trap_address() + ((uint)index * 0x8);
+            TrapAddress.Text = U.ToHexString(addr);
+        }
+
         private void ClearTurnList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index = TrapList.SelectedIndex;
@@ -2956,6 +2967,7 @@ namespace FEBuilderGBA
             f.Init(addr);
             f.ShowDialog();
         }
+
 
         private void PARTY_ROMUNITPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
         {

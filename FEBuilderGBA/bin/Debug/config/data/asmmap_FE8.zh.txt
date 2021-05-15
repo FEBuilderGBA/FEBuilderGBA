@@ -3127,7 +3127,7 @@ r3=X tile position of menu of the right	{U}
 080193a4	UnitTryHeal	{U}
 080193e8	GetRescuingUnitNameId	{U}
 08019414	WriteStatusTextToRAM	{U}
-08019430	GetUnitStruct	RET=RAM Unit:@UNIT	{U}
+08019430	GetUnitStruct	RET=RAM Unit:@Unit	{U}
 08019444	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{U}
 08019464	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{U}
 08019484	UnitRemoveItem	{U}
@@ -4905,7 +4905,7 @@ r3=X tile position of menu of the right	{U}
 0801907C	UnitTryHeal	{J}
 080190C0	GetRescuingUnitNameId	{J}
 080190EC	WriteStatusTextToRAM	{J}
-08019108	GetUnitStruct	RET=RAM Unit:@UNIT	{J}
+08019108	GetUnitStruct	RET=RAM Unit:@Unit	{J}
 0801911C	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{J}
 0801913C	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{J}
 0801915C	UnitRemoveItem	{J}
@@ -7048,7 +7048,7 @@ r3=X tile position of menu of the right	{U}
 0203a8e4	gpSomeUnitPool	{U}
 0203a8e8	gpSomeUnitIt	{U}
 0203a8ec	gSomeUnitCounter	{U}
-0203a910	gArenaOpponent	{U}
+0203a910	@Unit	gArenaOpponent	{U}
 0203a958	@ActionData	gActionData	{U}
 0203aa04	@AiData	gAiData	{U}
 0203dde8	gTargetPosition	{U}
@@ -7160,7 +7160,7 @@ r3=X tile position of menu of the right	{U}
 0203A8E0	gpSomeUnitPool	{J}
 0203A8E4	gpSomeUnitIt	{J}
 0203A8E8	gSomeUnitCounter	{J}
-0203A90C	gArenaOpponent	{J}
+0203A90C	@Unit	gArenaOpponent	{J}
 0203A954	@ActionData	gActionData	{J}
 0203AA00	@AiData	gAiData	{J}
 0203DDE4	gTargetPosition	{J}
@@ -9652,6 +9652,7 @@ r3=X tile position of menu of the right	{U}
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 0203A8EC	@ArenaData	竞技场的临时数据	{J}
 0203A8F0	@ArenaData	竞技场的临时数据	{U}
 
@@ -11341,14 +11342,14 @@ r3=X tile position of menu of the right	{U}
 080A0AFC	将物品发送到进度准备屏幕上的运输车	{J}
 080A0568	在预先攻击屏幕上接收来自运输商的物品	{J}
 0809FCA0	在进度准备屏幕上访问运输车时	{J}
-0809C804	在进度准备屏幕上，所有存款	r0=@UNIT	{J}
+0809C804	在进度准备屏幕上，所有存款	r0=@Unit	{J}
 08031ecc	获得体育场的溢价	{U}
 08031EA0	为体育场设置溢价	{U}
 08031ED8	在竞技场中获得比赛结果	{U}
 0809E85C	将物品发送到进度准备屏幕上的运输车	{U}
 0809E2C8	在预先攻击屏幕上接收来自运输商的物品	{U}
 0809DA00	在进度准备屏幕上访问运输车时	{U}
-0809A538	在进度准备屏幕上，所有存款	r0=@UNIT	{U}
+0809A538	在进度准备屏幕上，所有存款	r0=@Unit	{U}
 0803FB38	AI的魔杖使用判断力	回复之杖	治疗之杖	痊愈之杖	{J}
 0803FCB0	AI的魔杖使用判断力	治愈之杖	援救杖	{J}
 0803FE80	AI的魔杖使用判断力	生命之杖	{J}

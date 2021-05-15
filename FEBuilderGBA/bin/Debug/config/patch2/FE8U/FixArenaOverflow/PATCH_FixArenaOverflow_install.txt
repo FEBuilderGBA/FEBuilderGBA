@@ -1,0 +1,16 @@
+NAME=Arenaで強い敵ユニットを出現させる(Installer)
+INFO=Arenaでレベル31を超える敵ユニットを登場できるようにします。\r\nバニラでは、レベル31を超えるとオーバーフローしてしまいレベル1のユニットが登場するバグがあります。\r\nまた、自分のレベルに応じて、対戦相手のステータスに補正を追加することもできるようにします。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x31AA4=0x00 0x4B
+EDIT_PATCH=PATCH_FixArenaOverflow.txt
+EA=FixArenaOverflow.event
+
+AUTHOR=7743
+NAME.en=Make strong enemy units appear in Arena(Installer)
+INFO.en=Make enemy units that exceed level 31 appear in Arena.\r\nIn vanilla, there is a bug where if you exceed level 31,level will overflow then level 1 unit will appear.\r\nIt this patch also allows you to add a correction to your opponent's status based on your level.
+NAME.zh=Make strong enemy units appear in Arena(Installer)
+INFO.zh=Make enemy units that exceed level 31 appear in Arena.\r\nIn vanilla, there is a bug where if you exceed level 31,level will overflow then level 1 unit will appear.\r\nIt this patch also allows you to add a correction to your opponent's status based on your level.

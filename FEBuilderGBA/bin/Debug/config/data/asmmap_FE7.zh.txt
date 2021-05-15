@@ -4197,7 +4197,7 @@
 0203A7E4	gpSomeUnitPool	{J}
 0203A7E8	gpSomeUnitIt	{J}
 0203A7EC	gSomeUnitCounter	{J}
-0203A810	gArenaOpponent	{J}
+0203A810	@Unit	gArenaOpponent	{J}
 0203A8E8	gAiData	{J}
 0203DCCC	gTargetPosition	{J}
 0203DCD0	gTargetArray	{J}
@@ -4358,7 +4358,7 @@
 0203A3D0	gSMSSyncFlag	{U}
 0203A718	gTrapArrayBack	{U}
 0203A7F0	gSomeUnitCounter	{U}
-0203A814	gArenaOpponent	{U}
+0203A814	@Unit	gArenaOpponent	{U}
 0203A8EC	gAiData	{U}
 0203DCF4	gTargetPosition	{U}
 0203DCF8	gTargetArray	{U}
@@ -4563,6 +4563,7 @@
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 0802f7f4	ActionRescue	{J}
 0802f328	ActionRescue	{U}
 0802f870	ActionDrop	{J}

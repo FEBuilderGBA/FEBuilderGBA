@@ -7297,6 +7297,23 @@ namespace FEBuilderGBA
         [DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
 
+        public static void SetFocusByProcess(Process p)
+        {
+            if (p == null)
+            {
+                return;
+            }
+            if (p.HasExited)
+            {
+                return;
+            }
+            if (p.MainWindowHandle == IntPtr.Zero)
+            {
+                return;
+            }
+            U.SetForegroundWindow(p.MainWindowHandle);
+        }
+
         public static uint CalcCheckSUM(byte[] data)
         {
             uint result = 0;

@@ -2377,6 +2377,7 @@ namespace FEBuilderGBA
 
             Dictionary<string, int> equ = new Dictionary<string, int>();
             equ["voicegroup000"] = -1; //楽器テーブル　例外的な扱いをするので適当な値を入れる
+            equ["MusicVoices"] = -1; //楽器テーブル　例外的な扱いをするので適当な値を入れる
             equ["mxv"] = (int)0x7F;
             equ["c_v"] = (int)0x40;
             equ["EOT"] = 0xCE;

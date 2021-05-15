@@ -556,14 +556,14 @@ namespace FEBuilderGBA
                 if (arg1 == "<<ROM>>")
                 {
                     Program.UpdateWatcher.RegistOtherProcess(p, tempfilename);
-                    AutoConnectEmulator(run_name);
+                    AutoConnectEmulator(run_name, p);
 
                     Program.Undo.SetF5();
                 }
                 else if (run_name == "emulator")
                 {
                     Program.UpdateWatcher.RegistOtherProcess(p, tempfilename);
-                    AutoConnectEmulator(run_name);
+                    AutoConnectEmulator(run_name, p);
                 }
 
                 return p;
@@ -571,7 +571,7 @@ namespace FEBuilderGBA
         }
 
         //自動的にエミュレータへ接続ツールを起動する場合.
-        static void AutoConnectEmulator(string run_name)
+        static void AutoConnectEmulator(string run_name, Process p)
         {
             if (run_name != "emulator")
             {//エミュレータを動作させたわけではない.
@@ -584,6 +584,9 @@ namespace FEBuilderGBA
             //自動接続する.
             EmulatorMemoryForm f = (EmulatorMemoryForm)InputFormRef.JumpFormLow<EmulatorMemoryForm>();
             f.Show();
+
+            //エミュレータが起動しているなら、それにフォーカスを移す
+            U.SetFocusByProcess(p);
         }
 
         public static Process ProgramRunAs(string appPath, string args, int waitMainwindowMiriSec = 60000)
@@ -729,17 +732,9 @@ namespace FEBuilderGBA
                 tempfilename = arg1;
             }
 
-            //既に実行しているか？
+            //既に実行しているなら、そのプロセスのメインウィンドウにフォーカスを当てる
             Process p = Program.UpdateWatcher.GetRunning(tempfilename);
-            if (p == null)
-            {//未実行
-                return;
-            }
-            if (p.MainWindowHandle == IntPtr.Zero)
-            {
-                return;
-            }
-            U.SetForegroundWindow(p.MainWindowHandle);
+            U.SetFocusByProcess(p);
         }
 
         public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>", string arg2 = "")

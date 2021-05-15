@@ -1180,6 +1180,7 @@
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 02039504	@ArenaData	Temporary data of the stadium.
 08022064	GetUnitMapSpritePaletteIndex
 08026504	When exchanging items actually by item exchange.

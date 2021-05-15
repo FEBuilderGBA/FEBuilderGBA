@@ -1,0 +1,2 @@
+0=Ignore upper limit
+1=Use status limits

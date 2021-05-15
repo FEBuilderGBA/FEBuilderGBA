@@ -1,0 +1,18 @@
+NAME=ワープとび先の範囲を無限にする
+NAME.en=Infinite range warp
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Infinite|INF
+
+OFF:0x1E380=0xFA 0xF7 0x4C 0xFB
+INF:0x1E380=0xF7 0x20 0x00 0x00
+
+AUTHOR=sme
+INFO=FE3のようにワープのとび先を無限にします。
+INFO.en=Makes warp staff range infinite like FE3.
+
+NAME.zh=Infinite range warp
+INFO.zh=Makes warp staff range infinite like FE3.

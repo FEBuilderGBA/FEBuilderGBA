@@ -1,5 +1,5 @@
-NAME=闘技場の掛け率を難易度ごとに変更する
-NAME.en=Change multiplication rate of the Arena for each difficulty
+NAME=闘技場の掛け率を難易度ごとに変更する(Editor)
+NAME.en=Change multiplication rate of the Arena for each difficulty(Editor)
 
 IF:0xBA6C2=0x00 0x00 0x00 0x4B 0x18 0x47
 AUTHOR=7743
@@ -25,5 +25,5 @@ D0:DECIMAL=Rate(%)
 
 INFO=難易度ごとに闘技場の賞金を変更します。\r\nディフォルトでは、掛け金の200%です。(掛け金の2倍になります。)\r\n掛け金の100%にすると、お金が減らなくなります。\r\n掛け金の50%にすると、戦うごとに掛け金の半分お金が減ります。
 INFO.en=Change prize money of the Arena every difficulty level.\r\nBy default, it is 200% of the premium.(It will be twice the premium.)\r\nIf you set it to 100% of the premium, the money will not decrease.\r\nIf you set it to 50% of the premium, you will lose half of the money on your battle.
-NAME.zh=为每个难度级别更改体育场的倍增率
+NAME.zh=为每个难度级别更改体育场的倍增率(Editor)
 INFO.zh=我们在每个难度级别更改体育场的奖金。\r\n默认情况下，它是溢价的200％。（这将是溢价的两倍。）\r\n如果您将其设置为溢价的100％，则资金不会减少。\r\n如果将其设置为保费的50％，您将在战斗中损失一半的资金。

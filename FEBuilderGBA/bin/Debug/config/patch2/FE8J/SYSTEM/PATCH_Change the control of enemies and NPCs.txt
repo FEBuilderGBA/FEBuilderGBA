@@ -1,0 +1,24 @@
+NAME=デバッグ用に敵やNPCのコントロールをできるようにします
+INFO=敵とNPCをAIによる自動操作ではなく、プレイヤーが操作できるようにします。
+
+NAME.en=Debug: Change the control of enemies and/or NPCs
+INFO.en=Enemies and NPCs are controlled by AI, with this patch you can individually set them to player control.
+
+NAME.zh=Debug: Change the control of enemies and/or NPCs
+INFO.zh=Enemies and NPCs are controlled by AI, with this patch you can individually set them to player control.
+
+AUTHOR=Shuusuke, source by Sme https://feuniverse.us/t/control-enemy-npc-units-fe8/1897/7
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: AI controls both|NONE|Player controls NPCs|NPC|Player controls enemies|ENEMY|Player controls enemies and NPCs|BOTH
+
+NONE:0x1547E=0x17 0xD0 0x40 0x28 0x05 0xDC
+NPC:0x1547E=0x0A 0xD0 0x40 0x28 0x05 0xDC
+ENEMY:0x1547E=0x17 0xD0 0x40 0x28 0x08 0xDC
+BOTH:0x1547E=0x0A 0xD0 0x40 0x28 0x08 0xDC
+
+CONFLICT_IF:0x1547E=0x0A 0xE0
+CONFLICT_MESSAGE=Using the other patch which gives player control of both enemies and NPCs in a different manner
+
+HINT=Debug

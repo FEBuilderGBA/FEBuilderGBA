@@ -12,9 +12,10 @@ COMBO=Default|OFF|Control Enemy|ONN
 OFF:0x01545a=0x17 0xD0
 ONN:0x01545a=0x0A 0xE0
 
-AUTHOR=circleseverywhere https://feuniverse.us/t/control-enemy-npc-units-fe8/1897
 
-INFO=適応すると、敵もプレイヤーが動かせるようになります。\r\nデバッグ用として利用してください。
-INFO.en=Once adapted, the enemy will also be able to move the player.\r\nPlease use for debugging.
+INFO=敵とNPCをAIによる自動操作ではなく、プレイヤーが操作できるようにします。
+INFO.en=Enemies and NPCs are controlled by AI, with this patch you can individually set them to player control.
+
 NAME.zh=允许控制敌人（用于调试）
 INFO.zh=一旦适应，敌人也将能够移动玩家。\r\n请用于调试。
+DEPRECATED=1

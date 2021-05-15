@@ -1,0 +1,43 @@
+NAME=Arenaで強い敵ユニットを出現させる(Editor)
+INFO=LV制限は必ず昇順で書く必要があります。\r\n敵の対戦相手が指定レベル以上ならその補正が追加されます。
+\r\nディフォルトでは、LV20までは、大した補正は追加していません。\r\nMagの補正はstr mag splitをしている場合のみ有効になります。\r\nuseStatusCapを0に設定すると、クラスのステータス上限を無視して、ステータスを上昇させます。\r\nこの場合は、HP=120 他のパラメータは63がシステム上限です。\r\n\r\nArenaでレベル31を超える敵ユニットを登場できるようにします。\r\nバニラでは、レベル31を超えるとオーバーフローしてしまいレベル1のユニットが登場するバグがあります。\r\nまた、自分のレベルに応じて、対戦相手のステータスに補正を追加することもできるようにします。
+
+IF:0x319F0=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END addstatus.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:DECIMAL
+
+//データを定義します
+B0:DECIMAL=Enemy's Lv >=
+B1:$COMBO useCap.combo.jp.txt:.ja=useStatusCap
+B1:$COMBO useCap.combo.en.txt:.en=useStatusCap
+B1:$COMBO useCap.combo.en.txt:.zh=useStatusCap
+B2:DECIMAL=add HP
+B3:DECIMAL=add Str
+
+B4:DECIMAL=add Skill
+B5:DECIMAL=add Spd
+B6:DECIMAL=add Def
+B7:DECIMAL=add Res
+
+B7:DECIMAL=add Luck
+B8:DECIMAL=add Mag(if possible)
+W9=00
+
+NAME.en=Make strong enemy units appear in Arena(Editor)
+INFO.en=The LV limit must be written in ascending order.\r\nIf the enemy is above the specified level, the correction will be added.\r\nBy default, no significant correction is added until lvl 20.\r\nMag corrections will only take effect if you are doing str mag split.\r\nif useStatusCap is 0 to ignores the class's status cap and raises its status.\r\nIn this case, have system limit of HP is 120 and other parameters is 63.\r\n\r\nMake enemy units that exceed level 31 appear in Arena.\r\nIn vanilla, there is a bug where if you exceed level 31,level will overflow then level 1 unit will appear.\r\nIt this patch also allows you to add a correction to your opponent's status based on your level.
+NAME.zh=Make strong enemy units appear in Arena(Editor)
+INFO.zh=The LV limit must be written in ascending order.\r\nIf the enemy is above the specified level, the correction will be added.\r\nBy default, no significant correction is added until lvl 20.\r\nMag corrections will only take effect if you are doing str mag split.\r\nif useStatusCap is 0 to ignores the class's status cap and raises its status.\r\nIn this case, have system limit of HP is 120 and other parameters is 63.\r\n\r\nMake enemy units that exceed level 31 appear in Arena.\r\nIn vanilla, there is a bug where if you exceed level 31,level will overflow then level 1 unit will appear.\r\nIt this patch also allows you to add a correction to your opponent's status based on your level.

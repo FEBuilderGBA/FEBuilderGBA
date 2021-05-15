@@ -1166,6 +1166,7 @@
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 02039504	@ArenaData	闘技場の一時データ
 08022064	GetUnitMapSpritePaletteIndex
 08026504	アイテム交換で、実際にアイテムを交換した時

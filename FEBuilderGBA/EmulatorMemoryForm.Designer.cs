@@ -3525,6 +3525,7 @@
             this.ClearTurnList.Name = "ClearTurnList";
             this.ClearTurnList.Size = new System.Drawing.Size(847, 808);
             this.ClearTurnList.TabIndex = 329;
+            this.ClearTurnList.SelectedIndexChanged += new System.EventHandler(this.ClearTurnList_SelectedIndexChanged);
             this.ClearTurnList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ClearTurnList_MouseDoubleClick);
             // 
             // label82

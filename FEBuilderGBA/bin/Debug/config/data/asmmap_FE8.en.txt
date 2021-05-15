@@ -3195,7 +3195,7 @@ r3=X tile position of menu of right	{U}
 080193a4	UnitTryHeal	{U}
 080193e8	GetRescuingUnitNameId	{U}
 08019414	WriteStatusTextToRAM	{U}
-08019430	GetUnitStruct	RET=RAM Unit:@UNIT	{U}
+08019430	GetUnitStruct	RET=RAM Unit:@Unit	{U}
 08019444	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{U}
 08019464	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{U}
 08019484	UnitRemoveItem	{U}
@@ -4973,7 +4973,7 @@ r3=X tile position of menu of right	{U}
 0801907C	UnitTryHeal	{J}
 080190C0	GetRescuingUnitNameId	{J}
 080190EC	WriteStatusTextToRAM	{J}
-08019108	GetUnitStruct	RET=RAM Unit:@UNIT	{J}
+08019108	GetUnitStruct	RET=RAM Unit:@Unit	{J}
 0801911C	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{J}
 0801913C	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{J}
 0801915C	UnitRemoveItem	{J}
@@ -7082,7 +7082,7 @@ r3=X tile position of menu of right	{U}
 0203a8e4	gpSomeUnitPool	{U}
 0203a8e8	gpSomeUnitIt	{U}
 0203a8ec	gSomeUnitCounter	{U}
-0203a910	gArenaOpponent	{U}
+0203a910	@Unit	gArenaOpponent	{U}
 0203a958	@ActionData	gActionData	{U}
 0203aa04	@AiData	gAiData	{U}
 0203dde8	gTargetPosition	{U}
@@ -7194,7 +7194,7 @@ r3=X tile position of menu of right	{U}
 0203A8E0	gpSomeUnitPool	{J}
 0203A8E4	gpSomeUnitIt	{J}
 0203A8E8	gSomeUnitCounter	{J}
-0203A90C	gArenaOpponent	{J}
+0203A90C	@Unit	gArenaOpponent	{J}
 0203A954	@ActionData	gActionData	{J}
 0203AA00	@AiData	gAiData	{J}
 0203DDE4	gTargetPosition	{J}
@@ -9698,6 +9698,7 @@ r3=X tile position of menu of right	{U}
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 0203A8EC	@ArenaData	Temporary data of Arena	{J}
 0203A8F0	@ArenaData	Temporary data of Arena	{U}
 08031960	GetUnitArenaWeight	{J}
@@ -11386,14 +11387,14 @@ r3=X tile position of menu of right	{U}
 080A0AFC	Send item to transporter on advancement preparation screen	{J}
 080A0568	Receive items from transporters on Advance Attack Screen	{J}
 0809FCA0	When you access transporter on advancement preparation screen	{J}
-0809C804	On advancement preparation screen, all deposits	r0=@UNIT	{J}
+0809C804	On advancement preparation screen, all deposits	r0=@Unit	{J}
 08031ecc	Get a premium for stadium	{U}
 08031EA0	Set premium for stadium	{U}
 08031ED8	Acquisition of Match Results in Arena	{U}
 0809E85C	Send item to transporter on advancement preparation screen	{U}
 0809E2C8	Receive items from transporters on Advance Attack Screen	{U}
 0809DA00	When you access transporter on advancement preparation screen	{U}
-0809A538	On advancement preparation screen, all deposits	r0=@UNIT	{U}
+0809A538	On advancement preparation screen, all deposits	r0=@Unit	{U}
 0803FB38	AI's staff use judgment	Heal	Mend	Recover	{J}
 0803FCB0	AI's staff use judgment	Physic	Rescue	{J}
 0803FE80	AI's staff use judgment	Fortify	{J}

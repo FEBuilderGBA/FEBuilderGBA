@@ -18,3 +18,5 @@ INFO=適応すると、敵もプレイヤーが動かせるようになります
 INFO.en=Once adapted, the enemy will also be able to move the player.\r\nPlease use for debugging.
 NAME.zh=允许控制敌人（用于调试）
 INFO.zh=一旦适应，敌人也将能够移动玩家。\r\n请用于调试。
+
+DEPRECATED=1

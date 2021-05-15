@@ -119,6 +119,7 @@
 @ArenaData@18	short	opponentPowerWeight
 @ArenaData@1a	short	playerWeapon
 @ArenaData@1c	short	opponentWeapon
+@ArenaData@1e	short	_pad_1e
 
 0203A8EC	@ArenaData	闘技場の一時データ	{J}
 0203A8F0	@ArenaData	闘技場の一時データ	{U}
@@ -3202,7 +3203,7 @@
 080193a4	UnitTryHeal	{U}
 080193e8	GetRescuingUnitNameId	{U}
 08019414	WriteStatusTextToRAM	{U}
-08019430	GetUnitStruct	RET=RAM Unit:@UNIT	{U}
+08019430	GetUnitStruct	RET=RAM Unit:@Unit	{U}
 08019444	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{U}
 08019464	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{U}
 08019484	UnitRemoveItem	{U}
@@ -4974,7 +4975,7 @@
 0801907C	UnitTryHeal	{J}
 080190C0	GetRescuingUnitNameId	{J}
 080190EC	WriteStatusTextToRAM	{J}
-08019108	GetUnitStruct	RET=RAM Unit:@UNIT	{J}
+08019108	GetUnitStruct	RET=RAM Unit:@Unit	{J}
 0801911C	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{J}
 0801913C	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{J}
 0801915C	UnitRemoveItem	{J}
@@ -7340,7 +7341,7 @@
 0203a8e4	gpSomeUnitPool	{U}
 0203a8e8	gpSomeUnitIt	{U}
 0203a8ec	gSomeUnitCounter	{U}
-0203a910	gArenaOpponent	{U}
+0203a910	@Unit	gArenaOpponent	{U}
 0203a958	@ActionData	gActionData	{U}
 0203aa04	@AiData	gAiData	{U}
 0203dde8	gTargetPosition	{U}
@@ -7452,7 +7453,7 @@
 0203A8E0	gpSomeUnitPool	{J}
 0203A8E4	gpSomeUnitIt	{J}
 0203A8E8	gSomeUnitCounter	{J}
-0203A90C	gArenaOpponent	{J}
+0203A90C	@Unit	gArenaOpponent	{J}
 0203A954	@ActionData	gActionData	{J}
 0203AA00	@AiData	gAiData	{J}
 0203DDE4	gTargetPosition	{J}
@@ -11537,14 +11538,14 @@
 080A0AFC	進撃準備画面で、輸送体にアイテムを送る	{J}
 080A0568	進撃準備画面で、輸送体からアイテムを受け取る	{J}
 0809FCA0	進撃準備画面で、輸送体にアクセスした時	{J}
-0809C804	進撃準備画面で、全預け	r0=@UNIT	{J}
+0809C804	進撃準備画面で、全預け	r0=@Unit	{J}
 08031ecc	闘技場の掛け金を取得	{U}
 08031EA0	闘技場の掛け金を設定	{U}
 08031ED8	闘技場の試合結果の取得	{U}
 0809E85C	進撃準備画面で、輸送体にアイテムを送る	{U}
 0809E2C8	進撃準備画面で、輸送体からアイテムを受け取る	{U}
 0809DA00	進撃準備画面で、輸送体にアクセスした時	{U}
-0809A538	進撃準備画面で、全預け	r0=@UNIT	{U}
+0809A538	進撃準備画面で、全預け	r0=@Unit	{U}
 0803FB38	AIの杖利用判定	ライブ	リライブ	リカバー	{J}
 0803FCB0	AIの杖利用判定	リブロー	レスキュー	{J}
 0803FE80	AIの杖利用判定	リザーブ	{J}
