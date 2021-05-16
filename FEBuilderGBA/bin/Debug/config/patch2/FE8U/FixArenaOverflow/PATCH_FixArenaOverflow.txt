@@ -33,9 +33,9 @@ B5:DECIMAL=add Spd
 B6:DECIMAL=add Def
 B7:DECIMAL=add Res
 
-B7:DECIMAL=add Luck
-B8:DECIMAL=add Mag(if possible)
-W9=00
+B8:DECIMAL=add Luck
+B9:DECIMAL=add Mag(if possible)
+W10=00
 
 NAME.en=Make strong enemy units appear in Arena(Editor)
 INFO.en=The LV limit must be written in ascending order.\r\nIf the enemy is above the specified level, the correction will be added.\r\nBy default, no significant correction is added until lvl 20.\r\nMag corrections will only take effect if you are doing str mag split.\r\nif useStatusCap is 0 to ignores the class's status cap and raises its status.\r\nIn this case, have system limit of HP is 120 and other parameters is 63.\r\n\r\nMake enemy units that exceed level 31 appear in Arena.\r\nIn vanilla, there is a bug where if you exceed level 31,level will overflow then level 1 unit will appear.\r\nIt this patch also allows you to add a correction to your opponent's status based on your level.

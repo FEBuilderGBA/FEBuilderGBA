@@ -24,9 +24,9 @@ addstatus_table:   //sizeof == 0xC
 //   ifLV>= useCap HP   str  skil spd  def  res  luck mag 00 00
 BYTE 15     1      10   0    0    0    0    0    0    0   0  0   //lv15
 BYTE 20     1      20   0    5    5    0    0    5    0   0  0   //lv20
-BYTE 25     0      40   0    10   10   5    5    10   0   0  0   //lv25
-BYTE 30     0      60   0    10   10   10   10   10   0   0  0   //lv30
-BYTE 31     0      60   0    10   10   10   10   15   0   0  0   //lv31
+BYTE 25     0      30   0    5    5    0    0    5    0   0  0   //lv25
+BYTE 30     0      40   0    5    5    5    5    5    0   0  0   //lv30
+BYTE 31     0      50   0    5    5    7    7    5    0   0  0   //lv31
 BYTE 0xFF 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 //term
 
 

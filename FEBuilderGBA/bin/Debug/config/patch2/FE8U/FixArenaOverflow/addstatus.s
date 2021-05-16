@@ -157,7 +157,7 @@ mov r0 , #0x0 @false
 
 @@FE8J
 @ldr r3,=0x802a542
-@strh r1,[r3]
+@ldrh r1,[r3]
 @
 @ldr r2,=0x1c30
 @cmp  r1,r2
@@ -165,7 +165,7 @@ mov r0 , #0x0 @false
 
 @FE8U
 ldr r3,=0x802BB44
-str r1,[r3]
+ldr r1,[r3]
 
 ldr r2,=0xF0A54B01
 cmp  r1,r2
