@@ -6035,6 +6035,11 @@ namespace FEBuilderGBA
             }
 
         }
+        public static void FireOnMouseDoubleClick(Object obj)
+        {
+            FireEvent(obj, "OnMouseDoubleClick", new MouseEventArgs(MouseButtons.Left,1,0,0,0));
+        }
+
 
         //60fpsをgif FPSに変換
         //GAME 1/60  sec

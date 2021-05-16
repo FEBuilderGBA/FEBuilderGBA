@@ -210,7 +210,7 @@
             this.EtcPage = new System.Windows.Forms.TabPage();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyCount = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlEtc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label58 = new System.Windows.Forms.Label();
@@ -237,7 +237,7 @@
             this.label92 = new System.Windows.Forms.Label();
             this.SelectPalette = new FEBuilderGBA.TextBoxEx();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBoxEx33 = new FEBuilderGBA.TextBoxEx();
+            this.ClearTurnAddress = new FEBuilderGBA.TextBoxEx();
             this.ClearTurnList = new FEBuilderGBA.ListBoxEx();
             this.label82 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -248,6 +248,18 @@
             this.ChapterDataAddress = new FEBuilderGBA.TextBoxEx();
             this.ChapterDataList = new FEBuilderGBA.ListBoxEx();
             this.label96 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.BattleActorAddress = new FEBuilderGBA.TextBoxEx();
+            this.BattleActorList = new FEBuilderGBA.ListBoxEx();
+            this.label97 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.BattleTargetAddress = new FEBuilderGBA.TextBoxEx();
+            this.BattleTargetList = new FEBuilderGBA.ListBoxEx();
+            this.label98 = new System.Windows.Forms.Label();
+            this.tabPageWorldmap = new System.Windows.Forms.TabPage();
+            this.WorldmapAddress = new FEBuilderGBA.TextBoxEx();
+            this.WorldmapList = new FEBuilderGBA.ListBoxEx();
+            this.label99 = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
@@ -583,7 +595,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).BeginInit();
             this.EtcPage.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControlEtc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B14)).BeginInit();
@@ -593,6 +605,9 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPageWorldmap.SuspendLayout();
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
@@ -3135,7 +3150,7 @@
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
             this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PartyCount);
-            this.EtcPage.Controls.Add(this.tabControl1);
+            this.EtcPage.Controls.Add(this.tabControlEtc);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
             this.EtcPage.Controls.Add(this.PartyListBox);
             this.EtcPage.Controls.Add(this.label56);
@@ -3168,19 +3183,23 @@
             this.PartyCount.TabIndex = 333;
             this.PartyCount.Text = "PartyCount";
             // 
-            // tabControl1
+            // tabControlEtc
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(785, 8);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(861, 876);
-            this.tabControl1.TabIndex = 332;
+            this.tabControlEtc.Controls.Add(this.tabPage1);
+            this.tabControlEtc.Controls.Add(this.tabPage2);
+            this.tabControlEtc.Controls.Add(this.tabPage3);
+            this.tabControlEtc.Controls.Add(this.tabPage4);
+            this.tabControlEtc.Controls.Add(this.tabPage5);
+            this.tabControlEtc.Controls.Add(this.tabPage6);
+            this.tabControlEtc.Controls.Add(this.tabPage7);
+            this.tabControlEtc.Controls.Add(this.tabPage8);
+            this.tabControlEtc.Controls.Add(this.tabPageWorldmap);
+            this.tabControlEtc.Location = new System.Drawing.Point(785, 8);
+            this.tabControlEtc.Multiline = true;
+            this.tabControlEtc.Name = "tabControlEtc";
+            this.tabControlEtc.SelectedIndex = 0;
+            this.tabControlEtc.Size = new System.Drawing.Size(861, 876);
+            this.tabControlEtc.TabIndex = 332;
             // 
             // tabPage1
             // 
@@ -3494,7 +3513,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.textBoxEx33);
+            this.tabPage4.Controls.Add(this.ClearTurnAddress);
             this.tabPage4.Controls.Add(this.ClearTurnList);
             this.tabPage4.Controls.Add(this.label82);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
@@ -3504,16 +3523,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "クリアターン数";
             // 
-            // textBoxEx33
+            // ClearTurnAddress
             // 
-            this.textBoxEx33.ErrorMessage = "";
-            this.textBoxEx33.Location = new System.Drawing.Point(732, 5);
-            this.textBoxEx33.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEx33.Name = "textBoxEx33";
-            this.textBoxEx33.Placeholder = "";
-            this.textBoxEx33.ReadOnly = true;
-            this.textBoxEx33.Size = new System.Drawing.Size(116, 25);
-            this.textBoxEx33.TabIndex = 330;
+            this.ClearTurnAddress.ErrorMessage = "";
+            this.ClearTurnAddress.Location = new System.Drawing.Point(732, 5);
+            this.ClearTurnAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.ClearTurnAddress.Name = "ClearTurnAddress";
+            this.ClearTurnAddress.Placeholder = "";
+            this.ClearTurnAddress.ReadOnly = true;
+            this.ClearTurnAddress.Size = new System.Drawing.Size(116, 25);
+            this.ClearTurnAddress.TabIndex = 330;
             // 
             // ClearTurnList
             // 
@@ -3586,7 +3605,7 @@
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(847, 30);
             this.label95.TabIndex = 329;
-            this.label95.Text = "戦闘データ";
+            this.label95.Text = "戦歴データ";
             this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage6
@@ -3612,7 +3631,6 @@
             this.ChapterDataAddress.ReadOnly = true;
             this.ChapterDataAddress.Size = new System.Drawing.Size(116, 25);
             this.ChapterDataAddress.TabIndex = 333;
-            this.ChapterDataAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ChapterDataAddress_MouseDoubleClick);
             // 
             // ChapterDataList
             // 
@@ -3625,6 +3643,7 @@
             this.ChapterDataList.Size = new System.Drawing.Size(847, 808);
             this.ChapterDataList.TabIndex = 332;
             this.ChapterDataList.SelectedIndexChanged += new System.EventHandler(this.ChapterDataList_SelectedIndexChanged);
+            this.ChapterDataList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ChapterDataList_MouseDoubleClick);
             // 
             // label96
             // 
@@ -3637,6 +3656,153 @@
             this.label96.TabIndex = 331;
             this.label96.Text = "章データ";
             this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage7.Controls.Add(this.BattleActorAddress);
+            this.tabPage7.Controls.Add(this.BattleActorList);
+            this.tabPage7.Controls.Add(this.label97);
+            this.tabPage7.Location = new System.Drawing.Point(4, 28);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(853, 844);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "BattleActor";
+            // 
+            // BattleActorAddress
+            // 
+            this.BattleActorAddress.ErrorMessage = "";
+            this.BattleActorAddress.Location = new System.Drawing.Point(732, 5);
+            this.BattleActorAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.BattleActorAddress.Name = "BattleActorAddress";
+            this.BattleActorAddress.Placeholder = "";
+            this.BattleActorAddress.ReadOnly = true;
+            this.BattleActorAddress.Size = new System.Drawing.Size(116, 25);
+            this.BattleActorAddress.TabIndex = 336;
+            // 
+            // BattleActorList
+            // 
+            this.BattleActorList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BattleActorList.FormattingEnabled = true;
+            this.BattleActorList.IntegralHeight = false;
+            this.BattleActorList.ItemHeight = 18;
+            this.BattleActorList.Location = new System.Drawing.Point(3, 33);
+            this.BattleActorList.Name = "BattleActorList";
+            this.BattleActorList.Size = new System.Drawing.Size(847, 808);
+            this.BattleActorList.TabIndex = 335;
+            this.BattleActorList.SelectedIndexChanged += new System.EventHandler(this.BattleActorList_SelectedIndexChanged);
+            this.BattleActorList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BattleActorList_MouseDoubleClick);
+            // 
+            // label97
+            // 
+            this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label97.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label97.Location = new System.Drawing.Point(3, 3);
+            this.label97.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(847, 30);
+            this.label97.TabIndex = 334;
+            this.label97.Text = "戦闘データ gBattleActor";
+            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage8.Controls.Add(this.BattleTargetAddress);
+            this.tabPage8.Controls.Add(this.BattleTargetList);
+            this.tabPage8.Controls.Add(this.label98);
+            this.tabPage8.Location = new System.Drawing.Point(4, 28);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(853, 844);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "BattleTarget";
+            // 
+            // BattleTargetAddress
+            // 
+            this.BattleTargetAddress.ErrorMessage = "";
+            this.BattleTargetAddress.Location = new System.Drawing.Point(732, 5);
+            this.BattleTargetAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.BattleTargetAddress.Name = "BattleTargetAddress";
+            this.BattleTargetAddress.Placeholder = "";
+            this.BattleTargetAddress.ReadOnly = true;
+            this.BattleTargetAddress.Size = new System.Drawing.Size(116, 25);
+            this.BattleTargetAddress.TabIndex = 336;
+            // 
+            // BattleTargetList
+            // 
+            this.BattleTargetList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BattleTargetList.FormattingEnabled = true;
+            this.BattleTargetList.IntegralHeight = false;
+            this.BattleTargetList.ItemHeight = 18;
+            this.BattleTargetList.Location = new System.Drawing.Point(3, 33);
+            this.BattleTargetList.Name = "BattleTargetList";
+            this.BattleTargetList.Size = new System.Drawing.Size(847, 808);
+            this.BattleTargetList.TabIndex = 335;
+            this.BattleTargetList.SelectedIndexChanged += new System.EventHandler(this.BattleTargetList_SelectedIndexChanged);
+            this.BattleTargetList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BattleTargetList_MouseDoubleClick);
+            // 
+            // label98
+            // 
+            this.label98.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label98.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label98.Location = new System.Drawing.Point(3, 3);
+            this.label98.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(847, 30);
+            this.label98.TabIndex = 334;
+            this.label98.Text = "戦闘データ gBattleTarget";
+            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabPageWorldmap
+            // 
+            this.tabPageWorldmap.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageWorldmap.Controls.Add(this.WorldmapAddress);
+            this.tabPageWorldmap.Controls.Add(this.WorldmapList);
+            this.tabPageWorldmap.Controls.Add(this.label99);
+            this.tabPageWorldmap.Location = new System.Drawing.Point(4, 28);
+            this.tabPageWorldmap.Name = "tabPageWorldmap";
+            this.tabPageWorldmap.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWorldmap.Size = new System.Drawing.Size(853, 844);
+            this.tabPageWorldmap.TabIndex = 8;
+            this.tabPageWorldmap.Text = "Worldmap";
+            // 
+            // WorldmapAddress
+            // 
+            this.WorldmapAddress.ErrorMessage = "";
+            this.WorldmapAddress.Location = new System.Drawing.Point(732, 5);
+            this.WorldmapAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldmapAddress.Name = "WorldmapAddress";
+            this.WorldmapAddress.Placeholder = "";
+            this.WorldmapAddress.ReadOnly = true;
+            this.WorldmapAddress.Size = new System.Drawing.Size(116, 25);
+            this.WorldmapAddress.TabIndex = 339;
+            // 
+            // WorldmapList
+            // 
+            this.WorldmapList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorldmapList.FormattingEnabled = true;
+            this.WorldmapList.IntegralHeight = false;
+            this.WorldmapList.ItemHeight = 18;
+            this.WorldmapList.Location = new System.Drawing.Point(3, 33);
+            this.WorldmapList.Name = "WorldmapList";
+            this.WorldmapList.Size = new System.Drawing.Size(847, 808);
+            this.WorldmapList.TabIndex = 338;
+            this.WorldmapList.SelectedIndexChanged += new System.EventHandler(this.WorldmapList_SelectedIndexChanged);
+            this.WorldmapList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorldmapList_MouseDoubleClick);
+            // 
+            // label99
+            // 
+            this.label99.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label99.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label99.Location = new System.Drawing.Point(3, 3);
+            this.label99.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(847, 30);
+            this.label99.TabIndex = 337;
+            this.label99.Text = "Worldmap FE8";
+            this.label99.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Party_ControlPanel
             // 
@@ -6872,7 +7038,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).EndInit();
             this.EtcPage.ResumeLayout(false);
             this.EtcPage.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlEtc.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -6889,6 +7055,12 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPageWorldmap.ResumeLayout(false);
+            this.tabPageWorldmap.PerformLayout();
             this.Party_ControlPanel.ResumeLayout(false);
             this.Party_ControlPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
@@ -7419,7 +7591,7 @@
         private System.Windows.Forms.Label label62;
         private ListBoxEx TrapList;
         private TextBoxEx TrapAddress;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlEtc;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -7428,7 +7600,7 @@
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tabPage4;
-        private TextBoxEx textBoxEx33;
+        private TextBoxEx ClearTurnAddress;
         private ListBoxEx ClearTurnList;
         private System.Windows.Forms.Label label82;
         private TextBoxEx X_ETC_WorldmapNode_Text;
@@ -7452,5 +7624,17 @@
         private System.Windows.Forms.Label label96;
         private TextBoxEx BWLAddress;
         private TextBoxEx ChapterDataAddress;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private TextBoxEx BattleActorAddress;
+        private ListBoxEx BattleActorList;
+        private System.Windows.Forms.Label label97;
+        private TextBoxEx BattleTargetAddress;
+        private ListBoxEx BattleTargetList;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.TabPage tabPageWorldmap;
+        private TextBoxEx WorldmapAddress;
+        private ListBoxEx WorldmapList;
+        private System.Windows.Forms.Label label99;
     }
 }

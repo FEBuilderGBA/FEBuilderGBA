@@ -256,6 +256,11 @@ namespace FEBuilderGBA
         uint workmemory_npc_units_address(); //ワークメモリ ENEMY UNIT
         uint workmemory_chapterdata_address();    //ワークメモリ 章データ
         uint workmemory_chapterdata_size();    //ワークメモリ 章データのサイズ
+        uint workmemory_battle_actor_address();//ワークメモリ 戦闘時のユニット構造体
+        uint workmemory_battle_target_address();//ワークメモリ 戦闘時のユニット構造体
+        uint workmemory_battle_unit_size(); //ワークメモリ 戦闘時のユニット構造体のサイズ
+        uint workmemory_worldmap_data_address();//ワークメモリ ワールドマップ関係の起点
+        uint workmemory_worldmap_data_size(); //ワークメモリ ワールドマップ関係のサイズ
         uint workmemory_mapid_address();    //ワークメモリ マップID
         uint workmemory_last_string_address();  //ワークメモリ 最後に表示した文字列
         uint workmemory_text_buffer_address();  //ワークメモリ デコードされたテキスト

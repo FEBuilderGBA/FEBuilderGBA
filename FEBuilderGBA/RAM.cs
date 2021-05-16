@@ -210,6 +210,10 @@ namespace FEBuilderGBA
                 }
                 return U.getBinaryData(this.Memory03, addr, count);
             }
+            if (addr == 0 || count == 0)
+            {
+                return new byte[0];
+            }
             Debug.Assert(false);
             return new byte[count];
         }

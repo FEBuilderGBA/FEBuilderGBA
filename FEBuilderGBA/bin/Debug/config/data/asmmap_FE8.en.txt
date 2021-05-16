@@ -190,7 +190,7 @@
 @Unit@19	byte	Luck
 @Unit@1A	byte	Physique correction	(5bit)
 @Unit@1B	byte	Trv Unit ID
-@Unit@1C	byte	Unknown1	(tmp?)
+@Unit@1C	byte	Unknown1C	(tmp?)
 @Unit@1D	byte	Move correction	(5bit)
 @Unit@1E	byte	ItemID1
 @Unit@1F	byte	ItemStock1
@@ -1249,68 +1249,69 @@ r3=X tile position of menu of right	{U}
 03005290	@GmapMUsData	GmapMUsData	{U}
 
 //http://ngmansion	xyz/wiki/hackfe/index	php?%E8%A7%A3%E8%AA%AC/%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F
-03005314	Worldmap Show RoadID 0	{J}
-03005316	Worldmap Show RoadID 2	{J}
-03005317	Worldmap Show RoadID 3	{J}
-03005318	Worldmap Show RoadID 4	{J}
-03005319	Worldmap Show RoadID 5	{J}
-0300531A	Worldmap Show RoadID 6	{J}
-0300531B	Worldmap Show RoadID 7	{J}
-0300531C	Worldmap Show RoadID 8	{J}
-0300531D	Worldmap Show RoadID 9	{J}
-0300531F	Worldmap Show RoadID 10	{J}
-03005320	Worldmap Show RoadID 11	{J}
-03005321	Worldmap Show RoadID 12	{J}
-03005322	Worldmap Show RoadID 13	{J}
-03005323	Worldmap Show RoadID 14	{J}
-03005324	Worldmap Show RoadID 15	{J}
-03005325	Worldmap Show RoadID 16	{J}
-03005326	Worldmap Show RoadID 17	{J}
-03005327	Worldmap Show RoadID 18	{J}
-03005328	Worldmap Show RoadID 19	{J}
-03005329	Worldmap Show RoadID 20	{J}
-0300532A	Worldmap Show RoadID 21	{J}
-0300532B	Worldmap Show RoadID 22	{J}
-0300532C	Worldmap Show RoadID 23	{J}
-0300532D	Worldmap Show RoadID 24	{J}
-0300532E	Worldmap Show RoadID 25	{J}
-0300532F	Worldmap Show RoadID 26	{J}
-03005330	Worldmap Show RoadID 27	{J}
-03005331	Worldmap Show RoadID 28	{J}
-03005332	Worldmap Show RoadID 29	{J}
-03005333	Worldmap Show RoadID 30	{J}
+03005314	Worldmap Show RoadID 00	{J}
+03005315	Worldmap Show RoadID 01	{J}
+03005316	Worldmap Show RoadID 02	{J}
+03005317	Worldmap Show RoadID 03	{J}
+03005318	Worldmap Show RoadID 04	{J}
+03005319	Worldmap Show RoadID 05	{J}
+0300531A	Worldmap Show RoadID 06	{J}
+0300531B	Worldmap Show RoadID 07	{J}
+0300531C	Worldmap Show RoadID 08	{J}
+0300531D	Worldmap Show RoadID 09	{J}
+0300531F	Worldmap Show RoadID 0A	{J}
+03005320	Worldmap Show RoadID 0B	{J}
+03005321	Worldmap Show RoadID 0C	{J}
+03005322	Worldmap Show RoadID 0D	{J}
+03005323	Worldmap Show RoadID 0E	{J}
+03005324	Worldmap Show RoadID 0F	{J}
+03005325	Worldmap Show RoadID 10	{J}
+03005326	Worldmap Show RoadID 11	{J}
+03005327	Worldmap Show RoadID 12	{J}
+03005328	Worldmap Show RoadID 13	{J}
+03005329	Worldmap Show RoadID 14	{J}
+0300532A	Worldmap Show RoadID 15	{J}
+0300532B	Worldmap Show RoadID 16	{J}
+0300532C	Worldmap Show RoadID 17	{J}
+0300532D	Worldmap Show RoadID 18	{J}
+0300532E	Worldmap Show RoadID 19	{J}
+0300532F	Worldmap Show RoadID 1A	{J}
+03005330	Worldmap Show RoadID 1B	{J}
+03005331	Worldmap Show RoadID 1C	{J}
+03005332	Worldmap Show RoadID 1D	{J}
+03005333	Worldmap Show RoadID 1E	{J}
 03005334	Worldmap Road Count	{J}
-03005324	Worldmap Show RoadID 0	{U}
-03005325	Worldmap Show RoadID 1	{U}
-03005326	Worldmap Show RoadID 2	{U}
-03005327	Worldmap Show RoadID 3	{U}
-03005328	Worldmap Show RoadID 4	{U}
-03005329	Worldmap Show RoadID 5	{U}
-0300532A	Worldmap Show RoadID 6	{U}
-0300532B	Worldmap Show RoadID 7	{U}
-0300532C	Worldmap Show RoadID 8	{U}
-0300532D	Worldmap Show RoadID 9	{U}
-0300532F	Worldmap Show RoadID 10	{U}
-03005330	Worldmap Show RoadID 11	{U}
-03005331	Worldmap Show RoadID 12	{U}
-03005332	Worldmap Show RoadID 13	{U}
-03005333	Worldmap Show RoadID 14	{U}
-03005334	Worldmap Show RoadID 15	{U}
-03005335	Worldmap Show RoadID 16	{U}
-03005336	Worldmap Show RoadID 17	{U}
-03005337	Worldmap Show RoadID 18	{U}
-03005338	Worldmap Show RoadID 19	{U}
-03005339	Worldmap Show RoadID 20	{U}
-0300533A	Worldmap Show RoadID 21	{U}
-0300533B	Worldmap Show RoadID 22	{U}
-0300533C	Worldmap Show RoadID 23	{U}
-0300533D	Worldmap Show RoadID 24	{U}
-0300533E	Worldmap Show RoadID 25	{U}
-0300533F	Worldmap Show RoadID 26	{U}
-03005340	Worldmap Show RoadID 27	{U}
-03005341	Worldmap Show RoadID 28	{U}
-03005342	Worldmap Show RoadID 29	{U}
-03005343	Worldmap Show RoadID 30	{U}
+03005324	Worldmap Show RoadID 00	{U}
+03005325	Worldmap Show RoadID 01	{U}
+03005326	Worldmap Show RoadID 02	{U}
+03005327	Worldmap Show RoadID 03	{U}
+03005328	Worldmap Show RoadID 04	{U}
+03005329	Worldmap Show RoadID 05	{U}
+0300532A	Worldmap Show RoadID 06	{U}
+0300532B	Worldmap Show RoadID 07	{U}
+0300532C	Worldmap Show RoadID 08	{U}
+0300532D	Worldmap Show RoadID 09	{U}
+0300532F	Worldmap Show RoadID 0A	{U}
+03005330	Worldmap Show RoadID 0B	{U}
+03005331	Worldmap Show RoadID 0C	{U}
+03005332	Worldmap Show RoadID 0D	{U}
+03005333	Worldmap Show RoadID 0E	{U}
+03005334	Worldmap Show RoadID 0F	{U}
+03005335	Worldmap Show RoadID 10	{U}
+03005336	Worldmap Show RoadID 11	{U}
+03005337	Worldmap Show RoadID 12	{U}
+03005338	Worldmap Show RoadID 13	{U}
+03005339	Worldmap Show RoadID 14	{U}
+0300533A	Worldmap Show RoadID 15	{U}
+0300533B	Worldmap Show RoadID 16	{U}
+0300533C	Worldmap Show RoadID 17	{U}
+0300533D	Worldmap Show RoadID 18	{U}
+0300533E	Worldmap Show RoadID 19	{U}
+0300533F	Worldmap Show RoadID 1A	{U}
+03005340	Worldmap Show RoadID 1B	{U}
+03005341	Worldmap Show RoadID 1C	{U}
+03005342	Worldmap Show RoadID 1D	{U}
+03005343	Worldmap Show RoadID 1E	{U}
 03005344	Worldmap Road Count	{U}
 
 030052A0	Worldmap Node00	Border Mulan	{J}
@@ -11777,8 +11778,8 @@ r3=X tile position of menu of right	{U}
 0203EDB0	gBonusContentFlags	{J}
 0203EF60	@SAVEMENURTEXTDATA	gSaveMenuRTextData	{J}
 @SAVEMENURTEXTDATA@00	&SongHeader	songHeader
-@SAVEMENURTEXTDATA@01	byte	HeroLevel
-@SAVEMENURTEXTDATA@02	byte	WorldmapNodeID
+@SAVEMENURTEXTDATA@04	byte	HeroLevel
+@SAVEMENURTEXTDATA@05	byte	WorldmapNodeID
 03000000	gRNState	{J}
 03000038	gpMusicProcA	{J}
 0300003C	gpMusicProcB	{J}
