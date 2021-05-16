@@ -2137,7 +2137,7 @@ namespace FEBuilderGBA
             string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
 
             uint aid = Program.RAM.u16(addr + 0x1B);
-            string aidString = GetRAMUnitAIDToName(aid);
+            string aidString = EmulatorMemoryUtil.GetRAMUnitAIDToName(aid);
 
             PARTY_Address.Value = addr;
             PARTY_SelectAddress.Text = "";
@@ -2154,26 +2154,6 @@ namespace FEBuilderGBA
             Party_ControlPanel.Show();
         }
 
-        string GetRAMUnitAIDToName(uint aid)
-        {
-            if (aid == 0)
-            {
-                return "";
-            }
-
-            const uint RAMUnitSizeOf = 72;
-            uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
-            addr = addr + ((aid - 1) * RAMUnitSizeOf);
-            uint romUnitAddr = Program.RAM.u32(addr);
-            romUnitAddr = U.toOffset(romUnitAddr);
-            if (!U.isSafetyOffset(romUnitAddr))
-            {
-                return "";
-            }
-            uint textid = Program.ROM.u16(romUnitAddr); //Unit.Name
-            uint unitid = Program.ROM.u8(romUnitAddr + 4); //Unit.ID
-            return U.ToHexString(unitid) + " " + FETextDecode.Direct(textid);
-        }
 
         uint GetShowRAMPartyUnitsAddr()
         {
@@ -2568,7 +2548,7 @@ namespace FEBuilderGBA
         {
             byte[] bin = Program.RAM.getBinaryData(
                   Program.ROM.RomInfo.workmemory_battle_actor_address()
-                , Program.ROM.RomInfo.workmemory_battle_unit_size());
+                , 0x80);
             uint sum = U.CalcCheckSUM(bin);
             if (sum != this.BattleActorSUM)
             {//変更有
@@ -2580,7 +2560,7 @@ namespace FEBuilderGBA
         {
             byte[] bin = Program.RAM.getBinaryData(
                   Program.ROM.RomInfo.workmemory_battle_target_address()
-                , Program.ROM.RomInfo.workmemory_battle_unit_size());
+                , 0x80);
             uint sum = U.CalcCheckSUM(bin);
             if (sum != this.BattleTargetSUM)
             {//変更有
@@ -2829,7 +2809,7 @@ namespace FEBuilderGBA
         }
         Size DrawWorldmapList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
-            return DrawAddressList(WorldmapStruct, Program.ROM.RomInfo.workmemory_worldmap_data_address(), lb, index, g, listbounds, isWithDraw , 10);
+            return DrawAddressList(WorldmapStruct, Program.ROM.RomInfo.workmemory_worldmap_data_address(), lb, index, g, listbounds, isWithDraw , 5);
         }
         
         Size DrawAddressList(List<EmulatorMemoryUtil.AddressList> list, uint baseaddr, ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw, int shiftDrawX = 0)

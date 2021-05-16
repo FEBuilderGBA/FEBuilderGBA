@@ -6513,7 +6513,7 @@ namespace FEBuilderGBA
             return "-";
         }
         //武器
-        public static String GetWeaponName(uint num)
+        public static String GetWeaponTypeName(uint num)
         {
             switch (num)
             {
@@ -7358,6 +7358,11 @@ namespace FEBuilderGBA
         public static string GetChapterDataConfig(uint num)
         {
             Dictionary<uint, string> dic = ConfigDataDatanameCache("chapterdata_config_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetWorldmapStructWMFLAG1(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("worldmap_struct_wmflag1_");
             return GetInfoByBitFlag(num, dic);
         }
 

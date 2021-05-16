@@ -518,6 +518,27 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
             return;
         }
+        public static string GetRAMUnitAIDToName(uint aid)
+        {
+            if (aid == 0)
+            {
+                return "";
+            }
+
+            const uint RAMUnitSizeOf = 72;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
+            addr = addr + ((aid - 1) * RAMUnitSizeOf);
+            uint romUnitAddr = Program.RAM.u32(addr);
+            romUnitAddr = U.toOffset(romUnitAddr);
+            if (!U.isSafetyOffset(romUnitAddr))
+            {
+                return "";
+            }
+            uint textid = Program.ROM.u16(romUnitAddr); //Unit.Name
+            uint unitid = Program.ROM.u8(romUnitAddr + 4); //Unit.ID
+            return U.ToHexString(unitid) + " " + FETextDecode.Direct(textid);
+        }
+
         public class AddressList
         {
             public string Name;
@@ -554,7 +575,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x18, "PlaythroughId", "", 2));
                 ret.Add(new AddressList(0x1A, "LastUnitListSortType", "", 1));
                 ret.Add(new AddressList(0x1B, "Editon", "EDITON", 1));
-                ret.Add(new AddressList(0x1C, "Config", "CONFIG", 0x4));
+                ret.Add(new AddressList(0x1C, "Config", "CHAPTERCONFIG", 0x4));
             }
             else
             {//FE7 , FE8
@@ -580,7 +601,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x30, "FundsTotalDifference", "", 0x4));
                 ret.Add(new AddressList(0x34, "Unknown34", "", 0x4));
                 ret.Add(new AddressList(0x38, "Padding_38", "", 0x2));
-                ret.Add(new AddressList(0x40, "Config", "CONFIG", 0x4));
+                ret.Add(new AddressList(0x40, "Config", "CHAPTERCONFIG", 0x4));
                 ret.Add(new AddressList(0x44, "Unknown44", "", 0x4));
                 ret.Add(new AddressList(0x48, "Unknown48", "", 0x2));
                 ret.Add(new AddressList(0x4A, "Unknown4A", "", 0x2));
@@ -593,13 +614,13 @@ namespace FEBuilderGBA
             List<AddressList> ret = new List<AddressList>();
             if (Program.ROM.RomInfo.version() == 6)
             {//FE6
-                ret.Add(new AddressList(0x00, "UnitPointer", "UNITPOINTER", 4));
-                ret.Add(new AddressList(0x04, "ClassPointer", "CLASSPOINTER", 4));
-                ret.Add(new AddressList(0x08, "Level", "DEC", 4));
+                ret.Add(new AddressList(0x00, "UnitPointer", "ROMUNITPOINTER", 4));
+                ret.Add(new AddressList(0x04, "ClassPointer", "ROMCLASSPOINTER", 4));
+                ret.Add(new AddressList(0x08, "Level", "DEC", 1));
                 ret.Add(new AddressList(0x09, "EXP", "DEC", 1));
                 ret.Add(new AddressList(0x0A, "Recovery mode", "", 1));
                 ret.Add(new AddressList(0x0B, "UnitTableID", "", 1));
-                ret.Add(new AddressList(0x0C, "State", "", 2));
+                ret.Add(new AddressList(0x0C, "State", "RAMUNITSTATE", 2));
                 ret.Add(new AddressList(0x0E, "X", "DEC", 1));
                 ret.Add(new AddressList(0x0F, "Y", "DEC", 1));
                 ret.Add(new AddressList(0x10, "MAX HP", "DEC", 1));
@@ -611,7 +632,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x16, "Ref", "DEC", 1));
                 ret.Add(new AddressList(0x17, "Luck", "DEC", 1));
                 ret.Add(new AddressList(0x18, "CON", "DEC", 1));
-                ret.Add(new AddressList(0x19, "TrvID", "", 1));
+                ret.Add(new AddressList(0x19, "TrvID", "RAMUNITAID", 1));
                 ret.Add(new AddressList(0x1A, "Unknown1C", "", 1));
                 ret.Add(new AddressList(0x1B, "MOV", "", 1));
                 ret.Add(new AddressList(0x1C, "ItemID1", "ITEM", 1));
@@ -652,9 +673,9 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x3F, "Unknown3F", "", 0x1));
                 ret.Add(new AddressList(0x40, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x41, "AI4", "", 0x1));
-                ret.Add(new AddressList(0x42, "AI1", "", 0x1));
+                ret.Add(new AddressList(0x42, "AI1", "AI1", 0x1));
                 ret.Add(new AddressList(0x43, "AI1 Counter", "", 0x1));
-                ret.Add(new AddressList(0x44, "AI2", "", 0x1));
+                ret.Add(new AddressList(0x44, "AI2", "AI2", 0x1));
                 ret.Add(new AddressList(0x45, "AI2 Counter", "", 0x1));
                 ret.Add(new AddressList(0x46, "Unknown46", "", 0x1));
                 ret.Add(new AddressList(0x47, "Unknown47", "", 0x1));
@@ -663,7 +684,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x4A, "weaponBefore ItemID", "ITEM", 0x1));
                 ret.Add(new AddressList(0x4B, "weaponBefore Stock", "DEC", 0x1));
                 ret.Add(new AddressList(0x4C, "weaponAttributes", "", 0x4));
-                ret.Add(new AddressList(0x50, "weaponType", "", 0x1));
+                ret.Add(new AddressList(0x50, "weaponType", "WEAPONTYPE", 0x1));
                 ret.Add(new AddressList(0x51, "weaponSlotIndex", "", 0x1));
                 ret.Add(new AddressList(0x52, "canCounter", "", 0x1));
                 ret.Add(new AddressList(0x53, "wTriangleHitBonus", "DEC", 0x1));
@@ -672,7 +693,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x56, "terrainDefense", "DEC", 0x1));
                 ret.Add(new AddressList(0x57, "terrainAvoid", "DEC", 0x1));
                 ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x1));
-                ret.Add(new AddressList(0x59, "pad", "", 0x1));
+                ret.Add(new AddressList(0x59, "pad59", "", 0x1));
                 ret.Add(new AddressList(0x5A, "battleAttack", "DEC", 0x2));
                 ret.Add(new AddressList(0x5C, "battleDefense", "DEC", 0x2));
                 ret.Add(new AddressList(0x5E, "battleSpeed", "DEC", 0x2));
@@ -704,13 +725,13 @@ namespace FEBuilderGBA
             }
             else
             {//FE7 , FE8
-                ret.Add(new AddressList(0x00, "UnitPointer", "UNITPOINTER", 4));
-                ret.Add(new AddressList(0x04, "ClassPointer", "CLASSPOINTER", 4));
-                ret.Add(new AddressList(0x08, "Level", "DEC", 4));
+                ret.Add(new AddressList(0x00, "UnitPointer", "ROMUNITPOINTER", 4));
+                ret.Add(new AddressList(0x04, "ClassPointer", "ROMCLASSPOINTER", 4));
+                ret.Add(new AddressList(0x08, "Level", "DEC", 1));
                 ret.Add(new AddressList(0x09, "EXP", "DEC", 1));
                 ret.Add(new AddressList(0x0A, "Recovery mode", "", 1));
                 ret.Add(new AddressList(0x0B, "UnitTableID", "", 1));
-                ret.Add(new AddressList(0x0C, "State", "", 4));
+                ret.Add(new AddressList(0x0C, "State", "RAMUNITSTATE", 4));
                 ret.Add(new AddressList(0x10, "X", "DEC", 1));
                 ret.Add(new AddressList(0x11, "Y", "DEC", 1));
                 ret.Add(new AddressList(0x12, "MAX HP", "DEC", 1));
@@ -722,7 +743,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x18, "Ref", "DEC", 1));
                 ret.Add(new AddressList(0x19, "Luck", "DEC", 1));
                 ret.Add(new AddressList(0x1A, "CON", "DEC", 1));
-                ret.Add(new AddressList(0x1B, "TrvID", "", 1));
+                ret.Add(new AddressList(0x1B, "TrvID", "RAMUNITAID", 1));
                 ret.Add(new AddressList(0x1C, "Unknown1C", "", 1));
                 ret.Add(new AddressList(0x1D, "MOV", "", 1));
                 ret.Add(new AddressList(0x1E, "ItemID1", "ITEM", 1));
@@ -761,9 +782,9 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x3F, "Unknown3F", "", 0x1));
                 ret.Add(new AddressList(0x40, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x41, "AI4", "", 0x1));
-                ret.Add(new AddressList(0x42, "AI1", "", 0x1));
+                ret.Add(new AddressList(0x42, "AI1", "AI1", 0x1));
                 ret.Add(new AddressList(0x43, "AI1 Counter", "", 0x1));
-                ret.Add(new AddressList(0x44, "AI2", "", 0x1));
+                ret.Add(new AddressList(0x44, "AI2", "AI2", 0x1));
                 ret.Add(new AddressList(0x45, "AI2 Counter", "", 0x1));
                 ret.Add(new AddressList(0x46, "Unknown46", "", 0x1));
                 ret.Add(new AddressList(0x47, "Unknown47", "", 0x1));
@@ -772,16 +793,16 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x4A, "weaponBefore ItemID", "ITEM", 0x1));
                 ret.Add(new AddressList(0x4B, "weaponBefore Stock", "DEC", 0x1));
                 ret.Add(new AddressList(0x4C, "weaponAttributes", "", 0x4));
-                ret.Add(new AddressList(0x50, "weaponType", "", 0x1));
+                ret.Add(new AddressList(0x50, "weaponType", "WEAPONTYPE", 0x1));
                 ret.Add(new AddressList(0x51, "weaponSlotIndex", "", 0x1));
                 ret.Add(new AddressList(0x52, "canCounter", "", 0x1));
                 ret.Add(new AddressList(0x53, "wTriangleHitBonus", "DEC", 0x1));
                 ret.Add(new AddressList(0x54, "wTriangleDmgBonus", "DEC", 0x1));
-                ret.Add(new AddressList(0x55, "terrainId", "", 0x1));
+                ret.Add(new AddressList(0x55, "terrainId", "TILE", 0x1));
                 ret.Add(new AddressList(0x56, "terrainDefense", "DEC", 0x1));
                 ret.Add(new AddressList(0x57, "terrainAvoid", "DEC", 0x1));
                 ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x1));
-                ret.Add(new AddressList(0x59, "pad", "", 0x1));
+                ret.Add(new AddressList(0x59, "pad59", "", 0x1));
                 ret.Add(new AddressList(0x5A, "battleAttack", "DEC", 0x2));
                 ret.Add(new AddressList(0x5C, "battleDefense", "DEC", 0x2));
                 ret.Add(new AddressList(0x5E, "battleSpeed", "DEC", 0x2));
@@ -822,7 +843,7 @@ namespace FEBuilderGBA
             }
             else
             {//FE8
-                ret.Add(new AddressList(0x00, "Unk00", "", 1));
+                ret.Add(new AddressList(0x00, "Flag", "WMFLAG1", 1));
                 ret.Add(new AddressList(0x01, "Unk01", "", 1));
                 ret.Add(new AddressList(0x02, "gWMCamera", "", 2));
                 ret.Add(new AddressList(0x04, "Unk04", "", 2));
@@ -961,9 +982,13 @@ namespace FEBuilderGBA
                 byte[] srcdata = Program.RAM.getBinaryData(addr, len);
                 return decoder.UnHffmanPatchDecodeLow(srcdata);
             }
-            else if (a.Type == "CONFIG")
+            else if (a.Type == "CHAPTERCONFIG")
             {
                 return U.To0xHexString(v) + " (" + InputFormRef.GetChapterDataConfig(v) + ")";
+            }
+            else if (a.Type == "WMFLAG1")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetWorldmapStructWMFLAG1(v) + ")";
             }
             else if (a.Type == "ITEM")
             {
@@ -977,7 +1002,31 @@ namespace FEBuilderGBA
             {
                 return U.To0xHexString(v) + " (" + WorldMapPathForm.GetPathName(v) + ")";
             }
-            else if (a.Type == "UNITPOINTER" || a.Type == "CLASSPOINTER")
+            else if (a.Type == "TILE")
+            {
+                return U.To0xHexString(v) + " (" + MapTerrainNameForm.GetName(v) + ")";
+            }
+            else if (a.Type == "RAMUNITSTATE")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetRAM_UNIT_STATE(v) + ")";
+            }
+            else if (a.Type == "RAMUNITAID")
+            {
+                return U.To0xHexString(v) + " (" + EmulatorMemoryUtil.GetRAMUnitAIDToName(v) + ")";
+            }
+            else if (a.Type == "AI1")
+            {
+                return U.To0xHexString(v) + " (" + EventUnitForm.GetAIName1(v) + ")";
+            }
+            else if (a.Type == "AI2")
+            {
+                return U.To0xHexString(v) + " (" + EventUnitForm.GetAIName2(v) + ")";
+            }
+            else if (a.Type == "WEAPONTYPE")
+            {
+                return U.To0xHexString(v) + " (" + InputFormRef.GetWeaponTypeName(v) + ")";
+            }
+            else if (a.Type == "ROMUNITPOINTER" || a.Type == "ROMCLASSPOINTER")
             {
                 string name = "";
                 if (U.isSafetyPointer(v))

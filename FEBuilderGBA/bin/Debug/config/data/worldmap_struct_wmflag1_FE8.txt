@@ -1,0 +1,9 @@
+//Option1
+01=ShowWMAP	is currently in world map mode (used by save screen, convoy, shops etc. to know which screen to put you back on when backing out)
+02=FreeRoam	free roam mode (player has control and is not traveling toward a destination node)
+03=MiniMap	show/hide minimap
+04=Sprites	show/hide mapsprites
+05=MiniRight	show minimap on right (1) or left (0) (used to move the minimap so it doesn't draw over the cursor)
+06=Unk20	seems to always be set during normal play
+07=SKIPWM	set by SKIPWM event, purpose unknown
+08=EventC2	set by EventC2_ (0xCC04), purpose unknown

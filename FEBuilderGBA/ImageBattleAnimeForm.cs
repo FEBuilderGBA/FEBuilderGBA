@@ -415,7 +415,7 @@ namespace FEBuilderGBA
            }
            else if (b1 == 1)
            {//種類指定
-               return InputFormRef.GetWeaponName(b0);
+               return InputFormRef.GetWeaponTypeName(b0);
            }
            return "??";
        }

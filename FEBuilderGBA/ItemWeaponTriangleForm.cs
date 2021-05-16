@@ -34,8 +34,8 @@ namespace FEBuilderGBA
                 {
                     uint weapon1 = Program.ROM.u8(addr);
                     uint weapon2 = Program.ROM.u8(addr+1);
-                    return U.ToHexString(weapon1)  + " " + InputFormRef.GetWeaponName(weapon1)
-                        + " -> " + U.ToHexString(weapon2)  + " " + InputFormRef.GetWeaponName(weapon2)
+                    return U.ToHexString(weapon1)  + " " + InputFormRef.GetWeaponTypeName(weapon1)
+                        + " -> " + U.ToHexString(weapon2)  + " " + InputFormRef.GetWeaponTypeName(weapon2)
                         ;
                 }
                 );

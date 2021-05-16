@@ -262,7 +262,6 @@ namespace FEBuilderGBA
         public uint workmemory_chapterdata_size() { return 0x4C; }    //ワークメモリ 章データのサイズ
         public uint workmemory_battle_actor_address() { return 0x0203a4e8; } //ワークメモリ 戦闘時のユニット構造体
         public uint workmemory_battle_target_address() { return 0x0203a568; } //ワークメモリ 戦闘時のユニット構造体
-        public uint workmemory_battle_unit_size() { return 0x80; }  //ワークメモリ 戦闘時のユニット構造体のサイズ
         public uint workmemory_worldmap_data_address() { return 0x03005270; }//ワークメモリ ワールドマップ関係の起点
         public uint workmemory_worldmap_data_size() { return 0xC4; } //ワークメモリ ワールドマップ関係のサイズ
         public uint workmemory_last_string_address() { return 0x0202B6A8; }  //ワークメモリ 最後に表示した文字列

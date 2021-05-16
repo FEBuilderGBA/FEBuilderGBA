@@ -556,15 +556,6 @@ ASM编辑
 :CC分岐
 转职分岐
 
-:警告:フォントがありません。\r\n文字:{0}\r\n{1}
-警告:没有字体。\r\n角色:{0}\r\n{1}
-
-:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
-警告:文字太长。\r\n估计点数:（{0}，{1}）\r\n{2}
-
-:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
-警告:文本行太多。\r\n估计点号（{0}，{1}）\r\n{2}
-
 :魔力
 魔力
 
@@ -1228,11 +1219,17 @@ Eliwood版
 :クリアターン数
 净转数。
 
-:戦闘データ
-战斗数据。
+:戦歴データ
+战斗历史数据。
 
 :章データ
 ChapterData
+
+:戦闘データ gBattleActor
+战斗数据gBattleActor。
+
+:戦闘データ gBattleTarget
+战斗数据gBattleTarget。
 
 :支援フラグ
 协助国旗
@@ -3642,6 +3639,21 @@ PNG|*.png|动漫GIF|*.gif|所有文件|*
 
 :顔画像で nullが1000個連続して出てきたので探索を打ち切りました.
 由于在脸部图像中连续出现1000个空值，搜索被中止。
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+面部图像的单元图像的前4个字节的标头已损坏。我们建议您再次导入它。\r\n标题1：地址：{0}消息：默认值为0x00，但为{1}。
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
 
 :口
 口
@@ -6541,6 +6553,9 @@ UPS补丁无法应用
 :このエラーは誤報なので表示しない
 不要显示此错误，因为它是虚惊一场。
 
+:システムエラー:
+系统错误:
+
 :エラー:
 错误:
 
@@ -6657,9 +6672,6 @@ FELint内部错误
 
 :{0}個のエラーがあります
 有{0}个错误
-
-:システムエラー:
-系统错误:
 
 :ワールドマップイベント:
 世界地图事件:
@@ -11089,6 +11101,15 @@ FFFF访问了字符
 :警告:\r\n範囲外のTextID:{0}を参照しています。
 警告:。\r\n引用TextID:{0}超出范围。
 
+:警告:フォントがありません。\r\n文字:{0}\r\n{1}
+警告:没有字体。\r\n角色:{0}\r\n{1}
+
+:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
+警告:文字太长。\r\n估计点数:（{0}，{1}）\r\n{2}
+
+:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
+警告:文本行太多。\r\n估计点号（{0}，{1}）\r\n{2}
+
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
 警告:\r\n虽然它是用于对话的文本，但是没有诸如@0003之类的符号。
 
@@ -12970,14 +12991,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.

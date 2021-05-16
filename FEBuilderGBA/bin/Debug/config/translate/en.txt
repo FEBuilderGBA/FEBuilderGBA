@@ -556,15 +556,6 @@ Do not set this value to 0.
 :CC分岐
 Promotion Branches
 
-:警告:フォントがありません。\r\n文字:{0}\r\n{1}
-Warning: There is no font.\r\nCharacters: {0}\r\n{1}
-
-:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
-Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\r\n{2}
-
-:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
-Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
-
 :魔力
 MAG
 
@@ -1228,11 +1219,17 @@ Trap Data
 :クリアターン数
 Record Turns
 
-:戦闘データ
-Battle Data
+:戦歴データ
+Battle history data.
 
 :章データ
 Chapter data.
+
+:戦闘データ gBattleActor
+Battle data gBattleActor.
+
+:戦闘データ gBattleTarget
+Battle data gBattleTarget.
 
 :支援フラグ
 Support Flags
@@ -3642,6 +3639,21 @@ Portrait Editor
 
 :顔画像で nullが1000個連続して出てきたので探索を打ち切りました.
 Since 1000 nulls came out consecutively in the Portrait, search was aborted.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader1: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
+
+:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
+The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
 
 :口
 Mouth
@@ -6541,6 +6553,9 @@ Show this error
 :このエラーは誤報なので表示しない
 Do not display this error because it is a false alarm.
 
+:システムエラー:
+Engine Error:
+
 :エラー:
 Error:
 
@@ -6657,9 +6672,6 @@ Hide Errors
 
 :{0}個のエラーがあります
 There are {0} errors.
-
-:システムエラー:
-Engine Error:
 
 :ワールドマップイベント:
 World Map Events:
@@ -11089,6 +11101,15 @@ In FE, text strings are handled by IDs in the text string table.\r\n
 :警告:\r\n範囲外のTextID:{0}を参照しています。
 warning:.\r\nReferences TextID:{0} out of range.
 
+:警告:フォントがありません。\r\n文字:{0}\r\n{1}
+Warning: There is no font.\r\nCharacters: {0}\r\n{1}
+
+:警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}
+Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\r\n{2}
+
+:警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
+Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
+
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
 Warning:\r\nAlthough it is text for conversations, there are no symbols such as @0003.
 
@@ -12970,18 +12991,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader1: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
-
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader2: Addr: {0} Msg: 規定値は0x04ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader2: Addr: {0} Msg: The default value is 0x04 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 or 0x20 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader3: Addr: {0} Msg: The default value is 0x10 but it is set to {1}.
-
-:顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
-The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.

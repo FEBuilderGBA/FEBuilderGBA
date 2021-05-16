@@ -1346,7 +1346,7 @@
 @BattleUnit@56	byte	terrainDefense
 @BattleUnit@57	byte	terrainAvoid
 @BattleUnit@58	byte	terrainResistance
-@BattleUnit@59	byte	pad
+@BattleUnit@59	byte	pad59
 @BattleUnit@5a	short	battleAttack
 @BattleUnit@5c	short	battleDefense
 @BattleUnit@5e	short	battleSpeed

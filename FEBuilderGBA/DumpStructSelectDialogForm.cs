@@ -145,7 +145,7 @@ namespace FEBuilderGBA
                             {
                                 if (labelName == R._("L_{0}_WEAPON", 20 + i) || labelName == R._("L_{0}_WEAPON", 44 + i))
                                 {
-                                    name = InputFormRef.GetWeaponName(i);
+                                    name = InputFormRef.GetWeaponTypeName(i);
                                 }
                             }
                         }
@@ -155,7 +155,7 @@ namespace FEBuilderGBA
                             {
                                 if (labelName == R._("L_{0}_WEAPON", 20 + i) || labelName == R._("L_{0}_WEAPON", 40 + i))
                                 {
-                                    name = InputFormRef.GetWeaponName(i);
+                                    name = InputFormRef.GetWeaponTypeName(i);
                                 }
                             }
                         }
