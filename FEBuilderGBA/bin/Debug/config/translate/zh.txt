@@ -12991,3 +12991,23 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
+:闘技場
+Arena
+
+:闘技場の相手選出に利用するデータ
+Select opponents in Arena
+
+:輸送隊
+Supply
+
+:輸送隊の内容
+Contents of the Supply
+
+:ユニットの行動で設定される項目
+This list set by unit's actions
+
+:塔
+Tower
+
+:遺跡
+Ruins

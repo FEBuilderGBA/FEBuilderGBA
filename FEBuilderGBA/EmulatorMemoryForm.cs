@@ -212,6 +212,11 @@ namespace FEBuilderGBA
             UpdateBattleActor();
             UpdateBattleTarget();
             UpdateWorldmap();
+            UpdateArenaData();
+            UpdateAIData();
+            UpdateSupplyData();
+            UpdateActionData();
+            UpdateDungeonData();
             UpdatePalette();
         }
         void UpdateUserStack()
@@ -2447,14 +2452,45 @@ namespace FEBuilderGBA
             this.BattleTargetList.DummyAlloc(BattleUnitStruct.Count, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.BattleTargetAddress);
 
-            this.WorldmapList.OwnerDraw(DrawWorldmapList, DrawMode.OwnerDrawFixed, false);
-            this.WorldmapList.ItemHeight = 12;
-            this.WorldmapList.DummyAlloc(WorldmapStruct.Count, 0);
-            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.WorldmapAddress);
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                this.WorldmapList.OwnerDraw(DrawWorldmapList, DrawMode.OwnerDrawFixed, false);
+                this.WorldmapList.ItemHeight = 12;
+                this.WorldmapList.DummyAlloc(WorldmapStruct.Count, 0);
+                InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.WorldmapAddress);
+
+                this.DungeonDataList.OwnerDraw(DrawDungeonDataList, DrawMode.OwnerDrawFixed, false);
+                this.DungeonDataList.ItemHeight = 12;
+                this.DungeonDataList.DummyAlloc(DungeonDataStruct.Count, 0);
+                InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.DungeonDataAddress);
+            }
+            else
             {
                 tabControlEtc.TabPages.Remove(tabPageWorldmap);
+                tabControlEtc.TabPages.Remove(tabPageDungeon);
             }
+
+            this.ArenaDataList.OwnerDraw(DrawArenaDataList, DrawMode.OwnerDrawFixed, false);
+            this.ArenaDataList.ItemHeight = 12;
+            this.ArenaDataList.DummyAlloc(ArenaDataStruct.Count, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ArenaDataAddress);
+
+            this.AIDataList.OwnerDraw(DrawAIDataList, DrawMode.OwnerDrawFixed, false);
+            this.AIDataList.ItemHeight = 12;
+            this.AIDataList.DummyAlloc(AIDataStruct.Count, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.AIDataAddress);
+
+            this.ActionDataList.OwnerDraw(DrawActionDataList, DrawMode.OwnerDrawFixed, false);
+            this.ActionDataList.ItemHeight = 12;
+            this.ActionDataList.DummyAlloc(ActionDataStruct.Count, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.ActionDataAddress);
+
+            InitSupplyRAMAddress();
+            this.SupplyDataList.OwnerDraw(DrawSupplyDataList, DrawMode.OwnerDrawFixed, false);
+            this.SupplyDataList.ItemHeight = 16;
+            this.SupplyDataList.DummyAlloc((int)this.SuppyMaxCount, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SupplyDataAddress);
+
         }
 
         void UpdateEditon()
@@ -2605,6 +2641,77 @@ namespace FEBuilderGBA
                 this.WorldmapList.Invalidate();
             }
         }
+        void UpdateArenaData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_arena_data_address()
+                , 0x68);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.ArenaDataSUM)
+            {//変更有
+                this.ArenaDataSUM = sum;
+                this.ArenaDataList.Invalidate();
+            }
+        }
+        void UpdateAIData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_ai_data_address()
+                , 0x100);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.AIDataSUM)
+            {//変更有
+                this.AIDataSUM = sum;
+                this.AIDataList.Invalidate();
+            }
+        }
+
+        uint SuppyRAMAddress;
+        uint SuppyMaxCount;
+        void InitSupplyRAMAddress()
+        {
+            uint addr = Program.ROM.RomInfo.supply_pointer_address();
+            SuppyRAMAddress = Program.ROM.u32(addr);
+            SuppyMaxCount = Program.ROM.u16(addr + 4);
+        }
+
+        void UpdateSupplyData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  SuppyRAMAddress
+                , SuppyMaxCount);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.SupplyDataSUM)
+            {//変更有
+                this.SupplyDataSUM = sum;
+                this.SupplyDataList.Invalidate();
+            }
+        }
+        void UpdateActionData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_action_data_address()
+                , 0x20);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.ActionDataSUM)
+            {//変更有
+                this.ActionDataSUM = sum;
+                this.ActionDataList.Invalidate();
+            }
+        }
+        void UpdateDungeonData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_dungeon_data_address()
+                , 0x20);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.DungeonDataSUM)
+            {//変更有
+                this.DungeonDataSUM = sum;
+                this.DungeonDataList.Invalidate();
+            }
+        }
+
         
         Size DrawPalette(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -2794,6 +2901,40 @@ namespace FEBuilderGBA
             bounds.Y += (int)lineHeight;
             return new Size(bounds.X, bounds.Y);
         }
+        Size DrawSupplyDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            uint lineHeight = 16;
+
+            uint addr = this.SuppyRAMAddress + ((uint)index * 2);
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            uint item = Program.RAM.u8(addr + 0x0);
+            Bitmap icon = ItemForm.DrawIcon(item);
+            U.MakeTransparent(icon);
+            Rectangle bb = bounds;
+            bb.Width = (int)lineHeight;
+            bb.Height = (int)lineHeight;
+            bounds.X += U.DrawPicture(icon, g, isWithDraw, bb);
+            bounds.X += 2;
+            icon.Dispose();
+
+            string text = U.ToHexString2(item) + " " + ItemForm.GetItemName(item);
+            U.DrawText(text, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 90;
+
+            uint count = Program.RAM.u8(addr + 0x1);
+            U.DrawText(count.ToString() , g, lb.Font, this.ListBoxForeDecBrush, isWithDraw, bounds);
+            bounds.X += 20;
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
 
         Size DrawChapterDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -2811,7 +2952,24 @@ namespace FEBuilderGBA
         {
             return DrawAddressList(WorldmapStruct, Program.ROM.RomInfo.workmemory_worldmap_data_address(), lb, index, g, listbounds, isWithDraw , 5);
         }
-        
+        Size DrawArenaDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            return DrawAddressList(ArenaDataStruct, Program.ROM.RomInfo.workmemory_arena_data_address(), lb, index, g, listbounds, isWithDraw);
+        }
+        Size DrawAIDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            return DrawAddressList(AIDataStruct, Program.ROM.RomInfo.workmemory_ai_data_address(), lb, index, g, listbounds, isWithDraw);
+        }
+        Size DrawActionDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            return DrawAddressList(ActionDataStruct, Program.ROM.RomInfo.workmemory_action_data_address(), lb, index, g, listbounds, isWithDraw);
+        }
+        Size DrawDungeonDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            return DrawAddressList(DungeonDataStruct, Program.ROM.RomInfo.workmemory_dungeon_data_address(), lb, index, g, listbounds, isWithDraw);
+        }
+       
+
         Size DrawAddressList(List<EmulatorMemoryUtil.AddressList> list, uint baseaddr, ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw, int shiftDrawX = 0)
         {
             if (index < 0 || index >= lb.Items.Count || index >= list.Count)
@@ -2824,14 +2982,27 @@ namespace FEBuilderGBA
             EmulatorMemoryUtil.AddressList a = list[index];
 
             uint addr = baseaddr + a.Plus;
-            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
-            bounds.X += 60;
 
-            U.DrawText( "(+"+U.ToHexString2(a.Plus)+")", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
-            bounds.X += 40;
+            if (a.Size == 0)
+            {//Label
+                U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+                bounds.X += 60;
+                U.DrawText(a.Name, g, lb.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+                bounds.X += 40;
+                bounds.X += 120 + shiftDrawX;
+            }
+            else
+            {//Value
+                U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 60;
 
-            U.DrawText(a.Name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
-            bounds.X += 120 + shiftDrawX;
+                U.DrawText("(+" + U.ToHexString2(a.Plus) + ")", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 40;
+
+                U.DrawText(a.Name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 120 + shiftDrawX;
+            }
+
 
             string r = EmulatorMemoryUtil.GetAddressList(a, addr);
             if (a.Type == "DEC")
@@ -2925,6 +3096,11 @@ namespace FEBuilderGBA
         uint BattleActorSUM;
         uint BattleTargetSUM;
         uint WorldmapSUM;
+        uint ArenaDataSUM;
+        uint AIDataSUM;
+        uint SupplyDataSUM;
+        uint ActionDataSUM;
+        uint DungeonDataSUM;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
         {
@@ -3231,5 +3407,70 @@ namespace FEBuilderGBA
             U.FireOnMouseDoubleClick(WorldmapAddress);
         }
 
+        List<EmulatorMemoryUtil.AddressList> ArenaDataStruct = EmulatorMemoryUtil.GetArenaDataStruct();
+        private void ArenaDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddressList_SelectedIndexChanged(ArenaDataStruct, Program.ROM.RomInfo.workmemory_arena_data_address(), ArenaDataList, ArenaDataAddress);
+        }
+
+        private void ArenaDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ArenaDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(ArenaDataAddress);
+        }
+
+        List<EmulatorMemoryUtil.AddressList> AIDataStruct = EmulatorMemoryUtil.GetAIDataStruct();
+        private void AIDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddressList_SelectedIndexChanged(AIDataStruct, Program.ROM.RomInfo.workmemory_ai_data_address(), AIDataList, AIDataAddress);
+        }
+
+        private void AIDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            AIDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(AIDataAddress);
+        }
+
+        List<EmulatorMemoryUtil.AddressList> ActionDataStruct = EmulatorMemoryUtil.GetActionDataStruct();
+        private void ActionDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddressList_SelectedIndexChanged(ActionDataStruct, Program.ROM.RomInfo.workmemory_action_data_address(), ActionDataList, ActionDataAddress);
+        }
+
+        private void ActionDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ActionDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(ActionDataAddress);
+        }
+
+        private void SupplyDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = SupplyDataList.SelectedIndex;
+            if (index < 0 || index >= SupplyDataList.Items.Count)
+            {
+                BWLAddress.Text = "";
+                return;
+            }
+            uint addr = this.SuppyRAMAddress + ((uint)index * 2);
+            SupplyDataAddress.Text = U.ToHexString(addr);
+        }
+
+        private void SupplyDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SupplyDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(SupplyDataAddress);
+        }
+
+        List<EmulatorMemoryUtil.AddressList> DungeonDataStruct = EmulatorMemoryUtil.GetDungeonDataStruct();
+        private void DungeonDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddressList_SelectedIndexChanged(DungeonDataStruct, Program.ROM.RomInfo.workmemory_dungeon_data_address(), DungeonDataList, DungeonDataAddress);
+        }
+
+        private void DungeonDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DungeonDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(DungeonDataAddress);
+        }
     }
 }

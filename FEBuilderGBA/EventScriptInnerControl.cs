@@ -2202,6 +2202,7 @@ namespace FEBuilderGBA
             CheckCAMERA_Event_NotExistsUnit_Fix();
             CheckGetUnitStateEvent_0x33_Fix();
             CheckUpdateUnitStateEvent_0x34_Fix();
+            CheckGetUnitStateEvent_0x38_Fix();
             CheckWakuEvent_0x3B_Fix();
         }
 
@@ -2269,6 +2270,16 @@ namespace FEBuilderGBA
                 )
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.UnitUpdateStateEvent_0x34_Fix);
+            }
+        }
+
+        void CheckGetUnitStateEvent_0x38_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("(SET_ACTIVE)") >= 0
+                )
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.SetActiveEvent_0x38_Fix);
             }
         }
 

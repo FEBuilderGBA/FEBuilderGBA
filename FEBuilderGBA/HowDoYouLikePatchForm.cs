@@ -48,6 +48,7 @@ namespace FEBuilderGBA
             , CAMERA_Event_NotExistsUnit_Fix
             , UnitGetStateEvent_0x33_Fix
             , UnitUpdateStateEvent_0x34_Fix
+            , SetActiveEvent_0x38_Fix
             , WakuEvent_0x3B_Fix
             , StatusToLocalization
             , ExtendedMovingMapAnimationList
@@ -222,6 +223,23 @@ namespace FEBuilderGBA
                 patchName1 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
                 patchName2 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
                 patchShowName = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
+                patchCombo = "Fix";///No Translate
+            }
+            else if (type == TYPE.SetActiveEvent_0x38_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchActiveUnitEvent_0x38_FixPatch();
+                };
+                reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
+                patchName1 = "Event38_activeunit_Fix not to freeze even nonexistent units";///No Translate
+                patchName2 = "Event38_activeunit_Fix not to freeze even nonexistent units";///No Translate
+                patchShowName = "Event38_activeunit_Fix not to freeze even nonexistent units";///No Translate
                 patchCombo = "Fix";///No Translate
             }
             else if (type == TYPE.WakuEvent_0x3B_Fix)

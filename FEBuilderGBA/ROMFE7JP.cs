@@ -253,6 +253,8 @@ namespace FEBuilderGBA
         public uint oping_event_pointer() { return 0xd68514; }
         public uint ending1_event_pointer() { return 0x1314C; }
         public uint ending2_event_pointer() { return 0x13194; }
+        public uint RAMSlotTable_address() { return 0xC0216C; }
+        public uint supply_pointer_address() { return 0x2EBF0; }  //輸送体RAMへのアドレス
         public uint workmemory_player_units_address() { return 0x0202BD4C; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_enemy_units_address() { return 0x0202CEBC; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_npc_units_address() { return 0x0202DCCC; }    //ワークメモリ PLAYER UNIT
@@ -263,6 +265,10 @@ namespace FEBuilderGBA
         public uint workmemory_battle_target_address() { return 0x0203A46C; } //ワークメモリ 戦闘時のユニット構造体
         public uint workmemory_worldmap_data_address() { return 0x0; }//ワークメモリ ワールドマップ関係の起点
         public uint workmemory_worldmap_data_size() { return 0x0; } //ワークメモリ ワールドマップ関係のサイズ
+        public uint workmemory_arena_data_address() { return 0x0203A7F0; }//ワークメモリ 闘技場関係の起点
+        public uint workmemory_ai_data_address() { return 0x0203A8E8; } //ワークメモリ AI関係の起点
+        public uint workmemory_action_data_address() { return 0x0203A858; } //ワークメモリ ActionData
+        public uint workmemory_dungeon_data_address() { return 0x0; } //ワークメモリ ダンジョン FE8のみ
         public uint workmemory_last_string_address() { return 0x0202B5B0; }  //ワークメモリ 最後に表示した文字列
         public uint workmemory_text_buffer_address() { return 0x0202A5B0; }  //ワークメモリ デコードされたテキスト
         public uint workmemory_next_text_buffer_address() { return 0x03000040; }  //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ

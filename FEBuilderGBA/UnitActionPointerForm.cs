@@ -130,6 +130,10 @@ namespace FEBuilderGBA
         {
             UnitActionEffectList = U.LoadDicResource(fullfilename);
         }
+        public static string GetActionName(uint id)
+        {
+            return U.at(UnitActionEffectList, id);
+        }
 
         public static void SupportActionRework(StringBuilder sb)
         {

@@ -251,6 +251,8 @@ namespace FEBuilderGBA
         uint oping_event_pointer();
         uint ending1_event_pointer();
         uint ending2_event_pointer();
+        uint RAMSlotTable_address();
+        uint supply_pointer_address();  //輸送体RAMへのアドレス
         uint workmemory_player_units_address() ; //ワークメモリ PLAYER UNIT
         uint workmemory_enemy_units_address(); //ワークメモリ ENEMY UNIT
         uint workmemory_npc_units_address(); //ワークメモリ ENEMY UNIT
@@ -260,6 +262,10 @@ namespace FEBuilderGBA
         uint workmemory_battle_target_address();//ワークメモリ 戦闘時のユニット構造体
         uint workmemory_worldmap_data_address();//ワークメモリ ワールドマップ関係の起点
         uint workmemory_worldmap_data_size(); //ワークメモリ ワールドマップ関係のサイズ
+        uint workmemory_arena_data_address();//ワークメモリ 闘技場関係の起点
+        uint workmemory_ai_data_address(); //ワークメモリ AI関係の起点
+        uint workmemory_action_data_address(); //ワークメモリ ActionData
+        uint workmemory_dungeon_data_address(); //ワークメモリ ダンジョン FE8のみ
         uint workmemory_mapid_address();    //ワークメモリ マップID
         uint workmemory_last_string_address();  //ワークメモリ 最後に表示した文字列
         uint workmemory_text_buffer_address();  //ワークメモリ デコードされたテキスト

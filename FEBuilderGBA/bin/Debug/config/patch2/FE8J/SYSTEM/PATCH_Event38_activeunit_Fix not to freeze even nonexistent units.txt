@@ -1,0 +1,14 @@
+NAME=命令0x38_アクティブなユニットとして設定_存在しないユニットでもフリーズさせない
+NAME.en=Prevent Freeze For Event 0x38.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x10794
+COMBO=Default|0x06 0x20|Fix|0x00 0x20
+
+AUTHOR=7743
+
+INFO=存在しないキャラクターをアクティブに指定しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。\r\n(SET_ACTIVE)
+INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, pointing to a nonexistent character with 0x38 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n(SET_ACTIVE)

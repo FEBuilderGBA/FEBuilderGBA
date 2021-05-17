@@ -4197,7 +4197,7 @@
 0203A7E8	gpSomeUnitIt	{J}
 0203A7EC	gSomeUnitCounter	{J}
 0203A810	@Unit	gArenaOpponent	{J}
-0203A8E8	gAiData	{J}
+0203A8E8	@AiData	gAiData	{J}
 0203DCCC	gTargetPosition	{J}
 0203DCD0	gTargetArray	{J}
 0203DFD0	gTargetArraySize	{J}
@@ -4358,7 +4358,7 @@
 0203A718	gTrapArrayBack	{U}
 0203A7F0	gSomeUnitCounter	{U}
 0203A814	@Unit	gArenaOpponent	{U}
-0203A8EC	gAiData	{U}
+0203A8EC	@AiData	gAiData	{U}
 0203DCF4	gTargetPosition	{U}
 0203DCF8	gTargetArray	{U}
 0203DFF8	gTargetArraySize	{U}
@@ -5104,3 +5104,38 @@
 08093DC8	DrawCountOfPickupUnits_PrepScreen	{J}
 080933C4	DrawPickupUnitsList_PrepScreen	{U}
 080934BC	DrawCountOfPickupUnits_PrepScreen	{U}
+@AiData@00	byte	aiUnits
+@AiData@74	byte	aiUnitIt
+@AiData@78	byte	cpOrderNext
+@AiData@79	byte	cpDecideNext
+@AiData@7A	byte	dangerMapActive
+@AiData@7B	byte	aiConfig
+@AiData@7C	byte	Unk7C
+@AiData@7D	byte	Unk7D
+@AiData@7E	byte	Unk7E
+@AiData@7F	byte	_pad7F
+@AiData@80	word	someFlag80
+@AiData@84	byte	Unk84
+@AiData@85	byte	highestBlueMov
+@AiData@86	byte	AI Result1
+@AiData@87	byte	AI Result2
+@AiData@88	byte	AI Result3
+@AiData@89	byte	AI Result4
+@AiData@8A	byte	AI Result5
+@AiData@8B	byte	_pad8B
+@AiData@8C	byte	_pad8C
+@AiData@8D	byte	_pad8D
+@AiData@8E	byte	_pad8E
+@AiData@8F	byte	_pad8F
+@AiData@90	byte	decisionType;
+@AiData@91	byte	unitIndex
+@AiData@92	byte	xMovement
+@AiData@93	byte	yMovement
+@AiData@94	byte	pad_04
+@AiData@95	byte	pad_05
+@AiData@96	byte	unitTargetIndex
+@AiData@97	byte	usedItemSlot
+@AiData@98	byte	xOther
+@AiData@99	byte	yOther
+@AiData@9A	byte	decisionTaken
+@AiData@9B	byte	decisionType

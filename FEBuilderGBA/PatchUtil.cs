@@ -731,7 +731,7 @@ namespace FEBuilderGBA
         }
 
 
-        //存在ユニットを選択したときフリーズしないように
+        //存在しないユニットを選択したときフリーズしないように
         public static bool SearchCAMERA_Event_NotExistsUnit_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
@@ -740,7 +740,7 @@ namespace FEBuilderGBA
             };
             return SearchPatchBool(table);
         }
-        //存在ユニットを選択したときフリーズしないように
+        //存在しないユニットを選択したときフリーズしないように
         public static bool SearchGetUnitStateEvent_0x33_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
@@ -749,7 +749,7 @@ namespace FEBuilderGBA
             };
             return SearchPatchBool(table);
         }
-        //存在ユニットを選択したときフリーズしないように
+        //存在しないユニットを選択したときフリーズしないように
         public static bool SearchUpdateUnitStateEvent_0x34_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
@@ -758,7 +758,16 @@ namespace FEBuilderGBA
             };
             return SearchPatchBool(table);
         }
-        //存在ユニットを選択したときフリーズしないように
+        //存在しないユニットを選択したときフリーズしないように
+        public static bool SearchActiveUnitEvent_0x38_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Prevent Freeze For Event 0x38",	ver = "FE8J", addr = 0x10794,data = new byte[]{0x00, 0x20}},
+                new PatchTableSt{ name="Prevent Freeze For Event 0x38",	ver = "FE8U", addr = 0x1063C,data = new byte[]{0x00, 0x20}},
+            };
+            return SearchPatchBool(table);
+        }
+        //存在しないユニットを選択したときフリーズしないように
         public static bool SearchWakuEvent_0x3B_FixPatch()
         {
             PatchTableSt[] table = new PatchTableSt[] { 

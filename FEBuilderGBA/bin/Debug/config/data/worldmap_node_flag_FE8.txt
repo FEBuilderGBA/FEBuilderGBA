@@ -1,0 +1,9 @@
+//Option1
+01=Show
+02=Destination
+03=Unk3
+04=Unk8
+05=Unk10
+06=Unk20
+07=Unk40
+08=Unk80

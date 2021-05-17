@@ -143,14 +143,39 @@
 @AiData@79	byte	cpDecideNext
 @AiData@7A	byte	dangerMapActive
 @AiData@7B	byte	aiConfig
-@AiData@7C	byte	_pad7C
+@AiData@7C	byte	Unk7C
+@AiData@7D	byte	Unk7D
+@AiData@7E	byte	Unk7E
+@AiData@7F	byte	_pad7F
+@AiData@80	word	someFlag80
+@AiData@84	byte	Unk84
 @AiData@85	byte	highestBlueMov
-@AiData@86	byte	_pad86
-@AiData@90	&AiDecision	decision
+@AiData@86	byte	AI Result1
+@AiData@87	byte	AI Result2
+@AiData@88	byte	AI Result3
+@AiData@89	byte	AI Result4
+@AiData@8A	byte	AI Result5
+@AiData@8B	byte	_pad8B
+@AiData@8C	byte	_pad8C
+@AiData@8D	byte	_pad8D
+@AiData@8E	byte	_pad8E
+@AiData@8F	byte	_pad8F
+@AiData@90	byte	decisionType;
+@AiData@91	byte	unitIndex
+@AiData@92	byte	xMovement
+@AiData@93	byte	yMovement
+@AiData@94	byte	pad_04
+@AiData@95	byte	pad_05
+@AiData@96	byte	unitTargetIndex
+@AiData@97	byte	usedItemSlot
+@AiData@98	byte	xOther
+@AiData@99	byte	yOther
+@AiData@9A	byte	decisionTaken
+@AiData@9B	byte	decisionType
 
-@BattleHit@00	word	attributes_info_hpChange
-
-@ActionData@00	short	_u00
+@ActionData@00	short	Unknown0
+@ActionData@02	short	Unknown2
+@ActionData@04	short	Unknown4
 @ActionData@06	short	Unknown6
 @ActionData@08	short	Unknown8
 @ActionData@0A	short	UnknownA
@@ -165,8 +190,8 @@
 @ActionData@14	byte	yOther
 @ActionData@15	byte	trapType
 @ActionData@16	byte	suspendPointType
-@ActionData@18	&BattleHit	scriptedBattleHits
-@ActionData@1C	byte	_Unknown1C
+@ActionData@18	word	scriptedBattleHits
+@ActionData@1C	word	_Unknown1C
 
 @Vec2@00	short	x
 @Vec2@02	short	y
@@ -12885,11 +12910,12 @@
 030017B8	gDungeonSomething08	{J}
 030017BC	gDungeonType	00=Tower 01=Ruins	{J}
 
-@DUNGEON_STRUCT_STRUCT@00	short	GetExps
+@DUNGEON_STRUCT_STRUCT@00	short	Exps
 @DUNGEON_STRUCT_STRUCT@02	byte	DeployUnits
 @DUNGEON_STRUCT_STRUCT@03	byte	ClearTurns
 @DUNGEON_STRUCT_STRUCT@04	short	Unk4
 @DUNGEON_STRUCT_STRUCT@06	short	DefeatsCount
+@DUNGEON_STRUCT_STRUCT@08	byte	Unk8
 @DUNGEON_STRUCT_STRUCT@09	byte	Unk9
 @DUNGEON_STRUCT_STRUCT@0A	byte	UnkA
 @DUNGEON_STRUCT_STRUCT@0B	byte	UnkB

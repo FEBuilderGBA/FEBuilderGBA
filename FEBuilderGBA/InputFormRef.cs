@@ -7329,6 +7329,17 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static string GetDungeonType(uint num)
+        {
+            switch (num)
+            {
+                case 0x00:
+                    return R._("塔");
+                case 0x01:
+                    return R._("遺跡");
+            }
+            return "";
+        }
 
         public static string GetChatperStaff(uint num)
         {
@@ -7363,6 +7374,11 @@ namespace FEBuilderGBA
         public static string GetWorldmapStructWMFLAG1(uint num)
         {
             Dictionary<uint, string> dic = ConfigDataDatanameCache("worldmap_struct_wmflag1_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetWorldmapNodeFLAG(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("worldmap_node_flag_");
             return GetInfoByBitFlag(num, dic);
         }
 
