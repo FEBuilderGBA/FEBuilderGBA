@@ -1,0 +1,39 @@
+NAME=闘技場BGMを柔軟に変更する(Editor)
+INFO=Arena BGMを出現する敵クラスやプレイヤーユニットなどの条件に応じて変更できるようにします。\r\nリストは上から探索され、どれにもマッチしない場合は、ディフォルトの闘技場BGMが再生されます。\r\n
+
+
+IF:0x74BEC=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeArenaBGM.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xFF 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B0:CLASS
+
+
+//データを定義します
+B0:CLASS=EnemyClass(00=ANY)
+B1:UNIT=PlayerUnit(00=ANY)
+B2:DECIMAL=Enemy Lv >=
+B3:$COMBO Option.combo.jp.txt:.ja=Option
+B3:$COMBO Option.combo.en.txt:.en=Option
+B3:$COMBO Option.combo.en.txt:.zh=Option
+W4:FLAG=CheckFlag(0=ANY)
+W6:SONG=ChangeBGM
+
+HINT=ソング 音楽 Song Music
+NAME.en=Flexible change of Arena BGM(Editor)
+INFO.en=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.\r\nThe list is searched from the top, and if none of them match, the default arena BGM is played.\r\n
+
+NAME.zh=Flexible change of Arena BGM(Editor)
+INFO.zh=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.\r\nThe list is searched from the top, and if none of them match, the default arena BGM is played.\r\n

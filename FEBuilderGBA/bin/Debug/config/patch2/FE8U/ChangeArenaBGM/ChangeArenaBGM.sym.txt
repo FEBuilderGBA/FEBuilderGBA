@@ -1,0 +1,10 @@
+SelectArenaBGM=$08
+NotFound=$76
+Table=$A4
+Loop=$18
+CheckPlayerUnit=$30
+EnemyCheck_LV=$40
+CHECK_OPTION=$4E
+CHECK_FLAG=$62
+Found=$72
+Exit=$7A

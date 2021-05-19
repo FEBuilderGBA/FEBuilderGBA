@@ -1,0 +1,17 @@
+NAME=超闘技場で対戦相手に追加するレベルの数
+NAME.en=Number of levels to add to Enemy in the Super Arena
+NAME.zh=Number of levels to add to Enemy in the Super Arena
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x03180A
+HEX=FALSE
+DEFAULT=0x7
+
+INFO=超闘技場モードで、敵に追加されるレベル数です。\r\nバニラではLv31を超えられないので、31を超えそうなら追加で「Arenaで強い敵ユニットを出現させる」パッチを追加してください。
+INFO.en=INFO=This is the number of levels added to the enemy in Super Arena mode.\r\nVanilla cannot exceed Lv31, so if it seems to exceed 31, please add an additional patch "Make strong enemy units appear in Arena".
+INFO.zh=INFO=This is the number of levels added to the enemy in Super Arena mode.\r\nVanilla cannot exceed Lv31, so if it seems to exceed 31, please add an additional patch "Make strong enemy units appear in Arena".
+
+AUTHOR=7743

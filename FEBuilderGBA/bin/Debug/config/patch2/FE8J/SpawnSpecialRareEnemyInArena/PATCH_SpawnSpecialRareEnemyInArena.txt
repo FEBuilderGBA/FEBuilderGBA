@@ -1,0 +1,35 @@
+NAME=闘技場で特殊なレア敵を出現させる(Editor)
+INFO=制限: 武器を指定できないので、マムクートは設定しないでください。\r\n\r\n一定の条件が成立した時に、闘技場で出現する敵をレア敵に置き換えます。
+
+IF:0x31900=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END SpawnSpecialRareEnemyInArena.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xFF 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B1:CLASS
+
+
+//データを定義します
+B0:CLASS=FromClass
+B1:CLASS=ToClass
+B2:DECIMAL=Your Lv >=
+B3:$COMBO Option.combo.jp.txt:.ja=Option
+B3:$COMBO Option.combo.en.txt:.en=Option
+B3:$COMBO Option.combo.en.txt:.zh=Option
+W4:FLAG=CheckFlag(0=ANY)
+
+NAME.en=Spawn special rare enemy in Arena(Editor)
+INFO.en=Note: Do not set Manakete ,this because cannot specify weapons.\r\n\r\nWhen certain conditions are met, replace the enemies that appear in the arena with rare enemies.
+NAME.zh=Note: Do not set Manakete ,this because cannot specify weapons.\r\n\r\nSpawn special rare enemy in Arena(Editor)
+INFO.zh=When certain conditions are met, replace the enemies that appear in the arena with rare enemies.

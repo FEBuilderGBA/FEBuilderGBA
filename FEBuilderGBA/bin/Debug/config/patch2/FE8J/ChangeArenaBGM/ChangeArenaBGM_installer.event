@@ -1,0 +1,33 @@
+PUSH
+ORG 0x74BEC	//FE8J
+//ORG 0x72710	//FE8U
+jumpToHack(ChangeArenaBGM)
+
+POP
+
+
+ALIGN 4
+ChangeArenaBGM:
+#incbin "ChangeArenaBGM.dmp"
+POIN ChangeArenaBGM_Table
+WORD 0x39
+
+ALIGN 4
+ChangeArenaBGM_Table:   //sizeof == 0x8
+//		EnemyClass	PlayerUnit	EnemyLV>=	Option		Flag	BGM
+BYTE	0x5			0x0			0			0	;SHORT	0		0x2	//ソシアル専用
+BYTE	0x6			0x0			0			0	;SHORT	0		0x2	//ソシアル専用
+BYTE	0x7			0x0			0			0	;SHORT	0		0x3	//アーマー専用
+BYTE	0x8			0x0			0			0	;SHORT	0		0x3	//アーマー専用
+BYTE	0xB			0x0			0			0	;SHORT	0		0x4	//ジェネラル専用
+BYTE	0xC			0x0			0			0	;SHORT	0		0x4	//ジェネラル専用
+BYTE	0x0			0x0			0			1	;SHORT	0		0x1	//超闘技場専用BGM
+BYTE	0x0			0x0			20			0	;SHORT	0		0x5	//敵のレベルが20以上の場合
+
+BYTE	0xFF		0			0			0	;SHORT	0		0	//term
+//EnemyClass		1
+//PlayerUnit		1
+//EnemyLV>=		1
+//Option			1
+//Flag			2
+//BGM			2

@@ -279,12 +279,15 @@ namespace FEBuilderGBA
 
         static bool IsUpdateSourceCode(string targetfilename, out string sourceCode)
         {
-            if (!File.Exists(targetfilename))
+            DateTime dmpFileDate;
+            if (File.Exists(targetfilename))
             {
-                sourceCode = "";
-                return false;
+                dmpFileDate = U.GetFileDateLastWriteTime(targetfilename);
             }
-            DateTime dmpFileDate = U.GetFileDateLastWriteTime(targetfilename);
+            else
+            {
+                dmpFileDate = DateTime.MinValue;
+            }
 
             string[] extList = new string[] {".s",".asm" };
             foreach (string ext in extList)

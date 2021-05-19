@@ -1,0 +1,16 @@
+NAME=闘技場で特殊なレア敵を出現させる(Installer)
+INFO=一定の条件が成立した時に、闘技場で出現する敵をレア敵に置き換えます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x319B4=0x00 0x4B
+EDIT_PATCH=PATCH_SpawnSpecialRareEnemyInArena.txt
+EA=SpawnSpecialRareEnemyInArena_installer.event
+
+AUTHOR=7743
+NAME.en=Spawn special rare enemy in Arena(Installer)
+INFO.en=When certain conditions are met, replace the enemies that appear in the arena with rare enemies.
+NAME.zh=Spawn special rare enemy in Arena(Installer)
+INFO.zh=When certain conditions are met, replace the enemies that appear in the arena with rare enemies.

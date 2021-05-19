@@ -1,0 +1,8 @@
+Table=$70
+Loop=$0A
+NotFound=$4C
+CHECK_LV=$18
+CHECK_OPTION=$26
+CHECK_FLAG=$38
+Found=$48
+Exit=$4E

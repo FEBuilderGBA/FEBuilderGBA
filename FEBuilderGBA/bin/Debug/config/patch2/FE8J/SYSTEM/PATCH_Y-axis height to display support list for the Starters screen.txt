@@ -1,0 +1,17 @@
+NAME=スタータス画面の支援リストを表示するY軸の高さ
+NAME.en=Y-axis height to display support list for the Starters screen.
+NAME.zh=Y-axis height to display support list for the Starters screen.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08991C
+HEX=FALSE
+DEFAULT=0x6
+
+INFO=ステータス画面の3ページの支援一覧を描画するY軸の高さの位置を変更します。\r\n3列以上の武器レベルを表示するなどして、支援を下にずらしたい場合は、この値を少しだけ大きくしてください。\r\nディフォルト値は6です。
+INFO.en=Changes the height position of the Y axis for drawing the list of supports on page 3 of the status screen.\r\nIf you want to shift the support downward, for example to display more than three rows of weapon levels, increase this value slightly.\r\nThe default value is 6.
+INFO.zh=Changes the height position of the Y axis for drawing the list of supports on page 3 of the status screen.\r\nIf you want to shift the support downward, for example to display more than three rows of weapon levels, increase this value slightly.\r\nThe default value is 6.
+
+AUTHOR=7743

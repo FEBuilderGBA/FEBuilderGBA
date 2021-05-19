@@ -2538,8 +2538,14 @@ namespace FEBuilderGBA
         }
         static string AutoConvertSpaceByLang(string text)
         {
+            PatchUtil.draw_font_enum draw_font = PatchUtil.SearchDrawFontPatch();
+
             if (Program.ROM.RomInfo.is_multibyte())
             {
+                if (draw_font == PatchUtil.draw_font_enum.DrawSingleByte || draw_font == PatchUtil.draw_font_enum.DrawUTF8)
+                {//SingleByte描画パッチが入っているので、何もしない
+                    return text;
+                }
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
                 {//わからない FE8CNでは、この文字にすることが多いようだ
@@ -2556,6 +2562,10 @@ namespace FEBuilderGBA
             }
             else
             {//倍角スペースを半角スペースへ
+                if (draw_font == PatchUtil.draw_font_enum.DrawMultiByte || draw_font == PatchUtil.draw_font_enum.DrawUTF8)
+                {//MultiByte描画パッチが入っているので、何もしない
+                    return text;
+                }
                 return text.Replace('　', ' ');
             }
         }

@@ -1,0 +1,31 @@
+PUSH
+ORG 0x31900	//FE8J
+//ORG 0x319B4	//FE8U
+jumpToHack(SpawnSpecialRareEnemyInArena)
+
+ORG 0x31916 //FE8J
+//ORG 0x319CA //FE8U
+BYTE 0x00 0x00  //NOP
+
+POP
+
+
+ALIGN 4
+SpawnSpecialRareEnemyInArena:
+#incbin "SpawnSpecialRareEnemyInArena.dmp"
+POIN SpawnSpecialRareEnemyInArena_Table
+
+ALIGN 4
+SpawnSpecialRareEnemyInArena_Table:   //sizeof == 0x8
+//		FromClass	ToClass	Your LV>=	CondStatus	Flag
+BYTE	0xF			0x1		0			1	;WORD	0		//SuperArenaなら傭兵をエフラムLordに変換
+BYTE	0x13		0x2		10			0	;WORD	0		//自分のLV10以上なら剣士をエイリークLordに変換
+BYTE	0x5			0x3		0			1	;WORD	0		//SuperArenaならソシアルをロードに変換
+BYTE	0x7			0x4		0			1	;WORD	0		//SuperArenaならパラディンをロードに
+BYTE	0x2D		0x4F	0			1	;WORD	0		//SuperArenaならシャーマンをネクロマンサーに変換
+BYTE	0x4E		0x5E	0			1	;WORD	0		//SuperArenaならソルジャーをマグダイルに
+
+BYTE	0xFF		0		0			0	;WORD	0	//TERM
+
+//制限: 武器を指定できないので、マムクートは設定しないでください。
+//Note: Do not set Manakete ,this because cannot specify weapons.

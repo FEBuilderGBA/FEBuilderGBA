@@ -1,0 +1,18 @@
+NAME=闘技場BGMを柔軟に変更する(ディフォルトの闘技場バトルBGM)
+INFO=闘技場BGMのディフォルトSongIDを指定します。\r\n\r\nバニラの闘技場BGMをフックで潰してしまうので、ディフォルトBGMをこちらで別途定義します。
+
+IF:0x72710=0x00 0x4B
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=$FGREP4ENDA+4 ChangeArenaBGM.dmp
+ADDRESS_TYPE=SONG
+
+HINT=ソング 音楽 Song Music
+NAME.en=Flexible change of Arena BGM(The Default arena battle BGM)
+INFO.en=Specify the default Song ID of the arena BGM.\r\nSince the vanilla arena BGM will be crushed with a hook, the default BGM will be defined separately here.
+
+NAME.zh=Flexible change of Arena BGM(The Default arena battle BGM)
+INFO.zh=Specify the default Song ID of the arena BGM.\r\nSince the vanilla arena BGM will be crushed with a hook, the default BGM will be defined separately here.

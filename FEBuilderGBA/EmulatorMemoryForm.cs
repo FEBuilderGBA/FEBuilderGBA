@@ -2133,11 +2133,11 @@ namespace FEBuilderGBA
             uint state;
             if (Program.ROM.RomInfo.version() == 6)
             {//状態1,2だけ
-                state = Program.RAM.u16(addr + 0x0C) << 16;
+                state = Program.RAM.u16(addr + 0x0C);
             }
             else
             {//状態1,2,3,4
-                state = Program.RAM.u16(addr + 0x0C);
+                state = Program.RAM.u32(addr + 0x0C);
             }
             string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
 
