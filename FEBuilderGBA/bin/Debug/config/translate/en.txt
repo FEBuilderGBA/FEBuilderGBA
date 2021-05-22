@@ -9821,7 +9821,7 @@ Vendor
 Secret Shop
 
 :現在開いているROMが外部プログラムで変更されています。\r\n変更されたROMを再読み込みしますか？
-The ROM currently open has been changed by an external program.\r\nWould you like to reread the modified ROM?
+An external program has made changes to the ROM that is currently open.\r\nWould you like to apply these changes to the ROM?
 
 :ROMが変更されました
 ROM has been changed.

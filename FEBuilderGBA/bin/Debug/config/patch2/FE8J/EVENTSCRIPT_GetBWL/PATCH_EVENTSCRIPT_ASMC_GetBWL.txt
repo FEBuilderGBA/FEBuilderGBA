@@ -1,0 +1,40 @@
+NAME=BWLデータの取得(イベント命令)
+NAME.en=Add Event: GetBWL
+NAME.zh=Add Event: GetBWL
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetBWL.dmp=0x30 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetBWL.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetBWL.dmp}	Slot1のユニットから、BWLデータのうちSlot2に指定された項目を取得します(LOW)
+EVENTSCRIPT:2=40050100XXXX00004005020000000000400D0000{$L1:ASMC_GetBWL.dmp}	[XX:UNIT:ユニット]のBWLデータから総戦闘回数を取得します
+EVENTSCRIPT:3=40050100XXXX00004005020001000000400D0000{$L1:ASMC_GetBWL.dmp}	[XX:UNIT:ユニット]のBWLデータから勝利回数を取得します
+EVENTSCRIPT:4=40050100XXXX00004005020002000000400D0000{$L1:ASMC_GetBWL.dmp}	[XX:UNIT:ユニット]のBWLデータから敗北回数を取得します
+EVENTSCRIPT:5=40050100XXXX00004005020003000000400D0000{$L1:ASMC_GetBWL.dmp}	[XX:UNIT:ユニット]のBWLデータから死亡したMapIDを取得します	フリーマップで死亡していたら、NodeIDが返されます
+EVENTSCRIPT:6=40050100XXXX00004005020004000000400D0000{$L1:ASMC_GetBWL.dmp}	[XX:UNIT:ユニット]のBWLデータから死亡した場所がフリーマップかどうか判定します。	1が返されたらフリーマップです
+
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetBWL.dmp}	Get the BWL data item specified for Slot2 from the unit in Slot1(LOW)
+EVENTSCRIPT:2.en=40050100XXXX00004005020000000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the total number of battles from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:3.en=40050100XXXX00004005020001000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the Win number from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:4.en=40050100XXXX00004005020002000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the Lose number from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:5.en=40050100XXXX00004005020003000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the MapID that died from [XX:UNIT:Unit] BWL data	If it was killed by Worldmap Skirmishes, the NodeID will be returned.
+EVENTSCRIPT:6.en=40050100XXXX00004005020004000000400D0000{$L1:ASMC_GetBWL.dmp}	Determines if the location of death from [XX:UNIT:Unit] BWL data is Worldmap Skirmishes.	If 1 is returned, it is Worldmap Skirmishes.
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetBWL.dmp}	Get the BWL data item specified for Slot2 from the unit in Slot1(LOW)
+EVENTSCRIPT:2.zh=40050100XXXX00004005020000000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the total number of battles from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:3.zh=40050100XXXX00004005020001000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the Win number from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:4.zh=40050100XXXX00004005020002000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the Lose number from [XX:UNIT:Unit] BWL data
+EVENTSCRIPT:5.zh=40050100XXXX00004005020003000000400D0000{$L1:ASMC_GetBWL.dmp}	Get the MapID that died from [XX:UNIT:Unit] BWL data	If it was killed by Worldmap Skirmishes, the NodeID will be returned.
+EVENTSCRIPT:6.zh=40050100XXXX00004005020004000000400D0000{$L1:ASMC_GetBWL.dmp}	Determines if the location of death from [XX:UNIT:Unit] BWL data is Worldmap Skirmishes.	If 1 is returned, it is Worldmap Skirmishes.
+
+INFO=勝敗データ(BWL)を取得します。\r\nユニットの総戦闘回数、勝利数、敗北数、死亡したMapID、死亡したのがフリーマップかどうかを取得します。\r\n注意:死亡したMapIDは、死亡はフリーマップで死亡していればNodeIDが返されます。\r\nBWLを取得できるのは、UnitID 0x45以下のユニットに対してだけです。
+INFO.en=Get the win/loss data of the battle record(BWL).\r\nGet the total number of battles a unit has fought, the number of victories it has won, the number of defeats it has suffered, the MapID it has died on, and whether or not the death was in Worldmap Skirmishes.\r\nNote: The MapID that died will return the NodeID if the death was Worldmap Skirmishes.\r\nYou can only get the BWL for units with UnitID 0x45 or less.
+INFO.zh=Get the win/loss data of the battle record(BWL).\r\nGet the total number of battles a unit has fought, the number of victories it has won, the number of defeats it has suffered, the MapID it has died on, and whether or not the death was in Worldmap Skirmishes.\r\nNote: The MapID that died will return the NodeID if the death was Worldmap Skirmishes.\r\nYou can only get the BWL for units with UnitID 0x45 or less.

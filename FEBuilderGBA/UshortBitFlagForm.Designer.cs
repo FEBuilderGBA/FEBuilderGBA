@@ -354,7 +354,7 @@
             this.Controls.Add(this.panel8);
             this.Name = "UshortBitFlagForm";
             this.Text = "UShortFlag";
-            this.Load += new System.EventHandler(this.RAMUnitStateFlagForm_Load);
+            this.Load += new System.EventHandler(this.UshortBitFlagForm_Load);
             this.panel8.ResumeLayout(false);
             this.J_41.ResumeLayout(false);
             this.J_41.PerformLayout();

@@ -1038,6 +1038,10 @@ namespace FEBuilderGBA
             {//DISABLEWEAPONS
                 text = " " + InputFormRef.GetDISABLEWEAPONS(v);
             }
+            else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
+            {//UNITCLASSABILITY
+                text = " " + InputFormRef.GetUNITCLASSABILITY(v);
+            }
             else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
             {//IGNORE_KEYS
                 text = " " + InputFormRef.GetIGNORE_KEYS(v);
@@ -1483,10 +1487,12 @@ namespace FEBuilderGBA
                 ToolFlagNameForm f = (ToolFlagNameForm)InputFormRef.JumpForm<ToolFlagNameForm>(U.NOT_FOUND);
                 f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , this.MapID);
             }
-            else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
+            else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE
+                  || arg.Type == EventScript.ArgType.UNITCLASSABILITY
+                )
             {
-                RAMUnitStateFlagForm f = (RAMUnitStateFlagForm)InputFormRef.JumpForm<RAMUnitStateFlagForm>(U.NOT_FOUND);
-                f.JumpTo(value);
+                UwordBitFlagForm f = (UwordBitFlagForm)InputFormRef.JumpForm<UwordBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(arg.Type,value);
                 MakeInjectionApplyButtonCallback(f
                     , (Button)InputFormRef.FindObjectByForm<Button>
                         (InputFormRef.GetAllControls(f), "ApplyButton")
@@ -2899,6 +2905,11 @@ namespace FEBuilderGBA
                     {//DISABLEWEAPONS
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetDISABLEWEAPONS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
+                    {//UNITCLASSABILITY
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetUNITCLASSABILITY(v));
                     }
                     else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
                     {//IGNORE_KEYS

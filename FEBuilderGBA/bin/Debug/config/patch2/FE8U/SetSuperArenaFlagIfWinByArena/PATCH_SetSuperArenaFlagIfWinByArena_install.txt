@@ -1,0 +1,16 @@
+NAME=闘技場で勝利した時に、超闘技場のステータスフラグを設定する(Installer)
+INFO=闘技場で勝利した時に、指定した時要件を満たしていれば、そのユニットに超闘技場(Super Arena)のステータスフラグを設定します。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 SetSuperArenaFlagIfWinByArena.dmp=0x70 0xB5
+EDIT_PATCH=PATCH_SetSuperArenaFlagIfWinByArena.txt
+EA=SetSuperArenaFlagIfWinByArena_installer.event
+
+AUTHOR=7743
+NAME.en=Set the Super Arena status flag when you win in Arena(Installer)
+INFO.en=When the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.
+NAME.zh=Set the Super Arena status flag when you win in Arena(Installer)
+INFO.zh=When the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.

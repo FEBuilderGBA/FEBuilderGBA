@@ -1,0 +1,34 @@
+PUSH
+//ORG 0x85A88	//FE8J
+ORG 0x083750	//FE8U
+jumpToHack(RunSupportEvent|1)
+POP
+
+
+ALIGN 4
+RunSupportEvent:
+#incbin "RunSupportEvent.dmp"
+POIN RunSupportEvent_Table
+
+ALIGN 4
+default_event:
+#incbin "default_event.bin"
+
+ALIGN 4
+RunSupportEvent_Table:   //sizeof == 0x8
+//		Unit1	Unit2	0	0;	POIN default_event
+BYTE	0x01	0x02	0	0;	POIN default_event	//Eirika + Seth 
+//
+BYTE	0xFF	0x00	0	0;	WORD 0	//term
+
+//リストにないものはディフォルトの挙動を行います。
+//BGMが0のものはディフォルトのBGMが利用されます。
+//Eventが0のものはディフォルトのイベント(0x085B9DD4(FE8J) / 0x08591FF0(FE8U) )が利用されます。
+//この設定はゲーム中の支援イベントだけで、支援会話ルームでの内容とは異なります。
+//
+//イベントの書き方は、ディフォルトのイベント(0x085B9DD4(FE8J) / 0x08591FF0(FE8U))をベースに作成してください。
+//ディフォルトのイベントと同様に以下の値がメモリスロットに設定されます。
+//Slot2 BGMID
+//Slot3 会話に利用するTextID
+
+ALIGN 4

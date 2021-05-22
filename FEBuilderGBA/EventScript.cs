@@ -106,6 +106,7 @@ namespace FEBuilderGBA
             , DISABLEWEAPONS    //アイテムメニューを無効にするビットフラグ FE8
             , IGNORE_KEYS       //キー操作を無効にするビットフラグ FE8
             , KEYS              //キーコード
+            , UNITCLASSABILITY  //ユニットクラス特性 ビットフラグ
             , MAP_CHANGE
         };
 
@@ -714,6 +715,9 @@ namespace FEBuilderGBA
                  break;
              case "IGNORE_KEYS":
                  type = ArgType.IGNORE_KEYS;
+                 break;
+             case "UNITCLASSABILITY":
+                 type = ArgType.UNITCLASSABILITY;
                  break;
              case "KEYS":
                  type = ArgType.KEYS;

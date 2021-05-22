@@ -13182,6 +13182,9 @@
 0809A9F8	DrawPickupUnitsList_PrepScreen	{U}
 08037cd8	InitializeDungeonState	{J}
 08037C40	InitializeDungeonState	{U}
+08028668	GetAttributeIconID	{J}
 080286D4	GetAttributeIconID	{U}
 080BA310	RunProcsArenaAfter	{J}
+080B578C	RunProcsArenaAfter	{U}
 080BA720	PlayVictoryCheersByArena	{J}
+080B5B9C	PlayVictoryCheersByArena	{U}

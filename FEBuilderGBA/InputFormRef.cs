@@ -4150,8 +4150,8 @@ namespace FEBuilderGBA
             }
             else if (linktype == "RAMUNIT_STATE")
             {
-                RAMUnitStateFlagForm f = (RAMUnitStateFlagForm)InputFormRef.JumpForm<RAMUnitStateFlagForm>(U.NOT_FOUND);
-                f.JumpTo(value);
+                UwordBitFlagForm f = (UwordBitFlagForm)InputFormRef.JumpForm<UwordBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(EventScript.ArgType.RAM_UNIT_STATE, value);
             }
             else if (linktype == "TEXTOREVENT")
             {
@@ -6806,6 +6806,15 @@ namespace FEBuilderGBA
                 return R._("すべてのキーを許可");
             }
             Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetUNITCLASSABILITY(uint num)
+        {
+            if (num == 0)
+            {
+                return R._("");
+            }
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("unitclass_checkbox_");
             return GetInfoByBitFlag(num, dic);
         }
         public static string GetPressKEYS(uint num)

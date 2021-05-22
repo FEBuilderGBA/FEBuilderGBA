@@ -35,26 +35,31 @@ namespace FEBuilderGBA
             string dataname;
             if (argtype == EventScript.ArgType.DISABLEOPTIONS)
             {
+                this.Text = "DISABLEOPTIONS";
                 this.MESSAGE.Text = R._("チェックをつけたメニューを無効にします。");
                 dataname = "DISABLEOPTIONS_checkbox_";
             }
             else if (argtype == EventScript.ArgType.DISABLEWEAPONS)
             {
+                this.Text = "DISABLEWEAPONS";
                 this.MESSAGE.Text = R._("チェックをつけたメニューを無効にします。");
                 dataname = "DISABLEWEAPONS_checkbox_";
             }
             else if (argtype == EventScript.ArgType.IGNORE_KEYS)
             {
+                this.Text = "IGNORE_KEYS";
                 this.MESSAGE.Text = R._("チェックをつけたキーを無効にします。");
                 dataname = "IGNORE_KEYS_checkbox_";
             }
             else if (argtype == EventScript.ArgType.KEYS)
             {
+                this.Text = "KEYS";
                 this.MESSAGE.Text = R._("チェックをつけたキーコードを返します。");
                 dataname = "IGNORE_KEYS_checkbox_";
             }
             else if (argtype == EventScript.ArgType.ATTACK_TYPE)
             {
+                this.Text = "ATTACK_TYPE";
                 this.MESSAGE.Text = R._("チェックをつけた攻撃を行います。");
                 dataname = "EVENTBATTLE_checkbox_";
             }
@@ -69,8 +74,10 @@ namespace FEBuilderGBA
         }
 
         ToolTipEx X_Tooltip;
-        private void RAMUnitStateFlagForm_Load(object sender, EventArgs e)
+
+        private void UshortBitFlagForm_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

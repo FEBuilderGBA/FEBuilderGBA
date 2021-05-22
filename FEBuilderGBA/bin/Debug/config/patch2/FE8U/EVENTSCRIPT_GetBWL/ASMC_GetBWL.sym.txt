@@ -1,0 +1,6 @@
+Exit=$5C
+GetWin=$3A
+GetLose=$4A
+GetDeadMapID=$4E
+IsDeadSkirmishes=$56
+GetBattle=$32

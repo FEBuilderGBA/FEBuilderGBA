@@ -1,0 +1,17 @@
+NAME=サポートで任意のイベントを動作させる(Installer)
+INFO=このパッチは、サポートで、ディフォルトのイベント以外の好きなイベントを動作させるようにできます。\r\n
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x83750=0x00 0x4B
+EDIT_PATCH=PATCH_RunSupportEvent.txt
+EA=RunSupportEvent_installer.event
+
+AUTHOR=7743
+NAME.en=Make any event work in Support(Installer)
+INFO.en=This patch allows you to make any event other than the default event work in Support.\r\n
+NAME.zh=Make any event work in Support(Installer)
+INFO.zh=This patch allows you to make any event other than the default event work in Support.\r\n
+HINT=Hook

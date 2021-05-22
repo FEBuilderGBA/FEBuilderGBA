@@ -266,11 +266,11 @@
     </Compile>
     <Compile Include="EtcCache.cs" />
     <Compile Include="EtcCacheFLag.cs" />
-    <Compile Include="RAMUnitStateFlagForm.cs">
+    <Compile Include="UwordBitFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RAMUnitStateFlagForm.Designer.cs">
-      <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
+    <Compile Include="UwordBitFlagForm.Designer.cs">
+      <DependentUpon>UwordBitFlagForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RecycleAddress.cs" />
     <Compile Include="RegexCache.cs" />
@@ -2198,8 +2198,8 @@
     <EmbeddedResource Include="ProcsScriptInnerControl.resx">
       <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RAMUnitStateFlagForm.resx">
-      <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
+    <EmbeddedResource Include="UwordBitFlagForm.resx">
+      <DependentUpon>UwordBitFlagForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkillSystemsEffectivenessReworkClassTypeForm.resx">
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>

@@ -1,0 +1,25 @@
+PUSH
+//Hook ArenaAfter Procs
+//FE8J
+ORG 0xABCD14+4
+//ORG 0x0A3971C+4
+POIN SetSuperArenaFlagIfWinByArena|1
+POP
+
+
+ALIGN 4
+SetSuperArenaFlagIfWinByArena:
+#incbin "SetSuperArenaFlagIfWinByArena.dmp"
+POIN SetSuperArenaFlagIfWinByArena_CondTable
+
+ALIGN 4
+SetSuperArenaFlagIfWinByArena_CondTable:   //sizeof == 0xC
+BYTE	20		//LV          LV20以上
+BYTE    1       //isPromoted  上級職のみ
+SHORT   10      //BWLWin      戦歴で10体敵を倒している
+WORD    1000    //Gold        1000ゴールド以上持っていること
+SHORT   0       //Flag        このフラグがONの時  0だった場合フラグは関係なし
+SHORT   0       //_pad
+WORD    0       //Event       実行するイベントポインタ
+
+ALIGN 4

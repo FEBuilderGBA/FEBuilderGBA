@@ -1,8 +1,8 @@
-Table=$70
+Table=$80
 Loop=$0A
-NotFound=$4C
+NotFound=$4E
 CHECK_LV=$18
 CHECK_OPTION=$26
-CHECK_FLAG=$38
-Found=$48
-Exit=$4E
+CHECK_FLAG=$3A
+Found=$4A
+Exit=$50

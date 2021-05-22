@@ -220,6 +220,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.KEYS)
             {
                 isLabelJump = true;
@@ -1430,6 +1434,11 @@ namespace FEBuilderGBA
                         {//DISABLEWEAPONS
                             isENumText = true;
                             text = " " + InputFormRef.GetDISABLEWEAPONS(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
+                        {//UNITCLASSABILITY
+                            isENumText = true;
+                            text = " " + InputFormRef.GetUNITCLASSABILITY(v);
                         }
                         else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
                         {//IGNORE_KEYS

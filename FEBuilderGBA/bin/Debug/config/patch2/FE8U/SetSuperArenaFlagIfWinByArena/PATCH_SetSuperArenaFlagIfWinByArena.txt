@@ -1,0 +1,39 @@
+NAME=闘技場で勝利した時に、超闘技場のステータスフラグを設定する(Editor)
+INFO=すべての条件を満たすと、SuperArenaのフラグを設定します。\r\nディフォルトは、上級職のレベル20で、戦歴で10勝以上していて、パーティが1000ゴールド以上持っていれば、そのユニットにSuperArenaフラグを設定します。\r\n\r\n闘技場で勝利した時に、指定した時要件を満たしていれば、そのユニットに超闘技場(Super Arena)のステータスフラグを設定します。
+
+
+IF:$FGREP4 SetSuperArenaFlagIfWinByArena.dmp=0x70 0xB5
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END SetSuperArenaFlagIfWinByArena.dmp
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数
+DATACOUNT=1
+MAX_EXPLANDS_SIZE=1
+
+//リストに表示
+LISTNAME=request
+
+
+//データを定義します
+B0:DECIMAL=Your Lv >=
+B1:$COMBO isPromoted.combo.jp.txt:.ja=isPromoted
+B1:$COMBO isPromoted.combo.en.txt:.en=isPromoted
+B1:$COMBO isPromoted.combo.en.txt:.zh=isPromoted
+W2:DECIMAL=BWL wins >=
+D4:DECIMAL=Gold >=
+W8:FLAG=CheckFlag(0=ANY)
+D12:EVENT=RunEvent(0=None)
+
+NAME.en=Set the Super Arena status flag when you win in Arena(Editor)
+INFO.en=Set the Super Arena flag when all conditions are met.\r\nThe default is to set the Super Arena flag on the unit if it is senior level 20 and has 10 or more wins in the battle history and the party has 1000 gold or more.\r\n\r\nWhen the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.
+
+NAME.zh=Set the Super Arena status flag when you win in Arena(Editor)
+INFO.zh=Set the Super Arena flag when all conditions are met.\r\nThe default is to set the Super Arena flag on the unit if it is senior level 20 and has 10 or more wins in the battle history and the party has 1000 gold or more.\r\n\r\nWhen the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.

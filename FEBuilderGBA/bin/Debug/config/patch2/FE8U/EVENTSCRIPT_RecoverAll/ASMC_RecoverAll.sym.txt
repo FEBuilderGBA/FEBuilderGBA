@@ -1,0 +1,7 @@
+SelectEnemy=$16
+SelectNPC=$12
+SelectPlayer=$0E
+LoopStart=$18
+Loop=$1E
+Continue=$3C
+Exit=$42

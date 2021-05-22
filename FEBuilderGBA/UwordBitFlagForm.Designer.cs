@@ -1,6 +1,6 @@
 ﻿namespace FEBuilderGBA
 {
-    partial class RAMUnitStateFlagForm
+    partial class UwordBitFlagForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.ApplyButton = new System.Windows.Forms.Button();
             this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -71,6 +69,8 @@
             this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B40 = new System.Windows.Forms.NumericUpDown();
+            this.MESSAGE = new System.Windows.Forms.Label();
+            this.ApplyButton = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.J_43.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B43)).BeginInit();
@@ -95,29 +95,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1147, 317);
             this.panel8.TabIndex = 14;
-            // 
-            // label30
-            // 
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label30.Location = new System.Drawing.Point(10, 9);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(1146, 40);
-            this.label30.TabIndex = 107;
-            this.label30.Text = "RAM上のユニットの特性を指定してください。";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ApplyButton
-            // 
-            this.ApplyButton.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ApplyButton.Location = new System.Drawing.Point(976, 9);
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(181, 40);
-            this.ApplyButton.TabIndex = 112;
-            this.ApplyButton.Text = "適応";
-            this.ApplyButton.UseVisualStyleBackColor = true;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // J_43
             // 
@@ -619,18 +596,41 @@
             this.B40.Size = new System.Drawing.Size(60, 25);
             this.B40.TabIndex = 0;
             // 
-            // RAMUnitStateFlagForm
+            // MESSAGE
+            // 
+            this.MESSAGE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MESSAGE.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.MESSAGE.Location = new System.Drawing.Point(10, 9);
+            this.MESSAGE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MESSAGE.Name = "MESSAGE";
+            this.MESSAGE.Size = new System.Drawing.Size(1146, 40);
+            this.MESSAGE.TabIndex = 107;
+            this.MESSAGE.Text = "MESSAGE";
+            this.MESSAGE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ApplyButton.Location = new System.Drawing.Point(976, 9);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(181, 40);
+            this.ApplyButton.TabIndex = 112;
+            this.ApplyButton.Text = "適応";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
+            // UwordBitFlagForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1167, 382);
             this.Controls.Add(this.ApplyButton);
-            this.Controls.Add(this.label30);
+            this.Controls.Add(this.MESSAGE);
             this.Controls.Add(this.panel8);
-            this.Name = "RAMUnitStateFlagForm";
+            this.Name = "UwordBitFlagForm";
             this.Text = "RAMUnitStateFlag";
-            this.Load += new System.EventHandler(this.RAMUnitStateFlagForm_Load);
+            this.Load += new System.EventHandler(this.UwordBitFlagForm_Load);
             this.panel8.ResumeLayout(false);
             this.J_43.ResumeLayout(false);
             this.J_43.PerformLayout();
@@ -691,7 +691,7 @@
         private System.Windows.Forms.CheckBox L_40_BIT_02;
         private System.Windows.Forms.CheckBox L_40_BIT_01;
         private System.Windows.Forms.NumericUpDown B40;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label MESSAGE;
         private System.Windows.Forms.Button ApplyButton;
     }
 }

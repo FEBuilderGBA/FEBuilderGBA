@@ -1,0 +1,33 @@
+NAME=サポートで任意のイベントを動作させる(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\nBGMが0のものはディフォルトのBGMが利用されます。\r\nEventが0のものはディフォルトのイベント(0x085B9DD4(FE8J))が利用されます。\r\nこの設定はゲーム中の支援イベントだけで、支援会話ルームでの内容とは異なります。\r\n\r\nイベントの書き方は、ディフォルトのイベント(0x085B9DD4(FE8J))をベースに作成してください。\r\nディフォルトのイベントと同様に以下の値がメモリスロットに設定されます。\r\nSlot2 BGMID\r\nSlot3 会話に利用するTextID\r\n\r\nこのパッチは、サポートで、ディフォルトのイベント以外の好きなイベントを動作させるようにできます。
+
+IF:0x85A88=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END RunSupportEvent.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit1
+B1:UNIT=Unit2
+W2=00
+D4:EVENT=RunEvent
+
+NAME.en=Make any event work in Support(Editor)
+INFO.en=If it is not listed, the default behavior will be used.\r\nIf BGM is 0, the default BGM will be used.\r\nIf Event is 0, the default event (0x085B9DD4(FE8J)) will be used.\r\nThis setting is only for support events in the game, not the content in the support conversation room.\r\nSlot2 BGMID\r\nSlot3 TextID used for conversation.\r\n\r\nThis patch allows you to make any event other than the default event work in Support.\r\n
+
+NAME.zh=Make any event work in Support(Editor)
+INFO.zh=If it is not listed, the default behavior will be used.\r\nIf BGM is 0, the default BGM will be used.\r\nIf Event is 0, the default event (0x085B9DD4(FE8J)) will be used.\r\nThis setting is only for support events in the game, not the content in the support conversation room.\r\nSlot2 BGMID\r\nSlot3 TextID used for conversation.\r\n\r\nThis patch allows you to make any event other than the default event work in Support.\r\n
+HINT=Hook

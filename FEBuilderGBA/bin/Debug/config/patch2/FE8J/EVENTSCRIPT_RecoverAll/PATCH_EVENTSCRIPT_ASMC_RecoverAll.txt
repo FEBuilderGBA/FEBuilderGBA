@@ -1,0 +1,26 @@
+NAME=全員回復(イベント命令)
+NAME.en=Add Event: ASMC_RecoverAll
+NAME.zh=Add Event: ASMC_RecoverAll
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_RecoverAll.dmp=0x70 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_RecoverAll.dmp
+
+AUTHOR=7743
+EVENTSCRIPT:1=400D0000{$L1:ASMC_RecoverAll.dmp}	Slot1の種類の全ユニット達を全回復(LOW)	 00で自軍(青)、01で敵軍(赤)、02で友軍(緑)
+EVENTSCRIPT:2=40050100XXXX0000400D0000{$L1:ASMC_RecoverAll.dmp}	[XX:WMAPAFFILIATION:所属]の全ユニット達を全回復
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_RecoverAll.dmp}	Full recovery of Slot 1 type all units.(LOW)	00 is Player(blue), 01 Enemy(red), 02 NPC (green).
+EVENTSCRIPT:2.en=40050100XXXX0000400D0000{$L1:ASMC_RecoverAll.dmp}	Full recovery of [XX:WMAPAFFILIATION:Affiliation]'s all units.
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_RecoverAll.dmp}	Full recovery of Slot 1 type all units.(LOW)	00 is Player(blue), 01 Enemy(red), 02 NPC (green).
+EVENTSCRIPT:2.zh=40050100XXXX0000400D0000{$L1:ASMC_RecoverAll.dmp}	Full recovery of [XX:WMAPAFFILIATION:Affiliation]'s all units.
+
+INFO=自軍や敵軍、NPCなどの特定の所属の全ユニット達を全回復
+INFO.en=Fully recover all units of a specific affiliation such as Player(Blue), Enemy(Red), NPC(Green)
+INFO.zh=Fully recover all units of a specific affiliation such as Player(Blue), Enemy(Red), NPC(Green)
