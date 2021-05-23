@@ -2843,7 +2843,7 @@ In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
 1=Heavy Steps
 
 :1=魔物
-1=1=Monster
+1=Monster
 
 :2=アイテムドロップ
 2=Item Drop

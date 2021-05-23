@@ -1,0 +1,34 @@
+NAME=戦闘アニメのルーンの色を変更する(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n戦闘アニメのルーンの魔方陣の色を変更します。\r\n魔法使いと賢者の戦闘アニメで、魔法を発動するときに描画される魔法陣のルールの色を変更します。\r\nディフォルトは常に青ですが、アイテムや所属ごとに違う色に変更できます。
+
+IF:0x6F568=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeMagicRune.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+W6:$COMBO Color.combo.txt=Color
+
+NAME.en=Change the color of runes in battle animations(Editor)
+INFO.en=Anything not listed will have the default behavior.\r\n\r\nChanges the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.
+
+NAME.zh=Change the color of runes in battle animations(Editor)
+INFO.zh=Anything not listed will have the default behavior.\r\n\r\nChanges the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.

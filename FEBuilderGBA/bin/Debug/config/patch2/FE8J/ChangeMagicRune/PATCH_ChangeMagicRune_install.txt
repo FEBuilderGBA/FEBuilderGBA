@@ -1,0 +1,18 @@
+NAME=戦闘アニメのルーンの色を変更する(Installer)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n戦闘アニメのルーンの魔方陣の色を変更します。\r\n魔法使いと賢者の戦闘アニメで、魔法を発動するときに描画される魔法陣のルールの色を変更します。\r\nディフォルトは常に青ですが、アイテムや所属ごとに違う色に変更できます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x6F568=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChangeMagicRune.txt
+EDIT_PATCH:2=PATCH_ChangeMagicRune_Palette.txt
+EA=ChangeMagicRune_installer.event
+
+AUTHOR=7743
+NAME.en=Change the color of runes in battle animations(Installer)
+INFO.en=Changes the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.
+
+NAME.zh=Change the color of runes in battle animations(Editor)
+INFO.zh=Changes the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.

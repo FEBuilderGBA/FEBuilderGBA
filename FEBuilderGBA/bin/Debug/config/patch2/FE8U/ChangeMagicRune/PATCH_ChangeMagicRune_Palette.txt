@@ -1,0 +1,35 @@
+NAME=戦闘アニメのルーンの色を変更する(PaletteList)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n戦闘アニメのルーンの魔方陣の色を変更します。\r\n魔法使いと賢者の戦闘アニメで、魔法を発動するときに描画される魔法陣のルールの色を変更します。\r\nディフォルトは常に青ですが、アイテムや所属ごとに違う色に変更できます。
+
+IF:0x6D244=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 ChangeMagicRune.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//幅と高さ
+WIDTH=256
+HEIGHT=64
+//利用パレット数
+PALETTE=1
+
+PatchImage_ZIMAGE=0x6D278
+LISTNAME=$COMBO Color.combo.txt
+
+//データを定義します
+D0:PatchImage_PALETTE=Palette Poiter
+
+NAME.en=Change the color of runes in battle animations(PaletteList)
+INFO.en=Changes the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.
+
+NAME.zh=Change the color of runes in battle animations(PaletteList)
+INFO.zh=Changes the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.

@@ -550,6 +550,52 @@ namespace FEBuilderGBA
             U.SetClipboardText(((Label)sender).Text);
         }
 
+        void SetGlobalImgeSettungs_Image(PatchSt patch, StructImage image, string name, int type)
+        {
+            uint p = U.atoi0x(U.at(patch.Param, name));
+            if (!U.isSafetyOffset(p))
+            {
+                return ;
+            }
+
+            uint a = Program.ROM.u32(p);
+            if (!U.isSafetyPointer(a))
+            {
+                return;
+            }
+
+            NumericUpDown nd = new NumericUpDown();
+            nd.Name = name;
+            nd.Maximum = 0xFFFFFFFF;
+            nd.Hexadecimal = true;
+            nd.Value = U.toOffset(a);
+            if (type == 1)
+            {
+                image.SetImage(0, nd, name);
+            }
+            else if (type == 2)
+            {
+                image.SetPalette(0, nd, name);
+            }
+            else
+            {
+                image.SetImage(0, nd, name);
+            }
+        }
+
+        void SetGlobalImgeSettungs(PatchSt patch, StructImage image)
+        {
+            //共通イメージ
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_IMAGE", 0);
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_ZIMAGE", 0);
+
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_TSA", 1);
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_ZTSA", 1);
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_HEADERTSA", 1);
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_ZHEADERTSA", 1);
+            SetGlobalImgeSettungs_Image(patch, image, "PatchImage_PALETTE", 2);
+        }
+
         void LoadPatchStruct(PatchSt patch)
         {
             PatchPage.Controls.Clear();
@@ -596,7 +642,7 @@ namespace FEBuilderGBA
             string datacount_str = U.at(patch.Param, "DATACOUNT");
             if (datacount_str.Length > 0 && datacount_str[0] == '$')
             {//grep等
-                datacount = convertBinAddressString(datacount_str, 8, struct_address,basedir);
+                datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
                 if (datacount == U.NOT_FOUND)
                 {
                     throw new SyntaxException(R.Error("データ件数を調べようとしましたが、終端データを取得できません。"));
@@ -703,7 +749,7 @@ namespace FEBuilderGBA
                     datacount = max_explands;
                 }
             }
-            
+
 
             Button AddressListExpandsButton = new Button();
             AddressListExpandsButton.Location = new Point(0, y + 230);
@@ -755,6 +801,7 @@ namespace FEBuilderGBA
 
             StructImage image = new StructImage(); //画像を表示するかどうか
             StructMap map = new StructMap();       //地図を表示するかどうか
+            SetGlobalImgeSettungs(patch, image);
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
@@ -762,7 +809,7 @@ namespace FEBuilderGBA
                 string type = U.at(sp, 1);
                 string value = pair.Value;
 
-                if ( ! U.isnum(key[1]) )
+                if (!U.isnum(key[1]))
                 {
                     continue;
                 }
@@ -789,7 +836,7 @@ namespace FEBuilderGBA
                 data.Location = new Point(405, y);
                 data.Size = new Size(100 - 5, CONTROL_HEIGHT);
                 data.Name = key;
-                
+
                 if (key[0] == 'P')
                 {
                     data.Increment = 4;
@@ -839,7 +886,7 @@ namespace FEBuilderGBA
                     link.Size = new Size(150, CONTROL_HEIGHT);
                     link.Name = "L_" + datanum + "_" + "COMBO";
                     link.DropDownStyle = ComboBoxStyle.DropDownList;
-                    if (InputFormRef.IsHalfTypeWord(key[0]) )
+                    if (InputFormRef.IsHalfTypeWord(key[0]))
                     {//COMBOl , COMBOh
                         link.Name = link.Name + key[0];
                     }
@@ -918,7 +965,7 @@ namespace FEBuilderGBA
                     {
                         image.SetTSA((uint)datanum, data, type);
                     }
-                    else if (type.IndexOf("_PALETTE") >= 0 || type.IndexOf("_ZPALETTE") >= 0 )
+                    else if (type.IndexOf("_PALETTE") >= 0 || type.IndexOf("_ZPALETTE") >= 0)
                     {
                         image.SetPalette((uint)datanum, data, type);
                     }
@@ -942,11 +989,11 @@ namespace FEBuilderGBA
                     link.Name = "L_" + datanum + "_" + type;
                     PatchPage.Controls.Add(link);
 
-                    if (type == "UNIT" 
-                        || type == "ITEM" 
+                    if (type == "UNIT"
+                        || type == "ITEM"
                         || type == "CLASS"
-                        || type == "BATTLEANIME" 
-                        || type == "BATTLEANIMEPOINTER" 
+                        || type == "BATTLEANIME"
+                        || type == "BATTLEANIMEPOINTER"
                         || type == "CLASSTYPEICON"
                         || type == "SKILL"
                         )
@@ -1003,14 +1050,14 @@ namespace FEBuilderGBA
                 TextBoxEx comment = new TextBoxEx();
                 comment.SetToolTipEx(this.ToolTip);
                 comment.Location = new Point(405, y);
-                comment.Size = new Size(200-5, CONTROL_HEIGHT);
+                comment.Size = new Size(200 - 5, CONTROL_HEIGHT);
                 comment.Name = "Comment";
                 PatchPage.Controls.Add(comment);
                 y += CONTROL_HEIGHT;
             }
 
             //画像を利用する場合
-            if (image.HasImage() )
+            if (image.HasImage())
             {
                 LoadPatchStructWithImage(patch, AddressList, writebutton
                     , image, struct_address, datasize, "PatchImage");
@@ -1028,7 +1075,7 @@ namespace FEBuilderGBA
             //リストの名前　未定義の場合、アドレスのみ
             string listname = U.at(patch.Param, "LISTNAME");
 
-            Dictionary<uint, string> listname_combo_dic = new Dictionary<uint,string>();
+            Dictionary<uint, string> listname_combo_dic = new Dictionary<uint, string>();
             //リストの型がわかるなら、アイコンを描画できるも
             InitStructListName(patch, listname, AddressList, out listname_combo_dic);
 

@@ -1,0 +1,91 @@
+PUSH
+ORG 0x6F568	//FE8J
+//ORG 0x6D244	//FE8U
+jumpToHack(ChangeMagicRune)
+POP
+
+ALIGN 4
+ChangeMagicRune:
+#incbin "ChangeMagicRune.dmp"
+POIN ChangeMagicRune_Table
+POIN ChangeMagicRune_PaletteTable
+
+ALIGN 4
+ChangeMagicRune_Palette_Red:
+#incbin "RedRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_YellowRune:
+#incbin "YellowRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_GreenRune:
+#incbin "GreenRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_LightBlueRune:
+#incbin "LightBlueRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_LightGreenRune:
+#incbin "LightGreenRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_OrangeRune:
+#incbin "OrangeRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_PinkRune:
+#incbin "PinkRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_PurpleRune:
+#incbin "PurpleRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_DarkGreenRune:
+#incbin "DarkGreenRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_LightYellowRune:
+#incbin "LightYellowRunePalette.dmp"
+
+ALIGN 4
+ChangeMagicRune_WhiteRunePalette:
+#incbin "WhiteRunePalette.dmp"
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeMagicRune_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	TableID
+BYTE	0x0		0x0		0x38	0x0;SHORT	0x0		1			//0x38 Fire -> Red
+BYTE	0x0		0x0		0x39	0x0;SHORT	0x0		2			//0x39 Thunder -> Yello
+BYTE	0x0		0x0		0x3A	0x0;SHORT	0x0		6			//0x3A Elfire ->  Orange
+BYTE	0x0		0x0		0x3B	0x0;SHORT	0x0		2			//0x3B ThunderStorm -> YelloTable
+BYTE	0x0		0x0		0x3C	0x0;SHORT	0x0		0			//0x3C Finvul -> Blue
+BYTE	0x0		0x0		0x3D	0x0;SHORT	0x0		0			//0x3D Dummy
+BYTE	0x0		0x0		0x3E	0x0;SHORT	0x0		5			//0x39 Excalver -> Green
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+//パレットテーブル
+ALIGN 4
+ChangeMagicRune_PaletteTable:
+POIN 0x861BE24						//0=Blue 	Vanilla	//{J}
+//POIN 0x85EF24C						//0=Blue 	Vanilla	//{U}
+
+POIN ChangeMagicRune_Palette_Red	//1=Red
+POIN ChangeMagicRune_YellowRune		//2=Yellow
+POIN ChangeMagicRune_GreenRune		//3=Green
+POIN ChangeMagicRune_LightBlueRune	//4=LightBlue
+POIN ChangeMagicRune_LightGreenRune	//5=LightGreen
+POIN ChangeMagicRune_OrangeRune		//6=Orange
+POIN ChangeMagicRune_PinkRune		//7=Pink
+POIN ChangeMagicRune_PurpleRune		//8=Purple
+POIN ChangeMagicRune_DarkGreenRune	//9=DarkGreen
+POIN ChangeMagicRune_LightYellowRune	//10=LightYellow
+POIN ChangeMagicRune_WhiteRunePalette	//11=White
+WORD 0	//Term
+ALIGN 4
+
+
+ALIGN 4
