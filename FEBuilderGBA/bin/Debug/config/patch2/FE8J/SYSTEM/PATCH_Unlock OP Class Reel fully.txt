@@ -1,0 +1,18 @@
+NAME=OPクラス紹介を最初から全開放する
+NAME.en=Unlock OP Class Reel fully
+NAME.zh=Unlock OP Class Reel fully
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=Default|OFF|Unlock|FIX
+
+DETERMINATION_ADDRESS=0x0B8C86
+OFF:0x0B8C86=0x00 0x78
+FIX:0x0B8C86=0x00 0x20
+
+AUTHOR=Kirito
+INFO=OPのクラス紹介を最初から全部表示するようにします。\r\n通常はゲームの思考ごとに少しずつ紹介するクラスが増えていきますが、最初からすべてのクラスを紹介するように変更します。
+INFO.en=Display all OP class reel from the beginning.\r\nNormally, the number of classes to be introduced will increase little by little for each thought of the game, but This patch will change it to introduce all classes from the beginning.
+INFO.zh=Display all OP class reel from the beginning.\r\nNormally, the number of classes to be introduced will increase little by little for each thought of the game, but This patch will change it to introduce all classes from the beginning.

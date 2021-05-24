@@ -266,6 +266,7 @@ namespace FEBuilderGBA
         uint workmemory_ai_data_address(); //ワークメモリ AI関係の起点
         uint workmemory_action_data_address(); //ワークメモリ ActionData
         uint workmemory_dungeon_data_address(); //ワークメモリ ダンジョン FE8のみ
+        uint workmemory_battlesome_data_address(); //ワークメモリ バルトに関係する諸データ
         uint workmemory_mapid_address();    //ワークメモリ マップID
         uint workmemory_last_string_address();  //ワークメモリ 最後に表示した文字列
         uint workmemory_text_buffer_address();  //ワークメモリ デコードされたテキスト

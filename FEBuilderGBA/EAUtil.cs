@@ -66,7 +66,7 @@ namespace FEBuilderGBA
 
             for (int i = 0; i < lines.Length; i++)
             {
-                string line = U.ClipComment(lines[i], isWithoutSharpComment: true);
+                string line = U.ClipComment(lines[i]);
                 if (line == "")
                 {
                     continue;
@@ -78,7 +78,7 @@ namespace FEBuilderGBA
             //本格的なパース.
             for (int i = 0; i < lines.Length; i++)
             {
-                string line = U.ClipComment(lines[i], isWithoutSharpComment: true);
+                string line = U.ClipComment(lines[i]);
                 if (ParseLynDump(line, lines[i]))
                 {
                     continue;

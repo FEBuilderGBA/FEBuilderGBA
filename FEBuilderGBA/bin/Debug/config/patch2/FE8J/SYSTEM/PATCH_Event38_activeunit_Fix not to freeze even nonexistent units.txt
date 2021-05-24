@@ -12,3 +12,5 @@ AUTHOR=7743
 
 INFO=存在しないキャラクターをアクティブに指定しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。\r\n(SET_ACTIVE)
 INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, pointing to a nonexistent character with 0x38 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n(SET_ACTIVE)
+NAME.zh=指令0x38_设置为活动单位_即使不存在的单位也不要冻结。
+INFO.zh=解决了尝试主动指定不存在的字符时冻结的问题。\r\n忽略不存在的字符的命令。\r\n（SET_ACTIVE）。

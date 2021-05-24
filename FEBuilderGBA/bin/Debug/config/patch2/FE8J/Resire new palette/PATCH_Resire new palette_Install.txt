@@ -12,3 +12,4 @@ AUTHOR=Tequila
 INFO=リザイアのパレットを新しいものに変更します。\r\nディフォルトで金色の黄色い色に変更します。
 INFO.en=Change the Resire(Nosferatu) palette to a new one.\r\nThe default is a golden yellow color.
 INFO.zh=将缩放器调色板更改为新调色板。\r\n默认为金黄色。
+DEPRECATED=1

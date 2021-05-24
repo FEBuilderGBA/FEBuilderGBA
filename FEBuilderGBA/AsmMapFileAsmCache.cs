@@ -470,8 +470,11 @@ namespace FEBuilderGBA
             }
             if (!U.isSafetyPointer(num))
             {
-                errorMessage = R._("無効なポインタです。\r\nこの設定は危険です。");
-                return R._("無効なポインタ");
+                if (! U.is_RAMPointer(num))
+                {
+                    errorMessage = R._("無効なポインタです。\r\nこの設定は危険です。");
+                    return R._("無効なポインタ");
+                }
             }
 
             errorMessage = "";

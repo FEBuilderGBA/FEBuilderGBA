@@ -5142,6 +5142,7 @@ namespace FEBuilderGBA
             SkillConfigSkillSystemForm.ClearCache();
             FE8SpellMenuExtendsForm.ClearCache();
             MapChangeForm.ClearCache();
+            ItemWeaponEffectForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
             PatchUtil.ClearCache();
@@ -11478,6 +11479,10 @@ namespace FEBuilderGBA
             else if (str == "@MAPEDITOR_ID")
             {
                 str = R._("タイル変化のIDです。\r\n無駄な混乱を避けるためリストの並び順と同じIDを割り振ることを推奨します。\r\nこの値を0xFFにするとリスト終端として扱われます。");
+            }
+            else if (str == "@SONGDATAFINGERPRINT")
+            {
+                str = R._("楽器データを識別するための値です。\r\nもし、まだ名前が設定されていない楽器の名前を知っている場合は、\r\nこのテキストの内容と、楽器名をコミニティに報告してください。\r\n");
             }
             else
             {

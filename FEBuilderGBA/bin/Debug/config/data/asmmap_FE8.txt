@@ -7237,7 +7237,6 @@
 08A5882C	&LZ77	何か小さい圧縮データ	68	{J}
 08A58888	&LZ77	何か小さい圧縮データ	69	{J}
 
-
 @BATTLE_ANIME@04	左側	戦闘アニメID-1
 @BATTLE_ANIME@06	右側	戦闘アニメID-1
 0203E17E	@BATTLE_ANIME	戦闘アニメ関係1	{J}

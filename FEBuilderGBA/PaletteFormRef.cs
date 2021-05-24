@@ -611,7 +611,6 @@ namespace FEBuilderGBA
             }
 
             this.UndoLock = false;
-            ClearUndoBuffer();
         }
         public byte[] MakePaletteUIToByte()
         {

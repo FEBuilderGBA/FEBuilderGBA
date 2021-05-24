@@ -25,7 +25,23 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
+        static bool Cache_IsCached = false;
+        static Dictionary<uint, string> Cache_ItemEffectAndAppendMagic = new Dictionary<uint, string>();
         static Dictionary<uint, string> MakeItemEffectAndAppendMagic()
+        {
+            if (!Cache_IsCached)
+            {
+                Cache_ItemEffectAndAppendMagic = MakeItemEffectAndAppendMagicLow();
+                Cache_IsCached = true;
+            }
+            return Cache_ItemEffectAndAppendMagic;
+        }
+        public static void ClearCache()
+        {
+            Cache_IsCached = false;
+        }
+
+        static Dictionary<uint, string> MakeItemEffectAndAppendMagicLow()
         {
             ImageUtilMagic.magic_system_enum magic = ImageUtilMagic.SearchMagicSystem();
             if (magic == ImageUtilMagic.magic_system_enum.FEDITOR_ADV)
@@ -38,8 +54,11 @@ namespace FEBuilderGBA
             }
             return U.LoadDicResource(U.ConfigDataFilename("item_anime_effect_"));
         }
-
-
+        public static string GetEffectName(uint id)
+        {
+            Dictionary<uint, string> dic = MakeItemEffectAndAppendMagic();
+            return U.at(dic, id);
+        }
 
 
         public InputFormRef InputFormRef;

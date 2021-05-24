@@ -47,6 +47,9 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Inst_ExportButton = new System.Windows.Forms.Button();
+            this.Inst_ImportButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.UNIONTAB = new System.Windows.Forms.TabControl();
@@ -514,12 +517,12 @@
             this.panel9.Location = new System.Drawing.Point(6, 37);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(267, 590);
+            this.panel9.Size = new System.Drawing.Size(267, 669);
             this.panel9.TabIndex = 197;
             // 
             // AddressListExpandsButton_128
             // 
-            this.AddressListExpandsButton_128.Location = new System.Drawing.Point(2, 556);
+            this.AddressListExpandsButton_128.Location = new System.Drawing.Point(-1, 635);
             this.AddressListExpandsButton_128.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_128.Name = "AddressListExpandsButton_128";
             this.AddressListExpandsButton_128.Size = new System.Drawing.Size(255, 30);
@@ -546,7 +549,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(267, 526);
+            this.AddressList.Size = new System.Drawing.Size(267, 605);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -716,6 +719,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Inst_ExportButton);
+            this.panel2.Controls.Add(this.Inst_ImportButton);
+            this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.L_0_COMBO);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
@@ -724,8 +730,40 @@
             this.panel2.Location = new System.Drawing.Point(279, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(842, 555);
+            this.panel2.Size = new System.Drawing.Size(842, 634);
             this.panel2.TabIndex = 198;
+            // 
+            // Inst_ExportButton
+            // 
+            this.Inst_ExportButton.Location = new System.Drawing.Point(584, 554);
+            this.Inst_ExportButton.Margin = new System.Windows.Forms.Padding(2);
+            this.Inst_ExportButton.Name = "Inst_ExportButton";
+            this.Inst_ExportButton.Size = new System.Drawing.Size(230, 30);
+            this.Inst_ExportButton.TabIndex = 120;
+            this.Inst_ExportButton.Text = "楽器データ 書出";
+            this.Inst_ExportButton.UseVisualStyleBackColor = true;
+            this.Inst_ExportButton.Click += new System.EventHandler(this.Inst_ExportButton_Click);
+            // 
+            // Inst_ImportButton
+            // 
+            this.Inst_ImportButton.Location = new System.Drawing.Point(350, 554);
+            this.Inst_ImportButton.Margin = new System.Windows.Forms.Padding(2);
+            this.Inst_ImportButton.Name = "Inst_ImportButton";
+            this.Inst_ImportButton.Size = new System.Drawing.Size(230, 30);
+            this.Inst_ImportButton.TabIndex = 119;
+            this.Inst_ImportButton.Text = "楽器データ 読込";
+            this.Inst_ImportButton.UseVisualStyleBackColor = true;
+            this.Inst_ImportButton.Click += new System.EventHandler(this.Inst_ImportButton_Click);
+            // 
+            // label17
+            // 
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Location = new System.Drawing.Point(4, 545);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(820, 46);
+            this.label17.TabIndex = 93;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_COMBO
             // 
@@ -822,7 +860,7 @@
             // 
             // N00_ExportButton
             // 
-            this.N00_ExportButton.Location = new System.Drawing.Point(630, 262);
+            this.N00_ExportButton.Location = new System.Drawing.Point(630, 222);
             this.N00_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N00_ExportButton.Name = "N00_ExportButton";
             this.N00_ExportButton.Size = new System.Drawing.Size(186, 30);
@@ -833,7 +871,7 @@
             // 
             // N00_ImportButton
             // 
-            this.N00_ImportButton.Location = new System.Drawing.Point(439, 262);
+            this.N00_ImportButton.Location = new System.Drawing.Point(439, 222);
             this.N00_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N00_ImportButton.Name = "N00_ImportButton";
             this.N00_ImportButton.Size = new System.Drawing.Size(186, 30);
@@ -2337,7 +2375,7 @@
             // 
             // N08_ExportButton
             // 
-            this.N08_ExportButton.Location = new System.Drawing.Point(629, 264);
+            this.N08_ExportButton.Location = new System.Drawing.Point(636, 222);
             this.N08_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N08_ExportButton.Name = "N08_ExportButton";
             this.N08_ExportButton.Size = new System.Drawing.Size(186, 30);
@@ -2348,7 +2386,7 @@
             // 
             // N08_ImportButton
             // 
-            this.N08_ImportButton.Location = new System.Drawing.Point(438, 264);
+            this.N08_ImportButton.Location = new System.Drawing.Point(445, 222);
             this.N08_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N08_ImportButton.Name = "N08_ImportButton";
             this.N08_ImportButton.Size = new System.Drawing.Size(186, 30);
@@ -3851,7 +3889,7 @@
             // 
             // N10_ExportButton
             // 
-            this.N10_ExportButton.Location = new System.Drawing.Point(631, 269);
+            this.N10_ExportButton.Location = new System.Drawing.Point(636, 227);
             this.N10_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N10_ExportButton.Name = "N10_ExportButton";
             this.N10_ExportButton.Size = new System.Drawing.Size(186, 30);
@@ -3862,7 +3900,7 @@
             // 
             // N10_ImportButton
             // 
-            this.N10_ImportButton.Location = new System.Drawing.Point(440, 269);
+            this.N10_ImportButton.Location = new System.Drawing.Point(445, 227);
             this.N10_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N10_ImportButton.Name = "N10_ImportButton";
             this.N10_ImportButton.Size = new System.Drawing.Size(186, 30);
@@ -4164,7 +4202,7 @@
             // 
             // N18_ExportButton
             // 
-            this.N18_ExportButton.Location = new System.Drawing.Point(630, 267);
+            this.N18_ExportButton.Location = new System.Drawing.Point(633, 224);
             this.N18_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N18_ExportButton.Name = "N18_ExportButton";
             this.N18_ExportButton.Size = new System.Drawing.Size(186, 30);
@@ -4175,7 +4213,7 @@
             // 
             // N18_ImportButton
             // 
-            this.N18_ImportButton.Location = new System.Drawing.Point(439, 267);
+            this.N18_ImportButton.Location = new System.Drawing.Point(442, 224);
             this.N18_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.N18_ImportButton.Name = "N18_ImportButton";
             this.N18_ImportButton.Size = new System.Drawing.Size(186, 30);
@@ -4817,7 +4855,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.FINGERPRINT);
             this.panel4.Controls.Add(this.label122);
-            this.panel4.Location = new System.Drawing.Point(4, 511);
+            this.panel4.Location = new System.Drawing.Point(4, 590);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(820, 43);
@@ -4836,6 +4874,7 @@
             // 
             // label122
             // 
+            this.label122.AccessibleDescription = "@SONGDATAFINGERPRINT";
             this.label122.AutoSize = true;
             this.label122.Location = new System.Drawing.Point(4, 12);
             this.label122.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -4874,7 +4913,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1126, 638);
+            this.ClientSize = new System.Drawing.Size(1126, 719);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel1);
@@ -5372,5 +5411,8 @@
         private System.Windows.Forms.Button N18_ExportButton;
         private System.Windows.Forms.Button N18_ImportButton;
         private System.Windows.Forms.Button AddressListExpandsButton_128;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button Inst_ExportButton;
+        private System.Windows.Forms.Button Inst_ImportButton;
     }
 }

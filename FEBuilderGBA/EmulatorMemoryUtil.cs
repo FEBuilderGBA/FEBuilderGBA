@@ -1245,6 +1245,105 @@ namespace FEBuilderGBA
 
             return ret;
         }
+        static public List<EmulatorMemoryUtil.AddressList> GetBattleSomeDataStruct()
+        {
+            List<AddressList> ret = new List<AddressList>();
+            if (Program.ROM.RomInfo.version() != 8)
+            {//FE6 FE7
+                return ret;
+            }
+            ret.Add(new AddressList(0x00, "UnknownBattleFlag", "", 4));
+            ret.Add(new AddressList(0x04, "BoolBattleDeamonActive", "", 4));
+            ret.Add(new AddressList(0x08, "EkrBattleDeamon", "POINTER", 4));
+            ret.Add(new AddressList(0x0C, "Unk0C", "", 2));
+            ret.Add(new AddressList(0x0E, "BattleBG", "BATTLEBG", 2));
+            ret.Add(new AddressList(0x10, "BattleAttackPhaseBool", "", 4));
+            ret.Add(new AddressList(0x14, "Unk10", "", 2));
+            ret.Add(new AddressList(0x16, "Unk12", "", 2));
+            ret.Add(new AddressList(0x18, "BattleActorTargetOrder", "", 4));
+            ret.Add(new AddressList(0x1C, "BattleAnimId 1", "BATTLEANIME-1", 2));
+            ret.Add(new AddressList(0x1E, "BattleAnimId 2", "BATTLEANIME-1", 2));
+            ret.Add(new AddressList(0x20, "BattlePalette 1", "UNITPALETTE-1", 2));
+            ret.Add(new AddressList(0x22, "BattlePalette 2", "UNITPALETTE-1", 2));
+            ret.Add(new AddressList(0x24, "Unk24", "", 2));
+            ret.Add(new AddressList(0x26, "SomeAllegienceIdShort", "", 2));
+            ret.Add(new AddressList(0x28, "BattleSpellAnimationId 1", "SPELLANIMATION", 2));
+            ret.Add(new AddressList(0x2A, "BattleSpellAnimationId 2", "SPELLANIMATION", 2));
+            ret.Add(new AddressList(0x2C, "BattleTerrain 1", "BATTLETERRAIN", 2));
+            ret.Add(new AddressList(0x2E, "BattleTerrain 2", "BATTLETERRAIN", 2));
+            ret.Add(new AddressList(0x30, "AnimAndDistance", "", 2));
+            ret.Add(new AddressList(0x32, "Unk32", "", 2));
+            ret.Add(new AddressList(0x34, "Unk34", "", 2));
+            ret.Add(new AddressList(0x36, "Unk36", "", 2));
+            ret.Add(new AddressList(0x38, "Unk38", "", 2));
+
+            ret.Add(new AddressList(0x3A, "AISRelatedShorts", "LABEL", 0));
+            ret.Add(new AddressList(0x3A, "AISRelatedShorts[0]", "", 2));
+            ret.Add(new AddressList(0x3B, "AISRelatedShorts[1]", "", 2));
+            ret.Add(new AddressList(0x3E, "AISRelatedShorts[2]", "", 2));
+            ret.Add(new AddressList(0x40, "AISRelatedShorts[3]", "", 2));
+            ret.Add(new AddressList(0x42, "AISRelatedShorts[4]", "", 2));
+            ret.Add(new AddressList(0x44, "AISRelatedShorts[5]", "", 2));
+            ret.Add(new AddressList(0x46, "AISRelatedShorts[6]", "", 2));
+            ret.Add(new AddressList(0x48, "AISRelatedShorts[7]", "", 2));
+            ret.Add(new AddressList(0x4A, "AISRelatedShorts[8]", "", 2));
+            ret.Add(new AddressList(0x4C, "AISRelatedShorts[9]", "", 2));
+            ret.Add(new AddressList(0x4E, "AISRelatedShorts...", "", 2));
+
+            ret.Add(new AddressList(0x7A, "SomeBattle2", "LABEL", 0));
+            ret.Add(new AddressList(0x7A, "Unk7A", "", 2));
+            ret.Add(new AddressList(0x7C, "Unk7C", "", 2));
+            ret.Add(new AddressList(0x92, "BattleAnimId_B 1", "BATTLEANIME-1", 2));
+            ret.Add(new AddressList(0x94, "BattleAnimId_B 2", "BATTLEANIME-1", 2));
+            ret.Add(new AddressList(0x96, "Pad96", "", 2));
+            ret.Add(new AddressList(0x98, "ToDefenserPointer", "POINTER", 4));
+            ret.Add(new AddressList(0x9C, "ToAttackerPointer", "POINTER", 4));
+            ret.Add(new AddressList(0xA0, "BatttleUnitID 1", "UNIT", 1));
+            ret.Add(new AddressList(0xA1, "BatttleUnitID 2", "UNIT", 1));
+            ret.Add(new AddressList(0xA2, "UnkA2", "", 4));
+            ret.Add(new AddressList(0xA4, "ExtraUnit 1", "", 4));
+            ret.Add(new AddressList(0xA8, "ExtraUnit 2", "", 4));
+            ret.Add(new AddressList(0xAC, "UnkAC", "", 4));
+            ret.Add(new AddressList(0xB0, "UnkB0", "", 4));
+
+            ret.Add(new AddressList(0xB4, "DisplayValue", "LABEL", 0));
+            ret.Add(new AddressList(0xB4, "BoolLockSheetGraphics", "", 4));
+            ret.Add(new AddressList(0xB8, "UnkB8", "", 4));
+            ret.Add(new AddressList(0xBC, "BattleScreenHP_A 1", "DEC", 2));
+            ret.Add(new AddressList(0xBE, "BattleScreenHP_A 2", "DEC", 2));
+            ret.Add(new AddressList(0xC0, "BattleScreenHP_B 1", "DEC", 2));
+            ret.Add(new AddressList(0xC2, "BattleScreenHP_B 2", "DEC", 2));
+            ret.Add(new AddressList(0xC4, "BattleScreenHP_C 1", "DEC", 2));
+            ret.Add(new AddressList(0xC6, "BattleScreenHP_C 2", "DEC", 2));
+            ret.Add(new AddressList(0xC8, "BattleScreenHit 1", "DEC", 2));
+            ret.Add(new AddressList(0xCA, "BattleScreenHit 2", "DEC", 2));
+            ret.Add(new AddressList(0xCC, "BattleScreenDmg 1", "DEC", 2));
+            ret.Add(new AddressList(0xCE, "BattleScreenDmg 2", "DEC", 2));
+            ret.Add(new AddressList(0xD0, "BattleScreenCrit 1", "DEC", 2));
+            ret.Add(new AddressList(0xD2, "BattleScreenCrit 2", "DEC", 2));
+            ret.Add(new AddressList(0xD4, "UnkD4", "", 2));
+            ret.Add(new AddressList(0xD6, "UnkD6", "", 2));
+            ret.Add(new AddressList(0xD8, "UnkD8", "", 2));
+            ret.Add(new AddressList(0xDA, "UnkDA", "", 2));
+            ret.Add(new AddressList(0xDC, "UnkDC", "", 2));
+            ret.Add(new AddressList(0xDC, "UnkDE", "", 2));
+            ret.Add(new AddressList(0xE0, "UnkE0", "", 2));
+            ret.Add(new AddressList(0xE2, "UnkE2", "", 2));
+            ret.Add(new AddressList(0xE4, "UnkE4", "", 2));
+            ret.Add(new AddressList(0xE6, "UnkE6", "", 2));
+            ret.Add(new AddressList(0xE8, "UnkE8", "", 2));
+            ret.Add(new AddressList(0xEA, "UnkEA", "", 2));
+            ret.Add(new AddressList(0xEC, "UnkEC", "", 2));
+            ret.Add(new AddressList(0xEE, "UnkEE", "", 2));
+            ret.Add(new AddressList(0xF0, "UnkF0", "", 4));
+
+            ret.Add(new AddressList(0xF4, "SomeBattle3", "LABEL", 0));
+            ret.Add(new AddressList(0xF4, "BoolIsArena", "", 4));
+            ret.Add(new AddressList(0xF8, "UnkF8", "", 4));
+            ret.Add(new AddressList(0xFC, "UnkFC", "", 2));
+            ret.Add(new AddressList(0xFE, "UnkFE", "", 2));
+            return ret;
+        }
         public static string GetAddressList(AddressList a, uint addr)
         {
             if (a.Size == 0)
@@ -1310,6 +1409,14 @@ namespace FEBuilderGBA
             {
                 return U.To0xHexString(v) + " (" + InputFormRef.GetWorldmapStructWMFLAG1(v) + ")";
             }
+            else if (a.Type == "UNIT")
+            {
+                return U.To0xHexString(v) + " (" + UnitForm.GetUnitName(v) + ")";
+            }
+            else if (a.Type == "CLASS")
+            {
+                return U.To0xHexString(v) + " (" + ClassForm.GetClassName(v) + ")";
+            }
             else if (a.Type == "ITEM")
             {
                 return U.To0xHexString(v) + " (" + ItemForm.GetItemName(v) + ")";
@@ -1362,6 +1469,30 @@ namespace FEBuilderGBA
             {
                 return U.To0xHexString(v) + " (" + InputFormRef.GetDungeonType(v) + ")";
             }
+            else if (a.Type == "SONG")
+            {
+                return U.To0xHexString(v) + " (" + SongTableForm.GetSongName(v) + ")";
+            }
+            else if (a.Type == "BATTLEBG")
+            {
+                return U.To0xHexString(v) + " (" + ImageBattleBGForm.GetName(v) + ")";
+            }
+            else if (a.Type == "BATTLETERRAIN")
+            {
+                return U.To0xHexString(v) + " (" + ImageBattleTerrainForm.GetBattleTerrainName(v) + ")";
+            }
+            else if (a.Type == "SPELLANIMATION")
+            {
+                return U.To0xHexString(v) + " (" + ItemWeaponEffectForm.GetEffectName(v) + ")";
+            }
+            else if (a.Type == "BATTLEANIME-1")
+            {
+                return U.To0xHexString(v) + "+1 (" + ImageBattleAnimeForm.GetBattleAnimeName(v + 1) + ")";
+            }
+            else if (a.Type == "UNITPALETTE-1")
+            {
+                return U.To0xHexString(v) + "+1 (" + ImageUnitPaletteForm.GetPaletteName(v + 1) + ")";
+            }
             else if (a.Type == "ROMUNITPOINTER" || a.Type == "ROMCLASSPOINTER")
             {
                 string name = "";
@@ -1370,6 +1501,15 @@ namespace FEBuilderGBA
                     uint textid = Program.ROM.u16(U.toOffset(v));
                     uint id = Program.ROM.u8(U.toOffset(v + 4));
                     name = U.To0xHexString(id) + " " + FETextDecode.Direct(textid);
+                }
+                return U.To0xHexString(v) + " (" + name + ")";
+            }
+            else if (a.Type == "POINTER")
+            {
+                string name = "";
+                if (U.is_ROMorRAMPointer(v))
+                {
+                    name = Program.AsmMapFileAsmCache.GetName(v);
                 }
                 return U.To0xHexString(v) + " (" + name + ")";
             }

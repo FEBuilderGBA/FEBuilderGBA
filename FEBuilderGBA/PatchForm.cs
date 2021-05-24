@@ -571,7 +571,7 @@ namespace FEBuilderGBA
             nd.Value = U.toOffset(a);
             if (type == 1)
             {
-                image.SetImage(0, nd, name);
+                image.SetTSA(0, nd, name);
             }
             else if (type == 2)
             {

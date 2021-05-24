@@ -1149,7 +1149,7 @@
             // 
             this.OBJECT_J_0.AccessibleDescription = "@EVENTTYPE";
             this.OBJECT_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OBJECT_J_0.Location = new System.Drawing.Point(0, 5);
+            this.OBJECT_J_0.Location = new System.Drawing.Point(-1, 5);
             this.OBJECT_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OBJECT_J_0.Name = "OBJECT_J_0";
             this.OBJECT_J_0.Size = new System.Drawing.Size(191, 32);
@@ -2590,7 +2590,7 @@
             // 
             this.TALK_J_0.AccessibleDescription = "@EVENTTYPE";
             this.TALK_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_J_0.Location = new System.Drawing.Point(0, 5);
+            this.TALK_J_0.Location = new System.Drawing.Point(-1, 5);
             this.TALK_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_J_0.Name = "TALK_J_0";
             this.TALK_J_0.Size = new System.Drawing.Size(171, 32);
@@ -2765,7 +2765,7 @@
             // 
             this.label37.AccessibleDescription = "@COMMENT";
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(2, 328);
+            this.label37.Location = new System.Drawing.Point(1, 328);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(170, 32);
@@ -2831,7 +2831,7 @@
             // TALK_N03_J_9_UNIT
             // 
             this.TALK_N03_J_9_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_9_UNIT.Location = new System.Drawing.Point(2, 124);
+            this.TALK_N03_J_9_UNIT.Location = new System.Drawing.Point(1, 124);
             this.TALK_N03_J_9_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_9_UNIT.Name = "TALK_N03_J_9_UNIT";
             this.TALK_N03_J_9_UNIT.Size = new System.Drawing.Size(171, 32);
@@ -2854,7 +2854,7 @@
             // TALK_N03_J_8_UNIT
             // 
             this.TALK_N03_J_8_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_8_UNIT.Location = new System.Drawing.Point(2, 88);
+            this.TALK_N03_J_8_UNIT.Location = new System.Drawing.Point(1, 88);
             this.TALK_N03_J_8_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_8_UNIT.Name = "TALK_N03_J_8_UNIT";
             this.TALK_N03_J_8_UNIT.Size = new System.Drawing.Size(171, 32);
@@ -2906,7 +2906,7 @@
             // TALK_N03_J_4_EVENT
             // 
             this.TALK_N03_J_4_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_4_EVENT.Location = new System.Drawing.Point(2, 47);
+            this.TALK_N03_J_4_EVENT.Location = new System.Drawing.Point(1, 47);
             this.TALK_N03_J_4_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_4_EVENT.Name = "TALK_N03_J_4_EVENT";
             this.TALK_N03_J_4_EVENT.Size = new System.Drawing.Size(171, 32);
@@ -2918,7 +2918,7 @@
             // 
             this.TALK_N03_J_14_FLAG.AccessibleDescription = "このフラグが有効な場合に、会話イベントが有効になります。";
             this.TALK_N03_J_14_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_14_FLAG.Location = new System.Drawing.Point(2, 228);
+            this.TALK_N03_J_14_FLAG.Location = new System.Drawing.Point(1, 228);
             this.TALK_N03_J_14_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_14_FLAG.Name = "TALK_N03_J_14_FLAG";
             this.TALK_N03_J_14_FLAG.Size = new System.Drawing.Size(171, 32);
@@ -2929,7 +2929,7 @@
             // TALK_N03_J_10
             // 
             this.TALK_N03_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_10.Location = new System.Drawing.Point(2, 159);
+            this.TALK_N03_J_10.Location = new System.Drawing.Point(1, 159);
             this.TALK_N03_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_10.Name = "TALK_N03_J_10";
             this.TALK_N03_J_10.Size = new System.Drawing.Size(171, 32);
@@ -2940,7 +2940,7 @@
             // TALK_N03_J_12
             // 
             this.TALK_N03_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_12.Location = new System.Drawing.Point(2, 194);
+            this.TALK_N03_J_12.Location = new System.Drawing.Point(1, 194);
             this.TALK_N03_J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_12.Name = "TALK_N03_J_12";
             this.TALK_N03_J_12.Size = new System.Drawing.Size(171, 32);
@@ -2988,7 +2988,7 @@
             // 
             this.TALK_N03_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
             this.TALK_N03_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALK_N03_J_2_FLAG.Location = new System.Drawing.Point(2, 12);
+            this.TALK_N03_J_2_FLAG.Location = new System.Drawing.Point(1, 12);
             this.TALK_N03_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALK_N03_J_2_FLAG.Name = "TALK_N03_J_2_FLAG";
             this.TALK_N03_J_2_FLAG.Size = new System.Drawing.Size(171, 32);
@@ -3506,7 +3506,7 @@
             // 
             this.label9.AccessibleDescription = "@EVENTTYPE";
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(0, 5);
+            this.label9.Location = new System.Drawing.Point(-1, 5);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(171, 32);
@@ -3675,7 +3675,7 @@
             // 
             this.label79.AccessibleDescription = "@COMMENT";
             this.label79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label79.Location = new System.Drawing.Point(2, 236);
+            this.label79.Location = new System.Drawing.Point(1, 236);
             this.label79.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(170, 32);
@@ -3730,7 +3730,7 @@
             // TALKFE6_N04_J_9_UNIT
             // 
             this.TALKFE6_N04_J_9_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N04_J_9_UNIT.Location = new System.Drawing.Point(2, 124);
+            this.TALKFE6_N04_J_9_UNIT.Location = new System.Drawing.Point(1, 124);
             this.TALKFE6_N04_J_9_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N04_J_9_UNIT.Name = "TALKFE6_N04_J_9_UNIT";
             this.TALKFE6_N04_J_9_UNIT.Size = new System.Drawing.Size(171, 32);
@@ -3753,7 +3753,7 @@
             // TALKFE6_N04_J_8_UNIT
             // 
             this.TALKFE6_N04_J_8_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N04_J_8_UNIT.Location = new System.Drawing.Point(2, 88);
+            this.TALKFE6_N04_J_8_UNIT.Location = new System.Drawing.Point(1, 88);
             this.TALKFE6_N04_J_8_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N04_J_8_UNIT.Name = "TALKFE6_N04_J_8_UNIT";
             this.TALKFE6_N04_J_8_UNIT.Size = new System.Drawing.Size(171, 32);
@@ -3792,7 +3792,7 @@
             // TALKFE6_N04_J_4_EVENT
             // 
             this.TALKFE6_N04_J_4_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N04_J_4_EVENT.Location = new System.Drawing.Point(2, 47);
+            this.TALKFE6_N04_J_4_EVENT.Location = new System.Drawing.Point(1, 47);
             this.TALKFE6_N04_J_4_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N04_J_4_EVENT.Name = "TALKFE6_N04_J_4_EVENT";
             this.TALKFE6_N04_J_4_EVENT.Size = new System.Drawing.Size(171, 32);
@@ -3803,7 +3803,7 @@
             // TALKFE6_N04_J_10
             // 
             this.TALKFE6_N04_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N04_J_10.Location = new System.Drawing.Point(2, 159);
+            this.TALKFE6_N04_J_10.Location = new System.Drawing.Point(1, 159);
             this.TALKFE6_N04_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N04_J_10.Name = "TALKFE6_N04_J_10";
             this.TALKFE6_N04_J_10.Size = new System.Drawing.Size(171, 32);
@@ -3837,7 +3837,7 @@
             // 
             this.TALKFE6_N04_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
             this.TALKFE6_N04_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TALKFE6_N04_J_2_FLAG.Location = new System.Drawing.Point(2, 12);
+            this.TALKFE6_N04_J_2_FLAG.Location = new System.Drawing.Point(1, 12);
             this.TALKFE6_N04_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TALKFE6_N04_J_2_FLAG.Name = "TALKFE6_N04_J_2_FLAG";
             this.TALKFE6_N04_J_2_FLAG.Size = new System.Drawing.Size(171, 32);
@@ -4143,7 +4143,7 @@
             // 
             this.label40.AccessibleDescription = "@COMMENT";
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Location = new System.Drawing.Point(1, 208);
+            this.label40.Location = new System.Drawing.Point(-1, 208);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(184, 32);
@@ -4187,7 +4187,7 @@
             // 
             this.N02_J_9.AccessibleDescription = "@TURNCOND_TURN";
             this.N02_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_9.Location = new System.Drawing.Point(1, 118);
+            this.N02_J_9.Location = new System.Drawing.Point(-1, 118);
             this.N02_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_9.Name = "N02_J_9";
             this.N02_J_9.Size = new System.Drawing.Size(184, 32);
@@ -4213,7 +4213,7 @@
             // 
             this.N02_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
             this.N02_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_2_FLAG.Location = new System.Drawing.Point(1, 17);
+            this.N02_J_2_FLAG.Location = new System.Drawing.Point(-1, 17);
             this.N02_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_2_FLAG.Name = "N02_J_2_FLAG";
             this.N02_J_2_FLAG.Size = new System.Drawing.Size(184, 32);
@@ -4239,7 +4239,7 @@
             // 
             this.N02_J_10.AccessibleDescription = "@TURNCOND_WHOSE_TURN";
             this.N02_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_10.Location = new System.Drawing.Point(1, 151);
+            this.N02_J_10.Location = new System.Drawing.Point(-1, 151);
             this.N02_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_10.Name = "N02_J_10";
             this.N02_J_10.Size = new System.Drawing.Size(184, 32);
@@ -4250,7 +4250,7 @@
             // N02_J_4_EVENT
             // 
             this.N02_J_4_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_4_EVENT.Location = new System.Drawing.Point(1, 51);
+            this.N02_J_4_EVENT.Location = new System.Drawing.Point(-1, 51);
             this.N02_J_4_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_4_EVENT.Name = "N02_J_4_EVENT";
             this.N02_J_4_EVENT.Size = new System.Drawing.Size(184, 32);
@@ -4298,7 +4298,7 @@
             // 
             this.N02_J_8.AccessibleDescription = "@TURNCOND_TURN";
             this.N02_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_8.Location = new System.Drawing.Point(1, 85);
+            this.N02_J_8.Location = new System.Drawing.Point(-1, 85);
             this.N02_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_8.Name = "N02_J_8";
             this.N02_J_8.Size = new System.Drawing.Size(184, 32);
@@ -4369,7 +4369,7 @@
             // 
             this.N02_J_0.AccessibleDescription = "@EVENTTYPE";
             this.N02_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N02_J_0.Location = new System.Drawing.Point(-1, -1);
+            this.N02_J_0.Location = new System.Drawing.Point(-2, -1);
             this.N02_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N02_J_0.Name = "N02_J_0";
             this.N02_J_0.Size = new System.Drawing.Size(185, 35);
@@ -4574,7 +4574,7 @@
             // 
             this.NFE702_J_0.AccessibleDescription = "@EVENTTYPE";
             this.NFE702_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_0.Location = new System.Drawing.Point(1, 6);
+            this.NFE702_J_0.Location = new System.Drawing.Point(-1, 6);
             this.NFE702_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_0.Name = "NFE702_J_0";
             this.NFE702_J_0.Size = new System.Drawing.Size(180, 32);
@@ -4624,7 +4624,7 @@
             // 
             this.label43.AccessibleDescription = "@COMMENT";
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Location = new System.Drawing.Point(1, 249);
+            this.label43.Location = new System.Drawing.Point(-1, 249);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(184, 32);
@@ -4698,7 +4698,7 @@
             // NFE702_J_12
             // 
             this.NFE702_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_12.Location = new System.Drawing.Point(1, 182);
+            this.NFE702_J_12.Location = new System.Drawing.Point(-1, 182);
             this.NFE702_J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_12.Name = "NFE702_J_12";
             this.NFE702_J_12.Size = new System.Drawing.Size(184, 32);
@@ -4710,7 +4710,7 @@
             // 
             this.NFE702_J_9.AccessibleDescription = "@TURNCOND_TURN";
             this.NFE702_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_9.Location = new System.Drawing.Point(1, 116);
+            this.NFE702_J_9.Location = new System.Drawing.Point(-1, 116);
             this.NFE702_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_9.Name = "NFE702_J_9";
             this.NFE702_J_9.Size = new System.Drawing.Size(184, 32);
@@ -4736,7 +4736,7 @@
             // 
             this.NFE702_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
             this.NFE702_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_2_FLAG.Location = new System.Drawing.Point(1, 17);
+            this.NFE702_J_2_FLAG.Location = new System.Drawing.Point(-1, 17);
             this.NFE702_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_2_FLAG.Name = "NFE702_J_2_FLAG";
             this.NFE702_J_2_FLAG.Size = new System.Drawing.Size(184, 32);
@@ -4762,7 +4762,7 @@
             // 
             this.NFE702_J_10.AccessibleDescription = "@TURNCOND_WHOSE_TURN";
             this.NFE702_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_10.Location = new System.Drawing.Point(1, 149);
+            this.NFE702_J_10.Location = new System.Drawing.Point(-1, 149);
             this.NFE702_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_10.Name = "NFE702_J_10";
             this.NFE702_J_10.Size = new System.Drawing.Size(184, 32);
@@ -4773,7 +4773,7 @@
             // NFE702_J_4_EVENT
             // 
             this.NFE702_J_4_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_4_EVENT.Location = new System.Drawing.Point(1, 50);
+            this.NFE702_J_4_EVENT.Location = new System.Drawing.Point(-1, 50);
             this.NFE702_J_4_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_4_EVENT.Name = "NFE702_J_4_EVENT";
             this.NFE702_J_4_EVENT.Size = new System.Drawing.Size(184, 32);
@@ -4821,7 +4821,7 @@
             // 
             this.NFE702_J_8.AccessibleDescription = "@TURNCOND_TURN";
             this.NFE702_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NFE702_J_8.Location = new System.Drawing.Point(1, 83);
+            this.NFE702_J_8.Location = new System.Drawing.Point(-1, 83);
             this.NFE702_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NFE702_J_8.Name = "NFE702_J_8";
             this.NFE702_J_8.Size = new System.Drawing.Size(184, 32);
@@ -5062,7 +5062,7 @@
             // 
             this.ALWAYS_J_0.AccessibleDescription = "@EVENTTYPE";
             this.ALWAYS_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ALWAYS_J_0.Location = new System.Drawing.Point(1, 6);
+            this.ALWAYS_J_0.Location = new System.Drawing.Point(-1, 6);
             this.ALWAYS_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ALWAYS_J_0.Name = "ALWAYS_J_0";
             this.ALWAYS_J_0.Size = new System.Drawing.Size(180, 32);
@@ -5303,7 +5303,7 @@
             // 
             // ALWAYS_N0B_L_4_NEWALLOC_EVENT2
             // 
-            this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2.Location = new System.Drawing.Point(318, 117);
+            this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2.Location = new System.Drawing.Point(318, 118);
             this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2.Name = "ALWAYS_N0B_L_4_NEWALLOC_EVENT2";
             this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2.Size = new System.Drawing.Size(264, 28);
             this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2.TabIndex = 225;
@@ -5327,7 +5327,7 @@
             // ALWAYS_N0B_P4
             // 
             this.ALWAYS_N0B_P4.Hexadecimal = true;
-            this.ALWAYS_N0B_P4.Location = new System.Drawing.Point(197, 119);
+            this.ALWAYS_N0B_P4.Location = new System.Drawing.Point(197, 121);
             this.ALWAYS_N0B_P4.Margin = new System.Windows.Forms.Padding(2);
             this.ALWAYS_N0B_P4.Maximum = new decimal(new int[] {
             -559939585,
@@ -5341,7 +5341,7 @@
             // ALWAYS_N0B_J_4_EVENT
             // 
             this.ALWAYS_N0B_J_4_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ALWAYS_N0B_J_4_EVENT.Location = new System.Drawing.Point(0, 119);
+            this.ALWAYS_N0B_J_4_EVENT.Location = new System.Drawing.Point(0, 120);
             this.ALWAYS_N0B_J_4_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ALWAYS_N0B_J_4_EVENT.Name = "ALWAYS_N0B_J_4_EVENT";
             this.ALWAYS_N0B_J_4_EVENT.Size = new System.Drawing.Size(194, 32);
@@ -5463,7 +5463,7 @@
             // ALWAYS_N0B_L_4_EVENT
             // 
             this.ALWAYS_N0B_L_4_EVENT.ErrorMessage = "";
-            this.ALWAYS_N0B_L_4_EVENT.Location = new System.Drawing.Point(318, 118);
+            this.ALWAYS_N0B_L_4_EVENT.Location = new System.Drawing.Point(318, 119);
             this.ALWAYS_N0B_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ALWAYS_N0B_L_4_EVENT.Name = "ALWAYS_N0B_L_4_EVENT";
             this.ALWAYS_N0B_L_4_EVENT.Placeholder = "";
@@ -6111,7 +6111,7 @@
             // 
             this.TRAP_J_0.AccessibleDescription = "@EVENTTYPE";
             this.TRAP_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_J_0.Location = new System.Drawing.Point(1, 6);
+            this.TRAP_J_0.Location = new System.Drawing.Point(-1, 6);
             this.TRAP_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TRAP_J_0.Name = "TRAP_J_0";
             this.TRAP_J_0.Size = new System.Drawing.Size(180, 32);

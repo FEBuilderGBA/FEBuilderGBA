@@ -1225,11 +1225,29 @@ Battle history data.
 :章データ
 Chapter data.
 
+:輸送隊
+Supply
+
+:輸送隊の内容
+Contents of the Supply
+
+:ユニットの行動で設定される項目
+This list set by unit's actions
+
+:闘技場
+Arena
+
+:闘技場の相手選出に利用するデータ
+Select opponents in Arena
+
 :戦闘データ gBattleActor
 Battle data gBattleActor.
 
 :戦闘データ gBattleTarget
 Battle data gBattleTarget.
+
+:塔と遺跡のデータ
+Data on towers and ruins.
 
 :支援フラグ
 Support Flags
@@ -1458,6 +1476,9 @@ Max out all of this unit's stats
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear and End the Current Chapter (Hotkey: Ctrl + U)
+
+:戦闘に関係する諸データ
+Various data related to battle.
 
 :エミュレータへ接続
 Emulator Debugger - 
@@ -4618,6 +4639,12 @@ Sandstorm
 :曇り
 Cloudy
 
+:塔
+Tower
+
+:遺跡
+Ruins
+
 :{0}ターン
 {0} turn
 
@@ -5283,6 +5310,9 @@ Please do not use it normally.\r\nUse it only when the volume is not reflected a
 
 :タイル変化のIDです。\r\n無駄な混乱を避けるためリストの並び順と同じIDを割り振ることを推奨します。\r\nこの値を0xFFにするとリスト終端として扱われます。
 The ID of the tile change.\r\nIt is recommended to assign the same ID as the list order to avoid unnecessary confusion.\r\nIf this value is set to 0xFF, it will be treated as the end of the list.
+
+:楽器データを識別するための値です。\r\nもし、まだ名前が設定されていない楽器の名前を知っている場合は、\r\nこのテキストの内容と、楽器名をコミニティに報告してください。\r\n
+A value for identifying instrument data.\r\nIf you know the name of an instrument that has not yet been named,\r\nplease report the content of this text and the instrument name to the community.\r\n
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -9784,9 +9814,6 @@ Cannot write to Page02. bytesWrite: {0}, size: {1}
 :Page03に書き込めません。bytesWrite:{0},size:{1}
 Cannot write to Page03. bytesWrite: {0}, size: {1}
 
-:RAM上のユニットの特性を指定してください。
-Specify the characteristics of the unit in RAM.
-
 :重複 
 Duplicate
 
@@ -10237,6 +10264,18 @@ Musical instrument data ({1}) is missing.\r\nLine: {0}
 :ネストする楽器データ({1})を登録できません。\r\n{0}行目
 Unable to register nested instrument data ({1}).\r\nLine: {0}
 
+:インポートする楽器ファイルを選択してください
+Select the instrument file you want to import.
+
+:楽器データをインポートできませんでした。
+Could not import instrument data.
+
+:楽器データ 書出
+Export This Instrument
+
+:楽器データ 読込
+Import This Instrument
+
 :09=SquareWave(消音プチノイズ)
 09=Square Wave (Silent, Small)
 
@@ -10659,9 +10698,6 @@ This WAV file consumes a very large size of {0} bytes! Proceed with importing an
 
 :Waveファイルのインポートを取りやめました
 Canceled WAV importing.
-
-:楽器データをインポートできませんでした。
-Could not import instrument data.
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper returned an error.\r\nFEBuilderGBA will substitute.\r\n\r\nGBAMusRiper error message:\r\n{0}.
@@ -12742,6 +12778,12 @@ Returns the checked key code.
 :チェックをつけた攻撃を行います。
 Perform a checked attack.
 
+:RAM上のユニットの特性を指定してください。
+Specify the characteristics of the unit in RAM.
+
+:チェックをつけた属性を利用します。
+Use the checked attributes.
+
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks.\r\n It lets the matching character use the weapon at Level E, no matter what its normal rank is.
 
@@ -12991,23 +13033,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:闘技場
-Arena
-
-:闘技場の相手選出に利用するデータ
-Select opponents in Arena
-
-:輸送隊
-Supply
-
-:輸送隊の内容
-Contents of the Supply
-
-:ユニットの行動で設定される項目
-This list set by unit's actions
-
-:塔
-Tower
-
-:遺跡
-Ruins

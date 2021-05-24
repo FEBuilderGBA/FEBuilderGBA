@@ -2953,40 +2953,22 @@ namespace FEBuilderGBA
             }
             return -1;
         }
-        public static string ClipComment(string str,bool isWithoutSharpComment = false)
+        public static string ClipComment(string str)
         {
             int term = ClipCommentIndexOf(str,"{J}");
             if (term >= 0)
             {//言語指定を飛ばす
-                return str.Substring(0, term);
+                str = str.Substring(0, term);
             }
             term = ClipCommentIndexOf(str,"{U}");
             if (term >= 0)
             {//言語指定を飛ばす
-                return str.Substring(0, term);
+                str = str.Substring(0, term);
             }
             term = ClipCommentIndexOf(str,"//");
             if (term >= 0)
             {//コメント
-                return str.Substring(0, term + 1);
-            }
-            term = ClipCommentIndexOf(str,"--");
-            if (term >= 0)
-            {//コメント
-                return str.Substring(0, term + 1);
-            }
-            if (isWithoutSharpComment == false)
-            {
-                term = ClipCommentIndexOf(str, "#");
-                if (term >= 0)
-                {//コメント
-                    return str.Substring(0, term + 1);
-                }
-            }
-            term = ClipCommentIndexOf(str,";");
-            if (term >= 0)
-            {//コメント
-                return str.Substring(0, term + 1);
+                str = str.Substring(0, term);
             }
             return str;
         }

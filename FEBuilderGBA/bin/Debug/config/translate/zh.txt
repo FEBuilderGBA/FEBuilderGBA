@@ -1225,11 +1225,29 @@ Eliwood版
 :章データ
 ChapterData
 
+:輸送隊
+Supply
+
+:輸送隊の内容
+Contents of the Supply
+
+:ユニットの行動で設定される項目
+This list set by unit's actions
+
+:闘技場
+Arena
+
+:闘技場の相手選出に利用するデータ
+Select opponents in Arena
+
 :戦闘データ gBattleActor
 战斗数据gBattleActor。
 
 :戦闘データ gBattleTarget
 战斗数据gBattleTarget。
+
+:塔と遺跡のデータ
+有关塔楼和废墟的数据。
 
 :支援フラグ
 协助国旗
@@ -1458,6 +1476,9 @@ ChapterData
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 清除当前章节。（Hotkey: Ctrl + U）
+
+:戦闘に関係する諸データ
+与战斗有关的各种数据。
 
 :エミュレータへ接続
 连接到模拟器
@@ -4618,6 +4639,12 @@ Disallows scene skipping and dialogue skipping, But allows dialogue fast-forward
 :曇り
 云量
 
+:塔
+Tower
+
+:遺跡
+Ruins
+
 :{0}ターン
 {0}转
 
@@ -5283,6 +5310,9 @@ Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken
 
 :タイル変化のIDです。\r\n無駄な混乱を避けるためリストの並び順と同じIDを割り振ることを推奨します。\r\nこの値を0xFFにするとリスト終端として扱われます。
 磁贴更改的ID。\r\n建议分配与列表顺序相同的ID，以避免不必要的混乱。\r\n如果此值设置为0xFF，它将被视为列表的末尾。
+
+:楽器データを識別するための値です。\r\nもし、まだ名前が設定されていない楽器の名前を知っている場合は、\r\nこのテキストの内容と、楽器名をコミニティに報告してください。\r\n
+A value for identifying instrument data.\r\nIf you know the name of an instrument that has not yet been named,\r\nplease report the content of this text and the instrument name to the community.\r\n
 
 :元に戻す(&Z)
 还原(&Z)
@@ -9784,9 +9814,6 @@ Page02没有强制性的价值。procs_game_main:{0}，数据:{1}，rom_procs_ga
 :Page03に書き込めません。bytesWrite:{0},size:{1}
 无法写入Page03。bytesWrite:{0}，大小:{1}。
 
-:RAM上のユニットの特性を指定してください。
-请在RAM中指定单元的特性。
-
 :重複 
 复制
 
@@ -10237,6 +10264,18 @@ MultiSample中有奇怪的数据。我会忽略它。multisample_voices:{0} samp
 :ネストする楽器データ({1})を登録できません。\r\n{0}行目
 无法注册嵌套乐器数据（{1}）。\r\n{0}行
 
+:インポートする楽器ファイルを選択してください
+选择要导入的乐器文件。
+
+:楽器データをインポートできませんでした。
+我们无法导入仪器数据。
+
+:楽器データ 書出
+Export This Instrument
+
+:楽器データ 読込
+Import This Instrument
+
 :09=SquareWave(消音プチノイズ)
 09=方波（无声的小噪音）
 
@@ -10659,9 +10698,6 @@ Wave文件质量太高。{0}位。\r\n质量应该是大约8bit 12khz单声道�
 
 :Waveファイルのインポートを取りやめました
 我取消了wave文件的导入
-
-:楽器データをインポートできませんでした。
-我们无法导入仪器数据。
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper返回错误。\r\nFEBuilderGBA的替代品。\r\n\r\nGBA MusRiper错误消息。\r\n{0}。
@@ -12742,6 +12778,12 @@ UPS文件已损坏。CRC不匹配。\r\n\r\n由nup创建的ups的CRC可能会被
 :チェックをつけた攻撃を行います。
 执行检查攻击。
 
+:RAM上のユニットの特性を指定してください。
+请在RAM中指定单元的特性。
+
+:チェックをつけた属性を利用します。
+使用选中的属性。
+
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 具有``硬''锁，其作用类似于普通的专用武器锁。\r\n无论常规武器级别如何，您都可以设置“软”锁，使您可以在匹配单元的武器级别E上使用武器。
 
@@ -12991,23 +13033,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:闘技場
-Arena
-
-:闘技場の相手選出に利用するデータ
-Select opponents in Arena
-
-:輸送隊
-Supply
-
-:輸送隊の内容
-Contents of the Supply
-
-:ユニットの行動で設定される項目
-This list set by unit's actions
-
-:塔
-Tower
-
-:遺跡
-Ruins

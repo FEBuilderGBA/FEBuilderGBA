@@ -1,0 +1,89 @@
+PUSH
+ORG 0x605E4	//FE8J	{J}
+//ORG 0x5F4E4	//FE8U	{U}
+jumpToHack(ChangeResireColor)
+
+ORG 0x60668	//FE8J	{J}
+//ORG 0x5F568	//FE8U	{U}
+jumpToHack(ChangeResireColor2)
+POP
+
+ALIGN 4
+ChangeResireColor:
+#incbin "ChangeResireColor.dmp"
+POIN ChangeResireColor_Table
+POIN ChangeResireColor_PaletteTable
+
+ALIGN 4
+ChangeResireColor2:
+#incbin "ChangeResireColor2.dmp"
+POIN ChangeResireColor_Table
+POIN ChangeResireColor_PaletteTable
+
+ALIGN 4
+ChangeResireColor_LightRed:
+#incbin "LightRedPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Yellow:
+#incbin "YellowPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Orange:
+#incbin "OrangePalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Green:
+#incbin "GreenPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_DarkRed:
+#incbin "DarkRedPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_LightBule:
+#incbin "LightBulePalette.dmp"
+
+ALIGN 4
+ChangeResireColor_LightGreen:
+#incbin "LightGreenPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Purple:
+#incbin "PurplePalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Red:
+#incbin "RedPalette.dmp"
+
+ALIGN 4
+ChangeResireColor_Black:
+#incbin "BlackPalette.dmp"
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeResireColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	TableID
+BYTE	0x0		0x0		0x11	0x0;SHORT	0x0		1			//0x11 LuneSword -> Yellow
+BYTE	0x0		0x0		0x47	0x0;SHORT	0x0		0			//0x47 Resire -> Black
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+//パレットテーブル
+ALIGN 4
+ChangeResireColor_PaletteTable:
+POIN 0x8663218						//0=BlackPurple 	Vanilla	//{J}
+//POIN 0x8636640						//0=BlackPurple 	Vanilla	//{U}
+
+POIN ChangeResireColor_Yellow		//1=Yellow
+POIN ChangeResireColor_LightRed		//2=LightRed
+POIN ChangeResireColor_Orange		//3=Orange
+POIN ChangeResireColor_Green		//4=Green
+POIN ChangeResireColor_DarkRed		//5=DarkRed
+POIN ChangeResireColor_LightBule	//6=LightBule
+POIN ChangeResireColor_LightGreen	//7=LightGreen
+POIN ChangeResireColor_Purple		//8=Purple
+POIN ChangeResireColor_Red			//9=Red
+POIN ChangeResireColor_Black		//A=Black
+WORD 0	//Term
+ALIGN 4
+

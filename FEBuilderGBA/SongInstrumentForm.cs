@@ -43,6 +43,8 @@ namespace FEBuilderGBA
             U.SetIcon(N10_ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(N18_ImportButton, Properties.Resources.icon_upload);
             U.SetIcon(N18_ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(Inst_ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(Inst_ExportButton, Properties.Resources.icon_arrow);
         }
 
         public InputFormRef InputFormRef;
@@ -724,6 +726,175 @@ namespace FEBuilderGBA
         {
             ExportAllLow(filename, voca_baseaddress, false);
         }
+        public static void ExportOneLow(string filename, InputFormRef ifr, int index)
+        {
+            string dir = Path.GetDirectoryName(filename);
+            string basename = Path.GetFileNameWithoutExtension(filename);
+
+            List<string> lines = new List<string>();
+
+            uint addr = ifr.BaseAddress + (((uint)index) * ifr.BlockSize);
+            string str = ExportOneLow(addr, index, dir, basename, ifr, false);
+            if (str == "")
+            {
+                return;
+            }
+            lines.Add(str);
+            File.WriteAllLines(filename, lines);
+        }
+        static string ExportOneLow(uint addr, int index,
+            string dir , string basename,
+            InputFormRef ifr, bool isNest)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(U.ToHexString(Program.ROM.u8(addr + 0))); sb.Append("\t");
+            sb.Append(U.ToHexString(Program.ROM.u8(addr + 1))); sb.Append("\t");
+            sb.Append(U.ToHexString(Program.ROM.u8(addr + 2))); sb.Append("\t");
+            sb.Append(U.ToHexString(Program.ROM.u8(addr + 3))); sb.Append("\t");
+
+            uint type = Program.ROM.u8(addr);
+            if (type == 0x00
+                || type == 0x08
+                || type == 0x10
+                || type == 0x18
+            )
+            {//directsound waveデータ.
+                uint songdata_addr = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(songdata_addr))
+                {
+                    return "";
+                }
+                uint sample_length = Program.ROM.u32(songdata_addr + 12);
+                if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
+                {
+                    return "";
+                }
+                if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                {//壊れたデータ 
+                    return "";
+                }
+
+                string waveFilename = basename + U.To0xHexString(index) + ".DirectSound.bin";
+                byte[] bin = Program.ROM.getBinaryData(songdata_addr, 12 + 4 + sample_length);
+                U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+
+                sb.Append(waveFilename); sb.Append("\t");
+            }
+            else if (type == 0x03
+                || type == 0x0B
+                )
+            {//波形データ
+                uint songdata_addr = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(songdata_addr))
+                {
+                    return "";
+                }
+
+                byte[] bin = Program.ROM.getBinaryData(songdata_addr, 16);
+                string waveFilename = basename + U.To0xHexString(index) + ".Wave.bin";
+                U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+
+                sb.Append(waveFilename); sb.Append("\t");
+            }
+            else if (type == 0x80)
+            {//ドラム
+                uint drum_voices = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(drum_voices))
+                {
+                    return "";
+                }
+
+                uint voca_baseaddress = ifr.BaseAddress;
+                if (drum_voices == voca_baseaddress)
+                {
+                    sb.Append("@SELF+0"); sb.Append("\t");
+                }
+                else if (isNest)
+                {
+                    uint voca_endaddress = voca_baseaddress + ((ifr.DataCount + 1) * ifr.BlockSize);
+                    if (drum_voices >= voca_baseaddress && drum_voices < voca_endaddress)
+                    {
+                        sb.Append("@SELF+" + U.ToHexString(drum_voices - voca_baseaddress)); sb.Append("\t");
+                    }
+                    else
+                    {
+                        sb.Append("@BROKENDATA"); sb.Append("\t");
+                    }
+                }
+                else
+                {
+                    string drumFilename = basename + U.To0xHexString(index) + ".Drum.instrument";
+                    ExportAllLow(Path.Combine(dir, drumFilename), drum_voices, true);
+                    sb.Append(drumFilename); sb.Append("\t");
+                }
+            }
+            else if (type == 0x40)
+            {//マルチサンプル
+                uint multisample_voices = Program.ROM.p32(addr + 4);
+                uint sample_location = Program.ROM.p32(addr + 8);
+                if (!U.isSafetyOffset(multisample_voices))
+                {
+                    return "";
+                }
+                if (!U.isSafetyOffset(sample_location))
+                {
+                    return "";
+                }
+
+                uint voca_baseaddress = ifr.BaseAddress;
+                if (multisample_voices == voca_baseaddress)
+                {
+                    sb.Append("@SELF+0"); sb.Append("\t");
+                }
+                else if (isNest)
+                {
+                    uint voca_endaddress = voca_baseaddress + ((ifr.DataCount + 1) * ifr.BlockSize);
+                    if (multisample_voices >= voca_baseaddress && multisample_voices < voca_endaddress)
+                    {
+                        sb.Append("@SELF+" + U.ToHexString(multisample_voices - voca_baseaddress)); sb.Append("\t");
+                    }
+                    else
+                    {
+                        sb.Append("@BROKENDATA"); sb.Append("\t");
+                    }
+                }
+                else
+                {//自己参照以外を記録します
+                    string multiFilename = basename + U.To0xHexString(index) + ".Multi.instrument";
+                    ExportAllLow(Path.Combine(dir, multiFilename), multisample_voices, true);
+                    sb.Append(multiFilename); sb.Append("\t");
+                }
+
+                byte[] bin = Program.ROM.getBinaryData(sample_location, 128);
+                string waveFilename = basename + U.To0xHexString(index) + ".Multi.keys.bin";
+                U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+
+                sb.Append(waveFilename); sb.Append("\t");
+            }
+            else
+            {
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 4))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 5))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 6))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 7))); sb.Append("\t");
+            }
+
+            if (type != 0x40)
+            {//マルチサンプル以外は、最後の4バイトはデータです
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 8))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 9))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 10))); sb.Append("\t");
+                sb.Append(U.ToHexString(Program.ROM.u8(addr + 11)));
+            }
+
+            U.AddrResult ar = ifr.LoopCallback(index, addr);
+            if (!ar.isNULL())
+            {
+                sb.Append("\t//");
+                sb.Append(ar.name);
+            }
+            return sb.ToString();
+        }
 
         static void ExportAllLow(string filename, uint voca_baseaddress , bool isNest)
         {
@@ -737,160 +908,20 @@ namespace FEBuilderGBA
             string basename = Path.GetFileNameWithoutExtension(filename);
 
             //楽器リスト本体
-            InputFormRef InputFormRef = Init(null);
-            InputFormRef.ReInit(voca_baseaddress);
+            InputFormRef ifr = Init(null);
+            ifr.ReInit(voca_baseaddress);
 
             List<string> lines = new List<string>();
 
-            uint voca_endaddress = voca_baseaddress + ((InputFormRef.DataCount + 1) * InputFormRef.BlockSize);
             uint addr = voca_baseaddress;
-            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            for (int i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(U.ToHexString(Program.ROM.u8(addr + 0))); sb.Append("\t");
-                sb.Append(U.ToHexString(Program.ROM.u8(addr + 1))); sb.Append("\t");
-                sb.Append(U.ToHexString(Program.ROM.u8(addr + 2))); sb.Append("\t");
-                sb.Append(U.ToHexString(Program.ROM.u8(addr + 3))); sb.Append("\t");
-
-                uint type = Program.ROM.u8(addr);
-                if (type == 0x00
-                    || type == 0x08
-                    || type == 0x10
-                    || type == 0x18
-                )
-                {//directsound waveデータ.
-                    uint songdata_addr = Program.ROM.p32(addr + 4);
-                    if (!U.isSafetyOffset(songdata_addr))
-                    {
-                        continue;
-                    }
-                    uint sample_length = Program.ROM.u32(songdata_addr + 12);
-                    if (!U.isSafetyLength(songdata_addr + 12 + 4,sample_length))
-                    {
-                        continue;
-                    }
-                    if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
-                    {//壊れたデータ 
-                        continue;
-                    }
-
-                    string waveFilename = basename + U.To0xHexString(i) + ".DirectSound.bin";
-                    byte[] bin = Program.ROM.getBinaryData(songdata_addr, 12 + 4 + sample_length);
-                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
-
-                     sb.Append(waveFilename); sb.Append("\t");
-                }
-                else if (type == 0x03
-                    || type == 0x0B
-                    )
-                {//波形データ
-                    uint songdata_addr = Program.ROM.p32(addr + 4);
-                    if (!U.isSafetyOffset(songdata_addr))
-                    {
-                        continue;
-                    }
-
-                    byte[] bin = Program.ROM.getBinaryData(songdata_addr , 16);
-                    string waveFilename = basename + U.To0xHexString(i) + ".Wave.bin";
-                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
-
-                    sb.Append(waveFilename); sb.Append("\t");
-                }
-                else if (type == 0x80)
-                {//ドラム
-                    uint drum_voices = Program.ROM.p32(addr + 4);
-                    if (!U.isSafetyOffset(drum_voices))
-                    {
-                        continue;
-                    }
-
-                    if (drum_voices == voca_baseaddress)
-                    {
-                        sb.Append("@SELF+0"); sb.Append("\t");
-                    }
-                    else if (isNest)
-                    {
-                        if (drum_voices >= voca_baseaddress && drum_voices < voca_endaddress)
-                        {
-                            sb.Append("@SELF+" + U.ToHexString(drum_voices - voca_baseaddress)); sb.Append("\t");
-                        }
-                        else
-                        {
-                            sb.Append("@BROKENDATA"); sb.Append("\t");
-                        }
-                    }
-                    else
-                    {
-                        string drumFilename = basename + U.To0xHexString(i) + ".Drum.instrument";
-                        ExportAllLow(Path.Combine(dir, drumFilename), drum_voices, true);
-                        sb.Append(drumFilename); sb.Append("\t");
-                    }
-                }
-                else if (type == 0x40)
-                {//マルチサンプル
-                    uint multisample_voices = Program.ROM.p32(addr + 4);
-                    uint sample_location = Program.ROM.p32(addr + 8);
-                    if (!U.isSafetyOffset(multisample_voices))
-                    {
-                        continue;
-                    }
-                    if (!U.isSafetyOffset(sample_location))
-                    {
-                        continue;
-                    }
-
-                    if (multisample_voices == voca_baseaddress)
-                    {
-                        sb.Append("@SELF+0"); sb.Append("\t");
-                    }
-                    else if (isNest)
-                    {
-                        if (multisample_voices >= voca_baseaddress && multisample_voices < voca_endaddress)
-                        {
-                            sb.Append("@SELF+" + U.ToHexString(multisample_voices - voca_baseaddress)); sb.Append("\t");
-                        }
-                        else
-                        {
-                            sb.Append("@BROKENDATA"); sb.Append("\t");
-                        }
-                    }
-                    else
-                    {//自己参照以外を記録します
-                        string multiFilename = basename + U.To0xHexString(i) + ".Multi.instrument";
-                        ExportAllLow(Path.Combine(dir, multiFilename), multisample_voices , true);
-                        sb.Append(multiFilename); sb.Append("\t");
-                    }
-
-                    byte[] bin = Program.ROM.getBinaryData(sample_location, 128);
-                    string waveFilename = basename + U.To0xHexString(i) + ".Multi.keys.bin";
-                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
-
-                    sb.Append(waveFilename); sb.Append("\t");
-                }
-                else
+                string str = ExportOneLow(addr, i, dir, basename, ifr , isNest);
+                if (str == "")
                 {
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 4))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 5))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 6))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 7))); sb.Append("\t");
+                    continue;
                 }
-
-                if (type != 0x40)
-                {//マルチサンプル以外は、最後の4バイトはデータです
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 8))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 9))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 10))); sb.Append("\t");
-                    sb.Append(U.ToHexString(Program.ROM.u8(addr + 11)));
-                }
-
-                U.AddrResult ar = InputFormRef.LoopCallback(i,addr);
-                if (! ar.isNULL())
-                {
-                    sb.Append("\t//");
-                    sb.Append(ar.name);
-                }
-
-                lines.Add(sb.ToString());
+                lines.Add(str);
             }
             File.WriteAllLines(filename,lines);
         }
@@ -913,6 +944,203 @@ namespace FEBuilderGBA
             }
         };
 
+        static bool ImportOneLow(string line, int index, List<byte> bin, List<DataWriteHelper> data, string dir, Undo.UndoData undodata)
+        {
+            if (U.IsComment(line) || U.OtherLangLine(line))
+            {
+                return true;
+            }
+            line = U.ClipComment(line);
+            if (line == "")
+            {
+                return true;
+            }
+
+            string[] sp = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            if (sp.Length < 4 + 2)
+            {
+                R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", index + 1, 6);
+                return false;
+            }
+            uint type = U.atoh(sp[0]);
+            U.append_u8(bin, type);
+            U.append_u8(bin, U.atoh(sp[1]));
+            U.append_u8(bin, U.atoh(sp[2]));
+            U.append_u8(bin, U.atoh(sp[3]));
+
+            if (type == 0x00
+                || type == 0x08
+                || type == 0x10
+                || type == 0x18
+            )
+            {
+                if (sp.Length < 4 + 1 + 4)
+                {
+                    R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", index + 1, 9);
+                    return false;
+                }
+
+                string file = Path.Combine(dir, sp[4]);
+                if (!File.Exists(file))
+                {
+                    R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", index + 1, file);
+                    return false;
+                }
+                byte[] wav = File.ReadAllBytes(file);
+                uint found = U.Grep(Program.ROM.Data, wav, 0x100, 0, 4);
+                if (found == U.NOT_FOUND)
+                {//既存のROMにないので追加
+                    data.Add(new DataWriteHelper(wav, bin.Count));
+                    U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
+                }
+                else
+                {//既にあるので使いまわす.
+                    U.append_u32(bin, U.toPointer(found));
+                }
+                U.append_u8(bin, U.atoh(sp[5]));
+                U.append_u8(bin, U.atoh(sp[6]));
+                U.append_u8(bin, U.atoh(sp[7]));
+                U.append_u8(bin, U.atoh(sp[8]));
+            }
+            else if (type == 0x03
+                || type == 0x0B
+            )
+            {
+                if (sp.Length < 4 + 1 + 4)
+                {
+                    R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", index + 1, 9);
+                    return false;
+                }
+
+                string file = Path.Combine(dir, sp[4]);
+                if (!File.Exists(file))
+                {
+                    R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", index + 1, file);
+                    return false;
+                }
+                byte[] wav = File.ReadAllBytes(file);
+                uint found = U.Grep(Program.ROM.Data, wav, 0x100, 0, 4);
+                if (found == U.NOT_FOUND)
+                {//既存のROMにないので追加
+                    data.Add(new DataWriteHelper(wav, bin.Count));
+                    U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
+                }
+                else
+                {//既にあるので使いまわす.
+                    U.append_u32(bin, U.toPointer(found));
+                }
+                U.append_u8(bin, U.atoh(sp[5]));
+                U.append_u8(bin, U.atoh(sp[6]));
+                U.append_u8(bin, U.atoh(sp[7]));
+                U.append_u8(bin, U.atoh(sp[8]));
+            }
+            else if (type == 0x80)
+            {
+                if (sp.Length < 4 + 1 + 4)
+                {
+                    R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", index + 1, 9);
+                    return false;
+                }
+
+                string file = Path.Combine(dir, sp[4]);
+                if (!File.Exists(file))
+                {
+                    if (file.IndexOf("@SELF+") >= 0)
+                    {
+                        uint relativeAddress = U.atoh(file.Substring(6));
+                        data.Add(new DataWriteHelper(relativeAddress, bin.Count));
+                        U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
+                    }
+                    else if (file.IndexOf("@BROKENDATA") >= 0)
+                    {//ドラム内でドラムがあるような変なデータ
+                        uint relativeAddress = 0;
+                        data.Add(new DataWriteHelper(relativeAddress, bin.Count));
+                        U.append_u32(bin, 0); //とりあえず @SELF+0として扱う.
+                    }
+                    else
+                    {
+                        R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", index + 1, file);
+                        return false;
+                    }
+                }
+                else
+                {
+                    uint wav = ImportAllLow(file, undodata);
+                    if (wav == U.NOT_FOUND)
+                    {
+                        R.ShowStopError("ネストする楽器データ({1})を登録できません。\r\n{0}行目", index + 1, file);
+                        return false;
+                    }
+                    U.append_u32(bin, U.toPointer(wav));
+                }
+                U.append_u8(bin, U.atoh(sp[5]));
+                U.append_u8(bin, U.atoh(sp[6]));
+                U.append_u8(bin, U.atoh(sp[7]));
+                U.append_u8(bin, U.atoh(sp[8]));
+            }
+            else if (type == 0x40)
+            {
+                string file = Path.Combine(dir, sp[4]);
+                if (!File.Exists(file))
+                {
+                    if (file.IndexOf("@SELF+") < 0)
+                    {
+                        R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", index + 1, file);
+                        return false;
+                    }
+                    uint relativeAddress = U.atoh(file.Substring(6));
+                    data.Add(new DataWriteHelper(relativeAddress, bin.Count));
+                    U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
+                }
+                else
+                {
+                    uint wav = ImportAllLow(file, undodata);
+                    if (wav == U.NOT_FOUND)
+                    {
+                        R.ShowStopError("ネストする楽器データ({1})を登録できません。\r\n{0}行目", index + 1, file);
+                        return false;
+                    }
+                    U.append_u32(bin, U.toPointer(wav));
+                }
+
+                file = Path.Combine(dir, sp[5]);
+                if (!File.Exists(file))
+                {
+                    R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", index + 1, file);
+                }
+
+                //データは後で入れましょう.
+                byte[] multi = File.ReadAllBytes(file);
+                uint found = U.Grep(Program.ROM.Data, multi, 0x100, 0, 4);
+                if (found == U.NOT_FOUND)
+                {//既存のROMにないので追加
+                    data.Add(new DataWriteHelper(multi, bin.Count));
+                    U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
+                }
+                else
+                {//既にあるので使いまわす.
+                    U.append_u32(bin, U.toPointer(found));
+                }
+            }
+            else
+            {
+                if (sp.Length < 4 + 4 + 4)
+                {
+                    R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", index + 1, 12);
+                    return false;
+                }
+                U.append_u8(bin, U.atoh(sp[4]));
+                U.append_u8(bin, U.atoh(sp[5]));
+                U.append_u8(bin, U.atoh(sp[6]));
+                U.append_u8(bin, U.atoh(sp[7]));
+                U.append_u8(bin, U.atoh(sp[8]));
+                U.append_u8(bin, U.atoh(sp[9]));
+                U.append_u8(bin, U.atoh(sp[10]));
+                U.append_u8(bin, U.atoh(sp[11]));
+            }
+            return true;
+        }
+
         public static uint ImportAllLow(string filename, Undo.UndoData undodata)
         {
             string dir = Path.GetDirectoryName(filename);
@@ -924,198 +1152,11 @@ namespace FEBuilderGBA
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];
-                if (U.IsComment(line) || U.OtherLangLine(line))
+                InputFormRef.DoEvents(null, filename + ":" + (i + 1));
+                bool r = ImportOneLow(line, i, bin, data, dir, undodata);
+                if (!r)
                 {
-                    continue;
-                }
-                line = U.ClipComment(line);
-                if (line == "")
-                {
-                    continue;
-                }
-                InputFormRef.DoEvents(null, filename  + ":" + i);
-
-                string[] sp = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                if (sp.Length < 4 + 2)
-                {
-                    R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", i + 1, 6);
                     return U.NOT_FOUND;
-                }
-                uint type = U.atoh(sp[0]);
-                U.append_u8(bin, type);
-                U.append_u8(bin, U.atoh(sp[1]));
-                U.append_u8(bin, U.atoh(sp[2]));
-                U.append_u8(bin, U.atoh(sp[3]));
-
-                if (type == 0x00
-                    || type == 0x08
-                    || type == 0x10
-                    || type == 0x18
-                )
-                {
-                    if (sp.Length < 4 + 1 + 4)
-                    {
-                        R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", i + 1, 9);
-                        return U.NOT_FOUND;
-                    }
-
-                    string file = Path.Combine(dir, sp[4]);
-                    if (!File.Exists(file))
-                    {
-                        R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", i + 1, file);
-                        return U.NOT_FOUND;
-                    }
-                    byte[] wav = File.ReadAllBytes(file);
-                    uint found = U.Grep(Program.ROM.Data, wav, 0x100, 0, 4);
-                    if (found == U.NOT_FOUND)
-                    {//既存のROMにないので追加
-                        data.Add(new DataWriteHelper(wav, bin.Count));
-                        U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
-                    }
-                    else
-                    {//既にあるので使いまわす.
-                        U.append_u32(bin, U.toPointer(found));
-                    }
-                    U.append_u8(bin, U.atoh(sp[5]));
-                    U.append_u8(bin, U.atoh(sp[6]));
-                    U.append_u8(bin, U.atoh(sp[7]));
-                    U.append_u8(bin, U.atoh(sp[8]));
-                }
-                else if (type == 0x03
-                    || type == 0x0B
-                )
-                {
-                    if (sp.Length < 4 + 1 + 4)
-                    {
-                        R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", i + 1, 9);
-                        return U.NOT_FOUND;
-                    }
-
-                    string file = Path.Combine(dir, sp[4]);
-                    if (!File.Exists(file))
-                    {
-                        R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", i + 1, file);
-                        return U.NOT_FOUND;
-                    }
-                    byte[] wav = File.ReadAllBytes(file);
-                    uint found = U.Grep(Program.ROM.Data, wav, 0x100, 0, 4);
-                    if (found == U.NOT_FOUND)
-                    {//既存のROMにないので追加
-                        data.Add(new DataWriteHelper(wav, bin.Count));
-                        U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
-                    }
-                    else
-                    {//既にあるので使いまわす.
-                        U.append_u32(bin, U.toPointer(found));
-                    }
-                    U.append_u8(bin, U.atoh(sp[5]));
-                    U.append_u8(bin, U.atoh(sp[6]));
-                    U.append_u8(bin, U.atoh(sp[7]));
-                    U.append_u8(bin, U.atoh(sp[8]));
-                }
-                else if (type == 0x80)
-                {
-                    if (sp.Length < 4 + 1 + 4)
-                    {
-                        R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", i + 1, 9);
-                        return U.NOT_FOUND;
-                    }
-
-                    string file = Path.Combine(dir, sp[4]);
-                    if (!File.Exists(file))
-                    {
-                        if (file.IndexOf("@SELF+") >= 0)
-                        {
-                            uint relativeAddress = U.atoh(file.Substring(6));
-                            data.Add(new DataWriteHelper(relativeAddress, bin.Count));
-                            U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
-                        }
-                        else if (file.IndexOf("@BROKENDATA") >= 0)
-                        {//ドラム内でドラムがあるような変なデータ
-                            uint relativeAddress = 0;
-                            data.Add(new DataWriteHelper(relativeAddress, bin.Count));
-                            U.append_u32(bin, 0); //とりあえず @SELF+0として扱う.
-                        }
-                        else
-                        {
-                            R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", i + 1, file);
-                            return U.NOT_FOUND;
-                        }
-                    }
-                    else
-                    {
-                        uint wav = ImportAllLow(file, undodata);
-                        if (wav == U.NOT_FOUND)
-                        {
-                            R.ShowStopError("ネストする楽器データ({1})を登録できません。\r\n{0}行目", i + 1, file);
-                            return U.NOT_FOUND;
-                        }
-                        U.append_u32(bin, U.toPointer(wav));
-                    }
-                    U.append_u8(bin, U.atoh(sp[5]));
-                    U.append_u8(bin, U.atoh(sp[6]));
-                    U.append_u8(bin, U.atoh(sp[7]));
-                    U.append_u8(bin, U.atoh(sp[8]));
-                }
-                else if (type == 0x40)
-                {
-                    string file = Path.Combine(dir, sp[4]);
-                    if (!File.Exists(file))
-                    {
-                        if (file.IndexOf("@SELF+") < 0)
-                        {
-                            R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", i + 1, file);
-                            return U.NOT_FOUND;
-                        }
-                        uint relativeAddress = U.atoh(file.Substring(6));
-                        data.Add(new DataWriteHelper(relativeAddress, bin.Count));
-                        U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
-                    }
-                    else
-                    {
-                        uint wav = ImportAllLow(file, undodata);
-                        if (wav == U.NOT_FOUND)
-                        {
-                            R.ShowStopError("ネストする楽器データ({1})を登録できません。\r\n{0}行目", i + 1, file);
-                            return U.NOT_FOUND;
-                        }
-                        U.append_u32(bin, U.toPointer(wav));
-                    }
-
-                    file = Path.Combine(dir, sp[5]);
-                    if (!File.Exists(file))
-                    {
-                        R.ShowStopError("楽器データ({1})がありません。\r\n{0}行目", i + 1, file);
-                    }
-
-                    //データは後で入れましょう.
-                    byte[] multi = File.ReadAllBytes(file);
-                    uint found = U.Grep(Program.ROM.Data, multi, 0x100, 0, 4);
-                    if (found == U.NOT_FOUND)
-                    {//既存のROMにないので追加
-                        data.Add(new DataWriteHelper(multi, bin.Count));
-                        U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
-                    }
-                    else
-                    {//既にあるので使いまわす.
-                        U.append_u32(bin, U.toPointer(found));
-                    }
-                }
-                else
-                {
-                    if (sp.Length < 4 + 4 + 4)
-                    {
-                        R.ShowStopError("データの形式が正しくありません。\r\n少なくとも{1}個のデータが必要です。\r\n{0}行目", i + 1, 12);
-                        return U.NOT_FOUND;
-                    }
-                    U.append_u8(bin, U.atoh(sp[4]));
-                    U.append_u8(bin, U.atoh(sp[5]));
-                    U.append_u8(bin, U.atoh(sp[6]));
-                    U.append_u8(bin, U.atoh(sp[7]));
-                    U.append_u8(bin, U.atoh(sp[8]));
-                    U.append_u8(bin, U.atoh(sp[9]));
-                    U.append_u8(bin, U.atoh(sp[10]));
-                    U.append_u8(bin, U.atoh(sp[11]));
                 }
             }
             //終端データ.
@@ -1128,27 +1169,162 @@ namespace FEBuilderGBA
             {
                 return U.NOT_FOUND;
             }
+            //書き込みアドレスが決定しないと書き込めない追加データの書き戻しを行います。
+            {
+                bool r = WriteBackData(startaddr , data , undodata);
+                if (!r)
+                {
+                    return U.NOT_FOUND;
+                }
+            }
+
+            return startaddr;
+        }
+        //書き込みアドレスが決定しないと書き込めない追加データの書き戻しを行います。
+        static bool WriteBackData(uint startaddr, List<DataWriteHelper> data, Undo.UndoData undodata)
+        {
             for (int i = 0; i < data.Count; i++)
             {
                 if (data[i].Data == null)
                 {
                     uint writeAddress = startaddr + data[i].WriteOffset;
-                    Program.ROM.write_p32(writeAddress, data[i].RelativeAddress + startaddr);
+                    Program.ROM.write_p32(writeAddress, data[i].RelativeAddress + startaddr, undodata);
                 }
                 else
                 {
                     uint dataAddress = InputFormRef.AppendBinaryData(data[i].Data, undodata);
                     if (dataAddress == U.NOT_FOUND)
                     {
-                        return U.NOT_FOUND;
+                        return false;
                     }
 
                     uint writeAddress = startaddr + data[i].WriteOffset;
-                    Program.ROM.write_p32(writeAddress, dataAddress);
+                    Program.ROM.write_p32(writeAddress, dataAddress, undodata);
+                }
+            }
+            return true;
+        }
+        static bool ImportOne(string filename,InputFormRef ifr, int index, Undo.UndoData undodata)
+        {
+            string dir = Path.GetDirectoryName(filename);
+
+            //まずはデータ数を知らないといけない.
+            List<byte> bin = new List<byte>();
+            List<DataWriteHelper> data = new List<DataWriteHelper>();
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                InputFormRef.DoEvents(null, filename + ":" + (i + 1));
+                bool r = ImportOneLow(line, i, bin, data, dir, undodata);
+                if (!r)
+                {
+                    return false;
+                }
+            }
+            Debug.Assert(bin.Count == 12);
+
+            uint writeaddr = ifr.BaseAddress + ((uint)index * ifr.BlockSize);
+            Program.ROM.write_range(writeaddr, bin.ToArray(), undodata);
+
+            //書き込みアドレスが決定しないと書き込めない追加データの書き戻しを行います。
+            {
+                bool r = WriteBackData(ifr.BaseAddress, data, undodata);
+                if (!r)
+                {
+                    return false;
                 }
             }
 
-            return startaddr;
+            return true;
+        }
+
+        private void Inst_ExportButton_Click(object sender, EventArgs e)
+        {
+            if (AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("MusicalInstrumentOne|*.instone|All files|*");
+
+            string songname = "inst" + U.ToHexString2(AddressList.SelectedIndex);
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            save.AddExtension = true;
+            Program.LastSelectedFilename.Load(this, "", save, songname);
+
+            DialogResult dr = save.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return;
+            }
+            Program.LastSelectedFilename.Save(this, "", save);
+            string filename = save.FileNames[0];
+
+            //少し時間がかかるので、しばらくお待ちください表示.
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                ExportOneLow(filename, InputFormRef, AddressList.SelectedIndex);
+            }
+
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(filename);
+        }
+
+        private void Inst_ImportButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+            if (AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            string filename;
+            string title = R._("インポートする楽器ファイルを選択してください");
+            string filter = R._("MusicalInstrumentOne|*.instone|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+            Program.LastSelectedFilename.Save(this, "", open);
+            filename = open.FileNames[0];
+
+            //少し時間がかかるので、しばらくお待ちください表示.
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                Undo.UndoData undodata = Program.Undo.NewUndoData(this, "Instrument " + AddressList.Text);
+                bool r = ImportOne(filename, InputFormRef, AddressList.SelectedIndex, undodata);
+                if (!r)
+                {
+                    Program.Undo.Rollback(undodata);
+                    R.ShowStopError("楽器データをインポートできませんでした。");
+                    return;
+                }
+                Program.Undo.Push(undodata);
+            }
+            InputFormRef.ReloadAddressList();
+            InputFormRef.WriteButtonToYellow(this.WriteButton, false);
         }
     }
 }
