@@ -8,8 +8,8 @@ ALWAYS	(DoNotUse)When player unit is moved coordinate
 TUTORIAL	Tutorial
 TRAP	Trap(Ballista, GargonEgg, DamageFloor)
 TRAP	Trap2(Damaged floor of ruins 9F only?)
-PLAYER_UNIT	Player placement
-PLAYER_UNIT	Player placement when HARD LEVEL
+PLAYER_UNIT	Player Placement
+PLAYER_UNIT	Player Placement when HARD LEVEL
 FREEMAP_PLAYER_UNIT	world map skirmishes Player placement1
 FREEMAP_PLAYER_UNIT	world map skirmishes Player placement2
 FREEMAP_PLAYER_UNIT	world map skirmishes Player placement3

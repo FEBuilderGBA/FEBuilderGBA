@@ -293,7 +293,7 @@ namespace FEBuilderGBA
                 p.Name = name;
 
                 //検索用データ
-                p.SearchData = name + "\t" + search_filename + "\t" + U.at(p.Param, "INFO") + "\t" + U.at(p.Param, "AUTHOR") + "\t" + U.at(p.Param, "TAG") + "\t" + U.at(p.Param, "HINT") + "\t" + U.at(p.Param, "DOCURL");
+                p.SearchData = name + "\t" + search_filename + "\t" + U.at(p.Param, "INFO") + "\t" + U.at(p.Param, "AUTHOR") + "\t" + U.at(p.Param, "TAG") + "\t" + U.at(p.Param, "HINT");
                 //ソート用の日付
                 p.Date = U.GetFileDateLastWriteTime(fullfilename);
             }
@@ -351,12 +351,6 @@ namespace FEBuilderGBA
             if (info  != "")
             {
                 sb.AppendLine(info);
-            }
-            string docurl = atMultiLine(patch, "DOCURL");
-            if (info != "")
-            {
-                sb.AppendLine(docurl);
-                sb.AppendLine("");
             }
             string tag = atMultiLine(patch, "TAG");
             if (tag != "")

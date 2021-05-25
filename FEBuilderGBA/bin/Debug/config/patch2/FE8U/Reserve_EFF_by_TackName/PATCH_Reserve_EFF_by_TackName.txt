@@ -1,7 +1,7 @@
 NAME=テキストID 0xEFFを軍師名表示として予約する
 NAME.en=Reserved TextID:0xEFF as the display of the tack name
 
-INFO=テキストID 0xEFFを軍師名表示として予約します。\r\nFE8では、武器とユニット名に入力された軍師名を表示するためには、RAMを直接参照する必要があります。\r\nこのパッチは、文字列0xEFFを入力された名前を表示するエリアとして固定します。\r\n具体的には、イベントで"名前入力画面の呼び出し"を呼び出すと、その名前がRAMに代入されます。\r\nセリフの途中での名前は[Tack]で参照できますが、ユニット名と武器名では利用できません。\r\nそれを解決するために、AntiHuffmanパッチを使い、RAMを直接参照します。\r\nユニット名やアイテム名では、TextID: 0xEFFを参照するように設定することで、表示できるようにします。
+INFO=テキストID 0xEFFを軍師名表示として予約します。\r\nFE8では、武器とユニット名に入力された軍師名を表示するためには、RAMを直接参照する必要があります。\r\nこのパッチは、文字列0xEFFを入力された名前を表示するエリアとして固定します。\r\n具体的には、イベントで"名前入力画面の呼び出し"を呼び出すと、その名前がRAMに代入されます。\r\nセリフの途中での名前は[Tack]で参照できますが、ユニット名と武器名では利用できません。\r\nそれを解決するために、AntiHuffmanパッチを使い、RAMを直接参照します。\r\nユニット名やアイテム名では、TextID: 0xEFFを参照するように設定することで、表示できるようにします。\r\nhttps://feuniverse.us/t/fe8-tactician-naming/2924
 
 TYPE=EA
 EXTENDS:0x1100=TEXT
@@ -9,7 +9,6 @@ EA=Reserve_EFF_by_TackName.event
 
 AUTHOR=7743
 PATCHED_IF:$GREP4 0x10 0xbd 0x02 0x82=0x10 0xbd 0x02 0x82
-INFO.en=Text ID 0xEFF is reserved as the display of the tack's name.\r\nIn FE8, it is necessary to directly refer to RAM to display the master's name entered in the weapon and unit name.\r\nThis patch fixes the string 0xEFF as an area to display the input name.\r\nSpecifically, when an event calls "Call name input screen"\r\nYou can refer to the name in the middle of the line with [Tack], but it can not be used in the unit name and the weapon name.\r\nTo solve that, use the AntiHuffman patch to directly reference the RAM.\r\nIn Unit Name or Item Name, set TextID: 0xEFF to make it visible.
+INFO.en=Text ID 0xEFF is reserved as the display of the tack's name.\r\nIn FE8, it is necessary to directly refer to RAM to display the master's name entered in the weapon and unit name.\r\nThis patch fixes the string 0xEFF as an area to display the input name.\r\nSpecifically, when an event calls "Call name input screen"\r\nYou can refer to the name in the middle of the line with [Tack], but it can not be used in the unit name and the weapon name.\r\nTo solve that, use the AntiHuffman patch to directly reference the RAM.\r\nIn Unit Name or Item Name, set TextID: 0xEFF to make it visible.\r\nhttps://feuniverse.us/t/fe8-tactician-naming/2924
 NAME.zh=文本ID 0xEFF保留为主名称的显示
-INFO.zh=文本ID 0xEFF保留为主名称的显示。\r\n在FE8中，需要直接参考RAM来显示在武器和单位名称中输入的主人姓名。\r\n此修补程序将字符串0xEFF固定为显示输入名称的区域。\r\n具体来说，当事件调用“呼叫姓名输入屏幕"时，该名称将分配给RAM。\r\n您可以使用[Tack]参考行中间的名称，但不能在单位名称和武器名称中使用。\r\n要解决此问题，请使用AntiHuffman补丁直接引用RAM。\r\n在“人物名称"或“项目名称"中，设置TextID：0xEFF以使其可见。
-DOCURL=https://feuniverse.us/t/fe8-tactician-naming/2924
+INFO.zh=文本ID 0xEFF保留为主名称的显示。\r\n在FE8中，需要直接参考RAM来显示在武器和单位名称中输入的主人姓名。\r\n此修补程序将字符串0xEFF固定为显示输入名称的区域。\r\n具体来说，当事件调用“呼叫姓名输入屏幕"时，该名称将分配给RAM。\r\n您可以使用[Tack]参考行中间的名称，但不能在单位名称和武器名称中使用。\r\n要解决此问题，请使用AntiHuffman补丁直接引用RAM。\r\n在“人物名称"或“项目名称"中，设置TextID：0xEFF以使其可见。\r\nhttps://feuniverse.us/t/fe8-tactician-naming/2924

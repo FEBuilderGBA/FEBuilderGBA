@@ -764,7 +764,14 @@ namespace FEBuilderGBA
             string str = R._("{0}を定義します。\r\n", this.FilterComboBox.Text);
             if (condtype == CONDTYPE.PLAYER_UNIT)
             {
-                str += R._("仲間にしたことがないユニットがいれば、基本的に自動的に加入します。\r\n");
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    str += R._("FE8では、ここに設定したリストで、進撃準備画面で選択できるユニット数が決定されます。\r\nこれは、FE6,FE7から引き継ついでいる機能です。\r\n過去のバージョンでは、ここに設定したユニットを利用していたようですが、FE8では、リストの人数だけが利用されます。\r\nその人数が、進撃準備画面で選択できるユニットの数になります。\r\n\r\n通常、このリストは準備画面の直前に利用するLOAD1のデータと同じデータを指します。\r\nそのため、通常は、何もしなくても自動的にリストは更新されます。\r\n\r\nただ、あなたが意図的にそれらを削除して破壊した場合、関連性が失われるので、手動で値をメンテナンスする必要があります。\r\n");
+                }
+                else
+                {
+                    str += R._("仲間にしたことがないユニットがいれば、基本的に自動的に加入します。\r\n");
+                }
             }
             else if (condtype == CONDTYPE.ENEMY_UNIT)
             {
@@ -808,6 +815,8 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(WriteButton, false);
             //イベントの関連アイコンを取得しなおしたい
             EventRelationIconsCache.Clear();
+
+            ReloadEventList(U.NOT_FOUND, false);
         }
 
         private void EventPointer_KeyDown(object sender, KeyEventArgs e)
