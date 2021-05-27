@@ -2444,7 +2444,7 @@ namespace FEBuilderGBA
             {
                 string line = lines[i];
                 //@以降はコメントなので消し去る.
-                line = U.ClipComment(line, "@");
+                line = U.ClipCommentWithCharpAndAtmark(line);
 
                 if (line.Length <= 1)
                 {

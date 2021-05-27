@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.BeginPage = new System.Windows.Forms.TabPage();
+            this.BlackBG2Button = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -97,6 +98,9 @@
             this.labelEx3 = new FEBuilderGBA.LabelEx();
             this.labelEx4 = new FEBuilderGBA.LabelEx();
             this.Step5Page = new System.Windows.Forms.TabPage();
+            this.midfix4agbButton = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.midfix4agb_TextBox = new FEBuilderGBA.TextBoxEx();
             this.Step5PrevButton = new System.Windows.Forms.Button();
             this.RefSOXButton = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -118,9 +122,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EndButton = new System.Windows.Forms.Button();
-            this.midfix4agbButton = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.midfix4agb_TextBox = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.BeginPage.SuspendLayout();
@@ -162,6 +163,7 @@
             // BeginPage
             // 
             this.BeginPage.BackColor = System.Drawing.SystemColors.Control;
+            this.BeginPage.Controls.Add(this.BlackBG2Button);
             this.BeginPage.Controls.Add(this.label12);
             this.BeginPage.Controls.Add(this.label7);
             this.BeginPage.Controls.Add(this.textBox2);
@@ -179,6 +181,16 @@
             this.BeginPage.Size = new System.Drawing.Size(860, 591);
             this.BeginPage.TabIndex = 0;
             this.BeginPage.Text = "BeginPage";
+            // 
+            // BlackBG2Button
+            // 
+            this.BlackBG2Button.Location = new System.Drawing.Point(456, 469);
+            this.BlackBG2Button.Name = "BlackBG2Button";
+            this.BlackBG2Button.Size = new System.Drawing.Size(168, 35);
+            this.BlackBG2Button.TabIndex = 28;
+            this.BlackBG2Button.Text = "黒背景2";
+            this.BlackBG2Button.UseVisualStyleBackColor = true;
+            this.BlackBG2Button.Click += new System.EventHandler(this.BlackBG2Button_Click);
             // 
             // label12
             // 
@@ -269,7 +281,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(615, 514);
+            this.StartButton.Location = new System.Drawing.Point(638, 514);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(214, 61);
             this.StartButton.TabIndex = 8;
@@ -867,6 +879,34 @@
             this.Step5Page.TabIndex = 8;
             this.Step5Page.Text = "Step5Page";
             // 
+            // midfix4agbButton
+            // 
+            this.midfix4agbButton.Location = new System.Drawing.Point(725, 237);
+            this.midfix4agbButton.Name = "midfix4agbButton";
+            this.midfix4agbButton.Size = new System.Drawing.Size(88, 31);
+            this.midfix4agbButton.TabIndex = 123;
+            this.midfix4agbButton.Text = "参照";
+            this.midfix4agbButton.UseVisualStyleBackColor = true;
+            this.midfix4agbButton.Click += new System.EventHandler(this.midfix4agbButton_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(13, 240);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(86, 18);
+            this.label27.TabIndex = 121;
+            this.label27.Text = "midfix4agb";
+            // 
+            // midfix4agb_TextBox
+            // 
+            this.midfix4agb_TextBox.ErrorMessage = "";
+            this.midfix4agb_TextBox.Location = new System.Drawing.Point(146, 240);
+            this.midfix4agb_TextBox.Name = "midfix4agb_TextBox";
+            this.midfix4agb_TextBox.Placeholder = "";
+            this.midfix4agb_TextBox.Size = new System.Drawing.Size(559, 25);
+            this.midfix4agb_TextBox.TabIndex = 122;
+            // 
             // Step5PrevButton
             // 
             this.Step5PrevButton.Location = new System.Drawing.Point(776, 54);
@@ -1071,34 +1111,6 @@
             this.EndButton.UseVisualStyleBackColor = true;
             this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
-            // midfix4agbButton
-            // 
-            this.midfix4agbButton.Location = new System.Drawing.Point(725, 237);
-            this.midfix4agbButton.Name = "midfix4agbButton";
-            this.midfix4agbButton.Size = new System.Drawing.Size(88, 31);
-            this.midfix4agbButton.TabIndex = 123;
-            this.midfix4agbButton.Text = "参照";
-            this.midfix4agbButton.UseVisualStyleBackColor = true;
-            this.midfix4agbButton.Click += new System.EventHandler(this.midfix4agbButton_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(13, 240);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(86, 18);
-            this.label27.TabIndex = 121;
-            this.label27.Text = "midfix4agb";
-            // 
-            // midfix4agb_TextBox
-            // 
-            this.midfix4agb_TextBox.ErrorMessage = "";
-            this.midfix4agb_TextBox.Location = new System.Drawing.Point(146, 240);
-            this.midfix4agb_TextBox.Name = "midfix4agb_TextBox";
-            this.midfix4agb_TextBox.Placeholder = "";
-            this.midfix4agb_TextBox.Size = new System.Drawing.Size(559, 25);
-            this.midfix4agb_TextBox.TabIndex = 122;
-            // 
             // ToolInitWizardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1226,5 +1238,6 @@
         private System.Windows.Forms.Button midfix4agbButton;
         private System.Windows.Forms.Label label27;
         private TextBoxEx midfix4agb_TextBox;
+        private System.Windows.Forms.Button BlackBG2Button;
     }
 }

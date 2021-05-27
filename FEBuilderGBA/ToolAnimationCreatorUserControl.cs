@@ -1139,7 +1139,7 @@ namespace FEBuilderGBA
                 }
                 else if (code.type == AnimeStEnum.Term)
                 {
-                    line = "~";
+                    line = "~~~";
                     lines.Add(line);
                 }
             }
@@ -1366,7 +1366,7 @@ namespace FEBuilderGBA
                 }
                 else if (code.type == AnimeStEnum.Term)
                 {
-                    line = "~";
+                    line = "~~~";
                     lines.Add(line);
                 }
             }

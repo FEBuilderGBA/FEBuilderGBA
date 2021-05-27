@@ -418,7 +418,7 @@ namespace FEBuilderGBA
                     termCount++;
                     if (frameData[n + 1] == 0x01) //0x00 0x01 0x00 0x80 の場合続くときがある.
                     {
-                        line = "~";
+                        line = "~~~";
                         if (termCount == 1)
                         {
                             if (enableComment)
@@ -773,7 +773,7 @@ namespace FEBuilderGBA
                     lineCount++;
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     lineCount++;
@@ -834,7 +834,7 @@ namespace FEBuilderGBA
                         lineCount++;
                         continue;
                     }
-                    line = U.ClipComment(line);
+                    line = U.ClipCommentWithCharpAndAtmark(line);
                     if (line == "")
                     {
                         lineCount++;

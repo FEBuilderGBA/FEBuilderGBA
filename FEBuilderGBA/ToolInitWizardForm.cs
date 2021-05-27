@@ -678,6 +678,10 @@ namespace FEBuilderGBA
         {
             CloseAndResetInstance(2);
         }
+        private void BlackBG2Button_Click(object sender, EventArgs e)
+        {
+            CloseAndResetInstance(3);
+        }
 
         void CloseAndResetInstance(int autocolor=0)
         {
@@ -770,6 +774,7 @@ namespace FEBuilderGBA
                 this.midfix4agb_TextBox.Text = r;
             }
         }
+
 
 
     }

@@ -199,9 +199,9 @@ namespace FEBuilderGBA
             {
                 liner.Add("C1A");
                 liner.Add("C1F");
-                liner.Add("~ // miss terminator");
+                liner.Add("~~~ // miss terminator");
                 liner.Add("S0133 // Hit sfx");
-                liner.Add("~");
+                liner.Add("~~~");
             }
 
             File.WriteAllLines(saveFilename, liner.ToArray());

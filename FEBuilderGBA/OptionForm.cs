@@ -29,9 +29,9 @@ namespace FEBuilderGBA
         public void AutoClose(int autocolor = 0)
         {
             OptionForm_Load(null, null);
-            if (autocolor == 1 || autocolor == 2) 
+            if (autocolor >= 1) 
             {
-                ColorSetComboBox.SelectedIndex = autocolor;
+                U.SelectedIndexSafety(ColorSetComboBox, autocolor);
             }
 
             Save();
@@ -1052,7 +1052,7 @@ namespace FEBuilderGBA
         {
             int colorset = ColorSetComboBox.SelectedIndex;
             if (colorset == 1)
-            {
+            {//white
                 Color_Control_BackColor_button.BackColor = U.ColorFromName("Control");
                 Color_Control_ForeColor_button.BackColor = U.ColorFromName("ControlText");
                 Color_Input_BackColor_button.BackColor = U.ColorFromName("Window");
@@ -1073,7 +1073,7 @@ namespace FEBuilderGBA
                 return ;
             }
             if (colorset == 2)
-            {
+            {//black
                 Color_Control_BackColor_button.BackColor = U.ColorFromName("Black");
                 Color_Control_ForeColor_button.BackColor = U.ColorFromName("White");
                 Color_Input_BackColor_button.BackColor = U.ColorFromName("Black");
@@ -1090,6 +1090,27 @@ namespace FEBuilderGBA
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("LightBlue");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("DeepPink");
                 Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("GreenYellow");
+
+                return;
+            }
+            if (colorset == 3)
+            {//black2
+                Color_Control_BackColor_button.BackColor = U.ColorFromName("ff2c2f33");
+                Color_Control_ForeColor_button.BackColor = U.ColorFromName("White");
+                Color_Input_BackColor_button.BackColor = U.ColorFromName("ff282828");
+                Color_Input_ForeColor_button.BackColor = U.ColorFromName("White");
+                Color_InputDecimal_BackColor_button.BackColor = U.ColorFromName("Black");
+                Color_InputDecimal_ForeColor_button.BackColor = U.ColorFromName("Pink");
+                Color_NotifyWrite_BackColor_button.BackColor = U.ColorFromName("Yellow");
+                Color_NotifyWrite_ForeColor_button.BackColor = U.ColorFromName("Black");
+                Color_Error_BackColor_button.BackColor = U.ColorFromName("Black");
+                Color_Error_ForeColor_button.BackColor = U.ColorFromName("Red");
+                Color_List_SelectedColor_button.BackColor = U.ColorFromName("Highlight");
+                Color_List_HoverColor_button.BackColor = U.ColorFromName("ff3c3c3c");
+                Color_Keyword_BackColor_button.BackColor = U.ColorFromName("ff0000a0");
+                Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("ff8080ff");
+                Color_Comment_ForeColor_button.BackColor = U.ColorFromName("ff0080c0");
+                Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("ff0080c0");
 
                 return;
             }

@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePath = new System.Windows.Forms.TabPage();
+            this.midfix4agb_button = new System.Windows.Forms.Button();
+            this.midfix4agb = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.sox_button = new System.Windows.Forms.Button();
             this.ERROR_IsOldEA = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -261,9 +264,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.midfix4agb_button = new System.Windows.Forms.Button();
-            this.midfix4agb = new FEBuilderGBA.TextBoxEx();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -335,6 +335,38 @@
             this.tabPagePath.Size = new System.Drawing.Size(842, 703);
             this.tabPagePath.TabIndex = 0;
             this.tabPagePath.Text = "パス";
+            // 
+            // midfix4agb_button
+            // 
+            this.midfix4agb_button.Location = new System.Drawing.Point(746, 600);
+            this.midfix4agb_button.Margin = new System.Windows.Forms.Padding(2);
+            this.midfix4agb_button.Name = "midfix4agb_button";
+            this.midfix4agb_button.Size = new System.Drawing.Size(82, 28);
+            this.midfix4agb_button.TabIndex = 68;
+            this.midfix4agb_button.Text = "参照";
+            this.midfix4agb_button.UseVisualStyleBackColor = true;
+            this.midfix4agb_button.Click += new System.EventHandler(this.midfix4agb_button_Click);
+            // 
+            // midfix4agb
+            // 
+            this.midfix4agb.ErrorMessage = "";
+            this.midfix4agb.Location = new System.Drawing.Point(228, 603);
+            this.midfix4agb.Margin = new System.Windows.Forms.Padding(2);
+            this.midfix4agb.Name = "midfix4agb";
+            this.midfix4agb.Placeholder = "";
+            this.midfix4agb.Size = new System.Drawing.Size(514, 25);
+            this.midfix4agb.TabIndex = 67;
+            this.midfix4agb.DoubleClick += new System.EventHandler(this.midfix4agb_DoubleClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 607);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 18);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "midfix4agb";
             // 
             // sox_button
             // 
@@ -1238,7 +1270,8 @@
             this.ColorSetComboBox.Items.AddRange(new object[] {
             "00:自分で決める",
             "01:ディフォルト 白背景 黒文字",
-            "02:目にやさしい黒背景 白文字"});
+            "02:目にやさしい黒背景 白文字",
+            "03:目にやさしい黒背景2 白文字"});
             this.ColorSetComboBox.Location = new System.Drawing.Point(284, 16);
             this.ColorSetComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ColorSetComboBox.Name = "ColorSetComboBox";
@@ -3083,38 +3116,6 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 607);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 18);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "midfix4agb";
-            // 
-            // midfix4agb_button
-            // 
-            this.midfix4agb_button.Location = new System.Drawing.Point(746, 600);
-            this.midfix4agb_button.Margin = new System.Windows.Forms.Padding(2);
-            this.midfix4agb_button.Name = "midfix4agb_button";
-            this.midfix4agb_button.Size = new System.Drawing.Size(82, 28);
-            this.midfix4agb_button.TabIndex = 68;
-            this.midfix4agb_button.Text = "参照";
-            this.midfix4agb_button.UseVisualStyleBackColor = true;
-            this.midfix4agb_button.Click += new System.EventHandler(this.midfix4agb_button_Click);
-            // 
-            // midfix4agb
-            // 
-            this.midfix4agb.ErrorMessage = "";
-            this.midfix4agb.Location = new System.Drawing.Point(228, 603);
-            this.midfix4agb.Margin = new System.Windows.Forms.Padding(2);
-            this.midfix4agb.Name = "midfix4agb";
-            this.midfix4agb.Placeholder = "";
-            this.midfix4agb.Size = new System.Drawing.Size(514, 25);
-            this.midfix4agb.TabIndex = 67;
-            this.midfix4agb.DoubleClick += new System.EventHandler(this.midfix4agb_DoubleClick);
             // 
             // OptionForm
             // 

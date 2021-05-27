@@ -141,7 +141,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    line = U.ClipComment(line, "\t{");
+                    line = U.ClipComment(line);
                     if (line.Length <= 0)
                     {
                         continue;

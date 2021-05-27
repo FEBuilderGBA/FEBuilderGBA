@@ -2972,17 +2972,32 @@ namespace FEBuilderGBA
             }
             return str;
         }
-        public static string ClipComment(string str, string comment_mark)
+        public static string ClipCommentWithCharpAndAtmark(string str)
         {
-            int term = str.IndexOf("\t{");
+            int term = ClipCommentIndexOf(str, "{J}");
             if (term >= 0)
             {//言語指定を飛ばす
-                return str.Substring(0, term);
+                str = str.Substring(0, term);
             }
-            term = str.IndexOf(comment_mark);
+            term = ClipCommentIndexOf(str, "{U}");
+            if (term >= 0)
+            {//言語指定を飛ばす
+                str = str.Substring(0, term);
+            }
+            term = ClipCommentIndexOf(str, "//");
             if (term >= 0)
             {//コメント
-                return str.Substring(0, term);
+                str = str.Substring(0, term);
+            }
+            term = ClipCommentIndexOf(str, "#");
+            if (term >= 0)
+            {//コメント
+                str = str.Substring(0, term);
+            }
+            term = ClipCommentIndexOf(str, "@");
+            if (term >= 0)
+            {//コメント
+                str = str.Substring(0, term);
             }
             return str;
         }

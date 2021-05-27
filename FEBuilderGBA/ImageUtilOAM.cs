@@ -2272,7 +2272,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     continue;
@@ -2438,7 +2438,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     continue;
@@ -2703,7 +2703,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     continue;
@@ -2846,7 +2846,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     continue;
@@ -2954,7 +2954,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                line = U.ClipComment(line);
+                line = U.ClipCommentWithCharpAndAtmark(line);
                 if (line == "")
                 {
                     continue;
