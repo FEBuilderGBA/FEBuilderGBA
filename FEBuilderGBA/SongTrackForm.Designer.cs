@@ -67,6 +67,7 @@
             this.TrackLabel2 = new System.Windows.Forms.Label();
             this.TrackLabel3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.SongExchangeButton = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@
             this.ImportButton = new System.Windows.Forms.Button();
             this.B3 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -592,6 +592,16 @@
             this.panel5.Size = new System.Drawing.Size(1649, 79);
             this.panel5.TabIndex = 201;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(952, 4);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 31;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // J_0
             // 
             this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -776,16 +786,6 @@
             this.panel1.Size = new System.Drawing.Size(1894, 28);
             this.panel1.TabIndex = 192;
             // 
-            // LinkInternt
-            // 
-            this.LinkInternt.AutoSize = true;
-            this.LinkInternt.Location = new System.Drawing.Point(952, 4);
-            this.LinkInternt.Name = "LinkInternt";
-            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
-            this.LinkInternt.TabIndex = 31;
-            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
-            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
-            // 
             // ReloadListButton
             // 
             this.ReloadListButton.Location = new System.Drawing.Point(480, -2);
@@ -958,6 +958,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SongTrackForm";
             this.Text = "ソングトラック";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SongTrackForm_FormClosing);
             this.Load += new System.EventHandler(this.SongTrackForm_Load);
             this.Resize += new System.EventHandler(this.SongTrackForm_Resize);
             this.panel9.ResumeLayout(false);

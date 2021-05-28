@@ -1,0 +1,16 @@
+NAME=ワールドマップの船のアイコン
+NAME.en=Worldmap fleet icon
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xBD4CE
+ADDRESS_TYPE=CLASS
+
+AUTHOR=7743
+
+INFO=ワールドマップで海を移動するときに利用する船のアイコンを設定します。\r\nディフォルトは船団(ClassID 0x50)です。
+INFO.en=Set the icon of the ship to be used when moving the sea on the world map.\r\nThe default is the fleet (Class ID 0x50).
+NAME.zh=Worldmap fleet icon
+INFO.zh=Set the icon of the ship to be used when moving the sea on the world map.\r\nThe default is the fleet (Class ID 0x50).

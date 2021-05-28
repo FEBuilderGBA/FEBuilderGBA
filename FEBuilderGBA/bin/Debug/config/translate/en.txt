@@ -11128,6 +11128,9 @@ Warning:\r\nThere are \r\nmore than 3 lines\r\nof serif\r\n(Did you miss an [A]?
 :Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n\r\n{0}
 Google Translation returned an error.\r\nToo many requests.\r\n\r\n{0}
 
+:警告:\r\n展開時の会話の長さ({0}bytes)が長すぎるので、会話を2つに分割してください。\r\n4096バイトを超えるとテキストバッファを超過し危険です。(ただし背後はフェードアウト用のパレットバッファなので死にはしません。)\r\n5636バイトを超えると主要なバッファへダメージを与えて、ゲームがクラッシュします。
+caveat:.\r\nThe length of the conversation when expanded ({0} bytes) is too long, so split the conversation in two.\r\nIf it exceeds 4096 bytes, the text buffer will be exceeded and it is dangerous.(However, since the back is a palette buffer for fading out, it will not die.).\r\nIf it exceeds 5636 bytes, it will damage the main buffer and the game will crash.
+
 :改行やエスケープシーケンを入れてはいけません。\r\n
 Do not insert newlines or escape symbols.\r\n
 
@@ -11821,11 +11824,11 @@ It seems that VB6 runtime has already been installed.\r\nDo you want to skip run
 :SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
 Sappy is written in Visual Basic 6, so you need to install the runtime.\r\nLaunch the runtime installer.
 
-:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「設定」->「初期設定ウィザード」を選択してください。
-Welcome to FEBuilderGBA.\r\n\r\nHere, initial setup is performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to go through it again, please go to "Settings" -> "Initial Setup Wizard".
-
 :黒背景2
 Black Background2
+
+:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「設定」->「初期設定ウィザード」を選択してください。
+Welcome to FEBuilderGBA.\r\n\r\nHere, initial setup is performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to go through it again, please go to "Settings" -> "Initial Setup Wizard".
 
 :黒背景
 Black Background

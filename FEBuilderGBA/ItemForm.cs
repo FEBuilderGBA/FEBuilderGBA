@@ -372,7 +372,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                string errormessage = TextForm.GetErrorMessage(text,textid, "ITEM1");
+                string errormessage = TextForm.GetErrorMessage(text,textid,"ITEM1");
 
                 if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
                 {//FE7Uにはバグがある

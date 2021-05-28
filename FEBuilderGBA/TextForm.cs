@@ -244,6 +244,7 @@ namespace FEBuilderGBA
         void UpdateTextArea(string text)
         {
             this.Cache_MainArea = text;
+            UpdateBlockSize(Cache_MainArea);
             SetEditorText(this.TextArea, text);
 
             uint write_pointer = this.InputFormRef.BaseAddress + (this.InputFormRef.BlockSize * (uint)this.AddressList.SelectedIndex);
@@ -2171,7 +2172,8 @@ namespace FEBuilderGBA
 
         private void TextArea_TextChanged(object sender, EventArgs e)
         {
-            Cache_MainArea = GetEditorText(this.TextArea);
+            this.Cache_MainArea = GetEditorText(this.TextArea);
+            UpdateBlockSize(Cache_MainArea);
 
             bool isOrderOfHuman = (this.ActiveControl == sender); //人間の操作によるものか
             if (isOrderOfHuman)
@@ -2189,14 +2191,33 @@ namespace FEBuilderGBA
         {
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
 
-            //テキストのサイズを求めます.
-            string text = this.Cache_MainArea;
-            this.BlockSize.Text = CalcTextSize(text).ToString();
-
             //キーワードハイライト
             KeywordHighLight(TextArea);
 
             //DetailErrorMessageBox
+        }
+        //const int TEXTBUFFER_LIMIT = 4096; //本来の限界値
+        const int TEXTBUFFER_LIMIT = 5636;   //テキストバッファの下にはフェードイン用のパレットバッファがあるので、そこてまでの超過を認める
+        static string CheckUnpackSizeTooLong(string text)
+        {
+            if (text.Length <= 2000)
+            {//UTF16でそれほどでかくないなら超える可能性はないので足切り
+                return "";
+            }
+            byte[] encode;
+            Program.FETextEncoder.UnHuffmanEncode(text, out encode);
+
+            if (encode.Length >= TEXTBUFFER_LIMIT)
+            {
+                return R._("警告:\r\n展開時の会話の長さ({0}bytes)が長すぎるので、会話を2つに分割してください。\r\n4096バイトを超えるとテキストバッファを超過し危険です。(ただし背後はフェードアウト用のパレットバッファなので死にはしません。)\r\n5636バイトを超えると主要なバッファへダメージを与えて、ゲームがクラッシュします。", encode.Length);
+            }
+            return "";
+        }
+        void UpdateBlockSize(string text)
+        {
+            uint datasize = CalcTextSize(text);
+            this.BlockSize.Text = datasize.ToString();
+            this.BlockSize.ErrorMessage = CheckUnpackSizeTooLong(text);
         }
 
         private void TextListSpTextTextBox_TextChanged(object sender, EventArgs e)
@@ -2336,10 +2357,6 @@ namespace FEBuilderGBA
         {
             if (TextTabControl.SelectedIndex == 1)
             {//キーワードハイライトは時間がかかるので、選択されたときに実行します.
-                //テキストのサイズを求めます.
-                string text = this.Cache_MainArea;
-                this.BlockSize.Text = CalcTextSize(text).ToString();
-
                 //キーワードハイライト
                 KeywordHighLight(TextArea);
             }
@@ -2827,15 +2844,14 @@ namespace FEBuilderGBA
             }
             if (arg1 == "CONVERSATION")
             {
-                return CheckConversationTextMessage(text, MAX_SERIF_WIDTH);
+                return CheckConversationTextMessage(text,MAX_SERIF_WIDTH);
             }
             if (arg1 == "DEATHQUOTE")
             {
-                return CheckConversationTextMessage(text, MAX_DEATH_QUOTE_WIDTH);
+                return CheckConversationTextMessage(text,MAX_DEATH_QUOTE_WIDTH);
             }
             return "";
         }
-
 
         static string CheckParse(string text, int widthLimit, int heightLimit, bool isItemFont)
         {//実際に文字列をパースして調べてみます.
@@ -2871,7 +2887,9 @@ namespace FEBuilderGBA
                     return ct.ErrorString;
                 }
             }
-            return "";
+
+            //全体の長さの確認
+            return CheckUnpackSizeTooLong(text);
         }
 
         enum CheckBlockResult
@@ -3121,6 +3139,7 @@ namespace FEBuilderGBA
             }
         }
 
+
         //会話テキストのエラーチェック
         public static string CheckConversationTextMessage(string text, int widthLimit)
         {
@@ -3128,6 +3147,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
+
             text = ConvertEscapeTextRev(text);
 
             string[] required_words2 = new string[] { "@0003", "@0018", "@0017", "@0010", "@0006", "@0007" };///No Translate
@@ -3333,13 +3353,10 @@ namespace FEBuilderGBA
                 SelectEscapeText(sender, e);
             }
         }
-        public static string Direct(uint textid,bool isSkip0x1f = true)
+        public static string Direct(uint textid)
         {
             string str = FETextDecode.Direct(textid);
-            if (isSkip0x1f)
-            {
-                 str = str.Replace("@001F", "");
-            }
+            str = str.Replace("@001F", "");
             str = ConvertEscapeText(str);
             return str;
         }

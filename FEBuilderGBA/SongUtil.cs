@@ -341,7 +341,6 @@ namespace FEBuilderGBA
                     }
                 }
                 insertLoopLabel(track);
-                //                tracks.Add(track);
             }
             return tracks;
         }
@@ -395,11 +394,11 @@ namespace FEBuilderGBA
 
             if (track.codes.Count <= 0)
             {
-                listbox.Items.Add(string.Format("-{0}",0));
+                listbox.Items.Add(string.Format("{0}@",0));
             }
             else
             {
-                listbox.Items.Add(string.Format("-{0} {1}", tune, U.ToHexString(track.codes[0].addr)));
+                listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(track.codes[0].addr)));
             }
 
             for (int i = 0; i < track.codes.Count; i++)
@@ -414,7 +413,7 @@ namespace FEBuilderGBA
                     {//次のトラックへ
                         lastTuneWait = code.waitCount;
                         tune++;
-                        listbox.Items.Add(string.Format("-{0} {1}", tune, U.ToHexString(code.addr + 1)));
+                        listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(code.addr + 1)));
                     }
                 }
                 if (isDummyCode(code.type))
@@ -428,7 +427,7 @@ namespace FEBuilderGBA
                 {
                     lastTuneWait = code.waitCount;
                     tune++;
-                    listbox.Items.Add(string.Format("-{0} {1}", tune, U.ToHexString(code.addr + 1)));
+                    listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(code.addr + 1)));
                 }
             }
             listbox.EndUpdate();
@@ -3373,5 +3372,6 @@ namespace FEBuilderGBA
             }
             return error;
         }
+
     }
 }

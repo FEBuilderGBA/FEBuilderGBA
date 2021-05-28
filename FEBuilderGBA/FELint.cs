@@ -437,7 +437,7 @@ namespace FEBuilderGBA
         public static void CheckText(uint textid, string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.GetErrorMessage(text, textid, arg1);
+            string errorMessage = TextForm.GetErrorMessage(text, textid,arg1);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)

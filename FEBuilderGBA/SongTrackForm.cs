@@ -13,16 +13,18 @@ namespace FEBuilderGBA
     public partial class SongTrackForm : Form
     {
         public List<SongUtil.Track> Tracks = new List<SongUtil.Track>();
-        ListBox[] TrackListBoxs;
+        ListBoxEx[] TrackListBoxs;
         Label[] TrackLabels;
         U.FixDocsBugs fixDocsBugs;
-        
+        SolidBrush ListBoxForeBrush; //通常のブラシ
+        SolidBrush ListBoxForeKeywordBrush; //キーワードのブラシ
+  
         public SongTrackForm()
         {
             InitializeComponent();
             fixDocsBugs = new U.FixDocsBugs(this);
 
-            this.TrackListBoxs = new ListBox[] { Track1, Track2, Track3, Track4, Track5, Track6, Track7, Track8, Track9, Track10, Track11, Track12, Track13, Track14, Track15, Track16 };
+            this.TrackListBoxs = new ListBoxEx[] { Track1, Track2, Track3, Track4, Track5, Track6, Track7, Track8, Track9, Track10, Track11, Track12, Track13, Track14, Track15, Track16 };
             this.TrackLabels = new Label[] { TrackLabel1, TrackLabel2, TrackLabel3, TrackLabel4, TrackLabel5, TrackLabel6, TrackLabel7, TrackLabel8, TrackLabel9, TrackLabel10, TrackLabel11, TrackLabel12, TrackLabel13, TrackLabel14, TrackLabel15, TrackLabel16 };
 
             this.InputFormRef = Init(this);
@@ -31,9 +33,13 @@ namespace FEBuilderGBA
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
             this.InputFormRef.CheckProtectionPaddingALIGN4 = false; //ALIGN 4である必要はない.
 
-            for (int i = 0; i < this.TrackLabels.Length ; i++ )
+            this.ListBoxForeKeywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
+            this.ListBoxForeBrush = new SolidBrush(OptionForm.Color_Control_ForeColor());
+            for (int i = 0; i < this.TrackLabels.Length; i++)
             {
                 this.TrackLabels[i].Click += TrackLabel_Click;
+                this.TrackListBoxs[i].OwnerDraw(DrawTrack, DrawMode.OwnerDrawFixed, false);
+                this.TrackListBoxs[i].ItemHeight = 12;
             }
             InputFormRef.markupJumpLabel(this.AllTracksLabel);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
@@ -49,7 +55,28 @@ namespace FEBuilderGBA
                     ImportButton_Click(null, null);
                 }
             });
+        }
+        Size DrawTrack(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            int lineHeight = lb.ItemHeight;
 
+            string text = lb.Items[index].ToString();
+            if (text.IndexOf("@") >= 0)
+            {
+                bounds.X += U.DrawText(text, g, lb.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+            }
+            else
+            {
+                bounds.X += U.DrawText(text, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            }
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
         }
 
         public InputFormRef InputFormRef;
@@ -429,22 +456,22 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint track = Program.ROM.u8(songaddr + 0);
+            uint trackCount = Program.ROM.u8(songaddr + 0);
             if (i == 0)
             {
-                if (track != 0)
+                if (trackCount != 0)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, songaddr
-                        , R._("SongID {0}のトラックは常に0である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(track)), i));
+                        , R._("SongID {0}のトラックは常に0である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(trackCount)), i));
                 }
                 return;
             }
-            if (track > 16)
+            if (trackCount > 16)
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, songaddr
-                    , R._("SongID {0}のトラックは常に16以内である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(track)), i));
+                    , R._("SongID {0}のトラックは常に16以内である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(trackCount)), i));
             }
-            if (track == 0)
+            if (trackCount == 0)
             {//トラック数が0のダミートラックの場合、チェックしない
                 return;
             }
@@ -459,7 +486,7 @@ namespace FEBuilderGBA
             }
 
             //トラックのポインタチェック
-            for (uint n = 0; n < track; n++)
+            for (uint n = 0; n < trackCount; n++)
             {
                 uint trackPointer = Program.ROM.u32(songaddr + 4 + (n * 4) );
                 if (!U.isSafetyPointer(trackPointer))
@@ -467,6 +494,20 @@ namespace FEBuilderGBA
                     errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
                         , R._("SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？", U.To0xHexString(i), n, U.To0xHexString(trackPointer)), i));
                 }
+            }
+        }
+
+        private void SongTrackForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.ListBoxForeBrush != null)
+            {
+                this.ListBoxForeBrush.Dispose();
+                this.ListBoxForeBrush = null;
+            }
+            if (this.ListBoxForeBrush != null)
+            {
+                this.ListBoxForeKeywordBrush.Dispose();
+                this.ListBoxForeKeywordBrush = null;
             }
         }
 

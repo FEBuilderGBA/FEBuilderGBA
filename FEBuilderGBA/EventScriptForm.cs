@@ -777,7 +777,7 @@ namespace FEBuilderGBA
                 string text = FETextDecode.Direct(v);
                 errormessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
             }
-            else if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
+            else if (arg.Type == EventScript.ArgType.SYSTEM_TEXT)
             {
                 string text = FETextDecode.Direct(v);
                 errormessage = TextForm.CheckSystemTextMessage(text);
