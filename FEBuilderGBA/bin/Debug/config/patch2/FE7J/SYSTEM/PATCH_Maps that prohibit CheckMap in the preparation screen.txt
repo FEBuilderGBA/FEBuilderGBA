@@ -1,0 +1,17 @@
+NAME=進撃準備画面で、マップに進むを禁止するマップを変更する
+NAME.en=Prohibits CheckMap in preparation screen
+NAME.zh=Prohibits CheckMap in preparation screen
+
+INFO=終章で、「マップに進む」を選択できないようにする処理を変更します。
+INFO.en=In the final chapter, It will change the process that prevents you from selecting CheckMap.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x8E8CC
+ADDRESS_TYPE=MAP
+DEFAULT=0x2e
+
+AUTHOR=7743
+

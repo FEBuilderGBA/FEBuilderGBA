@@ -1,5 +1,5 @@
-NAME=ƒvƒŒƒCƒ„[‚ªNPC(—Î)‚©‚çƒAƒCƒeƒ€‚ğ“‚ß‚é‚æ‚¤‚É‚·‚é
-INFO=’ÊíAƒvƒŒƒCƒ„[‚Í“G‚©‚ç‚µ‚©ƒAƒCƒeƒ€‚ğ“‚Ş‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñ‚ªA‚±‚Ìƒpƒbƒ`‚ÍANPC‚©‚ç‚àƒAƒCƒeƒ€‚ğ“‚ß‚é‚æ‚¤‚É‚µ‚Ü‚·B
+NAME=ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒNPC(ç·‘)ã‹ã‚‰ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç›—ã‚ã‚‹ã‚ˆã†ã«ã™ã‚‹
+INFO=é€šå¸¸ã€ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¯æ•µã‹ã‚‰ã—ã‹ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç›—ã‚€ã“ã¨ãŒã§ãã¾ã›ã‚“ãŒã€ã“ã®ãƒ‘ãƒƒãƒã¯ã€NPCã‹ã‚‰ã‚‚ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç›—ã‚ã‚‹ã‚ˆã†ã«ã—ã¾ã™ã€‚
 NAME.en=Allow the player to steal from NPCs (green units)
 INFO.en=Normally blue units can only steal from enemies, but this patch also allows them to steal from NPCs if the other requirements for stealing are met.\r\nNPCs won't be able to steal from the player even if this is done.\r\n
 NAME.zh=Allow the player to steal from NPCs (green units)

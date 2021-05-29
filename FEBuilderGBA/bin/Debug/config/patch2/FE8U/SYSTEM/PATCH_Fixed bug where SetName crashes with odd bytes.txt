@@ -1,0 +1,17 @@
+NAME=SetNameが奇数バイトでクラッシュするバグを修正する
+INFO=テキストのエスケープシーケンスのSetName(@0080@0023)で、奇数バイトの名前を設定しようとすると、クラッシュするバグを修正します。\r\nこれは日本語の2バイトの処理のために発生している問題です。\r\nこの処理を1バイト単位でスキャンするように修正します。\r\n他の文字コードだったとしても改行は0x01なので、変な副作用はないと思います。
+
+
+NAME.en=Fixed bug where SetName crashes with odd bytes
+INFO.en=Fixes a bug in SetName(@0080@0023) for text escape sequences that caused a crash when trying to set a name with an odd number of bytes.\r\nThis is a glitch problem caused by the processing of two bytes in Japanese.\r\nThis patch will fix this process to scan for single bytes.\r\nIf it were any other character encoding, the newline would be 0x01, so there would be no weird side effects.
+NAME.zh=Fixed bug where SetName crashes with odd bytes
+INFO.zh=Fixes a bug in SetName(@0080@0023) for text escape sequences that caused a crash when trying to set a name with an odd number of bytes.\r\nThis is a glitch problem caused by the processing of two bytes in Japanese.\r\nThis patch will fix this process to scan for single bytes.\r\nIf it were any other character encoding, the newline would be 0x01, so there would be no weird side effects.
+AUTHOR=7743 https://feuniverse.us/t/fe-builder-gba-if-you-have-any-questions-attach-report7z/2845/3910
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+OFF:0x8EB36=0x48 0x78 0x50 0x70 0x88 0x1C 0xD8 0x62 0x02 0x32 0x88
+FIX:0x8EB36=0xC0 0x46 0xC0 0x46 0x48 0x1C 0xD8 0x62 0x01 0x32 0x48
