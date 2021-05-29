@@ -14,8 +14,6 @@ namespace FEBuilderGBA
         public EmulatorMemoryForm()
         {
             InitializeComponent();
-
-            SetExplain();
         }
         private void EmulatorMemoryForm_Load(object sender, EventArgs e)
         {
@@ -42,6 +40,8 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             string[] args = new string[0];
 
+            SetExplain();
+            FE6ize();
             SetSpeechIcon();
             SetSubtileIcon();
 
@@ -2107,10 +2107,6 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                return;
-            }
 
             uint baseaddr = GetShowRAMPartyUnitsAddr();
             uint addr = baseaddr + (uint)index * 72;
@@ -2131,26 +2127,13 @@ namespace FEBuilderGBA
                 uint classid = Program.ROM.u8(U.toOffset(classPointer) + 4);
                 classname = U.ToHexString(classid) + " " + ClassForm.GetClassName(classid);
             }
-            uint state;
-            if (Program.ROM.RomInfo.version() == 6)
-            {//状態1,2だけ
-                state = Program.RAM.u16(addr + 0x0C);
-            }
-            else
-            {//状態1,2,3,4
-                state = Program.RAM.u32(addr + 0x0C);
-            }
-            string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
-
-            uint aid = Program.RAM.u16(addr + 0x1B);
-            string aidString = EmulatorMemoryUtil.GetRAMUnitAIDToName(aid);
 
             PARTY_Address.Value = addr;
             PARTY_SelectAddress.Text = "";
             PARTY_ROMUNITPOINTER.Text = unitname;
             PARTY_ROMCLASSPOINTER.Text = classname;
-            PARTY_RAMUNITSTATE.Text = stateString;
-            PARTY_RAMUNITAID.Text = aidString;
+            PARTY_RAMUNITSTATE.Text = EmulatorMemoryUtil.GetRAMUnitStatus(addr);
+            PARTY_RAMUNITAID.Text = EmulatorMemoryUtil.GetAIDUnitString(addr);
             PARTY_PORTRAIT.Image = faceImage;
 
             this.PARTY_InputFormRef.ReInit(addr, 1);
@@ -2281,6 +2264,69 @@ namespace FEBuilderGBA
             this.SpeechButton.AccessibleDescription = R._("Windowsのテキスト読み上げ機能を利用して、文章を合成音声で読み上げます。\r\n利用するには、OSに合成音声ライブラリがインストールされている必要があります。");
             this.SubtileButton.AccessibleDescription = R._("翻訳リソースを利用して、翻訳した字幕を表示します。");
         }
+        void FE6ize()
+        {
+            if (Program.ROM.RomInfo.version() != 6)
+            {
+                return;
+            }
+            this.PARTY_B58.Name = "PARTY_NONE58";
+            this.PARTY_B58.Hide();
+            this.PARTY_B57.Name = "PARTY_B58";
+            this.PARTY_B56.Name = "PARTY_B54";
+            this.PARTY_B55.Name = "PARTY_B53";
+            this.PARTY_B54.Name = "PARTY_B52";
+            this.PARTY_B53.Name = "PARTY_B51";
+            this.PARTY_B52.Name = "PARTY_B50";
+            this.PARTY_B51.Name = "PARTY_B49";
+            this.PARTY_B50.Name = "PARTY_B48";
+            this.PARTY_B49.Name = "PARTY_B47";
+            this.PARTY_B48.Name = "PARTY_B46";
+            this.PARTY_B47.Name = "PARTY_B45";
+            this.PARTY_B46.Name = "PARTY_B44";
+            this.PARTY_B45.Name = "PARTY_B43";
+            this.PARTY_B44.Name = "PARTY_B42";
+            this.PARTY_B43.Name = "PARTY_B41";
+            this.PARTY_B42.Name = "PARTY_B40";
+            this.PARTY_B41.Name = "PARTY_B39";
+            this.PARTY_B40.Name = "PARTY_B38";
+            this.PARTY_B39.Name = "PARTY_B37";
+            this.PARTY_B38.Name = "PARTY_B36";
+            this.PARTY_B37.Name = "PARTY_B35";
+            this.PARTY_B36.Name = "PARTY_B34";
+            this.PARTY_B35.Name = "PARTY_B33";
+            this.PARTY_B34.Name = "PARTY_B32";
+            this.PARTY_B33.Name = "PARTY_B31";
+            this.PARTY_B32.Name = "PARTY_B30";
+            this.PARTY_B31.Name = "PARTY_B29";
+            this.PARTY_B30.Name = "PARTY_B28";
+            this.PARTY_B29.Name = "PARTY_B27";
+            this.PARTY_B28.Name = "PARTY_B26";
+            this.PARTY_B27.Name = "PARTY_B25";
+            this.PARTY_B26.Name = "PARTY_B24";
+            this.PARTY_B25.Name = "PARTY_B23";
+            this.PARTY_B24.Name = "PARTY_B22";
+            this.PARTY_B23.Name = "PARTY_B21";
+            this.PARTY_B22.Name = "PARTY_B20";
+            this.PARTY_B21.Name = "PARTY_B19";
+            this.PARTY_B20.Name = "PARTY_B18";
+            this.PARTY_B19.Name = "PARTY_B17";
+            this.PARTY_B18.Name = "PARTY_B16";
+            this.PARTY_B17.Name = "PARTY_B15";
+            this.PARTY_B16.Name = "PARTY_B14";
+            this.PARTY_D12.Name = "PARTY_W12";
+            this.PARTY_L_30_ITEM.Name = "PARTY_L_28_ITEM";
+            this.PARTY_L_30_ITEMICON.Name = "PARTY_L_28_ITEMICON";
+            this.PARTY_L_32_ITEM.Name = "PARTY_L_30_ITEM";
+            this.PARTY_L_32_ITEMICON.Name = "PARTY_L_30_ITEMICON";
+            this.PARTY_L_34_ITEM.Name = "PARTY_L_32_ITEM";
+            this.PARTY_L_34_ITEMICON.Name = "PARTY_L_32_ITEMICON";
+            this.PARTY_L_36_ITEM.Name = "PARTY_L_34_ITEM";
+            this.PARTY_L_36_ITEMICON.Name = "PARTY_L_34_ITEMICON";
+            this.PARTY_L_38_ITEM.Name = "PARTY_L_36_ITEM";
+            this.PARTY_L_38_ITEMICON.Name = "PARTY_L_36_ITEMICON";
+        }
+
 
         private void CHEAT_WEATHER_Click(object sender, EventArgs e)
         {

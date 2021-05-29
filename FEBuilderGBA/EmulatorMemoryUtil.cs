@@ -545,6 +545,34 @@ namespace FEBuilderGBA
             uint unitid = Program.ROM.u8(romUnitAddr + 4); //Unit.ID
             return U.ToHexString(unitid) + " " + FETextDecode.Direct(textid);
         }
+        public static string GetAIDUnitString(uint addr)
+        {
+            uint aid;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                aid = Program.RAM.u16(addr + 0x19);
+            }
+            else
+            {
+                aid = Program.RAM.u16(addr + 0x1B);
+            }
+            string aidString = EmulatorMemoryUtil.GetRAMUnitAIDToName(aid);
+            return aidString;
+        }
+        public static string GetRAMUnitStatus(uint addr)
+        {
+            uint state;
+            if (Program.ROM.RomInfo.version() == 6)
+            {//状態1,2だけ
+                state = Program.RAM.u16(addr + 0x0C);
+            }
+            else
+            {//状態1,2,3,4
+                state = Program.RAM.u32(addr + 0x0C);
+            }
+            string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
+            return stateString;
+        }
 
         public class AddressList
         {

@@ -1274,10 +1274,10 @@ Support 2
 Support 1
 
 :聖水松明
-Holy Water/Torch
+Holy&Torch
 
 :状態とターン
-State and Turn
+State&Turn
 
 :闇 EXP
 Dark EXP
@@ -1337,7 +1337,7 @@ Item ID 1
 Move +
 
 :同行者ID
-Rescue Peer ID
+AID
 
 :体格＋
 Con. +

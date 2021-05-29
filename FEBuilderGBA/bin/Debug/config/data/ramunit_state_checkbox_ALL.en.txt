@@ -3,7 +3,7 @@
 02=Already moved	This unit has already been acted on.\r\nIt is grayed out because it is a unit of action.
 03=Dead	This unit has died.
 04=Undeployed	This unit has not sorted out on stage.
-05=Rescuing someone	This unit is rescuing other units and holding it.
+05=Rescuing	This unit is rescuing other units and holding it.
 06=Rescued	This unit is in a state of being rescued.
 07=Cantoing	already performed an action
 08=Under a roof
@@ -22,7 +22,7 @@
 23=Super Arena2	Use it with Super Arena Mode.
 24=Super Arena Mode	If this and either Super Arena1 0r Super Arena2 is set,\r\nactivates a "super arena" with harder enemies and glitchy alternate text if you enter the arena
 25=Not Deployed Last Chapter
-26=Waiting for FE7 OOBB
+26=Waiting OOBB
 27=Unknown27
 28=Second portrait	Increase portrait index by 1
 //特性4
