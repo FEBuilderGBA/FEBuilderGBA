@@ -113,7 +113,7 @@ namespace FEBuilderGBA
         InputFormRef PROCS_InputFormRef;
         InputFormRef PARTY_InputFormRef;
 
-        const uint RAMUnitSizeOf = 72;
+        const uint RAMUnitSizeOf = 72; //構造体のサイズ
 
         void InitParty()
         {
@@ -123,8 +123,7 @@ namespace FEBuilderGBA
             PartyCombo.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             PartyCombo.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
 
-            this.UpdateCheckParty = new byte[RAMUnitSizeOf * (62)];
-            this.PartyListBox.OwnerDraw(DrawParty, DrawMode.OwnerDrawVariable, false);
+            this.PartyListBox.OwnerDraw(DrawParty, DrawMode.OwnerDrawFixed, false);
         }
         void InitFlag()
         {
@@ -488,9 +487,6 @@ namespace FEBuilderGBA
             }
             //木の更新.
             this.ProcsTree = tree;
-
-            //PROCツリーを再描画.
-            this.ProcsListBox.Invalidate();
 
             //個数が違うので変更があった
             this.ProcsListBox.DummyAlloc(tree.Count, this.ProcsListBox.SelectedIndex);
@@ -1934,18 +1930,19 @@ namespace FEBuilderGBA
 
 
 
-        byte[] UpdateCheckParty;
         void UpdateParty()
         {
             byte[] bin = Program.RAM.getBinaryData(
                   GetShowRAMPartyUnitsAddr()
-                , this.UpdateCheckParty.Length);
-            if (U.memcmp(this.UpdateCheckParty, bin) == 0)
+                , GetLimitRAMPartyUnits() * RAMUnitSizeOf);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum == this.UnitCheckSUM)
             {//変更なし
                 return;
             }
+
             //変更有
-            this.UpdateCheckParty = bin;
+            this.UnitCheckSUM = sum;
             bool isDetail = Party_ControlPanel.Visible;
 
             uint i = 0;
@@ -2176,13 +2173,13 @@ namespace FEBuilderGBA
             int partyComboSelectedIndex = this.PartyCombo.SelectedIndex;
             if (partyComboSelectedIndex == 1)
             {
-                return 0x20;
+                return 20;
             }
             if (partyComboSelectedIndex == 2)
             {
                 return 50;
             }
-            return (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            return 62;
         }
 
         private void Party_CloseButton_Click(object sender, EventArgs e)
@@ -2366,7 +2363,7 @@ namespace FEBuilderGBA
 
         private void CHEAT_ALL_PLAYER_UNIT_GROW_Click(object sender, EventArgs e)
         {
-            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint limit = 62;
             uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
             MultiUnitsGrow(addr, limit, growMovePower: true);
             InputFormRef.ShowWriteNotifyAnimation(this , 0);
@@ -2374,7 +2371,7 @@ namespace FEBuilderGBA
 
         private void CHEAT_ALL_UNIT_GROW_Click(object sender, EventArgs e)
         {
-            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint limit = 62;
             uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
             MultiUnitsGrow(addr, limit, growMovePower: true);
 
@@ -2393,7 +2390,7 @@ namespace FEBuilderGBA
         private void CHEAT_ALL_ENEMY_UNIT_HP_1_Click(object sender, EventArgs e)
         {
             uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address();
-            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint limit = 50;
             for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
             {
                 uint unitPointer = Program.RAM.u32(addr);
@@ -2413,7 +2410,7 @@ namespace FEBuilderGBA
         private void CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click(object sender, EventArgs e)
         {
             uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address();
-            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint limit = 50;
             for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
             {
                 uint unitPointer = Program.RAM.u32(addr);
@@ -2679,7 +2676,7 @@ namespace FEBuilderGBA
             if (sum != this.PaletteCheckSUM)
             {//変更有
                 this.PaletteCheckSUM = sum;
-                this.PartyListBox.Invalidate();
+                this.PaletteList.Invalidate();
             }
         }
         void UpdateWorldmap()
@@ -3158,6 +3155,7 @@ namespace FEBuilderGBA
         uint PaletteCheckSUM;
         uint[] SongIDBuffer;
         uint[] SongWorkingRAMs;
+        uint UnitCheckSUM;
         uint TrapCheckSUM;
         uint BWLCheckSUM;
         uint ClearTurnSUM;

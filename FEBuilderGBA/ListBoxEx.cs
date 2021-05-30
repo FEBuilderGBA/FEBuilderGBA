@@ -16,6 +16,10 @@ namespace FEBuilderGBA
         {
             this.IntegralHeight = false;
             this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.Opaque, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
 
         protected override void OnMeasureItem(MeasureItemEventArgs e)
