@@ -1357,7 +1357,7 @@ namespace FEBuilderGBA
         }
 
         //セリフの末尾に @0003 がなければ追加する.
-        string AutoAppend0x0003(string text)
+        static string AutoAppend0x0003(string text)
         {
             string trimtext = text.TrimEnd();
             string last = U.substr(trimtext, -5);
@@ -1739,7 +1739,7 @@ namespace FEBuilderGBA
             }
             return code.SrcText;
         }
-
+#if DEBUG
         public static void TEST_StripDrawSerifText()
         {//削っていいコードかどうか確認する.
             TextBlock code = new TextBlock();
@@ -1753,7 +1753,7 @@ namespace FEBuilderGBA
             string a = StripDrawSerifText(code);
             Debug.Assert(a == code.SrcText);
         }
-
+#endif //DEBUG
 
         void ShowFloatingControlpanel()
         {
@@ -2908,6 +2908,7 @@ namespace FEBuilderGBA
             bool FoundUnkownFont;
             bool IsMultiByte;
             bool HasAutoNewLine;
+            bool HasEnable3Line;
             OptionForm.textencoding_enum TextEncoding;
             OptionForm.lint_text_skip_bug_enum LintTextSkipBug;
 
@@ -2917,9 +2918,10 @@ namespace FEBuilderGBA
                 this.LintTextSkipBug = OptionForm.lint_text_skip_bug();
                 this.IsMultiByte = Program.ROM.RomInfo.is_multibyte();
                 this.HasAutoNewLine = CheckHasAutoNewLine(mainText);
+                this.HasEnable3Line = CheckEnable3LineTeqEscapeTeqTextEngineRework(mainText);
             }
 
-            bool CheckHasAutoNewLine(string text)
+            static bool CheckHasAutoNewLine(string text)
             {
                 if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
                 {//自動改行が入っている場合は、長さのチェックをしない
@@ -2932,6 +2934,19 @@ namespace FEBuilderGBA
                 }
                 return false;
             }
+            static bool CheckEnable3LineTeqEscapeTeqTextEngineRework(string text)
+            {
+                if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                {//Teqのテキストエンジンリワークの場合は、奴が使うコードを消す
+                    return text.IndexOf("@0080@002B@0003") >= 0;
+                }
+                return false;
+            }
+            static string RemoveEscapeTeqTextEngineRework(string text)
+            {
+                return RegexCache.Replace(text, "@0080@00(?:2(?:[689ABC]|(?:[7E]|(?:F@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F]|D)@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F])@00[0-9A-F][0-9A-F])|3[012345678])@00[0-9A-F][0-9A-F]", "");
+            }
+
 
             public CheckBlockResult CheckBlockBox(string text, int widthLimit, int heightLimit,bool isItemFont)
             {
@@ -2943,6 +2958,11 @@ namespace FEBuilderGBA
                 {//日本語の場合 (.+?)を消す. (ワイバーンナイト)とか
                     text = RegexCache.Replace(text, @"\(.+?\)", "");
                 }
+                if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                {//Teqのテキストエンジンリワークの場合は、奴が使うコードを消す
+                    text = RemoveEscapeTeqTextEngineRework(text);
+                }
+
                 this.FoundUnkownFont = false;
 
                 string[] blocks = text.Split(new string[] { "@0002", "@0004", "@0005", "@0006", "@0007" }, StringSplitOptions.RemoveEmptyEntries);
@@ -2979,13 +2999,6 @@ namespace FEBuilderGBA
                         {//設定により無視
                             continue;
                         }
-                        else if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.MoreThan4Lines)
-                        {//4行以上
-                            if (size.Height / 16 < 4)
-                            {
-                                continue;
-                            }
-                        }
                         else if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.DetectButExceptForVanilla)
                         {//検出するが、無改造ROMにある、もとからあるものは除く
                             if (IsOrignalBug(blocks[n], n, size))
@@ -2993,8 +3006,28 @@ namespace FEBuilderGBA
                                 continue;
                             }
                         }
+                        else if (this.LintTextSkipBug == OptionForm.lint_text_skip_bug_enum.MoreThan4Lines)
+                        {//4行以上
+                            if (size.Height / 16 < 4)
+                            {
+                                continue;
+                            }
+                        }
                         else
                         {//すべて検出する.
+                        }
+
+                        //除外ケース                      
+                        if (this.HasAutoNewLine)
+                        {//自動改行が入っている場合は、高さのチェックをしない
+                            continue;
+                        }
+                        else if (this.HasEnable3Line)
+                        {//高さ3行までOKの設定が入っているか
+                            if (size.Height / 16 <= 3)
+                            {//3行までならセーフ
+                                continue;
+                            }
                         }
 
                         this.ErrorString = R._("警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}", size.Width, size.Height, blocks[n]);
