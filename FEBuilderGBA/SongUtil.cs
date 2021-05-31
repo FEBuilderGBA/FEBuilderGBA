@@ -242,7 +242,7 @@ namespace FEBuilderGBA
                         track.codes.Add(new Code(addr, waitCount, b));
                         addr++;
                     }
-                    else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1)
+                    else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1 || b == 0xC2 || b == 0xC3 || b == 0xC4 || b == 0xC5 || b == 0xC8)
                     {
                         if (addr + 1 >= limitter)
                         {//終端を超えました.

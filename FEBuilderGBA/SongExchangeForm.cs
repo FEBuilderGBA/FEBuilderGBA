@@ -519,7 +519,7 @@ namespace FEBuilderGBA
                     }
                     ret.Add((byte)translated);
                 }
-                else if (b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1  )
+                else if (b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1 || b == 0xC2 || b == 0xC3 || b == 0xC4 || b == 0xC5 || b == 0xC8)
                 {
         			// These commands take a data byte that must not be processed.
                     ret.Add( (byte) U.u8(data,position) );

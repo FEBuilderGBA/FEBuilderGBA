@@ -54,7 +54,7 @@ namespace FEBuilderGBA
                 return "";
             }
             string name = this.SongInstrumentList[voice].name;
-            return U.skip(name," ").Trim();
+            return U.cut(name, " ", " (").TrimEnd();
         }
 
         public List<SongUtil.ChangeVoiceSt> GetChangeVoices()

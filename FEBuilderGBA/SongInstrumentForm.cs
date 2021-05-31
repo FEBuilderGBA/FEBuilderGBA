@@ -115,17 +115,19 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
+                    string hint2 = "(" + i.ToString() + ", " + SongUtil.getKeyCode((uint)i) + ")";
+
                     string fingerprint = SongInstrumentForm.FingerPrint(addr);
                     if (fingerprint != "")
                     {
                         InstrumentHintSt hint;
                         if (InstrumentHint.TryGetValue(fingerprint, out hint))
                         {
-                            return U.ToHexString(i) + " " + hint.name;
+                            return U.ToHexString(i) + " " + hint.name + " " + hint2;
                         }
                     }
                     uint type = Program.ROM.u8(addr);
-                    return U.ToHexString(i) + " " + GetInstrumentTypeName(type);
+                    return U.ToHexString(i) + " " + GetInstrumentTypeName(type) + " " + hint2;
                 }
                 );
         }

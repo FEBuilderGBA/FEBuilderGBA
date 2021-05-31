@@ -38,9 +38,10 @@ namespace FEBuilderGBA
         }
         string GetVoiceName(SongUtil.ChangeVoiceSt v)
         {
-            return R._("楽器 {0}({1}) -> {2}({3})"
+            return R._("楽器 {0}({1}) -> {2}({3}) #{4}"
                 , v.from, GetVoiceName(v.from)
                 , v.to, GetVoiceName(v.to)
+                , U.To0xHexString(v.to)
                 );
         }
         string GetVoiceName(int voice)
@@ -50,7 +51,7 @@ namespace FEBuilderGBA
                 return "";
             }
             string name = this.SongInstrumentList[voice].name;
-            return U.skip(name," ").Trim();
+            return U.cut(name, " ", " (").TrimEnd();
         }
 
         public List<SongUtil.ChangeVoiceSt> GetChangeVoices()
