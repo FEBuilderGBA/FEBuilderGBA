@@ -151,6 +151,21 @@ namespace FEBuilderGBA
             MapPictureBox.SetDefualtIcon(
                 MapSettingForm.DrawMapChange(mapid, width, height, change_address)
             );
+            if (!U.isSafetyPointer(change_address))
+            {
+                if (change_address == 0)
+                {
+                    N_J_8.ErrorMessage = R._("データが設定されていません。マップエディタから、データを作成してください。");
+                }
+                else
+                {
+                    N_J_8.ErrorMessage = R._("ポインタが正しくありません");
+                }
+            }
+            else
+            {
+                N_J_8.ErrorMessage = "";
+            }
         }
 
         public class ChangeSt
@@ -492,23 +507,6 @@ namespace FEBuilderGBA
                 uint width = Program.ROM.u8(3 + addr);
                 uint height = Program.ROM.u8(4 + addr);
                 uint pointer = Program.ROM.u32(8 + addr);
-
-//マップ変化を使いまわしているところが軒並みエラーになるのでやめておこう...
-//                if (x + width > mapwidth)
-//                {
-//                    errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-//                        , R._("マップ変化({0})の幅(X:{1} Width:{2})は、マップの幅({3})より大きいです", number, x , width, mapwidth)));
-//                }
-//                if (y + height > mapheight)
-//                {
-//                    if (isFE6 && mapid == 0x28 && addr == 0x687A94)
-//                    {
-//                        //FE6にはマップ変化リストを間違えて指定している場所があるので無視する.
-//                        continue;
-//                    }
-//                    errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                //                        , R._("マップ変化({0})の高さ(Y:{1} Height:{2})は、マップの高さ({3})より大きいです", U.To0xHexString(number), y, height, mapheight)));
-//                }
 
                 if (pointer == 0)
                 {//マップ変化ポインタ 0 を容認する.

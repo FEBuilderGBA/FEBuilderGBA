@@ -35,6 +35,11 @@ namespace FEBuilderGBA
         void ScanMods(string path)
         {
             Mods = new List<ModSt>();
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return;
+            }
+
             string lang = OptionForm.lang();
 
             string[] files;

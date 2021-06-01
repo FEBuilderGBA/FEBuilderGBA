@@ -321,7 +321,6 @@ namespace FEBuilderGBA
             {
                 text = decoder.huffman_decode(addr, out datasize);
             }
-
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = (uint)datasize;

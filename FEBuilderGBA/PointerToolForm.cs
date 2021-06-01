@@ -299,6 +299,11 @@ namespace FEBuilderGBA
         //名前で探索する
         bool SearchASMMap()
         {
+            if (this.OtherROMASMMap == null)
+            {
+                return false;
+            }
+
             string name = Program.AsmMapFileAsmCache.GetName(this.CurrentPointer);
             uint foundAddr = this.OtherROMASMMap.SearchName(name);
             if (foundAddr == U.NOT_FOUND)

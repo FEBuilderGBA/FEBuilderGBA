@@ -388,8 +388,7 @@ namespace FEBuilderGBA
 
 
             //範囲外探索 00 00 00 00 が続く限り検索してみる.
-            uint more = Program.ROM.getBlockDataCount(addr + length, 4
-                , (i, p) => { return Program.ROM.u32(p) == 0x00000000; }) * 4;
+            uint more = MoveToFreeSapceForm.SearchOutOfRange(addr + length);
 
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;

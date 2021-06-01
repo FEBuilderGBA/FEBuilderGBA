@@ -30,7 +30,7 @@ B1:$COMBO isPromoted.combo.en.txt:.zh=isPromoted
 W2:DECIMAL=BWL wins >=
 D4:DECIMAL=Gold >=
 W8:FLAG=CheckFlag(0=ANY)
-D12:EVENT=RunEvent(0=None)
+P12:EVENT=RunEvent(0=None)
 
 NAME.en=Set the Super Arena status flag when you win in Arena(Editor)
 INFO.en=Set the Super Arena flag when all conditions are met.\r\nThe default is to set the Super Arena flag on the unit if it is senior level 20 and has 10 or more wins in the battle history and the party has 1000 gold or more.\r\n\r\nWhen the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.

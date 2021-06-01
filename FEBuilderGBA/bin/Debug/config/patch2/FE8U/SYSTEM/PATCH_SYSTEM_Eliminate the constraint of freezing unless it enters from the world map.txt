@@ -1,6 +1,6 @@
-NAME=フリーマップから入らないとフリーズする制約を消す(Remove World Map Completely)
-NAME.en=Skip World Map Fix (Remove World Map Completely)
-NAME.zh=Skip World Map Fix (Remove World Map Completely)
+NAME=フリーマップから入らないとフリーズする制約を消す(Disable Skirmishes & World Map)
+NAME.en=Skip World Map Fix (Disable Skirmishes & World Map)
+NAME.zh=Skip World Map Fix (Disable Skirmishes & World Map)
 
 //アドレスパッチとして実装します
 TYPE=SWITCH
@@ -26,4 +26,4 @@ OFF:0x897C4=0x33 0xF0 0x26 0xFC
 INFO=FE8には、イベント命令の次のマップへ移動する命令を使っても、移動できないマップが存在します。\r\nいくつかのマップは、ワールドマップからしか移動できません。\r\nそれらのマップにワールドマップ以外から移動するとゲームがクラッシュします。\r\nこのパッチは、その制限を解除します。\r\nすべてのマップに移動できるようにします。\r\nFE8でも、ワールドマップを利用しないFE7のように利用することができます。\r\n
 INFO.zh=即使您使用该指令移至事件命令的下一个地图，也有一张地图无法移至FE 8。\r\n一些地图只能从世界地图上移动。\r\n如果你从世界地图以外的地图移动到这些地图，游戏将会崩溃。\r\n此修补程序释放其限制。\r\n移至所有地图。\r\n即使在FE 8中，也可以像FE 7那样使用，而不使用世界地图。\r\n
 INFO.en=Toggles whether certain chapters must be entered via the World Map (Default) or if they can skip the map (Patched)\r\nBy default, the game crashes when attempting to skip the world map for incompatable chapters.\r\nThis patch removes the limitation and allows direct jumping to all maps.\r\nThis allows FE8 to have a campaign without a world map like FE6/7.\r\nFix MNC2 Freezing glitch (breaks skirmishes!)
-
+HINT=MNC2 worldmap

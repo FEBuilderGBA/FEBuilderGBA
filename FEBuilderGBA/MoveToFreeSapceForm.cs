@@ -454,12 +454,69 @@ namespace FEBuilderGBA
                 {//未知の衝突防止
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
+                uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer());
+                if (a >= addr && a < addr + newSize)
+                {
+                    return SearchFreeSpaceOneLow(newSize, addr + 0x100);
+                }
+                a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer());
+                if (a >= addr && a < addr + newSize)
+                {
+                    return SearchFreeSpaceOneLow(newSize, addr + 0x100);
+                }
 
                 return addr + LTRIM_SPACE_SIZE;
             }
 
             return AppendEndOfFile(newSize);
         }
+        static bool IsConflictCheck(uint addr)
+        {
+            if (ImageUtilMagic.IsMagicArea(ref addr))
+            {//魔法領域として使われているならだめ
+                return true;
+            }
+            if (IsSkillReserve(ref addr))
+            {
+                return true;
+            }
+            if (EventUnitForm.IsEventUnitReserve(ref addr))
+            {
+                return true;
+            }
+            //                if (IsTextAreaReserrve(ref addr))
+            //                {
+            //                    return break;
+            //                }
+            uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer());
+            if (a == addr)
+            {
+                return true;
+            }
+            a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer());
+            if (a == addr)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static uint SearchOutOfRange(uint startaddr)
+        {
+            uint addr = startaddr;
+            for (; addr + 4 < Program.ROM.Data.Length; addr += 4)
+            {
+                if (Program.ROM.u32(addr) != 0)
+                {
+                    break;
+                }
+                if (IsConflictCheck(addr))
+                {
+                    break;
+                }
+            }
+            return addr - startaddr;
+        }
+
         static uint AppendEndOfFile(uint newSize)
         {
             //末尾

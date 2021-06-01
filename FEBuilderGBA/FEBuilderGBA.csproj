@@ -2070,6 +2070,13 @@
     <Compile Include="SMEPromoListForm.Designer.cs">
       <DependentUpon>SMEPromoListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ROMFE0.cs" />
+    <Compile Include="MainFE0Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFE0Form.Designer.cs">
+      <DependentUpon>MainFE0Form.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3063,6 +3070,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMEPromoListForm.resx">
       <DependentUpon>SMEPromoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFE0Form.resx">
+      <DependentUpon>MainFE0Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

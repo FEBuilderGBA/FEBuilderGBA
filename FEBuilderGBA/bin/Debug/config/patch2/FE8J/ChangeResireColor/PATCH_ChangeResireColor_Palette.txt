@@ -31,4 +31,4 @@ PatchImage_ZTSA=0x5FFEA4
 LISTNAME=$COMBO Color.combo.txt
 
 //データを定義します
-D0:PatchImage_PALETTE=Palette Pointer
+P0:PatchImage_PALETTE=Palette

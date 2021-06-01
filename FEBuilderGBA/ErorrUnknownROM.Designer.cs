@@ -37,6 +37,7 @@
             this.FE8JButton = new System.Windows.Forms.Button();
             this.FE7JButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.FE0Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -130,12 +131,23 @@
             this.label12.Text = "このROMには規定のバージョン情報がありません。\r\nこれは正しいGBAFEのROMですか？\r\nもし、GBAFEのROMであれば、バージョンを指定してください。\r\n" +
     "";
             // 
+            // FE0Button
+            // 
+            this.FE0Button.Location = new System.Drawing.Point(17, 657);
+            this.FE0Button.Name = "FE0Button";
+            this.FE0Button.Size = new System.Drawing.Size(821, 66);
+            this.FE0Button.TabIndex = 26;
+            this.FE0Button.Text = "それ以外として読み込む";
+            this.FE0Button.UseVisualStyleBackColor = true;
+            this.FE0Button.Click += new System.EventHandler(this.FE0Button_Click);
+            // 
             // ErorrUnknownROM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.MyCancelButton;
-            this.ClientSize = new System.Drawing.Size(850, 682);
+            this.ClientSize = new System.Drawing.Size(850, 785);
+            this.Controls.Add(this.FE0Button);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.FE7JButton);
             this.Controls.Add(this.FE8JButton);
@@ -147,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ErorrUnknownROM";
             this.Text = "不明なバージョンのROM";
+            this.Load += new System.EventHandler(this.ErorrUnknownROM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Button FE8JButton;
         private System.Windows.Forms.Button FE7JButton;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button FE0Button;
     }
 }

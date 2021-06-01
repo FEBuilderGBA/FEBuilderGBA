@@ -1525,6 +1525,9 @@ Load as Japanese Version FE7J
 :このROMには規定のバージョン情報がありません。\r\nこれは正しいGBAFEのROMですか？\r\nもし、GBAFEのROMであれば、バージョンを指定してください。\r\n
 Could not find version information in this ROM.\r\nIs this really a GBA FE ROM?\r\nIf you're sure it is, you can specify the version.\r\n
 
+:それ以外として読み込む
+Read as otherwise.
+
 :以下のエラーが発生しました。
 The following error occurred.
 
@@ -5713,50 +5716,8 @@ Copy to Clipboard
 :ログディレクトリを開く
 Open Log Directory
 
-:メニューコマンド
-Menu Commands
-
-:地形名前
-Tile Names
-
 :ソングテーブル
 Song Table
-
-:サウンドルーム
-Sound Room
-
-:符号テーブル
-Font Table
-
-:交戦セリフ
-Battle Quotes
-
-:特効効果
-Weapon Effectiveness
-
-:間接エフェクト
-Magic Animations
-
-:支援効果
-Affinity Support Boosts
-
-:支援会話
-Support Convos
-
-:支援相手
-Supporting partner
-
-:文字列
-Text Editor
-
-:マップポインタ
-MAP PLIST Editor
-
-:マップ設定
-Chapter Editor
-
-:ユニット能力
-Character Editor
 
 :テスト実行(F5)
 RunTest(F5)
@@ -5778,9 +5739,6 @@ Save As UPS Patch
 
 :プロジェクト名の変更
 Change Project Name
-
-:問題報告ツール
-Create Report Issue
 
 :終了
 End
@@ -5818,48 +5776,6 @@ Run in Program 3
 :任意のプログラムで開く
 Run in External Program
 
-:作品支援
-Work support
-
-:ツール
-Tools
-
-:UNDO 操作の取り消し
-Revision History
-
-:パッチ
-Patches
-
-:別ROMから曲のインポート
-Import Song From Another ROM
-
-:比較デバッグツール
-Difference Debug Tool
-
-:動作中のエミュレータへ接続
-Emulator Debug Tool
-
-:ログ
-Log
-
-:利用フラグ一覧
-Usage flag list
-
-:フラグ設定
-Event Flag Namer
-
-:Event Assemblerでイベントのエクスポート
-Export events in Event Assembler
-
-:LZ77ツール
-LZ77 Tool
-
-:Diffツール
-Diff Tool
-
-:ポインタ計算ツール
-Pointer Calculator
-
 :設定
 Settings
 
@@ -5880,6 +5796,99 @@ Discord Community URL
 
 :バージョン
 Version
+
+:ポインタ計算ツール
+Pointer Calculator
+
+:EAで追加
+Insert EA
+
+:別ROMから曲のインポート
+Import Song From Another ROM
+
+:比較デバッグツール
+Difference Debug Tool
+
+:ログ
+Log
+
+:LZ77ツール
+LZ77 Tool
+
+:Diffツール
+Diff Tool
+
+:ツール
+Tools
+
+:詳細メニュー
+Advanced Editors
+
+:メニューコマンド
+Menu Commands
+
+:地形名前
+Tile Names
+
+:サウンドルーム
+Sound Room
+
+:符号テーブル
+Font Table
+
+:交戦セリフ
+Battle Quotes
+
+:特効効果
+Weapon Effectiveness
+
+:間接エフェクト
+Magic Animations
+
+:支援効果
+Affinity Support Boosts
+
+:支援会話
+Support Convos
+
+:支援相手
+Supporting partner
+
+:文字列
+Text Editor
+
+:マップポインタ
+MAP PLIST Editor
+
+:マップ設定
+Chapter Editor
+
+:ユニット能力
+Character Editor
+
+:問題報告ツール
+Create Report Issue
+
+:作品支援
+Work support
+
+:UNDO 操作の取り消し
+Revision History
+
+:パッチ
+Patches
+
+:動作中のエミュレータへ接続
+Emulator Debug Tool
+
+:利用フラグ一覧
+Usage flag list
+
+:フラグ設定
+Event Flag Namer
+
+:Event Assemblerでイベントのエクスポート
+Export events in Event Assembler
 
 :マップ変化
 Tile Changes
@@ -5925,9 +5934,6 @@ AI stealing priority
 
 :EAでエクスポート
 Export with EA
-
-:EAで追加
-Insert EA
 
 :上記以外に、次のパッチが見つかりました。(パッチには不安定なものもあるので、注意してください。)
 In addition to the above, the next patch was found.(Some patches are unstable, so please be careful)
@@ -5976,9 +5982,6 @@ Simple Menu
 
 :地形設定
 Terrain Editor
-
-:詳細メニュー
-Advanced Editors
 
 :ボスBGM
 Boss BGM
@@ -6757,17 +6760,17 @@ Cloak setting
 :よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。
 If you're not sure, don't change this setting.\r\nIt causes a bug.
 
+:データが設定されていません。マップエディタから、データを作成してください。
+No data has been set.Create the data from the map editor.
+
+:ポインタが正しくありません
+The pointer is incorrect.
+
 :マップ変化({0})のIDが重複しています
 ID of tile change ({0}) is duplicated
 
 :マップ変化({0})のIDが、0x7Fを超えています。\r\nマップ変化IDは、0x7F以下でなければなりません。
 Map tile ({0}) ID is over 0x7F.\r\nTile change ID must be less than or equal to 0x7F.
-
-:マップ変化({0})の幅(X:{1} Width:{2})は、マップの幅({3})より大きいです
-Width of tile change ({0}) (X: {1}Width: {2}) is greater than the width of the map ({3})
-
-:マップ変化({0})の高さ(Y:{1} Height:{2})は、マップの高さ({3})より大きいです
-The height of the tile change ({0}) (Y: {1}Height: {2}) is greater than the height of the map ({3})
 
 :マップ変化({0})のポインタ({1})が危険です。
 Pointer ({1}) of tile change ({0}) is dangerous.
@@ -10441,9 +10444,6 @@ Adds the specified value to the overall tempo of all tracks.\r\nThe higher the n
 :全トラックの変更
 Change All Tracks
 
-:楽器 {0}({1}) -> {2}({3})
-Instrument {0} ({1})-> {2} ({3}).
-
 :このトラックのPANに、指定された値を足します。\r\nマイナスは左側、プラスは右側です。
 Adds the specified value to the overall stereo panning of this track.\r\nMinus = Left Speaker ; Plus = Right Speaker
 
@@ -11207,7 +11207,7 @@ New Addition
 Source Text
 
 :未参照の空き領域の探索
-Search for u\Unreferenced Free Space
+Search for Unreferenced Free Space
 
 :ID テキスト
 Text ID

@@ -14,7 +14,7 @@ namespace FEBuilderGBA
         public ErorrUnknownROM()
         {
             InitializeComponent();
-            this.ResultVersion = "";
+            this.ResultVersion = "NAZO";
         }
 
         string ResultVersion;
@@ -65,10 +65,21 @@ namespace FEBuilderGBA
             this.ResultVersion = "FE7J";
             this.Close();
         }
+        private void FE0Button_Click(object sender, EventArgs e)
+        {
+            this.ResultVersion = "NAZO";
+            this.Close();
+        }
 
         private void MyCancelButton_Click_1(object sender, EventArgs e)
         {
+            this.ResultVersion = "";
+        }
+
+        private void ErorrUnknownROM_Load(object sender, EventArgs e)
+        {
 
         }
+
     }
 }

@@ -15,6 +15,10 @@ namespace FEBuilderGBA
         AsmMapFile MakeInstant()
         {
             AsmMapFile map = new AsmMapFile();
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return map;
+            }
 
             {
                 List<Address> list = new List<Address>();
@@ -299,6 +303,11 @@ namespace FEBuilderGBA
 
         public AsmMapFile GetAsmMapFile(bool rebuild = false)
         {
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                CachedMAP = MakeInstant(); //すぐに結果を返せるものだけを作り
+                return CachedMAP;
+            }
             if (CachedMAP == null)
             {//一番最初はデータがないので、
                 CachedMAP = MakeInstant(); //すぐに結果を返せるものだけを作り

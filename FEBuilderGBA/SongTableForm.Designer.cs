@@ -37,6 +37,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.L_0_CHECKADDRESS = new FEBuilderGBA.TextBoxEx();
             this.panel9 = new System.Windows.Forms.Panel();
             this.X_REF = new FEBuilderGBA.ListBoxEx();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.J_ID_SONGTRACK = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.SoundRommPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.J_ID_SOUNDROOM = new System.Windows.Forms.Label();
             this.SONGPLAY = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.L_0_CHECKADDRESS = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -77,7 +77,7 @@
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.SoundRommPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -189,7 +189,7 @@
             this.panel4.Controls.Add(this.L_4_COMBO);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.SoundRommPanel);
             this.panel4.Controls.Add(this.SONGPLAY);
             this.panel4.Controls.Add(this.D4);
             this.panel4.Controls.Add(this.J_4);
@@ -201,6 +201,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(963, 711);
             this.panel4.TabIndex = 80;
+            // 
+            // L_0_CHECKADDRESS
+            // 
+            this.L_0_CHECKADDRESS.ErrorMessage = "";
+            this.L_0_CHECKADDRESS.Location = new System.Drawing.Point(357, 2);
+            this.L_0_CHECKADDRESS.Name = "L_0_CHECKADDRESS";
+            this.L_0_CHECKADDRESS.Placeholder = "";
+            this.L_0_CHECKADDRESS.Size = new System.Drawing.Size(316, 25);
+            this.L_0_CHECKADDRESS.TabIndex = 203;
             // 
             // panel9
             // 
@@ -340,15 +349,15 @@
             this.J_ID_SONGTRACK.TabIndex = 1;
             this.J_ID_SONGTRACK.Text = "ソングヘッダーへ";
             // 
-            // panel1
+            // SoundRommPanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.J_ID_SOUNDROOM);
-            this.panel1.Location = new System.Drawing.Point(3, 205);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(667, 128);
-            this.panel1.TabIndex = 187;
+            this.SoundRommPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SoundRommPanel.Controls.Add(this.label1);
+            this.SoundRommPanel.Controls.Add(this.J_ID_SOUNDROOM);
+            this.SoundRommPanel.Location = new System.Drawing.Point(3, 205);
+            this.SoundRommPanel.Name = "SoundRommPanel";
+            this.SoundRommPanel.Size = new System.Drawing.Size(667, 128);
+            this.SoundRommPanel.TabIndex = 187;
             // 
             // label1
             // 
@@ -562,15 +571,6 @@
             this.panel2.Size = new System.Drawing.Size(963, 741);
             this.panel2.TabIndex = 148;
             // 
-            // L_0_CHECKADDRESS
-            // 
-            this.L_0_CHECKADDRESS.ErrorMessage = "";
-            this.L_0_CHECKADDRESS.Location = new System.Drawing.Point(357, 2);
-            this.L_0_CHECKADDRESS.Name = "L_0_CHECKADDRESS";
-            this.L_0_CHECKADDRESS.Placeholder = "";
-            this.L_0_CHECKADDRESS.Size = new System.Drawing.Size(316, 25);
-            this.L_0_CHECKADDRESS.TabIndex = 203;
-            // 
             // SongTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -595,8 +595,8 @@
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SoundRommPanel.ResumeLayout(false);
+            this.SoundRommPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -637,7 +637,7 @@
         private System.Windows.Forms.Label J_ID_INSTRUMENT_SONGID;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel SoundRommPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;

@@ -26,7 +26,7 @@ PatchImage_ZIMAGE=0x6F59C
 LISTNAME=$COMBO Color.combo.txt
 
 //データを定義します
-D0:PatchImage_PALETTE=Palette Pointer
+P0:PatchImage_PALETTE=Palette
 
 NAME.en=Change the color of runes in battle animations(PaletteList)
 INFO.en=Changes the color of the magic circle of runes in battle animations.\r\nChanges the color of the magic circle rules drawn when activating magic in the wizard and sage battle animations.\r\nDefaults to always blue, but can be changed to a different color for each item or affiliation.

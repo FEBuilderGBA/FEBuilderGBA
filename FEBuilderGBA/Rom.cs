@@ -478,6 +478,11 @@ namespace FEBuilderGBA
             {
                 return true;
             }
+            if (version == "NAZO")
+            {
+                this.RomInfo = new ROMFE0();
+                return true;
+            }
             return false;
         }
         public bool Load(string name,out string version)
@@ -523,6 +528,10 @@ namespace FEBuilderGBA
             else if (forceversion.IndexOf("FE6") >= 0)
             {
                 version = new ROMFE6JP().game_id();
+            }
+            else if (forceversion.IndexOf("NAZO") >= 0)
+            {
+                version = new ROMFE0().game_id();
             }
             else
             {

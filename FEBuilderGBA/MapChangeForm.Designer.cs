@@ -39,7 +39,7 @@
             this.N_L_5_FLAG = new FEBuilderGBA.TextBoxEx();
             this.N_J_6 = new System.Windows.Forms.Label();
             this.N_P8 = new System.Windows.Forms.NumericUpDown();
-            this.N_J_8 = new System.Windows.Forms.Label();
+            this.N_J_8 = new FEBuilderGBA.LabelEx();
             this.N_B7 = new System.Windows.Forms.NumericUpDown();
             this.N_J_7 = new System.Windows.Forms.Label();
             this.N_B5 = new System.Windows.Forms.NumericUpDown();
@@ -873,7 +873,7 @@
         private MapPictureBox MapPictureBox;
         private System.Windows.Forms.Button N_ReloadListButton;
         private System.Windows.Forms.NumericUpDown N_P8;
-        private System.Windows.Forms.Label N_J_8;
+        private FEBuilderGBA.LabelEx N_J_8;
         private System.Windows.Forms.NumericUpDown N_B7;
         private System.Windows.Forms.Label N_J_7;
         private System.Windows.Forms.NumericUpDown N_B5;

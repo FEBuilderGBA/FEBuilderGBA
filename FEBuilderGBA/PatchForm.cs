@@ -105,6 +105,10 @@ namespace FEBuilderGBA
         static List<PatchSt> ScanPatchs(string path, bool isScanOnly)
         {
             List<PatchSt> patchs = new List<PatchSt>();
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return patchs;
+            }
 
             try
             {
@@ -6378,7 +6382,7 @@ namespace FEBuilderGBA
                         {
                             uint len = atOffset(patch.Param, "PALETTE", "1") * 0x20;
                             FEBuilderGBA.Address.AddAddress(list, a, len, p
-                                , patchname + " PALETTE " + n, Address.DataTypeEnum.LZ77PAL);
+                                , patchname + " PALETTE " + n, Address.DataTypeEnum.PAL);
                         }
                     }
                     else if (type == "AP")

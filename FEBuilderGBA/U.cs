@@ -453,6 +453,7 @@ namespace FEBuilderGBA
             return '"' + str + '"';
         }
 
+        [MethodImpl(256)]
         public static bool isPadding4(uint a)
         {
             return a % 4 == 0;
@@ -5584,7 +5585,12 @@ namespace FEBuilderGBA
         {
             if (!File.Exists(filename))
             {
-                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}",filename.Replace("_ALL.txt","_*.txt"));
+                if (Program.ROM.RomInfo.version() == 0)
+                {//FEでないので読めなくてもいい
+                    return false;
+                }
+
+                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}", filename.Replace("_ALL.txt", "_*.txt"));
                 Debug.Assert(false);
                 return false;
             }

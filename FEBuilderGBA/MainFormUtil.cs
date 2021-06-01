@@ -581,6 +581,10 @@ namespace FEBuilderGBA
             {//自動的に接続しない.
                 return;
             }
+            if (Program.ROM.RomInfo.version() == 0)
+            {//未知のバージョンなので接続できない
+                return;
+            }
             //自動接続する.
             EmulatorMemoryForm f = (EmulatorMemoryForm)InputFormRef.JumpFormLow<EmulatorMemoryForm>();
             f.Show();
@@ -1935,7 +1939,6 @@ namespace FEBuilderGBA
         public static void ApplySearchFilter(string filter, Control controlPanel,PatchMainFilter patchMainFilter, ToolTipEx tooltip)
         {
             Debug.Assert(controlPanel != null);
-            Debug.Assert(patchMainFilter != null);
 
             if (filter == "")
             {
@@ -1943,7 +1946,10 @@ namespace FEBuilderGBA
                 {
                     controlPanel.Controls[i].Show();
                 }
-                patchMainFilter.ApplyFilter("", false, tooltip);
+                if (patchMainFilter != null)
+                {
+                    patchMainFilter.ApplyFilter("", false, tooltip);
+                }
             }
             else
             {
@@ -1971,7 +1977,10 @@ namespace FEBuilderGBA
                     }
                     c.Hide();
                 }
-                patchMainFilter.ApplyFilter(filter, isJP, tooltip);
+                if (patchMainFilter != null)
+                {
+                    patchMainFilter.ApplyFilter(filter, isJP, tooltip);
+                }
             }
 
             

@@ -270,6 +270,11 @@ namespace FEBuilderGBA
 
         public static Form MainForm()
         {
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return InputFormRef.JumpFormLow<MainFE0Form>();
+            }
+
             if (OptionForm.first_form() == OptionForm.first_form_enum.EASY 
                 && U.stringbool(U.at(ArgsDic, "--force-detail","0")) == false )
             {

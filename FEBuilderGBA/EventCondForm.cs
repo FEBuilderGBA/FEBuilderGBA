@@ -1049,6 +1049,11 @@ namespace FEBuilderGBA
         {
             foreach (var f in changeList)
             {
+                if (! U.isSafetyOffset(f.addr))
+                {
+                    continue;
+                }
+                
                 if (x >= f.x && x <= f.x + f.width && y >= f.y && y <= f.y + f.height)
                 {//タイル変化がある
                     return true;

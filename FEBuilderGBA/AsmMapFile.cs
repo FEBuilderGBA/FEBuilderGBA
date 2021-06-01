@@ -12,6 +12,11 @@ namespace FEBuilderGBA
     {
         public AsmMapFile()
         {
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return;
+            }
+
             string asmmap;
             asmmap = U.ConfigDataFilename("asmmap_addition_", Program.ROM);
             if (File.Exists(asmmap))

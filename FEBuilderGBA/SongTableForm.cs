@@ -22,6 +22,13 @@ namespace FEBuilderGBA
             this.X_REF.ItemHeight = (int)(this.X_REF.Font.Height * 2.4);
             this.X_REF.OwnerDraw(InputFormRef.DrawRefTextList, DrawMode.OwnerDrawFixed, false);
             //            this.Icon = Properties.Resources.icon_music;
+
+            if (Program.ROM.RomInfo.version() == 0)
+            {//未知のバージョンだとサウンドルームを出せない
+                SoundRommPanel.Hide();
+                this.X_REF.Hide();
+            }
+
         }
 
         public static uint GetSoundTablePointer()
@@ -32,7 +39,7 @@ namespace FEBuilderGBA
             {
                 return p;
             }
-            p = SongExchangeForm.FindSongTablePointer(Program.ROM.Data);
+            p = SongUtil.FindSongTablePointer(Program.ROM.Data);
             if (U.isSafetyOffset(p))
             {
                 a = Program.ROM.u32(p);
@@ -80,8 +87,12 @@ namespace FEBuilderGBA
 
         public static string GetSongName(uint song_id)
         {
-            InputFormRef InputFormRef = Init(null);
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return "";
+            }
 
+            InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(song_id);
             return GetSongNameFast(song_id, addr);
         }
@@ -379,6 +390,11 @@ namespace FEBuilderGBA
         }
         void UpdateRef(uint id)
         {
+            if (Program.ROM.RomInfo.version() == 0)
+            {
+                return;
+            }
+
             bool r = InputFormRef.UpdateRef(this.X_REF, id, UseValsID.TargetTypeEnum.SONG);
             if (r == false)
             {

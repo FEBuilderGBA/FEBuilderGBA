@@ -23,7 +23,7 @@ LISTNAME=$B0:UNIT
 B0:UNIT=Unit1
 B1:UNIT=Unit2
 W2=00
-D4:EVENT=RunEvent
+P4:EVENT=RunEvent
 
 NAME.en=Make any event work in Support(Editor)
 INFO.en=If it is not listed, the default behavior will be used.\r\nIf BGM is 0, the default BGM will be used.\r\nIf Event is 0, the default event (0x085B9DD4(FE8J)) will be used.\r\nThis setting is only for support events in the game, not the content in the support conversation room.\r\nSlot2 BGMID\r\nSlot3 TextID used for conversation.\r\n\r\nThis patch allows you to make any event other than the default event work in Support.\r\n
