@@ -2507,8 +2507,6 @@ r3=X tile position of menu of the right	{U}
 
 080B5110	Cleared Japanese menu loading routine	{J}
 
-081B1878	:081B258C	Cleared beta class list	{J}
-081B258C	:081D3910	Cleared FE6 credits	{J}
 02022AA8	:02022CA7	start of OAM palette buffer
 08048198	名称输入事件	{J}
 08048280	名称输入事件	{U}

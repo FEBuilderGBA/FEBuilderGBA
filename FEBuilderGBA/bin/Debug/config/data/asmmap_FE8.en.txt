@@ -2115,8 +2115,7 @@ r3=X tile position of menu of right	{U}
 080564F0	Special movement of tiles?Called from C26 / C27	r1=Pointer array 1	r2=Pointer array 1	r3=??	{J}
 08055554	Special movement of tiles?Called from C26 / C27	r1=Pointer array 1	r2=Pointer array 1	r3=??	{U}
 081B16E0	:081B1878	Japanese notation of terrain	{J}
-081B1878	:081B258C	terrain and name of character are entered in ASCII	{J}
-081B258C	:081B2C80	staff role is entered in ASCIINot used	{J}
+081B1878	:081B258C	Terrain and character names are entered in ASCII	{J}
 081B2C80	:081B2D84	String of MAPIDNot used	{J}
 081C1D28	:081C1EC0	Japanese notation of terrain	{U}
 081C1EC0	:081C2BD4	terrain and name of character are entered in ASCII	{U}
@@ -2574,8 +2573,6 @@ r3=X tile position of menu of right	{U}
 
 080B5110	Cleared Japanese menu loading routine	{J}
 
-081B1878	:081B258C	Cleared beta class list	{J}
-081B258C	:081D3910	Cleared FE6 credits	{J}
 02022AA8	:02022CA7	start of OAM palette buffer
 08048198	Name input event	{J}
 08048280	Name input event	{U}

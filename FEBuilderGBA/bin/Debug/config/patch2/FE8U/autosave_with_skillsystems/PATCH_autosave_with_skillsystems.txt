@@ -1,0 +1,24 @@
+NAME=オートセーブ機能(SkillSystems対応)
+NAME.en=Auto save function(with SkillSystems)
+TYPE=EA
+TAG=#EVENT
+EA=EA.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x154F6=0x23 0x48 0xC0 0x7B 0x00 0x28 0x05 0xD1 0x0F 0x49 0x09 0x20 0x88 0x75 0x03 0x20 0x90 0xF0 0x9F 0xFA 0x00 0xBD
+
+INFO=中断から再開した時に、直前の行動ではなく、ターン開始時に戻れるようにします。\r\nオリジナルのバージョンは地形オプションを乗っ取ることで、プレイヤーが切り換えられるようにしますが、このバージョンではそれはありません。\r\nこのパッチをインストールだけで有効になります。
+
+
+
+AUTHOR=7743,aera,FE8 Girls
+INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
+
+
+NAME.zh=自动保存功能(with SkillSystems)
+INFO.zh=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
+
+CONFLICT_IF:0x1553C=0x58 0xA9 0x03 0x02
+CONFLICT_MESSAGE=AutoSave
+
+HINT=EMS wait 1 turn rewind

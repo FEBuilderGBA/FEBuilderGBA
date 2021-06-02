@@ -2583,9 +2583,6 @@
 
 080B5110	Cleared Japanese menu loading routine	{J}
 
-081B1878	:081B258C	Cleared beta class list	{J}
-081B258C	:081D3910	Cleared FE6 credits	{J}
-
 08048198	名前入力イベント	{J}
 08048280	名前入力イベント	{U}
 
