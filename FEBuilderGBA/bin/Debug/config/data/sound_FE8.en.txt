@@ -468,7 +468,7 @@
 0303=SE:Entombed Map Step
 0304=SE:Bonewalker Map Step
 0305=SE:Wight Map Step
-0306=SE:Oculus Map... Step...?
+0306=SE:Mogall map Step
 0307=SE:Arch Mogall map step
 0308=SE:Bael map step
 0309=SE:Elder Bael map step

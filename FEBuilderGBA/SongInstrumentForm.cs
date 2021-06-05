@@ -1295,7 +1295,7 @@ namespace FEBuilderGBA
 
             //書き込みアドレスが決定しないと書き込めない追加データの書き戻しを行います。
             {
-                bool r = WriteBackData(ifr.BaseAddress, data, undodata);
+                bool r = WriteBackData(writeaddr, data, undodata);
                 if (!r)
                 {
                     return false;
