@@ -5776,6 +5776,24 @@ Run in Program 3
 :任意のプログラムで開く
 Run in External Program
 
+:ツール
+Tools
+
+:別ROMから曲のインポート
+Import Song From Another ROM
+
+:ログ
+Log
+
+:LZ77ツール
+LZ77 Tool
+
+:Diffツール
+Diff Tool
+
+:ポインタ計算ツール
+Pointer Calculator
+
 :設定
 Settings
 
@@ -5797,29 +5815,8 @@ Discord Community URL
 :バージョン
 Version
 
-:ポインタ計算ツール
-Pointer Calculator
-
 :EAで追加
 Insert EA
-
-:別ROMから曲のインポート
-Import Song From Another ROM
-
-:比較デバッグツール
-Difference Debug Tool
-
-:ログ
-Log
-
-:LZ77ツール
-LZ77 Tool
-
-:Diffツール
-Diff Tool
-
-:ツール
-Tools
 
 :詳細メニュー
 Advanced Editors
@@ -5877,6 +5874,9 @@ Revision History
 
 :パッチ
 Patches
+
+:比較デバッグツール
+Difference Debug Tool
 
 :動作中のエミュレータへ接続
 Emulator Debug Tool
@@ -6684,6 +6684,9 @@ Branch extension.
 
 :ユニットのセリフ
 Unit dialogue.
+
+:楽器
+Instrument
 
 :計測中...
 Measuring.
@@ -10252,6 +10255,30 @@ The area has not been reserved.
 :これより下のアドレスには、waveデータが、LengthByteだけ格納されています。
 Wave data is stored as LengthByte below this address.
 
+:楽器({0})のアドレス({1})は、ROMの範囲外です
+The address ({1}) of the instrument ({0}) is outside the ROM range.
+
+:楽器({0})のDIRECTSOUNDのwaveデータ({1})は、ROMの範囲外です
+The DIRECTSOUND wave data ({1}) of the instrument ({0}) is out of ROM range.
+
+:楽器({0})のDIRECTSOUNDのwaveデータ({1})の長さ({2})は、ROMの範囲外です
+The length ({2}) of the wave data ({1}) of the DIRECTSOUND of the instrument ({0}) is out of the ROM range.
+
+:楽器({0})のDIRECTSOUNDのwaveデータ({1})は、破損していいます
+The wave data ({1}) of the DIRECTSOUND of the instrument ({0}) is said to be corrupted.
+
+:楽器({0})のWAVE楽器のデータ({1})は、破損していいます
+The WAVE instrument data ({1}) of the instrument ({0}) is said to be corrupted.
+
+:楽器({0})のドラムのデータ({1})は、破損していいます
+The drum data ({1}) of the instrument ({0}) is said to be corrupted.
+
+:楽器({0})のマルチサンプルの楽器割り当てデータ({1})は、破損していいます
+The multi-sampled instrument assignment data ({1}) of the instrument ({0}) is said to be corrupted.
+
+:楽器({0})のマルチサンプルのキー割り当てデータ({1})は、破損していいます
+The multi-sample key assignment data ({1}) of the instrument ({0}) is said to be corrupted.
+
 :SquareWave(消音プチノイズ)
 Square Wave (Silent, Small)
 
@@ -10591,9 +10618,6 @@ Ignore MOD and MODT Instructions
 :音が「みょーん」となる場合は、有効にしてみてください。
 For if the sound is strange (wonky, "mi~yoon").
 
-:楽器
-Instrument
-
 :曲を演奏するときに利用する楽器を選択してください。\r\nディフォルトは現在の曲の楽器アドレスになっています。\r\n\r\nmidi楽器とFEの楽器は、並び順が違うので、注意してください。\r\n自分で楽器の順番を調整するか、\r\nNIMAP(Native Instrument Map)パッチを利用してください。
 Please select the instrument to use when playing the song.\r\nDefaults to the current song's instruments (from vanilla FE if unmodified).\r\n\r\nPlease note that MIDI instruments and FE/GBA instruments are ordered differently.\r\nAdjust the order of the musical instruments yourself.\r\nPlease use the NIMAP2 (Native Instrument Map) patch for easier organizing.
 
@@ -10704,6 +10728,12 @@ This WAV file consumes a very large size of {0} bytes! Proceed with importing an
 
 :Waveファイルのインポートを取りやめました
 Canceled WAV importing.
+
+:SongID {0}のトラック「{1}」は、壊れた楽器「{2}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{3}
+Track "{1}" with SongID {0} is instructed to play the broken instrument "{2}".\r\nCheck the VOICE instruction.\r\n{3}.
+
+:SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。
+Track "{1}" with SongID {0} is looping in GOTO, forgetting the EOT for TIE.\r\nIf you forget the EOT and loop, the sound will continue to sound.Add EOT before GOTO in the score.
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper returned an error.\r\nFEBuilderGBA will substitute.\r\n\r\nGBAMusRiper error message:\r\n{0}.

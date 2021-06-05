@@ -327,7 +327,7 @@ namespace FEBuilderGBA
             return aal;
         }
 
-        static bool Is_RAMPointerArea(uint addr)
+        public static bool Is_RAMPointerArea(uint addr)
         {
             return (U.is_03RAMPointer(addr)
                 || FETextEncode.IsUnHuffmanPatch_IW_RAMPointer(addr)

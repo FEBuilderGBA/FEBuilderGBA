@@ -5,37 +5,37 @@ WORD $08590b4f
 WORD $08590b5d
 
 lMaxRank:
-BYTE $0x0e// This is the max rank that a unit can get.
-BYTE $0x0D // This is the max rank that an umpromoted unit can get.
-BYTE $0x00
+BYTE 0x0e// This is the max rank that a unit can get.
+BYTE 0x0D // This is the max rank that an umpromoted unit can get.
+BYTE 0x00
 
 lWEXPRank1:
-BYTE $0x14 //This is the experience needed to get from rank 1 to rank 2
+BYTE 0x14 //This is the experience needed to get from rank 1 to rank 2
 lWEXPRank2: 
-BYTE $0x1E
+BYTE 0x1E
 lWEXPRank3: 
-BYTE $0x23
+BYTE 0x23
 lWEXPRank4: 
-BYTE $0x23
+BYTE 0x23
 lWEXPRank5:
-BYTE $0x28
+BYTE 0x28
 lWEXPRank6:
-BYTE $0x32
+BYTE 0x32
 lWEXPRank7: 
-BYTE $0x46
+BYTE 0x46
 lWEXPRank8: 
-BYTE $0x32
+BYTE 0x32
 lWEXPRank9: 
-BYTE $0x32
+BYTE 0x32
 lWEXPRankA: 
-BYTE $0x32
+BYTE 0x32
 lWEXPRankB: 
-BYTE $0x32
+BYTE 0x32
 lWEXPRankC: 
-BYTE $0x32
+BYTE 0x32
 lWEXPRankD: 
-BYTE $0x32
-BYTE $0x00
+BYTE 0x32
+BYTE 0x00
 
 GlyphList: //Rank glyphs in ascending order, from - to your maximum rank ($14 being -). Refer to the reference for glyphs.
 BYTE $14 $01 $02 $03 $04 $05 $06 $07 $08 $09 $19 $1A $1B $1C $18 $00

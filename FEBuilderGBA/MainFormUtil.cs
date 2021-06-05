@@ -1982,8 +1982,6 @@ namespace FEBuilderGBA
                     patchMainFilter.ApplyFilter(filter, isJP, tooltip);
                 }
             }
-
-            
         }
 
 

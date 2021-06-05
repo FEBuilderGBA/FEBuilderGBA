@@ -85,6 +85,7 @@ namespace FEBuilderGBA
             ,POINTER_UNITSSHORTTEXT
             ,SONGTABLE
             ,SONGTRACK
+            ,SONGINST
             ,BOSS_BGM
             ,WORLDMAP_BGM
             ,EVENT_FINAL_SERIF

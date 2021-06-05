@@ -18,6 +18,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionAddrHigh = false;
 
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.makeLinkEventHandler("", controls, FLAG, FLAG_LABEL,  0, "FLAG", new string[] {});

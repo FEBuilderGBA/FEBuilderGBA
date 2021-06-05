@@ -615,8 +615,15 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version() == 8)
             {
+                PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+                if (skillsystem == PatchUtil.skill_system_enum.NO)
+                {//SkillSystemsをインストールしていない
+                    return false;
+                }
+
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//F00000 - F90000
+
                     if (addr >= 0xF00000 && addr < 0xF90000)
                     {
                         addr = 0xF90000;
@@ -639,6 +646,12 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version() == 8)
             {
+                PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+                if (skillsystem == PatchUtil.skill_system_enum.NO)
+                {//SkillSystemsをインストールしていない
+                    return ;
+                }
+
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//F00000 - F90000
                     list.Add(new Address(0xF00000, 0xF90000 - 0xF00000, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));

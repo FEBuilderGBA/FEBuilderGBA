@@ -234,7 +234,10 @@ namespace FEBuilderGBA
                     continue;
                 }
                 FELint.CheckPointerAlien4(song_header, errors, FELint.Type.SONGTABLE, songtable_addr, i);
-                SongTrackForm.MakeCheckError(errors, i , U.toOffset(song_header));
+
+                uint song_priority = Program.ROM.u32(songtable_addr + 4);
+                bool isMapBGM = (song_priority == 0x00010001);
+                SongTrackForm.MakeCheckError(errors, i, U.toOffset(song_header), isMapBGM);
             }
         }
 
@@ -433,5 +436,6 @@ namespace FEBuilderGBA
                 InputFormRef.GotoRef(this.X_REF);
             }
         }
+
     }
 }

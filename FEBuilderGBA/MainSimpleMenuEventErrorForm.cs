@@ -19,6 +19,7 @@ namespace FEBuilderGBA
 
         private void ErrorEventErrorForm_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = true;
             UpdateContextMenu();
         }
         void UpdateContextMenu()
@@ -498,6 +499,10 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("ワールドマップBGM");
             }
+            else if (dataType == FELint.Type.SONGINST)
+            {
+                text = R._("楽器");
+            }
             else if (dataType == FELint.Type.FELINTBUZY_MESSAGE)
             {
                 text = R._("計測中...");
@@ -937,6 +942,12 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.SONGTRACK)
             {
                 InputFormRef.JumpForm<SongTrackForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.SONGINST)
+            {
+                SongInstrumentForm f = (SongInstrumentForm)InputFormRef.JumpForm<SongInstrumentForm>(U.NOT_FOUND);
+                f.JumpToAddr(tag);
                 return;
             }
             else if (dataType == FELint.Type.BOSS_BGM)

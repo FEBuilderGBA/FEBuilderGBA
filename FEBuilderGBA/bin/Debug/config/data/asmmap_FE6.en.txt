@@ -1592,3 +1592,6 @@
 @AiData@99	byte	yOther
 @AiData@9A	byte	decisionTaken
 @AiData@9B	byte	decisionType
+
+//https://discord.com/channels/144670830150811649/725478895226191892/850481060751999016
+08013B24	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t

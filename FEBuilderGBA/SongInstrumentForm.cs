@@ -291,6 +291,70 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        public static string CheckInst(uint voca_baseaddress, uint inst_id)
+        {
+            uint addr = voca_baseaddress + (inst_id * 0xC);
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return R._("楽器({0})のアドレス({1})は、ROMの範囲外です", U.To0xHexString(inst_id), U.To0xHexString(addr));
+            }
+
+            uint type = Program.ROM.u8(addr);
+            if (type == 0x00
+                || type == 0x08
+                || type == 0x10
+                || type == 0x18
+            )
+            {//directsound waveデータ.
+                uint songdata_addr = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(songdata_addr))
+                {
+                    return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})は、ROMの範囲外です", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr));
+                }
+                uint sample_length = Program.ROM.u32(songdata_addr + 12);
+                if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
+                {//壊れたデータ 長さが取れない
+                    return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})の長さ({2})は、ROMの範囲外です", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr), sample_length);
+                }
+                if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                {//壊れたデータ 
+                    return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr));
+                }
+            }
+            else if (type == 0x03
+                || type == 0x0B
+                )
+            {//波形データ
+                uint songdata_addr = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(songdata_addr))
+                {
+                    return R._("楽器({0})のWAVE楽器のデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr));
+                }
+            }
+            else if (type == 0x80)
+            {//ドラム
+                uint drum_voices = Program.ROM.p32(addr + 4);
+                if (!U.isSafetyOffset(drum_voices))
+                {
+                    return R._("楽器({0})のドラムのデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(drum_voices));
+                }
+            }
+            else if (type == 0x40)
+            {//マルチサンプル
+                uint multisample_voices = Program.ROM.p32(addr + 4);
+                uint sample_location = Program.ROM.p32(addr + 8);
+                if (!U.isSafetyOffset(multisample_voices))
+                {
+                    return R._("楽器({0})のマルチサンプルの楽器割り当てデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(multisample_voices));
+                }
+                if (!U.isSafetyOffset(sample_location))
+                {
+                    return R._("楽器({0})のマルチサンプルのキー割り当てデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(multisample_voices));
+                }
+            }
+            return "";
+        }
         //direct sound +P4 のソングデータを使って比較用のフィンガプリントを作ります.
         static string FingerPrint(uint vocaaddr)
         {

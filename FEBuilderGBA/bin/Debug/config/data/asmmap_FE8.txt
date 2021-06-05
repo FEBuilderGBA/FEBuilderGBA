@@ -12838,8 +12838,11 @@
 08056D7C	ekrBattleStarting_HideMapOtherUnits	{J}
 08056C78	ekrBattleStarting_InitBattle	{J}
 08057000	ekrBattleStarting_BattleBG_FadeIn_Palette	{J}
-08012E84	Something_MysteriousCalculation	{J}
 08057424	StartEkrBaseKaiten	光る回転床	{J}
+
+//https://discord.com/channels/144670830150811649/725478895226191892/850481060751999016
+08012E84	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{J}
+08012DCC	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{U}
 
 08056900	New_6C_ekrUnitKakudai	{U}
 0807352C	レベルアップ項目の決定	{U}
@@ -12859,7 +12862,6 @@
 08055DF4	ekrBattleStarting_HideMapOtherUnits	{U}
 08055CF0	ekrBattleStarting_InitBattle	{U}
 08056078	ekrBattleStarting_BattleBG_FadeIn_Palette	{U}
-08012DCC	Something_MysteriousCalculation	{U}
 0805649C	StartEkrBaseKaiten	光る回転床	{U}
 08073f94	SomePlaySound_After	{J}
 080727e4	IsBattleByDragon	{J}

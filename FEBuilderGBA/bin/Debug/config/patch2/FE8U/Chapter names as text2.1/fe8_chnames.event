@@ -1,0 +1,33 @@
+//include this under free space
+
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+PUSH
+ORG $89624
+jumpToHack(Chname)
+POP
+
+ALIGN 4
+Chname:
+#include "fe8_chapter_names.lyn.event"
+
+ALIGN 4
+ChFont:
+//#incext Png2Dmp "font.png" --lz77
+#incbin "font.png.dmp"	//HINT=BIN
+
+ALIGN 4
+ChTable:
+#incbin "chartable.dmp"	//HINT=BIN
+
+ALIGN 4
+//Final and Prologue.
+SpecialChapter:
+SHORT 0x00 0x15A
+SHORT 0x15 0x159
+SHORT 0x16 0x159
+SHORT 0x22 0x159
+SHORT 0x23 0x159
+WORD 0x0
+
+ALIGN 4

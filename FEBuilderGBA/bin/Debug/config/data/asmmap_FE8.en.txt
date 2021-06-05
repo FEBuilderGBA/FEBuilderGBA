@@ -12840,7 +12840,11 @@ r3=X tile position of menu of right	{U}
 080578FC	ekrUnitKakudai_InitBattleUnits	{J}
 08057AF4	ekrUnitKakudai_ZoomInEffect	{J}
 08057CA0	ekrUnitKakudai_NOP	{J}
-08012E84	Something_MysteriousCalculation	{J}
+
+//https://discord.com/channels/144670830150811649/725478895226191892/850481060751999016
+08012E84	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{J}
+08012DCC	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{U}
+
 08057424	StartEkrBaseKaiten	Glowing rotating floor	{J}
 08057318	ekrBattleEnding_FadeGrayToNormal	{J}
 08057298	ekrBattleEnding_RedrawUnits	{J}
@@ -12870,7 +12874,6 @@ r3=X tile position of menu of right	{U}
 08055DF4	ekrBattleStarting_HideMapOtherUnits	{U}
 08055CF0	ekrBattleStarting_InitBattle	{U}
 08056078	ekrBattleStarting_BattleBG_FadeIn_Palette	{U}
-08012DCC	Something_MysteriousCalculation	{U}
 0805649C	StartEkrBaseKaiten	Glowing rotating floor	{U}
 08073f94	SomePlaySound_After	{J}
 080727e4	IsBattleByDragon	{J}
@@ -13197,3 +13200,12 @@ r3=X tile position of menu of right	{U}
 08BB8EA0	:08BB8EEF	KEEPEMPTY	5	{J}
 0808EB0C	ParseTextCommandSetName0x8023	{U}
 08090DE0	ParseTextCommandSetName0x8023	{J}
+081B258C	:081B2C80	Staff role is entered in ASCII Not used.	{J}
+@SAVEMENURTEXTDATA@01	byte	HeroLevel
+@SAVEMENURTEXTDATA@02	byte	WorldmapNodeID
+0203EF66	gSaveMenuRTextData.CurrentWorldmapNodeID	{U}
+0203EF62	gSaveMenuRTextData.CurrentWorldmapNodeID	{J}
+080A7A0C	GetMiniMapTypeFromCoordinateXY	{U}
+080A7BF8	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}
+0809AAF0	DrawCountOfPickupUnits_PrepScreen	{U}
+0809A9F8	DrawPickupUnitsList_PrepScreen	{U}

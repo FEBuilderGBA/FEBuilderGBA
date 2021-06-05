@@ -10,7 +10,7 @@ PATCHED_IF:0x15560=0x54 0xA9 0x03 0x02
 INFO=中断から再開した時に、直前の行動ではなく、ターン開始時に戻れる設定を追加します。\r\n1ターン巻き戻し\r\nゲームオプションの地形の項目が、AutoSaveの切り替えに変化します。\r\nこのパッチは、その地形オプションをオフにすることで機能します。\r\nリセットし再開すると、プレイヤーターンに戻ることができるようになります。
 
 AUTHOR=aera,FE8 Girls
-INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nRewind 1 turn\r\nThe terrain item in the game options changes to AutoSave toggle.\r\nThis patch works by turning "off" that "terrain" option.\r\nAfter resetting and resuming, you can return to the player turn.
+INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThis patch rewinds one turn time, like Do-Over(Turnwheel, Divine Pulse).\r\nRewind 1 turn\r\nThe terrain item in the game options changes to AutoSave toggle.\r\nThis patch works by turning "off" that "terrain" option.\r\nAfter resetting and resuming, you can return to the player turn.
 
 NAME.zh=自动保存功能
 INFO.zh=从中断恢复时，添加可在转弯开始时返回的设置，而不是最后一个操作。\r\n倒退一圈\r\n游戏选项中的terrain项目将更改为AutoSave切换。\r\n此补丁通过关闭该地形选项来工作。\r\n重置并恢复后，您可以返回播放器转弯。

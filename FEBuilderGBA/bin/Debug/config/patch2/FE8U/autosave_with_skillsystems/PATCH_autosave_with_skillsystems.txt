@@ -12,11 +12,11 @@ INFO=中断から再開した時に、直前の行動ではなく、ターン開
 
 
 AUTHOR=7743,aera,FE8 Girls
-INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
+INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThis patch rewinds one turn time, like Do-Over(Turnwheel, Divine Pulse).\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
 
 
 NAME.zh=自动保存功能(with SkillSystems)
-INFO.zh=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
+INFO.zh=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThis patch rewinds one turn time, like Do-Over(Turnwheel, Divine Pulse).\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.
 
 CONFLICT_IF:0x1553C=0x58 0xA9 0x03 0x02
 CONFLICT_MESSAGE=AutoSave

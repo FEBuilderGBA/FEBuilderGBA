@@ -446,7 +446,7 @@ namespace FEBuilderGBA
         {
             MainFormUtil.GotoMoreData();
         }
-        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint i, uint songaddr)
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint songid, uint songaddr, bool isMapBGM)
         {
             if (songaddr == 0)
             {
@@ -457,19 +457,19 @@ namespace FEBuilderGBA
                 return;
             }
             uint trackCount = Program.ROM.u8(songaddr + 0);
-            if (i == 0)
+            if (songid == 0)
             {
                 if (trackCount != 0)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, songaddr
-                        , R._("SongID {0}のトラックは常に0である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(trackCount)), i));
+                        , R._("SongID {0}のトラックは常に0である必要があります。現在値:{1}", U.To0xHexString(songid), U.To0xHexString(trackCount)), songid));
                 }
                 return;
             }
             if (trackCount > 16)
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, songaddr
-                    , R._("SongID {0}のトラックは常に16以内である必要があります。現在値:{1}", U.To0xHexString(i), U.To0xHexString(trackCount)), i));
+                    , R._("SongID {0}のトラックは常に16以内である必要があります。現在値:{1}", U.To0xHexString(songid), U.To0xHexString(trackCount)), songid));
             }
             if (trackCount == 0)
             {//トラック数が0のダミートラックの場合、チェックしない
@@ -481,19 +481,23 @@ namespace FEBuilderGBA
             if (!U.isSafetyPointer(instPointer))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
-                    , R._("SongID {0}の楽器ポインタ「{1}」は無効です。", U.To0xHexString(i), U.To0xHexString(instPointer)), i));
+                    , R._("SongID {0}の楽器ポインタ「{1}」は無効です。", U.To0xHexString(songid), U.To0xHexString(instPointer)), songid));
                 return;
             }
 
             //トラックのポインタチェック
-            for (uint n = 0; n < trackCount; n++)
+            for (uint tracknumber = 0; tracknumber < trackCount; tracknumber++)
             {
-                uint trackPointer = Program.ROM.u32(songaddr + 4 + (n * 4) );
+                uint trackAddr = songaddr + 8 + (tracknumber * 4);
+                uint trackPointer = Program.ROM.u32(trackAddr);
                 if (!U.isSafetyPointer(trackPointer))
                 {//無効なポインタ
                     errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
-                        , R._("SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？", U.To0xHexString(i), n, U.To0xHexString(trackPointer)), i));
+                        , R._("SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？", U.To0xHexString(songid), tracknumber, U.To0xHexString(trackPointer)), songid));
+                    continue;
                 }
+                SongUtil.Track track = SongUtil.ParseTrackOne(trackAddr);
+                SongUtil.MakeCheckError(errors, track, U.toOffset(instPointer), songaddr, songid, tracknumber, isMapBGM);
             }
         }
 

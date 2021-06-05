@@ -388,6 +388,11 @@ namespace FEBuilderGBA
         };
         public void huffman_count(uint addr, ref Dictionary<uint, huffman_count_st> dic)
         {
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
             uint tree_base = this.ROM.p32(this.ROM.RomInfo.mask_pointer());
             uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer());
             bool useSJIS = this.ROM.RomInfo.is_multibyte();

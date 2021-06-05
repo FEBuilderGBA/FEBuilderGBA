@@ -193,156 +193,163 @@ namespace FEBuilderGBA
 
             for (int trackindex = 0; trackindex < trackcount; trackindex++)
             {
-                Track track = new Track();
-                tracks.Add(track);
-
                 //header
                 //[trackcount] ?? ?? ?? [P:voca] [P:track1] [P:track2] [P:track3]  ... [P:trackN]
                 uint trackpointer = song_addr + 8 + (uint)(trackindex * 4);
-                if (trackpointer >= limitter)
-                {
-                    continue;
-                }
-                uint trackaddr = Program.ROM.u32(trackpointer);
-                if (!U.isSafetyPointer(trackaddr))
-                {
-                    continue;
-                }
-                trackaddr = U.toOffset(trackaddr);
+                Track track = ParseTrackOne(trackpointer);
+                tracks.Add(track);
+            }
+            return tracks;
+        }
+        public static Track ParseTrackOne(uint trackpointer)
+        {
+            //終端
+            uint limitter = (uint)Program.ROM.Data.Length;
 
-                track.basepointer = trackpointer;
+            Track track = new Track();
+            if (trackpointer >= limitter)
+            {
+                return track;
+            }
 
-                uint waitCount = 0;
-                for (uint addr = trackaddr; true; )
+            uint trackaddr = Program.ROM.u32(trackpointer);
+            if (!U.isSafetyPointer(trackaddr))
+            {
+                return track;
+            }
+            trackaddr = U.toOffset(trackaddr);
+            track.basepointer = trackpointer;
+
+            uint waitCount = 0;
+            for (uint addr = trackaddr; true; )
+            {
+                if (addr >= limitter)
+                {//終端を超えました.
+                    break;
+                }
+
+                int index = (int)(addr - trackaddr);
+
+                uint b = Program.ROM.u8(addr);
+
+                if (b == 0xB1)
                 {
-                    if (addr >= limitter)
+                    track.codes.Add(new Code(addr, waitCount, b));
+                    addr++;
+                    break;
+                }
+                else if (b == 0xB2 || b == 0xB3)
+                {//ループ　ポインタ
+                    uint loopaddr = Program.ROM.p32(addr + 1);
+                    track.codes.Add(new Code(addr, waitCount, b, loopaddr));
+                    addr += 5;
+                    waitCount += 96; //これだけで1小節分
+                }
+                else if (b == EOT)
+                {//TIE - EOTまで音をならしっばにする.
+                    track.codes.Add(new Code(addr, waitCount, b));
+                    addr++;
+                }
+                else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1 || b == 0xC2 || b == 0xC3 || b == 0xC4 || b == 0xC5 || b == 0xC8)
+                {
+                    if (addr + 1 >= limitter)
+                    {//終端を超えました.
+                        break;
+                    }
+                    uint next_byte = Program.ROM.u8(addr + 1);
+                    track.codes.Add(new Code(addr, waitCount, b, next_byte));
+                    addr += 2;
+                }
+                else if (b == 0xb9)
+                {//MEMACC 4バイト命令
+                    if (addr + 3 >= limitter)
+                    {//終端を超えました.
+                        break;
+                    }
+                    uint b1 = Program.ROM.u8(addr + 1);
+                    uint b2 = Program.ROM.u8(addr + 2);
+                    uint b3 = Program.ROM.u8(addr + 3);
+                    track.codes.Add(new Code(addr, waitCount, b, b1, b2, b3));
+                    addr += 4;
+                }
+                else if (b >= WAIT_START && b <= (uint)WAIT_END)
+                {
+                    track.codes.Add(new Code(addr, waitCount, b));
+                    waitCount += byteToWait(b);
+                    addr++;
+                }
+                else if (b >= TIE && b <= (uint)NOTE_END)
+                {
+                    if (addr + 1 >= limitter)
                     {//終端を超えました.
                         break;
                     }
 
-                    int index = (int)(addr - trackaddr);
-
-                    uint b = Program.ROM.u8(addr);
-
-                    if (b == 0xB1)
+                    uint key = Program.ROM.u8(addr + 1);
+                    if (key <= 127)
                     {
-                        track.codes.Add(new Code(addr, waitCount, b));
-                        addr++;
-                        break;
-                    }
-                    else if (b == 0xB2 || b == 0xB3)
-                    {//ループ　ポインタ
-                        uint loopaddr = Program.ROM.p32(addr + 1);
-                        track.codes.Add(new Code(addr, waitCount, b, loopaddr));
-                        addr += 5;
-                        waitCount += 96; //これだけで1小節分
-                    }
-                    else if (b == EOT)
-                    {//TIE - EOTまで音をならしっばにする.
-                        track.codes.Add(new Code(addr, waitCount, b));
-                        addr++;
-                    }
-                    else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1 || b == 0xC2 || b == 0xC3 || b == 0xC4 || b == 0xC5 || b == 0xC8)
-                    {
-                        if (addr + 1 >= limitter)
-                        {//終端を超えました.
-                            break;
-                        }
-                        uint next_byte = Program.ROM.u8(addr + 1);
-                        track.codes.Add(new Code(addr, waitCount, b, next_byte));
-                        addr += 2;
-                    }
-                    else if (b == 0xb9)
-                    {//MEMACC 4バイト命令
-                        if (addr + 3 >= limitter)
-                        {//終端を超えました.
-                            break;
-                        }
-                        uint b1 = Program.ROM.u8(addr + 1);
-                        uint b2 = Program.ROM.u8(addr + 2);
-                        uint b3 = Program.ROM.u8(addr + 3);
-                        track.codes.Add(new Code(addr, waitCount, b, b1,b2,b3));
-                        addr += 4;
-                    }
-                    else if (b >= WAIT_START && b <= (uint)WAIT_END)
-                    {
-                        track.codes.Add(new Code(addr, waitCount, b));
-                        waitCount += byteToWait(b);
-                        addr++;
-                    }
-                    else if (b >= TIE && b <= (uint)NOTE_END)
-                    {
-                        if (addr + 1 >= limitter)
+                        if (addr + 2 >= limitter)
                         {//終端を超えました.
                             break;
                         }
 
-                        uint key = Program.ROM.u8(addr + 1);
-                        if (key <= 127)
-                        {
-                            if (addr + 2 >= limitter)
-                            {//終端を超えました.
-                                break;
-                            }
-
-                            uint velocity = Program.ROM.u8(addr + 2);
-                            if (velocity <= 127)
-                            {//N96 Gn7 v10 みたいな3バイト命令
-                                uint gtp = Program.ROM.u8(addr + 3);
-                                if (CheckGTPRange(gtp))
-                                {//N96 Gn7 v10 gtp1 みたいな4バイト命令
-                                    track.codes.Add(new Code(addr, waitCount, b, key, velocity, gtp));
-                                    addr += 4;
-                                }
-                                else
-                                {//N96 Gn7 v10 みたいな3バイト命令
-                                    track.codes.Add(new Code(addr, waitCount, b, key, velocity));
-                                    addr += 3;
-                                }
+                        uint velocity = Program.ROM.u8(addr + 2);
+                        if (velocity <= 127)
+                        {//N96 Gn7 v10 みたいな3バイト命令
+                            uint gtp = Program.ROM.u8(addr + 3);
+                            if (CheckGTPRange(gtp))
+                            {//N96 Gn7 v10 gtp1 みたいな4バイト命令
+                                track.codes.Add(new Code(addr, waitCount, b, key, velocity, gtp));
+                                addr += 4;
                             }
                             else
-                            {//velocity >=128なのでこれは違う命令
-                                //N96 Gn7 みたいな2バイト命令
-                                track.codes.Add(new Code(addr, waitCount, b, key, U.NOT_FOUND));
-                                addr += 2;
+                            {//N96 Gn7 v10 みたいな3バイト命令
+                                track.codes.Add(new Code(addr, waitCount, b, key, velocity));
+                                addr += 3;
                             }
-                        }
-                        else
-                        {//key >= 128なので別の命令
-                            //N96 みたいな1バイト命令
-                            track.codes.Add(new Code(addr, waitCount, b, U.NOT_FOUND, U.NOT_FOUND));
-                            addr += 1;
-                        }
-                    }
-                    else if (b <= 127)
-                    {
-                        if (addr + 1 >= limitter)
-                        {//終端を超えました.
-                            break;
-                        }
-
-                        uint key = b;
-                        uint velocity = Program.ROM.u8(addr + 1);
-                        if (velocity <= 127)
-                        {
-                            track.codes.Add(new Code(addr, waitCount, key, velocity));
-                            addr += 2;
                         }
                         else
                         {//velocity >=128なのでこれは違う命令
-                            track.codes.Add(new Code(addr, waitCount, key, U.NOT_FOUND));
-                            addr += 1;
+                            //N96 Gn7 みたいな2バイト命令
+                            track.codes.Add(new Code(addr, waitCount, b, key, U.NOT_FOUND));
+                            addr += 2;
                         }
                     }
                     else
-                    {
-                        track.codes.Add(new Code(addr, waitCount, b));
-                        addr++;
+                    {//key >= 128なので別の命令
+                        //N96 みたいな1バイト命令
+                        track.codes.Add(new Code(addr, waitCount, b, U.NOT_FOUND, U.NOT_FOUND));
+                        addr += 1;
                     }
                 }
-                insertLoopLabel(track);
+                else if (b <= 127)
+                {
+                    if (addr + 1 >= limitter)
+                    {//終端を超えました.
+                        break;
+                    }
+
+                    uint key = b;
+                    uint velocity = Program.ROM.u8(addr + 1);
+                    if (velocity <= 127)
+                    {
+                        track.codes.Add(new Code(addr, waitCount, key, velocity));
+                        addr += 2;
+                    }
+                    else
+                    {//velocity >=128なのでこれは違う命令
+                        track.codes.Add(new Code(addr, waitCount, key, U.NOT_FOUND));
+                        addr += 1;
+                    }
+                }
+                else
+                {
+                    track.codes.Add(new Code(addr, waitCount, b));
+                    addr++;
+                }
             }
-            return tracks;
+            insertLoopLabel(track);
+            return track;
         }
         static void insertLoopLabel(Track track)
         {
@@ -2830,6 +2837,10 @@ namespace FEBuilderGBA
             {//4MB使う音源とかマジですか?
                 return false;
             }
+            if (len <= 4)
+            {//短すぎる
+                return false;
+            }
 
             if (addr + 12 + 4 + len > rom.Length)
             {
@@ -3261,7 +3272,39 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
         }
-
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, Track track, uint songinst_addr, uint songaddr, uint song_id, uint track_number, bool isMapBGM)
+        {
+            bool checkTIE = false;
+            for (int i = 0; i < track.codes.Count; i++)
+            {
+                Code c = track.codes[i];
+                if (c.type == 0xbd)
+                {//VOICE(楽器)
+                    string err = SongInstrumentForm.CheckInst(songinst_addr, c.value);
+                    if (err != "")
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                            , R._("SongID {0}のトラック「{1}」は、壊れた楽器「{2}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{3}", U.To0xHexString(song_id), track_number+1 , c.value, err), song_id));
+                    }
+                }
+                else if (c.type == TIE)
+                {
+                    checkTIE = true;
+                }
+                else if (c.type == EOT)
+                {
+                    checkTIE = false;
+                }
+                else if (c.type == 0xb2)
+                {//GOTO
+                    if (isMapBGM && checkTIE)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                            , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
+                    }
+                }
+            }
+        }
 
         //midifix4agbの音量補正ルーチンをもとにしています.
         static uint expVol(uint volume)
