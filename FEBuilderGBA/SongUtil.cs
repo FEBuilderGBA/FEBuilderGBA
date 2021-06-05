@@ -3284,7 +3284,7 @@ namespace FEBuilderGBA
                     if (err != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
-                            , R._("SongID {0}のトラック「{1}」は、壊れた楽器「{2} {3}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{4}", U.To0xHexString(song_id), track_number + 1, c.value, err, U.To0xHexString(c.value), err), song_id));
+                            , R._("SongID {0}のトラック「{1}」は、壊れた楽器「{2} {3}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{4}", U.To0xHexString(song_id), track_number + 1, c.value, U.To0xHexString(c.value), err), song_id));
                     }
                 }
                 else if (c.type == TIE)
