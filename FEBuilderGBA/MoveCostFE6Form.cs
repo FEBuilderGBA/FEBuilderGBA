@@ -113,8 +113,8 @@ namespace FEBuilderGBA
         {
             int filter = FilerFE6ToFE8(this.FilterComboBox.SelectedIndex);
 
-            if (filter == 6 || filter == 7)
-            {//地形回復/地形ステータス異常回復 全クラス共通
+            if (filter == 6 || filter == 7 || filter == 8)
+            {//地形回復/地形ステータス異常回復/地形情報 全クラス共通
                 IndependenceButton.Enabled = false;
                 CLASS_LISTBOX.Items.Clear();
                 CLASS_LISTBOX.Items.Add(R._("全クラス共通"));

@@ -248,7 +248,8 @@
             "地形防御",
             "地形魔防",
             "地形回復",
-            "地形ステータス異常回復"});
+            "地形ステータス異常回復",
+            "地形ウィンドに情報表示"});
             this.FilterComboBox.Location = new System.Drawing.Point(501, -1);
             this.FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FilterComboBox.Name = "FilterComboBox";

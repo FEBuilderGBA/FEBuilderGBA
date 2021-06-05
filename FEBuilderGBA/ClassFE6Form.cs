@@ -361,7 +361,14 @@ namespace FEBuilderGBA
             FEBuilderGBA.Address.AddPointer(list,
                   Program.ROM.RomInfo.terrain_bad_status_recovery_pointer()
                 , 52
-                , "MoveCost ref"
+                , "MoveCost recovery bad status"
+                , FEBuilderGBA.Address.DataTypeEnum.BIN);
+
+            //全クラス共通地形バッドステータス回復
+            FEBuilderGBA.Address.AddPointer(list,
+                  Program.ROM.RomInfo.terrain_show_infomation_pointer()
+                , 52
+                , "MoveCost show infomation"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
         }
 

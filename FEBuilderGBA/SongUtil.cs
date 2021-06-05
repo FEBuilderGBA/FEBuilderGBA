@@ -3297,13 +3297,26 @@ namespace FEBuilderGBA
                 }
                 else if (c.type == 0xb2)
                 {//GOTO
-                    if (isMapBGM && checkTIE)
+                    if (isMapBGM && checkTIE && !IsFE7EOTGlitch(song_id))
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
                     }
                 }
             }
+        }
+
+        static bool IsFE7EOTGlitch(uint song_id)
+        {
+            if (Program.ROM.RomInfo.version() != 7)
+            {
+                return false;
+            }
+            if (song_id == 0x3b8)
+            {//FE7の0x3B8 環境音夜には、EOTが設定されていません
+                return true;
+            }
+            return false;
         }
 
         //midifix4agbの音量補正ルーチンをもとにしています.

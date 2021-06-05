@@ -5123,3 +5123,16 @@
 08013508	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{J}
 08012FE8	GetValueFromEasingFunction	r0=rate function	r1=start x	r2=end x	r3=current t	sp0=end t	{U}
 
+08085478	Drawing of terrain avoidance rate, etc	{U}
+080c57bc	TileMap_FillRect	{U}
+080056a8	GetStringTextCenteredPos	{U}
+080054e0	TextVRAMClearer This function gets a space in VRAM and prepares it for the new text		{U}
+08005588	Text_SetParameters r0=Text Struct r1=cursor r2=color id	{U}
+08005590	Text_Draw	{U}
+08005044	NumBufferWriter StoreNumberStringToSmallBuffer	{U}
+
+08085E6C	Drawing of terrain avoidance rate, etc	{J}
+080c0c30	TileMap_FillRect	{J}
+08005458	Text_SetParameters r0=Text Struct r1=cursor r2=color id	{J}
+08005460	Text_Draw	{J}
+08013870	GetTerrainTypeID	{J}

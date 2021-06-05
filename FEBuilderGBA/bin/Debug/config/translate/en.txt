@@ -5299,6 +5299,9 @@ Specify the recovery bonus for each terrain.\r\nIt is used for setting to recove
 :地形ごとの毒や睡眠などのバットステータスを自動回復するボーナスを指定します。\r\n城門にいると回復するという設定に利用されます。\r\nこの設定はすべてのクラスで共通しています。\r\n個別に指定することはできません。\r\n1を設定すると有効になります。\r\nその地形にいるユニットのバッドステータスが自動的に回復します。\r\n
 Specify bonuses to automatically recover bat status such as poison and sleep for each terrain.\r\nIt is used for setting to recover when you are at the gate.\r\nThis setting is common to all classes.\r\nIt cannot be specified individually.\r\nSet to 1 to enable.\r\nThe bad status of units on that terrain is automatically restored.\r\n
 
+:地形の回避率と防御ボーナスを表示するタイルを決定するテーブルです。\r\n255は、「--」を表示するタイルです。\r\nそれ以外は、タイルの回避率と防御値の情報を表示します。\r\n\r\nバニラでは、なぜかバーサーカーの移動コストのテーブルと同じアドレスが指定されています。\r\nよって、このデータはバーサーカーの移動コストにも使われるので、変な値は設定しないでください。\r\n
+A table that determines the tiles that display terrain evasion rates and defense bonuses.\r\n255 is a tile that displays "-".\r\nOther than that, it displays tile evasion rate and defense value information.\r\n\r\nIn vanilla, for some reason, the same address as the Berserker travel cost table is specified.\r\nTherefore, this data is also used for the Berserker's travel cost, so please do not set strange values.\r\n
+
 :このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n
 There is hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
 
@@ -8349,6 +8352,9 @@ Movement Cost: Clear sky
 
 :地形ステータス異常回復
 Terrain Recovery Bad Status
+
+:地形ウィンドに情報表示
+Terrain Information Display in Window
 
 :使用中のクラス
 Class in use
