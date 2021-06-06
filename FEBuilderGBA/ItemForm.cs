@@ -578,7 +578,7 @@ namespace FEBuilderGBA
             f.JumpTo((uint)this.AddressList.SelectedIndex);
         }
 
-        bool IsFE8NVer2SkillNoSyo()
+        bool IsFE8NSkillNoSyo()
         {
             if (Program.ROM.RomInfo.version() != 8)
             {
@@ -596,17 +596,19 @@ namespace FEBuilderGBA
             {//スキルの書のパッチが当たっていない
                 return false;
             }
-            if (PatchUtil.SearchSkillSystem() != FEBuilderGBA.PatchUtil.skill_system_enum.FE8N_ver2)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == FEBuilderGBA.PatchUtil.skill_system_enum.FE8N_ver2
+                || skill == FEBuilderGBA.PatchUtil.skill_system_enum.FE8N_ver3)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
 
         private void B30_ValueChanged(object sender, EventArgs e)
         {
-            if (IsFE8NVer2SkillNoSyo())
+            if (IsFE8NSkillNoSyo())
             {//FE8NVer2のスキルの書
                 J_21.Text = R._("スキル");
                 InputFormRef.markupJumpLabel(J_21);
@@ -623,18 +625,27 @@ namespace FEBuilderGBA
 
         private void J_21_Click(object sender, EventArgs e)
         {
-            if (IsFE8NVer2SkillNoSyo())
+            if (IsFE8NSkillNoSyo())
             {
                 InputFormRef.JumpTo(B21, J_21, "SKILLASSIGNMENT", new string[] {} );
             }
         }
         private void B21_ValueChanged(object sender, EventArgs e)
         {
-            if (IsFE8NVer2SkillNoSyo())
+            if (IsFE8NSkillNoSyo())
             {//FE8NVer2のスキルの書
                 uint skillid = (uint)B21.Value;
-                SKILLICON.Image = SkillConfigFE8NVer2SkillForm.DrawSkillIcon(skillid);
-                SKILLNAME.Text = SkillConfigFE8NVer2SkillForm.GetSkillText(skillid);
+                PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                if (skill == FEBuilderGBA.PatchUtil.skill_system_enum.FE8N_ver3)
+                {
+                    SKILLICON.Image = SkillConfigFE8NVer3SkillForm.DrawSkillIcon(skillid);
+                    SKILLNAME.Text = SkillConfigFE8NVer3SkillForm.GetSkillText(skillid);
+                }
+                else
+                {
+                    SKILLICON.Image = SkillConfigFE8NVer2SkillForm.DrawSkillIcon(skillid);
+                    SKILLNAME.Text = SkillConfigFE8NVer2SkillForm.GetSkillText(skillid);
+                }
                 SKILLICON.Visible = true;
                 SKILLNAME.Visible = true;
             }

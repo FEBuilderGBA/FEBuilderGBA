@@ -91,6 +91,7 @@ namespace FEBuilderGBA
                 this.X_SkillType = PatchUtil.SearchSkillSystem();
                 if ( this.X_SkillType == PatchUtil.skill_system_enum.SkillSystem
                   || this.X_SkillType == PatchUtil.skill_system_enum.FE8N_ver2
+                  || this.X_SkillType == PatchUtil.skill_system_enum.FE8N_ver3
                     )
                 {
                     InputFormRef.markupJumpLabel(this.X_CLASSSKILL);

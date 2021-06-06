@@ -20,6 +20,10 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>();
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>();
+            }
         }
         public static void JumpClassSkill(PatchUtil.skill_system_enum skill, uint cid,object sender)
         {
@@ -42,6 +46,10 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(skillid);
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>(skillid);
+            }
         }
         public static void MakeClassSkillButtons(PatchUtil.skill_system_enum skill, uint cid, Button[] buttons, ToolTipEx tooltip)
         {
@@ -58,6 +66,10 @@ namespace FEBuilderGBA
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 skillCount = SkillConfigFE8NVer2SkillForm.MakeClassSkillButtons(cid, buttons, tooltip);
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                skillCount = SkillConfigFE8NVer3SkillForm.MakeClassSkillButtons(cid, buttons, tooltip);
             }
             SkillUtil.ApplyModButton(buttons, skillCount);
         }
@@ -82,6 +94,10 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>();
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>();
+            }
         }
         public static void JumpUnitSkill(PatchUtil.skill_system_enum skill, uint uid, object sender)
         {
@@ -104,6 +120,10 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(skillid);
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>(skillid);
+            }
         }
         public static void MakeUnitSkillButtons(PatchUtil.skill_system_enum skill, uint uid, Button[] buttons, ToolTipEx tooltip)
         {
@@ -120,6 +140,10 @@ namespace FEBuilderGBA
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 skillCount = SkillConfigFE8NVer2SkillForm.MakeUnitSkillButtons(uid, buttons, tooltip);
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                skillCount = SkillConfigFE8NVer3SkillForm.MakeUnitSkillButtons(uid, buttons, tooltip);
             }
             SkillUtil.ApplyModButton(buttons, skillCount);
         }
@@ -141,6 +165,11 @@ namespace FEBuilderGBA
                 Bitmap bitmap = SkillConfigFE8NVer2SkillForm.DrawSkillIcon(skillid);
                 return bitmap;
             }
+            else if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                Bitmap bitmap = SkillConfigFE8NVer3SkillForm.DrawSkillIcon(skillid);
+                return bitmap;
+            }
             return ImageUtil.BlankDummy();
         }
 
@@ -159,6 +188,11 @@ namespace FEBuilderGBA
             else if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 string name = SkillConfigFE8NVer2SkillForm.GetSkillText(skillid);
+                return name;
+            }
+            else if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                string name = SkillConfigFE8NVer3SkillForm.GetSkillText(skillid);
                 return name;
             }
             return "";

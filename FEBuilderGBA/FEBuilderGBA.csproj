@@ -2077,6 +2077,12 @@
     <Compile Include="MainFE0Form.Designer.cs">
       <DependentUpon>MainFE0Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="SkillConfigFE8NVer3SkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillConfigFE8NVer3SkillForm.Designer.cs">
+      <DependentUpon>SkillConfigFE8NVer3SkillForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3073,6 +3079,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFE0Form.resx">
       <DependentUpon>MainFE0Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillConfigFE8NVer3SkillForm.resx">
+      <DependentUpon>SkillConfigFE8NVer3SkillForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -42,6 +42,13 @@ namespace FEBuilderGBA
                 SCROLL2 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill2_scroll_"));
                 MASTERY = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill3_mastery_"));
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {//FE8N ver3
+                pointers = SkillConfigFE8NVer3SkillForm.FindSkillFE8NVer3IconPointers();
+                SCROLL1 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill1_scroll_"));
+                SCROLL2 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill2_scroll_"));
+                MASTERY = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill3_mastery_"));
+            }
             else
             {//FE8N
                 pointers = SkillConfigFE8NSkillForm.FindSkillFE8NVer1IconPointers();
@@ -182,7 +189,11 @@ namespace FEBuilderGBA
 
         static uint FindSkillIconAndText(PatchUtil.skill_system_enum skill, uint[] pointers, string searchSkillName, out string outText)
         {
-            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                return SkillConfigFE8NVer3SkillForm.FindSkillIconAndText(pointers, searchSkillName, out outText);
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return SkillConfigFE8NVer2SkillForm.FindSkillIconAndText(pointers, searchSkillName,out outText);
             }
@@ -198,7 +209,11 @@ namespace FEBuilderGBA
         }
         static Bitmap DrawSkillIcon(PatchUtil.skill_system_enum skill, uint icon)
         {
-            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                return ImageItemIconForm.DrawIconWhereID_UsingWeaponPalette_SKILLFE8NVer2(icon);
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return ImageItemIconForm.DrawIconWhereID_UsingWeaponPalette_SKILLFE8NVer2(icon);
             }

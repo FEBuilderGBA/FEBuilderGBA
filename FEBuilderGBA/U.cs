@@ -2639,6 +2639,7 @@ namespace FEBuilderGBA
                     OPClassDemoForm.MakeVarsIDArray(list);
                     SkillConfigFE8NSkillForm.MakeVarsIDArray(list);
                     SkillConfigFE8NVer2SkillForm.MakeVarsIDArray(list);
+                    SkillConfigFE8NVer3SkillForm.MakeVarsIDArray(list);
                 }
                 else
                 {

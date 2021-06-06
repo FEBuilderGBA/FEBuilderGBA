@@ -22,6 +22,10 @@ namespace FEBuilderGBA
             {
                 this.Pointers = FindSkillFE8NVer1IconPointers();
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                this.Pointers = SkillConfigFE8NVer3SkillForm.FindSkillFE8NVer3IconPointers();
+            }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 this.Pointers = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
@@ -284,6 +288,10 @@ namespace FEBuilderGBA
             {
                 pointer = FindSkillFE8NVer1IconPointers();
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {//ver3では利用しません
+                return;
+            }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 pointer = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
@@ -322,6 +330,10 @@ namespace FEBuilderGBA
                 || skill == PatchUtil.skill_system_enum.yugudora)
             {
                 pointer = FindSkillFE8NVer1IconPointers();
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {//ver3では利用しません
+                return;
             }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {

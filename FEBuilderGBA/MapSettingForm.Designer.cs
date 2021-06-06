@@ -230,7 +230,7 @@
             this.J_19_MAPTERRAINBGLOOKUPTABLE = new System.Windows.Forms.Label();
             this.B18 = new System.Windows.Forms.NumericUpDown();
             this.L_18_COMBO = new System.Windows.Forms.ComboBox();
-            this.J_18 = new System.Windows.Forms.Label();
+            this.J_18 = new FEBuilderGBA.LabelEx();
             this.B17 = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.B16 = new System.Windows.Forms.NumericUpDown();
@@ -2975,6 +2975,7 @@
             this.B18.Name = "B18";
             this.B18.Size = new System.Drawing.Size(64, 25);
             this.B18.TabIndex = 15;
+            this.B18.ValueChanged += new System.EventHandler(this.B18_ValueChanged);
             // 
             // L_18_COMBO
             // 
@@ -3740,7 +3741,7 @@
         private System.Windows.Forms.Label J_15_IMAGECHAPTER;
         private System.Windows.Forms.NumericUpDown B14;
         private System.Windows.Forms.Label J_14_IMAGECHAPTER;
-        private System.Windows.Forms.Label J_18;
+        private FEBuilderGBA.LabelEx J_18;
         private System.Windows.Forms.Button L_26_SONGPLAY;
         private FEBuilderGBA.TextBoxEx L_26_SONG_MAP;
         private System.Windows.Forms.Button L_24_SONGPLAY;

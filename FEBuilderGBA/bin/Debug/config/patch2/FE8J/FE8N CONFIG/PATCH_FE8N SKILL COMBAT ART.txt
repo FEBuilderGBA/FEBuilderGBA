@@ -1,0 +1,35 @@
+NAME=FE8N SKILL COMBAT ART(Editor)
+NAME.en=FE8N SKILL COMBAT ART(Editor)
+NAME.zh=FE8N SKILL COMBAT ART(Editor)
+
+IF:0x892B8=0x08 0x00 0x00 0x00
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0x0892B4
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 255
+DATACOUNT=255
+
+LISTNAME=SKILL
+
+//データを定義します
+B0:DECIMAL=ATK
+B1:DECIMAL=HIT
+B2:DECIMAL=CRT
+B3:DECIMAL=AVO
+B4:DECIMAL=COST
+B5:DECIMAL=WEAPON
+B6:DECIMAL=INFO
+B7:DECIMAL=DUMMY
+
+INFO=スキルが発動した時に受けられるボーナスを指定します。
+MAX_EXPLANDS_SIZE=0xFF
+INFO.en=Specifies the bonus you will receive when the skill is activated.
+INFO.zh=Specifies the bonus you will receive when the skill is activated.

@@ -139,6 +139,7 @@ namespace FEBuilderGBA
                         PatchUtil.skill_system_enum a = PatchUtil.SearchSkillSystem();
                         return (a == PatchUtil.skill_system_enum.FE8N
                             || a == PatchUtil.skill_system_enum.FE8N_ver2
+                            || a == PatchUtil.skill_system_enum.FE8N_ver3
                             || a == PatchUtil.skill_system_enum.yugudora
                             );
                     };

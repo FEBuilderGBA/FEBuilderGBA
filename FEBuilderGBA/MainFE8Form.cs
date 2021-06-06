@@ -642,6 +642,9 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+            }
             else
             {
                 R.ShowStopError(R._("スキル拡張がありません。\r\nスキル拡張パッチをインストールしてから利用してください。"));
@@ -663,6 +666,7 @@ namespace FEBuilderGBA
             }
             else if (skill == PatchUtil.skill_system_enum.FE8N 
                 || skill == PatchUtil.skill_system_enum.FE8N_ver2
+                || skill == PatchUtil.skill_system_enum.FE8N_ver3
                 || skill == PatchUtil.skill_system_enum.yugudora
                 )
             {
@@ -686,6 +690,10 @@ namespace FEBuilderGBA
             if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentClassSkillSystemForm>();
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>();
             }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
@@ -837,6 +845,12 @@ namespace FEBuilderGBA
                 SkillAssignmentUnitButton.Hide();
                 FE8SpellMenuExtendsButton.Hide();
                 ToolCustomBuildButton.Hide();
+
+                PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+                {
+                    SkillConfigButton.Hide();
+                }
             }
         }
 

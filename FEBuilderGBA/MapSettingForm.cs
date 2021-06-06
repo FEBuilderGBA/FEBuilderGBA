@@ -682,6 +682,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+
             PLists plists = GetMapPListsWhereAddr(mapaddr);
             {
                 uint obj2_plist = (plists.obj_plist >> 8) & 0xFF; //FE8にはないが FE7は、 plistを2つ設定できることがある.
@@ -811,6 +812,7 @@ namespace FEBuilderGBA
                 }
             }
         }
+
         public static bool IsFreliaCasle(uint mapid)
         {
             return Program.ROM.RomInfo.version() == 8 && mapid == 0x38;
@@ -912,6 +914,24 @@ namespace FEBuilderGBA
                 return true;
             }
             return false;
+        }
+
+        private void B18_ValueChanged(object sender, EventArgs e)
+        {
+            if (B18.Value != 0x7)
+            {
+                J_18.ErrorMessage = "";
+                return;
+            }
+
+            PatchUtil.HPBar_enum hpbar = PatchUtil.SearchHPBarPatch();
+            if (hpbar != PatchUtil.HPBar_enum.HPBar)
+            {
+                J_18.ErrorMessage = "";
+                return;
+            }
+
+            J_18.ErrorMessage = R._("HPBarを表示するパッチをインストールしている時には、表示が乱れるので天気を曇りには設定しないでください。");
         }
     }
 }

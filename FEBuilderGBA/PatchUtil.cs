@@ -40,6 +40,7 @@ namespace FEBuilderGBA
             g_Cache_HandAxsWildCard = HandAxsWildCard_extends.NoCache;
             g_Cache_soundroom_unlock_enum = soundroom_unlock_enum.NoCache;
             g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
+            g_Cache_HPBar_enum = HPBar_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -160,6 +161,7 @@ namespace FEBuilderGBA
             NO,             //なし
             FE8N,           //for FE8J
             FE8N_ver2,      //for FE8J   FE8Nの2018/01 に新しく追加されたもの
+            FE8N_ver3,      //for FE8J   FE8Nの2021/05 に新しく追加されたもの
             yugudora,       //for FE8J   FE8Nのカスタマイズ
             midori,         //for FE8J   初期から独自スキルを実装していた拡張
             SkillSystem,    //for FE8U
@@ -198,6 +200,10 @@ namespace FEBuilderGBA
                 }
                 if (t.name == "FE8N")
                 {
+                    if (SkillConfigFE8NVer3SkillForm.IsFE8NVer3())
+                    {
+                        return skill_system_enum.FE8N_ver3;
+                    }
                     if (SkillConfigFE8NVer2SkillForm.IsFE8NVer2())
                     {
                         return skill_system_enum.FE8N_ver2;
@@ -977,6 +983,37 @@ namespace FEBuilderGBA
             }
             return TextEngineRework_enum.NO;
         }
+
+        //HPBar
+        public enum HPBar_enum
+        {
+            NO,             //なし
+            HPBar,
+            NoCache = (int)NO_CACHE
+        };
+        static HPBar_enum g_Cache_HPBar_enum = HPBar_enum.NoCache;
+        public static HPBar_enum SearchHPBarPatch()
+        {
+            if (g_Cache_HPBar_enum == HPBar_enum.NoCache)
+            {
+                g_Cache_HPBar_enum = SearchHPBarPatchLow();
+            }
+            return g_Cache_HPBar_enum;
+        }
+        static HPBar_enum SearchHPBarPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="HPBar",	ver = "FE8U", addr = 0x276b4,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+                new PatchTableSt{ name="HPBar",	ver = "FE8J", addr = 0x156AC,data = new byte[]{0x18, 0x22}},
+            };
+            
+            if (SearchPatchBool(table))
+            {
+                return HPBar_enum.HPBar;
+            }
+            return HPBar_enum.NO;
+        }
+
 
         //指南パッチの設定アドレスの場所
         static uint g_Cache_shinan_table = NO_CACHE;

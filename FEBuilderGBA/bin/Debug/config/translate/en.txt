@@ -7738,6 +7738,9 @@ Map is damaged. {0}
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
 
+:HPBarを表示するパッチをインストールしている時には、表示が乱れるので天気を曇りには設定しないでください。
+When installing a patch that displays the HP Bar, do not set the weather to cloudy as the display will be distorted.
+
 :指南へJump
 Jump to the Shinan
 
@@ -10168,6 +10171,27 @@ Owned Item Skills
 : スキル割り当て
 Skill Assignment
 
+:COMBAT_ARTへ移動
+Jump to COMBAT_ART
+
+:ユニットクラス
+Unit class.
+
+:ユニットスキル
+Unit skill.
+
+:複合スキル
+ComplexSkill
+
+:このアイテムを武器として装備しているときに、このスキルを有効にします。
+Activate this skill when equipping this item as a weapon.
+
+:このアイテムを所持しているときに、このスキルを有効にします。
+Activate this skill when you have this item.
+
+:現在のスキルに、指定した他のスキルの効果を追加します。
+Adds the effects of other specified skills to the current skill.
+
 :スキル拡張 SkillSystem の、アニメを取得できません。
 SkillSystem's animation can't be acquired.
 
@@ -10735,11 +10759,14 @@ This WAV file consumes a very large size of {0} bytes! Proceed with importing an
 :Waveファイルのインポートを取りやめました
 Canceled WAV importing.
 
-:SongID {0}のトラック「{1}」は、壊れた楽器「{2} {3}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{4}
-Track "{1}" with SongID {0} is instructed to play the broken instrument "{2} {3}".\r\nCheck the VOICE instruction.\r\n{4}
+:SongID {0}のトラック「{1}」は、壊れた楽器「{2}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{3}
+Track "{1}" with SongID {0} is instructed to play the broken instrument "{2}".\r\nCheck the VOICE instruction.\r\n{3}
 
 :SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。
 Track "{1}" with SongID {0} is looping in GOTO, forgetting the EOT for TIE.\r\nIf you forget the EOT and loop, the sound will continue to sound.Add EOT before GOTO in the score.
+
+:環境音:
+EnvSound:
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper returned an error.\r\nFEBuilderGBA will substitute.\r\n\r\nGBAMusRiper error message:\r\n{0}.

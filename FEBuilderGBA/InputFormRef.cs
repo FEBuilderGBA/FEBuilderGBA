@@ -4053,7 +4053,11 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte())
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
-                    if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+                    if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+                    {
+                        SkillConfigFE8NVer3SkillForm f = (SkillConfigFE8NVer3SkillForm)InputFormRef.JumpForm<SkillConfigFE8NVer3SkillForm>(value, "AddressList", src_object);
+                    }
+                    else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
                     {
                         SkillConfigFE8NVer2SkillForm f = (SkillConfigFE8NVer2SkillForm)InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(value, "AddressList", src_object);
                     }
@@ -5139,6 +5143,7 @@ namespace FEBuilderGBA
             MagicSplitUtil.ClearCache();
             SkillConfigFE8NSkillForm.ClearCache();
             SkillConfigFE8NVer2SkillForm.ClearCache();
+            SkillConfigFE8NVer3SkillForm.ClearCache();
             SkillConfigSkillSystemForm.ClearCache();
             FE8SpellMenuExtendsForm.ClearCache();
             MapChangeForm.ClearCache();
@@ -6295,6 +6300,21 @@ namespace FEBuilderGBA
             }
         }
 
+        public string GetNameFull(uint id)
+        {
+            if (id >= this.DataCount)
+            {
+                return "";
+            }
+            uint addr = this.BaseAddress + (id * this.BlockSize);
+            U.AddrResult ar = this.LoopCallback((int)id, addr);
+            if (ar.isNULL())
+            {
+                return "";
+            }
+            return ar.name;
+        }
+
         //再初期化 ポインタ更新版
         public void ReInitPointer(uint newPointer, uint newDataCount = U.NOT_FOUND, bool IsManualForcedChange = false)
         {
@@ -6920,7 +6940,8 @@ namespace FEBuilderGBA
             }
 
             PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
-            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2
+                || skill == PatchUtil.skill_system_enum.FE8N_ver3)
             {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
                 ramunit_param_dic[0x3A] = R._("追加スキル");
             }
@@ -6959,7 +6980,11 @@ namespace FEBuilderGBA
             else if (prevValue == 0x3A)
             {
                 PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
-                if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+                if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+                {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
+                    return SkillConfigFE8NVer3SkillForm.GetSkillText(num);
+                }
+                else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
                 {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
                     return SkillConfigFE8NVer2SkillForm.GetSkillText(num);
                 }
@@ -7442,6 +7467,10 @@ namespace FEBuilderGBA
             {
                 return SkillConfigSkillSystemForm.GetSkillText(num);
             }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                return SkillConfigFE8NVer3SkillForm.GetSkillText(num);
+            }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return SkillConfigFE8NVer2SkillForm.GetSkillText(num);
@@ -7457,6 +7486,10 @@ namespace FEBuilderGBA
             if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 return SkillConfigSkillSystemForm.DrawSkillIcon(num);
+            }
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
+            {
+                return SkillConfigFE8NVer3SkillForm.DrawSkillIcon(num);
             }
             else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {

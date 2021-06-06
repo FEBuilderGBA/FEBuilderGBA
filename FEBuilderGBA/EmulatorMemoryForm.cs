@@ -96,7 +96,8 @@ namespace FEBuilderGBA
             }
 
             PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
-            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2
+                || skill == PatchUtil.skill_system_enum.FE8N_ver3)
             {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
                 PARTY_J_58.Text = R._("追加スキル");
             }

@@ -615,7 +615,6 @@
             // 
             // B0
             // 
-            this.B0.Hexadecimal = true;
             this.B0.Location = new System.Drawing.Point(145, -1);
             this.B0.Margin = new System.Windows.Forms.Padding(2);
             this.B0.Maximum = new decimal(new int[] {

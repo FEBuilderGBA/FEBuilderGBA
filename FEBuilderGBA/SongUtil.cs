@@ -2821,16 +2821,16 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            uint header = U.u16(rom , addr + 0x0);
-            if (header != 0x0)
-            {
-                return false;
-            }
-            uint header2 = U.u8(rom, addr + 0x2);
-            if (header2 != 0x0)
-            {
-                return false;
-            }
+//            uint header = U.u16(rom , addr + 0x0);
+//            if (header != 0x0)
+//            {
+//                return false;
+//            }
+//            uint header2 = U.u8(rom, addr + 0x2);
+//            if (header2 != 0x0)
+//            {
+//                return false;
+//            }
 
             uint len = U.u32(rom, (uint)(addr + 12));
             if (len >= 1024*1024*4)
@@ -3284,7 +3284,7 @@ namespace FEBuilderGBA
                     if (err != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
-                            , R._("SongID {0}のトラック「{1}」は、壊れた楽器「{2} {3}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{4}", U.To0xHexString(song_id), track_number + 1, c.value, U.To0xHexString(c.value), err), song_id));
+                            , R._("SongID {0}のトラック「{1}」は、壊れた楽器「{2}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{3}", U.To0xHexString(song_id), track_number + 1, SongInstrumentForm.GetNameFull(songinst_addr, c.value), err), song_id));
                     }
                 }
                 else if (c.type == TIE)
@@ -3297,7 +3297,7 @@ namespace FEBuilderGBA
                 }
                 else if (c.type == 0xb2)
                 {//GOTO
-                    if (isMapBGM && checkTIE && !IsFE7EOTGlitch(song_id))
+                    if (isMapBGM && checkTIE && !IsEnvSound(song_id) )
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
@@ -3306,14 +3306,11 @@ namespace FEBuilderGBA
             }
         }
 
-        static bool IsFE7EOTGlitch(uint song_id)
+        static bool IsEnvSound(uint song_id)
         {
-            if (Program.ROM.RomInfo.version() != 7)
+            string name = SongTableForm.GetSongName(song_id);
+            if (name.IndexOf(R._("環境音:")) >= 0)
             {
-                return false;
-            }
-            if (song_id == 0x3b8)
-            {//FE7の0x3B8 環境音夜には、EOTが設定されていません
                 return true;
             }
             return false;

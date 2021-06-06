@@ -132,7 +132,12 @@ namespace FEBuilderGBA
                 );
         }
 
-
+        public static string GetNameFull(uint voca_baseaddress, uint inst_id)
+        {
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInit(voca_baseaddress);
+            return InputFormRef.GetNameFull(inst_id);
+        }
 
         private void SongVocaForm_Load(object sender, EventArgs e)
         {

@@ -508,7 +508,8 @@ namespace FEBuilderGBA
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
-            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }

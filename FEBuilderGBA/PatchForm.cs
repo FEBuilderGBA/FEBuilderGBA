@@ -7256,6 +7256,19 @@ namespace FEBuilderGBA
 
             JumpTo(filter, index);
         }
+        public void JumpToSelectStruct(string filter, int index, int selectStructIndex)
+        {
+            this.Filter.Text = filter;
+            U.SelectedIndexSafety(this.PatchList, index, true);
+
+            List<Control> controls = InputFormRef.GetAllControls(this);
+            Control c = InputFormRef.FindObjectByForm<ListBox>(controls, "AddressList");
+            if (c is ListBox)
+            {
+                ListBox listObject = (ListBox)c;
+                U.SelectedIndexSafety(listObject, selectStructIndex, true);
+            }
+        }
 
 #if DEBUG
         //重たいのでフルテストの時のみ実行
