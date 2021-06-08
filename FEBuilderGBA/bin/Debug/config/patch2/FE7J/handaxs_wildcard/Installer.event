@@ -1,0 +1,15 @@
+#ifndef jumpToHack_r0//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#endif //jumpToHack_r0
+
+PUSH
+ORG 0x530E4	//FE7U
+//ORG 0x528FC	//FE7U
+jumpToHack_r0(handaxs_wildcard)
+POP
+
+ALIGN 4
+handaxs_wildcard:
+#incbin "handaxs_wildcard.dmp"
+
+ALIGN 4

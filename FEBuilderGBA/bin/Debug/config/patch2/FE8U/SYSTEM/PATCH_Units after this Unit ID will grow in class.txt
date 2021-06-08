@@ -1,0 +1,18 @@
+NAME=このUnitID以降のユニットはクラス成長させる
+NAME.en=Units after this Unit ID will Class Grow
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17C4C
+ADDRESS_TYPE=UNIT
+
+AUTHOR=fe8 decomp project. https://feuniverse.us/t/autolevel-function/12463/2
+
+INFO=このユニットID+1以上のユニットは、ユニット配置で自動成長(AutoLevel)を選択した時に、クラス成長させます。\r\nただし、フラグが設定されている場合は、ユニット成長が実行されます。\r\nディフォルトは、0x3Fです。(UnitID 0x40以降はクラス成長させる。)
+
+INFO.en=Units with this unit ID+1 or higher will be class-grown when Auto Level is selected for Unit Placer.\r\nHowever, if boss flag is set, the unit growth will be executed.\r\nThe default value is 0x3F. (UnitID 0x40 and later will cause the class to grow.)
+
+NAME.zh=Units after this Unit ID will Class Grow
+INFO.zh=Units with this unit ID+1 or higher will be class-grown when Auto Level is selected for Unit Placer.\r\nHowever, if boss flag is set, the unit growth will be executed.\r\nThe default value is 0x3F. (UnitID 0x40 and later will cause the class to grow.)

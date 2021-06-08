@@ -1,0 +1,18 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+NAME=手斧モーションを投げ斧の汎用モーションとして利用する
+INFO=投げ斧を作ったときには、その斧のアイテムIDを利用して投げるモーションを作る必要があります。\r\nこのパッチはその問題を修正します。\r\nこのパッチでは、手斧(ItemID:0x28)を汎用の投げ斧モーションとして利用します。\r\n手斧のモーションを定義してするだけで、他の投げ斧のモーションを定義する必要はありません。\r\n\r\nもし、その斧専用のカスタムモーションを作りたい場合は、手斧のモーションより前に定義してください。\r\n
+HINT=ておの,なげおの
+
+NAME.en=Use HandAxs motion as generic motion for throwing axes
+INFO.en=When you create a throwing axe, you need to use the item ID of that axe to create a throwing motion.\r\nThis patch fixes that problem.\r\nThis patch uses the Hand Axs (ItemID:0x28) as a generic throwing axe motion.\r\nYou only need to define the motion for the HandAxs and not any other throwing axe motions.\r\n\r\nIf you want to create a custom motion specifically for that axe, define it before the HandAxs motion.\r\n
+
+NAME.zh=Use HandAxs motion as generic motion for throwing axes
+INFO.zh=When you create a throwing axe, you need to use the item ID of that axe to create a throwing motion.\r\nThis patch fixes that problem.\r\nThis patch uses the Hand Axs (ItemID:0x28) as a generic throwing axe motion.\r\nYou only need to define the motion for the HandAxs and not any other throwing axe motions.\r\n\r\nIf you want to create a custom motion specifically for that axe, define it before the HandAxs motion.\r\n
+
+//既に適応されたかどうか
+PATCHED_IF:0x530E4=0x00 0x48 0x87 0x46
+TYPE=EA
+EA=Installer.event
+AUTHOR=7743

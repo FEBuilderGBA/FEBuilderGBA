@@ -3361,8 +3361,8 @@ An unsupported extension ({0}) was specified.
 :アニメーションエディタを表示するために、アニメーションをエクスポートしようとしましたが、アニメをファイルにエクスポートできませんでした。\r\n\r\nファイル:{0}
 It tried exporting animation to display animation editor, but could not export animation to file.\r\n\r\nFile: {0}
 
-:クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。
-The class ({0}) can use the ax, but there is no setting for the ax ax ({1}).\r\nIn GBAFE, you need to set motion that throws for each item for hand-held weapons.
+:クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。\r\n個別に設定するのが面倒な場合は、「手斧モーションを投げ斧の汎用モーションとして利用する」パッチを有効にしてください。
+The class ({0}) can use the ax, but there is no setting for the ax ax ({1}).\r\nIn GBAFE, you need to set motion that throws for each item for hand-held weapons.\r\nIf you don't want to bother with individual settings, Use "Use HandAxs motion as generic motion for throwing axes" patch.
 
 :クラス({0})の{1}のポインタ({2})が危険です。
 Pointer ({2}) of class ({0}) 's {1} is dangerous.
@@ -5593,11 +5593,11 @@ ASM pointer
 :2=CCアイテムを使った場合の処理を定義する
 2=Define processing when Promotion Items are used
 
-:3=CCアイテムかどうかを定義する
-3=Define whether it is a Promotion Items
+:3=CCアイテムかどうかを定義する(FE7のみ)
+3=Define whether it is a Promotion Items(FE7 Only)
 
-:4=アイテムのターゲット選択の方法を定義する(多分)
-4=Define method of target selection of item (maybe)
+:4=アイテムのターゲット選択の方法を定義する
+4=Define method of target selection of item
 
 :5=杖の種類を定義する
 5=Define the type of Staff
@@ -5609,7 +5609,10 @@ ASM pointer
 7=Define whether it is Stat Booster and Promotion Items
 
 :8=利用時のエラーメッセージを定義する
-8=Define error message when using.
+8=Define error message when using
+
+:9=アイテムの前置詞 A|An|The(FE8Uのみ)
+9=Define item name article A|An|The(FE8U Only)
 
 :アイテム利用効果
 Item "Use" Effect

@@ -8,4 +8,6 @@ TAG=#SOUND
 ADDRESS=0x08072786
 ADDRESS_TYPE=SONG
 
-INFO=Select the song to be played during battle with Sacred Weapons.
+INFO=神器で攻撃した時に再生される戦闘BGMです。\r\n原作では、アイテム ItemID 0x85 ジークリンデ , ItemID 0x92 ジークムントを、装備した時の戦いのときに利用されます。
+INFO.en=Select the song to be played during battle with Sacred Weapons.\r\nIn vanilla, ItemID 0x85 Siegelinde and ItemID 0x92 Siegmund are used during battles when equipped.
+INFO.zh=Select the song to be played during battle with Sacred Weapons.\r\nIn vanilla, ItemID 0x85 Siegelinde and ItemID 0x92 Siegmund are used during battles when equipped.

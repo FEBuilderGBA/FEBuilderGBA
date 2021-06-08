@@ -986,8 +986,9 @@ namespace FEBuilderGBA
                         continue;
                     }
                 }
+
                 errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME_CLASS, ifr.BaseAddress
-                    , R._("クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。"
+                    , R._("クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。\r\n個別に設定するのが面倒な場合は、「手斧モーションを投げ斧の汎用モーションとして利用する」パッチを有効にしてください。"
                     , classList[(int)cid].name
                     , axsItems[i].name), cid));
             }

@@ -1,0 +1,71 @@
+NAME=FE8 Text Engine Rework
+INFO=When using it, please read the explanation of FEU and readme carefully.\r\nReadme: https://www.dropbox.com/s/crk6o28bbyc6nwa/FE8-Text_Engine_Rework.zip?file_subpath=%2FFE8-Text_Engine_Rework%2F_README.txt
+
+AUTHOR=Tequila, Zahlman, Stan, Black Mage and Eliwan, The Awful Emblem team https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/118
+
+TYPE=EA
+EA=_FE8-Text_Engine_Rework_EA.event
+TAG=#ENGINE
+
+TEXTESCAPE:02601=@0080@0026@0001	[Font_Normal]	ChangeFont 0x01=Normal
+TEXTESCAPE:02602=@0080@0026@0002	[Font_Bold]	ChangeFont 0x02=Bold
+TEXTESCAPE:02603=@0080@0026@0003	[Font_Italic]	ChangeFont 0x03=Italic
+TEXTESCAPE:026FF=@0080@0026	[Font]	ChangeFont[1=Normal, 2=Bold, 3=Italic]
+TEXTESCAPE:027FF=@0080@0027	[TextPalette]	RegistTextPalette[Color][Index]
+TEXTESCAPE:02801=@0080@0028@0001	[ColorGroup_White]	ChangeColorGroup 0x1=White
+TEXTESCAPE:02802=@0080@0028@0002	[ColorGroup_Black]	ChangeColorGroup 0x2=Black
+TEXTESCAPE:02803=@0080@0028@0003	[ColorGroup_LightBlue]	ChangeColorGroup 0x3=LightBlue
+TEXTESCAPE:02803=@0080@0028@0004	[ColorGroup_Yellow]	ChangeColorGroup 0x4=Yellow
+TEXTESCAPE:02803=@0080@0028@0005	[ColorGroup_Red]	ChangeColorGroup 0x5=Red
+TEXTESCAPE:028FF=@0080@0028	[ColorGroup]	ChangeColorGroup[1=White 2=Black 3=LightBlue 4=Yellow 5=Red]
+TEXTESCAPE:02901=@0080@0029@0001	[BoxBgPalette_Normal]	ChangeBoxBgPalette 0x1=Normal
+TEXTESCAPE:02902=@0080@0029@0002	[BoxBgPalette_Black]	ChangeBoxBgPalette 0x2=Black
+TEXTESCAPE:02903=@0080@0029@0003	[BoxBgPalette_LightBlue]	ChangeBoxBgPalette 0x3=LightBlue
+TEXTESCAPE:029FF=@0080@0029	[BoxBgPalette]	ChangeBoxBgPalette[1=Normal 2=Black 3=LightBlue]
+TEXTESCAPE:02A01=@0080@002A@0001	[BoxType_Normal]	ChangeBoxType 0x1=Normal
+TEXTESCAPE:02A02=@0080@002A@0002	[BoxType_Angry]	ChangeBoxType 0x2=Angry Spikes
+TEXTESCAPE:02A03=@0080@002A@0003	[BoxType_Thought]	ChangeBoxType 0x3=Thought Bubbles
+TEXTESCAPE:02AFF=@0080@002A	[BoxType]	ChangeBoxType[1=Normal 2=Angry 3=Thought]
+TEXTESCAPE:02B01=@0080@002B@0001	[BoxHeight_1]	ChangeBoxHeight 0x1=Lines
+TEXTESCAPE:02B02=@0080@002B@0002	[BoxHeight_2]	ChangeBoxHeight 0x2=Lines
+TEXTESCAPE:02B03=@0080@002B@0003	[BoxHeight_3]	ChangeBoxHeight 0x3=Lines
+TEXTESCAPE:02BFF=@0080@002B	[BoxHeight]	ChangeBoxHeight[1-3 Lines]
+TEXTESCAPE:02C04=@0080@002C@0004	[BoopPitch_Low]	ChangeBoopPitch 0x04=Low
+TEXTESCAPE:02C0D=@0080@002C@000D	[BoopPitch_Default]	ChangeBoopPitch 0x0D=Default
+TEXTESCAPE:02C10=@0080@002C@0010	[BoopPitch_High]	ChangeBoopPitch 0x10=High
+TEXTESCAPE:02CFF=@0080@002C	[BoopPitch]	ChangeBoopPitch[4=Low D=Default 10=High]
+TEXTESCAPE:02D01=@0080@002D@008A@0085@0080@0080	[PlaySound_GetItem]	PlaySound GetItem
+TEXTESCAPE:02D02=@0080@002D@008B@0085@0080@0080	[PlaySound_LevelUP]	PlaySound LevelUP
+TEXTESCAPE:02D03=@0080@002D@008C@0085@0080@0080	[PlaySound_WeaponBroke]	PlaySound WeaponBroke
+TEXTESCAPE:02D04=@0080@002D@0088@0087@0080@0080	[PlaySound_BerserkStaff]	PlaySound BerserkStaff
+TEXTESCAPE:02D05=@0080@002D@0088@0089@0080@0080	[PlaySound_HealStaff]	PlaySound HealStaff
+TEXTESCAPE:02D06=@0080@002D@008F@008A@0080@0080	[PlaySound_DestroyedWallSnag]	PlaySound DestroyedWallSnag
+TEXTESCAPE:02D07=@0080@002D@0080@008B@0080@0080	[PlaySound_AttckingWallSnag]	PlaySound AttckingWallSnag
+TEXTESCAPE:02D08=@0080@002D@0081@008B@0080@0080	[PlaySound_UnlockingDoor]	PlaySound UnlockingDoor
+TEXTESCAPE:02D09=@0080@002D@0084@008B@0080@0080	[PlaySound_Warping]	PlaySound Warping
+TEXTESCAPE:02D0A=@0080@002D@0085@008B@0080@0080	[PlaySound_WarpEnd]	PlaySound WarpEnd
+TEXTESCAPE:02D0B=@0080@002D@0087@008B@0080@0080	[PlaySound_Poison]	PlaySound Poison
+TEXTESCAPE:02D0C=@0080@002D@0089@008B@0080@0080	[PlaySound_GoldChanging]	PlaySound GoldChanging
+TEXTESCAPE:02D0D=@0080@002D@0086@008D@0080@0080	[PlaySound_DeathInMap]	PlaySound DeathInMap
+TEXTESCAPE:02D0E=@0080@002D@0088@008D@0080@0080	[PlaySound_CriticalHit]	PlaySound CriticalHit
+TEXTESCAPE:02D0F=@0080@002D@0087@008E@0080@0080	[PlaySound_BrigandBattleCry]	PlaySound BrigandBattleCry
+TEXTESCAPE:02D10=@0080@002D@0082@008F@0080@0080	[PlaySound_FireShoot]	PlaySound FireShoot
+TEXTESCAPE:02D11=@0080@002D@0087@008F@0080@0080	[PlaySound_FireSpellHitting]	PlaySound FireSpellHitting
+TEXTESCAPE:02D12=@0080@002D@008C@0087@0083@0080	[PlaySound_MageKnightMagic]	PlaySound MageKnightMagic
+TEXTESCAPE:02DFF=@0080@002D	[PlaySound]	PlaySound[0x8D][0x8C][0x8B][0x8A] Play SongID 0xABCD
+TEXTESCAPE:02EFF=@0080@002E	[MugLoc]	MugLoc[XX][YY]
+TEXTESCAPE:02FFF=@0080@002F	[LoadFaceFancy]	LoadFaceFancy[Options|0x80][Font][ColorGroup][BgPalette][BoxType][Pitch]
+TEXTESCAPE:030FF=@0080@0030	[MFL2]	MFL2[YY]
+TEXTESCAPE:031FF=@0080@0031	[MML2]	MML2[YY]
+TEXTESCAPE:032FF=@0080@0032	[ML2]	ML2[YY]
+TEXTESCAPE:033FF=@0080@0033	[MR2]	MR2[YY]
+TEXTESCAPE:034FF=@0080@0034	[MMR2]	MMR2[YY]
+TEXTESCAPE:035FF=@0080@0035	[MFR2]	MFR2[YY]
+TEXTESCAPE:036FF=@0080@0036	[MFFL2]	MFFL2[YY]
+TEXTESCAPE:037FF=@0080@0037	[MFFR2]	MFFR2[YY]
+TEXTESCAPE:03801=@0080@0038@0001	[TextSpeed]	TextSpeed 0x1=Fast
+TEXTESCAPE:03804=@0080@0038@0004	[TextSpeed]	TextSpeed 0x4=Normal
+TEXTESCAPE:03808=@0080@0038@0008	[TextSpeed]	TextSpeed 0x8=Slow
+TEXTESCAPE:038FF=@0080@0038	[TextSpeed]	TextSpeed[1=Fast 4=Normal 8=Slow]
+
+PATCHED_IF:0x6FD0=0xF0 0xB5 0x82 0xB0

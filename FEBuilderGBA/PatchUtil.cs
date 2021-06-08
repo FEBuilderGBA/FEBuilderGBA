@@ -1354,6 +1354,8 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="HandAxsWildCard",	ver = "FE8J", addr = 0x596F0,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
                 new PatchTableSt{ name="HandAxsWildCard",	ver = "FE8U", addr = 0x588C0,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+                new PatchTableSt{ name="HandAxsWildCard",	ver = "FE7J", addr = 0x530E4,data = new byte[]{0x00, 0x48, 0x87, 0x46}},
+                new PatchTableSt{ name="HandAxsWildCard",	ver = "FE7U", addr = 0x528FC,data = new byte[]{0x00, 0x48, 0x87, 0x46}},
             };
 
             bool r = SearchPatchBool(table);

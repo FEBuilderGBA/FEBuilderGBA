@@ -1538,6 +1538,10 @@ namespace FEBuilderGBA
         }
 #endif
 
+        public static string[] subrange(string[] data, int s, int e)
+        {
+            return subrange(data, (uint) s, (uint) e);
+        }
         public static string[] subrange(string[] data, uint s, uint e)
         {
             s = Math.Min(s, (uint)data.Length);
@@ -1550,6 +1554,11 @@ namespace FEBuilderGBA
             string[] d = new string[e - s];
             Array.Copy(data, s, d, 0, e - s);
             return d;
+        }
+
+        public static byte[] subrange(byte[] data, int s, int e)
+        {
+            return subrange(data, (uint)s, (uint)e);
         }
         public static byte[] subrange(byte[] data, uint s, uint e)
         {

@@ -13,8 +13,8 @@ SHORT 0
 POP
 ALIGN 4
 HPFrames:
-#incbin HPFrames.bin  //HINT=BIN
-HPFramePointers:      //HINT=POINTER_ARRAY
+#incbin "HPFrames.bin"  //HINT=BIN
+HPFramePointers:        //HINT=POINTER_ARRAY
 POIN HPFrames
 POIN HPFrames+8
 POIN HPFrames+16
@@ -31,7 +31,7 @@ POIN HPFrames+96
 POIN HPFrames+104
 
 HPBars:
-#incbin Talk_Warning_Bars.dmp
+#incbin "Talk_Warning_Bars.dmp"
 POIN HPFramePointers
 HPBarGraphic:
 #incbin "WarningHpSheet.png.dmp"

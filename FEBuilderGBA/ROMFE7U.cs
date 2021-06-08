@@ -431,6 +431,8 @@ namespace FEBuilderGBA
         public uint main_menu_width_address() { return 0xB95AF6; } //メインメニューの幅
         public uint font_default_begin() { return 0xB87B68; }
         public uint font_default_end() { return 0xB8B9AC; }
+        public uint item_name_article_pointer() { return 0x0; } // a|an|the を切り替えるテーブル 英語版のみ
+        public uint item_name_article_switch2_address() { return 0x0; }
         public string get_shop_name(uint shop_object)//店の名前
         {
             if (shop_object == 0x13)

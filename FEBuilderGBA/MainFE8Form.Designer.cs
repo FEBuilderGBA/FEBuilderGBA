@@ -828,7 +828,7 @@
             // 
             // TextButton
             // 
-            this.TextButton.Location = new System.Drawing.Point(1222, 3);
+            this.TextButton.Location = new System.Drawing.Point(1223, 3);
             this.TextButton.Margin = new System.Windows.Forms.Padding(2);
             this.TextButton.Name = "TextButton";
             this.TextButton.Size = new System.Drawing.Size(200, 36);
@@ -1037,7 +1037,7 @@
             // 
             // EDButton
             // 
-            this.EDButton.Location = new System.Drawing.Point(1221, 112);
+            this.EDButton.Location = new System.Drawing.Point(1223, 112);
             this.EDButton.Margin = new System.Windows.Forms.Padding(2);
             this.EDButton.Name = "EDButton";
             this.EDButton.Size = new System.Drawing.Size(200, 36);
@@ -1103,7 +1103,7 @@
             // 
             // OPPrologueButton
             // 
-            this.OPPrologueButton.Location = new System.Drawing.Point(1221, 149);
+            this.OPPrologueButton.Location = new System.Drawing.Point(1223, 149);
             this.OPPrologueButton.Margin = new System.Windows.Forms.Padding(2);
             this.OPPrologueButton.Name = "OPPrologueButton";
             this.OPPrologueButton.Size = new System.Drawing.Size(200, 36);
@@ -1147,7 +1147,7 @@
             // 
             // TextCharCodeButton
             // 
-            this.TextCharCodeButton.Location = new System.Drawing.Point(1222, 39);
+            this.TextCharCodeButton.Location = new System.Drawing.Point(1223, 39);
             this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(2);
             this.TextCharCodeButton.Name = "TextCharCodeButton";
             this.TextCharCodeButton.Size = new System.Drawing.Size(200, 36);
@@ -1213,7 +1213,7 @@
             // 
             // ClassOPDemoButton
             // 
-            this.ClassOPDemoButton.Location = new System.Drawing.Point(1221, 189);
+            this.ClassOPDemoButton.Location = new System.Drawing.Point(1223, 189);
             this.ClassOPDemoButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClassOPDemoButton.Name = "ClassOPDemoButton";
             this.ClassOPDemoButton.Size = new System.Drawing.Size(200, 36);
@@ -1224,7 +1224,7 @@
             // 
             // MapTerrainNameButton
             // 
-            this.MapTerrainNameButton.Location = new System.Drawing.Point(1222, 447);
+            this.MapTerrainNameButton.Location = new System.Drawing.Point(1223, 483);
             this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainNameButton.Name = "MapTerrainNameButton";
             this.MapTerrainNameButton.Size = new System.Drawing.Size(200, 36);
@@ -1257,7 +1257,7 @@
             // 
             // ClassOPFontButton
             // 
-            this.ClassOPFontButton.Location = new System.Drawing.Point(1221, 224);
+            this.ClassOPFontButton.Location = new System.Drawing.Point(1223, 261);
             this.ClassOPFontButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClassOPFontButton.Name = "ClassOPFontButton";
             this.ClassOPFontButton.Size = new System.Drawing.Size(200, 36);
@@ -1268,7 +1268,7 @@
             // 
             // EDStaffRollButton
             // 
-            this.EDStaffRollButton.Location = new System.Drawing.Point(1221, 297);
+            this.EDStaffRollButton.Location = new System.Drawing.Point(1223, 333);
             this.EDStaffRollButton.Margin = new System.Windows.Forms.Padding(2);
             this.EDStaffRollButton.Name = "EDStaffRollButton";
             this.EDStaffRollButton.Size = new System.Drawing.Size(200, 36);
@@ -1279,7 +1279,7 @@
             // 
             // FontButton
             // 
-            this.FontButton.Location = new System.Drawing.Point(1222, 76);
+            this.FontButton.Location = new System.Drawing.Point(1223, 76);
             this.FontButton.Margin = new System.Windows.Forms.Padding(2);
             this.FontButton.Name = "FontButton";
             this.FontButton.Size = new System.Drawing.Size(200, 36);
@@ -1345,7 +1345,7 @@
             // 
             // DisassemblerButton
             // 
-            this.DisassemblerButton.Location = new System.Drawing.Point(406, 594);
+            this.DisassemblerButton.Location = new System.Drawing.Point(406, 629);
             this.DisassemblerButton.Margin = new System.Windows.Forms.Padding(2);
             this.DisassemblerButton.Name = "DisassemblerButton";
             this.DisassemblerButton.Size = new System.Drawing.Size(200, 36);
@@ -1356,7 +1356,7 @@
             // 
             // OPClassAlphaNameButton
             // 
-            this.OPClassAlphaNameButton.Location = new System.Drawing.Point(1221, 224);
+            this.OPClassAlphaNameButton.Location = new System.Drawing.Point(1223, 225);
             this.OPClassAlphaNameButton.Margin = new System.Windows.Forms.Padding(2);
             this.OPClassAlphaNameButton.Name = "OPClassAlphaNameButton";
             this.OPClassAlphaNameButton.Size = new System.Drawing.Size(200, 36);
@@ -1367,7 +1367,7 @@
             // 
             // PatchButton
             // 
-            this.PatchButton.Location = new System.Drawing.Point(0, 673);
+            this.PatchButton.Location = new System.Drawing.Point(0, 711);
             this.PatchButton.Margin = new System.Windows.Forms.Padding(2);
             this.PatchButton.Name = "PatchButton";
             this.PatchButton.Size = new System.Drawing.Size(200, 36);
@@ -1444,7 +1444,7 @@
             // 
             // SimpleMenuButton
             // 
-            this.SimpleMenuButton.Location = new System.Drawing.Point(1426, 633);
+            this.SimpleMenuButton.Location = new System.Drawing.Point(1426, 671);
             this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(2);
             this.SimpleMenuButton.Name = "SimpleMenuButton";
             this.SimpleMenuButton.Size = new System.Drawing.Size(200, 36);
@@ -1595,7 +1595,7 @@
             this.ControlPanel.Location = new System.Drawing.Point(9, 80);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
+            this.ControlPanel.Size = new System.Drawing.Size(1630, 790);
             this.ControlPanel.TabIndex = 1;
             // 
             // AIPerformItemButton
@@ -1655,7 +1655,7 @@
             // 
             // ToolUseFlagButton
             // 
-            this.ToolUseFlagButton.Location = new System.Drawing.Point(1017, 633);
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(1017, 671);
             this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
             this.ToolUseFlagButton.Name = "ToolUseFlagButton";
             this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
@@ -1710,7 +1710,7 @@
             // 
             // MapTerrainBGLookupTableButton
             // 
-            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 521);
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1223, 557);
             this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
             this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
@@ -1721,7 +1721,7 @@
             // 
             // MapTerrainFloorLookupTableButton
             // 
-            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 483);
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1223, 519);
             this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
             this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
@@ -1754,7 +1754,7 @@
             // 
             // ToolProblemReportToolButton
             // 
-            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1222, 673);
+            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1222, 711);
             this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
             this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1787,7 +1787,7 @@
             // 
             // ROMRebuildButton
             // 
-            this.ROMRebuildButton.Location = new System.Drawing.Point(1426, 673);
+            this.ROMRebuildButton.Location = new System.Drawing.Point(1426, 711);
             this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(2);
             this.ROMRebuildButton.Name = "ROMRebuildButton";
             this.ROMRebuildButton.Size = new System.Drawing.Size(200, 36);
@@ -1831,7 +1831,7 @@
             // 
             // TextDicButton
             // 
-            this.TextDicButton.Location = new System.Drawing.Point(1221, 333);
+            this.TextDicButton.Location = new System.Drawing.Point(1223, 369);
             this.TextDicButton.Margin = new System.Windows.Forms.Padding(2);
             this.TextDicButton.Name = "TextDicButton";
             this.TextDicButton.Size = new System.Drawing.Size(200, 36);
@@ -1853,7 +1853,7 @@
             // 
             // FlagNameToolButton
             // 
-            this.FlagNameToolButton.Location = new System.Drawing.Point(1017, 673);
+            this.FlagNameToolButton.Location = new System.Drawing.Point(1017, 711);
             this.FlagNameToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.FlagNameToolButton.Name = "FlagNameToolButton";
             this.FlagNameToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1864,7 +1864,7 @@
             // 
             // ExportEAEventToolButton
             // 
-            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1222, 594);
+            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1222, 632);
             this.ExportEAEventToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportEAEventToolButton.Name = "ExportEAEventToolButton";
             this.ExportEAEventToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1875,7 +1875,7 @@
             // 
             // EmulatorMemoryToolButton
             // 
-            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1222, 633);
+            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1222, 671);
             this.EmulatorMemoryToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.EmulatorMemoryToolButton.Name = "EmulatorMemoryToolButton";
             this.EmulatorMemoryToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1898,7 +1898,7 @@
             // Patch0
             // 
             this.Patch0.AutoEllipsis = true;
-            this.Patch0.Location = new System.Drawing.Point(0, 716);
+            this.Patch0.Location = new System.Drawing.Point(0, 754);
             this.Patch0.Margin = new System.Windows.Forms.Padding(2);
             this.Patch0.Name = "Patch0";
             this.Patch0.Size = new System.Drawing.Size(200, 36);
@@ -1908,7 +1908,7 @@
             // 
             // PatchResult
             // 
-            this.PatchResult.Location = new System.Drawing.Point(4, 686);
+            this.PatchResult.Location = new System.Drawing.Point(4, 724);
             this.PatchResult.Name = "PatchResult";
             this.PatchResult.Size = new System.Drawing.Size(1209, 22);
             this.PatchResult.TabIndex = 123;
@@ -1919,7 +1919,7 @@
             // Patch7
             // 
             this.Patch7.AutoEllipsis = true;
-            this.Patch7.Location = new System.Drawing.Point(1426, 716);
+            this.Patch7.Location = new System.Drawing.Point(1426, 754);
             this.Patch7.Margin = new System.Windows.Forms.Padding(2);
             this.Patch7.Name = "Patch7";
             this.Patch7.Size = new System.Drawing.Size(200, 36);
@@ -1929,7 +1929,7 @@
             // 
             // DecreaseColorToolButton
             // 
-            this.DecreaseColorToolButton.Location = new System.Drawing.Point(206, 633);
+            this.DecreaseColorToolButton.Location = new System.Drawing.Point(206, 668);
             this.DecreaseColorToolButton.Margin = new System.Windows.Forms.Padding(2);
             this.DecreaseColorToolButton.Name = "DecreaseColorToolButton";
             this.DecreaseColorToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1941,7 +1941,7 @@
             // Patch5
             // 
             this.Patch5.AutoEllipsis = true;
-            this.Patch5.Location = new System.Drawing.Point(1024, 717);
+            this.Patch5.Location = new System.Drawing.Point(1024, 755);
             this.Patch5.Margin = new System.Windows.Forms.Padding(2);
             this.Patch5.Name = "Patch5";
             this.Patch5.Size = new System.Drawing.Size(190, 36);
@@ -1952,7 +1952,7 @@
             // Patch6
             // 
             this.Patch6.AutoEllipsis = true;
-            this.Patch6.Location = new System.Drawing.Point(1221, 716);
+            this.Patch6.Location = new System.Drawing.Point(1221, 754);
             this.Patch6.Margin = new System.Windows.Forms.Padding(2);
             this.Patch6.Name = "Patch6";
             this.Patch6.Size = new System.Drawing.Size(200, 36);
@@ -1963,7 +1963,7 @@
             // Patch1
             // 
             this.Patch1.AutoEllipsis = true;
-            this.Patch1.Location = new System.Drawing.Point(207, 716);
+            this.Patch1.Location = new System.Drawing.Point(207, 754);
             this.Patch1.Margin = new System.Windows.Forms.Padding(2);
             this.Patch1.Name = "Patch1";
             this.Patch1.Size = new System.Drawing.Size(200, 36);
@@ -1974,7 +1974,7 @@
             // Patch4
             // 
             this.Patch4.AutoEllipsis = true;
-            this.Patch4.Location = new System.Drawing.Point(819, 716);
+            this.Patch4.Location = new System.Drawing.Point(819, 754);
             this.Patch4.Margin = new System.Windows.Forms.Padding(2);
             this.Patch4.Name = "Patch4";
             this.Patch4.Size = new System.Drawing.Size(200, 36);
@@ -1985,7 +1985,7 @@
             // PointerToolButton
             // 
             this.PointerToolButton.AutoEllipsis = true;
-            this.PointerToolButton.Location = new System.Drawing.Point(0, 557);
+            this.PointerToolButton.Location = new System.Drawing.Point(0, 592);
             this.PointerToolButton.Margin = new System.Windows.Forms.Padding(2);
             this.PointerToolButton.Name = "PointerToolButton";
             this.PointerToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1997,7 +1997,7 @@
             // Patch2
             // 
             this.Patch2.AutoEllipsis = true;
-            this.Patch2.Location = new System.Drawing.Point(411, 716);
+            this.Patch2.Location = new System.Drawing.Point(411, 754);
             this.Patch2.Margin = new System.Windows.Forms.Padding(2);
             this.Patch2.Name = "Patch2";
             this.Patch2.Size = new System.Drawing.Size(200, 36);
@@ -2007,7 +2007,7 @@
             // 
             // ToolRunAsEventAssemblerEAButton
             // 
-            this.ToolRunAsEventAssemblerEAButton.Location = new System.Drawing.Point(206, 557);
+            this.ToolRunAsEventAssemblerEAButton.Location = new System.Drawing.Point(206, 592);
             this.ToolRunAsEventAssemblerEAButton.Margin = new System.Windows.Forms.Padding(2);
             this.ToolRunAsEventAssemblerEAButton.Name = "ToolRunAsEventAssemblerEAButton";
             this.ToolRunAsEventAssemblerEAButton.Size = new System.Drawing.Size(200, 36);
@@ -2019,7 +2019,7 @@
             // Patch3
             // 
             this.Patch3.AutoEllipsis = true;
-            this.Patch3.Location = new System.Drawing.Point(615, 716);
+            this.Patch3.Location = new System.Drawing.Point(615, 754);
             this.Patch3.Margin = new System.Windows.Forms.Padding(2);
             this.Patch3.Name = "Patch3";
             this.Patch3.Size = new System.Drawing.Size(200, 36);
@@ -2029,7 +2029,7 @@
             // 
             // ToolRunAsASMButton
             // 
-            this.ToolRunAsASMButton.Location = new System.Drawing.Point(206, 594);
+            this.ToolRunAsASMButton.Location = new System.Drawing.Point(206, 629);
             this.ToolRunAsASMButton.Margin = new System.Windows.Forms.Padding(2);
             this.ToolRunAsASMButton.Name = "ToolRunAsASMButton";
             this.ToolRunAsASMButton.Size = new System.Drawing.Size(200, 36);
@@ -2040,7 +2040,7 @@
             // 
             // DiffDebugToolButton
             // 
-            this.DiffDebugToolButton.Location = new System.Drawing.Point(0, 594);
+            this.DiffDebugToolButton.Location = new System.Drawing.Point(0, 629);
             this.DiffDebugToolButton.Margin = new System.Windows.Forms.Padding(2);
             this.DiffDebugToolButton.Name = "DiffDebugToolButton";
             this.DiffDebugToolButton.Size = new System.Drawing.Size(200, 36);
@@ -2051,7 +2051,7 @@
             // 
             // LintButton
             // 
-            this.LintButton.Location = new System.Drawing.Point(0, 633);
+            this.LintButton.Location = new System.Drawing.Point(0, 668);
             this.LintButton.Margin = new System.Windows.Forms.Padding(2);
             this.LintButton.Name = "LintButton";
             this.LintButton.Size = new System.Drawing.Size(200, 36);
@@ -2095,7 +2095,7 @@
             // 
             // OAMSPButton
             // 
-            this.OAMSPButton.Location = new System.Drawing.Point(408, 521);
+            this.OAMSPButton.Location = new System.Drawing.Point(408, 556);
             this.OAMSPButton.Margin = new System.Windows.Forms.Padding(2);
             this.OAMSPButton.Name = "OAMSPButton";
             this.OAMSPButton.Size = new System.Drawing.Size(200, 36);
@@ -2128,7 +2128,7 @@
             // 
             // ProcsScriptButton
             // 
-            this.ProcsScriptButton.Location = new System.Drawing.Point(408, 557);
+            this.ProcsScriptButton.Location = new System.Drawing.Point(408, 592);
             this.ProcsScriptButton.Margin = new System.Windows.Forms.Padding(2);
             this.ProcsScriptButton.Name = "ProcsScriptButton";
             this.ProcsScriptButton.Size = new System.Drawing.Size(200, 36);
@@ -2227,7 +2227,7 @@
             // 
             // WelcomeDialogButton
             // 
-            this.WelcomeDialogButton.Location = new System.Drawing.Point(1426, 557);
+            this.WelcomeDialogButton.Location = new System.Drawing.Point(1426, 595);
             this.WelcomeDialogButton.Margin = new System.Windows.Forms.Padding(4);
             this.WelcomeDialogButton.Name = "WelcomeDialogButton";
             this.WelcomeDialogButton.Size = new System.Drawing.Size(200, 36);
@@ -2282,7 +2282,7 @@
             // 
             // OtherTextButton
             // 
-            this.OtherTextButton.Location = new System.Drawing.Point(1221, 370);
+            this.OtherTextButton.Location = new System.Drawing.Point(1223, 406);
             this.OtherTextButton.Margin = new System.Windows.Forms.Padding(2);
             this.OtherTextButton.Name = "OtherTextButton";
             this.OtherTextButton.Size = new System.Drawing.Size(200, 36);
@@ -2293,7 +2293,7 @@
             // 
             // HexEditorButton
             // 
-            this.HexEditorButton.Location = new System.Drawing.Point(406, 633);
+            this.HexEditorButton.Location = new System.Drawing.Point(406, 668);
             this.HexEditorButton.Margin = new System.Windows.Forms.Padding(2);
             this.HexEditorButton.Name = "HexEditorButton";
             this.HexEditorButton.Size = new System.Drawing.Size(200, 36);
@@ -2337,7 +2337,7 @@
             // 
             // MainSimpleMenuImageSubButton
             // 
-            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1426, 594);
+            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1426, 632);
             this.MainSimpleMenuImageSubButton.Margin = new System.Windows.Forms.Padding(4);
             this.MainSimpleMenuImageSubButton.Name = "MainSimpleMenuImageSubButton";
             this.MainSimpleMenuImageSubButton.Size = new System.Drawing.Size(200, 36);
@@ -2384,7 +2384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1641, 838);
+            this.ClientSize = new System.Drawing.Size(1641, 877);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);

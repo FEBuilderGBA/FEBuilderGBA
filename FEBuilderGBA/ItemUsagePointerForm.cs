@@ -78,6 +78,10 @@ namespace FEBuilderGBA
                     {
                         itemID = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address()) + (uint)i;
                     }
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_name_article_pointer()))
+                    {
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address()) + (uint)i;
+                    }
                     else
                     {
                         return "";
@@ -142,6 +146,9 @@ namespace FEBuilderGBA
                     configFilename = (U.ConfigDataFilename("item_errormessage_array_"));
                     StatBoosterItemExplain.Show();
                     break;
+                case 9: //9=アイテム名の前置詞
+                    configFilename = (U.ConfigDataFilename("item_name_article_"));
+                    break;
             }
 
             this.L_0_COMBO.Items.Clear();
@@ -179,6 +186,7 @@ namespace FEBuilderGBA
             this.ERROR_NOT_FOUND.Hide();
 
         }
+
         static uint ReInit(int selected,InputFormRef ifr)
         {
             //Log.Debug("-------------------");
@@ -247,6 +255,12 @@ namespace FEBuilderGBA
                     count = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address() + 2);
                     enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_errormessage_array_switch2_address());
                     break;
+                case 9: //9=アイテム名の前置詞
+                    pointer = Program.ROM.RomInfo.item_name_article_pointer();
+                    addr = Program.ROM.p32(pointer);
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address() + 2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_name_article_switch2_address());
+                    break;
             }
             if (enable == false)
             {
@@ -265,7 +279,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list)
         {
             InputFormRef InputFormRef = Init(null);
-            for (int n = 0; n < 9; n++)
+            for (int n = 0; n < 10; n++)
             {
                 uint addr = ReInit(n, InputFormRef);
                 if (addr == U.NOT_FOUND)
@@ -305,9 +319,7 @@ namespace FEBuilderGBA
                 defAddr = U.atoh(this.L_0_COMBO.Items[0].ToString());
             }
 
-
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"ItemUsage SwitchExpands" + selected);
-
             switch (selected)
             {
                 case 0: //0=アイテムを利用できるか判定する
@@ -370,6 +382,13 @@ namespace FEBuilderGBA
                 case 8: //8=エラーメッセージを定義する
                     PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_errormessage_array_pointer()
                         , Program.ROM.RomInfo.item_errormessage_array_switch2_address()
+                        , newCount
+                        , defAddr
+                        , undodata);
+                    break;
+                case 9: //9=アイテム名の前置詞を定義する
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_name_article_pointer()
+                        , Program.ROM.RomInfo.item_name_article_switch2_address()
                         , newCount
                         , defAddr
                         , undodata);

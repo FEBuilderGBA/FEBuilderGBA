@@ -10,12 +10,14 @@ namespace FEBuilderGBA
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
         PatchUtil.PRIORITY_CODE PriorityCode;
+        PatchUtil.TextEngineRework_enum TextEngineRework;
 
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
             this.PriorityCode = PatchUtil.SearchPriorityCode();
+            this.TextEngineRework = PatchUtil.SearchTextEngineReworkPatch();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
@@ -209,6 +211,11 @@ namespace FEBuilderGBA
                         AppendAtmarkCode(str, code); //@0080
                         AppendAtmarkCode(str, code2); //@000d
                         i+=2;
+
+                        if (this.TextEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                        {
+                            i += TeqTextEngineRework(str, code2, srcdata, i);
+                        }
                         continue;
                     }
                     if (code == 0x10)
@@ -251,6 +258,61 @@ namespace FEBuilderGBA
             }
 
             return listbyte_to_string_low(str.ToArray(), str.Count);
+        }
+        int TeqTextEngineRework(List<byte> str, uint code2, byte[] srcdata, int i)
+        {
+            if (i + 1 >= srcdata.Length)
+            {
+                return 0;
+            }
+            uint code3 = srcdata[i];
+            if (code3 >= 0x20)
+            {
+                return 0;
+            }
+
+            if (code2 == 0x26 || (code2 >= 0x28 && code2 <= 0x2C) || (code2 >= 0x30 && code2 <= 0x38))
+            {
+                AppendAtmarkCode(str, code3);
+                return 1;
+            }
+            else if (code2 == 0x27 || code2 == 0x2E)
+            {
+                if (i + 2 >= srcdata.Length)
+                {
+                    return 0;
+                }
+                AppendAtmarkCode(str, code3);
+                AppendAtmarkCode(str, srcdata[i + 1]);
+                return 2;
+            }
+            else if (code2 == 0x2D)
+            {
+                if (i + 4 >= srcdata.Length)
+                {
+                    return 0;
+                }
+                AppendAtmarkCode(str, code3);
+                AppendAtmarkCode(str, srcdata[i + 1]);
+                AppendAtmarkCode(str, srcdata[i + 2]);
+                AppendAtmarkCode(str, srcdata[i + 3]);
+                return 4;
+            }
+            else if (code2 == 0x2F)
+            {
+                if (i + 6 >= srcdata.Length)
+                {
+                    return 0;
+                }
+                AppendAtmarkCode(str, code3);
+                AppendAtmarkCode(str, srcdata[i + 1]);
+                AppendAtmarkCode(str, srcdata[i + 2]);
+                AppendAtmarkCode(str, srcdata[i + 3]);
+                AppendAtmarkCode(str, srcdata[i + 4]);
+                AppendAtmarkCode(str, srcdata[i + 5]);
+                return 6;
+            }
+            return 0;
         }
         void AppendAtmarkCode(List<byte> str,uint code)
         {

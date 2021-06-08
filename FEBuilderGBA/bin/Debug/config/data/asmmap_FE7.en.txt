@@ -3242,7 +3242,6 @@
 080532F0	GetSpellAnimId	{J}
 08053042	GetBattleAnimationId	{J}
 08053A7E	GetAllegienceId	{J}
-08053AD2	GetSomeAISRelatedIndexMaybeByID	{J}
 08053B5C	IsItemDisplayedInBattle	{J}
 08053C3C	BattleAIS_ExecCommands	{J}
 08054734	NewEkrChienCHR	{J}
@@ -5157,3 +5156,10 @@
 08005458	Text_SetParameters r0=Text Struct r1=cursor r2=color id	{J}
 08005460	Text_Draw	{J}
 08013870	GetTerrainTypeID	{J}
+
+08005580	Text_SetColorId	{U}
+08005570	Text_GetXCursor	{U}
+080171e4	GetItemSomeString	{U}
+
+08005450	Text_SetColorId	{J}
+08005440	Text_GetXCursor	{J}

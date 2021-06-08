@@ -433,6 +433,8 @@ namespace FEBuilderGBA
         public uint wait_menu_command_id() { return 0x0; } //WaitメニューのID FE6にMenu IDはない
         public uint font_default_begin() { return 0x0; }
         public uint font_default_end() { return 0x0; }
+        public uint item_name_article_pointer() { return 0x0; } // a|an|the を切り替えるテーブル 英語版のみ
+        public uint item_name_article_switch2_address() { return 0x0; }
         public string get_shop_name(uint shop_object)//店の名前
         {
             return "";

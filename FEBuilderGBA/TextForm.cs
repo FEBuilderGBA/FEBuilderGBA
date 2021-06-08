@@ -2510,10 +2510,11 @@ namespace FEBuilderGBA
         }
         public static string ConvertEscapeText(string text)
         {
-//            if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
-//            {
-//                text = ConvertTeqTextEngineRework(text);
-//            }
+            if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+            {
+                return ConvertTeqTextEngineRework(text);
+            }
+
             if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
             {
                 return ConvertEscapeToFEditor(text);
@@ -3617,6 +3618,10 @@ namespace FEBuilderGBA
 
         static uint GetOneCharOrAtCode(string text,ref int ref_i)
         {
+            if (ref_i >= text.Length)
+            {
+                return 0;
+            }
             if (text[ref_i] == '@')
             {
                 uint code = U.atoh(U.substr(text, ref_i + 1, 4));
@@ -3637,6 +3642,24 @@ namespace FEBuilderGBA
             }
         }
 
+        static string SubStrAndEscape(string text, int start , int length)
+        {
+            string rettext = U.substr(text, start, length);
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                return ConvertEscapeToFEditor(rettext);
+            }
+            return rettext;
+        }
+        static string MakeCodeAndEscape(uint code)
+        {
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                return "[0x00" + U.ToHexString2(code) + "]";
+            }
+            return "@00" + U.ToHexString2(code);
+        }
+
         //Teqのreworkは、既存ルールと重複しているのがあるので、いい感じに調整する.
         static string ConvertTeqTextEngineRework(string text)
         {
@@ -3655,45 +3678,52 @@ namespace FEBuilderGBA
                 uint code2 = GetOneCharOrAtCode(text, ref i);
                 if (code2 == 0x26 || (code2 >= 0x28 && code2 <= 0x2C) || (code2 >= 0x30 && code2 <= 0x38))
                 {
-                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    string block = SubStrAndEscape(text, text_stsrt, i - text_stsrt);
                     sb.Append(block);
 
                     uint code3 = GetOneCharOrAtCode(text, ref i);
-                    sb.Append("@" + U.ToHexString4(code3));
-
+                    if (code3 != 0)
+                    {
+                        sb.Append(MakeCodeAndEscape(code3));
+                    }
                     text_stsrt = i;
+
                 }
                 else if (code2 == 0x27 || code2 == 0x2E)
                 {
-                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    string block = SubStrAndEscape(text, text_stsrt, i - text_stsrt);
                     sb.Append(block);
 
                     uint code3 = GetOneCharOrAtCode(text, ref i);
                     uint code4 = GetOneCharOrAtCode(text, ref i);
-                    sb.Append("@" + U.ToHexString4(code3));
-                    sb.Append("@" + U.ToHexString4(code4));
-
+                    if (code3 != 0 && code4 != 0)
+                    {
+                        sb.Append(MakeCodeAndEscape(code3));
+                        sb.Append(MakeCodeAndEscape(code4));
+                    }
                     text_stsrt = i;
                 }
                 else if (code2 == 0x2D)
                 {
-                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    string block = SubStrAndEscape(text, text_stsrt, i - text_stsrt);
                     sb.Append(block);
 
                     uint code3 = GetOneCharOrAtCode(text, ref i);
                     uint code4 = GetOneCharOrAtCode(text, ref i);
                     uint code5 = GetOneCharOrAtCode(text, ref i);
                     uint code6 = GetOneCharOrAtCode(text, ref i);
-                    sb.Append("@" + U.ToHexString4(code3));
-                    sb.Append("@" + U.ToHexString4(code4));
-                    sb.Append("@" + U.ToHexString4(code5));
-                    sb.Append("@" + U.ToHexString4(code6));
-
+                    if (code3 != 0 && code4 != 0 && code5 != 0 && code6 != 0)
+                    {
+                        sb.Append(MakeCodeAndEscape(code3));
+                        sb.Append(MakeCodeAndEscape(code4));
+                        sb.Append(MakeCodeAndEscape(code5));
+                        sb.Append(MakeCodeAndEscape(code6));
+                    }
                     text_stsrt = i;
                 }
                 else if (code2 == 0x2F)
                 {
-                    string block = U.substr(text, text_stsrt, i - text_stsrt);
+                    string block = SubStrAndEscape(text, text_stsrt, i - text_stsrt);
                     sb.Append(block);
 
                     uint code3 = GetOneCharOrAtCode(text, ref i);
@@ -3702,19 +3732,21 @@ namespace FEBuilderGBA
                     uint code6 = GetOneCharOrAtCode(text, ref i);
                     uint code7 = GetOneCharOrAtCode(text, ref i);
                     uint code8 = GetOneCharOrAtCode(text, ref i);
-                    sb.Append("@" + U.ToHexString4(code3));
-                    sb.Append("@" + U.ToHexString4(code4));
-                    sb.Append("@" + U.ToHexString4(code5));
-                    sb.Append("@" + U.ToHexString4(code6));
-                    sb.Append("@" + U.ToHexString4(code7));
-                    sb.Append("@" + U.ToHexString4(code8));
-
+                    if (code3 != 0 && code4 != 0 && code5 != 0 && code6 != 0 && code7 != 0 && code8 != 0)
+                    {
+                        sb.Append(MakeCodeAndEscape(code3));
+                        sb.Append(MakeCodeAndEscape(code4));
+                        sb.Append(MakeCodeAndEscape(code5));
+                        sb.Append(MakeCodeAndEscape(code6));
+                        sb.Append(MakeCodeAndEscape(code7));
+                        sb.Append(MakeCodeAndEscape(code8));
+                    }
                     text_stsrt = i;
                 }
             }
             //最後っ屁
             {
-                string block = U.substr(text, text_stsrt);
+                string block = SubStrAndEscape(text, text_stsrt , text.Length - text_stsrt);
                 sb.Append(block);
             }
 

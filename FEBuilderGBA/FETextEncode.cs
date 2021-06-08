@@ -19,11 +19,13 @@ namespace FEBuilderGBA
         };
         Dictionary<uint,huffman_value_st> huffman_map;
         uint tree_base;
+        PatchUtil.TextEngineRework_enum TextEngineRework;
 
         public FETextEncode()
         {
             MakeRepalceSPCode();
             RebuildHuffmanMap();
+            this.TextEngineRework = PatchUtil.SearchTextEngineReworkPatch();
         }
         public void RebuildHuffmanMap()
         {
@@ -263,6 +265,11 @@ namespace FEBuilderGBA
                         }
                         ret.Add((byte)(code1));     //@0080
                         ret.Add((byte)(code2));    //@0000
+
+                        if (this.TextEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                        {
+                            i += TeqTextEngineRework(ret, code2, sjisstr, i);
+                        }
                     }
                     else if (code1 == 0x10)
                     {
@@ -343,6 +350,103 @@ namespace FEBuilderGBA
             return ret.ToArray();
         }
 
+        int TeqTextEngineRework(List<byte> ret,uint code2,byte[] sjisstr,int i)
+        {
+            if (i >= sjisstr.Length || sjisstr[i] != '@')
+            {
+                return 0;
+            }
+            int orignalI = i;
+            uint code3 = at_code_to_binary(sjisstr, i, out i);
+            if (code3 >= 0x20)
+            {
+                return 0;
+            }
+
+            if (code2 == 0x26 || (code2 >= 0x28 && code2 <= 0x2C) || (code2 >= 0x30 && code2 <= 0x38))
+            {
+                ret.Add((byte)(code3));
+                return i - orignalI;
+            }
+            else if (code2 == 0x27 || code2 == 0x2E)
+            {
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code4 = at_code_to_binary(sjisstr, i, out i);
+                ret.Add((byte)(code3));
+                ret.Add((byte)(code4));
+                return i - orignalI;
+            }
+            else if (code2 == 0x2D)
+            {
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code4 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code5 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code6 = at_code_to_binary(sjisstr, i, out i);
+
+                ret.Add((byte)(code3));
+                ret.Add((byte)(code4));
+                ret.Add((byte)(code5));
+                ret.Add((byte)(code6));
+                return i - orignalI;
+            }
+            else if (code2 == 0x2F)
+            {
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code4 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code5 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code6 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code7 = at_code_to_binary(sjisstr, i, out i);
+
+                if (i >= sjisstr.Length || sjisstr[i] != '@')
+                {
+                    return 0;
+                }
+                uint code8 = at_code_to_binary(sjisstr, i, out i);
+
+                ret.Add((byte)(code3));
+                ret.Add((byte)(code4));
+                ret.Add((byte)(code5));
+                ret.Add((byte)(code6));
+                ret.Add((byte)(code7));
+                ret.Add((byte)(code8));
+                return i - orignalI;
+            }
+            return 0;
+        }
 
 
 		void make_huffman_map(uint tree_data,uint bit_deps)

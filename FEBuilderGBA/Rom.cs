@@ -428,6 +428,8 @@ namespace FEBuilderGBA
         uint wait_menu_command_id(); //WaitメニューのID
         uint font_default_begin(); //フォント開始
         uint font_default_end();   //フォント終了
+        uint item_name_article_pointer(); // a|an|the を切り替えるテーブル 英語版のみ
+        uint item_name_article_switch2_address();
         uint extends_address(); //拡張領域
         uint orignal_crc32(); //無改造ROMのCRC32
         bool is_multibyte();    // マルチバイトを利用するか？

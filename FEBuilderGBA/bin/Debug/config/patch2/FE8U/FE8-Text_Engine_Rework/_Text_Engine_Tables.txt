@@ -1,0 +1,89 @@
+//
+#define MakeColor(red, green, blue) "SHORT red | (green<<5) | (blue<<10)"
+
+//########### FONTS ################
+ALIGN 4
+FontGlyphsPointerTable:
+//1 (Normal text)
+POIN $58F6F4
+//2 (Bold)
+POIN Text_Bold
+//3 (Italics)
+POIN Text_Ital
+
+ALIGN 4
+Text_Bold:
+#include "Fonts/FE8_Text_Bold.txt"
+
+ALIGN 4
+Text_Ital:
+#include "Fonts/FE8_Text_Ital.txt"
+
+
+//########### TEXT GROUP COLORS ################
+ALIGN 4
+//Each text group comes with 3 colors: alternate outline, main outline, and interior
+TextPaletteTable:
+//1 (Normal text color)
+MakeColor(27, 27, 27)
+MakeColor(23, 23, 23)
+MakeColor(05, 05, 05)
+//2 (ToggleRed's palette)
+MakeColor(27, 23, 23)
+MakeColor(31, 25, 21)
+MakeColor(20, 00, 00)
+//3 (glowy green found on the stat screen, albeit without the glowy part)
+MakeColor(14, 20, 09)
+MakeColor(29, 31, 27)
+MakeColor(03, 11, 03)
+
+
+//########### TEXT BOX BACKGROUND PALETTE ################
+ALIGN 4
+//Color order: Background, main outline, second outline, filler. Rest of the palette isn't used in the vanilla box
+TextBoxBgPaletteTable:
+//1 (Normal text box background palette, found at 9E84D4)
+BYTE $00 $00 $A6 $2C $97 $36 $8E $25 $9C $6F $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $9C $6F $F7 $5E $A5 $14
+//2 (ToggleColorInvert's background palette, found at 59F000)
+BYTE $55 $53 $B5 $56 $AE $31 $EF $3D $E7 $1C $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $9C $6F $F7 $5E $A5 $14
+//3 (light blue)
+BYTE $00 $00 $A6 $2C; MakeColor(15, 20, 26); MakeColor(14, 12, 09); MakeColor(13, 27, 31); SHORT 0 0 0 0 0 0 0 0 0 0 0
+
+//########### TEXT BOX SHAPES #################
+ALIGN 4
+//Each pointer here points to a list of graphics, terminated with WORD 0
+TextBoxTypePointerTable:
+//1 (Normal text box type)
+POIN NormalTextBoxGraphics
+//2 (Angry/spiky text box)
+POIN SpikyTextBoxGraphics
+//3 (Thought bubble)
+POIN ThoughtBoxGraphics
+
+NormalTextBoxGraphics:
+POIN $9E8484
+POIN $9E8434
+POIN $9E83E0
+POIN $9E8384
+POIN $9E82E0
+POIN $9E8238
+WORD 0
+
+SpikyTextBoxGraphics:
+POIN Spiky6
+WORD 0
+
+Spiky6:
+#incext Png2Dmp "Text_Box_Graphics/Spiky6.png" --lz77
+
+ThoughtBoxGraphics:
+POIN Thinking6
+WORD 0
+
+Thinking6:
+#incext Png2Dmp "Text_Box_Graphics/Thinking6.png" --lz77
+
+//########### TEXT BOOP PITCH ################
+ALIGN 4
+TextBoopTable:
+#include "text_boop_table.txt"
