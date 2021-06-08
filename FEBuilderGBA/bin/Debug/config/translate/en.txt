@@ -1981,6 +1981,15 @@ Range Cond:
 :37=キラーアーチ
 37=Killer Ballista
 
+:34=ロングアーチ
+34=Ballista
+
+:35=アイアンアーチ
+35=Iron Ballista
+
+:36=キラーアーチ
+36=Killer Ballista
+
 :04=ダメージ床
 04=Fire Trap
 

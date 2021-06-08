@@ -243,6 +243,17 @@ namespace FEBuilderGBA
             TRAP_L_0_COMBO.BeginUpdate();
             TRAP_L_0_COMBO.Items.RemoveAt(TRAP_L_0_COMBO.Items.Count - 1); //0xCゴーゴンの卵を消す
             TRAP_L_0_COMBO.EndUpdate();
+            if (Program.ROM.RomInfo.version() == 7)
+            {//バリスタの並び順が異なるので作り直す
+                TRAP_N01_L_3_COMBO.BeginUpdate();
+                TRAP_N01_L_3_COMBO.Items.Clear();
+                TRAP_N01_L_3_COMBO.Items.Add(R._("34=ロングアーチ"));
+                TRAP_N01_L_3_COMBO.Items.Add(R._("35=アイアンアーチ"));
+                TRAP_N01_L_3_COMBO.Items.Add(R._("36=キラーアーチ"));
+                TRAP_N01_L_3_COMBO.Items.Add(R._("0=--"));
+                TRAP_N01_L_3_COMBO.EndUpdate();
+            }
+
 
             if (Program.ROM.RomInfo.version() == 6)
             {//FE6の常時条件のasm条件の発生条件は、 0Eではなくて0D
@@ -4136,25 +4147,51 @@ namespace FEBuilderGBA
             {//バリスタ
                 bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0, 1, true);
                 uint archtype = Program.ROM.u8(ar.addr + 3);
-                if (archtype == 0x35)
+                if (Program.ROM.RomInfo.version() == 8)
                 {
-                    text = U.ToHexString(type) + ":" + R._("35=ロングアーチ");
-                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
-                }
-                else if (archtype == 0x36)
-                {
-                    text = U.ToHexString(type) + ":" + R._("36=アイアンアーチ");
-                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 1, 0, true);
-                }
-                else if (archtype == 0x37)
-                {
-                    text = U.ToHexString(type) + ":" + R._("37=キラーアーチ");
-                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 2, 0, true);
+                    if (archtype == 0x35)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("35=ロングアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                    }
+                    else if (archtype == 0x36)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("36=アイアンアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 1, 0, true);
+                    }
+                    else if (archtype == 0x37)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("37=キラーアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 2, 0, true);
+                    }
+                    else
+                    {
+                        text = U.ToHexString(type) + ":" + U.ToHexString(archtype) + "=" + "???";
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                    }
                 }
                 else
                 {
-                    text = U.ToHexString(type) + ":" + U.ToHexString(archtype) + "=" + "???";
-                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                    if (archtype == 0x34)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("34=ロングアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                    }
+                    else if (archtype == 0x35)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("35=アイアンアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 1, 0, true);
+                    }
+                    else if (archtype == 0x36)
+                    {
+                        text = U.ToHexString(type) + ":" + R._("36=キラーアーチ");
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 2, 0, true);
+                    }
+                    else
+                    {
+                        text = U.ToHexString(type) + ":" + U.ToHexString(archtype) + "=" + "???";
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                    }
                 }
                 U.MakeTransparent(bitmap);
             }

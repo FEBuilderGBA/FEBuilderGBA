@@ -19,13 +19,11 @@ namespace FEBuilderGBA
         };
         Dictionary<uint,huffman_value_st> huffman_map;
         uint tree_base;
-        PatchUtil.TextEngineRework_enum TextEngineRework;
 
         public FETextEncode()
         {
             MakeRepalceSPCode();
             RebuildHuffmanMap();
-            this.TextEngineRework = PatchUtil.SearchTextEngineReworkPatch();
         }
         public void RebuildHuffmanMap()
         {
@@ -235,6 +233,7 @@ namespace FEBuilderGBA
         byte[] convert_unHuffman_code_to_binary(byte[] sjisstr)
         {
             PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
+            PatchUtil.TextEngineRework_enum textEngineRework = PatchUtil.SearchTextEngineReworkPatch();
 
             List<byte> ret = new List<byte>();
             for (int i = 0; i < sjisstr.Length; )
@@ -266,7 +265,7 @@ namespace FEBuilderGBA
                         ret.Add((byte)(code1));     //@0080
                         ret.Add((byte)(code2));    //@0000
 
-                        if (this.TextEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                        if (textEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
                         {
                             i += TeqTextEngineRework(ret, code2, sjisstr, i);
                         }

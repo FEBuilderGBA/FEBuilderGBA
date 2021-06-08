@@ -10,14 +10,12 @@ namespace FEBuilderGBA
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
         PatchUtil.PRIORITY_CODE PriorityCode;
-        PatchUtil.TextEngineRework_enum TextEngineRework;
 
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
             this.PriorityCode = PatchUtil.SearchPriorityCode();
-            this.TextEngineRework = PatchUtil.SearchTextEngineReworkPatch();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
@@ -167,6 +165,8 @@ namespace FEBuilderGBA
 
         public String UnHffmanPatchDecodeLow(byte[] srcdata)
         {
+            PatchUtil.TextEngineRework_enum textEngineRework = PatchUtil.SearchTextEngineReworkPatch();
+
             List<byte> str = new List<byte>();
             int length = srcdata.Length;
             int i = 0;
@@ -212,7 +212,7 @@ namespace FEBuilderGBA
                         AppendAtmarkCode(str, code2); //@000d
                         i+=2;
 
-                        if (this.TextEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+                        if (textEngineRework == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
                         {
                             i += TeqTextEngineRework(str, code2, srcdata, i);
                         }
