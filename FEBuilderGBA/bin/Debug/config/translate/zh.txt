@@ -13109,3 +13109,8 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
+:このパッチを推奨しない
+Do not recommend this patch
+
+:これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
+If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n

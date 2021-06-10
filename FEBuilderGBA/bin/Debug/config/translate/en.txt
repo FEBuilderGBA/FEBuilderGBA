@@ -13117,3 +13117,8 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:このパッチを推奨しない
+Do not recommend this patch
+
+:これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
+If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n

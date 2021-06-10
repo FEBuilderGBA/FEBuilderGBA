@@ -33,12 +33,14 @@
             this.ReasonLabel = new System.Windows.Forms.Label();
             this.EnableButton = new System.Windows.Forms.Button();
             this.CancelCloseButton = new System.Windows.Forms.Button();
+            this.NoRecommedPatchCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.NoRecommedPatchCheckBox);
             this.panel1.Controls.Add(this.FormIcon);
             this.panel1.Controls.Add(this.ReasonLabel);
             this.panel1.Location = new System.Drawing.Point(13, 13);
@@ -84,6 +86,17 @@
             this.CancelCloseButton.UseVisualStyleBackColor = true;
             this.CancelCloseButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // NoRecommedPatchCheckBox
+            // 
+            this.NoRecommedPatchCheckBox.AccessibleDescription = "@NORECOMMEDPATCH";
+            this.NoRecommedPatchCheckBox.AutoSize = true;
+            this.NoRecommedPatchCheckBox.Location = new System.Drawing.Point(543, 119);
+            this.NoRecommedPatchCheckBox.Name = "NoRecommedPatchCheckBox";
+            this.NoRecommedPatchCheckBox.Size = new System.Drawing.Size(193, 22);
+            this.NoRecommedPatchCheckBox.TabIndex = 6;
+            this.NoRecommedPatchCheckBox.Text = "このパッチを推奨しない";
+            this.NoRecommedPatchCheckBox.UseVisualStyleBackColor = true;
+            // 
             // HowDoYouLikePatchForm
             // 
             this.AcceptButton = this.EnableButton;
@@ -98,6 +111,7 @@
             this.Name = "HowDoYouLikePatchForm";
             this.Load += new System.EventHandler(this.HowDoYouLikePatchForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,5 +124,6 @@
         private System.Windows.Forms.Button EnableButton;
         private System.Windows.Forms.Button CancelCloseButton;
         private System.Windows.Forms.PictureBox FormIcon;
+        private System.Windows.Forms.CheckBox NoRecommedPatchCheckBox;
     }
 }

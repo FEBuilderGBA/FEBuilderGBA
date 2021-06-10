@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NoRecommedPatchCheckBox = new System.Windows.Forms.CheckBox();
             this.FormIcon = new System.Windows.Forms.PictureBox();
             this.ReasonLabel = new System.Windows.Forms.Label();
             this.EnableButton = new System.Windows.Forms.Button();
@@ -46,6 +47,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(808, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // NoRecommedPatchCheckBox
+            // 
+            this.NoRecommedPatchCheckBox.AccessibleDescription = "@NORECOMMEDPATCH";
+            this.NoRecommedPatchCheckBox.AutoSize = true;
+            this.NoRecommedPatchCheckBox.Location = new System.Drawing.Point(595, 276);
+            this.NoRecommedPatchCheckBox.Name = "NoRecommedPatchCheckBox";
+            this.NoRecommedPatchCheckBox.Size = new System.Drawing.Size(193, 22);
+            this.NoRecommedPatchCheckBox.TabIndex = 7;
+            this.NoRecommedPatchCheckBox.Text = "このパッチを推奨しない";
+            this.NoRecommedPatchCheckBox.UseVisualStyleBackColor = true;
             // 
             // FormIcon
             // 
@@ -77,7 +89,7 @@
             // CancelCloseButton
             // 
             this.CancelCloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelCloseButton.Location = new System.Drawing.Point(15, 272);
+            this.CancelCloseButton.Location = new System.Drawing.Point(15, 304);
             this.CancelCloseButton.Name = "CancelCloseButton";
             this.CancelCloseButton.Size = new System.Drawing.Size(806, 35);
             this.CancelCloseButton.TabIndex = 2;
@@ -102,7 +114,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.CancelButton = this.CancelCloseButton;
-            this.ClientSize = new System.Drawing.Size(833, 318);
+            this.ClientSize = new System.Drawing.Size(833, 351);
+            this.Controls.Add(this.NoRecommedPatchCheckBox);
             this.Controls.Add(this.EnableButton3);
             this.Controls.Add(this.CancelCloseButton);
             this.Controls.Add(this.EnableButton);
@@ -112,6 +125,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +137,6 @@
         private System.Windows.Forms.Button CancelCloseButton;
         private System.Windows.Forms.PictureBox FormIcon;
         private System.Windows.Forms.Button EnableButton3;
+        private System.Windows.Forms.CheckBox NoRecommedPatchCheckBox;
     }
 }

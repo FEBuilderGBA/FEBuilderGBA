@@ -181,6 +181,10 @@ namespace FEBuilderGBA
 
             this.Cache = newDic;
         }
+        public void SaveCurrent()
+        {
+            Save(Path.GetFileNameWithoutExtension(Program.ROM.Filename));
+        }
 
         public void Save(string romBaseFilename)
         {

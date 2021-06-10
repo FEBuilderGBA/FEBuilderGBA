@@ -19,8 +19,14 @@ namespace FEBuilderGBA
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            if (this.NoRecommedPatchCheckBox.Checked)
+            {
+                IgnorePatchs.Add(this.CurrentType);
+            }
             this.Close();
         }
+        static List<TYPE> IgnorePatchs = new List<TYPE>();
+        TYPE CurrentType;
 
         private void HowDoYouLikePatchForm2_Load(object sender, EventArgs e)
         {
@@ -146,6 +152,10 @@ namespace FEBuilderGBA
             {//すでに適応されている.
                 return true;
             }
+            if (IgnorePatchs.IndexOf(type) >= 0)
+            {
+                return true;
+            }
             if (patchShowName == null)
             {
                 patchShowName = patchName1;
@@ -156,6 +166,7 @@ namespace FEBuilderGBA
             }
 
             HowDoYouLikePatch2Form f = (HowDoYouLikePatch2Form)InputFormRef.JumpFormLow<HowDoYouLikePatch2Form>();
+            f.CurrentType = type;
             f.Text = title;
             f.ReasonLabel.Text = R._("{0}\r\n\r\n{1}", title, reason);
 
