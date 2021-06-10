@@ -10768,8 +10768,6 @@ SongID 为 {0} 的曲目“{1}”被指示演奏损坏的乐器“{2}”。\r\n�
 :SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。
 SongID 为 {0} 的曲目“{1}”在 GOTO 中循环播放，忘记了 TIE 的 EOT。\r\n如果忘记 EOT 并循环，声音将继续发声。在分数中在 GOTO 之前添加 EOT。
 
-:環境音:
-EnvSound:
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper返回错误。\r\nFEBuilderGBA的替代品。\r\n\r\nGBA MusRiper错误消息。\r\n{0}。

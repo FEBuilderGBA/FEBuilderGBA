@@ -3309,7 +3309,7 @@ namespace FEBuilderGBA
         static bool IsEnvSound(uint song_id)
         {
             string name = SongTableForm.GetSongName(song_id);
-            if (name.IndexOf(R._("環境音:")) >= 0)
+            if (name.IndexOf("環境音:") >= 0 || name.IndexOf("EnvSound:") >= 0) ///No Translate
             {
                 return true;
             }
