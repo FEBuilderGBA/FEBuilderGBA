@@ -334,8 +334,12 @@ namespace FEBuilderGBA
         {
             return Caller != null && AsyncResult != null;
         }
-        void BuildThread()
+        public void BuildThread()
         {
+            if (IsStopFlag)
+            {
+                return;
+            }
             if (IsBusyThread())
             {//今忙しいから無理
                 return;

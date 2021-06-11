@@ -628,6 +628,12 @@ namespace FEBuilderGBA
                     next_i += 5;
                 }
 
+                if (code1 == 0x80 && CheckTextEngineRework_ParseTextList(code2, srctext , ref next_i))
+                {
+                    i = next_i;
+                    continue;
+                }
+
                 if ((code1 >= 8 && code1 <= 0xF))
                 {//場所を定義するコード @0008 - @000F
                     //位置変更のコードが始まる前の部分にセリフがあればテキストとして保存.
@@ -2656,11 +2662,17 @@ namespace FEBuilderGBA
         {
             ToolTranslateROM trans = new ToolTranslateROM();
             trans.CheckTextImportPatch(false);
-            trans.ImportAllText(this);
+            bool r = trans.ImportAllText(this);
+            if (!r)
+            {
+                return;
+            }
 
             this.InputFormRef = Init(this);
             UpdateDataCountCache(this.InputFormRef);
             U.ReSelectList(this.AddressList);
+
+            InputFormRef.ShowWriteNotifyAnimation(this,U.NOT_FOUND);
         }
         public static string GetExplainOneLine()
         {
@@ -3751,6 +3763,53 @@ namespace FEBuilderGBA
             }
 
             return sb.ToString();
+        }
+        static bool CheckTextEngineRework_ParseTextList(uint code2, string srctext , ref int next_i)
+        {
+            if (PatchUtil.SearchTextEngineReworkPatch() != PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
+            {
+                return false;
+            }
+
+            if (code2 == 0x26 || (code2 >= 0x28 && code2 <= 0x2C) || (code2 >= 0x30 && code2 <= 0x38))
+            {
+                if (next_i + 5 > srctext.Length || srctext[next_i] != '@')
+                {
+                    return false;
+                }
+                uint code3 = U.atoh(U.substr(srctext, next_i + 1, 4));
+                next_i += 5;
+            }
+            else if (code2 == 0x27 || code2 == 0x2E)
+            {
+                if (next_i + 10 > srctext.Length || srctext[next_i] != '@' || srctext[next_i + 5] != '@')
+                {
+                    return false;
+                }
+                next_i += 10;
+            }
+            else if (code2 == 0x2D)
+            {
+                if (next_i + 20 > srctext.Length || srctext[next_i] != '@' || srctext[next_i + 5] != '@' || srctext[next_i + 10] != '@' || srctext[next_i + 15] != '@')
+                {
+                    return false;
+                }
+                next_i += 20;
+            }
+            else if (code2 == 0x2F)
+            {
+                if (next_i + 30 > srctext.Length || srctext[next_i] != '@' || srctext[next_i + 5] != '@' || srctext[next_i + 10] != '@' || srctext[next_i + 15] != '@' || srctext[next_i + 20] != '@' || srctext[next_i + 25] != '@')
+                {
+                    return false;
+                }
+                next_i += 30;
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
 

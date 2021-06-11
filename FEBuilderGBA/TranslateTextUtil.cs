@@ -749,6 +749,10 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            if (line.Length > 11)
+            {
+                return false;
+            }
             if (line[0] != '[')
             {
                 return false;
@@ -757,6 +761,10 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            if (line == "[XXXX]")
+            {//無効なIDとして処理
+                return true;
+            }
             for (int i = 1; i < line.Length - 1; i++)
             {
                 if (!U.ishex(line[i]))
@@ -764,6 +772,7 @@ namespace FEBuilderGBA
                     return false;
                 }
             }
+            
             return true;
         }
 

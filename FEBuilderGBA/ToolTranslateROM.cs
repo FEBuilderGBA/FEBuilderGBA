@@ -194,7 +194,7 @@ namespace FEBuilderGBA
             this.ChangeStatusScreenSkill(to);
         }
 
-        public void ImportAllText(Form self)
+        public bool ImportAllText(Form self)
         {
             string title = R._("開くファイル名を選択してください");
             string filter = R._("TEXT|*.txt|All files|*");
@@ -206,11 +206,11 @@ namespace FEBuilderGBA
             DialogResult dr = open.ShowDialog();
             if (dr != DialogResult.OK)
             {
-                return ;
+                return false;
             }
             if (!U.CanReadFileRetry(open))
             {
-                return ;
+                return false;
             }
 
             Program.LastSelectedFilename.Save(self, "", open);
@@ -218,7 +218,7 @@ namespace FEBuilderGBA
 
 
             ImportAllText(self, filename);
-            
+            return true;
         }
         public void ImportAllText(Form self,string filename)
         {
@@ -241,6 +241,11 @@ namespace FEBuilderGBA
                     }
                     line = U.ClipComment(line);
                     if (line.Length <= 0)
+                    {
+                        continue;
+                    }
+
+                    if (!TranslateTextUtil.IsTextIDCode(line))
                     {
                         continue;
                     }
@@ -284,6 +289,7 @@ namespace FEBuilderGBA
 
                 //最後のデータ
                 WriteText(id, text, ra, undodata);
+                ra.BlackOut(undodata);
 
                 Program.Undo.Push(undodata);
             }

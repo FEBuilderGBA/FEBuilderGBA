@@ -439,12 +439,11 @@ namespace FEBuilderGBA
             List<FELint.ErrorSt>  systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
             if (systemErrorList == null )
             {//準備中という表記を出す.
-                if (Program.AsmMapFileAsmCache.IsBusyThread())
-                {
-                    this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
-                }
-                else
-                {
+                this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
+                if (! Program.AsmMapFileAsmCache.IsBusyThread())
+                {//なぜ解析スレッドは停止しているのにnullになるケースがあるらしい
+                    //もう一回作るように指示
+                    Program.AsmMapFileAsmCache.BuildThread();
                 }
             }
             else if (systemErrorList.Count > 0)

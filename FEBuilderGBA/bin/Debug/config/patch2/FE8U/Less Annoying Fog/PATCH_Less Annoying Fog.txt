@@ -12,3 +12,6 @@ INFO.en=Patches the ROM to edit what occurs when encountering enemies in the fog
 INFO.zh=当你在雾中移动并遇到敌人时，你可以修改它们，以便你可以使用攻击和物品而不是等待。
 
 AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4
+
+CONFLICT_IF:0x32808=0x01 0x49
+CONFLICT_MESSAGE=Huichelaar's dangerzone 

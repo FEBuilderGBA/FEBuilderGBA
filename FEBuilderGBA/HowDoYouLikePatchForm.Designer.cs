@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NoRecommedPatchCheckBox = new System.Windows.Forms.CheckBox();
             this.FormIcon = new System.Windows.Forms.PictureBox();
             this.ReasonLabel = new System.Windows.Forms.Label();
             this.EnableButton = new System.Windows.Forms.Button();
             this.CancelCloseButton = new System.Windows.Forms.Button();
-            this.NoRecommedPatchCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(808, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // NoRecommedPatchCheckBox
+            // 
+            this.NoRecommedPatchCheckBox.AccessibleDescription = "@NORECOMMEDPATCH";
+            this.NoRecommedPatchCheckBox.AutoSize = true;
+            this.NoRecommedPatchCheckBox.Location = new System.Drawing.Point(543, 121);
+            this.NoRecommedPatchCheckBox.Name = "NoRecommedPatchCheckBox";
+            this.NoRecommedPatchCheckBox.Size = new System.Drawing.Size(193, 22);
+            this.NoRecommedPatchCheckBox.TabIndex = 6;
+            this.NoRecommedPatchCheckBox.Text = "このパッチを推奨しない";
+            this.NoRecommedPatchCheckBox.UseVisualStyleBackColor = true;
             // 
             // FormIcon
             // 
@@ -85,17 +96,6 @@
             this.CancelCloseButton.Text = "無視して続行する";
             this.CancelCloseButton.UseVisualStyleBackColor = true;
             this.CancelCloseButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // NoRecommedPatchCheckBox
-            // 
-            this.NoRecommedPatchCheckBox.AccessibleDescription = "@NORECOMMEDPATCH";
-            this.NoRecommedPatchCheckBox.AutoSize = true;
-            this.NoRecommedPatchCheckBox.Location = new System.Drawing.Point(543, 119);
-            this.NoRecommedPatchCheckBox.Name = "NoRecommedPatchCheckBox";
-            this.NoRecommedPatchCheckBox.Size = new System.Drawing.Size(193, 22);
-            this.NoRecommedPatchCheckBox.TabIndex = 6;
-            this.NoRecommedPatchCheckBox.Text = "このパッチを推奨しない";
-            this.NoRecommedPatchCheckBox.UseVisualStyleBackColor = true;
             // 
             // HowDoYouLikePatchForm
             // 
