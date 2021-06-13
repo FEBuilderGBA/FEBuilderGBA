@@ -1,0 +1,78 @@
+PUSH
+//ORG 0x5E0FC	//FE8J	{J}
+ORG 0x5CFFC	//FE8U	{U}
+jumpToHack(ChangeSealedSwordFireColor)
+
+//ORG 0x5E2D8	//FE8J	{J}
+ORG 0x5D1D8	//FE8U	{U}
+jumpToHack(ChangeSealedSwordFireColor2)
+POP
+
+ALIGN 4
+ChangeSealedSwordFireColor:
+#incbin "ChangeSealedSwordFireColor.dmp"
+POIN ChangeSealedSwordFireColor_Table
+POIN ChangeSealedSwordFireColor_PaletteTable
+
+ALIGN 4
+ChangeSealedSwordFireColor2:
+#incbin "ChangeSealedSwordFireColor2.dmp"
+POIN ChangeSealedSwordFireColor_Table
+POIN ChangeSealedSwordFireColor_PaletteTable
+
+ALIGN 4
+ChangeSealedSwordFireColor_DarkPurple:
+#incbin "DarkPurple.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_LightRed:
+#incbin "LightRed.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_DarkBlue:
+#incbin "DarkBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_LightBlue:
+#incbin "LightBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_Pink:
+#incbin "Pink.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_LightGreen2:
+#incbin "LightGreen2.png.pal.dmp"
+
+ALIGN 4
+ChangeSealedSwordFireColor_DarkGreen2:
+#incbin "DarkGreen2.png.pal.dmp"
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeSealedSwordFireColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	TableID
+BYTE	0x00	0x00	0x09	0x0;SHORT	0x0		0	//Rapier
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+//パレットテーブル
+ALIGN 4
+ChangeSealedSwordFireColor_PaletteTable:
+//POIN 0x860B53C						//0=Red 	Vanilla	//{J}
+//POIN 0x860C600						//1=Green 	Vanilla	//{J}
+//POIN 0x860C640						//2=DarkGreen 	Vanilla	//{J}
+POIN 0x85DE964						//0=Red 	Vanilla	//{U}
+POIN 0x85DFA28						//1=Green 	Vanilla	//{U}
+POIN 0x85DFA68						//2=DarkGreen 	Vanilla	//{U}
+
+POIN ChangeSealedSwordFireColor_DarkPurple	//3
+POIN ChangeSealedSwordFireColor_LightRed	//4
+POIN ChangeSealedSwordFireColor_DarkBlue	//5
+POIN ChangeSealedSwordFireColor_LightBlue	//6
+POIN ChangeSealedSwordFireColor_Pink		//7
+POIN ChangeSealedSwordFireColor_LightGreen2	//8
+POIN ChangeSealedSwordFireColor_DarkGreen2	//9
+
+WORD 0	//Term
+ALIGN 4
+

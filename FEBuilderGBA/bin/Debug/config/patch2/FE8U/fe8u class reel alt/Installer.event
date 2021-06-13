@@ -28,8 +28,10 @@ POIN fe8u_class_reel_alt_class_name_table
 
 
 #include "fe8u_class_reel_alt_class_name_table.event"
+ALIGN 4
+WORD 0xffffffff  //gard
 
-
+ALIGN 4
 
 #else
     ERROR This version of Selection Quotes is for FE8!

@@ -1,0 +1,17 @@
+NAME=封印の剣の炎のパレットを動的に変更する(Installer)
+NAME.en=Dynamically Change the Sealed Sword's Fire palette.(Installer)
+NAME.zh=Dynamically Change the Sealed Sword's Fire palette.(Installer)
+INFO=使用する武器や、使用者によって、封印の剣の炎のパレットを動的に変更します。\r\nEffectID:0x12 "封印の剣"の炎のエフェクトの色を変更します。\r\n利用する場合は、"封印の剣"は、音が設定されていないので、"封印の剣の音を出す"パッチを利用して音を設定してください。
+INFO.en=The Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x12 Change the color of the "Seal Sword" flame effect.\r\nIf you want to use it, the sound of "Seal Sword" is not set, so please set the sound using the "Sound the sword of the seal" patch.
+INFO.zh=The Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x12 Change the color of the "Seal Sword" flame effect.\r\nIf you want to use it, the sound of "Seal Sword" is not set, so please set the sound using the "Sound the sword of the seal" patch.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x5E0FC=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChangeSealedSwordFireColor.txt
+EDIT_PATCH:2=PATCH_ChangeSealedSwordFireColor_Palette.txt
+EA=ChangeSealedSwordFireColor_installer.event
+
+AUTHOR=7743

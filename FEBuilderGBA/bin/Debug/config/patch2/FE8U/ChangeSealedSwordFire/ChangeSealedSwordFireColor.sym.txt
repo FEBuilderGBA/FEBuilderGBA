@@ -1,0 +1,17 @@
+PaletteTable=$BC
+Table=$B8
+RightSide=$14
+LeftSize=$10
+JoinGetActor=$16
+NotFound=$8A
+Loop=$20
+CheckUnit=$28
+CheckClass=$36
+CheckItem=$44
+CheckAffiliation=$52
+Check_Flag=$76
+CheckAffiliation_Enemy=$68
+CheckAffiliation_NPC=$6E
+CheckAffiliation_Player=$62
+Found=$86
+Exit=$8C
