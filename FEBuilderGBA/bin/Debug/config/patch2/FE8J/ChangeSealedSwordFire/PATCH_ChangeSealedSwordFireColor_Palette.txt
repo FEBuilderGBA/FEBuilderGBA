@@ -1,9 +1,9 @@
 NAME=封印の剣の炎のパレットを動的に変更する(PaletteList)
 NAME.en=Dynamically Change the Sealed Sword's Fire palette.(PaletteList)
 NAME.zh=Dynamically Change the Sealed Sword's Fire palette.(PaletteList)
-INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n使用する武器や、使用者によって、封印の剣の炎のパレットを動的に変更します。
-INFO.en=Those not on the list behave by default.\r\nThe Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.
-INFO.zh=Those not on the list behave by default.\r\nThe Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.
+INFO=使用する武器や、使用者によって、封印の剣の炎のパレットを動的に変更します。
+INFO.en=The Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.
+INFO.zh=The Sealed Sword's Fire palette is dynamically changed depending on the weapon used and the user.
 
 IF:0x5E0FC=0x00 0x4B
 

@@ -1,0 +1,18 @@
+NAME=竜石の炎のパレットを動的に変更する(Installer)
+NAME.en=Dynamically Change the Dragon Stone's Fire Breath palette.(Installer)
+NAME.zh=Dynamically Change the Dragon Stone's Fire Breath palette.(Installer)
+INFO=使用する武器や、使用者によって、竜石の炎のパレットを動的に変更します。\r\nEffectID:0x13 "竜石"の炎のエフェクトの色を変更します。\r\n
+INFO.en=The Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+INFO.zh=The Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x5E40C=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChangeDragonBreathColor.txt
+EDIT_PATCH:2=PATCH_ChangeDragonBreathColor_PaletteBG.txt
+EDIT_PATCH:3=PATCH_ChangeDragonBreathColor_PaletteOBJ.txt
+EA=ChangeChangeDragonBreathColor_installer.event
+
+AUTHOR=7743

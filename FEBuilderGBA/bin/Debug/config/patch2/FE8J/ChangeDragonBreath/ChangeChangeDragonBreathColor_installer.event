@@ -1,0 +1,140 @@
+PUSH
+ORG 0x5E40C	//FE8J	{J}
+//ORG 0x5D30C	//FE8U	{U}
+jumpToHack(ChangeChangeBreathColorBG)
+
+ORG 0x5E2D8	//FE8J	{J}
+//ORG 0x5D1D8	//FE8U	{U}
+jumpToHack(ChangeChangeBreathColorOBJ)
+POP
+
+ALIGN 4
+ChangeChangeBreathColorBG:
+#incbin "ChangeChangeBreathColorBG.dmp"
+POIN ChangeChangeBreathColor_Table
+POIN ChangeChangeBreathColorBG_PaletteTable
+
+ALIGN 4
+ChangeChangeBreathColorOBJ:
+#incbin "ChangeChangeBreathColorOBJ.dmp"
+POIN ChangeChangeBreathColor_Table
+POIN ChangeChangeBreathColorOBJ_PaletteTable
+
+ALIGN 4
+ChangeChangeBreathColor_OBJDarkPurple:
+#incbin "OBJDarkPurple.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJLightRed:
+#incbin "OBJLightRed.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJDarkBlue:
+#incbin "OBJDarkBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJLightBlue:
+#incbin "OBJLightBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJPink:
+#incbin "OBJPink.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJLightGreen2:
+#incbin "OBJLightGreen2.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_OBJDarkGreen2:
+#incbin "OBJDarkGreen2.png.pal.dmp"
+
+
+ALIGN 4
+ChangeChangeBreathColor_BGPink:
+#incbin "BGPink.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGPurple:
+#incbin "BGPurple.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGLightBlue:
+#incbin "BGLightBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGDarkBlue:
+#incbin "BGDarkBlue.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGOrange:
+#incbin "BGOrange.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGBlackGreen:
+#incbin "BGBlackGreen.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGDarkGreen:
+#incbin "BGDarkGreen.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGLightGreen:
+#incbin "BGLightGreen.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGLightGreen2:
+#incbin "BGLightGreen2.png.pal.dmp"
+
+ALIGN 4
+ChangeChangeBreathColor_BGDarkYellow:
+#incbin "BGDarkYellow.png.pal.dmp"
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeChangeBreathColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag		TableID TableID2
+BYTE	0x00	0x00	0x09	0x0;SHORT	0x0;BYTE	0		0		//Rapier
+BYTE	0x00	0x00	0x0AA	0x0;SHORT	0x0;BYTE	0		0		//Dragon Stone
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0;BYTE	0		0		//Term
+
+//パレットテーブルOBJ
+ALIGN 4
+ChangeChangeBreathColorOBJ_PaletteTable:
+POIN 0x860B53C						//0=Red 	Vanilla	//{J}
+POIN 0x860C600						//1=Green 	Vanilla	//{J}
+POIN 0x860C640						//2=DarkGreen 	Vanilla	//{J}
+//POIN 0x85DE964						//0=Red 	Vanilla	//{U}
+//POIN 0x85DFA28						//1=Green 	Vanilla	//{U}
+//POIN 0x85DFA68						//2=DarkGreen 	Vanilla	//{U}
+
+POIN ChangeChangeBreathColor_OBJDarkPurple	//3
+POIN ChangeChangeBreathColor_OBJLightRed	//4
+POIN ChangeChangeBreathColor_OBJDarkBlue	//5
+POIN ChangeChangeBreathColor_OBJLightBlue	//6
+POIN ChangeChangeBreathColor_OBJPink		//7
+POIN ChangeChangeBreathColor_OBJLightGreen2	//8
+POIN ChangeChangeBreathColor_OBJDarkGreen2	//9
+
+WORD 0	//Term
+ALIGN 4
+
+
+//パレットテーブルBG
+ALIGN 4
+ChangeChangeBreathColorBG_PaletteTable:
+POIN 0x87526A8						//0=Red 	Vanilla	//{J}
+//POIN 0x8725AD0						//0=Red 	Vanilla	//{U}
+
+POIN ChangeChangeBreathColor_BGPink			//1
+POIN ChangeChangeBreathColor_BGPurple		//2
+POIN ChangeChangeBreathColor_BGLightBlue	//3
+POIN ChangeChangeBreathColor_BGDarkBlue		//4
+POIN ChangeChangeBreathColor_BGOrange		//5
+POIN ChangeChangeBreathColor_BGBlackGreen	//6
+POIN ChangeChangeBreathColor_BGDarkGreen	//7
+POIN ChangeChangeBreathColor_BGLightGreen	//8
+POIN ChangeChangeBreathColor_BGLightGreen2	//9
+POIN ChangeChangeBreathColor_BGDarkYellow	//A
+
+WORD 0	//Term
+ALIGN 4

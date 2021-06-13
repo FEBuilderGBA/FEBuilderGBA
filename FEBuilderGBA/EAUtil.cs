@@ -297,6 +297,10 @@ namespace FEBuilderGBA
             {
                 dataType = DataEnum.ASM;
             }
+            else if (filename.IndexOf(".png.") >= 0)
+            {//png
+                dataType = DataEnum.BIN;
+            }
             else
             {//ヒントがない場合は、 JumpToHackの有無で判断します.
                 if (isCode(fullbinname))

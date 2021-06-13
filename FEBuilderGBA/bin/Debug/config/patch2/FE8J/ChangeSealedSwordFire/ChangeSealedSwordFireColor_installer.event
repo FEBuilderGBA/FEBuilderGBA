@@ -3,20 +3,11 @@ ORG 0x5E0FC	//FE8J	{J}
 //ORG 0x5CFFC	//FE8U	{U}
 jumpToHack(ChangeSealedSwordFireColor)
 
-ORG 0x5E2D8	//FE8J	{J}
-//ORG 0x5D1D8	//FE8U	{U}
-jumpToHack(ChangeSealedSwordFireColor2)
 POP
 
 ALIGN 4
 ChangeSealedSwordFireColor:
 #incbin "ChangeSealedSwordFireColor.dmp"
-POIN ChangeSealedSwordFireColor_Table
-POIN ChangeSealedSwordFireColor_PaletteTable
-
-ALIGN 4
-ChangeSealedSwordFireColor2:
-#incbin "ChangeSealedSwordFireColor2.dmp"
 POIN ChangeSealedSwordFireColor_Table
 POIN ChangeSealedSwordFireColor_PaletteTable
 

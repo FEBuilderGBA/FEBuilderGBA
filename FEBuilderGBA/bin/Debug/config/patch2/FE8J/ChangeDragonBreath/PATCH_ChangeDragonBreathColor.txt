@@ -1,0 +1,33 @@
+NAME=竜石の炎のパレットを動的に変更する(Editor)
+NAME.en=Dynamically Change the Dragon Stone's Fire Breath palette.(Editor)
+NAME.zh=Dynamically Change the Dragon Stone's Fire Breath palette.(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n使用する武器や、使用者によって、竜石の炎のパレットを動的に変更します。\r\nEffectID:0x13 "竜石"の炎のエフェクトの色を変更します。\r\n
+INFO.en=Those not on the list behave by default.\r\n\r\nThe Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+INFO.zh=Those not on the list behave by default.\r\n\r\nThe Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+
+IF:0x5E40C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeChangeBreathColorBG.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+B6:$COMBO Color.combo.txt=ColorOBJ
+B7:$COMBO Color2.combo.txt=ColorBG

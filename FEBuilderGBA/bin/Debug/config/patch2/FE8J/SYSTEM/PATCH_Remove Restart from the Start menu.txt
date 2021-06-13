@@ -1,0 +1,11 @@
+NAME=スタートメニューから「記録から始める」メニューを消す
+NAME.en=Remove Restart Chapter from the Start menu
+NAME.zh=Remove Restart Chapter from the Start menu
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xB039C
+COMBO=Default|0xFF 0xF7 0xC6 0xFF|Fix|0x00 0x00 0x00 0x00
+HIT=Erase Hide 隠す
+AUTHOR=7743

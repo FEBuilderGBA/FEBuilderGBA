@@ -1,0 +1,34 @@
+NAME=竜石の炎のパレットを動的に変更する(BG PaletteList)
+NAME.en=Dynamically Change the Dragon Stone's Fire Breath palette.(BG PaletteList)
+NAME.zh=Dynamically Change the Dragon Stone's Fire Breath palette.(BG PaletteList)
+INFO=使用する武器や、使用者によって、竜石の炎のパレットを動的に変更します。\r\nEffectID:0x13 "竜石"の炎のエフェクトの色を変更します。\r\n
+INFO.en=The Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+INFO.zh=The Dragon Stone's Fire Breath palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x13 Change the color of the "Dragon Stone" flame effect.
+
+IF:0x5D30C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 ChangeChangeBreathColorBG.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//幅と高さ
+WIDTH=240
+HEIGHT=128
+//利用パレット数
+PALETTE=1
+
+PatchImage_ZIMAGE=0x5D2AC
+PatchImage_ZTSA=0x5D2B0
+LISTNAME=$COMBO Color2.combo.txt
+
+//データを定義します
+P0:PatchImage_PALETTE=Palette
