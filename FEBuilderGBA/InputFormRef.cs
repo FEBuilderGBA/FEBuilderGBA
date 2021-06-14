@@ -8725,6 +8725,8 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
+                    e.Handled = true;
+
                     //ショートカットマッチ.
                     switch (U.atoi(Program.Config.at("ShortCutValue" + (i+1).ToString(),"255")))
                     {
@@ -8823,11 +8825,13 @@ namespace FEBuilderGBA
                                 InputFormRef.JumpForm<ItemForm>();
                             }
                             break;
+                        case 23: //23=逆アセンブルしたソースコードを開く
+                            MainFormUtil.OpenDisassembleSrcCode();
+                            break;
                         case 0xFF: //未定義
                             R.ShowStopError("ショートカットキーの設定がされていません。\r\nメニューの、設定→オプションから、ショートカットキーを定義してください。");
                             break;
                     }
-                    e.Handled = true;
                     return;
                 }
             };

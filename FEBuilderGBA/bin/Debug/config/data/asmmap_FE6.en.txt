@@ -665,7 +665,7 @@
 
 02003108	Stat Screens StatScreenStruct
 08056DB4	Battle animation scriptC26 (throw shield) / C27 (throw sword) command judgment
-080478DC	Special movement of tiles?Called from C26 / C27	r1=Pointer array 1	r2=Pointer array 1	r3=??
+080478DC	PrepAIS	Special movement of tiles Called from C26 / C27	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight
 08279d28	:08279e60	Japanese notation of terrain
 08279e60	:0827a924	The terrain and the name of the character are entered in ASCII
 0827a924	:0827B018	The staff role is entered in ASCIINot used

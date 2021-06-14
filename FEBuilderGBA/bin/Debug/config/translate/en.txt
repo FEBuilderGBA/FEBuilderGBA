@@ -913,6 +913,9 @@ Reference
 :逆アセンブラ
 Disassembler
 
+:ソースコードを更新する場合は、このファイル消すか、0バイトの空ファイルにしてください。
+When updating the source code, delete this file or make it a 0-byte empty file.
+
 :このゲームのプログラムデータをすべてファイルに出力します。\r\n処理には時間がかかるものがあります。
 All programming data of the game will be exported to a file.\r\nProcessing may take some time.
 
@@ -963,6 +966,9 @@ Click the link or J to go to the function.
 
 :クリックボードへ(Ctrl+C)
 Copy to Clipboard (Ctrl+C)
+
+:バニラのソースコードを確認
+Check vanilla Source code
 
 :TSV形式|*.tsv|CSV形式|*.csv|All files|*
 TSV Format|*.tsv|CSV Format|*.csv|All files|*
@@ -1819,6 +1825,15 @@ C0=Run on 4th Army Phase
 :15=秘密の店
 15=Secret Shop
 
+:34=ロングアーチ
+34=Ballista
+
+:35=アイアンアーチ
+35=Iron Ballista
+
+:36=キラーアーチ
+36=Killer Ballista
+
 :0D=ASM条件
 0D=ASM Condition
 
@@ -1980,15 +1995,6 @@ Range Cond:
 
 :37=キラーアーチ
 37=Killer Ballista
-
-:34=ロングアーチ
-34=Ballista
-
-:35=アイアンアーチ
-35=Iron Ballista
-
-:36=キラーアーチ
-36=Killer Ballista
 
 :04=ダメージ床
 04=Fire Trap
@@ -3285,6 +3291,9 @@ If you want to use the world map skirmishes, select MNC2Fix.\r\n
 
 :{0}パッチを有効にする
 Enable {0}
+
+:このパッチを推奨しない
+Do not recommend this patch
 
 :無視して続行する
 Ignore and continue
@@ -5332,6 +5341,9 @@ The ID of the tile change.\r\nIt is recommended to assign the same ID as the lis
 :楽器データを識別するための値です。\r\nもし、まだ名前が設定されていない楽器の名前を知っている場合は、\r\nこのテキストの内容と、楽器名をコミニティに報告してください。\r\n
 A value for identifying instrument data.\r\nIf you know the name of an instrument that has not yet been named,\r\nplease report the content of this text and the instrument name to the community.\r\n
 
+:これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
+If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6594,6 +6606,9 @@ File not found
 
 :指定されたROMは無改造ROMではありません。\r\nCRC32が一致しません。\r\n正規品の無改造ROMを指定してください。\r\n正規品のROMからupsを作らないと誰もそれを開けません。\r\n\r\n指定されたROMのCRC32:\r\n{0}\r\n正規品のCRC32:\r\n{1}
 The specified ROM is not an unmodified ROM.\r\nCRC32 does not match.\r\nPlease specify a genuine ROM without modification.\r\nNo one can open it without making an ups from a genuine ROM.\r\n\r\nYour ROM CRC32:\r\n{0}\r\nGenuine ROM CRC32:\r\n{1}
+
+:ソースコードを保存するディレクトリが設定されていません。\r\n設定のパス2の「ソースコードの保存場所」を設定してください。
+The directory to save the source code is not set.\r\nSet the "Source code storage location" in path 2 of the settings.
 
 :エラーに移動する
 Go to error
@@ -8743,6 +8758,12 @@ Set music conversion tools.\r\ngba_mus_riper is used to export MIDI and soundfon
 :Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。
 Please set the path to mid2agb.\r\nIt is highly recommended for importing music, and should be chosen.
 
+:バニラのソースコードを簡単に確認するために利用する項目です。\r\nディフォルトではF10キーを押すとバニラのコードにアクセスできます。\r\nバニラのソースコードは数十万行になるので、テキストエディターには、大きなファイルを表示できるテキストエディタを指定してください。
+This item is used to easily check the vanilla source code.\r\nBy default, you can access the vanilla code by pressing the F10 key.\r\nVanilla source code can be hundreds of thousands of lines long, so make sure you specify a text editor that can display large files.
+
+:ソースコードを保存するディレクトリを指定してください。
+Specify the directory where you want to save the source code.
+
 :パス
 Path
 
@@ -8790,6 +8811,15 @@ Emulator
 
 :パス2
 Path 2
+
+:ソースコードの保存場所
+Source code storage location.
+
+:利用するテキストエディタ
+Text editor to use.
+
+:逆アセンブラしたソースコードを閲覧する設定です
+It is a setting to browse the disassembled source code.
 
 :コンパイラを利用してC言語を利用する場合は設定してください。
 C Lang Compiler
@@ -8979,6 +9009,9 @@ Shortcut Key 2
 
 :22=アイテム画面を開く
 22=Open Item Editor
+
+:23=逆アセンブルソースコードの表示
+23=Display By Disassemble source code
 
 :ショートカットキー1
 Shortcut Key 1
@@ -11782,6 +11815,21 @@ File for Comparison
 :フリースペースはまとめる
 Collect free space.
 
+:ソースコードの生成するには数分かかります。
+It will take a few minutes to generate the source code.
+
+:ソースコードを生成するためのバニラROMを選択してください。\r\nもし、現在のROMの逆アセンブラを表示したい場合は、メニューのツール内にある逆アセンブル機能を利用してください。\r\nソースコードの生成には、数分かかります。
+Select a vanilla ROM to generate the source code.\r\nIf you want to display the disassembler of the current ROM, please use the disassemble function in the tool of the menu.\r\nIt will take a few minutes to generate the source code.
+
+:逆アセンブルソースコードの作成
+Disassembled source code creation.
+
+:保存先
+Destination.
+
+:ソースコードがないのでバニラROMから生成します
+Generate from vanilla ROM since there is no source code
+
 :エミュレータが設定されていません。\r\n動作テストに利用するエミュレータを設定してください。
 The emulator is not set.\r\nSet the emulator used for playtesting.
 
@@ -13117,8 +13165,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:このパッチを推奨しない
-Do not recommend this patch
-
-:これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
-If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n

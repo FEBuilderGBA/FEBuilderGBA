@@ -266,6 +266,12 @@
     </Compile>
     <Compile Include="EtcCache.cs" />
     <Compile Include="EtcCacheFLag.cs" />
+    <Compile Include="ToolDisasmSourceCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDisasmSourceCode.Designer.cs">
+      <DependentUpon>ToolDisasmSourceCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="UwordBitFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2210,6 +2216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProcsScriptInnerControl.resx">
       <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDisasmSourceCode.resx">
+      <DependentUpon>ToolDisasmSourceCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UwordBitFlagForm.resx">
       <DependentUpon>UwordBitFlagForm.cs</DependentUpon>

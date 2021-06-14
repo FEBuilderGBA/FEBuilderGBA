@@ -2048,8 +2048,8 @@ r3=X tile position of menu of the right	{U}
 
 0806EFB8	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{J}
 0806CC94	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{U}
-080564F0	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??	{J}
-08055554	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??	{U}
+080564F0	PrepAIS	瓷砖的特殊运动 从C26 / C27调用	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{J}
+08055554	PrepAIS	瓷砖的特殊运动 从C26 / C27调用	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{U}
 081B16E0	:081B1878	日本的地形符号	{J}
 081B1878	:081B258C	地形和字符的名字是用ASCII码输入的	{J}
 081B258C	:081B2C80	员工角色以ASCII输入未使用	{J}
@@ -13157,3 +13157,25 @@ r3=X tile position of menu of the right	{U}
 08BB8EA0	:08BB8EEF	KEEPEMPTY	5	{J}
 0808EB0C	ParseTextCommandSetName0x8023	{U}
 08090DE0	ParseTextCommandSetName0x8023	{J}
+0806EC28	StartEfxNormalEffectBG	{J}
+0806C904	StartEfxNormalEffectBG	{U}
+0806EABC	StartEfxCriticalEffectBG	{J}
+0806C798	StartEfxCriticalEffectBG	{U}
+@SAVEMENURTEXTDATA@01	byte	HeroLevel
+@SAVEMENURTEXTDATA@02	byte	WorldmapNodeID
+0203EF66	gSaveMenuRTextData.CurrentWorldmapNodeID	{U}
+0203EF62	gSaveMenuRTextData.CurrentWorldmapNodeID	{J}
+080A7A0C	GetMiniMapTypeFromCoordinateXY	{U}
+080A7BF8	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}
+0809AAF0	DrawCountOfPickupUnits_PrepScreen	{U}
+0809A9F8	DrawPickupUnitsList_PrepScreen	{U}
+080B0354	将项目添加到开始菜单主	{J}
+080AB89C	将项目添加到开始菜单主	{U}
+080b032c	向开始菜单添加一项	{J}
+080AB874	向开始菜单添加一项	{U}
+0805CF64	StartEfxTeonoSE	{J}
+0805CEA0	StartEfxTeonoOBJ2	{J}
+0805CD78	StartEfxTeonoOBJ	{J}
+0805C1C8	StartEfxTeonoSE	{U}
+0805C104	StartEfxTeonoOBJ2	{U}
+0805BFDC	StartEfxTeonoOBJ	{U}

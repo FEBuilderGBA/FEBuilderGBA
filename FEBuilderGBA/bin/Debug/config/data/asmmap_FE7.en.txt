@@ -1399,8 +1399,10 @@
 
 08063014	Battle animation scriptC26 (throw shield) / C27 (throw sword) command judgment	{J}
 0806CC94	Battle animation scriptC26 (throw shield) / C27 (throw sword) command judgment	{U}
-08050bf8	Special movement of tiles?Called from C26 / C27	r0=unknown	r1=Pointer array 1	r2=Pointer array 1	r3=??	{J}
-0805041C	Special movement of tiles?Called from C26 / C27	r0=unknown	r1=Pointer array 1	r2=Pointer array 1	r3=??	{U}
+
+08050bf8	PrepAIS	Special movement of tiles Called from C26 / C27	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{J}
+0805041C	PrepAIS	Special movement of tiles Called from C26 / C27	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{U}
+
 083bdff4	:083be18c	Japanese notation of terrain	{J}
 083be18c	:083bee00	The terrain and the name of the character are entered in ASCII	{J}
 083bee00	:083bf508	The staff role is entered in ASCIINot used	{J}

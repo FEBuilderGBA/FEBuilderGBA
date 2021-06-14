@@ -66,6 +66,13 @@
             this.emulator = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPagePath2 = new System.Windows.Forms.TabPage();
+            this.srccode_directory_button = new System.Windows.Forms.Button();
+            this.label49 = new System.Windows.Forms.Label();
+            this.srccode_texteditor_button = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.srccode_directory = new FEBuilderGBA.TextBoxEx();
+            this.srccode_texteditor = new FEBuilderGBA.TextBoxEx();
+            this.X_EXPLAIN_SRCCODE = new System.Windows.Forms.Label();
             this.FECLIB_button = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
             this.X_EXPLAIN_CLANG = new System.Windows.Forms.Label();
@@ -711,6 +718,13 @@
             // tabPagePath2
             // 
             this.tabPagePath2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagePath2.Controls.Add(this.srccode_directory_button);
+            this.tabPagePath2.Controls.Add(this.label49);
+            this.tabPagePath2.Controls.Add(this.srccode_texteditor_button);
+            this.tabPagePath2.Controls.Add(this.label53);
+            this.tabPagePath2.Controls.Add(this.srccode_directory);
+            this.tabPagePath2.Controls.Add(this.srccode_texteditor);
+            this.tabPagePath2.Controls.Add(this.X_EXPLAIN_SRCCODE);
             this.tabPagePath2.Controls.Add(this.FECLIB_button);
             this.tabPagePath2.Controls.Add(this.label67);
             this.tabPagePath2.Controls.Add(this.X_EXPLAIN_CLANG);
@@ -747,6 +761,81 @@
             this.tabPagePath2.Size = new System.Drawing.Size(842, 703);
             this.tabPagePath2.TabIndex = 5;
             this.tabPagePath2.Text = "パス2";
+            // 
+            // srccode_directory_button
+            // 
+            this.srccode_directory_button.Location = new System.Drawing.Point(748, 588);
+            this.srccode_directory_button.Margin = new System.Windows.Forms.Padding(2);
+            this.srccode_directory_button.Name = "srccode_directory_button";
+            this.srccode_directory_button.Size = new System.Drawing.Size(82, 28);
+            this.srccode_directory_button.TabIndex = 56;
+            this.srccode_directory_button.Text = "参照";
+            this.srccode_directory_button.UseVisualStyleBackColor = true;
+            this.srccode_directory_button.Click += new System.EventHandler(this.srccode_directory_button_Click);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(11, 593);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(178, 18);
+            this.label49.TabIndex = 54;
+            this.label49.Text = "ソースコードの保存場所";
+            // 
+            // srccode_texteditor_button
+            // 
+            this.srccode_texteditor_button.Location = new System.Drawing.Point(748, 558);
+            this.srccode_texteditor_button.Margin = new System.Windows.Forms.Padding(2);
+            this.srccode_texteditor_button.Name = "srccode_texteditor_button";
+            this.srccode_texteditor_button.Size = new System.Drawing.Size(82, 28);
+            this.srccode_texteditor_button.TabIndex = 53;
+            this.srccode_texteditor_button.Text = "参照";
+            this.srccode_texteditor_button.UseVisualStyleBackColor = true;
+            this.srccode_texteditor_button.Click += new System.EventHandler(this.srccode_texteditor_button_Click);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(11, 563);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(180, 18);
+            this.label53.TabIndex = 51;
+            this.label53.Text = "利用するテキストエディタ";
+            // 
+            // srccode_directory
+            // 
+            this.srccode_directory.ErrorMessage = "";
+            this.srccode_directory.Location = new System.Drawing.Point(228, 588);
+            this.srccode_directory.Margin = new System.Windows.Forms.Padding(2);
+            this.srccode_directory.Name = "srccode_directory";
+            this.srccode_directory.Placeholder = "";
+            this.srccode_directory.Size = new System.Drawing.Size(516, 25);
+            this.srccode_directory.TabIndex = 55;
+            this.srccode_directory.DoubleClick += new System.EventHandler(this.srccode_directory_DoubleClick);
+            // 
+            // srccode_texteditor
+            // 
+            this.srccode_texteditor.ErrorMessage = "";
+            this.srccode_texteditor.Location = new System.Drawing.Point(228, 558);
+            this.srccode_texteditor.Margin = new System.Windows.Forms.Padding(2);
+            this.srccode_texteditor.Name = "srccode_texteditor";
+            this.srccode_texteditor.Placeholder = "";
+            this.srccode_texteditor.Size = new System.Drawing.Size(516, 25);
+            this.srccode_texteditor.TabIndex = 52;
+            this.srccode_texteditor.DoubleClick += new System.EventHandler(this.srccode_texteditor_DoubleClick);
+            // 
+            // X_EXPLAIN_SRCCODE
+            // 
+            this.X_EXPLAIN_SRCCODE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_EXPLAIN_SRCCODE.Location = new System.Drawing.Point(8, 516);
+            this.X_EXPLAIN_SRCCODE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_EXPLAIN_SRCCODE.Name = "X_EXPLAIN_SRCCODE";
+            this.X_EXPLAIN_SRCCODE.Size = new System.Drawing.Size(822, 30);
+            this.X_EXPLAIN_SRCCODE.TabIndex = 50;
+            this.X_EXPLAIN_SRCCODE.Text = "逆アセンブラしたソースコードを閲覧する設定です";
+            this.X_EXPLAIN_SRCCODE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FECLIB_button
             // 
@@ -2025,7 +2114,8 @@
             "19=リストから次を検索",
             "20=ユニット画面を開く",
             "21=クラス画面を開く",
-            "22=アイテム画面を開く"});
+            "22=アイテム画面を開く",
+            "23=逆アセンブルソースコードの表示"});
             this.ShortCutValue1.Location = new System.Drawing.Point(380, 14);
             this.ShortCutValue1.Margin = new System.Windows.Forms.Padding(2);
             this.ShortCutValue1.Name = "ShortCutValue1";
@@ -3384,5 +3474,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button midfix4agb_button;
         private TextBoxEx midfix4agb;
+        private System.Windows.Forms.Label X_EXPLAIN_SRCCODE;
+        private System.Windows.Forms.Button srccode_directory_button;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Button srccode_texteditor_button;
+        private System.Windows.Forms.Label label53;
+        private TextBoxEx srccode_directory;
+        private TextBoxEx srccode_texteditor;
     }
 }

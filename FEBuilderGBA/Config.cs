@@ -144,8 +144,8 @@ namespace FEBuilderGBA
             SetDefaultIfEmpty("ShortCutValue10", "");
             SetDefaultIfEmpty("ShortCutKey11", U.GetCtrlKeyName() + "+W");
             SetDefaultIfEmpty("ShortCutValue11", "13"); //Ctrl+W 閉じる
-            SetDefaultIfEmpty("ShortCutKey12", "");
-            SetDefaultIfEmpty("ShortCutValue12", "");
+            SetDefaultIfEmpty("ShortCutKey12", "F10"); //F10 ソースコードを表示
+            SetDefaultIfEmpty("ShortCutValue12", "23");
             SetDefaultIfEmpty("ShortCutKey13", "");
             SetDefaultIfEmpty("ShortCutValue13", "");
             SetDefaultIfEmpty("ShortCutKey14", "");

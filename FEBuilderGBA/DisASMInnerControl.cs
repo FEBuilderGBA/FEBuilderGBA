@@ -510,6 +510,11 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(AddressList , select);
         }
 
+        private void check_vanilla_srccode_button_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.OpenDisassembleSrcCode((uint)ReadStartAddress.Value);
+        }
+
 
     }
 }

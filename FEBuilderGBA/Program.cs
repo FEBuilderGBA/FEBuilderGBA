@@ -135,6 +135,12 @@ namespace FEBuilderGBA
                 Environment.Exit(SongExchangeForm.CommandLineImport());
                 return true;
             }
+            if (ArgsDic.ContainsKey("--disasm"))
+            {//逆汗
+                Program.IsCommandLine = true;
+                Environment.Exit(DisASMDumpAllForm.CommandLineDisasm(ArgsDic["--disasm"]));
+                return true;
+            }
 
 #if DEBUG
             //デバッグの場合はテストを実行

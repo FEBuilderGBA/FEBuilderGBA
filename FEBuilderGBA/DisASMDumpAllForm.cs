@@ -264,14 +264,21 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            MakeAllDisASMButton(self, save.FileNames[0], notifyUpdateMessage: false);
+        }
 
+        public static void MakeAllDisASMButton(Form self, string store_filename, bool notifyUpdateMessage)
+        {
             uint addr = 0x100;
 
-
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(self))
-            using (StreamWriter writer = new StreamWriter(save.FileNames[0]))
+            using (StreamWriter writer = new StreamWriter(store_filename))
             {
                 writer.WriteLine("//FEBuilderGBA " + R._("逆アセンブラ"));
+                if (notifyUpdateMessage)
+                {
+                    writer.WriteLine("//" +  DateTime.Now.ToString("yyyyMMdd") +  " " + R._("ソースコードを更新する場合は、このファイル消すか、0バイトの空ファイルにしてください。"));
+                }
 
                 wait.DoEvents("GrepAllStructPointers");
 
@@ -438,8 +445,11 @@ namespace FEBuilderGBA
                 }
             }
 
-            //エクスプローラで選択しよう
-            U.SelectFileByExplorer(save.FileNames[0]);
+            if (self != null)
+            {
+                //エクスプローラで選択しよう
+                U.SelectFileByExplorer(store_filename);
+            }
         }
 
         public static void RunAllMakeMAPFileButton(Form self)
@@ -538,5 +548,12 @@ namespace FEBuilderGBA
             f.ShowDialog();
         }
 
+        public static int CommandLineDisasm(string filename)
+        {
+            U.echo("CommandLineDisasm");
+
+            MakeAllDisASMButton(null, filename, notifyUpdateMessage: true);
+            return 0;
+        }
     }
 }

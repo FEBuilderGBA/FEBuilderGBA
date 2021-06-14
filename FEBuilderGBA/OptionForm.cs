@@ -58,6 +58,8 @@ namespace FEBuilderGBA
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
             python3.Text = GetPython3();
+            srccode_texteditor.Text = GetSrccodeTexteditor();
+            srccode_directory.Text = GetSrccodeDirectory();
 
             Color_Control_BackColor_button.BackColor = Color_Control_BackColor();
             Color_Control_ForeColor_button.BackColor = Color_Control_ForeColor();
@@ -232,6 +234,8 @@ namespace FEBuilderGBA
             Program.Config["sox"] = sox.Text;
             Program.Config["midfix4agb"] = midfix4agb.Text;
             Program.Config["FECLIB"] = FECLIB.Text;
+            Program.Config["srccode_texteditor"] = srccode_texteditor.Text;
+            Program.Config["srccode_directory"] = srccode_directory.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1348,6 +1352,15 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("FECLIB", "");
         }
+        public static string GetSrccodeTexteditor()
+        {
+            return Program.Config.at("srccode_texteditor", "");
+        }
+        public static string GetSrccodeDirectory()
+        {
+            return Program.Config.at("srccode_directory", Program.BaseDirectory);
+        }
+
         public static bool IsKanaToNumberMode()
         {
             return U.stringbool(Program.Config.at("IsKanaToNumberMode", "false"));
@@ -1392,6 +1405,7 @@ namespace FEBuilderGBA
             X_EXPLAIN_PROGRAMN.AccessibleDescription = R._("FEBuilderGBAから動作させたいプログラムがあれば指定してください。\r\nたいていの場合は、特に設定する必要はありません。");
             X_EXPLAIN_MUSICTOOL.AccessibleDescription = R._("音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n");
             X_EXPLAIN_MID2AGB.AccessibleDescription = R._("Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。");
+            X_EXPLAIN_SRCCODE.AccessibleDescription = R._("バニラのソースコードを簡単に確認するために利用する項目です。\r\nディフォルトではF10キーを押すとバニラのコードにアクセスできます。\r\nバニラのソースコードは数十万行になるので、テキストエディターには、大きなファイルを表示できるテキストエディタを指定してください。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)
@@ -1515,6 +1529,49 @@ namespace FEBuilderGBA
         private void midfix4agb_DoubleClick(object sender, EventArgs e)
         {
             midfix4agb_button.PerformClick();
+        }
+
+        private void srccode_texteditor_button_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("");
+            if (r != "")
+            {
+                srccode_texteditor.Text = r;
+            }
+        }
+
+        private void srccode_directory_button_Click(object sender, EventArgs e)
+        {
+            //FolderBrowserDialogクラスのインスタンスを作成
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            //上部に表示する説明テキストを指定する
+            fbd.Description = R._("ソースコードを保存するディレクトリを指定してください。");
+            //ルートフォルダを指定する
+            //デフォルトでDesktop
+            fbd.RootFolder = Environment.SpecialFolder.Desktop;
+            //最初に選択するフォルダを指定する
+            //RootFolder以下にあるフォルダである必要がある
+            fbd.SelectedPath = srccode_directory.Text;
+            //ユーザーが新しいフォルダを作成できるようにする
+            //デフォルトでTrue
+            fbd.ShowNewFolderButton = true;
+
+            //ダイアログを表示する
+            if (fbd.ShowDialog(this) == DialogResult.OK)
+            {
+                srccode_directory.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void srccode_texteditor_DoubleClick(object sender, EventArgs e)
+        {
+            srccode_texteditor_button.PerformClick();
+        }
+
+        private void srccode_directory_DoubleClick(object sender, EventArgs e)
+        {
+            srccode_directory_button.PerformClick();
         }
     }
 }

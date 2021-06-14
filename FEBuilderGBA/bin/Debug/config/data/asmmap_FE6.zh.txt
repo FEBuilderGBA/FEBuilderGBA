@@ -457,7 +457,7 @@
 
 02003108	Stat Screens StatScreenStruct
 08056DB4	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断
-080478DC	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??
+080478DC	PrepAIS	瓷砖的特殊运动 从C26 / C27调用	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight
 08279d28	:08279e60	日本的地形符号
 08279e60	:0827a924	地形和字符的名字是用ASCII码输入的
 0827a924	:0827B018	员工角色以ASCII输入未使用

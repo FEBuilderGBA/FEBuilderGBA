@@ -2327,8 +2327,8 @@
 0806CC94	戦闘アニメスクリプト C26(盾を投げる)/C27(剣を投げる)コマンドの判定	{U}
 
 
-080564F0	タイルの特殊移動? C26/C27とかから呼ばれる	r1=ポインター配列1	r2=ポインター配列1	r3=??	{J}
-08055554	タイルの特殊移動? C26/C27とかから呼ばれる	r1=ポインター配列1	r2=ポインター配列1	r3=??	{U}
+080564F0	PrepAIS	タイルの特殊移動 C26/C27とかから呼ばれる	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{J}
+08055554	PrepAIS	タイルの特殊移動 C26/C27とかから呼ばれる	r0=ParentProcs	r1=FrameDataMeleeLeft	r2=FrameDataMeleeRight	r3=FrameDataRangedLeft	[sp+0]=FrameDataRangedRight	{U}
 
 08004EB4	戦闘アニメーションのフレームデータのパース	{J}
 08004FAC	戦闘アニメーションのフレームデータのパース	{U}
@@ -13197,3 +13197,19 @@
 08BB8EA0	:08BB8EEF	KEEPEMPTY	5	{J}
 0808EB0C	ParseTextCommandSetName0x8023	{U}
 08090DE0	ParseTextCommandSetName0x8023	{J}
+0806EC28	StartEfxNormalEffectBG	{J}
+0806C904	StartEfxNormalEffectBG	{U}
+0806EABC	StartEfxCriticalEffectBG	{J}
+0806C798	StartEfxCriticalEffectBG	{U}
+0806EBA0	StartEfxNormalEffect	{J}
+0806C87C	StartEfxNormalEffect	{U}
+0805CF64	StartEfxTeonoSE	{J}
+0805CEA0	StartEfxTeonoOBJ2	{J}
+0805CD78	StartEfxTeonoOBJ	{J}
+0805C1C8	StartEfxTeonoSE	{U}
+0805C104	StartEfxTeonoOBJ2	{U}
+0805BFDC	StartEfxTeonoOBJ	{U}
+080B0354	スタートメニューに項目を追加 Main	{J}
+080AB89C	スタートメニューに項目を追加 Main	{U}
+080b032c	スタートメニューに項目を一つ追加	{J}
+080AB874	スタートメニューに項目を一つ追加	{U}

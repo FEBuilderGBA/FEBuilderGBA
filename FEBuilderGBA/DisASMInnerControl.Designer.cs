@@ -53,6 +53,7 @@
             this.FileToASMButton = new System.Windows.Forms.Button();
             this.DumpAll = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
+            this.check_vanilla_srccode_button = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -66,6 +67,7 @@
             // HeaderPanel
             // 
             this.HeaderPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeaderPanel.Controls.Add(this.check_vanilla_srccode_button);
             this.HeaderPanel.Controls.Add(this.decompile_button);
             this.HeaderPanel.Controls.Add(this.ReloadListButton);
             this.HeaderPanel.Controls.Add(this.label1);
@@ -364,6 +366,16 @@
             this.HexEditorButton.UseVisualStyleBackColor = true;
             this.HexEditorButton.Click += new System.EventHandler(this.HexEditorButton_Click);
             // 
+            // check_vanilla_srccode_button
+            // 
+            this.check_vanilla_srccode_button.Location = new System.Drawing.Point(827, -1);
+            this.check_vanilla_srccode_button.Name = "check_vanilla_srccode_button";
+            this.check_vanilla_srccode_button.Size = new System.Drawing.Size(256, 30);
+            this.check_vanilla_srccode_button.TabIndex = 30;
+            this.check_vanilla_srccode_button.Text = "バニラのソースコードを確認";
+            this.check_vanilla_srccode_button.UseVisualStyleBackColor = true;
+            this.check_vanilla_srccode_button.Click += new System.EventHandler(this.check_vanilla_srccode_button_Click);
+            // 
             // DisASMInnerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -416,5 +428,6 @@
         private System.Windows.Forms.Button decompile_button;
         private System.Windows.Forms.Button DirectEditButton;
         private System.Windows.Forms.Button AsmEditButton;
+        private System.Windows.Forms.Button check_vanilla_srccode_button;
     }
 }
