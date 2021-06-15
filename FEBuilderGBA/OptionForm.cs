@@ -24,6 +24,9 @@ namespace FEBuilderGBA
 
             InputFormRef.markupJumpLabel(X_EXPLAIN_NECESSARY_PROGRAM);
             this.Icon = Properties.Resources.icon_settings;
+
+            U.SetIcon(ColorSaveASbutton, Properties.Resources.icon_arrow);
+            U.SetIcon(ColorLoadButton, Properties.Resources.icon_upload);
         }
 
         public void AutoClose(int autocolor = 0)
@@ -1572,6 +1575,95 @@ namespace FEBuilderGBA
         private void srccode_directory_DoubleClick(object sender, EventArgs e)
         {
             srccode_directory_button.PerformClick();
+        }
+
+        private void ColorSaveASbutton_Click(object sender, EventArgs e)
+        {
+            string title = R._("保存するファイル名を選択してください");
+            string filter = "FEBuilderColor|*.febuildergba_color.txt|All files|*";
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            save.CheckPathExists = true;
+            save.ShowDialog();
+            if (save.FileNames.Length <= 0)
+            {
+                return;
+            }
+
+            string filename = save.FileNames[0];
+            if (!U.CanWriteFileRetry(filename))
+            {
+                return;
+            }
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            using (StreamWriter w = new StreamWriter(filename))
+            {
+                w.WriteLine("Color_Control_BackColor" + "\t" + Color_Control_BackColor_button.BackColor.Name);
+                w.WriteLine("Color_Control_ForeColor" + "\t" + Color_Control_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_Input_BackColor" + "\t" + Color_Input_BackColor_button.BackColor.Name);
+                w.WriteLine("Color_Input_ForeColor" + "\t" + Color_Input_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_InputDecimal_BackColor" + "\t" + Color_InputDecimal_BackColor_button.BackColor.Name);
+                w.WriteLine("Color_InputDecimal_ForeColor" + "\t" + Color_InputDecimal_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_NotifyWrite_BackColor" + "\t" + Color_NotifyWrite_BackColor_button.BackColor.Name);
+                w.WriteLine("Color_NotifyWrite_ForeColor" + "\t" + Color_NotifyWrite_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_List_SelectedColor" + "\t" + Color_List_SelectedColor_button.BackColor.Name);
+                w.WriteLine("Color_List_HoverColor" + "\t" + Color_List_HoverColor_button.BackColor.Name);
+                w.WriteLine("Color_Keyword_BackColor" + "\t" + Color_Keyword_BackColor_button.BackColor.Name);
+                w.WriteLine("Color_Keyword_ForeColor" + "\t" + Color_Keyword_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_Comment_ForeColor" + "\t" + Color_Comment_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_ControlComment_ForeColor" + "\t" + Color_ControlComment_ForeColor_button.BackColor.Name);
+            }
+            U.SelectFileByExplorer(filename);
+        }
+
+        private void ColorLoadButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("開くファイル名を選択してください");
+            string filter = "FEBuilderColor|*.febuildergba_color.txt|All files|*";
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            open.Multiselect = false;
+            open.CheckFileExists = true;
+            open.CheckPathExists = true;
+            open.ShowDialog();
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+            U.SelectedIndexSafety(ColorSetComboBox, 0);
+
+            string filename = open.FileNames[0];
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] sp = line.Split('\t');
+                    if (sp.Length <= 1)
+                    {
+                        continue;
+                    }
+                    if (sp[0] == "Color_Control_BackColor") Color_Control_BackColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Control_ForeColor") Color_Control_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Input_BackColor") Color_Input_BackColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Input_ForeColor") Color_Input_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_InputDecimal_BackColor") Color_InputDecimal_BackColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_InputDecimal_ForeColor") Color_InputDecimal_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_NotifyWrite_BackColor") Color_NotifyWrite_BackColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_NotifyWrite_ForeColor") Color_NotifyWrite_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_List_SelectedColor") Color_List_SelectedColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_List_HoverColor") Color_List_HoverColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Keyword_BackColor") Color_Keyword_BackColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Keyword_ForeColor") Color_Keyword_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_Comment_ForeColor") Color_Comment_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_ControlComment_ForeColor") Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                }
+            }
         }
     }
 }

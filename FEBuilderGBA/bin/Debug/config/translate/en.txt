@@ -8813,13 +8813,13 @@ Emulator
 Path 2
 
 :ソースコードの保存場所
-Source code storage location.
+Source code Directory
 
 :利用するテキストエディタ
-Text editor to use.
+Text editor to use
 
 :逆アセンブラしたソースコードを閲覧する設定です
-It is a setting to browse the disassembled source code.
+Setting to browse the disassembled source code.
 
 :コンパイラを利用してC言語を利用する場合は設定してください。
 C Lang Compiler
