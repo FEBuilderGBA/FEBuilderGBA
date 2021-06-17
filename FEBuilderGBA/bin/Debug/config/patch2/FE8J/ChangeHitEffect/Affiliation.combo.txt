@@ -1,0 +1,4 @@
+0=ANY
+1=Player
+2=Enenmy
+3=NPC

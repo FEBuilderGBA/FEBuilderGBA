@@ -1,0 +1,56 @@
+PUSH
+
+ORG 0xe1908
+jumpToHack(giveall_fix)
+ORG 0xe1964
+jumpToHack(inventory_full)
+
+ORG 0x1e19e 
+BYTE 0xc3 0xf0 0xe1 0xfb
+
+ORG 0xe18B4
+jumpToHack(supply_fix)
+ORG 0x9e872
+BYTE 0x43 0xf0 0x1f 0xf8
+
+ORG 0xe17e8
+jumpToHack(trade_fix)
+
+ORG 0x2d760
+BYTE 0xb4 0xf0 0x42 0xf8 0x00 0x00 0x00 0x00
+
+ORG 0xe184c
+jumpToHack(trade_fix_WM)
+
+ORG 0x9b550
+BYTE 0x46 0xf0 0x7c 0xf9
+
+POP
+
+ALIGN 4
+giveall_fix: 
+#include "giveall_fix.lyn.event"
+
+ALIGN 4
+inventory_full:
+#incbin "inventory_full.dmp"
+
+ALIGN 4
+supply_fix:
+#include "supply_fix.lyn.event"
+
+ALIGN 4
+trade_fix:
+#include "trade_fix.lyn.event"
+
+ALIGN 4
+trade_fix_WM: 
+#include "trade_fix_WM.lyn.event"
+
+ALIGN 4
+PreventTradingList:
+BYTE 0x9	//Rapier
+BYTE 0x6c	//Vulnerary
+BYTE 0
+
+ALIGN 4 

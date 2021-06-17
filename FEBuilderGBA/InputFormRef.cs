@@ -788,7 +788,7 @@ namespace FEBuilderGBA
                         link_object.Text = "";
                         return;
                     }
-                    link_object.Text = ItemWeaponEffectForm.GetName(id);
+                    link_object.Text = ItemWeaponEffectForm.GetEffectName(id);
                 };
 
                 return;

@@ -1,0 +1,17 @@
+NAME=貴重品を交換できなくする ListVersion(Installer)
+NAME.en=Prevent exchange of valuables ListVersion(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x1e19e=0xc3 0xf0 0xe1 0xfb
+EA=Installer.event
+
+
+INFO=リストで指定したアイテムを交換できないようにします。\r\n交換用とすると、エラー音が再生され交換がキャンセルされます。
+
+AUTHOR=Vesly, Orignal:Circle https://feuniverse.us/t/fe7-fe8-trading/632  trade_fix
+
+INFO.en=Prevents the items specified in the list from being exchanged.\r\nIf it is a replacement, an error sound will be played and the replacement will be cancelled.
+NAME.zh=防止更换贵重物品 ListVersion（Installer）
+INFO.zh=Prevents the items specified in the list from being exchanged.\r\nIf it is a replacement, an error sound will be played and the replacement will be cancelled.

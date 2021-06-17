@@ -1,0 +1,17 @@
+NAME=ヒットモーションの青いパレットを動的に変更する(Installer)
+NAME.en=Dynamically change the blue palette of normal hit motion.(Installer)
+NAME.zh=Dynamically change the blue palette of normal hit motion.(Installer)
+INFO=使用する武器や、使用者によって、通常の攻撃が命中した時の命中モーションのパレットを動的に変更します。
+INFO.en=The normal hit palette is dynamically changed depending on the weapon used and the user.
+INFO.zh=The normal hit palette is dynamically changed depending on the weapon used and the user.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x6C92C=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChangeHitColor.txt
+EDIT_PATCH:2=PATCH_ChangeHitColor_Palette.txt
+EA=ChangeHitColor_installer.event
+
+AUTHOR=7743

@@ -1,0 +1,120 @@
+PUSH
+//ORG 0x6EC50	//FE8J	{J}
+ORG 0x6C92C	//FE8U	{U}
+jumpToHack(ChangeHitColor)
+
+//ORG 0x6EEC8	//FE8J	{J}
+ORG 0x6CBA4	//FE8U	{J}
+jumpToHack(ChangeHitColorPierce)
+
+POP
+
+ALIGN 4
+ChangeHitColor:
+#incbin "ChangeHitColor.dmp"
+POIN ChangeHitColor_Table
+POIN ChangeHitColor_PaletteTable
+
+ALIGN 4
+ChangeHitColorPierce:
+#incbin "ChangeHitColorPierce.dmp"
+POIN ChangeHitColor_Table
+POIN ChangeHitColor_PaletteTable
+
+ALIGN 4
+ChangeHitColor_DarkBlue:
+#incbin "darkblue.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Red:
+#incbin "red.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Red2:
+#incbin "red2.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Red3:
+#incbin "red3.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_LightRed:
+#incbin "lightred.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Orange:
+#incbin "orange.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Pink:
+#incbin "pink.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Purple:
+#incbin "purple.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Purple2:
+#incbin "purple2.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Yellow:
+#incbin "yellow.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Yellow2:
+#incbin "yellow2.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Green:
+#incbin "green.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_DarkGreen:
+#incbin "darkgreen.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_BlackGreen:
+#incbin "blackgreen.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_White:
+#incbin "white.png.pal.dmp"
+
+ALIGN 4
+ChangeHitColor_Black:
+#incbin "black.png.pal.dmp"
+
+//パレットテーブル
+ALIGN 4
+ChangeHitColor_PaletteTable:
+//POIN 0x8615D28						//0=Blue 	Vanilla	//{J}
+POIN 0x85E9150						//0=Blue 	Vanilla	//{U}
+
+POIN ChangeHitColor_DarkBlue	//1
+POIN ChangeHitColor_Red			//2
+POIN ChangeHitColor_Red2		//3
+POIN ChangeHitColor_Red3		//4
+POIN ChangeHitColor_LightRed	//5
+POIN ChangeHitColor_Orange		//6
+POIN ChangeHitColor_Pink		//7
+POIN ChangeHitColor_Purple		//8
+POIN ChangeHitColor_Purple2		//9
+POIN ChangeHitColor_Yellow		//A
+POIN ChangeHitColor_Yellow2		//B
+POIN ChangeHitColor_Green		//C
+POIN ChangeHitColor_DarkGreen	//D
+POIN ChangeHitColor_BlackGreen	//E
+POIN ChangeHitColor_White		//F
+POIN ChangeHitColor_Black		//10
+
+WORD 0	//Term
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeHitColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	TableID
+BYTE	0x00	0x00	0x09	0x0;SHORT	0x0		2	//Rapier
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+ALIGN 4

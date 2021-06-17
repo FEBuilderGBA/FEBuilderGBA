@@ -891,6 +891,16 @@ namespace FEBuilderGBA
                     U.ConvertComboBox(dic, ref link, true);
                     PatchPage.Controls.Add(link);
                 }
+                else if (type.IndexOf("ITEMEFFECT") == 0)
+                {//間接エフェクト
+                    TextBoxEx link = new TextBoxEx();
+                    link.SetToolTipEx(this.ToolTip);
+                    link.Location = new Point(500, y);
+                    link.Size = new Size(100, CONTROL_HEIGHT);
+                    link.ReadOnly = true;
+                    link.Name = "L_" + datanum + "_" + type;
+                    PatchPage.Controls.Add(link);
+                }
                 else if (type.IndexOf("BATTLEANIMEITEM") == 0)
                 {//戦闘アニメの特別指定1 面倒だが仕方ない.
                     TextBoxEx link = new TextBoxEx();

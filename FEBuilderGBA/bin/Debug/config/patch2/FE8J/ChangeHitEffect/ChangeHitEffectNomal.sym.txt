@@ -1,0 +1,16 @@
+LeftSize=$12
+RightSide=$0E
+JoinGetActor=$14
+NotFound=$AA
+Table=$E4
+Loop=$1E
+CheckUnit=$26
+CheckClass=$34
+CheckItem=$42
+CheckAffiliation=$50
+Check_Flag=$74
+CheckAffiliation_Enemy=$66
+CheckAffiliation_NPC=$6C
+CheckAffiliation_Player=$60
+Found=$84
+BreakExit=$8A

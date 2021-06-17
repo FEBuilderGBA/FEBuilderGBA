@@ -43,6 +43,10 @@ namespace FEBuilderGBA
                     {
                         return false;
                     }
+                    if (i > 0xfd)
+                    {
+                        return false;
+                    }
                     return true;
                 }
                 , (int i, uint addr) =>

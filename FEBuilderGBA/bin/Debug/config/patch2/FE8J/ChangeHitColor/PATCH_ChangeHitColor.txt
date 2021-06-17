@@ -1,0 +1,32 @@
+NAME=ヒットモーションの青いパレットを動的に変更する(Editor)
+NAME.en=Dynamically change the blue palette of normal hit motion.(Editor)
+NAME.zh=Dynamically change the blue palette of normal hit motion.(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n使用する武器や、使用者によって、通常の攻撃が命中した時の命中モーションのパレットを動的に変更します。
+INFO.en=Those not on the list behave by default.\r\nThe normal hit palette is dynamically changed depending on the weapon used and the user.
+INFO.zh=Those not on the list behave by default.\r\nThe normal hit palette is dynamically changed depending on the weapon used and the user.
+
+IF:0x6EC50=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeHitColor.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+W6:$COMBO Color.combo.txt=Color

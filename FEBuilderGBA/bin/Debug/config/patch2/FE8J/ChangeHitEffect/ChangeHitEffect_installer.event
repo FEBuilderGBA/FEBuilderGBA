@@ -1,0 +1,31 @@
+PUSH
+ORG 0x6EBA4	//FE8J	{J}
+//ORG 0x6C880	//FE8U	{U}
+jumpToHack(ChangeHitEffectNomal)
+
+ORG 0x6EA44	//FE8J	{J}
+//ORG 0x6C720	//FE8U	{U}
+jumpToHack(ChangeHitEffectCritical)
+
+POP
+
+ALIGN 4
+ChangeHitEffectNomal:
+#incbin "ChangeHitEffectNomal.dmp"
+POIN ChangeHitEffect_Table
+
+ALIGN 4
+ChangeHitEffectCritical:
+#incbin "ChangeHitEffectCritical.dmp"
+POIN ChangeHitEffect_Table
+
+//命中を変更する条件テーブル
+ALIGN 4
+ChangeHitEffect_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag		Hit		Crit
+BYTE	0x00	0x00	0x09	0x0;SHORT	0x0;BYTE	0x19	0x20	//Rapier
+BYTE	0x00	0x00	0x1F	0x0;SHORT	0x0;BYTE	0x1F	0x1B	//Iron Axs
+BYTE	0x00	0x00	0x14	0x0;SHORT	0x0;BYTE	0x19	0x20	//Iron Lance
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0;BYTE	0		0		//Term
+
+ALIGN 4

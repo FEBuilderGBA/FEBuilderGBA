@@ -1,0 +1,33 @@
+NAME=物理攻撃がヒットした時に、魔法モーションをロードする(Editor)
+NAME.en=Use magic motion when physical attack hits.(Editor)
+NAME.zh=Use magic motion when physical attack hits.(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n物理モーションは利用できないので、EffecID:0x11以降から指定できます。\r\n弓、手斧、手槍の遠隔武器のヒットモーションに魔法を割り当てると、うまく動かないことが多いです。(魔法の中で魔法を出すことになるためです)\r\nサンダーなどの簡単なモーションなら動作しますが、複雑なモーションは指定しない方が良いです。\r\n近接モーションについては、この制限ありません。\r\n\r\n使用する武器や、使用者によって、通常の攻撃が命中した時の命中モーションを魔法モーションに変更します。
+INFO.en=If it is not listed, it will perform the default behavior.\r\nPhysical motion is not available and can be specified from EffecID:0x11 onwards.\r\nAssigning magic to hit motions for range weapons (bows, hand axs, and javelins) often doesn't work. (This is because you'll be casting magic within magic.)\r\nSimple motions such as thunder will work, but complex motions should not be specified.\r\nFor melee motions, there is no such restriction.\r\n\r\nChanges the hit motion to a magic motion when a normal attack hits, depending on the weapon used and the user.
+INFO.zh=If it is not listed, it will perform the default behavior.\r\nPhysical motion is not available and can be specified from EffecID:0x11 onwards.\r\nAssigning magic to hit motions for range weapons (bows, hand axs, and javelins) often doesn't work. (This is because you'll be casting magic within magic.)\r\nSimple motions such as thunder will work, but complex motions should not be specified.\r\nFor melee motions, there is no such restriction.\r\n\r\nChanges the hit motion to a magic motion when a normal attack hits, depending on the weapon used and the user.
+
+IF:0x6EA44=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeHitEffectNomal.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+B6:ITEMEFFECT=Normal
+B7:ITEMEFFECT=Critical

@@ -1,0 +1,17 @@
+0=Blue(Vanilla)
+1=DarkBlue
+2=Red
+3=Red2
+4=Red3
+5=LightRed
+6=Orange
+7=Pink
+8=Purple
+9=Purple2
+A=Yellow
+B=Yellow2
+C=Green
+D=DarkGreen
+E=BlackGreen
+F=White
+10=Black
