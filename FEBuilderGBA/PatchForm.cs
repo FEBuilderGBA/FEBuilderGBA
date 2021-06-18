@@ -4127,7 +4127,7 @@ namespace FEBuilderGBA
         {
             alloc_address = U.toOffset(alloc_address);
             base_address = U.toOffset(base_address);
-            if (! U.isSafetyOffset(base_address) )
+            if (!U.isSafetyOffset(alloc_address) )
             {
                 return original;
             }

@@ -104,6 +104,8 @@
             this.devkitpro_eabi = new FEBuilderGBA.TextBoxEx();
             this.program3 = new FEBuilderGBA.TextBoxEx();
             this.tabPageColor = new System.Windows.Forms.TabPage();
+            this.ColorSaveASbutton = new System.Windows.Forms.Button();
+            this.ColorLoadButton = new System.Windows.Forms.Button();
             this.Color_ControlComment_ForeColor_reset_button = new System.Windows.Forms.Button();
             this.Color_ControlComment_ForeColor_button = new System.Windows.Forms.Button();
             this.label52 = new System.Windows.Forms.Label();
@@ -271,8 +273,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.ColorSaveASbutton = new System.Windows.Forms.Button();
-            this.ColorLoadButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -1221,6 +1221,28 @@
             this.tabPageColor.Size = new System.Drawing.Size(842, 703);
             this.tabPageColor.TabIndex = 1;
             this.tabPageColor.Text = "色";
+            // 
+            // ColorSaveASbutton
+            // 
+            this.ColorSaveASbutton.Location = new System.Drawing.Point(5, 665);
+            this.ColorSaveASbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ColorSaveASbutton.Name = "ColorSaveASbutton";
+            this.ColorSaveASbutton.Size = new System.Drawing.Size(207, 34);
+            this.ColorSaveASbutton.TabIndex = 52;
+            this.ColorSaveASbutton.Text = "ファイルに保存";
+            this.ColorSaveASbutton.UseVisualStyleBackColor = true;
+            this.ColorSaveASbutton.Click += new System.EventHandler(this.ColorSaveASbutton_Click);
+            // 
+            // ColorLoadButton
+            // 
+            this.ColorLoadButton.Location = new System.Drawing.Point(221, 665);
+            this.ColorLoadButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ColorLoadButton.Name = "ColorLoadButton";
+            this.ColorLoadButton.Size = new System.Drawing.Size(207, 35);
+            this.ColorLoadButton.TabIndex = 53;
+            this.ColorLoadButton.Text = "ファイルから読込";
+            this.ColorLoadButton.UseVisualStyleBackColor = true;
+            this.ColorLoadButton.Click += new System.EventHandler(this.ColorLoadButton_Click);
             // 
             // Color_ControlComment_ForeColor_reset_button
             // 
@@ -2520,8 +2542,7 @@
             this.func_rom_extends.FormattingEnabled = true;
             this.func_rom_extends.Items.AddRange(new object[] {
             "0=拡張を認めない",
-            "1=ROMサイズを32MBまで拡張を認める",
-            "2=拡張を認めるが、アドレスは手動管理"});
+            "1=ROMサイズを32MBまで拡張を認める"});
             this.func_rom_extends.Location = new System.Drawing.Point(420, 390);
             this.func_rom_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends.Name = "func_rom_extends";
@@ -3210,28 +3231,6 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // ColorSaveASbutton
-            // 
-            this.ColorSaveASbutton.Location = new System.Drawing.Point(5, 665);
-            this.ColorSaveASbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.ColorSaveASbutton.Name = "ColorSaveASbutton";
-            this.ColorSaveASbutton.Size = new System.Drawing.Size(207, 34);
-            this.ColorSaveASbutton.TabIndex = 52;
-            this.ColorSaveASbutton.Text = "ファイルに保存";
-            this.ColorSaveASbutton.UseVisualStyleBackColor = true;
-            this.ColorSaveASbutton.Click += new System.EventHandler(this.ColorSaveASbutton_Click);
-            // 
-            // ColorLoadButton
-            // 
-            this.ColorLoadButton.Location = new System.Drawing.Point(221, 665);
-            this.ColorLoadButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ColorLoadButton.Name = "ColorLoadButton";
-            this.ColorLoadButton.Size = new System.Drawing.Size(207, 35);
-            this.ColorLoadButton.TabIndex = 53;
-            this.ColorLoadButton.Text = "ファイルから読込";
-            this.ColorLoadButton.UseVisualStyleBackColor = true;
-            this.ColorLoadButton.Click += new System.EventHandler(this.ColorLoadButton_Click);
             // 
             // OptionForm
             // 

@@ -101,12 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SelectAllocAreaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelectAllocAreaForm.Designer.cs">
-      <DependentUpon>SelectAllocAreaForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SongInstrumentDirectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2134,9 +2128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapStyleEditorImportImageOptionForm.resx">
       <DependentUpon>MapStyleEditorImportImageOptionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelectAllocAreaForm.resx">
-      <DependentUpon>SelectAllocAreaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SongInstrumentDirectSoundForm.resx">
       <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>

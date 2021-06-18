@@ -738,7 +738,6 @@ namespace FEBuilderGBA
         {
              NO   = 0
             ,YES  = 1
-            ,YES_But_Manual = 2
         };
         public static rom_extends_enum rom_extends()
         {

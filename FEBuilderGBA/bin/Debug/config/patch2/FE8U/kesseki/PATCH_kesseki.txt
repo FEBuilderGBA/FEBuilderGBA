@@ -1,7 +1,6 @@
-
-NAME=出撃禁止パッチ
-NAME.en=Deny Deployment From Preparations Editor
-NAME.zh=禁止出击补丁
+NAME=出撃禁止パッチ(Editor)
+NAME.en=Deny Deployment From Preparations(Editor)
+NAME.zh=禁止出击补丁(Editor)
 
 IF:0x957F8=0x00 0x48
 IF_COMMENT=出撃禁止パッチを導入してください.
