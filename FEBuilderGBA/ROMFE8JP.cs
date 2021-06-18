@@ -272,6 +272,7 @@ namespace FEBuilderGBA
         public uint workmemory_action_data_address() { return 0x0203A954; } //ワークメモリ ActionData
         public uint workmemory_dungeon_data_address() { return 0x03001798; } //ワークメモリ ダンジョン FE8のみ
         public uint workmemory_battlesome_data_address() { return 0x0203E0EC; } //ワークメモリ バルトに関係する諸データ
+        public uint workmemory_battleround_data_address() { return 0x0203A5E8; } //ワークメモリ　戦闘のラウンドデータ
         public uint workmemory_last_string_address() { return 0x0202B6A8; }  //ワークメモリ 最後に表示した文字列
         public uint workmemory_text_buffer_address() { return 0x0202A6A8; }  //ワークメモリ デコードされたテキスト
         public uint workmemory_next_text_buffer_address() { return 0x03000040; }  //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ

@@ -1255,8 +1255,6 @@
 @BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
 @BattleRound@03	byte	Damage
 
-//FE8U 0203A5EC	@BattleRound	BattleRound	{U}
-
 
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
@@ -5454,3 +5452,5 @@
 
 08005450	Text_SetColorId	{J}
 08005440	Text_GetXCursor	{J}
+0203A508	@BattleRound@[7]	gRoundArray	{J}
+0203A50C	@BattleRound@[7]	gRoundArray	{U}

@@ -131,6 +131,30 @@ namespace FEBuilderGBA
             Debug.Assert(false);
             return 0;
         }
+        public uint u24(uint pointer)
+        {
+            uint addr = pointer;
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 2 > this.Memory02.Length)
+                {
+                    return 0;
+                }
+                return U.u24(this.Memory02, addr);
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 2 > this.Memory03.Length)
+                {
+                    return 0;
+                }
+                return U.u24(this.Memory03, addr);
+            }
+            Debug.Assert(false);
+            return 0;
+        }
         public uint u8(uint pointer)
         {
             uint addr = pointer;

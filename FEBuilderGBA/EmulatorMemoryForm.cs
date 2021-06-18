@@ -218,6 +218,7 @@ namespace FEBuilderGBA
             UpdateActionData();
             UpdateDungeonData();
             UpdateBattleSomeData();
+            UpdateBattleRoundData();
             UpdatePalette();
         }
         void UpdateUserStack()
@@ -2542,6 +2543,11 @@ namespace FEBuilderGBA
             this.SupplyDataList.DummyAlloc((int)this.SuppyMaxCount, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SupplyDataAddress);
 
+            this.BattleRoundDataList.OwnerDraw(DrawBattleRoundDataList, DrawMode.OwnerDrawFixed, false);
+            this.BattleRoundDataList.ItemHeight = 12;
+            this.BattleRoundDataList.DummyAlloc(BattleRoundDataStruct.Count, 0);
+            InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.BattleRoundDataAddress);
+
         }
 
         void UpdateEditon()
@@ -2772,6 +2778,18 @@ namespace FEBuilderGBA
             {//変更有
                 this.BattleSomeDataSUM = sum;
                 this.BattleSomeDataList.Invalidate();
+            }
+        }
+        void UpdateBattleRoundData()
+        {
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_battleround_data_address()
+                , 0x74);
+            uint sum = U.CalcCheckSUM(bin);
+            if (sum != this.BattleRoundDataSUM)
+            {//変更有
+                this.BattleRoundDataSUM = sum;
+                this.BattleRoundDataList.Invalidate();
             }
         }
         
@@ -3035,6 +3053,10 @@ namespace FEBuilderGBA
         {
             return DrawAddressList(BattleSomeDataStruct, Program.ROM.RomInfo.workmemory_battlesome_data_address(), lb, index, g, listbounds, isWithDraw , 20);
         }
+        Size DrawBattleRoundDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            return DrawAddressList(BattleRoundDataStruct, Program.ROM.RomInfo.workmemory_battleround_data_address(), lb, index, g, listbounds, isWithDraw);
+        }
        
 
         Size DrawAddressList(List<EmulatorMemoryUtil.AddressList> list, uint baseaddr, ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw, int shiftDrawX = 0)
@@ -3170,6 +3192,7 @@ namespace FEBuilderGBA
         uint ActionDataSUM;
         uint DungeonDataSUM;
         uint BattleSomeDataSUM;
+        uint BattleRoundDataSUM;
 
         private void PaletteSearchButton_Click(object sender, EventArgs e)
         {
@@ -3552,6 +3575,18 @@ namespace FEBuilderGBA
         {
             BattleSomeList_SelectedIndexChanged(null, null);
             U.FireOnMouseDoubleClick(BattleSomeDataAddress);
+        }
+
+        List<EmulatorMemoryUtil.AddressList> BattleRoundDataStruct = EmulatorMemoryUtil.GetBattleRoundDataStruct();
+        private void BattleRoundDataList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            BattleRoundDataList_SelectedIndexChanged(null, null);
+            U.FireOnMouseDoubleClick(BattleRoundDataAddress);
+        }
+
+        private void BattleRoundDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddressList_SelectedIndexChanged(BattleRoundDataStruct, Program.ROM.RomInfo.workmemory_battleround_data_address(), BattleRoundDataList, BattleRoundDataAddress);
         }
     }
 }

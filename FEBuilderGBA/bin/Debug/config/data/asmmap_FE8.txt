@@ -7353,7 +7353,7 @@
 0203a4c8	gSMSHandleIt	{U}
 0203a4cc	gSMSSyncFlag	{U}
 0203a4d0	gMapSpriteSwitchHoverTimer	{U}
-0203a5ec	@BattleRound	gRoundArray	{U}
+0203a5ec	@BattleRound@[7]	gRoundArray	{U}
 0203a608	gpCurrentRound	{U}
 0203a610	gpTradeMenuProc	{U}
 0203a814	gTrapArrayBack	{U}
@@ -7465,7 +7465,7 @@
 0203A4C4	gSMSHandleIt	{J}
 0203A4C8	gSMSSyncFlag	{J}
 0203A4CC	gMapSpriteSwitchHoverTimer	{J}
-0203A5E8	@BattleRound	gRoundArray	{J}
+0203A5E8	@BattleRound@[7]	gRoundArray	{J}
 0203A604	gpCurrentRound	{J}
 0203A60C	gpTradeMenuProc	{J}
 0203A810	gTrapArrayBack	{J}

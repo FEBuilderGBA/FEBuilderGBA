@@ -5165,3 +5165,5 @@
 
 08005450	Text_SetColorId	{J}
 08005440	Text_GetXCursor	{J}
+0203A508	@BattleRound@[7]	gRoundArray	{J}
+0203A50C	@BattleRound@[7]	gRoundArray	{U}

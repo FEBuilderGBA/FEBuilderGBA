@@ -1382,6 +1382,27 @@ namespace FEBuilderGBA
             ret.Add(new AddressList(0xFE, "UnkFE", "", 2));
             return ret;
         }
+        static public List<EmulatorMemoryUtil.AddressList> GetBattleRoundDataStruct()
+        {
+            List<AddressList> ret = new List<AddressList>();
+            ret.Add(new AddressList(0x00, "Round[0].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x03, "Round[0].damage", "DEC", 1));
+            ret.Add(new AddressList(0x04, "Round[1].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x07, "Round[1].damage", "DEC", 1));
+            ret.Add(new AddressList(0x08, "Round[2].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x0B, "Round[2].damage", "DEC", 1));
+            ret.Add(new AddressList(0x0C, "Round[3].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x0F, "Round[3].damage", "DEC", 1));
+            ret.Add(new AddressList(0x10, "Round[4].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x13, "Round[4].damage", "DEC", 1));
+            ret.Add(new AddressList(0x14, "Round[5].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x17, "Round[5].damage", "DEC", 1));
+            ret.Add(new AddressList(0x18, "Round[6].flag", "BATTLEROUND", 3));
+            ret.Add(new AddressList(0x1B, "Round[6].damage", "DEC", 1));
+            ret.Add(new AddressList(0x1C, "CurrentRound", "POINTER", 4));
+
+            return ret;
+        }
         public static string GetAddressList(AddressList a, uint addr)
         {
             if (a.Size == 0)
@@ -1397,6 +1418,10 @@ namespace FEBuilderGBA
             else if (a.Size == 2)
             {
                 v = Program.RAM.u16(addr);
+            }
+            else if (a.Size == 3)
+            {
+                v = Program.RAM.u24(addr);
             }
             else if (a.Size == 4)
             {
@@ -1563,6 +1588,10 @@ namespace FEBuilderGBA
             {
                 return U.To0xHexString(v) + " (" + GetAISRelated(v) + ")";
             }
+            else if (a.Type == "BATTLEROUND")
+            {
+                return U.To0xHexString(v) + " (" + GetBattleRoundFlag(v) + ")";
+            }
             else
             {
                 return U.To0xHexString(v);
@@ -1679,6 +1708,110 @@ namespace FEBuilderGBA
                 return "initial hit by Right";
             }
             return "";
+        }
+        static string GetBattleRoundFlag(uint v)
+        {
+            string r = "";
+            if ((v & 0x1) == 0x1)
+            {
+                r += ",Critical";
+            }
+            if ((v & 0x2) == 0x2)
+            {
+                r += ",Miss";
+            }
+            if ((v & 0x4) == 0x4)
+            {
+                r += ",Follow-Up04";
+            }
+            if ((v & 0x8) == 0x8)
+            {
+                r += ",Unk08";
+            }
+            if ((v & 0x10) == 0x10)
+            {
+                r += ",Brave";
+            }
+            if ((v & 0x20) == 0x20)
+            {
+                r += ",?";
+            }
+            if ((v & 0x40) == 0x40)
+            {
+                r += ",Poison";
+            }
+            if ((v & 0x80) == 0x80)
+            {
+                r += ",Devil";
+            }
+
+            if ((v & 0x100) == 0x100)
+            {
+                r += ",StealHP";
+            }
+            if ((v & 0x200) == 0x200)
+            {
+                r += ",Unk0200";
+            }
+            if ((v & 0x400) == 0x400)
+            {
+                r += ",TriangleAttack";
+            }
+            if ((v & 0x800) == 0x800)
+            {
+                r += ",Lethality";
+            }
+            if ((v & 0x1000) == 0x1000)
+            {
+                r += ",Unk1000";
+            }
+            if ((v & 0x2000) == 0x2000)
+            {
+                r += ",Petrified";
+            }
+            if ((v & 0x4000) == 0x4000)
+            {
+                r += ",SureShot";
+            }
+            if ((v & 0x8000) == 0x8000)
+            {
+                r += ",GreatShield";
+            }
+
+            if ((v & 0x10000) == 0x10000)
+            {
+                r += ",Pierce";
+            }
+            if ((v & 0x20000) == 0x20000)
+            {
+                r += ",Unk020000";
+            }
+            if ((v & 0x40000) == 0x40000)
+            {
+                r += ",Unk040000";
+            }
+            if ((v & 0x80000) == 0x80000)
+            {
+                r += ",EndTurn";
+            }
+            if ((v & 0x100000) == 0x100000)
+            {
+                r += ",Defeat100000";
+            }
+            if ((v & 0x200000) == 0x200000)
+            {
+                r += ",Defeat200000";
+            }
+            if ((v & 0x400000) == 0x400000)
+            {
+                r += ",Counterattack";
+            }
+            if ((v & 0x800000) == 0x800000)
+            {
+                r += ",EndBattle";
+            }
+
+            return U.substr(r, 1);
         }
     }
 }

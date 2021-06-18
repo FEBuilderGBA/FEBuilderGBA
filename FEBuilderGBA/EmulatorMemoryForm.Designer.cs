@@ -272,6 +272,10 @@
             this.AIDataAddress = new FEBuilderGBA.TextBoxEx();
             this.AIDataList = new FEBuilderGBA.ListBoxEx();
             this.label101 = new System.Windows.Forms.Label();
+            this.tabPageBattleSome = new System.Windows.Forms.TabPage();
+            this.BattleSomeDataAddress = new FEBuilderGBA.TextBoxEx();
+            this.BattleSomeDataList = new FEBuilderGBA.ListBoxEx();
+            this.label105 = new System.Windows.Forms.Label();
             this.tabPageWorldmap = new System.Windows.Forms.TabPage();
             this.WorldmapAddress = new FEBuilderGBA.TextBoxEx();
             this.WorldmapList = new FEBuilderGBA.ListBoxEx();
@@ -523,10 +527,10 @@
             this.textBoxEx30 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx31 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
-            this.tabPageBattleSome = new System.Windows.Forms.TabPage();
-            this.BattleSomeDataAddress = new FEBuilderGBA.TextBoxEx();
-            this.BattleSomeDataList = new FEBuilderGBA.ListBoxEx();
-            this.label105 = new System.Windows.Forms.Label();
+            this.tabPageBattleRound = new System.Windows.Forms.TabPage();
+            this.BattleRoundDataAddress = new FEBuilderGBA.TextBoxEx();
+            this.BattleRoundDataList = new FEBuilderGBA.ListBoxEx();
+            this.label106 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.EventPage.SuspendLayout();
@@ -635,6 +639,7 @@
             this.tabPageBattleActor.SuspendLayout();
             this.tabPageBattleTarget.SuspendLayout();
             this.tabPageAIData.SuspendLayout();
+            this.tabPageBattleSome.SuspendLayout();
             this.tabPageWorldmap.SuspendLayout();
             this.tabPageDungeon.SuspendLayout();
             this.Party_ControlPanel.SuspendLayout();
@@ -729,7 +734,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).BeginInit();
-            this.tabPageBattleSome.SuspendLayout();
+            this.tabPageBattleRound.SuspendLayout();
             this.SuspendLayout();
             // 
             // AutoUpdateCheckBox
@@ -3227,6 +3232,7 @@
             this.tabControlEtc.Controls.Add(this.tabPageBattleActor);
             this.tabControlEtc.Controls.Add(this.tabPageBattleTarget);
             this.tabControlEtc.Controls.Add(this.tabPageAIData);
+            this.tabControlEtc.Controls.Add(this.tabPageBattleRound);
             this.tabControlEtc.Controls.Add(this.tabPageBattleSome);
             this.tabControlEtc.Controls.Add(this.tabPageWorldmap);
             this.tabControlEtc.Controls.Add(this.tabPageDungeon);
@@ -3986,6 +3992,55 @@
             this.label101.TabIndex = 343;
             this.label101.Text = "AIData";
             this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabPageBattleSome
+            // 
+            this.tabPageBattleSome.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageBattleSome.Controls.Add(this.BattleSomeDataAddress);
+            this.tabPageBattleSome.Controls.Add(this.BattleSomeDataList);
+            this.tabPageBattleSome.Controls.Add(this.label105);
+            this.tabPageBattleSome.Location = new System.Drawing.Point(4, 52);
+            this.tabPageBattleSome.Name = "tabPageBattleSome";
+            this.tabPageBattleSome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBattleSome.Size = new System.Drawing.Size(853, 820);
+            this.tabPageBattleSome.TabIndex = 14;
+            this.tabPageBattleSome.Text = "BattleSome";
+            // 
+            // BattleSomeDataAddress
+            // 
+            this.BattleSomeDataAddress.ErrorMessage = "";
+            this.BattleSomeDataAddress.Location = new System.Drawing.Point(732, 5);
+            this.BattleSomeDataAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.BattleSomeDataAddress.Name = "BattleSomeDataAddress";
+            this.BattleSomeDataAddress.Placeholder = "";
+            this.BattleSomeDataAddress.ReadOnly = true;
+            this.BattleSomeDataAddress.Size = new System.Drawing.Size(116, 25);
+            this.BattleSomeDataAddress.TabIndex = 354;
+            // 
+            // BattleSomeDataList
+            // 
+            this.BattleSomeDataList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BattleSomeDataList.FormattingEnabled = true;
+            this.BattleSomeDataList.IntegralHeight = false;
+            this.BattleSomeDataList.ItemHeight = 18;
+            this.BattleSomeDataList.Location = new System.Drawing.Point(3, 33);
+            this.BattleSomeDataList.Name = "BattleSomeDataList";
+            this.BattleSomeDataList.Size = new System.Drawing.Size(847, 784);
+            this.BattleSomeDataList.TabIndex = 353;
+            this.BattleSomeDataList.SelectedIndexChanged += new System.EventHandler(this.BattleSomeList_SelectedIndexChanged);
+            this.BattleSomeDataList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BattleSomeList_MouseDoubleClick);
+            // 
+            // label105
+            // 
+            this.label105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label105.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label105.Location = new System.Drawing.Point(3, 3);
+            this.label105.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(847, 30);
+            this.label105.TabIndex = 352;
+            this.label105.Text = "戦闘に関係する諸データ";
+            this.label105.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPageWorldmap
             // 
@@ -7207,54 +7262,54 @@
             this.textBoxEx32.Size = new System.Drawing.Size(671, 25);
             this.textBoxEx32.TabIndex = 202;
             // 
-            // tabPageBattleSome
+            // tabPageBattleRound
             // 
-            this.tabPageBattleSome.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageBattleSome.Controls.Add(this.BattleSomeDataAddress);
-            this.tabPageBattleSome.Controls.Add(this.BattleSomeDataList);
-            this.tabPageBattleSome.Controls.Add(this.label105);
-            this.tabPageBattleSome.Location = new System.Drawing.Point(4, 52);
-            this.tabPageBattleSome.Name = "tabPageBattleSome";
-            this.tabPageBattleSome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBattleSome.Size = new System.Drawing.Size(853, 820);
-            this.tabPageBattleSome.TabIndex = 14;
-            this.tabPageBattleSome.Text = "BattleSome";
+            this.tabPageBattleRound.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageBattleRound.Controls.Add(this.BattleRoundDataAddress);
+            this.tabPageBattleRound.Controls.Add(this.BattleRoundDataList);
+            this.tabPageBattleRound.Controls.Add(this.label106);
+            this.tabPageBattleRound.Location = new System.Drawing.Point(4, 52);
+            this.tabPageBattleRound.Name = "tabPageBattleRound";
+            this.tabPageBattleRound.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBattleRound.Size = new System.Drawing.Size(853, 820);
+            this.tabPageBattleRound.TabIndex = 15;
+            this.tabPageBattleRound.Text = "BattleRound";
             // 
-            // BattleSomeDataAddress
+            // BattleRoundDataAddress
             // 
-            this.BattleSomeDataAddress.ErrorMessage = "";
-            this.BattleSomeDataAddress.Location = new System.Drawing.Point(732, 5);
-            this.BattleSomeDataAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.BattleSomeDataAddress.Name = "BattleSomeDataAddress";
-            this.BattleSomeDataAddress.Placeholder = "";
-            this.BattleSomeDataAddress.ReadOnly = true;
-            this.BattleSomeDataAddress.Size = new System.Drawing.Size(116, 25);
-            this.BattleSomeDataAddress.TabIndex = 354;
+            this.BattleRoundDataAddress.ErrorMessage = "";
+            this.BattleRoundDataAddress.Location = new System.Drawing.Point(732, 5);
+            this.BattleRoundDataAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.BattleRoundDataAddress.Name = "BattleRoundDataAddress";
+            this.BattleRoundDataAddress.Placeholder = "";
+            this.BattleRoundDataAddress.ReadOnly = true;
+            this.BattleRoundDataAddress.Size = new System.Drawing.Size(116, 25);
+            this.BattleRoundDataAddress.TabIndex = 354;
             // 
-            // BattleSomeDataList
+            // BattleRoundDataList
             // 
-            this.BattleSomeDataList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BattleSomeDataList.FormattingEnabled = true;
-            this.BattleSomeDataList.IntegralHeight = false;
-            this.BattleSomeDataList.ItemHeight = 18;
-            this.BattleSomeDataList.Location = new System.Drawing.Point(3, 33);
-            this.BattleSomeDataList.Name = "BattleSomeDataList";
-            this.BattleSomeDataList.Size = new System.Drawing.Size(847, 784);
-            this.BattleSomeDataList.TabIndex = 353;
-            this.BattleSomeDataList.SelectedIndexChanged += new System.EventHandler(this.BattleSomeList_SelectedIndexChanged);
-            this.BattleSomeDataList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BattleSomeList_MouseDoubleClick);
+            this.BattleRoundDataList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BattleRoundDataList.FormattingEnabled = true;
+            this.BattleRoundDataList.IntegralHeight = false;
+            this.BattleRoundDataList.ItemHeight = 18;
+            this.BattleRoundDataList.Location = new System.Drawing.Point(3, 33);
+            this.BattleRoundDataList.Name = "BattleRoundDataList";
+            this.BattleRoundDataList.Size = new System.Drawing.Size(847, 784);
+            this.BattleRoundDataList.TabIndex = 353;
+            this.BattleRoundDataList.SelectedIndexChanged += new System.EventHandler(this.BattleRoundDataList_SelectedIndexChanged);
+            this.BattleRoundDataList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BattleRoundDataList_MouseDoubleClick);
             // 
-            // label105
+            // label106
             // 
-            this.label105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label105.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label105.Location = new System.Drawing.Point(3, 3);
-            this.label105.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(847, 30);
-            this.label105.TabIndex = 352;
-            this.label105.Text = "戦闘に関係する諸データ";
-            this.label105.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label106.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label106.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label106.Location = new System.Drawing.Point(3, 3);
+            this.label106.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(847, 30);
+            this.label106.TabIndex = 352;
+            this.label106.Text = "BattleRounds";
+            this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // EmulatorMemoryForm
             // 
@@ -7397,6 +7452,8 @@
             this.tabPageBattleTarget.PerformLayout();
             this.tabPageAIData.ResumeLayout(false);
             this.tabPageAIData.PerformLayout();
+            this.tabPageBattleSome.ResumeLayout(false);
+            this.tabPageBattleSome.PerformLayout();
             this.tabPageWorldmap.ResumeLayout(false);
             this.tabPageWorldmap.PerformLayout();
             this.tabPageDungeon.ResumeLayout(false);
@@ -7496,8 +7553,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_UNIT_MEMORY_AND_ICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ICON)).EndInit();
-            this.tabPageBattleSome.ResumeLayout(false);
-            this.tabPageBattleSome.PerformLayout();
+            this.tabPageBattleRound.ResumeLayout(false);
+            this.tabPageBattleRound.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -8002,5 +8059,9 @@
         private TextBoxEx BattleSomeDataAddress;
         private ListBoxEx BattleSomeDataList;
         private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.TabPage tabPageBattleRound;
+        private TextBoxEx BattleRoundDataAddress;
+        private ListBoxEx BattleRoundDataList;
+        private System.Windows.Forms.Label label106;
     }
 }
