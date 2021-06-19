@@ -40,10 +40,13 @@ ldr  r3, =0x0203E118 @gBattleSpellAnimationId1	{U}
 ldr  r1, [r3]  @あとで書き戻せるように、一度保存しておきます
 push {r1}
 
+@CSAがたまに逆のAnimationIDを参照することがあるみたいなので、面倒なので両方とも同じ値で埋めます
+@StartSpellAnimationが終わったら、元にもどします。
 strh r0, [r3]       @gBattleSpellAnimationId1
 strh r0, [r3,#0x2]  @gBattleSpellAnimationId2
 
-ldr  r0, [r4, #0x34]
+ldr  r0, [r4, #0x34] @AIS
+mov  r7, r0          @FEditorCSAはr7にAISが代入されていることを期待している
 @blh  0x0805C170             @StartSpellAnimation	{J}
 blh  0x0805B3CC             @StartSpellAnimation	{U}
 

@@ -1,2 +1,2 @@
-Exit=$36
-Break=$30
+Exit=$3C
+Break=$34
