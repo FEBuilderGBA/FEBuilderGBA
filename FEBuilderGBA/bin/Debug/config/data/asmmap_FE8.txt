@@ -13874,3 +13874,8 @@
 080C8130	StartGmapAutoMu_1	{J}
 080C818C	StartGmapAutoMu_2	{J}
 080C8DC4	StartGmapBaseMenu	{J}
+08067914	efxSuperdruidOBJ2	{J}
+0805b00c	IsCritcalHitByCireAIStruct	{J}
+0805a268	IsCritcalHitByCireAIStruct	{U}
+08055CEC	TerminateEfxSpellCast	{J}
+0805501C	TerminateEfxSpellCast	{U}

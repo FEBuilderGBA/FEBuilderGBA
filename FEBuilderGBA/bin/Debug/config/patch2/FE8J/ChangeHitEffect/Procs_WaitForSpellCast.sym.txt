@@ -1,0 +1,6 @@
+CheckParentProcs=$04
+Break=$1E
+CheckEfxSpellCast=$0A
+FreezeParentProcs=$12
+Exit=$3A
+Break2=$32

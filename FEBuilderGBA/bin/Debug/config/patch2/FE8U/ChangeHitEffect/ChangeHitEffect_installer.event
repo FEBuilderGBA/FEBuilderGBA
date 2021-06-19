@@ -1,3 +1,5 @@
+#include "ProcDefinitions.event"
+
 PUSH
 //ORG 0x6EBA4	//FE8J	{J}
 ORG 0x6C880	//FE8U	{U}
@@ -13,19 +15,53 @@ ALIGN 4
 ChangeHitEffectNomal:
 #incbin "ChangeHitEffectNomal.dmp"
 POIN ChangeHitEffect_Table
+POIN StartDelayProcsFunction
 
 ALIGN 4
 ChangeHitEffectCritical:
 #incbin "ChangeHitEffectCritical.dmp"
 POIN ChangeHitEffect_Table
+POIN StartDelayProcsFunction
+
+ALIGN 4
+StartDelayProcsFunction:
+#incbin "StartDelayProcsFunction.dmp"
+POIN DelayProcs
+
+ALIGN 4
+Procs_DelayFunction:
+#incbin "Procs_DelayFunction.dmp"
+
+ALIGN 4
+Procs_WaitForSpellCast:
+#incbin "Procs_WaitForSpellCast.dmp"
+
+ALIGN 4
+DelayProcs_Name:
+String("ChangeHitEffect_DelayProcs")
+
+ALIGN 4
+DelayProcs:
+PROC_SET_NAME(DelayProcs_Name)
+PROC_LOOP_ROUTINE(Procs_DelayFunction|1)
+PROC_LOOP_ROUTINE(Procs_WaitForSpellCast|1)
+PROC_END
+
+
+
 
 //命中を変更する条件テーブル
 ALIGN 4
 ChangeHitEffect_Table:
 //		UnitID	ClassID	ItemID	IsAff		Flag		Hit		Crit
 BYTE	0x00	0x00	0x09	0x0;SHORT	0x0;BYTE	0x19	0x20	//Rapier
+BYTE	0x00	0x00	0x01	0x0;SHORT	0x0;BYTE	0x1B	0x22	//Iron Sword
 BYTE	0x00	0x00	0x1F	0x0;SHORT	0x0;BYTE	0x1F	0x1B	//Iron Axs
 BYTE	0x00	0x00	0x14	0x0;SHORT	0x0;BYTE	0x19	0x20	//Iron Lance
+BYTE	0x00	0x00	0x2D	0x0;SHORT	0x0;BYTE	0x1B	0x20	//Iron Bow
+BYTE	0x00	0x00	0x1C	0x0;SHORT	0x0;BYTE	0x24	0x20	//Javelin
+BYTE	0x00	0x00	0x28	0x0;SHORT	0x0;BYTE	0x24	0x20	//HandAxs
+BYTE	0x00	0x00	0x2C	0x0;SHORT	0x0;BYTE	0x24	0x20	//Hatchet
 BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0;BYTE	0		0		//Term
 
 ALIGN 4

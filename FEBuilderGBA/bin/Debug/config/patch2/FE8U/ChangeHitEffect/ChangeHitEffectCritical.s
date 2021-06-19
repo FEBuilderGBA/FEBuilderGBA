@@ -8,6 +8,8 @@
   .short 0xf800
 .endm
 
+.equ StartDelayProcsFunction, Table+4
+
 @r0 this
 @r5 this
 push {r4 ,r5 , r6}
@@ -118,36 +120,18 @@ cmp  r0, #0x0
 beq  Loop
 
 Found:
-ldrb r0, [r4, #0x7] @Table->EffectID2
+ldrb r4, [r4, #0x7] @Table->EffectID2
 
-cmp  r0 ,#0x10 @攻撃系のエフェクトは利用できません
+cmp  r4 ,#0x10 @攻撃系のエフェクトは利用できません
 ble  NotFound
 @b    BreakExit
 BreakExit:
 
-@カメラの位置を強引に近接に調整する.
-@これは行儀が悪い方法ではあるが、カメラを近場に強制します
-@ldr  r3, =0x0203E11C	@gSomethingRelatedToAnimAndDistance	@{J}
-ldr  r3, =0x0203E120	@gSomethingRelatedToAnimAndDistance	@{U}
-mov  r2, #0x0
-strb r2, [r3]
-
-@gBattleSpellAnimationId1,2を共に書き換えます.
-@range animationで逆が参照されることがあるためです。
-
-@ldr r5, =0x0203E114 @gBattleSpellAnimationId1	{J}
-ldr r5, =0x0203E118 @gBattleSpellAnimationId1	{U}
-
-ldr  r4, [r5]  @あとで書き戻せるように、一度保存しておきます
-
-strh r0, [r5]       @gBattleSpellAnimationId1
-strh r0, [r5,#0x2]  @gBattleSpellAnimationId2
-
-mov  r0 , r6        @AISCore
-@blh  0x0805C170             @StartSpellAnimation	{J}
-blh  0x0805B3CC             @StartSpellAnimation	{U}
-
-str  r4, [r5]  @gBattleSpellAnimationId1,2 の書き戻し
+mov  r0, r4    @effectID
+mov  r1, r6    @AIS
+ldr  r3, StartDelayProcsFunction @call StartDelayProcsFunction
+mov lr, r3
+.short 0xf800
 
 pop {r4, r5 ,r6}
 
@@ -173,3 +157,4 @@ bx r3
 .ltorg
 Table:
 @Table
+@StartDelayProcsFunction
