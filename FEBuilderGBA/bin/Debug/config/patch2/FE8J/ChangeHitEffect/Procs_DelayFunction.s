@@ -10,7 +10,7 @@
 @30 delayCount
 @34 AISCore
 
-push {r4,lr}
+push {r4,r7,lr}
 mov  r4, r0
 
 ldr  r0, [r4,#0x2c] @frameCounter++
@@ -62,6 +62,6 @@ blh  0x08002de4   @Break6CLoop	@{J}
 @blh  0x08002e94   @Break6CLoop	@{U}
 
 Exit:
-pop {r4}
+pop {r4,r7}
 pop {r0}
 bx r0

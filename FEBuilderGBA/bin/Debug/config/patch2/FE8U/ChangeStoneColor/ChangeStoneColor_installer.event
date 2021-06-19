@@ -1,0 +1,74 @@
+PUSH
+//ORG 0x69934	//FE8J	{J}
+ORG 0x67604	//FE8U	{U}
+jumpToHack(ChangeStoneColor)
+
+//ORG 0x699CA	//FE8J	{J}
+ORG 0x6769A	//FE8U	{U}
+BYTE 0x00 0x00
+jumpToHack(ChangeStoneColor_EndFrame)
+POP
+
+ALIGN 4
+ChangeStoneColor:
+#incbin "ChangeStoneColor.dmp"
+POIN ChangeStoneColor_Table
+POIN ChangeStoneColor_PaletteTable
+
+ALIGN 4
+ChangeStoneColor_EndFrame:
+#incbin "ChangeStoneColor_EndFrame.dmp"
+POIN ChangeStoneColor_Table
+POIN ChangeStoneColor_PaletteTable
+
+ALIGN 4
+ChangeStoneColor_Red:
+#incbin "Red.png.pal.dmp"
+
+ALIGN 4
+ChangeStoneColor_Blue:
+#incbin "Blue.png.pal.dmp"
+
+ALIGN 4
+ChangeStoneColor_DarkPurple:
+#incbin "Darkpurple.png.pal.dmp"
+
+ALIGN 4
+ChangeStoneColor_Green:
+#incbin "Green.png.pal.dmp"
+
+ALIGN 4
+ChangeStoneColor_Lightblue:
+#incbin "Lightblue.png.pal.dmp"
+
+ALIGN 4
+ChangeStoneColor_Purple:
+#incbin "Purple.png.pal.dmp"
+
+ChangeStoneColor_Yellow:
+#incbin "Yellow.png.pal.dmp"
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeStoneColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	TableID
+BYTE	0x00	0x00	0xB5	0x0;SHORT	0x0		0	//Stone
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+//パレットテーブル
+ALIGN 4
+ChangeStoneColor_PaletteTable:
+//POIN 0x086F44E4						//0=White 	Vanilla	//{J}
+POIN 0x086C790C						//0=White 	Vanilla	//{U}
+
+POIN ChangeStoneColor_Red
+POIN ChangeStoneColor_Blue
+POIN ChangeStoneColor_DarkPurple
+POIN ChangeStoneColor_Green
+POIN ChangeStoneColor_Lightblue
+POIN ChangeStoneColor_Purple
+POIN ChangeStoneColor_Yellow
+	
+WORD 0	//Term
+ALIGN 4
+
