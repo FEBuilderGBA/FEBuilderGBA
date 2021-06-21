@@ -1,0 +1,5 @@
+0=HandAxs(Vanilla)
+1=Big HandAxs
+2=Shock Wave
+3=Boomerang
+4=Metal Blade

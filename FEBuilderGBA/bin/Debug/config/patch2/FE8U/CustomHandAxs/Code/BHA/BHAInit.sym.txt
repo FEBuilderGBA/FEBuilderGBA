@@ -1,0 +1,7 @@
+GOTO_R7=$7E
+L4=$80
+L2=$6A
+L3=$5C
+Return=$78
+L5=$B8
+L6=$BC

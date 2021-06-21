@@ -1,0 +1,17 @@
+NAME=カスタム手斧(Installer)
+NAME.en=Custom HandAxs(Installer)
+NAME.zh=Custom HandAxs(Installer)
+INFO=手斧以外のアイテムを投げられるようにします。\r\n手斧の代わりに、大きい手斧(Big HandAxs)、衝撃派(Shock Wave)、ブーメラン(Boomerang)、メタルブレード(Metal Blade)を投げられるようになります。
+INFO.en=Allows you to throw items other than hand axes. \r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+INFO.zh=Allows you to throw items other than hand axes. \r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x5CCA8=0x00 0x4B
+EDIT_PATCH:1=PATCH_CustomHandAxs.txt
+EDIT_PATCH:2=PATCH_CustomHandAxs_Palette.txt
+EA=CustomHandAxs_Installer.event
+
+AUTHOR=This routine was re-edited by 7743 based on Huichelaar's Custom Thrown Weapon Animations. https://feuniverse.us/t/huichelaars-assembly-adventures/8229/81

@@ -1,0 +1,38 @@
+NAME=カスタム手斧(TypeList)
+NAME.en=Custom HandAxs(TypeList)
+NAME.zh=Custom HandAxs(TypeList)
+INFO=手斧以外のアイテムを投げられるようにします。\r\n手斧の代わりに、大きい手斧(Big HandAxs)、衝撃派(Shock Wave)、ブーメラン(Boomerang)、メタルブレード(Metal Blade)を投げられるようになります。
+INFO.en=Allows you to throw items other than hand axes. \r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+INFO.zh=Allows you to throw items other than hand axes. \r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+
+IF:0x5BF0C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 Code/7743/SelectAxsData.dmp
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0xff 0xff 0xff 0xff
+
+//幅と高さ
+WIDTH=256
+HEIGHT=32
+//利用パレット数
+PALETTE=1
+
+LISTNAME=$COMBO Type-1.combo.txt
+
+AUTHOR=This routine was re-edited by 7743 based on Huichelaar's Custom Thrown Weapon Animations. https://feuniverse.us/t/huichelaars-assembly-adventures/8229/81
+
+
+//データを定義します
+P0:PatchImage_ZIMAGE=Img
+P4:PatchImage_PALETTE=Palette
+W8:SONG=SE
+W12=00

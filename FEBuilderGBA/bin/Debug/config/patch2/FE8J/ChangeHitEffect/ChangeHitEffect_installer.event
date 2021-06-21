@@ -39,9 +39,10 @@ Procs_WaitForSpellCast:
 ALIGN 4
 DelayProcs_Name:
 String("ChangeHitEffect_DelayProcs")
+BYTE 0x00
 
 ALIGN 4
-DelayProcs:
+DelayProcs:		//HINT=PROCS
 PROC_SET_NAME(DelayProcs_Name)
 PROC_LOOP_ROUTINE(Procs_DelayFunction|1)
 PROC_LOOP_ROUTINE(Procs_WaitForSpellCast|1)

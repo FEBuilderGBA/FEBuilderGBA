@@ -1,0 +1,17 @@
+SelectAxsData_Table=$B0
+Table=$AC
+LeftSize=$10
+RightSide=$0C
+JoinGetActor=$12
+NotFound=$92
+Loop=$1C
+CheckUnit=$24
+CheckClass=$32
+CheckItem=$40
+CheckAffiliation=$4E
+Check_Flag=$72
+CheckAffiliation_Enemy=$64
+CheckAffiliation_NPC=$6A
+CheckAffiliation_Player=$5E
+Found=$82
+Exit=$94

@@ -2527,9 +2527,9 @@
 08050008	ClearBG1Setup	{U}
 08050018	ClearBG1	{U}
 08050140	ThisMakesTheHPInSpellAnimGoAway	{U}
-080505C8	SomeImageStoringRoutine_SpellAnim	{U}
-080505F0	SomePaletteStoringRoutine_SpellAnim	{U}
-0805060C	SomeImageStoringRoutine_SpellAnim2	{U}
+080505C8	StoreSpellAnimTilesOBJ	{U}
+080505F0	StoreSpellAnimPaletteOBJ	{U}
+0805060C	StoreSpellAnimTilesBG	{U}
 080509A4	BeginAnimsOnBattleAnimations	{U}
 08050A38	MainUpdate_8055C68	{U}
 08050CDC	ekrBattleStarting_8055F00	{U}
@@ -3323,9 +3323,9 @@
 080507E4	ClearBG1Setup	{J}
 080507F4	ClearBG1	{J}
 0805091C	ThisMakesTheHPInSpellAnimGoAway	{J}
-08050DA4	SomeImageStoringRoutine_SpellAnim	{J}
-08050DCC	SomePaletteStoringRoutine_SpellAnim	{J}
-08050DE8	SomeImageStoringRoutine_SpellAnim2	{J}
+08050DA4	StoreSpellAnimTilesOBJ	{J}
+08050DCC	StoreSpellAnimPaletteOBJ	{J}
+08050DE8	StoreSpellAnimTilesBG	{J}
 08051180	BeginAnimsOnBattleAnimations	{J}
 08051214	MainUpdate_8055C68	{J}
 080514B8	ekrBattleStarting_8055F00	{J}

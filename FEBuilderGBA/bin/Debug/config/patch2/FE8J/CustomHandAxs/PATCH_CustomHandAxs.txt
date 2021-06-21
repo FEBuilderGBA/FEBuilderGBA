@@ -1,0 +1,35 @@
+NAME=カスタム手斧(Editor)
+NAME.en=Custom HandAxs(Editor)
+NAME.zh=Custom HandAxs(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n手斧の代わりに、大きい手斧(Big HandAxs)、衝撃派(Shock Wave)、ブーメラン(Boomerang)、メタルブレード(Metal Blade)を投げられるようになります。
+INFO.en=Those not on the list behave by default.\r\nAllows you to throw items other than hand axes.\r\n\r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+INFO.zh=Those not on the list behave by default.\r\nAllows you to throw items other than hand axes.\r\n\r\nAllows you to throw Big HandAxs, Shock Wave, Boomerang, and Metal Blade instead of Hand Axes.
+
+
+IF:0x5CCA8=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END Code/7743/SelectAxsData.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+AUTHOR=This routine was re-edited by 7743 based on Huichelaar's Custom Thrown Weapon Animations. https://feuniverse.us/t/huichelaars-assembly-adventures/8229/81
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+W6:$COMBO Type.combo.txt=Type

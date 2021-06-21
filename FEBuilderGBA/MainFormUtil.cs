@@ -879,7 +879,7 @@ namespace FEBuilderGBA
             }
             if (compileType == CompileType.CONVERT_LYN)
             {//LYNに変換する場合、ELFを作るのとは別の処理になる.
-                return ConvertLYN(target_filename, out output);
+                return ConvertLYN(target_filename, out output, out out_symbol);
             }
 
             string output_temp_filename = target + ".elf";
@@ -935,8 +935,10 @@ namespace FEBuilderGBA
             return true;
         }
 
-        static bool ConvertLYN(string target_filename, out string output)
+        static bool ConvertLYN(string target_filename, out string output, out string out_symbol)
         {
+            out_symbol = "";
+
             bool r;
             r = ConvertLYN_S_to_O(target_filename, out output);
             if (r == false || !File.Exists(output))
@@ -946,6 +948,10 @@ namespace FEBuilderGBA
 
             string obj_filename = output;
             r = ConvertLYN_O_to_Event(obj_filename, out output);
+
+            Elf elf = new Elf(obj_filename, useHookMode: false);
+            out_symbol = elf.ToEASymbol();
+            
             File.Delete(obj_filename);
             if (r == false || !File.Exists(output))
             {

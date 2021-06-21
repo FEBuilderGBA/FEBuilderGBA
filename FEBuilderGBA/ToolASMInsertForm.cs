@@ -114,13 +114,9 @@ namespace FEBuilderGBA
                 {
                     return MainFormUtil.CompileType.CONVERT_LYN;
                 }
-                if (ELFComboBox.SelectedIndex == 2 || ELFComboBox.SelectedIndex == 3)
+                if (this.ELFComboBox.SelectedIndex == 2 || ELFComboBox.SelectedIndex == 3)
                 {
                     return MainFormUtil.CompileType.KEEP_ELF;
-                }
-                if (ELFComboBox.SelectedIndex == 4)
-                {
-                    return MainFormUtil.CompileType.CONVERT_LYN;
                 }
             }
             return MainFormUtil.CompileType.NONE;
@@ -129,11 +125,10 @@ namespace FEBuilderGBA
         {
             if (ELFComboBox.Visible)
             {
-                if (ELFComboBox.SelectedIndex == 1)
-                {
-                    return SymbolUtil.DebugSymbol.SaveSymTxt;
-                }
-                if (ELFComboBox.SelectedIndex == 3)
+                if (ELFComboBox.SelectedIndex == 1
+                    || ELFComboBox.SelectedIndex == 3
+                    || ELFComboBox.SelectedIndex == 4
+                    )
                 {
                     return SymbolUtil.DebugSymbol.SaveSymTxt;
                 }

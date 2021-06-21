@@ -5052,7 +5052,10 @@ namespace FEBuilderGBA
                 for (int n = 0; n < ea.DataList.Count; n++)
                 {
                     EAUtil.Data data = ea.DataList[n];
-                    if (data.DataType == EAUtil.DataEnum.ORG)
+                    if (data.BINData == null || data.BINData.Length == 0)
+                    {//empty data
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.ORG)
                     {
                         uint addr = data.ORGAddr;
 

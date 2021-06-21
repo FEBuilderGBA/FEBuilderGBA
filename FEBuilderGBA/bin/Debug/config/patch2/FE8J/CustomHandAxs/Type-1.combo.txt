@@ -1,0 +1,4 @@
+0=Big HandAxs
+1=Shock Wave
+2=Boomerang
+3=Metal Blade

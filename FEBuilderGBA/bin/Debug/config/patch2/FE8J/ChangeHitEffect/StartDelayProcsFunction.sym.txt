@@ -1,7 +1,8 @@
 CheckEfxArrow=$06
 CheckEfxTeyari=$16
-MakeDelayProcs=$3A
+MakeDelayProcs=$4C
 CheckEfxTeono=$26
-MeleeAtack=$36
-DelayProcs=$6C
-Exit=$50
+CheckBHATeono=$36
+MeleeAtack=$48
+DelayProcs=$80
+Exit=$62

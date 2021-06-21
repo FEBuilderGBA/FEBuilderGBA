@@ -1,0 +1,142 @@
+#include "ProcDefinitions.event"
+
+// Parameters
+// Vanilla sets this to 0x50. Takes a long
+// pause, before continuing battle. If there's
+// a good reason for that, just change this back to 0x50
+BHATotalTime:
+BYTE 0x38
+
+// Will end melee big handaxe anim after this many frames
+BHAMeleeTime:
+BYTE 0x20
+
+// Analogous to above for ranged.
+BHARangedTime:
+BYTE 0x20
+
+PUSH
+ORG 0x05CCA8	//{J}
+//ORG 0x05BF0C	//{U}
+jumpToHack(Hook2)
+POIN BHAProcs   //ほかのコードからの参照用
+POP
+
+ALIGN 4
+Hook2:
+#incbin "code/7743/Hook2.dmp"
+POIN SelectAxsData
+
+ALIGN 4
+SelectAxsData:
+#incbin "code/7743/SelectAxsData.dmp"
+POIN ChangeHandAxs_Table
+POIN SelectAxsData_Table
+
+ALIGN 4
+BHAInit:
+#include "code/BHA/BHAInit.lyn.event"
+
+ALIGN 4
+BHALoop:
+#include "code/BHA/BHALoop.lyn.event"
+
+ALIGN 4
+BHASEInit:
+#include "code/BHASE/BHASEInit.lyn.event"
+
+ALIGN 4
+BHAOBJInit:
+#include "code/BHAOBJ/BHAOBJInit.lyn.event"
+
+ALIGN 4
+BHAOBJLoop:
+#include "code/BHAOBJ/BHAOBJLoop.lyn.event"
+
+
+ALIGN 4
+BHAProcs_Name:
+String("BHAProcs")
+BYTE 0x00
+
+ALIGN 4
+BHAProcs:	//HINT=PROCS
+PROC_SET_NAME(BHAProcs_Name)
+PROC_YIELD
+PROC_CALL_ROUTINE(BHAInit|1)
+PROC_LOOP_ROUTINE(BHALoop|1)
+PROC_END
+
+ALIGN 4
+BHAOBJProcs_Name:
+String("BHAOBJProcs")
+BYTE 0x00
+
+ALIGN 4
+BHAOBJProcs:	//HINT=PROCS
+PROC_SET_NAME(BHAOBJProcs_Name)
+PROC_LOOP_ROUTINE(BHAOBJLoop|1)
+PROC_END
+
+
+// Graphics
+ALIGN 4
+BigHandaxeTiles:
+#incbin "Graphics/BigHandaxe.png.dmp"
+
+ALIGN 4
+BigHandaxePalette:
+#incbin "Graphics/BigHandaxe.png.pal.dmp"
+
+ALIGN 4
+WaveOnlyTiles:
+#incbin "Graphics/WaveOnly.png.dmp"
+
+ALIGN 4
+WaveOnlyPalette:
+#incbin "Graphics/WaveOnly.png.pal.dmp"
+
+ALIGN 4
+BoomerangTiles:
+#incbin "Graphics/Boomerang.png.dmp"
+
+ALIGN 4
+BoomerangPalette:
+#incbin "Graphics/Boomerang.png.pal.dmp"
+
+ALIGN 4
+MetalBladeTiles:
+#incbin "Graphics/MetalBlade.png.dmp"
+
+ALIGN 4
+MetalBladePalette:
+#incbin "Graphics/MetalBlade.png.pal.dmp"
+
+// FrameData
+ALIGN 4
+#include "Graphics/FrameData/BHAFDMeleeLeft.event"
+#include "Graphics/FrameData/BHAFDRangedLeft.event"
+#include "Graphics/FrameData/BHAFDMeleeRight.event"
+#include "Graphics/FrameData/BHAFDRangedRight.event"
+
+ALIGN 4
+SelectAxsData_Table:	//sizeof(16)
+//		OBJ				PAL						SE		PADDING
+POIN	BigHandaxeTiles	BigHandaxePalette;WORD	0x263	0			//1=BigHandaxe
+POIN	WaveOnlyTiles	WaveOnlyPalette	;WORD	0x263	0			//2=WaveOnly
+POIN	BoomerangTiles	BoomerangPalette;WORD	0x263	0			//3=Boomerang
+POIN	MetalBladeTiles	MetalBladePalette;WORD	0x263	0			//4=MetalBlade
+
+WORD	0				0						0		0xffffffff	//term
+
+
+ALIGN 4
+ChangeHandAxs_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag	AxsID
+BYTE	0x00	0x00	0x28	0x0;SHORT	0x0		3	//HandAxs
+BYTE	0x00	0x00	0x29	0x0;SHORT	0x0		4	//Tomahawk
+BYTE	0x00	0x00	0x2C	0x0;SHORT	0x0		1	//Hatchet
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0		0	//Term
+
+
+ALIGN 4

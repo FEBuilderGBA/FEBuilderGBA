@@ -24,6 +24,7 @@ namespace FEBuilderGBA
         public class Data
         {
             public string Name { get; private set; }
+            public string Dir { get; private set; }
             public uint ORGAddr { get; private set; }
             public byte[] BINData { get; private set; }
             public DataEnum DataType { get; private set; }
@@ -34,10 +35,21 @@ namespace FEBuilderGBA
                 this.ORGAddr = orgaddr;
                 this.DataType = dataType;
                 this.Append = append;
+                this.Name = "";
+                this.Dir = "";
             }
-            public Data(string name, byte[] data, DataEnum dataType,uint append = 0)
+            public Data(string name, byte[] data, DataEnum dataType, uint append = 0)
             {
                 this.Name = name;
+                this.Dir = "";
+                this.BINData = data;
+                this.DataType = dataType;
+                this.Append = append;
+            }
+            public Data(string filename, string dir, byte[] data, DataEnum dataType, uint append = 0)
+            {
+                this.Name = filename;
+                this.Dir = dir;
                 this.BINData = data;
                 this.DataType = dataType;
                 this.Append = append;
@@ -130,16 +142,20 @@ namespace FEBuilderGBA
             }
 
             //LYNDUMPの終了
-            AddLynDump(this.LynDump);
+            AddLynDump(this.LynDump, "");
 
             this.LynDump = null;
             return false;
         }
-        void AddLynDump(EAUtilLynDumpMode lyn)
+        void AddLynDump(EAUtilLynDumpMode lyn,string filename)
         {
             if (lyn.GetCount() == 0)
             {//ORG指定がない場合
-                Data data = new Data("LYNDUMP", lyn.GetDataAll(), DataEnum.LYN, 0);
+                if (filename == "")
+                {
+                    filename = "LYNDUMP";
+                }
+                Data data = new Data(filename, this.Dir, lyn.GetDataAll(), DataEnum.LYN, 0);
                 this.DataList.Add(data);
                 return;
             }
@@ -283,11 +299,6 @@ namespace FEBuilderGBA
             string filename = U.cut(a, "\"", "\"");
             string fullbinname = Path.Combine( this.Dir, filename);
 
-            if (!File.Exists(fullbinname))
-            {
-                return false;
-            }
-
             DataEnum dataType ;
             if (orignalIine.IndexOf("HINT=BIN", StringComparison.OrdinalIgnoreCase) >= 0)
             {
@@ -312,8 +323,14 @@ namespace FEBuilderGBA
                     dataType = DataEnum.MIX;
                 }
             }
+            if (!File.Exists(fullbinname))
+            {
+                Data emptydata = new Data(filename, this.Dir, new byte[0], dataType);
+                this.DataList.Add(emptydata);
+                return false;
+            }
 
-            Data data = new Data(filename, File.ReadAllBytes(fullbinname), dataType);
+            Data data = new Data(filename, this.Dir, File.ReadAllBytes(fullbinname), dataType);
             this.DataList.Add(data);
             return true;
         }
@@ -351,16 +368,16 @@ namespace FEBuilderGBA
             string filename = U.cut(a, "\"", "\"");
             string fullbinname = Path.Combine( this.Dir, filename);
 
+            DataEnum dataType = DataEnum.LYN;
             if (!File.Exists(fullbinname))
             {
+                Data emptydata = new Data(filename, this.Dir, new byte[0], dataType);
+                this.DataList.Add(emptydata);
                 return false;
             }
 
-            DataEnum dataType ;
-            dataType = DataEnum.LYN;
-
             Elf elf = new Elf(fullbinname , useHookMode: false);
-            Data data = new Data(filename, elf.ProgramBIN, dataType);
+            Data data = new Data(filename, this.Dir, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
 
             if (inctevent_lyn == false)
@@ -430,7 +447,7 @@ namespace FEBuilderGBA
             }
 
             //LYNDUMPの終了
-            AddLynDump(lyndmp);
+            AddLynDump(lyndmp, filename);
             return true;
         }
         bool ParseString(string line, string orignalIine)
@@ -479,7 +496,7 @@ namespace FEBuilderGBA
             if (orignalIine.IndexOf("--lz77") >= 0)
             {
                 byte[] image = Png2DmpLZ77(fullbinname);
-                Data data = new Data(filename, image, dataType);
+                Data data = new Data(filename, this.Dir, image, dataType);
                 this.DataList.Add(data);
             }
 
@@ -499,14 +516,14 @@ namespace FEBuilderGBA
             {//パレットのみ
                 byte[] palette = ImageUtil.ImageToPalette(bitmap, 1);
 
-                Data data = new Data(filename, palette, dataType);
+                Data data = new Data(filename, this.Dir, palette, dataType);
                 this.DataList.Add(data);
             }
             else
             {
                 byte[] image = ImageUtil.ImageToByte16Tile(bitmap, bitmap.Width, bitmap.Height);
 
-                Data data = new Data(filename, image, dataType);
+                Data data = new Data(filename, this.Dir, image, dataType);
                 this.DataList.Add(data);
             }
 

@@ -288,6 +288,8 @@ namespace FEBuilderGBA
             {
                 dmpFileDate = DateTime.MinValue;
             }
+            //lynの場合は、拡張子の置換では動作しないので、強引に変更する
+            targetfilename = targetfilename.Replace(".lyn.event", ".lyn_event");
 
             string[] extList = new string[] {".s",".asm" };
             foreach (string ext in extList)
@@ -317,10 +319,15 @@ namespace FEBuilderGBA
             EAUtil ea = new EAUtil(eaFilename);
             foreach (EAUtil.Data d in ea.DataList)
             {
+                if (d.Dir == "")
+                {
+                    continue;
+                }
+
                 if (d.DataType == EAUtil.DataEnum.ASM
                     || d.DataType == EAUtil.DataEnum.LYN)
                 {
-                    string targetfilename = Path.Combine(ea.Dir, d.Name);
+                    string targetfilename = Path.Combine(d.Dir, d.Name);
 
                     string sourceCode;
                     if (!IsUpdateSourceCode(targetfilename, out sourceCode))
@@ -331,8 +338,7 @@ namespace FEBuilderGBA
                     MainFormUtil.CompileType compileType = MainFormUtil.CompileType.NONE;
                     if (d.DataType == EAUtil.DataEnum.LYN)
                     {
-                        string lyn_event = U.ChangeExtFilename(targetfilename, "lyn.event");
-                        if (File.Exists(lyn_event))
+                        if (targetfilename.IndexOf(".lyn.event") >= 0)
                         {
                             compileType = MainFormUtil.CompileType.CONVERT_LYN;
                         }
