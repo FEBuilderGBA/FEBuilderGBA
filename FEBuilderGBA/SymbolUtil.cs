@@ -157,9 +157,17 @@ namespace FEBuilderGBA
                     ProcessSymbolElf(list, elfFilename, baseaddr);
                 }
             }
-            if (ext == ".BIN" || ext == ".DMP")
+            else if (ext == ".BIN" || ext == ".DMP")
             {
                 string symtxt = Path.Combine(basedir, Path.GetFileNameWithoutExtension(binfilename) + ".sym.txt");
+                if (File.Exists(symtxt))
+                {
+                    ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);
+                }
+            }
+            else if (ext == ".EVENT" && binfilename.IndexOf(".lyn.event") >= 0)
+            {
+                string symtxt = Path.Combine(basedir, binfilename.Replace(".lyn.event", ".sym.txt"));
                 if (File.Exists(symtxt))
                 {
                     ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);

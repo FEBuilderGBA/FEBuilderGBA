@@ -1277,7 +1277,7 @@ namespace FEBuilderGBA
 
         private void mid2agb_button_Click(object sender, EventArgs e)
         {
-            string r = EXESearch("mid2agb.exe|mid2agb.exe|");
+            string r = EXESearch("mid2agb,midi2agb|mid2agb.exe;midi2agb.exe|");
             if (r != "")
             {
                 mid2agb.Text = r;

@@ -1630,6 +1630,10 @@ namespace FEBuilderGBA
                 {//EVBIT_MODIFY
                     bitmap = ImageSystemIconForm.Stairs();
                 }
+                else if (code.Script.PopupHint.IndexOf("(ASMC)") >= 0)
+                {//パッチでインストールした拡張命令
+                    bitmap = ImageSystemIconForm.MusicIcon(3);
+                }
 
                 if (bitmap != null)
                 {

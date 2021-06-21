@@ -1,0 +1,28 @@
+NAME=危険地帯かどうか判別する
+NAME.en=Add Event: CheckInDanger
+NAME.zh=Add Event: CheckInDanger
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_CheckInDanger.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_CheckInDanger.dmp
+
+AUTHOR=Stan
+
+INFO=指定した座標が敵の攻撃を受ける危険地帯かどうかを判別し、SlotCに返します。
+INFO.en=Check if the specified coordinates are in danger of being attacked by an enemy and returns bool to SlotC.
+INFO.zh=Check if the specified coordinates are in danger of being attacked by an enemy and returns bool to SlotC.
+
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_CheckInDanger.dmp}	SlotBの座標が敵の攻撃を受ける危険地帯かどうか判別する(LOW)	@STOREC	{COND}
+EVENTSCRIPT:2=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	[XX:MAPX:X][YY:MAPY:Y]が敵の攻撃を受ける危険地帯かどうか判別する	@STOREC	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(SLOW)	@STOREC	{COND}
+EVENTSCRIPT:2.en=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if [XX:MAPX:X][YY:MAPY:Y] in danger of being attacked by enemy	@STOREC	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(SLOW)	@STOREC	{COND}
+EVENTSCRIPT:2.zh=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if [XX:MAPX:X][YY:MAPY:Y] in danger of being attacked by enemy	@STOREC	{COND}

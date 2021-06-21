@@ -7045,6 +7045,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            string asmc_name = PatchUtil.GetASMCName(eventscript);
 
             string basedir = Path.GetDirectoryName(st.PatchFileName);
             List<string> scriptBinList = ParseEventScript(eventscript);
@@ -7063,9 +7064,8 @@ namespace FEBuilderGBA
                 //マクロを置換する.
                 eventscript = ReplaceL1Macro(eventscript, scriptbin, addr);
             }
-            eventscript += "\t" + R._("拡張命令:") + U.at(st.Param, "NAME");
+            eventscript += "\t" + R._("拡張命令:") + U.at(st.Param, "NAME") + " " + asmc_name + "(ASMC)\r\n" + U.at(st.Param, "INFO");
             
-
             EventScript.Script script = EventScript.ParseScriptLine(eventscript);
             if (script == null)
             {

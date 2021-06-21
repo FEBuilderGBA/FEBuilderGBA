@@ -1889,6 +1889,14 @@ namespace FEBuilderGBA
 
             return false;
         }
-
+        public static string GetASMCName(string eventscript)
+        {
+            string asmc = U.cut(eventscript,"{$L1:","}");
+            if (asmc == "")
+            {
+                return "";
+            }
+            return Path.GetFileNameWithoutExtension(asmc);
+        }
     }
 }

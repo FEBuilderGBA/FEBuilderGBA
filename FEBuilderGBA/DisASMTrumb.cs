@@ -1281,8 +1281,18 @@ namespace FEBuilderGBA
             {//データ参照先からデータが取れるなら参照先だけ明記する.
                 comment += " -> " + data.ToString("X08");
                 comment += " (" + p.Name + " " + p.ResultAndArgs + ")";
+                return comment;
             }
-            else
+            if (U.isPointerASM(data))
+            {//LYNでは、アドレス+1のデータが使われるので、それ用にパースしてみる.
+                if (this.ASMMapFile.TryGetValue(data - 1, out p))
+                {
+                    comment += " -> " + data.ToString("X08");
+                    comment += " (" + p.Name + " " + p.ResultAndArgs + ")";
+                    return comment;
+                }
+            }
+
             {//参照先から取れないなら、参照元から名前を取ってみる
                 if (this.ASMMapFile.TryGetValue(addr, out p))
                 {
@@ -1290,7 +1300,6 @@ namespace FEBuilderGBA
                 }
                 comment += " -> " + data.ToString("X08");
             }
-
             return comment;
         }
 
