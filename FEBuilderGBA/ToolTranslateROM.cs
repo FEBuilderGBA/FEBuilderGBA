@@ -17,11 +17,13 @@ namespace FEBuilderGBA
         {
             this.MaxTextCount = TextForm.GetDataCount();
             this.TextBaseAddress = TextForm.GetBaseAddress();
+            this.TextID0Addr = Program.ROM.p32(this.TextBaseAddress);
         }
         uint MaxTextCount;
         uint TextBaseAddress;
         bool UseGoolgeTranslate;
         FETextDecode TextDecode = new FETextDecode();
+        uint TextID0Addr;
 
         void AddRecycle(uint id, List<Address> recycle)
         {
@@ -58,6 +60,10 @@ namespace FEBuilderGBA
                 }
 
                 if (length <= 0)
+                {
+                    return;
+                }
+                if (data_addr == this.TextID0Addr)
                 {
                     return;
                 }
