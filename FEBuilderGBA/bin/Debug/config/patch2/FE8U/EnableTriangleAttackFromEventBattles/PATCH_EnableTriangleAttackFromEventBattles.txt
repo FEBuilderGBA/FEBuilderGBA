@@ -1,0 +1,15 @@
+NAME=トライアングルアタックをイベントバトルからでも実行できるようにする
+NAME.en=Enable TriangleAttack From EventBattle
+NAME.zh=Enable TriangleAttack From EventBattle
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x2CFBC=0x00 0x4B
+EA=install.event
+
+INFO=トライアングルアタックをイベントバトルからでも有効にします。\r\nこのパッチをインストールした後で、イベントバトルの攻撃方法で、TirnagleAtack(require patch)にチェックしてください。\r\nそして、ペガサスかファルコン3体でユニットを囲んで、トライアングルアタックの条件を満たしてください。\r\n\r\nトライアングルアタック開始のセリフが不要の場合は、0x7F-0x81を、事前にONにしてください。
+
+INFO.en=@Enable Triangle Attack even from Event Battles\r\nAfter installing this patch, check "TirnagleAtack(require patch)" in the attack method of Event Battle.\r\nThen, surround the unit with three Pegasus or Falcons to fulfill the conditions for the Triangle Attack.\r\n\r\nIf you don't need the line to start the triangle attack, please turn on 0x7F-0x81 beforehand.
+INFO.zh=@Enable Triangle Attack even from Event Battles\r\nAfter installing this patch, check "TirnagleAtack(require patch)" in the attack method of Event Battle.\r\nThen, surround the unit with three Pegasus or Falcons to fulfill the conditions for the Triangle Attack.\r\n\r\nIf you don't need the line to start the triangle attack, please turn on 0x7F-0x81 beforehand.
+
+AUTHOR=7743

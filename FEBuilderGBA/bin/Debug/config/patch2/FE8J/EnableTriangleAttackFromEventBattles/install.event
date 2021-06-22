@@ -1,0 +1,11 @@
+PUSH
+ORG 0x2CEF4	//{J}
+//ORG 0x2CFBC	//{U}
+jumpToHack(EnableTriangleAttackFromEventBattles)
+POP
+
+ALIGN 4
+EnableTriangleAttackFromEventBattles:
+#incbin "EnableTriangleAttackFromEventBattles.dmp"
+
+ALIGN 4

@@ -8,7 +8,7 @@
 08=DevilReversal
 11=NosferatuEffect
 12=Unknown12
-13=Unknown13
+13=TirnagleAtack(require patch)
 14=Silencer
 15=Unknown15
 16=Unknown16
