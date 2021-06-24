@@ -1252,6 +1252,9 @@ Battle data gBattleActor.
 :戦闘データ gBattleTarget
 Battle data gBattleTarget.
 
+:戦闘に関係する諸データ
+Various data related to battle.
+
 :塔と遺跡のデータ
 Data on towers and ruins.
 
@@ -1482,9 +1485,6 @@ Max out all of this unit's stats
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear and End the Current Chapter (Hotkey: Ctrl + U)
-
-:戦闘に関係する諸データ
-Various data related to battle.
 
 :エミュレータへ接続
 Emulator Debugger - 
@@ -9094,9 +9094,6 @@ Set Lint Text Detection (3 Lines of Text = Bug)
 :1=ROMサイズを32MBまで拡張を認める
 1=Enable ROM Expansion up to 32MB
 
-:2=拡張を認めるが、アドレスは手動管理
-2=Allow expansion, but manage addresses manually
-
 :0=変換しない
 0=No Conversion
 
@@ -9921,15 +9918,6 @@ ROM has been changed.
 
 :次を検索
 Search Next
-
-:「データ({0}) 元の長さ({1} {2})」は、長さ({3} {4})のデータとなり、既存のスペースに入りきりません。\r\nこのデータを割り当てる領域を指定してください。\r\n\r\n指定しない場合は、\r\nディフォルトで割り当てられる({5})から変更せずに、割り当てボタンを押してください。
-"Data ({0}), Original length ({1} {2})" becomes the length of ({3} {4}), which cannot fit into the existing space.\r\nSpecify the area to reallocate this data.\r\n\r\nIf not specified, press the Assign button\r\nwithout changing the default assignment ({5}).
-
-:新しい領域
-New Area
-
-:再割り当てアドレスの指定
-Specify New Address
 
 :スキル拡張 SkillSystem の、アイコンを取得できません。
 Skill Extensions cannot get SkillSystem's Icons.

@@ -1,0 +1,40 @@
+NAME=見習いを3人以上登録できるようにする(Editor)
+NAME.en=Allow 3 or more trainee to be regist(Editor)
+NAME.zh=Allow 3 or more trainee to be regist(Editor)
+
+INFO=promotion-text1は必須です。promotion-text2以降は不要ならば0を設定してください。そうすれば早めに会話が終わります。\r\nCheckFlagは、このフラグが有効な時にだけ、このデータを有効にします。\r\nたとえば、特定の章の後にこのイベントを発生させたいなどに利用できます。\r\n\r\nバニラでは、ロス、アメリア、ユアンの3人しか見習いとして登録できませんが、このTraineeReworkパッチは、4人以上の見習いの登録を可能にします。\r\n見習いを作ったときは、最大LV10にする設定をユニットまたはクラスの方で行ってください。\r\nレベル要件をクリアして、進撃準備画面に入ると、このパッチで設定した設定を使って、ユニットがセリフを離した後にCCが発生します。
+INFO.en=promotion-text1 is required. promotion-text2 and after should be set to 0 if they are not needed. This way, the conversation will end earlier.\r\nCheckFlag makes this data valid only when this flag is enabled.\r\n
+This can be used, for example, to make this event occur after a specific chapter.\r\n\r\nIn vanilla, only three apprentices (Ross, Amelia, and Ewan) can be registered as trainee, but this TraineeRework patch allows for more than four apprentices to be registered.\r\nWhen you create a Trainee, please set the unit or class to max lvl 10.\r\nWhen you clear the level requirement and enter the Prepare to Advance screen, CC will occur after the unit releases its lines, using the settings you set in this patch.
+INFO.zh=promotion-text1 is required. promotion-text2 and after should be set to 0 if they are not needed. This way, the conversation will end earlier.\r\nCheckFlag makes this data valid only when this flag is enabled.\r\n
+This can be used, for example, to make this event occur after a specific chapter.\r\n\r\nIn vanilla, only three apprentices (Ross, Amelia, and Ewan) can be registered as trainee, but this TraineeRework patch allows for more than four apprentices to be registered.\r\nWhen you create a Trainee, please set the unit or class to max lvl 10.\r\nWhen you clear the level requirement and enter the Prepare to Advance screen, CC will occur after the unit releases its lines, using the settings you set in this patch.
+
+IF:0xCC724=0x00 0x48
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+AUTHOR=7743
+
+//データへのポインタ
+POINTER=$FGREP4END CheckTraineePromotion1.dmp
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数
+DATACOUNT=$GREP16 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0xff 0x00
+
+//リストに表示
+LISTNAME=$B0:UNIT
+
+B0:UNIT=Unit
+B1:DECIMAL=LV >=
+B2:CLASS=Class
+B3=00
+W4:FLAG=CheckFlag(00=ANY)
+W6:TEXT=promotion-text1
+W8:TEXT=promotion-text2
+W10:TEXT=promotion-text3
+W12:TEXT=promotion-text4
+W14:TEXT=promotion-text5

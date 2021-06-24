@@ -27,3 +27,6 @@ INFO=見習いが自動的にCCする設定を定義します。
 INFO.en=Define the setting that the apprentice will automatically CC.
 NAME.zh=将学徒设置为自动CC
 INFO.zh=定义学徒将自动CC的设置。
+
+CONFLICT_IF:0xCC724=0x00 0x48
+CONFLICT_MESSAGE=TraineeRework

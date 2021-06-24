@@ -632,7 +632,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (anime_config_address + (4 * 5) >= Program.ROM.Data.Length)
+            if (anime_config_address + (4 * 5) > Program.ROM.Data.Length)
             {//範囲外
                 return;
             }
@@ -784,7 +784,7 @@ namespace FEBuilderGBA
                 errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("SkipCodeに失敗しました"), skillindex));
                 return;
             }
-            if (anime_config_address + (4 * 5) >= Program.ROM.Data.Length)
+            if (anime_config_address + (4 * 5) > Program.ROM.Data.Length)
             {//範囲外
                 errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_CONFIG, anime_config_address, basename + R._("データがROM末尾より先に書かれています。"), skillindex));
                 return;

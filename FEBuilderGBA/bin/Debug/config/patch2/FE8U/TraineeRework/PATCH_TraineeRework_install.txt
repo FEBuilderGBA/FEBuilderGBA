@@ -1,0 +1,18 @@
+NAME=見習いを3人以上登録できるようにする(Installer)
+NAME.en=Allow 3 or more trainee to be regist(Installer)
+NAME.zh=Allow 3 or more trainee to be regist(Installer)
+
+INFO=バニラでは、ロス、アメリア、ユアンの3人しか見習いとして登録できませんが、このTraineeReworkパッチは、4人以上の見習いの登録を可能にします。\r\n見習いを作ったときは、最大LV10にする設定をユニットまたはクラスの方で行ってください。\r\nレベル要件をクリアして、進撃準備画面に入ると、このパッチで設定した設定を使って、ユニットがセリフを離した後にCCが発生します。
+INFO.en=In vanilla, only three apprentices (Ross, Amelia, and Ewan) can be registered as trainee, but this TraineeRework patch allows for more than four apprentices to be registered.\r\nWhen you create a Trainee, please set the unit or class to max lvl 10.\r\nWhen you clear the level requirement and enter the Prepare to Advance screen, CC will occur after the unit releases its lines, using the settings you set in this patch.
+INFO.zh=In vanilla, only three apprentices (Ross, Amelia, and Ewan) can be registered as trainee, but this TraineeRework patch allows for more than four apprentices to be registered.\r\nWhen you create a Trainee, please set the unit or class to max lvl 10.\r\nWhen you clear the level requirement and enter the Prepare to Advance screen, CC will occur after the unit releases its lines, using the settings you set in this patch.
+
+//STRUCTパッチとして実装します
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0xCC724=0x00 0x48
+EDIT_PATCH:1=PATCH_TraineeRework.txt
+EA=Install.event
+
+AUTHOR=7743

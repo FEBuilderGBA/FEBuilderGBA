@@ -1,0 +1,100 @@
+#ifndef jumpToHack_r0//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#endif //jumpToHack_r0
+
+#ifndef jumpToHack_r1//Hook with r1 for compatibility.
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+#endif //jumpToHack_r1
+
+PUSH
+//ORG 0xD1440	//{J}
+ORG 0xCC724	//{U}
+jumpToHack_r0(CheckTraineePromotion1)
+
+//ORG 0xD14FC		//{J}
+ORG 0xCC7E0		//{U}
+jumpToHack_r0(CheckTraineePromotion2)
+
+//ORG 0xD14D0		//{J}
+ORG 0xCC7B4		//{U}
+jumpToHack(CheckTraineePromotion3)
+
+//ORG 0xD24F0	//{J}
+ORG 0xCD800	//{U}
+jumpToHack_r1(GetTrainneLine1)
+
+//ORG 0xD258C	//{J}
+ORG 0xCD89C	//{U}
+jumpToHack_r1(GetTrainneLine2)
+
+//ORG 0xD25EC	//{J}
+ORG 0xCD8FC	//{U}
+jumpToHack_r1(GetTrainneLine3)
+
+//ORG 0xD264C	//{J}
+ORG 0xCD95C	//{U}
+jumpToHack_r1(GetTrainneLine4)
+
+//ORG 0xD26AC	//{J}
+ORG 0xCD9BC	//{U}
+jumpToHack_r1(GetTrainneLine5)
+
+POP
+
+ALIGN 4
+CheckTraineePromotion1:
+#incbin "CheckTraineePromotion1.dmp"
+POIN TraineeTable
+
+ALIGN 4
+CheckTraineePromotion2:
+#incbin "CheckTraineePromotion2.dmp"
+POIN TraineeTable
+
+ALIGN 4
+CheckTraineePromotion3:
+#incbin "CheckTraineePromotion3.dmp"
+POIN TraineeTable
+
+ALIGN 4
+GetTrainneLine1:
+#incbin "GetTrainneLine1.dmp"
+POIN TraineeTable
+
+ALIGN 4
+GetTrainneLine2:
+#incbin "GetTrainneLine2.dmp"
+POIN TraineeTable
+
+ALIGN 4
+GetTrainneLine3:
+#incbin "GetTrainneLine3.dmp"
+POIN TraineeTable
+
+ALIGN 4
+GetTrainneLine4:
+#incbin "GetTrainneLine4.dmp"
+POIN TraineeTable
+
+ALIGN 4
+GetTrainneLine5:
+#incbin "GetTrainneLine5.dmp"
+POIN TraineeTable
+
+ALIGN 4
+TraineeTable:	//sizeof(16)
+//		Unit	LV>=	Class	00		Flag	text1	text2	text3	text4	text5
+//BYTE	0x7		10		0x3D	0;SHORT	0		0xC04	0xC05	0xC06	0xC07	0x0		//Ross		//{J}
+//BYTE	0x12	10		0x47	0;SHORT	0		0xC08	0xC09	0xC0A	0xC0B	0xC0C	//Amelia	//{J}
+//BYTE	0x18	10		0x3e	0;SHORT	0		0xC0D	0xC0E	0xC0F	0xC10	0xC11	//Ewan		//{J}
+////BYTE	0x03	10		0x09	0;SHORT	0		0xC0D	0xC0E	0xC0F	0xC10	0xC11	//test:Gilliam	//{J}
+
+BYTE	0x7		10		0x3D	0;SHORT	0		0xC44	0xC45	0xC46	0xC47	0x0		//Ross		//{U}
+BYTE	0x12	10		0x47	0;SHORT	0		0xC48	0xC49	0xC4A	0xC4B	0xC4C	//Amelia	//{U}
+BYTE	0x18	10		0x3e	0;SHORT	0		0xC4D	0xC4E	0xC4F	0xC50	0xC51	//Ewan		//{U}
+//BYTE	0x03	10		0x09	0;SHORT	0		0xC4D	0xC4E	0xC4F	0xC50	0xC51	//test:Gilliam	//{U}
+
+
+BYTE	0xff	0		0		0;SHORT	0		0		0		0		0		0xff	//term
+
+ALIGN 4

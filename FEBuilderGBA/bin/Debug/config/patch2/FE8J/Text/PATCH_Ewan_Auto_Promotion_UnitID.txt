@@ -1,0 +1,18 @@
+NAME=ユアン 見習いクラス自動CC UnitID
+NAME.en=Ewan_Trainee_Auto_Promotion_UnitID
+NAME.zh=尤恩_见习职业_自动_CC_UnitID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+DATASIZE=1
+TAG=#TEXT
+
+ADDRESS=0xD2504 0xD259E 0xD25FE 0xD265E 0xD26C0
+ADDRESS_TYPE=UNIT
+
+INFO=これは、見習いが自動CCする時にしゃべるセリフを取得するためのデータです。\r\nちなみに、ロスのIDを指定する部分はありません。\r\nこれは、アメリアとユアン以外ならばロスのデータとして処理されるためです。
+INFO.en=This is the data to get the lines that Trainee will speak when Auto Promoting. \r\nIncidentally, there is no part to specify Ross' ID. \r\nThis is because if it is not Amelia or Ewan, it will be processed as Ross' data.
+INFO.zh=This is the data to get the lines that Trainee will speak when Auto Promoting. \r\nIncidentally, there is no part to specify Ross' ID. \r\nThis is because if it is not Amelia or Ewan, it will be processed as Ross' data.
+
+CONFLICT_IF:0xD1440=0x00 0x48
+CONFLICT_MESSAGE=TraineeRework
