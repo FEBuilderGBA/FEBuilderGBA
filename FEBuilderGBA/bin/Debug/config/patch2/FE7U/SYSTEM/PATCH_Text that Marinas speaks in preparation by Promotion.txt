@@ -1,0 +1,14 @@
+NAME=マリナスが馬車を手に入れた時に進撃準備でしゃべるセリフ
+NAME.en=Text that Marinas speaks in preparation by Promotion.
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08F58C
+ADDRESS_TYPE=TEXT
+DATASIZE=4
+
+NAME.zh=Text that Marinas speaks in preparation by Promotion.

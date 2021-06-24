@@ -327,8 +327,8 @@
 080C56F4	Read image of title screen	{U}
 080ca69c	Directing title screen	{J}
 080C58CC	Directing title screen	{U}
-080d24ec	Acquire word of apprentice CC	{J}
-080CD7FC	Acquire word of apprentice CC	{U}
+080d24ec	Acquire word of Trainee CC	{J}
+080CD7FC	Acquire word of Trainee CC	{U}
 0801729c	Load item informationNAZO	ITEMPACKr0 = Endurance count << 8 | Item IDExample: Iron swordDurability: 46==2e01	{J}
 080174F4	Load item informationNAZO	ITEMPACKr0 = Endurance count << 8 | Item IDExample: Iron swordDurability: 46==2e01	{U}
 080162e8	Acquire durability from item ID	ITEMPACKEndurance count << 8 | Item IDExample: Iron swordDurability: 46==2e01	r0=Item ID	{J}
@@ -9542,8 +9542,8 @@ r3=X tile position of menu of right	{U}
 08045C8C	ShowNetworkMessage	{J}
 080DC760	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{J}
 080D7AB4	&NAZO8_DATA_POINTER_ARRAY	Unknown8 table	3	{U}
-081F6D2C	&TEXTBATCH	Apprentice CC serif	{J}
-0820707C	&TEXTBATCH	Apprentice CC serif	{U}
+081F6D2C	&TEXTBATCH	Trainee CC serif	{J}
+0820707C	&TEXTBATCH	Trainee CC serif	{U}
 080D779C	&CSTRING	Hex	{U}
 080D74D0	&CSTRING	Build time	{U}
 080D74EC	&CSTRING	Release year	{U}
@@ -11599,11 +11599,11 @@ r3=X tile position of menu of right	{U}
 080BB170	Get_CG_Table	{J}
 080B65EC	Get_CG_Table	{U}
 08A79E90	&LZ77	Boot data	Images like thunder	ONLY FE8J	{J}
-080D2588	Get word of apprentice CC 2	{J}
-080D2588	Get word of apprentice CC 3	{J}
-080D25E8	Get word of apprentice CC 4	{J}
-080D2648	Get word of apprentice CC 5	{J}
-080D26A8	Get word of an apprentice CC 6	{J}
+080D2588	Get word of Trainee CC 2	{J}
+080D2588	Get word of Trainee CC 3	{J}
+080D25E8	Get word of Trainee CC 4	{J}
+080D2648	Get word of Trainee CC 5	{J}
+080D26A8	Get word of an Trainee CC 6	{J}
 08FE1554	Debug routine at end of ROM	1	{J}
 08FE1688	Debug routine at end of ROM	2	{J}
 08FE1768	Debug routine at end of ROM	3	{J}
@@ -11615,12 +11615,12 @@ r3=X tile position of menu of right	{U}
 08FE255C	Debug routine at end of ROM	9	{J}
 08FE2690	Debug routine at end of ROM	10	{J}
 08FE27F8	Debug routine at end of ROM	11	{J}
-080CC6D4	Automated CC start routine for apprenticeship	{U}
-080CD898	Get word of apprentice CC 2	{U}
-080CD898	Get word of apprentice CC 3	{U}
-080CD8F8	Get word of apprentice CC 4	{U}
-080CD958	Get word of apprentice CC 5	{U}
-080CD9B8	Get word of an apprentice CC 6	{U}
+080CC6D4	Automated CC start routine for Traineeship	{U}
+080CD898	Get word of Trainee CC 2	{U}
+080CD898	Get word of Trainee CC 3	{U}
+080CD8F8	Get word of Trainee CC 4	{U}
+080CD958	Get word of Trainee CC 5	{U}
+080CD9B8	Get word of an Trainee CC 6	{U}
 08FE1554	Debug routine at end of ROM	1	{U}
 08FE1688	Debug routine at end of ROM	2	{U}
 08FE1768	Debug routine at end of ROM	3	{U}
@@ -13889,3 +13889,22 @@ r3=X tile position of menu of right	{U}
 0805a268	IsCritcalHitByCireAIStruct	{U}
 08055CEC	TerminateEfxSpellCast	{J}
 0805501C	TerminateEfxSpellCast	{U}
+08007C00	NewTextBluArrowAndButtonChecker2	{J}
+08021210	StartGameOverBGEffect	{J}
+08090A1C	StartADJUSTFROMXI	{J}
+08099D84	StartSallyCir	{J}
+080B0664	StartSqMask	{J}
+080B7344	StartColFadeOut	{J}
+080C7BBC	StartGmapRMBaPalAnim_2	{J}
+080D2358	StartccramifyEvent	{J}
+080C7498	DeleteStartGmapRMBaPalAnim_1	{J}
+080C74A8	IsExistStartGmapRMBaPalAnim_1	{J}
+08007D04	NewTextBluArrowAndButtonChecker2	{U}
+08021518	StartGameOverBGEffect	{U}
+0808E748	StartADJUSTFROMXI	{U}
+08097AAC	StartSallyCir	{U}
+080ABBB0	StartSqMask	{U}
+080B272C	StartColFadeOut	{U}
+080CD668	StartccramifyEvent	{U}
+080C26E0	DeleteStartGmapRMBaPalAnim_1	{U}
+080C26F0	IsExistStartGmapRMBaPalAnim_1	{U}

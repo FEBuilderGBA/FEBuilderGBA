@@ -431,6 +431,15 @@ namespace FEBuilderGBA
         uint font_default_end();   //フォント終了
         uint item_name_article_pointer(); // a|an|the を切り替えるテーブル 英語版のみ
         uint item_name_article_switch2_address();
+        uint vanilla_field_config_address();    //バニラのタイルセット よく使われもの
+        uint vanilla_field_image_address();
+        uint vanilla_village_config_address();
+        uint vanilla_village_image_address();
+        uint vanilla_casle_config_address();
+        uint vanilla_casle_image_address();
+        uint vanilla_plain_config_address();
+        uint vanilla_plain_image_address();
+
         uint extends_address(); //拡張領域
         uint orignal_crc32(); //無改造ROMのCRC32
         bool is_multibyte();    // マルチバイトを利用するか？

@@ -701,6 +701,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (MapStyleEditorFormWarningVanillaTileOverraideForm.CheckWarningUI((uint)ObjAddress.Value))
+            {
+                return;
+            }
 
             Bitmap bitmap = ImageFormRef.ImportFilenameDialog(this);
             if (bitmap == null)
@@ -1208,6 +1212,11 @@ namespace FEBuilderGBA
 
         private void MapChipImportButton_Click(object sender, EventArgs e)
         {
+            if (MapStyleEditorFormWarningVanillaTileOverraideForm.CheckWarningUI((uint)ChipsetConfigAddress.Value))
+            {
+                return;
+            }
+
             string title = R._("読み込むファイル名を選択してください");
             string filter = R._("mapchip_config|*.mapchip_config|All files|*");
 

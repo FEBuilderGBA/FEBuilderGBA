@@ -1,0 +1,12 @@
+NAME=マリナスが進撃準備でしゃべるセリフ
+NAME.en=Text that Merlinus speaks in preparation
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08F49C
+ADDRESS_TYPE=TEXT
+DATASIZE=4
+
+NAME.zh=Text that Merlinus speaks in preparation

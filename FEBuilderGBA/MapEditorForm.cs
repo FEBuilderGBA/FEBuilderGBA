@@ -468,7 +468,7 @@ namespace FEBuilderGBA
             }
             if (this.MapWidth <= 0 || this.MapHeight <= 0)
             {
-                R.ShowStopError("幅と高さのどちらかがゼロのマップなので、開くことができません。");
+                R.ShowStopError("幅と高さのどちらかがゼロのマップなので、開くことができません。\r\n利用する場合は、「サイズ変更」ボタンを押して適切なサイズに設定してください。");
                 return;
             }
 

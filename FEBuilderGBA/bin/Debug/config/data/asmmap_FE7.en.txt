@@ -5167,3 +5167,16 @@
 08005440	Text_GetXCursor	{J}
 0203A508	@BattleRound@[7]	gRoundArray	{J}
 0203A50C	@BattleRound@[7]	gRoundArray	{U}
+08053AD2	GetSomeAISRelatedIndexMaybeByID	{J}
+0800515C	SetupDebugFontForOBJ	{J}
+080051E8	PrintDebugStringAsOBJ	{J}
+08005280	SetupDebugFontForOBJ	{U}
+0800530C	PrintDebugStringAsOBJ	{U}
+0808F3D0	Matthew speaks in preparation for ch8 advance.	{U}
+0808FD10	Matthew speaks in preparation for ch8 advance.	{J}
+0808F43C	Marinas talks in preparation for the advance.	{U}
+0808FD7C	Marinas talks in preparation for the advance.	{J}
+0808F4A8	Fortune-teller talks in preparation for the advance of ch14.	{U}
+0808FDE8	Fortune-teller talks in preparation for the advance of ch14.	{J}
+0808F52C	When Marinas gets the carriage, she talks in preparation for the advance.	{U}
+0808FE6C	When Marinas gets the carriage, she talks in preparation for the advance.	{J}

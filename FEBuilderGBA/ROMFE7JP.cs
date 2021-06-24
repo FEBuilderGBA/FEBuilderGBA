@@ -433,6 +433,14 @@ namespace FEBuilderGBA
         public uint font_default_end() { return 0xBFF760; }
         public uint item_name_article_pointer() { return 0x0; } // a|an|the を切り替えるテーブル 英語版のみ
         public uint item_name_article_switch2_address() { return 0x0; }
+        public uint vanilla_field_config_address() { return 0x35FC08; }    //バニラのタイルセット よく使われもの
+        public uint vanilla_field_image_address() { return 0x371394; }
+        public uint vanilla_village_config_address() { return 0x362308; }
+        public uint vanilla_village_image_address() { return 0x344F94; }
+        public uint vanilla_casle_config_address() { return 0x36381C; }
+        public uint vanilla_casle_image_address() { return 0x34C1BC; }
+        public uint vanilla_plain_config_address() { return 0x364ADC; }
+        public uint vanilla_plain_image_address() { return 0x352418; }
         public string get_shop_name(uint shop_object)//店の名前
         {
             if (shop_object == 0x13)

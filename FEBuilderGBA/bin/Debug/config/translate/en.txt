@@ -6853,8 +6853,8 @@ Tile Change ID:
 :マップが読み込めません。エラーマップを表示します。
 Unable to load the map. Display map error.
 
-:幅と高さのどちらかがゼロのマップなので、開くことができません。
-Map cannot be opened as it has 0 width/height.
+:幅と高さのどちらかがゼロのマップなので、開くことができません。\r\n利用する場合は、「サイズ変更」ボタンを押して適切なサイズに設定してください。
+Map cannot be opened as it has 0 width/height.\r\nIf you want to use it, click the "Resize" button and set it to an appropriate size.
 
 :地形回復
 Terrain Healing
@@ -7992,6 +7992,21 @@ Export Tile Config
 
 :マップスタイルエディタ
 Tileset Palette
+
+:バニラのタイルセットを上書きしようとしています。
+I'm trying to overwrite a vanilla tileset.
+
+:このタイルセットを上書きすると、このタイルセットを利用しているすべてのマップに影響を与えます。\r\n本当に上書きをしてもよろしいですか？\r\n\r\nバニラのタイルセットを上書きせずに、新しいタイルセットを追加する場合は、こちらのヘルプをご覧ください。
+Overriding this tileset will affect all maps that utilize this tileset.\r\nAre you sure you want to overwrite it? \r\n\r\nIf you want to add a new tileset without overwriting the vanilla tileset, see this help.
+
+:上書きする
+Overwrite.
+
+:次回起動時までこの警告を出さない
+This warning will not be issued until the next startup.
+
+:警告
+Warning
 
 :画像と同時にパレットもインポートする(推奨)
 Import the palette at the same time as the image (recommended).
@@ -9834,9 +9849,6 @@ A System.OutOfMemoryException error has occurred.\r\nIf this reoccurs, please se
 
 :例外が発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 Exception occured.\r\nIf this reoccurs, please send a report7z.\r\nMessage:\r\n{0}\r\n{1}
-
-:警告
-Warning
 
 :警告:データが途中で終わってしまいました。 addr:{0} data.Length:{1} countI:{2}
 Warning: The data has unexpectedly ended. addr: {0} data.Length: {1} countI: {2}
