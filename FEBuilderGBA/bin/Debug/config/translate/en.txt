@@ -7994,22 +7994,22 @@ Export Tile Config
 Tileset Palette
 
 :バニラのタイルセットを上書きしようとしています。
-I'm trying to overwrite a vanilla tileset.
+You are trying to overwrite the vanilla tileset.
 
 :このタイルセットを上書きすると、このタイルセットを利用しているすべてのマップに影響を与えます。\r\n本当に上書きをしてもよろしいですか？\r\n\r\nバニラのタイルセットを上書きせずに、新しいタイルセットを追加する場合は、こちらのヘルプをご覧ください。
-Overriding this tileset will affect all maps that utilize this tileset.\r\nAre you sure you want to overwrite it? \r\n\r\nIf you want to add a new tileset without overwriting the vanilla tileset, see this help.
+If you overwrite this tileset, it will affect all maps that use this tileset.\r\nAre you sure you want to overwrite it?\r\n\r\nIf you want to add a new tileset without overwriting the vanilla tileset, please see this help section.
 
 :上書きする
-Overwrite.
+Overwrite
 
 :次回起動時までこの警告を出さない
-This warning will not be issued until the next startup.
+Do not issue this warning until next startup.
 
 :警告
 Warning
 
 :画像と同時にパレットもインポートする(推奨)
-Import the palette at the same time as the image (recommended).
+Import the palette at same time as image(recommended)
 
 :画像だけをインポートする。(パレットはインポートしない)
 Import images only.(Do not import palettes).
@@ -8024,7 +8024,7 @@ Map tip import.
 Import a single picture.
 
 :インポートオプション
-Import options.
+Import options
 
 :値
 value
