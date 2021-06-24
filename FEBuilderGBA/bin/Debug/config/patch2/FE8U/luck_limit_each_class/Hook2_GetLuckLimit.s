@@ -4,7 +4,7 @@
 MOV r4, #0x4
 ldrb r1, [r5, #0x4]  @Class->ClassID  GetClassID
 ldr r4, LuckTable
-ldrb r4, [r4, r5]   @LuckTable[ClassID]
+ldrb r4, [r4, r1]   @LuckTable[ClassID]
 
 cmp r0 ,r4
 ble Exit

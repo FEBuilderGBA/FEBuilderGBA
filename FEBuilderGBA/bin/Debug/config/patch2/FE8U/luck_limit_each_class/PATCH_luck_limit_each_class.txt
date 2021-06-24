@@ -1,5 +1,5 @@
-NAME=幸運上限をクラスごとに設定する
-NAME.en=Set the luck limit for each class
+NAME=幸運上限をクラスごとに設定する(Editor)
+NAME.en=Set the luck limit for each class(Editor)
 
 TYPE=STRUCT
 TAG=#ENGINE
@@ -24,5 +24,5 @@ LISTNAME=CLASS
 //データを定義します
 B0:DECIMAL=Luck
 INFO.en=Let's make it possible to set the luck limit not for uniform, but for each class.
-NAME.zh=设置每个班级的幸运限额。
+NAME.zh=设置每个班级的幸运限额。(Editor)
 INFO.zh=让我们可以设置运气限制不是为了统一，而是为每个班级。
