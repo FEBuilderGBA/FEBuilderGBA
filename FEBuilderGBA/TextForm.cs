@@ -2518,7 +2518,7 @@ namespace FEBuilderGBA
         {
             if (PatchUtil.SearchTextEngineReworkPatch() == PatchUtil.TextEngineRework_enum.TeqTextEngineRework)
             {
-                return ConvertTeqTextEngineRework(text);
+                return ConvertTeqTextEngineRework(text, OptionForm.text_escape());
             }
 
             if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
@@ -2956,7 +2956,10 @@ namespace FEBuilderGBA
             }
             static string RemoveEscapeTeqTextEngineRework(string text)
             {
-                return RegexCache.Replace(text, "@0080@00(?:2(?:[689ABC]|(?:[7E]|(?:F@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F]|D)@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F])@00[0-9A-F][0-9A-F])|3[012345678])@00[0-9A-F][0-9A-F]", "");
+                text = text.Replace("\r\n", "@0001");
+                text = RegexCache.Replace(text, "@0080@00(?:2(?:[689ABC]|(?:[7E]|(?:F@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F]|D)@00[0-9A-F][0-9A-F]@00[0-9A-F][0-9A-F])@00[0-9A-F][0-9A-F])|3[012345678])@00[0-9A-F][0-9A-F]", "");
+                text = text.Replace("@0001", "\r\n");
+                return text;
             }
 
 
@@ -3663,9 +3666,9 @@ namespace FEBuilderGBA
             }
             return rettext;
         }
-        static string MakeCodeAndEscape(uint code)
+        static string MakeCodeAndEscape(uint code, OptionForm.text_escape_enum escape_enum)
         {
-            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            if (escape_enum == OptionForm.text_escape_enum.FEditorAdv)
             {
                 return "[0x00" + U.ToHexString2(code) + "]";
             }
@@ -3673,7 +3676,7 @@ namespace FEBuilderGBA
         }
 
         //Teqのreworkは、既存ルールと重複しているのがあるので、いい感じに調整する.
-        static string ConvertTeqTextEngineRework(string text)
+        static string ConvertTeqTextEngineRework(string text, OptionForm.text_escape_enum escape_enum)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -3696,7 +3699,7 @@ namespace FEBuilderGBA
                     uint code3 = GetOneCharOrAtCode(text, ref i);
                     if (code3 != 0)
                     {
-                        sb.Append(MakeCodeAndEscape(code3));
+                        sb.Append(MakeCodeAndEscape(code3, escape_enum));
                     }
                     text_stsrt = i;
 
@@ -3710,8 +3713,8 @@ namespace FEBuilderGBA
                     uint code4 = GetOneCharOrAtCode(text, ref i);
                     if (code3 != 0 && code4 != 0)
                     {
-                        sb.Append(MakeCodeAndEscape(code3));
-                        sb.Append(MakeCodeAndEscape(code4));
+                        sb.Append(MakeCodeAndEscape(code3, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code4, escape_enum));
                     }
                     text_stsrt = i;
                 }
@@ -3726,10 +3729,10 @@ namespace FEBuilderGBA
                     uint code6 = GetOneCharOrAtCode(text, ref i);
                     if (code3 != 0 && code4 != 0 && code5 != 0 && code6 != 0)
                     {
-                        sb.Append(MakeCodeAndEscape(code3));
-                        sb.Append(MakeCodeAndEscape(code4));
-                        sb.Append(MakeCodeAndEscape(code5));
-                        sb.Append(MakeCodeAndEscape(code6));
+                        sb.Append(MakeCodeAndEscape(code3, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code4, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code5, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code6, escape_enum));
                     }
                     text_stsrt = i;
                 }
@@ -3746,12 +3749,12 @@ namespace FEBuilderGBA
                     uint code8 = GetOneCharOrAtCode(text, ref i);
                     if (code3 != 0 && code4 != 0 && code5 != 0 && code6 != 0 && code7 != 0 && code8 != 0)
                     {
-                        sb.Append(MakeCodeAndEscape(code3));
-                        sb.Append(MakeCodeAndEscape(code4));
-                        sb.Append(MakeCodeAndEscape(code5));
-                        sb.Append(MakeCodeAndEscape(code6));
-                        sb.Append(MakeCodeAndEscape(code7));
-                        sb.Append(MakeCodeAndEscape(code8));
+                        sb.Append(MakeCodeAndEscape(code3, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code4, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code5, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code6, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code7, escape_enum));
+                        sb.Append(MakeCodeAndEscape(code8, escape_enum));
                     }
                     text_stsrt = i;
                 }

@@ -13880,9 +13880,23 @@ r3=X tile position of menu of the right	{U}
 0808BB58	IsNotExistTextDialogBoxYeild	{U}
 0806EBA0	StartEfxNormalEffect	{J}
 0806C87C	StartEfxNormalEffect	{U}
-085BE7F4	&LZ77	东西 TSA。	58	{U}
-087270B4	&LZ77	东西 TSA。	59	{U}
-08727510	&LZ77	东西 TSA。	60	{U}
-085E8A24	&LZ77	东西 TSA。	58	{J}
-08753C8C	&LZ77	东西 TSA。	59	{J}
-087540E8	&LZ77	东西 TSA。	60	{J}
+085BE7F4	&LZ77	东西 TSA	58	{U}
+087270B4	&LZ77	东西 TSA	59	{U}
+08727510	&LZ77	东西 TSA	60	{U}
+085E8A24	&LZ77	东西 TSA	58	{J}
+08753C8C	&LZ77	东西 TSA	59	{J}
+087540E8	&LZ77	东西 TSA	60	{J}
+0808CC84	ShowTutorialTextDialogBoxWithAnimation	{J}
+0808CCAC	ShowComplateTutorialTextDialogBoxWithAnimation	{J}
+0808CCD0	HideTutorialTextDialogBoxWithAnimation	{J}
+0808CD00	ClearCallback_AnimationTutorialTextDialogBox	{J}
+0808CF1C	Restart_AnimationTutorialTextDialogBox	{J}
+0808cbf4	AnimationTutorialTextDialogBox	{J}
+0808d00c	AnimationTutorialTextDialogBox_Sub	{J}
+0808A974	ShowTutorialTextDialogBoxWithAnimation	{U}
+0808A99C	ShowComplateTutorialTextDialogBoxWithAnimation	{U}
+0808A9C0	HideTutorialTextDialogBoxWithAnimation	{U}
+0808A9F0	ClearCallback_AnimationTutorialTextDialogBox	{U}
+0808AC0C	Restart_AnimationTutorialTextDialogBox	{U}
+0808A8E4	AnimationTutorialTextDialogBox	{U}
+0808ACFC	AnimationTutorialTextDialogBox_Sub	{U}
