@@ -798,3 +798,5 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 000128C4=PlayAnimeByBrokenSacredStones	{U}	//08592568
 000BA320=ArenaAfter	{J}	//08ABCC34
 000B579C=ArenaAfter	{U}	//08A3963C
+0008DEAC=TextDialogBoxYeild	{J}	//08A738D0
+0008BB9C=TextDialogBoxYeild	{U}	//08A01818

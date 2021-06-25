@@ -13908,3 +13908,25 @@ r3=X tile position of menu of right	{U}
 080CD668	StartccramifyEvent	{U}
 080C26E0	DeleteStartGmapRMBaPalAnim_1	{U}
 080C26F0	IsExistStartGmapRMBaPalAnim_1	{U}
+0808C8E0	DrawTextDialogBox	{J}
+0808CBBC	PlaySongID0x2E7	{J}
+0808DE84	DeleteAllTextDialogBox	{J}
+0808A5D0	DrawTextDialogBox	{U}
+0808A8AC	PlaySongID0x2E7	{U}
+0808BB74	DeleteAllTextDialogBox	{U}
+0808CD14	ReStartTextDialogueBox1	{J}
+0808CD7C	ReStartTextDialogueBox2	{J}
+0808DE54	StartTextDialogBoxYeild	{J}
+0808DE68	IsNotExistTextDialogBoxYeild	{J}
+0808AA04	ReStartTextDialogueBox1	{U}
+0808AA6C	ReStartTextDialogueBox2	{U}
+0808BB44	StartTextDialogBoxYeild	{U}
+0808BB58	IsNotExistTextDialogBoxYeild	{U}
+0806EBA0	StartEfxNormalEffect	{J}
+0806C87C	StartEfxNormalEffect	{U}
+085BE7F4	&LZ77	Something TSA.	58	{U}
+087270B4	&LZ77	Something TSA.	59	{U}
+08727510	&LZ77	Something TSA.	60	{U}
+085E8A24	&LZ77	Something TSA.	58	{J}
+08753C8C	&LZ77	Something TSA.	59	{J}
+087540E8	&LZ77	Something TSA.	60	{J}
