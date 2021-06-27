@@ -1,6 +1,6 @@
-NAME=常に間接モーションを表示する武器を複数設定できるパッチ
-NAME.en=Select Weapons Use Ranged Attack Editor
-NAME.zh=可以设置总是显示远程攻击动画的武器补丁
+NAME=常に間接モーションを表示する武器を複数設定できるパッチ(Editor)
+NAME.en=Select Weapons Use Ranged Attack Editor(Editor)
+NAME.zh=可以设置总是显示远程攻击动画的武器补丁(Editor)
 
 TYPE=STRUCT
 TAG=#ENGINE

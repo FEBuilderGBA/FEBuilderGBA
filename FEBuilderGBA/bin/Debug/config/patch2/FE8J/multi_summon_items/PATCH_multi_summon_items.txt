@@ -1,5 +1,5 @@
-NAME=召喚されたユニットが所持する武器を詳細に設定できるようにする
-NAME.en=Allows detailed setting of weapons held by summoned units.
+NAME=召喚されたユニットが所持する武器を詳細に設定できるようにする(Editor)
+NAME.en=Allows detailed setting of weapons held by summoned units(Editor)
 
 INFO=召喚されたユニットが所持する武器を詳細に設定できるようにします。\r\n召喚者のレベルごとに設定したり、レア武器を設定できます。\r\nもし指定レベル以下だったら、武器を所持させます。\r\nまた、レア武器の設定ができます。
 
@@ -36,5 +36,5 @@ B10:DECIMAL=Rare(%)<=
 B11:ITEM=RareItem
 
 INFO.en=You can set 4 weapons for the level of the Summoner-Unit.\r\nYou can also set a rare weapon that will appear to a certain chance that you entered. \r\nThe weapons that are depending on the Summoner-Units level will only appear if the unit is at a level below or equal to the specified level. For example, if „10“ is set for the Level 1 Spell (usually thats Fire), the phantoms of that unit will only spawn with Fire tomes. Once the Summoner unit is level 11 or higher, the phantoms will no longer spawn with Fire tomes, but with the spell that is set as level 2 Spell (usually thats thunder).\r\nThe rare weapon will always have the same chance to appear in the Phantoms inventory regardless oft he Summoner-Units level.
-NAME.zh=允许您详细设置被召唤单位持有的武器。
+NAME.zh=允许您详细设置被召唤单位持有的武器(Editor)
 INFO.zh=允许详细设置召唤单位持有的武器。\r\n您可以为每个召唤师等级设置它，也可以设置稀有武器。\r\n如果您低于指定级别，您将拥有武器。\r\n您还可以设置稀有武器。

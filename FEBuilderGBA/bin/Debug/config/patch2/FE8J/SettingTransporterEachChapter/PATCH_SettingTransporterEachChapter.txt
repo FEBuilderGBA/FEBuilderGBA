@@ -1,5 +1,5 @@
-NAME=マップごとに輸送隊が利用できるか設定する
-NAME.en=Set whether transporter can be used for each map
+NAME=マップごとに輸送隊が利用できるか設定する(Editor)
+NAME.en=Set whether transporter can be used for each map(Editor)
 
 IF:0x023F22=0x00 0x00 0x00 0x4B 0x18 0x47
 
@@ -24,7 +24,7 @@ B0:$COMBO SettingTransporterEachChapter_combo.en.txt:.en=Transporter
 B0:$COMBO SettingTransporterEachChapter_combo.zh.txt:.zh=运输车
 
 AUTHOR=7743
-NAME.zh=设置是否可以将传输器用于每个映射
+NAME.zh=设置是否可以将传输器用于每个映射(Editor)
 
 INFO=0:利用禁止\r\nこのマップでは、誰も輸送隊を呼べません。\r\n\r\n1:送れるが取り出せない\r\nドロップした余剰アイテムを、輸送隊にアイテムを送ることはできますが、取り出すことはできません。\r\n\r\n2:利用可能\r\n主人公とその隣接ユニットが輸送隊を利用できる。FE8の標準。\r\n輸送隊を利用できるユニットを変えたい場合は、「輸送隊ユニット」を変更するパッチで書き換えてください。\r\n\r\n3:全員呼ぶことができる\r\n全員が無条件で輸送隊を呼ぶことができます。\r\n\r\n4:フラグ0x27が有効なら利用可能\r\nフラグ0x27が有効ならば、主人公とその隣接ユニットが輸送隊を利用できます。
 

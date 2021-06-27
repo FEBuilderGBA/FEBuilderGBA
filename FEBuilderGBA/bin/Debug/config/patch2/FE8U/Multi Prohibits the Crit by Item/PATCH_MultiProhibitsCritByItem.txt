@@ -1,5 +1,5 @@
-NAME=常に必殺を禁止する武器を複数設定できるようにする.
-NAME.en=Define Multiple Prohibits the Crit By Item
+NAME=常に必殺を禁止する武器を複数設定できるようにする(Editor)
+NAME.en=Define Multiple Prohibits the Crit By Item(Editor)
 
 INFO=必殺を出さない武器を複数設定できるようにします。
 
@@ -25,5 +25,5 @@ LISTNAME=$B0:ITEM
 B0:ITEM=Item
 
 INFO.en=Allows to set multiple weapons that do not emit Crit.
-NAME.zh=定义多个禁止按项目批判
+NAME.zh=定义多个禁止按项目批判(Editor)
 INFO.zh=允许设置多个不发射Crit的武器。

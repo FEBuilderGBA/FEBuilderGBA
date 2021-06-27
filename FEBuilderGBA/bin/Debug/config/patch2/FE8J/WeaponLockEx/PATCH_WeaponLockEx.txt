@@ -1,5 +1,5 @@
-NAME=専用武器Ex
-NAME.en=Weapon Lock Ex
+NAME=専用武器Ex(Editor)
+NAME.en=Weapon Lock Ex(Editor)
 
 IF:0x164E4=0x00 0x4B 0x18 0x47
 
@@ -41,5 +41,5 @@ B1:UNIT.en=Unit / ANY=0x00
 B2:CLASS.en=Class / ANY=0x00
 W4:FLAG.en=Judgment flag / ANY=0x00
 INFO.en=Define more specialized weapons lock.\r\nAfter satisfying the conditions that can be equipped with that weapon, we will judge whether we can provide additional equipment.\r\nIt judges additionally for each unit, class, level, flag.
-NAME.zh=独家武器Ex
+NAME.zh=独家武器Ex(Editor)
 INFO.zh=该补丁还定义更专业的武器。\r\n在满足可配备该武器的条件后，我们将判断是否可以提供额外的设备。\r\n它还为每个人物，级别，级别，标志进行判断。

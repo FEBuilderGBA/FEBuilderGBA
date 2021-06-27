@@ -8776,6 +8776,9 @@ Please set the path to mid2agb.\r\nIt is highly recommended for importing music,
 :バニラのソースコードを簡単に確認するために利用する項目です。\r\nディフォルトではF10キーを押すとバニラのコードにアクセスできます。\r\nバニラのソースコードは数十万行になるので、テキストエディターには、大きなファイルを表示できるテキストエディタを指定してください。
 This item is used to easily check the vanilla source code.\r\nBy default, you can access the vanilla code by pressing the F10 key.\r\nVanilla source code can be hundreds of thousands of lines long, so make sure you specify a text editor that can display large files.
 
+:スキル拡張パッチをインストールする領域を予約し保護するかどうかを設定します。\r\n「常に」(ディフォルト)は、その領域には一切干渉しないようにして保護します。\r\n「インストールされていれば保護」は、スキル拡張がインストールされていれば保護します。後からスキル拡張がインストールされる可能性もあるので推奨はしません。\r\n「保護しない」は、一切保護しません。
+Set whether to reserve and protect the area where the skill extension patch is installed.\r\n"Always" (default) protects the area from interference at all.\r\n"Protect if installed" protects if the skill extension is installed.We do not recommend it as skill extensions may be installed later.\r\n"Not protect" does not protect at all.
+
 :ソースコードを保存するディレクトリを指定してください。
 Specify the directory where you want to save the source code.
 
@@ -9309,6 +9312,18 @@ When exporting a file...
 
 :保存
 Save
+
+:スキル拡張の聖域
+Sanctuary of skill expansion
+
+:0=常に保護する
+0=Always protect
+
+:1=インストールされていれば保護
+1=Protect if installed
+
+:9=保護しない
+9=Do not protect
 
 :その他ROM直値テキスト
 Other ROM Direct Text

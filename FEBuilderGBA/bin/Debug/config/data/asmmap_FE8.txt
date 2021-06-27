@@ -13924,11 +13924,15 @@
 0808CD00	ClearCallback_AnimationTutorialTextDialogBox	{J}
 0808CF1C	Restart_AnimationTutorialTextDialogBox	{J}
 0808cbf4	AnimationTutorialTextDialogBox	{J}
-0808d00c	AnimationTutorialTextDialogBox_Sub	{J}
+0808d00c	AnimationTutorialTextDialogBox_Sub	r0=x	r1=y	r2=width	3=height	{J}
 0808A974	ShowTutorialTextDialogBoxWithAnimation	{U}
 0808A99C	ShowComplateTutorialTextDialogBoxWithAnimation	{U}
 0808A9C0	HideTutorialTextDialogBoxWithAnimation	{U}
 0808A9F0	ClearCallback_AnimationTutorialTextDialogBox	{U}
 0808AC0C	Restart_AnimationTutorialTextDialogBox	{U}
 0808A8E4	AnimationTutorialTextDialogBox	{U}
-0808ACFC	AnimationTutorialTextDialogBox_Sub	{U}
+0808ACFC	AnimationTutorialTextDialogBox_Sub	r0=x	r1=y	r2=width	3=height	{U}
+080C3770	WorldmapのMiniMapに次の目的地の赤いフラグを描画する	{U}
+080C3A64	WorldmapのMiniMapを描画	{U}
+080C8528	WorldmapのMiniMapに次の目的地の赤いフラグを描画する	{J}
+080C881C	WorldmapのMiniMapを描画	{J}

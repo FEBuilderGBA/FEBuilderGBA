@@ -1,4 +1,4 @@
-NAME=編成準備店を章ごとに切り替える ver2
+NAME=編成準備店を章ごとに切り替える ver2(Editor)
 
 IF:0x9C128=0x00 0x49 0x08 0x47
 
@@ -27,9 +27,9 @@ INFO=編成準備店を章ごとに切り替えます。\r\n未設定(0x00)の�
 P0:ITEMSHOP.en=Shop Pointer
 P0:ITEMSHOP.zh=店指针
 
-NAME.en=Switch organization preparation department by chapter ver2
+NAME.en=Switch organization preparation department by chapter ver2(Editor)
 INFO.en=Switch the preparation preparation shop for each chapter.\r\nIf it is not set (0x00), it will be the default dealer.\r\n
-NAME.zh=按章切换组织准备部门 ver2
+NAME.zh=按章切换组织准备部门 ver2(Editor)
 INFO.zh=切换每章的准备准备车间。\r\n如果未设置（0x00），则它将成为默认经销商。\r\n
 
 CONFLICT_IF:0x9C128=0x00 0x4B 0x18 0x47

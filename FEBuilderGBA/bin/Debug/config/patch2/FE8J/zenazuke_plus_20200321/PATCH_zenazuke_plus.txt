@@ -1,13 +1,13 @@
-NAME=全預け+メニュー 20200321
+NAME=全預け+メニュー 20200321(Installer)
 TYPE=EA
 TAG=#ENGINE
 
 INFO=装備できない武器と杖以外を、輸送隊に送ります。\r\n敵を捕獲していれば、その持ち物も送ります。
 
-NAME.en=GiveAll+ Menu 20200321
+NAME.en=GiveAll+ Menu 20200321(Installer)
 INFO.en=Send anything other than not equipped weapons and staffs to Supply.\r\nIf captured enemy, also send him items.
 
-NAME.zh=GiveAll+ Menu 20200321
+NAME.zh=GiveAll+ Menu 20200321(Installer)
 INFO.zh=Send anything other than not equipped weapons and staffs to Supply.\r\nIf captured enemy, also send him items.
 
 

@@ -1,6 +1,6 @@
 
-NAME=戦闘変身パッチ
-NAME.en=Battle Transforming Editor
+NAME=戦闘変身パッチ(Editor)
+NAME.en=Battle Transforming Editor(Editor)
 
 IF:$GREP4 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x51 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x00 0xE1 0x03 0x02 0x00 0x00 0x00 0x02=0x87 0x55 0x03 0x21
 IF_COMMENT=戦闘変身パッチを導入してください.
@@ -58,6 +58,6 @@ W14:SONG.en=Detransform Sound
 INFO=戦闘時に、変身できるクラスとアイテムを増やします。
 AUTHOR=Tequila ,UNKNOWN ,Aera , circleseverywhere. Transport by 7743 https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
 INFO.en=Edits the list of which classes can transform and how.\r\nInvolves class, item, multiple animations, and sounds.\r\nIn order to use, "Battle Transform List Installer" must be installed.\r\n\r\nBegin -> Human to Dragon\r\nTransformed -> Dragon breath\r\nTransform Back -> Dragon to Human\r\nTransform Finished -> Human standing\r\n
-NAME.zh=战斗変身补丁
+NAME.zh=战斗変身补丁(Editor)
 
 INFO.zh=在战斗中，增加可以改变的职业和道具。

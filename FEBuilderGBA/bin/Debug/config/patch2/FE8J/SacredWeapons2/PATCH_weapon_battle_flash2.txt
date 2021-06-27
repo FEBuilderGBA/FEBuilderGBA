@@ -1,5 +1,5 @@
-NAME=神器フラッシュの簡易設定2
-NAME.en=Simple setting of Sacred Weapons 2
+NAME=神器フラッシュの簡易設定2(Editor)
+NAME.en=Simple setting of Sacred Weapons 2(Editor)
 
 
 
@@ -27,7 +27,7 @@ B0:ITEM=ITEM
 
 INFO=双聖器フラッシュを簡易設定できるようにします。\r\n指定したアイテムIDでフラッシュを表示できるようにします。
 INFO.en=Simple setting of "A Sacred Twin tome"\r\nEnables you to display the flash with the specified item ID.
-NAME.zh=神圣闪光的简单设置2
+NAME.zh=神圣闪光的简单设置2(Editor)
 INFO.zh=该补丁还更容易设置biloba冲洗。\r\n使您可以显示具有指定项目ID的闪存。
 
 UPDATE_FROM_NAME=SacredWeapons

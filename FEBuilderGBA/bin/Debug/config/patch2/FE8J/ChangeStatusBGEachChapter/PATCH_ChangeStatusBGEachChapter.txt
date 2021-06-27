@@ -1,5 +1,5 @@
-NAME=ステータス背景を章ごとに変更する
-NAME.en=Change status background for each chapter
+NAME=ステータス背景を章ごとに変更する(Editor)
+NAME.en=Change status background for each chapter(Editor)
 
 INFO=新規に画像をImportするときは、アドレス、TSA、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
 
@@ -34,5 +34,5 @@ HEIGHT=160
 //利用パレット数
 PALETTE=4
 INFO.en=To import a new image, please set it to 0 or FFFFFFFF in address, TSA, PALETTE and then import it.\r\nOtherwise, overwrite the existing image and change it.
-NAME.zh=按章更改状态背景
+NAME.zh=按章更改状态背景(Editor)
 INFO.zh=要导入新图像，请在地址，TSA，PALETTE中将其设置为0或FFFFFFFF，然后将其导入。\r\n否则，覆盖现有图像并进行更改。

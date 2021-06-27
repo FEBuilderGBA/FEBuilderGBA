@@ -1,5 +1,5 @@
-NAME=武器の特効効果ダメージ係数を変更する
-NAME.en=Change Effectiveness damage coefficient of the weapon
+NAME=武器の特効効果ダメージ係数を変更する(Editor)
+NAME.en=Change Effectiveness damage coefficient of the weapon(Editor)
 
 IF:0x2AA88=0x05 0x49 0x0A 0x78
 
@@ -29,5 +29,5 @@ INFO=双聖器の特効ダメージ係数を簡単に変更します。\r\n指�
 INFO.en=Change Effectiveness damage coefficient of Twin tome.\r\nAllows you to Change Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.
 
 
-NAME.zh=改变武器的特殊效果改变伤害系数
+NAME.zh=改变武器的特殊效果改变伤害系数(Editor)
 INFO.zh=轻松改变双胞胎神圣人物的特殊伤害系数。\r\n允许您更改每个指定项目ID的特殊损坏系数。\r\n除了神圣的宝藏之外你可以设置它，你可以设置它而不是双倍。

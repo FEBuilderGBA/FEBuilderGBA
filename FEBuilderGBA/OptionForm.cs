@@ -157,6 +157,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_create_nodoll_gba_sym, (int)create_nodoll_gba_sym());
             U.SelectedIndexSafety(func_overraide_simple_error_check, (int)overraide_simple_error_check());
             U.SelectedIndexSafety(func_alert_unk_event_code, (int)alert_unk_event_code());
+            U.SelectedIndexSafety(func_skillsystems_sanctuary_option, (int)skillsystems_sanctuary_option());
             U.SelectedIndexSafety(RunTestMessage, (int)U.atoi(Program.Config.at("RunTestMessage")));
 
             ChangeColorWriteButtonWhenChangingSetting();
@@ -220,6 +221,7 @@ namespace FEBuilderGBA
         }
         private void Save()
         {
+            ClearCache();
             Program.Config["emulator"] = emulator.Text;
             Program.Config["emulator2"] = emulator2.Text;
             Program.Config["sappy"] = sappy.Text;
@@ -314,6 +316,7 @@ namespace FEBuilderGBA
             Program.Config["func_create_nodoll_gba_sym"] = U.SelectValueComboboxText(func_create_nodoll_gba_sym.Text);
             Program.Config["func_overraide_simple_error_check"] = U.SelectValueComboboxText(func_overraide_simple_error_check.Text);
             Program.Config["func_alert_unk_event_code"] = U.SelectValueComboboxText(func_alert_unk_event_code.Text);
+            Program.Config["func_skillsystems_sanctuary_option"] = U.SelectValueComboboxText(func_skillsystems_sanctuary_option.Text);
             Program.Config["RunTestMessage"] = U.SelectValueComboboxText(RunTestMessage.Text);
 
             //configの保存
@@ -336,6 +339,7 @@ namespace FEBuilderGBA
             g_Cache_lint_text_skip_bug_enum = lint_text_skip_bug_enum.NoCache;
             g_Cache_lang = null;
             g_Cache_textencoding = textencoding_enum.NoChace;
+            g_skillsystems_sanctuary_option = skillsystems_sanctuary_option_enum.NoCache;
         }
 
         public static string EXESearch(string first_filter)
@@ -970,6 +974,23 @@ namespace FEBuilderGBA
             return (overraide_simple_error_check_enum)U.atoi(Program.Config.at("func_overraide_simple_error_check", "1"));
         }
 
+        public enum skillsystems_sanctuary_option_enum
+        {
+            Always = 0
+          , IfSkillSystemsInstalled = 1
+          , None = 2
+          , NoCache = 0xff
+        };
+        static skillsystems_sanctuary_option_enum g_skillsystems_sanctuary_option = skillsystems_sanctuary_option_enum.NoCache;
+        public static skillsystems_sanctuary_option_enum skillsystems_sanctuary_option()
+        {
+            if (g_skillsystems_sanctuary_option == skillsystems_sanctuary_option_enum.NoCache)
+            {
+                g_skillsystems_sanctuary_option = (skillsystems_sanctuary_option_enum)U.atoi(Program.Config.at("func_skillsystems_sanctuary_option", "0"));
+            }
+            return g_skillsystems_sanctuary_option;
+        }
+
         public static int alert_unk_event_code()
         {
             return (int)U.atoi(Program.Config.at("func_alert_unk_event_code", "1"));
@@ -1408,6 +1429,7 @@ namespace FEBuilderGBA
             X_EXPLAIN_MUSICTOOL.AccessibleDescription = R._("音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n");
             X_EXPLAIN_MID2AGB.AccessibleDescription = R._("Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。");
             X_EXPLAIN_SRCCODE.AccessibleDescription = R._("バニラのソースコードを簡単に確認するために利用する項目です。\r\nディフォルトではF10キーを押すとバニラのコードにアクセスできます。\r\nバニラのソースコードは数十万行になるので、テキストエディターには、大きなファイルを表示できるテキストエディタを指定してください。");
+            explain_func_skillsystems_sanctuary_option.AccessibleDescription = R._("スキル拡張パッチをインストールする領域を予約し保護するかどうかを設定します。\r\n「常に」(ディフォルト)は、その領域には一切干渉しないようにして保護します。\r\n「インストールされていれば保護」は、スキル拡張がインストールされていれば保護します。後からスキル拡張がインストールされる可能性もあるので推奨はしません。\r\n「保護しない」は、一切保護しません。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)

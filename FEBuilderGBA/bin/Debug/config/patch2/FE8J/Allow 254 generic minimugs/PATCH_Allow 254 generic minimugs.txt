@@ -1,5 +1,5 @@
-NAME=一般兵の顔画像を最大254個まで拡張する
-NAME.en=Allow 254 generic minimugs
+NAME=一般兵の顔画像を最大254個まで拡張する(Editor)
+NAME.en=Allow 254 generic minimugs(Editor)
 
 IF:0x005E70=0x00 0xB5 0xFF 0x21 0x08 0x40 0xC0 0x00
 
@@ -28,5 +28,5 @@ PALETTE=1
 INFO=一般兵の顔の上限を増やします。\r\n画像を追加するときには、画像とパレットのポインタを0にしてください。そうしないと上書きになります。
 MAX_EXPLANDS_SIZE=0xFE
 INFO.en=Increase the upper limit of the face of general soldiers.\r\nWhen adding an image, please set the pointer of image and palette to 0.Otherwise it will be overwritten.
-NAME.zh=扩展一般士兵的面部图像，最多可达254
+NAME.zh=扩展一般士兵的面部图像，最多可达254(Editor)
 INFO.zh=增加一般士兵面部的上限。\r\n添加图像时，请将图像和调色板的指针设置为0。否则它将被覆盖。

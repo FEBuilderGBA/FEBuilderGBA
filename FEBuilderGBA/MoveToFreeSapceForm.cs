@@ -613,30 +613,40 @@ namespace FEBuilderGBA
         //SkillSystems Reserve
         public static bool IsSkillReserve(ref uint addr)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+
+            OptionForm.skillsystems_sanctuary_option_enum skillsystems_sanctuary_option = OptionForm.skillsystems_sanctuary_option();
+            if (skillsystems_sanctuary_option == OptionForm.skillsystems_sanctuary_option_enum.None)
+            {
+                return false;
+            }
+            else if (skillsystems_sanctuary_option == OptionForm.skillsystems_sanctuary_option_enum.IfSkillSystemsInstalled)
             {
                 PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
                 if (skillsystem == PatchUtil.skill_system_enum.NO)
                 {//SkillSystemsをインストールしていない
                     return false;
                 }
+            }
 
-                if (Program.ROM.RomInfo.is_multibyte())
-                {//F00000 - F90000
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//F00000 - F90000
 
-                    if (addr >= 0xF00000 && addr < 0xF90000)
-                    {
-                        addr = 0xF90000;
-                        return true;
-                    }
+                if (addr >= 0xF00000 && addr < 0xF90000)
+                {
+                    addr = 0xF90000;
+                    return true;
                 }
-                else
-                {//1c1ec0 - C00000
-                    if (addr >= 0x1c1ec0 && addr < 0xB88560)
-                    {
-                        addr = 0xB88560;
-                        return true;
-                    }
+            }
+            else
+            {//1c1ec0 - C00000
+                if (addr >= 0x1c1ec0 && addr < 0xB88560)
+                {
+                    addr = 0xB88560;
+                    return true;
                 }
             }
             return false;

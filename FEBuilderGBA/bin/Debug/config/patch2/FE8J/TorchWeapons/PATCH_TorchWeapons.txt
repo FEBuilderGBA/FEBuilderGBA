@@ -1,5 +1,5 @@
-NAME=TorchWeapons 持っている範囲を照らす武器
-NAME.en=TorchWeapons
+NAME=TorchWeapons 持っている範囲を照らす武器(Editor)
+NAME.en=TorchWeapons(Editor)
 
 IF:0x17672=0x00 0x00 0x00 0x49 0x08 0x47
 
@@ -30,5 +30,5 @@ B1:DECIMAL=Add Range
 B2:DECIMAL=Add Range Theif
 B3=00
 
-NAME.zh=TorchWeapons照亮你所在地区的武器
+NAME.zh=TorchWeapons照亮你所在地区的武器(Editor)
 INFO.zh=握住此物品，即使在雾中也能保证可见度。\r\n可以保护的可见性范围由AddRange确定。\r\n即使您持有多个，结果也不会重叠。\r\n由于它从列表顶部匹配，请放置可以确保列表中最具可见性的项目。
