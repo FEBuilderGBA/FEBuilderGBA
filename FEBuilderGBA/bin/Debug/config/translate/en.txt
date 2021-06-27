@@ -13180,3 +13180,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:操作中のユニット
+Active Unit

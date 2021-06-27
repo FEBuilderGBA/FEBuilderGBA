@@ -13900,7 +13900,9 @@ r3=X tile position of menu of the right	{U}
 0808AC0C	Restart_AnimationTutorialTextDialogBox	{U}
 0808A8E4	AnimationTutorialTextDialogBox	{U}
 0808ACFC	AnimationTutorialTextDialogBox_Sub	{U}
-080C3770	在世界地图小地图上为下一个目的地画一\u200b\u200b个红旗。	{U}
-080C3A64	绘制世界地图迷你地图。	{U}
-080C8528	在世界地图小地图上为下一个目的地画一\u200b\u200b个红旗。	{J}
-080C881C	绘制世界地图迷你地图。	{J}
+080C3770	在世界地图小地图上为下一个目的地画一个红旗	{U}
+080C3A64	绘制世界地图迷你地图	{U}
+080C8528	在世界地图小地图上为下一个目的地画一个红旗	{J}
+080C881C	绘制世界地图迷你地图	{J}
+08074934	StartEfxNoDamageEffect	{J}
+08072450	StartEfxNoDamageEffect	{U}

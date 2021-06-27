@@ -49,7 +49,7 @@ namespace FEBuilderGBA
 
             InputFormRef.makeLinkEventHandler("", controls, this.BGM, this.BGMName, 0, "SONG", args);
             InputFormRef.makeJumpEventHandler(this.BGM, this.J_BGM, "SONG", args);
-
+            InputFormRef.markupJumpLabel(J_ACTIVEUNIT);
             InputFormRef.markupJumpLabel(RunningEventListBoxLabel);
 
             this.N_InputFormRef = new InputFormRef(this, "N_", 0, 0);
@@ -1588,6 +1588,8 @@ namespace FEBuilderGBA
             CurrentControlUnitRAMAddress = 0;
             CHEAT_UNIT_MEMORY_AND_NAME.Text = R._("ユニットが選択されていません");
             CHEAT_UNIT_MEMORY_AND_ICON.Image = null;
+            ETC_UNIT_MEMORY_AND_NAME.Text = R._("ユニットが選択されていません");
+            ETC_UNIT_MEMORY_AND_ICON.Image = null;
         }
 
         uint CurrentControlUnitRAMAddress;
@@ -1618,14 +1620,17 @@ namespace FEBuilderGBA
             uint uid = UnitForm.GetUnitIDByAddr(romUnitAddr);
             Bitmap iconBitmap = UnitForm.DrawUnitFacePictureByAddr(romUnitAddr, true);
             U.MakeTransparent(iconBitmap);
-            CHEAT_UNIT_MEMORY_AND_ICON.Image = iconBitmap;
-            CHEAT_UNIT_MEMORY_AND_NAME.Text = string.Format("{0} {1} //{2}->{3}->{4}"
-                ,U.ToHexString(uid)
-                ,name
+            string unitmemory_info = string.Format("{0} {1} //{2}->{3}->{4}"
+                , U.ToHexString(uid)
+                , name
                 , U.ToHexString8(control_unit_address)
                 , U.ToHexString8(unit_ram_address)
                 , U.ToHexString8(romUnitPointer)
                 );
+            CHEAT_UNIT_MEMORY_AND_ICON.Image = iconBitmap;
+            CHEAT_UNIT_MEMORY_AND_NAME.Text = unitmemory_info;
+            ETC_UNIT_MEMORY_AND_ICON.Image = iconBitmap;
+            ETC_UNIT_MEMORY_AND_NAME.Text = unitmemory_info;
 
             CurrentControlUnitRAMAddress = unit_ram_address;
 
@@ -2065,17 +2070,6 @@ namespace FEBuilderGBA
 
             bounds.Y += lineHeight;
             return new Size(bounds.X, bounds.Y);
-        }
-
-        private void PartyListBox_DoubleClick(object sender, EventArgs e)
-        {
-            int index = this.PartyListBox.SelectedIndex;
-            if (index < 0)
-            {
-                return ;
-            }
-
-            this.CurrentControlUnitRAMAddress = Program.ROM.RomInfo.workmemory_player_units_address() + (uint)index * 72;
         }
 
         private void PartyListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -3588,5 +3582,54 @@ namespace FEBuilderGBA
         {
             AddressList_SelectedIndexChanged(BattleRoundDataStruct, Program.ROM.RomInfo.workmemory_battleround_data_address(), BattleRoundDataList, BattleRoundDataAddress);
         }
+
+        private void ETC_UNIT_MEMORY_AND_NAME_DoubleClick(object sender, EventArgs e)
+        {
+            ETC_UNIT_MEMORY_AND_ICON_Click(sender, e);
+        }
+        private void J_ACTIVEUNIT_Click(object sender, EventArgs e)
+        {
+            ETC_UNIT_MEMORY_AND_ICON_Click(sender, e);
+        }
+
+        private void ETC_UNIT_MEMORY_AND_ICON_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnectShowError())
+            {
+                return;
+            }
+            if (!CheckUnitSelectAndError())
+            {
+                return;
+            }
+            Debug.Assert(U.is_02RAMPointer(CurrentControlUnitRAMAddress));
+            uint unitnumber = Program.RAM.u8(CurrentControlUnitRAMAddress + 0xB);
+            if (unitnumber < 0x40)
+            {//player
+                U.SelectedIndexSafety(PartyCombo, 0);
+            }
+            else if (unitnumber < 0x80)
+            {//NPC
+                U.SelectedIndexSafety(PartyCombo, 1);
+            }
+            else
+            {//Enenmy
+                U.SelectedIndexSafety(PartyCombo, 2);
+            }
+            uint top = GetShowRAMPartyUnitsAddr();
+            if (CurrentControlUnitRAMAddress < top)
+            {
+                return;
+            }
+            UpdateParty();
+            uint index = (CurrentControlUnitRAMAddress - top) / 72;
+            if (index >= PartyListBox.Items.Count)
+            {
+                return;
+            }
+            U.SelectedIndexSafety(PartyListBox, index);
+            ShowPartyFloatingControlpanel();
+        }
+
     }
 }

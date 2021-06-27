@@ -13944,7 +13944,9 @@ r3=X tile position of menu of right	{U}
 0808AC0C	Restart_AnimationTutorialTextDialogBox	{U}
 0808A8E4	AnimationTutorialTextDialogBox	{U}
 0808ACFC	AnimationTutorialTextDialogBox_Sub	{U}
-080C3770	Draw a red flag for the next destination on the Worldmap MiniMap.	{U}
-080C3A64	Draw a Worldmap MiniMap.	{U}
-080C8528	Draw a red flag for the next destination on the Worldmap MiniMap.	{J}
-080C881C	Draw a Worldmap MiniMap.	{J}
+080C3770	Draw a red flag for the next destination on the Worldmap MiniMap	{U}
+080C3A64	Draw a Worldmap MiniMap	{U}
+080C8528	Draw a red flag for the next destination on the Worldmap MiniMap	{J}
+080C881C	Draw a Worldmap MiniMap	{J}
+08074934	CheckNoDamageEtc	{J}
+08072450	CheckNoDamageEtc	{U}

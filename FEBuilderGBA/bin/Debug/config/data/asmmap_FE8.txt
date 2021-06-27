@@ -13936,3 +13936,5 @@
 080C3A64	WorldmapのMiniMapを描画	{U}
 080C8528	WorldmapのMiniMapに次の目的地の赤いフラグを描画する	{J}
 080C881C	WorldmapのMiniMapを描画	{J}
+08074934	StartEfxNoDamageEffect	{J}
+08072450	StartEfxNoDamageEffect	{U}
