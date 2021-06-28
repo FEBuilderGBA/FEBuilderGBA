@@ -1397,5 +1397,22 @@ namespace FEBuilderGBA
             InputFormRef.ReloadAddressList();
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
         }
+        public static bool IsOtherGameInst(uint addr)
+        {
+            addr = U.toOffset(addr);
+
+            //楽器0がドラムで自己参照であればtrue.
+            uint type = Program.ROM.u8(addr + 0);
+            if (type != 0x80)
+            {
+                return false;
+            }
+            uint drum_addr = Program.ROM.p32(addr + 4);
+            if (addr != drum_addr)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

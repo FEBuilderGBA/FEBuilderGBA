@@ -484,6 +484,12 @@ namespace FEBuilderGBA
                     , R._("SongID {0}の楽器ポインタ「{1}」は無効です。", U.To0xHexString(songid), U.To0xHexString(instPointer)), songid));
                 return;
             }
+            //他のゲームからインポートした楽器は、複雑すぎて誤爆するのでEOTの検出するの辞めようと思いました
+            bool othergame_song = SongInstrumentForm.IsOtherGameInst(instPointer);
+            if (othergame_song)
+            {
+                isMapBGM = false;
+            }
 
             //トラックのポインタチェック
             for (uint tracknumber = 0; tracknumber < trackCount; tracknumber++)

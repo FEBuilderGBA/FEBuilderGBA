@@ -3295,6 +3295,14 @@ namespace FEBuilderGBA
                 {
                     checkTIE = false;
                 }
+                else if (c.type == 0xbd) //VOICE
+                {//楽器切替でもTIEを落としてもいいかな
+                    checkTIE = false;
+                }
+                else if (c.type == 0xb3) //PATT
+                {//PATT内でEOTされているかもしれないので検出しない
+                    checkTIE = false;
+                }
                 else if (c.type == 0xb2)
                 {//GOTO
                     if (isMapBGM && checkTIE && !IsEnvSound(song_id) )
