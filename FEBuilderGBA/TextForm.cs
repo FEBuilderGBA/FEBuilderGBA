@@ -3815,6 +3815,15 @@ namespace FEBuilderGBA
             return true;
         }
 
+        private void AddressList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 'F')
+            {
+                TextTabControl.SelectedTab = SearchTabPage;
+                SearchTextBox.Focus();
+            }
+        }
+
 
     }
 }

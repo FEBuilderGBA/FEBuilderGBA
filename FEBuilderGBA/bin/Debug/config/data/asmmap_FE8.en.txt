@@ -5171,7 +5171,7 @@ r3=X tile position of menu of right	{U}
 080257C4	MakeTargetListForDoorAndBridges	{J}
 08025364	MakeTargetListForSteal	{J}
 08025DCC	TryAddUnitToHealTargetList	{J}
-08025364	MakeTargetListForAdjacentHeal	{J}
+08025E20	MakeTargetListForAdjacentHeal	{J}
 08025E54	MakeTargetListForRangedHeal	{J}
 08025EA0	AddToTargetListIfNotAllied	{J}
 08025EE8	MakeTargetListForFuckingNightmare	{J}
@@ -13948,5 +13948,3 @@ r3=X tile position of menu of right	{U}
 080C3A64	Draw a Worldmap MiniMap	{U}
 080C8528	Draw a red flag for the next destination on the Worldmap MiniMap	{J}
 080C881C	Draw a Worldmap MiniMap	{J}
-08074934	CheckNoDamageEtc	{J}
-08072450	CheckNoDamageEtc	{U}

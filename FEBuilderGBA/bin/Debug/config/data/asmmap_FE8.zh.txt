@@ -5105,7 +5105,7 @@ r3=X tile position of menu of the right	{U}
 080257C4	MakeTargetListForDoorAndBridges	{J}
 08025364	MakeTargetListForSteal	{J}
 08025DCC	TryAddUnitToHealTargetList	{J}
-08025364	MakeTargetListForAdjacentHeal	{J}
+08025E20	MakeTargetListForAdjacentHeal	{J}
 08025E54	MakeTargetListForRangedHeal	{J}
 08025EA0	AddToTargetListIfNotAllied	{J}
 08025EE8	MakeTargetListForFuckingNightmare	{J}
@@ -13904,5 +13904,3 @@ r3=X tile position of menu of the right	{U}
 080C3A64	绘制世界地图迷你地图	{U}
 080C8528	在世界地图小地图上为下一个目的地画一个红旗	{J}
 080C881C	绘制世界地图迷你地图	{J}
-08074934	StartEfxNoDamageEffect	{J}
-08072450	StartEfxNoDamageEffect	{U}

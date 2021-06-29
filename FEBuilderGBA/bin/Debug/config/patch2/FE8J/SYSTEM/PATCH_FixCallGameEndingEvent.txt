@@ -6,11 +6,15 @@ INFO.en=Fix the problem that the ending is not called even if MNC4 is issued whe
 
 
 //アドレスパッチとして実装します
-TYPE=ADDR
+TYPE=SWITCH
 TAG=#ENGINE
 
-ADDRESS=0x9E1C
-COMBO=Default|0x06 0xE0|Fix|0x02 0xE0
+DETERMINATION_ADDRESS=0x9E0E
+COMBO=Default|OFF|Fix|ONN
+OFF:0x9E0E=0x0D 0xE0
+OFF:0x9E1C=0x06 0xE0
+ONN:0x9E0E=0x01 0xE0
+ONN:0x9E1C=0x06 0xE0
 
 AUTHOR=7743
 NAME.zh=即使不进行编织，也会显示Eliic ED。
