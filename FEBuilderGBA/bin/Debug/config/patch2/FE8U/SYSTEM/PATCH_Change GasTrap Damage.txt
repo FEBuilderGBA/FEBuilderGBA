@@ -1,0 +1,19 @@
+
+NAME=毒ガストラップのダメージ量
+NAME.en=Gas Trap Damage Value
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2E33C
+DEFAULT=3
+HEX=FALSE
+
+AUTHOR=7743
+
+INFO=毒ガストラップが直撃した時のダメージ量を設定します。ディフォルトは3です\r\nユニットは毒状態になり、継続して毒ダメージを受けます。\r\nこのパッチで設定できるのは、一番最初に毒ガスを受けた時のダメージ量です。\r\nこの値はRAMのトラップ構造体に書き込まれ、セーブデータにも書き込まれるため、値を変更した後は、その章をリスタートしてください。
+INFO.en=Sets the amount of damage that a poison gas trap will do when it makes a direct hit. Default is 3.\r\nThe unit will become poisoned and take continuous poison damage.\r\nWhat you can set in this patch is the amount of damage when the unit is first hit by the poison gas.\r\nThis value is written to the trap structure in RAM and also to the saved data, so after changing the value, restart the chapter.
+INFO.zh=Sets the amount of damage that a poison gas trap will do when it makes a direct hit. Default is 3.\r\nThe unit will become poisoned and take continuous poison damage.\r\nWhat you can set in this patch is the amount of damage when the unit is first hit by the poison gas.\r\nThis value is written to the trap structure in RAM and also to the saved data, so after changing the value, restart the chapter.
+
+NAME.zh=Gas Trap Damage Value

@@ -11,7 +11,8 @@ DEFAULT=10
 HEX=FALSE
 
 AUTHOR=Crazycolorz5
-
-
+INFO=フレイボムで受けるダメージ量です。ディフォルトは10です。\r\n地雷トラップと、炎トラップのダメージでも参照されます。\r\nただし、ダメージ床トラップは別です。そちらを変更したい場合は、別のパッチを利用してください。
+INFO.en=The amount of damage received by Bomb. Default is 10.\r\nThis is also referenced in Mine trap and Instant Fire trap damage.\r\nHowever, Fire Trap are different. If you want to change that, please use a different patch.
+INFO.zh=The amount of damage received by Bomb. Default is 10.\r\nThis is also referenced in Mine trap and Instant Fire trap damage.\r\nHowever, Fire Trap are different. If you want to change that, please use a different patch.
 
 NAME.zh=（地雷）的伤害

@@ -1,0 +1,18 @@
+
+NAME=神の矢トラップのダメージ量
+NAME.en=Arrow Trap Damage Value
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2E290
+DEFAULT=10
+HEX=FALSE
+
+AUTHOR=7743
+INFO=神の矢トラップで受けるダメージ量です。ディフォルトは10です。\r\nこの値はRAMのトラップ構造体に書き込まれ、セーブデータにも書き込まれるため、値を変更した後は、その章をリスタートしてください。
+INFO.en=The amount of damage received by Vertical Arrow Trap. Default is 10.\r\nThis value is written to the trap structure in RAM and also to the saved data, so after changing the value, restart the chapter.
+INFO.zh=The amount of damage received by Vertical Arrow Trap. Default is 10.\r\nThis value is written to the trap structure in RAM and also to the saved data, so after changing the value, restart the chapter.
+
+NAME.zh=Arrow Trap Damage Value

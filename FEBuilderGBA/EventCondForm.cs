@@ -102,10 +102,11 @@ namespace FEBuilderGBA
             TRAP_L_0_COMBO.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
             TRAP_L_0_COMBO.AddIcon(0x1, ImageSystemIconForm.BaristaIcon()); //01=アーチ配置
             TRAP_L_0_COMBO.AddIcon(0x4, ImageSystemIconForm.Cursol()); //04=ダメージ床
+            TRAP_L_0_COMBO.AddIcon(0x5, ImageSystemIconForm.Cursol()); //05=毒ガス
             TRAP_L_0_COMBO.AddIcon(0x7, ImageSystemIconForm.Cursol()); //07=神の矢
             TRAP_L_0_COMBO.AddIcon(0x8, ImageSystemIconForm.Cursol()); //08=炎
-            TRAP_L_0_COMBO.AddIcon(0x8, ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id())); //0B=地雷
-            TRAP_L_0_COMBO.AddIcon(0x8, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x53, 2, true)); //0C=ゴーゴンの卵
+            TRAP_L_0_COMBO.AddIcon(0xB, ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id())); //0B=地雷
+            TRAP_L_0_COMBO.AddIcon(0xC, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x53, 2, true)); //0C=ゴーゴンの卵
 
             OBJECT_N05_L_10_COMBO.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
             OBJECT_N06_L_10_COMBO.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
@@ -4199,11 +4200,11 @@ namespace FEBuilderGBA
             {//ダメージ床 or 炎
                 if (type == 0x04)
                 {
-                    text = U.ToHexString(type) + ":" + R._("04=ダメージ床");
+                    text = R._("04=ダメージ床");
                 }
                 else
                 {
-                    text = U.ToHexString(type) + ":" + R._("08=炎");
+                    text = R._("08=炎");
                 }
                 int x = (int)Program.ROM.u8(ar.addr + 1);
                 int y = (int)Program.ROM.u8(ar.addr + 2);
@@ -4211,25 +4212,25 @@ namespace FEBuilderGBA
             }
             else if (type == 0x0B)
             {//地雷
-                text = U.ToHexString(type) + ":" + R._("0B=地雷");
+                text = R._("0B=地雷");
                 bitmap = ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id());
                 U.MakeTransparent(bitmap);
             }
             else if (type == 0x0C && Program.ROM.RomInfo.version() == 8)
             {//ゴーゴンの卵
-                text = U.ToHexString(type) + ":" + R._("0C=ゴーゴンの卵");
+                text = R._("0C=ゴーゴンの卵");
                 bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x53, 2, true);
                 U.MakeTransparent(bitmap);
             }
             else if (type == 0x05)
             {
-                text = U.ToHexString(type) + ":" + R._("05=毒ガス");
+                text = R._("05=毒ガス");
                 bitmap = ImageSystemIconForm.Cursol();
                 U.MakeTransparent(bitmap);
             }
             else if (type == 0x07)
             {
-                text = U.ToHexString(type) + ":" + R._("07=神の矢");
+                text = R._("07=神の矢");
                 bitmap = ImageSystemIconForm.Cursol();
                 U.MakeTransparent(bitmap);
             }
