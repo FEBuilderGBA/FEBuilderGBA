@@ -1,0 +1,18 @@
+NAME=C85 0x3B 奏でるで笛の音(SongID:0x2D4)を再生するように修正する
+NAME.en=Modify C85 0x3B Play to play whistle sound (SongID: 0x2D4)
+NAME.zh=Modify C85 0x3B Play to play whistle sound (SongID: 0x2D4)
+
+INFO=FE8では、Command85 0x3Bは、Command85として処理しないという設定になっています。\r\nそのためFE7からバードを移植しても笛の音が再生されません。\r\nこのパッチはそれを修正し、0x3BをCommand85として処理するように変更します。
+INFO.en=In FE8, Command85 0x3B is set to not be processed as Command85.\r\nTherefore, porting the bird from FE7 will not play the whistle sound.\r\nThis patch fixes that and changes it so that 0x3B is handled as Command85.
+INFO.zh=In FE8, Command85 0x3B is set to not be processed as Command85.\r\nTherefore, porting the bird from FE7 will not play the whistle sound.\r\nThis patch fixes that and changes it so that 0x3B is handled as Command85.
+HINT=バード
+HINT.en=bard
+HINT.zh=bard
+
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x58D30
+COMBO=Default: Not Command85|0xCC 0x96 0x05 0x08|Fix: Processed Command85|0x98 0x96 0x05 0x08
+AUTHOR=7743

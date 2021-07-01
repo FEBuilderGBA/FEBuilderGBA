@@ -11430,9 +11430,9 @@ r3=X tile position of menu of the right	{U}
 080BC2A4	绘制一个清晰的清单	{J}
 08024608	使用恢复棒时的绘图屏幕	{J}
 08024658	使用恢复棒时的绘图屏幕	{U}
-080313FC	从GAMECTRL调用捕获评估	{J}
+080313FC	MNC4 从GAMECTRL调用捕获评估	{J}
 080A858C	子程序给予武术运动员的名字和战略评估	{J}
-080314B0	从GAMECTRL调用捕获评估	{U}
+080314B0	MNC4 从GAMECTRL调用捕获评估	{U}
 080A3B48	子程序给予武术运动员的名字和战略评估	{U}
 08009CF8	如果设置了抑制标志0x03，则写入清除转数	{J}
 08009D98	如果设置了抑制标志0x03，则写入清除转数	{U}
@@ -13904,3 +13904,11 @@ r3=X tile position of menu of the right	{U}
 080C3A64	绘制世界地图迷你地图	{U}
 080C8528	在世界地图小地图上为下一个目的地画一个红旗	{J}
 080C881C	绘制世界地图迷你地图	{J}
+08098720	AtMenu_UnLockGame	{J}
+0809643C	AtMenu_UnLockGame	{U}
+08098768	CallHasConvoyAccess	{J}
+08096484	CallHasConvoyAccess	{U}
+080B8F44	OnHoverCursolBuyInShop	{J}
+080B8E90	OnHoverCursolSellInShop	{J}
+080B43BC	OnHoverCursolBuyInShop	{U}
+080B4308	OnHoverCursolSellInShop	{U}

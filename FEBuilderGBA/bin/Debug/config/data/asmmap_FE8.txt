@@ -11603,7 +11603,7 @@
 080D39AC	辞書の画面を描画する	{J}
 080B9774	お店画面の読込	{J}
 08024608	回復の杖を使った時の画面を描画	{J}
-080313FC	GAMECTRLから呼ばれる攻略評価	{J}
+080313FC	MNC4時にGAMECTRLから呼ばれる攻略評価	{J}
 080A858C	軍師名と攻略評価を出すサブルーチン	{J}
 08009CF8	制圧フラグ0x03が立っていたら、クリアターン数を書き込む	{J}
 080D13F0	見習いの自動CC開始ルーチン	{J}
@@ -11644,7 +11644,7 @@
 080CECB0	辞書の画面を描画する	{U}
 080B4BEC	お店画面の読込	{U}
 08024658	回復の杖を使った時の画面を描画	{U}
-080314B0	GAMECTRLから呼ばれる攻略評価	{U}
+080314B0	MNC4時にGAMECTRLから呼ばれる攻略評価	{U}
 080A3B48	軍師名と攻略評価を出すサブルーチン	{U}
 08009D98	制圧フラグ0x03が立っていたら、クリアターン数を書き込む	{U}
 080CC6D4	見習いの自動CC開始ルーチン	{U}
@@ -13936,3 +13936,11 @@
 080C3A64	WorldmapのMiniMapを描画	{U}
 080C8528	WorldmapのMiniMapに次の目的地の赤いフラグを描画する	{J}
 080C881C	WorldmapのMiniMapを描画	{J}
+08098720	AtMenu_UnLockGame	{J}
+0809643C	AtMenu_UnLockGame	{U}
+08098768	CallHasConvoyAccess	{J}
+08096484	CallHasConvoyAccess	{U}
+080B8F44	OnHoverCursolBuyInShop	{J}
+080B8E90	OnHoverCursolSellInShop	{J}
+080B43BC	OnHoverCursolBuyInShop	{U}
+080B4308	OnHoverCursolSellInShop	{U}

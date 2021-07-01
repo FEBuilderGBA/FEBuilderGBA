@@ -3,6 +3,8 @@ NAME=進撃開始の背景
 NAME.en=PreparationsBackground
 NAME.zh=系统_进击开始的背景
 
+INFO=進撃準備の背景
+
 //画像パッチとして実装します
 TYPE=IMAGE
 TAG=#IMAGE

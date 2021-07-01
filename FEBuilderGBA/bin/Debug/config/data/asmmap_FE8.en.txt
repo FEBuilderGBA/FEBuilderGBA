@@ -11473,9 +11473,9 @@ r3=X tile position of menu of right	{U}
 080BC2A4	Draw a clear-turn list	{J}
 08024608	Drawing screen when using recovery wand	{J}
 08024658	Drawing screen when using recovery wand	{U}
-080313FC	Strategy evaluation called from GAMECTRL	{J}
+080313FC	When Using MNC4, Strategy evaluation called from GAMECTRL	{J}
 080A858C	Subroutine to give martial player name and strategy evaluation	{J}
-080314B0	Strategy evaluation called from GAMECTRL	{U}
+080314B0	When Using MNC4, Strategy evaluation called from GAMECTRL	{U}
 080A3B48	Subroutine to give martial player name and strategy evaluation	{U}
 08009CF8	If suppression flag 0x03 is set, write number of clear turns	{J}
 08009D98	If suppression flag 0x03 is set, write number of clear turns	{U}
@@ -13944,7 +13944,15 @@ r3=X tile position of menu of right	{U}
 0808AC0C	Restart_AnimationTutorialTextDialogBox	{U}
 0808A8E4	AnimationTutorialTextDialogBox	{U}
 0808ACFC	AnimationTutorialTextDialogBox_Sub	{U}
-080C3770	Draw a red flag for the next destination on the Worldmap MiniMap	{U}
-080C3A64	Draw a Worldmap MiniMap	{U}
-080C8528	Draw a red flag for the next destination on the Worldmap MiniMap	{J}
-080C881C	Draw a Worldmap MiniMap	{J}
+080C3770	Draw red flag for the next destination on the Worldmap MiniMap	{U}
+080C3A64	Draw Worldmap MiniMap	{U}
+080C8528	Draw red flag for the next destination on the Worldmap MiniMap	{J}
+080C881C	Draw Worldmap MiniMap	{J}
+08098720	AtMenu_UnLockGame	{J}
+0809643C	AtMenu_UnLockGame	{U}
+08098768	CallHasConvoyAccess	{J}
+08096484	CallHasConvoyAccess	{U}
+080B8F44	OnHoverCursolBuyInShop	{J}
+080B8E90	OnHoverCursolSellInShop	{J}
+080B43BC	OnHoverCursolBuyInShop	{U}
+080B4308	OnHoverCursolSellInShop	{U}

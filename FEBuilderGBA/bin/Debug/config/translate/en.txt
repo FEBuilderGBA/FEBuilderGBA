@@ -1210,6 +1210,9 @@ Oldest↓
 :汎用
 General Purpose
 
+:操作中のユニット
+Active Unit
+
 :編
 Route
 
@@ -9322,8 +9325,8 @@ Sanctuary of skill expansion
 :1=インストールされていれば保護
 1=Protect if installed
 
-:9=保護しない
-9=Do not protect
+:2=保護しない
+2=Do not protect.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -11335,6 +11338,30 @@ Text ID
 :検索ワード
 Search
 
+:0=すべてエクスポートする
+0=Export Everything
+
+:1=ユニットだけエクスポートする
+1=Export Only Units
+
+:2=クラスだけエクスポートする
+2=Export Only Classes
+
+:3=アイテムだけエクスポートする
+3=Export Only Items
+
+:4=サウンドルームだけエクスポートする
+4=Export Only the Sound Room
+
+:5=支援会話だけエクスポートする
+5=Export Only Support Conversations
+
+:6=スキル関係だけエクスポートする
+6=Export Only Skills
+
+:エクスポート制限
+Export Limit
+
 :すべてのテキストをファイルに取り出して保存したり、ファイルから読みこむことができます。\r\n文字列の置換を行いたい場合は、この機能を利用してください。
 Use "Export All Text" to dump the game's text to a file.\r\nUse "Import All Text" to apply all text from a file.\r\nThis function replaces text based on ID.
 
@@ -11397,30 +11424,6 @@ Where this text is used
 
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are some references from programs and patches that cannot be detected.
-
-:エクスポート制限
-Export Limit
-
-:0=すべてエクスポートする
-0=Export Everything
-
-:1=ユニットだけエクスポートする
-1=Export Only Units
-
-:2=クラスだけエクスポートする
-2=Export Only Classes
-
-:3=アイテムだけエクスポートする
-3=Export Only Items
-
-:4=サウンドルームだけエクスポートする
-4=Export Only the Sound Room
-
-:5=支援会話だけエクスポートする
-5=Export Only Support Conversations
-
-:6=スキル関係だけエクスポートする
-6=Export Only Skills
 
 :参照される場所について説明してください
 Please explain where it is referenced.
@@ -13180,5 +13183,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:操作中のユニット
-Active Unit
