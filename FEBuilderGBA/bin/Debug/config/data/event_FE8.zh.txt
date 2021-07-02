@@ -538,8 +538,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	向WMAP发出的人物移动[YY
 4035XXXXYYYY0000	Change [XXXX:UNIT:Unit]'s class to [YYYY:CLASS:Class](RECLASS)	weapon ranks, stats, etc stay the same.
 4035XXXX0000YYYY	Change [XXXX:UNIT:Unit]'s class to [YYYY:UNIT:Ref Unit]'s default class(RECLASS_FROMCHAR)
 4135XXXXYYYY0000	Switch [XXXX:UNIT:Unit1]'s class to [YYYY:UNIT:Unit2]'s class(SWITCH_CLASSES)	(the first unit will gain the *default* class of the second unit, while the second unit *will* get the class the first unit was in beforehand)
-40050B00XXXXYYYY2034FEFF	Remove unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
-40050B00XXXXYYYY2134FEFF	Rejoin unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to the party. Sets departure flag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
+40050B00XXXXYYYY2034FEFF	Remove unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] from the party. Sets Escaped status bitflag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
+40050B00XXXXYYYY2134FEFF	Rejoin unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to the party. Sets Escaped status bitflag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
 40050B00XXXXYYYY2234FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Player(CUSA)	{UNITPERSOLNAL}
 40050B00XXXXYYYY2434FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Enemy(CUSE)	{UNITPERSOLNAL}
 40050B00XXXXYYYY2334FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to NPC(CUSN)	{UNITPERSOLNAL}

@@ -497,9 +497,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
-2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
+2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets Escaped status bitflag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
-2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off. Used for returning party members.(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
+2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets Escaped status bitflag to off. Used for returning party members.(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
 40050B00XXXXYYYY2F34FEFF	Erase unit at coordinates [XXXX:MAPX:X][YYYY:MAPY:Y]	@WARNING_DISA
 40050300XXXX000022370000	Take [XXXX:DECIMAL:GOLD] gold from the player(GIVETOSLOT3)	{GOLD}	{ITME}
 40050200XXXXXXXX40050300YYYY0000400A00004405A008	Ending scene 1 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{U}
@@ -544,8 +544,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 4035XXXX0000YYYY	Change [XXXX:UNIT:Unit]'s class to [YYYY:UNIT:Ref Unit]'s default class(RECLASS_FROMCHAR)
 4135XXXXYYYY0000	Switch [XXXX:UNIT:Unit1]'s class to [YYYY:UNIT:Unit2]'s class(SWITCH_CLASSES)	(the first unit will gain the *default* class of the second unit, while the second unit *will* get the class the first unit was in beforehand)
 
-40050B00XXXXYYYY2034FEFF	Remove unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
-40050B00XXXXYYYY2134FEFF	Rejoin unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to the party. Sets departure flag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
+40050B00XXXXYYYY2034FEFF	Remove unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] from the party. Sets Escaped status bitflag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
+40050B00XXXXYYYY2134FEFF	Rejoin unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to the party. Sets Escaped status bitflag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
 40050B00XXXXYYYY2234FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Player(CUSA)	{UNITPERSOLNAL}
 40050B00XXXXYYYY2434FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Enemy(CUSE)	{UNITPERSOLNAL}
 40050B00XXXXYYYY2334FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to NPC(CUSN)	{UNITPERSOLNAL}
