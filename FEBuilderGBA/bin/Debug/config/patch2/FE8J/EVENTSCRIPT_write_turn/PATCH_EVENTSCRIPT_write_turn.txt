@@ -20,5 +20,7 @@ EVENTSCRIPT:1.zh=400D0000{$L1:write_turn.dmp}	写清楚的转弯号码
 BIN:$FREEAREA:1=write_turn.dmp
 //既存のターン数書き込みルーチンを飛ばす
 BIN:0x08009D0E=08009D0E_nop.dmp
+//MNC4でターン数が記録される部分も飛ばします
+BIN:0x08031402=08031402_MNC4_RegisterChapterTimeAndTurnCount_nop.dmp
 
 AUTHOR=7743

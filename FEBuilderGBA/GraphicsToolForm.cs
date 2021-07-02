@@ -19,6 +19,7 @@ namespace FEBuilderGBA
 
             this.ImageOption.SelectedIndex = 0;
             this.TSAOption.SelectedIndex = 0;
+            this.PaletteOption.SelectedIndex = 0;
             this.KeepTSAComboBox.SelectedIndex = 0;
 
             this.FoundImages = FindImage();
@@ -343,6 +344,18 @@ namespace FEBuilderGBA
                 image = Program.ROM.Data;
                 image_pos = (int)U.toOffset((uint)Image.Value);
             }
+            byte[] palette;
+            if (PaletteOption.SelectedIndex == 1)
+            {//lz77 palette
+                palette = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)PALETTE.Value));
+                uint palette_offset = ToPaletteOffset(0, (uint)PALETTENO.Value);
+                palette = U.subrange(palette, palette_offset, palette_offset + (0x20 * 16));
+            }
+            else
+            {//通常のパレット
+                uint palette_addr = ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value);
+                palette = Program.ROM.getBinaryData(palette_addr , 0x20 * 16);
+            }
 
             byte[] tsa;
             int tsa_pos;
@@ -358,8 +371,8 @@ namespace FEBuilderGBA
                         , (int)PicHeight.Value * 8
                         , image
                         , image_pos
-                        , Program.ROM.Data
-                        , (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value)
+                        , palette
+                        , 0
                         );
                     this.USE_PALETTE_NUMBER.Text = "16";
                 }
@@ -369,8 +382,8 @@ namespace FEBuilderGBA
                         , (int)PicHeight.Value * 8
                         , image
                         , image_pos
-                        , Program.ROM.Data
-                        , (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value)
+                        , palette
+                        , 0
                         , 0
                         );
                     this.USE_PALETTE_NUMBER.Text = ImageUtil.GetPalette16Count(bitmap).ToString();
@@ -395,8 +408,8 @@ namespace FEBuilderGBA
                         , (int)PicHeight.Value * 8
                         , image
                         , image_pos
-                        , Program.ROM.Data
-                        , (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value)
+                        , palette
+                        , 0
                         , tsa
                         , tsa_pos
                         );
@@ -408,8 +421,8 @@ namespace FEBuilderGBA
                         , (int)PicHeight.Value * 8
                         , image
                         , image_pos
-                        , Program.ROM.Data
-                        , (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value)
+                        , palette
+                        , 0
                         , tsa
                         , tsa_pos
                         , 0
@@ -432,12 +445,12 @@ namespace FEBuilderGBA
                 Bitmap bitmap;
                 if (ImageOption.SelectedIndex == 3)
                 {///256
-                    bitmap = ImageUtil.ByteToImage256TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage256TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = "16";
                 }
                 else
                 {
-                    bitmap = ImageUtil.ByteToImage16TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage16TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = ImageUtil.GetPalette16CountForTSA(tsa, (uint)tsa_pos + 2, (uint)(PicWidth.Value * PicHeight.Value)).ToString();
                 }
                 X_BG_PIC.Image = U.Zoom(bitmap,ZoomComboBox.SelectedIndex);
@@ -451,12 +464,12 @@ namespace FEBuilderGBA
                 Bitmap bitmap;
                 if (ImageOption.SelectedIndex == 3)
                 {///256
-                    bitmap = ImageUtil.ByteToImage256TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage256TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = "16";
                 }
                 else
                 {
-                    bitmap = ImageUtil.ByteToImage16TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage16TileHeaderTSA((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = ImageUtil.GetPalette16CountForTSA(tsa, (uint)tsa_pos + 2, (uint)(PicWidth.Value * PicHeight.Value)).ToString();
                 }
                 X_BG_PIC.Image = U.Zoom(bitmap,ZoomComboBox.SelectedIndex);
@@ -470,12 +483,12 @@ namespace FEBuilderGBA
                 Bitmap bitmap;
                 if (ImageOption.SelectedIndex == 3)
                 {///256
-                    bitmap = ImageUtil.ByteToImage256Tile((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage256Tile((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = "16";
                 }
                 else
                 {
-                    bitmap = ImageUtil.ByteToImage16Tile((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, Program.ROM.Data, (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value), tsa, tsa_pos);
+                    bitmap = ImageUtil.ByteToImage16Tile((int)PicWidth.Value * 8, (int)PicHeight.Value * 8, image, image_pos, palette, 0, tsa, tsa_pos);
                     this.USE_PALETTE_NUMBER.Text = ImageUtil.GetPalette16CountForTSA(tsa, (uint)tsa_pos, (uint)(PicWidth.Value * PicHeight.Value)).ToString();
                 }
                 X_BG_PIC.Image = U.Zoom(bitmap, ZoomComboBox.SelectedIndex);
@@ -490,8 +503,8 @@ namespace FEBuilderGBA
                     , (int)PicHeight.Value * 8
                     , image
                     , image_pos
-                    , Program.ROM.Data
-                    , (int)ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value)
+                    , palette
+                    , 0
                     , tsa
                     , tsa_pos
                     );
@@ -1012,6 +1025,12 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (PaletteOption.SelectedIndex == 1)
+            {
+                R.ShowStopError("lz77パレットなので変更できません。");
+                return;
+            }
+
             ImagePalletForm f = (ImagePalletForm)InputFormRef.JumpForm<ImagePalletForm>(U.NOT_FOUND);
 
             int usePaletteNumber = (int)U.atoi(USE_PALETTE_NUMBER.Text);
@@ -1158,6 +1177,12 @@ namespace FEBuilderGBA
 
             this.Image.Focus();
         }
+
+        private void PaletteType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ImageOption_SelectedIndexChanged(sender, e);
+        }
+
 
 
     }

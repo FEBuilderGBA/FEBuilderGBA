@@ -2816,7 +2816,7 @@ namespace FEBuilderGBA
             }
             if (arg1 == "DICNAME1")
             {
-                return CheckOneLineTextMessage(text, 10 * 8, 1 * 16, true);
+                return CheckOneLineTextMessage(text, 142, 1 * 16, true);
             }
             if (arg1 == "MENUNAME1")
             {

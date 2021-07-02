@@ -13912,3 +13912,7 @@ r3=X tile position of menu of the right	{U}
 080B8E90	OnHoverCursolSellInShop	{J}
 080B43BC	OnHoverCursolBuyInShop	{U}
 080B4308	OnHoverCursolSellInShop	{U}
+0801183C	CreateNotifyEventCommandPopup	{J}
+08011750	CreateNotifyEventCommandPopup	{U}
+030005C8	:030005E8	PopupWorkForCreateNotifyEventCommandPopup	{J}
+030005D0	:030005F0	PopupWorkForCreateNotifyEventCommandPopup	{U}

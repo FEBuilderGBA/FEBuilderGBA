@@ -33,6 +33,7 @@
             this.ImageOption = new System.Windows.Forms.ComboBox();
             this.TSAOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.Image = new System.Windows.Forms.NumericUpDown();
             this.TSA = new System.Windows.Forms.NumericUpDown();
             this.PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -60,13 +61,14 @@
             this.YYCHARMODEPAgeUp = new System.Windows.Forms.Button();
             this.YYCHARMODEPAgeDown = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.PaletteOption = new System.Windows.Forms.ComboBox();
             this.SecondImagePanel = new System.Windows.Forms.Panel();
             this.Image2 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.KeepTSAComboBox = new System.Windows.Forms.ComboBox();
-            this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTENO)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TSA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE)).BeginInit();
@@ -78,7 +80,6 @@
             this.ControlPanel.SuspendLayout();
             this.SecondImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,6 +151,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(808, 491);
             this.panel1.TabIndex = 71;
+            // 
+            // X_BG_PIC
+            // 
+            this.X_BG_PIC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_BG_PIC.Location = new System.Drawing.Point(0, 2);
+            this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_BG_PIC.Name = "X_BG_PIC";
+            this.X_BG_PIC.Size = new System.Drawing.Size(388, 242);
+            this.X_BG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.X_BG_PIC.TabIndex = 67;
+            this.X_BG_PIC.TabStop = false;
             // 
             // Image
             // 
@@ -495,6 +510,7 @@
             // 
             this.ControlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlPanel.Controls.Add(this.PaletteOption);
             this.ControlPanel.Controls.Add(this.SecondImagePanel);
             this.ControlPanel.Controls.Add(this.KeepTSAComboBox);
             this.ControlPanel.Controls.Add(this.YYCHARMODEPAgeDown);
@@ -525,6 +541,20 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(499, 491);
             this.ControlPanel.TabIndex = 88;
+            // 
+            // PaletteOption
+            // 
+            this.PaletteOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PaletteOption.FormattingEnabled = true;
+            this.PaletteOption.Items.AddRange(new object[] {
+            "通常パレット",
+            "LZ77パレット"});
+            this.PaletteOption.Location = new System.Drawing.Point(280, 251);
+            this.PaletteOption.Margin = new System.Windows.Forms.Padding(2);
+            this.PaletteOption.Name = "PaletteOption";
+            this.PaletteOption.Size = new System.Drawing.Size(208, 26);
+            this.PaletteOption.TabIndex = 91;
+            this.PaletteOption.SelectedIndexChanged += new System.EventHandler(this.PaletteType_SelectedIndexChanged);
             // 
             // SecondImagePanel
             // 
@@ -574,20 +604,6 @@
             this.KeepTSAComboBox.TabIndex = 10;
             this.KeepTSAComboBox.SelectedIndexChanged += new System.EventHandler(this.KeepTSAComboBox_SelectedIndexChanged);
             // 
-            // X_BG_PIC
-            // 
-            this.X_BG_PIC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_BG_PIC.Location = new System.Drawing.Point(0, 2);
-            this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_BG_PIC.Name = "X_BG_PIC";
-            this.X_BG_PIC.Size = new System.Drawing.Size(388, 242);
-            this.X_BG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.X_BG_PIC.TabIndex = 67;
-            this.X_BG_PIC.TabStop = false;
-            // 
             // GraphicsToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -604,6 +620,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTENO)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TSA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE)).EndInit();
@@ -617,7 +634,6 @@
             this.SecondImagePanel.ResumeLayout(false);
             this.SecondImagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,6 +677,7 @@
         private System.Windows.Forms.NumericUpDown Image2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel SecondImagePanel;
+        private System.Windows.Forms.ComboBox PaletteOption;
 
     }
 }
