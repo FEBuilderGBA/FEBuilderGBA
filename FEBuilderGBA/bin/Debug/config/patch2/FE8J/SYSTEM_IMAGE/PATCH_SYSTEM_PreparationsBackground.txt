@@ -21,3 +21,5 @@ ZIMAGE_POINTER=0x1FD84
 PALETTE_POINTER=0x1FD80
 
 
+INFO.en=Background of preparation for advance.
+INFO.zh=提前准备的背景。

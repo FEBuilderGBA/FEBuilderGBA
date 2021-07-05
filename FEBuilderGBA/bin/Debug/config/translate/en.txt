@@ -466,48 +466,6 @@ Rank Up Weapon
 :闘技場武器ランク
 Arena Weapons Rank
 
-:読み込む
-Read Data
-
-:コード数
-Number of Codes
-
-:モード
-Mode
-
-:書き込む
-Write
-
-:ファイルへセーブ
-Save to File
-
-:ファイルからロード
-Load from File
-
-:構文
-Syntax
-
-:エミュレート
-Emulate
-
-:セーブ
-Save
-
-:ロード
-Load
-
-:制限
-Restriction
-
-:実行コード数
-No. of Executable Codes
-
-:タイムアウト(s)
-Timeout (s)
-
-:ASM編集
-ASM Editing
-
 : =>　
  =>
 
@@ -3154,6 +3112,9 @@ ImportImageOneTime Failed
 :TSAEditorImageOneTimeが失敗しました
 TSAEditorImageOneTime Failed
 
+:lz77パレットなので変更できません。
+Since it is a lz77 palette, it cannot be changed.
+
 :圧縮データ
 Compressed Data
 
@@ -3201,6 +3162,12 @@ Height / 8
 
 :パレットエディタ
 Palette Editor
+
+:通常パレット
+Normal palette.
+
+:LZ77パレット
+LZ77 palette.
 
 :第2画像
 Second image
@@ -9486,6 +9453,9 @@ Tried to check for the number of data entries, but couldn't find the termination
 
 :データ個数定義がありません。\r\n\r\n例:\r\nDATACOUNT=4\r\nor\r\nDATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
 There is no data count definition.\r\n\r\nEx:\r\nDATACOUNT=4\r\nor\r\nDATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
+
+:書き込む
+Write
 
 :選択アドレス
 Selected Address

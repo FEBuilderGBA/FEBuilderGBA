@@ -159,6 +159,7 @@ namespace FEBuilderGBA
                 Log.Error(e.ToString() );
             }
 #endif
+
 #if !DEBUG 
             try
             {
@@ -217,6 +218,20 @@ namespace FEBuilderGBA
             try
             {
 #endif
+            SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
+            if (IsStopFlag) return map;
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+            }
+#endif
+
+#if !DEBUG 
+            try
+            {
+#endif
             AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
             if (IsStopFlag) return map;
 #if !DEBUG 
@@ -239,6 +254,7 @@ namespace FEBuilderGBA
                 Log.Error(e.ToString() );
             }
 #endif
+
 #if !DEBUG 
             try
             {

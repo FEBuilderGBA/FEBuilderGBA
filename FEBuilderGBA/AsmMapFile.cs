@@ -690,6 +690,7 @@ namespace FEBuilderGBA
                 AsmMapSt p = new AsmMapSt();
                 p.Length = U.OAMREGSLength(U.toOffset(d), rom);
                 p.Name = prefix + " Count_" + ((p.Length - 2) / (3 * 2));
+                p.TypeName = "OAMREGS";
 
                 this.AsmMap[d] = p;
             }
@@ -718,6 +719,7 @@ namespace FEBuilderGBA
                 AsmMapSt p = new AsmMapSt();
                 p.Length = 0;
                 p.Name = prefix + " ASM " + U.ToHexString(i);
+                p.TypeName = "ASM";
 
                 this.AsmMap[d] = p;
             }
@@ -745,6 +747,7 @@ namespace FEBuilderGBA
                 AsmMapSt p = new AsmMapSt();
                 p.Length = 8;
                 p.Name = prefix + " NAZO8 " + U.ToHexString(i);
+                p.TypeName = "NAZO8";
 
                 this.AsmMap[d] = p;
             }
@@ -767,6 +770,7 @@ namespace FEBuilderGBA
                 AsmMapSt p = new AsmMapSt();
                 p.Length = 16;
                 p.Name = prefix + " SOUNDes " + U.ToHexString(i);
+                p.TypeName = "ASM";
 
                 this.AsmMap[d] = p;
             }
@@ -788,6 +792,7 @@ namespace FEBuilderGBA
                 AsmMapSt p = new AsmMapSt();
                 p.Length = 14;
                 p.Name = prefix + " SECONDARYOAM " + U.ToHexString(i);
+                p.TypeName = "SECONDARYOAM";
 
                 this.AsmMap[d] = p;
             }
@@ -913,7 +918,7 @@ namespace FEBuilderGBA
             {
                 p.Length = ScanNazo8DataPointerTable(pointer, p.Name, rom);
             }
-            else if (type == "ASM")
+            else if (type == "ASM" || type == "ARM")
             {
                 p.Length = 0;
             }
@@ -921,6 +926,7 @@ namespace FEBuilderGBA
             {
                 p.Length = 10 * 2;
             }
+            
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
@@ -953,6 +959,7 @@ namespace FEBuilderGBA
                 p.ResultAndArgs = "";
                 p.Length = list[i].Length;
                 p.TypeName = typeName;
+
                 if (list[i].DataType == Address.DataTypeEnum.FFor00)
                 {//フリーエリア
                     p.IsFreeArea = true;

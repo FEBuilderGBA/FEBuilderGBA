@@ -99,8 +99,7 @@ namespace FEBuilderGBA
                 List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
                 List<Address> structlist = new List<Address>();
-                //no$gbaは32546lines以上の symを読みこむと落ちるので手加減する.
-                //                List<Address> structlist = U.MakeAllStructPointersList(); //既存の構造体
+                //昔のno$gbaは32546lines以上の symを読みこむと落ちるので手加減する.
                 U.AppendAllASMStructPointersList(structlist
                     , ldrmap
                     , isPatchInstallOnly: true
@@ -116,7 +115,6 @@ namespace FEBuilderGBA
                 asmMapFile.AppendMAP(structlist);
 
                 uint lastNumber = 0;
-                string line;
                 Dictionary<uint, AsmMapFile.AsmMapSt> asmmap = asmMapFile.GetAsmMap();
                 foreach (var pair in asmmap)
                 {
@@ -143,7 +141,7 @@ namespace FEBuilderGBA
                     {//名前が空
                         continue;
                     }
-
+/*
                     if (name.IndexOf("6CStructHeader") >= 0)
                     {//6Cは全部表示する
                     }
@@ -159,10 +157,23 @@ namespace FEBuilderGBA
                             lastNumber = arrayNumner;
                         }
                     }
+*/
+                    if (pair.Value.TypeName == "ARM")
+                    {
+                        string line = string.Format("{0} .arm", U.ToHexString(pair.Key), ".arm");
+                        writer.WriteLine(line);
+                    }
+                    else if (pair.Value.TypeName == "ASM"
+                        || U.toOffset(pair.Key) < Program.ROM.RomInfo.compress_image_borderline_address() )
+                    {
+                        string line = string.Format("{0} .thumb", U.ToHexString(pair.Key));
+                        writer.WriteLine(line);
+                    }
 
-                    line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);
-
-                    writer.WriteLine(line);
+                    {
+                        string line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);
+                        writer.WriteLine(line);
+                    }
                 }
             }
         }
@@ -298,7 +309,7 @@ namespace FEBuilderGBA
                     , isUseOAMSP: true
                     );
                 UnpackBINByCode(structlist);
-
+                SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);
@@ -492,6 +503,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
+                SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);

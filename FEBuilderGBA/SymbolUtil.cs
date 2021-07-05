@@ -155,25 +155,47 @@ namespace FEBuilderGBA
                 if (File.Exists(elfFilename))
                 {
                     ProcessSymbolElf(list, elfFilename, baseaddr);
+                    return;
                 }
             }
-            else if (ext == ".BIN" || ext == ".DMP")
-            {
+            if (ext == ".BIN" || ext == ".DMP")
+            {//ASM
                 string symtxt = Path.Combine(basedir, Path.GetFileNameWithoutExtension(binfilename) + ".sym.txt");
                 if (File.Exists(symtxt))
                 {
                     ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);
+                    return;
                 }
             }
-            else if (ext == ".EVENT" && binfilename.IndexOf(".lyn.event") >= 0)
-            {
+            if (ext == ".EVENT" && binfilename.IndexOf(".lyn.event") >= 0)
+            {//lyn
                 string symtxt = Path.Combine(basedir, binfilename.Replace(".lyn.event", ".sym.txt"));
                 if (File.Exists(symtxt))
                 {
                     ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);
+                    return;
+                }
+            }
+            if (ext == ".EVENT" && binfilename.IndexOf(".event") >= 0)
+            {//lyn以外のEA
+                string symtxt = Path.Combine(basedir, Path.GetFileNameWithoutExtension(binfilename) + ".sym.txt");
+                if (File.Exists(symtxt))
+                {
+                    ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);
+                    return;
+                }
+            }
+            if (ext == ".SYM" && binfilename.IndexOf(".sym") >= 0)
+            {//no$gba debugger用のシンボルファイル
+                string symtxt = binfilename;
+                if (File.Exists(symtxt))
+                {
+                    ProcessSymbolNoDollGBASym(list, symtxt);
+                    return;
                 }
             }
         }
+
         static void ProcessSymbolSymTxt(List<Address> list, string symtxt, uint baseaddr, string binfilename)
         {
             string basename = "@" + Path.GetFileName(binfilename);
@@ -192,6 +214,51 @@ namespace FEBuilderGBA
                 uint addr = U.atoi0x(sp[1]);
                 addr += baseaddr;
                 if (name.Length <= 0 || addr <= 0x100)
+                {
+                    continue;
+                }
+
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Address.AddCommentData(list, addr, name + basename);
+            }
+        }
+
+        static void ProcessSymbolNoDollGBASym(List<Address> list, string symtxt)
+        {
+            string basename = "@" + Path.GetFileName(symtxt);
+
+            string[] lines = File.ReadAllLines(symtxt);
+            foreach (string line in lines)
+            {
+                //no$gba形式
+                //800109C MMBDrawInventoryObjs
+                string[] sp = line.Split(' ');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+                string name = sp[1];
+                uint addr = U.atoh(sp[0]);
+                if (addr < 0x02000000 || addr > 0x0F000000)
+                {
+                    continue;
+                }
+
+                if (name.Length <= 0)
+                {
+                    continue;
+                }
+
+                //型指定は無視
+                if (name == ".thumb")
+                {
+                    continue;
+                }
+                else if (name == ".arm")
+                {
+                    continue;
+                }
+                else if (name.IndexOf(":") == 0)
                 {
                     continue;
                 }
@@ -222,6 +289,19 @@ namespace FEBuilderGBA
 
                 addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
                 Address.AddCommentData(list, addr, name + basename);
+            }
+        }
+
+        public static void LoadCustomNoDollASMSymbol(List<Address> structlist)
+        {
+            string dir = U.ConfigEtcDir();
+            if (Directory.Exists(dir))
+            {
+                string[] list = U.Directory_GetFiles_Safe(dir, "*.sym");
+                foreach (string filename in list)
+                {
+                    SymbolUtil.ProcessSymbolByList(structlist, dir, filename, 0x0);
+                }
             }
         }
     }

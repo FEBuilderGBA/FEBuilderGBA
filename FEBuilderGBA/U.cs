@@ -3152,6 +3152,10 @@ namespace FEBuilderGBA
         {
             return ConfigEtcFilename(type, Program.ROM );
         }
+        public static string ConfigEtcDir()
+        {
+            return Path.GetDirectoryName(ConfigEtcFilename("", Program.ROM));
+        }
 
         //同じ場所を再選択して、再選択イベントを動かす.
         public static void ReSelectList(ListBox list)
