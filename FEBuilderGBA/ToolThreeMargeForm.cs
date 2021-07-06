@@ -208,7 +208,7 @@ namespace FEBuilderGBA
 
         void MakeWhatIs()
         {
-            this.AsmMapFile = new AsmMapFile();
+            this.AsmMapFile = new AsmMapFile(Program.ROM);
             this.StructList = U.MakeAllStructPointersList(false);
         }
         string WhatIs(uint addr)

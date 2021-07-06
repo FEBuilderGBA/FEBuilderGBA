@@ -264,7 +264,7 @@ namespace FEBuilderGBA
                 return Name;
             }
         };
-        Dictionary<uint, AsmMapSt> AsmMap = new Dictionary<uint, AsmMapSt>();
+        Dictionary<uint, AsmMapSt> AsmMap = new Dictionary<uint, AsmMapSt>(0x5000);
 
         public Dictionary<uint, AsmMapSt> GetAsmMap()
         {

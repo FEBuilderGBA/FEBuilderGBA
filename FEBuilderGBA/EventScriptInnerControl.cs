@@ -154,7 +154,7 @@ namespace FEBuilderGBA
         //システムが利用する関数を書き換える場合　警告を出す
         bool CheckSystemFunctionalEvent(uint addr)
         {
-            List<Address> list = new List<Address>();
+            List<Address> list = new List<Address>(0x40);
             EventScript.MakeEventASMMAPList(list, true, "", true);
 
             foreach (Address a in list)

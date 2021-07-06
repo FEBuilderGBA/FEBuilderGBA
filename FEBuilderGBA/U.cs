@@ -2365,7 +2365,7 @@ namespace FEBuilderGBA
         }
         public static List<Address> MakeAllStructPointersList(bool isPointerOnly)
         {
-            List<Address> list = new List<Address>();
+            List<Address> list = new List<Address>(50000);
 
             EventCondForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 1")) return list;

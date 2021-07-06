@@ -263,10 +263,10 @@ namespace FEBuilderGBA
         }
 
         //関数として利用されているイベントを表示しないようにします.
-        Dictionary<uint, bool> IgnoreEvent = new Dictionary<uint,bool>();
+        Dictionary<uint, bool> IgnoreEvent = new Dictionary<uint, bool>(0x40);
         void InitIgnoreEvent()
         {
-            List<Address> list = new List<Address>();
+            List<Address> list = new List<Address>(0x40);
             EventScript.MakeEventASMMAPList(list, true, "", true);
 
             foreach (Address a in list)

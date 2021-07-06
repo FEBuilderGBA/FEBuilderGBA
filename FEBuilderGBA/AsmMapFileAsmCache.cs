@@ -27,7 +27,7 @@ namespace FEBuilderGBA
             }
 
             {
-                List<Address> list = new List<Address>();
+                List<Address> list = new List<Address>(50000);
                 uint maxcount = MapSettingForm.GetDataCount();
                 for (uint mapid = 0; mapid < maxcount; mapid++)
                 {
@@ -52,13 +52,13 @@ namespace FEBuilderGBA
             }
             //イベント命令にあるASM命令
             {
-                List<Address> list = new List<Address>();
+                List<Address> list = new List<Address>(0x40);
                 EventScript.MakeEventASMMAPList(list, false, "", true);
                 map.AppendMAP(list);
             }
             //イベント命令にあるEVENT命令
             {
-                List<Address> list = new List<Address>();
+                List<Address> list = new List<Address>(0x40);
                 EventScript.MakeEventASMMAPList(list, true, "", true);
                 map.AppendMAP(list, "EVENT");
             }
@@ -90,7 +90,7 @@ namespace FEBuilderGBA
             if (IsStopFlag) return map;
 
             //LDRマップのクリア
-            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>(0x1000);
             this.FELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
 
             List<DisassemblerTrumb.LDRPointer> ldrmap;
@@ -304,7 +304,7 @@ namespace FEBuilderGBA
             //キャッシュを作り直す.
             IsStopFlag = false;
             //LDRマップのクリア
-            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>(0x1000);
             this.FELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
 
             GetAsmMapFile(true);
@@ -742,7 +742,7 @@ namespace FEBuilderGBA
             UpdateFELintCache(newFELintCache);
         }
 
-        List<DisassemblerTrumb.LDRPointer> LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+        List<DisassemblerTrumb.LDRPointer> LDRMapCache = new List<DisassemblerTrumb.LDRPointer>(0x1000);
         public List<DisassemblerTrumb.LDRPointer> GetLDRMapCache()
         {
             if (this.LDRMapCache.Count <= 0)

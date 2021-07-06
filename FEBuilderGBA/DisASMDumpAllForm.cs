@@ -91,14 +91,12 @@ namespace FEBuilderGBA
             using (StreamWriter writer = new StreamWriter(symfilename, false, encoding))
             {
                 wait.DoEvents("GrepAllStructPointers");
-                AsmMapFile asmMapFile = new AsmMapFile();
-
+                AsmMapFile asmMapFile = new AsmMapFile(Program.ROM);
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
-
 
                 List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
-                List<Address> structlist = new List<Address>();
+                List<Address> structlist = new List<Address>(50000);
                 //昔のno$gbaは32546lines以上の symを読みこむと落ちるので手加減する.
                 U.AppendAllASMStructPointersList(structlist
                     , ldrmap
@@ -186,7 +184,7 @@ namespace FEBuilderGBA
 
         static Dictionary<uint, Address> MakeAllStructMapping(List<Address> structlist)
         {
-            Dictionary<uint, Address> dic = new Dictionary<uint, Address>();
+            Dictionary<uint, Address> dic = new Dictionary<uint, Address>(Program.ROM.Data.Length / 2);
 
             for (int i = 0; i < structlist.Count; i++)
             {
@@ -276,8 +274,7 @@ namespace FEBuilderGBA
 
                 wait.DoEvents("GrepAllStructPointers");
 
-                AsmMapFile asmMapFile = new AsmMapFile();
-
+                AsmMapFile asmMapFile = new AsmMapFile(Program.ROM);
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
 
                 List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
@@ -302,7 +299,7 @@ namespace FEBuilderGBA
 
 
                 {//設計をミスった。 綺麗なリストを作りたいので、もう一回読みこみなおそう...
-                    AsmMapFile asmMapFile2 = new AsmMapFile();
+                    AsmMapFile asmMapFile2 = new AsmMapFile(Program.ROM);
                     asmMapFile2.MakeAllDataLength(structlist);
                 }
 
@@ -470,8 +467,7 @@ namespace FEBuilderGBA
                 writer.WriteLine(" Start         Length     Name                   Class");
 
                 wait.DoEvents("GrepAllStructPointers");
-                AsmMapFile asmMapFile = new AsmMapFile();
-
+                AsmMapFile asmMapFile = new AsmMapFile(Program.ROM);
                 DisassemblerTrumb Disassembler = new DisassemblerTrumb(asmMapFile);
 
                 List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();

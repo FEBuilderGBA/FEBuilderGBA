@@ -201,7 +201,7 @@ namespace FEBuilderGBA
         }
         void Load(string fullfilename , EventScriptType eventScriptType)
         {
-            List<Script> scripts = new List<Script>();
+            List<Script> scripts = new List<Script>(256);
             if (!U.IsRequiredFileExist(fullfilename))
             {
                 this.Scripts = scripts.ToArray();
@@ -907,9 +907,8 @@ namespace FEBuilderGBA
 
         public static List<EventScript.OneCode> CloneEventList(List<EventScript.OneCode> events)
         {
-            List<EventScript.OneCode> eventAsm = new List<EventScript.OneCode>();
-
             int length = events.Count;
+            List<EventScript.OneCode> eventAsm = new List<EventScript.OneCode>(length);
             for (int i = 0; i < length; i++)
             {
                 eventAsm.Add(EventScript.CloneCode(events[i]));
