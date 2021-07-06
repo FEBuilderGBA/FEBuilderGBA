@@ -12084,8 +12084,7 @@ namespace FEBuilderGBA
         }
         public static bool UpdateRef(ListBox refListBox, uint id,UseValsID.TargetTypeEnum targetType)
         {
-            List<UseValsID> textIDList = new List<UseValsID>();
-            Program.AsmMapFileAsmCache.MakeVarsIDArray(textIDList);
+            List<UseValsID> textIDList = Program.AsmMapFileAsmCache.GetVarsIDArray();
             if (textIDList == null)
             {
                 refListBox.BeginUpdate();

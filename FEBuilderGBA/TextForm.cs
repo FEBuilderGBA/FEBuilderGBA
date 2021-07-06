@@ -3289,8 +3289,7 @@ namespace FEBuilderGBA
         FELint.Type SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
         void UpdateRef(uint id)
         {
-            List<UseValsID> textIDList = new List<UseValsID>();
-            Program.AsmMapFileAsmCache.MakeVarsIDArray(textIDList);
+            List<UseValsID> textIDList = Program.AsmMapFileAsmCache.GetVarsIDArray();
             if (textIDList == null)
             {
                 RefCountTextBox.Text = R._("計測中...");
@@ -3499,8 +3498,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            List<UseValsID> textIDList = new List<UseValsID>();
-            Program.AsmMapFileAsmCache.MakeVarsIDArray(textIDList);
+            List<UseValsID> textIDList = Program.AsmMapFileAsmCache.GetVarsIDArray();
             if (textIDList == null)
             {
                 R.ShowStopError("現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。");

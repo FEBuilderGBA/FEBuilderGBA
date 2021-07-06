@@ -1316,9 +1316,20 @@ namespace FEBuilderGBA
 
             Rectangle b = bounds;
             b.X += 24;
-            
-            U.DrawText(text, g, normalFont, brush, isWithDraw, b);
 
+            //名前とレベルの表示
+            b.X += U.DrawText(text, g, normalFont, brush, isWithDraw, b);
+/*
+            //コメントの描画
+            string comment;
+            U.AddrResult ar = InputFormRef.SelectToAddrResult(lb, index);
+            if (Program.CommentCache.TryGetValue(ar.addr, out comment))
+            {
+                SolidBrush commentBrush = new SolidBrush(OptionForm.Color_Comment_ForeColor());
+                b.X += U.DrawText("//" + comment, g, lb.Font, commentBrush, isWithDraw, b);
+                commentBrush.Dispose();
+            }
+*/
             do
             {
                 uint addr = InputFormRef.SelectToAddr(lb, index);

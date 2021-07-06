@@ -170,7 +170,8 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            map.MakeVarsIDArray(); //全テキストIDの検出
+            //参照の逆追跡
+            this.VarsIDArray = U.MakeVarsIDArray(map);
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
@@ -758,11 +759,14 @@ namespace FEBuilderGBA
 #endif
             return this.LDRMapCache;
         }
-        public void MakeVarsIDArray(List<UseValsID> list)
+        public List<UseValsID> GetVarsIDArray()
         {
-            AsmMapFile map = GetAsmMapFile();
-            map.MakeVarsIDArray(list);
+            return this.VarsIDArray;
         }
+
+        //すべてのテキストの参照ID
+        List<UseValsID> VarsIDArray = null;
+
 
         //ハードコーディングされたユニット、クラス、アイテムの警告
         //主にパッチをスキャンした時に、データを作ります.

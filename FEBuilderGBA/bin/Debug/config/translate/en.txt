@@ -2798,16 +2798,16 @@ Special+Monster+ItemDrop
 Additional AI:
 
 :配置後座標が正しくありません。:{0}
-Post placement coordinates are incorrect.: {0}.
+Post placement coordinates are incorrect.: {0}
 
 :配置後座標が指定された数だけありません。:{0} Count:{1}
-There are not as many as the specified number of coordinates after placement.: {0} Count: {1}.
+There are not as many as the specified number of coordinates after placement.: {0} Count: {1}
 
 :配置後座標で、すべてのデータがゼロになっています。:{0} Count:{1}
-All data is zero in the post-placement coordinates.: {0} Count: {1}.
+All data is zero in the post-placement coordinates.: {0} Count: {1}
 
 :配置後座標で、すべてのデータがFFになっています。:{0} Count:{1}
-After placement coordinates, all data is FF.: {0} Count: {1}.
+After placement coordinates, all data is FF.: {0} Count: {1}
 
 :ユニットに想定と異なるクラスを割り当てています。\r\nこれでは、武器レベルで近接と魔法を混在させることになります。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。
 You assigned different classes to the unit.\r\nWith this, you will mix proximity and magic at the weapon level.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.

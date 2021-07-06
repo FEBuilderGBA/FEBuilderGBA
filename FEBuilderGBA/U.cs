@@ -2604,7 +2604,7 @@ namespace FEBuilderGBA
             }
         }
 
-        public static List<UseValsID> MakeVarsIDArray()
+        public static List<UseValsID> MakeVarsIDArray(AsmMapFile asmmap)
         {
             List<UseValsID> list = new List<UseValsID>();
             if (InputFormRef.DoEvents(null, "MakeVarsIDArray 1")) return list;
@@ -2694,7 +2694,7 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "MakeVarsIDArray 4")) return list;
             PatchForm.MakeVarsIDArray(list);
 
-            Program.AsmMapFileAsmCache.MakeVarsIDArray(list);
+            asmmap.MakeVarsIDArray(list);
 
             if (InputFormRef.DoEvents(null, "MakeVarsIDArray 5")) return list;
             UseValsID.RemoveDuplicates(list);

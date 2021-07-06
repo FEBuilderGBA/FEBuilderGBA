@@ -57,11 +57,6 @@ namespace FEBuilderGBA
             this.NearSearchSortedList = new List<uint>(orignal.NearSearchSortedList);
             this.AsmStructs = new Dictionary<string, AsmStruct>(orignal.AsmStructs);
             this.AsmMap = new Dictionary<uint, AsmMapSt>(orignal.AsmMap);
-
-            if (orignal.VarsIDArray != null)
-            {
-                this.VarsIDArray = new List<UseValsID>(orignal.VarsIDArray);
-            }
         }
 
 
@@ -1329,16 +1324,6 @@ namespace FEBuilderGBA
             return this.NearSearchSortedList[i - 1];
         }
 
-        //すべてのテキストの参照ID
-        List<UseValsID> VarsIDArray = null;
-        public List<UseValsID> GetVarsIDArray()
-        {
-            return this.VarsIDArray;
-        }
-        public void MakeVarsIDArray()
-        {
-            this.VarsIDArray = U.MakeVarsIDArray();
-        }
 
 
 #if DEBUG

@@ -15,10 +15,10 @@ namespace FEBuilderGBA
         //自動的に長さを求めた場合 true / 手動で長さを求めている場合は true
         bool IsLengthAutoChecked = false;
 
-
         public DisASMInnerControl()
         {
             InitializeComponent();
+//            this.AddressList.OwnerDraw(DrawASM, DrawMode.OwnerDrawFixed);
             this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.AddressList.ItemHeight = this.AddressList.Font.Height + 2;
         }
@@ -605,6 +605,54 @@ namespace FEBuilderGBA
             MainFormUtil.OpenDisassembleSrcCode((uint)ReadStartAddress.Value);
         }
 
+        public static Size DrawASM(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            string text = lb.Items[index].ToString();
+            int commentPos = text.IndexOf("//");
+            if (commentPos < 0)
+            {
+                commentPos = text.IndexOf("# pointer:");
+            }
+
+            string mainText;
+            string commentText;
+            if (commentPos < 0)
+            {
+                mainText = text;
+                commentText = "";
+            }
+            else
+            {
+                mainText = text.Substring(0, commentPos);
+                commentText = text.Substring(commentPos);
+            }
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            Font normalFont = lb.Font;
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+
+            bounds.X += U.DrawText(mainText, g, normalFont, brush, isWithDraw, bounds);
+            brush.Dispose();
+
+            //コメントの表示
+            if (commentPos >= 0)
+            {
+                SolidBrush commentBrush = new SolidBrush(OptionForm.Color_Comment_ForeColor());
+                bounds.X += U.DrawText(commentText, g, normalFont, commentBrush, isWithDraw, bounds);
+                commentBrush.Dispose();
+            }
+
+
+
+            bounds.Y += lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
 
     }
 }
