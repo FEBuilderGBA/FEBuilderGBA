@@ -49,7 +49,7 @@ namespace FEBuilderGBA
             InputFormRef.ReInit(addr);
             if (addressListExpandsEvent != null)
             {
-                InputFormRef.AddressListExpandsEvent += addressListExpandsEvent;
+                InputFormRef.PostAddressListExpandsEvent += addressListExpandsEvent;
             }
         }
 

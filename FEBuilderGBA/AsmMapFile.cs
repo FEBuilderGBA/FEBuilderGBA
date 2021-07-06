@@ -12,6 +12,9 @@ namespace FEBuilderGBA
     {
         public AsmMapFile()
         {
+        }
+        public AsmMapFile(ROM rom)
+        {
             if (Program.ROM.RomInfo.version() == 0)
             {
                 return;
@@ -28,17 +31,13 @@ namespace FEBuilderGBA
                 ASMMapLoadResource(asmmap, Program.ROM);
             }
             //ROM情報をmapとして利用する.
-            ROMInfoLoadResource(this.AsmMap , isWithOutProcs: false);
+            ROMInfoLoadResource(this.AsmMap, isWithOutProcs: false);
             //構造体スキャン
             ROMTypeLoadResource();
 
             Load(Program.ROM);
 
             //MargeS("FE8_clean.sym");
-        }
-        public AsmMapFile(ROM rom)
-        {
-            Load(rom);
         }
         void Load(ROM rom)
         {
@@ -52,11 +51,17 @@ namespace FEBuilderGBA
             ASMMapLoadResource(U.ConfigDataFilename("asmmap_gba_", rom),rom);
         }
 
+        //clone
         public AsmMapFile(AsmMapFile orignal)
         {
             this.NearSearchSortedList = new List<uint>(orignal.NearSearchSortedList);
             this.AsmStructs = new Dictionary<string, AsmStruct>(orignal.AsmStructs);
             this.AsmMap = new Dictionary<uint, AsmMapSt>(orignal.AsmMap);
+
+            if (orignal.VarsIDArray != null)
+            {
+                this.VarsIDArray = new List<UseValsID>(orignal.VarsIDArray);
+            }
         }
 
 
@@ -930,9 +935,9 @@ namespace FEBuilderGBA
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
-            for(int i = 0 ; i < list.Count ; i++)
+            foreach(Address a in list)
             {
-                uint pointer = list[i].Addr;
+                uint pointer = a.Addr;
                 if (pointer == U.NOT_FOUND || pointer <= 1)
                 {
                     continue;
@@ -942,62 +947,32 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                AsmMapSt a;
-                if (AsmMap.TryGetValue(pointer,out a))
+                AsmMapSt oldAsmSt;
+                if (AsmMap.TryGetValue(pointer,out oldAsmSt))
                 {//既に知っている
-                    if (a.Length >= list[i].Length)
+                    if (oldAsmSt.Length >= a.Length)
                     {//既に知っているデータより長いデータではないので無視する
                         continue;
                     }
-                    if (a.TypeName.Length > 0 && typeName.Length <= 0)
+                    if (oldAsmSt.TypeName.Length > 0 && typeName.Length <= 0)
                     {//相手側にtypeが指定されており、現在追加するのはタイプが指定されていない
                         continue;
                     }
                 }
                 AsmMapSt p = new AsmMapSt();
-                p.Name = list[i].Info;
+                p.Name = a.Info;
                 p.ResultAndArgs = "";
-                p.Length = list[i].Length;
+                p.Length = a.Length;
                 p.TypeName = typeName;
 
-                if (list[i].DataType == Address.DataTypeEnum.FFor00)
+                if (a.DataType == Address.DataTypeEnum.FFor00)
                 {//フリーエリア
                     p.IsFreeArea = true;
                 }
 
                 if (p.Name == "")
                 {
-                    p.Name = "_" + U.ToHexString(pointer);
-                }
-                AsmMap[pointer] = p;
-            }
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                uint pointer = list[i].Pointer;
-                if (pointer == U.NOT_FOUND || pointer <= 1)
-                {
-                    continue;
-                }
-                pointer = U.toPointer(pointer);
-                if (!U.isSafetyPointer(pointer))
-                {
-                    continue;
-                }
-                if (AsmMap.ContainsKey(pointer))
-                {
-                    continue;
-                }
-                AsmMapSt p = new AsmMapSt();
-                p.Name = list[i].Info;
-                p.ResultAndArgs = "";
-                p.Length = 0;
-                p.TypeName = typeName;
-                p.IsPointer = true;
-
-                if (p.Name == "")
-                {
-                    p.Name = "_" + U.ToHexString(pointer);
+                    p.Name = a.DataType.ToString();
                 }
                 AsmMap[pointer] = p;
             }

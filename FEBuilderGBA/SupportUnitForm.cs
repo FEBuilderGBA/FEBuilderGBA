@@ -24,7 +24,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.X_SUPPORTTALK_6);
 
             this.InputFormRef = Init(this);
-            this.InputFormRef.AddressListExpandsEvent += SupportUnitForm.AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += SupportUnitForm.AddressListExpandsEvent;
             this.InputFormRef.PreWriteHandler += OnPreWrite;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 

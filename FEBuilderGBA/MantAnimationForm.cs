@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawImageBattleAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             InputFormRef.markupJumpLabel(JUMP_TO_BATTLEANIME);
         }
 

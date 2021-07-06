@@ -22,7 +22,7 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             MakeCCItemList();
 
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
         }
 
         public InputFormRef InputFormRef;

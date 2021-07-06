@@ -4952,7 +4952,8 @@ namespace FEBuilderGBA
         public List<Control> Controls { get; private set; }
 
         public EventHandler PreAddressListExpandsEvent; //リストを拡張しようとした時のイベント
-        public EventHandler AddressListExpandsEvent; //リストを拡張した時のイベント
+        public EventHandler PostAddressListExpandsEvent; //リストを拡張した時のイベント
+        public bool CanAllowExtensionUnrelatedData = false; //未割り当て領域の拡張を許可する
 
         //拡張されたときのイベント引数
         public class ExpandsEventArgs : EventArgs
@@ -5931,6 +5932,8 @@ namespace FEBuilderGBA
             }
 
             MoveToFreeSapceForm f = (MoveToFreeSapceForm)InputFormRef.JumpForm<MoveToFreeSapceForm>();
+            f.CanAllowExtensionUnrelatedData = this.CanAllowExtensionUnrelatedData;
+
             f.FromInputFormRef(this, (uint newDataAddr, uint newDataCount) =>
             {
                 ExpandsEventArgs eventarg = new ExpandsEventArgs();
@@ -5943,9 +5946,9 @@ namespace FEBuilderGBA
                 //拡張した領域を検索してサイズ等を再設定
                 ReInit(newDataAddr, newDataCount);
 
-                if (this.AddressListExpandsEvent != null)
+                if (this.PostAddressListExpandsEvent != null)
                 {
-                    this.AddressListExpandsEvent(this.AddressList, eventarg);
+                    this.PostAddressListExpandsEvent(this.AddressList, eventarg);
                     if (eventarg.IsReload)
                     {
                         ReInit(eventarg.NewBaseAddress, eventarg.NewDataCount);
@@ -8388,7 +8391,7 @@ namespace FEBuilderGBA
 
         public void MakeAddressListExpandsCallback(EventHandler eventHandler)
         {
-            this.AddressListExpandsEvent += eventHandler;
+            this.PostAddressListExpandsEvent += eventHandler;
         }
 
         public static int GetCorrectionStartID(Form f)
@@ -12081,8 +12084,8 @@ namespace FEBuilderGBA
         }
         public static bool UpdateRef(ListBox refListBox, uint id,UseValsID.TargetTypeEnum targetType)
         {
-            AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
-            List<UseValsID> textIDList = map.GetVarsIDArray();
+            List<UseValsID> textIDList = new List<UseValsID>();
+            Program.AsmMapFileAsmCache.MakeVarsIDArray(textIDList);
             if (textIDList == null)
             {
                 refListBox.BeginUpdate();

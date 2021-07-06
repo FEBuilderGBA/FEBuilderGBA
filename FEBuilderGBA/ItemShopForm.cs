@@ -23,7 +23,7 @@ namespace FEBuilderGBA
             this.InputFormRef.PreWriteHandler += OnPreWrite;
             U.ConvertListBox(MakeShopList(), ref SHOP_LIST);
 
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 

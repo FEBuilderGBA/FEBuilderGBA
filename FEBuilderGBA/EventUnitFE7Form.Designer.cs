@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.EVENTUNIT_AFTER_COORD = new FEBuilderGBA.PanelEx();
             this.L_6_MAPXY_7 = new System.Windows.Forms.Label();
@@ -168,6 +170,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Comment);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.X_Sim);
             this.panel3.Controls.Add(this.EVENTUNIT_AFTER_COORD);
             this.panel3.Controls.Add(this.L_2_UNIT);
@@ -220,6 +224,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(889, 454);
             this.panel3.TabIndex = 47;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(583, 239);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(283, 25);
+            this.Comment.TabIndex = 239;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(454, 236);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 31);
+            this.label4.TabIndex = 238;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_Sim
             // 
@@ -380,7 +405,7 @@
             this.PosSyncUpdateComboBox.Items.AddRange(new object[] {
             "配置後も同時に変更",
             "配置後、配置前は別々"});
-            this.PosSyncUpdateComboBox.Location = new System.Drawing.Point(441, 4);
+            this.PosSyncUpdateComboBox.Location = new System.Drawing.Point(453, 4);
             this.PosSyncUpdateComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PosSyncUpdateComboBox.Name = "PosSyncUpdateComboBox";
             this.PosSyncUpdateComboBox.Size = new System.Drawing.Size(424, 26);
@@ -802,10 +827,10 @@
             this.panel10.Controls.Add(this.JUMP_BATTLEBGM);
             this.panel10.Controls.Add(this.JUMP_HAIKU);
             this.panel10.Controls.Add(this.JUMP_BATTLETALK);
-            this.panel10.Location = new System.Drawing.Point(489, 232);
+            this.panel10.Location = new System.Drawing.Point(454, 299);
             this.panel10.Margin = new System.Windows.Forms.Padding(5);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(386, 134);
+            this.panel10.Size = new System.Drawing.Size(434, 71);
             this.panel10.TabIndex = 92;
             // 
             // X_ITEMDROP
@@ -813,7 +838,7 @@
             this.X_ITEMDROP.AutoSize = true;
             this.X_ITEMDROP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_ITEMDROP.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_ITEMDROP.Location = new System.Drawing.Point(16, 102);
+            this.X_ITEMDROP.Location = new System.Drawing.Point(196, 43);
             this.X_ITEMDROP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.X_ITEMDROP.Name = "X_ITEMDROP";
             this.X_ITEMDROP.Size = new System.Drawing.Size(114, 18);
@@ -826,7 +851,7 @@
             this.JUMP_BATTLEBGM.AutoSize = true;
             this.JUMP_BATTLEBGM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLEBGM.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(16, 38);
+            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(196, 9);
             this.JUMP_BATTLEBGM.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLEBGM.Name = "JUMP_BATTLEBGM";
             this.JUMP_BATTLEBGM.Size = new System.Drawing.Size(154, 18);
@@ -839,7 +864,7 @@
             this.JUMP_HAIKU.AutoSize = true;
             this.JUMP_HAIKU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_HAIKU.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_HAIKU.Location = new System.Drawing.Point(16, 70);
+            this.JUMP_HAIKU.Location = new System.Drawing.Point(14, 43);
             this.JUMP_HAIKU.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_HAIKU.Name = "JUMP_HAIKU";
             this.JUMP_HAIKU.Size = new System.Drawing.Size(156, 18);
@@ -852,7 +877,7 @@
             this.JUMP_BATTLETALK.AutoSize = true;
             this.JUMP_BATTLETALK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLETALK.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(16, 6);
+            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(14, 9);
             this.JUMP_BATTLETALK.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLETALK.Name = "JUMP_BATTLETALK";
             this.JUMP_BATTLETALK.Size = new System.Drawing.Size(156, 18);
@@ -1524,5 +1549,7 @@
         private PanelEx EVENTUNIT_AFTER_COORD;
         private System.Windows.Forms.Label X_ITEMDROP;
         private EventUnitSimUserControl X_Sim;
+        private TextBoxEx Comment;
+        private System.Windows.Forms.Label label4;
     }
 }

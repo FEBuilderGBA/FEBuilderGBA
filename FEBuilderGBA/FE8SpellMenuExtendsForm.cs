@@ -27,7 +27,7 @@ namespace FEBuilderGBA
 
             this.N1_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
             N1_InputFormRef = N1_Init(this);
-            N1_InputFormRef.AddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
+            N1_InputFormRef.PostAddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
             N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 

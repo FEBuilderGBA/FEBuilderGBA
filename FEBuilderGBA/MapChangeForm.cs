@@ -21,7 +21,7 @@ namespace FEBuilderGBA
             MapPictureBox.HideCommandBar2();
 
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
-            this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
+            this.N_InputFormRef.PostAddressListExpandsEvent += N_AddressListExpandsEvent;
             this.N_InputFormRef.PostWriteHandler += N_PostWriteEvent;
 
             InputFormRef.markupJumpLabel(X_MAPEDITOR_LINK);

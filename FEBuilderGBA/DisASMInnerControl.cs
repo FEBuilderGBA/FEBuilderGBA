@@ -19,8 +19,37 @@ namespace FEBuilderGBA
         public DisASMInnerControl()
         {
             InitializeComponent();
+            this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            this.AddressList.ItemHeight = this.AddressList.Font.Height + 2;
         }
 
+        public class Hexes
+        {
+            public uint Pointer;
+            public uint Data;
+            public uint Data2;
+            public Hexes(uint pointer, uint data)
+            {
+                this.Pointer = pointer;
+                if (U.isPointer(data))
+                {
+                    this.Data = data;
+                }
+            }
+            public Hexes(uint pointer, DisassemblerTrumb.Code code)
+            {
+                this.Pointer = pointer;
+                if (U.isPointer(code.Data))
+                {
+                    this.Data = code.Data;
+                }
+                if (code.Data2 >= 0x100 && code.Data2 < 0x02000000 )
+                {
+                    this.Data2 = U.toPointer(code.Data2);
+                }
+            }
+        };
+        List<Hexes> LineDataList = new List<Hexes>();
 
         private void ReloadListButton_Click(object sender, EventArgs e)
         {
@@ -63,6 +92,7 @@ namespace FEBuilderGBA
             uint bytecount = (uint)ReadCount.Value;
 
 
+            this.LineDataList.Clear();
             this.AddressList.Items.Clear();
             this.AddressList.BeginUpdate();
 
@@ -77,17 +107,21 @@ namespace FEBuilderGBA
             DisassemblerTrumb.VM vm = new DisassemblerTrumb.VM();
             while (addr < limit)
             {
+                uint pointer = U.toPointer(addr);
                 if (ldrtable.ContainsKey(addr))
                 {//LDR参照のポインタデータが入っている
+
                     uint ldr = ldrtable[addr];
                     if (ldr == U.NOT_FOUND)
                     {//switch case
-                        this.AddressList.Items.Add(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //SWITCH CASE");
+                        this.AddressList.Items.Add(pointer.ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //SWITCH CASE");
                     }
                     else
                     {
-                        this.AddressList.Items.Add(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //LDRDATA");
+                        this.AddressList.Items.Add(pointer.ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //LDRDATA");
                     }
+                    uint data = Program.ROM.u32(addr);
+                    LineDataList.Add(new Hexes(pointer, data));
                     addr += 4;
                     continue;
                 }
@@ -118,7 +152,8 @@ namespace FEBuilderGBA
                     }
                 }
 
-                this.AddressList.Items.Add(jisageSpaceData + U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, code.GetLength()) + "   " + code.ASM + code.Comment);
+                this.AddressList.Items.Add(jisageSpaceData + pointer.ToString("X08") + " " + U.MakeOPData(addr, code.GetLength()) + "   " + code.ASM + code.Comment);
+                LineDataList.Add(new Hexes(pointer, code));
 
                 if (code.Type == DisassemblerTrumb.CodeType.CONDJMP //条件式なので字下げ開始
                     )
@@ -288,11 +323,13 @@ namespace FEBuilderGBA
             }
             else if (e.Control && e.KeyCode == Keys.J)
             {
+                UpdateFloatingControlpanel();
                 ParamLabel1_Click(sender,e);
                 return;
             }
             else if (e.Alt && e.KeyCode == Keys.J)
             {
+                UpdateFloatingControlpanel();
                 ParamLabel1_Click(sender, e);
                 return;
             }
@@ -327,48 +364,8 @@ namespace FEBuilderGBA
         {
             ShowFloatingControlpanel();
         }
-
-        void ShowFloatingControlpanel()
+        void UpdateFloatingControlpanel()
         {
-            int y;
-            int index = this.AddressList.SelectedIndex;
-            if (index < 0 || index >= this.AddressList.Items.Count)
-            {//一件もない
-                y = 0;
-                return;
-            }
-            else
-            {
-                //編集する項目の近くに移動させます.
-                Rectangle rect = this.AddressList.GetItemRectangle(index);
-                y = this.MainPanel.Location.Y
-                    + this.AddressList.Location.Y
-                    + rect.Y + rect.Height + 20
-                    ;
-                if (y + ControlPanel.Height >= AddressList.Height)
-                {//下に余白がないので上に出す.
-                    y = this.MainPanel.Location.Y
-                        + this.AddressList.Location.Y
-                        + rect.Y
-                        - ControlPanel.Height - 20;
-                    if (y < 0)
-                    {//上にも余白がないので、 Y = 0 の位置に出す
-                        y = 0;
-                    }
-                }
-            }
-            //変更ボタンが光っていたら、それをやめさせる.
-//            InputFormRef.WriteButtonToYellow(this.UpdateButton, false);
-//            InputFormRef.WriteButtonToYellow(this.NewButton, false);
-
-            ControlPanel.Location = new Point(ControlPanel.Location.X, y);
-            ControlPanel.Show();
-        }
-
-        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HideFloatingControlpanel();
-
             string code = this.AddressList.Text;
             ScriptCodeName.Text = code;
             int pos;
@@ -395,6 +392,99 @@ namespace FEBuilderGBA
                 ParamSrc1.Hide();
                 ParamExplain1.Hide();
             }
+        }
+        void ShowFloatingControlpanel()
+        {
+            int index = this.AddressList.SelectedIndex;
+            if (index < 0 || index >= this.AddressList.Items.Count)
+            {//一件もない
+                return;
+            }
+
+            UpdateFloatingControlpanel();
+            //編集する項目の近くに移動させます.
+            Rectangle rect = this.AddressList.GetItemRectangle(index);
+            int y = this.MainPanel.Location.Y
+                + this.AddressList.Location.Y
+                + rect.Y + rect.Height + 20
+                ;
+            if (y + ControlPanel.Height >= AddressList.Height)
+            {//下に余白がないので上に出す.
+                y = this.MainPanel.Location.Y
+                    + this.AddressList.Location.Y
+                    + rect.Y
+                    - ControlPanel.Height - 20;
+                if (y < 0)
+                {//上にも余白がないので、 Y = 0 の位置に出す
+                    y = 0;
+                }
+            }
+
+            ControlPanel.Location = new Point(ControlPanel.Location.X, y);
+            ControlPanel.Show();
+        }
+
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HideFloatingControlpanel();
+            UpdateRelatedLine();
+        }
+        void UpdateRelatedLine()
+        {
+            this.AddressList.ClearAllSetRelatedLine();
+
+            int index = this.AddressList.SelectedIndex;
+            if (index < 0)
+            {
+                return;
+            }
+            if (index >= this.LineDataList.Count)
+            {
+                return;
+            }
+
+            Hexes needHexes = LineDataList[index];
+            for (int i = 0; i < this.AddressList.Items.Count; i++)
+            {
+                if (i == index)
+                {//自分自身を調べても意味がない
+                    continue;
+                }
+
+                Hexes hexes = LineDataList[i];
+                //check
+                if (IsFoundHexesData(needHexes, hexes))
+                {
+                    this.AddressList.SetRelatedLine(i);
+                }
+            }
+        }
+        static bool IsFoundHexesData(Hexes needHexes, Hexes hexes)
+        {
+            if (needHexes.Pointer == hexes.Data)
+            {
+                return true;
+            }
+            if (needHexes.Pointer == hexes.Data2)
+            {
+                return true;
+            }
+
+            if (needHexes.Data != 0)
+            {
+                if (needHexes.Data == hexes.Pointer)
+                {
+                    return true;
+                }
+            }
+            if (needHexes.Data2 != 0)
+            {
+                if (needHexes.Data2 == hexes.Pointer)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void ParamLabel1_Click(object sender, EventArgs e)

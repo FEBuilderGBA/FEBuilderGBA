@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             this.InputFormRef = Init(this);
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
 
             this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.AddressList.OwnerDraw(EventUnitForm.AddressList_Draw, DrawMode.OwnerDrawVariable);
@@ -31,8 +32,8 @@ namespace FEBuilderGBA
             //右クリックメニューを出す.
             this.InputFormRef.MakeGeneralAddressListContextMenu(true, true, CustomKeydownHandler);
 
-            this.InputFormRef.PreAddressListExpandsEvent += EventUnitForm.OnPreClassExtendsWarningHandler;
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.CanAllowExtensionUnrelatedData = true; //未割り当て領域の拡張を許可
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
 
             this.MapPictureBox.MapMouseDownEvent += MapMouseDownEvent;
 
@@ -491,6 +492,9 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
 
+            //未割り当て領域を拡張した場合の帳尻合わせ
+            EventUnitForm.ReallocUnrelatedData(eearg);
+
             U.ReSelectList(this.MAP_LISTBOX, this.EVENT_LISTBOX);
         }
 
@@ -769,7 +773,13 @@ namespace FEBuilderGBA
         {
             this.X_Sim.Hide();
         }
-
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            if (this.AddressList.SelectedIndex == 0)
+            {//リストの先頭を更新した場合、コメントの更新があるかもしれないので、EVENT_LISTBOXを更新する.
+                this.EVENT_LISTBOX.InvalidateLine(this.EVENT_LISTBOX.SelectedIndex);
+            }
+        }
 
     }
 }

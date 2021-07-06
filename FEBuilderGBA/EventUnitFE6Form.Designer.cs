@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.X_Sim = new FEBuilderGBA.EventUnitSimUserControl();
             this.L_14_AI3_HYOUTEKI = new System.Windows.Forms.ComboBox();
             this.L_14_AI3_KAIFUKU = new System.Windows.Forms.ComboBox();
@@ -166,6 +168,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Comment);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.X_Sim);
             this.panel3.Controls.Add(this.L_14_AI3_HYOUTEKI);
             this.panel3.Controls.Add(this.L_14_AI3_KAIFUKU);
@@ -218,6 +222,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(889, 458);
             this.panel3.TabIndex = 47;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(583, 235);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(283, 25);
+            this.Comment.TabIndex = 255;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(454, 232);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 31);
+            this.label4.TabIndex = 254;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_Sim
             // 
@@ -703,10 +728,10 @@
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.JUMP_HAIKU);
             this.panel10.Controls.Add(this.JUMP_BATTLETALK);
-            this.panel10.Location = new System.Drawing.Point(458, 233);
+            this.panel10.Location = new System.Drawing.Point(454, 285);
             this.panel10.Margin = new System.Windows.Forms.Padding(5);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(424, 123);
+            this.panel10.Size = new System.Drawing.Size(434, 71);
             this.panel10.TabIndex = 92;
             // 
             // JUMP_HAIKU
@@ -714,7 +739,7 @@
             this.JUMP_HAIKU.AutoSize = true;
             this.JUMP_HAIKU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_HAIKU.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_HAIKU.Location = new System.Drawing.Point(14, 44);
+            this.JUMP_HAIKU.Location = new System.Drawing.Point(12, 43);
             this.JUMP_HAIKU.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_HAIKU.Name = "JUMP_HAIKU";
             this.JUMP_HAIKU.Size = new System.Drawing.Size(156, 18);
@@ -727,7 +752,7 @@
             this.JUMP_BATTLETALK.AutoSize = true;
             this.JUMP_BATTLETALK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLETALK.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(14, 10);
+            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(12, 10);
             this.JUMP_BATTLETALK.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLETALK.Name = "JUMP_BATTLETALK";
             this.JUMP_BATTLETALK.Size = new System.Drawing.Size(156, 18);
@@ -1211,7 +1236,7 @@
             // AddressListExpandsButton_50
             // 
             this.AddressListExpandsButton_50.AccessibleDescription = "@EVENTUNIT_LISTEXPANDS";
-            this.AddressListExpandsButton_50.Location = new System.Drawing.Point(1, 388);
+            this.AddressListExpandsButton_50.Location = new System.Drawing.Point(1, 389);
             this.AddressListExpandsButton_50.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_50.Name = "AddressListExpandsButton_50";
             this.AddressListExpandsButton_50.Size = new System.Drawing.Size(194, 30);
@@ -1490,5 +1515,7 @@
         private System.Windows.Forms.ComboBox L_14_AI3_HYOUTEKI;
         private System.Windows.Forms.ComboBox L_14_AI3_KAIFUKU;
         private EventUnitSimUserControl X_Sim;
+        private TextBoxEx Comment;
+        private System.Windows.Forms.Label label4;
     }
 }

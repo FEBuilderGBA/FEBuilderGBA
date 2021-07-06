@@ -17,6 +17,8 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.PreWriteHandler += PreWriteHandler;
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
+            
             this.N_InputFormRef = N_Init(this);
 
             this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -36,13 +38,13 @@ namespace FEBuilderGBA
 
             InputFormRef.MakeEditListboxContextMenu(FE8CoordListBox, FE8CoordListBox_KeyDown);
 
-            this.InputFormRef.PreAddressListExpandsEvent += EventUnitForm.OnPreClassExtendsWarningHandler;
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
-            this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
+            this.InputFormRef.CanAllowExtensionUnrelatedData = true; //未割り当て領域の拡張を許可
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
+
+            this.N_InputFormRef.PostAddressListExpandsEvent += N_AddressListExpandsEvent;
 
             this.MapPictureBox.MapMouseDownEvent += MapMouseDownEvent;
             this.MapPictureBox.MapMouseDownEvent += MapDoubleClickEvent;
-
 
             this.L_3_UNITGROW_LV.ValueChanged += Sim_Change_EventHandler;
             this.L_3_UNITGROW_GROW.SelectedIndexChanged += Sim_Change_EventHandler;
@@ -335,7 +337,6 @@ namespace FEBuilderGBA
 
             this.FE8CoordListBox.DummyAlloc(FE8CoordList.Count , 0);
         }
-
         void PreWriteHandler(object sender, EventArgs e)
         {
             if (ControlPanel.Visible && InputFormRef.IsWriteButtonToYellow(UpdateButton))
@@ -398,6 +399,13 @@ namespace FEBuilderGBA
 
             P8.Value = U.toPointer(newaddr);
             B7.Value = count;
+        }
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            if (this.AddressList.SelectedIndex == 0)
+            {//リストの先頭を更新した場合、コメントの更新があるかもしれないので、EVENT_LISTBOXを更新する.
+                this.EVENT_LISTBOX.InvalidateLine(this.EVENT_LISTBOX.SelectedIndex);
+            }
         }
 
         void SetNotifyMode()
@@ -998,9 +1006,23 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
 
+            //未割り当て領域を拡張した場合の帳尻合わせ
+            EventUnitForm.ReallocUnrelatedData(eearg);
+
             U.ReSelectList(this.MAP_LISTBOX, this.EVENT_LISTBOX);
         }
 
+        //未割り当て領域を拡張した場合の帳尻合わせ
+        public static void ReallocUnrelatedData(InputFormRef.ExpandsEventArgs eearg)
+        {
+            for (int i = 0; i < NewAllocData.Count; i++)
+            {
+                if (NewAllocData[i].addr == eearg.OldBaseAddress)
+                {
+                    NewAllocData[i].addr = eearg.NewBaseAddress;
+                }
+            }
+        }
 
         //配置座標が拡張されたとき
         void N_AddressListExpandsEvent(object sender, EventArgs arg)
@@ -1222,10 +1244,22 @@ namespace FEBuilderGBA
             int lineHeight = (int)lb.Font.Height;
 
             string text = lb.Items[index].ToString();
-            Size s = EventCondForm.DrawEventByAddr(text,lb, g, listbounds, isWithDraw);
+            Size s = EventCondForm.DrawEventByAddr(text, lb, g, listbounds, isWithDraw);
+            bounds.X += s.Width;
 
-            int lineMaxWidth = bounds.X + s.Width;
+            //コメントの描画
+            string comment;
+            if (Program.CommentCache.TryGetValue(ar.addr, out comment))
+            {
+                SolidBrush commentBrush = new SolidBrush(OptionForm.Color_Comment_ForeColor());
+                bounds.X += 2;
+                bounds.X += U.DrawText("//" + comment, g, lb.Font, commentBrush, isWithDraw, bounds);
+                commentBrush.Dispose();
+            }
+
+            int lineMaxWidth = bounds.X;
             bounds.Y += lineHeight;
+            bounds.X = listbounds.X;
 
             do
             {
@@ -1752,19 +1786,6 @@ namespace FEBuilderGBA
         public void MakeAddressListExpandsCallback(EventHandler eventHandler)
         {
             this.InputFormRef.MakeAddressListExpandsCallback(eventHandler);
-        }
-        public static void OnPreClassExtendsWarningHandler(object sender, EventArgs e)
-        {
-            InputFormRef.ExpandsEventArgs eventarg = (InputFormRef.ExpandsEventArgs)e;
-            for (int i = 0; i < NewAllocData.Count; i++)
-            {
-                if (NewAllocData[i].addr == eventarg.OldBaseAddress)
-                {
-                    R.ShowStopError("このデータはどこにも関連づけられていません。サイズの変更は関連づけをした後にしてください。");
-                    eventarg.IsCancel = true;
-                    return;
-                }
-            }
         }
 
         static string CheckUnitsFE8AfterPos(uint addr)
@@ -2701,6 +2722,7 @@ namespace FEBuilderGBA
         {
             this.X_Sim.Hide();
         }
+
     }
 
 }

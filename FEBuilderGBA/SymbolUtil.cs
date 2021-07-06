@@ -185,15 +185,6 @@ namespace FEBuilderGBA
                     return;
                 }
             }
-            if (ext == ".SYM" && binfilename.IndexOf(".sym") >= 0)
-            {//no$gba debugger用のシンボルファイル
-                string symtxt = binfilename;
-                if (File.Exists(symtxt))
-                {
-                    ProcessSymbolNoDollGBASym(list, symtxt);
-                    return;
-                }
-            }
         }
 
         static void ProcessSymbolSymTxt(List<Address> list, string symtxt, uint baseaddr, string binfilename)
@@ -223,50 +214,6 @@ namespace FEBuilderGBA
             }
         }
 
-        static void ProcessSymbolNoDollGBASym(List<Address> list, string symtxt)
-        {
-            string basename = "@" + Path.GetFileName(symtxt);
-
-            string[] lines = File.ReadAllLines(symtxt);
-            foreach (string line in lines)
-            {
-                //no$gba形式
-                //800109C MMBDrawInventoryObjs
-                string[] sp = line.Split(' ');
-                if (sp.Length < 2)
-                {
-                    continue;
-                }
-                string name = sp[1];
-                uint addr = U.atoh(sp[0]);
-                if (addr < 0x02000000 || addr > 0x0F000000)
-                {
-                    continue;
-                }
-
-                if (name.Length <= 0)
-                {
-                    continue;
-                }
-
-                //型指定は無視
-                if (name == ".thumb")
-                {
-                    continue;
-                }
-                else if (name == ".arm")
-                {
-                    continue;
-                }
-                else if (name.IndexOf(":") == 0)
-                {
-                    continue;
-                }
-
-                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                Address.AddCommentData(list, addr, name + basename);
-            }
-        }
 
         static void ProcessSymbolElf(List<Address> list, string elffilename, uint baseaddr)
         {
@@ -292,17 +239,5 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void LoadCustomNoDollASMSymbol(List<Address> structlist)
-        {
-            string dir = U.ConfigEtcDir();
-            if (Directory.Exists(dir))
-            {
-                string[] list = U.Directory_GetFiles_Safe(dir, "*.sym");
-                foreach (string filename in list)
-                {
-                    SymbolUtil.ProcessSymbolByList(structlist, dir, filename, 0x0);
-                }
-            }
-        }
     }
 }

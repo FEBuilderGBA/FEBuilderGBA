@@ -79,8 +79,8 @@
 210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Init_value]	{VAL}
 220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::00]	{VAL}
 230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::00]	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:CounterID][Y::00][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter  and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
-210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID][Y::Init_value][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter  0 if there is no reason.\r\nIn Init_value, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:CounterID][Y::00][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter  and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem	{VAL}	{FLAG}
+210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID][Y::Init_value][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter  0 if there is no reason.\r\nIn Init_value, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate	{VAL}	{FLAG}
 
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
 202AXXXX	Return to title screen[XXXX::Value 1](MNTS)	{ENDING}
@@ -118,7 +118,7 @@
 4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)(LOW)	{LOADUNIT}
 4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
-4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C.	@STOREC	{COND}
+4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C	@STOREC	{COND}
 202EXXYY	Get unit ID of the unit at the given coordinates(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y]	returns unit ID if there is a unit at coordinates	@STOREC	{COND}
 2F410000	ENDWARP
 2F41XXXX	ENDWARP[XXXX::Value1](LOW)
@@ -130,8 +130,8 @@
 40AAXXXXYYYY0000	_0xAA40[XXXX::Value1][YY::Value2]
 40ABXXXXYYYY0000	_0xAB40[XXXX::Value1][YY::Value2]
 20C20000	_0xC220
-2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
-2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
+2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID	{JUMP}
+2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO	{JUMP}
 221B0000	Conversation end(REMA)
 211A0000	Removes speech bubbles and portraits(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
@@ -355,8 +355,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 410D000075040808	Play Demon King sealing FX	{MAPEFFECT}	{U}
 40A600000000ZZZZ212AXXXX	Goto next chapter with world map based on designated base.[ZZ:WMLOCATION:World Map Node][XXXX:MAPCHAPTER:Chapter_ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
 212AXXXX	Goto next chapter with world map.[XXXX:MAPCHAPTER:Chapter_ID](MNCH)	@MNCHBUG	{MAP}
-222AXXXX	Goto next chapter without world map.[XXXX:MAPCHAPTER:Chapter_ID](MNC2)	Proceed to the next chapter.	@MNC2BUG	{MAP}
-232AXXXX	Goto next chapter without world map or save screen.[XXXX:MAPCHAPTER:Chapter_ID](MNC3)	Proceed to the next chapter without saving.	@MNC2BUG	{MAP}
+222AXXXX	Goto next chapter without world map.[XXXX:MAPCHAPTER:Chapter_ID](MNC2)	Proceed to the next chapter	@MNC2BUG	{MAP}
+232AXXXX	Goto next chapter without world map or save screen.[XXXX:MAPCHAPTER:Chapter_ID](MNC3)	Proceed to the next chapter without saving	@MNC2BUG	{MAP}
 
 40050700YYYYYYYY400CXXXX0C000700	Imm BEQ (If Result == [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
 40050700YYYYYYYY410CXXXX0C000700	Imm BNE (If Result != [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
@@ -390,7 +390,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2733FFFF	Get the class ID of the active (visiting/current) unit(CHECK_CLASS)	@STOREC	{UNITCOND}
 2633FFFF	Get the coordinates of the active (visiting/current) unit(CHECK_COORDS)	@STOREC	{UNITCOND}
 2833FFFF	Get the luck stat of the active (visiting/current) unit(CHECK_LUCK)	@STOREC	{UNITCOND}
-2533FFFF	Get the allegiance of the active (visiting/current)(CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
+2533FFFF	Get the allegiance of the active (visiting/current)(CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit	@STOREC 	{UNITCOND}
 212E0000	Get the unit ID of the active (visiting/current) unit(CHECK_ACTIVE)	@STOREC	{UNITCOND}
 
 2133XXXX	Get the conversation group of the specified [XXXX:UNIT:Character](CHECK_STATUS)	@STOREC
@@ -401,11 +401,11 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2233XXXX	Checks if alive the [XXXX:UNIT:Character](CHECK_ALIVE)	Returns 1 if the unit is alive and 0 otherwise	@STOREC	{UNITCOND}
 2333XXXX	Checks if deployment the [XXXX:UNIT:Character](CHECK_DEPLOYED)	Returns 1 if the unit is deployed in this chapter and 0 otherwise	@STOREC	{UNITCOND}
 2433XXXX	checks if active unit matches given [XXXX:UNIT:Character](CHECK_ACTIVEID)	Returns 1 if the unit(character) is active (visiting/current) and 0 otherwise	@STOREC	{UNITCOND}
-2533XXXX	Get the allegiance of the [XXXX:UNIT:Character](CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
+2533XXXX	Get the allegiance of the [XXXX:UNIT:Character](CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit	@STOREC 	{UNITCOND}
 
 4021XXXX00000000	BACG[XXXX:BG:Background]Changes background to value in Slot_2(LOW)
-403AXXXXYYYY0000	Notification by popup[XXXX:ONELINE_TEXT:Text][YY:MUSIC:sound effect](NOTIFY)	Displays a notification popup.	{TEXT}
-403AXXXX5A000000	Notification by popup with Item Get SoundEffect[XXXX:ONELINE_TEXT:Text](NOTIFY)	Displays a notification popup.	{TEXT}
+403AXXXXYYYY0000	Notification by popup[XXXX:ONELINE_TEXT:Text][YY:MUSIC:sound effect](NOTIFY)	Displays a notification popup	{TEXT}
+403AXXXX5A000000	Notification by popup with Item Get SoundEffect[XXXX:ONELINE_TEXT:Text](NOTIFY)	Displays a notification popup	{TEXT}
 413AXXXXYYYYZZZZ	Display location text[XXXX:ONELINE_TEXT:Text]at screen coordinates[YYYY:SCREENX:X][ZZZZ:SCREENY:Y](BROWNBOXTEXT)	Displays a small textbox on the screen (used for location names)	{TEXT}
 413AXXXX08000800	Display location text[XXXX:ONELINE_TEXT:Text]at screen upper left(BROWNBOXTEXT)	Displays a small textbox on the screen (used for location names)	{TEXT}
 201A0000	Start dialog (conversation)(TEXTSTART)	{TEXT}
@@ -457,7 +457,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 203BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds][]frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted.(CUSO)	{WAKU}
 253BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds] SHINY []frames[XXXX:UNIT:Character]is highlighted	{WAKU}
 2126XXXX253BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a SHINY []frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+)	{WAKU}	{CAMERA}
-243BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds] SHINY []frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted.	{WAKU}
+243BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds] SHINY []frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted	{WAKU}
 482FZZZZWWWWXXYY	Set[WW:UNIT:Character]to warp to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP)	@MOVESPEED	{UNITMOVE}
 482FZZZZWWWWXXYY20300000	[WW:UNIT:Character]warps to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	@MOVESPEED	{UNITMOVE}
 40050D00000000004005010000WWVVVV2107000040050100FFFFFFFF21070000403FXXXXYYYYZZZZ	Set and execute event battle(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:method of attacker][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
@@ -465,8 +465,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 400A0000249D5B08	Fade Screen In From Black	{J}
 400A0000401F5908	Fade Screen In From Black	{U}
-400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit.	{ITEM}	{J}
-400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit.	{ITEM}	{U}
+400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit	{ITEM}	{J}
+400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit	{ITEM}	{U}
 400A0000249D5B0840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{J}
 400A0000401F590840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{U}
 202DXX00	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color]
@@ -495,8 +495,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
-2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
-2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
+2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}	{J}
+2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}	{U}
 2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets Escaped status bitflag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
 2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets Escaped status bitflag to off. Used for returning party members.(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
@@ -510,15 +510,15 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200XXXXXXXX40050300YYYY0000400A0000E426A708	Ending scene 3 [XX:POINTER_UNIT:Units][YY:TEXT:Conversation]	{J}
 211A0000400D00002DD00B08	Show tactics evaluation screen	{ENDING}	{J}
 400D0000C97E0808	Torch item FX	{MAPEFFECT}	{J}
-400D000009190808	Blacks out the map.	{J}
-400D0000A9180808	Makes the map a little darker.	{J}
+400D000009190808	Blacks out the map	{J}
+400D0000A9180808	Makes the map a little darker	{J}
 400D0000FD5B0808	Torch item FX	{MAPEFFECT}	{U}
-400D000069F50708	Blacks out the map.	{U}
-400D0000C9F50708	Make the map a little darker.	{U}
+400D000069F50708	Blacks out the map	{U}
+400D0000C9F50708	Make the map a little darker	{U}
 211A0000400D000045570A082022000020171000	Display Support menu on preperation screen	{J}
 211A0000400D00006D190A082022000020171000	Display Support menu on preperation screen	{U}
-400D0000DD600108	Returns the music to the map BGM.	{MUSIC}	{J}
-400D0000D1600108	Returns the music to the map BGM.	{MUSIC}	{U}
+400D0000DD600108	Returns the music to the map BGM	{MUSIC}	{J}
+400D0000D1600108	Returns the music to the map BGM	{MUSIC}	{U}
 400D0000317F0808	Display the "Map Clear!"" FX (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{J}
 400D0000655C0808	Display the "Map Clear!"" FX (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{U}
 20000000	NOP
@@ -527,14 +527,14 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 211BXXXX	[XXXX:CONVERSATION_TEXT:Conversation Text]Dialog (conversation) with background (LOW)(TEXTSHOW2)
 253BXXYY200EZZZZ223B0000	[XX:MAPX:X] [YY:MAPY:Y] displays [ZZZZ:FSEC:Frames Seconds] glowing [] frame	{WAKU}
 222B0000	Ignore the move in the LOAD command that is called immediately after.(_2B22)(LOW)
-40050200YY00000040050300XX000000400A0000580AA608	Floor clear of towers and ruins.To [XX:MAPCHAPTER:next map].In case of Retreat, return to [YY:MAPCHAPTER:Map of entrance].	{J}
-40050200YYYY000040050300XX000000400A0000280AA608	Tower floor clear.If [YYYY:FLAG:flag] is invalid, return to [YY:MAPCHAPTER:Map of entrance].	{J}
-40050200XXXX0000400A0000BC02A608	If Creature Campaign mode, enable [XX:FLAG:Flag].	{U}
-40050200YY00000040050300XX000000400A000020E99E08	Floor clear of towers and ruins.To [XX:MAPCHAPTER:next map].In case of Retreat, return to [YY:MAPCHAPTER:Map of entrance].	{U}
-40050200YYYY000040050300XX000000400A0000F0E89E08	Tower floor clear.If [YYYY:FLAG:Flag] is invalid, return to [YY:MAPCHAPTER:Map of entrance].	{U}
+40050200YY00000040050300XX000000400A0000580AA608	Floor clear of towers and ruins.To [XX:MAPCHAPTER:next map].In case of Retreat, return to [YY:MAPCHAPTER:Map of entrance]	{J}
+40050200YYYY000040050300XX000000400A0000280AA608	Tower floor clear.If [YYYY:FLAG:flag] is invalid, return to [YY:MAPCHAPTER:Map of entrance]	{J}
+40050200XXXX0000400A0000BC02A608	If Creature Campaign mode, enable [XX:FLAG:Flag]	{U}
+40050200YY00000040050300XX000000400A000020E99E08	Floor clear of towers and ruins.To [XX:MAPCHAPTER:next map].In case of Retreat, return to [YY:MAPCHAPTER:Map of entrance]	{U}
+40050200YYYY000040050300XX000000400A0000F0E89E08	Tower floor clear.If [YYYY:FLAG:Flag] is invalid, return to [YY:MAPCHAPTER:Map of entrance]	{U}
 40050200XXXX0000400A000084E19E08	If Creature Campaign mode, enable [XX:FLAG:Flag]	{U}
-400D000055D60008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{J}
-400D000091D30008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{U}
+400D000055D60008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title	{J}
+400D000091D30008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title	{U}
 400A00006C9D5B08	Show SVAL2'sTextID(LOW)	{J}
 400A0000881F5908	Show SVAL2'sTextID(LOW)	{U}
 400A0000FC03A608	Fade-in relationship processing(LOW)	{J}
@@ -570,16 +570,16 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20100200	Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding(EVBIT_MODIFY 2)	{EVBIT}
 20100300	Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding(EVBIT_MODIFY 3)	{EVBIT}
 20100400	Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding(EVBIT_MODIFY 4)	{EVBIT}
-2025XXXX	[XX:MAPCHAPTER:Chapter ID] Map switching (LOMA).	{MAP}
+2025XXXX	[XX:MAPCHAPTER:Chapter ID] Map switching (LOMA)	{MAP}
 400D000001270208	Waiting for current player unit in current position	Use this if you want the unit to wait for a special menu.\r\nThis will put it in a moving position compared to SET_ENDTURN	{J}
 400D000039270208	Waiting for current player unit in current position	Use this if you want the unit to wait for a special menu.\r\nThis will put it in a moving position compared to SET_ENDTURN	{U}
-400D0000A5900708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{U}
-400D0000B9B40708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving.	{J}
+400D0000A5900708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving	{U}
+400D0000B9B40708	Force stop the unit currently moving(ASMC ClearMOVEUNITs)	{UNITMOVE}	This is mainly used in range conditions.\r\nThis occurs when a unit is still moving, so if you move the unit while it is still moving, the unit will be displayed twice.\r\nSuppress this phenomenon by turning off animations while the unit is moving	{J}
 20230000	Hide all units on the map.(HIDEMAP)
 20240000	Unhide all units on the map.(SHOWMAP)	Release HIDEMAP
 Duration
-400D00003D7F0808	Congratulations! Directed display when the tower and ruins are cleared to the end.	{J}
-400D0000715C0808	Congratulations! Directed display when the tower and ruins are cleared to the end.	{U}
+400D00003D7F0808	Congratulations! Directed display when the tower and ruins are cleared to the end	{J}
+400D0000715C0808	Congratulations! Directed display when the tower and ruins are cleared to the end	{U}
 400D0000257F0808	Clear DungeonState to start recording when ruins start	{J}
 400D0000197F0808	Clear DungeonState to start recording when tower start	{J}
 400D0000595C0808	Clear DungeonState to start recording when ruins start	{U}

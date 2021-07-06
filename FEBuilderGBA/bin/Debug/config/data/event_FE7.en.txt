@@ -126,10 +126,10 @@
 48000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM]	{JUMP}	{U}
 47000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM]	{JUMP}	{J}
 49000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM]	{JUMP}	{U}
-43000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{J}
-45000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{U}
-42000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{J}
-44000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{U}
+43000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID	{JUMP}	{J}
+45000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID	{JUMP}	{U}
+42000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO	{JUMP}	{J}
+44000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO	{JUMP}	{U}
 4A000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{J}
 4C000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{U}
 4B000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{J}
@@ -576,10 +576,10 @@ CC000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Display the returning warp to thi
 8A000000	Do not make the screen dark when skipping	{U}
 00000100	_00
 08000800XXXXYYYY00008000	_08[XXXX::Value1][XXXX::Value2]
-1600YY00XXXXXXXX	Display conversation by talk group 2 [XXXX: POINTER_TALKGROUP: talk group] [YY :: Value].	{J}
-1600YY00XXXXXXXX	Display conversation by talk group 2 [XXXX: POINTER_TALKGROUP: talk group] [YY :: Value].	{U}
-18000000XXXX0000YYYY0000ZZZZ0000	Switch by switching the conversation with the flag [X: FLAG: Flag] [When YY: CONVERSATION_TEXT: Enabled] [ZZ: CONVERSATION_TEXT: When disabled] (TEXTIFEVENTID).	{TEXT}	{J}
-1A000000XXXX0000YYYY0000ZZZZ0000	Switch by switching the conversation with the flag [X: FLAG: Flag] [When YY: CONVERSATION_TEXT: Enabled] [ZZ: CONVERSATION_TEXT: When disabled] (TEXTIFEVENTID).	{TEXT}	{U}
+1600YY00XXXXXXXX	Display conversation by talk group 2 [XXXX: POINTER_TALKGROUP: talk group] [YY :: Value]	{J}
+1600YY00XXXXXXXX	Display conversation by talk group 2 [XXXX: POINTER_TALKGROUP: talk group] [YY :: Value]	{U}
+18000000XXXX0000YYYY0000ZZZZ0000	Switch by switching the conversation with the flag [X: FLAG: Flag] [When YY: CONVERSATION_TEXT: Enabled] [ZZ: CONVERSATION_TEXT: When disabled] (TEXTIFEVENTID)	{TEXT}	{J}
+1A000000XXXX0000YYYY0000ZZZZ0000	Switch by switching the conversation with the flag [X: FLAG: Flag] [When YY: CONVERSATION_TEXT: Enabled] [ZZ: CONVERSATION_TEXT: When disabled] (TEXTIFEVENTID)	{TEXT}	{U}
 20000007	_22	{J}
 22000007	_22	{U}
 95000000XX000000YY0000000000000000000001	_97[XX:UNIT:Unit1][YY:UNIT:Unit2]	{J}

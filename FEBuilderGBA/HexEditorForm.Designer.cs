@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.ControlPanel = new System.Windows.Forms.Panel();
-            this.Hint = new FEBuilderGBA.TextBoxEx();
             this.MarkListButton = new System.Windows.Forms.Button();
             this.SetMarkButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.DisASMButton = new System.Windows.Forms.Button();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.SearchButton = new System.Windows.Forms.Button();
             this.JumpButton = new System.Windows.Forms.Button();
+            this.Hint = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.HexBox = new FEBuilderGBA.HexBox();
             this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,14 +55,6 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1236, 80);
             this.ControlPanel.TabIndex = 1;
-            // 
-            // Hint
-            // 
-            this.Hint.Location = new System.Drawing.Point(4, 52);
-            this.Hint.Name = "Hint";
-            this.Hint.ReadOnly = true;
-            this.Hint.Size = new System.Drawing.Size(1227, 25);
-            this.Hint.TabIndex = 9;
             // 
             // MarkListButton
             // 
@@ -104,14 +96,6 @@
             this.DisASMButton.UseVisualStyleBackColor = true;
             this.DisASMButton.Click += new System.EventHandler(this.DisASMButton_Click);
             // 
-            // SelectAddress
-            // 
-            this.SelectAddress.Location = new System.Drawing.Point(698, 10);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Size = new System.Drawing.Size(403, 25);
-            this.SelectAddress.TabIndex = 4;
-            this.SelectAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelectAddress_KeyDown);
-            // 
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(110, 3);
@@ -132,6 +116,26 @@
             this.JumpButton.UseVisualStyleBackColor = true;
             this.JumpButton.Click += new System.EventHandler(this.JumpButton_Click);
             // 
+            // Hint
+            // 
+            this.Hint.ErrorMessage = "";
+            this.Hint.Location = new System.Drawing.Point(4, 52);
+            this.Hint.Name = "Hint";
+            this.Hint.Placeholder = "";
+            this.Hint.ReadOnly = true;
+            this.Hint.Size = new System.Drawing.Size(1227, 25);
+            this.Hint.TabIndex = 9;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(698, 10);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.Size = new System.Drawing.Size(403, 25);
+            this.SelectAddress.TabIndex = 4;
+            this.SelectAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelectAddress_KeyDown);
+            // 
             // HexBox
             // 
             this.HexBox.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -151,6 +155,7 @@
             this.Name = "HexEditorForm";
             this.Text = "バイナリエディタ";
             this.Load += new System.EventHandler(this.HexEditorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HexEditorForm_KeyDown);
             this.Resize += new System.EventHandler(this.HexEditorForm_Resize);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();

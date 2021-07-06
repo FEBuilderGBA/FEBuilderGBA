@@ -33,17 +33,17 @@ namespace FEBuilderGBA
             InitItem2();
 
             N1_InputFormRef = N1_Init(this);
-            N1_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N1;
+            N1_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N1;
             N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N1_AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
 
             N2_InputFormRef = N2_Init(this);
-            N2_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N2;
+            N2_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N2;
             N2_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N2_AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
 
             N3_InputFormRef = N3_Init(this);
-            N3_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N3;
+            N3_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N3;
             N3_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N3_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
@@ -97,7 +97,7 @@ namespace FEBuilderGBA
                 return;
             }
             N4_InputFormRef = N4_Init(this);
-            N4_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N4;
+            N4_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N4;
             N4_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N4_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
         }

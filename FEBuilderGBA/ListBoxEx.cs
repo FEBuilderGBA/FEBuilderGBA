@@ -131,6 +131,31 @@ namespace FEBuilderGBA
             this.LastHoverIndex = hoverindex;
         }
 
+        //関連行を光らせる
+        List<int> RelatedLine = new List<int>();
+        public void SetRelatedLine(int index)
+        {
+            int pos = RelatedLine.IndexOf(index);
+            if (pos < 0)
+            {
+                RelatedLine.Add(index);
+                InvalidateLine(index);
+            }
+        }
+        public void ClearAllSetRelatedLine()
+        {
+            if (RelatedLine.Count <= 0)
+            {
+                return ;
+            }
+            List<int> lines = new List<int>(RelatedLine);
+            RelatedLine.Clear();
+            foreach (int index in lines)
+            {
+                InvalidateLine(index);
+            }
+        }
+
         void DrawBackground(int index, Graphics g, Rectangle listbounds, DrawItemState state, bool isWithDraw)
         {
             if (!isWithDraw)
@@ -143,22 +168,29 @@ namespace FEBuilderGBA
                 Brush brush = new SolidBrush(OptionForm.Color_List_SelectedColor());
                 g.FillRectangle(brush, listbounds);
                 brush.Dispose();
-                
                 return;
             }
 
+            if (index == this.LastHoverIndex)
+            {//hover
+                Brush brush = new SolidBrush(OptionForm.Color_List_HoverColor());
+                g.FillRectangle(brush, listbounds);
+                brush.Dispose();
+                return;
+            }
+            if (RelatedLine.IndexOf(index) >= 0)
+            {//関連行ハイライト
+                Brush brush = new SolidBrush(OptionForm.Color_List_RelatedLine_BackColor());
+                g.FillRectangle(brush, listbounds);
+                brush.Dispose();
+                return;
+            }
             if (index != this.LastHoverIndex)
             {//通常
                 Brush brush = new SolidBrush(OptionForm.Color_Input_BackColor());
                 g.FillRectangle(brush, listbounds);
                 brush.Dispose();
-            }
-            else
-            {//hover
-                Brush brush = new SolidBrush(OptionForm.Color_List_HoverColor());
-                g.FillRectangle(brush, listbounds);
-                brush.Dispose();
-                
+                return;
             }
         }
 

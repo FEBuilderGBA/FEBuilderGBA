@@ -882,6 +882,7 @@
             this.RunningEventListBox.Name = "RunningEventListBox";
             this.RunningEventListBox.Size = new System.Drawing.Size(1058, 850);
             this.RunningEventListBox.TabIndex = 168;
+            this.RunningEventListBox.SelectedIndexChanged += new System.EventHandler(this.RunningEventListBox_SelectedIndexChanged);
             this.RunningEventListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RunningEventListBox_KeyDown);
             this.RunningEventListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RunningEventListBox_MouseDoubleClick);
             // 

@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.PreAddressListExpandsEvent += ClassForm.OnPreClassExtendsWarningHandler;
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 

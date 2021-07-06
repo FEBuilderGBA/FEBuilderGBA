@@ -59,7 +59,7 @@ namespace FEBuilderGBA
             this.N1_AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
             InputFormRef.markupJumpLabel(this.N1_J_1_SKILLASSIGNMENT);
             N1_InputFormRef = N1_Init(this, this.SkillNames);
-            N1_InputFormRef.AddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
+            N1_InputFormRef.PostAddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
             N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             InputFormRef.markupJumpLabel(X_LEARNINFO);

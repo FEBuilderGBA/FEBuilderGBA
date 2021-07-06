@@ -913,6 +913,9 @@ Please enter a valid address in the "Address" field.
 :「読込バイト数」の項目に有効な逆アセンブルするバイト数を入力してください。
 Please enter the number of valid bytes to be disassembled in the "Number of bytes to read" field.
 
+:バニラのソースコードを確認
+Check vanilla Source code
+
 :C言語へ逆コンパイル
 Decompile as C Language
 
@@ -924,9 +927,6 @@ Click the link or J to go to the function.
 
 :クリックボードへ(Ctrl+C)
 Copy to Clipboard (Ctrl+C)
-
-:バニラのソースコードを確認
-Check vanilla Source code
 
 :TSV形式|*.tsv|CSV形式|*.csv|All files|*
 TSV Format|*.tsv|CSV Format|*.csv|All files|*
@@ -2744,7 +2744,7 @@ To make an item fall on FE 7, enable the bit of the drop item of characteristic 
 Item Drop
 
 :交戦時BGMへJump
-Jump to BGM During Battle
+Jump to Battle BGM
 
 :このユニットが行動し終わった後に行動します。\r\n利用しない場合は、0を指定してください。
 It will act after this unit is done.\r\nIf you do not want to use it, please specify 0.
@@ -2796,9 +2796,6 @@ Special+Monster+ItemDrop
 
 :追加AI:
 Additional AI:
-
-:このデータはどこにも関連づけられていません。サイズの変更は関連づけをした後にしてください。
-This data is not related anywhere. Please change size before associating.
 
 :配置後座標が正しくありません。:{0}
 Post placement coordinates are incorrect.: {0}.
@@ -8401,6 +8398,9 @@ In LDR and event, the corresponding pointer value was not found.\r\nWhen binary 
 :空き領域を選択してください
 Select a free area
 
+:書き換えるポインタが一つもありません。\r\nこのデータは参照されていない可能性があります。\r\n危険なので停止することを推奨しますが、続行しますか？
+There is no pointer to rewrite.\r\nThis data may not be referenced.\r\nWe recommend that you stop because it is dangerous, but do you want to continue? 
+
 :書き換えるポインタを一つは選択してください
 Select at least one pointer to rewrite
 
@@ -8410,8 +8410,8 @@ Pointer or size of free space is incorrect
 :コピー元のアドレス指定が正しくありません
 Address of the Copy source is incorrect
 
-:影響を受けるポインタが正しくありません
-Affected pointers are incorrect
+:影響を受けるポインタ({0})が正しくありません
+The affected pointer ({0}) is incorrect.
 
 :空き領域のポインタまたはサイズが正しくありません。0x0 - 0x100までの領域は危険なので移動できません
 The pointer or size of the free space is incorrect. 0x0 - 0x100 are dangerous locations and cannot be moved.
@@ -8830,20 +8830,14 @@ Program 2
 :任意のプログラム3
 Program 3
 
-:元に戻す
-Restore
+:List 関連行の色
+List related line Color
 
-:コントロールのコメント文字色
-Control Comment Text Color
+:コントロールのコメント
+Control Comment
 
-:コメント文字色
-Comment Character Color
-
-:キーワードハイライト文字色
-Highlighted Text Color
-
-:キーワードハイライト背景色
-Highlighted Selection BG Color
+:キーワードハイライト
+Keyword Highlighted
 
 :色の一括変換 色セット
 Preset Color Options
@@ -8866,35 +8860,17 @@ List Hover Color
 :List選択色
 List Select Color
 
-:エラー 文字色
-Error Header Color
+:書き込み通知
+Notification
 
-:エラー 背景色
-Error Popup Color
+:10進数入力
+Decimal Input
 
-:書き込み通知文字色
-Notification Fore Color
+:入力
+Input
 
-:書き込み通知背景色
-Notification BG Color
-
-:10進数入力文字色
-Decimal Input Foreground Color
-
-:10進数入力背景色
-Decimal Input BG Color
-
-:入力文字色
-Input Fore Color
-
-:入力背景色
-Input BG Color
-
-:コントロール文字色
-Control Foreground Color
-
-:コントロール背景色
-Control BG Color
+:コントロール
+Control
 
 :ショートカットキー
 Shortcut Key
@@ -9006,6 +8982,18 @@ Shortcut Key 1
 
 :機能
 Function
+
+:0=常に保護する
+0=Always protect
+
+:1=インストールされていれば保護
+1=Protect if installed
+
+:2=保護しない
+2=Do not protect.
+
+:スキル拡張の聖域
+Sanctuary of skill expansion
 
 :プログラム割り当ての開始位置
 Starting Addresses for Program/Patches
@@ -9283,17 +9271,11 @@ When exporting a file...
 :保存
 Save
 
-:スキル拡張の聖域
-Sanctuary of skill expansion
+:背景色
+BG Color
 
-:0=常に保護する
-0=Always protect
-
-:1=インストールされていれば保護
-1=Protect if installed
-
-:2=保護しない
-2=Do not protect.
+:文字色
+Fore Color
 
 :その他ROM直値テキスト
 Other ROM Direct Text

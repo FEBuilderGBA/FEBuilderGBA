@@ -23,7 +23,7 @@ namespace FEBuilderGBA
 
             this.Script.OwnerDraw(Draw, DrawMode.OwnerDrawVariable, false);
             this.InputFormRef = Init(this);
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEventNoCopyPointer;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyPointer;
 
             this.FilterComboBox.BeginUpdate();
             this.FilterComboBox.Items.Add(R._("0=AI1"));

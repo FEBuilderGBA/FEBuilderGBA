@@ -18,7 +18,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawGameOptionAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             if (Program.ROM.RomInfo.version() == 7)
             {
                 this.InputFormRef.PreWriteHandler += PreWriteButtonFE7;

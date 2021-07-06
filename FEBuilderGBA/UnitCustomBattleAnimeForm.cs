@@ -19,10 +19,10 @@ namespace FEBuilderGBA
 
             U.ConvertListBox(ClassForm.MakeClassList(), ref  this.N2_AddressList);
             this.InputFormRef = Init(this);
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
 
             this.N2_InputFormRef = N2_Init(this);
-            this.N2_InputFormRef.AddressListExpandsEvent += N2_AddressListExpandsEvent;
+            this.N2_InputFormRef.PostAddressListExpandsEvent += N2_AddressListExpandsEvent;
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)

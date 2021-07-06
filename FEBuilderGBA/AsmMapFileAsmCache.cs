@@ -9,12 +9,18 @@ namespace FEBuilderGBA
 {
     class AsmMapFileAsmCache
     {
-        AsmMapFile CachedMAP = null;
-  
-        //即席で結果を返せるものだけで作成する.
-        AsmMapFile MakeInstant()
+        AsmMapFile CachedFullMAP = null; //全シンボルが入った構造体 作るのに時間がかかるのでキャッシュしている
+                                         //スレッドで作られて、完成したらここにストアされる
+        AsmMapFile BaseSymbol;           //ROMに依存せず設定ファイルにだけ依存するシンボルたち asmmapなど
+                                         //初期に作ったらずっと維持する
+
+        public AsmMapFileAsmCache()
         {
-            AsmMapFile map = new AsmMapFile();
+            this.BaseSymbol = MakeBaseSymbol();
+        }
+        AsmMapFile MakeBaseSymbol()
+        {
+            AsmMapFile map = new AsmMapFile(Program.ROM);
             if (Program.ROM.RomInfo.version() == 0)
             {
                 return map;
@@ -73,14 +79,14 @@ namespace FEBuilderGBA
             catch (Exception e)
             {
                 Log.Error(e.ToString());
-                return MakeInstant();
+                return BaseSymbol;
             }
 #endif
         }
 
         AsmMapFile MakeFullLow()
         {
-            AsmMapFile map = MakeInstant();
+            AsmMapFile map = new AsmMapFile(this.BaseSymbol);
             if (IsStopFlag) return map;
 
             //LDRマップのクリア
@@ -214,19 +220,6 @@ namespace FEBuilderGBA
                 Log.Error(e.ToString() );
             }
 #endif
-#if !DEBUG 
-            try
-            {
-#endif
-            SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
-            if (IsStopFlag) return map;
-#if !DEBUG 
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString() );
-            }
-#endif
 
 #if !DEBUG 
             try
@@ -321,23 +314,21 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version() == 0)
             {
-                CachedMAP = MakeInstant(); //すぐに結果を返せるものだけを作り
-                return CachedMAP;
+                return BaseSymbol;
             }
-            if (CachedMAP == null)
+            if (CachedFullMAP == null)
             {//一番最初はデータがないので、
-                CachedMAP = MakeInstant(); //すぐに結果を返せるものだけを作り
                 BuildThread(); //時間のかかるフルマップはスレッドで生成する.
-                return CachedMAP;
+                return BaseSymbol;
             }
 
             if (rebuild == false)
             {
-                return CachedMAP;
+                return CachedFullMAP;
             }
             //キャッシュの作り直し.
             BuildThread(); //時間のかかるフルマップはスレッドで生成する.
-            return CachedMAP;
+            return CachedFullMAP;
         }
 
         bool IsStopFlag = false;
@@ -395,7 +386,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            CachedMAP = map;
+            CachedFullMAP = map;
             Caller = null;
             AsyncResult = null;
             IsStopFlag = false;

@@ -18,7 +18,7 @@ namespace FEBuilderGBA
 
             this.X_PALETTE.SelectedIndex = 0;
             this.InputFormRef = Init(this);
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsUpdateBaristaAnimationAddress;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsUpdateBaristaAnimationAddress;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);

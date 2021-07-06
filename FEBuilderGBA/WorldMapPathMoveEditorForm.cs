@@ -18,7 +18,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             InputFormRef = Init(this);
-            InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
         }
 
         public InputFormRef InputFormRef;

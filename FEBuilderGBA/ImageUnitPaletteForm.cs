@@ -27,7 +27,7 @@ namespace FEBuilderGBA
             }
 
             this.InputFormRef = Init(this);
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEventNoCopyP12;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP12;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.PaletteZoomComboBox.SelectedIndex = 0;

@@ -13,7 +13,12 @@ namespace FEBuilderGBA
         public EtcCache(string type)
         {
             this.Type = type;
-            this.Cache = U.LoadTSVResource1(U.ConfigEtcFilename(this.Type), false);
+            string filename = U.ConfigEtcFilename(this.Type);
+            this.Cache = U.LoadTSVResource1(filename, false);
+            if (this.Cache.Count <= 0 && File.Exists(filename))
+            {//ファイルがあるが読み込めない場合は、no$gba シンボルとして処理する
+                LoadSymbolNoDollGBASym(filename);
+            }
         }
         protected string Type;
         protected Dictionary<uint, string> Cache;
@@ -198,6 +203,48 @@ namespace FEBuilderGBA
                 Address.AddCommentData(list, pair.Key , pair.Value);
             }
         }
+        void LoadSymbolNoDollGBASym(string symtxt)
+        {
+            string[] lines = File.ReadAllLines(symtxt);
+            foreach (string line in lines)
+            {
+                //no$gba形式
+                //800109C MMBDrawInventoryObjs
+                string[] sp = line.Split(' ');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+                string name = sp[1];
+                uint addr = U.atoh(sp[0]);
+                if (addr < 0x08000000 || addr > 0x0F000000)
+                {
+                    continue;
+                }
 
+                if (name.Length <= 0)
+                {
+                    continue;
+                }
+
+                //型指定は無視
+                if (name == ".thumb")
+                {
+                    continue;
+                }
+                else if (name == ".arm")
+                {
+                    continue;
+                }
+                else if (name.IndexOf(":") == 0)
+                {
+                    continue;
+                }
+
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                addr = U.toOffset(addr);
+                this.Cache[addr] = name;
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             U.SelectedIndexSafety(this.CLASS_LISTBOX, 1, false);
 
             //パレット変更の部分にリンクを置く.

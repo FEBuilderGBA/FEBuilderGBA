@@ -80,6 +80,7 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="EventScriptUtil.cs" />
     <Compile Include="EventUnitSimUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

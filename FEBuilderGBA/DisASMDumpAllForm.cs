@@ -114,7 +114,6 @@ namespace FEBuilderGBA
                 Program.CommentCache.MakeAddressList(structlist);
                 asmMapFile.AppendMAP(structlist);
 
-                uint lastNumber = 0;
                 Dictionary<uint, AsmMapFile.AsmMapSt> asmmap = asmMapFile.GetAsmMap();
                 foreach (var pair in asmmap)
                 {
@@ -141,23 +140,7 @@ namespace FEBuilderGBA
                     {//名前が空
                         continue;
                     }
-/*
-                    if (name.IndexOf("6CStructHeader") >= 0)
-                    {//6Cは全部表示する
-                    }
-                    else
-                    {
-                        uint arrayNumner = ParseArrayIndex(name);
-                        if (arrayNumner >= 10)
-                        {//容量削減のため2桁の配列は1つのみ
-                            if (lastNumber == arrayNumner)
-                            {
-                                continue;
-                            }
-                            lastNumber = arrayNumner;
-                        }
-                    }
-*/
+
                     if (pair.Value.TypeName == "ARM")
                     {
                         string line = string.Format("{0} .arm", U.ToHexString(pair.Key), ".arm");
@@ -309,7 +292,6 @@ namespace FEBuilderGBA
                     , isUseOAMSP: true
                     );
                 UnpackBINByCode(structlist);
-                SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);
@@ -503,7 +485,6 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
-                SymbolUtil.LoadCustomNoDollASMSymbol(structlist);
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);

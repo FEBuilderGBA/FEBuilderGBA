@@ -25,7 +25,7 @@ namespace FEBuilderGBA
             this.InputFormRef.IsSurrogateStructure = true; //アイテムの構造体を利用するがサイズは異なる.
             this.N_InputFormRef = N_Init(this);
 
-            this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
+            this.N_InputFormRef.PostAddressListExpandsEvent += N_AddressListExpandsEvent;
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 

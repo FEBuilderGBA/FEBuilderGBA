@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.J_2_UNIT = new System.Windows.Forms.Label();
             this.ControlPanel = new FEBuilderGBA.PanelEx();
             this.UpButton = new System.Windows.Forms.Button();
@@ -104,9 +106,9 @@
             this.B12 = new System.Windows.Forms.NumericUpDown();
             this.J_12_ITEM = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.L_3_UNITGROW_ASSIGN = new System.Windows.Forms.ComboBox();
             this.L_3_UNITGROW_GROW = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.L_3_UNITGROW_ASSIGN = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.L_3_UNITGROW_LV = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
@@ -213,6 +215,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.Comment);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.J_2_UNIT);
             this.panel3.Controls.Add(this.ControlPanel);
             this.panel3.Controls.Add(this.FE8CoordListBox);
@@ -273,14 +277,35 @@
             this.panel3.Size = new System.Drawing.Size(891, 549);
             this.panel3.TabIndex = 47;
             // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(596, 226);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(283, 25);
+            this.Comment.TabIndex = 241;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(467, 223);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 31);
+            this.label4.TabIndex = 240;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // J_2_UNIT
             // 
             this.J_2_UNIT.AccessibleDescription = "@EVENTUNIT_COMMANDER";
             this.J_2_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2_UNIT.Location = new System.Drawing.Point(489, 33);
+            this.J_2_UNIT.Location = new System.Drawing.Point(489, 30);
             this.J_2_UNIT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_2_UNIT.Name = "J_2_UNIT";
-            this.J_2_UNIT.Size = new System.Drawing.Size(128, 33);
+            this.J_2_UNIT.Size = new System.Drawing.Size(128, 35);
             this.J_2_UNIT.TabIndex = 50;
             this.J_2_UNIT.Text = "指揮官";
             this.J_2_UNIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -754,7 +779,7 @@
             // J_6
             // 
             this.J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_6.Location = new System.Drawing.Point(489, 0);
+            this.J_6.Location = new System.Drawing.Point(489, -1);
             this.J_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_6.Name = "J_6";
             this.J_6.Size = new System.Drawing.Size(128, 32);
@@ -858,10 +883,10 @@
             this.panel10.Controls.Add(this.JUMP_BATTLEBGM);
             this.panel10.Controls.Add(this.JUMP_HAIKU);
             this.panel10.Controls.Add(this.JUMP_BATTLETALK);
-            this.panel10.Location = new System.Drawing.Point(489, 219);
+            this.panel10.Location = new System.Drawing.Point(467, 268);
             this.panel10.Margin = new System.Windows.Forms.Padding(5);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(401, 121);
+            this.panel10.Size = new System.Drawing.Size(423, 72);
             this.panel10.TabIndex = 92;
             // 
             // X_ITEMDROP
@@ -869,7 +894,7 @@
             this.X_ITEMDROP.AutoSize = true;
             this.X_ITEMDROP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_ITEMDROP.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_ITEMDROP.Location = new System.Drawing.Point(16, 97);
+            this.X_ITEMDROP.Location = new System.Drawing.Point(209, 42);
             this.X_ITEMDROP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.X_ITEMDROP.Name = "X_ITEMDROP";
             this.X_ITEMDROP.Size = new System.Drawing.Size(114, 18);
@@ -882,7 +907,7 @@
             this.JUMP_BATTLEBGM.AutoSize = true;
             this.JUMP_BATTLEBGM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLEBGM.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(16, 35);
+            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(209, 10);
             this.JUMP_BATTLEBGM.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLEBGM.Name = "JUMP_BATTLEBGM";
             this.JUMP_BATTLEBGM.Size = new System.Drawing.Size(154, 18);
@@ -895,7 +920,7 @@
             this.JUMP_HAIKU.AutoSize = true;
             this.JUMP_HAIKU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_HAIKU.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_HAIKU.Location = new System.Drawing.Point(16, 66);
+            this.JUMP_HAIKU.Location = new System.Drawing.Point(19, 42);
             this.JUMP_HAIKU.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_HAIKU.Name = "JUMP_HAIKU";
             this.JUMP_HAIKU.Size = new System.Drawing.Size(156, 18);
@@ -908,7 +933,7 @@
             this.JUMP_BATTLETALK.AutoSize = true;
             this.JUMP_BATTLETALK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLETALK.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(16, 4);
+            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(19, 10);
             this.JUMP_BATTLETALK.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLETALK.Name = "JUMP_BATTLETALK";
             this.JUMP_BATTLETALK.Size = new System.Drawing.Size(156, 18);
@@ -1214,9 +1239,9 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.L_3_UNITGROW_ASSIGN);
             this.panel4.Controls.Add(this.L_3_UNITGROW_GROW);
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.L_3_UNITGROW_ASSIGN);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.L_3_UNITGROW_LV);
             this.panel4.Controls.Add(this.label9);
@@ -1226,6 +1251,21 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(758, 30);
             this.panel4.TabIndex = 54;
+            // 
+            // L_3_UNITGROW_ASSIGN
+            // 
+            this.L_3_UNITGROW_ASSIGN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_3_UNITGROW_ASSIGN.FormattingEnabled = true;
+            this.L_3_UNITGROW_ASSIGN.Items.AddRange(new object[] {
+            "自軍",
+            "友軍",
+            "敵軍",
+            "消滅"});
+            this.L_3_UNITGROW_ASSIGN.Location = new System.Drawing.Point(358, 1);
+            this.L_3_UNITGROW_ASSIGN.Margin = new System.Windows.Forms.Padding(5);
+            this.L_3_UNITGROW_ASSIGN.Name = "L_3_UNITGROW_ASSIGN";
+            this.L_3_UNITGROW_ASSIGN.Size = new System.Drawing.Size(97, 26);
+            this.L_3_UNITGROW_ASSIGN.TabIndex = 2;
             // 
             // L_3_UNITGROW_GROW
             // 
@@ -1251,21 +1291,6 @@
             this.label11.TabIndex = 60;
             this.label11.Text = "成長率:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_3_UNITGROW_ASSIGN
-            // 
-            this.L_3_UNITGROW_ASSIGN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_3_UNITGROW_ASSIGN.FormattingEnabled = true;
-            this.L_3_UNITGROW_ASSIGN.Items.AddRange(new object[] {
-            "自軍",
-            "友軍",
-            "敵軍",
-            "消滅"});
-            this.L_3_UNITGROW_ASSIGN.Location = new System.Drawing.Point(358, 1);
-            this.L_3_UNITGROW_ASSIGN.Margin = new System.Windows.Forms.Padding(5);
-            this.L_3_UNITGROW_ASSIGN.Name = "L_3_UNITGROW_ASSIGN";
-            this.L_3_UNITGROW_ASSIGN.Size = new System.Drawing.Size(97, 26);
-            this.L_3_UNITGROW_ASSIGN.TabIndex = 2;
             // 
             // label10
             // 
@@ -1580,7 +1605,7 @@
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Location = new System.Drawing.Point(432, 0);
+            this.label22.Location = new System.Drawing.Point(432, -2);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(122, 30);
@@ -1819,7 +1844,7 @@
             // AddressListExpandsButton_50
             // 
             this.AddressListExpandsButton_50.AccessibleDescription = "@EVENTUNIT_LISTEXPANDS";
-            this.AddressListExpandsButton_50.Location = new System.Drawing.Point(-1, 369);
+            this.AddressListExpandsButton_50.Location = new System.Drawing.Point(-1, 370);
             this.AddressListExpandsButton_50.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_50.Name = "AddressListExpandsButton_50";
             this.AddressListExpandsButton_50.Size = new System.Drawing.Size(175, 30);
@@ -2061,5 +2086,7 @@
         private TextBoxEx X_RANDOMMONSTER_VIEW;
         private System.Windows.Forms.Panel X_RANDOMMONSTER;
         private EventUnitSimUserControl X_Sim;
+        private TextBoxEx Comment;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -85,95 +85,9 @@ namespace FEBuilderGBA
 
         public EventHandler AddressListExpandsEvent;
 
-        static uint GetScriptConditionalID(EventScript.OneCode code)
-        {
-            for (int i = 0; i < code.Script.Args.Length; i++)
-            {
-                EventScript.Arg arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.IF_CONDITIONAL
-                    || arg.Type == EventScript.ArgType.GOTO_CONDITIONAL)
-                {
-                    uint v = EventScript.GetArgValue(code, arg);
-                    return v;
-                }
-            }
-            return U.NOT_FOUND;
-        }
-        static uint GetScriptLabelID(EventScript.OneCode code)
-        {
-            for (int i = 0; i < code.Script.Args.Length; i++)
-            {
-                EventScript.Arg arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.LABEL_CONDITIONAL)
-                {
-                    uint v = EventScript.GetArgValue(code, arg);
-                    return v;
-                }
-            }
-            return U.NOT_FOUND;
-        }
 
         EventScriptPopupUserControl Popup;
         List<EventScript.OneCode> EventAsm;
-        public static void JisageReorder(List<EventScript.OneCode> eventAsm)
-        {
-            List<uint> needLabel = new List<uint>();
-            uint jisageCount = 0;
-            bool isBeforeGoto = false;
-            for (int i = 0; i < eventAsm.Count; i++)
-            {
-                EventScript.OneCode code = eventAsm[i];
-                if (code.Script.Has == EventScript.ScriptHas.LABEL_CONDITIONAL)
-                {
-                    if (jisageCount > 0)
-                    {
-                        uint cond_id = GetScriptLabelID(code);
-
-                        needLabel.RemoveAll((uint x) => { return x == cond_id; });
-                        if (needLabel.Count == 0)
-                        {//必要なラベルをすべて探索し終わった。おそらく複雑な字下げが行われているのだろう.
-                            jisageCount = 0;
-                        }
-                        else
-                        {
-                            jisageCount--;
-                        }
-                        code.JisageCount = jisageCount;
-                    }
-                    if (needLabel.Count != 0 && isBeforeGoto)
-                    {//まだ探索しなければいけないラベルがあり、直前にgotoがあった場合
-                        //おそらくこれはelse区です
-                        jisageCount++;
-                    }
-                    isBeforeGoto = false;
-                }
-                else if (code.Script.Has == EventScript.ScriptHas.IF_CONDITIONAL)
-                {
-                    code.JisageCount = jisageCount ++;
-                    uint conditional_id = GetScriptConditionalID(code);
-                    if (conditional_id != U.NOT_FOUND)
-                    {
-                        needLabel.Add(conditional_id);
-                    }
-                    isBeforeGoto = false;
-                }
-                else if (code.Script.Has == EventScript.ScriptHas.GOTO_CONDITIONAL)
-                {
-                    code.JisageCount = jisageCount;
-                    uint conditional_id = GetScriptConditionalID(code);
-                    if (conditional_id != U.NOT_FOUND)
-                    {
-                        needLabel.Add(conditional_id);
-                    }
-                    isBeforeGoto = true;
-                }
-                else
-                {
-                    code.JisageCount = jisageCount;
-                    isBeforeGoto = false;
-                }
-            }
-        }
 
         private void ReloadListButton_Click(object sender, EventArgs e)
         {
@@ -229,7 +143,7 @@ namespace FEBuilderGBA
                 addr += (uint)code.Script.Size;
             }
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, this.AddressList.SelectedIndex);
@@ -518,6 +432,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideFloatingControlpanel();
+            EventScriptUtil.UpdateRelatedLine(this.AddressList, this.EventAsm);
         }
 
 
@@ -2141,7 +2056,7 @@ namespace FEBuilderGBA
             this.EventAsm[this.AddressList.SelectedIndex] = code;
 
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, selected);
@@ -2190,7 +2105,7 @@ namespace FEBuilderGBA
                 }
             }
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, selected);
@@ -2329,7 +2244,7 @@ namespace FEBuilderGBA
 
             this.EventAsm.RemoveAt(this.AddressList.SelectedIndex);
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, this.AddressList.SelectedIndex - 1);
@@ -2376,7 +2291,7 @@ namespace FEBuilderGBA
             U.SwapUp(this.EventAsm, this.AddressList,this.AddressList.SelectedIndex);
 
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, this.AddressList.SelectedIndex - 1);
@@ -2397,7 +2312,7 @@ namespace FEBuilderGBA
             U.SwapDown(this.EventAsm,this.AddressList, this.AddressList.SelectedIndex);
 
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, this.AddressList.SelectedIndex + 1);
@@ -2503,7 +2418,7 @@ namespace FEBuilderGBA
             //テンプレートからデータを追加.
             this.EventAsm.InsertRange(insertedPoint, codes);
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc(this.EventAsm.Count, insertedPoint + 1);
@@ -2604,7 +2519,7 @@ namespace FEBuilderGBA
             }
 
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, insertedPoint + 1);
@@ -3246,7 +3161,7 @@ namespace FEBuilderGBA
                 addr += (uint)code.Script.Size;
             }
             //最後に自下げ処理実行.
-            JisageReorder(this.EventAsm);
+            EventScriptUtil.JisageReorder(this.EventAsm);
 
             //リストの更新.
             this.AddressList.DummyAlloc( this.EventAsm.Count, 0);
@@ -3561,7 +3476,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < this.EventAsm.Count; i++)
             {
                 EventScript.OneCode code = this.EventAsm[i];
-                uint cond_id = GetScriptLabelID(code);
+                uint cond_id = EventScriptUtil.GetScriptLabelID(code);
                 if (cond_id == U.NOT_FOUND)
                 {
                     continue;

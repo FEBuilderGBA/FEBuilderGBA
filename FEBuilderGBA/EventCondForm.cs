@@ -28,7 +28,7 @@ namespace FEBuilderGBA
             this.InputFormRefN02 = InitN02(this);
             this.InputFormRefN02.PreWriteHandler += PreWriteHandler_N02_W0;
             this.InputFormRefN02.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefN02.AddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
+            this.InputFormRefN02.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefN02.AddressList.OwnerDraw(DrawEventListTurn, DrawMode.OwnerDrawFixed);
             this.InputFormRefN02.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
                 this.CustomKeydownHandler(sender, e, this.InputFormRefN02);
@@ -38,7 +38,7 @@ namespace FEBuilderGBA
             this.InputFormRefTalk = InitTalk(this);
             this.InputFormRefTalk.PreWriteHandler += PreWriteHandler_TALK_W0_UNIONKEY;
             this.InputFormRefTalk.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefTalk.AddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
+            this.InputFormRefTalk.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefTalk.AddressList.OwnerDraw(DrawEventListTalk, DrawMode.OwnerDrawFixed);
             this.InputFormRefTalk.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
                 this.CustomKeydownHandler(sender, e, this.InputFormRefTalk);
@@ -47,7 +47,7 @@ namespace FEBuilderGBA
             this.InputFormRefObject = InitObject(this);
             this.InputFormRefObject.PreWriteHandler += PreWriteHandler_OBJECT_W0_UNIONKEY;
             this.InputFormRefObject.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefObject.AddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
+            this.InputFormRefObject.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefObject.AddressList.OwnerDraw(DrawEventListObject, DrawMode.OwnerDrawFixed);
             this.InputFormRefObject.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
                 this.CustomKeydownHandler(sender, e, this.InputFormRefObject);
@@ -56,7 +56,7 @@ namespace FEBuilderGBA
             this.InputFormRefAlways = InitAlways(this);
             this.InputFormRefAlways.PreWriteHandler += PreWriteHandler_ALWAYS_W0_UNIONKEY;
             this.InputFormRefAlways.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefAlways.AddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
+            this.InputFormRefAlways.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefAlways.AddressList.OwnerDraw(DrawEventListAlways, DrawMode.OwnerDrawFixed);
             this.InputFormRefAlways.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
                 this.CustomKeydownHandler(sender, e, this.InputFormRefAlways);
@@ -64,7 +64,7 @@ namespace FEBuilderGBA
 
             this.InputFormRefTrap = InitTrap(this);
             this.InputFormRefTrap.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefTrap.AddressListExpandsEvent += AddressListExpandsEventTrap;
+            this.InputFormRefTrap.PostAddressListExpandsEvent += AddressListExpandsEventTrap;
             this.InputFormRefTrap.AddressList.OwnerDraw(DrawEventListTrap, DrawMode.OwnerDrawFixed);
             this.InputFormRefTrap.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
                 this.CustomKeydownHandler(sender, e, this.InputFormRefTrap);
@@ -73,7 +73,7 @@ namespace FEBuilderGBA
             //For FE8  他シリーズでもとりあえず初期化だけはやる.
             this.InputFormRefTutorial = InitTutorial(this);
             this.InputFormRefTutorial.PostWriteHandler += OnPostWriteHandler_ClearCache;
-            this.InputFormRefTutorial.AddressListExpandsEvent += AddressListExpandsEventNoCopyP0;
+            this.InputFormRefTutorial.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP0;
             this.InputFormRefTutorial.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
                 this.CustomKeydownHandler(sender, e, this.InputFormRefTutorial);
             });

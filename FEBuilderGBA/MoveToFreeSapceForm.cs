@@ -13,6 +13,8 @@ namespace FEBuilderGBA
     {
         //実行完了後のコールバック
         Func<uint,uint,int> CallbackAfterRun = null;
+        //関連ずけられていないデータの拡張を許可する
+        public bool CanAllowExtensionUnrelatedData = false;
 
         public MoveToFreeSapceForm()
         {
@@ -28,6 +30,7 @@ namespace FEBuilderGBA
             this.CondFreeSpace.SelectedIndex = OptionForm.rom_extends_option();  // 0x09000000以降の拡張領域で、0x00がFREE_SPACE_SIZE個+必要データ数連続している領域
             this.FreeSpaceList.Items.Clear();
             this.CallbackAfterRun = null;
+            this.CanAllowExtensionUnrelatedData = false;
 
             InputFormRef.WriteButtonToYellow(this.RunButton, true);
             SimpleShowNewSize.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
@@ -41,6 +44,7 @@ namespace FEBuilderGBA
         private void MoveToFreeSapceForm_Load(object sender, EventArgs e)
         {
         }
+
 
         public void FromInputFormRef(InputFormRef inputFormRef, Func<uint,uint,int> callbackAfterRun)
         {
@@ -708,15 +712,20 @@ namespace FEBuilderGBA
                 return;
             }
 
-            if (this.DataPointerList.SelectedIndex < 0)
+            if (this.DataPointerList.Items.Count <= 0)
+            {//参照元が一つもない場合
+                if (this.CanAllowExtensionUnrelatedData == false)
+                {//エラーにせずに質問してみるか
+                    DialogResult dr = R.ShowNoYes("書き換えるポインタが一つもありません。\r\nこのデータは参照されていない可能性があります。\r\n危険なので停止することを推奨しますが、続行しますか？");
+                    if (dr != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+            }
+            else if (this.DataPointerList.SelectedIndex < 0)
             {
-                //エラー データポインタがありません。危険なので停止します.
-                string text = R.Error("書き換えるポインタを一つは選択してください");
-                string title = R._("エラー");
-                MessageBox.Show(text
-                    , title
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Error);
+                R.ShowStopError("書き換えるポインタを一つは選択してください");
                 return;
             }
 
@@ -767,7 +776,7 @@ namespace FEBuilderGBA
                 uint p = U.atoh(item);
                 if (!U.isSafetyOffset(p))
                 {
-                    string text = R.Error("影響を受けるポインタが正しくありません");
+                    string text = R.Error("影響を受けるポインタ({0})が正しくありません", U.ToHexString(p));
                     string title = R._("エラー");
                     MessageBox.Show(text
                         , title

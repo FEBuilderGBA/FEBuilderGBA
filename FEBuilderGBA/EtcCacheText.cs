@@ -14,7 +14,6 @@ namespace FEBuilderGBA
         {
             this.EtcTextID = U.LoadTSVResource1(U.ConfigEtcFilename("textid_"), false);
             this.TextID = U.LoadDicResource(U.ConfigDataFilename("textid_"));
-//            U.OrderBy(this.TextID, (x) => { return (int)x.Key; });
         }
 
         public void Update(uint textid, string comment)

@@ -1103,7 +1103,7 @@ namespace FEBuilderGBA
 
             ReadStartAddress.Tag = ifr;
             ifr.MakeGeneralAddressListContextMenu(true);
-            ifr.AddressListExpandsEvent += PatchStruct_AddressListExpandsEvent;
+            ifr.PostAddressListExpandsEvent += PatchStruct_AddressListExpandsEvent;
 
             U.SelectedIndexSafety(AddressList, 0, false);
         }

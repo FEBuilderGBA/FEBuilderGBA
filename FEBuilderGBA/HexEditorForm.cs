@@ -69,6 +69,15 @@ namespace FEBuilderGBA
                 }
 
             }
+            string comment;
+            if (Program.CommentCache.TryGetValue(U.toOffset(pointer), out comment))
+            {//ユーザー定義のコメントがある
+                if (hint.Length > 0)
+                {
+                    hint += " ";
+                }
+                hint += comment;
+            }
             Hint.Text = hint;
         }
 
@@ -159,6 +168,7 @@ namespace FEBuilderGBA
         {
             if (e.KeyCode == Keys.F && (e.Shift || e.Control))
             {
+                e.Handled = true;
                 this.SearchButton.PerformClick();
                 return;
             }
@@ -166,21 +176,25 @@ namespace FEBuilderGBA
                 || e.KeyCode == Keys.G && (e.Shift || e.Control)
                 )
             {
+                e.Handled = true;
                 this.JumpButton.PerformClick();
                 return;
             }
             if (e.KeyCode == Keys.M && (e.Shift || e.Control))
             {
+                e.Handled = true;
                 this.SetMarkButton.PerformClick();
                 return;
             }
             if (e.KeyCode == Keys.L && (e.Shift || e.Control))
             {
+                e.Handled = true;
                 this.MarkListButton.PerformClick();
                 return;
             }
             if (e.KeyCode == Keys.S && (e.Control))
             {
+                e.Handled = true;
                 this.WriteButton.PerformClick();
                 return;
             }
@@ -190,6 +204,7 @@ namespace FEBuilderGBA
                 || (e.KeyCode >= Keys.A && e.KeyCode <= Keys.F)
                 ))
             {
+                e.Handled = true;
                 InputFormRef.WriteButtonToYellow(this.WriteButton, true);
             }
         }
@@ -243,6 +258,11 @@ namespace FEBuilderGBA
                 return;
             }
             this.HexBox.JumpTo(f.SelectAddr(), false);
+        }
+
+        private void HexEditorForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            HexBox_KeyDown(sender, e);
         }
 
     }

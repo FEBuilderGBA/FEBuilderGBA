@@ -79,7 +79,8 @@ namespace FEBuilderGBA
             Color_Keyword_BackColor_button.BackColor = Color_Keyword_BackColor();
             Color_Keyword_ForeColor_button.BackColor = Color_Keyword_ForeColor();
             Color_Comment_ForeColor_button.BackColor = Color_Comment_ForeColor();
-            Color_ControlComment_ForeColor_button.BackColor = Color_ControlComment_ForeColor(); 
+            Color_ControlComment_ForeColor_button.BackColor = Color_ControlComment_ForeColor();
+            Color_List_RelatedLine_BackColor_button.BackColor = Color_List_RelatedLine_BackColor();
 
             foreach(String a in ShortCutValue1.Items)
             {
@@ -256,6 +257,7 @@ namespace FEBuilderGBA
             Program.Config["Color_Keyword_ForeColor"] = Color_Keyword_ForeColor_button.BackColor.Name;
             Program.Config["Color_Comment_ForeColor"] = Color_Comment_ForeColor_button.BackColor.Name;
             Program.Config["Color_ControlComment_ForeColor"] = Color_ControlComment_ForeColor_button.BackColor.Name;
+            Program.Config["Color_List_RelatedLine_BackColor"] = Color_List_RelatedLine_BackColor_button.BackColor.Name;
 
             Program.Config["ShortCutKey1"] = ShortCutKey1.Text;
             Program.Config["ShortCutValue1"] = ShortCutValue1.SelectedIndex.ToString();
@@ -427,6 +429,25 @@ namespace FEBuilderGBA
         {
             return U.ColorFromName(Program.Config.at("Color_ControlComment_ForeColor", "Green"));
         }
+
+        public static Color Color_List_RelatedLine_BackColor()
+        {
+            //下位互換性のため色判定を通します
+            string color = Program.Config.at("Color_List_RelatedLine_BackColor", "");
+            if (color == "")
+            {
+                if (Color_Control_ForeColor() == U.ColorFromName("White"))
+                {//黒背景
+                    color = "ff295454";
+                }
+                else
+                {//白背景
+                    color = "ffffe1ff";
+                }
+            }
+            return U.ColorFromName(color);
+//            return U.ColorFromName(Program.Config.at("Color_List_RelatedLine_BackColor", "ffffe1ff"));
+        }
         
 
         Color SelectColorDialog(Color def)
@@ -536,45 +557,6 @@ namespace FEBuilderGBA
             Color_NotifyWrite_ForeColor_button.BackColor = SelectColorDialog(Color_NotifyWrite_ForeColor_button.BackColor);
         }
 
-        private void Color_Control_BackColor_resetbutton_Click(object sender, EventArgs e)
-        {
-            Color_Control_BackColor_button.BackColor = Color.FromName("Control");
-        }
-
-        private void Color_Control_ForeColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_Control_ForeColor_button.BackColor = Color.FromName("ControlText");
-        }
-
-        private void Color_Input_BackColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_Input_BackColor_button.BackColor = Color.FromName("Window");
-        }
-
-        private void Color_Input_ForeColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_Input_ForeColor_button.BackColor = Color.FromName("WindowText");
-        }
-
-        private void Color_InputDecimal_BackColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_InputDecimal_BackColor_button.BackColor = Color.FromName("Window");
-        }
-
-        private void Color_InputDecimal_ForeColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_InputDecimal_ForeColor_button.BackColor = Color.FromName("OrangeRed");
-        }
-
-        private void Color_NotifyWrite_BackColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_NotifyWrite_BackColor_button.BackColor = Color.FromName("Yellow");
-        }
-
-        private void Color_NotifyWrite_ForeColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_NotifyWrite_ForeColor_button.BackColor = Color.FromName("Black");
-        }
 
 
         private void ShortCutKey1_Leave(object sender, EventArgs e)
@@ -1096,6 +1078,7 @@ namespace FEBuilderGBA
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("Blue");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("DarkGreen");
                 Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("Green");
+                Color_List_RelatedLine_BackColor_button.BackColor = U.ColorFromName("ffffe1ff");
 
                 return ;
             }
@@ -1117,6 +1100,7 @@ namespace FEBuilderGBA
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("LightBlue");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("DeepPink");
                 Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("GreenYellow");
+                Color_List_RelatedLine_BackColor_button.BackColor = U.ColorFromName("ff295454");
 
                 return;
             }
@@ -1138,6 +1122,7 @@ namespace FEBuilderGBA
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("ff8080ff");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("ff0080c0");
                 Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("ff0080c0");
+                Color_List_RelatedLine_BackColor_button.BackColor = U.ColorFromName("ff295454");
 
                 return;
             }
@@ -1437,10 +1422,6 @@ namespace FEBuilderGBA
             Color_ControlComment_ForeColor_button.BackColor = Color.FromName("Green");
         }
 
-        private void Color_ControlComment_ForeColor_reset_button_Click(object sender, EventArgs e)
-        {
-            Color_ControlComment_ForeColor_button.BackColor = SelectColorDialog(Color_ControlComment_ForeColor_button.BackColor);
-        }
 
         private void retdec_button_Click(object sender, EventArgs e)
         {
@@ -1635,6 +1616,8 @@ namespace FEBuilderGBA
                 w.WriteLine("Color_Keyword_ForeColor" + "\t" + Color_Keyword_ForeColor_button.BackColor.Name);
                 w.WriteLine("Color_Comment_ForeColor" + "\t" + Color_Comment_ForeColor_button.BackColor.Name);
                 w.WriteLine("Color_ControlComment_ForeColor" + "\t" + Color_ControlComment_ForeColor_button.BackColor.Name);
+                w.WriteLine("Color_List_RelatedLine_BackColor" + "\t" + Color_List_RelatedLine_BackColor_button.BackColor.Name);
+                
             }
             U.SelectFileByExplorer(filename);
         }
@@ -1683,8 +1666,14 @@ namespace FEBuilderGBA
                     else if (sp[0] == "Color_Keyword_ForeColor") Color_Keyword_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
                     else if (sp[0] == "Color_Comment_ForeColor") Color_Comment_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
                     else if (sp[0] == "Color_ControlComment_ForeColor") Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName(sp[1]);
+                    else if (sp[0] == "Color_List_RelatedLine_BackColor") Color_List_RelatedLine_BackColor_button.BackColor = U.ColorFromName(sp[1]);
                 }
             }
+        }
+
+        private void Color_List_RelatedList_BackColor_button_Click(object sender, EventArgs e)
+        {
+            Color_List_RelatedLine_BackColor_button.BackColor = SelectColorDialog(Color_List_RelatedLine_BackColor_button.BackColor);
         }
     }
 }

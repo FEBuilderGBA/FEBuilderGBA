@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.check_vanilla_srccode_button = new System.Windows.Forms.Button();
             this.decompile_button = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.FileToASMButton = new System.Windows.Forms.Button();
             this.DumpAll = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
-            this.check_vanilla_srccode_button = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -81,6 +81,16 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1486, 30);
             this.HeaderPanel.TabIndex = 54;
             // 
+            // check_vanilla_srccode_button
+            // 
+            this.check_vanilla_srccode_button.Location = new System.Drawing.Point(827, -1);
+            this.check_vanilla_srccode_button.Name = "check_vanilla_srccode_button";
+            this.check_vanilla_srccode_button.Size = new System.Drawing.Size(256, 30);
+            this.check_vanilla_srccode_button.TabIndex = 30;
+            this.check_vanilla_srccode_button.Text = "バニラのソースコードを確認";
+            this.check_vanilla_srccode_button.UseVisualStyleBackColor = true;
+            this.check_vanilla_srccode_button.Click += new System.EventHandler(this.check_vanilla_srccode_button_Click);
+            // 
             // decompile_button
             // 
             this.decompile_button.Location = new System.Drawing.Point(1088, -2);
@@ -104,7 +114,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(0, -2);
+            this.label1.Location = new System.Drawing.Point(-1, -2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 32);
             this.label1.TabIndex = 23;
@@ -365,16 +375,6 @@
             this.HexEditorButton.Text = "HexEditor";
             this.HexEditorButton.UseVisualStyleBackColor = true;
             this.HexEditorButton.Click += new System.EventHandler(this.HexEditorButton_Click);
-            // 
-            // check_vanilla_srccode_button
-            // 
-            this.check_vanilla_srccode_button.Location = new System.Drawing.Point(827, -1);
-            this.check_vanilla_srccode_button.Name = "check_vanilla_srccode_button";
-            this.check_vanilla_srccode_button.Size = new System.Drawing.Size(256, 30);
-            this.check_vanilla_srccode_button.TabIndex = 30;
-            this.check_vanilla_srccode_button.Text = "バニラのソースコードを確認";
-            this.check_vanilla_srccode_button.UseVisualStyleBackColor = true;
-            this.check_vanilla_srccode_button.Click += new System.EventHandler(this.check_vanilla_srccode_button_Click);
             // 
             // DisASMInnerControl
             // 
