@@ -204,7 +204,8 @@ namespace FEBuilderGBA
                 || (e.KeyCode >= Keys.A && e.KeyCode <= Keys.F)
                 ))
             {
-                e.Handled = true;
+                //これはhexboxに渡さないといけないのでhandledしてはいけない!
+                //e.Handled = true;
                 InputFormRef.WriteButtonToYellow(this.WriteButton, true);
             }
         }
