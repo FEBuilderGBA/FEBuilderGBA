@@ -584,3 +584,6 @@ Duration
 400D0000197F0808	Clear DungeonState to start recording when tower start	{J}
 400D0000595C0808	Clear DungeonState to start recording when ruins start	{U}
 400D00004D5C0808	Clear DungeonState to start recording when tower start	{U}
+412C0100E01C0003	LOAD2 0x03001CE0(LOW)	A mysterious instruction to LOAD2 from RAM.	{J}
+412C0100E81C0003	LOAD2 0x03001CE8(LOW)	A mysterious instruction to LOAD2 from RAM.	{U}
+585B5F6100000000	_UNK_585B5F6100000000(LOW)

@@ -8830,6 +8830,12 @@ Program 2
 :任意のプログラム3
 Program 3
 
+:文字色
+Fore Color
+
+:背景色
+BG Color
+
 :List 関連行の色
 List related line Color
 
@@ -8838,21 +8844,6 @@ Control Comment
 
 :キーワードハイライト
 Keyword Highlighted
-
-:色の一括変換 色セット
-Preset Color Options
-
-:00:自分で決める
-00: User-Defined
-
-:01:ディフォルト 白背景 黒文字
-01: Default: White BG / Black Text
-
-:02:目にやさしい黒背景 白文字
-02: Night Mode: Black BG / White Text
-
-:03:目にやさしい黒背景2 白文字
-03: Night Mode2: Black BG / White Text
 
 :List Hover色
 List Hover Color
@@ -8871,6 +8862,21 @@ Input
 
 :コントロール
 Control
+
+:色の一括変換 色セット
+Preset Color Options
+
+:00:自分で決める
+00: User-Defined
+
+:01:ディフォルト 白背景 黒文字
+01: Default: White BG / Black Text
+
+:02:目にやさしい黒背景 白文字
+02: Night Mode: Black BG / White Text
+
+:03:目にやさしい黒背景2 白文字
+03: Night Mode2: Black BG / White Text
 
 :ショートカットキー
 Shortcut Key
@@ -9270,12 +9276,6 @@ When exporting a file...
 
 :保存
 Save
-
-:背景色
-BG Color
-
-:文字色
-Fore Color
 
 :その他ROM直値テキスト
 Other ROM Direct Text

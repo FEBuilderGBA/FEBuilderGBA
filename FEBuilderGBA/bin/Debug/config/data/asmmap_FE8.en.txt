@@ -13960,3 +13960,10 @@ r3=X tile position of menu of right	{U}
 08011750	CreateNotifyEventCommandPopup	{U}
 030005C8	:030005E8	PopupWorkForCreateNotifyEventCommandPopup	{J}
 030005D0	:030005F0	PopupWorkForCreateNotifyEventCommandPopup	{U}
+08022200	StartAnimationHitotachi	FE8JONLY	Animation to cut with a sword.	{J}
+03001CE0	RAM area used for LOAD2 target in "Instruction to LOAD2 something set in RAM area"	Size unknown.	Since it is sizeof20, there should be at least 40 bytes	{J}
+03001CE8	RAM area used for LOAD2 target in "Instruction to LOAD2 something set in RAM area"	Size unknown.	Since it is sizeof20, there should be at least 40 bytes	{U}
+08088A6C	Instruction to LOAD2 something set in the RAM area	03001CE0 is used in FE8J	{J}
+0808679C	Instruction to LOAD2 something set in the RAM area	03001CE8 is used in FE8U	{U}
+08A1CC54	:08A1CE1B	Data such as palettes used to display level-up items	{J}
+089AC5CC	:089AC793	Data such as palettes used to display level-up items	{U}

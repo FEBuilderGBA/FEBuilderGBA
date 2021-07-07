@@ -883,20 +883,39 @@ namespace FEBuilderGBA
                 this.Data = U.ResizeArray(this.Data, from + (uint)sp.Length);
             }
 
-            for(int i = 0 ; i < sp.Length ; i++)
+            int i;
+            for(i = 0 ; i < sp.Length ; i++)
             {
                 if (!U.isHexString(sp[i]))
                 {
                     break;
                 }
-                uint newpos = (uint)(from + i); 
+
+                uint newpos = (uint)(from + i);
+                if (i > 0 && IsMarkPos(newpos))
+                {//マークがあればあればそこで止める
+                    System.Media.SystemSounds.Beep.Play();
+                    i--; //一つ前のところにカーソルを移動させる
+                    break;
+                }
                 byte newvalue = (byte)U.atoh(sp[i]);
                 PushUndo(newpos, newvalue, this.Data[newpos]);
                 this.Data[newpos] = newvalue;
             }
-            this.CursolPosStart = (uint)(from + sp.Length);
+            this.CursolPosStart = (uint)(from + i);
             this.CursolPosEnd = this.CursolPosStart;
             SelectChange();
+        }
+        bool IsMarkPos(uint addr)
+        {
+            for (int n = 0; n < this.Marks.Count; n++)
+            {
+                if (this.Marks[n].address == addr)
+                {//マークがあればあればそこで止める
+                    return true;
+                }
+            }
+            return false;
         }
 
         public class Mark

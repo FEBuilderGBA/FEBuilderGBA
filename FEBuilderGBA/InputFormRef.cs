@@ -8869,6 +8869,10 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            if (c is HexBox)
+            {//hexboxは独自の機能で検索があるので不要
+                return false;
+            }
             if (c is ListBoxEx)
             {
                 ((ListBoxEx)c).SearchNext();
@@ -8892,18 +8896,6 @@ namespace FEBuilderGBA
             //リストボックスを検索.
             List<Control> controls = GetAllControls(baseControl);
 
-//            //フロートコントロールパネルがあったらそちらを優先して探索する.
-//            if (prefix == "")
-//            {
-//                Control controlPanelF = FindObject(prefix, controls, "ControlPanel");
-//                if (controlPanelF != null)
-//                {
-//                    if (ClickWriteButtonF(self, controlPanelF))
-//                    {
-//                        return true;
-//                    }
-//                }
-//            }
             bool r = SearchNextByListBoxBaseListBox(prefix , controls,self, baseControl);
             if (!r)
             {

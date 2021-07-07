@@ -573,6 +573,13 @@ namespace FEBuilderGBA
              || dataType == Address.DataTypeEnum.InputFormRef_MIX
                 ;
         }
+        //lz77なのにポインタを含む迷惑なデータ
+        public static bool IsLZ77MixPointer(Address.DataTypeEnum dataType)
+        {
+            return
+                dataType == Address.DataTypeEnum.BATTLEFRAME
+                ;
+        }
 
         //ポインタがあるかもしれないデータたち
         public static bool IsPointerableType(Address.DataTypeEnum dataType)

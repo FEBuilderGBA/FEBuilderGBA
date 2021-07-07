@@ -13948,3 +13948,10 @@
 08011750	CreateNotifyEventCommandPopup	{U}
 030005C8	:030005E8	PopupWorkForCreateNotifyEventCommandPopup	{J}
 030005D0	:030005F0	PopupWorkForCreateNotifyEventCommandPopup	{U}
+08022200	StartAnimationHitotachi	FE8JONLY	一太刀で切るアニメーション	{J}
+03001CE0	「RAM領域に設定した何かをLOAD2する命令」でLOAD2対象に使われるRAM領域	サイズ不明	sizeof20なので少なくとも40byteはあるはずです。	{J}
+03001CE8	「RAM領域に設定した何かをLOAD2する命令」でLOAD2対象に使われるRAM領域	サイズ不明	sizeof20なので少なくとも40byteはあるはずです。	{U}
+08088A6C	RAM領域に設定した何かをLOAD2する命令	FE8Jでは03001CE0が利用される	{J}
+0808679C	RAM領域に設定した何かをLOAD2する命令	FE8Uでは03001CE8が利用される	{U}
+08A1CC54	:08A1CE1B	レベルアップ項目表示に利用するパレットなどのデータ	{J}
+089AC5CC	:089AC793	レベルアップ項目表示に利用するパレットなどのデータ	{U}
