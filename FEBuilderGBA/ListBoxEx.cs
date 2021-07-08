@@ -148,10 +148,15 @@ namespace FEBuilderGBA
             {
                 return ;
             }
+            int itemsCount = this.Items.Count;
             List<int> lines = new List<int>(RelatedLine);
             RelatedLine.Clear();
             foreach (int index in lines)
             {
+                if (index >= itemsCount)
+                {
+                    continue;
+                }
                 InvalidateLine(index);
             }
         }

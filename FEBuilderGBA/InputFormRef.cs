@@ -6345,7 +6345,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            Debug.Assert(newDataCount <= 0x10000);
+            //Debug.Assert(newDataCount <= 0x10000);
             this.BaseAddress = newAddr;
             this.DataCount = newDataCount;
             if (IsManualForcedChange == false)
