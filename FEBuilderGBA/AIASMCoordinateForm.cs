@@ -60,16 +60,8 @@ namespace FEBuilderGBA
         public void JumpToAddr(uint addr)
         {
             addr = U.toOffset(addr);
-            JumpToAddrLow(addr);
-            InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
-        }
-        void JumpToAddrLow(uint addr)
-        {
             this.ReadStartAddress.Value = addr;
-            this.B0.Value = Program.ROM.u8(addr + 0);
-            this.B1.Value = Program.ROM.u8(addr + 1);
-            this.B2.Value = Program.ROM.u8(addr + 2);
-            this.B3.Value = Program.ROM.u8(addr + 3);
+            InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
         }
         public uint GetBaseAddress()
         {
@@ -80,7 +72,7 @@ namespace FEBuilderGBA
         {
             byte[] alloc = new byte[4];
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc");
+            Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc AICoordinate");
             uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
             if (addr == U.NOT_FOUND)
             {//割り当て失敗
@@ -129,12 +121,24 @@ namespace FEBuilderGBA
 
         private void AICoordinateForm_Load(object sender, EventArgs e)
         {
+            uint mapid = MainSimpleMenuForm.GetCurrentMapID();
+            this.MapPictureBox.LoadMap(mapid);
+
+            uint addr = (uint)this.ReadStartAddress.Value;
+            if (!U.isSafetyOffset(addr + 3))
+            {
+                return;
+            }
+            this.B0.Value = Program.ROM.u8(addr + 0);
+            this.B1.Value = Program.ROM.u8(addr + 1);
+            this.B2.Value = Program.ROM.u8(addr + 2);
+            this.B3.Value = Program.ROM.u8(addr + 3);
+
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.RegistNotifyNumlicUpdate(this.AllWriteButton, controls);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
 
-            uint mapid = MainSimpleMenuForm.GetCurrentMapID();
-            this.MapPictureBox.LoadMap(mapid);
+            this.ActiveControl = this.B0;
         }
 
         public static string GetCoordPreview(uint v)

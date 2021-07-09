@@ -32,7 +32,7 @@ namespace FEBuilderGBA
             , POINTER_TALKGROUP //会話グループ(FE7のみ)
             , POINTER_MENUEXTENDS //分岐拡張
             , POINTER_AICOORDINATE //AIの座標
-            , POINTER_AIUNIT4      //AIのユニット4人
+            , POINTER_AIRANGE      //AIの座標範囲
             , POINTER_AICALLTALK      //敵AIから会話イベントを実行する
             , POINTER_UNITSSHORTTEXT    //UNITと一致するshort型のテキスト
             , POINTER //その他ポインタ
@@ -1186,7 +1186,7 @@ namespace FEBuilderGBA
                 || argtype == EventScript.ArgType.POINTER_AICOORDINATE
                 || argtype == EventScript.ArgType.POINTER_AIUNIT
                 || argtype == EventScript.ArgType.POINTER_AITILE
-                || argtype == EventScript.ArgType.POINTER_AIUNIT4
+                || argtype == EventScript.ArgType.POINTER_AIRANGE
                 || argtype == EventScript.ArgType.POINTER_AICALLTALK
                 || argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
                 ;

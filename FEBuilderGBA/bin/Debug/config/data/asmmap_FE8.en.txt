@@ -13967,3 +13967,5 @@ r3=X tile position of menu of right	{U}
 0808679C	Instruction to LOAD2 something set in the RAM area	03001CE8 is used in FE8U	{U}
 08A1CC54	:08A1CE1B	Data such as palettes used to display level-up items	{J}
 089AC5CC	:089AC793	Data such as palettes used to display level-up items	{U}
+08A1DEF0	&LZ77	Numbers for red status.	Probably unused.	{J}
+089AD868	&LZ77	Numbers for red status.	Probably unused.	{U}

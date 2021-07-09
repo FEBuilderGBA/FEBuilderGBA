@@ -9,21 +9,17 @@ using System.Windows.Forms;
 
 namespace FEBuilderGBA
 {
-    public partial class AIASMUnit4Form : Form
+    public partial class AIASMRangeForm : Form
     {
-        public AIASMUnit4Form()
+        public AIASMRangeForm()
         {
             InitializeComponent();
             List<Control> controls = InputFormRef.GetAllControls(this);
-            InputFormRef.makeLinkEventHandler("", controls, this.B0, this.L_0_UNIT, 0, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B0, this.L_0_UNITICON, 0, "UNITICON", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B1, this.L_1_UNIT, 1, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B1, this.L_1_UNITICON, 1, "UNITICON", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B2, this.L_2_UNIT, 2, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B2, this.L_2_UNITICON, 2, "UNITICON", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNIT, 3, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNITICON, 3, "UNITICON", new string[] { "" });
-            U.AddCancelButton(this);
+            InputFormRef.makeLinkEventHandler("", controls, this.B0, this.J_0, 0, "MAPXY", new string[] { "1" });
+            InputFormRef.makeLinkEventHandler("", controls, this.B2, this.J_2, 0, "MAPXY", new string[] { "3" });
+
+            InputFormRef.RegistNotifyNumlicUpdate(this.AllWriteButton, controls);
+            InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
         }
 
         public uint AllocIfNeed(NumericUpDown src)
@@ -42,16 +38,7 @@ namespace FEBuilderGBA
         public void JumpToAddr(uint addr)
         {
             addr = U.toOffset(addr);
-            JumpToAddrLow(addr);
-            InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
-        }
-        void JumpToAddrLow(uint addr)
-        {
             this.ReadStartAddress.Value = addr;
-            this.B0.Value = Program.ROM.u8(addr + 0);
-            this.B1.Value = Program.ROM.u8(addr + 1);
-            this.B2.Value = Program.ROM.u8(addr + 2);
-            this.B3.Value = Program.ROM.u8(addr + 3);
         }
         public uint GetBaseAddress()
         {
@@ -62,7 +49,7 @@ namespace FEBuilderGBA
         {
             byte[] alloc = new byte[4];
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc");
+            Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc AIRange");
             uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
             if (addr == U.NOT_FOUND)
             {//割り当て失敗
@@ -93,10 +80,10 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
-            Program.ROM.write_u8(addr + 0, (uint)this.B0.Value, undodata); //
-            Program.ROM.write_u8(addr + 1, (uint)this.B1.Value, undodata); //
-            Program.ROM.write_u8(addr + 2, (uint)this.B2.Value, undodata); //
-            Program.ROM.write_u8(addr + 3, (uint)this.B3.Value, undodata); //
+            Program.ROM.write_u8(addr + 0, (uint)this.B0.Value, undodata); //x1
+            Program.ROM.write_u8(addr + 1, (uint)this.B2.Value, undodata); //y1
+            Program.ROM.write_u8(addr + 2, (uint)this.B1.Value, undodata); //x2
+            Program.ROM.write_u8(addr + 3, (uint)this.B3.Value, undodata); //y2
 
             Program.Undo.Push(undodata);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
@@ -106,36 +93,45 @@ namespace FEBuilderGBA
         //全データの取得
         public static void RecycleOldData(ref List<Address> recycle, uint script_pointer)
         {
-            Address.AddPointer(recycle,script_pointer,4,"AI Unit4",Address.DataTypeEnum.BIN);
+            Address.AddPointer(recycle,script_pointer,4,"AI Range",Address.DataTypeEnum.BIN);
         }
 
-        private void AICoordinateForm_Load(object sender, EventArgs e)
+        private void AIRangeForm_Load(object sender, EventArgs e)
         {
+            uint mapid = MainSimpleMenuForm.GetCurrentMapID();
+            this.MapPictureBox.LoadMap(mapid);
+
+            uint addr = (uint)this.ReadStartAddress.Value;
+            if (!U.isSafetyOffset(addr + 3))
+            {
+                return ;
+            }
+            this.B0.Value = Program.ROM.u8(addr + 0);
+            this.B1.Value = Program.ROM.u8(addr + 1);
+            this.B2.Value = Program.ROM.u8(addr + 2);
+            this.B3.Value = Program.ROM.u8(addr + 3);
+
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.RegistNotifyNumlicUpdate(this.AllWriteButton, controls);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
+
+            this.ActiveControl = this.B0;
         }
 
-        public static string GetUnit4Preview(uint v)
+        public static string GetRangePreview(uint v)
         {
             uint addr = U.toOffset(v);
-            if (!U.isSafetyOffset(addr + 1))
+            if (!U.isSafetyOffset(addr + 3))
             {
                 return "";
             }
 
-            StringBuilder sb = new StringBuilder();
-            for (uint i = 0; i < 4; i++)
-            {
-                uint uid = Program.ROM.u8(addr + i);
-                if (uid == 0)
-                {
-                    continue;
-                }
-                string str = U.ToHexString(uid) + ": " + UnitForm.GetUnitName(uid) + " ";
-                sb.Append(str);
-            }
-            return sb.ToString();
+            uint x1 = Program.ROM.u8(addr + 0);
+            uint y1 = Program.ROM.u8(addr + 1);
+            uint x2 = Program.ROM.u8(addr + 2);
+            uint y2 = Program.ROM.u8(addr + 3);
+            string str = String.Format("({0},{1}) - ({2},{3})", x1,y1,x2,y2);
+            return str;
         }
     }
 }

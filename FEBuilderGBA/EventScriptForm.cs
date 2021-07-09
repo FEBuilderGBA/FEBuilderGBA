@@ -156,7 +156,7 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
-            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
             {
                 isLabelJump = true;
             }
@@ -535,15 +535,15 @@ namespace FEBuilderGBA
                                         AIASMCoordinateForm.RecycleOldData(ref RefList, v);
                                     }
                                 }
-                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AIUNIT4)
-                                {//AIユニット4人
+                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AIRANGE)
+                                {//AI範囲
                                     uint v = EventScript.GetArgPointer(code, i, addr);
                                     if (U.isSafetyOffset(v)         //安全で
                                         && TraceList.IndexOf(v) < 0 //まだ読んだことがなければ
                                         )
                                     {
                                         TraceList.Add(v);
-                                        AIASMUnit4Form.RecycleOldData(ref RefList, v);
+                                        AIASMRangeForm.RecycleOldData(ref RefList, v);
                                     }
                                 }
                                 else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AICALLTALK)
@@ -1532,10 +1532,10 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + AIASMCoordinateForm.GetCoordPreview(v);
                         }
-                        else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+                        else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
                         {
                             isENumText = true;
-                            text = " " + AIASMUnit4Form.GetUnit4Preview(v);
+                            text = " " + AIASMRangeForm.GetRangePreview(v);
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
                         {

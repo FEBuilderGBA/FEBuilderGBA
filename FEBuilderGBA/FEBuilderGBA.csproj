@@ -2017,11 +2017,11 @@
     <Compile Include="AIASMCoordinateForm.Designer.cs">
       <DependentUpon>AIASMCoordinateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AIASMUnit4Form.cs">
+    <Compile Include="AIASMRangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AIASMUnit4Form.Designer.cs">
-      <DependentUpon>AIASMUnit4Form.cs</DependentUpon>
+    <Compile Include="AIASMRangeForm.Designer.cs">
+      <DependentUpon>AIASMRangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitsShortTextForm.cs">
       <SubType>Form</SubType>
@@ -3056,8 +3056,8 @@
     <EmbeddedResource Include="AIASMCoordinateForm.resx">
       <DependentUpon>AIASMCoordinateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AIASMUnit4Form.resx">
-      <DependentUpon>AIASMUnit4Form.cs</DependentUpon>
+    <EmbeddedResource Include="AIASMRangeForm.resx">
+      <DependentUpon>AIASMRangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitsShortTextForm.resx">
       <DependentUpon>UnitsShortTextForm.cs</DependentUpon>

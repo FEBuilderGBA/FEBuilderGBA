@@ -1,6 +1,6 @@
 ﻿namespace FEBuilderGBA
 {
-    partial class AIASMCoordinateForm
+    partial class AIASMRangeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,11 @@
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.B3 = new System.Windows.Forms.NumericUpDown();
             this.J_3 = new System.Windows.Forms.Label();
-            this.B2 = new System.Windows.Forms.NumericUpDown();
             this.B1 = new System.Windows.Forms.NumericUpDown();
+            this.B2 = new System.Windows.Forms.NumericUpDown();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.J_2 = new System.Windows.Forms.Label();
             this.J_1 = new System.Windows.Forms.Label();
+            this.J_2 = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AllWriteButton = new System.Windows.Forms.Button();
@@ -44,10 +44,11 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.ExPlain = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -56,14 +57,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ExPlain);
             this.panel1.Controls.Add(this.MapPictureBox);
             this.panel1.Controls.Add(this.B3);
             this.panel1.Controls.Add(this.J_3);
-            this.panel1.Controls.Add(this.B2);
             this.panel1.Controls.Add(this.B1);
+            this.panel1.Controls.Add(this.B2);
             this.panel1.Controls.Add(this.B0);
-            this.panel1.Controls.Add(this.J_2);
             this.panel1.Controls.Add(this.J_1);
+            this.panel1.Controls.Add(this.J_2);
             this.panel1.Controls.Add(this.J_0);
             this.panel1.Location = new System.Drawing.Point(14, 42);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -82,7 +84,7 @@
             // 
             // B3
             // 
-            this.B3.Location = new System.Drawing.Point(122, 100);
+            this.B3.Location = new System.Drawing.Point(122, 121);
             this.B3.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
@@ -90,33 +92,21 @@
             0});
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(82, 25);
-            this.B3.TabIndex = 4;
+            this.B3.TabIndex = 3;
             // 
             // J_3
             // 
             this.J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_3.Location = new System.Drawing.Point(-1, 95);
+            this.J_3.Location = new System.Drawing.Point(-1, 116);
             this.J_3.Name = "J_3";
             this.J_3.Size = new System.Drawing.Size(117, 30);
             this.J_3.TabIndex = 45;
-            this.J_3.Text = "00";
+            this.J_3.Text = "Y2";
             this.J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B2
-            // 
-            this.B2.Location = new System.Drawing.Point(122, 71);
-            this.B2.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.B2.Name = "B2";
-            this.B2.Size = new System.Drawing.Size(82, 25);
-            this.B2.TabIndex = 3;
             // 
             // B1
             // 
-            this.B1.Location = new System.Drawing.Point(122, 41);
+            this.B1.Location = new System.Drawing.Point(122, 42);
             this.B1.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
@@ -124,7 +114,19 @@
             0});
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(82, 25);
-            this.B1.TabIndex = 2;
+            this.B1.TabIndex = 1;
+            // 
+            // B2
+            // 
+            this.B2.Location = new System.Drawing.Point(122, 91);
+            this.B2.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.B2.Name = "B2";
+            this.B2.Size = new System.Drawing.Size(82, 25);
+            this.B2.TabIndex = 2;
             // 
             // B0
             // 
@@ -136,17 +138,7 @@
             0});
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(82, 25);
-            this.B0.TabIndex = 1;
-            // 
-            // J_2
-            // 
-            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(-1, 66);
-            this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(117, 30);
-            this.J_2.TabIndex = 26;
-            this.J_2.Text = "00";
-            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.B0.TabIndex = 0;
             // 
             // J_1
             // 
@@ -154,9 +146,19 @@
             this.J_1.Location = new System.Drawing.Point(-1, 37);
             this.J_1.Name = "J_1";
             this.J_1.Size = new System.Drawing.Size(117, 30);
-            this.J_1.TabIndex = 25;
-            this.J_1.Text = "Y";
+            this.J_1.TabIndex = 26;
+            this.J_1.Text = "Y1";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_2
+            // 
+            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_2.Location = new System.Drawing.Point(-1, 87);
+            this.J_2.Name = "J_2";
+            this.J_2.Size = new System.Drawing.Size(117, 30);
+            this.J_2.TabIndex = 25;
+            this.J_2.Text = "X2";
+            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_0
             // 
@@ -165,7 +167,7 @@
             this.J_0.Name = "J_0";
             this.J_0.Size = new System.Drawing.Size(117, 30);
             this.J_0.TabIndex = 24;
-            this.J_0.Text = "X";
+            this.J_0.Text = "X1";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -177,12 +179,12 @@
             this.panel3.Location = new System.Drawing.Point(14, 13);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1111, 30);
+            this.panel3.Size = new System.Drawing.Size(574, 30);
             this.panel3.TabIndex = 154;
             // 
             // AllWriteButton
             // 
-            this.AllWriteButton.Location = new System.Drawing.Point(390, -2);
+            this.AllWriteButton.Location = new System.Drawing.Point(405, -2);
             this.AllWriteButton.Name = "AllWriteButton";
             this.AllWriteButton.Size = new System.Drawing.Size(167, 30);
             this.AllWriteButton.TabIndex = 1;
@@ -235,7 +237,17 @@
             this.SelectAddress.Size = new System.Drawing.Size(150, 25);
             this.SelectAddress.TabIndex = 57;
             // 
-            // AIASMCoordinateForm
+            // ExPlain
+            // 
+            this.ExPlain.Location = new System.Drawing.Point(3, 219);
+            this.ExPlain.Multiline = true;
+            this.ExPlain.Name = "ExPlain";
+            this.ExPlain.ReadOnly = true;
+            this.ExPlain.Size = new System.Drawing.Size(214, 333);
+            this.ExPlain.TabIndex = 46;
+            this.ExPlain.Text = "ユニットがx1,y1 から x2,y2 の範囲にいるかどうかを調べます。";
+            // 
+            // AIASMRangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -243,13 +255,14 @@
             this.ClientSize = new System.Drawing.Size(1139, 711);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "AIASMCoordinateForm";
-            this.Text = "AIの座標指定";
-            this.Load += new System.EventHandler(this.AICoordinateForm_Load);
+            this.Name = "AIASMRangeForm";
+            this.Text = "AIの範囲指定";
+            this.Load += new System.EventHandler(this.AIRangeForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -264,17 +277,18 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown B3;
         private System.Windows.Forms.Label J_3;
-        private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.NumericUpDown B1;
+        private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.NumericUpDown B0;
-        private System.Windows.Forms.Label J_2;
         private System.Windows.Forms.Label J_1;
+        private System.Windows.Forms.Label J_2;
         private System.Windows.Forms.Label J_0;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button AllWriteButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown ReadStartAddress;
         private MapPictureBox MapPictureBox;
+        private System.Windows.Forms.TextBox ExPlain;
 
     }
 }

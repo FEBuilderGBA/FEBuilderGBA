@@ -726,7 +726,7 @@ namespace FEBuilderGBA
                     text = AIASMCoordinateForm.GetCoordPreview(U.toOffset(v));
                 }
             }
-            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
             {
                 if (U.toOffset(v) == 0)
                 {
@@ -734,7 +734,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    text = AIASMUnit4Form.GetUnit4Preview(U.toOffset(v));
+                    text = AIASMRangeForm.GetRangePreview(U.toOffset(v));
                 }
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
@@ -1042,9 +1042,9 @@ namespace FEBuilderGBA
             {
                 text = " " + AIASMCoordinateForm.GetCoordPreview(v);
             }
-            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
             {
-                text = " " + AIASMUnit4Form.GetUnit4Preview(v);
+                text = " " + AIASMRangeForm.GetRangePreview(v);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
             {
@@ -1364,9 +1364,9 @@ namespace FEBuilderGBA
                 U.SetActiveControl(src_object);
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
-            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
             {
-                AIASMUnit4Form f = (AIASMUnit4Form)InputFormRef.JumpFormLow<AIASMUnit4Form>();
+                AIASMRangeForm f = (AIASMRangeForm)InputFormRef.JumpFormLow<AIASMRangeForm>();
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
@@ -2932,10 +2932,10 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         sb.Append(AIASMCoordinateForm.GetCoordPreview(v));
                     }
-                    else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+                    else if (arg.Type == EventScript.ArgType.POINTER_AIRANGE)
                     {
                         sb.Append(" ");
-                        sb.Append(AIASMUnit4Form.GetUnit4Preview(v));
+                        sb.Append(AIASMRangeForm.GetRangePreview(v));
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
                     {

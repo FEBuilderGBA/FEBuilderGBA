@@ -28,8 +28,11 @@
 :AIの座標指定
 指定AI坐标
 
-:AIのユニット指定
-AI单位指定
+:ユニットがx1,y1 から x2,y2 の範囲にいるかどうかを調べます。
+检查单位是否在 x1, y1 到 x2, y2 的范围内。
+
+:AIの範囲指定
+AI 范围规范。
 
 :章ごとにAIが実行できる行動を定義します。\r\n例えば、扉の鍵をドロップするAIがいるのに、敵AIが扉の鍵を利用可能にすると、敵は勝手に扉を開けてしまいます。
 定义AI可以为每个章节执行的操作。\r\n例如，如果您有一个AI会丢掉一个门钥匙，那么敌人AI会提供门钥匙，但是未经允许，敌人会打开门。
@@ -10953,6 +10956,12 @@ ASM功能
 
 :呼魔エディタ
 呼魔编辑器
+
+:SkillSystemsがインストールされているのに、searchSkillSystemsSummonPlus1 に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。
+即使安装了 SkillSystems，SearchSkillSystemsSummonPlus1 也失败。\r\n该过程仍在继续，但可能不起作用。
+
+:SkillSystemsがインストールされているのに、searchSkillSystemsSummonCount に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。
+即使安装了 SkillSystems，SearchSkillSystemsSummonCount 也会失败。\r\n该过程仍在继续，但可能不起作用。
 
 :呼びされるユニット
 呼出的人物

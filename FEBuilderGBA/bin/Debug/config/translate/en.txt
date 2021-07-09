@@ -28,8 +28,11 @@ Coordinate area is not allocated.
 :AIの座標指定
 AI Coordinate Designation
 
-:AIのユニット指定
-AI Unit Designation
+:ユニットがx1,y1 から x2,y2 の範囲にいるかどうかを調べます。
+Checks if the unit is in the range x1, y1 to x2, y2.
+
+:AIの範囲指定
+AI range specification.
 
 :章ごとにAIが実行できる行動を定義します。\r\n例えば、扉の鍵をドロップするAIがいるのに、敵AIが扉の鍵を利用可能にすると、敵は勝手に扉を開けてしまいます。
 Define the actions that the AI can execute per chapter.\r\nFor example, if you have an enemy AI that drops a door key, they can use it themselves and open doors without permission.
@@ -10953,6 +10956,12 @@ Unit Dependent
 
 :呼魔エディタ
 Calling Editor
+
+:SkillSystemsがインストールされているのに、searchSkillSystemsSummonPlus1 に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。
+SearchSkillSystemsSummonPlus1 failed even though SkillSystems is installed.\r\nThe process continues, but it may not work.
+
+:SkillSystemsがインストールされているのに、searchSkillSystemsSummonCount に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。
+SearchSkillSystemsSummonCount fails even though SkillSystems is installed.\r\nThe process continues, but it may not work.
 
 :呼びされるユニット
 Summoned Unit

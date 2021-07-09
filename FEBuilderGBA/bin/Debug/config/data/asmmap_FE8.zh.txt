@@ -13923,3 +13923,5 @@ r3=X tile position of menu of the right	{U}
 0808679C	指令到 LOAD2 在 RAM 区域中设置的东西	03001CE8 用于 FE8U	{U}
 08A1CC54	:08A1CE1B	用于显示升级项目的调色板等数据	{J}
 089AC5CC	:089AC793	用于显示升级项目的调色板等数据	{U}
+08A1DEF0	&LZ77	红色状态的数字。	估计没用。	{J}
+089AD868	&LZ77	红色状态的数字。	估计没用。	{U}

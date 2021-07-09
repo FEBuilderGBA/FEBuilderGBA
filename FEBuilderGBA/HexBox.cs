@@ -884,7 +884,7 @@ namespace FEBuilderGBA
             }
 
             int i;
-            for(i = 0 ; i < sp.Length ; i++)
+            for (i = 0; i < sp.Length; i++)
             {
                 if (!U.isHexString(sp[i]))
                 {
@@ -895,16 +895,21 @@ namespace FEBuilderGBA
                 if (i > 0 && IsMarkPos(newpos))
                 {//マークがあればあればそこで止める
                     System.Media.SystemSounds.Beep.Play();
-                    i--; //一つ前のところにカーソルを移動させる
+                    i = i - 1;
                     break;
                 }
                 byte newvalue = (byte)U.atoh(sp[i]);
                 PushUndo(newpos, newvalue, this.Data[newpos]);
                 this.Data[newpos] = newvalue;
             }
-            this.CursolPosStart = (uint)(from + i);
-            this.CursolPosEnd = this.CursolPosStart;
-            SelectChange();
+
+            {
+                uint newpos = (uint)(from + i);
+                newpos = GoBackToJustBeforeMark(newpos);
+                this.CursolPosStart = newpos;
+                this.CursolPosEnd = newpos;
+                SelectChange();
+            }
         }
         bool IsMarkPos(uint addr)
         {
@@ -916,6 +921,22 @@ namespace FEBuilderGBA
                 }
             }
             return false;
+        }
+        uint GoBackToJustBeforeMark(uint addr)
+        {
+            if (addr <= 0)
+            {//無理
+                return 0;
+            }
+            for (int n = 0; n < this.Marks.Count; n++)
+            {
+                if (this.Marks[n].address == addr)
+                {//マークがあれば、その一つ前へ
+                    return GoBackToJustBeforeMark(addr - 1);
+                }
+            }
+            //マークがない地点
+            return addr;
         }
 
         public class Mark
