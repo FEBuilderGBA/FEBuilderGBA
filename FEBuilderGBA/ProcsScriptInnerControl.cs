@@ -104,6 +104,7 @@ namespace FEBuilderGBA
         private void Script_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideFloatingControlpanel();
+            EventScriptUtil.UpdateRelatedLine(this.Script, this.ProcsScript);
         }
         private void OneLineDisassembler()
         {
@@ -537,7 +538,10 @@ namespace FEBuilderGBA
                 }
             }
 
-           this.Script.DummyAlloc(this.ProcsScript.Count, this.Script.SelectedIndex);
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
+            //リストの更新.
+            this.Script.DummyAlloc(this.ProcsScript.Count, this.Script.SelectedIndex);
         }
 
         private string EventToTextOne(int number)
@@ -660,8 +664,10 @@ namespace FEBuilderGBA
         {
             this.ProcsScript = EventScript.CloneEventList(u.EventAsm);
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
             //リストの更新.
-           this.Script.DummyAlloc(this.ProcsScript.Count, this.Script.SelectedIndex);
+            this.Script.DummyAlloc(this.ProcsScript.Count, this.Script.SelectedIndex);
         }
 
 
@@ -687,8 +693,10 @@ namespace FEBuilderGBA
             //選択されているコードを入れ替える.
             this.ProcsScript[this.Script.SelectedIndex] = code;
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
             //リストの更新.
-           this.Script.DummyAlloc(this.ProcsScript.Count, -1);
+            this.Script.DummyAlloc(this.ProcsScript.Count, -1);
 
             HideFloatingControlpanel();
 
@@ -704,6 +712,8 @@ namespace FEBuilderGBA
 
             this.ProcsScript.RemoveAt(this.Script.SelectedIndex);
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
             //リストの更新.
             this.Script.DummyAlloc(this.ProcsScript.Count, this.Script.SelectedIndex - 1);
 
@@ -742,8 +752,10 @@ namespace FEBuilderGBA
                 selected = this.Script.SelectedIndex + 1;
             }
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
             //リストの更新.
-           this.Script.DummyAlloc(this.ProcsScript.Count, selected);
+            this.Script.DummyAlloc(this.ProcsScript.Count, selected);
 
             //コントロールパネルを閉じる.
             HideFloatingControlpanel();
@@ -975,7 +987,10 @@ namespace FEBuilderGBA
                 this.ProcsScript.Add(code);
                 addr += (uint)code.Script.Size;
             }
-           this.Script.DummyAlloc(this.ProcsScript.Count, -1);
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.ProcsScript);
+            //リストの更新.
+            this.Script.DummyAlloc(this.ProcsScript.Count, -1);
         }
 
         private void Address_KeyDown(object sender, KeyEventArgs e)

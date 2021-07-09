@@ -57,6 +57,21 @@ namespace FEBuilderGBA
             U.SetIcon(EventToFileButton, Properties.Resources.icon_arrow);
             U.SetIcon(FileToEventButton, Properties.Resources.icon_upload);
         }
+
+        ToolTipEx ToolTip;
+        private void AIScriptForm_Load(object sender, EventArgs e)
+        {
+            this.ToolTip = InputFormRef.GetToolTip<AIScriptForm>();
+            for (int i = 0; i < ScriptEditSetTables.Length; i++)
+            {
+                ScriptEditSetTables[i].ParamValue.SetToolTipEx(this.ToolTip);
+            }
+
+            U.ReSelectList(this.FilterComboBox);
+            U.ReSelectList(this.AddressList);
+        }
+
+
         //リストが拡張された分のポインタをNULLにする.
         void AddressListExpandsEventNoCopyPointer(object sender, EventArgs arg)
         {
@@ -166,12 +181,6 @@ namespace FEBuilderGBA
                     return name;
                 }
                 );
-        }
-
-        private void MenuForm_Load(object sender, EventArgs e)
-        {
-            U.ReSelectList(this.FilterComboBox);
-            U.ReSelectList(this.AddressList);
         }
 
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -371,6 +380,7 @@ namespace FEBuilderGBA
         private void Script_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideFloatingControlpanel();
+            EventScriptUtil.UpdateRelatedLine(this.Script, this.AIAsm);
         }
         private void OneLineDisassembler()
         {
@@ -996,7 +1006,10 @@ namespace FEBuilderGBA
                 }
             }
 
-           this.Script.DummyAlloc(this.AIAsm.Count, insertedPoint);
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
+            //リストの更新.
+            this.Script.DummyAlloc(this.AIAsm.Count, insertedPoint);
         }
 
         private string EventToTextOne(int number)
@@ -1123,8 +1136,10 @@ namespace FEBuilderGBA
         {
             this.AIAsm = EventScript.CloneEventList(u.EventAsm);
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
             //リストの更新.
-           this.Script.DummyAlloc(this.AIAsm.Count, this.Script.SelectedIndex);
+            this.Script.DummyAlloc(this.AIAsm.Count, this.Script.SelectedIndex);
         }
 
 
@@ -1150,8 +1165,10 @@ namespace FEBuilderGBA
             //選択されているコードを入れ替える.
             this.AIAsm[this.Script.SelectedIndex] = code;
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
             //リストの更新.
-           this.Script.DummyAlloc(this.AIAsm.Count, -1);
+            this.Script.DummyAlloc(this.AIAsm.Count, -1);
 
 
             HideFloatingControlpanel();
@@ -1168,8 +1185,10 @@ namespace FEBuilderGBA
 
             this.AIAsm.RemoveAt(this.Script.SelectedIndex);
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
             //リストの更新.
-           this.Script.DummyAlloc(this.AIAsm.Count, this.Script.SelectedIndex - 1);
+            this.Script.DummyAlloc(this.AIAsm.Count, this.Script.SelectedIndex - 1);
 
             //コントロールパネルを閉じる.
             HideFloatingControlpanel();
@@ -1207,8 +1226,10 @@ namespace FEBuilderGBA
                 selected = this.Script.SelectedIndex + 1;
             }
 
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
             //リストの更新.
-           this.Script.DummyAlloc(this.AIAsm.Count, selected);
+            this.Script.DummyAlloc(this.AIAsm.Count, selected);
 
             //コントロールパネルを閉じる.
             HideFloatingControlpanel(); 
@@ -1495,7 +1516,10 @@ namespace FEBuilderGBA
                 addr += (uint)code.Script.Size;
             }
 
-           this.Script.DummyAlloc(this.AIAsm.Count, 0);
+            //最後に自下げ処理実行.
+            EventScriptUtil.JisageReorder(this.AIAsm);
+            //リストの更新.
+            this.Script.DummyAlloc(this.AIAsm.Count, 0);
         }
 
         private void Address_KeyDown(object sender, KeyEventArgs e)
@@ -1593,5 +1617,24 @@ namespace FEBuilderGBA
             EventScript.NotifyChangePointer(this.AIAsm, oldaddr, newaddr);
         }
 
+        private void ScriptCodeName_MouseEnter(object sender, EventArgs e)
+        {
+            int index = this.Script.SelectedIndex;
+            if (index < 0 || index >= this.AIAsm.Count)
+            {
+                return;
+            }
+            EventScript.OneCode code = this.AIAsm[index];
+            if (code.Script.PopupHint == "")
+            {
+                return;
+            }
+            this.ToolTip.FireEvent(this.ScriptCodeName, this.ScriptCodeName.Text + "\r\n" + code.Script.PopupHint);
+        }
+
+        private void ScriptCodeName_MouseLeave(object sender, EventArgs e)
+        {
+            this.ToolTip.HideEvent(sender, e);
+        }
     }
 }

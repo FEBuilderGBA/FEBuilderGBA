@@ -11,7 +11,7 @@
 08000000ZZZZZZZZ	Continue only if struct of type [ZZZZZZZZ:POINTER_PROCS:Procs] exists, Yields without forwarding otherwise
 09000000ZZZZZZZZ	Delete all struct of given type [ZZZZZZZZ:POINTER_PROCS:Procs]	{CLEAR}
 0A000000ZZZZZZZZ	Clear callback for all struct of given type [ZZZZZZZZ:POINTER_PROCS:Procs]
-0B00YYYY00000000	Defines Label [YYYY:LABEL_CONDITIONAL:LABEL] (doesn't do anything by itself)	{COND}
+0B00YYYY00000000	Defines Label [YYYY:LABEL_CONDITIONAL:Label] (doesn't do anything by itself)	{COND}
 0C00YYYY00000000	Goto Label [YYYY:GOTO_CONDITIONAL:LABEL]	{COND}
 0D000000ZZZZZZZZ	Jump code to [ZZZZZZZZ:POINTER_PROCS:Procs]	{JUMP}
 0E00YYYY00000000	Sleep for given duration [YY:FSEC:WAIT FRAME] (Sets callback to Sleep Callback)	{WAIT}

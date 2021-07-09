@@ -534,13 +534,13 @@ DB000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	
 0200XXXX	[XX:FSEC:Duration (1/60 second)]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
 64000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{J}
 66000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{U}
-65000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:unit]	{WAKU}	{J}
-67000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:unit]	{WAKU}	{U}
+65000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:Unit]	{WAKU}	{J}
+67000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:Unit]	{WAKU}	{U}
 7D00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
-1E00XX0065000000YYYY0000	Move the screen to[XX:UNIT:unit]and display a frame in[YYYY:UNIT:unit](CAM 1) (CURF)	{WAKU}	{J}
-2000XX0067000000YYYY0000	Move the screen to[XX:UNIT:unit]and display a frame in[YYYY:UNIT:unit](CAM 1) (CURF)	{WAKU}	{U}
-1E00XX0065000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:unit]	{WAKU}	{J}
-2000XX0067000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:unit]	{WAKU}	{U}
+1E00XX0065000000YYYY0000	Move the screen to[XX:UNIT:Unit]and display a frame in[YYYY:UNIT:Unit](CAM 1) (CURF)	{WAKU}	{J}
+2000XX0067000000YYYY0000	Move the screen to[XX:UNIT:Unit]and display a frame in[YYYY:UNIT:Unit](CAM 1) (CURF)	{WAKU}	{U}
+1E00XX0065000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:Unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:Unit]	{WAKU}	{J}
+2000XX0067000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:Unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:Unit]	{WAKU}	{U}
 D2000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG (TEXTCG)	{TEXT}	{J}
 CF000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG (TEXTCG)	{TEXT}	{U}
 D4000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG 2 (MORETEXTCG)	{J}

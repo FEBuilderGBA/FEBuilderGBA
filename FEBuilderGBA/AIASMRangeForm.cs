@@ -81,8 +81,8 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
             Program.ROM.write_u8(addr + 0, (uint)this.B0.Value, undodata); //x1
-            Program.ROM.write_u8(addr + 1, (uint)this.B2.Value, undodata); //y1
-            Program.ROM.write_u8(addr + 2, (uint)this.B1.Value, undodata); //x2
+            Program.ROM.write_u8(addr + 1, (uint)this.B1.Value, undodata); //y1
+            Program.ROM.write_u8(addr + 2, (uint)this.B2.Value, undodata); //x2
             Program.ROM.write_u8(addr + 3, (uint)this.B3.Value, undodata); //y2
 
             Program.Undo.Push(undodata);

@@ -284,6 +284,8 @@
             this.ScriptCodeName.ReadOnly = true;
             this.ScriptCodeName.Size = new System.Drawing.Size(677, 25);
             this.ScriptCodeName.TabIndex = 1;
+            this.ScriptCodeName.MouseEnter += new System.EventHandler(this.ScriptCodeName_MouseEnter);
+            this.ScriptCodeName.MouseLeave += new System.EventHandler(this.ScriptCodeName_MouseLeave);
             // 
             // UpdateButton
             // 
@@ -743,7 +745,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "AIScriptForm";
             this.Text = "AIScript";
-            this.Load += new System.EventHandler(this.MenuForm_Load);
+            this.Load += new System.EventHandler(this.AIScriptForm_Load);
             this.ListBoxPanel.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
