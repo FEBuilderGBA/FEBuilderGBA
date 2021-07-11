@@ -12892,29 +12892,29 @@
 089EE97C	&EVENT	塔や遺跡を出た時のイベント	{U}
 08037CA0	塔や遺跡内で、敵を200撃破した場合、RievとHaydenを加入するフラグをONにする	{U}
 
-030017A0	@DUNGEON_STRUCT_STRUCT	gDungeonState	{U}
-030017ac	@DUNGEON_STRUCT_STRUCT	gBeforeDungeonState	{U}
+030017A0	@DUNGEON	gDungeonState	{U}
+030017ac	@DUNGEON	gBeforeDungeonState	{U}
 030017B8	gDungeonSomething00	{U}
 030017BC	gDungeonSomething04	{U}
 030017C0	gDungeonSomething08	{U}
 030017C4	gDungeonType	00=Tower 01=Ruins	{U}
 
-03001798	@DUNGEON_STRUCT_STRUCT	gDungeonState	{J}
-030017A4	@DUNGEON_STRUCT_STRUCT	gBeforeDungeonState	{J}
+03001798	@DUNGEON	gDungeonState	{J}
+030017A4	@DUNGEON	gBeforeDungeonState	{J}
 030017B0	gDungeonSomething00	{J}
 030017B4	gDungeonSomething04	{J}
 030017B8	gDungeonSomething08	{J}
 030017BC	gDungeonType	00=Tower 01=Ruins	{J}
 
-@DUNGEON_STRUCT_STRUCT@00	short	Exps
-@DUNGEON_STRUCT_STRUCT@02	byte	DeployUnits
-@DUNGEON_STRUCT_STRUCT@03	byte	ClearTurns
-@DUNGEON_STRUCT_STRUCT@04	short	Unk4
-@DUNGEON_STRUCT_STRUCT@06	short	DefeatsCount
-@DUNGEON_STRUCT_STRUCT@08	byte	Unk8
-@DUNGEON_STRUCT_STRUCT@09	byte	Unk9
-@DUNGEON_STRUCT_STRUCT@0A	byte	UnkA
-@DUNGEON_STRUCT_STRUCT@0B	byte	UnkB
+@DUNGEON@00	short	Exps
+@DUNGEON@02	byte	DeployUnits
+@DUNGEON@03	byte	ClearTurns
+@DUNGEON@04	short	Unk4
+@DUNGEON@06	short	DefeatsCount
+@DUNGEON@08	byte	Unk8
+@DUNGEON@09	byte	Unk9
+@DUNGEON@0A	byte	UnkA
+@DUNGEON@0B	byte	UnkB
 
 
 08037E4C	SaveBeforeDungeonState	{U}

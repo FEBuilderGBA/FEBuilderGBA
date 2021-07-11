@@ -1396,6 +1396,11 @@ namespace FEBuilderGBA
                 {//道
                     bitmap = WorldMapImageForm.DrawWorldMapIcon(0xB);
                 }
+                else if (item == "SOUNDROOM")
+                {
+                    bitmap = ImageSystemIconForm.MusicIcon(6);
+                }
+
                 if (bitmap != null)
                 {
                     U.MakeTransparent(bitmap);

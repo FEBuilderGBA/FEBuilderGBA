@@ -1060,7 +1060,14 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.SOUNDROOM)
             {//サウンドルーム
-                text = SoundRoomForm.GetSongName(v);
+                if (v >= 1 && v <= 255)
+                {
+                    text = SoundRoomForm.GetSongName(v-1);
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.U32)
+            {//10進数表記かラベル名を書く
+                text = " " + InputFormRef.GetDigitHintAndLabel(v);
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
@@ -2963,11 +2970,6 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(AIASMCALLTALKForm.GetUnit2Preview(v));
-                    }
-                    else if (arg.Type == EventScript.ArgType.SOUNDROOM)
-                    {
-                        sb.Append(" ");
-                        sb.Append(SoundRoomForm.GetSongName(v));
                     }
 
                     sb.Append("]");

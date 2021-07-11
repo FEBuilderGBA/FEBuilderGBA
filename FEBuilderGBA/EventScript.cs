@@ -109,6 +109,7 @@ namespace FEBuilderGBA
             , UNITCLASSABILITY  //ユニットクラス特性 ビットフラグ
             , MAP_CHANGE        //タイル変化
             , SOUNDROOM         //サウンドルームID
+            , U32               //任意の32bit値 SVALで利用
         };
 
         public class Arg
@@ -789,6 +790,7 @@ namespace FEBuilderGBA
                 || type == EventScript.ArgType.DECIMAL
                 || type == EventScript.ArgType.MAGVELY
                 || type == EventScript.ArgType.FSEC
+                || type == EventScript.ArgType.SOUNDROOM
                 );
         }
         //符号を使ってマイナスを表示するかどうか

@@ -441,7 +441,10 @@ namespace FEBuilderGBA
         }
         public string GetName(uint num)
         {
-            num = DisassemblerTrumb.ProgramAddrToPlain(num);
+            if (num >= 0x08000000 && num <= 0x08000000)
+            {//もし+1された奇数アドレスだったら、ASMとして元に戻します.
+                num = DisassemblerTrumb.ProgramAddrToPlain(num);
+            }
             string errorMessage;
             string name = GetASMName(num, true, out errorMessage);
             if (errorMessage == "")

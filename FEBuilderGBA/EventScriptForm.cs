@@ -1283,7 +1283,10 @@ namespace FEBuilderGBA
                     }
                     else if (arg.Type == EventScript.ArgType.SOUNDROOM)
                     {
-                        text = SoundRoomForm.GetSongName(v);
+                        if (v >= 1 && v <= 255)
+                        {
+                            text = SoundRoomForm.GetSongName(v - 1);
+                        }
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap;
@@ -1555,6 +1558,11 @@ namespace FEBuilderGBA
                         {
                             isENumText = true;
                             text = " " + AIASMCALLTALKForm.GetUnit2Preview(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.U32)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetU32Hint(v);
                         }
 
                         if (isENumText)

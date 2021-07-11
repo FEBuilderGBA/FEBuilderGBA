@@ -3535,15 +3535,19 @@ namespace FEBuilderGBA
             }
             else if (linktype == "SOUNDROOM")
             {
+                if (value < 1 && value > 255)
+                {
+                    return;
+                }
                 if (Program.ROM.RomInfo.version() == 6)
                 {
                     SoundRoomFE6Form f = (SoundRoomFE6Form)InputFormRef.JumpForm<SoundRoomFE6Form>(U.NOT_FOUND, "AddressList", src_object);
-                    f.JumpToSongID(value);
+                    f.JumpToSongID(value - 1);
                 }
                 else
                 {
                     SoundRoomForm f = (SoundRoomForm)InputFormRef.JumpForm<SoundRoomForm>(U.NOT_FOUND, "AddressList", src_object);
-                    f.JumpToSongID(value);
+                    f.JumpToSongID(value - 1);
                 }
             }
             else if (linktype == "PORTRAIT")
@@ -7002,6 +7006,31 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static string GetDigitHintAndLabel(uint v)
+        {
+            if (v >= 0x02000000 && v < 0x0A000000)
+            {
+                string label = Program.AsmMapFileAsmCache.GetName(v);
+                if (label != "")
+                {
+                    return "(" + label + ")";
+                }
+            }
+            return GetDigitHint(v);
+        }
+        public static string GetU32Hint(uint v)
+        {
+            if (v >= 0x02000000 && v < 0x0A000000)
+            {
+                string label = Program.AsmMapFileAsmCache.GetName(v);
+                if (label != "")
+                {
+                    return label;
+                }
+            }
+            return "";
+        }
+
         public static string GetBOOL(uint num)
         {
             if (num == 0)
