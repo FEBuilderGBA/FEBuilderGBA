@@ -1582,8 +1582,8 @@ This image does not meet the formatting requirements.
 :画像の形式が基準を満たしていません。
 The image format does not meet the criteria.
 
-:EAを実行するときに、書き込み始める領域を指定します。
-When executing EA processing, specify the area in data to begin writing.
+:EAを実行するときに、書き込み始める領域を指定します。\r\n「種類:プログラム」　挿入するデータをプログラムとしてrebuildの影響を受けないROMの上位アドレスに割り当てます。\r\n「種類:プログラム以外」　プログラム以外の画像などのデータとして下位アドレスを割り当てます。\r\n「フリーエリアを定義しない」　特にフリー領域を定義しません。EA内でORG指定をしてください。
+When executing EA processing, specify the area in data to begin writing.\r\n"Type: Program" Assign the data to be inserted as a program to the upper address of the ROM that is not affected by rebuild.\r\n"Type: Non-program" Assign a lower address as data such as images other than the program.\r\n"Do not define free area" No particular free area is defined.Please specify ORG in EA.
 
 :このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。
 If the source code of the program referenced in this event file has been updated, it will automatically recompile.\r\nIt does something like the "make" command.
@@ -1608,6 +1608,9 @@ User Revoked Changes
 
 :アンインストールするeventファイルを選択してください
 Select the .event file to uninstall
+
+:スクリプトのアンインストール
+Uninstall Script
 
 :更新されたプログラムを再コンパイル
 Recompile the updated program
@@ -1636,17 +1639,20 @@ Script
 :フリーエリアの定義
 Free Area
 
-:フリーエリアを定義する
-Define a Free Area
-
 :スクリプト読込
 Load Script
 
 :Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。
 Load the .event script in Event Assembler and adapt it into the current ROM.
 
-:スクリプトのアンインストール
-Uninstall Script
+:種類:プログラム
+Type: Program.
+
+:種類:プログラム以外
+Type: Other than program.
+
+:フリーエリアを定義しない
+Do not define a free area.
 
 :Event Assemblerで追加
 Insert Events via Event Assembler
@@ -13144,3 +13150,7 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:種類:プログラム
+Type: Program Code
+:種類:プログラム以外
+Type: Non Program Code

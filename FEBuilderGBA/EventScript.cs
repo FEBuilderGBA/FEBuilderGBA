@@ -107,7 +107,8 @@ namespace FEBuilderGBA
             , IGNORE_KEYS       //キー操作を無効にするビットフラグ FE8
             , KEYS              //キーコード
             , UNITCLASSABILITY  //ユニットクラス特性 ビットフラグ
-            , MAP_CHANGE
+            , MAP_CHANGE        //タイル変化
+            , SOUNDROOM         //サウンドルームID
         };
 
         public class Arg

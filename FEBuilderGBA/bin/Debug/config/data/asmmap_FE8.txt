@@ -13957,3 +13957,5 @@
 089AC5CC	:089AC793	レベルアップ項目表示に利用するパレットなどのデータ	{U}
 08A1DEF0	&LZ77	赤いステータス用の数字	おそらく未使用	{J}
 089AD868	&LZ77	赤いステータス用の数字	おそらく未使用	{U}
+080A8914	CheckSoundRoomEnableList	r0=0	r1=SongID	{J}
+080A3ED0	CheckSoundRoomEnableList	r0=0	r1=SongID	{U}

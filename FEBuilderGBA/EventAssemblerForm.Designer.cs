@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.UninstallButton = new System.Windows.Forms.Button();
             this.AutoReCompile = new System.Windows.Forms.CheckBox();
             this.DebugSymbolComboBox = new System.Windows.Forms.ComboBox();
             this.DebugSymbol = new System.Windows.Forms.Label();
-            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.SRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.FREEARE_PANEL = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.FreeAreaLabel = new System.Windows.Forms.Label();
             this.FREEAREA = new System.Windows.Forms.NumericUpDown();
-            this.FREEAREA_DEF = new System.Windows.Forms.CheckBox();
             this.UndoButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.J_2_TEXT = new System.Windows.Forms.Label();
-            this.UninstallButton = new System.Windows.Forms.Button();
+            this.FreeAreaComboBox = new System.Windows.Forms.ComboBox();
+            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.FREEARE_PANEL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FREEAREA)).BeginInit();
@@ -50,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.FreeAreaComboBox);
             this.panel1.Controls.Add(this.UninstallButton);
             this.panel1.Controls.Add(this.AutoReCompile);
             this.panel1.Controls.Add(this.DebugSymbolComboBox);
@@ -58,7 +59,6 @@
             this.panel1.Controls.Add(this.SRCSelectButton);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.FREEARE_PANEL);
-            this.panel1.Controls.Add(this.FREEAREA_DEF);
             this.panel1.Controls.Add(this.UndoButton);
             this.panel1.Controls.Add(this.WriteButton);
             this.panel1.Controls.Add(this.J_2_TEXT);
@@ -66,6 +66,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 398);
             this.panel1.TabIndex = 0;
+            // 
+            // UninstallButton
+            // 
+            this.UninstallButton.AccessibleDescription = "@UNINSTALL_EA";
+            this.UninstallButton.Location = new System.Drawing.Point(486, 328);
+            this.UninstallButton.Name = "UninstallButton";
+            this.UninstallButton.Size = new System.Drawing.Size(393, 51);
+            this.UninstallButton.TabIndex = 109;
+            this.UninstallButton.Text = "スクリプトのアンインストール";
+            this.UninstallButton.UseVisualStyleBackColor = true;
+            this.UninstallButton.Click += new System.EventHandler(this.UninstallButton_Click);
             // 
             // AutoReCompile
             // 
@@ -105,16 +116,6 @@
             this.DebugSymbol.Text = "デバッグ用のシンボル ";
             this.DebugSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SRCFilename
-            // 
-            this.SRCFilename.ErrorMessage = "";
-            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
-            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SRCFilename.Name = "SRCFilename";
-            this.SRCFilename.Placeholder = "";
-            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
-            this.SRCFilename.TabIndex = 93;
-            // 
             // SRCSelectButton
             // 
             this.SRCSelectButton.Location = new System.Drawing.Point(169, 87);
@@ -139,21 +140,21 @@
             // 
             // FREEARE_PANEL
             // 
-            this.FREEARE_PANEL.Controls.Add(this.label1);
+            this.FREEARE_PANEL.Controls.Add(this.FreeAreaLabel);
             this.FREEARE_PANEL.Controls.Add(this.FREEAREA);
             this.FREEARE_PANEL.Location = new System.Drawing.Point(13, 288);
             this.FREEARE_PANEL.Name = "FREEARE_PANEL";
             this.FREEARE_PANEL.Size = new System.Drawing.Size(380, 41);
             this.FREEARE_PANEL.TabIndex = 19;
             // 
-            // label1
+            // FreeAreaLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "フリーエリアの定義";
+            this.FreeAreaLabel.AutoSize = true;
+            this.FreeAreaLabel.Location = new System.Drawing.Point(13, 9);
+            this.FreeAreaLabel.Name = "FreeAreaLabel";
+            this.FreeAreaLabel.Size = new System.Drawing.Size(136, 18);
+            this.FreeAreaLabel.TabIndex = 1;
+            this.FreeAreaLabel.Text = "フリーエリアの定義";
             // 
             // FREEAREA
             // 
@@ -173,19 +174,6 @@
             this.FREEAREA.Name = "FREEAREA";
             this.FREEAREA.Size = new System.Drawing.Size(130, 25);
             this.FREEAREA.TabIndex = 17;
-            // 
-            // FREEAREA_DEF
-            // 
-            this.FREEAREA_DEF.AutoSize = true;
-            this.FREEAREA_DEF.Checked = true;
-            this.FREEAREA_DEF.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FREEAREA_DEF.Location = new System.Drawing.Point(13, 259);
-            this.FREEAREA_DEF.Name = "FREEAREA_DEF";
-            this.FREEAREA_DEF.Size = new System.Drawing.Size(190, 22);
-            this.FREEAREA_DEF.TabIndex = 18;
-            this.FREEAREA_DEF.Text = "フリーエリアを定義する";
-            this.FREEAREA_DEF.UseVisualStyleBackColor = true;
-            this.FREEAREA_DEF.CheckedChanged += new System.EventHandler(this.FREEAREA_DEF_CheckedChanged);
             // 
             // UndoButton
             // 
@@ -221,16 +209,29 @@
             this.J_2_TEXT.Text = "Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。";
             this.J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UninstallButton
+            // FreeAreaComboBox
             // 
-            this.UninstallButton.AccessibleDescription = "@UNINSTALL_EA";
-            this.UninstallButton.Location = new System.Drawing.Point(486, 328);
-            this.UninstallButton.Name = "UninstallButton";
-            this.UninstallButton.Size = new System.Drawing.Size(393, 51);
-            this.UninstallButton.TabIndex = 109;
-            this.UninstallButton.Text = "スクリプトのアンインストール";
-            this.UninstallButton.UseVisualStyleBackColor = true;
-            this.UninstallButton.Click += new System.EventHandler(this.UninstallButton_Click);
+            this.FreeAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FreeAreaComboBox.FormattingEnabled = true;
+            this.FreeAreaComboBox.Items.AddRange(new object[] {
+            "種類:プログラム",
+            "種類:プログラム以外",
+            "フリーエリアを定義しない"});
+            this.FreeAreaComboBox.Location = new System.Drawing.Point(13, 256);
+            this.FreeAreaComboBox.Name = "FreeAreaComboBox";
+            this.FreeAreaComboBox.Size = new System.Drawing.Size(380, 26);
+            this.FreeAreaComboBox.TabIndex = 110;
+            this.FreeAreaComboBox.SelectedIndexChanged += new System.EventHandler(this.FreeAreaComboBox_SelectedIndexChanged);
+            // 
+            // SRCFilename
+            // 
+            this.SRCFilename.ErrorMessage = "";
+            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
+            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SRCFilename.Name = "SRCFilename";
+            this.SRCFilename.Placeholder = "";
+            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
+            this.SRCFilename.TabIndex = 93;
             // 
             // EventAssemblerForm
             // 
@@ -257,9 +258,8 @@
         private System.Windows.Forms.Label J_2_TEXT;
         private System.Windows.Forms.Button UndoButton;
         private System.Windows.Forms.Button WriteButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FreeAreaLabel;
         private System.Windows.Forms.NumericUpDown FREEAREA;
-        private System.Windows.Forms.CheckBox FREEAREA_DEF;
         private System.Windows.Forms.Panel FREEARE_PANEL;
         private TextBoxEx SRCFilename;
         private System.Windows.Forms.Button SRCSelectButton;
@@ -268,5 +268,6 @@
         private System.Windows.Forms.Label DebugSymbol;
         private System.Windows.Forms.CheckBox AutoReCompile;
         private System.Windows.Forms.Button UninstallButton;
+        private System.Windows.Forms.ComboBox FreeAreaComboBox;
     }
 }

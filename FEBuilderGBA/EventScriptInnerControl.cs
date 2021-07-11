@@ -1054,11 +1054,14 @@ namespace FEBuilderGBA
             {//Counter
                 text = " " + InputFormRef.GetCOUNTER(v, out errormessage);
             }
-            if (arg.Type == EventScript.ArgType.TILE)
+            else if (arg.Type == EventScript.ArgType.TILE)
             {//タイル名
                 text = " " + MapTerrainNameForm.GetName(v);
             }
-
+            else if (arg.Type == EventScript.ArgType.SOUNDROOM)
+            {//サウンドルーム
+                text = SoundRoomForm.GetSongName(v);
+            }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
@@ -1433,6 +1436,25 @@ namespace FEBuilderGBA
                     , (Button)InputFormRef.FindObjectByForm<Button>
                         (InputFormRef.GetAllControls(f), "ApplyButton")
                     , src_object);
+            }
+            else if (arg.Type == EventScript.ArgType.SOUNDROOM)
+            {
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    SoundRoomFE6Form f = (SoundRoomFE6Form)InputFormRef.JumpForm<SoundRoomFE6Form>(value);
+                    MakeInjectionCallback(f
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
+                        , src_object, false);
+                }
+                else
+                {
+                    SoundRoomForm f = (SoundRoomForm)InputFormRef.JumpForm<SoundRoomForm>(value);
+                    MakeInjectionCallback(f
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
+                        , src_object, false);
+                }
             }
         }
 
@@ -2941,6 +2963,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(AIASMCALLTALKForm.GetUnit2Preview(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.SOUNDROOM)
+                    {
+                        sb.Append(" ");
+                        sb.Append(SoundRoomForm.GetSongName(v));
                     }
 
                     sb.Append("]");

@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             this.DebugSymbolComboBox.SelectedIndex = 3;
-            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
+            this.FreeAreaComboBox.SelectedIndex = 0;
             SRCFilename.AllowDropFilename();
 
             AllowDropFilename();
@@ -25,9 +25,28 @@ namespace FEBuilderGBA
         }
         void MakeExplain()
         {
-            FREEAREA_DEF.AccessibleDescription = R._("EAを実行するときに、書き込み始める領域を指定します。");
+            FreeAreaLabel.AccessibleDescription = R._("EAを実行するときに、書き込み始める領域を指定します。\r\n「種類:プログラム」　挿入するデータをプログラムとしてrebuildの影響を受けないROMの上位アドレスに割り当てます。\r\n「種類:プログラム以外」　プログラム以外の画像などのデータとして下位アドレスを割り当てます。\r\n「フリーエリアを定義しない」　特にフリー領域を定義しません。EA内でORG指定をしてください。");
             AutoReCompile.AccessibleDescription = R._("このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。");
         }
+        void RedefineFreeArea()
+        {
+            uint freearea = 0;
+            if (this.FreeAreaComboBox.SelectedIndex == (int)FREEAREA_DEF_ENUM.Program)
+            {
+                freearea = InputFormRef.AllocBinaryData(1024 * 200 , isProgramArea: true); //200kbyte
+            }
+            else if (this.FreeAreaComboBox.SelectedIndex == (int)FREEAREA_DEF_ENUM.Data)
+            {
+                freearea = InputFormRef.AllocBinaryData(1024 * 200, isProgramArea: false); //200kbyte
+            }
+
+            if (freearea == U.NOT_FOUND)
+            {
+                freearea = 0;
+            }
+            U.ForceUpdate(FREEAREA, freearea);
+        }
+
 
         void AllowDropFilename()
         {
@@ -90,10 +109,6 @@ namespace FEBuilderGBA
             try
             {
                 uint freearea = (uint)FREEAREA.Value;
-                if (!this.FREEAREA_DEF.Checked)
-                {//フリーエリアを利用しない.
-                    freearea = 0;
-                }
                 SymbolUtil.DebugSymbol storeSymbol = (SymbolUtil.DebugSymbol)(DebugSymbolComboBox.SelectedIndex);
                 WriteEA(EAFilename, freearea, U.NOT_FOUND , undodata, storeSymbol);
             }
@@ -109,7 +124,6 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
 
             UndoButton.Show();
-//            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
         }
 
         private void UndoButton_Click(object sender, EventArgs e)
@@ -131,7 +145,6 @@ namespace FEBuilderGBA
             UndoButton.Hide();
 
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
-            //U.ForceUpdate(FREEAREA,InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
         }
 
         private void EventAssemblerForm_Load(object sender, EventArgs e)
@@ -144,16 +157,11 @@ namespace FEBuilderGBA
             }
         }
 
-        private void FREEAREA_DEF_CheckedChanged(object sender, EventArgs e)
+        enum FREEAREA_DEF_ENUM
         {
-            if (this.FREEAREA_DEF.Checked)
-            {
-                FREEARE_PANEL.Hide();
-            }
-            else
-            {
-                FREEARE_PANEL.Show();
-            }
+            Program = 0,
+            Data = 1,
+            NotDefine = 2,
         }
 
         public static void WriteEA(string EA, uint freearea,uint org_sp, Undo.UndoData undodata,SymbolUtil.DebugSymbol storeSymbol)
@@ -355,6 +363,7 @@ namespace FEBuilderGBA
                     {
                         return error;
                     }
+                    SymbolUtil.ProcessSymbolByComment(sourceCode, symbol, SymbolUtil.DebugSymbol.SaveSymTxt, 0);
                 }
             }
 
@@ -386,6 +395,11 @@ namespace FEBuilderGBA
             f.Show();
             PatchForm.PatchSt patchSt = PatchForm.MakeInstantEAToPatch(EAFilename);
             f.UnInstallPatch(patchSt, true);
+        }
+
+        private void FreeAreaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RedefineFreeArea();
         }
 
     }

@@ -232,6 +232,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.SOUNDROOM)
+            {
+                isLabelJump = true;
+            }
 
             if (isLabelJump)
             {
@@ -1275,6 +1279,16 @@ namespace FEBuilderGBA
                         text = "";
                         Bitmap bitmap = AIUnitsForm.DrawAIUnitsList(v, lineHeight * 2 - 2);
                         maxHeight = DrawPictureAndDispose(bitmap, bitmap.Width, bitmap.Height
+                            , ref bounds, maxHeight, g, isWithDraw);
+                    }
+                    else if (arg.Type == EventScript.ArgType.SOUNDROOM)
+                    {
+                        text = SoundRoomForm.GetSongName(v);
+                        bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
+
+                        Bitmap bitmap;
+                        bitmap = ImageSystemIconForm.MusicIcon(6);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
                             , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else

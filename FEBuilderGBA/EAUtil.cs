@@ -666,15 +666,15 @@ namespace FEBuilderGBA
 
             Program.ExportFunction.ExportEA(sb, isColorzCore);
 
-            if (freearea != 0)
-            {
-                sb.AppendLine(String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
-                    , U.To0xHexString(freearea), target_filename));
-            }
-            else
+            if (freearea == 0 || freearea == U.NOT_FOUND)
             {
                 sb.AppendLine(String.Format("#include \"{0}\"\r\n"
                     , Path.GetFileName(target_filename)));
+            }
+            else
+            {
+                sb.AppendLine(String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
+                    , U.To0xHexString(freearea), target_filename));
             }
             return sb.ToString();
         }
