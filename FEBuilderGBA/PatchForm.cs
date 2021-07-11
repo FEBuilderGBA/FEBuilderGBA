@@ -5052,10 +5052,7 @@ namespace FEBuilderGBA
                 for (int n = 0; n < ea.DataList.Count; n++)
                 {
                     EAUtil.Data data = ea.DataList[n];
-                    if (data.BINData == null || data.BINData.Length == 0)
-                    {//empty data
-                    }
-                    else if (data.DataType == EAUtil.DataEnum.ORG)
+                    if (data.DataType == EAUtil.DataEnum.ORG)
                     {
                         uint addr = data.ORGAddr;
 
@@ -5083,6 +5080,10 @@ namespace FEBuilderGBA
                     else if (data.DataType == EAUtil.DataEnum.ASM
                         || data.DataType == EAUtil.DataEnum.MIX)
                     {
+                        if (data.BINData == null || data.BINData.Length == 0)
+                        {//empty data
+                            continue;
+                        }
                         //展開されるものを生成して、GREP検索する必要があります.
                         string[] sp = new string[] { };
                         bool[] isSkip;
@@ -5121,6 +5122,10 @@ namespace FEBuilderGBA
                     }
                     else if (data.DataType == EAUtil.DataEnum.LYN)
                     {
+                        if (data.BINData == null || data.BINData.Length == 0)
+                        {//empty data
+                            continue;
+                        }
                         //展開されるものを生成して、GREP検索する必要があります.
                         string[] sp = new string[] { };
                         bool[] isSkip = MakeLynMaskPattern(data.BINData);
