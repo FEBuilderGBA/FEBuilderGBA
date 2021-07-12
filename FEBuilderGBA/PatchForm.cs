@@ -3212,11 +3212,41 @@ namespace FEBuilderGBA
                 uint alloc_size_hint = U.atoi0x(U.at(patch.Param, "ALLOC_SIZE_HINT"));
                 if (alloc_size_hint <= 0)
                 {
-                    alloc_size_hint = 1024 * 5;
+                    uint calcsize = CalcSizeToBeWrittenByEA(patch);
+                    if (calcsize <= 0x20)
+                    {//計算できなかったのでディフォルト値 5kbを利用します
+                        alloc_size_hint = 1024 * 5;
+                    }
+                    else
+                    {//計算した値の2倍空いているところを見つけます
+                        alloc_size_hint = calcsize * 2;
+                    }
                 }
-                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea); //とりあえず5kbの空きがあるところ.
+                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea);
             }
             return freearea;
+        }
+
+        //EAが利用する領域の計算
+        static uint CalcSizeToBeWrittenByEA(PatchSt patch)
+        {
+            string EA = U.at(patch.Param, "EA");
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            string eaFilename = Path.Combine(basedir, EA);
+
+            Debug.Assert(File.Exists(eaFilename));
+
+            uint totalsize = 0;
+            EAUtil eaU = new EAUtil(eaFilename);
+            foreach(EAUtil.Data data in eaU.DataList)
+            {
+                if (data.BINData == null)
+                {
+                    continue;
+                }
+                totalsize += (uint)data.BINData.Length;
+            }
+            return totalsize;
         }
 
         void LoadPatchEA(PatchSt patch)

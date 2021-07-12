@@ -1,0 +1,40 @@
+NAME=サウンドルームを255件記録できるようにする
+INFO=サウンドルームに再生した楽曲255個をちゃんと記録できるようにします。\r\nGBAFEでは255個のbool値が格納できる0x20個のバッファを用意しています。\r\nでもサウンドルームをSongIDとして記録しているため0xFFを超えるSongIDを記録できません。\r\nこのパッチは、再生した楽曲をSongIDではなくSoundRoomIDで記録することで、255個の楽曲を正しく動作させるようにします。\r\n\r\nサウンドルームのリスト上の上限は255曲までです。\r\n記録フォーマットが変わるので、既存のデータとの互換性が崩れます。これはロードできないわけではなく、読み込んだ結果が変な結果になるということです。\r\nsavデータを消して新規に開始することを推奨します。\r\nまた、サウンドルームに楽曲を追加する、または消去する命令を追加するので、イベントから制御したい方はそれでご自由に変更してください。\r\nチートを使ったら全楽曲を消すとか、クリアしたら全楽曲を解放するなど、自由にイベントを作って遊んでください。\r\nなお、パッチの性質上、サウンドルームの並び順はより重要になります。途中でリストの順番を並び替えると、SoundRoomIDが変わるから期待通りに動作しなくなりますので、注意してください。
+
+TYPE=EA
+EA=Installer.event
+PATCHED_IF:0xA8968=0x00 0x4B
+
+AUTHOR=7743
+EVENTSCRIPT:01=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	[XX:MUSIC:音楽]がSoundRoomで聞けるようになっているか確認する(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	[XX:MUSIC:音楽]をSoundRoomで有効にし表示する(ASMC_ShowSoundRoom)	{MUSIC}	もしSoundRoomのリストに掲載されていない楽曲を指定した場合は無効となり無視されます。
+EVENTSCRIPT:03=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	[XX:MUSIC:音楽]をSoundRoomで無効にしグレー表示にする(ASMC_HideSoundRoom)	{MUSIC}	もしSoundRoomのリストに掲載されていない楽曲を指定した場合は無効となり無視されます。
+EVENTSCRIPT:04=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]が聞けるようになっいてるか確認する(ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]を有効にし表示する(ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]を無効しグレー表示にする(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07=400D0000{$L1:ASMC_ShowAllSongs.dmp}	サウンドルームのすべての曲を有効にし表示する(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08=400D0000{$L1:ASMC_HideAllSongs.dmp}	サウンドルームのすべての曲を無効しグレー表示にする(ASMC_HideAllSongs)	{MUSIC}
+
+
+EVENTSCRIPT:01.en=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	Check [XX:MUSIC:Song] in SoundRoom(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02.en=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	Show [XX:MUSIC:Song] in SoundRoom(ASMC_ShowSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:03.en=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	Hide [XX:MUSIC:Song] in SoundRoom and disable Gray out(ASMC_HideSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:04.en=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	Check [XX:SOUNDROOM:SoundRoomID](ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05.en=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	Show [XX:SOUNDROOM:SoundRoomID](ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06.en=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	Hide [XX:SOUNDROOM:SoundRoomID] and disable Gray out(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07.en=400D0000{$L1:ASMC_ShowAllSongs.dmp}	Show All SoundRoom Songs(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08.en=400D0000{$L1:ASMC_HideAllSongs.dmp}	Hide All SoundRoom Songs and disable all Gray out(ASMC_HideAllSongs)	{MUSIC}
+
+EVENTSCRIPT:01.zh=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	Check [XX:MUSIC:Song] in SoundRoom(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02.zh=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	Show [XX:MUSIC:Song] in SoundRoom(ASMC_ShowSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:03.zh=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	Hide [XX:MUSIC:Song] in SoundRoom and disable Gray out(ASMC_HideSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:04.zh=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	Check [XX:SOUNDROOM:SoundRoomID](ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05.zh=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	Show [XX:SOUNDROOM:SoundRoomID](ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06.zh=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	Hide [XX:SOUNDROOM:SoundRoomID] and disable Gray out(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07.zh=400D0000{$L1:ASMC_ShowAllSongs.dmp}	Show All SoundRoom Songs(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08.zh=400D0000{$L1:ASMC_HideAllSongs.dmp}	Hide All SoundRoom Songs and disable all Gray out(ASMC_HideAllSongs)	{MUSIC}
+
+NAME.en=Allows to record 255 sound room
+INFO.en=this patch to make sure that the sound room can properly record 255 played songs.\r\nGBAFE provides a buffer of 0x20 that can hold 255 bool values.\r\nHowever, since the sound room is recorded as SongID, it is not possible to record SongIDs that exceed 0xFF.\r\nThis patch will record the played songs as SoundRoomIDs instead of SongIDs, so that 255 songs will work correctly.\r\n\r\nThe maximum number of songs on the SoundRoom list is 255.\r\nSince the recording format will change, compatibility with existing data will be broken. This doesn't mean that it can't be loaded, but it does mean that the results of loading it will be weird.\r\nIt is recommended that you delete the sav data and start fresh.\r\nthis patch also be adding instructions to add and delete songs in the sound room, so feel free to change that if you want to control it from events.\r\nIf you want to control it from an event, feel free to change it. For example, if you use a cheat, delete all songs, or if you clear the game, release all songs, etc. Feel free to create your own events and play with them.\r\nNote that due to the nature of the patch, the order of the sound rooms is more important.\r\nIf you rearrange the order of the list in the middle of the game, it will not work as expected because the SoundRoomID will change, so please be careful.
+NAME.zh=Allows to record 255 sound room
+INFO.zh=this patch to make sure that the sound room can properly record 255 played songs.\r\nGBAFE provides a buffer of 0x20 that can hold 255 bool values.\r\nHowever, since the sound room is recorded as SongID, it is not possible to record SongIDs that exceed 0xFF.\r\nThis patch will record the played songs as SoundRoomIDs instead of SongIDs, so that 255 songs will work correctly.\r\n\r\nThe maximum number of songs on the SoundRoom list is 255.\r\nSince the recording format will change, compatibility with existing data will be broken. This doesn't mean that it can't be loaded, but it does mean that the results of loading it will be weird.\r\nIt is recommended that you delete the sav data and start fresh.\r\nthis patch also be adding instructions to add and delete songs in the sound room, so feel free to change that if you want to control it from events.\r\nIf you want to control it from an event, feel free to change it. For example, if you use a cheat, delete all songs, or if you clear the game, release all songs, etc. Feel free to create your own events and play with them.\r\nNote that due to the nature of the patch, the order of the sound rooms is more important.\r\nIf you rearrange the order of the list in the middle of the game, it will not work as expected because the SoundRoomID will change, so please be careful.

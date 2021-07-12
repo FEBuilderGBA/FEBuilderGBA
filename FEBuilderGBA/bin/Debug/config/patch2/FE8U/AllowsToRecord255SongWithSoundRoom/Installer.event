@@ -1,0 +1,64 @@
+PUSH
+//ORG 0xA8968 //{J}
+ORG 0xA3F24 //{U}
+jumpToHack(ConvertSongIDtoSoundRoomID)
+
+//ORG 0xA8928 //{J}
+ORG 0xA3EE4 //{U}
+jumpToHack(ConvertSongIDtoSoundRoomID_for_IsSoundRoomEnableList)
+
+//ORG 0xB39E8 //{J}
+ORG 0xAEDC8 //{U}
+jumpToHack(CanDisplayThisSong)
+
+//ORG 0x27E8 //{J}
+ORG 0x2898 //{U}
+BYTE 0x00 0x00  //NOP 0x7fˆÈ‰º‚Ì‹È‚ð‹L˜^‚µ‚È‚¢‚Ì‚ð‚â‚ß‚é
+
+POP
+
+ALIGN 4
+ConvertSongIDtoSoundRoomID:
+#incbin "ConvertSongIDtoSoundRoomID.dmp"
+
+ALIGN 4
+ConvertSongIDtoSoundRoomID_for_IsSoundRoomEnableList:
+#incbin "ConvertSongIDtoSoundRoomID_for_IsSoundRoomEnableList.dmp"
+
+ALIGN 4
+CanDisplayThisSong:
+#incbin "CanDisplayThisSong.dmp"
+
+ALIGN 4
+ASMC_ShowSoundRoom:
+#incbin "ASMC_ShowSoundRoom.dmp"
+
+ALIGN 4
+ASMC_CheckSoundRoom:
+#incbin "ASMC_CheckSoundRoom.dmp"
+
+ALIGN 4
+ASMC_HideSoundRoom:
+#incbin "ASMC_HideSoundRoom.dmp"
+
+ALIGN 4
+ASMC_ShowSoundRoomDirect:
+#incbin "ASMC_ShowSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_CheckSoundRoomDirect:
+#incbin "ASMC_CheckSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_HideSoundRoomDirect:
+#incbin "ASMC_HideSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_ShowAllSongs:
+#incbin "ASMC_ShowAllSongs.dmp"
+
+ALIGN 4
+ASMC_HideAllSongs:
+#incbin "ASMC_HideAllSongs.dmp"
+
+ALIGN 4

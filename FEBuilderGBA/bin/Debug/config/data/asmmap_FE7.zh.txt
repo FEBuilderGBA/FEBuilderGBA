@@ -4763,10 +4763,10 @@
 08082C44	Called when R-text is open and moving LEFT	{J}
 08082C74	Called when R-text is open and moving RIGHT	{J}
 080A00C8	LoadSoundRoomEnableList	{J}
-080A0120	SaveSoundRoomEnableList_Inner	{J}
+080A0120	SaveSoundRoomEnableList_Overwrite	{J}
 080A0184	SaveSoundRoomEnableList	r1=SongID	{J}
 0809F68C	LoadSoundRoomEnableList	{U}
-0809F6E4	SaveSoundRoomEnableList_Inner	{U}
+0809F6E4	SaveSoundRoomEnableList_Overwrite	{U}
 0809F748	SaveSoundRoomEnableList	r1=SongID	{U}
 0806CAF8	MOVEUNIT6C_PlaySoundStepByClass	{U}
 08C9CED0	:08C9CEF3	Move Sound: Walk	{U}

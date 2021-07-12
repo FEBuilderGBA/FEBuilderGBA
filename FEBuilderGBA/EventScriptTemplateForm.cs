@@ -18,6 +18,7 @@ namespace FEBuilderGBA
             this.EventTemplate.LoadTemplate();
 
             this.SampleEventListbox.OwnerDraw(DrawEvent, DrawMode.OwnerDrawVariable, false);
+            this.TemplateListbox.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
 
             TemplateListbox.BeginUpdate();
             foreach(EventTemplateImpl.EventTemplate et in this.EventTemplate.GetTemplateAll())

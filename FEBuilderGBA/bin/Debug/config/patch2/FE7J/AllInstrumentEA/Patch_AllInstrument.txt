@@ -15,4 +15,5 @@ INFO.en=This patch allows you to use all high-quality Midi instruments.\r\nIt us
 INFO.zh=是可以使用所有高音质的Midi乐器的补丁。\r\n消耗了相当大的约1.5 MB容量,能够播放高音质的音乐。
 
 AUTHOR=Blazer
+ALLOC_DATAONLY_HINT=true
 ALLOC_SIZE_HINT=1300000	//大きなサイズを利用するのでマークしておく.
