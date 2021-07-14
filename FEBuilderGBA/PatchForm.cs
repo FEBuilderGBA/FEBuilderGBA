@@ -1004,6 +1004,7 @@ namespace FEBuilderGBA
                         || type == "BATTLEANIMEPOINTER"
                         || type == "CLASSTYPEICON"
                         || type == "SKILL"
+                        || type == "WEAPONTYPE"
                         )
                     {
                         PictureBox pic = new PictureBox();
@@ -1462,6 +1463,18 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawSkillAndText, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "WEAPONTYPE")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawWeaponTypeIconAndText, DrawMode.OwnerDrawFixed);
+            }
+            else if (listname == "WEAPONTYPE2")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawWeaponTypeIcon2AndText, DrawMode.OwnerDrawFixed);
+            }
+            else if (listname == "UNIT2" || listname == "UNITAND")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawUnit2AndText, DrawMode.OwnerDrawFixed);
+            }
             else if (listname == "DECIMAL")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -1479,7 +1492,7 @@ namespace FEBuilderGBA
                 if (classtype > 0)
                 {
                     string innerlistname = U.substr(listname, classtype + 1);
-                    InitStructListName(patch,innerlistname ,addressList,out out_listname_combo_dic);
+                    InitStructListName(patch, innerlistname, addressList, out out_listname_combo_dic);
                 }
             }
         }
@@ -1543,6 +1556,28 @@ namespace FEBuilderGBA
             else if (listname == "VENNOUWEAPONLOCK_INDEX")
             {
                 appendname = U.ToHexString(i) + " " + VennouWeaponLockForm.GetNamesByIndexCap((uint)i);
+            }
+            else if (listname == "WEAPONTYPE")
+            {
+                appendname = U.ToHexString(i) + " " + InputFormRef.GetWeaponTypeName((uint)i);
+            }
+            else if (listname == "WEAPONTYPE2")
+            {
+                uint a = (uint)(i & 0xff);
+                uint b = (uint)((i>>8) & 0xff);
+                appendname = U.ToHexString(a) + " " + InputFormRef.GetWeaponTypeName(a) + " -> " + U.ToHexString(b) + " " + InputFormRef.GetWeaponTypeName(b);
+            }
+            else if (listname == "UNIT2")
+            {
+                uint a = (uint)(i & 0xff);
+                uint b = (uint)((i >> 8) & 0xff);
+                appendname = U.ToHexString(a) + " " + UnitForm.GetUnitName(a) + " -> " + U.ToHexString(b) + " " + UnitForm.GetUnitName(b);
+            }
+            else if (listname == "UNITAND")
+            {
+                uint a = (uint)(i & 0xff);
+                uint b = (uint)((i >> 8) & 0xff);
+                appendname = U.ToHexString(a) + " " + UnitForm.GetUnitName(a) + " & " + U.ToHexString(b) + " " + UnitForm.GetUnitName(b);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
@@ -1891,7 +1926,7 @@ namespace FEBuilderGBA
                 link.Location = new Point(x, y);
                 link.Size = new Size(200, CONTROL_HEIGHT);
                 link.ReadOnly = true;
-                if (address_type == "UNIT" || address_type == "ITEM" || address_type == "CLASS")
+                if (address_type == "UNIT" || address_type == "ITEM" || address_type == "CLASS" || address_type == "WEAPONTYPE")
                 {
                     link.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(link);

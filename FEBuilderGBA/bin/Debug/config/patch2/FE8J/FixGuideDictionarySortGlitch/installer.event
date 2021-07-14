@@ -1,0 +1,9 @@
+PUSH
+ORG 0xD3E7C	//{J}
+//ORG 0xCF180	//{U}
+jumpToHack(FixGuideDictionarySortGlitch)
+POP
+
+ALIGN 4
+FixGuideDictionarySortGlitch:
+#incbin "FixGuideDictionarySortGlitch.dmp"

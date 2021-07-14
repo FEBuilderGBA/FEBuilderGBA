@@ -1,0 +1,3 @@
+BGList=$20
+Loop=$04
+ChooseRandBG=$0C

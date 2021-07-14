@@ -1,0 +1,12 @@
+NAME=辞書でセレクトボタンを押してソート2を利用すると、表示が乱れるバグを修正する
+NAME.en=Fix glitch display when using sort2 by pressing select button in Guide
+NAME.zh=Fix glitch display when using sort2 by pressing select button in Guide
+INFO=辞書で、右側の項目が多い内容を表示した後に、セレクトキーを押して、項目をソートすると、左側の項目の表示名が乱れることがあります。\r\nこのパッチは、その問題を修正します。
+INFO.en=In guide(dictionary), after displaying the contents with many items on the right side, if you press the select key to sort the items, the display names of the items on the left side may be distorted.\r\nThis patch fixes that problem.
+INFO.zh=In guide(dictionary), after displaying the contents with many items on the right side, if you press the select key to sort the items, the display names of the items on the left side may be distorted.\r\nThis patch fixes that problem.
+
+TYPE=EA
+EA=installer.event
+AUTHOR=7743
+
+PATCHED_IF:0xCF180=0x00 0x4B

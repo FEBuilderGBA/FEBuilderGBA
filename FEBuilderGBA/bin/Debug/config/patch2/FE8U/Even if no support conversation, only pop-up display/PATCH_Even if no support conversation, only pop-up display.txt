@@ -1,0 +1,12 @@
+NAME=支援会話がない場合でも支援レベルが上がったというポップアップだけは出すようにする
+NAME.en=Even if no support conversation, make sure to only show "Support Lv. increased" popup dialog
+NAME.zh=Even if no support conversation, make sure to only show "Support Lv. increased" popup
+INFO=支援会話を設定していない相手と支援が成立すると、支援レベルが上がったというホップアップすらでません。\r\nこのパッチはそれを改善しポップアップを表示するようにします。
+INFO.en=When a support conversation is established with someone who does not have a support conversation set up, "Support Lv. increased." pop-up dialog does not even appear.\r\nThis patch fixes that and makes the popup dialog appear.
+INFO.zh=When a support conversation is established with someone who does not have a support conversation set up, "Support Lv. increased." pop-up dialog does not even appear.\r\nThis patch fixes that and makes the popup dialog appear.
+
+TYPE=EA
+EA=installer.event
+AUTHOR=7743
+
+PATCHED_IF:0x8372C=0x00 0x4B

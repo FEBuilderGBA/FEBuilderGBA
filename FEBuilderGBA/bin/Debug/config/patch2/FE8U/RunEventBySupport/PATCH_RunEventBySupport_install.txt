@@ -1,0 +1,11 @@
+NAME=支援会話の代わりに任意のイベントを実行する(Install)
+NAME.en=Execute event script instead of support conversation(Install)
+NAME.zh=Execute event script instead of support conversation(Install)
+INFO=支援会話の代わりに任意のイベントを実行します。\r\nイベントを書けるのでより柔軟な支援会話を実行できます。\r\nリストにない場合は、通常の支援会話を実行します。\r\nEvent in Gameはゲーム中で実行される支援イベントです。\r\n支援会話を表示して、支援レベルが上がったというポップアップを表示します。\r\nEvent in Support Viewerは、支援会話一覧からサポート会話を見るときに実行されるイベントです。\r\nイベントに0を指定すると、ディフォルトの支援会話の表示ルーチンを利用します。\r\n片方を0にして、一方だけを定義することも可能です。\r\n新規にイベントを作る場合は、一度イベントポインタをゼロに設定し、領域を割り振ってください。
+
+TYPE=EA
+EA=installer.event
+AUTHOR=7743
+
+PATCHED_IF:0x83724=0x00 0x4B
+EDIT_PATCH:1=PATCH_RunEventBySupport.txt

@@ -1,0 +1,46 @@
+PUSH
+ORG 0x085A5C	//{J}
+//ORG 0x083724	//{U}
+jumpToHack(RunEventBySupport)
+
+ORG 0x085AA0	//{J}
+//ORG 0x083768	//{U}
+jumpToHack(RunEventBySupporViewer)
+POP
+
+ALIGN 4
+RunEventBySupport:
+#incbin "RunEventBySupport.dmp"
+POIN RunEventBySupport_Table
+
+ALIGN 4
+RunEventBySupporViewer:
+#incbin "RunEventBySupporViewer.dmp"
+POIN RunEventBySupport_Table
+
+
+ALIGN 4
+RunEventBySupport_Table:
+//sizeof 12
+//	 	Unit1	Unit2	Level	pad		Event in Game		Event in Support Viewer
+//						(1=C,2=B,3=A)
+BYTE	0x1 	0x2		0x1		0;POIN	EventInGameSample	EventInSupportViewerSample	//Eirika and Seth Support C
+
+BYTE	0xff	0x0		0x0		0;WORD	0x0					0x0	//term
+
+
+//テーブルにないものはディフォルトの支援会話が利用されます。
+//イベントポインタが0の場合は、イベントを実行できないので、ディフォルトの支援会話が実行されます。
+//Event in Game と Event in Support Viewerの片方だけを0にすることも可能です。
+
+ALIGN 4
+//ゲーム内で利用されるイベント
+EventInGameSample:
+BYTE $20 $10 $03 $00 $20 $14 $0F $00 $20 $1A $00 $00 $40 $05 $02 $00 $02 $00 $00 $00 $40 $05 $03 $00 $15 $0C $00 $00 $40 $0A $00 $00 $48 $04 $A6 $08 $22 $1B $00 $00 $40 $0D $00 $00 $DD $60 $01 $08 $40 $3A $0A $08 $5A $00 $00 $00 $28 $02 $07 $00 $20 $01 $00 $00
+
+ALIGN 4
+//支援会話ビューで利用されるイベント
+EventInSupportViewerSample:
+BYTE $20 $10 $03 $00 $21 $1A $00 $00 $20 $14 $0F $00 $40 $21 $02 $00 $00 $00 $00 $00 $20 $17 $10 $00 $20 $1B $15 $0C $20 $1D $00 $00 $22 $1B $00 $00 $21 $17 $10 $00 $40 $0D $00 $00 $DD $60 $01 $08 $20 $01 $00 $00
+
+ALIGN 4

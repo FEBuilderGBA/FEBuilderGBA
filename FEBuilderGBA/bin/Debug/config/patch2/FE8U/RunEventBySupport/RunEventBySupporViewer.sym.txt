@@ -1,0 +1,9 @@
+Table=$58
+Loop=$0C
+NotFound=$46
+CheckLevel=$14
+CheckUnit1=$1A
+CheckUnit2_A=$2C
+CheckUnit2_B=$24
+Match=$32
+RunLevel=$38

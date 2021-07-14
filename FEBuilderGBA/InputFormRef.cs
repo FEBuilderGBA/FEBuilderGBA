@@ -557,7 +557,6 @@ namespace FEBuilderGBA
 //                        link_object.Text = UpdateCoron(link_object.Text, GetWeaponClass(id));
                         link_object.Text = GetWeaponClass(id) + " ";
                     };
-                    return;
                 }
                 else if (link_info is ComboBox)
                 {
@@ -588,8 +587,30 @@ namespace FEBuilderGBA
                         U.ForceUpdate(src_object, id);
                         updateLock = false;
                     };
-                    return;
                 }
+                return;
+            }
+            if (linktype == "WEAPONTYPE")
+            {//武器分類
+                if (link_info is Label)
+                {
+                    Label link_object = ((Label)link_info);
+                    src_object.ValueChanged += (sender, e) =>
+                    {
+                        uint id = (uint)src_object.Value;
+                        link_object.Text = GetWeaponTypeName(id);
+                    };
+                }
+                else if (link_info is TextBoxEx)
+                {
+                    TextBoxEx link_object = ((TextBoxEx)link_info);
+                    src_object.ValueChanged += (sender, e) =>
+                    {
+                        uint id = (uint)src_object.Value;
+                        link_object.Text = GetWeaponTypeName(id);
+                    };
+                }
+                return;
             }
             if (linktype == "WEAPONTYPEICON")
             {//武器分類のアイコンとリンク

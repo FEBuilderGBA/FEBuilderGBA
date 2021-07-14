@@ -196,7 +196,15 @@ namespace FEBuilderGBA
             }
 
             //エラーがあるよ.
-            U.ConvertListBox(errorMapUI, ref AddressList);
+            AddressList.BeginUpdate();
+            AddressList.Items.Clear();
+            foreach (U.AddrResult ar in errorMapUI)
+            {
+                AddressList.Items.Add(ar.name);
+            }
+            AddressList.Tag = errorMapUI;
+            AddressList.EndUpdate();
+
             MainTab.SelectedTab = tabPageError;
             U.SelectedIndexSafety(AddressList, 0, true);
 

@@ -1,0 +1,18 @@
+PUSH
+//ORG 0x85A64	//{J}
+ORG 0x8372C	//{U}
+jumpToHack(SupportHook)
+
+POP
+
+ALIGN 4
+SupportHook:
+#incbin "SupportHook.dmp"
+POIN NotifyEvent
+
+ALIGN 4
+NotifyEvent:
+//BYTE $40 $3A $0A $08 $5A $00 $00 $00 $28 $02 $07 $00 $20 $01 $00 $00	//{J}
+BYTE $40 $3A $0C $00 $5A $00 $00 $00 $28 $02 $07 $00 $20 $01 $00 $00	//{U}
+
+ALIGN 4

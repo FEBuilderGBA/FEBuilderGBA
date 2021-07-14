@@ -1,0 +1,13 @@
+NAME=ランダム背景を選出リストから選ぶようにする(Install)
+NAME.en=Choose random background from pick list(Install)
+NAME.zh=Choose random background from pick list(Install)
+INFO=ランダムに選出する背景リストを定義し、その中から背景を表示するようにします。\r\n背景:0x51(FE8J)はランダム背景です。\r\n背景の画像の中からランダムに画像が利用されます。\r\n主に支援会話一覧で支援を見る時に利用されます。\r\nただ、そこに表示させたくない背景もあります。\r\n例えばカットインのための背景は支援会話の背景としてふさわしくないでしょう。\r\nこのパッチはその問題を解決します。
+INFO.en=Define a list of backgrounds to be randomly selected and display a background from among them.\r\nBackground:0x51(FE8J) is a random background.\r\nThe Image will be used at random from among the background images.\r\nThis is mainly used to view support in the support conversation list.\r\nHowever, there are some backgrounds that you may not want to display there.\r\nFor example, a background for a cut-in would not be an appropriate background for a support conversation.\r\nThis patch solves that problem.
+INFO.zh=Define a list of backgrounds to be randomly selected and display a background from among them.\r\nBackground:0x51(FE8J) is a random background.\r\nThe Image will be used at random from among the background images.\r\nThis is mainly used to view support in the support conversation list.\r\nHowever, there are some backgrounds that you may not want to display there.\r\nFor example, a background for a cut-in would not be an appropriate background for a support conversation.\r\nThis patch solves that problem.
+
+TYPE=EA
+EA=installer.event
+AUTHOR=7743
+
+PATCHED_IF:0xEA48=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChooseRandomBackgroundFromPickList.txt
