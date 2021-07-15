@@ -1179,10 +1179,6 @@ namespace FEBuilderGBA
                 AddEventHistoryList(selected);
 
                 this.RunningEventListBox.SelectedIndex = selected;
-//                if (this.RunningEventListBox.SelectedIndex - this.RunningEventListBox.TopIndex > 15)
-//                {
-//                    this.RunningEventListBox.TopIndex = selected;
-//                }
                 return;
             }
             //表示しているアドレスと違う場合、イベントの取り直しと描画をし直さないといけない

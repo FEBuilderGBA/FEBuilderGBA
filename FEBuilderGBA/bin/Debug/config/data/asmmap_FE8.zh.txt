@@ -13925,3 +13925,8 @@ r3=X tile position of menu of the right	{U}
 089AC5CC	:089AC793	用于显示升级项目的调色板等数据	{U}
 08A1DEF0	&LZ77	红色状态的数字。	估计没用。	{J}
 089AD868	&LZ77	红色状态的数字。	估计没用。	{U}
+080A8914	CheckSoundRoomEnableList	r0=0	r1=SongID	{J}
+080A3ED0	CheckSoundRoomEnableList	r0=0	r1=SongID	{U}
+08AC033C	:08AC0393	综合评价计算值。	{J}
+080D3C44	GuideOnKeyDown	{J}
+080CEF48	GuideOnKeyDown	{U}

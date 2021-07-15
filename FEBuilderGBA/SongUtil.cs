@@ -220,6 +220,7 @@ namespace FEBuilderGBA
             trackaddr = U.toOffset(trackaddr);
             track.basepointer = trackpointer;
 
+            uint lastCommand = 0;
             uint waitCount = 0;
             for (uint addr = trackaddr; true; )
             {
@@ -236,6 +237,8 @@ namespace FEBuilderGBA
                 {
                     track.codes.Add(new Code(addr, waitCount, b));
                     addr++;
+
+                    //lastCommand = 0;
                     break;
                 }
                 else if (b == 0xB2 || b == 0xB3)
@@ -244,11 +247,15 @@ namespace FEBuilderGBA
                     track.codes.Add(new Code(addr, waitCount, b, loopaddr));
                     addr += 5;
                     waitCount += 96; //これだけで1小節分
+
+                    lastCommand = 0;
                 }
                 else if (b == EOT)
                 {//TIE - EOTまで音をならしっばにする.
                     track.codes.Add(new Code(addr, waitCount, b));
                     addr++;
+
+                    lastCommand = 0;
                 }
                 else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1 || b == 0xC2 || b == 0xC3 || b == 0xC4 || b == 0xC5 || b == 0xC8)
                 {
@@ -259,6 +266,11 @@ namespace FEBuilderGBA
                     uint next_byte = Program.ROM.u8(addr + 1);
                     track.codes.Add(new Code(addr, waitCount, b, next_byte));
                     addr += 2;
+
+                    if (b >= 0xbe && b <= 0xC8)
+                    {//省略表記があるので、最後のコマンドとして記録しておく
+                        lastCommand = b;
+                    }
                 }
                 else if (b == 0xb9)
                 {//MEMACC 4バイト命令
@@ -271,6 +283,7 @@ namespace FEBuilderGBA
                     uint b3 = Program.ROM.u8(addr + 3);
                     track.codes.Add(new Code(addr, waitCount, b, b1, b2, b3));
                     addr += 4;
+                    lastCommand = 0;
                 }
                 else if (b >= WAIT_START && b <= (uint)WAIT_END)
                 {
@@ -285,6 +298,7 @@ namespace FEBuilderGBA
                         break;
                     }
 
+                    lastCommand = 0;
                     uint key = Program.ROM.u8(addr + 1);
                     if (key <= 127)
                     {
@@ -321,6 +335,7 @@ namespace FEBuilderGBA
                         track.codes.Add(new Code(addr, waitCount, b, U.NOT_FOUND, U.NOT_FOUND));
                         addr += 1;
                     }
+
                 }
                 else if (b <= 127)
                 {
@@ -338,14 +353,27 @@ namespace FEBuilderGBA
                     }
                     else
                     {//velocity >=128なのでこれは違う命令
-                        track.codes.Add(new Code(addr, waitCount, key, U.NOT_FOUND));
-                        addr += 1;
+                        if (lastCommand != 0)
+                        {
+                            // .byte   VOL , 35*song01_mvl/mxv
+                            // .byte   W05
+                            // .byte         30*song01_mvl/mxv << こういう省略命令
+                            track.codes.Add(new Code(addr, waitCount, lastCommand, b));
+                            addr += 1;
+                        }
+                        else
+                        {//謎の1バイト命令
+                            track.codes.Add(new Code(addr, waitCount, key, U.NOT_FOUND));
+                            addr += 1;
+                        }
                     }
                 }
                 else
-                {
+                {//不明
                     track.codes.Add(new Code(addr, waitCount, b));
                     addr++;
+
+                    lastCommand = 0;
                 }
             }
             insertLoopLabel(track);

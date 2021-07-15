@@ -94,8 +94,8 @@
 3B000000	移动开始指令(ENUN)	{WAIT}	{UNITMOVE}	{U}
 3B000000	章节事件启动命令(CMOF)	{J}
 3D000000	章节事件启动命令(CMOF)	{U}
-53000000XXXX0000YYYY0000	如果角色已经死亡，请在下面执行(跳转到条件标签，如果它是活着的)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
-55000000XXXX0000YYYY0000	如果角色已经死亡，请在下面执行(跳转到条件标签，如果它是活着的)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
+53000000XXXX0000YYYY0000ZZZZ0000	如果角色已经死亡，请在下面执行 打开[ZZ:FLAG:标志](跳转到条件标签，如果它是活着的)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
+55000000XXXX0000YYYY0000ZZZZ0000	如果角色已经死亡，请在下面执行 打开[ZZ:FLAG:标志](跳转到条件标签，如果它是活着的)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
 4D000000XXXX0000	如果是Eliwood模式(如果是Hector，则跳转到条件标签)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{J}
 4F000000XXXX0000	如果是Eliwood模式(如果是Hector，则跳转到条件标签)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{U}
 4E000000XXXX0000	如果是Hector模式(跳转到Eliwood的条件标签)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNEM)	{COND} 	{J}
@@ -380,8 +380,8 @@ E8000000444DD808XXXXYYYY	龙(Nianian)效果	{J}
 9E00XX00	[XXXX:雾:雾浓度]调整雾强度(事件。在运行时刻显示地图片刻)。(VCBF)	{U}
 9B00XX00	[XXXX:FOG:雾浓度]调整雾密度(VCWF)	{WEATHER}	{J}
 9D00XX00	[XXXX:FOG:雾浓度]调整雾密度(VCWF)	{WEATHER}	{U}
-5500XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::未知][YY:IF_CONDITIONAL:条件ID][ZZ:UNIT:人物](GOTO_IFNUF)	{JUMP}	{J}
-5700XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::未知][YY:IF_CONDITIONAL:条件ID][ZZ:UNIT:人物](GOTO_IFNUF)	{JUMP}	{U}
+5500XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::未知][YY:IF_CONDITIONAL:条件ID][ZZ:UNIT:人物](GOTO_IFNUF)	{JUMP}	{J}
+5700XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::未知][YY:IF_CONDITIONAL:条件ID][ZZ:UNIT:人物](GOTO_IFNUF)	{JUMP}	{U}
 45000000XXXX0000YYYYYYYY	Branch_if_ASM_function[XXXX:LABEL_CONDITIONAL:条件ID][YYYYYYYY:POINTER_ASM:ASM]	{JUMP}	{J}
 4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
 4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}

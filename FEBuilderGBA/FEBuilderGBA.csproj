@@ -102,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RAMRewriteToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RAMRewriteToolForm.Designer.cs">
+      <DependentUpon>RAMRewriteToolForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SongInstrumentDirectSoundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2135,6 +2141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapStyleEditorImportImageOptionForm.resx">
       <DependentUpon>MapStyleEditorImportImageOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAMRewriteToolForm.resx">
+      <DependentUpon>RAMRewriteToolForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SongInstrumentDirectSoundForm.resx">
       <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>

@@ -94,8 +94,8 @@
 1F00XXYY	Moves_camera_on_chapter_map[XX:MAPX:PositionX][YY:MAPY:PositionY](CAM2)	{CAMERA}	{U}
 3B000000	Chapter event start command(CMOF)	{J}
 3D000000	Chapter event start command(CMOF)	{U}
-53000000XXXX0000YYYY0000	If [YY:UNIT:Character] is dead, execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{J}
-55000000XXXX0000YYYY0000	If [YY:UNIT:Character] is dead, execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{U}
+53000000XXXX0000YYYY0000ZZZZ0000	If [YY:UNIT:Character] is dead, set [ZZ:FLAG:Flag] and Execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{J}
+55000000XXXX0000YYYY0000ZZZZ0000	If [YY:UNIT:Character] is dead, set [ZZ:FLAG:Flag] and Execute it below (jump to [XX:IF_CONDITIONAL:Conditional ID] if it is alive)(GOTO_IFCL)	{COND}	{U}
 4D000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{J}
 4F000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{U}
 4E000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNEM)	{COND} 	{J}
@@ -335,8 +335,8 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 5B000000XXXX0000	[XX:ITEM:Item]Give Item (LOW)(ITGV)	Get Item	{ITEM}	{U}
 5C00XXXXYYYY0000	[XX::Village_or_cutscene][YY:DECIMAL:Gold]Get Gold (LOW)(MONE)	Give Money	{GOLD}	{J}
 5E00XXXXYYYY0000	[XX::Village_or_cutscene][YY:DECIMAL:Gold]Get Gold (LOW)(MONE)	Give Money	{GOLD}	{U}
-51000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:condition ID](GOTO_IFYES)	{JUMP}	{J}
-53000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:condition ID](GOTO_IFYES)	{JUMP}	{U}
+51000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFYES)	{JUMP}	{J}
+53000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFYES)	{JUMP}	{U}
 66000000XXXXYYYY	_68[XXXX:MAPX:Position][YYYY:MAPY:Position](CUMO)	{J}
 68000000XXXXYYYY	_68[XXXX:MAPX:Position][YYYY:MAPY:Position](CUMO)	{U}
 81000000	End of Rin Hen(LYN_END)	{ENDING}	{J}
@@ -347,12 +347,12 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 2C000000XXXX0000YYYYYYYYZZZZZZZZ	Unit movement specification 0x2C[XXXX:UNIT:Unit][YYYYYYY:POINTER_EVENTMOVEDATA:moveManual][ZZZZZZZZ:POINTER_EVENTMOVEDATA:moveManual]	{U}
 2D000000ZZZZZZZZXXXXYYYY	Unit movement setting (instantaneous movement)[ZZZZZZZZ:UNIT:Unit][XXXX:MAPX:New X][YYYY:MAPY:New Y](REPOS)	{UNIT}	{J}
 2F000000ZZZZZZZZXXXXYYYY	Unit movement setting (instantaneous movement)[ZZZZZZZZ:UNIT:Unit][XXXX:MAPX:New X][YYYY:MAPY:New Y](REPOS)	{UNIT}	{U}
-48000000XXXX0000	_4A[XX:IF_CONDITIONAL:condition ID]	{COND}	{J}
-4A000000XXXX0000	_4A[XX:IF_CONDITIONAL:condition ID]	{COND}	{U}
+48000000XXXX0000	_4A[XX:IF_CONDITIONAL:Conditional ID]	{COND}	{J}
+4A000000XXXX0000	_4A[XX:IF_CONDITIONAL:Conditional ID]	{COND}	{U}
 49000000XXXX0000	_4B[XX::Value]	{J}
 4B000000XXXX0000	_4B[XX::Value]	{U}
-4F00XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:condition ID]	{J}
-5100XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:condition ID]	{U}
+4F00XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:Conditional ID]	{J}
+5100XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:Conditional ID]	{U}
 5700XXXXYYYYYYYY	_ASM 0x59[XX::Value][YYYY:POINTER_ASM:ASM function]	{J}
 5900XXXXYYYYYYYY	_ASM 0x59[XX::Value][YYYY:POINTER_ASM:ASM function]	{U}
 5800XXXXYYYYYYYY	_ASM 0x5A[XX::Value][YYYY:POINTER_ASM:ASM function]	{J}
@@ -395,11 +395,11 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 9E00XX00	[XXXX:FOG:Mist concentration]Adjust the fog intensity (for events.Display map for a moment at run time).(VCBF)	{U}
 9B00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{J}
 9D00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{U}
-5500XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{J}
-5700XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{U}
-45000000XXXX0000YYYYYYYY	Branch_if_ASM_function[XXXX:LABEL_CONDITIONAL:condition ID][YYYYYYYY:POINTER_ASM:ASM]	{JUMP}	{J}
-4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
-4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}
+5500XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{J}
+5700XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{U}
+45000000XXXX0000YYYYYYYY	Branch_if_ASM_function[XXXX:LABEL_CONDITIONAL:Conditional ID][YYYYYYYY:POINTER_ASM:ASM]	{JUMP}	{J}
+4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
+4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}
 4100XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{J}
 4300XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{U}
 5D00XXYY	Map change execution[XXXXXXXX:MAPCHANGE:Map change][YYYY::Apply_or_remove](MAC1)	{MAP}	{J}

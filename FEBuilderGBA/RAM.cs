@@ -370,7 +370,35 @@ namespace FEBuilderGBA
             Debug.Assert(false);
             return ;
         }
-        public void write_u16(uint pointer,uint data)
+        public void write_u24(uint pointer, uint data)
+        {
+            uint addr = pointer;
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 4 > this.Memory02.Length)
+                {
+                    return;
+                }
+                U.write_u24(this.Memory02, addr, data);
+                WriteMemory02(addr, data, 4);
+                return;
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 4 > this.Memory03.Length)
+                {
+                    return;
+                }
+                U.write_u24(this.Memory03, addr, data);
+                WriteMemory03(addr, data, 4);
+                return;
+            }
+            Debug.Assert(false);
+            return;
+        }
+        public void write_u16(uint pointer, uint data)
         {
             uint addr = pointer;
             if (U.is_02RAMPointer(addr))

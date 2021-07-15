@@ -1646,7 +1646,7 @@ Load Script
 Load the .event script in Event Assembler and adapt it into the current ROM.
 
 :種類:プログラム
-Type: Program.
+Type: Non Program Code
 
 :種類:プログラム以外
 Type: Other than program.
@@ -9868,6 +9868,15 @@ Cannot write to Page02. bytesWrite: {0}, size: {1}
 :Page03に書き込めません。bytesWrite:{0},size:{1}
 Cannot write to Page03. bytesWrite: {0}, size: {1}
 
+:データの直書き換え
+Direct rewriting of data.
+
+:値の書き換え
+Value rewriting.
+
+:RAM コピー方法
+RAM copy method.
+
 :重複 
 Duplicate
 
@@ -13150,7 +13159,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:種類:プログラム
-Type: Program Code
-:種類:プログラム以外
-Type: Non Program Code
