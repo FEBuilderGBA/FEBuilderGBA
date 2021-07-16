@@ -1,0 +1,15 @@
+NAME=杖の武器経験値
+NAME.en=Universal staff WEXP
+NAME.zh=Universal staff WEXP
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x025916
+HEX=false
+
+INFO=杖を利用した時に得られる武器経験値(WEXP)を指定します。ディフォルトは1です。
+INFO.en=Specify the weapon experience value (WEXP) obtained when use the staff. The default is 1.
+INFO.zh=Specify the weapon experience value (WEXP) obtained when use the staff. The default is 1.
+AUTHOR=CedAodh https://discord.com/channels/144670830150811649/470029781795078175/865345288024358932

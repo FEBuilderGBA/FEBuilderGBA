@@ -147,8 +147,9 @@ namespace FEBuilderGBA
             public uint value;
             public uint value2;
             public uint value3;
+            public bool isAbbreviation; //省略表記 VOLなどの値は1バイトで表現する省略表記があります
 
-            public Code(uint addr, uint waitCount, byte type, uint value = 0, uint value2 = 0, uint value3 = 0)
+            public Code(uint addr, uint waitCount, byte type, uint value = 0, uint value2 = 0, uint value3 = 0, bool isAbbreviation = false)
             {
                 this.addr = addr;
                 this.waitCount = waitCount;
@@ -156,8 +157,9 @@ namespace FEBuilderGBA
                 this.value = value;
                 this.value2 = value2;
                 this.value3 = value3;
+                this.isAbbreviation = isAbbreviation;
             }
-            public Code(uint addr, uint waitCount, uint type, uint value = 0, uint value2 = 0, uint value3 = 0)
+            public Code(uint addr, uint waitCount, uint type, uint value = 0, uint value2 = 0, uint value3 = 0, bool isAbbreviation = false)
             {
                 this.addr = addr;
                 this.waitCount = waitCount;
@@ -165,6 +167,7 @@ namespace FEBuilderGBA
                 this.value = value;
                 this.value2 = value2;
                 this.value3 = value3;
+                this.isAbbreviation = isAbbreviation;
             }
 
         };
@@ -358,7 +361,7 @@ namespace FEBuilderGBA
                             // .byte   VOL , 35*song01_mvl/mxv
                             // .byte   W05
                             // .byte         30*song01_mvl/mxv << こういう省略命令
-                            track.codes.Add(new Code(addr, waitCount, lastCommand, b));
+                            track.codes.Add(new Code(addr, waitCount, lastCommand, b , U.NOT_FOUND, U.NOT_FOUND , isAbbreviation: true));
                             addr += 1;
                         }
                         else
@@ -3168,6 +3171,22 @@ namespace FEBuilderGBA
             GetVoices(track, ref voices);
             return voices;
         }
+
+        //2バイトで構成される命令に対するrewrite命令
+        static void ChangeCodeAddr2ByteCommand(Code c, uint newValue, Undo.UndoData undodata)
+        {
+            c.value = newValue;
+
+            if (c.isAbbreviation)
+            {//省略表記なので1バイトです
+                Program.ROM.write_u8(c.addr, c.value, undodata);
+            }
+            else
+            {//通常の表記なので、+1して2バイト目を変更します
+                Program.ROM.write_u8(c.addr + 1, c.value, undodata);
+            }
+        }
+
         public static void ChangeTrackAndWrite(Track track
             , List<ChangeVoiceSt> changeVoices
             , int changeVol
@@ -3179,6 +3198,7 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData("ChangeTrack");
             for (int i = 0; i < track.codes.Count; i++)
             {
+
                 Code c = track.codes[i];
                 if (c.type == 0xBD)
                 {//VOICE(楽器)
@@ -3186,9 +3206,7 @@ namespace FEBuilderGBA
                     {
                         if (c.value == changeVoices[n].from)
                         {
-                            c.value = (uint)changeVoices[n].to;
-
-                            Program.ROM.write_u8(c.addr + 1, c.value, undodata);
+                            ChangeCodeAddr2ByteCommand(c, (uint)changeVoices[n].to, undodata);
                         }
                     }
                     continue;
@@ -3207,10 +3225,7 @@ namespace FEBuilderGBA
                         {
                             a = 0;
                         }
-                        c.value = (uint)a;
-
-                        Program.ROM.write_u8(c.addr + 1, c.value, undodata);
-
+                        ChangeCodeAddr2ByteCommand(c, (uint)a, undodata);
                         continue;
                     }
                     else if (changeVelocity)
@@ -3273,10 +3288,8 @@ namespace FEBuilderGBA
                     {
                         a = 0;
                     }
-                    c.value = (uint)a;
 
-                    Program.ROM.write_u8(c.addr + 1, c.value, undodata);
-
+                    ChangeCodeAddr2ByteCommand(c, (uint)a, undodata);
                     continue;
                 }
                 if (changeTempo != 0 && c.type == 0xbb)
@@ -3291,10 +3304,8 @@ namespace FEBuilderGBA
                     {
                         a = 0;
                     }
-                    c.value = (uint)a;
 
-                    Program.ROM.write_u8(c.addr + 1, c.value, undodata);
-
+                    ChangeCodeAddr2ByteCommand(c, (uint)a, undodata);
                     continue;
                 }
             }
