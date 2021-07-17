@@ -1,0 +1,9 @@
+titlebackgroundpalette=$B8
+titlebackgroundimage=$B4
+titlebackgroundtsa=$BC
+EmptyLoop=$42
+thisisweird=$4C
+thisisweirdloop=$52
+TSA=$5C
+Loop=$74
+End=$82
