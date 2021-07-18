@@ -1,0 +1,30 @@
+NAME=レアアイテムを売ろうとすると警告する(Editor)
+NAME.en=Warn you when trying to sell rare items(Editor)
+NAME.zh=Warn you when trying to sell rare items(Editor)
+INFO=レアアイテムを売却しようとすると、ドラクエみたいに警告のセリフを表示するようにします。\r\nレアアイテムをリストで定義することができます。
+INFO.en=When you try to sell rare item, it will display a warning line like Dragon Quest.\r\nRare items can be defined in the list.
+INFO.zh=When you try to sell rare item, it will display a warning line like Dragon Quest.\r\nRare items can be defined in the list.
+
+
+IF:0xB48F0=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END majidesuka.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数
+DATACOUNT=$GREP1 0x00
+
+//リストに表示
+LISTNAME=$B0:ITEM
+
+AUTHOR=7743
+
+//データを定義します
+B0:ITEM=RareItem

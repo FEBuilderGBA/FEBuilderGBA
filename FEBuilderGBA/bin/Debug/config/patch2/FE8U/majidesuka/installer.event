@@ -1,0 +1,51 @@
+PUSH
+//ORG 0xB9478	//{J}
+ORG 0xB48F0	//{U}
+jumpToHack(majidesuka)
+
+POP
+
+ALIGN 4
+majidesuka:
+#incbin "majidesuka.dmp"
+POIN RareItemTable
+
+//このテキストIDから+0 +1 +2 が利用されます。
+//+0 武器屋
+//+1 道具屋
+//+2 秘密の店
+//WORD 0xEFD	//{J}
+WORD 0xF7F	//{U}
+
+ALIGN 4
+//#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman	{J}
+//setText_WithHuffman(0xEFD,RareTextID_Armory)	//{J}
+//setText_WithHuffman(0xEFE,RareTextID_Vendor)	//{J}
+//setText_WithHuffman(0xEFF,RareTextID_Secret)	//{J}
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP" //Without Huffman	{U}
+setText(0xF7F,RareTextID_Armory)	//{U}
+setText(0xF80,RareTextID_Vendor)	//{U}
+setText(0xF81,RareTextID_Secret)	//{U}
+
+ALIGN 4
+RareTextID_Armory:
+//#incbin "JA_0xefd.bin"	//{J}
+#incbin "EN_0xf7f.bin"	//{U}
+
+ALIGN 4
+RareTextID_Vendor:
+//#incbin "JA_0xefe.bin"	//{J}
+#incbin "EN_0xf80.bin"	//{U}
+
+ALIGN 4
+RareTextID_Secret:
+//#incbin "JA_0xeff.bin"	//{J}
+#incbin "EN_0xf81.bin"	//{U}
+
+ALIGN 4
+RareItemTable:
+BYTE 0x71 0x72 0x73 0x7c 0x89 0x8f 0x97 0xb7
+BYTE 0x00 //term
+
+ALIGN 4

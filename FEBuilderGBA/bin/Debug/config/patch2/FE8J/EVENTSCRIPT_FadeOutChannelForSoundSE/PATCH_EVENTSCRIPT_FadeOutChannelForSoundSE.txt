@@ -9,8 +9,10 @@ TAG=#EVENT
 PATCHED_IF:$FGREP4 FadeOutChannelForSoundSE.dmp=0x00 0xB5 0x04 0x20
 BIN:$FREEAREA=FadeOutChannelForSoundSE.dmp
 
-EVENTSCRIPT:1=400D0000{$L1:FadeOutChannelForSoundSE.dmp}	再生しているSEを全部停止する	{MUSIC}
+EVENTSCRIPT:1=400D0000{$L1:FadeOutChannelForSoundSE.dmp}	再生している効果音SEを全部停止する	{MUSIC}
 EVENTSCRIPT:1.en=400D0000{$L1:FadeOutChannelForSoundSE.dmp}	Stop all playing SoundEffect	{MUSIC}
 EVENTSCRIPT:1.zh=400D0000{$L1:FadeOutChannelForSoundSE.dmp}	Stop all playing SoundEffect	{MUSIC}
+
+INFO=再生している効果音をすべて停止します。
 
 AUTHOR=7743

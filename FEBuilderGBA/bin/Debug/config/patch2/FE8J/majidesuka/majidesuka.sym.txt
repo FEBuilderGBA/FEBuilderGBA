@@ -1,0 +1,7 @@
+RareText=$40
+RareItemTable=$3C
+CheckRareItem=$0C
+CheckRareItemLoop=$0E
+NotFound=$20
+Match=$1C
+Exit=$22

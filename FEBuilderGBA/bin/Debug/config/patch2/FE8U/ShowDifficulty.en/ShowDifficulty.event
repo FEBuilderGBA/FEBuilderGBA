@@ -78,7 +78,7 @@ ALIGN 4
 TxtData0x147:
 #incbin "0x147.bin"
 
-#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP" //With Huffman
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP" //Without Huffman
 setText(0xf79,TxtData0xf79)
 setText(0xf7a,TxtData0xf7a)
 setText(0xf7b,TxtData0xf7b)
