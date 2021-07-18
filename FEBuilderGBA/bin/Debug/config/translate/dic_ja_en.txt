@@ -5017,3 +5017,6 @@ and defeating an enemy.
 皇帝	Emperor
 ユニットが死亡しても\r\n次の章で復帰します。\r\nヌルゲーマーと\r\nノーリセプレーしたい人に\r\nおすすめです。	Fallen units return\r\nin next chapter.\r\nRecommended for \r\nCasual Gamer and\r\nIronMan player.
 死亡したユニットは、\r\n消滅します。\r\n手ごわいシミュレーション\r\nをしたい方向けに\r\nおすすめです。	Fallen units are\r\ngone and disappear.\r\nRecommended for \r\nyou want to play\r\ntough simulations.
+おいおい、こんな貴重品を\r\n本当に売ってもいいのかい？@0003\r\n@0002売るなら@0080@0005ゴールドだが、\r\n本当によいのか？　@0019	Whoa, Are you sure you want to\r\nsell such a valuable item?@0003\r\n@0002How does @0080@0005 gold sound?\r\nAre you sure?@0019
+ええっ！！　こんな貴重品を\r\n本当に売ってもいいの？@0003\r\n@0002売るなら@0080@0005ゴールドよ\r\n本当にいいの？　@0019	What? Are you sure you want to\r\nsell such a valuable item?@0003\r\n@0002That's worth @0080@0005 gold.\r\nAre you sure?@0019
+あらあら、こんな貴重品を\r\n本当に売ってもいいのかしら？@0003\r\n@0002本当に売るなら@0080@0005ゴールドよ\r\nよろしくて？　@0019	Oh dear. Are you sure you want to\r\nsell me such a valuable item?@0003\r\n@0002That's worth @0080@0005 gold.\r\nIs that all right?@0019
