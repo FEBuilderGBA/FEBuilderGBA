@@ -3,6 +3,10 @@ ORG 0xB9478	//{J}
 //ORG 0xB48F0	//{U}
 jumpToHack(majidesuka)
 
+ORG 0xA2084	//{J}
+//ORG 0x9FDE4	//{U}
+jumpToHack(majidesuka_worldmap_sell)
+
 POP
 
 ALIGN 4
@@ -18,15 +22,25 @@ WORD 0xEFD	//{J}
 //WORD 0xF7F	//{U}
 
 ALIGN 4
+majidesuka_worldmap_sell:
+#incbin "majidesuka_worldmap_sell.dmp"
+POIN RareItemTable
+WORD 0xF00	//{J}
+//WORD 0xF82	//{U}
+
+
+ALIGN 4
 #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman	{J}
 setText_WithHuffman(0xEFD,RareTextID_Armory)	//{J}
 setText_WithHuffman(0xEFE,RareTextID_Vendor)	//{J}
 setText_WithHuffman(0xEFF,RareTextID_Secret)	//{J}
+setText_WithHuffman(0xF00,RareTextID_WorldmapSell)	//{J}
 
 //#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP" //Without Huffman	{U}
 //setText(0xF7F,RareTextID_Armory)	//{U}
 //setText(0xF80,RareTextID_Vendor)	//{U}
 //setText(0xF81,RareTextID_Secret)	//{U}
+//setText(0xF82,RareTextID_WorldmapSell)	//{U}
 
 ALIGN 4
 RareTextID_Armory:
@@ -42,6 +56,12 @@ ALIGN 4
 RareTextID_Secret:
 #incbin "JA_0xeff.bin"	//{J}
 //#incbin "EN_0xf81.bin"	//{U}
+
+ALIGN 4
+RareTextID_WorldmapSell:
+#incbin "JA_0xf00.bin"	//{J}
+//#incbin "EN_0xf82.bin"	//{U}
+
 
 ALIGN 4
 RareItemTable:

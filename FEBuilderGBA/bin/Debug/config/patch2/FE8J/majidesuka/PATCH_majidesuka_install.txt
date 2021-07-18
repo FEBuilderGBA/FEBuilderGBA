@@ -17,5 +17,6 @@ EXTENDS:0xFFF=TEXT
 TEXTID:0xefd=Armory
 TEXTID:0xefe=Vendor
 TEXTID:0xeff=Secret
+TEXTID:0xf00=WorldmapSell
 
 AUTHOR=7743
