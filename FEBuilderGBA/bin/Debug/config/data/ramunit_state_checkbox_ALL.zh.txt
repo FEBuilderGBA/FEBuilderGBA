@@ -18,13 +18,13 @@
 22=超级竞技场1	我们会和超级战场模式一起使用它。
 23=超级竞技场2	我们会和超级战场模式一起使用它。
 24=终极领域模式	敌人处于非常强大的超强战场模式。
-25=不要让它出现在最后一章中	本机不能出现在最后一章。
-26=不明26
-27=不明27
+25=不明25
+26=Not Deployed Last Chapter
+27=Cutscene unit	which will be DISA'd when units are CLEA'd or a preparations screen is reached
 28=第二张脸图片	切换到第二张脸图像。\r\n状态屏幕上显示带有脸部图像ID + 1的图像。
 31=摇动图标	剧烈震动地图人物图标。
 32=没有出击	你不能对这个单位进行排序。\r\n在攻击推进屏幕上选择是不可能的。
-33=不明33
+33=Departed	Unit is unable to take part in chapter\r\n(does not appear on prep screen)
 34=通信竞技场调色板	我们将使用通讯竞技场的调色板(Link Arena)。
 35=不明35
 36=不明36

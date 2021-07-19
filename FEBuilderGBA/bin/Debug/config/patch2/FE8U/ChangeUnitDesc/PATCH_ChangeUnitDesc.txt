@@ -1,0 +1,37 @@
+NAME=ユニットの説明文を動的に変更する(Editor)
+INFO=リストは上から順番にマッチしていきます。最初にマッチしたものが採用されます。\r\nどれにもマッチしなかった場合は、ディフォルトの値が利用されます。\r\n\r\nステータス画面のRメニューで、ユニットを選択した時に表示される説明文を、クラス、章、フラグことに切り替えます。\r\n先行して実装されているRunaのSplit Name Desc by EIDと比べて、細かく定義を作れる点が違います。
+AUTHOR=7743 / This routine was created based on Runa's Split Name Desc by EID and Change Portrait.
+
+IF:0x88BD4=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeUnitDesc.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B2:UNIT
+
+//データを定義します
+W0:TEXT=Unit's Description
+B2:UNIT=UNIT
+B3:CLASS=CLASS(0xFF=ANY or 0x00=ANY)
+B4:MAP_ANYFF=MAPID(0xFF=ANY)
+B5:CHAPTORMODE_ANYFF=編(1=序盤/2=エイリーク編/3=エフラム編/FF=全編)
+B5:CHAPTORMODE_ANYFF.en=Edtion(1=EarlyStage/2=Eirika/3=Ephraim/FF=ANY)
+B5:CHAPTORMODE_ANYFF.zh=Edtion(1=EarlyStage/2=Eirika/3=Ephraim/FF=ANY)
+W6:FLAG=Flag(0x00=ANY)
+
+NAME.en=Switch Unit's description by class, chapter, flag(Editor)
+INFO.en=The list is matched in order from the top. The first match will be used.\r\nIf none of the matches are found, the default value will be used.\r\n\r\nThe R menu in the status screen allows you to switch the description displayed when you select a character by class, chapter, or flag.\r\nCompared to the previously implemented Runa's Split Name Desc by EID, the difference is that you can create detailed definitions.
+
+NAME.zh=Switch Unit's description by class, chapter, flag(Editor)
+INFO.zh=The list is matched in order from the top. The first match will be used.\r\nIf none of the matches are found, the default value will be used.\r\n\r\nThe R menu in the status screen allows you to switch the description displayed when you select a character by class, chapter, or flag.\r\nCompared to the previously implemented Runa's Split Name Desc by EID, the difference is that you can create detailed definitions.

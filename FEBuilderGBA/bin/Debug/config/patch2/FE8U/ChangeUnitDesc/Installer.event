@@ -1,0 +1,31 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+
+PUSH
+//ORG $8AE60		//FE8J	{J}
+ORG $88BD4		//FE8U	{U}
+jumpToHack(ChangeUnitDesc)
+POP
+
+ALIGN 4
+ChangeUnitDesc:
+#incbin "ChangeUnitDesc.dmp"
+POIN ChangeUnitDesc_Table
+
+ALIGN 4
+ChangeUnitDesc_Table:
+#include "ChangeUnitDesc_Table.event"
+//@struct ChangeUnitDesc_Table
+//@{
+//@	short	new_desc_id				require
+//@	byte	unit_id;				require
+//@	byte	class_id;				00=ANY or FF=any
+//@	byte	map_id;		章			FF=ANY
+//@	byte	editon		編			FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@}//sizeof(16bytes)
+
+

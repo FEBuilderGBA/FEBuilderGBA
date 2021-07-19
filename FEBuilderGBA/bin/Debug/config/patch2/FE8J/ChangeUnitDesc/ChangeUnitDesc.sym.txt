@@ -1,0 +1,9 @@
+Table=$78
+Loop=$0A
+load_defualt=$5E
+CheckClass=$1C
+CheckMAP=$2E
+CheckEdition=$3C
+CheckFlag=$4A
+Found=$5A
+Exit=$62

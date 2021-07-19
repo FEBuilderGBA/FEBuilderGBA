@@ -1,0 +1,18 @@
+NAME=ユニットの説明文を動的に変更する(Install)
+INFO=ステータス画面のRメニューで、ユニットを選択した時に表示される説明文を、クラス、章、フラグことに切り替えます。\r\n先行して実装されているRunaのSplit Name Desc by EIDと比べて、細かく定義を作れる点が違います。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x88BD4=0x00 0x4B
+EDIT_PATCH=PATCH_ChangeUnitDesc.txt
+EA=Installer.event
+
+AUTHOR=7743 / This routine was created based on Runa's Split Name Desc by EID and Change Portrait.
+
+NAME.en=Switch Unit's description by class, chapter, flag(Install)
+INFO.en=The R menu in the status screen allows you to switch the description displayed when you select a character by class, chapter, or flag.\r\nCompared to the previously implemented Runa's Split Name Desc by EID, the difference is that you can create detailed definitions.
+
+NAME.zh=Switch Unit's description by class, chapter, flag(Install)
+INFO.zh=The R menu in the status screen allows you to switch the description displayed when you select a character by class, chapter, or flag.\r\nCompared to the previously implemented Runa's Split Name Desc by EID, the difference is that you can create detailed definitions.
