@@ -390,10 +390,7 @@
 @Unit@39	byte	Support10	
 @Unit@3A	byte	SupportFlag	
 @Unit@3B	byte	??	
-@Unit@3C	byte	??	
-@Unit@3D	byte	??	
-@Unit@3E	byte	??	
-@Unit@3F	byte	??	
+@Unit@3C	pointer	MapSprite
 @Unit@40	byte	AI 3	
 @Unit@41	byte	AI 4	
 @Unit@42	byte	AI 1	

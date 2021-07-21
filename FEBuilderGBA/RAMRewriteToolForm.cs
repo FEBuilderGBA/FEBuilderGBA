@@ -57,6 +57,7 @@ namespace FEBuilderGBA
                 this.ReWriteValue.BackColor = OptionForm.Color_InputDecimal_BackColor();
                 this.ReWriteValue.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
             }
+            this.ActiveControl = ReWriteValue;
         }
 
         private void CopyPointer_Click(object sender, EventArgs e)
@@ -111,5 +112,19 @@ namespace FEBuilderGBA
             this.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.Close();
         }
+
+        private void RAMRewriteToolForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReWriteValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.ReWriteButton.PerformClick();
+            }
+        }
+
     }
 }

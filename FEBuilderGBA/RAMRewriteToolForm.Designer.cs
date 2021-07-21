@@ -113,6 +113,7 @@
             this.ReWriteValue.Name = "ReWriteValue";
             this.ReWriteValue.Size = new System.Drawing.Size(186, 25);
             this.ReWriteValue.TabIndex = 10;
+            this.ReWriteValue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReWriteValue_KeyDown);
             // 
             // ReWriteButton
             // 
@@ -131,6 +132,7 @@
             this.ValueTextBox.Location = new System.Drawing.Point(74, 17);
             this.ValueTextBox.Name = "ValueTextBox";
             this.ValueTextBox.Placeholder = "";
+            this.ValueTextBox.ReadOnly = true;
             this.ValueTextBox.Size = new System.Drawing.Size(100, 25);
             this.ValueTextBox.TabIndex = 1;
             // 
@@ -150,6 +152,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RAMRewriteToolForm";
             this.Text = "RAM コピー方法";
+            this.Load += new System.EventHandler(this.RAMRewriteToolForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ReWriteValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

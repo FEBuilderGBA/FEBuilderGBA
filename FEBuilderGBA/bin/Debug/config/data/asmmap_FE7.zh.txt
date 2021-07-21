@@ -838,10 +838,7 @@
 @Unit@39	byte	SupportFlag
 @Unit@3A	byte	Unknown2	maybe blank
 @Unit@3B	byte	Unknown3	maybe blank
-@Unit@3C	byte	Unknown4
-@Unit@3D	byte	Unknown5
-@Unit@3E	byte	Unknown6
-@Unit@3F	byte	Unknown7
+@Unit@3C	pointer	MapSprite
 @Unit@40	byte	AI 3
 @Unit@41	byte	AI 4
 @Unit@42	byte	AI 1

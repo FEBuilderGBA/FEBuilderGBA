@@ -298,6 +298,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SupportPortrait7 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait6 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait5 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait4 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait3 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait2 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SupportPortrait1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.PARTY_AI2_TEXT = new FEBuilderGBA.TextBoxEx();
             this.PARTY_AI1_TEXT = new FEBuilderGBA.TextBoxEx();
             this.PARTY_PORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
@@ -322,13 +329,7 @@
             this.label87 = new System.Windows.Forms.Label();
             this.PARTY_B64 = new System.Windows.Forms.NumericUpDown();
             this.label88 = new System.Windows.Forms.Label();
-            this.PARTY_B63 = new System.Windows.Forms.NumericUpDown();
-            this.label69 = new System.Windows.Forms.Label();
-            this.PARTY_B62 = new System.Windows.Forms.NumericUpDown();
-            this.label78 = new System.Windows.Forms.Label();
-            this.PARTY_B61 = new System.Windows.Forms.NumericUpDown();
-            this.label79 = new System.Windows.Forms.Label();
-            this.PARTY_B60 = new System.Windows.Forms.NumericUpDown();
+            this.PARTY_P60 = new System.Windows.Forms.NumericUpDown();
             this.label80 = new System.Windows.Forms.Label();
             this.PARTY_B59 = new System.Windows.Forms.NumericUpDown();
             this.label81 = new System.Windows.Forms.Label();
@@ -650,6 +651,13 @@
             this.Party_ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).BeginInit();
@@ -664,10 +672,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B66)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B65)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B64)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B63)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B62)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B60)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_P60)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B59)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B58)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B57)).BeginInit();
@@ -4313,6 +4318,13 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.SupportPortrait7);
+            this.panel3.Controls.Add(this.SupportPortrait6);
+            this.panel3.Controls.Add(this.SupportPortrait5);
+            this.panel3.Controls.Add(this.SupportPortrait4);
+            this.panel3.Controls.Add(this.SupportPortrait3);
+            this.panel3.Controls.Add(this.SupportPortrait2);
+            this.panel3.Controls.Add(this.SupportPortrait1);
             this.panel3.Controls.Add(this.PARTY_AI2_TEXT);
             this.panel3.Controls.Add(this.PARTY_AI1_TEXT);
             this.panel3.Controls.Add(this.PARTY_PORTRAIT);
@@ -4337,13 +4349,7 @@
             this.panel3.Controls.Add(this.label87);
             this.panel3.Controls.Add(this.PARTY_B64);
             this.panel3.Controls.Add(this.label88);
-            this.panel3.Controls.Add(this.PARTY_B63);
-            this.panel3.Controls.Add(this.label69);
-            this.panel3.Controls.Add(this.PARTY_B62);
-            this.panel3.Controls.Add(this.label78);
-            this.panel3.Controls.Add(this.PARTY_B61);
-            this.panel3.Controls.Add(this.label79);
-            this.panel3.Controls.Add(this.PARTY_B60);
+            this.panel3.Controls.Add(this.PARTY_P60);
             this.panel3.Controls.Add(this.label80);
             this.panel3.Controls.Add(this.PARTY_B59);
             this.panel3.Controls.Add(this.label81);
@@ -4471,28 +4477,105 @@
             this.panel3.Size = new System.Drawing.Size(777, 695);
             this.panel3.TabIndex = 0;
             // 
+            // SupportPortrait7
+            // 
+            this.SupportPortrait7.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait7.Location = new System.Drawing.Point(428, 599);
+            this.SupportPortrait7.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait7.Name = "SupportPortrait7";
+            this.SupportPortrait7.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait7.TabIndex = 442;
+            this.SupportPortrait7.TabStop = false;
+            // 
+            // SupportPortrait6
+            // 
+            this.SupportPortrait6.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait6.Location = new System.Drawing.Point(428, 568);
+            this.SupportPortrait6.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait6.Name = "SupportPortrait6";
+            this.SupportPortrait6.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait6.TabIndex = 441;
+            this.SupportPortrait6.TabStop = false;
+            // 
+            // SupportPortrait5
+            // 
+            this.SupportPortrait5.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait5.Location = new System.Drawing.Point(428, 537);
+            this.SupportPortrait5.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait5.Name = "SupportPortrait5";
+            this.SupportPortrait5.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait5.TabIndex = 440;
+            this.SupportPortrait5.TabStop = false;
+            // 
+            // SupportPortrait4
+            // 
+            this.SupportPortrait4.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait4.Location = new System.Drawing.Point(428, 506);
+            this.SupportPortrait4.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait4.Name = "SupportPortrait4";
+            this.SupportPortrait4.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait4.TabIndex = 439;
+            this.SupportPortrait4.TabStop = false;
+            // 
+            // SupportPortrait3
+            // 
+            this.SupportPortrait3.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait3.Location = new System.Drawing.Point(428, 475);
+            this.SupportPortrait3.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait3.Name = "SupportPortrait3";
+            this.SupportPortrait3.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait3.TabIndex = 438;
+            this.SupportPortrait3.TabStop = false;
+            // 
+            // SupportPortrait2
+            // 
+            this.SupportPortrait2.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait2.Location = new System.Drawing.Point(428, 444);
+            this.SupportPortrait2.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait2.Name = "SupportPortrait2";
+            this.SupportPortrait2.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait2.TabIndex = 437;
+            this.SupportPortrait2.TabStop = false;
+            // 
+            // SupportPortrait1
+            // 
+            this.SupportPortrait1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SupportPortrait1.Location = new System.Drawing.Point(428, 413);
+            this.SupportPortrait1.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportPortrait1.Name = "SupportPortrait1";
+            this.SupportPortrait1.Size = new System.Drawing.Size(32, 32);
+            this.SupportPortrait1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SupportPortrait1.TabIndex = 436;
+            this.SupportPortrait1.TabStop = false;
+            // 
             // PARTY_AI2_TEXT
             // 
             this.PARTY_AI2_TEXT.ErrorMessage = "";
-            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(620, 558);
+            this.PARTY_AI2_TEXT.Location = new System.Drawing.Point(640, 565);
             this.PARTY_AI2_TEXT.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_AI2_TEXT.Multiline = true;
             this.PARTY_AI2_TEXT.Name = "PARTY_AI2_TEXT";
             this.PARTY_AI2_TEXT.Placeholder = "";
             this.PARTY_AI2_TEXT.ReadOnly = true;
-            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(154, 68);
+            this.PARTY_AI2_TEXT.Size = new System.Drawing.Size(134, 68);
             this.PARTY_AI2_TEXT.TabIndex = 435;
             // 
             // PARTY_AI1_TEXT
             // 
             this.PARTY_AI1_TEXT.ErrorMessage = "";
-            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(620, 497);
+            this.PARTY_AI1_TEXT.Location = new System.Drawing.Point(640, 504);
             this.PARTY_AI1_TEXT.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_AI1_TEXT.Multiline = true;
             this.PARTY_AI1_TEXT.Name = "PARTY_AI1_TEXT";
             this.PARTY_AI1_TEXT.Placeholder = "";
             this.PARTY_AI1_TEXT.ReadOnly = true;
-            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(154, 57);
+            this.PARTY_AI1_TEXT.Size = new System.Drawing.Size(134, 57);
             this.PARTY_AI1_TEXT.TabIndex = 434;
             // 
             // PARTY_PORTRAIT
@@ -4509,7 +4592,7 @@
             // PARTY_L_38_ITEMICON
             // 
             this.PARTY_L_38_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(590, 386);
+            this.PARTY_L_38_ITEMICON.Location = new System.Drawing.Point(589, 386);
             this.PARTY_L_38_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_38_ITEMICON.Name = "PARTY_L_38_ITEMICON";
             this.PARTY_L_38_ITEMICON.Size = new System.Drawing.Size(32, 32);
@@ -4520,7 +4603,7 @@
             // PARTY_L_36_ITEMICON
             // 
             this.PARTY_L_36_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(590, 354);
+            this.PARTY_L_36_ITEMICON.Location = new System.Drawing.Point(589, 354);
             this.PARTY_L_36_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_36_ITEMICON.Name = "PARTY_L_36_ITEMICON";
             this.PARTY_L_36_ITEMICON.Size = new System.Drawing.Size(32, 32);
@@ -4531,7 +4614,7 @@
             // PARTY_L_34_ITEMICON
             // 
             this.PARTY_L_34_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(590, 323);
+            this.PARTY_L_34_ITEMICON.Location = new System.Drawing.Point(589, 323);
             this.PARTY_L_34_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_34_ITEMICON.Name = "PARTY_L_34_ITEMICON";
             this.PARTY_L_34_ITEMICON.Size = new System.Drawing.Size(32, 32);
@@ -4542,7 +4625,7 @@
             // PARTY_L_32_ITEMICON
             // 
             this.PARTY_L_32_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(590, 291);
+            this.PARTY_L_32_ITEMICON.Location = new System.Drawing.Point(589, 291);
             this.PARTY_L_32_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_32_ITEMICON.Name = "PARTY_L_32_ITEMICON";
             this.PARTY_L_32_ITEMICON.Size = new System.Drawing.Size(32, 32);
@@ -4553,7 +4636,7 @@
             // PARTY_L_30_ITEMICON
             // 
             this.PARTY_L_30_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(590, 260);
+            this.PARTY_L_30_ITEMICON.Location = new System.Drawing.Point(589, 260);
             this.PARTY_L_30_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_30_ITEMICON.Name = "PARTY_L_30_ITEMICON";
             this.PARTY_L_30_ITEMICON.Size = new System.Drawing.Size(32, 32);
@@ -4564,7 +4647,7 @@
             // PARTY_B71
             // 
             this.PARTY_B71.Hexadecimal = true;
-            this.PARTY_B71.Location = new System.Drawing.Point(537, 643);
+            this.PARTY_B71.Location = new System.Drawing.Point(563, 650);
             this.PARTY_B71.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B71.Maximum = new decimal(new int[] {
             -559939585,
@@ -4578,7 +4661,7 @@
             // 
             // label89
             // 
-            this.label89.Location = new System.Drawing.Point(471, 645);
+            this.label89.Location = new System.Drawing.Point(497, 652);
             this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(65, 18);
@@ -4589,7 +4672,7 @@
             // PARTY_B70
             // 
             this.PARTY_B70.Hexadecimal = true;
-            this.PARTY_B70.Location = new System.Drawing.Point(537, 614);
+            this.PARTY_B70.Location = new System.Drawing.Point(563, 621);
             this.PARTY_B70.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B70.Maximum = new decimal(new int[] {
             -559939585,
@@ -4603,7 +4686,7 @@
             // 
             // label90
             // 
-            this.label90.Location = new System.Drawing.Point(471, 616);
+            this.label90.Location = new System.Drawing.Point(497, 623);
             this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(65, 18);
@@ -4614,7 +4697,7 @@
             // PARTY_B69
             // 
             this.PARTY_B69.Hexadecimal = true;
-            this.PARTY_B69.Location = new System.Drawing.Point(537, 585);
+            this.PARTY_B69.Location = new System.Drawing.Point(563, 592);
             this.PARTY_B69.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B69.Maximum = new decimal(new int[] {
             -559939585,
@@ -4628,18 +4711,18 @@
             // 
             // label83
             // 
-            this.label83.Location = new System.Drawing.Point(432, 587);
+            this.label83.Location = new System.Drawing.Point(466, 594);
             this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(101, 18);
+            this.label83.Size = new System.Drawing.Size(93, 18);
             this.label83.TabIndex = 422;
-            this.label83.Text = "AI2 Counter";
+            this.label83.Text = "AI2 Count";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B68
             // 
             this.PARTY_B68.Hexadecimal = true;
-            this.PARTY_B68.Location = new System.Drawing.Point(537, 556);
+            this.PARTY_B68.Location = new System.Drawing.Point(563, 563);
             this.PARTY_B68.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B68.Maximum = new decimal(new int[] {
             -559939585,
@@ -4653,10 +4736,10 @@
             // 
             // label84
             // 
-            this.label84.Location = new System.Drawing.Point(432, 558);
+            this.label84.Location = new System.Drawing.Point(466, 565);
             this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(101, 18);
+            this.label84.Size = new System.Drawing.Size(93, 18);
             this.label84.TabIndex = 420;
             this.label84.Text = "AI2";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4664,7 +4747,7 @@
             // PARTY_B67
             // 
             this.PARTY_B67.Hexadecimal = true;
-            this.PARTY_B67.Location = new System.Drawing.Point(537, 527);
+            this.PARTY_B67.Location = new System.Drawing.Point(563, 534);
             this.PARTY_B67.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B67.Maximum = new decimal(new int[] {
             -559939585,
@@ -4678,18 +4761,18 @@
             // 
             // label85
             // 
-            this.label85.Location = new System.Drawing.Point(432, 529);
+            this.label85.Location = new System.Drawing.Point(466, 536);
             this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(101, 18);
+            this.label85.Size = new System.Drawing.Size(93, 18);
             this.label85.TabIndex = 418;
-            this.label85.Text = "AI1 Counter";
+            this.label85.Text = "AI1 Count";
             this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B66
             // 
             this.PARTY_B66.Hexadecimal = true;
-            this.PARTY_B66.Location = new System.Drawing.Point(537, 498);
+            this.PARTY_B66.Location = new System.Drawing.Point(563, 505);
             this.PARTY_B66.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B66.Maximum = new decimal(new int[] {
             -559939585,
@@ -4703,10 +4786,10 @@
             // 
             // label86
             // 
-            this.label86.Location = new System.Drawing.Point(432, 500);
+            this.label86.Location = new System.Drawing.Point(466, 507);
             this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(101, 18);
+            this.label86.Size = new System.Drawing.Size(93, 18);
             this.label86.TabIndex = 416;
             this.label86.Text = "AI1";
             this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4714,7 +4797,7 @@
             // PARTY_B65
             // 
             this.PARTY_B65.Hexadecimal = true;
-            this.PARTY_B65.Location = new System.Drawing.Point(537, 471);
+            this.PARTY_B65.Location = new System.Drawing.Point(563, 478);
             this.PARTY_B65.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B65.Maximum = new decimal(new int[] {
             -559939585,
@@ -4728,10 +4811,10 @@
             // 
             // label87
             // 
-            this.label87.Location = new System.Drawing.Point(432, 473);
+            this.label87.Location = new System.Drawing.Point(466, 480);
             this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(101, 18);
+            this.label87.Size = new System.Drawing.Size(93, 18);
             this.label87.TabIndex = 414;
             this.label87.Text = "AI4";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4739,7 +4822,7 @@
             // PARTY_B64
             // 
             this.PARTY_B64.Hexadecimal = true;
-            this.PARTY_B64.Location = new System.Drawing.Point(537, 442);
+            this.PARTY_B64.Location = new System.Drawing.Point(563, 449);
             this.PARTY_B64.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B64.Maximum = new decimal(new int[] {
             -559939585,
@@ -4753,118 +4836,42 @@
             // 
             // label88
             // 
-            this.label88.Location = new System.Drawing.Point(432, 444);
+            this.label88.Location = new System.Drawing.Point(466, 451);
             this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(101, 18);
+            this.label88.Size = new System.Drawing.Size(93, 18);
             this.label88.TabIndex = 412;
             this.label88.Text = "AI3";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_B63
+            // PARTY_P60
             // 
-            this.PARTY_B63.Hexadecimal = true;
-            this.PARTY_B63.Location = new System.Drawing.Point(693, 403);
-            this.PARTY_B63.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_B63.Maximum = new decimal(new int[] {
+            this.PARTY_P60.Hexadecimal = true;
+            this.PARTY_P60.Location = new System.Drawing.Point(645, 347);
+            this.PARTY_P60.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_P60.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.PARTY_B63.Name = "PARTY_B63";
-            this.PARTY_B63.ReadOnly = true;
-            this.PARTY_B63.Size = new System.Drawing.Size(73, 25);
-            this.PARTY_B63.TabIndex = 411;
-            // 
-            // label69
-            // 
-            this.label69.Location = new System.Drawing.Point(629, 405);
-            this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(57, 18);
-            this.label69.TabIndex = 410;
-            this.label69.Text = "??? 7";
-            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_B62
-            // 
-            this.PARTY_B62.Hexadecimal = true;
-            this.PARTY_B62.Location = new System.Drawing.Point(693, 374);
-            this.PARTY_B62.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_B62.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.PARTY_B62.Name = "PARTY_B62";
-            this.PARTY_B62.ReadOnly = true;
-            this.PARTY_B62.Size = new System.Drawing.Size(73, 25);
-            this.PARTY_B62.TabIndex = 409;
-            // 
-            // label78
-            // 
-            this.label78.Location = new System.Drawing.Point(629, 376);
-            this.label78.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(57, 18);
-            this.label78.TabIndex = 408;
-            this.label78.Text = "??? 6";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_B61
-            // 
-            this.PARTY_B61.Hexadecimal = true;
-            this.PARTY_B61.Location = new System.Drawing.Point(693, 345);
-            this.PARTY_B61.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_B61.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.PARTY_B61.Name = "PARTY_B61";
-            this.PARTY_B61.ReadOnly = true;
-            this.PARTY_B61.Size = new System.Drawing.Size(73, 25);
-            this.PARTY_B61.TabIndex = 407;
-            // 
-            // label79
-            // 
-            this.label79.Location = new System.Drawing.Point(629, 347);
-            this.label79.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(57, 18);
-            this.label79.TabIndex = 406;
-            this.label79.Text = "??? 5";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PARTY_B60
-            // 
-            this.PARTY_B60.Hexadecimal = true;
-            this.PARTY_B60.Location = new System.Drawing.Point(693, 316);
-            this.PARTY_B60.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_B60.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.PARTY_B60.Name = "PARTY_B60";
-            this.PARTY_B60.ReadOnly = true;
-            this.PARTY_B60.Size = new System.Drawing.Size(73, 25);
-            this.PARTY_B60.TabIndex = 405;
+            this.PARTY_P60.Name = "PARTY_P60";
+            this.PARTY_P60.ReadOnly = true;
+            this.PARTY_P60.Size = new System.Drawing.Size(120, 25);
+            this.PARTY_P60.TabIndex = 405;
             // 
             // label80
             // 
-            this.label80.Location = new System.Drawing.Point(629, 318);
+            this.label80.Location = new System.Drawing.Point(646, 324);
             this.label80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(57, 18);
+            this.label80.Size = new System.Drawing.Size(119, 18);
             this.label80.TabIndex = 404;
-            this.label80.Text = "??? 4";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label80.Text = "MapSprite";
             // 
             // PARTY_B59
             // 
             this.PARTY_B59.Hexadecimal = true;
-            this.PARTY_B59.Location = new System.Drawing.Point(693, 289);
+            this.PARTY_B59.Location = new System.Drawing.Point(692, 289);
             this.PARTY_B59.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B59.Maximum = new decimal(new int[] {
             -559939585,
@@ -4889,7 +4896,7 @@
             // PARTY_B58
             // 
             this.PARTY_B58.Hexadecimal = true;
-            this.PARTY_B58.Location = new System.Drawing.Point(693, 260);
+            this.PARTY_B58.Location = new System.Drawing.Point(692, 260);
             this.PARTY_B58.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B58.Maximum = new decimal(new int[] {
             -559939585,
@@ -4914,7 +4921,7 @@
             // PARTY_B57
             // 
             this.PARTY_B57.Hexadecimal = true;
-            this.PARTY_B57.Location = new System.Drawing.Point(353, 606);
+            this.PARTY_B57.Location = new System.Drawing.Point(352, 635);
             this.PARTY_B57.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B57.Maximum = new decimal(new int[] {
             -559939585,
@@ -4928,7 +4935,7 @@
             // 
             // label70
             // 
-            this.label70.Location = new System.Drawing.Point(227, 608);
+            this.label70.Location = new System.Drawing.Point(227, 637);
             this.label70.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(122, 18);
@@ -4938,7 +4945,7 @@
             // 
             // PARTY_B56
             // 
-            this.PARTY_B56.Location = new System.Drawing.Point(353, 577);
+            this.PARTY_B56.Location = new System.Drawing.Point(352, 601);
             this.PARTY_B56.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B56.Maximum = new decimal(new int[] {
             -559939585,
@@ -4952,7 +4959,7 @@
             // 
             // label71
             // 
-            this.label71.Location = new System.Drawing.Point(227, 579);
+            this.label71.Location = new System.Drawing.Point(227, 603);
             this.label71.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(122, 18);
@@ -4962,7 +4969,7 @@
             // 
             // PARTY_B55
             // 
-            this.PARTY_B55.Location = new System.Drawing.Point(353, 550);
+            this.PARTY_B55.Location = new System.Drawing.Point(352, 569);
             this.PARTY_B55.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B55.Maximum = new decimal(new int[] {
             -559939585,
@@ -4976,7 +4983,7 @@
             // 
             // label72
             // 
-            this.label72.Location = new System.Drawing.Point(227, 552);
+            this.label72.Location = new System.Drawing.Point(227, 571);
             this.label72.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(122, 18);
@@ -4986,7 +4993,7 @@
             // 
             // PARTY_B54
             // 
-            this.PARTY_B54.Location = new System.Drawing.Point(353, 521);
+            this.PARTY_B54.Location = new System.Drawing.Point(352, 539);
             this.PARTY_B54.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B54.Maximum = new decimal(new int[] {
             -559939585,
@@ -5000,7 +5007,7 @@
             // 
             // label73
             // 
-            this.label73.Location = new System.Drawing.Point(227, 523);
+            this.label73.Location = new System.Drawing.Point(227, 541);
             this.label73.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(122, 18);
@@ -5010,7 +5017,7 @@
             // 
             // PARTY_B53
             // 
-            this.PARTY_B53.Location = new System.Drawing.Point(353, 492);
+            this.PARTY_B53.Location = new System.Drawing.Point(352, 508);
             this.PARTY_B53.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B53.Maximum = new decimal(new int[] {
             -559939585,
@@ -5024,7 +5031,7 @@
             // 
             // label74
             // 
-            this.label74.Location = new System.Drawing.Point(227, 494);
+            this.label74.Location = new System.Drawing.Point(227, 510);
             this.label74.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(122, 18);
@@ -5034,7 +5041,7 @@
             // 
             // PARTY_B52
             // 
-            this.PARTY_B52.Location = new System.Drawing.Point(353, 463);
+            this.PARTY_B52.Location = new System.Drawing.Point(352, 478);
             this.PARTY_B52.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B52.Maximum = new decimal(new int[] {
             -559939585,
@@ -5048,7 +5055,7 @@
             // 
             // label75
             // 
-            this.label75.Location = new System.Drawing.Point(227, 465);
+            this.label75.Location = new System.Drawing.Point(227, 480);
             this.label75.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(122, 18);
@@ -5058,7 +5065,7 @@
             // 
             // PARTY_B51
             // 
-            this.PARTY_B51.Location = new System.Drawing.Point(353, 436);
+            this.PARTY_B51.Location = new System.Drawing.Point(352, 448);
             this.PARTY_B51.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B51.Maximum = new decimal(new int[] {
             -559939585,
@@ -5072,7 +5079,7 @@
             // 
             // label76
             // 
-            this.label76.Location = new System.Drawing.Point(227, 438);
+            this.label76.Location = new System.Drawing.Point(227, 450);
             this.label76.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(122, 18);
@@ -5082,7 +5089,7 @@
             // 
             // PARTY_B50
             // 
-            this.PARTY_B50.Location = new System.Drawing.Point(353, 407);
+            this.PARTY_B50.Location = new System.Drawing.Point(352, 418);
             this.PARTY_B50.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B50.Maximum = new decimal(new int[] {
             -559939585,
@@ -5096,7 +5103,7 @@
             // 
             // label77
             // 
-            this.label77.Location = new System.Drawing.Point(227, 409);
+            this.label77.Location = new System.Drawing.Point(227, 420);
             this.label77.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(122, 18);
@@ -5349,7 +5356,7 @@
             // PARTY_L_38_ITEM
             // 
             this.PARTY_L_38_ITEM.ErrorMessage = "";
-            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(430, 376);
+            this.PARTY_L_38_ITEM.Location = new System.Drawing.Point(429, 376);
             this.PARTY_L_38_ITEM.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_38_ITEM.Name = "PARTY_L_38_ITEM";
             this.PARTY_L_38_ITEM.Placeholder = "";
@@ -5359,7 +5366,7 @@
             // 
             // PARTY_B39
             // 
-            this.PARTY_B39.Location = new System.Drawing.Point(353, 380);
+            this.PARTY_B39.Location = new System.Drawing.Point(352, 380);
             this.PARTY_B39.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B39.Maximum = new decimal(new int[] {
             -559939585,
@@ -5409,7 +5416,7 @@
             // PARTY_L_36_ITEM
             // 
             this.PARTY_L_36_ITEM.ErrorMessage = "";
-            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(430, 348);
+            this.PARTY_L_36_ITEM.Location = new System.Drawing.Point(429, 348);
             this.PARTY_L_36_ITEM.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_36_ITEM.Name = "PARTY_L_36_ITEM";
             this.PARTY_L_36_ITEM.Placeholder = "";
@@ -5419,7 +5426,7 @@
             // 
             // PARTY_B37
             // 
-            this.PARTY_B37.Location = new System.Drawing.Point(353, 352);
+            this.PARTY_B37.Location = new System.Drawing.Point(352, 352);
             this.PARTY_B37.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B37.Maximum = new decimal(new int[] {
             -559939585,
@@ -5469,7 +5476,7 @@
             // PARTY_L_34_ITEM
             // 
             this.PARTY_L_34_ITEM.ErrorMessage = "";
-            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(430, 323);
+            this.PARTY_L_34_ITEM.Location = new System.Drawing.Point(429, 323);
             this.PARTY_L_34_ITEM.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_34_ITEM.Name = "PARTY_L_34_ITEM";
             this.PARTY_L_34_ITEM.Placeholder = "";
@@ -5479,7 +5486,7 @@
             // 
             // PARTY_B35
             // 
-            this.PARTY_B35.Location = new System.Drawing.Point(353, 324);
+            this.PARTY_B35.Location = new System.Drawing.Point(352, 324);
             this.PARTY_B35.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B35.Maximum = new decimal(new int[] {
             -559939585,
@@ -5529,7 +5536,7 @@
             // PARTY_L_32_ITEM
             // 
             this.PARTY_L_32_ITEM.ErrorMessage = "";
-            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(430, 294);
+            this.PARTY_L_32_ITEM.Location = new System.Drawing.Point(429, 294);
             this.PARTY_L_32_ITEM.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_32_ITEM.Name = "PARTY_L_32_ITEM";
             this.PARTY_L_32_ITEM.Placeholder = "";
@@ -5539,7 +5546,7 @@
             // 
             // PARTY_B33
             // 
-            this.PARTY_B33.Location = new System.Drawing.Point(353, 297);
+            this.PARTY_B33.Location = new System.Drawing.Point(352, 297);
             this.PARTY_B33.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B33.Maximum = new decimal(new int[] {
             -559939585,
@@ -5589,7 +5596,7 @@
             // PARTY_L_30_ITEM
             // 
             this.PARTY_L_30_ITEM.ErrorMessage = "";
-            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(430, 268);
+            this.PARTY_L_30_ITEM.Location = new System.Drawing.Point(429, 268);
             this.PARTY_L_30_ITEM.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_L_30_ITEM.Name = "PARTY_L_30_ITEM";
             this.PARTY_L_30_ITEM.Placeholder = "";
@@ -5599,7 +5606,7 @@
             // 
             // PARTY_B31
             // 
-            this.PARTY_B31.Location = new System.Drawing.Point(353, 269);
+            this.PARTY_B31.Location = new System.Drawing.Point(352, 269);
             this.PARTY_B31.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B31.Maximum = new decimal(new int[] {
             -559939585,
@@ -5648,7 +5655,7 @@
             // 
             // PARTY_B28
             // 
-            this.PARTY_B28.Location = new System.Drawing.Point(689, 181);
+            this.PARTY_B28.Location = new System.Drawing.Point(692, 182);
             this.PARTY_B28.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B28.Maximum = new decimal(new int[] {
             -559939585,
@@ -5662,7 +5669,7 @@
             // 
             // label66
             // 
-            this.label66.Location = new System.Drawing.Point(580, 184);
+            this.label66.Location = new System.Drawing.Point(580, 185);
             this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(106, 18);
@@ -5672,7 +5679,7 @@
             // 
             // PARTY_B29
             // 
-            this.PARTY_B29.Location = new System.Drawing.Point(689, 208);
+            this.PARTY_B29.Location = new System.Drawing.Point(692, 209);
             this.PARTY_B29.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B29.Maximum = new decimal(new int[] {
             -559939585,
@@ -5686,7 +5693,7 @@
             // 
             // label65
             // 
-            this.label65.Location = new System.Drawing.Point(560, 211);
+            this.label65.Location = new System.Drawing.Point(560, 212);
             this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(126, 18);
@@ -5697,7 +5704,7 @@
             // PARTY_RAMUNITAID
             // 
             this.PARTY_RAMUNITAID.ErrorMessage = "";
-            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
+            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(608, 153);
             this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
             this.PARTY_RAMUNITAID.Placeholder = "";
@@ -5709,7 +5716,7 @@
             // PARTY_B27
             // 
             this.PARTY_B27.Hexadecimal = true;
-            this.PARTY_B27.Location = new System.Drawing.Point(689, 123);
+            this.PARTY_B27.Location = new System.Drawing.Point(692, 124);
             this.PARTY_B27.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B27.Maximum = new decimal(new int[] {
             -559939585,
@@ -5723,7 +5730,7 @@
             // 
             // label64
             // 
-            this.label64.Location = new System.Drawing.Point(559, 126);
+            this.label64.Location = new System.Drawing.Point(559, 127);
             this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(126, 18);
@@ -5733,7 +5740,7 @@
             // 
             // PARTY_B26
             // 
-            this.PARTY_B26.Location = new System.Drawing.Point(689, 94);
+            this.PARTY_B26.Location = new System.Drawing.Point(692, 95);
             this.PARTY_B26.Margin = new System.Windows.Forms.Padding(2);
             this.PARTY_B26.Maximum = new decimal(new int[] {
             -559939585,
@@ -5747,7 +5754,7 @@
             // 
             // PARTY_J_26
             // 
-            this.PARTY_J_26.Location = new System.Drawing.Point(559, 97);
+            this.PARTY_J_26.Location = new System.Drawing.Point(559, 98);
             this.PARTY_J_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PARTY_J_26.Name = "PARTY_J_26";
             this.PARTY_J_26.Size = new System.Drawing.Size(126, 18);
@@ -7512,6 +7519,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupportPortrait1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_PORTRAIT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_38_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_L_36_ITEMICON)).EndInit();
@@ -7526,10 +7540,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B66)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B65)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B64)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B63)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B62)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PARTY_B60)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PARTY_P60)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B59)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B58)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_B57)).EndInit();
@@ -7967,13 +7978,7 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.NumericUpDown PARTY_B50;
         private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.NumericUpDown PARTY_B63;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.NumericUpDown PARTY_B62;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.NumericUpDown PARTY_B61;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.NumericUpDown PARTY_B60;
+        private System.Windows.Forms.NumericUpDown PARTY_P60;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.NumericUpDown PARTY_B59;
         private System.Windows.Forms.Label label81;
@@ -8113,5 +8118,12 @@
         private System.Windows.Forms.Label J_ACTIVEUNIT;
         private TextBoxEx ETC_UNIT_MEMORY_AND_NAME;
         private InterpolatedPictureBox ETC_UNIT_MEMORY_AND_ICON;
+        private InterpolatedPictureBox SupportPortrait7;
+        private InterpolatedPictureBox SupportPortrait6;
+        private InterpolatedPictureBox SupportPortrait5;
+        private InterpolatedPictureBox SupportPortrait4;
+        private InterpolatedPictureBox SupportPortrait3;
+        private InterpolatedPictureBox SupportPortrait2;
+        private InterpolatedPictureBox SupportPortrait1;
     }
 }

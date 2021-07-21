@@ -702,10 +702,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x39, "Support10", "", 0x1));
                 ret.Add(new AddressList(0x3A, "SupportFlag", "", 0x1));
                 ret.Add(new AddressList(0x3B, "Unknown3B", "", 0x1));
-                ret.Add(new AddressList(0x3C, "Unknown3C", "", 0x1));
-                ret.Add(new AddressList(0x3D, "Unknown3D", "", 0x1));
-                ret.Add(new AddressList(0x3E, "Unknown3E", "", 0x1));
-                ret.Add(new AddressList(0x3F, "Unknown3F", "", 0x1));
+                ret.Add(new AddressList(0x3C, "MapSprite", "", 0x4));
                 ret.Add(new AddressList(0x40, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x41, "AI4", "", 0x1));
                 ret.Add(new AddressList(0x42, "AI1", "AI1", 0x1));
@@ -811,10 +808,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x39, "SupportFlag", "", 0x1));
                 ret.Add(new AddressList(0x3A, "Unknown3A", "", 0x1));
                 ret.Add(new AddressList(0x3B, "Unknown3B", "", 0x1));
-                ret.Add(new AddressList(0x3C, "Unknown3C", "", 0x1));
-                ret.Add(new AddressList(0x3D, "Unknown3D", "", 0x1));
-                ret.Add(new AddressList(0x3E, "Unknown3E", "", 0x1));
-                ret.Add(new AddressList(0x3F, "Unknown3F", "", 0x1));
+                ret.Add(new AddressList(0x3C, "MapSprite", "", 0x4));
                 ret.Add(new AddressList(0x40, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x41, "AI4", "", 0x1));
                 ret.Add(new AddressList(0x42, "AI1", "AI1", 0x1));
@@ -951,10 +945,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x59, "Support10", "", 0x1));
                 ret.Add(new AddressList(0x5A, "SupportFlag", "", 0x1));
                 ret.Add(new AddressList(0x5B, "Unknown3B", "", 0x1));
-                ret.Add(new AddressList(0x5C, "Unknown3C", "", 0x1));
-                ret.Add(new AddressList(0x5D, "Unknown3D", "", 0x1));
-                ret.Add(new AddressList(0x5E, "Unknown3E", "", 0x1));
-                ret.Add(new AddressList(0x5F, "Unknown3F", "", 0x1));
+                ret.Add(new AddressList(0x5C, "MapSprite", "", 0x4));
                 ret.Add(new AddressList(0x60, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x61, "AI4", "", 0x1));
                 ret.Add(new AddressList(0x62, "AI1", "AI1", 0x1));
@@ -1032,7 +1023,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x50, "State and turns", "", 0x1));
                 ret.Add(new AddressList(0x51, "PureWaterTourch", "", 0x1));
                 ret.Add(new AddressList(0x52, "Support1", "", 0x1));
-                ret.Add(new AddressList(0x54, "Support2", "", 0x1));
+                ret.Add(new AddressList(0x53, "Support2", "", 0x1));
                 ret.Add(new AddressList(0x54, "Support3", "", 0x1));
                 ret.Add(new AddressList(0x55, "Support4", "", 0x1));
                 ret.Add(new AddressList(0x56, "Support5", "", 0x1));
@@ -1041,10 +1032,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x59, "SupportFlag", "", 0x1));
                 ret.Add(new AddressList(0x5A, "Unknown3A", "", 0x1));
                 ret.Add(new AddressList(0x5B, "Unknown3B", "", 0x1));
-                ret.Add(new AddressList(0x5C, "Unknown3C", "", 0x1));
-                ret.Add(new AddressList(0x5D, "Unknown3D", "", 0x1));
-                ret.Add(new AddressList(0x5E, "Unknown3E", "", 0x1));
-                ret.Add(new AddressList(0x5F, "Unknown3F", "", 0x1));
+                ret.Add(new AddressList(0x5C, "MapSprite", "", 0x4));
                 ret.Add(new AddressList(0x60, "AI3", "", 0x1));
                 ret.Add(new AddressList(0x61, "AI4", "", 0x1));
                 ret.Add(new AddressList(0x62, "AI1", "AI1", 0x1));

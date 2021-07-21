@@ -2116,7 +2116,14 @@ namespace FEBuilderGBA
                 uint unitid = Program.ROM.u8(U.toOffset(unitPointer) + 4);
                 unitname = U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid);
                 faceImage = UnitForm.DrawUnitFacePicture(unitid);
+
+                DrawSupportPortrait(unitPointer);
             }
+            else
+            {
+                DrawSupportPortrait(0);
+            }
+
             if (U.isSafetyOffset(classPointer))
             {
                 uint classid = Program.ROM.u8(U.toOffset(classPointer) + 4);
@@ -2136,6 +2143,31 @@ namespace FEBuilderGBA
             PARTY_AI2_TEXT.Text = EventUnitForm.GetAIName2((uint)PARTY_B68.Value);
 
             Party_ControlPanel.Show();
+        }
+        void DrawSupportPortrait(uint unitOffset)
+        {
+            InterpolatedPictureBox[] images = new InterpolatedPictureBox[] { SupportPortrait1,SupportPortrait2, SupportPortrait3, SupportPortrait4, SupportPortrait5, SupportPortrait6, SupportPortrait7};
+
+            if (U.isSafetyOffset(unitOffset))
+            {
+                uint supportAddr = Program.ROM.p32(unitOffset + 0x2C);
+                if (U.isSafetyOffset(supportAddr + 6))
+                {
+                    for (uint i = 0; i < images.Length ; i++)
+                    {
+                        uint unitid = Program.ROM.u8(supportAddr + i);
+                        Bitmap b = UnitForm.DrawUnitMapFacePicture(unitid);
+                        U.MakeTransparent(b);
+                        images[i].Image = b;
+                    }
+                    return;
+                }
+            }
+
+            for (uint i = 0; i < images.Length; i++)
+            {
+                images[i].Image = ImageUtil.BlankDummy();
+            }
         }
 
 
@@ -2267,6 +2299,7 @@ namespace FEBuilderGBA
             }
             this.PARTY_B58.Name = "PARTY_NONE58";
             this.PARTY_B58.Hide();
+            this.PARTY_J_58.Hide();
             this.PARTY_B57.Name = "PARTY_B58";
             this.PARTY_B56.Name = "PARTY_B54";
             this.PARTY_B55.Name = "PARTY_B53";
