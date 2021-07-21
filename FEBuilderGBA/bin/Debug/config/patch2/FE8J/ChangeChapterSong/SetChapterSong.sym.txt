@@ -1,0 +1,9 @@
+FindBGMObject=$02
+Loop=$08
+Found=$26
+NotFound=$14
+Exit=$48
+StorePlayerBGM=$28
+StoreEnemyBGM=$30
+StoreNPCBGM=$38
+StoreFlag=$40

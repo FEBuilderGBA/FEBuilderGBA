@@ -56,7 +56,8 @@ namespace FEBuilderGBA
             this.PROCS_InputFormRef = new InputFormRef(this, "PROCS_", 0, 0);
             this.PARTY_InputFormRef = new InputFormRef(this, "PARTY_", 0, 0);
 
-            //LocalizeRAMUnit();
+            //ダブルクリックで変更できるようにする
+            this.PARTY_InputFormRef.Init_DoubleClickToDirectRAMEdit();
 
             //頻繁にリストを更新するのでBrushをキャッシュする.
             this.ListBoxForeBrush = new SolidBrush(OptionForm.Color_Control_ForeColor());
@@ -3631,7 +3632,5 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(PartyListBox, index);
             ShowPartyFloatingControlpanel();
         }
-
-
     }
 }

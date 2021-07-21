@@ -12154,5 +12154,37 @@ namespace FEBuilderGBA
             refListBox.EndUpdate();
             return true;
         }
+
+        void AppendEvent_RAMRewiteDoubleClick(Control v, uint number, uint size, bool isHex)
+        {
+            v.MouseDoubleClick += (self, ee) =>
+            {
+                uint base_addr = (uint)this.Address.Value;
+
+                RAMRewriteToolForm f = (RAMRewriteToolForm)InputFormRef.JumpFormLow<RAMRewriteToolForm>();
+                f.Init(base_addr + number, size, isHex);
+                f.ShowDialog();
+            };
+        }
+        public void Init_DoubleClickToDirectRAMEdit()
+        {
+            foreach (Control info in Controls)
+            {
+                if (! (info is NumericUpDown))
+                {
+                    continue;
+                }
+                String name = InputFormRef.SkipPrefixName(info.Name, Prefix);
+                if (name.Length <= 1)
+                {
+                    continue;
+                }
+
+                uint size = GetTypeLength(name[0]);
+                uint id = U.atoi(name.Substring(1));
+                bool isHex = ((NumericUpDown)info).Hexadecimal;
+                AppendEvent_RAMRewiteDoubleClick(info, id, size, isHex);
+            }
+        }
     }
 }

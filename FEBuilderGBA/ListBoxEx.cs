@@ -1411,7 +1411,7 @@ namespace FEBuilderGBA
                 {//サブルーチンは目立つ緑のアイコン
                     bitmap = ImageSystemIconForm.MusicIcon(3);
                 }
-                else if (item == "MUSIC")
+                else if (item == "MUSIC" || item == "MAPMUSIC")
                 {
                     bitmap = ImageSystemIconForm.MusicIcon(6);
                 }

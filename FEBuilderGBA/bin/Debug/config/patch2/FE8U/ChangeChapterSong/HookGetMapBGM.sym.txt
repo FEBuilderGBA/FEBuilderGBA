@@ -1,0 +1,15 @@
+FindBGMObject=$0C
+ExitFlag0x04ON=$04
+ExitContinueVanilla=$24
+Loop=$12
+Found=$28
+ExitNotFound=$1E
+CheckNPC=$34
+PlayEnemyBGM=$30
+ExitWithFoundBGM=$3E
+PlayerTurn=$46
+PlayNPCBGM=$38
+PlayPlayerBGM=$3C
+CheckVictoryBGM=$4C
+CheckEnenmyCount=$62
+PlayVictoryBGM=$74

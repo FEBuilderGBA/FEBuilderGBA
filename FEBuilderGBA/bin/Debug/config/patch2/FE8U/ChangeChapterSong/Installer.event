@@ -1,0 +1,15 @@
+PUSH
+//ORG 0x15FDC	//{J}
+ORG 0x15FD0	//{U}
+jumpToHack(HookGetMapBGM);
+POP
+
+ALIGN 4
+HookGetMapBGM:
+#incbin "HookGetMapBGM.dmp"
+
+ALIGN 4
+SetChapterSong:
+#incbin "SetChapterSong.dmp"
+
+ALIGN 4

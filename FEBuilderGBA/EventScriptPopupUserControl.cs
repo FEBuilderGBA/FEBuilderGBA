@@ -20,8 +20,9 @@ namespace FEBuilderGBA
             this.MAP.MapDoubleClickEvent += ClosePopup;
 //            this.MAP.HideCommandBar();
         }
-        void ClosePopup(object sender , EventArgs e)
+        void ClosePopup(object sender, EventArgs e)
         {
+            X_Tooltip.HideEvent(sender, e);
             this.Hide();
         }
         public void LoadScreen()
@@ -112,11 +113,22 @@ namespace FEBuilderGBA
             this.Width = width;
             this.Height = height;
         }
-        public void LoadMusic(uint sound_id)
+        public void LoadMusic(uint sound_id , EventScript.ArgType argtype)
         {
             MAP.ClearAllPoint();
             PlaySappyButton.Tag = sound_id;
             this.MusicName.Text = SongTableForm.GetSongName(sound_id);
+
+            string errormessage = "";
+            if (argtype == EventScript.ArgType.SOUND)
+            {
+                errormessage = SongTableForm.GetErrorMessage(sound_id, "SFX");
+            }
+            else if (argtype == EventScript.ArgType.MAPMUSIC)
+            {
+                errormessage = SongTableForm.GetErrorMessage(sound_id, "MAP");
+            }
+            this.MusicName.ErrorMessage = errormessage;
 
             int width =  300;
             int height = 100;
@@ -145,6 +157,13 @@ namespace FEBuilderGBA
                 return false;
             }
             return this.MAP.IsFocusedControl();
+        }
+
+        ToolTipEx X_Tooltip;
+        private void EventScriptPopupUserControl_Load(object sender, EventArgs e)
+        {
+            X_Tooltip = new ToolTipEx();
+            this.MusicName.SetToolTipEx(X_Tooltip);
         }
     }
 }

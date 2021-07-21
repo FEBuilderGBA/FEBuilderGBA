@@ -33,9 +33,9 @@
             this.PICTabPage = new System.Windows.Forms.TabPage();
             this.MusicPagePage = new System.Windows.Forms.TabPage();
             this.PlaySappyButton = new System.Windows.Forms.Button();
-            this.MusicName = new System.Windows.Forms.Label();
             this.MAP = new FEBuilderGBA.MapPictureBox();
             this.PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.MusicName = new FEBuilderGBA.TextBoxEx();
             this.Tab.SuspendLayout();
             this.MAPTabPage.SuspendLayout();
             this.PICTabPage.SuspendLayout();
@@ -98,16 +98,6 @@
             this.PlaySappyButton.UseVisualStyleBackColor = true;
             this.PlaySappyButton.Click += new System.EventHandler(this.PlaySappyButton_Click);
             // 
-            // MusicName
-            // 
-            this.MusicName.AutoSize = true;
-            this.MusicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.MusicName.Location = new System.Drawing.Point(7, 65);
-            this.MusicName.Name = "MusicName";
-            this.MusicName.Size = new System.Drawing.Size(53, 20);
-            this.MusicName.TabIndex = 173;
-            this.MusicName.Text = "label1";
-            // 
             // MAP
             // 
             this.MAP.AutoScroll = true;
@@ -127,6 +117,16 @@
             this.PIC.TabIndex = 0;
             this.PIC.TabStop = false;
             // 
+            // MusicName
+            // 
+            this.MusicName.ErrorMessage = "";
+            this.MusicName.Location = new System.Drawing.Point(6, 48);
+            this.MusicName.Name = "MusicName";
+            this.MusicName.Placeholder = "";
+            this.MusicName.ReadOnly = true;
+            this.MusicName.Size = new System.Drawing.Size(360, 25);
+            this.MusicName.TabIndex = 175;
+            // 
             // EventScriptPopupUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -135,6 +135,7 @@
             this.Controls.Add(this.Tab);
             this.Name = "EventScriptPopupUserControl";
             this.Size = new System.Drawing.Size(383, 303);
+            this.Load += new System.EventHandler(this.EventScriptPopupUserControl_Load);
             this.Tab.ResumeLayout(false);
             this.MAPTabPage.ResumeLayout(false);
             this.PICTabPage.ResumeLayout(false);
@@ -155,6 +156,6 @@
         private System.Windows.Forms.TabPage MusicPagePage;
         private System.Windows.Forms.Button PlaySappyButton;
         private InterpolatedPictureBox PIC;
-        private System.Windows.Forms.Label MusicName;
+        private TextBoxEx MusicName;
     }
 }

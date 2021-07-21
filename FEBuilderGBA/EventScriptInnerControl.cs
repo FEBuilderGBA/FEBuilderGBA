@@ -765,12 +765,21 @@ namespace FEBuilderGBA
                 text = ItemForm.GetItemName(v);
                 image = ItemForm.DrawIcon(v);
             }
-            else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
+            else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MAPMUSIC)
             {
                 text = SongTableForm.GetSongName(v);
                 if (isOrderOfHuman)
                 {
-                    PopupDialog_Music((NumericUpDown)sender, v);
+                    PopupDialog_Music((NumericUpDown)sender, v , arg.Type);
+                }
+
+                if (arg.Type == EventScript.ArgType.SOUND)
+                {
+                    errormessage = SongTableForm.GetErrorMessage(v, "SFX");
+                }
+                else if (arg.Type == EventScript.ArgType.MAPMUSIC)
+                {
+                    errormessage = SongTableForm.GetErrorMessage(v, "MAP");
                 }
             }
             else if (arg.Type == EventScript.ArgType.FOG)
@@ -1199,15 +1208,7 @@ namespace FEBuilderGBA
                         (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
-            else if (arg.Type == EventScript.ArgType.MUSIC)
-            {
-                SongTableForm f = (SongTableForm)InputFormRef.JumpForm<SongTableForm>(value);
-                MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
-                        (InputFormRef.GetAllControls(f), "AddressList")
-                    , src_object, false);
-            }
-            else if (arg.Type == EventScript.ArgType.SOUND)
+            else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MAPMUSIC)
             {
                 SongTableForm f = (SongTableForm)InputFormRef.JumpForm<SongTableForm>(value);
                 MakeInjectionCallback(f
@@ -1610,9 +1611,9 @@ namespace FEBuilderGBA
                 uint mapid = ScanMAPID();
                 PopupDialog_MAPAndChange((NumericUpDown)sender, mapid, value);
             }
-            else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
+            else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MAPMUSIC)
             {
-                PopupDialog_Music((NumericUpDown)sender, value);
+                PopupDialog_Music((NumericUpDown)sender, value, arg.Type);
             }
             else if (arg.Type == EventScript.ArgType.MAPX || arg.Type == EventScript.ArgType.MAPY)
             {
@@ -2009,9 +2010,9 @@ namespace FEBuilderGBA
             Popup.LoadImage(image);
             AjustPopup(sender);
         }
-        void PopupDialog_Music(NumericUpDown sender, uint value)
+        void PopupDialog_Music(NumericUpDown sender, uint value , EventScript.ArgType argtype)
         {
-            Popup.LoadMusic(value);
+            Popup.LoadMusic(value, argtype);
             AjustPopup(sender);
         }
 
@@ -2656,7 +2657,7 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         sb.Append(MapSettingForm.GetMapName(v));
                     }
-                    else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
+                    else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MAPMUSIC)
                     {
                         sb.Append(" ");
                         sb.Append(SongTableForm.GetSongName(v));

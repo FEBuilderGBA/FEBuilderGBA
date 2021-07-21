@@ -38,6 +38,7 @@ namespace FEBuilderGBA
             , POINTER //その他ポインタ
             , MENUCOMMAND //チュートリアルで無効にするメニュー
             , MAPCHAPTER //マップ名
+            , MAPMUSIC //マップ音楽
             , MUSIC //音楽
             , SOUND //効果音
             , TEXT //テキスト
