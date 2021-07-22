@@ -9869,19 +9869,19 @@ Cannot write to Page02. bytesWrite: {0}, size: {1}
 Cannot write to Page03. bytesWrite: {0}, size: {1}
 
 :データの直書き換え
-Direct rewriting of data.
+Direct rewrite
 
 :値の書き換え
-Value rewriting.
+Write Value
 
 :RAM コピー方法
-RAM copy method.
+RAM copy method
 
 :重複 
-Duplicate
+Duplicate 
 
 :重複だが結合できる 
-Duplicate, can be merged
+Duplicate, can be merged 
 
 :アドレスが端数値なので補正しようとしましたが、サイズが4未満なので利用しません
 The address is a fractional value. An attempt was made to fix this, but it failed as the size is less than 4.

@@ -1271,16 +1271,23 @@ namespace FEBuilderGBA
 
         public void InvalidateLine(int line = -1)
         {
-            if (line < 0)
+            try
             {
-                line = this.SelectedIndex;
+                if (line < 0)
+                {
+                    line = this.SelectedIndex;
+                }
+
+                if (line < 0)
+                {//不明なので全部更新.
+                    this.Invalidate();
+                    return;
+                }
+                this.Invalidate(this.GetItemRectangle(line));
             }
-            if (line < 0)
-            {//不明なので全部更新.
-                this.Invalidate();
-                return ;
+            catch(Exception)
+            {
             }
-            this.Invalidate(this.GetItemRectangle(line));
         }
 
         //DrawOPClassFont + テキストを書くルーチン
