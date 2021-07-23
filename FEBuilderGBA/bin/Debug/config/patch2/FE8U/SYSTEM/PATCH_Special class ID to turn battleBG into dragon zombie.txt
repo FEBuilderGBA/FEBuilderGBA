@@ -1,0 +1,14 @@
+NAME=戦闘背景をドラゴンゾンビにする特殊クラスID
+NAME.en=Special class ID to turn the battle background into a dragon zombie
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x57708 0x70B76 0x70B7A
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+
+INFO=このクラスは、ドラゴンゾンビとして特殊背景がロードされ、特殊な戦闘アニメを実行されます。
+INFO.en=This class will be loaded with special backgrounds as dragon zombies and will perform special battle animations.\r\nDefault:0x65
+DEFAULT=0x65

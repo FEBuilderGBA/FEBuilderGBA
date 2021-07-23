@@ -1,0 +1,14 @@
+NAME=戦闘背景をマムクートにする特殊クラスID
+NAME.en=Special class ID to turn the battle background into a Manakete
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x070B7E
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+
+INFO=このクラスは、マムクートとして特殊背景がロードされます。\r\nディフォルト:0x3c\r\n注意:ドラゴンゾンビクラスより、クラスIDが小さい必要がある
+INFO.en=This class will be loaded with special backgrounds as Manakete and will perform special battle animations.\r\nDefault:0x3c\r\nNote: The class ID must be smaller than the dragon zombie class.
+DEFAULT=0x3c
