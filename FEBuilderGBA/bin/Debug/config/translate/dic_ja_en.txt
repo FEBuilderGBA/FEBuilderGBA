@@ -5021,3 +5021,4 @@ and defeating an enemy.
 ええっ！！　こんな貴重品を\r\n本当に売ってもいいの？@0003\r\n@0002売るなら@0080@0005ゴールドよ\r\n本当にいいの？　@0019	What? Are you sure you want to\r\nsell such a valuable item?@0003\r\n@0002That's worth @0080@0005 gold.\r\nAre you sure?@0019
 あらあら、こんな貴重品を\r\n本当に売ってもいいのかしら？@0003\r\n@0002本当に売るなら@0080@0005ゴールドよ\r\nよろしくて？　@0019	Oh dear. Are you sure you want to\r\nsell me such a valuable item?@0003\r\n@0002That's worth @0080@0005 gold.\r\nIs that all right?@0019
 それは貴重品ですが大丈夫ですか？	Are you selling valuable item?
+セレフィユ	Serafew

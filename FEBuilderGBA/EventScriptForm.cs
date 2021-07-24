@@ -124,6 +124,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.MAPMUSIC)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
                 isLabelJump = true;
@@ -1183,20 +1187,20 @@ namespace FEBuilderGBA
                                 , ref bounds, maxHeight, g, isWithDraw);
                         }
                     }
-                    else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
+                    else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MAPMUSIC)
                     {
                         text = SongTableForm.GetSongName(v);
 
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap;
-                        if (arg.Type == EventScript.ArgType.MUSIC)
-                        {//MUSIC
-                            bitmap = ImageSystemIconForm.MusicIcon(6);
-                        }
-                        else
+                        if (arg.Type == EventScript.ArgType.SOUND)
                         {//効果音
                             bitmap = ImageSystemIconForm.MusicIcon(7);
+                        }
+                        else
+                        {//MUSIC
+                            bitmap = ImageSystemIconForm.MusicIcon(6);
                         }
                         maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
                             , ref bounds, maxHeight, g, isWithDraw);

@@ -83,6 +83,29 @@ namespace FEBuilderGBA
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(save.FileNames[0]);
         }
+        //nodoll gba debuggerはクソだから、変な文字があるとハングアップしてしまうので、ちゃんと骨抜きする
+        static string ConvertNoDollGBASymName(string name)
+        {
+            name = U.term(name, "\t");
+            name = name.Trim();
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < name.Length; i++)
+            {
+                char c = name[i];
+                if (c < 0x20)
+                {
+                    //制御文字は不要
+                    continue;
+                }
+                if (c == 0x20)
+                {
+                    c = '_'; //スペースは_に変換する
+                }
+                sb.Append(c);
+            }
+            return sb.ToString();
+        }
 
         public static void AllMakeNoDollSymFile(Form self, string symfilename, InputFormRef.AutoPleaseWait wait)
         {
@@ -131,9 +154,7 @@ namespace FEBuilderGBA
 
                     //長いと不便なので、名前以外不要.
                     string name = pair.Value.Name;
-                    name = U.term(name, "\t");
-                    name = name.Replace(" ", "_"); //スペースがあるとダメらしい.
-                    name = name.Trim();
+                    name = ConvertNoDollGBASymName(name);
                     if (name == "")
                     {//名前が空
                         continue;
