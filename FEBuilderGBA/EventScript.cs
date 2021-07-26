@@ -61,7 +61,7 @@ namespace FEBuilderGBA
             , IF_CONDITIONAL //条件ID分岐
             , LABEL_CONDITIONAL //条件ID分岐とび先ラベル
             , GOTO_CONDITIONAL //条件ID分岐とび先GOTOラベル
-            , EARTHQUAKE //地震(00=横揺 01=縦揺)
+            , EARTHQUAKE //地震(00=横揺 01=縦揺 100=激しい揺れ)
             , ATTACK_TYPE //00:当てる 01:必殺 02:外す
             , WMREGION //世界地図の地名 (00=フレリア 01=グラド 02=ジャハナ 03=カルチノ 04=闇の樹海 05=ロストン 06=ポカラ 07=ルネス
             , WMENREGION //世界地図の英文字表記 for FE6

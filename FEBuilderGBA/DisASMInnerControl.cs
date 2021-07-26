@@ -19,7 +19,8 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 //            this.AddressList.OwnerDraw(DrawASM, DrawMode.OwnerDrawFixed);
-            this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            this.AddressList.OwnerDraw(DrawASMHexes, DrawMode.OwnerDrawFixed);
+//            this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.AddressList.ItemHeight = this.AddressList.Font.Height + 2;
         }
 
@@ -28,15 +29,26 @@ namespace FEBuilderGBA
             public uint Pointer;
             public uint Data;
             public uint Data2;
-            public Hexes(uint pointer, uint data)
+
+            public int Jisage;
+            public string CodeString;
+            public string OPDumpString;
+            public string Comment;
+
+            public Hexes(uint pointer, uint data, uint addr, string comment)
             {
                 this.Pointer = pointer;
                 if (U.isPointer(data))
                 {
                     this.Data = data;
                 }
+
+                this.Jisage = 0;
+                this.CodeString = "";
+                this.OPDumpString = U.MakeOPData(addr, 4);
+                this.Comment = comment;
             }
-            public Hexes(uint pointer, DisassemblerTrumb.Code code)
+            public Hexes(uint pointer, DisassemblerTrumb.Code code , int jisage ,uint  addr)
             {
                 this.Pointer = pointer;
                 if (U.isPointer(code.Data))
@@ -47,6 +59,11 @@ namespace FEBuilderGBA
                 {
                     this.Data2 = U.toPointer(code.Data2);
                 }
+
+                this.Jisage = jisage;
+                this.CodeString = code.ASM;
+                this.OPDumpString = U.MakeOPData(addr, code.GetLength());
+                this.Comment = code.Comment;
             }
         };
         List<Hexes> LineDataList = new List<Hexes>();
@@ -111,17 +128,18 @@ namespace FEBuilderGBA
                 if (ldrtable.ContainsKey(addr))
                 {//LDR参照のポインタデータが入っている
 
+                    uint data = Program.ROM.u32(addr);
                     uint ldr = ldrtable[addr];
                     if (ldr == U.NOT_FOUND)
                     {//switch case
                         this.AddressList.Items.Add(pointer.ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //SWITCH CASE");
+                        LineDataList.Add(new Hexes(pointer, data, addr, "   //SWITCH CASE"));
                     }
                     else
                     {
                         this.AddressList.Items.Add(pointer.ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //LDRDATA");
+                        LineDataList.Add(new Hexes(pointer, data, addr, "   //LDRDATA"));
                     }
-                    uint data = Program.ROM.u32(addr);
-                    LineDataList.Add(new Hexes(pointer, data));
                     addr += 4;
                     continue;
                 }
@@ -153,7 +171,7 @@ namespace FEBuilderGBA
                 }
 
                 this.AddressList.Items.Add(jisageSpaceData + pointer.ToString("X08") + " " + U.MakeOPData(addr, code.GetLength()) + "   " + code.ASM + code.Comment);
-                LineDataList.Add(new Hexes(pointer, code));
+                LineDataList.Add(new Hexes(pointer, code , jisage , addr));
 
                 if (code.Type == DisassemblerTrumb.CodeType.CONDJMP //条件式なので字下げ開始
                     )
@@ -603,6 +621,45 @@ namespace FEBuilderGBA
         private void check_vanilla_srccode_button_Click(object sender, EventArgs e)
         {
             MainFormUtil.OpenDisassembleSrcCode((uint)ReadStartAddress.Value);
+        }
+
+
+        Size DrawASMHexes(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= this.LineDataList.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Hexes h = this.LineDataList[index];
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            Font normalFont = lb.Font;
+            Rectangle bounds = listbounds;
+            int lineHeight = (int)lb.Font.Height;
+            int fontWidth = lineHeight / 2;
+
+            //ますは自下げする
+            bounds.X += (fontWidth * 2) * h.Jisage;
+            //アドレスを書く
+            U.DrawText(h.Pointer.ToString("X08"), g, normalFont, brush, isWithDraw, bounds);
+            bounds.X += (fontWidth) * 8;
+            //スペース1つほど
+            bounds.X += (fontWidth * 1);
+            //OPコードを書く
+            U.DrawText(h.OPDumpString, g, normalFont, brush, isWithDraw, bounds);
+            bounds.X += (fontWidth * h.OPDumpString.Length);
+            //スペース3つほど
+            bounds.X += (fontWidth * 3);
+            //メインとなるコードを書く
+            bounds.X += U.DrawText(h.CodeString, g, normalFont, brush, isWithDraw, bounds);
+            //スペース2つほど
+            bounds.X += (fontWidth * 2);
+            //コメントを書く
+            bounds.X += U.DrawText(h.Comment, g, normalFont, brush, isWithDraw, bounds);
+
+            brush.Dispose();
+            bounds.Y += lineHeight;
+            return new Size(bounds.X, bounds.Y);
         }
 
         public static Size DrawASM(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)

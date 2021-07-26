@@ -7579,6 +7579,8 @@ namespace FEBuilderGBA
                     return R._("横揺");
                 case 0x01:
                     return R._("縦揺");
+                case 0x0100:
+                    return R._("激しい揺れ");
             }
             return "";
         }

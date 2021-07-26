@@ -1,5 +1,6 @@
 //midi(Decimal)	midiname	fingerprint
 255	Dummy	SQ2d67b32ce7556c9736dab672a0cdd1a1
+255	Dummy	SQfe909d7394856ba6ee833abb46d02d6d
 
 //Nimap FE8
 //midi(Decimal)	midiname	fingerprint

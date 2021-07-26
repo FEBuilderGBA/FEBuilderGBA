@@ -4353,7 +4353,7 @@ r3=X tile position of menu of the right	{U}
 080012CC	SetLCDVCountSetting	{J}
 080012D8	SetMainUpdateRoutine	{J}
 080012E4	ExecMainUpdate	{J}
-08001302	_UpdateKeyStatus	{J}
+080012FC	_UpdateKeyStatus	{J}
 0800139C	UpdateKeyStatus	{J}
 080013DC	ResetKeyStatus	{J}
 080013FC	SetKeyStatus_IgnoreMask	{J}

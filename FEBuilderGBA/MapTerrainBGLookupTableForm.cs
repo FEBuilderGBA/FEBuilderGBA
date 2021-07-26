@@ -143,7 +143,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint listSelected = U.atoh(ptrn[1]) - 1;
+            uint listSelected = U.atoh(ptrn[1]);
             uint filterSelected = U.atoh(ptrn[2]);
             MapTerrainBGLookupTableForm f = (MapTerrainBGLookupTableForm)
                 InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();

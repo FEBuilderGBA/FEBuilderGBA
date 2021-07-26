@@ -4,8 +4,12 @@
 03=一个洞穴
 04=平原
 05=黄昏
+06=Town
 07=夜
 08=船
 09=沙漠
+0A=Castle
+0B=Desert Underground
+0C=Remains
 0D=恶魔之岛
 0E=夜

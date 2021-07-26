@@ -40,8 +40,7 @@
 253BXXXX	[XXXX:UNIT:Character]with SHINY []frame	{WAKU}
 223B0000	[]Erase frame(CURE)	{WAKU}
 20010000	Return[TERM](ENDA)	{TERM}
-21010000	Event end[TERM](ENDB)	{TERM}
-
+21010000	Event end,Not execute CALL caller[TERM](ENDB)(LOW)	{TERM}
 200EXXXX	[XXXX:FSEC:Duration (1/60 second)]Wait(STAL)	@WAIT	{WAIT}	{MAPEFFECT}
 220EXXXX	[XXXX:FSEC:Duration (1/60 second)]Wait(STAL_FAST)(LOW)	@WAIT	Stall for x frames (sped up if A is held or fast game speed)	{WAIT}	{MAPEFFECT}
 230EXXXX	[XXXX:FSEC:Duration (1/60 second)]Wait(STAL_SKIP_FAST)(LOW)	@WAIT	Stall for x frames (combines behavior of STALL_SKIP and STALL_FAST)	{WAIT}	{MAPEFFECT}
@@ -49,7 +48,7 @@
 20020200	Stop here if you're skipping events(EVBIT_F 2)	{MAP}	{EVBIT}
 28020700	No Fade(EVBIT_T 7)	{MAP}	{EVBIT}
 2802070020010000	Event end(also serves as a section to no fade)[TERM](EVBIT_T+ENDA)	{TERM}
-2802070021010000	Event end(also serves as a section to no fade, and high speed)[TERM](EVBIT_T+ENDB)	{TERM}
+2802070021010000	Event end(also serves as a section to no fade,Not execute CALL caller)[TERM](EVBIT_T+ENDB)(LOW)	{TERM}
 400A0000XXXXXXXX	Call[XXXXXX:POINTER_EVENT:event](CALL)	{SUBROUTINE}
 400A0000FFFFFFFF	Call 0xFFFFFF(LOW)
 2902XXXX	Flag ON[XXXX:FLAG:Flag](ENUT)	{FLAG}

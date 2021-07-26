@@ -4,8 +4,12 @@
 03=cave
 04=Plains
 05=Sunset
+06=Town
 07=Night
 08=Ship
 09=Desert
+0A=Castle
+0B=Desert Underground
+0C=Remains
 0D=Dread Isle
 0E=Night
