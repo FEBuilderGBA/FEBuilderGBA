@@ -1,4 +1,4 @@
-﻿NAME=再生しているSEを全部停止させます(イベント命令)
+NAME=再生しているSEを全部停止させます(イベント命令)
 NAME.en=Add Event: Stop all playing SoundEffect
 NAME.zh=Add Event: Stop all playing SoundEffect
 
@@ -16,3 +16,5 @@ EVENTSCRIPT:1.zh=400D0000{$L1:FadeOutChannelForSoundSE.dmp}	Stop all playing Sou
 INFO=再生している効果音をすべて停止します。
 
 AUTHOR=7743
+INFO.en=Stops all playing sound effects.
+INFO.zh=停止所有正在播放的音效。

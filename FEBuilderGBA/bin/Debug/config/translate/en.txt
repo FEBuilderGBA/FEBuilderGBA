@@ -4690,6 +4690,9 @@ Sway
 :縦揺
 Tremor
 
+:激しい揺れ
+Violent shaking.
+
 :当てる
 Hit
 

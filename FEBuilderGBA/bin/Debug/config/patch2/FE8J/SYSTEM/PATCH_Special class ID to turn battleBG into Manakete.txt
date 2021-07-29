@@ -12,3 +12,5 @@ AUTHOR=7743
 INFO=このクラスは、マムクートとして特殊背景がロードされます。\r\nディフォルト:0x3c\r\n注意:ドラゴンゾンビクラスより、クラスIDが小さい必要がある
 INFO.en=This class will be loaded with special backgrounds as Manakete and will perform special battle animations.\r\nDefault:0x3c\r\nNote: The class ID must be smaller than the dragon zombie class.
 DEFAULT=0x3c
+NAME.zh=制作战斗背景Mamkuto的特殊职业ID。
+INFO.zh=这个类加载了一个特殊的背景作为 Mamkut。\r\n默认值：0x3c。\r\n注意：类ID必须小于龙僵尸类。

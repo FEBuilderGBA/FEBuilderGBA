@@ -12,3 +12,5 @@ AUTHOR=7743
 INFO=このクラスは、魔王として特殊背景がロードされ、特殊な戦闘アニメを実行されます。\r\nディフォルト:0x66\r\n注意:ドラゴンゾンビクラスより、クラスIDが大きい必要がある
 INFO.en=This class will be loaded with special backgrounds as Demon King and will perform special battle animations.\r\nDefault:0x66\r\nNote: The class ID must be higher than the dragon zombie class.
 DEFAULT=0x66
+NAME.zh=使战斗背景成为魔王的特殊职业ID。
+INFO.zh=在这个类中，加载了一个特殊的背景作为一个恶魔之王，并执行了一个特殊的战斗动画。\r\n默认值：0x66。\r\n注意：等级ID必须高于龙僵尸等级。

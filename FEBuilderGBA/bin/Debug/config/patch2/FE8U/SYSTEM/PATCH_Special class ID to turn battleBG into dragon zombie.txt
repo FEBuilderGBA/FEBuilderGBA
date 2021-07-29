@@ -12,3 +12,5 @@ AUTHOR=7743
 INFO=このクラスは、ドラゴンゾンビとして特殊背景がロードされ、特殊な戦闘アニメを実行されます。
 INFO.en=This class will be loaded with special backgrounds as dragon zombies and will perform special battle animations.\r\nDefault:0x65
 DEFAULT=0x65
+NAME.zh=使战斗背景变成龙僵尸的特殊职业ID。
+INFO.zh=该类将加载特殊背景作为龙僵尸，并将执行特殊的战斗动画。
