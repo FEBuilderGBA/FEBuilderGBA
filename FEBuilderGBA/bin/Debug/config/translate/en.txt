@@ -4526,7 +4526,7 @@ Frelia, Rausten~Near Carcino
 Carcino
 
 :カルチノ ～ ルネス付近
-Carcino~Near Ruthnes
+Carcino~Near Renais
 
 :ルネス
 Renais

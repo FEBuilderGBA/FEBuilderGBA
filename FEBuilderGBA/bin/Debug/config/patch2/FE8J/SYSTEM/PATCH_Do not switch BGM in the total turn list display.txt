@@ -1,0 +1,11 @@
+NAME=ターン数一覧表示でBGMを切り替えない
+NAME.en=Do not switch BGM in the total turn list display
+
+INFO=エンディングのクリアターン数一覧を表示する画面で、特定の音楽を再生するのを防止ます。\r\nイベント命令で直前に再生した音楽をそのまま再生します。\r\nディフォルトは、MUSIC_epilogue で指定された音楽を再生します。\r\nこのパッチは、その曲の再生を抑制し、イベントから好きな音楽を指定することができるようにします。
+INFO.en=Prevents specific music from being played on the screen that displays the list of clear turns for the ending.\r\nPlays the music that was played immediately before in the event instruction as is.\r\nThe default is to play the music specified by MUSIC_epilogue.\r\nThis patch suppresses the playback of the song and allows you to specify your favorite music from the event.
+
+TYPE=ADDR
+ADDRESS=0x0BCFDE
+COMBO=Default|0x45 0xF7 0x21 0xFA|FIX: Do not play specific song|0x00 0x00 0x00 0x00
+
+TAG=#SOUND

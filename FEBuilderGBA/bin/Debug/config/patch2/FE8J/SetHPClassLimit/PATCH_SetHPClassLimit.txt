@@ -5,8 +5,11 @@ AUTHOR=7743
 TYPE=BIN
 
 PATCHED_IF:0x017EE0=0x00 0x4A 0x97 0x46
-BIN:$FREEAREA=SetHPClassLimit.dmp
+BIN:$FREEAREA:1=SetHPClassLimit.dmp
 JUMP:0x017EE0:$r2=SetHPClassLimit.dmp
+BIN:$FREEAREA:2=SetHPClassLimit2.dmp
+JUMP:0x02BE96:$r0=SetHPClassLimit2.dmp
+
 HINT=HP caps
 NAME.en=Change Max HP limit to use set in class editor
 INFO.en=Fixed an issue where HP caps would be ignored if set by class.\r\nSet the player and NPC HP limits to the value specified in the class.\r\nThe maximum enemy HP is 120.(Can be changed with the enemy HP upper limit change patch.However, It recommend that you do not increase it beyond 120).\r\nIn addition, when making a doping item that lowers HP, the problem that HP becomes negative value will be fixed at the same time.

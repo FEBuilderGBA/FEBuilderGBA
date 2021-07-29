@@ -1,0 +1,4 @@
+PlayerOrNPC=$02
+Join=$06
+NormalGrows=$16
+FixGrows=$0C

@@ -177,7 +177,8 @@ namespace FEBuilderGBA
                 filename = open.FileNames[0];
             }
 
-            uint songtable_address = InputFormRef.BaseAddress + (InputFormRef.BlockSize * (uint)AddressList.SelectedIndex);
+            uint song_id = (uint)AddressList.SelectedIndex;
+            uint songtable_address = InputFormRef.BaseAddress + (InputFormRef.BlockSize * song_id);
 
             string error = "";
 
@@ -274,6 +275,7 @@ namespace FEBuilderGBA
                 R.ShowStopError(error);
                 return;
             }
+            R.Notify("{0}, SongID: {1} ,Ext: {2} ,Filename: {3}", this.Text, song_id, ext, filename);
 
             int selectedIndex = AddressList.SelectedIndex;
             ReloadListButton.PerformClick();

@@ -11,3 +11,6 @@ NAME.zh=音乐_尾声
 INFO=エンディングのクリアターン数一覧を表示する画面のBGM
 INFO.en=BGM on the screen that displays a list of clear ending turns.
 INFO.zh=屏幕上的背景音乐显示清晰的结束回合列表。
+
+CONFLICT_IF:0xBCFDE=0x00 0x00 0x00 0x00
+CONFLICT_MESSAGE=Do not switch BGM in the total turn list display
