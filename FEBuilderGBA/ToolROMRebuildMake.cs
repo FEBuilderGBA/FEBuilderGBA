@@ -82,14 +82,29 @@ namespace FEBuilderGBA
             public Address UseAddress;
         };
 
-        //重複するアドレスがあった場合、より説明できる方を採用する.
-        void OptimizeList(InputFormRef.AutoPleaseWait wait,List<Address> list)
+        bool IsPointerData(Address a)
+        {
+            if (a.Length > 4)
+            {
+                return false;
+            }
+            if (a.DataType == Address.DataTypeEnum.UnkMIX
+              || a.DataType == Address.DataTypeEnum.POINTER
+              || a.DataType == Address.DataTypeEnum.POINTER_ASM
+              )
+            {
+                return true;
+            }
+            return false;
+        }
+
+        Dictionary<Address, uint> OptimizeList_MakeScore(InputFormRef.AutoPleaseWait wait, List<Address> list)
         {
             int orignalCount = (int)list.Count;
+            wait.DoEvents(R._("データを最適化中... {0}({1})", orignalCount, 0));
 
-            wait.DoEvents(R._("データを最適化中... {0}({1})", orignalCount,0));
             Dictionary<Address, uint> scoreCache = new Dictionary<Address, uint>();
-            for (int i = 0; i < list.Count; i++ )
+            for (int i = 0; i < list.Count; i++)
             {
                 Address a = list[i];
                 uint a_point = 0;
@@ -127,18 +142,24 @@ namespace FEBuilderGBA
                 {//BIN
                     a_point += 0x15;
                 }
-                
+
                 a_point += a.Length;
                 scoreCache[a] = a_point;
             }
+            return scoreCache;
+        }
+        void OptimizeList_SameAddr(InputFormRef.AutoPleaseWait wait, List<Address> list, Dictionary<Address, uint> scoreCache)
+        {
+            int orignalCount = (int)list.Count;
 
+            //アドレスが同じデータがあった場合は、消去する
             for (int i = 0; i < list.Count; )
             {
                 Address a = list[i];
                 uint a_point = scoreCache[a];
 
                 bool isDeleteIT = false;
-                for (int n = i+1; n < list.Count;  )
+                for (int n = i + 1; n < list.Count; )
                 {
                     Address b = list[n];
                     if (a.Addr != b.Addr)
@@ -171,7 +192,77 @@ namespace FEBuilderGBA
 
                 i++;
             }
+        }
 
+        void OptimizeList_MeaninglessPointer(InputFormRef.AutoPleaseWait wait, List<Address> list, Dictionary<Address, uint> scoreCache)
+        {
+            int orignalCount = (int)list.Count;
+
+            //無意味なポインタの消去
+            for (int i = 0; i < list.Count; )
+            {
+                Address a = list[i];
+                if (a.Addr < this.RebuildAddress)
+                {
+                    i++;
+                    continue;
+                }
+                if (!IsPointerData(a))
+                {
+                    i++;
+                    continue;
+                }
+                uint a_data = Program.ROM.u32(a.Addr);
+                //ここまででポインタであることが確定
+
+                bool isDeleteIT = false;
+                for (int n = 0; n < list.Count; )
+                {
+                    if (i == n)
+                    {//自分自身
+                        n++;
+                        continue;
+                    }
+
+                    Address b = list[n];
+                    if (IsPointerData(b))
+                    {
+                        n++;
+                        continue;
+                    }
+                    if (a.Addr >= b.Addr && a.Addr < b.Addr + b.Length)
+                    {
+                        isDeleteIT = true;
+                        break;
+                    }
+                    uint b_data = Program.ROM.u32(b.Addr);
+                    if (a_data == b_data)
+                    {//全く同じ内容が登場する
+                        isDeleteIT = true;
+                        break;
+                    }
+
+                    n++;
+                }
+
+                if (isDeleteIT)
+                {
+                    list.RemoveAt(i);
+                    wait.DoEvents(R._("データを最適化中... {0}({1})", orignalCount, list.Count - orignalCount));
+                    continue;
+                }
+
+                i++;
+            }
+        }
+
+        //重複するアドレスがあった場合、より説明できる方を採用する.
+        void OptimizeList(InputFormRef.AutoPleaseWait wait,List<Address> list)
+        {
+            Dictionary<Address, uint> scoreCache = OptimizeList_MakeScore(wait, list);
+
+            OptimizeList_SameAddr(wait, list, scoreCache);
+            OptimizeList_MeaninglessPointer(wait, list, scoreCache);
         }
 
         enum PointerType
@@ -343,11 +434,12 @@ namespace FEBuilderGBA
                 {//リビルド領域に設置するポインタは無意味である。なぜなら追加だからだ.
                     continue;
                 }
+
                 Address.AddAddress(this.StructList
                     , a.Pointer
                     , 0
                     , U.NOT_FOUND
-                    , "POINTER:" + a.Info
+                    , "AppendPointer:" + a.Info
                     , Address.DataTypeEnum.POINTER);
             }
         }
@@ -719,6 +811,21 @@ namespace FEBuilderGBA
             }
 
             wait.DoEvents(R._("ポインタ検出中..."));
+            ProcssPointer(refCmdList, processedAddress);
+
+            wait.DoEvents(R._("未知のハックを探索中..."));
+            FindUnknownHack2(refCmdList,processedAddress);
+
+            StringBuilder rebuildData = new StringBuilder();
+            rebuildData.Append(RefSortSimple(wait, refCmdList));
+//            rebuildData.Append(AppendAssert(ldrmap));
+
+            U.WriteAllText(filename, rebuildData.ToString());
+        }
+
+        //まだ処理していないポインタがあったら追記する.
+        void ProcssPointer(List<RefCmd> refCmdList, bool[] processedAddress)
+        {
             for (int i = 0; i < StructList.Count; i++)
             {
                 Address a = StructList[i];
@@ -732,6 +839,10 @@ namespace FEBuilderGBA
                     continue;
                 }
                 processedAddress[a.Pointer] = true;
+                if (IsAlreadyProcessedPointer(a, i))
+                {
+                    continue;
+                }
 
                 Address p = new Address(a.Pointer, 4, U.NOT_FOUND, "POINTER_" + a.Info, Address.DataTypeEnum.POINTER);
 
@@ -745,15 +856,24 @@ namespace FEBuilderGBA
                 refCmd.UseAddress = p;
                 refCmdList.Add(refCmd);
             }
+        }
 
-            wait.DoEvents(R._("未知のハックを探索中..."));
-            FindUnknownHack2(refCmdList,processedAddress);
-
-            StringBuilder rebuildData = new StringBuilder();
-            rebuildData.Append(RefSortSimple(wait, refCmdList));
-//            rebuildData.Append(AppendAssert(ldrmap));
-
-            U.WriteAllText(filename, rebuildData.ToString());
+        //既に処理されたポインタ
+        bool IsAlreadyProcessedPointer(Address a , int i)
+        {
+            for (int n = 0; n < StructList.Count; n++)
+            {
+                if (i == n)
+                {
+                    continue;
+                }
+                Address b = StructList[n];
+                if (a.Pointer >= b.Addr && a.Pointer < b.Addr + b.Length)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         string AppendAssert(List<DisassemblerTrumb.LDRPointer> ldrmap)

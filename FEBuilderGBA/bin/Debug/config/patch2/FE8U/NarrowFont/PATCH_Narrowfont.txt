@@ -147,3 +147,6 @@ TEXTESCAPE:268=@00C2@00BE	[MonsterIcon]	Small Font Icon	From Narrow Number	{UTF-
 PATCHED_IF:$FGREP4 MenuLowercase/z.img.bin=0x00 0x00 0x00 0x00
 ALLOC_DATAONLY_HINT=true
 IF_ENCODING=UTF-8
+
+//かなり領域を消費する
+ALLOC_SIZE_HINT=0x1E00

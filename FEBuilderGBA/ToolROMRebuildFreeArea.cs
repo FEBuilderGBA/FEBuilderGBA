@@ -90,6 +90,7 @@ namespace FEBuilderGBA
             , uint length, Dictionary<uint, uint> useMap)
         {
             uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+//            uint addr = 0x100;
             for (; addr < length; addr += 4)
             {
                 byte filldata;

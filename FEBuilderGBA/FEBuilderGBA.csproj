@@ -2096,6 +2096,12 @@
     <Compile Include="SkillConfigFE8NVer3SkillForm.Designer.cs">
       <DependentUpon>SkillConfigFE8NVer3SkillForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RAMRewriteToolMAPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RAMRewriteToolMAPForm.Designer.cs">
+      <DependentUpon>RAMRewriteToolMAPForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3101,6 +3107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkillConfigFE8NVer3SkillForm.resx">
       <DependentUpon>SkillConfigFE8NVer3SkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAMRewriteToolMAPForm.resx">
+      <DependentUpon>RAMRewriteToolMAPForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

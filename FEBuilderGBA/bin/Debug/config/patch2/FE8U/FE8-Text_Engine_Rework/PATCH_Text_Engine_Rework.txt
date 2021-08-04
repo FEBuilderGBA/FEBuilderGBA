@@ -71,3 +71,6 @@ TEXTESCAPE:03808=@0080@0038@0008	[TextSpeed_Slow]	TextSpeed 0x8=Slow
 TEXTESCAPE:038FF=@0080@0038	[TextSpeed]	TextSpeed[1=Fast 4=Normal 8=Slow]
 
 PATCHED_IF:0x6FD0=0xF0 0xB5 0x82 0xB0
+
+//想像以上に領域を消費する
+ALLOC_SIZE_HINT=0xA200

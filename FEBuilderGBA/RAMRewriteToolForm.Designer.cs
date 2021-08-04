@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CopyPointer = new System.Windows.Forms.Button();
             this.CopyNoDollGBARadBreakPoint = new System.Windows.Forms.Button();
-            this.CopyLittleEndian = new System.Windows.Forms.Button();
-            this.CopyClipboard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ReWriteValue = new System.Windows.Forms.NumericUpDown();
             this.ReWriteButton = new System.Windows.Forms.Button();
             this.ValueTextBox = new FEBuilderGBA.TextBoxEx();
+            this.CopyLittleEndian = new System.Windows.Forms.Button();
+            this.CopyClipboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ReWriteValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,28 +69,6 @@
             this.CopyNoDollGBARadBreakPoint.Text = "no$gbaの読込ブレークポイントとしてコピー";
             this.CopyNoDollGBARadBreakPoint.UseVisualStyleBackColor = true;
             this.CopyNoDollGBARadBreakPoint.Click += new System.EventHandler(this.CopyNoDollGBARadBreakPoint_Click);
-            // 
-            // CopyLittleEndian
-            // 
-            this.CopyLittleEndian.Location = new System.Drawing.Point(19, 167);
-            this.CopyLittleEndian.Margin = new System.Windows.Forms.Padding(4);
-            this.CopyLittleEndian.Name = "CopyLittleEndian";
-            this.CopyLittleEndian.Size = new System.Drawing.Size(404, 44);
-            this.CopyLittleEndian.TabIndex = 6;
-            this.CopyLittleEndian.Text = "リトルエンディアンポインタとしてクリップボードへコピー";
-            this.CopyLittleEndian.UseVisualStyleBackColor = true;
-            this.CopyLittleEndian.Click += new System.EventHandler(this.CopyLittleEndian_Click);
-            // 
-            // CopyClipboard
-            // 
-            this.CopyClipboard.Location = new System.Drawing.Point(19, 115);
-            this.CopyClipboard.Margin = new System.Windows.Forms.Padding(4);
-            this.CopyClipboard.Name = "CopyClipboard";
-            this.CopyClipboard.Size = new System.Drawing.Size(404, 44);
-            this.CopyClipboard.TabIndex = 5;
-            this.CopyClipboard.Text = "クリップボードへコピー";
-            this.CopyClipboard.UseVisualStyleBackColor = true;
-            this.CopyClipboard.Click += new System.EventHandler(this.CopyClipboard_Click);
             // 
             // label2
             // 
@@ -136,6 +114,28 @@
             this.ValueTextBox.Size = new System.Drawing.Size(100, 25);
             this.ValueTextBox.TabIndex = 1;
             // 
+            // CopyLittleEndian
+            // 
+            this.CopyLittleEndian.Location = new System.Drawing.Point(19, 167);
+            this.CopyLittleEndian.Margin = new System.Windows.Forms.Padding(4);
+            this.CopyLittleEndian.Name = "CopyLittleEndian";
+            this.CopyLittleEndian.Size = new System.Drawing.Size(404, 44);
+            this.CopyLittleEndian.TabIndex = 6;
+            this.CopyLittleEndian.Text = "リトルエンディアンポインタとしてクリップボードへコピー";
+            this.CopyLittleEndian.UseVisualStyleBackColor = true;
+            this.CopyLittleEndian.Click += new System.EventHandler(this.CopyLittleEndian_Click);
+            // 
+            // CopyClipboard
+            // 
+            this.CopyClipboard.Location = new System.Drawing.Point(19, 115);
+            this.CopyClipboard.Margin = new System.Windows.Forms.Padding(4);
+            this.CopyClipboard.Name = "CopyClipboard";
+            this.CopyClipboard.Size = new System.Drawing.Size(404, 44);
+            this.CopyClipboard.TabIndex = 5;
+            this.CopyClipboard.Text = "クリップボードへコピー";
+            this.CopyClipboard.UseVisualStyleBackColor = true;
+            this.CopyClipboard.Click += new System.EventHandler(this.CopyClipboard_Click);
+            // 
             // RAMRewriteToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -165,10 +165,10 @@
         private TextBoxEx ValueTextBox;
         private System.Windows.Forms.Button CopyPointer;
         private System.Windows.Forms.Button CopyNoDollGBARadBreakPoint;
-        private System.Windows.Forms.Button CopyLittleEndian;
-        private System.Windows.Forms.Button CopyClipboard;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown ReWriteValue;
         private System.Windows.Forms.Button ReWriteButton;
+        private System.Windows.Forms.Button CopyLittleEndian;
+        private System.Windows.Forms.Button CopyClipboard;
     }
 }
