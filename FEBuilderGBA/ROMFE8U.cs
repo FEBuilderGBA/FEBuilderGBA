@@ -61,6 +61,7 @@ namespace FEBuilderGBA
         public uint map_mapchange_pointer() { return 0x0346AC; }   //マップ設定の開始位置(mapchange)
         public uint map_event_pointer() { return 0x0346DC; }       //マップ設定の開始位置(event)
         public uint map_worldmapevent_pointer() { return 0x0; } //マップ設定の開始位置(worldmap (FE6のみ))
+        public uint map_map_pointer_list_default_size() { return 0xEC; } //PLIST拡張をしていない時のバニラでのPLISTの数
         public uint image_battle_animelist_pointer() { return 0x059BD8; }   // 戦闘アニメリストの開始位置
         public uint support_unit_pointer() { return 0x803D90; }   // 支援相手の開始位置
         public uint support_talk_pointer() { return 0x084784; }   // 支援会話の開始位置
@@ -197,6 +198,9 @@ namespace FEBuilderGBA
         public uint systemmenu_badstatus_palette_pointer() { return 0x898C0; } //バッドステータスのパレット
         public uint systemmenu_badstatus_old_image_pointer() { return 0; } //昔の圧縮のバッドステータス画像 FE7-FE6で 毒などのステータス
         public uint systemmenu_badstatus_old_palette_pointer() { return 0x0; } //昔の圧縮のバッドステータス画像のパレット FE7 FE6
+
+        public uint systemmenu_ed_dialog_tsa_1_pointer() { return 0x0; } //HeaderTSA EDのその後の活躍紹介に利用する枠
+        public uint systemmenu_ed_dialog_tsa_2_pointer() { return 0x0; } //HeaderTSA EDのその後の活躍紹介に利用する枠
 
         public uint bigcg_pointer() { return 0xB65F0; } // CG
         public uint end_cg_address() { return 0x206C08; } // END CG FE8のみ

@@ -2808,15 +2808,15 @@ namespace FEBuilderGBA
 
         public static bool isSafetyLength(uint addr, uint length)
         {
-            if (!U.isSafetyOffset(addr + length))
+            uint a = addr + length;
+            if (a < 0x02000000 && a >= 0x00000100 && a <= Program.ROM.Data.Length)
             {
-                return false;
+                if (length < 0x00200000)
+                {
+                    return true;
+                }
             }
-            if (length >= 0x00200000)
-            {
-                return false;
-            }
-            return true;
+            return false;
         }
 
         [MethodImpl(256)]

@@ -61,6 +61,7 @@ namespace FEBuilderGBA
         uint map_mapchange_pointer();   //マップ設定の開始位置(mapchange)
         uint map_event_pointer();       //マップ設定の開始位置(event)
         uint map_worldmapevent_pointer(); //マップ設定の開始位置(worldmap (FE6のみ))
+        uint map_map_pointer_list_default_size(); //PLIST拡張をしていない時のバニラでのPLISTの数
         uint image_battle_animelist_pointer();  // 戦闘アニメリストの開始位置
         uint support_unit_pointer();  // 支援相手の開始位置
         uint support_talk_pointer();  // 支援会話の開始位置

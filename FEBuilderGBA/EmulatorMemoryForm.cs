@@ -1459,6 +1459,7 @@ namespace FEBuilderGBA
             uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0xD;
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_FOG_VALUE.Value);
+            EmulatorMemoryUtil.CHEAT_CALLUpdateUnits();
 
             InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
         }

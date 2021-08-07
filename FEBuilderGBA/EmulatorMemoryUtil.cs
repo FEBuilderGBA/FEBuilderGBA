@@ -518,6 +518,100 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
             return;
         }
+        public static void CHEAT_CALLUpdateUnits()
+        {
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
+            uint endAllMenusFunction;
+            uint RefreshFogAndUnitMapsFunction;
+            uint SMS_UpdateFromGameDataFunction;
+            uint UpdateGameTilesGraphicsFunction;
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//FE8J
+                    endAllMenusFunction = 0x0804FCAC;
+                    RefreshFogAndUnitMapsFunction = 0x08019ecc;
+                    SMS_UpdateFromGameDataFunction = 0x08027144;
+                    UpdateGameTilesGraphicsFunction = 0x08019914;
+                }
+                else
+                {//FE8U
+                    endAllMenusFunction = 0x0804ef20;
+                    RefreshFogAndUnitMapsFunction = 0x0801a1f4;
+                    SMS_UpdateFromGameDataFunction = 0x080271a0;
+                    UpdateGameTilesGraphicsFunction = 0x08019c3c;
+                }
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//FE7J
+                    endAllMenusFunction = 0x0804AC78;
+                    RefreshFogAndUnitMapsFunction = 0x08019ea4;
+                    SMS_UpdateFromGameDataFunction = 0x08025bb0;
+                    UpdateGameTilesGraphicsFunction = 0x080198ec;
+                }
+                else
+                {//FE7U
+                    endAllMenusFunction = 0x0804A490;
+                    RefreshFogAndUnitMapsFunction = 0x08019abc;
+                    SMS_UpdateFromGameDataFunction = 0x08025724;
+                    UpdateGameTilesGraphicsFunction = 0x08019504;
+                }
+            }
+            else
+            {//FE6
+                endAllMenusFunction = 0x08041A38;
+                RefreshFogAndUnitMapsFunction = 0x080190f4;
+                SMS_UpdateFromGameDataFunction = 0x08022094;
+                UpdateGameTilesGraphicsFunction = 0x08018d90;
+            }
+
+
+            //Search MAPTASK Procs
+            uint maptask = SearchMapTaskProcsAddr();
+            if (maptask == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            byte[] warpCode = { 
+            //ASM
+            0x00, 0xB5, 0x08, 0x49, 0x41, 0x60, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x07, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x03, 0x20, 0x06, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x06, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x01, 0xBC, 0x00, 0x47,
+            0x11, 0x11, 0x11, 0x11, 
+            0x22, 0x22, 0x22, 0x22, 
+            0x33, 0x33, 0x33, 0x33, 
+            0x44, 0x44, 0x44, 0x44, 
+            0x55, 0x55, 0x55, 0x55,
+
+            //hook procs +38
+            0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x02, 0x0E, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+            0x30, 0x5E, 0x5C, 0x08, //backCode
+            0xAC, 0xFC, 0x04, 0x08, 
+            0x4C, 0xF4, 0x08, 0x08, 
+            0x40, 0xD3, 0x00, 0x08  //eventExecuteFucntion
+            };
+            //Procsで実行を指定するASMコードの位置
+            U.write_u32(warpCode, 0x3C, work_address + 1);
+
+            //メニューがあれば閉じる命令
+            U.write_u32(warpCode, 0x28, endAllMenusFunction);
+            //画面更新
+            U.write_u32(warpCode, 0x2C, RefreshFogAndUnitMapsFunction);
+            U.write_u32(warpCode, 0x30, UpdateGameTilesGraphicsFunction);
+            U.write_u32(warpCode, 0x34, SMS_UpdateFromGameDataFunction);
+
+            //復帰するProcsのコード
+            uint backCode = Program.RAM.u32(maptask + 4);
+            U.write_u32(warpCode, 0x24, backCode);
+            Program.RAM.write_range(work_address, warpCode);
+
+            uint procs_jump_addr = work_address + 0x38;
+            Program.RAM.write_u32(maptask + 4, procs_jump_addr);
+
+            return;
+        }
         public static string GetRAMUnitAIDToName(uint aid)
         {
             if (aid == 0)

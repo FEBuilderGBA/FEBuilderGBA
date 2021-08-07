@@ -362,11 +362,7 @@ namespace FEBuilderGBA
         {
             List<uint> addrList = new List<uint>();
 
-            uint extendsArea = 0x01000000;
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                extendsArea = 0x01000000 / 2;
-            }
+            uint extendsArea = U.toOffset(Program.ROM.RomInfo.extends_address());
 
             uint addr;
             //00=ファイル末尾

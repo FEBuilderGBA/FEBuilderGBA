@@ -17,7 +17,7 @@ namespace FEBuilderGBA
         {
         }
 
-        const int FREEAREA_BLOCK_SIZE = 1024;
+        const int FREEAREA_BLOCK_SIZE = 2048;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
@@ -168,8 +168,8 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                uint use_addr = U.Padding4(p.Addr);
 
+                uint use_addr = U.Padding4(p.Addr);
                 if (current_addr < use_addr)
                 {//非拡張領域を処理しているときに、
                  //現在処理している領域より先の領域を割り当ててはいけない。

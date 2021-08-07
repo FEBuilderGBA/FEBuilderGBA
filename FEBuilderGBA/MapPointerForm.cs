@@ -55,6 +55,15 @@ namespace FEBuilderGBA
         static InputFormRef Init(Form self, bool isPLISTSplit)
         {
             List<U.AddrResult> mapSetting = MapSettingForm.MakeMapIDList();
+            uint limit;
+            if (isPLISTSplit)
+            {//plistはbyteで参照するため、255までしかありえない
+                limit = 256;
+            }
+            else
+            {
+                limit = Program.ROM.RomInfo.map_map_pointer_list_default_size();
+            }
 
             InputFormRef ifr = null;
             ifr = new InputFormRef(self
@@ -67,16 +76,11 @@ namespace FEBuilderGBA
                     {
                         return true;
                     }
-                    if (i >= 256)
-                    {//plistはbyteで参照するため、255までしかありえない
+                    if (i >= limit)
+                    {
                         return false;
                     }
-                    if (isPLISTSplit)
-                    {
-                        return U.isPointerOrNULL(Program.ROM.u32(addr + 0));
-                    }
-                    //0 がポインタであればデータがあると考える.
-                    return U.isPointer(Program.ROM.u32(addr + 0));
+                    return true;
                 }
                 , (int i, uint addr) =>
                 {
