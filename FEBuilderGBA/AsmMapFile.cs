@@ -15,27 +15,27 @@ namespace FEBuilderGBA
         }
         public AsmMapFile(ROM rom)
         {
-            if (Program.ROM.RomInfo.version() == 0)
+            if (rom.RomInfo.version() == 0)
             {
                 return;
             }
 
             string asmmap;
-            asmmap = U.ConfigDataFilename("asmmap_addition_", Program.ROM);
+            asmmap = U.ConfigDataFilename("asmmap_addition_", rom);
             if (File.Exists(asmmap))
             {//追加マップファイル
                 Log.Notify("Load asmmap_addition", asmmap);
                 //型情報のスキャン.
-                ASMMapLoadStruct(asmmap, Program.ROM);
+                ASMMapLoadStruct(asmmap, rom);
                 //逆アセンブラ用 map
-                ASMMapLoadResource(asmmap, Program.ROM);
+                ASMMapLoadResource(asmmap, rom);
             }
             //ROM情報をmapとして利用する.
             ROMInfoLoadResource(this.AsmMap, isWithOutProcs: false);
             //構造体スキャン
             ROMTypeLoadResource();
 
-            Load(Program.ROM);
+            Load(rom);
 
             //MargeS("FE8_clean.sym");
         }

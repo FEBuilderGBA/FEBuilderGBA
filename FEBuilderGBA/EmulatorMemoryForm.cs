@@ -56,9 +56,6 @@ namespace FEBuilderGBA
             this.PROCS_InputFormRef = new InputFormRef(this, "PROCS_", 0, 0);
             this.PARTY_InputFormRef = new InputFormRef(this, "PARTY_", 0, 0);
 
-            //ダブルクリックで変更できるようにする
-            this.PARTY_InputFormRef.Init_DoubleClickToDirectRAMEdit();
-
             //頻繁にリストを更新するのでBrushをキャッシュする.
             this.ListBoxForeBrush = new SolidBrush(OptionForm.Color_Control_ForeColor());
             this.ListBoxForeKeywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
@@ -1459,7 +1456,6 @@ namespace FEBuilderGBA
             uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             uint writeRAMPointer = stageStructAddr + 0xD;
             Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_FOG_VALUE.Value);
-            EmulatorMemoryUtil.CHEAT_CALLUpdateUnits();
 
             InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
         }
@@ -1637,7 +1633,10 @@ namespace FEBuilderGBA
 
             CurrentControlUnitRAMAddress = unit_ram_address;
 
-            //CHEAT_UNIT_MEMORY_AND_NAME
+            if (! Party_ControlPanel.Visible)
+            {
+                SelectActiveUnitFromList(unit_ram_address);
+            }
         }
         void KillUnit(uint unitRAMAddress)
         {
@@ -3665,6 +3664,94 @@ namespace FEBuilderGBA
             }
             U.SelectedIndexSafety(PartyListBox, index);
             ShowPartyFloatingControlpanel();
+        }
+
+        private void SelectActiveUnitFromList(uint unit_ram_address)
+        {
+            uint unitnumber = Program.RAM.u8(unit_ram_address + 0xB);
+            if (unitnumber < 0x40)
+            {//player
+                U.SelectedIndexSafety(PartyCombo, 0);
+            }
+            else if (unitnumber < 0x80)
+            {//NPC
+                U.SelectedIndexSafety(PartyCombo, 1);
+            }
+            else
+            {//Enenmy
+                U.SelectedIndexSafety(PartyCombo, 2);
+            }
+            uint top = GetShowRAMPartyUnitsAddr();
+            if (unit_ram_address < top)
+            {
+                return;
+            }
+            UpdateParty();
+            uint index = (unit_ram_address - top) / 72;
+            if (index >= PartyListBox.Items.Count)
+            {
+                return;
+            }
+            U.SelectedIndexSafety(PartyListBox, index);
+        }
+        private void OnRAMDirectEditMapXY_DoubleClick(object sender, EventArgs e)
+        {
+            OnRAMDirectEdit_DoubleClick(this.PARTY_B16, this.PARTY_InputFormRef, OnRAMDirectEditEnum.OnRAMDirectEditEnum_MAPXY);
+        }
+        private void OnRAMDirectEditAndUpdate_DoubleClick(object sender, EventArgs e)
+        {
+            OnRAMDirectEdit_DoubleClick(sender, this.PARTY_InputFormRef, OnRAMDirectEditEnum.OnRAMDirectEditEnum_AndUpdate);
+        }
+        private void OnRAMDirectEdit_DoubleClick(object sender, EventArgs e)
+        {
+            OnRAMDirectEdit_DoubleClick(sender, this.PARTY_InputFormRef, OnRAMDirectEditEnum.OnRAMDirectEditEnum_None);
+        }
+
+        enum OnRAMDirectEditEnum
+        {
+            OnRAMDirectEditEnum_None,
+            OnRAMDirectEditEnum_AndUpdate,
+            OnRAMDirectEditEnum_MAPXY,
+        }
+        void OnRAMDirectEdit_DoubleClick(object sender,InputFormRef ifr, OnRAMDirectEditEnum typeEnum)
+        {
+            if (!(sender is NumericUpDown))
+            {
+                return;
+            }
+
+            NumericUpDown info = (NumericUpDown)sender;
+            uint base_addr = (uint)ifr.Address.Value;
+            String name = InputFormRef.SkipPrefixName(info.Name, ifr.Prefix);
+            if (name.Length <= 1)
+            {
+                return;
+            }
+            uint size = InputFormRef.GetTypeLength(name[0]);
+            uint id = U.atoi(name.Substring(1));
+            bool isHex = ((NumericUpDown)info).Hexadecimal;
+
+            DialogResult dr = System.Windows.Forms.DialogResult.No;
+            if (typeEnum == OnRAMDirectEditEnum.OnRAMDirectEditEnum_MAPXY)
+            {
+                RAMRewriteToolMAPForm f = (RAMRewriteToolMAPForm)InputFormRef.JumpFormLow<RAMRewriteToolMAPForm>();
+                f.Init(base_addr + id);
+                dr = f.ShowDialog();
+            }
+            else
+            {
+                RAMRewriteToolForm f = (RAMRewriteToolForm)InputFormRef.JumpFormLow<RAMRewriteToolForm>();
+                f.Init(base_addr + id, size, isHex);
+                dr = f.ShowDialog();
+            }
+
+            if (dr == System.Windows.Forms.DialogResult.Retry)
+            {
+                if (typeEnum != OnRAMDirectEditEnum.OnRAMDirectEditEnum_None)
+                {
+                    EmulatorMemoryUtil.CHEAT_CALLUpdateUnits();
+                }
+            }
         }
     }
 }

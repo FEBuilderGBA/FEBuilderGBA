@@ -15,48 +15,34 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             U.AddCancelButton(this);
+
+            this.MapPictureBox.MapMouseDownEvent += MapPictureBox_MouseClick;
+            this.MapPictureBox.MapDoubleClickEvent += MapPictureBox_MouseDoubleClick;
         }
 
-        uint TypeOf;
         uint Address;
-        public void Init(uint addr , uint typeOf, bool isHex)
+        public void Init(uint addr)
         {
             this.Address = addr;
-            this.TypeOf = typeOf;
             this.ValueTextBox.Text = U.ToHexString(addr);
 
-            if (typeOf == 1)
-            {
-                this.ReWriteValueX.Value = Program.RAM.u8(addr);
-                this.ReWriteValueX.Maximum = 255;
-            }
-            else if (typeOf == 2)
-            {
-                this.ReWriteValueX.Value = Program.RAM.u16(addr);
-                this.ReWriteValueX.Maximum = 65535;
-            }
-            else if (typeOf == 3)
-            {
-                this.ReWriteValueX.Value = Program.RAM.u24(addr);
-                this.ReWriteValueX.Maximum = 16777215;
-            }
-            else
-            {
-                this.ReWriteValueX.Value = Program.RAM.u32(addr);
-                this.ReWriteValueX.Maximum = 4294967295;
-            }
+            uint x = Program.RAM.u8(addr);
+            this.ReWriteValueX.Value = x;
+            this.ReWriteValueX.Maximum = 255;
+            this.ReWriteValueX.Hexadecimal = false;
 
-            this.ReWriteValueX.Hexadecimal = isHex;
-            if (isHex)
-            {//16進数
-                this.ReWriteValueX.BackColor = OptionForm.Color_Input_BackColor();
-                this.ReWriteValueX.ForeColor = OptionForm.Color_Input_ForeColor();
-            }
-            else
-            {//10進数
-                this.ReWriteValueX.BackColor = OptionForm.Color_InputDecimal_BackColor();
-                this.ReWriteValueX.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
-            }
+            uint y = Program.RAM.u8(addr + 1);
+            this.ReWriteValueY.Value = y;
+            this.ReWriteValueY.Maximum = 255;
+            this.ReWriteValueY.Hexadecimal = false;
+
+            this.MapPictureBox.SetPoint("", (int)x, (int)y);
+            this.MapPictureBox.SetDefualtIcon(ImageSystemIconForm.Blank16());
+
+            this.ReWriteValueX.BackColor = OptionForm.Color_InputDecimal_BackColor();
+            this.ReWriteValueX.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
+            this.ReWriteValueY.BackColor = OptionForm.Color_InputDecimal_BackColor();
+            this.ReWriteValueY.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
             this.ActiveControl = ReWriteValueX;
         }
 
@@ -92,38 +78,136 @@ namespace FEBuilderGBA
 
         private void ReWriteButton_Click(object sender, EventArgs e)
         {
-            uint value = (uint)this.ReWriteValueX.Value;
-            if (this.TypeOf == 1)
-            {
-                Program.RAM.write_u8(this.Address, value);
-            }
-            else if (this.TypeOf == 2)
-            {
-                Program.RAM.write_u16(this.Address, value);
-            }
-            else if (this.TypeOf == 3)
-            {
-                Program.RAM.write_u24(this.Address, value);
-            }
-            else
-            {
-                Program.RAM.write_u32(this.Address, value);
-            }
+            uint x = (uint)this.ReWriteValueX.Value;
+            Program.RAM.write_u8(this.Address, x);
+
+            uint y = (uint)this.ReWriteValueY.Value;
+            Program.RAM.write_u8(this.Address + 1, y);
+
+            //非表示フラグが設定されていれば折る
+
+
             this.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.Close();
         }
 
         private void RAMRewriteToolForm_Load(object sender, EventArgs e)
         {
+            LoadMapInfo();
+        }
+        void LoadMapInfo()
+        {
+            uint mapid = EmulatorMemoryUtil.GetMapID();
+            this.MapPictureBox.LoadMap(mapid);
+            DrawAllUnits();
+        }
+        public void DrawAllUnits()
+        {
+            MapPictureBox.ClearStaticItem();
 
+            DrawUnits(Program.ROM.RomInfo.workmemory_player_units_address(), 62);
+            DrawUnits(Program.ROM.RomInfo.workmemory_enemy_units_address(), 50);
+            DrawUnits(Program.ROM.RomInfo.workmemory_npc_units_address(), 20);
+
+            MapPictureBox.Invalidate();
+        }
+        public void DrawUnits(uint topaddr , int max)
+        {
+            const uint RAMUnitSizeOf = 72; //構造体のサイズ
+            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+
+            uint addr = topaddr;
+            for (int i = 0; i < max; i++, addr += RAMUnitSizeOf)
+            {
+                uint unitPointer = Program.RAM.u32(addr + 0);
+                uint classPointer = Program.RAM.u32(addr + 4);
+
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(classPointer))
+                {
+                    continue;
+                }
+
+                uint classid = Program.ROM.u8(U.toOffset(classPointer) + 4);
+
+                uint unit_number = Program.RAM.u8(addr + 11);
+                int palette_type = GetShowPartyClassPaletteType(unit_number);
+                Bitmap bitmap = ClassForm.DrawWaitIcon(classid, palette_type);
+                U.MakeTransparent(bitmap);
+
+                uint x, y;
+                if (isFE6)
+                {
+                    x = Program.RAM.u8(addr + 14);
+                    y = Program.RAM.u8(addr + 15);
+                }
+                else
+                {
+                    x = Program.RAM.u8(addr + 16);
+                    y = Program.RAM.u8(addr + 17);
+                }
+
+                MapPictureBox.StaticItem st = new MapPictureBox.StaticItem();
+                st.bitmap = bitmap;
+                st.x = (int)x;
+                st.y = (int)y;
+                st.draw_x_add = 0;
+                st.draw_y_add = 0;
+
+                MapPictureBox.SetStaticItem(U.To0xHexString(addr), st.x, st.y, st.bitmap, st.draw_x_add, st.draw_y_add);
+            }
+        }
+        int GetShowPartyClassPaletteType(uint unit_number)
+        {
+            if (unit_number < 0x40)
+            {//Player
+                return 0;
+            }
+            if (unit_number < 0x80)
+            {//NPC
+                return 1;
+            }
+            if (unit_number < 0xC0)
+            {//ENEMY
+                return 2;
+            }
+            if (PatchUtil.SearchCache_FourthAllegiance() == PatchUtil.FourthAllegiance_extends.FourthAllegiance)
+            {
+                //第4の忠誠
+                return 3;
+            }
+            //ENEMY
+            return 2;
         }
 
-        private void ReWriteValue_KeyDown(object sender, KeyEventArgs e)
+        private void MapPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.ReWriteButton.PerformClick();
-            }
+            int clickx = MapPictureBox.CursolToTile(e.X);
+            int clicky = MapPictureBox.CursolToTile(e.Y);
+
+            this.ReWriteValueX.Value = clickx;
+            this.ReWriteValueY.Value = clicky;
+        }
+
+        private void MapPictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MapPictureBox_MouseClick(sender, e);
+            this.ReWriteButton.PerformClick();
+        }
+
+        private void ReWriteValueX_ValueChanged(object sender, EventArgs e)
+        {
+            uint x = (uint)this.ReWriteValueX.Value;
+            uint y = (uint)this.ReWriteValueY.Value;
+            this.MapPictureBox.SetPoint("", (int)x, (int)y);
         }
 
     }

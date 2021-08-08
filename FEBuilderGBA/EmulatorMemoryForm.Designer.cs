@@ -4658,6 +4658,7 @@
             this.PARTY_B71.ReadOnly = true;
             this.PARTY_B71.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B71.TabIndex = 427;
+            this.PARTY_B71.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label89
             // 
@@ -4683,6 +4684,7 @@
             this.PARTY_B70.ReadOnly = true;
             this.PARTY_B70.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B70.TabIndex = 425;
+            this.PARTY_B70.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label90
             // 
@@ -4708,6 +4710,7 @@
             this.PARTY_B69.ReadOnly = true;
             this.PARTY_B69.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B69.TabIndex = 423;
+            this.PARTY_B69.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label83
             // 
@@ -4733,6 +4736,7 @@
             this.PARTY_B68.ReadOnly = true;
             this.PARTY_B68.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B68.TabIndex = 421;
+            this.PARTY_B68.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label84
             // 
@@ -4758,6 +4762,7 @@
             this.PARTY_B67.ReadOnly = true;
             this.PARTY_B67.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B67.TabIndex = 419;
+            this.PARTY_B67.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label85
             // 
@@ -4783,6 +4788,7 @@
             this.PARTY_B66.ReadOnly = true;
             this.PARTY_B66.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B66.TabIndex = 417;
+            this.PARTY_B66.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label86
             // 
@@ -4808,6 +4814,7 @@
             this.PARTY_B65.ReadOnly = true;
             this.PARTY_B65.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B65.TabIndex = 415;
+            this.PARTY_B65.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label87
             // 
@@ -4833,6 +4840,7 @@
             this.PARTY_B64.ReadOnly = true;
             this.PARTY_B64.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B64.TabIndex = 413;
+            this.PARTY_B64.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label88
             // 
@@ -4858,6 +4866,7 @@
             this.PARTY_P60.ReadOnly = true;
             this.PARTY_P60.Size = new System.Drawing.Size(120, 25);
             this.PARTY_P60.TabIndex = 405;
+            this.PARTY_P60.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label80
             // 
@@ -4882,6 +4891,7 @@
             this.PARTY_B59.ReadOnly = true;
             this.PARTY_B59.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B59.TabIndex = 403;
+            this.PARTY_B59.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label81
             // 
@@ -4907,6 +4917,7 @@
             this.PARTY_B58.ReadOnly = true;
             this.PARTY_B58.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B58.TabIndex = 401;
+            this.PARTY_B58.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // PARTY_J_58
             // 
@@ -4932,6 +4943,7 @@
             this.PARTY_B57.ReadOnly = true;
             this.PARTY_B57.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B57.TabIndex = 399;
+            this.PARTY_B57.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label70
             // 
@@ -4956,6 +4968,7 @@
             this.PARTY_B56.ReadOnly = true;
             this.PARTY_B56.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B56.TabIndex = 397;
+            this.PARTY_B56.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label71
             // 
@@ -4980,6 +4993,7 @@
             this.PARTY_B55.ReadOnly = true;
             this.PARTY_B55.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B55.TabIndex = 395;
+            this.PARTY_B55.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label72
             // 
@@ -5004,6 +5018,7 @@
             this.PARTY_B54.ReadOnly = true;
             this.PARTY_B54.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B54.TabIndex = 393;
+            this.PARTY_B54.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label73
             // 
@@ -5028,6 +5043,7 @@
             this.PARTY_B53.ReadOnly = true;
             this.PARTY_B53.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B53.TabIndex = 391;
+            this.PARTY_B53.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label74
             // 
@@ -5052,6 +5068,7 @@
             this.PARTY_B52.ReadOnly = true;
             this.PARTY_B52.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B52.TabIndex = 389;
+            this.PARTY_B52.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label75
             // 
@@ -5076,6 +5093,7 @@
             this.PARTY_B51.ReadOnly = true;
             this.PARTY_B51.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B51.TabIndex = 387;
+            this.PARTY_B51.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label76
             // 
@@ -5100,6 +5118,7 @@
             this.PARTY_B50.ReadOnly = true;
             this.PARTY_B50.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B50.TabIndex = 385;
+            this.PARTY_B50.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label77
             // 
@@ -5125,6 +5144,7 @@
             this.PARTY_B49.ReadOnly = true;
             this.PARTY_B49.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B49.TabIndex = 383;
+            this.PARTY_B49.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label67
             // 
@@ -5150,6 +5170,7 @@
             this.PARTY_B48.ReadOnly = true;
             this.PARTY_B48.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B48.TabIndex = 381;
+            this.PARTY_B48.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label68
             // 
@@ -5174,6 +5195,7 @@
             this.PARTY_B47.ReadOnly = true;
             this.PARTY_B47.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B47.TabIndex = 379;
+            this.PARTY_B47.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label45
             // 
@@ -5198,6 +5220,7 @@
             this.PARTY_B46.ReadOnly = true;
             this.PARTY_B46.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B46.TabIndex = 377;
+            this.PARTY_B46.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label47
             // 
@@ -5222,6 +5245,7 @@
             this.PARTY_B45.ReadOnly = true;
             this.PARTY_B45.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B45.TabIndex = 375;
+            this.PARTY_B45.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label49
             // 
@@ -5246,6 +5270,7 @@
             this.PARTY_B44.ReadOnly = true;
             this.PARTY_B44.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B44.TabIndex = 373;
+            this.PARTY_B44.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label51
             // 
@@ -5270,6 +5295,7 @@
             this.PARTY_B43.ReadOnly = true;
             this.PARTY_B43.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B43.TabIndex = 371;
+            this.PARTY_B43.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label42
             // 
@@ -5294,6 +5320,7 @@
             this.PARTY_B42.ReadOnly = true;
             this.PARTY_B42.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B42.TabIndex = 369;
+            this.PARTY_B42.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label44
             // 
@@ -5318,6 +5345,7 @@
             this.PARTY_B41.ReadOnly = true;
             this.PARTY_B41.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B41.TabIndex = 367;
+            this.PARTY_B41.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label41
             // 
@@ -5342,6 +5370,7 @@
             this.PARTY_B40.ReadOnly = true;
             this.PARTY_B40.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B40.TabIndex = 365;
+            this.PARTY_B40.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label38
             // 
@@ -5377,6 +5406,7 @@
             this.PARTY_B39.ReadOnly = true;
             this.PARTY_B39.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B39.TabIndex = 362;
+            this.PARTY_B39.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label34
             // 
@@ -5402,6 +5432,7 @@
             this.PARTY_B38.ReadOnly = true;
             this.PARTY_B38.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B38.TabIndex = 360;
+            this.PARTY_B38.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label37
             // 
@@ -5437,6 +5468,7 @@
             this.PARTY_B37.ReadOnly = true;
             this.PARTY_B37.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B37.TabIndex = 357;
+            this.PARTY_B37.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label24
             // 
@@ -5462,6 +5494,7 @@
             this.PARTY_B36.ReadOnly = true;
             this.PARTY_B36.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B36.TabIndex = 355;
+            this.PARTY_B36.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label29
             // 
@@ -5497,6 +5530,7 @@
             this.PARTY_B35.ReadOnly = true;
             this.PARTY_B35.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B35.TabIndex = 352;
+            this.PARTY_B35.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label31
             // 
@@ -5522,6 +5556,7 @@
             this.PARTY_B34.ReadOnly = true;
             this.PARTY_B34.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B34.TabIndex = 350;
+            this.PARTY_B34.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label32
             // 
@@ -5557,6 +5592,7 @@
             this.PARTY_B33.ReadOnly = true;
             this.PARTY_B33.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B33.TabIndex = 332;
+            this.PARTY_B33.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label20
             // 
@@ -5582,6 +5618,7 @@
             this.PARTY_B32.ReadOnly = true;
             this.PARTY_B32.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B32.TabIndex = 330;
+            this.PARTY_B32.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label23
             // 
@@ -5617,6 +5654,7 @@
             this.PARTY_B31.ReadOnly = true;
             this.PARTY_B31.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B31.TabIndex = 327;
+            this.PARTY_B31.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label12
             // 
@@ -5642,6 +5680,7 @@
             this.PARTY_B30.ReadOnly = true;
             this.PARTY_B30.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B30.TabIndex = 325;
+            this.PARTY_B30.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label9
             // 
@@ -5666,6 +5705,7 @@
             this.PARTY_B28.ReadOnly = true;
             this.PARTY_B28.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B28.TabIndex = 322;
+            this.PARTY_B28.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label66
             // 
@@ -5690,6 +5730,7 @@
             this.PARTY_B29.ReadOnly = true;
             this.PARTY_B29.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B29.TabIndex = 320;
+            this.PARTY_B29.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label65
             // 
@@ -5727,6 +5768,7 @@
             this.PARTY_B27.ReadOnly = true;
             this.PARTY_B27.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B27.TabIndex = 317;
+            this.PARTY_B27.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label64
             // 
@@ -5751,6 +5793,7 @@
             this.PARTY_B26.ReadOnly = true;
             this.PARTY_B26.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B26.TabIndex = 315;
+            this.PARTY_B26.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // PARTY_J_26
             // 
@@ -5775,6 +5818,7 @@
             this.PARTY_B25.ReadOnly = true;
             this.PARTY_B25.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B25.TabIndex = 313;
+            this.PARTY_B25.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label63
             // 
@@ -5799,6 +5843,7 @@
             this.PARTY_B24.ReadOnly = true;
             this.PARTY_B24.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B24.TabIndex = 311;
+            this.PARTY_B24.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label60
             // 
@@ -5823,6 +5868,7 @@
             this.PARTY_B23.ReadOnly = true;
             this.PARTY_B23.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B23.TabIndex = 309;
+            this.PARTY_B23.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label61
             // 
@@ -5847,6 +5893,7 @@
             this.PARTY_B22.ReadOnly = true;
             this.PARTY_B22.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B22.TabIndex = 307;
+            this.PARTY_B22.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label59
             // 
@@ -5871,6 +5918,7 @@
             this.PARTY_B21.ReadOnly = true;
             this.PARTY_B21.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B21.TabIndex = 304;
+            this.PARTY_B21.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label57
             // 
@@ -5919,6 +5967,7 @@
             this.PARTY_B10.ReadOnly = true;
             this.PARTY_B10.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B10.TabIndex = 4;
+            this.PARTY_B10.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label21
             // 
@@ -6051,6 +6100,7 @@
             this.PARTY_B19.ReadOnly = true;
             this.PARTY_B19.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B19.TabIndex = 12;
+            this.PARTY_B19.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label36
             // 
@@ -6075,6 +6125,7 @@
             this.PARTY_B20.ReadOnly = true;
             this.PARTY_B20.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B20.TabIndex = 11;
+            this.PARTY_B20.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label39
             // 
@@ -6099,6 +6150,7 @@
             this.PARTY_B18.ReadOnly = true;
             this.PARTY_B18.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B18.TabIndex = 9;
+            this.PARTY_B18.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label40
             // 
@@ -6123,6 +6175,7 @@
             this.PARTY_B17.ReadOnly = true;
             this.PARTY_B17.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B17.TabIndex = 8;
+            this.PARTY_B17.DoubleClick += new System.EventHandler(this.OnRAMDirectEditMapXY_DoubleClick);
             // 
             // label43
             // 
@@ -6147,6 +6200,7 @@
             this.PARTY_B16.ReadOnly = true;
             this.PARTY_B16.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B16.TabIndex = 7;
+            this.PARTY_B16.DoubleClick += new System.EventHandler(this.OnRAMDirectEditMapXY_DoubleClick);
             // 
             // label46
             // 
@@ -6172,6 +6226,7 @@
             this.PARTY_D12.ReadOnly = true;
             this.PARTY_D12.Size = new System.Drawing.Size(125, 25);
             this.PARTY_D12.TabIndex = 6;
+            this.PARTY_D12.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label48
             // 
@@ -6197,6 +6252,7 @@
             this.PARTY_B11.ReadOnly = true;
             this.PARTY_B11.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B11.TabIndex = 5;
+            this.PARTY_B11.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label50
             // 
@@ -6221,6 +6277,7 @@
             this.PARTY_B9.ReadOnly = true;
             this.PARTY_B9.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B9.TabIndex = 3;
+            this.PARTY_B9.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label52
             // 
@@ -6245,6 +6302,7 @@
             this.PARTY_B8.ReadOnly = true;
             this.PARTY_B8.Size = new System.Drawing.Size(71, 25);
             this.PARTY_B8.TabIndex = 2;
+            this.PARTY_B8.DoubleClick += new System.EventHandler(this.OnRAMDirectEdit_DoubleClick);
             // 
             // label53
             // 
@@ -6270,6 +6328,7 @@
             this.PARTY_P4.ReadOnly = true;
             this.PARTY_P4.Size = new System.Drawing.Size(125, 25);
             this.PARTY_P4.TabIndex = 1;
+            this.PARTY_P4.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label54
             // 
@@ -6307,6 +6366,7 @@
             this.PARTY_P0.ReadOnly = true;
             this.PARTY_P0.Size = new System.Drawing.Size(125, 25);
             this.PARTY_P0.TabIndex = 0;
+            this.PARTY_P0.DoubleClick += new System.EventHandler(this.OnRAMDirectEditAndUpdate_DoubleClick);
             // 
             // label55
             // 

@@ -122,6 +122,13 @@ namespace FEBuilderGBA
             }
             return R._("拠点") + ": " + ret + "=" + edition;
         }
+        //マップIDを求める
+        public static uint GetMapID()
+        {
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint ramPointer = stageStructAddr + 0xE;
+            return Program.RAM.u8(ramPointer);
+        }
         static bool IsWarpChapterFE8(uint chapterID)
         {
             PatchUtil.mnc2_fix_enum use_mnc2 = PatchUtil.SearchSkipWorldMapPatch();
@@ -518,54 +525,90 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
             return;
         }
+        //Bボタンを押す
+        static void PressBButton()
+        {
+            uint keyBufferCurrentAddr = Program.ROM.RomInfo.workmemory_keybuffer_address() + 4;
+            uint current = Program.RAM.u16(keyBufferCurrentAddr);
+            current = current | 2;
+            Program.RAM.write_u16(keyBufferCurrentAddr, current);
+        }
+
+        //カレントユニットに設定されている非表示フラグを折る.
+        static void EraseCurrentUnitHideFlag()
+        {
+            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address();
+            uint unit_ram_address = Program.RAM.u32(control_unit_address);
+
+            if (!U.is_02RAMPointer(unit_ram_address))
+            {//選択しているキャラクターはいない.
+                return;
+            }
+
+            uint romUnitPointer = Program.RAM.u32(unit_ram_address + 0);
+            if (!U.isSafetyPointer(romUnitPointer))
+            {//不正な値が入っています.
+                return;
+            }
+
+            uint stat = Program.RAM.u8(unit_ram_address + 0xC);
+            if ((stat & 0x1) != 0x1)
+            {//非表示フラグ立っていない
+                return;
+            }
+            stat = stat & 0xfe;
+            Program.RAM.write_u8(unit_ram_address + 0xC, stat);
+        }
+
+
         public static void CHEAT_CALLUpdateUnits()
         {
             uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
-            uint endAllMenusFunction;
+            uint HideMoveRangeGraphicsFunction;
             uint RefreshFogAndUnitMapsFunction;
-            uint SMS_UpdateFromGameDataFunction;
-            uint UpdateGameTilesGraphicsFunction;
+            uint UpdateMapAndUnitFunction;
+            uint ClearMOVEUNITsFunction;
 
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//FE8J
-                    endAllMenusFunction = 0x0804FCAC;
-                    RefreshFogAndUnitMapsFunction = 0x08019ecc;
-                    SMS_UpdateFromGameDataFunction = 0x08027144;
-                    UpdateGameTilesGraphicsFunction = 0x08019914;
+                    HideMoveRangeGraphicsFunction = 0x0801D730;   //HideMoveRangeGraphics
+                    RefreshFogAndUnitMapsFunction = 0x08019ecc;   //RefreshFogAndUnitMaps
+                    UpdateMapAndUnitFunction = 0x08032114; //UpdateMapAndUnit
+                    ClearMOVEUNITsFunction = 0x0807b4b8;    //ClearMOVEUNITs
                 }
                 else
                 {//FE8U
-                    endAllMenusFunction = 0x0804ef20;
+                    HideMoveRangeGraphicsFunction = 0x0801DACC;
                     RefreshFogAndUnitMapsFunction = 0x0801a1f4;
-                    SMS_UpdateFromGameDataFunction = 0x080271a0;
-                    UpdateGameTilesGraphicsFunction = 0x08019c3c;
+                    UpdateMapAndUnitFunction = 0x080321C8;
+                    ClearMOVEUNITsFunction = 0x080790A4;
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//FE7J
-                    endAllMenusFunction = 0x0804AC78;
+                    HideMoveRangeGraphicsFunction = 0x0801d6d8;
                     RefreshFogAndUnitMapsFunction = 0x08019ea4;
-                    SMS_UpdateFromGameDataFunction = 0x08025bb0;
-                    UpdateGameTilesGraphicsFunction = 0x080198ec;
+                    UpdateMapAndUnitFunction = 0x0802F858;
+                    ClearMOVEUNITsFunction = 0x0806d4a4;
                 }
                 else
                 {//FE7U
-                    endAllMenusFunction = 0x0804A490;
-                    RefreshFogAndUnitMapsFunction = 0x08019abc;
-                    SMS_UpdateFromGameDataFunction = 0x08025724;
-                    UpdateGameTilesGraphicsFunction = 0x08019504;
+                    HideMoveRangeGraphicsFunction = 0x0801D2D4;
+                    RefreshFogAndUnitMapsFunction = 0x08019ABC;
+                    UpdateMapAndUnitFunction = 0x0802F38C;
+                    ClearMOVEUNITsFunction = 0x0806ccb8;
                 }
             }
             else
             {//FE6
-                endAllMenusFunction = 0x08041A38;
+                HideMoveRangeGraphicsFunction = 0x0801C060;
                 RefreshFogAndUnitMapsFunction = 0x080190f4;
-                SMS_UpdateFromGameDataFunction = 0x08022094;
-                UpdateGameTilesGraphicsFunction = 0x08018d90;
+                UpdateMapAndUnitFunction = 0x0801A748;
+                ClearMOVEUNITsFunction = 0x080608D4;
             }
 
 
@@ -596,11 +639,16 @@ namespace FEBuilderGBA
             U.write_u32(warpCode, 0x3C, work_address + 1);
 
             //メニューがあれば閉じる命令
-            U.write_u32(warpCode, 0x28, endAllMenusFunction);
+            U.write_u32(warpCode, 0x28, HideMoveRangeGraphicsFunction);
             //画面更新
             U.write_u32(warpCode, 0x2C, RefreshFogAndUnitMapsFunction);
-            U.write_u32(warpCode, 0x30, UpdateGameTilesGraphicsFunction);
-            U.write_u32(warpCode, 0x34, SMS_UpdateFromGameDataFunction);
+            U.write_u32(warpCode, 0x30, ClearMOVEUNITsFunction);
+            U.write_u32(warpCode, 0x34, UpdateMapAndUnitFunction);
+
+            //Bボタンを押す
+            PressBButton();
+            //カレントユニットに設定されている非表示フラグを折る.
+            EraseCurrentUnitHideFlag();
 
             //復帰するProcsのコード
             uint backCode = Program.RAM.u32(maptask + 4);

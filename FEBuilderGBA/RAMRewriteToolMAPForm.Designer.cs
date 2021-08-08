@@ -40,7 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ReWriteValueY = new System.Windows.Forms.NumericUpDown();
-            this.Map = new FEBuilderGBA.MapPictureBox();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ReWriteValueX)).BeginInit();
@@ -122,7 +122,7 @@
             this.ReWriteValueX.Name = "ReWriteValueX";
             this.ReWriteValueX.Size = new System.Drawing.Size(95, 25);
             this.ReWriteValueX.TabIndex = 10;
-            this.ReWriteValueX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReWriteValue_KeyDown);
+            this.ReWriteValueX.ValueChanged += new System.EventHandler(this.ReWriteValueX_ValueChanged);
             // 
             // ReWriteButton
             // 
@@ -175,16 +175,17 @@
             this.ReWriteValueY.Name = "ReWriteValueY";
             this.ReWriteValueY.Size = new System.Drawing.Size(95, 25);
             this.ReWriteValueY.TabIndex = 14;
+            this.ReWriteValueY.ValueChanged += new System.EventHandler(this.ReWriteValueX_ValueChanged);
             // 
-            // Map
+            // MapPictureBox
             // 
-            this.Map.AutoScroll = true;
-            this.Map.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Map.Location = new System.Drawing.Point(0, 0);
-            this.Map.Margin = new System.Windows.Forms.Padding(2);
-            this.Map.Name = "Map";
-            this.Map.Size = new System.Drawing.Size(1044, 928);
-            this.Map.TabIndex = 15;
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MapPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(1044, 928);
+            this.MapPictureBox.TabIndex = 15;
             // 
             // panel1
             // 
@@ -208,7 +209,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Map);
+            this.panel2.Controls.Add(this.MapPictureBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(396, 0);
             this.panel2.Name = "panel2";
@@ -248,7 +249,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ReWriteValueY;
-        private MapPictureBox Map;
+        private MapPictureBox MapPictureBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }

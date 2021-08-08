@@ -303,6 +303,7 @@ namespace FEBuilderGBA
         uint workmemory_sound_player_06_address(); //RAMに設定されているサウンドプレイヤーバッファ
         uint workmemory_sound_player_07_address(); //RAMに設定されているサウンドプレイヤーバッファ
         uint workmemory_sound_player_08_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_keybuffer_address(); //RAMのキーバッファ
         uint summon_unit_pointer(); //召喚
         uint summons_demon_king_pointer(); //呼魔
         uint summons_demon_king_count_address(); //呼魔リストの数
