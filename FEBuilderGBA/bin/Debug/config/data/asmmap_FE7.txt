@@ -5459,3 +5459,8 @@
 0808FDE8	占い師がch14の進撃準備でしゃべる	{J}
 0808F52C	マリナスが馬車を手に入れた時に進撃準備でしゃべる	{U}
 0808FE6C	マリナスが馬車を手に入れた時に進撃準備でしゃべる	{J}
+0801CACC	PlayerPhase_RangeDisplayIdle	{J}
+0801C6C8	PlayerPhase_RangeDisplayIdle	{U}
+08015f0c	SetCursorMapPosition	{J}
+0801c584	HandlePlayerCursorMovement	{J}
+0801C194	HandlePlayerCursorMovement	{U}

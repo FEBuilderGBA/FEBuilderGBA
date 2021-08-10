@@ -561,54 +561,85 @@ namespace FEBuilderGBA
         }
 
 
-        public static void CHEAT_CALLUpdateUnits()
+        public static void CHEAT_CALLUpdateUnits(uint currentRamUnit = 0)
         {
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
-            uint HideMoveRangeGraphicsFunction;
-            uint RefreshFogAndUnitMapsFunction;
-            uint UpdateMapAndUnitFunction;
-            uint ClearMOVEUNITsFunction;
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0xB0; //テキストバッファの一番下をデータ置き場として利用する.
+
+            
+            uint PointerProcsPlayerPhase;
+            uint Find6C;
+            uint PlayerPhase_RangeDisplayIdle;
+            uint KeyBuffer;
+            uint RefreshFogAndUnitMaps;
+            uint UpdateMapAndUnit;
+            uint ClearMOVEUNITs;
+            uint SetCursorMapPosition;
 
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//FE8J
-                    HideMoveRangeGraphicsFunction = 0x0801D730;   //HideMoveRangeGraphics
-                    RefreshFogAndUnitMapsFunction = 0x08019ecc;   //RefreshFogAndUnitMaps
-                    UpdateMapAndUnitFunction = 0x08032114; //UpdateMapAndUnit
-                    ClearMOVEUNITsFunction = 0x0807b4b8;    //ClearMOVEUNITs
+                    RefreshFogAndUnitMaps = 0x08019ecc;
+                    UpdateMapAndUnit = 0x08032114;
+                    ClearMOVEUNITs = 0x0807b4b8;
+
+                    PointerProcsPlayerPhase = 0x080154E8;
+                    Find6C = 0x08002DEC;
+                    PlayerPhase_RangeDisplayIdle = 0x0801C984;
+                    KeyBuffer = 0x02024CC0;
+                    SetCursorMapPosition = 0x08015BD8;
                 }
                 else
                 {//FE8U
-                    HideMoveRangeGraphicsFunction = 0x0801DACC;
-                    RefreshFogAndUnitMapsFunction = 0x0801a1f4;
-                    UpdateMapAndUnitFunction = 0x080321C8;
-                    ClearMOVEUNITsFunction = 0x080790A4;
+                    RefreshFogAndUnitMaps = 0x0801a1f4;
+                    UpdateMapAndUnit = 0x080321C8;
+                    ClearMOVEUNITs = 0x080790A4;
+
+                    PointerProcsPlayerPhase = 0x080154C4;
+                    Find6C = 0x08002e9c;
+                    PlayerPhase_RangeDisplayIdle = 0x0801CD1C;
+                    KeyBuffer = 0x02024CC0;
+                    SetCursorMapPosition = 0x08015bbc;
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
                 if (Program.ROM.RomInfo.is_multibyte())
                 {//FE7J
-                    HideMoveRangeGraphicsFunction = 0x0801d6d8;
-                    RefreshFogAndUnitMapsFunction = 0x08019ea4;
-                    UpdateMapAndUnitFunction = 0x0802F858;
-                    ClearMOVEUNITsFunction = 0x0806d4a4;
+                    RefreshFogAndUnitMaps = 0x08019ea4;
+                    UpdateMapAndUnit = 0x0802F858;
+                    ClearMOVEUNITs = 0x0806d4a4;
+
+                    PointerProcsPlayerPhase = 0x080158D0;
+                    Find6C = 0x08004584;
+                    PlayerPhase_RangeDisplayIdle = 0x0801CACC;
+                    KeyBuffer = 0x02024C78;
+                    SetCursorMapPosition = 0x08015f0c;
                 }
                 else
                 {//FE7U
-                    HideMoveRangeGraphicsFunction = 0x0801D2D4;
-                    RefreshFogAndUnitMapsFunction = 0x08019ABC;
-                    UpdateMapAndUnitFunction = 0x0802F38C;
-                    ClearMOVEUNITsFunction = 0x0806ccb8;
+                    RefreshFogAndUnitMaps = 0x08019ABC;
+                    UpdateMapAndUnit = 0x0802F38C;
+                    ClearMOVEUNITs = 0x0806ccb8;
+
+                    PointerProcsPlayerPhase = 0x08015454;
+                    Find6C = 0x080046a8;
+                    PlayerPhase_RangeDisplayIdle = 0x0801C6C8;
+                    KeyBuffer = 0x02024C78;
+                    SetCursorMapPosition = 0x08015a90;
                 }
             }
             else
             {//FE6
-                HideMoveRangeGraphicsFunction = 0x0801C060;
-                RefreshFogAndUnitMapsFunction = 0x080190f4;
-                UpdateMapAndUnitFunction = 0x0801A748;
-                ClearMOVEUNITsFunction = 0x080608D4;
+                RefreshFogAndUnitMaps = 0x080190f4;
+                UpdateMapAndUnit = 0x0802A5BC;
+                ClearMOVEUNITs = 0x080608D4;
+
+                PointerProcsPlayerPhase = 0x08015A8C;
+                Find6C = 0x08003e7c;
+                PlayerPhase_RangeDisplayIdle = 0x0801B4D0;
+                KeyBuffer = 0x02023B20;
+                SetCursorMapPosition = 0x0801600c;
             }
 
 
@@ -621,41 +652,55 @@ namespace FEBuilderGBA
 
             byte[] warpCode = { 
             //ASM
-            0x00, 0xB5, 0x08, 0x49, 0x41, 0x60, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x07, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x03, 0x20, 0x06, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x06, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x01, 0xBC, 0x00, 0x47,
-            0x11, 0x11, 0x11, 0x11, 
-            0x22, 0x22, 0x22, 0x22, 
-            0x33, 0x33, 0x33, 0x33, 
-            0x44, 0x44, 0x44, 0x44, 
-            0x55, 0x55, 0x55, 0x55,
+            0x30, 0xB5, 0x17, 0x49, 0x41, 0x60, 0x17, 0x48, 0x00, 0x68, 0x17, 0x4B, 0x9E, 0x46, 0x00, 0xF8, //00
+            0x04, 0x1C, 0x00, 0x2C, 0x21, 0xD0, 0x15, 0x4A, 0x01, 0x32, 0xE5, 0x68, 0xAA, 0x42, 0x09, 0xD1, //10
+            0x13, 0x4A, 0x00, 0x23, 0x02, 0x21, 0x11, 0x81, 0xD3, 0x80, 0x20, 0x1C, 0x0F, 0x4B, 0x9E, 0x46, //20
+            0x00, 0xF8, 0x0A, 0xE0, 0x0F, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x0F, 0x4B, 0x9E, 0x46, 0x00, 0xF8, //30
+            0x0E, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x00, 0x2D, 0x07, 0xD0, 0x0D, 0x4B, 0x00, 0x2B, 0x04, 0xD0, //40
+            0x18, 0x7C, 0x59, 0x7C, 0x0B, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x30, 0xBC, 0x01, 0xBC, 0x00, 0x47, //50
 
-            //hook procs +38
+            0xBB, 0xBB, 0xBB, 0xBB, //60 backcode
+            0xC4, 0x54, 0x01, 0x08, //64    PointerProcsPlayerPhase
+            0x9C, 0x2E, 0x00, 0x08, //68    Find6C
+            0x1C, 0xCD, 0x01, 0x08, //6c    PlayerPhase_RangeDisplayIdle
+            0xC0, 0x4C, 0x02, 0x02, //70    KeyBuffer
+            0xF4, 0xA1, 0x01, 0x08, //74    RefreshFogAndUnitMaps
+            0xC8, 0x21, 0x03, 0x08, //78    UpdateMapAndUnit
+            0xA4, 0x90, 0x07, 0x08, //7c    ClearMOVEUNITs
+            0x00, 0x00, 0x00, 0x00, //80 current ram unit
+            0xBC, 0x5B, 0x01, 0x08, //84    SetCursorMapPosition
+
+            //hook procs +88
             0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x02, 0x0E, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-            0x30, 0x5E, 0x5C, 0x08, //backCode
-            0xAC, 0xFC, 0x04, 0x08, 
-            0x4C, 0xF4, 0x08, 0x08, 
-            0x40, 0xD3, 0x00, 0x08  //eventExecuteFucntion
             };
             //Procsで実行を指定するASMコードの位置
-            U.write_u32(warpCode, 0x3C, work_address + 1);
+            uint hookProcsStart = 0x88;
+            U.write_u32(warpCode, hookProcsStart + 4, work_address + 1);
 
-            //メニューがあれば閉じる命令
-            U.write_u32(warpCode, 0x28, HideMoveRangeGraphicsFunction);
-            //画面更新
-            U.write_u32(warpCode, 0x2C, RefreshFogAndUnitMapsFunction);
-            U.write_u32(warpCode, 0x30, ClearMOVEUNITsFunction);
-            U.write_u32(warpCode, 0x34, UpdateMapAndUnitFunction);
+            U.write_u32(warpCode, 0x64, PointerProcsPlayerPhase);
+            U.write_u32(warpCode, 0x68, Find6C);
+            U.write_u32(warpCode, 0x6c, PlayerPhase_RangeDisplayIdle);
+            U.write_u32(warpCode, 0x70, KeyBuffer);
+            U.write_u32(warpCode, 0x74, RefreshFogAndUnitMaps);
+            U.write_u32(warpCode, 0x78, UpdateMapAndUnit);
+            U.write_u32(warpCode, 0x7c, ClearMOVEUNITs);
+            U.write_u32(warpCode, 0x80, currentRamUnit);
+            U.write_u32(warpCode, 0x84, SetCursorMapPosition);
 
-            //Bボタンを押す
-            //PressBButton();
-            //カレントユニットに設定されている非表示フラグを折る.
-            EraseCurrentUnitHideFlag();
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                U.write_u8(warpCode, 0x50, 0x98); //ldrb r0, [r3, #0xE]
+                U.write_u8(warpCode, 0x51, 0x7b);
+                U.write_u8(warpCode, 0x52, 0xd9); //ldrb r1, [r3, #0xF]
+                U.write_u8(warpCode, 0x53, 0x7b);
+            }
 
             //復帰するProcsのコード
             uint backCode = Program.RAM.u32(maptask + 4);
-            U.write_u32(warpCode, 0x24, backCode);
+            U.write_u32(warpCode, 0x60, backCode);
             Program.RAM.write_range(work_address, warpCode);
 
-            uint procs_jump_addr = work_address + 0x38;
+            uint procs_jump_addr = work_address + hookProcsStart;
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
             return;

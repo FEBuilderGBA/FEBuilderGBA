@@ -3865,7 +3865,7 @@ namespace FEBuilderGBA
             {
                 if (typeEnum != OnRAMDirectEditEnum.OnRAMDirectEditEnum_None)
                 {
-                    EmulatorMemoryUtil.CHEAT_CALLUpdateUnits();
+                    EmulatorMemoryUtil.CHEAT_CALLUpdateUnits(base_addr);
                 }
             }
         }
