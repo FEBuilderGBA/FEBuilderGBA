@@ -646,7 +646,7 @@ namespace FEBuilderGBA
             U.write_u32(warpCode, 0x34, UpdateMapAndUnitFunction);
 
             //Bボタンを押す
-            PressBButton();
+            //PressBButton();
             //カレントユニットに設定されている非表示フラグを折る.
             EraseCurrentUnitHideFlag();
 

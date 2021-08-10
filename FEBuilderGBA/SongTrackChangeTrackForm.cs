@@ -33,6 +33,7 @@ namespace FEBuilderGBA
                 this.VoiceListbox.Items.Add(v);
             }
             this.VoiceListbox.EndUpdate();
+            U.SelectedIndexSafety(this.VoiceListbox, 0);
 
             this.Address.Value = Program.ROM.p32((uint)track.basepointer);
         }

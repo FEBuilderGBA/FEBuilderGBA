@@ -207,6 +207,12 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
+            this.BGMTab = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.BGMPlayerList = new FEBuilderGBA.ListBoxEx();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.J_BGM_BGM = new System.Windows.Forms.Label();
+            this.BGM_INFO = new FEBuilderGBA.TextBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyCount = new System.Windows.Forms.Label();
@@ -626,6 +632,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).BeginInit();
+            this.BGMTab.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.EtcPage.SuspendLayout();
             this.tabControlEtc.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -791,6 +800,7 @@
             this.MainTabControl.Controls.Add(this.EventPage);
             this.MainTabControl.Controls.Add(this.EventHistoryPage);
             this.MainTabControl.Controls.Add(this.ProcPage);
+            this.MainTabControl.Controls.Add(this.BGMTab);
             this.MainTabControl.Controls.Add(this.EtcPage);
             this.MainTabControl.Controls.Add(this.CheatPage);
             this.MainTabControl.Location = new System.Drawing.Point(6, 5);
@@ -3189,6 +3199,72 @@
             this.ProcsListBox.SelectedIndexChanged += new System.EventHandler(this.ProcsListBox_SelectedIndexChanged);
             this.ProcsListBox.DoubleClick += new System.EventHandler(this.ProcsListBox_DoubleClick);
             this.ProcsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsListBox_KeyDown);
+            // 
+            // BGMTab
+            // 
+            this.BGMTab.BackColor = System.Drawing.SystemColors.Control;
+            this.BGMTab.Controls.Add(this.panel5);
+            this.BGMTab.Controls.Add(this.panel4);
+            this.BGMTab.Location = new System.Drawing.Point(4, 28);
+            this.BGMTab.Name = "BGMTab";
+            this.BGMTab.Padding = new System.Windows.Forms.Padding(3);
+            this.BGMTab.Size = new System.Drawing.Size(1646, 888);
+            this.BGMTab.TabIndex = 5;
+            this.BGMTab.Text = "BGM";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.BGMPlayerList);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 39);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1640, 846);
+            this.panel5.TabIndex = 344;
+            // 
+            // BGMPlayerList
+            // 
+            this.BGMPlayerList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BGMPlayerList.FormattingEnabled = true;
+            this.BGMPlayerList.IntegralHeight = false;
+            this.BGMPlayerList.ItemHeight = 18;
+            this.BGMPlayerList.Location = new System.Drawing.Point(0, 0);
+            this.BGMPlayerList.Name = "BGMPlayerList";
+            this.BGMPlayerList.Size = new System.Drawing.Size(1640, 846);
+            this.BGMPlayerList.TabIndex = 342;
+            this.BGMPlayerList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BGMPlayerList_KeyDown);
+            this.BGMPlayerList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BGMPlayerList_MouseDoubleClick);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.J_BGM_BGM);
+            this.panel4.Controls.Add(this.BGM_INFO);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1640, 36);
+            this.panel4.TabIndex = 343;
+            // 
+            // J_BGM_BGM
+            // 
+            this.J_BGM_BGM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_BGM_BGM.Location = new System.Drawing.Point(0, 0);
+            this.J_BGM_BGM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_BGM_BGM.Name = "J_BGM_BGM";
+            this.J_BGM_BGM.Size = new System.Drawing.Size(142, 30);
+            this.J_BGM_BGM.TabIndex = 340;
+            this.J_BGM_BGM.Text = "BGM";
+            this.J_BGM_BGM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BGM_INFO
+            // 
+            this.BGM_INFO.ErrorMessage = "";
+            this.BGM_INFO.Location = new System.Drawing.Point(146, 3);
+            this.BGM_INFO.Margin = new System.Windows.Forms.Padding(2);
+            this.BGM_INFO.Name = "BGM_INFO";
+            this.BGM_INFO.Placeholder = "";
+            this.BGM_INFO.ReadOnly = true;
+            this.BGM_INFO.Size = new System.Drawing.Size(1252, 25);
+            this.BGM_INFO.TabIndex = 341;
             // 
             // EtcPage
             // 
@@ -7534,6 +7610,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).EndInit();
+            this.BGMTab.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.EtcPage.ResumeLayout(false);
             this.EtcPage.PerformLayout();
             this.tabControlEtc.ResumeLayout(false);
@@ -8185,5 +8265,11 @@
         private InterpolatedPictureBox SupportPortrait3;
         private InterpolatedPictureBox SupportPortrait2;
         private InterpolatedPictureBox SupportPortrait1;
+        private System.Windows.Forms.TabPage BGMTab;
+        private System.Windows.Forms.Panel panel5;
+        private ListBoxEx BGMPlayerList;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label J_BGM_BGM;
+        private TextBoxEx BGM_INFO;
     }
 }

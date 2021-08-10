@@ -1507,15 +1507,15 @@
 @WaveData@0c	word	size
 @WaveData@10	byte	data_array
 
-@ToneData@00	byte	type
-@ToneData@01	byte	key
-@ToneData@02	byte	length
-@ToneData@03	byte	pan_sweep
-@ToneData@04	&WaveData	wav
-@ToneData@0c	byte	attack
-@ToneData@0d	byte	decay
-@ToneData@0e	byte	sustain
-@ToneData@0f	byte	release
+@INSTRUMENT_TONEDATA@00	byte	type
+@INSTRUMENT_TONEDATA@01	byte	key
+@INSTRUMENT_TONEDATA@02	byte	length
+@INSTRUMENT_TONEDATA@03	byte	pan_sweep
+@INSTRUMENT_TONEDATA@04	&WaveData	wav
+@INSTRUMENT_TONEDATA@0c	byte	attack
+@INSTRUMENT_TONEDATA@0d	byte	decay
+@INSTRUMENT_TONEDATA@0e	byte	sustain
+@INSTRUMENT_TONEDATA@0f	byte	release
 
 @SoundChannel@00	byte	status
 @SoundChannel@01	byte	type
@@ -1586,7 +1586,7 @@
 @MusicPlayerTrack@1e	byte	echoVolume
 @MusicPlayerTrack@1f	byte	echoLength
 @MusicPlayerTrack@20	&SoundChannel	chan
-@MusicPlayerTrack@24	@ToneData	tone
+@MusicPlayerTrack@24	@INSTRUMENT_TONEDATA	instrument_tonedata
 @MusicPlayerTrack@34	byte	_gap34
 @MusicPlayerTrack@3a	short	_unk_3A
 @MusicPlayerTrack@3c	short	_unk_3C
@@ -1600,7 +1600,7 @@
 @SongHeader@01	byte	blockCount
 @SongHeader@02	byte	priority
 @SongHeader@03	byte	reverb
-@SongHeader@04	&ToneData	tone
+@SongHeader@04	&INSTRUMENT_TONEDATA	instrument_tonedata
 @SongHeader@08	byte	part_array
 
 @MusicPlayerInfo@00	&SongHeader	songHeader
@@ -1620,8 +1620,8 @@
 @MusicPlayerInfo@26	short	fadeOC
 @MusicPlayerInfo@28	short	fadeOV
 @MusicPlayerInfo@2a	short	_pad2A
-@MusicPlayerInfo@2c	&MusicPlayerTrack	tracks
-@MusicPlayerInfo@30	&ToneData	tone
+@MusicPlayerInfo@2c	&MusicPlayerTrack	tracksArray
+@MusicPlayerInfo@30	&INSTRUMENT_TONEDATA	instrument_tonedata
 @MusicPlayerInfo@34	word	ident
 @MusicPlayerInfo@38	word	func
 @MusicPlayerInfo@3c	word	intp

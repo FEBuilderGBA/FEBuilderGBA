@@ -80,6 +80,12 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="ToolBGMMuteDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolBGMMuteDialogForm.Designer.cs">
+      <DependentUpon>ToolBGMMuteDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventScriptUtil.cs" />
     <Compile Include="EventUnitSimUserControl.cs">
       <SubType>UserControl</SubType>
@@ -2171,6 +2177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CStringForm.resx">
       <DependentUpon>CStringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBGMMuteDialogForm.resx">
+      <DependentUpon>ToolBGMMuteDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolChangeProjectnameForm.resx">
       <DependentUpon>ToolChangeProjectnameForm.cs</DependentUpon>

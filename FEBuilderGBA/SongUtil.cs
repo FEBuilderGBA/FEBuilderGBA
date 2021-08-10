@@ -623,6 +623,7 @@ namespace FEBuilderGBA
 
                 for (int t = 0; t < tracks.Count; t++)
                 {
+                    Track tr = tracks[t];
                     w.WriteLine("");
                     w.WriteLine("@**************** Track " + (t + 1) + " (Midi-Chn." + t + ") ****************@");
                     w.WriteLine("");
@@ -632,9 +633,9 @@ namespace FEBuilderGBA
                     uint lastTuneWait = 0;
                     const uint tempo = 96;
                     w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
-                    for (int i = 0; i < tracks[t].codes.Count; i++)
+                    for (int i = 0; i < tr.codes.Count; i++)
                     {
-                        Code code = tracks[t].codes[i];
+                        Code code = tr.codes[i];
                         if (code.waitCount >= lastTuneWait + tempo)
                         {
                             if (code.type == 0xb4 || code.type == 0xb1 || code.type == 0xb3)
@@ -728,6 +729,71 @@ namespace FEBuilderGBA
             }
         }
 
+        public class MusicalBar
+        {
+            public List<uint> AddrList;
+        }
+        public static uint FindMusicalBar(MusicalBar musicalBars, uint addr)
+        {
+            int max = musicalBars.AddrList.Count;
+            if (max <= 0)
+            {
+                return 0;
+            }
+
+            for (int i = 1; i < max; i++)
+            {
+                if (addr <= musicalBars.AddrList[i])
+                {
+                    return (uint)i - 1;
+                }
+            }
+
+            return (uint)max;
+        }
+        public static List<MusicalBar> ConvertTracksToMusicalBar(List<Track> tracks)
+        {
+            List<MusicalBar> musicalBars = new List<MusicalBar>();
+            for (int t = 0; t < tracks.Count; t++)
+            {
+                Track tr = tracks[t];
+                MusicalBar mb = new MusicalBar();
+                mb.AddrList = new List<uint>();
+                if (tr.codes.Count >= 1)
+                {
+                    mb.AddrList.Add(tr.codes[0].addr);
+                }
+
+                //uint tune = 0;
+                uint lastTuneWait = 0;
+                const uint tempo = 96;
+                for (int i = 0; i < tr.codes.Count; i++)
+                {
+                    Code code = tr.codes[i];
+                    if (code.waitCount >= lastTuneWait + tempo)
+                    {
+                        if (code.type == 0xb4 || code.type == 0xb1 || code.type == 0xb3)
+                        {//PEND FINE PATT は、例外として、最後のトラックに記載する.
+                        }
+                        else
+                        {//次のトラックへ
+                            lastTuneWait = code.waitCount;
+                            //tune++;
+                            mb.AddrList.Add(code.addr);
+                        }
+                    }
+                    if (code.type == 0xb3)
+                    {//PATTなので強制的に小節をわける
+                        lastTuneWait = 0;
+                        //tune++;
+                        mb.AddrList.Add(code.addr);
+                    }
+                }
+
+                musicalBars.Add(mb);
+            }
+            return musicalBars;
+        }
 
         class PlayKeys
         {

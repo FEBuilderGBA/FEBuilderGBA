@@ -11665,6 +11665,24 @@ Unmodified ROM
 :損傷したROMヘッダー 0x0 - 0x100を自動復帰します。
 Automatically restore damaged ROM headers 0x0-0x100.
 
+:トラック({0})をミュート解除にしますか？\r\n{1}
+Do you want to unmute the track ({0})? \r\n{1}.
+
+:ミュート解除する
+Unmute.
+
+:トラック({0})をミュートしますか？\r\n{1}
+Do you want to mute the track ({0})? \r\n{1}.
+
+:ミュートする
+Mute.
+
+:このトラックだけを再生する
+Play only this track.
+
+:すべてのトラックを再生する
+Play all tracks.
+
 :変更したデータが保存されていません。\r\n名前を変更する前に、データを保存してください。
 Changed data has not been saved.\r\nSave the data before changing the name.
 

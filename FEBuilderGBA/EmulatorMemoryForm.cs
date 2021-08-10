@@ -63,6 +63,8 @@ namespace FEBuilderGBA
             this.BoldFont = new Font(this.FlagListBox.Font, FontStyle.Bold);
             this.YubiYokoCursor = ImageSystemIconForm.YubiYoko();
             U.MakeTransparent(this.YubiYokoCursor);
+            this.MusicIcon = ImageSystemIconForm.MusicIcon(6);
+            U.MakeTransparent(this.MusicIcon);
 
             //リスト項目の初期化.
             InitUserStack();
@@ -74,6 +76,7 @@ namespace FEBuilderGBA
             InitCheat(controls);
             InitParty();
             InitPaletteEtc();
+            InitBGM();
             
             //メモリの内容を取得.
             UpdateALL();
@@ -107,6 +110,7 @@ namespace FEBuilderGBA
         SolidBrush ListBoxForeDecBrush;
         Font BoldFont;
         Bitmap YubiYokoCursor;
+        Bitmap MusicIcon;
 
         InputFormRef N_InputFormRef;
         InputFormRef PROCS_InputFormRef;
@@ -218,6 +222,7 @@ namespace FEBuilderGBA
             UpdateBattleSomeData();
             UpdateBattleRoundData();
             UpdatePalette();
+            UpdateBGM();
         }
         void UpdateUserStack()
         {
@@ -282,9 +287,6 @@ namespace FEBuilderGBA
         {
             FindCurrentEvent(ref CurrentEventBegineAddr, ref CurrentEventRunningLineAddr);
             uint lastStringAddr = Program.ROM.RomInfo.workmemory_last_string_address();
-
-            uint currntBGMStructAddr = Program.ROM.RomInfo.workmemory_bgm_address();
-            BGM.Value = Program.RAM.u16(currntBGMStructAddr + 4);
 
             uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
             this.N_InputFormRef.ReInit(stageStructAddr, 1);
@@ -936,6 +938,11 @@ namespace FEBuilderGBA
             {
                 this.YubiYokoCursor.Dispose();
                 this.YubiYokoCursor = null;
+            }
+            if (this.MusicIcon != null)
+            {
+                this.MusicIcon.Dispose();
+                this.MusicIcon = null;
             }
             if (IsAutoSpeech)
             {
@@ -2459,6 +2466,13 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
+        void InitBGM()
+        {
+            this.BGMPlayerList.OwnerDraw(DrawBGMPlayerList, DrawMode.OwnerDrawFixed, false);
+            this.BGMPlayerList.ItemHeight = 32;
+            //this.BGMPlayerList.DummyAlloc(0x0, 0);
+        }
+
         void InitPaletteEtc()
         {
             if (Program.ROM.RomInfo.version() < 8)
@@ -2703,6 +2717,109 @@ namespace FEBuilderGBA
                 this.ClearTurnList.Invalidate();
             }
         }
+        void UpdateBGM()
+        {
+            uint currntBGMStructAddr = Program.ROM.RomInfo.workmemory_bgm_address();
+            uint songid = Program.RAM.u16(currntBGMStructAddr + 4);
+            if (this.CurrentSongID != songid)
+            {//BGMが変更された
+                if (!UpdateBGM_NewSongID(songid))
+                {
+                    UpdateBGM_SetEmpty();
+                }
+                return;
+            }
+
+            for (int i = 0; i < this.CurrentSongPlayTrackList.Count; i++ )
+            {
+                PlayTrack pt = this.CurrentSongPlayTrackList[i];
+                byte[] bin = Program.RAM.getBinaryData(
+                      pt.RAMAddr + 4
+                    , 0x30);
+                uint sum = U.CalcCheckSUM(bin);
+                if (sum != pt.CheckSUM)
+                {//変更有
+                    pt.CheckSUM = sum;
+                    this.BGMPlayerList.InvalidateLine(i);
+                }
+            }
+        }
+        bool UpdateBGM_NewSongID(uint songid)
+        {
+            BGM.Value = songid;
+            BGM_INFO.Text = U.To0xHexString(songid) + " " + BGMName.Text;
+
+            uint songTableAddr = SongTableForm.GetSongAddr(songid);
+            if (! U.isSafetyOffset(songTableAddr))
+            {
+                return false;
+            }
+            uint songHeaderAddr = Program.ROM.p32(songTableAddr);
+            if (!U.isSafetyOffset(songHeaderAddr))
+            {
+                return false;
+            }
+            uint playerid = Program.ROM.u8(songTableAddr + 4);
+            if (playerid >= 0x8)
+            {
+                return false;
+            }
+            uint trackCount = Program.ROM.u8(songHeaderAddr + 0);
+            if (trackCount >= 0x16)
+            {
+                return false;
+            }
+            uint instAddr = Program.ROM.p32(songHeaderAddr + 4);
+            if (! U.isSafetyOffset(instAddr))
+            {
+                return false;
+            }
+            //曲を再生しているワークバッファ
+            uint musicPlayerRAMAddr = this.SongWorkingRAMs[playerid];
+            //再生しているトラック数
+            uint musicPlayerTrack = Program.RAM.u8(musicPlayerRAMAddr + 8);
+            if (musicPlayerTrack < trackCount)
+            {//まだ再生していない?
+                return false;
+            }
+            uint musicPlayerTrackRAMAddr = Program.RAM.u32(musicPlayerRAMAddr + 0x2C);
+
+            this.CurrentSongID = songid;
+
+            //楽器
+            this.CurrentSongInstAddr = instAddr;
+
+            //楽譜のロード
+            List<SongUtil.Track> tracks = SongUtil.ParseTrack(songHeaderAddr, trackCount);
+            this.CurrentSongMusicalBarList = SongUtil.ConvertTracksToMusicalBar(tracks);
+            //トラック情報
+            this.CurrentSongPlayTrackList = new List<PlayTrack>((int)trackCount);
+
+            //RAMアドレスをセットする.
+            //musicPlayerTrackRAMAddr = musicPlayerTrack[0x2c] 
+            //ここから、0x50バイトごとにトラック情報が格納されている.
+            //Huichelaar's Adaptive BGM の成果を元にしています.
+            // https://feuniverse.us/t/huichelaars-assembly-adventures/8229/
+            //
+            uint musicPlayerTrackRAMAddr_local = musicPlayerTrackRAMAddr;
+            for (uint i = 0; i < trackCount; i++, musicPlayerTrackRAMAddr_local += 0x50)
+            {
+                PlayTrack pt = new PlayTrack();
+                pt.RAMAddr = musicPlayerTrackRAMAddr_local;
+                pt.InstNameCache = "";
+                this.CurrentSongPlayTrackList.Add(pt);
+            }
+            //リストの確保
+            this.BGMPlayerList.DummyAlloc((int)trackCount, this.BGMPlayerList.SelectedIndex);
+            return true;
+        }
+        void UpdateBGM_SetEmpty()
+        {
+            CurrentSongInstAddr = 0;
+            CurrentSongMusicalBarList = new List<SongUtil.MusicalBar>();
+            CurrentSongPlayTrackList = new List<PlayTrack>();
+            this.BGMPlayerList.DummyAlloc(0, this.BGMPlayerList.SelectedIndex);
+        }
         void UpdatePalette()
         {
             byte[] bin = Program.RAM.getBinaryData(
@@ -2821,8 +2938,7 @@ namespace FEBuilderGBA
                 this.BattleRoundDataList.Invalidate();
             }
         }
-        
-        
+
         Size DrawPalette(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
             if (index < 0 || index >= lb.Items.Count)
@@ -3753,5 +3869,265 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        //現在再生中の曲
+        uint CurrentSongID;
+        //現在の曲の楽器リストの先頭アドレス
+        uint CurrentSongInstAddr;
+        //楽譜を仕様節ごとに区切った早見表
+        List<SongUtil.MusicalBar> CurrentSongMusicalBarList = new List<SongUtil.MusicalBar>();
+        //トラック情報
+        public class PlayTrack
+        {
+            public bool IsMute;
+            public uint OrgVolX;
+            public uint RAMAddr;
+            public uint CheckSUM;
+            public string InstNameCache;
+            public uint InstCheckSUM;
+        };
+        List<PlayTrack> CurrentSongPlayTrackList = new List<PlayTrack>();
+
+        Size DrawBGMPlayerList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            if (index >= CurrentSongPlayTrackList.Count || index >= CurrentSongMusicalBarList.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            int lineHeight = lb.Font.Height;
+            Rectangle bounds = listbounds;
+            PlayTrack pt = CurrentSongPlayTrackList[index];
+
+            uint v;
+
+            if (!pt.IsMute)
+            {//再生マーク
+                Rectangle b = bounds;
+                b.Width = ListBoxEx.OWNER_DRAW_ICON_SIZE;
+                b.Height = ListBoxEx.OWNER_DRAW_ICON_SIZE;
+                U.DrawPicture(this.MusicIcon, g, isWithDraw, b);
+            }
+            bounds.X += ListBoxEx.OWNER_DRAW_ICON_SIZE + 5;
+
+            string str;
+            uint socreAddr = Program.RAM.u32(pt.RAMAddr + 0x40);
+            socreAddr = U.toOffset(socreAddr);
+
+            uint bar = SongUtil.FindMusicalBar(this.CurrentSongMusicalBarList[index], socreAddr);
+
+            str = "#" + index.ToString("00");
+            U.DrawText(str, g, this.BoldFont, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+            bounds.X += 30;
+
+            str = "@" + bar.ToString("000");
+            U.DrawText(str, g, this.BoldFont, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 35;
+
+            bounds.X += 75;
+
+            v = Program.RAM.u8(pt.RAMAddr + 0x12);
+            str = "Vol:" + v.ToString("000");
+            U.DrawText(str, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 50;
+
+            //音を鳴らしている時間
+            uint gateTime = Program.RAM.u8(pt.RAMAddr + 0x4);
+            uint key = Program.RAM.u8(pt.RAMAddr + 0x5);
+            uint velocity = Program.RAM.u8(pt.RAMAddr + 0x6);
+            bool isMuteSound = (gateTime == 0 && key == 0 && velocity == 0);
+
+            {
+                //ボリュームの中央マーク
+                Color c = Color.DarkGreen;
+                Brush b = new SolidBrush(c);
+                Rectangle rc = new Rectangle(
+                      bounds.X + 128 - 1
+                    , bounds.Y
+                    , (int)2
+                    , (int)lineHeight);
+                g.FillRectangle(b, rc);
+                b.Dispose();
+            }
+
+            uint toneRAMAddr = Program.RAM.u32(pt.RAMAddr + 0x20);
+            if (isMuteSound == false && U.is_RAMPointer(toneRAMAddr))
+            {
+                Color c = Color.Green;
+                Brush b = new SolidBrush(c);
+
+                uint leftVolume = Program.RAM.u8(toneRAMAddr + 0x03);
+                uint leftVolumeWidth = Math.Min(leftVolume,128);
+                uint rightVolume = Program.RAM.u8(toneRAMAddr + 0x02);
+                uint rightVolumeWidth = Math.Min(rightVolume, 128);
+                Rectangle rc = new Rectangle(
+                      (int)(bounds.X + 128 - leftVolumeWidth)
+                    , bounds.Y
+                    , (int)(leftVolumeWidth + rightVolumeWidth)
+                    , (int)lineHeight);
+                g.FillRectangle(b, rc);
+
+                b.Dispose();
+            }
+
+            bounds.X = listbounds.X + 600;
+            str = "RAM:" + U.To0xHexString(pt.RAMAddr);
+            U.DrawText(str, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+
+            bounds.X = listbounds.X + 700;
+            str = "ROM:" + U.To0xHexString(socreAddr);
+            U.DrawText(str, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+
+            //2行目
+            bounds.X = listbounds.X;
+            bounds.X += ListBoxEx.OWNER_DRAW_ICON_SIZE + 5;
+            bounds.Y += (int)lineHeight;
+
+            if (isMuteSound)
+            {
+                str = "Note: ";
+            }
+            else
+            {
+                str = "Note: " + "N" + gateTime.ToString("00") + ", " + SongUtil.getKeyCode(key) + ", v" + velocity.ToString("000");
+            }
+            U.DrawText(str, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 140;
+
+            //楽器IDは取れないので、データから逆引きします.
+            byte[] bin = Program.RAM.getBinaryData(pt.RAMAddr + 0x24, 12);
+            uint instCheckSUM = U.CalcCheckSUM(bin);
+            if (pt.InstCheckSUM != instCheckSUM)
+            {
+                uint instID = SongInstrumentForm.GetDataToID(CurrentSongInstAddr, bin);
+                str = SongInstrumentForm.GetNameFull(CurrentSongInstAddr, instID);
+                pt.InstNameCache = str;
+                pt.InstCheckSUM = instCheckSUM;
+            }
+            bounds.X += U.DrawText(pt.InstNameCache, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+
+            if (bin[0] == 0x80 && !isMuteSound)
+            {//drumの場合は、利用している楽器名を追加表示
+                uint drumAddr = U.p32(bin, 4);
+                if (U.isSafetyOffset(drumAddr))
+                {
+                    str = SongInstrumentForm.GetNameFull(drumAddr, key);
+                    bounds.X += U.DrawText(" ==> " + str, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                }
+            }
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+
+        void MuteBGMTrack(PlayTrack pt, bool isMute)
+        {
+            if (! U.is_RAMPointer(pt.RAMAddr))
+            {
+                return;
+            }
+
+            if (isMute)
+            {//ミュートする
+                if (pt.IsMute)
+                {//既にmuteしている
+                    return;
+                }
+                uint flag = Program.RAM.u8(pt.RAMAddr);
+                if ((flag & 0x80) != 0x80)
+                {//このトラックは動作していないのでmuteできない
+                    return;
+                }
+
+                uint volX = Program.RAM.u8(pt.RAMAddr + 0x13);
+                if (volX == 0)
+                {//既にmuteしている
+                    return;
+                }
+
+                //volXを読み取るようにflagを設定する. 0x83 みたいになるね.
+                flag |= 0x3;
+                Program.RAM.write_u8(pt.RAMAddr, flag);
+                //volXを0に設定します.
+                Program.RAM.write_u8(pt.RAMAddr + 0x13, 0);
+
+                //muteしたことを記録する
+                pt.IsMute = true;
+                pt.OrgVolX = volX;
+            }
+            else
+            {//ミュート開所する
+                if (!pt.IsMute)
+                {//既にmute解除している
+                    return;
+                }
+                uint flag = Program.RAM.u8(pt.RAMAddr);
+                if ((flag & 0x80) != 0x80)
+                {//このトラックは動作していないのでmute解除できない
+                    return;
+                }
+
+                //volXを読み取るようにflagを設定する. 0x83 みたいになるね.
+                flag |= 0x3;
+                Program.RAM.write_u8(pt.RAMAddr, flag);
+                //volXを元の値に復帰させます.
+                Program.RAM.write_u8(pt.RAMAddr + 0x13, pt.OrgVolX);
+
+                //mute解除したことを記録する
+                pt.IsMute = false;
+                pt.OrgVolX = 0;
+            }
+        }
+        private void BGMPlayerList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int i = BGMPlayerList.SelectedIndex;
+            if (i < 0 || i >= CurrentSongPlayTrackList.Count)
+            {
+                return ;
+            }
+            PlayTrack pt = CurrentSongPlayTrackList[i];
+
+            ToolBGMMuteDialogForm f = (ToolBGMMuteDialogForm)InputFormRef.JumpFormLow<ToolBGMMuteDialogForm>();
+            f.Init(i, pt.IsMute, pt.InstNameCache);
+            DialogResult dr = f.ShowDialog();
+
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {//トグル
+                MuteBGMTrack(pt, !pt.IsMute);
+            }
+            else if (dr == System.Windows.Forms.DialogResult.Ignore)
+            {//このトラックだけを再生
+                for (int n = 0; n < CurrentSongPlayTrackList.Count; n++)
+                {
+                    if (n == i)
+                    {//自分は再生
+                        MuteBGMTrack(CurrentSongPlayTrackList[n], isMute: false);
+                    }
+                    else
+                    {//他人はmute
+                        MuteBGMTrack(CurrentSongPlayTrackList[n], isMute: true);
+                    }
+                }
+            }
+            else if (dr == System.Windows.Forms.DialogResult.Retry)
+            {//すべてのトラックを再生
+                for (int n = 0; n < CurrentSongPlayTrackList.Count; n++)
+                {//すべて再生
+                    MuteBGMTrack(CurrentSongPlayTrackList[n], isMute: false);
+                }
+            }
+        }
+
+        private void BGMPlayerList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BGMPlayerList_MouseDoubleClick(sender, null);
+            }
+        }
+
     }
 }

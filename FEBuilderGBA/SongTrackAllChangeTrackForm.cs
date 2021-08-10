@@ -38,6 +38,7 @@ namespace FEBuilderGBA
                 this.VoiceListbox.Items.Add(v);
             }
             this.VoiceListbox.EndUpdate();
+            U.SelectedIndexSafety(this.VoiceListbox, 0);
         }
         string GetVoiceName(SongUtil.ChangeVoiceSt v)
         {

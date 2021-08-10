@@ -115,7 +115,8 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    string hint2 = "(" + i.ToString() + ", " + SongUtil.getKeyCode((uint)i) + ")";
+//                    string hint2 = "(" + U.To0xHexString(i) + ", " + SongUtil.getKeyCode((uint)i) + ")";
+                      string hint2 = "(" + U.To0xHexString(i) + ")";
 
                     string fingerprint = SongInstrumentForm.FingerPrint(addr);
                     if (fingerprint != "")
@@ -123,13 +124,26 @@ namespace FEBuilderGBA
                         InstrumentHintSt hint;
                         if (InstrumentHint.TryGetValue(fingerprint, out hint))
                         {
-                            return U.ToHexString(i) + " " + hint.name + " " + hint2;
+                            return i.ToString("000") + " " + hint.name + " " + hint2;
                         }
                     }
                     uint type = Program.ROM.u8(addr);
-                    return U.ToHexString(i) + " " + GetInstrumentTypeName(type) + " " + hint2;
+                    return i.ToString("000") + " " + GetInstrumentTypeName(type) + " " + hint2;
                 }
                 );
+        }
+
+        //データから楽器IDを逆引きして返す
+        public static uint GetDataToID(uint voca_baseaddress, byte[] bin)
+        {
+            uint instAddr = U.Grep(Program.ROM.Data, bin, voca_baseaddress, voca_baseaddress + (128 * 12), 12);
+            if (instAddr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            //楽器ID
+            uint instID = (instAddr - voca_baseaddress) / 12;
+            return instID;
         }
 
         public static string GetNameFull(uint voca_baseaddress, uint inst_id)
