@@ -3919,7 +3919,7 @@ namespace FEBuilderGBA
 
             uint bar = SongUtil.FindMusicalBar(this.CurrentSongMusicalBarList[index], socreAddr);
 
-            str = "#" + index.ToString("00");
+            str = "#" + (index+1).ToString("00");
             U.DrawText(str, g, this.BoldFont, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
             bounds.X += 30;
 
