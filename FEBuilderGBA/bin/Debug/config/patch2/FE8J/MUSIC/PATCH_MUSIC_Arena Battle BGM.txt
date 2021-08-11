@@ -4,7 +4,7 @@ NAME.zh=音乐_斗技场战斗音乐
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x08074bf0
 ADDRESS_TYPE=SONG

@@ -3,7 +3,7 @@ NAME.en=All Instrument
 NAME.zh=All Instrument
 
 TYPE=EA
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 ../../FE7U/AllInstrumentEA/0x46MULTI_0x69.bin=0x00 0x00 0x00 0x40

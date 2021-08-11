@@ -1,0 +1,20 @@
+NAME=プレイヤーのユニットが死亡したとしてもBGMを変更しない
+NAME.en=Does not change BGM even if PlayerUnit dies
+NAME.zh=Does not change BGM even if PlayerUnit dies
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
+
+COMBO=Default: play song|OFF|Fix: Do not play song|FIX
+
+DETERMINATION_ADDRESS=0x8362C
+
+OFF:0x08362C=0x7E 0xF7 0x52 0xFF
+FIX:0x08362C=0xC0 0x46 0xC0 0x46
+
+INFO=自軍のユニットが死亡したときに、BGMを「0x3f 悲しみの中で」を再生しないようにします。\r\nディフォルトでは、プレイヤーユニットが死亡すると、このBGMが再生されます。
+INFO.en=This patch prevents the BGM "0x3f In Sorrow's Shroud" from playing when a unit in your army(blue) dies.\r\nBy default, when a player unit dies, this BGM will be played.
+INFO.zh=This patch prevents the BGM "0x3f In Sorrow's Shroud" from playing when a unit in your army(blue) dies.\r\nBy default, when a player unit dies, this BGM will be played.
+
+AUTHOR=Vesly

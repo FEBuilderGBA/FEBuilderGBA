@@ -3,7 +3,7 @@ NAME.en=Unique Battle Music Per Unit Installer
 NAME.zh=每人物战斗音乐变更(Install)
 
 TYPE=EA
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 PATCHED_IF:0x5C53E=0x00 0x00 0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_Battle music change for each units.txt

@@ -2,7 +2,7 @@ NAME=ユニットを選択した時に音声を再生する(Install)
 NAME.en=Unit Select SFX Installer
 
 TYPE=EA
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 EA=install unit select sfx.event
 
 //既に適応されたかどうか

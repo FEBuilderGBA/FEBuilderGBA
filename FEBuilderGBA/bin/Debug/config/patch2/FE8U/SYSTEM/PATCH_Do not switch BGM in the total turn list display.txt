@@ -8,6 +8,6 @@ TYPE=ADDR
 ADDRESS=0x0B8126
 COMBO=Default|0x4A 0xF7 0xD5 0xF9|FIX: Do not play specific song|0x00 0x00 0x00 0x00
 
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 NAME.zh=不要在转弯列表显示中切换 BGM。
 INFO.zh=阻止在屏幕上播放特定音乐，该屏幕显示结尾清晰的回合数列表。\r\n事件命令之前播放的音乐照原样播放。\r\n默认是播放 MUSIC_epilogue 指定的音乐。\r\n此补丁会抑制歌曲的播放，并允许您从事件中指定您最喜欢的音乐。

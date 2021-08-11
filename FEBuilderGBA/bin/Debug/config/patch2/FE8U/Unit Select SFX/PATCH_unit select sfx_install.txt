@@ -3,7 +3,7 @@ NAME.en=Unit Select SFX Installer
 NAME.zh=选择人物时播放音频(Install)
 
 TYPE=EA
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 EA=install unit select sfx.event
 

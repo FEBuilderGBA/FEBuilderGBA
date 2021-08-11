@@ -6,7 +6,7 @@ NAME.zh=每章的胜利的音乐变更
 PATCHED_IF:0x20D94=0x00 0x20 //昔のミスを直すために変更する
 
 TYPE=BIN
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 //JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行います.
 BIN:$FREEAREA:1=music10change.bin

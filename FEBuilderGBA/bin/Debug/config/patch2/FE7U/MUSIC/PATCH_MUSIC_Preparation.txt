@@ -2,7 +2,7 @@ NAME=MUSIC_進撃準備
 NAME.en=Preparation Screen BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 
 

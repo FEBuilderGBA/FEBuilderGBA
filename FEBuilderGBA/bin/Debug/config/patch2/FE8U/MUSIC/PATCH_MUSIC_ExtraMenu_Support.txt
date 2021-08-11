@@ -3,7 +3,7 @@ NAME.zh=音乐_ExtraMenu_支援
 NAME.en=ExtraMenu Support Room BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x080A9C92 0x080A2BE2
 ADDRESS_TYPE=SONG

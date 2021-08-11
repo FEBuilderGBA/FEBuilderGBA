@@ -3,7 +3,7 @@ NAME.en=Lagdou/Valni Full Clear BGM
 NAME.zh=音乐_胜利之歌β
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x08085E56
 ADDRESS_TYPE=SONG

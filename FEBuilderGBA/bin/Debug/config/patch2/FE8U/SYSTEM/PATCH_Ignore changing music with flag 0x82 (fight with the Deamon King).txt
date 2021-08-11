@@ -2,7 +2,7 @@ NAME=フラグ0x82(魔王との戦闘)で音楽を変えるのを無視する
 NAME.en=Ignore changing music with flag 0x82 (fight with the Deamon King)
 
 TYPE=ADDR
-TAG=#MUSIC
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x727A0
 COMBO=Default|0x01|修正|0x02

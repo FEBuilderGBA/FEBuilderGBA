@@ -3,7 +3,7 @@ NAME.en=Sacred Weapons BGM BGM
 NAME.zh=音乐_神圣之力
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x08072786
 ADDRESS_TYPE=SONG

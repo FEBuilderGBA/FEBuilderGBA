@@ -4,7 +4,7 @@ NAME.zh=音乐_战斗_攻击_BGM Boss5 (Boss BGM)
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x05C5BC
 ADDRESS_TYPE=SONG

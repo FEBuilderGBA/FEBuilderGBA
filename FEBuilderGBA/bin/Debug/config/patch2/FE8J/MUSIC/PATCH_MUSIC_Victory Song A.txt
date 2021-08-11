@@ -4,7 +4,7 @@ NAME.zh=音乐_胜利之歌α
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x0808812c
 ADDRESS_TYPE=SONG

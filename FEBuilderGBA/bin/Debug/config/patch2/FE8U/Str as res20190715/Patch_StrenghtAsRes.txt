@@ -2,7 +2,7 @@ NAME=ResをMagicとして利用するパッチ 20190715(Install)
 NAME.en=Patch that uses Res as Magic 20190715(Install)
 
 TYPE=EA
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 //既に適応されたかどうか
 PATCHED_IF:0x2AB50=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0

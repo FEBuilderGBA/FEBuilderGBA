@@ -4,7 +4,7 @@ NAME.zh=音乐_Promotion BGM
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x05C594
 ADDRESS_TYPE=SONG

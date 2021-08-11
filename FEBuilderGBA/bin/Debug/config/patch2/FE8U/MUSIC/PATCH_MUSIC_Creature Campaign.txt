@@ -8,7 +8,7 @@ INFO.zh=设置BGM在世界地图中不存在下一个目的地时播放。
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#SOUND
+TAG=#MUSIC #SONG #SOUND #BGM
 
 ADDRESS=0x0B9FA8
 ADDRESS_TYPE=SONG

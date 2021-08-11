@@ -13,7 +13,7 @@ HINT=BGM
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
-TAG=#ENGINE #SOUND
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
 //データへのポインタ
 POINTER=$FGREP4END battle_music_changer2.dmp
