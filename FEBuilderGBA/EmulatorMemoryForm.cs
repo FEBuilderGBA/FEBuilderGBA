@@ -468,17 +468,19 @@ namespace FEBuilderGBA
                     && ramaddr == this.RAMAddr;
             }
         }
-        byte[] ProcsDataArray = new byte[0x6c * 0x40];
+        public const uint PROCS_POOL_SIZE = 0x6c * 0x40;
+        uint ProcsCheckSUM;
         List<ProcsData> ProcsTree;
         void UpdateProcs()
         {
             uint addr = Program.ROM.RomInfo.workmemory_procs_pool_address();
-            byte[] bin = Program.RAM.getBinaryData(addr, this.ProcsDataArray.Length);
-            if (U.memcmp(this.ProcsDataArray, bin) == 0)
+            byte[] bin = Program.RAM.getBinaryData(addr, PROCS_POOL_SIZE);
+            uint checksum = U.CalcCheckSUM(bin);
+            if (ProcsCheckSUM == checksum)
             {//変更なし
                 return;
             }
-            this.ProcsDataArray = bin;
+            this.ProcsCheckSUM = checksum;
 
             //木の生成.
             List<ProcsData> tree = new List<ProcsData>();
@@ -492,6 +494,7 @@ namespace FEBuilderGBA
 
             //個数が違うので変更があった
             this.ProcsListBox.DummyAlloc(tree.Count, this.ProcsListBox.SelectedIndex);
+            AutoSwitcher();
         }
         bool MakeProcNode(List<ProcsData> tree, uint ramaddr,uint topTreeIndex, uint jisage)
         {
@@ -2470,6 +2473,7 @@ namespace FEBuilderGBA
         {
             this.BGMPlayerList.OwnerDraw(DrawBGMPlayerList, DrawMode.OwnerDrawFixed, false);
             this.BGMPlayerList.ItemHeight = 32;
+            InputFormRef.markupJumpLabel(J_BGM_BGM);
             //this.BGMPlayerList.DummyAlloc(0x0, 0);
         }
 
@@ -2783,6 +2787,10 @@ namespace FEBuilderGBA
                 return false;
             }
             uint musicPlayerTrackRAMAddr = Program.RAM.u32(musicPlayerRAMAddr + 0x2C);
+            if (!U.is_RAMPointer(musicPlayerTrackRAMAddr))
+            {
+                return false;
+            }
 
             this.CurrentSongID = songid;
 
@@ -4129,5 +4137,41 @@ namespace FEBuilderGBA
             }
         }
 
+        bool AutoSwitcherOff;
+        private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender == MainTabControl)
+            {//人間による変更
+                this.AutoSwitcherOff = true;
+            }
+        }
+
+        void AutoSwitcher()
+        {
+            //人が一度でも変更しているなら自動変更は起動させない
+            if (this.AutoSwitcherOff)
+            {
+                return;
+            }
+
+            //サウンドルームが起動していれば、BGMタブに移動する
+            uint soundRoomUI = EmulatorMemoryUtil.SearchSoundRoomUIProcsAddr();
+            if (U.is_RAMPointer(soundRoomUI))
+            {
+                this.AutoSwitcherOff = true;
+                MainTabControl.SelectedTab = BGMTab;
+                return;
+            }
+        }
+
+        private void J_BGM_BGM_Click(object sender, EventArgs e)
+        {
+            U.FireOnClick(J_BGM);
+        }
+
+        private void BGM_INFO_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            U.FireOnClick(J_BGM);
+        }
     }
 }

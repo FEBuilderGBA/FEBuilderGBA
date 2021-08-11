@@ -809,6 +809,7 @@
             this.MainTabControl.SelectedIndex = 0;
             this.MainTabControl.Size = new System.Drawing.Size(1654, 920);
             this.MainTabControl.TabIndex = 67;
+            this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.MainTabControl_SelectedIndexChanged);
             // 
             // EventPage
             // 
@@ -3254,6 +3255,7 @@
             this.J_BGM_BGM.TabIndex = 340;
             this.J_BGM_BGM.Text = "BGM";
             this.J_BGM_BGM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_BGM_BGM.Click += new System.EventHandler(this.J_BGM_BGM_Click);
             // 
             // BGM_INFO
             // 
@@ -3265,6 +3267,7 @@
             this.BGM_INFO.ReadOnly = true;
             this.BGM_INFO.Size = new System.Drawing.Size(1252, 25);
             this.BGM_INFO.TabIndex = 341;
+            this.BGM_INFO.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BGM_INFO_MouseDoubleClick);
             // 
             // EtcPage
             // 

@@ -1866,6 +1866,28 @@ namespace FEBuilderGBA
             return getBinaryData(data, addr, (uint)count);
         }
 
+        public static uint CalcCheckSUMDirect(byte[] data, uint addr, uint count)
+        {
+            if (data.Length <= addr + count)
+            {
+                if (data.Length == 0)
+                {
+                    return 0;
+                }
+                if (addr >= data.Length - 1)
+                {
+                    addr = (uint)data.Length - 1;
+                }
+                count = (uint)(data.Length) - addr;
+            }
+            uint end = addr + count;
+            uint result = 0;
+            for (uint i = addr; i < end; i++ )
+            {
+                result += data[i];
+            }
+            return result;
+        }
 
         public static byte[] getBinaryData(byte[] data, uint addr, uint count)
         {

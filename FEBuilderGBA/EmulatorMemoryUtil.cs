@@ -383,47 +383,26 @@ namespace FEBuilderGBA
 
         static uint SearchMapTaskProcsAddr()
         {
-            if (Program.ROM.RomInfo.version() == 8)
-            {
-                if (Program.ROM.RomInfo.is_multibyte())
-                {//FE8J
-                    return SearchProcsAddr(0x085c5de8);
-                }
-                else
-                {//FE8U
-                    return SearchProcsAddr(0x0859d908);
-                }
-            }
-            else if (Program.ROM.RomInfo.version() == 7)
-            {
-                if (Program.ROM.RomInfo.is_multibyte())
-                {//FE7J
-                    return SearchProcsAddr(0x08C05464);
-                }
-                else
-                {//FE7U
-                    return SearchProcsAddr(0x08B961A8);
-                }
-            }
-            else if (Program.ROM.RomInfo.version() == 6)
-            {//FE6
-                return SearchProcsAddr(0x085C7BE4);
-            }
-            else
-            {
-                return U.NOT_FOUND;
-            }
+            uint maptaskProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_maptask_pointer());
+            return SearchProcsAddr(maptaskProcsAddr);
+        }
+        public static uint SearchSoundRoomUIProcsAddr()
+        {
+            uint soundRoomUIProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_soundroomUI_pointer());
+            return SearchProcsAddr(soundRoomUIProcsAddr);
         }
 
         static uint SearchProcsAddr(uint search_procs_code)
         {
-            byte[] need = new byte[] { 0xFF, 0xFF, 0xFF, 0x08, 0x00, 0x00, 0x00, 0x08 };
-            bool[] mask = new bool[] { false, false, false, false, true, true, true, false };
-
+            if (search_procs_code == 0)
+            {
+                return U.NOT_FOUND;
+            }
+            uint procs_pool_addr = Program.ROM.RomInfo.workmemory_procs_pool_address() - 0x02000000;
+            byte[] need = new byte[] { 0x00, 0x00, 0x00, 0x00 };
             U.write_u32(need, 0, search_procs_code);
 
-            uint maptask = Program.RAM.GrepPatternMatch0x02(need, mask, 4);
-            return maptask;
+            return Program.RAM.Grep0x02(need, procs_pool_addr, procs_pool_addr + EmulatorMemoryForm.PROCS_POOL_SIZE, 0x6c);
         }
 
 

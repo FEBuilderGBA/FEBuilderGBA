@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ToggleButton = new System.Windows.Forms.Button();
             this.OnlyPlayButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PlayAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,22 +63,22 @@
             this.OnlyPlayButton.UseVisualStyleBackColor = true;
             this.OnlyPlayButton.Click += new System.EventHandler(this.OnlyPlayButton_Click);
             // 
-            // button1
+            // PlayAllButton
             // 
-            this.button1.Location = new System.Drawing.Point(15, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(534, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "すべてのトラックを再生する";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PlayAllButton.Location = new System.Drawing.Point(15, 221);
+            this.PlayAllButton.Name = "PlayAllButton";
+            this.PlayAllButton.Size = new System.Drawing.Size(534, 42);
+            this.PlayAllButton.TabIndex = 3;
+            this.PlayAllButton.Text = "すべてのトラックを再生する";
+            this.PlayAllButton.UseVisualStyleBackColor = true;
+            this.PlayAllButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // ToolBGMMuteDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 287);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PlayAllButton);
             this.Controls.Add(this.OnlyPlayButton);
             this.Controls.Add(this.ToggleButton);
             this.Controls.Add(this.label1);
@@ -94,6 +94,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ToggleButton;
         private System.Windows.Forms.Button OnlyPlayButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PlayAllButton;
     }
 }

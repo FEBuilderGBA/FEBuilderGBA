@@ -3132,8 +3132,9 @@
     <Content Include="icon_sunny.ico" />
     <Content Include="icon_translate_subtile.ico" />
     <Content Include="icon_upload.ico" />
+    <Content Include="icon_X.ico" />
+    <None Include="Resources\icon_X.ico" />
     <None Include="Resources\play_button_green.ico" />
-    <None Include="icon_upload1.ico" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

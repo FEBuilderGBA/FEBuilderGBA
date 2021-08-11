@@ -313,6 +313,8 @@ namespace FEBuilderGBA
         public uint workmemory_sound_player_07_address() { return 0x030064B0; } //RAMに設定されているサウンドプレイヤーバッファ
         public uint workmemory_sound_player_08_address() { return 0x030065C0; } //RAMに設定されているサウンドプレイヤーバッファ
         public uint workmemory_keybuffer_address() { return 0x02023B20; } //RAMのキーバッファ
+        public uint procs_maptask_pointer() { return 0x2911C; } //PROCSのMAPTASK 
+        public uint procs_soundroomUI_pointer() { return 0x8BD68; } //PROCSのSoundRoomUI 
         public uint procs_game_main_address() { return 0x85C4A34; } //PROCSのGAME MAIN 
         public uint summon_unit_pointer() { return 0; } //召喚
         public uint summons_demon_king_pointer() { return 0; } //呼魔

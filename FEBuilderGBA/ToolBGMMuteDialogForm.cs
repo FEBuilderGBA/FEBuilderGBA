@@ -27,11 +27,13 @@ namespace FEBuilderGBA
             {
                 label1.Text = R._("トラック({0})をミュート解除にしますか？\r\n{1}", trackNumber, instName);
                 ToggleButton.Text = R._("ミュート解除する");
+                ToggleButton.ForeColor = OptionForm.Color_Keyword_ForeColor();
             }
             else
             {
                 label1.Text = R._("トラック({0})をミュートしますか？\r\n{1}", trackNumber , instName);
                 ToggleButton.Text = R._("ミュートする");
+                ToggleButton.ForeColor = OptionForm.Color_Error_ForeColor();
             }
         }
 

@@ -5156,3 +5156,5 @@
 08015f0c	SetCursorMapPosition	{J}
 0801c584	HandlePlayerCursorMovement	{J}
 0801C194	HandlePlayerCursorMovement	{U}
+080AD190	显示音室画面。	{J}
+080AC2AC	显示音室画面。	{U}

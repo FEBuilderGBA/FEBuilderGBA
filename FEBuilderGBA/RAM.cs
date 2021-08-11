@@ -241,6 +241,34 @@ namespace FEBuilderGBA
             Debug.Assert(false);
             return new byte[count];
         }
+        public uint CalcCheckSUMDirect(uint pointer, uint count)
+        {
+            uint addr = pointer;
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 4 > this.Memory02.Length)
+                {
+                    return 0;
+                }
+                return U.CalcCheckSUMDirect(this.Memory02, addr, count);
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 4 > this.Memory03.Length)
+                {
+                    return 0;
+                }
+                return U.CalcCheckSUMDirect(this.Memory03, addr, count);
+            }
+            if (addr == 0 || count == 0)
+            {
+                return 0;
+            }
+            Debug.Assert(false);
+            return 0;
+        }
         public uint strlen(uint addr)
         {
             return getBlockDataCount(addr, 1, (i, p , mem) =>
@@ -301,9 +329,14 @@ namespace FEBuilderGBA
             //            Debug.Assert(false);
             return 0;
         }
-        public uint Grep0x02(byte[] need, uint blocksize)
+        public uint Grep0x02(byte[] need, uint start, uint end, uint blocksize)
         {
-            uint addr = U.Grep(this.Memory02, need, this.AppnedOffset02, 0, blocksize);
+            if (end != 0)
+            {
+                end = this.AppnedOffset02 + end;
+            }
+
+            uint addr = U.Grep(this.Memory02, need, this.AppnedOffset02 + start, end, blocksize);
             if (addr == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
@@ -311,29 +344,14 @@ namespace FEBuilderGBA
             addr = addr + 0x02000000 - this.AppnedOffset02;
             return addr;
         }
-        public uint Grep0x03(byte[] need, uint blocksize)
+        public uint Grep0x03(byte[] need, uint start, uint end, uint blocksize)
         {
-            uint addr = U.Grep(this.Memory03, need, this.AppnedOffset03, 0, blocksize);
-            if (addr == U.NOT_FOUND)
+            if (end != 0)
             {
-                return U.NOT_FOUND;
+                end = this.AppnedOffset03 + end;
             }
-            addr = addr + 0x03000000 - this.AppnedOffset03;
-            return addr;
-        }
-        public uint GrepPatternMatch0x02(byte[] need, bool[] mask, uint blocksize = 4)
-        {
-            uint addr = U.GrepPatternMatch(this.Memory02, need,mask, this.AppnedOffset02, 0, blocksize);
-            if (addr == U.NOT_FOUND)
-            {
-                return U.NOT_FOUND;
-            }
-            addr = addr + 0x02000000 - this.AppnedOffset02;
-            return addr;
-        }
-        public uint GrepPatternMatch0x03(byte[] need, bool[] mask, uint blocksize = 4)
-        {
-            uint addr = U.GrepPatternMatch(this.Memory03, need, mask, this.AppnedOffset03, 0, blocksize);
+
+            uint addr = U.Grep(this.Memory03, need, this.AppnedOffset03 + start, end, blocksize);
             if (addr == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
