@@ -636,7 +636,7 @@ namespace FEBuilderGBA
             Font normalFont = lb.Font;
             Rectangle bounds = listbounds;
             int lineHeight = (int)lb.Font.Height;
-            int fontWidth = lineHeight / 2;
+            int fontWidth = lineHeight / 2 + 1;
 
             //ますは自下げする
             bounds.X += (fontWidth * 2) * h.Jisage;
@@ -648,8 +648,8 @@ namespace FEBuilderGBA
             //OPコードを書く
             U.DrawText(h.OPDumpString, g, normalFont, brush, isWithDraw, bounds);
             bounds.X += (fontWidth * h.OPDumpString.Length);
-            //スペース3つほど
-            bounds.X += (fontWidth * 3);
+            //スペース2つほど
+            bounds.X += (fontWidth * 2);
             //メインとなるコードを書く
             bounds.X += U.DrawText(h.CodeString, g, normalFont, brush, isWithDraw, bounds);
             //スペース2つほど

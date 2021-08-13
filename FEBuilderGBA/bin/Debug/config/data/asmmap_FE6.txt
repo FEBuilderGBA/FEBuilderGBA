@@ -1592,3 +1592,4 @@
 0801B4D0	PlayerPhase_RangeDisplayIdle
 0801b04c	HandlePlayerCursorMovement
 0801600c	SetCursorMapPosition
+0808BD58	サウンドルーム画面を表示
