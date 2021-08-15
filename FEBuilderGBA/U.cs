@@ -2785,6 +2785,7 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
+
         public static uint GrepPatternMatchEnd(byte[] data, byte[] need, bool[] isSkip, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
         {
             uint grepresult = U.GrepPatternMatch(Program.ROM.Data, need,isSkip, start, end, blocksize);
@@ -2814,7 +2815,37 @@ namespace FEBuilderGBA
             }
         }
 
-        public static uint MatchExistingStructure(uint addr , List<Address> existingStructure)
+        //AB CD XX XX XX EE みたいな 一部スキップできる部分マッチ
+        public static uint GrepPatternMatchBegin(byte[] data, byte[] need, bool[] isSkip, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
+        {
+            uint grepresult = U.GrepPatternMatch(Program.ROM.Data, need, isSkip, start, end, blocksize);
+            if (grepresult == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            uint resultAddr = grepresult + plus;
+            if (resultAddr > data.Length)
+            {//データ終端を超えてしまった
+                return U.NOT_FOUND;
+            }
+
+            if (needPointer)
+            {//検索で見つけたものはポインタである必要がある.
+                if (U.isPointerOrNULL(U.u32(data, resultAddr)))
+                {
+                    return resultAddr;
+                }
+                //どうやらマッチした場所は違うらしい? 
+                //続きから再検索
+                return GrepPatternMatchBegin(data, need, isSkip, resultAddr + blocksize, end, blocksize, plus, needPointer);
+            }
+            else
+            {
+                return resultAddr;
+            }
+        }
+
+        public static uint MatchExistingStructure(uint addr, List<Address> existingStructure)
         {
             int length = existingStructure.Count;
             for (int i = 0; i < length; i++)

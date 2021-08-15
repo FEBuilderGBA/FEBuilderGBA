@@ -1,0 +1,15 @@
+NAME=When displaying the status screen, always display the status parameters by default(SkillSystems)
+INFO=SkillSystems has a function to display the growth of a unit on the status screen by pressing the start button.\r\nThis setting is recorded in the RAM, and if the last time the growth rate was displayed, the growth rate will be displayed next time as well.\r\nHowever, this RAM conflicts with the work memory of Custom Spell Patch (CSACreator or FEditorAdv CSA).\r\nTherefore, if you display the status screen after displaying the CSA magic in the combat animation, the growth rate will be displayed.\r\nThis patch slightly improves this behavior.\r\n\r\nThis patch fixes it so that it always shows the status parameters, regardless of the previous mode it was showing.\r\nOf course, when you press the start button, the growth rate will be displayed.\r\n
+
+
+IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=$XGREP4+14 0x2C 0x7D 0x03 0x21 0x21 0x40 0x11 0x70 0xD0 0x60 0x53 0x1E 0x02 0x49 XXXX XXXX 0x19 0x70 0x00 0x23 0x53 0x61 0x70 0x47 XXXX XXXX XXXX 0x02
+
+COMBO=Default: Last viewed mode|0x09 0x78|Fix: Always Status parameter|0x00 0x21
+AUTHOR=7743
