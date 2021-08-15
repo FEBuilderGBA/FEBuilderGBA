@@ -465,6 +465,7 @@ namespace FEBuilderGBA
                 return false;
             }
             string str = line.Substring(start, term - start);
+            str = str.Trim('"');
             byte[] lowbin = System.Text.Encoding.GetEncoding("Shift_JIS").GetBytes(str);
 
             uint size = (uint)lowbin.Length + 1;

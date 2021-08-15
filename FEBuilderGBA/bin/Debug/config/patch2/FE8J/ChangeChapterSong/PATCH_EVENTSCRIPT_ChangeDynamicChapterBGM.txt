@@ -1,11 +1,11 @@
-﻿NAME=章のBGMを動的に変更できるようにする
+﻿NAME=章のマップBGMを動的に変更できるようにする
 NAME.en=AddEvent: ChangeChapterSong Dynamic
 
 TYPE=EA
 TAG=#EVENT
 EA=Installer.event
 
-INFO=章のBGMをバニラの2つから、イベントを利用して無限に変更できるようにします。\r\nイベント命令を利用して、章のBGMを動的に変更できるようにします。\r\n優先順位は、フラグ4(最優先) > このパッチ == 勝利BGM > 通常BGM の順番になります。\r\n勝利BGMより優先するかどうかを設定時に選択できます。\r\n指定するBGMはMapBGM(0x010001)である必要があります。\r\nデータはトラップデータ(0xEE)として保持されるので、セーブにも反映されます。
+INFO=章のBGMをバニラの2つから、イベントを利用して無限に変更できるようにします。\r\nイベント命令を利用して、章のマップBGMを動的に変更できるようにします。\r\n優先順位は、フラグ4(最優先) > このパッチ == 勝利BGM > 通常BGM の順番になります。\r\n勝利BGMより優先するかどうかを設定時に選択できます。\r\n指定するBGMの音楽はMapBGM(0x010001)である必要があります。\r\nデータはトラップデータ(0xEE)として保持されるので、セーブにも反映されます。
 
 INFO.en=Allow the chapter's BGM to be infinitely changed from the two vanilla ones using events.\r\nAllows the BGM of a chapter to be changed dynamically using an event instruction.\r\nThe order of priority is Flag 4 (highest priority) > This Patch == Victory BGM > Normal BGM.\r\nThis setting allows you to select whether or not to give priority to the victory BGM.\r\nThe specified BGM must be MapBGM (0x010001).\r\nThe data will be retained as trap data (0xEE) and will be reflected in the save.
 
@@ -17,10 +17,10 @@ INFO.zh=Allow the chapter's BGM to be infinitely changed from the two vanilla on
 PATCHED_IF:0x15FDC=0x00 0x4B
 
 EVENTSCRIPT:1=400D0000{$L1:SetChapterSong.dmp}	章のBGM動的に変更(LOW)	{MUSIC}
-EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のBGMを動的に変更[XX:MAPMUSIC:Player][YY:MAPMUSIC:Enemy][ZZ:MAPMUSIC:NPC][TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
-EVENTSCRIPT:3=40050100XXXX00004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のBGMを動的に変更[XX:MAPMUSIC:Player]のBGMだけ変更[TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
-EVENTSCRIPT:4=400501000000000040050200XXXX0000400503000000000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のBGMを動的に変更[XX:MAPMUSIC:Enemy]のBGMだけ変更	{MUSIC}
-EVENTSCRIPT:5=4005010000000000400502000000000040050300XXXX000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のBGMを動的に変更[XX:MAPMUSIC:NPC]のBGMだけ変更	{MUSIC}
+EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Player][YY:MAPMUSIC:Enemy][ZZ:MAPMUSIC:NPC][TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
+EVENTSCRIPT:3=40050100XXXX00004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Player]のBGMだけ変更[TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
+EVENTSCRIPT:4=400501000000000040050200XXXX0000400503000000000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Enemy]のBGMだけ変更	{MUSIC}
+EVENTSCRIPT:5=4005010000000000400502000000000040050300XXXX000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:NPC]のBGMだけ変更	{MUSIC}
 
 
 EVENTSCRIPT:1.en=400D0000{$L1:SetChapterSong.dmp}	Change Dynamic Chapter BGM(LOW)	{MUSIC}

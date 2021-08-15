@@ -3037,7 +3037,14 @@ namespace FEBuilderGBA
         //拡張子を取得 結果は必ず大文字 .PNG みたいに
         public static string GetFilenameExt(string filename)
         {
-            return Path.GetExtension(filename).ToUpper();
+            try
+            {
+                return Path.GetExtension(filename).ToUpper();
+            }
+            catch (ArgumentException)
+            {
+                return "";
+            }
         }
 
         public static long GetFileSize(string filename)
