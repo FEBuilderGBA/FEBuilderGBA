@@ -2919,94 +2919,55 @@ namespace FEBuilderGBA
 
             //データの検索
             Match m;
-            m = RegexCache.Match(value, @"^FGREP([0-9]+) ");
-            if (m.Groups.Count >= 2)
+            m = RegexCache.Match(value, @"^(F|X)?GREP([0-9]+)(ENDA|END)?\+?([0-9]+)? ");
+            if (m.Groups.Count >= 5)
             {
-                uint align = U.atoi(m.Groups[1].Value);
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align);
-            }
-            m = RegexCache.Match(value, @"^FGREP([0-9]+)END ");
-            if (m.Groups.Count >= 2)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, 0, true);
+                uint align = U.atoi(m.Groups[2].Value);
+                uint skip = U.atoi(m.Groups[4].Value);
+                if (m.Groups[1].Value == "X")
+                {//XGREP
+                    bool[] mask;
+                    byte[] need = MakeXGrepData(value, out mask);
+                    if (m.Groups[3].Value == "ENDA")
+                    {
+                        return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
+                    }
+                    else if (m.Groups[3].Value == "END")
+                    {
+                        return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, true);
+                    }
+                    else
+                    {
+                        return U.GrepPatternMatchBegin(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
+                    }
+                }
+                else
+                {//FGREP or GREP
+                    byte[] need;
+                    if (m.Groups[1].Value == "F")
+                    {//FGREP
+                        need = MakeGrepData(value, basedir);
+                    }
+                    else
+                    {//GREP
+                        need = MakeGrepData(value);
+                    }
+
+                    if (m.Groups[3].Value == "ENDA")
+                    {
+                        return U.GrepEnd(Program.ROM.Data, need, start_offset, 0, align, skip, false);
+                    }
+                    else if (m.Groups[3].Value == "END")
+                    {
+                        return U.GrepEnd(Program.ROM.Data, need, start_offset, 0, align, skip, true);
+                    }
+                    else
+                    {
+                        return U.Grep(Program.ROM.Data, need, start_offset, 0, align);
+                    }
+                }
             }
 
-            m = RegexCache.Match(value, @"^FGREP([0-9]+)END\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, skip, true);
-            }
-
-            m = RegexCache.Match(value, @"^FGREP([0-9]+)ENDA\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, skip, false);
-            }
-
-            m = RegexCache.Match(value, @"^GREP([0-9]+) ");
-            if (m.Groups.Count >= 2)
-            {
-                uint skip = U.atoi(m.Groups[1].Value);
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, skip);
-            }
-            m = RegexCache.Match(value, @"^GREP([0-9]+)END ");
-            if (m.Groups.Count >= 2)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, 0, true);
-            }
-
-            m = RegexCache.Match(value, @"^GREP([0-9]+)END\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, skip, true);
-            }
-            m = RegexCache.Match(value, @"^GREP([0-9]+)ENDA\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, skip, false);
-            }
-            m = RegexCache.Match(value, @"^XGREP([0-9]+)ENDA\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                bool[] mask;
-                byte[] need = MakeXGrepData(value,out mask);
-                return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
-            }
-            m = RegexCache.Match(value, @"^XGREP([0-9]+)END\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                bool[] mask;
-                byte[] need = MakeXGrepData(value, out mask);
-                return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, true);
-            }
-            m = RegexCache.Match(value, @"^XGREP([0-9]+)\+([0-9]+) ");
-            if (m.Groups.Count >= 3)
-            {
-                uint align = U.atoi(m.Groups[1].Value);
-                uint skip = U.atoi(m.Groups[2].Value);
-                bool[] mask;
-                byte[] need = MakeXGrepData(value, out mask);
-                return U.GrepPatternMatchBegin(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
-            }
-
-            if (value.IndexOf("GREP4END+A ") == 0)
-            {//下位互換のため
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, false);
-            }
             if (value.IndexOf("GREP_ENABLE_POINTER ") == 0)
             {
                 return U.GrepEnablePointer(Program.ROM.Data, start_offset, 0);
@@ -3274,23 +3235,45 @@ namespace FEBuilderGBA
         //EAが利用する領域の計算
         static uint CalcSizeToBeWrittenByEA(PatchSt patch)
         {
-            string EA = U.at(patch.Param, "EA");
+            //ディレクトリのファイルサイズを取るようにする
+            //無駄は多いが、間違いことが少なくなるはずなので
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
-            string eaFilename = Path.Combine(basedir, EA);
-
-            Debug.Assert(File.Exists(eaFilename));
-
-            uint totalsize = 0;
-            EAUtil eaU = new EAUtil(eaFilename);
-            foreach(EAUtil.Data data in eaU.DataList)
+            return (uint)DU(basedir);
+        }
+        //ディレクトリ以下の容量の取得
+        static long DU(string path)
+        {
+            long sum = 0;
+            try
             {
-                if (data.BINData == null)
+                string[] l = Directory.GetFiles(path, "*");
+                foreach (string s in l)
                 {
-                    continue;
+                    string name = Path.GetFileName(s);
+                    if (name.IndexOf("PATCH_") == 0)
+                    {
+                        continue;
+                    }
+                    string ext = U.GetFilenameExt(name);
+                    if (ext == ".S" || ext == ".ASM" || ext == ".PNG")
+                    {
+                        continue;
+                    }
+                    sum += U.GetFileSize(s);
                 }
-                totalsize += (uint)data.BINData.Length;
+
+                l = Directory.GetDirectories(path);
+                foreach (string s in l)
+                {
+                    sum += DU(s);
+                }
             }
-            return totalsize;
+            catch (Exception e)
+            {//Skip
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
+            }
+            return sum;
         }
 
         void LoadPatchEA(PatchSt patch)

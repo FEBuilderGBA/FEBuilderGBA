@@ -38,11 +38,12 @@
             this.UnitLevelUpSkill = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.N1_ReloadListButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.X_LevelUPSkillLabel = new FEBuilderGBA.LabelEx();
             this.label2 = new System.Windows.Forms.Label();
             this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
-            this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.X_LevelUpAddr = new System.Windows.Forms.NumericUpDown();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.X_LEARNINFO = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.ExportAllButton = new System.Windows.Forms.Button();
             this.ImportAllButton = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_LEARNINFO = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -95,7 +95,7 @@
             this.UnitLevelUpSkill.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LevelUpAddr)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.ZeroPointerPanel.SuspendLayout();
@@ -216,10 +216,10 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.N1_ReloadListButton);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.X_LevelUPSkillLabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.N1_ReadCount);
-            this.panel1.Controls.Add(this.N1_ReadStartAddress);
+            this.panel1.Controls.Add(this.X_LevelUpAddr);
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(905, 34);
@@ -235,16 +235,16 @@
             this.N1_ReloadListButton.Text = "再取得";
             this.N1_ReloadListButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // X_LevelUPSkillLabel
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 36);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "レベルアップで取得するスキルの先頭アドレス";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X_LevelUPSkillLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_LevelUPSkillLabel.Location = new System.Drawing.Point(-1, -1);
+            this.X_LevelUPSkillLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_LevelUPSkillLabel.Name = "X_LevelUPSkillLabel";
+            this.X_LevelUPSkillLabel.Size = new System.Drawing.Size(371, 36);
+            this.X_LevelUPSkillLabel.TabIndex = 28;
+            this.X_LevelUPSkillLabel.Text = "レベルアップで取得するスキルの先頭アドレス";
+            this.X_LevelUPSkillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -270,19 +270,20 @@
             this.N1_ReadCount.Size = new System.Drawing.Size(78, 25);
             this.N1_ReadCount.TabIndex = 26;
             // 
-            // N1_ReadStartAddress
+            // X_LevelUpAddr
             // 
-            this.N1_ReadStartAddress.Hexadecimal = true;
-            this.N1_ReadStartAddress.Location = new System.Drawing.Point(372, 5);
-            this.N1_ReadStartAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_ReadStartAddress.Maximum = new decimal(new int[] {
+            this.X_LevelUpAddr.Hexadecimal = true;
+            this.X_LevelUpAddr.Location = new System.Drawing.Point(372, 5);
+            this.X_LevelUpAddr.Margin = new System.Windows.Forms.Padding(2);
+            this.X_LevelUpAddr.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.N1_ReadStartAddress.Name = "N1_ReadStartAddress";
-            this.N1_ReadStartAddress.Size = new System.Drawing.Size(130, 25);
-            this.N1_ReadStartAddress.TabIndex = 25;
+            this.X_LevelUpAddr.Name = "X_LevelUpAddr";
+            this.X_LevelUpAddr.Size = new System.Drawing.Size(130, 25);
+            this.X_LevelUpAddr.TabIndex = 25;
+            this.X_LevelUpAddr.ValueChanged += new System.EventHandler(this.X_LevelUpAddr_ValueChanged);
             // 
             // panel8
             // 
@@ -302,6 +303,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(657, 449);
             this.panel8.TabIndex = 124;
+            // 
+            // X_LEARNINFO
+            // 
+            this.X_LEARNINFO.AutoSize = true;
+            this.X_LEARNINFO.Location = new System.Drawing.Point(9, 316);
+            this.X_LEARNINFO.Name = "X_LEARNINFO";
+            this.X_LEARNINFO.Size = new System.Drawing.Size(393, 18);
+            this.X_LEARNINFO.TabIndex = 154;
+            this.X_LEARNINFO.Text = "習得レベルとスキルの詳細は、ここをクリックしてください。";
+            this.X_LEARNINFO.Click += new System.EventHandler(this.X_LEARNINFO_Click);
             // 
             // panel10
             // 
@@ -804,16 +815,6 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // X_LEARNINFO
-            // 
-            this.X_LEARNINFO.AutoSize = true;
-            this.X_LEARNINFO.Location = new System.Drawing.Point(9, 316);
-            this.X_LEARNINFO.Name = "X_LEARNINFO";
-            this.X_LEARNINFO.Size = new System.Drawing.Size(393, 18);
-            this.X_LEARNINFO.TabIndex = 154;
-            this.X_LEARNINFO.Text = "習得レベルとスキルの詳細は、ここをクリックしてください。";
-            this.X_LEARNINFO.Click += new System.EventHandler(this.X_LEARNINFO_Click);
-            // 
             // SkillAssignmentUnitSkillSystemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -835,7 +836,7 @@
             this.UnitLevelUpSkill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LevelUpAddr)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -906,10 +907,10 @@
         private System.Windows.Forms.Panel UnitLevelUpSkill;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button N1_ReloadListButton;
-        private System.Windows.Forms.Label label1;
+        private FEBuilderGBA.LabelEx X_LevelUPSkillLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown N1_ReadCount;
-        private System.Windows.Forms.NumericUpDown N1_ReadStartAddress;
+        private System.Windows.Forms.NumericUpDown X_LevelUpAddr;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

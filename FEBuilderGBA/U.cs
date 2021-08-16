@@ -6697,6 +6697,31 @@ namespace FEBuilderGBA
                 Debug.Assert(false);
             }
         }
+        //ディレクトリ以下の容量の取得
+        public static long DU(string path, string filter = "*")
+        {
+            long sum = 0;
+            try
+            {
+                string[] l = Directory.GetFiles(path, filter);
+                foreach (string s in l)
+                {
+                    sum += GetFileSize(s);
+                }
+
+                l = Directory.GetDirectories(path);
+                foreach (string s in l)
+                {
+                    sum += DU(s, filter);
+                }
+            }
+            catch (Exception e)
+            {//Skip
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
+            }
+            return sum;
+        }
 
         public static void OpenURLOrFile(string url)
         {

@@ -367,6 +367,14 @@ namespace FEBuilderGBA
             {
                 text = R._("スキル拡張設定");
             }
+            else if (dataType == FELint.Type.SKILL_CLASS)
+            {
+                text = R._("スキル_クラス別割当");
+            }
+            else if (dataType == FELint.Type.SKILL_UNIT)
+            {
+                text = R._("スキル_ユニット別割当");
+            }
             else if (dataType == FELint.Type.RMENU)
             {
                 text = R._("ステータスRMenu");
@@ -1030,6 +1038,30 @@ namespace FEBuilderGBA
                         )
                     {
                         InputFormRef.JumpForm<SkillConfigFE8NSkillForm>(tag);
+                    }
+                }
+                return;
+            }
+            else if (dataType == FELint.Type.SKILL_CLASS)
+            {
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                    if (skill == PatchUtil.skill_system_enum.SkillSystem)
+                    {
+                        InputFormRef.JumpForm<SkillAssignmentClassSkillSystemForm>(tag);
+                    }
+                }
+                return;
+            }
+            else if (dataType == FELint.Type.SKILL_UNIT)
+            {
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                    if (skill == PatchUtil.skill_system_enum.SkillSystem)
+                    {
+                        InputFormRef.JumpForm<SkillAssignmentUnitSkillSystemForm>(tag);
                     }
                 }
                 return;

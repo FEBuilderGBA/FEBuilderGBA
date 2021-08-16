@@ -64,6 +64,8 @@ namespace FEBuilderGBA
             ,ED      //エンディング
             ,TERRAIN //地形
             ,SKILL_CONFIG   //スキル設定
+            ,SKILL_CLASS   //スキルCLASS
+            ,SKILL_UNIT   //スキルUNIT
             ,RMENU   //Rメニュー設定
             ,ITEM_USAGE_POINTER //アイテム利用効果
             ,PATCH   //パッチ
@@ -837,9 +839,14 @@ namespace FEBuilderGBA
                 if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
                 EDForm.MakeCheckError(errors);
 
-                if (Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                }
+                else
                 {
                     SkillConfigSkillSystemForm.MakeCheckError(errors);
+                    SkillAssignmentClassSkillSystemForm.MakeCheckError(errors);
+                    SkillAssignmentUnitSkillSystemForm.MakeCheckError(errors);
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)

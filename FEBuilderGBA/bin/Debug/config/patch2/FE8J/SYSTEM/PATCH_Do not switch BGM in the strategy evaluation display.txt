@@ -1,0 +1,13 @@
+NAME=攻略評価画面でBGMを切り替えない
+NAME.en=Do not switch BGM in the strategy evaluation display
+
+INFO=攻略評価を表示する画面で、特定の音楽を再生するのを防止ます。\r\nイベント命令で直前に再生した音楽をそのまま再生します。\r\nディフォルトは、MUSIC_戦績/攻略評価 で指定された音楽を再生します。\r\nこのパッチは、その曲の再生を抑制し、イベントから好きな音楽を指定することができるようにします。
+INFO.en=Prevents specific music from being played on the screen that displays the list of clear turns for the ending.\r\nPlays the music that was played immediately before in the event instruction as is.\r\nThe default is to play the music specified by MUSIC_epilogue.\r\nThis patch suppresses the playback of the song and allows you to specify your favorite music from the event.
+
+TYPE=ADDR
+ADDRESS=0x0BCBDA
+COMBO=Default|0x45 0xF7 0x23 0xFC|FIX: Do not play specific song|0x00 0x00 0x00 0x00
+
+TAG=#MUSIC #SONG #SOUND #BGM
+NAME.zh=不要在捕获评估屏幕上切换 BGM。
+INFO.zh=防止在显示策略评级的屏幕上播放特定音乐。\r\n事件命令之前播放的音乐照原样播放。\r\n默认是播放 MUSIC_Battle Record / Strategy Rating 中指定的音乐。\r\n此补丁会抑制歌曲的播放，并允许您从事件中指定您最喜欢的音乐。

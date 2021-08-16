@@ -155,6 +155,60 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef;
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            {
+                uint assignUnitP = SkillConfigSkillSystemForm.FindAssignPersonalSkillPointer();
+                if (assignUnitP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                InputFormRef = Init(null, assignUnitP);
+
+                uint assignLevelUpP = SkillConfigSkillSystemForm.FindAssignUnitLevelUpSkillPointer();
+                if (assignLevelUpP == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
+                InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
+
+                uint assignLevelUpAddr = Program.ROM.p32(assignLevelUpP);
+                for (uint i = 0; i < InputFormRef.DataCount; i++, assignLevelUpAddr += 4)
+                {
+                    if (!U.isSafetyOffset(assignLevelUpAddr))
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_UNIT, assignLevelUpAddr, R._("Skillのユニット割り当てが(UnitID: {0})までで、途中で終わってしまいました。", U.To0xHexString(i)), i));
+                        break;
+                    }
+
+                    uint levelupList = Program.ROM.u32(assignLevelUpAddr);
+                    if (levelupList == 0)
+                    {//empty
+                        continue;
+                    }
+                    else if (!U.isSafetyPointer(levelupList))
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_UNIT, assignLevelUpAddr, R._("Skillのユニット割り当て(UnitID: {0})のデータポインタ({1})が壊れています。\r\nこのユニットをLOADする時に無限ループが発生する可能性があります。\r\n正しいアドレスを入力するか、0に設定してください。", U.To0xHexString(i), U.To0xHexString(levelupList)), i));
+                        continue;
+                    }
+
+                    N1_InputFormRef.ReInitPointer(assignLevelUpAddr);
+                    if (N1_InputFormRef.DataCount >= 20)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.SKILL_UNIT, assignLevelUpAddr, R._("Skillのユニット割り当て(UnitID: {0})のデータポインタ({1})には、大量の({2})個のデータが登録されています。\r\nアドレスが間違っていませんか？\r\n正しいアドレスを入力するか、0に設定してください。", U.To0xHexString(i), U.To0xHexString(levelupList), N1_InputFormRef.DataCount), i));
+                        continue;
+                    }
+                }
+            }
+        }
 
         public static void ExportAllData(string filename)
         {
@@ -407,21 +461,8 @@ namespace FEBuilderGBA
             }
 
             uint addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex) * 4);
-            uint levelupList = Program.ROM.p32(addr);
-            if (!U.isSafetyOffset(levelupList))
-            {
-                N1_InputFormRef.ClearSelect(true);
-                IndependencePanel.Visible = false;
-                return;
-            }
-
-            N1_InputFormRef.ReInit(levelupList);
-
-            //他のクラスでこのデータを参照しているならば、独立ボタンを出す.
-            IndependencePanel.Visible = UpdateIndependencePanel();
-            //N1の書き込みボタンが反応してしまうときがあるのでやめさせる.
-            InputFormRef.WriteButtonToYellow(this.N1_WriteButton, false);
-
+            uint levelupList = Program.ROM.u32(addr);
+            X_LevelUpAddr.Value = levelupList;
         }
         //他のクラスでこのデータを参照しているか?
         bool UpdateIndependencePanel()
@@ -479,6 +520,7 @@ namespace FEBuilderGBA
             //拡張したアドレスを書き込む.
             uint write_addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex) * 4);
             Program.ROM.write_p32(write_addr, addr, undodata);
+            this.X_LevelUpAddr.Value = U.toPointer(addr);
 
             Program.Undo.Push(undodata);
         }
@@ -490,7 +532,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint addr = (uint)N1_ReadStartAddress.Value;
+            uint addr = (uint)X_LevelUpAddr.Value;
             uint write_addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex) * 4);
             Program.Undo.Push("AssignLevelUpBase", write_addr, 4);
 
@@ -605,6 +647,24 @@ namespace FEBuilderGBA
         {
             string url = "https://dw.ngmansion.xyz/doku.php?id=en:guide_febuildergba_learnskillinfo";
             U.OpenURLOrFile(url);
+        }
+
+        private void X_LevelUpAddr_ValueChanged(object sender, EventArgs e)
+        {
+            uint addr = (uint)X_LevelUpAddr.Value;
+            N1_InputFormRef.ReInit(addr);
+            ZeroPointerPanel.Visible = InputFormRef.ShowZeroPointerPanel(this.AddressList, this.X_LevelUpAddr);
+            if (addr == 0 || U.isSafetyPointer(addr))
+            {
+                this.X_LevelUPSkillLabel.ErrorMessage = "";
+            }
+            else
+            {
+                this.X_LevelUPSkillLabel.ErrorMessage = R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(addr));
+            }
+
+            //N1の書き込みボタンが反応してしまうときがあるのでやめさせる.
+            InputFormRef.WriteButtonToYellow(this.N1_WriteButton, false);
         }
     }
 }

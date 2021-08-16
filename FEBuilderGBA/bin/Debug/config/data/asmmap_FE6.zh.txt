@@ -1389,3 +1389,7 @@
 0801B4D0	PlayerPhase_RangeDisplayIdle
 0801b04c	HandlePlayerCursorMovement
 0801600c	SetCursorMapPosition
+08034AC8	AiTryDoSpecialItems
+08022a84	GetROMUnitSupportCount
+08022af0	GetSupportLevelBySupportIndex
+0808BD58	显示音室画面。

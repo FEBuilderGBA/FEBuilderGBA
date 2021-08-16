@@ -1,0 +1,30 @@
+
+NAME=CCでレベル減少しない(With SkillSystems StrMagSplit)
+NAME.en=Level does not decrease with Promotion(With SkillSystems StrMagSplit)
+
+//SkillSystemg
+IF:0x2F8FC=0x13 0x25 0x05 0xE0 0x14 0x25 0x03 0xE0
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Level Reset|OFF|Fix: No Reset|ONN
+
+
+OFF:0x002BE70=0x28 0x72 0x69 0x72
+///OFF:0x00736DA=0x01 0x20 //for Vanilla
+OFF:0x00736C4=0x01 0x20	//for StrMagSplit
+
+ONN:0x002BE70=0x00 0x00 0x00 0x00
+///ONN:0x00736DA=0x18 0x7A //for Vanilla
+ONN:0x00736C4=0x28 0x7A	//for StrMagSplit
+
+INFO=CCしてもレベルを1にリセットしないように変更します。\r\nこれはSkillSystemsのStrMagSplitに対応させたルーチンです。
+INFO.en=Change level so that it does not reset to 1 even if it is promoted.\r\nThis is a routine that corresponds to Skill Systems' StrMag Split.
+
+NAME.zh=CC不会降低等级(With SkillSystems StrMagSplit)
+INFO.zh=更改CC，使其不会将级别重置为1。
+
+AUTHOR=7743, Vesly
+

@@ -9934,20 +9934,29 @@ Skill Extensions cannot get SkillSystem's Class Skills.
 :スキル拡張 SkillSystem の、レベルアップスキルを取得できません。
 Skill Extensions cannot get SkillSystem's Level-Up Skills.
 
+:Skillのクラス割り当てが(ClassID: {0})までで、途中で終わってしまいました。
+The class assignment of Skill is up to (ClassID: {0}), and it ends in the middle.
+
+:Skillのクラス割り当て、(ClassID: {0})のデータポインタ({1})が壊れています。\r\nこのクラスをLOADする時に無限ループが発生する可能性があります。\r\n正しいアドレスを入力するか、0に設定してください。
+The data pointer ({1}) of Skill's class assignment (ClassID: {0}) is corrupted.\r\nAn infinite loop can occur when loading this class.\r\nEnter the correct address or set it to 0.
+
+:Skillのクラス割り当て、(ClassID: {0})のデータポインタ({1})には、大量の({2})個のデータが登録されています。\r\nアドレスが間違っていませんか？\r\n正しいアドレスを入力するか、0に設定してください。
+A large amount of ({2}) data is registered in the data pointer ({1}) of the Skill class assignment (ClassID: {0}).\r\nIs the address wrong? \r\nEnter the correct address or set it to 0.
+
 :(Lv{0}で習得)
 (Learned from Lv {0})
 
 :インポートに失敗しました。
 Import failed.
 
+:習得レベルとスキルの詳細は、ここをクリックしてください。
+Click here for more information on learning skills and levels.
+
 :レベルアップで取得するスキルの先頭アドレス
 The first address of the skill to be acquired by leveling up.
 
 :クラススキル
 Class Skill
-
-:習得レベルとスキルの詳細は、ここをクリックしてください。
-Click here for more information on learning skills and levels.
 
 :スキル1
 Skill 1
@@ -9963,6 +9972,15 @@ FE8N Skill
 
 :スキル拡張 SkillSystem の、個人スキルを取得できません。
 Skill Extensions cannot get SkillSystem's Personal Skills.
+
+:Skillのユニット割り当てが(UnitID: {0})までで、途中で終わってしまいました。
+The unit allocation of Skill is up to (UnitID: {0}), and it ends in the middle.
+
+:Skillのユニット割り当て(UnitID: {0})のデータポインタ({1})が壊れています。\r\nこのユニットをLOADする時に無限ループが発生する可能性があります。\r\n正しいアドレスを入力するか、0に設定してください。
+The data pointer ({1}) of the Skill unit assignment (UnitID: {0}) is corrupted.\r\nAn infinite loop can occur when loading this unit.\r\nEnter the correct address or set it to 0.
+
+:Skillのユニット割り当て(UnitID: {0})のデータポインタ({1})には、大量の({2})個のデータが登録されています。\r\nアドレスが間違っていませんか？\r\n正しいアドレスを入力するか、0に設定してください。
+A large amount of ({2}) data is registered in the data pointer ({1}) of the unit assignment (UnitID: {0}) of Skill.\r\nIs the address wrong? \r\nEnter the correct address or set it to 0.
 
 :ユニット16
 Unit 16
@@ -10192,6 +10210,9 @@ Unit Skill Construction
 :武器アイテムスキル
 Weapon Item Skill
 
+:所持アイテムスキル
+Owned Item Skills
+
 :アニメ
 Animation
 
@@ -10200,9 +10221,6 @@ Export Animation
 
 :アニメーション読込
 Import Animation
-
-:所持アイテムスキル
-Owned Item Skills
 
 : スキル割り当て
 Skill Assignment
