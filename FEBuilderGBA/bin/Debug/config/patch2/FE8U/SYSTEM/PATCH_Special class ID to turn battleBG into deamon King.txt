@@ -14,3 +14,6 @@ INFO.en=This class will be loaded with special backgrounds as Demon King and wil
 DEFAULT=0x66
 NAME.zh=使战斗背景成为魔王的特殊职业ID。
 INFO.zh=在这个类中，加载了一个特殊的背景作为一个恶魔之王，并执行了一个特殊的战斗动画。\r\n默认值：0x66。\r\n注意：等级ID必须高于龙僵尸等级。
+
+CONFLICT_IF:0x70908=0x01 0x4B 0x60 0xF0 0xDF 0xFF 0x01 0xE0
+CONFLICT_MESSAGE=Battle Transforming

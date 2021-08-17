@@ -14,3 +14,6 @@ INFO.en=This class will be loaded with special backgrounds as dragon zombies and
 DEFAULT=0x65
 NAME.zh=使战斗背景变成龙僵尸的特殊职业ID。
 INFO.zh=该类将加载特殊背景作为龙僵尸，并将执行特殊的战斗动画。
+
+CONFLICT_IF:0x70908=0x01 0x4B 0x60 0xF0 0xDF 0xFF 0x01 0xE0
+CONFLICT_MESSAGE=Battle Transforming

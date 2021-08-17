@@ -14,3 +14,6 @@ INFO.en=This class will be loaded with special backgrounds as Manakete and will 
 DEFAULT=0x3c
 NAME.zh=制作战斗背景Mamkuto的特殊职业ID。
 INFO.zh=这个类加载了一个特殊的背景作为 Mamkut。\r\n默认值：0x3c。\r\n注意：类ID必须小于龙僵尸类。
+
+CONFLICT_IF:0x70908=0x01 0x4B 0x60 0xF0 0xDF 0xFF 0x01 0xE0
+CONFLICT_MESSAGE=Battle Transforming
