@@ -1,0 +1,3 @@
+FalseReturn=$26
+DrawBattleBackground=$16
+BackR3=$28

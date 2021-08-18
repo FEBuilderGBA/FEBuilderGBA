@@ -1,0 +1,3 @@
+BattleBGON=$1A
+CheckBoss=$0A
+BattleBGOff=$16

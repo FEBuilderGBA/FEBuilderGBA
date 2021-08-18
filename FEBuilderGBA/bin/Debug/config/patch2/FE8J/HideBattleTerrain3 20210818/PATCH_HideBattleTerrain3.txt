@@ -1,17 +1,14 @@
-NAME=戦闘地形を描画しない 20200619
-NAME.en=Don't draw battle terrain 20200619
+NAME=戦闘地形を描画しない 20210818
+NAME.en=Don't draw battle terrain 20210818
 
 INFO=戦闘背景を表示する時には、戦闘地形を描画しないようにします。\r\nこれにより、地形だけと、背景ありの二つのオプションが両立できます。
 
 TYPE=EA
-EA=HideBattleTerrain2.event
+EA=HideBattleTerrain3.event
 
 AUTHOR=7743
 
 PATCHED_IF:0x5B830=0x00 0x4B 0x18 0x47
 INFO.en=Do not draw the battle terrain when displaying the battle background.\r\nThis gives you the option of both terrain alone and background.
-NAME.zh=请勿绘制战斗地形2 20200619
+NAME.zh=请勿绘制战斗地形 20210818
 INFO.zh=显示战斗背景时，请勿绘制战斗地形。\r\n这使您可以选择仅地形还是背景。
-
-DEPRECATED=1
-UPDATE_PATCH=..\HideBattleTerrain3 20210818\PATCH_HideBattleTerrain3.txt
