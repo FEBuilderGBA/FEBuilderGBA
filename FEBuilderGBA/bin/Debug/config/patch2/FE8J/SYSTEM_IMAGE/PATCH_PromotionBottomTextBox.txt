@@ -1,0 +1,16 @@
+NAME=CC画面の下のテキストボックス
+NAME.en=Text box at the bottom of the Protmoion screen
+NAME.zh=Text box at the bottom of the Protmoion screen
+
+TYPE=IMAGE
+TAG=#HIDDEN
+
+WIDTH=256
+HEIGHT=160
+
+ZIMAGE_POINTER=0x0B85F4//0xAB162C
+HEADERTSA_POINTER=0x0B85FC//0xAB17A4
+PALETTE_POINTER=0x036E2C//0x5E0D94
+
+KEEPIMAGE=1
+PALETTE=1

@@ -10589,6 +10589,13 @@
 03004BB0	gCurrentMovCostTable	{U}
 03006440	@MusicPlayer	gMusicPlayerInfo0	{U}
 03006650	@MusicPlayer	gMusicPlayerInfo1	{U}
+03006690	@MusicPlayer	gMusicSEPlayerInfo2	{U}
+030066D0	@MusicPlayer	gMusicSEPlayerInfo3	{U}
+03006720	@MusicPlayer	gMusicSEPlayerInfo4	{U}
+03006760	@MusicPlayer	gMusicSEPlayerInfo5	{U}
+030063C0	@MusicPlayer	gMusicSEPlayerInfoUnk1	{U}
+03006400	@MusicPlayer	gMusicSEPlayerInfoUnk2	{U}
+03006610	@MusicPlayer	gMusicSEPlayerInfoUnk3	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -11810,6 +11817,9 @@
 030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
 03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
 03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
+030063B0	@MusicPlayer	gMusicSEPlayerInfoUnk1	{J}
+030063F0	@MusicPlayer	gMusicSEPlayerInfoUnk2	{J}
+03006600	@MusicPlayer	gMusicSEPlayerInfoUnk3	{J}
 
 @SAVEMENURTEXTDATA@00	&SongHeader	songHeader
 @SAVEMENURTEXTDATA@01	byte	HeroLevel
@@ -13962,3 +13972,5 @@
 080CEF48	GuideOnKeyDown	{U}
 08078730	IsPromotionMode	{J}
 08076310	IsPromotionMode	{U}
+080BBA1C	StartEndingBattleDisplay	{J}
+080B6F14	StartEndingBattleDisplay	{U}

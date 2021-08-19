@@ -10450,8 +10450,15 @@ r3=X tile position of menu of right	{U}
 03001850	gStr_3001850	{U}
 03001C38	gSummonedUnitDefinitionBuffer	{U}
 03004BB0	gCurrentMovCostTable	{U}
-03006440	@MusicPlayer	gMusicPlayerInfo	{U}
-03006650	@MusicPlayer	gMusicPlayerInfo	{U}
+03006440	@MusicPlayer	gMusicPlayerInfo0	{U}
+03006650	@MusicPlayer	gMusicPlayerInfo1	{U}
+03006690	@MusicPlayer	gMusicSEPlayerInfo2	{U}
+030066D0	@MusicPlayer	gMusicSEPlayerInfo3	{U}
+03006720	@MusicPlayer	gMusicSEPlayerInfo4	{U}
+03006760	@MusicPlayer	gMusicSEPlayerInfo5	{U}
+030063C0	@MusicPlayer	gMusicSEPlayerInfoUnk1	{U}
+03006400	@MusicPlayer	gMusicSEPlayerInfoUnk2	{U}
+03006610	@MusicPlayer	gMusicSEPlayerInfoUnk3	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -11804,8 +11811,15 @@ r3=X tile position of menu of right	{U}
 030007F8	gSomeUtilityTextHandle	{J}
 030017D8	gSioBaudRate	{J}
 03004B50	gCurrentMovCostTable	{J}
-03006430	@MusicPlayer	gMusicPlayerInfo	{J}
-03006640	@MusicPlayer	gMusicPlayerInfo	{J}
+03006430	@MusicPlayer	gMusicPlayerInfo0	{J}
+03006640	@MusicPlayer	gMusicPlayerInfo1	{J}
+03006680	@MusicPlayer	gMusicSEPlayerInfo2	{J}
+030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
+03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
+03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
+030063B0	@MusicPlayer	gMusicSEPlayerInfoUnk1	{J}
+030063F0	@MusicPlayer	gMusicSEPlayerInfoUnk2	{J}
+03006600	@MusicPlayer	gMusicSEPlayerInfoUnk3	{J}
 03007FF0	gpM4aMainThing	{J}
 04000002	Undocumented_GreenSwap	{J}
 04000300	Undocumented_PostBootFlag	{J}
@@ -13973,3 +13987,5 @@ r3=X tile position of menu of right	{U}
 080CEF48	GuideOnKeyDown	{U}
 08078730	IsPromotionMode	{J}
 08076310	IsPromotionMode	{U}
+080BBA1C	StartEndingBattleDisplay	{J}
+080B6F14	StartEndingBattleDisplay	{U}

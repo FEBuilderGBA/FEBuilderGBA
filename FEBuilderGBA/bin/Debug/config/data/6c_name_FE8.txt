@@ -806,3 +806,5 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0008AA00=AnimationTutorialTextDialogBox	{U}	//08A01740
 000222A8=AnimationHitotachi	{J} //085C3A08 FE8J ONLY 一太刀で切るアニメーション
 005B94A0=IntroSequence_StartLogo	{J}	//8B3FC74
+000BBA38=EndingBattleDisplay	{J}	//08AC0C58
+000B6F30=EndingBattleDisplay	{U}	//08A3D420

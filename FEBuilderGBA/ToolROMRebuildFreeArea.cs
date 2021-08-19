@@ -18,6 +18,7 @@ namespace FEBuilderGBA
         }
 
         const int FREEAREA_BLOCK_SIZE = 2048;
+//        const int FREEAREA_BLOCK_SIZE = 150;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
