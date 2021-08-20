@@ -1,0 +1,15 @@
+NAME=章クリア時に消滅させられるクラス
+NAME.en=Class that disappears when the chapter is cleared
+NAME.zh=Class that disappears when the chapter is cleared
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+IF:0x18EDA=0x50 0x68 0x00 0x79
+ADDRESS=0x18EDE 0x3122E
+ADDRESS_TYPE=CLASS
+
+INFO=このクラスは章クリア時に自動的に消滅します。\r\nディフォルトは(ClasID 0x51 亡霊戦士)です。\r\nこの値は、「召喚されるクラス」でも変更できますが、あちらは広範囲の値を書き替えるため、他のパッチと衝突することが多くなりました。\r\nそのため消滅するクラスIDだけを別のパッチとしても定義します。
+INFO.en=This class will automatically disappear when the chapter is completed.\r\nThe default value is (ClasID 0x51 Phantom).\r\nThis value can also be changed in "Summon Skill: Edit Summoned Class", but since that changes a wide range of values, it often conflicts with other patches.\r\nTherefore, only the class IDs that disappear are defined as separate patches as well.
+INFO.zh=This class will automatically disappear when the chapter is completed.\r\nThe default value is (ClasID 0x51 Phantom).\r\nThis value can also be changed in "Summon Skill: Edit Summoned Class", but since that changes a wide range of values, it often conflicts with other patches.\r\nTherefore, only the class IDs that disappear are defined as separate patches as well.

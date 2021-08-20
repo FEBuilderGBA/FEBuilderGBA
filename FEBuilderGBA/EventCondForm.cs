@@ -3092,15 +3092,110 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("Precise EevntCondArea", mapid.ToString("X"));
 
-
-            //イベント領域を新規に割り当てる
-            byte[] data = new byte[EventCondForm.MapCond.Count * 4];
-
-            uint write_addr = InputFormRef.AppendBinaryData(data, undodata);
-            if (write_addr == U.NOT_FOUND)
+            uint write_addr;
+            if (Program.ROM.RomInfo.version() == 8)
             {
-                Program.Undo.Rollback(undodata);
-                return 0;
+                uint eventSize = (uint)(EventCondForm.MapCond.Count * 4);
+                uint turn = eventSize;
+                uint talk = turn + 12;
+                uint mapobject = talk + 16;
+                uint always = mapobject + 12;
+                uint always2 = always + 12;
+                uint always3 = always2 + 12;
+                uint always4 = always3 + 12;
+                uint tutorial = always4 + 12;
+                uint trap = tutorial + 4;
+                uint trap2 = trap + 6;
+                uint total = trap2 + 6;
+                byte[] data = new byte[total];
+
+                write_addr = InputFormRef.AppendBinaryData(data, undodata);
+                if (write_addr == U.NOT_FOUND)
+                {
+                    Program.Undo.Rollback(undodata);
+                    return 0;
+                }
+                Program.ROM.write_p32(write_addr + 0, write_addr + turn, undodata);  //turn
+                Program.ROM.write_p32(write_addr + 4, write_addr + talk, undodata); //talk
+                Program.ROM.write_p32(write_addr + 8, write_addr + mapobject, undodata); //mapobject
+                Program.ROM.write_p32(write_addr + 12, write_addr + always, undodata); //always
+                Program.ROM.write_p32(write_addr + 16, write_addr + always2, undodata); //always
+                Program.ROM.write_p32(write_addr + 20, write_addr + always3, undodata); //always
+                Program.ROM.write_p32(write_addr + 24, write_addr + always4, undodata); //always
+                Program.ROM.write_p32(write_addr + 28, write_addr + tutorial, undodata); //tutorial
+                Program.ROM.write_p32(write_addr + 32, write_addr + trap, undodata); //trap
+                Program.ROM.write_p32(write_addr + 36, write_addr + trap2, undodata); //trap2
+                //Program.ROM.write_p32(write_addr + 56, 0, undodata); //player elwood units
+                //Program.ROM.write_p32(write_addr + 60, 0, undodata); //player elwood hard units
+
+                //Program.ROM.write_p32(write_addr + 64, 0, undodata); //worldmap skirmishes player 1
+                //Program.ROM.write_p32(write_addr + 68, 0, undodata); //worldmap skirmishes player 2
+                //Program.ROM.write_p32(write_addr + 72, 0, undodata); //worldmap skirmishes player 3
+                //Program.ROM.write_p32(write_addr + 76, 0, undodata); //worldmap skirmishes enemy 1
+                //Program.ROM.write_p32(write_addr + 80, 0, undodata); //worldmap skirmishes enemy 2
+                //Program.ROM.write_p32(write_addr + 84, 0, undodata); //worldmap skirmishes enemy 3
+
+                //Program.ROM.write_p32(write_addr + 88, 0, undodata); //start event
+                //Program.ROM.write_p32(write_addr + 92, 0, undodata); //end event
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                uint eventSize = (uint)(EventCondForm.MapCond.Count * 4);
+                uint turn = eventSize;
+                uint talk = turn + 16;
+                uint mapobject = talk + 16;
+                uint always = mapobject + 12;
+                uint trap = always + 12;
+                uint trap2 = trap + 6;
+                uint total = trap2 + 6;
+                byte[] data = new byte[total];
+
+                write_addr = InputFormRef.AppendBinaryData(data, undodata);
+                if (write_addr == U.NOT_FOUND)
+                {
+                    Program.Undo.Rollback(undodata);
+                    return 0;
+                }
+                Program.ROM.write_p32(write_addr + 0, write_addr + turn, undodata);  //turn
+                Program.ROM.write_p32(write_addr + 4, write_addr + talk, undodata); //talk
+                Program.ROM.write_p32(write_addr + 8, write_addr + mapobject, undodata); //mapobject
+                Program.ROM.write_p32(write_addr + 12, write_addr + always, undodata); //always
+                Program.ROM.write_p32(write_addr + 16, write_addr + trap, undodata); //trap
+                Program.ROM.write_p32(write_addr + 20, write_addr + trap2, undodata); //trap2
+                //Program.ROM.write_p32(write_addr + 24, 0, undodata); //enemy elwood units
+                //Program.ROM.write_p32(write_addr + 28, 0, undodata); //enemy elwood hard units
+                //Program.ROM.write_p32(write_addr + 32, 0, undodata); //enemy hextor units
+                //Program.ROM.write_p32(write_addr + 36, 0, undodata); //enemy hextor hard units
+                //Program.ROM.write_p32(write_addr + 40, 0, undodata); //player elwood units
+                //Program.ROM.write_p32(write_addr + 44, 0, undodata); //player elwood hard units
+                //Program.ROM.write_p32(write_addr + 48, 0, undodata); //player hextor units
+                //Program.ROM.write_p32(write_addr + 52, 0, undodata); //player hextor hard units
+                //Program.ROM.write_p32(write_addr + 56, 0, undodata); //start event
+                //Program.ROM.write_p32(write_addr + 60, 0, undodata); //end event
+            }
+            else //fe6
+            {
+                uint eventSize = (uint)(EventCondForm.MapCond.Count * 4);
+                uint turn = eventSize;
+                uint talk = turn + 12;
+                uint mapobject = talk + 12;
+                uint always = mapobject + 12;
+                uint total = always + 12;
+                byte[] data = new byte[total];
+
+                write_addr = InputFormRef.AppendBinaryData(data, undodata);
+                if (write_addr == U.NOT_FOUND)
+                {
+                    Program.Undo.Rollback(undodata);
+                    return 0;
+                }
+                Program.ROM.write_p32(write_addr + 0, write_addr + turn, undodata);  //turn
+                Program.ROM.write_p32(write_addr + 4, write_addr + talk, undodata); //talk
+                Program.ROM.write_p32(write_addr + 8, write_addr + mapobject, undodata); //mapobject
+                Program.ROM.write_p32(write_addr + 12, write_addr + always, undodata); //always
+                //Program.ROM.write_p32(write_addr + 16, 0, undodata); //player units
+                //Program.ROM.write_p32(write_addr + 20, 0, undodata); //enemy units
+                //Program.ROM.write_p32(write_addr + 24, 0, undodata); //end event
             }
 
             bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.EVENT, plist, write_addr, undodata);
