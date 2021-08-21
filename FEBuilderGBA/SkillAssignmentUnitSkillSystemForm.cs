@@ -517,6 +517,20 @@ namespace FEBuilderGBA
                 Program.ROM.write_u16(termAddr, 0x0000, undodata);
             }
 
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill_lv = 0x0101;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u16(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u16(a, default_skill_lv, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+
             //拡張したアドレスを書き込む.
             uint write_addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex) * 4);
             Program.ROM.write_p32(write_addr, addr, undodata);
@@ -524,8 +538,8 @@ namespace FEBuilderGBA
 
             Program.Undo.Push(undodata);
 
-            N1_ReadCount.Value = eearg.NewDataCount;
-            N1_InputFormRef.ReInit(addr, eearg.NewDataCount);
+//            N1_ReadCount.Value = eearg.NewDataCount;
+//            N1_InputFormRef.ReInit(addr, eearg.NewDataCount);
         }
 
         private void WriteButton_Click(object sender, EventArgs e)

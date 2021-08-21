@@ -52,7 +52,7 @@ namespace FEBuilderGBA
             this.N4_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
             N5_InputFormRef = N5_Init(this);
-            N5_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N4;
+            N5_InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent_N5;
             N5_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N4_AddressList.OwnerDraw(ListBoxEx.DrawSkillAndText, DrawMode.OwnerDrawFixed);
 
@@ -464,6 +464,25 @@ namespace FEBuilderGBA
         {
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
             uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "N1");
+
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill = 0x01;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u8(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u8(a, default_skill, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
 
             P4.Value = addr;
             WriteButton.PerformClick();
@@ -475,6 +494,25 @@ namespace FEBuilderGBA
         {
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
             uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "N2");
+
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill = 0x01;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u8(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u8(a, default_skill, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
 
             P8.Value = addr;
             WriteButton.PerformClick();
@@ -486,6 +524,25 @@ namespace FEBuilderGBA
         {
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
             uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "N3");
+
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill = 0x01;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u8(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u8(a, default_skill, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
 
             P12.Value = addr;
             WriteButton.PerformClick();
@@ -497,12 +554,62 @@ namespace FEBuilderGBA
         {
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
             uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "N4");
+
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill = 0x01;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u8(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u8(a, default_skill, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
 
             P16.Value = addr;
             WriteButton.PerformClick();
 
             N4_ReadCount.Value = eearg.NewDataCount;
             N4_InputFormRef.ReInit(addr, eearg.NewDataCount);
+        }
+
+        private void AddressListExpandsEvent_N5(object sender, EventArgs arg)
+        {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "N5");
+
+            //スキルが0だと終端がわからなくなるので、適当なものを入れる.
+            uint a = addr + (eearg.OldDataCount * eearg.BlockSize);
+            const uint default_skill = 0x01;
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                uint skill_lv = Program.ROM.u8(a);
+                if (skill_lv == 0)
+                {
+                    Program.ROM.write_u8(a, default_skill, undodata);
+                }
+
+                a += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
+
+            P20.Value = addr;
+            WriteButton.PerformClick();
+
+            N5_ReadCount.Value = eearg.NewDataCount;
+            N5_InputFormRef.ReInit(addr, eearg.NewDataCount);
         }
 
         private void ImportButton_Click(object sender, EventArgs e)
