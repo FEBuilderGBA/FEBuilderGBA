@@ -13974,3 +13974,5 @@
 08076310	IsPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
+080360B8	ターン開始時に毒ダメージを与える処理	{J}
+08035FB8	ターン開始時に毒ダメージを与える処理	{U}

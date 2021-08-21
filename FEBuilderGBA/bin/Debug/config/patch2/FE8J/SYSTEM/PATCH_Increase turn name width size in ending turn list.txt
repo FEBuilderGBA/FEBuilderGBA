@@ -1,0 +1,44 @@
+NAME=エンディングのターン数一覧表示で表示できるターン名の文字数を増やす
+NAME.en=Increase turn name width size in ending turn list
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix: Increase Width|ONN
+
+DETERMINATION_ADDRESS=0x0BC320
+
+OFF:0xBC320=0x0B
+OFF:0xBC336=0x15
+OFF:0xBC34C=0x16
+OFF:0xBC442=0x06
+OFF:0xBC46C=0x06
+OFF:0xBC48C=0xA1
+OFF:0xBC4B0=0x06
+OFF:0xBC4D0=0xA1
+OFF:0xBC53C=0x06
+OFF:0xBC552=0x0f
+OFF:0xBC554=0x06
+OFF:0xBC568=0x10
+OFF:0xBC56A=0x06
+
+ONN:0xBC320=0x0C
+ONN:0xBC336=0x17
+ONN:0xBC34C=0x18
+ONN:0xBC442=0x04
+ONN:0xBC46C=0x04
+ONN:0xBC48C=0x21
+ONN:0xBC4B0=0x04
+ONN:0xBC4D0=0x21
+ONN:0xBC53C=0x04
+ONN:0xBC552=0x14
+ONN:0xBC554=0x03
+ONN:0xBC568=0x15
+ONN:0xBC56A=0x03
+
+AUTHOR=7743
+INFO=エンディングのターン数一覧表示で表示できるターン名の文字数を増やす。\r\n英語版は文字数が長いので章の名前を表示する欄が少し横に長くなります。\r\nこのパッチはそれをFE8Jでも再現します。\r\n英語に翻訳する時などに利用してください。
+INFO.en=Increase the number of characters in the turn name that can be displayed in the ending turn list display.\r\nSince the English version has a long number of characters, the column for displaying the chapter name will be slightly longer.\r\nThis patch also reproduces it on the FE8J.\r\nPlease use it when translating into English.
+NAME.zh=增加可在结束回合列表显示中显示的回合名称中的字符数。
+INFO.zh=增加可在结束回合列表显示中显示的回合名称中的字符数。\r\n由于英文版的字数比较长，所以显示章节名称的栏位会稍微长一些。\r\n这个补丁也在 FE8J 上复制了它。\r\n翻译成英文时请使用。

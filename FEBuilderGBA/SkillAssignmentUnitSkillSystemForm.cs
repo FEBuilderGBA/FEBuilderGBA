@@ -523,6 +523,9 @@ namespace FEBuilderGBA
             this.X_LevelUpAddr.Value = U.toPointer(addr);
 
             Program.Undo.Push(undodata);
+
+            N1_ReadCount.Value = eearg.NewDataCount;
+            N1_InputFormRef.ReInit(addr, eearg.NewDataCount);
         }
 
         private void WriteButton_Click(object sender, EventArgs e)
