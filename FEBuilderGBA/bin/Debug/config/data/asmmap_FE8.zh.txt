@@ -13945,3 +13945,5 @@ r3=X tile position of menu of the right	{U}
 08076310	IsPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
+080360B8	在回合开始时造成毒害的过程。	{J}
+08035FB8	在回合开始时造成毒害的过程。	{U}

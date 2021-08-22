@@ -476,12 +476,6 @@ namespace FEBuilderGBA
             , bool isOneLiner
             )
         {
-            bool use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
-            if (use_anti_Huffman == false)
-            {//Anti-Huffmanが入っていない
-                return;
-            }
-
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {

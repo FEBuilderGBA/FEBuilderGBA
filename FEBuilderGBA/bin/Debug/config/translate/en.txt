@@ -5323,6 +5323,9 @@ A value for identifying instrument data.\r\nIf you know the name of an instrumen
 :これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
 If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n
 
+:何も改造されていない、無改造のバニラROMを指定してください。
+Specify an unmodified vanilla ROM that has not been modified at all.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -12265,20 +12268,17 @@ In which chapter/map does the error occur?\r\nIn order to reproduce the problem,
 :この機能の説明
 Explanation of this Function
 
-:どの章？
-Which Chapter? 
-
-:次へ
-Next
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
+:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
+This tool is used to create a compiled report on issues that are present in your ROM.\r\nIf there is a problem that you can't solve on your own, please create a report7z with this tool and ask the Discord server for help.\r\n\r\nBy using this tool, we can reproduce and isolate the problem and easily create data or steps to resolve the issue.
 
 :誰？
 Who?
 
-:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is used to create a compiled report on issues that are present in your ROM.\r\nIf there is a problem that you can't solve on your own, please create a report7z with this tool and ask the Discord server for help.\r\n\r\nBy using this tool, we can reproduce and isolate the problem and easily create data or steps to resolve the issue.
+:次へ
+Next
+
+:どの章？
+Which Chapter? 
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files (ie. battle animations, image data) to reproduce your problems.\r\nPlease leave it blank if irrelevant.\r\nUp to 2 MB of data can be attached.
@@ -12291,6 +12291,9 @@ It is illegal to publish ROMs in most countries.\r\nTherefore, we need to make d
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem, we need a UPS patch.\r\nTo make a UPS patch, please choose a vanilla ROM.
+
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the Discord server and ask for assistance.
@@ -12340,8 +12343,20 @@ This address ({0}) is not available for rebuild.\r\nThe address range is dangero
 :拡張領域({0})より下のアドレス({1})をrebuildするのは危険です。\r\n続行してもよろしいですか?
 It is dangerous to rebuild the address ({1}) below the extended area ({0}).\r\nAre you sure you want to continue?
 
+:このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。
+Rebuild the data after this address.\r\nThe default is {0}.\r\nNormally do not change.\r\nIf it is for rebuilding to fail, increase this value.\r\nThe main reason for the rebuild to fail is the ASM you added yourself.\r\nIt may work if you reinstall the ASM after rebuilding.\r\nIf that is not possible, you can increase this value and make it work by not rebuilding to the area where the ASM is installed.
+
 :変更点をファイルに書きだす
 Write Changes to a File
+
+:探索開始アドレス
+Search start address.
+
+:nullの連続数
+Number of consecutive nulls.
+
+:フリー領域の定義
+Definition of free space.
 
 :0=フリー領域を再利用しません
 0=Do Not Reuse Free Space
@@ -12354,9 +12369,6 @@ Write Changes to a File
 
 :フリー領域の利用
 Use of Free Space
-
-:通称は変更しないでください。\r\n再構築するエリアを指定します。
-Do not change the name.\r\nSpecify the area to be rebuilt.
 
 :再構築アドレス
 Rebuild Address
@@ -12387,6 +12399,15 @@ CRC32 hash of target non-remodeled ROM
 
 :再構築を開始するアドレス。このアドレス以降を再構築します。
 Starting Address - the address and onward will be rebuilt.
+
+:ROMの前方にあるフリー領域も利用するかどうかを定義します。\r\nフリー領域も利用した方がROMが小さくなりますが、SkillSystemsなどのEA(buildfile)を使っている場合は、問題が発生することもあります。
+Defines whether the free area in front of the ROM is also used.\r\nThe ROM will be smaller if you also use the free area, but if you are using an EA (build file) such as Skill Systems, problems may occur.
+
+:この数だけnullが連続する場所があればフリー領域とみなします。\r\nCSASpellや画像データなどの役割が判明していて誤爆しやすい場所は最初から除外されています。\r\nただ、未知のデータで偶然にもnullがたくさん入っているデータ構造がある場合は、値を小さくすると誤爆する可能性が高まります。\r\n値を小さくすると、より小さなnull領域も再利用してROMが小さくなりますが、誤爆の可能性も増えます。
+If there are places where nulls continue for this number, it is considered as a free area.\r\nPlaces where roles such as CSASpell and image data are known and are prone to accidental explosion are excluded from the beginning.\r\nHowever, if there is a data structure that happens to contain a lot of nulls in unknown data, reducing the value increases the possibility of accidental explosion.\r\nDecreasing the value will also reuse the smaller null area and make the ROM smaller, but it also increases the chance of accidental explosion.
+
+:空き領域の探索を開始するアドレスです。\r\nディフォルトは、compress_image_borderline_address です。\r\nこれは、プログラムコードとデータ領域を分離できるアドレスです。\r\n基本的に変更しないでください。
+The address to start searching for free space.\r\nThe default is compress_image_borderline_address.\r\nThis is an address that can separate the program code from the data area.\r\nBasically do not change.
 
 :ROMRebuildを開く
 Open ROMRebuild

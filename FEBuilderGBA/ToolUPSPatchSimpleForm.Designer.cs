@@ -74,6 +74,7 @@
             // 
             // label2
             // 
+            this.label2.AccessibleDescription = "@VanillaROM";
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Location = new System.Drawing.Point(7, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

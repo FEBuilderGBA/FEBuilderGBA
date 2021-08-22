@@ -153,17 +153,18 @@ namespace FEBuilderGBA
             }
         }
 
-        void InitFreeAreaDef()
+        void InitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress)
         {
-            this.FreeArea = new ToolROMRebuildFreeArea();
+            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress);
         }
 
-        void ReInitFreeAreaDef(int useFreeArea,uint rebuildAddress, string[] rebuildLines)
+        void ReInitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress,
+            int useFreeArea,uint rebuildAddress, string[] rebuildLines)
         {
             Dictionary<uint, uint> useMap = new Dictionary<uint,uint>(this.AddressMap);
             AppendUseMap(useMap, rebuildAddress,rebuildLines);
 
-            this.FreeArea = new ToolROMRebuildFreeArea();
+            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress);
             if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
             {
                 FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, useMap);
@@ -182,7 +183,7 @@ namespace FEBuilderGBA
         }
 
         uint RebuildAddress;
-        public bool Apply(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea)
+        public bool Apply(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress)
         {
             this.ApplyLog = new StringBuilder();
             this.AddressMap = new Dictionary<uint, uint>();
@@ -206,7 +207,7 @@ namespace FEBuilderGBA
 
             //途中でデータを書き込むことがあるので、現在のフリーエリアを見つけてリストに追加.
             //後でROM末尾を超えたら再設定する.
-            InitFreeAreaDef();
+            InitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress);
             //通常のROM末尾を超えた時点で再度スキャンする.
             bool isMakeFreeAreaList = false;
 
@@ -258,7 +259,7 @@ namespace FEBuilderGBA
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
                     //フリーエリアの再設定
-                    ReInitFreeAreaDef(useFreeArea, this.RebuildAddress, lines);
+                    ReInitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress , useFreeArea, this.RebuildAddress, lines);
                 }
 
                 if (i > nextDoEvents)

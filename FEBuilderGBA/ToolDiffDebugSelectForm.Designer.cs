@@ -89,6 +89,7 @@
             // 
             // label6
             // 
+            this.label6.AccessibleDescription = "@VanillaROM";
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Location = new System.Drawing.Point(4, 731);
@@ -171,6 +172,7 @@
             // 
             this.BackupList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BackupList.FormattingEnabled = true;
+            this.BackupList.IntegralHeight = false;
             this.BackupList.ItemHeight = 18;
             this.BackupList.Location = new System.Drawing.Point(34, 30);
             this.BackupList.Margin = new System.Windows.Forms.Padding(4);

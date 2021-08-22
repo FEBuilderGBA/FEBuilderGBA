@@ -91,6 +91,7 @@
             // 
             // label5
             // 
+            this.label5.AccessibleDescription = "@VanillaROM";
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(16, 104);
             this.label5.Name = "label5";

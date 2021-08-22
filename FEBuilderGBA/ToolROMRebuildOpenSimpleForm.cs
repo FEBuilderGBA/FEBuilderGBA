@@ -19,6 +19,12 @@ namespace FEBuilderGBA
             U.AddCancelButton(this);
 
             UseFreeAreaComboBox.SelectedIndex = 1;
+            this.FreeAreaMinimumSize.Value = 2048;
+            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+
+            X_UseFreeArea.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeArea();
+            X_FreeAreaMinimumSize.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaMinimumSize();
+            X_FreeAreaStartAddress.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaStartAddress();
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)
@@ -77,7 +83,9 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                r = ToolROMRebuildForm.ApplyROMRebuild(pleaseWait, rom, this.ROMRebuildFilename, UseFreeAreaComboBox.SelectedIndex);
+                r = ToolROMRebuildForm.ApplyROMRebuild(pleaseWait, rom, this.ROMRebuildFilename
+                    , UseFreeAreaComboBox.SelectedIndex
+                    , (uint)FreeAreaMinimumSize.Value, (uint)FreeAreaStartAddress.Value);
                 if (!r)
                 {
                     U.SelectFileByExplorer(ToolROMRebuildApply.GetLogFilename(this.ROMRebuildFilename));
@@ -145,6 +153,31 @@ namespace FEBuilderGBA
         private void ToolROMRebuildOpenSimpleForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UseFreeAreaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UseFreeAreaComboBox.SelectedIndex <= 0)
+            {
+                X_FreeAreaDef.Hide();
+            }
+            else
+            {
+                X_FreeAreaDef.Show();
+            }
+        }
+
+        public static string GetExplainFreeArea()
+        {
+            return R._("ROMの前方にあるフリー領域も利用するかどうかを定義します。\r\nフリー領域も利用した方がROMが小さくなりますが、SkillSystemsなどのEA(buildfile)を使っている場合は、問題が発生することもあります。");
+        }
+        public static string GetExplainFreeAreaMinimumSize()
+        {
+            return R._("この数だけnullが連続する場所があればフリー領域とみなします。\r\nCSASpellや画像データなどの役割が判明していて誤爆しやすい場所は最初から除外されています。\r\nただ、未知のデータで偶然にもnullがたくさん入っているデータ構造がある場合は、値を小さくすると誤爆する可能性が高まります。\r\n値を小さくすると、より小さなnull領域も再利用してROMが小さくなりますが、誤爆の可能性も増えます。");
+        }
+        public static string GetExplainFreeAreaStartAddress()
+        {
+            return R._("空き領域の探索を開始するアドレスです。\r\nディフォルトは、compress_image_borderline_address です。\r\nこれは、プログラムコードとデータ領域を分離できるアドレスです。\r\n基本的に変更しないでください。");
         }
     }
 }

@@ -13,12 +13,14 @@ namespace FEBuilderGBA
     //リビルドしない領域にあるフリーエリア 再利用する場合に利用する.
     class ToolROMRebuildFreeArea
     {
-        public ToolROMRebuildFreeArea( )
+        public ToolROMRebuildFreeArea(uint freeAreaMinimumSize, uint freeAreaStartAddress )
         {
+            uint FreeAreaMinimumSize = freeAreaMinimumSize;
+            uint FreeAreaStartAddress = freeAreaStartAddress;
         }
 
-        const int FREEAREA_BLOCK_SIZE = 2048;
-//        const int FREEAREA_BLOCK_SIZE = 150;
+        uint FreeAreaMinimumSize;
+        uint FreeAreaStartAddress;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
@@ -36,7 +38,7 @@ namespace FEBuilderGBA
             MoveToFreeSapceForm.AppendSkillSystemsSanctuary(knownList);
 
             Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
-            MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE+16+16, data, RebuildAddress, useMap);
+            MakeFreeDataList(RecycleFreeAreaList, knownDic, FreeAreaMinimumSize + 16 + 16, data, RebuildAddress, useMap);
 
             for (int i = 0; i < this.RecycleFreeAreaList.Count; )
             {
@@ -90,8 +92,7 @@ namespace FEBuilderGBA
             , uint needSize, byte[] data
             , uint length, Dictionary<uint, uint> useMap)
         {
-            uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
-//            uint addr = 0x100;
+            uint addr = FreeAreaStartAddress;
             for (; addr < length; addr += 4)
             {
                 byte filldata;

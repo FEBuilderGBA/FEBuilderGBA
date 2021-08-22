@@ -20,6 +20,13 @@ namespace FEBuilderGBA
             U.AddCancelButton(this);
 
             UseFreeAreaComboBox.SelectedIndex = 0;
+            this.FreeAreaMinimumSize.Value = 2048;
+            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+
+            X_RebuildAddress.AccessibleDescription = GetExplainRebuildAddress();
+            X_UseFreeArea.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeArea();
+            X_FreeAreaMinimumSize.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaMinimumSize();
+            X_FreeAreaStartAddress.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaStartAddress();
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)
@@ -108,7 +115,9 @@ namespace FEBuilderGBA
 
             if (this.DefragCheckBox.Checked)
             {
-                string newROM = ReOpen(save.FileName, OrignalFilename.Text, UseFreeAreaComboBox.SelectedIndex);
+                string newROM = ReOpen(save.FileName, OrignalFilename.Text
+                    , UseFreeAreaComboBox.SelectedIndex
+                    , (uint)FreeAreaMinimumSize.Value, (uint)FreeAreaStartAddress.Value);
                 if (newROM == "")
                 {
                     return;
@@ -140,7 +149,7 @@ namespace FEBuilderGBA
                 ROMRebuild.Make(pleaseWait, orignalFilename, romRebuildFilename, rebuildAddress);
             }
         }
-        static string ReOpen(string romRebuildFilename, string orignalFilename, int useFreeArea)
+        static string ReOpen(string romRebuildFilename, string orignalFilename, int useFreeArea , uint freeAreaMinimumSize,uint freeAreaStartAddress)
         {
             ROM rom = new ROM();
             string version;
@@ -153,7 +162,9 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
             {
-                r = ToolROMRebuildForm.ApplyROMRebuild(pleaseWait, rom, romRebuildFilename, useFreeArea);
+                r = ToolROMRebuildForm.ApplyROMRebuild(pleaseWait, rom, romRebuildFilename
+                    , useFreeArea
+                    , freeAreaMinimumSize, freeAreaStartAddress);
                 if (!r)
                 {
                     U.SelectFileByExplorer(ToolROMRebuildApply.GetLogFilename(romRebuildFilename));
@@ -181,16 +192,20 @@ namespace FEBuilderGBA
             string romRebuildFilename = Program.ROM.Filename;
             uint rebuildAddress = U.toOffset(Program.ROM.RomInfo.extends_address());
             Make(romRebuildFilename, orignalFilename, rebuildAddress);
-            string stdout = ReOpen(romRebuildFilename,orignalFilename, 1);
+
+            uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            uint freeAreaMinimumSize = 2048;
+            uint freeAreaStartAddress = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            string stdout = ReOpen(romRebuildFilename, orignalFilename, 1, freeAreaMinimumSize, freeAreaStartAddress);
             U.echo(stdout);
 
             return 0;
         }
 
-        public static bool ApplyROMRebuild(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea)
+        public static bool ApplyROMRebuild(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress)
         {
             ToolROMRebuildApply romRebuildApply = new ToolROMRebuildApply();
-            return romRebuildApply.Apply(wait, vanilla, filename, useFreeArea);
+            return romRebuildApply.Apply(wait, vanilla, filename, useFreeArea ,freeAreaMinimumSize, freeAreaStartAddress);
         }
 
         private void OrignalFilename_DoubleClick(object sender, EventArgs e)
@@ -254,5 +269,21 @@ namespace FEBuilderGBA
             return true;
         }
 
+        private void UseFreeAreaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UseFreeAreaComboBox.SelectedIndex <= 0)
+            {
+                X_FreeAreaDef.Hide();
+            }
+            else
+            {
+                X_FreeAreaDef.Show();
+            }
+        }
+
+        public static string GetExplainRebuildAddress()
+        {
+            return R._("このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。", U.To0xHexString(Program.ROM.RomInfo.extends_address()) );
+        }
     }
 }
