@@ -1,7 +1,7 @@
 NAME=アイテム入手での a と an を表記を取り除く
 NAME.en=Remove a and an from Got Item Popup
 
-INFO=英語の前置詞のa と an と the を、アイテム入手のポップアップダイアログから取り除きます。
+INFO=英語の冠詞のa と an と the を、アイテム入手のポップアップダイアログから取り除きます。
 
 //アドレスパッチとして実装します
 TYPE=SWITCH
@@ -17,5 +17,5 @@ ONN:0x01619C=0x04 0xE1
 AUTHOR=7743
 
 NAME.zh=从Got Item Popup中删除a和an
-INFO.en=Remove the English prepositions a, an, and the from the item acquisition pop-up dialog.
-INFO.zh=从项目获取弹出对话框中删除英语介词 a、an 和 the。
+INFO.en=Remove the English articles a, an, and the from the item acquisition pop-up dialog.
+INFO.zh=从项目获取弹出对话框中删除英文冠词 a、an 和 the。

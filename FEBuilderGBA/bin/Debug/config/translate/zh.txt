@@ -5615,7 +5615,7 @@ ASM指针
 8=使用时定义错误消息
 
 :9=アイテムの前置詞 A|An|The(FE8Uのみ)
-9=Define item name article A|An|The(FE8U Only)
+9=项目介词 A | An | The（仅限 FE8U）。
 
 :アイテム利用効果
 道具使用效果

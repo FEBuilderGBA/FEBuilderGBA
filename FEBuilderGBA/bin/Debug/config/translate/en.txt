@@ -5615,7 +5615,7 @@ ASM pointer
 8=Define error message when using
 
 :9=アイテムの前置詞 A|An|The(FE8Uのみ)
-9=Define item name article A|An|The(FE8U Only)
+9=Item preposition A | An | The (FE8U only).
 
 :アイテム利用効果
 Item "Use" Effect

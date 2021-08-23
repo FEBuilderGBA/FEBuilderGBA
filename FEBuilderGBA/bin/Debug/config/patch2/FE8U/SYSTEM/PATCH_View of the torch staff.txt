@@ -1,0 +1,16 @@
+NAME=トーチの杖の視界
+NAME.en=View of the torch staff
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02FBA0
+HEX=FALSE
+AUTHOR=7743
+
+INFO=トーチの杖で確保できる視界の初期値です。\r\nディフォルトは8です。
+INFO.en=This is the initial value of the field of view that can be secured with the torch staff.\r\nThe default is 8.
+DEFAULT=0x8
+NAME.zh=火炬魔杖的视图。
+INFO.zh=这是可以使用手电筒固定的视野的初始值。\r\n默认值为 8。
