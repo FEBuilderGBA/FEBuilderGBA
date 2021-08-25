@@ -1683,6 +1683,23 @@ namespace FEBuilderGBA
             {
                 if (ShowMessage)
                 {
+                    OptionForm.write_low_address_enum option = OptionForm.write_low_address();
+                    if (option == OptionForm.write_low_address_enum.NoWarning)
+                    {
+                        R.Notify("アドレス0番地-{1}番地は保護対象で、アドレス{0}番地に書き込もうとしていますが、設定により警告はしません", U.ToHexString8(addr), U.ToHexString8(ProtectedAddress));
+                        return true;
+                    }
+                    if (option == OptionForm.write_low_address_enum.Warning)
+                    {
+                        DialogResult dr = R.ShowNoYes("アドレス0番地-{1}番地は書き込み保護の対象です。\r\nあなたが書き込もうとしているアドレス:{0}\r\n本当に書き込みをしてもよろしいですか？\r\nこの範囲への書き込みは危険で、ROMを破壊する危険性があります。", U.ToHexString8(addr), U.ToHexString8(ProtectedAddress));
+                        if (dr == DialogResult.Yes)
+                        {//ユーザが書き込むらしいという選択をした.
+                            return true;
+                        }
+                        //書き込みしない.
+                        return false;
+                    }
+
                     R.ShowStopError("アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。", U.To0xHexString(addr), U.To0xHexString(ProtectedAddress));
                 }
                 return false;

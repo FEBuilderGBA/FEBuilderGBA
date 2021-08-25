@@ -1,0 +1,34 @@
+NAME=マップ戦闘の開始時のディレイを削除して高速化する
+NAME.en=Remove the delay at the start of map battle to speed it up.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 32fsec|OFFF|Fix: HalfDely 16fsec|HALF|Fix: 5fsec Delay|FIX5
+
+DETERMINATION_ADDRESS=0xA13BF2
+
+OFFF:0xA13BB2=0x02
+OFFF:0xA13BCA=0x05
+OFFF:0xA13BF2=0x0F
+OFFF:0xA13C92=0x08
+OFFF:0xA13CB2=0x02
+
+HALF:0xA13BB2=0x01
+HALF:0xA13BCA=0x03
+HALF:0xA13BF2=0x07
+HALF:0xA13C92=0x04
+HALF:0xA13CB2=0x01
+
+FIX5:0xA13BB2=0x01
+FIX5:0xA13BCA=0x01
+FIX5:0xA13BF2=0x01
+FIX5:0xA13C92=0x01
+FIX5:0xA13CB2=0x01
+
+AUTHOR=7743
+INFO=バニラでは、マップアニメでの戦闘の開始時に、32フレーム(0.5秒)程度のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。\r\n具体的には、MapAnimBattle Procのdelayを削除します。
+INFO.en=In vanilla, there is a delay of about 32 frames (0.5 seconds) at the beginning of the battle in the map animation.\r\nThis patch removes it and makes it work faster.\r\nSpecifically, delete the Delay of MapAnimBattle Proc.
+NAME.zh=消除地图战斗开始时的延迟以加快速度。
+INFO.zh=在原版中，地图动画中战斗开始时有大约 32 帧（0.5 秒）的延迟。\r\n此补丁将其删除并使其运行速度更快。\r\n具体来说，删除MapAnimBattle Proc的Delay。

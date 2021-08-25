@@ -1,0 +1,31 @@
+NAME=マップアニメでの経験値を取得バーを高速に表示する
+NAME.en=Display the bar quickly when getting experience points in map animation
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFFFF|Display only faster|FAST1|Fastest!|ALLLL
+
+DETERMINATION_ADDRESS=0xA13DAA
+
+OFFFF:0xA13DAA=0x14
+OFFFF:0xA13DBA=0x02
+OFFFF:0xA13DCA=0x14
+OFFFF:0xA13DDA=0x08
+
+FAST1:0xA13DAA=0x01
+FAST1:0xA13DBA=0x01
+FAST1:0xA13DCA=0x14
+FAST1:0xA13DDA=0x08
+
+ALLLL:0xA13DAA=0x02
+ALLLL:0xA13DBA=0x00
+ALLLL:0xA13DCA=0x01
+ALLLL:0xA13DDA=0x01
+
+AUTHOR=7743
+INFO=経験値を取得するときに表示する棒グラフを早く表示して、早く閉じるようにします。\r\nディフォルトでは、合計で1秒程度のディレイが設定されています。\r\nこのパッチはそれを取り除き高速にバーを表示します。
+INFO.en=Display the bar graph that is displayed when you get experience points earlier, and close it earlier.\r\nBy default, a total delay of about 1 second is set.\r\nThis patch removes it and displays the bar faster.
+NAME.zh=获取地图动画中的经验值 高速显示栏。
+INFO.zh=显示较早获得经验值时显示的条形图，并提前关闭它。\r\n默认情况下，设置的总延迟约为 1 秒。\r\n此补丁将其删除并更快地显示栏。

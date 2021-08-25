@@ -808,3 +808,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 005B94A0=IntroSequence_StartLogo	{J}	//8B3FC74
 000BBA38=EndingBattleDisplay	{J}	//08AC0C58
 000B6F30=EndingBattleDisplay	{U}	//08A3D420
+0007CE74=DisplayExpBarProc	{J}	//08A13D80
+0007AAD8=DisplayExpBarProc	{U}	//089A36F8
+0007DC04=MapAnimBattle	{J}	//08A13B90
+00080450=MapAnimSleep	{J} //08A1439C

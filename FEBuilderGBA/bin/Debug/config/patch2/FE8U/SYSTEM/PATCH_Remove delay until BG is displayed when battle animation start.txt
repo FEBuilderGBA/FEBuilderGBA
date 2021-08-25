@@ -1,0 +1,19 @@
+NAME=戦闘アニメが開始された時に背景が表示されるまでのディレイを削除する
+NAME.en=Remove the delay until background is displayed when battle animation starts
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix: NoDelay|FIX
+
+DETERMINATION_ADDRESS=0x59DAEE
+
+OFF:0x59DAEE=0x20
+FIX:0x59DAEE=0x01
+
+AUTHOR=7743
+INFO=バニラでは、戦闘アニメが開始された時に32フレーム(0.5秒)のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。
+INFO.en=In vanilla, there is a 32 frame (0.5 second) delay when the battle animation begins.\r\nThis patch removes it and makes it work faster.
+NAME.zh=移除战斗动画开始时显示背景的延迟。
+INFO.zh=在原版中，战斗动画开始时有 32 帧（0.5 秒）的延迟。\r\n此补丁将其删除并使其运行速度更快。

@@ -8674,6 +8674,9 @@ When data is written to the ROM, a notification confirming this will be displaye
 :範囲外に書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。
 When you're about to write out of the ROM's range, you can\r\ncancel writing automatically, get a warning, or ignore such errors.
 
+:プログラムコードが格納されている下位アドレスに書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。
+When you are about to write to the lower address where the program code is stored,.\r\nDecide whether to automatically reject, warn, or do nothing.
+
 :ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します
 After exporting data from a ROM using this program, you can allow FEBuilderGBA\r\nto open the directory of where the file was saved to each time.
 
@@ -9291,6 +9294,9 @@ When exporting a file...
 
 :保存
 Save
+
+:危険な範囲の書き込みについて
+About writing in a dangerous range.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -12777,6 +12783,12 @@ The current version is the latest!
 
 :。
 。
+
+:アドレス0番地-{1}番地は保護対象で、アドレス{0}番地に書き込もうとしていますが、設定により警告はしません
+Address 0-{1} is protected and you are trying to write to address {0}, but there is no warning depending on the settings.
+
+:アドレス0番地-{1}番地は書き込み保護の対象です。\r\nあなたが書き込もうとしているアドレス:{0}\r\n本当に書き込みをしてもよろしいですか？\r\nこの範囲への書き込みは危険で、ROMを破壊する危険性があります。
+Address 0-{1} is subject to write protection.\r\nThe address you are trying to write to: {0}.\r\nAre you sure you want to write? \r\nWriting to this range is dangerous and can damage the ROM.
 
 :アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
 You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile - editing may break the ROM.

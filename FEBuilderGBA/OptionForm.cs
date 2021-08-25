@@ -142,6 +142,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_text_escape,(int)text_escape());
             U.SelectedIndexSafety(func_write_notify_time,(int)FindComboboxText(write_notify_time().ToString(), func_write_notify_time));
             U.SelectedIndexSafety(func_write_out_of_range,(int)write_out_of_range());
+            U.SelectedIndexSafety(func_write_low_address, (int)write_low_address());
             U.SelectedIndexSafety(func_select_in_explorer_when_export,(int)select_in_explorer_when_export());
             U.SelectedIndexSafety(func_lookup_feditor,(int)lookup_feditor());
             U.SelectedIndexSafety(func_lint_text_skip_bug,(int)lint_text_skip_bug());
@@ -301,6 +302,7 @@ namespace FEBuilderGBA
             Program.Config["func_text_escape"] = func_text_escape.SelectedIndex.ToString();
             Program.Config["func_write_notify_time"] = U.SelectValueComboboxText(func_write_notify_time.Text);
             Program.Config["func_write_out_of_range"] = U.SelectValueComboboxText(func_write_out_of_range.Text);
+            Program.Config["func_write_low_address"] = U.SelectValueComboboxText(func_write_low_address.Text);
             Program.Config["func_select_in_explorer_when_export"] = U.SelectValueComboboxText(func_select_in_explorer_when_export.Text);
             Program.Config["func_lookup_feditor"] = U.SelectValueComboboxText(func_lookup_feditor.Text);
             Program.Config["func_lint_text_skip_bug"] = U.SelectValueComboboxText(func_lint_text_skip_bug.Text);
@@ -815,6 +817,18 @@ namespace FEBuilderGBA
         {
             return (write_out_of_range_enum)U.atoi(Program.Config.at("func_write_out_of_range", "1")); 
         }
+
+        public enum write_low_address_enum
+        {
+            NoWarning = 0
+          , Warning = 1
+          , Deny = 2
+        };
+        public static write_low_address_enum write_low_address()
+        {
+            return (write_low_address_enum)U.atoi(Program.Config.at("func_write_low_address", "2")); 
+        }
+
 
         public enum select_in_explorer_when_export_enum
         {
@@ -1385,6 +1399,7 @@ namespace FEBuilderGBA
             explain_func_text_escape.AccessibleDescription = R._("テキストに利用するエスケープシーケンスをどうするかを決定します。\r\nProjectFEGBA形式(@0003)、\r\nFEditor形式[A]、\r\nどちらを利用するかを決定します");
             explain_func_write_notify_time.AccessibleDescription = R._("データを書き込んだときに、書き込み増したという通知を画面下に出しますが、\r\nあの表示の表示時間を決定します");
             explain_func_write_out_of_range.AccessibleDescription = R._("範囲外に書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。");
+            explain_func_write_low_address.AccessibleDescription = R._("プログラムコードが格納されている下位アドレスに書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。");
             explain_func_select_in_explorer_when_export.AccessibleDescription = R._("ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します");
             explain_func_lookup_feditor.AccessibleDescription = R._("既存の改造ROMを開くときの設定です。\r\n通常はオフにしてください。\r\n他の改造ツールで作られた既存ROMを開くときだけ利用してください。\r\n\r\nFEditorは、アドレスの枠外(開始アドレス-4)にデータの個数を書き込みます。\r\nこの値を参考にするかどうかを決定します。");
             explain_func_lint_text_skip_bug.AccessibleDescription = R._("Lintが改行などが正しくないテキストもバグとして報告するかどうかを決定します。\r\n例えば、セリフは2行しか利用できませんが、そこに3行目を入れた場合、バグとして検出します。\r\n");
