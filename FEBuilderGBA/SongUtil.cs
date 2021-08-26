@@ -2470,7 +2470,7 @@ namespace FEBuilderGBA
             public int globalID; //list[n] と同じ値.
             public string name;
             public uint ROMAllocAddr;
-            public List<int> useLabelRegist;
+            public List<uint> useLabelRegist;
             public List<byte> list;
         };
 
@@ -2620,7 +2620,7 @@ namespace FEBuilderGBA
                         }
                         current = new SongInnerDataSt();
                         current.name = name;
-                        current.useLabelRegist = new List<int>();
+                        current.useLabelRegist = new List<uint>();
                         current.list = new List<byte>();
                         current.globalID = global.Count;
                         global.Add(current);
@@ -2694,7 +2694,7 @@ namespace FEBuilderGBA
                             uint v = (uint)Expr(token[n], equ);
 
                             {//それ以外の相対値 
-                                current.useLabelRegist.Add(current.list.Count);
+                                current.useLabelRegist.Add((uint)current.list.Count);
                             }
 
                             U.append_u32(current.list, v);
@@ -2758,10 +2758,11 @@ namespace FEBuilderGBA
             //相対アドレスで書いている部分を描き戻す.
             for (int i = 0; i < global.Count; i++)
             {
-                for (int n = 0; n < global[i].useLabelRegist.Count; n++)
+                SongInnerDataSt g = global[i];
+                for (int n = 0; n < g.useLabelRegist.Count; n++)
                 {
-                    uint rewrite_offset = (uint)global[i].useLabelRegist[n];
-                    uint rewrite_addr = global[i].ROMAllocAddr + rewrite_offset;
+                    uint rewrite_offset = g.useLabelRegist[n];
+                    uint rewrite_addr = g.ROMAllocAddr + rewrite_offset;
 
                     uint rewrite_info = Program.ROM.u32(rewrite_addr);
                     if (rewrite_info == U.NOT_FOUND)

@@ -182,13 +182,15 @@ namespace FEBuilderGBA
             }
             else
             {
-                Address lastP = this.Recycle[this.Recycle.Count - 1];
+                int lasiI = this.Recycle.Count - 1;
+                Address lastP = this.Recycle[lasiI];
                 if (lastP.Addr + lastP.Length >= Program.ROM.Data.Length)
                 {//自分が最後のデータだった場合
                     //ROMサイズを増設.
                     Program.ROM.write_resize_data(U.Padding4(lastP.Addr + (uint)write_data.Length));
-
                     Program.ROM.write_range(lastP.Addr, write_data, undodata);
+
+                    this.Recycle.RemoveAt(lasiI);
                     return lastP.Addr;
                 }
 
