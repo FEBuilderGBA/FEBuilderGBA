@@ -243,6 +243,7 @@ namespace FEBuilderGBA
         {
             Debug.Assert(plist >= 1);
 
+            PatchUtil.MapSecondPalette_extends mapSecondPalette = PatchUtil.SearchFlag0x28ToMapSecondPalettePatch();
             List<uint> useMapID = new List<uint>();
             InputFormRef InputFormRef = Init(null);
 
@@ -260,6 +261,16 @@ namespace FEBuilderGBA
                 uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
                 uint worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos());
 
+                uint second_palette_plist = 0;
+                if (mapSecondPalette == PatchUtil.MapSecondPalette_extends.Flag0x28_146)
+                {
+                    second_palette_plist = (uint)Program.ROM.u8(addr + 146);
+                }
+                else if (mapSecondPalette == PatchUtil.MapSecondPalette_extends.Flag0x28_45)
+                {
+                    second_palette_plist = (uint)Program.ROM.u8(addr + 45);
+                }
+
                 if (type == MapPointerForm.PLIST_TYPE.UNKNOWN)
                 {//UNKNOWNだと全部知らべます
                     if ((obj_plist & 0xff) == plist
@@ -272,6 +283,7 @@ namespace FEBuilderGBA
                         || mapchange_plist == plist
                         || event_plist == plist
                         || worldmapevent_plist == plist
+                        || second_palette_plist == plist
                         )
                     {
                         useMapID.Add((uint)i);
@@ -322,6 +334,10 @@ namespace FEBuilderGBA
                 else if (type == MapPointerForm.PLIST_TYPE.PALETTE)
                 {
                     if (palette_plist == plist)
+                    {
+                        useMapID.Add((uint)i);
+                    }
+                    if (second_palette_plist == plist)
                     {
                         useMapID.Add((uint)i);
                     }

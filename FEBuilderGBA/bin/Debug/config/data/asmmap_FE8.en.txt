@@ -13991,3 +13991,5 @@ r3=X tile position of menu of right	{U}
 080B6F14	StartEndingBattleDisplay	{U}
 080360B8	A process that deals poison damage at the beginning of the turn.	{J}
 08035FB8	A process that deals poison damage at the beginning of the turn.	{U}
+080831DC	StartDrawSummonMagicCircleByUnitCoord	Draw a summon magic square at the position of the unit.	r0=CurrentProcs r1=@UNIT	{J}
+08080E9C	StartDrawSummonMagicCircleByUnitCoord	Draw a summon magic square at the position of the unit.	r0=CurrentProcs r1=@UNIT	{J}
