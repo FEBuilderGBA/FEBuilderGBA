@@ -15,12 +15,12 @@ namespace FEBuilderGBA
     {
         public ToolROMRebuildFreeArea(uint freeAreaMinimumSize, uint freeAreaStartAddress )
         {
-            uint FreeAreaMinimumSize = freeAreaMinimumSize;
-            uint FreeAreaStartAddress = freeAreaStartAddress;
+            this.FreeAreaMinimumSize = freeAreaMinimumSize;
+            this.FreeAreaStartAddress = freeAreaStartAddress;
         }
 
-        uint FreeAreaMinimumSize;
-        uint FreeAreaStartAddress;
+        uint FreeAreaMinimumSize = 2048;
+        uint FreeAreaStartAddress = 0x1000000;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
