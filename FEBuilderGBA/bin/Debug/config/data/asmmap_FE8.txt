@@ -13977,4 +13977,4 @@
 080360B8	ターン開始時に毒ダメージを与える処理	{J}
 08035FB8	ターン開始時に毒ダメージを与える処理	{U}
 080831DC	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{J}
-08080E9C	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{J}
+08080E9C	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{U}

@@ -5,7 +5,7 @@ NAME.en=Remove the Round delay in map battle to speed it up
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=Default: 30fsec|OFFF|Fix: HalfDely 15fsec|HALF|Fix: 3fsec Delay|FIX3
+COMBO=Default: 30fsec|OFFF|Fix: Slow 60fsec|SLOW|Fix: HalfDely 15fsec|HALF|Fix: 3fsec Delay|FIX3
 
 DETERMINATION_ADDRESS=0xA14E96
 
@@ -13,13 +13,22 @@ OFFF:0xA14E3E=0x02
 OFFF:0xA14E4E=0x08
 OFFF:0xA14E96=0x14
 
+//逆に遅くする聖戦とかの速度
+SLOW:0xA14E3E=0x04
+SLOW:0xA14E4E=0x10
+SLOW:0xA14E96=0x28
+
+//バニラの半分
 HALF:0xA14E3E=0x01
 HALF:0xA14E4E=0x04
 HALF:0xA14E96=0x0A
 
+//超高速
 FIX3:0xA14E3E=0x01
 FIX3:0xA14E4E=0x01
 FIX3:0xA14E96=0x01
+
+
 
 AUTHOR=7743
 INFO=バニラでは、マップアニメでの戦闘時に、それぞれの攻撃ラウンドで30フレーム(0.5秒)程度のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。\r\n具体的には、MapAnimDefaultRound Procのdelayを削除します。

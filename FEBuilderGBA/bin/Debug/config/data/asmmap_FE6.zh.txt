@@ -1392,4 +1392,24 @@
 08034AC8	AiTryDoSpecialItems
 08022a84	GetROMUnitSupportCount
 08022af0	GetSupportLevelBySupportIndex
-0808BD58	显示音室画面。
+0808BD58	显示音室画面
+
+0808667C	initialize XMAP data to RAM
+080865EC	get relative map data pointer from XMAP data
+08086608	get signed short at +0x14 from XMAP data
+08086624	get relative text data pointer from XMAP data
+08086640	get signed short at +0x16 from XMAP data
+
+@FE6XMAP@00	word	"XMAP" String 0x50414D58
+@FE6XMAP@04	short   Length to checksum;	if set to 0x0002, can be constant
+@FE6XMAP@06	short   Checksum	if set to 0x0223, can be constant
+@FE6XMAP@08	short   Magic number 0x2223
+@FE6XMAP@0A	byte    Language	(0 for J, 1 for U; for FE6 it's always 0)
+@FE6XMAP@0B	byte    _PAD0xB
+@FE6XMAP@0C	word	_Unk0xC
+@FE6XMAP@10	pointer	Relative map data pointer
+@FE6XMAP@14	short	length of map data
+@FE6XMAP@16	short	length of text data
+@FE6XMAP@18	pointer	Relative text data pointer
+
+0E007000	@FE6XMAP

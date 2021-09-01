@@ -5,7 +5,7 @@ NAME.en=Remove the Round delay in map battle to speed it up
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=Default: 30fsec|OFFF|Fix: HalfDely 15fsec|HALF|Fix: 3fsec Delay|FIX3
+COMBO=Default: 30fsec|OFFF|Fix: Slow 60fsec|SLOW|Fix: HalfDely 15fsec|HALF|Fix: 3fsec Delay|FIX3
 
 DETERMINATION_ADDRESS=0x9A480E
 
@@ -13,10 +13,17 @@ OFFF:0x9A47B6=0x02
 OFFF:0x9A47C6=0x08
 OFFF:0x9A480E=0x14
 
+//逆に遅くする聖戦とかの速度
+SLOW:0x9A47B6=0x04
+SLOW:0x9A47C6=0x10
+SLOW:0x9A480E=0x28
+
+//バニラの半分
 HALF:0x9A47B6=0x01
 HALF:0x9A47C6=0x04
 HALF:0x9A480E=0x0A
 
+//超高速
 FIX3:0x9A47B6=0x01
 FIX3:0x9A47C6=0x01
 FIX3:0x9A480E=0x01
