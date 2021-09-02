@@ -30,6 +30,7 @@ template_event_MOVEPOS_AND_FRAME_FE8.txt	Move camera to coordinates, Show frame 
 on
 template_event_TalkEventItem_FE8.txt	Talk and make items
 template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
+template_event_TalkEventAndFADI_FE8.txt	At the end of the conversation, fade in with the text box displayed to make the screen black
 template_event_BATTLE_Attack_Counter.txt	BattleEvent Attack->Defender
 template_event_BATTLE_Attack_Counter_Attack.txt	BattleEvent Attack->Defender->Attack
 template_event_BATTLE_Attack_Counter_Attack_Counter.txt	BattleEvent Attack->Defender->Attack->Defender
@@ -46,3 +47,5 @@ template_event_GAMEOVER_FE8.txt	Call game over
 template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call Preparation
 template_event_TalkEventItem_FE8.txt	Talk and get items.
 template_event_Turn_off_background_FE8.txt	Turn off background and fade it out to avoid disturbing the screen.
+template_event_RedFlushWarningEffect.txt	Red alarm like a warning. Flashes the entire screen red.
+template_event_StairsSoundEffect.txt	Makes a sound like going down the stairs. MapEffect

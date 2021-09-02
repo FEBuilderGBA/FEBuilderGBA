@@ -29,6 +29,7 @@ template_event_MOVEPOS_AND_FRAME_FE8.txt	カメラを座標に移動させ、座
 template_event_MOVEUNIT_AND_FRAME_FE8.txt	ユニットに枠を点灯させて会話を表示
 template_event_TalkEventItem_FE8.txt	会話してアイテム入手
 template_event_TALK_COND_CHANGE_MUSIC.txt	会話中に、イベントを並列して実行して、音楽を変える
+template_event_TalkEventAndFADI_FE8.txt	会話の最後にテキストボックスを表示したままフェードインして真っ黒にする
 template_event_BATTLE_Attack_Counter.txt	戦闘イベント 攻撃->反撃
 template_event_BATTLE_Attack_Counter_Attack.txt	戦闘イベント 攻撃->反撃->攻撃
 template_event_BATTLE_Attack_Counter_Attack_Counter.txt	戦闘イベント 攻撃->反撃->攻撃->反撃
@@ -44,3 +45,5 @@ template_event_GAMEOVER_FE8.txt	ゲームオーバーを呼び出す
 template_event_CALL_END_EVENT_FE8.txt	章をクリアする
 template_event_PREPARATION_FE8.txt	自軍と敵軍を読み込み進撃開始を呼び出す
 template_event_Turn_off_background_FE8.txt	背景をオフにして消すときにフェードアウトを入れて画面を乱さない
+template_event_RedFlushWarningEffect.txt	赤色の警報/警告 画面全体を赤色に点滅させる 画面演出
+template_event_StairsSoundEffect.txt	階段を下りるような音を出す 画面演出
