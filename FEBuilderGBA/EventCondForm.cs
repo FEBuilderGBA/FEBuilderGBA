@@ -15,8 +15,6 @@ namespace FEBuilderGBA
         public EventCondForm()
         {
             InitializeComponent();
-            EventRelationIconsCache = new Dictionary<uint,EventRelationIcons>();
-
             for (int i = 0; i < EventCondForm.MapCond.Count; i++)
             {
                 FilterComboBox.Items.Add(EventCondForm.MapCond[i].Name);
@@ -27,7 +25,6 @@ namespace FEBuilderGBA
 
             this.InputFormRefN02 = InitN02(this);
             this.InputFormRefN02.PreWriteHandler += PreWriteHandler_N02_W0;
-            this.InputFormRefN02.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefN02.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefN02.AddressList.OwnerDraw(DrawEventListTurn, DrawMode.OwnerDrawFixed);
             this.InputFormRefN02.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
@@ -37,7 +34,6 @@ namespace FEBuilderGBA
 
             this.InputFormRefTalk = InitTalk(this);
             this.InputFormRefTalk.PreWriteHandler += PreWriteHandler_TALK_W0_UNIONKEY;
-            this.InputFormRefTalk.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefTalk.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefTalk.AddressList.OwnerDraw(DrawEventListTalk, DrawMode.OwnerDrawFixed);
             this.InputFormRefTalk.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
@@ -46,7 +42,6 @@ namespace FEBuilderGBA
 
             this.InputFormRefObject = InitObject(this);
             this.InputFormRefObject.PreWriteHandler += PreWriteHandler_OBJECT_W0_UNIONKEY;
-            this.InputFormRefObject.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefObject.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefObject.AddressList.OwnerDraw(DrawEventListObject, DrawMode.OwnerDrawFixed);
             this.InputFormRefObject.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
@@ -55,7 +50,6 @@ namespace FEBuilderGBA
 
             this.InputFormRefAlways = InitAlways(this);
             this.InputFormRefAlways.PreWriteHandler += PreWriteHandler_ALWAYS_W0_UNIONKEY;
-            this.InputFormRefAlways.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefAlways.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP4;
             this.InputFormRefAlways.AddressList.OwnerDraw(DrawEventListAlways, DrawMode.OwnerDrawFixed);
             this.InputFormRefAlways.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
@@ -63,7 +57,6 @@ namespace FEBuilderGBA
             });
 
             this.InputFormRefTrap = InitTrap(this);
-            this.InputFormRefTrap.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefTrap.PostAddressListExpandsEvent += AddressListExpandsEventTrap;
             this.InputFormRefTrap.AddressList.OwnerDraw(DrawEventListTrap, DrawMode.OwnerDrawFixed);
             this.InputFormRefTrap.MakeGeneralAddressListContextMenu(true, true, (sender, e) => {
@@ -72,7 +65,6 @@ namespace FEBuilderGBA
 
             //For FE8  他シリーズでもとりあえず初期化だけはやる.
             this.InputFormRefTutorial = InitTutorial(this);
-            this.InputFormRefTutorial.PostWriteHandler += OnPostWriteHandler_ClearCache;
             this.InputFormRefTutorial.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP0;
             this.InputFormRefTutorial.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
                 this.CustomKeydownHandler(sender, e, this.InputFormRefTutorial);
@@ -323,8 +315,6 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
 
-            //イベントの関連アイコンを取得しなおしたい
-            EventRelationIconsCache.Clear();
             WriteButton.PerformClick();
         }
 
@@ -694,8 +684,6 @@ namespace FEBuilderGBA
                 {
                     this.CondTabControl.SelectedTab = tabPage02;
                 }
-                //イベントの関連アイコンを取得しなおしたい
-                EventRelationIconsCache.Clear();
             }
             else if (condtype == CONDTYPE.TALK)
             {//1=話すコマンドの会話条件(03)
@@ -717,8 +705,6 @@ namespace FEBuilderGBA
                 this.InputFormRefObject.ReInit(addr, readCount, IsManualForcedChange);
                 ReadCount.Value = this.InputFormRefObject.DataCount;
                 this.CondTabControl.SelectedTab = tabPage0506070A0C;
-                //イベントの関連アイコンを取得しなおしたい
-                EventRelationIconsCache.Clear();
             }
             else if (condtype == CONDTYPE.ALWAYS)
             {//3=範囲条件及び、勝利条件などの常時条件(0B,01)
@@ -825,8 +811,6 @@ namespace FEBuilderGBA
 
             InputFormRef.WritePointerButton(this, addr, event_pointer, undo_name);
             InputFormRef.WriteButtonToYellow(WriteButton, false);
-            //イベントの関連アイコンを取得しなおしたい
-            EventRelationIconsCache.Clear();
 
             ReloadEventList(U.NOT_FOUND, false);
         }
@@ -3344,7 +3328,13 @@ namespace FEBuilderGBA
             public TypeEnum Type;
             public List<U.AddrResult> List;
         }
-        Dictionary<uint,EventRelationIcons> EventRelationIconsCache;
+        static Dictionary<uint,EventRelationIcons> EventRelationIconsCache = new Dictionary<uint,EventRelationIcons>();
+
+        public static void ClearCache()
+        {
+            //イベントの関連アイコンを取得しなおしたい
+            EventRelationIconsCache.Clear();
+        }
 
         int DrawEventRelationIcons(U.AddrResult ar, bool isTurnEvent, Graphics g, Font font, SolidBrush brush, Rectangle bounds, bool isWithDraw)
         {
@@ -4428,7 +4418,6 @@ namespace FEBuilderGBA
         //ターンイベントで書き込みボタンを押したときに、リストを再度探索する.
         private void N02_WriteButton_Click(object sender, EventArgs e)
         {
-            EventRelationIconsCache.Clear();
         }
 
 
@@ -4792,8 +4781,6 @@ namespace FEBuilderGBA
 
         private void EventCondForm_Activated(object sender, EventArgs e)
         {
-            //イベントの関連アイコンを取得しなおしたい
-            EventRelationIconsCache.Clear();
         }
 
         uint ReConvertListBoxToObjectSize(ListBoxEx listbox)
@@ -4845,10 +4832,8 @@ namespace FEBuilderGBA
             }
 
             Program.Undo.Push(undodata);
-            EventRelationIconsCache.Clear();
 
             //再描画と再選択.
-            //listbox.Invalidate();
             U.ReSelectList(listbox);
 
             InputFormRef.ShowWriteNotifyAnimation(this, destAddr);
@@ -4862,15 +4847,7 @@ namespace FEBuilderGBA
                 ClearData((ListBoxEx)sender);
                 return;
             }
-            if (e.Control)
-            {
-                EventRelationIconsCache.Clear();
-            }
             ifr.GeneralAddressList_KeyDown(sender, e);
-            if (e.Control)
-            {
-                EventRelationIconsCache.Clear();
-            }
         }
 
         //Event Type00 にしたとき、フラグも00にする
@@ -4934,11 +4911,6 @@ namespace FEBuilderGBA
                 ALWAYS_N0D_W2.Value = 0;
             }
 
-        }
-        private void OnPostWriteHandler_ClearCache(object sender, EventArgs e)
-        {
-            //イベントの関連アイコンを取得しなおしたい
-            EventRelationIconsCache.Clear();
         }
 
         private void OBJECT_N05_B10_ValueChanged(object sender, EventArgs e)

@@ -5174,6 +5174,7 @@ namespace FEBuilderGBA
             FE8SpellMenuExtendsForm.ClearCache();
             MapChangeForm.ClearCache();
             ItemWeaponEffectForm.ClearCache();
+            EventCondForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
             PatchUtil.ClearCache();
@@ -6074,14 +6075,6 @@ namespace FEBuilderGBA
             {
                 ClipbordToPaste();
             }
-//            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Up)
-//            {
-//                ShiftData(false);
-//            }
-//            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Down)
-//            {
-//                ShiftData(true);
-//            }
             else if (e.Control && e.KeyCode == Keys.Up)
             {
                 SwapData(false);
