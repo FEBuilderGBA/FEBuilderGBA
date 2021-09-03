@@ -17,4 +17,12 @@ ORG 0xe184c
 #incbin "trade_fix_WM.dmp"
 ORG 0x9b550
 BYTE 0x46 0xf0 0x7c 0xf9
+
+//Pawkkie https://discord.com/channels/144670830150811649/235253973588639747/881615476923441192
+//fix GiveAll
+ORG $9A554
+BYTE 0x47 0xf0 0xd8 0xf9
+ORG $1948A
+BYTE 0xD2 0x19
+
 POP
