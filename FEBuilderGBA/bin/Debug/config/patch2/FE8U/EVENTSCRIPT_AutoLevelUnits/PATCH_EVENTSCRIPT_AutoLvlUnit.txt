@@ -1,0 +1,34 @@
+﻿NAME=ユニットを成長させる(イベント命令)
+NAME.en=Add Event: AutoLvlUnit
+NAME.zh=Add Event: AutoLvlUnit
+
+INFO=イベント命令から、オートレベルを利用してユニットを成長させます。\r\nこれを利用すると、離脱したユニットが再び仲間になってパーティに再加入する時に、レベルを上げることができます。\r\ユニットを消したり、新しいユニットIDを利用する手法と比べて、支援やアイテムを引き継げるメリットがあります。\r\nレベルを更新を、有効にするとレベルの数字を更新します。\r\nレベルを更新を、無効にするとハードブーストのようにレベルの数字は維持したままでパラメータだけ更新します。\r\n
+INFO.en=From the Event Script, use Auto Level to grow the unit.\r\nThis allows you to level up units that have left the party when they rejoin the party.\r\nThis has the advantage of transferring support and items over the method of issuing and erasing or using a new unit ID.\r\nIf you enable Update Level, it will update the level number.\r\nIf disabled, it will update only the parameters while maintaining the level number, like a hard boost.\r\n
+INFO.zh=From the Event Script, use Auto Level to grow the unit.\r\nThis allows you to level up units that have left the party when they rejoin the party.\r\nThis has the advantage of transferring support and items over the method of issuing and erasing or using a new unit ID.\r\nIf you enable Update Level, it will update the level number.\r\nIf disabled, it will update only the parameters while maintaining the level number, like a hard boost.\r\n
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 AutoLvlUnit.dmp=0xF0 0xB5 0x1D 0x4B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=AutoLvlUnit.dmp
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/14 https://github.com/Veslyquix/ASM/blob/main/AutoLevelUnits/
+
+EVENTSCRIPT:01=400D0000{$L1:AutoLvlUnit.dmp}	ASMC_AutoLevelUnits(LOW)
+EVENTSCRIPT:02=40050100XXXXXXXX40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	[XX:UNIT:Unit]を[ZZ:DECIMAL:Level]相当まで成長させる。[WW:BOOL:レベルを更新](ASMC_AutoLevelUnits)
+EVENTSCRIPT:03=40050B00XXXXYYYY40050100FEFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	座標[XX:MAPX:X][YY:MAPY:Y]のユニットを[ZZ:DECIMAL:Level]相当まで成長させる。[WW:BOOL:レベルを更新](ASMC_AutoLevelUnits)
+EVENTSCRIPT:04=40050100FFFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	現在操作しているユニットを[ZZ:DECIMAL:Level]相当まで成長させる。[WW:BOOL:レベルを更新](ASMC_AutoLevelUnits)
+
+EVENTSCRIPT:01.en=400D0000{$L1:AutoLvlUnit.dmp}	ASMC_AutoLevelUnits(LOW)
+EVENTSCRIPT:02.en=40050100XXXXXXXX40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow [XX:UNIT:Unit] to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+EVENTSCRIPT:03.en=40050B00XXXXYYYY40050100FEFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow Coordinates[XX:MAPX:X][YY:MAPY:Y] Unit to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+EVENTSCRIPT:04.en=40050100FFFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow Current Unit to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+
+EVENTSCRIPT:01.zh=400D0000{$L1:AutoLvlUnit.dmp}	ASMC_AutoLevelUnits(LOW)
+EVENTSCRIPT:02.zh=40050100XXXXXXXX40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow [XX:UNIT:Unit] to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+EVENTSCRIPT:03.zh=40050B00XXXXYYYY40050100FEFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow Coordinates[XX:MAPX:X][YY:MAPY:Y] Unit to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+EVENTSCRIPT:04.zh=40050100FFFFFFFF40050300ZZZZZZZZ40050400WWWWWWWW400D0000{$L1:AutoLvlUnit.dmp}	Grow Current Unit to equivalent of [ZZ:DECIMAL:Level]. [WW:BOOL:isUpdatLevel](ASMC_AutoLevelUnits)
+

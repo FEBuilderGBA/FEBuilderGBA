@@ -1,0 +1,5 @@
+#define AutoLvlUnit(UnitID, Levels, VisibleOrHidden) "SVAL 1 UnitID; SVAL 3 Levels; SVAL 4 VisibleOrHidden; ASMC AutoLvlUnit_ASMC|1"
+
+ALIGN 4 
+AutoLvlUnit_ASMC:
+#incbin "AutoLvlUnit.dmp" 

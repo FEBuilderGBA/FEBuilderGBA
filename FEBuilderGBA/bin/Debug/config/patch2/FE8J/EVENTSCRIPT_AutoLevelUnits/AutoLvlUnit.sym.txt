@@ -1,0 +1,7 @@
+Exit=$72
+NoCapOnLevels=$1E
+IncreaseStatsNow=$58
+CheckCharForTraineeBitflag=$34
+TraineeCase=$44
+EitherCase=$46
+StoreNewLvl=$56
