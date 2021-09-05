@@ -1351,6 +1351,7 @@ namespace FEBuilderGBA
                 new ROMBaseTableSt{name = "FE8J" , ver = 8, lang = "ja" , header = "BE8J01", romsize = 0x1000000, crc32 = 	0x9d76826f},
                 new ROMBaseTableSt{name = "FE8U" , ver = 8, lang = "en" , header = "BE8E01", romsize = 0x1000000, crc32 = 	0xa47246ae},
                 new ROMBaseTableSt{name = "FE8CN" , ver = 8, lang = "zh" , header = "BE8J01", romsize = 0x1000000, crc32 = 	0x79609D14},
+                new ROMBaseTableSt{name = "FE8KR" , ver = 8, lang = "kr" , header = "BE8J01", romsize = 0x1193960, crc32 = 	0x4F33E94C},
             };
         }
 

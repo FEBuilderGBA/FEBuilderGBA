@@ -224,6 +224,8 @@
             this.explain_func_rom_extends_option = new System.Windows.Forms.Label();
             this.func_rom_extends_option = new System.Windows.Forms.ComboBox();
             this.tabPageFunc2 = new System.Windows.Forms.TabPage();
+            this.func_write_low_address = new System.Windows.Forms.ComboBox();
+            this.explain_func_write_low_address = new System.Windows.Forms.Label();
             this.func_show_song_table_extends = new System.Windows.Forms.ComboBox();
             this.explain_func_show_song_table_extends = new System.Windows.Forms.Label();
             this.func_show_fe76_item_icon_extends = new System.Windows.Forms.ComboBox();
@@ -270,8 +272,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.func_write_low_address = new System.Windows.Forms.ComboBox();
-            this.explain_func_write_low_address = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -2612,6 +2612,31 @@
             this.tabPageFunc2.TabIndex = 6;
             this.tabPageFunc2.Text = "機能2";
             // 
+            // func_write_low_address
+            // 
+            this.func_write_low_address.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_write_low_address.FormattingEnabled = true;
+            this.func_write_low_address.Items.AddRange(new object[] {
+            "0=警告も何もしない(推奨しません)",
+            "1=書き込みを警告する",
+            "2=書き込みを禁止する"});
+            this.func_write_low_address.Location = new System.Drawing.Point(419, 125);
+            this.func_write_low_address.Margin = new System.Windows.Forms.Padding(2);
+            this.func_write_low_address.Name = "func_write_low_address";
+            this.func_write_low_address.Size = new System.Drawing.Size(408, 26);
+            this.func_write_low_address.TabIndex = 68;
+            // 
+            // explain_func_write_low_address
+            // 
+            this.explain_func_write_low_address.AccessibleDescription = "";
+            this.explain_func_write_low_address.Location = new System.Drawing.Point(9, 125);
+            this.explain_func_write_low_address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_write_low_address.Name = "explain_func_write_low_address";
+            this.explain_func_write_low_address.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_write_low_address.TabIndex = 67;
+            this.explain_func_write_low_address.Text = "危険な範囲の書き込みについて";
+            this.explain_func_write_low_address.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // func_show_song_table_extends
             // 
             this.func_show_song_table_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -3043,7 +3068,8 @@
             "3=UTF-8",
             "4=zh_TBL(china)",
             "5=en_TBL(english)",
-            "6=ar_TBL(arabic)"});
+            "6=ar_TBL(arabic)",
+            "7=kr_TBL(korean)"});
             this.func_textextencodingtencoding.Location = new System.Drawing.Point(411, 548);
             this.func_textextencodingtencoding.Margin = new System.Windows.Forms.Padding(2);
             this.func_textextencodingtencoding.Name = "func_textextencodingtencoding";
@@ -3188,31 +3214,6 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // func_write_low_address
-            // 
-            this.func_write_low_address.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_write_low_address.FormattingEnabled = true;
-            this.func_write_low_address.Items.AddRange(new object[] {
-            "0=警告も何もしない(推奨しません)",
-            "1=書き込みを警告する",
-            "2=書き込みを禁止する"});
-            this.func_write_low_address.Location = new System.Drawing.Point(419, 125);
-            this.func_write_low_address.Margin = new System.Windows.Forms.Padding(2);
-            this.func_write_low_address.Name = "func_write_low_address";
-            this.func_write_low_address.Size = new System.Drawing.Size(408, 26);
-            this.func_write_low_address.TabIndex = 68;
-            // 
-            // explain_func_write_low_address
-            // 
-            this.explain_func_write_low_address.AccessibleDescription = "";
-            this.explain_func_write_low_address.Location = new System.Drawing.Point(9, 125);
-            this.explain_func_write_low_address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_write_low_address.Name = "explain_func_write_low_address";
-            this.explain_func_write_low_address.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_write_low_address.TabIndex = 67;
-            this.explain_func_write_low_address.Text = "危険な範囲の書き込みについて";
-            this.explain_func_write_low_address.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OptionForm
             // 

@@ -1039,6 +1039,7 @@ namespace FEBuilderGBA
           , ZH_TBL = 4
           , EN_TBL = 5
           , AR_TBL = 6
+          , KR_TBL = 7
           , NoChace = 99
         };
         static textencoding_enum g_Cache_textencoding;
@@ -1194,7 +1195,8 @@ namespace FEBuilderGBA
                 new TBLTableSt{name = "FE6CN",ver = 6,enc = 4,pointer = 0x60D010,data = new byte[]{0x8C ,0xE2 ,0x85 ,0xE1}},
                 new TBLTableSt{name = "FE7CN",ver = 7,enc = 4,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFC ,0x86 ,0x87}},
                 new TBLTableSt{name = "FE7CN",ver = 7,enc = 4,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFB ,0x86 ,0x86}},
-                new TBLTableSt{name = "FE8CN",ver = 8,enc = 4,pointer = 0x8617CC,data = new byte[]{0x8D ,0xBD ,0x85 ,0xF9}}
+                new TBLTableSt{name = "FE8CN",ver = 8,enc = 4,pointer = 0x8617CC,data = new byte[]{0x8D ,0xBD ,0x85 ,0xF9}},
+                new TBLTableSt{name = "FE8KR",ver = 8,enc = 7,pointer = 0x8617CC,data = new byte[]{0x9D ,0xD2 ,0x9B ,0x6B}},
             }; 
 
             uint version = (uint)Program.ROM.RomInfo.version();

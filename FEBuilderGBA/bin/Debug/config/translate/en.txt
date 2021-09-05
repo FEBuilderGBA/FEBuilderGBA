@@ -9136,6 +9136,18 @@ ROM Expansion Starting Address
 :機能2
 Function 2
 
+:0=警告も何もしない(推奨しません)
+0=Ignore Out of Range Warnings (Not Recommended)
+
+:1=書き込みを警告する
+1=Warn for Writing Out of Range
+
+:2=書き込みを禁止する
+2=Don't Allow Writing Out of Range
+
+:危険な範囲の書き込みについて
+About writing in a dangerous range.
+
 :0=表示しない
 0=Not Displayed
 
@@ -9177,15 +9189,6 @@ Toggle Chapter Expansion Button
 
 :上書き時の簡易チェック
 Simple Check at Overwrite
-
-:0=警告も何もしない(推奨しません)
-0=Ignore Out of Range Warnings (Not Recommended)
-
-:1=書き込みを警告する
-1=Warn for Writing Out of Range
-
-:2=書き込みを禁止する
-2=Don't Allow Writing Out of Range
 
 :1=簡易エラーチェックをする
 1=Perform a Simple Error Check
@@ -9294,9 +9297,6 @@ When exporting a file...
 
 :保存
 Save
-
-:危険な範囲の書き込みについて
-About writing in a dangerous range.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
