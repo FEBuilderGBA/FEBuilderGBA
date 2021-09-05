@@ -1,0 +1,16 @@
+NAME=エンディングのクリアターン一覧の総ターン数を表示し終わりフェードアウトして真っ暗になった後の待機時間
+NAME.en=Waiting time after ending clear turn list finishes displaying total number of turns, fades out, and goes dark.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xA3D6D2
+HEX=FALSE
+AUTHOR=7743
+
+INFO=エンディングに表示されるクリアターン数一覧で一番最後に総ターン数を表示して、フェードアウトが実行され画面が真っ暗になった後の最後の待機時間です。\r\nディフォルトは60(1秒)です。\r\nこのフレーム秒だけ待機して、エンディングのクリアターン一覧は終了します。\r\nこの数字を小さくすると早く終了します。\r\n大きな数字にすると長い時間待機します。
+DEFAULT=60
+INFO.en=The total number of turns is displayed at the end of the list of clear turns displayed in the ending, and it is the last waiting time after the fade-out is executed and the screen goes black.\r\nThe default is 60 (1 second).\r\nAfter waiting for this frame second, the ending clear turn list ends.\r\nThe smaller this number, the faster it will end.\r\nIf you set a large number, it will wait for a long time.
+NAME.zh=显示结束清除转弯列表中的总圈数，结束后的等待时间淡出变为一片漆黑。
+INFO.zh=总转数显示在结尾显示的清除转数列表的末尾，是执行淡出后最后一次等待时间，屏幕变黑。\r\n默认值为 60（1 秒）。\r\n等待这一帧秒后，结束清空回合列表结束。\r\n这个数字越小，结束的速度就越快。\r\n如果你设置的数字很大，它会等待很长时间。

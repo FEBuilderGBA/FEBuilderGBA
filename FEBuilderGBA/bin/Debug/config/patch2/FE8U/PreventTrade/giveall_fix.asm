@@ -1,7 +1,14 @@
 .thumb
-.org 0 @paste to e1908 -
 .align 4
 @originally at 9a554, write 47f0d8f9
+
+.macro blh to, reg=r3
+  ldr \reg, =\to
+  mov lr, \reg
+  .short 0xf800
+.endm
+
+
 @also need to change 1948a to d219
 mov r7, #0x1e @item slot (r7 had the number of items total)
 Loop:
@@ -9,9 +16,18 @@ ldr r0,[r5,r7]
 bl Give_func
 mov r0,r5
 mov r1,#0
-ldr r2, StoreFromInv
-mov lr,r2
-.short 0xF800
+@ldr r2, StoreFromInv
+@mov lr,r2
+@.short 0xF8
+@ instead of editing StoreFromInv at 1948A, just copy paste the code here 
+@ it's just a few lines anyway ~ Vesly & Pawkkie
+lsl r1, #1 
+mov r2, r0 
+add r2, r7 
+add r2, r1 
+mov r1, #0 
+strh r1, [r2] 
+blh 0x8017984 
 ReturnSkipped:
 add r4,#1
 cmp r4,#5 @(cmp 5 instead of r5, may be a couple extra loops but who cares)

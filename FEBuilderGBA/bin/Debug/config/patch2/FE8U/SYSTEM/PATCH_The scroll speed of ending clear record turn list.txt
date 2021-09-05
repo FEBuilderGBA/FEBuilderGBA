@@ -1,0 +1,16 @@
+NAME=エンディングのクリアターン一覧のスクロール速度
+NAME.en=The scroll speed of ending clear record turn list
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xB7658
+HEX=FALSE
+AUTHOR=7743
+
+INFO=エンディングに表示されるクリアターン数一覧のスクロール速度です。\r\nディフォルトは32です。\r\nこの数字を小さくするとスクロールがゆっくり進みします。\r\n大きな数字にすると高速にスクロールします。
+DEFAULT=0x20
+INFO.en=The scroll speed of the list of clear turns displayed in the ending.\r\nThe default is 32.\r\nDecreasing this number will cause scrolling to proceed slowly.\r\nLarger numbers will scroll faster.
+NAME.zh=结束清除转弯列表的滚动速度。
+INFO.zh=结尾处显示的清晰回合列表的滚动速度。\r\n默认值为 32。\r\n减少此数字将导致滚动缓慢进行。\r\n更大的数字会滚动得更快。
