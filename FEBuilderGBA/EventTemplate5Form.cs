@@ -33,7 +33,7 @@ namespace FEBuilderGBA
 
         private void BLANK_Button_Click(object sender, EventArgs e)
         {
-            this.GenCode = Program.ROM.RomInfo.defualt_event_script_toplevel_code();
+            this.GenCode = Program.ROM.RomInfo.Default_event_script_toplevel_code();
             this.Close();
         }
 

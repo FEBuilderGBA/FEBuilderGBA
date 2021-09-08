@@ -148,7 +148,7 @@ namespace FEBuilderGBA
             int width = (int)N_B3.Value;
             int height = (int)N_B4.Value;
             uint change_address = (uint)N_P8.Value;
-            MapPictureBox.SetDefualtIcon(
+            MapPictureBox.SetDefaultIcon(
                 MapSettingForm.DrawMapChange(mapid, width, height, change_address)
             );
             if (!U.isSafetyPointer(change_address))

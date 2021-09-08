@@ -1,0 +1,5 @@
+FindBattleBGObject=$04
+Loop=$0A
+Found=$22
+ExitNotFound=$16
+ExitContinueVanilla=$24

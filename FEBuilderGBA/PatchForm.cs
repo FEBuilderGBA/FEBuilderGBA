@@ -1030,7 +1030,11 @@ namespace FEBuilderGBA
                     }
                 }
 
-                if (type == "BATTLEANIMEPOINTER" || type == "EVENT" || type == "ITEMSHOP" || type == "VENNOUWEAPONLOCK" || type == "SMEPROMOLIST")
+                if (type == "BATTLEANIMEPOINTER" || type == "EVENT" 
+                    || type == "ITEMSHOP" || type == "VENNOUWEAPONLOCK" 
+                    || type == "SMEPROMOLIST" 
+                    || type == "TERRAINBATTLELISTPOINTER" || type == "BATTLEBGLISTPOINTER" 
+                    )
                 {//データの確保が必要になる場合
                     Button alloc = new Button();
                     alloc.Location = new Point(500, y);
@@ -1479,6 +1483,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "BATTLETERRAINSET")
+            {
+                out_listname_combo_dic = InputFormRef.GetTerrainSetDic();
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -1578,6 +1586,10 @@ namespace FEBuilderGBA
                 uint a = (uint)(i & 0xff);
                 uint b = (uint)((i >> 8) & 0xff);
                 appendname = U.ToHexString(a) + " " + UnitForm.GetUnitName(a) + " & " + U.ToHexString(b) + " " + UnitForm.GetUnitName(b);
+            }
+            else if (listname == "BATTLETERRAINSET")
+            {
+                appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
@@ -6512,6 +6524,16 @@ namespace FEBuilderGBA
                     else if (type == "SMEPROMOLIST")
                     {//SMEの分岐プロモーション
                         SMEPromoListForm.MakeDataLength(list, p
+                            , patchname + " DATA " + n);
+                    }
+                    else if (type == "TERRAINBATTLELISTPOINTER")
+                    {//戦闘床地形
+                        MapTerrainFloorLookupTableForm.MakeDataLength(list, p
+                            , patchname + " DATA " + n);
+                    }
+                    else if (type == "BATTLEBGLISTPOINTER")
+                    {//戦闘背景
+                        MapTerrainBGLookupTableForm.MakeDataLength(list, p
                             , patchname + " DATA " + n);
                     }
                     else

@@ -424,9 +424,9 @@ namespace FEBuilderGBA
         uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
         uint patch_write_build_version(out uint enable_value); //ビルドバージョンを書き込む
         uint builddate_address();
-        byte[] defualt_event_script_term_code(); //イベント命令を終了させるディフォルトコード
-        byte[] defualt_event_script_toplevel_code(); //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
-        byte[] defualt_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)
+        byte[] Default_event_script_term_code(); //イベント命令を終了させるディフォルトコード
+        byte[] Default_event_script_toplevel_code(); //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
+        byte[] Default_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)
         string get_shop_name(uint shop_object); //店の名前
         uint main_menu_width_address(); //メインメニューの幅
         uint map_default_count();    // ディフォルトのマップ数

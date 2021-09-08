@@ -49,7 +49,7 @@ namespace FEBuilderGBA
             MapPictureBox.SetChipSize(1);
             Bitmap icon = ImageSystemIconForm.YubiTate();
             U.MakeTransparent(icon);
-            MapPictureBox.SetDefualtIcon(icon, -8, -14);
+            MapPictureBox.SetDefaultIcon(icon, -8, -14);
             U.SelectedIndexSafety(PathType, 0);
         }
         void MakePathCombo()

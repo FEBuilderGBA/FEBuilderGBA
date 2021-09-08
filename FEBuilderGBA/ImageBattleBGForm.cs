@@ -85,7 +85,7 @@ namespace FEBuilderGBA
                 );
         }
         public static Bitmap DrawBG(uint id)
-        {
+        {   
             if (id <= 0)
             {
                 return ImageUtil.BlankDummy();
@@ -201,8 +201,12 @@ namespace FEBuilderGBA
         }
         public static string GetName(uint id)
         {
+            if (id <= 0)
+            {
+                return "null";
+            }
             InputFormRef InputFormRef = Init(null);
-            return InputFormRef.GetComment(id);
+            return InputFormRef.GetComment(id - 1);
         }
 
         void JumpToRef()

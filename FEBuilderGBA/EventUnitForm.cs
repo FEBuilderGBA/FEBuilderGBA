@@ -189,7 +189,7 @@ namespace FEBuilderGBA
         private void EventUnitForm_Load(object sender, EventArgs e)
         {
             X_Tooltip = InputFormRef.GetToolTip<EventUnitForm>();
-            MapPictureBox.SetDefualtIcon(ImageSystemIconForm.Blank16());
+            MapPictureBox.SetDefaultIcon(ImageSystemIconForm.Blank16());
             COORD_PANEL.SetToolTipEx(X_Tooltip);
 
             LowScreenUpYCoordPanel();

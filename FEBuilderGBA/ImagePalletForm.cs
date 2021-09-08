@@ -126,7 +126,7 @@ namespace FEBuilderGBA
         }
 
         int MaxPaletteCount;
-        public void JumpTo(Bitmap baseBitmap, uint paletteAddress, int maxPaletteCount = 16, int defualtSelectPalette = 0, string[] paletteNames = null)
+        public void JumpTo(Bitmap baseBitmap, uint paletteAddress, int maxPaletteCount = 16, int DefaultSelectPalette = 0, string[] paletteNames = null)
         {
             Debug.Assert(maxPaletteCount >= 1);
             
@@ -164,7 +164,7 @@ namespace FEBuilderGBA
             this.X_PIC.Image = this.DrawBitmap;
 
             this.PALETTE_ADDRESS.Value = paletteAddress;
-            this.PaletteIndexComboBox.SelectedIndex = defualtSelectPalette;
+            this.PaletteIndexComboBox.SelectedIndex = DefaultSelectPalette;
         }
 
 

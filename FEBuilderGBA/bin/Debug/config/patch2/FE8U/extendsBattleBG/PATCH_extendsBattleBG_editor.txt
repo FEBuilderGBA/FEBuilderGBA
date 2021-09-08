@@ -1,0 +1,30 @@
+NAME=戦闘床地形と戦闘背景のリストを拡張する(Editor)
+NAME.en=Expand the list of battle floor terrain and battle BG(Editor)
+NAME.zh=Expand the list of battle floor terrain and battle BG(Editor)
+
+INFO=戦闘床の地形と、戦闘背景として指定できるリストの数を0x4Fまで拡張します。\r\nディフォルトのマップの数が0x4Eなので、すべてのマップに独自の背景を設定しても余裕があるデータ数を確保します。\r\n追加したリストはnull pointerになっているので、データを割り当てて利用してください。
+INFO.en=Expands the terrain of the battle floor and the number of lists that can be specified as the battle background to 0x4F.\r\nThe default number of maps is 0x4E, so you can set your own background for every map to ensure enough data.\r\nThe added list is a null pointer, so please assign data and use it.
+INFO.zh=Expands the terrain of the battle floor and the number of lists that can be specified as the battle background to 0x4F.\r\nThe default number of maps is 0x4E, so you can set your own background for every map to ensure enough data.\r\nThe added list is a null pointer, so please assign data and use it.
+
+
+TYPE=STRUCT
+IF:0x57ED0=0x00 0xB5 0x05 0x4B 0xC9 0x00
+
+POINTER=0x57EE8	//if +24byte
+
+//最大拡張数
+MAX_EXPLANDS_SIZE=256
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 ff が出てくるまで
+DATACOUNT=$GREP8 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+
+LISTNAME=TerrainSet
+
+//データを定義します
+P0:TERRAINBATTLELISTPOINTER=Floor List
+P4:BATTLEBGLISTPOINTER=BG List
+
+AUTHOR=7743

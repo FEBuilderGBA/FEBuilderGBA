@@ -25,7 +25,7 @@ namespace FEBuilderGBA
 
             MapPictureBox.SetPointIcon("L_130_MAPXY_132", yusoutai);
             MapPictureBox.SetPointIcon("L_131_MAPXY_133", yusoutai);
-            U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref L_19_COMBO , true);
+            U.ConvertComboBox(InputFormRef.GetTerrainSetDic(), ref L_19_COMBO , true);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }

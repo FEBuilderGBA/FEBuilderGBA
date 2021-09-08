@@ -282,7 +282,7 @@ namespace FEBuilderGBA
             X_Tooltip = InputFormRef.GetToolTip<EventUnitFE7Form>();
             this.EVENTUNIT_BEFORE_COORD.SetToolTipEx(this.X_Tooltip);
             this.EVENTUNIT_AFTER_COORD.SetToolTipEx(this.X_Tooltip);
-            MapPictureBox.SetDefualtIcon(ImageSystemIconForm.Blank16());
+            MapPictureBox.SetDefaultIcon(ImageSystemIconForm.Blank16());
         }
         public static List<U.AddrResult> MakeList(uint addr)
         {

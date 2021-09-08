@@ -17,7 +17,7 @@ namespace FEBuilderGBA
 
             InputFormRef.markupJumpLabel(X_MAPSTYLE_CHANGE);
             MapPictureBox.HideCommandBar();
-            U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref L_18_COMBO , true);
+            U.ConvertComboBox(InputFormRef.GetTerrainSetDic(), ref L_18_COMBO , true);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }

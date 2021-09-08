@@ -21,9 +21,9 @@ namespace FEBuilderGBA
         Pen SelectMarkup3Pen = new Pen(Color.DodgerBlue, 2);
         
         int ChipSize = 16;
-        Bitmap DefualtIcon;
-        int DefualtIconDrawXAdd = 0;
-        int DefualtIconDrawYAdd = 0;
+        Bitmap DefaultIcon;
+        int DefaultIconDrawXAdd = 0;
+        int DefaultIconDrawYAdd = 0;
 
         bool StopDrawMarkupMark = false;
         string StopDrawMarkupMarkNotUnionTab;
@@ -58,8 +58,8 @@ namespace FEBuilderGBA
 
             this.ConstWorldMapID = MapSettingForm.GetDataCount();
 
-            this.DefualtIcon = ImageSystemIconForm.YubiTate();
-            U.MakeTransparent(this.DefualtIcon);
+            this.DefaultIcon = ImageSystemIconForm.YubiTate();
+            U.MakeTransparent(this.DefaultIcon);
         }
 
         int Zoom(int a)
@@ -280,19 +280,19 @@ namespace FEBuilderGBA
                         pen = this.SelectMarkup3Pen;
                     }
 
-                    if (mm.Value.is_defualt_icon)
+                    if (mm.Value.is_Default_icon)
                     {
-                        e.Graphics.DrawImage(this.DefualtIcon
-                            , Zoom(mm.Value.x + this.DefualtIconDrawXAdd)
-                            , Zoom(mm.Value.y + this.DefualtIconDrawYAdd)
-                            , Zoom(this.DefualtIcon.Width)
-                            , Zoom(this.DefualtIcon.Height)
+                        e.Graphics.DrawImage(this.DefaultIcon
+                            , Zoom(mm.Value.x + this.DefaultIconDrawXAdd)
+                            , Zoom(mm.Value.y + this.DefaultIconDrawYAdd)
+                            , Zoom(this.DefaultIcon.Width)
+                            , Zoom(this.DefaultIcon.Height)
                             );
                         e.Graphics.DrawRectangle(pen
-                            , Zoom(mm.Value.x + this.DefualtIconDrawXAdd)
-                            , Zoom(mm.Value.y + this.DefualtIconDrawYAdd)
-                            , Zoom(this.DefualtIcon.Width)
-                            , Zoom(this.DefualtIcon.Height)
+                            , Zoom(mm.Value.x + this.DefaultIconDrawXAdd)
+                            , Zoom(mm.Value.y + this.DefaultIconDrawYAdd)
+                            , Zoom(this.DefaultIcon.Width)
+                            , Zoom(this.DefaultIcon.Height)
                             );
                     }
                     else
@@ -324,7 +324,7 @@ namespace FEBuilderGBA
         {
             public int x;
             public int y;
-            public bool is_defualt_icon;
+            public bool is_Default_icon;
             public Bitmap bitmap;
             public int draw_y_add; //縦に長いオブジェクトの場合の位置合わせ.
 
@@ -340,12 +340,12 @@ namespace FEBuilderGBA
             {
                 if (bitmap == null)
                 {
-                    m.is_defualt_icon = true;
+                    m.is_Default_icon = true;
                     m.draw_y_add = 0;
                 }
                 else
                 {
-                    m.is_defualt_icon = false;
+                    m.is_Default_icon = false;
                     m.bitmap = ImageUtil.CloneBitmap(bitmap);
                     U.MakeTransparent(m.bitmap);
 
@@ -360,11 +360,11 @@ namespace FEBuilderGBA
                 m.uniqCount = this.MarkupPointes.Count;
                 if (bitmap == null)
                 {
-                    m.is_defualt_icon = true;
+                    m.is_Default_icon = true;
                 }
                 else
                 {
-                    m.is_defualt_icon = false;
+                    m.is_Default_icon = false;
                     m.bitmap = bitmap;
                 }
                 MarkupPointes[name] = m;
@@ -372,13 +372,13 @@ namespace FEBuilderGBA
             this.Map.Invalidate();
         }
 
-        public void SetDefualtIcon(Bitmap bitmap, int draw_x_add = 0, int draw_y_add = 0)
+        public void SetDefaultIcon(Bitmap bitmap, int draw_x_add = 0, int draw_y_add = 0)
         {
-            this.DefualtIcon = ImageUtil.CloneBitmap(bitmap);
-            U.MakeTransparent(this.DefualtIcon);
+            this.DefaultIcon = ImageUtil.CloneBitmap(bitmap);
+            U.MakeTransparent(this.DefaultIcon);
 
-            this.DefualtIconDrawXAdd = draw_x_add;
-            this.DefualtIconDrawYAdd = draw_y_add;
+            this.DefaultIconDrawXAdd = draw_x_add;
+            this.DefaultIconDrawYAdd = draw_y_add;
             this.Map.Invalidate();
         }
 
@@ -391,7 +391,7 @@ namespace FEBuilderGBA
             else
             {
                 m = new Markup();
-                m.is_defualt_icon = true;
+                m.is_Default_icon = true;
                 m.uniqCount = this.MarkupPointes.Count;
             }
             m.x = x * this.ChipSize; //マップタイルは16x16
@@ -614,10 +614,10 @@ namespace FEBuilderGBA
                 SelectMarkup3Pen.Dispose();
                 SelectMarkup3Pen = null;
             }
-            if (DefualtIcon != null)
+            if (DefaultIcon != null)
             {
-                DefualtIcon.Dispose();
-                DefualtIcon = null;
+                DefaultIcon.Dispose();
+                DefaultIcon = null;
             }
         }
     }

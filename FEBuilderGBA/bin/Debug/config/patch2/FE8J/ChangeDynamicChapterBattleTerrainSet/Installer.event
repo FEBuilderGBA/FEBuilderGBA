@@ -1,0 +1,15 @@
+PUSH
+ORG 0x5899C	//{J}
+//ORG 0x57A54	//{U}
+jumpToHack(HookGetBattleBG);
+POP
+
+ALIGN 4
+HookGetBattleBG:
+#incbin "HookGetBattleBG.dmp"
+
+ALIGN 4
+SetBattleBattleBG:
+#incbin "SetBattleBattleBG.dmp"
+
+ALIGN 4

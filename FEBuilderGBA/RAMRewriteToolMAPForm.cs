@@ -37,7 +37,7 @@ namespace FEBuilderGBA
             this.ReWriteValueY.Hexadecimal = false;
 
             this.MapPictureBox.SetPoint("", (int)x, (int)y);
-            this.MapPictureBox.SetDefualtIcon(ImageSystemIconForm.Blank16());
+            this.MapPictureBox.SetDefaultIcon(ImageSystemIconForm.Blank16());
 
             this.ReWriteValueX.BackColor = OptionForm.Color_InputDecimal_BackColor();
             this.ReWriteValueX.ForeColor = OptionForm.Color_InputDecimal_ForeColor();

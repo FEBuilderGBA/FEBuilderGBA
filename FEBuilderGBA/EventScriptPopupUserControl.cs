@@ -41,7 +41,7 @@ namespace FEBuilderGBA
             MAP.SetChipSize(1);
             Bitmap icon = ImageSystemIconForm.YubiTate();
             U.MakeTransparent(icon);
-            MAP.SetDefualtIcon(icon, -8, -14);
+            MAP.SetDefaultIcon(icon, -8, -14);
 
             if (!MAP.IsMapLoad())
             {
@@ -73,14 +73,14 @@ namespace FEBuilderGBA
                 MAP.SetChipSize(1);
                 Bitmap icon = ImageSystemIconForm.YubiTate();
                 U.MakeTransparent(icon);
-                MAP.SetDefualtIcon(icon, -8, -14);
+                MAP.SetDefaultIcon(icon, -8, -14);
             }
             else
             {
                 MAP.SetChipSize(16);
                 Bitmap icon = ImageSystemIconForm.YubiTate();
                 U.MakeTransparent(icon);
-                MAP.SetDefualtIcon(icon, 0, 0);
+                MAP.SetDefaultIcon(icon, 0, 0);
             }
 
             if (! MAP.IsMapLoad())

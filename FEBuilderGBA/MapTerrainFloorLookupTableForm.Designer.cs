@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_JUMP_BG = new System.Windows.Forms.Label();
             this.L_0_TERRAINBATTLEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
@@ -50,7 +51,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_JUMP_BG = new System.Windows.Forms.Label();
+            this.ERROR_Not_Allocated = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -65,6 +66,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.ERROR_Not_Allocated);
             this.panel4.Controls.Add(this.X_JUMP_BG);
             this.panel4.Controls.Add(this.L_0_TERRAINBATTLEICON);
             this.panel4.Controls.Add(this.L_0_TERRAINBATTLE);
@@ -75,6 +77,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(738, 635);
             this.panel4.TabIndex = 80;
+            // 
+            // X_JUMP_BG
+            // 
+            this.X_JUMP_BG.AutoSize = true;
+            this.X_JUMP_BG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_BG.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_BG.Location = new System.Drawing.Point(69, 443);
+            this.X_JUMP_BG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_BG.Name = "X_JUMP_BG";
+            this.X_JUMP_BG.Size = new System.Drawing.Size(190, 18);
+            this.X_JUMP_BG.TabIndex = 186;
+            this.X_JUMP_BG.Text = "戦闘アニメの背景へJump";
+            this.X_JUMP_BG.Click += new System.EventHandler(this.X_JUMP_BG_Click);
             // 
             // L_0_TERRAINBATTLEICON
             // 
@@ -316,18 +331,17 @@
             this.AddressList.Size = new System.Drawing.Size(455, 630);
             this.AddressList.TabIndex = 0;
             // 
-            // X_JUMP_BG
+            // ERROR_Not_Allocated
             // 
-            this.X_JUMP_BG.AutoSize = true;
-            this.X_JUMP_BG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.X_JUMP_BG.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_JUMP_BG.Location = new System.Drawing.Point(69, 443);
-            this.X_JUMP_BG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.X_JUMP_BG.Name = "X_JUMP_BG";
-            this.X_JUMP_BG.Size = new System.Drawing.Size(190, 18);
-            this.X_JUMP_BG.TabIndex = 186;
-            this.X_JUMP_BG.Text = "戦闘アニメの背景へJump";
-            this.X_JUMP_BG.Click += new System.EventHandler(this.X_JUMP_BG_Click);
+            this.ERROR_Not_Allocated.AutoSize = true;
+            this.ERROR_Not_Allocated.ForeColor = System.Drawing.Color.Red;
+            this.ERROR_Not_Allocated.Location = new System.Drawing.Point(69, 471);
+            this.ERROR_Not_Allocated.Name = "ERROR_Not_Allocated";
+            this.ERROR_Not_Allocated.Size = new System.Drawing.Size(599, 36);
+            this.ERROR_Not_Allocated.TabIndex = 187;
+            this.ERROR_Not_Allocated.Text = "拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。";
+            this.ERROR_Not_Allocated.Visible = false;
+            this.ERROR_Not_Allocated.Click += new System.EventHandler(this.ERROR_Not_Allocated_Click);
             // 
             // MapTerrainFloorLookupTableForm
             // 
@@ -382,5 +396,6 @@
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label X_JUMP_BG;
+        private System.Windows.Forms.Label ERROR_Not_Allocated;
     }
 }

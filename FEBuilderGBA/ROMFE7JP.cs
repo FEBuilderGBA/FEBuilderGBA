@@ -427,9 +427,9 @@ namespace FEBuilderGBA
         public uint patch_write_build_version(out uint enable_value) { enable_value = 0x0; return 0x0; } //ビルドバージョンを書き込む
         public uint builddate_address() { return 0x0; }
 
-        public byte[] defualt_event_script_term_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
-        public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
-        public byte[] defualt_event_script_mapterm_code() { return new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード
+        public byte[] Default_event_script_term_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
+        public byte[] Default_event_script_toplevel_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
+        public byte[] Default_event_script_mapterm_code() { return new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード
         public uint main_menu_width_address() { return 0xC04DB2; } //メインメニューの幅
         public uint map_default_count() { return 0x45; }    // ディフォルトのマップ数
         public uint wait_menu_command_id() { return 0x67; } //WaitメニューのID

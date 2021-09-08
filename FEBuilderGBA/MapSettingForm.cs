@@ -18,7 +18,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(X_MAPSTYLE_CHANGE);
             MapPictureBox.HideCommandBar();
             MapPictureBox.SetPointIcon("L_143_MAPXY_144", ImageSystemIconForm.ExitPoint());
-            U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref L_19_COMBO , true);
+            U.ConvertComboBox(InputFormRef.GetTerrainSetDic(), ref L_19_COMBO , true);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 

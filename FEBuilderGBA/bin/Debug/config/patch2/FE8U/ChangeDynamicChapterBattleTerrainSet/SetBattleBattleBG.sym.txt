@@ -1,0 +1,6 @@
+FindBattleBGObject=$02
+Loop=$08
+Found=$26
+NotFound=$14
+Exit=$2C
+Store=$28

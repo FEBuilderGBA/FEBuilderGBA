@@ -76,7 +76,7 @@ namespace FEBuilderGBA
             this.MAP.SetChipSize(8);
             Bitmap black = ImageUtil.BlankDummy();
             U.MakeTransparent(black);
-            this.MAP.SetDefualtIcon(black);
+            this.MAP.SetDefaultIcon(black);
 
             //パレット
             this.PFR = new PaletteFormRef(this);

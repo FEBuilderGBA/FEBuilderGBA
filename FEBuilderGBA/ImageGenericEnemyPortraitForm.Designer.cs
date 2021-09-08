@@ -299,6 +299,7 @@
             this.ExtendsBanner.Size = new System.Drawing.Size(32, 18);
             this.ExtendsBanner.TabIndex = 70;
             this.ExtendsBanner.Text = "xxx";
+            this.ExtendsBanner.Click += new System.EventHandler(this.ExtendsBanner_Click);
             // 
             // J_0
             // 

@@ -41,6 +41,7 @@ namespace FEBuilderGBA
             g_Cache_soundroom_unlock_enum = soundroom_unlock_enum.NoCache;
             g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
             g_Cache_HPBar_enum = HPBar_enum.NoCache;
+            g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1899,5 +1900,49 @@ namespace FEBuilderGBA
             return Path.GetFileNameWithoutExtension(asmc);
         }
 
+        //戦闘背景拡張
+        public enum ExtendsBattleBG_extends
+        {
+            NO,             //なし
+            Extends,
+            NoCache = (int)NO_CACHE
+        };
+        static ExtendsBattleBG_extends g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
+        public static ExtendsBattleBG_extends SearchCache_ExtendsBattleBG()
+        {
+            if (g_Cache_ExtendsBattleBG == ExtendsBattleBG_extends.NoCache)
+            {
+                g_Cache_ExtendsBattleBG = SearchCache_ExtendsBattleBGLow();
+            }
+            return g_Cache_ExtendsBattleBG;
+        }
+        static ExtendsBattleBG_extends SearchCache_ExtendsBattleBGLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Extends",	ver = "FE8J", addr = 0x58D1C,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},
+                new PatchTableSt{ name="Extends",	ver = "FE8U", addr = 0x57ED0,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "Extends")
+                {
+                    return ExtendsBattleBG_extends.Extends;
+                }
+            }
+            return ExtendsBattleBG_extends.NO;
+        }
     }
 }

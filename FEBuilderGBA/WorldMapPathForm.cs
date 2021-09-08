@@ -48,7 +48,7 @@ namespace FEBuilderGBA
             MapPictureBox.SetChipSize(1);
             Bitmap icon = ImageSystemIconForm.YubiTate();
             U.MakeTransparent(icon);
-            MapPictureBox.SetDefualtIcon(icon, -8, -14);
+            MapPictureBox.SetDefaultIcon(icon, -8, -14);
 
             //拡張ボタンを表示するかどうか
             if (WorldMapPathForm.IsShowWorldmapPathExetdns(this.AddressList))

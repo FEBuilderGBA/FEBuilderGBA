@@ -205,5 +205,11 @@ namespace FEBuilderGBA
                 this.ExtendsBanner.Text = R._("もっとたくさん一般兵の顔画像を利用したい場合は、パッチを利用してください。");
             }
         }
+
+        private void ExtendsBanner_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("Allow 254 generic minimugs", 0);
+        }
     }
 }

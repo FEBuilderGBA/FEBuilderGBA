@@ -1,0 +1,11 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG 0x29F10 //ComputeExpFromBattle
+gotoHack(expRoutine)
+POP
+
+ALIGN 4
+expRoutine:
+#incbin "Fates EXP Approximation FE7.dmp"
+

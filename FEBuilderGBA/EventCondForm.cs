@@ -2143,7 +2143,7 @@ namespace FEBuilderGBA
                     return;
                 }
                 //とりあえず終端命令だけのイベントを作る.
-                byte[] alloc = Program.ROM.RomInfo.defualt_event_script_toplevel_code();
+                byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
                 Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc Event");
                 addr = InputFormRef.AppendBinaryData(alloc, undodata);
                 if (addr == U.NOT_FOUND)

@@ -1366,6 +1366,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetWMENREGION(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.BATTLETERRAINSET)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetTerrainSetName(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.AFFILIATION)
                         {
                             isENumText = true;

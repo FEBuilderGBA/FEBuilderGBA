@@ -1643,7 +1643,7 @@ namespace FEBuilderGBA
                         {
                             throw new Exception("linkerror can not found MapPictureBox  link_info:" + link_info.Name);
                         }
-                        map.SetDefualtIcon(bitmap,0, 16 - bitmap.Height);
+                        map.SetDefaultIcon(bitmap,0, 16 - bitmap.Height);
                     }
                 };
                 src_object.ValueChanged += callback;
@@ -1698,7 +1698,7 @@ namespace FEBuilderGBA
                         {
                             throw new Exception("linkerror can not found MapPictureBox  link_info:" + link_info.Name);
                         }
-                        map.SetDefualtIcon(bitmap,0, 16 - bitmap.Height);
+                        map.SetDefaultIcon(bitmap,0, 16 - bitmap.Height);
                     }
                 };
 
@@ -1868,7 +1868,7 @@ namespace FEBuilderGBA
                         {
                             throw new Exception("linkerror can not found MapPictureBox  link_info:" + link_info.Name);
                         }
-                        map.SetDefualtIcon(bitmap,- (bitmap.Width / 2) , -(bitmap.Height / 2) );
+                        map.SetDefaultIcon(bitmap,- (bitmap.Width / 2) , -(bitmap.Height / 2) );
                     }
                 };
 
@@ -2846,6 +2846,40 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "TERRAINBATTLELISTPOINTER")
+            {//戦闘床地形
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = MapTerrainFloorLookupTableForm.GetNameByPointer(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "TERRAINBATTLELISTPOINTER", new string[] { });
+                };
+                return;
+            }
+            if (linktype == "BATTLEBGLISTPOINTER")
+            {//戦闘背景
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = MapTerrainBGLookupTableForm.GetNameByPointer(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "BATTLEBGLISTPOINTER", new string[] { });
+                };
+                return;
+            }
             if (linktype == "SKILL")
             {//SKILL名を表示
                 TextBoxEx link_object = ((TextBoxEx)link_info);
@@ -3047,7 +3081,7 @@ namespace FEBuilderGBA
                 alllocQMessage = R._("新規にイベント命令の領域を割り当てますか？");
                 alllocedMessage = R._("領域を割り振りました。イベント命令画面からイベントを作ってください。");
                 //とりあえず終端命令だけのイベントを作る.
-                alloc = Program.ROM.RomInfo.defualt_event_script_toplevel_code();
+                alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
             }
             else if (arg1 == "EVENTORCHEST")
             {
@@ -3063,7 +3097,7 @@ namespace FEBuilderGBA
                     alllocQMessage = R._("新規にイベント命令の領域を割り当てますか？");
                     alllocedMessage = R._("領域を割り振りました。イベント命令画面からイベントを作ってください。");
                     //とりあえず終端命令だけのイベントを作る.
-                    alloc = Program.ROM.RomInfo.defualt_event_script_toplevel_code();
+                    alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
                 }
             }
             else if (arg1 == "ITEMSHOP")
@@ -3136,6 +3170,18 @@ namespace FEBuilderGBA
                 alllocQMessage = R._("新規に、Promotionのデータを割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
                 alloc = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00 };
+            }
+            else if (arg1 == "TERRAINBATTLELISTPOINTER")
+            {
+                alllocQMessage = R._("新規に、戦闘床地形リストのデータを割り振りますか？");
+                alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
+                alloc = MapTerrainFloorLookupTableForm.GetDefaultData(); 
+            }
+            else if (arg1 == "BATTLEBGLISTPOINTER")
+            {
+                alllocQMessage = R._("新規に、戦闘背景リストのデータを割り振りますか？");
+                alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
+                alloc = MapTerrainBGLookupTableForm.GetDefaultData();
             }
             else
             {//リンクミス.
@@ -3872,6 +3918,28 @@ namespace FEBuilderGBA
 
                 SMEPromoListForm f = (SMEPromoListForm)InputFormRef.JumpForm<SMEPromoListForm>(U.NOT_FOUND);
                 f.JumpTo(value);
+            }
+            else if (linktype == "TERRAINBATTLELISTPOINTER")
+            {//戦闘床地形リスト
+                value = CheckAndAlloc(src_object, value, linktype);
+                if (value == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                MapTerrainFloorLookupTableForm f = (MapTerrainFloorLookupTableForm)InputFormRef.JumpForm<MapTerrainFloorLookupTableForm>(U.NOT_FOUND);
+                f.JumpToPointer(value);
+            }
+            else if (linktype == "BATTLEBGLISTPOINTER")
+            {//戦闘背景リスト
+                value = CheckAndAlloc(src_object, value, linktype);
+                if (value == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                MapTerrainBGLookupTableForm f = (MapTerrainBGLookupTableForm)InputFormRef.JumpForm<MapTerrainBGLookupTableForm>(U.NOT_FOUND);
+                f.JumpToPointer(value);
             }
             else if (linktype == "MOVECOST1")
             {//移動コスト
@@ -5163,6 +5231,7 @@ namespace FEBuilderGBA
             CacheDataCount.Clear();
             TextForm.UpdateDataCountCache();
             OptionForm.ClearCache();
+            PatchUtil.ClearCache();
             ImageUtilMagic.ClearCache();
             ItemShopForm.ClearCache();
             MapPointerForm.ClearPlistCache();
@@ -5175,9 +5244,10 @@ namespace FEBuilderGBA
             MapChangeForm.ClearCache();
             ItemWeaponEffectForm.ClearCache();
             EventCondForm.ClearCache();
+            MapTerrainBGLookupTableForm.ClearCache();
+            MapTerrainFloorLookupTableForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
-            PatchUtil.ClearCache();
         }
 
 
@@ -6811,11 +6881,17 @@ namespace FEBuilderGBA
             return U.at(dic, num);
         }
 
-        public static Dictionary<uint,string> MakeTerrainSet()
+        //戦闘地形セット
+        public static Dictionary<uint,string> GetTerrainSetDic()
         {
-            return ConfigDataDatanameCache("battleterrain_set_");
+//            return ConfigDataDatanameCache("battleterrain_set_");
+            return MapTerrainBGLookupTableForm.GetTerrainSetDic();
         }
-
+        public static string GetTerrainSetName(uint index)
+        {
+            Dictionary<uint,string> dic = GetTerrainSetDic();
+            return U.at(dic, index, "");
+        }
 
         //ユニットの特殊状態
         public static string GetRAM_UNIT_STATE(uint num)

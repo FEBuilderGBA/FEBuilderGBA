@@ -238,15 +238,15 @@ namespace FEBuilderGBA
             {
                 if (isWorldMapEvent)
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.defualt_event_script_mapterm_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_mapterm_code());
                 }
                 else if (isTopLevelEvent)
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.defualt_event_script_toplevel_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_toplevel_code());
                 }
                 else
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
                 }
             }
 
@@ -841,6 +841,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.WMENREGION)
             {
                 text = InputFormRef.GetWMENREGION(v);
+            }
+            else if (arg.Type == EventScript.ArgType.BATTLETERRAINSET)
+            {
+                text = InputFormRef.GetTerrainSetName(v);
             }
             else if (arg.Type == EventScript.ArgType.AFFILIATION)
             {
@@ -2737,6 +2741,11 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetWMENREGION(v));
                     }
+                    else if (arg.Type == EventScript.ArgType.BATTLETERRAINSET)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetTerrainSetName(v));
+                    }
                     else if (arg.Type == EventScript.ArgType.AFFILIATION)
                     {
                         sb.Append(" ");
@@ -3120,11 +3129,11 @@ namespace FEBuilderGBA
 
             if (addTerm == TermCode.DefaultTermCode)
             {//終端の追加.
-                binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
+                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
             }
             else if (addTerm == TermCode.SimpleTermCode)
             {//終端の追加.
-                binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
+                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
             }
             return binarray.ToArray();
         }

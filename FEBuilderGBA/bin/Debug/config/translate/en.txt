@@ -4333,6 +4333,12 @@ Do you want to allocate new Promotion data?
 :領域を割り振りました。データを割り振ってください。
 Allocated space.Allocate the data.
 
+:新規に、戦闘床地形リストのデータを割り振りますか？
+Do you want to allocate new data for the battle floor terrain list? 
+
+:新規に、戦闘背景リストのデータを割り振りますか？
+Do you want to allocate new battle background list data? 
+
 :PLISTが0です。\r\n新規に割り当てますか？\r\n
 PLIST is 0.\r\nDo you want to assign it newly?\r\n
 
@@ -7753,72 +7759,6 @@ When installing a patch that displays the HP Bar, do not set the weather to clou
 :指南へJump
 Jump to the Shinan
 
-:00=通常
-00=normal
-
-:01=雪(未使用)
-01=Snow(UNUSED)
-
-:02=溶岩洞穴
-02=Volcano
-
-:03=街1(FE7の村,未使用)
-03=Town 1 (FE7 Town, UNUSED)
-
-:04=草原2(FE7のフィールド,未使用)
-04=Plains 2 (FE7 Fields, UNUSED)
-
-:05=要塞1(ボルゴ峠)
-05=Fort 1 (Bandits of Borgo)
-
-:06=街2(セレフィユ)
-06=Town 2 (Serafew)
-
-:07=街3(タイゼル港)
-07=Town 3 (Port Taizel)
-
-:08=船
-08=Ship
-
-:09=砂漠
-09=Desert
-
-:0A=要塞2(リグバルド要塞)
-0A=Fort 2 (Fort Rigwald)
-
-:0B=塔(ヴェルニの塔)
-0B=Tower of Valni
-
-:0C=ジャハナ
-0C=Jehanna
-
-:0D=闇の樹海
-0D=Darkling Woods
-
-:0E=ルネス/夜
-0E=Renais/Night
-
-:0F=城1(グラド城)
-0F=Castle 1 (Grado)
-
-:10=城2(ルネス)
-10=Castle 2 (Renais)
-
-:11=城3(夜の城)
-11=Castle 3 (night backgrounds) 
-
-:12=山
-12=Mountain
-
-:13=港町ベスロン
-13=Port Bethroen (Turning Traitor)
-
-:14=沼地(大河ナーベル)
-14=Swampy (Narube River)
-
-:15=草原?
-15=Plains?
-
 :マップ名2(X)
 Map Name 2 (X)
 
@@ -8008,11 +7948,14 @@ Import a single picture.
 :インポートオプション
 Import options
 
+:戦闘アニメの床へJump
+Jump to the battle cartoon floor
+
 :値
 value
 
-:戦闘アニメの床へJump
-Jump to the battle cartoon floor
+:拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。
+No data has been allocated for the expanded area.\r\nAllocate data from the patch "Expanding the list of battle floor terrain and battle backgrounds".
 
 :戦闘アニメの背景へJump
 Jump to the background of battle animation

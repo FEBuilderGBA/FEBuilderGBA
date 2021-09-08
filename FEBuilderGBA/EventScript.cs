@@ -111,6 +111,7 @@ namespace FEBuilderGBA
             , MAP_CHANGE        //タイル変化
             , SOUNDROOM         //サウンドルームID
             , U32               //任意の32bit値 SVALで利用
+            , BATTLETERRAINSET  //戦闘地形
         };
 
         public class Arg
