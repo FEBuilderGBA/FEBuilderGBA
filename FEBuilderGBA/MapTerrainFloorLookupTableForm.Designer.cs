@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ERROR_Not_Allocated = new System.Windows.Forms.Label();
             this.X_JUMP_BG = new System.Windows.Forms.Label();
             this.L_0_TERRAINBATTLEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
@@ -51,7 +52,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.ERROR_Not_Allocated = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -77,6 +77,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(738, 635);
             this.panel4.TabIndex = 80;
+            // 
+            // ERROR_Not_Allocated
+            // 
+            this.ERROR_Not_Allocated.AutoSize = true;
+            this.ERROR_Not_Allocated.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ERROR_Not_Allocated.ForeColor = System.Drawing.Color.Red;
+            this.ERROR_Not_Allocated.Location = new System.Drawing.Point(69, 471);
+            this.ERROR_Not_Allocated.Name = "ERROR_Not_Allocated";
+            this.ERROR_Not_Allocated.Size = new System.Drawing.Size(599, 36);
+            this.ERROR_Not_Allocated.TabIndex = 187;
+            this.ERROR_Not_Allocated.Text = "拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。";
+            this.ERROR_Not_Allocated.Visible = false;
+            this.ERROR_Not_Allocated.Click += new System.EventHandler(this.ERROR_Not_Allocated_Click);
             // 
             // X_JUMP_BG
             // 
@@ -330,18 +343,6 @@
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(455, 630);
             this.AddressList.TabIndex = 0;
-            // 
-            // ERROR_Not_Allocated
-            // 
-            this.ERROR_Not_Allocated.AutoSize = true;
-            this.ERROR_Not_Allocated.ForeColor = System.Drawing.Color.Red;
-            this.ERROR_Not_Allocated.Location = new System.Drawing.Point(69, 471);
-            this.ERROR_Not_Allocated.Name = "ERROR_Not_Allocated";
-            this.ERROR_Not_Allocated.Size = new System.Drawing.Size(599, 36);
-            this.ERROR_Not_Allocated.TabIndex = 187;
-            this.ERROR_Not_Allocated.Text = "拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。";
-            this.ERROR_Not_Allocated.Visible = false;
-            this.ERROR_Not_Allocated.Click += new System.EventHandler(this.ERROR_Not_Allocated_Click);
             // 
             // MapTerrainFloorLookupTableForm
             // 

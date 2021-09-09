@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ERROR_Not_Allocated = new System.Windows.Forms.Label();
             this.X_JUMP_FLOOR = new System.Windows.Forms.Label();
+            this.L_0_BATTLEBGICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_BATTLEBG = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_BATTLEBG = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
@@ -42,17 +45,15 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.ERROR_Not_Allocated = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_0_BATTLEBGICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_BATTLEBG = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEBGICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -60,7 +61,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEBGICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -78,6 +78,19 @@
             this.panel4.Size = new System.Drawing.Size(738, 635);
             this.panel4.TabIndex = 80;
             // 
+            // ERROR_Not_Allocated
+            // 
+            this.ERROR_Not_Allocated.AutoSize = true;
+            this.ERROR_Not_Allocated.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ERROR_Not_Allocated.ForeColor = System.Drawing.Color.Red;
+            this.ERROR_Not_Allocated.Location = new System.Drawing.Point(69, 473);
+            this.ERROR_Not_Allocated.Name = "ERROR_Not_Allocated";
+            this.ERROR_Not_Allocated.Size = new System.Drawing.Size(599, 36);
+            this.ERROR_Not_Allocated.TabIndex = 186;
+            this.ERROR_Not_Allocated.Text = "拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。";
+            this.ERROR_Not_Allocated.Visible = false;
+            this.ERROR_Not_Allocated.Click += new System.EventHandler(this.ERROR_Not_Allocated_Click);
+            // 
             // X_JUMP_FLOOR
             // 
             this.X_JUMP_FLOOR.AutoSize = true;
@@ -90,6 +103,28 @@
             this.X_JUMP_FLOOR.TabIndex = 73;
             this.X_JUMP_FLOOR.Text = "戦闘アニメの床へJump";
             this.X_JUMP_FLOOR.Click += new System.EventHandler(this.X_JUMP_FLOOR_Click);
+            // 
+            // L_0_BATTLEBGICON
+            // 
+            this.L_0_BATTLEBGICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_BATTLEBGICON.Location = new System.Drawing.Point(72, 62);
+            this.L_0_BATTLEBGICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_BATTLEBGICON.Name = "L_0_BATTLEBGICON";
+            this.L_0_BATTLEBGICON.Size = new System.Drawing.Size(662, 343);
+            this.L_0_BATTLEBGICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.L_0_BATTLEBGICON.TabIndex = 185;
+            this.L_0_BATTLEBGICON.TabStop = false;
+            // 
+            // L_0_BATTLEBG
+            // 
+            this.L_0_BATTLEBG.ErrorMessage = "";
+            this.L_0_BATTLEBG.Location = new System.Drawing.Point(235, 5);
+            this.L_0_BATTLEBG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_BATTLEBG.Name = "L_0_BATTLEBG";
+            this.L_0_BATTLEBG.Placeholder = "";
+            this.L_0_BATTLEBG.ReadOnly = true;
+            this.L_0_BATTLEBG.Size = new System.Drawing.Size(169, 25);
+            this.L_0_BATTLEBG.TabIndex = 80;
             // 
             // B0
             // 
@@ -228,6 +263,17 @@
             this.panel5.Size = new System.Drawing.Size(738, 30);
             this.panel5.TabIndex = 78;
             // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(382, -1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(158, 25);
+            this.SelectAddress.TabIndex = 58;
+            // 
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -286,18 +332,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ERROR_Not_Allocated
-            // 
-            this.ERROR_Not_Allocated.AutoSize = true;
-            this.ERROR_Not_Allocated.ForeColor = System.Drawing.Color.Red;
-            this.ERROR_Not_Allocated.Location = new System.Drawing.Point(69, 473);
-            this.ERROR_Not_Allocated.Name = "ERROR_Not_Allocated";
-            this.ERROR_Not_Allocated.Size = new System.Drawing.Size(599, 36);
-            this.ERROR_Not_Allocated.TabIndex = 186;
-            this.ERROR_Not_Allocated.Text = "拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。";
-            this.ERROR_Not_Allocated.Visible = false;
-            this.ERROR_Not_Allocated.Click += new System.EventHandler(this.ERROR_Not_Allocated_Click);
-            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -309,39 +343,6 @@
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(455, 630);
             this.AddressList.TabIndex = 0;
-            // 
-            // L_0_BATTLEBGICON
-            // 
-            this.L_0_BATTLEBGICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_BATTLEBGICON.Location = new System.Drawing.Point(72, 62);
-            this.L_0_BATTLEBGICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_BATTLEBGICON.Name = "L_0_BATTLEBGICON";
-            this.L_0_BATTLEBGICON.Size = new System.Drawing.Size(662, 343);
-            this.L_0_BATTLEBGICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.L_0_BATTLEBGICON.TabIndex = 185;
-            this.L_0_BATTLEBGICON.TabStop = false;
-            // 
-            // L_0_BATTLEBG
-            // 
-            this.L_0_BATTLEBG.ErrorMessage = "";
-            this.L_0_BATTLEBG.Location = new System.Drawing.Point(235, 5);
-            this.L_0_BATTLEBG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_BATTLEBG.Name = "L_0_BATTLEBG";
-            this.L_0_BATTLEBG.Placeholder = "";
-            this.L_0_BATTLEBG.ReadOnly = true;
-            this.L_0_BATTLEBG.Size = new System.Drawing.Size(169, 25);
-            this.L_0_BATTLEBG.TabIndex = 80;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(382, -1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(158, 25);
-            this.SelectAddress.TabIndex = 58;
             // 
             // MapTerrainBGLookupTableForm
             // 
@@ -358,6 +359,7 @@
             this.Load += new System.EventHandler(this.MapTerrainFloorLookupTableForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEBGICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
@@ -366,7 +368,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEBGICON)).EndInit();
             this.ResumeLayout(false);
 
         }

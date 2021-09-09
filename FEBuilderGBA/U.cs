@@ -7507,6 +7507,21 @@ namespace FEBuilderGBA
             }
             return sb.ToString(1, sb.Length - 1);
         }
+
+        //ポインタリストのポインタとしてふさわしいかどうか
+        public static bool IsBadPointerPointer(uint p)
+        {
+            if (!U.isSafetyOffset(U.toOffset(p)))
+            {
+                return true;
+            }
+            uint a = Program.ROM.u32(p);
+            if (!U.isSafetyPointer(a))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
 

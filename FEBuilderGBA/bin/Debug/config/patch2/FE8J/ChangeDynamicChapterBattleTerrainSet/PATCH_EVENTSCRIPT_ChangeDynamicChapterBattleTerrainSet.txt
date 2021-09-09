@@ -5,12 +5,12 @@ TYPE=EA
 TAG=#EVENT
 EA=Installer.event
 
-INFO=章の戦闘地形の背景をイベント命令から動的に変更できるようにします。\r\n例えば、雨が降り足したのに晴天のBattleBGを利用しているのは奇妙です。\r\nこのパッチはイベント命令から戦闘背景リストを変更することで柔軟な変更をできるようにします。\r\n注意:現在は背景だけです。戦闘の床は変更しません。\r\nデータはトラップデータ(0xED)として保持されるので、セーブにも反映されます。
+INFO=章の戦闘地形の背景をイベント命令から動的に変更できるようにします。\r\n例えば、雨が降り出したのに晴天のBattleBGを利用しているのは奇妙です。\r\nこのパッチはイベント命令から戦闘背景リストを変更することで柔軟な変更をできるようにします。\r\n注意:現在は背景だけです。戦闘の床は変更しません。\r\nデータはトラップデータ(0xED)として保持されるので、セーブにも反映されます。
 
-INFO.en=Allow the chapter's battle background to be changed dynamically from an event instruction.\r\nFor example, it is strange to use a sunny BattleBG when it has rained a foot.\r\nThis patch will allow flexible changes by modifying the battle background list from event orders.\r\nNote: Currently it's just the background. The battle floor will not be changed.\r\nThe data will be kept as trap data (0xED) and will be reflected in the save.
+INFO.en=Allow the chapter's battle background to be changed dynamically from an event instruction.\r\nFor example, it's strange to use BattleBG in fine weather when it starts to rain.\r\nThis patch will allow flexible changes by modifying the battle background list from event orders.\r\nNote: Currently it's just the background. The battle floor will not be changed.\r\nThe data will be kept as trap data (0xED) and will be reflected in the save.
 
 NAME.zh=AddEvent: Change Chapter Battle TerrainSet Dynamic
-INFO.zh=Allow the chapter's battle background to be changed dynamically from an event instruction.\r\nFor example, it is strange to use a sunny BattleBG when it has rained a foot.\r\nThis patch will allow flexible changes by modifying the battle background list from event orders.\r\nNote: Currently it's just the background. The battle floor will not be changed.\r\nThe data will be kept as trap data (0xED) and will be reflected in the save.
+INFO.zh=Allow the chapter's battle background to be changed dynamically from an event instruction.\r\nFor example, it's strange to use BattleBG in fine weather when it starts to rain.\r\nThis patch will allow flexible changes by modifying the battle background list from event orders.\r\nNote: Currently it's just the background. The battle floor will not be changed.\r\nThe data will be kept as trap data (0xED) and will be reflected in the save.
 
 
 //既に適応されたかどうか

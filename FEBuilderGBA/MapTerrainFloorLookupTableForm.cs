@@ -153,7 +153,7 @@ namespace FEBuilderGBA
 
             if (PatchUtil.SearchCache_ExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
             {
-                if (pointers[selected] == 0)
+                if (U.IsBadPointerPointer(pointers[selected]))
                 {
                     ERROR_Not_Allocated.Show();
                 }
