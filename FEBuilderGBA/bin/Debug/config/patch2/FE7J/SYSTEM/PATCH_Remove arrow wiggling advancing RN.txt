@@ -8,13 +8,12 @@ TAG=#ENGINE
 
 COMBO=Fix: Do NOT use RN|ONN|Default: use RN|OFF
 
-DETERMINATION_ADDRESS=0x01A44E
+DETERMINATION_ADDRESS=0x01A370
 
-ONN:0x01A44E=0x00 0x20 0x00 0x00
-OFF:0x01A44E=0xE6 0xF7 0x03 0xFC
+ONN:0x01A370=0x00 0x20 0x00 0x00
+OFF:0x01A370=0xE6 0xF7 0x4A 0xFD
 
-
-AUTHOR=Crazycolorz5 https://feuniverse.us/t/fe8-remove-arrow-wiggling-advancing-rn/4049
+AUTHOR=clackmer https://feuniverse.us/t/fe6-fe7-fe7j-fe8j-remove-arrow-wiggling-advancing-rn-in-fe6-fe7-fe7j-and-fe8j/13354 ,Crazycolorz5 https://feuniverse.us/t/fe8-remove-arrow-wiggling-advancing-rn/4049
 INFO=移動の矢印を描画するときに、乱数テーブルを進めないようにします。\r\nファルコン法を防止します。\r\nファルコン法を防止します。
 INFO.en=When rendering the arrow of movement, do not advance the random number table.
 NAME.zh=绘制运动箭头时不要使用随机数

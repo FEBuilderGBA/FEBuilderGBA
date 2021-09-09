@@ -6,7 +6,7 @@ NAME.en=Remove arrow wiggling advancing RN
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=Remove|ONN|Default|OFF
+COMBO=Fix: Do NOT use RN|ONN|Default: use RN|OFF
 
 DETERMINATION_ADDRESS=0x01A774
 
