@@ -13985,11 +13985,13 @@ r3=X tile position of menu of right	{U}
 08AC033C	:08AC0393	Comprehensive evaluation calculation value.	{J}
 080D3C44	GuideOnKeyDown	{J}
 080CEF48	GuideOnKeyDown	{U}
-08078730	IsPromotionMode	{J}
-08076310	IsPromotionMode	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
 080360B8	A process that deals poison damage at the beginning of the turn.	{J}
 08035FB8	A process that deals poison damage at the beginning of the turn.	{U}
 080831DC	StartDrawSummonMagicCircleByUnitCoord	Draw summon magic square at unit position	r0=CurrentProcs r1=@UNIT	{J}
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	Draw summon magic square at unit position	r0=CurrentProcs r1=@UNIT	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}

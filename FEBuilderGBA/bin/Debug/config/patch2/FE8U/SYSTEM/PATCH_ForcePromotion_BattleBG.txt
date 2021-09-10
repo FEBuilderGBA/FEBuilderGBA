@@ -9,8 +9,9 @@ TAG=#ENGINE
 ADDRESS=0x57A70
 ADDRESS_TYPE=BATTLEBG
 AUTHOR=7743
+DEFAULT=0x3c
 
 NAME.zh=Background of forced Prmotion
-INFO=イベントでの強制CC時の背景です。\r\nディフォルトは、0x3C 白い城内のような画像です。\r\nこの時の床は、0x15が利用される。
-INFO.en=This is the background of the forced CC at the event.\r\nThe default is a 0x3C white castle-like image.\r\nThe floor used at this time is 0x15.
-INFO.zh=这是事件中强制CC的背景。\r\n默认值为0x3C白色城堡状图像。\r\n此时使用的楼层为0x15。
+INFO=イベントでの強制CC時の背景です。\r\n進撃準備画面などのマップの外で行われるCC時にも利用されます。\r\nディフォルトは、BattleBG 0x3C 白い城内のような戦闘背景の画像です。\r\nこの時の床は、0x14が利用される。
+INFO.en=This is the background of the forced Prmotion at the event.\r\nIt is also used during Promotion performed outside the map such as the preparation screen.\r\nThe default is a BattleBG 0x3C white castle-like image.\r\nThe floor used at this time is 0x14.
+INFO.zh=这是在活动中强制CC的背景。\r\n它也用于在地图外执行 CC 期间，例如提前准备屏幕。\r\n默认情况下，BattleBG 0x3C 是白色城堡中的战斗背景图像。\r\n此时，0x14 用于地板。

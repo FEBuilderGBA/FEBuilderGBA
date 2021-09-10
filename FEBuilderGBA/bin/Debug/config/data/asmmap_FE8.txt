@@ -13970,11 +13970,13 @@
 08A3CB04	:08A3CB1F	総合評価計算の値	{U}
 080D3C44	GuideOnKeyDown	{J}
 080CEF48	GuideOnKeyDown	{U}
-08078730	IsPromotionMode	{J}
-08076310	IsPromotionMode	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
 080360B8	ターン開始時に毒ダメージを与える処理	{J}
 08035FB8	ターン開始時に毒ダメージを与える処理	{U}
 080831DC	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{J}
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}

@@ -1,0 +1,17 @@
+
+NAME=強制CC時の床の地形
+NAME.en=Floor terrain of forced Prmotion
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x584B8
+//ADDRESS_TYPE=BATTLEFLOORTERRAIN
+DEFAULT=0x14
+AUTHOR=7743
+
+NAME.zh=Floor terrain of forced Prmotion
+INFO=イベントでの強制CC時の背景です。\r\n進撃準備画面などのマップの外で行われるCC時にも利用されます。\r\nディフォルトは、BattleFloorTerrain 0x14 の白い石の床の戦闘床地形の画像が利用されます。\r\n
+INFO.en=This is the background for forced Promotion at the event.\r\nIt is also used during Promotion performed outside the map such as the preparation screen.\r\nThe default is an image of the battle floor terrain on the white stone floor of BattleFloorTerrain 0x14.
+INFO.zh=这是在活动中强制CC的背景。\r\n它也用于在地图外执行 CC 期间，例如提前准备屏幕。\r\n默认为 BattleFloorTerrain 0x14 白石地板上的战场地形图像。\r\n

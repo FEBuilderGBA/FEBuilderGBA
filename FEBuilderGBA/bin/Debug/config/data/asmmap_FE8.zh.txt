@@ -13941,11 +13941,13 @@ r3=X tile position of menu of the right	{U}
 08AC033C	:08AC0393	综合评价计算值。	{J}
 080D3C44	GuideOnKeyDown	{J}
 080CEF48	GuideOnKeyDown	{U}
-08078730	IsPromotionMode	{J}
-08076310	IsPromotionMode	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
 080360B8	在回合开始时造成毒害的过程。	{J}
 08035FB8	在回合开始时造成毒害的过程。	{U}
 080831DC	StartDrawSummonMagicCircleByUnitCoord	在单位所在位置画一个召唤魔方	r0=CurrentProcs r1=@UNIT	{J}
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	在单位所在位置画一个召唤魔方	r0=CurrentProcs r1=@UNIT	{U}
+08078730	IsBattleStatsInPromotionMode	{J}
+08076310	IsBattleStatsInPromotionMode	{U}

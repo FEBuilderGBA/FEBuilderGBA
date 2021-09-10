@@ -7948,14 +7948,14 @@ Import a single picture.
 :インポートオプション
 Import options
 
+:拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。
+No data has been allocated for the expanded area.\r\nAllocate data from the patch "Expanding the list of battle floor terrain and battle backgrounds".
+
 :戦闘アニメの床へJump
 Jump to the battle cartoon floor
 
 :値
 value
-
-:拡張された領域にデータが割り当てられていません。\r\nパッチ「戦闘床地形と戦闘背景のリストを拡張する」から、データを割り振ってください。
-No data has been allocated for the expanded area.\r\nAllocate data from the patch "Expanding the list of battle floor terrain and battle backgrounds".
 
 :戦闘アニメの背景へJump
 Jump to the background of battle animation

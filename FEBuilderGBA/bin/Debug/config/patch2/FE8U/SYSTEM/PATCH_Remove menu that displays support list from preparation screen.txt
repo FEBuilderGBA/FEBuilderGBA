@@ -1,0 +1,20 @@
+NAME=進撃準備から支援関係メニューを消す
+NAME.en=Remove the menu that displays the support list from the preparation screen
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Show|OFF|Fix: Hide|FIX
+
+DETERMINATION_ADDRESS=0x0954AE
+
+OFF:0x0954AE=0x1E 0xD1
+FIX:0x0954AE=0x1E 0xE0
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/885644095194800158
+INFO=進撃準備画面から支援一覧を表示するメニューを非表示にします
+INFO.en=Hide the menu that displays the support list from the preparation screen.
+
+NAME.zh=从预先准备中删除与支持相关的菜单。
+INFO.zh=从预先准备屏幕隐藏显示支持列表的菜单。
