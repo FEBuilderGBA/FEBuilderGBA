@@ -1,0 +1,36 @@
+NAME=タイル名を強制変更する(Editor)
+INFO=特定のマップの座標のタイル名を強制変更します。\r\n例えば、武器屋が複数あったとして、左の武器屋が剣専門、右の武器屋が弓専門だったとします。\r\nこの時に、このパッチを利用すれば、タイル名を武器屋と表示するのではなく、それぞれの名前を表示できるようになります。\r\nこのパッチはタイル名を変更するだけで、それ以外の回避率などの値は元のタイルの値が利用されます。\r\nタイルIDは有限なので、このパッチを使えば無駄遣いを防げます。
+
+IF:0x8C9A4=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeTileName.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 FF が出てくるまで
+DATACOUNT=$GREP8 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのはマップIDです
+LISTNAME=$W6:TEXT
+
+//データを定義します
+B0:MAP=MAPID(0xFF=ANY)
+B1:MAPX=X(0xFF=ANY)
+B2:MAPY=Y
+B3:TILE=Tile(0xFF=ANY)
+W4:FLAG=Flag(0x00=ANY)
+W6:TEXT=Text
+
+AUTHOR=7743
+
+NAME.en=Change Tilename(Editor)
+INFO.en=Force a tile name change for a specific map coordinate.\r\nFor example, suppose there are multiple weapon shops, and the one on the left specializes in swords, while the one on the right specializes in bows.\r\nIn this case, this patch will allow you to display the name of each tile instead of displaying it as a weapon shop.\r\nThis patch will only change the tile name, and other values such as evasion rate will use the values of the original tile.\r\nSince tile IDs are finite, this patch will prevent them from being wasted.
+
+NAME.zh=Change Tilename(Editor)
+INFO.zh=Force a tile name change for a specific map coordinate.\r\nFor example, suppose there are multiple weapon shops, and the one on the left specializes in swords, while the one on the right specializes in bows.\r\nIn this case, this patch will allow you to display the name of each tile instead of displaying it as a weapon shop.\r\nThis patch will only change the tile name, and other values such as evasion rate will use the values of the original tile.\r\nSince tile IDs are finite, this patch will prevent them from being wasted.

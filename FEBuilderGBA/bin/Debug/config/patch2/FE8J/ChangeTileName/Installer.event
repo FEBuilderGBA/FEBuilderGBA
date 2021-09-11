@@ -1,0 +1,29 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $8ECA0		//FE8J
+//ORG $8C9A4		//FE8U
+jumpToHack(ChangeTileName)
+POP
+
+
+ALIGN 4
+ChangeTileName:
+#incbin "ChangeTileName.dmp"
+POIN ChangeTileName_Table
+
+ChangeTileName_Table:
+//   mapid X    Y    TileID       Flag TextID
+BYTE 0x00  0x00 0x00 0xFF ;SHORT  0x0  0x43
+BYTE 0x00  0x01 0x01 0xFF ;SHORT  0x0  0x43
+BYTE 0x00  0x02 0x02 0xFF ;SHORT  0x0  0x43
+
+BYTE 0xFF  0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF	//term
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

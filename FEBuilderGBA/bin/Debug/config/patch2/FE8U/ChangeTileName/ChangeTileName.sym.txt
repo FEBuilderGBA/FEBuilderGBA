@@ -1,0 +1,9 @@
+Table=$84
+Loop=$06
+CheckMAP=$08
+load_defualt=$5A
+CheckXY=$1E
+CheckTileID=$34
+CheckFlag=$40
+Found=$50
+Exit=$64

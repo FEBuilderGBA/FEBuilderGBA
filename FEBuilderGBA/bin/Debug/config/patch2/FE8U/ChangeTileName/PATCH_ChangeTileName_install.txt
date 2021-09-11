@@ -1,0 +1,18 @@
+NAME=タイル名を強制変更する(Install)
+INFO=特定のマップの座標のタイル名を強制変更します。\r\n例えば、武器屋が複数あったとして、左の武器屋が剣専門、右の武器屋が弓専門だったとします。\r\nこの時に、このパッチを利用すれば、タイル名を武器屋と表示するのではなく、それぞれの名前を表示できるようになります。\r\nこのパッチはタイル名を変更するだけで、それ以外の回避率などの値は元のタイルの値が利用されます。\r\nタイルIDは有限なので、このパッチを使えば無駄遣いを防げます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x8C9A4=0x00 0x4B
+EDIT_PATCH=PATCH_ChangeTileName.txt
+EA=Installer.event
+
+AUTHOR=7743
+
+NAME.en=Change Tilename(Installer)
+INFO.en=Force a tile name change for a specific map coordinate.\r\nFor example, suppose there are multiple weapon shops, and the one on the left specializes in swords, while the one on the right specializes in bows.\r\nIn this case, this patch will allow you to display the name of each tile instead of displaying it as a weapon shop.\r\nThis patch will only change the tile name, and other values such as evasion rate will use the values of the original tile.\r\nSince tile IDs are finite, this patch will prevent them from being wasted.
+
+NAME.zh=Change Tilename(Installer)
+INFO.zh=Force a tile name change for a specific map coordinate.\r\nFor example, suppose there are multiple weapon shops, and the one on the left specializes in swords, while the one on the right specializes in bows.\r\nIn this case, this patch will allow you to display the name of each tile instead of displaying it as a weapon shop.\r\nThis patch will only change the tile name, and other values such as evasion rate will use the values of the original tile.\r\nSince tile IDs are finite, this patch will prevent them from being wasted.
