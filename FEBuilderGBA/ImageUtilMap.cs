@@ -797,7 +797,7 @@ namespace FEBuilderGBA
 
 
             //パレット領域を新規に割り当てる.
-            byte[] data = new byte[5 * 2 * 16];
+            byte[] data = new byte[5 * 2 * 16 * 2];
 
             MapSettingForm.PLists plists = MapSettingForm.GetMapPListsWhereMapID(mapid);
             uint palette_addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, plists.palette_plist);
