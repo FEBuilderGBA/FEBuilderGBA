@@ -6893,6 +6893,42 @@ namespace FEBuilderGBA
             return U.at(dic, index, "");
         }
 
+        //FE8のチュートリアルイベントの呼び出し方法
+        public static string GetFE8TutorialMethod(uint num, out string errorMessae)
+        {
+            errorMessae = "";
+            if (num == 0)
+            {
+                return R._("Phase switch");
+            }
+            if (num == 0x1)
+            {
+                return R._("Post-action");
+            }
+            if (num == 0x2)
+            {
+                return R._("On select");
+            }
+            if (num == 0x3)
+            {
+                return R._("Pre move");
+            }
+            if (num == 0x4)
+            {
+                return R._("Post move");
+            }
+            if (num == 0x5)
+            {
+                return R._("Battle Forecast");
+            }
+            if (num == 0x6)
+            {
+                return R._("PlayPhase start");
+            }
+            errorMessae = R._("未知のMethodです");
+            return R._("警告: 未知のMethodです");
+        }
+
         //ユニットの特殊状態
         public static string GetRAM_UNIT_STATE(uint num)
         {

@@ -4456,6 +4456,12 @@ Warning: Write to MemorySlot 0.
 :警告: MemorySlotD以降にアクセスしています。
 Warning: You are accessing MemorySlotD or later.
 
+:未知のMethodです
+Unknown Method.
+
+:警告: 未知のMethodです
+Warning: Unknown Method.
+
 :すべてのメニューを許可
 Allow all menus.
 

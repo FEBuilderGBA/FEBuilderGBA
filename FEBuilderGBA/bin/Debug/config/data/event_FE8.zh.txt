@@ -397,9 +397,10 @@
 241A0000	吹制展示的准备(SOLOTEXTBOXSTART)	{TEXT}
 201C0000	背景用于非对话显示旁边。(TEXTCONT)	{TEXT}
 2011XXXX	IGNORE_KEYS[XXXX:IGNORE_KEYS:KeyMask]	写一个值为03000010(STORETOSOMETHING)	Mainly used for tutorial events.
-410BYYYYFFFFFFFF	内存插槽2中的事件调用[YYYY::param]
-410BYYYYXXXXXXXX	无条件跳转到0[XXXXXX:POINTER_EVENT:event][YYYY::param]
-400BYYYYXXXXXXXX	无条件跳转到1[XXXXXX:POINTER_EVENT:event][YYYY::param]
+
+410BYYYYFFFFFFFF	Tutorial Event call in memory slot 2 when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent Slot2)
+410BYYYYXXXXXXXX	Tutorial Event call [XXXXXX:POINTER_EVENT:event] when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent)
+400BYYYYXXXXXXXX	Tutorial Event call [XXXXXX:POINTER_EVENT:event] when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent_400B)
 203DXXXX	Disable a menu item.[XXXX:DISABLEOPTIONS:OptionBits](DISABLEOPTIONS)	Mainly used for tutorial events.
 213DXXXX	Disable weapon items.[XXXX:DISABLEWEAPONS:WeaponBits](DISABLEWEAPONS)	Mainly used for tutorial events.
 2031XXXX	Shows movement & attack range for [XXXX:UNIT:Unit](SHOW_ATTACK_RANGE)

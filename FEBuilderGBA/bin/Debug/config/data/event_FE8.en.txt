@@ -429,9 +429,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2F450000	END_GLOWING_CROSS
 200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID]	Return the value of the specified counter	@STOREC	{VAL}	{COND}
 2734XXXX	_0x3427[XXXX:UNIT:Character]
-410BYYYYFFFFFFFF	Event call in memory slot 2[YYYY::param]
-410BYYYYXXXXXXXX	Unconditional jump1 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
-400BYYYYXXXXXXXX	Unconditional jump0 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
+
+410BYYYYFFFFFFFF	Tutorial Event call in memory slot 2 when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent Slot2)
+410BYYYYXXXXXXXX	Tutorial Event call [XXXXXX:POINTER_EVENT:event] when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent)
+400BYYYYXXXXXXXX	Tutorial Event call [XXXXXX:POINTER_EVENT:event] when [YYYY:FE8TUTORIALMETHOD:Method](EnqueneTutorialEvent_400B)
 2031XXXX	Shows movement and attack range for [XXXX:UNIT:Character](SHOW_ATTACK_RANGE)
 21310000	Hides currently displayed movement and attack range(HIDE_ATTACK_RANGE)
 40050B00XXXXYYYY2D34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX(SET_SOMETHING)	@WARNING_DISA

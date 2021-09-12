@@ -1371,6 +1371,12 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetTerrainSetName(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.FE8TUTORIALMETHOD)
+                        {
+                            isENumText = true;
+                            string dummy;
+                            text = " " + InputFormRef.GetFE8TutorialMethod(v, out dummy);
+                        }
                         else if (arg.Type == EventScript.ArgType.AFFILIATION)
                         {
                             isENumText = true;

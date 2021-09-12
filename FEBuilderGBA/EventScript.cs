@@ -112,6 +112,7 @@ namespace FEBuilderGBA
             , SOUNDROOM         //サウンドルームID
             , U32               //任意の32bit値 SVALで利用
             , BATTLETERRAINSET  //戦闘地形
+            , FE8TUTORIALMETHOD //FE8チュートリアル　イベント呼び出しタイミング
         };
 
         public class Arg

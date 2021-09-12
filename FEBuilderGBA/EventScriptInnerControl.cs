@@ -846,6 +846,10 @@ namespace FEBuilderGBA
             {
                 text = InputFormRef.GetTerrainSetName(v);
             }
+            else if (arg.Type == EventScript.ArgType.FE8TUTORIALMETHOD)
+            {
+                text = InputFormRef.GetFE8TutorialMethod(v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.AFFILIATION)
             {
                 text = InputFormRef.GetAFFILIATION(v);
@@ -2745,6 +2749,12 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetTerrainSetName(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.FE8TUTORIALMETHOD)
+                    {
+                        sb.Append(" ");
+                        string dummy;
+                        sb.Append(InputFormRef.GetFE8TutorialMethod(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.AFFILIATION)
                     {
