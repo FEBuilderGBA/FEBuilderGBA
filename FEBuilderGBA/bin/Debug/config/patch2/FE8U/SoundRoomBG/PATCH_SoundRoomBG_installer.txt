@@ -1,6 +1,6 @@
-NAME=サウンドルームの背景にCGを描画する(Install)
-NAME.en=Draw CG on background of sound room(Installer)
-NAME.zh=Draw CG on background of sound room(Installer)
+NAME=サウンドルームの背景にCGを描画する 20200229(Install)
+NAME.en=Draw CG on background of sound room 20200229(Installer)
+NAME.zh=Draw CG on background of sound room 20200229(Installer)
 
 TYPE=EA
 TAG=#ENGINE
@@ -14,3 +14,6 @@ AUTHOR=7743
 INFO=FE7のサウンドルームのように、背景にCGを描画します。\r\nCGだけではなくBGも描画できます。\r\nどのCG,BGを描画するかをリストで指定できます。
 INFO.en=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG.\r\nYou can specify which CG and BG to draw in a list.
 INFO.zh=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG.\r\nYou can specify which CG and BG to draw in a list.
+
+DEPRECATED=1
+UPDATE_PATCH=..\SoundRoomBG_20210913\PATCH_SoundRoomBG_installer.txt

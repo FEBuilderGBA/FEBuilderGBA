@@ -775,6 +775,10 @@ namespace FEBuilderGBA
         {
             return "0x" + ToHexString(a);
         }
+        public static string ToHexStringTrim0(uint a)
+        {
+            return a.ToString("X08").TrimStart(new char[]{'0'});
+        }
         public static string ToHexString(uint a)
         {
             if (a <= 0xff)

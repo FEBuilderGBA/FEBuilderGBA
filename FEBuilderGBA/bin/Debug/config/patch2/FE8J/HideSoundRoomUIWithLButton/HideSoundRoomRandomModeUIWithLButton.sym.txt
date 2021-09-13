@@ -1,0 +1,5 @@
+Exit=$2C
+ShowSoundRoomUI=$20
+CheckLKey=$12
+HideSoundRoomUI=$18
+Exit2=$26

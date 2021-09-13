@@ -1,0 +1,2 @@
+HideSoundRoomUIWithLButton=$E5980
+HideSoundRoomRandomModeUIWithLButton=$E59D0

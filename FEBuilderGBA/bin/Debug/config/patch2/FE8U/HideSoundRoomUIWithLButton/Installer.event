@@ -1,0 +1,22 @@
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG 0xAF8A4 //FE8U
+//ORG 0xB44C4 //FE8J
+jumpToHack(HideSoundRoomUIWithLButton)
+
+ORG 0xAFE34 //FE8U
+//ORG 0xB4A4C //FE8J
+jumpToHack_r1(HideSoundRoomRandomModeUIWithLButton)
+
+POP
+
+ALIGN 4
+HideSoundRoomUIWithLButton:
+#incbin "HideSoundRoomUIWithLButton.dmp"
+
+ALIGN 4
+HideSoundRoomRandomModeUIWithLButton:
+#incbin "HideSoundRoomRandomModeUIWithLButton.dmp"
+
+ALIGN 4

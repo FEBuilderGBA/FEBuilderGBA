@@ -436,7 +436,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(track.codes[0].addr)));
+                listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexStringTrim0(track.codes[0].addr)));
             }
 
             for (int i = 0; i < track.codes.Count; i++)
@@ -451,7 +451,7 @@ namespace FEBuilderGBA
                     {//次のトラックへ
                         lastTuneWait = code.waitCount;
                         tune++;
-                        listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(code.addr + 1)));
+                        listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexStringTrim0(code.addr + 1)));
                     }
                 }
                 if (isDummyCode(code.type))
@@ -465,7 +465,7 @@ namespace FEBuilderGBA
                 {
                     lastTuneWait = code.waitCount;
                     tune++;
-                    listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexString(code.addr + 1)));
+                    listbox.Items.Add(string.Format("{0}@{1}", tune, U.ToHexStringTrim0(code.addr + 1)));
                 }
             }
             listbox.EndUpdate();

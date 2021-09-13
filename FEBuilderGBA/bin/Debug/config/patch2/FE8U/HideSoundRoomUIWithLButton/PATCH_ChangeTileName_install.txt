@@ -1,0 +1,17 @@
+NAME=サウンドルームでLボタンを押すと画面UIを非表示にする
+INFO=サウンドルームでLキーを押すと画面UIを非表示にして背景だけを見れる鑑賞モードに入れるようにします。\r\n元に戻したいときは、いずれかのキーを押せば元に戻ります。\r\n\r\nこのパッチは、サウンドルームで背景を表示するパッチを利用している人向けのパッチです。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0xAF8A4=0x00 0x4B
+EA=Installer.event
+
+AUTHOR=7743 , Original idea: Huichelaar https://github.com/Huichelaar/FE8U_SoundRoomBG
+
+NAME.en=Hides the screen UI when pressing the L button in the sound room
+INFO.en=Pressing the L key in the sound room hides the screen UI and puts you in viewing mode where you can only see the background.\r\nIf you want to restore it, press any key to restore it.\r\nThis patch is for people who are using the patch to show the background in the sound room(SoundRoomBG).
+
+NAME.zh=Hides the screen UI when pressing the L button in the sound room
+INFO.zh=Pressing the L key in the sound room hides the screen UI and puts you in viewing mode where you can only see the background.\r\nIf you want to restore it, press any key to restore it.\r\nThis patch is for people who are using the patch to show the background in the sound room(SoundRoomBG).

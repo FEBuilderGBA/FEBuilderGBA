@@ -1,6 +1,6 @@
-NAME=サウンドルームの背景にCGを描画する(Editor)
-NAME.en=Draw CG on background of sound room(Editor)
-NAME.zh=Draw CG on background of sound room(Editor)
+NAME=サウンドルームの背景にCGを描画する 20200229(Editor)
+NAME.en=Draw CG on background of sound room 20200229(Editor)
+NAME.zh=Draw CG on background of sound room 20200229(Editor)
 
 IF:0xB4458=0x00 0x4B 0x18 0x47
 

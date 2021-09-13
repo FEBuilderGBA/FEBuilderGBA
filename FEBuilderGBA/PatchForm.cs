@@ -6759,6 +6759,11 @@ namespace FEBuilderGBA
                 uint songid = Program.ROM.u8(addr);
                 UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
             }
+            else if (addressType == "BG")
+            {
+                uint bgid = Program.ROM.u8(addr);
+                UseValsID.AppendBGID(list, FELint.Type.PATCH, addr, name, bgid, (uint)tag);
+            }
         }
         static void MakeVarsIDArrayForStruct(List<UseValsID> list, PatchSt patch, int tag)
         {
@@ -6880,6 +6885,12 @@ namespace FEBuilderGBA
                             string name = patchname + " SONG " + n;
                             UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
                         }
+                    }
+                    if (type == "BGICON")
+                    {
+                        uint bgid = Program.ROM.u8(p);
+                        string name = patchname + " BG " + n;
+                        UseValsID.AppendBGID(list, FELint.Type.PATCH, addr, name, bgid, (uint)tag);
                     }
                 }
             }
