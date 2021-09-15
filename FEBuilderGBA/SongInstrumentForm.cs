@@ -531,8 +531,21 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string info = GetMoreInfo(AddressList);
+            this.X_MoreInfo.Text = info;
+
             string fingerPrint = FingerPrint(InputFormRef.SelectToAddr(AddressList));
             this.FINGERPRINT.Text = fingerPrint;
+        }
+
+        string GetMoreInfo(ListBoxEx addressList)
+        {
+            if (addressList.SelectedIndex < 0)
+            {
+                return "";
+            }
+            uint instid = (uint)addressList.SelectedIndex;
+            return addressList.Text + ", if drum:" + SongUtil.getKeyCode(instid) ;
         }
 
         public class InstrumentHintSt

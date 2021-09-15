@@ -356,6 +356,9 @@
             this.label122 = new System.Windows.Forms.Label();
             this.B0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.X_MoreInfo = new FEBuilderGBA.TextBoxEx();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -719,6 +722,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.X_MoreInfo);
             this.panel2.Controls.Add(this.Inst_ExportButton);
             this.panel2.Controls.Add(this.Inst_ImportButton);
             this.panel2.Controls.Add(this.label17);
@@ -727,6 +732,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.B0_UNIONKEY);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label18);
             this.panel2.Location = new System.Drawing.Point(293, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -735,7 +741,7 @@
             // 
             // Inst_ExportButton
             // 
-            this.Inst_ExportButton.Location = new System.Drawing.Point(591, 554);
+            this.Inst_ExportButton.Location = new System.Drawing.Point(591, 515);
             this.Inst_ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.Inst_ExportButton.Name = "Inst_ExportButton";
             this.Inst_ExportButton.Size = new System.Drawing.Size(230, 30);
@@ -746,7 +752,7 @@
             // 
             // Inst_ImportButton
             // 
-            this.Inst_ImportButton.Location = new System.Drawing.Point(340, 554);
+            this.Inst_ImportButton.Location = new System.Drawing.Point(340, 515);
             this.Inst_ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.Inst_ImportButton.Name = "Inst_ImportButton";
             this.Inst_ImportButton.Size = new System.Drawing.Size(230, 30);
@@ -758,7 +764,7 @@
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(-1, 545);
+            this.label17.Location = new System.Drawing.Point(-1, 508);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(828, 46);
@@ -4908,6 +4914,38 @@
             this.label4.Text = "種類";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // X_MoreInfo
+            // 
+            this.X_MoreInfo.ErrorMessage = "";
+            this.X_MoreInfo.Location = new System.Drawing.Point(178, 558);
+            this.X_MoreInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.X_MoreInfo.Name = "X_MoreInfo";
+            this.X_MoreInfo.Placeholder = "";
+            this.X_MoreInfo.ReadOnly = true;
+            this.X_MoreInfo.Size = new System.Drawing.Size(643, 25);
+            this.X_MoreInfo.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(-2, 553);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(828, 38);
+            this.label18.TabIndex = 121;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.AccessibleDescription = "";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 561);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 18);
+            this.label19.TabIndex = 122;
+            this.label19.Text = "Info";
+            // 
             // SongInstrumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -4930,6 +4968,7 @@
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.UNIONTAB.ResumeLayout(false);
             this.UNIONTAB_N00.ResumeLayout(false);
@@ -5414,5 +5453,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button Inst_ExportButton;
         private System.Windows.Forms.Button Inst_ImportButton;
+        private TextBoxEx X_MoreInfo;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
