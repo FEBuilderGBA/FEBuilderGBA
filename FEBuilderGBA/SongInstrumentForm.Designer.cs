@@ -47,6 +47,8 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.X_MoreInfo = new FEBuilderGBA.TextBoxEx();
             this.Inst_ExportButton = new System.Windows.Forms.Button();
             this.Inst_ImportButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -356,9 +358,11 @@
             this.label122 = new System.Windows.Forms.Label();
             this.B0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.X_MoreInfo = new FEBuilderGBA.TextBoxEx();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.N00_PreviewButton = new System.Windows.Forms.Button();
+            this.N08_PreviewButton = new System.Windows.Forms.Button();
+            this.N10_PreviewButton = new System.Windows.Forms.Button();
+            this.N18_PreviewButton = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -739,6 +743,28 @@
             this.panel2.Size = new System.Drawing.Size(828, 634);
             this.panel2.TabIndex = 198;
             // 
+            // label19
+            // 
+            this.label19.AccessibleDescription = "";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 561);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 18);
+            this.label19.TabIndex = 122;
+            this.label19.Text = "Info";
+            // 
+            // X_MoreInfo
+            // 
+            this.X_MoreInfo.ErrorMessage = "";
+            this.X_MoreInfo.Location = new System.Drawing.Point(178, 558);
+            this.X_MoreInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.X_MoreInfo.Name = "X_MoreInfo";
+            this.X_MoreInfo.Placeholder = "";
+            this.X_MoreInfo.ReadOnly = true;
+            this.X_MoreInfo.Size = new System.Drawing.Size(643, 25);
+            this.X_MoreInfo.TabIndex = 2;
+            // 
             // Inst_ExportButton
             // 
             this.Inst_ExportButton.Location = new System.Drawing.Point(591, 515);
@@ -833,6 +859,7 @@
             // UNIONTAB_N00
             // 
             this.UNIONTAB_N00.BackColor = System.Drawing.SystemColors.Control;
+            this.UNIONTAB_N00.Controls.Add(this.N00_PreviewButton);
             this.UNIONTAB_N00.Controls.Add(this.N00_ExportButton);
             this.UNIONTAB_N00.Controls.Add(this.N00_ImportButton);
             this.UNIONTAB_N00.Controls.Add(this.N00_L_3_PAN_PANPOT);
@@ -2349,6 +2376,7 @@
             // UNIONTAB_N08
             // 
             this.UNIONTAB_N08.BackColor = System.Drawing.SystemColors.Control;
+            this.UNIONTAB_N08.Controls.Add(this.N08_PreviewButton);
             this.UNIONTAB_N08.Controls.Add(this.N08_ExportButton);
             this.UNIONTAB_N08.Controls.Add(this.N08_ImportButton);
             this.UNIONTAB_N08.Controls.Add(this.N08_L_3_PAN_PANPOT);
@@ -3863,6 +3891,7 @@
             // UNIONTAB_N10
             // 
             this.UNIONTAB_N10.BackColor = System.Drawing.SystemColors.Control;
+            this.UNIONTAB_N10.Controls.Add(this.N10_PreviewButton);
             this.UNIONTAB_N10.Controls.Add(this.N10_ExportButton);
             this.UNIONTAB_N10.Controls.Add(this.N10_ImportButton);
             this.UNIONTAB_N10.Controls.Add(this.N10_L_3_PAN_PANPOT);
@@ -4175,6 +4204,7 @@
             // UNIONTAB_N18
             // 
             this.UNIONTAB_N18.BackColor = System.Drawing.SystemColors.Control;
+            this.UNIONTAB_N18.Controls.Add(this.N18_PreviewButton);
             this.UNIONTAB_N18.Controls.Add(this.N18_ExportButton);
             this.UNIONTAB_N18.Controls.Add(this.N18_ImportButton);
             this.UNIONTAB_N18.Controls.Add(this.N18_L_3_PAN_PANPOT);
@@ -4914,17 +4944,6 @@
             this.label4.Text = "種類";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_MoreInfo
-            // 
-            this.X_MoreInfo.ErrorMessage = "";
-            this.X_MoreInfo.Location = new System.Drawing.Point(178, 558);
-            this.X_MoreInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.X_MoreInfo.Name = "X_MoreInfo";
-            this.X_MoreInfo.Placeholder = "";
-            this.X_MoreInfo.ReadOnly = true;
-            this.X_MoreInfo.Size = new System.Drawing.Size(643, 25);
-            this.X_MoreInfo.TabIndex = 2;
-            // 
             // label18
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4935,16 +4954,45 @@
             this.label18.TabIndex = 121;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // N00_PreviewButton
             // 
-            this.label19.AccessibleDescription = "";
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(4, 561);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 18);
-            this.label19.TabIndex = 122;
-            this.label19.Text = "Info";
+            this.N00_PreviewButton.Location = new System.Drawing.Point(295, 222);
+            this.N00_PreviewButton.Name = "N00_PreviewButton";
+            this.N00_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N00_PreviewButton.TabIndex = 95;
+            this.N00_PreviewButton.Text = "Preview";
+            this.N00_PreviewButton.UseVisualStyleBackColor = true;
+            this.N00_PreviewButton.Click += new System.EventHandler(this.N00_PreviewButton_Click);
+            // 
+            // N08_PreviewButton
+            // 
+            this.N08_PreviewButton.Location = new System.Drawing.Point(295, 222);
+            this.N08_PreviewButton.Name = "N08_PreviewButton";
+            this.N08_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N08_PreviewButton.TabIndex = 97;
+            this.N08_PreviewButton.Text = "Preview";
+            this.N08_PreviewButton.UseVisualStyleBackColor = true;
+            this.N08_PreviewButton.Click += new System.EventHandler(this.N08_PreviewButton_Click);
+            // 
+            // N10_PreviewButton
+            // 
+            this.N10_PreviewButton.Location = new System.Drawing.Point(295, 227);
+            this.N10_PreviewButton.Name = "N10_PreviewButton";
+            this.N10_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N10_PreviewButton.TabIndex = 98;
+            this.N10_PreviewButton.Text = "Preview";
+            this.N10_PreviewButton.UseVisualStyleBackColor = true;
+            this.N10_PreviewButton.Click += new System.EventHandler(this.N10_PreviewButton_Click);
+            // 
+            // N18_PreviewButton
+            // 
+            this.N18_PreviewButton.Location = new System.Drawing.Point(295, 224);
+            this.N18_PreviewButton.Name = "N18_PreviewButton";
+            this.N18_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N18_PreviewButton.TabIndex = 119;
+            this.N18_PreviewButton.Text = "Preview";
+            this.N18_PreviewButton.UseVisualStyleBackColor = true;
+            this.N18_PreviewButton.Click += new System.EventHandler(this.N18_PreviewButton_Click);
             // 
             // SongInstrumentForm
             // 
@@ -5456,5 +5504,9 @@
         private TextBoxEx X_MoreInfo;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button N00_PreviewButton;
+        private System.Windows.Forms.Button N08_PreviewButton;
+        private System.Windows.Forms.Button N10_PreviewButton;
+        private System.Windows.Forms.Button N18_PreviewButton;
     }
 }

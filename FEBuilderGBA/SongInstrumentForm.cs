@@ -536,6 +536,8 @@ namespace FEBuilderGBA
 
             string fingerPrint = FingerPrint(InputFormRef.SelectToAddr(AddressList));
             this.FINGERPRINT.Text = fingerPrint;
+
+            StopPlayer();
         }
 
         string GetMoreInfo(ListBoxEx addressList)
@@ -614,7 +616,52 @@ namespace FEBuilderGBA
             return "";
         }
 
-        void ExportGBAWave(NumericUpDown addrNumObj,string fingerPrint)
+        void PreviewGBAWave(NumericUpDown addrNumObj, string fingerPrint)
+        {
+            uint addr = (uint)addrNumObj.Value;
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            string filename = Path.GetTempFileName();
+            filename += "." + U.ToHexString(AddressList.SelectedIndex) + ".wav";
+
+            byte[] wave = SongUtil.byteToWav(Program.ROM.Data, addr);
+            U.WriteAllBytes(filename, wave);
+
+            StopPlayer();
+            this.TempFilename = filename;
+            this.WavePlayer = new System.Media.SoundPlayer(filename);
+            this.WavePlayer.Play();
+        }
+        public void Dettach()
+        {
+            StopPlayer();
+        }
+        void StopPlayer()
+        {
+            if (WavePlayer != null)
+            {
+                WavePlayer.Stop();
+                WavePlayer.Dispose();
+                WavePlayer = null;
+            }
+            DeleteTemp();
+        }
+        void DeleteTemp()
+        {
+            if (File.Exists(this.TempFilename))
+            {
+                File.Delete(this.TempFilename);
+                this.TempFilename = "";
+                return;
+            }
+        }
+        System.Media.SoundPlayer WavePlayer = null;
+        string TempFilename = "";
+
+        void ExportGBAWave(NumericUpDown addrNumObj, string fingerPrint)
         {
             string title = R._("保存するファイル名を選択してください");
             string filter = R._("wav|*.wav|All files|*");
@@ -1440,6 +1487,26 @@ namespace FEBuilderGBA
                 return false;
             }
             return true;
+        }
+
+        private void N18_PreviewButton_Click(object sender, EventArgs e)
+        {
+            PreviewGBAWave(N18_P4, this.FINGERPRINT.Text);
+        }
+
+        private void N10_PreviewButton_Click(object sender, EventArgs e)
+        {
+            PreviewGBAWave(N10_P4, this.FINGERPRINT.Text);
+        }
+
+        private void N08_PreviewButton_Click(object sender, EventArgs e)
+        {
+            PreviewGBAWave(N08_P4, this.FINGERPRINT.Text);
+        }
+
+        private void N00_PreviewButton_Click(object sender, EventArgs e)
+        {
+            PreviewGBAWave(N00_P4, this.FINGERPRINT.Text);
         }
     }
 }
