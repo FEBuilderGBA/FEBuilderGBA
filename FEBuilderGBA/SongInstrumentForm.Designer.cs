@@ -56,6 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.UNIONTAB = new System.Windows.Forms.TabControl();
             this.UNIONTAB_N00 = new System.Windows.Forms.TabPage();
+            this.N00_PreviewButton = new System.Windows.Forms.Button();
             this.N00_ExportButton = new System.Windows.Forms.Button();
             this.N00_ImportButton = new System.Windows.Forms.Button();
             this.N00_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
@@ -167,6 +168,7 @@
             this.N04_B1 = new System.Windows.Forms.NumericUpDown();
             this.label91 = new System.Windows.Forms.Label();
             this.UNIONTAB_N08 = new System.Windows.Forms.TabPage();
+            this.N08_PreviewButton = new System.Windows.Forms.Button();
             this.N08_ExportButton = new System.Windows.Forms.Button();
             this.N08_ImportButton = new System.Windows.Forms.Button();
             this.N08_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
@@ -278,6 +280,7 @@
             this.N0C_B1 = new System.Windows.Forms.NumericUpDown();
             this.label107 = new System.Windows.Forms.Label();
             this.UNIONTAB_N10 = new System.Windows.Forms.TabPage();
+            this.N10_PreviewButton = new System.Windows.Forms.Button();
             this.N10_ExportButton = new System.Windows.Forms.Button();
             this.N10_ImportButton = new System.Windows.Forms.Button();
             this.N10_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
@@ -302,6 +305,7 @@
             this.N10_B1 = new System.Windows.Forms.NumericUpDown();
             this.N10_J_1 = new System.Windows.Forms.Label();
             this.UNIONTAB_N18 = new System.Windows.Forms.TabPage();
+            this.N18_PreviewButton = new System.Windows.Forms.Button();
             this.N18_ExportButton = new System.Windows.Forms.Button();
             this.N18_ImportButton = new System.Windows.Forms.Button();
             this.N18_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
@@ -359,10 +363,6 @@
             this.B0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.N00_PreviewButton = new System.Windows.Forms.Button();
-            this.N08_PreviewButton = new System.Windows.Forms.Button();
-            this.N10_PreviewButton = new System.Windows.Forms.Button();
-            this.N18_PreviewButton = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -890,6 +890,16 @@
             this.UNIONTAB_N00.Size = new System.Drawing.Size(825, 410);
             this.UNIONTAB_N00.TabIndex = 0;
             this.UNIONTAB_N00.Text = "DirectSound";
+            // 
+            // N00_PreviewButton
+            // 
+            this.N00_PreviewButton.Location = new System.Drawing.Point(6, 266);
+            this.N00_PreviewButton.Name = "N00_PreviewButton";
+            this.N00_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N00_PreviewButton.TabIndex = 95;
+            this.N00_PreviewButton.Text = "Preview";
+            this.N00_PreviewButton.UseVisualStyleBackColor = true;
+            this.N00_PreviewButton.Click += new System.EventHandler(this.N00_PreviewButton_Click);
             // 
             // N00_ExportButton
             // 
@@ -2407,6 +2417,16 @@
             this.UNIONTAB_N08.TabIndex = 5;
             this.UNIONTAB_N08.Text = "DirectSound Fixed Freq";
             // 
+            // N08_PreviewButton
+            // 
+            this.N08_PreviewButton.Location = new System.Drawing.Point(6, 266);
+            this.N08_PreviewButton.Name = "N08_PreviewButton";
+            this.N08_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N08_PreviewButton.TabIndex = 97;
+            this.N08_PreviewButton.Text = "Preview";
+            this.N08_PreviewButton.UseVisualStyleBackColor = true;
+            this.N08_PreviewButton.Click += new System.EventHandler(this.N08_PreviewButton_Click);
+            // 
             // N08_ExportButton
             // 
             this.N08_ExportButton.Location = new System.Drawing.Point(636, 222);
@@ -3922,6 +3942,16 @@
             this.UNIONTAB_N10.TabIndex = 10;
             this.UNIONTAB_N10.Text = "DirectSound Reverse";
             // 
+            // N10_PreviewButton
+            // 
+            this.N10_PreviewButton.Location = new System.Drawing.Point(6, 266);
+            this.N10_PreviewButton.Name = "N10_PreviewButton";
+            this.N10_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N10_PreviewButton.TabIndex = 98;
+            this.N10_PreviewButton.Text = "Preview";
+            this.N10_PreviewButton.UseVisualStyleBackColor = true;
+            this.N10_PreviewButton.Click += new System.EventHandler(this.N10_PreviewButton_Click);
+            // 
             // N10_ExportButton
             // 
             this.N10_ExportButton.Location = new System.Drawing.Point(636, 227);
@@ -4235,6 +4265,16 @@
             this.UNIONTAB_N18.Size = new System.Drawing.Size(825, 410);
             this.UNIONTAB_N18.TabIndex = 13;
             this.UNIONTAB_N18.Text = "s";
+            // 
+            // N18_PreviewButton
+            // 
+            this.N18_PreviewButton.Location = new System.Drawing.Point(6, 266);
+            this.N18_PreviewButton.Name = "N18_PreviewButton";
+            this.N18_PreviewButton.Size = new System.Drawing.Size(128, 32);
+            this.N18_PreviewButton.TabIndex = 119;
+            this.N18_PreviewButton.Text = "Preview";
+            this.N18_PreviewButton.UseVisualStyleBackColor = true;
+            this.N18_PreviewButton.Click += new System.EventHandler(this.N18_PreviewButton_Click);
             // 
             // N18_ExportButton
             // 
@@ -4953,46 +4993,6 @@
             this.label18.Size = new System.Drawing.Size(828, 38);
             this.label18.TabIndex = 121;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N00_PreviewButton
-            // 
-            this.N00_PreviewButton.Location = new System.Drawing.Point(295, 222);
-            this.N00_PreviewButton.Name = "N00_PreviewButton";
-            this.N00_PreviewButton.Size = new System.Drawing.Size(128, 32);
-            this.N00_PreviewButton.TabIndex = 95;
-            this.N00_PreviewButton.Text = "Preview";
-            this.N00_PreviewButton.UseVisualStyleBackColor = true;
-            this.N00_PreviewButton.Click += new System.EventHandler(this.N00_PreviewButton_Click);
-            // 
-            // N08_PreviewButton
-            // 
-            this.N08_PreviewButton.Location = new System.Drawing.Point(295, 222);
-            this.N08_PreviewButton.Name = "N08_PreviewButton";
-            this.N08_PreviewButton.Size = new System.Drawing.Size(128, 32);
-            this.N08_PreviewButton.TabIndex = 97;
-            this.N08_PreviewButton.Text = "Preview";
-            this.N08_PreviewButton.UseVisualStyleBackColor = true;
-            this.N08_PreviewButton.Click += new System.EventHandler(this.N08_PreviewButton_Click);
-            // 
-            // N10_PreviewButton
-            // 
-            this.N10_PreviewButton.Location = new System.Drawing.Point(295, 227);
-            this.N10_PreviewButton.Name = "N10_PreviewButton";
-            this.N10_PreviewButton.Size = new System.Drawing.Size(128, 32);
-            this.N10_PreviewButton.TabIndex = 98;
-            this.N10_PreviewButton.Text = "Preview";
-            this.N10_PreviewButton.UseVisualStyleBackColor = true;
-            this.N10_PreviewButton.Click += new System.EventHandler(this.N10_PreviewButton_Click);
-            // 
-            // N18_PreviewButton
-            // 
-            this.N18_PreviewButton.Location = new System.Drawing.Point(295, 224);
-            this.N18_PreviewButton.Name = "N18_PreviewButton";
-            this.N18_PreviewButton.Size = new System.Drawing.Size(128, 32);
-            this.N18_PreviewButton.TabIndex = 119;
-            this.N18_PreviewButton.Text = "Preview";
-            this.N18_PreviewButton.UseVisualStyleBackColor = true;
-            this.N18_PreviewButton.Click += new System.EventHandler(this.N18_PreviewButton_Click);
             // 
             // SongInstrumentForm
             // 
