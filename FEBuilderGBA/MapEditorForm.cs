@@ -148,9 +148,41 @@ namespace FEBuilderGBA
             return true;
         }
 
+        bool alertWhenNoSave_MAPCOMBO()
+        {
+            if (this.PrevSelectMAPCOMBO == U.NOT_FOUND)
+            {
+                return false;
+            }
+
+            if (alertWhenNoSave())
+            {
+                return true;
+            }
+
+            //変更キャンセル処理
+            uint id = this.PrevSelectMAPCOMBO;
+            //キャンセル処理で再度 alertWhenNoSave_MAPCOMBOCombo が呼ばれないように補正する
+            this.PrevSelectMAPCOMBO = U.NOT_FOUND;
+
+            U.SelectedIndexSafety(this.MAPCOMBO, id);
+
+            this.PrevSelectMAPCOMBO = id;
+            return false;
+        }
+
+        //前回選択していた場所
+        uint PrevSelectMAPCOMBO = 0;
+
+
         private void MAPCOMBO_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.MAPCOMBO.SelectedIndex < 0)
+            {
+                this.PrevSelectMAPCOMBO = 0;
+                return;
+            }
+            if (!alertWhenNoSave_MAPCOMBO())
             {
                 return;
             }
@@ -188,6 +220,7 @@ namespace FEBuilderGBA
 
             //変更マークをクリア
             ClearModifiedFlag();
+            this.PrevSelectMAPCOMBO = mapid;
         }
         void ReloadMapChange(uint mapid,MapSettingForm.PLists plists, int selected)
         {
@@ -300,13 +333,48 @@ namespace FEBuilderGBA
         {
             if (MapChange.SelectedIndex < 0)
             {
+                this.PrevSelectMapChange = 0;
                 return;
             }
 
+            if (!alertWhenNoSave_MapChngeCombo())
+            {
+                return;
+            }
 
             MapChangeForm.ChangeSt change = ChangeList[MapChange.SelectedIndex];
             U.ForceUpdate(this.MapAddress, change.addr);
+            this.PrevSelectMapChange = (uint)MapChange.SelectedIndex;
         }
+
+        bool alertWhenNoSave_MapChngeCombo()
+        {
+            if (this.PrevSelectMapChange == U.NOT_FOUND)
+            {
+                return false;
+            }
+
+            if (alertWhenNoSave())
+            {
+                return true;
+            }
+
+            //変更キャンセル処理
+            uint id = this.PrevSelectMapChange;
+            //キャンセル処理で再度 alertWhenNoSave_MapChngeCombo が呼ばれないように補正する
+            this.PrevSelectMapChange = U.NOT_FOUND;
+
+            U.SelectedIndexSafety(this.MapChange, id);
+
+            this.PrevSelectMapChange = id;
+            return false;
+        }
+
+        //前回選択していた場所
+        uint PrevSelectMapChange = 0;
+
+
+
         private void MapAddress_ValueChanged(object sender, EventArgs e)
         {
             if (MapChange.SelectedIndex < 0)

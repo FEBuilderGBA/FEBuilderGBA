@@ -1,0 +1,18 @@
+NAME=エンディングのクリアターン一覧に編ごとの区切り文字を追加する(Installer)
+NAME.en=Add delimiter for each edition to the clear turn list of the ending(Installer)
+NAME.zh=Add delimiter for each edition to clear turn list of ending(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xB7B96=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_DrawExtraTextInEDScroll.txt
+EA=Installer.en.event
+HINT=ED
+
+INFO=エンディングのクリアターン一覧を表示する時に、指定した章IDを表示する前に特定の文字列を表示します\r\n第1部、第2部といった区切りを作ることができます。\r\nテーブルは、必ず表示される章の順番で昇順に並べてください。\r\n空白の改行が必要な場合は、空白の行を挿入してください。\r\n編で分岐が必要な場合や外伝の章に設定する場合は注意してください。\r\nサンプルの例をよく理解して作ってください。
+
+INFO.en=When displaying a list of clear turns for an ending, display a specific string of characters before displaying the specified chapter ID\r\nYou can create separations such as Part 1 and Part 2.\r\nTables should always be arranged in ascending order by the chapter they are displayed in.\r\nIf a blank line break is required, insert a blank line.\r\nPlease be careful if you need a branch in a chapter or if you are setting up gaiden chapter.\r\nPlease make sure you understand the sample example well.
+INFO.zh=When displaying a list of clear turns for an ending, display a specific string of characters before displaying the specified chapter ID\r\nYou can create separations such as Part 1 and Part 2.\r\nTables should always be arranged in ascending order by the chapter they are displayed in.\r\nIf a blank line break is required, insert a blank line.\r\nPlease be careful if you need a branch in a chapter or if you are setting up gaiden chapter.\r\nPlease make sure you understand the sample example well.
+
+AUTHOR=7743

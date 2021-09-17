@@ -1,0 +1,64 @@
+PUSH
+
+ORG 0xB7B96	//{U}
+BYTE 0x00 0x00
+jumpToHack(DrawExtraTextInEDScroll)
+
+POP
+
+ALIGN 4
+DrawExtraTextInEDScroll:
+#incbin "DrawExtraTextInEDScroll.dmp"
+POIN DrawExtraTextInEDScrollTable
+
+ALIGN 4
+DrawExtraTextInEDScrollTable:	//sizeof == 8
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x00	0xff	;SHORT	0		0x0175	;BYTE	0		12 //聖魔の光跡
+BYTE	0x00	0xff	;SHORT	0		0x0000	;BYTE	0		5  //padding
+
+//Put out the appropriate text for each chapter.
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x01	0xff	;SHORT	0		0x0026	;BYTE	1		5
+
+BYTE	0x02	0xff	;SHORT	0		0x0000	;BYTE	0		5  //padding
+BYTE	0x02	0xff	;SHORT	0		0x002B	;BYTE	2		5
+
+BYTE	0x03	0xff	;SHORT	0		0x0000	;BYTE	0		5  //padding
+BYTE	0x03	0xff	;SHORT	0		0x002C	;BYTE	3		5
+
+BYTE	0x04	0xff	;SHORT	0		0x0000	;BYTE	0		5  //padding
+BYTE	0x04	0xff	;SHORT	0		0x002D	;BYTE	4		5
+
+BYTE	0x05	0xff	;SHORT	0		0x0000	;BYTE	0		5  //padding
+BYTE	0x05	0xff	;SHORT	0		0x002E	;BYTE	5		5
+
+//Since there is a branch from here, the data is separated.
+
+//Eirika Edition editon=2
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x0A	0x02	;SHORT	0		0x0000	;BYTE	0		5  //padding
+BYTE	0x0A	0x02	;SHORT	0		0x0C15	;BYTE	2		5  //エイリークと
+BYTE	0x10	0x02	;SHORT	0		0x0000	;BYTE	0		5	//padding
+BYTE	0x10	0x02	;SHORT	0		0x0664	;BYTE	3		5	//王都ルネス
+
+//Ephraim Edition editon=3
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x17	0x03	;SHORT	0		0x0000	;BYTE	0		5	//padding
+BYTE	0x17	0x03	;SHORT	0		0x0C16	;BYTE	2		5	//エフラムと
+BYTE	0x1D	0x03	;SHORT	0		0x0000	;BYTE	0		5	//padding
+BYTE	0x1D	0x03	;SHORT	0		0x0664	;BYTE	3		5	//王都ルネス
+
+
+
+BYTE 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff	//term
+
+//color memo
+//0 = white  白色
+//1 = gray   灰色
+//2 = blue   水色
+//3 = yellow 黄色
+//4 = green  緑色
+
+
+ALIGN 4

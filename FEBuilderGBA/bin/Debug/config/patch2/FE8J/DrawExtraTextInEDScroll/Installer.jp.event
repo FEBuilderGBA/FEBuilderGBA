@@ -1,0 +1,64 @@
+PUSH
+
+ORG 0xBC5F6	//{J}
+BYTE 0x00 0x00
+jumpToHack(DrawExtraTextInEDScroll)
+
+POP
+
+ALIGN 4
+DrawExtraTextInEDScroll:
+#incbin "DrawExtraTextInEDScroll.dmp"
+POIN DrawExtraTextInEDScrollTable
+
+ALIGN 4
+DrawExtraTextInEDScrollTable:	//sizeof == 8
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x00	0xff	;SHORT	0		0x00FD	;BYTE	0		12 //聖魔の光跡
+BYTE	0x00	0xff	;SHORT	0		0x0000	;BYTE	0		5  //余白
+
+//それぞれの章ごとに、適当なテキストを出す
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x01	0xff	;SHORT	0		0x0001	;BYTE	1		5
+
+BYTE	0x02	0xff	;SHORT	0		0x0000	;BYTE	0		5  //余白
+BYTE	0x02	0xff	;SHORT	0		0x0006	;BYTE	2		5
+
+BYTE	0x03	0xff	;SHORT	0		0x0000	;BYTE	0		5  //余白
+BYTE	0x03	0xff	;SHORT	0		0x0007	;BYTE	3		5
+
+BYTE	0x04	0xff	;SHORT	0		0x0000	;BYTE	0		5  //余白
+BYTE	0x04	0xff	;SHORT	0		0x0008	;BYTE	4		5
+
+BYTE	0x05	0xff	;SHORT	0		0x0000	;BYTE	0		5  //余白
+BYTE	0x05	0xff	;SHORT	0		0x0009	;BYTE	5		5
+
+//ここから分岐があるのでデータが分かれます。
+
+//エイリーク編 editon=2
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x0A	0x02	;SHORT	0		0x0000	;BYTE	0		5  //余白
+BYTE	0x0A	0x02	;SHORT	0		0x0BD5	;BYTE	2		5  //エイリークと
+BYTE	0x10	0x02	;SHORT	0		0x0000	;BYTE	0		5	//余白
+BYTE	0x10	0x02	;SHORT	0		0x05F6	;BYTE	3		5	//王都ルネス
+
+//エフラム編 editon=3
+//		mapid	editon			flag	textid			color	addX
+BYTE	0x17	0x03	;SHORT	0		0x0000	;BYTE	0		5	//余白
+BYTE	0x17	0x03	;SHORT	0		0x0BD6	;BYTE	2		5	//エフラムと
+BYTE	0x1D	0x03	;SHORT	0		0x0000	;BYTE	0		5	//余白
+BYTE	0x1D	0x03	;SHORT	0		0x05F6	;BYTE	3		5	//王都ルネス
+
+
+
+BYTE 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff	//term
+
+//color memo
+//0 = white  白色
+//1 = gray   灰色
+//2 = blue   水色
+//3 = yellow 黄色
+//4 = green  緑色
+
+
+ALIGN 4

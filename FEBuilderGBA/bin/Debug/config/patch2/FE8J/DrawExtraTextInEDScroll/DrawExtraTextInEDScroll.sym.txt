@@ -1,0 +1,11 @@
+CheckMapIDLoop=$10
+NotFound=$68
+TABLE=$015C
+CheckTerm=$1E
+CheckEditon=$24
+CheckFlag=$32
+IgnoreData=$42
+Found=$4C
+ShowExtraInfo=$52
+ShowTextLine=$76
+NextEntry=$5A

@@ -1,0 +1,5 @@
+0=White
+1=Gray
+2=Blue
+3=Yellow
+4=Green
