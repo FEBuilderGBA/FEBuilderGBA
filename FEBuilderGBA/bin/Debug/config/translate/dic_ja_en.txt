@@ -1427,6 +1427,7 @@ HPの薬	HP Tonic
 マスト	Mast
 今回	Current
 記録	Record
+看板	Sign
 魔物撃破数	Monsters
 獲得経験値	Exp
 のべ出撃数	Units Used

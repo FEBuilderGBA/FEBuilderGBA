@@ -463,11 +463,34 @@ namespace FEBuilderGBA
             uint addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex) * 4);
             uint levelupList = Program.ROM.u32(addr);
             X_LevelUpAddr.Value = levelupList;
+
+            ShowExtraControlPanel(levelupList);
         }
-        //他のクラスでこのデータを参照しているか?
-        bool UpdateIndependencePanel()
+
+        void ShowExtraControlPanel(uint levelupList)
         {
-            return SkillAssignmentClassSkillSystemForm.UpdateIndependencePanel(this.AddressList, this.AssignLevelUpBaseAddress);
+            if (AddressList.SelectedIndex == 0)
+            {
+                ZeroPointerPanel.Visible = false;
+                IndependencePanel.Visible = false;
+            }
+            else if (levelupList == 0)
+            {
+                ZeroPointerPanel.Visible = true;
+                IndependencePanel.Visible = false;
+            }
+            else
+            {
+                ZeroPointerPanel.Visible = false;
+                IndependencePanel.Visible = IsShowIndependencePanel();
+            }
+        }
+
+
+        //他のユニットでこのデータを参照しているか?
+        bool IsShowIndependencePanel()
+        {
+            return SkillAssignmentClassSkillSystemForm.IsShowIndependencePanel(this.AddressList, this.AssignLevelUpBaseAddress);
         }
 
         public InputFormRef N1_InputFormRef;

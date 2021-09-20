@@ -149,7 +149,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            return SkillAssignmentClassSkillSystemForm.UpdateIndependencePanel(this.AddressList, assignLevelUpAddr);
+            return SkillAssignmentClassSkillSystemForm.IsShowIndependencePanel(this.AddressList, assignLevelUpAddr);
         }
 
         public InputFormRef N1_InputFormRef;

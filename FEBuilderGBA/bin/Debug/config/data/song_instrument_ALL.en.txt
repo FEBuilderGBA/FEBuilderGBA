@@ -94,8 +94,8 @@
 38	Synth Bass 1	958d3d26961da81bfea59a989faf7e69
 40	Violin	299d57b69b3e1d922f86e35bb0bac1d0
 46	Tremolo Strings	2505fe44417a449ff3c50a15527aa0be
-48	Orchestral Harp	55d20c32feae12247684583e0e28f04e
-49	Timpani	6a2feb60bdbbdbba64635f268197b183
+48	Strings1	55d20c32feae12247684583e0e28f04e
+49	Strings2	6a2feb60bdbbdbba64635f268197b183
 50	String Ensemble 1		4b48e6c504c9f5b891b9e7f589e324f8
 51	String Ensemble 2	cdfe68e8da96f3bcd633dd1819d764b4
 54	Choir Aahs	eee32b2c8f9f5d25da83bdb928f18760

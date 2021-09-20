@@ -185,6 +185,27 @@ namespace FEBuilderGBA
             uint addr = AssignLevelUpBaseAddress + (((uint)AddressList.SelectedIndex)*4);
             uint levelupList = Program.ROM.u32(addr);
             X_LevelUpAddr.Value = levelupList;
+
+            ShowExtraControlPanel(levelupList);
+        }
+
+        void ShowExtraControlPanel(uint levelupList)
+        {
+            if (AddressList.SelectedIndex == 0)
+            {
+                ZeroPointerPanel.Visible = false;
+                IndependencePanel.Visible = false;
+            }
+            else if (levelupList == 0)
+            {
+                ZeroPointerPanel.Visible = true;
+                IndependencePanel.Visible = false;
+            }
+            else
+            {
+                ZeroPointerPanel.Visible = false;
+                IndependencePanel.Visible = IsShowIndependencePanel();
+            }
         }
 
         private void N1_B1_ValueChanged(object sender, EventArgs e)
@@ -588,12 +609,12 @@ namespace FEBuilderGBA
         }
 
         //他のクラスでこのデータを参照しているか?
-        bool UpdateIndependencePanel()
+        bool IsShowIndependencePanel()
         {
-            return UpdateIndependencePanel(this.AddressList, this.AssignLevelUpBaseAddress);
+            return IsShowIndependencePanel(this.AddressList, this.AssignLevelUpBaseAddress);
         }
 
-        public static bool UpdateIndependencePanel(ListBox addressList,uint assignLevelUpBaseAddress)
+        public static bool IsShowIndependencePanel(ListBox addressList,uint assignLevelUpBaseAddress)
         {
             if (addressList.SelectedIndex < 0)
             {
