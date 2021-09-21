@@ -299,8 +299,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200XX000000400A0000A0E49E08	Add[XX:UNIT:Character]to join party(LOW)	{UNITPERSOLNAL}	{U}
 40050200XX000000400A0000F406A608	Add[XX:UNIT:Character]to join party(ver2)(LOW)	{UNIT}	{J}
 40050200XX000000400A0000BCE59E08	Add[XX:UNIT:Character]to join party(ver2)(LOW)	{UNIT}	{U}
-40050200XX000000400A0000F00CA608	Have[XX:UNIT:Character]play "destroying a Sacred Stone" FX	{MAPEFFECT}	{J}
-40050200XX000000400A0000B8EB9E08	Have[XX:UNIT:Character]play "destroying a Sacred Stone" FX	{MAPEFFECT}	{U}
+40050200XX000000400A0000F00CA608	Have[XX:UNIT:Character]play "destroying a Sacred Stone" Effect	{MAPEFFECT}	{J}
+40050200XX000000400A0000B8EB9E08	Have[XX:UNIT:Character]play "destroying a Sacred Stone" Effect	{MAPEFFECT}	{U}
 40050200XX000000400A0000F404A608	Erase[XX:UNIT:Character]by superimposing on lord unit(LOW)	{UNITREMOVE}	{J}
 40050200XX000000400A0000BCE39E08	Erase[XX:UNIT:Character]by superimposing on lord unit(LOW)	{UNITREMOVE}	{U}
 40050200XXXXXXXX400A0000F801A608	If Tutorial, Branch[XXXXXXXX:POINTER_EVENT:Event]	{SUBROUTINE}	{J}
@@ -313,12 +313,12 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400D000081650808	Party switch to Ephraim 2   (Permanent)	{U}
 400D000031880808	Party switch to Eirika 2	(Permanent)	{J}
 400D000065650808	Party switch to Eirika 2	(Permanent)	{U}
-400D0000B91B0808	Play Demon King summon FX	{MAPEFFECT}	{J}
-400D000079F80708	Play Demon King summon FX	{MAPEFFECT}	{U}
-400D000001200808	Play Demon King summon FX (floor)	{MAPEFFECT}	{J}
-400D000079F80708	Play Demon King summon FX (floor)	{MAPEFFECT}	{U}
-410D0000B5270808	Play Demon King sealing FX	{MAPEFFECT}	{J}
-410D000074040808	Play Demon King sealing FX	{MAPEFFECT}	{U}
+400D0000B91B0808	Play Demon King summon Effect	{MAPEFFECT}	{J}
+400D000079F80708	Play Demon King summon Effect	{MAPEFFECT}	{U}
+400D000001200808	Play Demon King summon Effect (floor)	{MAPEFFECT}	{J}
+400D0000C1FC0708	Play Demon King summon Effect (floor)	{MAPEFFECT}	{U}
+410D0000B5270808	Play Demon King sealing Effect	{MAPEFFECT}	{J}
+410D000075040808	Play Demon King sealing Effect	{MAPEFFECT}	{U}
 400D000031960C08	Roll Endgame Credits	{ENDING}	{J}
 400D000079480C08	Roll Endgame Credits	{ENDING}	{U}
 400D000041D00B08	Display total number of turns for the ending	{ENDING}	{J}
@@ -351,7 +351,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 410D000081820408	Call name input screen(uses @0080@0020)(LOW)	{U}
 211A0000410D00009981040820220000	Call name input screen(uses @0080@0020)	{MAP}	{J}
 211A0000410D00008182040820220000	Call name input screen(uses @0080@0020)	{MAP}	{U}
-410D000075040808	Play Demon King sealing FX	{MAPEFFECT}	{U}
 40A600000000ZZZZ212AXXXX	Goto next chapter with world map based on designated base.[ZZ:WMLOCATION:World Map Node][XXXX:MAPCHAPTER:Chapter_ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
 212AXXXX	Goto next chapter with world map.[XXXX:MAPCHAPTER:Chapter_ID](MNCH)	@MNCHBUG	{MAP}
 222AXXXX	Goto next chapter without world map.[XXXX:MAPCHAPTER:Chapter_ID](MNC2)	Proceed to the next chapter	@MNC2BUG	{MAP}
@@ -423,8 +422,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2004XXXX	Get a random number[XXXX::Maximum_Number](RANDOMNUMBER)	@STOREC	{COND}
 601800000000000000000000	STARTFADE	{FADE}
 611800000000000000000000	ENDFADE	{FADE}
-2042XXXX	Shake the screen (earthquake FX)[XXXX:EARTHQUAKE:value](EARTHQUAKE_START)	{MAPEFFECT}
-2F420000	Stop shaking the screen (earthquake FX)(EARTHQUAKE_END)	{MAPEFFECT}
+2042XXXX	Shake the screen (earthquake Effect)[XXXX:EARTHQUAKE:value](EARTHQUAKE_START)	{MAPEFFECT}
+2F420000	Stop shaking the screen (earthquake Effect)(EARTHQUAKE_END)	{MAPEFFECT}
 2045XXXX	GLOWING_CROSS[XXXX:UNIT:Character]	Makes a glowing cross effect appear underneath the character
 2F450000	END_GLOWING_CROSS
 200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID]	Return the value of the specified counter	@STOREC	{VAL}	{COND}
@@ -509,18 +508,18 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200XXXXXXXX40050300YYYY0000400A00006C26A708	Ending scene 2 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{J}
 40050200XXXXXXXX40050300YYYY0000400A0000E426A708	Ending scene 3 [XX:POINTER_UNIT:Units][YY:TEXT:Conversation]	{J}
 211A0000400D00002DD00B08	Show tactics evaluation screen	{ENDING}	{J}
-400D0000C97E0808	Torch item FX	{MAPEFFECT}	{J}
+400D0000C97E0808	Torch item Effect	{MAPEFFECT}	{J}
 400D000009190808	Blacks out the map	{J}
 400D0000A9180808	Makes the map a little darker	{J}
-400D0000FD5B0808	Torch item FX	{MAPEFFECT}	{U}
+400D0000FD5B0808	Torch item Effect	{MAPEFFECT}	{U}
 400D000069F50708	Blacks out the map	{U}
 400D0000C9F50708	Make the map a little darker	{U}
 211A0000400D000045570A082022000020171000	Display Support menu on preperation screen	{J}
 211A0000400D00006D190A082022000020171000	Display Support menu on preperation screen	{U}
 400D0000DD600108	Returns the music to the map BGM	{MUSIC}	{J}
 400D0000D1600108	Returns the music to the map BGM	{MUSIC}	{U}
-400D0000317F0808	Display the "Map Clear!"" FX (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{J}
-400D0000655C0808	Display the "Map Clear!"" FX (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{U}
+400D0000317F0808	Display the "Map Clear!"" Effect (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{J}
+400D0000655C0808	Display the "Map Clear!"" Effect (From the Tower of Valni and Lagdou Ruins)	{MAPEFFECT}	{U}
 20000000	NOP
 
 201BXXXX	[XXXX:CONVERSATION_TEXT:Conversation text]Dialog (conversation) with no background (LOW)(TEXTSHOW)	{TEXT}
