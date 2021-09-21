@@ -13945,9 +13945,13 @@ r3=X tile position of menu of the right	{U}
 08076310	IsBattleStatsInPromotionMode	{U}
 080BBA1C	StartEndingBattleDisplay	{J}
 080B6F14	StartEndingBattleDisplay	{U}
-080360B8	在回合开始时造成毒害的过程。	{J}
-08035FB8	在回合开始时造成毒害的过程。	{U}
+080360B8	在回合开始时造成毒害的过程	{J}
+08035FB8	在回合开始时造成毒害的过程	{U}
 080831DC	StartDrawSummonMagicCircleByUnitCoord	在单位所在位置画一个召唤魔方	r0=CurrentProcs r1=@UNIT	{J}
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	在单位所在位置画一个召唤魔方	r0=CurrentProcs r1=@UNIT	{U}
 08078730	IsBattleStatsInPromotionMode	{J}
 08076310	IsBattleStatsInPromotionMode	{U}
+080A971C	设置游戏清除标志	安装部分	{J}
+08009E50	设置游戏清除标志	从 GAMECTRL 调用的代理	{J}
+080A4CD8	设置游戏清除标志	安装部分	{U}
+08009EFC	设置游戏清除标志	从 GAMECTRL 调用的代理	{U}

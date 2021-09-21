@@ -600,7 +600,7 @@ namespace FEBuilderGBA
 
            string ext = U.GetFilenameExt(save.FileName);
            if (save.FilterIndex == 5)
-           {
+           {//dump all
                {
                    string name = U.ChangeExtFilename(filename, ".gif");
                    uint showSectionData = U.atoh(ShowSectionCombo.Text) - 1;
@@ -615,6 +615,14 @@ namespace FEBuilderGBA
                {
                    string name = U.ChangeExtFilename(filename, ".txt");
                    bool enableComment = false;
+                   ImageUtilOAM.ExportBattleAnime(filehint, enableComment, name
+                        , sectionData, frameData, rightToLeftOAM, palettes, palette_count);
+                   string without_comment_name = U.ChangeExtFilename(filename, ".txt" , "_without_comment");
+                   U.Move(name, without_comment_name);
+               }
+               {
+                   string name = U.ChangeExtFilename(filename, ".txt");
+                   bool enableComment = true;
                    ImageUtilOAM.ExportBattleAnime(filehint, enableComment, name
                         , sectionData, frameData, rightToLeftOAM, palettes, palette_count);
                }

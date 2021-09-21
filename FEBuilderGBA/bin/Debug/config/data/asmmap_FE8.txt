@@ -13980,3 +13980,7 @@
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	ユニットの位置に召喚の魔方陣を描画する	r0=CurrentProcs r1=@UNIT	{U}
 08078730	IsBattleStatsInPromotionMode	{J}
 08076310	IsBattleStatsInPromotionMode	{U}
+080A971C	ゲームクリア済みフラグを立てる	実装部	{J}
+08009E50	ゲームクリア済みフラグを立てる	GAMECTRLから呼ばれるプロキシ	{J}
+080A4CD8	ゲームクリア済みフラグを立てる	実装部	{U}
+08009EFC	ゲームクリア済みフラグを立てる	GAMECTRLから呼ばれるプロキシ	{U}

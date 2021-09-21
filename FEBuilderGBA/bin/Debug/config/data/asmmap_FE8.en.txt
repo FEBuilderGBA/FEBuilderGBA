@@ -13995,3 +13995,7 @@ r3=X tile position of menu of right	{U}
 08080E9C	StartDrawSummonMagicCircleByUnitCoord	Draw summon magic square at unit position	r0=CurrentProcs r1=@UNIT	{U}
 08078730	IsBattleStatsInPromotionMode	{J}
 08076310	IsBattleStatsInPromotionMode	{U}
+080A971C	Set the game cleared flag	Immplement part	{J}
+08009E50	Set the game cleared flag	Proxy called from GAMECTRL	{J}
+080A4CD8	Set the game cleared flag	Immplement part	{U}
+08009EFC	Set the game cleared flag	Proxy called from GAMECTRL	{U}
