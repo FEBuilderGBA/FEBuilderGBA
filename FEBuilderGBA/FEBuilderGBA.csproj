@@ -2108,6 +2108,12 @@
     <Compile Include="RAMRewriteToolMAPForm.Designer.cs">
       <DependentUpon>RAMRewriteToolMAPForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemStatBonusesSkillSystemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemStatBonusesSkillSystemsForm.Designer.cs">
+      <DependentUpon>ItemStatBonusesSkillSystemsForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3119,6 +3125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RAMRewriteToolMAPForm.resx">
       <DependentUpon>RAMRewriteToolMAPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemStatBonusesSkillSystemsForm.resx">
+      <DependentUpon>ItemStatBonusesSkillSystemsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

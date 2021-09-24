@@ -132,6 +132,7 @@ namespace FEBuilderGBA
         {
             NO,             //なし
             Vennou,    //for FE8U
+            SkillSystems, //for FE8U
             NoCache = (int)NO_CACHE
         };
         static growth_mod_enum g_Cache_grows_mod_enum = growth_mod_enum.NoCache;
@@ -153,6 +154,16 @@ namespace FEBuilderGBA
             {
                 return growth_mod_enum.Vennou;
             }
+
+            Grep2PatchTableSt[] table2 = new Grep2PatchTableSt[] { 
+                    new Grep2PatchTableSt{ name="SkillSystems", ver="FE8U", data = new byte[]{0x17 ,0x49 ,0x40 ,0x18 ,0x22 ,0x21 ,0x41 ,0x5C ,0x01 ,0x22 ,0x11 ,0x42 ,0x06 ,0xD0 ,0xC0 ,0x68 ,0x00 ,0x28 ,0x03 ,0xD0 ,0x80 ,0x57 ,0x2D ,0x18 ,0x00 ,0x2F ,0x02 ,0xD0 ,0x02 ,0x33 ,0x08 ,0x2B ,0xE5 ,0xDD ,0x20 ,0x1C ,0x10 ,0x49 ,0x0F ,0x4A }},
+                };
+            Grep2PatchTableSt t = GrepPatch(table2);
+            if (t.name == "SkillSystems")
+            {
+                return growth_mod_enum.SkillSystems;
+            }
+
             return growth_mod_enum.NO;
         }
 

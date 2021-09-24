@@ -27,6 +27,14 @@ namespace FEBuilderGBA
                 this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
                 this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
             }
+            //growth mod
+            PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
+            if (growthmod == PatchUtil.growth_mod_enum.SkillSystems
+                || growthmod == PatchUtil.growth_mod_enum.Vennou)
+            {
+                J_34.Text = "Growth_Mod";
+                J_34.AccessibleDescription = "この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。";
+            }
 
 
             this.InputFormRef = Init(this);
@@ -265,6 +273,14 @@ namespace FEBuilderGBA
         {
 
         }
+        static void MakeAllDataLength_StatBoosterVennou(List<Address> list, uint addr , int i)
+        {
+
+        }
+        static void MakeAllDataLength_StatBoosterSkillSystems(List<Address> list, uint addr, int i)
+        {
+
+        }
 
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
@@ -275,30 +291,31 @@ namespace FEBuilderGBA
 
                 //SkillSystemsによる 特効リワーク
                 PatchUtil.class_type_enum effectivenesRework = PatchUtil.SearchClassType();
+                //grows mod
+                PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
 
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
                     uint itemStatBonuses = Program.ROM.p32(addr + 12);
-                    uint vennoExtends = Program.ROM.u8(addr + 34);
                     if (itemStatBonuses > 0)
                     {
-                        if (vennoExtends == 1)
-                        {//vennoの拡張 16バイトです
-                            FEBuilderGBA.Address.AddAddress(list, itemStatBonuses
-                                , 16
-                                , addr + 12
-                                , "StatBooster " + U.To0xHexString(i)
-                                , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                        uint vennoExtends = Program.ROM.u8(addr + 34);
+                        uint statBonusesSize = 12; //バニラは12バイト
+                        if (growthmod == PatchUtil.growth_mod_enum.Vennou && vennoExtends == 1)
+                        {
+                            statBonusesSize = 16; //vennou拡張は16バイト
                         }
-                        else
-                        {//通常は12バイト
-                            FEBuilderGBA.Address.AddAddress(list, itemStatBonuses
-                                , 12
-                                , addr + 12
-                                , "StatBooster " + U.To0xHexString(i)
-                                , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                        else if (growthmod == PatchUtil.growth_mod_enum.SkillSystems && vennoExtends == 1)
+                        {
+                            statBonusesSize = 20; //SkillSystemsは20バイト
                         }
+
+                        FEBuilderGBA.Address.AddAddress(list, itemStatBonuses
+                            , statBonusesSize
+                            , addr + 12
+                            , "StatBooster " + U.To0xHexString(i)
+                            , FEBuilderGBA.Address.DataTypeEnum.BIN);
                     }
 
                     uint itemEffectiveness = Program.ROM.p32(addr + 16);
@@ -751,6 +768,7 @@ namespace FEBuilderGBA
             out_pointer = addr + 16;
             return Program.ROM.p32(addr + 16);
         }
+
 
     }
 }

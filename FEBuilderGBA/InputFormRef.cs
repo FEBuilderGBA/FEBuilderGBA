@@ -3116,16 +3116,11 @@ namespace FEBuilderGBA
             {
                 alllocQMessage = R._("このアイテムに、能力補正を新規に割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。能力補正画面より値を割り振ってください。");
-                if (CheckVennoExtendsStatBooster(src_object))
-                {
-                    alloc = new byte[16];
-                    alloc[1] = 5;
-                }
-                else
-                {
-                    alloc = new byte[20];
-                    alloc[1] = 5;
-                }
+
+                //面倒なので、安全圏の20確保します
+                alloc = new byte[20];
+                alloc[1] = 5; //HP+5
+
             }
             else if (arg1 == "EFFECTIVENESS")
             {
@@ -3752,14 +3747,26 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                if (CheckVennoExtendsStatBooster(src_object))
+                PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
+                if (growthmod == PatchUtil.growth_mod_enum.Vennou)
                 {
-                    InputFormRef.JumpForm<ItemStatBonusesVennoForm>(value, "AddressList", src_object);
+                    if (CheckItemB34ExtendsStatBooster(src_object))
+                    {
+                        InputFormRef.JumpForm<ItemStatBonusesVennoForm>(value, "AddressList", src_object);
+                        return;
+                    }
                 }
-                else
+                else if (growthmod == PatchUtil.growth_mod_enum.SkillSystems)
                 {
-                    InputFormRef.JumpForm<ItemStatBonusesForm>(value, "AddressList", src_object);
+                    if (CheckItemB34ExtendsStatBooster(src_object))
+                    {
+                        InputFormRef.JumpForm<ItemStatBonusesSkillSystemsForm>(value, "AddressList", src_object);
+                        return;
+                    }
                 }
+              
+                InputFormRef.JumpForm<ItemStatBonusesForm>(value, "AddressList", src_object);
+                return;
             }
             else if (linktype == "EFFECTIVENESS")
             {//特効
@@ -4516,12 +4523,8 @@ namespace FEBuilderGBA
             //違う
             return false;
         }
-        static bool CheckVennoExtendsStatBooster(NumericUpDown value)
+        static bool CheckItemB34ExtendsStatBooster(NumericUpDown value)
         {
-            if (PatchUtil.SearchGrowsMod() != PatchUtil.growth_mod_enum.Vennou)
-            {
-                return false;
-            }
             //Vennoが独自に拡張したstatbooster?
 
             //確保されていないので自動確保を試みる.
