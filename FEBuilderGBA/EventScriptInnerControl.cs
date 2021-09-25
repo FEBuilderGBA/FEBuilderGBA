@@ -2421,10 +2421,34 @@ namespace FEBuilderGBA
             FireChanegCommandByDirectMode(isDirectMode: false);
         }
 
+        byte[] CloneScriptDefaultByte(EventScript.Script script)
+        {
+            byte[] selectedByteData = (byte[])script.Data.Clone();
+            for (int n = 0; n < script.Args.Length; n++)
+            {
+                EventScript.Arg arg = script.Args[n];
+                if (selectedByteData.Length <= arg.Position)
+                {
+                    continue;
+                }
+
+                uint v = U.u8(selectedByteData, (uint)(arg.Position));
+                if (arg.Type == EventScript.ArgType.FSEC)
+                {//FSEC
+                    if (v == 0)
+                    {//FSECが0ならディフォルト値60を設定する
+                        U.write_u8(selectedByteData, (uint)arg.Position, 60);
+                    }
+                }
+            }
+            return selectedByteData;
+        }
+
         void InsertEventScript(EventScript.Script script)
         {
             //選択した命令を代入
-            byte[] selectedByteData = script.Data;
+//            byte[] selectedByteData = script.Data;
+            byte[] selectedByteData = CloneScriptDefaultByte(script);
             this.ASMTextBox.Text = U.convertByteToStringDump(selectedByteData);
             this.ScriptCodeName.Text = EventScript.makeCommandComboText(script, false);
 

@@ -2467,6 +2467,9 @@ Performs the specified wait processing.
 :Safetyは、プレイヤーから攻撃される危険なタイルに立ち寄らなくなる数字です。\r\n小さい数字ほど危険なタイルに立ち寄りません。
 Safety is a number that prevents you from stopping on a dangerous tile attacked by the player.\r\nThe smaller the number, the less dangerous the tile.
 
+:\r\nこの命令は、スタートボタンを押すとスキップされるので、確実に実行したい場合はEVBIT_MODIFYでスタートボタンを無視するようにするか、スキップされたとしてもイベントが破綻しないようにしてください。
+\r\nThis instruction is skipped when you press the start button, so if you want to make sure that it is executed, either ignore the start button with EVBIT_MODIFY or make sure that the event does not fail even if it is skipped.
+
 :この領域は利用できません
 Unable to use this area.
 
@@ -5527,6 +5530,9 @@ Item Type
 :使用画面
 Use Screen
 
+:この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。
+This extension requires more data than a regular stat booster.\r\nAllocate the stat booster area after setting this extended flag to 1.\r\nIf you have already reserved it, set the stat booster address to 0 and reserve it again.
+
 :アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
 The description field of the item is empty.\r\nIn FE 8, when emptying, you need to insert double spaces.
 
@@ -5586,6 +5592,12 @@ If you want to add an item, please add it from the "New Stat Booster" button on 
 
 :成長率補正
 Growth rate correction
+
+:余白
+Margin
+
+:能力補正 SkillSystems Extends
+Ability correction SkillSystems Extends.
 
 :能力補正 Venno Extends
 Ability correctionVennoExtends
@@ -8427,9 +8439,6 @@ To move the data, it is necessary to rewrite all the\r\npointers that are pointi
 
 :07=移動後の領域には前方1024バイトの余白を作る
 07=Make a 1024-byte margin in front of the newly allocated space  
-
-:余白
-Margin
 
 :00=移動前のデータは0x00でクリア
 00=Old data is filled with 0x00s

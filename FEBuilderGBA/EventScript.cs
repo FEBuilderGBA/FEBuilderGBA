@@ -1174,6 +1174,10 @@ namespace FEBuilderGBA
             {
                 return R._("Safetyは、プレイヤーから攻撃される危険なタイルに立ち寄らなくなる数字です。\r\n小さい数字ほど危険なタイルに立ち寄りません。");
             }
+            else if (hint == "@SKIPSTARTBUTTOM")
+            {
+                return R._("\r\nこの命令は、スタートボタンを押すとスキップされるので、確実に実行したい場合はEVBIT_MODIFYでスタートボタンを無視するようにするか、スキップされたとしてもイベントが破綻しないようにしてください。");
+            }
             
             return hint.Replace("\\r\\n", "\r\n");
         }
