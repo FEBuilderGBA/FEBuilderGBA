@@ -4173,5 +4173,33 @@ namespace FEBuilderGBA
         {
             U.FireOnClick(J_BGM);
         }
+
+        private void CHEAT_UNIT_WARP_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnectShowError())
+            {
+                return;
+            }
+            if (!CheckUnitSelectAndError())
+            {
+                return;
+            }
+            Debug.Assert(U.is_02RAMPointer(CurrentControlUnitRAMAddress));
+
+            uint base_addr = CurrentControlUnitRAMAddress;
+            uint id = 16;//x
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                id = 14; //x
+            }
+            RAMRewriteToolMAPForm f = (RAMRewriteToolMAPForm)InputFormRef.JumpFormLow<RAMRewriteToolMAPForm>();
+            f.Init(base_addr + id);
+            DialogResult dr = f.ShowDialog();
+
+            if (dr == System.Windows.Forms.DialogResult.Retry)
+            {
+                EmulatorMemoryUtil.CHEAT_CALLUpdateUnits(base_addr);
+            }
+        }
     }
 }

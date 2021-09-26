@@ -13999,3 +13999,13 @@ r3=X tile position of menu of right	{U}
 08009E50	Set the game cleared flag	Proxy called from GAMECTRL	{J}
 080A4CD8	Set the game cleared flag	Immplement part	{U}
 08009EFC	Set the game cleared flag	Proxy called from GAMECTRL	{U}
+080BB328	LoadEDCharactersBackgoundImages	{J}
+080BBEE8	StartEndingBattleDisplay_Text	{J}
+080BBF08	EndEndingBattleDisplay_Text	{J}
+080BB350	EndingBattleDisplay_FadeInDarkToNormal	{J}
+080BBD60	StartEndingBattleDisplay_Pair	{J}
+080B67E8	LoadEDCharactersBackgoundImages	{U}
+080B742C	StartEndingBattleDisplay_Text	{U}
+080b744c	EndEndingBattleDisplay_Text	{U}
+080B6810	EndingBattleDisplay_FadeInDarkToNormal	{U}
+080B72A4	StartEndingBattleDisplay_Pair	{U}

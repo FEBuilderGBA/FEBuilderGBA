@@ -814,3 +814,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 00080450=MapAnimSleep	{J} //08A1439C
 0008321C=DrawSummonMagicCircle	{J}	//08A14D64
 00080EDC=DrawSummonMagicCircle	{U}	//089A46DC
+000BBF04=EndingBattleDisplay_Text	{J}	//08AC0CB0
+000BBD7C=EndingBattleDisplay_Pair	{J}	//08AC0C78
+000B7448=EndingBattleDisplay_Text	{U}	//08A3D478
+000B72C0=EndingBattleDisplay_Pair	{U}	//08A3D440

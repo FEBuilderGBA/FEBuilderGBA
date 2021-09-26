@@ -13955,3 +13955,13 @@ r3=X tile position of menu of the right	{U}
 08009E50	设置游戏清除标志	从 GAMECTRL 调用的代理	{J}
 080A4CD8	设置游戏清除标志	安装部分	{U}
 08009EFC	设置游戏清除标志	从 GAMECTRL 调用的代理	{U}
+080BB328	LoadEDCharactersBackgoundImages	{J}
+080BBEE8	StartEndingBattleDisplay_Text	{J}
+080BBF08	EndEndingBattleDisplay_Text	{J}
+080BB350	EndingBattleDisplay_FadeInDarkToNormal	{J}
+080BBD60	StartEndingBattleDisplay_Pair	{J}
+080B67E8	LoadEDCharactersBackgoundImages	{U}
+080B742C	StartEndingBattleDisplay_Text	{U}
+080b744c	EndEndingBattleDisplay_Text	{U}
+080B6810	EndingBattleDisplay_FadeInDarkToNormal	{U}
+080B72A4	StartEndingBattleDisplay_Pair	{U}

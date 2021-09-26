@@ -13984,3 +13984,17 @@
 08009E50	ゲームクリア済みフラグを立てる	GAMECTRLから呼ばれるプロキシ	{J}
 080A4CD8	ゲームクリア済みフラグを立てる	実装部	{U}
 08009EFC	ゲームクリア済みフラグを立てる	GAMECTRLから呼ばれるプロキシ	{U}
+080BB328	LoadEDCharactersBackgoundImages	{J}
+080BBEE8	StartEndingBattleDisplay_Text	{J}
+080BBF08	EndEndingBattleDisplay_Text	{J}
+080BB350	EndingBattleDisplay_FadeInDarkToNormal	{J}
+080BBD60	StartEndingBattleDisplay_Pair	{J}
+080B67E8	LoadEDCharactersBackgoundImages	{U}
+080B742C	StartEndingBattleDisplay_Text	{U}
+080b744c	EndEndingBattleDisplay_Text	{U}
+080B6810	EndingBattleDisplay_FadeInDarkToNormal	{U}
+080B72A4	StartEndingBattleDisplay_Pair	{U}
+080BB1F8	EndingBattleDisplay_GetUnitTitleName	{J}
+080bb460	EndingBattleDisplay_InitTextFonts	{J}
+080bb7e8	EndingBattleDisplay_GetBWLData	{J}
+080BB740	StartEndingBattleDisplay_Text_Proxy	{J}
