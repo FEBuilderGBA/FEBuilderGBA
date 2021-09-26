@@ -1,0 +1,17 @@
+ORG $0B769C	//Skip SetupBackgrounds and SetDefaultColorEffects
+BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00
+
+ORG $0B76D8	//skip CopyToPaletteBuffer and CallARM_FillTileRect and BG_EnableSyncByMask
+BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00
+
+ORG $0B8028	//skip BG_Fill 0x3
+BYTE $00 $00 $00 $00
+
+ORG $0B80C8 //skip UnLZ77Decompress,CopyToPaletteBuffer,CallARM_FillTileRect
+BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00
+
+ORG $0B80F4   //skip fog
+BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00
+
+ORG $A3D698  //skip fade-out
+BYTE $0E $00 $00 $00 $00 $00 $00 $00

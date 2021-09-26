@@ -1,0 +1,10 @@
+NAME=エンディングのクリアターン一覧を表示する時の背景に直前に表示している背景画像を利用する
+INFO=イベント命令でクリアターン数を表示するときに、直前に描画している背景の画像をそのまま利用するようにします。\r\nディフォルトでは、セーブデータの背景と同じ画像が利用されます。\r\n具体的に言うとこのパッチでは、BG3に描画されている背景をクリアせずにそのまま流用します。\r\nイベント命令で背景を選択できるので、異なる条件によっては違う背景を表示できます。\r\nこのパッチでは背景だけをイベントから指定できるようにしますが、BGMも別のパッチを利用することでイベントから指定できます。
+
+TYPE=EA
+EA=Install.event
+PATCHED_IF:0x0B769C=0x00 0x00 0x00 0x00
+NAME.en=Use background image displayed immediately before as the background when display clear turn list of ending
+INFO.en=When displaying the number of clear turns in the event command, the background image drawn immediately before is used as it is.\r\nBy default, the same image as the background of the save data is used.\r\nSpecifically, in this patch, the background drawn on BG3 is not cleared and is used as it is.\r\nSince the background can be selected with the event command, different backgrounds can be displayed depending on different conditions.\r\nIn this patch, only the background can be specified from the event, but BGM can also be specified from the event by using another patch.
+NAME.zh=显示清晰的结局回合列表时，使用之前显示的背景图像作为背景。
+INFO.zh=在事件命令中显示清除圈数时，将直接使用之前绘制的背景图像。\r\n默认情况下，使用与保存数据背景相同的图像。\r\n具体来说，在这个补丁中，BG3 上绘制的背景没有被清除，而是按原样使用。\r\n由于可以通过事件命令选择背景，因此可以根据不同的条件显示不同的背景。\r\n在此补丁中，只能从事件中指定背景，但也可以使用其他补丁从事件中指定 BGM。
