@@ -1174,8 +1174,14 @@ namespace FEBuilderGBA
 
             this.PALETTE.Value = U.toOffset(palette);
             this.PALETTENO.Value = 0;
+            U.SelectedIndexSafety(this.PaletteOption, paletteType);
 
             this.Image.Focus();
+
+            if (paletteCount >= 1)
+            {
+                USE_PALETTE_NUMBER.Text = paletteCount.ToString();
+            }
         }
 
         private void PaletteType_SelectedIndexChanged(object sender, EventArgs e)
@@ -1183,7 +1189,131 @@ namespace FEBuilderGBA
             ImageOption_SelectedIndexChanged(sender, e);
         }
 
+        private void DataDumpButton_Click(object sender, EventArgs e)
+        {
+            if (this.DrawBimap == null)
+            {
+                return;
+            }
+            string savefilename = 
+            ImageFormRef.ExportImage(this
+                , this.DrawBimap
+                , InputFormRef.MakeSaveImageFilename(this, U.ToHexString((uint)Image.Value))
+                , (int)U.atoi(this.USE_PALETTE_NUMBER.Text)
+                );
+            if (savefilename == "")
+            {
+                return;
+            }
 
+            if (ImageOption.SelectedIndex == 0 || ImageOption.SelectedIndex == 3)
+            {//圧縮画像
+                byte[] image = LZ77.GetCompressDataLow(Program.ROM.Data
+                    , U.toOffset((uint)Image.Value));
+                if (image.Length > 0)
+                {
+                    U.WriteAllBytes(savefilename + ".dmp", image);
+                }
+            }
+            else if (ImageOption.SelectedIndex == 2)
+            {//第2圧縮画像
+                byte[] image = LZ77.GetCompressDataLow(Program.ROM.Data
+                    , U.toOffset((uint)Image.Value));
+                if (image.Length > 0)
+                {
+                    U.WriteAllBytes(savefilename + ".dmp", image);
+                }
 
+                byte[] image2 = LZ77.GetCompressDataLow(Program.ROM.Data
+                    , U.toOffset((uint)Image2.Value));
+                if (image.Length > 0)
+                {
+                    U.WriteAllBytes(savefilename + ".img2.dmp", image2);
+                }
+            }
+            else
+            {//無圧縮画像
+                uint image_size = ((uint)PicWidth.Value * 8 / 2) * ((uint)PicHeight.Value * 8);
+                byte[] image = U.getBinaryData(Program.ROM.Data, U.toOffset((uint)Image.Value), image_size);
+                U.WriteAllBytes(savefilename + ".dmp", image);
+            }
+
+            if (PaletteOption.SelectedIndex == 1)
+            {//lz77 palette
+                byte[] palette = LZ77.GetCompressDataLow(Program.ROM.Data
+                    , U.toOffset((uint)PALETTE.Value));
+                if (palette.Length > 0)
+                {
+                    U.WriteAllBytes(savefilename + ".pal.dmp", palette);
+                }
+            }
+            else
+            {//通常のパレット
+                uint palette_addr = ToPaletteOffset((uint)PALETTE.Value, (uint)PALETTENO.Value);
+
+                uint palette_count = U.atoi(this.USE_PALETTE_NUMBER.Text);
+                if (palette_count < 0)
+                {//パレットがないのはありえないので.
+                    palette_count = 1;
+                }
+                if (ImageOption.SelectedIndex == 3)
+                {//256色
+                    palette_count = 16;
+                }
+
+                byte[] palette = Program.ROM.getBinaryData(palette_addr, 0x20 * palette_count);
+                U.WriteAllBytes(savefilename + ".pal.dmp", palette);
+            }
+
+            if (TSAOption.SelectedIndex == 0)
+            {//TSAを利用しない
+            }
+            else if (TSAOption.SelectedIndex == 1 || TSAOption.SelectedIndex == 2)
+            {//圧縮TSAを利用する , or 圧縮ヘッダ付きTSAを利用する
+                byte[] tsa = LZ77.GetCompressDataLow(Program.ROM.Data
+                    , U.toOffset((uint)TSA.Value));
+                if (tsa.Length > 0)
+                {
+                    U.WriteAllBytes(savefilename + ".tsa.dmp", tsa);
+                }
+
+            }
+            else if (TSAOption.SelectedIndex == 3)
+            {//無圧縮ヘッダ付きTSAを利用する
+                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_size = ImageUtil.CalcByteLengthForHeaderTSAData(Program.ROM.Data, (int)tsa_addr);
+                if (tsa_size > 0)
+                {
+                    byte[] tsa = Program.ROM.getBinaryData(tsa_addr, tsa_size);
+                    U.WriteAllBytes(savefilename + ".tsa.dmp", tsa);
+                }
+            }
+            else if (TSAOption.SelectedIndex == 4)
+            {//無圧縮TSAを利用する
+                uint width = (uint)PicWidth.Value * 8;
+                uint height = (uint)PicHeight.Value * 8;
+
+                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_size = width * height / 32;
+                if (tsa_size > 0)
+                {
+                    byte[] tsa = Program.ROM.getBinaryData(tsa_addr, tsa_size);
+                    U.WriteAllBytes(savefilename + ".tsa.dmp", tsa);
+                }
+            }
+            else if (TSAOption.SelectedIndex == 5)
+            {//パレットマップとして解釈する
+                uint width = (uint)PicWidth.Value * 8;
+                uint height = (uint)PicHeight.Value * 8;
+
+                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_size = width * height / 2;
+                if (tsa_size > 0)
+                {
+                    byte[] tsa = Program.ROM.getBinaryData(tsa_addr, tsa_size);
+                    U.WriteAllBytes(savefilename + ".tsa.dmp", tsa);
+                }
+            }
+        }
     }
 }

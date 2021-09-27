@@ -30,6 +30,9 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.X_REF = new FEBuilderGBA.ListBoxEx();
+            this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.P0 = new System.Windows.Forms.NumericUpDown();
@@ -38,7 +41,6 @@
             this.J_8 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
-            this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
@@ -60,13 +62,12 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_REF = new FEBuilderGBA.ListBoxEx();
-            this.label8 = new System.Windows.Forms.Label();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.DragTargetPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.DragTargetPanel2.SuspendLayout();
@@ -106,6 +107,40 @@
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(1051, 560);
             this.DragTargetPanel.TabIndex = 1;
+            // 
+            // X_REF
+            // 
+            this.X_REF.FormattingEnabled = true;
+            this.X_REF.IntegralHeight = false;
+            this.X_REF.ItemHeight = 18;
+            this.X_REF.Location = new System.Drawing.Point(794, 29);
+            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
+            this.X_REF.Name = "X_REF";
+            this.X_REF.Size = new System.Drawing.Size(256, 522);
+            this.X_REF.TabIndex = 197;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
+            // 
+            // X_BG_PIC
+            // 
+            this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_BG_PIC.Location = new System.Drawing.Point(390, 7);
+            this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_BG_PIC.Name = "X_BG_PIC";
+            this.X_BG_PIC.Size = new System.Drawing.Size(404, 317);
+            this.X_BG_PIC.TabIndex = 67;
+            this.X_BG_PIC.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(794, 4);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(257, 26);
+            this.label8.TabIndex = 201;
+            this.label8.Text = "参照箇所";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Comment
             // 
@@ -203,16 +238,6 @@
             this.J_0.Text = "画像";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_BG_PIC
-            // 
-            this.X_BG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_BG_PIC.Location = new System.Drawing.Point(390, 7);
-            this.X_BG_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_BG_PIC.Name = "X_BG_PIC";
-            this.X_BG_PIC.Size = new System.Drawing.Size(404, 317);
-            this.X_BG_PIC.TabIndex = 67;
-            this.X_BG_PIC.TabStop = false;
-            // 
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
@@ -300,6 +325,7 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.GraphicsToolButton);
             this.DragTargetPanel2.Controls.Add(this.DecreaseColorTSAToolButton);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
@@ -311,7 +337,7 @@
             // 
             // DecreaseColorTSAToolButton
             // 
-            this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(611, 9);
+            this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(580, 9);
             this.DecreaseColorTSAToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.DecreaseColorTSAToolButton.Name = "DecreaseColorTSAToolButton";
             this.DecreaseColorTSAToolButton.Size = new System.Drawing.Size(206, 30);
@@ -453,29 +479,16 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // X_REF
+            // GraphicsToolButton
             // 
-            this.X_REF.FormattingEnabled = true;
-            this.X_REF.IntegralHeight = false;
-            this.X_REF.ItemHeight = 18;
-            this.X_REF.Location = new System.Drawing.Point(794, 29);
-            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
-            this.X_REF.Name = "X_REF";
-            this.X_REF.Size = new System.Drawing.Size(256, 522);
-            this.X_REF.TabIndex = 197;
-            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
-            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
-            // 
-            // label8
-            // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(794, 4);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(257, 26);
-            this.label8.TabIndex = 201;
-            this.label8.Text = "参照箇所";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GraphicsToolButton.Location = new System.Drawing.Point(794, 9);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageBGForm
             // 
@@ -494,10 +507,10 @@
             this.Load += new System.EventHandler(this.ImageBGForm_Load);
             this.DragTargetPanel.ResumeLayout(false);
             this.DragTargetPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
@@ -546,5 +559,6 @@
         private System.Windows.Forms.Label label4;
         private ListBoxEx X_REF;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button GraphicsToolButton;
     }
 }

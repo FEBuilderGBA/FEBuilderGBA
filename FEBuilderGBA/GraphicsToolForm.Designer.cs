@@ -66,6 +66,7 @@
             this.Image2 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.KeepTSAComboBox = new System.Windows.Forms.ComboBox();
+            this.DataDumpButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTENO)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
@@ -416,6 +417,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.DataDumpButton);
             this.panel2.Controls.Add(this.PaletteEditorButton);
             this.panel2.Controls.Add(this.TSAEditorButton);
             this.panel2.Controls.Add(this.ImportButton);
@@ -429,7 +431,7 @@
             // 
             // PaletteEditorButton
             // 
-            this.PaletteEditorButton.Location = new System.Drawing.Point(504, 3);
+            this.PaletteEditorButton.Location = new System.Drawing.Point(595, 4);
             this.PaletteEditorButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteEditorButton.Name = "PaletteEditorButton";
             this.PaletteEditorButton.Size = new System.Drawing.Size(160, 41);
@@ -440,7 +442,7 @@
             // 
             // TSAEditorButton
             // 
-            this.TSAEditorButton.Location = new System.Drawing.Point(293, 3);
+            this.TSAEditorButton.Location = new System.Drawing.Point(415, 4);
             this.TSAEditorButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TSAEditorButton.Name = "TSAEditorButton";
             this.TSAEditorButton.Size = new System.Drawing.Size(160, 41);
@@ -451,7 +453,7 @@
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(702, 4);
+            this.ImportButton.Location = new System.Drawing.Point(775, 4);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(131, 40);
@@ -462,7 +464,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(890, 4);
+            this.ExportButton.Location = new System.Drawing.Point(927, 4);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(131, 40);
@@ -473,7 +475,7 @@
             // 
             // PatchMakerButton
             // 
-            this.PatchMakerButton.Location = new System.Drawing.Point(1094, 4);
+            this.PatchMakerButton.Location = new System.Drawing.Point(1089, 4);
             this.PatchMakerButton.Margin = new System.Windows.Forms.Padding(4);
             this.PatchMakerButton.Name = "PatchMakerButton";
             this.PatchMakerButton.Size = new System.Drawing.Size(131, 40);
@@ -604,6 +606,17 @@
             this.KeepTSAComboBox.TabIndex = 10;
             this.KeepTSAComboBox.SelectedIndexChanged += new System.EventHandler(this.KeepTSAComboBox_SelectedIndexChanged);
             // 
+            // DataDumpButton
+            // 
+            this.DataDumpButton.Location = new System.Drawing.Point(231, 4);
+            this.DataDumpButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.DataDumpButton.Name = "DataDumpButton";
+            this.DataDumpButton.Size = new System.Drawing.Size(160, 41);
+            this.DataDumpButton.TabIndex = 5;
+            this.DataDumpButton.Text = "Data Dump";
+            this.DataDumpButton.UseVisualStyleBackColor = true;
+            this.DataDumpButton.Click += new System.EventHandler(this.DataDumpButton_Click);
+            // 
             // GraphicsToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -678,6 +691,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel SecondImagePanel;
         private System.Windows.Forms.ComboBox PaletteOption;
+        private System.Windows.Forms.Button DataDumpButton;
 
     }
 }

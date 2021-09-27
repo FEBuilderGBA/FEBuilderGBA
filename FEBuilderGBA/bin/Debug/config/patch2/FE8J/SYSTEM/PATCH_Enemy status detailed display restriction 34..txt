@@ -10,9 +10,11 @@ TAG=#ENGINE
 ADDRESS=0x0801C59A 0x08089C56 0x0808971A
 ADDRESS_TYPE=CLASS
 
+INFO=このクラスはステータス表示を抑制し表示しません。
 AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
 INFO.en=Disables opening the Status menu to view detailed unit info for the selected class.\r\n
+INFO.zh=此类抑制并且不显示状态显示。

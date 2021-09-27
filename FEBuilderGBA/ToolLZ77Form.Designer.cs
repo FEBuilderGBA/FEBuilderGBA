@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.DeCompressDESTFilename = new FEBuilderGBA.TextBoxEx();
             this.DeCompressDESTSelectButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.DeCompressSRCFilename = new FEBuilderGBA.TextBoxEx();
             this.DeCompressSRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new FEBuilderGBA.CustomColorGroupBox();
             this.CompressDESTFilename = new FEBuilderGBA.TextBoxEx();
             this.CompressDESTSelectButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,45 +44,33 @@
             this.CompressSRCFilename = new FEBuilderGBA.TextBoxEx();
             this.CompressSRCSelectButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.ZeroClearTo = new System.Windows.Forms.NumericUpDown();
+            this.ZeroClearFrom = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.ZeroClearButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.ZeroClearFrom = new System.Windows.Forms.NumericUpDown();
-            this.ZeroClearTo = new System.Windows.Forms.NumericUpDown();
-            this.groupBox1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.customColorGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BorderColor = System.Drawing.Color.Empty;
-            this.groupBox1.Controls.Add(this.DeCompressDESTFilename);
-            this.groupBox1.Controls.Add(this.DeCompressDESTSelectButton);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.DeCompressFireButton);
-            this.groupBox1.Controls.Add(this.DeCompressAddress);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.DeCompressSRCFilename);
-            this.groupBox1.Controls.Add(this.DeCompressSRCSelectButton);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(16, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(670, 174);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "解凍する";
             // 
             // DeCompressDESTFilename
             // 
             this.DeCompressDESTFilename.ErrorMessage = "";
-            this.DeCompressDESTFilename.Location = new System.Drawing.Point(310, 88);
+            this.DeCompressDESTFilename.Location = new System.Drawing.Point(310, 77);
             this.DeCompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressDESTFilename.Name = "DeCompressDESTFilename";
             this.DeCompressDESTFilename.Placeholder = "";
@@ -94,7 +80,7 @@
             // 
             // DeCompressDESTSelectButton
             // 
-            this.DeCompressDESTSelectButton.Location = new System.Drawing.Point(172, 85);
+            this.DeCompressDESTSelectButton.Location = new System.Drawing.Point(172, 74);
             this.DeCompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressDESTSelectButton.Name = "DeCompressDESTSelectButton";
             this.DeCompressDESTSelectButton.Size = new System.Drawing.Size(130, 31);
@@ -106,7 +92,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(7, 83);
+            this.label4.Location = new System.Drawing.Point(7, 72);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 31);
@@ -116,7 +102,7 @@
             // 
             // DeCompressFireButton
             // 
-            this.DeCompressFireButton.Location = new System.Drawing.Point(172, 132);
+            this.DeCompressFireButton.Location = new System.Drawing.Point(172, 121);
             this.DeCompressFireButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressFireButton.Name = "DeCompressFireButton";
             this.DeCompressFireButton.Size = new System.Drawing.Size(462, 31);
@@ -128,7 +114,7 @@
             // DeCompressAddress
             // 
             this.DeCompressAddress.Hexadecimal = true;
-            this.DeCompressAddress.Location = new System.Drawing.Point(172, 58);
+            this.DeCompressAddress.Location = new System.Drawing.Point(172, 47);
             this.DeCompressAddress.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressAddress.Maximum = new decimal(new int[] {
             1874919423,
@@ -142,7 +128,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(7, 53);
+            this.label1.Location = new System.Drawing.Point(7, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 31);
@@ -153,7 +139,7 @@
             // DeCompressSRCFilename
             // 
             this.DeCompressSRCFilename.ErrorMessage = "";
-            this.DeCompressSRCFilename.Location = new System.Drawing.Point(310, 24);
+            this.DeCompressSRCFilename.Location = new System.Drawing.Point(310, 13);
             this.DeCompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressSRCFilename.Name = "DeCompressSRCFilename";
             this.DeCompressSRCFilename.Placeholder = "";
@@ -163,7 +149,7 @@
             // 
             // DeCompressSRCSelectButton
             // 
-            this.DeCompressSRCSelectButton.Location = new System.Drawing.Point(172, 20);
+            this.DeCompressSRCSelectButton.Location = new System.Drawing.Point(172, 9);
             this.DeCompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressSRCSelectButton.Name = "DeCompressSRCSelectButton";
             this.DeCompressSRCSelectButton.Size = new System.Drawing.Size(130, 31);
@@ -175,7 +161,7 @@
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(7, 23);
+            this.label9.Location = new System.Drawing.Point(7, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(157, 31);
@@ -183,29 +169,10 @@
             this.label9.Text = "SRC";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BorderColor = System.Drawing.Color.Empty;
-            this.groupBox2.Controls.Add(this.CompressDESTFilename);
-            this.groupBox2.Controls.Add(this.CompressDESTSelectButton);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.CompressFireButton);
-            this.groupBox2.Controls.Add(this.CompressSRCFilename);
-            this.groupBox2.Controls.Add(this.CompressSRCSelectButton);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(14, 196);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(670, 156);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "圧縮する";
-            // 
             // CompressDESTFilename
             // 
             this.CompressDESTFilename.ErrorMessage = "";
-            this.CompressDESTFilename.Location = new System.Drawing.Point(310, 55);
+            this.CompressDESTFilename.Location = new System.Drawing.Point(310, 45);
             this.CompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
             this.CompressDESTFilename.Name = "CompressDESTFilename";
             this.CompressDESTFilename.Placeholder = "";
@@ -215,7 +182,7 @@
             // 
             // CompressDESTSelectButton
             // 
-            this.CompressDESTSelectButton.Location = new System.Drawing.Point(172, 52);
+            this.CompressDESTSelectButton.Location = new System.Drawing.Point(172, 42);
             this.CompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressDESTSelectButton.Name = "CompressDESTSelectButton";
             this.CompressDESTSelectButton.Size = new System.Drawing.Size(130, 31);
@@ -227,7 +194,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(7, 54);
+            this.label3.Location = new System.Drawing.Point(7, 44);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 31);
@@ -237,7 +204,7 @@
             // 
             // CompressFireButton
             // 
-            this.CompressFireButton.Location = new System.Drawing.Point(172, 96);
+            this.CompressFireButton.Location = new System.Drawing.Point(172, 86);
             this.CompressFireButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressFireButton.Name = "CompressFireButton";
             this.CompressFireButton.Size = new System.Drawing.Size(462, 31);
@@ -249,7 +216,7 @@
             // CompressSRCFilename
             // 
             this.CompressSRCFilename.ErrorMessage = "";
-            this.CompressSRCFilename.Location = new System.Drawing.Point(310, 25);
+            this.CompressSRCFilename.Location = new System.Drawing.Point(310, 15);
             this.CompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
             this.CompressSRCFilename.Name = "CompressSRCFilename";
             this.CompressSRCFilename.Placeholder = "";
@@ -259,7 +226,7 @@
             // 
             // CompressSRCSelectButton
             // 
-            this.CompressSRCSelectButton.Location = new System.Drawing.Point(172, 23);
+            this.CompressSRCSelectButton.Location = new System.Drawing.Point(172, 13);
             this.CompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressSRCSelectButton.Name = "CompressSRCSelectButton";
             this.CompressSRCSelectButton.Size = new System.Drawing.Size(130, 31);
@@ -271,7 +238,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(7, 24);
+            this.label2.Location = new System.Drawing.Point(7, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 31);
@@ -279,27 +246,38 @@
             this.label2.Text = "SRC";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customColorGroupBox1
+            // ZeroClearTo
             // 
-            this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
-            this.customColorGroupBox1.Controls.Add(this.ZeroClearTo);
-            this.customColorGroupBox1.Controls.Add(this.ZeroClearFrom);
-            this.customColorGroupBox1.Controls.Add(this.label5);
-            this.customColorGroupBox1.Controls.Add(this.ZeroClearButton);
-            this.customColorGroupBox1.Controls.Add(this.label6);
-            this.customColorGroupBox1.Location = new System.Drawing.Point(14, 369);
-            this.customColorGroupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customColorGroupBox1.Name = "customColorGroupBox1";
-            this.customColorGroupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.customColorGroupBox1.Size = new System.Drawing.Size(670, 133);
-            this.customColorGroupBox1.TabIndex = 2;
-            this.customColorGroupBox1.TabStop = false;
-            this.customColorGroupBox1.Text = "消去";
+            this.ZeroClearTo.Hexadecimal = true;
+            this.ZeroClearTo.Location = new System.Drawing.Point(174, 47);
+            this.ZeroClearTo.Margin = new System.Windows.Forms.Padding(4);
+            this.ZeroClearTo.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.ZeroClearTo.Name = "ZeroClearTo";
+            this.ZeroClearTo.Size = new System.Drawing.Size(144, 25);
+            this.ZeroClearTo.TabIndex = 96;
+            // 
+            // ZeroClearFrom
+            // 
+            this.ZeroClearFrom.Hexadecimal = true;
+            this.ZeroClearFrom.Location = new System.Drawing.Point(174, 14);
+            this.ZeroClearFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.ZeroClearFrom.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.ZeroClearFrom.Name = "ZeroClearFrom";
+            this.ZeroClearFrom.Size = new System.Drawing.Size(144, 25);
+            this.ZeroClearFrom.TabIndex = 95;
             // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(7, 54);
+            this.label5.Location = new System.Drawing.Point(7, 40);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 31);
@@ -309,7 +287,7 @@
             // 
             // ZeroClearButton
             // 
-            this.ZeroClearButton.Location = new System.Drawing.Point(172, 92);
+            this.ZeroClearButton.Location = new System.Drawing.Point(172, 78);
             this.ZeroClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ZeroClearButton.Name = "ZeroClearButton";
             this.ZeroClearButton.Size = new System.Drawing.Size(462, 31);
@@ -321,7 +299,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(7, 24);
+            this.label6.Location = new System.Drawing.Point(7, 10);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 31);
@@ -329,56 +307,141 @@
             this.label6.Text = "FROM";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ZeroClearFrom
+            // tabControl1
             // 
-            this.ZeroClearFrom.Hexadecimal = true;
-            this.ZeroClearFrom.Location = new System.Drawing.Point(174, 28);
-            this.ZeroClearFrom.Margin = new System.Windows.Forms.Padding(4);
-            this.ZeroClearFrom.Maximum = new decimal(new int[] {
-            1874919423,
-            2328306,
-            0,
-            0});
-            this.ZeroClearFrom.Name = "ZeroClearFrom";
-            this.ZeroClearFrom.Size = new System.Drawing.Size(144, 25);
-            this.ZeroClearFrom.TabIndex = 95;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(693, 334);
+            this.tabControl1.TabIndex = 3;
             // 
-            // ZeroClearTo
+            // tabPage1
             // 
-            this.ZeroClearTo.Hexadecimal = true;
-            this.ZeroClearTo.Location = new System.Drawing.Point(174, 61);
-            this.ZeroClearTo.Margin = new System.Windows.Forms.Padding(4);
-            this.ZeroClearTo.Maximum = new decimal(new int[] {
-            1874919423,
-            2328306,
-            0,
-            0});
-            this.ZeroClearTo.Name = "ZeroClearTo";
-            this.ZeroClearTo.Size = new System.Drawing.Size(144, 25);
-            this.ZeroClearTo.TabIndex = 96;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.DeCompressDESTFilename);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.DeCompressDESTSelectButton);
+            this.tabPage1.Controls.Add(this.DeCompressSRCSelectButton);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.DeCompressSRCFilename);
+            this.tabPage1.Controls.Add(this.DeCompressFireButton);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.DeCompressAddress);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(685, 302);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "解凍する";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 208);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(649, 88);
+            this.textBox1.TabIndex = 98;
+            this.textBox1.Text = "ROMのLZ77データを取り出して、解凍しファイルに保存します。\r\nデバッグ用の機能です。";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.CompressDESTFilename);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.CompressDESTSelectButton);
+            this.tabPage2.Controls.Add(this.CompressSRCSelectButton);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.CompressSRCFilename);
+            this.tabPage2.Controls.Add(this.CompressFireButton);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(685, 302);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "圧縮する";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(7, 208);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(649, 88);
+            this.textBox2.TabIndex = 99;
+            this.textBox2.Text = "特定のデータをlz77で圧縮して、ファイルに保存します。\r\nデバッグ用の機能です。";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.ZeroClearTo);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.ZeroClearFrom);
+            this.tabPage3.Controls.Add(this.ZeroClearButton);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(685, 302);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "消去";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(7, 211);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(649, 88);
+            this.textBox3.TabIndex = 100;
+            this.textBox3.Text = "ROMの指定範囲を0クリアします。\r\n危険なので、通常は利用しないでください。";
+            // 
+            // textBoxEx1
+            // 
+            this.textBoxEx1.ErrorMessage = "";
+            this.textBoxEx1.Location = new System.Drawing.Point(310, 72);
+            this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx1.Name = "textBoxEx1";
+            this.textBoxEx1.Placeholder = "";
+            this.textBoxEx1.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx1.TabIndex = 103;
+            // 
+            // textBoxEx2
+            // 
+            this.textBoxEx2.ErrorMessage = "";
+            this.textBoxEx2.Location = new System.Drawing.Point(310, 74);
+            this.textBoxEx2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx2.Name = "textBoxEx2";
+            this.textBoxEx2.Placeholder = "";
+            this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx2.TabIndex = 105;
             // 
             // ToolLZ77Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(698, 512);
-            this.Controls.Add(this.customColorGroupBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(722, 359);
+            this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ToolLZ77Form";
             this.Text = "LZ77ツール";
             this.Load += new System.EventHandler(this.LZ77ToolForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.customColorGroupBox1.ResumeLayout(false);
-            this.customColorGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -401,14 +464,20 @@
         private FEBuilderGBA.TextBoxEx DeCompressDESTFilename;
         private System.Windows.Forms.Button DeCompressDESTSelectButton;
         private System.Windows.Forms.Label label4;
-        private CustomColorGroupBox groupBox1;
-        private CustomColorGroupBox groupBox2;
-        private CustomColorGroupBox customColorGroupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ZeroClearButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown ZeroClearTo;
         private System.Windows.Forms.NumericUpDown ZeroClearFrom;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox textBox3;
+        private TextBoxEx textBoxEx1;
+        private TextBoxEx textBoxEx2;
 
     }
 }

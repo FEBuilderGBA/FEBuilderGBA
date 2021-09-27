@@ -1450,6 +1450,9 @@ Max out all of this unit's stats
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear and End the Current Chapter (Hotkey: Ctrl + U)
 
+:このユニットの座標を変更しワープさせる。
+Change the coordinates of this unit and warp it.
+
 :エミュレータへ接続
 Emulator Debugger - 
 
@@ -3454,11 +3457,11 @@ Palette Address
 :バトルアニメパレット
 Battle Animation Palette
 
-:画像取出し
-Export
-
 :参照箇所
 Reference place
+
+:画像取出し
+Export
 
 :戦闘背景
 Battle Backgrounds
@@ -12037,11 +12040,20 @@ Initial Address
 :圧縮する
 Compress
 
+:この領域をゼロクリア
+Clear this Area to Zero
+
+:ROMのLZ77データを取り出して、解凍しファイルに保存します。\r\nデバッグ用の機能です。
+Extract the LZ77 data from the ROM, decompress it, and save it in a file.\r\nThis is a function for debugging.
+
+:特定のデータをlz77で圧縮して、ファイルに保存します。\r\nデバッグ用の機能です。
+Compress certain data with lz77 and save it in a file.\r\nThis is a function for debugging.
+
 :消去
 Erase
 
-:この領域をゼロクリア
-Clear this Area to Zero
+:ROMの指定範囲を0クリアします。\r\n危険なので、通常は利用しないでください。
+Clears the specified range of ROM to 0.\r\nDo not use it normally as it is dangerous.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

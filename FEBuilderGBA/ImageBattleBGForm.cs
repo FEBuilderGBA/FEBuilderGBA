@@ -226,5 +226,41 @@ namespace FEBuilderGBA
             }
         }
 
+        private void GraphicsToolButton_Click(object sender, EventArgs e)
+        {
+            uint id = (uint)this.AddressList.SelectedIndex + 1;
+
+            if (id <= 0)
+            {
+                return;
+            }
+
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(id - 1);
+            if (addr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            uint image = Program.ROM.u32(addr);
+            uint palette = Program.ROM.u32(addr + 8);
+            uint tsa = Program.ROM.u32(addr + 4);
+
+            int width = 30 * 8;
+            int height = 20 * 8;
+            GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpFormLow<GraphicsToolForm>();
+            f.Jump(width
+                , height
+                , image
+                , 0
+                , tsa
+                , 1
+                , palette
+                , 1
+                , 8
+                , 0);
+            f.Show();
+        }
+
     }
 }

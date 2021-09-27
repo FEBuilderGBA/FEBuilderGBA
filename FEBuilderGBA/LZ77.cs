@@ -54,6 +54,7 @@ namespace FEBuilderGBA
 
             return (uint)size;
         }
+
         //圧縮されているデータ長を求めます.
         public static uint getCompressedSize(byte[] input, uint offset)
         {
@@ -147,6 +148,16 @@ namespace FEBuilderGBA
             }
 
             return (uint)(index - offset);
+        }
+        //圧縮されているデータをそのまま取得する
+        public static byte[] GetCompressDataLow(byte[] input, uint offset)
+        {
+            uint image_size = LZ77.getCompressedSize(input, offset);
+            if (image_size <= 0)
+            {
+                return new byte[0] ;
+            }
+            return U.getBinaryData(input, offset, image_size);
         }
 
         //解凍する.
