@@ -32,9 +32,9 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.D0 = new System.Windows.Forms.NumericUpDown();
-            this.D4 = new System.Windows.Forms.NumericUpDown();
-            this.D8 = new System.Windows.Forms.NumericUpDown();
+            this.P0 = new System.Windows.Forms.NumericUpDown();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
+            this.P8 = new System.Windows.Forms.NumericUpDown();
             this.J_8 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
@@ -60,11 +60,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TSAANimeList = new FEBuilderGBA.ListBoxEx();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -101,6 +102,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -112,9 +114,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.D0);
-            this.panel2.Controls.Add(this.D4);
-            this.panel2.Controls.Add(this.D8);
+            this.panel2.Controls.Add(this.P0);
+            this.panel2.Controls.Add(this.P4);
+            this.panel2.Controls.Add(this.P8);
             this.panel2.Controls.Add(this.J_8);
             this.panel2.Controls.Add(this.J_4);
             this.panel2.Controls.Add(this.J_0);
@@ -125,47 +127,47 @@
             this.panel2.Size = new System.Drawing.Size(823, 381);
             this.panel2.TabIndex = 74;
             // 
-            // D0
+            // P0
             // 
-            this.D0.Hexadecimal = true;
-            this.D0.Location = new System.Drawing.Point(251, 10);
-            this.D0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D0.Maximum = new decimal(new int[] {
+            this.P0.Hexadecimal = true;
+            this.P0.Location = new System.Drawing.Point(251, 10);
+            this.P0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D0.Name = "D0";
-            this.D0.Size = new System.Drawing.Size(137, 25);
-            this.D0.TabIndex = 0;
+            this.P0.Name = "P0";
+            this.P0.Size = new System.Drawing.Size(137, 25);
+            this.P0.TabIndex = 0;
             // 
-            // D4
+            // P4
             // 
-            this.D4.Hexadecimal = true;
-            this.D4.Location = new System.Drawing.Point(251, 49);
-            this.D4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D4.Maximum = new decimal(new int[] {
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(251, 49);
+            this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D4.Name = "D4";
-            this.D4.Size = new System.Drawing.Size(137, 25);
-            this.D4.TabIndex = 1;
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(137, 25);
+            this.P4.TabIndex = 1;
             // 
-            // D8
+            // P8
             // 
-            this.D8.Hexadecimal = true;
-            this.D8.Location = new System.Drawing.Point(251, 90);
-            this.D8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D8.Maximum = new decimal(new int[] {
+            this.P8.Hexadecimal = true;
+            this.P8.Location = new System.Drawing.Point(251, 90);
+            this.P8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P8.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D8.Name = "D8";
-            this.D8.Size = new System.Drawing.Size(137, 25);
-            this.D8.TabIndex = 2;
+            this.P8.Name = "P8";
+            this.P8.Size = new System.Drawing.Size(137, 25);
+            this.P8.TabIndex = 2;
             // 
             // J_8
             // 
@@ -308,6 +310,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.GraphicsToolButton);
             this.panel3.Controls.Add(this.DecreaseColorTSAToolButton);
             this.panel3.Controls.Add(this.ImportButton);
             this.panel3.Controls.Add(this.ExportButton);
@@ -319,7 +322,7 @@
             // 
             // DecreaseColorTSAToolButton
             // 
-            this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(611, 9);
+            this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(392, 9);
             this.DecreaseColorTSAToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.DecreaseColorTSAToolButton.Name = "DecreaseColorTSAToolButton";
             this.DecreaseColorTSAToolButton.Size = new System.Drawing.Size(206, 30);
@@ -330,7 +333,7 @@
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(28, 9);
+            this.ImportButton.Location = new System.Drawing.Point(12, 9);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(160, 30);
@@ -341,7 +344,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(219, 9);
+            this.ExportButton.Location = new System.Drawing.Point(203, 9);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(160, 30);
@@ -444,6 +447,7 @@
             // 
             this.TSAANimeList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TSAANimeList.FormattingEnabled = true;
+            this.TSAANimeList.IntegralHeight = false;
             this.TSAANimeList.ItemHeight = 18;
             this.TSAANimeList.Location = new System.Drawing.Point(0, 30);
             this.TSAANimeList.Margin = new System.Windows.Forms.Padding(4);
@@ -451,6 +455,17 @@
             this.TSAANimeList.Size = new System.Drawing.Size(256, 454);
             this.TSAANimeList.TabIndex = 0;
             this.TSAANimeList.SelectedIndexChanged += new System.EventHandler(this.TSAANimeList_SelectedIndexChanged);
+            // 
+            // GraphicsToolButton
+            // 
+            this.GraphicsToolButton.Location = new System.Drawing.Point(605, 9);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageTSAAnimeForm
             // 
@@ -469,9 +484,9 @@
             this.Load += new System.EventHandler(this.ImageTSAAnimeForm_Load);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
@@ -491,9 +506,9 @@
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown D0;
-        private System.Windows.Forms.NumericUpDown D4;
-        private System.Windows.Forms.NumericUpDown D8;
+        private System.Windows.Forms.NumericUpDown P0;
+        private System.Windows.Forms.NumericUpDown P4;
+        private System.Windows.Forms.NumericUpDown P8;
         private System.Windows.Forms.Label J_8;
         private System.Windows.Forms.Label J_4;
         private System.Windows.Forms.Label J_0;
@@ -519,5 +534,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private ListBoxEx TSAANimeList;
+        private System.Windows.Forms.Button GraphicsToolButton;
     }
 }

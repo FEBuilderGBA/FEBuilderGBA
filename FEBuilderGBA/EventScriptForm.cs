@@ -1671,6 +1671,18 @@ namespace FEBuilderGBA
                 {//パッチでインストールした拡張命令
                     bitmap = ImageSystemIconForm.MusicIcon(3);
                 }
+                else if (code.Script.Category.IndexOf("{PLAYERICON}") >= 0)
+                {//プレイヤーが侵入したら
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1, 0, true);
+                }
+                else if (code.Script.Category.IndexOf("{ENEMYICON}") >= 0)
+                {//敵が侵入したら
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true);
+                }
+                else if (code.Script.Category.IndexOf("{NPCICON}") >= 0)
+                {//NPCが侵入したら
+                    bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true);
+                }
 
                 if (bitmap != null)
                 {

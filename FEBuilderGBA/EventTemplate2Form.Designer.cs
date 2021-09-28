@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CALL_EndEvent_button = new System.Windows.Forms.Button();
             this.FormIcon = new System.Windows.Forms.PictureBox();
+            this.EnterByEnemy_button = new System.Windows.Forms.Button();
+            this.EnterByNPC_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,14 +107,14 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 18);
+            this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 9;
-            this.label2.Text = "テンプレート";
+            this.label2.Text = "テンプレート1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 397);
+            this.label3.Location = new System.Drawing.Point(12, 529);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 18);
             this.label3.TabIndex = 12;
@@ -120,7 +122,7 @@
             // 
             // CALL_EndEvent_button
             // 
-            this.CALL_EndEvent_button.Location = new System.Drawing.Point(11, 428);
+            this.CALL_EndEvent_button.Location = new System.Drawing.Point(11, 560);
             this.CALL_EndEvent_button.Name = "CALL_EndEvent_button";
             this.CALL_EndEvent_button.Size = new System.Drawing.Size(759, 42);
             this.CALL_EndEvent_button.TabIndex = 6;
@@ -137,11 +139,33 @@
             this.FormIcon.TabIndex = 13;
             this.FormIcon.TabStop = false;
             // 
+            // EnterByEnemy_button
+            // 
+            this.EnterByEnemy_button.Location = new System.Drawing.Point(13, 392);
+            this.EnterByEnemy_button.Name = "EnterByEnemy_button";
+            this.EnterByEnemy_button.Size = new System.Drawing.Size(759, 42);
+            this.EnterByEnemy_button.TabIndex = 14;
+            this.EnterByEnemy_button.Text = "敵軍(赤)が侵入したら発動するイベントを作成";
+            this.EnterByEnemy_button.UseVisualStyleBackColor = true;
+            this.EnterByEnemy_button.Click += new System.EventHandler(this.EnterByEnemy_button_Click);
+            // 
+            // EnterByNPC_button
+            // 
+            this.EnterByNPC_button.Location = new System.Drawing.Point(12, 440);
+            this.EnterByNPC_button.Name = "EnterByNPC_button";
+            this.EnterByNPC_button.Size = new System.Drawing.Size(759, 42);
+            this.EnterByNPC_button.TabIndex = 15;
+            this.EnterByNPC_button.Text = "友軍(NPC/緑)が侵入したら発動するイベントを作成";
+            this.EnterByNPC_button.UseVisualStyleBackColor = true;
+            this.EnterByNPC_button.Click += new System.EventHandler(this.EnterByNPC_button_Click);
+            // 
             // EventTemplate2Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 484);
+            this.ClientSize = new System.Drawing.Size(783, 622);
+            this.Controls.Add(this.EnterByNPC_button);
+            this.Controls.Add(this.EnterByEnemy_button);
             this.Controls.Add(this.FormIcon);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CALL_EndEvent_button);
@@ -172,5 +196,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CALL_EndEvent_button;
         private System.Windows.Forms.PictureBox FormIcon;
+        private System.Windows.Forms.Button EnterByEnemy_button;
+        private System.Windows.Forms.Button EnterByNPC_button;
     }
 }

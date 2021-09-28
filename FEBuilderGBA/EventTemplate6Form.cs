@@ -31,11 +31,6 @@ namespace FEBuilderGBA
         public uint CallEventAddr = U.NOT_FOUND;
         public bool NeedFlag03 = false;
 
-        private void BLANK_Button_Click(object sender, EventArgs e)
-        {
-            this.GenCode = Program.ROM.RomInfo.Default_event_script_term_code();
-            this.Close();
-        }
         private void BLANK2_Button_Click(object sender, EventArgs e)
         {
             this.GenCode = Program.ROM.RomInfo.Default_event_script_toplevel_code();

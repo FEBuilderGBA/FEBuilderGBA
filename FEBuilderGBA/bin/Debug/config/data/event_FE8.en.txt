@@ -287,10 +287,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200XXXXXXXX400A000074E29E08	Load reinforcements[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
 40050200XXXXXXXX400A0000D403A608	Load hard mode exclusive reinforcements[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
 40050200XXXXXXXX400A00009CE29E08	Load hard mode exclusive reinforcements[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
-40050200XX000000400A0000D402A608	When[XX:UNIT:Character]stops in range (used at the start of range based events (0B))	{COND}	{J}
-40050200XX000000400A00009CE19E08	When[XX:UNIT:Character]stops in range (used at the start of range based events (0B))	{COND}	{U}
-4005020000000000400A0000F002A608	When any player unit stops in range (used at the start of range based events (0B))	{COND}	{J}
-4005020000000000400A0000B8E19E08	When any player unit stops in range (used at the start of range based events (0B))	{COND}	{U}
+40050200XX000000400A0000D402A608	When[XX:UNIT:Character]stops in range (used at the start of range based events)	{COND}	{J}
+40050200XX000000400A00009CE19E08	When[XX:UNIT:Character]stops in range (used at the start of range based events)	{COND}	{U}
+4005020000000000400A0000F002A608	When any player unit stops in range (used at the start of range based events)(PlayerInRange)	{COND}	{PLAYERICON}	If the unit at the time of entering the area of the range condition is the player(blue)	{J}
+4005020000000000400A0000B8E19E08	When any player unit stops in range (used at the start of range based events)(PlayerInRange)	{COND}	{PLAYERICON}	If the unit at the time of entering the area of the range condition is the player(blue)	{U}
 40050200XX000000400A00005406A608	Warp[XX:UNIT:Character]out of the map	{UNITREMOVE}	{J}
 40050200XX000000400A00001CE59E08	Warp[XX:UNIT:Character]out of the map	{UNITREMOVE}	{U}
 400A00005406A608	Warp Slot2's Unit out of the map(LOW)	{UNITREMOVE}	{J}
@@ -595,3 +595,7 @@ Duration
 
 2016XXXX200ETTTT2016YYYY200ETTTT2016ZZZZ	Play SFX [XXXX:SOUND:sound effect1], [YYYY:SOUND:sound effect2], and [ZZZZ:SOUND:sound effect3] at [TTTT:FSEC:frame seconds] intervals(SOUN+STAL+SOUN+STAL+SOUN)	{MAPEFFECT}
 6018000000000000000000006218060AYYYYZZZZWWWWVVVV611800000000000000000000	Blink the screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](STARTFADE+ChangeColor+ENDFADE)	{MAPEFFECT}	For example, if you blink it in red for a short time, it will sound like an alarm.
+4005020002000000400A0000F002A608	When any Enemy unit stops in range (used at the start of range based events)(EnemyInRange)	{COND}	{ENEMYICON}	If the unit at the time of entering the area of the range condition is the enemy(red)	{J}
+4005020002000000400A0000B8E19E08	When any Enemy unit stops in range (used at the start of range based events)(EnemyInRange)	{COND}	{ENEMYICON}	If the unit at the time of entering the area of the range condition is the enemy(red)	{U}
+4005020001000000400A0000F002A608	When any NPC(green) unit stops in range (used at the start of range based events)(NPCInRange)	{COND}	{NPCICON}	If the unit at the time of entering the area of the range condition is the ally(NPC/green)	{J}
+4005020001000000400A0000B8E19E08	When any NPC(green) unit stops in range (used at the start of range based events)(NPCInRange)	{COND}	{NPCICON}	If the unit at the time of entering the area of the range condition is the ally(NPC/green)	{U}

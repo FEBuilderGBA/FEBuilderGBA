@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.BLANK_Button = new System.Windows.Forms.Button();
             this.CALL_EndEvent_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.CALL_1_button = new System.Windows.Forms.Button();
@@ -49,19 +48,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "新規にイベントを割り振りますか？";
             // 
-            // BLANK_Button
-            // 
-            this.BLANK_Button.Location = new System.Drawing.Point(12, 102);
-            this.BLANK_Button.Name = "BLANK_Button";
-            this.BLANK_Button.Size = new System.Drawing.Size(759, 42);
-            this.BLANK_Button.TabIndex = 5;
-            this.BLANK_Button.Text = "新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトなし)";
-            this.BLANK_Button.UseVisualStyleBackColor = true;
-            this.BLANK_Button.Click += new System.EventHandler(this.BLANK_Button_Click);
-            // 
             // CALL_EndEvent_button
             // 
-            this.CALL_EndEvent_button.Location = new System.Drawing.Point(12, 351);
+            this.CALL_EndEvent_button.Location = new System.Drawing.Point(16, 301);
             this.CALL_EndEvent_button.Name = "CALL_EndEvent_button";
             this.CALL_EndEvent_button.Size = new System.Drawing.Size(759, 42);
             this.CALL_EndEvent_button.TabIndex = 3;
@@ -72,7 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 320);
+            this.label3.Location = new System.Drawing.Point(17, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 18);
             this.label3.TabIndex = 9;
@@ -80,7 +69,7 @@
             // 
             // CALL_1_button
             // 
-            this.CALL_1_button.Location = new System.Drawing.Point(12, 401);
+            this.CALL_1_button.Location = new System.Drawing.Point(16, 351);
             this.CALL_1_button.Name = "CALL_1_button";
             this.CALL_1_button.Size = new System.Drawing.Size(759, 42);
             this.CALL_1_button.TabIndex = 4;
@@ -99,17 +88,17 @@
             // 
             // BLANK2_Button
             // 
-            this.BLANK2_Button.Location = new System.Drawing.Point(12, 159);
+            this.BLANK2_Button.Location = new System.Drawing.Point(16, 109);
             this.BLANK2_Button.Name = "BLANK2_Button";
             this.BLANK2_Button.Size = new System.Drawing.Size(759, 42);
             this.BLANK2_Button.TabIndex = 1;
-            this.BLANK2_Button.Text = "新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトあり)";
+            this.BLANK2_Button.Text = "新規にイベント領域を割り振り、空のイベントを定義します。";
             this.BLANK2_Button.UseVisualStyleBackColor = true;
             this.BLANK2_Button.Click += new System.EventHandler(this.BLANK2_Button_Click);
             // 
             // GAMEOVER_Button
             // 
-            this.GAMEOVER_Button.Location = new System.Drawing.Point(12, 250);
+            this.GAMEOVER_Button.Location = new System.Drawing.Point(16, 200);
             this.GAMEOVER_Button.Name = "GAMEOVER_Button";
             this.GAMEOVER_Button.Size = new System.Drawing.Size(759, 42);
             this.GAMEOVER_Button.TabIndex = 2;
@@ -120,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 226);
+            this.label2.Location = new System.Drawing.Point(17, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 18);
             this.label2.TabIndex = 15;
@@ -130,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 472);
+            this.ClientSize = new System.Drawing.Size(783, 429);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.GAMEOVER_Button);
             this.Controls.Add(this.BLANK2_Button);
@@ -138,7 +127,6 @@
             this.Controls.Add(this.CALL_1_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CALL_EndEvent_button);
-            this.Controls.Add(this.BLANK_Button);
             this.Controls.Add(this.label1);
             this.Name = "EventTemplate6Form";
             this.Text = "新規にイベントを割り振りますか？";
@@ -152,7 +140,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BLANK_Button;
         private System.Windows.Forms.Button CALL_EndEvent_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CALL_1_button;

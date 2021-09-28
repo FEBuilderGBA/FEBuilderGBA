@@ -2593,6 +2593,15 @@ When a specific unit intrudes, a game over event
 :砂漠の財宝
 Desert treasure
 
+:テンプレート1
+Template 1.
+
+:敵軍(赤)が侵入したら発動するイベントを作成
+Create an event to activate when Enemy army(red) invades
+
+:友軍(NPC/緑)が侵入したら発動するイベントを作成
+Create an event to activate when NPC army(green) invades
+
 :会話イベント
 Conversation event
 
@@ -2622,12 +2631,6 @@ Persuade the unit and join the party
 
 :何もしないイベント1を設定します。
 Set event 1 to do nothing.
-
-:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトなし)
-Allocate a new event area and define an Empty Event.(No Fade)
-
-:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトあり)
-Allocate a new event area and define an Empty Event.(With Fade)
 
 :ユニットの座標({0},{1})は、マップのサイズ({2},{3})より大きい座標です。
 The coordinates of the unit ({0}, {1}) are larger than the size of the map ({2}, {3})

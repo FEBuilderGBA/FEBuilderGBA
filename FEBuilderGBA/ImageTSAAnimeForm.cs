@@ -96,7 +96,7 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            X_BG_PIC.Image = DrawTSAAnime((uint)D0.Value, (uint)D4.Value, (uint)D8.Value);
+            X_BG_PIC.Image = DrawTSAAnime((uint)P0.Value, (uint)P4.Value, (uint)P8.Value);
         }
 
 
@@ -125,13 +125,13 @@ namespace FEBuilderGBA
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = DrawTSAAnime((uint)D0.Value, (uint)D4.Value, (uint)D8.Value);
+            Bitmap bitmap = DrawTSAAnime((uint)P0.Value, (uint)P4.Value, (uint)P8.Value);
             ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(), 8);
         }
 
         int GetThisImageHeight()
         {
-            uint tsa = (uint)D8.Value;
+            uint tsa = (uint)P8.Value;
             if (!U.isPointer(tsa))
             {
                 return 20 * 8;
@@ -188,9 +188,9 @@ namespace FEBuilderGBA
             {
                 //画像等データの書き込み
                 Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-                this.InputFormRef.WriteImageData(this.D0, image, true, undodata);
-                this.InputFormRef.WriteImageData(this.D4, palette, false, undodata);
-                this.InputFormRef.WriteImageData(this.D8, tsa, true, undodata);
+                this.InputFormRef.WriteImageData(this.P0, image, true, undodata);
+                this.InputFormRef.WriteImageData(this.P4, palette, false, undodata);
+                this.InputFormRef.WriteImageData(this.P8, tsa, true, undodata);
                 Program.Undo.Push(undodata);
             }
 
@@ -249,6 +249,29 @@ namespace FEBuilderGBA
         private void DecreaseColorTSAToolButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
+        }
+
+        private void GraphicsToolButton_Click(object sender, EventArgs e)
+        {
+            uint image = U.toOffset(P0.Value);
+            uint palette = U.toOffset(P4.Value);
+            uint tsa = U.toOffset(P8.Value);
+
+            int width = 32 * 8;
+            int height = GetThisImageHeight();
+            int palette_count = 8;
+            GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpFormLow<GraphicsToolForm>();
+            f.Jump(width
+                , height
+                , image
+                , 0
+                , tsa
+                , 2
+                , palette
+                , 0
+                , palette_count
+                , 0);
+            f.Show();
         }
     }
 }

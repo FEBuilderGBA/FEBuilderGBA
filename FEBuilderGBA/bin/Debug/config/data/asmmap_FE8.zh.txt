@@ -13965,3 +13965,19 @@ r3=X tile position of menu of the right	{U}
 080b744c	EndEndingBattleDisplay_Text	{U}
 080B6810	EndingBattleDisplay_FadeInDarkToNormal	{U}
 080B72A4	StartEndingBattleDisplay_Pair	{U}
+080BB1F8	EndingBattleDisplay_GetUnitTitleName	{J}
+080bb460	EndingBattleDisplay_InitTextFonts	{J}
+080bb7e8	EndingBattleDisplay_GetBWLData	{J}
+080BB740	StartEndingBattleDisplay_Text_Proxy	{J}
+080B6920	EndingBattleDisplay_InitTextFonts	{U}
+080B6CA8	EndingBattleDisplay_GetBWLData	{U}
+080B6C00	StartEndingBattleDisplay_Text_Proxy	{U}
+
+03003B48	:03003C03	In area where ARM funcs get copied. Unreferenced function.
+03003F48	:0300414F	In area where ARM funcs get copied. Past end of meaningful data.
+0300428C	:0300495F	In area where Interrupt handler gets copied. Past end of meaningful data.
+030067A8	End of static IWRAM. May collide with stack.
+02026AD0	:02026E2F	Using IconRework/CIconDisplay	Used by vanilla icon display system.
+02026E30	:02028E57	Not Using debug printing	Unused unless digging up leftover debug stuff.
+02040000	:02040C00	End of EWRAM. May collide with unit loading buffer (sizes of 0xC00 and less should leave enough room for 50+ units).
+0203AAA4	:0203C623	During link arena	May be only in real link games, in which case it may as well be considered always free.

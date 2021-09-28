@@ -12075,7 +12075,8 @@
 080B43A8	店	どれがほしいんだい	{U}
 080B4350	店	売る会話	/	売るものがねえじゃねえか	{U}
 080B4168	店	会話を表示	{U}
-0203f100	:0203f9FF	DebuffTable	{U}
+0203f100	:0203f9FF	SkillSystems DebuffTable	{U}
+0203FBB8	:0203FFFF	Debuffs VBA/make	{U}
 08006ED4	ParseTextEscape	テキスト中にあるエスケープシーケンの処理	{J}
 08007758	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{J}
 08006FD0	ParseTextEscape	テキスト中にあるエスケープシーケンの処理	{U}
@@ -12719,6 +12720,7 @@
 089A2C02	:089A2C27	Move Sound: Myrrh	{U}
 
 03006CB0	:0300788F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
+03007510	:0300788F	Improved Sound Mixer	new mixing buffer
 0203AE00	:0203AEC7	Hp bars with cached warning	by circles and Tequila (included in Skill System)	{U}
 //02026A90	:02026AAF	IconRework (or CIconDisplay)	{U}
 //02026E30	AutoNewline	Amount of space used is variable, since it copies textIDs there for processing. Location can be changed in installer.event	{U}
@@ -13998,3 +14000,15 @@
 080bb460	EndingBattleDisplay_InitTextFonts	{J}
 080bb7e8	EndingBattleDisplay_GetBWLData	{J}
 080BB740	StartEndingBattleDisplay_Text_Proxy	{J}
+080B6920	EndingBattleDisplay_InitTextFonts	{U}
+080B6CA8	EndingBattleDisplay_GetBWLData	{U}
+080B6C00	StartEndingBattleDisplay_Text_Proxy	{U}
+
+03003B48	:03003C03	In area where ARM funcs get copied. Unreferenced function.
+03003F48	:0300414F	In area where ARM funcs get copied. Past end of meaningful data.
+0300428C	:0300495F	In area where Interrupt handler gets copied. Past end of meaningful data.
+030067A8	End of static IWRAM. May collide with stack.
+02026AD0	:02026E2F	Using IconRework/CIconDisplay	Used by vanilla icon display system.
+02026E30	:02028E57	Not Using debug printing	Unused unless digging up leftover debug stuff.
+02040000	:02040C00	End of EWRAM. May collide with unit loading buffer (sizes of 0xC00 and less should leave enough room for 50+ units).
+0203AAA4	:0203C623	During link arena	May be only in real link games, in which case it may as well be considered always free.

@@ -73,5 +73,21 @@ namespace FEBuilderGBA
             this.Close();
         }
 
+        private void EnterByEnemy_button_Click(object sender, EventArgs e)
+        {
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_ENEMY_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
+            this.Close();
+        }
+
+        private void EnterByNPC_button_Click(object sender, EventArgs e)
+        {
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_NPC_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
+            this.Close();
+        }
+
     }
 }
