@@ -1057,8 +1057,8 @@ namespace FEBuilderGBA
 
         private void PROCS_JUMP_CURSOL_CODE_Click(object sender, EventArgs e)
         {
-            uint addr = U.toOffset((uint)PROCS_P0.Value);
-            uint currnt_procs = U.toOffset((uint)PROCS_P4.Value);
+            uint addr = U.toOffset(PROCS_P0.Value);
+            uint currnt_procs = U.toOffset(PROCS_P4.Value);
 
             ProcsScriptForm f = (ProcsScriptForm)InputFormRef.JumpForm<ProcsScriptForm>(U.NOT_FOUND);
             f.JumpTo(addr, currnt_procs);

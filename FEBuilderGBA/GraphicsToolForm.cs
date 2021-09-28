@@ -308,7 +308,7 @@ namespace FEBuilderGBA
             if (ImageOption.SelectedIndex == 0 || ImageOption.SelectedIndex == 3)
             {//圧縮画像
                 image = LZ77.decompress(Program.ROM.Data
-                    , U.toOffset((uint)Image.Value) );
+                    , U.toOffset(Image.Value) );
                 image_pos = 0;
                 if (image.Length <= 2)
                 {
@@ -320,8 +320,8 @@ namespace FEBuilderGBA
             }
             else if (ImageOption.SelectedIndex == 2)
             {//第2圧縮画像
-                image = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)Image.Value));
-                byte[] image2 = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)Image2.Value));
+                image = LZ77.decompress(Program.ROM.Data, U.toOffset(Image.Value));
+                byte[] image2 = LZ77.decompress(Program.ROM.Data, U.toOffset(Image2.Value));
                 image_pos = 0;
                 if (image.Length <= 2)
                 {
@@ -342,12 +342,12 @@ namespace FEBuilderGBA
             else
             {//無圧縮画像
                 image = Program.ROM.Data;
-                image_pos = (int)U.toOffset((uint)Image.Value);
+                image_pos = (int)U.toOffset(Image.Value);
             }
             byte[] palette;
             if (PaletteOption.SelectedIndex == 1)
             {//lz77 palette
-                palette = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)PALETTE.Value));
+                palette = LZ77.decompress(Program.ROM.Data, U.toOffset(PALETTE.Value));
                 uint palette_offset = ToPaletteOffset(0, (uint)PALETTENO.Value);
                 palette = U.subrange(palette, palette_offset, palette_offset + (0x20 * 16));
             }
@@ -393,7 +393,7 @@ namespace FEBuilderGBA
             }
             else if (TSAOption.SelectedIndex == 1)
             {//圧縮TSAを利用する
-                tsa = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)TSA.Value));
+                tsa = LZ77.decompress(Program.ROM.Data, U.toOffset(TSA.Value));
                 tsa_pos = 0;
 
                 if (tsa.Length <= 2)
@@ -434,7 +434,7 @@ namespace FEBuilderGBA
             }
             else if (TSAOption.SelectedIndex == 2)
             {//圧縮ヘッダ付きTSAを利用する
-                tsa = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)TSA.Value));
+                tsa = LZ77.decompress(Program.ROM.Data, U.toOffset(TSA.Value));
                 tsa_pos = 0;
                 if (tsa.Length <= 2)
                 {
@@ -459,7 +459,7 @@ namespace FEBuilderGBA
             else if (TSAOption.SelectedIndex == 3)
             {//無圧縮ヘッダ付きTSAを利用する
                 tsa = Program.ROM.Data;
-                tsa_pos = (int)U.toOffset((uint)TSA.Value);
+                tsa_pos = (int)U.toOffset(TSA.Value);
 
                 Bitmap bitmap;
                 if (ImageOption.SelectedIndex == 3)
@@ -478,7 +478,7 @@ namespace FEBuilderGBA
             else if (TSAOption.SelectedIndex == 4)
             {//無圧縮TSAを利用する
                 tsa = Program.ROM.Data;
-                tsa_pos = (int)U.toOffset((uint)TSA.Value);
+                tsa_pos = (int)U.toOffset(TSA.Value);
 
                 Bitmap bitmap;
                 if (ImageOption.SelectedIndex == 3)
@@ -497,7 +497,7 @@ namespace FEBuilderGBA
             else if (TSAOption.SelectedIndex == 5)
             {//パレットマップとして解釈する
                 tsa = Program.ROM.Data;
-                tsa_pos = (int)U.toOffset((uint)TSA.Value);
+                tsa_pos = (int)U.toOffset(TSA.Value);
 
                 Bitmap bitmap = ImageUtil.ByteToImage16TilePaletteMap((int)PicWidth.Value * 8
                     , (int)PicHeight.Value * 8
@@ -585,12 +585,12 @@ namespace FEBuilderGBA
             Size size = new Size(0, 0);
             if (TSAOption.SelectedIndex == 2)
             {//圧縮ヘッダ付きTSAを利用する
-                byte[] tsa = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)TSA.Value));
+                byte[] tsa = LZ77.decompress(Program.ROM.Data, U.toOffset(TSA.Value));
                 size = ImageUtil.CalcSizeForHeaderTSAData(tsa, 0);
             }
             else if (TSAOption.SelectedIndex == 3)
             {
-                size = ImageUtil.CalcSizeForHeaderTSAData(Program.ROM.Data, (int)U.toOffset((uint)TSA.Value));
+                size = ImageUtil.CalcSizeForHeaderTSAData(Program.ROM.Data, (int)U.toOffset(TSA.Value));
             }
             if (size.Width > 0 && size.Height > 0)
             {
@@ -1209,7 +1209,7 @@ namespace FEBuilderGBA
             if (ImageOption.SelectedIndex == 0 || ImageOption.SelectedIndex == 3)
             {//圧縮画像
                 byte[] image = LZ77.GetCompressDataLow(Program.ROM.Data
-                    , U.toOffset((uint)Image.Value));
+                    , U.toOffset(Image.Value));
                 if (image.Length > 0)
                 {
                     U.WriteAllBytes(savefilename + ".dmp", image);
@@ -1218,14 +1218,14 @@ namespace FEBuilderGBA
             else if (ImageOption.SelectedIndex == 2)
             {//第2圧縮画像
                 byte[] image = LZ77.GetCompressDataLow(Program.ROM.Data
-                    , U.toOffset((uint)Image.Value));
+                    , U.toOffset(Image.Value));
                 if (image.Length > 0)
                 {
                     U.WriteAllBytes(savefilename + ".dmp", image);
                 }
 
                 byte[] image2 = LZ77.GetCompressDataLow(Program.ROM.Data
-                    , U.toOffset((uint)Image2.Value));
+                    , U.toOffset(Image2.Value));
                 if (image.Length > 0)
                 {
                     U.WriteAllBytes(savefilename + ".img2.dmp", image2);
@@ -1234,14 +1234,14 @@ namespace FEBuilderGBA
             else
             {//無圧縮画像
                 uint image_size = ((uint)PicWidth.Value * 8 / 2) * ((uint)PicHeight.Value * 8);
-                byte[] image = U.getBinaryData(Program.ROM.Data, U.toOffset((uint)Image.Value), image_size);
+                byte[] image = U.getBinaryData(Program.ROM.Data, U.toOffset(Image.Value), image_size);
                 U.WriteAllBytes(savefilename + ".dmp", image);
             }
 
             if (PaletteOption.SelectedIndex == 1)
             {//lz77 palette
                 byte[] palette = LZ77.GetCompressDataLow(Program.ROM.Data
-                    , U.toOffset((uint)PALETTE.Value));
+                    , U.toOffset(PALETTE.Value));
                 if (palette.Length > 0)
                 {
                     U.WriteAllBytes(savefilename + ".pal.dmp", palette);
@@ -1271,7 +1271,7 @@ namespace FEBuilderGBA
             else if (TSAOption.SelectedIndex == 1 || TSAOption.SelectedIndex == 2)
             {//圧縮TSAを利用する , or 圧縮ヘッダ付きTSAを利用する
                 byte[] tsa = LZ77.GetCompressDataLow(Program.ROM.Data
-                    , U.toOffset((uint)TSA.Value));
+                    , U.toOffset(TSA.Value));
                 if (tsa.Length > 0)
                 {
                     U.WriteAllBytes(savefilename + ".tsa.dmp", tsa);
@@ -1280,7 +1280,7 @@ namespace FEBuilderGBA
             }
             else if (TSAOption.SelectedIndex == 3)
             {//無圧縮ヘッダ付きTSAを利用する
-                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_addr = U.toOffset(TSA.Value);
                 uint tsa_size = ImageUtil.CalcByteLengthForHeaderTSAData(Program.ROM.Data, (int)tsa_addr);
                 if (tsa_size > 0)
                 {
@@ -1293,7 +1293,7 @@ namespace FEBuilderGBA
                 uint width = (uint)PicWidth.Value * 8;
                 uint height = (uint)PicHeight.Value * 8;
 
-                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_addr = U.toOffset(TSA.Value);
                 uint tsa_size = width * height / 32;
                 if (tsa_size > 0)
                 {
@@ -1306,7 +1306,7 @@ namespace FEBuilderGBA
                 uint width = (uint)PicWidth.Value * 8;
                 uint height = (uint)PicHeight.Value * 8;
 
-                uint tsa_addr = U.toOffset((uint)TSA.Value);
+                uint tsa_addr = U.toOffset(TSA.Value);
                 uint tsa_size = width * height / 2;
                 if (tsa_size > 0)
                 {

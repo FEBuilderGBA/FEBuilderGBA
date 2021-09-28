@@ -1097,7 +1097,7 @@ namespace FEBuilderGBA
             string title = R._("保存するファイル名を選択してください");
             string filter = R._("TEXT|*.txt|EA|*.event|All files|*");
 
-            uint addr = U.toOffset((uint)this.Address.Value);
+            uint addr = U.toOffset(this.Address.Value);
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;

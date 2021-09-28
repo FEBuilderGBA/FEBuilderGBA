@@ -314,7 +314,7 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,new string[]{"ENDING CG"});
             if (U.isSafetyPointer((uint)this.P0.Value))
             {
-                uint addr = U.toOffset((uint)this.P0.Value);
+                uint addr = U.toOffset(this.P0.Value);
                 for (uint n = 0; n < 10 * 4; n += 4)
                 {
                     uint addr_parts = Program.ROM.p32(addr + n);
@@ -323,12 +323,12 @@ namespace FEBuilderGBA
             }
             if (U.isSafetyPointer((uint)this.P4.Value))
             {
-                uint addr = U.toOffset((uint)this.P4.Value);
+                uint addr = U.toOffset(this.P4.Value);
                 Program.ROM.write_p32(writeaddr + (10 * 4), addr);
             }
             if (U.isSafetyPointer((uint)this.P8.Value))
             {
-                uint addr = U.toOffset((uint)this.P8.Value);
+                uint addr = U.toOffset(this.P8.Value);
                 Program.ROM.write_p32(writeaddr + (11 * 4), addr);
             }
             Program.Undo.Push(undodata);

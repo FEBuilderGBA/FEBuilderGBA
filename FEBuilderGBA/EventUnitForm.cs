@@ -355,7 +355,7 @@ namespace FEBuilderGBA
             int count = FE8CoordList.Count - 1;
             if (count == 0)
             {//移動座標なし
-                uint currentAddr = U.toOffset((uint)P8.Value);
+                uint currentAddr = U.toOffset(P8.Value);
                 uint currentCount = (uint)B7.Value;
                 if (currentCount > 0 && U.isSafetyOffset(currentAddr) )
                 {//既存で移動座標がある場合、クリアする.
@@ -1087,7 +1087,7 @@ namespace FEBuilderGBA
             F_UNK2.Value = (int)pos.unk2;
 
             int count = (int)B7.Value;
-            uint addr = U.toOffset((uint)P8.Value);
+            uint addr = U.toOffset(P8.Value);
             for (int i = 0; i < count; i++ , addr += 8)
             {
                 if (!U.isSafetyOffset(addr + 7))

@@ -2202,6 +2202,11 @@ namespace FEBuilderGBA
             }
             return a;
         }
+        [MethodImpl(256)]
+        public static uint toOffset(decimal a)
+        {
+            return toOffset((uint)a);
+        }
 
         [MethodImpl(256)]
         public static uint toPointer(uint a)

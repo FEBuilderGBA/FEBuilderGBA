@@ -50,6 +50,8 @@
             this.D12 = new System.Windows.Forms.NumericUpDown();
             this.D16 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.X_REF = new FEBuilderGBA.ListBoxEx();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
@@ -74,8 +76,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.X_REF = new FEBuilderGBA.ListBoxEx();
-            this.label8 = new System.Windows.Forms.Label();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -180,6 +181,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.GraphicsToolButton);
             this.panel3.Controls.Add(this.ImportButton);
             this.panel3.Controls.Add(this.ExportButton);
             this.panel3.Location = new System.Drawing.Point(271, 727);
@@ -374,6 +376,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 645);
             this.panel2.TabIndex = 74;
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(692, 16);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(257, 26);
+            this.label8.TabIndex = 201;
+            this.label8.Text = "参照箇所";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // X_REF
+            // 
+            this.X_REF.FormattingEnabled = true;
+            this.X_REF.IntegralHeight = false;
+            this.X_REF.ItemHeight = 18;
+            this.X_REF.Location = new System.Drawing.Point(694, 41);
+            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
+            this.X_REF.Name = "X_REF";
+            this.X_REF.Size = new System.Drawing.Size(256, 603);
+            this.X_REF.TabIndex = 199;
+            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
+            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
             // 
             // Comment
             // 
@@ -671,29 +697,16 @@
             this.AddressPanel.Size = new System.Drawing.Size(951, 30);
             this.AddressPanel.TabIndex = 75;
             // 
-            // X_REF
+            // GraphicsToolButton
             // 
-            this.X_REF.FormattingEnabled = true;
-            this.X_REF.IntegralHeight = false;
-            this.X_REF.ItemHeight = 18;
-            this.X_REF.Location = new System.Drawing.Point(694, 41);
-            this.X_REF.Margin = new System.Windows.Forms.Padding(4);
-            this.X_REF.Name = "X_REF";
-            this.X_REF.Size = new System.Drawing.Size(256, 603);
-            this.X_REF.TabIndex = 199;
-            this.X_REF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.X_REF_KeyDown);
-            this.X_REF.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.X_REF_MouseDoubleClick);
-            // 
-            // label8
-            // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(692, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(257, 26);
-            this.label8.TabIndex = 201;
-            this.label8.Text = "参照箇所";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GraphicsToolButton.Location = new System.Drawing.Point(696, 8);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageBattleTerrainForm
             // 
@@ -789,5 +802,6 @@
         private System.Windows.Forms.Label label4;
         private ListBoxEx X_REF;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button GraphicsToolButton;
     }
 }

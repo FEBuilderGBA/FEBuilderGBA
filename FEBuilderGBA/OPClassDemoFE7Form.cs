@@ -135,7 +135,7 @@ namespace FEBuilderGBA
         const uint JP_FONT_PALETTE_POINTER = 0x0B0038;
         private void P8_ValueChanged(object sender, EventArgs e)
         {
-            uint addr = U.toOffset((uint)P8.Value);
+            uint addr = U.toOffset(P8.Value);
             if (!U.isSafetyOffset(addr))
             {
                 X_NAME_IMG.Image = null;
@@ -158,7 +158,7 @@ namespace FEBuilderGBA
 
         private void X_GOTO_GRAPHICS_TOOL_JP_NAME_Click(object sender, EventArgs e)
         {
-            uint addr = U.toOffset((uint)P8.Value);
+            uint addr = U.toOffset(P8.Value);
             uint paletteAddr = Program.ROM.p32(JP_FONT_PALETTE_POINTER);
 
             GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpForm<GraphicsToolForm>(U.NOT_FOUND);

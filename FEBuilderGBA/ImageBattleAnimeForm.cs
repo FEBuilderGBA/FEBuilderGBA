@@ -161,8 +161,8 @@ namespace FEBuilderGBA
         {
             string error = "";
             string text = "Un-LZ77 ";
-            uint frame = U.toOffset((uint)N_P16.Value);
-            uint oam   = U.toOffset((uint)N_P20.Value);
+            uint frame = U.toOffset(N_P16.Value);
+            uint oam   = U.toOffset(N_P20.Value);
             if (U.isSafetyOffset(frame))
             {
                 uint size = LZ77.getUncompressSize(Program.ROM.Data, frame);

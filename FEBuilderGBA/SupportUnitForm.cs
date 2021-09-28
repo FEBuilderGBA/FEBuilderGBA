@@ -111,7 +111,7 @@ namespace FEBuilderGBA
         }
         void AutoUpdatePointer()
         {
-            uint currentAddr = U.toOffset((uint)this.Address.Value);
+            uint currentAddr = U.toOffset(this.Address.Value);
             string text = this.AddressList.Text;
             uint uid = U.atoh(text);
 
@@ -140,7 +140,7 @@ namespace FEBuilderGBA
             if (this.B6.Value != 0) support_count++;
             this.B21.Value = support_count;
 
-            uint uid = UnitForm.GetUnitIDWhereSupportAddr(U.toOffset((uint)this.Address.Value));
+            uint uid = UnitForm.GetUnitIDWhereSupportAddr(U.toOffset(this.Address.Value));
             if (uid == U.NOT_FOUND)
             {
                 return;

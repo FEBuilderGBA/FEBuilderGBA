@@ -136,7 +136,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint address = U.toOffset((uint)DeCompressAddress.Value);
+            uint address = U.toOffset(DeCompressAddress.Value);
 
             byte[] data;
             if (DeCompressSRCFilename.Text == THIS_ROM)

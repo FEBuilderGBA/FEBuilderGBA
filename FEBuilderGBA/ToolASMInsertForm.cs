@@ -176,7 +176,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint addr = U.toOffset((uint)this.Address.Value);
+            uint addr = U.toOffset(this.Address.Value);
             if (!U.CheckZeroAddressWrite(addr))
             {
                 return;
@@ -224,7 +224,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                uint freeaddr = U.toOffset((uint)this.FREEAREA.Value);
+                uint freeaddr = U.toOffset(this.FREEAREA.Value);
                 if (!U.CheckZeroAddressWrite(freeaddr))
                 {
                     return;
@@ -283,7 +283,7 @@ namespace FEBuilderGBA
                 R.ShowStopError("コンパイルした結果のファイルがないので、パッチを作成できません。");
                 return "";
             }
-            uint addr = U.toOffset((uint)this.Address.Value);
+            uint addr = U.toOffset(this.Address.Value);
             if (!U.CheckZeroAddressWrite(addr))
             {
                 return "";
@@ -308,7 +308,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                uint freeaddr = U.toOffset((uint)this.FREEAREA.Value);
+                uint freeaddr = U.toOffset(this.FREEAREA.Value);
                 uint usereg = GetSaftyRegister();
                 byte[] jumpCode = DisassemblerTrumb.MakeInjectJump(addr, freeaddr, usereg);
                 patch += "PATCHED_IF:" + U.To0xHexString(addr) + "=" + U.HexDumpLiner0x(jumpCode) + "\r\n";

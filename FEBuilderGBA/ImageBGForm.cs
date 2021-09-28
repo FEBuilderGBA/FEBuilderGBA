@@ -227,23 +227,9 @@ namespace FEBuilderGBA
 
         private void GraphicsToolButton_Click(object sender, EventArgs e)
         {
-            uint id = (uint)this.AddressList.SelectedIndex + 1;
-
-            if (id <= 0)
-            {
-                return;
-            }
-
-            InputFormRef InputFormRef = Init(null);
-            uint addr = InputFormRef.IDToAddr(id - 1);
-            if (addr == U.NOT_FOUND)
-            {
-                return;
-            }
-
-            uint image = Program.ROM.u32(addr);
-            uint palette = Program.ROM.u32(addr + 8);
-            uint tsa = Program.ROM.u32(addr + 4);
+            uint image = U.toOffset(P0.Value);
+            uint palette = U.toOffset(P8.Value);
+            uint tsa = U.toOffset(P4.Value);
 
             int width = 32 * 8;
             int height = 20 * 8;

@@ -4590,7 +4590,7 @@ namespace FEBuilderGBA
             button.PerformClick();
 
             //汚い方法ではあるが、ここで値が修正されたかを確認する.
-            addr = U.toOffset((uint)value.Value);
+            addr = U.toOffset(value.Value);
             if (U.isSafetyOffset(addr))
             {//正しく確保されてそう.
                 return addr;
@@ -5731,7 +5731,7 @@ namespace FEBuilderGBA
                 this.SelectAddressTextBox.Text = "";
                 return;
             }
-            uint addr = U.toOffset((uint)(this.Address.Value));
+            uint addr = U.toOffset((this.Address.Value));
             if (addr == 0)
             {
                 this.SelectAddressTextBox.Text = "";
@@ -6455,7 +6455,7 @@ namespace FEBuilderGBA
             }
             if (this.Address != null)
             {
-                U.ForceUpdate(this.Address, U.toOffset((uint)newAddr));
+                U.ForceUpdate(this.Address, U.toOffset(newAddr));
             };
             ReloadAddressList();
         }
@@ -6470,7 +6470,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                addr = U.toOffset((uint)this.ReadStartAddress.Value);
+                addr = U.toOffset(this.ReadStartAddress.Value);
             }
 
             uint datacount ;
@@ -10286,7 +10286,7 @@ namespace FEBuilderGBA
         //画像 10分割みたいなデータの書き込み.
         public uint WriteImageData10(NumericUpDown numObj, byte[] image, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
-            uint addr = U.toOffset((uint)numObj.Value);
+            uint addr = U.toOffset(numObj.Value);
             if (!U.isSafetyOffset(addr))
             {
                 addr = 0;

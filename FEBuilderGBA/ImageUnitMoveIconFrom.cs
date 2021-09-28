@@ -422,7 +422,7 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
                 byte[] ap = File.ReadAllBytes(filename);
-                uint ap_address = U.toOffset((uint)P4.Value);
+                uint ap_address = U.toOffset(P4.Value);
 
                 List<uint> pointers = U.GrepPointerAll(Program.ROM.Data, U.toPointer(ap_address), this.InputFormRef.BaseAddress, this.InputFormRef.BaseAddress + this.InputFormRef.BlockSize * this.InputFormRef.DataCount);
                 if (pointers.Count >= 2)
@@ -476,7 +476,7 @@ namespace FEBuilderGBA
             string filename = save.FileNames[0];
             Program.LastSelectedFilename.Save(this, "", save);
 
-            uint ap_address = U.toOffset((uint)P4.Value);
+            uint ap_address = U.toOffset(P4.Value);
             uint ap_length = ImageUtilAP.CalcAPLength(ap_address);
             if (ap_length == 0)
             {

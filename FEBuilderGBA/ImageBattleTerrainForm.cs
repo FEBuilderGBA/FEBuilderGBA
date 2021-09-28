@@ -237,5 +237,27 @@ namespace FEBuilderGBA
                 JumpToRef();
             }
         }
+
+        private void GraphicsToolButton_Click(object sender, EventArgs e)
+        {
+            uint image = U.toOffset(D12.Value);
+            uint palette = U.toOffset(D16.Value);
+
+            int width = 256;
+            int height = 8 * 4; //32
+            GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpFormLow<GraphicsToolForm>();
+            f.Jump(width
+                , height
+                , image
+                , 0
+                , 0
+                , 0
+                , palette
+                , 0
+                , 0
+                , 0);
+            f.Show();
+
+        }
     }
 }

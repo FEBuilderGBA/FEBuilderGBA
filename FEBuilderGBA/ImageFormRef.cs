@@ -636,7 +636,7 @@ namespace FEBuilderGBA
             int image_pos;
             if (ZIMAGE != null)
             {//圧縮画像
-                addr = U.toOffset((uint)ZIMAGE.Value);
+                addr = U.toOffset(ZIMAGE.Value);
                 if (! U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -650,7 +650,7 @@ namespace FEBuilderGBA
                 }
                 if (Z2IMAGE != null)
                 {//第2画像
-                    addr = U.toOffset((uint)Z2IMAGE.Value);
+                    addr = U.toOffset(Z2IMAGE.Value);
                     if (! U.isSafetyOffset(addr))
                     {
                         return ImageUtil.BlankDummy();
@@ -669,7 +669,7 @@ namespace FEBuilderGBA
             }
             else if (Z256IMAGE != null)
             {//圧縮画像256色
-                addr = U.toOffset((uint)Z256IMAGE.Value);
+                addr = U.toOffset(Z256IMAGE.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -684,7 +684,7 @@ namespace FEBuilderGBA
             }
             else if (ZLINER256IMAGE != null)
             {//256ライン画像
-                addr = U.toOffset((uint)ZLINER256IMAGE.Value);
+                addr = U.toOffset(ZLINER256IMAGE.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -699,7 +699,7 @@ namespace FEBuilderGBA
             }
             else if (IMAGE != null)
             {//無圧縮画像
-                addr = U.toOffset((uint)IMAGE.Value);
+                addr = U.toOffset(IMAGE.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -719,7 +719,7 @@ namespace FEBuilderGBA
             {//圧縮パレットを利用する
                 Debug.Assert(this.PALETTEPointer != U.NOT_FOUND);
 
-                addr = U.toOffset((uint)ZPALETTE.Value);
+                addr = U.toOffset(ZPALETTE.Value);
                 if (! U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -734,7 +734,7 @@ namespace FEBuilderGBA
             }
             else if (PALETTE != null)
             {//無圧縮パレットを利用する
-                addr = U.toOffset((uint)PALETTE.Value);
+                addr = U.toOffset(PALETTE.Value);
                 if (! U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -771,7 +771,7 @@ namespace FEBuilderGBA
             int tsa_pos;
             if (TSA != null)
             {
-                addr = U.toOffset((uint)TSA.Value);
+                addr = U.toOffset(TSA.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -807,7 +807,7 @@ namespace FEBuilderGBA
             }
             else if (ZTSA != null)
             {
-                addr = U.toOffset((uint)ZTSA.Value);
+                addr = U.toOffset(ZTSA.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -848,7 +848,7 @@ namespace FEBuilderGBA
             }
             else if (HEADERTSA != null)
             {
-                addr = U.toOffset((uint)HEADERTSA.Value);
+                addr = U.toOffset(HEADERTSA.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -882,7 +882,7 @@ namespace FEBuilderGBA
             }
             else if (ZHEADERTSA != null)
             {
-                addr = U.toOffset((uint)ZHEADERTSA.Value);
+                addr = U.toOffset(ZHEADERTSA.Value);
                 if (!U.isSafetyOffset(addr))
                 {
                     return ImageUtil.BlankDummy();
@@ -1071,7 +1071,7 @@ namespace FEBuilderGBA
                         R.ShowStopError("パレットアドレスが存在しません");
                         return null;
                     }
-                    palette_address = U.toOffset((uint)PALETTE.Value);
+                    palette_address = U.toOffset(PALETTE.Value);
                     if (!U.isSafetyOffset(palette_address))
                     {
                         R.ShowStopError("パレットアドレスに指定された値は正しくありません。\r\n{0}", palette_address);
@@ -1333,11 +1333,11 @@ namespace FEBuilderGBA
             byte[] orignalImage;
             if (this.IMAGE != null)
             {
-                orignalImage = Program.ROM.getBinaryData((uint)U.toOffset((uint)this.IMAGE.Value), (uint)(width * height / 2));
+                orignalImage = Program.ROM.getBinaryData((uint)U.toOffset(this.IMAGE.Value), (uint)(width * height / 2));
             }
             else if (this.ZIMAGE != null)
             {
-                orignalImage = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)this.ZIMAGE.Value));
+                orignalImage = LZ77.decompress(Program.ROM.Data, U.toOffset(this.ZIMAGE.Value));
             }
             else
             {
@@ -1353,11 +1353,11 @@ namespace FEBuilderGBA
 
             if (this.TSA != null)
             {
-                orignalTSA = ImageUtil.ByteToTSA(Program.ROM.Data, (int)U.toOffset((uint)this.TSA.Value), (int)width, (int)height);
+                orignalTSA = ImageUtil.ByteToTSA(Program.ROM.Data, (int)U.toOffset(this.TSA.Value), (int)width, (int)height);
             }
             else if (this.ZTSA != null)
             {
-                byte[]  d = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)this.ZTSA.Value));
+                byte[]  d = LZ77.decompress(Program.ROM.Data, U.toOffset(this.ZTSA.Value));
                 if (d.Length <= 0)
                 {
                     Debug.Assert(false);
@@ -1367,7 +1367,7 @@ namespace FEBuilderGBA
             }
             else if (this.ZHEADERTSA != null)
             {
-                byte[] d = LZ77.decompress(Program.ROM.Data, U.toOffset((uint)this.ZHEADERTSA.Value));
+                byte[] d = LZ77.decompress(Program.ROM.Data, U.toOffset(this.ZHEADERTSA.Value));
                 if (d.Length <= 0)
                 {
                     Debug.Assert(false);
@@ -1377,7 +1377,7 @@ namespace FEBuilderGBA
             }
             else if (this.HEADERTSA != null)
             {
-                orignalTSA = ImageUtil.ByteToHeaderTSA(Program.ROM.Data, (int)U.toOffset((uint)this.HEADERTSA.Value), (int)width, (int)height);
+                orignalTSA = ImageUtil.ByteToHeaderTSA(Program.ROM.Data, (int)U.toOffset(this.HEADERTSA.Value), (int)width, (int)height);
             }
             else
             {
