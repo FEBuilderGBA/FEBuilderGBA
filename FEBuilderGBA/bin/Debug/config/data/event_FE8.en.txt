@@ -1,4 +1,4 @@
-40050B00XXXXYYYY	SET_VAL_B Enter coordinates in memory slot B [XX:MAPX:X][YY:MAPY:Y](Coords)	Memory slot B is often used for passing coordinate data.
+40050B00XXXXYYYY	SET_VAL_B Enter coordinates in memory slot B [XX:MAPX:X][YY:MAPY:Y](Coords)	Memory slot B is often used for passing coordinate data.	{VAL}
 40050D00000000004005010000XXYYYY210700004005010001ZZWWWW2107000040050100FFFFFFFF21070000	Set event battle Attack->Defender [XX:DECIMAL:Damage by attacker][YYYY:ATTACK_TYPE:method of attacker][ZZ:DECIMAL:Damage by defender][WWW:ATTACK_TYPE:method of defender]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000XXYYYY210700004005010001ZZWWWW210700004005010002VVUUUU210700004005010001TTSSSS2107000040050100FFFFFFFF21070000	Set event battle Attack->Defender->Attack->Defender[XX:DECIMAL:Damage by attacker][YYYY:ATTACK_TYPE:method of attacker][ZZ:DECIMAL:Damage by defender][WWW:ATTACK_TYPE:method of defender]Next round[VV:DECIMAL:Damage by attacker 2][UUUU:ATTACK_TYPE:method of attacker 2][TT:DECIMAL:Damage by defender 2][SSSS:ATTACK_TYPE:method of defender2]	{BATTLE}	{MAPEFFECT}
 
@@ -342,6 +342,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 201A000040050200ZZ00000040050300XXXX0000400A00004804A608221B0000	Dialog (conversation) with BG[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:Conversation text](TEXTSTART+SetBackground+REMA)	{TEXT}	{J}
 201A000040050200ZZ00000040050300XXXX0000400A000010E39E08221B0000	Dialog (conversation) with BG[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:Conversation text](TEXTSTART+SetBackground+REMA)	{TEXT}	{U}
 231A000040050B00FFFFFFFF201BXXXX201D0000221B0000	Display textbox (system message)[XXXX:SYSTEM_TEXT:explanation text](TUTORIALTEXTBOXSTART+TEXTEND+REMA)	{TEXT}
+231A000040050B00WWWWVVVV201BXXXX201D0000221B0000	Display textbox (system message)with coord [XXXX:SYSTEM_TEXT:explanation text][WWWW:SCREENX:X][VVVV:SCREENY:Y](TUTORIALTEXTBOXSTART+TEXTEND+REMA)	{TEXT}
+
 2015000040050200ZZ00000040050300XXXX0000400A00004804A60821150000	Lower volume and display dialog (conversation) with BG [ZZ:BG:background][XXXX:CONVERSATION_TEXT:conversation text](HouseEvent)	{TEXT}	{J}
 2015000040050200ZZ00000040050300XXXX0000400A000010E39E0821150000	Lower volume and display dialog (conversation) with BG [ZZ:BG:background][XXXX:CONVERSATION_TEXT:conversation text](HouseEvent)	{TEXT}	{U}
 400502004F000000400A00002004A60821171000201000004040XX00ZZ00YY002010040020171000	Force promote[XX:UNIT:Character]to[ZZ:CLASS:Class]with[YY:ITEM:item ID (display only)]	{UNITPERSOLNAL}	{CC}	{J}
@@ -492,7 +494,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 492FXXXXYYYYZZZZ	Move[YY:UNIT:Character]next to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO)	@MOVESPEED	@SKIPSTARTBUTTOM	{UNITMOVE}
 492FXXXXYYYYZZZZ20300000	Move[YY:UNIT:Character]next to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed]and wait(MOVENEXTTO+ENUN)	@MOVESPEED	@SKIPSTARTBUTTOM	{UNITMOVE}
 
-241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
+241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Dialog (conversation) [ZZZZ:CONVERSATION_TEXT:conversation text] with coord[XXXX:SCREENX:X][YYYY:SCREENY:Y](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	In the original, it is used to display the cheering Walla's line that the castle of Renais has been regained.\r\nTherefore, it was previously written as Walla text.	{TEXT}
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}	{J}
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}	{U}

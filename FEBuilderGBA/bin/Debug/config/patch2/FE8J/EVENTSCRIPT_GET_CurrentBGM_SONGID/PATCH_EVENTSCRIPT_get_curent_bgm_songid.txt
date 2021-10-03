@@ -1,0 +1,20 @@
+﻿NAME=現在再生しているBGMのSongIDを取得する(イベント命令)
+NAME.en=Add Event: Get the Song ID of the currently playing BGM
+NAME.zh=Add Event: Get the Song ID of the currently playing BGM
+
+INFO=現在再生しているBGMのSongIDをSlotCに返します。\r\nもし曲を再生していない場合は、SlotCには0が返ります。
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 get_curent_bgm_songid.dmp=0x00 0xB5 0x03 0x4B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=get_curent_bgm_songid.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:get_curent_bgm_songid.dmp}	現在再生しているBGMのSongIDを取得する
+EVENTSCRIPT:01.en=400D0000{$L1:get_curent_bgm_songid.dmp}	Get Song ID of the currently playing BGM
+EVENTSCRIPT:01.zh=400D0000{$L1:get_curent_bgm_songid.dmp}	Get Song ID of the currently playing BGM

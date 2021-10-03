@@ -118,7 +118,7 @@
 00DE=SE:Mamkute yowl @C85_7B
 00DF=SE:Mamkute roar
 00E0=SE:@C85_46
-00E1=SE:[[不明 知っていたら教えて]]
+00E1=SE:ララムの踊りでのハートマーク
 00E2=SE:Armour triangle, allies striking
 00E3=SE:Idoun/Fire Dragon death roar
 00E4=SE:[[不明 知っていたら教えて]]
@@ -131,7 +131,7 @@
 00EB=SE:Axe rising @C85_41
 00EC=SE:キーンという金属音
 00ED=SE:@C85_48 エルフィンの鳥の鳴き声
-00EE=SE:[[不明 知っていたら教えて]]
+00EE=SE:エルフィンのHarp Sound
 00EF=SE:Dance/Play effect
 00F0=SE:Divine weapon shine
 00F1=SE:Fire charge @C85_3E

@@ -21,6 +21,7 @@ EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT00000040
 EVENTSCRIPT:3=40050100XXXX00004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Player]のBGMだけ変更[TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
 EVENTSCRIPT:4=400501000000000040050200XXXX0000400503000000000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:Enemy]のBGMだけ変更	{MUSIC}
 EVENTSCRIPT:5=4005010000000000400502000000000040050300XXXX000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMを動的に変更[XX:MAPMUSIC:NPC]のBGMだけ変更	{MUSIC}
+EVENTSCRIPT:6=2006C1004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	章のマップBGMをSlotCで指定したBGMに変更[TT:BOOL:勝利BGMより優先]	{MUSIC}	「勝利BGMより優先」を0(Flase)にすると、敵の数が少なくなったら勝利BGMが再生されます。\r\n「勝利BGMより優先」を1(True)にすると、勝利BGMを再生しません。
 
 
 EVENTSCRIPT:1.en=400D0000{$L1:SetChapterSong.dmp}	Change Dynamic Chapter BGM(LOW)	{MUSIC}
@@ -28,12 +29,14 @@ EVENTSCRIPT:2.en=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT00000
 EVENTSCRIPT:3.en=40050100XXXX00004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Chnage Only [XX:MAPMUSIC:Player] [TT:BOOL:Override VictoryBGM]	{MUSIC}	If you set Override VictoryBGM to 0 (Flase), the victory background music will be played when the enemy count is low.\r\nIf Override VictoryBGM is set to 1 (True), victory background music will not be played.
 EVENTSCRIPT:4.en=400501000000000040050200XXXX0000400503000000000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change Only [XX:MAPMUSIC:Enemy]	{MUSIC}
 EVENTSCRIPT:5.en=4005010000000000400502000000000040050300XXXX000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change Only [XX:MAPMUSIC:NPC]	{MUSIC}
+EVENTSCRIPT:6.en=2006C1004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change to PlayerBGM specified in SlotC[TT:BOOL:Override VictoryBGM]	{MUSIC}	If you set Override VictoryBGM to 0 (Flase), the victory background music will be played when the enemy count is low.\r\nIf Override VictoryBGM is set to 1 (True), victory background music will not be played.
 
 EVENTSCRIPT:1.zh=400D0000{$L1:SetChapterSong.dmp}	Change Dynamic Chapter BGM(LOW)	{MUSIC}
 EVENTSCRIPT:2.zh=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM[XX:MAPMUSIC:Player][YY:MAPMUSIC:Enemy][ZZ:MAPMUSIC:NPC][TT:BOOL:Override VictoryBGM]	{MUSIC}	If you set Override VictoryBGM to 0 (Flase), the victory background music will be played when the enemy count is low.\r\nIf Override VictoryBGM is set to 1 (True), victory background music will not be played.
 EVENTSCRIPT:3.zh=40050100XXXX00004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Chnage Only [XX:MAPMUSIC:Player] [TT:BOOL:Override VictoryBGM]	{MUSIC}	If you set Override VictoryBGM to 0 (Flase), the victory background music will be played when the enemy count is low.\r\nIf Override VictoryBGM is set to 1 (True), victory background music will not be played.
 EVENTSCRIPT:4.zh=400501000000000040050200XXXX0000400503000000000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change Only [XX:MAPMUSIC:Enemy]	{MUSIC}
 EVENTSCRIPT:5.zh=4005010000000000400502000000000040050300XXXX000040050400FF000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change Only [XX:MAPMUSIC:NPC]	{MUSIC}
+EVENTSCRIPT:6.zh=2006C1004005020000000000400503000000000040050400TT000000400D0000{$L1:SetChapterSong.dmp}	Change Dynamic ChapterBGM. Change to PlayerBGM specified in SlotC[TT:BOOL:Override VictoryBGM]	{MUSIC}	If you set Override VictoryBGM to 0 (Flase), the victory background music will be played when the enemy count is low.\r\nIf Override VictoryBGM is set to 1 (True), victory background music will not be played.
 
 HINT=music,song
 AUTHOR=7743 / This routine is based on Zeta's Change Chapter Objective routine.

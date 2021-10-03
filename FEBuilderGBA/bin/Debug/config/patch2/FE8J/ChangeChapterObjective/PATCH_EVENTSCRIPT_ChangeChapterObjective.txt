@@ -1,4 +1,4 @@
-﻿NAME=章のクリア目的を動的に変更できるようにします
+﻿NAME=章のクリア目的を動的に変更できるようにする
 NAME.en=AddEvent: ChangeChapterObjective
 NAME.zh=启用动态更改章节清除目的
 

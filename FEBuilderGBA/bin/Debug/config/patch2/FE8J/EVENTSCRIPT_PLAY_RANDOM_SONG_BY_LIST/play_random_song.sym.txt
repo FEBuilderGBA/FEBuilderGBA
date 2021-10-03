@@ -1,0 +1,2 @@
+Loop=$06
+ramdom_select=$12

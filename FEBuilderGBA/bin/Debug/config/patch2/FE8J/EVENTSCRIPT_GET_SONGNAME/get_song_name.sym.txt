@@ -1,0 +1,5 @@
+GetName=$12
+NotFound=$2E
+Loop=$1C
+Found=$2A
+Exit=$30

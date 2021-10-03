@@ -13164,6 +13164,8 @@ r3=X tile position of menu of the right	{U}
 08AC1BEC	:08AC1BFD	KEEPEMPTY	4	{J}
 08A3E22C	:08A3E23D	KEEPEMPTY	4	{U}
 08BB8EA0	:08BB8EEF	KEEPEMPTY	5	{J}
+085C2BA4	:085C2C53	KEEPEMPTY	6	NPC UNIT RAM	{J}
+0859A724	:0859A7D3	KEEPEMPTY	6	NPC UNIT RAM	{U}
 0808EB0C	ParseTextCommandSetName0x8023	{U}
 08090DE0	ParseTextCommandSetName0x8023	{J}
 0806EC28	StartEfxNormalEffectBG	{J}
@@ -13977,7 +13979,9 @@ r3=X tile position of menu of the right	{U}
 03003F48	:0300414F	In area where ARM funcs get copied. Past end of meaningful data.
 0300428C	:0300495F	In area where Interrupt handler gets copied. Past end of meaningful data.
 030067A8	End of static IWRAM. May collide with stack.
-02026AD0	:02026E2F	Using IconRework/CIconDisplay	Used by vanilla icon display system.
-02026E30	:02028E57	Not Using debug printing	Unused unless digging up leftover debug stuff.
-02040000	:02040C00	End of EWRAM. May collide with unit loading buffer (sizes of 0xC00 and less should leave enough room for 50+ units).
-0203AAA4	:0203C623	During link arena	May be only in real link games, in which case it may as well be considered always free.
+02026AD0	:02026E2F	Using IconRework/CIconDisplay	Used by vanilla icon display system.	{U}
+02026E30	:02028E57	Not Using debug printing	Unused unless digging up leftover debug stuff.	{U}
+02040000	:02040C00	End of EWRAM. May collide with unit loading buffer (sizes of 0xC00 and less should leave enough room for 50+ units).	{U}
+0203AAA4	:0203C623	During link arena	May be only in real link games, in which case it may as well be considered always free.	{U}
+03005AD0	:30060FF	SomeSoundBuffer1	{J}
+03006100	:300672F	SomeSoundBuffer2	{J}

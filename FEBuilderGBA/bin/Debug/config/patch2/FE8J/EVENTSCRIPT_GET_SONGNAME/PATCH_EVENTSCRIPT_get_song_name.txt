@@ -1,0 +1,28 @@
+﻿NAME=曲名のTextIDを取得する(イベント命令)
+NAME.en=Add Event: Get the TextID of the song title
+NAME.zh=Add Event: Get the TextID of the song title
+
+INFO=曲名のTextIDをサウンドルームから取得してSlotCに返します。\r\nもし、サウンドルームに登録されていない場合は、0が返ります。\r\nSongIDにFFFFを指定すると、現在再生しているBGMの曲名を返します。\r\n音楽,Music,Song,名前,テキスト
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 get_song_name.dmp=0x00 0xB5 0x0D 0x4A
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=get_song_name.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:get_song_name.dmp}	ASMC_GetSongName(LOW)
+EVENTSCRIPT:02=40050100XXXX0000400D0000{$L1:get_song_name.dmp}	[XX:MUSIC:BGM]曲名のTextIDを取得する
+EVENTSCRIPT:03=40050100FFFF0000400D0000{$L1:get_song_name.dmp}	現在のBGMのTextIDを取得する
+
+EVENTSCRIPT:01.en=400D0000{$L1:get_song_name.dmp}	ASMC_GetSongName(LOW)
+EVENTSCRIPT:02.en=40050100XXXX0000400D0000{$L1:get_song_name.dmp}	[XX:MUSIC:BGM]Get TextID of the song title
+EVENTSCRIPT:03.en=40050100FFFF0000400D0000{$L1:get_song_name.dmp}	Get TextID of the current BGM
+
+EVENTSCRIPT:01.zh=400D0000{$L1:get_song_name.dmp}	ASMC_GetSongName(LOW)
+EVENTSCRIPT:02.zh=40050100XXXX0000400D0000{$L1:get_song_name.dmp}	[XX:MUSIC:BGM]Get TextID of the song title
+EVENTSCRIPT:03.zh=40050100FFFF0000400D0000{$L1:get_song_name.dmp}	Get TextID of the current BGM

@@ -461,6 +461,7 @@
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
             this.label56 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
+            this.CHEAT_UNIT_WARP = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
             this.CHEAT_TURN_VALUE = new System.Windows.Forms.NumericUpDown();
             this.CHEAT_TURN = new System.Windows.Forms.Button();
@@ -541,7 +542,6 @@
             this.textBoxEx30 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx31 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
-            this.CHEAT_UNIT_WARP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.EventPage.SuspendLayout();
@@ -6557,6 +6557,18 @@
             this.CheatPage.TabIndex = 3;
             this.CheatPage.Text = "チート";
             // 
+            // CHEAT_UNIT_WARP
+            // 
+            this.CHEAT_UNIT_WARP.Location = new System.Drawing.Point(66, 320);
+            this.CHEAT_UNIT_WARP.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_UNIT_WARP.Name = "CHEAT_UNIT_WARP";
+            this.CHEAT_UNIT_WARP.Size = new System.Drawing.Size(741, 40);
+            this.CHEAT_UNIT_WARP.TabIndex = 333;
+            this.CHEAT_UNIT_WARP.Text = "このユニットの座標を変更しワープさせる。";
+            this.CHEAT_UNIT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_UNIT_WARP.UseVisualStyleBackColor = true;
+            this.CHEAT_UNIT_WARP.Click += new System.EventHandler(this.CHEAT_UNIT_WARP_Click);
+            // 
             // label94
             // 
             this.label94.AutoSize = true;
@@ -6572,7 +6584,7 @@
             this.CHEAT_TURN_VALUE.Location = new System.Drawing.Point(1041, 362);
             this.CHEAT_TURN_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CHEAT_TURN_VALUE.Maximum = new decimal(new int[] {
-            255,
+            65535,
             0,
             0,
             0});
@@ -7504,18 +7516,6 @@
             this.textBoxEx32.ReadOnly = true;
             this.textBoxEx32.Size = new System.Drawing.Size(671, 25);
             this.textBoxEx32.TabIndex = 202;
-            // 
-            // CHEAT_UNIT_WARP
-            // 
-            this.CHEAT_UNIT_WARP.Location = new System.Drawing.Point(66, 320);
-            this.CHEAT_UNIT_WARP.Margin = new System.Windows.Forms.Padding(2);
-            this.CHEAT_UNIT_WARP.Name = "CHEAT_UNIT_WARP";
-            this.CHEAT_UNIT_WARP.Size = new System.Drawing.Size(741, 40);
-            this.CHEAT_UNIT_WARP.TabIndex = 333;
-            this.CHEAT_UNIT_WARP.Text = "このユニットの座標を変更しワープさせる。";
-            this.CHEAT_UNIT_WARP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHEAT_UNIT_WARP.UseVisualStyleBackColor = true;
-            this.CHEAT_UNIT_WARP.Click += new System.EventHandler(this.CHEAT_UNIT_WARP_Click);
             // 
             // EmulatorMemoryForm
             // 
