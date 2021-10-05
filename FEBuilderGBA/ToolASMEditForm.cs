@@ -78,7 +78,7 @@ namespace FEBuilderGBA
 
             string output;
             string symbol;
-            bool r = MainFormUtil.CompilerDevkitPro(temp_asm, out output, out symbol, MainFormUtil.CompileType.NONE);
+            bool r = MainFormUtil.CompilerDevkitPro(temp_asm, out output, out symbol, MainFormUtil.CompileType.NONE, false);
 
             File.Delete(temp_asm);
 

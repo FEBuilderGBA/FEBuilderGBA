@@ -1,4 +1,4 @@
-﻿NAME=曲名のTextIDを取得する(イベント命令)
+NAME=曲名のTextIDを取得する(イベント命令)
 NAME.en=Add Event: Get the TextID of the song title
 NAME.zh=Add Event: Get the TextID of the song title
 
@@ -26,3 +26,5 @@ EVENTSCRIPT:03.en=40050100FFFF0000400D0000{$L1:get_song_name.dmp}	Get TextID of 
 EVENTSCRIPT:01.zh=400D0000{$L1:get_song_name.dmp}	ASMC_GetSongName(LOW)
 EVENTSCRIPT:02.zh=40050100XXXX0000400D0000{$L1:get_song_name.dmp}	[XX:MUSIC:BGM]Get TextID of the song title
 EVENTSCRIPT:03.zh=40050100FFFF0000400D0000{$L1:get_song_name.dmp}	Get TextID of the current BGM
+INFO.en=Gets the TextID of the song title from the sound room and returns it to SlotC.\r\nIf it is not registered in the sound room, 0 is returned.\r\nIf FFFF is specified for SongID, the song name of the currently playing BGM will be returned.\r\nMusic, Music, Song, name, text.
+INFO.zh=从录音室中获取歌曲名称的 TextID 并将其返回给 SlotC。\r\n如果未在音室中注册，则返回 0。\r\n如果 SongID 指定 FFFF，则返回当前播放的 BGM 的歌曲名称。\r\n音乐，音乐，歌曲，名称，文字。

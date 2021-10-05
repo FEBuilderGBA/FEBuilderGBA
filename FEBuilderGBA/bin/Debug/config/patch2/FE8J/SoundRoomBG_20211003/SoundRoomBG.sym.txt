@@ -1,0 +1,16 @@
+ClearScreen=$E0
+CountTable=$26
+ShowTableData=$3A
+ReloadScreen=$C4
+Exit=$1E
+SoundRoomBG_Table=$0114
+CountTable_Loop=$2C
+CountTable_Exit=$38
+CountTable_Next=$32
+ShowTableData_BG=$54
+ShowTableData_CG=$5A
+ShowTableData_BattleBG=$6E
+ShowTableData_Exit=$7A
+ShowTableData_LoadBackgound=$66
+ShowBattleBG=$82
+ReloadScreen_Exit=$DC

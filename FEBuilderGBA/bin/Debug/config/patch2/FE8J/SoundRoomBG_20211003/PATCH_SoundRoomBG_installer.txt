@@ -1,0 +1,16 @@
+NAME=サウンドルームの背景にCGを描画する 20211003(Install)
+NAME.en=Draw CG on background of sound room 20211003(Installer)
+NAME.zh=Draw CG on background of sound room 20211003(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xB4458=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_SoundRoomBG.txt
+EA=Installer.event
+
+
+AUTHOR=7743
+INFO=FE7のサウンドルームのように、背景にCGを描画します。\r\nCGだけではなくBG、BATTLEBGも描画できます。\r\nこのバージョンからBATTLEBGの表示にも対応しました。\r\nどのCG,BG,BATTLEBGを描画するかをリストで指定できます。
+INFO.en=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG and BATTLEBG.\r\nFrom this version, BATTLE BG display is also supported.\r\nYou can specify which CG and BG and BATTLEBG to draw in a list.
+INFO.zh=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG and BATTLEBG.\r\nFrom this version, BATTLE BG display is also supported.\r\nYou can specify which CG and BG and BATTLEBG to draw in a list.

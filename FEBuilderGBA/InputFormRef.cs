@@ -1916,12 +1916,51 @@ namespace FEBuilderGBA
                 };
                 return;
             }
-            if (linktype == "BATTLEBG")
-            {//戦闘背景
-                TextBoxEx link_object = ((TextBoxEx)link_info);
+            if (linktype == "MULTICGICON")
+            {//BG,CG,BatlleBGの3種類を表示できる面倒な奴
+                PictureBox link_object = ((PictureBox)link_info);
+
                 src_object.ValueChanged += (sender, e) =>
                 {
-                    link_object.Text = ImageBattleBGForm.GetName((uint)src_object.Value);
+                    uint icon = (uint)src_object.Value;
+                    Bitmap bitmap;
+                    if (icon < 0x100)
+                    {//BG
+                        bitmap = ImageBGForm.DrawBG(icon);
+                    }
+                    else if (icon >= 0x100 && icon < 0x200)
+                    {//CG
+                        bitmap = ImageCGForm.DrawImageByID((icon & 0xFF));
+                    }
+                    else if (icon >= 0x200 && icon < 0x300)
+                    {//BATTLEBG
+                        bitmap = ImageBattleBGForm.DrawBG((icon & 0xFF));
+                    }
+                    else
+                    {
+                        bitmap = ImageUtil.Blank(8,8);
+                    }
+                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    uint icon = (uint)src_object.Value;
+                    if (icon < 0x100)
+                    {//BG
+                        JumpTo(src_object, link_info, "BG", new string[] { });
+                    }
+                    else if (icon >= 0x100 && icon < 0x200)
+                    {//CG
+                    }
+                    else if (icon >= 0x200 && icon < 0x300)
+                    {//BATTLEBG
+                    }
+                    else
+                    {
+                    }
                 };
 
                 return;
@@ -1942,12 +1981,26 @@ namespace FEBuilderGBA
                     link_object.Image = bitmap;
                 };
 
-
                 link_info.Cursor = Cursors.Hand;
                 link_info.Click += (sender, e) =>
                 {
                     JumpTo(src_object, link_info, "BATTLEBG", new string[] { });
                 };
+                return;
+            }
+            if (linktype == "BATTLEBG")
+            {//戦闘背景
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = ImageBattleBGForm.GetName((uint)src_object.Value);
+                };
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "BATTLEBG", new string[] { });
+                };
+
                 return;
             }
             if (linktype == "SWEEP")

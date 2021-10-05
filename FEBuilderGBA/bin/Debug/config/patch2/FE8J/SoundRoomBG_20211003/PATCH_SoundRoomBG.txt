@@ -1,0 +1,27 @@
+NAME=サウンドルームの背景にCGを描画する 20211003(Editor)
+NAME.en=Draw CG on background of sound room 20211003(Editor)
+NAME.zh=Draw CG on background of sound room 20211003(Editor)
+
+IF:0xB4458=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+//画像パッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END SoundRoomBG.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 FF が出てくるまで
+DATACOUNT=$GREP2 0xFF 0xFF
+
+//データを定義します
+W0:MULTICGICON=MultiCG
+
+INFO=0x000 - 0x0FF までは BGとして表示します。\r\n0x100 - 0x1FF までは CGとして表示します。\r\n0x201 - 0x2FF までは BattleBGとして表示します。\r\nCG:0以外を表示するには、"10分割CG表示"パッチ が必要です。\r\nCGの表示は少し不安定なので、もしかすると利用しない方がいいかもしれません。\r\nBattleBGを表示するには、CGとBGの両方に0xFFを設定してください。\r\nBattleBGは0ではなく1から開始するので注意してください。つまり、最初のBattleBGは、0x200ではなく0x201から開始になります。
+INFO.en=From 0x000 to 0x0FF, displayed as BG.\r\nFrom 0x100 to 0x1FF, displayed as CG.\r\nFrom 0x201 to 0x2FF, displayed as BattleBG.\r\nTo display anything other than CG:0, the "Display 10-Divided CG" patch is required.\r\nThe CG display is a bit unstable, so you may not want to use it.\r\nNote that the BattleBG starts at 1, not 0. This means that the first BattleBG will start at 0x201 instead of 0x200.\r\n
+INFO.zh=From 0x000 to 0x0FF, displayed as BG.\r\nFrom 0x100 to 0x1FF, displayed as CG.\r\nFrom 0x201 to 0x2FF, displayed as BattleBG.\r\nTo display anything other than CG:0, the "Display 10-Divided CG" patch is required.\r\nThe CG display is a bit unstable, so you may not want to use it.\r\nNote that the BattleBG starts at 1, not 0. This means that the first BattleBG will start at 0x201 instead of 0x200.\r\n

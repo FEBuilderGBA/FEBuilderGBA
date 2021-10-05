@@ -1345,6 +1345,9 @@ Party
 :チート
 Cheat
 
+:このユニットの座標を変更しワープさせる。
+Change the coordinates of this unit and warp it.
+
 :ターン数
 Turns
 
@@ -1449,9 +1452,6 @@ Max out all of this unit's stats
 
 :現在の章をクリアします。(Hotkey: Ctrl + U)
 Clear and End the Current Chapter (Hotkey: Ctrl + U)
-
-:このユニットの座標を変更しワープさせる。
-Change the coordinates of this unit and warp it.
 
 :エミュレータへ接続
 Emulator Debugger - 
@@ -10452,6 +10452,15 @@ Channel
 
 :前後の無音除去
 Remove Silence
+
+:5734=5734Hz(M4A最低音質)
+5734=5734Hz(M4A lowest sound quality)
+
+:8000=8000Hz(一般的なツールでの最低音質)
+8000=8000Hz(lowest sound quality with common tools)
+
+:42048=42048Hz(M4A最高音質)
+42048=42048Hz(M4A highest sound quality)
 
 :音質を下げる
 Reduce Sound Quality

@@ -14,3 +14,5 @@ AUTHOR=7743
 INFO=FE7のサウンドルームのように、背景にCGを描画します。\r\nCGだけではなくBGも描画できます。\r\nどのCG,BGを描画するかをリストで指定できます。
 INFO.en=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG.\r\nYou can specify which CG and BG to draw in a list.
 INFO.zh=This patch draws CG on the background, like the sound room of FE7.\r\nYou can draw not only CG but also BG.\r\nYou can specify which CG and BG to draw in a list.
+
+DEPRECATED=1

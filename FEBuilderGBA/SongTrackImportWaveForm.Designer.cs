@@ -206,12 +206,16 @@
             this.HZ.FormattingEnabled = true;
             this.HZ.Items.AddRange(new object[] {
             "0=変更しない",
-            "8000=8000Hz",
+            "5734=5734Hz(M4A最低音質)",
+            "6000=6000Hz",
+            "7000=7000Hz",
+            "8000=8000Hz(一般的なツールでの最低音質)",
             "11025=11025Hz",
             "12000=12000Hz",
             "16000=16000Hz",
             "22050=22050Hz",
-            "24000=24000Hz"});
+            "24000=24000Hz",
+            "42048=42048Hz(M4A最高音質)"});
             this.HZ.Location = new System.Drawing.Point(211, 111);
             this.HZ.Name = "HZ";
             this.HZ.Size = new System.Drawing.Size(449, 26);

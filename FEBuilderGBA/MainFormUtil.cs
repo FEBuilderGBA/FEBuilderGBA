@@ -838,7 +838,7 @@ namespace FEBuilderGBA
 
 
         //Devkit pro Enbiで対象物をコンパイル
-        public static bool CompilerDevkitPro(string target_filename, out string output, out string out_symbol, CompileType compileType)
+        public static bool CompilerDevkitPro(string target_filename, out string output, out string out_symbol, CompileType compileType, bool checkMissingLabelCheck)
         {
             output = "";
             out_symbol = "";
@@ -911,11 +911,14 @@ namespace FEBuilderGBA
             }
 
             Elf elf = new Elf(output_temp_filename , useHookMode: false);
-            string lostLabelErrorMessage = elf.CheckLostLabel();
-            if (lostLabelErrorMessage != "")
+            if (checkMissingLabelCheck)
             {
-                output = lostLabelErrorMessage;
-                return false;
+                string lostLabelErrorMessage = elf.CheckLostLabel();
+                if (lostLabelErrorMessage != "")
+                {
+                    output = lostLabelErrorMessage;
+                    return false;
+                }
             }
             out_symbol = elf.ToEASymbol();
 
@@ -1251,7 +1254,7 @@ namespace FEBuilderGBA
         }
 
         //対象物をコンパイル
-        public static bool Compile(string target_filename, out string output, out string out_symbol, CompileType compileType)
+        public static bool Compile(string target_filename, out string output, out string out_symbol, CompileType compileType , bool checkMissingLabelCheck)
         {
             string ext = U.GetFilenameExt(target_filename);
             if (ext == ".ASM")
@@ -1266,7 +1269,7 @@ namespace FEBuilderGBA
                     return CompilerGoldRoad(target_filename, out output, out out_symbol);
                 }
             }
-            return CompilerDevkitPro(target_filename, out output, out out_symbol, compileType);
+            return CompilerDevkitPro(target_filename, out output, out out_symbol, compileType, checkMissingLabelCheck);
         }
         //無改造ROMを探索する CRCと言語で探索
         public static string FindOrignalROM(string current_dir)

@@ -943,6 +943,61 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
+        //MULTICG + テキストを書くルーチン
+        public static Size DrawMULTICGAndText(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            string text = lb.Items[index].ToString();
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            Font normalFont = lb.Font;
+            Rectangle bounds = listbounds;
+
+            int textmargineY = (ListBoxEx.OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
+
+            //テキストの先頭にアイコン番号(キャラ番号が入っている. 無駄だが汎用性を考えるとほかに方法がない)
+            uint icon = U.atoh(text);
+            Bitmap bitmap;
+            if (icon < 0x100)
+            {//BG
+                bitmap = ImageBGForm.DrawBG(icon);
+            }
+            else if (icon >= 0x100 && icon < 0x200)
+            {//CG
+                bitmap = ImageCGForm.DrawImageByID((icon & 0xFF));
+            }
+            else if (icon >= 0x200 && icon < 0x300)
+            {//BATTLEBG
+                bitmap = ImageBattleBGForm.DrawBG((icon & 0xFF));
+            }
+            else
+            {
+                bitmap = ImageUtil.Blank(ICON_WIDTH, ICON_HEGITH);
+            }
+            U.MakeTransparent(bitmap);
+
+            //アイコンを描く. 処理速度を稼ぐためにマップアイコンの方を描画
+            Rectangle b = bounds;
+            b.Width = ICON_WIDTH;
+            b.Height = ICON_HEGITH;
+            bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+            //テキストを描く.
+            b = bounds;
+            b.Y += textmargineY;
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, b);
+
+            brush.Dispose();
+            bitmap.Dispose();
+
+
+            bounds.Y += ICON_WIDTH;
+            return new Size(bounds.X, bounds.Y);
+        }
+
         //テキストを書く(hover利用のため)
         public static Size DrawTextOnly(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {

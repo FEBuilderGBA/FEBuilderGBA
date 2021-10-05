@@ -21,6 +21,7 @@ namespace FEBuilderGBA
             this.HookRegister.SelectedIndex = 3;
             this.ELFComboBox.SelectedIndex = 1;
             this.DebugSymbolComboBox.SelectedIndex = 3;
+            this.CheckMissingLabelComboBox.SelectedIndex = 1;
             U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024 , isProgramArea: true)); //とりあえず1MBの空きがあるところ.
             this.ComplieBinFilename = "";
 
@@ -106,6 +107,11 @@ namespace FEBuilderGBA
             this.Method.SelectedIndex = 2;
         }
 
+        bool IsMissingLabelCheck()
+        {
+            return this.CheckMissingLabelComboBox.SelectedIndex == 1;
+        }
+
         MainFormUtil.CompileType GetCompileType()
         {
             if (ELFComboBox.Visible)
@@ -159,7 +165,7 @@ namespace FEBuilderGBA
             
             string result;
             string symbol;
-            bool r = MainFormUtil.Compile(fullpath, out result, out symbol, GetCompileType());
+            bool r = MainFormUtil.Compile(fullpath, out result, out symbol, GetCompileType() , IsMissingLabelCheck());
             if (r == false)
             {
                 R.ShowStopError("エラーが返されました。\r\n{0}", result);
@@ -370,6 +376,7 @@ namespace FEBuilderGBA
         {
             HookRegisterLabel.AccessibleDescription = R._("フックするのに利用するレジスタを選択します。\r\nr3を利用するとEAのJumToHackと同じ意味になります。");
             FREEAREALabel.AccessibleDescription = R._("データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。");
+            CheckMissingLabelLabel.AccessibleDescription = R._("存在しないラベル名を指定している場合、エラーで止めるかどうかを選択します。\r\nタイプミスなどで未指定のラベルを指定すると、無限ループの原因になるので、それを自動的に検出します。\r\nただ、意図的に存在しないラベルを指定することもあるので、その場合は無効にしてください。");
         }
 
     }

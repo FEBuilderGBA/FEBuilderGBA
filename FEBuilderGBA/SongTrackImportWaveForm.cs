@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             LoopComboBox.SelectedIndex = 0;
             U.AddCancelButton(this);
 
-            this.HZ.SelectedIndex = 1;
+            this.HZ.SelectedIndex = 4;
             this.Strip.SelectedIndex = 1;
             this.Chunnel.SelectedIndex = 1;
             this.Volume.SelectedIndex = 9;

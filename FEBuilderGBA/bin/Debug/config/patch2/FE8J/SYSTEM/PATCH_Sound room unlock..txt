@@ -1,6 +1,6 @@
 
 NAME=サウンドルーム全開
-NAME.en=Sound room unlock.
+NAME.en=Sound room unlock
 
 //アドレスパッチとして実装します
 TYPE=ADDR

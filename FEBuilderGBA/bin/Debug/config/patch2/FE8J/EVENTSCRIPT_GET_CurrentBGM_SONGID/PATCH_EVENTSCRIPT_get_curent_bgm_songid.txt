@@ -1,4 +1,4 @@
-﻿NAME=現在再生しているBGMのSongIDを取得する(イベント命令)
+NAME=現在再生しているBGMのSongIDを取得する(イベント命令)
 NAME.en=Add Event: Get the Song ID of the currently playing BGM
 NAME.zh=Add Event: Get the Song ID of the currently playing BGM
 
@@ -18,3 +18,5 @@ AUTHOR=7743
 EVENTSCRIPT:01=400D0000{$L1:get_curent_bgm_songid.dmp}	現在再生しているBGMのSongIDを取得する
 EVENTSCRIPT:01.en=400D0000{$L1:get_curent_bgm_songid.dmp}	Get Song ID of the currently playing BGM
 EVENTSCRIPT:01.zh=400D0000{$L1:get_curent_bgm_songid.dmp}	Get Song ID of the currently playing BGM
+INFO.en=Returns the Song ID of the currently playing BGM to SlotC.\r\nIf the song is not playing, SlotC will return 0.
+INFO.zh=将当前播放的 BGM 的歌曲 ID 返回到 SlotC。\r\n如果歌曲没有播放，SlotC 将返回 0。

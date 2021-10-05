@@ -1,4 +1,4 @@
-﻿NAME=指定した曲の中からランダムに再生する(イベント命令)
+NAME=指定した曲の中からランダムに再生する(イベント命令)
 NAME.en=Add Event: Plays randomly from the specified songs
 NAME.zh=Add Event: Plays randomly from the specified songs
 
@@ -24,3 +24,5 @@ EVENTSCRIPT:02.en=40050100XXXXYYYY40050200ZZZZWWWW40050300VVVVUUUU40050400TTTTSS
 
 EVENTSCRIPT:01.zh=400D0000{$L1:play_random_song.dmp}	ASMC_PlayRandomSong(LOW)
 EVENTSCRIPT:02.zh=40050100XXXXYYYY40050200ZZZZWWWW40050300VVVVUUUU40050400TTTTSSSS40050500RRRRQQQQ4005060000000000400D0000{$L1:play_random_song.dmp}	Random playback Songs[XX:MUSIC:1][YY:MUSIC:2][ZZ:MUSIC:3][WW:MUSIC:4][VV:MUSIC:5][UU:MUSIC:6][TT:MUSIC:7][SS:MUSIC:8][RR:MUSIC:9][QQ:MUSIC:10]
+INFO.en=Randomly select and play from the specified songs.\r\nSince FEBuilderGBA has a maximum of 10 arguments, you can specify up to 10.If you set only the first few, they will be selected.\r\nFor example, if you specify only three, there is a 1/3 chance that one of them will be drawn.\r\nReturns the selected BGM to SlotC.
+INFO.zh=从指定的歌曲中随机选择并播放。\r\n由于 FEBuilderGBA 最多有 10 个参数，因此您最多可以指定 10 个。如果只设置前几个，它们将被选中。\r\n例如，如果您仅指定三个，则有 1/3 的机会绘制其中一个。\r\n将选定的 BGM 返回到 SlotC。

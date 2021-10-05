@@ -358,7 +358,7 @@ namespace FEBuilderGBA
 
                     string error;
                     string symbol;
-                    bool r = MainFormUtil.Compile(sourceCode, out error, out symbol, compileType);
+                    bool r = MainFormUtil.Compile(sourceCode, out error, out symbol, compileType, checkMissingLabelCheck: true);
                     if (!r)
                     {
                         return error;

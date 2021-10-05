@@ -953,6 +953,30 @@ namespace FEBuilderGBA
 
                     y += CONTROL_HEIGHT;
                 }
+                else if (type.IndexOf("BATTLEBGICON") == 0)
+                {//BATTLEBG.
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(500, y);
+                    pic.Size = new Size((int)(CONTROL_HEIGHT * 2 * 1.5), CONTROL_HEIGHT * 2);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pic.Name = "L_" + datanum + "_" + "BATTLEBGICON";
+                    PatchPage.Controls.Add(pic);
+
+                    y += CONTROL_HEIGHT;
+                }
+                else if (type.IndexOf("MULTICGICON") == 0)
+                {//MULTICG.
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(500, y);
+                    pic.Size = new Size((int)(CONTROL_HEIGHT * 2 * 1.5), CONTROL_HEIGHT * 2);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pic.Name = "L_" + datanum + "_" + "MULTICGICON";
+                    PatchPage.Controls.Add(pic);
+
+                    y += CONTROL_HEIGHT;
+                }
                 else if (type.IndexOf("BATTLEANIMESP") == 0)
                 {//戦闘アニメの特別指定2 面倒だが仕方ない.
                     ComboBox link = new ComboBox();
@@ -1455,6 +1479,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawBGAndText, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "MULTICG")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawMULTICGAndText, DrawMode.OwnerDrawFixed);
+            }
             else if (listname == "TEXT")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -1542,6 +1570,10 @@ namespace FEBuilderGBA
                 appendname = U.ToHexString(i);
             }
             else if (listname == "BG")
+            {
+                appendname = U.ToHexString(i);
+            }
+            else if (listname == "MULTICG")
             {
                 appendname = U.ToHexString(i);
             }
@@ -6884,6 +6916,15 @@ namespace FEBuilderGBA
                             uint songid = Program.ROM.u16(p);
                             string name = patchname + " SONG " + n;
                             UseValsID.AppendSongID(list, FELint.Type.PATCH, addr, name, songid, (uint)tag);
+                        }
+                        else if (type == "MULTICG")
+                        {
+                            uint multicgid = Program.ROM.u16(p);
+                            if (multicgid < 0x100)
+                            {//BG
+                                string name = patchname + " BG " + n;
+                                UseValsID.AppendBGID(list, FELint.Type.PATCH, addr, name, multicgid, (uint)tag);
+                            }
                         }
                     }
                     if (type == "BGICON")
