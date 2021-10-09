@@ -1538,6 +1538,10 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("midfix4agb", "");
         }
+        public static string GetWav2agb()
+        {
+            return Program.Config.at("wav2agb", "");
+        }
 
         private void midfix4agb_button_Click(object sender, EventArgs e)
         {

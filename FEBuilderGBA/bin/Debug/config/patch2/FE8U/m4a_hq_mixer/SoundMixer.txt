@@ -1,0 +1,13 @@
+PUSH
+  //Improved Sound Mixer
+    ORG $d01cc
+    POIN SoundMixer
+    ORG $d01d0
+    SHORT $6cb0 $0300 $0296
+    ORG $cf53c
+    SHORT $6cb1 $0300
+
+POP
+ALIGN 4
+SoundMixer:
+#incbin "bin/m4a_hq_mixer.dmp"	//HINT=BIN

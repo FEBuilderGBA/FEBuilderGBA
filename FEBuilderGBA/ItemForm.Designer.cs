@@ -110,7 +110,6 @@
             this.P12 = new System.Windows.Forms.NumericUpDown();
             this.J_12_ITEMSTATBOOSTER = new System.Windows.Forms.Label();
             this.HardCodingWarningLabel = new System.Windows.Forms.Label();
-            this.B6 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.J_6 = new System.Windows.Forms.Label();
             this.J_7 = new System.Windows.Forms.Label();
@@ -121,6 +120,8 @@
             this.J_2_TEXT = new System.Windows.Forms.Label();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.W2 = new System.Windows.Forms.NumericUpDown();
+            this.L_6_ID = new FEBuilderGBA.PanelEx();
+            this.B6 = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.L_0_TEXT_NAME1 = new FEBuilderGBA.TextBoxEx();
             this.L_4_TEXT_ITEM2 = new FEBuilderGBA.TextBoxEx();
@@ -172,7 +173,6 @@
             this.L_29_ITEMICONSRC = new FEBuilderGBA.InterpolatedPictureBox();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.L_6_ID = new FEBuilderGBA.PanelEx();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -206,11 +206,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_HP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_SPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
+            this.L_6_ID.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
             this.J_11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).BeginInit();
             this.J_10.SuspendLayout();
@@ -221,7 +222,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
-            this.L_6_ID.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddressListExpandsButton_256
@@ -583,6 +583,7 @@
             this.L_28_WEAPON.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_28_WEAPON.FormattingEnabled = true;
             this.L_28_WEAPON.Items.AddRange(new object[] {
+            "-",
             "E",
             "D",
             "C",
@@ -1329,20 +1330,6 @@
             this.HardCodingWarningLabel.Visible = false;
             this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
             // 
-            // B6
-            // 
-            this.B6.Hexadecimal = true;
-            this.B6.Location = new System.Drawing.Point(0, 4);
-            this.B6.Margin = new System.Windows.Forms.Padding(2);
-            this.B6.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B6.Name = "B6";
-            this.B6.Size = new System.Drawing.Size(84, 25);
-            this.B6.TabIndex = 8;
-            // 
             // J_0_TEXT
             // 
             this.J_0_TEXT.AccessibleDescription = "@NAME";
@@ -1481,6 +1468,29 @@
             this.W2.Name = "W2";
             this.W2.Size = new System.Drawing.Size(137, 25);
             this.W2.TabIndex = 27;
+            // 
+            // L_6_ID
+            // 
+            this.L_6_ID.Controls.Add(this.B6);
+            this.L_6_ID.ErrorMessage = "";
+            this.L_6_ID.Location = new System.Drawing.Point(660, 73);
+            this.L_6_ID.Name = "L_6_ID";
+            this.L_6_ID.Size = new System.Drawing.Size(86, 32);
+            this.L_6_ID.TabIndex = 145;
+            // 
+            // B6
+            // 
+            this.B6.Hexadecimal = true;
+            this.B6.Location = new System.Drawing.Point(0, 4);
+            this.B6.Margin = new System.Windows.Forms.Padding(2);
+            this.B6.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B6.Name = "B6";
+            this.B6.Size = new System.Drawing.Size(84, 25);
+            this.B6.TabIndex = 8;
             // 
             // BlockSize
             // 
@@ -2101,15 +2111,6 @@
             this.SKILLNAME.TabIndex = 121;
             this.SKILLNAME.Visible = false;
             // 
-            // L_6_ID
-            // 
-            this.L_6_ID.Controls.Add(this.B6);
-            this.L_6_ID.ErrorMessage = "";
-            this.L_6_ID.Location = new System.Drawing.Point(660, 73);
-            this.L_6_ID.Name = "L_6_ID";
-            this.L_6_ID.Size = new System.Drawing.Size(86, 32);
-            this.L_6_ID.TabIndex = 145;
-            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2260,11 +2261,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_HP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_SPD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
+            this.L_6_ID.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
             this.J_11.ResumeLayout(false);
             this.J_11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).EndInit();
@@ -2279,7 +2281,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
-            this.L_6_ID.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

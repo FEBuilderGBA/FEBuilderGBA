@@ -1613,3 +1613,4 @@
 @FE6XMAP@18	pointer	Relative text data pointer
 
 0E007000	@FE6XMAP
+03006CB0	:030078AF	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}

@@ -35,6 +35,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_4_MSEC = new FEBuilderGBA.TextBoxEx();
             this.L_8_ASM = new FEBuilderGBA.TextBoxEx();
@@ -44,7 +45,7 @@
             this.J_0_SONG = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
+            this.AddressListExpandsButton_999 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.D12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -178,6 +178,16 @@
             this.panel6.Size = new System.Drawing.Size(829, 709);
             this.panel6.TabIndex = 80;
             // 
+            // X_RoomPosstionLabel
+            // 
+            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 156);
+            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
+            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
+            this.X_RoomPosstionLabel.TabIndex = 187;
+            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // L_0_SONG
             // 
             this.L_0_SONG.ErrorMessage = "";
@@ -265,7 +275,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.AddressList);
-            this.panel1.Controls.Add(this.AddressListExpandsButton_255);
+            this.panel1.Controls.Add(this.AddressListExpandsButton_999);
             this.panel1.Controls.Add(this.LabelFilter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 30);
@@ -287,16 +297,16 @@
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // AddressListExpandsButton_255
+            // AddressListExpandsButton_999
             // 
-            this.AddressListExpandsButton_255.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(0, 717);
-            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
-            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(428, 30);
-            this.AddressListExpandsButton_255.TabIndex = 114;
-            this.AddressListExpandsButton_255.Text = "リストの拡張";
-            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
+            this.AddressListExpandsButton_999.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton_999.Location = new System.Drawing.Point(0, 717);
+            this.AddressListExpandsButton_999.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_999.Name = "AddressListExpandsButton_999";
+            this.AddressListExpandsButton_999.Size = new System.Drawing.Size(428, 30);
+            this.AddressListExpandsButton_999.TabIndex = 114;
+            this.AddressListExpandsButton_999.Text = "リストの拡張";
+            this.AddressListExpandsButton_999.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -502,16 +512,6 @@
             this.panel7.Size = new System.Drawing.Size(829, 70);
             this.panel7.TabIndex = 186;
             // 
-            // X_RoomPosstionLabel
-            // 
-            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 156);
-            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
-            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
-            this.X_RoomPosstionLabel.TabIndex = 187;
-            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SoundRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -560,7 +560,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
-        private System.Windows.Forms.Button AddressListExpandsButton_255;
+        private System.Windows.Forms.Button AddressListExpandsButton_999;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label4;

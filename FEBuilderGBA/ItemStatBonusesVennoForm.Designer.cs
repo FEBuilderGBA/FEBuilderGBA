@@ -42,9 +42,9 @@
             this.b14 = new System.Windows.Forms.NumericUpDown();
             this.b13 = new System.Windows.Forms.NumericUpDown();
             this.b12 = new System.Windows.Forms.NumericUpDown();
-            this.J_15 = new System.Windows.Forms.Label();
             this.J_14 = new System.Windows.Forms.Label();
             this.J_13 = new System.Windows.Forms.Label();
+            this.J_12 = new System.Windows.Forms.Label();
             this.X_EXPAIN_HOWTOADD = new System.Windows.Forms.Label();
             this.ItemListBox = new FEBuilderGBA.ListBoxEx();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,9 +53,9 @@
             this.b11 = new System.Windows.Forms.NumericUpDown();
             this.b10 = new System.Windows.Forms.NumericUpDown();
             this.b9 = new System.Windows.Forms.NumericUpDown();
-            this.J_12 = new System.Windows.Forms.Label();
             this.J_11 = new System.Windows.Forms.Label();
             this.J_10 = new System.Windows.Forms.Label();
+            this.J_9 = new System.Windows.Forms.Label();
             this.b7 = new System.Windows.Forms.NumericUpDown();
             this.b6 = new System.Windows.Forms.NumericUpDown();
             this.b2 = new System.Windows.Forms.NumericUpDown();
@@ -206,9 +206,9 @@
             this.panel4.Controls.Add(this.b14);
             this.panel4.Controls.Add(this.b13);
             this.panel4.Controls.Add(this.b12);
-            this.panel4.Controls.Add(this.J_15);
             this.panel4.Controls.Add(this.J_14);
             this.panel4.Controls.Add(this.J_13);
+            this.panel4.Controls.Add(this.J_12);
             this.panel4.Controls.Add(this.X_EXPAIN_HOWTOADD);
             this.panel4.Controls.Add(this.ItemListBox);
             this.panel4.Controls.Add(this.label10);
@@ -217,9 +217,9 @@
             this.panel4.Controls.Add(this.b11);
             this.panel4.Controls.Add(this.b10);
             this.panel4.Controls.Add(this.b9);
-            this.panel4.Controls.Add(this.J_12);
             this.panel4.Controls.Add(this.J_11);
             this.panel4.Controls.Add(this.J_10);
+            this.panel4.Controls.Add(this.J_9);
             this.panel4.Controls.Add(this.b7);
             this.panel4.Controls.Add(this.b6);
             this.panel4.Controls.Add(this.b2);
@@ -294,30 +294,17 @@
             this.b12.Size = new System.Drawing.Size(65, 25);
             this.b12.TabIndex = 12;
             // 
-            // J_15
-            // 
-            this.J_15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_15.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_15.Location = new System.Drawing.Point(353, 133);
-            this.J_15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_15.Name = "J_15";
-            this.J_15.Size = new System.Drawing.Size(64, 25);
-            this.J_15.TabIndex = 189;
-            this.J_15.Text = "魔防";
-            this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // J_14
             // 
             this.J_14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_14.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_14.Location = new System.Drawing.Point(284, 133);
+            this.J_14.Location = new System.Drawing.Point(353, 133);
             this.J_14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_14.Name = "J_14";
             this.J_14.Size = new System.Drawing.Size(64, 25);
-            this.J_14.TabIndex = 188;
-            this.J_14.Text = "守備";
+            this.J_14.TabIndex = 189;
+            this.J_14.Text = "魔防";
             this.J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_13
@@ -325,13 +312,26 @@
             this.J_13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_13.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_13.Location = new System.Drawing.Point(215, 133);
+            this.J_13.Location = new System.Drawing.Point(284, 133);
             this.J_13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_13.Name = "J_13";
             this.J_13.Size = new System.Drawing.Size(64, 25);
-            this.J_13.TabIndex = 187;
-            this.J_13.Text = "速さ";
+            this.J_13.TabIndex = 188;
+            this.J_13.Text = "守備";
             this.J_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_12
+            // 
+            this.J_12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_12.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.J_12.Location = new System.Drawing.Point(215, 133);
+            this.J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_12.Name = "J_12";
+            this.J_12.Size = new System.Drawing.Size(64, 25);
+            this.J_12.TabIndex = 187;
+            this.J_12.Text = "速さ";
+            this.J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_EXPAIN_HOWTOADD
             // 
@@ -436,30 +436,17 @@
             this.b9.Size = new System.Drawing.Size(65, 25);
             this.b9.TabIndex = 9;
             // 
-            // J_12
-            // 
-            this.J_12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_12.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_12.Location = new System.Drawing.Point(143, 133);
-            this.J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_12.Name = "J_12";
-            this.J_12.Size = new System.Drawing.Size(64, 25);
-            this.J_12.TabIndex = 50;
-            this.J_12.Text = "技";
-            this.J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // J_11
             // 
             this.J_11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_11.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_11.Location = new System.Drawing.Point(74, 133);
+            this.J_11.Location = new System.Drawing.Point(143, 133);
             this.J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_11.Name = "J_11";
             this.J_11.Size = new System.Drawing.Size(64, 25);
-            this.J_11.TabIndex = 49;
-            this.J_11.Text = "攻撃";
+            this.J_11.TabIndex = 50;
+            this.J_11.Text = "技";
             this.J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_10
@@ -467,13 +454,26 @@
             this.J_10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_10.Location = new System.Drawing.Point(4, 133);
+            this.J_10.Location = new System.Drawing.Point(74, 133);
             this.J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_10.Name = "J_10";
             this.J_10.Size = new System.Drawing.Size(64, 25);
-            this.J_10.TabIndex = 48;
-            this.J_10.Text = "HP";
+            this.J_10.TabIndex = 49;
+            this.J_10.Text = "攻撃";
             this.J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_9
+            // 
+            this.J_9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_9.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.J_9.Location = new System.Drawing.Point(4, 133);
+            this.J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_9.Name = "J_9";
+            this.J_9.Size = new System.Drawing.Size(64, 25);
+            this.J_9.TabIndex = 48;
+            this.J_9.Text = "HP";
+            this.J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // b7
             // 
@@ -838,7 +838,6 @@
         private System.Windows.Forms.NumericUpDown b11;
         private System.Windows.Forms.NumericUpDown b10;
         private System.Windows.Forms.NumericUpDown b9;
-        private System.Windows.Forms.Label J_11;
         private System.Windows.Forms.Label J_10;
         private System.Windows.Forms.Label J_9;
         private System.Windows.Forms.NumericUpDown b8;
@@ -846,13 +845,13 @@
         private ListBoxEx ItemListBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label X_EXPAIN_HOWTOADD;
-        private System.Windows.Forms.Label J_15;
+        private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.NumericUpDown b14;
         private System.Windows.Forms.NumericUpDown b13;
         private System.Windows.Forms.NumericUpDown b12;
-        private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.Label J_13;
         private System.Windows.Forms.Label J_12;
+        private System.Windows.Forms.Label J_11;
         private LabelEx labelEx1;
 
     }

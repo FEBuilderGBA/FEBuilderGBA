@@ -194,6 +194,8 @@ namespace FEBuilderGBA
         //手斧だけのリストを作る.
         public static List<U.AddrResult> MakeItemListByHandAxs()
         {
+            bool useWeaponLockArray = PatchUtil.SearchVennouWeaponLockArray();
+
             InputFormRef InputFormRef = Init(null);
             List<U.AddrResult> src = InputFormRef.MakeList();
             List<U.AddrResult> dest = new List<U.AddrResult>();
@@ -209,6 +211,11 @@ namespace FEBuilderGBA
                 {//射程1
                     continue;
                 }
+                uint b28 = Program.ROM.u8(src[i].addr + 28);
+                if (b28 <= 0x00)
+                {//武器レベル 0だった場合専用武器の可能性が高い
+                    continue;
+                }
                 uint b9 = Program.ROM.u8(src[i].addr + 9);
                 if ((b9 & 0x1C) > 0)
                 {//専用武器 &0x04 or &0x8 or 0x10
@@ -218,6 +225,14 @@ namespace FEBuilderGBA
                 if ((b10 & 0x3C) > 0)
                 {//専用武器 &0x04 or &0x8 or 0x10 or 0x20
                     continue; //専用武器のため判定不能
+                }
+                if (useWeaponLockArray)
+                {
+                    uint b11 = Program.ROM.u8(src[i].addr + 11);
+                    if (b11 > 0)
+                    {//vennou's WeaponLockArray
+                        continue;
+                    }
                 }
 
                 //手斧

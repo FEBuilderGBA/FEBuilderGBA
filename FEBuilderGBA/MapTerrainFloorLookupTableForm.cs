@@ -101,7 +101,7 @@ namespace FEBuilderGBA
         {
             if (g_PointersCache == null)
             {
-                if (PatchUtil.SearchCache_ExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
+                if (PatchUtil.SearchExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
                 {
                     g_PointersCache = MapTerrainBGLookupTableForm.GetPointersExtendsPatch(0);
                 }
@@ -151,7 +151,7 @@ namespace FEBuilderGBA
                 return ;
             }
 
-            if (PatchUtil.SearchCache_ExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
+            if (PatchUtil.SearchExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
             {
                 if (U.IsBadPointerPointer(pointers[selected]))
                 {

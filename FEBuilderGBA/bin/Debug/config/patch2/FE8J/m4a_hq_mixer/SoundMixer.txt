@@ -1,0 +1,18 @@
+//SoundMixer
+PUSH
+
+ORG	$D4EC4
+POIN	Mixer
+
+ORG	$D4EC8
+WORD	$03006cb0
+SHORT	$0296
+
+ORG $D4234
+WORD	$03006cb1
+
+POP
+
+ALIGN 4
+Mixer:
+#incbin "bin/m4a_hq_mixer.dmp"	//HINT=BIN

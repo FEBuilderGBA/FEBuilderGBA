@@ -499,8 +499,11 @@ Palette
 :10分割画像
 10-Part Image
 
+:この値を0にしないでください
+Do not set this value to 0.
+
 :CC3分岐パッチよって追加された値です。\r\n上の2つの同じであれば無視されます。\r\nこの値は、クラスデータの「クラスチェンジ」に保存されます。
-This is the value added by the 3-Branch Promotion patch.\r\nIgnored if the two fields are the same.\r\nThis value is stored in "Promotes to" section in the class editor.
+This is the value added by the 3-Branch Promotion patch.\r\nSet to the same value as branch 1 if not using.\r\nThis value is stored in "Promotes to" section in the class editor.
 
 :CC時に表示されるクラスの英語表記へJump
 Jump to Class Name at Promotion Screen
@@ -510,9 +513,6 @@ Before Promotion
 
 :選択中のクラス
 Selected Class
-
-:この値を0にしないでください
-Do not set this value to 0.
 
 :CC分岐
 Promotion Branches
@@ -8746,9 +8746,6 @@ Press Ctrl + F5 to playtest with this emulator.
 :F5キーを押すと、このエミュレータを起動して、テストプレイを行います。
 Press the F5 key to start this emulator for playtesting.
 
-:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
-For details on where to obtain each program, please refer to this manual.
-
 :mid2agbをmidi取り込みのディフォルトにする
 Make mid2agb the default for MIDI importing
 
@@ -9261,6 +9258,9 @@ When exporting a file...
 
 :保存
 Save
+
+:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
+For details on where to obtain each program, please refer to this manual.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -10306,11 +10306,17 @@ Open Another ROM
 :サウンドテーブル
 Sound Table
 
-:領域が確保されていません。
-The area has not been reserved.
+:圧縮前のサイズ
+Size before compression.
+
+:これより下のアドレスには、圧縮されたDPCMデータが、LengthByteだけ格納されています。
+At addresses below this, compressed DPCM data is stored by LengthByte.
 
 :これより下のアドレスには、waveデータが、LengthByteだけ格納されています。
 Wave data is stored as LengthByte below this address.
+
+:領域が確保されていません。
+The area has not been reserved.
 
 :楽器({0})のアドレス({1})は、ROMの範囲外です
 The address ({1}) of the instrument ({0}) is outside the ROM range.
@@ -10423,35 +10429,20 @@ Drum Set
 :結果を見るには、Previewボタンを押してください。
 To hear the result, press the Preview button.
 
+:ファイルサイズ {0} -> {1} ({2}%)\r\n圧縮品質 SNR: {3}dB (高いほど良い。20dB以下は圧縮を使わない方がいいかも。)
+File size {0} -> {1} ({2}%)\r\nCompression quality SNR: {3}dB (higher is better.It may be better not to use compression below 20dB)
+
 :ファイルサイズ {0} -> {1} ({2}%)
 File size {0} -> {1} ({2}%)
-
-:最適化せずにインポート
-Import Without Optimisations
-
-:0=変更しない
-0=No Change
 
 :Waveの音質を下げると、容量を小さくできます。
 Decreasing the sound quality of Wave can reduce the file size.
 
-:音量
-Volume
+:音質を下げる
+Reduce Sound Quality
 
-:チャンネル
-Channel
-
-:0=除去しない
+:0=変更しない
 0=No Change
-
-:1=無音を除去する
-1=Remove Silence
-
-:2=もっと強力に無音を除去する
-2=Powerful Silence Removal
-
-:前後の無音除去
-Remove Silence
 
 :5734=5734Hz(M4A最低音質)
 5734=5734Hz(M4A lowest sound quality)
@@ -10462,14 +10453,44 @@ Remove Silence
 :42048=42048Hz(M4A最高音質)
 42048=42048Hz(M4A highest sound quality)
 
-:音質を下げる
-Reduce Sound Quality
+:前後の無音除去
+Remove Silence
 
-:最適化
-Optimisation
+:音量
+Volume
+
+:0=除去しない
+0=No Change
+
+:1=無音を除去する
+1=Remove Silence
+
+:2=もっと強力に無音を除去する
+2=Powerful Silence Removal
+
+:チャンネル
+Channel
 
 :Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
 Since Wave files consume a lot of space, it is recommended that you convert to a lower quality first.
+
+:m4a_hq_mixer patchを利用して、DPCM圧縮を行えます。\\r\\n圧縮すると容量がおよそ半分になります。\\r\\nただ、品質が極わずかですが低下します。\\r\\nmidi楽器として使いたいWAVならばoffにしてください。\\r\\nそれ以外のボイスデータなどであれば、可能であれば有効にすることをお勧めします。
+You can use m4a_hq_mixer patch to perform DPCM compression.\\\\ r \\\\ n Compressing halves the capacity.\\\\ r \\\\ n However, the quality is very slight, but it deteriorates.\\\\ r \\\\ nmidi If you want to use WAV as an instrument, turn it off.\\\\ r \\\\ n For other voice data, it is recommended to enable it if possible.
+
+:DPCM圧縮
+DPCM compression.
+
+:0=圧縮しない
+0=Do not compress.
+
+:1=圧縮する
+1=Compress
+
+:DPCM圧縮処理時の先読みの値です。\\r\\nディフォルトは3です。\\r\\n値を大きくすると、より先読みをします。\\r\\nただし、圧縮率は一切変わりません。
+This is the look-ahead value during DPCM compression processing.\\\\ r \\\\ n The default is 3.The larger the \\\\ r \\\\ n value, the more look-ahead.\\\\ r \\\\ n However, the compression ratio does not change at all.
+
+:m4a_hq_mixer Patchがインストールされていないので、DPCM圧縮は利用できません。
+DPCM compression is not available because m4a_hq_mixer Patch is not installed.
 
 :Waveのインポート
 Wave Import
@@ -10690,8 +10711,14 @@ Please select the instrument to use when playing the song.\r\nDefaults to the cu
 :midiインポート設定
 MIDI Import Settings
 
+:ディフォルト値から変更しない
+Do not change from the default value.
+
 :楽器を選択してください
 Please Select an Instrument
+
+:格納方法と最適化
+Storage method and optimization.
 
 :歌などを入れる場合は、ループが必要です。\r\n楽器データの場合は不要です。\r\nインポート後に、楽譜データから変更することもできます。
 If you want to import a song, you need a loop.\r\nNot required for instrument data.\r\nYou can also partially change the music's data after importing.
@@ -10773,6 +10800,9 @@ There is no song table.\r\n\r\nglobal sss\r\nsss:\r\nSuch data is necessary.\r\n
 
 :ソングテーブルにソングヘッダがありません。
 There is no song header in the song table.
+
+:{0}:{1}行目 数字以外のデータ({2})が含まれています
+{0}: Line {1} Contains non-numeric data ({2}).
 
 :数式以外の文字が入っています。 expr:{0}
 Characters other than mathematical expressions are included. expr:{0} (Try repairing the MIDI?)
@@ -11611,6 +11641,9 @@ Select the register to use for hooking.\r\nUsing r3 is equivalent to EA's JumToH
 :データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。
 Define the area to store data.\r\nBy default, the end of ROM is chosen.
 
+:存在しないラベル名を指定している場合、エラーで止めるかどうかを選択します。\r\nタイプミスなどで未指定のラベルを指定すると、無限ループの原因になるので、それを自動的に検出します。\r\nただ、意図的に存在しないラベルを指定することもあるので、その場合は無効にしてください。
+If you specify a label name that does not exist, select whether to stop with an error.\r\nIf you specify an unspecified label due to a typo, etc., it will cause an infinite loop, so it will be detected automatically.\r\nHowever, you may intentionally specify a label that does not exist. In that case, disable it.
+
 :0=中間ファイルは利用しないので消去する
 0=Delete the intermediate files as they will not be used.
 
@@ -11640,6 +11673,15 @@ Embed at Given Address
 
 :フリー領域に配置してジャンプコードを埋め込みます
 Place in Free Space and embed Jump Code
+
+:0=エラーチェックをしない
+0=Do not check for errors.
+
+:1=エラーチェックをする
+1=Check for errors.
+
+:自動ラベルチェック
+Automatic label check.
 
 :無改造ROMを選択してください
 Please select an unmodified ROM.

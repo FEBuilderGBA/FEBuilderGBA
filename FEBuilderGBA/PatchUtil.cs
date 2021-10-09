@@ -42,6 +42,7 @@ namespace FEBuilderGBA
             g_Cache_TextEngineRework_enum = TextEngineRework_enum.NoCache;
             g_Cache_HPBar_enum = HPBar_enum.NoCache;
             g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
+            g_Cache_m4a_hq_mixer = Cache_m4a_hq_mixer.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1911,6 +1912,54 @@ namespace FEBuilderGBA
             return Path.GetFileNameWithoutExtension(asmc);
         }
 
+        //圧縮音源のサポート
+        public enum Cache_m4a_hq_mixer
+        {
+            NO,             //なし
+            m4a_hq_mixer,
+            NoCache = (int)NO_CACHE
+        };
+        static Cache_m4a_hq_mixer g_Cache_m4a_hq_mixer = Cache_m4a_hq_mixer.NoCache;
+        public static Cache_m4a_hq_mixer Search_m4a_hq_mixer()
+        {
+            if (g_Cache_m4a_hq_mixer == Cache_m4a_hq_mixer.NoCache)
+            {
+                g_Cache_m4a_hq_mixer = Search_m4a_hq_mixerLow();
+            }
+            return g_Cache_m4a_hq_mixer;
+        }
+        static Cache_m4a_hq_mixer Search_m4a_hq_mixerLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE8J", addr = 0xD4ECC,data = new byte[]{0x96, 0x02}},
+                new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE8U", addr = 0xD01D4,data = new byte[]{0x96, 0x02}},
+                new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE7J", addr = 0xBF0B0,data = new byte[]{0x96, 0x02}},
+                new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE7U", addr = 0xBE56C,data = new byte[]{0x96, 0x02}},
+                new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE6",  addr = 0x9C838,data = new byte[]{0x96, 0x02}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "m4a_hq_mixer")
+                {
+                    return Cache_m4a_hq_mixer.m4a_hq_mixer;
+                }
+            }
+            return Cache_m4a_hq_mixer.NO;
+        }
+
         //戦闘背景拡張
         public enum ExtendsBattleBG_extends
         {
@@ -1919,15 +1968,15 @@ namespace FEBuilderGBA
             NoCache = (int)NO_CACHE
         };
         static ExtendsBattleBG_extends g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
-        public static ExtendsBattleBG_extends SearchCache_ExtendsBattleBG()
+        public static ExtendsBattleBG_extends SearchExtendsBattleBG()
         {
             if (g_Cache_ExtendsBattleBG == ExtendsBattleBG_extends.NoCache)
             {
-                g_Cache_ExtendsBattleBG = SearchCache_ExtendsBattleBGLow();
+                g_Cache_ExtendsBattleBG = SearchExtendsBattleBGLow();
             }
             return g_Cache_ExtendsBattleBG;
         }
-        static ExtendsBattleBG_extends SearchCache_ExtendsBattleBGLow()
+        static ExtendsBattleBG_extends SearchExtendsBattleBGLow()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="Extends",	ver = "FE8J", addr = 0x58D1C,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},

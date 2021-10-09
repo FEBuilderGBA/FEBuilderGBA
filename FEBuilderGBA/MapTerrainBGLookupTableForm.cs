@@ -138,7 +138,7 @@ namespace FEBuilderGBA
             string filename = U.ConfigDataFilename("battleterrain_set_");
             Dictionary<uint, string> data = U.LoadDicResource(filename);
 
-            if (PatchUtil.SearchCache_ExtendsBattleBG() != PatchUtil.ExtendsBattleBG_extends.Extends)
+            if (PatchUtil.SearchExtendsBattleBG() != PatchUtil.ExtendsBattleBG_extends.Extends)
             {
                 return data;
             }
@@ -205,7 +205,7 @@ namespace FEBuilderGBA
         {
             if (g_PointersCache == null)
             {
-                if (PatchUtil.SearchCache_ExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
+                if (PatchUtil.SearchExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
                 {
                     g_PointersCache = GetPointersExtendsPatch(4);
                 }
@@ -257,7 +257,7 @@ namespace FEBuilderGBA
                 return ;
             }
 
-            if (PatchUtil.SearchCache_ExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
+            if (PatchUtil.SearchExtendsBattleBG() == PatchUtil.ExtendsBattleBG_extends.Extends)
             {
                 if (U.IsBadPointerPointer(pointers[selected]))
                 {

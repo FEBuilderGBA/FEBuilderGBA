@@ -34,12 +34,14 @@
             this.Instrument = new System.Windows.Forms.NumericUpDown();
             this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.NotChangeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Instrument)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.NotChangeButton);
             this.panel1.Controls.Add(this.OKButton);
             this.panel1.Controls.Add(this.InstrumentSelectComboBox);
             this.panel1.Controls.Add(this.Instrument);
@@ -53,11 +55,11 @@
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(386, 230);
+            this.OKButton.Location = new System.Drawing.Point(377, 230);
             this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(264, 28);
-            this.OKButton.TabIndex = 175;
+            this.OKButton.Size = new System.Drawing.Size(272, 28);
+            this.OKButton.TabIndex = 0;
             this.OKButton.Text = "選択する";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
@@ -70,7 +72,7 @@
             this.InstrumentSelectComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.InstrumentSelectComboBox.Name = "InstrumentSelectComboBox";
             this.InstrumentSelectComboBox.Size = new System.Drawing.Size(295, 26);
-            this.InstrumentSelectComboBox.TabIndex = 174;
+            this.InstrumentSelectComboBox.TabIndex = 2;
             this.InstrumentSelectComboBox.SelectedIndexChanged += new System.EventHandler(this.InstrumentSelectComboBox_SelectedIndexChanged);
             // 
             // Instrument
@@ -85,7 +87,7 @@
             0});
             this.Instrument.Name = "Instrument";
             this.Instrument.Size = new System.Drawing.Size(134, 25);
-            this.Instrument.TabIndex = 173;
+            this.Instrument.TabIndex = 3;
             // 
             // J_4_INSTRUMENT_ADDR
             // 
@@ -108,6 +110,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "曲を演奏するときに利用する楽器を選択してください。\r\nディフォルトは現在の曲の楽器アドレスになっています。\r\n\r\nmidi楽器とFEの楽器は、並び順が違うので、注" +
     "意してください。\r\n自分で楽器の順番を調整するか、\r\nNIMAP(Native Instrument Map)パッチを利用してください。";
+            // 
+            // NotChangeButton
+            // 
+            this.NotChangeButton.Location = new System.Drawing.Point(8, 230);
+            this.NotChangeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NotChangeButton.Name = "NotChangeButton";
+            this.NotChangeButton.Size = new System.Drawing.Size(340, 28);
+            this.NotChangeButton.TabIndex = 1;
+            this.NotChangeButton.Text = "ディフォルト値から変更しない";
+            this.NotChangeButton.UseVisualStyleBackColor = true;
+            this.NotChangeButton.Click += new System.EventHandler(this.NotChangeButton_Click);
             // 
             // SongTrackImportSelectInstrumentForm
             // 
@@ -136,5 +149,6 @@
         private System.Windows.Forms.ComboBox InstrumentSelectComboBox;
         private System.Windows.Forms.NumericUpDown Instrument;
         private System.Windows.Forms.Label J_4_INSTRUMENT_ADDR;
+        private System.Windows.Forms.Button NotChangeButton;
     }
 }

@@ -5007,6 +5007,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SongInstrumentForm";
             this.Text = "楽器セット";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SongInstrumentForm_FormClosed);
             this.Load += new System.EventHandler(this.SongVocaForm_Load);
             this.panel9.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

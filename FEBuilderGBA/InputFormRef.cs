@@ -3252,7 +3252,7 @@ namespace FEBuilderGBA
                 return ;
             }
 
-            U.ForceUpdate(src_object, addr);
+            U.ForceUpdate(src_object, U.toPointer(addr));
             //新規に追加した分のデータを書き込み.
             Program.Undo.Push(undodata);
 
@@ -3401,7 +3401,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            U.ForceUpdate(src_object, addr);
+            U.ForceUpdate(src_object, U.toPointer(addr) );
             //新規に追加した分のデータを書き込み.
             Program.Undo.Push(undodata);
 

@@ -1,0 +1,16 @@
+NAME=Load時に、LVとHPが上書きされる特殊クラス2
+NAME.en=Special class 2 to that overwrites LV and HP when load
+
+INFO=バニラでは、ゴーゴンの卵は、LVとHPが奇妙な制約を受けます。
+INFO.en=In vanilla, Gorgon's eggs have strange restrictions on LV and HP
+
+NAME.zh=Special class 2 to that overwrites LV and HP when load
+INFO.zh=In vanilla, Gorgon's eggs have strange restrictions on LV and HP
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x179C2
+ADDRESS_TYPE=CLASS
+
+AUTHOR=7743

@@ -2793,6 +2793,138 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static string LoadWavS(string filename, out byte[] out_data)
+        {
+            List<byte> list = new List<byte>();
+            Dictionary<string, byte> byteMap = new Dictionary<string, byte>();
+            for (int i = 0; i < 256; i++ )
+            {
+                byte a = (byte)((0 - i) & 0xFF);
+                byteMap[i.ToString()] = (byte)i;
+                byteMap[(0 - i).ToString()] = (byte)((0 - i) & 0xFF);
+                byteMap["0x" + i.ToString("X02")] = (byte)i;
+                byteMap["0x" + i.ToString("x02")] = (byte)i;
+            }
+            for (int i = 0; i < 16; i++)
+            {
+                byteMap["0x" + i.ToString("X1")] =  (byte)i;
+                byteMap["0x" + i.ToString("x1")] =  (byte)i;
+            }
+
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                //@以降はコメントなので消し去る.
+                line = U.ClipCommentWithCharpAndAtmark(line);
+
+                if (line.Length <= 1)
+                {
+                    continue;
+                }
+                string[] token = line.Split(new string[] { " ", "\t", "," }, StringSplitOptions.RemoveEmptyEntries);
+                if (token.Length <= 0)
+                {
+                    continue;
+                }
+
+                if (token[0] == ".byte")
+                {
+                    for (int n = 1; n < token.Length; n++)
+                    {
+                        string v = token[n].Trim();
+                        byte vv;
+                        if (!byteMap.TryGetValue(v, out vv))
+                        {
+                            out_data = new byte[]{};
+                            return R.Error("{0}:{1}行目 数字以外のデータ({2})が含まれています", filename, i + 1, v);
+                        }
+                        list.Add(vv);
+                    }
+                }
+                else if (token[0] == ".word")
+                {
+                    for (int n = 1; n < token.Length; n++)
+                    {
+                        string v = token[n].Trim();
+                        uint vv = U.atoi0x(v);
+                        U.append_u32(list , vv);
+                    }
+                }
+            }
+
+            out_data = list.ToArray();
+            return "";
+        }
+
+#if DEBUG
+        public static void TEST_LoadWavS()
+        {
+            {
+                //読込のテスト
+                string test_wave_s = Program.GetTestData("test_wave_.s");
+                byte[] data;
+                string error = LoadWavS(test_wave_s, out data);
+                Debug.Assert(error == "");
+
+                //正解データ
+                string test_wave_bin = Program.GetTestData("test_wave_.dpcm.bin");
+                byte[] data2 = File.ReadAllBytes(test_wave_bin);
+                //読込んだ内容が正解データと一致するか確認する
+                Debug.Assert(U.memcmp(data, data2) == 0);
+
+                //圧縮されているか確認
+                bool iscompress = IsDirectSoundWaveCompressedDPCM(data, 0);
+                Debug.Assert(iscompress);
+
+                //ついでにサイズのテストもする
+                //ヘッダファイル(0x10) 以外の本体のサイズを返します.
+                uint datasize = GetDirectSoundWaveDataLength(data, 0);
+                Debug.Assert(data.Length == datasize + 0x10);
+
+                //圧縮してみよう
+                string test_wave_wav = Program.GetTestData("test_wave_.wav");
+                byte[] wave_bin = File.ReadAllBytes(test_wave_wav);
+
+                byte[] my_compress_bin = SongUtilDPCM.wavToDPCMByte(wave_bin);
+                //File.WriteAllBytes("aaa.bin", my_compress_bin);
+                Debug.Assert(U.memcmp(my_compress_bin, data2) == 0);
+
+                //デコードしてみる
+                byte[] decodeWave = SongUtil.byteToWavForDPCM(my_compress_bin, 0);
+                //品質の確認
+                double snr = SongUtil.CalculateSNR(wave_bin, decodeWave);
+                Debug.Assert(snr == 33.342422167089467);
+            }
+        }
+#endif // DEBUG
+
+        //元データを、一度非可逆圧縮して、元に戻したときに、どれだけ劣化したかを取得します
+        //数字が高いほどより良い性能を持っている
+        //Tikiのコードを参考にしました。
+        static public double CalculateSNR(byte[] sourceData, byte[] decompressData)
+        {
+            long sum_son = 0;
+            long sum_mum = 0;
+            int max = Math.Min(sourceData.Length, decompressData.Length);
+
+            //0x44はwave headerなのでそれ以降を比較します
+            for(int i = 0x44 ; i < max ; i ++)
+            {
+                sum_son += (long)decompressData[i] * (long)decompressData[i];
+                long sub = (long)decompressData[i] - (long)sourceData[i];
+                sum_mum += sub * sub;
+            }
+
+            if (sum_mum == 0)
+            {//まったく同じだとinfinityになるので
+                return 100;
+            }
+
+            double snr = 10 * Math.Log10((double)sum_son / (double)sum_mum);
+            return snr;
+        }
+
         static int findGlobal(List<SongInnerDataSt> global, string name)
         {
             for (int i = 0; i < global.Count; i++)
@@ -2912,25 +3044,18 @@ namespace FEBuilderGBA
             }
         }
 #endif
-
+        public static bool IsDirectSoundData(uint addr)
+        {
+            return IsDirectSoundData(Program.ROM.Data, addr);
+        }
         public static bool IsDirectSoundData(byte[] rom,uint addr)
         {
             if (addr + 12 + 4 > rom.Length)
             {
                 return false;
             }
-//            uint header = U.u16(rom , addr + 0x0);
-//            if (header != 0x0)
-//            {
-//                return false;
-//            }
-//            uint header2 = U.u8(rom, addr + 0x2);
-//            if (header2 != 0x0)
-//            {
-//                return false;
-//            }
 
-            uint len = U.u32(rom, (uint)(addr + 12));
+            uint len = SongUtil.GetDirectSoundWaveDataLength(rom, addr);
             if (len >= 1024*1024*4)
             {//4MB使う音源とかマジですか?
                 return false;
@@ -2981,6 +3106,61 @@ namespace FEBuilderGBA
                 int dd = ((int)d) - 0x80;
 
                 fp.Add((byte)dd);
+            }
+            return fp.ToArray();
+        }
+        public static byte[] byteToWavForDPCM(byte[] data, uint pos)
+        {
+            //周波数??
+            uint samples_per_sec1024 = U.u32(data, (uint)(pos + 4)); //周波数*1024
+            samples_per_sec1024 = samples_per_sec1024 / 1024;
+
+            //長さ
+            uint len = U.u32(data, (uint)(pos + 12));
+
+            List<byte> fp = new List<byte>();
+            U.append_range(fp, "RIFF"); //riff_chunk_ID
+            U.append_u32(fp, (uint)(36 + len));  //riff_chunk_size
+            U.append_range(fp, "WAVE"); //riff_form_type
+            U.append_range(fp, "fmt "); //fmt_chunk_ID
+            U.append_u32(fp, 16);   //fmt_chunk_size  
+            U.append_u16(fp, 1);   //fmt_wave_format_type  
+            U.append_u16(fp, 1);   //fmt_channel  
+            U.append_u32(fp, (uint)samples_per_sec1024);   //fmt_samples_per_sec   標本化周波数
+            U.append_u32(fp, (uint)(samples_per_sec1024 * 8 / 8));   //fmt_bytes_per_sec
+            U.append_u16(fp, (uint)(1));   //fmt_block_size
+            U.append_u16(fp, (uint)(8));   //fmt_bits_per_sample 量子化精度
+
+            U.append_range(fp, "data"); //data_chunk_ID
+            U.append_u32(fp, (uint)(len));   //data_chunk_size
+
+            uint compressDataLen = GetDirectSoundWaveDataLength(data, pos);
+
+            uint DPCM_DECODE_SIZE = 0x1 + 0x20;
+            int[] dpcmLookupTable = new int[] { 0, 1, 4, 9, 16, 25, 36, 49, -64, -49, -36, -25, -16, -9, -4, -1 };
+
+            for (uint n = 0; n < compressDataLen; n += DPCM_DECODE_SIZE)
+            {
+                uint readAddrN = pos + 0x10 + n;
+                byte[] block = U.getBinaryData(data, readAddrN, DPCM_DECODE_SIZE);
+                uint d = block[0];
+                int dd = ((int)d) - 0x80;
+                fp.Add((byte)dd);
+                uint index;
+                for (int i = 1; i < DPCM_DECODE_SIZE; i++)
+                {
+                    uint a = block[i];
+                    if (i != 1)
+                    {//どういうわけか、最初の1回目は特殊処理が必要
+                        index = (uint)((a >> 4) & 0xF);
+                        dd = dd + dpcmLookupTable[index];
+                        fp.Add((byte)dd);
+                    }
+
+                    index = (uint)(a & 0xF);
+                    dd = dd + dpcmLookupTable[index];
+                    fp.Add((byte)dd);
+                }
             }
             return fp.ToArray();
         }
@@ -3085,13 +3265,34 @@ namespace FEBuilderGBA
             //少なくともsappyの挙動はそうなっている. bug?
             return wave.ToArray();
         }
-
-        public static string ImportWave(string filename, uint songtable_address, bool useLoop)
+        
+        public static string ImportWave(string filename, uint songtable_address, bool useLoop, string fromfilename)
         {
             uint songheader_address = Program.ROM.p32(songtable_address + 0);
 
-            byte[] wave = File.ReadAllBytes(filename);
-            byte[] gbawave = SongUtil.wavToByte(wave);
+            string ext = U.GetFilenameExt(filename);
+            byte[] wave;
+            byte[] gbawave;
+            if (ext == ".S")
+            {
+                string error = SongUtil.LoadWavS(filename, out gbawave);
+                if (error != "")
+                {
+                    return error;
+                }
+                wave = File.ReadAllBytes(fromfilename);
+            }
+            else if (ext == ".DPCM")
+            {
+                gbawave = File.ReadAllBytes(filename);
+                wave = SongUtil.byteToWavForDPCM(gbawave,0);
+            }
+            else
+            {
+                wave = File.ReadAllBytes(filename);
+                gbawave = SongUtil.wavToByte(wave);
+            }
+
             if (gbawave == null)
             {
                 return R.Error("Waveファイルのインポートを取りやめました");
@@ -3138,11 +3339,6 @@ namespace FEBuilderGBA
             U.append_u8(track, 60); //Cn3        //index:7
             U.append_u8(track, 127); //v127      //index:8
 
-            if (useLoop == false)
-            {
-                U.append_u8(track, 48 + 0x80); //W96 //index:9
-            }
-            else
             {
                 //全休符
                 uint zenkyufu = playsec/2;
@@ -3162,23 +3358,21 @@ namespace FEBuilderGBA
                 }
                 U.append_u8(track, EOT); //EOT
             }
-            U.append_u8(track, 0xB2); //goto //index:10
-            U.append_u32(track, 0); //addr   //index:11,12,13,14
+            if (useLoop)
+            {
+                U.append_u8(track, 0xB2); //goto //index:10
+                U.append_u32(track, 0); //addr   //index:11,12,13,14
+            }
             U.append_u8(track, 0xB1); //FINE   //index:15
 
             uint track_addr = ra.Write(track.ToArray(), undodata);
 
             //ループアドレスに正しいものを入れる.
-            if (useLoop == false)
+            if (useLoop)
             {
                 Debug.Assert(track.Count - 4 - 1 == 11);
                 //無音無限
                 Program.ROM.write_p32((uint)(track_addr + track.Count - 4 - 1), track_addr + 9);
-            }
-            else
-            {
-                //音をもう一回
-                Program.ROM.write_p32((uint)(track_addr + track.Count - 4 - 1), track_addr + 6);
             }
 
             //ソングヘッダ
@@ -3411,7 +3605,7 @@ namespace FEBuilderGBA
                 }
                 else if (c.type == 0xb2)
                 {//GOTO
-                    if (isMapBGM && checkTIE && !IsEnvSound(song_id) )
+                    if (isMapBGM && checkTIE && !IsEnvSound(song_id) && track.codes.Count > 10)
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
@@ -3562,6 +3756,36 @@ namespace FEBuilderGBA
             }
             return songpointer;
         }
+        public static bool IsDirectSoundWaveCompressedDPCM(uint songdata_addr)
+        {
+            return IsDirectSoundWaveCompressedDPCM(Program.ROM.Data, songdata_addr);
+        }
+        public static bool IsDirectSoundWaveCompressedDPCM(byte[] data, uint songdata_addr)
+        {
+            uint head1 = U.u8(data, songdata_addr + 0);
+            return (head1 == 0x01);
+        }
 
+        public static uint GetDirectSoundWaveDataLength(uint songdata_addr)
+        {
+            return GetDirectSoundWaveDataLength(Program.ROM.Data, songdata_addr);
+        }
+        public static uint GetDirectSoundWaveDataLength(byte[] data,uint songdata_addr)
+        {
+            uint sample_length = U.u32(data, songdata_addr + 12);
+
+            if (! IsDirectSoundWaveCompressedDPCM(data,songdata_addr))
+            {//非圧縮wave
+                return sample_length;
+            }
+
+            //33 * (old data / 64);
+            uint div64 = sample_length / 64;
+            if (sample_length % 64 != 0)
+            {//端数切り上げ
+                div64 ++;
+            }
+            return 33 * (div64);
+        }
     }
 }

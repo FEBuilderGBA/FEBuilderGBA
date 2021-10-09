@@ -852,8 +852,6 @@ namespace FEBuilderGBA
             }
 
             string tooldir = Path.GetDirectoryName(devkitpro_eabi);
-
-
             string target = Path.Combine(Path.GetDirectoryName(target_filename), Path.GetFileNameWithoutExtension(target_filename));
             string ext = U.GetFilenameExt(target_filename);
             string compiler;
@@ -2266,6 +2264,42 @@ namespace FEBuilderGBA
             }
 
             output = output_target;
+            return true;
+        }
+        //wav2agbで圧縮する
+        public static bool ConvertWav2agb(string save_file, string filename, uint lookahead, out string output)
+        {
+            output = "";
+
+            string compiler_exe = OptionForm.GetWav2agb();
+            if (compiler_exe == "" || !File.Exists(compiler_exe))
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "wav2agb");
+                return false;
+            }
+            if (!File.Exists(compiler_exe))
+            {
+                output = R.Error(("ファイルがありません。\r\nファイル名:{0}"), compiler_exe);
+                return false;
+            }
+
+            string tooldir = Path.GetDirectoryName(compiler_exe);
+            string args = ""
+                + U.escape_shell_args(filename)
+                + " " + U.escape_shell_args(save_file)
+                + " -c"
+                + " -l " + lookahead
+                ;
+
+            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+
+            if (!File.Exists(save_file) || U.GetFileSize(save_file) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = save_file;
             return true;
         }
 

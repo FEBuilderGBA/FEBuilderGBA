@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.L_4_HZ1024 = new FEBuilderGBA.TextBoxEx();
+            this.Infomation = new System.Windows.Forms.Label();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
             this.D12 = new System.Windows.Forms.NumericUpDown();
             this.J_12 = new System.Windows.Forms.Label();
@@ -43,7 +44,8 @@
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.L_4_HZ1024 = new FEBuilderGBA.TextBoxEx();
+            this.X_COMPRESSED_SIZE = new System.Windows.Forms.NumericUpDown();
+            this.X_L_COMPRESSED_SIZE = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -51,13 +53,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_COMPRESSED_SIZE)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.X_COMPRESSED_SIZE);
+            this.panel1.Controls.Add(this.X_L_COMPRESSED_SIZE);
             this.panel1.Controls.Add(this.L_4_HZ1024);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Infomation);
             this.panel1.Controls.Add(this.L_0_COMBO);
             this.panel1.Controls.Add(this.D12);
             this.panel1.Controls.Add(this.J_12);
@@ -73,14 +78,24 @@
             this.panel1.Size = new System.Drawing.Size(837, 234);
             this.panel1.TabIndex = 157;
             // 
-            // label1
+            // L_4_HZ1024
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(547, 18);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "これより下のアドレスには、waveデータが、LengthByteだけ格納されています。";
+            this.L_4_HZ1024.ErrorMessage = "";
+            this.L_4_HZ1024.Location = new System.Drawing.Point(434, 37);
+            this.L_4_HZ1024.Name = "L_4_HZ1024";
+            this.L_4_HZ1024.Placeholder = "";
+            this.L_4_HZ1024.ReadOnly = true;
+            this.L_4_HZ1024.Size = new System.Drawing.Size(211, 25);
+            this.L_4_HZ1024.TabIndex = 112;
+            // 
+            // Infomation
+            // 
+            this.Infomation.AutoSize = true;
+            this.Infomation.Location = new System.Drawing.Point(25, 160);
+            this.Infomation.Name = "Infomation";
+            this.Infomation.Size = new System.Drawing.Size(547, 18);
+            this.Infomation.TabIndex = 111;
+            this.Infomation.Text = "これより下のアドレスには、waveデータが、LengthByteだけ格納されています。";
             // 
             // L_0_COMBO
             // 
@@ -232,15 +247,28 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 0;
             // 
-            // L_4_HZ1024
+            // X_COMPRESSED_SIZE
             // 
-            this.L_4_HZ1024.ErrorMessage = "";
-            this.L_4_HZ1024.Location = new System.Drawing.Point(434, 37);
-            this.L_4_HZ1024.Name = "L_4_HZ1024";
-            this.L_4_HZ1024.Placeholder = "";
-            this.L_4_HZ1024.ReadOnly = true;
-            this.L_4_HZ1024.Size = new System.Drawing.Size(211, 25);
-            this.L_4_HZ1024.TabIndex = 112;
+            this.X_COMPRESSED_SIZE.Location = new System.Drawing.Point(223, 125);
+            this.X_COMPRESSED_SIZE.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.X_COMPRESSED_SIZE.Name = "X_COMPRESSED_SIZE";
+            this.X_COMPRESSED_SIZE.ReadOnly = true;
+            this.X_COMPRESSED_SIZE.Size = new System.Drawing.Size(205, 25);
+            this.X_COMPRESSED_SIZE.TabIndex = 113;
+            // 
+            // X_L_COMPRESSED_SIZE
+            // 
+            this.X_L_COMPRESSED_SIZE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_L_COMPRESSED_SIZE.Location = new System.Drawing.Point(-1, 124);
+            this.X_L_COMPRESSED_SIZE.Name = "X_L_COMPRESSED_SIZE";
+            this.X_L_COMPRESSED_SIZE.Size = new System.Drawing.Size(218, 30);
+            this.X_L_COMPRESSED_SIZE.TabIndex = 114;
+            this.X_L_COMPRESSED_SIZE.Text = "LengthByte";
+            this.X_L_COMPRESSED_SIZE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SongInstrumentDirectSoundForm
             // 
@@ -260,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_COMPRESSED_SIZE)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +309,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown ReadStartAddress;
         private System.Windows.Forms.ComboBox L_0_COMBO;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Infomation;
         private FEBuilderGBA.TextBoxEx L_4_HZ1024;
+        private System.Windows.Forms.NumericUpDown X_COMPRESSED_SIZE;
+        private System.Windows.Forms.Label X_L_COMPRESSED_SIZE;
     }
 }

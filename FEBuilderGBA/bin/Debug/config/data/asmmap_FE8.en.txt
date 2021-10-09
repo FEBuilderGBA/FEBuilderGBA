@@ -12728,7 +12728,8 @@ r3=X tile position of menu of right	{U}
 089A2B68	:089A2BCD   Move Sound: Gorgon	{U}
 089A2BCE	:089A2C01	Move Sound: fleet	{U}
 089A2C02	:089A2C27	Move Sound: Myrrh	{U}
-03006CB0	:0300788F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
+03006CB0	:030078AF	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)
+03007510	:030078AF	Improved Sound Mixer	new mixing buffer
 0203AE00	:0203AEC7	Hp bars with cached warning	by circles and Tequila (included in Skill System)	{U}
 //02026A90	:02026AAF	IconRework (or CIconDisplay)	{U}
 //02026E30	AutoNewline	Amount of space used is variable, since it copies textIDs there for processing	 Location can be changed in installer	event	{U}

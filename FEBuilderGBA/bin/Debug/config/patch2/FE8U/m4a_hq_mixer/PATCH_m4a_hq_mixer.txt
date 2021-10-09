@@ -1,0 +1,16 @@
+NAME=m4a hq mixer
+NAME.en=m4a hq mixer
+NAME.zh=m4a hq mixer
+
+PATCHED_IF:0xd01d4=0x96 0x02
+
+TYPE=EA
+TAG=#ENGINE
+EA=SoundMixer.txt
+
+
+INFO=おそらくImproved Sound Mixerの後継となるバージョンです。\r\nこのバージョンから圧縮音源(DPCM)をサポートしています。
+INFO.en=Probably the successor to the Improved Sound Mixer.\r\nCompressed sound sources(DPCM) are supported from this version.
+INFO.zh=Probably the successor to the Improved Sound Mixer.\r\nCompressed sound sources(DPCM) are supported from this version.
+
+AUTHOR=ipatix https://github.com/ipatix/gba-hq-mixer , FE8U porting 7743

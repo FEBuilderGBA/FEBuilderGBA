@@ -659,7 +659,7 @@ namespace FEBuilderGBA
                     return false;
                 }
                 uint sample_hz1024 = U.u32(this.Data, sample_location + 4) / 1024;
-                uint sample_length = U.u32(this.Data, sample_location + 12);
+                uint sample_length = SongUtil.GetDirectSoundWaveDataLength(this.Data, sample_location);
                 Log.Debug(R._("DirectSound Sample:{0} bytes ({1} *1024 hz)", sample_length, sample_hz1024));
 
                 if (is_deps)

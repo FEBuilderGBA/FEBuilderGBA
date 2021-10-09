@@ -1930,6 +1930,7 @@ namespace FEBuilderGBA
             Array.Copy(data, addr, ret, 0, count);
             return ret;
         }
+
         public static String convertByteToStringDump(byte[] data)
         {
             String bin = "";

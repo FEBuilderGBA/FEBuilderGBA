@@ -460,6 +460,7 @@
             this.L_28_WEAPON.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_28_WEAPON.FormattingEnabled = true;
             this.L_28_WEAPON.Items.AddRange(new object[] {
+            "-",
             "E",
             "D",
             "C",

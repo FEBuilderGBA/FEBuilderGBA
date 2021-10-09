@@ -193,7 +193,7 @@ namespace FEBuilderGBA
                     f.Dettach();
                     return;
                 }
-                error = SongUtil.ImportWave(f.GetFilename(), songtable_address, f.UseLoop());
+                error = SongUtil.ImportWave(f.GetFilename(), songtable_address, f.UseLoop(), f.GetFromFilename());
                 f.Dettach();
             }
             else if (ext == ".MID" || ext == ".MIDI")

@@ -2,7 +2,7 @@ NAME=Improved Sound Mixer
 NAME.en=Improved Sound Mixer
 NAME.zh=Improved Sound Mixer
 
-PATCHED_IF:0xd01d0=0xb0 0x6c 0x00 0x03 0x18 0x02
+PATCHED_IF:0xd01d4=0x18 0x02
 
 TYPE=EA
 TAG=#ENGINE

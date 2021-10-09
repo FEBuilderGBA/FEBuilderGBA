@@ -39,6 +39,23 @@ namespace FEBuilderGBA
             this.D8.Value = Program.ROM.u32(addr + 8);
             this.D12.Value = Program.ROM.u32(addr + 12);
             this.D8.Maximum = this.D12.Value;
+
+            if (SongUtil.IsDirectSoundWaveCompressedDPCM(addr))
+            {
+                J_12.Text = R._("圧縮前のサイズ");
+                X_L_COMPRESSED_SIZE.Show();
+                X_COMPRESSED_SIZE.Show();
+                X_COMPRESSED_SIZE.Value = SongUtil.GetDirectSoundWaveDataLength(addr);
+                Infomation.Text = R._("これより下のアドレスには、圧縮されたDPCMデータが、LengthByteだけ格納されています。");
+            }
+            else
+            {
+                J_12.Text = R._("LengthByte");
+                X_L_COMPRESSED_SIZE.Hide();
+                X_COMPRESSED_SIZE.Hide();
+                X_COMPRESSED_SIZE.Value = 0;
+                Infomation.Text = R._("これより下のアドレスには、waveデータが、LengthByteだけ格納されています。");
+            }
         }
 
         private void AllWriteButton_Click(object sender, EventArgs e)

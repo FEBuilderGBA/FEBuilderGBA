@@ -60,5 +60,12 @@ namespace FEBuilderGBA
                 Instrument.Value = addr;
             }
         }
+
+        private void NotChangeButton_Click(object sender, EventArgs e)
+        {
+            this.Instrument.Value = OrignalInstrumentAddr;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
+        }
     }
 }

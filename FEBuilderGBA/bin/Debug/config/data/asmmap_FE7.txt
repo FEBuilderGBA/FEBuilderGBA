@@ -5466,3 +5466,5 @@
 0801C194	HandlePlayerCursorMovement	{U}
 080AD190	サウンドルーム画面を表示	{J}
 080AC2AC	サウンドルーム画面を表示	{U}
+03005E80	:03006A7F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{J}
+03005DA0	:0300699F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}

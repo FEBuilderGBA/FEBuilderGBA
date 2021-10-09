@@ -80,6 +80,7 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="SongUtilDPCM.cs" />
     <Compile Include="ToolBGMMuteDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>

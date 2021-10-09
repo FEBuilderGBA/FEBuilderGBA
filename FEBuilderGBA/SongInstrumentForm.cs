@@ -232,7 +232,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    uint sample_length = Program.ROM.u32(songdata_addr + 12);
+                    uint sample_length = SongUtil.GetDirectSoundWaveDataLength(songdata_addr);
                     if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
                     {//壊れたデータ 長さが取れない
                         FEBuilderGBA.Address.AddPointer(recycle
@@ -242,7 +242,7 @@ namespace FEBuilderGBA
                             , FEBuilderGBA.Address.DataTypeEnum.SONGINSTDIRECTSOUND);
                         continue;
                     }
-                    if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                    if (!SongUtil.IsDirectSoundData(songdata_addr))
                     {//壊れたデータ 
                         FEBuilderGBA.Address.AddPointer(recycle
                             , addr + 4
@@ -252,10 +252,20 @@ namespace FEBuilderGBA
                         continue;
                     }
 
+                    string name;
+                    if (SongUtil.IsDirectSoundWaveCompressedDPCM(songdata_addr))
+                    {
+                        name = "DIRECTSOUND(DPCM COMPRESSED)";
+                    }
+                    else
+                    {
+                        name = "DIRECTSOUND";
+                    }
+
                     FEBuilderGBA.Address.AddPointer(recycle
                         , addr + 4
                         , 12 + 4 + sample_length
-                        , basename + U.To0xHexString(i) + "DIRECTSOUND"
+                        , basename + U.To0xHexString(i) + name
                         , FEBuilderGBA.Address.DataTypeEnum.SONGINSTDIRECTSOUND);
                 }
                 else if (type == 0x03
@@ -331,12 +341,12 @@ namespace FEBuilderGBA
                 {
                     return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})は、ROMの範囲外です", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr));
                 }
-                uint sample_length = Program.ROM.u32(songdata_addr + 12);
+                uint sample_length = SongUtil.GetDirectSoundWaveDataLength(songdata_addr);
                 if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
                 {//壊れたデータ 長さが取れない
                     return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})の長さ({2})は、ROMの範囲外です", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr), sample_length);
                 }
-                if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                if (!SongUtil.IsDirectSoundData(songdata_addr))
                 {//壊れたデータ 
                     return R._("楽器({0})のDIRECTSOUNDのwaveデータ({1})は、破損していいます", U.To0xHexString(inst_id), U.To0xHexString(songdata_addr));
                 }
@@ -439,7 +449,7 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            uint length = Program.ROM.u32(songdata_addr + 12);
+            uint length = SongUtil.GetDirectSoundWaveDataLength(songdata_addr);
             if (length == U.NOT_FOUND)
             {
                 return "";
@@ -624,10 +634,19 @@ namespace FEBuilderGBA
             {
                 return;
             }
+
             string filename = Path.GetTempFileName();
             filename += "." + U.ToHexString(AddressList.SelectedIndex) + ".wav";
 
-            byte[] wave = SongUtil.byteToWav(Program.ROM.Data, addr);
+            byte[] wave;
+            if (SongUtil.IsDirectSoundWaveCompressedDPCM(addr))
+            {
+                wave = SongUtil.byteToWavForDPCM(Program.ROM.Data, addr);
+            }
+            else
+            {
+                wave = SongUtil.byteToWav(Program.ROM.Data, addr);
+            }
             U.WriteAllBytes(filename, wave);
 
             StopPlayer();
@@ -663,12 +682,13 @@ namespace FEBuilderGBA
 
         void ExportGBAWave(NumericUpDown addrNumObj, string fingerPrint)
         {
+            uint addr = (uint)addrNumObj.Value;
+            addr = U.toOffset(addr);
+
             string title = R._("保存するファイル名を選択してください");
             string filter = R._("wav|*.wav|All files|*");
 
             string songname = "instrument_" + U.ToHexString(AddressList.SelectedIndex) + "_" + fingerPrint;
-            uint addr = (uint)addrNumObj.Value;
-            addr = U.toOffset(addr);
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;
@@ -694,7 +714,15 @@ namespace FEBuilderGBA
                 return;
             }
 
-            byte[] wave = SongUtil.byteToWav(Program.ROM.Data, addr);
+            byte[] wave;
+            if (SongUtil.IsDirectSoundWaveCompressedDPCM(addr))
+            {
+                wave = SongUtil.byteToWavForDPCM(Program.ROM.Data, addr);
+            }
+            else
+            {
+                wave = SongUtil.byteToWav(Program.ROM.Data, addr);
+            }
             U.WriteAllBytes(filename, wave);
 
             U.SelectFileByExplorer(filename);
@@ -738,14 +766,34 @@ namespace FEBuilderGBA
                 f.Dettach();
                 return;
             }
-            byte[] wave = File.ReadAllBytes(f.GetFilename());
-            byte[] gbawave = SongUtil.wavToByte(wave);
+
+            byte[] gbawave;
+            filename = f.GetFilename();
+            string ext = U.GetFilenameExt(filename);
+            if (ext == ".S")
+            {
+                string error = SongUtil.LoadWavS(filename, out gbawave);
+                if (error != "")
+                {
+                    R.ShowStopError(error);
+                    f.Dettach();
+                    return;
+                }
+            }
+            else if (ext == ".DPCM")
+            {
+                gbawave = File.ReadAllBytes(f.GetFilename());
+            }
+            else
+            {
+                byte[] wave = File.ReadAllBytes(f.GetFilename());
+                gbawave = SongUtil.wavToByte(wave);
+            }
+            f.Dettach();
             if (gbawave == null)
             {
                 return;
             }
-
-            f.Dettach();
 
             if (! U.isSafetyOffset(addr))
             {
@@ -762,12 +810,13 @@ namespace FEBuilderGBA
         public static MoveToUnuseSpace.ADDR_AND_LENGTH gbawave_length(uint addr)
         {
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
-            uint length = Program.ROM.u32(addr + 12);
 
+            uint length = SongUtil.GetDirectSoundWaveDataLength(addr);
             aal.addr = addr;
             aal.length = 12 + 4 + length;
             return aal;
         }
+
         //midi楽器へ変換.
         public static uint ToMidiInstrument(uint InstrumentAddr,uint voca,uint unk = U.NOT_FOUND)
         {
@@ -909,12 +958,12 @@ namespace FEBuilderGBA
                 {
                     return "";
                 }
-                uint sample_length = Program.ROM.u32(songdata_addr + 12);
+                uint sample_length = SongUtil.GetDirectSoundWaveDataLength(songdata_addr);
                 if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
                 {
                     return "";
                 }
-                if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                if (!SongUtil.IsDirectSoundData(songdata_addr))
                 {//壊れたデータ 
                     return "";
                 }
@@ -1507,6 +1556,11 @@ namespace FEBuilderGBA
         private void N00_PreviewButton_Click(object sender, EventArgs e)
         {
             PreviewGBAWave(N00_P4, this.FINGERPRINT.Text);
+        }
+
+        private void SongInstrumentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dettach();
         }
     }
 }
