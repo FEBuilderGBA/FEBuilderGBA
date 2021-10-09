@@ -162,16 +162,16 @@
 413FXXXXYYYYZZZZ	Execute event battle (MapBattle)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG2)	Execute Map Battle. event battle 41	{BATTLE}	{MAPEFFECT}
 423FXXXXYYYYZZZZ	Execute event battle (42)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ::Unknown](FIG3)	{BATTLE}	{MAPEFFECT}
 22370000	GIVETOSLOT3(LOW)
-402C0100XXXXXXXX20300000	Load units and move. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
-402C0100XXXXXXXX	Load units. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
-412C0100XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
-412C0000XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
-412C0100XXXXXXXX20300000	Load units and move.[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
-402C0000XXXXXXXX	Load units(ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
-422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored
+402C0100XXXXXXXX20300000	Load units and move. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	@LOAD1	{LOADUNIT}
+402C0100XXXXXXXX	Load units. If player unit, join party.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	@LOAD1	{LOADUNIT}
+412C0100XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	@LOAD2	{LOADUNIT}
+412C0000XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	@LOAD2	{LOADUNIT}
+412C0100XXXXXXXX20300000	Load units and move.[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	@LOAD2	{LOADUNIT}
+402C0000XXXXXXXX	Load units(ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	@LOAD1
+422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	@LOAD3
 402C0100FFFFFFFF	Load reinforcements of memory slot 2(LOW)
-412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)
-412C0000FFFFFFFF	Load units of memory slot 2(LOAD1)(LOW)
+412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)	@LOAD2
+412C0000FFFFFFFF	Load units of memory slot 2(LOAD1)(LOW)	@LOAD1
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]
@@ -585,8 +585,8 @@ Duration
 400D0000197F0808	Clear DungeonState to start recording when tower start	{J}
 400D0000595C0808	Clear DungeonState to start recording when ruins start	{U}
 400D00004D5C0808	Clear DungeonState to start recording when tower start	{U}
-412C0100E01C0003	LOAD2 0x03001CE0(LOW)	A mysterious instruction to LOAD2 from RAM.	{J}
-412C0100E81C0003	LOAD2 0x03001CE8(LOW)	A mysterious instruction to LOAD2 from RAM.	{U}
+412C0100E01C0003	LOAD2 0x03001CE0(LOW)	A mysterious instruction to LOAD2 from RAM.	@LOAD2	{J}
+412C0100E81C0003	LOAD2 0x03001CE8(LOW)	A mysterious instruction to LOAD2 from RAM.	@LOAD2	{U}
 585B5F6100000000	_UNK_585B5F6100000000(LOW)
 400D0000B9630D08	Force soft reset(ASMC BiosSoftReset)(LOW)	{J}
 400D0000BD160D08	Force soft reset(ASMC BiosSoftReset)(LOW)	{U}
