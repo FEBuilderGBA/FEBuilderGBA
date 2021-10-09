@@ -3370,9 +3370,9 @@ namespace FEBuilderGBA
             //ループアドレスに正しいものを入れる.
             if (useLoop)
             {
-                Debug.Assert(track.Count - 4 - 1 == 11);
+                Debug.Assert(track.Count - 4 - 1 == 0xE);
                 //無音無限
-                Program.ROM.write_p32((uint)(track_addr + track.Count - 4 - 1), track_addr + 9);
+                Program.ROM.write_p32((uint)(track_addr + track.Count - 4 - 1), track_addr + 6);
             }
 
             //ソングヘッダ

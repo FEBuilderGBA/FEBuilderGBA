@@ -10478,10 +10478,10 @@ Since Wave files consume a lot of space, it is recommended that you convert to a
 You can use m4a_hq_mixer patch to perform DPCM compression.\\\\ r \\\\ n Compressing halves the capacity.\\\\ r \\\\ n However, the quality is very slight, but it deteriorates.\\\\ r \\\\ nmidi If you want to use WAV as an instrument, turn it off.\\\\ r \\\\ n For other voice data, it is recommended to enable it if possible.
 
 :DPCM圧縮
-DPCM compression.
+DPCM compression
 
 :0=圧縮しない
-0=Do not compress.
+0=Do not compress
 
 :1=圧縮する
 1=Compress
