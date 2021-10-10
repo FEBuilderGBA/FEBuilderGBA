@@ -13257,10 +13257,12 @@ Placement Flag
 
 
 :読込むユニットに、自軍の新規メンバーがいれば仲間にします。\r\nプレイヤー以外の敵やNPCに対して利用することもできます。
-If there is new member of player army in the units list to be load, they will be join the party.\r\nThis can also be used against enemies and NPCs other than players.
+Loads player units, then adds them to the player army.
+This also work to load non-player units.
 
 :主にカットシーンと、敵とNPCユニットを読込むのに利用します。\r\nもしプレイヤーユニットの読込みに利用した場合、読込むユニットに、自軍の新規メンバーがいた場合は、章終了後に消滅するので注意してください。
-Mainly used to cutscenes and load enemies and NPC units.\r\nPlease note that if you use player unit for loading, if the loading unit has new member of player army, they will disappear after the end of the chapter.
+Mainly used for cutscenes, and loading non-player units.
+Please note that if you're loading a player unit, they will disappear after the end of the chapter.
 
 :生存ユニットしているユニットを、指定した座標に読み込みます。\r\n座標データ以外の情報は無視されます。\r\n主にプレイヤーユニットをたくさん表示するカットシーン用に使われます。
 LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored.\r\nIt is mainly used for cutscenes that display a lot of player units.

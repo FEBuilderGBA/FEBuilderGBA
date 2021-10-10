@@ -815,3 +815,5 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 000BBD7C=EndingBattleDisplay_Pair	{J}	//08AC0C78
 000B7448=EndingBattleDisplay_Text	{U}	//08A3D478
 000B72C0=EndingBattleDisplay_Pair	{U}	//08A3D440
+00004870=TextPrint	{J}	//08577F24
+00004968=TextPrint	{U}	//08588274

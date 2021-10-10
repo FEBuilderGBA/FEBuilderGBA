@@ -1339,11 +1339,11 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                string name = sp[1];
+                string name = sp[2];
                 name = name.Replace(",", "");
 
-                uint addr = U.atoi0x(sp[2]);
-                if (sp[0] == "SET_FUNC")
+                uint addr = U.atoi0x(sp[1]);
+                if (sp[0] == "SET_FUNC" || sp[0] == "fun")
                 {
                     addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
                 }
