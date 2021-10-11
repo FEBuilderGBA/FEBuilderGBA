@@ -13,11 +13,11 @@ ORG 0x5DE1C	//FE8U	{U}
 jumpToHack(ChangeChangeFireColorHitBG)
 
 //ORG 0x5F0C4	//FE8J	{J}
-ORG 0x5DFC4	//FE8U	{J}
+ORG 0x5DFC4	//FE8U	{U}
 jumpToHack(ChangeChangeFireColorElFireBG)
 
 //ORG 0x5F190	//FE8J	{J}
-ORG 0x5E090	//FE8U	{J}
+ORG 0x5E090	//FE8U	{U}
 jumpToHack(ChangeChangeFireColorElFireBall)
 
 POP
@@ -176,9 +176,8 @@ HitBall_6_lightblue_png_pal_dmp:
 ALIGN 4
 ChangeChangeFireColor_Table:
 //		UnitID	ClassID	ItemID	IsAff		Flag		C1	C2	C3	C4	C5	00
-//BYTE	0x00	0x00	0x38	0x0;SHORT	0x0;BYTE	0	0	0	0	0	0	//Fire
+BYTE	0x00	0x00	0x09	0x0;SHORT	0x0;BYTE	1	1	1	1	1	0	//Rapier
 BYTE	0x00	0x00	0x38	0x0;SHORT	0x0;BYTE	1	1	1	1	1	0	//Fire
-//BYTE	0x00	0x00	0x3A	0x0;SHORT	0x0;BYTE	0	0	0	0 	0	0	//ElFire
 BYTE	0x00	0x00	0x3A	0x0;SHORT	0x0;BYTE	1	1	1	1 	1	0	//ElFire
 
 BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0;BYTE	0	0	0	0 00 00	//Term
@@ -232,7 +231,7 @@ ALIGN 4
 
 ChangeChangeFireColorElFireBG_PaletteTable:
 //POIN 0x08630728						//0=Red 	Vanilla	//{J}
-POIN 0x08603B50						//0=Red 	Vanilla	//{J}
+POIN 0x08603B50						//0=Red 	Vanilla	//{U}
 
 POIN HitElFire_1_blue_png_pal_dmp
 POIN HitElFire_2_purple_png_pal_dmp
