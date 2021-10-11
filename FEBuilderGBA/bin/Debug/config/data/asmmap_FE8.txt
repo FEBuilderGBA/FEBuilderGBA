@@ -13621,7 +13621,6 @@
 0805FE98	StartEfxAlacaliburBGCOL	{J}
 0805CD78	StartEfxAlacaliburOBJ	{J}
 0805FFD8	StartEfxMistyrain	{J}
-0805EEF0	StartEfxMistyrainBG_1	{J}
 080601B0	StartEfxMistyrainBG_2	{J}
 080602A4	StartEfxMistyrainOBJ	{J}
 080602E8	StartEfxMistyrainOBJ2	{J}
@@ -13687,7 +13686,6 @@
 08064DFC	StartEfxLunaSCR2	{J}
 08064E64	StartEfxLunaBG2	{J}
 08061C7C	StartEfxLunaBGCOL	{J}
-0805EEF0	StartEfxLunaBG3	{J}
 08065124	StartEfxLunaOBJ	{J}
 08065398	StartEfxLunaRST	{J}
 08065414	StartEfxExcalibur	{J}

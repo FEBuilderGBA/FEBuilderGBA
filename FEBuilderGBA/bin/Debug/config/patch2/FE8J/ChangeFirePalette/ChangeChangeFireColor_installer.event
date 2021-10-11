@@ -1,0 +1,261 @@
+PUSH
+
+ORG 0x5ED8C	//FE8J	{J}
+//ORG 0x5DC8C	//FE8U	{U}
+jumpToHack(ChangeChangeFireColorStartBG)
+
+ORG 0x5EE84	//FE8J	{J}
+//ORG 0x5DD84	//FE8U	{U}
+jumpToHack(ChangeChangeFireColorOBJ)
+
+ORG 0x5EF1C	//FE8J	{J}
+//ORG 0x5DE1C	//FE8U	{U}
+jumpToHack(ChangeChangeFireColorHitBG)
+
+ORG 0x5F0C4	//FE8J	{J}
+//ORG 0x5DFC4	//FE8U	{J}
+jumpToHack(ChangeChangeFireColorElFireBG)
+
+ORG 0x5F190	//FE8J	{J}
+//ORG 0x5E090	//FE8U	{J}
+jumpToHack(ChangeChangeFireColorElFireBall)
+
+POP
+
+ALIGN 4
+ChangeChangeFireColorStartBG:
+#incbin "ChangeChangeFireColorStartBG.dmp"
+POIN ChangeChangeFireColor_Table
+POIN ChangeChangeFireColorStartBG_PaletteTable
+
+ALIGN 4
+ChangeChangeFireColorOBJ:
+#incbin "ChangeChangeFireColorOBJ.dmp"
+POIN ChangeChangeFireColor_Table
+POIN ChangeChangeFireColorOBJ_PaletteTable
+
+ALIGN 4
+ChangeChangeFireColorHitBG:
+#incbin "ChangeChangeFireColorHitBG.dmp"
+POIN ChangeChangeFireColor_Table
+POIN ChangeChangeFireColorHitBG_PaletteTable
+
+ChangeChangeFireColorElFireBG:
+#incbin "ChangeChangeFireColorElFireBG.dmp"
+POIN ChangeChangeFireColor_Table
+POIN ChangeChangeFireColorElFireBG_PaletteTable
+
+ChangeChangeFireColorElFireBall:
+#incbin "ChangeChangeFireColorElFireBall.dmp"
+POIN ChangeChangeFireColor_Table
+POIN ChangeChangeFireColorElFireBall_PaletteTable
+
+ALIGN 4
+HitBG_1_blue_png_pal_dmp:
+#incbin "HitBG_1_blue.png.pal.dmp"
+
+ALIGN 4
+HitBG_2_purple_png_pal_dmp:
+#incbin "HitBG_2_purple.png.pal.dmp"
+
+ALIGN 4
+HitBG_3_white_png_pal_dmp:
+#incbin "HitBG_3_white.png.pal.dmp"
+
+ALIGN 4
+HitBG_4_yellow_png_pal_dmp:
+#incbin "HitBG_4_yellow.png.pal.dmp"
+
+ALIGN 4
+HitBG_5_green_png_pal_dmp:
+#incbin "HitBG_5_green.png.pal.dmp"
+
+ALIGN 4
+HitBG_6_light_blue_png_pal_dmp:
+#incbin "HitBG_6_light_blue.png.pal.dmp"
+
+ALIGN 4
+OBJ_1_blue_png_pal_dmp:
+#incbin "OBJ_1_blue.png.pal.dmp"
+
+ALIGN 4
+OBJ_2_purple_png_pal_dmp:
+#incbin "OBJ_2_purple.png.pal.dmp"
+
+ALIGN 4
+OBJ_3_white_png_pal_dmp:
+#incbin "OBJ_3_white.png.pal.dmp"
+
+ALIGN 4
+OBJ_4_yellow_png_pal_dmp:
+#incbin "OBJ_4_yellow.png.pal.dmp"
+
+ALIGN 4
+OBJ_5_green_png_pal_dmp:
+#incbin "OBJ_5_green.png.pal.dmp"
+
+ALIGN 4
+OBJ_6_lightblue_png_pal_dmp:
+#incbin "OBJ_6_lightblue.png.pal.dmp"
+
+ALIGN 4
+StartBG_1_blue_png_pal_dmp:
+#incbin "StartBG_1_blue.png.pal.dmp"
+
+ALIGN 4
+StartBG_2_purple_png_pal_dmp:
+#incbin "StartBG_2_purple.png.pal.dmp"
+
+ALIGN 4
+StartBG_3_white_png_pal_dmp:
+#incbin "StartBG_3_white.png.pal.dmp"
+
+ALIGN 4
+StartBG_4_yellow_png_pal_dmp:
+#incbin "StartBG_4_yellow.png.pal.dmp"
+
+ALIGN 4
+StartBG_5_green_png_pal_dmp:
+#incbin "StartBG_5_green.png.pal.dmp"
+
+ALIGN 4
+StartBG_6_lightblue_png_pal_dmp:
+#incbin "StartBG_6_lightblue.png.pal.dmp"
+
+ALIGN 4
+HitElFire_1_blue_png_pal_dmp:
+#incbin "HitElFire_1_blue.png.pal.dmp"
+
+ALIGN 4
+HitElFire_2_purple_png_pal_dmp:
+#incbin "HitElFire_2_purple.png.pal.dmp"
+
+ALIGN 4
+HitElFire_3_darkred_png_pal_dmp:
+#incbin "HitElFire_3_darkred.png.pal.dmp"
+
+ALIGN 4
+HitElFire_4_yellow_png_pal_dmp:
+#incbin "HitElFire_4_yellow.png.pal.dmp"
+
+ALIGN 4
+HitElFire_5_green_png_pal_dmp:
+#incbin "HitElFire_5_green.png.pal.dmp"
+
+ALIGN 4
+HitElFire_6_lightblue_png_pal_dmp:
+#incbin "HitElFire_6_lightblue.png.pal.dmp"
+
+ALIGN 4
+HitBall_1_blue_png_pal_dmp:
+#incbin "HitBall_1_blue.png.pal.dmp"
+
+ALIGN 4
+HitBall_2_purple_png_pal_dmp:
+#incbin "HitBall_2_purple.png.pal.dmp"
+
+ALIGN 4
+HitBall_3_white_png_pal_dmp:
+#incbin "HitBall_3_white.png.pal.dmp"
+
+ALIGN 4
+HitBall_4_yellow_png_pal_dmp:
+#incbin "HitBall_4_yellow.png.pal.dmp"
+
+ALIGN 4
+HitBall_5_green_png_pal_dmp:
+#incbin "HitBall_5_green.png.pal.dmp"
+
+ALIGN 4
+HitBall_6_lightblue_png_pal_dmp:
+#incbin "HitBall_6_lightblue.png.pal.dmp"
+
+
+
+//パレットを変更する条件テーブル
+ALIGN 4
+ChangeChangeFireColor_Table:
+//		UnitID	ClassID	ItemID	IsAff		Flag		C1	C2	C3	C4	C5	00
+//BYTE	0x00	0x00	0x38	0x0;SHORT	0x0;BYTE	0	0	0	0	0	0	//Fire
+BYTE	0x00	0x00	0x38	0x0;SHORT	0x0;BYTE	1	1	1	1	1	0	//Fire
+//BYTE	0x00	0x00	0x3A	0x0;SHORT	0x0;BYTE	0	0	0	0 	0	0	//ElFire
+BYTE	0x00	0x00	0x3A	0x0;SHORT	0x0;BYTE	1	1	1	1 	1	0	//ElFire
+
+BYTE	0xFF	0x00	0x00	0x0;SHORT	0x0;BYTE	0	0	0	0 00 00	//Term
+
+//StartBG 発動時
+ALIGN 4
+ChangeChangeFireColorStartBG_PaletteTable:
+POIN 0x08622E08						//0=Red 	Vanilla	//{J}
+//POIN 0x085F6230						//0=Red 	Vanilla	//{U}
+
+POIN StartBG_1_blue_png_pal_dmp
+POIN StartBG_2_purple_png_pal_dmp
+POIN StartBG_3_white_png_pal_dmp
+POIN StartBG_4_yellow_png_pal_dmp
+POIN StartBG_5_green_png_pal_dmp
+POIN StartBG_6_lightblue_png_pal_dmp
+
+WORD 0	//Term
+ALIGN 4
+
+
+//OBJ 飛んでいく火の玉
+ALIGN 4
+ChangeChangeFireColorOBJ_PaletteTable:
+POIN 0x0862493C						//0=Red 	Vanilla	//{J}
+//POIN 0x085F7D64						//0=Red 	Vanilla	//{U}
+
+POIN OBJ_1_blue_png_pal_dmp
+POIN OBJ_2_purple_png_pal_dmp
+POIN OBJ_3_white_png_pal_dmp
+POIN OBJ_4_yellow_png_pal_dmp
+POIN OBJ_5_green_png_pal_dmp
+POIN OBJ_6_lightblue_png_pal_dmp
+
+WORD 0	//Term
+ALIGN 4
+
+ChangeChangeFireColorHitBG_PaletteTable:
+POIN 0x0862DC64						//0=Red 	Vanilla	//{J}
+//POIN 0x0860108C						//0=Red 	Vanilla	//{U}
+
+POIN HitBG_1_blue_png_pal_dmp
+POIN HitBG_2_purple_png_pal_dmp
+POIN HitBG_3_white_png_pal_dmp
+POIN HitBG_4_yellow_png_pal_dmp
+POIN HitBG_5_green_png_pal_dmp
+POIN HitBG_6_light_blue_png_pal_dmp
+
+WORD 0	//Term
+ALIGN 4
+
+ChangeChangeFireColorElFireBG_PaletteTable:
+POIN 0x08630728						//0=Red 	Vanilla	//{J}
+//POIN 0x08603B50						//0=Red 	Vanilla	//{J}
+
+POIN HitElFire_1_blue_png_pal_dmp
+POIN HitElFire_2_purple_png_pal_dmp
+POIN HitElFire_3_darkred_png_pal_dmp
+POIN HitElFire_4_yellow_png_pal_dmp
+POIN HitElFire_5_green_png_pal_dmp
+POIN HitElFire_6_lightblue_png_pal_dmp
+
+WORD 0	//Term
+
+
+ALIGN 4
+ChangeChangeFireColorElFireBall_PaletteTable:
+POIN 0x08630DE8						//0=Red 	Vanilla	//{J}
+//POIN 0x08604210						//0=Red 	Vanilla	//{U}
+
+POIN HitBall_1_blue_png_pal_dmp
+POIN HitBall_2_purple_png_pal_dmp
+POIN HitBall_3_white_png_pal_dmp
+POIN HitBall_4_yellow_png_pal_dmp
+POIN HitBall_5_green_png_pal_dmp
+POIN HitBall_6_lightblue_png_pal_dmp
+
+
+WORD 0	//Term
+ALIGN 4

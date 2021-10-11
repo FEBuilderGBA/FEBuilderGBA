@@ -1,0 +1,37 @@
+NAME=ファイアとエルファイアのパレットを動的に変更する(Editor)
+NAME.en=Dynamically Change the Fire and ElFire palette.(Editor)
+NAME.zh=Dynamically Change the Fire and ElFire palette.(Editor)
+INFO=リストにないものはディフォルトの挙動を行います。\r\n\r\n使用する武器や、使用者によって、ファイアとエルファイアのパレットを動的に変更します。\r\nEffectID:0x16 "ファイア"とEffectID:0x17 "エルファイア"のエフェクトの色を変更します。\r\n
+INFO.en=Those not on the list behave by default.\r\n\r\nThe Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+INFO.zh=Those not on the list behave by default.\r\n\r\nThe Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+
+IF:0x5ED8C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeChangeFireColorStartBG.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数
+DATACOUNT=$GREP12 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$B2:ITEM
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO Affiliation.combo.txt=Affiliation(00=ANY)
+W4:FLAG=CheckFlag(00=ANY)
+B6:$COMBO ColorStartBG.combo.txt=StartBGColor
+B7:$COMBO ColorOBJ.combo.txt=OBJColor
+B8:$COMBO ColorHitBG.combo.txt=HitBGColor(FireOnly)
+B9:$COMBO ColorElFireBG.combo.txt=HitBGColor(ElFireOnly)
+B10:$COMBO ColorElFireBall.combo.txt=BallColor(ElFireOnly)
+B11=00

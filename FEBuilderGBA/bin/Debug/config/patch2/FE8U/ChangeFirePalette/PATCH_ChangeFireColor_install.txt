@@ -1,0 +1,21 @@
+NAME=ファイアとエルファイアのパレットを動的に変更する(Installer)
+NAME.en=Dynamically Change the Fire and ElFire palette.(Installer)
+NAME.zh=Dynamically Change the Fire and ElFire palette.(Installer)
+INFO=使用する武器や、使用者によって、ファイアとエルファイアのパレットを動的に変更します。\r\nEffectID:0x16 "ファイア"とEffectID:0x17 "エルファイア"のエフェクトの色を変更します。\r\n
+INFO.en=The Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+INFO.zh=The Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x5DC8C=0x00 0x4B
+EDIT_PATCH:1=PATCH_ChangeFireColor.txt
+EDIT_PATCH:2=PATCH_ChangeFireColorStartBG.txt
+EDIT_PATCH:3=PATCH_ChangeFireColorOBJ.txt
+EDIT_PATCH:4=PATCH_ChangeFireColorHitBG.txt
+EDIT_PATCH:5=PATCH_ChangeFireColorElFireBG.txt
+EDIT_PATCH:6=PATCH_ChangeFireColorElFireBall.txt
+EA=ChangeChangeFireColor_installer.event
+
+AUTHOR=7743

@@ -1,0 +1,33 @@
+NAME=ファイアとエルファイアのパレットを動的に変更する(ElFireBall Palette)
+NAME.en=Dynamically Change the Fire and ElFire palette.(ElFireBall Palette)
+NAME.zh=Dynamically Change the Fire and ElFire palette.(ElFireBall Palette)
+INFO=EffectID:0x16 "ファイア"とEffectID:0x17 "エルファイア"のエフェクトの色を変更します。\r\n
+INFO.en=The Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+INFO.zh=The Fire And ElFire palette is dynamically changed depending on the weapon used and the user.\r\nEffectID: 0x16 and EffectID: 0x17 Change the color of the "Fire" and "ElFire" flame effect.
+
+IF:0x5ED8C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 ChangeChangeFireColorElFireBall.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//幅と高さ
+WIDTH=256
+HEIGHT=16
+//利用パレット数
+PALETTE=1
+
+PatchImage_ZIMAGE=0x05F1B0 //08630B70
+LISTNAME=$COMBO ColorElFireBall.combo.txt
+
+//データを定義します
+P0:PatchImage_PALETTE=Palette
