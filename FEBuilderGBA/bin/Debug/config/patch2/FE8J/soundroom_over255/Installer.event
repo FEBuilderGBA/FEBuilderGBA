@@ -1,0 +1,276 @@
+//SoundRoomで255を超えることができるパッチ
+//データ上は、2040曲までいけます。
+//バッファの初期化を変えれば、2^15 か 2^16までいけるはずです。
+//ただ、SongNumberが4桁になると、リスト表示した時にとても見にくくなるので、最大で1000までにした方がいいとは思います。
+//
+
+//
+//for FE8J
+//35 -> 68
+//36 -> 6A
+
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+
+ORG 0xb449c	//{J}
+//ORG 0xAF87C	//{U}
+BYTE 0x68 0x34 //add r4, #0x68
+BYTE 0x21 0x88 //ldrh r1, [r4]
+
+ORG 0xb44aa	//{J}
+//ORG 0xAF88A	//{U}
+BYTE 0x20 0x88 //ldrh r0,[r4]
+
+ORG 0xb3f74	//{J}
+//ORG 0xAF354	//{U}
+BYTE 0x68 0x30 //add r0, #0x68
+BYTE 0x01 0x88 //ldrh r1, [r0]
+
+ORG 0xb4540	//{J}
+//ORG 0xAF920	//{U}
+BYTE 0x68 0x32 //add r2, #0x68
+BYTE 0x10 0x88 //ldrh r0, [r2]
+
+ORG 0xb3f9c	//{J}
+//ORG 0xAF37C	//{U}
+BYTE 0x68 0x30 //add r0, #0x68
+BYTE 0x00 0x88 //ldrh r0, [r0]
+
+ORG 0xb3996	//{J}
+//ORG 0xAED76	//{U}
+BYTE 0x6a 0x21 //mov r1, #0x6a
+
+ORG 0xb39a0	//{J}
+//ORG 0xAED80	//{U}
+BYTE 0x10 0x80 //strh r0, [r2]
+
+ORG 0xb3a3C	//{J}
+//ORG 0xAEE1C	//{U}
+BYTE 0x19 0x88 //ldrh r1,[3]
+
+ORG 0xb40d6	//{J}
+//ORG 0xAF4B6	//{U}
+BYTE 0x6a 0x30 //add r0, #0x6a
+BYTE 0x00 0x88 //ldrh r0, [r0]
+
+ORG 0xb3f5c	//{J}
+//ORG 0xAF33C	//{U}
+BYTE 0x6a 0x30 //add r0,#0x6a
+BYTE 0x00 0x88 //ldrh r0, [r0]
+
+ORG 0xb4512	//{J}
+//ORG 0xAF8F2	//{U}
+BYTE 0x68 0x30 //add r0,#0x68
+BYTE 0x00 0x88 //ldrh r0, [r0]
+
+ORG 0xb454e	//{J}
+//ORG 0xAF92E	//{U}
+BYTE 0x6a 0x31 //add r1,#0x6a
+BYTE 0x09 0x88 //ldrh r1,[r1]
+
+ORG 0xb3fc6	//{J}
+//ORG 0xAF3A6	//{U}
+BYTE 0x6a 0x30 //add r0, #0x6a
+BYTE 0x01 0x88 //ldrh r1, [r0]
+
+ORG 0xB461A	//{J}
+//ORG 0xAF9FA	//{U}
+BYTE 0x68 0x35   //add r5, #0x68
+BYTE 0x29 0x88   //LDRH r1, [r5, #0x0]
+
+ORG 0xB462A	//{J}
+//ORG 0xAFA0A	//{U}
+BYTE 0x29 0x88   //LDRH r1, [r5, #0x0]
+
+ORG 0xb452c	//{J}
+//ORG 0xAF90C	//{U}
+BYTE 0x68 0x30 //add r0, #0x68
+BYTE 0x00 0x88 //ldrh r0, [r0]
+
+ORG 0xb3ac2	//{J}
+//ORG 0xAEEA2	//{U}
+BYTE 0x6a 0x31 //add r1, #0x6a
+BYTE 0x08 0x80 //strh r0,[r1]
+
+ORG 0xb4558	//{J}
+//ORG 0xAF938	//{U}
+BYTE 0x10 0x80 //strh r0,[r2]
+
+ORG 0xb452c	//{J}
+//ORG 0xAF90C	//{U}
+BYTE 0x68 0x30 //add r0, #0x68
+BYTE 0x00 0x88 //ldrh r0, [r0]
+POP
+
+//曲が聞けるかどうかの判定を999個確保するために、ビットフラグをProcsの0x40から別のRAM領域に変更します
+PUSH
+ORG 0xB3984		//{J}
+//ORG 0xAED64		//{U}
+jumpToHack(_B3984)
+POP
+
+ALIGN 4
+_B3984:
+#incbin "_B3984.dmp"
+
+PUSH
+ORG 0xB3BCA		//{J}
+//ORG 0xAEFAA		//{U}
+BYTE 0x00 0x00
+jumpToHack_r1(_B3BCA)
+POP
+
+ALIGN 4
+_B3BCA:
+#incbin "_B3BCA.dmp"
+
+
+PUSH
+ORG 0xB3C9A		//{J}
+//ORG 0xAF07A		//{U}
+BYTE 0x00 0x00
+jumpToHack_r1(_B3C9A)
+POP
+
+ALIGN 4
+_B3C9A:
+#incbin "_B3C9A.dmp"
+
+
+PUSH
+ORG 0xB3D12		//{J}
+//ORG 0xAF0F2		//{U}
+BYTE 0x00 0x00
+jumpToHack_r1(_B3D12)
+POP
+
+ALIGN 4
+_B3D12:
+#incbin "_B3D12.dmp"
+
+
+PUSH
+ORG 0xB3D72		//{J}
+//ORG 0xAF152		//{U}
+BYTE 0x00 0x00
+jumpToHack(_B3D72)
+POP
+
+ALIGN 4
+_B3D72:
+#incbin "_B3D72.dmp"
+
+PUSH
+ORG 0xB3912		//{J}
+//ORG 0xAECF2		//{U}
+BYTE 0x00 0x00
+jumpToHack_r0(_B3912)
+POP
+
+ALIGN 4
+_B3912:
+#incbin "_B3912.dmp"
+
+PUSH
+ORG 0xB3960		//{J}
+//ORG 0xAED40		//{U}
+jumpToHack_r0(_B3960)
+POP
+
+ALIGN 4
+_B3960:
+#incbin "_B3960.dmp"
+
+PUSH
+ORG 0xA8914	//{J}
+//ORG 0xA3ED0	//{U}
+jumpToHack(CheckSoundRoomEnableList)
+
+ORG 0xa8890	//{J}
+//ORG 0xA3E4C	//{U}
+jumpToHack(LoadSoundRoomEnableList)
+
+ORG 0xA894C	//{J}
+//ORG 0xA3F08	//{U}
+jumpToHack(SaveSoundRoomEnableList)
+
+ORG 0xa88e8	//{J}
+//ORG 0xA3EA4	//{U}
+jumpToHack(SaveSoundRoomEnableList_Overwrite)
+
+ORG 0xA886C	//{J}
+//ORG 0xA3E28	//{U}
+jumpToHack(InitializeSoundRoomEnableList)
+
+//1000件保存するため、保存領域が足りないので、ボーナスデータとかを保存するデータをぶっ壊す
+//このあたりのデータが必要な作品は、このパッチを利用できないかもしれない。
+ORG 0xA8A5C	//{J}
+//ORG 0xA4018	//{U}
+BYTE 0x00 0x00 0x00 0x00
+
+ORG 0xA83B4	//{J}
+//ORG 0xA3970	//{U}
+BYTE 0x00 0x00 0x00 0x00
+
+
+ORG 0x27E8 //{J}
+//ORG 0x2898 //{U}
+BYTE 0x00 0x00  //NOP 0x7f以下の曲を記録しないのをやめる
+
+POP
+
+ALIGN 4
+CheckSoundRoomEnableList:
+#incbin "CheckSoundRoomEnableList.dmp"
+
+ALIGN 4
+LoadSoundRoomEnableList:
+#incbin "LoadSoundRoomEnableList.dmp"
+
+ALIGN 4
+SaveSoundRoomEnableList:
+#incbin "SaveSoundRoomEnableList.dmp"
+
+ALIGN 4
+SaveSoundRoomEnableList_Overwrite:
+#incbin "SaveSoundRoomEnableList_Overwrite.dmp"
+
+ALIGN 4
+InitializeSoundRoomEnableList:
+#incbin "InitializeSoundRoomEnableList.dmp"
+
+ALIGN 4
+ASMC_ShowSoundRoom:
+#incbin "ASMC_ShowSoundRoom.dmp"
+
+ALIGN 4
+ASMC_CheckSoundRoom:
+#incbin "ASMC_CheckSoundRoom.dmp"
+
+ALIGN 4
+ASMC_HideSoundRoom:
+#incbin "ASMC_HideSoundRoom.dmp"
+
+ALIGN 4
+ASMC_ShowSoundRoomDirect:
+#incbin "ASMC_ShowSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_CheckSoundRoomDirect:
+#incbin "ASMC_CheckSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_HideSoundRoomDirect:
+#incbin "ASMC_HideSoundRoomDirect.dmp"
+
+ALIGN 4
+ASMC_ShowAllSongs:
+#incbin "ASMC_ShowAllSongs.dmp"
+
+ALIGN 4
+ASMC_HideAllSongs:
+#incbin "ASMC_HideAllSongs.dmp"
+
+ALIGN 4

@@ -1,0 +1,5 @@
+StoreValue=$16
+CheckSoundRoomEnableList=$1E
+TrueExit=$4A
+FalseExit=$46
+Exit=$4C

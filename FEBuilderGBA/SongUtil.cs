@@ -2911,8 +2911,8 @@ namespace FEBuilderGBA
             //0x44はwave headerなのでそれ以降を比較します
             for(int i = 0x44 ; i < max ; i ++)
             {
-                sum_son += (long)decompressData[i] * (long)decompressData[i];
-                long sub = (long)decompressData[i] - (long)sourceData[i];
+                sum_son += ((long)decompressData[i]) * ((long)decompressData[i]);
+                long sub = ((long)decompressData[i]) - ((long)sourceData[i]);
                 sum_mum += sub * sub;
             }
 

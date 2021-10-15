@@ -43,6 +43,7 @@ namespace FEBuilderGBA
             g_Cache_HPBar_enum = HPBar_enum.NoCache;
             g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
             g_Cache_m4a_hq_mixer = Cache_m4a_hq_mixer.NoCache;
+            g_Cache_SoundRoomExpands = Cache_SoundRoomExpands.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -1958,6 +1959,52 @@ namespace FEBuilderGBA
                 }
             }
             return Cache_m4a_hq_mixer.NO;
+        }
+
+
+        //サウンドルームの拡張
+        public enum Cache_SoundRoomExpands
+        {
+            NO,             //なし
+            soundroom_over255,
+            NoCache = (int)NO_CACHE
+        };
+        static Cache_SoundRoomExpands g_Cache_SoundRoomExpands = Cache_SoundRoomExpands.NoCache;
+        public static Cache_SoundRoomExpands Search_SoundRoomExpands()
+        {
+            if (g_Cache_SoundRoomExpands == Cache_SoundRoomExpands.NoCache)
+            {
+                g_Cache_SoundRoomExpands = Search_SoundRoomExpandsLow();
+            }
+            return g_Cache_SoundRoomExpands;
+        }
+        static Cache_SoundRoomExpands Search_SoundRoomExpandsLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="soundroom_over255",	ver = "FE8J", addr = 0xb449c,data = new byte[]{0x68, 0x34, 0x21, 0x88}},
+                new PatchTableSt{ name="soundroom_over255",	ver = "FE8U", addr = 0xAF87C,data = new byte[]{0x68, 0x34, 0x21, 0x88}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "soundroom_over255")
+                {
+                    return Cache_SoundRoomExpands.soundroom_over255;
+                }
+            }
+            return Cache_SoundRoomExpands.NO;
         }
 
         //戦闘背景拡張

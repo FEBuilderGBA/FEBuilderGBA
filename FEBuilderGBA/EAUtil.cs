@@ -667,6 +667,16 @@ namespace FEBuilderGBA
 
             Program.ExportFunction.ExportEA(sb, isColorzCore);
 
+            PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+            if (skillsystem == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                if (sb.ToString().IndexOf("SkillTester") >= 0)
+                {
+                    sb.AppendLine("#define SKILLSYSTEM_SKILL_TESTER SkillTester");
+                }
+            }
+
+
             if (freearea == 0 || freearea == U.NOT_FOUND)
             {
                 sb.AppendLine(String.Format("#include \"{0}\"\r\n"

@@ -1,0 +1,4 @@
+DeleteAndSaveSoundRoomEnableList=$0E
+Exit=$68
+Loop=$26
+Found=$34

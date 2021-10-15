@@ -18,7 +18,13 @@ namespace FEBuilderGBA
             {
                 J_0_SONG.AccessibleDescription = "";
             }
-            
+
+            PatchUtil.Cache_SoundRoomExpands soundRoomExpands = PatchUtil.Search_SoundRoomExpands();
+            if (soundRoomExpands == PatchUtil.Cache_SoundRoomExpands.soundroom_over255)
+            {
+                AddressListExpandsButton_255.Name = "AddressListExpandsButton_1000";
+            }
+
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }

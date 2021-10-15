@@ -14765,3 +14765,5 @@
 080DA8B4	_close_r	{J}
 080DA8E0	__errno	{J}
 080DA970	_read_r	{J}
+080A886C	InitializeSoundRoomEnableList	{J}
+080A3E28	InitializeSoundRoomEnableList	{U}

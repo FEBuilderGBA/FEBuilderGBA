@@ -1,0 +1,15 @@
+EnableLoop=$36
+EnableLoop_Exit=$6A
+EnableSong=$4E
+CheckASMCond=$8E
+EnableLoopNext=$64
+CalcComplateRate=$74
+CountEnableSongs=$DE
+CheckASMCond_False=$D4
+CheckASMCond_SomeSong=$B8
+CheckASMCond_CallASM=$A6
+CheckASMCond_True=$D8
+CheckASMCond_Exit=$DA
+CountEnableSongs_Loop=$E4
+CountEnableSongs_Exit=$0104
+CountEnableSongs_Next=$0100

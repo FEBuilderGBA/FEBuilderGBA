@@ -2473,6 +2473,15 @@ FF=无条件
 :\r\nこの命令は、スタートボタンを押すとスキップされるので、確実に実行したい場合はEVBIT_MODIFYでスタートボタンを無視するようにするか、スキップされたとしてもイベントが破綻しないようにしてください。
 \r\n当你按下开始按钮时，这条指令会被跳过，所以如果你想确保它被执行，要么用 EVBIT_MODIFY 忽略开始按钮，要么确保即使跳过事件也不会失败。
 
+:読込むユニットに、自軍の新規メンバーがいれば仲間にします。\r\nプレイヤー以外の敵やNPCに対して利用することもできます。
+This also work to load non-player units.
+
+:主にカットシーンと、敵とNPCユニットを読込むのに利用します。\r\nもしプレイヤーユニットの読込みに利用した場合、読込むユニットに、自軍の新規メンバーがいた場合は、章終了後に消滅するので注意してください。
+Please note that if you're loading a player unit, they will disappear after the end of the chapter.
+
+:生存ユニットしているユニットを、指定した座標に読み込みます。\r\n座標データ以外の情報は無視されます。\r\n主にプレイヤーユニットをたくさん表示するカットシーン用に使われます。
+LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored.\r\nIt is mainly used for cutscenes that display a lot of player units.
+
 :この領域は利用できません
 该区域不能使用
 
@@ -8776,6 +8785,9 @@ Midi转换时请选择mid2agb
 :エミュレータ
 模拟器
 
+:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
+有关从何处获取每个程序的详细信息，请参阅本手册。
+
 :パス2
 通过2
 
@@ -9258,9 +9270,6 @@ ROM中的文本编码
 
 :保存
 存储
-
-:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
-有关从何处获取每个程序的详细信息，请参阅本手册。
 
 :その他ROM直値テキスト
 其他ROM直接文字
@@ -10435,6 +10444,24 @@ PAN强制
 :ファイルサイズ {0} -> {1} ({2}%)
 文件大小为{0}-> {1}（{2}％）
 
+:m4a_hq_mixer Patchがインストールされていないので、DPCM圧縮は利用できません。
+由于未安装 m4a_hq_mixer Patch，DPCM 压缩不可用。
+
+:DPCM圧縮処理時の先読みの値です。\\r\\nディフォルトは3です。\\r\\n値を大きくすると、より先読みをします。\\r\\nただし、圧縮率は一切変わりません。
+这是 DPCM 压缩处理期间的前瞻值。\\\\ r \\\\ n 默认值为 3。\\\\ r \\\\ n 值越大，前瞻性越强。\\\\ r \\\\ n 但是，压缩比根本没有改变。
+
+:0=圧縮しない
+0=不要压缩
+
+:1=圧縮する
+1=压缩
+
+:m4a_hq_mixer patchを利用して、DPCM圧縮を行えます。\\r\\n圧縮すると容量がおよそ半分になります。\\r\\nただ、品質が極わずかですが低下します。\\r\\nmidi楽器として使いたいWAVならばoffにしてください。\\r\\nそれ以外のボイスデータなどであれば、可能であれば有効にすることをお勧めします。
+您可以使用 m4a_hq_mixer 补丁来执行 DPCM 压缩。\\\\ r \\\\ n 压缩将容量减半。\\\\ r \\\\ n 不过，质量很轻微，反而变质了。\\\\ r \\\\ nmidi 如果您想将 WAV 用作乐器，请将其关闭。\\\\ r \\\\ n 对于其他语音数据，建议尽量开启。
+
+:DPCM圧縮
+DPCM 压缩
+
 :Waveの音質を下げると、容量を小さくできます。
 降低Wave的音质会降低容量。
 
@@ -10453,6 +10480,9 @@ PAN强制
 :42048=42048Hz(M4A最高音質)
 42048=42048Hz(M4A最高音质)
 
+:Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
+由于Wave占用大量空间，因此建议您转换为较低质量并导入。
+
 :前後の無音除去
 消音前后
 
@@ -10470,27 +10500,6 @@ PAN强制
 
 :チャンネル
 频道
-
-:Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
-由于Wave占用大量空间，因此建议您转换为较低质量并导入。
-
-:m4a_hq_mixer patchを利用して、DPCM圧縮を行えます。\\r\\n圧縮すると容量がおよそ半分になります。\\r\\nただ、品質が極わずかですが低下します。\\r\\nmidi楽器として使いたいWAVならばoffにしてください。\\r\\nそれ以外のボイスデータなどであれば、可能であれば有効にすることをお勧めします。
-您可以使用 m4a_hq_mixer 补丁来执行 DPCM 压缩。\\\\ r \\\\ n 压缩将容量减半。\\\\ r \\\\ n 不过，质量很轻微，反而变质了。\\\\ r \\\\ nmidi 如果您想将 WAV 用作乐器，请将其关闭。\\\\ r \\\\ n 对于其他语音数据，建议尽量开启。
-
-:DPCM圧縮
-DPCM 压缩
-
-:0=圧縮しない
-0=不要压缩
-
-:1=圧縮する
-1=压缩
-
-:DPCM圧縮処理時の先読みの値です。\\r\\nディフォルトは3です。\\r\\n値を大きくすると、より先読みをします。\\r\\nただし、圧縮率は一切変わりません。
-这是 DPCM 压缩处理期间的前瞻值。\\\\ r \\\\ n 默认值为 3。\\\\ r \\\\ n 值越大，前瞻性越强。\\\\ r \\\\ n 但是，压缩比根本没有改变。
-
-:m4a_hq_mixer Patchがインストールされていないので、DPCM圧縮は利用できません。
-由于未安装 m4a_hq_mixer Patch，DPCM 压缩不可用。
 
 :Waveのインポート
 波导入
@@ -13255,13 +13264,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:読込むユニットに、自軍の新規メンバーがいれば仲間にします。\r\nプレイヤー以外の敵やNPCに対して利用することもできます。
-Loads player units, then adds them to the player army.
-This also work to load non-player units.
-
-:主にカットシーンと、敵とNPCユニットを読込むのに利用します。\r\nもしプレイヤーユニットの読込みに利用した場合、読込むユニットに、自軍の新規メンバーがいた場合は、章終了後に消滅するので注意してください。
-Mainly used for cutscenes, and loading non-player units.
-Please note that if you're loading a player unit, they will disappear after the end of the chapter.
-
-:生存ユニットしているユニットを、指定した座標に読み込みます。\r\n座標データ以外の情報は無視されます。\r\n主にプレイヤーユニットをたくさん表示するカットシーン用に使われます。
-LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored.\r\nIt is mainly used for cutscenes that display a lot of player units.

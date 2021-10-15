@@ -1586,7 +1586,7 @@ This image does not meet the formatting requirements.
 The image format does not meet the criteria.
 
 :EAを実行するときに、書き込み始める領域を指定します。\r\n「種類:プログラム」　挿入するデータをプログラムとしてrebuildの影響を受けないROMの上位アドレスに割り当てます。\r\n「種類:プログラム以外」　プログラム以外の画像などのデータとして下位アドレスを割り当てます。\r\n「フリーエリアを定義しない」　特にフリー領域を定義しません。EA内でORG指定をしてください。
-When executing EA processing, specify the area in data to begin writing.\r\n"Type: Program" Assign the data to be inserted as a program to the upper address of the ROM that is not affected by rebuild.\r\n"Type: Non-program" Assign a lower address as data such as images other than the program.\r\n"Do not define free area" No particular free area is defined.Please specify ORG in EA.
+When executing EA processing, specify the area in data to begin writing.\r\n"Type: Program" Assign the data to be inserted as a program to the upper address of the ROM that is not affected by rebuild.\r\n"Type: Non-program Data" Assign a lower address as data such as images other than the program.\r\n"Do not define free area" No particular free area is defined.Please specify ORG in EA.
 
 :このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。
 If the source code of the program referenced in this event file has been updated, it will automatically recompile.\r\nIt does something like the "make" command.
@@ -1649,13 +1649,13 @@ Load Script
 Load the .event script in Event Assembler and adapt it into the current ROM.
 
 :種類:プログラム
-Type: Non Program Code
+Type: Program(Default)
 
 :種類:プログラム以外
-Type: Other than program.
+Type: Non-program Data
 
 :フリーエリアを定義しない
-Do not define a free area.
+Do not define free area.
 
 :Event Assemblerで追加
 Insert Events via Event Assembler
@@ -2472,6 +2472,15 @@ Safety is a number that prevents you from stopping on a dangerous tile attacked 
 
 :\r\nこの命令は、スタートボタンを押すとスキップされるので、確実に実行したい場合はEVBIT_MODIFYでスタートボタンを無視するようにするか、スキップされたとしてもイベントが破綻しないようにしてください。
 \r\nThis instruction is skipped when you press the start button, so if you want to make sure that it is executed, either ignore the start button with EVBIT_MODIFY or make sure that the event does not fail even if it is skipped.
+
+:読込むユニットに、自軍の新規メンバーがいれば仲間にします。\r\nプレイヤー以外の敵やNPCに対して利用することもできます。
+This also work to load non-player units.
+
+:主にカットシーンと、敵とNPCユニットを読込むのに利用します。\r\nもしプレイヤーユニットの読込みに利用した場合、読込むユニットに、自軍の新規メンバーがいた場合は、章終了後に消滅するので注意してください。
+Please note that if you're loading a player unit, they will disappear after the end of the chapter.
+
+:生存ユニットしているユニットを、指定した座標に読み込みます。\r\n座標データ以外の情報は無視されます。\r\n主にプレイヤーユニットをたくさん表示するカットシーン用に使われます。
+LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored.\r\nIt is mainly used for cutscenes that display a lot of player units.
 
 :この領域は利用できません
 Unable to use this area.
@@ -8776,6 +8785,9 @@ Emulator 2
 :エミュレータ
 Emulator
 
+:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
+For details on where to obtain each program, please refer to this manual.
+
 :パス2
 Path 2
 
@@ -9258,9 +9270,6 @@ When exporting a file...
 
 :保存
 Save
-
-:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
-For details on where to obtain each program, please refer to this manual.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -10435,6 +10444,24 @@ File size {0} -> {1} ({2}%)\r\nCompression quality SNR: {3}dB (higher is better.
 :ファイルサイズ {0} -> {1} ({2}%)
 File size {0} -> {1} ({2}%)
 
+:m4a_hq_mixer Patchがインストールされていないので、DPCM圧縮は利用できません。
+DPCM compression is not available because m4a_hq_mixer Patch is not installed.
+
+:DPCM圧縮処理時の先読みの値です。\\r\\nディフォルトは3です。\\r\\n値を大きくすると、より先読みをします。\\r\\nただし、圧縮率は一切変わりません。
+This is the look-ahead value during DPCM compression processing.\\\\ r \\\\ n The default is 3.The larger the \\\\ r \\\\ n value, the more look-ahead.\\\\ r \\\\ n However, the compression ratio does not change at all.
+
+:0=圧縮しない
+0=Do not compress
+
+:1=圧縮する
+1=Compress
+
+:m4a_hq_mixer patchを利用して、DPCM圧縮を行えます。\\r\\n圧縮すると容量がおよそ半分になります。\\r\\nただ、品質が極わずかですが低下します。\\r\\nmidi楽器として使いたいWAVならばoffにしてください。\\r\\nそれ以外のボイスデータなどであれば、可能であれば有効にすることをお勧めします。
+You can use m4a_hq_mixer patch to perform DPCM compression.\\\\ r \\\\ n Compressing halves the capacity.\\\\ r \\\\ n However, the quality is very slight, but it deteriorates.\\\\ r \\\\ nmidi If you want to use WAV as an instrument, turn it off.\\\\ r \\\\ n For other voice data, it is recommended to enable it if possible.
+
+:DPCM圧縮
+DPCM compression
+
 :Waveの音質を下げると、容量を小さくできます。
 Decreasing the sound quality of Wave can reduce the file size.
 
@@ -10453,6 +10480,9 @@ Reduce Sound Quality
 :42048=42048Hz(M4A最高音質)
 42048=42048Hz(M4A highest sound quality)
 
+:Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
+Since Wave files consume a lot of space, it is recommended that you convert to a lower quality first.
+
 :前後の無音除去
 Remove Silence
 
@@ -10470,27 +10500,6 @@ Volume
 
 :チャンネル
 Channel
-
-:Waveは容量をたくさん消費するため、低音質に変換してインポートすることをお勧めします。
-Since Wave files consume a lot of space, it is recommended that you convert to a lower quality first.
-
-:m4a_hq_mixer patchを利用して、DPCM圧縮を行えます。\\r\\n圧縮すると容量がおよそ半分になります。\\r\\nただ、品質が極わずかですが低下します。\\r\\nmidi楽器として使いたいWAVならばoffにしてください。\\r\\nそれ以外のボイスデータなどであれば、可能であれば有効にすることをお勧めします。
-You can use m4a_hq_mixer patch to perform DPCM compression.\\\\ r \\\\ n Compressing halves the capacity.\\\\ r \\\\ n However, the quality is very slight, but it deteriorates.\\\\ r \\\\ nmidi If you want to use WAV as an instrument, turn it off.\\\\ r \\\\ n For other voice data, it is recommended to enable it if possible.
-
-:DPCM圧縮
-DPCM compression
-
-:0=圧縮しない
-0=Do not compress
-
-:1=圧縮する
-1=Compress
-
-:DPCM圧縮処理時の先読みの値です。\\r\\nディフォルトは3です。\\r\\n値を大きくすると、より先読みをします。\\r\\nただし、圧縮率は一切変わりません。
-This is the look-ahead value during DPCM compression processing.\\\\ r \\\\ n The default is 3.The larger the \\\\ r \\\\ n value, the more look-ahead.\\\\ r \\\\ n However, the compression ratio does not change at all.
-
-:m4a_hq_mixer Patchがインストールされていないので、DPCM圧縮は利用できません。
-DPCM compression is not available because m4a_hq_mixer Patch is not installed.
 
 :Waveのインポート
 Wave Import
@@ -13255,14 +13264,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-
-:読込むユニットに、自軍の新規メンバーがいれば仲間にします。\r\nプレイヤー以外の敵やNPCに対して利用することもできます。
-Loads player units, then adds them to the player army.
-This also work to load non-player units.
-
-:主にカットシーンと、敵とNPCユニットを読込むのに利用します。\r\nもしプレイヤーユニットの読込みに利用した場合、読込むユニットに、自軍の新規メンバーがいた場合は、章終了後に消滅するので注意してください。
-Mainly used for cutscenes, and loading non-player units.
-Please note that if you're loading a player unit, they will disappear after the end of the chapter.
-
-:生存ユニットしているユニットを、指定した座標に読み込みます。\r\n座標データ以外の情報は無視されます。\r\n主にプレイヤーユニットをたくさん表示するカットシーン用に使われます。
-LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only need coordinates, the rest gets ignored.\r\nIt is mainly used for cutscenes that display a lot of player units.

@@ -1,0 +1,40 @@
+NAME=サウンドルームを1000件まで拡張する
+INFO=このパッチは、バニラのサウンドルーム最大255件では満足できない頭おかしい人向けのパッチです。\r\nサウンドルーム255件まで埋めていない方は、リスクを取って、このパッチを使う必要はありません。\r\n\r\nサウンドルームに1000曲音楽を登録できるようにします。\r\nバニラでは255が上限ですが、このパッチはそれを拡張して最大1000件表示できるようにします。\r\n1000件分のデータを記録するためにセーブデータにかなりしてデータを格納します。\r\nもしかすると何か他の機能と衝突する可能性があります。\r\nこのパッチを使う時はよく注意してください。\r\nまた、SoundRoomを255件記録するパッチと衝突しますが、このパッチでも同様の機能を提供します。\r\nデータの記録は同様にサウンドルームの並び順で記録されるので、曲を並び替えるとグレー表示になります。\r\nゲームをクリアするとすべての楽曲を有効にする命令を発動するなどの配慮が必要になるかもしれません。\r\nまた、このパッチは、サウンドルーム全開(Sound Room Unlock)パッチとも互換性がありますので、最初からすべての楽曲を公開するというのも手の一つです。
+
+TYPE=EA
+EA=Installer.event
+PATCHED_IF:0xAF87C=0x68 0x34 0x21 0x88
+
+AUTHOR=7743
+EVENTSCRIPT:01=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	[XX:MUSIC:音楽]がSoundRoomで聞けるようになっているか確認する(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	[XX:MUSIC:音楽]をSoundRoomで有効にし表示する(ASMC_ShowSoundRoom)	{MUSIC}	もしSoundRoomのリストに掲載されていない楽曲を指定した場合は無効となり無視されます。
+EVENTSCRIPT:03=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	[XX:MUSIC:音楽]をSoundRoomで無効にしグレー表示にする(ASMC_HideSoundRoom)	{MUSIC}	もしSoundRoomのリストに掲載されていない楽曲を指定した場合は無効となり無視されます。
+EVENTSCRIPT:04=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]が聞けるようになっいてるか確認する(ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]を有効にし表示する(ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	[XX:SOUNDROOM:SoundRoomID]を無効しグレー表示にする(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07=400D0000{$L1:ASMC_ShowAllSongs.dmp}	サウンドルームのすべての曲を有効にし表示する(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08=400D0000{$L1:ASMC_HideAllSongs.dmp}	サウンドルームのすべての曲を無効しグレー表示にする(ASMC_HideAllSongs)	{MUSIC}
+
+
+EVENTSCRIPT:01.en=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	Check [XX:MUSIC:Song] in SoundRoom(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02.en=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	Show [XX:MUSIC:Song] in SoundRoom(ASMC_ShowSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:03.en=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	Hide [XX:MUSIC:Song] in SoundRoom and disable Gray out(ASMC_HideSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:04.en=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	Check [XX:SOUNDROOM:SoundRoomID](ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05.en=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	Show [XX:SOUNDROOM:SoundRoomID](ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06.en=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	Hide [XX:SOUNDROOM:SoundRoomID] and disable Gray out(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07.en=400D0000{$L1:ASMC_ShowAllSongs.dmp}	Show All SoundRoom Songs(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08.en=400D0000{$L1:ASMC_HideAllSongs.dmp}	Hide All SoundRoom Songs and disable all Gray out(ASMC_HideAllSongs)	{MUSIC}
+
+EVENTSCRIPT:01.zh=400DXXXX{$L1:ASMC_CheckSoundRoom.dmp}	Check [XX:MUSIC:Song] in SoundRoom(ASMC_CheckSoundRoom)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:02.zh=400DXXXX{$L1:ASMC_ShowSoundRoom.dmp}	Show [XX:MUSIC:Song] in SoundRoom(ASMC_ShowSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:03.zh=400DXXXX{$L1:ASMC_HideSoundRoom.dmp}	Hide [XX:MUSIC:Song] in SoundRoom and disable Gray out(ASMC_HideSoundRoom)	{MUSIC}	If you specify a song that is not on the SoundRoom list, it will be invalidated and ignored.
+EVENTSCRIPT:04.zh=400DXXXX{$L1:ASMC_CheckSoundRoomDirect.dmp}	Check [XX:SOUNDROOM:SoundRoomID](ASMC_CheckSoundRoomDirect)	{MUSIC}	{COND}	@STOREC
+EVENTSCRIPT:05.zh=400DXXXX{$L1:ASMC_ShowSoundRoomDirect.dmp}	Show [XX:SOUNDROOM:SoundRoomID](ASMC_ShowSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:06.zh=400DXXXX{$L1:ASMC_HideSoundRoomDirect.dmp}	Hide [XX:SOUNDROOM:SoundRoomID] and disable Gray out(ASMC_HideSoundRoomDirect)	{MUSIC}
+EVENTSCRIPT:07.zh=400D0000{$L1:ASMC_ShowAllSongs.dmp}	Show All SoundRoom Songs(ASMC_ShowAllSongs)	{MUSIC}
+EVENTSCRIPT:08.zh=400D0000{$L1:ASMC_HideAllSongs.dmp}	Hide All SoundRoom Songs and disable all Gray out(ASMC_HideAllSongs)	{MUSIC}
+
+NAME.en=Expand the sound room to 1000
+INFO.en=This patch is for crazy people who can't be satisfied with up to 255 vanilla soundrooms.\r\nIf you haven't filled up to 255 soundrooms, you don't need to take the risk and use this patch.\r\n\r\nAllows you to register 1000 songs in the sound room.\r\nIn vanilla, the limit is 255, but this patch extends it to show up to 1000 items.\r\nIt stores a lot of data in save data to record 1000 data.\r\nIt could possibly conflict with some other feature.\r\nBe very careful when using this patch.\r\nIt also conflicts with a patch that records 255 SoundRooms, but this patch provides similar functionality.\r\nThe data is recorded in the same order as the sound room, so if you rearrange the songs, they will be grayed out.\r\nWhen you clear the game, you may need to consider such things as issuing a command to enable all songs.\r\nThis patch is also compatible with the Sound Room Unlock patch, so it's a good idea to publish all your songs from the beginning.
+NAME.zh=Expand the sound room to 1000
+INFO.zh=This patch is for crazy people who can't be satisfied with up to 255 vanilla soundrooms.\r\nIf you haven't filled up to 255 soundrooms, you don't need to take the risk and use this patch.\r\n\r\nAllows you to register 1000 songs in the sound room.\r\nIn vanilla, the limit is 255, but this patch extends it to show up to 1000 items.\r\nIt stores a lot of data in save data to record 1000 data.\r\nIt could possibly conflict with some other feature.\r\nBe very careful when using this patch.\r\nIt also conflicts with a patch that records 255 SoundRooms, but this patch provides similar functionality.\r\nThe data is recorded in the same order as the sound room, so if you rearrange the songs, they will be grayed out.\r\nWhen you clear the game, you may need to consider such things as issuing a command to enable all songs.\r\nThis patch is also compatible with the Sound Room Unlock patch, so it's a good idea to publish all your songs from the beginning.
