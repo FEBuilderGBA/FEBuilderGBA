@@ -1,5 +1,5 @@
 NAME=戦闘アニメOFFの時に、ステータス情報を追加で表示する
-NAME.en=FE8-Battle Stats with Anims Off
+NAME.en=FE7-Battle Stats with Anims Off
 INFO=戦闘アニメOFFの時に、マップ戦闘時の体力バー表示の下に、戦闘のステータス情報を追加で表示します。
 INFO.en=Show battle stats when animations are off.\r\nWhen battle animation is OFF, battle status information is additionally displayed under the display of physical strength bar at map battle.
 
