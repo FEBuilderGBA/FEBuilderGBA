@@ -395,7 +395,7 @@
 0265=SE:@C85_35 Play longer wing flapping SFE
 0266=SE:@C85_2B Play armored unit "leaping" SFE
 0267=SE:@C85_2B Play armored unit "leaping" SFE
-0268=SE:[[不明 知っていたら教えて]]
+0268=SE:トライアングルアタック時のペガサスの移動音
 0269=SE:トーチの杖の光の輪
 026A=SE:地震
 026B=SE:[[不明 知っていたら教えて]]

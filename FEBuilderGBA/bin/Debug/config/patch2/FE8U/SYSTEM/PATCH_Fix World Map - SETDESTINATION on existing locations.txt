@@ -1,0 +1,21 @@
+NAME=既存のワールドマップノードを次の章の目的地として設定できないバグを修正する
+NAME.en=Fix World Map SETDESTINATION on existing locations
+NAME.zh=Fix World Map SETDESTINATION on existing locations
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0xc2fc
+
+OFF:0x0c2fc=0x1E 0xD0
+FIX:0x0c2fc=0x00 0x00
+
+INFO=既に出現しているノードを次の章の目的地に設定しようとSETDESTINATIONを発行しても動作しないバグを解決します。
+INFO.en=This patch Fix SETDESTINATION glitch on existing locations on World Map.\r\nif you try to use SETDESTINATION to put the little "next chapter" flag on a world map location that has already been loaded, it will fail.
+
+INFO.zh=This patch Fix SETDESTINATION glitch on existing locations on World Map.\r\nif you try to use SETDESTINATION to put the little "next chapter" flag on a world map location that has already been loaded, it will fail.
+
+AUTHOR=circleseverywhere https://feuniverse.us/t/fe8u-world-map-setdestination-on-existing-locations/13748

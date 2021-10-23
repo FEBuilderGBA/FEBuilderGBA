@@ -517,8 +517,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	向WMAP发出的人物移动[YY
 400D000081650808	转换伊弗列姆2	切换编辑并进行永久切换	{U}
 400D000031880808	转换艾瑞珂2	切换编辑并进行永久切换	{J}
 400D000065650808	转换艾瑞珂2	切换编辑并进行永久切换	{U}
-400D0000DD600108	将音乐返回到地图标准BGM	{MUSIC}	{J}
-400D0000D1600108	将音乐返回到地图标准BGM	{MUSIC}	{U}
+400D0000DD600108	将音乐返回到地图标准BGM(ASMC ReturnToMapBGM)	{MUSIC}	{J}
+400D0000D1600108	将音乐返回到地图标准BGM(ASMC ReturnToMapBGM)	{MUSIC}	{U}
 400D0000317F0808	显示清除塔和废墟时的地图清除效果的显示	{MAPEFFECT}	{J}
 400D0000655C0808	显示清除塔和废墟时的地图清除效果的显示	{MAPEFFECT}	{U}
 20000000	NOP
@@ -582,8 +582,12 @@ Duration
 412C0100E01C0003	LOAD2 0x03001CE0(LOW)	从 RAM 到 LOAD2 的神秘指令	@LOAD2	{J}
 412C0100E81C0003	LOAD2 0x03001CE8(LOW)	从 RAM 到 LOAD2 的神秘指令	@LOAD2	{U}
 585B5F6100000000	_UNK_585B5F6100000000(LOW)
-400D0000B9630D08	Force soft reset(ASMC BiosSoftReset)(LOW)	{J}
-400D0000BD160D08	Force soft reset(ASMC BiosSoftReset)(LOW)	{U}
+400D0000B9630D08	Forced soft reset(ASMC BiosSoftReset)(LOW)	{J}	Force a soft reset of the game to return to the title.
+400D0000BD160D08	Forced soft reset(ASMC BiosSoftReset)(LOW)	{U}	Force a soft reset of the game to return to the title.
+400D0000C5250208	Forced player turn end(ASMC EndTurn)	{J}	If you use it in a conversation event etc, it will forcibly end player turn and become an enemy turn.
+400D0000F9250208	Forced player turn end(ASMC EndTurn)	{U}	If you use it in a conversation event etc, it will forcibly end player turn and become an enemy turn.
+400D00005D5D0B08	Make suppend save at the current point(ASMC ExecuteSuppendSave QuickSave)	{U}
+400D0000E1A80B08	Make suppend save at the current point(ASMC ExecuteSuppendSave QuickSave)	{J}
 40050B00XX00YY002141FFFF200E1400	Display Warp IN effect at coordinates[XX:MAPX:X][YY:MAPY:Y](SlotB+WARP_IN)	{MAPEFFECT}
 40050B00XX00YY002041FFFF200E1400	Display Warp OUT effect at coordinates[XX:MAPX:X][YY:MAPY:Y](SlotB+WARP_OUT)	{MAPEFFECT}
 40050B00XX00YY002141FFFF200E14002026ZZWW40050B00ZZ00WW002041FFFF40050B00XX00YY00402FFFFFFEFFZZWW200E14002F410000	Warp from Coordinates[XX:MAPX:SrcX][YY:MAPY:SrcY] to coordinates[ZZ:MAPX:DestX][WW:MAPY:DestY](SlotB+WARP_IN+CAM1+MOVE+ENUN+SlotB+WARP_OUT+ENDWARP)	{MAPEFFECT}	Unlike warping when an ID is specified, the unit is not temporarily erased when warping IN.

@@ -42,8 +42,8 @@ W10:SONG.en=Transform Start Sound
 W12:SONG.en=Transform Finish Sound
 W14:SONG.en=Untransform Sound
 
-INFO=戦闘時に、変身できるクラスとアイテムを増やします。
-INFO.en=Edits the list of which classes can transform and how.\r\nInvolves class, item, multiple animations, and sounds.\r\nIn order to use, "Battle Transform List Installer" must be installed.\r\n\r\nBase -> Human to Dragon\r\nTransformed -> Dragon breath\r\nTransform Back -> Dragon to Human\r\nTransform Finished -> Human standing\r\n
+INFO=戦闘時に、マムクートが変身できるクラスとアイテムを増やします。
+INFO.en=Edits the list of which manakete classes can transform and how.\r\nInvolves class, item, multiple animations, and sounds.\r\nIn order to use, "Battle Transform List Installer" must be installed.\r\n\r\nBase -> Human to Dragon\r\nTransformed -> Dragon breath\r\nTransform Back -> Dragon to Human\r\nTransform Finished -> Human standing\r\n
 INFO.zh=在战斗中，增加可以改变的职业和道具。
 
 AUTHOR=Tequila ,UNKNOWN ,Aera , circleseverywhere. Compatability: 7743 https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77

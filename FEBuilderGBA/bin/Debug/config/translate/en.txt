@@ -10780,8 +10780,8 @@ global has been defined twice. File: {0} Line: {1}
 :ラベルを書く前に、global 情報を定義してください.\r\nこのラベルがグローバルなのか、ローカルなのか調べるのに必要です。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
 Please define the global information before writing the label.\r\nIt is necessary to check whether this label is global or local.\r\nExample: global aaa\r\n\r\nFile: {0} Line: {1}
 
-:グローバルラベル{2} すべてに利用されています。\r\n\r\nFile:{0} Line:{1}
-Used for all global labels {2}.\r\n\r\nFile: {0} Line: {1}
+:グローバルラベル{2} すでに利用されています。\r\n\r\nFile:{0} Line:{1}
+Global label {2} Already in use.\r\n\r\nFile: {0} Line: {1}.
 
 :グローバルラベルがないのに、ローカルラベルが使われました。\r\nまずはグローバルラベルを定義してください。 \r\n\r\nFile:{0} Line:{1}
 A local label was used without a global label.\r\nPlease define global label first. \r\n\r\nFile: {0} Line: {1}

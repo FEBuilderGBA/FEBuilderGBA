@@ -1,0 +1,14 @@
+//NoBallistaCanto written by Contro
+
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+
+ORG $1CBA0
+callHack_r3(NoBallistaCanto)
+SHORT $0000
+
+POP
+
+NoBallistaCanto:
+#incbin "NoBallistaCanto.dmp"

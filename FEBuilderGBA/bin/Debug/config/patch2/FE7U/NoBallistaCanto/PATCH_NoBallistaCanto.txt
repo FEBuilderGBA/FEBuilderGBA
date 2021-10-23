@@ -1,0 +1,12 @@
+NAME=バリスタに騎兵が乗ったときに再移動するとクラッシュするバグを修正する
+INFO=バリスタ(アーチ)に騎兵を乗せた直後にBボタンを押すとと再移動が発生します。\r\nこの時、再移動先でも攻撃メニューが表示され、それを選択すると、ゲームがフリーズします。\r\nこのパッチは、バリスタに乗ったユニットの再移動を禁止することで、このglitchを回避します。
+
+NAME.en=Fixed glitch when canto ballista with cavalry ride it
+INFO.en=Pressing B immediately after placing a cavalryman on a ballista (arch) would cause a CANTO.\r\nWhen this happens, the attack menu will appear even after the CANTO, and if you select it, the game will freeze. This patch avoids this glitch by disallowing units on ballistae to canto re-move.
+
+
+TYPE=EA
+EA=NoBallistaCanto_installer.event
+PATCHED_IF:0x1CBA0=0x01 0x4B 0xA3 0xF0
+
+AUTHOR=Contro https://feuniverse.us/t/contros-asm-lineup/13514/3

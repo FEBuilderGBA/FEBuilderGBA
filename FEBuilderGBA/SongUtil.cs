@@ -2474,6 +2474,12 @@ namespace FEBuilderGBA
             public List<byte> list;
         };
 
+        static List<KeyValuePair<string, int>> SortedEQU(Dictionary<string, int> equ)
+        {
+            return U.OrderBy<string, int>(equ, (x) => { return -(x.Key.Length); });
+        }
+
+
         public static string ImportS(string filename, uint songtable_address, uint instrument_addr)
         {
             uint songheader_address = Program.ROM.p32(songtable_address + 0);
@@ -2536,6 +2542,7 @@ namespace FEBuilderGBA
             {
                 equ[U.To0xHexString(i)] = (int)i;
             }
+            List<KeyValuePair<string, int>> equ_sorted = SortedEQU(equ);
 
             string[] lines = File.ReadAllLines(filename);
 
@@ -2577,7 +2584,8 @@ namespace FEBuilderGBA
                     }
                     try
                     {
-                        equ[token[1]] = Expr(v, equ);
+                        equ[token[1]] = Expr(v, equ_sorted);
+                        equ_sorted = SortedEQU(equ);
                     }
                     catch (SyntaxErrorException e)
                     {
@@ -2616,7 +2624,7 @@ namespace FEBuilderGBA
                         if (findGlobal(global, name) >= 0)
                         {
                             InputFormRef.DoEvents(null, "Lines:" + i);
-                            return R.Error("グローバルラベル{2} すべてに利用されています。\r\n\r\nFile:{0} Line:{1}", filename, i + 1, name);
+                            return R.Error("グローバルラベル{2} すでに利用されています。\r\n\r\nFile:{0} Line:{1}", filename, i + 1, name);
                         }
                         current = new SongInnerDataSt();
                         current.name = name;
@@ -2635,6 +2643,7 @@ namespace FEBuilderGBA
                     }
 
                     equ[name] = (current.globalID << 24) + current.list.Count; //相対座標で記録.
+                    equ_sorted = SortedEQU(equ); 
                     continue;
                 }
 
@@ -2655,7 +2664,7 @@ namespace FEBuilderGBA
                     {
                         try
                         {
-                            int v = Expr(token[n], equ);
+                            int v = Expr(token[n], equ_sorted);
                             current.list.Add((byte)v);
                         }
                         catch (SyntaxErrorException e)
@@ -2691,7 +2700,7 @@ namespace FEBuilderGBA
                     {
                         try
                         {
-                            uint v = (uint)Expr(token[n], equ);
+                            uint v = (uint)Expr(token[n], equ_sorted);
 
                             {//それ以外の相対値 
                                 current.useLabelRegist.Add((uint)current.list.Count);
@@ -2936,14 +2945,12 @@ namespace FEBuilderGBA
             }
             return -1;
         }
-        static int Expr(string expr_value, Dictionary<string, int> equ)
+        static int Expr(string expr_value, List<KeyValuePair<string, int>> equ)
         {
-            List<KeyValuePair<string, int>> equ_sorted = U.OrderBy<string, int>(equ, (x) => { return -(x.Key.Length); });
-
             string expr = expr_value;
 
             //変数を実際の値に置換します.
-            foreach (var pair in equ_sorted)
+            foreach (var pair in equ)
             {
                 expr = expr.Replace(pair.Key, pair.Value.ToString());
             }
@@ -2964,6 +2971,18 @@ namespace FEBuilderGBA
                 ret = (int)U.atoi(str);
             }
             return ret;
+        }
+        static bool isNormalNumberString(string str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (!
+                    (str[i] >= '0' && str[i] <= '9'))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         static bool isExprString(string str)
         {

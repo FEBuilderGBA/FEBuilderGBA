@@ -394,7 +394,7 @@
 0265=SE:@C85_35 Play longer wing flapping SFE
 0266=SE:@C85_2B Play armored unit "leaping" SFE
 0267=SE:@C85_2B Play armored unit "leaping" SFE
-0268=SE:[[Unknown,Tell me if you know!]]
+0268=SE:Moving sound of Pegasus during triangle attack
 0269=SE:Circle of light by torch
 026A=SE:Earthquake
 026B=SE:[[Unknown,Tell me if you know!]]
