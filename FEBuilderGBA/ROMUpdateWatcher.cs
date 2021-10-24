@@ -60,7 +60,7 @@ namespace FEBuilderGBA
             }
             return watch.Process;
         }
-        public void KillProcess(string fullfilename)
+        public void KillProcess(string fullfilename, bool waitUntilDead = false)
         {
             WatchData watch;
             if (!WatchDataDic.TryGetValue(fullfilename, out watch))
@@ -69,6 +69,16 @@ namespace FEBuilderGBA
             }
             watch.Process.CloseMainWindow();
             WatchDataDic.Remove(fullfilename);
+
+            if (waitUntilDead)
+            {
+                WaitUntilDead(watch.Process);
+            }
+        }
+        void WaitUntilDead(Process p)
+        {
+            p.WaitForExit(1000);
+            p.Close();
         }
 
         public void Stop()

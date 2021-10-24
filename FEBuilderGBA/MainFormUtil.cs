@@ -668,7 +668,7 @@ namespace FEBuilderGBA
 
             return sb.ToString();
         }
-        static void KillProcessIfRunning(string run_name, string arg1 = "<<ROM>>")
+        static void KillProcessIfRunning(string run_name, string arg1 = "<<ROM>>", bool waitUntilDead = false)
         {
             string emulator = Program.Config.at(run_name, "");
             if (emulator == "" || !File.Exists(emulator))
@@ -687,7 +687,7 @@ namespace FEBuilderGBA
             }
 
             //強制終了
-            Program.UpdateWatcher.KillProcess(tempfilename);
+            Program.UpdateWatcher.KillProcess(tempfilename, waitUntilDead);
         }
 
         static bool IsAlreadyRunningProcess(string run_name, string arg1 = "<<ROM>>")
@@ -781,15 +781,10 @@ namespace FEBuilderGBA
         
         public static void RunAsSappy(uint song_id)
         {
-            if (song_id <= 0)
+            if (song_id <= 0 || song_id >= 0x7FFF)
             {
                 return;
             }
-            if (song_id >= 0xFFFF)
-            {
-                return;
-            }
-
 
             string sappyexe = Program.Config.at("sappy", "");
             if (sappyexe == "" || !File.Exists(sappyexe))
@@ -816,10 +811,12 @@ namespace FEBuilderGBA
             }
             else
             {
+                KillProcessIfRunning("sappy", "<<ROM>>" , waitUntilDead: true);
+
                 Process p;
                 try
                 {
-                    p = MainFormUtil.PoolRunAs("sappy");
+                    p = MainFormUtil.RunAs("sappy", "<<ROM>>");
                 }
                 catch (Exception e)
                 {
