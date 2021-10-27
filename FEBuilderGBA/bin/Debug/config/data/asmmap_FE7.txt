@@ -5468,3 +5468,13 @@
 080AC2AC	サウンドルーム画面を表示	{U}
 03005E80	:03006A7F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{J}
 03005DA0	:0300699F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
+0802D940	FlamesWeatherHBlank	{U}
+0802D984	ApplyFlamesWeatherGradient	{U}
+0802DA04	FlamesWeatherInitGradient	{U}
+0802DA94	FlamesWeatherInitParticles	{U}
+0802DAF8	WeatherInit_Flames	{U}
+0802DE00	FlamesWeatherHBlank	{J}
+0802DE44	ApplyFlamesWeatherGradient	{J}
+0802DEC4	FlamesWeatherInitGradient	{J}
+0802DF54	FlamesWeatherInitParticles	{J}
+0802DFB8	WeatherInit_Flames	{J}

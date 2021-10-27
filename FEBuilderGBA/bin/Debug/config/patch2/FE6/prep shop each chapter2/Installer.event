@@ -19,8 +19,7 @@ POIN prep_shop_each_chapter2_table
 
 ALIGN 4
 prep_shop_each_chapter2_table:
-#include "prep_shop_each_chapter2_table.event"
-
+#include "prep_shop_each_chapter_table2.event"
 
 
 #else
