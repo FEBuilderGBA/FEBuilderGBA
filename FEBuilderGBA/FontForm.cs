@@ -119,7 +119,7 @@ namespace FEBuilderGBA
             //} //sizeof()==8
             while (p > 0)
             {
-                uint next = rom.p32(p);
+                uint next = rom.u32(p);
                 uint check = rom.u8(p + 4);
 
                 //日本語版は、 moji1でハッシュして、 以下listをmoji2で探索します.
@@ -137,13 +137,13 @@ namespace FEBuilderGBA
                     break;
                 }
 
-                if (!U.isSafetyOffset(next, rom))
+                if (!U.isSafetyPointer(next, rom))
                 {//リストが壊れている.
                     break;
                 }
 
                 //次のリストへ進む.
-                p = next;
+                p = U.toOffset(next);
 
             }
 
@@ -187,7 +187,7 @@ namespace FEBuilderGBA
 
             while (p > 0)
             {
-                uint next = rom.p32(p);
+                uint next = rom.u32(p);
                 uint check2 = rom.u8(p + 4);
                 uint check3 = rom.u8(p + 6);
                 uint check4 = rom.u8(p + 7);
@@ -210,14 +210,13 @@ namespace FEBuilderGBA
                     break;
                 }
 
-                if (!U.isSafetyOffset(next, rom))
+                if (!U.isSafetyPointer(next, rom))
                 {//リストが壊れている.
                     break;
                 }
 
                 //次のリストへ進む.
-                p = next;
-
+                p = U.toOffset(next);
             }
 
             //探していたフォントは存在しない!
@@ -863,13 +862,13 @@ namespace FEBuilderGBA
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
-                        uint next = Program.ROM.p32(p);
+                        uint next = Program.ROM.u32(p);
                         if (next == 0)
                         {//リスト終端.
                             break;
                         }
 
-                        if (!U.isSafetyOffset(next))
+                        if (!U.isSafetyPointer(next))
                         {//リストが壊れている.
                             break;
                         }
@@ -877,7 +876,7 @@ namespace FEBuilderGBA
                         before_pointer = p;
 
                         //次のリストへ進む.
-                        p = next;
+                        p = U.toOffset(next);
                     }
                 }
             }
@@ -925,13 +924,13 @@ namespace FEBuilderGBA
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
-                        uint next = Program.ROM.p32(p);
+                        uint next = Program.ROM.u32(p);
                         if (next == 0)
                         {//リスト終端.
                             break;
                         }
 
-                        if (!U.isSafetyOffset(next))
+                        if (!U.isSafetyPointer(next))
                         {//リストが壊れている.
                             break;
                         }
@@ -939,7 +938,7 @@ namespace FEBuilderGBA
                         before_pointer = p;
 
                         //次のリストへ進む.
-                        p = next;
+                        p = U.toOffset(next);
                     }
                 }
             }
@@ -984,13 +983,13 @@ namespace FEBuilderGBA
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
-                        uint next = Program.ROM.p32(p);
+                        uint next = Program.ROM.u32(p);
                         if (next == 0)
                         {//リスト終端.
                             break;
                         }
 
-                        if (!U.isSafetyOffset(next))
+                        if (!U.isSafetyPointer(next))
                         {//リストが壊れている.
                             break;
                         }
@@ -998,7 +997,7 @@ namespace FEBuilderGBA
                         before_pointer = p;
 
                         //次のリストへ進む.
-                        p = next;
+                        p = U.toOffset(next);
                     }
                 }
             }

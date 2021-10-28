@@ -5,7 +5,7 @@
 4=Berserk
 5=Attack
 6=Defence
-7=Crtical
+7=Critical
 8=Avoid
 9=??
 A=??

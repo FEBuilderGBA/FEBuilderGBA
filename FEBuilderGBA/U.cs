@@ -2902,25 +2902,25 @@ namespace FEBuilderGBA
         [MethodImpl(256)]
         public static bool isSafetyOffset(uint a)
         {
-            return (a < 0x02000000 && a >= 0x00000100 && a < Program.ROM.Data.Length);
+            return (a < 0x02000000 && a >= 0x00000200 && a < Program.ROM.Data.Length);
         }
 
         [MethodImpl(256)]
         public static bool isSafetyPointer(uint a)
         {
-            return (a < 0x0A000000 && a >= 0x08000100 && a - 0x08000000 < Program.ROM.Data.Length);
+            return (a < 0x0A000000 && a >= 0x08000200 && a - 0x08000000 < Program.ROM.Data.Length);
         }
 
         [MethodImpl(256)]
         public static bool isSafetyOffset(uint a,ROM rom)
         {
-            return (a < 0x02000000 && a >= 0x00000100 && a < rom.Data.Length);
+            return (a < 0x02000000 && a >= 0x00000200 && a < rom.Data.Length);
         }
 
         [MethodImpl(256)]
         public static bool isSafetyPointer(uint a,ROM rom)
         {
-            return (a < 0x0A000000 && a >= 0x08000100 && a - 0x08000000 < rom.Data.Length);
+            return (a < 0x0A000000 && a >= 0x08000200 && a - 0x08000000 < rom.Data.Length);
         }
 
         [MethodImpl(256)]
