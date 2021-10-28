@@ -10,3 +10,5 @@ EA=NoBallistaCanto_installer.event
 PATCHED_IF:0x1CBA0=0x01 0x4B 0xA3 0xF0
 
 AUTHOR=Contro https://feuniverse.us/t/contros-asm-lineup/13514/3
+NAME.zh=修复了当骑兵骑在咖啡师身上并重新定位时导致崩溃的错误。
+INFO.zh=如果在将骑兵放在压敏电阻（拱形）上后立即按下 B 按钮，则会发生重新移动。\r\n此时，即使在搬迁目的地也会显示攻击菜单，如果您选择它，游戏将冻结。\r\n该补丁通过禁止在压敏电阻上重新定位单元来避免这种故障。

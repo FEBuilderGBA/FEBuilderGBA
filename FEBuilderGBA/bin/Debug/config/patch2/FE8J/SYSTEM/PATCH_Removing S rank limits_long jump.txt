@@ -16,6 +16,9 @@ AUTHOR=Tequila
 COMBO.en=Default|OFF|Removing S rank limit|ONN
 NAME.zh=取消对S等级的限制，并为S等级制造多种武器(FE8N)
 COMBO.zh=Default|OFF|发布S等级限制|ONN
+INFO=武器レベルSに上げられる武器を1つではなく、複数の武器をSレベルまで上げられるようにします。
 INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched)\r\n
+HINT=Weapon Level WEXP WLV
 
 IF:0x2C0C2=0x94 0x6A
+INFO.zh=允许多件武器升至 S 级，而不是将一件武器升至 S 级。
