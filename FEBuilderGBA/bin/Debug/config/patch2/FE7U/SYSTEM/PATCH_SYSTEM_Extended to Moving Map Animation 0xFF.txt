@@ -39,4 +39,7 @@ ONN:0x25132=0x00 0x20	//
 AUTHOR=Icecube https://feuniverse.us/t/max-number-of-standing-map-sprites/773/20 , Snakey1 https://feuniverse.us/t/max-number-of-standing-map-sprites/773/29
 NAME.zh=将移动图标扩展到FF
 
-INFO.en=Toggles whether to limit class moving animations to 127 (Default) or 255 (Extended)\r\nIf moving map animations exceed 127 without being patched, there will be errors.\r\n
+INFO=ユニットが移動する、または待機するときに利用されるユニットアイコンを255まで利用できるように修正します。
+INFO.en=Toggles whether to limit class moving animations(Standing Map Animation) to 127 (Default) or 255 (Extended)\r\nIf moving map animations exceed 127 without being patched, there will be errors.\r\n
+HINT=fixed unit's standing map animations
+INFO.zh=修改单位移动或等待时使用的单位图标，最多可使用255个。
