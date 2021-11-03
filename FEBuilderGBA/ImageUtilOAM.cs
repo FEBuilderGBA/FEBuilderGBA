@@ -3521,6 +3521,72 @@ namespace FEBuilderGBA
             }
         }
 
+        public static bool HasMagicMotion(uint battleanime_baseaddress)
+        {
+            if (!U.isSafetyZArray(battleanime_baseaddress + 32 - 1))
+            {
+                return false;
+            }
+
+            uint sectionData_offset = Program.ROM.p32(battleanime_baseaddress + 12); //セクションデータ 固定長 
+            uint frameData_offset = Program.ROM.p32(battleanime_baseaddress + 16);     //
+
+            if (!U.isSafetyZArray(sectionData_offset + 4 * 12 - 1))
+            {
+                return false;
+            }
+            byte[] sectionData = Program.ROM.getBinaryData(sectionData_offset, 4 * 12);
+            byte[] frameData_UZ = UnCompressFrame(frameData_offset); //画像をどう切り出すかを提起したデータ
+            if (frameData_UZ.Length < 4)
+            {
+                return false;
+            }
+            int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));
+            int mode = 5 - 1;
+            {
+                //間接攻撃モーション
+                uint i = U.u32(sectionData, (uint)mode * 4);
+                uint end = U.u32(sectionData, (uint)(mode+1) * 4);
+
+                if (i >= frameData_UZ.Length)
+                {
+                    return false;
+                }
+                if (end >= frameData_UZ.Length)
+                {
+                    return false;
+                }
+                if (i >= end)
+                {
+                    return false;
+                }
+
+                for (; i < end; i += 4 )
+                {
+                    if (frameData_UZ[i + 3] == 0x80)
+                    {
+                        break;
+                    }
+                    else if (frameData_UZ[i + 3] == 0x85)
+                    {
+                        uint code86 = frameData_UZ[i];
+                        if (code86 == 0x05)
+                        {
+                            //魔法発動
+                            return true;
+                        }
+                        continue;
+                    }
+                    else if (frameData_UZ[i + 3] != 0x86)
+                    {
+                        continue;
+                    }
+                    i = i + 4 + 4; // 4+4+ 4 = 12
+                }
+            }
+            return false;
+        }
+
         public static void MakeCheckError(List<FELint.ErrorSt> errors,uint battleanime_baseaddress,uint id,List<uint> seatNumberList)
         {
             if (!U.isSafetyZArray(battleanime_baseaddress + 32 - 1))

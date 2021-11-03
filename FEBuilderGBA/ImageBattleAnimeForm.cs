@@ -933,12 +933,14 @@ namespace FEBuilderGBA
 
        //斧使いが、手斧のモーションを持っているかテストする.
        static void MakeCheckErrorAxs(InputFormRef ifr
+           , InputFormRef N_ifr
            , List<U.AddrResult> axsItems
            , List<U.AddrResult> classList
            , uint cid
            , List<FELint.ErrorSt> errors)
         {
             bool axsUser = false;
+            uint axsMotionID = 0;
             List<uint> axsList = new List<uint>();
 
             List<U.AddrResult> list = ifr.MakeList();
@@ -952,6 +954,8 @@ namespace FEBuilderGBA
                     if (b0 == 2)
                     {//2=斧
                         axsUser = true;
+                        uint w2 = Program.ROM.u16(list[i].addr + 2);
+                        axsMotionID = w2;
                     }
                 }
                 else if (b1 == 0)
@@ -964,6 +968,18 @@ namespace FEBuilderGBA
             {//問題なし
                 return ;
             }
+            if (PatchUtil.SearchCache_HandAxsWildCard() == PatchUtil.HandAxsWildCard_extends.Enable)
+            {
+                if (axsList.IndexOf(0x28) >= 0)
+                {//手斧モーションで代用可
+                    return;
+                }
+            }
+            if (HasMagicMotion(N_ifr, axsMotionID))
+            {//斧モーションが投げるモーションもサポートしていれば問題なし
+                return;
+            }
+
             //斧使い 全種類の手斧をもっているか?
             for (int i = 0; i < axsItems.Count; i++)
             {
@@ -987,14 +1003,6 @@ namespace FEBuilderGBA
                     }
                 }
 
-                if (PatchUtil.SearchCache_HandAxsWildCard() == PatchUtil.HandAxsWildCard_extends.Enable)
-                {
-                    if (axsList.IndexOf(0x28) >= 0)
-                    {//手斧モーションで代用可
-                        continue;
-                    }
-                }
-
                 errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME_CLASS, ifr.BaseAddress
                     , R._("クラス({0})は、斧を利用できますが、手斧({1})の設定がありません。\r\nGBAFEでは、手斧系の武器は、アイテムごとに投げるモーションを設定する必要があります。\r\n個別に設定するのが面倒な場合は、「手斧モーションを投げ斧の汎用モーションとして利用する」パッチを有効にしてください。"
                     , classList[(int)cid].name
@@ -1002,9 +1010,24 @@ namespace FEBuilderGBA
             }
         }
 
+       static bool HasMagicMotion(InputFormRef N_ifr
+           , uint battleAnimationID)
+       {
+           uint battleAnimationIDMinus1 = battleAnimationID - 1;
+           if (battleAnimationIDMinus1 >= N_ifr.DataCount)
+           {
+               return false;
+           }
+
+           uint p = N_ifr.BaseAddress + (battleAnimationIDMinus1 * N_ifr.BlockSize);
+           return ImageUtilOAM.HasMagicMotion(p);
+       }
+
         //エラーチェック
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
+           InputFormRef N_InputFormRef = N_Init(null);
+            
            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
            if (!isFE6)
            {//FE6の場合、パラディンなどが手斧モーションを持っていない.
@@ -1031,13 +1054,12 @@ namespace FEBuilderGBA
                    }
 
                     InputFormRef.ReInit(addr);
-                    MakeCheckErrorAxs(InputFormRef
+                    MakeCheckErrorAxs(InputFormRef, N_InputFormRef
                         , handAxsItems, classList, cid, errors);
                }
            }
 
            {
-               InputFormRef N_InputFormRef = N_Init(null);
                if (N_InputFormRef.DataCount < 10)
                {
                    errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, U.NOT_FOUND

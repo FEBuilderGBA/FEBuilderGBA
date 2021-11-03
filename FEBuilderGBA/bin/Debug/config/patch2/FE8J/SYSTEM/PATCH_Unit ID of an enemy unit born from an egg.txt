@@ -1,0 +1,19 @@
+
+Class ID of an enemy unit born from an egg
+
+NAME=卵から誕生する敵ユニットのUnitID
+NAME.en=Unit ID of an enemy unit born from an egg
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07F2A2
+ADDRESS_TYPE=UNIT
+
+INFO=卵から生まれる敵ユニットのUnitIDを指定します。\r\nバニラでは卵は指定ターンを経過すると羽化し、敵ユニットが産まれます。\r\nディフォルトは、UnitID 0xBA 魔物 Monsterです。
+INFO.en=Specifies the Unit ID of the enemy unit born from the egg.\r\nIn vanilla, eggs emerge after a specified turn and spawn enemy units.\r\nThe default is UnitID 0xBA Monster.
+AUTHOR=Huichelaar
+
+NAME.zh=Unit ID of an enemy unit born from an egg
+INFO.zh=Specifies the Unit ID of the enemy unit born from the egg.\r\nIn vanilla, eggs emerge after a specified turn and spawn enemy units.\r\nThe default is UnitID 0xBA Monster.

@@ -1,0 +1,17 @@
+
+NAME=卵から誕生する敵ユニットのClassID
+NAME.en=Class ID of an enemy unit born from an egg
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07CF62
+ADDRESS_TYPE=CLASS
+
+INFO=卵から生まれる敵ユニットのClassIDを指定します。\r\nバニラでは卵は指定ターンを経過すると羽化し、敵ユニットが産まれます。\r\nディフォルトは、ClassID 0x61 ゴーゴンです。
+INFO.en=Specifies the Class ID of the enemy unit born from the egg.\r\nIn vanilla, eggs emerge after a specified turn and spawn enemy units.\r\nThe default is ClassID 0x61 Gorgon.
+AUTHOR=Huichelaar
+
+NAME.zh=Class ID of an enemy unit born from an egg
+INFO.zh=Specifies the Class ID of the enemy unit born from the egg.\r\nIn vanilla, eggs emerge after a specified turn and spawn enemy units.\r\nThe default is ClassID 0x61 Gorgon.
