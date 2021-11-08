@@ -14787,3 +14787,9 @@ r3=X tile position of menu of right	{U}
 080DA970	_read_r	{J}
 080A886C	InitializeSoundRoomEnableList	{J}
 080A3E28	InitializeSoundRoomEnableList	{U}
+08013A98	StartApplyDamagePaletteToTarget	{J}
+080139E0	StartApplyDamagePaletteToTarget	{U}
+08013A40	EndApplyDamagePaletteToTarget	{J}
+08013988	EndApplyDamagePaletteToTarget	{U}
+0203E24A	@BattleRound	CurrentBattleRound	{U}
+0203E246	@BattleRound	CurrentBattleRound	{J}
