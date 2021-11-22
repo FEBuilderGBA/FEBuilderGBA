@@ -1831,17 +1831,20 @@ End Events are events that are called at the end of the chapter, once flag 03 is
 :制圧フラグ
 Seize Flag
 
-:壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+:壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}
 There is a Broken Wall, but the tile change of map is not set. x:{0} y:{1}
 
-:古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+:古木なのに、マップ変化が設定されていません。 x:{0} y:{1}
 There is a Srag, but the tile change of map is not set. x:{0} y:{1}
 
-:「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。
-A Home/Visit event exists, though "{0}" is set as its type.
+:訪問できる村なのに、種類で「{0}」が設定されています。
+Even though it is a village that can be visited, "{0}" is set for the type.
 
-:村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
-There is a Village event, the tile change of the map is not set. x:{0} y:{1}
+:訪問できる村なのに、マップ変化が設定されていません。x:{0} y:{1}\r\n達成フラグが0なので「訪問村」ではなく、何度も訪問できる「民家」のようにも思います。\r\nその場合は、種類を「訪問村」ではなく「制圧ポイントと民家」に変更してください。
+The Tile Change is not set even though it is a village that can be visited.x: {0} y: {1}.\r\nSince the achievement flag is 0, I think it's not a "visited village" but a "private house" that you can visit many times.\r\nIn that case, change the type to "Seize Points/Houses" instead of "Visit Village".
+
+:訪問できる村なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n村のイベントには、村の座標にマップ変化を設定する必要があります。
+The Tile Change is not set even though it is a village that can be visited.x: {0} y: {1}.\r\nFor village events, you need to set Tile Changes to the village coordinates.
 
 :宝箱なのに、種類で「{0}」が設定されています。
 A chest event has "{0}" set as its type.
@@ -1849,13 +1852,13 @@ A chest event has "{0}" set as its type.
 :ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n
 The gold and item settings are incorrect.\r\n\r\nTo make a treasure chest with just gold in it, set the item obtained by it as the "{0} Gold" item.\r\nConversely, if the treasure box contain an item instead of gold, the field for gold should be at 0 if present.\r\n
 
-:宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+:宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}
 There is a Chest event, but the tile change of map is not set. x:{0} y:{1}
 
 :ドアなのに、種類で「{0}」が設定されています。
 There is a Door event, but "{0}" is set as the type.
 
-:ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}
+:ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}
 There is a Door event, the tile change of the map is not set. x:{0} y:{1}
 
 :店なのに、種類で「{0}」が設定されています。
@@ -2047,8 +2050,8 @@ Coordinates
 :訪問村
 Visit Village
 
-:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
-Villages usually require 2 seperate events to function.\r\n\r\n1) A Type-10 (Home) event, which is the tile that actually lets the character "Visit" the village with a command at the village's bottom entrance. Once the event is done, Tile Changes will automatically occur (typically the "closed gate" tile to prevent access).\r\n2) A Type-20 (Village Center) is required for thieves/bandits to target and destroy the village once it is reached. This event is placed in the middle of the village. If destroyed, Tile Changes placed over the village will automatically occur (typically the ruined village tiles).\r\nYou do not actually require the second event if your chapter does not contain any threats towards your Villages.
+:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。\r\n\r\n村の座標には閉じ村に変更するための「マップ変化」が必要です。\r\nもし、閉じ村にせず、何度も尋ねることが出来て、情報を聞ける民家ならば、発生タイプを「制圧ポイントと民家」にし、その中にある「民家」の方を利用してください。\r\n
+Villages usually require 2 seperate events to function.\r\n\r\n1) A Type-10 (Home) event, which is the tile that actually lets the character "Visit" the village with a command at the village's bottom entrance. Once the event is done, Tile Changes will automatically occur (typically the "closed gate" tile to prevent access).\r\n2) A Type-20 (Village Center) is required for thieves/bandits to target and destroy the village once it is reached. This event is placed in the middle of the village. If destroyed, Tile Changes placed over the village will automatically occur (typically the ruined village tiles).\r\nYou do not actually require the second event if your chapter does not contain any threats towards your Villages.\r\n\r\nVillage coordinates require a "Tile Change" to change to a closed village.\r\nIf it is a private house where you can ask many times and ask for information without making it a closed village, set the occurrence type to "Seize Points/Houses" and use the "private house" in it.\r\n
 
 :宝箱
 Chest
@@ -4532,10 +4535,10 @@ Ballista
 Broken walls / Srag
 
 :マップ変化1
-Map change 1
+Tile Change 1
 
 :マップ変化2
-Map change 2
+Tile Change 2
 
 :不明1
 Unknown 1
@@ -5060,7 +5063,7 @@ Determines tile animation such as a streams or waves.\r\nImplemented by forcibly
 Determines secondary tile animation when necessary.\r\nUsed for effects such as volcanoes.\r\nTile animation 2 can be changed from the detail menu.\r\n
 
 :マップ変更を管理するポインタを指定します。\r\n扉や宝箱、村訪問、壊れる壁などが関係します。\r\n
-Determines map changes.\r\nDoors, chests, villages, broken walls, etc., are involved.\r\n
+Determines Tile Changes.\r\nDoors, chests, villages, broken walls, etc., are involved.\r\n
 
 :イベントを管理する基準となるポインタIDを指定します。\r\n
 Determines what events the chapter will use.\r\n
@@ -6434,7 +6437,7 @@ In FE 7, this data can be set only in part.
 To make a unit that can not sortie in reverse please use the patch
 
 :ドアや閉じ村、廃村などのマップ変化の指定を行います。\r\nこの指定は、マップエディタから設定した方が簡単です。
-Edit the map changes such as doors, closed villages, and destroyed villages.\r\nIt is easier to set this from the map editor.
+Edit the Tile Changes such as doors, closed villages, and destroyed villages.\r\nIt is easier to set this from the map editor.
 
 :盗賊が離脱するのに利用する離脱ポイントを設定します。
 Edit the withdrawal point to use for the thieves to leave.
@@ -6716,7 +6719,7 @@ Configure map settings
 Map setting map
 
 :マップ設定のマップ変化
-Map change map setting
+Tile Change map setting
 
 :マップ設定のタイルアニメーション1
 Map setting tile animation 1
@@ -6863,7 +6866,7 @@ Map tile ({0}) ID is over 0x7F.\r\nTile change ID must be less than or equal to 
 Pointer ({1}) of tile change ({0}) is dangerous.
 
 :マップ変化({0})のポインタ({1})か、マップ変化のサイズの指定が正しくありません。
-The tile change ({0}) pointer ({1}) or the map change size specification is incorrect.
+The tile change ({0}) pointer ({1}) or the Tile Change size specification is incorrect.
 
 :マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。
 Broken tile data ({2}) in the destination data pointer ({1}) of tile change ({0}).
@@ -6884,10 +6887,10 @@ Display the tile change setting screen.
 Assign a new Tile change.
 
 :訪問村や、宝箱、壊れる壁、古木などのために、\r\nマップ変化を新規に割り当てる場合は、ここから新規にマップ変化を割り当ててください。
-For visiting villages, treasure chests, broken walls, Srag, etc.,\r\nTo assign a new map change, assign a new Tile change from here.
+For visiting villages, treasure chests, broken walls, Srag, etc.,\r\nTo assign a new Tile Change, assign a new Tile change from here.
 
 :マップ変化を減らす場合は、設定画面から消去してください。\r\n変更したマップ変化は、マップを切り替えたときに読み込まれます。
-To reduce the Tile change, please erase from the setting screen.\r\nThe changed map change is read when switching the map.
+To reduce the Tile change, please erase from the setting screen.\r\nThe changed Tile Change is read when switching the map.
 
 :マップ変化をさらに追加で作成しますか？
 Would you like to create additional Tile Changes?
@@ -6965,7 +6968,7 @@ The file is corrupted.\r\nThere is no header.\r\nFile: {0}.
 The file is corrupted.\r\nThere is no BODY.\r\nFile: {0}.
 
 :マップ変化を含めてインポートしてもよろしいですか？\r\n「はい」の場合は、マップとマップ変化の両方をTMXで指定されたものにすべて置き換えてロードします。\r\n「いいえ」の場合は、メインマップだけをロードします。
-Are you sure to import including Tile Changes?\r\n\r\nIf "yes", load all maps and map changes both with those specified in TMX.\r\nIf "No", only the main map will be loaded.
+Are you sure to import including Tile Changes?\r\n\r\nIf "yes", load all maps and Tile Changes both with those specified in TMX.\r\nIf "No", only the main map will be loaded.
 
 :LAYERの指定がありません。
 LAYER is not specified.
@@ -6974,7 +6977,7 @@ LAYER is not specified.
 The format of the map data is incorrect.\r\nPlease set the data format saved with Tiled to csv or tmx default xml format.
 
 :このマップ「{0}」には、マップ変化を格納するPLISTが存在しません。\r\nまず「マップ変化追加」ボタンを押して、PLISTを確保してください。
-In this map "{0}" there is no PLIST to store map changes.\r\nFirst, press "Add Map Change" button to reserve PLIST.
+In this map "{0}" there is no PLIST to store Tile Changes.\r\nFirst, press "Add Tile Change" button to reserve PLIST.
 
 :マップ変化数がたりません。{0}個必要です。インポートする前にマップ変化から確保してください。\r\n\r\nマップファイル:{1}\r\n
 There is no Tile Changes count.{0} items are required.Please allocate from Tile Changes before importing.\r\n\r\nMapFilename:{1}\r\n
@@ -7121,7 +7124,7 @@ Additional Code When Loading Map
 World Map
 
 :マップ変化:
-Map change:
+Tile Change:
 
 :変化
 Change
@@ -7130,7 +7133,7 @@ Change
 Scale
 
 :マップ部分変化
-Map Changes
+Tile Changes
 
 :オブジェクトタイプ
 Object Type
@@ -7145,13 +7148,13 @@ PLIST=0 can't be written.\r\nIt should always be 0.\r\n
 Since the original PLIST contains various elements, it can be split into a list for each element.\r\nWhen the PLIST is separated, each new list is automatically expanded to 0xFF.\r\nNote that this process is dangerous. Be sure to perform a backup beforehand.\r\n
 
 :FE6では、7倍に増やせます。\r\n1.(オブジェクト), 2.(マップチップ画像、パレット), 3.(アニメーション), 4.(マップの並び順) , 5.(マップ変更) ,6.(イベント) ,7.(ワールドマップ)\r\n
-In FE 6, PLIST can be split into seven lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Map Changes 6. Events\r\n7. World Map.\r\n
+In FE 6, PLIST can be split into seven lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Tile Changes 6. Events\r\n7. World Map.\r\n
 
 :FE7では、6倍に増やせます。\r\n1.(オブジェクト), 2.(マップチップ画像、パレット), 3.(アニメーション), 4.(マップの並び順) , 5.(マップ変更) ,6.(イベント) \r\n
-In FE 7, PLIST can be split into six lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Map Changes 6. Events.\r\n
+In FE 7, PLIST can be split into six lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Tile Changes 6. Events.\r\n
 
 :FE8では、6倍に増やせます。\r\n1.(オブジェクト), 2.(マップチップ画像、パレット), 3.(アニメーション), 4.(マップの並び順) , 5.(マップ変更) ,6.(イベント) \r\n
-In FE 8, PLIST can be split into six lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Map Changes 6. Events.\r\n
+In FE 8, PLIST can be split into six lists.\r\n1. Tile Config 2. Object Type and Palettes\r\n3. Tile Animation 4. Maps\r\n5. Tile Changes 6. Events.\r\n
 
 :PLISTを分割してもよろしいですか？\r\n
 Are you sure you want to split the PLIST?\r\n
@@ -7613,7 +7616,7 @@ Chapter Title
 Battle Prep Y/N?
 
 :マップ部分変更(Plist)
-Map Changes (Plist)
+Tile Changes (Plist)
 
 :マップポインタ(Plist)
 Map Pointer (Plist)

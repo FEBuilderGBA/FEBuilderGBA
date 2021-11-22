@@ -983,10 +983,6 @@ namespace FEBuilderGBA
         //壊れる壁と古木もチェック
         static void CheckBrokenWallSnag(uint mapid, List<FELint.ErrorSt> errors, byte[] tilesArray, int mapWidth,int mapHeight, List<MapChangeForm.ChangeSt> changeList)
         {
-            if (MapSettingForm.IsCutCutsceneMapID(mapid))
-            {//カットシーンなので調査しない
-                return;
-            }
             if (tilesArray == null)
             {
                 return;
@@ -1003,7 +999,7 @@ namespace FEBuilderGBA
                         {
                             uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                                , R._("壊れる壁なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y),mapid));
+                                , R._("壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y),mapid));
                         }
                     }
                     else if (tilesArray[i] == ImageUtilMap.BrokenSnagTileID)
@@ -1012,7 +1008,7 @@ namespace FEBuilderGBA
                         {
                             uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                                , R._("古木なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y), mapid));
+                                , R._("古木なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y), mapid));
                         }
                     }
                 }
@@ -1092,6 +1088,11 @@ namespace FEBuilderGBA
             List<MapChangeForm.ChangeSt> changeList = MapChangeForm.MakeChangeList(mapid);
             int mapWidth, mapHeight;
             byte[] tilesArray = ImageUtilMap.LoadMapTileIDs(mapid, out mapWidth, out mapHeight);
+            if (MapSettingForm.IsCutCutsceneMapID(mapid))
+            {//カットシーン用のマップの場合、タイル変化をチェックできないので、マップ変化データを飛ばします
+                tilesArray = null;
+            }
+
 
             List<U.AddrResult> list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
             for (int i = 0; i < list.Count; i++)
@@ -1125,14 +1126,19 @@ namespace FEBuilderGBA
                     if (!(object_type == objectTypeOfHouse || object_type == objectTypeOfTownCenter))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
+                            , R._("訪問できる村なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
                     }
-                    if (flag != 0)
+                    if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.VisitVillageTileID, tilesArray, mapWidth, changeList))
                     {
-                        if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.VisitVillageTileID, tilesArray, mapWidth, changeList))
+                        if (flag == 0)
                         {
                             errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                                , R._("村なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
+                                , R._("訪問できる村なのに、マップ変化が設定されていません。x:{0} y:{1}\r\n達成フラグが0なので「訪問村」ではなく、何度も訪問できる「民家」のようにも思います。\r\nその場合は、種類を「訪問村」ではなく「制圧ポイントと民家」に変更してください。", x, y)));
+                        }
+                        else
+                        {
+                            errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                                , R._("訪問できる村なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n村のイベントには、村の座標にマップ変化を設定する必要があります。", x, y)));
                         }
                     }
                 }
@@ -1156,7 +1162,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.TreasureChestTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("宝箱なのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}", x, y)));
+                            , R._("宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y)));
                     }
                 }
                 else if (type == 0x8)
@@ -1170,7 +1176,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.DoorTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("ドアなのに、マップのタイルチェンジが設定されていません。 x:{0} y:{1}",x,y)));
+                            , R._("ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y)));
                     }
                 }
                 else if (type == 0xA)
