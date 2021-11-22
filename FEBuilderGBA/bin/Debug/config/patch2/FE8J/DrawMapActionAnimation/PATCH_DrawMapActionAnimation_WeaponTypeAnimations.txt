@@ -25,5 +25,8 @@ LISTNAME=$B0:WEAPONTYPE
 B0:WEAPONTYPE=WeaponType
 B1:MAPACTIONANIMATION=EffctID
 INFO.en=Specifies the default map animation to use for each weapon type (each item type).\r\nWe will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
-NAME.zh=在动画关闭时在地图动画上绘制攻击效果（武器类型动画）。
+NAME.zh=在动画关闭时在地图动画上绘制攻击效果（武器类型动画）
 INFO.zh=指定用于每种武器类型（每种物品类型）的默认地图动画。\r\n我们将添加一个攻击效果和一个功能，在动画关闭的情况下，在地图战斗中弹出伤害，如FF系列。\r\n可以为每种武器类型和每种武器设置攻击效果。
+
+AUTHOR=Vesly Draw Sprite Animation https://feuniverse.us/t/veslys-asm/12011/27\r\nThis Animation work, made by Viktor Hahn (Viktor.Hahn@web.de),\r\nis licensed under the Creative Commons Attribution 4.0 International License.\r\nhttp://creativecommons.org/licenses/by/4.0/\r\n\r\nhttps://opengameart.org/content/more-pixelated-attackhit-animations\r\nhttps://opengameart.org/content/spell-animation-spritesheets
+

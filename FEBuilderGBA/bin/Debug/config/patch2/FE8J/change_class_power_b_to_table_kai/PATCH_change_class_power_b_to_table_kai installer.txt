@@ -12,5 +12,5 @@ EA=change_class_power_b_to_table_kai.event
 AUTHOR=match
 NAME.en=Experience value _ Change your class modification B to table / break (Install).
 INFO.en=If the class and unit match, change class rank modifier B.The class modification value of the class that is not set is 60 for senior jobs and 0 for others.\r\n\r\nThe part enclosed in {} is changed by this patch.\r\nUndefeated experience value \u003d (31 + opponent's LV + opponent's senior job correction-own LV-own senior job correction) / own experience value correction value.\r\nBasic Defeat Experience Value \u003d (Opposite LV x Opponent Experience Value Correction Value + {{Opposite Class Correction B}})-(Own LV x Own Experience Value Correction Value + {{Own Class Modification B}}) \r\nDefeated experience value \u003d undefeated experience value + max (0, basic defeat experience value + 20 + boss correction + + thief correction + mommy correction) × instantaneous kill coefficient.\r\n
-NAME.zh=经验值_将您的课程修改B更改为table / break（安装）。
+NAME.zh=经验值_将您的课程修改B更改为table / break(Install)
 INFO.zh=如果班级和单位匹配，请更改班级等级修饰符B。未设置的类别的类别修改值对于高级职位为60，对于其他职位为0。\r\n\r\n此修补程序更改了{}中包含的部分。\r\n不败经验值\u003d（31 +对手的LV +对手的高级职务更正者-LV-自己的高级职务更正）/自己的经验值修正值。\r\n基本失败经验值\u003d（对手的LV x对手的经验值校正值+ {{对等类别校正B}}）-（我的LV x自己的经验值校正值+ {{我的类别校正B}}） \r\n失败的经验值\u003d不失败的经验值+最大值（0，基本失败经验值+ 20 +上司修正+ +贼修正+妈咪修正）×瞬时击杀系数。\r\n

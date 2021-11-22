@@ -25,8 +25,8 @@ ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位ア
 ALLOC_SIZE_HINT=115000			//パッチ全体のサイズ
 ALLOC_PROGRAM_ONLY_SIZE=2000	//コード部だけのサイズ, FEBUILDER_DATA_ORGでデータ部を分離します
 
-AUTHOR=Vesly\r\nThis Animation work, made by Viktor Hahn (Viktor.Hahn@web.de),\r\nis licensed under the Creative Commons Attribution 4.0 International License.\r\nhttp://creativecommons.org/licenses/by/4.0/\r\n\r\nhttps://opengameart.org/content/more-pixelated-attackhit-animations\r\nhttps://opengameart.org/content/spell-animation-spritesheets
+AUTHOR=Vesly Draw Sprite Animation https://feuniverse.us/t/veslys-asm/12011/27\r\nThis Animation work, made by Viktor Hahn (Viktor.Hahn@web.de),\r\nis licensed under the Creative Commons Attribution 4.0 International License.\r\nhttp://creativecommons.org/licenses/by/4.0/\r\n\r\nhttps://opengameart.org/content/more-pixelated-attackhit-animations\r\nhttps://opengameart.org/content/spell-animation-spritesheets
 
-INFO.en=We will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
-NAME.zh=在动画关闭时在地图动画上绘制攻击效果（安装）。
+INFO.en=This Patch will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
+NAME.zh=在动画关闭时在地图动画上绘制攻击效果(Install)
 INFO.zh=我们将添加一个攻击效果和一个功能，在动画关闭的情况下，在地图战斗中弹出伤害，如FF系列。\r\n可以为每种武器类型和每种武器设置攻击效果。
