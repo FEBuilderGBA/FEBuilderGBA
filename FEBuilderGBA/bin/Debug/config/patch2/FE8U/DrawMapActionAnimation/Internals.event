@@ -1,0 +1,148 @@
+
+
+
+#include "Draw.lyn.event"
+#include "EAstdlib.event"
+#include "ProcDefinitions.event"
+
+// Vanilla's default is 28 frames here. 
+ALIGN 4
+MinimumFramesLink:
+WORD MinimumFrames 
+
+ALIGN 4
+VRAM_Address_Link:
+WORD VRAM_Address 
+
+
+#ifndef SilverSword 
+	#define SilverSword 4 
+#endif 
+
+
+#define AnimTable_Entry(ID, SpecificAnimationTable) "PUSH; ORG AnimTable2 + (ID*8); POIN SpecificAnimationTable; SHORT 0 0; POP"
+
+#define FillWithZeroes "WORD 0 0 0 0 0 0 0 0" // 4 entries 
+#define FillTwentyEntries "FillWithZeroes; FillWithZeroes; FillWithZeroes; FillWithZeroes; FillWithZeroes"
+
+
+
+ALIGN 4
+AnimTable2:
+WORD 0 0 // 0th animation is blank 
+FillTwentyEntries 
+
+
+#ifndef PROC_YIELD
+	#define PROC_YIELD "PROC_YEILD"
+#endif 
+
+
+ALIGN 4
+DrawSpriteProc:							//HINT=PROCS
+PROC_YIELD 
+PROC_SET_NAME(ASMC_DrawProcName)
+PROC_CALL_ROUTINE(Draw_Camera)
+PROC_CALL_ROUTINE(Draw_StoreToBuffer)
+PROC_LOOP_ROUTINE(Draw_PushToOam)
+PROC_CALL_ROUTINE(Draw_Cleanup) 
+PROC_END
+
+ASMC_DrawProcName:
+String("PausesStuffWhileAnimationIsGoing") ; BYTE 0
+ALIGN 4
+
+
+// gProc_MapAnimDefaultRound at 9A4764
+// Copied the vanilla proc with our own routine added 
+ALIGN 4
+gProc_MapAnimRound_Animation:			//HINT=PROCS
+PROC_YIELD 
+PROC_SET_NAME(gProc_MapAnimRound_AnimationName)
+PROC_CALL_ROUTINE($80813F9) // Begin Rounds Animation	//{U}
+//PROC_CALL_ROUTINE($8083739) // Begin Rounds Animation	//{J}
+PROC_CALL_ROUTINE($80814D5) // Move towards target	//{U}
+//PROC_CALL_ROUTINE($8083815) // Move towards target	//{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($80814D5)		//{U}
+//PROC_CALL_ROUTINE($08083815)	//{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($80814D5)		//{U}
+//PROC_CALL_ROUTINE($08083815)	//{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($80814D5)		//{U}
+//PROC_CALL_ROUTINE($08083815)	//{J}
+PROC_SLEEP(1)
+
+PROC_CALL_ROUTINE($80815C1) // Camera Onto Target	//{U}
+//PROC_CALL_ROUTINE($8083901) // Camera Onto Target	//{J}
+PROC_SLEEP(2)
+PROC_CALL_ROUTINE($808161D) // Specific vanilla animations	{U}
+//PROC_CALL_ROUTINE($0808395D) // Specific vanilla animations	{J}
+
+PROC_CALL_ROUTINE(Draw_SetupMemorySlots)
+
+PROC_NEW_CHILD(DrawSpriteProc)
+PROC_YIELD
+//PROC_LOOP_ROUTINE($8081915) // Wait for HP to end changing	//{U}
+////PROC_LOOP_ROUTINE($8083C55) // Wait for HP to end changing	//{J}
+PROC_CALL_ROUTINE($8081535) // Move away	{U}
+//PROC_CALL_ROUTINE($8083875) // Move away	{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($8081535) // Move away	{U}
+//PROC_CALL_ROUTINE($8083875) // Move away	{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($8081535) // Move away	{U}
+//PROC_CALL_ROUTINE($8083875) // Move away	{J}
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE($8081535) // Move away	{U}
+//PROC_CALL_ROUTINE($8083875) // Move away	{J}
+PROC_LOOP_ROUTINE(Draw_WaitXFrames)
+
+PROC_END
+
+
+gProc_MapAnimRound_AnimationName:
+String("gProc_MapAnimRound_Animation_Repointed") ; BYTE 0
+ALIGN 4
+
+
+
+
+/*
+BYTE Confusion FreezeAnimID
+BYTE SandAttack Splash1AnimID
+BYTE Magnitude Splash2AnimID
+//BYTE Tackle Empty_AnimID
+BYTE TakeDown Break1AnimID
+BYTE Tackle Break2AnimID
+BYTE SeismicToss CircleAnimID
+BYTE Swift Hit1AnimID
+BYTE QuickAttack Hit2AnimID
+BYTE Gust Shards1AnimID
+BYTE PoisonPowder Shards2AnimID
+BYTE Growl FlashAnimID
+BYTE Leer FlashAnimID 
+BYTE VineWhip ThinSlashAnimID
+*/
+
+
+#ifdef FEBUILDER_DATA_ORG
+PUSH
+ORG FEBUILDER_DATA_ORG
+#endif
+
+//This line should occur before this #include: #define INSTALL_BONUS_ANIMATIONS (if installing them)
+#include "MapAnimations/Installer.event" 
+
+ALIGN 4
+SaveScreenNumbers:
+#incbin "MapAnimations/Dmp/NumbersFromSaveScreen.dmp"	//HINT=BIN
+
+ALIGN 4
+SaveScreenNumbersPal:
+#incbin "MapAnimations/Dmp/NumbersFromSaveScreen_pal.dmp" // same thing but only 32 bytes instead of 512 from png2dmp		//HINT=BIN
+
+#ifdef FEBUILDER_DATA_ORG
+POP
+#endif

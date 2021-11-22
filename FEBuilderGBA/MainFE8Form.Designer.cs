@@ -42,61 +42,49 @@
             this.TestRunStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.UPSSimpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeProjectNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolProblemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExecuteRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsEmulatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsDebuggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsBinaryEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsSappyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.eventAssembler = new System.Windows.Forms.ToolStripMenuItem();
             this.ASMInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.OpenLastUsedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.WorkSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UndoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SongImportOtherROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.lintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DiffDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DecreaseColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LZ77ToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TranslateROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DisassemblerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PointerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingOptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InitWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx7 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SettingVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EventCondButton = new System.Windows.Forms.Button();
             this.EventScriptButton = new System.Windows.Forms.Button();
@@ -229,6 +217,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx7 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.ImageMapActionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -392,11 +393,6 @@
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 6);
-            // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
@@ -410,11 +406,6 @@
             this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
             this.SaveAsToolStripMenuItem.Text = "別名保存";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
             // 
             // UPSSimpleToolStripMenuItem
             // 
@@ -436,11 +427,6 @@
             this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
             this.ToolProblemReportToolStripMenuItem.Text = "問題報告ツール";
             this.ToolProblemReportToolStripMenuItem.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(261, 6);
             // 
             // QuitToolStripMenuItem
             // 
@@ -499,11 +485,6 @@
             this.RunAsSappyToolStripMenuItem.Text = "Sappyで開く";
             this.RunAsSappyToolStripMenuItem.Click += new System.EventHandler(this.RunAsSappyToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
-            // 
             // eventAssembler
             // 
             this.eventAssembler.Name = "eventAssembler";
@@ -517,11 +498,6 @@
             this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.ASMInsertToolStripMenuItem.Text = "ASM/Cで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
             // 
             // OpenLastUsedToolStripMenuItem
             // 
@@ -557,11 +533,6 @@
             this.RunAsToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsToolStripMenuItem.Text = "任意のプログラムで開く";
             this.RunAsToolStripMenuItem.Click += new System.EventHandler(this.RunAsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx6
-            // 
-            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
-            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
             // 
             // WorkSupportToolStripMenuItem
             // 
@@ -626,11 +597,6 @@
             this.SongImportOtherROMToolStripMenuItem.Text = "別ROMから曲のインポート";
             this.SongImportOtherROMToolStripMenuItem.Click += new System.EventHandler(this.SongImportOtherROMToolStripMenuItem_Click);
             // 
-            // toolStripSeparatorEx1
-            // 
-            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
-            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
-            // 
             // lintToolStripMenuItem
             // 
             this.lintToolStripMenuItem.Name = "lintToolStripMenuItem";
@@ -659,11 +625,6 @@
             this.LogToolStripMenuItem.Text = "ログ";
             this.LogToolStripMenuItem.Click += new System.EventHandler(this.LogToolStripMenuItem_Click);
             // 
-            // toolStripSeparatorEx2
-            // 
-            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
-            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
-            // 
             // ToolUseFlagStripMenuItem6
             // 
             this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
@@ -684,11 +645,6 @@
             this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.ExportEAEventToolStripMenuItem.Text = "Event Assemblerでイベントのエクスポート";
             this.ExportEAEventToolStripMenuItem.Click += new System.EventHandler(this.ExportEAEventToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx3
-            // 
-            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
-            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
             // 
             // DecreaseColorToolStripMenuItem
             // 
@@ -717,11 +673,6 @@
             this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.TranslateROMToolStripMenuItem.Text = "ROM翻訳ツール";
             this.TranslateROMToolStripMenuItem.Click += new System.EventHandler(this.TranslateROMToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx4
-            // 
-            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
-            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
             // 
             // DisassemblerToolStripMenuItem
             // 
@@ -764,11 +715,6 @@
             this.InitWizardToolStripMenuItem.Text = "初期設定ウィザード";
             this.InitWizardToolStripMenuItem.Click += new System.EventHandler(this.InitWizardToolStripMenuItem_Click);
             // 
-            // toolStripSeparatorEx7
-            // 
-            this.toolStripSeparatorEx7.Name = "toolStripSeparatorEx7";
-            this.toolStripSeparatorEx7.Size = new System.Drawing.Size(243, 6);
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -791,11 +737,6 @@
             this.toolStripMenuItem7.Size = new System.Drawing.Size(274, 32);
             this.toolStripMenuItem7.Text = "DiscordコミニティURL";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx5
-            // 
-            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
-            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
             // 
             // SettingVersionToolStripMenuItem
             // 
@@ -1455,6 +1396,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.ImageMapActionButton);
             this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.ToolCustomBuildButton);
             this.ControlPanel.Controls.Add(this.FE8SpellMenuExtendsButton);
@@ -2379,6 +2321,77 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 6);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(261, 6);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
+            // 
+            // toolStripSeparatorEx6
+            // 
+            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
+            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
+            // 
+            // toolStripSeparatorEx1
+            // 
+            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
+            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx2
+            // 
+            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
+            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx3
+            // 
+            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
+            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx4
+            // 
+            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
+            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx7
+            // 
+            this.toolStripSeparatorEx7.Name = "toolStripSeparatorEx7";
+            this.toolStripSeparatorEx7.Size = new System.Drawing.Size(243, 6);
+            // 
+            // toolStripSeparatorEx5
+            // 
+            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
+            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
+            // 
+            // ImageMapActionButton
+            // 
+            this.ImageMapActionButton.Location = new System.Drawing.Point(406, 337);
+            this.ImageMapActionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageMapActionButton.Name = "ImageMapActionButton";
+            this.ImageMapActionButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageMapActionButton.TabIndex = 138;
+            this.ImageMapActionButton.Text = "攻撃エフェクト拡張";
+            this.ImageMapActionButton.UseVisualStyleBackColor = true;
+            this.ImageMapActionButton.Click += new System.EventHandler(this.ImageMapActionButton_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2608,6 +2621,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem TestRunStripMenuItem;
+        private System.Windows.Forms.Button ImageMapActionButton;
     }
 }
 

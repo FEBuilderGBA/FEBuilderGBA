@@ -74,3 +74,4 @@ PATCHED_IF:0x6FD0=0xF0 0xB5 0x82 0xB0
 
 //想像以上に領域を消費する
 ALLOC_SIZE_HINT=0xA200
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある

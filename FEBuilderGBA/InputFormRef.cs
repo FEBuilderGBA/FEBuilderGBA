@@ -2956,6 +2956,29 @@ namespace FEBuilderGBA
 
                 return;
             }
+            if (linktype == "MAPACTIONANIMATION")
+            {//行動アニメーション名を表示
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = ImageMapActionAnimationForm.GetName((uint)src_object.Value);
+                };
+
+                return;
+            }
+            if (linktype == "MAPACTIONANIMATIONICON")
+            {//行動アニメーション名からアイコン表示
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    PictureBox link_object = ((PictureBox)link_info);
+
+                    Bitmap bitmap = ImageMapActionAnimationForm.DrawIcon((uint)src_object.Value);
+                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
+
+                return;
+            }
             
             
 #if DEBUG            
@@ -3657,12 +3680,12 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 6)
                 {
                     SoundRoomFE6Form f = (SoundRoomFE6Form)InputFormRef.JumpForm<SoundRoomFE6Form>(U.NOT_FOUND, "AddressList", src_object);
-                    f.JumpToSongID(value - 1);
+                    f.JumpToSongID(value );
                 }
                 else
                 {
                     SoundRoomForm f = (SoundRoomForm)InputFormRef.JumpForm<SoundRoomForm>(U.NOT_FOUND, "AddressList", src_object);
-                    f.JumpToSongID(value - 1);
+                    f.JumpToSongID(value );
                 }
             }
             else if (linktype == "PORTRAIT")
@@ -4358,6 +4381,10 @@ namespace FEBuilderGBA
             else if (linktype == "BASEPOINT")
             {
                 InputFormRef.JumpForm<WorldMapPointForm>(value, "AddressList", src_object);
+            }
+            else if (linktype == "MAPACTIONANIMATION")
+            {
+                InputFormRef.JumpForm<ImageMapActionAnimationForm>(value, "AddressList", src_object);
             }
         }
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)
@@ -5302,6 +5329,7 @@ namespace FEBuilderGBA
             EventCondForm.ClearCache();
             MapTerrainBGLookupTableForm.ClearCache();
             MapTerrainFloorLookupTableForm.ClearCache();
+            ImageMapActionAnimationForm.ClearCache();
 
             Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
         }

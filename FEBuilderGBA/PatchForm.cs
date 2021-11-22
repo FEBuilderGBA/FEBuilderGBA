@@ -1029,6 +1029,7 @@ namespace FEBuilderGBA
                         || type == "CLASSTYPEICON"
                         || type == "SKILL"
                         || type == "WEAPONTYPE"
+                        || type == "MAPACTIONANIMATION"
                         )
                     {
                         PictureBox pic = new PictureBox();
@@ -1588,6 +1589,10 @@ namespace FEBuilderGBA
             else if (listname == "SKILL")
             {
                 appendname = U.ToHexString(i) + " " + SkillUtil.GetSkillName((uint)i);
+            }
+            else if (listname == "MAPACTIONANIMATION")
+            {
+                appendname = U.ToHexString(i) + " " + ImageMapActionAnimationForm.GetName((uint)i);
             }
             else if (listname == "DECIMAL")
             {
@@ -3196,10 +3201,12 @@ namespace FEBuilderGBA
 
         uint DefEAFreearea(PatchSt patch
             ,out uint out_sp_org
+            ,out uint out_data_org
             ,Undo.UndoData undodata)
         {
             uint freearea = 0;
             out_sp_org = U.NOT_FOUND;
+            out_data_org = U.NOT_FOUND;
 
             foreach (var pair in patch.Param)
             {
@@ -3248,31 +3255,43 @@ namespace FEBuilderGBA
             if (freearea == U.NOT_FOUND)
             {//フリーエリアを利用しない
                 freearea = 0;
+                return freearea;
             }
-            else
-            {//フリーエリアを利用する.
-                bool isProgramArea = true;
-                bool alloc_dataonly_hint = U.stringbool(U.at(patch.Param, "ALLOC_DATAONLY_HINT","false"));
-                if (alloc_dataonly_hint)
-                {//プログラムコードではない、データパッチの割り当て。ROMの後ろに割り当ててよい。
-                    isProgramArea = false;
-                }
+            //フリーエリアを利用する.
+            bool isProgramArea = true;
+            bool alloc_dataonly_hint = U.stringbool(U.at(patch.Param, "ALLOC_DATAONLY_HINT","false"));
+            if (alloc_dataonly_hint)
+            {//プログラムコードではない、データパッチの割り当て。ROMの後ろに割り当ててよい。
+                isProgramArea = false;
+            }
 
-                uint alloc_size_hint = U.atoi0x(U.at(patch.Param, "ALLOC_SIZE_HINT"));
-                if (alloc_size_hint <= 0)
-                {
-                    uint calcsize = CalcSizeToBeWrittenByEA(patch);
-                    if (calcsize <= 0x20)
-                    {//計算できなかったのでディフォルト値 5kbを利用します
-                        alloc_size_hint = 1024 * 5;
-                    }
-                    else
-                    {//計算した値の2倍空いているところを見つけます
-                        alloc_size_hint = calcsize * 2;
-                    }
+            uint alloc_size_hint = U.atoi0x(U.at(patch.Param, "ALLOC_SIZE_HINT"));
+            if (alloc_size_hint <= 0)
+            {
+                uint calcsize = CalcSizeToBeWrittenByEA(patch);
+                if (calcsize <= 0x20)
+                {//計算できなかったのでディフォルト値 5kbを利用します
+                    alloc_size_hint = 1024 * 5;
                 }
-                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea);
+                else
+                {//計算した値の2倍空いているところを見つけます
+                    alloc_size_hint = calcsize * 2;
+                }
             }
+
+            uint alloc_program_only_size = U.atoi0x(U.at(patch.Param, "ALLOC_PROGRAM_ONLY_SIZE"));
+            if (isProgramArea && alloc_program_only_size > 0 && alloc_size_hint > alloc_program_only_size)
+            {//データだけを割り当てる領域を定義する
+                freearea = InputFormRef.AllocBinaryData(alloc_program_only_size, isProgramArea: true);
+                out_data_org = InputFormRef.AllocBinaryData(alloc_size_hint - alloc_program_only_size, isProgramArea: false);
+
+                if (!(freearea >= out_data_org && freearea + alloc_program_only_size < out_data_org))
+                {//念のため両方のエリアが重複していないことを確認する
+                    return freearea;
+                }
+            }
+
+            freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea);
             return freearea;
         }
 
@@ -3400,10 +3419,15 @@ namespace FEBuilderGBA
                 try
                 {
                     uint org_sp = U.NOT_FOUND;
-                    uint freearea = DefEAFreearea(patch, out org_sp , undodata);
+                    uint org_data = U.NOT_FOUND;
+                    uint freearea = DefEAFreearea(patch, out org_sp, out org_data, undodata);
+                    if (!CheckMustHightAddress(patch, freearea))
+                    {
+                        return ;
+                    }
 
                     SymbolUtil.DebugSymbol storeSymbol = SymbolUtil.DebugSymbol.SaveComment;
-                    EventAssemblerForm.WriteEA(EAFilename, freearea, org_sp, undodata, storeSymbol);
+                    EventAssemblerForm.WriteEA(EAFilename, freearea, org_sp, org_data, undodata, storeSymbol);
                 }
                 catch (PatchException exception)
                 {
@@ -9263,6 +9287,25 @@ namespace FEBuilderGBA
 
         }
 
+        bool CheckMustHightAddress(PatchSt patch, uint freearea)
+        {
+            string allocMustHighAddress = U.at(patch.Param, "ALLOC_MUST_HIGH_ADDRESS", "0");
+            if (U.stringbool(allocMustHighAddress))
+            {
+                if (freearea >= U.toOffset(Program.ROM.RomInfo.extends_address()))
+                {
+                    DialogResult dr = R.ShowNoYes("このパッチは、複雑な構文を持っているので、リビルドを成功させるためにも、上位アドレスに入れる必要があります。\r\nただ、あなたのROMは上位アドレスを使い果たしているので、インストールすることができません。\r\n推奨しませんが、上位アドレスではないエリアにインストールしてもよろしいですか？");
+                    if (dr != DialogResult.Yes)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+
+        }
+
+                        
 
         static void ProcessSymbolByList(List<Address> list, PatchSt patch)
         {

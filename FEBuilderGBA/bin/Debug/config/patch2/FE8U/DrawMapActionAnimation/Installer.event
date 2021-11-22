@@ -1,0 +1,90 @@
+
+#define INSTALL_BONUS_ANIMATIONS // Uncomment for additional animations 
+#define VRAM_Address 0x6013300 // Where in VRAM (see No$Gba Obj window) to draw animation 
+#define MinimumFrames 28 // Vanilla does 28 frames 
+
+
+PUSH // Only vanilla address that we take over. 
+ORG $81274 // Poin to the vanilla proc	//{U}
+//ORG $835B4 // Poin to the vanilla proc	//{J}
+POIN gProc_MapAnimRound_Animation
+POP 
+
+
+#include "Internals.event"
+
+
+#define Empty_AnimID 0 
+#define Break1AnimID 1
+#define Break2AnimID 2
+#define CircleAnimID 3
+#define Hit1AnimID 4
+#define Hit2AnimID 5
+#define Impact1AnimID 6
+#define Impact2AnimID 7
+#define Shards1AnimID 8
+#define Shards2AnimID 9
+#define Splash1AnimID 10
+#define Splash2AnimID 11
+#define ThinSlashAnimID 12 
+#define ThickSlashAnimID 13
+#define FlashAnimID 14 
+#define FreezeAnimID 15 
+#define FeatherAnimID 16
+#define CauterizeAnimID 17
+#define NumberOfAnimIDs 17
+
+ALIGN 4
+WeaponTypeAnimations:
+BYTE 0 ThinSlashAnimID // Sword 
+BYTE 1 Hit1AnimID // Lance 
+BYTE 2 Shards2AnimID // Axe 
+BYTE 3 Break1AnimID // Bow  
+BYTE 5 Splash2AnimID // Anima 
+BYTE 6 FlashAnimID // Light 
+BYTE 7 Impact1AnimID // Dark 
+BYTE $B Shards1AnimID // Monster 
+BYTE $11 Shards1AnimID // Dragonstone 
+SHORT 0xFFFF // Terminator 
+
+
+
+
+ALIGN 4
+SpecificWeaponAnimations:
+BYTE SilverSword Shards1AnimID // Silver sword will always use the Shards1 animation 
+SHORT 0xFFFF // Terminator 
+
+
+
+
+
+// Animation IDs are defined above 
+// Animations and Palettes are included in "MapAnimations/Installer.event"
+
+AnimTable_Entry(ThinSlashAnimID,Slashing_A_Anim)
+AnimTable_Entry(Hit1AnimID,Hit1_Small_Anim)
+AnimTable_Entry(Shards2AnimID,Shards2_Small_Anim)
+AnimTable_Entry(Break1AnimID,Break1_Small_Anim)
+AnimTable_Entry(Splash2AnimID,Splash2_Small_Anim)
+AnimTable_Entry(FlashAnimID,Flash_Anim)
+AnimTable_Entry(Impact1AnimID,Impact1_Small_Anim)
+AnimTable_Entry(Shards1AnimID,Shards1_Small_Anim)
+#ifdef INSTALL_BONUS_ANIMATIONS 
+AnimTable_Entry(Hit2AnimID,Hit2_Small_Anim)
+AnimTable_Entry(Break2AnimID,Break2_Small_Anim)
+AnimTable_Entry(CircleAnimID,Circle_Small_Anim)
+AnimTable_Entry(CauterizeAnimID,Cauterize_Anim) // small hit 2 was here 
+AnimTable_Entry(Impact2AnimID,Impact2_Small_Anim)
+AnimTable_Entry(Splash1AnimID,Splash1_Small_Anim)
+AnimTable_Entry(ThickSlashAnimID,Slashing_B_Anim) // same palete as Slashing_A
+AnimTable_Entry(FreezeAnimID,Freeze_Anim)
+AnimTable_Entry(FeatherAnimID,Feather_Anim)
+#endif
+
+
+
+
+
+
+

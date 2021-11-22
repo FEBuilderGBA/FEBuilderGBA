@@ -1,0 +1,41 @@
+
+#include "DefaultAnimations.event"
+//#include "GeneratedInstaller.event"
+
+
+/*
+ALIGN 4 
+Flash_Anim: 
+BYTE 3 0 // Frames to display, Padding (Always 0)
+SHORT 0 // SFX to play starting on this frame 
+POIN Flash00_Data // Image data 
+POIN Flash00_pal // Palette data 
+WORD 0 0 0 // Terminator 
+*/ 
+
+
+
+#ifdef INSTALL_BONUS_ANIMATIONS
+	#include "BonusAnimations.event"
+#endif 
+
+
+//BYTE 0 ThinSlashAnimID // Sword 
+//BYTE 1 Hit1AnimID // Lance 
+//BYTE 2 Shards2AnimID // Axe 
+//BYTE 3 Break1AnimID // Bow  
+//BYTE 5 Splash2AnimID // Anima 
+//BYTE 6 FlashAnimID // Light 
+//BYTE 7 Impact1AnimID // Dark 
+//BYTE $B Shards1AnimID // Monster 
+//BYTE $11 Shards1AnimID // Dragonstone 
+
+
+
+// Below is copied from GeneratedInstaller.event
+// Except I've changed how many frames some of the images should be 
+
+
+
+
+

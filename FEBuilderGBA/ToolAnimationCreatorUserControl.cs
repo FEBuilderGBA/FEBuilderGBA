@@ -259,6 +259,7 @@ namespace FEBuilderGBA
             ,Skill
             ,TSAAnime
             ,ROMAnime
+            ,MapActionAnimation
         }
         AnimationTypeEnum AnimationType;
         uint ID;

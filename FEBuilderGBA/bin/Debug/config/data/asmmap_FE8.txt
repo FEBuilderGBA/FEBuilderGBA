@@ -296,7 +296,6 @@
 080890bc	ステータス画面文字描画	{J}
 08086E00	ステータス画面文字描画	{U}
 
-
 //thank you Tiki
 //BIOS ARM(not thumb)
 080D6364	ArcTan2	{J}
@@ -5861,8 +5860,8 @@
 0808306C	New6C_SummonGfx	{J}
 080835A0	GetItemAnim6CCode	{J}
 080835B8	MapAnim_AnimateSubjectIdle	{J}
-080835B8	MapAnim_SubjectResetAnim	{J}
-080835B8	MapAnim_BeginSubjectFastAnim	{J}
+080835DC	MapAnim_SubjectResetAnim	{J}
+08083738	MapAnim_BeginSubjectFastAnim	{J}
 08083814	MapAnim_MoveSubjectsTowardsTarget	{J}
 08083874	MapAnim_MoveSubjectsAwayFromTarget	{J}
 080838D4	MapAnim_MoveCameraOnSubject	{J}
@@ -7374,7 +7373,32 @@
 0203e182	gStoredBattleAnimId11Ptr	{U}
 0203e184	gStoredBattleAnimId12Ptr	{U}
 0203e1e4	gBoolIsArena	{U}
-0203e1f0	gMapAnimStruct	{U}
+
+@MapAnimActorData@00	pointer	pointer to battle unit
+@MapAnimActorData@04	pointer	another pointer to battle unit?
+@MapAnimActorData@08	pointer	pointer to MU
+@MapAnimActorData@0C	byte	maximum Hp
+@MapAnimActorData@0D	byte	current (displayed) Hp
+@MapAnimActorData@0E	short	_unk_0E
+@MapAnimActorData@10	byte	_unk_10
+@MapAnimActorData@11	byte	_unk_11
+@MapAnimActorData@12	byte	_unk_12
+@MapAnimActorData@13	byte	_unk_13
+@MapAnimStruct@00	@MapAnimActorData	Data1
+@MapAnimStruct@14	@MapAnimActorData	Data2
+@MapAnimStruct@28	@MapAnimActorData	Data3
+@MapAnimStruct@3C	@MapAnimActorData	Data4
+@MapAnimStruct@50	pointer	pointer to next displayed round data
+@MapAnimStruct@54	word	pointer to item map animation proc script/code
+@MapAnimStruct@58	byte	current round attacking actor id
+@MapAnimStruct@59	byte	current round defending actor id
+@MapAnimStruct@5A	@BattleRound	CurrentBattleRound	4byte data [24-31] damage /[23] other bitfield /[22] Not attack /[19-21] other bitfield /[00-15] big bitfield
+@MapAnimStruct@5E	byte	actor count as defined in the spell assoc table
+@MapAnimStruct@5F	byte	bool or timer?
+@MapAnimStruct@60	byte	some x position
+@MapAnimStruct@61	byte	some y position
+@MapAnimStruct@62	byte	_pad62
+0203e1f0	@MapAnimStruct	gMapAnimStruct	{U}
 0203e765	gSomeUnitId	{U}
 0203e768	gSomeTextRelatedStuff	{U}
 0203e778	gSomeX	{U}
@@ -7486,7 +7510,7 @@
 0203E17E	gStoredBattleAnimId11Ptr	{J}
 0203e180	gStoredBattleAnimId12Ptr	{J}
 0203e1e0	gBoolIsArena	{J}
-0203E1EC	gMapAnimStruct	{J}
+0203E1EC	@MapAnimStruct	gMapAnimStruct	{J}
 0203e761	gSomeUnitId	{J}
 0203e764	gSomeTextRelatedStuff	{J}
 0203e770	gSomeX	{J}
@@ -13084,10 +13108,8 @@
 08745B74	&LZ77	何かのTSA	56	{U}
 08745FD0	&LZ77	何かのTSA	57	{U}
 08083F38	StartTourchStaffMapAnim	{J}
-080835DC	EndTourchStaffMapAnim_Back	{J}
 0807FEEC	StartProcForTourchStaffMapAnim	{J}
 080819E8	StartTourchStaffMapAnim	{U}
-08081278	EndTourchStaffMapAnim_Back	{U}
 0807DBA8	StartProcForTourchStaffMapAnim	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
@@ -14771,5 +14793,12 @@
 080139E0	StartApplyDamagePaletteToTarget	{U}
 08013A40	EndApplyDamagePaletteToTarget	{J}
 08013988	EndApplyDamagePaletteToTarget	{U}
-0203E24A	@BattleRound	CurrentBattleRound	{U}
-0203E246	@BattleRound	CurrentBattleRound	{J}
+080B3D00	サウンドルームランダム再生画面で一つ次の曲を再生する	{J}
+080B3D60	サウンドルームランダム再生画面で一つ前の曲を再生する	{J}
+080B3B84	サウンドルームランダム再生時のプレイリストを生成する	{J}
+02021388	:02021407	サウンドルームランダム再生時のプレイリスト	{J}
+080AF0E0	サウンドルームランダム再生画面で一つ次の曲を再生する	{U}
+080AF140	サウンドルームランダム再生画面で一つ前の曲を再生する	{U}
+080AEF64	サウンドルームランダム再生時のプレイリストを生成する	{U}
+02021388	:02021407	サウンドルームランダム再生時のプレイリスト	{U}
+0202BCB8	gCurrentRealCameraPos	{J}

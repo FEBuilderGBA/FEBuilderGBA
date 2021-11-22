@@ -1107,6 +1107,11 @@ namespace FEBuilderGBA
             ToolRunHintMessageForm.Run();
         }
 
+        private void ImageMapActionButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ImageMapActionAnimationForm>();
+        }
+
     }
 
 }

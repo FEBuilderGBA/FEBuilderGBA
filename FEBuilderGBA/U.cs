@@ -2483,6 +2483,7 @@ namespace FEBuilderGBA
             MapTerrainBGLookupTableForm.MakeAllDataLength(list);
             ArenaEnemyWeaponForm.MakeAllDataLength(list);
             EventUnitForm.RecycleReserveUnits(ref list);
+            ImageMapActionAnimationForm.MakeAllDataLength(list, isPointerOnly);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
             if (Program.ROM.RomInfo.version() == 8)
@@ -2909,6 +2910,11 @@ namespace FEBuilderGBA
         public static bool isSafetyPointer(uint a)
         {
             return (a < 0x0A000000 && a >= 0x08000200 && a - 0x08000000 < Program.ROM.Data.Length);
+        }
+        [MethodImpl(256)]
+        public static bool isSafetyPointerOrNull(uint a)
+        {
+            return (a == 0) || isSafetyPointer(a);
         }
 
         [MethodImpl(256)]

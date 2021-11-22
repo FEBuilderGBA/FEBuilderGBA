@@ -5859,8 +5859,8 @@ r3=X tile position of menu of right	{U}
 0808306C	New6C_SummonGfx	{J}
 080835A0	GetItemAnim6CCode	{J}
 080835B8	MapAnim_AnimateSubjectIdle	{J}
-080835B8	MapAnim_SubjectResetAnim	{J}
-080835B8	MapAnim_BeginSubjectFastAnim	{J}
+080835DC	MapAnim_SubjectResetAnim	{J}
+08083738	MapAnim_BeginSubjectFastAnim	{J}
 08083814	MapAnim_MoveSubjectsTowardsTarget	{J}
 08083874	MapAnim_MoveSubjectsAwayFromTarget	{J}
 080838D4	MapAnim_MoveCameraOnSubject	{J}
@@ -7116,7 +7116,32 @@ r3=X tile position of menu of right	{U}
 0203e182	gStoredBattleAnimId11Ptr	{U}
 0203e184	gStoredBattleAnimId12Ptr	{U}
 0203e1e4	gBoolIsArena	{U}
-0203e1f0	gMapAnimStruct	{U}
+
+@MapAnimActorData@00	pointer	pointer to battle unit
+@MapAnimActorData@04	pointer	another pointer to battle unit?
+@MapAnimActorData@08	pointer	pointer to MU
+@MapAnimActorData@0C	byte	maximum Hp
+@MapAnimActorData@0D	byte	current (displayed) Hp
+@MapAnimActorData@0E	short	_unk_0E
+@MapAnimActorData@10	byte	_unk_10
+@MapAnimActorData@11	byte	_unk_11
+@MapAnimActorData@12	byte	_unk_12
+@MapAnimActorData@13	byte	_unk_13
+@MapAnimStruct@00	@MapAnimActorData	Data1
+@MapAnimStruct@14	@MapAnimActorData	Data2
+@MapAnimStruct@28	@MapAnimActorData	Data3
+@MapAnimStruct@3C	@MapAnimActorData	Data4
+@MapAnimStruct@50	pointer	pointer to next displayed round data
+@MapAnimStruct@54	word	pointer to item map animation proc script/code
+@MapAnimStruct@58	byte	current round attacking actor id
+@MapAnimStruct@59	byte	current round defending actor id
+@MapAnimStruct@5A	@BattleRound	CurrentBattleRound	4byte data [24-31] damage /[23] other bitfield /[22] Not attack /[19-21] other bitfield /[00-15] big bitfield
+@MapAnimStruct@5E	byte	actor count as defined in the spell assoc table
+@MapAnimStruct@5F	byte	bool or timer?
+@MapAnimStruct@60	byte	some x position
+@MapAnimStruct@61	byte	some y position
+@MapAnimStruct@62	byte	_pad62
+0203e1f0	@MapAnimStruct	gMapAnimStruct	{U}
 0203E24F	gMapAnimaionWait	{U}
 0203e765	gSomeUnitId	{U}
 0203e768	gSomeTextRelatedStuff	{U}
@@ -7228,7 +7253,7 @@ r3=X tile position of menu of right	{U}
 0203E17E	gStoredBattleAnimId11Ptr	{J}
 0203e180	gStoredBattleAnimId12Ptr	{J}
 0203e1e0	gBoolIsArena	{J}
-0203E1EC	gMapAnimStruct	{J}
+0203E1EC	@MapAnimStruct	gMapAnimStruct	{J}
 0203E24B	gMapAnimaionWait	{J}
 0203e761	gSomeUnitId	{J}
 0203e764	gSomeTextRelatedStuff	{J}
@@ -13098,10 +13123,8 @@ r3=X tile position of menu of right	{U}
 08745B74	&LZ77	Something's TSA	56	{U}
 08745FD0	&LZ77	Something's TSA	57	{U}
 08083F38	StartTourchStaffMapAnim	{J}
-080835DC	EndTourchStaffMapAnim_Back	{J}
 0807FEEC	StartProcForTourchStaffMapAnim	{J}
 080819E8	StartTourchStaffMapAnim	{U}
-08081278	EndTourchStaffMapAnim_Back	{U}
 0807DBA8	StartProcForTourchStaffMapAnim	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
@@ -14791,5 +14814,13 @@ r3=X tile position of menu of right	{U}
 080139E0	StartApplyDamagePaletteToTarget	{U}
 08013A40	EndApplyDamagePaletteToTarget	{J}
 08013988	EndApplyDamagePaletteToTarget	{U}
-0203E24A	@BattleRound	CurrentBattleRound	{U}
-0203E246	@BattleRound	CurrentBattleRound	{J}
+0203FBB8	:0203FFFF	Debuffs VBA/make	{U}
+080B3D00	Play the next song on the sound room random playback screen.	{J}
+080B3D60	Play the previous song on the sound room random playback screen.	{J}
+080B3B84	Sound Room Generate a playlist for random playback.	{J}
+02021388	:02021407	Playlist for random playback in the sound room.	{J}
+080AF0E0	Play the next song on the sound room random playback screen.	{U}
+080AF140	Play the previous song on the sound room random playback screen.	{U}
+080AEF64	Sound Room Generate a playlist for random playback.	{U}
+02021388	:02021407	Playlist for random playback in the sound room.	{U}
+0202BCB8	gCurrentRealCameraPos	{J}

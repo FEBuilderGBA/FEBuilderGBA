@@ -1,0 +1,1150 @@
+//Generated - do not edit!
+ 
+
+
+
+
+ALIGN 4 
+Break2_Small_Anim: 
+BYTE 2 0; SHORT 0; POIN small_break2_000_Data small_break2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_break2_001_Data small_break2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_break2_002_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_003_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_004_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_005_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_006_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_007_Data small_break2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_break2_008_Data small_break2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_break2_009_Data small_break2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_break2_010_Data small_break2_000_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+small_break2_000_Data: 
+#incbin "dmp\small_break2_000.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_000_pal: 
+#incbin "dmp\small_break2_000_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_break2_001_Data: 
+#incbin "dmp\small_break2_001.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_break2_002_Data: 
+#incbin "dmp\small_break2_002.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_break2_003_Data: 
+#incbin "dmp\small_break2_003.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_break2_004_Data: 
+#incbin "dmp\small_break2_004.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_break2_005_Data: 
+#incbin "dmp\small_break2_005.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_006_Data: 
+#incbin "dmp\small_break2_006.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_007_Data: 
+#incbin "dmp\small_break2_007.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_008_Data: 
+#incbin "dmp\small_break2_008.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_009_Data: 
+#incbin "dmp\small_break2_009.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_break2_010_Data: 
+#incbin "dmp\small_break2_010.dmp"	//HINT=BIN
+ 
+
+
+
+ALIGN 4 
+Cauterize_Anim: 
+BYTE 1 0; SHORT 0; POIN Cauterize_0001_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0002_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0003_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0004_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0005_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0006_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0007_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0008_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0009_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0010_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0011_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0012_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0013_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0014_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0015_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0016_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0017_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0018_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0019_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0020_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0021_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0022_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0023_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0024_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0025_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0026_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0027_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0028_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0029_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0030_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0031_Data Cauterize_0001_pal 
+BYTE 1 0; SHORT 0; POIN Cauterize_0032_Data Cauterize_0001_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+Cauterize_0001_Data: 
+#incbin "dmp\Cauterize_0001.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+Cauterize_0001_pal: 
+#incbin "dmp\Cauterize_0001_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0002_Data: 
+#incbin "dmp\Cauterize_0002.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0003_Data: 
+#incbin "dmp\Cauterize_0003.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Cauterize_0004_Data: 
+#incbin "dmp\Cauterize_0004.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0005_Data: 
+#incbin "dmp\Cauterize_0005.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0006_Data: 
+#incbin "dmp\Cauterize_0006.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0007_Data: 
+#incbin "dmp\Cauterize_0007.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0008_Data: 
+#incbin "dmp\Cauterize_0008.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0009_Data: 
+#incbin "dmp\Cauterize_0009.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0010_Data: 
+#incbin "dmp\Cauterize_0010.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0011_Data: 
+#incbin "dmp\Cauterize_0011.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0012_Data: 
+#incbin "dmp\Cauterize_0012.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0013_Data: 
+#incbin "dmp\Cauterize_0013.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0014_Data: 
+#incbin "dmp\Cauterize_0014.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0015_Data: 
+#incbin "dmp\Cauterize_0015.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0016_Data: 
+#incbin "dmp\Cauterize_0016.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0017_Data: 
+#incbin "dmp\Cauterize_0017.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0018_Data: 
+#incbin "dmp\Cauterize_0018.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0019_Data: 
+#incbin "dmp\Cauterize_0019.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0020_Data: 
+#incbin "dmp\Cauterize_0020.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0021_Data: 
+#incbin "dmp\Cauterize_0021.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0022_Data: 
+#incbin "dmp\Cauterize_0022.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0023_Data: 
+#incbin "dmp\Cauterize_0023.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0024_Data: 
+#incbin "dmp\Cauterize_0024.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0025_Data: 
+#incbin "dmp\Cauterize_0025.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0026_Data: 
+#incbin "dmp\Cauterize_0026.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0027_Data: 
+#incbin "dmp\Cauterize_0027.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0028_Data: 
+#incbin "dmp\Cauterize_0028.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0029_Data: 
+#incbin "dmp\Cauterize_0029.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0030_Data: 
+#incbin "dmp\Cauterize_0030.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0031_Data: 
+#incbin "dmp\Cauterize_0031.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Cauterize_0032_Data: 
+#incbin "dmp\Cauterize_0032.dmp"	//HINT=BIN
+ 
+
+ALIGN 4 
+Circle_Small_Anim: 
+BYTE 3 0; SHORT 0; POIN small_circle_000_Data small_circle_000_pal 
+BYTE 3 0; SHORT 0; POIN small_circle_001_Data small_circle_000_pal 
+BYTE 4 0; SHORT 0; POIN small_circle_002_Data small_circle_000_pal 
+BYTE 4 0; SHORT 0; POIN small_circle_003_Data small_circle_000_pal 
+BYTE 4 0; SHORT 0; POIN small_circle_004_Data small_circle_000_pal 
+BYTE 4 0; SHORT 0; POIN small_circle_005_Data small_circle_000_pal 
+BYTE 3 0; SHORT 0; POIN small_circle_006_Data small_circle_000_pal 
+BYTE 3 0; SHORT 0; POIN small_circle_007_Data small_circle_000_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+small_circle_000_Data: 
+#incbin "dmp\small_circle_000.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_circle_000_pal: 
+#incbin "dmp\small_circle_000_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_001_Data: 
+#incbin "dmp\small_circle_001.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_002_Data: 
+#incbin "dmp\small_circle_002.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_003_Data: 
+#incbin "dmp\small_circle_003.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_004_Data: 
+#incbin "dmp\small_circle_004.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_005_Data: 
+#incbin "dmp\small_circle_005.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_006_Data: 
+#incbin "dmp\small_circle_006.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_circle_007_Data: 
+#incbin "dmp\small_circle_007.dmp"	//HINT=BIN
+ 
+ 
+
+
+
+
+ALIGN 4 
+Feather_Anim: 
+BYTE 1 0; SHORT 0; POIN feather0000_Data feather0000_pal 
+BYTE 1 0; SHORT 0; POIN feather0001_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0002_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0003_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0004_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0005_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0006_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0007_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0008_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0009_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0010_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0011_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0012_Data feather0000_pal 
+BYTE 2 0; SHORT 0; POIN feather0013_Data feather0000_pal 
+BYTE 1 0; SHORT 0; POIN feather0014_Data feather0000_pal 
+BYTE 1 0; SHORT 0; POIN feather0015_Data feather0000_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+feather0000_Data: 
+#incbin "dmp\feather0000.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0000_pal: 
+#incbin "dmp\feather0000_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+feather0001_Data: 
+#incbin "dmp\feather0001.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0002_Data: 
+#incbin "dmp\feather0002.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+feather0003_Data: 
+#incbin "dmp\feather0003.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+feather0004_Data: 
+#incbin "dmp\feather0004.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+feather0005_Data: 
+#incbin "dmp\feather0005.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0006_Data: 
+#incbin "dmp\feather0006.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0007_Data: 
+#incbin "dmp\feather0007.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0008_Data: 
+#incbin "dmp\feather0008.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0009_Data: 
+#incbin "dmp\feather0009.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0010_Data: 
+#incbin "dmp\feather0010.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0011_Data: 
+#incbin "dmp\feather0011.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0012_Data: 
+#incbin "dmp\feather0012.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0013_Data: 
+#incbin "dmp\feather0013.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0014_Data: 
+#incbin "dmp\feather0014.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+feather0015_Data: 
+#incbin "dmp\feather0015.dmp"	//HINT=BIN
+ 
+
+
+
+
+ALIGN 4 
+Freeze_Anim: 
+BYTE 1 0; SHORT 0; POIN Freeze03_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze04_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze05_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze06_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze07_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze08_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze09_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze10_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze11_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze12_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze13_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze14_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze15_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze16_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze17_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze18_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze19_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze20_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze21_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze22_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze23_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze24_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze25_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze26_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze27_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze28_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze29_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze30_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze31_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze32_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze33_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze34_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze35_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze36_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze37_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze38_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze39_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze40_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze41_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze42_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze43_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze44_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze45_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze46_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze47_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze48_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze49_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze50_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze51_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze52_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze53_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze54_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze55_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze56_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze57_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze58_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze59_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze60_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze61_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze62_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze63_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze64_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze65_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze66_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze67_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze68_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze69_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze70_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze71_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze72_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze73_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze74_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze75_Data Freeze03_pal 
+BYTE 1 0; SHORT 0; POIN Freeze76_Data Freeze03_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+Freeze03_Data: 
+#incbin "dmp\Freeze03.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+Freeze03_pal: 
+#incbin "dmp\Freeze03_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze04_Data: 
+#incbin "dmp\Freeze04.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze05_Data: 
+#incbin "dmp\Freeze05.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze06_Data: 
+#incbin "dmp\Freeze06.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze07_Data: 
+#incbin "dmp\Freeze07.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze08_Data: 
+#incbin "dmp\Freeze08.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze09_Data: 
+#incbin "dmp\Freeze09.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze10_Data: 
+#incbin "dmp\Freeze10.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze11_Data: 
+#incbin "dmp\Freeze11.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze12_Data: 
+#incbin "dmp\Freeze12.dmp"	//HINT=BIN
+ 
+
+ 
+ALIGN 4 
+Freeze13_Data: 
+#incbin "dmp\Freeze13.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze14_Data: 
+#incbin "dmp\Freeze14.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze15_Data: 
+#incbin "dmp\Freeze15.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze16_Data: 
+#incbin "dmp\Freeze16.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze17_Data: 
+#incbin "dmp\Freeze17.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze18_Data: 
+#incbin "dmp\Freeze18.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze19_Data: 
+#incbin "dmp\Freeze19.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze20_Data: 
+#incbin "dmp\Freeze20.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze21_Data: 
+#incbin "dmp\Freeze21.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze22_Data: 
+#incbin "dmp\Freeze22.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze23_Data: 
+#incbin "dmp\Freeze23.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze24_Data: 
+#incbin "dmp\Freeze24.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze25_Data: 
+#incbin "dmp\Freeze25.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze26_Data: 
+#incbin "dmp\Freeze26.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze27_Data: 
+#incbin "dmp\Freeze27.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze28_Data: 
+#incbin "dmp\Freeze28.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze29_Data: 
+#incbin "dmp\Freeze29.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze30_Data: 
+#incbin "dmp\Freeze30.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze31_Data: 
+#incbin "dmp\Freeze31.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze32_Data: 
+#incbin "dmp\Freeze32.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze33_Data: 
+#incbin "dmp\Freeze33.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze34_Data: 
+#incbin "dmp\Freeze34.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+Freeze35_Data: 
+#incbin "dmp\Freeze35.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze36_Data: 
+#incbin "dmp\Freeze36.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze37_Data: 
+#incbin "dmp\Freeze37.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze38_Data: 
+#incbin "dmp\Freeze38.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze39_Data: 
+#incbin "dmp\Freeze39.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze40_Data: 
+#incbin "dmp\Freeze40.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze41_Data: 
+#incbin "dmp\Freeze41.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze42_Data: 
+#incbin "dmp\Freeze42.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze43_Data: 
+#incbin "dmp\Freeze43.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze44_Data: 
+#incbin "dmp\Freeze44.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze45_Data: 
+#incbin "dmp\Freeze45.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze46_Data: 
+#incbin "dmp\Freeze46.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze47_Data: 
+#incbin "dmp\Freeze47.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze48_Data: 
+#incbin "dmp\Freeze48.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze49_Data: 
+#incbin "dmp\Freeze49.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze50_Data: 
+#incbin "dmp\Freeze50.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze51_Data: 
+#incbin "dmp\Freeze51.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze52_Data: 
+#incbin "dmp\Freeze52.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze53_Data: 
+#incbin "dmp\Freeze53.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze54_Data: 
+#incbin "dmp\Freeze54.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze55_Data: 
+#incbin "dmp\Freeze55.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze56_Data: 
+#incbin "dmp\Freeze56.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze57_Data: 
+#incbin "dmp\Freeze57.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze58_Data: 
+#incbin "dmp\Freeze58.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Freeze59_Data: 
+#incbin "dmp\Freeze59.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze60_Data: 
+#incbin "dmp\Freeze60.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze61_Data: 
+#incbin "dmp\Freeze61.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze62_Data: 
+#incbin "dmp\Freeze62.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze63_Data: 
+#incbin "dmp\Freeze63.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze64_Data: 
+#incbin "dmp\Freeze64.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze65_Data: 
+#incbin "dmp\Freeze65.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze66_Data: 
+#incbin "dmp\Freeze66.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze67_Data: 
+#incbin "dmp\Freeze67.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze68_Data: 
+#incbin "dmp\Freeze68.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze69_Data: 
+#incbin "dmp\Freeze69.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze70_Data: 
+#incbin "dmp\Freeze70.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze71_Data: 
+#incbin "dmp\Freeze71.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze72_Data: 
+#incbin "dmp\Freeze72.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze73_Data: 
+#incbin "dmp\Freeze73.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze74_Data: 
+#incbin "dmp\Freeze74.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze75_Data: 
+#incbin "dmp\Freeze75.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Freeze76_Data: 
+#incbin "dmp\Freeze76.dmp"	//HINT=BIN
+ 
+ 
+
+
+
+
+ALIGN 4 
+Impact2_Small_Anim: 
+BYTE 2 0; SHORT 0; POIN small_impact2_000_Data small_impact2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_impact2_001_Data small_impact2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_impact2_002_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_003_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_004_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_005_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_006_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_007_Data small_impact2_000_pal 
+BYTE 3 0; SHORT 0; POIN small_impact2_008_Data small_impact2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_impact2_009_Data small_impact2_000_pal 
+BYTE 2 0; SHORT 0; POIN small_impact2_010_Data small_impact2_000_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+small_impact2_000_Data: 
+#incbin "dmp\small_impact2_000.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_impact2_000_pal: 
+#incbin "dmp\small_impact2_000_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_impact2_001_Data: 
+#incbin "dmp\small_impact2_001.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_impact2_002_Data: 
+#incbin "dmp\small_impact2_002.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_003_Data: 
+#incbin "dmp\small_impact2_003.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_004_Data: 
+#incbin "dmp\small_impact2_004.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_005_Data: 
+#incbin "dmp\small_impact2_005.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_006_Data: 
+#incbin "dmp\small_impact2_006.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_007_Data: 
+#incbin "dmp\small_impact2_007.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_008_Data: 
+#incbin "dmp\small_impact2_008.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_009_Data: 
+#incbin "dmp\small_impact2_009.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_impact2_010_Data: 
+#incbin "dmp\small_impact2_010.dmp"	//HINT=BIN
+ 
+ 
+ 
+
+
+
+
+ALIGN 4 
+Slashing_B_Anim: 
+BYTE 4 0; SHORT 0; POIN Slashing006_Data Slashing006_pal 
+BYTE 5 0; SHORT 0; POIN Slashing007_Data Slashing006_pal 
+BYTE 5 0; SHORT 0; POIN Slashing008_Data Slashing006_pal 
+BYTE 5 0; SHORT 0; POIN Slashing009_Data Slashing006_pal 
+BYTE 5 0; SHORT 0; POIN Slashing010_Data Slashing006_pal 
+BYTE 4 0; SHORT 0; POIN Slashing011_Data Slashing006_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+Slashing006_Data: 
+#incbin "dmp\Slashing006.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+Slashing006_pal: 
+#incbin "dmp\Slashing006_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+Slashing007_Data: 
+#incbin "dmp\Slashing007.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Slashing008_Data: 
+#incbin "dmp\Slashing008.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Slashing009_Data: 
+#incbin "dmp\Slashing009.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Slashing010_Data: 
+#incbin "dmp\Slashing010.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+Slashing011_Data: 
+#incbin "dmp\Slashing011.dmp"	//HINT=BIN
+ 
+ 
+ 
+
+
+
+
+ALIGN 4 
+Splash1_Small_Anim: 
+BYTE 3 0; SHORT 0; POIN small_splash1_000_Data small_splash1_000_pal 
+BYTE 3 0; SHORT 0; POIN small_splash1_001_Data small_splash1_000_pal 
+BYTE 4 0; SHORT 0; POIN small_splash1_002_Data small_splash1_000_pal 
+BYTE 4 0; SHORT 0; POIN small_splash1_003_Data small_splash1_000_pal 
+BYTE 4 0; SHORT 0; POIN small_splash1_004_Data small_splash1_000_pal 
+BYTE 4 0; SHORT 0; POIN small_splash1_005_Data small_splash1_000_pal 
+BYTE 3 0; SHORT 0; POIN small_splash1_006_Data small_splash1_000_pal 
+BYTE 3 0; SHORT 0; POIN small_splash1_007_Data small_splash1_000_pal 
+WORD 0 0 0 
+
+
+//Image Data 
+
+ALIGN 4 
+small_splash1_000_Data: 
+#incbin "dmp\small_splash1_000.dmp"	//HINT=BIN
+ 
+ALIGN 4 
+small_splash1_000_pal: 
+#incbin "dmp\small_splash1_000_pal.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_splash1_001_Data: 
+#incbin "dmp\small_splash1_001.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_splash1_002_Data: 
+#incbin "dmp\small_splash1_002.dmp"	//HINT=BIN
+ 
+ 
+ALIGN 4 
+small_splash1_003_Data: 
+#incbin "dmp\small_splash1_003.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_splash1_004_Data: 
+#incbin "dmp\small_splash1_004.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_splash1_005_Data: 
+#incbin "dmp\small_splash1_005.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_splash1_006_Data: 
+#incbin "dmp\small_splash1_006.dmp"	//HINT=BIN
+ 
+ 
+ 
+ALIGN 4 
+small_splash1_007_Data: 
+#incbin "dmp\small_splash1_007.dmp"	//HINT=BIN
+ 
+ 
+ 

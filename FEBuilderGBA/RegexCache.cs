@@ -45,5 +45,15 @@ namespace FEBuilderGBA
         {
             return Regex(pattern).Split(str);
         }
+        //最初にマッチしたものをテキストで返す
+        public static string MatchSimple(string str, string pattern, string def = "")
+        {
+            Match m = Match(str, pattern);
+            if (m.Groups.Count > 1)
+            {
+                return m.Groups[1].ToString();
+            }
+            return def;
+        }
     }
 }

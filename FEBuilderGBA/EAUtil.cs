@@ -602,7 +602,7 @@ namespace FEBuilderGBA
             return false;
         }
 
-        public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp, bool isColorzCore)
+        public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp, uint org_data, bool isColorzCore)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -663,6 +663,10 @@ namespace FEBuilderGBA
             if (org_sp != U.NOT_FOUND)
             {
                 sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));
+            }
+            if (org_data != U.NOT_FOUND)
+            {
+                sb.AppendLine("#define FEBUILDER_DATA_ORG " + U.To0xHexString(org_data));
             }
 
             Program.ExportFunction.ExportEA(sb, isColorzCore);

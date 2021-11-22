@@ -511,6 +511,10 @@ namespace FEBuilderGBA
             {
                 text = R._("楽器");
             }
+            else if (dataType == FELint.Type.MAP_ACTION_ANIMATION)
+            {
+                text = R._("行動アニメーション");
+            }
             else if (dataType == FELint.Type.FELINTBUZY_MESSAGE)
             {
                 text = R._("計測中...");
@@ -1190,6 +1194,11 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.ROM_HEADER)
             {
                 InputFormRef.JumpForm<ToolAutomaticRecoveryROMHeaderForm>();
+                return;
+            }
+            else if (dataType == FELint.Type.MAP_ACTION_ANIMATION)
+            {
+                InputFormRef.JumpForm<ImageMapActionAnimationForm>(tag);
                 return;
             }
 

@@ -2115,6 +2115,13 @@
     <Compile Include="ItemStatBonusesSkillSystemsForm.Designer.cs">
       <DependentUpon>ItemStatBonusesSkillSystemsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageMapActionAnimationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageMapActionAnimationForm.Designer.cs">
+      <DependentUpon>ImageMapActionAnimationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilMapActionAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3129,6 +3136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemStatBonusesSkillSystemsForm.resx">
       <DependentUpon>ItemStatBonusesSkillSystemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageMapActionAnimationForm.resx">
+      <DependentUpon>ImageMapActionAnimationForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

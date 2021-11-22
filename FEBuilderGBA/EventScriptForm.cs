@@ -240,6 +240,11 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.MAPACTIONANIMATION)
+            {
+                isLabelJump = true;
+            }
+            
 
             if (isLabelJump)
             {
@@ -1287,7 +1292,7 @@ namespace FEBuilderGBA
                     }
                     else if (arg.Type == EventScript.ArgType.SOUNDROOM)
                     {
-                        if (v >= 1 && v <= 255)
+                        if (v >= 1)
                         {
                             text = SoundRoomForm.GetSongName(v - 1);
                         }
@@ -1295,6 +1300,16 @@ namespace FEBuilderGBA
 
                         Bitmap bitmap;
                         bitmap = ImageSystemIconForm.MusicIcon(6);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
+                    }
+                    else if (arg.Type == EventScript.ArgType.MAPACTIONANIMATION)
+                    {
+                        text = ImageMapActionAnimationForm.GetName(v);
+                        bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
+
+                        Bitmap bitmap;
+                        bitmap = ImageMapActionAnimationForm.DrawIcon(v);
                         maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
                             , ref bounds, maxHeight, g, isWithDraw);
                     }

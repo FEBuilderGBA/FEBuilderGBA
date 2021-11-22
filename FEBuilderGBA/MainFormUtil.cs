@@ -1129,7 +1129,7 @@ namespace FEBuilderGBA
 
 
         //EventAssemblerで対象物をコンパイル
-        public static bool CompilerEventAssembler(string target_filename, uint freearea,uint org_sp, out string output, out string out_symbol)
+        public static bool CompilerEventAssembler(string target_filename, uint freearea,uint org_sp,uint org_data, out string output, out string out_symbol)
         {
             output = "";
             out_symbol = "";
@@ -1142,7 +1142,7 @@ namespace FEBuilderGBA
             }
             bool isColorzCore = MainFormUtil.IsColorzCore(compiler_exe);
 
-            string autoDef = EAUtil.MakeEAAutoDef(target_filename, freearea, org_sp, isColorzCore);
+            string autoDef = EAUtil.MakeEAAutoDef(target_filename, freearea, org_sp,org_data, isColorzCore);
 
             string freeareadef_targetfile = "_FBG_Temp_" +　DateTime.Now.Ticks.ToString() + ".event";
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);

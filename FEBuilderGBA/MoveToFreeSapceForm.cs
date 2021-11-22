@@ -430,7 +430,7 @@ namespace FEBuilderGBA
             //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
             //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
             const int LTRIM_SPACE_SIZE = 16;
-            uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
+            uint needSize = U.Padding4(LTRIM_SPACE_SIZE + newSize);
             addr = Program.ROM.FindFreeSpace(searchStart, needSize);
             if (addr != U.NOT_FOUND)
             {

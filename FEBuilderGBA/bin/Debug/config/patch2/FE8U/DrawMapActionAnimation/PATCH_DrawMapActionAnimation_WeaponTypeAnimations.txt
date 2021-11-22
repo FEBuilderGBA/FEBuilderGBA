@@ -1,0 +1,29 @@
+NAME=アニメOFFの時のマップアニメーションに攻撃エフェクトを描画する(WeaponTypeAnimations)
+NAME.en=Draw attack effect on map animation when battle animation off(WeaponTypeAnimations)
+
+INFO=武器の種類ごと(アイテムの種類ごと)に利用するディフォルトのマップアニメーションを指定します。\r\nアニメOFFの時のマップ戦闘時に攻撃エフェクトと、FFシリーズのようなダメージのポップアップを行う機能を追加します。\r\n攻撃エフェクトは武器の種類ごとと、武器ごとにもアニメーションを設定できます。
+
+IF:$FGREP4 ASMC_Draw.dmp=0x30 0xB5 0x04 0x1C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$XGREP4END 0x9C 0x5E 0x01 0x08 XXXX XXXX XXXX XXXX 0x9C 0x2E 0x00 0x08 0x28 0x0D 0x00 0x08 XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 0x14 0x19 0x08 0x08 0xF0 0xE1 0x03 0x02 0xEC 0xA4 0x03 0x02 0x6C 0xA5 0x03 0x02 0xFF 0xFF 0x00 0x00 XXXX XXXX XXXX XXXX 0x48 0x75 0x01 0x08
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 FF が出てくるまで
+DATACOUNT=$GREP2 0xFF 0xFF
+
+//リストに表示されるのはマップIDです
+LISTNAME=$B0:WEAPONTYPE
+
+//データを定義します
+B0:WEAPONTYPE=WeaponType
+B1:MAPACTIONANIMATION=EffctID
+INFO.en=Specifies the default map animation to use for each weapon type (each item type).\r\nWe will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
+NAME.zh=在动画关闭时在地图动画上绘制攻击效果（武器类型动画）。
+INFO.zh=指定用于每种武器类型（每种物品类型）的默认地图动画。\r\n我们将添加一个攻击效果和一个功能，在动画关闭的情况下，在地图战斗中弹出伤害，如FF系列。\r\n可以为每种武器类型和每种武器设置攻击效果。

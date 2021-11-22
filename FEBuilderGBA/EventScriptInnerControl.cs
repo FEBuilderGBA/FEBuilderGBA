@@ -1077,10 +1077,14 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.SOUNDROOM)
             {//サウンドルーム
-                if (v >= 1 && v <= 255)
+                if (v >= 1)
                 {
                     text = SoundRoomForm.GetSongName(v-1);
                 }
+            }
+            else if (arg.Type == EventScript.ArgType.MAPACTIONANIMATION)
+            {//行動アニメーション
+                text = ImageMapActionAnimationForm.GetName(v);
             }
             else if (arg.Type == EventScript.ArgType.U32)
             {//10進数表記かラベル名を書く
@@ -1471,6 +1475,14 @@ namespace FEBuilderGBA
                             (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
+            }
+            else if (arg.Type == EventScript.ArgType.MAPACTIONANIMATION)
+            {
+                ImageMapActionAnimationForm f = (ImageMapActionAnimationForm)InputFormRef.JumpForm<ImageMapActionAnimationForm>(value);
+                MakeInjectionCallback(f
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
+                    , src_object, false);
             }
         }
 
@@ -3180,7 +3192,7 @@ namespace FEBuilderGBA
             bool r;
             try
             {
-                r = MainFormUtil.CompilerEventAssembler(filename, 0, U.NOT_FOUND, out errorOutput, out symbolOutput);
+                r = MainFormUtil.CompilerEventAssembler(filename, 0, U.NOT_FOUND, U.NOT_FOUND, out errorOutput, out symbolOutput);
             }
             catch (Win32Exception e)
             {

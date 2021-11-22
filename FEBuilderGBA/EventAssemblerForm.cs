@@ -110,7 +110,7 @@ namespace FEBuilderGBA
             {
                 uint freearea = (uint)FREEAREA.Value;
                 SymbolUtil.DebugSymbol storeSymbol = (SymbolUtil.DebugSymbol)(DebugSymbolComboBox.SelectedIndex);
-                WriteEA(EAFilename, freearea, U.NOT_FOUND , undodata, storeSymbol);
+                WriteEA(EAFilename, freearea, U.NOT_FOUND, U.NOT_FOUND, undodata, storeSymbol);
             }
             catch (PatchForm.PatchException exception)
             {
@@ -164,14 +164,14 @@ namespace FEBuilderGBA
             NotDefine = 2,
         }
 
-        public static void WriteEA(string EA, uint freearea,uint org_sp, Undo.UndoData undodata,SymbolUtil.DebugSymbol storeSymbol)
+        public static void WriteEA(string EA, uint freearea,uint org_sp, uint org_data, Undo.UndoData undodata,SymbolUtil.DebugSymbol storeSymbol)
         {
             string output;
             string symbol;
             bool r;
             try
             {
-                r = MainFormUtil.CompilerEventAssembler(EA, freearea,org_sp, out output, out symbol);
+                r = MainFormUtil.CompilerEventAssembler(EA, freearea,org_sp,org_data, out output, out symbol);
             }
             catch (Win32Exception e)
             {

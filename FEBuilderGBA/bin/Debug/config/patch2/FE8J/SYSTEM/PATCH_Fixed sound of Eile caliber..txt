@@ -1,5 +1,5 @@
 ﻿NAME=エイルカリバーの音を出す
-NAME.en=Fixed sound of Eile caliber.
+NAME.en=Fixed sound of Aircalibur
 NAME.zh=毒巨蛛的声音
 
 

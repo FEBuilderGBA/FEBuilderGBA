@@ -90,7 +90,9 @@ namespace FEBuilderGBA
                 getSectionDataStartEnd(showSectionData + 1, sectionData_offset, (uint)frameData_UZ.Length
                     , out frameDataStart2, out frameDataEnd2);
                 Debug.Assert(frameDataStart2 == Program.ROM.u32((showSectionData + 1) * 4 + sectionData_offset));
-                Debug.Assert(frameDataEnd2 == Program.ROM.u32((showSectionData+ 1 + 1) * 4 + sectionData_offset));
+
+                // FE6の神竜の変身モーションはsection0しか定義されていないので、この条件を満たさない時がある
+                //                Debug.Assert(frameDataEnd2 == Program.ROM.u32((showSectionData+ 1 + 1) * 4 + sectionData_offset));
 
                 uint frame2 = FindFrame(showFrameData, frameDataStart2, frameDataEnd2, frameData_UZ);
                 if (frame2 != U.NOT_FOUND)
@@ -1636,13 +1638,13 @@ namespace FEBuilderGBA
             uint start = getSectionData(sectionDataIndex,sectionData_offset,frameData_length);
             uint end = getSectionData(sectionDataIndex + 1, sectionData_offset, frameData_length);
 
-            if (end == 0)
-            {//終了地点が0なので補正する
-                end = frameData_length;
-            }
             if (start == 0)
             {//開始地点が0らしい。補正する
                 end = getSectionData(1, sectionData_offset, frameData_length);
+            }
+            if (end == 0)
+            {//終了地点が0なので補正する
+                end = frameData_length;
             }
 
             Debug.Assert(start <= end);

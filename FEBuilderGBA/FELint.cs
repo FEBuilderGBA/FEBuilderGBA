@@ -95,6 +95,7 @@ namespace FEBuilderGBA
             ,TEXTID_FOR_SYSTEM  //テキストID システム予約
             ,TEXTID_FOR_USER    //テキストID ユーザ定義
             ,SE_SYSTEM  //SongID システム予約
+            ,MAP_ACTION_ANIMATION   //攻撃エフェクト
             ,FELINTBUZY_MESSAGE //計測中
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
@@ -812,6 +813,9 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem ItemWeaponEffect")) return;
             ItemWeaponEffectForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageMapActionAnimation")) return;
+            ImageMapActionAnimationForm.MakeCheckError(errors);
            
             if (Program.ROM.RomInfo.version() == 8)
             {

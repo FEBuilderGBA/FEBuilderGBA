@@ -15,3 +15,5 @@ EDIT_PATCH:2=PATCH_CustomHandAxs_Palette.txt
 EA=CustomHandAxs_Installer.event
 
 AUTHOR=This routine was re-edited by 7743 based on Huichelaar's Custom Thrown Weapon Animations. https://feuniverse.us/t/huichelaars-assembly-adventures/8229/81
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある

@@ -933,6 +933,8 @@ TEXTADV:0xf76=0xf76.txt
 TEXTADV:0xf77=0xf77.txt
 //f78 submenu wait>
 //f79,f7a,f7b,f7c,f7d,f7e showDiffculty
+//f7f,f80,f81,f82 majidesuka
+//f83,f84,f85,f86,f87,f88 gaiden magic
 
 INFO=This is the most recent revision of the Custom Skill System and is recommended to use.\r\nPatches the ROM to allow characters/classes to equip/learn skill like modern FE games.\r\nAfter installation, edit with "Skill Config," "Assign Skill by Unit," and "Assign Skill by Class" in Advanced Editors.\r\nSkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
 

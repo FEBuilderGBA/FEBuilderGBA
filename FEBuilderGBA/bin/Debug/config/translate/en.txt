@@ -3646,6 +3646,30 @@ Magic Extends CSACreator
 :追加魔法 FEditorAdvCSA
 Magic Extends FEditorAdvCSA
 
+:攻撃アニメスクリプト|*.MapActionAnimation.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
+Attack anime script | *.MapActionAnimation.txt | Animated GIF | *.gif | Dump All | *.txt | All files | *.
+
+:攻撃アニメスクリプト|*.MapActionAnimation.txt|All files|*
+Attack anime script | *.MapActionAnimation.txt | All files | *.
+
+:攻撃モーションの、アニメーションテーブルを取得できません。\r\nパッチがインストールされていない可能性があります。
+Unable to get the animation table for the attack motion.\r\nThe patch may not be installed.
+
+:アニメーション取出
+Export Animation
+
+:アニメーション読込
+Import Animation
+
+:アニメーション
+Animation
+
+:ID=00 Emptyはnullデータとして予約されています。\r\n0x0以外の値を設定しないでください。
+ID=00 Empty is reserved as null data.\r\nDo not set any value other than 0x0.
+
+:攻撃モーション
+Attack motion.
+
 :パレット No{0}
 paletteNo {0}
 
@@ -4120,6 +4144,15 @@ The size of the data in the map data (plist map) is incorrect.Width ({0}), heigh
 :マップデータ(plist map)のデータ中に不正なタイル({0})が(X:{1},Y:{2})にあります。
 There is an invalid tile ({0}) in (X: {1}, Y: {2}) in the data of the map data (plist map).
 
+:アドレスが無効です
+Address is invalid
+
+:行動アニメーションが破損しています。\r\n
+The behavior animation is corrupted.\r\n
+
+:データ終端がありませんでした。
+There was no data termination.
+
 :OAMが壊れています。データ長が範囲外を参照しています。 OAMサイズ:{0} 参照:{1}
 OAM is broken.Data length refers to out of range.OAM size: {0} See: {1}.
 
@@ -4237,9 +4270,6 @@ There is corruption in the rightToLeftOAM data of Mode: {0} of battle animation.
 :戦闘アニメのMode:{0}に画像がありません。
 There is no image in Battle Anime Mode: {0}.
 
-:アドレスが無効です
-Address is invalid
-
 :スキルアニメーションが破損しています。\r\n
 The skill animation is corrupted.\r\n
 
@@ -4278,9 +4308,6 @@ An error occurred while getting the tsaOffset.
 
 :palOffsetを取得中にエラーが発生しました。
 An error occurred while getting the palOffset.
-
-:データ終端がありませんでした。
-There was no data termination.
 
 :アドレスが4の倍数ではありません。
 The address is not a multiple of 4.
@@ -6124,6 +6151,9 @@ Assign Skill by Unit
 :スキル拡張設定
 Skill Config
 
+:攻撃エフェクト拡張
+Attack effect expansion.
+
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
 
@@ -6738,6 +6768,9 @@ Unit dialogue.
 
 :楽器
 Instrument
+
+:行動アニメーション
+Behavior animation.
 
 :計測中...
 Measuring.
@@ -9610,6 +9643,9 @@ This patch is outdated.\r\nIt has been left in place for compatibility.\r\nIt sh
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
 SkillSystems is already installed in this ROM.\r\nOverwriting SkillSystems can be dangerous.\r\nPlease make sure to follow the correct updating procedures.\r\n\r\nAre you sure you want to continue?
 
+:このパッチは、複雑な構文を持っているので、リビルドを成功させるためにも、上位アドレスに入れる必要があります。\r\nただ、あなたのROMは上位アドレスを使い果たしているので、インストールすることができません。\r\n推奨しませんが、上位アドレスではないエリアにインストールしてもよろしいですか？
+This patch has a complicated syntax and must be placed in a higher address for a successful rebuild.\r\nHowever, your ROM has run out of high-level addresses and cannot be installed.\r\nI don't recommend it, but can I install it in an area other than the upper address? 
+
 :パッチファイルを開く
 Open Patch File
 
@@ -10198,12 +10234,6 @@ Owned Item Skills
 :アニメ
 Animation
 
-:アニメーション取出
-Export Animation
-
-:アニメーション読込
-Import Animation
-
 : スキル割り当て
 Skill Assignment
 
@@ -10230,9 +10260,6 @@ Adds the effects of other specified skills to the current skill.
 
 :スキル拡張 SkillSystem の、アニメを取得できません。
 SkillSystem's animation can't be acquired.
-
-:アニメーション
-Animation
 
 :アーマー系
 Armor Type
