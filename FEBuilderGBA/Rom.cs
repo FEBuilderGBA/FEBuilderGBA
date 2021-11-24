@@ -163,6 +163,7 @@ namespace FEBuilderGBA
         uint menu_unit_pointer(); // ユニットメニュー
         uint menu_game_pointer(); // ゲームメニュー
         uint menu_debug1_pointer(); // デバッグメニュー
+        uint menu_item_pointer(); // アイテム利用メニュー
         uint MenuCommand_UsabilityAlways(); //メニューを開くという値を返す関数のアドレス
         uint MenuCommand_UsabilityNever(); //メニューを開かないという値を返す関数のアドレス       
         uint status_rmenu_unit_pointer(); // ステータス RMENU1

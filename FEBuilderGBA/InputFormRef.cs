@@ -7110,8 +7110,8 @@ namespace FEBuilderGBA
         }
         public static string GetMAPXY(uint num)
         {
-            uint x = ((num & 0xffff0000) >> 16);
-            uint y = ((num & 0x0000ffff) );
+            uint y = ((num & 0xffff0000) >> 16);
+            uint x = ((num & 0x0000ffff) );
             return String.Format("({0},{1})", x, y);
         }
 

@@ -251,7 +251,7 @@ namespace FEBuilderGBA
         }
         public static int search(byte[] input, int position, int length, out int out_match_pos)
         {
-            List<int> results = new List<int>();
+            List<int> results = new List<int>(READ_AHEAD_BUFFER_SIZE);
 
             if (!(position < length))
             {
@@ -333,7 +333,7 @@ namespace FEBuilderGBA
         {
             Debug.Assert(data.Length <= MAX_UNCOMP_DATA_LIMIT);
 
-            List<byte> compressedData = new List<byte>();
+            List<byte> compressedData = new List<byte>(MAX_UNCOMP_DATA_LIMIT);
 
             int length = data.Length;
             int position = 0;
@@ -348,7 +348,7 @@ namespace FEBuilderGBA
             {
                 //8ブロック単位で圧縮.
                 byte isCompressed = 0;
-                List<byte> tempVector = new List<byte>();
+                List<byte> tempVector = new List<byte>(BLOCK_SIZE);
 
                 for (int i = 0; i < BLOCK_SIZE; i++)
                 {

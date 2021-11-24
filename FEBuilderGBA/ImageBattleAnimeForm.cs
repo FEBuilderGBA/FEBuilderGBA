@@ -896,6 +896,37 @@ namespace FEBuilderGBA
                 ImageUtilOAM.MakeAllDataLength(list, isPointerOnly, selfname, addr, seatNumberList);
             }
        }
+
+       //変更するアニメデータから、他のアニメーションでも使っているものを除外する
+       public static void MakeAllDataLength(RecycleAddress ra, uint Now_baseaddress)
+       {
+           InputFormRef N_InputFormRef = N_Init(null);
+
+           //戦闘アニメーションはlz77圧縮の中にポインタがある特殊形式です
+           uint addr = N_InputFormRef.BaseAddress;
+           for (int i = 0; i < N_InputFormRef.DataCount; i++, addr += N_InputFormRef.BlockSize)
+           {
+               if (!U.isSafetyOffset(12 + addr + 4))
+               {
+                   break;
+               }
+
+               uint section = Program.ROM.p32(12 + addr);
+               if (!U.isSafetyOffset(section))
+               {
+                   break;
+               }
+
+               if (addr == Now_baseaddress)
+               {
+                   continue;
+               }
+
+               List<Address> list = new List<Address>();
+               ImageUtilOAM.RecycleOldAnime(ref list, addr);
+               ra.SubRecycle(list);
+           }
+       }
        public static List<U.AddrResult> MakeBattleList()
        {
            InputFormRef N_InputFormRef = N_Init(null);

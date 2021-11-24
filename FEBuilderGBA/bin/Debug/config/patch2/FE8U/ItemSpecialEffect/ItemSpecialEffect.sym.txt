@@ -1,0 +1,4 @@
+ItemSpecialEffectUsability=$8C
+ItemSpecialEffectTable=$88
+RunEvent=$30
+ExitItemSpecialEffect=$4E

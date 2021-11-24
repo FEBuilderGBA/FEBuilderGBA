@@ -1,0 +1,39 @@
+
+NAME=アイテムごとの特殊技能パッチ(Editor)
+NAME.en=Special Event for each Item(Editor)
+NAME.zh=Special Event for each Item(Editor)
+
+IF:$FGREP4 ItemSpecialEffect.dmp=0xF0 0xB5 0x18 0x4D
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ItemSpecialEffect.dmp
+
+//指南はイベントデータなので イベントポインタは4バイトです
+//データサイズ(10進数)
+DATASIZE=12
+
+DATACOUNT=$GREP4 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item(00=ANY)
+B1:UNIT=Unit(00=ANY)
+B2:CLASS=Class(00=ANY)
+B3:DECIMAL=hp%(00=ANY, IF hp% < this)
+W4:FLAG=Flag(00=ANY)
+W6:TEXT=MenuName(00=Default)
+P8:EVENT=EventPointer
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/15
+
+INFO=アイテムごとの特殊技能を作成します。\r\n特殊技能はイベント命令として記述できます。\r\nメニューが描画される位置は、詳細メニューのメニューコマンドから変更できます。\r\n新規にイベントを作るには、一度0に設定した後に、イベントを割り当ててください。
+
+INFO.en=Create special skills for each Unit.\r\nSpecial skills can be described as event instructions.You can change the position where the menu is drawn from the menu command in the advanced menu.\r\nTo create a new event, set it to 0 and then assign the event.\r\n
+
+INFO.zh=为每个道具创建特殊技能。\r\n特殊技能可以描述为事件说明。\r\nYou can change the position where the menu is drawn from the menu command in the advanced menu.\r\nTo create a new event, set it to 0 and then assign the event.

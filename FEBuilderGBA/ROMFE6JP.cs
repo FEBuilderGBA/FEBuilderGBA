@@ -173,6 +173,7 @@ namespace FEBuilderGBA
         public uint menu_unit_pointer() { return  0x5c7608; } // ユニットメニュー
         public uint menu_game_pointer() { return  0x5C7650; } // ゲームメニュー
         public uint menu_debug1_pointer() { return 0x5C73EC; }  // デバッグメニュー
+        public uint menu_item_pointer() { return 0x5C7554; }  // アイテム利用メニュー
         public uint MenuCommand_UsabilityAlways() { return 0x041E6C; } //メニューを開くという値を返す関数のアドレス
         public uint MenuCommand_UsabilityNever() { return 0x0; } //メニューを開かないという値を返す関数のアドレス       
         public uint status_rmenu_unit_pointer() { return 0x70344; } // ステータス RMENU1

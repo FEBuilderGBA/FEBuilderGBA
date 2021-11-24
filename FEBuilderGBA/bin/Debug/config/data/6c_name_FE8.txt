@@ -822,3 +822,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 00004968=TextPrint	{U}	//08588274
 00013980=ApplyDamagePaletteToTarget	{U}	//0859a00c
 00013A38=ApplyDamagePaletteToTarget	{J}	//085C2490
+0002FF88=ApplyItemActionNightmare	{U}	//0859BE28
+0002FED8=ApplyItemActionNightmare	{J}	//085C4308
+0002FFB0=ApplyItemAction	{U}	//0859BE10
+0002FF00=ApplyItemAction	{J}	//085C42F0

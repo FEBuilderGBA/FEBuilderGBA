@@ -445,6 +445,52 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        //変更するアニメデータから、他のアニメーションでも使っているものを除外する
+        public static void SubConfilctArea(RecycleAddress ra, uint Now_baseaddress)
+        {
+            InputFormRef InputFormRef;
+            uint baseaddr, dimaddr, no_dimaddr;
+            if (ImageUtilMagic.SearchMagicSystem(out baseaddr, out dimaddr, out no_dimaddr) != ImageUtilMagic.magic_system_enum.CSA_CREATOR)
+            {
+                return;
+            }
+
+            {
+                uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
+                uint csaSpellTablePointer;
+                uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("SCA_Creator", out csaSpellTablePointer);
+                Dictionary<uint, string> effectDic = new Dictionary<uint, string>();
+                InputFormRef = Init(null, dimaddr, no_dimaddr, spellDataCount, csaSpellTable, effectDic);
+
+                uint addr = InputFormRef.BaseAddress;
+                for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+                {
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint csaaddress = (uint)(csaSpellTable + (20 * i));
+
+                    uint dataaddr = Program.ROM.p32(addr);
+                    if (dataaddr == 0)
+                    {
+                        continue;
+                    }
+                    if (csaaddress == Now_baseaddress)
+                    {
+                        continue;
+                    }
+
+                    if (
+                        dataaddr == dimaddr
+                     || dataaddr == no_dimaddr)
+                    {
+                        List<Address> list = new List<Address>();
+                        ImageUtilMagicCSACreator.RecycleOldAnime(ref list, "", false, csaaddress);
+                        ra.SubRecycle(list);
+                    }
+                }
+            }
+        }
+
         //エラー検出
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {

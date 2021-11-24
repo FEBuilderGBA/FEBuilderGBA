@@ -967,6 +967,9 @@ namespace FEBuilderGBA
             RecycleOldAnime(ref recycle ,"",false, magic_baseaddress);
 
             RecycleAddress ra = new RecycleAddress(recycle);
+            //他のアニメで共有しているデータを上書きするデータから除外します
+            ImageMagicCSACreatorForm.SubConfilctArea(ra, magic_baseaddress);
+
             //書き込みます.(魔法アニメはなぜか無圧縮)
             ra.WriteAndWritePointer(magic_baseaddress + 4, oam.GetRightToLeftOAM(), undodata);
             ra.WriteAndWritePointer(magic_baseaddress + 8, oam.GetLeftToRightOAM(), undodata);

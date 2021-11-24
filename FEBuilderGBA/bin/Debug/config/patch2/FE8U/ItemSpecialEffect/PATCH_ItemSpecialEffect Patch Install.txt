@@ -1,0 +1,16 @@
+NAME=アイテムごとの特殊技能パッチ(Install)
+NAME.en=Special Event for each Item(Installer)
+NAME.zh=Special Event for each Item(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EA_EXTENDS_ITEMMENU:0x01=10
+PATCHED_IF:$FGREP4 ItemSpecialEffect.dmp=0xF0 0xB5 0x18 0x4D
+EDIT_PATCH=PATCH_ItemSpecialEffect.txt
+
+EA=Installer.event
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/15
+
+INFO=アイテムごとに利用できる特殊スキルを作ります。\r\nイベント命令を利用して、特殊技能を記述することができます。\r\nメニューの位置は、詳細メニューのメニューコマンドから変更できます。
+INFO.en=Create special skills that can be used for each Item.\r\nSpecial skills can be described using event instructions.\r\nYou can change the position where the menu is drawn from the menu command in the advanced menu.
+INFO.zh=创建可用于每个道具的特殊技能。\r\n特殊技能可以使用事件说明进行描述。\r\nYou can change the position where the menu is drawn from the menu command in the advanced menu.

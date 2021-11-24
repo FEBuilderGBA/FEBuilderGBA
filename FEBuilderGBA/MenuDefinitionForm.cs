@@ -320,5 +320,10 @@ namespace FEBuilderGBA
         {
             return Program.ROM.RomInfo.menu_debug1_pointer();
         }
+        public static uint GetItemMenuPointer()
+        {
+            return Program.ROM.RomInfo.menu_item_pointer();
+        }
+        
     }
 }

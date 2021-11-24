@@ -14802,3 +14802,4 @@
 080AEF64	サウンドルームランダム再生時のプレイリストを生成する	{U}
 02021388	:02021407	サウンドルームランダム再生時のプレイリスト	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
+080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}

@@ -370,6 +370,10 @@ namespace FEBuilderGBA
             {
                 pointer = MenuDefinitionForm.GetDebug1MenuPointer();
             }
+            else if (typename == "ITEMMENU")
+            {
+                pointer = MenuDefinitionForm.GetItemMenuPointer();
+            }
             else
             {
                 return U.NOT_FOUND;
@@ -419,6 +423,10 @@ namespace FEBuilderGBA
             else if (typename == "DEBUG1")
             {
                 pointer = MenuDefinitionForm.GetDebug1MenuPointer();
+            }
+            else if (typename == "ITEMMENU")
+            {
+                pointer = MenuDefinitionForm.GetItemMenuPointer();
             }
             else
             {
@@ -549,6 +557,10 @@ namespace FEBuilderGBA
             else if (typename == "DEBUG1")
             {
                 pointer = MenuDefinitionForm.GetDebug1MenuPointer();
+            }
+            else if (typename == "ITEMMENU")
+            {
+                pointer = MenuDefinitionForm.GetItemMenuPointer();
             }
             else
             {

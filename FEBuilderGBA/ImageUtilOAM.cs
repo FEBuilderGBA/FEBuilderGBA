@@ -3419,7 +3419,7 @@ namespace FEBuilderGBA
             return "";
         }
 
-        static void RecycleOldAnime(ref List<Address> list, uint battleanime_baseaddress)
+        public static void RecycleOldAnime(ref List<Address> list, uint battleanime_baseaddress)
         {
             List<uint> seatNumberList = new List<uint>();
             MakeAllDataLength(list

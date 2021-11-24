@@ -3179,6 +3179,10 @@ namespace FEBuilderGBA
             {
                 typename = "GAMEMENU";
             }
+            else if (key == "EA_EXTENDS_ITEMMENU")
+            {
+                typename = "ITEMMENU";
+            }
             else
             {
                 return U.NOT_FOUND;
@@ -3242,7 +3246,10 @@ namespace FEBuilderGBA
                         , addrstring
                         , value);
                 }
-                else if (key == "EA_EXTENDS_UNITMENU" || key == "EA_EXTENDS_GAMEMENU")
+                else if (key == "EA_EXTENDS_UNITMENU"
+                    || key == "EA_EXTENDS_GAMEMENU"
+                    || key == "EA_EXTENDS_ITEMMENU"
+                    )
                 {
                     out_sp_org = DefEASPORG_Expands(patch
                         , key
@@ -5496,6 +5503,10 @@ namespace FEBuilderGBA
                 else if (pair.Key.IndexOf("EA_EXTENDS_GAMEMENU") >= 0)
                 {
                     list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetGameMenuPointer());
+                }
+                else if (pair.Key.IndexOf("EA_EXTENDS_ITEMMENU") >= 0)
+                {
+                    list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetItemMenuPointer());
                 }
                 else
                 {
