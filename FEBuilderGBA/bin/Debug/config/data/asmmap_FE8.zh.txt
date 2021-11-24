@@ -10205,7 +10205,7 @@ r3=X tile position of menu of the right	{U}
 0807A984	MapAnimProc_DisplayDeathQuote	{U}
 0807AA00	MapAnimProc_DisplayDeathFade	{U}
 0807AA4C	MapAnimProc_DisplayExpBar	{U}
-0807B68C	StartSomeMapAnim_807B68C	{U}
+0807B68C	BeginSelfDamageMapAnim	{U}
 0807BBF0	MapAnimUi_Clear	{U}
 0807C02C	MapAnimExpBar_LoadGfx	{U}
 0807C0F8	MapAnimExpBar_FillLoop	{U}
@@ -11132,7 +11132,7 @@ r3=X tile position of menu of the right	{U}
 0807CD3C	MapAnimProc_DisplayDeathQuote	{J}
 0807CD9C	MapAnimProc_DisplayDeathFade	{J}
 0807CDE8	MapAnimProc_DisplayExpBar	{J}
-0807D924	StartSomeMapAnim_807B68C	{J}
+0807D924	BeginSelfDamageMapAnim	{J}
 0807DF38	MapAnimUi_Clear	{J}
 0807E370	MapAnimExpBar_LoadGfx	{J}
 0807E420	MapAnimExpBar_FillInit	{J}

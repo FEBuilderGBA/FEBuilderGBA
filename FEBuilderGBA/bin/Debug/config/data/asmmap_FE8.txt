@@ -10374,7 +10374,7 @@
 0807A984	MapAnimProc_DisplayDeathQuote	{U}
 0807AA00	MapAnimProc_DisplayDeathFade	{U}
 0807AA4C	MapAnimProc_DisplayExpBar	{U}
-0807B68C	StartSomeMapAnim_807B68C	{U}
+0807B68C	BeginSelfDamageMapAnim	{U}
 0807BBF0	MapAnimUi_Clear	{U}
 0807C02C	MapAnimExpBar_LoadGfx	{U}
 0807C0DC	MapAnimExpBar_FillInit	{U}
@@ -11312,7 +11312,7 @@
 0807CD3C	MapAnimProc_DisplayDeathQuote	{J}
 0807CD9C	MapAnimProc_DisplayDeathFade	{J}
 0807CDE8	MapAnimProc_DisplayExpBar	{J}
-0807D924	StartSomeMapAnim_807B68C	{J}
+0807D924	BeginSelfDamageMapAnim	{J}
 0807DF38	MapAnimUi_Clear	{J}
 0807E370	MapAnimExpBar_LoadGfx	{J}
 0807E420	MapAnimExpBar_FillInit	{J}
@@ -14803,3 +14803,10 @@
 02021388	:02021407	サウンドルームランダム再生時のプレイリスト	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
 080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
+080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
+0807B5DC	BeginPoisonMapAnim	{U}
+0807D924	BeginPoisonMapAnim	{J}
+0807B7F0	BeginMapAnimDance	{U}
+0807DB38	BeginMapAnimDance	{J}
+0807B634	BeginHatchFromEggsMapAnim	{U}
+0807D97C	BeginHatchFromEggsMapAnim	{J}
