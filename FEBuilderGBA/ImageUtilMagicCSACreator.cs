@@ -119,6 +119,10 @@ namespace FEBuilderGBA
             }
             return bgExpands;
         }
+        //ゲーム中に表示する画面サイズ
+        public const int SCREEN_TILE_WIDTH = 240 / 8;
+        public const int SCREEN_TILE_HEIGHT = 64 * 2 / 8;
+
         static Bitmap DrawFrameImage(uint frame
             , byte[] frameData
             , uint objRightToLeftOAM
@@ -149,7 +153,7 @@ namespace FEBuilderGBA
             byte[] bgPalette = Program.ROM.getBinaryData(U.toOffset(bgPalettePointer), 0x20);
 
 
-            Bitmap retImage = ImageUtil.Blank((ImageUtilOAM.SEAT_TILE_WIDTH - 2) * 8, ImageUtilOAM.SEAT_TILE_HEIGHT * 8 * 2, objPalette, 0);
+            Bitmap retImage = ImageUtil.Blank(SCREEN_TILE_WIDTH * 8, SCREEN_TILE_HEIGHT * 8, bgPalette, 0);
 
             uint bgPointer = U.u32(frameData, frame + 16);
             if (!U.isSafetyPointer(bgPointer))
@@ -172,14 +176,18 @@ namespace FEBuilderGBA
                 height = 160;
             }
             Bitmap bg = ImageUtil.ByteToImage16Tile(width, height, bg_UZ, 0, bgPalette, 0, bgTSA_UZ, 0);
-            ImageUtil.AppendPalette(retImage, bg , 1);
             if (bgExpands)
             {
-                Bitmap tempbg = ImageUtil.Blank(width, height, bg);
-                ImageUtil.Scale(tempbg, 0, 0, width, 160 - 32, bg , 0 , 0 , width , 64);
-                bg = tempbg;
+                //Bitmap tempbg = ImageUtil.Blank(width, height, bg);
+                //ImageUtil.Scale(tempbg, 0, 0, width, 160 - 32, bg , 0 , 0 , width , 64);
+                //bg = tempbg;
+                ImageUtil.Scale(retImage, 0, 0, retImage.Width, retImage.Height, bg, 0, 0, retImage.Width, 64);
             }
-            ImageUtil.BitBlt(retImage, 0, 0, bg.Width, bg.Height, bg, 0, 0, 1);
+            else
+            {
+                ImageUtil.BitBlt(retImage, 0, 0, retImage.Width, retImage.Height, bg, 0, 0, 0);
+            }
+            //ImageUtil.BitBlt(retImage, 0, 0, bg.Width, bg.Height, bg, 0, 0, 0);
 
             uint objImagePointer = U.u32(frameData, frame + 4);
             if (!U.isSafetyPointer(objImagePointer))
@@ -196,7 +204,9 @@ namespace FEBuilderGBA
                     height = 64;
                 }
                 Bitmap obj = ImageUtil.ByteToImage16Tile(width, height, obj_UZ, 0, objPalette, 0);
+                ImageUtil.AppendPalette(retImage, obj, 1);
 
+                //奥
                 {
                     //利用するOAMデータの開始位置
                     //OAMは 12byte で 最初の1バイト目が 1になるまで続きます.
@@ -207,9 +217,10 @@ namespace FEBuilderGBA
                     Bitmap tempCanvas = ImageUtil.Blank((ImageUtilOAM.SEAT_TILE_WIDTH - 2) * 8, ImageUtilOAM.SEAT_TILE_HEIGHT * 8 * 2, objPalette, 0);
                     tempCanvas = oam.Draw(tempCanvas, obj);
 
-                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 0, 0);
+                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 1, 0);
                     tempCanvas.Dispose();
                 }
+                //手前
                 {
                     //利用するOAMデータの開始位置
                     //OAMは 12byte で 最初の1バイト目が 1になるまで続きます.
@@ -220,7 +231,7 @@ namespace FEBuilderGBA
                     Bitmap tempCanvas = ImageUtil.Blank((ImageUtilOAM.SEAT_TILE_WIDTH - 2) * 8, ImageUtilOAM.SEAT_TILE_HEIGHT * 8 * 2, objPalette, 0);
                     tempCanvas = oam.Draw(tempCanvas, obj);
 
-                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 0, 0);
+                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 1, 0);
                     tempCanvas.Dispose();
                 }
             }
@@ -329,6 +340,9 @@ namespace FEBuilderGBA
             uint limitter = frame + 1024 * 1024; //1MBサーチしたらもうあきらめる.
             limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);
 
+            //拡大する互換モード
+            bool bgExpands = false;
+
             int termCount = 0;
             for (uint n = frame; n < limitter; n += 4)
             {
@@ -349,8 +363,13 @@ namespace FEBuilderGBA
                     if (frameData[n] == 0x48)
                     {//音楽再生なのだが魔法ではS命令不可.
                     }
-                    else
-                    {//それ以外の 0x85命令
+                    else if (frameData[n + 0] == 0x53)
+                    {//拡縮
+                        bgExpands = (frameData[n + 1] >= 0x01);
+                    }
+                    else if (frameData[n + 0] == 0x0 && frame == n)
+                    {//面倒だから先頭のみチェックする
+                        bgExpands = true;
                     }
                     continue;
                 }
@@ -361,7 +380,6 @@ namespace FEBuilderGBA
 
                 //0x86 画像 pointer
                 uint wait = U.u16(frameData, n);
-                bool bgExpands = IsExpandsBG(n, frame, Program.ROM.Data);
                 Bitmap bitmap = DrawFrameImage(n, frameData, objRightToLeftOAM, objBGRightToLeftOAM, bgExpands);
 
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));

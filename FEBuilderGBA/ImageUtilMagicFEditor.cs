@@ -28,7 +28,7 @@ namespace FEBuilderGBA
 
         //ゲーム中に表示する画面サイズ
         public const int SCREEN_TILE_WIDTH = 240 / 8;
-        public const int SCREEN_TILE_HEIGHT = 64 / 8;
+        public const int SCREEN_TILE_HEIGHT = 64 * 2 / 8;
 
 
         public static uint SpellDataCount()
@@ -379,8 +379,8 @@ namespace FEBuilderGBA
                 int rom_image_height = ImageUtil.CalcHeight(rom_image_width, bg_UZ.Length);
 
                 Bitmap bg = ImageUtil.ByteToImage16Tile(rom_image_width, rom_image_height, bg_UZ, 0, bgPalette, 0);
-                ImageUtil.AppendPalette(retImage, bg, 1);
-                ImageUtil.BitBlt(retImage, 0, 0, bg.Width, bg.Height, bg, 0, 0, 1);
+//                ImageUtil.BitBlt(retImage, 0, 0, bg.Width, bg.Height, bg, 0, 0, 1);
+                ImageUtil.Scale(retImage, 0, 0, retImage.Width, retImage.Height, bg, 0, 0, retImage.Width, bg.Height);
             }
 
             //OBJの読み込み
@@ -399,7 +399,9 @@ namespace FEBuilderGBA
                     height = 64;
                 }
                 Bitmap obj = ImageUtil.ByteToImage16Tile(width, height, obj_UZ, 0, objPalette, 0);
+                ImageUtil.AppendPalette(retImage, obj, 1);
 
+                //奥
                 {
                     //利用するOAMデータの開始位置
                     //OAMは 12byte で 最初の1バイト目が 1になるまで続きます.
@@ -410,9 +412,10 @@ namespace FEBuilderGBA
                     Bitmap tempCanvas = ImageUtil.Blank((ImageUtilOAM.SEAT_TILE_WIDTH - 2) * 8, ImageUtilOAM.SEAT_TILE_HEIGHT * 8 * 2, objPalette, 0);
                     tempCanvas = oam.Draw(tempCanvas, obj);
 
-                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 0, 0);
+                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 1, 0);
                     tempCanvas.Dispose();
                 }
+                //手前
                 {
                     //利用するOAMデータの開始位置
                     //OAMは 12byte で 最初の1バイト目が 1になるまで続きます.
@@ -423,7 +426,7 @@ namespace FEBuilderGBA
                     Bitmap tempCanvas = ImageUtil.Blank((ImageUtilOAM.SEAT_TILE_WIDTH - 2) * 8, ImageUtilOAM.SEAT_TILE_HEIGHT * 8 * 2, objPalette, 0);
                     tempCanvas = oam.Draw(tempCanvas, obj);
 
-                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 0, 0);
+                    ImageUtil.BitBlt(retImage, 0, 0, tempCanvas.Width, tempCanvas.Height, tempCanvas, 0, 0, 1, 0);
                     tempCanvas.Dispose();
                 }
             }
@@ -515,7 +518,6 @@ namespace FEBuilderGBA
             }
 
             //アニメgif生成
-//            ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps.ToArray(), 2, 0);
             ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps);
         }
 
