@@ -1,0 +1,2 @@
+Exit=$36
+WaitForMotionEndProc=$54

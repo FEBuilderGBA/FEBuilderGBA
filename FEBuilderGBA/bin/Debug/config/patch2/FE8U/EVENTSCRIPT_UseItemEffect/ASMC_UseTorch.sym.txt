@@ -1,0 +1,4 @@
+Exit=$5C
+WriteTurn=$40
+FireAnime=$80
+WaitForMotionEndProc=$7C

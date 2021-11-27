@@ -11857,7 +11857,7 @@
 0807BCA8	マップアニメのフレームを管理するルーチン	{U}
 0807BA28	マップアニメの棒グラフの数字を描画する	{U}
 0803581C	画面下にメッセージを表示する	BB機能	{J}
-08035EDC	回復の演出の開始	{J}
+08035EDC	BeginStatusClearFx__HealBadStatus	{J}
 08038320	塔や遺跡をクリアしたとき	戦績表示	{J}
 0804B1CC	アイテムの選択メニューを表示	{J}
 08082354	聖石を利用した時のエフェクト2	イベント命令から呼び出される命令とは別	{J}
@@ -11881,7 +11881,7 @@
 080CB370	ゲームOPタイトルを表示	{J}
 080CB390	ゲームOPタイトルを表示2	{J}
 080CB3A8	光の輪っかを表示した後にOPを表示	{J}
-08035DDC	回復の演出の開始	{U}
+08035DDC	BeginStatusClearFx__HealBadStatus	{U}
 080381F4	塔や遺跡をクリアしたとき	戦績表示	{U}
 0804A430	アイテムの選択メニューを表示	{U}
 08080014	聖石を利用した時のエフェクト2	イベント命令から呼び出される命令とは別	{U}
@@ -14810,3 +14810,7 @@
 0807DB38	BeginMapAnimDance	{J}
 0807B634	BeginHatchFromEggsMapAnim	{U}
 0807D97C	BeginHatchFromEggsMapAnim	{J}
+0803584C	ExecPoison	{U}
+080358C0	ExecHatchFromEggs	{U}
+0803594C	ExecPoison	{J}
+080359C0	ExecHatchFromEggs	{J}

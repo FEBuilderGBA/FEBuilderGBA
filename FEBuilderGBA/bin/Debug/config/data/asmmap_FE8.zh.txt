@@ -11816,7 +11816,7 @@ r3=X tile position of menu of the right	{U}
 0807BCA8	用于管理地图动画帧的例程	{U}
 0807BA28	在地图动画条形图上绘制数字	{U}
 0803581C	在屏幕底部显示一条消息	BB功能	{J}
-08035EDC	恢复示范的开始	{J}
+08035EDC	BeginStatusClearFx__HealBadStatus	{J}
 0804B1CC	显示项目选择菜单	{J}
 08082354	使用石头时的效果2	它与从事件指令调用的指令不同	{J}
 080943D4	绘制从菜单中选择的单位画面	{J}
@@ -11839,7 +11839,7 @@ r3=X tile position of menu of the right	{U}
 080CB370	显示游戏标题OP	{J}
 080CB390	显示游戏标题OP 2	{J}
 080CB3A8	显示光环后显示OP	{J}
-08035DDC	恢复示范的开始	{U}
+08035DDC	BeginStatusClearFx__HealBadStatus	{U}
 0804A430	显示项目选择菜单	{U}
 08080014	使用石头时的效果2	它与从事件指令调用的指令不同	{U}
 0809BE60	从攻击推进屏幕调用的单元之间的项目交换	{U}

@@ -11858,7 +11858,7 @@ r3=X tile position of menu of right	{U}
 0807BCA8	A routine for managing frames of map animation		{U}
 0807BA28	Draw numbers on map animation bar graph		{U}
 0803581C	Display a message at bottom of screen		BB function		{J}
-08035EDC	start of recovery demonstration		{J}
+08035EDC	BeginStatusClearFx__HealBadStatus		{J}
 08038320	When clearing towers and ruins	Show record display	{J}
 0804B1CC	Display item selection menu		{J}
 08082354	Effect when using stone 2		It is different from instruction called from event instruction		{J}
@@ -11882,7 +11882,7 @@ r3=X tile position of menu of right	{U}
 080CB370	Display game title OP		{J}
 080CB390	Display game title OP 2		{J}
 080CB3A8	Show OP after displaying ring of light		{J}
-08035DDC	start of recovery demonstration		{U}
+08035DDC	BeginStatusClearFx__HealBadStatus		{U}
 080381F4	When clearing towers and ruins	Show record display	{U}
 0804A430	Display item selection menu		{U}
 08080014	Effect when using stone 2		It is different from instruction called from event instruction		{U}

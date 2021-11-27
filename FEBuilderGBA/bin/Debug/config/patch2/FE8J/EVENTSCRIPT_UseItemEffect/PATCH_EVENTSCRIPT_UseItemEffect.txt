@@ -1,0 +1,141 @@
+﻿NAME=アイテムを利用した時のエフェクトを表示して回復させる(イベント命令)
+NAME.en=Add Event: Display and recover the effect when using the item
+NAME.zh=Add Event: Display and recover the effect when using the item
+
+AUTHOR=7743
+
+TYPE=EA
+TAG=#EVENT #ENGINE
+EA=Installer.event
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_UsePureWater.dmp=0x70 0xB5 0x04 0x1C
+
+INFO=このパッチは、以下の複数のイベント命令を使えるようにします。\r\n聖水のエフェクトを表示して利用する(ASMC_UsePureWater)\r\nターン数は最大0xFです。\r\nターン数を0にするとアニメーションを表示するだけのエアプになります。\r\n\r\n松明のエフェクトを表示して利用する(ASMC_UseTorch)\r\nターン数は最大0xFです\r\nターン数を0にするとアニメーションを表示するだけのエアプになります。\r\n\r\n傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)\r\nHealValueに回復量を指定できます。\r\nHP上限のチェックが行われるので、全回復したい場合は120としてください。\r\n\r\n毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)\r\nHPが0になるとユニットは死にます。確実に殺したい場合は、120を指定してください。\r\nダメージに255を指定すると、HP1で踏みとどまります。\r\n毒のモーションを利用するだけで、ステータスが毒になるわけではありません。\r\n\r\n地雷のモーションを利用してダメージを与える(ASMC_SelfDamageLikeBomb)\r\nHPが0になるとユニットは死にます。確実に殺したい場合は、120を指定してください。\r\nダメージに255を指定すると、HP1で踏みとどまります。\r\n\r\n毒消しのモーションでBADStatusを治療する(ASMC_HealBadStatusWithAntitoxin)\r\n毒消しのモーションでBADStatusを治療します。\r\n毒以外も直せます。\r\n状態異常ではない状態で、実行するとエアプになります。\r\n\r\nブーンというエフェクトでBadStatusを治療する(ASMC_HealBadStatusLikeBoon)\r\n状態異常ではない状態で、実行するとエアプになります。\r\n\r\n
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_UsePureWater.dmp}	聖水のエフェクトを表示して利用する(ASMC_UsePureWater)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:12=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:Turn]、聖水のエフェクトを表示して利用する(ASMC_UsePureWater)
+EVENTSCRIPT:13=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:Turn]、聖水のエフェクトを表示して利用する(ASMC_UsePureWater)
+EVENTSCRIPT:14=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	操作中のユニットに[ZZ:DECIMAL:Turn]、聖水のエフェクトを表示して利用する(ASMC_UsePureWater)
+
+
+EVENTSCRIPT:21=400D0000{$L1:ASMC_UseTorch.dmp}	松明のエフェクトを表示して利用する(ASMC_UseTorch)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:22=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:Turn]、松明のエフェクトを表示して利用する(ASMC_UseTorch)
+EVENTSCRIPT:23=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UseTorch.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:Turn]、松明のエフェクトを表示して利用する(ASMC_UseTorch)
+EVENTSCRIPT:24=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	操作中のユニットに[ZZ:DECIMAL:Turn]、松明のエフェクトを表示して利用する(ASMC_UseTorch)
+
+
+EVENTSCRIPT:31=400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:32=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:33=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:34=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	操作中のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+
+
+EVENTSCRIPT:41=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:42=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:DamageValue]、毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:43=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:DamageValue]、毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:44=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	操作中のユニットに[ZZ:DECIMAL:DamageValue]、毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)
+
+
+EVENTSCRIPT:51=400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	地雷のモーションを利用してダメージを与える(ASMC_SelfDamageLikeBomb)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:52=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:DamageValue]、地雷のモーションを利用してダメージを与える(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:53=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:DamageValue]、地雷のモーションを利用してダメージを与える(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:54=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	操作中のユニットに[ZZ:DECIMAL:DamageValue]、地雷のモーションを利用してダメージを与える(ASMC_SelfDamageLikeBomb)
+
+EVENTSCRIPT:61=400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	毒消しのモーションでBADStatusを治療する(ASMC_HealBadStatusWithAntitoxin)(LOW)	Slot1=Unit
+EVENTSCRIPT:62=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:UNIT:ユニット]を、毒消しのモーションでBADStatusを治療する(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:63=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットを、毒消しのモーションでBADStatusを治療する(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:64=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	操作中のユニットを、毒消しのモーションでBADStatusを治療する(ASMC_HealBadStatusWithAntitoxin)
+
+EVENTSCRIPT:71=400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	ブーンというエフェクトでBadStatusを治療する(ASMC_HealBadStatusLikeBoon)(LOW)	Slot1=Unit
+EVENTSCRIPT:72=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:UNIT:ユニット]を、ブーンというエフェクトでBadStatusを治療する(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:73=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットを、ブーンというエフェクトでBadStatusを治療する(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:74=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	操作中のユニットを、ブーンというエフェクトでBadStatusを治療する(ASMC_HealBadStatusLikeBoon)
+
+
+INFO.en=This patch allows you to use the following multiple event instructions. \r\nUse the Pure Water effect(ASMC_UsePureWater).\r\nThe maximum number of turns is 0xF.\r\nIf the number of turns is set to 0, the emulate will only display the animation.\r\n\r\nUse the Torch Item effect(ASMC_UseTorch)\r\nThe maximum number of turns is 0xF.\r\nIf you set the number of turns to 0, it will be an emulate that just displays the animation.\r\n\r\nRecovery HP with Heal effect (ASMC_HealLikeVulnerary)\r\nThe amount of recovery can be specified in HealValue.\r\nThe HP limit is checked, so if you want to recover all of your HP, set it to 120.\r\n\r\nSelfDamage using Poison effect (ASMC_SelfDamageLikePoison)\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\nJust because you use the poison motion, it does not mean that the status will be poisoned.\r\n\r\nSelfDamage using Mine effect(ASMC_SelfDamageLikeBomb).\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\n\r\nCure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)\r\nCures a BADStatus with an antitoxin motion.\r\nIt can be used to heal conditions other than poison.\r\nThe user is not in an bad state and will be emulate if performed.\r\n\r\nCure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)\r\nThis is not an bad state, and will result in emulate.\r\n\r\n
+INFO.zh=This patch allows you to use the following multiple event instructions. \r\nUse the Pure Water effect(ASMC_UsePureWater).\r\nThe maximum number of turns is 0xF.\r\nIf the number of turns is set to 0, the emulate will only display the animation.\r\n\r\nUse the Torch Item effect(ASMC_UseTorch)\r\nThe maximum number of turns is 0xF.\r\nIf you set the number of turns to 0, it will be an emulate that just displays the animation.\r\n\r\nRecovery HP with Heal effect (ASMC_HealLikeVulnerary)\r\nThe amount of recovery can be specified in HealValue.\r\nThe HP limit is checked, so if you want to recover all of your HP, set it to 120.\r\n\r\nSelfDamage using Poison effect (ASMC_SelfDamageLikePoison)\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\nJust because you use the poison motion, it does not mean that the status will be poisoned.\r\n\r\nSelfDamage using Mine effect(ASMC_SelfDamageLikeBomb).\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\n\r\nCure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)\r\nCures a BADStatus with an antitoxin motion.\r\nIt can be used to heal conditions other than poison.\r\nThe user is not in an bad state and will be emulate if performed.\r\n\r\nCure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)\r\nThis is not an bad state, and will result in emulate.\r\n\r\n
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_UsePureWater.dmp}	Use the Pure Water effect(ASMC_UsePureWater)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:12.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+EVENTSCRIPT:13.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+EVENTSCRIPT:14.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	Current unit [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+
+EVENTSCRIPT:21.en=400D0000{$L1:ASMC_UseTorch.dmp}	Use the Torch Item effect(ASMC_UseTorch)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:22.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	[XX:UNIT:Unit]に[ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+EVENTSCRIPT:23.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UseTorch.dmp}	[XX:MAPX:X][XX:MAPX:Y]のUnitに[ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+EVENTSCRIPT:24.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	Current unit [ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+
+
+EVENTSCRIPT:31.en=400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Recovery HP with Heal effect(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:32.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:33.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:34.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+
+
+EVENTSCRIPT:41.en=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:42.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:43.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:44.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	Current unit [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+
+
+EVENTSCRIPT:51.en=400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:52.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:53.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:54.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	Current unit [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+
+EVENTSCRIPT:61.en=400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)(LOW)	Slot1=Unit
+EVENTSCRIPT:62.en=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:UNIT:Unit], Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:63.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:64.en=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	Current unit, Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+
+EVENTSCRIPT:71.en=400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)(LOW)	Slot1=Unit
+EVENTSCRIPT:72.en=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:UNIT:Unit], Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:73.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:74.en=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	Current unit, Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+
+
+
+
+INFO.zh=This patch allows you to use the following multiple event instructions. \r\nUse the Pure Water effect(ASMC_UsePureWater).\r\nThe maximum number of turns is 0xF.\r\nIf the number of turns is set to 0, the emulate will only display the animation.\r\n\r\nUse the Torch Item effect(ASMC_UseTorch)\r\nThe maximum number of turns is 0xF.\r\nIf you set the number of turns to 0, it will be an emulate that just displays the animation.\r\n\r\nRecovery HP with Heal effect (ASMC_HealLikeVulnerary)\r\nThe amount of recovery can be specified in HealValue.\r\nThe HP limit is checked, so if you want to recover all of your HP, set it to 120.\r\n\r\nSelfDamage using Poison effect (ASMC_SelfDamageLikePoison)\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\nJust because you use the poison motion, it does not mean that the status will be poisoned.\r\n\r\nSelfDamage using Mine effect(ASMC_SelfDamageLikeBomb).\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\n\r\nCure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)\r\nCures a BADStatus with an antitoxin motion.\r\nIt can be used to heal conditions other than poison.\r\nThe user is not in an bad state and will be emulate if performed.\r\n\r\nCure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)\r\nThis is not an bad state, and will result in emulate.\r\n\r\n
+INFO.zh=This patch allows you to use the following multiple event instructions. \r\nUse the Pure Water effect(ASMC_UsePureWater).\r\nThe maximum number of turns is 0xF.\r\nIf the number of turns is set to 0, the emulate will only display the animation.\r\n\r\nUse the Torch Item effect(ASMC_UseTorch)\r\nThe maximum number of turns is 0xF.\r\nIf you set the number of turns to 0, it will be an emulate that just displays the animation.\r\n\r\nRecovery HP with Heal effect (ASMC_HealLikeVulnerary)\r\nThe amount of recovery can be specified in HealValue.\r\nThe HP limit is checked, so if you want to recover all of your HP, set it to 120.\r\n\r\nSelfDamage using Poison effect (ASMC_SelfDamageLikePoison)\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\nJust because you use the poison motion, it does not mean that the status will be poisoned.\r\n\r\nSelfDamage using Mine effect(ASMC_SelfDamageLikeBomb).\r\nWhen the HP reaches 0, the unit dies. If you want to be sure to kill it, specify 120.\r\nIf you specify 255 for damage, the unit will stay at 1 HP.\r\n\r\nCure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)\r\nCures a BADStatus with an antitoxin motion.\r\nIt can be used to heal conditions other than poison.\r\nThe user is not in an bad state and will be emulate if performed.\r\n\r\nCure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)\r\nThis is not an bad state, and will result in emulate.\r\n\r\n
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_UsePureWater.dmp}	Use the Pure Water effect(ASMC_UsePureWater)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:12.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+EVENTSCRIPT:13.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UsePureWater.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+EVENTSCRIPT:14.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UsePureWater.dmp}	Current unit [ZZ:DECIMAL:Turn], Use the Pure Water effect(ASMC_UsePureWater)
+
+EVENTSCRIPT:21.zh=400D0000{$L1:ASMC_UseTorch.dmp}	Use the Torch Item effect(ASMC_UseTorch)(LOW)	Slot1=Unit, Slot6=Turn
+EVENTSCRIPT:22.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	[XX:UNIT:Unit]に[ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+EVENTSCRIPT:23.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_UseTorch.dmp}	[XX:MAPX:X][XX:MAPX:Y]のUnitに[ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+EVENTSCRIPT:24.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_UseTorch.dmp}	Current unit [ZZ:DECIMAL:Turn], Use the Torch Item effect(ASMC_UseTorch)
+
+
+EVENTSCRIPT:31.zh=400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Recovery HP with Heal effect(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:32.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:33.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:34.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+
+
+EVENTSCRIPT:41.zh=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:42.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:43.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+EVENTSCRIPT:44.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	Current unit [ZZ:DECIMAL:DamageValue], SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)
+
+
+EVENTSCRIPT:51.zh=400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)(LOW)	Slot1=Unit, Slot6=DamageValue
+EVENTSCRIPT:52.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:53.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+EVENTSCRIPT:54.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikeBomb.dmp}	Current unit [ZZ:DECIMAL:DamageValue], SelfDamage using Mine effect(ASMC_SelfDamageLikeBomb)
+
+EVENTSCRIPT:61.zh=400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)(LOW)	Slot1=Unit
+EVENTSCRIPT:62.zh=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:UNIT:Unit], Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:63.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+EVENTSCRIPT:64.zh=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusWithAntitoxin.dmp}	Current unit, Cure BADStatus with Antitoxin effect(ASMC_HealBadStatusWithAntitoxin)
+
+EVENTSCRIPT:71.zh=400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)(LOW)	Slot1=Unit
+EVENTSCRIPT:72.zh=40050100XXXXXXXX400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:UNIT:Unit], Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:73.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+EVENTSCRIPT:74.zh=40050100FFFFFFFF400D0000{$L1:ASMC_HealBadStatusLikeBoon.dmp}	Current unit, Cure BADStatus with Boon effect(ASMC_HealBadStatusLikeBoon)
+
+AUTHOR=7743
