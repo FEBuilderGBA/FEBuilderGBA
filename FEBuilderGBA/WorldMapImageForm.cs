@@ -343,7 +343,6 @@ namespace FEBuilderGBA
                 uint image = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_image_pointer());
                 uint palette = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palette_pointer());
                 uint dpalette = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_dpalette_pointer());
-                uint palettemap = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer());
 
                 FEBuilderGBA.Address.AddAddress(list, image
                     , isPointerOnly ? 0 : (uint)(480 / 2 * 320)
@@ -360,11 +359,12 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.worldmap_big_dpalette_pointer()
                     , "worldmap_big_dpalette"
                     , FEBuilderGBA.Address.DataTypeEnum.PAL);
-                FEBuilderGBA.Address.AddAddress(list, palettemap
-                    , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, palettemap)
+                FEBuilderGBA.Address.AddLZ77Pointer(list
                     , Program.ROM.RomInfo.worldmap_big_palettemap_pointer()
                     , "worldmap_big_palettemap"
-                    , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                    , isPointerOnly
+                    , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+
             }
             {
                 FEBuilderGBA.Address.AddLZ77Pointer(list

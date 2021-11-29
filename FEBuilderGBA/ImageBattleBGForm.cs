@@ -171,25 +171,20 @@ namespace FEBuilderGBA
             {
                 selfname = "BattleBG " + U.To0xHexString(i);
 
-                uint image = Program.ROM.p32(0 + p);
-                FEBuilderGBA.Address.AddAddress(list,image
-                    , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
+                FEBuilderGBA.Address.AddLZ77Pointer(list
                     , p + 0
-                    , selfname
+                    , selfname + "_img"
+                    , isPointerOnly
                     , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-
-                uint tsa = Program.ROM.p32(4 + p);
-                FEBuilderGBA.Address.AddAddress(list,tsa
-                    , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, tsa)
+                FEBuilderGBA.Address.AddLZ77Pointer(list
                     , p + 4
-                    , selfname
-                    , FEBuilderGBA.Address.DataTypeEnum.LZ77TSA);
-
-                uint palette = Program.ROM.p32(8 + p);
-                FEBuilderGBA.Address.AddAddress(list,palette
-                    , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, palette)
+                    , selfname + "_tsa"
+                    , isPointerOnly
+                    , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                FEBuilderGBA.Address.AddLZ77Pointer(list
                     , p + 8
-                    , selfname
+                    , selfname + "_lz77pal"
+                    , isPointerOnly
                     , FEBuilderGBA.Address.DataTypeEnum.LZ77PAL);
             }
         }
