@@ -82,6 +82,12 @@ namespace FEBuilderGBA
                 }
                 if (t.name == "FEditor")
                 {
+                    g_Cache_CSASpellTableAddr = FindCSASpellTableLow("FEditor", out g_Cache_CSASpellTablePointer);
+                    if (g_Cache_CSASpellTablePointer == U.NOT_FOUND)
+                    {//テーブルが見つからないので、ぶっ壊れている
+                        continue;
+                    }
+
                     baseaddr = t.addr;
                     dimaddr = t.dim;
                     nodimaddr = t.no_dim;
@@ -90,6 +96,12 @@ namespace FEBuilderGBA
                 }
                 if (t.name == "SCA_Creator")
                 {
+                    g_Cache_CSASpellTableAddr = FindCSASpellTableLow("SCA_Creator", out g_Cache_CSASpellTablePointer);
+                    if (g_Cache_CSASpellTablePointer == U.NOT_FOUND)
+                    {//テーブルが見つからないので、ぶっ壊れている
+                        continue;
+                    }
+
                     baseaddr = t.addr;
                     dimaddr = t.dim;
                     nodimaddr = t.no_dim;
@@ -106,22 +118,15 @@ namespace FEBuilderGBA
 
         static uint g_Cache_CSASpellTableAddr = U.NOT_FOUND;
         static uint g_Cache_CSASpellTablePointer = U.NOT_FOUND;
-        //拡張された魔法テーブル(CSASpellTable)を検索します.
-        public static uint FindCSASpellTable(string type, out uint out_pointer)
+        public static uint GetCSASpellTableAddr()
         {
-            if (g_Cache_CSASpellTableAddr == U.NOT_FOUND)
-            {
-                g_Cache_CSASpellTableAddr = FindCSASpellTableLow(type, out g_Cache_CSASpellTablePointer);
-            }
-            out_pointer = g_Cache_CSASpellTablePointer;
-            if (g_Cache_CSASpellTableAddr == U.NOT_FOUND)
-            {
-                return g_Cache_CSASpellTableAddr;
-            }
-            Debug.Assert(Program.ROM.p32(g_Cache_CSASpellTablePointer) == g_Cache_CSASpellTableAddr);
             return g_Cache_CSASpellTableAddr;
         }
-
+        public static uint GetCSASpellTablePointer()
+        {
+            return g_Cache_CSASpellTablePointer;
+        }
+        
         public struct SpellTableSt
         {
             public string name;
@@ -185,16 +190,8 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            uint csaSpellTable, csaSpellTablePointer;
-            if (magicType == magic_system_enum.CSA_CREATOR)
-            {
-                csaSpellTable = ImageUtilMagic.FindCSASpellTable("SCA_Creator", out csaSpellTablePointer);
-            }
-            else if (magicType == magic_system_enum.FEDITOR_ADV)
-            {
-                csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
-            }
-            else
+            uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
+            if (csaSpellTable == U.NOT_FOUND)
             {
                 Debug.Assert(false);
                 return false;

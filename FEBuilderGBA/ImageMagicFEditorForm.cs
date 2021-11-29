@@ -29,11 +29,12 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(ShowZoomComboBox, 0);
             Dictionary<uint, string> effectDic = U.LoadDicResource(U.ConfigDataFilename("item_anime_effect_"));
             uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
-            uint csaSpellTablePointer;
-            uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+
+            uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
             if (csaSpellTable == U.NOT_FOUND)
             {
                 R.ShowWarning("魔法リストの拡張がされていません。\r\nリストの拡張を選択して、魔法リストを増やしてください。");
+                return;
             }
 
             this.InputFormRef = Init(this, DimAddr, NoDimAddr, spellDataCount, csaSpellTable, effectDic);
@@ -111,8 +112,7 @@ namespace FEBuilderGBA
             {
                 this.Close();
             }
-            uint csaSpellTablePointer;
-            uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+            uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
             if (csaSpellTable == U.NOT_FOUND)
             {
                 this.MagicListExpandsButton.PerformClick();
@@ -360,8 +360,11 @@ namespace FEBuilderGBA
             }
 
             uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
-            uint csaSpellTablePointer;
-            uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+            uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
+            if (csaSpellTable == U.NOT_FOUND)
+            {
+                return effectDic;
+            }
 
             InputFormRef = Init(from, dimaddr, no_dimaddr, spellDataCount, csaSpellTable, effectDic);
             List<U.AddrResult> ret = InputFormRef.MakeList();
@@ -400,12 +403,13 @@ namespace FEBuilderGBA
 
             {
                 uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
-                uint csaSpellTablePointer;
-                uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+                uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
                 if (csaSpellTable == U.NOT_FOUND)
                 {
                     return;
                 }
+                uint csaSpellTablePointer = ImageUtilMagic.GetCSASpellTablePointer();
+
                 Dictionary<uint, string> effectDic = new Dictionary<uint, string>();
                 InputFormRef = Init(null, dimaddr, no_dimaddr, spellDataCount, csaSpellTable, effectDic);
 
@@ -456,8 +460,7 @@ namespace FEBuilderGBA
 
             {
                 uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
-                uint csaSpellTablePointer;
-                uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+                uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
                 if (csaSpellTable == U.NOT_FOUND)
                 {
                     return;
@@ -506,8 +509,7 @@ namespace FEBuilderGBA
 
             {
                 uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
-                uint csaSpellTablePointer;
-                uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+                uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
                 if (csaSpellTable == U.NOT_FOUND)
                 {
                     return;
@@ -554,8 +556,7 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"expands");
 
-            uint csaSpellTablePointer;
-            uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("FEditor", out csaSpellTablePointer);
+            uint csaSpellTablePointer = ImageUtilMagic.GetCSASpellTablePointer();
             if (csaSpellTablePointer == U.NOT_FOUND)
             {
                 R.ShowStopError("CSASpellTable Not Found.");
@@ -576,7 +577,7 @@ namespace FEBuilderGBA
             {//セットされていなければ初期値は0
                 datasize = 0;
             }
-            csaSpellTable = InputFormRef.ExpandsArea(this, 254, csaSpellTablePointer, datasize, FEBuilderGBA.InputFormRef.ExpandsFillOption.NO, 5 * 4, undodata);
+            uint csaSpellTable = InputFormRef.ExpandsArea(this, 254, csaSpellTablePointer, datasize, FEBuilderGBA.InputFormRef.ExpandsFillOption.NO, 5 * 4, undodata);
             Program.Undo.Push(undodata);
 
             //開きなおす.

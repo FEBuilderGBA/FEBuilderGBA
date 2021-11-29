@@ -6710,13 +6710,31 @@ namespace FEBuilderGBA
 
         static bool IsMakePatchStructDataListTarget(string type, string checkIF, bool isInstallOnly, bool isStructOnly)
         {
-            if (isStructOnly)
-            {
-                if (type != "STRUCT")
-                {//構造体だけ
+            if (type == "STRUCT")
+            {//構造体
+                if (checkIF == "E")
+                {//エラーがおきているので無視
+                    return false;
+                }
+                return true;
+            }
+            else
+            {//構造体ではない
+                if (isStructOnly)
+                {//構造体以外はダメです
                     return false;
                 }
             }
+
+            if (type == "IMAGE")
+            {//画像
+                if (checkIF == "E")
+                {//エラーがおきているので無視
+                    return false;
+                }
+                return true;
+            }
+            //構造体と画像以外
 
             if (isInstallOnly)
             {

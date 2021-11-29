@@ -719,7 +719,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-
+                uint hex = U.ConvertMojiCharToUnitFast(ch, priorityCode);
                 string type = (isItemFont ? "item" : "text");
 
                 Bitmap bitmap;
@@ -735,9 +735,20 @@ namespace FEBuilderGBA
                 }
 
                 ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
-                string name = U.escape_filename(a.Info);
+                string name = U.escape_filename(a.Info) + "_" + U.ToHexString(hex);
                 string font_filename = Path.Combine(basedir, name + ".png");
-                U.BitmapSave(bitmap, font_filename);
+                try
+                {
+                    U.BitmapSave(bitmap, font_filename);
+                }
+                catch (Exception)
+                {//このOSではこの文字のファイル名は使えないので削ります
+                    string trimName = U.substr(a.Info, 0, a.Info.Length - 2);
+                    name = trimName + "_" + U.ToHexString(hex);
+                    font_filename = Path.Combine(basedir, name + ".png");
+                    U.BitmapSave(bitmap, font_filename);
+                }
+
                 bitmap.Dispose();
 
                 sb.Append(ch);
@@ -746,7 +757,7 @@ namespace FEBuilderGBA
                 sb.Append("\t");
                 sb.Append(width);
                 sb.Append("\t");
-                sb.AppendLine(a.Info + ".png");
+                sb.AppendLine(Path.GetFileName(font_filename));
             }
 
             return sb;
