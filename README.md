@@ -45,7 +45,12 @@ If you find a bug that you can not solve by any means, please create report.7z f
 https://discordapp.com/invite/Yzztqqa
 Do NOT send your ROM (.gba) directly.
 
+SourceCode:
 https://github.com/FEBuilderGBA/FEBuilderGBA
+
+Installer:
+https://github.com/FEBuilderGBA/FEBuilderGBA_Installer/releases/download/ver_20200130.17.1/FEBuilderGBA_Downloader.exe
+
 
 FE_Builder_GBA
 ===
@@ -92,7 +97,11 @@ FEBuilderGBAはウイルスではありません。
 https://discordapp.com/invite/Yzztqqa
 (ROMは送信しないでください。)  
 
+SourceCode:
 https://github.com/FEBuilderGBA/FEBuilderGBA
+
+Installer:
+https://github.com/FEBuilderGBA/FEBuilderGBA_Installer/releases/download/ver_20200130.17.1/FEBuilderGBA_Downloader.exe
 
 
 FE_Builder_GBA
@@ -140,4 +149,9 @@ The source code is all available on github, so you can build it yourself if you 
 如果您发现无法解决的错误，请在'菜单'的'文件' -> '问题报告工具'中创建report.7z，并咨询社区。
 https://discordapp.com/invite/Yzztqqa
 （请不要发送ROM。）  
+
+SourceCode:
 https://github.com/FEBuilderGBA/FEBuilderGBA
+
+Installer:
+https://github.com/FEBuilderGBA/FEBuilderGBA_Installer/releases/download/ver_20200130.17.1/FEBuilderGBA_Downloader.exe
