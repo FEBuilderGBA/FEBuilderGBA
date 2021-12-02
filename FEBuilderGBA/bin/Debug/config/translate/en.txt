@@ -5431,9 +5431,6 @@ Usable Item
 :特効再取得
 Reload special benefits
 
-:特効ポインタ書き込み
-Write Effectiveness Pointer
-
 :特効ポインタアドレス
 Effectiveness Pointer Address
 

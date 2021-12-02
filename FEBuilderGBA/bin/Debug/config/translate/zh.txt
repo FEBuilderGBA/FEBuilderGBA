@@ -5431,9 +5431,6 @@ If you check this and cancel the installation of the patch, \r\nthis patch will 
 :特効再取得
 特效再取得
 
-:特効ポインタ書き込み
-特效指针保存
-
 :特効ポインタアドレス
 特效指针地址
 

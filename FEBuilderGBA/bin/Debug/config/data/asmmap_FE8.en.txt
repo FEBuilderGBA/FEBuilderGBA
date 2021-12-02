@@ -2144,8 +2144,8 @@ r3=X tile position of menu of right	{U}
 080D0214	Sound effect playback (discovered when tracking sound effects playback)	{U}
 0803144c	Base address of transporter	{J}
 08031500	Base address of transporter	{U}
-08016848	Drawing a sale item column in a store	{U}
-080165F0	Drawing a sale item column in a store	{J}
+08016848	DrawItemMenuCommand	Drawing a sale item column in a store	{U}
+080165F0	DrawItemMenuCommand	Drawing a sale item column in a store	{J}
 0802e42c	Obtain address of designated map change	r0=Map Change Id	{J}
 080B3984	Show list of songs in sound room	{J}
 080AED64	Show list of songs in sound room	{U}

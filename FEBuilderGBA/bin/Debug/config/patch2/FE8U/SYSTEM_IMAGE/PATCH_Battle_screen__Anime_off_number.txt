@@ -15,3 +15,5 @@ NAME.en=Battle anime off number
 NAME.zh=战斗画面_NUMBER图像
 
 AUTHOR=レイファ
+AUTHOR.en=Rayfa.
+AUTHOR.zh=雷法。

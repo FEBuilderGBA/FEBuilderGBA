@@ -2082,8 +2082,8 @@ r3=X tile position of menu of the right	{U}
 08031450	指向运输队的内容	{J}
 0803144c	运输车的基地址	{J}
 08031500	运输车的基地址	{U}
-08016848	在商店中绘制销售项目列	{U}
-080165F0	在商店中绘制销售项目列	{J}
+08016848	DrawItemMenuCommand	在商店中绘制销售项目列	{U}
+080165F0	DrawItemMenuCommand	在商店中绘制销售项目列	{J}
 0802e42c	获取指定地图更改的地址	r0=Map Change Id	{J}
 080B3984	在音室中显示歌曲列表	{J}
 080AED64	在音室中显示歌曲列表	{U}
