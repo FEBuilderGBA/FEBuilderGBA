@@ -1841,7 +1841,7 @@ There is a Srag, but the tile change of map is not set. x:{0} y:{1}
 Even though it is a village that can be visited, "{0}" is set for the type.
 
 :訪問できる村なのに、マップ変化が設定されていません。x:{0} y:{1}\r\n達成フラグが0なので「訪問村」ではなく、何度も訪問できる「民家」のようにも思います。\r\nその場合は、種類を「訪問村」ではなく「制圧ポイントと民家」に変更してください。
-The Tile Change is not set even though it is a village that can be visited.x: {0} y: {1}.\r\nSince the achievement flag is 0, I think it's not a "visited village" but a "private house" that you can visit many times.\r\nIn that case, change the type to "Seize Points/Houses" instead of "Visit Village".
+The Tile Change is not set even though it is a village that can be visited.x: {0} y: {1}.\r\nSince the Completion Flag is 0, I think it's not a "visited village" but a "private house" that you can visit many times.\r\nIn that case, change the type to "Seize Points/Houses" instead of "Visit Village".
 
 :訪問できる村なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n村のイベントには、村の座標にマップ変化を設定する必要があります。
 The Tile Change is not set even though it is a village that can be visited.x: {0} y: {1}.\r\nFor village events, you need to set Tile Changes to the village coordinates.
@@ -1884,6 +1884,9 @@ A turn event has incorrect termination data.\r\nThe trigger type is 0, but uses 
 
 :ターンイベントに不明なタイプ「{0}」が利用されました。
 An unknown type "{0}" was used for a Turn Event.
+
+:判定フラグと達成フラグに同じフラグ({0})が設定されています。\r\n両方に同じフラグにすると、そのイベントは完了済みとして処理されるため、永久に実行されません。
+The same flag ({0}) is set for the Trigger flag and the Completion Flag.\r\nIf you set both to the same flag, the event will be treated as completed and will NOT run forever.
 
 :常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
 A conditional event has incorrect termination data.\r\nThe trigger type is 0, but uses the "{0}" flag type.\r\nIn the case of termination data, the flag needs to be 0 or else critical errors may occur.

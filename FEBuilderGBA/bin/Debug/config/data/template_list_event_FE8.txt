@@ -20,7 +20,7 @@ template_event_COND_RANDOM50_100.txt	もし、乱数で50/100以上の数字を�
 template_event_COND_DEPLOY_FE8.txt	もし、ユニットがマップに配置されていれば
 template_event_COND_UNITINAREA_FE8.txt	もし、ユニットが所定の範囲にいるならば
 template_event_COND_ACTIVEID_FE8.txt	もし、特定のユニットを操作していれば
-template_event_COND_Gaiden.txt	外伝分岐を作る。もし、3ターン以内にクリアすれば外伝に。
+template_event_COND_Gaiden.txt	外伝分岐サンプル: もし、5ターン以内クリアであれば外伝へ
 template_event_COND_COUNTER_MORE_5_FE8.txt	もし、COUNTERが5以上だったら
 template_event_COND_COUNTER_LESS_1_FE8.txt	もし、COUNTERが1以下だったら
 template_event_COND_COUNTER_MORE_5_ELSE_FE8.txt	もし、COUNTERが5以上だったら、または以外であれば
@@ -47,3 +47,4 @@ template_event_PREPARATION_FE8.txt	自軍と敵軍を読み込み進撃開始を
 template_event_Turn_off_background_FE8.txt	背景をオフにして消すときにフェードアウトを入れて画面を乱さない
 template_event_RedFlushWarningEffect.txt	赤色の警報/警告 画面全体を赤色に点滅させる 画面演出
 template_event_StairsSoundEffect.txt	階段を下りるような音を出す 画面演出
+template_event_Move_unit_without_closing_balloon_while_talking.txt	会話しながら吹き出しを閉じずにユニットを移動させる

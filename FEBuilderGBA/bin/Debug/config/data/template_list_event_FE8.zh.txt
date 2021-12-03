@@ -21,7 +21,7 @@ template_event_COND_RANDOM50_100.txt	If hit random number of 50/100 or more.
 template_event_COND_DEPLOY_FE8.txt	如果部署了人物
 template_event_COND_UNITINAREA_FE8.txt	如果人物在预定的坐标范围内
 template_event_COND_ACTIVEID_FE8.txt	如果您正在操作特定人物
-template_event_COND_Gaiden.txt	做一个大分支如果你在3回合内清除，它将是一个外伝
+template_event_COND_Gaiden.txt	Make Gaiden Branch:If clear within 5 turns, goto Gaiden
 template_event_COND_COUNTER_MORE_5_FE8.txt	If COUNTER is 5 or more.
 template_event_COND_COUNTER_LESS_1_FE8.txt	If COUNTER is less than 1.
 template_event_COND_COUNTER_MORE_5_ELSE_FE8.txt	If COUNTER is 5 or more, ELSE
@@ -50,3 +50,4 @@ template_event_Turn_off_background_FE8.txt	Turn off background and fade it out t
 template_event_COND_Coord_WarpOUT_WarpIN_FE8.txt	具有特定坐标的变形单位。
 template_event_RedFlushWarningEffect.txt	Red alarm like a warning. Flashes the entire screen red. MapEffect
 template_event_StairsSoundEffect.txt	Makes a sound like going down the stairs. MapEffect
+template_event_Move_unit_without_closing_balloon_while_talking.txt	Move the unit without closing the speech bubble while talking.

@@ -1334,6 +1334,12 @@ namespace FEBuilderGBA
                 {//01=常時条件
                     uint jflag = Program.ROM.u32(addr + 8);
                     FELint.CheckFlag(jflag, errors, CONDTYPE.ALWAYS, addr);
+
+                    if (jflag != 0 && jflag == flag)
+                    {
+                        errors.Add(new FELint.ErrorSt(CONDTYPE.ALWAYS, addr
+                            , R._("判定フラグと達成フラグに同じフラグ({0})が設定されています。\r\n両方に同じフラグにすると、そのイベントは完了済みとして処理されるため、永久に実行されません。", jflag)));   
+                    }
                 }
                 else if (type == 0xE && Program.ROM.RomInfo.version() >= 7)
                 {//0E=ASM条件

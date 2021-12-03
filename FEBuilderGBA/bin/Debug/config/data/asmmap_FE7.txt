@@ -2061,7 +2061,7 @@
 08019CE0	StoreMovCostTable	{U}
 08019D00	FillMovementMap	{U}
 0801A2D4	MapAddInRange	{U}
-0801A3D8	StoreR3ToMapSomething	{U}
+0801A3D8	MapSetInRange	{U}
 0801A4D4	FillMapAttackRangeForUnit	{U}
 0801AC60	FillRangeByRangeMask	{U}
 0801AE10	FillMapStaffRangeForUnit	{U}
@@ -2904,7 +2904,7 @@
 0801A0C0	StoreMovCostTable	{J}
 0801A0E0	FillMovementMap	{J}
 0801A6B4	MapAddInRange	{J}
-0801A7B8	StoreR3ToMapSomething	{J}
+0801A7B8	MapSetInRange	{J}
 0801A8B4	FillMapAttackRangeForUnit	{J}
 0801B040	FillRangeByRangeMask	{J}
 0801B1F0	FillMapStaffRangeForUnit	{J}
