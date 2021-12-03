@@ -1,0 +1,45 @@
+NAME=輸送隊のアイテムソートの方法を変更する
+NAME.en=Change the item sorting method of the Supply
+NAME.zh=Change the item sorting method of the Supply
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: ItemID|OFFF|単価|GOLD|攻撃力|DMGG|武器レベル|WLVL|アイコンID|ICON
+COMBO.en=Default: ItemID|OFFF|Price Per Use|GOLD|POW|DMGG|WeaponLV|WLVL|IconID|ICON
+COMBO.zh=Default: ItemID|OFFF|Price Per Use|GOLD|POW|DMGG|WeaponLV|WLVL|IconID|ICON
+
+DETERMINATION_ADDRESS=0x09815A
+
+OFFF:0x09815A=0x7F 0xF7 0xC7 0xF9
+OFFF:0x09816C=0x7F 0xF7 0xBE 0xF9
+OFFF:0x09817A=0x7F 0xF7 0xB7 0xF9
+OFFF:0x098182=0x7F 0xF7 0xB3 0xF9
+
+GOLD:0x09815A=0x7F 0xF7 0xFB 0xFA
+GOLD:0x09816C=0x7F 0xF7 0xF2 0xFA
+GOLD:0x09817A=0x7F 0xF7 0xEB 0xFA
+GOLD:0x098182=0x7F 0xF7 0xE7 0xFA
+
+DMGG:0x09815A=0x7F 0xF7 0x3F 0xFA
+DMGG:0x09816C=0x7F 0xF7 0x36 0xFA
+DMGG:0x09817A=0x7F 0xF7 0x2F 0xFA
+DMGG:0x098182=0x7F 0xF7 0x2B 0xFA
+
+WLVL:0x09815A=0x7F 0xF7 0xAD 0xFA
+WLVL:0x09816C=0x7F 0xF7 0xA4 0xFA
+WLVL:0x09817A=0x7F 0xF7 0x9D 0xFA
+WLVL:0x098182=0x7F 0xF7 0x99 0xFA
+
+ICON:0x09815A=0x7F 0xF7 0xD1 0xFA
+ICON:0x09816C=0x7F 0xF7 0xC8 0xFA
+ICON:0x09817A=0x7F 0xF7 0xC1 0xFA
+ICON:0x098182=0x7F 0xF7 0xBD 0xFA
+
+AUTHOR=7743
+INFO=輸送隊や進撃準備のリストに表示されるアイテムのソート方法を変更します。\r\nディフォルトはItemID順です。\r\n変更する場合は、同列の値があると、ソートの順番が不安定になるので注意してください。\r\n\r\n単価:　アイテムの価格(単価)が安い順番に並べます。\r\n攻撃力:　攻撃力が強い順に並べます。アイテムにも攻撃力を割り振れればソート順を指定できます。\r\n武器レベル:　武器レベル順に並べます。アイテムにも武器レベルを割り振れればソート順を固定できます。\r\nアイコンID:　アイコンIDをソート順に使います。ただ、cmpが一つ追加されるので他より遅くなる可能性もあります。
+
+
+INFO.en=Change the way items are sorted in the convoy and march preparation lists.\r\nThe default is ItemID order.\r\nIf you want to change it, please note that the sort order will be unstable if there are values in the same column.\r\n\r\nPrice Per Use: Sorts the items in order of lowest price (unit price).\r\nPOW: Sort in order of attack power. If you can also assign attack power to items, you can specify the sort order.\r\nWeaponLV: Sort by weapon level. If the item is also assigned a weapon level, the sort order can be fixed.\r\nIconID: Use the icon ID for the sort order. However, it may be slower than the others since it adds one more cmp.\r\n
+INFO.zh=Change the way items are sorted in the convoy and march preparation lists.\r\nThe default is ItemID order.\r\nIf you want to change it, please note that the sort order will be unstable if there are values in the same column.\r\n\r\nPrice Per Use: Sorts the items in order of lowest price (unit price).\r\nPOW: Sort in order of attack power. If you can also assign attack power to items, you can specify the sort order.\r\nWeaponLV: Sort by weapon level. If the item is also assigned a weapon level, the sort order can be fixed.\r\nIconID: Use the icon ID for the sort order. However, it may be slower than the others since it adds one more cmp.\r\n

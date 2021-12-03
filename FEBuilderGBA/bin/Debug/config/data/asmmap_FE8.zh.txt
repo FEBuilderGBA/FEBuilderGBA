@@ -4848,8 +4848,8 @@ r3=X tile position of menu of the right	{U}
 08017448	GetItemRange	{J}
 08017460	GetItemWRank	{J}
 08017478	GetItemEffectivenessPtr	{J}
-080172D8	GetItemStatBonusesPtr	{J}
-080172F0	GetItemIconId	{J}
+08017490	GetItemStatBonusesPtr	{J}
+080174A8	GetItemIconId	{J}
 080174CC	GetItemWeaponEffect	{J}
 080174E4	GetItemUseEffect	{J}
 080174FC	GetItemCostPerUse	{J}
@@ -14779,3 +14779,17 @@ r3=X tile position of menu of the right	{U}
 080AEF64	Sound Room 生成随机播放的播放列表。	{U}
 02021388	:02021407	用于在音室中随机播放的播放列表。	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
+080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
+080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
+0807B5DC	BeginPoisonMapAnim	{U}
+0807D924	BeginPoisonMapAnim	{J}
+0807B7F0	BeginMapAnimDance	{U}
+0807DB38	BeginMapAnimDance	{J}
+0807B634	BeginHatchFromEggsMapAnim	{U}
+0807D97C	BeginHatchFromEggsMapAnim	{J}
+0803584C	ExecPoison	{U}
+080358C0	ExecHatchFromEggs	{U}
+0803594C	ExecPoison	{J}
+080359C0	ExecHatchFromEggs	{J}
+0809A320	SortPrepScreenItemList	{J}
+08098048	SortPrepScreenItemList	{U}

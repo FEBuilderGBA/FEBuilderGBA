@@ -4900,7 +4900,6 @@
 08017294	GetItemIndex	{J}
 080172C0	GetItemDescId	{J}
 080172D8	GetItemUseDescId	{J}
-080172F0	GetItemWType	{J}
 08017314	GetItemAttributes	{J}
 0801732C	GetItemUses	{J}
 08017358	GetItemMaxUses	{J}
@@ -4914,8 +4913,9 @@
 08017448	GetItemRange	{J}
 08017460	GetItemWRank	{J}
 08017478	GetItemEffectivenessPtr	{J}
-080172D8	GetItemStatBonusesPtr	{J}
-080172F0	GetItemIconId	{J}
+08017490	GetItemStatBonusesPtr	{J}
+080172F0	GetItemWType	{J}
+080174A8	GetItemIconId	{J}
 080174CC	GetItemWeaponEffect	{J}
 080174E4	GetItemUseEffect	{J}
 080174FC	GetItemCostPerUse	{J}
@@ -14812,3 +14812,5 @@
 080358C0	ExecHatchFromEggs	{U}
 0803594C	ExecPoison	{J}
 080359C0	ExecHatchFromEggs	{J}
+0809A320	SortPrepScreenItemList	{J}
+08098048	SortPrepScreenItemList	{U}

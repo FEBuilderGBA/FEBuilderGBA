@@ -1,0 +1,24 @@
+NAME=とうぞくの鍵を誰でも使えるようにする
+NAME.en=Make Lockpick available to anyone
+NAME.zh=Make Lockpick available to anyone
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Thief Only|OFFF|Change to Anyone|ANYY
+COMBO.en=Default: Thief Only|OFFF|Change to Anyone|ANYY
+COMBO.zh=Default: Thief Only|OFFF|Change to Anyone|ANYY
+
+DETERMINATION_ADDRESS=0x0187C6
+
+OFFF:0x0187C6=0x00 0x28 0x05 0xD0
+OFFF:0x016CFA=0x0C 0xD0
+ANYY:0x0187C6=0x80 0x42 0x05 0xD1
+ANYY:0x016CFA=0x0E 0xD0
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/916402551249854504
+INFO=盗賊の鍵を誰でも使えるように変更します。\r\nディフォルトは、盗賊(ユニットまたはクラスの特性で盗賊スキルを持っているユニット)だけが利用可能です。\r\n\r\nChange to Anyone: 誰でも利用可能にします。
+
+INFO.en=Change Lockpick to be available to everyone.\r\nBy default, it is only available to bandits (units with the bandit skill in their unit or class properties).\r\n\r\nChange to Anyone: Makes the lockpick available to everyone.
+INFO.zh=更改小偷的钥匙，以便任何人都可以使用它。\r\n默认仅适用于盗贼（单位或在职业特性中具有盗贼技能的单位）。\r\n\r\n更改为任何人：使其可供任何人使用。
