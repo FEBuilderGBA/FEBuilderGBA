@@ -900,7 +900,7 @@ DamageUnits:
 ldr r0, =AoE_DamageUnitsInRange
 Start_ForEachUnitInRange:
 @blh 0x8024eac @ForEachUnitInRange @ maybe this calls AoE_DamageUnitsInRange for each unit found in the range mask?	{U}
-blh 0x8024DF0 @ForEachUnitInRange @ maybe this calls AoE_DamageUnitsInRange for each unit found in the range mask?	@{J}
+blh 0x8024E5C @ForEachUnitInRange @ maybe this calls AoE_DamageUnitsInRange for each unit found in the range mask?	@{J}
 
 End_AoE:
 ldr r1, =CurrentUnitFateData	@these four lines copied from wait routine

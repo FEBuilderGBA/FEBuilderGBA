@@ -118,7 +118,7 @@
 		@build targeting range in range map
 		@r0 = x; r1 = y; r2 = range; r3 = value
 	.set CheckUnitsInRange,            0x08024EAC	@{U}
-@	.set CheckUnitsInRange,            0x08024DF0	@{J}
+@	.set CheckUnitsInRange,            0x08024E5C	@{J}
 	.set CheckTilesInRange,            0x08024F18	@{U}
 @	.set CheckTilesInRange,            0x08024EC8	@{J}
 	.set CheckAdjacentUnits,           0x08024F70	@{U}

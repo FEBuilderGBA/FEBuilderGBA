@@ -558,7 +558,7 @@ r3=X tile position of menu of right	{U}
 0804F8A4	InitTargets	Inits Target List (and clears it)	void	r0=x, r1=y (position is used internally for sorting later)	{U}
 08024F20	ForEachAdjacentUnit	Goes through all units adjacent to position and calls routine with unit struct as argument	void	r0=x	r1=y	r2=Routine pointer (takes Unit Struct as argument)	{J}
 08024F70	ForEachAdjacentUnit	Goes through all units adjacent to position and calls routine with unit struct as argument	void	r0=x	r1=y	r2=Routine pointer (takes Unit Struct as argument)	{U}
-08024DF0	ForEachUnitInRange	Goes through all units that are on a non-null tile on Range Map and calls routine	void	r0=Routine pointer (takes Unit Struct as argument)	{J}
+08024E5C	ForEachUnitInRange	Goes through all units that are on a non-null tile on Range Map and calls routine	void	r0=Routine pointer (takes Unit Struct as argument)	{J}
 08024EAC	ForEachUnitInRange	Goes through all units that are on a non-null tile on Range Map and calls routine	void	r0=Routine pointer (takes Unit Struct as argument)	{U}
 080507B0	NewTargetSelection	Creates a new target selection 6C and everything (target list must be setup)	Target Selection 6C	r0=pointer to routine list	{J}
 0804FA3C	NewTargetSelection	Creates a new target selection 6C and everything (target list must be setup)	Target Selection 6C	r0=pointer to routine list	{U}
@@ -5144,7 +5144,7 @@ r3=X tile position of menu of right	{U}
 08024D80	IsNotEnemyPhaseMaybe	{J}
 08024D98	GetPartyGoldAmount	{J}
 08024DB4	SetPartyGoldAmount	{J}
-08024DF0	ForEachUnitInRange	{J}
+08024E5C	ForEachUnitInRange	{J}
 08024EC8	ForEachPosInRange	{J}
 08024F20	ForEachAdjacentUnit	{J}
 08024F54	ForEachAdjacentPosition	{J}

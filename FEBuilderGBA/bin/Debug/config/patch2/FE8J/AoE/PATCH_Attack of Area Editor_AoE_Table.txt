@@ -13,7 +13,7 @@ INFO=AoEコマンドを利用できる条件と、効果を定義します。\r\
 INFO.en=Defines the conditions under which the AoE command can be used and the effects.\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
 INFO.zh=Defines the conditions under which the AoE command can be used and the effects.\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
 
-POINTER=$XGREP4END+8 0x03 0x43 0x20 0x1C 0x00 0xF0 0x02 0xF8 0x10 0xBC 0x08 0xBC 0x18 0x47 0x00 0x00 0xB0 0x04 0x00 0x03 0xE4 0x2D 0x00 0x08 0xF0 0x4D 0x00 0x03 XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 0xF0 0x4D 0x02 0x08 0x54 0xA9 0x03 0x02
+POINTER=$XGREP4END+8 0x03 0x43 0x20 0x1C 0x00 0xF0 0x02 0xF8 0x10 0xBC 0x08 0xBC 0x18 0x47 0x00 0x00 0xB0 0x04 0x00 0x03 0xE4 0x2D 0x00 0x08 0xF0 0x4D 0x00 0x03 XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 0x5C 0x4E 0x02 0x08 0x54 0xA9 0x03 0x02
 
 //データサイズ(10進数)
 DATASIZE=16
