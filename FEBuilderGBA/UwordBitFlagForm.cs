@@ -19,6 +19,10 @@ namespace FEBuilderGBA
             InputFormRef.MakeLinkEvent("", controls);
             U.AddCancelButton(this);
         }
+        public Button GetApplyButton()
+        {
+            return ApplyButton;
+        }
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {

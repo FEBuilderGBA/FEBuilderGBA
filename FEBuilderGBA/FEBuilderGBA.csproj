@@ -73,6 +73,12 @@
     <Compile Include="AIUnitsForm.Designer.cs">
       <DependentUpon>AIUnitsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AOERANGEForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AOERANGEForm.Designer.cs">
+      <DependentUpon>AOERANGEForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArenaClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2122,6 +2128,12 @@
       <DependentUpon>ImageMapActionAnimationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageUtilMapActionAnimation.cs" />
+    <Compile Include="UbyteBitFlagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UbyteBitFlagForm.Designer.cs">
+      <DependentUpon>UbyteBitFlagForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2154,6 +2166,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AIUnitsForm.resx">
       <DependentUpon>AIUnitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AOERANGEForm.resx">
+      <DependentUpon>AOERANGEForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
@@ -3139,6 +3154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageMapActionAnimationForm.resx">
       <DependentUpon>ImageMapActionAnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UbyteBitFlagForm.resx">
+      <DependentUpon>UbyteBitFlagForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

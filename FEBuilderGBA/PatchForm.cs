@@ -987,6 +987,15 @@ namespace FEBuilderGBA
                     ImageBattleAnimeForm.MakeComboBattleAnimeSP(link);
                     PatchPage.Controls.Add(link);
                 }
+                else if (type == "AOECONFIG")
+                {
+                    TextBoxEx link = new TextBoxEx();
+                    link.Location = new Point(500, y);
+                    link.Size = new Size(150, CONTROL_HEIGHT);
+
+                    link.Name = "L_" + datanum + "_AOECONFIG";
+                    PatchPage.Controls.Add(link);
+                }
                 else if (type.IndexOf("PatchImage") == 0)
                 {//画像指定
                     if (type.IndexOf("_IMAGE") >= 0 || type.IndexOf("_ZIMAGE") >= 0)
@@ -1488,7 +1497,7 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
-            else if (listname == "PTEXT")
+            else if (listname == "CSTRING")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
@@ -1582,9 +1591,9 @@ namespace FEBuilderGBA
             {
                 appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
             }
-            else if (listname == "PTEXT")
+            else if (listname == "CSTRING")
             {
-                appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
+                appendname = TextForm.DirectAndStripAllCode( U.toPointer((uint)i) );
             }
             else if (listname == "SKILL")
             {
@@ -2002,7 +2011,7 @@ namespace FEBuilderGBA
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
                 }
-                else if (address_type == "PTEXT")
+                else if (address_type == "CSTRING")
                 {
                     link.Name = "L_" + 0 + "_" + "TEXT";
                     PatchPage.Controls.Add(link);
@@ -6601,6 +6610,15 @@ namespace FEBuilderGBA
                     else if (type == "BATTLEBGLISTPOINTER")
                     {//戦闘背景
                         MapTerrainBGLookupTableForm.MakeDataLength(list, p
+                            , patchname + " DATA " + n);
+                    }
+                    else if (type == "CSTRING")
+                    {//CSTRING
+                        FEBuilderGBA.Address.AddCString(list, 0 + p);
+                    }
+                    else if (type == "AOERANGEPOINTER")
+                    {//AOERANGEPOINTER
+                        AOERANGEForm.MakeDataLength(list, p
                             , patchname + " DATA " + n);
                     }
                     else

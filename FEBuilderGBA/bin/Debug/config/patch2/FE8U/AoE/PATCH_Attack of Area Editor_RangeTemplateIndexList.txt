@@ -1,0 +1,30 @@
+NAME=AoE 範囲技 広範囲のエリア攻撃(RangeTemplateIndexList)
+NAME.en=AoE Area of Effect(RangeTemplateIndexList)
+NAME.zh=AoE Area of Effect(RangeTemplateIndexList)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x1D9DC=0x00 0x4B 0x18 0x47
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+
+INFO=攻撃範囲のマスクを定義します。通常は変更しないでください。\r\n回転が4方向の形を定義する必要があります。\r\n\r\n広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
+INFO.en=Defines the attack range mask. Normally do NOT change.\r\nYou need to define a shape in which the rotation is in four directions.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO.zh=Defines the attack range mask. Normally do NOT change.\r\nYou need to define a shape in which the rotation is in four directions.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+
+POINTER=$GREP4END+0 0x58 0xA9 0x03 0x02 0xA8 0x3D 0x08 0x08 0xB0 0x4C 0x02 0x02 0x20 0x12 0x00 0x08 0xE0 0xE4 0x02 0x02 0xE4 0x97 0x01 0x08 0xF0 0xE4 0x02 0x02
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00
+
+LISTNAME=$COMBO combo.RangeMask.txt
+
+//データを定義します
+P0:AOERANGEPOINTER=Left
+P4:AOERANGEPOINTER=Top
+P8:AOERANGEPOINTER=Right
+P12:AOERANGEPOINTER=Bottom

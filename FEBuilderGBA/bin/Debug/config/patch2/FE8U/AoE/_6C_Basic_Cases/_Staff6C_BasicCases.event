@@ -1,0 +1,51 @@
+//Button Cases
+#ifndef Staff6C_BasicCases
+	#define Staff6C_BasicCases
+	ALIGN 4
+	
+	//Cursor Movement Cases
+	FS6C_ValidCursorCheck:
+	#incbin "ValidCursor.dmp"
+	
+	//Button Press Cases
+	FS6C_ButtonPress_Confirm:	//Free Select 6C
+	#incbin "TargetTileConfirm.dmp"
+	ALIGN 4
+	AoE_FS6C_ButtonPress_Cancel:
+	#include "AoE_TargetTileCancel.lyn.event"
+	//#incbin "TargetTileCancel.dmp"
+	
+	//Construct & Destruct Cases
+	Staff6C_fsStart:
+	#incbin "Staff_fsStart.dmp"
+
+	Staff6C_tsStart2: //makes box with list of items the target has
+	#incbin "Staff_tsStart2.dmp"
+
+	Staff6C_fsDelete:
+	#include "Staff_fsDelete.lyn.event"
+	
+	Staff6C_tsCreate:
+	#incbin "Staff_NewTargetSelect.dmp"
+	
+	//Menu Related Stuff
+	ItemMenu_IsCommandUsable:
+	#incbin "Staff_ItemMenu_CommandCheck.dmp"
+		//check if item can be selected from menu
+	ItemMenu_DrawCommand:
+	#incbin "Staff_ItemMenu_CommandDraw.dmp"
+	
+	TS6C_ItemMenuUpdate:
+	#incbin "tsUpdateTargetItemList.dmp"
+		//update the item list shown during target selection (for stuff like Hammerne)
+	#define ItemSelectCommand(Condition, Routine) "SHORT 0xB500 0x4A02; BL(Routine); SHORT 0xBC08 0x4718; POIN (Condition | 1)"
+		
+	#define CommandDefEnd "WORD 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0"
+		//ends list of menu commands
+	#define StaffTargetInit(helptext, color, constructor) "BYTE color 0x22; SHORT 0x4902; jumpToHack(constructor); WORD helptext"
+	//range square colors for the above macro
+	#define rsMove	0x1
+	#define rsRed	0x2
+	#define rsGreen	0x4
+	#define rsBlue	0x10
+#endif

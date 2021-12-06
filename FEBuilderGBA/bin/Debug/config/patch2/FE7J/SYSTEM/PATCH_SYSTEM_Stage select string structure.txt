@@ -17,9 +17,9 @@ DATACOUNT=3
 MAX_EXPLANDS_SIZE=3
 
 //データを定義します
-D0:PTEXT=名前
-D4:PTEXT=詳細
-D8:PTEXT=武器タイプ名
+D0:CSTRING=名前
+D4:CSTRING=詳細
+D8:CSTRING=武器タイプ名
 
 INFO=ステージセレクトのテキストを変更します
 AUTHOR=Source: Tequila https://feuniverse.us/t/fe7-replace-hector-mode/3169/6

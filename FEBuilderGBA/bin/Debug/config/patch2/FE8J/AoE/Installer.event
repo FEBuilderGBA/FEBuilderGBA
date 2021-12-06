@@ -1,0 +1,345 @@
+// Hooks: $1DA98 and $1D9DC 
+// this is to display purple tiles while selecting an area to attack 
+// briefly uses a byte in ram at 0x0203F101, which combat arts also use. 
+// it should not conflict with combat arts. 
+
+// if you are using FEBuilder. 
+#ifdef FEBUILDER_EXTRA_ORG
+//#include "FEBuilderGBA/EN.event"	//{U}
+#include "FEBuilderGBA/JP.event"	//{J}
+#endif // FEBUILDER_EXTRA_ORG
+
+#include "Internals.event"
+
+
+// Add this to your Unit Menu 
+// MenuCommand(UM_AoEName, UM_AoEDesc, NormalText, AoE_AreAnyUsable, AoE_Effect)
+
+// Text entries:
+/*
+## UM_AoEName
+ AoE[X]
+
+## UM_AoEDesc
+Hit multiple units.[X]
+
+
+
+## UM_AoEHelp
+Select an area to Attack. Press L/R to Rotate.[X]
+
+## UM_AoEHealHelp
+Select an area to Heal. Press L/R to Rotate.[X]
+
+## UM_AoEName0
+ AoE0[X]
+
+## UM_AoEName1
+ AoE1[X]
+
+## UM_AoEName2
+ AoE2[X]
+
+## UM_AoEName3
+ AoE3[X]
+
+## UM_AoEName4
+ AoE4[X]
+
+## UM_AoEName5
+ AoE5[X]
+
+## UM_AoEName6
+ AoE6[X]
+
+## UM_AoEName7
+ AoE7[X]
+
+## UM_AoEName8
+ AoE8[X]
+
+## UM_AoEName9
+ AoE9[X]
+*/
+
+//#define HideMoveRangeGraphicsWrapper 0x8022C98	//{U}
+#define HideMoveRangeGraphicsWrapper 0x8022C60	//{J}
+
+//	#define MenuCommandID(name,description,colour,ID,usability,effect, unknown1, unknown2) "WORD $80d7d94; SHORT name description; BYTE colour ID; SHORT 0; POIN usability|1; WORD 0; POIN effect|1; POIN 0 unknown1|1 unknown2|1"	//{U}
+	#define MenuCommandID(nameJP,description,colour,ID,usability,effect, unknown1, unknown2) "POIN nameJP; SHORT 0x60C description; BYTE colour ID; SHORT 0; POIN usability|1; WORD 0; POIN effect|1; POIN 0 unknown1|1 unknown2|1"	//{J}
+
+// These are the submenu options that appear:
+ALIGN 4
+AoEMenuCommandsList: // Specific Commands. Probably want new names for them. 
+MenuCommandID(UM_AoEName0, UM_AoEDesc, NormalText, 0x0, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName1, UM_AoEDesc, NormalText, 0x1, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName2, UM_AoEDesc, NormalText, 0x2, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName3, UM_AoEDesc, NormalText, 0x3, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName4, UM_AoEDesc, NormalText, 0x4, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName5, UM_AoEDesc, NormalText, 0x5, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName6, UM_AoEDesc, NormalText, 0x6, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName7, UM_AoEDesc, NormalText, 0x7, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName8, UM_AoEDesc, NormalText, 0x8, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+MenuCommandID(UM_AoEName9, UM_AoEDesc, NormalText, 0x9, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
+UM_Separator 
+
+
+
+
+
+/*
+@ Primary Table structure 
+@ Usability Reqs 
+UnitByte, #0 
+ClassByte, #1 
+LevelByte, #2 
+ItemByte, #3 
+FlagShort, #4 @and 5 
+SkillByte, #6 
+Pokemblem_MoveTesterByte, #7 // Does nothing if not pokemblem 
+@ Config 
+HpCostByte, #8
+ConfigByte, #9
+
+PowerLowerBoundByte, #10
+PowerUpperBoundByte, #11 
+MinRangeByte, #12
+MaxRangeByte, #13 
+RangeMask_IDByte, #14 
+Animation_IDByte, #15
+*/
+
+// Bitfield for more config options 
+#define HealBool 0x01
+#define FriendlyFireBool 0x02 
+#define FixedDamageBool 0x04 
+#define MagBasedBool 0x08 
+#define HitResBool 0x10
+#define DepleteItemBool 0x20
+#define UsableOnlyIfStationaryBool 0x40 
+
+
+ALIGN 4 
+AoE_Table:
+// Entry 0
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool|DepleteItemBool
+BYTE 5 5 // damage range 
+BYTE 3 7 // Attack range 
+BYTE 0 1 // Index of RangeMask, Animation
+
+
+// Entry 1
+BYTE 0 0 0 0 
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool|HealBool
+BYTE 5 5 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 1 1 // Index of RangeMask, Animation
+
+// Entry 2
+BYTE 0 0 0 0 
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool
+BYTE 5 10 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 2 2 // Index of RangeMask, AnimationALL,
+
+// Entry 3
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool|DepleteItemBool
+BYTE 5 5 // damage range 
+BYTE 3 7 // Attack range 
+BYTE 3 3 // Index of RangeMask, Animation
+
+
+// Entry 4
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool
+BYTE 5 5 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 4 4 // Index of RangeMask, Animation
+
+// Entry 5
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool
+BYTE 5 10 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 5 5 // Index of RangeMask, AnimationALL,
+
+// Entry 6
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool|DepleteItemBool
+BYTE 5 5 // damage range 
+BYTE 3 7 // Attack range 
+BYTE 6 6 // Index of RangeMask, Animation
+
+
+// Entry 7
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool|MagBasedBool
+BYTE 5 5 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 7 7 // Index of RangeMask, Animation
+
+// Entry 8
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool
+BYTE 5 10 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 8 8 // Index of RangeMask, AnimationALL,
+
+// Entry 9
+BYTE 0 0 0 0
+BYTE 0 0 0 0 // Always usable by anyone 
+BYTE 0 FriendlyFireBool
+BYTE 5 10 // damage range 
+BYTE 0 4 // Attack range 
+BYTE 9 9 // Index of RangeMask, AnimationALL,
+AoE_TableTerminator
+
+
+
+
+ALIGN 4
+AoE_Animation_Table: // 12 bytes per entry 
+POIN 0 //AnimationRouine
+POIN 0 //EventAddress 
+SHORT 0 //Bgm/Sfx 
+SHORT 1 // so we don't hide data in febuilder early 
+
+POIN 0 //Entry 1 
+POIN AoE_EventAnime1
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry 2
+POIN AoE_EventAnime2
+SHORT 0 
+SHORT 1 
+
+POIN 0 //0x807AD09 // Entry 3 - summon gfx 
+POIN AoE_EventAnime3
+SHORT 0 
+SHORT 1 
+
+POIN 0 //Entry 4
+POIN AoE_EventAnime4
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry 5
+POIN AoE_EventAnime5
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry 6
+POIN AoE_EventAnime6
+SHORT 0 
+SHORT 1 
+
+POIN 0 //Entry 7
+POIN AoE_EventAnime7
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry 8
+POIN AoE_EventAnime8
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry 9
+POIN AoE_EventAnime9
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry A
+POIN AoE_EventAnimeA
+SHORT 0 
+SHORT 1 
+
+WORD 0 0 0 // INDEXED, so no terminator actually needed 
+
+
+// Note that Memory Slot 3 is used to pass the rotation to the effect. 
+// If your animation event overwrites Memory Slot 3, you will get a random rotation. 
+
+
+ALIGN 4 
+AoE_EventAnime1:
+SVAL r1 0x1 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime2:
+SVAL r1 0x2 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime3:
+SVAL r1 0x3 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime4:
+SVAL r1 0x4 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime5:
+SVAL r1 0x5 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime6:
+SVAL r1 0x6 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime7:
+SVAL r1 0x7 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime8:
+SVAL r1 0x8 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime9:
+SVAL r1 0x9 //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnimeA:
+SVAL r1 0xA //AnimationID
+ASMC ASMC_Draw|1
+NoFade
+ENDA
+
+

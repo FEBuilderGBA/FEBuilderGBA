@@ -1,0 +1,10 @@
+00=AoE_TableID_0
+01=AoE_TableID_1
+02=AoE_TableID_2
+03=AoE_TableID_3
+04=AoE_TableID_4
+05=AoE_TableID_5
+06=AoE_TableID_6
+07=AoE_TableID_7
+08=AoE_TableID_8
+09=AoE_TableID_9

@@ -14814,3 +14814,5 @@
 080359C0	ExecHatchFromEggs	{J}
 0809A320	SortPrepScreenItemList	{J}
 08098048	SortPrepScreenItemList	{U}
+080267DC	ppStandingMapSpriteTable	{J}
+08026838	ppStandingMapSpriteTable	{U}

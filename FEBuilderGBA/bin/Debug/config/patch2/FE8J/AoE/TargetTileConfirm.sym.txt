@@ -1,0 +1,3 @@
+BadTile=$5C
+CheckFunc=$88
+End=$6A

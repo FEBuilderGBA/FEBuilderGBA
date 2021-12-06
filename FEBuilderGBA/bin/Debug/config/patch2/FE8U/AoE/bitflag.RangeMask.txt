@@ -1,0 +1,7 @@
+01=Heal
+02=FriendlyFire
+04=FixedDamage
+08=MagBased
+10=HitRes
+20=DepleteItem
+40=UsableOnlyIfStationary

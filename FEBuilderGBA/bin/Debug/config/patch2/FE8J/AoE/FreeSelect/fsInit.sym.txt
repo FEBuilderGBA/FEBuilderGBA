@@ -1,0 +1,2 @@
+SetCursor=$3A
+EALiterals=$60

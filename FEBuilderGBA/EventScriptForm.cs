@@ -224,6 +224,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.AOECONFIG)
+            {//AOECONFIG
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
             {
                 isLabelJump = true;
@@ -1593,6 +1597,11 @@ namespace FEBuilderGBA
                         {
                             isENumText = true;
                             text = " " + InputFormRef.GetU32Hint(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.AOECONFIG)
+                        {//AOECONFIG
+                            isENumText = true;
+                            text = " " + InputFormRef.GetAOECONFIG(v);
                         }
 
                         if (isENumText)

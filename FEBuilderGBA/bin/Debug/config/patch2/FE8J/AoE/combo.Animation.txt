@@ -1,0 +1,11 @@
+00=None
+01=Anime1
+02=Anime2
+03=Anime3
+04=Anime4
+05=Anime5
+06=Anime6
+07=Anime7
+08=Anime8
+09=Anime9
+0A=AnimeA

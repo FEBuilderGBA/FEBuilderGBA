@@ -1,0 +1,6 @@
+00=Normal
+01=Gray
+02=Blue
+03=Orange
+04=Green
+05=Black

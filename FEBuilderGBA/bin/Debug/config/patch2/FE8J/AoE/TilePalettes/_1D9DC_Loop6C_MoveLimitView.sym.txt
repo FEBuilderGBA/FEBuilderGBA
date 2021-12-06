@@ -1,0 +1,8 @@
+.TestRoutine=$14
+.NotBit1=$2C
+.NotBit2=$46
+.NotBit4=$60
+.NotBit10=$7A
+.NotBit20=$94
+.NotBit40=$AE
+.End=$AE

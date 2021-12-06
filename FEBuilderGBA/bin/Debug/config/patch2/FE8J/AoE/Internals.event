@@ -1,0 +1,228 @@
+// Most users should not need to edit this file. 
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#include "Extensions/ProcDefinitions.txt"
+
+
+
+#define AoE_EntrySizeDef 16 // 16 bytes per AoE table entry 
+#define AoE_TableTerminator "WORD 0 0 0 0 0 0 0 0"
+//#define AoE_RamAddressDef "0x0203F101" // Also used by combat art menu. 	//{U}
+#define AoE_RamAddressDef "0x0203F0FD" // Also used by combat art menu. 	//{J}
+
+
+
+
+
+
+ALIGN 4
+AoE_SkillTester: 
+#ifdef SKILLSYSTEM_SKILL_TESTER
+	POIN SkillTester
+#endif 
+#ifndef SKILLSYSTEM_SKILL_TESTER
+	WORD 0
+#endif 
+
+
+ALIGN 4
+AoE_Pokemblem_MoveTester: 
+#ifdef Pokemblem_MoveTester
+	POIN MoveTester
+#endif
+#ifndef Pokemblem_MoveTester
+	WORD 0
+#endif 
+
+
+#include	"TilePalettes/_1D9DC_Loop6C_MoveLimitView.lyn.event"
+
+PUSH 
+
+//ORG $1DA98	//{U}
+ORG $1D6FC	//{J}
+jumpToHack(PurpleMovementSquares|1)
+
+//ORG	$1D9DC	//{U}
+ORG	$1D640	//{J}
+jumpToHack(_1D9DC_Loop6C_MoveLimitView)
+
+POP 
+
+
+
+
+ALIGN 4
+RangeSquarePurplePalette:
+#incbin "TilePalettes/RangeSquaresPurplePalette.dmp"
+
+
+ALIGN 4
+PurpleMovementSquares:
+#include "TilePalettes/PurpleMovementSquares.lyn.event"
+
+
+
+#include "FreeSelect/FreeSelect6C.event"
+#include "_6C_Basic_Cases/_Staff6C_BasicCases.event"
+#ifndef rfStaffTargeting
+	#define rfStaffTargeting(routine, rangefunc, procpoin) "SHORT 0x1C28 0x1C22 0x4903 0x4B04; BL(routine); SHORT 0xBC30 0xBC01 0x4700 0x0; POIN (rangefunc|1) procpoin"
+#endif 
+
+
+#include "AoE.lyn.event"
+#include "CreateRangeMapFromTemplateByStanH.lyn.event" 
+#include "CreateMoveMapFromTemplate.lyn.event" 
+
+
+#include "RangeTemplates.event"
+#include "AoE_CallSubmenuEffect.lyn.event"
+#include "AoE_DamageEffect.lyn.event" 
+
+#ifndef UNIT_MENU_DEFINITIONS
+	#define NormalText 0x0
+	#define GrayText 0x1
+	#define BlueText 0x2
+	#define OrangeText 0x3
+	#define GreenText 0x4
+	#define BlackText 0x5
+	#define MenuCommand(name,description,colour,usability,effect, unknown1, unknown2) "WORD $80d7d94; SHORT name description; BYTE colour $4e; SHORT 0; POIN usability|1; WORD 0; POIN effect|1; POIN 0 unknown1|1 unknown2|1"
+	#define UM_Separator  "WORD 0 0 0 0 0 0 0 0 0"
+#endif 
+
+/*
+GenericASMC_DrawEvent:
+ASMC ASMC_Draw
+NoFade 
+ENDA
+*/
+
+Call_AoE_ExternalAnimationEvent:
+EVBIT_MODIFY 4
+ASMC AoE_ExternalAnimation 
+NoFade 
+ENDA 
+
+Clear_sBEvent:
+EVBIT_MODIFY 0
+SVAL rB 0 
+NoFade 
+ENDA 
+
+AoE_MainEvent:
+ASMC AoE_StartBlockingProc
+NoFade 
+ENDA 
+
+#ifndef PROC_YIELD
+	#define PROC_YIELD "PROC_YEILD"
+#endif 
+
+
+ALIGN 4
+AoE_MainProc:
+PROC_YIELD // Buffer.
+PROC_SET_NAME(AoE_MainProcName)
+PROC_SLEEP(0)
+PROC_LOOP_ROUTINE(AoE_PauseForAnimation)
+PROC_CALL_ROUTINE(AoE_GenericEffect)
+PROC_END
+
+
+AoE_MainProcName:
+String("AoE_MainProc") ; BYTE 0
+ALIGN 4
+
+
+
+
+ALIGN 4
+AoE_EntrySize:
+BYTE AoE_EntrySizeDef
+
+ALIGN 4
+AoE_RamAddress:
+WORD AoE_RamAddressDef
+
+ALIGN 4
+AoESubmenuDef:
+BYTE 0 //x coord ? 
+BYTE 3 //y coord
+BYTE 8 //width
+BYTE 0 //height
+WORD 0 //Unknown
+POIN AoEMenuCommandsList //menu commands ptr
+WORD 0 //OnInit
+WORD 0 //OnEnd
+WORD 0 //Unknown
+//POIN 0x22861 //On B Press	//{U}
+POIN 0x22829 //On B Press	//{J}
+//POIN 0x4f521 //On R Press	//{U}
+POIN 0x50295 //On R Press	//{J}
+//POIN 0x4f459 //On Help Box	//{U}
+POIN 0x501CD //On Help Box	//{J}
+
+
+ALIGN 4
+AoE_FreeSelect:
+POIN AoE_fsStart | 1          // On create
+POIN Staff6C_fsDelete | 1           // On delete
+POIN InvalidCursorByRangeMap_2 | 1    // On cursor movement
+POIN TargetTileConfirm_2 | 1          // On A press
+POIN AoE_FS6C_ButtonPress_Cancel | 1    // On B press
+WORD 0                              // On R press
+CommandDefEnd
+
+ALIGN 4
+AoE_HealFreeSelect: // identical except green tiles 
+POIN AoE_HealfsStart | 1          // On create
+POIN Staff6C_fsDelete | 1           // On delete
+POIN InvalidCursorByRangeMap_2 | 1    // On cursor movement
+POIN TargetTileConfirm_2 | 1          // On A press
+POIN AoE_FS6C_ButtonPress_Cancel | 1    // On B press
+WORD 0                              // On R press
+CommandDefEnd
+
+	//range square colors for the macro
+#ifndef rsMove 
+	#define rsMove	0x1
+	#define rsRed	0x2
+	#define rsGreen	0x4
+	#define rsBlue	0x10 // identical to move ? 
+	#define movementRed 0x20 
+#endif 
+	#define movementPurple 0x40 
+
+
+ALIGN 4
+AoE_fsStart:
+StaffTargetInit(UM_AoEHelp, rsRed, Staff6C_fsStart) 
+
+AoE_HealfsStart:
+StaffTargetInit(UM_AoEHealHelp, rsGreen, Staff6C_fsStart) 
+
+ALIGN 4
+InvalidCursorByRangeMap_2:
+#incbin "InvalidCursorByRangeMap.dmp"
+POIN OptionalAdditionalRangeSelectionCheck
+
+ALIGN 4
+OptionalAdditionalRangeSelectionCheck:
+#incbin "OptionalAdditionalRangeSelectionCheck.dmp"
+
+ALIGN 4
+TargetTileConfirm_2:
+#include "TargetTileConfirm.lyn.event"
+POIN OptionalAdditionalRangeSelectionCheck
+
+ALIGN 4 
+AoE_SpecificUsability:
+#include "AoE_SpecificUsability.lyn.event"
+
+ALIGN 4
+AoE_SpecificEffect:
+#include "AoE_SpecificEffect.lyn.event"
+
+ALIGN 4
+AoE_SpecificHover:
+#include "AoE_SpecificHover.lyn.event"

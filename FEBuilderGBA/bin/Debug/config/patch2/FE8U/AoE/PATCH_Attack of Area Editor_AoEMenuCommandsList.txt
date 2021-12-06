@@ -1,0 +1,37 @@
+NAME=AoE 範囲技 広範囲のエリア攻撃(AoEMenuCommandsList)
+NAME.en=AoE Area of Effect(AoEMenuCommandsList)
+NAME.zh=AoE Area of Effect(AoEMenuCommandsList)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x1D9DC=0x00 0x4B 0x18 0x47
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+INFO=広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
+INFO.en=A function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO.zh=A function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+
+POINTER=$XGREP4END+0 0x10 0xB5 0x08 0x4C 0x0C 0x34 0x23 0x68 0x00 0x2B 0x07 0xD0 0x20 0x1C 0x0C 0x38 0x9E 0x46 0x00 0xF8 0x01 0x28 0x02 0xD0 0x24 0x34 0xF4 0xE7 0x03 0x20 0x10 0xBC 0x02 0xBC 0x08 0x47
+
+//データサイズ(10進数)
+DATASIZE=36
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP36 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+LISTNAME=$W4:TEXT
+
+//データを定義します
+P0:CSTRING=Not Use(JP ONLY)
+W4:TEXT=NameText
+W6:TEXT=HelpText
+B8:$COMBO combo.MenuColor.txt=Color
+B9:$COMBO combo.AoE_TableID.txt=AoE_TableID
+W10=00
+P12:ASM=Usability(Do NOT Change)
+P16:ASM=Draw(Do NOT Change)
+P20:ASM=Effect(Do NOT Change)
+P24:ASM=Hover(Do NOT Change)
+P28:ASM=Select(Do NOT Change)
+P32:ASM=Cancel(Do NOT Change)

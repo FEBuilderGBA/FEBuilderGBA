@@ -1,0 +1,30 @@
+NAME=AoE 範囲技 広範囲のエリア攻撃(AoE_Animation_Table)
+NAME.en=AoE Area of Effect(AoE_Animation_Table)
+NAME.zh=AoE Area of Effect(AoE_Animation_Table)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x1D640=0x00 0x4B 0x18 0x47
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+INFO=AoEコマンドを実行した時のアニメーションを設定します。\r\n通常は、イベントスクリプトで、ASMC_Drawを利用してアニメーションを描画します。\r\nリストの一番上は、アニメーションなし(None)として予約されています。\r\n\r\n広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
+INFO.en=Set the animation when the AoE command is executed.\r\nNormally, the event script uses ASMC_Draw to draw the animation.\r\nThe top of the list is reserved as None.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO.zh=Set the animation when the AoE command is executed.\r\nNormally, the event script uses ASMC_Draw to draw the animation.\r\nThe top of the list is reserved as None.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+
+
+POINTER=$XGREP4END+12 0x54 0xA9 0x03 0x02 0xD0 0x60 0x08 0x08 0xB0 0x4C 0x02 0x02 0xD0 0x11 0x00 0x08 0xDC 0xE4 0x02 0x02 0xBC 0x94 0x01 0x08 0xEC 0xE4 0x02 0x02 XXXX XXXX XXXX XXXX 0xFC 0xD6 0x01 0x08 0xD8 0xF3 0x01 0x08 0xD0 0xE4 0x02 0x02 0xB0 0x04 0x00 0x03
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+LISTNAME=$COMBO combo.Animation.txt
+
+//データを定義します
+P0=ASM(Do NOT Use)
+P4:EVENT=EventPointer
+W8:SONG=SoundEffect(0=Not Use)
+W10=1

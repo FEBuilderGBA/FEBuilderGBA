@@ -13,11 +13,14 @@ EDIT_PATCH:2=PATCH_DrawMapActionAnimation_SpecificWeaponAnimations.txt
 EA=Installer.event
 
 EVENTSCRIPT:1=400D0000{$L1:ASMC_Draw.dmp}	攻撃エフェクトの表示(LOW)
-EVENTSCRIPT:2=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	攻撃エフェクト[ZZ:MAPACTIONANIMATION:EffectID]を[XX:MAPX:X][YY:MAPY:Y]に表示する 
+EVENTSCRIPT:2=40050100ZZZZZZZZ400D0000{$L1:ASMC_Draw.dmp}	攻撃エフェクト[ZZ:MAPACTIONANIMATION:EffectID]の表示 AoE呼び出し用(LOW)
+EVENTSCRIPT:3=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	攻撃エフェクト[ZZ:MAPACTIONANIMATION:EffectID]を[XX:MAPX:X][YY:MAPY:Y]に表示する 
 EVENTSCRIPT:1.en=400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect(LOW)
-EVENTSCRIPT:2.en=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] at [XX:MAPX:X][YY:MAPY:Y] 
+EVENTSCRIPT:2.en=40050100ZZZZZZZZ400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] for AoE call(LOW)
+EVENTSCRIPT:3.en=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] at [XX:MAPX:X][YY:MAPY:Y] 
 EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect(LOW)
-EVENTSCRIPT:2.zh=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] at [XX:MAPX:X][YY:MAPY:Y] 
+EVENTSCRIPT:2.zh=40050100ZZZZZZZZ400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] for AoE call(LOW)
+EVENTSCRIPT:3.zh=40050100ZZZZZZZZ400502000000000040050B00XXXXYYYY400D0000{$L1:ASMC_Draw.dmp}	Draw Attack Effect [ZZ:MAPACTIONANIMATION:EffectID] at [XX:MAPX:X][YY:MAPY:Y] 
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
 ALLOC_SIZE_HINT=115000			//パッチ全体のサイズ
@@ -25,6 +28,7 @@ ALLOC_PROGRAM_ONLY_SIZE=2000	//コード部だけのサイズ, FEBUILDER_DATA_OR
 
 AUTHOR=Vesly Draw Sprite Animation https://feuniverse.us/t/veslys-asm/12011/27\r\nThis Animation work, made by Viktor Hahn (Viktor.Hahn@web.de),\r\nis licensed under the Creative Commons Attribution 4.0 International License.\r\nhttp://creativecommons.org/licenses/by/4.0/\r\n\r\nhttps://opengameart.org/content/more-pixelated-attackhit-animations\r\nhttps://opengameart.org/content/spell-animation-spritesheets
 
+EXPORT:01=ASMC_Draw.dmp	ASMC_Draw
 
 INFO.en=This Patch will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
 NAME.zh=在动画关闭时在地图动画上绘制攻击效果(Install)

@@ -2979,6 +2979,25 @@ namespace FEBuilderGBA
 
                 return;
             }
+            if (linktype == "AOECONFIG")
+            {//AOECONFIG
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    //ユニット名の取得
+                    link_object.Text = InputFormRef.GetAOECONFIG((uint)src_object.Value);
+                };
+                link_object.DoubleClick += (sender, e) =>
+                {//ダブルクリックで編集
+                    JumpTo(src_object, link_info, linktype, new string[] { });
+                };
+
+                return;
+            }
+            if (linktype == "AOERANGEPOINTER")
+            {
+                return;
+            }
             
             
 #if DEBUG            
@@ -3720,6 +3739,11 @@ namespace FEBuilderGBA
                     f.JumpTo(value);
                 }
             }
+            else if (linktype == "CSTRING")
+            {
+                CStringForm f = (CStringForm)InputFormRef.JumpForm<CStringForm>();
+                f.Init(src_object);
+            }
             else if (linktype == "ITEM")
             {
                 InputFormRef.JumpForm<ItemForm>(value, "AddressList", src_object);
@@ -4386,7 +4410,14 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<ImageMapActionAnimationForm>(value, "AddressList", src_object);
             }
+            else if (linktype == "AOECONFIG")
+            {
+                UbyteBitFlagForm f = (UbyteBitFlagForm)InputFormRef.JumpForm<UbyteBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(EventScript.ArgType.AOECONFIG, value);
+                InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
+            }
         }
+
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)
         {
             //PLISTが0なので新規に割り当てないといけない
@@ -7028,6 +7059,12 @@ namespace FEBuilderGBA
             Dictionary<uint, string> dic = ConfigDataDatanameCache("DISABLEOPTIONS_checkbox_");
             return GetInfoByBitFlag(num, dic);
         }
+        public static string GetAOECONFIG(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("AOECONFIG_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+
         public static string GetDISABLEWEAPONS(uint num)
         {
             if (num == 0)

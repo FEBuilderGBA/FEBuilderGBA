@@ -1,0 +1,25 @@
+NAME=CC画面から赤色のクラス名を消す
+NAME.en=Remove the red class name from the Promotion screen
+NAME.zh=Remove the red class name from the Promotion screen
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Show Class Name|OFFF|Remove Class Name|DELL
+COMBO.en=Default: Show Class Name|OFFF|Remove Class Name|DELL
+COMBO.zh=Default: Show Class Name|OFFF|Remove Class Name|DELL
+
+DETERMINATION_ADDRESS=0xCCAAC
+
+OFFF:0xCCAAC=0x30 0xB5
+OFFF:0xCCB40=0xF0 0xB5
+
+DELL:0xCCAAC=0x70 0x47
+DELL:0xCCB40=0x70 0x47
+
+AUTHOR=Snek https://discord.com/channels/144670830150811649/470029781795078175/917186534606794772
+INFO=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nNarrow Fontを利用している場合、正しく表示されないので、このパッチを利用して表示をオフにすることができます。\r\n
+
+INFO.en=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nIf you are using Narrow Font, it will not be displayed correctly, so you can use this patch to turn off the display.\r\n
+INFO.zh=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nIf you are using Narrow Font, it will not be displayed correctly, so you can use this patch to turn off the display.\r\n

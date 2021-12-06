@@ -1094,6 +1094,11 @@ namespace FEBuilderGBA
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
             }
+            else if (arg.Type == EventScript.ArgType.AOECONFIG)
+            {//AOECONFIG
+                text = " " + InputFormRef.GetAOECONFIG(v);
+            }
+
 
             U.MakeTransparent(image);
             ScriptEditSetTables[selectID].ParamValue.ErrorMessage = errormessage;
@@ -1430,6 +1435,16 @@ namespace FEBuilderGBA
             {
                 UwordBitFlagForm f = (UwordBitFlagForm)InputFormRef.JumpForm<UwordBitFlagForm>(U.NOT_FOUND);
                 f.JumpTo(arg.Type,value);
+                MakeInjectionApplyButtonCallback(f
+                    , (Button)InputFormRef.FindObjectByForm<Button>
+                        (InputFormRef.GetAllControls(f), "ApplyButton")
+                    , src_object);
+            }
+            else if (arg.Type == EventScript.ArgType.AOECONFIG
+                )
+            {
+                UbyteBitFlagForm f = (UbyteBitFlagForm)InputFormRef.JumpForm<UbyteBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(arg.Type, value);
                 MakeInjectionApplyButtonCallback(f
                     , (Button)InputFormRef.FindObjectByForm<Button>
                         (InputFormRef.GetAllControls(f), "ApplyButton")

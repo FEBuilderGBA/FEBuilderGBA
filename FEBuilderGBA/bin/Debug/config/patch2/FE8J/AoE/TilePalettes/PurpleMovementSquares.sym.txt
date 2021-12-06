@@ -1,0 +1,2 @@
+DisplayRangeSquares=$1A
+DisplayMoveSquares=$16

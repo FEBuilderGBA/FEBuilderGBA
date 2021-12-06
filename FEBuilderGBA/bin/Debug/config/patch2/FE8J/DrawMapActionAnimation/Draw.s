@@ -737,8 +737,8 @@ ldr r2, =0x202BCB8 @(gCurrentRealCameraPos )	@{J}
 ldrh r2, [r2, #2] 
 sub r1, r2
 
-lsl r0, #24 @ only 9 bits used for coords 
-lsr r0, #24 
+lsl r0, #23 @ only 9 bits used for coords 
+lsr r0, #23 
 lsl r1, #24 
 lsr r1, #24 
 

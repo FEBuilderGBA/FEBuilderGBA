@@ -114,6 +114,7 @@ namespace FEBuilderGBA
             , BATTLETERRAINSET  //戦闘地形
             , MAPACTIONANIMATION //行動アニメーション(パッチ)
             , FE8TUTORIALMETHOD //FE8チュートリアル　イベント呼び出しタイミング
+            , AOECONFIG        //範囲攻撃の設定
         };
 
         public class Arg

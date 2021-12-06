@@ -1,0 +1,577 @@
+//@ Header:
+//@   [UByte]: x size
+//@   [UByte]: y size
+//@   [UByte]: x origin
+//@   [UByte]: y origin
+//@ Data:
+//@   [UByte array]: 1 if in range, 0 if not
+
+ALIGN 16 
+RangeTemplateIndexList:
+POIN RangeTemplateTable_Triangle1 // 0
+POIN RangeTemplateTable_Triangle2
+POIN RangeTemplateTable_Triangle3
+POIN RangeTemplateTable_Triangle4
+
+
+
+ALIGN 16; POIN RangeTemplateTable_SmallCurve1 // 1
+POIN RangeTemplateTable_SmallCurve2
+POIN RangeTemplateTable_SmallCurve3
+POIN RangeTemplateTable_SmallCurve4
+
+ALIGN 16; POIN RangeTemplateTable_Line1 // 2
+POIN RangeTemplateTable_Line2
+POIN RangeTemplateTable_Line3
+POIN RangeTemplateTable_Line4
+
+
+ALIGN 16; POIN RangeTemplateTable_DoubleHorizontalLine // 3
+POIN RangeTemplateTable_DoubleVerticalLine
+POIN RangeTemplateTable_DoubleHorizontalLine
+POIN RangeTemplateTable_DoubleVerticalLine
+
+
+ALIGN 16; POIN RangeTemplateTable_SmallTriangle1 // 4
+POIN RangeTemplateTable_SmallTriangle2
+POIN RangeTemplateTable_SmallTriangle3
+POIN RangeTemplateTable_SmallTriangle4
+
+ALIGN 16; POIN RangeTemplateTable_GiantCross // 5
+POIN RangeTemplateTable_GiantCross
+POIN RangeTemplateTable_GiantCross
+POIN RangeTemplateTable_GiantCross
+
+
+
+
+ALIGN 16; POIN RangeTemplateTable_Square // 6
+POIN RangeTemplateTable_Square
+POIN RangeTemplateTable_Square
+POIN RangeTemplateTable_Square
+
+ALIGN 16; POIN RangeTemplateTable_Cross // 7
+POIN RangeTemplateTable_Cross
+POIN RangeTemplateTable_Cross
+POIN RangeTemplateTable_Cross
+
+
+ALIGN 16; POIN RangeTemplateTable_HorizontalLine // 8
+POIN RangeTemplateTable_VerticalLine
+POIN RangeTemplateTable_HorizontalLine
+POIN RangeTemplateTable_VerticalLine
+
+
+
+
+
+
+
+ALIGN 16; POIN RangeTemplateTable_SmallCross
+POIN RangeTemplateTable_SmallCross
+POIN RangeTemplateTable_SmallCross
+POIN RangeTemplateTable_SmallCross
+
+
+ALIGN 16; POIN RangeTemplateTable_Cross
+POIN RangeTemplateTable_Cross
+POIN RangeTemplateTable_Cross
+POIN RangeTemplateTable_Cross
+
+ALIGN 16; POIN RangeTemplateTable_SmallX
+POIN RangeTemplateTable_SmallX
+POIN RangeTemplateTable_SmallX
+POIN RangeTemplateTable_SmallX
+
+
+ALIGN 16; POIN RangeTemplateTable_X
+POIN RangeTemplateTable_X
+POIN RangeTemplateTable_X
+POIN RangeTemplateTable_X
+
+
+ALIGN 16; POIN RangeTemplateTable_Diamond
+POIN RangeTemplateTable_Diamond
+POIN RangeTemplateTable_Diamond
+POIN RangeTemplateTable_Diamond
+
+
+ALIGN 16; POIN RangeTemplateTable_SmallHorizontalLine
+POIN RangeTemplateTable_SmallVerticalLine
+POIN RangeTemplateTable_SmallHorizontalLine
+POIN RangeTemplateTable_SmallVerticalLine
+
+
+
+
+
+ALIGN 16; POIN RangeTemplateTable_Smile1
+POIN RangeTemplateTable_Smile2
+POIN RangeTemplateTable_Smile3
+POIN RangeTemplateTable_Smile4
+
+ALIGN 16; POIN RangeTemplateTable_Expressionless
+POIN RangeTemplateTable_Expressionless
+POIN RangeTemplateTable_Expressionless
+POIN RangeTemplateTable_Expressionless
+
+ALIGN 16; POIN RangeTemplateTable_MediumCone1
+POIN RangeTemplateTable_MediumCone2
+POIN RangeTemplateTable_MediumCone3
+POIN RangeTemplateTable_MediumCone4
+
+ALIGN 16; POIN RangeTemplateTable_LargeCone1
+POIN RangeTemplateTable_LargeCone2
+POIN RangeTemplateTable_LargeCone3
+POIN RangeTemplateTable_LargeCone4
+
+WORD 0 0 0 0 // Terminator 
+
+ALIGN 4
+RangeTemplateTable_Line1:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+BYTE 0 0 1 1 1
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+
+ALIGN 4
+RangeTemplateTable_Line2:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+
+ALIGN 4
+RangeTemplateTable_Line3:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+BYTE 1 1 1 0 0
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+
+ALIGN 4
+RangeTemplateTable_Line4:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+
+
+
+ALIGN 4
+RangeTemplateTable_GiantCross:
+BYTE 9 9 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 4 4 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 1 1 1 1 1 1 1 1 1
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+BYTE 0 0 0 0 1 0 0 0 0
+
+
+
+ALIGN 4
+RangeTemplateTable_Cross:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 1 1 1 1 1
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+
+
+ALIGN 4
+RangeTemplateTable_SmallX:
+BYTE 3 3 // Size (1-indexed, so this is a 3x3y array) 
+BYTE 1 1 // Center (0-indexed, so [1,1] is the center)
+
+BYTE 1 0 1
+BYTE 0 1 0 
+BYTE 1 0 1 
+
+
+
+ALIGN 4
+RangeTemplateTable_VerticalLine:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+
+ALIGN 4
+RangeTemplateTable_HorizontalLine:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+BYTE 1 1 1 1 1
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+
+
+
+ALIGN 4
+RangeTemplateTable_DoubleHorizontalLine:
+BYTE 5 6 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+BYTE 1 1 1 1 1
+BYTE 1 1 1 1 1
+BYTE 0 0 0 0 0
+BYTE 0 0 0 0 0
+
+ALIGN 4
+RangeTemplateTable_DoubleVerticalLine:
+BYTE 6 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 1 1 0 0
+BYTE 0 0 1 1 0 0
+BYTE 0 0 1 1 0 0
+BYTE 0 0 1 1 0 0
+BYTE 0 0 1 1 0 0
+
+
+
+
+
+
+
+ALIGN 4
+RangeTemplateTable_Square:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 0 0 0 0 0
+BYTE 0 1 1 1 0
+BYTE 0 1 1 1 0
+BYTE 0 1 1 1 0
+BYTE 0 0 0 0 0
+
+ALIGN 4
+RangeTemplateTable_X:
+BYTE 5 5 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 2 2 // Center (0-indexed, so [2,2] is the center)
+BYTE 1 0 0 0 1
+BYTE 0 1 0 1 0
+BYTE 0 0 1 0 0
+BYTE 0 1 0 1 0
+BYTE 1 0 0 0 1
+
+
+ALIGN 4
+RangeTemplateTable_SmallCross:
+BYTE 3 3 // Size (1-indexed, so this is a 5x5y array) 
+BYTE 1 1 // Center (0-indexed, so [1,1] is the center)
+BYTE 0 1 0 
+BYTE 1 1 1 
+BYTE 0 1 0 
+
+
+ALIGN 4
+RangeTemplateTable_SmallCurve1:
+BYTE 3 2 
+BYTE 0 0 
+BYTE 1 0 0
+BYTE 0 1 1
+
+ALIGN 4
+RangeTemplateTable_SmallCurve2:
+BYTE 2 3 
+BYTE 1 0 
+BYTE 0 1 
+BYTE 1 0
+BYTE 1 0
+
+ALIGN 4
+RangeTemplateTable_SmallCurve3:
+BYTE 3 2 
+BYTE 2 1 
+BYTE 1 1 0
+BYTE 0 0 1
+
+ALIGN 4
+RangeTemplateTable_SmallCurve4:
+BYTE 2 3 
+BYTE 0 2 
+BYTE 0 1 
+BYTE 0 1
+BYTE 1 0
+
+
+
+
+ALIGN 4
+RangeTemplateTable_SmallTriangle1:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 1 0              
+BYTE 1 1 1              
+BYTE 0 0 0      
+
+ALIGN 4
+RangeTemplateTable_SmallTriangle2:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 1 0              
+BYTE 0 1 1              
+BYTE 0 1 0    
+
+ALIGN 4
+RangeTemplateTable_SmallTriangle3:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 0 0              
+BYTE 1 1 1              
+BYTE 0 1 0    
+
+ALIGN 4
+RangeTemplateTable_SmallTriangle4:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 1 0              
+BYTE 1 1 0              
+BYTE 0 1 0    
+
+
+ALIGN 4
+RangeTemplateTable_Triangle1:
+BYTE 3 5 
+BYTE 0 2 
+BYTE 0 0 1            
+BYTE 0 1 1          
+BYTE 1 1 1    
+BYTE 0 1 1 
+BYTE 0 0 1
+
+ALIGN 4
+RangeTemplateTable_Triangle2:
+BYTE 5 3 
+BYTE 2 0
+BYTE 0 0 1 0 0            
+BYTE 0 1 1 1 0             
+BYTE 1 1 1 1 1    
+
+ALIGN 4
+RangeTemplateTable_Triangle3:
+BYTE 3 5 
+BYTE 2 2 
+BYTE 1 0 0            
+BYTE 1 1 0          
+BYTE 1 1 1    
+BYTE 1 1 0 
+BYTE 1 0 0
+
+ALIGN 4
+RangeTemplateTable_Triangle4:
+BYTE 5 3 
+BYTE 2 2 
+BYTE 1 1 1 1 1
+BYTE 0 1 1 1 0             
+BYTE 0 0 1 0 0    
+
+
+
+ALIGN 4
+RangeTemplateTable_SmallHorizontalLine:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 0 0
+BYTE 1 1 1
+BYTE 0 0 0
+
+ALIGN 4
+RangeTemplateTable_SmallVerticalLine:
+BYTE 3 3 
+BYTE 1 1 
+BYTE 0 1 0
+BYTE 0 1 0
+BYTE 0 1 0
+
+
+
+
+
+
+
+ALIGN 4
+RangeTemplateTable_Smile1:
+BYTE 5 4 
+BYTE 2 1 
+BYTE 0 1 0 1 0
+BYTE 0 0 1 0 0
+BYTE 1 0 0 0 1
+BYTE 0 1 1 1 0
+
+
+ALIGN 4
+RangeTemplateTable_Smile2:
+BYTE 4 5 
+BYTE 2 2 
+BYTE 0 1 0 0
+BYTE 1 0 0 1
+BYTE 1 0 1 0
+BYTE 1 0 0 1
+BYTE 0 1 0 0
+
+ALIGN 4
+RangeTemplateTable_Smile3:
+BYTE 5 4 
+BYTE 2 2 
+BYTE 0 1 1 1 0
+BYTE 1 0 0 0 1
+BYTE 0 0 1 0 0
+BYTE 0 1 0 1 0
+
+ALIGN 4
+RangeTemplateTable_Smile4:
+BYTE 4 5 
+BYTE 1 2
+BYTE 0 0 1 0
+BYTE 1 0 0 1
+BYTE 0 1 0 1
+BYTE 1 0 0 1
+BYTE 0 0 1 0
+
+
+ALIGN 4
+RangeTemplateTable_Expressionless:
+BYTE 5 5 
+BYTE 2 2 
+BYTE 0 1 0 1 0
+BYTE 0 0 0 0 0
+BYTE 0 0 1 0 0
+BYTE 0 0 0 0 0
+BYTE 1 1 1 1 1
+
+
+
+
+
+ALIGN 4
+RangeTemplateTable_MediumCone1:
+BYTE 3 5  
+BYTE 0 2 
+BYTE 0 0 1 
+BYTE 0 1 1 
+BYTE 1 1 1 
+BYTE 0 1 1 
+BYTE 0 0 1 
+
+
+ALIGN 4
+RangeTemplateTable_MediumCone2:
+BYTE 5 3 
+BYTE 2 0 
+BYTE 0 0 1 0 0
+BYTE 0 1 1 1 0
+BYTE 1 1 1 1 1
+
+ALIGN 4
+RangeTemplateTable_MediumCone3:
+BYTE 3 5  
+BYTE 2 2 
+BYTE 1 0 0
+BYTE 1 1 0 
+BYTE 1 1 1 
+BYTE 1 1 0 
+BYTE 1 0 0 
+
+ALIGN 4
+RangeTemplateTable_MediumCone4:
+BYTE 5 3 
+BYTE 2 2 
+BYTE 1 1 1 1 1
+BYTE 0 1 1 1 0
+BYTE 0 0 1 0 0
+
+
+
+ALIGN 4
+RangeTemplateTable_Diamond:
+BYTE 5 5
+BYTE 2 2 
+BYTE 0 0 1 0 0
+BYTE 0 1 0 1 0
+BYTE 1 0 0 0 1
+BYTE 0 1 0 1 0
+BYTE 0 0 1 0 0
+
+
+
+
+ALIGN 4
+RangeTemplateTable_LargeCone1:
+BYTE 6 5 
+BYTE 0 2 
+BYTE 0 0 0 0 1 1 
+BYTE 0 0 1 1 1 1 
+BYTE 1 1 1 1 1 1 
+BYTE 0 0 1 1 1 1 
+BYTE 0 0 0 0 1 1 
+
+ALIGN 4
+RangeTemplateTable_LargeCone2:
+BYTE 5 6 
+BYTE 2 0 
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+BYTE 0 1 1 1 0
+BYTE 0 1 1 1 0
+BYTE 1 1 1 1 1
+BYTE 1 1 1 1 1
+
+ALIGN 4
+RangeTemplateTable_LargeCone3:
+BYTE 6 5 
+BYTE 5 2 
+BYTE 1 1 0 0 0 0
+BYTE 1 1 1 1 0 0
+BYTE 1 1 1 1 1 1
+BYTE 1 1 1 1 0 0
+BYTE 1 1 0 0 0 0
+
+
+ALIGN 4
+RangeTemplateTable_LargeCone4:
+BYTE 5 6 
+BYTE 2 5 
+BYTE 1 1 1 1 1
+BYTE 1 1 1 1 1
+BYTE 0 1 1 1 0
+BYTE 0 1 1 1 0
+BYTE 0 0 1 0 0
+BYTE 0 0 1 0 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

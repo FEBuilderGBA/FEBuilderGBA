@@ -1,0 +1,4 @@
+LoopStart=$06
+RetFalse=$1C
+GoBack=$1E
+AoE_Effect=$29

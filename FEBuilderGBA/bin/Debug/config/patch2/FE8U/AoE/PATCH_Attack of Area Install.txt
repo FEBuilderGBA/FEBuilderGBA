@@ -1,0 +1,22 @@
+NAME=AoE 範囲技 広範囲のエリア攻撃(Install)
+NAME.en=AoE Area of Effect(Installer)
+NAME.zh=AoE Area of Effect(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EXTENDS:0x1100=TEXT
+EA_EXTENDS_UNITMENU:0x01=0x40
+PATCHED_IF:0x1D9DC=0x00 0x4B 0x18 0x47
+EDIT_PATCH:01=PATCH_Attack of Area Editor_AoE_Table.txt
+EDIT_PATCH:02=PATCH_Attack of Area Editor_AoE_Animation_Table.txt
+EDIT_PATCH:03=PATCH_Attack of Area Editor_AoEMenuCommandsList.txt
+EDIT_PATCH:04=PATCH_Attack of Area Editor_RangeTemplateIndexList.txt
+
+EA=Installer.event
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+INFO=広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。\r\nこのパッチは、「アニメOFFの時のマップアニメーションに攻撃エフェクトを描画する」と「Anti Huffman」に依存しているので、事前にインストールが必要です。
+INFO.en=A function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.\r\nThis patch depends on "Draw attack effect on map animation when battle animation off" and "Anti Huffman", so it needs to be installed in advance.
+INFO.zh=A function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.\r\nThis patch depends on "Draw attack effect on map animation when battle animation off" and "Anti Huffman", so it needs to be installed in advance.
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある

@@ -1,0 +1,8 @@
+01=Heal	Use range recovery instead of attack.
+02=FriendlyFire	This will be the target regardless of the enemy or ally.
+03=FixedDamage	Inflicts fixed damage regardless of DEF.
+04=MagBased	Attack with MAG power instead of POW.\r\nIt is effective only when the magic power is separated.
+05=HitRes	Makes the damage attenuated by enemy's RES instead of DEF.
+06=DepleteItem	Reduce the equipped item by one.\r\nUsed for range attacks of the type executed on items.
+07=UsableOnlyIfStationary	It is prohibited to move and activate.\r\nThis attack is only available where you are.
+08=?

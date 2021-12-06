@@ -1,0 +1,6 @@
+FoundMt=$44
+LoadAtt=$52
+LoadDefOrRes=$62
+NoCap=$6E
+GetRandBetweenXAndY=$13
+AoE_RegularDamage=$31

@@ -1030,8 +1030,21 @@ namespace FEBuilderGBA
         static string GetFEClibReference()
         {
             string FEClib = OptionForm.GetFECLIB();
-            string dir = Path.GetDirectoryName(FEClib);
-            dir = Path.Combine(dir, "../reference/");
+            if (FEClib == "")
+            {
+                return "";
+            }
+
+            string dir = "";
+            try
+            {
+                dir = Path.GetDirectoryName(FEClib);
+                dir = Path.Combine(dir, "../reference/");
+            }
+            catch(Exception)
+            {
+                return "";
+            }
 
             if (!Directory.Exists(dir))
             {

@@ -1,0 +1,89 @@
+#define UM_AoEName TxtDataJP_AoE
+#define UM_AoEDesc 0xf01
+#define UM_AoEHelp 0xf02
+#define UM_AoEHealHelp 0xf03
+
+#define UM_AoEName0 TxtDataJP_AoE0
+#define UM_AoEName1 TxtDataJP_AoE1
+#define UM_AoEName2 TxtDataJP_AoE2
+#define UM_AoEName3 TxtDataJP_AoE3
+#define UM_AoEName4 TxtDataJP_AoE4
+#define UM_AoEName5 TxtDataJP_AoE5
+#define UM_AoEName6 TxtDataJP_AoE6
+#define UM_AoEName7 TxtDataJP_AoE7
+#define UM_AoEName8 TxtDataJP_AoE8
+#define UM_AoEName9 TxtDataJP_AoE9
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP"
+#define setTextWithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP"
+
+setTextWithHuffman(UM_AoEDesc,TxtData0xf01)
+setTextWithHuffman(UM_AoEHelp,TxtData0xf02)
+setTextWithHuffman(UM_AoEHealHelp,TxtData0xf03)
+
+ALIGN 4
+TxtData0xf01:
+#incbin "TxtDataJP_0xf01.txt.bin"
+
+ALIGN 4
+TxtData0xf02:
+#incbin "TxtDataJP_0xf02.txt.bin"
+
+ALIGN 4
+TxtData0xf03:
+#incbin "TxtDataJP_0xf03.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE:
+#incbin "TxtDataJP_AoE.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE0:
+#incbin "TxtDataJP_AoE0.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE1:
+#incbin "TxtDataJP_AoE1.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE2:
+#incbin "TxtDataJP_AoE2.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE3:
+#incbin "TxtDataJP_AoE3.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE4:
+#incbin "TxtDataJP_AoE4.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE5:
+#incbin "TxtDataJP_AoE5.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE6:
+#incbin "TxtDataJP_AoE6.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE7:
+#incbin "TxtDataJP_AoE7.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE8:
+#incbin "TxtDataJP_AoE8.txt.bin"
+
+ALIGN 4
+TxtDataJP_AoE9:
+#incbin "TxtDataJP_AoE9.txt.bin"
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	TxtDataJP_AoE
+SHORT	0x60C UM_AoEDesc		//右がヘルプ指定
+SHORT	$6300 0
+POIN	AoE_AreAnyUsable|1
+POIN	0
+POIN	AoE_Effect|1
+WORD	0 0 0
+POP

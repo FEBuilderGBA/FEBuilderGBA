@@ -1,0 +1,7 @@
+OKAY_MIN_1=$22
+OKAY_MIN_2=$28
+OKAY_MIN_3=$32
+OKAY_MIN_4=$38
+End=$A8
+StartYLoop=$7E
+ContinueXLoop=$8E

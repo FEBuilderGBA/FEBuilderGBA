@@ -1,0 +1,101 @@
+#define UM_AoEName 0xf89
+#define UM_AoEDesc 0xf8a
+#define UM_AoEHelp 0xf8b
+#define UM_AoEHealHelp 0xf8c
+
+#define UM_AoEName0 0xf8d
+#define UM_AoEName1 0xf8e
+#define UM_AoEName2 0xf8f
+#define UM_AoEName3 0xf90
+#define UM_AoEName4 0xf91
+#define UM_AoEName5 0xf92
+#define UM_AoEName6 0xf93
+#define UM_AoEName7 0xf94
+#define UM_AoEName8 0xf95
+#define UM_AoEName9 0xf96
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP"
+#define setTextWithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP"
+
+setText(UM_AoEName,TxtData0xf89)
+setText(UM_AoEDesc,TxtData0xf8a)
+setText(UM_AoEHelp,TxtData0xf8b)
+setText(UM_AoEHealHelp,TxtData0xf8c)
+
+setText(UM_AoEName0,TxtData0xf8d)
+setText(UM_AoEName1,TxtData0xf8e)
+setText(UM_AoEName2,TxtData0xf8f)
+setText(UM_AoEName3,TxtData0xf90)
+setText(UM_AoEName4,TxtData0xf91)
+setText(UM_AoEName5,TxtData0xf92)
+setText(UM_AoEName6,TxtData0xf93)
+setText(UM_AoEName7,TxtData0xf94)
+setText(UM_AoEName8,TxtData0xf95)
+setText(UM_AoEName9,TxtData0xf96)
+
+ALIGN 4
+TxtData0xf89:
+#incbin "TxtDataEN_0xf89.txt.bin"
+
+ALIGN 4
+TxtData0xf8a:
+#incbin "TxtDataEN_0xf8a.txt.bin"
+
+ALIGN 4
+TxtData0xf8b:
+#incbin "TxtDataEN_0xf8b.txt.bin"
+
+ALIGN 4
+TxtData0xf8c:
+#incbin "TxtDataEN_0xf8c.txt.bin"
+
+ALIGN 4
+TxtData0xf8d:
+#incbin "TxtDataEN_0xf8d.txt.bin"
+
+ALIGN 4
+TxtData0xf8e:
+#incbin "TxtDataEN_0xf8e.txt.bin"
+
+ALIGN 4
+TxtData0xf8f:
+#incbin "TxtDataEN_0xf8f.txt.bin"
+
+ALIGN 4
+TxtData0xf90:
+#incbin "TxtDataEN_0xf90.txt.bin"
+
+ALIGN 4
+TxtData0xf91:
+#incbin "TxtDataEN_0xf91.txt.bin"
+
+ALIGN 4
+TxtData0xf92:
+#incbin "TxtDataEN_0xf92.txt.bin"
+
+ALIGN 4
+TxtData0xf93:
+#incbin "TxtDataEN_0xf93.txt.bin"
+
+ALIGN 4
+TxtData0xf94:
+#incbin "TxtDataEN_0xf94.txt.bin"
+
+ALIGN 4
+TxtData0xf95:
+#incbin "TxtDataEN_0xf95.txt.bin"
+
+ALIGN 4
+TxtData0xf96:
+#incbin "TxtDataEN_0xf96.txt.bin"
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	TxtData0xf89
+SHORT	UM_AoEName UM_AoEDesc		//右がヘルプ指定
+SHORT	$6300 0
+POIN	AoE_AreAnyUsable|1
+POIN	0
+POIN	AoE_Effect|1
+WORD	0 0 0
+POP

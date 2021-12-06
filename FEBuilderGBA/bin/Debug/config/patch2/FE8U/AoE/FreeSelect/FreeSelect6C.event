@@ -1,0 +1,53 @@
+#ifndef STAFF_FREE_SELECTION
+#define STAFF_FREE_SELECTION
+
+#include "_6CDefinitions.event"
+
+ALIGN 4
+prNewFreeSelect:
+{
+	#incbin "fsConstructor.dmp"
+	POIN p6C_FreeSelect
+
+ALIGN 4
+p6C_FreeSelect:
+#ifndef NDEBUG
+	_6C_SET_NAME(_psFreeSelect6C_Name)
+#endif
+	
+	_6C_CALL_ROUTINE(_prFreeSelect6C_Init+1)
+	_6C_SET_DESTRUCTOR(_prFreeSelect6C_Destruct+1)
+	
+	_6C_YIELD
+	
+	
+	_6C_UNIL_EXISTS(0x59A548) // GENS 6C, camera movement	//{U}
+//	_6C_UNIL_EXISTS(0x5C29C8) // GENS 6C, camera movement	//{J}
+	_6C_LOOP_ROUTINE(_prFreeSelect6C_Loop+1)
+	
+	_6C_YIELD
+	
+	_6C_UNIL_EXISTS(0x59A548) // GENS 6C, camera movement	//{U}
+//	_6C_UNIL_EXISTS(0x5C29C8) // GENS 6C, camera movement	//{J}
+	_6C_END
+
+#ifndef NDEBUG
+_psFreeSelect6C_Name:
+	String(Stan_FreeSelect)
+	BYTE 0
+#endif
+
+ALIGN 4
+_prFreeSelect6C_Init:
+	#incbin "fsInit.dmp"
+
+ALIGN 4
+_prFreeSelect6C_Loop:
+	#include "AoE_fsInputLoop.lyn.event"
+
+ALIGN 4
+_prFreeSelect6C_Destruct:
+	#include "fsDestructor.lyn.event"
+}
+
+#endif // HAX_FREE_SELECT_6C_EVENT
