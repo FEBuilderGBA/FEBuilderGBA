@@ -4714,7 +4714,6 @@
 0800D374	NewMapEventEngine	{J}
 0800D404	NewBattleEventEngine	{J}
 0800D45C	MapEventEngineExists	{J}
-08007B08	DeleteEventEngines	{J}
 0800D594	CallSomeOtherEvents	{J}
 0800D77C	CheckEventId_	{J}
 0800D7EC	SlotQueuePush	{J}
@@ -14816,3 +14815,5 @@
 08098048	SortPrepScreenItemList	{U}
 080267DC	ppStandingMapSpriteTable	{J}
 08026838	ppStandingMapSpriteTable	{U}
+0800D474	BattleEventEngineExists	{J}
+0800D48C	DeleteEventEngines	{J}

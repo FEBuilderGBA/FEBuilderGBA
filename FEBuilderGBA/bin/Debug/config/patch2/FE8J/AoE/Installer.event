@@ -117,6 +117,7 @@ Animation_IDByte, #15
 #define HitResBool 0x10
 #define DepleteItemBool 0x20
 #define UsableOnlyIfStationaryBool 0x40 
+#define KeepHP1NotDieBool 0x80
 
 
 ALIGN 4 

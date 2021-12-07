@@ -14793,3 +14793,7 @@ r3=X tile position of menu of the right	{U}
 080359C0	ExecHatchFromEggs	{J}
 0809A320	SortPrepScreenItemList	{J}
 08098048	SortPrepScreenItemList	{U}
+080267DC	ppStandingMapSpriteTable	{J}
+08026838	ppStandingMapSpriteTable	{U}
+0800D474	BattleEventEngineExists	{J}
+0800D48C	DeleteEventEngines	{J}

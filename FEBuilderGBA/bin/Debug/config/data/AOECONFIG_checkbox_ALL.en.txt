@@ -5,4 +5,4 @@
 05=HitRes	Makes the damage attenuated by enemy's RES instead of DEF.
 06=DepleteItem	Reduce the equipped item by one.\r\nUsed for range attacks of the type executed on items.
 07=UsableOnlyIfStationary	It is prohibited to move and activate.\r\nThis attack is only available where you are.
-08=?
+08=KeepHP1NotDie	Stay at HP1 without letting it die

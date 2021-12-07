@@ -1154,15 +1154,144 @@ sub r0, r1, r0
 
 cmp r0, #0 
 bgt NoCapHP
+
+ldrb r2, [r5, #ConfigByte] 
+mov r3, #KeepHP1NotDieBool
+tst r3, r2
+bne SetHP1
+
+mov r0, #0x0
+strb r0, [r7, #0x13] @ curr hp 
+b Exit
+
+SetHP1:
 mov r0, #1 
 NoCapHP:
 strb r0, [r7, #0x13] @ curr hp 
 
 DoNotDamageTarget:
+Exit:
 
 pop {r4-r7}
 pop {r0}
 bx r0 
+
+
+@Let the dead unit speak death Quote to erase it.
+@We will take a reliable method even if it is a little inefficient.
+
+@To make it look good, deathQuote is run in bulk at the end.
+@The loop starts with DEATHQUOTE_NONE and is set to DEATHQUOTE_RELOOP with delayQuote.
+@If there is DEATHQUOTE_RELOOP after the end of the loop, set it to DEATHQUOTE_FIRE to execute deathQuote and loop again.
+.equ DEATHQUOTE_NONE, 0x0
+.equ DEATHQUOTE_RELOOP, 0x1
+.equ DEATHQUOTE_FIRE, 0x2
+
+.align 4
+.global AoE_RemoveDeadUnitLoop
+.type AoE_RemoveDeadUnitLoop, %function 
+AoE_RemoveDeadUnitLoop:
+push {r4-r7, lr} 
+
+mov r4, r0	@this procs
+
+@DeathQuote runs on the BattleEventEngine, so wait for it to finish.
+blh 0x0800D1B0	@BattleEventEngineExists	{U}
+@blh 0x0800D474	@BattleEventEngineExists	{J}
+cmp r0, #0x1
+beq AoE_RemoveDeadUnitLoop_Exit
+
+mov r7, #DEATHQUOTE_NONE
+
+AoE_RemoveDeadUnitLoop_Setup:
+@foeach all units
+ldr r5, =0x0202BE4C	@Units {U}
+@ldr r5, =0x0202BE48	@Units {J}
+ldr r6, =0x0202DDCC+(0x48*0x14)	@Units {U}
+@ldr r6, =0x0202DDC8+(0x48*0x14)	@Units {J}
+
+AoE_RemoveDeadUnitLoop_Loop:
+ldr r0, [r5]
+cmp r0, #0x0
+beq AoE_RemoveDeadUnitLoop_Next
+
+ldrb r0, [r5, #0x13] @ curr hp 
+cmp  r0, #0x0
+bne  AoE_RemoveDeadUnitLoop_Next
+
+ldrb r0, [r5, #0xC] @ curr state 
+mov  r1, #0x01 @hide flag
+and  r1, r0
+bne  AoE_RemoveDeadUnitLoop_Next
+
+ldrb r0, [r5, #0x10] @ curr X 
+cmp  r0, #0xff
+beq  AoE_RemoveDeadUnitLoop_Next
+
+AoE_RemoveDeadUnitLoop_Match:
+@This unit has 0 HP but has not died, so let it die.
+ldr  r0, [r5, #0x0] @targetUnit->unit
+ldrb r0, [r0, #0x4] @targetUnit->unit->id
+blh 0x080835A8	@ShouldDisplayDeathQuoteForChar	@{U}
+@blh 0x080858e0	@ShouldDisplayDeathQuoteForChar	@{J}
+
+cmp r0, #0x0
+beq AoE_RemoveDeadUnitLoop_KillUnit_Remove
+
+cmp r7, #DEATHQUOTE_FIRE
+beq AoE_RemoveDeadUnitLoop_FireDeathQuote
+
+@Death quotes will be executed together later.
+mov r7, #DEATHQUOTE_RELOOP
+b   AoE_RemoveDeadUnitLoop_Next
+
+AoE_RemoveDeadUnitLoop_FireDeathQuote:
+ldr  r0, [r5, #0x0] @targetUnit->unit
+ldrb r0, [r0, #0x4] @targetUnit->unit->id
+blh 0x080835DC   @DisplayDeathQuoteForChar	@{U}
+@blh 0x08085914   @DisplayDeathQuoteForChar	@{J}
+
+AoE_RemoveDeadUnitLoop_KillUnit_Remove:
+mov r0 ,r5
+blh 0x08078464   @MakeMOVEUNITForMapUnit	@{U}
+@blh 0x0807a888   @MakeMOVEUNITForMapUnit	@{J}
+blh 0x0807959C   @StartMoveUnitDeathBlend2	@{U}
+@blh 0x0807b9b0   @StartMoveUnitDeathBlend2	@{J}
+
+mov r0, r5
+blh 0x08032750   @KillUnitIfNoHealth    {U}
+@blh 0x0803269C   @KillUnitIfNoHealth    {J}
+
+blh 0x080321C8   @UpdateMapAndUnit    {U}
+@blh 0x08032114   @UpdateMapAndUnit    {J}	
+
+b AoE_RemoveDeadUnitLoop_Exit
+
+AoE_RemoveDeadUnitLoop_Next:
+add r5, #0x48
+cmp r5,r6
+blt AoE_RemoveDeadUnitLoop_Loop
+
+@The loop is over.
+@If the unit that has DeathQuote is dead and you are putting it off, DEATHQUOTE_RELOOP is defined, so after setting it to DEATHQUOTE_FIRE, turn the loop again.
+
+cmp r7, #DEATHQUOTE_RELOOP
+bne AoE_RemoveDeadUnitLoop_BreakProcLoop
+
+mov r7, #DEATHQUOTE_FIRE
+b   AoE_RemoveDeadUnitLoop_Setup
+
+AoE_RemoveDeadUnitLoop_BreakProcLoop:
+
+@Now that all the units have been explored, we're done.
+mov r0, r4 @  @ parent to break from 
+blh BreakProcLoop
+
+AoE_RemoveDeadUnitLoop_Exit:
+pop {r4-r7}
+pop {r0}
+bx r0
+
 
 
 .align 4

@@ -28,7 +28,7 @@
 .equ HitResBool, 0x10
 .equ DepleteItemBool, 0x20
 .equ UsableOnlyIfStationaryBool, 0x40 
-
+.equ KeepHP1NotDieBool, 0x80
 
 
 

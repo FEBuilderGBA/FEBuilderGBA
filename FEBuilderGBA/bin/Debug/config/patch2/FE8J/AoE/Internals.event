@@ -126,6 +126,7 @@ PROC_SET_NAME(AoE_MainProcName)
 PROC_SLEEP(0)
 PROC_LOOP_ROUTINE(AoE_PauseForAnimation)
 PROC_CALL_ROUTINE(AoE_GenericEffect)
+PROC_LOOP_ROUTINE(AoE_RemoveDeadUnitLoop)
 PROC_END
 
 
