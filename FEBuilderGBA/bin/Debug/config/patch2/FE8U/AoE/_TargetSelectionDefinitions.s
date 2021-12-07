@@ -341,3 +341,9 @@
 
 .set pChapterDataStruct,       0x0202BCF0	@{U}
 @.set pChapterDataStruct,        0x0202BCEC	@{J}
+
+.set EventEngine, 0x800D07C	@{U}
+@.set EventEngine, 0x800D340	@{J}
+
+.set MemorySlot,0x30004B8	@{U}
+@.set MemorySlot,0x30004B0	@{J}
