@@ -1421,6 +1421,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetDIRECTION(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.DIRECTION2)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetDIRECTION2(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.PORTRAIT_DIRECTION)
                         {
                             isENumText = true;

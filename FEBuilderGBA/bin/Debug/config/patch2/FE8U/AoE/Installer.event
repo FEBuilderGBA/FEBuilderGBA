@@ -83,6 +83,19 @@ MenuCommandID(UM_AoEName8, UM_AoEDesc, NormalText, 0x8, AoE_SpecificUsability|1,
 MenuCommandID(UM_AoEName9, UM_AoEDesc, NormalText, 0x9, AoE_SpecificUsability|1, AoE_SpecificEffect|1, AoE_SpecificHover|1, HideMoveRangeGraphicsWrapper|1)
 UM_Separator 
 
+// ASMC Usage:
+#define AoE_ASMC(Unit, AoE_ID, RotationID, CoordX, CoordY) "SVAL s1 Unit; SVAL s6 AoE_ID; SVAL s7 RotationID; SVAL sB CoordY<<16|CoordX; ASMC AoE_ASMC"
+/*
+SVAL s1 (-1) // Unit 
+SVAL s6 0 // AoE ID 
+SVAL s7 0 // Rotation 
+SCOORD sB [10, 11] // Coords 
+ASMC AoE_ASMC
+*/ 
+#define AoE_RotationID_LEFT   0
+#define AoE_RotationID_TOP    1
+#define AoE_RotationID_RIGHT  2
+#define AoE_RotationID_BOTTOM 3
 
 
 
@@ -341,5 +354,3 @@ SVAL r1 0xA //AnimationID
 ASMC ASMC_Draw|1
 NoFade
 ENDA
-
-

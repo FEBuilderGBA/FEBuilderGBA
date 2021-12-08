@@ -7596,6 +7596,21 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static string GetDIRECTION2(uint num)
+        {
+            switch (num)
+            {
+                case 0x00:
+                    return "←";///No Translate
+                case 0x01:
+                    return "↑";///No Translate
+                case 0x02:
+                    return "→";///No Translate
+                case 0x03:
+                    return "↓";///No Translate
+            }
+            return "";
+        }
         public static string GetFOG(uint num)
         {
             switch (num)

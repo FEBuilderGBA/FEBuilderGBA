@@ -20,3 +20,14 @@ INFO.en=A function that allows you to attack a wide area at once will be added t
 INFO.zh=A function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.\r\nThis patch depends on "Draw attack effect on map animation when battle animation off" and "Anti Huffman", so it needs to be installed in advance.
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+
+
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_AoE.dmp}	AoE範囲技をイベントから呼び出す(ASMC_AoE)(LOW)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY
+EVENTSCRIPT:12=40050100UUUUUUUU40050600TTTTTTTT40050700RRRRRRRR40050B00XXXXYYYY400D0000{$L1:ASMC_AoE.dmp}	AoE範囲技をイベントから呼び出す [UU:UNIT:使用者][XX:MAPX:標的X][YY:MAPY:標的X][TT::AoETypeID][RR:DIRECTION2:回転方向](ASMC_AoE)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_AoE.dmp}	 Call AoE Attack of Effect from Event(ASMC_AoE)(LOW)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY
+EVENTSCRIPT:12.en=40050100UUUUUUUU40050600TTTTTTTT40050700RRRRRRRR40050B00XXXXYYYY400D0000{$L1:ASMC_AoE.dmp}	Call AoE Attack of Effect from Event [UU:UNIT:UseUnit][XX:MAPX:TargetX][YY:MAPY:TargetX][TT::AoETypeID][RR:DIRECTION2:Rotate](ASMC_AoE)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_AoE.dmp}	 Call AoE Attack of Effect from Event(ASMC_AoE)(LOW)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY
+EVENTSCRIPT:12.zh=40050100UUUUUUUU40050600TTTTTTTT40050700RRRRRRRR40050B00XXXXYYYY400D0000{$L1:ASMC_AoE.dmp}	Call AoE Attack of Effect from Event [UU:UNIT:UseUnit][XX:MAPX:TargetX][YY:MAPY:TargetX][TT::AoETypeID][RR:DIRECTION2:Rotate](ASMC_AoE)	Slot1=Unit, Slot6=AoE ID, Slot7=Rotation, SlotB XY

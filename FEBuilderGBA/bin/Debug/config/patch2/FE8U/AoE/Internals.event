@@ -227,3 +227,6 @@ AoE_SpecificEffect:
 ALIGN 4
 AoE_SpecificHover:
 #include "AoE_SpecificHover.lyn.event"
+
+ALIGN 4
+#include "AoE_ASMC.lyn.event"

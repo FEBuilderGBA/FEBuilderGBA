@@ -870,6 +870,10 @@ namespace FEBuilderGBA
             {
                 text = InputFormRef.GetDIRECTION(v);
             }
+            else if (arg.Type == EventScript.ArgType.DIRECTION2)
+            {
+                text = InputFormRef.GetDIRECTION2(v);
+            }
             else if (arg.Type == EventScript.ArgType.PORTRAIT_DIRECTION)
             {
                 text = " " + InputFormRef.GetPORTRAIT_DIRECTION(v);
@@ -2831,6 +2835,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetDIRECTION(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.DIRECTION2)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetDIRECTION2(v));
                     }
                     else if (arg.Type == EventScript.ArgType.PORTRAIT_DIRECTION)
                     {
