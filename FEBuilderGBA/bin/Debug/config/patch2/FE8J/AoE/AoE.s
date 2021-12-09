@@ -1339,7 +1339,8 @@ bne CleanupHealing @ Fixed Damage means to not use Str/Mag for staves
 mov r0, #MagBasedBool 
 tst r0, r1 
 beq UseStr 
-mov r1, #0x3A
+@mov r1, #0x3A		@{U}
+mov r1, #0x1A		@{J}
 ldrb r0, [r6, r1] @ Use Mag 
 add r4, r0 
 b CleanupHealing 
