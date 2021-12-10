@@ -7161,6 +7161,26 @@ namespace FEBuilderGBA
             return MapChangeForm.GetName(mapid, changeid);
         }
 
+        public static string GetTRANSITIONSPEED(uint num, out string errorMessae)
+        {
+            if (num <= 0)
+            {
+                errorMessae = R._("0だとフリーズするので、1以上の値を指定してください。");
+                return errorMessae;
+            }
+            else if (num > 30)
+            {
+                errorMessae = R._("1から30までの値を指定してください。");
+                return errorMessae;
+            }
+            else
+            {
+                errorMessae = "";
+                double sec = Math.Round( (240.0f / (double)num / 60.0f) , 4);
+                return R._("フレーム秒({0}秒)", sec );
+            }
+        }
+
         //RAM UNIT PARAM
         public static string GetRAM_UNIT_PARAM(uint num, out string errorMessae)
         {

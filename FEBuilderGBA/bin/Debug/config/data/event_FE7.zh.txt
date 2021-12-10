@@ -517,13 +517,13 @@ E6000000	_E6	{U}
 1D000000XXXXXXXXYYYY0000ZZZZ0000	使用ASM切换文本[XXXX:POINTER_ASM:ASM][当YY:TEXT:启用时][ZZ:TEXT:禁用时](MORETEXTIFASM)	{U}
 1F000000	_1F不明	{J}
 21000000	_21不明	{U}
-D900XXXX	淡入淡出场景，显示CG[XX:DECIMAL:Fade_time](FADUCG)	{J}
-D600XXXX	淡入淡出场景，显示CG[XX:DECIMAL:Fade_time](FADUCG)	{U}
+D900XXXX	淡入淡出场景，显示CG[XX:FSEC:Fade_time](FADUCG)	{J}
+D600XXXX	淡入淡出场景，显示CG[XX:FSEC:Fade_time](FADUCG)	{U}
 
-DC000000XXXXXXXXYYYYYYYY	从CG切换到BG[XXXX:BG:背景][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
-DA000000XXXXXXXXYYYYYYYY	从BG切换到CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
-DD000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::TransitionSpeed]FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
-D9000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::TransitionSpeed]FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
+DC000000XXXXXXXXYYYYYYYY	从CG切换到BG[XXXX:BG:背景][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMCGTOBG)	@TRANSITIONSPEED 	{J}
+DA000000XXXXXXXXYYYYYYYY	从BG切换到CG[XXXX:CG:CG][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMBGTOCG)	{BG}	@TRANSITIONSPEED 	{U}
+DD000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY:TRANSITIONSPEED:TransitionSpeed]FROMCGTOBG)	@TRANSITIONSPEED 	{J}
+D9000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY:TRANSITIONSPEED:TransitionSpeed]FROMCGTOBG)	@TRANSITIONSPEED 	{U}
 
 DB000000	Removes_brown_text-boxes(RETB)	{J}
 D8000000	Removes_brown_text-boxes(RETB)	{U}
@@ -543,8 +543,8 @@ D2000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:对话][YYYY::Value]显示与CG
 CF000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:对话][YYYY::Value]显示与CG的对话(TEXTCG)	{TEXT}	{U}
 D4000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:对话][YYYY::Value]与CG 2(MORETEXTCG)进行对话	{J}
 D1000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:对话][YYYY::Value]与CG 2(MORETEXTCG)进行对话	{U}
-D800XXXX	淡出剪切显示CG[XX:DECIMAL:Fade_time](FADUCG)的场景	{BG}	{J}
-D500XXXX	淡出剪切显示CG[XX:DECIMAL:Fade_time](FADUCG)的场景	{BG}	{U}
+D800XXXX	淡出剪切显示CG[XX:FSEC:Fade_time](FADUCG)的场景	{BG}	{J}
+D500XXXX	淡出剪切显示CG[XX:FSEC:Fade_time](FADUCG)的场景	{BG}	{U}
 DA000000XXXX0000YYYYZZZZ	地名显示[XXXX:ONELINE_TEXT:文本][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](RETB)	{TEXT}	{J}
 D7000000XXXX0000YYYYZZZZ	地名显示[XXXX:ONELINE_TEXT:文本][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](RETB)	{TEXT}	{U}
 DE000000XXYY0000	从CG切换到地图[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
@@ -556,8 +556,8 @@ DE000000XXYY0000	从CG切换到地图[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 
 CD000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]显示返回warp到这个地方(WARP)	{UNITMOVE}	{J}
 CC000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]显示返回warp到这个地方(WARP)	{UNITMOVE}	{U}
-8C00XXXX	淡入屏幕并使其变暗[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
-8E00XXXX	淡入屏幕并使其变暗[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
+8C00XXXX	淡入屏幕并使其变暗[XX:FSEC:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
+8E00XXXX	淡入屏幕并使其变暗[XX:FSEC:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
 8D00XXXX	淡出屏幕(从黑暗中返回)[XX:DECIMAL:淡入淡出时间](FADU)	{FADE}	{MAPEFFECT}		{J}
 8F00XXXX	淡出屏幕(从黑暗中返回)[XX:DECIMAL:淡入淡出时间](FADU)	{FADE}	{MAPEFFECT}		{U}
 8E00XXXX	白色 - 屏幕和纯白色[XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{J}

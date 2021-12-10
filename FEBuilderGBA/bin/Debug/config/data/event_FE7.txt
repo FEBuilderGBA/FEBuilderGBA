@@ -287,10 +287,10 @@
 9A000000CB000000XXXXXXXX	イベント呼び出し[XXXX:POINTER_EVENT:Event_pointer]	{JUMP}	{U}
 8C001000900000000500XX008D00100091000000	背景表示[XX:BG:BG](FADI)	{BG}	{J}
 8E001000920000000500XX008F00100093000000	背景表示[XX:BG:BG](FADI)	{BG}	{U}
-8C00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
-8E00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
-8D00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
-8F00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
+8C00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:FSEC:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
+8E00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:FSEC:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
+8D00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:FSEC:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
+8F00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:FSEC:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
 8E00XXXX	画面をホワイトインさせて真っ白に。通常->白 [XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{J}
 9000XXXX	画面をホワイトインさせて真っ白に。通常->白 [XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{U}
 8F00XXXX	画面をホワイトアウト(真っ白からの復帰) 白->通常 [XX:FSEC:速度](FAWU)	{FADE}	{MAPEFFECT}	{J}
@@ -551,10 +551,10 @@ D4000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:会話][YYYY::Value2]CG付き�
 D1000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:会話][YYYY::Value2]CG付きで会話を表示2(MORETEXTCG)	{U}
 D600XX00	[XX:CG:CG]CG表示(SHCG)	{BG}	{J}
 D300XX00	[XX:CG:CG]CG表示(SHCG)	{BG}	{U}
-D800XXXX	CGを表示しているカットシーンをフェードアウトする[XX:DECIMAL:Fade_time](FADUCG)	{FADE}	{BG}	{J}
-D500XXXX	CGを表示しているカットシーンをフェードアウトする[XX:DECIMAL:Fade_time](FADUCG)	{FADE}	{BG}	{U}
-D900XXXX	CGを表示しているカットシーンをフェードインする[XX:DECIMAL:Fade_time](FADUCG)	{FADE}	{BG}	{J}
-D600XXXX	CGを表示しているカットシーンをフェードインする[XX:DECIMAL:Fade_time](FADUCG)	{FADE}	{BG}	{U}
+D800XXXX	CGを表示しているカットシーンをフェードアウトする[XX:FSEC:Fade_time](FADUCG)	{FADE}	{BG}	{J}
+D500XXXX	CGを表示しているカットシーンをフェードアウトする[XX:FSEC:Fade_time](FADUCG)	{FADE}	{BG}	{U}
+D900XXXX	CGを表示しているカットシーンをフェードインする[XX:FSEC:Fade_time](FADUCG)	{FADE}	{BG}	{J}
+D600XXXX	CGを表示しているカットシーンをフェードインする[XX:FSEC:Fade_time](FADUCG)	{FADE}	{BG}	{U}
 DA000000XXXX0000YYYYZZZZ	地名表示[XXXX:ONELINE_TEXT:テキスト][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{J}
 D7000000XXXX0000YYYYZZZZ	地名表示[XXXX:ONELINE_TEXT:テキスト][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{U}
 DB000000	Removes_brown_text-boxes(RETB)	{J}
@@ -562,15 +562,10 @@ D8000000	Removes_brown_text-boxes(RETB)	{U}
 
 // -4
 
-DC000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	{J}
-D9000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	{U}
-DD000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	{J}
-DA000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	{U}
-
-DC000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{J}
-D9000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{U}
-DD000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{J}
-DA000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{U}
+DC000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMCGTOBG)	@TRANSITIONSPEED	{J}
+D9000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMCGTOBG)	@TRANSITIONSPEED	{U}
+DD000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMBGTOCG)	{BG}	@TRANSITIONSPEED	{J}
+DA000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY:TRANSITIONSPEED:TransitionSpeed](FROMBGTOCG)	{BG}	@TRANSITIONSPEED	{U}
 
 DE000000XXYY0000	CGからマップへ切替[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 DB000000XXYY0000	CGからマップへ切替[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{U}

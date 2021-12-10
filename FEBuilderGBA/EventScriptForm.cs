@@ -855,6 +855,10 @@ namespace FEBuilderGBA
                 }
                 CheckCallebleFromEvent(v, ref errormessage);
             }
+//            else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
+//            {//FROMCGTOBG FROMBGTOCG
+//                InputFormRef.GetTRANSITIONSPEED(v, out errormessage);
+//            }
 
             return errormessage;
         }
@@ -1607,6 +1611,12 @@ namespace FEBuilderGBA
                         {//AOECONFIG
                             isENumText = true;
                             text = " " + InputFormRef.GetAOECONFIG(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
+                        {//AOECONFIG
+                            isENumText = true;
+                            string dummy;
+                            text = " " + InputFormRef.GetTRANSITIONSPEED(v, out dummy);
                         }
 
                         if (isENumText)

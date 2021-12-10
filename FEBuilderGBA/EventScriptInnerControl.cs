@@ -1102,6 +1102,10 @@ namespace FEBuilderGBA
             {//AOECONFIG
                 text = " " + InputFormRef.GetAOECONFIG(v);
             }
+            else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
+            {//AOECONFIG
+                text = " " + InputFormRef.GetTRANSITIONSPEED(v, out errormessage);
+            }
 
 
             U.MakeTransparent(image);
@@ -2469,6 +2473,13 @@ namespace FEBuilderGBA
                     if (v == 0)
                     {//FSECが0ならディフォルト値60を設定する
                         U.write_u8(selectedByteData, (uint)arg.Position, 60);
+                    }
+                }
+                else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
+                {//TRANSITIONSPEED
+                    if (v == 0)
+                    {//TRANSITIONSPEEDが0ならディフォルト値4を設定する
+                        U.write_u8(selectedByteData, (uint)arg.Position, 4);
                     }
                 }
             }

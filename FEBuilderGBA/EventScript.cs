@@ -116,6 +116,7 @@ namespace FEBuilderGBA
             , MAPACTIONANIMATION //行動アニメーション(パッチ)
             , FE8TUTORIALMETHOD //FE8チュートリアル　イベント呼び出しタイミング
             , AOECONFIG        //範囲攻撃の設定
+            , TRANSITIONSPEED   //FE7用
         };
 
         public class Arg
@@ -797,6 +798,7 @@ namespace FEBuilderGBA
                 || type == EventScript.ArgType.MAGVELY
                 || type == EventScript.ArgType.FSEC
                 || type == EventScript.ArgType.SOUNDROOM
+                || type == EventScript.ArgType.TRANSITIONSPEED
                 );
         }
         //符号を使ってマイナスを表示するかどうか
@@ -1144,6 +1146,10 @@ namespace FEBuilderGBA
             else if (hint == "@FADESPEED")
             {
                 return R._("10(最速)>>>>>01");
+            }
+            else if (hint == "@TRANSITIONSPEED")
+            {
+                return R._("30(最速)>>>>>01\r\nTransitionSpeedには、1-30の範囲で、画面を切り替える速度を指定します。");
             }
             else if (hint == "@MOVESPEED")
             {
