@@ -562,10 +562,16 @@ D8000000	Removes_brown_text-boxes(RETB)	{U}
 
 // -4
 
-DC000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::Value2](FROMCGTOBG)	{J}
-D9000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::Value2](FROMCGTOBG)	{U}
-DD000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::Value2](FROMBGTOCG)	{BG}	{J}
-DA000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::Value2](FROMBGTOCG)	{BG}	{U}
+DC000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	{J}
+D9000000XXXXXXXXYYYYYYYY	CGからBGへ切替[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	{U}
+DD000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	{J}
+DA000000XXXXXXXXYYYYYYYY	BGからCGへ切替[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	{U}
+
+DC000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{J}
+D9000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{U}
+DD000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{J}
+DA000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeedは、画面が切り替わる速度で、TransitionSpeed 1は、240/1フレームに相当します。\r\n0を設定すると、画面がフリーズするため、0には設定しないでください。	{U}
+
 DE000000XXYY0000	CGからマップへ切替[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 DB000000XXYY0000	CGからマップへ切替[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{U}
 E0000000XXXXXXXX	_DC[XXXX::Value]	{J}

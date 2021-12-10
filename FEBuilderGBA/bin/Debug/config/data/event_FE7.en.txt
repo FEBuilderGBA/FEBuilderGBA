@@ -551,10 +551,10 @@ D900XXXX	Fade in the cut scene displaying CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	
 D600XXXX	Fade in the cut scene displaying CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	{U}
 DA000000XXXX0000YYYYZZZZ	Place name display[XXXX:ONELINE_TEXT:Text][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{J}
 D7000000XXXX0000YYYYZZZZ	Place name display[XXXX:ONELINE_TEXT:Text][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{U}
-DC000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::Value 2](FROMCGTOBG)	{J}
-D9000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::Value 2](FROMCGTOBG)	{U}
-DD000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::Value 2](FROMBGTOCG)	{BG}	{J}
-DA000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::Value 2](FROMBGTOCG)	{BG}	{U}
+DC000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
+D9000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
+DD000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
+DA000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
 DE000000XXYY0000	Switch from CG to map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 02000100010000000A00000000000000	ENDA 2Event end command 2[TERM]	{TERM}
 23000000XXXXZZZZYYYYYYYY	From this coordinate, specify unit movement[XX:MAPX:OldX][ZZ:MAPY:OldY][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{J}

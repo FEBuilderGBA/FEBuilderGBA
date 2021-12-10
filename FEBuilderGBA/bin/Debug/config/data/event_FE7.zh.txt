@@ -519,8 +519,12 @@ E6000000	_E6	{U}
 21000000	_21不明	{U}
 D900XXXX	淡入淡出场景，显示CG[XX:DECIMAL:Fade_time](FADUCG)	{J}
 D600XXXX	淡入淡出场景，显示CG[XX:DECIMAL:Fade_time](FADUCG)	{U}
-DD000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::Value 2]FROMCGTOBG)	{J}
-D9000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::Value 2]FROMCGTOBG)	{U}
+
+DC000000XXXXXXXXYYYYYYYY	从CG切换到BG[XXXX:BG:背景][YYYY::TransitionSpeed](FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
+DA000000XXXXXXXXYYYYYYYY	从BG切换到CG[XXXX:CG:CG][YYYY::TransitionSpeed](FROMBGTOCG)	{BG}	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
+DD000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::TransitionSpeed]FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{J}
+D9000000XXXXXXXXYYYYYYYY	淡出并显示CG[XXXX:BG:Background][YYYY::TransitionSpeed]FROMCGTOBG)	TransitionSpeed is the speed at which the screen is switched. TransitionSpeed 1 is equivalent to 240/1 frames.\r\nDo not set to 0 as the screen will freeze. 	{U}
+
 DB000000	Removes_brown_text-boxes(RETB)	{J}
 D8000000	Removes_brown_text-boxes(RETB)	{U}
 DF000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
@@ -543,8 +547,6 @@ D800XXXX	淡出剪切显示CG[XX:DECIMAL:Fade_time](FADUCG)的场景	{BG}	{J}
 D500XXXX	淡出剪切显示CG[XX:DECIMAL:Fade_time](FADUCG)的场景	{BG}	{U}
 DA000000XXXX0000YYYYZZZZ	地名显示[XXXX:ONELINE_TEXT:文本][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](RETB)	{TEXT}	{J}
 D7000000XXXX0000YYYYZZZZ	地名显示[XXXX:ONELINE_TEXT:文本][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](RETB)	{TEXT}	{U}
-DC000000XXXXXXXXYYYYYYYY	从CG切换到BG[XXXX:BG:背景][YYYY::值2](FROMCGTOBG)	{J}
-DA000000XXXXXXXXYYYYYYYY	从BG切换到CG[XXXX:CG:CG][YYYY::Value 2](FROMBGTOCG)	{BG}	{U}
 DE000000XXYY0000	从CG切换到地图[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 02000100010000000A00000000000000	ENDA 2事件结束命令2[TERM]	{TERM}
 23000000XXXXZZZZYYYYYYYY	从该坐标指定人物移动[XX:MAPX:OldX][ZZ:MAPY:OldY][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{J}
