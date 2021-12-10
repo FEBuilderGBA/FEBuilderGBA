@@ -134,6 +134,17 @@ bne InventoryLoop
 @ They have said item, so continue
 ValidItem:
 
+@CheckHPCost
+ldrb r0, [r4, #HpCostByte] @ Hp Cost 
+cmp r0, #0 
+beq ValidHPCost
+
+ldrb r1, [r5, #0x13] @ Curr HP
+cmp r1, r0 
+ble ReturnFalse
+ValidHPCost:
+
+
 
 ReturnTrue: 
 mov r0, #1 

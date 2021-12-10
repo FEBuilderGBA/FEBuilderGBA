@@ -36,6 +36,8 @@ namespace FEBuilderGBA
             this.ToolTip = InputFormRef.GetToolTip<PatchForm>();
             fixDocsBugs.AllowMaximizeBox();
             Filter.Focus();
+
+            this.MaximizeBox = true;
         }
 
         public static string GetPatchDirectory()

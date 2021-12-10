@@ -9,9 +9,9 @@ IF:0x1D9DC=0x00 0x4B 0x18 0x47
 AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
 
 
-INFO=AoEコマンドを利用できる条件と、効果を定義します。\r\nリストの拡張はしないでください。\r\nディフォルトで10個用意しているので、それで十分だと思います。\r\nどうしても拡張したい場合は、AoEMenuCommandListの方も拡張する必要があります。\r\n\r\n広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
-INFO.en=Defines the conditions under which the AoE command can be used and the effects.\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
-INFO.zh=Defines the conditions under which the AoE command can be used and the effects.\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO=AoEコマンドを利用できる条件と、効果を定義します。\r\n先頭の7つ項目は、このAoEコマンドを使えるユニットの条件を指定します。ディフォルトは誰でも使えるようになっています。\r\nHpCostは、このAoEコマンドを発動するために消費するHPを記述します(FE2外伝と同じくHPをMPとして扱います)。0だとHPを消費せずに発動できます。\r\nConfigは、AoEについて詳細な設定をします。詳しくはラベルをクリックして内容を確認してください。\r\nPowerLowerBoundとPowerUpperBoundは、ダメージに付与する乱数を指定します。指定した範囲のダメージがランダムで追加されます。\r\nMinRangeとMaxRangeは、攻撃できる射程の範囲を指定します。\r\nRangeMaskは、範囲攻撃する範囲を指定します。L字やX型とか指定できます。プレイヤーは射程をLボタンで回転できます。詳細はRangeTemplateIndexListを見てください。\r\nAnimationは、攻撃を実行した時に表示するアニメーションを指定します。詳細はAoE_Animation_Tableを見てください。\r\n\r\nリストの拡張はしないでください。\r\nディフォルトで10個用意しているので、それで十分だと思います。\r\nどうしても拡張したい場合は、AoEMenuCommandListの方も拡張する必要があります。\r\n\r\n広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
+INFO.en=Defines the conditions under which the AoE command can be used and the effects.\r\nThe first seven items specify the conditions under which the unit can use this AoE command. The default is for anyone to be able to use it.\r\nHpCost describes the HP consumed to activate this AoE command (HP is treated as MP as in FE2 Gaiden). 0 means that the command can be activated without consuming HP.\r\nConfig is a detailed setting for AoE. Click on the label to see the details.\r\nPowerLowerBound and PowerUpperBound specify the random number to be given to the damage. Damage in the specified range will be added randomly.\r\nMinRange and MaxRange specify the range at which you can attack.\r\nThe RangeMask specifies the range of the attack, which can be L-shaped or X-shaped. The player can rotate the range with the L button. See the RangeTemplateIndexList for details.\r\nAnimation specifies the animation to be displayed when the attack is executed. See AoE_Animation_Table for details.\r\n\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO.zh=Defines the conditions under which the AoE command can be used and the effects.\r\nThe first seven items specify the conditions under which the unit can use this AoE command. The default is for anyone to be able to use it.\r\nHpCost describes the HP consumed to activate this AoE command (HP is treated as MP as in FE2 Gaiden). 0 means that the command can be activated without consuming HP.\r\nConfig is a detailed setting for AoE. Click on the label to see the details.\r\nPowerLowerBound and PowerUpperBound specify the random number to be given to the damage. Damage in the specified range will be added randomly.\r\nMinRange and MaxRange specify the range at which you can attack.\r\nThe RangeMask specifies the range of the attack, which can be L-shaped or X-shaped. The player can rotate the range with the L button. See the RangeTemplateIndexList for details.\r\nAnimation specifies the animation to be displayed when the attack is executed. See AoE_Animation_Table for details.\r\n\r\nDo NOT expand the list.\r\nI have 10 by default, so I think that's enough.\r\nIf you really want to extend it, you need to extend AoEMenuCommandList as well.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
 
 POINTER=$XGREP4END+8 0x03 0x43 0x20 0x1C 0x00 0xF0 0x02 0xF8 0x10 0xBC 0x08 0xBC 0x18 0x47 0x00 0x00 0xB8 0x04 0x00 0x03 0x94 0x2E 0x00 0x08 0x50 0x4E 0x00 0x03 XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 0xAC 0x4E 0x02 0x08 0x58 0xA9 0x03 0x02
 
@@ -31,11 +31,11 @@ B3:ITEM=Item(00=ANY)
 W4:FLAG=Flag(00=ANY)
 B6:SKILL=Skill(00=ANY)
 B7=00(Pokemblem Only)
-B8:DECIMAL=HpCostByte
-B9:AOECONFIG=ConfigByte
-B10:DECIMAL=PowerLowerBoundByte
-B11:DECIMAL=PowerUpperBoundByte
-B12:DECIMAL=MinRangeByte
-B13:DECIMAL=MaxRangeByte
+B8:DECIMAL=HpCost
+B9:AOECONFIG=Config
+B10:DECIMAL=PowerLowerBound
+B11:DECIMAL=PowerUpperBound
+B12:DECIMAL=MinRange
+B13:DECIMAL=MaxRange
 B14:$COMBO combo.RangeMask.txt=RangeMask
 B15:$COMBO combo.Animation.txt=Animation
