@@ -2996,6 +2996,11 @@ namespace FEBuilderGBA
             }
             if (linktype == "AOERANGEPOINTER")
             {
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                link_object.DoubleClick += (sender, e) =>
+                {//ダブルクリックで編集
+                    JumpTo(src_object, link_info, linktype, new string[] { });
+                };
                 return;
             }
             
@@ -4415,6 +4420,11 @@ namespace FEBuilderGBA
                 UbyteBitFlagForm f = (UbyteBitFlagForm)InputFormRef.JumpForm<UbyteBitFlagForm>(U.NOT_FOUND);
                 f.JumpTo(EventScript.ArgType.AOECONFIG, value);
                 InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
+            }
+            else if (linktype == "AOERANGEPOINTER")
+            {
+                AOERANGEForm f = (AOERANGEForm)InputFormRef.JumpForm<AOERANGEForm>(U.NOT_FOUND);
+                f.JumpTo(src_object, value);
             }
         }
 

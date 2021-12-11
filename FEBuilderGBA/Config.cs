@@ -89,11 +89,13 @@ namespace FEBuilderGBA
 
         public string at(string key, string def = "")
         {
-            if (!this.ContainsKey(key))
-            {//設定されていないっぽい
-                return def;
+            string r;
+            if (this.TryGetValue(key, out r))
+            {
+                return r;
             }
-            return this[key];
+            //設定されていないっぽい
+            return def;
         }
 
         public Keys[] ShortCutKeys { get; private set; }

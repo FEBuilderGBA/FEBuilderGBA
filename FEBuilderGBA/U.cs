@@ -3723,18 +3723,29 @@ namespace FEBuilderGBA
             }
             return search_char;
         }
+        static Dictionary<string, Color> g_ColorCache = new Dictionary<string, Color>();
         public static Color ColorFromName(string name)
         {
+            {
+                Color color;
+                if (g_ColorCache.TryGetValue(name, out color))
+                {
+                    return color;
+                }
+            }
+
             //ディフォルトの Color.FromName は16進数指定するとバグるので自分で作る... 
-            if(U.isHexString(name))
+            if (U.isHexString(name))
             {
                 uint colorcode = U.atoh(name);
                 Color color = Color.FromArgb((int)colorcode);
+                g_ColorCache[name] = color;
                 return color;
             }
             else
             {
                 Color color = Color.FromName(name);
+                g_ColorCache[name] = color;
                 return color;
             }
         }
