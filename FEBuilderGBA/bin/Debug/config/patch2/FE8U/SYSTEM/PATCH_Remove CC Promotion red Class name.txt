@@ -19,7 +19,7 @@ DELL:0xCCAAC=0x70 0x47
 DELL:0xCCB40=0x70 0x47
 
 AUTHOR=Snek https://discord.com/channels/144670830150811649/470029781795078175/917186534606794772
-INFO=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nNarrow Fontを利用している場合、正しく表示されないので、このパッチを利用して表示をオフにすることができます。\r\n
+INFO=CC画面から、赤文字で表示されるクラス名を削除します。\r\nNarrow Fontを利用している場合、正しく表示されないので、このパッチを利用して表示をオフにすることができます。\r\n
 
 INFO.en=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nIf you are using Narrow Font, it will not be displayed correctly, so you can use this patch to turn off the display.\r\n
 INFO.zh=nop out PromotionDisplay_InitClassName to prevent drawing the class name.\r\nIf you are using Narrow Font, it will not be displayed correctly, so you can use this patch to turn off the display.\r\n

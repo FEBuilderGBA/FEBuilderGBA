@@ -1112,6 +1112,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ImageMapActionAnimationForm>();
         }
 
+        private void MapMiniMapTerrainImageButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<MapMiniMapTerrainImageForm>();
+        }
+
     }
 
 }

@@ -2484,6 +2484,7 @@ namespace FEBuilderGBA
             ArenaEnemyWeaponForm.MakeAllDataLength(list);
             EventUnitForm.RecycleReserveUnits(ref list);
             ImageMapActionAnimationForm.MakeAllDataLength(list, isPointerOnly);
+            MapMiniMapTerrainImageForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
             if (Program.ROM.RomInfo.version() == 8)
@@ -2639,6 +2640,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "AppendAllASMStructPointersList MapLoadFunctionForm")) return;
                 MapLoadFunctionForm.MakeAllDataLength(structlist);
+
+                if (InputFormRef.DoEvents(null, "AppendAllASMStructPointersList MapMiniMapTerrainImageForm")) return;
+                MapMiniMapTerrainImageForm.MakeAllDataLength(structlist);
             }
 
             if (isUseOtherGraphics)

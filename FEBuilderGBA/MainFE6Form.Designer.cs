@@ -194,6 +194,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1137,6 +1138,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.MapMiniMapTerrainImageButton);
             this.ControlPanel.Controls.Add(this.ImageBattleFieldButton);
             this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
@@ -1928,6 +1930,17 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
+            // MapMiniMapTerrainImageButton
+            // 
+            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1232, 294);
+            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
+            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
+            this.MapMiniMapTerrainImageButton.TabIndex = 144;
+            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
+            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
+            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
+            // 
             // MainFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2122,5 +2135,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem TestRunStripMenuItem;
         private System.Windows.Forms.Button ImageBattleFieldButton;
+        private System.Windows.Forms.Button MapMiniMapTerrainImageButton;
     }
 }

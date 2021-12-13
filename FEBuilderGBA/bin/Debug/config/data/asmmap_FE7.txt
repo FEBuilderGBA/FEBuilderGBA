@@ -5478,3 +5478,7 @@
 0802DEC4	FlamesWeatherInitGradient	{J}
 0802DF54	FlamesWeatherInitParticles	{J}
 0802DFB8	WeatherInit_Flames	{J}
+080A2640	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}
+080a2454	GetMiniMapTypeFromCoordinateXY	{U}
+080A32B4	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{J}
+080A30C8	GetMiniMapTypeFromCoordinateXY	{J}

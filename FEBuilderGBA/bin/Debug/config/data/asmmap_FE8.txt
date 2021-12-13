@@ -14817,3 +14817,5 @@
 08026838	ppStandingMapSpriteTable	{U}
 0800D474	BattleEventEngineExists	{J}
 0800D48C	DeleteEventEngines	{J}
+080AC610	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{J}
+080ac424	GetMiniMapTypeFromCoordinateXY	{J}

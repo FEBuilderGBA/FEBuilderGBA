@@ -451,6 +451,8 @@ namespace FEBuilderGBA
         public uint vanilla_casle_image_address() { return 0x18B89C; }
         public uint vanilla_plain_config_address() { return 0x1A7674; }
         public uint vanilla_plain_image_address() { return 0x185154; }
+        public uint map_minimap_tile_array_pointer() { return 0xA7A34; } //minimapのチップ割り当て
+
         public string get_shop_name(uint shop_object)//店の名前
         {
             if (shop_object == 0x16)

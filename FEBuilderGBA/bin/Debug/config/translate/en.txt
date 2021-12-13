@@ -265,6 +265,9 @@ Unit
 :AIの対象ユニット
 Target Unit of AI
 
+:AoE攻撃の範囲を指定します。\r\n中心点は、攻撃が炸裂する中心点です。\r\n攻撃するマスを1に、それ以外を0に指定してください。
+Specifies the range of AoE attacks.\r\nThe center point is the center point where the attack explodes.\r\nSpecify 1 for the cells to attack and 0 for the others.
+
 :攻撃が炸裂する中心点を指定します。
 Specifies the center point where the attack explodes.
 
@@ -282,9 +285,6 @@ Height
 
 :幅
 Width
-
-:AoE攻撃の範囲を指定します。\r\n中心点は、攻撃が炸裂する中心点です。\r\n攻撃するマスを1に、それ以外を0に指定してください。
-Specifies the range of AoE attacks.\r\nThe center point is the center point where the attack explodes.\r\nSpecify 1 for the cells to attack and 0 for the others.
 
 :AoE 攻撃レンジマスク
 AoE attack range mask
@@ -6088,6 +6088,9 @@ Simple Menu
 :地形設定
 Terrain Editor
 
+:Minimap地形
+Minimap terrain.
+
 :ボスBGM
 Boss BGM
 
@@ -6148,6 +6151,9 @@ Road Movement Editor
 :ソングトラック
 Song Track
 
+:攻撃エフェクト拡張
+Attack effect expansion.
+
 :スキル カスタムビルド
 Skill Custom Build
 
@@ -6180,9 +6186,6 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
-
-:攻撃エフェクト拡張
-Attack effect expansion.
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?

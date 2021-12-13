@@ -2134,6 +2134,12 @@
     <Compile Include="UbyteBitFlagForm.Designer.cs">
       <DependentUpon>UbyteBitFlagForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapMiniMapTerrainImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapMiniMapTerrainImageForm.Designer.cs">
+      <DependentUpon>MapMiniMapTerrainImageForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3157,6 +3163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UbyteBitFlagForm.resx">
       <DependentUpon>UbyteBitFlagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapMiniMapTerrainImageForm.resx">
+      <DependentUpon>MapMiniMapTerrainImageForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

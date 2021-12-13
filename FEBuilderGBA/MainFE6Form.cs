@@ -803,5 +803,10 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ImageBattleBGForm>();
         }
 
+        private void MapMiniMapTerrainImageButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<MapMiniMapTerrainImageForm>();
+        }
+
     }
 }

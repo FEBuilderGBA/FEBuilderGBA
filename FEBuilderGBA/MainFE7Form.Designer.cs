@@ -66,6 +66,7 @@
             this.EventCondButton = new System.Windows.Forms.Button();
             this.UnitButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TestRunStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -204,7 +205,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.TestRunStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -631,6 +632,15 @@
             this.menuStrip1.Size = new System.Drawing.Size(1631, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // TestRunStripMenuItem
+            // 
+            this.TestRunStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.TestRunStripMenuItem.Image = global::FEBuilderGBA.Properties.Resources.play_button_green1;
+            this.TestRunStripMenuItem.Name = "TestRunStripMenuItem";
+            this.TestRunStripMenuItem.Size = new System.Drawing.Size(167, 31);
+            this.TestRunStripMenuItem.Text = "テスト実行(F5)";
+            this.TestRunStripMenuItem.Click += new System.EventHandler(this.TestRunStripMenuItem_Click);
             // 
             // FileToolStripMenuItem
             // 
@@ -1235,6 +1245,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.MapMiniMapTerrainImageButton);
             this.ControlPanel.Controls.Add(this.AIPerformItemButton);
             this.ControlPanel.Controls.Add(this.EventFinalSerifButton);
             this.ControlPanel.Controls.Add(this.StatusUnitsMenuButton);
@@ -2058,14 +2069,16 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // TestRunStripMenuItem
+            // MapMiniMapTerrainImageButton
             // 
-            this.TestRunStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.TestRunStripMenuItem.Image = global::FEBuilderGBA.Properties.Resources.play_button_green1;
-            this.TestRunStripMenuItem.Name = "TestRunStripMenuItem";
-            this.TestRunStripMenuItem.Size = new System.Drawing.Size(167, 31);
-            this.TestRunStripMenuItem.Text = "テスト実行(F5)";
-            this.TestRunStripMenuItem.Click += new System.EventHandler(this.TestRunStripMenuItem_Click);
+            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1220, 329);
+            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
+            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
+            this.MapMiniMapTerrainImageButton.TabIndex = 142;
+            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
+            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
+            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
             // 
             // MainFE7Form
             // 
@@ -2272,5 +2285,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private ToolStripSeparatorEx toolStripSeparatorEx7;
         private System.Windows.Forms.ToolStripMenuItem TestRunStripMenuItem;
+        private System.Windows.Forms.Button MapMiniMapTerrainImageButton;
     }
 }

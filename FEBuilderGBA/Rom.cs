@@ -444,6 +444,7 @@ namespace FEBuilderGBA
         uint vanilla_casle_image_address();
         uint vanilla_plain_config_address();
         uint vanilla_plain_image_address();
+        uint map_minimap_tile_array_pointer(); //minimapのチップ割り当て
 
         uint extends_address(); //拡張領域
         uint orignal_crc32(); //無改造ROMのCRC32

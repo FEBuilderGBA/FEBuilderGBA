@@ -1,6 +1,6 @@
 ﻿namespace FEBuilderGBA
 {
-    partial class MapTerrainNameEngForm
+    partial class MapMiniMapTerrainImageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.L_0_TEXT_TERRAINNAME1 = new FEBuilderGBA.TextBoxEx();
-            this.W0 = new System.Windows.Forms.NumericUpDown();
-            this.J_0_TEXT = new System.Windows.Forms.Label();
+            this.L_0_ASM_SWITCH = new FEBuilderGBA.TextBoxEx();
+            this.L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.P0 = new System.Windows.Forms.NumericUpDown();
+            this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,10 +46,10 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -60,48 +61,58 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.L_0_TEXT_TERRAINNAME1);
-            this.panel4.Controls.Add(this.W0);
-            this.panel4.Controls.Add(this.J_0_TEXT);
+            this.panel4.Controls.Add(this.L_0_ASM_SWITCH);
+            this.panel4.Controls.Add(this.L_0_COMBO);
+            this.panel4.Controls.Add(this.P0);
+            this.panel4.Controls.Add(this.J_0_ASM_THUMB);
             this.panel4.Location = new System.Drawing.Point(286, 76);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(933, 693);
+            this.panel4.Size = new System.Drawing.Size(933, 644);
             this.panel4.TabIndex = 80;
             // 
-            // L_0_TEXT_TERRAINNAME1
+            // L_0_ASM_SWITCH
             // 
-            this.L_0_TEXT_TERRAINNAME1.ErrorMessage = "";
-            this.L_0_TEXT_TERRAINNAME1.Location = new System.Drawing.Point(235, 5);
-            this.L_0_TEXT_TERRAINNAME1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_TEXT_TERRAINNAME1.Name = "L_0_TEXT_TERRAINNAME1";
-            this.L_0_TEXT_TERRAINNAME1.Placeholder = "";
-            this.L_0_TEXT_TERRAINNAME1.ReadOnly = true;
-            this.L_0_TEXT_TERRAINNAME1.Size = new System.Drawing.Size(169, 25);
-            this.L_0_TEXT_TERRAINNAME1.TabIndex = 80;
+            this.L_0_ASM_SWITCH.ErrorMessage = "";
+            this.L_0_ASM_SWITCH.Location = new System.Drawing.Point(303, 2);
+            this.L_0_ASM_SWITCH.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_ASM_SWITCH.Name = "L_0_ASM_SWITCH";
+            this.L_0_ASM_SWITCH.Placeholder = "";
+            this.L_0_ASM_SWITCH.ReadOnly = true;
+            this.L_0_ASM_SWITCH.Size = new System.Drawing.Size(404, 25);
+            this.L_0_ASM_SWITCH.TabIndex = 120;
             // 
-            // W0
+            // L_0_COMBO
             // 
-            this.W0.Hexadecimal = true;
-            this.W0.Location = new System.Drawing.Point(147, 4);
-            this.W0.Maximum = new decimal(new int[] {
+            this.L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_0_COMBO.FormattingEnabled = true;
+            this.L_0_COMBO.Location = new System.Drawing.Point(172, 35);
+            this.L_0_COMBO.Name = "L_0_COMBO";
+            this.L_0_COMBO.Size = new System.Drawing.Size(734, 26);
+            this.L_0_COMBO.TabIndex = 81;
+            // 
+            // P0
+            // 
+            this.P0.Hexadecimal = true;
+            this.P0.Location = new System.Drawing.Point(172, 4);
+            this.P0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.W0.Name = "W0";
-            this.W0.Size = new System.Drawing.Size(80, 25);
-            this.W0.TabIndex = 79;
+            this.P0.Name = "P0";
+            this.P0.Size = new System.Drawing.Size(124, 25);
+            this.P0.TabIndex = 79;
             // 
-            // J_0_TEXT
+            // J_0_ASM_THUMB
             // 
-            this.J_0_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0_TEXT.Location = new System.Drawing.Point(-1, 0);
-            this.J_0_TEXT.Name = "J_0_TEXT";
-            this.J_0_TEXT.Size = new System.Drawing.Size(142, 30);
-            this.J_0_TEXT.TabIndex = 78;
-            this.J_0_TEXT.Text = "名前";
-            this.J_0_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_0_ASM_THUMB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_ASM_THUMB.Location = new System.Drawing.Point(-1, 0);
+            this.J_0_ASM_THUMB.Name = "J_0_ASM_THUMB";
+            this.J_0_ASM_THUMB.Size = new System.Drawing.Size(167, 30);
+            this.J_0_ASM_THUMB.TabIndex = 78;
+            this.J_0_ASM_THUMB.Text = "ASMポインタ";
+            this.J_0_ASM_THUMB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -241,53 +252,53 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
+            this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Location = new System.Drawing.Point(20, 47);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(258, 723);
+            this.panel6.Size = new System.Drawing.Size(258, 673);
             this.panel6.TabIndex = 146;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(256, 645);
+            this.AddressList.TabIndex = 0;
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-3, -1);
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(260, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(256, 26);
             this.LabelFilter.TabIndex = 106;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressList
+            // MapMiniMapTerrainImageForm
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(258, 698);
-            this.AddressList.TabIndex = 0;
-            // 
-            // MapTerrainNameEngForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1237, 775);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1237, 722);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "MapTerrainNameEngForm";
-            this.Text = "地形名(英語)";
-            this.Load += new System.EventHandler(this.MapTerrainNameEngForm_Load);
+            this.Name = "MapMiniMapTerrainImageForm";
+            this.Text = "Minimap地形";
+            this.Load += new System.EventHandler(this.MapMiniMapTerrainImageForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -315,10 +326,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
-        private System.Windows.Forms.Label J_0_TEXT;
+        private System.Windows.Forms.Label J_0_ASM_THUMB;
         private FEBuilderGBA.TextBoxEx BlockSize;
-        private FEBuilderGBA.TextBoxEx L_0_TEXT_TERRAINNAME1;
-        private System.Windows.Forms.NumericUpDown W0;
+        private System.Windows.Forms.NumericUpDown P0;
         private System.Windows.Forms.NumericUpDown Address;
+        private ComboBoxEx L_0_COMBO;
+        private TextBoxEx L_0_ASM_SWITCH;
     }
 }

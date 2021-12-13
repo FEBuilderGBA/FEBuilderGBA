@@ -59,10 +59,10 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.TextBox);
-            this.panel4.Location = new System.Drawing.Point(286, 83);
+            this.panel4.Location = new System.Drawing.Point(286, 76);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(933, 668);
+            this.panel4.Size = new System.Drawing.Size(933, 672);
             this.panel4.TabIndex = 80;
             // 
             // label2
@@ -163,7 +163,7 @@
             // ReadStartAddress
             // 
             this.ReadStartAddress.Hexadecimal = true;
-            this.ReadStartAddress.Location = new System.Drawing.Point(129, 3);
+            this.ReadStartAddress.Location = new System.Drawing.Point(129, 2);
             this.ReadStartAddress.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
@@ -178,7 +178,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Location = new System.Drawing.Point(-1, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(85, 30);
+            this.label16.Size = new System.Drawing.Size(86, 30);
             this.label16.TabIndex = 1;
             this.label16.Text = "アドレス";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +191,7 @@
             this.panel5.Controls.Add(this.TextWriteButton);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(286, 51);
+            this.panel5.Location = new System.Drawing.Point(286, 45);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(934, 30);
             this.panel5.TabIndex = 78;
@@ -223,9 +223,9 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(20, 53);
+            this.panel6.Location = new System.Drawing.Point(20, 47);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(260, 698);
+            this.panel6.Size = new System.Drawing.Size(260, 702);
             this.panel6.TabIndex = 146;
             // 
             // LabelFilter
@@ -246,7 +246,7 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Location = new System.Drawing.Point(-1, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(259, 668);
