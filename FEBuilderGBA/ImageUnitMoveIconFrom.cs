@@ -96,6 +96,23 @@ namespace FEBuilderGBA
                 this.X_APCOMBO.Items.Add(pair.Value);
             }
             this.X_APCOMBO.EndUpdate();
+
+            MakeAPBanillaDic();
+
+        }
+        void MakeAPBanillaDic()
+        {
+            Dictionary<uint, string> apVanillaList
+                = U.LoadTSVResource1(U.ConfigDataFilename("ap_vanilla_list_"));
+            foreach (var pair in apVanillaList)
+            {
+                uint ap_addr = pair.Key;
+                if (!U.isSafetyOffset(ap_addr))
+                {
+                    continue;
+                }
+                APVanillaDic[ap_addr] = pair.Value;
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -498,6 +515,8 @@ namespace FEBuilderGBA
         Dictionary<uint, string> APAddressDic = new Dictionary<uint, string>();
         //現在知られているAPリストのマップ ap_list_ALL.txt
         Dictionary<string, string> APComboDic = new Dictionary<string,string>();
+        //バニラのアドレスに残っているかもしれないので探す
+        Dictionary<uint, string> APVanillaDic = new Dictionary<uint,string>();
 
         void MakeAPAddressDic()
         {
@@ -596,6 +615,40 @@ namespace FEBuilderGBA
                 {
                     return pair.Key;
                 }
+            }
+
+            uint vanillaAddr = SearchAPHashInVanilla(ap_md5);
+            if (vanillaAddr != U.NOT_FOUND)
+            {
+                return vanillaAddr;
+            }
+
+            return U.NOT_FOUND;
+        }
+
+        uint SearchAPHashInVanilla(string ap_md5)
+        {
+            //バニラのアドレスに残っているかもしれないので探す
+            foreach (var pair in this.APVanillaDic)
+            {
+                if (pair.Value != ap_md5)
+                {
+                    continue;
+                }
+                uint ap_addr = pair.Key;
+                uint checkHeader = Program.ROM.u16(ap_addr);
+                if (checkHeader != 0x0004)
+                {//違うデータに置き換わってる
+                    continue;
+                }
+                string rom_ap_md5 = CalcAPMD5(ap_addr);
+                if (ap_md5 != rom_ap_md5)
+                {//違うデータに置き換わってる
+                    continue;
+                }
+
+                //発見! データは残っていたよ
+                return ap_addr;
             }
             return U.NOT_FOUND;
         }

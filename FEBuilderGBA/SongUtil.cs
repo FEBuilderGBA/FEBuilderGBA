@@ -202,9 +202,10 @@ namespace FEBuilderGBA
                 Track track = ParseTrackOne(trackpointer);
                 tracks.Add(track);
             }
+            insertLoopLabel(tracks);
             return tracks;
         }
-        public static Track ParseTrackOne(uint trackpointer)
+        static Track ParseTrackOne(uint trackpointer)
         {
             //終端
             uint limitter = (uint)Program.ROM.Data.Length;
@@ -379,32 +380,43 @@ namespace FEBuilderGBA
                     lastCommand = 0;
                 }
             }
-            insertLoopLabel(track);
             return track;
         }
-        static void insertLoopLabel(Track track)
+
+        static void insertLoopLabel(List<Track> tracks)
         {
             List<uint> insertLabel = new List<uint>();
-
-            for (int i = 0; i < track.codes.Count; i++)
+            for (int t = 0; t < tracks.Count; t++)
             {
-                if (track.codes[i].type != 0xB2 && track.codes[i].type != 0xB3)
+                Track track = tracks[t];
+                for (int i = 0; i < track.codes.Count; i++)
                 {
-                    continue;
-                }
+                    if (track.codes[i].type != 0xB2 && track.codes[i].type != 0xB3)
+                    {
+                        continue;
+                    }
 
-                if (insertLabel.IndexOf(track.codes[i].value) >= 0)
-                {
-                    //すでにラベルを追加済み
-                    continue;
-                }
+                    if (insertLabel.IndexOf(track.codes[i].value) >= 0)
+                    {
+                        //すでにラベルを追加済み
+                        continue;
+                    }
 
-                insertLabel.Add(track.codes[i].value);
+                    insertLabel.Add(track.codes[i].value);
+                }
             }
 
             for (int n = 0; n < insertLabel.Count; n++)
             {
                 uint findaddr = insertLabel[n];
+                insertLoopReferLabel(tracks , findaddr);
+            }
+        }
+        static bool insertLoopReferLabel(List<Track> tracks, uint findaddr)
+        {
+            for (int t = 0; t < tracks.Count; t++)
+            {
+                Track track = tracks[t];
                 for (int i = 0; i < track.codes.Count; i++)
                 {
                     if (track.codes[i].addr == findaddr)
@@ -415,10 +427,11 @@ namespace FEBuilderGBA
                                 , track.codes[i].waitCount
                                 , LOOP_LABEL_CODE
                                 ));
-                        break;
+                        return true;
                     }
                 }
             }
+            return false;
         }
 
         public static void TrackToListBox(ListBox listbox, Track track)
@@ -632,7 +645,7 @@ namespace FEBuilderGBA
                     uint tune = 0;
                     uint lastTuneWait = 0;
                     const uint tempo = 96;
-                    w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
+                    w.WriteLine("@ " + " #" + (t + 1).ToString("00") + " @" + tune.ToString("000") + "   ----------------------------------------");
                     for (int i = 0; i < tr.codes.Count; i++)
                     {
                         Code code = tr.codes[i];
@@ -645,29 +658,29 @@ namespace FEBuilderGBA
                             {//次のトラックへ
                                 lastTuneWait = code.waitCount;
                                 tune++;
-                                w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
+                                w.WriteLine("@ " + " #" + (t + 1).ToString("00") + " @" + tune.ToString("000") + "   ----------------------------------------");
                             }
                         }
                         if (code.type == 0xb3)
                         {//PATTなので強制的に小節をわける
                             lastTuneWait = 0;
                             tune++;
-                            w.WriteLine("@ " + tune.ToString("000") + "   ----------------------------------------");
+                            w.WriteLine("@ " + " #" + (t + 1).ToString("00") + " @" + tune.ToString("000")  + "   ----------------------------------------");
                         }
 
                         if (code.type == LOOP_LABEL_CODE)
                         {//LOOP_LABEL_CODE
-                            w.WriteLine("Label_" + t + "_" + U.ToHexString(code.addr) + ":");
+                            w.WriteLine("Label_" + U.ToHexString(code.addr) + ":");
                         }
                         else if (code.type == 0xB2)
                         {//GOTO
                             w.WriteLine(" .byte   GOTO");
-                            w.WriteLine("  .word " + "Label_" + t + "_" + U.ToHexString(code.value));
+                            w.WriteLine("  .word " + "Label_" + U.ToHexString(code.value));
                         }
                         else if (code.type == 0xB3)
                         {//PATT
                             w.WriteLine(" .byte   PATT");
-                            w.WriteLine("  .word " + "Label_" + t + "_" + U.ToHexString(code.value));
+                            w.WriteLine("  .word " + "Label_" + U.ToHexString(code.value));
                         }
                         else if (code.type == 0xBA)
                         {//PRIO

@@ -494,6 +494,7 @@ namespace FEBuilderGBA
             }
 
             //トラックのポインタチェック
+            List<SongUtil.Track> tracks = SongUtil.ParseTrack(songaddr, trackCount);
             for (uint tracknumber = 0; tracknumber < trackCount; tracknumber++)
             {
                 uint trackAddr = songaddr + 8 + (tracknumber * 4);
@@ -504,9 +505,14 @@ namespace FEBuilderGBA
                         , R._("SongID {0}のトラック{1}のポインタ「{2}」は無効です。\r\nトラック数が間違っていませんか？", U.To0xHexString(songid), tracknumber, U.To0xHexString(trackPointer)), songid));
                     continue;
                 }
-                SongUtil.Track track = SongUtil.ParseTrackOne(trackAddr);
+                if (tracknumber >= tracks.Count)
+                {
+                    continue;
+                }
+                SongUtil.Track track = tracks[(int)tracknumber];
                 SongUtil.MakeCheckError(errors, track, U.toOffset(instPointer), songaddr, songid, tracknumber, isMapBGM);
             }
+
         }
 
         private void SongTrackForm_FormClosing(object sender, FormClosingEventArgs e)
