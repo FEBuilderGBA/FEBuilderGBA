@@ -238,12 +238,34 @@ namespace FEBuilderGBA
                 }
 
                 dic.Add(nm);
+            }
 
+            if (dic.Count <= 0)
+            {
+                MakeStructDWORD(ifr, dic);
             }
 
             dic.Sort();
 
             return dic;
+        }
+        //アイコンみたいに画像データで、一つも有効なデータがない場合は、hex dumpを作成する
+        static void MakeStructDWORD(InputFormRef ifr, List<NameMapping> dic)
+        {
+            string prefix = ifr.Prefix;
+            for (uint i = 0; i < ifr.BlockSize; i+= 4)
+            {
+                string name = prefix + "D" + i;
+                NumericUpDown info_object = new NumericUpDown();
+                info_object.Name = name;
+
+                NameMapping nm = new NameMapping();
+                nm.TypeName = "D" + i;
+                nm.Id = i;
+                nm.Value = info_object;
+
+                dic.Add(nm);
+            }
         }
 
         public string MakeStructString(InputFormRef ifr)
