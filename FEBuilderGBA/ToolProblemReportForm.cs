@@ -384,6 +384,7 @@ namespace FEBuilderGBA
             {
                 string[] pathes = new string[] {
                     ".emulator" + i + ".sgm",
+                    ".emulator" + i + ".sps",
                     "" + i + ".sgm",
                     ".emulator.ss" + i,
                     ".ss" + i,
