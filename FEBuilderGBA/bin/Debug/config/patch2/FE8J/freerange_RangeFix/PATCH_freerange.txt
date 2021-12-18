@@ -1,5 +1,5 @@
-NAME=Range Display Fix (Implementation with EA by StanH)
-NAME.en=Range Display Fix (EA)
+NAME=Range Display Fix 20181212
+NAME.en=Range Display Fix 20181212
 
 TYPE=EA
 TAG=#ENGINE

@@ -611,7 +611,7 @@
 0801860C	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte
 08017ABC	Get_Char_Data_From_ID	Searchs all factions	RET=Pointer to character data	r0=character id to search for
 08017358	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short
-080183E8	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr
+
 080184D0	Def_Getter	RET=Character's defense	r0=ram char data ptr
 080180FC	Aid_Getter	RET=Character's aid	r0=ram char data ptr
 080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
@@ -631,7 +631,7 @@
 08017ABC	Get_Char_Data_From_ID	Searchs all factions	RET=Pointer to character data	r0=character id to search for
 08017358	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short
 
-080183E8	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr
+
 080184D0	Def_Getter	RET=Character's defense	r0=ram char data ptr
 080180FC	Aid_Getter	RET=Character's aid	r0=ram char data ptr
 080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
@@ -739,8 +739,8 @@
 080180D8	ValidateUnitItem
 080180FC	GetUnitAid
 08018258	GetUnitUseFlags
-080183E8	GetUnitMaxHP
-080184D0	GetUnitDefense
+080183E8	GetUnitPower
+
 08018688	InitChapterMap
 08018920	SetupMapRowPointers
 08018960	ClearMapWith
@@ -1625,3 +1625,38 @@
 
 0E007000	@FE6XMAP
 03006CB0	:030078AF	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
+08086F8C	CalcGraphicsFromMiniMapTypeFromCoordinateXY
+08086DEC	GetMiniMapTypeFromCoordinateXY
+080326C4	SetupAiDangerMap
+080326f0	FillAiDangerMap
+0202D21C	gMapMovement2
+0202AB70	gActiveUnitIndex
+080171e8	GetItemMight
+0802f714	CouldUnitBeInRangeHeuristic
+0802ffc0	FillMovementAndRangeMapForItem
+0202D200	gMapSize
+0202D210	gMapRange
+0202D20C	gMapMovement
+08032814	IsAiTileSafe
+08032838	AiTryGetNearestHealPoint
+0202D208	gMapTerrain
+0802f798	IsTerrainIdInList
+08032A08	UpdateAllPhaseHealingAIStatus
+0810DB28	gPhaseUnitCountTable
+08032a60	UpdateUnitHealingAIStatus
+08032AE0	AiUnitTryHealSelf
+0802ea30	AiSetDecision
+08032B84	AiUnitTryMoveTowardsEscapePoint
+08032c2c	GetEscapePointStructThingMaybe
+0803046c	AiTryMoveTowards
+0801641c	GetItemPowBonus
+08018408	GetUnitSkill
+08016444	GetItemSklBonus
+08018448	GetUnitSpeed
+0801646c	GetItemSpdBonus
+08018488	GetUnitDefense
+08016494	GetItemDefBonus
+080184A8	GetUnitResistance
+080164bc	GetItemResBonus
+080184D0	GetUnitLuck
+080164e4	GetItemLckBonus

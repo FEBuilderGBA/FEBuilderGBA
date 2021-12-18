@@ -1,5 +1,5 @@
-NAME=Range Display Fix (freerange / Implementation with Binary by icecube)
-NAME.en=Range Display Fix (Bin)
+NAME=Range Display Fix 20140912
+NAME.en=Range Display Fix 20140912
 
 TYPE=BIN
 TAG=#ENGINE

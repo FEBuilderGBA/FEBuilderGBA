@@ -1,0 +1,70 @@
+#ifndef HAX_RANGE_DISPLAY_FIX_EVENT
+#define HAX_RANGE_DISPLAY_FIX_EVENT
+
+#include "Extensions/Hack Installation.txt"
+#include "eastdlib.event"
+
+{
+
+PUSH
+	ORG 0x01A998	//FE8J
+//	ORG 0x01ACBC	//FE8U
+//	ORG 0x01A8B4	//FE7J
+//	ORG 0x01A4D4	//FE7U
+		Replace_FillReachRangeForUnitFast:
+			#incbin "asm/Replace_FillReachRangeForUnit.dmp"
+			POIN Replace_FillReachRangeForUnit_Fast|1
+			POIN Replace_FillReachRangeForUnit_FastWithBallista|1
+			POIN Replace_FillReachRangeForUnit_FreeRangeNormal|1
+			POIN Replace_FillReachRangeForUnit_FreeRangeWithBallista|1
+
+		ALIGN 4
+		Replace_FillReachRangeForUnit_Fast:
+			#incbin "asm/Replace_FillReachRangeForUnit_Fast.dmp"
+
+		ALIGN 4
+		Replace_FillReachRangeForUnit_FastWithBallista:
+			#incbin "asm/Replace_FillReachRangeForUnit_FastWithBallista.dmp"
+
+		ALIGN 4
+		Replace_FillReachRangeForUnit_FreeRangeNormal:
+			#incbin "asm/Replace_FillReachRangeForUnit_FreeRangeNormal.dmp"
+			POIN (_prFillRangeByMask+1)
+
+		ALIGN 4
+		Replace_FillReachRangeForUnit_FreeRangeWithBallista:
+			#incbin "asm/Replace_FillReachRangeForUnit_FreeRangeWithBallista.dmp"
+			POIN (_prFillRangeByMask+1)
+
+		ALIGN 4
+		_prFillRangeByMask:
+			#incbin "asm/FillRangeByMask.dmp"
+
+		ALIGN 4
+		_prReplace_GetUnitStaffRangeMask:
+			#incbin "asm/Replace_GetUnitStaffRangeMask.dmp"
+
+	
+	ORG 0x016E7C	//FE8J
+//	ORG 0x0170d4	//FE8U
+//	ORG 0x017208	//FE7J
+//	ORG 0x016DB4	//FE7U
+		#incbin "asm/Replace_GetItemRangeMask.dmp"
+	
+	ORG 0x01B13C	//FE8J
+//	ORG 0x01B460	//FE8U
+//	ORG 0x01b040	//FE7J
+//	ORG 0x01AC60	//FE7U
+		#incbin "asm/Replace_FillStandingRangeForUnit.dmp"
+		POIN (_prFillRangeByMask+1)
+	
+	ORG 0x016FE4	//FE8J
+//	ORG 0x01723c	//FE8U
+//	ORG 0x017364	//FE7J
+//	ORG 0x016f10	//FE7U
+		replaceWithHack((_prReplace_GetUnitStaffRangeMask+1))
+POP
+
+}
+
+#endif // HAX_RANGE_DISPLAY_FIX_EVENT

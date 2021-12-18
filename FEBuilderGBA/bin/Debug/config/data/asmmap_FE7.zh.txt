@@ -1827,12 +1827,6 @@
 08015CE0	EnsureCameraOntoPosition	{U}
 08015D70	ShouldMoveCameraPosSomething	{U}
 08015E9C	GetCurrentMapMusicIndex	{U}
-0801603E	GetItemPowBonus	{U}
-0801603E	GetItemSklBonus	{U}
-0801603E	GetItemSpdBonus	{U}
-0801603E	GetItemDefBonus	{U}
-0801603E	GetItemResBonus	{U}
-0801603E	GetItemLckBonus	{U}
 080161A4	CanUnitUseAsWeapon	{U}
 08016380	CanUnitUseWeapon	{U}
 080163D2	CanUnitUseAsStaff	{U}
@@ -1854,13 +1848,13 @@
 08016D0E	GetUnitItemSlot	{U}
 08016D36	IsItemStealable	{U}
 08016D60	IsItemHammernable	{U}
-08016DB2	GetWeaponRangeMask	{U}
+08016DB4	GetWeaponRangeMask	{U}
 08016EBC	GetUnitRangeMask	{U}
 08016F10	GetUnitStaffRangeMask_0	{U}
 0801704C	GetConvoyTotalGoldValue	{U}
 080171B4	GetItemIndex	{U}
-0801725A	GetItemWType	{U}
-080172BA	GetItemMaxUses	{U}
+0801725C	GetItemWType	{U}
+080172BC	GetItemMaxUses	{U}
 080172E0	GetItemMight	{U}
 080172F8	GetItemHit	{U}
 08017328	GetItemCrit	{U}
@@ -1870,7 +1864,7 @@
 080173A0	GetItemRange	{U}
 080173B8	GetItemWRank	{U}
 080173D0	GetItemEffectivenessPtr	{U}
-080172E0	GetItemWeaponEffect	{U}
+
 0801746A	GetItemMaxCost	{U}
 08017494	GetItemWExp	{U}
 080174AC	GetROMItemStructPtr	{U}
@@ -1910,7 +1904,7 @@
 080183F4	SetAllUnitNotBackSprite	{U}
 0801842C	ValidateUnitItem	{U}
 08018450	GetUnitAid	{U}
-08017836	GetUnitMagBy2Range	{U}
+080184B4	GetUnitMagBy2Range	{U}
 080184DC	UnitHasMagicRank	{U}
 080185AC	GetUnitUseFlags	{U}
 0801865C	CanUnitMove	{U}
@@ -2055,7 +2049,7 @@
 0802357C	AttackCommandUsability	{U}
 080235F8	AttackBallistaCommandUsability	{U}
 08023810	GetPhaseAbleUnitCount	{U}
-080238AE	AreUnitsAllied	{U}
+080238B0	AreUnitsAllied	{U}
 080238C2	IsSameAllegience	{U}
 080238D8	GetCurrentPhase	{U}
 080238EC	IsNotEnemyPhaseMaybe	{U}
@@ -2676,12 +2670,6 @@
 0801615C	EnsureCameraOntoPosition	{J}
 080161EC	ShouldMoveCameraPosSomething	{J}
 08016318	GetCurrentMapMusicIndex	{J}
-080164BA	GetItemPowBonus	{J}
-080164BA	GetItemSklBonus	{J}
-080164BA	GetItemSpdBonus	{J}
-080164BA	GetItemDefBonus	{J}
-080164BA	GetItemResBonus	{J}
-080164BA	GetItemLckBonus	{J}
 08016620	CanUnitUseAsWeapon	{J}
 080167FC	CanUnitUseWeapon	{J}
 0801684E	CanUnitUseAsStaff	{J}
@@ -2703,13 +2691,13 @@
 08017162	GetUnitItemSlot	{J}
 0801718A	IsItemStealable	{J}
 080171B4	IsItemHammernable	{J}
-08017206	GetWeaponRangeMask	{J}
+08017208	GetWeaponRangeMask	{J}
 08017310	GetUnitRangeMask	{J}
 08017364	GetUnitStaffRangeMask_0	{J}
 080174A0	GetConvoyTotalGoldValue	{J}
 08017608	GetItemIndex	{J}
-08017662	GetItemWType	{J}
-080176C2	GetItemMaxUses	{J}
+08017664	GetItemWType	{J}
+080176C4	GetItemMaxUses	{J}
 080176E8	GetItemMight	{J}
 08017700	GetItemHit	{J}
 08017730	GetItemCrit	{J}
@@ -2719,7 +2707,7 @@
 080177A8	GetItemRange	{J}
 080177C0	GetItemWRank	{J}
 080177D8	GetItemEffectivenessPtr	{J}
-080176E8	GetItemWeaponEffect	{J}
+
 08017872	GetItemMaxCost	{J}
 0801789C	GetItemWExp	{J}
 080178C8	ClearUnits	{J}
@@ -2758,7 +2746,7 @@
 080187E4	SetAllUnitNotBackSprite	{J}
 0801881C	ValidateUnitItem	{J}
 08018840	GetUnitAid	{J}
-08017C26	GetUnitMagBy2Range	{J}
+080188A4	GetUnitMagBy2Range	{J}
 080188CC	UnitHasMagicRank	{J}
 0801899C	GetUnitUseFlags	{J}
 08018A4C	CanUnitMove	{J}
@@ -2890,7 +2878,7 @@
 08023980	RideCommandEffect	{J}
 08023A08	AttackCommandUsability	{J}
 08023C9C	GetPhaseAbleUnitCount	{J}
-08023D3A	AreUnitsAllied	{J}
+08023D3C	AreUnitsAllied	{J}
 08023D4E	IsSameAllegience	{J}
 08023DD0	ForEachUnitInRange	{J}
 08023EA8	ForEachPosInRange	{J}
@@ -4003,12 +3991,7 @@
 08019010	GetUnitLeader	{J}
 08018BD8	GetUnitPortraitId	{U}
 08018BF4	GetUnitMiniPortraitId	{U}
-080161C8	GetItemPowBonus	{J}
-080161F8	GetItemSklBonus	{J}
-08016228	GetItemSpdBonus	{J}
-08016258	GetItemDefBonus	{J}
-08016288	GetItemResBonus	{J}
-080162B8	GetItemLckBonus	{J}
+080164e8	GetItemPowBonus	{J}
 080157a4	GetThread2SkipStack	{J}
 08006320	AIS_ExecAll	{J}
 08006490	AIS_ExecAll	{U}
@@ -5170,3 +5153,13 @@
 0802DEC4	FlamesWeatherInitGradient	{J}
 0802DF54	FlamesWeatherInitParticles	{J}
 0802DFB8	WeatherInit_Flames	{J}
+080A2640	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{U}
+080a2454	GetMiniMapTypeFromCoordinateXY	{U}
+080A32B4	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{J}
+080A30C8	GetMiniMapTypeFromCoordinateXY	{J}
+08039870	SetupAiDangerMap	{J}
+0803989c	FillAiDangerMap	{J}
+080393BC	SetupAiDangerMap	{U}
+080393E8	FillAiDangerMap	{U}
+0803627c	CouldUnitBeInRangeHeuristic	{J}
+08035DA4	CouldUnitBeInRangeHeuristic	{U}

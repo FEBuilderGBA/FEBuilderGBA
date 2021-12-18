@@ -1,0 +1,6 @@
+StartLoop_Y=$1C
+StartLoop_X=$22
+ContinueLoop_X=$98
+FillRange=$3E
+ContinueLoop_Y=$9C
+EALiterals=$D8

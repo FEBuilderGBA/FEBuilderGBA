@@ -1,0 +1,6 @@
+StartLoop_Y=$20
+StartLoop_X=$26
+ContinueLoop_X=$5C
+FillRange=$42
+ContinueLoop_Y=$60
+EALiterals=$90

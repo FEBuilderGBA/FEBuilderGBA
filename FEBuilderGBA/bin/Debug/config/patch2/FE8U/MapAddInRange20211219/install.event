@@ -1,0 +1,9 @@
+
+PUSH
+//ORG 0x01a798	//FE8J
+ORG 0x01aabc	//FE8U
+//ORG 0x01a6b4	//FE7J
+//ORG 0x01a2d4	//FE7U
+#incbin "MapAddInRange-7743.dmp"
+POP
+

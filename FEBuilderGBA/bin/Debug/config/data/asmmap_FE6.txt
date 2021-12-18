@@ -554,7 +554,7 @@
 @ChapterData@1D	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
 @ChapterData@1E	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
 
-202AA48	@ChapterData	ChapterData
+0202AA48	@ChapterData	ChapterData
 
 
 @CharacterBattleStatistic@00	byte	Losses
@@ -583,12 +583,12 @@
 08029734	輸送隊の中身へのポインタ
 
 //https://www.dropbox.com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions.txt
-0801860C	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte
+0801860C	GetUnitStruct	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte
 
 08017ABC	Get_Char_Data_From_ID	Searchs all factions	RET=Pointer to character data	r0=character id to search for
 08017358	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short
 
-080183E8	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr
+
 080184D0	Def_Getter	RET=Character's defense	r0=ram char data ptr
 080180FC	Aid_Getter	RET=Character's aid	r0=ram char data ptr
 080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
@@ -649,7 +649,7 @@
 08000540	CharSizeTable
 0801AB7C	MinimugGetter	Determines a unit's minimug
 085C39A0	:085C3BAF	OAMTable	This is a table of size/shape	data and number of sprites to draw
-080183E8	AnotherHPBonus	Another getter for bonus hp added to max
+
 0800043C	TilemapWriter	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile
 08085824	MMBPalSelect	Routine selects a palette and  writes it based on the unit's allegiance after ANDing the unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively
 
@@ -730,8 +730,8 @@
 080180D8	ValidateUnitItem
 080180FC	GetUnitAid
 08018258	GetUnitUseFlags
-080183E8	GetUnitMaxHP
-080184D0	GetUnitDefense
+080183E8	GetUnitPower
+
 08018688	InitChapterMap
 08018920	SetupMapRowPointers
 08018960	ClearMapWith
@@ -1616,3 +1616,36 @@
 03006CB0	:030078AF	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
 08086F8C	CalcGraphicsFromMiniMapTypeFromCoordinateXY
 08086DEC	GetMiniMapTypeFromCoordinateXY
+080326C4	SetupAiDangerMap
+080326f0	FillAiDangerMap
+0202D21C	gMapMovement2
+0202AB70	gActiveUnitIndex
+080171e8	GetItemMight
+0802f714	CouldUnitBeInRangeHeuristic
+0802ffc0	FillMovementAndRangeMapForItem
+0202D200	gMapSize
+0202D210	gMapRange
+0202D20C	gMapMovement
+08032814	IsAiTileSafe
+08032838	AiTryGetNearestHealPoint
+0202D208	gMapTerrain
+0802f798	IsTerrainIdInList
+08032A08	UpdateAllPhaseHealingAIStatus
+0810DB28	gPhaseUnitCountTable
+08032a60	UpdateUnitHealingAIStatus
+08032AE0	AiUnitTryHealSelf
+0802ea30	AiSetDecision
+08032B84	AiUnitTryMoveTowardsEscapePoint
+08032c2c	GetEscapePointStructThingMaybe
+0803046c	AiTryMoveTowards
+0801641c	GetItemPowBonus
+08018408	GetUnitSkill
+08016444	GetItemSklBonus
+08018448	GetUnitSpeed
+0801646c	GetItemSpdBonus
+08018488	GetUnitDefense
+08016494	GetItemDefBonus
+080184A8	GetUnitResistance
+080164bc	GetItemResBonus
+080184D0	GetUnitLuck
+080164e4	GetItemLckBonus

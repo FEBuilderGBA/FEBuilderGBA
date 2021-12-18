@@ -15,3 +15,7 @@ KEEPIMAGE=TRUE //only palette
 
 AUTHOR=Fatih
 NAME.zh=选择难度 选择简单的调色板颜色
+
+INFO.en=Palette of Difficulty Selection Image\r\nKeywords: Easy, Normal, Hard, Mode
+INFO.zh=Palette of Difficulty Selection Image\r\nKeywords: Easy, Normal, Hard, Mode
+INFO=難易度の選択画像のパレット\r\n簡単、通常、難しい

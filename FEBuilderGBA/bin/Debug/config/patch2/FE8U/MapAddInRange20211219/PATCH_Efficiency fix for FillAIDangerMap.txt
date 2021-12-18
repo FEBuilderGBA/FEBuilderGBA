@@ -1,0 +1,22 @@
+TYPE=BIN
+TAG=#ENGINE
+NAME=MapAddInRangeの効率修正 20211219
+NAME.en=MapAddInRange Efficiency Fix 20211219
+NAME.zh=MapAddInRange Efficiency Fix 20211219
+
+EA=Install.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x01aabc=0xF0 0xB5 0x5F 0x46 0x56 0x46 0x4D 0x46 0x44 0x46 0xF0 0xB4 0x00 0x2A 0x13 0xD1 0x00 0x28 0x57 0xDB 0x2F 0x4D 0x2A 0x88 0x90 0x42 0x53 0xDA 0x00 0x29 0x51 0xDB
+BIN:0x01aabc=MapAddInRange-7743.dmp
+
+
+INFO=関数をASMで書き直してバニラの5倍速くなっています。\r\hこの関数はゲーム内で大量に実行されるため、早くすることは意味があると思います。\r\nこの関数は攻撃範囲などのrangeを描くのに利用されます。
+INFO.en=I rewrote the function in ASM and it's 5 times faster than vanilla.\r\hThis function is executed in large numbers in the game, so I think it makes sense to make it faster.\r\nThis function is used to draw a range such as the attack range.
+INFO.zh=I rewrote the function in ASM and it's 5 times faster than vanilla.\r\hThis function is executed in large numbers in the game, so I think it makes sense to make it faster.\r\nThis function is used to draw a range such as the attack range.
+
+AUTHOR=7743
+
+//SkillSystems
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

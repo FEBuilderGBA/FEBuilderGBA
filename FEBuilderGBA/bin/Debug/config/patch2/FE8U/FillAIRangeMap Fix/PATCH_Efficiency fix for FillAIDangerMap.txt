@@ -1,8 +1,8 @@
 TYPE=EA
 TAG=#ENGINE
-NAME=FillAIDangerMapの効率修正
-NAME.en=FillAIDangerMap Efficiency Fix
-NAME.zh=FillAIDangerMap Efficiency Fix
+NAME=FillAIDangerMapの効率修正 20200706
+NAME.en=FillAIDangerMap Efficiency Fix 20200706
+NAME.zh=FillAIDangerMap Efficiency Fix 20200706
 
 EA=FillAIDangerMap.event
 

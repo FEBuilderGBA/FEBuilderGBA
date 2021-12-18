@@ -17,5 +17,8 @@ ZIMAGE_POINTER=0xAC188//0xA28A0C
 //非圧縮パレット
 PALETTE_POINTER=0xAC190
 
-
 NAME.zh=系统_难易度选择背景
+
+INFO.en=Difficulty Selection Image\r\nKeywords: Easy, Normal, Hard, Mode\r\nIn this image, the palette is very important data.\r\nBe careful not to destroy the pallet.
+INFO.zh=Difficulty Selection Image\r\nKeywords: Easy, Normal, Hard, Mode\r\nIn this image, the palette is very important data.\r\nBe careful not to destroy the pallet.
+INFO=難易度の選択画像\r\n簡単、通常、難しい\r\nこの画像は、パレットがとても重要なデータです。パレットを破壊しないように注意してください。

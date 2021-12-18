@@ -1,0 +1,7 @@
+prFillRangeByMask=$78
+EALiterals=$78
+StartLoop_Y=$1A
+StartLoop_X=$20
+ContinueLoop_X=$48
+FillRange=$3E
+ContinueLoop_Y=$4C
