@@ -44,6 +44,7 @@ namespace FEBuilderGBA
             g_Cache_ExtendsBattleBG = ExtendsBattleBG_extends.NoCache;
             g_Cache_m4a_hq_mixer = Cache_m4a_hq_mixer.NoCache;
             g_Cache_SoundRoomExpands = Cache_SoundRoomExpands.NoCache;
+            g_Cache_NullifyMovPatch = NullifyMovPatch.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2050,6 +2051,35 @@ namespace FEBuilderGBA
                 }
             }
             return ExtendsBattleBG_extends.NO;
+        }
+
+        //ボスの移動しないことを示すAI
+        public enum NullifyMovPatch
+        {
+            NO,             //なし
+            SkillSystems,
+            NoCache = (int)NO_CACHE
+        };
+        static NullifyMovPatch g_Cache_NullifyMovPatch = NullifyMovPatch.NoCache;
+        public static NullifyMovPatch SearchNullifyMovPatch()
+        {
+            if (g_Cache_NullifyMovPatch == NullifyMovPatch.NoCache)
+            {
+                g_Cache_NullifyMovPatch = SearchNullifyMovPatchLow();
+            }
+            return g_Cache_NullifyMovPatch;
+        }
+        static NullifyMovPatch SearchNullifyMovPatchLow()
+        {
+            Grep2PatchTableSt[] table2 = new Grep2PatchTableSt[] { 
+                    new Grep2PatchTableSt{ name="SkillSystems", ver="FE8U", data = new byte[]{0x00, 0x4A, 0x01, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x70, 0xB5, 0x01, 0x24, 0xA6, 0x46, 0x09, 0x4B, 0x63, 0x40, 0x04, 0x1C, 0x0D, 0x1C, 0x16, 0x1C, 0xFE, 0x44, 0x18, 0x47, 0x44, 0x40, 0x60, 0x40, 0x44, 0x40, 0x03, 0xD1, 0x29, 0x1C, 0x32, 0x1C, 0x00, 0xF0, 0x06, 0xF8, 0x70, 0xBC, 0x08, 0xBC}},
+                };
+            Grep2PatchTableSt t = GrepPatch(table2);
+            if (t.name == "SkillSystems")
+            {
+                return NullifyMovPatch.SkillSystems;
+            }
+            return NullifyMovPatch.NO;
         }
     }
 }

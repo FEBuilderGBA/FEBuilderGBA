@@ -57,7 +57,17 @@ namespace FEBuilderGBA
             this.X_Sim.Hide();
 
             InitCoordMainPanel();
+            SearchNullfy();
         }
+        void SearchNullfy()
+        {
+            PatchUtil.NullifyMovPatch nullifyMovPatch = PatchUtil.SearchNullifyMovPatch();
+            if (nullifyMovPatch == PatchUtil.NullifyMovPatch.SkillSystems)
+            {
+                L_19_COMBO.Items[1] = "20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)";
+            }
+        }
+
         int MoveCallback(int x,int y)
         {
             ControlPanel.Show();

@@ -13327,3 +13327,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)
+20=Never move and Not display move range(BOSS,NullifyMov)
