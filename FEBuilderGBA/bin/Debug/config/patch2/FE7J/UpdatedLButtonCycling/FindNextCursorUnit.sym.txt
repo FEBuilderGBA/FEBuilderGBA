@@ -1,0 +1,7 @@
+CycleEnemyFaction=$1C
+CycleNPCFaction=$20
+CheckIfPastFaction=$22
+FirstUnitInFaction=$44
+CheckIfValidForLPressCursorLoop=$2A
+CheckIfValidForLPressCursor=$54
+End=$4C

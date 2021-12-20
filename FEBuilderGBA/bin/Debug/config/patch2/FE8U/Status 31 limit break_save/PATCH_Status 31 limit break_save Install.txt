@@ -66,6 +66,7 @@ AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/break_save
 AUTHOR.en=Program https://github.com/ngmansion/FE8/tree/master/break_save
 
 DEPRECATED=1
+WARNING=1
 UPDATE_PATCH=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
 UPDATE_METHOD=NONE
 

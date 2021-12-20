@@ -1,0 +1,25 @@
+
+PUSH
+
+
+ORG 0x1D758
+SHORT 0xB500 //push {r14}
+
+ORG 0x1D766
+SHORT 0x7808 //ldrb r0, [r1]
+SHORT 0x4B02 //ldr r3 (FindNextCursorUnit)
+SHORT 0x469E //mov lr, r3
+SHORT 0xF800 //bl lr+0
+SHORT 0xBC01 //pop {r0}
+SHORT 0x4700 //bx {r0}
+SHORT 0
+POIN FindNextCursorUnit
+
+POP
+
+ALIGN 4
+FindNextCursorUnit:
+#incbin "FindNextCursorUnit.dmp"
+
+ALIGN 4
+

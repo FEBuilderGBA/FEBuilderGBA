@@ -2800,6 +2800,9 @@ Item Drop
 :交戦時BGMへJump
 Jump to Battle BGM
 
+:20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)
+20=Never move and Not display move range(BOSS,NullifyMov)
+
 :このユニットが行動し終わった後に行動します。\r\n利用しない場合は、0を指定してください。
 It will act after this unit is done.\r\nIf you do not want to use it, please specify 0.
 
@@ -9673,6 +9676,9 @@ The patch ({0}) has been updated. {1} PATCH UPDATE
 :このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
 This patch is outdated.\r\nIt has been left in place for compatibility.\r\nIt should not be used normally if newer options are available.\r\n\r\nAre you sure you want to install this?
 
+:このパッチには、他の主要なパッチとの互換性がない問題が報告されています。\r\n通常は利用しないことを推奨します。\r\n\r\nそれでも、本当にインストールしてもよろしいですか？
+This patch has been reported to be incompatible with other major patches.\r\nWe recommend that you do not normally use it.\r\n\r\nStill, are you sure you want to install it? 
+
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
 SkillSystems is already installed in this ROM.\r\nOverwriting SkillSystems can be dangerous.\r\nPlease make sure to follow the correct updating procedures.\r\n\r\nAre you sure you want to continue?
 
@@ -13327,5 +13333,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)
-20=Never move and Not display move range(BOSS,NullifyMov)

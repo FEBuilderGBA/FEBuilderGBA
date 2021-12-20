@@ -3429,6 +3429,10 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
+                if (!CheckWarningUI(patch))
+                {
+                    return;
+                }
                 if (!CheckSkillSystemsOverraideUI(patch))
                 {
                     return;
@@ -9314,8 +9318,22 @@ namespace FEBuilderGBA
                 }
             }
             return true;
+        }
+        bool CheckWarningUI(PatchSt patch)
+        {
+            string deprecated = U.at(patch.Param, "WARNING", "false");
+            if (U.stringbool(deprecated))
+            {
+                DialogResult dr = R.ShowNoYes("このパッチには、他の主要なパッチとの互換性がない問題が報告されています。\r\n通常は利用しないことを推奨します。\r\n\r\nそれでも、本当にインストールしてもよろしいですか？");
+                if (dr != DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+            return true;
 
         }
+
         bool CheckSkillSystemsOverraideUI(PatchSt patch)
         {
             string updateMethod = U.at(patch.Param, "UPDATE_METHOD", "");

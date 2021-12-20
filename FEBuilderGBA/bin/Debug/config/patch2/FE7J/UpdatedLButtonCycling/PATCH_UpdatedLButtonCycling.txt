@@ -1,0 +1,19 @@
+TYPE=EA
+TAG=#ENGINE
+EA=UpdatedLButtonCycling.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x1D758=0x00 0xB5 0x14 0x4A 0x12 0x68 0x89 0x00 0x89 0x18 0x09 0x68 0x09 0x18 0x08 0x78 0x02 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xBC 0x00 0x47 0x00 0x00
+AUTHOR=AuraWolf https://feuniverse.us/t/fe8u-aura-wolfs-asm-or-something/8467/4
+
+NAME=敵選択時のLボタンで自軍ではなく、次の敵ユニットを選択する
+INFO=バニラFE8では、通常のゲームプレイ中に「L」を押すと、カーソルが現在どこにあるかに関係なく、行動できる次の味方ユニットにカーソルが移動します。\r\nFE11では、カーソルが敵ユニットにある場合、カーソルは代わりに次の敵ユニットに移動します。\r\nこのパッチは、FE11の動作をFE8に実装します。
+
+NAME.en=Updated L Button Cycling
+INFO.en=In vanilla FE8, pressing "L" during normal gameplay will move the cursor to the next ally unit that can act, regardless of where the cursor currently is. In FE11, if the cursor is on an enemy unit, the cursor will instead go to the next enemy unit. This modification brings that change to FE8.
+
+NAME.zh=Updated L Button Cycling
+INFO.zh=In vanilla FE8, pressing "L" during normal gameplay will move the cursor to the next ally unit that can act, regardless of where the cursor currently is. In FE11, if the cursor is on an enemy unit, the cursor will instead go to the next enemy unit. This modification brings that change to FE8.
+
+
+

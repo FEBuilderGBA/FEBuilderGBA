@@ -14819,3 +14819,7 @@
 0800D48C	DeleteEventEngines	{J}
 080AC610	CalcGraphicsFromMiniMapTypeFromCoordinateXY	{J}
 080ac424	GetMiniMapTypeFromCoordinateXY	{J}
+0801DADC	CheckIfValidForLPressCursor	{U}
+0801DB4C	SetCursorToNextUnitOfCurrentlySelectedUnit	{U}
+0801D740	CheckIfValidForLPressCursor	{J}
+0801D7B0	SetCursorToNextUnitOfCurrentlySelectedUnit	{J}

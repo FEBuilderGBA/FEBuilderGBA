@@ -2800,6 +2800,9 @@ LOAD3 loads units in the order of in memory and alive\r\nIts unit groups only ne
 :交戦時BGMへJump
 跳到交战时BGM
 
+:20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)
+20=Never move and Not display move range(BOSS,NullifyMov)
+
 :このユニットが行動し終わった後に行動します。\r\n利用しない場合は、0を指定してください。
 我将在本人物完成后采取行动。\r\n如果你不想使用它，请指定0。
 
@@ -9673,6 +9676,9 @@ From Patch:
 :このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
 该补丁是一个旧补丁。\r\n保留兼容性。\r\n请勿正常使用。\r\n\r\n您确定要安装吗？ 
 
+:このパッチには、他の主要なパッチとの互換性がない問題が報告されています。\r\n通常は利用しないことを推奨します。\r\n\r\nそれでも、本当にインストールしてもよろしいですか？
+据报道，此补丁与其他主要补丁不兼容。\r\n我们建议您通常不要使用它。\r\n\r\n不过，您确定要安装它吗？ 
+
 :このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
 此ROM中已经安装了SkillSystems。\r\n过度安装SkillSystems非常危险。\r\n请遵循正确的更新过程。\r\n\r\n您确定要安装吗？ 
 
@@ -13327,5 +13333,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:20=移動せず、移動範囲も表示しない(BOSS,NullifyMov)
-20=Never move and Not display move range(BOSS,NullifyMov)

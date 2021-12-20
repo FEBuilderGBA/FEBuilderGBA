@@ -679,6 +679,20 @@ namespace FEBuilderGBA
                     sb.AppendLine("#define SKILLSYSTEM_SKILL_TESTER SkillTester");
                 }
             }
+            //魔法分離パッチ
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
+            {
+                sb.AppendLine("#define MAGIC_PATCH");
+            }
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+            {
+                sb.AppendLine("#define USE_STRMAG_SPLIT");
+            }
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                sb.AppendLine("#define USE_STRMAG_SPLIT");
+            }
 
 
             if (freearea == 0 || freearea == U.NOT_FOUND)

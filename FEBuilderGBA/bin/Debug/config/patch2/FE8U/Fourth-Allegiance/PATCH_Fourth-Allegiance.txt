@@ -12,3 +12,4 @@ INFO=This hack adds a fully independant fourth allegiance to FE8U, Based on the 
 AUTHOR=kirb https://feuniverse.us/t/fe8u-fourth-allegiance/8409
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems
+WARNING=1
