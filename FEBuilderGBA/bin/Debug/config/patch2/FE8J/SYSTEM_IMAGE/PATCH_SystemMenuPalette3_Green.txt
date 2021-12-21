@@ -1,6 +1,6 @@
-NAME=システムメニューのパレット3(緑)
-NAME.en=SystemMenu Palette3 (Green)
-NAME.zh=SystemMenu Palette3 (Green)
+NAME=システムメニューのパレット3(緑/友軍)
+NAME.en=SystemMenu Palette3 (Green/NPC)
+NAME.zh=SystemMenu Palette3 (Green/NPC)
 TYPE=IMAGE
 
 WIDTH=256

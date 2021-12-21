@@ -1,0 +1,17 @@
+NAME=マップアニメのパレット3(緑/友軍)
+NAME.en=Map animation palette 3 (green/NPC)
+NAME.zh=Map animation palette 3 (green/NPC)
+INFO=マップ戦闘の画面の描画に使うパレット
+INFO.en=This is the palette used to draw the map battle screen.
+INFO.zh=This is the palette used to draw the map battle screen.
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=8
+
+ZIMAGE_POINTER=0x0007BC44//0x089AD500
+PALETTE_ADDRESS=0x9AD688
+
+KEEPIMAGE=1
+PALETTE=1

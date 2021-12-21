@@ -14803,3 +14803,9 @@ r3=X tile position of menu of the right	{U}
 0801DB4C	SetCursorToNextUnitOfCurrentlySelectedUnit	{U}
 0801D740	CheckIfValidForLPressCursor	{J}
 0801D7B0	SetCursorToNextUnitOfCurrentlySelectedUnit	{J}
+08036E0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址。	{J}
+08036e4c	BKSEL_LoadPalette	{J}
+0807E114	获取地图动画附属调色板。	{J}
+08036D0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址。	{U}
+08036D4C	BKSEL_LoadPalette	{U}
+0807BDD0	获取地图动画附属调色板。	{U}

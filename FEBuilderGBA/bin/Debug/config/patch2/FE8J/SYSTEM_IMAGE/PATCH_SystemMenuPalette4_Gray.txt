@@ -1,6 +1,6 @@
-NAME=システムメニューのパレット4(グレー)
-NAME.en=SystemMenu Palette4 (Gray)
-NAME.zh=SystemMenu Palette4 (Gray)
+NAME=システムメニューのパレット4(グレー/第4)
+NAME.en=SystemMenu Palette4 (Gray/4th)
+NAME.zh=SystemMenu Palette4 (Gray/4th)
 TYPE=IMAGE
 
 WIDTH=256

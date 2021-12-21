@@ -1,6 +1,6 @@
-NAME=システムメニューのパレット2(赤)
-NAME.en=SystemMenu Palette2 (Red)
-NAME.zh=SystemMenu Palette2 (Red)
+NAME=システムメニューのパレット2(赤/敵)
+NAME.en=SystemMenu Palette2 (Red/Enemy)
+NAME.zh=SystemMenu Palette2 (Red/Enemy)
 TYPE=IMAGE
 
 WIDTH=256

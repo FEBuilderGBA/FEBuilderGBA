@@ -1,6 +1,6 @@
-NAME=システムメニューのパレット1(青)
-NAME.en=SystemMenu Palette1 (Blue)
-NAME.zh=SystemMenu Palette1 (Blue)
+NAME=システムメニューのパレット1(青/プレイヤー)
+NAME.en=SystemMenu Palette1 (Blue/Player)
+NAME.zh=SystemMenu Palette1 (Blue/Player)
 
 TYPE=IMAGE
 
@@ -9,7 +9,8 @@ HEIGHT=160
 
 ZIMAGE_POINTER=0x5E0650//0x5E07A0
 HEADERTSA_POINTER=0x08EA08//0xA931D0
-PALETTE_POINTER=0x036E2C//0x5E0D94
+PALETTE_ADDRESS=0x5E0D94
+
 
 KEEPIMAGE=1
 PALETTE=1
