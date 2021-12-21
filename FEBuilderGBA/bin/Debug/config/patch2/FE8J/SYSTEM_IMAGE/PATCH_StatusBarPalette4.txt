@@ -1,0 +1,17 @@
+NAME=ステータスバーのパレット4
+INFO=ステータスバーのパレットです。\r\nこのパレットで描画されるデータは動的に作られるようなので、サンプル画像は別のデータを表示しています。\r\n棒グラフを描画するパレットの色だけを参考にしてください。\r\n5番目が棒グラフの後ろの色\r\n6番目が棒グラフの色\r\n15番目がグラフの後ろ側
+
+TYPE=IMAGE
+
+WIDTH=128
+HEIGHT=8
+
+IMAGE_POINTER=0x051BBC//0x856E5C
+PALETTE_POINTER=0x05E066C//0x5E3190
+
+KEEPIMAGE=1
+PALETTE=1
+NAME.en=Status bar palette 4.
+INFO.en=The status bar palette.\r\nThe data drawn in this palette seems to be dynamically created, so the sample image shows different data.\r\nPlease refer only to the color of the palette that draws the bar graph.\r\nThe fifth is the color behind the bar graph.\r\nThe sixth is the color of the bar graph.\r\nThe 15th is the back side of the graph.
+NAME.zh=状态栏面板 4.
+INFO.zh=状态栏调色板。\r\n此调色板中绘制的数据似乎是动态创建的，因此示例图像显示了不同的数据。\r\n请仅参考绘制条形图的调色板的颜色。\r\n第五个是条形图后面的颜色。\r\n第六个是条形图的颜色。\r\n第 15 个是图表的背面。
