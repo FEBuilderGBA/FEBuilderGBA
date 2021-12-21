@@ -1246,95 +1246,39 @@ namespace FEBuilderGBA
             bool keeppalette = U.stringbool(U.at(patch.Param, "KEEPPALETTE", "false"));
             bool keeptsa = U.stringbool(U.at(patch.Param, "KEEPTSA", "false"));
 
+            string ImportName="";
+            if (keepimage)
+            {
+                ImportName += "_KeepImage";
+            }
             if (keeptsa)
             {
-                Debug.Assert(keeppalette == false);
-
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import_KeepTSA";
-                parent.Controls.Add(import);
-
-                //TSAを維持する場合は、TSAEditorの選択肢を表示
-                Button tsaEditor = new Button();
-                tsaEditor.Location = new Point(5, y);
-                tsaEditor.Size = new Size(90, CONTROL_HEIGHT);
-                tsaEditor.Text = "TSAEditor";
-                tsaEditor.Name = prefix + "_TSAEditor";
-                parent.Controls.Add(tsaEditor);
+                ImportName += "_KeepTSA";
             }
-            else if (keeppalette)
+            if (keeppalette)
             {
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import_KeepPalette";
-                parent.Controls.Add(import);
+                ImportName += "_KeepPalette";
             }
-            else if (keepimage)
-            {//パレットだけ変更する
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
 
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import Palette";
-                import.Name = prefix + "_Import_KeepImage";
-                parent.Controls.Add(import);
+            Button export = new Button();
+            export.Location = new Point(200, y);
+            export.Size = new Size(90, CONTROL_HEIGHT);
+            export.Text = "Export";
+            export.Name = prefix + "_Export";
+            parent.Controls.Add(export);
 
-                Button paletteEditor = new Button();
-                paletteEditor.Location = new Point(5, y);
-                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
-                paletteEditor.Text = "PaletteEditor";
-                paletteEditor.Name = prefix + "_PaletteEditor";
-                parent.Controls.Add(paletteEditor);
-            }
-            else
-            {
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
+            Button import = new Button();
+            import.Location = new Point(100, y);
+            import.Size = new Size(90, CONTROL_HEIGHT);
+            import.Text = prefix + "_Import" + ImportName;
+            parent.Controls.Add(import);
 
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import";
-                parent.Controls.Add(import);
-
-                //TSAを変更しない場合Paletteを変更する選択肢を出す
-                Button paletteEditor = new Button();
-                paletteEditor.Location = new Point(5, y);
-                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
-                paletteEditor.Text = "PaletteEditor";
-                paletteEditor.Name = prefix + "_PaletteEditor";
-                parent.Controls.Add(paletteEditor);
-            }
+            Button paletteEditor = new Button();
+            paletteEditor.Location = new Point(5, y);
+            paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
+            paletteEditor.Text = "PaletteEditor";
+            paletteEditor.Name = prefix + "_PaletteEditor";
+            parent.Controls.Add(paletteEditor);
 
             //グラフィックツールへ
             {
@@ -2744,119 +2688,44 @@ namespace FEBuilderGBA
             bool keeptsa = U.stringbool(U.at(patch.Param, "KEEPTSA", "false"));
             bool tsaNoMargin = U.stringbool(U.at(patch.Param, "TSANOMARGIN", "false"));
 
+            string ImportName = "";
+            if (keepimage)
+            {
+                ImportName += "_KeepImage";
+            }
             if (keeptsa)
             {
-//                Debug.Assert(keeppalette == false);
-
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import_KeepTSA";
-                parent.Controls.Add(import);
-
-                //TSAを維持する場合は、TSAEditorの選択肢を表示
-                Button tsaEditor = new Button();
-                tsaEditor.Location = new Point(5, y);
-                tsaEditor.Size = new Size(90, CONTROL_HEIGHT);
-                tsaEditor.Text = "TSAEditor";
-                tsaEditor.Name = prefix + "_TSAEditor";
-                parent.Controls.Add(tsaEditor);
+                ImportName += "_KeepTSA";
             }
-            else if (keeppalette)
+            if (keeppalette)
             {
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import_KeepPalette";
-                parent.Controls.Add(import);
+                ImportName += "_KeepPalette";
             }
-            else if (keepimage)
-            {//パレットだけ変更する
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import Palette";
-                import.Name = prefix + "_Import_KeepImage";
-                parent.Controls.Add(import);
-
-                Button paletteEditor = new Button();
-                paletteEditor.Location = new Point(5, y);
-                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
-                paletteEditor.Text = "PaletteEditor";
-                paletteEditor.Name = prefix + "_PaletteEditor";
-                parent.Controls.Add(paletteEditor);
-            }
-            else if (tsaNoMargin)
+            if (tsaNoMargin)
             {
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
-
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import_TSANoMargin";
-                parent.Controls.Add(import);
-
-                //TSAを変更しない場合Paletteを変更する選択肢を出す
-                Button paletteEditor = new Button();
-                paletteEditor.Location = new Point(5, y);
-                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
-                paletteEditor.Text = "PaletteEditor";
-                paletteEditor.Name = prefix + "_PaletteEditor";
-                parent.Controls.Add(paletteEditor);
+                ImportName += "_TSANoMargin";
             }
-            else
-            {
-                Button export = new Button();
-                export.Location = new Point(200, y);
-                export.Size = new Size(90, CONTROL_HEIGHT);
-                export.Text = "Export";
-                export.Name = prefix + "_Export";
-                parent.Controls.Add(export);
 
-                Button import = new Button();
-                import.Location = new Point(100, y);
-                import.Size = new Size(90, CONTROL_HEIGHT);
-                import.Text = "Import";
-                import.Name = prefix + "_Import";
-                parent.Controls.Add(import);
+            Button export = new Button();
+            export.Location = new Point(200, y);
+            export.Size = new Size(90, CONTROL_HEIGHT);
+            export.Text = "Export";
+            export.Name = prefix + "_Export";
+            parent.Controls.Add(export);
 
-                //TSAを変更しない場合Paletteを変更する選択肢を出す
-                Button paletteEditor = new Button();
-                paletteEditor.Location = new Point(5, y);
-                paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
-                paletteEditor.Text = "PaletteEditor";
-                paletteEditor.Name = prefix + "_PaletteEditor";
-                parent.Controls.Add(paletteEditor);
-            }
+            Button import = new Button();
+            import.Location = new Point(100, y);
+            import.Size = new Size(90, CONTROL_HEIGHT);
+            import.Text = "Import";
+            import.Name = prefix + "_Import" + ImportName;
+            parent.Controls.Add(import);
+
+            Button paletteEditor = new Button();
+            paletteEditor.Location = new Point(5, y);
+            paletteEditor.Size = new Size(90, CONTROL_HEIGHT);
+            paletteEditor.Text = "PaletteEditor";
+            paletteEditor.Name = prefix + "_PaletteEditor";
+            parent.Controls.Add(paletteEditor);
 
             //グラフィックツールへ
             {
