@@ -1,0 +1,42 @@
+NAME=進撃準備のグレーパレットをメニューパレットからどける
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: MenuPalette|OFF|MapAnime Window Palette|MAP|Nazo default palette|UNK
+
+
+DETERMINATION_ADDRESS=0x98118
+
+//進撃準備の説明テキスト グレー(otherパレット)
+OFF:0x98118=0xB4 0x0D 0x5E 0x08
+MAP:0x98118=0xF0 0xDC 0xA1 0x08
+UNK:0x98118=0xC4 0xA5 0xA9 0x08
+
+//進撃準備のダイアログ1 グレー(otherパレット)
+OFF:0x9AC58=0xF4 0x0D 0x5E 0x08
+MAP:0x9AC58=0x30 0xDD 0xA1 0x08
+UNK:0x9AC58=0x04 0xA6 0xA9 0x08
+
+//進撃準備のダイアログ1 グレー(otherパレット)
+OFF:0x9AF94=0xF4 0x0D 0x5E 0x08
+MAP:0x9AF94=0x30 0xDD 0xA1 0x08
+UNK:0x9AF94=0x04 0xA6 0xA9 0x08
+
+//進撃準備のダイアログ1 グレー(otherパレット)
+OFF:0x9B05C=0xF4 0x0D 0x5E 0x08
+MAP:0x9B05C=0x30 0xDD 0xA1 0x08
+UNK:0x9B05C=0x04 0xA6 0xA9 0x08
+
+
+
+AUTHOR=7743
+
+INFO=進撃準備画面の説明やダイアログ表示に利用されているグレーパレットを、移動させます。\r\nこれにより、メニューパレットを変更しやすくなります。\r\nディフォルトは、メニューパレットの第4色(グレー)が利用されます。
+
+NAME.en=Move the gray palette for preparation from the menu palette
+INFO.en=Move the gray palette used for the explanation of the advance preparation screen and the dialog display.\r\nThis makes it easier to change the menu palette.\r\nThe default is to use the 4th color (gray) of the menu palette.
+
+NAME.zh=Move the gray palette for preparation from the menu palette
+INFO.zh=Move the gray palette used for the explanation of the advance preparation screen and the dialog display.\r\nThis makes it easier to change the menu palette.\r\nThe default is to use the 4th color (gray) of the menu palette.

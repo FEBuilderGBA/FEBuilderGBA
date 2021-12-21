@@ -27,10 +27,15 @@ OFF:0x36D48=0x14 0x6C 0x5B 0x08
 MAP:0x36D48=0xA8 0xD6 0x9A 0x08
 UNK:0x36D48=0xB0 0xD8 0xA1 0x08
 
+//状況画面の左上の敵味方の色(playerパレット)
+OFF:0x8E070=0xB4 0x6B 0x5B 0x08
+MAP:0x8E070=0x48 0xD6 0x9A 0x08
+UNK:0x8E070=0x50 0xD8 0xA1 0x08
+
 AUTHOR=7743
 
 INFO=敵を攻撃するときに表示される戦闘予測のパレットをメニューパレットから、アニメオフ時の戦闘画面のパレットに変更します。\r\nこれにより、メニューパレットを変更しやすくなります。
-NAME.en=Remove the battle prediction palette from the menu palette.
+NAME.en=Move the battle prediction palette from the menu palette.
 INFO.en=Change the battle prediction palette displayed when attacking an enemy from the menu palette to the battle screen palette when animation is off.\r\nThis makes it easier to change the menu palette.
-NAME.zh=从菜单面板中删除战斗预测面板。
-INFO.zh=将攻击敌人时显示的战斗预测调色板从菜单调色板更改为动画关闭时的战斗屏幕调色板。\r\n这样可以更轻松地更改菜单调色板。
+NAME.zh=Move the battle prediction palette from the menu palette.
+INFO.zh=Change the battle prediction palette displayed when attacking an enemy from the menu palette to the battle screen palette when animation is off.\r\nThis makes it easier to change the menu palette.

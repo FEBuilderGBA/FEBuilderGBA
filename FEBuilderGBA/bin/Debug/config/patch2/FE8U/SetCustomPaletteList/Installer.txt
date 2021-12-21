@@ -1,0 +1,27 @@
+PUSH
+//ORG 0xA4BC8	//FE8J
+ORG 0xA0DE0	//FE8J
+jumpToHack(SetCustomPaletteListForSupportViewer)
+
+//ORG 0xB4158	//FE8J
+ORG 0xAF538	//FE8U
+jumpToHack(SetCustomPaletteListForSoundRoom)
+POP
+
+ALIGN 4
+SetCustomPaletteListForSupportViewer:
+#incbin "SetCustomPaletteListForSupportViewer.dmp"
+WORD 2
+
+ALIGN 4
+SetCustomPaletteListForSoundRoom:
+#incbin "SetCustomPaletteListForSoundRoom.dmp"
+WORD 1
+
+//0 blue
+//1 red
+//2 green
+//3 gray
+
+ALIGN 4
+
