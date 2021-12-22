@@ -9,8 +9,8 @@ IF:0xA4BC8=0x00 0x4B 0x18 0x47
 ADDRESS=$FGREP4ENDA SetCustomPaletteListForSoundRoom.dmp
 COMBO=Color0 Blue/Player|0|Color1 Red/Enemy|1|Color2 Green/NPC|2|Color3 Gray/4th|3
 
-INFO=スタートメニューからサウンドルームと支援一覧にアクセスした時に表示されるリストの色を変更します。\r\nディフォルトは常にColor0(青色)が使われます。
-INFO.en=Change the color of the list that appears when you access the Sound Room and Support List from the Start menu.\r\nColor0 (blue) is always used as the default.
-INFO.zh=Change the color of the list that appears when you access the Sound Room and Support List from the Start menu.\r\nColor0 (blue) is always used as the default.
+INFO=スタートメニューからサウンドルームと支援一覧にアクセスした時に表示されるリストの色を変更します。\r\nディフォルトは常にColor0(青色)のパレットが使われます。
+INFO.en=Change the color of the list that appears when you access the Sound Room and Support List from the Start menu.\r\nColor0 (blue) Palette is always used as the default.
+INFO.zh=Change the color of the list that appears when you access the Sound Room and Support List from the Start menu.\r\nColor0 (blue) Palette is always used as the default.
 
 AUTHOR=7743
