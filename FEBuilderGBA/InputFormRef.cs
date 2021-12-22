@@ -2566,7 +2566,8 @@ namespace FEBuilderGBA
                         }
                         updateLock = true;
                         int dp = (int)src_object.Value;
-                        dp = (int)((dp & ~0x1F) | (v >> 3) );
+                        int updateColor = v >> 3;
+                        dp = (int)((dp & 0x7FE0) | updateColor);
                         U.ForceUpdate(src_object, dp);
                         updateLock = false;
                     };
@@ -2599,7 +2600,8 @@ namespace FEBuilderGBA
                         }
                         updateLock = true;
                         int dp = (int)src_object.Value;
-                        dp = (int)(((dp>>5) & ~0x1F) | (v >> 3) );
+                        int updateColor = (v >> 3) << 5;
+                        dp = (int)((dp & 0x7C1F) | updateColor);
                         U.ForceUpdate(src_object, dp);
                         updateLock = false;
                     };
@@ -2632,7 +2634,8 @@ namespace FEBuilderGBA
                         }
                         updateLock = true;
                         int dp = (int)src_object.Value;
-                        dp = (int)(((dp>>10) & ~0x1F) | (v >> 3) );
+                        int updateColor = (v >> 3) << 10;
+                        dp = (int)((dp & 0x3FF) | updateColor);
                         U.ForceUpdate(src_object, dp);
                         updateLock = false;
                     };

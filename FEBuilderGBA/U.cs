@@ -15,6 +15,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text.RegularExpressions;
+using System.Drawing.Imaging;
 
 namespace FEBuilderGBA
 {
@@ -7552,6 +7553,22 @@ namespace FEBuilderGBA
                 return true;
             }
             return false;
+        }
+
+        public static Bitmap DrawGBAColorSample(uint addr)
+        {
+            Bitmap bitmap = ImageUtil.Blank(ListBoxEx.OWNER_DRAW_ICON_SIZE, ListBoxEx.OWNER_DRAW_ICON_SIZE);
+            if (U.isSafetyOffset(addr))
+            {
+                uint dp = Program.ROM.u16(addr);
+                byte dr = (byte)((dp & 0x1F));
+                byte dg = (byte)(((dp >> 5) & 0x1F));
+                byte db = (byte)(((dp >> 10) & 0x1F));
+                ColorPalette p = bitmap.Palette;
+                p.Entries[0] = Color.FromArgb(dr << 3, dg << 3, db << 3);
+                bitmap.Palette = p;
+            }
+            return bitmap;
         }
     }
 }

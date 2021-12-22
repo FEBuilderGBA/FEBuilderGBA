@@ -1,0 +1,17 @@
+NAME=メニューのカーソル位置のハイライト4 (グレー/第4)
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+ADDRESS=0xA99F40
+DATASIZE=2
+DATACOUNT=16
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=メニューを選択しているときに表示されるハイライト用のパレットデータです。
+NAME.en=Menu cursor position highlight 4 (gray / 4th).
+INFO.en=Palette data for highlights displayed when a menu is selected.
+NAME.zh=菜单光标位置突出显示 4（灰色/第 4 个）。
+INFO.zh=选择菜单时显示的高亮调色板数据。

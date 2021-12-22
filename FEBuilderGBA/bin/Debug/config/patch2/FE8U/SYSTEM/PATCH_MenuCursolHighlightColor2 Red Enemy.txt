@@ -1,0 +1,17 @@
+NAME=メニューのカーソル位置のハイライト2 (赤/敵)
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+ADDRESS=0xA1D468
+DATASIZE=2
+DATACOUNT=16
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=メニューを選択しているときに表示されるハイライト用のパレットデータです。
+NAME.en=Menu cursor position highlight 2 (red / enemy).
+INFO.en=Palette data for highlights displayed when a menu is selected.
+NAME.zh=菜单光标位置突出显示 2（红色/敌人）。
+INFO.zh=选择菜单时显示的高亮调色板数据。

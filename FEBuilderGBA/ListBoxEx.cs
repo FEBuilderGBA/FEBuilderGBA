@@ -1119,18 +1119,8 @@ namespace FEBuilderGBA
 
             uint addr = InputFormRef.SelectToAddr(lb, index);
 
-            Bitmap bitmap = ImageUtil.Blank(ListBoxEx.OWNER_DRAW_ICON_SIZE, ListBoxEx.OWNER_DRAW_ICON_SIZE);
-            if (U.isSafetyOffset(addr))
-            {
-                uint dp = Program.ROM.u16(addr);
-                byte dr = (byte)((dp & 0x1F));
-                byte dg = (byte)(((dp >> 5) & 0x1F));
-                byte db = (byte)(((dp >> 10) & 0x1F));
-                ColorPalette p = bitmap.Palette;
-                p.Entries[0] = Color.FromArgb(dr << 3, dg << 3, db << 3);
-                bitmap.Palette = p;
-            }
 
+            Bitmap bitmap = U.DrawGBAColorSample(addr);
             //アイコンを描く.
             Rectangle b = bounds;
             b.Width = ListBoxEx.OWNER_DRAW_ICON_SIZE;

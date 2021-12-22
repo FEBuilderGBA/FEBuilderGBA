@@ -3886,6 +3886,21 @@ Attack Range
 :杖範囲
 Staff Range
 
+:カラー1 青/プレイヤー
+Color 1 blue / player.
+
+:カラー2 赤/敵
+Color 2 red / enemy.
+
+:カラー3 緑/友軍
+Color 3 Green / Friendly.
+
+:カラー4 グレー/第4
+Color 4 Gray / 4th.
+
+:メニュー選択色
+Menu selection color.
+
 :ポインタを書き込む
 Write a pointer
 

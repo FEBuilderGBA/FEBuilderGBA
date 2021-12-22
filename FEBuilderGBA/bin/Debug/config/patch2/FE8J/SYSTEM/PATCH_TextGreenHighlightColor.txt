@@ -1,0 +1,17 @@
+NAME=テキストの緑色のハイライト
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+POINTER=0x48B0
+DATASIZE=2
+DATACOUNT=16
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=パラメータがカンストした場合など、テキストが緑色にハイライトされる処理で利用されるパレットデータです。
+NAME.en=Green highlight of the text.
+INFO.en=Palette data used in the process of highlighting text in green, such as when a parameter is counter-stopped.
+NAME.zh=文本的绿色突出显示。
+INFO.zh=在以绿色突出显示文本的过程中使用的调色板数据，例如当参数被计数器停止时。

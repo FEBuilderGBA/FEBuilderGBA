@@ -599,6 +599,7 @@ namespace FEBuilderGBA
         void LoadPatchStruct(PatchSt patch)
         {
             PatchPage.Controls.Clear();
+            bool showExpandButton = true;
             uint struct_pointer = U.NOT_FOUND;
             uint struct_address = 0;
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -630,6 +631,7 @@ namespace FEBuilderGBA
                     throw new PatchException(R.Error("このポインタ({0})は危険です.\r\n", U.ToHexString(struct_pointer)));
                 }
                 struct_pointer = U.NOT_FOUND;
+                showExpandButton = false;
             }
 
             uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
@@ -655,6 +657,7 @@ namespace FEBuilderGBA
             else
             {//直値
                 datacount = U.atoi0x(datacount_str);
+                showExpandButton = false;
             }
             if (datacount <= 0)
             {
@@ -758,8 +761,8 @@ namespace FEBuilderGBA
             AddressListExpandsButton.Name = "AddressListExpandsButton" + max_explands_size;
             PatchPage.Controls.Add(AddressListExpandsButton);
 
-            if (struct_pointer == U.NOT_FOUND)
-            {//アドレスで指定した場合、データは固定長になります。拡張できません.
+            if (!showExpandButton)
+            {
                 AddressListExpandsButton.Hide();
             }
 
@@ -1013,6 +1016,56 @@ namespace FEBuilderGBA
                         image.SetPalette((uint)datanum, data, type);
                     }
                     label.Name = "J_" + datanum;
+                }
+                else if (type == "PALETTE")
+                {
+                    Label colorSample = new Label();
+                    colorSample.Location = new Point(510, y);
+                    colorSample.Size = new Size(20, CONTROL_HEIGHT);
+                    colorSample.BorderStyle = BorderStyle.FixedSingle;
+                    colorSample.Name = "L_" + datanum + "_" + type + "_COLOR";
+                    PatchPage.Controls.Add(colorSample);
+
+                    y += CONTROL_HEIGHT;
+
+                    Label labelR = new Label();
+                    labelR.Location = new Point(405, y);
+                    labelR.Size = new Size(20, CONTROL_HEIGHT);
+                    labelR.Text = "R:";
+                    PatchPage.Controls.Add(labelR);
+
+                    NumericUpDown updR = new NumericUpDown();
+                    updR.Location = new Point(425, y);
+                    updR.Size = new Size(50, CONTROL_HEIGHT);
+                    updR.Name = "L_" + datanum + "_" + type + "_R";
+                    updR.Maximum = 255;
+                    PatchPage.Controls.Add(updR);
+
+                    Label labelG = new Label();
+                    labelG.Location = new Point(480, y);
+                    labelG.Size = new Size(20, CONTROL_HEIGHT);
+                    labelG.Text = "G:";
+                    PatchPage.Controls.Add(labelG);
+
+                    NumericUpDown updG = new NumericUpDown();
+                    updG.Location = new Point(500, y);
+                    updG.Size = new Size(50, CONTROL_HEIGHT);
+                    updG.Name = "L_" + datanum + "_" + type + "_G";
+                    updG.Maximum = 255;
+                    PatchPage.Controls.Add(updG);
+
+                    Label labelB = new Label();
+                    labelB.Location = new Point(555, y);
+                    labelB.Size = new Size(20, CONTROL_HEIGHT);
+                    labelB.Text = "B:";
+                    PatchPage.Controls.Add(labelB);
+
+                    NumericUpDown updB = new NumericUpDown();
+                    updB.Location = new Point(575, y);
+                    updB.Size = new Size(50, CONTROL_HEIGHT);
+                    updB.Name = "L_" + datanum + "_" + type + "_B";
+                    updB.Maximum = 255;
+                    PatchPage.Controls.Add(updB);
                 }
                 else if (type == "MAPX")
                 {
@@ -1466,6 +1519,10 @@ namespace FEBuilderGBA
             else if (listname == "DECIMAL")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
+            else if (listname == "PALETTE")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawColorAndText, DrawMode.OwnerDrawFixed);
             }
             else if (listname == "BATTLETERRAINSET")
             {
