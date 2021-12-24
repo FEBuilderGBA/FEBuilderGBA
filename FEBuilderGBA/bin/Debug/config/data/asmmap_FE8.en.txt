@@ -14847,9 +14847,11 @@ r3=X tile position of menu of right	{U}
 0801DB4C	SetCursorToNextUnitOfCurrentlySelectedUnit	{U}
 0801D740	CheckIfValidForLPressCursor	{J}
 0801D7B0	SetCursorToNextUnitOfCurrentlySelectedUnit	{J}
-08036E0C	BKSEL_LoadPalette_Low	Read the battle prediction palette address.	{J}
+08036E0C	BKSEL_LoadPalette_Low	Read the battle prediction palette address	{J}
 08036e4c	BKSEL_LoadPalette	{J}
 0807E114	Get the map animation affiliation palette.	{J}
-08036D0C	BKSEL_LoadPalette_Low	Read the battle prediction palette address.	{U}
+08036D0C	BKSEL_LoadPalette_Low	Read the battle prediction palette address	{U}
 08036D4C	BKSEL_LoadPalette	{U}
 0807BDD0	Get the map animation affiliation palette.	{U}
+080B46B4	SoundRoomDestructor	{J}
+080AFA94	SoundRoomDestructor	{U}

@@ -219,6 +219,11 @@ ORG 0x27E8 //{J}
 //ORG 0x2898 //{U}
 BYTE 0x00 0x00  //NOP 0x7f以下の曲を記録しないのをやめる
 
+//ワークメモリのクリア
+ORG 0xB46C8	//{J}
+//ORG 0xAFAA8	//{U}
+jumpToHack(CleanupSoundRoomWorkMemory)
+
 POP
 
 ALIGN 4
@@ -272,5 +277,9 @@ ASMC_ShowAllSongs:
 ALIGN 4
 ASMC_HideAllSongs:
 #incbin "ASMC_HideAllSongs.dmp"
+
+ALIGN 4
+CleanupSoundRoomWorkMemory:
+#incbin "CleanupSoundRoomWorkMemory.dmp"
 
 ALIGN 4

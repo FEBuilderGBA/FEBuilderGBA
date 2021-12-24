@@ -14829,3 +14829,5 @@
 08036D0C	BKSEL_LoadPalette_Low	戦闘予測のパレットアドレスの読込	{U}
 08036D4C	BKSEL_LoadPalette	{U}
 0807BDD0	マップアニメの所属パレットの取得	{U}
+080B46B4	SoundRoomDestructor	{J}
+080AFA94	SoundRoomDestructor	{U}

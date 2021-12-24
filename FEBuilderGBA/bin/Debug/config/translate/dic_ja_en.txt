@@ -727,6 +727,7 @@ Baldr
 おおだて	Pavise
 ついげき	Follow-Up
 追撃	Follow-Up
+追撃	Double Attack
 ねすむ	Steal
 盗む	Steal
 まちぶせ	Vantage

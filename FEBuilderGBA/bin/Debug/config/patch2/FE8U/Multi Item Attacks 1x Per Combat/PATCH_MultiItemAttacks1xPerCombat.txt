@@ -1,5 +1,5 @@
-NAME=追撃禁止武器を複数設定できるようにする(Editor)
-NAME.en=Define Multiple Item Attacks 1x Per Combat(Editor)
+NAME=追撃禁止武器を複数設定できるようにする.(Editor)
+NAME.en=Define Multiple Weapons That Cannot Double Attack(Editor)
 
 INFO=追撃を出さない武器を複数設定できるようにします。
 
@@ -24,7 +24,7 @@ LISTNAME=$B0:ITEM
 //データを定義します
 B0:ITEM=Item
 
-INFO.en=Allows you to configure multiple Attacks 1x Per Combat weapons.
+INFO.en=Allows you to configure multiple Weapons that can only attack once per combat.\r\nThese weapons prohibit Follow-Up Attack
 NAME.zh=允许设置多个禁止追击的道具(Editor)
 INFO.zh=允许您配置多个攻击1x每战斗武器。
 
