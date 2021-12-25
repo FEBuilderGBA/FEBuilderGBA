@@ -1,0 +1,37 @@
+NAME=マップアニメのサイレスモーションを高速化する
+NAME.en=Accelerate MapAnim Silence motion
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|2倍速|ON2|4倍速|ON4
+
+DETERMINATION_ADDRESS=0x9A4EEE
+
+OFF:0x9A4ED6=0x1E
+OFF:0x9A4EEE=0x40
+OFF:0x9A4EFE=0x1E
+OFF:0x9A3E16=0x32
+OFF:0x9A3E26=0x28
+
+ON2:0x9A4ED6=0x0F
+ON2:0x9A4EEE=0x20
+ON2:0x9A4EFE=0x0F
+ON2:0x9A3E16=0x05
+ON2:0x9A3E26=0x28
+
+ON4:0x9A4ED6=0x07
+ON4:0x9A4EEE=0x10
+ON4:0x9A4EFE=0x07
+ON4:0x9A3E16=0x00
+ON4:0x9A3E26=0x16
+
+AUTHOR=7743
+INFO=マップアニメのサイレスの杖モーションから待機時間を減らして高速化します。
+INFO.en=Speed up for Silence motion of the map animation when using Silence Staff.
+
+COMBO.en=Default|OFF|Double speed|ON2|4 times faster|ON4
+NAME.zh=Accelerate MapAnim Silence motion
+INFO.zh=Speed up for Silence motion of the map animation when using Silence Staff.
+COMBO.zh=Default|OFF|双倍速度|ON2|快4倍|ON4

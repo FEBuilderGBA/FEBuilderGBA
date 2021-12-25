@@ -29,8 +29,8 @@ ASMC_ChangeMoveToWaitMotion:
 	str  r0,[r3,#0xC]
 
 	@移動Procsの終了
-	@blh 0x0807B4B8|1	@{J} ClearMOVEUNITs
-	blh 0x080790A4|1	@{U} ClearMOVEUNITs
+	@blh 0x0807B4B8		@{J} ClearMOVEUNITs
+	blh 0x080790A4		@{U} ClearMOVEUNITs
 
 	@blh 0x08032114   @UpdateMapAndUnit	{J}
 	blh 0x080321C8   @UpdateMapAndUnit	{U}
