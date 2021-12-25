@@ -27,7 +27,7 @@ ON4:0x9A4EFE=0x07
 ON4:0x9A3E16=0x00
 ON4:0x9A3E26=0x16
 
-AUTHOR=7743
+AUTHOR=7743 https://discord.com/channels/144670830150811649/725478895226191892/924407155308765216
 INFO=マップアニメのサイレスの杖モーションから待機時間を減らして高速化します。
 INFO.en=Speed up for Silence motion of the map animation when using Silence Staff.
 

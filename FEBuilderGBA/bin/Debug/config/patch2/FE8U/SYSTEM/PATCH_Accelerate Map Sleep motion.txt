@@ -29,7 +29,7 @@ ON4:0x9A4DBE=0x07
 ON4:0x9A3D26=0x0C
 ON4:0x9A3D36=0x0C
 
-AUTHOR=7743
+AUTHOR=7743 https://discord.com/channels/144670830150811649/725478895226191892/924407086178267196
 INFO=マップアニメのスリープの杖モーションから待機時間を減らして高速化します。
 INFO.en=Speed up for sleep motion of the map animation when using Sleep Staff.
 
