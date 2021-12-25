@@ -1,0 +1,37 @@
+﻿NAME=移動モーションから待機モーションへ移行させる(イベント命令)
+NAME.en=Add Event: Move from Moving Motion to Standing Motion
+NAME.zh=Add Event: Move from Moving Motion to Standing Motion
+
+
+AUTHOR=7743
+
+TYPE=BIN
+TAG=#EVENT #ENGINE
+BIN:$FREEAREA=ASMC_ChangeMoveMotionToWaitMotion.dmp
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ChangeMoveMotionToWaitMotion.dmp=0x00 0xB5 0x0A 0x4B
+
+INFO=このパッチは、移動モーションから待機モーションへ移行させるASMC_ChangeMoveMotionToWaitMotionを実装します。\r\nユニットが村を訪問した時に、ユニットは移動モーションが表示されていますが、このモーションを強引に解除して、待機モーションへ移行させます。
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	移動モーションから待機モーションへ移行させる(ASMC_ChangeMoveMotionToWaitMotion)(LOW)	Slot1=Unit
+EVENTSCRIPT:12=40050100XXXXXXXX400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:UNIT:ユニット]を移動モーションから待機モーションへ移行させる(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:13=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットを移動モーションから待機モーションへ移行させる(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:14=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	操作中のユニットを移動モーションから待機モーションへ移行させる(ASMC_ChangeMoveMotionToWaitMotion)
+
+
+INFO.en=This patch make ASMC_ChangeMoveMotionToWaitMotion that moves from Moving Motion to Standing Motion.\r\nWhen the unit visits the village, the unit is showing Moving Motion.\r\nForcibly release this motion and move to Standing Motion.
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)(LOW)	Slot1=Unit
+EVENTSCRIPT:12.en=40050100XXXXXXXX400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:UNIT:Unit] Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:13.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:14.en=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit [ZZ:DECIMAL:Turn], Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+
+
+INFO.zh=This patch make ASMC_ChangeMoveMotionToWaitMotion that moves from Moving Motion to Standing Motion.\r\nWhen the unit visits the village, the unit is showing Moving Motion.\r\nForcibly release this motion and move to Standing Motion.
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)(LOW)	Slot1=Unit
+EVENTSCRIPT:12.zh=40050100XXXXXXXX400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:UNIT:Unit] Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:13.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:14.zh=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit [ZZ:DECIMAL:Turn], Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+
