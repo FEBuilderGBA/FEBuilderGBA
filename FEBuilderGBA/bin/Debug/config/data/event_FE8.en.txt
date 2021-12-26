@@ -171,8 +171,11 @@
 
 422C0000XXXXXXXX	Load For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	@LOAD3	{LOADUNIT}
 402C0100FFFFFFFF	Load reinforcements of memory slot 2(LOW)
-412C0100FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)	@LOAD2
+412C0100FFFFFFFF	Load units of memory slot 2. Dead units do not load.(LOAD2)(LOW)	@LOAD2
 412C0000FFFFFFFF	Load units of memory slot 2(LOAD2)(LOW)	@LOAD2
+
+402C0200XXXXXXXX	Load units. If player unit, join party. Do not load dead units unless Seth, L'Arachel, Myrrh, Innes.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)(LOW)	@LOAD1	{LOADUNIT}
+412C0200XXXXXXXX	Load units. Do not load dead units unless Seth, L'Arachel, Myrrh, Innes.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	@LOAD2	{LOADUNIT}
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]

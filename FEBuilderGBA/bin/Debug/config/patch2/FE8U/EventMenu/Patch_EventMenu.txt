@@ -11,7 +11,7 @@ TAG=#ENGINE
 BIN:$FREEAREA:1=CommandEffect_EventCalledMenu.dmp
 BIN:$FREEAREA:2=CallEventMenu.dmp
 
-AUTHOR=Stan,circleseverywhere https://feuniverse.us/t/fe8u-doc-guide-analysing-extending-mimicking-the-lord-split-menu/2878
+AUTHOR=Stan,circleseverywhere https://feuniverse.us/t/fe8u-doc-guide-analysing-extending-mimicking-the-lord-split-menu/2878  How to use: https://feuniverse.us/t/question-on-using-febuilder-for-split-path-menu/6483/6
 
 EVENTSCRIPT:1=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分岐メニュー [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	分岐メニューを表示(Split Menu)
 EVENTSCRIPT:1.en=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	CallEventMenu [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	Display Split Menu
