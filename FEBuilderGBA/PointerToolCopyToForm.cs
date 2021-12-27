@@ -58,6 +58,7 @@ namespace FEBuilderGBA
             {
                 HexEditorForm hexeditor = (HexEditorForm)InputFormRef.JumpForm<HexEditorForm>(U.NOT_FOUND);
                 hexeditor.JumpTo(addr);
+                this.Close();
             }
             
         }

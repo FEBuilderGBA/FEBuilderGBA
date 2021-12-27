@@ -928,7 +928,12 @@ namespace FEBuilderGBA
 
                 if (isMode2)
                 {
-                    if (orignalBitmap.Width >= (SCREEN_TILE_APPENDMODE2_WIDE - SCREEN_TILE_WIDTH) * 8 
+                    if (orignalBitmap.Width <= SCREEN_TILE_WIDTH * 8)
+                    {//width画像ではない
+                        AppendTermOAM(oam);
+                        return animedata;
+                    }
+                    else if (orignalBitmap.Width >= (SCREEN_TILE_APPENDMODE2_WIDE - SCREEN_TILE_WIDTH) * 8 
                         && orignalBitmap.Height >= SCREEN_TILE_HEIGHT * 8)
                     {
                         bitmap = ImageUtil.Copy(orignalBitmap
