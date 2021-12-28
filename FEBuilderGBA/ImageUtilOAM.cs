@@ -929,7 +929,7 @@ namespace FEBuilderGBA
                 if (isMode2)
                 {
                     if (orignalBitmap.Width <= SCREEN_TILE_WIDTH * 8)
-                    {//width画像ではない
+                    {//ワイド画像ではない
                         AppendTermOAM(oam);
                         return animedata;
                     }

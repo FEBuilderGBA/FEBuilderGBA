@@ -395,11 +395,15 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 9E00XX00	[XXXX:FOG:Mist concentration]Adjust the fog intensity (for events.Display map for a moment at run time).(VCBF)	{U}
 9B00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{J}
 9D00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{U}
-5500XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{J}
-5700XXXXYYYY0000ZZZZ0000	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{U}
+55000000YYYY0000ZZZZ0000	Branch_if_unit_is_NOT_fielded[YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{J}
+57000000YYYY0000ZZZZ0000	Branch_if_unit_is_NOT_fielded[YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{U}
+55000100YYYY0000ZZZZ0000	Branch_if_unit_is_fielded[YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFUF)	{JUMP}	{J}
+57000100YYYY0000ZZZZ0000	Branch_if_unit_is_fielded[YY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFUF)	{JUMP}	{U}
 45000000XXXX0000YYYYYYYY	Branch_if_ASM_function[XXXX:LABEL_CONDITIONAL:Conditional ID][YYYYYYYY:POINTER_ASM:ASM]	{JUMP}	{J}
-4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
-4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}
+4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_NOT_active[YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
+4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_NOT_active[YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}
+4C000100YYYYYYYYZZZZZZZZ	Branch_if_character_is_active[YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCA)	{JUMP}	{J}
+4E000100YYYYYYYYZZZZZZZZ	Branch_if_character_is_active[YYYY:IF_CONDITIONAL:Conditional ID][ZZ:UNIT:Unit](GOTO_IFCA)	{JUMP}	{U}
 4100XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{J}
 4300XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{U}
 5D00XXYY	Map change execution[XXXXXXXX:MAPCHANGE:Map change][YYYY::Apply_or_remove](MAC1)	{MAP}	{J}
@@ -602,3 +606,5 @@ CD000000XXXX000000000000	_CD[XXXX::Value]	{U}
 8C000000	_8C	{U}
 D3000000XXXXXXXXYYYYYYYYZZZZZZZZ	_D0[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2][ZZZZ::Value2]	{TEXT}	{J}
 D0000000XXXXXXXXYYYYYYYYZZZZZZZZ	_D0[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2][ZZZZ::Value2]	{TEXT}	{U}
+4C000000YYYYYYYYZZZZZZZZ	If Branch_if_unit_is_NOT_active [YYYY: IF_CONDITIONAL: condition ID] [ZZ: UNIT: unit] is inactive (GOTO_IFCNA).	{JUMP}	{J}
+4E000000YYYYYYYYZZZZZZZZ	If Branch_if_unit_is_NOT_active [YYYY: IF_CONDITIONAL: condition ID] [ZZ: UNIT: unit] is inactive (GOTO_IFCNA).	{JUMP}	{U}
