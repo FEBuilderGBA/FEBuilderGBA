@@ -1,0 +1,13 @@
+NAME=ニニスの守護で付与するステータス
+NAME.en=Status given by Ninis's Grace
+NAME.zh=Status given by Ninis's Grace
+
+INFO=指輪(リング)で付与するステータスを指定します。\r\nこのリングを装備して踊った時に特定の効果を与えます。\r\nディフォルトは、6です。\r\nこの値はItemID 0x7Eにハードコーディングされているので注意してください。
+INFO.en=Specify the status to be given by the ring.\r\nEquip this ring and give it a specific effect when you dance.\r\nThe default is 6.\r\nNote that this value is hard-coded to ItemID 0x7E.
+INFO.zh=Specify the status to be given by the ring.\r\nEquip this ring and give it a specific effect when you dance.\r\nThe default is 6.\r\nNote that this value is hard-coded to ItemID 0x7E.
+
+TYPE=ADDR
+ADDRESS_TYPE=BADSTATUS
+ADDRESS=0x2FB5E
+DEFAULT=6
+AUTHOR=7743

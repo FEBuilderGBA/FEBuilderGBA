@@ -1,0 +1,13 @@
+NAME=セチの祈りのアイテムID
+NAME.en=Item ID of Set's Litany
+NAME.zh=Item ID of Set's Litany
+
+INFO=指輪(リング)を装備して踊ったときに、追加ステータスを付与するときに利用するItemIDです。\r\nディフォルトは、0x80です。
+INFO.en=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x80.
+INFO.zh=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x80.
+
+TYPE=ADDR
+ADDRESS_TYPE=ITEM
+ADDRESS=0x2FB54
+DEFAULT=0x80
+AUTHOR=7743

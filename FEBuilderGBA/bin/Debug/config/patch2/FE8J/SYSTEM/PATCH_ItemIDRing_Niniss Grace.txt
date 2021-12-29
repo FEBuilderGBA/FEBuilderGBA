@@ -1,0 +1,13 @@
+NAME=ニニスの守護のアイテムID
+NAME.en=Item ID of Ninis's Grace
+NAME.zh=Item ID of Ninis's Grace
+
+INFO=指輪(リング)を装備して踊ったときに、追加ステータスを付与するときに利用するItemIDです。\r\nディフォルトは、0x7Eです。
+INFO.en=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x7E.
+INFO.zh=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x7E.
+
+TYPE=ADDR
+ADDRESS_TYPE=ITEM
+ADDRESS=0x2FB3E 0x2FB42
+DEFAULT=0x7E
+AUTHOR=7743

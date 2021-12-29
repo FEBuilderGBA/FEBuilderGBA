@@ -1,4 +1,4 @@
-NAME=踊り子が使う指輪の効果の設定を拡張
+NAME=踊り子が使う指輪の効果の設定を拡張(Editor)
 INFO=踊り子が使うファーラの守護などの指輪(リング)の効果を拡張します。\r\n指輪の効果は特定パラメータを一律で+10する効果ですが、これをもっと詳細に変更できるようにします。\r\n指輪の効果は、バッドステータスと同一として表現されるため、バッドステータス時にデバフを設定することもできます。
 
 IF:0x28eb4=0x10 0xB5 0x30 0x21
@@ -51,7 +51,7 @@ B5:DECIMAL.zh=00
 B6:DECIMAL.zh=必杀
 B7:DECIMAL.zh=00
 
-NAME.en=Expanded the setting of the ring effect used by dancers.
+NAME.en=Expanded the setting of the ring effect used by dancers(Editor)
 INFO.en=Expands the effects of rings such as the guardians of Farah used by dancers.\r\nThe effect of the ring is an effect that uniformly +10 a specific parameter, but this allows you to change it in more detail.\r\nThe effect of the ring is expressed as identical to the bad status, so you can also set a debuff during the bad status.
-NAME.zh=扩展了舞者使用的铃声效果的设置
+NAME.zh=扩展了舞者使用的铃声效果的设置(Editor)
 INFO.zh=扩大戒指的效果，例如舞者使用法拉的守护者。\r\n环的效果是一个+10特定参数的效果，但这允许您更详细地更改它。\r\n环的效果表示为与不良状态相同，因此您也可以在不良状态下设置debuff。

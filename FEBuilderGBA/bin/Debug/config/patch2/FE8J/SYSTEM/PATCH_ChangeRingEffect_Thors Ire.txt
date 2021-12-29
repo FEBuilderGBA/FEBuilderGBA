@@ -1,0 +1,13 @@
+NAME=トォルの怒りで付与するステータス
+NAME.en=Status given by Thor's Ire
+NAME.zh=Status given by Thor's Ire
+
+INFO=指輪(リング)で付与するステータスを指定します。\r\nこのリングを装備して踊った時に特定の効果を与えます。\r\nディフォルトは、7です。\r\nこの値はItemID 0x7Fにハードコーディングされているので注意してください。
+INFO.en=Specify the status to be given by the ring.\r\nEquip this ring and give it a specific effect when you dance.\r\nThe default is 7.\r\nNote that this value is hard-coded to ItemID 0x7F.
+INFO.zh=Specify the status to be given by the ring.\r\nEquip this ring and give it a specific effect when you dance.\r\nThe default is 7.\r\nNote that this value is hard-coded to ItemID 0x7F.
+
+TYPE=ADDR
+ADDRESS_TYPE=BADSTATUS
+ADDRESS=0x2FB62
+DEFAULT=7
+AUTHOR=7743

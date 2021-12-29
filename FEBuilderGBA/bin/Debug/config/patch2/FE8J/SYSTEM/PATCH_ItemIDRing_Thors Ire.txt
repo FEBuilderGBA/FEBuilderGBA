@@ -1,0 +1,13 @@
+NAME=トォルの怒りのアイテムID
+NAME.en=Item ID of Thor's Ire
+NAME.zh=Item ID of Thor's Ire
+
+INFO=指輪(リング)を装備して踊ったときに、追加ステータスを付与するときに利用するItemIDです。\r\nディフォルトは、0x7Fです。
+INFO.en=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x7F.
+INFO.zh=Item ID used to give additional status when dancing with a ring equipped.\r\nThe default is 0x7F.
+
+TYPE=ADDR
+ADDRESS_TYPE=ITEM
+ADDRESS=0x2FB50
+DEFAULT=0x7F
+AUTHOR=7743

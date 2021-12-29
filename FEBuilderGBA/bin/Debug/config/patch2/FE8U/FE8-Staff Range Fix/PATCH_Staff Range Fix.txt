@@ -22,3 +22,4 @@ CONFLICT_IF:0x016CC6=0x2 0x49 0x38 0xC9 0x38 0xC2 0x18 0x32 0x1 0xE0 0xE8 0x79 0
 INFO.en=Improve weapon and wand range settings.\r\nAllows drawing special ranges, such as range 2-4.\r\nCompared with freerange, the range displayed in the R menu can also be changed with this patch.
 INFO.zh=改进武器和魔杖范围设置。\r\n允许绘制特殊范围，例如范围2-4。\r\n与自由范围相比，R菜单中显示的范围也可以通过此补丁更改。
 REPLACE_POINTER:0x809B10=ITEM
+WARNING=1
