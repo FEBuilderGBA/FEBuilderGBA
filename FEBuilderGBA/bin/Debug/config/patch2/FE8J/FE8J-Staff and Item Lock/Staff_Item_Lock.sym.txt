@@ -1,0 +1,10 @@
+LockWord=$BC
+RetTrue=$B4
+NextLock1=$38
+RetFalse=$B0
+NextLock2=$4C
+NextLock3=$60
+NextLock4=$74
+NextLock5=$88
+NextLock6=$9C
+GoBack=$B6

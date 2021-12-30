@@ -7,7 +7,8 @@
 	#include "Extensions/Hack Installation.txt"
 	
 	//###### CHANGE THESE IF NECESSARY ######
-	#define Item_Table 0xBE222C
+	//#define Item_Table 0xBE222C
+	#define Item_Table ItemTable
 	#define Item_Usability 0x26D10
 	#define Item_Effect 0x2D04C
 	#define Character_Table 0xBDCE18

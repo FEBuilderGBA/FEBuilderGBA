@@ -1,0 +1,15 @@
+NAME=杖とアイテムにも専用武器★の制約を有効にする
+NAME.en=Enable Locked Weapon Prf constraints on staffs and items as well.
+NAME.zh=Enable Locked Weapon Prf constraints on staffs and items as well.
+
+TYPE=EA
+TAG=#ENGINE
+EA=FE8-Staff and Item Lock EA.txt
+
+PATCHED_IF:0x28880=0x00 0x4B 0x18 0x47
+
+AUTHOR=7734 Originally by Tequila, jjl2357
+INFO=バニラでは、専用武器は装備でるアイテムにしか効果がありませんが、このパッチは、それを杖とアイテムにまで適用できるようにします。
+
+INFO.en=In vanilla, special locked weapons only work on equipped items, but this patch allows you to apply them to staffs and items.
+INFO.zh=In vanilla, special locked weapons only work on equipped items, but this patch allows you to apply them to staffs and items.
