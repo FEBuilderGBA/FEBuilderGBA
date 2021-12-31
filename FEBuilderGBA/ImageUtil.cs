@@ -3047,38 +3047,11 @@ namespace FEBuilderGBA
         public static string HashBitmap(string filename, string dir)
         {
             string fullfilename = Path.Combine(dir, filename);
-            return HashBitmap(fullfilename);
-        }
-        public static string HashBitmap(string fullfilename)
-        {
-            Bitmap bitmap = OpenBitmap(fullfilename);
-            if (bitmap == null)
-            {//Not Found
+            if (! File.Exists(fullfilename))
+            {
                 return "";
             }
-            string hash = HashBitmap(bitmap);
-
-            bitmap.Dispose();
-
-            return hash;
-        }
-
-        //画像のハッシュ値を取得する 同一画像判定に利用する
-        public static string HashBitmap(Bitmap bitmap)
-        {
-            Rectangle rect = new Rectangle(new Point(), bitmap.Size);
-
-            BitmapData srcbmpData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
-            IntPtr src = srcbmpData.Scan0;
-            byte[] dest = new byte[srcbmpData.Stride * bitmap.Height];
-
-            Marshal.Copy(src, dest, 0, dest.Length);
-
-            string ret = U.md5(dest);
-
-            bitmap.UnlockBits(srcbmpData);
-
-            return ret;
+            return U.md5(fullfilename);
         }
 
         static Bitmap ConvertIndexedBitmap16Color(Bitmap bitmap, Bitmap paletteHint, out string errormessage)
