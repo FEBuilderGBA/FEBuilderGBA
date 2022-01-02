@@ -578,14 +578,14 @@ namespace FEBuilderGBA
                     uint type = Program.ROM.u8(item_addr + 7);
                     uint attr1 = Program.ROM.u8(item_addr + 8);
                     bool isEquip = (attr1 & 0x01) == 0x01;
-                    string errorMessage = ChcekTextItem1ErrorMessage(id, FETextDecode.Direct(info), info, type, isEquip);
+                    string errorMessage = ChcekTextItem1ErrorMessage(i, FETextDecode.Direct(info), info, type, isEquip);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
                             , R._("TextID:{0}\r\n{1}", U.To0xHexString(info), errorMessage), i));
                     }
 
-                    errorMessage = ChcekTextItem2ErrorMessage(id, FETextDecode.Direct(info2), info2, type, isEquip);
+                    errorMessage = ChcekTextItem2ErrorMessage(i, FETextDecode.Direct(info2), info2, type, isEquip);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
@@ -783,6 +783,7 @@ namespace FEBuilderGBA
             out_pointer = addr + 16;
             return Program.ROM.p32(addr + 16);
         }
+
 
 
     }

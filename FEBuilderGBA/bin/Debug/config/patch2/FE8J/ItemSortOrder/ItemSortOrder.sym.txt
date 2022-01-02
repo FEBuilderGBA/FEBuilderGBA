@@ -1,0 +1,9 @@
+ItemSortOrderTable=$58
+SortLoop=$10
+Exit=$44
+SortOne=$16
+CheckSortOrder=$1A
+Swap=$32
+Next=$3A
+CheckItemID=$24
+CheckItemUses=$2A

@@ -5189,3 +5189,17 @@
 080393E8	FillAiDangerMap	{U}
 0803627c	CouldUnitBeInRangeHeuristic	{J}
 08035DA4	CouldUnitBeInRangeHeuristic	{U}
+0802CEB8	ExecElixirSelfHeal	{J}
+0802CFA4	ExecAntitoxin	{J}
+0802D3CC	ExecLightRune	{J}
+0802D440	ExecRingItem	{J}
+0802CCDC	ExecFortify	{J}
+0802CBC8	ExecNightmare	{J}
+0802CFE4	ExecChestKey	{J}
+0802C9F8	ExecElixirSelfHeal	{U}
+0802CAE4	ExecAntitoxin	{U}
+0802CF0C	ExecLightRune	{U}
+0802CF80	ExecRingItem	{U}
+0802C81C	ExecFortify	{U}
+0802C708	ExecNightmare	{U}
+0802CB24	ExecChestKey	{U}

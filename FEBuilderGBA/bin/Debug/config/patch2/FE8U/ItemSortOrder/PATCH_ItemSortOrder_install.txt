@@ -1,0 +1,17 @@
+NAME=輸送隊のアイテムリストのソート条件を変更(Install)
+NAME.en=Changed the sort condition of the item list of the supply(Install)
+
+INFO=アイテム一覧のリストを描画するときのソート条件を変更します。\r\nバニラはItemID順でしたが、別テーブルで設定する優先度で昇順にソートします。\r\nもし、優先度が同じ場合は、ItemID順にソートします。\r\nアイテムIDも同じ場合は耐久度順でソートされます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x98134=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_ItemSortOrder.txt
+EA=Install.event
+
+AUTHOR=7743
+INFO.en=Change the sort condition when drawing the list of item list.\r\nVanilla was sorted by Item ID, but sorted in ascending order by the priority set in another table.\r\nIf the priorities are the same, sort by ItemID.\r\nIf the item IDs are the same, they will be sorted in order of durability.
+NAME.zh=更改车队物品列表的排序条件(Install)
+INFO.zh=绘制项目列表时更改排序条件。\r\nVanilla 按项目 ID 排序，但按另一个表中设置的优先级按升序排序。\r\n如果优先级相同，则按ItemID排序。\r\n如果物品 ID 相同，它们将按耐久度排序。

@@ -14855,3 +14855,16 @@ r3=X tile position of menu of right	{U}
 0807BDD0	Get the map animation affiliation palette.	{U}
 080B46B4	SoundRoomDestructor	{J}
 080AFA94	SoundRoomDestructor	{U}
+0802f304	ExecElixirSelfHeal	{J}
+0802f3f0	ExecAntitoxin	{J}
+0802f9e0	ExecLightRune	{J}
+0802fb0c	ExecRingItem	{J}
+0802f08c	ExecFortify	{J}
+0802f104	ExecNightmare	{J}
+0802f430	ExecChestKey	{J}
+0802F3E4	ExecElixirSelfHeal	{U}
+0802F4D0	ExecAntitoxin	{U}
+0802FA90	ExecLightRune	{U}
+0802FBBC	ExecRingItem	{U}
+0802F1D8	ExecNightmare	{U}
+0802F510	ExecChestKey	{U}

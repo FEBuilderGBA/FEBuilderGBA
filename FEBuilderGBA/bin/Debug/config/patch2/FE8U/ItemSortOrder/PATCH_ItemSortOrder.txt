@@ -1,0 +1,28 @@
+NAME=輸送隊のアイテムリストのソート条件を変更(Editor)
+NAME.en=Changed the sort condition of the item list of the supply(Editor)
+
+INFO=リストの前方に表示したい場合は、優先度の値を減らしてください。\r\n数字が小さいほど前に配置されます。\r\nリストの後方に表示したい場合は、優先度の値を増やしてください。\r\n数字が大きいほど後ろに配置されます。\r\n\r\nアイテム一覧のリストを描画するときのソート条件を変更します。\r\nバニラはItemID順でしたが、別テーブルで設定する優先度で昇順にソートします。\r\nもし、優先度が同じ場合は、ItemID順にソートします。\r\nアイテムIDも同じ場合は耐久度順でソートされます。
+
+IF:0x98134=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ItemSortOrder.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数
+DATACOUNT=256
+
+//リストに表示されるのは
+LISTNAME=ITEM
+
+//データを定義します
+B0:DECIMAL=Priority
+INFO.en=If you want it to appear at the front of the list, reduce the priority value.\r\nThe smaller the number, the more it is placed in front.\r\nIf you want it to appear at the bottom of the list, increase the priority value.\r\nThe higher the number, the more it is placed in bottom.\r\n\r\nChange the sort condition when drawing the list of item list.\r\nVanilla was sorted by Item ID, but sorted in ascending order by the priority set in another table.\r\nIf the priorities are the same, sort by ItemID.\r\nIf the item IDs are the same, they will be sorted in order of durability.
+NAME.zh=更改车队物品列表的排序条件(Editor)
+INFO.zh=如果您希望它出现在列表的前面，请降低优先级值。\r\n数字越小，越放在前面。\r\n如果您希望它出现在列表底部，请增加优先级值。\r\n数字越大，放在后面的就越多。\r\n\r\n绘制项目列表时更改排序条件。\r\nVanilla 按项目 ID 排序，但按另一个表中设置的优先级按升序排序。\r\n如果优先级相同，则按ItemID排序。\r\n如果物品 ID 相同，它们将按耐久度排序。
