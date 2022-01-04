@@ -1,0 +1,17 @@
+NAME=Ch15でリンが持っている宝玉(最低評価/赤の宝玉)
+NAME.en=The jewel that Lyn has on Ch15 (Minimum valuation/Red jewel)
+NAME.zh=The jewel that Lyn has on Ch15 (Minimum valuation/Red jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7DB6A
+ADDRESS_TYPE=ITEM
+DEFAULT=0x75
+
+AUTHOR=Shuusuke , 7743
+
+INFO=リン編終了後の資産評価で20000ゴールド以上のお金を持っていると、Ch15で赤の宝玉を得られます
+INFO.en=If you have more than 20000 gold in the asset valuation after the Lyn edition, you can get a red jewel on Ch15.
+INFO.zh=If you have more than 20000 gold in the asset valuation after the Lyn edition, you can get a red jewel on Ch15.

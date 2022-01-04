@@ -1,0 +1,17 @@
+NAME=Ch15で宝玉を与えるユニット
+NAME.en=The unit that gives jewels with Ch15
+NAME.zh=The unit that gives jewels with Ch15
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7D054
+ADDRESS_TYPE=UNIT
+DEFAULT=0x2D
+
+AUTHOR=Shuusuke , 7743
+
+INFO=リン編終了後の資産評価で、リン(UnitID:0x2D)に宝玉を渡します。
+INFO.en=At the asset evaluation after the Lyn edition, a jewel will be given to Lyn (UnitID:0x2D)
+INFO.zh=At the asset evaluation after the Lyn edition, a jewel will be given to Lyn (UnitID:0x2D)

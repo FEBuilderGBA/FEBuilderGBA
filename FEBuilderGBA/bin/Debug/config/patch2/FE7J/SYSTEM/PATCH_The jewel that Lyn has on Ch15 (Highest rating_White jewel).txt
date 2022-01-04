@@ -1,0 +1,17 @@
+NAME=Ch15でリンが持っている宝玉(最高評価/白の宝玉)
+NAME.en=The jewel that Lyn has on Ch15 (Highest rating/White jewel)
+NAME.zh=The jewel that Lyn has on Ch15 (Highest rating/White jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7DB5A
+ADDRESS_TYPE=ITEM
+DEFAULT=0x73
+
+AUTHOR=Shuusuke , 7743
+
+INFO=リン編終了後の資産評価で32000ゴールド以上のお金を持っていると、Ch15で白の宝玉を得られます
+INFO.en=If you have more than 32000 gold in the asset valuation after the Lyn edition, you can get a white jewel on Ch15.
+INFO.zh=If you have more than 32000 gold in the asset valuation after the Lyn edition, you can get a white jewel on Ch15.

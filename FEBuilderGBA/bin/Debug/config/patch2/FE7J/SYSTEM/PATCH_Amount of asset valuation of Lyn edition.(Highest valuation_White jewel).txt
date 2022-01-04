@@ -1,0 +1,19 @@
+NAME=リン編の資産評価の金額(最高評価/白の宝玉)
+NAME.en=Amount of asset valuation of Lyn edition.(Highest valuation/White jewel)
+NAME.zh=Amount of asset valuation of Lyn edition.(Highest valuation/White jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7FD80
+DATASIZE=4
+HEX=false
+DEFAULT=32999
+
+AUTHOR=7743
+
+
+INFO=リン編終了後の資産評価。\r\n所持金ゴールドがこの金額を越えるなら、最大評価となり、白の宝玉を得るためのフラグ起てを行います。
+INFO.en=Asset evaluation after the end of the Lyn edition.\r\nIf your gold exceeds this amount, it will be the maximum rating and will be flagged to get a white jewel.
+INFO.zh=Asset evaluation after the end of the Lyn edition.\r\nIf your gold exceeds this amount, it will be the maximum rating and will be flagged to get a white jewel.

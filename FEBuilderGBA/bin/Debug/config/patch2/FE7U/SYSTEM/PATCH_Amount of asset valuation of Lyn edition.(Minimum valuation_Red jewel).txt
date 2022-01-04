@@ -1,0 +1,18 @@
+NAME=リン編の資産評価の金額(最低評価/赤の宝玉)
+NAME.en=Amount of asset valuation of Lyn edition.(Minimum valuation/Red jewel)
+NAME.zh=Amount of asset valuation of Lyn edition.(Minimum valuation/Red jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07EFD0
+DATASIZE=4
+HEX=false
+DEFAULT=19999
+
+AUTHOR=7743
+
+INFO=リン編終了後の資産評価。\r\n所持金ゴールドがこの金額を越えるなら、最低評価となり、赤の宝玉を得るためのフラグ起てを行います。\r\n逆にこの金額以下なら何ももらえません
+INFO.en=Asset evaluation after the end of the Lyn edition.\r\nIf your gold exceeds this amount, it will be rated the lowest and will be flagged for a red jewel.\r\nOn the contrary, if it is less than this amount, you will not receive anything.
+INFO.zh=Asset evaluation after the end of the Lyn edition.\r\nIf your gold exceeds this amount, it will be rated the lowest and will be flagged for a red jewel.\r\nOn the contrary, if it is less than this amount, you will not receive anything.

@@ -5177,3 +5177,7 @@
 0802C81C	ExecFortify	{U}
 0802C708	ExecNightmare	{U}
 0802CB24	ExecChestKey	{U}
+0807DB3C	ch15 Give Lyn a white jewel according to the asset evaluation of Lyn Edition	{J}
+0807D020	ch15 Give Lyn a white jewel according to the asset evaluation of Lyn Edition	{U}
+0807FD58	Asset evaluation at Lyn Edtion	Set of flags for jewels given on ch15	{J}
+0807EF90	Asset evaluation at Lyn Edtion	Set of flags for jewels given on ch15	{U}

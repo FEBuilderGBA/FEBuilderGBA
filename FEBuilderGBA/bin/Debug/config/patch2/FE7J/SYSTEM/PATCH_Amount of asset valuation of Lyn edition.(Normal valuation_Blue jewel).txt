@@ -1,0 +1,18 @@
+NAME=リン編の資産評価の金額(通常評価/青の宝玉)
+NAME.en=Amount of asset valuation of Lyn edition.(Normal valuation/Blue jewel)
+NAME.zh=Amount of asset valuation of Lyn edition.(Normal valuation/Blue jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7FD7C
+DATASIZE=4
+HEX=false
+DEFAULT=29999
+
+AUTHOR=7743
+
+INFO=リン編終了後の資産評価。\r\n所持金ゴールドがこの金額を越える、通常評価となり、青の宝玉を得るためのフラグ起てを行います。
+INFO.en=Asset evaluation after the end of the Lyn edition.\r\nIf the amount of gold you have exceeds this amount, it will be a normal evaluation, and you will be flagging to get a blue jewel.
+INFO.zh=Asset evaluation after the end of the Lyn edition.\r\nIf the amount of gold you have exceeds this amount, it will be a normal evaluation, and you will be flagging to get a blue jewel.

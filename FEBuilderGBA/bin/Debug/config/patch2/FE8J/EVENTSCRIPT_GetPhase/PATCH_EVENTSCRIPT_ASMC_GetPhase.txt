@@ -1,0 +1,22 @@
+﻿NAME=フェーズを取得(イベント命令)
+NAME.en=Add Event: GetPhase
+NAME.zh=Add Event: GetPhase
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetPhase.dmp=0x00 0xB5 0x03 0x4B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetPhase.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_GetPhase.dmp}	フェーズを取得(ASMC_GetPhase)	@STOREC	{COND}
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_GetPhase.dmp}	Get Phase(ASMC_GetPhase)	@STOREC	{COND}
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_GetPhase.dmp}	Get Phase(ASMC_GetPhase)	@STOREC	{COND}
+
+INFO=フェーズを取得し、SlotCに格納します。\r\n0x00=プレイヤーターン(青)、0x40=友軍(NPC/緑)、0x80=敵ターン(赤)
+INFO.en=Gets the phase and stores it in SlotC.\r\n0x00=Player Turn(Blue), 0x40=NPC(Green), 80=Enemy(Red)
+INFO.zh=Gets the phase and stores it in SlotC.\r\n0x00=Player Turn(Blue), 0x40=NPC(Green), 80=Enemy(Red)

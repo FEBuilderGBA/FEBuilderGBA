@@ -7470,7 +7470,20 @@ namespace FEBuilderGBA
                         Debug.Assert(false);
                         continue;
                     }
-                    uint value = Program.ROM.u8(addr);
+                    uint value;
+                    uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+                    if (datasize == 4)
+                    {
+                        value = Program.ROM.u32(addr);
+                    }
+                    else if (datasize == 2)
+                    {
+                        value = Program.ROM.u16(addr);
+                    }
+                    else
+                    {
+                        value = Program.ROM.u8(addr);
+                    }
                     string default_string = U.at(patch.Param, "DEFAULT");
                     if (default_string.Length > 0)
                     {
@@ -7486,7 +7499,19 @@ namespace FEBuilderGBA
                             Debug.Assert(false);
                             continue;
                         }
-                        uint r = Program.ROM.u8(a);
+                        uint r;
+                        if (datasize == 4)
+                        {
+                            r = Program.ROM.u32(a);
+                        }
+                        else if (datasize == 2)
+                        {
+                            r = Program.ROM.u16(a);
+                        }
+                        else
+                        {
+                            r = Program.ROM.u8(a);
+                        }
                         Debug.Assert(r == value);
                     }
                 }
