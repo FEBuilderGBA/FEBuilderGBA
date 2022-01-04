@@ -21,8 +21,8 @@ INFO.zh=Check if the specified coordinates are in danger of being attacked by an
 EVENTSCRIPT:1=400D0000{$L1:ASMC_CheckInDanger.dmp}	SlotBの座標が敵の攻撃を受ける危険地帯かどうか判別する(LOW)	@STOREC	{COND}
 EVENTSCRIPT:2=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	[XX:MAPX:X][YY:MAPY:Y]が敵の攻撃を受ける危険地帯かどうか判別する	@STOREC	{COND}
 
-EVENTSCRIPT:1.en=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(SLOW)	@STOREC	{COND}
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(LOW)	@STOREC	{COND}
 EVENTSCRIPT:2.en=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if [XX:MAPX:X][YY:MAPY:Y] in danger of being attacked by enemy	@STOREC	{COND}
 
-EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(SLOW)	@STOREC	{COND}
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if SlotB's coordinates in danger of being attacked by enemy(LOW)	@STOREC	{COND}
 EVENTSCRIPT:2.zh=40050B00XXXXYYYY400D0000{$L1:ASMC_CheckInDanger.dmp}	Check if [XX:MAPX:X][YY:MAPY:Y] in danger of being attacked by enemy	@STOREC	{COND}

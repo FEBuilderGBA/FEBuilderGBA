@@ -1089,7 +1089,7 @@ namespace FEBuilderGBA
             this.MagicExtClassBase.Value = (sbyte)MagicSplitUtil.GetClassBaseMagicExtends(cid, addr);
             this.MagicExtClassGrow.Value = MagicSplitUtil.GetClassGrowMagicExtends(cid, addr);
             this.MagicExtClassLimit.Value = MagicSplitUtil.GetClassLimitMagicExtends(cid, addr);
-            this.MagicExtClassPromotionGain.Value = MagicSplitUtil.GetClassPromotionGainMagicExtends(cid, addr);
+            this.MagicExtClassPromotionGain.Value = (sbyte)MagicSplitUtil.GetClassPromotionGainMagicExtends(cid, addr);
         }
         void WriteButtonFE7UMagicExtends(object sender, EventArgs e)
         {
@@ -1117,7 +1117,7 @@ namespace FEBuilderGBA
             MagicSplitUtil.WriteClassBaseMagicExtends(cid, addr, U.ConvertNUDToUint(this.MagicExtClassBase) , undodata);
             MagicSplitUtil.WriteClassGrowMagicExtends(cid, addr, (uint)this.MagicExtClassGrow.Value , undodata);
             MagicSplitUtil.WriteClassLimitMagicExtends(cid, addr, (uint)this.MagicExtClassLimit.Value, undodata);
-            MagicSplitUtil.WriteClassPromotionGainMagicExtends(cid, addr, (uint)this.MagicExtClassPromotionGain.Value, undodata);
+            MagicSplitUtil.WriteClassPromotionGainMagicExtends(cid, addr, U.ConvertNUDToUint(this.MagicExtClassPromotionGain), undodata);
             Program.Undo.Push(undodata);
         }
 

@@ -150,12 +150,12 @@
             this.X_LIMIT = new System.Windows.Forms.Label();
             this.MagicExtClassPromotionGain = new System.Windows.Forms.NumericUpDown();
             this.MagicExtClassPromotionGainLabel = new System.Windows.Forms.Label();
-            this.B36 = new System.Windows.Forms.NumericUpDown();
-            this.B39 = new System.Windows.Forms.NumericUpDown();
-            this.B35 = new System.Windows.Forms.NumericUpDown();
-            this.B38 = new System.Windows.Forms.NumericUpDown();
-            this.B34 = new System.Windows.Forms.NumericUpDown();
-            this.B37 = new System.Windows.Forms.NumericUpDown();
+            this.b36 = new System.Windows.Forms.NumericUpDown();
+            this.b39 = new System.Windows.Forms.NumericUpDown();
+            this.b35 = new System.Windows.Forms.NumericUpDown();
+            this.b38 = new System.Windows.Forms.NumericUpDown();
+            this.b34 = new System.Windows.Forms.NumericUpDown();
+            this.b37 = new System.Windows.Forms.NumericUpDown();
             this.J_39 = new System.Windows.Forms.Label();
             this.J_38 = new System.Windows.Forms.Label();
             this.J_37 = new System.Windows.Forms.Label();
@@ -301,12 +301,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.B19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MagicExtClassPromotionGain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B39)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D80)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P72)).BeginInit();
@@ -1882,10 +1882,15 @@
             this.MagicExtClassPromotionGain.Location = new System.Drawing.Point(1011, 502);
             this.MagicExtClassPromotionGain.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtClassPromotionGain.Maximum = new decimal(new int[] {
-            255,
+            127,
             0,
             0,
             0});
+            this.MagicExtClassPromotionGain.Minimum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            -2147483648});
             this.MagicExtClassPromotionGain.Name = "MagicExtClassPromotionGain";
             this.MagicExtClassPromotionGain.Size = new System.Drawing.Size(64, 25);
             this.MagicExtClassPromotionGain.TabIndex = 54;
@@ -1904,83 +1909,83 @@
             this.MagicExtClassPromotionGainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MagicExtClassPromotionGainLabel.Visible = false;
             // 
-            // B36
+            // b36
             // 
-            this.B36.Location = new System.Drawing.Point(656, 502);
-            this.B36.Margin = new System.Windows.Forms.Padding(2);
-            this.B36.Maximum = new decimal(new int[] {
+            this.b36.Location = new System.Drawing.Point(656, 502);
+            this.b36.Margin = new System.Windows.Forms.Padding(2);
+            this.b36.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B36.Name = "B36";
-            this.B36.Size = new System.Drawing.Size(64, 25);
-            this.B36.TabIndex = 50;
+            this.b36.Name = "b36";
+            this.b36.Size = new System.Drawing.Size(64, 25);
+            this.b36.TabIndex = 50;
             // 
-            // B39
+            // b39
             // 
-            this.B39.Location = new System.Drawing.Point(868, 502);
-            this.B39.Margin = new System.Windows.Forms.Padding(2);
-            this.B39.Maximum = new decimal(new int[] {
+            this.b39.Location = new System.Drawing.Point(868, 502);
+            this.b39.Margin = new System.Windows.Forms.Padding(2);
+            this.b39.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B39.Name = "B39";
-            this.B39.Size = new System.Drawing.Size(64, 25);
-            this.B39.TabIndex = 53;
+            this.b39.Name = "b39";
+            this.b39.Size = new System.Drawing.Size(64, 25);
+            this.b39.TabIndex = 53;
             // 
-            // B35
+            // b35
             // 
-            this.B35.Location = new System.Drawing.Point(584, 502);
-            this.B35.Margin = new System.Windows.Forms.Padding(2);
-            this.B35.Maximum = new decimal(new int[] {
+            this.b35.Location = new System.Drawing.Point(584, 502);
+            this.b35.Margin = new System.Windows.Forms.Padding(2);
+            this.b35.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B35.Name = "B35";
-            this.B35.Size = new System.Drawing.Size(64, 25);
-            this.B35.TabIndex = 49;
+            this.b35.Name = "b35";
+            this.b35.Size = new System.Drawing.Size(64, 25);
+            this.b35.TabIndex = 49;
             // 
-            // B38
+            // b38
             // 
-            this.B38.Location = new System.Drawing.Point(798, 502);
-            this.B38.Margin = new System.Windows.Forms.Padding(2);
-            this.B38.Maximum = new decimal(new int[] {
+            this.b38.Location = new System.Drawing.Point(798, 502);
+            this.b38.Margin = new System.Windows.Forms.Padding(2);
+            this.b38.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B38.Name = "B38";
-            this.B38.Size = new System.Drawing.Size(64, 25);
-            this.B38.TabIndex = 52;
+            this.b38.Name = "b38";
+            this.b38.Size = new System.Drawing.Size(64, 25);
+            this.b38.TabIndex = 52;
             // 
-            // B34
+            // b34
             // 
-            this.B34.Location = new System.Drawing.Point(512, 502);
-            this.B34.Margin = new System.Windows.Forms.Padding(2);
-            this.B34.Maximum = new decimal(new int[] {
+            this.b34.Location = new System.Drawing.Point(512, 502);
+            this.b34.Margin = new System.Windows.Forms.Padding(2);
+            this.b34.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B34.Name = "B34";
-            this.B34.Size = new System.Drawing.Size(64, 25);
-            this.B34.TabIndex = 48;
+            this.b34.Name = "b34";
+            this.b34.Size = new System.Drawing.Size(64, 25);
+            this.b34.TabIndex = 48;
             // 
-            // B37
+            // b37
             // 
-            this.B37.Location = new System.Drawing.Point(728, 502);
-            this.B37.Margin = new System.Windows.Forms.Padding(2);
-            this.B37.Maximum = new decimal(new int[] {
+            this.b37.Location = new System.Drawing.Point(728, 502);
+            this.b37.Margin = new System.Windows.Forms.Padding(2);
+            this.b37.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.B37.Name = "B37";
-            this.B37.Size = new System.Drawing.Size(64, 25);
-            this.B37.TabIndex = 51;
+            this.b37.Name = "b37";
+            this.b37.Size = new System.Drawing.Size(64, 25);
+            this.b37.TabIndex = 51;
             // 
             // J_39
             // 
@@ -3188,7 +3193,7 @@
             this.Controls.Add(this.B22);
             this.Controls.Add(this.B28);
             this.Controls.Add(this.J_25);
-            this.Controls.Add(this.B36);
+            this.Controls.Add(this.b36);
             this.Controls.Add(this.J_24);
             this.Controls.Add(this.B31);
             this.Controls.Add(this.J_23);
@@ -3211,25 +3216,25 @@
             this.Controls.Add(this.J_30);
             this.Controls.Add(this.X_SIM_RES);
             this.Controls.Add(this.J_29);
-            this.Controls.Add(this.B39);
+            this.Controls.Add(this.b39);
             this.Controls.Add(this.J_28);
             this.Controls.Add(this.X_SIM_STR);
             this.Controls.Add(this.J_27);
             this.Controls.Add(this.P72);
             this.Controls.Add(this.X_GROW);
             this.Controls.Add(this.X_SIM_DEF);
-            this.Controls.Add(this.B35);
+            this.Controls.Add(this.b35);
             this.Controls.Add(this.X_SIM_HP);
             this.Controls.Add(this.systemIconPictureBox6);
             this.Controls.Add(this.X_SIM_SPD);
-            this.Controls.Add(this.B38);
+            this.Controls.Add(this.b38);
             this.Controls.Add(this.label58);
             this.Controls.Add(this.label60);
-            this.Controls.Add(this.B34);
+            this.Controls.Add(this.b34);
             this.Controls.Add(this.label61);
             this.Controls.Add(this.systemIconPictureBox5);
             this.Controls.Add(this.label62);
-            this.Controls.Add(this.B37);
+            this.Controls.Add(this.b37);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.J_ID_MOVECOST6_CLASSID);
             this.Controls.Add(this.label64);
@@ -3339,12 +3344,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.B19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MagicExtClassPromotionGain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B39)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D80)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P72)).EndInit();
@@ -3487,12 +3492,12 @@
         private System.Windows.Forms.Label J_20;
         private System.Windows.Forms.Label J_19;
         private System.Windows.Forms.Label X_LIMIT;
-        private System.Windows.Forms.NumericUpDown B36;
-        private System.Windows.Forms.NumericUpDown B39;
-        private System.Windows.Forms.NumericUpDown B35;
-        private System.Windows.Forms.NumericUpDown B38;
-        private System.Windows.Forms.NumericUpDown B34;
-        private System.Windows.Forms.NumericUpDown B37;
+        private System.Windows.Forms.NumericUpDown b36;
+        private System.Windows.Forms.NumericUpDown b39;
+        private System.Windows.Forms.NumericUpDown b35;
+        private System.Windows.Forms.NumericUpDown b38;
+        private System.Windows.Forms.NumericUpDown b34;
+        private System.Windows.Forms.NumericUpDown b37;
         private System.Windows.Forms.Label J_39;
         private System.Windows.Forms.Label J_38;
         private System.Windows.Forms.Label J_37;
