@@ -1,0 +1,7 @@
+Loop=$0E
+Break=$74
+Update=$3A
+UpdateX=$3C
+Disappearance=$68
+UpdateY=$52
+Term=$8A

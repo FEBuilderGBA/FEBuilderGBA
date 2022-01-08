@@ -1,0 +1,5 @@
+Loop=$0C
+Break=$3C
+ReturnTrue=$38
+Store=$3E
+Term=$42

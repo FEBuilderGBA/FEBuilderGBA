@@ -1,0 +1,32 @@
+﻿NAME=範囲内のトーチの杖の光を移動させる(イベント命令)
+NAME.en=Add Event: Move the light of the torch staff within range
+NAME.zh=Add Event: Move the light of the torch staff within range
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_Movetorch.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_Movetorch.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_Movetorch.dmp}	範囲内のトーチの杖の光を移動させる(ASMC_Movetorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=SubValue	{MAP}
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_Movetorch.dmp}	Move the light of the torch staff within range(ASMC_Movetorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=AddRange	{MAP}
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_Movetorch.dmp}	Move the light of the torch staff within range(ASMC_Movetorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=AddRange	{MAP}
+
+
+
+
+EVENTSCRIPT:02=40050100XXXXYYYY40050200WWWWVVVV40050300ZZZZTTTT400D0000{$L1:ASMC_Movetorch.dmp}	範囲内のトーチの杖の光を移動させる[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:AddX][TT:DECIMALSIGNED:AddY](ASMC_Movetorch)	{MAP}
+EVENTSCRIPT:02.en=40050100XXXXYYYY40050200WWWWVVVV40050300ZZZZTTTT400D0000{$L1:ASMC_Movetorch.dmp}	Move the light of the torch staff within range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:AddX][TT:DECIMALSIGNED:AddY](ASMC_Movetorch)	{MAP}
+EVENTSCRIPT:02.zh=40050100XXXXYYYY40050200WWWWVVVV40050300ZZZZTTTT400D0000{$L1:ASMC_Movetorch.dmp}	Move the light of the torch staff within range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:AddX][TT:DECIMALSIGNED:AddY](ASMC_Movetorch)	{MAP}
+
+
+INFO=指定範囲にあるトーチの光の光源を指定方向に移動させます。\r\nもし、マップの外に光源が移動した場合は、光が消滅します。\r\nこのパッチは、風が吹いてトーチの閃光弾が流されるといった演出を可能にします。
+
+INFO.en=Moves the light source of the torch light in the specified range in the specified direction.\r\nIf the light source moves out of the map, the light will disappear.\r\nThis patch allows you to create a wind blow and a torch flash.
+
+INFO.zh=Moves the light source of the torch light in the specified range in the specified direction.\r\nIf the light source moves out of the map, the light will disappear.\r\nThis patch allows you to create a wind blow and a torch flash.

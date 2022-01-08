@@ -79,6 +79,7 @@ namespace FEBuilderGBA
             , WMAP2AFFILIATION //FE7所属2
             , EVENTUNITPOS //連続移動指定で利用するイベントユニット互換の位置設定
             , DECIMAL   //10進数の値
+            , DECIMALSIGNED //10進数マイナス値あり
             , PROBABILITY //確率
             , MEMORYSLOT //メモリスロットFE8
             , PACKED_MEMORYSLOT //メモリスロットFE8 パック形式
@@ -795,6 +796,7 @@ namespace FEBuilderGBA
                 || type == EventScript.ArgType.WMAPY
                 || type == EventScript.ArgType.PROBABILITY
                 || type == EventScript.ArgType.DECIMAL
+                || type == EventScript.ArgType.DECIMALSIGNED
                 || type == EventScript.ArgType.MAGVELY
                 || type == EventScript.ArgType.FSEC
                 || type == EventScript.ArgType.SOUNDROOM
@@ -804,7 +806,9 @@ namespace FEBuilderGBA
         //符号を使ってマイナスを表示するかどうか
         public static bool IsSigned(EventScript.ArgType type)
         {
-            return (type == EventScript.ArgType.MAGVELY);
+            return (type == EventScript.ArgType.MAGVELY
+                || type == EventScript.ArgType.DECIMALSIGNED
+                );
         }
 
         static string[] SplitInfo(string info)

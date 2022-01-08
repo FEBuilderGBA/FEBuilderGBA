@@ -101,7 +101,7 @@
 88=Was Dart Attacked?
 89=Ch.24 Vaida's death
 8A=Ch.27 If Talk with Panto and Louise
-8B=Global flag 8B
+8B=Ch.30 If Talk with Panto and Louise
 8C=Global flag 8C
 8D=Global flag 8D
 8E=Global flag 8E
@@ -113,7 +113,7 @@
 94=Death of Nino
 95=Death of Bartre
 96=Death of Karla
-97=Global flag 97
+97=ch16x Talk from Anna in bar
 98=Global flag 98
 99=Global flag 99
 9A=Ch.23 Get stamp of the ground from injured Hawkeye

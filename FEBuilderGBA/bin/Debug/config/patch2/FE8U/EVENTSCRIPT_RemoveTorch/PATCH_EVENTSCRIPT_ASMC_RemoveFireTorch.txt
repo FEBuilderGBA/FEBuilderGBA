@@ -1,0 +1,32 @@
+﻿NAME=範囲内のたいまつの杖の光を消す(イベント命令)
+NAME.en=Add Event: Remove the light of the fire torch within range
+NAME.zh=Add Event: Remove the light of the fire torch within range
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_RemoveFiretorch.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_RemoveFiretorch.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_RemoveFiretorch.dmp}	範囲内のたいまつの光を消す(ASMC_RemoveFiretorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=SubValue	{MAP}
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_RemoveFiretorch.dmp}	Remove the light of the fire torch within range(ASMC_RemoveFiretorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=SubValue	{MAP}
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_RemoveFiretorch.dmp}	Remove the light of the fire torch within range(ASMC_RemoveFiretorch)(LOW)	Slot1=StartRange , Slot2=EndRange , Slot3=SubValue	{MAP}
+
+
+
+
+EVENTSCRIPT:02=40050100XXXXYYYY40050200WWWWVVVV40050300ZZ000000400D0000{$L1:ASMC_RemoveFiretorch.dmp}	範囲内のたいまつの光を消す[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:SubValue](ASMC_RemoveFiretorch)	{MAP}
+EVENTSCRIPT:02.en=40050100XXXXYYYY40050200WWWWVVVV40050300ZZ000000400D0000{$L1:ASMC_RemoveFiretorch.dmp}	Remove the light of the fire torch within range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:SubValue](ASMC_RemoveFiretorch)	{MAP}
+EVENTSCRIPT:02.zh=40050100XXXXYYYY40050200WWWWVVVV40050300ZZ000000400D0000{$L1:ASMC_RemoveFiretorch.dmp}	Remove the light of the fire torch within range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY][ZZ:DECIMALSIGNED:SubValue](ASMC_RemoveFiretorch)	{MAP}
+
+
+INFO=指定範囲にあるたいまつの光を、指定数だけ減衰させます。\r\nもし、値が0になればその灯りは消滅します。\r\nマップ全体に対して、16の値で減衰をかければ、すべての松明の光が消えます。
+
+INFO.en=Attenuates the light of the fire torch in the specified range by the specified number.\r\nIf the value is zero, the light will be extinguished.\r\nIf the attenuation is applied to the entire map with a value of 16, all torch lights will be extinguished.
+
+INFO.zh=Attenuates the light of the fire torch in the specified range by the specified number.\r\nIf the value is zero, the light will be extinguished.\r\nIf the attenuation is applied to the entire map with a value of 16, all torch lights will be extinguished.

@@ -1,0 +1,5 @@
+Loop=$0E
+Break=$5A
+Disappearance=$4C
+Store=$46
+Term=$70

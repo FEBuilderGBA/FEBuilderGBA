@@ -610,3 +610,7 @@ Duration
 4005020002000000400A0000B8E19E08	When any Enemy unit stops in range (used at the start of range based events)(EnemyInRange)	{COND}	{ENEMYICON}	If the unit at the time of entering the area of the range condition is the enemy(red)	{U}
 4005020001000000400A0000F002A608	When any NPC(green) unit stops in range (used at the start of range based events)(NPCInRange)	{COND}	{NPCICON}	If the unit at the time of entering the area of the range condition is the ally(NPC/green)	{J}
 4005020001000000400A0000B8E19E08	When any NPC(green) unit stops in range (used at the start of range based events)(NPCInRange)	{COND}	{NPCICON}	If the unit at the time of entering the area of the range condition is the ally(NPC/green)	{U}
+2026FFFF	Move camera to SlotB's coord but, it seems not the center(CAM2)
+2826FFFF	Move camera to SlotB's coord(CAM1)	{CAMERA}
+40050300XXXX00002004YYYY2006330C21370000	Give Gold [XX:DECIMAL:GOLD]+[YY:DECIMAL:Random] money to the player	{GOLD}	{ITME}
+40050300XXXX00002004YYYY2006330C22370000	Take Gold [XX:DECIMAL:GOLD]+[YY:DECIMAL:Random] money from the player	{GOLD}	{ITME}

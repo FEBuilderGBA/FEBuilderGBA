@@ -1,0 +1,28 @@
+﻿NAME=この範囲にトーチの光源があるか判定する(イベント命令)
+NAME.en=Add Event: Determine if torch staff light source in range
+NAME.zh=Add Event: Determine if torch staff light source in range
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_IsTorchInRange.dmp=0x70 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_IsTorchInRange.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_IsTorchInRange.dmp}	この範囲にトーチの光源があるか判定する(ASMC_IsTorchInRange)(LOW)	Slot1=StartRange , Slot2=EndRange	@STOREC	{MAP}
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_IsTorchInRange.dmp}	Determine if torch staff light source in range(ASMC_IsTorchInRange)(LOW)	Slot1=StartRange , Slot2=EndRange	@STOREC	{MAP}
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_IsTorchInRange.dmp}	Determine if torch staff light source in range(ASMC_IsTorchInRange)(LOW)	Slot1=StartRange , Slot2=EndRange	@STOREC	{MAP}
+
+
+EVENTSCRIPT:02=40050100XXXXYYYY40050200WWWWVVVV400D0000{$L1:ASMC_IsTorchInRange.dmp}	この範囲にトーチの光源があるか判定する[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY](ASMC_IsTorchInRange)	@STOREC	{MAP}
+EVENTSCRIPT:02.en=40050100XXXXYYYY40050200WWWWVVVV400D0000{$L1:ASMC_IsTorchInRange.dmp}	Determine if torch staff light source in range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY](ASMC_IsTorchInRange)	@STOREC	{MAP}
+EVENTSCRIPT:02.zh=40050100XXXXYYYY40050200WWWWVVVV400D0000{$L1:ASMC_IsTorchInRange.dmp}	Determine if torch staff light source in range[XX:MAPX:StartX][YY:MAPY:StartY][WW:MAPX:EndX][VV:MAPY:EndY](ASMC_IsTorchInRange)	@STOREC	{MAP}
+
+
+INFO=指定した範囲にトーチの杖の光源があるかどうかを判定し、SlotCにbool値で結果を返します。\r\nもし、光源があれば1、光源がなければ0がSlotCに返されます。
+INFO.en=Determines if a torch staff light source in the specified range and returns a bool value to SlotC.\r\nif a light source, 1 is returned, otherwise 0 is returned to SlotC.
+INFO.zh=Determines if a torch staff light source in the specified range and returns a bool value to SlotC.\r\nif a light source, 1 is returned, otherwise 0 is returned to SlotC.
