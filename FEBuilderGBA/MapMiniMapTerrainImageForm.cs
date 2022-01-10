@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionAddrHigh = false;
 
             InitCombo();
         }
