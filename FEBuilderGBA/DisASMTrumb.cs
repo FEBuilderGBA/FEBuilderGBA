@@ -731,7 +731,17 @@ namespace FEBuilderGBA
 
         string MakeLDRComment(uint pointer, uint data, uint pos, uint Rd, uint Rs, VM vm)
         {
-            return CommentFunction(pointer, data) + CommentFunction(pos) + vm.CommentType(Rd) + vm.CommentType(Rs);
+            string str = CommentFunction(pointer, data) + CommentFunction(pos);
+            string str2 = vm.CommentType(Rd) + vm.CommentType(Rs);
+            if (str != "")
+            {
+                return str + str2;
+            }
+            if (str2 != "")
+            {
+                return " #" + str2;
+            }
+            return "";
         }
         string MakeSTRComment(uint pointer, uint data, uint pos, uint Rd, uint Rs, VM vm)
         {

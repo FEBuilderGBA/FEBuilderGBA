@@ -31,16 +31,24 @@ namespace FEBuilderGBA
             if (code.IndexOf(" BL 0x") >= 0)
             {
                 programCode = code.Substring(8 + 1 + 4 + 1 + 4 + 1).Trim();
+                programCode = ReplaceOffsetAddress(programCode);
+            }
+            else if (code.IndexOf(" //LDRDATA") >= 0)
+            {
+                programCode = ".word 0x";
+                programCode += code.Substring(8 + 1 + 4 + 1, 4);
+                programCode += code.Substring(8 + 1, 4);
             }
             else
             {
                 programCode = code.Substring(8 + 1 + 4 + 1).Trim();
+                programCode = ReplaceOffsetAddress(programCode);
             }
             return programCode;
         }
         string  ReplaceOffsetAddress(string code)
         {
-            return RegexCache.Replace(code, "(0x0.......)", "$1 + . - origin");
+            return RegexCache.Replace(code, "#?(0x0?[8-9][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f])", "$1 + . - origin");
         }
 
         public void Init(DisASMInnerControl callbackWindow, string code)
@@ -52,7 +60,6 @@ namespace FEBuilderGBA
 
             string currentCode = ParseCodeOnly(code);
             currentCode = currentCode.Replace("//", "@").Replace("# ", "@ ").Replace(";", "@");
-            currentCode = ReplaceOffsetAddress(currentCode);
 
             string asm = ".thumb          @Do not delete this two line.\r\n";
             asm += ".equ origin, " + U.To0xHexString(this.EditAddr) + "\r\n";
