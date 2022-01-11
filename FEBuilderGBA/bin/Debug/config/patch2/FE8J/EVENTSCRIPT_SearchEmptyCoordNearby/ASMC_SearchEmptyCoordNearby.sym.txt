@@ -1,0 +1,15 @@
+GetMoveTable=$1A
+Break=$AE
+CurrentCheckEmpty=$36
+LoopStart=$58
+CurrentCheckTile=$44
+LoopY=$60
+disY=$66
+disY2=$70
+disYJoin=$72
+LoopX=$78
+CheckEmpty=$7E
+CheckTile=$86
+disX=$92
+disX2=$9C
+checkDistance=$9E

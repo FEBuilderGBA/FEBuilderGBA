@@ -13,7 +13,9 @@ OFF:0x59DAEE=0x20
 FIX:0x59DAEE=0x01
 
 AUTHOR=7743
-INFO=バニラでは、戦闘アニメが開始された時に32フレーム(0.5秒)のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。
-INFO.en=In vanilla, there is a 32 frame (0.5 second) delay when the battle animation begins.\r\nThis patch removes it and makes it work faster.
+INFO=バニラでは、戦闘アニメが開始された時に32フレーム(0.5秒)のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。\r\n注意: このパッチを利用すると、敵が死亡したときにマップ上から消えるエフェクトが省略される副作用が報告されています。\r\nhttps://discord.com/channels/144670830150811649/470029781795078175/930261871716622357
+
+INFO.en=In vanilla, there is a 32 frame (0.5 second) delay when the battle animation begins.\r\nThis patch removes it and makes it work faster.\r\nNote: This patch has been reported to have the side effect of omitting the effect of disappearing from the map when an enemy dies.\r\nhttps://discord.com/channels/144670830150811649/470029781795078175/930261871716622357
+
 NAME.zh=移除战斗动画开始时显示背景的延迟。
-INFO.zh=在原版中，战斗动画开始时有 32 帧（0.5 秒）的延迟。\r\n此补丁将其删除并使其运行速度更快。
+INFO.zh=在原版中，战斗动画开始时有 32 帧（0.5 秒）的延迟。\r\n此补丁将其删除并使其运行速度更快。\r\nNote: This patch has been reported to have the side effect of omitting the effect of disappearing from the map when an enemy dies.\r\nhttps://discord.com/channels/144670830150811649/470029781795078175/930261871716622357

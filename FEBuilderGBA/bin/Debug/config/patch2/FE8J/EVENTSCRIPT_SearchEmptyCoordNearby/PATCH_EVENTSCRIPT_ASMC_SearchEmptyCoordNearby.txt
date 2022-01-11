@@ -1,0 +1,29 @@
+﻿NAME=この座標または近くの空き座標を返す(イベント命令)
+NAME.en=Add Event: Returns coordinate or nearby empty coordinate
+NAME.zh=Add Event: Returns coordinate or nearby empty coordinate
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_SearchEmptyCoordNearby.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_SearchEmptyCoordNearby.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	この座標または近くの空き座標を返す(ASMC_SearchEmptyCoordNearby)(LOW)	Slot1=ClassID SlotB=Range	@STOREC	{COND}
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	Returns coordinate or nearby empty coordinate(ASMC_SearchEmptyCoordNearby)(LOW)	Slot1=ClassID SlotB=Range	@STOREC	{COND}
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	Returns coordinate or nearby empty coordinate(ASMC_SearchEmptyCoordNearby)(LOW)	Slot1=ClassID SlotB=Range	@STOREC	{COND}
+
+
+
+
+EVENTSCRIPT:02=40050100ZZ00000040050B00XXXXYYYY400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	この座標または近くの空き座標を返す[XX:MAPX:X][YY:MAPY:Y][ZZ:CLASS:クラス](ASMC_SearchEmptyCoordNearby)	@STOREC	{COND}
+EVENTSCRIPT:02.en=40050100ZZ00000040050B00XXXXYYYY400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	Returns coordinate or nearby empty coordinate[XX:MAPX:X][YY:MAPY:Y][ZZ:CLASS:Class](ASMC_SearchEmptyCoordNearby)	@STOREC	{COND}
+EVENTSCRIPT:02.zh=40050100ZZ00000040050B00XXXXYYYY400D0000{$L1:ASMC_SearchEmptyCoordNearby.dmp}	Returns coordinate or nearby empty coordinate[XX:MAPX:X][YY:MAPY:Y][ZZ:CLASS:Class](ASMC_SearchEmptyCoordNearby)	@STOREC	{COND}
+
+INFO=指定した座標が空いていなければ、近くの空いている座標をSlotCに返します。\r\n選出される座標はそのクラスが移動可能な座標です。(たとえば歩兵なら山の中へ海の上ではなく近くの陸地が選出されます)\r\指定した座標が空いていなければ、近くの空いている座標を返します。\r\n選出される座標はそのクラスが移動可能な座標です。\r\nたとえば歩兵なら山の中へ海の上ではなく近くの陸地が選出されます。
+INFO.en=If the specified coordinates are not available, the nearby empty coordinates are returned slotC.\r\nThe selected coordinates are the coordinates that the class can move.\r\nFor example, for infantry, nearby land is elected into the mountains instead of above the sea.
+INFO.zh=If the specified coordinates are not available, the nearby empty coordinates are returned slotC.\r\nThe selected coordinates are the coordinates that the class can move.\r\nFor example, for infantry, nearby land is elected into the mountains instead of above the sea.

@@ -21,8 +21,8 @@ EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_IsFogArea.dmp}	Determine if fog at this coor
 
 
 EVENTSCRIPT:02=40050B00XXXXYYYY400D0000{$L1:ASMC_IsFogArea.dmp}	この座標の位置に霧があるか判定する[XX:MAPX:X][YY:MAPY:Y](ASMC_IsFogArea)	@STOREC	{COND}
-EVENTSCRIPT:02.en=40050100XXXXYYYY400D0000{$L1:ASMC_IsFogArea.dmp}	Determine if fog at this coordinate position[XX:MAPX:X][YY:MAPY:Y](ASMC_IsFogArea)	@STOREC	{COND}
-EVENTSCRIPT:02.zh=40050100XXXXYYYY400D0000{$L1:ASMC_IsFogArea.dmp}	Determine if fog at this coordinate position[XX:MAPX:X][YY:MAPY:Y](ASMC_IsFogArea)	@STOREC	{COND}
+EVENTSCRIPT:02.en=40050B00XXXXYYYY400D0000{$L1:ASMC_IsFogArea.dmp}	Determine if fog at this coordinate position[XX:MAPX:X][YY:MAPY:Y](ASMC_IsFogArea)	@STOREC	{COND}
+EVENTSCRIPT:02.zh=40050B00XXXXYYYY400D0000{$L1:ASMC_IsFogArea.dmp}	Determine if fog at this coordinate position[XX:MAPX:X][YY:MAPY:Y](ASMC_IsFogArea)	@STOREC	{COND}
 
 INFO=指定したマップの座標に霧があるかどうかを判定し、SlotCにbool値で結果を返します。\r\nもし、霧に覆われていれば1、霧がなく視界が確保されていれば0がSlotCに返されます。\r\n「きさま!見ているなッ!」
 INFO.en=Determines if fog at the coordinates of the specified map and returns a result in SlotC with a bool value.\r\nIf it is covered with fog, 1 is returned, and if no fog and visibility is secured, 0 is returned to SlotC.\r\n"You're watching, aren't you?!"
