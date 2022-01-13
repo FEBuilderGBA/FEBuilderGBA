@@ -3085,7 +3085,7 @@
 08015c1c	Init6C_GENS	{U}
 08015cb0	Loop6C_GENS	{U}
 08015d30	StoreAdjustedCameraPositions	{U}
-08015e0c	EnsureCameraOntoPosition	{U}
+08015e0c	EnsureCameraOntoPosition	r0=ThisProcs	r1=X	r2=Y	{U}
 08015e9c	ShouldMoveCameraPosSomething	{U}
 08015fc8	GetCurrentMapMusicIndex	{U}
 0801618c	GetItemSomeString	{U}
@@ -4864,7 +4864,7 @@
 08011EEA	Init6C_GENS	{J}
 08015CBC	Loop6C_GENS	{J}
 08015D3C	StoreAdjustedCameraPositions	{J}
-08015E18	EnsureCameraOntoPosition	{J}
+08015E18	EnsureCameraOntoPosition	r0=ThisProcs	r1=X	r2=Y	{J}
 08015EA8	ShouldMoveCameraPosSomething	{J}
 08015FD4	GetCurrentMapMusicIndex	{J}
 0801631C	CanUnitUseAsWeapon	{J}
@@ -8102,8 +8102,8 @@
 089EE340	&EVENT	何かのイベント関数	謎	1	{U}
 089EE354	&EVENT	何かのイベント関数	謎	2	{U}
 089EE368	&EVENT	何かのイベント関数	謎	3	{U}
-089EE37C	&EVENT	何かのイベント関数	謎	4	{U}
-089EE3F4	&EVENT	メモリスロット2のユニットが生きていたら何かする	{U}
+089EE37C	&EVENT	操作中のユニットの所属がSlot2の値と一致する場合、操作中のユニット座標でタイルの変更を実行する	{U}
+089EE3F4	&EVENT	Slot2のユニットが生きていたら何かする	{U}
 089EE6A0	&EVENT	何かのイベント関数	謎	5	{U}
 089EE6C8	&EVENT	何かのイベント関数	謎	6	{U}
 089F35FC	&EVENT	何かのイベント関数	エフラムへの分岐	{U}
@@ -8113,8 +8113,8 @@
 08591F88	&EVENT	何かのイベント関数	謎	8	{U}
 08591F9C	&EVENT	何かのイベント関数	謎	9	{U}
 08591FA8	&EVENT	何かのイベント関数	謎	10	{U}
-08592114	&EVENT	何かのイベント関数	謎	11	{U}
-08592140	&EVENT	何かのイベント関数	謎	12	{U}
+08592114	&EVENT	宝箱を開いたときのイベント	マップ変化を実行し、Slot3の値に従いアイテムかゴールドを与える	{U}
+08592140	&EVENT	フェードアウトを解除しマップを表示するイベント関数	フェードアウト中ならそれを解除してマップを表示する。フェードアウトしていない場合は何もしない。		{U}
 08592170	&EVENT	何かのイベント関数	謎	13	{U}
 
 08A60214	&EVENT	何かのイベント関数	難易度判定	1	{J}
@@ -8126,8 +8126,8 @@
 08A60478	&EVENT	何かのイベント関数	謎	1	{J}
 08A6048C	&EVENT	何かのイベント関数	謎	2	{J}
 08A604A0	&EVENT	何かのイベント関数	謎	3	{J}
-08A604B4	&EVENT	何かのイベント関数	謎	4	{J}
-08A6052C	&EVENT	メモリスロット2のユニットが生きていたら何かする	{J}
+08A604B4	&EVENT	操作中のユニットの所属がSlot2の値と一致する場合、操作中のユニット座標でタイルの変更を実行する	{J}
+08A6052C	&EVENT	Slot2のユニットが生きていたら何かする	{J}
 08A607D8	&EVENT	何かのイベント関数	謎	5	{J}
 08A60800	&EVENT	何かのイベント関数	謎	6	{J}
 08A628A8	&EVENT	チュートリアルで訪問を説明するイベント	{J}
@@ -8140,8 +8140,8 @@
 085B9D6C	&EVENT	何かのイベント関数	謎	8	{J}
 085B9D80	&EVENT	何かのイベント関数	謎	9	{J}
 085B9D8C	&EVENT	何かのイベント関数	謎	10	{J}
-085B9EF8	&EVENT	何かのイベント関数	謎	11	{J}
-085B9F24	&EVENT	何かのイベント関数	謎	12	{J}
+085B9EF8	&EVENT	宝箱を開いたときのイベント	マップ変化を実行し、Slot3の値に従いアイテムかゴールドを与える	{J}
+085B9F24	&EVENT	フェードアウトを解除しマップを表示するイベント関数	フェードアウト中ならそれを解除してマップを表示する。フェードアウトしていない場合は何もしない。	{J}
 085B9F54	&EVENT	何かのイベント関数	謎	13	{J}
 
 08A0186C	:08A0189B	何かのFillTileRectタイルテーブル	{U}
@@ -12139,7 +12139,7 @@
 0801240C	PositionUnitsAccordingToDeployment	{U}
 0801247C	PositionUnitAccordingToDeployment	{U}
 08013844	MapBrightnessFadeExists	{U}
-08015D84	CenterCameraOntoPosition	{U}
+08015D84	CenterCameraOntoPosition	r0=ThisProcs	r1=X	r2=Y	{U}
 080168E0	DrawItemMenuLineLong	{U}
 08016A2C	DrawItemStatScreenLine	{U}
 08017478	SetItemUnsealedForCharacter	{U}
@@ -12305,7 +12305,7 @@
 080124DC	PositionUnitsAccordingToDeployment	{J}
 0801254C	PositionUnitAccordingToDeployment	{J}
 080138FC	MapBrightnessFadeExists	{J}
-08015D90	CenterCameraOntoPosition	{J}
+08015D90	CenterCameraOntoPosition	r0=ThisProcs	r1=X	r2=Y	{J}
 08016688	DrawItemMenuLineLong	{J}
 080167D4	DrawItemStatScreenLine	{J}
 08017220	SetItemUnsealedForCharacter	{J}
