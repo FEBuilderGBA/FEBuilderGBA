@@ -1,0 +1,13 @@
+NAME=2-15の攻撃範囲では、長距離のアニメーションを使用しないようにする
+NAME.en=Make attacks at 2-15 range not use long-range anims by default
+NAME.zh=Make attacks at 2-15 range not use long-range anims by default
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+TYPE=ADDR
+ADDRESS=0x5827C
+COMBO=Default: 4 range|0x03|Fix: 5 range|0x04|Fix: 6 range|0x05|Fix: 7 range|0x06|Fix: 8 range|0x07|Fix: 16 range|0x0F
+
+AUTHOR=sme https://discord.com/channels/144670830150811649/894721150511374437/933185912819560488

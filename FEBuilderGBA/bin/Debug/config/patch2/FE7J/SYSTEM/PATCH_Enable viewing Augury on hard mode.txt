@@ -1,0 +1,15 @@
+NAME=ハードモードでも進撃準備での攻略用の占いを有効にする
+NAME.en=Enable viewing Augury on hard mode
+NAME.zh=Enable viewing Augury on hard mode
+INFO=通常、進撃準備画面での、攻略用の占いはノーマルモードだけで利用できます。\r\nこのパッチは、それをハードモードでも利用できるように修正します。
+INFO.en=Normally, you can only view Augury on normal mode.\r\nThis patch lets you change that.
+INFO.zh=Normally, you can only view Augury on normal mode.\r\nThis patch lets you change that.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/932698100512985099
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+OFF:0x99CCA=0x00 0x20
+FIX:0x99CCA=0x01 0x20

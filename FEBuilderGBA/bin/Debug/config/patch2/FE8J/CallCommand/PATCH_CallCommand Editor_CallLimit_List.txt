@@ -1,0 +1,32 @@
+NAME=Menu 集合コマンド 味方を集結させる(CallLimit_List)
+NAME.en=Menu CallCommand  call the all player units(CallLimit_List)
+NAME.zh=Menu CallCommand  call the all player units(CallLimit_List)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:$FGREP4 CallCommandUsability.dmp=0x10 0xB5
+
+AUTHOR=7743 Orignal: Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+INFO=Call対象外となるユニットを定義できます。\r\n\r\nレスキューの杖のように遠くの味方を近くに呼び寄せます。\r\nこのコマンドは、すべての味方ユニットを近くに呼び寄せというとても強力な機能です。\r\n利用できるユニットに制限をかけたり、HPをコストとして支払うといった設定が可能です。
+INFO.en=You can define the units that are excluded from Call.\r\n\r\nThis Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+INFO.zh=You can define the units that are excluded from Call.\r\n\r\nThis Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+
+
+
+POINTER=$FGREP4END CallCommandEffect.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3=00
+D4:FLAG=Flag(00=ANY)

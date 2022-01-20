@@ -1,0 +1,34 @@
+﻿NAME=ユニットに経験値を与える 20220120 (イベント命令)
+NAME.en=Add Event: Give the unit experience points 20220120
+NAME.zh=事件指令为人物提供经验值 20220120 (Add Event)
+
+TYPE=EA
+TAG=#ENGINE
+
+INFO=ユニットに任意の経験値を与えます。
+INFO.en=Give arbitrary experience value to the unit.
+INFO.zh=们给人物提供任意经验值。
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 give_exp.dmp=0x70 0xB5
+
+EA=give_exp_Install.event
+
+EVENTSCRIPT:1=400D0000{$L1:give_exp.dmp}	ユニットに経験値を与えます。(LOW)	Slot1=Unit,Slot4=AddExp	{UNIT}
+EVENTSCRIPT:2=40050100XXXXXXXX40050400YY000000400D0000{$L1:give_exp.dmp}	ユニットに経験値を与えます。[XX:UNIT:ユニット][YY:DECIMAL:経験値]	{UNIT}
+EVENTSCRIPT:4=40050B00ZZZZWWWW40050400YY000000400D0000{$L1:give_exp.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
+EVENTSCRIPT:5=40050100FFFFFFFF40050400YY000000400D0000{$L1:give_exp.dmp}	現在操作しているユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
+
+
+EVENTSCRIPT:1.en=400D0000{$L1:give_exp.dmp}	Give the unit experience points(LOW)	Slot1=Unit,Slot4=AddExp	{UNIT}
+EVENTSCRIPT:2.en=40050100XXXXXXXX40050400YY000000400D0000{$L1:give_exp.dmp}	Give the unit experience points[XX:UNIT:ユニット][YY:DECIMAL:add exp]	{UNIT}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW40050400YY000000400D0000{$L1:give_exp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Give the Unit of coordinates an experience value.[YY:DECIMAL:add exp]	{UNIT}
+EVENTSCRIPT:5.en=40050100FFFFFFFF40050400YY000000400D0000{$L1:give_exp.dmp}	Give experience value to the Unit currently being operated.[YY:DECIMAL:add exp]	{UNIT}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:give_exp.dmp}	Give the unit experience points(LOW)	Slot1=Unit,Slot4=AddExp	{UNIT}
+EVENTSCRIPT:2.zh=40050100XXXXXXXX40050400YY000000400D0000{$L1:give_exp.dmp}	Give the unit experience points[XX:UNIT:ユニット][YY:DECIMAL:add exp]	{UNIT}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW40050400YY000000400D0000{$L1:give_exp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Give the Unit of coordinates an experience value.[YY:DECIMAL:add exp]	{UNIT}
+EVENTSCRIPT:5.zh=40050100FFFFFFFF40050400YY000000400D0000{$L1:give_exp.dmp}	Give experience value to the Unit currently being operated.[YY:DECIMAL:add exp]	{UNIT}
+
+
+AUTHOR=7743 Effect Logic: aera , Fixed Vesly

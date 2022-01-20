@@ -35,3 +35,4 @@ EVENTSCRIPT:5.zh=4F0D00YY{$L1:give_exp.dmp}	为目前正在运营的人物提供
 
 
 AUTHOR=7743 Effect Logic: aera
+DEPRECATED=1

@@ -117,6 +117,7 @@ namespace FEBuilderGBA
             , MAPACTIONANIMATION //行動アニメーション(パッチ)
             , FE8TUTORIALMETHOD //FE8チュートリアル　イベント呼び出しタイミング
             , AOECONFIG        //範囲攻撃の設定
+            , CALLMENUCONFIG   //集合コマンドの設定
             , TRANSITIONSPEED   //FE7用
         };
 

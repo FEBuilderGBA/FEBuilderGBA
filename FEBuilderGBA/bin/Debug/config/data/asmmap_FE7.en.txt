@@ -4601,7 +4601,8 @@
 @ChapterData@00	word	Clock
 @ChapterData@04	word	Unknown4
 @ChapterData@0C	byte	saveSlotIndex
-@ChapterData@18	short	playthroughId
+@ChapterData@18	byte	playthroughId
+@ChapterData@19	byte	_pad19
 @ChapterData@1A	byte	lastUnitListSortType
 @ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
 @ChapterData@20	byte	Master's name tactician name (0x20-0x2B).

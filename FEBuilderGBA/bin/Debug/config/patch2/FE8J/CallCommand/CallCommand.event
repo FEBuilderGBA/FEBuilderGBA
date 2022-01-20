@@ -1,0 +1,63 @@
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+// if you are using FEBuilder. 
+#ifdef FEBUILDER_EXTRA_ORG
+//#include "FEBuilderGBA/EN.event"	//{U}
+#include "FEBuilderGBA/JP.event"	//{J}
+#endif // FEBUILDER_EXTRA_ORG
+
+
+ALIGN 4
+CallCommandEffect:
+#incbin "CallCommandEffect.dmp"
+POIN CallLimit_List
+POIN CallCommandUsability
+
+
+ALIGN 4
+CallCommandUsability:
+#incbin "CallCommandUsability.dmp"
+POIN CallUsability_List
+#ifdef SKILLSYSTEM_SKILL_TESTER
+	POIN SkillTester
+#endif 
+#ifndef SKILLSYSTEM_SKILL_TESTER
+	WORD 0
+#endif 
+
+ALIGN 4 
+CallDefaultEvent:
+SOUN 0x79
+NoFade
+ENDA
+
+// Only units meeting these criteria may use the Call command. 
+// BYTE UnitID ClassID ChapterID SkillID HPCost FunctionFlags; SHORT FlagID; POIN Event;
+ALIGN 4 
+CallUsability_List:
+BYTE 0    // Unit 00=ANY
+BYTE 0    // Class 00=ANY
+BYTE 0xFF // Chapter ID FF=ANY
+BYTE 0    // Skill 00=ANY
+BYTE 10   // HPCost
+BYTE 4    // FunctionFlags
+		//01 Do not target moved units.
+		//02 Called unit will be moved(gray).
+		//04 Called unit will be half HP.
+
+SHORT 0 // Any flag if 0. If flag is on, allow command. 
+POIN  CallDefaultEvent
+
+WORD 0xff 0x0 0x0	//term
+
+CallLimit_List:
+BYTE 3 // Unit 00=ANY  //sample:Gilliam can not call
+BYTE 0 // Class 00=ANY
+BYTE 0xFF // Chapter ID FF=ANY
+BYTE 0 // pad
+SHORT 0 // Any flag if 0. If flag is on, allow command. 
+SHORT 0 // pad
+
+WORD 0xff 0x0 	//term
+

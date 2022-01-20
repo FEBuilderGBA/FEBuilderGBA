@@ -1001,6 +1001,15 @@ namespace FEBuilderGBA
                     link.Name = "L_" + datanum + "_AOECONFIG";
                     PatchPage.Controls.Add(link);
                 }
+                else if (type == "CALLMENUCONFIG")
+                {
+                    TextBoxEx link = new TextBoxEx();
+                    link.Location = new Point(500, y);
+                    link.Size = new Size(150, CONTROL_HEIGHT);
+
+                    link.Name = "L_" + datanum + "_CALLMENUCONFIG";
+                    PatchPage.Controls.Add(link);
+                }
                 else if (type.IndexOf("PatchImage") == 0)
                 {//画像指定
                     if (type.IndexOf("_IMAGE") >= 0 || type.IndexOf("_ZIMAGE") >= 0)

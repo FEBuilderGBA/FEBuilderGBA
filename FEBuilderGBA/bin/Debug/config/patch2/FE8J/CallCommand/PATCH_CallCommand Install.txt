@@ -1,0 +1,19 @@
+NAME=Menu 集合コマンド 味方を集結させる(Install)
+NAME.en=Menu CallCommand  call the all player units(Installer)
+NAME.zh=Menu CallCommand  call the all player units(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EXTENDS:0x1100=TEXT
+EA_EXTENDS_UNITMENU:0x01=0x40
+PATCHED_IF:$FGREP4 CallCommandUsability.dmp=0x10 0xB5
+EDIT_PATCH:01=PATCH_CallCommand Editor_CallUsability_List.txt
+EDIT_PATCH:02=PATCH_CallCommand Editor_CallLimit_List.txt
+
+EA=CallCommand.event
+AUTHOR=7743 Orignal: Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+INFO=レスキューの杖のように遠くの味方を近くに呼び寄せます。\r\nこのコマンドは、すべての味方ユニットを近くに呼び寄せというとても強力な機能です。\r\n利用できるユニットに制限をかけたり、HPをコストとして支払うといった設定が可能です。
+INFO.en=This Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+INFO.zh=This Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+

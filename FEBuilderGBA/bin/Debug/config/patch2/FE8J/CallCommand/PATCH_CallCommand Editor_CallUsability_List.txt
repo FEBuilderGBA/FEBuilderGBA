@@ -1,0 +1,37 @@
+NAME=Menu 集合コマンド 味方を集結させる(CallUsability_List)
+NAME.en=Menu CallCommand  call the all player units(CallUsability_List)
+NAME.zh=Menu CallCommand  call the all player units(CallUsability_List)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:$FGREP4 CallCommandUsability.dmp=0x10 0xB5
+
+AUTHOR=7743 Orignal: Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+
+
+
+INFO=Callを実行できるユニットを定義します。\r\nHPCostは実行するために消費するHPを指定します。\r\nHPCostを0にすると、ペナルティなしで実行できるようになります。\r\nHPが足りない場合は、実行できません。\r\n\r\nFeedback Eventは、コマンドを実行後に実行するイベントを指定します。\r\nディフォルトは、効果音を再生しているだけです。\r\n\r\nレスキューの杖のように遠くの味方を近くに呼び寄せます。\r\nこのコマンドは、すべての味方ユニットを近くに呼び寄せというとても強力な機能です。\r\n利用できるユニットに制限をかけたり、HPをコストとして支払うといった設定が可能です。
+INFO.en=You can defines a unit that can execute a Call.\r\nHPCost specifies the HP to consume to run.\r\nIf set HPCost to 0, it can be executed without penalty.\r\nIf you don't have enough HP, you can't do it.\r\n\r\nFeedback Event specifies the event to execute after executing the command.\r\nThe default is just playing a sound effect.\r\n\r\nThis Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+INFO.zh=You can defines a unit that can execute a Call.\r\nHPCost specifies the HP to consume to run.\r\nIf set HPCost to 0, it can be executed without penalty.\r\nIf you don't have enough HP, you can't do it.\r\n\r\nFeedback Event specifies the event to execute after executing the command.\r\nThe default is just playing a sound effect.\r\n\r\nThis Patch is calls distant allies close to you like a rescue staff.\r\nThis command is a very powerful feature, calling all allied units close to you.\r\nYou can limit the number of units that can be used, or pay HP as a cost.
+
+
+POINTER=$FGREP4END CallCommandUsability.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0xff 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:SKILL=Skill(00=ANY)
+B4:DECIMAL=HpCost
+B5:CALLMENUCONFIG=Config
+W6:FLAG=Flag(00=ANY)
+P8:EVENT=Feedback Event

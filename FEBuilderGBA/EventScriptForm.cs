@@ -225,7 +225,11 @@ namespace FEBuilderGBA
                 isLabelJump = true;
             }
             else if (arg.Type == EventScript.ArgType.AOECONFIG)
-            {//AOECONFIG
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.CALLMENUCONFIG)
+            {
                 isLabelJump = true;
             }
             else if (arg.Type == EventScript.ArgType.UNITCLASSABILITY)
@@ -1608,12 +1612,17 @@ namespace FEBuilderGBA
                             text = " " + InputFormRef.GetU32Hint(v);
                         }
                         else if (arg.Type == EventScript.ArgType.AOECONFIG)
-                        {//AOECONFIG
+                        {
                             isENumText = true;
                             text = " " + InputFormRef.GetAOECONFIG(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.CALLMENUCONFIG)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetCALLMENUCONFIG(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
-                        {//AOECONFIG
+                        {
                             isENumText = true;
                             string dummy;
                             text = " " + InputFormRef.GetTRANSITIONSPEED(v, out dummy);

@@ -1,0 +1,25 @@
+#define UM_CallMenuDesc 0xf04
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset|0x80000000); POP"
+#define setTextWithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP"
+
+setTextWithHuffman(UM_CallMenuDesc,TxtData0xf04)
+
+ALIGN 4
+TxtDataCallMenuName:
+#incbin "TxtDataJP_MENUName.txt.bin"
+
+ALIGN 4
+TxtData0xf04:
+#incbin "TxtDataJP_0xf04.txt.bin"
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	TxtDataCallMenuName
+SHORT	0x60C UM_CallMenuDesc		//右がヘルプ指定
+SHORT	$6304 0
+POIN	CallCommandUsability|1
+POIN	0
+POIN	CallCommandEffect|1
+WORD	0 0 0
+POP

@@ -1099,11 +1099,15 @@ namespace FEBuilderGBA
                 text = " " + InputFormRef.GetDigitHint(v);
             }
             else if (arg.Type == EventScript.ArgType.AOECONFIG)
-            {//AOECONFIG
+            {
                 text = " " + InputFormRef.GetAOECONFIG(v);
             }
+            else if (arg.Type == EventScript.ArgType.CALLMENUCONFIG)
+            {
+                text = " " + InputFormRef.GetCALLMENUCONFIG(v);
+            }
             else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
-            {//AOECONFIG
+            {
                 text = " " + InputFormRef.GetTRANSITIONSPEED(v, out errormessage);
             }
 
@@ -1449,6 +1453,7 @@ namespace FEBuilderGBA
                     , src_object);
             }
             else if (arg.Type == EventScript.ArgType.AOECONFIG
+                ||   arg.Type == EventScript.ArgType.CALLMENUCONFIG
                 )
             {
                 UbyteBitFlagForm f = (UbyteBitFlagForm)InputFormRef.JumpForm<UbyteBitFlagForm>(U.NOT_FOUND);

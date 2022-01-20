@@ -12952,6 +12952,9 @@ The file could not be copied.\r\nSrc: {0}.\r\nDest: {1}.\r\n\r\n{2}.
 :範囲攻撃の攻撃タイプを設定します。
 Sets the attack type for ranged attacks.
 
+:詳細設定
+Advanced Setting.
+
 :最新版
 Latest Edition
 

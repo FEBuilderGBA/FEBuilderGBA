@@ -1439,7 +1439,8 @@ r3=X tile position of menu of right	{U}
 @ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
 @ChapterData@15	byte	Weather	(0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 @ChapterData@16	short	Support Gain Total
-@ChapterData@18	short	playthroughId
+@ChapterData@18	byte	playthroughId
+@ChapterData@19	byte	_pad19
 @ChapterData@1A	byte	lastUnitListSortType
 @ChapterData@1B	byte	Mode	(1=prologue-8, 2=Eirika 3=Ephraim)
 @ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????

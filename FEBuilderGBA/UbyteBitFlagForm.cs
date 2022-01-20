@@ -42,6 +42,12 @@ namespace FEBuilderGBA
                 this.MESSAGE.Text = R._("範囲攻撃の攻撃タイプを設定します。");
                 dataname = "AOECONFIG_checkbox_";
             }
+            else if (argtype == EventScript.ArgType.CALLMENUCONFIG)
+            {
+                this.Text = "CALLMENUCONFIG";
+                this.MESSAGE.Text = R._("詳細設定");
+                dataname = "CALLMENUCONFIG_checkbox_";
+            }
             else
             {
                 return;

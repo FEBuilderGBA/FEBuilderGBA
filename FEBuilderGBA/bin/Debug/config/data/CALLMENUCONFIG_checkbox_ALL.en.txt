@@ -1,0 +1,8 @@
+01=Not target moved units	It will only work on units that have not yet acted.\r\nIt does not work on units that have already acted and are grayed out.
+02=Called unit will be moved(gray)	The unit you called in is now active.\r\nIf all units have been called in, the turn is effectively over.
+03=Called unit will be half HP	Halves the HP of the unit you have called.\r\nIt will not drop below 1 HP, but if the unit is in a poisoned state, be aware of the poison damage on the next turn.
+04=-
+05=-
+06=-
+07=-
+08=-

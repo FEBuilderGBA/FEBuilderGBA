@@ -3006,6 +3006,21 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "CALLMENUCONFIG")
+            {
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    //ユニット名の取得
+                    link_object.Text = InputFormRef.GetCALLMENUCONFIG((uint)src_object.Value);
+                };
+                link_object.DoubleClick += (sender, e) =>
+                {//ダブルクリックで編集
+                    JumpTo(src_object, link_info, linktype, new string[] { });
+                };
+
+                return;
+            }
             
             
 #if DEBUG            
@@ -4428,6 +4443,12 @@ namespace FEBuilderGBA
             {
                 AOERANGEForm f = (AOERANGEForm)InputFormRef.JumpForm<AOERANGEForm>(U.NOT_FOUND);
                 f.JumpTo(src_object, value);
+            }
+            else if (linktype == "CALLMENUCONFIG")
+            {
+                UbyteBitFlagForm f = (UbyteBitFlagForm)InputFormRef.JumpForm<UbyteBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(EventScript.ArgType.CALLMENUCONFIG, value);
+                InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
             }
         }
 
@@ -7077,6 +7098,12 @@ namespace FEBuilderGBA
             Dictionary<uint, string> dic = ConfigDataDatanameCache("AOECONFIG_checkbox_");
             return GetInfoByBitFlag(num, dic);
         }
+        public static string GetCALLMENUCONFIG(uint num)
+        {
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("CALLMENUCONFIG_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        
 
         public static string GetDISABLEWEAPONS(uint num)
         {
