@@ -611,3 +611,7 @@ Duration
 2826FFFF	Move camera to SlotB's coord(CAM1)	{CAMERA}
 40050300XXXX00002004YYYY2006330C21370000	Give Gold [XX:DECIMAL:GOLD]+[YY:DECIMAL:Random] money to the player	{GOLD}	{ITME}
 40050300XXXX00002004YYYY2006330C22370000	Take Gold [XX:DECIMAL:GOLD]+[YY:DECIMAL:Random] money from the player	{GOLD}	{ITME}
+400D0000D5000308	Stop map animation, stop drawing units(ASMC BlockGameGraphicsLogic)	{J}
+400D000085010308	Stop map animation, stop drawing units(ASMC BlockGameGraphicsLogic)	{U}
+400D000009010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{J}
+400D0000B9010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{U}
