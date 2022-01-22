@@ -282,4 +282,48 @@ ALIGN 4
 CleanupSoundRoomWorkMemory:
 #incbin "CleanupSoundRoomWorkMemory.dmp"
 
+//ランダムモードの修正
+PUSH
+ORG 0x0B3B08	//{J}
+//ORG 0x0AEEE8	//{U}
+jumpToHack(RandomPlay)
+
+ORG 0x0B3B44	//{J}
+//ORG 0x0AEF24	//{U}
+jumpToHack(RandomPlay)
+
+ORG 0x0B3D00	//{J}
+//ORG 0x0AF0E0	//{U}
+jumpToHack(RandomPlay)
+
+ORG 0x0B3D60	//{J}
+//ORG 0x0AF140	//{U}
+jumpToHack(RandomPlay)
+
+
+ORG 0xB442E	//{J}
+//ORG 0xAF80E	//{U}
+BYTE 0x05 0x80	//strh r5, [r0, #0x0]
+
+ORG 0xB4A2E	//{J}
+//ORG 0xAFE16	//{U}
+BYTE 0x00 0x88	//ldrh r0, [r0, #0x0]
+BYTE 0x00 0x00	//nop
+BYTE 0x00 0x00	//nop
+
+ORG 0xB4FB4	//{J}
+//ORG 0xB039C	//{U}
+BYTE 0x09 0x88	//ldrh r1, [r1, #0x0]
+BYTE 0x00 0x00	//nop
+BYTE 0x00 0x00	//nop
+
+
+
+POP
+
+ALIGN 4
+RandomPlay:
+#incbin "RandomPlay.dmp"
+
+
 ALIGN 4
