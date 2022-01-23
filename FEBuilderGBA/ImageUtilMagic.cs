@@ -193,7 +193,6 @@ namespace FEBuilderGBA
             uint csaSpellTable = ImageUtilMagic.GetCSASpellTableAddr();
             if (csaSpellTable == U.NOT_FOUND)
             {
-                Debug.Assert(false);
                 return false;
             }
 

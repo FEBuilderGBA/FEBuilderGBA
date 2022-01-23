@@ -569,7 +569,7 @@ namespace FEBuilderGBA
             InputFormRef.ExpandsArea(this, 254 , Program.ROM.RomInfo.magic_effect_pointer(), datasize,FEBuilderGBA.InputFormRef.ExpandsFillOption.NO,4, undodata);
 
             //CSA追加魔法テーブルの拡張
-            if (U.isSafetyOffset(csaSpellTablePointer))
+            if (U.isSafetyOffset(csaSpellTablePointer) && InputFormRef != null)
             {//CSA追加魔法テーブルが正しくセットされている場合
                 datasize = InputFormRef.DataCount;
             }

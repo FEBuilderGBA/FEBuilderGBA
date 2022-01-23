@@ -22,12 +22,9 @@ bge Compromise
 cmp r6, #10     @10回選出しても取れない場合は、先頭からスキャンする
 bge ScanBeginning
 
-@blh 0x08000cd8   @GetGameClock	@{J}
-blh 0x08000d28   @GetGameClock	@{U}
-
-mov r1, r4   @サウンドルームの最大数
-@blh  0x080d6690  @__modsi3	@{J}
-blh  0x080d1994  @__modsi3	@{U}
+mov r0, r4   @サウンドルームの最大数
+@blh 0x08000c58	@NextRN_N	{J}
+blh 0x08000C80	@NextRN_N	{U}
 mov r5, r0
 
 NearLoop:
