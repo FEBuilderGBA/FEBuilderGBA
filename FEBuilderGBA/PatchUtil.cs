@@ -632,6 +632,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE6", addr = 0x18188,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}}, //魔力分離パッチ FE7U
                 new PatchTableSt{ name="FE8UMAGIC",	ver = "FE8U", addr = 0x2BB44,data = new byte[]{0x01 ,0x4B ,0xA5 ,0xF0 ,0xC1 ,0xFE}}, //魔力分離パッチ FE8U
+                new PatchTableSt{ name="FE8UMAGIC",	ver = "FE8U", addr = 0x17E5C,data = new byte[]{0x01 ,0x4B ,0xB9 ,0xF0 ,0x35 ,0xFD}}, //魔力分離パッチ FE8U 2022年以降
             };
             return SearchPatchBool(table);
         }

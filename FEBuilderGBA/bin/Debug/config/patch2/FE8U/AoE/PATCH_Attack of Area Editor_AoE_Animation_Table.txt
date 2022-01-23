@@ -25,5 +25,6 @@ LISTNAME=$COMBO combo.Animation.txt
 //データを定義します
 P0=ASM(Do NOT Use)
 P4:EVENT=EventPointer
-W8:SONG=SoundEffect(0=Not Use)
+//W8:SONG=SoundEffect(0=Not Use)
+W8=00
 W10=1
