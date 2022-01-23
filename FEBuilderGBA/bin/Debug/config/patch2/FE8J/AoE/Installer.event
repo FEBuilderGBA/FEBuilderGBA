@@ -99,7 +99,7 @@ ASMC AoE_ASMC
 #define AoE_RotationID_BOTTOM 3
 
 
-
+#include "AoE_Exp_Installer.event" 
 
 /*
 @ Primary Table structure 
@@ -280,6 +280,56 @@ POIN AoE_EventAnimeA
 SHORT 0 
 SHORT 1 
 
+POIN 0 //Entry B 
+POIN AoE_EventAnime1_GrantEXP
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry C
+POIN AoE_EventAnime2_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry D
+POIN AoE_EventAnime3_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 //Entry E
+POIN AoE_EventAnime4_GrantEXP
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry F
+POIN AoE_EventAnime5_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry 10
+POIN AoE_EventAnime6_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 //Entry 11
+POIN AoE_EventAnime7_GrantEXP
+SHORT 0 // Bgm  
+SHORT 1 
+
+POIN 0 // Entry 12
+POIN AoE_EventAnime8_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry 13
+POIN AoE_EventAnime9_GrantEXP
+SHORT 0 
+SHORT 1 
+
+POIN 0 // Entry 14
+POIN AoE_EventAnimeA_GrantEXP
+SHORT 0 
+SHORT 1 
+
 WORD 0 0 0 // INDEXED, so no terminator actually needed 
 
 
@@ -357,4 +407,83 @@ ASMC ASMC_Draw|1
 NoFade
 ENDA
 
+ALIGN 4 
+AoE_EventAnime1_GrantEXP:
+SVAL r1 0x1 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime2_GrantEXP:
+SVAL r1 0x2 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime3_GrantEXP:
+SVAL r1 0x3 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime4_GrantEXP:
+SVAL r1 0x4 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime5_GrantEXP:
+SVAL r1 0x5 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime6_GrantEXP:
+SVAL r1 0x6 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime7_GrantEXP:
+SVAL r1 0x7 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime8_GrantEXP:
+SVAL r1 0x8 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnime9_GrantEXP:
+SVAL r1 0x9 //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
+
+ALIGN 4 
+AoE_EventAnimeA_GrantEXP:
+SVAL r1 0xA //AnimationID
+ASMC ASMC_Draw|1
+ASMC AoE_GrantExp|1
+NoFade
+ENDA
 

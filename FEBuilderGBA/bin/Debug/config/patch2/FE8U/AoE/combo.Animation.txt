@@ -9,3 +9,13 @@
 08=Anime8
 09=Anime9
 0A=AnimeA
+0B=Anime1GrantExp
+0C=Anime2GrantExp
+0D=Anime3GrantExp
+0E=Anime4GrantExp
+0F=Anime5GrantExp
+10=Anime6GrantExp
+11=Anime7GrantExp
+12=Anime8GrantExp
+13=Anime9GrantExp
+14=AnimeAGrantExp

@@ -1,0 +1,16 @@
+AoE_RamAddress=$0164
+AoE_GrantExpEvent=$0160
+AoE_EntrySize=$0168
+AoE_Table=$016C
+NotHealing=$32
+YLoop=$4E
+BreakYLoop=$0106
+XLoop=$58
+XLoop_2=$5E
+NoBreak=$76
+Healing=$E8
+NotAllied=$B0
+NoBonus=$D6
+NoCap=$E4
+Allied=$FC
+NoExp=$011A

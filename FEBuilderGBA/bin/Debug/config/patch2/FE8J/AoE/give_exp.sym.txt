@@ -1,0 +1,10 @@
+Change=$14
+nin_i_exp=$4E
+effect=$A4
+clear_double_battleanime=$3A
+Term=$32
+noexp=$94
+give_exp_proc=$01B0
+HideMMSFunc=$013D
+SkipHidingInProc=$0156
+Exit=$0166

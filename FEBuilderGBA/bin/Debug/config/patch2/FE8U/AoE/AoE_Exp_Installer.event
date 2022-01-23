@@ -1,0 +1,66 @@
+
+
+
+#ifndef GiveEXP_ASMC 
+	#define GiveEXP_ASMC 
+
+	#include "EAstdlib.event"
+	#include "Extensions/Hack Installation.txt"
+	#include "Extensions/ProcDefinitions.txt" 
+
+	ALIGN 4
+	PUSH
+	ORG CurrentOffset+1
+	give_exp_Install:
+	POP 
+	#incbin "give_exp.dmp"
+	POIN give_exp_proc
+
+
+	ALIGN 4
+	give_exp_proc:
+	//#incbin "event_fe8j.bin" //HINT=PROCS
+	//#incbin "event_fe8u.bin" //HINT=PROCS
+	PROC_CALL_ROUTINE(0x8015360|1) // LockGameLogic	//{U}
+//	PROC_CALL_ROUTINE(0x8015384|1) // LockGameLogic	//{J}
+	PROC_SLEEP(5)
+	PROC_JUMP(0x89A35B0) // gProc_MapAnimEnd	//{U}
+//	PROC_JUMP(0x8A13C38) // gProc_MapAnimEnd	//{J}
+	PROC_END
+
+
+	#define GiveEXP(UnitID, EXP) "SVAL 0x1 UnitID ; SVAL 0x4 EXP ; ASMC give_exp_Install|1"
+	#define GiveEXP(UnitID) "SVAL 0x1 UnitID ; ASMC give_exp_Install|1"
+	//#define GiveEXP(UNITID, EXP) "BYTE 0x40 0x0D UNITID EXP ; POIN give_exp_Install|1;"
+	//#define GiveEXPCurrentUnit(EXP) "BYTE 0x4F 0x0D 0x00 EXP ; POIN give_exp_Install|1;"
+	//#define GiveEXP(xcoord, ycoord, EXP) "SVAL 0xB Coords(xcoord,ycoord); BYTE 0x4B 0x0D 0x0 EXP ; POIN give_exp_Install|1"
+
+
+#endif
+
+#ifndef AoE_RamAddressDef
+	#define AoE_RamAddressDef "0x0203F101" // Also used by combat art menu. 	//{U}
+	//#define AoE_RamAddressDef "0x0203F0FD" // Also used by combat art menu. 	//{J}
+#endif 
+
+#ifndef AoE_EntrySizeDef
+	#define AoE_EntrySizeDef 16
+#endif 
+
+
+ALIGN 4
+PUSH 
+ORG CurrentOffset+1
+AoE_GrantExp:
+POP 
+#incbin "AoE_GrantExp.dmp" 
+POIN AoE_GrantExpEvent 
+WORD AoE_RamAddressDef 
+WORD AoE_EntrySizeDef
+POIN AoE_Table
+
+AoE_GrantExpEvent:
+GiveEXP((-1))
+NoFade
+ENDA
+
