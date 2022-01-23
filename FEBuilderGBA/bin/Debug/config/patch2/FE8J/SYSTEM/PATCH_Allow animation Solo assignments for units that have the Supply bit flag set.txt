@@ -1,0 +1,18 @@
+NAME=輸送隊ビットフラグが設定されているユニットにも、アニメーションSolo割り当てを許可する
+NAME.en=Allow animation Solo assignments for units that have the Supply bit flag set
+
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Rejected if has Supply bit|OFF|Fix: Allow solo assignment|FIX
+
+OFF:0x936C4=0x08 0x40
+FIX:0x936C4=0x00 0x20
+
+AUTHOR=7743
+INFO=バニラでは、FE7のマリナスを実装するために、輸送隊フラグが設定されているユニットは、戦闘アニメーションのSolo割り当てを拒否します。\r\nこのパッチは、その挙動を修正し、輸送隊フラグが設定されていても、Solo割り当てをできるようにします。
+INFO.en=In vanilla, to implement FE7 Marinas, units with the Convoy flag set will reject the Solo assignment of the combat animation.\r\nThis patch fixes its behavior and allows Solo assignments even when the convoy flag is set.
+NAME.zh=允许对设置了 convoy 位标志的单位进行动画单独分配。
+INFO.zh=在原版中，为了实现 FE7 码头，设置了 Convoy 标志的单位将拒绝战斗动画的单人分配。\r\n这个补丁修复了它的行为，即使设置了 convoy 标志也允许单独分配。

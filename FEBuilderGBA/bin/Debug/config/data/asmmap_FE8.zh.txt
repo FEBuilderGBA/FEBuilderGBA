@@ -14825,3 +14825,5 @@ r3=X tile position of menu of the right	{U}
 0802FBBC	ExecRingItem	{U}
 0802F1D8	ExecNightmare	{U}
 0802F510	ExecChestKey	{U}
+080913d8	OnChangeAnimationSoloEachUnit	{U}
+080936B0	OnChangeAnimationSoloEachUnit	{J}
