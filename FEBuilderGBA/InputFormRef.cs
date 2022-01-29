@@ -3021,6 +3021,16 @@ namespace FEBuilderGBA
 
                 return;
             }
+            if (linktype == "BOOL")
+            {//BOOL値
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = U.GetBoolString((uint)src_object.Value);
+                };
+
+                return;
+            }
             
             
 #if DEBUG            

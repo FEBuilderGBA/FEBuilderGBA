@@ -1,0 +1,10 @@
+ReturnValue=$8C
+PromotionMenuList=$B0
+UsabilityLoop=$20
+DoNotTerminate=$30
+SkipUnitCheck=$3E
+SkipClassCheck=$4C
+SkipLevelCheck=$58
+SkipChCheck=$6C
+SkipFlagCheck=$7C
+End=$8E

@@ -1,0 +1,63 @@
+#include "eastdlib.event" 
+
+// Add a menu command to use. 
+// 	MenuCommand(UM_Promote, UM_PromoteDesc, GreenText, PromoteUsability|1, PromoteEffect|1) 
+
+// if you are using FEBuilder. 
+#ifdef FEBUILDER_EXTRA_ORG
+#include "FEBuilderGBA/EN.event"	//{U}
+//#include "FEBuilderGBA/JP.event"	//{J}
+#endif // FEBUILDER_EXTRA_ORG
+
+/*
+## UM_Promote
+ Promote[X]
+ 
+## UM_PromoteDesc
+Promote this unit.[X]
+*/
+
+
+ALIGN 4
+PromotionMenuList: // Size: 8 bytes per entry. 
+//BYTE Unit Class RequiredLevel ChapterID BoolException 0; SHORT Flag 
+// UnitID to match
+// ClassID to match
+// Must be this level or higher
+// Must be between this chapter
+// and this chapter 
+// If true, units meeting the criteria *will not* be able to use the command. If false, they *will* be able to use the command. 
+// Short of Flag. 
+BYTE 0 0 20 0x0 0xFF	False ; SHORT 0 // Anyone can promote at level 20 
+BYTE Eirika 0 0 0x0 0xFF	True ; SHORT 0x86 //AmeliaDeathFlag - Eirika cannot promote if Amelia has died. 
+BYTE 0 Archer 12 0xA 0xFF False; SHORT 0 
+// But archers can promote at level 12+ if in chapter 0xA - Distant Blades or later, including Eirika Archer. 
+WORD 0xFFFFFFFF 0xFFFFFFFF // Terminator. 
+
+
+PromotionMenuEvent:
+ASMC PromoteStart|1
+ASMC PromoteFinish|1
+NoFade
+ENDA 
+
+
+ALIGN 4
+PromoteUsability:
+#incbin "PromoteUsability.dmp"
+POIN PromotionMenuList 
+
+ALIGN 4
+PromoteEffect:
+#incbin "PromoteEffect.dmp"
+POIN PromotionMenuEvent
+
+
+ALIGN 4
+PromoteStart:
+#incbin "PromoteStart.dmp"
+
+ALIGN 4
+PromoteFinish:
+#incbin "PromoteFinish.dmp"
+

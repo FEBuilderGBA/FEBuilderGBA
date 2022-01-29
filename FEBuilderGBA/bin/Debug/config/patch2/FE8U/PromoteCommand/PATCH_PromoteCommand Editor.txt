@@ -1,0 +1,36 @@
+NAME=Menu ＣＣコマンド 上位クラスへ昇格させる(Editor)
+NAME.en=Menu PromoteCommand  Promote to a higher class(Editor)
+NAME.zh=Menu PromoteCommand  Promote to a higher class(Editor)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:$FGREP4 PromoteUsability.dmp=0x70 0xB5
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/40
+
+
+INFO=from MAPIDとtoMapIDについて\r\n指定したMAPIDの範囲にいることが条件になります。\r\n不要ならFFを指定してください。\r\n\r\nBoolExceptionについて\r\nTrueを指定していすると、その条件にマッチした時に、動作しなくします。\r\n例えば、下級職は昇格させるが、ロードユニットだけは除外するというような設定を作るために利用します。\r\n\r\n特定の条件を満たしていると、メニューにＣＣコマンドが表示され、それを選択することで上位クラスへ昇格できるようにします。\r\nようするに、このパッチは、ＣＣアイテムの代わりにメニューを使う昇進方法を提供します。
+INFO.en=About from MAPID,to MAPID\r\nThe condition is that it between within the range of the specified map ID.\r\nIf not required, specify FF.\r\n\r\nAbout BoolException:\r\nIf true, units meeting the criteria *will not* be able to use the command. If false, they *will* be able to use the command.\r\n\r\nIf certain conditions are met, the CC command will appear in the menu, which you can select to promote to a higher class.\r\nSo, this patch provides a promotion method that uses menus instead of promotion items like master seal.
+.
+INFO.zh=About from MAPID,to MAPID\r\nThe condition is that it between within the range of the specified map ID.\r\nIf not required, specify FF.\r\n\r\nAbout BoolException:\r\nIf true, units meeting the criteria *will not* be able to use the command. If false, they *will* be able to use the command.\r\n\r\nIf certain conditions are met, the CC command will appear in the menu, which you can select to promote to a higher class.\r\nSo, this patch provides a promotion method that uses menus instead of promotion items like master seal.
+.
+
+
+POINTER=$FGREP4END PromoteUsability.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 ff が出てくるまで
+DATACOUNT=$GREP8 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:DECIMAL=Request LV >=
+B3:MAP_ANYFF=from MAPID(0xFF=ANY)
+B4:MAP_ANYFF=to MAPID(FF=ANY)
+B5:BOOL=BoolException
+W6:FLAG=Flag(00=ANY)

@@ -896,6 +896,34 @@ namespace FEBuilderGBA
                     U.ConvertComboBox(dic, ref link, true);
                     PatchPage.Controls.Add(link);
                 }
+                else if (type.IndexOf("ITEMSTAFFUSEEFFECT") == 0)
+                {//アイテムを使った場合の効果リスト
+                    string filename = U.ConfigDataFilename("item_staff_use_effect_");
+
+                    Dictionary<uint, string> dic = U.LoadDicResource(filename);
+
+                    ComboBox link = new ComboBox();
+                    link.Location = new Point(500, y);
+                    link.Size = new Size(150, CONTROL_HEIGHT);
+                    link.Name = "L_" + datanum + "_" + "COMBO";
+                    link.DropDownStyle = ComboBoxStyle.DropDownList;
+                    if (InputFormRef.IsHalfTypeWord(key[0]))
+                    {//COMBOl , COMBOh
+                        link.Name = link.Name + key[0];
+                    }
+                    U.ConvertComboBox(dic, ref link, true);
+                    PatchPage.Controls.Add(link);
+                }
+                else if (type.IndexOf("BOOL") == 0)
+                {//BOOL値
+                    TextBoxEx link = new TextBoxEx();
+                    link.SetToolTipEx(this.ToolTip);
+                    link.Location = new Point(500, y);
+                    link.Size = new Size(100, CONTROL_HEIGHT);
+                    link.ReadOnly = true;
+                    link.Name = "L_" + datanum + "_" + type;
+                    PatchPage.Controls.Add(link);
+                }
                 else if (type.IndexOf("ITEMEFFECT") == 0)
                 {//間接エフェクト
                     TextBoxEx link = new TextBoxEx();
@@ -1544,6 +1572,11 @@ namespace FEBuilderGBA
 
                 out_listname_combo_dic = U.LoadDicResource(filename);
             }
+            else if (listname =="ITEMSTAFFUSEEFFECT")
+            {
+                string filename = U.ConfigDataFilename("item_staff_use_effect_");
+                out_listname_combo_dic = U.LoadDicResource(filename);
+            }
             else if (listname.Length > 2 && listname[0] == '$')
             {
                 int classtype = listname.IndexOf(':');
@@ -1650,6 +1683,10 @@ namespace FEBuilderGBA
                 appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
+            {
+                appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
+            }
+            else if (listname == "ITEMSTAFFUSEEFFECT")
             {
                 appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
             }

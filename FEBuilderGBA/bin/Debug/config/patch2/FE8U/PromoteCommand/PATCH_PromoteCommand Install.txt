@@ -1,0 +1,20 @@
+NAME=Menu ＣＣコマンド 上位クラスへ昇格させる(Install)
+NAME.en=Menu PromoteCommand  Promote to a higher class(Installer)
+NAME.zh=Menu PromoteCommand  Promote to a higher class(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EXTENDS:0x1100=TEXT
+EA_EXTENDS_UNITMENU:0x01=0x40
+PATCHED_IF:$FGREP4 PromoteUsability.dmp=0x70 0xB5
+EDIT_PATCH:01=PATCH_PromoteCommand Editor.txt
+
+EA=Installer.event
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/40
+
+
+INFO=特定の条件を満たしていると、メニューにＣＣコマンドが表示され、それを選択することで上位クラスへ昇格できるようにします。\r\nようするに、このパッチは、ＣＣアイテムの代わりにメニューを使う昇進方法を提供します。
+INFO.en=If certain conditions are met, the CC command will appear in the menu, which you can select to promote to a higher class.\r\nSo, this patch provides a promotion method that uses menus instead of promotion items like master seal.
+.
+INFO.zh=If certain conditions are met, the CC command will appear in the menu, which you can select to promote to a higher class.\r\nSo, this patch provides a promotion method that uses menus instead of promotion items like master seal.
+.

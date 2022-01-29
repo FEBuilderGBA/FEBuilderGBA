@@ -1,0 +1,6 @@
+PromotionMenuList=$BC3A14
+PromotionMenuEvent=$BC3A34
+PromoteUsability=$BC3A4C
+PromoteEffect=$BC3B00
+PromoteStart=$BC3B24
+PromoteFinish=$BC3B6C

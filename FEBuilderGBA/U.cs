@@ -7570,6 +7570,18 @@ namespace FEBuilderGBA
             }
             return bitmap;
         }
+        public static string GetBoolString(uint a)
+        {
+            if (a == 0)
+            {
+                return "False";
+            }
+            if (a == 1)
+            {
+                return "True";
+            }
+            return "";
+        }
     }
 }
 
