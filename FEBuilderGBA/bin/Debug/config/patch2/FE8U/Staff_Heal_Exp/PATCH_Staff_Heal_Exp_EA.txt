@@ -8,7 +8,7 @@ EA=FE8_Staff_Heal_Exp_EA.event
 //既に適応されたかどうか
 PATCHED_IF:0x2C66A=0xEA 0xF7 0xCF 0xFF 0x02 0x1C 0x02 0xE0
 
-INFO=以下の修正をします。\r\n杖の経験値は杖の重による。\r\n回復する量は杖の威力によります。
+INFO=以下の修正をします。\r\n杖の経験値は杖の重さによる。\r\n回復する量は杖の威力によります。
 INFO.en=This Patch make the following corrections.\r\nStaff exp varies depends on staff's weight\r\nAmount healed depends on item/staff's might
 
 AUTHOR=Tequila

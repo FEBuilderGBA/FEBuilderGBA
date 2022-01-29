@@ -5182,3 +5182,5 @@
 0807D020	ch15 Give Lyn a white jewel according to the asset evaluation of Lyn Edition	{U}
 0807FD58	Asset evaluation at Lyn Edtion	Set of flags for jewels given on ch15	{J}
 0807EF90	Asset evaluation at Lyn Edtion	Set of flags for jewels given on ch15	{U}
+08016820	IsWeaponEffective	{U}
+08016c80	IsWeaponEffective	{J}

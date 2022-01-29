@@ -1,0 +1,32 @@
+NAME=武器の特効効果ダメージ係数を変更する(Editor)
+NAME.en=Change Effectiveness damage coefficient of the weapon(Editor)
+
+IF:0x248D0=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+//画像パッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END WeaponEffectiveness2x3x.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0x00 0x00
+
+//リストに表示されるのはアイテムIDです
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=ITEM
+B1:DECIMAL=SCALE
+
+INFO=神器の特効ダメージ係数を簡単に変更します。\r\n指定したアイテムIDごとに特攻ダメージ係数を変更できるようにします。\r\n神器以外にも設定できますし、2倍以外にも設定できます。\r\nリストにないものはディフォルトの動作になります。\r\n不思議なことに、FE7Jや他とは違い、FE7Uでは特効ダメージは3倍ではなく、すべて2倍がディフォルトの動作のようです。
+INFO.en=Change Effectiveness damage coefficient of Holy weapon.\r\nAllows you to Change Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.\r\nAnything not in the list will be the default behavior.\r\nCuriously, unlike the FE7J and others, the FE7U does not triple the effectiveness damage, but all seem to be twice the default behavior.
+
+NAME.zh=改变武器的特殊效果改变伤害系数(Editor)
+INFO.zh=轻松改变双胞胎神圣人物的特殊伤害系数。\r\n允许您更改每个指定项目ID的特殊损坏系数。\r\n除了神圣的宝藏之外你可以设置它，你可以设置它而不是双倍。

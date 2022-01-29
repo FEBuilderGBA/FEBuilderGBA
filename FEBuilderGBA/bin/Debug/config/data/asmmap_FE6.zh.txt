@@ -1449,3 +1449,11 @@
 080164bc	GetItemResBonus
 080184D0	GetUnitLuck
 080164e4	GetItemLckBonus
+08024844	BattleLoadDefense
+0802489c	BattleLoadAttack
+080248e8	BattleLoadAS
+08024920	BattleLoadHit
+08024958	BattleLoadAvoid
+08024988	BattleLoadCrit
+080249c4	BattleLoadDodge
+08016a10	IsWeaponEffective

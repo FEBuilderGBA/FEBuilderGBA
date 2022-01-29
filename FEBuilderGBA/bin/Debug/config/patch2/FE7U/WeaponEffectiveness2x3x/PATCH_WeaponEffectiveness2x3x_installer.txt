@@ -1,0 +1,17 @@
+NAME=武器の特効効果ダメージ係数を変更する(Install)
+NAME.en=Change Effectiveness damage coefficient of the weapon(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x28B48=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_WeaponEffectiveness2x3x.txt
+EA=install.event
+
+
+AUTHOR=7743
+INFO=神器の特効ダメージ係数を簡単に変更します。\r\n指定したアイテムIDごとに特攻ダメージ係数を変更できるようにします。\r\n神器以外にも設定できますし、2倍以外にも設定できます。
+INFO.en=Change Effectiveness damage coefficient of Holy weapon.\r\nAllows you to Change Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.
+
+NAME.zh=改变武器的特殊效果改变伤害系数(Editor)
+INFO.zh=轻松改变双胞胎神圣人物的特殊伤害系数。\r\n允许您更改每个指定项目ID的特殊损坏系数。\r\n除了神圣的宝藏之外你可以设置它，你可以设置它而不是双倍。

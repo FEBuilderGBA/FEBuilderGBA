@@ -1,0 +1,5 @@
+Table=$30
+Loop=$02
+TrueExit=$1C
+FalseExit=$0E
+Exit=$28
