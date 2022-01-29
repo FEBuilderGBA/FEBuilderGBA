@@ -1,0 +1,20 @@
+
+PUSH
+//ORG 0x2FE14	//{J}
+ORG 0x2FEC4	//{U}
+jumpToHack(MultiVulnarary)
+POP
+
+ALIGN 4
+MultiVulnarary:
+#incbin "MultiVulnarary.dmp"
+POIN MultiVulnararyTable
+WORD 10                     //Default recovery value
+
+ALIGN 4
+MultiVulnararyTable:
+BYTE 0x6C 10
+
+BYTE 0x00 0x00 //term
+
+ALIGN 4

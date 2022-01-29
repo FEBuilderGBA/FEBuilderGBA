@@ -1,0 +1,16 @@
+NAME=複数のきずぐすりを設定する(Install)
+NAME.en=Multiple Vulnarary(Installer)
+NAME.zh=Multiple Vulnarary(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x2FEC4=0x00 0x4B
+EDIT_PATCH:01=PATCH_MultiVulnararyEditor.txt
+
+EA=Install.event
+AUTHOR=7743
+
+
+INFO=別のアイテムIDで作成した傷薬の回復量を10以外に設定することができます。
+INFO.en=This patch allows you to set the recovery amount of Vulnarary created with another item ID to something other than 10.
+INFO.zh=This patch allows you to set the recovery amount of Vulnarary created with another item ID to something other than 10.

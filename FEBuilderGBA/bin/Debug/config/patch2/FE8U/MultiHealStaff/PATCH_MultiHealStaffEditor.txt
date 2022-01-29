@@ -1,0 +1,30 @@
+NAME=複数の回復の杖の回復量を設定する(Editor)
+NAME.en=Set the recovery amount of multiple heal staff(Editor)
+NAME.zh=Set the recovery amount of multiple heal staff(Editor)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x16FBC=0x00 0x48
+
+AUTHOR=7743
+
+INFO=回復の杖の回復量を個別に設定できるようにします。\r\nリストにマッチしない場合は、ディフォルトの回復量が利用されます。\r\nリストは上から探索し、最初にマッチしたものを利用します。(特定のクラスが利用した時だけ、杖の回復量を増やしたい場合は、それをリストの先頭に設置してください。)
+INFO.en=Allows you to set the recovery amount of the recovery staff individually.\r\nIf it does not match the list, the default recovery amount is used.\r\nThe list is searched from the top and the first match is used.(If you want to increase the amount of staff recovery only when used by a particular class, place it at the top of the list.)
+INFO.zh=Allows you to set the recovery amount of the recovery staff individually.\r\nIf it does not match the list, the default recovery amount is used.\r\nThe list is searched from the top and the first match is used.(If you want to increase the amount of staff recovery only when used by a particular class, place it at the top of the list.)
+
+
+POINTER=$FGREP4END MultiHealStaff.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+B1:DECIMAL=HealValue
+B2:UNIT=Unit(00=ANY)
+B3:CLASS=Class(00=ANY)

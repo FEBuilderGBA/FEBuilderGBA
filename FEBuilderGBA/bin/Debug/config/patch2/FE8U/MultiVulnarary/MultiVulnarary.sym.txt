@@ -1,0 +1,6 @@
+Table=$60
+Loop=$22
+NotFound=$34
+Found=$30
+Exit=$36
+DeaultValue=$64

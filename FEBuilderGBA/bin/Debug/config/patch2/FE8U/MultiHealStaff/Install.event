@@ -1,0 +1,27 @@
+
+#ifndef jumpToHack_r0//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#endif //jumpToHack_r0
+
+PUSH
+//ORG 0x16D64	//{J}
+ORG 0x16FBC	//{U}
+jumpToHack_r0(MultiHealStaff)
+POP
+
+ALIGN 4
+MultiHealStaff:
+#incbin "MultiHealStaff.dmp"
+POIN MultiHealStaffTable
+
+ALIGN 4
+MultiHealStaffTable:
+BYTE 0x4B 10 0x00 0x00
+BYTE 0x4C 20 0x00 0x00
+BYTE 0x4D 80 0x00 0x00
+BYTE 0x4E 10 0x00 0x00
+BYTE 0x4F 10 0x00 0x00
+
+WORD 0x00 //term
+
+ALIGN 4
