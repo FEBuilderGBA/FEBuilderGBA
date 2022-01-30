@@ -45,6 +45,7 @@ namespace FEBuilderGBA
             g_Cache_m4a_hq_mixer = Cache_m4a_hq_mixer.NoCache;
             g_Cache_SoundRoomExpands = Cache_SoundRoomExpands.NoCache;
             g_Cache_NullifyMovPatch = NullifyMovPatch.NoCache;
+            g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2081,6 +2082,50 @@ namespace FEBuilderGBA
                 return NullifyMovPatch.SkillSystems;
             }
             return NullifyMovPatch.NO;
+        }
+
+        //アイテム利用効果の拡張パッチ
+        public enum ItemUsingExtends
+        {
+            NO,             //なし
+            IER,
+            NoCache = (int)NO_CACHE
+        };
+        static ItemUsingExtends g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
+        public static ItemUsingExtends ItemUsingExtendsPatch()
+        {
+            if (g_Cache_ItemUsingExtendsPatch == ItemUsingExtends.NoCache)
+            {
+                g_Cache_ItemUsingExtendsPatch = ItemUsingExtendsPatchLow();
+            }
+            return g_Cache_ItemUsingExtendsPatch;
+        }
+        static ItemUsingExtends ItemUsingExtendsPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="IER",	ver = "FE8U", addr = 0x28E80,data = new byte[]{0x03, 0x4B, 0x14, 0x22, 0x50, 0x43, 0x40, 0x18, 0xC0, 0x18, 0x00, 0x68, 0x70, 0x47, 0x00, 0x00}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "IER")
+                {
+                    return ItemUsingExtends.IER;
+                }
+            }
+            return ItemUsingExtends.NO;
         }
     }
 }

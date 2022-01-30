@@ -3194,10 +3194,10 @@ Don't Use TSA
 Use Compressed TSA
 
 :圧縮ヘッダ付きTSAを利用する
-Use TSA with Compressed Header
+Use Compressed TSA with Header
 
 :無圧縮ヘッダ付きTSAを利用する
-Use TSA with Uncompressed Header
+Use Uncompressed TSA with Header
 
 :無圧縮TSAを利用する
 Use Uncompressed TSA

@@ -35,7 +35,7 @@
             this.PromotionItemExplain = new System.Windows.Forms.GroupBox();
             this.PromotionItemLink = new System.Windows.Forms.Label();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
-            this.ERROR_NOT_FOUND = new System.Windows.Forms.Label();
+            this.X_NOT_FOUND = new System.Windows.Forms.Label();
             this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.X_IER_PATCH = new System.Windows.Forms.Label();
             this.L_0_ASM_SWITCH = new FEBuilderGBA.TextBoxEx();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
@@ -82,11 +83,12 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.X_IER_PATCH);
             this.panel4.Controls.Add(this.StatBoosterItemExplain);
             this.panel4.Controls.Add(this.PromotionItemExplain);
             this.panel4.Controls.Add(this.L_0_ASM_SWITCH);
             this.panel4.Controls.Add(this.L_0_COMBO);
-            this.panel4.Controls.Add(this.ERROR_NOT_FOUND);
+            this.panel4.Controls.Add(this.X_NOT_FOUND);
             this.panel4.Controls.Add(this.J_0_ASM_THUMB);
             this.panel4.Controls.Add(this.P0);
             this.panel4.Location = new System.Drawing.Point(295, 72);
@@ -144,15 +146,15 @@
             this.L_0_COMBO.Size = new System.Drawing.Size(908, 26);
             this.L_0_COMBO.TabIndex = 117;
             // 
-            // ERROR_NOT_FOUND
+            // X_NOT_FOUND
             // 
-            this.ERROR_NOT_FOUND.AutoSize = true;
-            this.ERROR_NOT_FOUND.ForeColor = System.Drawing.Color.Red;
-            this.ERROR_NOT_FOUND.Location = new System.Drawing.Point(3, 163);
-            this.ERROR_NOT_FOUND.Name = "ERROR_NOT_FOUND";
-            this.ERROR_NOT_FOUND.Size = new System.Drawing.Size(272, 18);
-            this.ERROR_NOT_FOUND.TabIndex = 118;
-            this.ERROR_NOT_FOUND.Text = "このバージョンのFEでは利用しません。";
+            this.X_NOT_FOUND.AutoSize = true;
+            this.X_NOT_FOUND.ForeColor = System.Drawing.Color.Red;
+            this.X_NOT_FOUND.Location = new System.Drawing.Point(3, 163);
+            this.X_NOT_FOUND.Name = "X_NOT_FOUND";
+            this.X_NOT_FOUND.Size = new System.Drawing.Size(272, 18);
+            this.X_NOT_FOUND.TabIndex = 118;
+            this.X_NOT_FOUND.Text = "このバージョンのFEでは利用しません。";
             // 
             // J_0_ASM_THUMB
             // 
@@ -371,6 +373,17 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
+            // X_IER_PATCH
+            // 
+            this.X_IER_PATCH.AutoSize = true;
+            this.X_IER_PATCH.ForeColor = System.Drawing.Color.Red;
+            this.X_IER_PATCH.Location = new System.Drawing.Point(3, 197);
+            this.X_IER_PATCH.Name = "X_IER_PATCH";
+            this.X_IER_PATCH.Size = new System.Drawing.Size(470, 18);
+            this.X_IER_PATCH.TabIndex = 122;
+            this.X_IER_PATCH.Text = "IERがインストールされているため、パッチ画面から設定してください。";
+            this.X_IER_PATCH.Click += new System.EventHandler(this.ERROR_IER_PATCH_Click);
+            // 
             // L_0_ASM_SWITCH
             // 
             this.L_0_ASM_SWITCH.ErrorMessage = "";
@@ -472,12 +485,13 @@
         private System.Windows.Forms.Button SwitchListExpandsButton;
         private System.Windows.Forms.Label J_0_ASM_THUMB;
         private System.Windows.Forms.ComboBox L_0_COMBO;
-        private System.Windows.Forms.Label ERROR_NOT_FOUND;
+        private System.Windows.Forms.Label X_NOT_FOUND;
         private TextBoxEx L_0_ASM_SWITCH;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox PromotionItemExplain;
         private System.Windows.Forms.Label PromotionItemLink;
         private System.Windows.Forms.GroupBox StatBoosterItemExplain;
         private System.Windows.Forms.Label StatBoosterItemLink;
+        private System.Windows.Forms.Label X_IER_PATCH;
     }
 }

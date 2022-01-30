@@ -20,6 +20,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.PromotionItemLink);
             StatBoosterItemExplain.Hide();
             InputFormRef.markupJumpLabel(this.StatBoosterItemLink);
+            InputFormRef.markupJumpLabel(this.X_IER_PATCH);
 
             this.InputFormRef = Init(this);
             this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
@@ -177,15 +178,26 @@ namespace FEBuilderGBA
                 this.AddressList.Items.Clear();
                 this.SwitchListExpandsButton.Hide();
                 this.WriteButton.Hide();
-                this.ERROR_NOT_FOUND.Show();
+
+                if (PatchUtil.ItemUsingExtendsPatch() == PatchUtil.ItemUsingExtends.IER)
+                {
+                    this.X_NOT_FOUND.Hide();
+                    this.X_IER_PATCH.Show();
+                    return;
+                }
+
+                this.X_NOT_FOUND.Show();
+                this.X_IER_PATCH.Hide();
                 return;
             }
 
             this.SwitchListExpandsButton.Show();
             this.WriteButton.Show();
-            this.ERROR_NOT_FOUND.Hide();
+            this.X_NOT_FOUND.Hide();
+            this.X_IER_PATCH.Hide();
 
         }
+
 
         static uint ReInit(int selected,InputFormRef ifr)
         {
@@ -410,6 +422,12 @@ namespace FEBuilderGBA
         {
             uint itemid = U.atoh(this.AddressList.Text);
             InputFormRef.JumpForm<ItemStatBonusesForm>(itemid);
+        }
+
+        private void ERROR_IER_PATCH_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("ItemEffectRevamp", 0, PatchForm.SortEnum.SortName);
         }
 
     }
