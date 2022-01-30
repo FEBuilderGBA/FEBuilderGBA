@@ -1,0 +1,8 @@
+RandomBG=$32
+CheckB=$08
+ExitRandomMode=$38
+CheckStart=$10
+CheckSelect=$18
+CheckUp=$20
+CheckDown=$28
+Exit=$40

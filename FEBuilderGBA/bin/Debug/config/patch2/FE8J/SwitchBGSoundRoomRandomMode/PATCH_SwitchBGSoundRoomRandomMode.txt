@@ -1,0 +1,15 @@
+NAME=サウンドルームのランダム再生モードのUI改善
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xB4A88=0x00 0x48
+EA=Install.event
+
+AUTHOR=7743
+INFO=サウンドルームでスタートボタンを押したときのランダム再生モードのUIを少し変更します。\r\nバニラでは、Ｂボタンを押すとサウンドルーム自体が終了してしまいますが、これをスタートボタンの曲名のリストに戻す処理に変更します。\r\nまた、上下キー及びＡボタンを押した時に、サウンドルームのBGをランダムに変更します。(画像の描画には、サウンドルームの背景を表示するパッチが必要です。)
+
+NAME.en=Change UI for random play mode in Sound Room
+INFO.en=This patch makes a small change to the UI of the random playback mode when the start button is pressed in the sound room. \r\nIn vanilla, pressing the B button quits the sound room itself, but this will be changed back to a list of song titles on the start button.\r\nThis will be replaced with a process that returns to the Start button's list of song titles. Also, the BG of the sound room will be changed randomly when the Up/Down keys and A button are pressed. (A patch to display the sound room background is required to draw the image.)
+
+NAME.zh=Change UI for random play mode in Sound Room
+INFO.zh=This patch makes a small change to the UI of the random playback mode when the start button is pressed in the sound room. \r\nIn vanilla, pressing the B button quits the sound room itself, but this will be changed back to a list of song titles on the start button.\r\nThis will be replaced with a process that returns to the Start button's list of song titles. Also, the BG of the sound room will be changed randomly when the Up/Down keys and A button are pressed. (A patch to display the sound room background is required to draw the image.)

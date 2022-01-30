@@ -1,0 +1,20 @@
+#ifndef jumpToHack_r0//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+#endif //jumpToHack_r0
+
+PUSH
+//ORG 0xB48E8	//{J}	//dummy?
+ORG 0xAFCD0	//{U}	//dummy?
+jumpToHack_r0(SwitchBGSoundRoomRandomMode)
+
+//ORG 0xB4A88	//{J}
+ORG 0xAFE60	//{U}
+jumpToHack_r0(SwitchBGSoundRoomRandomMode)
+
+POP
+
+ALIGN 4
+SwitchBGSoundRoomRandomMode:
+#incbin "SwitchBGSoundRoomRandomMode.dmp"
+
+ALIGN 4
