@@ -3736,7 +3736,7 @@ namespace FEBuilderGBA
 
                 uint asmPointer = Program.ROM.u32(ar.addr + 8);
                 string dummy;
-                string asmName = Program.AsmMapFileAsmCache.GetASMName(asmPointer, false, out dummy);
+                string asmName = Program.AsmMapFileAsmCache.GetASMName(asmPointer, AsmMapFileAsmCache.ASMTYPE.THUMB, out dummy);
                 if (asmName == "")
                 {
                     text = "(ASM:" + U.To0xHexString(U.toOffset(asmPointer)) + ")";
@@ -3838,7 +3838,7 @@ namespace FEBuilderGBA
 
                 uint asmPointer = Program.ROM.u32(addr + 8);
                 string dummy;
-                string asmName = Program.AsmMapFileAsmCache.GetASMName(asmPointer, false, out dummy);
+                string asmName = Program.AsmMapFileAsmCache.GetASMName(asmPointer, AsmMapFileAsmCache.ASMTYPE.THUMB, out dummy);
                 if (asmName == "")
                 {
                     text = "(ASM:" + U.To0xHexString(U.toOffset(asmPointer)) + ")";

@@ -825,11 +825,11 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {//PROC
-                Program.AsmMapFileAsmCache.GetASMName(v, true, out errormessage);
+                Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.NONE, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_ASM)
             {//ASM
-                Program.AsmMapFileAsmCache.GetASMName(v, false, out errormessage);
+                Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.THUMB, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.MEMORYSLOT)
             {//MemorySlot
@@ -1246,7 +1246,7 @@ namespace FEBuilderGBA
                     else if (arg.Type == EventScript.ArgType.POINTER_ASM)
                     {//ASM
                         string dummy;
-                        text = Program.AsmMapFileAsmCache.GetASMName(v, false, out dummy);
+                        text = Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.THUMB, out dummy);
 
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 

@@ -2412,7 +2412,19 @@ namespace FEBuilderGBA
             }
             if (linktype == "ASM")
             {//ASM関数とリンク.
-                bool isSWITCH = (arg1 == "SWITCH");
+                AsmMapFileAsmCache.ASMTYPE asmtype;
+                if (arg1 == "SWITCH")
+                {
+                    asmtype = AsmMapFileAsmCache.ASMTYPE.SWITCH;
+                }
+                else if (arg1 == "NOWARNING")
+                {
+                    asmtype = AsmMapFileAsmCache.ASMTYPE.NONE;
+                }
+                else
+                {
+                    asmtype = AsmMapFileAsmCache.ASMTYPE.THUMB;
+                }
 
                 //元データが変更されたら、リンクデータも変更する.
                 if (link_info is TextBoxEx)
@@ -2427,7 +2439,7 @@ namespace FEBuilderGBA
                         }
 
                         string errormessage;
-                        string text = Program.AsmMapFileAsmCache.GetASMName(id, isSWITCH, out errormessage);
+                        string text = Program.AsmMapFileAsmCache.GetASMName(id, asmtype, out errormessage);
                         if (text == "" && errormessage == "")
                         {
                             link_object.Hide();

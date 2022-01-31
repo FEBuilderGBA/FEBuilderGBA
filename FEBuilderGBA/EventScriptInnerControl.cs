@@ -931,11 +931,11 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {//PROC
-                text = Program.AsmMapFileAsmCache.GetASMName(v, true, out errormessage);
+                text = Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.NONE, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_ASM)
             {//ASM
-                text = Program.AsmMapFileAsmCache.GetASMName(v, false, out errormessage);
+                text = Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.THUMB, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
             {//EVENT
@@ -2888,13 +2888,13 @@ namespace FEBuilderGBA
                     {//PROC
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, true, out dummy));
+                        sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.NONE, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_ASM)
                     {//ASM
                         sb.Append(" ");
                         string dummy;
-                        sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, false, out dummy));
+                        sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, AsmMapFileAsmCache.ASMTYPE.THUMB, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
                     {//EVENT

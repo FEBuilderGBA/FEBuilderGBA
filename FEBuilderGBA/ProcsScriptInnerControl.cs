@@ -260,11 +260,11 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {
-                text = Program.AsmMapFileAsmCache.GetASMName(value, true, out errorMessage);
+                text = Program.AsmMapFileAsmCache.GetASMName(value, AsmMapFileAsmCache.ASMTYPE.NONE, out errorMessage);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_ASM)
             {
-                text = Program.AsmMapFileAsmCache.GetASMName(value, false, out errorMessage);
+                text = Program.AsmMapFileAsmCache.GetASMName(value, AsmMapFileAsmCache.ASMTYPE.THUMB, out errorMessage);
             }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC

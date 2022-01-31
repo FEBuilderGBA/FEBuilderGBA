@@ -38,7 +38,7 @@ namespace FEBuilderGBA
             if (U.isSafetyOffset(addr))
             {
                 addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                string comment = Program.AsmMapFileAsmCache.GetASMName(U.toPointer(addr + 1), false, out errormessage);
+                string comment = Program.AsmMapFileAsmCache.GetASMName(U.toPointer(addr + 1), AsmMapFileAsmCache.ASMTYPE.NONE, out errormessage);
                 name = addr.ToString("X");
                 if (comment.Length > 0)
                 {

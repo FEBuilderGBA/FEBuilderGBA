@@ -5116,7 +5116,11 @@ namespace FEBuilderGBA
             for (int i = 0; i < str.Length; i++)
             {
                 char c = str[i];
-                if (U.isalhpa(c))
+                if (c == ' ')
+                {
+                    sb.Append("[_SP]");
+                }
+                else if (U.isalhpa(c))
                 {
                     sb.Append("[_");
                     sb.Append(c);

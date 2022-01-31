@@ -561,7 +561,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_ASM)
             {
-                text = Program.AsmMapFileAsmCache.GetASMName(value, false, out errormessage);
+                text = Program.AsmMapFileAsmCache.GetASMName(value, AsmMapFileAsmCache.ASMTYPE.THUMB, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
             {

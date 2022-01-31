@@ -446,7 +446,7 @@ namespace FEBuilderGBA
                 num = DisassemblerTrumb.ProgramAddrToPlain(num);
             }
             string errorMessage;
-            string name = GetASMName(num, true, out errorMessage);
+            string name = GetASMName(num, ASMTYPE.NONE, out errorMessage);
             if (errorMessage == "")
             {
                 return name;
@@ -456,7 +456,7 @@ namespace FEBuilderGBA
         public string GetProcsName(uint num)
         {
             string errorMessage;
-            string name = GetASMName(num, true, out errorMessage);
+            string name = GetASMName(num, ASMTYPE.NONE, out errorMessage);
             if (errorMessage == "")
             {
                 if (name.IndexOf("Procs ") == 0)
@@ -467,7 +467,14 @@ namespace FEBuilderGBA
             return "";
         }
 
-        public string GetASMName(uint num,bool isSWITCH, out string errorMessage)
+        public enum ASMTYPE
+        {
+             THUMB
+            ,SWITCH
+            ,NONE
+        };
+
+        public string GetASMName(uint num, ASMTYPE asmtype, out string errorMessage)
         {
             if (num <= 0)
             {
@@ -476,7 +483,7 @@ namespace FEBuilderGBA
             }
 
             uint plainAddr = DisassemblerTrumb.ProgramAddrToPlain(num);
-            if (isSWITCH)
+            if (asmtype == ASMTYPE.SWITCH)
             {
                 if (plainAddr != num)
                 {//逆に危険 +1してはいけない
@@ -484,7 +491,7 @@ namespace FEBuilderGBA
                     return R._("危険なポインタ");
                 }
             }
-            else
+            else if (asmtype == ASMTYPE.THUMB)
             {
                 if (plainAddr == num)
                 {//危険 +1 して、Thumbにするべき
