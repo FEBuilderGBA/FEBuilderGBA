@@ -1457,3 +1457,4 @@
 08024988	BattleLoadCrit
 080249c4	BattleLoadDodge
 08016a10	IsWeaponEffective
+0806BA34	ClearGlobalTriggerState	

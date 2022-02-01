@@ -293,20 +293,20 @@
 080BFE60	divisionRound down (Div)	{U}
 080C07CC	divisionRound down (Div)	{J}
 080BFC88	Division 2Round down (Div)	{U}
-0807A0A0	Flag setting function	void	r 0: Flag flag: FLAG	{J}
-080798D0	Flag setting function	void	r 0: Flag flag: FLAG	{U}
-0807A0B4	Function to flag	void	r 0: Decrease flag: FLAG	{J}
-080798E4	Function to flag	void	r 0: Decrease flag: FLAG	{U}
-0807A0C8	Flag status confirmation function	r 0: Result BOOL	r 0: Flag to check: FLAG	{J}
-080798F8	Flag status confirmation function	r 0: Result BOOL	r 0: Flag to check: FLAG	{U}
+0807A0A0	Flag setting function	void	r0: Flag flag: FLAG	{J}
+0807A0E0	Flag setting function	void	r0: Flag flag: FLAG	{U}
+0807A0B4	Function to flag	void	r0: Decrease flag: FLAG	{J}
+080798E4	Function to flag	void	r0: Decrease flag: FLAG	{U}
+0807A0C8	Flag status confirmation function	r0: Result BOOL	r0: Flag to check: FLAG	{J}
+080798F8	Flag status confirmation function	r0: Result BOOL	r0: Flag to check: FLAG	{U}
 080BF0D8	Sound effect sound function	void	r0= Tone number to sound: SOUND	{J}
 080BE594	Sound effect sound function	void	r0= Tone number to sound: SOUND	{U}
-0802AA80	Experience value + 10 Function	void	r 0: Unit giving experience value: UNIT	{J}
-0802A5D0	Experience value + 10 Function	void	r 0: Unit giving experience value: UNIT	{U}
-08031a5c	A function that returns the address of the map setting from the map number	r 0: Address of map setting	r 0: Map ID you want to check: MAPCHAPTER	{J}
-08031574	A function that returns the address of the map setting from the map number	r 0: Address of map setting	r 0: Map ID you want to check: MAPCHAPTER	{U}
-080043d4	6CStruct script load	void	r 0: 6 CStruct address: 6CSTRUCT	r1= Unknown	{J}
-080044F8	6CStruct script load	void	r 0: 6 CStruct address: 6CSTRUCT	r1= Unknown	{U}
+0802AA80	Experience value + 10 Function	void	r0: Unit giving experience value: UNIT	{J}
+0802A5D0	Experience value + 10 Function	void	r0: Unit giving experience value: UNIT	{U}
+08031a5c	A function that returns the address of the map setting from the map number	r0: Address of map setting	r0: Map ID you want to check: MAPCHAPTER	{J}
+08031574	A function that returns the address of the map setting from the map number	r0: Address of map setting	r0: Map ID you want to check: MAPCHAPTER	{U}
+080043d4	6CStruct script load	void	r0: 6 CStruct address: 6CSTRUCT	r1= Unknown	{J}
+080044F8	6CStruct script load	void	r0: 6 CStruct address: 6CSTRUCT	r1= Unknown	{U}
 08009E78	Write numbers where you can refer to in conversation @0080@0005	void	r0= Number you want to display	{J}
 08009FE8	Write numbers where you can refer to in conversation @0080@0005	void	r0= Number you want to display	{U}
 0804AA3C	Show menu	void	MENUDEF	mazo	{J}
@@ -5212,3 +5212,5 @@
 08016c80	IsWeaponEffective	{J}
 08067ddc	IsHealStaffBGM	{U}
 080685c8	IsHealStaffBGM	{J}
+0807A0A0	ClearGlobalTriggerState	{J}
+080798D0	ClearGlobalTriggerState	{U}

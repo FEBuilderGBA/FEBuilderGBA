@@ -287,7 +287,7 @@
 080C07CC	师往下(Div)	{J}
 080BFC88	2区往下(Div)	{U}
 0807A0A0	标志设置功能	void	r 0：标志标志：标志	{J}
-080798D0	标志设置功能	void	r 0：标志标志：标志	{U}
+0807A0E0	标志设置功能	void	r 0：标志标志：标志	{U}
 0807A0B4	功能标志	void	r 0：减少标志：标志	{J}
 080798E4	功能标志	void	r 0：减少标志：标志	{U}
 0807A0C8	标志状态确认功能	r 0：Result BOOL	r 0：要检查的标志：标志	{J}
@@ -5186,3 +5186,5 @@
 08016c80	IsWeaponEffective	{J}
 08067ddc	IsHealStaffBGM	{U}
 080685c8	IsHealStaffBGM	{J}
+0807A0A0	ClearGlobalTriggerState	{J}
+080798D0	ClearGlobalTriggerState	{U}

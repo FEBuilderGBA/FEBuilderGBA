@@ -329,7 +329,7 @@
 0807A0B4	フラグを立てる関数	void	r0=立てるフラグ:FLAG	{J}
 080798E4	フラグを立てる関数	void	r0=立てるフラグ:FLAG	{U}
 0807A0A0	フラグを下す関数	void	r0=下すフラグ:FLAG	{J}
-080798D0	フラグを下す関数	void	r0=下すフラグ:FLAG	{U}
+0807A0E0	フラグを下す関数	void	r0=下すフラグ:FLAG	{U}
 0807A0C8	フラグ状態確認関数	RET=結果BOOL	r0=確認するフラグ:FLAG	{J}
 080798F8	フラグ状態確認関数	RET=結果BOOL	r0=確認するフラグ:FLAG	{U}
 080BF0D8	効果音を鳴らす関数	void	r0=鳴らしたい音番号:SOUND	{J}
@@ -5500,3 +5500,5 @@
 08016c80	IsWeaponEffective	{J}
 08067ddc	IsHealStaffBGM	{U}
 080685c8	IsHealStaffBGM	{J}
+0807A0A0	ClearGlobalTriggerState	{J}
+080798D0	ClearGlobalTriggerState	{U}
