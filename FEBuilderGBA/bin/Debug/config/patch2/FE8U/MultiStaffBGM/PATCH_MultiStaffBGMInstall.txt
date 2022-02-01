@@ -1,0 +1,16 @@
+NAME=杖BGMを複数設定する(Install)
+NAME.en=Set multiple Staff BGMs(Installer)
+NAME.zh=Set multiple Staff BGMs(Installer)
+TYPE=EA
+TAG=#ENGINE #SONG #MUSIC #BGM
+
+PATCHED_IF:0x7285C=0x00 0x4B
+EDIT_PATCH:01=PATCH_MultiStaffBGMEditor.txt
+
+EA=Install.event
+AUTHOR=7743
+
+
+INFO=杖BGMを、回復と癒しBGM以外に設定できるようにします。
+INFO.en=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.
+INFO.zh=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.

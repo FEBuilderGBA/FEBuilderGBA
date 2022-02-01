@@ -5210,3 +5210,5 @@
 0807EF90	Asset evaluation at Lyn Edtion	Set of flags for jewels given on ch15	{U}
 08016820	IsWeaponEffective	{U}
 08016c80	IsWeaponEffective	{J}
+08067ddc	IsHealStaffBGM	{U}
+080685c8	IsHealStaffBGM	{J}

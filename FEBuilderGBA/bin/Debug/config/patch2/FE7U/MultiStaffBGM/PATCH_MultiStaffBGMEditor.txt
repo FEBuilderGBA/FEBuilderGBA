@@ -1,0 +1,32 @@
+NAME=杖BGMを複数設定する(Editor)
+NAME.en=Set multiple Staff BGMs(Editor)
+NAME.zh=Set multiple Staff BGMs(Editor)
+TYPE=STRUCT
+TAG=#ENGINE #SONG #MUSIC #BGM
+
+IF:0x68094=0x00 0x4B
+
+AUTHOR=7743
+
+INFO=杖BGMを、回復と癒しBGM以外に設定できるようにします。\r\nリストは上から順番にマッチさせていき、最初に見つかったものを採用します。\r\n特定のユニットやクラスで挙動を変えたい場合は、それをリストの上の方に設置してください。\r\nリストにマッチしなかった場合は、ディフォルトのBGMが再生されます。
+INFO.en=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.\r\nThe list will be matched from top to bottom, picking the one found first.\r\nIf you want to change the behavior of a particular unit or class, place it at the top of the list.\r\nIf the list is not matched, the default BGM will be played.
+INFO.zh=This patch allows you to set the staff Battle BGM to something other than Healing and Curing BGM.\r\nThe list will be matched from top to bottom, picking the one found first.\r\nIf you want to change the behavior of a particular unit or class, place it at the top of the list.\r\nIf the list is not matched, the default BGM will be played.
+
+
+POINTER=$FGREP4END MultiStaffBGM.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+LISTNAME=$B2:ITEM
+
+//データを定義します
+W0:SONG=BGM
+B2:ITEM=Staff Item
+B3:UNIT=Unit(00=ANY)
+B4:CLASS=Class(00=ANY)
+B5:$COMBO combo.Allegiance.txt=Allegiance
+W6:FLAG=Flag(00=ANY)

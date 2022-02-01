@@ -1,0 +1,12 @@
+Table=$A0
+Loop=$0A
+NotFound=$76
+CheckItem=$12
+CheckUnit=$18
+CheckClass=$26
+CheckAllegiance=$34
+CheckAllegiance_Player=$44
+CheckAllegiance_NPC=$4C
+CheckAllegiance_Enemy=$58
+CheckFlag=$5E
+Found=$6E

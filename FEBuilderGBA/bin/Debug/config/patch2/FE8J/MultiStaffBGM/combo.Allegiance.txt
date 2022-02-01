@@ -1,0 +1,4 @@
+00=ANY
+01=Player
+02=NPC
+03=Enemy

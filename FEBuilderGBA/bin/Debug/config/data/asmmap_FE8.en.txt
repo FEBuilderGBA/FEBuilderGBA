@@ -12770,8 +12770,8 @@ r3=X tile position of menu of right	{U}
 0807AD1C	GenerateSummonedCharacter	{U}
 0203AB40    :0203AB44	Skill animation display Use as work memory for skill animation display {J}	
 0203AB48    :0203AD3C	Extended convoy Use in patch to expand convoy 250 (250 * 2 \u003d 500 bytes) {J}	
-08074A4C	IsHealStaff	{J}
-08072570	IsHealStaff	{U}
+08074A4C	IsHealStaffBGM	{J}
+08072570	IsHealStaffBGM	{U}
 08014BF8	Fade out music at the beginning of the clear turn list	{J}
 08014BD0	Fade out music at the beginning of the clear turn list	{U}
 0203AB40    :0203AB43	(Old) Skill animation display Use as work memory for skill animation display {J}	

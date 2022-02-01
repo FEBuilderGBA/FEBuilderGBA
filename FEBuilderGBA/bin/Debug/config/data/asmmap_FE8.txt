@@ -12706,8 +12706,8 @@
 080A3E4C	LoadSoundRoomEnableList	{U}
 080A3EA4	SaveSoundRoomEnableList_Overwrite	{U}
 080A3F08	SaveSoundRoomEnableList	r1=SongID	{U}
-08074A4C	IsHealStaff	{J}
-08072570	IsHealStaff	{U}
+08074A4C	IsHealStaffBGM	{J}
+08072570	IsHealStaffBGM	{U}
 08A13020	:08A13043	Move Sound: Walk	{J}
 08A13044	:08A13087	Move Sound: Armor	{J}
 08A13088	:08A130B5	Move Sound: Tarvos horse	{J}
