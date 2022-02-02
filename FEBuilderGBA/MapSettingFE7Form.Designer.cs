@@ -33,6 +33,8 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_129_COMBO = new System.Windows.Forms.ComboBox();
+            this.L_128_COMBO = new System.Windows.Forms.ComboBox();
             this.L_135_COMBO = new System.Windows.Forms.ComboBox();
             this.B135 = new System.Windows.Forms.NumericUpDown();
             this.J_135 = new System.Windows.Forms.Label();
@@ -437,6 +439,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.L_129_COMBO);
+            this.panel3.Controls.Add(this.L_128_COMBO);
             this.panel3.Controls.Add(this.L_135_COMBO);
             this.panel3.Controls.Add(this.B135);
             this.panel3.Controls.Add(this.J_135);
@@ -681,6 +685,220 @@
             this.panel3.Size = new System.Drawing.Size(1628, 939);
             this.panel3.TabIndex = 189;
             // 
+            // L_129_COMBO
+            // 
+            this.L_129_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_129_COMBO.FormattingEnabled = true;
+            this.L_129_COMBO.Items.AddRange(new object[] {
+            "00=0章",
+            "01=0章外伝",
+            "02=1章",
+            "03=1章外伝",
+            "04=2章",
+            "05=2章外伝",
+            "06=3章",
+            "07=3章外伝",
+            "08=4章",
+            "09=4章外伝",
+            "0A=5章",
+            "0B=5章外伝",
+            "0C=6章",
+            "0D=6章外伝",
+            "0E=7章",
+            "0F=7章外伝",
+            "10=8章",
+            "11=8章外伝",
+            "12=9章",
+            "13=9章外伝",
+            "14=10章",
+            "15=10章外伝",
+            "16=11章",
+            "17=11章外伝",
+            "18=12章",
+            "19=12章外伝",
+            "1A=13章",
+            "1B=13章外伝",
+            "1C=14章",
+            "1D=14章外伝",
+            "1E=15章",
+            "1F=15章外伝",
+            "20=16章",
+            "21=16章外伝",
+            "22=17章",
+            "23=17章外伝",
+            "24=18章",
+            "25=18章外伝",
+            "26=19章",
+            "27=19章外伝",
+            "28=20章",
+            "29=20章外伝",
+            "2A=21章",
+            "2B=21章外伝",
+            "2C=22章",
+            "2D=22章外伝",
+            "2E=23章",
+            "2F=23章外伝",
+            "30=24章",
+            "31=24章外伝",
+            "32=25章",
+            "33=25章外伝",
+            "34=26章",
+            "35=26章外伝",
+            "36=27章",
+            "37=27章外伝",
+            "38=28章",
+            "39=28章外伝",
+            "3A=29章",
+            "3B=29章外伝",
+            "3C=30章",
+            "3D=30章外伝",
+            "3E=31章",
+            "3F=31章外伝",
+            "40=32章",
+            "41=32章外伝",
+            "42=33章",
+            "43=33章外伝",
+            "44=34章",
+            "45=34章外伝",
+            "46=35章",
+            "47=35章外伝",
+            "48=36章",
+            "49=36章外伝",
+            "4A=37章",
+            "4B=37章外伝",
+            "4C=38章",
+            "4D=38章外伝",
+            "4E=39章",
+            "4F=39章外伝",
+            "50=40章",
+            "51=40章外伝",
+            "52=41章",
+            "53=41章外伝",
+            "54=42章",
+            "55=42章外伝",
+            "56=43章",
+            "57=43章外伝",
+            "58=44章",
+            "59=44章外伝",
+            "5A=45章",
+            "5B=45章外伝",
+            "5C=46章",
+            "5D=46章外伝",
+            "5E=47章",
+            "5F=47章外伝"});
+            this.L_129_COMBO.Location = new System.Drawing.Point(1395, 453);
+            this.L_129_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.L_129_COMBO.Name = "L_129_COMBO";
+            this.L_129_COMBO.Size = new System.Drawing.Size(235, 26);
+            this.L_129_COMBO.TabIndex = 356;
+            // 
+            // L_128_COMBO
+            // 
+            this.L_128_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_128_COMBO.FormattingEnabled = true;
+            this.L_128_COMBO.Items.AddRange(new object[] {
+            "00=0章",
+            "01=0章外伝",
+            "02=1章",
+            "03=1章外伝",
+            "04=2章",
+            "05=2章外伝",
+            "06=3章",
+            "07=3章外伝",
+            "08=4章",
+            "09=4章外伝",
+            "0A=5章",
+            "0B=5章外伝",
+            "0C=6章",
+            "0D=6章外伝",
+            "0E=7章",
+            "0F=7章外伝",
+            "10=8章",
+            "11=8章外伝",
+            "12=9章",
+            "13=9章外伝",
+            "14=10章",
+            "15=10章外伝",
+            "16=11章",
+            "17=11章外伝",
+            "18=12章",
+            "19=12章外伝",
+            "1A=13章",
+            "1B=13章外伝",
+            "1C=14章",
+            "1D=14章外伝",
+            "1E=15章",
+            "1F=15章外伝",
+            "20=16章",
+            "21=16章外伝",
+            "22=17章",
+            "23=17章外伝",
+            "24=18章",
+            "25=18章外伝",
+            "26=19章",
+            "27=19章外伝",
+            "28=20章",
+            "29=20章外伝",
+            "2A=21章",
+            "2B=21章外伝",
+            "2C=22章",
+            "2D=22章外伝",
+            "2E=23章",
+            "2F=23章外伝",
+            "30=24章",
+            "31=24章外伝",
+            "32=25章",
+            "33=25章外伝",
+            "34=26章",
+            "35=26章外伝",
+            "36=27章",
+            "37=27章外伝",
+            "38=28章",
+            "39=28章外伝",
+            "3A=29章",
+            "3B=29章外伝",
+            "3C=30章",
+            "3D=30章外伝",
+            "3E=31章",
+            "3F=31章外伝",
+            "40=32章",
+            "41=32章外伝",
+            "42=33章",
+            "43=33章外伝",
+            "44=34章",
+            "45=34章外伝",
+            "46=35章",
+            "47=35章外伝",
+            "48=36章",
+            "49=36章外伝",
+            "4A=37章",
+            "4B=37章外伝",
+            "4C=38章",
+            "4D=38章外伝",
+            "4E=39章",
+            "4F=39章外伝",
+            "50=40章",
+            "51=40章外伝",
+            "52=41章",
+            "53=41章外伝",
+            "54=42章",
+            "55=42章外伝",
+            "56=43章",
+            "57=43章外伝",
+            "58=44章",
+            "59=44章外伝",
+            "5A=45章",
+            "5B=45章外伝",
+            "5C=46章",
+            "5D=46章外伝",
+            "5E=47章",
+            "5F=47章外伝"});
+            this.L_128_COMBO.Location = new System.Drawing.Point(1395, 423);
+            this.L_128_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.L_128_COMBO.Name = "L_128_COMBO";
+            this.L_128_COMBO.Size = new System.Drawing.Size(235, 26);
+            this.L_128_COMBO.TabIndex = 355;
+            // 
             // L_135_COMBO
             // 
             this.L_135_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -859,7 +1077,7 @@
             // 
             this.L_126_PORTRAIT_AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_126_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 361);
+            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 358);
             this.L_126_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_126_PORTRAIT_AUTO.Name = "L_126_PORTRAIT_AUTO";
             this.L_126_PORTRAIT_AUTO.Size = new System.Drawing.Size(66, 66);
@@ -3871,5 +4089,7 @@
         private System.Windows.Forms.Label J_135;
         private System.Windows.Forms.ComboBox L_135_COMBO;
         private System.Windows.Forms.Button AddressListExpandsButton_255;
+        private System.Windows.Forms.ComboBox L_129_COMBO;
+        private System.Windows.Forms.ComboBox L_128_COMBO;
     }
 }
