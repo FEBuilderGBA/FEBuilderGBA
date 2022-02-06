@@ -8,7 +8,7 @@
   
     // Re-load Miss/NoDamage palette.
     //ORG 0x6C6C0	//{U}
-    callHack_r3(BAN_ReloadPal)	//{U}
+    //callHack_r3(BAN_ReloadPal)	//{U}
     ORG 0x6E9E4	//{J}
     #define callHack_r3_FE8J(offset) "SHORT 0x4B01; BL(0xD65C8); SHORT 0xE001; POIN (offset|0x1)"	//{J}
     callHack_r3_FE8J(BAN_ReloadPal)	//{J}
