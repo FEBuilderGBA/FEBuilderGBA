@@ -859,6 +859,14 @@ lsr r1, #24
 mov r4, r0 @ XX 
 mov r5, r1 @ YY 
 
+@If the flag 0xEE is enabled, the numbers will not be drawn.
+ldr r0, =BATTLE_MAPANIMATION_NUMBERS_FLAGLink
+ldr r0, [r0]
+blh CheckEventId
+cmp r0, #0x0
+bne ExitDraw_NumberDuringBattle
+
+
 ldr r0, =0x859dabc @gProc_Battle	@{U}
 @ldr r0, =0x85C5F9C @gProc_Battle	@{J}
 blh ProcFind 
@@ -897,7 +905,13 @@ mov r2, #2
 and r1, r2 
 cmp r1, #0 
 bne ExitDraw_NumberDuringBattle
-ldrb r0, [r3, #3] @ dmg? 
+
+mov r0, r3
+bl GetDamage
+
+@If the damage is zero, it will not be drawn.
+cmp r0, #0x0
+beq ExitDraw_NumberDuringBattle
 
 cmp r0, #99 
 ble NoCap 
@@ -942,6 +956,117 @@ ExitDraw_NumberDuringBattle:
 pop {r4-r7}
 pop {r1}
 bx r1 
+
+.ltorg
+.align 4
+
+@Returns the exact damage r0.
+GetDamage:
+  push {r4,lr}
+  mov r4, r0 @BattleRound
+
+  @if heal or nodamage
+  mov   r0, #0x3
+  ldsb  r0, [r4, r0]
+  cmp   r0, #0x0
+  ble   GetDamage_Exit
+
+  @If you kill the enemy, we will get real damage.
+  ldrb  r1, [r4,#0x2]
+  mov   r2, #0x02 @maybe 0x020000 is defeat flag
+  and   r1, r2    @check Defeat flag
+  cmp   r1, #0x0
+  beq   GetDamage_Exit
+
+  mov r0, r4  @BattleRound
+  bl  GetDisplayDamage
+
+  ldrb r1, [r4, #3] @ BattleRound->Damage
+  cmp r1 , r0
+  blt GetDamage_Exit
+  
+  mov r0, r1
+  @b   GetDamage_Exit
+
+  GetDamage_Exit:
+  pop {r4}
+  pop {r1}
+  bx r1
+
+.ltorg
+.align 4
+
+@Get the value of DMG written in the center of the battle screen.
+GetDisplayDamage:
+  push {lr}
+  mov r3, r0  @Current Round
+
+  ldr r2, =0x203E1F0 @(gMapAnimStruct )	@{U}
+  @ldr r2, =0x203E1EC @(gMapAnimStruct )	@{J}
+  add r2, #0x58
+  ldrb r2, [r2]  @gMapAnimStruct.IsDefender
+  cmp  r2, #0x0
+  beq  GetDamage_Attacker
+
+    GetDamage_Defender:
+    ldr r2, =0x0203E108	@gBattleActorTargetOrder	@{U}
+    @ldr r2, =0x0203E104	@gBattleActorTargetOrder	@{J}
+                        @(0: actor on the left, 1: actor on the right)
+    ldrb r2, [r2]
+    cmp  r2, #0x1
+    beq  GetDamage_RightSide
+    b    GetDamage_LeftSide
+  
+    GetDamage_Attacker:
+    ldr r2, =0x0203E108	@gBattleActorTargetOrder	@{U}
+    @ldr r2, =0x0203E104	@gBattleActorTargetOrder	@{J}
+                        @(0: actor on the left, 1: actor on the right)
+    ldrb r2, [r2]
+    cmp  r2, #0x1
+    bne  GetDamage_RightSide
+    b    GetDamage_LeftSide
+
+  GetDamage_RightSide:
+  ldr r2, =0x0203E1BC     @ DisplayValue.Damage Left	@{U}
+  @ldr r2, =0x0203E1B8     @ DisplayValue.Damage Left	@{J}
+  b  GetDamage_LoadDamage
+  
+  GetDamage_LeftSide:
+  ldr r2, =0x0203E1BC     @ DisplayValue.Damage Left	@{U}
+  @ldr r2, =0x0203E1B8     @ DisplayValue.Damage Left	@{J}
+  add r2, #0x2            @ Right
+
+  GetDamage_LoadDamage:
+  ldrh r0, [r2]    @BattleUnit->Damage
+
+  cmp  r0, #0x7f
+  bge  GetDisplayDamage_0
+
+
+  ldrb r1, [r3,#0x0]  @BattleRound
+  mov  r2, #0x1       @Is Critical?
+  and  r1, r2
+  cmp  r1, #0x0
+  beq  GetDisplayDamage_CapCheck
+     mov  r2, #0x3
+     mul  r0, r2         @Critical Damage 3x
+
+     GetDisplayDamage_CapCheck:
+     cmp  r0, #0x7f
+     blt  GetDisplayDamage_Exit
+        mov  r0, #0x7f
+        b    GetDisplayDamage_Exit
+
+  GetDisplayDamage_0:
+  mov r0, #0x0
+
+  GetDisplayDamage_Exit:
+  pop {r1}
+  bx r1
+
+
+.ltorg
+.align 4
 
 .equ SpriteData8x8,			0x08590F44	@{U}
 @.equ SpriteData8x8,			0x085B8CDC	@{J}

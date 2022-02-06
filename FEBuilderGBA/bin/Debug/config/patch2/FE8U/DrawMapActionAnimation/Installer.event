@@ -2,6 +2,7 @@
 #define INSTALL_BONUS_ANIMATIONS // Uncomment for additional animations 
 #define VRAM_Address 0x6013300 // Where in VRAM (see No$Gba Obj window) to draw animation 
 #define MinimumFrames 28 // Vanilla does 28 frames 
+#define BATTLE_MAPANIMATION_NUMBERS_FLAG 0xEE
 
 
 PUSH // Only vanilla address that we take over. 

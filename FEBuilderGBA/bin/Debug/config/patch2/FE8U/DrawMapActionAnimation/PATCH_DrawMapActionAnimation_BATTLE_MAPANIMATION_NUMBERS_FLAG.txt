@@ -1,0 +1,30 @@
+﻿NAME=アニメOFFの時のマップアニメーションに攻撃エフェクトを描画する(BATTLE_ANIMATION_NUMBERS_FLAG)
+NAME.en=Draw attack effect on map animation when battle animation off(BATTLE_ANIMATION_NUMBERS_FLAG)
+
+IF:$FGREP4 ASMC_Draw.dmp=0x30 0xB5 0x04 0x1C
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x00 0x10 0x00 0x00 0xF4 0x2F 0x01 0x08 0xFF 0xFF 0xFF 0xFF 0xE0 0xE4 0x02 0x02 0xD4 0xE4 0x02 0x02 0xBC 0xBC 0x02 0x02 0x54 0x0F 0x59 0x08 0xB8 0x2B 0x00 0x08 0x88 0x01 0x02 0x02 0x50 0x2F 0x01 0x08 0x74 0x16 0x0D 0x08
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数
+DATACOUNT=1
+
+//リストに表示されるのはFLAGです
+LISTNAME=$W0:FLAG
+
+//データを定義します
+W0:FLAG=Flag
+
+
+INFO=このパッチではダメージの数字を表示させないフラグ0xEEを変更でます。\r\n\r\n武器ごと(アイテムごと)に利用するマップアニメーションを設定します。\r\nこのテーブルに指定がない場合は、種類ごとの設定のアニメーションが利用されます。\r\n\r\nアニメOFFの時のマップ戦闘時に攻撃エフェクトと、FFシリーズのようなダメージのポップアップを行う機能を追加します。\r\n攻撃エフェクトは武器の種類ごとと、武器ごとにもアニメーションを設定できます。
+
+INFO.en=In this patch you can change the flag 0xEE to hide the damage numbers.\r\nIf this table is not specified, the animation of each type setting will be used.\r\n\r\nWe will add an attack effect and a function to pop up damage like the FF series during map battle when animation is off.\r\nAttack effects can be animated for each weapon type and for each weapon.
+
+NAME.zh=在动画关闭时在地图动画上绘制攻击效果（BATTLE_ANIMATION_NUMBERS_FLAG）
+INFO.zh=In this patch you can change the flag 0xEE to hide the damage numbers.\r\n如果未指定此表，将使用每个类型设置的动画。\r\n\r\n我们将添加一个攻击效果和一个功能，在动画关闭的情况下，在地图战斗中弹出伤害，如FF系列。\r\n可以为每种武器类型和每种武器设置攻击效果。

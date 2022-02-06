@@ -14,6 +14,10 @@ ALIGN 4
 VRAM_Address_Link:
 WORD VRAM_Address 
 
+ALIGN 4
+BATTLE_MAPANIMATION_NUMBERS_FLAGLink:
+WORD BATTLE_MAPANIMATION_NUMBERS_FLAG
+
 
 #ifndef SilverSword 
 	#define SilverSword 4 

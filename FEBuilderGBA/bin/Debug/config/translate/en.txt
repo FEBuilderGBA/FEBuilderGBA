@@ -5414,7 +5414,7 @@ Specify bonuses to automatically recover bat status such as poison and sleep for
 A table that determines the tiles that display terrain evasion rates and defense bonuses.\r\n255 is a tile that displays "-".\r\nOther than that, it displays tile evasion rate and defense value information.\r\n\r\nIn vanilla, for some reason, the same address as the Berserker travel cost table is specified.\r\nTherefore, this data is also used for the Berserker's travel cost, so please do not set strange values.\r\n
 
 :このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n
-There is hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
+There is known hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
 
 :壊れる壁と古木のHPを設定します。\r\n最大で120まで設定できます。\r\n
 Set broken wall and Srag HP.\r\nUp to 120 can be set.\r\n

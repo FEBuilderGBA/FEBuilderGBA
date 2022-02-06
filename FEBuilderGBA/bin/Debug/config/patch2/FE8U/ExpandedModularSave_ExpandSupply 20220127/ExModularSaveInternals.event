@@ -1,0 +1,119 @@
+#ifndef EXPANDED_MODULAR_SAVE_INTERNALS
+#define EXPANDED_MODULAR_SAVE_INTERNALS
+
+#include "SrcCore/MSCore.lyn.event"
+
+#ifndef LynJumpDefined
+	#define LynJumpDefined
+	#define LynJump(aTarget) "WORD $46C04778 $E59FC000 $E12FFF1C; POIN aTarget; "
+#endif // LynJumpDefined
+
+gMS_ChapterStateChunkId:  BYTE EMS_CHUNK_CHAPTERSTATE
+gMS_BWLChunkId:           BYTE EMS_CHUNK_BWLENTRIES
+gMS_PermanentEidsChunkId: BYTE EMS_CHUNK_EIDS_PERMANENT
+gMS_ClaimFlagsChunkId:    BYTE EMS_CHUNK_BONUSCLAIMDATA
+gMS_WMDataChunkId:        BYTE EMS_CHUNK_WMDATA
+
+#include "SrcCore/MSSizeHook.lyn.event"
+#include "SrcCore/MSBWLHook.lyn.event"
+
+#define GetConvoyItemArrayStart $08031500
+#include "SrcModules/Convoy.lyn.event"
+#include "SrcModules/ConvoyHook.lyn.event"
+
+PUSH
+	// Checksum computation function now returns a constant
+	// Because we don't care (should we?)
+	ORG $0A6408
+		SHORT $202A $4770 // mov r0, #42; bx lr
+
+	// Load correct size values for block metadata
+	ORG $0A2FB0
+		LynJump(MS_SaveSizeHook)
+
+	// Replace GetSaveTargetAddress
+	ORG $0A3064
+		LynJump(MS_GetSaveAddressBySlot)
+		
+	//Replace SaveConvoyItems
+	ORG $0A31E4
+		LynJump(MS_SaveConvoyItems_1)
+	ORG $0A324E
+		SHORT $46C0 // nop for alignment
+		LynJump(MS_SaveConvoyItems_2)
+		
+	//Replace LoadConvoyItems
+	ORG $0A326C
+		LynJump(MS_LoadConvoyItems_1)
+	ORG $0A3296
+		SHORT $4815 //we have to move a LDR due to lynjump overwriting this pointer
+	ORG $0A32D6
+		SHORT $46C0 // nop for alignment
+		LynJump(MS_LoadConvoyItems_2)
+	ORG $0A32EC
+		POIN $08205CA4 //data loaded at A3296
+
+	// Replace CopySaveGame
+	ORG $0A4E08
+		LynJump(MS_CopyGameSave)
+
+	// Replace SaveGame
+	ORG $0A5010
+		LynJump(MS_SaveGame)
+
+	// Replace LoadGame
+	ORG $0A5128
+		LynJump(MS_LoadGame)
+
+	// Replace SaveSuspendedGame
+	ORG $0A5A48
+		LynJump(MS_SaveSuspend)
+
+	// Replace LoadSuspendedGame
+	ORG $0A5C14
+		LynJump(MS_LoadSuspend)
+
+	// Replace LoadSavedChapterState
+	ORG $0A522C
+		LynJump(MS_LoadChapterStateFromGameSave)
+
+	// Replace LoadSuspendedChapterState
+	ORG $0A5DFC
+		LynJump(MS_LoadChapterStateFromSuspendSave)
+
+	// Replace LoadSavedBonusClaimFlags
+	ORG $0A524C
+		LynJump(MS_GetClaimFlagsFromGameSave)
+
+	// Replace LoadSavedEid8A
+	ORG $0A5290
+		LynJump(MS_CheckEid8AFromGameSave)	
+
+	// I don't want to load units from save for now
+	// So I'll just """disable""" save menu R-text info
+	ORG $0A8964
+		SHORT $E036
+
+	// Make BWL save look for the BWL chunk
+	ORG $0A460E
+		SHORT $46C0 // nop for alignment
+		LynJump(MS_BWLSaveHook)
+
+	// In SaveNewGame
+	ORG $0A4E84
+		WORD $46C046C0 // nop nop; don't get target save address
+	ORG $0A4F34
+		WORD $46C046C0 // nop nop; don't save chapter state just yet
+	ORG $0A4F40
+		WORD $46C046C0 // nop nop; don't save bonus content claim flags just yet
+	ORG $0A4F44
+		SHORT $E022 // b later; don't save units just yet
+	ORG $0A412C
+		SHORT $E024 // b later; don't save bwl and chapter wins just yet
+	ORG $0A4F92
+		SHORT $E01B // b later; don't save other stuff just yet
+	ORG $0A4FCE
+		BL($0A5010) // now you can save the game! And do it by calling the save function
+POP
+
+#endif // EXPANDED_MODULAR_SAVE_INTERNALS
