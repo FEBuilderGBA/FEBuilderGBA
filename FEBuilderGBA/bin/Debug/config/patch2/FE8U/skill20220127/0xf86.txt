@@ -1,0 +1,2 @@
+You don't have enough HP[N]
+to cast any spells.

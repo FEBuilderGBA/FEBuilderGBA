@@ -1,0 +1,26 @@
+﻿
+IF:0x28E80=0x03 0x4B 0x14 0x22 0x50 0x43 0x40 0x18 0xC0 0x18 0x00 0x68 0x70 0x47 0x00 0x00
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+
+//データへのポインタ
+POINTER=0x28E90
+
+//データサイズ(10進数)
+DATASIZE=20
+
+//データ個数
+DATACOUNT=81
+
+//リストに表示されるのは
+LISTNAME=ITEMSTAFFUSEEFFECT
+
+//データを定義します
+P00=Usability
+P04=PrepScreenUsability
+P08=TargetingRoutine
+P12=ItemEffect
+P16=PostBattleItemEffect
+
+INFO=Editor: ItemEffectRevamp Item_Effect_Revamp
