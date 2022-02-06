@@ -41,8 +41,8 @@ namespace FEBuilderGBA
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            InputFormRef.LoadComboResource(L_30_COMBO, U.ConfigDataFilename("item_staff_use_effect_"));
-            InputFormRef.LoadComboResource(L_31_COMBO, U.ConfigDataFilename("item_weapon_effect_"));
+            InputFormRef.LoadComboResource(L_30_COMBO, g_item_staff_use_effect_List);
+            InputFormRef.LoadComboResource(L_31_COMBO, g_item_weapon_effect_List);
 
             InputFormRef.markupJumpLabel(JumpToITEMEFFECT);
             InputFormRef.markupJumpLabel(HardCodingWarningLabel);
@@ -784,6 +784,24 @@ namespace FEBuilderGBA
             return Program.ROM.p32(addr + 16);
         }
 
+        public static Dictionary<uint, string> g_item_weapon_effect_List { get; private set; }
+        public static void PreLoadResource_item_weapon_effect(string fullfilename)
+        {
+            g_item_weapon_effect_List = U.LoadDicResource(fullfilename);
+        }
+
+        public static Dictionary<uint, string> g_item_staff_use_effect_List { get; private set; }
+        public static void PreLoadResource_item_staff_use_effect(string fullfilename)
+        {
+            g_item_staff_use_effect_List = U.LoadDicResource(fullfilename);
+
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {
+                g_item_staff_use_effect_List[0x37] = R._("ラトナ");
+                g_item_staff_use_effect_List[0x38] = R._("スキルの書");
+            }
+        }
 
 
     }

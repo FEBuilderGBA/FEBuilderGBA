@@ -2794,6 +2794,9 @@ Item Drop: No
 :FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n
 To make an item fall on FE 7, enable the bit of the drop item of characteristic 4 of unit or class.\r\n
 
+:指揮官が自分自身です。\r\nフリーズする可能性があるので0に設定してください。
+The commander is himself.\r\nSet it to 0 as it may freeze.
+
 :アイテムドロップ
 Item Drop
 
@@ -4423,6 +4426,9 @@ Do you want to allocate new Promotion data?
 :領域を割り振りました。データを割り振ってください。
 Allocated space.Allocate the data.
 
+:新規に、ClassListのデータを割り振りますか？
+Do you want to allocate new ClassList data? 
+
 :新規に、戦闘床地形リストのデータを割り振りますか？
 Do you want to allocate new data for the battle floor terrain list? 
 
@@ -5650,11 +5656,20 @@ Double the 3 frees of the weapon.
 :もっているだけでStatBoosterで指定した補正値を得られるアイテムになります。
 It becomes an item that can obtain the correction value specified by StatBooster just by holding it.
 
+:ラトナ
+Latona
+
+:スキルの書
+Skill Scroll
+
 :武器LV熟練度
 WEXP Per Hit
 
 :CCアイテムの名前
 Promotion Item Name
+
+:IERがインストールされているため、パッチ画面から設定してください。
+Since IER is installed, please set it from the patch screen.
 
 :CCアイテム
 Promotion Item

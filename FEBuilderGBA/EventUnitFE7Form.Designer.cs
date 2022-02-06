@@ -560,6 +560,7 @@
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(65, 25);
             this.B2.TabIndex = 7;
+            this.B2.ValueChanged += new System.EventHandler(this.CheckCommander);
             // 
             // L_1_CLASS
             // 

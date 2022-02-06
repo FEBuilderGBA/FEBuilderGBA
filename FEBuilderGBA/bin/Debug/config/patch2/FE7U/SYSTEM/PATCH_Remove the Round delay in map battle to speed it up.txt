@@ -1,0 +1,37 @@
+NAME=マップ戦闘のRoundディレイを削除して高速化する
+NAME.en=Remove the Round delay in map battle to speed it up
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 30fsec|OFFF|Fix: Slow 60fsec|SLOW|Fix: HalfDely 15fsec|HALF|Fix: 3fsec Delay|FIX3
+
+DETERMINATION_ADDRESS=0xA14E96
+
+OFFF:0xA14E3E=0x02
+OFFF:0xA14E4E=0x08
+OFFF:0xA14E96=0x14
+
+//逆に遅くする聖戦とかの速度
+SLOW:0xA14E3E=0x04
+SLOW:0xA14E4E=0x10
+SLOW:0xA14E96=0x28
+
+//バニラの半分
+HALF:0xA14E3E=0x01
+HALF:0xA14E4E=0x04
+HALF:0xA14E96=0x0A
+
+//超高速
+FIX3:0xA14E3E=0x01
+FIX3:0xA14E4E=0x01
+FIX3:0xA14E96=0x01
+
+
+
+AUTHOR=7743
+INFO=バニラでは、マップアニメでの戦闘時に、それぞれの攻撃ラウンドで30フレーム(0.5秒)程度のディレイがあります。\r\nこのパッチはそれを削除して、より高速に動作させます。\r\n具体的には、MapAnimDefaultRound Procのdelayを削除します。
+INFO.en=In vanilla, there is a delay of about 30 frames (0.5 seconds) in each attack round when fighting in map animation.\r\nThis patch removes it and makes it work faster.\r\nSpecifically, delete the Delay of MapAnimDefaultRound Proc.
+NAME.zh=移除地图战斗中的回合延迟以加快速度。
+INFO.zh=在原版中，在地图动画中战斗时，每轮攻击会有大约 30 帧（0.5 秒）的延迟。\r\n此补丁将其删除并使其运行速度更快。\r\n具体来说，删除 MapAnimDefaultRound Proc 的 Delay。

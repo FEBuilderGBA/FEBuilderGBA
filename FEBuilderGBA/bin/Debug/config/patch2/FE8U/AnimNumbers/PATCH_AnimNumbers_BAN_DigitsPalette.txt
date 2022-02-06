@@ -1,0 +1,21 @@
+﻿NAME=AnimNumbers 戦闘アニメでダメージのポップアップ(BAN_DigitsPalette)
+NAME.en=AnimNumbers Damage pop-up in battle anime(BAN_DigitsPalette)
+NAME.zh=AnimNumbers Damage pop-up in battle anime(BAN_DigitsPalette)
+
+IF:0x52304=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=IMAGE
+TAG=#ENGINE #IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+IMAGE_POINTER=0x074C6C//0x5C8278
+PALETTE_POINTER=$GREP4END 0x80 0x18 0x89 0x18 0x10 0x22 0x0C 0xDF 0x40 0x34 0x02 0x3F 0xE0 0xE7 0x30 0xBC 0xA0 0x46 0xA9 0x46 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x18 0x47 0x00 0x00 0x01 0x00 0x0A 0x00 0x64 0x00 0xE8 0x03 0x10 0x27
+
+KEEPIMAGE=true
+
+INFO=ダメージの数字を描画するパレットを指定します。\r\nパレットの1番目がダメージで、0番目が回復の色です。\r\n\r\n戦闘スプライトの上に表示して数字を表示して、与えられたダメージ/ HPが回復したことをわかりやすく表現します。\r\nこのルーチンはLex Talionisにインスパイアされました。\r\nまた、シリアスな場面などで、数字を表示したくない時は、グローバルフラグ0xEEを有効にすると、数字を非表示にできます。
+INFO.en=Specifies the palette on which the damage numbers are drawn.\r\nThe 1st on the palette is the damage and the 0th is the recovery color.\r\n\r\nDisplay numbers hovering over battle sprites indicating damage dealt/ HP healed.\r\nthis patch inspired by Lex Talionis.\r\nAlso, if you do not want to display the numbers in serious situations, you can hide the numbers by enabling the global flag 0xEE.
+INFO.zh=Specifies the palette on which the damage numbers are drawn.\r\nThe 1st on the palette is the damage and the 0th is the recovery color.\r\n\r\nDisplay numbers hovering over battle sprites indicating damage dealt/ HP healed.\r\nthis patch inspired by Lex Talionis.\r\nAlso, if you do not want to display the numbers in serious situations, you can hide the numbers by enabling the global flag 0xEE.

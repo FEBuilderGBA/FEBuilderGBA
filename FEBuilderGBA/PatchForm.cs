@@ -898,9 +898,7 @@ namespace FEBuilderGBA
                 }
                 else if (type.IndexOf("ITEMSTAFFUSEEFFECT") == 0)
                 {//アイテムを使った場合の効果リスト
-                    string filename = U.ConfigDataFilename("item_staff_use_effect_");
-
-                    Dictionary<uint, string> dic = U.LoadDicResource(filename);
+                    Dictionary<uint, string> dic = ItemForm.g_item_staff_use_effect_List;
 
                     ComboBox link = new ComboBox();
                     link.Location = new Point(500, y);
@@ -1112,6 +1110,20 @@ namespace FEBuilderGBA
                 {
                     map.SetYIndex((uint)datanum, data, type);
                 }
+                else if (type == "ITEMICONSRC"
+                    || type == "ITEMICONSRC_WEAPON"
+                    || type == "WAITICON"
+                    || type == "MOVEICON"
+                    )
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(500, y);
+                    pic.Size = new Size(CONTROL_HEIGHT, CONTROL_HEIGHT);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pic.Name = "L_" + datanum + "_" + type;
+                    PatchPage.Controls.Add(pic);
+                }
                 else
                 {
                     TextBoxEx link = new TextBoxEx();
@@ -1159,7 +1171,8 @@ namespace FEBuilderGBA
                 if (type == "BATTLEANIMEPOINTER" || type == "EVENT" 
                     || type == "ITEMSHOP" || type == "VENNOUWEAPONLOCK" 
                     || type == "SMEPROMOLIST" 
-                    || type == "TERRAINBATTLELISTPOINTER" || type == "BATTLEBGLISTPOINTER" 
+                    || type == "TERRAINBATTLELISTPOINTER" || type == "BATTLEBGLISTPOINTER"
+                    || type == "CLASSLIST"
                     )
                 {//データの確保が必要になる場合
                     Button alloc = new Button();
@@ -1574,8 +1587,7 @@ namespace FEBuilderGBA
             }
             else if (listname =="ITEMSTAFFUSEEFFECT")
             {
-                string filename = U.ConfigDataFilename("item_staff_use_effect_");
-                out_listname_combo_dic = U.LoadDicResource(filename);
+                out_listname_combo_dic = ItemForm.g_item_staff_use_effect_List;
             }
             else if (listname.Length > 2 && listname[0] == '$')
             {
@@ -6578,6 +6590,11 @@ namespace FEBuilderGBA
                     else if (type == "SMEPROMOLIST")
                     {//SMEの分岐プロモーション
                         SMEPromoListForm.MakeDataLength(list, p
+                            , patchname + " DATA " + n);
+                    }
+                    else if (type == "CLASSLIST")
+                    {//クラスリスト
+                        SomeClassListForm.MakeDataLength(list, p
                             , patchname + " DATA " + n);
                     }
                     else if (type == "TERRAINBATTLELISTPOINTER")

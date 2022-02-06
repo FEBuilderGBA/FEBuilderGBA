@@ -24,3 +24,5 @@ JUMP:0x32264:$r1=HowtoExp_kaitou.bin
 AUTHOR=7743
 
 
+CONFLICT_IF:0x22CD0=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=SkillSystems or Tequila's capture

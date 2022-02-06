@@ -2140,6 +2140,12 @@
     <Compile Include="MapMiniMapTerrainImageForm.Designer.cs">
       <DependentUpon>MapMiniMapTerrainImageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SomeClassListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SomeClassListForm.Designer.cs">
+      <DependentUpon>SomeClassListForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3166,6 +3172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapMiniMapTerrainImageForm.resx">
       <DependentUpon>MapMiniMapTerrainImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SomeClassListForm.resx">
+      <DependentUpon>SomeClassListForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -20,7 +20,10 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.PromotionItemLink);
             StatBoosterItemExplain.Hide();
             InputFormRef.markupJumpLabel(this.StatBoosterItemLink);
-            InputFormRef.markupJumpLabel(this.X_IER_PATCH);
+            if (PatchUtil.ItemUsingExtendsPatch() == PatchUtil.ItemUsingExtends.IER)
+            {
+                InputFormRef.markupJumpLabel(this.X_IER_PATCH);
+            }
 
             this.InputFormRef = Init(this);
             this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。

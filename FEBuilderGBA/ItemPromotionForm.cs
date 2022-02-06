@@ -22,6 +22,16 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             MakeCCItemList();
 
+            if (PatchUtil.ItemUsingExtendsPatch() == PatchUtil.ItemUsingExtends.IER)
+            {
+                InputFormRef.markupJumpLabel(this.X_IER_PATCH);
+                this.X_IER_PATCH.Show();
+            }
+            else
+            {
+                this.X_IER_PATCH.Hide();
+            }
+
             this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
         }
 
@@ -147,6 +157,12 @@ namespace FEBuilderGBA
             
             InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_sun_bracelet_pointer()));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
+        }
+
+        private void X_IER_PATCH_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("ItemEffectRevamp", 0, PatchForm.SortEnum.SortName);
         }
     }
 }

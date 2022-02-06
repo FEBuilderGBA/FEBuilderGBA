@@ -1,0 +1,18 @@
+﻿NAME=AnimNumbers 戦闘アニメでダメージのポップアップ(BATTLE_ANIMATION_NUMBERS_FLAG)
+NAME.en=AnimNumbers Damage pop-up in battle anime(BATTLE_ANIMATION_NUMBERS_FLAG)
+NAME.zh=AnimNumbers Damage pop-up in battle anime(BATTLE_ANIMATION_NUMBERS_FLAG)
+
+IF:0x52304=0x00 0x4B 0x18 0x47
+
+TYPE=ADDR
+TAG=#ENGINE
+
+//データへのポインタ
+ADDRESS=$XGREP4ENDA+20 0x05 0x1C XXXX 0x48 0x03 0x21 0x12 0x4B XXXX XXXX XXXX 0xFF 0x06 0x1C 0xF4 0x65 0x00 0x20 0xB0 0x85 0x32 0x20 0xF0 0x85 0x35 0x66 0x28 0x1C 0x03 0xB0 0xF0 0xBC 0x02 0xBC 0x08 0x47
+
+ADDRESS_TYPE=FLAG
+DATASIZE=2
+
+INFO=このパッチでは数字を表示させないフラグ0xEEを変更でます。\r\n\r\n戦闘スプライトの上に表示して数字を表示して、与えられたダメージ/ HPが回復したことをわかりやすく表現します。\r\nこのルーチンはLex Talionisにインスパイアされました。\r\nまた、シリアスな場面などで、数字を表示したくない時は、グローバルフラグ0xEEを有効にすると、数字を非表示にできます。
+INFO.en=In this patch you can change the flag 0xEE to hide the numbers.\r\n\r\nDisplay numbers hovering over battle sprites indicating damage dealt/ HP healed.\r\nthis patch inspired by Lex Talionis.\r\nAlso, if you do not want to display the numbers in serious situations, you can hide the numbers by enabling the global flag 0xEE.
+INFO.zh=In this patch you can change the flag 0xEE to hide the numbers.\r\n\r\nDisplay numbers hovering over battle sprites indicating damage dealt/ HP healed.\r\nthis patch inspired by Lex Talionis.\r\nAlso, if you do not want to display the numbers in serious situations, you can hide the numbers by enabling the global flag 0xEE.

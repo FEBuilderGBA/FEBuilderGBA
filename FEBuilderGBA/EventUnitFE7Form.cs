@@ -212,6 +212,7 @@ namespace FEBuilderGBA
 
             SetNotifyMode();
             CheckCoord();
+            CheckCommander(sender, e);
         }
 
         void CheckCoord()
@@ -779,6 +780,30 @@ namespace FEBuilderGBA
             {//リストの先頭を更新した場合、コメントの更新があるかもしれないので、EVENT_LISTBOXを更新する.
                 this.EVENT_LISTBOX.InvalidateLine(this.EVENT_LISTBOX.SelectedIndex);
             }
+        }
+
+        private void CheckCommander(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
+            if (B2.Value == 0)
+            {
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            if (B2.Value != B0.Value)
+            {
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            if (B12.Value != 0xD)
+            {//commander AI
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            L_2_UNIT.ErrorMessage = R._("指揮官が自分自身です。\r\nフリーズする可能性があるので0に設定してください。");
         }
 
     }

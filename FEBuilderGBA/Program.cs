@@ -462,6 +462,10 @@ namespace FEBuilderGBA
             EventUnitForm.PreLoadResourceAI2(U.ConfigDataFilename("ai2_"));
             EventUnitForm.PreLoadResourceAI3(U.ConfigDataFilename("ai3_"));
 
+            //アイテム 利用効果リスト
+            ItemForm.PreLoadResource_item_weapon_effect(U.ConfigDataFilename("item_weapon_effect_"));
+            ItemForm.PreLoadResource_item_staff_use_effect(U.ConfigDataFilename("item_staff_use_effect_"));
+
             //SondEffectリスト
             SongTableForm.PreLoadResource(U.ConfigDataFilename("sound_"));
             //UnitActionリスト

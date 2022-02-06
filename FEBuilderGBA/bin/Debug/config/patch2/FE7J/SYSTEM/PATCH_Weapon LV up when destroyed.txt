@@ -1,0 +1,20 @@
+NAME=武器破壊時でも武器LVアップ
+NAME.en=Weapon LV up when destroyed
+
+INFO=適応すると、武器が壊れたときにも経験値を取得できます。\r\n使用回数1で経験値がたくさんもらえるアイテムを実装するときに利用します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Apply|ONN|Default:None|OFF
+
+DETERMINATION_ADDRESS=0x2A02C
+
+ONN:0x2A02C=0x4A
+OFF:0x2A02C=0x48
+
+AUTHOR=FE8Girls Chap
+INFO.en=If you adapt, you can also get experience value when the weapon breaks.\r\nIt is used when implementing items that are used 1 times and receive a lot of experience values.
+NAME.zh=即使武器摧毁，武器也会升起
+INFO.zh=如果你适应，你也可以在武器破坏时获得经验值。\r\n它在实现使用1次并获得大量经验值的项目时使用。

@@ -346,6 +346,7 @@ namespace FEBuilderGBA
             SetNotifyMode();
 
             this.FE8CoordListBox.DummyAlloc(FE8CoordList.Count , 0);
+            CheckCommander(sender, e);
         }
         void PreWriteHandler(object sender, EventArgs e)
         {
@@ -2742,6 +2743,30 @@ namespace FEBuilderGBA
         private void Sim_Hide_EventHandler(object sender, EventArgs e)
         {
             this.X_Sim.Hide();
+        }
+
+        private void CheckCommander(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
+            if (B2.Value == 0)
+            {
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            if (B2.Value != B0.Value)
+            {
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            if (B16.Value != 0xD)
+            {//commander AI
+                L_2_UNIT.ErrorMessage = "";
+                return;
+            }
+            L_2_UNIT.ErrorMessage = R._("指揮官が自分自身です。\r\nフリーズする可能性があるので0に設定してください。");
         }
 
     }

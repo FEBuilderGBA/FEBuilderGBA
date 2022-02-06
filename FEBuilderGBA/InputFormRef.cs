@@ -2914,6 +2914,23 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "CLASSLIST")
+            {//クラスリスト
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = SomeClassListForm.GetNames(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "CLASSLIST", new string[] { });
+                };
+                return;
+            }
             if (linktype == "TERRAINBATTLELISTPOINTER")
             {//戦闘床地形
                 TextBoxEx link_object = ((TextBoxEx)link_info);
@@ -3303,6 +3320,12 @@ namespace FEBuilderGBA
             else if (arg1 == "SMEPROMOLIST")
             {
                 alllocQMessage = R._("新規に、Promotionのデータを割り振りますか？");
+                alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
+                alloc = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00, 0x00 };
+            }
+            else if (arg1 == "CLASSLIST")
+            {
+                alllocQMessage = R._("新規に、ClassListのデータを割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。データを割り振ってください。");
                 alloc = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00 };
             }
@@ -4069,6 +4092,17 @@ namespace FEBuilderGBA
                 }
 
                 SMEPromoListForm f = (SMEPromoListForm)InputFormRef.JumpForm<SMEPromoListForm>(U.NOT_FOUND);
+                f.JumpTo(value);
+            }
+            else if (linktype == "CLASSLIST")
+            {//クラスリスト
+                value = CheckAndAlloc(src_object, value, linktype);
+                if (value == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                SomeClassListForm f = (SomeClassListForm)InputFormRef.JumpForm<SomeClassListForm>(U.NOT_FOUND);
                 f.JumpTo(value);
             }
             else if (linktype == "TERRAINBATTLELISTPOINTER")

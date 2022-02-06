@@ -1,0 +1,6 @@
+Plus=$24
+GOTO_R3=$9E
+Loop=$54
+Denom=$A0
+Return=$92
+L1=$6E

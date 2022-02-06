@@ -2173,7 +2173,7 @@
 08029660	CheckForLevelUp	{U}
 08029970	CheckForLevelUpCaps	{U}
 08029A70	SaveUnitsFromBattle	{U}
-08029AFA	GetBattleNewWExp	{U}
+08029AFC	GetBattleNewWExp	{U}
 08029BE8	BattleUnit_DidWRankGoUp	{U}
 08029C24	SaveUnitFromBattle	{U}
 08029D38	UpdateBallistaUsesFromBattle	{U}
@@ -2997,7 +2997,7 @@
 08029B10	CheckForLevelUp	{J}
 08029E20	CheckForLevelUpCaps	{J}
 08029F20	SaveUnitsFromBattle	{J}
-08029FAA	GetBattleNewWExp	{J}
+08029FAC	GetBattleNewWExp	{J}
 0802A098	BattleUnit_DidWRankGoUp	{J}
 0802A0D4	SaveUnitFromBattle	{J}
 0802A1E8	UpdateBallistaUsesFromBattle	{J}

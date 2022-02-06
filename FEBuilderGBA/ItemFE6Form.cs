@@ -18,8 +18,8 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
             this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
 
-            InputFormRef.LoadComboResource(L_30_COMBO, U.ConfigDataFilename("item_staff_use_effect_"));
-            InputFormRef.LoadComboResource(L_31_COMBO, U.ConfigDataFilename("item_weapon_effect_"));
+            InputFormRef.LoadComboResource(L_30_COMBO, ItemForm.g_item_staff_use_effect_List);
+            InputFormRef.LoadComboResource(L_31_COMBO, ItemForm.g_item_weapon_effect_List);
             this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
 
             this.InputFormRef = Init(this);

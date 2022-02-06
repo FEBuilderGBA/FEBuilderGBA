@@ -12422,6 +12422,7 @@ r3=X tile position of menu of the right	{U}
 0202bcb2	gGameGfxSemaphore	{U}
 0202bcb4	gGameStatebits	{U}
 0202bcb6	gSavedVCLY	{U}
+080A2EDE	DUMMY mov r0,r1; bx lr	{U}
 0202bcbc	gCurrentRealCameraPos	{U}
 0202bcc4	gCursorMapPosition	{U}
 0202bccc	gSomeRealCameraPosition	{U}

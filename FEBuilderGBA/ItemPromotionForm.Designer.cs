@@ -54,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.X_IER_PATCH = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -305,6 +306,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.X_IER_PATCH);
             this.panel4.Controls.Add(this.L_0_CLASSICON);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel2);
@@ -359,6 +361,16 @@
             this.L_0_CLASS.ReadOnly = true;
             this.L_0_CLASS.Size = new System.Drawing.Size(137, 25);
             this.L_0_CLASS.TabIndex = 55;
+            // 
+            // X_IER_PATCH
+            // 
+            this.X_IER_PATCH.ForeColor = System.Drawing.Color.Red;
+            this.X_IER_PATCH.Location = new System.Drawing.Point(257, 174);
+            this.X_IER_PATCH.Name = "X_IER_PATCH";
+            this.X_IER_PATCH.Size = new System.Drawing.Size(470, 60);
+            this.X_IER_PATCH.TabIndex = 182;
+            this.X_IER_PATCH.Text = "IERがインストールされているため、パッチ画面から設定してください。";
+            this.X_IER_PATCH.Click += new System.EventHandler(this.X_IER_PATCH_Click);
             // 
             // ItemPromotionForm
             // 
@@ -416,5 +428,6 @@
         private System.Windows.Forms.NumericUpDown B0;
         private FEBuilderGBA.TextBoxEx L_0_CLASS;
         private InterpolatedPictureBox L_0_CLASSICON;
+        private System.Windows.Forms.Label X_IER_PATCH;
     }
 }
