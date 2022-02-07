@@ -626,7 +626,6 @@ namespace FEBuilderGBA
         {
             if (PatchUtil.skill_system_enum.NO == PatchUtil.SearchSkillSystem())
             {
-                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Anti_Huffman_By_Translate);
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Skill);
             }
 
