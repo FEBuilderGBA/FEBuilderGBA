@@ -2996,7 +2996,7 @@ This table is referenced in more than one class.
 Level of acquisition
 
 :魔法
-magic.
+Magic
 
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
@@ -6197,7 +6197,7 @@ Road Movement Editor
 Song Track
 
 :攻撃エフェクト拡張
-Attack effect expansion.
+Attack Motion
 
 :スキル カスタムビルド
 Skill Custom Build
