@@ -709,7 +709,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(obj_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr
-                        , R._("PLIST({0})が無効です", plists.obj_plist)));
+                        , R._("オブジェクトタイプのPLIST({0})が無効です", U.To0xHexString(plists.obj_plist))));
                 }
                 else
                 {
@@ -722,7 +722,7 @@ namespace FEBuilderGBA
                     if (!U.isSafetyOffset(obj2_offset))
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_OBJECT, mapaddr
-                            , R._("PLIST({0})が無効です", obj2_plist)));
+                            , R._("オブジェクトタイプ2のPLIST({0})が無効です", U.To0xHexString(obj2_plist))));
                     }
                     else
                     {
@@ -735,7 +735,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(config_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_CONFIG, mapaddr
-                        , R._("PLIST({0})が無効です", plists.config_plist)));
+                        , R._("チップセットクタイプのPLIST({0})が無効です", U.To0xHexString(plists.config_plist))));
                 }
                 else
                 {
@@ -747,7 +747,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(map_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                        , R._("PLIST({0})が無効です", plists.mappointer_plist)));
+                        , R._("マップポインタのPLIST({0})が無効です", U.To0xHexString(plists.mappointer_plist))));
                 }
                 else
                 {
@@ -797,7 +797,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(pal_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_PALETTE, mapaddr
-                        , R._("PLIST({0})が無効です", plists.palette_plist), mapid));
+                        , R._("パレットのPLIST({0})が無効です", U.To0xHexString(plists.palette_plist)), mapid));
                 }
             }
 
@@ -807,7 +807,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(mapchange_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAPCHANGE, mapaddr
-                        , R._("PLIST({0})が無効です", plists.mapchange_plist), mapid));
+                        , R._("マップ部分変更のPLIST({0})が無効です", U.To0xHexString(plists.mapchange_plist)), mapid));
                 }
             }
             if (plists.anime1_plist != 0)
@@ -816,7 +816,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(anime1_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_ANIMETION1, mapaddr
-                        , R._("PLIST({0})が無効です", plists.anime1_plist), mapid));
+                        , R._("タイルアニメーション1のPLIST({0})が無効です", U.To0xHexString(plists.anime1_plist)), mapid));
                 }
             }
             if (plists.anime2_plist != 0)
@@ -825,7 +825,7 @@ namespace FEBuilderGBA
                 if (!U.isSafetyOffset(anime2_offset))
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_ANIMETION2, mapaddr
-                        , R._("PLIST({0})が無効です", plists.anime2_plist), mapid));
+                        , R._("タイルアニメーション2のPLIST({0})が無効です", U.To0xHexString(plists.anime2_plist)), mapid));
                 }
             }
         }

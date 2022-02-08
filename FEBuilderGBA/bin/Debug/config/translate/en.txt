@@ -7876,14 +7876,35 @@ Object Type, Palette, and Tileset Config primarily determine map appearance (Til
 :obj,pal,configの3つがマップチップセットの主要な構成要素です。\r\nマップチップセットは、マップスタイルエディタから、変更できます。\r\n
 Object Type, Palette, and Tileset Config primarily determine map appearance (Tileset).\r\nEach Tileset can have up to two Tile Animations.\r\n
 
-:PLIST({0})が無効です
-PLIST ({0}) is invalid
+:オブジェクトタイプのPLIST({0})が無効です
+The object type PLIST ({0}) is invalid.
+
+:オブジェクトタイプ2のPLIST({0})が無効です
+Object type 2 PLIST ({0}) is invalid.
+
+:チップセットクタイプのPLIST({0})が無効です
+The chipset type PLIST ({0}) is invalid.
+
+:マップポインタのPLIST({0})が無効です
+The map pointer PLIST ({0}) is invalid.
 
 :マップが破損しています。{0}
 Map is damaged. {0}
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
+
+:パレットのPLIST({0})が無効です
+The palette PLIST ({0}) is invalid.
+
+:マップ部分変更のPLIST({0})が無効です
+The Tile Changes PLIST ({0}) is invalid.
+
+:タイルアニメーション1のPLIST({0})が無効です
+The Tile animation 1 PLIST ({0}) is invalid.
+
+:タイルアニメーション2のPLIST({0})が無効です
+The Tile animation 2 PLIST ({0}) is invalid.
 
 :HPBarを表示するパッチをインストールしている時には、表示が乱れるので天気を曇りには設定しないでください。
 When installing a patch that displays the HP Bar, do not set the weather to cloudy as the display will be distorted.
