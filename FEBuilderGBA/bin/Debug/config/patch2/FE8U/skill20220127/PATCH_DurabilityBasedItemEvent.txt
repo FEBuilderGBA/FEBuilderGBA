@@ -1,0 +1,45 @@
+﻿PATCHED_IF:0x28E80=0x03 0x4B 0x14 0x22 0x50 0x43 0x40 0x18 0xC0 0x18 0x00 0x68 0x70 0x47 0x00 0x00
+
+//STRUCTパッチとして実装します
+TYPE=EA
+TAG=HIDDEN
+
+EA=DummyCanNotInstallThisPatch.event
+INFO=This patch has been created for internal processing. Please do nothing.
+
+EVENTSCRIPT:10=40050300XXVV00002037YYYY	[YYYY:UNIT:ユニット]が[XX:ITEM:アイテム][VV:DECIMAL:耐久]を入手(LOW)	{ITEM}
+EVENTSCRIPT:11=40050300XXVV00002037FFFF	訪問したユニットが[XX:ITEM:アイテム][VV:DECIMAL:耐久]を入手(LOW)	{ITEM}
+EVENTSCRIPT:12=400A0000401F590840050300XXVV00002037FFFF	訪問したユニットが[XX:ITEM:アイテム][VV:DECIMAL:耐久]を入手	{ITEM}
+EVENTSCRIPT:13=400A0000401F590840050300XXVV00002037YYYY	[YYYY:UNIT:ユニット]が[XX:ITEM:アイテム][VV:DECIMAL:耐久]を入手	{ITEM}
+EVENTSCRIPT:14=2833FFFF2006C20040050300XXVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	砂漠の財宝[XX:ITEM:拾えるアイテム][VV:DECIMAL:耐久][YYYY:LABEL:条件ID]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{ITEM}	{U}
+
+EVENTSCRIPT:20=40050300FFVV00002037YYYY	[YYYY:UNIT:ユニット]がアイテムFF SkillScroll [VV:SKILL:Skill]を入手(LOW)	{ITEM}
+EVENTSCRIPT:21=40050300FFVV00002037FFFF	訪問したユニットがアイテムFF SkillScroll [VV:SKILL:Skill]を入手(LOW)	{ITEM}
+EVENTSCRIPT:22=400A0000401F590840050300FFVV00002037FFFF	訪問したユニットがアイテムFF SkillScroll [VV:SKILL:Skill]を入手	{ITEM}
+EVENTSCRIPT:23=400A0000401F590840050300FFVV00002037YYYY	[YYYY:UNIT:ユニット]がアイテムFF SkillScroll [VV:SKILL:Skill]を入手	{ITEM}
+EVENTSCRIPT:24=2833FFFF2006C20040050300FFVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	砂漠の財宝 アイテムFF SkillScroll [VV:SKILL:Skill][YYYY:LABEL:条件ID]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{ITEM}	{U}
+
+
+EVENTSCRIPT:10.en=40050300XXVV00002037YYYY	Give Item[XX:ITEM:item][VV:DECIMAL:uses]to[YYYY:UNIT:Character](LOW)	{ITEM}
+EVENTSCRIPT:11.en=40050300XXVV00002037FFFF	Give Item to active (visiting/current) unit[XX:ITEM:item][VV:DECIMAL:uses](LOW)	{ITEM}
+EVENTSCRIPT:12.en=400A0000401F590840050300XXVV00002037FFFF	Give item[XX:ITEM:item][VV:DECIMAL:uses]to active (visiting/current) unit	{ITEM}
+EVENTSCRIPT:13.en=400A0000401F590840050300XXVV00002037YYYY	Give item[XX:ITEM:item][VV:DECIMAL:uses]to[YYYY:UNIT:Character]
+EVENTSCRIPT:14.en=2833FFFF2006C20040050300XXVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][VV:DECIMAL:Uses][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}
+EVENTSCRIPT:20.en=40050300FFVV00002037YYYY	Give Item SkillScroll0xFF[VV:SKILL:Skill]to[YYYY:UNIT:Character](LOW)	{ITEM}
+EVENTSCRIPT:21.en=40050300FFVV00002037FFFF	Give Item to active (visiting/current) unit SkillScroll0xFF[VV:SKILL:Skill](LOW)	{ITEM}
+EVENTSCRIPT:22.en=400A0000401F590840050300FFVV00002037FFFF	Give itemSkillScroll0xFF[VV:SKILL:Skill]to active (visiting/current) unit	{ITEM}
+EVENTSCRIPT:23.en=400A0000401F590840050300FFVV00002037YYYY	Give itemSkillScroll0xFF[VV:SKILL:Skill]to[YYYY:UNIT:Character]
+EVENTSCRIPT:24.en=2833FFFF2006C20040050300FFVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure SkillScroll0xFF[VV:SKILL:Skill][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}
+
+
+EVENTSCRIPT:10.zh=40050300XXVV00002037YYYY	Give Item[XX:ITEM:item][VV:DECIMAL:uses]to[YYYY:UNIT:Character](LOW)	{ITEM}
+EVENTSCRIPT:11.zh=40050300XXVV00002037FFFF	Give Item to active (visiting/current) unit[XX:ITEM:item][VV:DECIMAL:uses](LOW)	{ITEM}
+EVENTSCRIPT:12.zh=400A0000401F590840050300XXVV00002037FFFF	Give item[XX:ITEM:item][VV:DECIMAL:uses]to active (visiting/current) unit	{ITEM}
+EVENTSCRIPT:13.zh=400A0000401F590840050300XXVV00002037YYYY	Give item[XX:ITEM:item][VV:DECIMAL:uses]to[YYYY:UNIT:Character]
+EVENTSCRIPT:14.zh=2833FFFF2006C20040050300XXVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][VV:DECIMAL:Uses][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}
+EVENTSCRIPT:20.zh=40050300FFVV00002037YYYY	Give Item SkillScroll0xFF[VV:SKILL:Skill]to[YYYY:UNIT:Character](LOW)	{ITEM}
+EVENTSCRIPT:21.zh=40050300FFVV00002037FFFF	Give Item to active (visiting/current) unit SkillScroll0xFF[VV:SKILL:Skill](LOW)	{ITEM}
+EVENTSCRIPT:22.zh=400A0000401F590840050300FFVV00002037FFFF	Give itemSkillScroll0xFF[VV:SKILL:Skill]to active (visiting/current) unit	{ITEM}
+EVENTSCRIPT:23.zh=400A0000401F590840050300FFVV00002037YYYY	Give itemSkillScroll0xFF[VV:SKILL:Skill]to[YYYY:UNIT:Character]
+EVENTSCRIPT:24.zh=2833FFFF2006C20040050300FFVV0000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure SkillScroll0xFF[VV:SKILL:Skill][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems	{ITEM}
+

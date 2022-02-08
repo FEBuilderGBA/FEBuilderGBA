@@ -51,7 +51,7 @@ namespace FEBuilderGBA
             g_InstrumentSet = null;
         }
 
-        public const uint NO_CACHE = 0xff;
+        public const uint NO_CACHE = 0xFF;
         public enum SpecialHack_enum
         {
             No,

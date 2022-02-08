@@ -4664,7 +4664,14 @@ namespace FEBuilderGBA
 
                 if (item_id == Program.ROM.RomInfo.item_gold_id())
                 {
-                    OBJECT_N07_L_4_ITEM.ErrorMessage = "";
+                    if (gold >= 1 && gold <= 255)
+                    {
+                        OBJECT_N07_L_4_ITEM.ErrorMessage = R._("宝箱からのゴールドは、256ゴールド以上にする必要があります。");
+                    }
+                    else
+                    {
+                        OBJECT_N07_L_4_ITEM.ErrorMessage = "";
+                    }
                 }
                 else
                 {
@@ -4672,7 +4679,7 @@ namespace FEBuilderGBA
                         , U.ToHexString(Program.ROM.RomInfo.item_gold_id()));
                 }
             }
-
+            OBJECT_N07_L_4_ITEM.Text = "helo";
         }
 
         private void OBJECT_N0A_W2_ValueChanged(object sender, EventArgs e)

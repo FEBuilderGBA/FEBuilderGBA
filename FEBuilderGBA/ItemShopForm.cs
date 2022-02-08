@@ -25,6 +25,13 @@ namespace FEBuilderGBA
 
             this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+            {
+                J_1.Text = R._("耐久");
+                J_1.AccessibleDescription = R._("アイテムの耐久度を設定することができます。\r\n0を設定すると、アイテムのディフォルトの耐久で販売されます。\r\nそれ以外を指定すると、その耐久度でアイテムを販売できます。\r\n基本的に、SkillScrollのために実装された機能になります。");
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -187,5 +194,44 @@ namespace FEBuilderGBA
             }
         }
 
+        private void B0_ValueChanged(object sender, EventArgs e)
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+            {
+                return;
+            }
+
+            uint skillScrollItemID = SkillConfigSkillSystemForm.FindSkillScrollItemID();
+            if (B0.Value != skillScrollItemID)
+            {
+                J_1.Text = R._("耐久");
+                SKILLNAME.Hide();
+                SKILLICON.Hide();
+            }
+            else
+            {
+                J_1.Text = R._("スキルID");
+                SKILLNAME.Show();
+                SKILLICON.Show();
+            }
+        }
+
+        private void B1_ValueChanged(object sender, EventArgs e)
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+            {
+                return;
+            }
+
+            if (! SKILLNAME.Visible)
+            {
+                return ;
+            }
+            uint skillid = (uint)B1.Value;
+            SKILLICON.Image = SkillConfigSkillSystemForm.DrawSkillIcon(skillid);
+            SKILLNAME.Text = SkillConfigSkillSystemForm.GetSkillName(skillid);
+        }
     }
 }

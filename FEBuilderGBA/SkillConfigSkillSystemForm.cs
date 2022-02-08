@@ -106,6 +106,7 @@ namespace FEBuilderGBA
             g_Cache_FindIconPointer = PatchUtil.NO_CACHE;
             g_Cache_FindTextPointer = PatchUtil.NO_CACHE;
             g_Cache_FindAnimePointer = PatchUtil.NO_CACHE;
+            g_Cache_SkillScrollItemID = 0xEEEE;
             g_Cache_SkillName = new Dictionary<uint,string>();
         }
 
@@ -253,6 +254,43 @@ namespace FEBuilderGBA
             uint imageOffset = imageBaseAddress + (size * index);
             return imageOffset;
         }
+
+        static uint g_Cache_SkillScrollItemID = 0xEEEE;
+        public static uint FindSkillScrollItemID()
+        {
+            if (g_Cache_SkillScrollItemID == 0xEEEE)
+            {
+                g_Cache_SkillScrollItemID = FindSkillScrollItemIDLow();
+            }
+            return g_Cache_SkillScrollItemID;
+        }
+
+        static uint FindSkillScrollItemIDLow()
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+            {
+                return U.NOT_FOUND;
+            }
+
+            byte[] SpellsGetter_dmp_bin = new byte[] { 0x08, 0x21, 0x08, 0x40, 0x00, 0x28, 0x11, 0xD1, 0x10, 0x1C, 0xFF, 0x21, 0x08, 0x40, 0x06, 0x4B, 0x19, 0x78, 0x00, 0x29, 0x05, 0xD0, 0x88, 0x42, 0x01, 0xD0, 0x01, 0x33, 0xF8, 0xE7, 0x01, 0x20, 0x05, 0xE0, 0x10, 0x12, 0x03, 0xE0, 0x00, 0x00};
+            uint pointer = U.GrepEnd(Program.ROM.Data, SpellsGetter_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            if (pointer == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            if (! U.isSafetyOffset(pointer))
+            {
+                return U.NOT_FOUND;
+            }
+            uint itemAddr = Program.ROM.p32(pointer);
+            if (!U.isSafetyOffset(itemAddr))
+            {
+                return U.NOT_FOUND;
+            }
+            return Program.ROM.u8(itemAddr);
+        }
+        
         public static Bitmap DrawIcon(uint index,uint imageBaseAddress)
         {
             uint imageOffset = GetIconAddr(index, imageBaseAddress);
