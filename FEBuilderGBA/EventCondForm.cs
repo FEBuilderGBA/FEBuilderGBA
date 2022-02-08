@@ -4640,27 +4640,46 @@ namespace FEBuilderGBA
 
         private void OBJECT_N07_B4_ValueChanged(object sender, EventArgs e)
         {
-            uint item_id = (uint)OBJECT_N07_W4.Value;
+            uint item_id = (uint)OBJECT_N07_B4.Value;
             uint gold = (uint)OBJECT_N07_W6.Value;
             if (item_id != Program.ROM.RomInfo.item_gold_id()
                 && gold <= 0)
             {//アイテムなのでゴールドの欄を消します.
-                OBJECT_N07_J_6.Visible = false;
-                OBJECT_N07_W6.Visible = false;
-                OBJECT_N07_X_4_GOLD_LABEL.Visible = false;
-                OBJECT_N07_J_5.Visible = false;
-                OBJECT_N07_B5.Visible = false;
-                OBJECT_N07_L_4_ITEM.ErrorMessage = "";
+                OBJECT_N07_GOLD_PANEL.Hide();
                 OBJECT_N07_W6.Value = 0; //おそらくゴールドの欄をゼロにしないと誤判定があるかもしれない.
-                OBJECT_N07_B5.Value = 0;
+                OBJECT_N07_L_4_ITEM.ErrorMessage = "";
+
+                PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+                if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+                {//IERがないので耐久は表示しない
+                    OBJECT_N05_USES_PANEL.Hide();
+                    OBJECT_N07_B5.Value = 0; //耐久は常に0にします
+                }
+                else
+                {
+                    uint skillScrollItemID = SkillConfigSkillSystemForm.FindSkillScrollItemID();
+                    if (item_id == skillScrollItemID)
+                    {
+                        OBJECT_N07_J_5.Text = R._("スキルID");
+                        SKILLNAME.Show();
+                        SKILLICON.Show();
+                        InputFormRef.UseHexMode(OBJECT_N07_B5);
+                    }
+                    else
+                    {
+                        OBJECT_N07_J_5.Text = R._("耐久");
+                        SKILLNAME.Hide();
+                        SKILLICON.Hide();
+                        InputFormRef.UseDecMode(OBJECT_N07_B5);
+                    }
+                    OBJECT_N05_USES_PANEL.Show();
+                }
             }
             else
             {//ゴールドまたは不明 ゴールドを表示する.
-                OBJECT_N07_J_6.Visible = true;
-                OBJECT_N07_W6.Visible = true;
-                OBJECT_N07_X_4_GOLD_LABEL.Visible = true;
-                OBJECT_N07_J_5.Visible = true;
-                OBJECT_N07_B5.Visible = true;
+                OBJECT_N05_USES_PANEL.Hide();
+                OBJECT_N07_GOLD_PANEL.Show();
+                OBJECT_N07_B5.Value = 0; //誤解を避けるために、耐久はかならず0にする必要がある
 
                 if (item_id == Program.ROM.RomInfo.item_gold_id())
                 {
@@ -4679,7 +4698,22 @@ namespace FEBuilderGBA
                         , U.ToHexString(Program.ROM.RomInfo.item_gold_id()));
                 }
             }
-            OBJECT_N07_L_4_ITEM.Text = "helo";
+        }
+        private void OBJECT_N07_B5_ValueChanged(object sender, EventArgs e)
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
+            {
+                return;
+            }
+
+            if (!SKILLNAME.Visible)
+            {
+                return;
+            }
+            uint skillid = (uint)OBJECT_N07_B5.Value;
+            SKILLICON.Image = SkillConfigSkillSystemForm.DrawSkillIcon(skillid);
+            SKILLNAME.Text = SkillConfigSkillSystemForm.GetSkillName(skillid);
         }
 
         private void OBJECT_N0A_W2_ValueChanged(object sender, EventArgs e)
@@ -5194,6 +5228,7 @@ namespace FEBuilderGBA
                 return new Size(listbounds.X, listbounds.Y);
             }
         }
+
 
 
     }

@@ -3658,6 +3658,27 @@ namespace FEBuilderGBA
             Control c = (Control)sender;
             c.BackColor = OptionForm.Color_Control_BackColor();
         }
+        //Labelがクリックできることをユーザに伝える.
+        public static void UseHexMode(NumericUpDown upd)
+        {
+            if (upd.Hexadecimal == true)
+            {
+                return;
+            }
+            upd.Hexadecimal = true;
+            upd.BackColor = OptionForm.Color_Input_BackColor();
+            upd.ForeColor = OptionForm.Color_Input_ForeColor();
+        }
+        public static void UseDecMode(NumericUpDown upd)
+        {
+            if (upd.Hexadecimal == false)
+            {
+                return;
+            }
+            upd.Hexadecimal = false;
+            upd.BackColor = OptionForm.Color_InputDecimal_BackColor();
+            upd.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
+        }
 
         //Labelがクリックできることをユーザに伝える.
         public static void markupJumpLabel(Label jump_object)
@@ -11932,6 +11953,10 @@ namespace FEBuilderGBA
             else if (str == "@NORECOMMEDPATCH")
             {
                 str = R._("これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n");
+            }
+            else if (str == "@IERUSES")
+            {
+                str = R._("アイテムの耐久度を設定することができます。\r\n0を設定すると、アイテムのディフォルトの耐久で販売されます。\r\nそれ以外を指定すると、その耐久度でアイテムを入手できます。\r\n基本的に、SkillScrollのために実装された機能になります。\r\nアイテムをSkillScrollに指定した場合、この項目はそのSkillScrollで、覚えることができるSkillIDになります。");
             }
             else if (str == "@VanillaROM")
             {

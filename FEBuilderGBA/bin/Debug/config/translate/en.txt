@@ -2011,6 +2011,12 @@ Range Cond:
 :07=神の矢
 07=Vertical Arrow
 
+:スキルID
+Skill ID.
+
+:耐久
+Uses
+
 :宝箱からのゴールドは、256ゴールド以上にする必要があります。
 Gold from the treasure chest must be at least 256 gold.
 
@@ -2079,6 +2085,9 @@ Villages usually require 2 seperate events to function.\r\n\r\n1) A Type-10 (Hom
 
 :宝箱
 Chest
+
+:入手できるゴールドを指定します。\\r\\nゴールドは、256ゴールド以上を指定する必要があります。
+Specify the gold available.\\\\ r \\\\ n Gold must be 256 gold or higher.
 
 :ゴールド
 Gold
@@ -5440,6 +5449,9 @@ A value for identifying instrument data.\r\nIf you know the name of an instrumen
 :これにチェックして、パッチのインストールをキャンセルした場合は、\r\n次回起動時までこのパッチを推奨しなくします。\r\n
 If you check this and cancel the installation of the patch, \r\nthis patch will not be recommended until the next startup.\r\n
 
+:アイテムの耐久度を設定することができます。\r\n0を設定すると、アイテムのディフォルトの耐久で販売されます。\r\nそれ以外を指定すると、その耐久度でアイテムを入手できます。\r\n基本的に、SkillScrollのために実装された機能になります。\r\nアイテムをSkillScrollに指定した場合、この項目はそのSkillScrollで、覚えることができるSkillIDになります。
+You can set the durability of the item.\r\nIf set to 0, the item will be sold with default durability.\r\nIf you specify anything else, you can get items with that durability.\r\nIt's basically a feature implemented for SkillScroll.\r\nIf you specify an item as a SkillScroll, this item will be the SkillID that you can remember in that SkillScroll.
+
 :何も改造されていない、無改造のバニラROMを指定してください。
 Specify an unmodified vanilla ROM that has not been modified at all.
 
@@ -5566,9 +5578,6 @@ Range
 :重さ
 Weight
 
-:耐久
-Uses
-
 :特効効果\r\n新規割当
 New\r\nEffectiveness
 
@@ -5686,14 +5695,8 @@ Probability%
 :ランダム宝箱
 Random Chest
 
-:アイテムの耐久度を設定することができます。\r\n0を設定すると、アイテムのディフォルトの耐久で販売されます。\r\nそれ以外を指定すると、その耐久度でアイテムを販売できます。\r\n基本的に、SkillScrollのために実装された機能になります。
-You can set the durability of the item.\r\nIf set to 0, the item will be sold with default durability.\r\nIf you specify anything else, you can sell the item with that durability.\r\nIt's basically a feature implemented for SkillScroll.
-
 :編成準備店
 Preparations Screen Shop
-
-:スキルID
-Skill ID.
 
 :店の名前
 Shop Name

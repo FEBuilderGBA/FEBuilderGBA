@@ -92,17 +92,16 @@
             this.OBJECT_N06_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_N06_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_UNIONTAB_N07 = new System.Windows.Forms.TabPage();
+            this.OBJECT_N07_GOLD_PANEL = new System.Windows.Forms.Panel();
+            this.OBJECT_N07_J_6 = new System.Windows.Forms.Label();
+            this.OBJECT_N07_W6 = new System.Windows.Forms.NumericUpDown();
+            this.OBJECT_N07_X_4_GOLD_LABEL = new System.Windows.Forms.Label();
             this.OBJECT_N07_Comment = new FEBuilderGBA.TextBoxEx();
             this.label29 = new System.Windows.Forms.Label();
-            this.OBJECT_N07_J_5 = new System.Windows.Forms.Label();
-            this.OBJECT_N07_B5 = new System.Windows.Forms.NumericUpDown();
-            this.OBJECT_N07_X_4_GOLD_LABEL = new System.Windows.Forms.Label();
-            this.OBJECT_N07_W6 = new System.Windows.Forms.NumericUpDown();
-            this.OBJECT_N07_J_6 = new System.Windows.Forms.Label();
             this.OBJECT_N07_W10 = new System.Windows.Forms.NumericUpDown();
             this.OBJECT_N07_J_10 = new System.Windows.Forms.Label();
             this.OBJECT_N07_W2 = new System.Windows.Forms.NumericUpDown();
-            this.OBJECT_N07_W4 = new System.Windows.Forms.NumericUpDown();
+            this.OBJECT_N07_B4 = new System.Windows.Forms.NumericUpDown();
             this.OBJECT_N07_J_4_ITEM = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.OBJECT_N07_B9 = new System.Windows.Forms.NumericUpDown();
@@ -115,6 +114,11 @@
             this.OBJECT_N07_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_N07_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_N07_L_4_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N05_USES_PANEL = new System.Windows.Forms.Panel();
+            this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N07_J_5 = new System.Windows.Forms.Label();
+            this.OBJECT_N07_B5 = new System.Windows.Forms.NumericUpDown();
             this.OBJECT_UNIONTAB_N08 = new System.Windows.Forms.TabPage();
             this.OBJECT_N08_Comment = new FEBuilderGBA.TextBoxEx();
             this.label33 = new System.Windows.Forms.Label();
@@ -656,14 +660,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N06_B9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N06_B8)).BeginInit();
             this.OBJECT_UNIONTAB_N07.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B5)).BeginInit();
+            this.OBJECT_N07_GOLD_PANEL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).BeginInit();
+            this.OBJECT_N05_USES_PANEL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B5)).BeginInit();
             this.OBJECT_UNIONTAB_N08.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_W10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_W2)).BeginInit();
@@ -1637,17 +1644,13 @@
             // OBJECT_UNIONTAB_N07
             // 
             this.OBJECT_UNIONTAB_N07.BackColor = System.Drawing.SystemColors.Control;
+            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_GOLD_PANEL);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_Comment);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.label29);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_J_5);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_B5);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_X_4_GOLD_LABEL);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_W6);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_J_6);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_W10);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_J_10);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_W2);
-            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_W4);
+            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_B4);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_J_4_ITEM);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.label91);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_B9);
@@ -1660,6 +1663,7 @@
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_EXPLAIN);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_L_2_FLAG);
             this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N07_L_4_ITEM);
+            this.OBJECT_UNIONTAB_N07.Controls.Add(this.OBJECT_N05_USES_PANEL);
             this.OBJECT_UNIONTAB_N07.Location = new System.Drawing.Point(4, 28);
             this.OBJECT_UNIONTAB_N07.Margin = new System.Windows.Forms.Padding(2);
             this.OBJECT_UNIONTAB_N07.Name = "OBJECT_UNIONTAB_N07";
@@ -1667,6 +1671,50 @@
             this.OBJECT_UNIONTAB_N07.Size = new System.Drawing.Size(597, 689);
             this.OBJECT_UNIONTAB_N07.TabIndex = 1;
             this.OBJECT_UNIONTAB_N07.Text = "宝箱";
+            // 
+            // OBJECT_N07_GOLD_PANEL
+            // 
+            this.OBJECT_N07_GOLD_PANEL.Controls.Add(this.OBJECT_N07_J_6);
+            this.OBJECT_N07_GOLD_PANEL.Controls.Add(this.OBJECT_N07_W6);
+            this.OBJECT_N07_GOLD_PANEL.Controls.Add(this.OBJECT_N07_X_4_GOLD_LABEL);
+            this.OBJECT_N07_GOLD_PANEL.Location = new System.Drawing.Point(0, 80);
+            this.OBJECT_N07_GOLD_PANEL.Name = "OBJECT_N07_GOLD_PANEL";
+            this.OBJECT_N07_GOLD_PANEL.Size = new System.Drawing.Size(465, 35);
+            this.OBJECT_N07_GOLD_PANEL.TabIndex = 254;
+            // 
+            // OBJECT_N07_J_6
+            // 
+            this.OBJECT_N07_J_6.AccessibleDescription = "入手できるゴールドを指定します。\\r\\nゴールドは、256ゴールド以上を指定する必要があります。";
+            this.OBJECT_N07_J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OBJECT_N07_J_6.Location = new System.Drawing.Point(0, 0);
+            this.OBJECT_N07_J_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OBJECT_N07_J_6.Name = "OBJECT_N07_J_6";
+            this.OBJECT_N07_J_6.Size = new System.Drawing.Size(193, 32);
+            this.OBJECT_N07_J_6.TabIndex = 248;
+            this.OBJECT_N07_J_6.Text = "ゴールド";
+            this.OBJECT_N07_J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N07_W6
+            // 
+            this.OBJECT_N07_W6.Location = new System.Drawing.Point(200, 3);
+            this.OBJECT_N07_W6.Margin = new System.Windows.Forms.Padding(2);
+            this.OBJECT_N07_W6.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.OBJECT_N07_W6.Name = "OBJECT_N07_W6";
+            this.OBJECT_N07_W6.Size = new System.Drawing.Size(109, 25);
+            this.OBJECT_N07_W6.TabIndex = 3;
+            // 
+            // OBJECT_N07_X_4_GOLD_LABEL
+            // 
+            this.OBJECT_N07_X_4_GOLD_LABEL.AutoSize = true;
+            this.OBJECT_N07_X_4_GOLD_LABEL.Location = new System.Drawing.Point(315, 7);
+            this.OBJECT_N07_X_4_GOLD_LABEL.Name = "OBJECT_N07_X_4_GOLD_LABEL";
+            this.OBJECT_N07_X_4_GOLD_LABEL.Size = new System.Drawing.Size(65, 18);
+            this.OBJECT_N07_X_4_GOLD_LABEL.TabIndex = 250;
+            this.OBJECT_N07_X_4_GOLD_LABEL.Text = "ゴールド";
             // 
             // OBJECT_N07_Comment
             // 
@@ -1688,64 +1736,6 @@
             this.label29.TabIndex = 252;
             this.label29.Text = "コメント";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OBJECT_N07_J_5
-            // 
-            this.OBJECT_N07_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OBJECT_N07_J_5.Location = new System.Drawing.Point(426, 81);
-            this.OBJECT_N07_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.OBJECT_N07_J_5.Name = "OBJECT_N07_J_5";
-            this.OBJECT_N07_J_5.Size = new System.Drawing.Size(77, 32);
-            this.OBJECT_N07_J_5.TabIndex = 4;
-            this.OBJECT_N07_J_5.Text = "00";
-            this.OBJECT_N07_J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OBJECT_N07_B5
-            // 
-            this.OBJECT_N07_B5.Hexadecimal = true;
-            this.OBJECT_N07_B5.Location = new System.Drawing.Point(507, 85);
-            this.OBJECT_N07_B5.Margin = new System.Windows.Forms.Padding(2);
-            this.OBJECT_N07_B5.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.OBJECT_N07_B5.Name = "OBJECT_N07_B5";
-            this.OBJECT_N07_B5.Size = new System.Drawing.Size(65, 25);
-            this.OBJECT_N07_B5.TabIndex = 251;
-            // 
-            // OBJECT_N07_X_4_GOLD_LABEL
-            // 
-            this.OBJECT_N07_X_4_GOLD_LABEL.AutoSize = true;
-            this.OBJECT_N07_X_4_GOLD_LABEL.Location = new System.Drawing.Point(315, 87);
-            this.OBJECT_N07_X_4_GOLD_LABEL.Name = "OBJECT_N07_X_4_GOLD_LABEL";
-            this.OBJECT_N07_X_4_GOLD_LABEL.Size = new System.Drawing.Size(65, 18);
-            this.OBJECT_N07_X_4_GOLD_LABEL.TabIndex = 250;
-            this.OBJECT_N07_X_4_GOLD_LABEL.Text = "ゴールド";
-            // 
-            // OBJECT_N07_W6
-            // 
-            this.OBJECT_N07_W6.Location = new System.Drawing.Point(200, 83);
-            this.OBJECT_N07_W6.Margin = new System.Windows.Forms.Padding(2);
-            this.OBJECT_N07_W6.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.OBJECT_N07_W6.Name = "OBJECT_N07_W6";
-            this.OBJECT_N07_W6.Size = new System.Drawing.Size(109, 25);
-            this.OBJECT_N07_W6.TabIndex = 3;
-            // 
-            // OBJECT_N07_J_6
-            // 
-            this.OBJECT_N07_J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OBJECT_N07_J_6.Location = new System.Drawing.Point(0, 80);
-            this.OBJECT_N07_J_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.OBJECT_N07_J_6.Name = "OBJECT_N07_J_6";
-            this.OBJECT_N07_J_6.Size = new System.Drawing.Size(193, 32);
-            this.OBJECT_N07_J_6.TabIndex = 248;
-            this.OBJECT_N07_J_6.Text = "ゴールド";
-            this.OBJECT_N07_J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OBJECT_N07_W10
             // 
@@ -1787,20 +1777,20 @@
             this.OBJECT_N07_W2.Size = new System.Drawing.Size(67, 25);
             this.OBJECT_N07_W2.TabIndex = 0;
             // 
-            // OBJECT_N07_W4
+            // OBJECT_N07_B4
             // 
-            this.OBJECT_N07_W4.Hexadecimal = true;
-            this.OBJECT_N07_W4.Location = new System.Drawing.Point(200, 50);
-            this.OBJECT_N07_W4.Margin = new System.Windows.Forms.Padding(2);
-            this.OBJECT_N07_W4.Maximum = new decimal(new int[] {
+            this.OBJECT_N07_B4.Hexadecimal = true;
+            this.OBJECT_N07_B4.Location = new System.Drawing.Point(200, 50);
+            this.OBJECT_N07_B4.Margin = new System.Windows.Forms.Padding(2);
+            this.OBJECT_N07_B4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.OBJECT_N07_W4.Name = "OBJECT_N07_W4";
-            this.OBJECT_N07_W4.Size = new System.Drawing.Size(109, 25);
-            this.OBJECT_N07_W4.TabIndex = 2;
-            this.OBJECT_N07_W4.ValueChanged += new System.EventHandler(this.OBJECT_N07_B4_ValueChanged);
+            this.OBJECT_N07_B4.Name = "OBJECT_N07_B4";
+            this.OBJECT_N07_B4.Size = new System.Drawing.Size(109, 25);
+            this.OBJECT_N07_B4.TabIndex = 2;
+            this.OBJECT_N07_B4.ValueChanged += new System.EventHandler(this.OBJECT_N07_B4_ValueChanged);
             // 
             // OBJECT_N07_J_4_ITEM
             // 
@@ -1932,6 +1922,65 @@
             this.OBJECT_N07_L_4_ITEM.ReadOnly = true;
             this.OBJECT_N07_L_4_ITEM.Size = new System.Drawing.Size(219, 25);
             this.OBJECT_N07_L_4_ITEM.TabIndex = 201;
+            // 
+            // OBJECT_N05_USES_PANEL
+            // 
+            this.OBJECT_N05_USES_PANEL.Controls.Add(this.SKILLICON);
+            this.OBJECT_N05_USES_PANEL.Controls.Add(this.SKILLNAME);
+            this.OBJECT_N05_USES_PANEL.Controls.Add(this.OBJECT_N07_J_5);
+            this.OBJECT_N05_USES_PANEL.Controls.Add(this.OBJECT_N07_B5);
+            this.OBJECT_N05_USES_PANEL.Location = new System.Drawing.Point(0, 80);
+            this.OBJECT_N05_USES_PANEL.Name = "OBJECT_N05_USES_PANEL";
+            this.OBJECT_N05_USES_PANEL.Size = new System.Drawing.Size(571, 35);
+            this.OBJECT_N05_USES_PANEL.TabIndex = 255;
+            // 
+            // SKILLICON
+            // 
+            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SKILLICON.Location = new System.Drawing.Point(540, 0);
+            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLICON.Name = "SKILLICON";
+            this.SKILLICON.Size = new System.Drawing.Size(32, 32);
+            this.SKILLICON.TabIndex = 249;
+            this.SKILLICON.TabStop = false;
+            this.SKILLICON.Visible = false;
+            // 
+            // SKILLNAME
+            // 
+            this.SKILLNAME.ErrorMessage = "";
+            this.SKILLNAME.Location = new System.Drawing.Point(316, 2);
+            this.SKILLNAME.Name = "SKILLNAME";
+            this.SKILLNAME.Placeholder = "";
+            this.SKILLNAME.ReadOnly = true;
+            this.SKILLNAME.Size = new System.Drawing.Size(217, 25);
+            this.SKILLNAME.TabIndex = 250;
+            this.SKILLNAME.Visible = false;
+            // 
+            // OBJECT_N07_J_5
+            // 
+            this.OBJECT_N07_J_5.AccessibleDescription = "@IERUSES";
+            this.OBJECT_N07_J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OBJECT_N07_J_5.Location = new System.Drawing.Point(0, 0);
+            this.OBJECT_N07_J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OBJECT_N07_J_5.Name = "OBJECT_N07_J_5";
+            this.OBJECT_N07_J_5.Size = new System.Drawing.Size(193, 32);
+            this.OBJECT_N07_J_5.TabIndex = 248;
+            this.OBJECT_N07_J_5.Text = "耐久";
+            this.OBJECT_N07_J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N07_B5
+            // 
+            this.OBJECT_N07_B5.Location = new System.Drawing.Point(200, 3);
+            this.OBJECT_N07_B5.Margin = new System.Windows.Forms.Padding(2);
+            this.OBJECT_N07_B5.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.OBJECT_N07_B5.Name = "OBJECT_N07_B5";
+            this.OBJECT_N07_B5.Size = new System.Drawing.Size(109, 25);
+            this.OBJECT_N07_B5.TabIndex = 3;
+            this.OBJECT_N07_B5.ValueChanged += new System.EventHandler(this.OBJECT_N07_B5_ValueChanged);
             // 
             // OBJECT_UNIONTAB_N08
             // 
@@ -8342,14 +8391,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N06_B8)).EndInit();
             this.OBJECT_UNIONTAB_N07.ResumeLayout(false);
             this.OBJECT_UNIONTAB_N07.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B5)).EndInit();
+            this.OBJECT_N07_GOLD_PANEL.ResumeLayout(false);
+            this.OBJECT_N07_GOLD_PANEL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_W4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).EndInit();
+            this.OBJECT_N05_USES_PANEL.ResumeLayout(false);
+            this.OBJECT_N05_USES_PANEL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B5)).EndInit();
             this.OBJECT_UNIONTAB_N08.ResumeLayout(false);
             this.OBJECT_UNIONTAB_N08.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_W10)).EndInit();
@@ -8643,7 +8697,7 @@
         private System.Windows.Forms.NumericUpDown OBJECT_N07_W10;
         private System.Windows.Forms.Label OBJECT_N07_J_10;
         private System.Windows.Forms.NumericUpDown OBJECT_N07_W2;
-        private System.Windows.Forms.NumericUpDown OBJECT_N07_W4;
+        private System.Windows.Forms.NumericUpDown OBJECT_N07_B4;
         private System.Windows.Forms.Label OBJECT_N07_J_4_ITEM;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.NumericUpDown OBJECT_N07_B9;
@@ -9116,8 +9170,6 @@
         private System.Windows.Forms.NumericUpDown OBJECT_N07_W6;
         private System.Windows.Forms.Label OBJECT_N07_J_6;
         private System.Windows.Forms.Label OBJECT_N07_X_4_GOLD_LABEL;
-        private System.Windows.Forms.Label OBJECT_N07_J_5;
-        private System.Windows.Forms.NumericUpDown OBJECT_N07_B5;
         private System.Windows.Forms.TabPage TRAP_UNIONTAB_N06;
         private System.Windows.Forms.Label TRAP_N06_L_1_MAPXY_2;
         private System.Windows.Forms.NumericUpDown TRAP_N06_B3;
@@ -9178,5 +9230,11 @@
         private System.Windows.Forms.Label label79;
         private TextBoxEx TALKFE6_N0D_Comment;
         private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Panel OBJECT_N07_GOLD_PANEL;
+        private System.Windows.Forms.Panel OBJECT_N05_USES_PANEL;
+        private System.Windows.Forms.Label OBJECT_N07_J_5;
+        private System.Windows.Forms.NumericUpDown OBJECT_N07_B5;
+        private InterpolatedPictureBox SKILLICON;
+        private TextBoxEx SKILLNAME;
     }
 }

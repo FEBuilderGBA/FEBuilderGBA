@@ -15,9 +15,15 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-
             this.SHOP_LIST.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
+
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {
+                J_1.Text = R._("耐久");
+                J_1.AccessibleDescription = "@IERUSES";
+            }
 
             this.InputFormRef = Init(this);
             this.InputFormRef.PreWriteHandler += OnPreWrite;
@@ -25,13 +31,6 @@ namespace FEBuilderGBA
 
             this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-
-            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
-            if (itemUsingExtends != PatchUtil.ItemUsingExtends.IER)
-            {
-                J_1.Text = R._("耐久");
-                J_1.AccessibleDescription = R._("アイテムの耐久度を設定することができます。\r\n0を設定すると、アイテムのディフォルトの耐久で販売されます。\r\nそれ以外を指定すると、その耐久度でアイテムを販売できます。\r\n基本的に、SkillScrollのために実装された機能になります。");
-            }
         }
 
         public InputFormRef InputFormRef;
@@ -208,12 +207,14 @@ namespace FEBuilderGBA
                 J_1.Text = R._("耐久");
                 SKILLNAME.Hide();
                 SKILLICON.Hide();
+                InputFormRef.UseDecMode(B1);
             }
             else
             {
                 J_1.Text = R._("スキルID");
                 SKILLNAME.Show();
                 SKILLICON.Show();
+                InputFormRef.UseHexMode(B1);
             }
         }
 
