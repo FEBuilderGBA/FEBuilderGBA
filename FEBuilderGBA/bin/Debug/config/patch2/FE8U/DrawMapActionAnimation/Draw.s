@@ -1155,7 +1155,23 @@ pop {r1}
 bx r1 
 
 
+.align 4 
+.ltorg 
 
+.global Draw_RoundCleanup
+.type Draw_RoundCleanup, %function 
+Draw_RoundCleanup:
+push {lr}
+@Restore the destroyed palette to draw the numbers.
+ldr r0, =0x0859EEC0	@Right Lune Palette	@{U}
+@ldr r0, =0x085C73E0	@Right Lune Palette	@{J}
+mov r1, #27 @ usual palette # 
+lsl r1, #5 @ multiply by #0x20
+mov	r2,#0x20
+blh CopyToPaletteBuffer @Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
 
+pop {r0}
+bx r0
 
-
+.align 4 
+.ltorg 

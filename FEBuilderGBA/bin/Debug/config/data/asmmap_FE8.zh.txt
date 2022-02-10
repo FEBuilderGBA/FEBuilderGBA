@@ -7472,7 +7472,7 @@ r3=X tile position of menu of the right	{U}
 089991AC	:0899B5AB	UNUSED DATA 2	It seems to be tile animation data not being used	{U}
 0859A140	&PALETTE	Something's palette	01	{U}
 0859EEA0	&PALETTE	Something's palette	02	{U}
-0859EEC0	&PALETTE	Something's palette	03	{U}
+0859EEC0	&PALETTE	LightRune Palette	{U}
 0859EEE0	&PALETTE	Something's palette	04	{U}
 0859EF00	&PALETTE	Something's palette	05	{U}
 0859EF20	&PALETTE	Something's palette	06	{U}
@@ -7570,7 +7570,7 @@ r3=X tile position of menu of the right	{U}
 08AB21B8	&PALETTE	Something's palette	99	{U}
 085C25C0	&PALETTE	Something's palette	01	{J}
 085C73C0	&PALETTE	Something's palette	02	{J}
-085C73E0	&PALETTE	Something's palette	03	{J}
+085C73E0	&PALETTE	LightRune Palette	{J}
 085C7400	&PALETTE	Something's palette	04	{J}
 085C7420	&PALETTE	Something's palette	05	{J}
 085C7440	&PALETTE	Something's palette	06	{J}

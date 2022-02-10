@@ -56,3 +56,4 @@ Draw_GetActiveAttackerOrDefender=$0171
 Draw_PushToOam=$01FD
 Draw_NumberDuringBattle=$03A1
 Draw_Cleanup=$0591
+Draw_RoundCleanup=$05ED

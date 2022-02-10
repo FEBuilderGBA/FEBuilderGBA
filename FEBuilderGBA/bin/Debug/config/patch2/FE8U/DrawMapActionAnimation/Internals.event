@@ -102,7 +102,7 @@ PROC_SLEEP(1)
 PROC_CALL_ROUTINE($8081535) // Move away	{U}
 //PROC_CALL_ROUTINE($8083875) // Move away	{J}
 PROC_LOOP_ROUTINE(Draw_WaitXFrames)
-
+PROC_CALL_ROUTINE(Draw_RoundCleanup)	//cleaup palette
 PROC_END
 
 
