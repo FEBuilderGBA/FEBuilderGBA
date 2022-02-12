@@ -3,7 +3,7 @@ NAME.en=Skill SkillSystems 20220127
 TYPE=BIN
 TAG=#ENGINE
 
-PATCHED_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1 0x61 0xA5 0xB6 0x8
+PATCHED_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1 0x51 0xA5 0xB6 0x8
 BINF:0x0800=00000800.bin
 BINF:0x2900=00002900.bin
 BINF:0x2924=00002924.bin
@@ -671,6 +671,7 @@ BINF:0xB2A610=00B2A610.bin
 
 
 
+
 EXTENDS:0x1100=TEXT
 TEXTADV:0x002=0x002.txt
 TEXTADV:0x042=0x042.txt
@@ -1176,9 +1177,9 @@ EDIT_PATCH:3=../skill20191022/PATCH_AnimaTriangle_WindList SkillSystem Version.t
 EDIT_PATCH:4=../skill20191022/PATCH_Escape_Quote_SkillSystems Version.txt
 EDIT_PATCH:5=../skill20191022/PATCH_Leadership Skillsystems Version.txt
 EDIT_PATCH:6=../ClassLevelMax/PATCH_ClassLevelMax.txt
-EDIT_PATCH:7=../skill20200211/PATCH_PersonalData Skillsystems Version.txt
-EDIT_PATCH:8=../skill20220127/PATCH_Mag Char Editor_20220129.txt
-EDIT_PATCH:9=../skill20220127/PATCH_Mag Class Editor_20220129.txt
+EDIT_PATCH:7=../skill20220120/PATCH_PersonalData Skillsystems Version_20220129.txt
+EDIT_PATCH:8=../skill20220120/PATCH_Mag Char Editor_20220129.txt
+EDIT_PATCH:9=../skill20220120/PATCH_Mag Class Editor_20220129.txt
 EDIT_PATCH:10=../WeaponLockArray_SkillSystems/PATCH_WeaponLockArray_SkillSystems.txt
 EDIT_PATCH:11=../skill20200223/PATCH_Leadership Param Skillsystems Version.txt
 EDIT_PATCH:12=../HeroesMovement_SkillSystems/PATCH_HeroesMovement PivotClassList.txt
@@ -1188,15 +1189,15 @@ EDIT_PATCH:15=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SmiteClassList
 EDIT_PATCH:16=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SwapClassList.txt
 EDIT_PATCH:17=../HeroesMovement_SkillSystems/PATCH_HeroesMovement SwarpClassList.txt
 EDIT_PATCH:18=../ArmorMarchList/PATCH_ArmorMarchList.txt
-EDIT_PATCH:19=../skill20220127/PATCH_IER_ChestKeyList.txt
-EDIT_PATCH:20=../skill20220127/PATCH_IER_HealingItemList.txt
-EDIT_PATCH:21=../skill20220127/PATCH_IER_IERevampTable.txt
-EDIT_PATCH:22=../skill20220127/PATCH_IER_PromotionItemTable.txt
-EDIT_PATCH:23=../skill20220127/PATCH_IER_StatboosterText.txt
-EDIT_PATCH:24=../skill20220127/PATCH_SkillScroll_DurabilityBasedItemIconList.txt
-EDIT_PATCH:25=../skill20220127/PATCH_SkillScroll_DurabilityItemList.txt
-EDIT_PATCH:26=../skill20220127/PATCH_SkillScrollIDLink.txt
-EDIT_PATCH:27=../skill20220127/PATCH_SkillScrollMessageReturnLink.txt
+EDIT_PATCH:19=../skill20220120/PATCH_IER_ChestKeyList.txt
+EDIT_PATCH:20=../skill20220120/PATCH_IER_HealingItemList.txt
+EDIT_PATCH:21=../skill20220120/PATCH_IER_IERevampTable.txt
+EDIT_PATCH:22=../skill20220120/PATCH_IER_PromotionItemTable.txt
+EDIT_PATCH:23=../skill20220120/PATCH_IER_StatboosterText.txt
+EDIT_PATCH:24=../skill20220120/PATCH_SkillScroll_DurabilityBasedItemIconList.txt
+EDIT_PATCH:25=../skill20220120/PATCH_SkillScroll_DurabilityItemList.txt
+EDIT_PATCH:26=../skill20220120/PATCH_SkillScrollIDLink.txt
+EDIT_PATCH:27=../skill20220120/PATCH_SkillScrollMessageReturnLink.txt
 
 
-NAME.zh=技能 SkillSystems 20220127（技能扩展）。
+NAME.zh=技能 SkillSystems 20220127（技能扩展）

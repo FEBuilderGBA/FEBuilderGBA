@@ -222,7 +222,7 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
         }
 
-        private MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
+        private InputFormRef.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
             uint length = 0;
             if (U.isSafetyOffset(addr + 2))
@@ -232,7 +232,7 @@ namespace FEBuilderGBA
                 length = 4 + (w * h);
             }
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = length;
             return aal;

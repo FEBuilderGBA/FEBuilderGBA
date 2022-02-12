@@ -903,7 +903,7 @@ namespace FEBuilderGBA
             Program.AsmMapFileAsmCache.ClearCache();
         }
 
-        private MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
+        private InputFormRef.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
             uint length = CalcLength(addr);
 
@@ -912,7 +912,7 @@ namespace FEBuilderGBA
             //8バイトアライメント
             more = (more / 8) * 8;
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = length + more;
             return aal;

@@ -1,0 +1,3 @@
+Devil's Luck: Immune to Devil Reversal.
+Gives unit's Devil Reversal to the enemy.
+(31-Luck % chance of Devil Reversal).

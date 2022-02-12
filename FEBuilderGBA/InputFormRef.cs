@@ -9774,6 +9774,98 @@ namespace FEBuilderGBA
             };
         }
 
+        public struct ADDR_AND_LENGTH
+        {
+            public uint addr;
+            public uint length;
+        }; 
+        static uint OriginalDataSize(
+               uint index_start_addr //indexの開始
+             , uint index_end_addr   //indexの終端
+             , uint data_start_addr  //データの開始
+             , uint data_end_addr    //データの終端
+             , uint now_index        //データを入れたいindex場所
+             , Func<uint, bool, InputFormRef.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
+             )
+        {
+            //uHuffman patchを使っているかどうか.
+            bool useUnHuffmanPatch = false;
+
+            uint addr = index_start_addr + (now_index * 4);
+            uint data_s = Program.ROM.u32(addr);
+
+            //他と共有していないか調べる.
+            for (uint p = index_start_addr; p < index_end_addr; p += 4)
+            {
+                uint data_s2 = Program.ROM.u32(p);
+                if (p == addr)
+                {
+                    continue;
+                }
+                if (data_s2 == data_s)
+                {//他と共有しているのでリサイクルしてはいけません.
+                    return 0;
+                }
+            }
+
+            if (!U.isPointer(data_s))
+            {//ポインタではない　単体データ
+                if (!FETextEncode.IsUnHuffmanPatchPointer(data_s))
+                {
+                    InputFormRef.ADDR_AND_LENGTH aal_untihuffman = get_data_pos_callback(data_s, false);
+                    return InputFormRef.ConvertSafetyLength(aal_untihuffman.length, index_start_addr, index_end_addr, data_s);
+                }
+                //unHuffman patch適応データ
+                useUnHuffmanPatch = true;
+                data_s = FETextEncode.ConvertUnHuffmanPatchToPointer(data_s);
+            }
+
+            data_s = U.toOffset(data_s);
+            InputFormRef.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, useUnHuffmanPatch);
+            return InputFormRef.ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
+        }
+        //改造ROMだとデータを共有している場合があるので、本当にそのサイズは正しいのか、
+        //すべての文字列データから再検証します。
+        //遅くなるけど、これは必須です。
+        static uint ConvertSafetyLength(
+               uint length
+             , uint index_start_addr //indexの開始
+             , uint index_end_addr   //indexの終端
+             , uint data_s           //入れたいデータのアドレス
+            )
+        {
+            //念のため、その範囲からスタートするポインタがないか確認します. 
+            //tlpとか、途中からアドレスが逆転していることがあるらしいので。
+            for (uint p = index_start_addr; p < index_end_addr; p += 4)
+            {
+                uint data_s_dupcheck = Program.ROM.u32(p);
+                if (!U.isPointer(data_s_dupcheck))
+                {
+                    if (!FETextEncode.IsUnHuffmanPatchPointer(data_s_dupcheck))
+                    {//ポインタが不明
+                        continue;
+                    }
+                    data_s_dupcheck = FETextEncode.ConvertUnHuffmanPatchToPointer(data_s_dupcheck);
+                }
+                data_s_dupcheck = U.toOffset(data_s_dupcheck);
+                if (data_s_dupcheck == data_s)
+                {//自分自身
+                    continue;
+                }
+
+                if (data_s_dupcheck >= data_s && data_s_dupcheck < data_s + length)
+                {//データを共有しているらしいので、サイズを切り詰めないとダメだ.
+                    uint new_length = data_s_dupcheck - data_s;
+                    if (new_length < length)
+                    {//より小さくなる場合は、縮める.
+                        length = new_length;
+                    }
+                }
+            }
+
+            return length;
+        }
+
         //テキストデータ 連続するデータの書き込み
         public static uint WriteTextData(
               uint baseaddress
@@ -9782,7 +9874,7 @@ namespace FEBuilderGBA
             , uint data_start, uint data_end
             , byte[] dataByte
             , bool raiseUnHuffman
-            , Func<uint, bool,MoveToUnuseSpace.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
+            , Func<uint, bool,InputFormRef.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
             , Undo.UndoData undodata
         )
         {
@@ -9802,7 +9894,7 @@ namespace FEBuilderGBA
             write_addr = U.toOffset(write_addr);
 
             //オリジナルのサイズを求めます.
-            uint original_size = MoveToUnuseSpace.OriginalDataSize(
+            uint original_size = OriginalDataSize(
                  baseaddress
                 , baseaddress + (datacount * 4)
                 , data_start
@@ -9841,43 +9933,6 @@ namespace FEBuilderGBA
 
                 return write_addr;
             }
-/*
-#if DEBUG
-            //空き領域を詰めた場合どれだけ入るのか求める.
-            uint max_size = MoveToUnuseSpace.CheckMoveToUnuseSpace(
-                    baseaddress
-                , baseaddress + (datacount * this.BlockSize)
-                , data_start
-                , data_end
-                , writeindex
-                , get_data_pos_callback
-                );
-            if (dataByte.Length < max_size + original_size)
-            {//空き領域を詰めたら入るらしいので、空き領域を詰める
-                write_pointer = MoveToUnuseSpace.RunMoveToUnuseSpace(
-                      baseaddress
-                    , baseaddress + (datacount * this.BlockSize)
-                    , data_start
-                    , data_end
-                    , writeindex
-                    , get_data_pos_callback
-                    , undodata.list
-                    );
-                if (write_pointer == U.NOT_FOUND)
-                {
-                    return U.NOT_FOUND;
-                }
-
-                //文字列の書き込み
-                write_addr = Program.ROM.p32(write_pointer);
-                Program.ROM.write_range(write_addr, dataByte,undodata);
-
-                ReloadScreen();
-                ShowWriteNotifyAnimation(this.SelfForm, write_addr);
-                return write_addr;
-            }
-#endif
-*/
             //空き領域もないので、0x09000000 以降の拡張領域を提案
 
             //拡張領域から探す気はアライメントを 4 にして探します.
@@ -9938,7 +9993,7 @@ namespace FEBuilderGBA
         public static uint WriteBinaryDataPointer(Form self
             , uint pointer
             , byte[] dataByte
-            , Func<uint, MoveToUnuseSpace.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
+            , Func<uint, InputFormRef.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
             , Undo.UndoData undodata
             )
         {
@@ -9967,7 +10022,7 @@ namespace FEBuilderGBA
         public static uint WriteBinaryData(Form self
             , uint addr
             , byte[] dataByte
-            , Func<uint,MoveToUnuseSpace.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
+            , Func<uint,InputFormRef.ADDR_AND_LENGTH> get_data_pos_callback //データサイズを求める.
             , Undo.UndoData undodata
         )
         {
@@ -9986,7 +10041,7 @@ namespace FEBuilderGBA
             }
 
             //オリジナルのサイズを求めます.
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = get_data_pos_callback(write_addr);
+            InputFormRef.ADDR_AND_LENGTH aal = get_data_pos_callback(write_addr);
             original_size = aal.length;
             if (aal.length >= 0x00200000)
             {//長すぎる.
@@ -10389,11 +10444,11 @@ namespace FEBuilderGBA
             return freespace;
         }
         //LZ77で圧縮されている場合の長さを求める汎用ルーチン.
-        public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback_lz77(uint addr)
+        public static InputFormRef.ADDR_AND_LENGTH get_data_pos_callback_lz77(uint addr)
         {
             addr = U.toOffset(addr);
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = LZ77.getCompressedSize(Program.ROM.Data, addr);
             UpdateLZ77Padding(ref aal);
@@ -10401,17 +10456,17 @@ namespace FEBuilderGBA
             return aal;
         }
         //APデータの長さを求める汎用ルーチン.
-        public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback_ap(uint addr)
+        public static InputFormRef.ADDR_AND_LENGTH get_data_pos_callback_ap(uint addr)
         {
             addr = U.toOffset(addr);
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = ImageUtilAP.CalcAPLength(addr);
 
             return aal;
         }
-        public static void UpdateLZ77Padding(ref MoveToUnuseSpace.ADDR_AND_LENGTH aal)
+        public static void UpdateLZ77Padding(ref InputFormRef.ADDR_AND_LENGTH aal)
         {
             if (U.isPadding4(aal.length))
             {

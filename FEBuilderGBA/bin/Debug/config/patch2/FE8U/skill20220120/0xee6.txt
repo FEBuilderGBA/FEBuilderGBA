@@ -1,0 +1,3 @@
+Barricade+: In combat, damage
+recieved equals half of the
+damage when struck last.

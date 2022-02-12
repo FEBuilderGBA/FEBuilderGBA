@@ -1,0 +1,2 @@
+Tower Shield+: Take no damage
+against attacks recieved at range.

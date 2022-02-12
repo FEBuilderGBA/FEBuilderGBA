@@ -308,7 +308,7 @@ namespace FEBuilderGBA
             return false;
         }
 
-        private static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr, bool useUnHuffmanPatch)
+        private static InputFormRef.ADDR_AND_LENGTH get_data_pos_callback(uint addr, bool useUnHuffmanPatch)
         {
             FETextDecode decoder = new FETextDecode();
             int datasize;
@@ -321,7 +321,7 @@ namespace FEBuilderGBA
             {
                 text = decoder.huffman_decode(addr, out datasize);
             }
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = (uint)datasize;
             return aal;
@@ -2126,6 +2126,7 @@ namespace FEBuilderGBA
                 }
             }
 
+/*
             {
                 uint text_data_start = Program.ROM.RomInfo.text_data_start_address();
                 uint text_data_end   = Program.ROM.RomInfo.text_data_end_address();
@@ -2140,6 +2141,7 @@ namespace FEBuilderGBA
                     , "TEXT AREA"
                     , FEBuilderGBA.Address.DataTypeEnum.BIN);
             }
+*/
         }
 
         //現在のテキスト長を求めます.

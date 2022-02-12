@@ -295,7 +295,7 @@ namespace FEBuilderGBA
             }
         }
 
-        private MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
+        private InputFormRef.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
             bool isWorldMapEvent = WorldMapEventPointerForm.isWorldMapEvent(addr);
             uint length = EventScript.SearchEveneLength(Program.ROM.Data, addr, isWorldMapEvent);
@@ -304,7 +304,7 @@ namespace FEBuilderGBA
             //範囲外探索 00 00 00 00 が続く限り検索してみる.
             uint more = MoveToFreeSapceForm.SearchOutOfRange(addr + length);
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = length + more;
             return aal;

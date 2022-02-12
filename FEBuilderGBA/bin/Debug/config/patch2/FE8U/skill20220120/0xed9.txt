@@ -1,0 +1,3 @@
+Devil's Whim: This unit is cursed, but
+the curse spreads to the enemy as well.
+(31-Luck % chance of Devil Reversal).

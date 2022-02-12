@@ -807,9 +807,9 @@ namespace FEBuilderGBA
             addrNumObj.Value = newaddr;
             WriteButton.PerformClick();
         }
-        public static MoveToUnuseSpace.ADDR_AND_LENGTH gbawave_length(uint addr)
+        public static InputFormRef.ADDR_AND_LENGTH gbawave_length(uint addr)
         {
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
 
             uint length = SongUtil.GetDirectSoundWaveDataLength(addr);
             aal.addr = addr;

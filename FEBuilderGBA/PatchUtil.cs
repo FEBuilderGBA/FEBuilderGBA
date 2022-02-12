@@ -1475,12 +1475,12 @@ namespace FEBuilderGBA
             return FourthAllegiance_extends.NO;
         }
 
-        public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
+        public static InputFormRef.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
             int length = 0;
             string str = Program.ROM.getString(addr, out length);
 
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = (uint)length + 1; //nullを入れる.
             return aal;

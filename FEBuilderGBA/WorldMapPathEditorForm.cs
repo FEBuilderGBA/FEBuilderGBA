@@ -442,12 +442,12 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
         }
         //道データの長さを求める.
-        static MoveToUnuseSpace.ADDR_AND_LENGTH get_path_data_length_callback(uint addr)
+        static InputFormRef.ADDR_AND_LENGTH get_path_data_length_callback(uint addr)
         {
             addr = U.toOffset(addr);
 
             uint length = WorldMapPathForm.CalcPathDataLength(addr);
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = length;
             return aal;

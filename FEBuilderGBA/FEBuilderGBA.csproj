@@ -865,7 +865,6 @@
     <Compile Include="MoveToFreeSapceForm.Designer.cs">
       <DependentUpon>MoveToFreeSapceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoveToUnuseSpace.cs" />
     <Compile Include="EventScript.cs" />
     <Compile Include="OpenLastSelectedFileForm.cs">
       <SubType>Form</SubType>

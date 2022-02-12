@@ -1,0 +1,3 @@
+Assassinate: When initiating battle
+at 1 range: +2 Damage, double
+attacks occur before counter.

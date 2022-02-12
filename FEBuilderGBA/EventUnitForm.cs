@@ -397,7 +397,7 @@ namespace FEBuilderGBA
 
             uint newaddr = InputFormRef.WriteBinaryData(this, (uint)P8.Value, bin, (uint a) =>
             {
-                MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+                InputFormRef.ADDR_AND_LENGTH aal = new InputFormRef.ADDR_AND_LENGTH();
                 aal.addr = a;
                 aal.length = (uint)this.B7.Value * 8;
                 return aal;

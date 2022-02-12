@@ -1,0 +1,2 @@
+Restore damage dealt as HP.[N]
+(3 Durability Per Hit)

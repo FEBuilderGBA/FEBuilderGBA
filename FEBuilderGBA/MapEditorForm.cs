@@ -2770,9 +2770,9 @@ this.MapObjImage);
             }
 
             //変化データの書き込み
-            Func<uint, MoveToUnuseSpace.ADDR_AND_LENGTH> get_original_size = (dummy) =>
+            Func<uint, InputFormRef.ADDR_AND_LENGTH> get_original_size = (dummy) =>
             {
-                MoveToUnuseSpace.ADDR_AND_LENGTH p = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+                InputFormRef.ADDR_AND_LENGTH p = new InputFormRef.ADDR_AND_LENGTH();
                 p.addr = original.addr;
                 p.length = original.height * original.width * 2;
                 return p;

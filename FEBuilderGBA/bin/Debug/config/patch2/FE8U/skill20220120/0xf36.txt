@@ -1,0 +1,2 @@
+Short Shield: Gain 6 defense
+against attacks recieved in melee.

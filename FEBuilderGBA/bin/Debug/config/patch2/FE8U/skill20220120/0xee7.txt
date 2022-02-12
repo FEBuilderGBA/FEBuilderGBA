@@ -1,0 +1,2 @@
+Point Blank: Minimum range of
+equipped bows is set to 1.
