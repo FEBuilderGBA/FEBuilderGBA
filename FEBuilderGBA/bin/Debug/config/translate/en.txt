@@ -4564,6 +4564,33 @@ Warning: Write to MemorySlot 0.
 :警告: MemorySlotD以降にアクセスしています。
 Warning: You are accessing MemorySlotD or later.
 
+:ポイズン
+Poison
+
+:スリープ
+Sleep
+
+:サイレス
+Silence
+
+:バーサク
+Berserk
+
+:攻撃UP
+AttackUP
+
+:守備UP
+Defensive UP.
+
+:必殺UP
+CriticalUP
+
+:回避UP
+AvoidUP
+
+:ストーン
+Stone
+
 :未知のMethodです
 Unknown Method.
 
@@ -4774,26 +4801,11 @@ Ruins
 :{0}ターン
 {0} turn
 
-:ポイズン
-Poison
-
-:スリープ
-sleep
-
-:サイレス
-Sirez
-
-:バーサク
-Berserk
-
 :必殺
 Critical
 
 :回避
 Avoid
-
-:ストーン
-Stone
 
 :スキル拡張がありません
 There is no skill extension
@@ -5638,8 +5650,14 @@ Item Type
 :使用画面
 Use Screen
 
+:IERによって参照される値です。\r\nアイテムに応じて役割が変わります。
+The value referenced by IER.\r\nThe role changes depending on the item.
+
 :この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。
 This extension requires more data than a regular stat booster.\r\nAllocate the stat booster area after setting this extended flag to 1.\r\nIf you have already reserved it, set the stat booster address to 0 and reserve it again.
+
+:SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。
+Set the value of Debuffs of SkillSystems.\r\nIf it is 0, there is no Debuffs.\r\nIn case of 1 or later, set the value of DebuffsTable you want to use.\r\nThe value of DebuffsTable can be set from Patch.
 
 :アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
 The description field of the item is empty.\r\nIn FE 8, when emptying, you need to insert double spaces.
@@ -5673,6 +5691,21 @@ Latona
 
 :スキルの書
 Skill Scroll
+
+:Lv: {0}以上でCCできます。
+:Protmoion with Lv {0} or higher.
+
+:現在、レベル0でCCできる設定になっています。
+Currently, set to Promotion at level 0.
+
+:未定義
+Undefined
+
+:杖の効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。
+Staff effect is not set.\r\nFor example, if you want to sleep for 5 turns, set it to 52.
+
+:{0}を{1}ターン
+{0} by {1} turn
 
 :武器LV熟練度
 WEXP Per Hit

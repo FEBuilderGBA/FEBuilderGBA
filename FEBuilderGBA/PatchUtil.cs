@@ -1724,6 +1724,23 @@ namespace FEBuilderGBA
 
             return found;
         }
+        public static uint GetEndWeaponDebuffTable5(uint start_offset, string value)
+        {
+            start_offset += 4; //先頭は0x00 0x00 0x00 0x00 なので読み飛ばす.
+            uint end = start_offset + (4 * 256);
+            end = Math.Min(end, (uint)Program.ROM.Data.Length);
+
+            uint addr;
+            for (addr = start_offset; addr < end; addr += 4)
+            {
+                uint last = Program.ROM.u8(addr + 3);
+                if ((last & 0xf0) != 0)
+                {
+                    break;
+                }
+            }
+            return addr;
+        }
 
         static List<U.AddrResult> g_InstrumentSet = null;
 

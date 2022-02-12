@@ -27,15 +27,32 @@ namespace FEBuilderGBA
                 this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
                 this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
             }
-            //growth mod
-            PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
-            if (growthmod == PatchUtil.growth_mod_enum.SkillSystems
-                || growthmod == PatchUtil.growth_mod_enum.Vennou)
+
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
             {
-                J_34.Text = "Growth_Mod";
-                J_34.AccessibleDescription = "この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。";
+                J_34.Text = "IER Byte";
+                J_34.AccessibleDescription = R._("IERによって参照される値です。\r\nアイテムに応じて役割が変わります。");
+                X_34_Info.Show();
+            }
+            else
+            {
+                //growth mod
+                PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
+                if (growthmod == PatchUtil.growth_mod_enum.SkillSystems
+                    || growthmod == PatchUtil.growth_mod_enum.Vennou)
+                {
+                    J_34.Text = "Growth_Mod";
+                    J_34.AccessibleDescription = "この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。";
+                }
             }
 
+            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                J_33.Text = "Debuff";
+                J_34.AccessibleDescription = "SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。";
+                InputFormRef.markupJumpLabel(J_33);
+            }
 
             this.InputFormRef = Init(this);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
@@ -453,6 +470,12 @@ namespace FEBuilderGBA
                 L_16_NEWALLOC_EFFECTIVENESS.Hide();
             }
 
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {
+                UpdateIERHint();
+            }
+
             CheckHardCodingWarning();
         }
         public static uint DataCount()
@@ -803,6 +826,92 @@ namespace FEBuilderGBA
             }
         }
 
+        private void J_33_Click(object sender, EventArgs e)
+        {
+            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+                f.JumpTo("defWeaponDebuffsTable", 0, PatchForm.SortEnum.SortName);
+            }
+        }
 
+        private void B34_ValueChanged(object sender, EventArgs e)
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {
+                UpdateIERHint();
+            }
+        }
+
+        private void UpdateIERHint()
+        {
+            int IERValue = (int)B34.Value;
+            int itemEffectID = (int)B30.Value;
+            if (IsPromotionItemFE8(itemEffectID))
+            {
+                X_34_Info.Text = R._("Lv: {0}以上でCCできます。", IERValue);
+                if (IERValue == 0)
+                {
+                    X_34_Info.ErrorMessage = R._("現在、レベル0でCCできる設定になっています。");
+                }
+                else
+                {
+                    X_34_Info.ErrorMessage = "";
+                }
+                return;
+            }
+            if (IsIERBadStatusFE8(itemEffectID))
+            {
+                string badstatus = InputFormRef.GetBadStatusCode((uint)IERValue);
+                if (badstatus == "")
+                {
+                    X_34_Info.Text = R._("未定義");
+                    X_34_Info.ErrorMessage = R._("杖の効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。");
+                    return;
+                }
+                int turn = IERValue >> 4;
+                X_34_Info.Text = R._("{0}を{1}ターン", badstatus, turn);
+                X_34_Info.ErrorMessage = "";
+                return;
+            }
+
+            X_34_Info.Text = "";
+            X_34_Info.ErrorMessage = "";
+            return;
+        }
+
+        bool IsPromotionItemFE8(int itemEffectID)
+        {
+            if (itemEffectID >= 0x19 && itemEffectID <= 0x1D)
+            {//英雄の証 - 導きの指輪
+                return true;
+            }
+            if (itemEffectID >= 0x2F && itemEffectID <= 0x32)
+            {//ダミー,覇者の証,月の腕輪,太陽の腕輪
+                return true;
+            }
+            if (itemEffectID == 0x2D)
+            {//マスタープルフ
+                return true;
+            }
+            return false;
+        }
+        bool IsIERBadStatusFE8(int itemEffectID)
+        {
+            if (itemEffectID >= 0x7 && itemEffectID <= 0x9)
+            {//サイレス,スリープ,バーサク
+                return true;
+            }
+            if (itemEffectID >= 0x29 && itemEffectID <= 0x2C)
+            {//Dancer ring
+                return true;
+            }
+            if (itemEffectID == 0xA6)
+            {//Nightmare
+                return true;
+            }
+            return false;
+        }
     }
 }

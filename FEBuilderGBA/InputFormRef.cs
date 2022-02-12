@@ -7099,6 +7099,46 @@ namespace FEBuilderGBA
             errorMessae = "";
             return ret;
         }
+        public static string GetBadStatusCode(uint status)
+        {
+            status = (status & 0xF);
+            switch (status)
+            {
+                case 0:
+                    return "";
+                case 1:
+                    return R._("ポイズン");
+                case 2:
+                    return R._("スリープ");
+                case 3:
+                    return R._("サイレス");
+                case 4:
+                    return R._("バーサク");
+                case 5:
+                    return R._("攻撃UP");
+                case 6:
+                    return R._("守備UP");
+                case 7:
+                    return R._("必殺UP");
+                case 8:
+                    return R._("回避UP");
+                case 9:
+                    return "Unk9";
+                case 0xA:
+                    return "UnkA";
+                case 0xB:
+                    return R._("ストーン");
+                case 0xC:
+                    return "UnkC";
+                case 0xD:
+                    return "UnkD";
+                case 0xE:
+                    return "UnkE";
+                case 0xF:
+                    return "UnkF";
+            }
+            return "";
+        }
 
         //マップでの漫符
         public static string GetMAPEMOTION(uint num)

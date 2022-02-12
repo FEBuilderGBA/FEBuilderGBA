@@ -4564,6 +4564,33 @@ PLIST是0。\r\n你想新分配吗？\r\n
 :警告: MemorySlotD以降にアクセスしています。
 警告:您正在访问MemorySlotD或更高版本。
 
+:ポイズン
+Poison
+
+:スリープ
+Sleep
+
+:サイレス
+Silence
+
+:バーサク
+Berserk
+
+:攻撃UP
+AttackUP
+
+:守備UP
+防守UP。
+
+:必殺UP
+CriticalUP
+
+:回避UP
+AvoidUP
+
+:ストーン
+石
+
 :未知のMethodです
 未知方法。
 
@@ -4774,26 +4801,11 @@ Ruins
 :{0}ターン
 {0}转
 
-:ポイズン
-毒
-
-:スリープ
-睡觉
-
-:サイレス
-Sairesu
-
-:バーサク
-发狂的
-
 :必殺
 必杀
 
 :回避
 躲避
-
-:ストーン
-石
 
 :スキル拡張がありません
 没有技能扩展
@@ -5638,8 +5650,14 @@ FF=全体(拉特娜)
 :使用画面
 使用屏幕
 
+:IERによって参照される値です。\r\nアイテムに応じて役割が変わります。
+IER 引用的值。\r\n角色因项目而异。
+
 :この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。
 此扩展需要比常规统计助推器更多的数据。\r\n将此扩展标志设置为 1 后，分配 stat booster 区域。\r\n如果你已经预留了，把stat booster地址设置为0，再预留。
+
+:SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。
+设置SkillSystems的Debuffs的值。\r\n如果为0，则没有Debuff。\r\n如果是1或更高，请设置要使用的DebuffsTable的值。\r\nDebuffsTable的值可以从Patch设置。
 
 :アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
 该项的描述字段为空。\r\n在FE 8中，当清空时，您需要插入双倍空格。
@@ -5673,6 +5691,21 @@ FF=全体(拉特娜)
 
 :スキルの書
 Skill Scroll
+
+:Lv: {0}以上でCCできます。
+:Protmoion with Lv {0} or higher.
+
+:現在、レベル0でCCできる設定になっています。
+Currently, set to Promotion at level 0.
+
+:未定義
+Undefined
+
+:杖の効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。
+Staff effect is not set.\r\nFor example, if you want to sleep for 5 turns, set it to 52.
+
+:{0}を{1}ターン
+{0} by {1} turn
 
 :武器LV熟練度
 武器LV熟练度

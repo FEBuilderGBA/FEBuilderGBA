@@ -120,6 +120,7 @@
             this.J_2_TEXT = new System.Windows.Forms.Label();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.W2 = new System.Windows.Forms.NumericUpDown();
+            this.X_34_Info = new FEBuilderGBA.TextBoxEx();
             this.L_6_ID = new FEBuilderGBA.PanelEx();
             this.B6 = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
@@ -411,6 +412,7 @@
             this.B34.Name = "B34";
             this.B34.Size = new System.Drawing.Size(138, 25);
             this.B34.TabIndex = 33;
+            this.B34.ValueChanged += new System.EventHandler(this.B34_ValueChanged);
             // 
             // J_34
             // 
@@ -449,6 +451,7 @@
             this.J_33.TabIndex = 47;
             this.J_33.Text = "??";
             this.J_33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_33.Click += new System.EventHandler(this.J_33_Click);
             // 
             // L_31_COMBO
             // 
@@ -1469,6 +1472,17 @@
             this.W2.Size = new System.Drawing.Size(137, 25);
             this.W2.TabIndex = 27;
             // 
+            // X_34_Info
+            // 
+            this.X_34_Info.ErrorMessage = "";
+            this.X_34_Info.Location = new System.Drawing.Point(1077, 439);
+            this.X_34_Info.Name = "X_34_Info";
+            this.X_34_Info.Placeholder = "";
+            this.X_34_Info.ReadOnly = true;
+            this.X_34_Info.Size = new System.Drawing.Size(298, 25);
+            this.X_34_Info.TabIndex = 146;
+            this.X_34_Info.Visible = false;
+            // 
             // L_6_ID
             // 
             this.L_6_ID.Controls.Add(this.B6);
@@ -2117,6 +2131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1392, 818);
+            this.Controls.Add(this.X_34_Info);
             this.Controls.Add(this.L_6_ID);
             this.Controls.Add(this.HardCodingWarningLabel);
             this.Controls.Add(this.ReloadListButton);
@@ -2432,5 +2447,6 @@
         private TextBoxEx VennouWeaponLockArray_Display;
         private System.Windows.Forms.Label HardCodingWarningLabel;
         private PanelEx L_6_ID;
+        private TextBoxEx X_34_Info;
     }
 }

@@ -3041,6 +3041,10 @@ namespace FEBuilderGBA
             {
                 return PatchUtil.GetEndWeaponDebuffTable4(start_offset, value);
             }
+            if (value.IndexOf("EndWeaponDebuffTable5 ") == 0)
+            {
+                return PatchUtil.GetEndWeaponDebuffTable5(start_offset, value);
+            }
 
             throw new PatchException(R.Error(("アドレス指定が正しくありません。 値:0x{0}"), addrstring));
         }
