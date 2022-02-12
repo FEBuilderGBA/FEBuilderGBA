@@ -1,0 +1,40 @@
+NAME=プレイヤーユニットを成長させる(イベント命令)
+NAME.en=Add Event: Autolevel Player Unit
+NAME.zh=Add Event: Autolevel Player Unit
+
+INFO=イベント命令から、プレイヤーユニットを成長させます。\r\n既存の「ユニットを成長させる」と比べて、ユニットの成長を利用する違いがあります。\r\n基本的に、自動成長は敵用のクラスの成長で行うためです。\r\nこのパッチは、プレイヤーユニット用に作られているので、もしターゲットにプレイヤー以外のユニットを指定した場合、無視されます。\r\nこのルーチンはバニラでエイリークとエフラムが合流する際のレベルアップルーチンを参考に作られました。\r\n\r\nこれを利用すると、離脱したユニットが再び仲間になってパーティに再加入する時に、ボーナスとしてレベルを上げることができます。
+INFO.en=This patch adds a command to give a playable unit an amount of additional levels, using the same routine that the route split uses for Eirika and Ephraim. This version uses the unit's Character Growths, while Vesly's Autolevel patch uses Class Growths.
+INFO.zh=This patch adds a command to give a playable unit an amount of additional levels, using the same routine that the route split uses for Eirika and Ephraim. This version uses the unit's Character Growths, while Vesly's Autolevel patch uses Class Growths.
+
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	ASMC_AutoLevelPlayerUnits(LOW)	Slot7=UnitID Slot8=GiveLV
+EVENTSCRIPT:02=40050700XXXXXXXX40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	[XX:UNIT:プレイヤーユニット]を[ZZ:DECIMAL:Level]回分だけ成長させる。(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:03=40050B00XXXXYYYY40050700FEFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	座標[XX:MAPX:X][YY:MAPY:Y]のプレイヤーユニットを[ZZ:DECIMAL:Level]回分だけ成長させる。(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:04=40050700FFFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	現在操作しているプレイヤーユニットを[ZZ:DECIMAL:Level]回分だけ成長させる。(ASMC_AutoLevelPlayerUnits)
+
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	ASMC_AutoLevelPlayerUnits(LOW)	Slot7=UnitID Slot8=GiveLV
+EVENTSCRIPT:02.en=40050700XXXXXXXX40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow [XX:UNIT:PlayerUnit] by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:03.en=40050B00XXXXYYYY40050700FEFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow Coordinates[XX:MAPX:X][YY:MAPY:Y] Player Unit to by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:04.en=40050700FFFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow Current Player Unit to by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	ASMC_AutoLevelPlayerUnits(LOW)	Slot7=UnitID Slot8=GiveLV
+EVENTSCRIPT:02.zh=40050700XXXXXXXX40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow [XX:UNIT:PlayerUnit] to by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:03.zh=40050B00XXXXYYYY40050700FEFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow Coordinates[XX:MAPX:X][YY:MAPY:Y] Player Unit to by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+EVENTSCRIPT:04.zh=40050700FFFFFFFF40050800ZZZZZZZZ400D0000{$L1:ASMC_AutoLevelPlayerUnit.dmp}	Grow Current Player Unit to by [ZZ:DECIMAL:Level] times.(ASMC_AutoLevelPlayerUnits)
+
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_AutoLevelPlayerUnit.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_AutoLevelPlayerUnit.dmp
+
+
+TYPE=BIN
+TAG=#ENGINE
+
+AUTHOR=Shuusuke and Vesly https://discord.com/channels/144670830150811649/470029781795078175/941944834099408896
