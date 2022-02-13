@@ -76,21 +76,8 @@ namespace FEBuilderGBA
             }
             else if (U.isSafetyPointer(id))
             {
-                uint data_addr = Program.ROM.p32(U.toOffset(id));
-                if (! U.isSafetyOffset(id))
-                {
-                    return;
-                }
-
-                int length = 0;
-                string str = Program.ROM.getString(data_addr, out length);
-
-                FEBuilderGBA.Address.AddAddress(recycle
-                    , data_addr
-                    , (uint)length
-                    , U.NOT_FOUND
-                    , "CString " + U.To0xHexString(id)
-                    , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                uint p = U.toOffset(id);
+                FEBuilderGBA.Address.AddCString(recycle, p);
             }
         }
 
