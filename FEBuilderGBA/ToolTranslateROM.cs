@@ -74,11 +74,14 @@ namespace FEBuilderGBA
                     , "text " + U.ToHexString(id)
                     , FEBuilderGBA.Address.DataTypeEnum.BIN);
             }
-            else if (U.isSafetyPointer(id))
-            {
-                uint p = U.toOffset(id);
-                FEBuilderGBA.Address.AddCString(recycle, p);
-            }
+//CStringに対しては、リサイクルバッファを利用する方式を利用しない
+//なぜなら、FE6には大量のポインタ参照があるためです。
+//容量も大きくないので、メリットよりデメリットの方が上回る
+//            else if (U.isSafetyPointer(id))
+//            {
+//                uint p = U.toOffset(id);
+//                FEBuilderGBA.Address.AddCString(recycle, p);
+//            }
         }
 
         void WriteText(uint id, string text,RecycleAddress ra, Undo.UndoData undodata)
@@ -102,7 +105,7 @@ namespace FEBuilderGBA
             }
             else if (U.isSafetyPointer(id))
             {
-                WriteCString(id, writetext, ra, undodata);
+                WriteCString(id, writetext, undodata);
             }
             else
             {
@@ -133,27 +136,20 @@ namespace FEBuilderGBA
             Program.ROM.write_u32(addr, newaddr, undodata);
         }
 
-        void WriteCString(uint pointer, string text, RecycleAddress ra, Undo.UndoData undodata)
+        void WriteCString(uint pointer, string text, Undo.UndoData undodata)
         {
             Debug.Assert(U.isSafetyPointer(pointer));
 
-            uint p_text_pointer = U.toOffset(pointer);
-            uint text_pointer = Program.ROM.u32(p_text_pointer);
-            if (!U.isSafetyPointer(text_pointer))
-            {
-                Log.Error("ポインタではありません", U.To0xHexString(pointer), text);
-                return;
-            }
             byte[] stringbyte = Program.SystemTextEncoder.Encode(text);
             stringbyte = U.ArrayAppend(stringbyte, new byte[] { 0x00 });
 
             string undoname = "CString:" + U.ToHexString(pointer);
-            uint newaddr = ra.Write(stringbyte, undodata);
-            if (newaddr == U.NOT_FOUND)
-            {
-                return;
-            }
-            Program.ROM.write_p32(p_text_pointer, newaddr, undodata);
+            InputFormRef.WriteBinaryDataPointer(null
+                , pointer
+                , stringbyte
+                , PatchUtil.get_data_pos_callback
+                , undodata
+            );
         }
         void ApplyAntiHuffmanPatch()
         {

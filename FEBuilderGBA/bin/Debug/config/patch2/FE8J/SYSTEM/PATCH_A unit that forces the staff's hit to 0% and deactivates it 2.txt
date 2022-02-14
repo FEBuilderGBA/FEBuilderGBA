@@ -18,4 +18,5 @@ DEFAULT=0x6c
 NAME.zh=一个单位，迫使手杖达到0％并停用它。
 INFO.zh=这些人物的睡眠，Bataque和Siles的命中率为0％。\r\n默认情况下，设置0x​​6c Rion。
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
-CONFLICT_MESSAGE=FE8N Skill Extends
+CONFLICT_IF:0x2CC70=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=FE8N Skill Extends / prohibits_bad_status

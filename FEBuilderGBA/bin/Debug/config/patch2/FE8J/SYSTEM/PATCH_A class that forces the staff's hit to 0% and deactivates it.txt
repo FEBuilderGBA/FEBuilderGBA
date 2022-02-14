@@ -19,4 +19,5 @@ NAME.zh=强制甘蔗击中0％并停用它的类。
 INFO.zh=Sleep，Bataque和Siles的这些类的命中率为0％。\r\n默认情况下，设置为0x66。
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
-CONFLICT_MESSAGE=FE8N Skill Extends
+CONFLICT_IF:0x2CC70=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=FE8N Skill Extends / prohibits_bad_status

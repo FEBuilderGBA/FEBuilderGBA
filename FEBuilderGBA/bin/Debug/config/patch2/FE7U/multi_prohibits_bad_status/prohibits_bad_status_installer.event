@@ -1,12 +1,12 @@
 #include eastdlib.event
 #include "Extensions/Hack Installation.txt"
 PUSH
-//ORG $2B578	//{J}
-ORG $2B624	//{U}
+//ORG $2986C	//{J}
+ORG $293BC	//{U}
 jumpToHack(prohibits_bad_status)
 
-//ORG 0x2CC70	//{J}
-ORG 0x2CD38	//{U}
+//ORG 0x2AB6C	//{J}
+ORG 0x2A6BC	//{U}
 jumpToHack(prohibits_bad_status_staff)
 
 POP
@@ -24,9 +24,8 @@ POIN prohibits_bad_status_TABLE
 
 ALIGN 4
 prohibits_bad_status_TABLE:
-BYTE 0x00 0x66 //DeamonKingは無効
-BYTE 0x00 0x40
-BYTE 0x00 0x6c
+BYTE 0x00 0x46 //火竜
+BYTE 0x00 0x45 //災いを招く者
 BYTE 0xff 0x0  //Term
 
 ALIGN 4

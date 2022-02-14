@@ -470,7 +470,7 @@ namespace FEBuilderGBA
 
             return AppendEndOfFile(newSize);
         }
-        static bool IsConflictCheck(uint addr)
+        public static bool IsConflictCheck(uint addr)
         {
             if (ImageUtilMagic.IsMagicArea(ref addr))
             {//魔法領域として使われているならだめ

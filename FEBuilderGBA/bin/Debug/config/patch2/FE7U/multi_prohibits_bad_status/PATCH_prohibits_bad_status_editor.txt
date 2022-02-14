@@ -1,0 +1,30 @@
+NAME=状態異常の毒などの追加効果を禁止するクラスを複数定義する(Editor)
+NAME.en=Define multiple classes that prohibit additional effects such as poisons bad status(Editor)
+
+INFO=クラスやユニットごとに、追加効果の毒などのバッドステータスを無効にします。
+
+TYPE=STRUCT
+IF:0x293BC=0x00 0x4B 0x18 0x47
+
+//データへのポインタ
+POINTER=$FGREP4END prohibits_bad_status.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0xff 0x00
+
+//リストに表示されるのはCLASSです
+LISTNAME=$W0:W_UNITCLASS
+
+//データを定義します
+B0:UNIT=UNIT(00=ANY)
+B1:CLASS=CLASS(00=ANY)
+
+AUTHOR=7743
+
+INFO=毒や状態異常剣パッチのスリープなどのバッドステータスを抑制できます。ただし、石化は抑制できません。
+INFO.en=You can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+INFO.zh=You can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+NAME.zh=定义多个类，以禁止产生其他影响，例如有毒状态（Editor）。

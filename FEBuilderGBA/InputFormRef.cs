@@ -9862,8 +9862,56 @@ namespace FEBuilderGBA
 
             data_s = U.toOffset(data_s);
             InputFormRef.ADDR_AND_LENGTH aal = get_data_pos_callback(data_s, useUnHuffmanPatch);
-            return InputFormRef.ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
+            aal.length = InputFormRef.ConvertSafetyLength(aal.length, index_start_addr, index_end_addr, data_s);
+
+            //末尾が0で空いているならその分を追加していきます。
+            //誤爆をさけるために4バイト単位で探索します
+            aal.length = SearchTextEmptyArea(data_s, aal.length);
+
+            return aal.length;
         }
+
+        static uint SearchTextEmptyArea(uint addr, uint length)
+        {
+            uint start_addr = addr;
+            addr += length;
+
+            //まず4バイトずつ検索できるように端数を揃えます
+            uint endAddr = U.Padding4(addr);
+            for (; addr < endAddr; addr++)
+            {
+                uint c = Program.ROM.u8(addr);
+                if (c != 0x0)
+                {
+                    uint newlength = addr - start_addr;
+                    Debug.Assert(newlength >= length);
+                    return newlength;
+                }
+            }
+
+            //終端を越えないように
+            endAddr = Math.Min((uint)Program.ROM.Data.Length, addr + 2000);
+            for (; addr < endAddr; addr += 4)
+            {
+                uint c = Program.ROM.u32(addr);
+                if (c != 0x0)
+                {
+                    break;
+                }
+                //念のため、紛らわしい領域と比較しておきます。
+                if (MoveToFreeSapceForm.IsConflictCheck(addr))
+                {
+                    break;
+                }
+            }
+
+            {
+                uint newlength = addr - start_addr;
+                Debug.Assert(newlength >= length);
+                return newlength;
+            }
+        }
+
         //改造ROMだとデータを共有している場合があるので、本当にそのサイズは正しいのか、
         //すべての文字列データから再検証します。
         //遅くなるけど、これは必須です。
