@@ -60,9 +60,17 @@ namespace FEBuilderGBA
         {
             return (int)Mid2agbV.Value;
         }
-        public int GetMID2AGB_R()
+        public int GetMIDI2AGB_MODSC()
         {
-            return 0;
+            if (UseMidi2agb_modsc_checkBox.Checked)
+            {
+                return (int)UseMidi2agb_modsc_Nud.Value;
+            }
+            else
+            {
+                return 0;
+            }
+
         }
         public ImportMethod GetUseMID2AGB()
         {
@@ -131,13 +139,33 @@ namespace FEBuilderGBA
             }
             if (OptionForm.GetMidfix4agb() == "")
             {
+                UseMidfix4agb_checkBox.Checked = false;
                 UseMidfix4agb_checkBox.Hide();
                 WARNING_midfix4agb_label.Show();
             }
             else
             {
+                UseMidfix4agb_checkBox.Checked = true;
                 WARNING_midfix4agb_label.Hide();
                 UseMidfix4agb_checkBox.Show();
+            }
+
+            Mid2agbV.Value = 80;
+            if (OptionForm.IsUsingMidi2agb())
+            {
+                Mid2agbV.Maximum = 128;
+                Mid2agbV.Value = 128;
+                UseMidi2agb_modsc_Nud.Value = 8;
+                UseMidi2agb_modsc_Nud.Show();
+                UseMidi2agb_modsc_checkBox.Show();
+                UseMidi2agb_modsc_checkBox.Checked = true;
+            }
+            else
+            {
+                UseMidi2agb_modsc_Nud.Value = 0;
+                UseMidi2agb_modsc_Nud.Hide();
+                UseMidi2agb_modsc_checkBox.Hide();
+                UseMidi2agb_modsc_checkBox.Checked = false;
             }
 
             if (MainFormUtil.CanUseMID2AGB())
@@ -153,8 +181,18 @@ namespace FEBuilderGBA
                 Mid2AGBOKButton.Enabled = false;
                 this.tabControl1.SelectedIndex = 0;
             }
-            Mid2agbV.Value = 80;
-            //Mid2agbR.SelectedIndex = 0;
+        }
+
+        private void UseMidi2agb_modsc_checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UseMidi2agb_modsc_checkBox.Checked)
+            {
+                UseMidi2agb_modsc_Nud.Show();
+            }
+            else
+            {
+                UseMidi2agb_modsc_Nud.Hide();
+            }
         }
 
 

@@ -10831,18 +10831,6 @@ Select
 :FEBuilderGBAでインポート
 Import with FEBuilderGBA
 
-:トリミング
-Trimming
-
-:楽譜の後方の無音区間を無視する
-Remove Leading (Intro) Silence
-
-:楽譜の前方の無音区間を無視する
-Remove Trailing (Outtro) Silence
-
-:無音区間を除去します。
-Remove Silent Sections
-
 :mid2agbでインポート
 Import with mid2agb
 
@@ -10855,14 +10843,23 @@ Music will be imported with mid2agb.\r\nTo create a loop, set two labels using D
 :みょーん補正
 Pitch Correction
 
+:midi2agbのmodscを有効にする
+Enable modsc for midi2agb
+
 :midfix4agbを利用する
-Use midfix4agb.
+Use midfix4agb
 
 :midfix4agbのPATHが設定されていません。
 The PATH of midfix4agb is not set.
 
+:古いオプション
+Old option
+
 :それでも改善しない場合は、次のオプションも利用できます。
 If that doesn't help, the following options are also available:
+
+:MOD,MODT命令を無視する
+Ignore MOD and MODT Instructions
 
 :LFOS,LFODL命令を無視する
 Ignore LFOS and LFODL Instructions
@@ -10870,11 +10867,20 @@ Ignore LFOS and LFODL Instructions
 :BEND,BENDR命令を無視する
 Ignore the BEND and BENDR Instructions
 
-:MOD,MODT命令を無視する
-Ignore MOD and MODT Instructions
-
 :音が「みょーん」となる場合は、有効にしてみてください。
 For if the sound is strange (wonky, "mi~yoon").
+
+:トリミング
+Trimming
+
+:楽譜の後方の無音区間を無視する
+Remove Leading (Intro) Silence
+
+:楽譜の前方の無音区間を無視する
+Remove Trailing (Outtro) Silence
+
+:無音区間を除去します。
+Remove Silent Sections
 
 :曲を演奏するときに利用する楽器を選択してください。\r\nディフォルトは現在の曲の楽器アドレスになっています。\r\n\r\nmidi楽器とFEの楽器は、並び順が違うので、注意してください。\r\n自分で楽器の順番を調整するか、\r\nNIMAP(Native Instrument Map)パッチを利用してください。
 Please select the instrument to use when playing the song.\r\nDefaults to the current song's instruments (from vanilla FE if unmodified).\r\n\r\nPlease note that MIDI instruments and FE/GBA instruments are ordered differently.\r\nAdjust the order of the musical instruments yourself.\r\nPlease use the NIMAP2 (Native Instrument Map) patch for easier organizing.

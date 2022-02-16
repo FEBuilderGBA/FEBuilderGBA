@@ -132,7 +132,8 @@ namespace FEBuilderGBA
                     configFilename = (U.ConfigDataFilename("item_staff2_array_"));
                     break;
                 case 6: //6=ドーピングアイテムを利用した時のメッセージを定義する
-                    if (PatchUtil.SearchStatboosterExtends() == PatchUtil.StatboosterExtends.SkillSystems_strmag_slipt)
+                    MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+                    if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
                     {
                         configFilename = (U.ConfigDataFilename("item_statbooster1_skill_array_"));
                     }

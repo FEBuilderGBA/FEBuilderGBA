@@ -31,7 +31,6 @@ namespace FEBuilderGBA
             g_Cache_Raid_enum = Raid_enum.NoCache;
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
             g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
-            g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
             g_Cache_SearchFlag0x28ToMapSecondPalettePatch = MapSecondPalette_extends.NoCache;
             g_Cache_ClearTurn2x = ClearTurn2x_extends.NoCache;
             g_Cache_FourthAllegiance = FourthAllegiance_extends.NoCache;
@@ -1199,42 +1198,6 @@ namespace FEBuilderGBA
             SkillSystems_strmag_slipt,
             NoCache = (int)NO_CACHE
         };
-        static StatboosterExtends g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
-        public static StatboosterExtends SearchStatboosterExtends()
-        {
-            if (g_Cache_StatboosterExtends == StatboosterExtends.NoCache)
-            {
-                g_Cache_StatboosterExtends = SearchStatboosterExtendsLow();
-            }
-            return g_Cache_StatboosterExtends;
-        }
-        public static StatboosterExtends SearchStatboosterExtendsLow()
-        {
-            PatchTableSt[] table = new PatchTableSt[] { 
-                new PatchTableSt{ name="SkillSystems_strmag_slipt",	ver = "FE8U", addr = 0x2F8FC,data = new byte[]{0x13, 0x25, 0x05, 0xE0,0x14, 0x25, 0x03, 0xE0}},
-            };
-
-            string version = Program.ROM.RomInfo.VersionToFilename();
-            foreach (PatchTableSt t in table)
-            {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "SkillSystems_strmag_slipt")
-                {
-                    return StatboosterExtends.SkillSystems_strmag_slipt;
-                }
-            }
-            return StatboosterExtends.NO;
-        }
 
         //顔画像拡張システム.
         public enum itemicon_extends

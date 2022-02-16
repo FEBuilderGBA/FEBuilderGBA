@@ -1451,14 +1451,14 @@ namespace FEBuilderGBA
         public static string ImportMidiFileMID2AGB(string filename, uint songtable_address
             , uint instrument_addr
             , int option_v
-            , int option_r
+            , int option_modsc
             , bool ignoreMOD
             , bool ignoreBEND
             , bool ignoreLFOS
             )
         {
             string error;
-            bool r = MainFormUtil.CompilerMID2AGB(filename, option_v, option_r, out error);
+            bool r = MainFormUtil.CompilerMID2AGB(filename, option_v, option_modsc, out error);
             if (r == false)
             {
                 return R.Error("mid2agbがエラーになりました。\r\n") + error;

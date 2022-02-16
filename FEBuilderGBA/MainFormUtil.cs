@@ -2020,7 +2020,7 @@ namespace FEBuilderGBA
         }
 
         //mid2agbでmidをsへコンパイル
-        public static bool CompilerMID2AGB(string target_filename, int optuon_v, int optuon_r, out string output)
+        public static bool CompilerMID2AGB(string target_filename, int optuon_v, int option_modsc, out string output)
         {
             output = "";
 
@@ -2035,14 +2035,26 @@ namespace FEBuilderGBA
 
             string args = ""
                 + U.escape_shell_args( Path.GetFileName(target_filename) );
-            if (optuon_v != 127)
-            {
-                args += " " + "-V" + optuon_v.ToString();
+            if (OptionForm.IsUsingMidi2agb())
+            {//midi2agb
+                if (optuon_v != 127)
+                {
+                    args += " " + "-m " + optuon_v.ToString();
+                }
+                if (option_modsc != 0)
+                {
+                    double modsc = ((double)option_modsc / 100.0);
+                    args += " " + "--modsc " + modsc.ToString();
+                }
             }
-            if (optuon_r != 0)
-            {
-                args += " " + "-R" + optuon_r.ToString();
+            else
+            {//mid2agb
+                if (optuon_v != 127)
+                {
+                    args += " " + "-V" + optuon_v.ToString();
+                }
             }
+
             bool isMid2AgbBadFilename = IsMid2AgbBadFilename(target_filename);
             if (isMid2AgbBadFilename)
             {

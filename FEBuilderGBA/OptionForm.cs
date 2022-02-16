@@ -1538,6 +1538,19 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("midfix4agb", "");
         }
+        public static string GetMid2agb()
+        {
+            return Program.Config.at("mid2agb", "");
+        }
+        public static bool IsUsingMidi2agb()
+        {
+            string path = Program.Config.at("mid2agb", "");
+            if (path.IndexOf("midi2agb.exe") >= 0)
+            {
+                return true;
+            }
+            return false;
+        }
         public static string GetWav2agb()
         {
             return Program.Config.at("wav2agb", "");

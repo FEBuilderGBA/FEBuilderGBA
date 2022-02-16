@@ -235,7 +235,7 @@ namespace FEBuilderGBA
                         error = SongUtil.ImportMidiFileMID2AGB(filename, songtable_address
                             , f.GetInstrumentAddr()
                             , f.GetMID2AGB_V()
-                            , f.GetMID2AGB_R()
+                            , f.GetMIDI2AGB_MODSC()
                             , f.GetIgnoreMOD()
                             , f.GetIgnoreBEND()
                             , f.GetIgnoreLFOS()
