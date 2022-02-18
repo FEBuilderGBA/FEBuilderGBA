@@ -1,0 +1,15 @@
+NAME=OPクラス紹介をテーブルの定義順に読み込むようにする
+NAME.en=Change OP class reel to read in the order of table definition
+NAME.zh=Change OP class reel to read in the order of table definition
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0xB8C80=0x04 0x4B 0x1B 0x68
+BIN:0xB8C80=op class reel sort.dmp
+
+INFO=OPのクラス紹介を抽選テーブルからではなく、テーブルの定義順に読み込むようにします。\r\nまた、すべてのクラス紹介を解放します。\r\nこれにより、テーブルの下の方に面白いクラスを隠すことができます。
+INFO.en=This patch causes the OP's class introductions to be read in the order in which the tables are defined, rather than from the lottery table.\r\nIt also frees all class introductions.\r\nThis allows you to hide funny classes at the bottom of the table.
+INFO.zh=This patch causes the OP's class introductions to be read in the order in which the tables are defined, rather than from the lottery table.\r\nIt also frees all class introductions.\r\nThis allows you to hide funny classes at the bottom of the table.
+
+
+AUTHOR=7743
