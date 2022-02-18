@@ -1,0 +1,19 @@
+NAME=OP画面で時間が経つと、クラス紹介ではなくOPデモへ移行するのを禁止する
+NAME.en=Prohibit OP screen from going to OP demo instead of class reel after some time.
+NAME.zh=Prohibit OP screen from going to OP demo instead of class reel after some time.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: OP demo and class reel alternately|OFF|FIX: class reel ONLY|FIX
+
+DETERMINATION_ADDRESS=0x09B36
+OFF:0x09B36=0x05 0xD0 0x08 0xE0
+FIX:0x09B36=0x00 0x00 0x00 0x00
+
+AUTHOR=7743
+INFO=OP画面では、一定時間経つと、クラス紹介が始まり、それが終って一定時間経つと、OP DEMO画面へ以降します。そして、これを交互に繰り返すという実装になっています。\r\nただ、OP DEMOを無効にしていると、OP DEMOには移行せずに、タイトル画面にすぐに戻ってきてしまいます。\r\nこの時に音楽が先頭から再生しなおされる現象が発生します。\r\nこのパッチは、OP DEMOへの以降を完全に禁止します。\r\n常にクラス紹介画面へ移行するようにします。
+
+INFO.en=In the OP screen, after a certain amount of time, the Class reel starts, and after a certain amount of time, the OP DEMO screen appears.\r\nThe implementation alternates between the two.\r\nHowever, if OP DEMO is disabled, the game will not go to OP DEMO, but will go right back to the title screen.\r\nThis will cause the music to play back from the beginning.\r\nThis patch disallows going back to the OP DEMO altogether.\r\nIt will always take you to the class reel screen.
+INFO.zh=In the OP screen, after a certain amount of time, the Class reel starts, and after a certain amount of time, the OP DEMO screen appears.\r\nThe implementation alternates between the two.\r\nHowever, if OP DEMO is disabled, the game will not go to OP DEMO, but will go right back to the title screen.\r\nThis will cause the music to play back from the beginning.\r\nThis patch disallows going back to the OP DEMO altogether.\r\nIt will always take you to the class reel screen.
