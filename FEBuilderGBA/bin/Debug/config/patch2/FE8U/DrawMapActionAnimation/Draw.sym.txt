@@ -47,6 +47,7 @@ GetDisplayDamage_0=$0556
 GetDisplayDamage_CapCheck=$054E
 GetDisplayDamage_Exit=$0558
 GotOffset=$0580
+SkipWeatherLavaPalette=$0612
 Draw_SetupMemorySlots=$21
 Draw_GetAnimationIDByWeapon=$01A9
 Draw_StoreToBuffer=$65

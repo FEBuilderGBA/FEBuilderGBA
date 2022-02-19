@@ -1170,6 +1170,22 @@ lsl r1, #5 @ multiply by #0x20
 mov	r2,#0x20
 blh CopyToPaletteBuffer @Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
 
+@Restore WeatherLava's firestorm palette
+ldr r0, =0x0202BCF0	@gChapterData	{U}
+@ldr r0, =0x0202BCEC	@gChapterData	{J}
+ldrb r0, [r0, #0x15]
+cmp r0, #0x5	@check Weather Lava(0x5)
+bne SkipWeatherLavaPalette
+
+ldr r0, =0x085A3AC0 @WeatherLava's firestorm palette @{U}
+@ldr r0, =0x085CBFE4 @WeatherLava's firestorm palette @{J}
+mov r1, #0xd0
+lsl r1 ,r1 ,#0x2
+mov r2, #0x20
+blh CopyToPaletteBuffer @Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
+
+SkipWeatherLavaPalette:
+
 pop {r0}
 bx r0
 
