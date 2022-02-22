@@ -1,0 +1,2 @@
+Synchronize: Statuses are also[N]
+applied to the attacker.

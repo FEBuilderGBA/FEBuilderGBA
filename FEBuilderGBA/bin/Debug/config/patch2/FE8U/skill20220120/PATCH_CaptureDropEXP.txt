@@ -1,0 +1,18 @@
+﻿NAME=Bonus EXP when dropping a captured Enemy
+
+IF:0x32264=0x00 0x4B 0x18 0x47
+
+TYPE=ADDR
+TAG=#ENGINE
+
+//データへのポインタ
+ADDRESS=$FGREP4ENDA GiveDropExp.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+HEX=FALSE
+
+INFO=捕獲Captureした敵をDropした時に得られる経験値を指定します。(ディフォルトはEXP+10)\r\n0を指定すると、Drop時の経験値の取得はありません。\r\n100を指定すると、必ずレベルアップします。
+INFO.en=The amount of experience gained when dropping a captured enemy. (The default is EXP+10.) If \r\n0 is specified, no experience will be gained when dropping. If \r\n100 is specified, the player will always level up.
+INFO.zh=The amount of experience gained when dropping a captured enemy. (The default is EXP+10.) If \r\n0 is specified, no experience will be gained when dropping. If \r\n100 is specified, the player will always level up.

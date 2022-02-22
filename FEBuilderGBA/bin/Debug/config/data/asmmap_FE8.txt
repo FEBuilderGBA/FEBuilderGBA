@@ -14848,3 +14848,5 @@
 0802F510	ExecChestKey	{U}
 080913d8	OnChangeAnimationSoloEachUnit	{U}
 080936B0	OnChangeAnimationSoloEachUnit	{J}
+08AB0B48	:08AB0FDB	Promotionの赤字フォントとClassReelの英語フォントのデータ	{J}
+08A2FCE4	:08A301AF	Promotionの赤字フォントとClassReelの英語フォントのデータ	{U}

@@ -1201,3 +1201,5 @@ EDIT_PATCH:27=../skill20220120/PATCH_SkillScrollMessageReturnLink.txt
 
 
 NAME.zh=技能 SkillSystems 20220127（技能扩展）
+DEPRECATED=1
+UPDATE_PATCH=..\Skill20220222\PATCH_Skill20220222.txt

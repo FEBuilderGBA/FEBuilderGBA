@@ -1,0 +1,2 @@
+Quick Draw: +4 Damage
+when initiating battle.

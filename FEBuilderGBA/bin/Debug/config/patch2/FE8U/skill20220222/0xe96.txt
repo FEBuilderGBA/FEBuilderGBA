@@ -1,0 +1,2 @@
+Chivalry: When foe is at full HP,
+attack and def/res +2.

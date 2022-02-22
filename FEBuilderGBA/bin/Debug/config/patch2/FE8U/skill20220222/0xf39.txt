@@ -1,0 +1,2 @@
+Void Curse: This unit gives
+no experience when defeated.

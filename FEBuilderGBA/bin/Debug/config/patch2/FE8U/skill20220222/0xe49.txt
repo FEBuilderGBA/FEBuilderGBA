@@ -1,0 +1,2 @@
+Bowfaire: +4 damage
+when equipping a bow.
