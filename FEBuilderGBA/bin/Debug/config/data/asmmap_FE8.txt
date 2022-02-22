@@ -14850,3 +14850,4 @@
 080936B0	OnChangeAnimationSoloEachUnit	{J}
 08AB0B48	:08AB0FDB	Promotionの赤字フォントとClassReelの英語フォントのデータ	{J}
 08A2FCE4	:08A301AF	Promotionの赤字フォントとClassReelの英語フォントのデータ	{U}
+080B75EC	OpInfo Fade out of music at the end of class reel	{J}

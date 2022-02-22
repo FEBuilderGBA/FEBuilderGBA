@@ -30,7 +30,7 @@ namespace FEBuilderGBA
                 , 20
                 , (int i, uint addr) =>
                 {
-                    return Program.ROM.u32(addr)<= 0xffff;
+                    return Program.ROM.u8(addr + 0xF) <= 6;
                 }
                 , (int i, uint addr) =>
                 {

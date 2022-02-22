@@ -14872,3 +14872,6 @@ r3=X tile position of menu of right	{U}
 0802F510	ExecChestKey	{U}
 080913d8	OnChangeAnimationSoloEachUnit	{U}
 080936B0	OnChangeAnimationSoloEachUnit	{J}
+08AB0B48	:08AB0FDB	Promotion's red font and ClassReel's English font data	{J}
+08A2FCE4	:08A301AF	Promotion's red font and ClassReel's English font data	{U}
+080B75EC	OpInfo Fade out of music at the end of class reel	{J}

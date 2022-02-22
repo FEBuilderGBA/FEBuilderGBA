@@ -34,8 +34,7 @@ namespace FEBuilderGBA
                 , 28
                 , (int i, uint addr) =>
                 {
-                    return U.isPointer(Program.ROM.u32(addr))
-                        ;
+                    return Program.ROM.u8(addr + 0xF) <= 4;   
                 }
                 , (int i, uint addr) =>
                 {

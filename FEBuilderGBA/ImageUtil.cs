@@ -1481,12 +1481,19 @@ namespace FEBuilderGBA
             {
                 return bitmap;
             }
+
             ColorPalette pal = bitmap.Palette;
-            for (int i = 0; i < palette_size ; i++)
+            int total_pal_index = pal.Entries.Length;
+            for (int i = 0; i < palette_size; i++)
             {
                 Color old = pal.Entries[i];
-                pal.Entries[i] = pal.Entries[palette_index*0x10 + i];
-                pal.Entries[palette_index*0x10 + i] = old;
+                int readI = palette_index*0x10 + i;
+                if (total_pal_index < readI)
+                {
+                    break;
+                }
+                pal.Entries[i] = pal.Entries[readI];
+                pal.Entries[readI] = old;
             }
             bitmap.Palette = pal;
             return bitmap;
