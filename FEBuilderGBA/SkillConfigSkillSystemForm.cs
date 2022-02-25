@@ -225,7 +225,8 @@ namespace FEBuilderGBA
 
                 //チェック開始アドレス
                 uint start = 0xB00000;
-                uint found = U.Grep(Program.ROM.Data, t.data, start, 0, 4);
+                uint end =   0xC00000;
+                uint found = U.Grep(Program.ROM.Data, t.data, start, end, 4);
                 if (found == U.NOT_FOUND)
                 {
                     continue;
@@ -241,6 +242,32 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+
+                if (type == "LEVELUP")
+                {//昔のROMには紛らわしいデータがあるらしいので、もっと詳しく見ています
+                 //LEVELUPはポインタリストなので、それっぽいか確認していきます。
+                    //0th data
+                    uint data0th = Program.ROM.u32(U.toOffset(p));
+                    uint data1st = Program.ROM.u32(U.toOffset(p + 4));
+
+                    if (!U.isPadding4(data0th))
+                    {
+                        continue;
+                    }
+                    if (!U.isSafetyPointerOrNull(data0th))
+                    {
+                        continue;
+                    }
+                    if (!U.isPadding4(data1st))
+                    {
+                        continue;
+                    }
+                    if (!U.isSafetyPointerOrNull(data1st))
+                    {
+                        continue;
+                    }
+                }
+
                 //ポインタで返す.
                 return a;
             }
