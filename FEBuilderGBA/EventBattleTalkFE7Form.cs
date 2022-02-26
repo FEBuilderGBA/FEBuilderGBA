@@ -95,6 +95,11 @@ namespace FEBuilderGBA
 
         public void JumpTo(uint search_unit_id)
         {
+            JumpToTable1(search_unit_id);
+            JumpToTable2(search_unit_id);
+        }
+        public void JumpToTable1(uint search_unit_id)
+        {
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++)
             {
@@ -107,6 +112,22 @@ namespace FEBuilderGBA
                 }
 
                 addr += InputFormRef.BlockSize;
+            }
+        }
+        public void JumpToTable2(uint search_unit_id)
+        {
+            uint addr = N1_InputFormRef.BaseAddress;
+            for (int i = 0; i < N1_InputFormRef.DataCount; i++)
+            {
+                uint unit_id = (uint)Program.ROM.u8(addr);
+                uint unit_id2 = (uint)Program.ROM.u8(addr + 1);
+                if (search_unit_id == unit_id || search_unit_id == unit_id2)
+                {
+                    U.SelectedIndexSafety(this.N1_AddressList, i);
+                    return;
+                }
+
+                addr += N1_InputFormRef.BlockSize;
             }
         }
         //全データの取得

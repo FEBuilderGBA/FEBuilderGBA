@@ -277,7 +277,7 @@ namespace FEBuilderGBA
                         }
 
                         updateLock = true;
-                        link_object.Value = (byte)v;
+                        U.SelectedIndexSafety(link_object, v);
                         updateLock = false;
                     };
                     link_object.ValueChanged += (sender, e) =>
@@ -310,7 +310,7 @@ namespace FEBuilderGBA
                         }
 
                         updateLock = true;
-                        src_object.Value = v;
+                        U.SelectedIndexSafety(src_object, v);
                         updateLock = false;
                     };
                     return;

@@ -86,6 +86,11 @@ namespace FEBuilderGBA
         }
         public void JumpTo(uint search_unit_id, uint search_map_id)
         {
+            JumpToTable1(search_unit_id, search_map_id);
+            JumpToTable2(search_unit_id, search_map_id);
+        }
+        void JumpToTable1(uint search_unit_id, uint search_map_id)
+        {
             int hit_uid_only_pos = -1;
 
             uint addr = InputFormRef.BaseAddress;
@@ -93,7 +98,7 @@ namespace FEBuilderGBA
             {
                 uint unit_id = (uint)Program.ROM.u8(addr);
                 uint map_id = (uint)Program.ROM.u8(addr + 1);
-                if (search_unit_id == unit_id )
+                if (search_unit_id == unit_id)
                 {
                     if (map_id == 0x45 || search_map_id == map_id)
                     {//マップも含めて完全一致
@@ -109,6 +114,34 @@ namespace FEBuilderGBA
             if (hit_uid_only_pos >= 0)
             {//キャラだけ一致
                 U.SelectedIndexSafety(this.AddressList, hit_uid_only_pos);
+                return;
+            }
+        }
+        void JumpToTable2(uint search_unit_id, uint search_map_id)
+        {
+            int hit_uid_only_pos = -1;
+
+            uint addr = N1_InputFormRef.BaseAddress;
+            for (int i = 0; i < N1_InputFormRef.DataCount; i++)
+            {
+                uint unit_id = (uint)Program.ROM.u8(addr);
+                uint map_id = (uint)Program.ROM.u8(addr + 1);
+                if (search_unit_id == unit_id)
+                {
+                    if (map_id == 0x45 || search_map_id == map_id)
+                    {//マップも含めて完全一致
+                        U.SelectedIndexSafety(this.N1_AddressList, i);
+                        return;
+                    }
+                    hit_uid_only_pos = i;
+                }
+
+                addr += N1_InputFormRef.BlockSize;
+            }
+
+            if (hit_uid_only_pos >= 0)
+            {//キャラだけ一致
+                U.SelectedIndexSafety(this.N1_AddressList, hit_uid_only_pos);
                 return;
             }
         }
