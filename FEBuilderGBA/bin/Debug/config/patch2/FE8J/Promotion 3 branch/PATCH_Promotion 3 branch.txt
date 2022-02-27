@@ -16,6 +16,8 @@ BIN:0xd2870=d2870.bin
 BIN:0xD1B7A=D1B7A.BIN             //0x0D 0xE0
 BIN:0xD19D2=D19D2.BIN             //0x01
 
+REPLACE_POINTER:0x89CDD18=CCTABLE
+
 INFO=CCは通常、CC分岐で指定された2クラスへの分岐CCとなりますが、分岐先にクラス設定のCC先指定を追加し、最大3クラスへと分岐できるように改変します。\r\nダブっていたら無視します(2分岐CCと判定します)\r\nオリジナルの作者:area ,移植 7743
 INFO.en=Patches the ROM's promotion table to include the unused "Class Promotes To" byte in the Class Editor.\r\nThis combines with the standard branching promotion table to enable three total promotion options.\r\n
 AUTHOR=出典元:https://github.com/ngmansion/FE8/tree/master/ThreeGreens

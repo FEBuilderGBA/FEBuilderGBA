@@ -9269,6 +9269,10 @@ namespace FEBuilderGBA
             {
                 newPointer = Program.ROM.u32(Program.ROM.RomInfo.class_pointer());
             }
+            else if (typeName == "CCTABLE")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.ccbranch_pointer());
+            }
             else
             {
                 Debug.Assert(false);
