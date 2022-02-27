@@ -1,0 +1,29 @@
+NAME=プレイヤーターン開始時に、回復と毒ダメージ処理の前ではなく後にセーブする
+NAME.en=Save at the start of the player's turn, after, not before, recovery and poison damage handling
+NAME.zh=Save at the start of the player's turn, after, not before, recovery and poison damage handling
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Save before poisoning|OFF|FIX: Save after poisoning|FIX
+
+IF:0x015520=0x05 0xD1 0x0F 0x49
+
+DETERMINATION_ADDRESS=0x15524
+OFF:0x5C26F8=0x02 0x00 0x00 0x00 0x19 0x55 0x01 0x08
+FIX:0x5C26F8=0x0E 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+OFF:0x1545A=0x70 0xF0 0xD7 0xF8 0x00 0x06 0x00 0x16
+FIX:0x1545A=0x00 0xF0 0x5D 0xF8 0x00 0x00 0x00 0x20
+
+OFF:0x15524=0x9
+FIX:0x15524=0x0
+
+
+AUTHOR=7743
+INFO=このパッチは、AutoSave Patchの問題点を解決します。\r\nバニラでは、プレイヤーターンに移動しセーブが行われた後に、地形回復と毒ダメージの処理が行われます。\r\nAutoSave Patchもこの慣習に従っているため、毒で死亡した場合は、オートセーブパッチの効果を得られず、最初からやり直す必要がでてきます。\r\nこのパッチは、その問題を修正し、毒などの処理が終わった後で、セーブするようにルーチンを変更します。\r\nこのパッチは、AutoSaveパッチの挙動も変更するので、AutoSave Patchをインストールした後で適応する必要があります。
+
+INFO.en=This patch resolves an issue with the AutoSave Patch.\r\nIn vanilla, terrain recovery and poison damage is handled after the player has moved to their turn and a save has been made.\r\nThe AutoSave Patch also follows this convention, so if you die from poisoning, the AutoSave Patch will not take effect and you will have to start over.\r\nThis patch fixes that problem and changes the routine to save after the poisoning has been dealt with.\r\nThis patch also changes the behaviour of the AutoSave patch, so you will need to apply it after installing the AutoSave Patch.
+
+INFO.zh=This patch resolves an issue with the AutoSave Patch.\r\nIn vanilla, terrain recovery and poison damage is handled after the player has moved to their turn and a save has been made.\r\nThe AutoSave Patch also follows this convention, so if you die from poisoning, the AutoSave Patch will not take effect and you will have to start over.\r\nThis patch fixes that problem and changes the routine to save after the poisoning has been dealt with.\r\nThis patch also changes the behaviour of the AutoSave patch, so you will need to apply it after installing the AutoSave Patch.
