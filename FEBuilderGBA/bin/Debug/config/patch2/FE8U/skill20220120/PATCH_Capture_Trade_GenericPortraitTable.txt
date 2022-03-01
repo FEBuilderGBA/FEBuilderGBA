@@ -1,0 +1,34 @@
+﻿
+IF:0x32264=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#HIDDEN
+
+//データへのポインタ
+POINTER=$FGREP4END Trade_Portrait_Getter.dmp
+
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはPORTRAITです
+LISTNAME=$W0:PORTRAIT
+
+//データを定義します
+W0:PORTRAIT=Portrait
+B2:UNIT=Unit(00=Any)
+B3:CLASS=Class(00=Any)
+
+NAME=Bonus EXP when dropping a captured Enemy
+
+NAME=捕えた一般兵の顔画像(GenericPortraitTable)
+NAME.en=Portrait of captured general soldier(GenericPortraitTable)
+NAME.zh=Portrait of captured general soldier(GenericPortraitTable)
+
+INFO=捕えた敵から持ち物を交換するときのPortraitを指定します。\r\nボスのようにPortraitを持っていない一般兵のPortraitの指定を行うことができます。\r\nテーブルにマッチしない場合、PortraitID 0x1(透明)が選択されます。\r\n
+INFO.en=Specify a Portrait when trade items from captured enemies.\r\nYou can specify a Portrait for a general soldier who does not have a Portrait like a boss.\r\nIf no match is found in the table then the PortraitID 0x1 (transparent) will be selected.
+INFO.zh=Specify a Portrait when trade items from captured enemies.\r\nYou can specify a Portrait for a general soldier who does not have a Portrait like a boss.\r\nIf no match is found in the table then the PortraitID 0x1 (transparent) will be selected.

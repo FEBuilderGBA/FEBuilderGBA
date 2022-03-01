@@ -1,0 +1,2 @@
+Spend HP to cast spells[N]
+this unit has learned.

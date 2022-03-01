@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_14_COMBO = new System.Windows.Forms.ComboBox();
             this.L_20_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_19_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_BATTLEANIMEICON = new FEBuilderGBA.InterpolatedPictureBox();
@@ -111,7 +112,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_14_COMBO = new System.Windows.Forms.ComboBox();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_20_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_19_TERRAINBATTLEICON_PLUS1)).BeginInit();
@@ -197,6 +198,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1256, 700);
             this.panel2.TabIndex = 67;
+            // 
+            // L_14_COMBO
+            // 
+            this.L_14_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_14_COMBO.FormattingEnabled = true;
+            this.L_14_COMBO.Items.AddRange(new object[] {
+            "00=なし",
+            "01=ファイアー",
+            "02=サンダー",
+            "03=ライブ",
+            "04=ライト",
+            "05=ミィル",
+            "06=マムクート変身",
+            "07=魔物の魔法",
+            "08=ストーン"});
+            this.L_14_COMBO.Location = new System.Drawing.Point(266, 312);
+            this.L_14_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_14_COMBO.Name = "L_14_COMBO";
+            this.L_14_COMBO.Size = new System.Drawing.Size(228, 26);
+            this.L_14_COMBO.TabIndex = 196;
             // 
             // L_20_TERRAINBATTLEICON_PLUS1
             // 
@@ -1180,8 +1201,9 @@
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.LabelFilter);
             this.panel12.Controls.Add(this.AddressList);
+            this.panel12.Controls.Add(this.AddressListExpandsButton);
+            this.panel12.Controls.Add(this.LabelFilter);
             this.panel12.Location = new System.Drawing.Point(12, 38);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
@@ -1190,8 +1212,8 @@
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
@@ -1202,35 +1224,26 @@
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(253, 688);
+            this.AddressList.Size = new System.Drawing.Size(253, 672);
             this.AddressList.TabIndex = 0;
             // 
-            // L_14_COMBO
+            // AddressListExpandsButton
             // 
-            this.L_14_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_14_COMBO.FormattingEnabled = true;
-            this.L_14_COMBO.Items.AddRange(new object[] {
-            "00=なし",
-            "01=ファイアー",
-            "02=サンダー",
-            "03=ライブ",
-            "04=ライト",
-            "05=ミィル",
-            "06=マムクート変身",
-            "07=魔物の魔法",
-            "08=ストーン"});
-            this.L_14_COMBO.Location = new System.Drawing.Point(266, 312);
-            this.L_14_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_14_COMBO.Name = "L_14_COMBO";
-            this.L_14_COMBO.Size = new System.Drawing.Size(228, 26);
-            this.L_14_COMBO.TabIndex = 196;
+            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 698);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(253, 30);
+            this.AddressListExpandsButton.TabIndex = 165;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // OPClassDemoFE7UForm
             // 
@@ -1373,5 +1386,6 @@
         private InterpolatedPictureBox L_20_TERRAINBATTLEICON_PLUS1;
         private InterpolatedPictureBox L_19_TERRAINBATTLEICON_PLUS1;
         private System.Windows.Forms.ComboBox L_14_COMBO;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }

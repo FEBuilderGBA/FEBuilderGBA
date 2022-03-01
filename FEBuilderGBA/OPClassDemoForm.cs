@@ -24,6 +24,9 @@ namespace FEBuilderGBA
             this.N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.N2_InputFormRef = N2_Init(this);
+
+            PatchUtil.OPClassReelSortExtends opClassReelSort = PatchUtil.OPClassReelSortPatch();
+            this.AddressListExpandsButton.Visible = (opClassReelSort != PatchUtil.OPClassReelSortExtends.NO);
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)

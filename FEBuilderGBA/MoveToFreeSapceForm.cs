@@ -74,6 +74,10 @@ namespace FEBuilderGBA
             {
                 NewDataCount.Value = 20;
             }
+            else if (inputFormRef.DataCount <= 50)
+            {
+                NewDataCount.Value = 50;
+            }
             else if (inputFormRef.DataCount < 0x7f)
             {
                 NewDataCount.Value = 0x80;
@@ -81,6 +85,22 @@ namespace FEBuilderGBA
             else if (inputFormRef.DataCount < 0xff)
             {
                 NewDataCount.Value = 0xff;
+            }
+            else if (inputFormRef.DataCount < 0x200)
+            {
+                NewDataCount.Value = 0x200;
+            }
+            else if (inputFormRef.DataCount < 0x400)
+            {
+                NewDataCount.Value = 0x400;
+            }
+            else if (inputFormRef.DataCount < 0x800)
+            {
+                NewDataCount.Value = 0x800;
+            }
+            else if (inputFormRef.DataCount < 0xC00)
+            {
+                NewDataCount.Value = 0xC00;
             }
             else if (inputFormRef.DataCount < 0x1000)
             {

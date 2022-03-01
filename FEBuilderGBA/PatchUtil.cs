@@ -45,6 +45,7 @@ namespace FEBuilderGBA
             g_Cache_SoundRoomExpands = Cache_SoundRoomExpands.NoCache;
             g_Cache_NullifyMovPatch = NullifyMovPatch.NoCache;
             g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
+            g_Cache_OPClassReelSortPatch = OPClassReelSortExtends.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2106,6 +2107,51 @@ namespace FEBuilderGBA
                 }
             }
             return ItemUsingExtends.NO;
+        }
+
+        //OP ClassReelの順番表示
+        public enum OPClassReelSortExtends
+        {
+            NO,             //なし
+            OPClassReelSort,
+            NoCache = (int)NO_CACHE
+        };
+        static OPClassReelSortExtends g_Cache_OPClassReelSortPatch = OPClassReelSortExtends.NoCache;
+        public static OPClassReelSortExtends OPClassReelSortPatch()
+        {
+            if (g_Cache_OPClassReelSortPatch == OPClassReelSortExtends.NoCache)
+            {
+                g_Cache_OPClassReelSortPatch = OPClassReelSortPatchLow();
+            }
+            return g_Cache_OPClassReelSortPatch;
+        }
+        static OPClassReelSortExtends OPClassReelSortPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="OPClassReelSort",	ver = "FE8J", addr = 0xB8C80,data = new byte[]{0x04, 0x4B, 0x1B, 0x68}},
+                new PatchTableSt{ name="OPClassReelSort",	ver = "FE8U", addr = 0xB40EC,data = new byte[]{0x04, 0x4B, 0x1B, 0x68}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "OPClassReelSort")
+                {
+                    return OPClassReelSortExtends.OPClassReelSort;
+                }
+            }
+            return OPClassReelSortExtends.NO;
         }
     }
 }
