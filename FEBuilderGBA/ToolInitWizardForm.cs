@@ -357,7 +357,7 @@ namespace FEBuilderGBA
             else if (this.Step3 == Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "GBAMusicStdio");
-                string url = "https://cdn.discordapp.com/attachments/145137778710151168/774580025188941844/VGMusicStudio-luncherOption.7z";
+                string url = "https://cdn.discordapp.com/attachments/600877394764627968/948313405431894077/VGMusicStudio.7z";
                 string r = DownloadProgram_Direct(url, dir, "VG Music Studio.exe");
                 if (IsErrorResult(r))
                 {
