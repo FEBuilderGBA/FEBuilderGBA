@@ -626,7 +626,7 @@ Terrain DEF
 Class Editor
 
 :クラスの拡張はさまざまな問題を引き起こし危険です。\r\nクラスを拡張するべきではないと思います。\r\nそれでもあなたがクラスを拡張したい場合、クラスを拡張した後に発生する問題を回避するために、以下のパッチを適応してください。\r\n\r\n拡張した0x80以降のクラスをセーブデータに記録できるようにするパッチ\r\n拡張した0x80以降の移動アニメーションを動作させるパッチ(Extended to Moving Map Animation 0xFF)\r\n\r\n本当に、クラスを拡張してもよろしいですか？\r\n
-Extension of the Class list can cause various problems.\r\nIt should not be done outside of specific cases.\r\nIf you still want to extend this data, please apply the following patch (ClassExpansion) to avoid some problems.\r\n\r\nThe patch makes it possible to record class IDs 0x80 and later in the save data.\r\nThe Extended Moving Map Animation patch enables map animations after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
+Extension of the Class list can cause various problems.\r\nIt should not be done outside of specific cases.\r\nIf you still want to extend this data, please apply the following patch (ExModularSave) to avoid some problems.\r\n\r\nThe patch makes it possible to record class IDs 0x80 and later in the save data.\r\nThe Extended Moving Map Animation patch enables map animations after 0x80 (ExtendedtoMovingMapAnimation0xFF)\r\n\r\nAre you sure you want to extend the class list?\r\n
 
 :クラスデータが極端に少ないです。破損している可能性があります。
 Class data is extremely small. It may be corrupt.
