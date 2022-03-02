@@ -1,6 +1,6 @@
-NAME=Debuff Mag bonus 20220226(SkillSystems)
+NAME=Rally Spectrum Mag bonus 20220226(SkillSystems)
 IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
-INFO=Default value is 2.\r\nThis value is the debuff when Skill RallyMag is used.
+INFO=Default value is 2.
 
 //アドレスパッチとして実装します
 TYPE=ADDR
