@@ -3779,7 +3779,7 @@ Eye XX/YY
 6=Close Eye
 
 :顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
-If the eye and mouth positions in the portrait do not match, please adjust the position from here.
+If the eye and mouth positions in the portrait do not match, please adjust the position.
 
 :mug_exceed用のタイルをどこに配置するか設定してください
 Please set where to place the tile for mug_exceed
