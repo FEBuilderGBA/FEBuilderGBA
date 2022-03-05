@@ -5071,6 +5071,9 @@ This is an ID for displaying the chapter title image.\r\nHowever,This is not use
 :章タイトル画像を表示するためのIDです。
 Chapter title ID for displaying the title title image.
 
+:章タイトル画像を表示するためのIDです。\r\n0x46以降は地名のデータが定義されているので注意してください。
+Chapter title ID for displaying the title title image.\r\nNote that data for place names by world map skirmishes is defined from 0x46 onwards.
+
 :前作の残骸です。利用されません。
 Leftover data from previous FE. Unused in this game.
 
