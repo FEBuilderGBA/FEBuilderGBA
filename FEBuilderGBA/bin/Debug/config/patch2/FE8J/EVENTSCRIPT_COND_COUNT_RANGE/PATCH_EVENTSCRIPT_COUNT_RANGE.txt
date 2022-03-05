@@ -1,6 +1,6 @@
-﻿NAME=特定範囲のユニットの数を数える(イベント命令)
-NAME.en=AddEvent: Get the number of Count number of units in a specific range
-NAME.zh=Get the number of Count number of units in a specific range(Add Event)
+﻿NAME=特定範囲のユニットの数を数える 20200421(イベント命令)
+NAME.en=AddEvent: Get the number of Count number of units in a specific range 20200421
+NAME.zh=Get the number of Count number of units in a specific range 20200421(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

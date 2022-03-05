@@ -1,0 +1,14 @@
+next_loop=$0E
+break_loop=$C2
+check_unit_id=$28
+check_class_id=$36
+check_item_id=$48
+check_affiliation=$74
+item_match=$74
+affiliation_match=$98
+check_affiliation_enemy=$94
+check_affiliation_npc=$8A
+check_affiliation_player=$84
+check_range=$98
+check_match=$BE
+found=$BE
