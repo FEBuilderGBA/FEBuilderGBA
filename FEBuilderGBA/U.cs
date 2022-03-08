@@ -4097,6 +4097,12 @@ namespace FEBuilderGBA
         }
         public static void SelectedIndexSafety(NumericUpDown nud, uint value)
         {
+            if (nud.Minimum < 0)
+            {//マイナス値が容認されるなら、ルーチンを変えます
+                SelectedIndexSafety(nud, (int)value);
+                return;
+            }
+
             if (value > nud.Maximum)
             {
                 value = (uint)nud.Maximum;
