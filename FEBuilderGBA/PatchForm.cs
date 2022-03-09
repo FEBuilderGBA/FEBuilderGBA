@@ -1373,7 +1373,8 @@ namespace FEBuilderGBA
             Button import = new Button();
             import.Location = new Point(100, y);
             import.Size = new Size(90, CONTROL_HEIGHT);
-            import.Text = prefix + "_Import" + ImportName;
+            import.Text = "Import";
+            import.Name = prefix + "_Import" + ImportName;
             parent.Controls.Add(import);
 
             Button paletteEditor = new Button();
