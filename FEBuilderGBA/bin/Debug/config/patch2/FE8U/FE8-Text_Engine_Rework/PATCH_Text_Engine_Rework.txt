@@ -1,6 +1,10 @@
 NAME=FE8 Text Engine Rework
 INFO=When using it, please read the explanation of FEU and readme carefully.\r\nReadme: https://www.dropbox.com/s/crk6o28bbyc6nwa/FE8-Text_Engine_Rework.zip?file_subpath=%2FFE8-Text_Engine_Rework%2F_README.txt
 
+
+
+
+
 AUTHOR=Tequila, Zahlman, Stan, Black Mage and Eliwan, The Awful Emblem team https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/118
 
 TYPE=EA
