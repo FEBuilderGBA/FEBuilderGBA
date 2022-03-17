@@ -14,6 +14,7 @@ namespace FEBuilderGBA
         public EDForm()
         {
             InitializeComponent();
+            SetPopupHelp();
             this.N2_FilterComboBox.SelectedIndex = 0;
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
@@ -188,6 +189,19 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        void SetPopupHelp()
+        {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                L_1.AccessibleDescription = "00=TextID 0749 にて最期をとげる。\r\n01=TextID 074A にて負傷。一行と別れる。\r\n02=TextID 074B にて負傷するも、最後まで一行と旅を共にする。";///No Translate
+            }
+            else
+            {
+                L_1.AccessibleDescription = "00=TextID 07D1 Died at\r\n01=TextID 07D2 Wounded at and parted ways with the company.\r\n02=TextID 0x7D3-07D4 Wounded at but remained until the end.";///No Translate
+            }
+        }
+
 
     }
 }

@@ -48,7 +48,7 @@
             this.B2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.L_1 = new System.Windows.Forms.Label();
             this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_UNIT = new System.Windows.Forms.Label();
@@ -322,7 +322,7 @@
             this.panel2.Controls.Add(this.B2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.B1);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.L_1);
             this.panel2.Controls.Add(this.L_0_UNIT);
             this.panel2.Controls.Add(this.B0);
             this.panel2.Controls.Add(this.J_0_UNIT);
@@ -393,15 +393,15 @@
             this.B1.Size = new System.Drawing.Size(60, 25);
             this.B1.TabIndex = 171;
             // 
-            // label5
+            // L_1
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(3, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 26);
-            this.label5.TabIndex = 170;
-            this.label5.Text = "撤退指定 02";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_1.Location = new System.Drawing.Point(3, 37);
+            this.L_1.Name = "L_1";
+            this.L_1.Size = new System.Drawing.Size(167, 26);
+            this.L_1.TabIndex = 170;
+            this.L_1.Text = "撤退指定 02";
+            this.L_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_UNIT
             // 
@@ -1351,7 +1351,7 @@
         private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown B1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label L_1;
         private FEBuilderGBA.TextBoxEx L_0_UNIT;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown N1_D4;
