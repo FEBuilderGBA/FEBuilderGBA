@@ -13441,3 +13441,8 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n4096のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべての経過時間の合計が4096を超えると、瞬時移動が発生します。
+Elapsed Time: The smaller the value, the longer it takes to stop.\r\nThis number is divided by 4096 to get a percentage representation of how much of the walking animation will have played when it reaches the location [X,Y].\r\nThe walking animation is automatically sped up or slowed down to set the unit's position at this time.\r\nFor paths with more than one movement instruction, all Elapsed Times must add up to 4095 or less.\r\nIf the total of all Elapsed Times exceeds 4096, teleportation will occur.
+
+:経過時間
+Elapsed Time

@@ -30,6 +30,11 @@ EVENTSCRIPT:32=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnera
 EVENTSCRIPT:33=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
 EVENTSCRIPT:34=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	操作中のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
 
+EVENTSCRIPT:231=400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:232=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:233=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:MAPX:X][XX:MAPX:Y]のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:234=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	操作中のユニットに[ZZ:DECIMAL:HealValue]、傷薬を使ったエフェクトでHPを回復する(ASMC_HealLikeVulnerary)
+
 
 EVENTSCRIPT:41=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue
 EVENTSCRIPT:42=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	[XX:UNIT:ユニット]に[ZZ:DECIMAL:DamageValue]、毒のモーションを利用してダメージを与える(ASMC_SelfDamageLikePoison)
@@ -71,6 +76,11 @@ EVENTSCRIPT:31.en=400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Recovery HP with Heal
 EVENTSCRIPT:32.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 EVENTSCRIPT:33.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 EVENTSCRIPT:34.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+
+EVENTSCRIPT:231.en=400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	Recovery HP with Heal effect(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:232.en=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:233.en=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:234.en=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 
 
 EVENTSCRIPT:41.en=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue
@@ -115,6 +125,11 @@ EVENTSCRIPT:31.zh=400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Recovery HP with Heal
 EVENTSCRIPT:32.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 EVENTSCRIPT:33.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 EVENTSCRIPT:34.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+
+EVENTSCRIPT:231.zh=400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	Recovery HP with Heal effect(ASMC_HealLikeVulnerary)(LOW)	Slot1=Unit, Slot6=HealValue
+EVENTSCRIPT:232.zh=40050100XXXXXXXX40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:UNIT:Unit] [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:233.zh=40050B00XXXXYYYY40050600ZZ00000040050100FEFFFFFF400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
+EVENTSCRIPT:234.zh=40050100FFFFFFFF40050600ZZ000000400D0000{$L1:ASMC_HealLikeVulnerary2.dmp}	Current unit [ZZ:DECIMAL:HealValue], Recovery HP with Heal effect(ASMC_HealLikeVulnerary)
 
 
 EVENTSCRIPT:41.zh=400D0000{$L1:ASMC_SelfDamageLikePoison.dmp}	SelfDamage using Poison effect(ASMC_SelfDamageLikePoison)(LOW)	Slot1=Unit, Slot6=DamageValue

@@ -43,7 +43,7 @@ POIN FireAnime
 //s6 HealValue
 ALIGN 4
 ASMC_HealLikeVulnerary:
-#incbin "ASMC_HealLikeVulnerary.dmp"
+#incbin "ASMC_HealLikeVulnerary2.dmp"
 POIN WaitForMotionEndProc
 
 #define HealLikeVulnerary(UnitID, HealValue) "SVAL 1 UnitID; SVAL 6 HealValue; ASMC ASMC_HealLikeVulnerary|1;" 

@@ -35,14 +35,10 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.WriteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
@@ -57,7 +53,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel1.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(4, 113);
+            this.WriteButton.Location = new System.Drawing.Point(4, 105);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(270, 30);
@@ -147,25 +147,12 @@
             this.panel1.Location = new System.Drawing.Point(12, 120);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 540);
+            this.panel1.Size = new System.Drawing.Size(120, 608);
             this.panel1.TabIndex = 3;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 0);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(120, 540);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(12, 675);
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(11, 743);
             this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
             this.AddressListExpandsButton.Size = new System.Drawing.Size(204, 30);
@@ -180,17 +167,8 @@
             this.panel2.Location = new System.Drawing.Point(427, 49);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(777, 656);
+            this.panel2.Size = new System.Drawing.Size(777, 724);
             this.panel2.TabIndex = 4;
-            // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(2, -30);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(770, 684);
-            this.MapPictureBox.TabIndex = 0;
             // 
             // panel3
             // 
@@ -205,19 +183,8 @@
             this.panel3.Location = new System.Drawing.Point(137, 120);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(288, 540);
+            this.panel3.Size = new System.Drawing.Size(288, 608);
             this.panel3.TabIndex = 5;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(143, 37);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 55;
             // 
             // label3
             // 
@@ -229,17 +196,6 @@
             this.label3.TabIndex = 56;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(143, 72);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 54;
             // 
             // label22
             // 
@@ -273,7 +229,7 @@
             this.J_0.Name = "J_0";
             this.J_0.Size = new System.Drawing.Size(140, 32);
             this.J_0.TabIndex = 4;
-            this.J_0.Text = "速度";
+            this.J_0.Text = "経過時間";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W6
@@ -328,16 +284,16 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.J_0);
             this.panel5.Controls.Add(this.W6);
             this.panel5.Controls.Add(this.J_6);
             this.panel5.Controls.Add(this.D0);
             this.panel5.Controls.Add(this.W4);
             this.panel5.Controls.Add(this.L_4_MAPXY_6);
-            this.panel5.Location = new System.Drawing.Point(137, 268);
+            this.panel5.Location = new System.Drawing.Point(137, 263);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(276, 392);
+            this.panel5.Size = new System.Drawing.Size(276, 462);
             this.panel5.TabIndex = 2;
             // 
             // panel6
@@ -408,23 +364,68 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // label6
+            // BlockSize
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(4, 154);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(270, 238);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動" +
-    "します。";
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(143, 37);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 55;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(143, 72);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 54;
+            // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(2, -30);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(770, 754);
+            this.MapPictureBox.TabIndex = 0;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 0);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(120, 608);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 114);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(250, 345);
+            this.textBox1.TabIndex = 42;
+            this.textBox1.Text = "経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n409" +
+    "6のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべ" +
+    "ての経過時間の合計が4096を超えると、瞬時移動が発生します。";
             // 
             // WorldMapPathMoveEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1213, 710);
+            this.ClientSize = new System.Drawing.Size(1213, 784);
             this.Controls.Add(this.AddressListExpandsButton);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -446,6 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -484,6 +486,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ReadCount;
         private System.Windows.Forms.NumericUpDown ReadStartAddress;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
