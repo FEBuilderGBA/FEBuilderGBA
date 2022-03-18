@@ -128,11 +128,9 @@ namespace FEBuilderGBA
         }
         public GrowSimulator BuildSim()
         {
-            uint uid = UnitForm.GetUnitIDWhereSupportClass((uint)this.AddressList.SelectedIndex);
-
             GrowSimulator sim = new GrowSimulator();
             UnitForm.SetSimUnit(ref sim
-                , uid //支援クラス
+                , 0 //支援クラス
             );
             sim.SetClassBase(
                   (int)B11.Value //hp
@@ -169,7 +167,6 @@ namespace FEBuilderGBA
                 GrowSimulator sim = BuildSim();
                 sim.Grow((int)X_SIM.Value, GrowSimulator.GrowOptionEnum.ClassGrow);
 
-                X_SIM.Value = sim.sim_lv;
                 U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
                 U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
                 U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
