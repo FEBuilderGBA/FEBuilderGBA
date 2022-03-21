@@ -1,0 +1,17 @@
+NAME=戦闘BGMにも継続判定を入れる 20220321
+INFO=戦闘BGMが現在再生中のBGMと同じものが指定された場合、音楽を止めずに継続して再生するようにします。\r\nこのバージョンでは、以下の機能が追加されています。\r\n戦闘BGMに0xFFFFを設定すると、戦闘BGMへの切り替えを拒否し、マップBGMを再生し続けます。\r\n戦闘BGMの優先度が3以上の低レベルであればBGMではなく効果音として再生します。
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x71A68=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=ContinueBattleBGM.dmp
+JUMP:0x71A68:$r3=ContinueBattleBGM.dmp
+
+AUTHOR=7743
+
+NAME.en=Continue Battle BGM Between Map and Combat 20220321
+INFO.en=If same Map BGM and Batlle BGM is specified, Continue playing without stopping the music.\r\nThis version adds the following features.\r\nIf 0xFFFF is set for the combat BGM, it will refuse to switch to the combat BGM and continue playing the map BGM.\r\nIf the combat BGM has a low priority level of 3 or higher, it will be played as a sound effect instead of BGM.
+NAME.zh=还在Battle BGM中进行了延续判断 20220321
+INFO.zh=如果指定了与当前正在播放的BGM相同的BGM，则它将继续播放而不停止音乐。\r\nThis version adds the following features.\r\nIf 0xFFFF is set for the combat BGM, it will refuse to switch to the combat BGM and continue playing the map BGM.\r\nIf the combat BGM has a low priority level of 3 or higher, it will be played as a sound effect instead of BGM.
