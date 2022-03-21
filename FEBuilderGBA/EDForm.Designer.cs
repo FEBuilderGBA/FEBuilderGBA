@@ -123,6 +123,10 @@
             this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N2_LabelFilter = new System.Windows.Forms.Label();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -160,6 +164,10 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -170,7 +178,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ReadCount);
             this.panel1.Controls.Add(this.ReadStartAddress);
-            this.panel1.Location = new System.Drawing.Point(17, 18);
+            this.panel1.Location = new System.Drawing.Point(8, 7);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1153, 30);
@@ -235,7 +243,7 @@
             this.AddressPanel.Controls.Add(this.WriteButton);
             this.AddressPanel.Controls.Add(this.Address);
             this.AddressPanel.Controls.Add(this.label23);
-            this.AddressPanel.Location = new System.Drawing.Point(286, 48);
+            this.AddressPanel.Location = new System.Drawing.Point(277, 37);
             this.AddressPanel.Name = "AddressPanel";
             this.AddressPanel.Size = new System.Drawing.Size(884, 30);
             this.AddressPanel.TabIndex = 62;
@@ -326,17 +334,16 @@
             this.panel2.Controls.Add(this.L_0_UNIT);
             this.panel2.Controls.Add(this.B0);
             this.panel2.Controls.Add(this.J_0_UNIT);
-            this.panel2.Location = new System.Drawing.Point(286, 79);
+            this.panel2.Location = new System.Drawing.Point(277, 68);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(884, 223);
+            this.panel2.Size = new System.Drawing.Size(884, 607);
             this.panel2.TabIndex = 64;
             // 
             // L_0_UNITICON
             // 
-            this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(412, 7);
+            this.L_0_UNITICON.Location = new System.Drawing.Point(407, 5);
             this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_UNITICON.Name = "L_0_UNITICON";
             this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -450,10 +457,10 @@
             this.panel3.Controls.Add(this.N1_J_4_TEXT);
             this.panel3.Controls.Add(this.N1_L_0_UNIT);
             this.panel3.Controls.Add(this.N1_J_0_UNIT);
-            this.panel3.Location = new System.Drawing.Point(332, 376);
+            this.panel3.Location = new System.Drawing.Point(323, 65);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(838, 205);
+            this.panel3.Size = new System.Drawing.Size(838, 611);
             this.panel3.TabIndex = 68;
             // 
             // N1_L_2_FLAG
@@ -493,7 +500,6 @@
             // 
             // N1_L_0_UNITICON
             // 
-            this.N1_L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N1_L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
             this.N1_L_0_UNITICON.Location = new System.Drawing.Point(484, 5);
             this.N1_L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
@@ -580,7 +586,7 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.N1_ReadCount);
             this.panel4.Controls.Add(this.N1_ReadStartAddress);
-            this.panel4.Location = new System.Drawing.Point(17, 318);
+            this.panel4.Location = new System.Drawing.Point(8, 7);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1153, 30);
@@ -645,7 +651,7 @@
             this.panel5.Controls.Add(this.N1_WriteButton);
             this.panel5.Controls.Add(this.N1_Address);
             this.panel5.Controls.Add(this.label14);
-            this.panel5.Location = new System.Drawing.Point(331, 347);
+            this.panel5.Location = new System.Drawing.Point(322, 36);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(839, 30);
             this.panel5.TabIndex = 66;
@@ -744,10 +750,10 @@
             this.panel6.Controls.Add(this.N2_L_0_COMBO);
             this.panel6.Controls.Add(this.N2_B0);
             this.panel6.Controls.Add(this.label15);
-            this.panel6.Location = new System.Drawing.Point(308, 656);
+            this.panel6.Location = new System.Drawing.Point(299, 65);
             this.panel6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(862, 330);
+            this.panel6.Size = new System.Drawing.Size(862, 611);
             this.panel6.TabIndex = 72;
             // 
             // N2_L_3_FLAG
@@ -764,9 +770,8 @@
             // 
             // N2_L_2_UNITICON
             // 
-            this.N2_L_2_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_L_2_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N2_L_2_UNITICON.Location = new System.Drawing.Point(463, 80);
+            this.N2_L_2_UNITICON.Location = new System.Drawing.Point(463, 74);
             this.N2_L_2_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.N2_L_2_UNITICON.Name = "N2_L_2_UNITICON";
             this.N2_L_2_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -776,9 +781,8 @@
             // 
             // N2_L_1_UNITICON
             // 
-            this.N2_L_1_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_L_1_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N2_L_1_UNITICON.Location = new System.Drawing.Point(463, 46);
+            this.N2_L_1_UNITICON.Location = new System.Drawing.Point(463, 40);
             this.N2_L_1_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.N2_L_1_UNITICON.Name = "N2_L_1_UNITICON";
             this.N2_L_1_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -958,7 +962,7 @@
             this.panel7.Controls.Add(this.N2_ReloadListButton);
             this.panel7.Controls.Add(this.N2_ReadStartAddress);
             this.panel7.Controls.Add(this.N2_ReadCount);
-            this.panel7.Location = new System.Drawing.Point(17, 598);
+            this.panel7.Location = new System.Drawing.Point(8, 7);
             this.panel7.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1153, 30);
@@ -1048,7 +1052,7 @@
             this.panel8.Controls.Add(this.N2_WriteButton);
             this.panel8.Controls.Add(this.N2_Address);
             this.panel8.Controls.Add(this.label20);
-            this.panel8.Location = new System.Drawing.Point(308, 627);
+            this.panel8.Location = new System.Drawing.Point(299, 36);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(862, 30);
             this.panel8.TabIndex = 70;
@@ -1130,72 +1134,74 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.AddressList);
             this.panel9.Controls.Add(this.AddressListExpandsButton);
             this.panel9.Controls.Add(this.LabelFilter);
-            this.panel9.Controls.Add(this.AddressList);
-            this.panel9.Location = new System.Drawing.Point(17, 48);
+            this.panel9.Location = new System.Drawing.Point(8, 37);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(267, 254);
+            this.panel9.Size = new System.Drawing.Size(267, 638);
             this.panel9.TabIndex = 190;
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 219);
+            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 606);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(261, 30);
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(265, 30);
             this.AddressListExpandsButton.TabIndex = 212;
             this.AddressListExpandsButton.Text = "リストの拡張";
             this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, 0);
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(267, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(265, 26);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddressList
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(267, 202);
+            this.AddressList.Size = new System.Drawing.Size(265, 580);
             this.AddressList.TabIndex = 108;
             // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.N1_AddressList);
             this.panel10.Controls.Add(this.N1_AddressListExpandsButton);
             this.panel10.Controls.Add(this.N1_LabelFilter);
-            this.panel10.Controls.Add(this.N1_AddressList);
-            this.panel10.Location = new System.Drawing.Point(17, 347);
+            this.panel10.Location = new System.Drawing.Point(8, 36);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(313, 234);
+            this.panel10.Size = new System.Drawing.Size(313, 640);
             this.panel10.TabIndex = 191;
             // 
             // N1_AddressListExpandsButton
             // 
-            this.N1_AddressListExpandsButton.Location = new System.Drawing.Point(2, 207);
+            this.N1_AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.N1_AddressListExpandsButton.Location = new System.Drawing.Point(0, 612);
             this.N1_AddressListExpandsButton.Name = "N1_AddressListExpandsButton";
-            this.N1_AddressListExpandsButton.Size = new System.Drawing.Size(309, 26);
+            this.N1_AddressListExpandsButton.Size = new System.Drawing.Size(311, 26);
             this.N1_AddressListExpandsButton.TabIndex = 212;
             this.N1_AddressListExpandsButton.Text = "リストの拡張";
             this.N1_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // N1_LabelFilter
             // 
-            this.N1_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N1_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N1_LabelFilter.Location = new System.Drawing.Point(0, -1);
+            this.N1_LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.N1_LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.N1_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N1_LabelFilter.Name = "N1_LabelFilter";
             this.N1_LabelFilter.Size = new System.Drawing.Size(311, 26);
@@ -1205,41 +1211,42 @@
             // 
             // N1_AddressList
             // 
-            this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N1_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.N1_AddressList.FormattingEnabled = true;
             this.N1_AddressList.IntegralHeight = false;
             this.N1_AddressList.ItemHeight = 18;
-            this.N1_AddressList.Location = new System.Drawing.Point(0, 24);
+            this.N1_AddressList.Location = new System.Drawing.Point(0, 26);
             this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N1_AddressList.Name = "N1_AddressList";
-            this.N1_AddressList.Size = new System.Drawing.Size(311, 184);
+            this.N1_AddressList.Size = new System.Drawing.Size(311, 586);
             this.N1_AddressList.TabIndex = 108;
             // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.N2_AddressList);
             this.panel11.Controls.Add(this.N2_AddressListExpandsButton);
             this.panel11.Controls.Add(this.N2_LabelFilter);
-            this.panel11.Controls.Add(this.N2_AddressList);
-            this.panel11.Location = new System.Drawing.Point(17, 627);
+            this.panel11.Location = new System.Drawing.Point(8, 36);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(292, 356);
+            this.panel11.Size = new System.Drawing.Size(292, 637);
             this.panel11.TabIndex = 192;
             // 
             // N2_AddressListExpandsButton
             // 
-            this.N2_AddressListExpandsButton.Location = new System.Drawing.Point(2, 324);
+            this.N2_AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.N2_AddressListExpandsButton.Location = new System.Drawing.Point(0, 605);
             this.N2_AddressListExpandsButton.Name = "N2_AddressListExpandsButton";
-            this.N2_AddressListExpandsButton.Size = new System.Drawing.Size(285, 30);
+            this.N2_AddressListExpandsButton.Size = new System.Drawing.Size(290, 30);
             this.N2_AddressListExpandsButton.TabIndex = 212;
             this.N2_AddressListExpandsButton.Text = "リストの拡張";
             this.N2_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // N2_LabelFilter
             // 
-            this.N2_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N2_LabelFilter.Location = new System.Drawing.Point(1, -1);
+            this.N2_LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.N2_LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.N2_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N2_LabelFilter.Name = "N2_LabelFilter";
             this.N2_LabelFilter.Size = new System.Drawing.Size(290, 26);
@@ -1249,34 +1256,76 @@
             // 
             // N2_AddressList
             // 
-            this.N2_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N2_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.N2_AddressList.FormattingEnabled = true;
             this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
-            this.N2_AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.N2_AddressList.Location = new System.Drawing.Point(0, 26);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N2_AddressList.Name = "N2_AddressList";
-            this.N2_AddressList.Size = new System.Drawing.Size(290, 310);
+            this.N2_AddressList.Size = new System.Drawing.Size(290, 579);
             this.N2_AddressList.TabIndex = 108;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(2, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1175, 711);
+            this.tabControl1.TabIndex = 193;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.AddressPanel);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel9);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1363, 679);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "撤退";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.panel4);
+            this.tabPage2.Controls.Add(this.panel5);
+            this.tabPage2.Controls.Add(this.panel10);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1167, 679);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "通り名";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.panel7);
+            this.tabPage3.Controls.Add(this.panel11);
+            this.tabPage3.Controls.Add(this.panel8);
+            this.tabPage3.Controls.Add(this.panel6);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1167, 679);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "その後";
             // 
             // EDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1179, 988);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.AddressPanel);
+            this.ClientSize = new System.Drawing.Size(1184, 735);
+            this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "EDForm";
             this.Text = "ED関係";
@@ -1324,6 +1373,10 @@
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1425,5 +1478,9 @@
         private System.Windows.Forms.Label N1_J_2;
         private TextBoxEx N1_L_2_FLAG;
         private TextBoxEx N2_L_3_FLAG;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }

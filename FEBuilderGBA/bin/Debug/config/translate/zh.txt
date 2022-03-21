@@ -1072,6 +1072,15 @@ Eliwood版
 :撤退時　その後　
 撤回后
 
+:リン編
+林恩编
+
+:撤退
+退出。
+
+:その後
+在那之后。
+
 :撤退指定 02
 撤回指定02
 
@@ -4651,9 +4660,6 @@ Ballista
 :序盤
 序章
 
-:リン編
-林恩编
-
 :支援なし
 没有支持。
 
@@ -5067,6 +5073,9 @@ Rosuton
 
 :章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
 它是用于显示章节标题图像的ID，但是。\r\n因为FE7U使用文本格式数据，所以不使用它。
+
+:章タイトル画像を表示するためのIDです。\r\n0x46以降はフリーマップの地名のデータが定義されているので注意してください。
+章标题ID用于显示标题标题图像。\r\n请注意，免费地图的地名数据定义在0x46之后。
 
 :章タイトル画像を表示するためのIDです。
 章标题ID用于显示标题标题图像。
@@ -8716,18 +8725,6 @@ ROM中存在未压缩的特殊OAM数据。\r\n从各种效果，C26 / C27指令�
 :分岐CC選択時のクラス名
 选择分支转职时的职业名称
 
-:00=自軍
-00=自军
-
-:01=敵軍
-01=敌军
-
-:日本語名 開始位置
-日本语的名字起始位置
-
-:日本語名アドレス
-日文姓名地址
-
 :01=ファイアー
 01=火炎
 
@@ -8751,6 +8748,18 @@ ROM中存在未压缩的特殊OAM数据。\r\n从各种效果，C26 / C27指令�
 
 :08=ストーン
 08=石化光线
+
+:00=自軍
+00=自军
+
+:01=敵軍
+01=敌军
+
+:日本語名 開始位置
+日本语的名字起始位置
+
+:日本語名アドレス
+日文姓名地址
 
 :OPクラスデモ FE7
 OP职业演示FE 7
@@ -13354,11 +13363,11 @@ Eriwood结局
 :道データへのポインタ
 指向道路数据
 
-:速度
-速度
+:経過時間
+Elapsed Time
 
-:速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動します。
-速度是一路上停下来的时间。\r\n最大值为4096。最小值是0。\r\n越小，停止时间越长。\r\n\r\n注意:如果超过最大值，它将立即移动。
+:経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n4096のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべての経過時間の合計が4096を超えると、瞬時移動が発生します。
+Elapsed Time: The smaller the value, the longer it takes to stop.\r\nThis number is divided by 4096 to get a percentage representation of how much of the walking animation will have played when it reaches the location [X,Y].\r\nThe walking animation is automatically sped up or slowed down to set the unit's position at this time.\r\nFor paths with more than one movement instruction, all Elapsed Times must add up to 4095 or less.\r\nIf the total of all Elapsed Times exceeds 4096, teleportation will occur.
 
 :秘密の店
 秘密店
@@ -13438,8 +13447,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n4096のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべての経過時間の合計が4096を超えると、瞬時移動が発生します。
-Elapsed Time: The smaller the value, the longer it takes to stop.\r\nThis number is divided by 4096 to get a percentage representation of how much of the walking animation will have played when it reaches the location [X,Y].\r\nThe walking animation is automatically sped up or slowed down to set the unit's position at this time.\r\nFor paths with more than one movement instruction, all Elapsed Times must add up to 4095 or less.\r\nIf the total of all Elapsed Times exceeds 4096, teleportation will occur.
-
-:経過時間
-Elapsed Time

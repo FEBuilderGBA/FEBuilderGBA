@@ -107,7 +107,7 @@ namespace FEBuilderGBA
         public uint worldmap_county_border_palette_pointer() { return 0x0; } // ワールドマップ国名の表示のパレット
         public uint item_shop_hensei_pointer() { return 0x0; } //編成準備店
         public uint item_cornered_pointer() { return 0x2A62C; } //すくみの開始位置
-        public uint ed_1_pointer() { return 0x0; }  //ED 倒れたら撤退するかどうか
+        public uint ed_1_pointer() { return 0xB8C40; }  //ED 倒れたら撤退するかどうか
         public uint ed_2_pointer() { return 0xB8C1C; }  //ED 通り名
         public uint ed_3a_pointer() { return 0xdc2894; }  //ED その後 エリウッド編　
         public uint ed_3b_pointer() { return 0xdc2898; }  //ED その後 ヘクトル編

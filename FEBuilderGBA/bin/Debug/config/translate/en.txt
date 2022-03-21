@@ -1072,6 +1072,15 @@ After Clearing
 :撤退時　その後　
 After Retreating
 
+:リン編
+Lyn's Tale
+
+:撤退
+Withdrawal.
+
+:その後
+after that.
+
 :撤退指定 02
 Retreat Designation 02
 
@@ -4651,9 +4660,6 @@ Egg
 :序盤
 Tutorial Mode
 
-:リン編
-Lyn's Tale
-
 :支援なし
 No support.
 
@@ -5068,11 +5074,11 @@ You determine which turn the event occurs on.\r\nFor example, if you make reinfo
 :章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
 This is an ID for displaying the chapter title image.\r\nHowever,This is not used because FE7U uses text format data.
 
+:章タイトル画像を表示するためのIDです。\r\n0x46以降はフリーマップの地名のデータが定義されているので注意してください。
+Chapter title ID for displaying the title title image.\r\nPlease note that the data of the place name of the free map is defined after 0x46.
+
 :章タイトル画像を表示するためのIDです。
 Chapter title ID for displaying the title title image.
-
-:章タイトル画像を表示するためのIDです。\r\n0x46以降は地名のデータが定義されているので注意してください。
-Chapter title ID for displaying the title title image.\r\nNote that data for place names by world map skirmishes is defined from 0x46 onwards.
 
 :前作の残骸です。利用されません。
 Leftover data from previous FE. Unused in this game.
@@ -8719,18 +8725,6 @@ Warning: Characters other than Latin are included.
 :分岐CC選択時のクラス名
 Class Name when using Branch Promotion
 
-:00=自軍
-00=Player Army
-
-:01=敵軍
-01=Enemy Army
-
-:日本語名 開始位置
-Japanese Name Start Position
-
-:日本語名アドレス
-Japanese Name Address
-
 :01=ファイアー
 01=Fire
 
@@ -8754,6 +8748,18 @@ Japanese Name Address
 
 :08=ストーン
 08=Stone
+
+:00=自軍
+00=Player Army
+
+:01=敵軍
+01=Enemy Army
+
+:日本語名 開始位置
+Japanese Name Start Position
+
+:日本語名アドレス
+Japanese Name Address
 
 :OPクラスデモ FE7
 Class Reel FE7
@@ -13357,11 +13363,11 @@ World Map Node ID (Start/End Point)
 :道データへのポインタ
 Pointer to Road Data
 
-:速度
-Speed
+:経過時間
+Elapsed Time
 
-:速度は、道の途中の地点に立ち止まる時間です。\r\n最大値は4096。最小値は0です。\r\n小さくするほど、長く立ち止まります。\r\n\r\n注意:最大値を超えると、瞬間移動します。
-Speed is the "Waiting Time" at a point along the way.\r\nThe maximum value is 4096. The minimum value is 0.\r\nThe smaller it is, the longer the wait.\r\n\r\nNote: If the maximum value is exceeded, teleportation will occur.
+:経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n4096のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべての経過時間の合計が4096を超えると、瞬時移動が発生します。
+Elapsed Time: The smaller the value, the longer it takes to stop.\r\nThis number is divided by 4096 to get a percentage representation of how much of the walking animation will have played when it reaches the location [X,Y].\r\nThe walking animation is automatically sped up or slowed down to set the unit's position at this time.\r\nFor paths with more than one movement instruction, all Elapsed Times must add up to 4095 or less.\r\nIf the total of all Elapsed Times exceeds 4096, teleportation will occur.
 
 :秘密の店
 Secret Shop
@@ -13441,8 +13447,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:経過時間は、道の途中の地点に立ち止まる時間です。\r\n値が小さいほど、停止する時間が長くなります。\r\n\r\nノードの移動は、全体で4096の時間を使います。\r\n4096のうち、どれだけの時間をこのノードで待つかを設定します。\r\n複数の移動命令があるパスの場合、すべての経過時間を足して4095以下にする必要があります。\r\nすべての経過時間の合計が4096を超えると、瞬時移動が発生します。
-Elapsed Time: The smaller the value, the longer it takes to stop.\r\nThis number is divided by 4096 to get a percentage representation of how much of the walking animation will have played when it reaches the location [X,Y].\r\nThe walking animation is automatically sped up or slowed down to set the unit's position at this time.\r\nFor paths with more than one movement instruction, all Elapsed Times must add up to 4095 or less.\r\nIf the total of all Elapsed Times exceeds 4096, teleportation will occur.
-
-:経過時間
-Elapsed Time

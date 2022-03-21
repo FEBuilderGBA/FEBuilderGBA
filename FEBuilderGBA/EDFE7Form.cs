@@ -14,19 +14,23 @@ namespace FEBuilderGBA
         public EDFE7Form()
         {
             InitializeComponent();
+            SetPopupHelp();
             this.N2_FilterComboBox.SelectedIndex = 0;
 
             this.N1_AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
             this.N2_AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
             this.N3_AddressList.OwnerDraw(ListBoxEx.DrawUnit2AndText, DrawMode.OwnerDrawFixed);
+            this.N4_AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
 
             this.N1_InputFormRef = N1_Init(this);
             this.N2_InputFormRef = N2_Init(this);
             this.N3_InputFormRef = N3_Init(this);
+            this.N4_InputFormRef = N4_Init(this);
 
             this.N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N3_InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.N4_InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
 
@@ -102,6 +106,26 @@ namespace FEBuilderGBA
             return ifr;
         }
 
+        public InputFormRef N4_InputFormRef;
+        static InputFormRef N4_Init(Form self)
+        {
+            return new InputFormRef(self
+                , "N4_"
+                , Program.ROM.RomInfo.ed_1_pointer()
+                , 4
+                , (int i, uint addr) =>
+                {
+                    return Program.ROM.u32(addr) != 0x00;
+                }
+                , (int i, uint addr) =>
+                {
+                    uint uid = Program.ROM.u8(addr + 0);
+                    uint flag = Program.ROM.u8(addr + 1);
+                    return U.ToHexString(uid) + " " + UnitForm.GetUnitName(uid);
+                }
+                );
+        }
+
         private void EDForm_Load(object sender, EventArgs e)
         {
         }
@@ -144,6 +168,10 @@ namespace FEBuilderGBA
                 InputFormRef.ReInitPointer
                     ((Program.ROM.RomInfo.ed_3b_pointer()));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_3b", new uint[] { });
+            }
+            {
+                InputFormRef InputFormRef = N4_Init(null);
+                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_4", new uint[] { });
             }
         }
         public static void MakeVarsIDArray(List<UseValsID> list)
@@ -204,6 +232,17 @@ namespace FEBuilderGBA
                     name = Program.ROM.u32(addr + 8);
                     FELint.CheckText(name, "LYNEDAFTER8", errors, FELint.Type.ED, addr, i);
                 }
+            }
+        }
+        void SetPopupHelp()
+        {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                N4_L_1.AccessibleDescription = "00=TextID 100F にて最期をとげる。\r\n01=TextID 1010 にて負傷。一行と別れる。\r\n02=TextID 1011 にて負傷するも、最後まで一行と旅を共にする。\r\n03=ホークアイ\r\n04=パントとルイーズ TextID 1086, 1087\r\n05=アスト";///No Translate
+            }
+            else
+            {
+                N4_L_1.AccessibleDescription = "00=TextID 1019 Died at\r\n01=TextID 101A Wounded at and parted ways with the company.\r\n02=TextID 0x101B-101C Wounded at but remained until the end.\r\n03=Hawkeye\r\n04=Pent and Louise\r\n05=Athos";///No Translate
             }
         }
     }
