@@ -3186,6 +3186,37 @@ namespace FEBuilderGBA
             }
         }
 
+        static bool checkFrameBIN(byte[] frameData_UZ)
+        {
+            int end = frameData_UZ.Length;
+            for (int i = 0; i < end; i += 4)
+            {
+                if (frameData_UZ[i + 3] == 0x80)
+                {
+                    break;
+                }
+                else if (frameData_UZ[i + 3] == 0x85)
+                {
+                    uint code86 = frameData_UZ[i];
+                    if (code86 == 0x47)
+                    {
+                        DialogResult dr = R.ShowNoYes("このスクリプトには、 C47命令が含まれています。\r\nこの命令は、マントコマンドの構造体を設定していないと動作しません。\r\n(C01ハックパッチがあるので、C47命令を利用することもうありません。)\r\n\r\nインポート処理を続行してもよろしいですか？");
+                        if (dr == DialogResult.No)
+                        {
+                            //ユーザが拒否
+                            return false;
+                        }
+                    }
+                    continue;
+                }
+                else if (frameData_UZ[i + 3] != 0x86)
+                {
+                    continue;
+                }
+                i = i + 4 + 4; // 4+4+ 4 = 12
+            }
+            return true;
+        }
 
         //FE Editorの java シリアライズされたバトルアニメの読み込み
         static string ImportBattleAnimeOnFEditorSerializeLow(string filename
@@ -3295,6 +3326,10 @@ namespace FEBuilderGBA
                 }
             }
 
+            if (! checkFrameBIN(frameBIN))
+            {
+                return R._("ユーザによって取り消されました。");
+            }
 
             //画像シート
             byte[] palette = new byte[0x20];

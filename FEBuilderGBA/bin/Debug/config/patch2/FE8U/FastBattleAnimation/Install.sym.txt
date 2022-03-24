@@ -1,0 +1,12 @@
+SkillIcons=$B61A68
+ASMC_Draw=$B42B6C
+Skill_Getter=$B60698
+DragonVeinsIcon_Unit67Graphic=$B33C68
+RTextLoop=$B60D7C
+SkillDescGetter=$B60B2C
+SkillTester=$B60914
+portrait_0x01_face_Graphic=$B6D0CC
+portrait_0x01_mouth_Graphic=$B6E0D0
+portrait_0x01_pal_Graphic=$B6E6D0
+portrait_0x01_minimug_Graphic=$B6E6F0
+FastBattleAnimation=$B88570

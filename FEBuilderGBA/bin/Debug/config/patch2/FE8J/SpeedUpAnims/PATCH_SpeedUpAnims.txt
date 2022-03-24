@@ -13,3 +13,4 @@ NAME.en=If you press the A button, you will play battle animation at high speed.
 INFO.en=This patch has been reported to have side effects that slow the speed of combat animations.\r\nPlease be careful when using it.\r\n\r\nIf you press the A button, battle animation will play at high speed without wait.\r\nAlso, push the B button to pause the battle animation.
 NAME.zh=如果按A按钮，您将高速播放战斗动画。
 INFO.zh=This patch has been reported to have side effects that slow the speed of combat animations.\r\nPlease be careful when using it.\r\n\r\n如果按A按钮，战斗动画将高速播放而无需等待。\r\n此外，按B按钮可暂停战斗动画。
+WARNING=1

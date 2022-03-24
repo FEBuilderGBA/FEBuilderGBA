@@ -1,0 +1,2 @@
+WaitExit=$4C
+Exit=$52

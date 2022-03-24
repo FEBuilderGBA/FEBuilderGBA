@@ -1,0 +1,11 @@
+PUSH
+ORG 0x50C44	//FE8J
+//ORG 0x4FED0	//FE8U
+jumpToHack(FastBattleAnimation)
+POP
+
+ALIGN 4
+FastBattleAnimation:
+#incbin "FastBattleAnimation.dmp"
+
+ALIGN 4
