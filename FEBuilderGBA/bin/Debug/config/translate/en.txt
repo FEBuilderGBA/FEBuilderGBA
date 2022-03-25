@@ -5099,7 +5099,7 @@ It is a bool value as to whether or not to use the advancement preparation scree
 Determines unit ID.\r\nIn order to avoid confusion, match with unit order as listed.\r\n
 
 :仲間にできるユニットは 0x45までのユニットです。\r\nそれ以降は戦績データが記録されません。\r\n
-Units beyond 0x45 won't have records.\r\n
+UnitID beyond 0x45 won't have BWL records.\r\nUnits that can be added to the party must be 0x45 or less.\r\n
 
 :また、闘技場に出てくるユニットは、 {0}のユニットです。\r\nそれ以外は利用されません。\r\n
 Also, units in Arena are a Unit of {0}.\r\nOther than that this is not used.\r\n

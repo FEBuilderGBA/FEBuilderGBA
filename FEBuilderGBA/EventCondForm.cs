@@ -2725,7 +2725,7 @@ namespace FEBuilderGBA
                     ,mapcond_addr
                     , (uint)MapCond.Count * 4
                     , mapcond_pointer 
-                    , "EventCond map:" + mapidString
+                    , "EventCond Frame map:" + mapidString
                     , Address.DataTypeEnum.POINTER);
             }
         }

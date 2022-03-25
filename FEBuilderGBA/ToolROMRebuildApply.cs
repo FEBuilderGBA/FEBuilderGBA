@@ -367,6 +367,10 @@ namespace FEBuilderGBA
             for (int i = 0; i < this.MissingPointerList.Count; i++)
             {
                 MissingPointer m = this.MissingPointerList[i];
+                if (m.WroteAddr < this.RebuildAddress)
+                {
+                    continue;
+                }
                 sb.Append("Missing!");
                 sb.Append(" P:");
                 sb.Append(U.To0xHexString(m.FindPointer));

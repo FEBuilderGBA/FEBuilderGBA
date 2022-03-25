@@ -116,31 +116,31 @@ namespace FEBuilderGBA
 
                 if (a.DataType == Address.DataTypeEnum.BATTLEFRAME)
                 {//BATTLEFRAME
-                    a_point += 0x30;
+                    a_point += 0x300;
                 }
                 else if (a.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
                 {//NEW_TARGET_SELECTION_STRUCT
-                    a_point += 0x20;
+                    a_point += 0x200;
                 }
                 else if (Address.IsLZ77(a.DataType) && a.Length > 0)
                 {//LZ77
-                    a_point += 0x10;
+                    a_point += 0x100;
                 }
                 else if (Address.IsASMOnly(a.DataType))
                 {//ASM
-                    a_point += 0x15;
+                    a_point += 0x150;
                 }
                 else if (Address.IsPointerableType(a.DataType))
                 {//ポインタ
-                    a_point += 0x10;
+                    a_point += 0x100;
                 }
                 else if (Address.IsIFR(a.DataType))
                 {//IFR
-                    a_point += 0x10;
+                    a_point += 0x100;
                 }
                 else if (Address.IsBINType(a.DataType))
                 {//BIN
-                    a_point += 0x15;
+                    a_point += 0x150;
                 }
 
                 a_point += a.Length;
@@ -1495,14 +1495,22 @@ namespace FEBuilderGBA
                 }
 
                 infsb.Append(' ');
-                bool r2 = IsRegistAddr(refCmd
-                            , infsb
-                            , romdata
-                            , startaddr
-                            , end
-                            , addr + 8
-                            , ASMC_Delect.AUTO //ASMCの可能性あり
-                            );
+                bool r2;
+                if (IsEventCondASM(type))
+                {
+                    r2 = IsRegistAddr(refCmd
+                                , infsb
+                                , romdata
+                                , startaddr
+                                , end
+                                , addr + 8
+                                , ASMC_Delect.ASM //ASMCの可能性あり
+                                );
+                }
+                else
+                {
+                    r2 = false;
+                }
                 if (!r2)
                 {
                     Apeend4Bytes(infsb, romdata, addr + 8);
@@ -1521,6 +1529,15 @@ namespace FEBuilderGBA
             }
             //端数データがあれば記録する
             NoPointer(refCmd, infsb, romdata, addr, end - addr);
+        }
+
+        bool IsEventCondASM(uint type)
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                return type == 0xD;
+            }
+            return type == 0xE || type == 0x4;
         }
 
         void EventCond12(RefCmd refCmd, StringBuilder infsb, byte[] romdata, uint addr, uint length)
@@ -1558,14 +1575,22 @@ namespace FEBuilderGBA
                 }
 
                 infsb.Append(' ');
-                bool r2 = IsRegistAddr(refCmd
-                            , infsb
-                            , romdata
-                            , startaddr
-                            , end
-                            , addr + 8
-                            , ASMC_Delect.AUTO //ASMCの可能性あり
-                            );
+                bool r2;
+                if (IsEventCondASM(type))
+                {
+                    r2 = IsRegistAddr(refCmd
+                                , infsb
+                                , romdata
+                                , startaddr
+                                , end
+                                , addr + 8
+                                , ASMC_Delect.ASM //ASMCの可能性あり
+                                );
+                }
+                else
+                {
+                    r2 = false;
+                }
                 if (!r2)
                 {
                     Apeend4Bytes(infsb, romdata, addr + 8);
@@ -1614,28 +1639,25 @@ namespace FEBuilderGBA
                 }
 
                 infsb.Append(' ');
-                bool r2 = IsRegistAddr(refCmd
-                            , infsb
-                            , romdata
-                            , startaddr
-                            , end
-                            , addr + 8
-                            , ASMC_Delect.AUTO //ASMCの可能性あり
-                            );
-                if (!r2)
-                {
-                    Apeend4Bytes(infsb, romdata, addr + 8);
-                }
+                Apeend4Bytes(infsb, romdata, addr + 8);
 
                 infsb.Append(' ');
-                bool r3 = IsRegistAddr(refCmd
-                            , infsb
-                            , romdata
-                            , startaddr
-                            , end
-                            , addr + 12
-                            , ASMC_Delect.AUTO //ASMCの可能性あり
-                            );
+                bool r3;
+                if (IsEventCondASM(type))
+                {
+                    r3 = IsRegistAddr(refCmd
+                                , infsb
+                                , romdata
+                                , startaddr
+                                , end
+                                , addr + 12
+                                , ASMC_Delect.ASM //ASMCの可能性あり
+                                );
+                }
+                else
+                {
+                    r3 = false;
+                }
                 if (!r3)
                 {
                     Apeend4Bytes(infsb, romdata, addr + 12);
@@ -2175,12 +2197,12 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.SplitMenu5)
             {//分岐メニュー5
-                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.SplitMenu9)
             {//分岐メニュー9
-                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");
             }
             else

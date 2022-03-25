@@ -4570,6 +4570,7 @@ namespace FEBuilderGBA
                 binmap.length = a.Length;
                 binmap.bin = Program.ROM.getBinaryData(binmap.addr, binmap.length);
                 binmap.mask = new bool[binmap.addr]; //画像なのでマスクは不要
+                binmap.type = a.DataType;
                 binMappings.Add(binmap);
             }
         }
@@ -6576,7 +6577,10 @@ namespace FEBuilderGBA
                                 , isPointerOnly);
                         }
                     }
-                    else if (type == "ASM")
+                    else if (type == "ASM"
+                        || type == "ASM_SWITCH"
+                        || type == "ASM_NOWARNING"
+                        )
                     {//ASM
                         uint a = Program.ROM.p32(p);
                         if (U.isSafetyOffset(a))
@@ -6647,6 +6651,7 @@ namespace FEBuilderGBA
                 if (U.isSafetyOffset(a))
                 {
                     FEBuilderGBA.Address.AddAddress(list, a, width * height / 2, p, patch.Name + "@IMAGE_POINTER", Address.DataTypeEnum.IMG);
+                    return;
                 }
             }
             p = atOffset(patch.Param, "ZIMAGE_POINTER", basedir: basedir);
@@ -6657,6 +6662,7 @@ namespace FEBuilderGBA
                 {
                     uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@ZIMAGE_POINTER", Address.DataTypeEnum.LZ77IMG);
+                    return;
                 }
             }
             p = atOffset(patch.Param, "Z256IMAGE_POINTER", basedir: basedir);
@@ -6667,6 +6673,7 @@ namespace FEBuilderGBA
                 {
                     uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@Z256IMAGE_POINTER", Address.DataTypeEnum.LZ77IMG);
+                    return;
                 }
             }
 
@@ -6677,6 +6684,7 @@ namespace FEBuilderGBA
                 if (U.isSafetyOffset(a))
                 {
                     FEBuilderGBA.Address.AddAddress(list, a, width * height / 32, p, patch.Name + "@TSA_POINTER", Address.DataTypeEnum.TSA);
+                    return;
                 }
             }
             p = atOffset(patch.Param, "ZTSA_POINTER", basedir: basedir);
@@ -6687,12 +6695,14 @@ namespace FEBuilderGBA
                 {
                     uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@ZTSA_POINTER", Address.DataTypeEnum.LZ77TSA);
+                    return;
                 }
             }
             p = atOffset(patch.Param, "HEADERTSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 FEBuilderGBA.Address.AddHeaderTSAPointer(list, p, patch.Name + "@HEADERTSA_POINTER", false);
+                return;
             }
             p = atOffset(patch.Param, "ZHEADERTSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
@@ -6702,6 +6712,7 @@ namespace FEBuilderGBA
                 {
                     uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@ZHEADERTSA_POINTER", Address.DataTypeEnum.LZ77TSA);
+                    return;
                 }
             }
 
@@ -6713,6 +6724,7 @@ namespace FEBuilderGBA
                 {
                     uint len = atOffset(patch.Param, "PALETTE", "1") * 0x20;
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@PALETTE_POINTER", Address.DataTypeEnum.PAL);
+                    return;
                 }
             }
             else
@@ -6722,6 +6734,7 @@ namespace FEBuilderGBA
                 {
                     uint len = atOffset(patch.Param, "PALETTE", "1") * 0x20;
                     FEBuilderGBA.Address.AddAddress(list, a, len, U.NOT_FOUND, patch.Name + "@PALETTE_ADDRESS", Address.DataTypeEnum.PAL);
+                    return;
                 }
             }
         }
