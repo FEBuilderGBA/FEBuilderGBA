@@ -8,10 +8,12 @@ TAG=#ENGINE
 
 ADDRESS=0x02AD1E
 HEX=false
+DEFAULT=50
 
-INFO=一般兵に対する瞬殺が発動する確率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
-INFO.en=Modifies the Silencer activation rate vs most units in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
-INFO.zh=设定对一般士兵发动瞬间杀戮的概率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。
+INFO=一般兵に対する瞬殺が発動する確率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。\r\nディフォルトは50%です。つまり必殺の半分が瞬殺になります。
+INFO.en=Modifies the Silencer activation rate vs most units in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\nDefault is 50%. This means that half of the critical are Silencer.
+
+INFO.zh=设定对一般士兵发动瞬间杀戮的概率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。\r\n\r\nDefault is 50%. This means that half of the critical are Silencer.
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

@@ -34,6 +34,7 @@ namespace FEBuilderGBA
             ,InputFormRef     //通常のIFRポインタはデータ
             ,InputFormRef_ASM //ポインタがASMのIFR
             ,InputFormRef_MIX //ポインタがデータとASMが混在しているIFR
+            ,InputFormRef_1   //1件しかないデータ
             ,EVENTTRAP //イベント条件のトラップ
             ,EVENTCOND_OBJECT //イベント条件
             ,EVENTCOND_TALK //イベント条件
@@ -67,6 +68,8 @@ namespace FEBuilderGBA
             ,ROMANIMEFRAME //ROM内アニメのフレーム
             ,JUMPTOHACK //ハックへジャンプするコード
             ,NEW_TARGET_SELECTION_STRUCT    //NewTargetSelectionStruct
+            ,SplitMenu9 //分岐メニュー9個
+            ,SplitMenu5 //分岐メニュー5個
             ,FFor00    //空いてそうなデータ
             ,UnkMIX    //不明なデータ おそらくポインタを含む(rebuild内で利用)
             ,Comment   //コメントデータ
@@ -266,7 +269,7 @@ namespace FEBuilderGBA
             }
             list.Add(new Address(addr, length, pointer, info, type, InputFormRef.BlockSize, pointerIndexes));
         }
-        static public void AddAddressButDoNotLengthPuls1(List<Address> list, InputFormRef InputFormRef, string info, uint[] pointerIndexes, DataTypeEnum type = DataTypeEnum.InputFormRef)
+        static public void AddAddressButDoNotLengthPuls1(List<Address> list, InputFormRef InputFormRef, string info, uint[] pointerIndexes, DataTypeEnum type = DataTypeEnum.InputFormRef_1)
         {
             uint addr = InputFormRef.BaseAddress;
             uint length = InputFormRef.BlockSize * (InputFormRef.DataCount);
@@ -546,7 +549,6 @@ namespace FEBuilderGBA
                 || type == Address.DataTypeEnum.BATTLEFRAMEIMG
                 || type == Address.DataTypeEnum.BATTLEOAM
                 );
-
         }
 
         public static bool IsASMOnly(Address.DataTypeEnum dataType)
@@ -563,6 +565,7 @@ namespace FEBuilderGBA
         {
             return
                 dataType == Address.DataTypeEnum.InputFormRef_MIX
+             || dataType == Address.DataTypeEnum.InputFormRef_1
                 ;
         }
         public static bool IsIFR(Address.DataTypeEnum dataType)
@@ -571,7 +574,9 @@ namespace FEBuilderGBA
                 dataType == Address.DataTypeEnum.InputFormRef
              || dataType == Address.DataTypeEnum.InputFormRef_ASM
              || dataType == Address.DataTypeEnum.InputFormRef_MIX
+             || dataType == Address.DataTypeEnum.InputFormRef_1
                 ;
+            ;
         }
         //lz77なのにポインタを含む迷惑なデータ
         public static bool IsLZ77MixPointer(Address.DataTypeEnum dataType)
@@ -608,12 +613,15 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.InputFormRef
                 || dataType == Address.DataTypeEnum.InputFormRef_ASM
                 || dataType == Address.DataTypeEnum.InputFormRef_MIX
+                || dataType == Address.DataTypeEnum.InputFormRef_1
                 || dataType == Address.DataTypeEnum.MIX
                 || dataType == Address.DataTypeEnum.JUMPTOHACK
                 || dataType == Address.DataTypeEnum.PATCH_ASM
                 || dataType == Address.DataTypeEnum.BL_ASM
                 || dataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT
                 || dataType == Address.DataTypeEnum.UnkMIX
+                || dataType == Address.DataTypeEnum.SplitMenu9
+                || dataType == Address.DataTypeEnum.SplitMenu5
                 ;
         }
 

@@ -8,15 +8,17 @@ TAG=#ENGINE
 
 ADDRESS=0x0002acba
 HEX=false
+DEFAULT=0
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 NAME.zh=瞬杀率_对经验值零的敌人，设置的瞬杀率
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-INFO=経験値ゼロの特性を持っている敵に対する瞬殺率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
-INFO.en=Modifies the Silencer activation rate vs Exp 0 foes in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
-INFO.zh=为经验值为零的敌人设置瞬时速率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。
+INFO=経験値ゼロの特性を持っている敵に対する瞬殺率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。\r\nディフォルトは0%です。
+
+INFO.en=Modifies the Silencer activation rate vs Exp 0 foes in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\nDefault is 0%.
+INFO.zh=为经验值为零的敌人设置瞬时速率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。\r\nDefault is 0%.
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends

@@ -156,7 +156,6 @@ namespace FEBuilderGBA
                 , InputFormRef
                 , "MenuDefinition"
                 , new uint[] { 8, 12, 16, 20, 24, 28, 32 }
-                , FEBuilderGBA.Address.DataTypeEnum.InputFormRef_MIX
                 );
 
             uint p = InputFormRef.BaseAddress;

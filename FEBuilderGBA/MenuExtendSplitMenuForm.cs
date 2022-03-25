@@ -322,7 +322,7 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
-        uint GetDataLength(uint menuaddr)
+        static uint GetDataLength(uint menuaddr)
         {
             uint termData = menuaddr + (36 * 9);
             if (!U.isSafetyOffset(termData - 1))
@@ -397,6 +397,37 @@ namespace FEBuilderGBA
         //全データの取得
         public static void RecycleOldData(ref List<Address> recycle, uint script_pointer)
         {
+            byte[] alloc = new byte[36 + (36 * 9) + 4];
+            uint addr = Program.ROM.p32(script_pointer);
+            if (U.isSafetyOffset(addr + 36 + (36 * 9) ))
+            {
+                uint term = Program.ROM.u32(addr + 36 + (36 * 9));
+                if (term == 0xFFFFFFFF)
+                {//9個メニューで確定
+                    FEBuilderGBA.Address.AddPointer(recycle
+                        , script_pointer
+                        , 36 + (36 * 9) + 4
+                        , "SplitMenu9"
+                        , Address.DataTypeEnum.SplitMenu9
+                        );
+                    return;
+                }
+            }
+            if (U.isSafetyOffset(addr + 36 + (36 * 5)))
+            {
+                uint term = Program.ROM.u32(addr + 36 + (36 * 5));
+                if (term == 0xFFFFFFFF)
+                {//5個メニューで確定
+                    FEBuilderGBA.Address.AddPointer(recycle
+                        , script_pointer
+                        , 36 + (36 * 5) + 4
+                        , "SplitMenu5"
+                        , Address.DataTypeEnum.SplitMenu5
+                        );
+                    return;
+                }
+            }
+            //よくわからんので汎用ルーチン
             MenuDefinitionForm.MakeAllDataLength(recycle, script_pointer , isDirectAddress: true);
         }
 

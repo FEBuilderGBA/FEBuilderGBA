@@ -1028,6 +1028,12 @@ namespace FEBuilderGBA
                 infsb.Append(U.ToHexString8(no));
 
                 bool isTermData = (endMinusOneBlock == addr); //終端データ
+                //1件だけのデータなので、終端データの保護はありません
+                if (address.DataType == Address.DataTypeEnum.InputFormRef_1)
+                {
+                    isTermData = false;
+                }
+
                 uint inner_end = Math.Min(addr + address.BlockSize, (uint)bin.Length);
                 for (uint a = addr; a < inner_end; a++)
                 {
@@ -2149,22 +2155,32 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER)
             {//ポインタ
-                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.NONE);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.NONE);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ASM)
             {//ポインタ
-                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
             {//ポインタ
-                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ARRAY)
             {//ポインタ
-                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.NONE);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.NONE);
+                sb.Append("@MIX ");
+            }
+            else if (address.DataType == Address.DataTypeEnum.SplitMenu5)
+            {//分岐メニュー5
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
+                sb.Append("@MIX ");
+            }
+            else if (address.DataType == Address.DataTypeEnum.SplitMenu9)
+            {//分岐メニュー9
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
                 sb.Append("@MIX ");
             }
             else
