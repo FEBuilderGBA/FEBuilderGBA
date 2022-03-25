@@ -128,7 +128,8 @@ namespace FEBuilderGBA
             uint addr = U.GrepEnd(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
             if (addr == U.NOT_FOUND)
             {
-                R.ShowWarning("SkillSystemsがインストールされているのに、searchSkillSystemsSummonPlus1 に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。");
+//                R.ShowWarning("SkillSystemsがインストールされているのに、searchSkillSystemsSummonPlus1 に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。");
+                return U.NOT_FOUND;
             }
             return addr;
 
@@ -144,7 +145,8 @@ namespace FEBuilderGBA
             uint addr = U.GrepEnd(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
             if (addr == U.NOT_FOUND)
             {
-                R.ShowWarning("SkillSystemsがインストールされているのに、searchSkillSystemsSummonCount に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。");
+//                R.ShowWarning("SkillSystemsがインストールされているのに、searchSkillSystemsSummonCount に失敗しました。\r\n処理は続行しますが、うまく動作しない可能性があります。");
+                return U.NOT_FOUND;
             }
             return addr;
         }
