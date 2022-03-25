@@ -2197,12 +2197,12 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.SplitMenu5)
             {//分岐メニュー5
-                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.SplitMenu9)
             {//分岐メニュー9
-                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
                 sb.Append("@MIX ");
             }
             else
