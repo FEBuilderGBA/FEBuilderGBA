@@ -179,10 +179,10 @@
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]
-2041XXXX	WARP_OUT[XXXX::Unk](LOW)
-2141XXXX	WARP_IN[XXXX::Unk](LOW)
-2041FFFF	WARP_OUT SlotB(LOW)
-2141FFFF	WARP_IN SlotB(LOW)
+2041XXYY	WARP_OUT[XX:MAPX:X][YY:MAPY:Y](LOW) Only warp-out effects are shown on the map.
+2141XXYY	WARP_IN[XX:MAPX:X][YY:MAPY:Y](LOW) Only warp-in effects are shown on the map.
+2041FFFF	WARP_OUT SlotB(LOW) Only warp-out effects are shown on the map.
+2141FFFF	WARP_IN SlotB(LOW) Only warp-in effects are shown on the map.
 40ADXXXXYYYY0000	_SATURATE_COLORS[XXXX::Value1][YY::Value2]
 40B2000000000000	WM_FADEOUT
 60B4XXXXYYYYZZZZWWWW0000	World map display[XXXX::Value 1][YY:WMAPY:X][ZZ:WMAPX:Y][WW::Map](WM_SHOWDRAWNMAP)	{WMAPMOVE}

@@ -1,0 +1,30 @@
+﻿NAME=特定の章以降のクリアターンの記録を全部リセットする(イベント命令)
+NAME.en=Add Event: Reset all records of clear turns after a particular chapter.
+NAME.zh=Add Event: Reset all records of clear turns after a particular chapter.
+
+AUTHOR=7743
+
+TYPE=BIN
+TAG=#EVENT #ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ResetAllClearTurnTable2.dmp=0xF0 0xB5
+BIN:$FREEAREA:1=ASMC_ResetAllClearTurnTable2.dmp
+
+INFO.en=Erases all clear turn records.\r\nUse this to create a strong new game(NewGame+)
+
+
+
+INFO=特定の章以降のクリアターンをすべて初期化します。\r\n強くてニューゲーム(NewGame+)を作るために使います。\r\nこのパッチは、すべてのクリアターンではなく、指定した特定の章以降のターンをクリアします。
+INFO.en=Initialises all clear turns after a specific chapter.\r\nUsed to create a strong new game (NewGame+).\r\nThis patch clears turns after the specified specific chapter, rather than all clear turns.
+INFO.zh=Initialises all clear turns after a specific chapter.\r\nUsed to create a strong new game (NewGame+).\r\nThis patch clears turns after the specified specific chapter, rather than all clear turns.
+
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	Slot1以降の章のクリアターンの記録を全部リセットする(ASMC_ResetAllClearTurnTable2)(LOW)	Slot1=MAPID	{ENDING}
+EVENTSCRIPT:12=40050100XX000000400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	[XX:MAP:MAP]以降の章のクリアターンの記録を全部リセットする(ASMC_ResetAllClearTurnTable2)	{ENDING}
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	Reset all records of clear turns in chapters from Slot1 onwards.(ASMC_ResetAllClearTurnTable2)(LOW)	Slot1=MAPID	{ENDING}
+EVENTSCRIPT:12.en=40050100XX000000400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	Reset all records of clear turns in chapters from [XX:MAP:MAP] onwards(ASMC_ResetAllClearTurnTable2)	{ENDING}
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	Reset all records of clear turns in chapters from Slot1 onwards.(ASMC_ResetAllClearTurnTable2)(LOW)	Slot1=MAPID	{ENDING}
+EVENTSCRIPT:12.zh=40050100XX000000400D0000{$L1:ASMC_ResetAllClearTurnTable2.dmp}	Reset all records of clear turns in chapters from [XX:MAP:MAP] onwards(ASMC_ResetAllClearTurnTable2)	{ENDING}

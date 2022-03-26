@@ -1,0 +1,20 @@
+﻿NAME=ワールドマップの道とノードをすべてクリアして初期化する(イベント命令)
+NAME.en=Add Event: Clear and initialise all Paths and nodes on World Map
+NAME.zh=Add Event: Clear and initialise all Paths and nodes on World Map
+
+AUTHOR=7743
+
+TYPE=BIN
+TAG=#EVENT #ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ClearAllWorldMapPathAndNode.dmp=0x10 0xB5
+BIN:$FREEAREA:1=ASMC_ClearAllWorldMapPathAndNode.dmp
+
+INFO=ワールドマップの道とノードをすべて0で初期化します。\r\n強くてニューゲーム(NewGame+)を作りたいときに利用してください。
+INFO.en=This patch initialises all world map roads and nodes to 0.\r\nUse it when you want to create a NewGame+.
+INFO.zh=This patch initialises all world map roads and nodes to 0.\r\nUse it when you want to create a NewGame+.
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_ClearAllWorldMapPathAndNode.dmp}	ワールドマップの道とノードをすべてクリアして初期化する(ASMC_ClearAllWorldMapPathAndNode)
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_ClearAllWorldMapPathAndNode.dmp}	Clear and initialise all Paths and nodes on World Map(ASMC_ClearAllWorldMapPathAndNode)
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_ClearAllWorldMapPathAndNode.dmp}	Clear and initialise all Paths and nodes on World Map(ASMC_ClearAllWorldMapPathAndNode)

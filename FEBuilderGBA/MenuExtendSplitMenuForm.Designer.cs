@@ -33,10 +33,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.STR8_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR8 = new System.Windows.Forms.NumericUpDown();
+            this.LSTR8 = new System.Windows.Forms.Label();
+            this.STR7_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR6_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR7 = new System.Windows.Forms.NumericUpDown();
+            this.STR6 = new System.Windows.Forms.NumericUpDown();
+            this.LSTR7 = new System.Windows.Forms.Label();
+            this.LSTR6 = new System.Windows.Forms.Label();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
+            this.STR5_TEXT = new FEBuilderGBA.TextBoxEx();
             this.STR5 = new System.Windows.Forms.NumericUpDown();
             this.LSTR5 = new System.Windows.Forms.Label();
+            this.STR4_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR3_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR2_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.STR1_TEXT = new FEBuilderGBA.TextBoxEx();
             this.STR4 = new System.Windows.Forms.NumericUpDown();
             this.STR3 = new System.Windows.Forms.NumericUpDown();
             this.STR2 = new System.Windows.Forms.NumericUpDown();
@@ -51,20 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.STR8 = new System.Windows.Forms.NumericUpDown();
-            this.LSTR8 = new System.Windows.Forms.Label();
-            this.STR7 = new System.Windows.Forms.NumericUpDown();
-            this.STR6 = new System.Windows.Forms.NumericUpDown();
-            this.LSTR7 = new System.Windows.Forms.Label();
-            this.LSTR6 = new System.Windows.Forms.Label();
-            this.STR8_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR7_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR6_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR5_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR4_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR3_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR2_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.STR1_TEXT = new FEBuilderGBA.TextBoxEx();
             this.L_32_ASM = new FEBuilderGBA.TextBoxEx();
             this.L_28_ASM = new FEBuilderGBA.TextBoxEx();
             this.L_24_ASM = new FEBuilderGBA.TextBoxEx();
@@ -76,6 +76,9 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.STR8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.STR7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.STR6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR4)).BeginInit();
@@ -85,9 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -176,6 +176,102 @@
             this.panel1.Size = new System.Drawing.Size(859, 383);
             this.panel1.TabIndex = 153;
             // 
+            // STR8_TEXT
+            // 
+            this.STR8_TEXT.ErrorMessage = "";
+            this.STR8_TEXT.Location = new System.Drawing.Point(328, 348);
+            this.STR8_TEXT.Name = "STR8_TEXT";
+            this.STR8_TEXT.Placeholder = "";
+            this.STR8_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR8_TEXT.TabIndex = 54;
+            // 
+            // STR8
+            // 
+            this.STR8.Hexadecimal = true;
+            this.STR8.Location = new System.Drawing.Point(222, 346);
+            this.STR8.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.STR8.Name = "STR8";
+            this.STR8.Size = new System.Drawing.Size(91, 25);
+            this.STR8.TabIndex = 11;
+            // 
+            // LSTR8
+            // 
+            this.LSTR8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LSTR8.Location = new System.Drawing.Point(1, 341);
+            this.LSTR8.Name = "LSTR8";
+            this.LSTR8.Size = new System.Drawing.Size(203, 30);
+            this.LSTR8.TabIndex = 53;
+            this.LSTR8.Text = "文字列7";
+            this.LSTR8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // STR7_TEXT
+            // 
+            this.STR7_TEXT.ErrorMessage = "";
+            this.STR7_TEXT.Location = new System.Drawing.Point(328, 319);
+            this.STR7_TEXT.Name = "STR7_TEXT";
+            this.STR7_TEXT.Placeholder = "";
+            this.STR7_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR7_TEXT.TabIndex = 52;
+            // 
+            // STR6_TEXT
+            // 
+            this.STR6_TEXT.ErrorMessage = "";
+            this.STR6_TEXT.Location = new System.Drawing.Point(328, 288);
+            this.STR6_TEXT.Name = "STR6_TEXT";
+            this.STR6_TEXT.Placeholder = "";
+            this.STR6_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR6_TEXT.TabIndex = 51;
+            // 
+            // STR7
+            // 
+            this.STR7.Hexadecimal = true;
+            this.STR7.Location = new System.Drawing.Point(222, 317);
+            this.STR7.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.STR7.Name = "STR7";
+            this.STR7.Size = new System.Drawing.Size(91, 25);
+            this.STR7.TabIndex = 10;
+            // 
+            // STR6
+            // 
+            this.STR6.Hexadecimal = true;
+            this.STR6.Location = new System.Drawing.Point(222, 286);
+            this.STR6.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.STR6.Name = "STR6";
+            this.STR6.Size = new System.Drawing.Size(91, 25);
+            this.STR6.TabIndex = 9;
+            // 
+            // LSTR7
+            // 
+            this.LSTR7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LSTR7.Location = new System.Drawing.Point(1, 312);
+            this.LSTR7.Name = "LSTR7";
+            this.LSTR7.Size = new System.Drawing.Size(203, 30);
+            this.LSTR7.TabIndex = 50;
+            this.LSTR7.Text = "文字列6";
+            this.LSTR7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LSTR6
+            // 
+            this.LSTR6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LSTR6.Location = new System.Drawing.Point(1, 283);
+            this.LSTR6.Name = "LSTR6";
+            this.LSTR6.Size = new System.Drawing.Size(203, 30);
+            this.LSTR6.TabIndex = 49;
+            this.LSTR6.Text = "文字列5";
+            this.LSTR6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // D4
             // 
             this.D4.Location = new System.Drawing.Point(222, 98);
@@ -198,6 +294,15 @@
             this.label10.Text = "Style";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // STR5_TEXT
+            // 
+            this.STR5_TEXT.ErrorMessage = "";
+            this.STR5_TEXT.Location = new System.Drawing.Point(328, 260);
+            this.STR5_TEXT.Name = "STR5_TEXT";
+            this.STR5_TEXT.Placeholder = "";
+            this.STR5_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR5_TEXT.TabIndex = 44;
+            // 
             // STR5
             // 
             this.STR5.Hexadecimal = true;
@@ -218,8 +323,44 @@
             this.LSTR5.Name = "LSTR5";
             this.LSTR5.Size = new System.Drawing.Size(203, 30);
             this.LSTR5.TabIndex = 42;
-            this.LSTR5.Text = "文字列5";
+            this.LSTR5.Text = "文字列4";
             this.LSTR5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // STR4_TEXT
+            // 
+            this.STR4_TEXT.ErrorMessage = "";
+            this.STR4_TEXT.Location = new System.Drawing.Point(328, 230);
+            this.STR4_TEXT.Name = "STR4_TEXT";
+            this.STR4_TEXT.Placeholder = "";
+            this.STR4_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR4_TEXT.TabIndex = 41;
+            // 
+            // STR3_TEXT
+            // 
+            this.STR3_TEXT.ErrorMessage = "";
+            this.STR3_TEXT.Location = new System.Drawing.Point(328, 201);
+            this.STR3_TEXT.Name = "STR3_TEXT";
+            this.STR3_TEXT.Placeholder = "";
+            this.STR3_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR3_TEXT.TabIndex = 40;
+            // 
+            // STR2_TEXT
+            // 
+            this.STR2_TEXT.ErrorMessage = "";
+            this.STR2_TEXT.Location = new System.Drawing.Point(328, 170);
+            this.STR2_TEXT.Name = "STR2_TEXT";
+            this.STR2_TEXT.Placeholder = "";
+            this.STR2_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR2_TEXT.TabIndex = 39;
+            // 
+            // STR1_TEXT
+            // 
+            this.STR1_TEXT.ErrorMessage = "";
+            this.STR1_TEXT.Location = new System.Drawing.Point(328, 139);
+            this.STR1_TEXT.Name = "STR1_TEXT";
+            this.STR1_TEXT.Placeholder = "";
+            this.STR1_TEXT.Size = new System.Drawing.Size(514, 25);
+            this.STR1_TEXT.TabIndex = 38;
             // 
             // STR4
             // 
@@ -316,7 +457,7 @@
             this.LSTR4.Name = "LSTR4";
             this.LSTR4.Size = new System.Drawing.Size(203, 30);
             this.LSTR4.TabIndex = 30;
-            this.LSTR4.Text = "文字列4";
+            this.LSTR4.Text = "文字列3";
             this.LSTR4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LSTR3
@@ -326,7 +467,7 @@
             this.LSTR3.Name = "LSTR3";
             this.LSTR3.Size = new System.Drawing.Size(203, 30);
             this.LSTR3.TabIndex = 29;
-            this.LSTR3.Text = "文字列3";
+            this.LSTR3.Text = "文字列2";
             this.LSTR3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LSTR2
@@ -336,7 +477,7 @@
             this.LSTR2.Name = "LSTR2";
             this.LSTR2.Size = new System.Drawing.Size(203, 30);
             this.LSTR2.TabIndex = 28;
-            this.LSTR2.Text = "文字列2";
+            this.LSTR2.Text = "文字列1";
             this.LSTR2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LSTR1
@@ -346,7 +487,7 @@
             this.LSTR1.Name = "LSTR1";
             this.LSTR1.Size = new System.Drawing.Size(203, 30);
             this.LSTR1.TabIndex = 27;
-            this.LSTR1.Text = "文字列1";
+            this.LSTR1.Text = "文字列0";
             this.LSTR1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -378,147 +519,6 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "X";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // STR8
-            // 
-            this.STR8.Hexadecimal = true;
-            this.STR8.Location = new System.Drawing.Point(222, 346);
-            this.STR8.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.STR8.Name = "STR8";
-            this.STR8.Size = new System.Drawing.Size(91, 25);
-            this.STR8.TabIndex = 11;
-            // 
-            // LSTR8
-            // 
-            this.LSTR8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LSTR8.Location = new System.Drawing.Point(1, 341);
-            this.LSTR8.Name = "LSTR8";
-            this.LSTR8.Size = new System.Drawing.Size(203, 30);
-            this.LSTR8.TabIndex = 53;
-            this.LSTR8.Text = "文字列8";
-            this.LSTR8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // STR7
-            // 
-            this.STR7.Hexadecimal = true;
-            this.STR7.Location = new System.Drawing.Point(222, 317);
-            this.STR7.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.STR7.Name = "STR7";
-            this.STR7.Size = new System.Drawing.Size(91, 25);
-            this.STR7.TabIndex = 10;
-            // 
-            // STR6
-            // 
-            this.STR6.Hexadecimal = true;
-            this.STR6.Location = new System.Drawing.Point(222, 286);
-            this.STR6.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.STR6.Name = "STR6";
-            this.STR6.Size = new System.Drawing.Size(91, 25);
-            this.STR6.TabIndex = 9;
-            // 
-            // LSTR7
-            // 
-            this.LSTR7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LSTR7.Location = new System.Drawing.Point(1, 312);
-            this.LSTR7.Name = "LSTR7";
-            this.LSTR7.Size = new System.Drawing.Size(203, 30);
-            this.LSTR7.TabIndex = 50;
-            this.LSTR7.Text = "文字列7";
-            this.LSTR7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LSTR6
-            // 
-            this.LSTR6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LSTR6.Location = new System.Drawing.Point(1, 283);
-            this.LSTR6.Name = "LSTR6";
-            this.LSTR6.Size = new System.Drawing.Size(203, 30);
-            this.LSTR6.TabIndex = 49;
-            this.LSTR6.Text = "文字列6";
-            this.LSTR6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // STR8_TEXT
-            // 
-            this.STR8_TEXT.ErrorMessage = "";
-            this.STR8_TEXT.Location = new System.Drawing.Point(328, 348);
-            this.STR8_TEXT.Name = "STR8_TEXT";
-            this.STR8_TEXT.Placeholder = "";
-            this.STR8_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR8_TEXT.TabIndex = 54;
-            // 
-            // STR7_TEXT
-            // 
-            this.STR7_TEXT.ErrorMessage = "";
-            this.STR7_TEXT.Location = new System.Drawing.Point(328, 319);
-            this.STR7_TEXT.Name = "STR7_TEXT";
-            this.STR7_TEXT.Placeholder = "";
-            this.STR7_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR7_TEXT.TabIndex = 52;
-            // 
-            // STR6_TEXT
-            // 
-            this.STR6_TEXT.ErrorMessage = "";
-            this.STR6_TEXT.Location = new System.Drawing.Point(328, 288);
-            this.STR6_TEXT.Name = "STR6_TEXT";
-            this.STR6_TEXT.Placeholder = "";
-            this.STR6_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR6_TEXT.TabIndex = 51;
-            // 
-            // STR5_TEXT
-            // 
-            this.STR5_TEXT.ErrorMessage = "";
-            this.STR5_TEXT.Location = new System.Drawing.Point(328, 260);
-            this.STR5_TEXT.Name = "STR5_TEXT";
-            this.STR5_TEXT.Placeholder = "";
-            this.STR5_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR5_TEXT.TabIndex = 44;
-            // 
-            // STR4_TEXT
-            // 
-            this.STR4_TEXT.ErrorMessage = "";
-            this.STR4_TEXT.Location = new System.Drawing.Point(328, 230);
-            this.STR4_TEXT.Name = "STR4_TEXT";
-            this.STR4_TEXT.Placeholder = "";
-            this.STR4_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR4_TEXT.TabIndex = 41;
-            // 
-            // STR3_TEXT
-            // 
-            this.STR3_TEXT.ErrorMessage = "";
-            this.STR3_TEXT.Location = new System.Drawing.Point(328, 201);
-            this.STR3_TEXT.Name = "STR3_TEXT";
-            this.STR3_TEXT.Placeholder = "";
-            this.STR3_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR3_TEXT.TabIndex = 40;
-            // 
-            // STR2_TEXT
-            // 
-            this.STR2_TEXT.ErrorMessage = "";
-            this.STR2_TEXT.Location = new System.Drawing.Point(328, 170);
-            this.STR2_TEXT.Name = "STR2_TEXT";
-            this.STR2_TEXT.Placeholder = "";
-            this.STR2_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR2_TEXT.TabIndex = 39;
-            // 
-            // STR1_TEXT
-            // 
-            this.STR1_TEXT.ErrorMessage = "";
-            this.STR1_TEXT.Location = new System.Drawing.Point(328, 139);
-            this.STR1_TEXT.Name = "STR1_TEXT";
-            this.STR1_TEXT.Placeholder = "";
-            this.STR1_TEXT.Size = new System.Drawing.Size(514, 25);
-            this.STR1_TEXT.TabIndex = 38;
             // 
             // L_32_ASM
             // 
@@ -629,6 +629,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.STR8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.STR7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.STR6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR4)).EndInit();
@@ -638,9 +641,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.STR6)).EndInit();
             this.ResumeLayout(false);
 
         }

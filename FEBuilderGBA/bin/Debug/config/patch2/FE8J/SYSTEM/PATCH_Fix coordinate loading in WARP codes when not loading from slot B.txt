@@ -1,0 +1,17 @@
+NAME=ワープ命令で、SlotBから座標を読み込まない時の座標ズレの修正
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x10D50
+COMBO=Default|0x92 0x78 0x12 0x06 0x12 0x16 0x11 0x1C 0x00 0x2A|Fix|0x91 0x78 0xD2 0x78 0x08 0x06 0x00 0x00 0x00 0x29
+AUTHOR=HyperGammaSpaces https://feuniverse.us/t/fe8-essential-fixes-patch/1676/11
+
+INFO=イベント命令のワープで、SlotBから読み込む命令を利用せずに、直接WARP_OUT命令を呼び出した時に、座標がズレる問題を修正します。\r\n(WARP_OUT)
+NAME.en=Fix coordinate loading in WARP codes when not loading from slot B
+INFO.en=Fixes a problem with warping of event script causing a misalignment of co-ordinates.\r\n(WARP)
+NAME.zh=Fix coordinate loading in WARP codes when not loading from slot B
+INFO.zh=Fixes a problem with warping of event script causing a misalignment of co-ordinates.\r\n(WARP)
