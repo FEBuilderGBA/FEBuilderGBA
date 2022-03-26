@@ -7171,7 +7171,8 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
+//            uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint FindStartAddress = 0x100;
 
             byte[] grepdata = File.ReadAllBytes(filename);
             addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
