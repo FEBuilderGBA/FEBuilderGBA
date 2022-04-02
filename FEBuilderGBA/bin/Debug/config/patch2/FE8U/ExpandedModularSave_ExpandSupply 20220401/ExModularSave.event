@@ -1,0 +1,218 @@
+#ifndef EXPANDED_MODULAR_SAVE
+#define EXPANDED_MODULAR_SAVE
+
+#include "Extensions/Hack Installation.txt"
+#ifndef DebuffTable
+  #define DebuffTable     0x0203F100
+  #define DebuffTableSize 0x00000440
+#endif
+
+
+
+
+// Expanded and Modular Game and Suspend Save data system
+// hack by StanH_
+
+// This references a lot of Colorz's Suspend expansion stuff
+// As well as his own plans for a complete expansion (which is what this hack is)
+// So, big thankies to the guy for that and more
+
+// ========================
+// = SAVE DATA ALLOCATION =
+// ========================
+
+// The following tables are based on Colorz's plan (see below)
+// But you can edit them to fit your own needs
+
+// area 00-D4 is reserved
+// total available SRAM is $8000
+// game save size can't exceed $2000 (otherwise copying saves will break)
+// (don't edit sizes and offsets for block 5 & 6)
+// (you may break a bit of stuff otherwise)
+
+ALIGN 4
+gSaveBlockDecl:
+	//    offst type // desc
+	SHORT $2F4C 0    // 0: game 1
+	SHORT $4290 0    // 1: game 2
+	SHORT $55D4 0    // 2: game 3
+	SHORT $00D4 1    // 3: suspend 1
+	SHORT $00D4 1    // 4: suspend 2 (now same as suspend 1)
+
+	// We don't change the two last blocks from vanilla, for the best
+	SHORT $691C 2    // 5: link arena
+	SHORT $7400 3    // 6: potentially interesting stuff that nobody really understands (save based chapters!)
+
+ALIGN 4
+gSaveBlockTypeSizeLookup:
+	SHORT $1344 // type 0: game
+	SHORT $2E78 // type 1: suspend
+
+	// We don't change the two last block types sizes from vanilla, for the best
+	SHORT $0AE4 // type 2: link arena
+	SHORT $0C00 // type 3: potentially interesting stuff that nobody really understands (save based chapters!)
+
+/* Colorz's plan:
+  SAVE NAME       SAVE OFFSET     SAVE LENGTH     DEFAULT LENGTH  EXPANSION SIZE
+  meta            0x00            0xD4            0xD4            0x0
+  suspend         0xD4            0x2E78          0x1F78          0xF00
+  save1           0x2F4C          0x1344          0xDC8           0x57C
+  save2           0x4290          0x1344          0xDC8           0x57C
+  save3           0x55D4          0x1344          0xDC8           0x57C
+  empty           0x6918          0x04            0x0             0x04
+  link_arena      0x691C          0xAE4           0xAE4           0x0
+  other           0x7400          ???             ???             0x0
+*/
+
+// ================================
+// = CHUNK IDENTIFIER DEFINITIONS =
+// ================================
+
+// Those are used to allow some functions to look for specific chunks without loading the whole save
+// A chunk that doesn't need such special treatment can just have a 0 identifier.
+
+// Are required to be defined and in the save chunk list (vanilla requires them):
+// EMS_CHUNK_CHAPTERSTATE, EMS_CHUNK_BWLENTRIES, EMS_CHUNK_EIDS_PERMANENT, EMS_CHUNK_BONUSCLAIMDATA, EMS_CHUNK_WMDATA
+
+#define EMS_CHUNK_CHAPTERSTATE   1
+#define EMS_CHUNK_SAVEUNITS      2
+#define EMS_CHUNK_CONVOYITEMS    3
+#define EMS_CHUNK_BWLENTRIES     4
+#define EMS_CHUNK_WINDATA        5
+#define EMS_CHUNK_EIDS_PERMANENT 6
+#define EMS_CHUNK_BONUSCLAIMDATA 7
+#define EMS_CHUNK_WMDATA         8
+
+// ===========
+// = MODULES =
+// ===========
+
+#include "SrcCore/MSaFuncs.lyn.event" // Core save modules
+#include "SrcCore/MSuFuncs.lyn.event" // Core suspend modules
+
+#include "SrcModules/Debuffs.lyn.event" // Debuffs module
+#ifdef USE_STRMAG_SPLIT
+	#ifdef STAIRS_ASM
+		MESSAGE EMS with strmag and Stair
+		#include "SrcModules/SaveUnitExpandedStrmagStairs.lyn.event" // Str/Mag and Stairs both require saving shenanigans.
+	#else
+		#include "SrcModules/SaveUnitExpandedStrmag.lyn.event" // Only Str/Mag split.
+	#endif // STAIRS_ASM
+#else
+	#ifdef STAIRS_ASM
+		#include "SrcModules/SaveUnitExpandedStairs.lyn.event" // Only StairsASM.
+	#else
+		#include "SrcModules/SaveUnitExpanded.lyn.event" // Regular.
+	#endif // STAIRS_ASM
+#endif // USE_STRMAG_SPLIT
+
+DebuffTablePointer: // required for debuffs module
+	WORD DebuffTable
+
+// ===============
+// = SAVE CHUNKS =
+// ===============
+
+// Save chunk lists define how game save/suspend save blocks are layed out.
+
+// A chunk declaration has the following properties:
+// - an offset value within the block
+// - a size value (in bytes)
+// - a saving and loading function (they take r0 = chunk save address; r1 = size; and are responsible for writing to/reading from SRAM)
+// - an optional identifier (those are used to find and load chunks individually, such as to get save information from the load screen)
+
+// The saving and loading functions can be nulled out, in which case they won't be called.
+// You can create "dummy" chunks with zero offset/size that still calling functions on save/load
+// In case you need to do other things than save/load data
+// For example, the default chunk lists define "dummy" chunks for clearing units on load.
+
+#define DeclSaveChunk(aOffset, aSize, apSaver, apLoader) "SHORT (aOffset) (aSize); POIN (apSaver) (apLoader); SHORT 0 0"
+#define DeclSaveChunk(aOffset, aSize, apSaver, apLoader, aIdentifier) "SHORT (aOffset) (aSize); POIN (apSaver) (apLoader); SHORT (aIdentifier) 0"
+#define DeclSaveChunkEnd "SHORT 0xFFFF 0 0 0 0 0"
+
+ALIGN 4
+gGameSaveChunks:
+	DeclSaveChunk(0, 0, 0, $0177C4+1) // Clear units on load
+
+	DeclSaveChunk($0000, $004C, MSa_SaveChapterState, MSa_LoadChapterState, EMS_CHUNK_CHAPTERSTATE)
+	DeclSaveChunk($004C, $0010, $0A59E0+1,            $0A5A00+1)            // World map skirmish RNG state
+	DeclSaveChunk($005C, $0460, $0A4264+1,            $0A421C+1,            EMS_CHUNK_BWLENTRIES)
+	DeclSaveChunk($04BC, $00C0, $0A4288+1,            $0A4248+1,            EMS_CHUNK_WINDATA)
+	DeclSaveChunk($057C, $0019, $0A3150+1,            $0A3198+1,            EMS_CHUNK_EIDS_PERMANENT)
+	DeclSaveChunk($0595, $0004, MSa_SaveBonusClaim,   MSa_LoadBonusClaim,   EMS_CHUNK_BONUSCLAIMDATA)
+	DeclSaveChunk($0599, $0048, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	DeclSaveChunk($05E1, $0018, MSa_SaveDungeonState, MSa_LoadDungeonState) // Valni/Lagdou permanent data
+
+	// Save 51 blue units (51 * 0x2C = $08C4)
+	DeclSaveChunk($05F9, $08C4, ESU_SaveGameUnits, ESU_LoadGameUnits, EMS_CHUNK_SAVEUNITS)
+
+	DeclSaveChunk($0EBD, $190, SaveConvoyItems,          LoadConvoyItems,            EMS_CHUNK_CONVOYITEMS)
+
+	// free up to $104D
+
+	DeclSaveChunkEnd
+
+// ==================
+// = SUSPEND CHUNKS =
+// ==================
+
+ALIGN 4
+gSuspendSaveChunks:
+	DeclSaveChunk(0, 0, 0, $0177C4+1) // Clear units on load
+
+	DeclSaveChunk($0000, $004C, MSa_SaveChapterState, MSa_LoadChapterState, EMS_CHUNK_CHAPTERSTATE)
+	DeclSaveChunk($004C, $0038, MSu_SaveActionState,  MSu_LoadActionState)  // Action State
+	DeclSaveChunk($0084, $0018, MSa_SaveDungeonState, MSa_LoadDungeonState) // Valni/Lagdou permanent data
+	DeclSaveChunk($009C, $0200, $0A6370+1,            $0A638C+1)            // Trap data
+	DeclSaveChunk($029C, $0460, $0A4264+1,            $0A421C+1)            // BWL Entries
+	DeclSaveChunk($06FC, $00C0, $0A4288+1,            $0A4248+1)            // Previous chapters turn count & time & stuff
+	DeclSaveChunk($07BC, $0010, MSu_SaveMenuRelated,  MSu_LoadMenuRelated)  // "menu related list" related
+	DeclSaveChunk($07CC, $0019, $0A3150+1,            $0A3198+1)            // Permanent eids
+	DeclSaveChunk($07E5, $0005, $0A3130+1,            $0A3170+1)            // Temporary eids
+	DeclSaveChunk($07EA, $0048, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	DeclSaveChunk($0832, $000C, MSu_SaveDungeonState, MSu_LoadDungeonState) // Valni/Lagdou active run data
+	DeclSaveChunk($083E, $0004, MSu_SaveEventCounter, MSu_LoadEventCounter) // Event counter
+
+	// $0842
+	// NEW STUFF
+
+	// We are almost using all of the (expanded!) space we have in suspend save
+	// Which is kind of crazy. If you *really* want more space for something,
+	// You could cut the number of saved blue units by a bit (vanilla saves 51)
+	// This saves *all* of them
+
+	// Save 51 blue units (51 * 0x34 = $0A5C)
+	DeclSaveChunk($0842, $0A5C, ESU_SavePlayerSuspendUnits, ESU_LoadPlayerSuspendUnits)
+
+	// Save 50 red units (50 * 0x38 = $0AF0)
+	DeclSaveChunk($129E, $0AF0, ESU_SaveRedSuspendUnits,    ESU_LoadRedSuspendUnits)
+
+	// Save 20 green units (20 * 0x38 = $0460)
+	DeclSaveChunk($1D8E, $0460, ESU_SaveGreenSuspendUnits,  ESU_LoadGreenSuspendUnits)
+
+	DeclSaveChunk($21EE, $190, SaveConvoyItems,     LoadConvoyItems)            // Convoy Items
+
+	// Save Debuffs (TODO: maybe reduce size)
+	DeclSaveChunk($237E, DebuffTableSize, SUD_SaveDebuffs,  SUD_LoadDebuffs)
+
+
+	// ends at $27BE
+	// 
+
+	DeclSaveChunk(0, 0, 0, MSu_LoadClaimFlagsFromParentSave) // Load Bonus Claim flags from parent save
+
+	DeclSaveChunkEnd
+
+// ===================================
+// = MODULAR EXPANDED SAVE INTERNALS =
+// ===================================
+
+#include "ExModularSaveInternals.event"
+
+// =====================================
+// = EXPANDED CONVOY/STATBAR INTERNALS =
+// =====================================
+
+#include "ExpandedStatsAndConvoy.event"
+
+#endif // EXPANDED_MODULAR_SAVE

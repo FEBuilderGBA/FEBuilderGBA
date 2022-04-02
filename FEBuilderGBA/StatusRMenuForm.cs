@@ -268,6 +268,11 @@ namespace FEBuilderGBA
         }
         static void MakeVarsIDArraySub(List<UseValsID> list, uint p,uint pointer,Dictionary<uint, bool> foundDic)
         {
+            if (! U.isSafetyOffset(p + 12))
+            {
+                return;
+            }
+
             string name = "RMENU " + U.To0xHexString(Program.ROM.u16(p + 18));
             if (!foundDic.ContainsKey(p))
             {

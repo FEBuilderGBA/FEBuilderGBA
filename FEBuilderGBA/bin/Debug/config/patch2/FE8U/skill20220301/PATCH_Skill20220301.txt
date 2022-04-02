@@ -1203,3 +1203,8 @@ EDIT_PATCH:27=../skill20220120/PATCH_SkillScrollMessageReturnLink.txt
 EDIT_PATCH:28=../skill20220120/PATCH_Capture_Trade_GenericPortraitTable.txt
 
 NAME.zh=技能 SkillSystems 20220301（技能扩展）
+
+
+NAME.zh=技能 SkillSystems 20220301（技能扩展）
+DEPRECATED=1
+UPDATE_PATCH=..\Skill20220402\PATCH_Skill20220402.txt

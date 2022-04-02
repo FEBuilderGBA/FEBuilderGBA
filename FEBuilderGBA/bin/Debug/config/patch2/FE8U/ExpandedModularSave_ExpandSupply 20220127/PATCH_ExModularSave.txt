@@ -17,3 +17,4 @@ CONFLICT_MESSAGE=break save, auto save
 INFO.zh=This patch can store statuses over 31.\r\nIt also supports class expansion.\r\nThis save data expansion patch works best with SkillSystems.\r\nExtend save data to make class extension correspond to strmag split of SkillSystems after 2022.\r\nThis version is an extension of 200 supply.\r\nIt also supports the storage of data with a durability of over 63 due to the Skill Scroll.
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+DEPRECATED=1

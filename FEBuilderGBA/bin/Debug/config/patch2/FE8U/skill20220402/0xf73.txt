@@ -1,0 +1,2 @@
+Eclipse: Leave opponent with 1 HP.
+(Skill % activation)

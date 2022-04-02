@@ -811,6 +811,10 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                if (! U.isPadding4(a))
+                {
+                    continue;
+                }
                 
                 uint unCompressSize = LZ77.getUncompressSize(Program.ROM.Data,a);
                 if (unCompressSize > 0x10)

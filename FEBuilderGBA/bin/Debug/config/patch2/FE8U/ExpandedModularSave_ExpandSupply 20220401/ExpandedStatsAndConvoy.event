@@ -1,0 +1,117 @@
+//Installer for Stat Caps over 31 (max 63)
+//Also expands the convoy to 200.
+//Source: https://github.com/ngmansion/FE8/tree/master/break_save
+
+#define ConvoyExpansionRAM $0203B200
+ALIGN 4 
+ConvoyExpansionRamLink:
+WORD ConvoyExpansionRAM
+
+
+PUSH
+
+  //Stat bar drawing
+  ORG $87132
+  BYTE $28 					//max stat cap to 40 (28h)
+  
+  ORG $87142
+  BYTE $28					//max stat cap to 40 (28h)
+  
+  ORG $870FE
+  BYTE $28 					//max stat cap to 40 (28h)
+  
+  ORG $87102
+  BYTE $28					//max stat cap to 40 (28h)
+  
+  ORG $872AE 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $2C016 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $2C01C 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $18250 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $18254 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $926FC 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $9C154 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $9C31C
+  BYTE $28					//max luck cap to 40 (28h)
+
+
+  //Convoy size expansion
+  
+  ORG $1DFB2
+  BYTE $C7
+  
+  ORG $1E05A
+  BYTE $C7
+  
+  ORG $1E0EC
+  BYTE $C7
+
+  ORG $31504
+  WORD ConvoyExpansionRAM
+  ORG $31524
+  WORD ConvoyExpansionRAM
+  ORG $31590
+  WORD ConvoyExpansionRAM
+  ORG $315B4				//AddItemToConvoy
+  WORD ConvoyExpansionRAM
+  ORG $315E0				//i think this is called when removing item from convoy?
+  WORD ConvoyExpansionRAM
+  ORG $31604				//GetConvoyItemSlot
+  WORD ConvoyExpansionRAM
+
+  ORG $31528
+  BYTE $C8
+
+  ORG $31576
+  BYTE $C7
+
+  ORG $315BC
+  BYTE $C7
+
+  ORG $9828E
+  BYTE $C7
+
+  ORG $9A550
+  BYTE $C7
+
+  ORG $9A56A
+  BYTE $C7
+
+  ORG $9D676
+  BYTE $C8
+
+  ORG $9D73E
+  BYTE $C8
+
+  ORG $9D768
+  BYTE $C8
+
+  ORG $9DD10
+  BYTE $C7
+
+  ORG $9E902
+  BYTE $C8
+
+  ORG $B4738
+  BYTE $C7
+  
+  //need this
+  ORG $A324A
+  BYTE $C7
+  
+  ORG $A32D2
+  BYTE $C7
+POP

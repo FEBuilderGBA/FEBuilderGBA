@@ -1,0 +1,19 @@
+NAME=ExModularSave with Supply 200 ver20220401
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x0A6408=0x2A 0x20 0x70 0x47 0x06 0x49 0x07 0x4C
+EA=ExModularSave.event
+
+INFO=このパッチは、31以上のステータスの保存ができます。\r\nクラス拡張にも対応しています。\r\nSkillSystemsと最も相性が良い拡張形式です。\r\nセーブデータを拡張して、クラス拡張を、2022年以降のSkillSystemsのstrmag splitに対応させます。\r\nこのバージョンは、輸送隊を200件まで拡張したバージョンです。\r\nSkill Scrollのために耐久度63を超えるデータの保存にも対応しています。
+
+INFO.en=This patch can store statuses over 31.\r\nIt also supports class expansion.\r\nThis save data expansion patch works best with SkillSystems.\r\nExtend save data to make class extension correspond to strmag split of SkillSystems after 2022.\r\nThis version is an extension of 200 supply.\r\nIt also supports the storage of data with a durability of over 63 due to the Skill Scroll.
+
+AUTHOR=Stan https://github.com/FireEmblemUniverse/SkillSystem_FE8/tree/master/Engine%20Hacks/ExpandedModularSave\r\nGamma Supply Expansion, Vesly
+
+CONFLICT_IF:0x0A53E2=0x6B 0x46 0x5A 0x68 0x12 0x05 0x12 0x0D 0x38 0x7D 0x00 0x03 0x02 0x43 0x78 0x7D 0x80 0x04 0x02 0x43 0xB8 0x7D 0x00 0x06 0x02 0x43 0xF9 0x7D 0x88 0x07 0x02 0x43
+CONFLICT_IF:0x1553C=0x58 0xA9 0x03 0x02
+CONFLICT_MESSAGE=break save, auto save
+INFO.zh=This patch can store statuses over 31.\r\nIt also supports class expansion.\r\nThis save data expansion patch works best with SkillSystems.\r\nExtend save data to make class extension correspond to strmag split of SkillSystems after 2022.\r\nThis version is an extension of 200 supply.\r\nIt also supports the storage of data with a durability of over 63 due to the Skill Scroll.
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある

@@ -1,0 +1,15 @@
+NAME=MUSIC_大陸の魔物退治2
+NAME.en=MUSIC_Creature Campaign2
+NAME.zh=音乐_大陆恶魔灭绝2
+
+INFO=ChapterDataのChapterStaff(0x14)の0x04 bitflag が有効な時に再生されます。\r\nおそらく、これが大陸の魔物退治を表していると思う。
+INFO.en=Played when the 0x04 bitflag of ChapterStaff (0x14) in ChapterData is enabled.\r\nPresumably, this represents the Creature Campaign.
+INFO.zh=Played when the 0x04 bitflag of ChapterStaff (0x14) in ChapterData is enabled.\r\nPresumably, this represents the Creature Campaign.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#MUSIC #SONG #SOUND #BGM
+
+ADDRESS=0x0B9F62
+ADDRESS_TYPE=SONG
+
