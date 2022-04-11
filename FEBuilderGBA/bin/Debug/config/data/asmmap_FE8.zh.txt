@@ -14831,3 +14831,8 @@ r3=X tile position of menu of the right	{U}
 08AB0B48	:08AB0FDB	Promotion's red font and ClassReel's English font data	{J}
 08A2FCE4	:08A301AF	Promotion's red font and ClassReel's English font data	{U}
 080B75EC	OpInfo Fade out of music at the end of class reel	{J}
+08056BC0	FireStartBattleEnding	{J}
+02017724	BattleEndingState	{J}
+0808FDF0	CheckSoftResetKeyCommand	{J}
+03000055	IsTextDialogAWait	{J}
+0300005D	IsTextDialogAWait	{U}

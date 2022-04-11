@@ -14854,3 +14854,5 @@
 08056BC0	FireStartBattleEnding	{J}
 02017724	BattleEndingState	{J}
 0808FDF0	CheckSoftResetKeyCommand	{J}
+03000055	IsTextDialogAWait	{J}
+0300005D	IsTextDialogAWait	{U}
