@@ -1,0 +1,19 @@
+NAME=サイレス(沈黙)のユニットとも話すで会話できるようにする
+NAME.en=Allow talk menu item to silenced units
+NAME.zh=Allow talk menu item to silenced units
+
+
+INFO=バニラでは、眠っているユニットとは「話す」メニューで会話をすることができません。\r\nこのパッチは、それを可能にします。
+INFO.en=In vanilla, it is not possible to talk to silenced units in the "Talk" menu.\r\nthis patch makes it possible.
+INFO.zh=In vanilla, it is not possible to talk to silenced units in the "Talk" menu.\r\nthis patch makes it possible.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Deny Talk to silenced unit|OFF|Fix: Allow Talk to silenced unit|ONN
+
+OFF:0x255D6=0x16 0xD0
+ONN:0x255D6=0xC0 0x46
+
+AUTHOR=Vesly https://discord.com/channels/144670830150811649/725478895226191892/959781386682777600

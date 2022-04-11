@@ -1,0 +1,20 @@
+
+NAME=セーブ画面でセーブスロットの上でRボタンを禁止する
+NAME.en=Remove R text on the save screen's save slot
+NAME.zh=Remove R text on the save screen's save slot
+
+
+INFO=セーブ画面で、Rボタンのヘルプをテキストを禁止します。\r\n一部のパッチでは、セーブスロットの上でRボタンを押すとフリーズしてしまう問題があり、それを抑制するために、Rボタンのメニューの表示を無効化します。
+INFO.en=Prohibit R button help text on the save screen.\r\nsome patches, there is a freezing issue when pressing the R button on a save slot, to suppress this, the R button menu display is disabled.
+INFO.zh=Prohibit R button help text on the save screen.\r\nsome patches, there is a freezing issue when pressing the R button on a save slot, to suppress this, the R button menu display is disabled.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Show RMenu on SaveSlot|OFF|Fix: Remove RMenu on SaveSlot|ONN
+
+OFF:0xAD43A=0x25 0xD0
+ONN:0xAD43A=0x25 0xE0
+
+AUTHOR=Snek https://discord.com/channels/144670830150811649/235253973588639747/962772757890879580
