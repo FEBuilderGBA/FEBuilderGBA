@@ -2804,7 +2804,7 @@ namespace FEBuilderGBA
                                 MakeVarsIDEventScan(list, v, info,tracelist);
                             }
                         }
-                        else if (arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MUSIC)
+                        else if (arg.Type == EventScript.ArgType.SOUND || arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.MAPMUSIC)
                         {//音楽
                             uint v = EventScript.GetArgValue(code, arg);
                             UseValsID.AppendSongID(list, FELint.Type.EVENTSCRIPT, event_addr, info, v, addr);
