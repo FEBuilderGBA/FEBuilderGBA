@@ -1,0 +1,32 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $23F70		//FE8U
+jumpToHack(MultiSupplyUnits)
+POP
+
+PUSH
+ORG $31644		//FE8U
+jumpToHack(HasConvoyAccess)
+POP
+
+
+ALIGN 4
+MultiSupplyUnits:
+#incbin "MultiSupplyUnits.dmp"
+POIN MultiSupplyUnits_Table
+
+ALIGN 4
+HasConvoyAccess:
+#incbin "HasConvoyAccess.dmp"
+POIN MultiSupplyUnits_Table
+
+//MultiSupplyUnits_Table:
+#include "MultiSupplyUnits_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

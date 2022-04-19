@@ -1,0 +1,17 @@
+NAME=出撃禁止3 UNIT (ニルス 29章以降)
+NAME.en=Deployment prohibitions3 UNIT (Nils at ch29 since)
+NAME.zh=Deployment prohibitions3 UNIT (Nils at ch29 since)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x8E810
+ADDRESS_TYPE=UNIT
+
+AUTHOR=shuusuke https://discord.com/channels/144670830150811649/470029781795078175/965870158268751872
+DEFAULT=0x26
+
+INFO=パーティに参加しているユニットを、特定の章で進撃準備画面から選べなくし、その章に参加できないようにします。
+INFO.en=prevent units in a party from being selected from the Prepare to Advance screen in certain chapters, preventing them from participating in those chapters.
+INFO.zh=prevent units in a party from being selected from the Prepare to Advance screen in certain chapters, preventing them from participating in those chapters.

@@ -9,6 +9,7 @@
 4	Electric Piano1	1c527d8a59bd3edaf255390344ac01c2
 6	Harpsichord	196a3bd207cfa7c6d9ca877bbadbc505
 8	Celesta	78be8d70fa9b2e8f81ccdede95bf75ee
+9	glockenspiel	3c3a08283c0ee5da263535e93de2564d
 10	Music Box	1d7e32e54b863df5899a5c4c74b1ef22
 11	Vibraphone	a0ffa4b2e958aab25b9a03dbadecabb5
 12	Marimba	215d7df651b0422fec0031b9d277c017

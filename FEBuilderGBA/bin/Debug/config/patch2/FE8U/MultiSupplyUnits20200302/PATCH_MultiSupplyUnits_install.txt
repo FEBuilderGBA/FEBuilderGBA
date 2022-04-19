@@ -20,3 +20,5 @@ CONFLICT_MESSAGE=Set whether transporter can be used for each map
 NAME.en=Change to have multiple units that can call supply 20200302(Install)
 INFO.en=Change so that you can set multiple units that can call supply.
 NAME.zh=更改为具有多个可以呼叫护卫队的人物 20200302(Install)
+DEPRECATED=1
+UPDATE_PATCH=..\MultiSupplyUnits20220419\PATCH_MultiSupplyUnits_install.txt

@@ -1,11 +1,11 @@
-NAME=(OLD)輸送隊を呼べるユニットを複数持てるように変更する(Install)
+NAME=輸送隊を呼べるユニットを複数持てるように変更する 20220419(Install)
 INFO=輸送隊を呼べるユニットを複数設定できるように変更します。
 
 TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x23F2C=0x00 0x4B
+PATCHED_IF:0x23F70=0x00 0x4B
 EDIT_PATCH=PATCH_MultiSupplyUnits.txt
 EA=Installer.event
 
@@ -17,9 +17,6 @@ INFO.zh=提示：运输车。
 
 CONFLICT_IF:0x023F22=0x00 0x00 0x00 0x4B 0x18 0x47
 CONFLICT_MESSAGE=Set whether transporter can be used for each map
-NAME.en=(OLD)Change to have multiple units that can call supply(Install)
+NAME.en=Change to have multiple units that can call supply 20220419(Install)
 INFO.en=Change so that you can set multiple units that can call supply.
-NAME.zh=(OLD)更改为具有多个可以呼叫护卫队的人物(Install)
-
-DEPRECATED=1
-UPDATE_PATCH=..\MultiSupplyUnits20220419\PATCH_MultiSupplyUnits_install.txt
+NAME.zh=更改为具有多个可以呼叫护卫队的人物 20220419(Install)

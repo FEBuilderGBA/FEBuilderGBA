@@ -4440,8 +4440,9 @@ namespace FEBuilderGBA
             }
             else if (linktype == "FLAG")
             {
+                uint mapid = FindMapIDByControlObject(src_object);
                 ToolFlagNameForm f = (ToolFlagNameForm)InputFormRef.JumpForm<ToolFlagNameForm>(U.NOT_FOUND);
-                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , U.NOT_FOUND);
+                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object), mapid);
             }
             else if (linktype == "TALKGROUP")
             {
@@ -4527,6 +4528,49 @@ namespace FEBuilderGBA
                 f.JumpTo(EventScript.ArgType.CALLMENUCONFIG, value);
                 InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
             }
+        }
+        static uint FindMapIDByControlObject(Control value)
+        {
+            string prefix = GetPrefixName(value.Name);
+            uint id = GetStructID(prefix, value.Name);
+            if (id == U.NOT_FOUND)
+            {//IDが取れないので無理.
+                return U.NOT_FOUND;
+            }
+            Form f = U.ControlToParentForm(value);
+            if (f == null)
+            {//フォームが取れないので無理.
+                return U.NOT_FOUND;
+            }
+            List<Control> controls = InputFormRef.GetAllControls(f);
+
+            //マップオブジェトがあるなら、そこから算出する
+            MapPictureBox map = FindMapObject(prefix, controls);
+            if (map != null)
+            {
+                return map.GetMapID();
+            }
+
+            //マップオブジェクトがないので、MAPタイプを探す
+            for (uint sid = 0; sid < 0x10; sid++)
+            {
+                string map_jump_label = prefix + "J_" + sid.ToString() + "_MAP";
+                Control c = FindObjectByForm<Label>(controls, map_jump_label);
+                if (c == null)
+                {
+                    continue;
+                }
+                string map_jump_nud = prefix + "B" + sid.ToString();
+                Control c2 = FindObjectByForm<NumericUpDown>(controls, map_jump_nud);
+                if (c2 == null)
+                {
+                    continue;
+                }
+                return (uint) ((NumericUpDown)c2).Value;
+            }
+
+            //MAPIDはない!
+            return U.NOT_FOUND;
         }
 
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)

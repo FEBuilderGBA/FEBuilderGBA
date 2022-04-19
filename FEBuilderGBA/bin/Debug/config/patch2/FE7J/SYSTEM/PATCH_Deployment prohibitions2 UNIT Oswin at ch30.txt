@@ -1,0 +1,17 @@
+NAME=出撃禁止2 UNIT (オズウィン 30章)
+NAME.en=Deployment prohibitions2 UNIT (Oswin at ch30)
+NAME.zh=Deployment prohibitions2 UNIT (Oswin at ch30)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x8E804
+ADDRESS_TYPE=UNIT
+
+AUTHOR=shuusuke https://discord.com/channels/144670830150811649/470029781795078175/965870158268751872
+DEFAULT=0xB
+
+INFO=パーティに参加しているユニットを、特定の章で進撃準備画面から選べなくし、その章に参加できないようにします。
+INFO.en=prevent units in a party from being selected from the Prepare to Advance screen in certain chapters, preventing them from participating in those chapters.
+INFO.zh=prevent units in a party from being selected from the Prepare to Advance screen in certain chapters, preventing them from participating in those chapters.

@@ -5214,3 +5214,5 @@
 080685c8	IsHealStaffBGM	{J}
 0807A0A0	ClearGlobalTriggerState	{J}
 080798D0	ClearGlobalTriggerState	{U}
+0808DEA8	Sortie prohibition judgment.	{U}
+0808E7D4	Sortie prohibition judgment.	{J}

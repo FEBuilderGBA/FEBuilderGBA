@@ -23,4 +23,4 @@ NAME.zh=(OLD)更改为具有多个可以呼叫护卫队的人物(Install)
 
 
 DEPRECATED=1
-UPDATE_PATCH=..\MultiSupplyUnits20200302\PATCH_MultiSupplyUnits_install.txt
+UPDATE_PATCH=..\MultiSupplyUnits20220419\PATCH_MultiSupplyUnits_install.txt

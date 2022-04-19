@@ -1,6 +1,7 @@
 NAME=StatusScreenGraphics1
 
 TYPE=IMAGE
+TAG=#IMAGE
 
 WIDTH=256
 HEIGHT=32

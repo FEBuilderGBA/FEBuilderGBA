@@ -1,0 +1,13 @@
+CheckSummonUnit=$06
+Check7743Summon=$1A
+FalseExit=$76
+LoopStart=$22
+Table=$94
+Loop=$26
+CheckMap=$2E
+CheckEdition=$3C
+CheckFlag=$4A
+Found=$5A
+CheckUnit=$5A
+TrueExit=$72
+Exit=$78
