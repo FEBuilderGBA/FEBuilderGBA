@@ -32,6 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SIMPLE_OVERRAIDE_JPFONT = new System.Windows.Forms.CheckBox();
             this.SimpleTranslateToTranslateDataFilenameButton = new System.Windows.Forms.Button();
             this.LabelSimpleTranslateToTranslateDataFilename = new System.Windows.Forms.Label();
             this.SimpleFireButton = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             this.customColorGroupBox3 = new FEBuilderGBA.CustomColorGroupBox();
             this.customColorGroupBox4 = new FEBuilderGBA.CustomColorGroupBox();
             this.TranslatePanel = new System.Windows.Forms.Panel();
-            this.X_ONELINER_CHECK = new System.Windows.Forms.CheckBox();
             this.X_MODIFIED_TEXT_ONLY = new System.Windows.Forms.CheckBox();
             this.LabelTranslateToROMFilename = new System.Windows.Forms.Label();
             this.TranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
@@ -69,9 +69,11 @@
             this.Translate_from = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.useAutoTranslateCheckBox = new System.Windows.Forms.CheckBox();
+            this.X_ONELINER_CHECK = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ExportallTextButton = new System.Windows.Forms.Button();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.X_OVERRAIDE_JPFONT = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ImportAllTextButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -110,16 +112,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 217);
+            this.textBox1.Location = new System.Drawing.Point(0, 248);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(894, 469);
+            this.textBox1.Size = new System.Drawing.Size(894, 438);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足している" +
     "フォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SIMPLE_OVERRAIDE_JPFONT);
             this.panel1.Controls.Add(this.SimpleTranslateToTranslateDataFilename);
             this.panel1.Controls.Add(this.SimpleTranslateToTranslateDataFilenameButton);
             this.panel1.Controls.Add(this.LabelSimpleTranslateToTranslateDataFilename);
@@ -132,12 +135,23 @@
             this.panel1.Controls.Add(this.SimpleTranslateFormROMFilenameSelectButton);
             this.panel1.Location = new System.Drawing.Point(6, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 192);
+            this.panel1.Size = new System.Drawing.Size(894, 223);
             this.panel1.TabIndex = 2;
+            // 
+            // SIMPLE_OVERRAIDE_JPFONT
+            // 
+            this.SIMPLE_OVERRAIDE_JPFONT.AutoSize = true;
+            this.SIMPLE_OVERRAIDE_JPFONT.Location = new System.Drawing.Point(206, 120);
+            this.SIMPLE_OVERRAIDE_JPFONT.Name = "SIMPLE_OVERRAIDE_JPFONT";
+            this.SIMPLE_OVERRAIDE_JPFONT.Size = new System.Drawing.Size(203, 22);
+            this.SIMPLE_OVERRAIDE_JPFONT.TabIndex = 102;
+            this.SIMPLE_OVERRAIDE_JPFONT.Text = "日本語フォントの上書き";
+            this.SIMPLE_OVERRAIDE_JPFONT.UseVisualStyleBackColor = true;
+            this.SIMPLE_OVERRAIDE_JPFONT.Visible = false;
             // 
             // SimpleTranslateToTranslateDataFilenameButton
             // 
-            this.SimpleTranslateToTranslateDataFilenameButton.Location = new System.Drawing.Point(833, 81);
+            this.SimpleTranslateToTranslateDataFilenameButton.Location = new System.Drawing.Point(833, 80);
             this.SimpleTranslateToTranslateDataFilenameButton.Margin = new System.Windows.Forms.Padding(4);
             this.SimpleTranslateToTranslateDataFilenameButton.Name = "SimpleTranslateToTranslateDataFilenameButton";
             this.SimpleTranslateToTranslateDataFilenameButton.Size = new System.Drawing.Size(41, 31);
@@ -150,7 +164,7 @@
             // 
             this.LabelSimpleTranslateToTranslateDataFilename.AccessibleDescription = "@TRANSLATE_HINT_FILE";
             this.LabelSimpleTranslateToTranslateDataFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelSimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(5, 83);
+            this.LabelSimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(5, 82);
             this.LabelSimpleTranslateToTranslateDataFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelSimpleTranslateToTranslateDataFilename.Name = "LabelSimpleTranslateToTranslateDataFilename";
             this.LabelSimpleTranslateToTranslateDataFilename.Size = new System.Drawing.Size(196, 31);
@@ -160,9 +174,9 @@
             // 
             // SimpleFireButton
             // 
-            this.SimpleFireButton.Location = new System.Drawing.Point(5, 122);
+            this.SimpleFireButton.Location = new System.Drawing.Point(5, 146);
             this.SimpleFireButton.Name = "SimpleFireButton";
-            this.SimpleFireButton.Size = new System.Drawing.Size(877, 60);
+            this.SimpleFireButton.Size = new System.Drawing.Size(877, 67);
             this.SimpleFireButton.TabIndex = 98;
             this.SimpleFireButton.Text = "翻訳開始";
             this.SimpleFireButton.UseVisualStyleBackColor = true;
@@ -230,7 +244,7 @@
             // SimpleTranslateToTranslateDataFilename
             // 
             this.SimpleTranslateToTranslateDataFilename.ErrorMessage = "";
-            this.SimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(204, 86);
+            this.SimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(204, 85);
             this.SimpleTranslateToTranslateDataFilename.Margin = new System.Windows.Forms.Padding(4);
             this.SimpleTranslateToTranslateDataFilename.Name = "SimpleTranslateToTranslateDataFilename";
             this.SimpleTranslateToTranslateDataFilename.Placeholder = "";
@@ -419,16 +433,6 @@
             this.TranslatePanel.Size = new System.Drawing.Size(876, 152);
             this.TranslatePanel.TabIndex = 1;
             // 
-            // X_ONELINER_CHECK
-            // 
-            this.X_ONELINER_CHECK.AutoSize = true;
-            this.X_ONELINER_CHECK.Location = new System.Drawing.Point(6, 65);
-            this.X_ONELINER_CHECK.Name = "X_ONELINER_CHECK";
-            this.X_ONELINER_CHECK.Size = new System.Drawing.Size(103, 22);
-            this.X_ONELINER_CHECK.TabIndex = 99;
-            this.X_ONELINER_CHECK.Text = "OneLiner";
-            this.X_ONELINER_CHECK.UseVisualStyleBackColor = true;
-            // 
             // X_MODIFIED_TEXT_ONLY
             // 
             this.X_MODIFIED_TEXT_ONLY.AutoSize = true;
@@ -582,6 +586,16 @@
             this.useAutoTranslateCheckBox.UseVisualStyleBackColor = true;
             this.useAutoTranslateCheckBox.CheckedChanged += new System.EventHandler(this.useAutoTranslateCheckBox_CheckedChanged);
             // 
+            // X_ONELINER_CHECK
+            // 
+            this.X_ONELINER_CHECK.AutoSize = true;
+            this.X_ONELINER_CHECK.Location = new System.Drawing.Point(6, 65);
+            this.X_ONELINER_CHECK.Name = "X_ONELINER_CHECK";
+            this.X_ONELINER_CHECK.Size = new System.Drawing.Size(103, 22);
+            this.X_ONELINER_CHECK.TabIndex = 99;
+            this.X_ONELINER_CHECK.Text = "OneLiner";
+            this.X_ONELINER_CHECK.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -604,6 +618,7 @@
             // customColorGroupBox1
             // 
             this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox1.Controls.Add(this.X_OVERRAIDE_JPFONT);
             this.customColorGroupBox1.Controls.Add(this.label2);
             this.customColorGroupBox1.Controls.Add(this.ImportAllTextButton);
             this.customColorGroupBox1.Location = new System.Drawing.Point(3, 324);
@@ -612,6 +627,17 @@
             this.customColorGroupBox1.TabIndex = 0;
             this.customColorGroupBox1.TabStop = false;
             this.customColorGroupBox1.Text = "全テキストの読込";
+            // 
+            // X_OVERRAIDE_JPFONT
+            // 
+            this.X_OVERRAIDE_JPFONT.AutoSize = true;
+            this.X_OVERRAIDE_JPFONT.Location = new System.Drawing.Point(617, 77);
+            this.X_OVERRAIDE_JPFONT.Name = "X_OVERRAIDE_JPFONT";
+            this.X_OVERRAIDE_JPFONT.Size = new System.Drawing.Size(203, 22);
+            this.X_OVERRAIDE_JPFONT.TabIndex = 99;
+            this.X_OVERRAIDE_JPFONT.Text = "日本語フォントの上書き";
+            this.X_OVERRAIDE_JPFONT.UseVisualStyleBackColor = true;
+            this.X_OVERRAIDE_JPFONT.Visible = false;
             // 
             // label2
             // 
@@ -625,7 +651,7 @@
             // 
             // ImportAllTextButton
             // 
-            this.ImportAllTextButton.Location = new System.Drawing.Point(10, 102);
+            this.ImportAllTextButton.Location = new System.Drawing.Point(10, 104);
             this.ImportAllTextButton.Name = "ImportAllTextButton";
             this.ImportAllTextButton.Size = new System.Drawing.Size(876, 30);
             this.ImportAllTextButton.TabIndex = 0;
@@ -713,5 +739,7 @@
         private System.Windows.Forms.Button SimpleTranslateToTranslateDataFilenameButton;
         private System.Windows.Forms.Label LabelSimpleTranslateToTranslateDataFilename;
         private System.Windows.Forms.CheckBox X_ONELINER_CHECK;
+        private System.Windows.Forms.CheckBox X_OVERRAIDE_JPFONT;
+        private System.Windows.Forms.CheckBox SIMPLE_OVERRAIDE_JPFONT;
     }
 }

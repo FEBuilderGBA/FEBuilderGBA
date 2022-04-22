@@ -24,6 +24,12 @@ namespace FEBuilderGBA
 
             useAutoTranslateCheckBox_CheckedChanged(null, null);
 
+            if (! Program.ROM.RomInfo.is_multibyte())
+            {
+                SIMPLE_OVERRAIDE_JPFONT.Hide();
+                X_OVERRAIDE_JPFONT.Hide();
+            }
+
             int from,to;
             TranslateTextUtil.TranslateLanguageAutoSelect(out from,out to);
 

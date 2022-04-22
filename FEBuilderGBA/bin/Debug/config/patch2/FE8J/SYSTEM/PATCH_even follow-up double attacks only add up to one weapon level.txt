@@ -1,0 +1,23 @@
+NAME=追撃で2回攻撃しても1回しか武器レベルを加算しない
+NAME.en=even follow-up double attacks only add up to one weapon level
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 2x WEXP if follow-up attack|OFF|Fix: only add 1|FIX
+
+DETERMINATION_ADDRESS=0x2C08A
+
+OFF:0x2C08A=0x09 0x06 0x09 0x16 0x48 0x43
+FIX:0x2C08A=0x01 0x29 0x00 0xDA 0x00 0x20
+//cmp r1, #0x1
+//bge 0x0802C090
+//mov r0, #0x0 @miss
+
+AUTHOR=7743
+INFO=バニラでは、追撃すると、2倍の武器経験が得られます。\r\nこのパッチは、その挙動を抑制し、たとえ追撃しても1回分だけの武器WEXPを得るようにします。
+
+INFO.en=In vanilla, pursuit gains double(2x) weapon experience.\r\nThis patch suppresses that behaviour, so that you only get one weapon WEXP even if you follow-up attack.
+NAME.zh=even follow-up double attacks only add up to one weapon level
+INFO.zh=In vanilla, pursuit gains double(2x) weapon experience.\r\nThis patch suppresses that behaviour, so that you only get one weapon WEXP even if you follow-up attack.
