@@ -1,0 +1,15 @@
+NAME=グループAI
+NAME.en=Group AI
+NAME.zh=Group AI
+TYPE=EA
+EA=Installer.event
+
+PATCHED_IF:0x037748=0x00 0x4B
+
+INFO=このパッチは、グループの誰かひとりの攻撃レンジに侵入すると、グループ全員が突撃して襲ってくるという攻撃AIを実現します。\r\nグループの指定は、AI4(退避AI)で行います。\r\nバニラでは、AI4は0x00と0x20しかありませんが、そこにグループ番号を書いてグループを作ります。\r\nたとえば、AI4=0x1だとグループ1、AI4=0x2だとグループ2、AI4=0x3だとグループ3となります。\r\nボスに利用される0x20と同時に利用もできます。0x21 だとグループ1、0x22だとグループ2、0x23だとグループ3になります。
+
+INFO.en=This patch enables an attack AI in which if any one person in the group enters the attack range, the whole group will charge in and attack.\r\nThe group is specified by AI4(Retreat AI).\r\nIn vanilla, AI4 has only 0x00 and 0x20, but groups are created by writing the group number there.\r\nFor example, AI4=0x1 means group 1, AI4=0x2 means group 2 and AI4=0x3 means group 3.\r\nIt can be used at the same time as 0x20, which is used for the boss: 0x21 for group 1, 0x22 for group 2 and 0x23 for group 3.
+
+INFO.zh=This patch enables an attack AI in which if any one person in the group enters the attack range, the whole group will charge in and attack.\r\nThe group is specified by AI4(Retreat AI).\r\nIn vanilla, AI4 has only 0x00 and 0x20, but groups are created by writing the group number there.\r\nFor example, AI4=0x1 means group 1, AI4=0x2 means group 2 and AI4=0x3 means group 3.\r\nIt can be used at the same time as 0x20, which is used for the boss: 0x21 for group 1, 0x22 for group 2 and 0x23 for group 3.
+
+AUTHOR=Vesly https://github.com/Veslyquix/ASM/tree/main/GroupAI , Originally by PhantomeSentine

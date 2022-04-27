@@ -1,0 +1,6 @@
+End=$6A
+ActivateGroup=$2A
+CheckDefender=$1E
+NextUnit=$2E
+NotInGroup=$64
+AddAILoop=$56

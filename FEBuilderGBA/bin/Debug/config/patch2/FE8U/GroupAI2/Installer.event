@@ -1,0 +1,13 @@
+#include "EAstdlib.event"
+
+// By PhantomSentine. Edited by Vesly 
+
+PUSH 
+ORG $37748 // HandlePostActionTraps occurs before the hook at $1D308 and sets action to "wait" when standing on a trap right after this code
+jumpToHack(GroupAI|1)
+POP  
+
+ALIGN 4 
+GroupAI:
+#incbin "GroupAI2.dmp"
+
