@@ -1858,6 +1858,9 @@ this.MapObjImage);
                     break;
                 }
 
+                //警告を出さないために
+                this.IsModified = false;
+
                 //指定されたマップ変化に切り替え.
                 MapChange.SelectedIndex = (int)id;
 
