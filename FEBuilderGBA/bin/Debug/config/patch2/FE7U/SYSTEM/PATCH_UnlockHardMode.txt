@@ -11,9 +11,10 @@ TAG=#ENGINE
 
 AUTHOR=Doesnt https://feuniverse.us/t/unlocking-mode-select-from-start-solved/751/9
 
-COMBO=Default|OFF|All Open|ALL
+COMBO=Default|OFF|All Open|ALL|All open but force new game to be on Lyn mode|LYN
 OFF:0x09E9FC=0x30 0xB5 0x99 0xB0
 ALL:0x09E9FC=0x1F 0x20 0x70 0x47
+LYN:0x09E9FC=0x15 0x20 0x70 0x47
 
 //bit x1 = Lyn Hard is open
 //bit x2 = Eliwood Normal is open
