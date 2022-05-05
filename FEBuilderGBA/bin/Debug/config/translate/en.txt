@@ -12784,6 +12784,9 @@ Unmodified FE7J
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using a Japanese ROM and an English ROM.\r\n\r\nIn Simplified mode, translation is automatic.\r\nIt automatically adjusts the missing font import, menu length, etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
+:日本語フォントの上書き
+Overwriting Japanese fonts.
+
 :翻訳開始
 Translation Start
 
