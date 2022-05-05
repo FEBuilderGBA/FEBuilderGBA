@@ -13,6 +13,16 @@ ORG $31590		//FE8J
 jumpToHack(HasConvoyAccess)
 POP
 
+PUSH
+ORG $A1240		//FE8J
+jumpToHack(ForPrepareListMenuItem)
+POP
+
+PUSH
+ORG $A13FC		//FE8J
+jumpToHack(ForPrepareListMenuItem2)
+POP
+
 
 ALIGN 4
 MultiSupplyUnits:
@@ -23,6 +33,14 @@ ALIGN 4
 HasConvoyAccess:
 #incbin "HasConvoyAccess.dmp"
 POIN MultiSupplyUnits_Table
+
+ALIGN 4
+ForPrepareListMenuItem:
+#incbin "ForPrepareListMenuItem.dmp"
+
+ALIGN 4
+ForPrepareListMenuItem2:
+#incbin "ForPrepareListMenuItem2.dmp"
 
 //MultiSupplyUnits_Table:
 #include "MultiSupplyUnits_Table.event"
