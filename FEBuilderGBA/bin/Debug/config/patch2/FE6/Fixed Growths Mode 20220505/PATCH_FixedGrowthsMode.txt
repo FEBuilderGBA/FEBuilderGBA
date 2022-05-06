@@ -1,5 +1,5 @@
 NAME=固定成長モード
-NAME.en=FixedGrowthsMode
+NAME.en=FixedGrowthsMode 20220505
 
 TYPE=EA
 TAG=#ENGINE
@@ -16,5 +16,3 @@ INFO.zh=统计增长基于一个公式，该公式使用您的水平和增长率
 
 AUTHOR=TR143 https://feuniverse.us/t/fe7-fe8-fixed-growths-mode/4482
 NAME.zh=固定增长模式
-
-DEPRECATED=1
