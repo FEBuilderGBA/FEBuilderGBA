@@ -1,0 +1,22 @@
+NAME=進撃準備画面でのアイテム使用時のデフォルトカーソル位置の変更
+NAME.en=Change Default Cursol Postion by Prepare Item Use Screen
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: No|OFF|Fix: Yes|FIX
+
+DETERMINATION_ADDRESS=0x9EAFC
+
+OFF:0x9EAFC=0x01 0x25 0x28 0x1C
+FIX:0x9EAFC=0x00 0x25 0x01 0x20
+
+// mov r5, #0x1 -> mov r5, #0x0
+// mov r1, r5      mov r1, #0x1
+
+AUTHOR=7743
+INFO=進撃準備画面でアイテムを使う時の「ほんとうに使いますか？」のディフォルトカーソル位置を変更します。\r\nバニラでは「いいえ」になっていますが、これを「はい」に変更できます。
+INFO.en="Are you sure you want to use this?" when using an item on the Prepare screen. Default cursor position on the "Do you really want to use it?" screen can be changed.\r\nIn vanilla, this is set to "No", but can be changed to 'Yes'.
+
+INFO.zh=更改“您确定要使用它吗？”的默认光标位置在使用提前准备屏幕上的项目时。\r\n在香草中是“否”，但您可以将其更改为“是”。

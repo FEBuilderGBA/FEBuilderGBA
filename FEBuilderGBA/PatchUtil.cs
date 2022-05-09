@@ -872,7 +872,7 @@ namespace FEBuilderGBA
         {
             {
                 GrepPatchTableSt[] table = new GrepPatchTableSt[] { 
-                    new GrepPatchTableSt{ name="NarrowFont",patch_dmp="NarrowFont/MenuLowercase/z.img.bin"},
+                    new GrepPatchTableSt{ name="NarrowFont",patch_dmp="../FE8U/NarrowFont/MenuLowercase/z.img.bin"},
                 };
                 GrepPatchTableSt p = GrepPatch(table);
                 if (p.name == "NarrowFont")
