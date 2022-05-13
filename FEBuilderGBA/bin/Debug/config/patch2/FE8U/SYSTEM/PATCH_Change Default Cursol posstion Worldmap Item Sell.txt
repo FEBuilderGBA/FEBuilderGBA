@@ -13,6 +13,6 @@ OFF:0xA0578=0x01 0x20
 FIX:0xA0578=0x00 0x20
 
 AUTHOR=7743
-INFO=ワールドマップでアイテムを売る時の「売りますか？」のディフォトカーソル位置を変更します。\r\nバニラでは、「やめる」がディフォルトになっていますが、これを「売る」に変更します。
-INFO.en="Do you want to sell?" when selling items on the world map. Change the defoto cursor position of the Sell?\r\nIn vanilla, the default is "Quit", but this can be changed to "Sell".
+INFO=ワールドマップでアイテムを売る時の「売りますか？」のディフォルトカーソル位置を変更します。\r\nバニラでは、「やめる」がディフォルトになっていますが、これを「売る」に変更します。
+INFO.en="Do you want to sell?" when selling items on the world map. Change the default cursor position of the Sell?\r\nIn vanilla, the default is "Quit", but this can be changed to "Sell".
 INFO.zh=在世界地图上出售物品时，更改“您要出售吗？”的照片光标位置。\r\n在原版中，“停止”是默认设置，但将其更改为“卖出”。

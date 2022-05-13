@@ -283,10 +283,6 @@ namespace FEBuilderGBA
                 Program.ROM.write_u32(addr + 48, 0, undodata);
                 addr += eearg.BlockSize;
             }
-            if (Program.ROM.RomInfo.is_multibyte())
-            {
-                OPClassAlphaNameForm.ExpandsArea(this, eearg.OldDataCount, (uint)count, undodata);
-            }
             //移動アイコンはクラスIDと連動しているので増設しないといけない.
             ImageUnitMoveIconFrom.ExpandsArea(this, eearg.OldDataCount, (uint)count, undodata);
 

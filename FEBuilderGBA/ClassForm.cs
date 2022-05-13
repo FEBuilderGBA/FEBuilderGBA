@@ -788,10 +788,10 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 8)
             {
                 CCBranchForm.ExpandsArea(this,eearg.OldDataCount, (uint)count, undodata);
-            }
-            if (Program.ROM.RomInfo.is_multibyte() )
-            {
-                OPClassAlphaNameForm.ExpandsArea(this,eearg.OldDataCount, (uint)count, undodata);
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    OPClassAlphaNameForm.ExpandsArea(this, eearg.OldDataCount, (uint)count, undodata);
+                }
             }
             //移動アイコンはクラスIDと連動しているので増設しないといけない.
             ImageUnitMoveIconFrom.ExpandsArea(this, eearg.OldDataCount, (uint)count, undodata);
