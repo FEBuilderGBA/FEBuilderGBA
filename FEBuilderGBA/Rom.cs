@@ -421,7 +421,6 @@ namespace FEBuilderGBA
         uint patch_16_tracks_12_sounds(out uint enable_value); //16_tracks_12_sounds patch
         uint patch_chaptor_names_text_fix(out uint enable_value); //章の名前をテキストにするパッチ
         uint patch_generic_enemy_portrait_extends(out uint enable_value);//一般兵の顔 拡張
-        uint patch_stairs_hack(out uint enable_value); //階段拡張
         uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
         uint patch_write_build_version(out uint enable_value); //ビルドバージョンを書き込む
         uint builddate_address();

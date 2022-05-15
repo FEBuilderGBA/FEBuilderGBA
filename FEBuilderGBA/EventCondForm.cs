@@ -144,7 +144,7 @@ namespace FEBuilderGBA
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("21=Raid"));
                     OBJECT_N05_L_10_COMBO.AddIcon(0x21, ClassForm.DrawWaitIcon(0x41)); //21=Raid
                 }
-                if (PatchUtil.SearchStairsHackPatch())
+                if (PatchUtil.SearchStairsHackPatch() != PatchUtil.StairsHack_enum.NO)
                 {
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
                     OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
@@ -191,7 +191,7 @@ namespace FEBuilderGBA
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("12=イベント付き宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Chest());
             }
-            if (PatchUtil.SearchStairsHackPatch())
+            if (PatchUtil.SearchStairsHackPatch() != PatchUtil.StairsHack_enum.NO)
             {
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
@@ -1110,12 +1110,16 @@ namespace FEBuilderGBA
                 uint y = Program.ROM.u8(addr + 9);
                 uint object_type = Program.ROM.u8(addr + 10);
 
-                FELint.CheckFlag(flag, errors, CONDTYPE.OBJECT, addr);
-
                 if (event_addr == 0)
                 {//イベントが0
                     continue;
                 }
+                if (type == 0x5 && object_type == 0x22)
+                {//階段拡張
+                    continue;
+                }
+
+                FELint.CheckFlag(flag, errors, CONDTYPE.OBJECT, addr);
 
                 if (type == 0x5)
                 {//05=制圧ポイントと民家
@@ -4968,12 +4972,22 @@ namespace FEBuilderGBA
 
         private void OBJECT_N05_B10_ValueChanged(object sender, EventArgs e)
         {
+            OBJECT_N05_P4.Name = "OBJECT_N05_P4";
             if (OBJECT_N05_W10.Value == 0x22)
             {
-                OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
-                OBJECT_N05_L_2_FLAG.Hide();
-                OBJECT_N05_J_4_EVENTORCHEST.Text = R._("1を設定");
-                return;
+                if (PatchUtil.SearchStairsHackPatch() == PatchUtil.StairsHack_enum.Ver1)
+                {
+                    OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
+                    OBJECT_N05_L_2_FLAG.Hide();
+                    OBJECT_N05_J_4_EVENTORCHEST.Text = R._("1を設定");
+                    return;
+                }
+                else if (PatchUtil.SearchStairsHackPatch() == PatchUtil.StairsHack_enum.Ver2)
+                {
+                    OBJECT_N05_J_4_EVENTORCHEST.Text = R._("階段ID");
+                    OBJECT_N05_P4.Name = "OBJECT_N05_D4";
+                    return;
+                }
             }
 
             OBJECT_N05_J_2_FLAG.Text = GetNameOfAchievementFlag();

@@ -46,6 +46,7 @@ namespace FEBuilderGBA
             g_Cache_NullifyMovPatch = NullifyMovPatch.NoCache;
             g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
             g_Cache_OPClassReelSortPatch = OPClassReelSortExtends.NoCache;
+            g_cache_StairsHack = StairsHack_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -474,17 +475,72 @@ namespace FEBuilderGBA
             return (a == check_value);
         }
 
-        //StairsHack
-        public static bool SearchStairsHackPatch()
+        //階段拡張
+        public enum StairsHack_enum
         {
-            uint check_value;
-            uint address = Program.ROM.RomInfo.patch_stairs_hack(out check_value);
-            if (address == 0)
+            NO,             //なし
+            Ver1,
+            Ver2,
+            NoCache = (int)NO_CACHE
+        };
+        static StairsHack_enum g_cache_StairsHack = StairsHack_enum.NoCache;
+        //StairsHack
+        public static StairsHack_enum SearchStairsHackPatch()
+        {
+            if (g_cache_StairsHack == StairsHack_enum.NoCache)
             {
-                return false;
+                g_cache_StairsHack = SearchStairsHackPatch_Low();
             }
-            uint a = Program.ROM.u32(address);
-            return (a == check_value);
+            return g_cache_StairsHack;
+        }
+
+        public static StairsHack_enum SearchStairsHackPatch_Low()
+        {
+            uint enable_value = 0x47184b00;
+            if(Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    uint a = Program.ROM.u32(0x225C4);
+                    if (a == enable_value)
+                    {
+                        return StairsHack_enum.Ver1;
+                    }
+                }
+                else
+                {
+                    uint a = Program.ROM.u32(0x225F8);
+                    if (a == enable_value)
+                    {
+                        uint b = Program.ROM.u32(0x32154);
+                        if (b == enable_value)
+                        {
+                            return StairsHack_enum.Ver1;
+                        }
+                        return StairsHack_enum.Ver2;
+                    }
+                }
+            }
+            if(Program.ROM.RomInfo.version() == 7)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    uint a = Program.ROM.u32(0x219F8);
+                    if (a == enable_value)
+                    {
+                        return StairsHack_enum.Ver1;
+                    }
+                }
+                else
+                {
+                    uint a = Program.ROM.u32(0x21580);
+                    if (a == enable_value)
+                    {
+                        return StairsHack_enum.Ver1;
+                    }
+                }
+            }
+            return StairsHack_enum.NO;
         }
 
 

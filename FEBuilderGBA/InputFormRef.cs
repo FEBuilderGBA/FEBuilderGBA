@@ -2496,7 +2496,14 @@ namespace FEBuilderGBA
                     TextBoxEx link_object = ((TextBoxEx)link_info);
                     src_object.ValueChanged += (sender, e) =>
                     {
+                        if (GetTypeCh(prefix, src_object) == 'D')
+                        {//階段拡張などの補正不要なデータ
+                            link_object.Hide();
+                            return;
+                        }
+
                         uint id = (uint)src_object.Value;
+
                         if (U.isOffset(id) && U.IsOrderOfHuman(sender))
                         {//人間が、オフセット値を書いた場合、自動補正する
                             id = U.toPointer(id);
@@ -5152,6 +5159,16 @@ namespace FEBuilderGBA
 
             //コメントがあれば設定する
             UI_ReadUIToComment(addr, prefix, controls);
+        }
+
+        static char GetTypeCh(String prefix, Control info)
+        {
+            String name = SkipPrefixName(info.Name, prefix);
+            if (name.Length <= 0)
+            {
+                return ' ';
+            }
+            return name[0];
         }
 
         public bool IsSurrogateStructure;
