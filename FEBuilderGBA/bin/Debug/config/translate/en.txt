@@ -11234,7 +11234,7 @@ C-Rank Conversation
 This data is outside the support table.
 
 :C    51からA0まで\r\nB    A1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
-From C 51 to A 0.\r\nB From A1 to F0.\r\nA F1 or later.\r\n\r\nThe support value starts from the initial value and increases according to the progress when the characters are adjacent.\r\nWhen a certain number of support values \u200b\u200bare accumulated, support commands are displayed, and you can advance to the next level by having a support conversation.
+From C 51 to A0.\r\nB From A1 to F0.\r\nA F1 or later.\r\n\r\nThe support value starts from the initial value and increases according to the progress when the characters are adjacent.\r\nWhen a certain number of support values are accumulated, support commands are displayed, and you can advance to the next level by having a support conversation.
 
 :支援相手10
 Support Partner 10
