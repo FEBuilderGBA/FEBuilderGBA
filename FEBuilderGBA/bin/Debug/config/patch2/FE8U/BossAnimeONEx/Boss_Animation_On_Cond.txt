@@ -1,0 +1,6 @@
+01=BossFlag
+02=BossFlag&Enmey
+03=BossFlag&NPC
+04=Enmey
+05=NPC
+FF=ANY

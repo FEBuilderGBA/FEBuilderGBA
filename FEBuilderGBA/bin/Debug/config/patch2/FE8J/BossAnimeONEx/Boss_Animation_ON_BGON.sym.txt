@@ -1,0 +1,13 @@
+BattleBGON=$8C
+BossAnimeOnTable=$B0
+Loop=$10
+BattleBGOff=$86
+CheckUnit=$1A
+CheckMap=$28
+CheckCond=$36
+Found=$80
+BossAnimeOn_BossFlag=$76
+BossAnimeOn_BossFlagAndEnmey=$6E
+BossAnimeOn_BossFlagAndNPC=$64
+BossAnimeOn_ENEMY=$5A
+BossAnimeOn_NPC=$50

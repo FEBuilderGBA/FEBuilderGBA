@@ -1,0 +1,14 @@
+NAME=敵将強制アニメON EX(Install)
+NAME.en=Boss Animation ON EX(Install)
+NAME.zh=敌将强制动画开启 EX(Install)
+TYPE=EA
+TAG=#ENGINE
+
+INFO=設定でアニメをオフにしても、ボスフラグを持つ敵と戦うときは、強制的にアニメーションをONにします。\r\nこのパッチは改良版で、敵将でなくても強制アニメONにできます。\r\nまた、ボスフラグを持っているだけではなく、敵で且つボスフラグを持っている場合にのみ有効にするようにします。
+INFO.en=Even if you turn off animation in settings, when you fight an enemy with a boss flag, turn on animation forcibly.\r\nThis patch is an improved version, which allows you to force animation ON even if you are not an enemy general.\r\nAlso, instead of just having a boss flag, it will only be enabled if you are an enemy and have a boss flag.
+INFO.zh=即使您在设置中关闭动画，当您使用敌将标志与敌人战斗时，也会强行打开动画。\r\nThis patch is an improved version, which allows you to force animation ON even if you are not an enemy general.\r\nAlso, instead of just having a boss flag, it will only be enabled if you are an enemy and have a boss flag.
+
+AUTHOR=7743
+
+EA=install.event
+PATCHED_IF:0x57A7A=0x00 0x00 0x00 0x4B 0x18 0x47

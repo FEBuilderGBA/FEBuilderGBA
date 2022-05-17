@@ -1,0 +1,48 @@
+PUSH
+ORG 0x5896C		//FE8J
+//ORG 0x57A24	//FE8U
+jumpToHack(Boss_Animation_ON_BGON)
+
+ORG 0x589C2		//FE8J
+//ORG 0x57A7A	//FE8U
+BYTE 0x00 0x00
+jumpToHack(Boss_Animation_ON)
+POP
+
+
+ALIGN 4
+Boss_Animation_ON_BGON:
+#incbin "Boss_Animation_ON_BGON.dmp"
+POIN BossAnimeOnTable
+
+ALIGN 4
+Boss_Animation_ON:
+#incbin "Boss_Animation_ON.dmp"
+POIN BossAnimeOnTable
+
+#define BossAnimeOn_ANY					0xFF
+#define BossAnimeOn_BossFlag			1
+#define BossAnimeOn_BossFlagAndEnmey	2
+#define BossAnimeOn_BossFlagAndNPC		3
+#define BossAnimeOn_ENEMY				4
+#define BossAnimeOn_NPC					5
+
+#define BossAnimeOn_ANIME_1		1
+#define BossAnimeOn_ANIME_2		2
+
+ALIGN 4
+BossAnimeOnTable:	//sizeof()==4
+//	Unit(00=ANY)	Map(FF=ANY)	Cond							Anime
+BYTE	0x00		0xFF		BossAnimeOn_BossFlagAndEnmey	BossAnimeOn_ANIME_2
+BYTE	0x07 		0xFF		BossAnimeOn_NPC					BossAnimeOn_ANIME_2
+BYTE	0x0A 		0xFF		BossAnimeOn_NPC					BossAnimeOn_ANIME_2
+BYTE	0x09 		0xFF		BossAnimeOn_NPC					BossAnimeOn_ANIME_2
+BYTE	0x20 		0xFF		BossAnimeOn_ENEMY				BossAnimeOn_ANIME_2
+BYTE	0x12 		0xFF		BossAnimeOn_ENEMY				BossAnimeOn_ANIME_2
+BYTE	0x1C 		0xFF		BossAnimeOn_ENEMY				BossAnimeOn_ANIME_2
+BYTE	0x0E		0xFF		BossAnimeOn_ENEMY				BossAnimeOn_ANIME_2
+BYTE	0x16		0xFF		BossAnimeOn_ENEMY				BossAnimeOn_ANIME_2
+
+WORD	0x0	//TERM
+
+ALIGN 4

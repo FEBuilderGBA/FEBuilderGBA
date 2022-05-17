@@ -23,3 +23,6 @@ INFO.zh=即使您在设置中关闭动画，当您使用敌将标志与敌人战
 
 AUTHOR=7743
 NAME.zh=当敌人通用强制动画开启时，动画从背景开始。
+
+CONFLICT_IF:0x589C2=0x00 0x00 0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=Boss Animation ON EX

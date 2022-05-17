@@ -1,0 +1,14 @@
+AnimeOn=$98
+AnimeOff=$92
+BossAnimeOnTable=$B0
+Loop=$12
+Default=$8C
+CheckUnit=$1C
+CheckMap=$2A
+CheckCond=$38
+Found=$82
+BossAnimeOn_BossFlag=$78
+BossAnimeOn_BossFlagAndEnmey=$70
+BossAnimeOn_BossFlagAndNPC=$66
+BossAnimeOn_ENEMY=$5C
+BossAnimeOn_NPC=$52
