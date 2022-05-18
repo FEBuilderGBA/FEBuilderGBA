@@ -3530,6 +3530,28 @@ namespace FEBuilderGBA
             R.ShowWarning(alllocedMessage);
         }
 
+        public static uint AllocNewEventDirect(Form self, bool useYN)
+        {
+            if (useYN)
+            {
+                DialogResult dr = R.ShowYesNo("新規にイベント命令の領域を割り当てますか？");
+                if (dr != DialogResult.Yes)
+                {
+                    return U.NOT_FOUND;
+                }
+            }
+            Undo.UndoData undodata = Program.Undo.NewUndoData(self);
+            byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
+            uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
+            if (addr == U.NOT_FOUND)
+            {//割り当て失敗
+                return U.NOT_FOUND;
+            }
+            Program.Undo.Push(undodata);
+
+            return addr;
+        }
+
         static void MakeJumpEventOne(string prefix, List<Control> controls, Label jump_object, NumericUpDown Address, ListBox AddressList)
         {
             String link_name = SkipPrefixName(jump_object.Name, prefix);

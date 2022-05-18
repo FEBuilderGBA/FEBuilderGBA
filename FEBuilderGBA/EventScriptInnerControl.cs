@@ -1110,6 +1110,13 @@ namespace FEBuilderGBA
             {
                 text = " " + InputFormRef.GetTRANSITIONSPEED(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
+            {
+                if (U.toOffset(v) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+            }
 
 
             U.MakeTransparent(image);
@@ -1350,13 +1357,25 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
             {
-                if (Navigation != null)
+                if (Navigation == null)
                 {
-                    NavigationEventArgs navi_arg = new NavigationEventArgs();
-                    navi_arg.IsNewTab = true;
-                    navi_arg.Address = value;
-                    Navigation(this, navi_arg);
+                    return ;
                 }
+                if (value == 0)
+                {//0なら新規割り当て
+                    value = InputFormRef.AllocNewEventDirect(this.ParentForm, true);
+                    if (! U.isSafetyOffset(value))
+                    {
+                        return ;
+                    }
+                    value = U.toPointer(value);
+                    src_object.Value = value;
+                }
+
+                NavigationEventArgs navi_arg = new NavigationEventArgs();
+                navi_arg.IsNewTab = true;
+                navi_arg.Address = value;
+                Navigation(this, navi_arg);
             }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {
