@@ -3187,9 +3187,6 @@ Patch Generation Failed
 :ImportImageOneTimeが失敗しました
 ImportImageOneTime Failed
 
-:TSAEditorImageOneTimeが失敗しました
-TSAEditorImageOneTime Failed
-
 :lz77パレットなので変更できません。
 Since it is a lz77 palette, it cannot be changed.
 
@@ -3241,11 +3238,14 @@ Height / 8
 :パレットエディタ
 Palette Editor
 
+:TSA Editor(非推奨)
+TSA Editor(deprecated)
+
 :通常パレット
-Normal palette.
+Normal palette
 
 :LZ77パレット
-LZ77 palette.
+LZ77 palette
 
 :第2画像
 Second image

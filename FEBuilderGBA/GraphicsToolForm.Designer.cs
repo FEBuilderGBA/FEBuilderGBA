@@ -53,6 +53,7 @@
             this.PicWidth = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DataDumpButton = new System.Windows.Forms.Button();
             this.PaletteEditorButton = new System.Windows.Forms.Button();
             this.TSAEditorButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.Image2 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.KeepTSAComboBox = new System.Windows.Forms.ComboBox();
-            this.DataDumpButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTENO)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
@@ -429,6 +429,17 @@
             this.panel2.Size = new System.Drawing.Size(1311, 49);
             this.panel2.TabIndex = 79;
             // 
+            // DataDumpButton
+            // 
+            this.DataDumpButton.Location = new System.Drawing.Point(181, 4);
+            this.DataDumpButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.DataDumpButton.Name = "DataDumpButton";
+            this.DataDumpButton.Size = new System.Drawing.Size(160, 41);
+            this.DataDumpButton.TabIndex = 5;
+            this.DataDumpButton.Text = "Data Dump";
+            this.DataDumpButton.UseVisualStyleBackColor = true;
+            this.DataDumpButton.Click += new System.EventHandler(this.DataDumpButton_Click);
+            // 
             // PaletteEditorButton
             // 
             this.PaletteEditorButton.Location = new System.Drawing.Point(595, 4);
@@ -442,12 +453,12 @@
             // 
             // TSAEditorButton
             // 
-            this.TSAEditorButton.Location = new System.Drawing.Point(415, 4);
+            this.TSAEditorButton.Location = new System.Drawing.Point(352, 4);
             this.TSAEditorButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TSAEditorButton.Name = "TSAEditorButton";
-            this.TSAEditorButton.Size = new System.Drawing.Size(160, 41);
+            this.TSAEditorButton.Size = new System.Drawing.Size(223, 41);
             this.TSAEditorButton.TabIndex = 0;
-            this.TSAEditorButton.Text = "TSA Editor";
+            this.TSAEditorButton.Text = "TSA Editor(非推奨)";
             this.TSAEditorButton.UseVisualStyleBackColor = true;
             this.TSAEditorButton.Click += new System.EventHandler(this.TSAEditorButton_Click);
             // 
@@ -605,17 +616,6 @@
             this.KeepTSAComboBox.Size = new System.Drawing.Size(495, 26);
             this.KeepTSAComboBox.TabIndex = 10;
             this.KeepTSAComboBox.SelectedIndexChanged += new System.EventHandler(this.KeepTSAComboBox_SelectedIndexChanged);
-            // 
-            // DataDumpButton
-            // 
-            this.DataDumpButton.Location = new System.Drawing.Point(231, 4);
-            this.DataDumpButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.DataDumpButton.Name = "DataDumpButton";
-            this.DataDumpButton.Size = new System.Drawing.Size(160, 41);
-            this.DataDumpButton.TabIndex = 5;
-            this.DataDumpButton.Text = "Data Dump";
-            this.DataDumpButton.UseVisualStyleBackColor = true;
-            this.DataDumpButton.Click += new System.EventHandler(this.DataDumpButton_Click);
             // 
             // GraphicsToolForm
             // 

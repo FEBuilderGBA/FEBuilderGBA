@@ -20,3 +20,4 @@ INFO=進撃準備画面でアイテムを使う時の「ほんとうに使いま
 INFO.en="Are you sure you want to use this?" when using an item on the Prepare screen. Default cursor position on the "Do you really want to use it?" screen can be changed.\r\nIn vanilla, this is set to 'No', but can be changed to 'Yes'.
 
 INFO.zh=更改“您确定要使用它吗？”的默认光标位置在使用提前准备屏幕上的项目时。\r\n在香草中是“否”，但您可以将其更改为“是”。
+NAME.zh=使用提前准备屏幕上的项目时更改默认光标位置。

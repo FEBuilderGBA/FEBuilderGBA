@@ -516,6 +516,16 @@ namespace FEBuilderGBA
             {
                 this.DrawBimap = null;
             }
+
+            bool tsaeditorVisible = false;
+            if (ImageOption.SelectedIndex != 1)
+            {//無圧縮ではない
+                if (TSAOption.SelectedIndex >= 1)
+                {//TSAを利用する
+                    tsaeditorVisible = true;
+                }
+            }
+            TSAEditorButton.Visible = tsaeditorVisible;
         }
 
 
@@ -958,24 +968,45 @@ namespace FEBuilderGBA
 
         private void TSAEditorButton_Click(object sender, EventArgs e)
         {
-            string patch = MakePatch();
-            if (patch == "")
+            ImageTSAEditorForm f = (ImageTSAEditorForm)InputFormRef.JumpForm<ImageTSAEditorForm>(U.NOT_FOUND);
+            uint width8 = (uint)PicWidth.Value;
+            uint height8 = (uint)PicHeight.Value;
+
+            uint imageAddress = (uint)this.Image.Value;
+            uint zimgPointer = refPointer(imageAddress);
+
+            bool isHeaderTSA = false;
+            bool isLZ77TSA = false;
+            if (this.TSAOption.SelectedIndex == 1)
+            {//圧縮TSAを利用する
+                isLZ77TSA = true;
+            }
+            else if (this.TSAOption.SelectedIndex == 2)
+            {//圧縮ヘッダ付きTSAを利用する
+                isLZ77TSA = true;
+                isHeaderTSA = true;
+            }
+            else if (this.TSAOption.SelectedIndex == 3)
+            {//無圧縮ヘッダ付きTSAを利用する
+                isHeaderTSA = true;
+            }
+            //else if (this.TSAOption.SelectedIndex == 4)
+            //{//無圧縮TSAを利用する
+            //}
+
+            uint tasAddress = (uint)this.TSA.Value;
+            uint tsaPointer = refPointer(tasAddress);
+
+            uint paletteAddress = (uint)this.PALETTE.Value;
+            uint palettePointer = refPointer(paletteAddress);
+
+            int paletteCount = (int)U.atoi(USE_PALETTE_NUMBER.Text);
+            if (paletteCount <= 0)
             {
-                R.ShowStopError("パッチの生成に失敗しました");
-                return;
+                paletteCount = 1;
             }
 
-            Panel dummy = new Panel();
-            this.Controls.Add(dummy);
-
-            //パッチを生成してTSAEditorのボタンをクリックする.
-            bool r = PatchForm.TSAEditorImageOneTime(patch, dummy,this);
-            this.Controls.Remove(dummy);
-            if (r == false)
-            {
-                R.ShowStopError("TSAEditorImageOneTimeが失敗しました");
-                return;
-            }
+            f.Init(width8, height8, zimgPointer, isHeaderTSA, isLZ77TSA, tsaPointer, palettePointer, paletteAddress, paletteCount);
 
             Draw();
             this.FoundImages = FindImage();
@@ -1013,14 +1044,6 @@ namespace FEBuilderGBA
 
         private void KeepTSAComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (KeepTSAComboBox.SelectedIndex == 1)
-            {
-                TSAEditorButton.Show();
-            }
-            else
-            {
-                TSAEditorButton.Hide();
-            }
         }
 
         private void PaletteEditorButton_Click(object sender, EventArgs e)
