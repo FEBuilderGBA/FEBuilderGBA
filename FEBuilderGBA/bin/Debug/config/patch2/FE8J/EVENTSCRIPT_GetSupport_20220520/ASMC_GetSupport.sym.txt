@@ -1,0 +1,9 @@
+GetUnitInfoBySVAL1=$1A
+GetUnitInfoByCoord=$24
+GetUnitInfoByCurrent=$1E
+GetUnitInfo=$26
+ProcessMain=$2C
+NotFound=$68
+Loop=$3C
+Next=$64
+Exit=$6A
