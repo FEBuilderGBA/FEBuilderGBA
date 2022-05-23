@@ -14,3 +14,6 @@ AUTHOR=kao https://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/
 INFO=アイテム間接効果テーブルを拡張し、魔法や投げ槍で使うアニメーションを、近接攻撃と遠距離攻撃とで、それぞれ切り替えるパッチです。
 INFO.en=Patches the ROM to allow classes to have two different animations for magic.\r\nOne for melee range, and the other for ranged attack.\r\n
 INFO.zh=扩展项目间接效果表，用魔法和投枪使用的动画，是与近距离攻击和远距离攻击分别切换的补丁。
+
+CONFLICT_IF:0x58012=0x0C 0xE0
+CONFLICT_MESSAGE=IER BadHook!
