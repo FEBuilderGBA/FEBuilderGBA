@@ -117,7 +117,7 @@
 4132XXXXYYZZ0000	Load one NPC (green) unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXYYZZ0000	Load one Enemy unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y](SPAWN_ENEMY)(LOW)	{LOADUNIT}
 4F32XXXXYYZZ0000	Load one Player unit [XXXX:UNIT:Character] with it's default parameters at [YY:MAPX:X][ZZ:MAPY:Y], unit will dissapear at end of events(SPAWN_CUTSCENE_ALLY)(LOW)	{LOADUNIT}
-4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C	@STOREC	{COND}
+4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:DECIMAL:DistanceX][TT:DECIMAL:DistanceY]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C	@STOREC	{COND}
 202EXXYY	Get unit ID of the unit at the given coordinates(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y]	returns unit ID if there is a unit at coordinates	@STOREC	{COND}
 2F410000	ENDWARP
 2F41XXXX	ENDWARP[XXXX::Value1](LOW)

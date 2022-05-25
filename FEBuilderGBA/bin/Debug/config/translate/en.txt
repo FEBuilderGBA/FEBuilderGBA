@@ -3361,6 +3361,9 @@ For this animation, the C48 command (or Sxx command) is used.\r\nCurrently, the 
 :Midi楽器はFE楽器と並び順が違うので、\r\nNIMAPを利用することをお勧めします。
 Since the order of Midi instruments is different from that of FE instruments,\r\nrecommend using NIMAP.
 
+:このパッチは、NIMAPのDrumの音を改良します。
+This patch improves the sound of NIMAP's Drums.
+
 :この楽曲の楽譜は、12以上のトラックが存在しています。\r\nこの曲をゲームで再生するには、16_tracks_12_soundsが必要です。\r\nこのパッチを適応しますか？
 The music score of this song has more than 12 tracks.\r\nIn order to play this song in the game, 16_tracks_12_sounds is necessary.\r\nDo you want to adapt this patch?
 

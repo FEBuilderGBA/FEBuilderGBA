@@ -198,6 +198,9 @@ namespace FEBuilderGBA
             }
             else if (ext == ".MID" || ext == ".MIDI")
             {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.NIMAP_By_SongTrack);
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.DrumFix_By_SongTrack);
+
                 //楽器セットとオプションを選択してもらう.
                 SongTrackImportMidiForm f = (SongTrackImportMidiForm)InputFormRef.JumpFormLow<SongTrackImportMidiForm>();
                 f.Init((uint)P4.Value);
@@ -253,6 +256,9 @@ namespace FEBuilderGBA
             }
             else
             {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.NIMAP_By_SongTrack);
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.DrumFix_By_SongTrack);
+
                 //楽器セットを選択してもらう.
                 SongTrackImportSelectInstrumentForm f = (SongTrackImportSelectInstrumentForm)InputFormRef.JumpFormLow<SongTrackImportSelectInstrumentForm>();
                 f.Init((uint)P4.Value);

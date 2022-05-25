@@ -46,6 +46,7 @@ namespace FEBuilderGBA
             , C01Hack_By_ImageBattleAnimation
             , C48Hack_By_ImageBattleAnimation
             , NIMAP_By_SongTrack
+            , DrumFix_By_SongTrack
             , Track12_Over_By_SongTrack
             , MeleeAndMagicFix_By_Unit
             , MagicPatch_By_Menu
@@ -108,6 +109,25 @@ namespace FEBuilderGBA
                 {
                     patchName1 = "SOUND_NIMAP(Native Instrument Map)";///No Translate
                     patchName2 = "SOUND_NIMAP";///No Translate
+                }
+            }
+            else if (type == TYPE.DrumFix_By_SongTrack)
+            {
+                checkFunc = PatchUtil.SearchDRUMFIX;
+                reason = R._("このパッチは、NIMAPのDrumの音を改良します。");
+
+                if (! PatchUtil.SearchNIMAP())
+                {//NIMAPがないと不成立
+                    return false;
+                }
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    patchName1 = "drumfix";///No Translate
+                    patchName2 = "drumfix";///No Translate
+                }
+                else
+                {
+                    return false;
                 }
             }
             else if (type == TYPE.Track12_Over_By_SongTrack)

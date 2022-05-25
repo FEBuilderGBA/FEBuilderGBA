@@ -47,11 +47,6 @@ namespace FEBuilderGBA
             PickupInstrument();
         }
 
-        private void SongTrackImportSelectInstrumentForm_Load(object sender, EventArgs e)
-        {
-        }
-
-
         private void InstrumentSelectComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             uint addr = U.atoh(InstrumentSelectComboBox.Text);

@@ -190,6 +190,7 @@
 @ActionData@14	byte	yOther
 @ActionData@15	byte	trapType
 @ActionData@16	byte	suspendPointType
+@ActionData@17	byte	_pad17
 @ActionData@18	word	scriptedBattleHits
 @ActionData@1C	word	_Unknown1C
 

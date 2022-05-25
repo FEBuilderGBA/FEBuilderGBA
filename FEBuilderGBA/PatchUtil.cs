@@ -47,6 +47,8 @@ namespace FEBuilderGBA
             g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
             g_Cache_OPClassReelSortPatch = OPClassReelSortExtends.NoCache;
             g_cache_StairsHack = StairsHack_enum.NoCache;
+            g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
+            g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -638,18 +640,61 @@ namespace FEBuilderGBA
             return true;
         }
 
+        public enum NIMAP_enum
+        {
+            NO,             //なし
+            NIMAP,
+            NoCache = (int)NO_CACHE
+        };
+        static NIMAP_enum g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
         public static bool SearchNIMAP()
+        {
+            if (g_Cache_NIMAP_enum == NIMAP_enum.NoCache)
+            {
+                g_Cache_NIMAP_enum = SearchNIMAPLow();
+            }
+            return g_Cache_NIMAP_enum == NIMAP_enum.NIMAP;
+        }
+        static NIMAP_enum SearchNIMAPLow()
         {
             List<U.AddrResult> iset = PatchUtil.SearchInstrumentSet(100);
             for (int i = 0; i < iset.Count; i++)
             {
                 string name = iset[i].name;
-                if (name.IndexOf("NIMAP") >= 0)
+                if (name.IndexOf("InstrumentMap") >= 0)
                 {
-                    return true;
+                    return NIMAP_enum.NIMAP;
                 }
             }
-            return false;
+            return NIMAP_enum.NO;
+        }
+
+        public enum DrumFix_enum
+        {
+            NO,             //なし
+            DRUMFIX,
+            NoCache = (int)NO_CACHE
+        };
+        static DrumFix_enum g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
+        public static bool SearchDRUMFIX()
+        {
+            if (g_Cache_DrumFix_enum == DrumFix_enum.NoCache)
+            {
+                g_Cache_DrumFix_enum = SearchDRUMFIXLow();
+            }
+            return g_Cache_DrumFix_enum == DrumFix_enum.DRUMFIX;
+        }
+        static DrumFix_enum SearchDRUMFIXLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="DrumFix",	ver = "FE8J", addr = 0x212564,data = new byte[]{0x08, 0x3C, 0x00, 0xA2, 0xF0, 0x4B, 0x4F, 0x08, 0xFF, 0x00, 0xFF, 0xE2, 0x08, 0x3C, 0x00, 0xD9, 0xDC, 0x57, 0x4F, 0x08, 0xFF, 0x00, 0xFF, 0xCC}},
+                new PatchTableSt{ name="DrumFix",	ver = "FE8U", addr = 0x2228B4,data = new byte[]{0x8, 0x3C, 0x0, 0xA2, 0x40, 0x4F, 0x50, 0x8, 0xFF, 0x0, 0xFF, 0xE2, 0x8, 0x3C, 0x0, 0xD9, 0x2C, 0x5B, 0x50, 0x8, 0xFF, 0x0, 0xFF, 0xCC}},
+            };
+            if (SearchPatchBool(table))
+            {
+                return DrumFix_enum.DRUMFIX;
+            }
+            return DrumFix_enum.NO;
         }
 
         public enum MeleeAndMagicFix_enum
@@ -1763,7 +1808,6 @@ namespace FEBuilderGBA
         }
 
         static List<U.AddrResult> g_InstrumentSet = null;
-
         public static List<U.AddrResult> SearchInstrumentSet(uint currentData)
         {
             if (g_InstrumentSet == null)

@@ -117,26 +117,8 @@ namespace FEBuilderGBA
             }
         }
 
-        bool HasNIMAP()
-        {
-            for (int i = 0; i < InstrumentSelectComboBox.Items.Count; i++)
-            {
-                string name = InstrumentSelectComboBox.Items[i].ToString();
-                if (name.IndexOf("NatveInstrumentMap") >= 0)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         private void SongTrackImportMidiForm_Load(object sender, EventArgs e)
         {
-            if (!HasNIMAP())
-            {
-                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.NIMAP_By_SongTrack);
-                PickupInstrument();
-            }
             if (OptionForm.GetMidfix4agb() == "")
             {
                 UseMidfix4agb_checkBox.Checked = false;
