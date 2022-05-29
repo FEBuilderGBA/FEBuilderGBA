@@ -1,0 +1,2 @@
+Natural Cover: -3 damage taken
+when on terrain with effects.

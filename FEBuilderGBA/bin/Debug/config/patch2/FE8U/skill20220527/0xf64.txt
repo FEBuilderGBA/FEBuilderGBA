@@ -1,0 +1,3 @@
+Corrosion: Decrease durability
+of enemy's weapon by User's level
+(Skill/2% activation)

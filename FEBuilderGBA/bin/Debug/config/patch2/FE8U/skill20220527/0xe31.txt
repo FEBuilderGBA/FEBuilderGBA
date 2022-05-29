@@ -1,0 +1,2 @@
+Astra: 5 attacks at half damage.
+(Skill % activation)

@@ -1,0 +1,3 @@
+Wind Boost: Grants +6 Attack[N]
+Speed if unit's current HP is at[N]
+least 3 higher than the enemy's.

@@ -1,0 +1,2 @@
+Vantage: If HP < 50%,
+strike first when attacked.

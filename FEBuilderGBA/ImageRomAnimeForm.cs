@@ -620,6 +620,48 @@ namespace FEBuilderGBA
             f.Show();
         }
 
+        public static bool checkPonters(uint framePointer, uint tsaPointer, uint imagePointer, uint palettePointer)
+        {
+            if (U.isSafetyOffset(framePointer))
+            {
+                uint frameAddress = Program.ROM.u32(framePointer);
+                if (!U.isSafetyPointer(frameAddress))
+                {
+                    return false;
+                }
+            }
+
+            if (!U.isSafetyOffset(tsaPointer))
+            {
+                return false;
+            }
+            uint tsaAddress = Program.ROM.u32(tsaPointer);
+            if (!U.isSafetyPointer(tsaAddress))
+            {
+                return false;
+            }
+
+            if (!U.isSafetyOffset(imagePointer))
+            {
+                return false;
+            }
+            uint imageAddress = Program.ROM.u32(imagePointer);
+            if (!U.isSafetyPointer(imageAddress))
+            {
+                return false;
+            }
+
+            if (!U.isSafetyOffset(palettePointer))
+            {
+                return false;
+            }
+            uint paletteAddress = Program.ROM.u32(palettePointer);
+            if (!U.isSafetyPointer(paletteAddress))
+            {
+                return false;
+            }
+            return true;
+        }
 
         //全データの取得
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
@@ -634,6 +676,11 @@ namespace FEBuilderGBA
                 uint imagePointer = U.atoh(U.at(sp, 4));
                 uint palettePointer = U.atoh(U.at(sp, 5));
                 string name = U.at(sp, 6);
+
+                if (!checkPonters(framePointer, tsaPointer, imagePointer, palettePointer))
+                {
+                    continue;
+                }
 
                 uint frameCount = U.NOT_FOUND;
                 if (U.isSafetyOffset(framePointer))
@@ -656,7 +703,7 @@ namespace FEBuilderGBA
                                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
                         }
                     }
-                }
+                    }
 
                 if (frameCount == U.NOT_FOUND)
                 {

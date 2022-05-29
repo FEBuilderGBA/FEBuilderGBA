@@ -1,0 +1,2 @@
+Black Magic: Skill% chance to
+inflict a random status.
