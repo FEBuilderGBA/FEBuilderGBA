@@ -24,6 +24,7 @@ namespace FEBuilderGBA
         bool UseGoolgeTranslate;
         FETextDecode TextDecode = new FETextDecode();
         uint TextID0Addr;
+        bool IsWipeJPFont;
 
         void AddRecycle(uint id, List<Address> recycle)
         {
@@ -173,6 +174,11 @@ namespace FEBuilderGBA
             }
             ApplyStatusToLocalizationPatch();
         }
+        public void SetWipeJPFont(bool wipeJPFont)
+        {
+            this.IsWipeJPFont = wipeJPFont;
+        }
+
 
         //パッチの適用
         public void ApplyTranslatePatch(string to)
@@ -204,7 +210,6 @@ namespace FEBuilderGBA
 
             Program.LastSelectedFilename.Save(self, "", open);
             string filename = open.FileNames[0];
-
 
             ImportAllText(self, filename);
             return true;
@@ -244,6 +249,13 @@ namespace FEBuilderGBA
                     //次のテキスト
                     id = U.atoh(U.substr(line, 1));
                 }
+
+                //日本語フォントを上書きしてもいい場合
+                if (this.IsWipeJPFont)
+                {
+                    AddJPFonts(recycle);
+                }
+
                 RecycleAddress ra = new RecycleAddress(recycle);
 
                 id = U.NOT_FOUND;
@@ -648,6 +660,58 @@ namespace FEBuilderGBA
                 }
             }
             
+        }
+        void AddJPFonts(List<Address> recycle)
+        {
+            if (! Program.ROM.RomInfo.is_multibyte())
+            {//英語ROMなので無関係
+                return;
+            }
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                {            //TextFont
+                    uint fonttable = 0x593F74;
+                    uint fonttableSize = 896;
+                    uint start = 0x594304;
+                    uint end   = 0x5B8CDC;
+                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
+                }
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                {            //TextFont
+                    uint fonttable = 0xBDC1E0;
+                    uint fonttableSize = 896;
+                    uint start = 0xBC237C;
+                    uint end = 0xBFF760;
+                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
+                }
+            }
+
+        }
+        void AddJPFontRange(List<Address> recycle, uint fonttable, uint fonttableSize, uint start, uint end)
+        {
+            uint a = Program.ROM.u32(fonttable);
+            uint b = Program.ROM.u32(fonttable + 4);
+            if (! U.isSafetyPointer(a) && U.isSafetyPointer(b))
+            {
+                return ;
+            }
+            uint len = end - start;
+            Program.ROM.write_fill(start, len);
+            recycle.Add(new Address(start, len, U.NOT_FOUND, "WipeJPFont", Address.DataTypeEnum.BIN));
+
+            uint fonttableEnd = fonttable + fonttableSize;
+            for (uint i = start; i < end; i += 72)
+            {
+                uint p = U.toPointer(i);
+                uint foundAddr = U.GrepPointer(Program.ROM.Data, p, fonttable, fonttableEnd);
+                if (foundAddr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                Program.ROM.write_u32(foundAddr, 0);
+            }
         }
     }
 }

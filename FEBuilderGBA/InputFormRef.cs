@@ -4359,7 +4359,14 @@ namespace FEBuilderGBA
             }
             else if (linktype == "ATTRIBUTE")
             {
-                InputFormRef.JumpForm<SupportAttributeForm>(value, "AddressList", src_object);
+                if (value <= 0)
+                {
+                    InputFormRef.JumpForm<SupportAttributeForm>(value, "AddressList", src_object);
+                }
+                else
+                {
+                    InputFormRef.JumpForm<SupportAttributeForm>(value - 1, "AddressList", src_object);
+                }
             }
             else if (linktype == "SONGTRACK")
             {
@@ -8949,7 +8956,11 @@ namespace FEBuilderGBA
 
         public static int GetCorrectionStartID(Form f)
         {
-            if (f.Name == "UnitForm" || f.Name == "UnitFE7Form" || f.Name == "UnitFE6Form")
+            if (f.Name == "UnitForm" 
+                || f.Name == "UnitFE7Form" 
+                || f.Name == "UnitFE6Form" 
+                || f.Name == "SupportAttributeForm"
+                )
             {
                 return 1;
             }

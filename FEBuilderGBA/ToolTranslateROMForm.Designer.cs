@@ -140,6 +140,7 @@
             // 
             // SIMPLE_OVERRAIDE_JPFONT
             // 
+            this.SIMPLE_OVERRAIDE_JPFONT.AccessibleDescription = "日本語フォントを潰して約100kを確保します。\\r\\n翻訳により日本語がすべて消える場合にのみ指定できます。";
             this.SIMPLE_OVERRAIDE_JPFONT.AutoSize = true;
             this.SIMPLE_OVERRAIDE_JPFONT.Location = new System.Drawing.Point(206, 120);
             this.SIMPLE_OVERRAIDE_JPFONT.Name = "SIMPLE_OVERRAIDE_JPFONT";
@@ -147,7 +148,6 @@
             this.SIMPLE_OVERRAIDE_JPFONT.TabIndex = 102;
             this.SIMPLE_OVERRAIDE_JPFONT.Text = "日本語フォントの上書き";
             this.SIMPLE_OVERRAIDE_JPFONT.UseVisualStyleBackColor = true;
-            this.SIMPLE_OVERRAIDE_JPFONT.Visible = false;
             // 
             // SimpleTranslateToTranslateDataFilenameButton
             // 
@@ -630,6 +630,7 @@
             // 
             // X_OVERRAIDE_JPFONT
             // 
+            this.X_OVERRAIDE_JPFONT.AccessibleDescription = "日本語フォントを潰して約100kを確保します。\\r\\n翻訳により日本語がすべて消える場合にのみ指定できます。";
             this.X_OVERRAIDE_JPFONT.AutoSize = true;
             this.X_OVERRAIDE_JPFONT.Location = new System.Drawing.Point(617, 77);
             this.X_OVERRAIDE_JPFONT.Name = "X_OVERRAIDE_JPFONT";
@@ -637,7 +638,6 @@
             this.X_OVERRAIDE_JPFONT.TabIndex = 99;
             this.X_OVERRAIDE_JPFONT.Text = "日本語フォントの上書き";
             this.X_OVERRAIDE_JPFONT.UseVisualStyleBackColor = true;
-            this.X_OVERRAIDE_JPFONT.Visible = false;
             // 
             // label2
             // 

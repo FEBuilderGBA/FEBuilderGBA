@@ -1,0 +1,21 @@
+NAME=サイレスの杖が命中した時にBGMを消さない
+NAME.en=Not turn off the background music when Silence staff hits the target.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Mute BGM|OFF|Fix: Not turn off|FIX
+
+DETERMINATION_ADDRESS=0x0624C0
+
+OFF:0x0624C0=0x10 0xF0 0xCE 0xFC
+FIX:0x0624C0=0x00 0x00 0x00 0x00
+
+AUTHOR=7743
+INFO=サイレスの杖の戦闘アニメで、敵に命中した時に音楽を消す演出があります。このパッチはそれを無効にします。
+INFO.en=In the battle animation of Silence staff, there is a production that turns off the music when hitting an enemy. This patch disables it.
+
+
+NAME.zh=Not turn off the background music when Silence staff hits the target.
+INFO.zh=In the battle animation of Silence staff, there is a production that turns off the music when hitting an enemy. This patch disables it.

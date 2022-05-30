@@ -24,7 +24,7 @@ namespace FEBuilderGBA
 
             useAutoTranslateCheckBox_CheckedChanged(null, null);
 
-            if (! Program.ROM.RomInfo.is_multibyte())
+            if (! Program.ROM.RomInfo.is_multibyte() && Program.ROM.RomInfo.version() >= 7)
             {
                 SIMPLE_OVERRAIDE_JPFONT.Hide();
                 X_OVERRAIDE_JPFONT.Hide();
@@ -50,6 +50,7 @@ namespace FEBuilderGBA
 
             ToolTranslateROM trans = new ToolTranslateROM();
             trans.CheckTextImportPatch(true);
+            trans.SetWipeJPFont(X_OVERRAIDE_JPFONT.Checked);
             trans.ImportAllText(this);
         }
 
@@ -264,6 +265,7 @@ namespace FEBuilderGBA
             string to = U.InnerSplit(Translate_to.Text, "=", 0);
             string fromrom = SimpleTranslateFromROMFilename.Text;
             string torom = SimpleTranslateToROMFilename.Text;
+            bool wipeJPFont = SIMPLE_OVERRAIDE_JPFONT.Checked;
 
             ToolTranslateROM trans = new ToolTranslateROM();
             trans.ApplyTranslatePatch(to);
@@ -272,6 +274,9 @@ namespace FEBuilderGBA
             string translateDataFilename = SimpleTranslateToTranslateDataFilename.Text;
             if (File.Exists(translateDataFilename))
             {
+                trans.SetWipeJPFont(wipeJPFont);
+                wipeJPFont = false;
+
                 trans.ImportAllText(this, translateDataFilename);
             }
 
@@ -282,6 +287,9 @@ namespace FEBuilderGBA
 
             //それ以外のデータの翻訳
             {
+                trans.SetWipeJPFont(wipeJPFont);
+                wipeJPFont = false;
+
                 string writeTextFileName = Path.GetTempFileName();
 
                 trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false,false);
