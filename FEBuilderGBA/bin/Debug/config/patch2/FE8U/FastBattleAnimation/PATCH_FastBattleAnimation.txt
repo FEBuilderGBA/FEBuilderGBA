@@ -1,6 +1,6 @@
-﻿NAME=Aボタンで戦闘アニメを早送りできるようにする
-NAME.en=Allow fast-forwarding of battle animations with the A button
-NAME.zh=Allow fast-forwarding of battle animations with the A button
+﻿NAME=Aボタンで戦闘アニメを早送りできるようにする 20220324
+NAME.en=Allow fast-forwarding of battle animations with the A button 20220324
+NAME.zh=Allow fast-forwarding of battle animations with the A button 20220324
 
 TYPE=EA
 TAG=#EVENT
@@ -17,3 +17,4 @@ PATCHED_IF:0x4FED0=0x00 0x4B 0x18 0x47
 
 AUTHOR=7743
 
+DEPRECATED=1

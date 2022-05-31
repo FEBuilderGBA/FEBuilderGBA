@@ -1,0 +1,22 @@
+﻿NAME=Aボタンで戦闘アニメを早送りできるようにする 20220531(Edit)
+NAME.en=Allow fast-forwarding of battle animations with the A button 20220531(Edit)
+NAME.zh=Allow fast-forwarding of battle animations with the A button 20220531(Edit)
+
+TYPE=ADDR
+TAG=#EVENT
+EA=Install.event
+
+INFO=戦闘アニメーション中に特定のボタンを押せば早送りできるようにします。\r\nエミュレータのフレームスキップとは異なりBGMは早送りされずアニメーションだけを早送りします。\r\nCircleの同様の実装と比べて、いくつかのメリットがあります。\r\n1つは、長い戦闘アニメーションが、逆に遅延する副作用がないためです。\r\n2つ目は、魔法も早送りできることです。
+
+INFO.en=Allows fast-forwarding by pressing the some button during combat animations.\r\nUnlike frame skipping on emulators, the BGM is not fast-forwarded, only the animation is fast-forwarded.\r\nCompared to a similar implementation in Circle, this has several advantages.\r\nOne is that long combat animations do not have the side-effect of being delayed in the opposite direction.\r\nThe second is that magic can also be fast-forwarded.
+INFO.zh=Allows fast-forwarding by pressing the some button during combat animations.\r\nUnlike frame skipping on emulators, the BGM is not fast-forwarded, only the animation is fast-forwarded.\r\nCompared to a similar implementation in Circle, this has several advantages.\r\nOne is that long combat animations do not have the side-effect of being delayed in the opposite direction.\r\nThe second is that magic can also be fast-forwarded.
+
+
+//既に適応されたかどうか
+IF:0x50C44=0x00 0x4B 0x18 0x47
+
+ADDRESS=$FGREP4ENDA FastBattleAnimation.dmp
+COMBO=A Button|0x01 0x00|B Button|0x02 0x00|L Button|0x00 0x02|R Button|0x00 0x01|Top Button|0x40 0x00|Buttom Button|0x80 0x00|Left Button|0x20 0x00|Right Button|0x10 0x00|Start Button|0x04 0x00|Select Button|0x08 0x00
+
+AUTHOR=7743
+
