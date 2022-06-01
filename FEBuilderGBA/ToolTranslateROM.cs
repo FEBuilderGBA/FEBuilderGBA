@@ -669,34 +669,6 @@ namespace FEBuilderGBA
             }
             if (Program.ROM.RomInfo.version() == 8)
             {
-                {            //ItemFont Part1
-                    uint fonttable = 0x57994C;
-                    uint fonttableSize = 896;
-                    uint start = 0x579CDC;
-                    uint end   = 0x57B164;
-//                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
-                }
-                {            //ItemFont Part1.5
-                    uint fonttable = 0x57994C;
-                    uint fonttableSize = 896;
-                    uint start = 0x57B2CC;
-                    uint end   = 0x57C8BC;
-//                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
-                }
-                {            //ItemFont Part2
-                    uint fonttable = 0x57994C;
-                    uint fonttableSize = 896;
-                    uint start = 0x57E4DC;
-                    uint end   = 0x5912A4;
-//                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
-                }
-                {            //ItemFont Part3
-                    uint fonttable = 0x57994C;
-                    uint fonttableSize = 896;
-                    uint start = 0x59140C;
-                    uint end   = 0x593E3C;
-                    AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
-                }
                 {            //TextFont
                     uint fonttable = 0x593F74;
                     uint fonttableSize = 896;
