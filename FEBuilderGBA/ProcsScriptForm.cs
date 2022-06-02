@@ -188,7 +188,12 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    uint p = Program.ROM.p32(pair.Key);
+                    uint p = Program.ROM.u32(pair.Key);
+                    if (!U.isSafetyPointer(p))
+                    {
+                        continue;
+                    }
+                    p = U.toOffset(p);
                     ret[p] = pair.Value;
                 }
                 return ret;

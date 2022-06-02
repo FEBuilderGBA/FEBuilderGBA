@@ -814,6 +814,9 @@ namespace FEBuilderGBA
         {
             byte[] newbin = LZ77.compress(bin);
 
+            //長さが可変長になるので、元のデータをゼロクリア
+            U.write_fill(this.WriteROMData32MB, addr, datasize);
+
             //領域の確保
             uint writeaddr = 0;
             if (!isVanilaExtrendsROMArea(addr + datasize)

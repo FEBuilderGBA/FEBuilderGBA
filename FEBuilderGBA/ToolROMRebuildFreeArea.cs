@@ -154,7 +154,6 @@ namespace FEBuilderGBA
                 , ""
                 , Address.DataTypeEnum.FFor00);
         }
-
         
         
         //空き領域から割り当てができるか?
