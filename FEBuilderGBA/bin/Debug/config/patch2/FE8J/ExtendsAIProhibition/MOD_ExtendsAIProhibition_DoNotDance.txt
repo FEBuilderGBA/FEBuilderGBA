@@ -1,0 +1,6 @@
+IF:0x3ECD0=0x00 0x48
+
+FORM=AIMapSettingForm
+L_0_BIT_20=踊る禁止
+L_0_BIT_20.en=Deny Dance
+L_0_BIT_20.zh=Deny Dance

@@ -1,0 +1,16 @@
+NAME=AI禁止拡張 踊る
+NAME.en=AI Prohibited Expansion: Dance
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x03ECD0=0x00 0x48
+
+BIN:$FREEAREA=ExtendsAIProhibition_DoNotDance.dmp
+JUMP:0x3ECD0=ExtendsAIProhibition_DoNotDance.dmp
+
+
+INFO=AIの章ごと設定に、踊る禁止を追加します
+AUTHOR=7754
+INFO.en=Add a dance ban to the AI \u200b\u200bchapter-by-chapter settings.
+NAME.zh=AI禁令扩张舞。
+INFO.zh=在AI逐章设置中添加舞蹈禁令。

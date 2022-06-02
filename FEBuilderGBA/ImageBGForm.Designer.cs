@@ -49,6 +49,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -62,7 +63,7 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.GraphicsToolButton = new System.Windows.Forms.Button();
+            this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
             this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
@@ -91,6 +92,7 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.DetailErrorMessageBox);
             this.DragTargetPanel.Controls.Add(this.X_REF);
             this.DragTargetPanel.Controls.Add(this.X_BG_PIC);
             this.DragTargetPanel.Controls.Add(this.label8);
@@ -335,6 +337,17 @@
             this.DragTargetPanel2.Size = new System.Drawing.Size(1051, 43);
             this.DragTargetPanel2.TabIndex = 73;
             // 
+            // GraphicsToolButton
+            // 
+            this.GraphicsToolButton.Location = new System.Drawing.Point(794, 9);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
+            // 
             // DecreaseColorTSAToolButton
             // 
             this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(580, 9);
@@ -479,16 +492,18 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // GraphicsToolButton
+            // DetailErrorMessageBox
             // 
-            this.GraphicsToolButton.Location = new System.Drawing.Point(794, 9);
-            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.GraphicsToolButton.Name = "GraphicsToolButton";
-            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
-            this.GraphicsToolButton.TabIndex = 204;
-            this.GraphicsToolButton.Text = "グラフィックツール";
-            this.GraphicsToolButton.UseVisualStyleBackColor = true;
-            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
+            this.DetailErrorMessageBox.ErrorMessage = "";
+            this.DetailErrorMessageBox.Location = new System.Drawing.Point(3, 448);
+            this.DetailErrorMessageBox.Multiline = true;
+            this.DetailErrorMessageBox.Name = "DetailErrorMessageBox";
+            this.DetailErrorMessageBox.Placeholder = "";
+            this.DetailErrorMessageBox.ReadOnly = true;
+            this.DetailErrorMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.DetailErrorMessageBox.Size = new System.Drawing.Size(763, 103);
+            this.DetailErrorMessageBox.TabIndex = 204;
+            this.DetailErrorMessageBox.Visible = false;
             // 
             // ImageBGForm
             // 
@@ -560,5 +575,6 @@
         private ListBoxEx X_REF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button GraphicsToolButton;
+        private TextBoxEx DetailErrorMessageBox;
     }
 }

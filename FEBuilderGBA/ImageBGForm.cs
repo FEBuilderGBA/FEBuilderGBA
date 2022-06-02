@@ -66,6 +66,8 @@ namespace FEBuilderGBA
         {
             X_BG_PIC.Image = DrawBG((uint)P0.Value, (uint)P8.Value, (uint)P4.Value);
             UpdateRef((uint)this.AddressList.SelectedIndex);
+
+            ShowWarningMessage();
         }
 
         public static string GetComment(uint id)
@@ -245,6 +247,25 @@ namespace FEBuilderGBA
                 , 8
                 , 0);
             f.Show();
+        }
+        void ShowWarningMessage()
+        {
+            uint bgid = (uint)this.AddressList.SelectedIndex;
+            if (bgid == Program.ROM.RomInfo.bg_reserve_black_bgid())
+            {
+                DetailErrorMessageBox.Text = R._("このデータは、真っ黒な背景として画像としてシステムに予約されています。\r\n変更しないことをお勧めします。");
+                DetailErrorMessageBox.Show();
+            }
+            else if (bgid == Program.ROM.RomInfo.bg_reserve_random_bgid())
+            {
+                DetailErrorMessageBox.Text = R._("このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。");
+                DetailErrorMessageBox.Show();
+            }
+            else
+            {
+                DetailErrorMessageBox.Text = "";
+                DetailErrorMessageBox.Hide();
+            }
         }
     }
 }

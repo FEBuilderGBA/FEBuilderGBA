@@ -486,6 +486,8 @@ namespace FEBuilderGBA
         public uint vanilla_plain_config_address() { return 0x197170; }
         public uint vanilla_plain_image_address() { return 0x174C50; }
         public uint map_minimap_tile_array_pointer() { return 0xAC44C; } //minimapのチップ割り当て
+        public uint bg_reserve_black_bgid() { return 0x4f; }
+        public uint bg_reserve_random_bgid(){ return 0x51; }
         
         public string get_shop_name(uint shop_object)//店の名前
         {

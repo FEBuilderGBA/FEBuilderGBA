@@ -46,6 +46,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.ExportButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -303,6 +303,17 @@
             this.panel3.Size = new System.Drawing.Size(1034, 43);
             this.panel3.TabIndex = 73;
             // 
+            // GraphicsToolButton
+            // 
+            this.GraphicsToolButton.Location = new System.Drawing.Point(775, 9);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 203;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
+            // 
             // DecreaseColorTSAToolButton
             // 
             this.DecreaseColorTSAToolButton.Location = new System.Drawing.Point(555, 9);
@@ -480,17 +491,6 @@
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(132, 25);
             this.SelectAddress.TabIndex = 40;
-            // 
-            // GraphicsToolButton
-            // 
-            this.GraphicsToolButton.Location = new System.Drawing.Point(775, 9);
-            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.GraphicsToolButton.Name = "GraphicsToolButton";
-            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
-            this.GraphicsToolButton.TabIndex = 203;
-            this.GraphicsToolButton.Text = "グラフィックツール";
-            this.GraphicsToolButton.UseVisualStyleBackColor = true;
-            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageBattleBGForm
             // 

@@ -3577,6 +3577,12 @@ Battle Platforms
 :BGが極端に少ないです。破損している可能性があります。
 BG is extremely low.It may be damaged.
 
+:このデータは、真っ黒な背景として画像としてシステムに予約されています。\r\n変更しないことをお勧めします。
+This data is reserved in the system as an image as a black background.\r\nWe recommend that you do not change it.
+
+:このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。
+This data is reserved as a random background used to display assistive conversations in the system menu.\r\nWe recommend that you do not change it.
+
 :ヘッダ付きTSA
 TSA with header
 
