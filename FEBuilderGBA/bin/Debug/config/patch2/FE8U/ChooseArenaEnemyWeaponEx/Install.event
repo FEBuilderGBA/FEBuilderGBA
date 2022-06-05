@@ -1,0 +1,11 @@
+PUSH
+//ORG 0x3182C	//{J}
+ORG 0x318E0	//{U}
+jumpToHack(ChooseArenaEnemyWeaponEx)
+POP
+
+ALIGN 4
+ChooseArenaEnemyWeaponEx:
+#incbin "ChooseArenaEnemyWeaponEx.dmp"
+
+ALIGN 4

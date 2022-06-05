@@ -1,0 +1,19 @@
+NAME=闘技場の敵の武器選出の改善
+INFO=闘技場で武器を選出するルーチンを改良します。\r\n1. 反撃可能な武器を必ず選出します。\r\nたとえば、剣でフォレストナイトと戦うと剣を選出し、弓で戦うと弓を選出し、魔法で戦うと剣か弓を選出します。\r\n2. 複数の利用可能な武器レベルからランダムに選出します。\r\nたとえば、剣と槍と斧を装備可能な場合は、1/3の確率でどちらかを選択します。
+
+NAME.en=Improvements in selection of weapons for enemies in the arena
+INFO.en=Improve the routine of selecting weapons in the arena.\r\n1. Always select weapons that can counterattack.\r\nFor example, when fighting a Ranger with a sword, select a sword; when fighting a Ranger with a bow, select a bow; when fighting a Ranger with magic, select a sword or a bow.\r\n2. Randomly select from multiple available weapon levels.\r\n
+For example, if a sword, lance and axe are available, there is a 1/3 chance that one of them will be selected.
+
+NAME.zh=Improvements in selection of weapons for enemies in the arena
+INFO.zh=Improve the routine of selecting weapons in the arena.\r\n1. Always select weapons that can counterattack.\r\nFor example, when fighting a Ranger with a sword, select a sword; when fighting a Ranger with a bow, select a bow; when fighting a Ranger with magic, select a sword or a bow.\r\n2. Randomly select from multiple available weapon levels.\r\n
+For example, if a sword, lance and axe are available, there is a 1/3 chance that one of them will be selected.
+
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x318E0=0x00 0x4B 0x18 0x47
+
+EA=Install.event
+AUTHOR=7743

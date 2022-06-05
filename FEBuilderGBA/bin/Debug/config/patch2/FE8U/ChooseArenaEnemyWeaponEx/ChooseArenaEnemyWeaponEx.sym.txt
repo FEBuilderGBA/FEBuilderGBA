@@ -1,0 +1,7 @@
+Loop=$18
+Break=$44
+Continue=$40
+MeleeAttack=$30
+BowAttack=$36
+MagicAttack=$2E
+StoreWeapon=$3C

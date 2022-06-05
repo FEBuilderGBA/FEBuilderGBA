@@ -1,0 +1,28 @@
+ALIGN 4
+PUSH 
+ORG CurrentOffset+1
+GetTargetCoords:
+POP 
+#incbin "GetTargetCoords.dmp"
+
+// Returns the coordinates of the target unit from 0x203A958+0x0D into memory slot C 
+// Returns (-1) if it found no unit, or if the unit is dead/undeployed/escaped 
+//ASMC GetTargetCoords
+//SADD sB sC s0 
+//CUSA (-2) 
+
+
+
+ALIGN 4
+PUSH 
+ORG CurrentOffset+1 
+GetTargetUnitID:
+POP 
+#incbin "GetTargetUnitID.dmp"
+
+// Returns the unit ID of the target unit from 0x203A958+0x0D into memory slot C 
+// Returns 0x100 if it found no unit, or if the unit is dead/undeployed/escaped 
+// this is because unit IDs 0 and (-1) are already reserved. 0x100 should not be used for anything already. 
+
+
+ALIGN 4

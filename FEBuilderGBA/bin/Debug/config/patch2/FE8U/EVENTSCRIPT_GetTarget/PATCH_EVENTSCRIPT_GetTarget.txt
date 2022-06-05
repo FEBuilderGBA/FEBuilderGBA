@@ -1,0 +1,30 @@
+NAME=GetTarget イベント命令からターゲットユニットを取得する(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 GetTargetCoords.dmp=0x00 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=GetTargetCoords.dmp
+BIN:$FREEAREA:2=GetTargetUnitID.dmp
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/48
+
+INFO=イベント命令から、イベントを発生させている相手のターゲットのユニットを取得します。\r\n会話をしている場合は、会話相手を取得します。\r\n戦闘をしている場合は、戦っている相手を取得します。
+
+
+EVENTSCRIPT:1=400D0000{$L1:GetTargetCoords.dmp}	ターゲットユニットの座標を取得(GetTargetCoords)	@STOREC	{COND}
+EVENTSCRIPT:2=400D0000{$L1:GetTargetUnitID.dmp}	ターゲットユニットのUnitIDを取得(GetTargetUnitID)	@STOREC	{COND}
+
+NAME.en=Add Event: GetTargetCoords, GetTargetUnitID
+INFO.en=This patch retrieves the target unit that is generating the event from the event instruction.\r\nIf you are having a conversation, it retrieves the conversational partner.\r\nIf you are having a battle, it retrieves the opponent you are fighting.
+
+EVENTSCRIPT:1.en=400D0000{$L1:GetTargetCoords.dmp}	Get coordinates of target unit(GetTargetCoords)	@STOREC	{COND}
+EVENTSCRIPT:2.en=400D0000{$L1:GetTargetUnitID.dmp}	Get UnitID of target unit(GetTargetUnitID)	@STOREC	{COND}
+
+NAME.zh=Add Event: GetTargetCoords, GetTargetUnitID
+INFO.zh=This patch retrieves the target unit that is generating the event from the event instruction.\r\nIf you are having a conversation, it retrieves the conversational partner.\r\nIf you are having a battle, it retrieves the opponent you are fighting.
+
+EVENTSCRIPT:1.zh=400D0000{$L1:GetTargetCoords.dmp}	Get coordinates of target unit(GetTargetCoords)	@STOREC	{COND}
+EVENTSCRIPT:2.zh=400D0000{$L1:GetTargetUnitID.dmp}	Get UnitID of target unit(GetTargetUnitID)	@STOREC	{COND}
