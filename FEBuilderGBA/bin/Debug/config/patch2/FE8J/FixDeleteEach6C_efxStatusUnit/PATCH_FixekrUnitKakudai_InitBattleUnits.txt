@@ -1,0 +1,18 @@
+NAME=バニラのekrUnitKakudai_InitBattleUnitsのDeleteEach6C_efxStatusUnit忘れを修正
+NAME.en=Fix DeleteEach6C_efxStatusUnit forgetting of ekrUnitKakudai_InitBattleUnits in vanilla
+NAME.zh=Fix DeleteEach6C_efxStatusUnit forgetting of ekrUnitKakudai_InitBattleUnits in vanilla
+
+AUTHOR=7743
+
+INFO=毒状態のユニットで、リザーブやラトナなどの全体回復を使った後で、 DeleteEach6C_efxStatusUnit を発行していないバグを修正します\r\nこのバグのために、efxStatusUnit procs が残った状態になり、顔画像が毒の色の紫に染まってしまうバグが発生します。\r\nこれはFE8Jでのみ発生するバグです。 FE8Uでは既に修正されています。
+INFO.en=Fix a bug in which DeleteEach6C_efxStatusUnit was not issued after using a total recovery such as Fortify or Latona on a poisoned unit\r\nThis bug caused the efxStatusUnit procs to remain and the Portrait to turn purple, the color of the poison.\r\nThis bug only occurs in FE8J. It has already been fixed in FE8U.
+INFO.zh=Fix a bug in which DeleteEach6C_efxStatusUnit was not issued after using a total recovery such as Fortify or Latona on a poisoned unit\r\nThis bug caused the efxStatusUnit procs to remain and the Portrait to turn purple, the color of the poison.\r\nThis bug only occurs in FE8J. It has already been fixed in FE8U.
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x5792C=0x00 0x4B
+
+BIN:$FREEAREA=fix_ekrUnitKakudai_InitBattleUnits.dmp
+JUMP:0x5792C=fix_ekrUnitKakudai_InitBattleUnits.dmp

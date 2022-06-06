@@ -5614,8 +5614,8 @@ r3=X tile position of menu of right	{U}
 08052840	EkrDispUP_8051B48	{J}
 080528A8	ekrDispUP_Loop	{J}
 08054BF8	StartSpellBG_FLASH	{J}
-080538A8	NewEfxStatusUnit	{J}
-0805582C	DeleteEach6C_efxStatusUnit	{J}
+08055704	NewEfxStatusUnit	{J}
+
 08055C78	NewEfxSpellCast	{J}
 08056108	SetSomethingSpellFxToTrue	{J}
 08056114	SetSomethingSpellFxToFalse	{J}

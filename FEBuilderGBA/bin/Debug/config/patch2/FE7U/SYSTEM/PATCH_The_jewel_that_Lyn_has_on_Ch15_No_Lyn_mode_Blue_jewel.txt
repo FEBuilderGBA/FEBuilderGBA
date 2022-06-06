@@ -1,0 +1,17 @@
+NAME=Ch15でリンが持っている宝玉(リン編をスキップした場合)
+NAME.en=The jewel that Lyn has on Ch15 (No Lyn mode/Blue jewel)
+NAME.zh=The jewel that Lyn has on Ch15 (No Lyn mode/Blue jewel)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7D07E
+ADDRESS_TYPE=ITEM
+DEFAULT=0x74
+
+AUTHOR=Shuusuke, 7743, Satel
+
+INFO=リン編をスキップした時は、バニラでは青い宝玉をリンがもっています。
+INFO.en=If you do not play Lyn mode, you can get a blue jewel on Ch15.
+INFO.zh=If you do not play Lyn mode, you can get a blue jewel on Ch15.
