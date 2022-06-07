@@ -5946,6 +5946,10 @@ namespace FEBuilderGBA
             }
             uint count = rom.u16(addr);
 //            Debug.Assert(count <= 0x14);
+            if (count <= 0 || count >= 0x100)
+            {//めちゃくちゃな値なので無視
+                return 0;
+            }
 
             return 2 + count * 2 * 3;
 
@@ -5971,6 +5975,10 @@ namespace FEBuilderGBA
                     addr += 8;
                     break;
                 }
+                if (addr02 >= 0x3000)
+                {
+                    break;
+                }
             }
 
             return (addr - first) ;
@@ -5989,6 +5997,10 @@ namespace FEBuilderGBA
                 if (addr02 == 0)
                 {
                     addr += 2;
+                    break;
+                }
+                if (addr02 >= 0x3000)
+                {
                     break;
                 }
             }

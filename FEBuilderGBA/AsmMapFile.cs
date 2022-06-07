@@ -667,8 +667,11 @@ namespace FEBuilderGBA
                         //p.Pointer = pointer; //keyに移動.
 
                         ParseFuncNamePlus2(sp, out p.Name, out p.ResultAndArgs, out p.TypeName);
-                        TypeToLengthAndName(p, pointer, rom);
-                        AsmMap[pointer] = p;
+                        bool r = TypeToLengthAndName(p, pointer, rom);
+                        if (r)
+                        {
+                            AsmMap[pointer] = p;
+                        }
                     }
 
                 }
@@ -800,133 +803,248 @@ namespace FEBuilderGBA
         }
 
 
-        void TypeToLengthAndName(AsmMapSt p,uint pointer, ROM rom)
+        bool TypeToLengthAndName(AsmMapSt p,uint pointer, ROM rom)
         {
             string type = p.TypeName;
             if (type == "LZ77")
             {
-                p.Length = LZ77.getCompressedSize(rom.Data, U.toOffset(pointer));
+                uint size = LZ77.getCompressedSize(rom.Data, U.toOffset(pointer));
+                if (size <= 0)
+                {
+                    return false;
+                }
+                p.Length = size;
+                return true;
             }
-            else if (type == "OAMREGS")
+            if (type == "OAMREGS")
             {
-                p.Length = U.OAMREGSLength(U.toOffset(pointer), rom);
+                uint size = U.OAMREGSLength(U.toOffset(pointer), rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+                p.Length = size;
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
+                return true;
             }
-            else if (type == "OAMREGS_ARRAY")
+            if (type == "OAMREGS_ARRAY")
             {
-                p.Length = ScanOAMREGSTable(pointer,p.Name, rom);
+                uint size = ScanOAMREGSTable(pointer, p.Name, rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+                p.Length = size;
+                return true;
             }
-            else if (type == "TEXTBATCH")
+            if (type == "TEXTBATCH")
             {
-                p.Length = U.TextBatchLength(U.toOffset(pointer), rom);
+                uint size = U.TextBatchLength(U.toOffset(pointer), rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+                p.Length = size;
                 p.Name += " Count_" + ((p.Length) / 8);
+                return true;
             }
-            else if (type == "TEXTBATCHSHORT")
+            if (type == "TEXTBATCHSHORT")
             {
-                p.Length = U.TextBatchShortLength(U.toOffset(pointer), rom);
+                uint size = U.TextBatchShortLength(U.toOffset(pointer), rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
                 p.Name += " Count_" + ((p.Length) / 2);
+                return true;
             }
-            else if (type == "EVENT")
+            if (type == "EVENT")
             {
-                p.Length = EventScript.SearchEveneLength(rom.Data, U.toOffset(pointer));
+                uint size = EventScript.SearchEveneLength(rom.Data, U.toOffset(pointer)); 
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
+                return true;
             }
-            else if (type == "HEADERTSA")
+            if (type == "HEADERTSA")
             {
-                p.Length = ImageUtil.CalcByteLengthForHeaderTSAData(rom.Data, (int)U.toOffset(pointer));
+                uint size = ImageUtil.CalcByteLengthForHeaderTSAData(rom.Data, (int)U.toOffset(pointer));
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "ROMPALETTEANIMEFRAME")
+            if (type == "ROMPALETTEANIMEFRAME")
             {
-                p.Length = ImageRomAnimeForm.GetPaletteFrameCountLow(rom.Data, U.toOffset(pointer)) * 2;
+                uint size = ImageRomAnimeForm.GetPaletteFrameCountLow(rom.Data, U.toOffset(pointer)) * 2; 
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "PALETTE")
+            if (type == "PALETTE")
             {
                 p.Length = 0x20;
+                return true;
             }
-            else if (type == "PALETTE2")
+            if (type == "PALETTE2")
             {
                 p.Length = 0x20 * 2;
+                return true;
             }
-            else if (type == "PALETTE3")
+            if (type == "PALETTE3")
             {
                 p.Length = 0x20 * 3;
+                return true;
             }
-            else if (type == "PALETTE4")
+            if (type == "PALETTE4")
             {
                 p.Length = 0x20 * 4;
+                return true;
             }
-            else if (type == "PALETTE8")
+            if (type == "PALETTE8")
             {
                 p.Length = 0x20 * 8;
+                return true;
             }
-            else if (type == "PALETTE7")
+            if (type == "PALETTE7")
             {
                 p.Length = 0x20 * 7;
+                return true;
             }
-            else if (type == "PALETTE16")
+            if (type == "PALETTE16")
             {
                 p.Length = 0x20 * 16;
+                return true;
             }
-            else if (type == "ROMTCS")
+            if (type == "ROMTCS")
             {
-                p.Length = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer), rom);
+                uint size = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer), rom); 
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "NAZO60")
+            if (type == "NAZO60")
             {
                 p.Length = 60;
+                return true;
             }
-            else if (type == "FONTCOLOR0x200")
+            if (type == "FONTCOLOR0x200")
             {
                 p.Length = 0x200;
+                return true;
             }
-            else if (type == "NewPopupSimple")
+            if (type == "NewPopupSimple")
             {
-                p.Length = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer), rom);
+                uint size = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer), rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "SECONDARYOAM")
+            if (type == "SECONDARYOAM")
             {
                 p.Length = 14;
+                return true;
             }
-            else if (type == "SECONDARYOAM_ARRAY")
+            if (type == "SECONDARYOAM_ARRAY")
             {
-                p.Length = ScanSECONDARYOAMTable(pointer, p.Name, rom);
+                uint size = ScanSECONDARYOAMTable(pointer, p.Name, rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "CSTRING")
+            if (type == "CSTRING")
             {
                 int length;
                 string strname = rom.getString(U.toOffset(pointer), out length);
+                if (length <= 0)
+                {
+                    return false;
+                }
                 p.Length = (uint)length;
                 p.Name += " =>　" + strname;
+                return true;
             }
-            else if (type == "SOUND_85COMMAND_POINTER_ARRAY")
+            if (type == "SOUND_85COMMAND_POINTER_ARRAY")
             {
-                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name, rom);
+                uint size = ScanSOUND85COMMANDPointerTable(pointer, p.Name, rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "ASM_POINTER_ARRAY")
+            if (type == "ASM_POINTER_ARRAY")
             {
-                p.Length = ScanASMPointerTable(pointer, p.Name, rom);
+                uint size = ScanASMPointerTable(pointer, p.Name, rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "PROC")
+            if (type == "PROC")
             {
                 uint length = ProcsScriptForm.CalcLengthAndCheck(U.toOffset(pointer));
-                if (length != U.NOT_FOUND)
+                if (length == U.NOT_FOUND)
                 {
-                    p.Length = length;
+                    return false;
                 }
+                p.Length = length;
+                return true;
             }
-            else if (type == "NAZO8_DATA_POINTER_ARRAY")
+            if (type == "NAZO8_DATA_POINTER_ARRAY")
             {
-                p.Length = ScanNazo8DataPointerTable(pointer, p.Name, rom);
+                uint size = ScanNazo8DataPointerTable(pointer, p.Name, rom);
+                if (size <= 0)
+                {
+                    return false;
+                }
+
+                p.Length = size;
+                return true;
             }
-            else if (type == "ASM" || type == "ARM")
+            if (type == "ASM" || type == "ARM")
             {
                 p.Length = 0;
+                return true;
             }
-            else if (type == "BGCONFIG")
+            if (type == "BGCONFIG")
             {
                 p.Length = 10 * 2;
+                return true;
             }
-            
+
+            //不明
+            return true;
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
