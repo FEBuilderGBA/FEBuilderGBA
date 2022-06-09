@@ -100,7 +100,7 @@ namespace FEBuilderGBA
             {
                 checkFunc = PatchUtil.SearchNIMAP;
                 reason = R._("Midi楽器はFE楽器と並び順が違うので、\r\nNIMAPを利用することをお勧めします。");
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {//FE8用には更新されたバージョンを利用する.
                     patchName1 = "SOUND_NIMAP2(Native Instrument Map)";///No Translate
                     patchName2 = "SOUND_NIMAP2";///No Translate
@@ -120,7 +120,7 @@ namespace FEBuilderGBA
                 {//NIMAPがないと不成立
                     return false;
                 }
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     patchName1 = "drumfix";///No Translate
                     patchName2 = "drumfix";///No Translate
@@ -156,11 +156,11 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.Skill)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     checkFunc = () =>
                     {
@@ -188,7 +188,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.CAMERA_Event_OutOfBand_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -205,7 +205,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.CAMERA_Event_NotExistsUnit_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -222,7 +222,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.UnitGetStateEvent_0x33_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -239,7 +239,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.UnitUpdateStateEvent_0x34_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -256,7 +256,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.SetActiveEvent_0x38_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -273,7 +273,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.WakuEvent_0x3B_Fix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
@@ -290,11 +290,11 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.StatusToLocalization)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }
-                if (Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.is_multibyte == false)
                 {
                     return false;
                 }
@@ -311,7 +311,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.ExtendedMovingMapAnimationList)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {//FE6のパッチはないです
                     return false;
                 }

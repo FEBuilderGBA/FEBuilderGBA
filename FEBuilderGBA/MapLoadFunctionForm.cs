@@ -16,7 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             //FE8のみ
             L_0_COMBO.BeginUpdate();
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 //{0}=ワールドマップ以外からでも入れる
                 string a = MyTranslateResource.str((string)L_0_COMBO.Items[0]);
@@ -46,7 +46,7 @@ namespace FEBuilderGBA
         }
         private void MapLoadFunctionForm_Load(object sender, EventArgs e)
         {
-            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
+            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address);
             if (!enable)
             {
                 this.ERROR_NOT_FOUND.Show();
@@ -90,9 +90,9 @@ namespace FEBuilderGBA
             {
                 return U.NOT_FOUND;
             }
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.map_load_function_pointer());
-            uint count = Program.ROM.u8(Program.ROM.RomInfo.map_load_function_switch1_address() + 0);
-            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.map_load_function_pointer);
+            uint count = Program.ROM.u8(Program.ROM.RomInfo.map_load_function_switch1_address + 0);
+            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address);
             if (enable == false)
             {
                 return U.NOT_FOUND;
@@ -123,8 +123,8 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"MapLoadFunction SwithExpands");
 
-            PatchUtil.Switch1Expands(Program.ROM.RomInfo.unit_increase_height_pointer()
-                , Program.ROM.RomInfo.map_load_function_switch1_address()
+            PatchUtil.Switch1Expands(Program.ROM.RomInfo.unit_increase_height_pointer
+                , Program.ROM.RomInfo.map_load_function_switch1_address
                 , newCount
                 , defAddr
                 , undodata);
@@ -154,7 +154,7 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress + (chapterID * InputFormRef.BlockSize);
             uint p = Program.ROM.u32(addr);
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 return p != 0x80C1FB4;
             }

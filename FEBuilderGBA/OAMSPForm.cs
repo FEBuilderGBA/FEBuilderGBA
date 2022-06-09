@@ -64,7 +64,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 addr = U.toOffset(addr);
-                if (addr < Program.ROM.RomInfo.compress_image_borderline_address())
+                if (addr < Program.ROM.RomInfo.compress_image_borderline_address)
                 {
                     continue;
                 }

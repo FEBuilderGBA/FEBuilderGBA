@@ -27,7 +27,7 @@ namespace FEBuilderGBA
             UseFontNameTextEdit.Text = UseFontNameTextEdit.Font.FontFamily.ToString();
             AutoGenbutton.AccessibleDescription = R._("ROMに存在しいフォントをPCに存在するフォントから自動的に作成します。\r\nまとめて複数のフォントを一気に作りたい場合は、ROM翻訳ツールから作ることをお勧めします。");
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
@@ -264,7 +264,7 @@ namespace FEBuilderGBA
             {
                 return FindFontDataUTF8(topaddress, moji, out prevaddr, rom);
             }
-            else if (rom.RomInfo.is_multibyte())
+            else if (rom.RomInfo.is_multibyte)
             {
                 return FindFontDataSJIS(topaddress, moji, out prevaddr, rom);
             }
@@ -327,7 +327,7 @@ namespace FEBuilderGBA
             {
                 return NewFontDataUTF8(moji, width, SelectFontBitmapByte);
             }
-            else if (rom.RomInfo.is_multibyte())
+            else if (rom.RomInfo.is_multibyte)
             {
                 return NewFontDataSJIS(moji, width, SelectFontBitmapByte);
             }
@@ -623,12 +623,12 @@ namespace FEBuilderGBA
             if (IsItemFont)
             {
                 //アイテム
-                return rom.RomInfo.font_item_address();
+                return rom.RomInfo.font_item_address;
             }
             else
             {
                 //セリフ
-                return rom.RomInfo.font_serif_address();
+                return rom.RomInfo.font_serif_address;
             }
         }
         public static uint GetFontPointer(bool IsItemFont)
@@ -722,7 +722,7 @@ namespace FEBuilderGBA
         //フォントで描画した場合の幅を求める.
         public static uint MeasureTextWidthOneLine(string str, bool IsItemFont)
         {
-            uint unkownFontSize = GetUnkownFontSize(Program.ROM.RomInfo.is_multibyte());
+            uint unkownFontSize = GetUnkownFontSize(Program.ROM.RomInfo.is_multibyte);
             uint sum = 0;
             uint[] widths = MeasureTextWidthOneLineInts(str, IsItemFont);
             for (int i = 0; i < widths.Length; i++)
@@ -760,7 +760,7 @@ namespace FEBuilderGBA
 
         public void JumpToItem(uint value)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//英語版は2バイトではないので、最初の1バイトのみ評価.
                 value = value & 0xff;
             }
@@ -775,7 +775,7 @@ namespace FEBuilderGBA
         }
         public void JumpToSerif(uint value)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//英語版は2バイトではないので、最初の1バイトのみ評価.
                 value = value & 0xff;
             }
@@ -791,7 +791,7 @@ namespace FEBuilderGBA
 
         public static void MakeAllDataLength(List<Address> list)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
@@ -808,8 +808,8 @@ namespace FEBuilderGBA
 
             //ステータスフォント
             MakeAllDataLengthStatusFont( 
-                Program.ROM.RomInfo.status_font_pointer()
-                , Program.ROM.RomInfo.status_font_count()
+                Program.ROM.RomInfo.status_font_pointer
+                , Program.ROM.RomInfo.status_font_count
                 , ref list);
         }
 
@@ -819,7 +819,7 @@ namespace FEBuilderGBA
             uint topaddress = GetFontPointer(isItemFont);
             PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//日本語版
                 FEBuilderGBA.Address.AddAddress(list, topaddress
                     , 4 * (0xff - 0x1f)
@@ -1263,7 +1263,7 @@ namespace FEBuilderGBA
                 }
 
                 if (isUserFontOnly 
-                    && a.Addr <= Program.ROM.RomInfo.font_default_end())
+                    && a.Addr <= Program.ROM.RomInfo.font_default_end)
                 {//規定のフォント
                     continue;
                 }

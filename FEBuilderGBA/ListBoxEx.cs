@@ -1353,9 +1353,9 @@ namespace FEBuilderGBA
             //テキストの先頭にアイコン番号(キャラ番号が入っている. 無駄だが汎用性を考えるとほかに方法がない)
             uint icon = U.atoh(text);
             Bitmap bitmap;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     bitmap = OPClassFontForm.DrawFontByID(icon);
                 }
@@ -1364,7 +1364,7 @@ namespace FEBuilderGBA
                     bitmap = OPClassFontFE8UForm.DrawFontByID(icon);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 bitmap = ImageUtil.Blank(8,8);
             }

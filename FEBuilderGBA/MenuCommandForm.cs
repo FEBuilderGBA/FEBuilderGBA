@@ -52,7 +52,7 @@ namespace FEBuilderGBA
             }
 
             String name = "";
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 uint nameAddr = Program.ROM.p32(addr);
                 if (nameAddr > 0xFFFF && U.isSafetyOffset(nameAddr))
@@ -198,7 +198,7 @@ namespace FEBuilderGBA
                 );
 
             string lang = OptionForm.lang();
-            bool isJP = (lang == "ja") || Program.ROM.RomInfo.is_multibyte();
+            bool isJP = (lang == "ja") || Program.ROM.RomInfo.is_multibyte;
 
             string p12label = R._("可否診断ルーチンポインタ");
             string p16label = R._("描画ルーチンポインタ");
@@ -285,7 +285,7 @@ namespace FEBuilderGBA
                 paddr = Program.ROM.u32(0 + p);
                 FELint.CheckPointerOrNull(paddr, errors, FELint.Type.MENU, p, i);
 
-                if (Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.is_multibyte == false)
                 {
                     uint name = Program.ROM.u16(4 + p);
                     FELint.CheckText(name, "MENUNAME1", errors, FELint.Type.MENU, p, i);
@@ -331,16 +331,16 @@ namespace FEBuilderGBA
         }
         string Explain12()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return R._("よく使われる関数のメモ\r\n{0} 常にメニューの項目を表示します。"
-                    , U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address() + 1))
+                    , U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address + 1))
                     );
             }
 
             return R._("よく使われる関数のメモ\r\n{0} 常にメニューの項目を表示します。\r\n{1} メニューを非表示にします。"
-                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address()+1))
-                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_hide_address()+1))
+                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address+1))
+                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_hide_address+1))
                 );
         }
 
@@ -478,9 +478,9 @@ namespace FEBuilderGBA
                 return;
             }
             uint alwayFalse = 0;
-            if (Program.ROM.RomInfo.version() != 6)
+            if (Program.ROM.RomInfo.version != 6)
             {
-                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
+                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever + 1);
             }
 
             Program.ROM.write_u32(addr + 0, 0, undodata);
@@ -568,9 +568,9 @@ namespace FEBuilderGBA
             }
 
             uint alwayFalse = 0;
-            if (Program.ROM.RomInfo.version() != 6)
+            if (Program.ROM.RomInfo.version != 6)
             {
-                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
+                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever + 1);
             }
 
             uint nullCount = 0;

@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.sound_boss_bgm_pointer()
+                , Program.ROM.RomInfo.sound_boss_bgm_pointer
                 , 8
                 , (int i, uint addr) =>
                 {//0xFFまで

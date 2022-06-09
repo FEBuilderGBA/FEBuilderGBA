@@ -105,16 +105,16 @@ namespace FEBuilderGBA
         {
             MapPictureBox.ClearStaticItem();
 
-            DrawUnits(Program.ROM.RomInfo.workmemory_player_units_address(), 62);
-            DrawUnits(Program.ROM.RomInfo.workmemory_enemy_units_address(), 50);
-            DrawUnits(Program.ROM.RomInfo.workmemory_npc_units_address(), 20);
+            DrawUnits(Program.ROM.RomInfo.workmemory_player_units_address, 62);
+            DrawUnits(Program.ROM.RomInfo.workmemory_enemy_units_address, 50);
+            DrawUnits(Program.ROM.RomInfo.workmemory_npc_units_address, 20);
 
             MapPictureBox.Invalidate();
         }
         public void DrawUnits(uint topaddr , int max)
         {
             const uint RAMUnitSizeOf = 72; //構造体のサイズ
-            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+            bool isFE6 = (Program.ROM.RomInfo.version == 6);
 
             uint addr = topaddr;
             for (int i = 0; i < max; i++, addr += RAMUnitSizeOf)

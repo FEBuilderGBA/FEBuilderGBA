@@ -227,7 +227,7 @@ namespace FEBuilderGBA
 
         public static void TEST_FE8J_APParseTest_WordmapBorder()
         {
-            if (Program.ROM.RomInfo.VersionToFilename() != "FE8J")
+            if (Program.ROM.RomInfo.VersionToFilename != "FE8J")
             {
                 return;
             }

@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_terrain_name_pointer()
+                , Program.ROM.RomInfo.map_terrain_name_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         //地名リストを作る.
         public static List<U.AddrResult> MakeList()
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 return MapTerrainNameEngForm.MakeList();
             }
@@ -82,7 +82,7 @@ namespace FEBuilderGBA
         public static string GetName(uint id, bool with_hint_full = false)
         {
             string hint = with_hint_full ? MakeHint_Full(id) :MakeHint_Simple(id);
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 string name = MapTerrainNameEngForm.GetName(id);
                 name = TextForm.StripAllCode(name);
@@ -116,7 +116,7 @@ namespace FEBuilderGBA
         //見た目でわかるけど、名前が紛らわしいものにヒントを追加します
         public static string MakeHint_Full(uint id)
         {
-            if (Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.is_multibyte == false)
             {//英語版だと、empty Chestsの区別がないので追記する
                 if (id == 0x20)
                 {

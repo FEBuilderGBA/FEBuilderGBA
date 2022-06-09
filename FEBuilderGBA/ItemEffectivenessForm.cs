@@ -34,8 +34,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.item_pointer()
-                , Program.ROM.RomInfo.item_datasize()
+                , Program.ROM.RomInfo.item_pointer
+                , Program.ROM.RomInfo.item_datasize
                 , (int i, uint addr) =>
                 {//12補正 16特効 がポインタ or nullであれば
                     return U.isPointerOrNULL(Program.ROM.u32(addr + 12))

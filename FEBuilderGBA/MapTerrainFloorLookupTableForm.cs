@@ -28,7 +28,7 @@ namespace FEBuilderGBA
                 , 1
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    return i < Program.ROM.RomInfo.map_terrain_type_count();
+                    return i < Program.ROM.RomInfo.map_terrain_type_count;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
@@ -115,27 +115,27 @@ namespace FEBuilderGBA
         static uint[] GetPointersVanilla()
         {
             return new uint[] { 
-                Program.ROM.RomInfo.lookup_table_battle_terrain_00_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_01_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_02_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_03_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_04_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_05_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_06_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_07_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_08_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_09_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_10_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_11_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_12_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_13_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_14_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_15_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_16_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_17_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_18_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_19_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_terrain_20_pointer()
+                Program.ROM.RomInfo.lookup_table_battle_terrain_00_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_01_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_02_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_03_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_04_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_05_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_06_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_07_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_08_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_09_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_10_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_11_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_12_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_13_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_14_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_15_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_16_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_17_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_18_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_19_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_terrain_20_pointer
             };
         }
 
@@ -189,13 +189,13 @@ namespace FEBuilderGBA
         }
         public static byte[] GetDefaultData()
         {
-            uint p = Program.ROM.RomInfo.lookup_table_battle_terrain_00_pointer();
+            uint p = Program.ROM.RomInfo.lookup_table_battle_terrain_00_pointer;
             p = Program.ROM.p32(p);
             if (!U.isSafetyOffset(p))
             {
-                return new byte[Program.ROM.RomInfo.map_terrain_type_count()];
+                return new byte[Program.ROM.RomInfo.map_terrain_type_count];
             }
-            return Program.ROM.getBinaryData(p, Program.ROM.RomInfo.map_terrain_type_count());
+            return Program.ROM.getBinaryData(p, Program.ROM.RomInfo.map_terrain_type_count);
         }
         public static void MakeDataLength(List<Address> list, uint pointer, string strname)
         {

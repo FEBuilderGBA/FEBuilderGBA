@@ -28,7 +28,7 @@ namespace FEBuilderGBA
                 , 1
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    return i < Program.ROM.RomInfo.map_terrain_type_count();
+                    return i < Program.ROM.RomInfo.map_terrain_type_count;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
@@ -94,9 +94,9 @@ namespace FEBuilderGBA
 
         static uint GetExtendsPointer()
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE8J
                     return 0x58D34;
                 }
@@ -220,27 +220,27 @@ namespace FEBuilderGBA
         static uint[] GetPointersVanilla()
         {
             return new uint[] { 
-                Program.ROM.RomInfo.lookup_table_battle_bg_00_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_01_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_02_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_03_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_04_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_05_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_06_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_07_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_08_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_09_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_10_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_11_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_12_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_13_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_14_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_15_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_16_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_17_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_18_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_19_pointer()
-               ,Program.ROM.RomInfo.lookup_table_battle_bg_20_pointer()
+                Program.ROM.RomInfo.lookup_table_battle_bg_00_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_01_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_02_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_03_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_04_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_05_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_06_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_07_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_08_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_09_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_10_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_11_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_12_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_13_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_14_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_15_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_16_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_17_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_18_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_19_pointer
+               ,Program.ROM.RomInfo.lookup_table_battle_bg_20_pointer
             };
         }
 
@@ -295,13 +295,13 @@ namespace FEBuilderGBA
         }
         public static byte[] GetDefaultData()
         {
-            uint p = Program.ROM.RomInfo.lookup_table_battle_bg_00_pointer();
+            uint p = Program.ROM.RomInfo.lookup_table_battle_bg_00_pointer;
             p = Program.ROM.p32(p);
             if (!U.isSafetyOffset(p))
             {
-                return new byte[Program.ROM.RomInfo.map_terrain_type_count()];
+                return new byte[Program.ROM.RomInfo.map_terrain_type_count];
             }
-            return Program.ROM.getBinaryData(p, Program.ROM.RomInfo.map_terrain_type_count());
+            return Program.ROM.getBinaryData(p, Program.ROM.RomInfo.map_terrain_type_count);
         }
         public static void MakeDataLength(List<Address> list, uint pointer, string strname)
         {

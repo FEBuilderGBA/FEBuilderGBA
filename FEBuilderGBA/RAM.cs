@@ -767,10 +767,10 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address() - 0x02000000;
-            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address();
+            uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address - 0x02000000;
+            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address;
 
-            uint procs_forest_address = Program.ROM.RomInfo.workmemory_procs_forest_address() - 0x02000000;
+            uint procs_forest_address = Program.ROM.RomInfo.workmemory_procs_forest_address - 0x02000000;
             
             uint append_offset = 0;
 
@@ -847,10 +847,10 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            uint user_stack_base = Program.ROM.RomInfo.workmemory_user_stack_base_address() - 0x03000000;
-            uint function_fe_main_return_address = Program.ROM.RomInfo.function_fe_main_return_address();
+            uint user_stack_base = Program.ROM.RomInfo.workmemory_user_stack_base_address - 0x03000000;
+            uint function_fe_main_return_address = Program.ROM.RomInfo.function_fe_main_return_address;
 
-            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address() - 0x03000000;
+            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address - 0x03000000;
 
             uint append_offset = 0;
 
@@ -925,8 +925,8 @@ namespace FEBuilderGBA
             }
 
             //必須の値があるかどうかチェックする.
-            uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address() - 0x02000000;
-            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address();
+            uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address - 0x02000000;
+            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address;
             uint addr = this.AppnedOffset02 + procs_game_main;
             uint data = U.u32(buffer, addr);
             if (data != rom_procs_game_main)
@@ -957,8 +957,8 @@ namespace FEBuilderGBA
             }
 
             //必須の値があるかどうかチェックする.
-            uint user_stack_base = Program.ROM.RomInfo.workmemory_user_stack_base_address() - 0x03000000;
-            uint function_fe_main_return_address = Program.ROM.RomInfo.function_fe_main_return_address();
+            uint user_stack_base = Program.ROM.RomInfo.workmemory_user_stack_base_address - 0x03000000;
+            uint function_fe_main_return_address = Program.ROM.RomInfo.function_fe_main_return_address;
             uint addr = this.AppnedOffset03 + user_stack_base;
             uint data = U.u32(buffer, addr);
             if (data != function_fe_main_return_address)

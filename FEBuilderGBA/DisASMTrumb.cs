@@ -2102,7 +2102,7 @@ namespace FEBuilderGBA
         }
         public static void TEST_IsCode_FE8J()
         {
-            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() )
+            if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte )
             {
                 Debug.Assert( true == IsCode(0x194BC));
             }

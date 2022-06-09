@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
-            uint wmap_event_base = Program.ROM.p32(Program.ROM.RomInfo.event_function_pointer_table2_pointer());
+            uint wmap_event_base = Program.ROM.p32(Program.ROM.RomInfo.event_function_pointer_table2_pointer);
 
             InputFormRef ifr = null;
             ifr = new InputFormRef(self
@@ -112,25 +112,25 @@ namespace FEBuilderGBA
         {
             if(this.FilterComboBox.SelectedIndex == 0)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table_pointer));
             }
             else
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table2_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table2_pointer));
             }
             U.SelectedIndexSafety(this.AddressList, 0, false);
         }
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {
                 EventFunctionPointerFE7Form.MakeAllDataLength(list);
                 return;
             }
             string name = "EventFunctionPointer";
             InputFormRef InputFormRef = Init(null);
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table_pointer));
             FEBuilderGBA.Address.AddAddress(list
                 , InputFormRef
                 , name
@@ -141,7 +141,7 @@ namespace FEBuilderGBA
             FEBuilderGBA.Address.AddFunctions(list, arlist, 0, name);
 
             name = "EventFunctionPointer Worldmap";
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table2_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.event_function_pointer_table2_pointer));
             FEBuilderGBA.Address.AddAddress(list
                 , InputFormRef
                 , name

@@ -354,7 +354,7 @@ namespace FEBuilderGBA
 
         private void ToolCustomBuildForm_Load(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 this.Close();
                 return;

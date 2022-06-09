@@ -38,7 +38,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this, DimAddr, NoDimAddr, spellDataCount, csaSpellTable, effectDic);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
-            if (this.InputFormRef.DataCount > Program.ROM.RomInfo.magic_effect_original_data_count() + 2)
+            if (this.InputFormRef.DataCount > Program.ROM.RomInfo.magic_effect_original_data_count + 2)
             {//拡張済みなので、拡張ボタンを無効にする
                 MagicListExpandsButton.Enabled = false;
             }
@@ -50,7 +50,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.magic_effect_pointer()
+                , Program.ROM.RomInfo.magic_effect_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -70,7 +70,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
                     uint csaaddress = (uint)(csaSpellTable + (20 * i));
 
                     string effectname = U.at(effectDic, i);
@@ -83,7 +83,7 @@ namespace FEBuilderGBA
                     uint dataaddr = Program.ROM.p32(addr);
                     if (dataaddr == 0)
                     {
-                        if (i < Program.ROM.RomInfo.magic_effect_original_data_count())
+                        if (i < Program.ROM.RomInfo.magic_effect_original_data_count)
                         {//もともとのデータ
                             return new U.AddrResult();
                         }
@@ -427,7 +427,7 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++ , addr += InputFormRef.BlockSize)
                 {
-                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
                     uint csaaddress = (uint)(csaSpellTable + (20 * i));
 
                     uint dataaddr = Program.ROM.p32(addr);
@@ -470,7 +470,7 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
-                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
                     uint csaaddress = (uint)(csaSpellTable + (20 * i));
 
                     uint dataaddr = Program.ROM.p32(addr);
@@ -519,7 +519,7 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
-                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
                     uint csaaddress = (uint)(csaSpellTable + (20 * i));
 
                     uint dataaddr = Program.ROM.p32(addr);
@@ -559,7 +559,7 @@ namespace FEBuilderGBA
             //魔法エフェクトテーブルの拡張.
             uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
             uint datasize = spellDataCount;
-            InputFormRef.ExpandsArea(this, 254, Program.ROM.RomInfo.magic_effect_pointer(), datasize,FEBuilderGBA.InputFormRef.ExpandsFillOption.NO,4, undodata);
+            InputFormRef.ExpandsArea(this, 254, Program.ROM.RomInfo.magic_effect_pointer, datasize,FEBuilderGBA.InputFormRef.ExpandsFillOption.NO,4, undodata);
 
             //CSA追加魔法テーブルの拡張
             if (U.isSafetyOffset(csaSpellTablePointer) && InputFormRef != null)

@@ -65,7 +65,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.support_unit_pointer()
+                , Program.ROM.RomInfo.support_unit_pointer
                 , 24
                 , (int i, uint addr) =>
                 {//とりあえず 00 00 まで読む.
@@ -207,17 +207,17 @@ namespace FEBuilderGBA
             }
             uid = uid + 1;  //IDは1から降るので
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 SupportTalkForm f = (SupportTalkForm)InputFormRef.JumpForm<SupportTalkForm>(U.NOT_FOUND);
                 f.JumpTo(uid, (uint)src.Value);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 SupportTalkFE7Form f = (SupportTalkFE7Form)InputFormRef.JumpForm<SupportTalkFE7Form>(U.NOT_FOUND);
                 f.JumpTo(uid, (uint)src.Value);
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 SupportTalkFE6Form f = (SupportTalkFE6Form)InputFormRef.JumpForm<SupportTalkFE6Form>(U.NOT_FOUND);
                 f.JumpTo(uid, (uint)src.Value);
@@ -598,7 +598,7 @@ namespace FEBuilderGBA
         }
         public static void MakeCheckErrorAddr(List<FELint.ErrorSt> errors,uint support_pointer, FELint.Type type , uint parentAddr, uint tag)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return;
             }

@@ -18,8 +18,8 @@ namespace FEBuilderGBA
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            ENDING1_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending1_event_pointer());
-            ENDING2_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending2_event_pointer());
+            ENDING1_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending1_event_pointer);
+            ENDING2_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending2_event_pointer);
         }
 
 
@@ -28,7 +28,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.worldmap_event_on_stageselect_pointer()
+                , Program.ROM.RomInfo.worldmap_event_on_stageselect_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -130,12 +130,12 @@ namespace FEBuilderGBA
                 }
             }
             {
-                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                uint p = Program.ROM.RomInfo.ending1_event_pointer;
                 string name = R._("エリウッドエンディング");
                 EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                uint p = Program.ROM.RomInfo.ending2_event_pointer;
                 string name = R._("ヘクトルエンディング");
                 EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
             }
@@ -183,12 +183,12 @@ namespace FEBuilderGBA
                 }
             }
             {
-                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                uint p = Program.ROM.RomInfo.ending1_event_pointer;
                 string name = R._("エリウッドエンディング");
                 EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                uint p = Program.ROM.RomInfo.ending2_event_pointer;
                 string name = R._("ヘクトルエンディング");
                 EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
@@ -208,8 +208,8 @@ namespace FEBuilderGBA
 
         private void EventWriteButton_Click(object sender, EventArgs e)
         {
-            Program.ROM.write_p32(Program.ROM.RomInfo.ending1_event_pointer(), (uint)ENDING1_EVENT.Value);
-            Program.ROM.write_p32(Program.ROM.RomInfo.ending2_event_pointer(), (uint)ENDING2_EVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending1_event_pointer, (uint)ENDING1_EVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending2_event_pointer, (uint)ENDING2_EVENT.Value);
             InputFormRef.ShowWriteNotifyAnimation(this,U.NOT_FOUND);
         }
     }

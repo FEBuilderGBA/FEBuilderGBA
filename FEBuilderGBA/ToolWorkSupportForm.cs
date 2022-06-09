@@ -821,7 +821,7 @@ namespace FEBuilderGBA
             //情報を書き込む.
             sb.AppendLine("\r\n------\r\n");
             string FEVersion = "";
-            FEVersion = Program.ROM.RomInfo.VersionToFilename();
+            FEVersion = Program.ROM.RomInfo.VersionToFilename;
             FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
 
             sb.AppendLine(typeof(U).Assembly.GetName().Name + ":" + U.getVersion());

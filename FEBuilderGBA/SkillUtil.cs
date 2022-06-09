@@ -150,7 +150,7 @@ namespace FEBuilderGBA
 
         public static Bitmap DrawIcon(uint skillid)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return ImageUtil.BlankDummy();
             }
@@ -175,7 +175,7 @@ namespace FEBuilderGBA
 
         public static string GetSkillName(uint skillid)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return "";
             }

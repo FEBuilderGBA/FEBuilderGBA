@@ -36,7 +36,7 @@ namespace FEBuilderGBA
         static uint FindAnimationPointerLow()
         {
             byte[] bin;
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 bin = new byte[]{0x54, 0x3C, 0x08, 0x08, 0xEC, 0xE1, 0x03, 0x02, 0xE8, 0xA4, 0x03, 0x02, 0x68, 0xA5, 0x03, 0x02, 0xFF, 0xFF, 0x00, 0x00};
             }
@@ -44,7 +44,7 @@ namespace FEBuilderGBA
             {//FE8U
                 bin = new byte[] { 0x14, 0x19, 0x08, 0x08, 0xF0, 0xE1, 0x03, 0x02, 0xEC, 0xA4, 0x03, 0x02, 0x6C, 0xA5, 0x03, 0x02, 0xFF, 0xFF, 0x00, 0x00 };
             }
-            uint p = U.GrepEnd(Program.ROM.Data, bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4, 0, true);
+            uint p = U.GrepEnd(Program.ROM.Data, bin, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4, 0, true);
             if (p == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;

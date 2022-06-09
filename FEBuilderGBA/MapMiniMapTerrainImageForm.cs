@@ -50,11 +50,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_minimap_tile_array_pointer()
+                , Program.ROM.RomInfo.map_minimap_tile_array_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    return i < Program.ROM.RomInfo.map_terrain_type_count();
+                    return i < Program.ROM.RomInfo.map_terrain_type_count;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目

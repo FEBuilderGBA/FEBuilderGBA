@@ -39,7 +39,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N1_"
-                , Program.ROM.RomInfo.ed_2_pointer()
+                , Program.ROM.RomInfo.ed_2_pointer
                 , 8
                 , (int i, uint addr) =>
                 {
@@ -59,7 +59,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N2_"
-                , Program.ROM.RomInfo.ed_3a_pointer()
+                , Program.ROM.RomInfo.ed_3a_pointer
                 , 8
                 , (int i, uint addr) =>
                 {
@@ -102,7 +102,7 @@ namespace FEBuilderGBA
                     return U.ToHexString(uid) + " " + UnitForm.GetUnitName(uid);
                 }
                 );
-            ifr.ReInit(Program.ROM.RomInfo.ed_3c_pointer());
+            ifr.ReInit(Program.ROM.RomInfo.ed_3c_pointer);
             return ifr;
         }
 
@@ -111,7 +111,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N4_"
-                , Program.ROM.RomInfo.ed_1_pointer()
+                , Program.ROM.RomInfo.ed_1_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -139,12 +139,12 @@ namespace FEBuilderGBA
             if ( this.N2_FilterComboBox.SelectedIndex == 1)
             {//エリウッド
                 N2_InputFormRef.ReInitPointer
-                    ((Program.ROM.RomInfo.ed_3b_pointer()));
+                    ((Program.ROM.RomInfo.ed_3b_pointer));
             }
             else
             {//ヘクトル
                 N2_InputFormRef.ReInitPointer
-                    ((Program.ROM.RomInfo.ed_3a_pointer()));
+                    ((Program.ROM.RomInfo.ed_3a_pointer));
             }
             N2_ReloadListButton.PerformClick();
         }
@@ -166,7 +166,7 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_3a", new uint[] { });
 
                 InputFormRef.ReInitPointer
-                    ((Program.ROM.RomInfo.ed_3b_pointer()));
+                    ((Program.ROM.RomInfo.ed_3b_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_3b", new uint[] { });
             }
             {
@@ -189,7 +189,7 @@ namespace FEBuilderGBA
                 UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
 
                 InputFormRef.ReInitPointer
-                    ((Program.ROM.RomInfo.ed_3b_pointer()));
+                    ((Program.ROM.RomInfo.ed_3b_pointer));
                 UseValsID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
             }
         }
@@ -236,7 +236,7 @@ namespace FEBuilderGBA
         }
         void SetPopupHelp()
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 N4_L_1.AccessibleDescription = "00=TextID 100F にて最期をとげる。\r\n01=TextID 1010 にて負傷。一行と別れる。\r\n02=TextID 1011 にて負傷するも、最後まで一行と旅を共にする。\r\n03=ホークアイ\r\n04=パントとルイーズ TextID 1086, 1087\r\n05=アスト";///No Translate
             }

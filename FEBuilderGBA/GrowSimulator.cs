@@ -71,7 +71,7 @@ namespace FEBuilderGBA
             int level;
 
             //最大値LV
-            int max_level = (int)Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
+            int max_level = (int)Program.ROM.u8(Program.ROM.RomInfo.max_level_address);
             if (cc_count >= 2)
             {//見習いからのCC
                 level = max_level * (cc_count + 1) - 10;

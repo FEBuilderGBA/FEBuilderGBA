@@ -1199,7 +1199,7 @@ namespace FEBuilderGBA
                 new TBLTableSt{name = "FE8KR",ver = 8,enc = 7,pointer = 0x8617CC,data = new byte[]{0x9D ,0xD2 ,0x9B ,0x6B}},
             }; 
 
-            uint version = (uint)Program.ROM.RomInfo.version();
+            uint version = (uint)Program.ROM.RomInfo.version;
             uint tbl_index = 0;
 
             foreach (TBLTableSt t in table)

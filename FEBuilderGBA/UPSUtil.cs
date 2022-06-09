@@ -148,7 +148,7 @@ namespace FEBuilderGBA
 
         static byte[] WriteBuildVersion(byte[] d)
         {
-            uint addr = Program.ROM.RomInfo.builddate_address();
+            uint addr = Program.ROM.RomInfo.builddate_address;
             if (!U.isSafetyOffset(addr))
             {
                 return d;

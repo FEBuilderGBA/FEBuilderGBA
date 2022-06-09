@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.senseki_comment_pointer()
+                , Program.ROM.RomInfo.senseki_comment_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//終端

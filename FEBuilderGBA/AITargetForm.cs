@@ -29,7 +29,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ai3_pointer()
+                , Program.ROM.RomInfo.ai3_pointer
                 , 20
                 , (int i, uint addr) =>
                 {

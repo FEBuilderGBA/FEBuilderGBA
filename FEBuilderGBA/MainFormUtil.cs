@@ -581,7 +581,7 @@ namespace FEBuilderGBA
             {//自動的に接続しない.
                 return;
             }
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {//未知のバージョンなので接続できない
                 return;
             }
@@ -1051,7 +1051,7 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            string filename = Program.ROM.RomInfo.VersionToFilename() + "*.s";
+            string filename = Program.ROM.RomInfo.VersionToFilename + "*.s";
             string[] list = U.Directory_GetFiles_Safe(dir, filename, SearchOption.TopDirectoryOnly);
 
             if (list.Length <= 0)
@@ -1075,7 +1075,7 @@ namespace FEBuilderGBA
             bool isColorzCore = IsColorzCore(compiler_exe);
 
             string args = "A "
-                + Program.ROM.RomInfo.TitleToFilename() + " "
+                + Program.ROM.RomInfo.TitleToFilename + " "
                 + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
                 + U.escape_shell_args("-output:" + output_target_rom) + " ";
             if (isColorzCore)
@@ -1109,7 +1109,7 @@ namespace FEBuilderGBA
                 || output.IndexOf("Unrecognized flag: symOutput") >= 0)
             {//古いEAらしいので、symOutputを外して実行する
                 args = "A "
-                    + Program.ROM.RomInfo.TitleToFilename() + " "
+                    + Program.ROM.RomInfo.TitleToFilename + " "
                     + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
                     + U.escape_shell_args("-output:" + output_target_rom);
                 Log.Notify(args);
@@ -1282,7 +1282,7 @@ namespace FEBuilderGBA
         //無改造ROMを探索する CRCと言語で探索
         public static string FindOrignalROM(string current_dir)
         {
-            uint crc32 = Program.ROM.RomInfo.orignal_crc32();
+            uint crc32 = Program.ROM.RomInfo.orignal_crc32;
             string orignalFilename = MainFormUtil.FindOrignalROMByCRC32(current_dir, crc32);
             if (orignalFilename == "")
             {
@@ -1385,7 +1385,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                version = Program.ROM.RomInfo.version();
+                version = Program.ROM.RomInfo.version;
             }
 
             string orignal_header = "";
@@ -1723,7 +1723,7 @@ namespace FEBuilderGBA
 
             //Core D FE8 ToEnd 0xA39768 none -input:fe8e.gba "-output:Prologue.event"
             string args = "D "
-                + Program.ROM.RomInfo.TitleToFilename() + " "
+                + Program.ROM.RomInfo.TitleToFilename + " "
                 + endAddr  + " "
                 + U.To0xHexString(dumpAddr) + " "
                 + eaOption 
@@ -2578,7 +2578,7 @@ namespace FEBuilderGBA
             if (name == "BigCGButton")
             {
                 string str = R._("イベントで表示されるCGの設定を行います。");
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     str += "\r\n" + R._("FE8ではパッチを利用することでCGをイベントで利用することができます。");
                 }
@@ -2639,11 +2639,11 @@ namespace FEBuilderGBA
             if (name == "EventForceSortieButton")
             {
                 string str = R._("必ず出撃しなければいけないユニットを設定します。");
-                if (Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.version == 7)
                 {
                     str = "\r\n" + R._("FE7では、このデータは一部のみ設定できます。");
                 }
-                else if (Program.ROM.RomInfo.version() == 8)
+                else if (Program.ROM.RomInfo.version == 8)
                 {
                     str += "\r\n" + R._("逆に出撃できないユニットを作るには、パッチを利用してください");
                 }
@@ -2680,7 +2680,7 @@ namespace FEBuilderGBA
             if (name == "WorldMapEventPointerButton")
             {
                 string str = R._("章が開始される前のワールドマップで発生するイベントを設定します。");
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     str += "\r\n" + R._("FE8では、ワールドマップを自由に移動できるため、拠点を選択した時と、クリアした時の2種類のイベントを設定できます。");
                 }
@@ -2980,7 +2980,7 @@ namespace FEBuilderGBA
             uint orignalCRC32 = 0;
             if (Program.ROM != null)
             {
-                orignalCRC32 = Program.ROM.RomInfo.orignal_crc32();
+                orignalCRC32 = Program.ROM.RomInfo.orignal_crc32;
             }
 
             string noMatch = R._("指定されたROMは無改造ROMではありません。\r\nCRC32が一致しません。\r\n正規品の無改造ROMを指定してください。\r\n正規品のROMからupsを作らないと誰もそれを開けません。\r\n\r\n指定されたROMのCRC32:\r\n{0}\r\n正規品のCRC32:\r\n{1}", U.ToHexString8(targetCRC32), U.ToHexString8(orignalCRC32));
@@ -3107,7 +3107,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string srccode_filename = Path.Combine(srccode_directory, "_" + Program.ROM.RomInfo.VersionToFilename() + ".TXT");
+            string srccode_filename = Path.Combine(srccode_directory, "_" + Program.ROM.RomInfo.VersionToFilename + ".TXT");
             if (!IsSorceCodeExits(srccode_filename))
             {//ソースコードがないので生成する
                 ToolDisasmSourceCode f = (ToolDisasmSourceCode)InputFormRef.JumpFormLow<ToolDisasmSourceCode>();

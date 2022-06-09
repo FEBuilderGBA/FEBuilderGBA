@@ -50,11 +50,11 @@ namespace FEBuilderGBA
         {
             InputFormRef ifr = new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.unit_pointer()
-                , Program.ROM.RomInfo.unit_datasize()
+                , Program.ROM.RomInfo.unit_pointer
+                , Program.ROM.RomInfo.unit_datasize
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.unit_maxcount(); 
+                    return i < Program.ROM.RomInfo.unit_maxcount; 
                 }
                 , (int i, uint addr) =>
                 {
@@ -63,9 +63,9 @@ namespace FEBuilderGBA
                 }
                 );
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6だと、 0x00 へのポインタしかない・・・
-                ifr.ReInit( Program.ROM.p32((Program.ROM.RomInfo.unit_pointer())) + Program.ROM.RomInfo.unit_datasize());
+                ifr.ReInit( Program.ROM.p32((Program.ROM.RomInfo.unit_pointer)) + Program.ROM.RomInfo.unit_datasize);
             }
             return ifr;
         }
@@ -79,7 +79,7 @@ namespace FEBuilderGBA
             X_Tooltip = InputFormRef.GetToolTip<UnitForm>();
             InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8の場合
                 //スキル
                 X_SkillType = PatchUtil.SearchSkillSystem();
@@ -237,7 +237,7 @@ namespace FEBuilderGBA
         //CC後のクラス
         public static uint GetHighClass(uint uid)
         {
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {
                 return UnitFE7Form.GetHighClassFE7(uid);
             }
@@ -253,7 +253,7 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (uid == 0xFFFF)
                 {
@@ -376,7 +376,7 @@ namespace FEBuilderGBA
         //顔画像
         public static Bitmap DrawUnitFacePicture(uint uid)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return UnitFE6Form.DrawUnitFacePicture(uid);
             }
@@ -414,7 +414,7 @@ namespace FEBuilderGBA
         //マップ顔画像
         public static Bitmap DrawUnitMapFacePicture(uint uid)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return UnitFE6Form.DrawUnitMapFacePicture(uid);
             }
@@ -446,7 +446,7 @@ namespace FEBuilderGBA
         //会話グループ取得
         public static uint GetTalkGroupByAddr(uint addr)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6にはない
                 return U.NOT_FOUND;
             }
@@ -462,7 +462,7 @@ namespace FEBuilderGBA
         //最大の会話グループを取得
         public static uint GetMaxTalkGroup()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6にはない
                 return 0;
             }
@@ -513,7 +513,7 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            if (Program.ROM.RomInfo.version() != 7)
+            if (Program.ROM.RomInfo.version != 7)
             {//専用アニメはFE7だけ?
                 return "";
             }
@@ -521,11 +521,11 @@ namespace FEBuilderGBA
         }
         public static uint GetPaletteLowClass(uint uid)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 return UnitFE7Form.GetPaletteLowClass(uid);
             }
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return UnitFE6Form.GetPaletteLowClass(uid);
             }
@@ -534,11 +534,11 @@ namespace FEBuilderGBA
     }
         public static uint GetPaletteHighClass(uint uid)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 return UnitFE7Form.GetPaletteHighClass(uid);
             }
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return UnitFE6Form.GetPaletteHighClass(uid);
             }
@@ -558,7 +558,7 @@ namespace FEBuilderGBA
             //支援データのポインタを書きこむ
             //ポインタはFE6,7,8共有だ、FE6だけ構造体のサイズが違う.
             uint supportStructSize;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 supportStructSize = 32;
             }
@@ -706,7 +706,7 @@ namespace FEBuilderGBA
                     , R._("ユニットデータが極端に少ないです。破損している可能性があります。")));
             }
 
-            uint base_pointer = Program.ROM.u32(Program.ROM.RomInfo.support_unit_pointer());
+            uint base_pointer = Program.ROM.u32(Program.ROM.RomInfo.support_unit_pointer);
             if (!U.isSafetyPointer(base_pointer))
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.UNIT, U.NOT_FOUND
@@ -842,11 +842,11 @@ namespace FEBuilderGBA
         }
         public static bool isMainUnit(uint cid)
         {
-            if (Program.ROM.RomInfo.version() <= 6)
+            if (Program.ROM.RomInfo.version <= 6)
             {
                 return (cid == 0x01);
             }
-            else if (Program.ROM.RomInfo.version() <= 7)
+            else if (Program.ROM.RomInfo.version <= 7)
             {
                 return (cid >= 0x01 && cid <= 0x03);
             }

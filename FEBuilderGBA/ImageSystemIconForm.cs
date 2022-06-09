@@ -36,7 +36,7 @@ namespace FEBuilderGBA
         {
             Size size = new System.Drawing.Size(144, 32);
 
-            uint width = Program.ROM.u8(Program.ROM.RomInfo.system_icon_width_address());
+            uint width = Program.ROM.u8(Program.ROM.RomInfo.system_icon_width_address);
             if (width > 32)
             {
                 width = 32;
@@ -54,14 +54,14 @@ namespace FEBuilderGBA
         {
             Size system_icon_size = GetSystemIconImageSize();
 
-            system_icon = new ImageFormRef(this, "system_icon", system_icon_size.Width, system_icon_size.Height, 1, Program.ROM.RomInfo.system_icon_pointer(), 0, Program.ROM.RomInfo.system_icon_palette_pointer());
-            system_move_allowicon = new ImageFormRef(this, "system_move_allowicon", 32 * 8, 2 * 8, 1, Program.ROM.RomInfo.system_move_allowicon_pointer(), 0, Program.ROM.RomInfo.system_move_allowicon_palette_pointer());
-            system_weapon_icon_icon = new ImageFormRef(this, "system_weapon_icon_icon", 32 * 8, 32, 1, Program.ROM.RomInfo.system_weapon_icon_pointer(), 0, Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
-            system_music_icon_icon = new ImageFormRef(this, "system_music_icon_icon", 32 * 8, 32, 1, Program.ROM.RomInfo.system_music_icon_pointer(), 0, Program.ROM.RomInfo.system_music_icon_palette_pointer());
+            system_icon = new ImageFormRef(this, "system_icon", system_icon_size.Width, system_icon_size.Height, 1, Program.ROM.RomInfo.system_icon_pointer, 0, Program.ROM.RomInfo.system_icon_palette_pointer);
+            system_move_allowicon = new ImageFormRef(this, "system_move_allowicon", 32 * 8, 2 * 8, 1, Program.ROM.RomInfo.system_move_allowicon_pointer, 0, Program.ROM.RomInfo.system_move_allowicon_palette_pointer);
+            system_weapon_icon_icon = new ImageFormRef(this, "system_weapon_icon_icon", 32 * 8, 32, 1, Program.ROM.RomInfo.system_weapon_icon_pointer, 0, Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
+            system_music_icon_icon = new ImageFormRef(this, "system_music_icon_icon", 32 * 8, 32, 1, Program.ROM.RomInfo.system_music_icon_pointer, 0, Program.ROM.RomInfo.system_music_icon_palette_pointer);
 
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
-                systemmenu_goal = new ImageFormRef(this, "systemmenu_goal", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer(), Program.ROM.RomInfo.systemmenu_goal_tsa_pointer(), Program.ROM.RomInfo.systemmenu_common_palette_pointer());
+                systemmenu_goal = new ImageFormRef(this, "systemmenu_goal", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer, Program.ROM.RomInfo.systemmenu_goal_tsa_pointer, Program.ROM.RomInfo.systemmenu_common_palette_pointer);
                 systemmenu_goal_panel.Show();
             }
             else
@@ -71,9 +71,9 @@ namespace FEBuilderGBA
             }
             WMTabControl.TabPages.Remove(tabPage3);
 
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {//FE8
-                systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 40, 8 * 9, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
+                systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 40, 8 * 9, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer, 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer);
                 systemmenu_old_badstatus_panel.Hide();
 
                 systemmenu_badstatus_panel.Height = systemmenu_badstatus_panel.Height * 2;
@@ -81,29 +81,29 @@ namespace FEBuilderGBA
                 InputFormRef.markupJumpLabel(X_StatusBackgroundLink);
                 InputFormRef.markupJumpLabel(X_SystemMenuPaletteLink);
             }
-            else if (Program.ROM.RomInfo.version() >= 7)
+            else if (Program.ROM.RomInfo.version >= 7)
             {//FE7
-                systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 32, 8 * 4, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
-                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer());
+                systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 32, 8 * 4, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer, 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer);
+                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer, 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer);
                 X_StatusBackgroundLink.Hide();
                 X_SystemMenuPaletteLink.Hide();
             }
             else
             {//FE6
-                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer());
+                systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer, 0, Program.ROM.RomInfo.systemmenu_badstatus_old_palette_pointer);
                 systemmenu_badstatus_panel.Hide();
                 systemmenu_old_badstatus_panel.Location = systemmenu_badstatus_panel.Location;
                 X_StatusBackgroundLink.Hide();
                 X_SystemMenuPaletteLink.Hide();
             }
 
-            systemmenu_terrain = new ImageFormRef(this, "systemmenu_terrain", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer(), Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer(), Program.ROM.RomInfo.systemmenu_common_palette_pointer());
-            systemmenu_name = new ImageFormRef(this, "systemmenu_name", 256, 256, 4, Program.ROM.RomInfo.systemmenu_name_image_pointer(), Program.ROM.RomInfo.systemmenu_name_tsa_pointer(), Program.ROM.RomInfo.systemmenu_name_palette_pointer());
-            systemmenu_battlepreview = new ImageFormRef(this, "systemmenu_battlepreview", 256, 256, 4, Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer());
+            systemmenu_terrain = new ImageFormRef(this, "systemmenu_terrain", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer, Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer, Program.ROM.RomInfo.systemmenu_common_palette_pointer);
+            systemmenu_name = new ImageFormRef(this, "systemmenu_name", 256, 256, 4, Program.ROM.RomInfo.systemmenu_name_image_pointer, Program.ROM.RomInfo.systemmenu_name_tsa_pointer, Program.ROM.RomInfo.systemmenu_name_palette_pointer);
+            systemmenu_battlepreview = new ImageFormRef(this, "systemmenu_battlepreview", 256, 256, 4, Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer, Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer, Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer);
 
-            systemarea_move_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer());
-            systemarea_attack_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer());
-            systemarea_staff_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer());
+            systemarea_move_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer);
+            systemarea_attack_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer);
+            systemarea_staff_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer);
 
             InputFormRef.markupJumpLabel(X_Jump_Patch);
             InputFormRef.markupJumpLabel(X_GraphicsTool);
@@ -131,19 +131,19 @@ namespace FEBuilderGBA
             unit_icon_gray_Picture.Image = DrawUnits(3);
             item_icon_Picture.Image = DrawItemIcons();
 
-            unit_icon_PALETTE.Value = Program.ROM.RomInfo.unit_icon_palette_address();
-            unit_icon_enemy_PALETTE.Value = Program.ROM.RomInfo.unit_icon_enemey_palette_address();
-            unit_icon_npc_PALETTE.Value = Program.ROM.RomInfo.unit_icon_npc_palette_address();
-            unit_icon_four_PALETTE.Value = Program.ROM.RomInfo.unit_icon_four_palette_address();
-            unit_icon_gray_PALETTE.Value = Program.ROM.RomInfo.unit_icon_gray_palette_address();
-            item_icon_PALETTE.Value = Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer());
+            unit_icon_PALETTE.Value = Program.ROM.RomInfo.unit_icon_palette_address;
+            unit_icon_enemy_PALETTE.Value = Program.ROM.RomInfo.unit_icon_enemey_palette_address;
+            unit_icon_npc_PALETTE.Value = Program.ROM.RomInfo.unit_icon_npc_palette_address;
+            unit_icon_four_PALETTE.Value = Program.ROM.RomInfo.unit_icon_four_palette_address;
+            unit_icon_gray_PALETTE.Value = Program.ROM.RomInfo.unit_icon_gray_palette_address;
+            item_icon_PALETTE.Value = Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer);
 
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
-                unit_icon_lightrune_Picture.Image = DrawUnits2(5, Program.ROM.RomInfo.lightrune_uniticon_id());
+                unit_icon_lightrune_Picture.Image = DrawUnits2(5, Program.ROM.RomInfo.lightrune_uniticon_id);
                 unit_icon_sepia_Picture.Image = DrawUnits(6);
-                unit_icon_lightrune_PALETTE.Value = Program.ROM.RomInfo.unit_icon_lightrune_palette_address();
-                unit_icon_sepia_PALETTE.Value = Program.ROM.RomInfo.unit_icon_sepia_palette_address();
+                unit_icon_lightrune_PALETTE.Value = Program.ROM.RomInfo.unit_icon_lightrune_palette_address;
+                unit_icon_sepia_PALETTE.Value = Program.ROM.RomInfo.unit_icon_sepia_palette_address;
             }
         }
 
@@ -223,11 +223,11 @@ namespace FEBuilderGBA
         //FE8では、バトルプレビューの画像のポインタを4箇所にコピーしないといけない.
         public static void Fix_FE8_systemmenu_battlepreview_image(uint imagePointer,Undo.UndoData undodata)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return;
             }
-            uint p = Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer();
+            uint p = Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer;
             if (imagePointer != p)
             {
                 return;
@@ -315,38 +315,38 @@ namespace FEBuilderGBA
         
         private void unit_icon_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_palette_address);
         }
 
         private void unit_icon_enemy_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_enemey_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_enemey_palette_address);
         }
 
         private void unit_icon_npc_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_npc_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_npc_palette_address);
         }
         private void unit_icon_four_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_four_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_four_palette_address);
         }
         private void unit_icon_gray_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_gray_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_gray_palette_address);
         }
         private void unit_icon_lightrune_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_lightrune_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_lightrune_palette_address);
         }
         private void unit_icon_sepia_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_sepia_palette_address());
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_sepia_palette_address);
         }
 
         private void icon_palette_Import_Click(object sender, EventArgs e)
         {
-            Import_Palette_By_Address(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer()));
+            Import_Palette_By_Address(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer));
         }
 
         //よく使うのでキャッシュする.
@@ -364,8 +364,8 @@ namespace FEBuilderGBA
             {
                 return SystemIconCache;
             }
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_icon_palette_pointer());
-            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_icon_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_icon_palette_pointer);
+            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_icon_pointer);
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
 
             Size system_icon_size = GetSystemIconImageSize();
@@ -379,8 +379,8 @@ namespace FEBuilderGBA
             {
                 return SystemMoveAllowCache;
             }
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_palette_pointer());
-            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_palette_pointer);
+            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_pointer);
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
 
             SystemMoveAllowCache = ImageUtil.ByteToImage16Tile(32 * 8, 2 * 8, imageUZ, 0, Program.ROM.Data, (int)palette);
@@ -393,11 +393,11 @@ namespace FEBuilderGBA
             {
                 return SystemWeaponCache;
             }
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
-            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
+            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_pointer);
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 SystemWeaponCache = ImageUtil.ByteToImage16Tile(32 * 8, 3 * 8, imageUZ, 0, Program.ROM.Data, (int)palette);
             }
@@ -415,8 +415,8 @@ namespace FEBuilderGBA
             {
                 return SystemMusicCache;
             }
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_palette_pointer());
-            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_palette_pointer);
+            uint image = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_pointer);
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
 
             SystemMusicCache = ImageUtil.ByteToImage16Tile(32 * 8, 4 * 8, imageUZ, 0, Program.ROM.Data, (int)palette);
@@ -434,13 +434,13 @@ namespace FEBuilderGBA
             uint palette_plist ;
             uint config_plist ;
             //フィールドの画像を取得
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8
                 obj_plist = 0x01;
                 palette_plist = 0x02;
                 config_plist = 0x03;
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//FE7
                 obj_plist = 0x1d1c;
                 palette_plist = 0x1e;
@@ -467,13 +467,13 @@ namespace FEBuilderGBA
             uint palette_plist;
             uint config_plist;
             //フィールドの画像を取得
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8
                 obj_plist = 0x0E;
                 palette_plist = 0x0F;
                 config_plist = 0x10;
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//FE7
                 obj_plist = 0x10;
                 palette_plist = 0x11;
@@ -527,11 +527,11 @@ namespace FEBuilderGBA
         }
         public static Bitmap SecretShop()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x6b);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x84);
             }
@@ -542,7 +542,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap FlagIcon()
         {
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
                 return ImageSystemIconForm.MusicIcon(14);
             }
@@ -553,11 +553,11 @@ namespace FEBuilderGBA
         }
         public static Bitmap StatBooster(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x56 + num);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x59 + num);
             }
@@ -568,11 +568,11 @@ namespace FEBuilderGBA
         }
         public static Bitmap PromotionItem(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x5d + num);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 return ImageItemIconForm.DrawIconWhereID(0x62 + num);
             }
@@ -583,7 +583,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap Fort()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return FiledMapTile(4, 28);
             }
@@ -606,7 +606,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap Village()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return VillageMapTile(22, 2, 2, 2);
             }
@@ -626,7 +626,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap Door()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return VillageMapTile(0, 13);
             }
@@ -637,11 +637,11 @@ namespace FEBuilderGBA
         }
         public static Bitmap Throne()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return VillageMapTile(21, 10, 1, 2);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//FE7には玉座のマップが、村にはない. 城で代用
                 return FiledMapTile(19, 26, 3, 3);
             }
@@ -653,11 +653,11 @@ namespace FEBuilderGBA
 
         public static Bitmap TalkIcon()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return ImagePortraitForm.DrawPortraitMap(2);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//FE7には玉座のマップが、村にはない. 城で代用
                 return ImagePortraitForm.DrawPortraitMap(0x16);
             }
@@ -668,7 +668,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap BaristaIcon(uint num = 0)
         {
-            return ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + num, 0, true);
+            return ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id + num, 0, true);
         }
 
         public static Bitmap Blank16()
@@ -706,7 +706,7 @@ namespace FEBuilderGBA
         {
             Bitmap bitmap = BaseImage();
             Bitmap ret = ImageUtil.Blank(16, 16, bitmap);
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 ImageUtil.BitBlt(ret, 4, 8, 8, 8, bitmap, 32, 0);
             }
@@ -728,7 +728,7 @@ namespace FEBuilderGBA
         {
             Bitmap bitmap = BaseWeaponImage();
             Bitmap ret = ImageUtil.Blank(16, 16, bitmap);
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 ImageUtil.BitBlt(ret, 0, 0, 16, 16, bitmap, (int)((type + 6) * 16), 8);
             }
@@ -775,188 +775,188 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
             uint image,palette,tsa;
-            image   = Program.ROM.p32(Program.ROM.RomInfo.system_icon_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.system_icon_palette_pointer());
+            image   = Program.ROM.p32(Program.ROM.RomInfo.system_icon_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.system_icon_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.system_icon_pointer()
+                , Program.ROM.RomInfo.system_icon_pointer
                 , "system_icon image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 2
-                , Program.ROM.RomInfo.system_icon_palette_pointer()
+                , Program.ROM.RomInfo.system_icon_palette_pointer
                 , "system_icon pal"
                 , Address.DataTypeEnum.PAL);
 
-            image = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_palette_pointer());
+            image = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.system_move_allowicon_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.system_move_allowicon_pointer()
+                , Program.ROM.RomInfo.system_move_allowicon_pointer
                 , "system_icon image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20
-                , Program.ROM.RomInfo.system_move_allowicon_palette_pointer()
+                , Program.ROM.RomInfo.system_move_allowicon_palette_pointer
                 , "system_move_allowicon pal"
                 , Address.DataTypeEnum.LZ77PAL);
 
-            image = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
+            image = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.system_weapon_icon_pointer()
+                , Program.ROM.RomInfo.system_weapon_icon_pointer
                 , "system_weapon image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20
-                , Program.ROM.RomInfo.system_weapon_icon_palette_pointer()
+                , Program.ROM.RomInfo.system_weapon_icon_palette_pointer
                 , "system_weapon pal"
                 , Address.DataTypeEnum.PAL);
 
-            image = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_palette_pointer());
+            image = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.system_music_icon_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.system_music_icon_pointer()
+                , Program.ROM.RomInfo.system_music_icon_pointer
                 , "system_music image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20
-                , Program.ROM.RomInfo.system_music_icon_palette_pointer()
+                , Program.ROM.RomInfo.system_music_icon_palette_pointer
                 , "system_music pal"
                 , Address.DataTypeEnum.PAL);
 
-            palette = (Program.ROM.RomInfo.unit_icon_palette_address());
+            palette = (Program.ROM.RomInfo.unit_icon_palette_address);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
                 , U.NOT_FOUND
                 , "unit_icon_play pal"
                 , Address.DataTypeEnum.PAL);
-            palette = (Program.ROM.RomInfo.unit_icon_enemey_palette_address());
+            palette = (Program.ROM.RomInfo.unit_icon_enemey_palette_address);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
                 , U.NOT_FOUND
                 , "unit_icon_enemey pal"
                 , Address.DataTypeEnum.PAL);
-            palette = (Program.ROM.RomInfo.unit_icon_npc_palette_address());
+            palette = (Program.ROM.RomInfo.unit_icon_npc_palette_address);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
                 , U.NOT_FOUND
                 , "unit_icon_npc pal"
                 , Address.DataTypeEnum.PAL);
-            palette = (Program.ROM.RomInfo.unit_icon_gray_palette_address());
+            palette = (Program.ROM.RomInfo.unit_icon_gray_palette_address);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
                 , U.NOT_FOUND
                 , "unit_icon_gray pal"
                 , Address.DataTypeEnum.PAL);
-            palette = (Program.ROM.RomInfo.unit_icon_four_palette_address());
+            palette = (Program.ROM.RomInfo.unit_icon_four_palette_address);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
                 , U.NOT_FOUND
                 , "unit_icon_for pal"
                 , Address.DataTypeEnum.PAL);
 
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
-                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_image_pointer());
-                palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_palette_pointer());
+                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_image_pointer);
+                palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_palette_pointer);
 
                 FEBuilderGBA.Address.AddAddress(list,image
                     , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                    , Program.ROM.RomInfo.systemmenu_common_image_pointer()
+                    , Program.ROM.RomInfo.systemmenu_common_image_pointer
                     , "systemmenu_goal image"
                     , Address.DataTypeEnum.LZ77IMG);
                 FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                    , Program.ROM.RomInfo.systemmenu_goal_tsa_pointer()
+                    , Program.ROM.RomInfo.systemmenu_goal_tsa_pointer
                     , "systemmenu_goal tsa",isPointerOnly
                     );
                 FEBuilderGBA.Address.AddAddress(list,palette
                     , 0x20 * 4
-                    , Program.ROM.RomInfo.systemmenu_common_palette_pointer()
+                    , Program.ROM.RomInfo.systemmenu_common_palette_pointer
                     , "systemmenu_goal pal"
                     , Address.DataTypeEnum.PAL);
             }
 
-            image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_image_pointer());
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_palette_pointer());
+            image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_image_pointer);
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_common_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.systemmenu_common_image_pointer()
+                , Program.ROM.RomInfo.systemmenu_common_image_pointer
                 , "systemmenu_common image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                , Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer()
+                , Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer
                 , "systemmenu_common tsa", isPointerOnly);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 4
-                , Program.ROM.RomInfo.systemmenu_common_palette_pointer()
+                , Program.ROM.RomInfo.systemmenu_common_palette_pointer
                 , "systemmenu_common"
                 , Address.DataTypeEnum.LZ77IMG);
 
             FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                , Program.ROM.RomInfo.systemmenu_name_tsa_pointer()
+                , Program.ROM.RomInfo.systemmenu_name_tsa_pointer
                 , "systemmenu_name tsa", isPointerOnly);
 
-            image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer());
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer());
+            image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer);
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,image
                 , isPointerOnly ? 0 : LZ77.getCompressedSize(Program.ROM.Data, image)
-                , Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer()
+                , Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer
                 , "systemmenu_battlepreview image"
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                , Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer()
+                , Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer
                 , "systemmenu_battlepreview tsa", isPointerOnly);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 4
-                , Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer()
+                , Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer
                 , "systemmenu_battlepreview pal"
                 , Address.DataTypeEnum.PAL);
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8の場合、画像イメージは4つのポインタがあります。
-                uint other_image_p = Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer();
+                uint other_image_p = Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer;
                 FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 4, "systemmenu_battlepreview_enemy", isPointerOnly,Address.DataTypeEnum.LZ77IMG);
                 FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 8, "systemmenu_battlepreview_npc", isPointerOnly, Address.DataTypeEnum.LZ77IMG);
                 FEBuilderGBA.Address.AddLZ77Pointer(list, other_image_p + 12, "systemmenu_battlepreview_4th", isPointerOnly, Address.DataTypeEnum.LZ77IMG);
             }
 
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer());
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 3
-                , Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer()
+                , Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer
                 , "systemarea_move_gradation"
                 , Address.DataTypeEnum.PAL);
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer());
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 3
-                , Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer()
+                , Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer
                 , "systemarea_attack_gradation"
                 , Address.DataTypeEnum.PAL);
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer());
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list,palette
                 , 0x20 * 3
-                , Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer()
+                , Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer
                 , "systemarea_staff_gradation"
                 , Address.DataTypeEnum.PAL);
 
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {//FE8
-                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_image_pointer());
+                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_image_pointer);
                 FEBuilderGBA.Address.AddAddress(list,image
                     , 40 * (8 * 9) / 2
-                    , Program.ROM.RomInfo.systemmenu_badstatus_image_pointer()
+                    , Program.ROM.RomInfo.systemmenu_badstatus_image_pointer
                     , "systemmenu_badstatus"
                     , Address.DataTypeEnum.LZ77IMG);
             }
-            else if (Program.ROM.RomInfo.version() >= 7)
+            else if (Program.ROM.RomInfo.version >= 7)
             {//FE7
-                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_image_pointer());
+                image = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_image_pointer);
                 FEBuilderGBA.Address.AddAddress(list, image
                     , 40 * (8 * 4) / 2
-                    , Program.ROM.RomInfo.systemmenu_badstatus_image_pointer()
+                    , Program.ROM.RomInfo.systemmenu_badstatus_image_pointer
                     , "systemmenu_badstatus"
                     , Address.DataTypeEnum.LZ77IMG);
             }
@@ -964,16 +964,16 @@ namespace FEBuilderGBA
             {//FE6
             }
 
-            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
+            palette = Program.ROM.p32(Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list, palette
                 , 0x20
-                , Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer()
+                , Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer
                 , "systemmenu_badstatus_palette"
                 , Address.DataTypeEnum.PAL);
 
 
             FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                , Program.ROM.RomInfo.system_tsa_16color_304x240_pointer()
+                , Program.ROM.RomInfo.system_tsa_16color_304x240_pointer
                 , "system_tsa_16color_304x240", isPointerOnly);
         }
 

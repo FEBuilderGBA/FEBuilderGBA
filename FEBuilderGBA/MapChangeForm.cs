@@ -32,8 +32,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_setting_pointer()
-                , Program.ROM.RomInfo.map_setting_datasize()
+                , Program.ROM.RomInfo.map_setting_pointer
+                , Program.ROM.RomInfo.map_setting_datasize
                 , (int i, uint addr) =>
                 {
                     //0 がポインタであればデータがあると考える.
@@ -481,7 +481,7 @@ namespace FEBuilderGBA
             int mapheight;
             ImageUtilMap.UnLZ77MapDataUShort(plists.mappointer_plist, out mapwidth, out mapheight);
 
-            bool isFE6 = Program.ROM.RomInfo.version() == 6;
+            bool isFE6 = Program.ROM.RomInfo.version == 6;
 
             N_InputFormRef.ReInit(change_addr);
 

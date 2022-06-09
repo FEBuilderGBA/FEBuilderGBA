@@ -59,7 +59,7 @@ namespace FEBuilderGBA
 
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.unit_move_icon_pointer()
+                , Program.ROM.RomInfo.unit_move_icon_pointer
                 , 8
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -155,23 +155,23 @@ namespace FEBuilderGBA
             uint palette;
             if (palette_type == 1)
             {//友軍
-                palette = Program.ROM.RomInfo.unit_icon_npc_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_npc_palette_address;
             }
             else if (palette_type == 2)
             {//敵軍
-                palette = Program.ROM.RomInfo.unit_icon_enemey_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_enemey_palette_address;
             }
             else if (palette_type == 3)
             {//グレー
-                palette = Program.ROM.RomInfo.unit_icon_gray_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_gray_palette_address;
             }
             else if (palette_type == 4)
             {//4軍
-                palette = Program.ROM.RomInfo.unit_icon_four_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_four_palette_address;
             }
             else
             {//自軍
-                palette = Program.ROM.RomInfo.unit_icon_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_palette_address;
             }
             uint pic_address_offset = U.toOffset(pic_address);
 
@@ -294,16 +294,16 @@ namespace FEBuilderGBA
                 string palette_error =
                     ImageUtil.CheckPalette(bitmap.Palette
                         , Program.ROM.Data
-                        , (Program.ROM.RomInfo.unit_icon_palette_address())
-                        , (Program.ROM.RomInfo.unit_icon_enemey_palette_address())
+                        , (Program.ROM.RomInfo.unit_icon_palette_address)
+                        , (Program.ROM.RomInfo.unit_icon_enemey_palette_address)
                         );
                 if (palette_error != "")
                 {
                     ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
                     f.SetErrorMessage(palette_error);
-                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address())));
-                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address())));
-                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_enemey_palette_address())));
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address)));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address)));
+                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_enemey_palette_address)));
                     f.ShowForceButton();
                     f.ShowDialog();
 
@@ -389,7 +389,7 @@ namespace FEBuilderGBA
         public static uint ExpandsArea(Form form, uint current_count, uint newdatacount, Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = Init(null);
-            return InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.unit_move_icon_pointer());
+            return InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.unit_move_icon_pointer);
         }
 
         public static void OnPreClassExtendsWarningHandler(object sender, EventArgs e)

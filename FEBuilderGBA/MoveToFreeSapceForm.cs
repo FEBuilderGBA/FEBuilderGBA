@@ -382,7 +382,7 @@ namespace FEBuilderGBA
         {
             List<uint> addrList = new List<uint>();
 
-            uint extendsArea = U.toOffset(Program.ROM.RomInfo.extends_address());
+            uint extendsArea = U.toOffset(Program.ROM.RomInfo.extends_address);
 
             uint addr;
             //00=ファイル末尾
@@ -474,12 +474,12 @@ namespace FEBuilderGBA
                 {//未知の衝突防止
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
-                uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer());
+                uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer);
                 if (a >= addr && a < addr + newSize)
                 {
                     return SearchFreeSpaceOneLow(newSize, addr + 0x100);
                 }
-                a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer());
+                a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer);
                 if (a >= addr && a < addr + newSize)
                 {
                     return SearchFreeSpaceOneLow(newSize, addr + 0x100);
@@ -508,12 +508,12 @@ namespace FEBuilderGBA
             //                {
             //                    return break;
             //                }
-            uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer());
+            uint a = Program.ROM.p32(Program.ROM.RomInfo.item_pointer);
             if (a == addr)
             {
                 return true;
             }
-            a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer());
+            a = Program.ROM.p32(Program.ROM.RomInfo.class_pointer);
             if (a == addr)
             {
                 return true;
@@ -552,7 +552,7 @@ namespace FEBuilderGBA
         public static uint SearchFreeSpaceOne(uint newSize, bool isProgramArea)
         {
             uint extendsArea = 0x01000000;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 extendsArea = 0x01000000 / 2;
             }
@@ -590,7 +590,7 @@ namespace FEBuilderGBA
         //ROMの先頭エリアの取得
         static uint GetROMAheadArea()
         {
-            return Program.ROM.RomInfo.compress_image_borderline_address();
+            return Program.ROM.RomInfo.compress_image_borderline_address;
         }
         //未知の衝突
         static bool IsUnknownCollision(ref uint addr, uint newSize)
@@ -622,9 +622,9 @@ namespace FEBuilderGBA
 
         static bool IsTextAreaReserrve(ref uint addr)
         {
-            if (addr >= Program.ROM.RomInfo.text_data_start_address() && addr < Program.ROM.RomInfo.text_data_end_address())
+            if (addr >= Program.ROM.RomInfo.text_data_start_address && addr < Program.ROM.RomInfo.text_data_end_address)
             {
-                addr = Program.ROM.RomInfo.text_data_end_address();
+                addr = Program.ROM.RomInfo.text_data_end_address;
                 return true;
             }
             return false;
@@ -633,7 +633,7 @@ namespace FEBuilderGBA
         //SkillSystems Reserve
         public static bool IsSkillReserve(ref uint addr)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
@@ -652,7 +652,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//F00000 - F90000
 
                 if (addr >= 0xF00000 && addr < 0xF90000)
@@ -674,7 +674,7 @@ namespace FEBuilderGBA
 
         public static void AppendSkillSystemsSanctuary(List<Address> list)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
                 if (skillsystem == PatchUtil.skill_system_enum.NO)
@@ -682,7 +682,7 @@ namespace FEBuilderGBA
                     return ;
                 }
 
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//F00000 - F90000
                     list.Add(new Address(0xF00000, 0xF90000 - 0xF00000, U.NOT_FOUND, "SkillSystemsSanctuary", Address.DataTypeEnum.BIN));
                 }

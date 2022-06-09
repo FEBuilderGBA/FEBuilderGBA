@@ -97,7 +97,7 @@ namespace FEBuilderGBA
             TRAP_L_0_COMBO.AddIcon(0x5, ImageSystemIconForm.Cursol()); //05=毒ガス
             TRAP_L_0_COMBO.AddIcon(0x7, ImageSystemIconForm.Cursol()); //07=神の矢
             TRAP_L_0_COMBO.AddIcon(0x8, ImageSystemIconForm.Cursol()); //08=炎
-            TRAP_L_0_COMBO.AddIcon(0xB, ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id())); //0B=地雷
+            TRAP_L_0_COMBO.AddIcon(0xB, ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id)); //0B=地雷
             TRAP_L_0_COMBO.AddIcon(0xC, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x53, 2, true)); //0C=ゴーゴンの卵
 
             OBJECT_N05_L_10_COMBO.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
@@ -122,7 +122,7 @@ namespace FEBuilderGBA
             N02_L_10_COMBO.AddIcon(0x0, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1, 0, true)); //00=プレイヤ
             N02_L_10_COMBO.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             N02_L_10_COMBO.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8.
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("11=制圧"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x11, ImageSystemIconForm.Throne()); //11=制圧
@@ -186,7 +186,7 @@ namespace FEBuilderGBA
             OBJECT_N05_L_10_COMBO.AddIcon(0x0E, ImageSystemIconForm.House()); //0E=民家
 
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6には、イベント付き宝箱がある
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("12=イベント付き宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Chest());
@@ -236,7 +236,7 @@ namespace FEBuilderGBA
             TRAP_L_0_COMBO.BeginUpdate();
             TRAP_L_0_COMBO.Items.RemoveAt(TRAP_L_0_COMBO.Items.Count - 1); //0xCゴーゴンの卵を消す
             TRAP_L_0_COMBO.EndUpdate();
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {//バリスタの並び順が異なるので作り直す
                 TRAP_N01_L_3_COMBO.BeginUpdate();
                 TRAP_N01_L_3_COMBO.Items.Clear();
@@ -248,7 +248,7 @@ namespace FEBuilderGBA
             }
 
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6の常時条件のasm条件の発生条件は、 0Eではなくて0D
                 TALKFE6_L_0_COMBO.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
                 TALKFE6_L_0_COMBO.AddIcon(0x3, ImageSystemIconForm.TalkIcon()); //03=話す条件
@@ -332,7 +332,7 @@ namespace FEBuilderGBA
             }
             if (condtype == CONDTYPE.TALK)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     return 4; //会話条件
                 }
@@ -406,12 +406,12 @@ namespace FEBuilderGBA
         InputFormRef InputFormRefN02;
         public static InputFormRef InitN02(Form self)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {//FE7だけサイズが違う.
                 return new InputFormRef(self
                     , "NFE702_"
                     , new List<String>()
-                    , 0, Program.ROM.RomInfo.eventcond_tern_size()
+                    , 0, Program.ROM.RomInfo.eventcond_tern_size
                     , (uint addr) =>
                     {
                         uint type = Program.ROM.u8(addr);
@@ -419,7 +419,7 @@ namespace FEBuilderGBA
                         {//信じられないことにFE7ではサイズは可変長である.
                             return addr + 12;
                         }
-                        return addr + Program.ROM.RomInfo.eventcond_tern_size();
+                        return addr + Program.ROM.RomInfo.eventcond_tern_size;
                     }
                     , (int i, uint addr) =>
                     {//00まで検索
@@ -436,7 +436,7 @@ namespace FEBuilderGBA
                 return new InputFormRef(self
                     , "N02_"
                     , 0
-                    , Program.ROM.RomInfo.eventcond_tern_size()
+                    , Program.ROM.RomInfo.eventcond_tern_size
                     , (int i, uint addr) =>
                     {//00まで検索
                         return Program.ROM.u32(addr + 0) != 0;
@@ -454,13 +454,13 @@ namespace FEBuilderGBA
         InputFormRef InputFormRefTalk;
         static InputFormRef InitTalk(Form self)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6だけ意味が違うしサイズも違う
                 return new InputFormRef(self
                     , "TALKFE6_"
                     , new List<string>() { "N04_", "N0D_" }
                     , 0
-                    , Program.ROM.RomInfo.eventcond_talk_size()
+                    , Program.ROM.RomInfo.eventcond_talk_size
                     , (int i, uint addr) =>
                     {//00まで検索
                         return Program.ROM.u32(addr + 0) != 0;
@@ -477,7 +477,7 @@ namespace FEBuilderGBA
                     , "TALK_"
                     , new List<string>() { "N03_", "N04_" }
                     , 0
-                    , Program.ROM.RomInfo.eventcond_talk_size()
+                    , Program.ROM.RomInfo.eventcond_talk_size
                     , (int i, uint addr) =>
                     {//00まで検索
                         return Program.ROM.u32(addr + 0) != 0;
@@ -512,7 +512,7 @@ namespace FEBuilderGBA
         InputFormRef InputFormRefAlways;
         static InputFormRef InitAlways(Form self)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6の常時条件のasm条件の発生条件は、 0Eではなくて0D
                 return new InputFormRef(self
                     , "ALWAYS_"
@@ -593,7 +593,7 @@ namespace FEBuilderGBA
 
             ALWAYS_N01_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleAchievementFlag();
             ALWAYS_N0B_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleAchievementFlag();
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6の常時条件は、0xD
                 ALWAYS_N0D_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleAchievementFlag();
             }
@@ -608,7 +608,7 @@ namespace FEBuilderGBA
             OBJECT_N08_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleAchievementFlag();//扉
             OBJECT_N0A_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleAchievementFlag();//店
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6の常時条件は、0xD
                 TALKFE6_N04_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTalk();
                 TALKFE6_N0D_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTalkASM();
@@ -676,7 +676,7 @@ namespace FEBuilderGBA
                 this.InputFormRefN02.ClearSelect(false);
                 this.InputFormRefN02.ReInit(addr, readCount, IsManualForcedChange);
                 ReadCount.Value = this.InputFormRefN02.DataCount;
-                if (Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.version == 7)
                 {//FE7だけターン条件のサイズが違う
                     this.CondTabControl.SelectedTab = tabPage02FE7;
                 }
@@ -690,7 +690,7 @@ namespace FEBuilderGBA
                 this.InputFormRefTalk.ClearSelect(false);
                 this.InputFormRefTalk.ReInit(addr, readCount, IsManualForcedChange);
                 ReadCount.Value = this.InputFormRefTalk.DataCount;
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {//FE6だけいろいろ違う
                     this.CondTabControl.SelectedTab = tabPage03FE6;
                 }
@@ -762,7 +762,7 @@ namespace FEBuilderGBA
             string str = R._("{0}を定義します。\r\n", this.FilterComboBox.Text);
             if (condtype == CONDTYPE.PLAYER_UNIT)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     str += R._("FE8では、ここに設定したリストで、進撃準備画面で選択できるユニット数が決定されます。\r\nこれは、FE6,FE7から引き継ついでいる機能です。\r\n過去のバージョンでは、ここに設定したユニットを利用していたようですが、FE8では、リストの人数だけが利用されます。\r\nその人数が、進撃準備画面で選択できるユニットの数になります。\r\n\r\n通常、このリストは準備画面の直前に利用するLOAD1のデータと同じデータを指します。\r\nそのため、通常は、何もしなくても自動的にリストは更新されます。\r\n\r\nただ、あなたが意図的にそれらを削除して破壊した場合、関連性が失われるので、手動で値をメンテナンスする必要があります。\r\n");
                 }
@@ -917,20 +917,20 @@ namespace FEBuilderGBA
                         uint type = Program.ROM.u8(addr);
 
                         list.Add(new U.AddrResult(addr, MapCond[i].Name, (uint)((n << 8) + (uint)filter_condtype)));
-                        if (Program.ROM.RomInfo.version() == 7
+                        if (Program.ROM.RomInfo.version == 7
                             && type == 1)
                         {//信じられないがFE7は12バイトの短いターンイベントが存在する
                             addr += 12;
                         }
                         else
                         {
-                            addr += Program.ROM.RomInfo.eventcond_tern_size();
+                            addr += Program.ROM.RomInfo.eventcond_tern_size;
                         }
                     }
                 }
                 else if (filter_condtype == CONDTYPE.TALK)
                 {
-                    for (int n = 0; addr < length; addr += Program.ROM.RomInfo.eventcond_talk_size(), n++)
+                    for (int n = 0; addr < length; addr += Program.ROM.RomInfo.eventcond_talk_size, n++)
                     {
                         if (Program.ROM.u32(addr) == 0)
                         {
@@ -1074,7 +1074,7 @@ namespace FEBuilderGBA
             uint objectTypeOfArmory = 0x16;
             uint objectTypeOfVendor = 0x17;
             uint objectTypeOfSecret = 0x18;
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {
 //                objectTypeOfSeize = 0xF;
                 objectTypeOfDoor = 0x10;
@@ -1155,12 +1155,12 @@ namespace FEBuilderGBA
                     }
                     uint item_id = Program.ROM.u8(addr + 4);
                     uint gold = Program.ROM.u16(addr + 6);
-                    if (item_id != Program.ROM.RomInfo.item_gold_id()
+                    if (item_id != Program.ROM.RomInfo.item_gold_id
                         && gold > 0)
                     {//ゴールドではないのに、ゴールドの設定がある.
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
                             , R._("ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n"
-                            , U.ToHexString(Program.ROM.RomInfo.item_gold_id()))
+                            , U.ToHexString(Program.ROM.RomInfo.item_gold_id))
                         ));
                     }
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.TreasureChestTileID, tilesArray, mapWidth, changeList))
@@ -1214,7 +1214,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
-                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size))
                 {
                     break;
                 }
@@ -1233,7 +1233,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     if (type == 0x4)
                     {//04=会話
@@ -1287,7 +1287,7 @@ namespace FEBuilderGBA
                 FELint.CheckFlag(flag, errors, CONDTYPE.TURN, addr);
                 FELint.CheckEventPointer(event_addr, errors, CONDTYPE.TURN, addr, false, tracelist);
 
-                if (Program.ROM.RomInfo.version() == 6 && (type == 0x1 || type == 0x2 || type == 0x3 || type == 0xD))
+                if (Program.ROM.RomInfo.version == 6 && (type == 0x1 || type == 0x2 || type == 0x3 || type == 0xD))
                 {//FE6 には、ターン1-3まである
                     if (type == 0xD)
                     {//FE6にはasmによるターンイベントがあるらしい(恐ろしい)
@@ -1295,12 +1295,12 @@ namespace FEBuilderGBA
                         FELint.CheckASMPointer(asm, errors, CONDTYPE.TURN, addr);
                     }
                 }
-                else if (Program.ROM.RomInfo.version() == 7 && (type == 0x1 || type == 0x2))
+                else if (Program.ROM.RomInfo.version == 7 && (type == 0x1 || type == 0x2))
                 {//FE7 には、ターン1-2まである
                     //ターン1はサイズが小さい
                     //ターン2はサイズが大きい
                 }
-                else if (Program.ROM.RomInfo.version() == 8 && (type == 0x2))
+                else if (Program.ROM.RomInfo.version == 8 && (type == 0x2))
                 {//FE8 には、ターン2がある
                 }
                 else if (type == 0x00 && flag > 0)
@@ -1345,12 +1345,12 @@ namespace FEBuilderGBA
                             , R._("判定フラグと達成フラグに同じフラグ({0})が設定されています。\r\n両方に同じフラグにすると、そのイベントは完了済みとして処理されるため、永久に実行されません。", jflag)));
                     }
                 }
-                else if (type == 0xE && Program.ROM.RomInfo.version() >= 7)
+                else if (type == 0xE && Program.ROM.RomInfo.version >= 7)
                 {//0E=ASM条件
                     uint asm = Program.ROM.u32(addr + 8);
                     FELint.CheckASMPointer(asm, errors, CONDTYPE.ALWAYS, addr);
                 }
-                else if (type == 0xD && Program.ROM.RomInfo.version() <= 6)
+                else if (type == 0xD && Program.ROM.RomInfo.version <= 6)
                 {//0D=ASM条件 FE6のみ
                     uint asm = Program.ROM.u32(addr + 8);
                     FELint.CheckASMPointer(asm, errors, CONDTYPE.ALWAYS, addr);
@@ -1367,7 +1367,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 uint player_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 10)));
                 uint player_hard_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 11)));
@@ -1379,7 +1379,7 @@ namespace FEBuilderGBA
                 FELint.CheckEventPointer(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 18)), true, tracelist);
                 FELint.CheckEventPointer(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 19)), true, tracelist);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 uint eliwood_enemy_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
                 uint eliwood_enemy_hard_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 7)));
@@ -1403,7 +1403,7 @@ namespace FEBuilderGBA
                 FELint.CheckEventPointer(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 14)), true, tracelist);
                 FELint.CheckEventPointer(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 15)), true, tracelist);
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 uint player_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
                 uint enemy_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
@@ -1425,7 +1425,7 @@ namespace FEBuilderGBA
                 FELint.CheckPointerAlien4(always_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 3)));
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 uint always1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
                 uint always2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
@@ -1440,7 +1440,7 @@ namespace FEBuilderGBA
                 FELint.CheckPointer(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 8)));
                 FELint.CheckPointer(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 9)));
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 uint trap1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
                 uint trap2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
@@ -1465,7 +1465,7 @@ namespace FEBuilderGBA
 
         public static bool IsChestObjectType(uint object_type)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 return object_type == 0x14;
             }
@@ -1476,7 +1476,7 @@ namespace FEBuilderGBA
         }
         public static bool IsShopObjectType(uint object_type)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 return object_type == 0x16 || object_type == 0x17 || object_type == 0x18;
             }
@@ -1529,7 +1529,7 @@ namespace FEBuilderGBA
         {
             List<uint> tracelist = new List<uint>();
             List<U.AddrResult> list = new List<U.AddrResult>();
-            bool isFE7 = Program.ROM.RomInfo.version() == 7;
+            bool isFE7 = Program.ROM.RomInfo.version == 7;
             uint rom_length = (uint)Program.ROM.Data.Length;
 
             uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
@@ -1556,7 +1556,7 @@ namespace FEBuilderGBA
                 {//0=ターン条件(02)
                     while(true)
                     {
-                        if (addr + Program.ROM.RomInfo.eventcond_tern_size() > rom_length)
+                        if (addr + Program.ROM.RomInfo.eventcond_tern_size > rom_length)
                         {
                             break;
                         }
@@ -1579,15 +1579,15 @@ namespace FEBuilderGBA
                         }
                         else
                         {
-                            addr += Program.ROM.RomInfo.eventcond_tern_size();
+                            addr += Program.ROM.RomInfo.eventcond_tern_size;
                         }
                     }
                 }
                 else if (condtype == CONDTYPE.TALK)
                 {//1=話すコマンドの会話条件(03)
-                    for (; true; addr += Program.ROM.RomInfo.eventcond_talk_size())
+                    for (; true; addr += Program.ROM.RomInfo.eventcond_talk_size)
                     {
-                        if (addr + Program.ROM.RomInfo.eventcond_talk_size() > rom_length)
+                        if (addr + Program.ROM.RomInfo.eventcond_talk_size > rom_length)
                         {
                             break;
                         }
@@ -1878,14 +1878,14 @@ namespace FEBuilderGBA
         public static List<U.AddrResult> MakeEventScriptForFE7Tutorial(uint mapid)
         {
             List<U.AddrResult> list = new List<U.AddrResult>();
-            Debug.Assert(Program.ROM.RomInfo.version() == 7);
+            Debug.Assert(Program.ROM.RomInfo.version == 7);
 
             if (mapid > 0x30)
             {
                 return list;
             }
 
-            uint tutorial_pointer = Program.ROM.RomInfo.event_tutorial_pointer();
+            uint tutorial_pointer = Program.ROM.RomInfo.event_tutorial_pointer;
             uint tutorial_addr = Program.ROM.p32(tutorial_pointer);
 
             tutorial_addr = tutorial_addr + (mapid * 4);
@@ -1932,7 +1932,7 @@ namespace FEBuilderGBA
         public static List<U.AddrResult> MakeEventScriptPointer(uint mapid)
         {
             List<U.AddrResult> list = new List<U.AddrResult>();
-            bool isFE7 = Program.ROM.RomInfo.version() == 7;
+            bool isFE7 = Program.ROM.RomInfo.version == 7;
 
             uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
             if (!U.isSafetyOffset(mapcond_addr))
@@ -1963,7 +1963,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_tern_size()))
+                        if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_tern_size))
                         {
                             break;
                         }
@@ -1985,15 +1985,15 @@ namespace FEBuilderGBA
                         }
                         else
                         {
-                            addr += Program.ROM.RomInfo.eventcond_tern_size();
+                            addr += Program.ROM.RomInfo.eventcond_tern_size;
                         }
                     }
                 }
                 else if (condtype == CONDTYPE.TALK)
                 {//1=話すコマンドの会話条件(03)
-                    for (; true ; addr += Program.ROM.RomInfo.eventcond_talk_size())
+                    for (; true ; addr += Program.ROM.RomInfo.eventcond_talk_size)
                     {
-                        if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                        if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size))
                         {
                             break;
                         }
@@ -2159,7 +2159,7 @@ namespace FEBuilderGBA
                     return;
                 }
                 //とりあえず終端命令だけのイベントを作る.
-                byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
+                byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code;
                 Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc Event");
                 addr = InputFormRef.AppendBinaryData(alloc, undodata);
                 if (addr == U.NOT_FOUND)
@@ -2183,12 +2183,12 @@ namespace FEBuilderGBA
         private void Jump_TO_EventUnit_Click(object sender, EventArgs e)
         {
             uint value = (uint)this.EventPointer.Value;
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 EventUnitForm f = (EventUnitForm)InputFormRef.JumpForm<EventUnitForm>(U.NOT_FOUND);
                 f.JumpTo(value);
             }
-            else if (Program.ROM.RomInfo.version() >= 7)
+            else if (Program.ROM.RomInfo.version >= 7)
             {//FE7
                 EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                 f.JumpTo(value);
@@ -2232,7 +2232,7 @@ namespace FEBuilderGBA
                 }
                 else if (condtype == EventCondForm.CONDTYPE.TALK)
                 {
-                    if (Program.ROM.RomInfo.version() == 6)
+                    if (Program.ROM.RomInfo.version == 6)
                     {
                         uint select = InputFormRef.AddrToSelect(TALKFE6_AddressList, addr);
                         if (select != U.NOT_FOUND)
@@ -2271,7 +2271,7 @@ namespace FEBuilderGBA
                 }
                 else if (condtype == EventCondForm.CONDTYPE.TURN)
                 {
-                    if (Program.ROM.RomInfo.version() == 7)
+                    if (Program.ROM.RomInfo.version == 7)
                     {
                         uint select = InputFormRef.AddrToSelect(NFE702_AddressList, addr);
                         if (select != U.NOT_FOUND)
@@ -2442,7 +2442,7 @@ namespace FEBuilderGBA
                     {//0=ターン条件(02)
                         while(true)
                         {
-                            if (!U.isSafetyOffset(base_addr + Program.ROM.RomInfo.eventcond_tern_size()))
+                            if (!U.isSafetyOffset(base_addr + Program.ROM.RomInfo.eventcond_tern_size))
                             {
                                 break;
                             }
@@ -2452,7 +2452,7 @@ namespace FEBuilderGBA
                                 break;
                             }
 
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {//FE6だけ特殊で ASMをかけるらしいよ.
                                 if (type == 0x0D)
                                 {
@@ -2474,20 +2474,20 @@ namespace FEBuilderGBA
                             }
 
 
-                            if (Program.ROM.RomInfo.version() == 7 
+                            if (Program.ROM.RomInfo.version == 7 
                                 && type == 1)
                             {//信じられないがFE7は12バイトの短いターンイベントが存在する
                                 base_addr += 12;
                             }
                             else
                             {
-                                base_addr += Program.ROM.RomInfo.eventcond_tern_size();
+                                base_addr += Program.ROM.RomInfo.eventcond_tern_size;
                             }
                         }
 
                         FEBuilderGBA.Address.AddAddress(list
                             , startaddr
-                            , base_addr - startaddr + Program.ROM.RomInfo.eventcond_tern_size()
+                            , base_addr - startaddr + Program.ROM.RomInfo.eventcond_tern_size
                             , base_pointer
                             , "EventCond map:" + mapidString + " turn:" + U.ToHexString(startaddr)
                             , Address.DataTypeEnum.EVENTCOND_TURN);
@@ -2495,9 +2495,9 @@ namespace FEBuilderGBA
                     else if (condtype == CONDTYPE.TALK)
                     {//1=話すコマンドの会話条件(03)
                         string basename = "EventScript map:" + mapidString + " talk:";
-                        for (; true; base_addr += Program.ROM.RomInfo.eventcond_talk_size())
+                        for (; true; base_addr += Program.ROM.RomInfo.eventcond_talk_size)
                         {
-                            if (!U.isSafetyOffset(base_addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                            if (!U.isSafetyOffset(base_addr + Program.ROM.RomInfo.eventcond_talk_size))
                             {
                                 break;
                             }
@@ -2506,7 +2506,7 @@ namespace FEBuilderGBA
                             {
                                 break;
                             }
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {
                                 if (type == 0x0D)
                                 {
@@ -2541,7 +2541,7 @@ namespace FEBuilderGBA
 
                         FEBuilderGBA.Address.AddAddress(list
                             , startaddr
-                            , base_addr - startaddr + Program.ROM.RomInfo.eventcond_talk_size(), base_pointer
+                            , base_addr - startaddr + Program.ROM.RomInfo.eventcond_talk_size, base_pointer
                             , "EventCond map:" + mapidString + " talk:" + U.ToHexString(startaddr)
                             , Address.DataTypeEnum.EVENTCOND_TALK);
                     }
@@ -2571,7 +2571,7 @@ namespace FEBuilderGBA
                             }
                             else if(IsChestObjectType(object_type))
                             {//宝箱
-                                if (Program.ROM.RomInfo.version() == 8
+                                if (Program.ROM.RomInfo.version == 8
                                     && type == 0x5)
                                 {
                                     ItemRandomChestForm.MakeAllDataLength(list, base_addr + 4, mapidString);
@@ -2607,7 +2607,7 @@ namespace FEBuilderGBA
                                 break;
                             }
 
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {
                                 if (type == 0x0D)
                                 {
@@ -2823,7 +2823,7 @@ namespace FEBuilderGBA
                 addr += (uint)code.Script.Size;
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 MakeTextIDEventScanFE8SPEvent(list, event_addr, addr);
             }
@@ -3093,7 +3093,7 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData("Precise EevntCondArea", mapid.ToString("X"));
 
             uint write_addr;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 uint eventSize = (uint)(EventCondForm.MapCond.Count * 4);
                 uint turn = eventSize;
@@ -3138,7 +3138,7 @@ namespace FEBuilderGBA
                 //Program.ROM.write_p32(write_addr + 88, 0, undodata); //start event
                 //Program.ROM.write_p32(write_addr + 92, 0, undodata); //end event
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 uint eventSize = (uint)(EventCondForm.MapCond.Count * 4);
                 uint turn = eventSize;
@@ -3465,7 +3465,7 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawPicture(icon, g, isWithDraw, b);
                         icon.Dispose();
 
-                        addr += Program.ROM.RomInfo.eventunit_data_size();
+                        addr += Program.ROM.RomInfo.eventunit_data_size;
                         if (!U.isSafetyOffset(addr))
                         {
                             break;
@@ -3864,7 +3864,7 @@ namespace FEBuilderGBA
         {
             uint type = Program.ROM.u8(addr + 0);
             uint objecttype = Program.ROM.u8(addr + 10);
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (objecttype == 0x11)
                 {
@@ -3939,7 +3939,7 @@ namespace FEBuilderGBA
                     out_bitmap = ImageSystemIconForm.Village();
                     return U.ToHexString(type) + ":" + R._("0E=民家");
                 }
-                else if (objecttype == 0x12 && type == 0x5 && Program.ROM.RomInfo.version() == 6)
+                else if (objecttype == 0x12 && type == 0x5 && Program.ROM.RomInfo.version == 6)
                 {//FE6のみ
                     out_bitmap = ImageSystemIconForm.Chest();
                     return U.ToHexString(type) + ":" + R._("12=イベント付き宝箱");
@@ -4003,7 +4003,7 @@ namespace FEBuilderGBA
         {
             uint type = Program.ROM.u8(addr + 0);
             uint objecttype = Program.ROM.u8(addr + 10);
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (objecttype == 0x11)
                 {
@@ -4064,7 +4064,7 @@ namespace FEBuilderGBA
                 {
                     return U.ToHexString(type) + ":" + R._("0E=民家");
                 }
-                else if (objecttype == 0x12 && type == 0x5 && Program.ROM.RomInfo.version() == 6)
+                else if (objecttype == 0x12 && type == 0x5 && Program.ROM.RomInfo.version == 6)
                 {//FE6のみ
                     return U.ToHexString(type) + ":" + R._("12=イベント付き宝箱");
                 }
@@ -4249,27 +4249,27 @@ namespace FEBuilderGBA
             {//バリスタ
                 bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0, 1, true);
                 uint archtype = Program.ROM.u8(ar.addr + 3);
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     if (archtype == 0x35)
                     {
                         text = U.ToHexString(type) + ":" + R._("35=ロングアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id, 0, true);
                     }
                     else if (archtype == 0x36)
                     {
                         text = U.ToHexString(type) + ":" + R._("36=アイアンアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 1, 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id + 1, 0, true);
                     }
                     else if (archtype == 0x37)
                     {
                         text = U.ToHexString(type) + ":" + R._("37=キラーアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 2, 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id + 2, 0, true);
                     }
                     else
                     {
                         text = U.ToHexString(type) + ":" + U.ToHexString(archtype) + "=" + "???";
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id, 0, true);
                     }
                 }
                 else
@@ -4277,22 +4277,22 @@ namespace FEBuilderGBA
                     if (archtype == 0x34)
                     {
                         text = U.ToHexString(type) + ":" + R._("34=ロングアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id, 0, true);
                     }
                     else if (archtype == 0x35)
                     {
                         text = U.ToHexString(type) + ":" + R._("35=アイアンアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 1, 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id + 1, 0, true);
                     }
                     else if (archtype == 0x36)
                     {
                         text = U.ToHexString(type) + ":" + R._("36=キラーアーチ");
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id() + 2, 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id + 2, 0, true);
                     }
                     else
                     {
                         text = U.ToHexString(type) + ":" + U.ToHexString(archtype) + "=" + "???";
-                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id(), 0, true);
+                        bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(Program.ROM.RomInfo.unit_wait_barista_id, 0, true);
                     }
                 }
                 U.MakeTransparent(bitmap);
@@ -4314,10 +4314,10 @@ namespace FEBuilderGBA
             else if (type == 0x0B)
             {//地雷
                 text = R._("0B=地雷");
-                bitmap = ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id());
+                bitmap = ImageItemIconForm.DrawIconWhereID(Program.ROM.RomInfo.itemicon_mine_id);
                 U.MakeTransparent(bitmap);
             }
-            else if (type == 0x0C && Program.ROM.RomInfo.version() == 8)
+            else if (type == 0x0C && Program.ROM.RomInfo.version == 8)
             {//ゴーゴンの卵
                 text = R._("0C=ゴーゴンの卵");
                 bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x53, 2, true);
@@ -4453,7 +4453,7 @@ namespace FEBuilderGBA
             int textmargineY = (ComboBoxEx.OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
 
             Bitmap bitmap;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 switch (index + 1)
                 {
@@ -4522,7 +4522,7 @@ namespace FEBuilderGBA
                         break;
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 switch (index + 1)
                 {
@@ -4646,7 +4646,7 @@ namespace FEBuilderGBA
         {
             uint item_id = (uint)OBJECT_N07_B4.Value;
             uint gold = (uint)OBJECT_N07_W6.Value;
-            if (item_id != Program.ROM.RomInfo.item_gold_id()
+            if (item_id != Program.ROM.RomInfo.item_gold_id
                 && gold <= 0)
             {//アイテムなのでゴールドの欄を消します.
                 OBJECT_N07_GOLD_PANEL.Hide();
@@ -4685,7 +4685,7 @@ namespace FEBuilderGBA
                 OBJECT_N07_GOLD_PANEL.Show();
                 OBJECT_N07_B5.Value = 0; //誤解を避けるために、耐久はかならず0にする必要がある
 
-                if (item_id == Program.ROM.RomInfo.item_gold_id())
+                if (item_id == Program.ROM.RomInfo.item_gold_id)
                 {
                     if (gold >= 1 && gold <= 255)
                     {
@@ -4699,7 +4699,7 @@ namespace FEBuilderGBA
                 else
                 {
                     OBJECT_N07_L_4_ITEM.ErrorMessage = R._("ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n"
-                        , U.ToHexString(Program.ROM.RomInfo.item_gold_id()));
+                        , U.ToHexString(Program.ROM.RomInfo.item_gold_id));
                 }
             }
         }
@@ -4743,7 +4743,7 @@ namespace FEBuilderGBA
 
                 List<U.AddrResult> eventCondList = MakeEventScriptPointer(mapid);
 
-                if (Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.version == 7)
                 {
                     List<U.AddrResult> tutorialCondList = MakeEventScriptForFE7Tutorial(mapid);
                     eventCondList.AddRange(tutorialCondList);
@@ -4922,7 +4922,7 @@ namespace FEBuilderGBA
 
         private void PreWriteHandler_TALK_W0_UNIONKEY(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 if (this.TALKFE6_W0_UNIONKEY.Value == 0)
                 {
@@ -4942,7 +4942,7 @@ namespace FEBuilderGBA
 
         private void PreWriteHandler_N02_W0(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 if (this.NFE702_W0.Value == 0)
                 {
@@ -4993,7 +4993,7 @@ namespace FEBuilderGBA
             OBJECT_N05_J_2_FLAG.Text = GetNameOfAchievementFlag();
             OBJECT_N05_L_2_FLAG.Show();
 
-            if (Program.ROM.RomInfo.version() == 8 
+            if (Program.ROM.RomInfo.version == 8 
                 && OBJECT_N05_W10.Value == 0x14)
             {
                 OBJECT_N05_J_4_EVENTORCHEST.Text = R._("宝箱の中身");
@@ -5125,7 +5125,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
-                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size))
                 {
                     break;
                 }
@@ -5174,7 +5174,7 @@ namespace FEBuilderGBA
 
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 18)));
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 19)));
@@ -5182,7 +5182,7 @@ namespace FEBuilderGBA
                 MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
                 MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 14)));
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 15)));
@@ -5190,7 +5190,7 @@ namespace FEBuilderGBA
                 MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
                 MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
 

@@ -50,7 +50,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N2_"
-                , Program.ROM.RomInfo.unit_custom_battle_anime_pointer()
+                , Program.ROM.RomInfo.unit_custom_battle_anime_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索

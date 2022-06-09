@@ -29,7 +29,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ccbranch_pointer()
+                , Program.ROM.RomInfo.ccbranch_pointer
                 , 2
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -182,7 +182,7 @@ namespace FEBuilderGBA
 
         public static int GetCCCount(uint shien_classs_id)
         {
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {//FE7までは分岐がないので、CCクラスを参照する.
                 if (ClassForm.isHighClass(shien_classs_id))
                 {//上位クラスなので、もう CCではない
@@ -237,13 +237,13 @@ namespace FEBuilderGBA
         public static uint ExpandsArea(Form form, uint current_count,uint newdatacount, Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = Init(null, (int)current_count);
-            uint newaddr = InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.ccbranch_pointer());
+            uint newaddr = InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.ccbranch_pointer);
             if (newaddr == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
             }
             //見習いのCC分岐には1箇所だけ、CCテーブル+1された箇所が存在する.
-            uint ccbranch2 = Program.ROM.RomInfo.ccbranch2_pointer();
+            uint ccbranch2 = Program.ROM.RomInfo.ccbranch2_pointer;
             Program.ROM.write_p32(ccbranch2, newaddr + 1, undodata);
 
             return newaddr;

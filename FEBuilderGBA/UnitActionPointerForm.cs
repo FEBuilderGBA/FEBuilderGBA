@@ -104,16 +104,16 @@ namespace FEBuilderGBA
         {
             if (! PatchUtil.SearchUnitActionReworkPatch())
             {//rework されていない
-                return Program.ROM.RomInfo.unitaction_function_pointer();
+                return Program.ROM.RomInfo.unitaction_function_pointer;
             }
 
-            string filename = Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename(), "UnitActionRework", "UnitActionRework", "asm", "ApplyAction.bin");
+            string filename = Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename, "UnitActionRework", "UnitActionRework", "asm", "ApplyAction.bin");
             if (!File.Exists(filename))
             {
                 return 0;
             }
 
-            uint hintAddr = Program.ROM.RomInfo.unitaction_function_pointer() - 0x100;
+            uint hintAddr = Program.ROM.RomInfo.unitaction_function_pointer - 0x100;
 
             byte[] bin = File.ReadAllBytes(filename);
             uint addrApplyAction = U.GrepEnd(Program.ROM.Data, bin, hintAddr, 0, 4);

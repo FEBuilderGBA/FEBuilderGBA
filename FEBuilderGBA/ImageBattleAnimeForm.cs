@@ -85,7 +85,7 @@ namespace FEBuilderGBA
         static InputFormRef N_Init(ImageBattleAnimeForm self)
         {
             //FEditor Advが文字列長を書いてくれていた場合
-            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.image_battle_animelist_pointer()));
+            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.image_battle_animelist_pointer));
             if (FEditorHint >= 0xFF)
             {//余りにでかいヒントは信じない
                 FEditorHint = U.NOT_FOUND;
@@ -93,7 +93,7 @@ namespace FEBuilderGBA
 
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.image_battle_animelist_pointer()
+                , Program.ROM.RomInfo.image_battle_animelist_pointer
                 , 32
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -1059,7 +1059,7 @@ namespace FEBuilderGBA
         {
            InputFormRef N_InputFormRef = N_Init(null);
             
-           bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+           bool isFE6 = (Program.ROM.RomInfo.version == 6);
            if (!isFE6)
            {//FE6の場合、パラディンなどが手斧モーションを持っていない.
             //そのため、FE7,FE8だけチェックします.

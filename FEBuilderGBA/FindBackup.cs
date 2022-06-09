@@ -84,7 +84,7 @@ namespace FEBuilderGBA
 
         public bool Scan(string dir,string prefix)
         {
-            uint smallest_rom_size = U.toOffset( Program.ROM.RomInfo.extends_address());
+            uint smallest_rom_size = U.toOffset( Program.ROM.RomInfo.extends_address);
 
             string[] files = U.Directory_GetFiles_Safe(dir, "*", SearchOption.TopDirectoryOnly);
             foreach (string filepath in files)

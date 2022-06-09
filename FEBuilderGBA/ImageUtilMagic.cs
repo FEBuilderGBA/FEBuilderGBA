@@ -67,7 +67,7 @@ namespace FEBuilderGBA
                 new MagicPatchTableSt{ name="FEditor",	ver = "FE6", addr = 0x2DC078,data = new byte[]{0x19 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x00 ,0x00 ,0x00 ,0xC5 ,0xC1 ,0x2D ,0x08},dim = 0x2dc091,no_dim = 0x2DC17F },
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach(MagicPatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -149,7 +149,7 @@ namespace FEBuilderGBA
 
 
             out_pointer = U.NOT_FOUND;
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (SpellTableSt t in table)
             {
                 if (t.name != type)
@@ -196,7 +196,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            uint effect_table_addr = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+            uint effect_table_addr = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
             if (!U.isSafetyOffset(effect_table_addr))
             {
                 return false;

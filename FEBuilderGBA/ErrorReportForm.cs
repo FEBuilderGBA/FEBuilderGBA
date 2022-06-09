@@ -58,7 +58,7 @@ namespace FEBuilderGBA
             string FEVersion = "";
             if (Program.ROM != null)
             {
-                FEVersion = Program.ROM.RomInfo.VersionToFilename();
+                FEVersion = Program.ROM.RomInfo.VersionToFilename;
                 FEVersion += " @ROMSize:" + Program.ROM.Data.Length;
             }
 

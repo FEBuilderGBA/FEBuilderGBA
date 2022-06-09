@@ -22,7 +22,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.class_alphaname_pointer()
+                , Program.ROM.RomInfo.class_alphaname_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -69,7 +69,7 @@ namespace FEBuilderGBA
         //リストを作る.
         public static List<U.AddrResult> MakeList()
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 return MapTerrainNameEngForm.MakeList();
             }
@@ -80,7 +80,7 @@ namespace FEBuilderGBA
 
         public static string GetName(uint id)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 
                 string name = MapTerrainNameEngForm.GetName(id);

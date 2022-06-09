@@ -57,36 +57,36 @@ namespace FEBuilderGBA
         private void MakeCCItemList()
         {
             uint id;
-            id = Program.ROM.RomInfo.cc_item_hero_crest_itemid();
+            id = Program.ROM.RomInfo.cc_item_hero_crest_itemid;
             this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
             
-            id = Program.ROM.RomInfo.cc_item_knight_crest_itemid();
+            id = Program.ROM.RomInfo.cc_item_knight_crest_itemid;
             this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
             
-            id = Program.ROM.RomInfo.cc_item_orion_bolt_itemid();
+            id = Program.ROM.RomInfo.cc_item_orion_bolt_itemid;
             this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
             
-            id = Program.ROM.RomInfo.cc_elysian_whip_itemid();
+            id = Program.ROM.RomInfo.cc_elysian_whip_itemid;
             this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-            id = Program.ROM.RomInfo.cc_guiding_ring_itemid();
+            id = Program.ROM.RomInfo.cc_guiding_ring_itemid;
             this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
-                id = Program.ROM.RomInfo.cc_fallen_contract_itemid();
+                id = Program.ROM.RomInfo.cc_fallen_contract_itemid;
                 this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-                id = Program.ROM.RomInfo.cc_master_seal_itemid();
+                id = Program.ROM.RomInfo.cc_master_seal_itemid;
                 this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-                id = Program.ROM.RomInfo.cc_ocean_seal_itemid();
+                id = Program.ROM.RomInfo.cc_ocean_seal_itemid;
                 this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-                id = Program.ROM.RomInfo.cc_moon_bracelet_itemid();
+                id = Program.ROM.RomInfo.cc_moon_bracelet_itemid;
                 this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
 
-                id = Program.ROM.RomInfo.cc_sun_bracelet_itemid();
+                id = Program.ROM.RomInfo.cc_sun_bracelet_itemid;
                 this.ITEM_LIST.Items.Add(U.ToHexString(id) + " " + ItemForm.GetItemName(id));
             }
         }
@@ -101,16 +101,16 @@ namespace FEBuilderGBA
         {
             switch (ITEM_LIST.SelectedIndex)
             {
-                case 0: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_hero_crest_pointer())); break;
-                case 1: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_knight_crest_pointer())); break;
-                case 2: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_orion_bolt_pointer())); break;
-                case 3: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_elysian_whip_pointer())); break;
-                case 4: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_guiding_ring_pointer())); break;
-                case 5: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_fallen_contract_pointer())); break;
-                case 6: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_master_seal_pointer())); break;
-                case 7: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_ocean_seal_pointer())); break;
-                case 8: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_moon_bracelet_pointer())); break;
-                case 9: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_sun_bracelet_pointer())); break;
+                case 0: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_hero_crest_pointer)); break;
+                case 1: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_knight_crest_pointer)); break;
+                case 2: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_orion_bolt_pointer)); break;
+                case 3: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_elysian_whip_pointer)); break;
+                case 4: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_guiding_ring_pointer)); break;
+                case 5: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_fallen_contract_pointer)); break;
+                case 6: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_master_seal_pointer)); break;
+                case 7: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_ocean_seal_pointer)); break;
+                case 8: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_moon_bracelet_pointer)); break;
+                case 9: this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_sun_bracelet_pointer)); break;
             }
         }
 
@@ -128,34 +128,34 @@ namespace FEBuilderGBA
         {
             string name = "CCItem";
             InputFormRef InputFormRef = Init(null);
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_hero_crest_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_hero_crest_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_knight_crest_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_knight_crest_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_orion_bolt_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_item_orion_bolt_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_elysian_whip_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_elysian_whip_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_guiding_ring_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_guiding_ring_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_fallen_contract_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_fallen_contract_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_master_seal_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_master_seal_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_ocean_seal_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_ocean_seal_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_moon_bracelet_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_moon_bracelet_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
             
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_sun_bracelet_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.cc_sun_bracelet_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
         }
 

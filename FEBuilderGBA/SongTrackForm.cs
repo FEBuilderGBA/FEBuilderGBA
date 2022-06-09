@@ -125,7 +125,7 @@ namespace FEBuilderGBA
 
             if (this.Tracks.Count >= 12)
             {//このトラックは再生できますか？
-                if (Program.ROM.RomInfo.version() >= 7 && Program.ROM.RomInfo.version() <= 8)
+                if (Program.ROM.RomInfo.version >= 7 && Program.ROM.RomInfo.version <= 8)
                 {
                     HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Track12_Over_By_SongTrack);
                 }

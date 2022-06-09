@@ -108,7 +108,7 @@ namespace FEBuilderGBA
 
         private void MapSettingButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<MapSettingFE7UForm>();
             }
@@ -171,7 +171,7 @@ namespace FEBuilderGBA
 
         private void MapTerrainNameButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<MapTerrainNameEngForm>();
             }
@@ -208,7 +208,7 @@ namespace FEBuilderGBA
 
         private void BigCGButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<ImageCGFE7UForm>();
             }
@@ -247,7 +247,7 @@ namespace FEBuilderGBA
         private void MenuButton_Click(object sender, EventArgs e)
         {
             MenuCommandForm f = (MenuCommandForm)InputFormRef.JumpForm<MenuCommandForm>();
-            f.JumpToAddr(Program.ROM.p32( Program.ROM.RomInfo.menu_unit_pointer()));
+            f.JumpToAddr(Program.ROM.p32( Program.ROM.RomInfo.menu_unit_pointer));
         }
 
         private void ItemCCButton_Click(object sender, EventArgs e)
@@ -268,7 +268,7 @@ namespace FEBuilderGBA
 
         private void ClassOPDemoButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<OPClassDemoFE7UForm>();
             }
@@ -632,7 +632,7 @@ namespace FEBuilderGBA
 #else
 //            ROMRebuildButton.Hide();
 #endif
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//FE7Uでは章タイトルの画像はない
                 //テキストデータを     40260c nazo font で描画しています.
                 ImageChapterTitleButton.Hide();

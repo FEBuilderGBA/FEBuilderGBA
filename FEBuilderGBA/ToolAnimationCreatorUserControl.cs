@@ -28,11 +28,11 @@ namespace FEBuilderGBA
                 list.Insert(0, new U.AddrResult(1, R._("00 表示しない")));
                 U.ConvertComboBox(list, ref this.BattleTerrain);
 
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     U.SelectedIndexSafety(this.BattleTerrain, 0x12 + 1);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     U.SelectedIndexSafety(this.BattleTerrain, 0x12 + 1);
                 }
@@ -64,12 +64,12 @@ namespace FEBuilderGBA
                 U.ConvertComboBox(list, ref this.TargetEnemy);
                 U.ConvertComboBox(list, ref this.PlayerUnit);
 
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
                     U.SelectedIndexSafety(this.PlayerUnit, 0x6F);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
                     U.SelectedIndexSafety(this.PlayerUnit, 0x6F);

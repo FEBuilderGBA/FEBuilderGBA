@@ -363,7 +363,7 @@ namespace FEBuilderGBA
             uint pal = Program.ROM.u16(addr + 2);
             uint skillPaletteAddress = GetSkillPaletteAddress(pal);
 
-            uint iconbaseaddr = Program.ROM.p32(Program.ROM.RomInfo.icon_pointer());
+            uint iconbaseaddr = Program.ROM.p32(Program.ROM.RomInfo.icon_pointer);
             uint icondatacount = (2 * 8 * 2 * 8) / 2; // /2しているのは16色のため
             uint iconaddr = iconbaseaddr + (icondatacount * (0x100 + id));
 
@@ -655,7 +655,7 @@ namespace FEBuilderGBA
 
             uint index = (uint)this.AddressList.SelectedIndex;
 
-            uint iconbaseaddr = Program.ROM.p32(Program.ROM.RomInfo.icon_pointer());
+            uint iconbaseaddr = Program.ROM.p32(Program.ROM.RomInfo.icon_pointer);
             uint size = 16 * 16 / 2; // /2しているのは16色のため
             uint addr = iconbaseaddr + (size * (0x100+index));
 
@@ -674,11 +674,11 @@ namespace FEBuilderGBA
         {
             if (pal == 0)
             {
-                return Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
+                return Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
             }
             else
             {
-                return Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer());
+                return Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer);
                 //                return 0xA7429C;
             }
         }

@@ -950,9 +950,9 @@ namespace FEBuilderGBA
         public static Bitmap DrawWorldMapEvent()
         {
             return DrawWorldMapEvent(
-                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_image_pointer()) , 
-                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_palette_pointer()) , 
-                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_tsa_pointer())
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_image_pointer) , 
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_palette_pointer) , 
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_tsa_pointer)
                 ) ; 
         }
 

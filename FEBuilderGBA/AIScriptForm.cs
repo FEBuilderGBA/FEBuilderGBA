@@ -117,7 +117,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ai1_pointer()
+                , Program.ROM.RomInfo.ai1_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -133,14 +133,14 @@ namespace FEBuilderGBA
                     else
                     {//未拡張
                         uint baseaddr = addr - (uint)(4 * i);
-                        if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer()))
+                        if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer))
                         {
                             if (i >= EventUnitForm.AI1.Count)
                             {
                                 return false;
                             }
                         }
-                        else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer()))
+                        else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer))
                         {
                             if (i >= EventUnitForm.AI2.Count)
                             {
@@ -156,7 +156,7 @@ namespace FEBuilderGBA
                 {
                     string name = "";
                     uint baseaddr = addr - (uint)(4 * i);
-                    if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer()))
+                    if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer))
                     {
                         if (i < EventUnitForm.AI1.Count)
                         {
@@ -167,7 +167,7 @@ namespace FEBuilderGBA
                             name = U.ToHexString(i);
                         }
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer))
                     {
                         if (i < EventUnitForm.AI2.Count)
                         {
@@ -193,11 +193,11 @@ namespace FEBuilderGBA
             int selected = this.FilterComboBox.SelectedIndex;
             if (selected == 0)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.ai1_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.ai1_pointer));
             }
             else if (selected == 1)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.ai2_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.ai2_pointer));
             }
         }
 
@@ -216,7 +216,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer(), Program.ROM.RomInfo.ai2_pointer()};
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer, Program.ROM.RomInfo.ai2_pointer};
 
             for (int aiType = 0; aiType < addlist.Length; aiType++)
             {
@@ -294,7 +294,7 @@ namespace FEBuilderGBA
         {
             {
                 InputFormRef InputFormRef = Init(null);
-                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai1_pointer());
+                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai1_pointer);
                 if (InputFormRef.DataCount <= 5)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.AISCRIPT, U.NOT_FOUND
@@ -303,7 +303,7 @@ namespace FEBuilderGBA
             }
             {
                 InputFormRef InputFormRef = Init(null);
-                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai2_pointer());
+                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai2_pointer);
                 if (InputFormRef.DataCount <= 5)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.AISCRIPT, U.NOT_FOUND
@@ -643,14 +643,14 @@ namespace FEBuilderGBA
             uint value = EventScriptForm.GetValueOneScriptEditSetTables(ScriptEditSetTables[selectID], arg);
             if (arg.Type == EventScript.ArgType.UNIT)
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     UnitForm f = (UnitForm)InputFormRef.JumpForm<UnitForm>(value - 1);
                     MakeInjectionCallback(f
                         , this.Script
                         , src_object, false);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     UnitFE7Form f = (UnitFE7Form)InputFormRef.JumpForm<UnitFE7Form>(value - 1);
                     MakeInjectionCallback(f
@@ -667,7 +667,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.CLASS)
             {
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 - FE8
                     ClassForm f = (ClassForm)InputFormRef.JumpForm<ClassForm>(value);
                     MakeInjectionCallback(f
@@ -1344,7 +1344,7 @@ namespace FEBuilderGBA
         }
         bool IsDuplicateAddr(uint current_addr,uint baseaddr)
         {
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer(), Program.ROM.RomInfo.ai2_pointer()};
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer, Program.ROM.RomInfo.ai2_pointer};
 
             for (int aiType = 0; aiType < addlist.Length; aiType++)
             {

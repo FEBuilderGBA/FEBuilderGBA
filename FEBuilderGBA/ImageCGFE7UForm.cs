@@ -35,7 +35,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.bigcg_pointer()
+                , Program.ROM.RomInfo.bigcg_pointer
                 , 16
                 , (int i, uint addr) =>
                 {

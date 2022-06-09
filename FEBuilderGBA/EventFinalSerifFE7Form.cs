@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_final_serif_pointer()
+                , Program.ROM.RomInfo.event_final_serif_pointer
                 , 8
                 , (int i, uint addr) =>
                 {

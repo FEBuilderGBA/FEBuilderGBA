@@ -3205,7 +3205,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (arg1 == "EVENT1"
                     || arg1 == "EVENT2"
@@ -3245,7 +3245,7 @@ namespace FEBuilderGBA
                 alllocQMessage = R._("新規にイベント命令の領域を割り当てますか？");
                 alllocedMessage = R._("領域を割り振りました。イベント命令画面からイベントを作ってください。");
                 //とりあえず終端命令だけのイベントを作る.
-                alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
+                alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code;
             }
             else if (arg1 == "EVENTORCHEST")
             {
@@ -3261,7 +3261,7 @@ namespace FEBuilderGBA
                     alllocQMessage = R._("新規にイベント命令の領域を割り当てますか？");
                     alllocedMessage = R._("領域を割り振りました。イベント命令画面からイベントを作ってください。");
                     //とりあえず終端命令だけのイベントを作る.
-                    alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
+                    alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code;
                 }
             }
             else if (arg1 == "ITEMSHOP")
@@ -3541,7 +3541,7 @@ namespace FEBuilderGBA
                 }
             }
             Undo.UndoData undodata = Program.Undo.NewUndoData(self);
-            byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code();
+            byte[] alloc = Program.ROM.RomInfo.Default_event_script_toplevel_code;
             uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
             if (addr == U.NOT_FOUND)
             {//割り当て失敗
@@ -3753,11 +3753,11 @@ namespace FEBuilderGBA
                 
             if (linktype == "UNIT")
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     InputFormRef.JumpForm<UnitForm>(value - 1, "AddressList", src_object);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     InputFormRef.JumpForm<UnitFE7Form>(value - 1, "AddressList", src_object);
                 }
@@ -3768,7 +3768,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "CLASS")
             {
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     InputFormRef.JumpForm<ClassForm>(value, "AddressList", src_object);
                 }
@@ -3783,11 +3783,11 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MAP")
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     InputFormRef.JumpForm<MapSettingForm>(value, "AddressList", src_object);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     InputFormRef.JumpForm<MapSettingFE7Form>(value, "AddressList", src_object);
                 }
@@ -3814,7 +3814,7 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     SoundRoomFE6Form f = (SoundRoomFE6Form)InputFormRef.JumpForm<SoundRoomFE6Form>(U.NOT_FOUND, "AddressList", src_object);
                     f.JumpToSongID(value );
@@ -3827,7 +3827,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "PORTRAIT")
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<ImagePortraitFE6Form>(value, "AddressList", src_object);
                 }
@@ -3947,7 +3947,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "SUPPORTUNIT")
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     SupportUnitFE6Form f = (SupportUnitFE6Form)InputFormRef.JumpForm<SupportUnitFE6Form>();
                     f.JumpToAddr(value);
@@ -4010,12 +4010,12 @@ namespace FEBuilderGBA
             }
             else if (linktype == "EVENTUNIT")
             {//ユニット配置
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     EventUnitForm f = (EventUnitForm)InputFormRef.JumpForm<EventUnitForm>(U.NOT_FOUND);
                     f.JumpTo(value);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                     f.JumpTo(value);
@@ -4032,7 +4032,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "IMAGECHAPTER")
             {//章タイトル
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<ImageChapterTitleFE7Form>(value, "AddressList", src_object);
                 }
@@ -4055,12 +4055,12 @@ namespace FEBuilderGBA
             }
             else if (linktype == "WORLDMAPEVENT")
             {//ワールドマップイベント
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     WorldMapEventPointerForm f = (WorldMapEventPointerForm)InputFormRef.JumpForm<WorldMapEventPointerForm>(U.NOT_FOUND);
                     f.JumpTo(value);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     WorldMapEventPointerFE7Form f = (WorldMapEventPointerFE7Form)InputFormRef.JumpForm<WorldMapEventPointerFE7Form>(U.NOT_FOUND);
                     f.JumpTo(value);
@@ -4179,7 +4179,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST1")
             {//移動コスト
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4198,7 +4198,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST2")
             {//移動コスト　雨
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4213,7 +4213,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST3")
             {//移動コスト 雪
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4227,7 +4227,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST4")
             {//地形回避
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4246,7 +4246,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST5")
             {//地形防御
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4265,7 +4265,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "MOVECOST6")
             {//地形魔防
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 FE8
                     MoveCostForm f = (MoveCostForm)InputFormRef.JumpForm<MoveCostForm>(U.NOT_FOUND);
                     if (arg1 == "CLASSID")
@@ -4284,7 +4284,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "OPCLASSALPHANAME")
             {//OPクラス英語表記
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//まちるばいと
                     OPClassAlphaNameForm f = (OPClassAlphaNameForm)InputFormRef.JumpForm<OPClassAlphaNameForm>(U.NOT_FOUND);
                     if (arg1 == "ADDR")
@@ -4386,7 +4386,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "SKILLASSIGNMENT")
             {
-                if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.FE8N_ver3)
@@ -4417,7 +4417,7 @@ namespace FEBuilderGBA
                         }
                     }
                 }
-                else if (Program.ROM.RomInfo.version() == 8)
+                else if (Program.ROM.RomInfo.version == 8)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
@@ -4428,7 +4428,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "CLASSTYPE")
             {//SkillSystemsの ClassType Rework
-                if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
@@ -4530,7 +4530,7 @@ namespace FEBuilderGBA
             }
             else if (linktype == "CG" || linktype == "CGICON")
             {
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {//FE7U
                     ImageCGFE7UForm f = (ImageCGFE7UForm)InputFormRef.JumpForm<ImageCGFE7UForm>(value, "AddressList", src_object);
                 }
@@ -4791,7 +4791,7 @@ namespace FEBuilderGBA
 
         static bool CheckRandomChest(NumericUpDown value)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
@@ -6874,7 +6874,7 @@ namespace FEBuilderGBA
         //武器レベル
         public static String GetWeaponClass(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 if (num <= 0) return "-";
                 if (num <= 50) return "E";
@@ -6897,7 +6897,7 @@ namespace FEBuilderGBA
         }
         public static uint GetWeaponClassRev(string lv)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 if (lv == "E") return 1;
                 else if (lv == "D") return 51;
@@ -7616,7 +7616,7 @@ namespace FEBuilderGBA
 
         public static string GetEditon(uint v)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (v == 1)
                 {
@@ -7631,7 +7631,7 @@ namespace FEBuilderGBA
                     return R._("エフラム編");
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 if (v == 1)
                 {
@@ -7694,7 +7694,7 @@ namespace FEBuilderGBA
         public static string GetWMAP_SPRITE_ID(uint num, out string errorMessae)
         {
             errorMessae = "";
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (num <= 0x6)
                 {
@@ -8124,8 +8124,8 @@ namespace FEBuilderGBA
         }
         public static string GetCGComment(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 7
-                && Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.version == 7
+                && Program.ROM.RomInfo.is_multibyte)
             {
                 return ImageCGFE7UForm.GetComment(num);
             }
@@ -8135,7 +8135,7 @@ namespace FEBuilderGBA
 
         public static string GetWMSTYLE1(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 switch (num)
                 {
@@ -8150,7 +8150,7 @@ namespace FEBuilderGBA
                 }
                 return "";
             }
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -8179,7 +8179,7 @@ namespace FEBuilderGBA
         }
         public static string GetWMSTYLE2(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 switch (num)
                 {
@@ -8190,7 +8190,7 @@ namespace FEBuilderGBA
                 }
                 return "";
             }
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -8209,7 +8209,7 @@ namespace FEBuilderGBA
         }
         public static string GetWMSTYLE3(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 switch (num)
                 {
@@ -8222,7 +8222,7 @@ namespace FEBuilderGBA
                 }
                 return "";
             }
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -8238,7 +8238,7 @@ namespace FEBuilderGBA
 
         public static string GetWMENREGION(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 switch (num)
                 {
@@ -8276,7 +8276,7 @@ namespace FEBuilderGBA
 
         public static string GetWMREGION(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 switch (num)
                 {
@@ -8293,7 +8293,7 @@ namespace FEBuilderGBA
                 }
                 return "";
             }
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -8355,7 +8355,7 @@ namespace FEBuilderGBA
         }
         public static string GetWMAPAFFILIATION(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -8398,7 +8398,7 @@ namespace FEBuilderGBA
         }
         public static string GetWMAP2AFFILIATION(uint num)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 switch (num)
                 {
@@ -9359,11 +9359,11 @@ namespace FEBuilderGBA
                             InputFormRef.SearchNextByListBox(self);
                             break;
                         case 20: //20=ユニット画面を開く
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {
                                 InputFormRef.JumpForm<UnitFE6Form>();
                             }
-                            else if (Program.ROM.RomInfo.version() == 7)
+                            else if (Program.ROM.RomInfo.version == 7)
                             {
                                 InputFormRef.JumpForm<UnitFE7Form>();
                             }
@@ -9373,7 +9373,7 @@ namespace FEBuilderGBA
                             }
                             break;
                         case 21: //21=クラス画面を開く
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {
                                 InputFormRef.JumpForm<ClassFE6Form>();
                             }
@@ -9383,7 +9383,7 @@ namespace FEBuilderGBA
                             }
                             break;
                         case 22: //22=アイテム画面を開く
-                            if (Program.ROM.RomInfo.version() == 6)
+                            if (Program.ROM.RomInfo.version == 6)
                             {
                                 InputFormRef.JumpForm<ItemFE6Form>();
                             }
@@ -11588,7 +11588,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@CLASS_CC")
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     str = R._("FE8では、分岐クラスチェンジが実装されたので、\r\nクラスチェンジの値としての意味をなさなくなりましたが、\r\n敵の自動成長に利用されています。\r\n敵の上級職を自動成長に成長させる時に、ここに設定されている下級職の成長率で成長させます。\r\nまた、クラスチェンジ3分岐パッチなどで、第3の選択子として利用されることもあります。");
                 }
@@ -11611,11 +11611,11 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_ID")
             {
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {
                     str = R._("章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
                 }
-                else if (Program.ROM.RomInfo.version() == 8)
+                else if (Program.ROM.RomInfo.version == 8)
                 {
                     str = R._("章タイトル画像を表示するためのIDです。\r\n0x46以降はフリーマップの地名のデータが定義されているので注意してください。");
                 }
@@ -11626,12 +11626,12 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_ID2")
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     str = R._("前作の残骸です。利用されません。");
                     str = R._("ヘクトル編の章タイトル画像を表示するためのIDです。");
                 }
-                else if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                else if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {
                     str = R._("ヘクトル編の章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
                 }
@@ -11642,7 +11642,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_PREP_SCREEN_BOOL")
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     str = R._("前作の残骸です。利用されません。");
                     str = str + "\r\n" + R._("以前は、進撃準備画面を利用するかどうかの判定に利用されていました。");
@@ -11655,11 +11655,11 @@ namespace FEBuilderGBA
             else if (str == "@UNIT_ID")
             {
                 str = R._("ユニットIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n");
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {
                     str += R._("仲間にできるユニットは 0x45までのユニットです。\r\nそれ以降は戦績データが記録されません。\r\n");
                     uint enemy_id = 0;
-                    if (Program.ROM.RomInfo.version() == 7)
+                    if (Program.ROM.RomInfo.version == 7)
                     {
                         enemy_id = 0xFB;
                     }
@@ -11749,7 +11749,7 @@ namespace FEBuilderGBA
             else if (str == "@MAPSETTING_WMAP_EVENT")
             {
                 str = R._("ワールドマップイベントを管理する基準となるポインタIDを指定します。\r\n");
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     str += MapSettingForm.GetExplainPLIST();
                 }
@@ -11894,15 +11894,15 @@ namespace FEBuilderGBA
             else if (str == "@EVENTUNIT_ITEM")
             {
                 str = R._("ユニットの所持アイテムを設定します。\r\nユニットの一番上の武器がディフォルトの装備武器になります。\r\n\r\nユニットがアイテムを落とす設定にしている場合、\r\nユニットの一番下のアイテムがドロップアイテムになります。\r\n");
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     str += R._("FE6でアイテムを落とすようにするには、FE6-Droppable Itemsパッチを適応したあとで、AI4(退避AI)に0x40のビットフラグを立ててください。\r\n");
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     str += R._("FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n");
                 }
-                else if (Program.ROM.RomInfo.version() == 8)
+                else if (Program.ROM.RomInfo.version == 8)
                 {
                     str += R._("FE8でアイテムを落とすようにするには、ユニットの一番最初の座標データにある特殊設定をアイテムドロップに変更します。\r\n");
                 }
@@ -12071,15 +12071,15 @@ namespace FEBuilderGBA
             {
                 str = R._("敵との差が大きければ、経験値をより獲得できます。");
                 str += "\r\n";
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     str += R._("この値が関係するのは、{}で囲まれた部分です。\r\n未撃破経験値　　＝（31＋相手のLV＋相手の上級職補正－自分のLV－自分の上級職補正）÷{{自分の経験値補正値}}\r\n基礎撃破経験値　＝（相手のLV×{{相手の経験値補正値}}＋{{相手の階級修正B}}）－（自分のLV×{{自分の経験値補正値}}＋{{自分の階級修正B}}）÷プレイモード係数\r\n撃破経験値　　　＝未撃破経験値＋max（0，基礎撃破経験値＋20＋ボス修正＋シーフ修正）");
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     str += R._("この値が関係するのは、{}で囲まれた部分です。\r\n未撃破経験値　　＝（31＋相手のLV＋相手の上級職補正－自分のLV－自分の上級職補正）÷{{自分の経験値補正値}}\r\n基礎撃破経験値　＝（相手のLV×{{相手の経験値補正値}}＋{{相手の階級修正B}}）－（自分のLV×{{自分の経験値補正値}}＋{{自分の階級修正B}}）÷プレイモード係数\r\n撃破経験値　　　＝未撃破経験値＋max（0，基礎撃破経験値＋20＋ボス修正＋シーフ修正）×瞬殺係数");
                 }
-                else if (Program.ROM.RomInfo.version() == 8)
+                else if (Program.ROM.RomInfo.version == 8)
                 {
                     str += R._("この値が関係するのは、{}で囲まれた部分です。\r\n未撃破経験値　　＝（31＋相手のLV＋相手の上級職補正－自分のLV－自分の上級職補正）÷{{自分の経験値補正値}}\r\n基礎撃破経験値　＝（相手のLV×{{相手の経験値補正値}}＋{{相手の階級修正B}}）－（自分のLV×{{自分の経験値補正値}}＋{{自分の階級修正B}}）÷プレイモード係数\r\n撃破経験値　　　＝未撃破経験値＋max（0，基礎撃破経験値＋20＋ボス修正＋シーフ修正＋マミー修正）×瞬殺係数");
                 }
@@ -12815,5 +12815,6 @@ namespace FEBuilderGBA
                 AppendEvent_RAMRewiteDoubleClick(info, id, size, isHex);
             }
         }
+
     }
 }

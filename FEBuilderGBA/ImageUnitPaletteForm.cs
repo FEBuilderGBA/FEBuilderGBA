@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             SetExplain();
             this.UNITCLASS_LIST.OwnerDraw(ListBoxEx.DrawUnitAndClassAndText, DrawMode.OwnerDrawFixed);
-            if (Program.ROM.RomInfo.version()==8)
+            if (Program.ROM.RomInfo.version==8)
             {
                 this.UNITCLASS_LIST.ItemListToJumpForm( "UNITPALETTEFE8", new string[] { "UID" });
             }
@@ -50,7 +50,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.image_unit_palette_pointer()
+                , Program.ROM.RomInfo.image_unit_palette_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -139,13 +139,13 @@ namespace FEBuilderGBA
 
         void MakeClassList(uint selectindex)
         {
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {//FE8の場合キャラパレット指定が別途用意されている
-                uint unit_palette_color_pointer = Program.ROM.p32(Program.ROM.RomInfo.unit_palette_color_pointer());
-                uint unit_palette_class_pointer = Program.ROM.p32(Program.ROM.RomInfo.unit_palette_class_pointer());
+                uint unit_palette_color_pointer = Program.ROM.p32(Program.ROM.RomInfo.unit_palette_color_pointer);
+                uint unit_palette_class_pointer = Program.ROM.p32(Program.ROM.RomInfo.unit_palette_class_pointer);
 
                 List<U.AddrResult> list = new List<U.AddrResult>();
-                for (int i = 0; i < Program.ROM.RomInfo.unit_maxcount(); i++)
+                for (int i = 0; i < Program.ROM.RomInfo.unit_maxcount; i++)
                 {
                     for (uint n = 0; n < 7; n++)
                     {
@@ -173,7 +173,7 @@ namespace FEBuilderGBA
             else
             {//FE7 , FE6 はユニットの部分に色指定がある
                 List<U.AddrResult> list = new List<U.AddrResult>();
-                for (int i = 0; i < Program.ROM.RomInfo.unit_maxcount(); i++)
+                for (int i = 0; i < Program.ROM.RomInfo.unit_maxcount; i++)
                 {
                     uint uid = (uint)i;
                     uint paletteid1 = UnitForm.GetPaletteLowClass(uid);
@@ -427,13 +427,13 @@ namespace FEBuilderGBA
 
         public static string GetExplainPaletteRule()
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 return R._("FE8の色決定ルーチンは以下のようになります。\r\n{0}から、ユニットの現在所属しているクラスに適合するパレットがあるかどうか探索します。\r\nもし、パレットが見つかれば、{1}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n", R._("ユニット別パレット"), R._("ユニット別パレット"));
             }
             else
             {
-                return R._("{0}の色決定ルーチンは以下のようになります。\r\nユニット設定で、{1}、または、{2}が指定されているかを確認します。\r\nもし、パレットが指定されていれば、{3}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n", Program.ROM.RomInfo.TitleToFilename(), R._("下位クラス戦闘アニメ色"), R._("上位クラス戦闘アニメ色"), R._("ユニット別パレット"));
+                return R._("{0}の色決定ルーチンは以下のようになります。\r\nユニット設定で、{1}、または、{2}が指定されているかを確認します。\r\nもし、パレットが指定されていれば、{3}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n", Program.ROM.RomInfo.TitleToFilename, R._("下位クラス戦闘アニメ色"), R._("上位クラス戦闘アニメ色"), R._("ユニット別パレット"));
             }
         }
 
@@ -442,7 +442,7 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
 
             uint table_addr = InputFormRef.BaseAddress;
-            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count());
+            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count);
             for (int i = 0; i < InputFormRef.DataCount; i++, table_addr += InputFormRef.BlockSize)
             {
                 uint id = (uint)i;

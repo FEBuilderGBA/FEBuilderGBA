@@ -166,7 +166,7 @@ namespace FEBuilderGBA
                         writer.WriteLine(line);
                     }
                     else if (pair.Value.TypeName == "ASM"
-                        || U.toOffset(pair.Key) < Program.ROM.RomInfo.compress_image_borderline_address() )
+                        || U.toOffset(pair.Key) < Program.ROM.RomInfo.compress_image_borderline_address )
                     {
                         string line = string.Format("{0} .thumb", U.ToHexString(pair.Key));
                         writer.WriteLine(line);
@@ -249,7 +249,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < structlist.Count; i++)
             {
                 Address a = structlist[i];
-                if (a.Addr < Program.ROM.RomInfo.compress_image_borderline_address())
+                if (a.Addr < Program.ROM.RomInfo.compress_image_borderline_address)
                 {
                     if (a.Info.IndexOf("@BIN") >= 0)
                     {

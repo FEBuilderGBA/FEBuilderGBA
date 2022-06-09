@@ -127,7 +127,7 @@ namespace FEBuilderGBA
         {
             InputFormRef ifr = new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.text_pointer()
+                , Program.ROM.RomInfo.text_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -154,10 +154,10 @@ namespace FEBuilderGBA
                 }
                 );
 
-            uint text_base = Program.ROM.p32(Program.ROM.RomInfo.text_pointer());
+            uint text_base = Program.ROM.p32(Program.ROM.RomInfo.text_pointer);
             if (!U.isSafetyOffset(text_base))
             {//テキストポインタを壊しているので復帰する.
-                text_base = Program.ROM.RomInfo.text_recover_address();
+                text_base = Program.ROM.RomInfo.text_recover_address;
                 ifr.ReInit(text_base);
             }
             return ifr;
@@ -290,14 +290,14 @@ namespace FEBuilderGBA
         //システム予約
         public static bool IsSystemReserve(uint textid)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (textid >= 0xE00 && textid <= 0xFFF)
                 {
                     return true;
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 if (textid >= 0x1E00 && textid <= 0x1FFF)
                 {
@@ -496,8 +496,8 @@ namespace FEBuilderGBA
                   baseaddress
                 , datacount
                 , id
-                , Program.ROM.RomInfo.text_data_start_address()
-                , Program.ROM.RomInfo.text_data_end_address()
+                , Program.ROM.RomInfo.text_data_start_address
+                , Program.ROM.RomInfo.text_data_end_address
                 , encode
                 , raiseUnHuffman
                 , get_data_pos_callback
@@ -2128,8 +2128,8 @@ namespace FEBuilderGBA
 
 /*
             {
-                uint text_data_start = Program.ROM.RomInfo.text_data_start_address();
-                uint text_data_end   = Program.ROM.RomInfo.text_data_end_address();
+                uint text_data_start = Program.ROM.RomInfo.text_data_start_address;
+                uint text_data_end   = Program.ROM.RomInfo.text_data_end_address;
                 if (text_data_end < text_data_start)
                 {
                     U.Swap<uint>(ref text_data_start,ref text_data_end);
@@ -2565,7 +2565,7 @@ namespace FEBuilderGBA
         {
             PatchUtil.draw_font_enum draw_font = PatchUtil.SearchDrawFontPatch();
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 if (draw_font == PatchUtil.draw_font_enum.DrawSingleByte || draw_font == PatchUtil.draw_font_enum.DrawUTF8)
                 {//SingleByte描画パッチが入っているので、何もしない
@@ -2647,7 +2647,7 @@ namespace FEBuilderGBA
             uint newaddr;
             {
                 InputFormRef ifr = Init(null);
-                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer());
+                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer);
             }
             InputFormRef.ClearCacheDataCount();
             return newaddr;
@@ -2739,11 +2739,11 @@ namespace FEBuilderGBA
 
         static bool IsFE8SplitMenu(uint textid)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
             }
             else
@@ -2930,7 +2930,7 @@ namespace FEBuilderGBA
             {
                 this.TextEncoding = OptionForm.textencoding();
                 this.LintTextSkipBug = OptionForm.lint_text_skip_bug();
-                this.IsMultiByte = Program.ROM.RomInfo.is_multibyte();
+                this.IsMultiByte = Program.ROM.RomInfo.is_multibyte;
                 this.HasAutoNewLine = CheckHasAutoNewLine(mainText);
                 this.HasEnable3Line = CheckEnable3LineTeqEscapeTeqTextEngineRework(mainText);
             }
@@ -2971,7 +2971,7 @@ namespace FEBuilderGBA
                 {//中国語の場合、今のところフォントデータが取れないので何もチェックできない.
                     return CheckBlockResult.NoError;
                 }
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//日本語の場合 (.+?)を消す. (ワイバーンナイト)とか
                     text = RegexCache.Replace(text, @"\(.+?\)", "");
                 }
@@ -3056,9 +3056,9 @@ namespace FEBuilderGBA
 
             bool IsOrignalBug(string str,int n, Size size)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         if (n == 0 && size.Width==156 && size.Height==48 &&
                             str.IndexOf("エイリーク様はヒーニアス王子救出に\r\n") >= 0) ///No Translate
@@ -3072,9 +3072,9 @@ namespace FEBuilderGBA
                         }
                     }
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         if (n == 0 && size.Width == 107 && size.Height == 48 &&
                             str.IndexOf("狭い通路と出入り口を\r\n") > 0) ///No Translate
@@ -3605,7 +3605,7 @@ namespace FEBuilderGBA
 
         private void TextListSpShowCharLabel_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<ImagePortraitFE6Form>((uint)TextListSpShowCharNumericUpDown.Value, "AddressList", TextListSpShowCharNumericUpDown);
             }

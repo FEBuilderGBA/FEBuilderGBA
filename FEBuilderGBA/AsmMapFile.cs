@@ -15,7 +15,7 @@ namespace FEBuilderGBA
         }
         public AsmMapFile(ROM rom)
         {
-            if (rom.RomInfo.version() == 0)
+            if (rom.RomInfo.version == 0)
             {
                 return;
             }
@@ -193,13 +193,22 @@ namespace FEBuilderGBA
             }
         }
 
-
         public static void ROMInfoLoadResource(Dictionary<uint, AsmMapSt> asmMap, bool isWithOutProcs)
         {
             //せっかくなので、ROMで判明しているデータも追加する.
-            MethodInfo[] methods = Program.ROM.RomInfo.GetType().GetMethods();
-            foreach (MethodInfo info in methods)
+            MemberInfo[] members = Program.ROM.RomInfo.GetType().GetMembers();
+            foreach (MemberInfo info in members)
             {
+                if (info.MemberType != MemberTypes.Property)
+                {
+                    continue;
+                }
+                PropertyInfo field = (PropertyInfo)info;
+                if (field.PropertyType != typeof(uint))
+                {
+                    continue;
+                }
+
                 if (isWithOutProcs)
                 {
                     if (info.Name.IndexOf("procs") >= 0)
@@ -210,7 +219,7 @@ namespace FEBuilderGBA
 
                 if (info.Name.IndexOf("_pointer") >= 0)
                 {
-                    uint addr = (uint)info.Invoke(Program.ROM.RomInfo, null);
+                    uint addr = (uint)field.GetValue(Program.ROM.RomInfo, null); 
                     addr = U.toOffset(addr);
                     if (addr > 0 && U.isSafetyOffset(addr))
                     {
@@ -232,7 +241,7 @@ namespace FEBuilderGBA
 
                 if (info.Name.IndexOf("_address") >= 0)
                 {
-                    uint addr = (uint)info.Invoke(Program.ROM.RomInfo, null);
+                    uint addr = (uint)field.GetValue(Program.ROM.RomInfo, null);
                     addr = U.toOffset(addr);
                     if (addr > 0 && U.isSafetyOffset(addr))
                     {
@@ -242,6 +251,7 @@ namespace FEBuilderGBA
                         asmMap[pointer] = p;
                     }
                 }
+
             }
         }
 

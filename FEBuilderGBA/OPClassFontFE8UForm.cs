@@ -36,7 +36,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.op_class_font_pointer()
+                , Program.ROM.RomInfo.op_class_font_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -65,7 +65,7 @@ namespace FEBuilderGBA
             {
                 return ImageUtil.BlankDummy(32);
             }
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.op_class_font_palette_pointer()); 
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.op_class_font_palette_pointer); 
 
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
 
@@ -125,7 +125,7 @@ namespace FEBuilderGBA
             int width = 2 * 8;
             int height = 4 * 8;
             Bitmap bitmap = ImageUtil.LoadAndCheckPaletteUI(this
-                , ImageUtil.MakePaletteHintP(Program.ROM.RomInfo.op_class_font_palette_pointer())
+                , ImageUtil.MakePaletteHintP(Program.ROM.RomInfo.op_class_font_palette_pointer)
                 , width, height);
             if (bitmap == null)
             {

@@ -86,7 +86,7 @@ namespace FEBuilderGBA
             uint p;
 
             //編成準備店.
-            p = Program.ROM.RomInfo.item_shop_hensei_pointer();
+            p = Program.ROM.RomInfo.item_shop_hensei_pointer;
             if (p != 0)
             {
                 ret.Add(new U.AddrResult(
@@ -94,7 +94,7 @@ namespace FEBuilderGBA
                     , R._("編成準備店")
                     , p));
             }
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 //まずワールドマップイベントをスキャン.
                 List<U.AddrResult> worldmaplist = WorldMapPointForm.MakeWorldMapPointList();

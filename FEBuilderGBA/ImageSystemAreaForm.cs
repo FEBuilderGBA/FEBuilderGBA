@@ -13,9 +13,9 @@ namespace FEBuilderGBA
     public partial class ImageSystemAreaForm : Form
     {
         uint[] BasePointers = new uint[]{
-             Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer()
-            ,Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer()
-            ,Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer()
+             Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer
+            ,Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer
+            ,Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer
         };
 
         public ImageSystemAreaForm()

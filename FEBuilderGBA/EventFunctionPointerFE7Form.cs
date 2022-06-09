@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_function_pointer_table_pointer()
+                , Program.ROM.RomInfo.event_function_pointer_table_pointer
                 , 8
                 , (int i, uint addr) =>
                 {

@@ -11065,6 +11065,9 @@ Song Length
 :表示条件ASM
 Display Condition ASM
 
+:ゲームオプションの拡張はROMの破壊につながることがあります。\r\nゲームオプションの拡張は、新しいゲームオプションを実現する時にのみにやるべきです。\r\nゲームオプションの順番や非表示をやりたいだけであれば、ゲームオプションの順番の方で行ってください。\r\n\r\n上記を理解した上で、それでもリポイント処理を実行してもいいですか？\r\n
+Expanding game options can lead to ROM corruption.\r\nExpansion of game options should only be done when new game options are realized.\r\nIf you just want to order or hide the game options, go in the order of the game options.\r\n\r\nIs it okay to perform the repoint process after understanding the above? \r\n
+
 :アイコン(value*8)
 Icon (value * 8)
 

@@ -73,7 +73,7 @@ namespace FEBuilderGBA
                     g_VoiceSpeeach = new SpeechLib.SpVoice();
                     g_VoiceSpeeach.Rate = 0;
 
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         g_ShortLength = 10;
                     }

@@ -88,7 +88,7 @@ namespace FEBuilderGBA
         {//魔物所持アイテム アイテム確率
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.monster_item_item_pointer()
+                , Program.ROM.RomInfo.monster_item_item_pointer
                 , 5
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -106,7 +106,7 @@ namespace FEBuilderGBA
         {//魔物所持アイテム アイテム確率
             return new InputFormRef(self
                 , "N1_"
-                , Program.ROM.RomInfo.monster_item_probability_pointer()
+                , Program.ROM.RomInfo.monster_item_probability_pointer
                 , 5
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -125,7 +125,7 @@ namespace FEBuilderGBA
         {//魔物所持アイテム アイテム確率
             return new InputFormRef(self
                 , "N2_"
-                , Program.ROM.RomInfo.monster_item_table_pointer()
+                , Program.ROM.RomInfo.monster_item_table_pointer
                 , 32
                 , (int i, uint addr) =>
                 {//読込最大値検索

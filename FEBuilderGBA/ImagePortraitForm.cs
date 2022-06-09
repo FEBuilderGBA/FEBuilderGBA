@@ -52,14 +52,14 @@ namespace FEBuilderGBA
         static InputFormRef Init(Form self)
         {
             //FEditor Advが文字列長を書いてくれていた場合
-            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.face_pointer()));
+            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.portrait_pointer));
             //連続するnull個数
             int nullContinuousCount = 0;
 
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.face_pointer()
-                , Program.ROM.RomInfo.face_datasize()
+                , Program.ROM.RomInfo.portrait_pointer
+                , Program.ROM.RomInfo.portrait_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i <= 0)
@@ -207,7 +207,7 @@ namespace FEBuilderGBA
 
             //TSA変換された顔画像の取得
             Bitmap allface;
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
              //圧縮   FE7U FE6
              //無圧縮 FE7 FE8 FE8U
@@ -408,7 +408,7 @@ namespace FEBuilderGBA
 
             uint unit_face = Program.ROM.u32(addr);
             uint palette = Program.ROM.u32(addr + 8);
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 uint mouth_x = Program.ROM.u8(addr + 12);
                 uint mouth_y = Program.ROM.u8(addr + 13);
@@ -467,7 +467,7 @@ namespace FEBuilderGBA
 
         public static Bitmap DrawPortraitMap( uint id)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 return ImagePortraitFE6Form.DrawPortraitFE6Map(id);
             }
@@ -520,7 +520,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap DrawPortraitClass(uint id)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 return ImagePortraitFE6Form.DrawPortraitClassFE6(id);
             }
@@ -542,7 +542,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap DrawPortraitAuto(uint id)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 return ImagePortraitFE6Form.DrawPortraitAuto(id);
             }
@@ -639,7 +639,7 @@ namespace FEBuilderGBA
             }
 
             Bitmap allface;
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                 //圧縮   FE7U FE6
                 //無圧縮 FE7 FE8 FE8U
@@ -766,7 +766,7 @@ namespace FEBuilderGBA
             }
 
             Bitmap allface;
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                 //圧縮   FE7U FE6
                 //無圧縮 FE7 FE8 FE8U
@@ -1158,7 +1158,7 @@ namespace FEBuilderGBA
 
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                 //圧縮   FE7U FE6
                 //無圧縮 FE7 FE8 FE8U
@@ -1219,7 +1219,7 @@ namespace FEBuilderGBA
             PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
             byte[] header4;
             byte[] palette;
-            if (Program.ROM.RomInfo.version() != 8
+            if (Program.ROM.RomInfo.version != 8
                 || portraitExtends != FEBuilderGBA.PatchUtil.portrait_extends.HALFBODY)
             {//HALFBODYを利用できない環境の場合 拡張部分を削る
                 seet = ImageUtil.Copy(seet, 0, 0, 32 * 8, 4 * 8);
@@ -1362,12 +1362,12 @@ namespace FEBuilderGBA
 
             if (U.isSafetyOffset(seet_image))
             {
-                isHalfBodyExtends = (Program.ROM.RomInfo.version() == 8 && IsHalfBodyFlag(seet_image));
+                isHalfBodyExtends = (Program.ROM.RomInfo.version == 8 && IsHalfBodyFlag(seet_image));
 
                 //4バイトヘッダ+無圧縮
                 //圧縮   FE7U FE6
                 //無圧縮 FE7 FE8 FE8U
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                     FEBuilderGBA.Address.AddLZ77Pointer(recycle
                         , portrait_addr + 0
@@ -1498,7 +1498,7 @@ namespace FEBuilderGBA
                 {//4バイトヘッダ+無圧縮
                     //圧縮   FE7U FE6
                     //無圧縮 FE7 FE8 FE8U
-                    if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                    if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                     {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                         FELint.CheckLZ77(seet_image, errors, FELint.Type.PORTRAIT, portrait_addr, id);
                     }
@@ -1525,7 +1525,7 @@ namespace FEBuilderGBA
         {
             //圧縮   FE7U FE6
             //無圧縮 FE7 FE8 FE8U
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
                 //ヘッダはないので常にOKを返す
                 return "";
@@ -1636,7 +1636,7 @@ namespace FEBuilderGBA
 
         public static List<U.AddrResult> MakeList()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 return ImagePortraitFE6Form.MakeList();
             }

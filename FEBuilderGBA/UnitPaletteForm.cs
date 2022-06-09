@@ -29,11 +29,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.unit_palette_color_pointer()
+                , Program.ROM.RomInfo.unit_palette_color_pointer
                 , 7
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.unit_maxcount();
+                    return i < Program.ROM.RomInfo.unit_maxcount;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
@@ -47,11 +47,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.unit_palette_class_pointer()
+                , Program.ROM.RomInfo.unit_palette_class_pointer
                 , 7
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.unit_maxcount();
+                    return i < Program.ROM.RomInfo.unit_maxcount;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目

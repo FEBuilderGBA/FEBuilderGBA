@@ -24,11 +24,11 @@ namespace FEBuilderGBA
         {
             InputFormRef ifr = new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.tactician_affinity_pointer()
+                , Program.ROM.RomInfo.tactician_affinity_pointer
                 , 0x4
                 , (int i, uint addr) =>
                 {
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         return i < 48;
                     }
@@ -48,7 +48,7 @@ namespace FEBuilderGBA
 
         static string GetName(uint select)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 uint birth = select / 4;
                 uint blood_type = select - (birth * 4);

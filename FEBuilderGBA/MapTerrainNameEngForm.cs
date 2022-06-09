@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_terrain_name_pointer()
+                , Program.ROM.RomInfo.map_terrain_name_pointer
                 , 2
                 , (int i, uint addr) =>
                 {//読込最大値検索

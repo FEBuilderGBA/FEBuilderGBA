@@ -13,7 +13,7 @@ namespace FEBuilderGBA
     {
         public static uint GetWorldmapNode(uint next_chaper)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
             uint nodeid = WorldMapPointForm.GetNodeIDByChapter(next_chaper);
             if (nodeid != U.NOT_FOUND)
@@ -26,11 +26,11 @@ namespace FEBuilderGBA
         }
         public static uint GetCurrentWorldmapNode()
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
             //不明な場合は、現在の拠点IDを返す.
             uint gSomeWMEventRelatedStruct;
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 gSomeWMEventRelatedStruct = 0x03005270;
             }
@@ -44,11 +44,11 @@ namespace FEBuilderGBA
         //編を求める
         public static uint GetEdition()
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//6には編が存在しない.
                 return U.NOT_FOUND;
             }
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             uint ramPointer = stageStructAddr + 0x1B;
             return Program.RAM.u8(ramPointer);
         }
@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         public static uint GetDiffecly()
         {
             uint ret = 0;
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
 
             uint ramPointer1 = stageStructAddr + 0x14;
             uint v = Program.RAM.u8(ramPointer1);
@@ -125,7 +125,7 @@ namespace FEBuilderGBA
         //マップIDを求める
         public static uint GetMapID()
         {
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             uint ramPointer = stageStructAddr + 0xE;
             return Program.RAM.u8(ramPointer);
         }
@@ -145,15 +145,15 @@ namespace FEBuilderGBA
 
         public static void CHEAT_WARP_FE8(EmulatorMemoryForm form, uint warp_chapter, uint edtion, uint worldmap_node)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
             uint gSomeWMEventRelatedStruct;
             uint eventExecuteFucntion;
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 gSomeWMEventRelatedStruct = 0x03005270;
                 eventExecuteFucntion = 0x0800D340;
@@ -235,7 +235,7 @@ namespace FEBuilderGBA
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
             //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             Program.RAM.write_u8(stageStructAddr + 0x1b, edtion);
 
             //拠点
@@ -247,14 +247,14 @@ namespace FEBuilderGBA
 
         public static void CHEAT_WARP_FE7(EmulatorMemoryForm form, uint warp_chapter, uint edtion)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 7);
+            Debug.Assert(Program.ROM.RomInfo.version == 7);
 
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
             uint eventExecuteFucntion;
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE7J
                 eventExecuteFucntion = 0x0800AEB0;
                 endAllMenusFunction = 0x0804AC78;
@@ -289,7 +289,7 @@ namespace FEBuilderGBA
             0x00, 0x00, 0x00, 0x08, 
             0x00, 0x00, 0x00, 0x08  //eventExecuteFucntion
             };
-            if (Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.is_multibyte == false)
             {//FE7Uだと、MNCHは、0x7f 0x00 ではなく、 0x81 0x00.
                 U.write_u8(warpCode, 0x24, 0x81);
             }
@@ -315,7 +315,7 @@ namespace FEBuilderGBA
             Program.RAM.write_u32(maptask + 4, procs_jump_addr);
 
             //Edition
-            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             Program.RAM.write_u8(stageStructAddr + 0x1b, edtion);
 
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
@@ -323,9 +323,9 @@ namespace FEBuilderGBA
 
         public static void CHEAT_WARP_FE6(EmulatorMemoryForm form, uint warp_chapter)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 6);
+            Debug.Assert(Program.ROM.RomInfo.version == 6);
 
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
             uint eventExecuteFucntion;
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
@@ -383,12 +383,12 @@ namespace FEBuilderGBA
 
         static uint SearchMapTaskProcsAddr()
         {
-            uint maptaskProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_maptask_pointer());
+            uint maptaskProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_maptask_pointer);
             return SearchProcsAddr(maptaskProcsAddr);
         }
         public static uint SearchSoundRoomUIProcsAddr()
         {
-            uint soundRoomUIProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_soundroomUI_pointer());
+            uint soundRoomUIProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_soundroomUI_pointer);
             return SearchProcsAddr(soundRoomUIProcsAddr);
         }
 
@@ -398,7 +398,7 @@ namespace FEBuilderGBA
             {
                 return U.NOT_FOUND;
             }
-            uint procs_pool_addr = Program.ROM.RomInfo.workmemory_procs_pool_address() - 0x02000000;
+            uint procs_pool_addr = Program.ROM.RomInfo.workmemory_procs_pool_address - 0x02000000;
             byte[] need = new byte[] { 0x00, 0x00, 0x00, 0x00 };
             U.write_u32(need, 0, search_procs_code);
 
@@ -408,15 +408,15 @@ namespace FEBuilderGBA
 
         public static void CHEAT_CALLENDEvent(EmulatorMemoryForm form)
         {
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address - 0x70; //テキストバッファの一番下をデータ置き場として利用する.
             uint endAllMenusFunction;
             uint deletePlayerPhaseInterface6CsFunction;
             uint setFlagFunction;
             uint callEndEventFunction;
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE8J
                     endAllMenusFunction = 0x0804FCAC;
                     deletePlayerPhaseInterface6CsFunction = 0x0808F44C;
@@ -431,9 +431,9 @@ namespace FEBuilderGBA
                     callEndEventFunction = 0x08083280;
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE7J
                     endAllMenusFunction = 0x0804AC78;
                     deletePlayerPhaseInterface6CsFunction = 0x0808667C;
@@ -507,7 +507,7 @@ namespace FEBuilderGBA
         //Bボタンを押す
         static void PressBButton()
         {
-            uint keyBufferCurrentAddr = Program.ROM.RomInfo.workmemory_keybuffer_address() + 4;
+            uint keyBufferCurrentAddr = Program.ROM.RomInfo.workmemory_keybuffer_address + 4;
             uint current = Program.RAM.u16(keyBufferCurrentAddr);
             current = current | 2;
             Program.RAM.write_u16(keyBufferCurrentAddr, current);
@@ -516,7 +516,7 @@ namespace FEBuilderGBA
         //カレントユニットに設定されている非表示フラグを折る.
         static void EraseCurrentUnitHideFlag()
         {
-            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address();
+            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address;
             uint unit_ram_address = Program.RAM.u32(control_unit_address);
 
             if (!U.is_02RAMPointer(unit_ram_address))
@@ -542,7 +542,7 @@ namespace FEBuilderGBA
 
         public static void CHEAT_CALLUpdateUnits(uint currentRamUnit = 0)
         {
-            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address() - 0xB0; //テキストバッファの一番下をデータ置き場として利用する.
+            uint work_address = Program.ROM.RomInfo.workmemory_last_string_address - 0xB0; //テキストバッファの一番下をデータ置き場として利用する.
 
             
             uint PointerProcsPlayerPhase;
@@ -554,9 +554,9 @@ namespace FEBuilderGBA
             uint ClearMOVEUNITs;
             uint SetCursorMapPosition;
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE8J
                     RefreshFogAndUnitMaps = 0x08019ecc;
                     UpdateMapAndUnit = 0x08032114;
@@ -581,9 +581,9 @@ namespace FEBuilderGBA
                     SetCursorMapPosition = 0x08015bbc;
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE7J
                     RefreshFogAndUnitMaps = 0x08019ea4;
                     UpdateMapAndUnit = 0x0802F858;
@@ -666,7 +666,7 @@ namespace FEBuilderGBA
             U.write_u32(warpCode, 0x80, currentRamUnit);
             U.write_u32(warpCode, 0x84, SetCursorMapPosition);
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 U.write_u8(warpCode, 0x50, 0x98); //ldrb r0, [r3, #0xE]
                 U.write_u8(warpCode, 0x51, 0x7b);
@@ -691,7 +691,7 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            uint addr = Program.ROM.RomInfo.RAMSlotTable_address();
+            uint addr = Program.ROM.RomInfo.RAMSlotTable_address;
             uint t = ( (aid) & 0xff) * 4;
             addr += t;
 
@@ -714,7 +714,7 @@ namespace FEBuilderGBA
         public static string GetAIDUnitString(uint addr)
         {
             uint aid;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 aid = Program.RAM.u16(addr + 0x19);
             }
@@ -728,7 +728,7 @@ namespace FEBuilderGBA
         public static string GetRAMUnitStatus(uint addr)
         {
             uint state;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//状態1,2だけ
                 state = Program.RAM.u16(addr + 0x0C);
             }
@@ -758,7 +758,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetChapterDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 ret.Add(new AddressList(0x00, "Clock", "", 4));
                 ret.Add(new AddressList(0x04, "Unknown4", "", 4));
@@ -813,7 +813,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetBattleUnitStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 ret.Add(new AddressList(0x00, "UnitPointer", "ROMUNITPOINTER", 4));
                 ret.Add(new AddressList(0x04, "ClassPointer", "ROMCLASSPOINTER", 4));
@@ -1032,7 +1032,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetArenaDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 ret.Add(new AddressList(0x00, "playerUnit", "ROMUNITPOINTER", 4));
                 ret.Add(new AddressList(0x04, "opponentUnit", "ROMUNITPOINTER", 4));
@@ -1213,7 +1213,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetDungeonDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {//FE6 FE7
                 return ret;
             }
@@ -1252,7 +1252,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetWorldmapStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {//FE6 FE7
                 return ret;
             }
@@ -1430,7 +1430,7 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetBattleSomeDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {//FE6 FE7
                 return ret;
             }

@@ -21,9 +21,9 @@ namespace FEBuilderGBA
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
  
-            OPNING_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.oping_event_pointer());
-            ENDING1_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending1_event_pointer());
-            ENDING2_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending2_event_pointer());
+            OPNING_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.oping_event_pointer);
+            ENDING1_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending1_event_pointer);
+            ENDING2_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending2_event_pointer);
         }
 
         public InputFormRef InputFormRef;
@@ -31,7 +31,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.worldmap_event_on_stageclear_pointer()
+                , Program.ROM.RomInfo.worldmap_event_on_stageclear_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -59,7 +59,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.worldmap_event_on_stageselect_pointer()
+                , Program.ROM.RomInfo.worldmap_event_on_stageselect_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -179,10 +179,10 @@ namespace FEBuilderGBA
 
         private void EventWriteButton_Click(object sender, EventArgs e)
         {
-            Program.ROM.write_p32(Program.ROM.RomInfo.oping_event_pointer(), (uint)OPNING_EVENT.Value);
-            Program.ROM.write_p32(Program.ROM.RomInfo.ending1_event_pointer(), (uint)ENDING1_EVENT.Value);
-            Program.ROM.write_p32(Program.ROM.RomInfo.ending2_event_pointer(), (uint)ENDING2_EVENT.Value);
-            InputFormRef.ShowWriteNotifyAnimation(this, Program.ROM.RomInfo.oping_event_pointer());
+            Program.ROM.write_p32(Program.ROM.RomInfo.oping_event_pointer, (uint)OPNING_EVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending1_event_pointer, (uint)ENDING1_EVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending2_event_pointer, (uint)ENDING2_EVENT.Value);
+            InputFormRef.ShowWriteNotifyAnimation(this, Program.ROM.RomInfo.oping_event_pointer);
         }
 
         private void JUMP_OPNING_EVENT_Click(object sender, EventArgs e)
@@ -205,11 +205,11 @@ namespace FEBuilderGBA
 
         public static bool isWorldMapEvent(uint addr)
         {
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 return WorldMapEventPointerFE7Form.isWorldMapEvent(addr);
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 return WorldMapEventPointerFE6Form.isWorldMapEvent(addr);
             }
@@ -271,17 +271,17 @@ namespace FEBuilderGBA
                 }
             }
             {
-                uint p = Program.ROM.RomInfo.oping_event_pointer();
+                uint p = Program.ROM.RomInfo.oping_event_pointer;
                 string name = R._("オープニングイベント");
                 EventScriptForm.ScanScript( list, p, true, true , name , tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                uint p = Program.ROM.RomInfo.ending1_event_pointer;
                 string name = R._("エイリークエンディング");
                 EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                uint p = Program.ROM.RomInfo.ending2_event_pointer;
                 string name = R._("エフラムエンディング");
                 EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
             }
@@ -316,17 +316,17 @@ namespace FEBuilderGBA
                 }
             }
             {
-                uint p = Program.ROM.RomInfo.oping_event_pointer();
+                uint p = Program.ROM.RomInfo.oping_event_pointer;
                 string name = R._("オープニングイベント");
                 EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                uint p = Program.ROM.RomInfo.ending1_event_pointer;
                 string name = R._("エイリークエンディング");
                 EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
-                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                uint p = Program.ROM.RomInfo.ending2_event_pointer;
                 string name = R._("エフラムエンディング");
                 EventCondForm.MakeVarsIDArrayByEventPointer(list, p, name, tracelist);
             }

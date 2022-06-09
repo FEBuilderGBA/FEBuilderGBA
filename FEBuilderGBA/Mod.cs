@@ -15,7 +15,7 @@ namespace FEBuilderGBA
         public void Load()
         {
             //MOD
-            ScanMods(System.IO.Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename()));
+            ScanMods(System.IO.Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename));
         }
 
         public class ModTypeSt
@@ -35,7 +35,7 @@ namespace FEBuilderGBA
         void ScanMods(string path)
         {
             Mods = new List<ModSt>();
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 return;
             }

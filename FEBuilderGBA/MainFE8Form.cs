@@ -310,7 +310,7 @@ namespace FEBuilderGBA
 
         private void ClassOPDemoButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<OPClassDemoFE8UForm>();
             }
@@ -322,7 +322,7 @@ namespace FEBuilderGBA
 
         private void MapTerrainNameButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<MapTerrainNameEngForm>();
             }
@@ -384,7 +384,7 @@ namespace FEBuilderGBA
 
         private void ClassOPFontButton_Click(object sender, EventArgs e)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<OPClassFontFE8UForm>();
             }
@@ -415,7 +415,7 @@ namespace FEBuilderGBA
         private void MenuButton_Click(object sender, EventArgs e)
         {
             MenuCommandForm f = (MenuCommandForm)InputFormRef.JumpForm<MenuCommandForm>();
-            f.JumpToAddr(Program.ROM.p32(Program.ROM.RomInfo.menu_unit_pointer()));
+            f.JumpToAddr(Program.ROM.p32(Program.ROM.RomInfo.menu_unit_pointer));
         }
 
         private void BigCGButton_Click(object sender, EventArgs e)
@@ -444,7 +444,7 @@ namespace FEBuilderGBA
 
         private void FontButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
@@ -833,7 +833,7 @@ namespace FEBuilderGBA
 
         void FixedButton()
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//クラスの英語表記で別設定があるのは日本語版だけ
                 OPClassAlphaNameButton.Hide();
 //                FE8SpellMenuExtendsButton.Show();
@@ -980,7 +980,7 @@ namespace FEBuilderGBA
 
         private void ExtraUnitButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 InputFormRef.JumpForm<ExtraUnitForm>();
             }

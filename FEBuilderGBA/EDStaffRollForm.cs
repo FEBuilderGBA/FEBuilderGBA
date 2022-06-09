@@ -32,7 +32,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ed_staffroll_image_pointer()
+                , Program.ROM.RomInfo.ed_staffroll_image_pointer
                 , 8
                 , (int i, uint addr) =>
                 {
@@ -66,7 +66,7 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy();
             }
             uint palette = 
-                Program.ROM.p32(  Program.ROM.RomInfo.ed_staffroll_palette_pointer());
+                Program.ROM.p32(  Program.ROM.RomInfo.ed_staffroll_palette_pointer);
 
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
             byte[] tsaUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(tsa));

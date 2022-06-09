@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.worldmap_bgm_pointer()
+                , Program.ROM.RomInfo.worldmap_bgm_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//終端データは存在しない

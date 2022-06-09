@@ -43,7 +43,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.bg_pointer()
+                , Program.ROM.RomInfo.bg_pointer
                 , 12
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -251,12 +251,12 @@ namespace FEBuilderGBA
         void ShowWarningMessage()
         {
             uint bgid = (uint)this.AddressList.SelectedIndex;
-            if (bgid == Program.ROM.RomInfo.bg_reserve_black_bgid())
+            if (bgid == Program.ROM.RomInfo.bg_reserve_black_bgid)
             {
                 DetailErrorMessageBox.Text = R._("このデータは、真っ黒な背景として画像としてシステムに予約されています。\r\n変更しないことをお勧めします。");
                 DetailErrorMessageBox.Show();
             }
-            else if (bgid == Program.ROM.RomInfo.bg_reserve_random_bgid())
+            else if (bgid == Program.ROM.RomInfo.bg_reserve_random_bgid)
             {
                 DetailErrorMessageBox.Text = R._("このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。");
                 DetailErrorMessageBox.Show();

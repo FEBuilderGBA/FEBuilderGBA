@@ -26,8 +26,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.map_setting_pointer()
-                , Program.ROM.RomInfo.map_setting_datasize()
+                , Program.ROM.RomInfo.map_setting_pointer
+                , Program.ROM.RomInfo.map_setting_datasize
                 , (int i, uint addr) =>
                 {
                     //0 がポインタであればデータがあると考える.
@@ -46,7 +46,7 @@ namespace FEBuilderGBA
                     }
 
                     r.name = U.ToHexString(i) + MapSettingForm.GetMapNameWhereAddr(addr);
-                    r.addr = Program.ROM.p32(Program.ROM.RomInfo.map_map_pointer_pointer()) + (worldmapEventPlist * 4);
+                    r.addr = Program.ROM.p32(Program.ROM.RomInfo.map_map_pointer_pointer) + (worldmapEventPlist * 4);
                     return r;
                 }
                 );

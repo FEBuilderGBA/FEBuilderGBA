@@ -33,7 +33,7 @@ namespace FEBuilderGBA
         static Bitmap GetFilterSymbolIconBitmap(int index)
         {
             Bitmap bitmap;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (index == 0)
                 {//Enemy
@@ -44,7 +44,7 @@ namespace FEBuilderGBA
                     bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x61, 1, true);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 if (index == 0)
                 {//Enemy
@@ -109,7 +109,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_exit_point_pointer() 
+                , Program.ROM.RomInfo.map_exit_point_pointer 
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -119,7 +119,7 @@ namespace FEBuilderGBA
                         return false;
                     }
 
-                    return i < Program.ROM.RomInfo.map_exit_point_npc_blockadd();
+                    return i < Program.ROM.RomInfo.map_exit_point_npc_blockadd;
                 }
                 , (int i, uint addr) =>
                 {
@@ -197,7 +197,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            if (exit_point_addr == Program.ROM.RomInfo.map_exit_point_blank())
+            if (exit_point_addr == Program.ROM.RomInfo.map_exit_point_blank)
             {//一つも離脱ポインタがない 共通NULLマーク
                 N_AddressListExpandsButton.Hide();
                 NewListAlloc.Show();
@@ -215,13 +215,13 @@ namespace FEBuilderGBA
         {
             if (this.FilterComboBox.SelectedIndex == 0)
             {//敵軍
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.map_exit_point_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.map_exit_point_pointer));
                 Set_X_Filter_Note_Message(0);
             }
             else
             {//友軍
                 this.InputFormRef.ReInit(
-                    Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer()) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd()));
+                    Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd));
                     ;
                 Set_X_Filter_Note_Message(1);
             }
@@ -313,7 +313,7 @@ namespace FEBuilderGBA
 
             //NPC離脱
             InputFormRef.ReInit(
-                Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer()) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd()));
+                Program.ROM.p32(Program.ROM.RomInfo.map_exit_point_pointer) + (4 * Program.ROM.RomInfo.map_exit_point_npc_blockadd));
             FEBuilderGBA.Address.AddAddressButIgnorePointer(list, InputFormRef, "MapExit NPC", new uint[] { 0 });
 
             mapmax = MapSettingForm.GetDataCount();

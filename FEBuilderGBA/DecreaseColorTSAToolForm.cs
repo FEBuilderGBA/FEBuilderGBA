@@ -63,7 +63,7 @@ namespace FEBuilderGBA
             }
             else if (Method.SelectedIndex == 3)
             {//ワールドマップ(でかい)
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     U.ForceUpdate(this.ConvertWidth, 480);
                     U.ForceUpdate(this.ConvertHeight, 320);
@@ -72,7 +72,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertReserveColor, 1);
                     U.ForceUpdate(this.ConvertSizeMethod, 1);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     U.ForceUpdate(this.ConvertWidth, 1024);
                     U.ForceUpdate(this.ConvertHeight, 688);
@@ -81,7 +81,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertReserveColor, 1);
                     U.ForceUpdate(this.ConvertSizeMethod, 1);
                 }
-                else if (Program.ROM.RomInfo.version() == 6)
+                else if (Program.ROM.RomInfo.version == 6)
                 {//256色なので不要
                     U.ForceUpdate(this.ConvertWidth, 240);
                     U.ForceUpdate(this.ConvertHeight, 160);
@@ -94,7 +94,7 @@ namespace FEBuilderGBA
             }
             else if (Method.SelectedIndex == 4)
             {// 04=ワールドマップ(イベント用)
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     U.ForceUpdate(this.ConvertWidth, 30 * 8);
                     U.ForceUpdate(this.ConvertHeight, 20 * 8);
@@ -104,7 +104,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertSizeMethod, 1);
                     IgnoreTSA.Checked = false;
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     U.ForceUpdate(this.ConvertWidth, 30 * 8);
                     U.ForceUpdate(this.ConvertHeight, 20 * 8);
@@ -114,7 +114,7 @@ namespace FEBuilderGBA
                     U.ForceUpdate(this.ConvertSizeMethod, 1);
                     IgnoreTSA.Checked = false;
                 }
-                else if (Program.ROM.RomInfo.version() == 6)
+                else if (Program.ROM.RomInfo.version == 6)
                 {//256色なので不要
                     U.ForceUpdate(this.ConvertWidth, 240);
                     U.ForceUpdate(this.ConvertHeight, 160);

@@ -54,7 +54,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint limit = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint limit = Program.ROM.RomInfo.compress_image_borderline_address;
             if (this.WriteOffset < limit)
             {
                 limit = this.WriteOffset;
@@ -171,7 +171,7 @@ namespace FEBuilderGBA
             }
             else if (useFreeArea == (int)UseFreeAreaEnum.Use0x09000000)
             {
-                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address()), useMap);
+                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address), useMap);
             }
         }
 
@@ -814,9 +814,6 @@ namespace FEBuilderGBA
         {
             byte[] newbin = LZ77.compress(bin);
 
-            //長さが可変長になるので、元のデータをゼロクリア
-            U.write_fill(this.WriteROMData32MB, addr, datasize);
-
             //領域の確保
             uint writeaddr = 0;
             if (!isVanilaExtrendsROMArea(addr + datasize)
@@ -829,6 +826,7 @@ namespace FEBuilderGBA
             {//リポイントが必要
                 writeaddr = Alloc((uint)newbin.Length, addr);
             }
+
             //データの書き込み
             U.write_range(this.WriteROMData32MB, writeaddr, newbin);
             ResolvedPointer(U.toPointer(addr), U.toPointer(writeaddr), debugInfo);

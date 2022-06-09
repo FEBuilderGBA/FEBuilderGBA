@@ -693,7 +693,7 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, null)) return errors;
             MapExitPointForm.MakeCheckError(mapid, errors);
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (InputFormRef.DoEvents(null, null)) return errors;
                 WorldMapEventPointerForm.MakeCheckErrors(mapid, errors);
@@ -704,7 +704,7 @@ namespace FEBuilderGBA
                     //FELint.CheckPrologeEventPointer(0, errors);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 if (InputFormRef.DoEvents(null, null)) return errors;
                 WorldMapEventPointerFE7Form.MakeCheckErrors(mapid, errors);
@@ -817,7 +817,7 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "ScanSystem ImageMapActionAnimation")) return;
             ImageMapActionAnimationForm.MakeCheckError(errors);
            
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 if (InputFormRef.DoEvents(null, "ScanSystem SoundFootStepsForm")) return;
                 SoundFootStepsForm.MakeCheckError(errors);
@@ -843,7 +843,7 @@ namespace FEBuilderGBA
                 if (InputFormRef.DoEvents(null, "ScanSystem EDForm")) return;
                 EDForm.MakeCheckError(errors);
 
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                 }
                 else
@@ -853,7 +853,7 @@ namespace FEBuilderGBA
                     SkillAssignmentUnitSkillSystemForm.MakeCheckError(errors);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 if (InputFormRef.DoEvents(null, "ScanSystem ImagePortraitForm")) return;
                 ImagePortraitForm.MakeCheckError(errors);

@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.worldmap_road_pointer()
+                , Program.ROM.RomInfo.worldmap_road_pointer
                 , 12
                 , (int i, uint addr) =>
                 {
@@ -80,9 +80,9 @@ namespace FEBuilderGBA
 
         public static Bitmap GetPathImage()
         {
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_icon_palette_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_icon_palette_pointer);
 
-            uint image = Program.ROM.p32(Program.ROM.RomInfo.worldmap_road_tile_pointer());
+            uint image = Program.ROM.p32(Program.ROM.RomInfo.worldmap_road_tile_pointer);
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
             int width = 8;
             int height = ImageUtil.CalcHeight(width, imageUZ.Length);

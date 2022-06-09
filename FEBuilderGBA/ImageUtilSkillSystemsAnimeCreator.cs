@@ -26,7 +26,7 @@ namespace FEBuilderGBA
             ,out AnimeType out_AnimeType)
         {
             Debug.Assert(U.isSafetyOffset(anime_address));
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8Jの場合 先頭にプログラムコードはないよ
                 out_ProgramCode = "";
                 out_AnimeType = AnimeType.None;
@@ -561,7 +561,7 @@ namespace FEBuilderGBA
             }
 
             List<byte> mainData = new List<byte>();
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 //FE8Jには、スキルごとにプログラムは存在しない.
             }

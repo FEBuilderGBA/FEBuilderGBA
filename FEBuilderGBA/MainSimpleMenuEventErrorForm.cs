@@ -613,12 +613,12 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.EVENTUNITS)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     EventUnitFE6Form f = (EventUnitFE6Form)InputFormRef.JumpForm<EventUnitFE6Form>(U.NOT_FOUND);
                     f.JumpTo(addr);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                     f.JumpTo(addr);
@@ -653,13 +653,13 @@ namespace FEBuilderGBA
                 || dataType == FELint.Type.MAPSETTING
                 )
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<MapSettingFE6Form>(mapid);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
-                    if (!Program.ROM.RomInfo.is_multibyte())
+                    if (!Program.ROM.RomInfo.is_multibyte)
                     {
                         InputFormRef.JumpForm<MapSettingFE7UForm>(mapid);
                     }
@@ -693,7 +693,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.PORTRAIT)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<ImagePortraitFE6Form>(tag);
                 }
@@ -705,11 +705,11 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.HAIKU)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<EventHaikuForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<EventHaikuFE7Form>(tag);
                 }
@@ -721,11 +721,11 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.BATTTLE_TALK)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<EventBattleTalkForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<EventBattleTalkFE7Form>(tag);
                 }
@@ -737,11 +737,11 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SUPPORT_TALK)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<SupportTalkForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<SupportTalkFE7Form>(tag);
                 }
@@ -753,7 +753,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SUPPORT_UNIT)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     SupportUnitFE6Form f = (SupportUnitFE6Form)InputFormRef.JumpForm<SupportUnitFE6Form>();
                     f.JumpToAddr(addr);
@@ -767,7 +767,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.CLASS)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<ClassFE6Form>(tag);
                 }
@@ -779,7 +779,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.ITEM)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<ItemFE6Form>(tag);
                 }
@@ -797,11 +797,11 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.UNIT)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<UnitForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<UnitFE7Form>(tag);
                 }
@@ -824,7 +824,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_NORMAL)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 0 + 1);
@@ -838,7 +838,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_RAIN)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 1 + 1);
@@ -852,7 +852,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_SHOW)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 2 + 1);
@@ -866,7 +866,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_AVOID)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 3 + 1);
@@ -880,7 +880,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_DEF)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 4 + 1);
@@ -894,7 +894,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MOVECOST_RES)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     MoveCostFE6Form f = (MoveCostFE6Form)InputFormRef.JumpForm<MoveCostFE6Form>();
                     f.JumpToClassID(tag, 5 + 1);
@@ -908,19 +908,19 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.OP_CLASS_DEMO)
             {
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<OPClassDemoFE7Form>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 7 && !Program.ROM.RomInfo.is_multibyte())
+                else if (Program.ROM.RomInfo.version == 7 && !Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<OPClassDemoFE7UForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte())
+                else if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<OPClassDemoForm>(tag);
                 }
-                else if (Program.ROM.RomInfo.version() == 8 && !Program.ROM.RomInfo.is_multibyte())
+                else if (Program.ROM.RomInfo.version == 8 && !Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<OPClassDemoFE8UForm>(tag);
                 }
@@ -928,7 +928,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.WMAP_BASE_POINT)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<WorldMapPointForm>(tag);
                 }
@@ -936,7 +936,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SOUNDROOM)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<SoundRoomFE6Form>(tag);
                 }
@@ -974,7 +974,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SENSEKI)
             {
-                if (Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<EDSensekiCommentForm>(tag);
                 }
@@ -982,7 +982,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.DIC)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     InputFormRef.JumpForm<TextDicForm>(U.NOT_FOUND);
                 }
@@ -1001,11 +1001,11 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.ED)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     InputFormRef.JumpForm<EDFE6Form>();
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     InputFormRef.JumpForm<EDFE7Form>();
                 }
@@ -1017,7 +1017,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.TERRAIN)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<MapTerrainNameForm>();
                 }
@@ -1029,7 +1029,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SKILL_CONFIG)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
@@ -1048,7 +1048,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SKILL_CLASS)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
@@ -1060,7 +1060,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.SKILL_UNIT)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
                     if (skill == PatchUtil.skill_system_enum.SkillSystem)
@@ -1166,9 +1166,9 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)
             {
-                if (tag >= Program.ROM.RomInfo.magic_effect_original_data_count())
+                if (tag >= Program.ROM.RomInfo.magic_effect_original_data_count)
                 {
-                    tag -= Program.ROM.RomInfo.magic_effect_original_data_count();
+                    tag -= Program.ROM.RomInfo.magic_effect_original_data_count;
                 }
                 ImageUtilMagic.magic_system_enum magic = ImageUtilMagic.SearchMagicSystem();
                 if (magic == ImageUtilMagic.magic_system_enum.FEDITOR_ADV)

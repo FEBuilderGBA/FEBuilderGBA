@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         {
             InputFormRef ifr = new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.menu_definiton_pointer()
+                , Program.ROM.RomInfo.menu_definiton_pointer
                 , 36
                 , (int i, uint addr) =>
                 {
@@ -115,12 +115,12 @@ namespace FEBuilderGBA
         static uint[] GetPointers()
         {
             return new uint[] { 
-                           Program.ROM.RomInfo.menu_definiton_pointer()
-                        ,  Program.ROM.RomInfo.menu_promotion_pointer()
-                        ,  Program.ROM.RomInfo.menu_promotion_branch_pointer()
-                        ,  Program.ROM.RomInfo.menu_definiton_split_pointer()
-                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_pointer()
-                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_shop_pointer()
+                           Program.ROM.RomInfo.menu_definiton_pointer
+                        ,  Program.ROM.RomInfo.menu_promotion_pointer
+                        ,  Program.ROM.RomInfo.menu_promotion_branch_pointer
+                        ,  Program.ROM.RomInfo.menu_definiton_split_pointer
+                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_pointer
+                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_shop_pointer
             };
 
         }
@@ -309,19 +309,19 @@ namespace FEBuilderGBA
 
         public static uint GetUnitMenuPointer()
         {
-            return Program.ROM.RomInfo.menu_unit_pointer();
+            return Program.ROM.RomInfo.menu_unit_pointer;
         }
         public static uint GetGameMenuPointer()
         {
-            return Program.ROM.RomInfo.menu_game_pointer();
+            return Program.ROM.RomInfo.menu_game_pointer;
         }
         public static uint GetDebug1MenuPointer()
         {
-            return Program.ROM.RomInfo.menu_debug1_pointer();
+            return Program.ROM.RomInfo.menu_debug1_pointer;
         }
         public static uint GetItemMenuPointer()
         {
-            return Program.ROM.RomInfo.menu_item_pointer();
+            return Program.ROM.RomInfo.menu_item_pointer;
         }
         
     }

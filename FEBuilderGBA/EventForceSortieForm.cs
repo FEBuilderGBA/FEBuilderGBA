@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_force_sortie_pointer()
+                , Program.ROM.RomInfo.event_force_sortie_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索

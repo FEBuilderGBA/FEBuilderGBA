@@ -1589,7 +1589,7 @@ namespace FEBuilderGBA
 
         static uint system_tsa_16color_304x240_address()
         {
-            return Program.ROM.u32(Program.ROM.RomInfo.system_tsa_16color_304x240_pointer());
+            return Program.ROM.u32(Program.ROM.RomInfo.system_tsa_16color_304x240_pointer);
         }
 
         public void UpdateAllWriteButton(Button allWriteButton)

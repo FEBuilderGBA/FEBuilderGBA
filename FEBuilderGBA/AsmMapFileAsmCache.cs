@@ -21,7 +21,7 @@ namespace FEBuilderGBA
         AsmMapFile MakeBaseSymbol()
         {
             AsmMapFile map = new AsmMapFile(Program.ROM);
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 return map;
             }
@@ -313,7 +313,7 @@ namespace FEBuilderGBA
 
         public AsmMapFile GetAsmMapFile(bool rebuild = false)
         {
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 return BaseSymbol;
             }
@@ -601,7 +601,7 @@ namespace FEBuilderGBA
             {//おそらくただのデータ
                 return false;
             }
-            if (plainAddr >= Program.ROM.RomInfo.compress_image_borderline_address())
+            if (plainAddr >= Program.ROM.RomInfo.compress_image_borderline_address)
             {//画像ボーダーよりも向こう側
                 return false;
             }

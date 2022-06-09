@@ -139,7 +139,7 @@ namespace FEBuilderGBA
                     string labelName = LabelName();
                     if (labelName.IndexOf("_WEAPON") >= 0)
                     {
-                        if (Program.ROM.RomInfo.version() >= 7)
+                        if (Program.ROM.RomInfo.version >= 7)
                         {
                             for (uint i = 0; i < 8; i++)
                             {

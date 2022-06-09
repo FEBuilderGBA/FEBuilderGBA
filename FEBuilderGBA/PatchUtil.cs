@@ -55,32 +55,6 @@ namespace FEBuilderGBA
         }
 
         public const uint NO_CACHE = 0xFF;
-        public enum SpecialHack_enum
-        {
-            No,
-            MoDUPS,  //FE6でマップデータの形式が拡張されているパッチ
-            NoCache = (int)NO_CACHE
-        }
-        static SpecialHack_enum g_SpecialHack = SpecialHack_enum.NoCache;
-        public static SpecialHack_enum SearchSpecialHack()
-        {
-            if (g_SpecialHack == SpecialHack_enum.NoCache)
-            {
-                g_SpecialHack = SearchSpecialHackLow();
-            }
-            return g_SpecialHack;
-        }
-        static SpecialHack_enum SearchSpecialHackLow()
-        {
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                if (Program.ROM.u16(0x2BB12) == 0x2048)
-                {
-                    return SpecialHack_enum.MoDUPS;
-                }
-            }
-            return SpecialHack_enum.No;
-        }
 
         //最大レベルの検索
         static uint g_LevelMaxCaps = NO_CACHE;
@@ -98,7 +72,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    g_LevelMaxCaps = Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
+                    g_LevelMaxCaps = Program.ROM.u8(Program.ROM.RomInfo.max_level_address);
                 }
             }
             return g_LevelMaxCaps;
@@ -204,7 +178,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="SkillSystem",	ver = "FE8U", addr = 0x2ACF8,data = new byte[]{0x70 ,0x47}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -263,7 +237,7 @@ namespace FEBuilderGBA
         }
         static class_type_enum SearchSkillSystemsEffectivenesReworkLow()
         {
-            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
             {
                 bool r = Program.ROM.CompareByte(0x2AAEC
                     , new byte[] { 0x00, 0x25, 0x00, 0x28, 0x00, 0xD0, 0x05, 0x1C });
@@ -357,7 +331,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="DrawUTF8",	ver = "FE8U", addr = 0x44D2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x18 ,0x47}},
             };
 
-            string version = rom.RomInfo.VersionToFilename();
+            string version = rom.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -396,7 +370,7 @@ namespace FEBuilderGBA
         //文字コードエンコードがパディングしてしまったときの優先変換方法.
         public static PRIORITY_CODE SearchPriorityCode()
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 return PRIORITY_CODE.SJIS;
             }
@@ -420,7 +394,7 @@ namespace FEBuilderGBA
                 return PRIORITY_CODE.SJIS;
             }
 
-            if (rom.RomInfo.is_multibyte())
+            if (rom.RomInfo.is_multibyte)
             {
                 return PRIORITY_CODE.SJIS;
             }
@@ -499,9 +473,9 @@ namespace FEBuilderGBA
         public static StairsHack_enum SearchStairsHackPatch_Low()
         {
             uint enable_value = 0x47184b00;
-            if(Program.ROM.RomInfo.version() == 8)
+            if(Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     uint a = Program.ROM.u32(0x225C4);
                     if (a == enable_value)
@@ -523,9 +497,9 @@ namespace FEBuilderGBA
                     }
                 }
             }
-            if(Program.ROM.RomInfo.version() == 7)
+            if(Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     uint a = Program.ROM.u32(0x219F8);
                     if (a == enable_value)
@@ -587,7 +561,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="Stan_20190505",	ver = "FE8U", addr = 0x0F464,data = new byte[]{0x98, 0xF4, 0x00, 0x08}}, //NOT条件
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -747,7 +721,7 @@ namespace FEBuilderGBA
 
         static PatchTableSt SearchPatch(PatchTableSt[] table)
         {
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -771,7 +745,7 @@ namespace FEBuilderGBA
         };
         static GrepPatchTableSt GrepPatch(GrepPatchTableSt[] table)
         {
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (GrepPatchTableSt t in table)
             {
                 string fullfilename = Path.Combine(Program.BaseDirectory, "config", "patch2", version, t.patch_dmp);
@@ -780,7 +754,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 byte[] data = File.ReadAllBytes(fullfilename);
-                uint addr = U.Grep(Program.ROM.Data, data, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                uint addr = U.Grep(Program.ROM.Data, data, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
                 if (addr == U.NOT_FOUND)
                 {
                     continue;
@@ -803,14 +777,14 @@ namespace FEBuilderGBA
         };
         static Grep2PatchTableSt GrepPatch(Grep2PatchTableSt[] table)
         {
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (Grep2PatchTableSt t in table)
             {
                 if (t.ver != version)
                 {
                     continue;
                 }
-                uint addr = U.Grep(Program.ROM.Data, t.data, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                uint addr = U.Grep(Program.ROM.Data, t.data, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
                 if (addr == U.NOT_FOUND)
                 {
                     continue;
@@ -1152,7 +1126,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="ShinanEA",	ver = "FE8U", addr = 0xDB000,data = new byte[]{0x00,0xB5,0x26,0x20,0x07,0x4B,0x9E,0x46,0x00,0xF8,0x09,0x48,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x05,0x4B,0x9E,0x46,0x00,0xF8,0x17,0x20,0x02,0xBC,0x08,0x47,0x00,0x00,0x80,0x3D,0x08,0x08,0xF0,0xBC,0x02,0x02,0x7C,0xD0,0x00,0x08}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1221,7 +1195,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="HALFBODY",	ver = "FE8J", addr = 0x843C,data = new byte[]{0x01 ,0x3A}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1271,7 +1245,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="ImprovedSoundMixer",	ver = "FE8U", addr = 0xd01d0,data = new byte[]{0xb0, 0x6c, 0x00, 0x03, 0x18, 0x02}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1337,7 +1311,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="SkillSystems",	ver = "FE8U", addr = 0x3586,data = new byte[]{0x03, 0x4C, 0x00, 0xF0, 0x03, 0xF8, 0x10, 0xBC, 0x02, 0xBC, 0x08, 0x47, 0x20, 0x47}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1389,7 +1363,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="Flag0x28_45",	ver = "FE8U", addr = 0x19950,data = new byte[]{0x00, 0x49}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1474,7 +1448,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="2x",	ver = "FE8U", addr = 0xA4168,data = new byte[]{0x02}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1518,7 +1492,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="FourthAllegiance",	ver = "FE8U", addr = 0x17BDC,data = new byte[]{0xC0, 0x20, 0xF8, 0xE7}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -1825,7 +1799,7 @@ namespace FEBuilderGBA
             bool hasNimap2 = false;
 
             string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             for (int i = 0; i < lines.Length; i++)
             {
                 if (U.IsComment(lines[i]))
@@ -1853,7 +1827,7 @@ namespace FEBuilderGBA
                 }
 
                 //Grepして調べる 結構重い.
-                uint v = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                uint v = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
                 if (v == U.NOT_FOUND)
                 {
                     continue;
@@ -1861,7 +1835,7 @@ namespace FEBuilderGBA
 
                 if (sp[0] == "AllInstrument")
                 {//All Instrumentは、マルチトラックしかないので、データのポインタでサンプルを取ります。
-                    v = U.GrepPointer(Program.ROM.Data, v, Program.ROM.RomInfo.compress_image_borderline_address());
+                    v = U.GrepPointer(Program.ROM.Data, v, Program.ROM.RomInfo.compress_image_borderline_address);
                     if (v == U.NOT_FOUND)
                     {
                         continue;
@@ -1907,11 +1881,11 @@ namespace FEBuilderGBA
         static uint SearchVennouWeaponLockArrayAddrLow()
         {
             //FE8U Only
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return 0;
             }
-            if (Program.ROM.RomInfo.is_multibyte() != false)
+            if (Program.ROM.RomInfo.is_multibyte != false)
             {
                 return 0;
             }
@@ -1929,7 +1903,7 @@ namespace FEBuilderGBA
                 return 0;
             }
             byte[] program_dmp_bin = File.ReadAllBytes(program_dmp);
-            uint addr = U.GrepEnd(Program.ROM.Data, program_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            uint addr = U.GrepEnd(Program.ROM.Data, program_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
             if (addr == U.NOT_FOUND)
             {
                 return 0;
@@ -1959,12 +1933,12 @@ namespace FEBuilderGBA
 
         public static bool IsPreparationBGMByChapter()
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
 
-            if (Program.ROM.RomInfo.is_multibyte() == true)
+            if (Program.ROM.RomInfo.is_multibyte == true)
             {
                 uint addr = 0x340cc;
                 uint enable_value = 0xFBFCF064;
@@ -2023,7 +1997,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE6",  addr = 0x9C838,data = new byte[]{0x96, 0x02}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -2069,7 +2043,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="soundroom_over255",	ver = "FE8U", addr = 0xAF87C,data = new byte[]{0x68, 0x34, 0x21, 0x88}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -2114,7 +2088,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="Extends",	ver = "FE8U", addr = 0x57ED0,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -2187,7 +2161,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="IER",	ver = "FE8U", addr = 0x28E80,data = new byte[]{0x03, 0x4B, 0x14, 0x22, 0x50, 0x43, 0x40, 0x18, 0xC0, 0x18, 0x00, 0x68, 0x70, 0x47, 0x00, 0x00}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)
@@ -2232,7 +2206,7 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="OPClassReelSort",	ver = "FE8U", addr = 0xB40EC,data = new byte[]{0x04, 0x4B, 0x1B, 0x68}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename;
             foreach (PatchTableSt t in table)
             {
                 if (t.ver != version)

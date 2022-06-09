@@ -32,7 +32,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.arena_enemy_weapon_basic_pointer()
+                , Program.ROM.RomInfo.arena_enemy_weapon_basic_pointer
                 , 1
                 , (int i, uint addr) =>
                 {
@@ -52,7 +52,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.arena_enemy_weapon_rankup_pointer()
+                , Program.ROM.RomInfo.arena_enemy_weapon_rankup_pointer
                 , 1
                 , (int i, uint addr) =>
                 {

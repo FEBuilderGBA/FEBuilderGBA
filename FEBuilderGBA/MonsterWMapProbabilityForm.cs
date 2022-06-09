@@ -44,7 +44,7 @@ namespace FEBuilderGBA
         {//魔物が発生する拠点
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.monster_wmap_base_point_pointer()
+                , Program.ROM.RomInfo.monster_wmap_base_point_pointer
                 , 1
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -158,18 +158,18 @@ namespace FEBuilderGBA
             }
             {
                 InputFormRef InputFormRef = N1_Init(null);
-                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_1_pointer()));
+                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_1_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MonsterWMapStageEirika", new uint[] { });
 
-                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_2_pointer()));
+                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_2_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MonsterWMapStageEphraim", new uint[] { });
             }
             {
                 InputFormRef InputFormRef = N2_Init(null);
-                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_1_pointer()));
+                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_1_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MonsterWMapProbabilityEirika", new uint[] { });
 
-                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_2_pointer()));
+                InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_2_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MonsterWMapProbabilityEphraim", new uint[] { });
             }
         }
@@ -228,11 +228,11 @@ namespace FEBuilderGBA
         {
             if (N1_Filter.SelectedIndex == 0)
             {
-                N1_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_1_pointer()));
+                N1_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_1_pointer));
             }
             else
             {
-                N1_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_2_pointer()));
+                N1_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_stage_2_pointer));
             }
 
             if (sender == N1_Filter)
@@ -245,19 +245,19 @@ namespace FEBuilderGBA
         {
             if (N2_Filter.SelectedIndex == 0)
             {
-                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_1_pointer()));
+                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_1_pointer));
             }
             else if (N2_Filter.SelectedIndex == 1)
             {
-                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_2_pointer()));
+                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_2_pointer));
             }
 //            else if (N2_Filter.SelectedIndex == 2)
 //            {
-//                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_after_1_pointer()), 1);
+//                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_after_1_pointer), 1);
 //            }
 //            else //if (N2_Filter.SelectedIndex == 3)
 //            {
-//                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_after_2_pointer()) , 1);
+//                N2_InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_after_2_pointer) , 1);
 //            }
             if (sender == N2_Filter)
             {

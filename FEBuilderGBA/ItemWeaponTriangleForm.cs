@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.item_cornered_pointer()
+                , Program.ROM.RomInfo.item_cornered_pointer
                 , 4
                 , (int i, uint addr) =>
                 {

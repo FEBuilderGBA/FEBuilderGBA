@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.status_units_menu_pointer()
+                , Program.ROM.RomInfo.status_units_menu_pointer
                 , 16
                 , (int i, uint addr) =>
                 {

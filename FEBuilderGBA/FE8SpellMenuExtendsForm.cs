@@ -269,7 +269,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
             byte[] SpellsGetter_dmp_bin = File.ReadAllBytes(SpellsGetter_dmp);
-            uint pointer = U.GrepEnd(Program.ROM.Data, SpellsGetter_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            uint pointer = U.GrepEnd(Program.ROM.Data, SpellsGetter_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
             if (pointer == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
@@ -279,7 +279,7 @@ namespace FEBuilderGBA
         static uint FindFE8SpellPatchPointerLow_SkillSystems202201()
         {
             byte[] SpellsGetter_dmp_bin = new byte[] { 0x9E, 0x42, 0x04, 0xDA, 0x02, 0x34, 0xEF, 0xE7, 0x00, 0x9A, 0x9A, 0x42, 0xFA, 0xD1, 0x01, 0x9B, 0x01, 0x33, 0x03, 0xD1, 0x63, 0x78, 0x2B, 0x70, 0x01, 0x35, 0xF3, 0xE7, 0x60, 0x78, 0xFF, 0xF7, 0xBB, 0xFF, 0x01, 0x9B, 0x98, 0x42, 0xED, 0xD1, 0xF4, 0xE7, 0xC0, 0x46 };
-            uint pointer = U.GrepEnd(Program.ROM.Data, SpellsGetter_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            uint pointer = U.GrepEnd(Program.ROM.Data, SpellsGetter_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
             if (pointer == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;

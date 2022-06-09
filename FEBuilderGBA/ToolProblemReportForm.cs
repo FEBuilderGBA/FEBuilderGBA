@@ -312,7 +312,7 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            if ( U.GetFileSize(moreOlderFilename) < Program.ROM.RomInfo.compress_image_borderline_address() )
+            if ( U.GetFileSize(moreOlderFilename) < Program.ROM.RomInfo.compress_image_borderline_address )
             {//ファイルが小さすぎる
                 return false;
             }
@@ -474,7 +474,7 @@ namespace FEBuilderGBA
             string FEVersion = "";
             if (Program.ROM != null)
             {
-                FEVersion = Program.ROM.RomInfo.VersionToFilename();
+                FEVersion = Program.ROM.RomInfo.VersionToFilename;
                 FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
 
                 U.CRC32 crc32 = new U.CRC32();

@@ -149,7 +149,7 @@ namespace FEBuilderGBA
             return new InputFormRef(self
                 , ""
                 , 0
-                , Program.ROM.RomInfo.eventunit_data_size()
+                , Program.ROM.RomInfo.eventunit_data_size
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     //00まで検索
@@ -430,13 +430,13 @@ namespace FEBuilderGBA
 
         public static List<U.AddrResult> MakeList(uint addr)
         {
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 InputFormRef InputFormRef = Init(null);
                 InputFormRef.ReInit(addr);
                 return InputFormRef.MakeList();
             }
-            else if (Program.ROM.RomInfo.version() >= 7)
+            else if (Program.ROM.RomInfo.version >= 7)
             {//FE7
                 return EventUnitFE7Form.MakeList(addr);
             }
@@ -514,7 +514,7 @@ namespace FEBuilderGBA
 
         public static Bitmap DrawItemIconOnly(uint addr,int itemcount)
         {
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 uint p = addr + 12 + (uint)itemcount;
                 if (!U.isSafetyZArray(p))
@@ -634,7 +634,7 @@ namespace FEBuilderGBA
         //移動後の終端位置にいるキャラの描画
         public static MapPictureBox.StaticItem DrawAfterPosUnit(uint addr)
         {
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 uint unit_id = Program.ROM.u8(addr );
                 uint class_id = Program.ROM.u8(addr + 1);
@@ -1292,7 +1292,7 @@ namespace FEBuilderGBA
                     lineMaxWidth = Math.Max(lineMaxWidth, bounds.X);
                     icon.Dispose();
 
-                    addr += Program.ROM.RomInfo.eventunit_data_size();
+                    addr += Program.ROM.RomInfo.eventunit_data_size;
                     if (!U.isSafetyOffset(addr))
                     {
                         break;
@@ -1373,7 +1373,7 @@ namespace FEBuilderGBA
                     icon.Dispose();
                 }
 
-                addr += Program.ROM.RomInfo.eventunit_data_size();
+                addr += Program.ROM.RomInfo.eventunit_data_size;
             }
             while (false);
 
@@ -1523,8 +1523,8 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer());
-            uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai1_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer);
+            uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai1_pointer);
             for (int i = AI1.Count; i < count; i++)
             {
                 AI1st p = new AI1st();
@@ -1569,8 +1569,8 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer());
-            uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai2_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer);
+            uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai2_pointer);
             for (int i = AI2.Count; i < count; i++)
             {
                 AI2st p = new AI2st();
@@ -1674,10 +1674,10 @@ namespace FEBuilderGBA
                 return;
             }
             uint datacount = form.AllocCount;
-            byte[] data = new byte[datacount * Program.ROM.RomInfo.eventunit_data_size() + 1]; //+1 は termデータ
+            byte[] data = new byte[datacount * Program.ROM.RomInfo.eventunit_data_size + 1]; //+1 は termデータ
             for (int i = 0; i < datacount; i++)
             {//リスト項目が出るように、無効なデータとならないように適当な値を入れる.
-                data[i * Program.ROM.RomInfo.eventunit_data_size() + 0] = 1;
+                data[i * Program.ROM.RomInfo.eventunit_data_size + 0] = 1;
             }
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("EevntUnit NEW");
@@ -1773,7 +1773,7 @@ namespace FEBuilderGBA
 
         static void RecycleOldUnitsLow(ref List<Address> recycle, string basename, InputFormRef InputFormRef)
         {
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {
                 FEBuilderGBA.Address.AddAddress(recycle
                     , InputFormRef
@@ -1886,11 +1886,11 @@ namespace FEBuilderGBA
                 return R._("読み込むユニットを設定してください") + ":" + U.To0xHexString(units_address);
             }
 
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 return EventUnitFE7Form.CheckUnitsEvenetArg(units_address);
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 return EventUnitFE6Form.CheckUnitsEvenetArg(units_address);
             }
@@ -1914,7 +1914,7 @@ namespace FEBuilderGBA
 
             int count = 0;
             uint addr = units_address;
-            uint pageSize = Program.ROM.RomInfo.eventunit_data_size();
+            uint pageSize = Program.ROM.RomInfo.eventunit_data_size;
             while (Program.ROM.u8(addr) != 0x0)
             {
                 if (!U.isSafetyOffset(addr + pageSize))
@@ -1961,7 +1961,7 @@ namespace FEBuilderGBA
         static bool IsIgnoreEventFE8(uint units_address)
         {
             //メレカナ海岸で、51体の敵をロードしているので、無視するように指示する.
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 if (units_address == 0x924118)
                 {
@@ -2625,7 +2625,7 @@ namespace FEBuilderGBA
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             List<Address> recycle = new List<Address>();
-            uint eventunit_data_size = Program.ROM.RomInfo.eventunit_data_size();
+            uint eventunit_data_size = Program.ROM.RomInfo.eventunit_data_size;
             uint mapmax = MapSettingForm.GetDataCount();
             for (uint mapid = 0; mapid < mapmax; mapid++)
             {
@@ -2700,7 +2700,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint blockSize = Program.ROM.RomInfo.eventunit_data_size();
+            uint blockSize = Program.ROM.RomInfo.eventunit_data_size;
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
             Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
 

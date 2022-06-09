@@ -82,7 +82,7 @@ namespace FEBuilderGBA
 
             if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.RomInfo.TitleToFilename + ".tbl");
                 if (! File.Exists(resoucefilename))
                 {
                     Log.Error("tbl not found. filename:{0}", resoucefilename);
@@ -94,7 +94,7 @@ namespace FEBuilderGBA
             }
             else if (textencoding == OptionForm.textencoding_enum.EN_TBL)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename + ".tbl");
                 if (! File.Exists(resoucefilename))
                 {
                     Log.Error("tbl not found. filename:{0}", resoucefilename);
@@ -106,16 +106,16 @@ namespace FEBuilderGBA
             }
             else if (textencoding == OptionForm.textencoding_enum.AR_TBL)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "ar_tbl", rom.RomInfo.TitleToFilename() + ".arabic_tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "ar_tbl", rom.RomInfo.TitleToFilename + ".arabic_tbl");
                 if (! File.Exists(resoucefilename))
                 {
                     Log.Error("tbl not found. filename:{0}", resoucefilename);
                     return false;
                 }
                 SystemTextEncoderTBLEncode inner = null;
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
-                    string resoucefilename_inner = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                    string resoucefilename_inner = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename + ".tbl");
                     if (! File.Exists(resoucefilename))
                     {
                         return false;
@@ -128,7 +128,7 @@ namespace FEBuilderGBA
             }
             else if (textencoding == OptionForm.textencoding_enum.KR_TBL)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "kr_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "kr_tbl", rom.RomInfo.TitleToFilename + ".tbl");
                 if (!File.Exists(resoucefilename))
                 {
                     Log.Error("tbl not found. filename:{0}", resoucefilename);

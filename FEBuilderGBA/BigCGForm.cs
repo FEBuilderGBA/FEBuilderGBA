@@ -22,7 +22,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.p32(Program.ROM.RomInfo.bigcg_pointer())
+                , Program.ROM.p32(Program.ROM.RomInfo.bigcg_pointer)
                 , 12
                 , (int i, uint addr) =>
                 {

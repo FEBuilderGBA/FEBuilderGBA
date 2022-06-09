@@ -28,8 +28,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.sound_room_pointer()
-                , Program.ROM.RomInfo.sound_room_datasize()
+                , Program.ROM.RomInfo.sound_room_pointer
+                , Program.ROM.RomInfo.sound_room_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (Program.ROM.u32(addr) == 0xFFFFFFFF)
@@ -37,7 +37,7 @@ namespace FEBuilderGBA
                         return false;
                     }
                     if ( i > 10 
-                        && Program.ROM.IsEmpty(addr, Program.ROM.RomInfo.sound_room_datasize() * 10))
+                        && Program.ROM.IsEmpty(addr, Program.ROM.RomInfo.sound_room_datasize * 10))
                     {
                         return false;
                     }

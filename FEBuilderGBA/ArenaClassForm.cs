@@ -20,7 +20,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 X_FE8J_COMMENT.Visible = true;
             }
@@ -31,7 +31,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.arena_class_near_weapon_pointer()
+                , Program.ROM.RomInfo.arena_class_near_weapon_pointer
                 , 1
                 , (int i, uint addr) =>
                 {
@@ -55,15 +55,15 @@ namespace FEBuilderGBA
 
             if (FilterComboBox.SelectedIndex == 0)
             {//近距離
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_near_weapon_pointer()) );
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_near_weapon_pointer) );
             }
             else if (FilterComboBox.SelectedIndex == 1)
             {//魔法
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer));
             }
             else if (FilterComboBox.SelectedIndex == 2)
             {//遠距離
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer));
             }
         }
 
@@ -72,13 +72,13 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_near_weapon_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_near_weapon_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "AreaClassForm near weapon", new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_far_weapon_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "AreaClassForm far weapon", new uint[] { });
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer()));
+            InputFormRef.ReInitPointer((Program.ROM.RomInfo.arena_class_magic_weapon_pointer));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "AreaClassForm magic weapon", new uint[] { });
         }
 

@@ -28,7 +28,7 @@ namespace FEBuilderGBA
         {//辞書
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.dic_main_pointer()
+                , Program.ROM.RomInfo.dic_main_pointer
                 , 12
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -53,7 +53,7 @@ namespace FEBuilderGBA
         {//章タイトル
             return new InputFormRef(self
                 , "N1_"
-                , Program.ROM.RomInfo.dic_chaptor_pointer()
+                , Program.ROM.RomInfo.dic_chaptor_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -72,7 +72,7 @@ namespace FEBuilderGBA
         {//拠点ごとの確率
             return new InputFormRef(self
                 , "N2_"
-                , Program.ROM.RomInfo.dic_title_pointer()
+                , Program.ROM.RomInfo.dic_title_pointer
                 , 2
                 , (int i, uint addr) =>
                 {//読込最大値検索

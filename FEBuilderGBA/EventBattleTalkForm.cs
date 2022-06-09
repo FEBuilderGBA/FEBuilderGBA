@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_ballte_talk_pointer()
+                , Program.ROM.RomInfo.event_ballte_talk_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//読込最大値検索

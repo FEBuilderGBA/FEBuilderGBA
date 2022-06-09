@@ -23,19 +23,19 @@ namespace FEBuilderGBA
         private void WorldMapImageFE7Form_Load(object sender, EventArgs e)
         {
             WMPictureBox.Image = DrawWorldMap();
-            WMImageMap.Value = Program.ROM.u32( Program.ROM.RomInfo.worldmap_big_image_pointer());
-            WMPalette.Value = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palette_pointer());
-            WMtsaMap.Value = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer());
+            WMImageMap.Value = Program.ROM.u32( Program.ROM.RomInfo.worldmap_big_image_pointer);
+            WMPalette.Value = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palette_pointer);
+            WMtsaMap.Value = Program.ROM.u32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer);
 
-            WMEvent = new ImageFormRef(this, "WMEvent", 32 * 8, 20 * 8, 4, Program.ROM.RomInfo.worldmap_event_image_pointer(), Program.ROM.RomInfo.worldmap_event_tsa_pointer(), Program.ROM.RomInfo.worldmap_event_palette_pointer());
+            WMEvent = new ImageFormRef(this, "WMEvent", 32 * 8, 20 * 8, 4, Program.ROM.RomInfo.worldmap_event_image_pointer, Program.ROM.RomInfo.worldmap_event_tsa_pointer, Program.ROM.RomInfo.worldmap_event_palette_pointer);
         }
         private void WriteButton_Click(object sender, EventArgs e)
         {
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_image_pointer(), WMImageMap, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_image_pointer(), WMImageMap, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_palette_pointer(), WMPalette, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_palettemap_pointer(), WMtsaMap, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_image_pointer, WMImageMap, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_image_pointer, WMImageMap, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_palette_pointer, WMPalette, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.worldmap_big_palettemap_pointer, WMtsaMap, undodata);
 
             WMEvent.WritePointer(undodata);
 
@@ -149,9 +149,9 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
             //すべて無圧縮データなのでそのままかけます. 位置の変換は絶対に起きえません.
-            uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer());
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer());
-            uint tsamap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer());
+            uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer);
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer);
+            uint tsamap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer);
 
             Program.ROM.write_range(palette, palette_data, undodata);
 
@@ -202,9 +202,9 @@ namespace FEBuilderGBA
             //
             //情報元:
             //see https://serenesforest.net/forums/index.php?/topic/34362-fe7-world-map-tsa-tips/
-            uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer());
-            uint palette = Program.ROM.p32( Program.ROM.RomInfo.worldmap_big_palette_pointer());
-            uint tsamap = Program.ROM.p32( Program.ROM.RomInfo.worldmap_big_palettemap_pointer());
+            uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer);
+            uint palette = Program.ROM.p32( Program.ROM.RomInfo.worldmap_big_palette_pointer);
+            uint tsamap = Program.ROM.p32( Program.ROM.RomInfo.worldmap_big_palettemap_pointer);
 
             return ImageUtilMap.DrawWorldMapFE7(imagemap, palette, tsamap);
         }
@@ -213,13 +213,13 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {
             {
-                uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer());
-                uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer());
-                uint tsamap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer());
+                uint imagemap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer);
+                uint palette = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer);
+                uint tsamap = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palettemap_pointer);
 
                 FEBuilderGBA.Address.AddAddress(list, palette
                     , 0x20 * 4
-                    , Program.ROM.RomInfo.worldmap_big_palette_pointer()
+                    , Program.ROM.RomInfo.worldmap_big_palette_pointer
                     , "worldmap_big_palette"
                     , Address.DataTypeEnum.PAL);
 
@@ -239,17 +239,17 @@ namespace FEBuilderGBA
             }
             {
                 FEBuilderGBA.Address.AddLZ77Pointer(list
-                    , Program.ROM.RomInfo.worldmap_event_image_pointer()
+                    , Program.ROM.RomInfo.worldmap_event_image_pointer
                     , "worldmap_event_image"
                     , isPointerOnly
                     , Address.DataTypeEnum.LZ77IMG);
                 FEBuilderGBA.Address.AddLZ77Pointer(list
-                    , Program.ROM.RomInfo.worldmap_event_tsa_pointer()
+                    , Program.ROM.RomInfo.worldmap_event_tsa_pointer
                     , "worldmap_event_tsa"
                     , isPointerOnly
                     , Address.DataTypeEnum.LZ77TSA);
                 FEBuilderGBA.Address.AddPointer(list
-                    , Program.ROM.RomInfo.worldmap_event_palette_pointer()
+                    , Program.ROM.RomInfo.worldmap_event_palette_pointer
                     , 0x20 * 4
                     , "worldmap_event_palette"
                     , Address.DataTypeEnum.PAL);

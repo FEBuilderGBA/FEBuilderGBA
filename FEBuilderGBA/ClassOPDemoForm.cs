@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.p32(Program.ROM.RomInfo.op_class_demo_pointer())
+                , Program.ROM.p32(Program.ROM.RomInfo.op_class_demo_pointer)
                 , 28
                 , (int i, uint addr) =>
                 {

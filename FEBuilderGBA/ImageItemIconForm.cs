@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             this.X_ICON_REF_ITEM.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
             this.X_ICON_REF_ITEM.ItemListToJumpForm("ITEM");
 
-            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) == Program.ROM.RomInfo.icon_orignal_address())
+            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer) == Program.ROM.RomInfo.icon_orignal_address)
             {
                 this.ItemIconListExpandsButton.Enabled = true;
             }
@@ -30,7 +30,7 @@ namespace FEBuilderGBA
             
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 this.InputFormRef.CheckProtectionAddrHigh = false;  //かなり手前のアドレスなので確認不可能
             }
@@ -51,24 +51,24 @@ namespace FEBuilderGBA
 
         static uint GetIconMax()
         {
-            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) != Program.ROM.RomInfo.icon_orignal_address())
+            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer) != Program.ROM.RomInfo.icon_orignal_address)
             {//リポイント済み
                 return 0xFE;
             }
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.is_multibyte == false)
                 {//FE7Uでは、アイテムアイコンの中にFEditorAdv AutoPatchのデータがある
                     uint code = Program.ROM.u32(0xCB51A);
                     if (code == 0x18404902)
                     {//そのため、FE7UでFEditorAdv AutoPatchがあれば、個数は一つ下げる
-                        return Program.ROM.RomInfo.icon_orignal_max() - 1;
+                        return Program.ROM.RomInfo.icon_orignal_max - 1;
                     }
                 }
 
             }
 
-            return Program.ROM.RomInfo.icon_orignal_max();
+            return Program.ROM.RomInfo.icon_orignal_max;
         }
 
         public InputFormRef InputFormRef;
@@ -77,7 +77,7 @@ namespace FEBuilderGBA
             uint itemMax = GetIconMax();
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.icon_pointer()
+                , Program.ROM.RomInfo.icon_pointer
                 , (2 * 8 * 2 * 8) / 2 // /2しているのは16色のため
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -121,7 +121,7 @@ namespace FEBuilderGBA
             }
             if (customPalette == 0)
             {//アイテムアイコンパレットを利用.
-                customPalette = Program.ROM.u32(Program.ROM.RomInfo.icon_palette_pointer());
+                customPalette = Program.ROM.u32(Program.ROM.RomInfo.icon_palette_pointer);
             }
 
             return ImageUtil.ByteToImage16Tile(2 * 8, 2 * 8
@@ -154,7 +154,7 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy(16);
             }
 
-            uint palette = Program.ROM.u32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
+            uint palette = Program.ROM.u32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
             return DrawIcon(addr, palette);
         }
 
@@ -173,7 +173,7 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy(16);
             }
 
-            uint palette = Program.ROM.u32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer());
+            uint palette = Program.ROM.u32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer);
             return DrawIcon(addr, palette);
         }
 
@@ -204,16 +204,16 @@ namespace FEBuilderGBA
                 string palette_error =
                     ImageUtil.CheckPalette(bitmap.Palette
                         , Program.ROM.Data
-                        , Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())
-                        , Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer())
+                        , Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer)
+                        , Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer)
                         );
                 if (palette_error != "")
                 {
                     ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
                     f.SetErrorMessage(palette_error);
-                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
-                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
-                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer())));
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer)));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer)));
+                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer)));
                     f.ShowForceButton();
                     f.ShowDialog();
 
@@ -259,7 +259,7 @@ namespace FEBuilderGBA
 
             uint newaddr = InputFormRef.ExpandsArea(form
                 , newdatasize
-                , Program.ROM.RomInfo.icon_pointer()
+                , Program.ROM.RomInfo.icon_pointer
                 , olddatasize
                 , FEBuilderGBA.InputFormRef.ExpandsFillOption.FIRST 
                 , InputFormRef.BlockSize
@@ -302,7 +302,7 @@ namespace FEBuilderGBA
 
         bool IsShowItemIconExetdns(int count)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8では常に表示する
                 return true;
             }
@@ -312,7 +312,7 @@ namespace FEBuilderGBA
                 return true;
             }
 
-            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) == Program.ROM.RomInfo.icon_orignal_address())
+            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer) == Program.ROM.RomInfo.icon_orignal_address)
             {//拡張されていないので表示しない
                 return false;
             }

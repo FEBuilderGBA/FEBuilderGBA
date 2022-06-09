@@ -30,7 +30,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_haiku_pointer()
+                , Program.ROM.RomInfo.event_haiku_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -174,7 +174,7 @@ namespace FEBuilderGBA
             }
 
             InputFormRef N1_InputFormRef = N1_Init(null);
-            uint[] pointers = new uint[] { Program.ROM.RomInfo.event_haiku_tutorial_1_pointer(), Program.ROM.RomInfo.event_haiku_tutorial_2_pointer() };
+            uint[] pointers = new uint[] { Program.ROM.RomInfo.event_haiku_tutorial_1_pointer, Program.ROM.RomInfo.event_haiku_tutorial_2_pointer };
             for (int n = 0; n < pointers.Length; n++)
             {
                 N1_InputFormRef.ReInitPointer(pointers[n]);
@@ -230,9 +230,9 @@ namespace FEBuilderGBA
             UseValsID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 }, 8, tracelist);
 
             InputFormRef N1_InputFormRef = N1_Init(null);
-            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer);
             UseValsID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4, tracelist);
-            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer);
             UseValsID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4, tracelist);
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
@@ -241,9 +241,9 @@ namespace FEBuilderGBA
             UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, InputFormRef, 12, 1);
 
             InputFormRef N1_InputFormRef = N1_Init(null);
-            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer);
             UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, N1_InputFormRef, 8, 1);
-            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer);
             UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, N1_InputFormRef, 8, 1);
         }
 
@@ -252,11 +252,11 @@ namespace FEBuilderGBA
             uint filter = U.atoh(N1_FilterComboBox.Text);
             if (filter == 1)
             {
-                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer);
             }
             else
             {
-                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer);
             }
         }
 

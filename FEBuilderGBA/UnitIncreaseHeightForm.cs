@@ -17,11 +17,11 @@ namespace FEBuilderGBA
 
             //伸ばさない
             string a = MyTranslateResource.str((string)L_0_COMBO.Items[0]);
-            L_0_COMBO.Items[0] = a.Replace("{0}", U.ToHexString(Program.ROM.RomInfo.unit_increase_height_no()));
+            L_0_COMBO.Items[0] = a.Replace("{0}", U.ToHexString(Program.ROM.RomInfo.unit_increase_height_no));
 
             //伸ばす
             a = MyTranslateResource.str((string)L_0_COMBO.Items[1]);
-            L_0_COMBO.Items[1] = a.Replace("{0}", U.ToHexString(Program.ROM.RomInfo.unit_increase_height_yes()));
+            L_0_COMBO.Items[1] = a.Replace("{0}", U.ToHexString(Program.ROM.RomInfo.unit_increase_height_yes));
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawImagePortraitAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
@@ -32,7 +32,7 @@ namespace FEBuilderGBA
         }
         private void UnitIncreaseHeightForm_Load(object sender, EventArgs e)
         {
-            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.unit_increase_height_switch2_address());
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.unit_increase_height_switch2_address);
             if (!enable)
             {
                 this.ERROR_NOT_FOUND.Show();
@@ -53,7 +53,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    uint id = Program.ROM.u8(Program.ROM.RomInfo.unit_increase_height_switch2_address()) + (uint)i;
+                    uint id = Program.ROM.u8(Program.ROM.RomInfo.unit_increase_height_switch2_address) + (uint)i;
                     return U.ToHexString(id) + " " + ImagePortraitForm.GetPortraitName(id);
                 }
                 );
@@ -65,9 +65,9 @@ namespace FEBuilderGBA
             {
                 return U.NOT_FOUND;
             }
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.unit_increase_height_pointer());
-            uint count = Program.ROM.u8(Program.ROM.RomInfo.unit_increase_height_switch2_address() + 2);
-            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.unit_increase_height_switch2_address());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.unit_increase_height_pointer);
+            uint count = Program.ROM.u8(Program.ROM.RomInfo.unit_increase_height_switch2_address + 2);
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.unit_increase_height_switch2_address);
             if (enable == false)
             {
                 return U.NOT_FOUND;
@@ -98,8 +98,8 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"UnitIncreaseHeight SwitchExpands");
 
-            PatchUtil.Switch2Expands(Program.ROM.RomInfo.unit_increase_height_pointer()
-                , Program.ROM.RomInfo.unit_increase_height_switch2_address()
+            PatchUtil.Switch2Expands(Program.ROM.RomInfo.unit_increase_height_pointer
+                , Program.ROM.RomInfo.unit_increase_height_switch2_address
                 , newCount
                 , defAddr
                 , undodata);

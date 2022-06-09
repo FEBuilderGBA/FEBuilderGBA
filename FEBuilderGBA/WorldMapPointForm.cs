@@ -26,7 +26,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.worldmap_point_pointer()
+                , Program.ROM.RomInfo.worldmap_point_pointer
                 , 32
                 , (int i, uint addr) =>
                 {//12 16 20 の店が、ポインタ or nullであれば

@@ -1189,7 +1189,7 @@ namespace FEBuilderGBA
             save.Title = title;
             save.Filter = filter;
             save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, Program.ROM.RomInfo.TitleToFilename() + "_" + config_plist + ".mapchip_config" );
+            Program.LastSelectedFilename.Load(this, "", save, Program.ROM.RomInfo.TitleToFilename + "_" + config_plist + ".mapchip_config" );
 
             DialogResult dr = save.ShowDialog();
             if (dr != DialogResult.OK)

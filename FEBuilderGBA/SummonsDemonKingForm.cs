@@ -29,11 +29,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.summons_demon_king_pointer()
+                , Program.ROM.RomInfo.summons_demon_king_pointer
                 , 20
                 , (int i, uint addr) =>
                 {
-                    uint max = Program.ROM.u8(Program.ROM.RomInfo.summons_demon_king_count_address());
+                    uint max = Program.ROM.u8(Program.ROM.RomInfo.summons_demon_king_count_address);
                     return i <= max;
                 }
                 , (int i, uint addr) =>
@@ -64,7 +64,7 @@ namespace FEBuilderGBA
         void AddressListExpandsEvent(object sender, EventArgs arg)
         {
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
-            Program.ROM.write_u8(Program.ROM.RomInfo.summons_demon_king_count_address(), eearg.NewDataCount);
+            Program.ROM.write_u8(Program.ROM.RomInfo.summons_demon_king_count_address, eearg.NewDataCount);
         }
 
         //全データの取得

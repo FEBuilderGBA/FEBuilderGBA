@@ -17,7 +17,7 @@ namespace FEBuilderGBA
 
         static bool isZH()
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
@@ -427,7 +427,7 @@ namespace FEBuilderGBA
         public static uint GetFontPointer(bool IsItemFont,ROM rom)
         {
             Debug.Assert(isZH());
-            if (rom.RomInfo.version() == 8)
+            if (rom.RomInfo.version == 8)
             {
                 if (IsItemFont)
                 {
@@ -473,7 +473,7 @@ namespace FEBuilderGBA
 
         public void JumpToItem(uint value)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//英語版は2バイトではないので、最初の1バイトのみ評価.
                 value = value & 0xff;
             }
@@ -488,7 +488,7 @@ namespace FEBuilderGBA
         }
         public void JumpToSerif(uint value)
         {
-            if (!Program.ROM.RomInfo.is_multibyte())
+            if (!Program.ROM.RomInfo.is_multibyte)
             {//英語版は2バイトではないので、最初の1バイトのみ評価.
                 value = value & 0xff;
             }
@@ -703,7 +703,7 @@ namespace FEBuilderGBA
                 }
 
                 if (isUserFontOnly
-                    && a.Addr <= Program.ROM.RomInfo.font_default_end())
+                    && a.Addr <= Program.ROM.RomInfo.font_default_end)
                 {//規定のフォント
                     continue;
                 }

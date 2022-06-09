@@ -45,8 +45,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.class_pointer()
-                , Program.ROM.RomInfo.class_datasize()
+                , Program.ROM.RomInfo.class_pointer
+                , Program.ROM.RomInfo.class_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i == 0)

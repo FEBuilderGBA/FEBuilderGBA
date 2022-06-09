@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 this.InputFormRef.PreWriteHandler += PreWriteButtonFE7;
             }
@@ -30,11 +30,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.status_game_option_order_pointer()
+                , Program.ROM.RomInfo.status_game_option_order_pointer
                 , 1
                 , (int i, uint addr) =>
                 {
-                    uint count = Program.ROM.u8(Program.ROM.RomInfo.status_game_option_order_count_address());
+                    uint count = Program.ROM.u8(Program.ROM.RomInfo.status_game_option_order_count_address);
                     return i < count;
                 }
                 , (int i, uint addr) =>
@@ -57,10 +57,10 @@ namespace FEBuilderGBA
         void PreWriteButtonFE7(object sender, EventArgs arg)
         {
 /*
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
-                uint order_pointer = Program.ROM.RomInfo.status_game_option_order_pointer();
-                uint order2_pointer = Program.ROM.RomInfo.status_game_option_order2_pointer();
+                uint order_pointer = Program.ROM.RomInfo.status_game_option_order_pointer;
+                uint order2_pointer = Program.ROM.RomInfo.status_game_option_order2_pointer;
                 if (order2_pointer == 0)
                 {
                     return;
@@ -86,13 +86,13 @@ namespace FEBuilderGBA
             int count = (int)eearg.NewDataCount;
 
             //件数を書く必要があるらしい.
-            uint write_count_addr = Program.ROM.RomInfo.status_game_option_order_count_address();
+            uint write_count_addr = Program.ROM.RomInfo.status_game_option_order_count_address;
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, "StatusOptionOrder");
             Program.ROM.write_u8(write_count_addr, (uint)(count));
 /*
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
-                uint order2_pointer = Program.ROM.RomInfo.status_game_option_order2_pointer();
+                uint order2_pointer = Program.ROM.RomInfo.status_game_option_order2_pointer;
                 if (order2_pointer != 0)
                 {
                     Program.ROM.write_p32(order2_pointer, addr, undodata);

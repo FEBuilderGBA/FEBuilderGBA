@@ -55,28 +55,28 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            if (addr == Program.ROM.RomInfo.vanilla_field_config_address())
+            if (addr == Program.ROM.RomInfo.vanilla_field_config_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_field_image_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_field_image_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_village_config_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_village_config_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_village_image_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_village_image_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_casle_config_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_casle_config_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_casle_image_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_casle_image_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_plain_config_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_plain_config_address)
             {
             }
-            else if (addr == Program.ROM.RomInfo.vanilla_plain_image_address())
+            else if (addr == Program.ROM.RomInfo.vanilla_plain_image_address)
             {
             }
             else

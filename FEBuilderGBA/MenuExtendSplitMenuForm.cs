@@ -163,7 +163,7 @@ namespace FEBuilderGBA
 
 
             uint[] texts;
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 texts = new uint[] { 0xBD5, 0xBD6, 0, 0, 0, 0, 0, 0 };
             }
@@ -180,7 +180,7 @@ namespace FEBuilderGBA
                 {
                     break;
                 }
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     Program.ROM.write_p32(a + 0, 0x1f5310, undodata); //null文字列
                 }
@@ -205,9 +205,9 @@ namespace FEBuilderGBA
         }
         uint FindEventMenuDisplayCommand()
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 return 0x0501BC + 1;
             }
@@ -218,9 +218,9 @@ namespace FEBuilderGBA
         }
         uint FindEventMenuDrawCommand()
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 return 0x0887e0 + 1;
             }
@@ -232,10 +232,10 @@ namespace FEBuilderGBA
 
         uint FindEventMenuCommandEffect()
         {
-            Debug.Assert(Program.ROM.RomInfo.version() == 8);
+            Debug.Assert(Program.ROM.RomInfo.version == 8);
 
             byte[] need;
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 need = new byte[] { 0x00, 0xB5, 0x3C, 0x20, 0x08, 0x5C, 0x03, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x17, 0x20, 0x02, 0xBC, 0x08, 0x47, 0x00, 0x00, 0xBC, 0xD4, 0x00, 0x08 };
             }
@@ -243,7 +243,7 @@ namespace FEBuilderGBA
             {
                 need = new byte[] { 0x00, 0xB5, 0x3C, 0x20, 0x08, 0x5C, 0x03, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x17, 0x20, 0x02, 0xBC, 0x08, 0x47, 0x00, 0x00, 0xF8, 0xD1, 0x00, 0x08 };
             }
-            uint p = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            uint p = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
             if (p == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
@@ -294,7 +294,7 @@ namespace FEBuilderGBA
             for (i = 0; i < texts.Length; i++)
             {
                 uint a = menuaddr + (36 * i);
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     Program.ROM.write_p32(a + 0, 0x1f5310, undodata); //null文字列
                 }

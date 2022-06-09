@@ -64,7 +64,7 @@ namespace FEBuilderGBA
                     }
                 }
                 //メニュー1
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
                     for (int n = 0; n < menuDefineList.Count; n++)
@@ -95,7 +95,7 @@ namespace FEBuilderGBA
                 }
 
                 //地形
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     List<U.AddrResult> list = MapTerrainNameForm.MakeList();
                     for (int i = 0; i < list.Count; i++)
@@ -114,7 +114,7 @@ namespace FEBuilderGBA
 
                 //サウンドルーム
                 //FE7のサウンドルームは、日本語直地
-                if (Program.ROM.RomInfo.is_multibyte() && Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.is_multibyte && Program.ROM.RomInfo.version == 7)
                 {
                     List<U.AddrResult> list = SoundRoomForm.MakeList();
                     for (int i = 0; i < list.Count; i++)

@@ -56,10 +56,10 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            uint text_base = this.ROM.p32(this.ROM.RomInfo.text_pointer());
+            uint text_base = this.ROM.p32(this.ROM.RomInfo.text_pointer);
             if (!U.isSafetyOffset(text_base, this.ROM))
             {//テキストポインタを壊しているので復帰する.
-                text_base = this.ROM.RomInfo.text_recover_address();
+                text_base = this.ROM.RomInfo.text_recover_address;
             }
 
             uint p = text_base + (id * 4);
@@ -328,9 +328,9 @@ namespace FEBuilderGBA
         {
             List<byte> str = new List<byte>(65535);
 
-            uint tree_base = this.ROM.p32(this.ROM.RomInfo.mask_pointer());
-            uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer());
-            bool useSJIS = this.ROM.RomInfo.is_multibyte();
+            uint tree_base = this.ROM.p32(this.ROM.RomInfo.mask_pointer);
+            uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer);
+            bool useSJIS = this.ROM.RomInfo.is_multibyte;
 
             if (!U.isSafetyOffset(addr, this.ROM))
             {
@@ -455,9 +455,9 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint tree_base = this.ROM.p32(this.ROM.RomInfo.mask_pointer());
-            uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer());
-            bool useSJIS = this.ROM.RomInfo.is_multibyte();
+            uint tree_base = this.ROM.p32(this.ROM.RomInfo.mask_pointer);
+            uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer);
+            bool useSJIS = this.ROM.RomInfo.is_multibyte;
 
             uint tree_data = tree_data_base;
             uint addr_start = addr;

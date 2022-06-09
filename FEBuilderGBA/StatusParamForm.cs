@@ -22,7 +22,7 @@ namespace FEBuilderGBA
             this.FilterComboBox.BeginUpdate();
             this.FilterComboBox.Items.Add(R._("0=ステータスパラメータ"));
             this.FilterComboBox.Items.Add(R._("1=所持アイテム"));
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//日本語版のみ 武器の属性 "剣"みたいなのを出す機能がある.
                 this.FilterComboBox.Items.Add(R._("2=武器レベル 武器"));
                 this.FilterComboBox.Items.Add(R._("3=武器レベル 魔法"));
@@ -99,19 +99,19 @@ namespace FEBuilderGBA
             int selected = this.FilterComboBox.SelectedIndex;
             if (selected == 0)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param1_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param1_pointer));
             }
             else if (selected == 1)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param2_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param2_pointer));
             }
             else if (selected == 2)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param3w_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param3w_pointer));
             }
             else if (selected == 3)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param3m_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_param3m_pointer));
             }
         }
 
@@ -130,7 +130,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_param1_pointer(), Program.ROM.RomInfo.status_param2_pointer(), Program.ROM.RomInfo.status_param3w_pointer(), Program.ROM.RomInfo.status_param3m_pointer() };
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_param1_pointer, Program.ROM.RomInfo.status_param2_pointer, Program.ROM.RomInfo.status_param3w_pointer, Program.ROM.RomInfo.status_param3m_pointer };
 
             for (int n = 0; n < addlist.Length; n++)
             {

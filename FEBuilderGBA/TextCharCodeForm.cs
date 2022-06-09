@@ -22,7 +22,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.mask_pointer()
+                , Program.ROM.RomInfo.mask_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -33,7 +33,7 @@ namespace FEBuilderGBA
                     uint c = Program.ROM.u16(addr);
 
                     string str = Program.ROM.getString(addr, 2);
-                    if (!Program.ROM.RomInfo.is_multibyte())
+                    if (!Program.ROM.RomInfo.is_multibyte)
                     {
                         if (c >= 0x81 && c <= 0xFF)
                         {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.

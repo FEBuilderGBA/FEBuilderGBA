@@ -70,8 +70,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.item_pointer()
-                , Program.ROM.RomInfo.item_datasize()
+                , Program.ROM.RomInfo.item_pointer
+                , Program.ROM.RomInfo.item_datasize
                 , (int i, uint addr) =>
                 {//12補正 16特効 がポインタ or nullであれば
                     if (i > 0xff)
@@ -408,9 +408,9 @@ namespace FEBuilderGBA
             {
                 if (text == "")
                 {
-                    if (Program.ROM.RomInfo.version() == 8)
+                    if (Program.ROM.RomInfo.version == 8)
                     {//FE8では武器の名前を""にすると、耐久などが表示されない
-                        if (Program.ROM.RomInfo.is_multibyte())
+                        if (Program.ROM.RomInfo.is_multibyte)
                         {
                             return R._("アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。");
                         }
@@ -423,7 +423,7 @@ namespace FEBuilderGBA
 
                 string errormessage = TextForm.GetErrorMessage(text,textid,"ITEM1");
 
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {//FE7Uにはバグがある
                     if (id == 0x59 || id == 0x99)
                     {//無視
@@ -485,12 +485,12 @@ namespace FEBuilderGBA
         }
         static bool MakeCheckError_FE8_WeaponEffect_Bug(uint item_addr)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
             uint textid = GetItemNameIDAddr(item_addr);
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 if (textid == 0x38A) //ダミー
                 {
@@ -635,7 +635,7 @@ namespace FEBuilderGBA
 
         bool IsFE8NSkillNoSyo()
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
@@ -718,11 +718,11 @@ namespace FEBuilderGBA
 
         void FE8UPassiveItem(ToolTipEx tooltip)
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return;
             }
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
             }
             else
@@ -787,7 +787,7 @@ namespace FEBuilderGBA
         }
         public static uint GetItemAddr(uint id)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return ItemFE6Form.GetItemAddr(id);
             }

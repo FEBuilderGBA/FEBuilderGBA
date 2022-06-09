@@ -729,7 +729,7 @@ namespace FEBuilderGBA
             PatchForm.ClearCheckIF();
 
             wait.DoEvents("GrepAllStructPointers");
-            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, Program.ROM.RomInfo.compress_image_borderline_address(), true);
+            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, Program.ROM.RomInfo.compress_image_borderline_address, true);
             this.StructList = U.MakeAllStructPointersList(false);
             U.AppendAllASMStructPointersList(StructList
                 , ldrmap
@@ -1461,7 +1461,7 @@ namespace FEBuilderGBA
             uint startaddr = addr;
             uint end = Math.Min(addr + length, (uint)romdata.Length);
 
-            bool isFE7 = Program.ROM.RomInfo.version() == 7;
+            bool isFE7 = Program.ROM.RomInfo.version == 7;
 
 
             while (addr < end)
@@ -1533,7 +1533,7 @@ namespace FEBuilderGBA
 
         bool IsEventCondASM(uint type)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return type == 0xD;
             }
@@ -1606,7 +1606,7 @@ namespace FEBuilderGBA
             uint startaddr = addr;
             uint end = Math.Min(addr + length, (uint)romdata.Length);
 
-            bool isFE7 = Program.ROM.RomInfo.version() == 7;
+            bool isFE7 = Program.ROM.RomInfo.version == 7;
 
             while (addr < end)
             {
@@ -2115,7 +2115,7 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.EVENTCOND_TALK)
             {//会話
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     EventCond12(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length);
                 }
@@ -2127,7 +2127,7 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.EVENTCOND_TURN)
             {//ターン
-                if (Program.ROM.RomInfo.version() == 7)
+                if (Program.ROM.RomInfo.version == 7)
                 {
                     EventCond12_16(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length);
                 }

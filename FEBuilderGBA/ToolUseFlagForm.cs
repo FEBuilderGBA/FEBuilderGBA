@@ -40,12 +40,12 @@ namespace FEBuilderGBA
             MapChangeForm.MakeFlagIDArray(mapid, this.FlagList);
 
             List<UseFlagID> flagListInner = new List<UseFlagID>();
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 EventHaikuForm.MakeFlagIDArray(flagListInner);
                 EventBattleTalkForm.MakeFlagIDArray(flagListInner);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//7
                 EventHaikuFE7Form.MakeFlagIDArray(flagListInner);
                 EventBattleTalkFE7Form.MakeFlagIDArray(flagListInner);

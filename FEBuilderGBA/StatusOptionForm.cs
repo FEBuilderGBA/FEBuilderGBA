@@ -18,6 +18,19 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawGameOptionAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.PreAddressListExpandsEvent += OnPreGameOptionExtendsWarningHandler;
+        }
+
+        public static void OnPreGameOptionExtendsWarningHandler(object sender,EventArgs e)
+        {
+            InputFormRef.ExpandsEventArgs eventarg = (InputFormRef.ExpandsEventArgs)e;
+
+            DialogResult dr = R.ShowNoYes("ゲームオプションの拡張はROMの破壊につながることがあります。\r\nゲームオプションの拡張は、新しいゲームオプションを実現する時にのみにやるべきです。\r\nゲームオプションの順番や非表示をやりたいだけであれば、ゲームオプションの順番の方で行ってください。\r\n\r\n上記を理解した上で、それでもリポイント処理を実行してもいいですか？\r\n");
+            if (dr != DialogResult.Yes)
+            {//キャンセル.
+                eventarg.IsCancel = true;
+                return;
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -25,7 +38,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.status_game_option_pointer()
+                , Program.ROM.RomInfo.status_game_option_pointer
                 , 44
                 , (int i, uint addr) =>
                 {

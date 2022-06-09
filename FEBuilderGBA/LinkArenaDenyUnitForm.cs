@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.link_arena_deny_unit_pointer()
+                , Program.ROM.RomInfo.link_arena_deny_unit_pointer
                 , 2
                 , (int i, uint addr) =>
                 {

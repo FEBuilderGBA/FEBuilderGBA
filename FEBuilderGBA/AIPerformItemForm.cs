@@ -27,7 +27,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ai_preform_item_pointer()
+                , Program.ROM.RomInfo.ai_preform_item_pointer
                 , 8
                 , (int i, uint addr) =>
                 {
@@ -57,7 +57,7 @@ namespace FEBuilderGBA
             uint addr = eearg.NewBaseAddress;
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            Program.ROM.write_p32(Program.ROM.RomInfo.ai_preform_item_direct_asm_pointer(), addr + 4, undodata);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ai_preform_item_direct_asm_pointer, addr + 4, undodata);
             Program.Undo.Push(undodata);
         }
 

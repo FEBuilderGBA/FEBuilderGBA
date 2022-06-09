@@ -61,8 +61,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.class_pointer()
-                , Program.ROM.RomInfo.class_datasize()
+                , Program.ROM.RomInfo.class_pointer
+                , Program.ROM.RomInfo.class_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i == 0)
@@ -140,7 +140,7 @@ namespace FEBuilderGBA
         //移動コスト等の取得.
         public static uint GetMoveCost(uint cid, uint terrain_data, uint costtype)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6の場合
                 return MoveCostFE6Form.GetMoveCost(cid, terrain_data, costtype);
             }
@@ -256,7 +256,7 @@ namespace FEBuilderGBA
                 return;
             }
             uint max = 64 + 1;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 max = 50 + 1;
             }
@@ -292,7 +292,7 @@ namespace FEBuilderGBA
 
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
-            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+            bool isFE6 = (Program.ROM.RomInfo.version == 6);
             InputFormRef InputFormRef = Init(null);
 
             List<U.AddrResult> classList = ClassForm.MakeClassList();

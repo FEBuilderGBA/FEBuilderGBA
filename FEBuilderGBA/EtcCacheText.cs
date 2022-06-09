@@ -47,9 +47,9 @@ namespace FEBuilderGBA
                 UseValsID.AppendTextID(list, FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, pair.Value, pair.Key);
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     for (uint textid = 0xE00; textid <= 0xEFF; textid++)
                     {
@@ -76,9 +76,9 @@ namespace FEBuilderGBA
             {
                 return new UseValsID(FELint.Type.TEXTID_FOR_SYSTEM, U.NOT_FOUND, name, textid, UseValsID.TargetTypeEnum.TEXTID);
             }
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     if (textid >= 0xE00 && textid <= 0xEFF)
                     {

@@ -16,7 +16,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            if (Program.ROM.RomInfo.version() < 8)
+            if (Program.ROM.RomInfo.version < 8)
             {
                 ExportWMAPEvent2EAButton.Hide();
             }
@@ -111,11 +111,11 @@ namespace FEBuilderGBA
                 return;
             }
             uint addr;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 addr = WorldMapEventPointerForm.GetEventByMapID(mapid, false);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 addr = WorldMapEventPointerFE7Form.GetEventByMapID(mapid);
             }
@@ -142,11 +142,11 @@ namespace FEBuilderGBA
                 return;
             }
             uint addr;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 addr = WorldMapEventPointerForm.GetEventByMapID(mapid, true);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 return;
             }
@@ -195,7 +195,7 @@ namespace FEBuilderGBA
             string saveDir = Path.GetDirectoryName(filename);
 
             StringBuilder sb = new StringBuilder();
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8
                 ((UnitForm)InputFormRef.JumpFormLow<UnitForm>()).InputFormRef.SaveDumpAutomatic(sb,saveDir);
                 ((ClassForm)InputFormRef.JumpFormLow<ClassForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
@@ -210,12 +210,12 @@ namespace FEBuilderGBA
                 ((WorldMapPathForm)InputFormRef.JumpFormLow<WorldMapPathForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
                 ((UnitPaletteForm)InputFormRef.JumpFormLow<UnitPaletteForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//FE7
                 ((UnitFE7Form)InputFormRef.JumpFormLow<UnitFE7Form>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
                 ((ClassForm)InputFormRef.JumpFormLow<ClassForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
                 ((ItemForm)InputFormRef.JumpFormLow<ItemForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     ((MapSettingFE7Form)InputFormRef.JumpFormLow<MapSettingFE7Form>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
                 }

@@ -33,8 +33,8 @@ namespace FEBuilderGBA
 
         public static uint SpellDataCount()
         {
-            uint baseaddr = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
-            uint baseid = Program.ROM.RomInfo.magic_effect_original_data_count();
+            uint baseaddr = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer);
+            uint baseid = Program.ROM.RomInfo.magic_effect_original_data_count;
             uint seachsrart_addr = baseaddr + (baseid * 4);
             uint p = seachsrart_addr;
             for (; p < Program.ROM.Data.Length - 4; p += 4)

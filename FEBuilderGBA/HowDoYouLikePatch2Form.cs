@@ -64,7 +64,7 @@ namespace FEBuilderGBA
                     return ImageUtilMagic.SearchMagicSystem() != ImageUtilMagic.magic_system_enum.NO; 
                 };
                 title = R._("魔法を追加するには、魔法システムパッチが必要です。");
-                string version = Program.ROM.RomInfo.VersionToFilename();
+                string version = Program.ROM.RomInfo.VersionToFilename;
                 if (version == "FE6")
                 {//FE6
                     //patchName1 = "FEditorMagicCSASystem_FE6";///No Translate
@@ -110,7 +110,7 @@ namespace FEBuilderGBA
             {
                 checkFunc = () => { return PatchUtil.draw_font_enum.NO != PatchUtil.SearchDrawFontPatch(); };
                 title = R._("他の言語を表示するにはDrawFontパッチが必要です。");
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     patchName3 = "DrawSingleByte";///No Translate
                 }
@@ -125,7 +125,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.SkipWorldmapFix)
             {
-                if (Program.ROM.RomInfo.version() != 8)
+                if (Program.ROM.RomInfo.version != 8)
                 {
                     return false;
                 }

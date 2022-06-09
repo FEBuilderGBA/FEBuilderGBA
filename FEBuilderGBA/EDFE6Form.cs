@@ -27,7 +27,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N2_"
-                , Program.ROM.RomInfo.ed_3a_pointer()
+                , Program.ROM.RomInfo.ed_3a_pointer
                 , 8
                 , (int i, uint addr) =>
                 {

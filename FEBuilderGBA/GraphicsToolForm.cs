@@ -86,7 +86,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (a < Program.ROM.RomInfo.compress_image_borderline_address())
+                if (a < Program.ROM.RomInfo.compress_image_borderline_address)
                 {
                     continue;
                 }
@@ -817,7 +817,7 @@ namespace FEBuilderGBA
                 {//危険なポインタなので無視
                     continue;
                 }
-                if (a < Program.ROM.RomInfo.compress_image_borderline_address())
+                if (a < Program.ROM.RomInfo.compress_image_borderline_address)
                 {
                     continue;
                 }
@@ -1094,7 +1094,7 @@ namespace FEBuilderGBA
         //ポインタは連続してあらわれるのでそのチェックをする.
         static bool IsContinuousPointer(uint addr, uint length)
         {
-            if (addr <= Program.ROM.RomInfo.compress_image_borderline_address())
+            if (addr <= Program.ROM.RomInfo.compress_image_borderline_address)
             {//プログラム領域であればポインタが散在していてもいい
                 return true;
             }
@@ -1147,7 +1147,7 @@ namespace FEBuilderGBA
                 {//危険なポインタは無視
                     continue;
                 }
-                if (a < Program.ROM.RomInfo.compress_image_borderline_address())
+                if (a < Program.ROM.RomInfo.compress_image_borderline_address)
                 {
                     continue;
                 }

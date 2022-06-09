@@ -49,8 +49,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.class_pointer()
-                , Program.ROM.RomInfo.class_datasize()
+                , Program.ROM.RomInfo.class_pointer
+                , Program.ROM.RomInfo.class_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i == 0)
@@ -200,7 +200,7 @@ namespace FEBuilderGBA
                 case 5:
                     return Program.ROM.p32(addr + 64); //地形魔防
                 default:
-                    return Program.ROM.p32(Program.ROM.RomInfo.terrain_recovery_pointer()); //地形回復
+                    return Program.ROM.p32(Program.ROM.RomInfo.terrain_recovery_pointer); //地形回復
             }
         }
         public static uint GetMoveCostAddr(uint cid, uint costtype)
@@ -345,21 +345,21 @@ namespace FEBuilderGBA
 
             //全クラス共通地形回復
             FEBuilderGBA.Address.AddPointer(list,
-                 Program.ROM.RomInfo.terrain_recovery_pointer()
+                 Program.ROM.RomInfo.terrain_recovery_pointer
                 , 52
                 , "MoveCost ref"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
             //全クラス共通地形バッドステータス回復
             FEBuilderGBA.Address.AddPointer(list,
-                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer()
+                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer
                 , 52
                 , "MoveCost recovery bad status"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
             //全クラス共通地形バッドステータス回復
             FEBuilderGBA.Address.AddPointer(list,
-                  Program.ROM.RomInfo.terrain_show_infomation_pointer()
+                  Program.ROM.RomInfo.terrain_show_infomation_pointer
                 , 52
                 , "MoveCost show infomation"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);

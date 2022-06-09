@@ -43,11 +43,11 @@ namespace FEBuilderGBA
 
         private void UnitButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<UnitFE6Form>();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 InputFormRef.JumpForm<UnitFE7Form>();
             }
@@ -59,7 +59,7 @@ namespace FEBuilderGBA
 
         private void ClassButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<ClassFE6Form>();
             }
@@ -71,13 +71,13 @@ namespace FEBuilderGBA
 
         private void MapSettingButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<MapSettingFE6Form>((uint)MAP_LISTBOX.SelectedIndex);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (!Program.ROM.RomInfo.is_multibyte())
+                if (!Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<MapSettingFE7UForm>((uint)MAP_LISTBOX.SelectedIndex);
                 }
@@ -100,12 +100,12 @@ namespace FEBuilderGBA
 
         private void EventUnitButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 EventUnitFE6Form f = (EventUnitFE6Form)InputFormRef.JumpForm<EventUnitFE6Form>(U.NOT_FOUND);
                 f.JumpToMap((uint)MAP_LISTBOX.SelectedIndex);
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                 f.JumpToMap((uint)MAP_LISTBOX.SelectedIndex);
@@ -206,7 +206,7 @@ namespace FEBuilderGBA
 
         private void ItemButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<ItemFE6Form>();
             }
@@ -285,12 +285,12 @@ namespace FEBuilderGBA
 
         private void DetailMenuButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 MainFE6Form f = (MainFE6Form)InputFormRef.JumpForm<MainFE6Form>();
                 f.SetFilter();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 MainFE7Form f = (MainFE7Form)InputFormRef.JumpForm<MainFE7Form>();
                 f.SetFilter();
@@ -422,7 +422,7 @@ namespace FEBuilderGBA
 
             this.MapTransporter = MapSettingForm.GetTransporter(mapid,true);
 
-            if (Program.ROM.RomInfo.version() == 7 && this.MapTransporter.X < 255)
+            if (Program.ROM.RomInfo.version == 7 && this.MapTransporter.X < 255)
             {//FE7のみ輸送体の位置
                 Bitmap yusoutai = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x3A, 0, true);
                 Map.SetStaticItem("yusoutai"
@@ -483,7 +483,7 @@ namespace FEBuilderGBA
             this.EventAddrList.AddRange(eventList);
 
             //ワールドマップ
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 uint addr = WorldMapEventPointerFE6Form.GetEventByMapID(mapid);
                 if (addr != U.NOT_FOUND)
@@ -491,7 +491,7 @@ namespace FEBuilderGBA
                     this.EventAddrList.Add(new U.AddrResult(addr, "WorldMapEvent", WORLDMAP_EVENT));
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 uint addr = WorldMapEventPointerFE7Form.GetEventByMapID(mapid);
                 if (addr != U.NOT_FOUND)
@@ -696,12 +696,12 @@ namespace FEBuilderGBA
 
                     if (clickx == items[n].x && clicky == items[n].y)
                     {
-                        if (Program.ROM.RomInfo.version() == 6)
+                        if (Program.ROM.RomInfo.version == 6)
                         {
                             EventUnitFE6Form f = (EventUnitFE6Form)InputFormRef.JumpForm<EventUnitFE6Form>(U.NOT_FOUND);
                             f.JumpTo(UnitsAddrList[i].addr, n);
                         }
-                        else if (Program.ROM.RomInfo.version() == 7)
+                        else if (Program.ROM.RomInfo.version == 7)
                         {
                             EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                             f.JumpTo(UnitsAddrList[i].addr, n);
@@ -745,11 +745,11 @@ namespace FEBuilderGBA
         }
         bool MapMouseDownEvent_Ysoutai(uint mapid, int clickx, int clicky, bool rev)
         {
-            if (Program.ROM.RomInfo.version() == 7 && this.MapTransporter.X < 255)
+            if (Program.ROM.RomInfo.version == 7 && this.MapTransporter.X < 255)
             {//FE7のみ輸送体の位置
                 if (clickx == MapTransporter.X && clicky == MapTransporter.Y)
                 {
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         InputFormRef.JumpForm<MapSettingFE7Form>(mapid);
                     }
@@ -889,7 +889,7 @@ namespace FEBuilderGBA
                 text = R._("ワールドマップイベント:");
                 bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
 
-                if ( Program.ROM.RomInfo.version() != 8)
+                if ( Program.ROM.RomInfo.version != 8)
                 {//FE8の場合、2分割されたので無理.
                     int maxWidth = bounds.X;
 
@@ -971,7 +971,7 @@ namespace FEBuilderGBA
                             bounds.X += U.DrawPicture(icon, g, isWithDraw, b);
                             icon.Dispose();
 
-                            addr += Program.ROM.RomInfo.eventunit_data_size();
+                            addr += Program.ROM.RomInfo.eventunit_data_size;
                             if (!U.isSafetyOffset(addr))
                             {
                                 Debug.Assert(false);
@@ -1143,12 +1143,12 @@ namespace FEBuilderGBA
 
             if (tag == WORLDMAP_EVENT)
             {//ワールドマップイベント
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
                     f.JumpTo(ar.addr);
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
                     f.JumpTo(ar.addr);

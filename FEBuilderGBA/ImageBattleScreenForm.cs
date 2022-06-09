@@ -43,7 +43,7 @@ namespace FEBuilderGBA
         {
             ClearUndoBuffer();
 
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer);
             U.ForceUpdate(PALETTE_ADDRESS, palette);
             this.PFR = new PaletteFormRef(this);
             PFR.MakePaletteUI(OnChangeColor , GetSampleBitmap);
@@ -60,50 +60,50 @@ namespace FEBuilderGBA
 
         void SetupTileAddr()
         {
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer);
             this.tile1_addr.Value = addr;
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer);
             this.tile2_addr.Value = addr;
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer);
             this.tile3_addr.Value = addr;
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer);
             this.tile4_addr.Value = addr;
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer);
             this.tile5_addr.Value = addr;
         }
 
         void InitLoadChipsetInfo()
         {
             int[] srcImageWidth = new int[5];
-            Size size = U.CalcLZ77ImageToSizePointer(Program.ROM.RomInfo.battle_screen_image1_pointer());
+            Size size = U.CalcLZ77ImageToSizePointer(Program.ROM.RomInfo.battle_screen_image1_pointer);
             srcImageWidth[0] = size.Width;
-            srcImageWidth[1] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image2_pointer());
-            srcImageWidth[2] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image3_pointer());
-            srcImageWidth[3] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image4_pointer());
-            srcImageWidth[4] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image5_pointer());
+            srcImageWidth[1] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image2_pointer);
+            srcImageWidth[2] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image3_pointer);
+            srcImageWidth[3] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image4_pointer);
+            srcImageWidth[4] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image5_pointer);
 
-            this.image1_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image1_pointer());
-            this.Image1 = new ImageFormRef(this, "image1", size.Width, size.Height, 1, Program.ROM.RomInfo.battle_screen_image1_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
-            this.image2_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image2_pointer());
-            this.Image2 = new ImageFormRef(this, "image2", srcImageWidth[1], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image2_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
-            this.image3_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image3_pointer());
-            this.Image3 = new ImageFormRef(this, "image3", srcImageWidth[2], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image3_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
-            this.image4_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image4_pointer());
-            this.Image4 = new ImageFormRef(this, "image4", srcImageWidth[3], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image4_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
-            this.image5_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image5_pointer());
-            this.Image5 = new ImageFormRef(this, "image5", srcImageWidth[4], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image5_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
+            this.image1_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image1_pointer);
+            this.Image1 = new ImageFormRef(this, "image1", size.Width, size.Height, 1, Program.ROM.RomInfo.battle_screen_image1_pointer, 0, Program.ROM.RomInfo.battle_screen_palette_pointer);
+            this.image2_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image2_pointer);
+            this.Image2 = new ImageFormRef(this, "image2", srcImageWidth[1], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image2_pointer, 0, Program.ROM.RomInfo.battle_screen_palette_pointer);
+            this.image3_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image3_pointer);
+            this.Image3 = new ImageFormRef(this, "image3", srcImageWidth[2], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image3_pointer, 0, Program.ROM.RomInfo.battle_screen_palette_pointer);
+            this.image4_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image4_pointer);
+            this.Image4 = new ImageFormRef(this, "image4", srcImageWidth[3], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image4_pointer, 0, Program.ROM.RomInfo.battle_screen_palette_pointer);
+            this.image5_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image5_pointer);
+            this.Image5 = new ImageFormRef(this, "image5", srcImageWidth[4], 1 * 8, 1, Program.ROM.RomInfo.battle_screen_image5_pointer, 0, Program.ROM.RomInfo.battle_screen_palette_pointer);
         }
         void LoadChipsetInfo()
         {
-            this.image1_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image1_pointer());
-            this.image2_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image2_pointer());
-            this.image3_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image3_pointer());
-            this.image4_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image4_pointer());
-            this.image5_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image5_pointer());
+            this.image1_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image1_pointer);
+            this.image2_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image2_pointer);
+            this.image3_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image3_pointer);
+            this.image4_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image4_pointer);
+            this.image5_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image5_pointer);
 
             this.IsNotUseList = new List<int>();
             this.HeightList = new List<int>();
@@ -116,11 +116,11 @@ namespace FEBuilderGBA
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             uint[] image_pos = new uint[] {
-                 Program.ROM.RomInfo.battle_screen_image1_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image2_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image3_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image4_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image5_pointer()
+                 Program.ROM.RomInfo.battle_screen_image1_pointer
+                ,Program.ROM.RomInfo.battle_screen_image2_pointer
+                ,Program.ROM.RomInfo.battle_screen_image3_pointer
+                ,Program.ROM.RomInfo.battle_screen_image4_pointer
+                ,Program.ROM.RomInfo.battle_screen_image5_pointer
             };
 
             for (int i = 0; i < image_pos.Length; i++)
@@ -132,11 +132,11 @@ namespace FEBuilderGBA
         static Bitmap GetChipImage(List<int> notUseList, List<int>  heightList)
         {
             uint[] image_pos = new uint[] {
-                 Program.ROM.RomInfo.battle_screen_image1_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image2_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image3_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image4_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image5_pointer()
+                 Program.ROM.RomInfo.battle_screen_image1_pointer
+                ,Program.ROM.RomInfo.battle_screen_image2_pointer
+                ,Program.ROM.RomInfo.battle_screen_image3_pointer
+                ,Program.ROM.RomInfo.battle_screen_image4_pointer
+                ,Program.ROM.RomInfo.battle_screen_image5_pointer
             };
             List<byte[]>  unlz77_images = new List<byte[]>();
             int total_height = 0;
@@ -152,7 +152,7 @@ namespace FEBuilderGBA
                 heightList.Add(total_height);
             }
 
-            uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
+            uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer);
             Bitmap bitmap = ImageUtil.Blank(8, total_height, Program.ROM.Data, (int)palette);
 
             int copy_height = 0;
@@ -239,7 +239,7 @@ namespace FEBuilderGBA
         {
             ushort[] map = new ushort[MAP_X * MAP_Y];
 
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer);
             for (int y = 0; y <= 5; y++)
             {
                 for (int x = 1; x <= 15; x++)
@@ -251,7 +251,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer);
             for (int y = 0; y <= 5; y++)
             {
                 for (int x = 16; x <= 30; x++)
@@ -263,7 +263,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer);
             for (int y = 13; y <= 19; y++)
             {
                 for (int x = 1; x <= 15; x++)
@@ -275,7 +275,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer);
             for (int y = 13; y <= 19; y++)
             {
                 for (int x = 16; x <= 31; x++)
@@ -287,7 +287,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer);
             for (int y = 0; y <= 19; y++)
             {
                 for (int x = 31; x <= 32; x++)
@@ -310,7 +310,7 @@ namespace FEBuilderGBA
         {
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"BattleScreen");
 
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer);
             undodata.list.Add(new Undo.UndoPostion(addr, 6 * 16 * 2));
             for (int y = 0; y <= 5; y++)
             {
@@ -323,7 +323,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer);
             undodata.list.Add(new Undo.UndoPostion(addr, 6 * 16 * 2));
             for (int y = 0; y <= 5; y++)
             {
@@ -336,7 +336,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer);
             undodata.list.Add(new Undo.UndoPostion(addr, 6 * 16 * 2));
             for (int y = 13; y <= 19; y++)
             {
@@ -349,7 +349,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer);
             undodata.list.Add(new Undo.UndoPostion(addr, 6 * 17 * 2));
             for (int y = 13; y <= 19; y++)
             {
@@ -362,7 +362,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer());
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer);
             undodata.list.Add(new Undo.UndoPostion(addr, 19 * 2 * 2));
             for (int y = 0; y <= 19; y++)
             {
@@ -380,11 +380,11 @@ namespace FEBuilderGBA
                 }
             }
 
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image1_pointer(), this.image1_ZIMAGE, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image2_pointer(), this.image2_ZIMAGE, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image3_pointer(), this.image3_ZIMAGE, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image4_pointer(), this.image4_ZIMAGE, undodata);
-            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image5_pointer(), this.image5_ZIMAGE, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image1_pointer, this.image1_ZIMAGE, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image2_pointer, this.image2_ZIMAGE, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image3_pointer, this.image3_ZIMAGE, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image4_pointer, this.image4_ZIMAGE, undodata);
+            InputFormRef.WriteOnePointer(Program.ROM.RomInfo.battle_screen_image5_pointer, this.image5_ZIMAGE, undodata);
             this.Image1.WritePointer(undodata);
             this.Image2.WritePointer(undodata);
             this.Image3.WritePointer(undodata);
@@ -898,8 +898,8 @@ namespace FEBuilderGBA
                 //パレットデータの書き込み
                 byte[] paletteData = ImageUtil.ImageToPalette(bitmap, palette_count);
                 uint newPaletteAddr = ImageFormRef.WriteImageData(this
-                    , Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer())
-                    , Program.ROM.RomInfo.battle_screen_palette_pointer()
+                    , Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer)
+                    , Program.ROM.RomInfo.battle_screen_palette_pointer
                     , paletteData, false, undodata);
 
                 Program.Undo.Push(undodata);
@@ -918,11 +918,11 @@ namespace FEBuilderGBA
         void RevChipImage(byte[] bigbitmap, Undo.UndoData undodata)
         {
             uint[] image_pos = new uint[] {
-                 Program.ROM.RomInfo.battle_screen_image1_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image2_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image3_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image4_pointer()
-                ,Program.ROM.RomInfo.battle_screen_image5_pointer()
+                 Program.ROM.RomInfo.battle_screen_image1_pointer
+                ,Program.ROM.RomInfo.battle_screen_image2_pointer
+                ,Program.ROM.RomInfo.battle_screen_image3_pointer
+                ,Program.ROM.RomInfo.battle_screen_image4_pointer
+                ,Program.ROM.RomInfo.battle_screen_image5_pointer
             };
 
             uint readPos = 0;
@@ -974,7 +974,7 @@ namespace FEBuilderGBA
                 , tsa
                 , 0);
             //FE7とFE6は、真ん中に変なデータがあるので塗りつぶす.
-            if (Program.ROM.RomInfo.version() <= 7)
+            if (Program.ROM.RomInfo.version <= 7)
             {
                 Bitmap black = ImageUtil.Blank(32*8,7*8, ret);
                 ImageUtil.BitBlt(ret, 0, 6 * 8, 32 * 8, 7 * 8, black, 0, 0);
@@ -993,54 +993,54 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {
             uint tsa;
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer());
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer);
             FEBuilderGBA.Address.AddAddress(list, tsa
                 , (5+1) * ((15+1)-1) * 2
-                , Program.ROM.RomInfo.battle_screen_TSA1_pointer()
+                , Program.ROM.RomInfo.battle_screen_TSA1_pointer
                 , "battle_screen_TSA1"
                 , FEBuilderGBA.Address.DataTypeEnum.TSA);
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer());
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer);
             FEBuilderGBA.Address.AddAddress(list, tsa
                 , (5 + 1) * ((30 + 16) - 1) * 2
-                , Program.ROM.RomInfo.battle_screen_TSA2_pointer()
+                , Program.ROM.RomInfo.battle_screen_TSA2_pointer
                 , "battle_screen_TSA2"
                 , FEBuilderGBA.Address.DataTypeEnum.TSA);
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer());
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer);
             FEBuilderGBA.Address.AddAddress(list, tsa
                 , ((19 + 1)-13) * ((15 + 1) - 1) * 2
-                , Program.ROM.RomInfo.battle_screen_TSA3_pointer()
+                , Program.ROM.RomInfo.battle_screen_TSA3_pointer
                 , "battle_screen_TSA3"
                 , FEBuilderGBA.Address.DataTypeEnum.TSA);
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer());
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer);
             FEBuilderGBA.Address.AddAddress(list, tsa
                 , ((19 + 1) - 13) * ((31 + 1) - 16) * 2
-                , Program.ROM.RomInfo.battle_screen_TSA4_pointer()
+                , Program.ROM.RomInfo.battle_screen_TSA4_pointer
                 , "battle_screen_TSA4"
                 , FEBuilderGBA.Address.DataTypeEnum.TSA);
 
-            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer());
+            tsa = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer);
             FEBuilderGBA.Address.AddAddress(list, tsa
                 , ((19 + 1) - 0) * ((32 + 1) - 31) * 2
-                , Program.ROM.RomInfo.battle_screen_TSA5_pointer()
+                , Program.ROM.RomInfo.battle_screen_TSA5_pointer
                 , "battle_screen_TSA5"
                 , FEBuilderGBA.Address.DataTypeEnum.TSA);
 
-            uint pal = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
+            uint pal = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer);
             FEBuilderGBA.Address.AddAddress(list, pal
                 , 0x20 * 4
-                , Program.ROM.RomInfo.battle_screen_palette_pointer()
+                , Program.ROM.RomInfo.battle_screen_palette_pointer
                 , "battle_screen_palette"
                 , FEBuilderGBA.Address.DataTypeEnum.PAL);
 
-            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image1_pointer()
+            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image1_pointer
                 , "battle_screen_image1", isPointerOnly,FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image2_pointer()
+            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image2_pointer
                 , "battle_screen_image1", isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image3_pointer()
+            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image3_pointer
                 , "battle_screen_image1", isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image4_pointer()
+            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image4_pointer
                 , "battle_screen_image1", isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image5_pointer()
+            FEBuilderGBA.Address.AddLZ77Pointer(list, Program.ROM.RomInfo.battle_screen_image5_pointer
                 , "battle_screen_image1", isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
 
         }

@@ -189,11 +189,11 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return false;
             }
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {//FE8J
                 beginFreeSpace = 0xEFB2E0;
                 endFreeSpace   = 0xF90000 - 4;

@@ -34,8 +34,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.sound_room_pointer()
-                , Program.ROM.RomInfo.sound_room_datasize()
+                , Program.ROM.RomInfo.sound_room_pointer
+                , Program.ROM.RomInfo.sound_room_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (Program.ROM.u32(addr) == 0xFFFFFFFF)
@@ -43,7 +43,7 @@ namespace FEBuilderGBA
                         return false;
                     }
                     if (i > 10 
-                        && Program.ROM.IsEmpty(addr, Program.ROM.RomInfo.sound_room_datasize() * 10))
+                        && Program.ROM.IsEmpty(addr, Program.ROM.RomInfo.sound_room_datasize * 10))
                     {
                         return false;
                     }
@@ -75,7 +75,7 @@ namespace FEBuilderGBA
         public static string GetSongNameLow(uint addr)
         {
             uint textid;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 textid = Program.ROM.u32(addr + 4);
                 return TextForm.Direct(textid);
@@ -136,7 +136,7 @@ namespace FEBuilderGBA
                 , FEBuilderGBA.Address.DataTypeEnum.InputFormRef_MIX
                 );
 
-            if (Program.ROM.RomInfo.version() == 7)
+            if (Program.ROM.RomInfo.version == 7)
             {
                 //FE7だと、曲名は C-String
                 uint addr = InputFormRef.BaseAddress;

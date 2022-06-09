@@ -27,7 +27,7 @@ namespace FEBuilderGBA
             FilterComboBox.Items.Add(TypeToName(PLIST_TYPE.MAP));
             FilterComboBox.Items.Add(TypeToName(PLIST_TYPE.CHANGE));
             FilterComboBox.Items.Add(TypeToName(PLIST_TYPE.EVENT));
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 FilterComboBox.Items.Add(TypeToName(PLIST_TYPE.WORLDMAP_FE6ONLY));
             }
@@ -62,7 +62,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                limit = Program.ROM.RomInfo.map_map_pointer_list_default_size();
+                limit = Program.ROM.RomInfo.map_map_pointer_list_default_size;
             }
 
             InputFormRef ifr = null;
@@ -161,7 +161,7 @@ namespace FEBuilderGBA
                 {
                     return "OBJ " + MapSettingForm.GetMapNameWhereAddr(addr);
                 }
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     uint wmapevent_plist = MapSettingForm.GetWorldMapEventIDWhereAddr(addr);
                     if (wmapevent_plist == 0 && type == PLIST_TYPE.WORLDMAP_FE6ONLY)
@@ -227,7 +227,7 @@ namespace FEBuilderGBA
                 {
                     return "OBJ " + MapSettingForm.GetMapNameWhereAddr(addr);
                 }
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     uint wmapevent_plist = MapSettingForm.GetWorldMapEventIDWhereAddr(addr);
                     if (wmapevent_plist == 0)
@@ -281,7 +281,7 @@ namespace FEBuilderGBA
             {
                 return PLIST_TYPE.EVENT;
             }
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 if ("WMAPEVENT" == type)
                 {
@@ -325,7 +325,7 @@ namespace FEBuilderGBA
             {
                 return PLIST_TYPE.EVENT;
             }
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 if (Program.ROM.p32(GetBasePointer(PLIST_TYPE.WORLDMAP_FE6ONLY)) == baseaddr)
                 {
@@ -339,43 +339,43 @@ namespace FEBuilderGBA
         {
             if (type == PLIST_TYPE.CONFIG)
             {
-                return (Program.ROM.RomInfo.map_config_pointer());
+                return (Program.ROM.RomInfo.map_config_pointer);
             }
             else if (type == PLIST_TYPE.ANIMATION)
             {
-                return (Program.ROM.RomInfo.map_tileanime1_pointer());
+                return (Program.ROM.RomInfo.map_tileanime1_pointer);
             }
             else if (type == PLIST_TYPE.ANIMATION2)
             {
-                return (Program.ROM.RomInfo.map_tileanime2_pointer());
+                return (Program.ROM.RomInfo.map_tileanime2_pointer);
             }
             else if (type == PLIST_TYPE.OBJECT)
             {
-                return (Program.ROM.RomInfo.map_obj_pointer());
+                return (Program.ROM.RomInfo.map_obj_pointer);
             }
             else if (type == PLIST_TYPE.PALETTE)
             {
-                return (Program.ROM.RomInfo.map_pal_pointer());
+                return (Program.ROM.RomInfo.map_pal_pointer);
             }
             else if (type == PLIST_TYPE.MAP)
             {
-                return (Program.ROM.RomInfo.map_map_pointer_pointer());
+                return (Program.ROM.RomInfo.map_map_pointer_pointer);
             }
             else if (type == PLIST_TYPE.CHANGE)
             {
-                return (Program.ROM.RomInfo.map_mapchange_pointer());
+                return (Program.ROM.RomInfo.map_mapchange_pointer);
             }
             else if (type == PLIST_TYPE.EVENT)
             {
-                return (Program.ROM.RomInfo.map_event_pointer());
+                return (Program.ROM.RomInfo.map_event_pointer);
             }
             else if (type == PLIST_TYPE.WORLDMAP_FE6ONLY)
             {
-                Debug.Assert(Program.ROM.RomInfo.version() == 6);
-                return (Program.ROM.RomInfo.map_worldmapevent_pointer());
+                Debug.Assert(Program.ROM.RomInfo.version == 6);
+                return (Program.ROM.RomInfo.map_worldmapevent_pointer);
             }
 
-            return (Program.ROM.RomInfo.map_config_pointer());
+            return (Program.ROM.RomInfo.map_config_pointer);
         }
 
         static ConcurrentDictionary<uint, uint> PlistCache = new ConcurrentDictionary<uint, uint>();
@@ -622,7 +622,7 @@ namespace FEBuilderGBA
             InputFormRef.ReInitPointer(GetBasePointer(PLIST_TYPE.CHANGE));
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MAPPOINTERS_CHANGE", new uint[] { 0 });
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.ReInitPointer(GetBasePointer(PLIST_TYPE.CHANGE));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MAPPOINTERS_WMAP_EVENT", new uint[] { 0 });
@@ -711,11 +711,11 @@ namespace FEBuilderGBA
         string ExplainPlistSplitExpands()
         {
             string text = R._("PLIST分割\r\nPLISTにはいろいろな要素が詰め込まれているので、これを要素別に分割することで、利用できるPLSIT数を増やすことができます。\r\nPLIST分割をすると自動的にサイズを0xFFまで拡張します。\r\n(この処理は危険な処理です。必ずバックアップを取ってください。)\r\n");
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 text += R._("FE6では、7倍に増やせます。\r\n1.(オブジェクト), 2.(マップチップ画像、パレット), 3.(アニメーション), 4.(マップの並び順) , 5.(マップ変更) ,6.(イベント) ,7.(ワールドマップ)\r\n");
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 text += R._("FE7では、6倍に増やせます。\r\n1.(オブジェクト), 2.(マップチップ画像、パレット), 3.(アニメーション), 4.(マップの並び順) , 5.(マップ変更) ,6.(イベント) \r\n");
             }
@@ -768,7 +768,7 @@ namespace FEBuilderGBA
                 uint old_animation_basePointer = GetBasePointer(PLIST_TYPE.ANIMATION);
                 uint old_event_basePointer = GetBasePointer(PLIST_TYPE.EVENT);
                 uint old_wmap_event_basePointer = 0;
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     old_wmap_event_basePointer = GetBasePointer(PLIST_TYPE.WORLDMAP_FE6ONLY);
                 }
@@ -779,7 +779,7 @@ namespace FEBuilderGBA
                 uint old_animation_baseaddr = Program.ROM.p32(old_animation_basePointer);
                 uint old_event_baseaddr = Program.ROM.p32(old_event_basePointer);
                 uint old_wmap_event_baseaddr = 0;
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     old_wmap_event_baseaddr = Program.ROM.p32(old_wmap_event_basePointer);
                 }
@@ -791,7 +791,7 @@ namespace FEBuilderGBA
                 PListSplitsExpandsOne(PLIST_TYPE.CHANGE, undodata);
                 PListSplitsExpandsOne(PLIST_TYPE.ANIMATION, undodata); //ANIME2と共通
                 PListSplitsExpandsOne(PLIST_TYPE.EVENT, undodata);
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     PListSplitsExpandsOne(PLIST_TYPE.WORLDMAP_FE6ONLY, undodata);
                 }
@@ -876,7 +876,7 @@ namespace FEBuilderGBA
             {
                 if (type == PLIST_TYPE.WORLDMAP_FE6ONLY)
                 {
-                    Debug.Assert(Program.ROM.RomInfo.version() == 6);
+                    Debug.Assert(Program.ROM.RomInfo.version == 6);
                     uint wmapevent_plist = MapSettingForm.GetWorldMapEventIDWhereAddr(mapSetting[mapid].addr);
 
                     PListSplitExpandsOneConvertPointer(wmapevent_plist, InputFormRef, newArray);
@@ -927,33 +927,33 @@ namespace FEBuilderGBA
 
             if (type == PLIST_TYPE.CONFIG)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_config_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_config_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.ANIMATION)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_tileanime1_pointer(), newpos, undodata);
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_tileanime2_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_tileanime1_pointer, newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_tileanime2_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.OBJECT)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_obj_pointer(), newpos, undodata);
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_pal_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_obj_pointer, newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_pal_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.MAP)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_map_pointer_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_map_pointer_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.CHANGE)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_mapchange_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_mapchange_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.EVENT)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_event_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_event_pointer, newpos, undodata);
             }
             else if (type == PLIST_TYPE.WORLDMAP_FE6ONLY)
             {
-                Program.ROM.write_p32(Program.ROM.RomInfo.map_worldmapevent_pointer(), newpos, undodata);
+                Program.ROM.write_p32(Program.ROM.RomInfo.map_worldmapevent_pointer, newpos, undodata);
             }
             else
             {
@@ -991,7 +991,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 b = Program.ROM.p32(GetBasePointer(PLIST_TYPE.WORLDMAP_FE6ONLY));
                 if(a == b)

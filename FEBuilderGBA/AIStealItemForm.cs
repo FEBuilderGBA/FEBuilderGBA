@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ai_steal_item_pointer()
+                , Program.ROM.RomInfo.ai_steal_item_pointer
                 , 2
                 , (int i, uint addr) =>
                 {

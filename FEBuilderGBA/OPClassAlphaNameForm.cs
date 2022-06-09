@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.class_alphaname_pointer()
+                , Program.ROM.RomInfo.class_alphaname_pointer
                 , 20
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -64,7 +64,7 @@ namespace FEBuilderGBA
         public static uint ExpandsArea(Form form,uint current_count, uint newdatacount, Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = N_Init(null, (int)current_count);
-            return InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.class_alphaname_pointer());
+            return InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.class_alphaname_pointer);
         }
 
         //全データの取得

@@ -888,7 +888,7 @@ namespace FEBuilderGBA
         public static void CheckMNC2(uint mapid, out string errormessage)
         {
             errormessage = "";
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return;
             }
@@ -1786,7 +1786,7 @@ namespace FEBuilderGBA
             uint addr = units_address;
             while (Program.ROM.u8(addr) != 0x0)
             {
-                addr += Program.ROM.RomInfo.eventunit_data_size();
+                addr += Program.ROM.RomInfo.eventunit_data_size;
                 if (!U.isSafetyOffset(addr))
                 {
                     break;
@@ -1814,7 +1814,7 @@ namespace FEBuilderGBA
                     b.Height = iconSize;
 
                     bounds.X += U.DrawPicture(icon, g, true, b);
-                    addr += Program.ROM.RomInfo.eventunit_data_size();
+                    addr += Program.ROM.RomInfo.eventunit_data_size;
                 }
             }
             return bitmap;

@@ -38,7 +38,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.bigcg_pointer()
+                , Program.ROM.RomInfo.bigcg_pointer
                 , 12
                 , (int i, uint addr) =>
                 {
@@ -99,8 +99,8 @@ namespace FEBuilderGBA
         }
         public static Bitmap DrawImageByID(uint id)
         {
-            if (Program.ROM.RomInfo.version() == 7
-                && !Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.version == 7
+                && !Program.ROM.RomInfo.is_multibyte)
             {//FE7Uだけ別ルーチン.
                 return ImageCGFE7UForm.DrawImageByID(id);
             }
@@ -277,8 +277,8 @@ namespace FEBuilderGBA
 
         public static List<U.AddrResult> MakeList()
         {
-            if (Program.ROM.RomInfo.version() == 7
-                && !Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.version == 7
+                && !Program.ROM.RomInfo.is_multibyte)
             {//FE7Uだけ別ルーチン.
                 return ImageCGFE7UForm.MakeList();
             }
@@ -299,7 +299,7 @@ namespace FEBuilderGBA
 
         void WriteEDData()
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return;
             }
@@ -308,7 +308,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint writeaddr = Program.ROM.RomInfo.end_cg_address();
+            uint writeaddr = Program.ROM.RomInfo.end_cg_address;
             writeaddr = writeaddr + (cgid * 0x34);
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,new string[]{"ENDING CG"});

@@ -207,7 +207,7 @@ namespace FEBuilderGBA
                 return new byte[] { };
             }
             byte[] needString =  Program.SystemTextEncoder.Encode(str);
-            uint hintStringAddr = U.Grep(Program.ROM.Data, needString, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            uint hintStringAddr = U.Grep(Program.ROM.Data, needString, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
             if (hintStringAddr == U.NOT_FOUND)
             {
                 return new byte[] { };
@@ -635,28 +635,28 @@ namespace FEBuilderGBA
             }
 
             sb.AppendLine("#define ItemImage "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer)));
             sb.AppendLine("#define ItemPalette "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer)));
             sb.AppendLine("#define ItemTable "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer)));
             sb.AppendLine("#define TextTable "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer)));
             sb.AppendLine("#define PortraitTable "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.face_pointer())));
-            if (Program.ROM.RomInfo.version() == 8)
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.portrait_pointer)));
+            if (Program.ROM.RomInfo.version == 8)
             {
                 sb.AppendLine("#define SummonUnitTable "
-                    + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer())));
+                    + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer)));
                 if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     SkillConfigSkillSystemForm.Export(sb, isColorzCore);
                 }
             }
             sb.AppendLine("#define AI1Table "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer)));
             sb.AppendLine("#define AI2Table "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer())));
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer)));
             
 
             UnitActionPointerForm.SupportActionRework(sb);

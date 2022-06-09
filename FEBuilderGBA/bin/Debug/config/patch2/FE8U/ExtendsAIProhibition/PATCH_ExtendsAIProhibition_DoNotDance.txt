@@ -3,10 +3,10 @@ NAME.en=AI Prohibited Expansion: Dance
 TYPE=BIN
 TAG=#ENGINE
 
-PATCHED_IF:0x03ED40=0x00 0x48
+PATCHED_IF:0x03ED40=0x00 0x4B
 
 BIN:$FREEAREA=ExtendsAIProhibition_DoNotDance.dmp
-JUMP:0x3ED40=ExtendsAIProhibition_DoNotDance.dmp
+JUMP:0x3ED40:$r3=ExtendsAIProhibition_DoNotDance.dmp
 
 
 INFO=AIの章ごと設定に、踊る禁止を追加します

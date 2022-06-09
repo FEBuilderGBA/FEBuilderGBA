@@ -44,14 +44,14 @@ namespace FEBuilderGBA
         static InputFormRef Init(Form self)
         {
             //FEditor Advが文字列長を書いてくれていた場合
-            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.face_pointer()));
+            uint FEditorHint = InputFormRef.GetFEditorLengthHint(Program.ROM.p32(Program.ROM.RomInfo.portrait_pointer));
             //連続するnull個数
             int nullContinuousCount = 0;
 
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.face_pointer()
-                , Program.ROM.RomInfo.face_datasize()
+                , Program.ROM.RomInfo.portrait_pointer
+                , Program.ROM.RomInfo.portrait_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i <= 0)

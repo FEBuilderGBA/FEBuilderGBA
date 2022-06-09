@@ -389,7 +389,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            if ( Program.ROM.RomInfo.is_multibyte() )
+            if ( Program.ROM.RomInfo.is_multibyte )
             {//マルチバイトROMならば、001fパディングを消す.
                 translatetext = translatetext.Replace("@001F", "");
             }
@@ -425,7 +425,7 @@ namespace FEBuilderGBA
             }
             else if (filter == 4)
             {//サウンドルーム関係のみ
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     SoundRoomFE6Form.MakeVarsIDArray(list);
                 }
@@ -440,7 +440,7 @@ namespace FEBuilderGBA
             }
             else if (filter == 6)
             {//スキル関係
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     SkillConfigFE8NSkillForm.MakeVarsIDArray(list);
                     SkillConfigFE8NVer2SkillForm.MakeVarsIDArray(list);
@@ -517,7 +517,7 @@ namespace FEBuilderGBA
                     }
 
                     //メニュー1
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
                         for (int n = 0; n < menuDefineList.Count; n++)
@@ -553,7 +553,7 @@ namespace FEBuilderGBA
                     }
 
                     //地形
-                    if (Program.ROM.RomInfo.is_multibyte())
+                    if (Program.ROM.RomInfo.is_multibyte)
                     {
                         List<U.AddrResult> list = MapTerrainNameForm.MakeList();
                         for (int i = 0; i < list.Count; i++)
@@ -577,7 +577,7 @@ namespace FEBuilderGBA
 
                     //サウンドルーム
                     //FE7のサウンドルームは、日本語直地
-                    if (Program.ROM.RomInfo.is_multibyte() && Program.ROM.RomInfo.version() == 7)
+                    if (Program.ROM.RomInfo.is_multibyte && Program.ROM.RomInfo.version == 7)
                     {
                         List<U.AddrResult> list = SoundRoomForm.MakeList();
                         for (int i = 0; i < list.Count; i++)
@@ -624,25 +624,25 @@ namespace FEBuilderGBA
         }
         public void ChangeMainMenuWidth(string to)
         {
-            uint length = Program.ROM.u8( Program.ROM.RomInfo.main_menu_width_address() );
+            uint length = Program.ROM.u8( Program.ROM.RomInfo.main_menu_width_address );
             if (to == "ja" || to == "zh")
             {
                 if (length <= 6)
                 {
-                    Program.ROM.write_u8( Program.ROM.RomInfo.main_menu_width_address() , 6);
+                    Program.ROM.write_u8( Program.ROM.RomInfo.main_menu_width_address , 6);
                 }
             }
             else
             {
                 if (length <= 8)
                 {
-                    Program.ROM.write_u8( Program.ROM.RomInfo.main_menu_width_address() , 8);
+                    Program.ROM.write_u8( Program.ROM.RomInfo.main_menu_width_address , 8);
                 }
             }
         }
         public void ChangeStatusScreenSkill(string to)
         {
-            uint status = Program.ROM.p32(Program.ROM.RomInfo.status_param1_pointer());
+            uint status = Program.ROM.p32(Program.ROM.RomInfo.status_param1_pointer);
             if (! U.isSafetyOffset(status))
             {
                 return ;
@@ -663,11 +663,11 @@ namespace FEBuilderGBA
         }
         void AddJPFonts(List<Address> recycle)
         {
-            if (! Program.ROM.RomInfo.is_multibyte())
+            if (! Program.ROM.RomInfo.is_multibyte)
             {//英語ROMなので無関係
                 return;
             }
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 {            //TextFont
                     uint fonttable = 0x593F74;
@@ -677,7 +677,7 @@ namespace FEBuilderGBA
                     AddJPFontRange(recycle, fonttable, fonttableSize, start, end);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 {            //TextFont
                     uint fonttable = 0xBDC1E0;

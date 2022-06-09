@@ -61,13 +61,13 @@ namespace FEBuilderGBA
         };
         static FE8FaceCode48Fix is_FE8FaceCode48Fix(ROM from_rom,ROM to_rom)
         {
-            if (from_rom.RomInfo.version() != 8)
+            if (from_rom.RomInfo.version != 8)
             {
                 return FE8FaceCode48Fix.NONE;
             }
-            if (from_rom.RomInfo.is_multibyte())
+            if (from_rom.RomInfo.is_multibyte)
             {
-                if (to_rom.RomInfo.is_multibyte())
+                if (to_rom.RomInfo.is_multibyte)
                 {//JA TO JA
                     return FE8FaceCode48Fix.NONE;
                 }
@@ -78,7 +78,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (to_rom.RomInfo.is_multibyte())
+                if (to_rom.RomInfo.is_multibyte)
                 {//EN to JA
                     return FE8FaceCode48Fix.DEC;
                 }
@@ -210,7 +210,7 @@ namespace FEBuilderGBA
                 return dic;
             }
 
-            if (rom_f.RomInfo.version() != rom_t.RomInfo.version())
+            if (rom_f.RomInfo.version != rom_t.RomInfo.version)
             {
                 return dic;
             }
@@ -226,7 +226,7 @@ namespace FEBuilderGBA
             else if (from == "en")
             {
                 from_n = 1;
-                if (rom_f.RomInfo.version() == 6)
+                if (rom_f.RomInfo.version == 6)
                 {
                     from_tbl = new SystemTextEncoder(OptionForm.textencoding_enum.EN_TBL, rom_f);
                 }
@@ -255,7 +255,7 @@ namespace FEBuilderGBA
             else if (to == "en")
             {
                 to_n = 1;
-                if (rom_t.RomInfo.version() == 6)
+                if (rom_t.RomInfo.version == 6)
                 {
                     to_tbl = new SystemTextEncoder(OptionForm.textencoding_enum.EN_TBL, rom_t);
                 }
@@ -680,7 +680,7 @@ namespace FEBuilderGBA
         public static void TranslateLanguageAutoSelect(out int out_from,out int out_to)
         {
             //from
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 if (OptionForm.textencoding() == OptionForm.textencoding_enum.ZH_TBL)
                 {//中国語

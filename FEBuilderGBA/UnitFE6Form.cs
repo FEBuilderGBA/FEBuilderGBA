@@ -51,10 +51,10 @@ namespace FEBuilderGBA
             InputFormRef ifr = new InputFormRef(self
                 , ""
                 , 0
-                , Program.ROM.RomInfo.unit_datasize()
+                , Program.ROM.RomInfo.unit_datasize
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.unit_maxcount(); 
+                    return i < Program.ROM.RomInfo.unit_maxcount; 
                 }
                 , (int i, uint addr) =>
                 {
@@ -64,7 +64,7 @@ namespace FEBuilderGBA
                 );
 
             ifr.ReInit(
-                Program.ROM.p32(Program.ROM.RomInfo.unit_pointer()) + Program.ROM.RomInfo.unit_datasize()   );
+                Program.ROM.p32(Program.ROM.RomInfo.unit_pointer) + Program.ROM.RomInfo.unit_datasize   );
             return ifr;
         }
 

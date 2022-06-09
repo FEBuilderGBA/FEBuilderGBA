@@ -48,8 +48,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_setting_pointer()
-                , Program.ROM.RomInfo.map_setting_datasize()
+                , Program.ROM.RomInfo.map_setting_pointer
+                , Program.ROM.RomInfo.map_setting_datasize
                 , (int i, uint addr) =>
                 {
                     return IsMapSettingEnd(addr);
@@ -128,7 +128,7 @@ namespace FEBuilderGBA
         public static String GetMapNameWhereAddr(uint addr)
         {
             uint id;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 id = Program.ROM.u16(addr + 56);
                 return FETextDecode.Direct(id);
@@ -259,8 +259,8 @@ namespace FEBuilderGBA
                 uint anime2_plist = (uint)Program.ROM.u8(addr + 10);
                 uint mapchange_plist = (uint)Program.ROM.u8(addr + 11);
 
-                uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
-                uint worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos());
+                uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos);
+                uint worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos);
 
                 uint second_palette_plist = 0;
                 if (mapSecondPalette == PatchUtil.MapSecondPalette_extends.Flag0x28_146)
@@ -419,9 +419,9 @@ namespace FEBuilderGBA
             plists.anime2_plist = (uint)Program.ROM.u8(addr + 10);
             plists.mapchange_plist = (uint)Program.ROM.u8(addr + 11);
 
-            plists.event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
+            plists.event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos);
             //            //FE6だけ worldmapは plistなんだけど。。。 別ルーチンでやっているからいれないことにする.
-            //            plists.worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos());
+            //            plists.worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos);
 
             //マップ第2パレット
             PatchUtil.MapSecondPalette_extends secondPalette = PatchUtil.SearchFlag0x28ToMapSecondPalettePatch();
@@ -449,7 +449,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
+            uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos);
             uint eventaddr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.EVENT, event_plist, out pointer);
             return eventaddr;
         }
@@ -519,7 +519,7 @@ namespace FEBuilderGBA
         //ワールドマップイベントIDを取得する.
         public static uint GetWorldMapEventIDWhereAddr(uint addr)
         {//FE6だけPLIST
-            uint worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos());
+            uint worldmapevent_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_worldmap_plist_pos);
             return worldmapevent_plist;
         }
 
@@ -581,7 +581,7 @@ namespace FEBuilderGBA
         }
         public static string GetMapNameAndANYFF(uint mapid)
         {
-            if (Program.ROM.RomInfo.version() >= 8)
+            if (Program.ROM.RomInfo.version >= 8)
             {
                 if (mapid == 0xFF)
                 {
@@ -640,11 +640,11 @@ namespace FEBuilderGBA
         //輸送体の位置(FE7のみ)
         public static Point GetTransporter(uint mapid, bool isElwood)
         {
-            if (Program.ROM.RomInfo.version() != 7)
+            if (Program.ROM.RomInfo.version != 7)
             {
                 return new Point(65535, 65535);
             }
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 return MapSettingFE7Form.GetTransporter(mapid, isElwood);
             }
@@ -832,7 +832,7 @@ namespace FEBuilderGBA
 
         public static bool IsFreliaCasle(uint mapid)
         {
-            return Program.ROM.RomInfo.version() == 8 && mapid == 0x38;
+            return Program.ROM.RomInfo.version == 8 && mapid == 0x38;
         }
 
         private void W4_ValueChanged(object sender, EventArgs e)
@@ -902,7 +902,7 @@ namespace FEBuilderGBA
 
         public static bool IsShowChapterExetdns(int count)
         {
-            if (count > Program.ROM.RomInfo.map_default_count())
+            if (count > Program.ROM.RomInfo.map_default_count)
             {//拡張している場合、表示する
                 return true;
             }
@@ -920,12 +920,12 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            uint clear_cond_text_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_clear_conditon_text_pos());
+            uint clear_cond_text_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_clear_conditon_text_pos);
             if (clear_cond_text_id == 0)
             {
                 return true;
             }
-            uint nametext_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_name_text_pos());
+            uint nametext_id = Program.ROM.u16(addr + Program.ROM.RomInfo.map_setting_name_text_pos);
             if (nametext_id == 0)
             {
                 return true;

@@ -20,7 +20,7 @@ namespace FEBuilderGBA
 
             UseFreeAreaComboBox.SelectedIndex = 1;
             this.FreeAreaMinimumSize.Value = 2048;
-            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
 
             X_UseFreeArea.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeArea();
             X_FreeAreaMinimumSize.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaMinimumSize();

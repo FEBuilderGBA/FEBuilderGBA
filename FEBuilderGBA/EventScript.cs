@@ -1036,7 +1036,7 @@ namespace FEBuilderGBA
                 else if (arg.Type == EventScript.ArgType.WMAPAFFILIATION)
                 {
                     EventScript.GetArg(code, n, out v);
-                    if (Program.ROM.RomInfo.version() == 7)
+                    if (Program.ROM.RomInfo.version == 7)
                     {
                         //00＝自軍通常 01＝自軍移動中 02＝自軍選択時　
                         //20＝敵軍通常 21＝敵軍移動中 22＝敵軍選択時
@@ -1080,7 +1080,7 @@ namespace FEBuilderGBA
                 else if (arg.Type == EventScript.ArgType.WMAP2AFFILIATION)
                 {
                     EventScript.GetArg(code, n, out v);
-                    if (Program.ROM.RomInfo.version() == 7)
+                    if (Program.ROM.RomInfo.version == 7)
                     {
                         if (v == 0x1C)
                         {//自軍
@@ -1276,7 +1276,7 @@ namespace FEBuilderGBA
 
             if (lastBranchAddr == 0)
             {//ダミーではない本当の終端...?
-                if (Program.ROM.RomInfo.version() == 8 && IsFE8DummyEnd(code,addr) )
+                if (Program.ROM.RomInfo.version == 8 && IsFE8DummyEnd(code,addr) )
                 {//ダミー終端
                     return false;
                 }

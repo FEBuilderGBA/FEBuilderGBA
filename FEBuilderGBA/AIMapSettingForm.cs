@@ -26,7 +26,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.ai_map_setting_pointer()
+                , Program.ROM.RomInfo.ai_map_setting_pointer
                 , 4
                 , (int i, uint addr) =>
                 {

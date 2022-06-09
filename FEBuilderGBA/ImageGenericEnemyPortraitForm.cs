@@ -33,11 +33,11 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.generic_enemy_portrait_pointer()
+                , Program.ROM.RomInfo.generic_enemy_portrait_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    return i < Program.ROM.RomInfo.generic_enemy_portrait_count()
+                    return i < Program.ROM.RomInfo.generic_enemy_portrait_count
                         ;
                 }
                 , (int i, uint addr) =>
@@ -170,7 +170,7 @@ namespace FEBuilderGBA
             string selfname = "GenericEnemyPortait";
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddPointer(list
-                , Program.ROM.RomInfo.generic_enemy_portrait_pointer()
+                , Program.ROM.RomInfo.generic_enemy_portrait_pointer
                 , 8 * 2 * 4
                 , selfname, FEBuilderGBA.Address.DataTypeEnum.POINTER);
 

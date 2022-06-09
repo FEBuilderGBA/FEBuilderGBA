@@ -26,7 +26,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_haiku_pointer()
+                , Program.ROM.RomInfo.event_haiku_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//読込最大値検索

@@ -21,7 +21,7 @@ namespace FEBuilderGBA
 
             UseFreeAreaComboBox.SelectedIndex = 0;
             this.FreeAreaMinimumSize.Value = 2048;
-            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
 
             X_RebuildAddress.AccessibleDescription = GetExplainRebuildAddress();
             X_UseFreeArea.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeArea();
@@ -190,12 +190,12 @@ namespace FEBuilderGBA
             U.echo("ComandLineRebuild");
 
             string romRebuildFilename = Program.ROM.Filename;
-            uint rebuildAddress = U.toOffset(Program.ROM.RomInfo.extends_address());
+            uint rebuildAddress = U.toOffset(Program.ROM.RomInfo.extends_address);
             Make(romRebuildFilename, orignalFilename, rebuildAddress);
 
-            uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
             uint freeAreaMinimumSize = 2048;
-            uint freeAreaStartAddress = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address());
+            uint freeAreaStartAddress = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
             string stdout = ReOpen(romRebuildFilename, orignalFilename, 1, freeAreaMinimumSize, freeAreaStartAddress);
             U.echo(stdout);
 
@@ -219,7 +219,7 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(null))
             {
                 if (Program.ROM.Data.Length 
-                    <= U.toOffset(Program.ROM.RomInfo.extends_address()))
+                    <= U.toOffset(Program.ROM.RomInfo.extends_address))
                 {
                     R.ShowStopError("このROMは拡張領域を利用していないので、リビルドできません。");
                     this.Close();
@@ -242,7 +242,7 @@ namespace FEBuilderGBA
             }
 
             this.OrignalFilename.Text = orignal_romfile;
-            this.RebuildAddress.Value = U.toOffset(Program.ROM.RomInfo.extends_address());
+            this.RebuildAddress.Value = U.toOffset(Program.ROM.RomInfo.extends_address);
         }
 
         static bool CheckRebuildAddress(uint rebuildAddress)
@@ -257,10 +257,10 @@ namespace FEBuilderGBA
                 R.ShowStopError("このアドレス({0})はリビルドに利用できません。\r\nアドレスの範囲が危険です。", U.To0xHexString(rebuildAddress));
                 return false;
             }
-            if (rebuildAddress < U.toOffset(Program.ROM.RomInfo.extends_address()))
+            if (rebuildAddress < U.toOffset(Program.ROM.RomInfo.extends_address))
             {
                 DialogResult dr = R.ShowNoYes("拡張領域({0})より下のアドレス({1})をrebuildするのは危険です。\r\n続行してもよろしいですか?"
-                    , U.To0xHexString(U.toOffset(Program.ROM.RomInfo.extends_address())), U.To0xHexString(rebuildAddress));
+                    , U.To0xHexString(U.toOffset(Program.ROM.RomInfo.extends_address)), U.To0xHexString(rebuildAddress));
                 if (dr != DialogResult.Yes)
                 {
                     return false;
@@ -283,7 +283,7 @@ namespace FEBuilderGBA
 
         public static string GetExplainRebuildAddress()
         {
-            return R._("このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。", U.To0xHexString(Program.ROM.RomInfo.extends_address()) );
+            return R._("このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。", U.To0xHexString(Program.ROM.RomInfo.extends_address) );
         }
     }
 }

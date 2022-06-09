@@ -69,9 +69,9 @@ namespace FEBuilderGBA
         const uint DATAMAX = 0x45 + 1;
         uint DefaultText()
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//FE8J
                     return 0x8EE;
                 }

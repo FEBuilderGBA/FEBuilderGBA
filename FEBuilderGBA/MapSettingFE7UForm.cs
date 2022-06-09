@@ -48,8 +48,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.map_setting_pointer()
-                , Program.ROM.RomInfo.map_setting_datasize()
+                , Program.ROM.RomInfo.map_setting_pointer
+                , Program.ROM.RomInfo.map_setting_datasize
                 , (int i, uint addr) =>
                 {
                     return IsMapSettingEnd(addr);

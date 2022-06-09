@@ -26,7 +26,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.item_effect_pointer_table_pointer()
+                , Program.ROM.RomInfo.item_effect_pointer_table_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -74,7 +74,7 @@ namespace FEBuilderGBA
                 , FEBuilderGBA.Address.DataTypeEnum.InputFormRef_MIX);
 
             List<U.AddrResult> arlist = InputFormRef.MakeList();
-            int limit = Math.Min((int)Program.ROM.RomInfo.magic_effect_original_data_count()
+            int limit = Math.Min((int)Program.ROM.RomInfo.magic_effect_original_data_count
                 , arlist.Count); //0x48以降は魔法テーブルです.
 
             for (int i = 0; i < limit; i++)
@@ -88,10 +88,10 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
 
-            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+            bool isFE6 = (Program.ROM.RomInfo.version == 6);
 
             uint table_addr = InputFormRef.BaseAddress;
-            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count() );
+            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count );
             for (int i = 0; i < limit_count; i++, table_addr += InputFormRef.BlockSize)
             {
                 uint id = (uint)i;

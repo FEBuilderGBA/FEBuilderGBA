@@ -27,7 +27,7 @@ namespace FEBuilderGBA
         }
         public void RebuildHuffmanMap()
         {
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 huffman_map = new Dictionary<uint, huffman_value_st>();
                 huffman_map[0] = new huffman_value_st();
@@ -35,8 +35,8 @@ namespace FEBuilderGBA
             }
 
             this.huffman_map = new Dictionary<uint, huffman_value_st>();
-            uint tree_data_base = Program.ROM.p32p(Program.ROM.RomInfo.mask_point_base_pointer());
-            this.tree_base = Program.ROM.p32(Program.ROM.RomInfo.mask_pointer());
+            uint tree_data_base = Program.ROM.p32p(Program.ROM.RomInfo.mask_point_base_pointer);
+            this.tree_base = Program.ROM.p32(Program.ROM.RomInfo.mask_pointer);
             make_huffman_map(tree_data_base, 1);
 
             if (! this.huffman_map.ContainsKey(0))
@@ -46,7 +46,7 @@ namespace FEBuilderGBA
 
             //EOF
             huffman_value_st huffman_value = this.huffman_map[0];
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 if (huffman_value.bitcount < 8)
                 {
@@ -569,9 +569,9 @@ namespace FEBuilderGBA
         {
             g_RepalceSPCode = new List<string>();
             g_RepalceSPCode.Add("\r\n"); g_RepalceSPCode.Add("@0001");
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
-                if (Program.ROM.RomInfo.version() == 8)
+                if (Program.ROM.RomInfo.version == 8)
                 {
                     g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("нопр");///No Translate
                     g_RepalceSPCode.Add("(ﾌｫﾚｽﾄﾅｲﾄ)"); g_RepalceSPCode.Add("⊂⊃┌┐");///No Translate
@@ -583,13 +583,13 @@ namespace FEBuilderGBA
                     g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝｿﾞﾝﾋﾞ)"); g_RepalceSPCode.Add("≠≡≦≧");///No Translate
                     g_RepalceSPCode.Add("(ｺﾞｰｺﾞﾝの卵)"); g_RepalceSPCode.Add("∪∫∬∴");///No Translate
                 }
-                else if (Program.ROM.RomInfo.version() == 7)
+                else if (Program.ROM.RomInfo.version == 7)
                 {
                     g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("⑮⑯⑰⑱⑲⑳α");///No Translate
                     g_RepalceSPCode.Add("(ﾌｧﾙｺﾝﾅｲﾄ)"); g_RepalceSPCode.Add("⑧⑨⑩⑪⑫⑬⑭");///No Translate
                     g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)"); g_RepalceSPCode.Add("①②③④⑤⑥⑦");///No Translate
                 }
-                else if (Program.ROM.RomInfo.version() == 6)
+                else if (Program.ROM.RomInfo.version == 6)
                 {
                     g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("①②③④⑤⑥⑦");///No Translate
                     g_RepalceSPCode.Add("(ﾌｧﾙｺﾝﾅｲﾄ)"); g_RepalceSPCode.Add("ⅠⅡⅢⅣⅤⅥⅦ");///No Translate

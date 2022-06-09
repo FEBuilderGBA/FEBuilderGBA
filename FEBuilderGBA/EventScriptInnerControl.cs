@@ -69,7 +69,7 @@ namespace FEBuilderGBA
             }
             //FE8だけテンプレートをメニューに出します
             bool useTemplate;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 useTemplate = true;
             }
@@ -238,15 +238,15 @@ namespace FEBuilderGBA
             {
                 if (isWorldMapEvent)
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_mapterm_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_mapterm_code);
                 }
                 else if (isTopLevelEvent)
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_toplevel_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_toplevel_code);
                 }
                 else
                 {
-                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
+                    databyte.AddRange(Program.ROM.RomInfo.Default_event_script_term_code);
                 }
             }
 
@@ -1165,7 +1165,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.UNIT)
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     UnitForm f = (UnitForm)InputFormRef.JumpForm<UnitForm>(value - 1);
                     MakeInjectionCallback(f
@@ -1173,7 +1173,7 @@ namespace FEBuilderGBA
                             (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     UnitFE7Form f = (UnitFE7Form)InputFormRef.JumpForm<UnitFE7Form>(value - 1);
                     MakeInjectionCallback(f
@@ -1192,7 +1192,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.CLASS)
             {
-                if (Program.ROM.RomInfo.version() >= 7)
+                if (Program.ROM.RomInfo.version >= 7)
                 {//FE7 - FE8
                     ClassForm f = (ClassForm)InputFormRef.JumpForm<ClassForm>(value);
                     MakeInjectionCallback(f
@@ -1219,7 +1219,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.CG)
             {
-                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
                 {//FE7U
                     ImageCGFE7UForm f = (ImageCGFE7UForm)InputFormRef.JumpForm<ImageCGFE7UForm>(value);
                     MakeInjectionCallback(f
@@ -1262,7 +1262,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.PORTRAIT || arg.Type == EventScript.ArgType.REVPORTRAIT)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     ImagePortraitFE6Form f = (ImagePortraitFE6Form)InputFormRef.JumpForm<ImagePortraitFE6Form>(value);
                     MakeInjectionCallback(f
@@ -1281,7 +1281,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.WMLOCATION)
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     WorldMapPointForm f = (WorldMapPointForm)InputFormRef.JumpForm<WorldMapPointForm>(value);
                     MakeInjectionCallback(f
@@ -1292,7 +1292,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.WMPATH)
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     WorldMapPathForm f = (WorldMapPathForm)InputFormRef.JumpForm<WorldMapPathForm>(value);
                     MakeInjectionCallback(f
@@ -1303,7 +1303,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_UNIT)
             {
-                if (Program.ROM.RomInfo.version() >= 8)
+                if (Program.ROM.RomInfo.version >= 8)
                 {
                     EventUnitForm f = (EventUnitForm)InputFormRef.JumpForm<EventUnitForm>(U.NOT_FOUND);
                     MakeInjectionCallback(f
@@ -1320,7 +1320,7 @@ namespace FEBuilderGBA
                         f.JumpTo(value);
                     }
                 }
-                else if (Program.ROM.RomInfo.version() >= 7)
+                else if (Program.ROM.RomInfo.version >= 7)
                 {//FE7
                     EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                     MakeInjectionCallback(f
@@ -1506,7 +1506,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.SOUNDROOM)
             {
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {
                     SoundRoomFE6Form f = (SoundRoomFE6Form)InputFormRef.JumpForm<SoundRoomFE6Form>(value);
                     MakeInjectionCallback(f
@@ -3234,11 +3234,11 @@ namespace FEBuilderGBA
 
             if (addTerm == TermCode.DefaultTermCode)
             {//終端の追加.
-                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
+                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code);
             }
             else if (addTerm == TermCode.SimpleTermCode)
             {//終端の追加.
-                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code());
+                binarray.AddRange(Program.ROM.RomInfo.Default_event_script_term_code);
             }
             return binarray.ToArray();
         }
@@ -3593,7 +3593,7 @@ namespace FEBuilderGBA
 
         private void UseTemplate()
         {
-            if (Program.ROM.RomInfo.version() != 8)
+            if (Program.ROM.RomInfo.version != 8)
             {
                 return;
             }

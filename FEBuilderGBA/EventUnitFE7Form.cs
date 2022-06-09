@@ -54,7 +54,7 @@ namespace FEBuilderGBA
             return new InputFormRef(self
                 , ""
                 , 0
-                , Program.ROM.RomInfo.eventunit_data_size()
+                , Program.ROM.RomInfo.eventunit_data_size
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     //00まで検索
@@ -624,7 +624,7 @@ namespace FEBuilderGBA
 //                    return R._("ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}", U.To0xHexString(units_address) , count , errorMessage);
 //                }
 
-                addr += Program.ROM.RomInfo.eventunit_data_size();
+                addr += Program.ROM.RomInfo.eventunit_data_size;
                 if (!U.isSafetyOffset(addr))
                 {
                     break;
@@ -735,7 +735,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint blockSize = Program.ROM.RomInfo.eventunit_data_size();
+            uint blockSize = Program.ROM.RomInfo.eventunit_data_size;
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
             Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
 

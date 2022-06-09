@@ -24,7 +24,7 @@ namespace FEBuilderGBA
 
             useAutoTranslateCheckBox_CheckedChanged(null, null);
 
-            if (! Program.ROM.RomInfo.is_multibyte() && Program.ROM.RomInfo.version() >= 7)
+            if (! Program.ROM.RomInfo.is_multibyte && Program.ROM.RomInfo.version >= 7)
             {
                 SIMPLE_OVERRAIDE_JPFONT.Hide();
                 X_OVERRAIDE_JPFONT.Hide();
@@ -386,9 +386,9 @@ namespace FEBuilderGBA
         }
         void MakeROMName()
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     LabelSimpleTranslateFromROMFilename.Text = R._("無改造 FE8J");
                     LabelSimpleTranslateToROMFilename.Text = R._("無改造 FE8U");
@@ -403,9 +403,9 @@ namespace FEBuilderGBA
                     LabelTranslateToROMFilename.Text = R._("無改造 FE8J");
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     LabelSimpleTranslateFromROMFilename.Text = R._("無改造 FE7U");
                     LabelSimpleTranslateToROMFilename.Text = R._("無改造 FE7J");

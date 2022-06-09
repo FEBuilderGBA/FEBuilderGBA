@@ -276,7 +276,7 @@ namespace FEBuilderGBA
 
         public static Form MainForm()
         {
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 return InputFormRef.JumpFormLow<MainFE0Form>();
             }
@@ -287,11 +287,11 @@ namespace FEBuilderGBA
                 return InputFormRef.JumpFormLow<MainSimpleMenuForm>();
             }
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 return InputFormRef.JumpFormLow<MainFE6Form>();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 return InputFormRef.JumpFormLow<MainFE7Form>();
             }
@@ -424,7 +424,7 @@ namespace FEBuilderGBA
         //ROM読みこみに伴うシステムの初期化.
         static void InitSystem(string fullfilename)
         {
-            Log.Notify("InitSystem:", Path.GetFileName(ROM.Filename), "ver:", ROM.RomInfo.VersionToFilename(), "length:", ROM.Data.Length.ToString("X"), "FEBuilderGBA:", U.getVersion());
+            Log.Notify("InitSystem:", Path.GetFileName(ROM.Filename), "ver:", ROM.RomInfo.VersionToFilename, "length:", ROM.Data.Length.ToString("X"), "FEBuilderGBA:", U.getVersion());
 
             //Undoバッファの準備
             Undo = new Undo();
@@ -474,7 +474,7 @@ namespace FEBuilderGBA
             //ROM内アニメ
             ImageRomAnimeForm.PreLoadResource();
             ImageTSAAnimeForm.PreLoadResource();
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 ImageTSAAnime2Form.PreLoadResource();
             }

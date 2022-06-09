@@ -35,7 +35,7 @@ namespace FEBuilderGBA
             ToLangString = TranslateTextUtil.GetLangIntCodeToLangText(to);
             SimpleTranslateToROMFilename.Text = MainFormUtil.FindOrignalROMByLang(dir, ToLangString);
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 ShortLength = 10;
             }

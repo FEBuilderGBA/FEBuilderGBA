@@ -30,7 +30,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.event_ballte_talk_pointer()
+                , Program.ROM.RomInfo.event_ballte_talk_pointer
                 , 12
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -65,7 +65,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "N_"
-                , Program.ROM.RomInfo.event_ballte_talk2_pointer()
+                , Program.ROM.RomInfo.event_ballte_talk2_pointer
                 , 16
                 , (int i, uint addr) =>
                 {//読込最大値検索

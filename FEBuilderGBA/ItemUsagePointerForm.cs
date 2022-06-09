@@ -46,45 +46,45 @@ namespace FEBuilderGBA
                 {
                     uint baseaddr = addr - (uint)(4 * i);
                     uint itemID = 0;
-                    if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_usability_array_pointer()))
+                    if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_usability_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_usability_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_usability_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_effect_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_effect_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_effect_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_effect_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_promotion1_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_promotion1_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_promotion1_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_promotion1_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_promotion2_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_promotion2_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_promotion2_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_promotion2_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_staff1_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_staff1_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_staff1_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_staff1_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_staff2_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_staff2_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_staff2_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_staff2_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_statbooster1_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_statbooster1_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster1_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster1_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_statbooster2_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_statbooster2_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_errormessage_array_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_errormessage_array_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address) + (uint)i;
                     }
-                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_name_article_pointer()))
+                    else if (baseaddr == Program.ROM.p32(Program.ROM.RomInfo.item_name_article_pointer))
                     {
-                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address()) + (uint)i;
+                        itemID = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address) + (uint)i;
                     }
                     else
                     {
@@ -218,64 +218,64 @@ namespace FEBuilderGBA
             {
                 case 0: //0=アイテムを利用できるか判定する
                 default:
-                    pointer = Program.ROM.RomInfo.item_usability_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_usability_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_usability_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_usability_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_usability_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_usability_array_switch2_address);
                     break;
                 case 1: //1=アイテムを利用した場合の効果を定義する
-                    pointer = Program.ROM.RomInfo.item_effect_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_effect_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_effect_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_effect_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_effect_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_effect_array_switch2_address);
                     break;
                 case 2: //2=CCアイテムを使った場合の処理を定義する
-                    pointer = Program.ROM.RomInfo.item_promotion1_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_promotion1_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_promotion1_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_promotion1_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_promotion1_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_promotion1_array_switch2_address);
                     break;
                 case 3: //3=CCアイテムかどうかを定義する(FE7のみ)
-                    pointer = Program.ROM.RomInfo.item_promotion2_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_promotion2_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_promotion2_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_promotion2_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_promotion2_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_promotion2_array_switch2_address);
                     break;
                 case 4: //4=アイテムのターゲット選択の方法を定義する(多分)
-                    pointer = Program.ROM.RomInfo.item_staff1_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_staff1_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_staff1_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_staff1_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_staff1_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_staff1_array_switch2_address);
                     break;
                 case 5: //5=杖の種類を定義する
-                    pointer = Program.ROM.RomInfo.item_staff2_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_staff2_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_staff2_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_staff2_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_staff2_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_staff2_array_switch2_address);
                     break;
                 case 6: //6=ドーピングアイテムを利用した時のメッセージを定義する
-                    pointer = Program.ROM.RomInfo.item_statbooster1_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_statbooster1_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster1_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_statbooster1_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster1_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_statbooster1_array_switch2_address);
                     break;
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する
-                    pointer = Program.ROM.RomInfo.item_statbooster2_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_statbooster2_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address()+2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_statbooster2_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_statbooster2_array_switch2_address+2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_statbooster2_array_switch2_address);
                     break;
                 case 8: //8=エラーメッセージを定義する
-                    pointer = Program.ROM.RomInfo.item_errormessage_array_pointer();
+                    pointer = Program.ROM.RomInfo.item_errormessage_array_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address() + 2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_errormessage_array_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_errormessage_array_switch2_address + 2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_errormessage_array_switch2_address);
                     break;
                 case 9: //9=アイテム名の前置詞
-                    pointer = Program.ROM.RomInfo.item_name_article_pointer();
+                    pointer = Program.ROM.RomInfo.item_name_article_pointer;
                     addr = Program.ROM.p32(pointer);
-                    count = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address() + 2);
-                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_name_article_switch2_address());
+                    count = Program.ROM.u8(Program.ROM.RomInfo.item_name_article_switch2_address + 2);
+                    enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.item_name_article_switch2_address);
                     break;
             }
             if (enable == false)
@@ -340,71 +340,71 @@ namespace FEBuilderGBA
             {
                 case 0: //0=アイテムを利用できるか判定する
                 default:
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_usability_array_pointer()
-                        , Program.ROM.RomInfo.item_usability_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_usability_array_pointer
+                        , Program.ROM.RomInfo.item_usability_array_switch2_address
                         , newCount
                         , defAddr
                         ,undodata);
                     break;
                 case 1: //1=アイテムを利用した場合の効果を定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_effect_array_pointer()
-                        , Program.ROM.RomInfo.item_effect_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_effect_array_pointer
+                        , Program.ROM.RomInfo.item_effect_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 2: //2=CCアイテムを使った場合の処理を定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_promotion1_array_pointer()
-                        , Program.ROM.RomInfo.item_promotion1_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_promotion1_array_pointer
+                        , Program.ROM.RomInfo.item_promotion1_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 3: //3=CCアイテムかどうかを定義する(FE7のみ)
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_promotion2_array_pointer()
-                        , Program.ROM.RomInfo.item_promotion2_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_promotion2_array_pointer
+                        , Program.ROM.RomInfo.item_promotion2_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 4: //4=アイテムのターゲット選択の方法を定義する(多分)
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_staff1_array_pointer()
-                        , Program.ROM.RomInfo.item_staff1_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_staff1_array_pointer
+                        , Program.ROM.RomInfo.item_staff1_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 5: //5=杖の種類を定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_staff2_array_pointer()
-                        , Program.ROM.RomInfo.item_staff2_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_staff2_array_pointer
+                        , Program.ROM.RomInfo.item_staff2_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 6: //6=ドーピングアイテムを利用した時のメッセージを定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_statbooster1_array_pointer()
-                        , Program.ROM.RomInfo.item_statbooster1_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_statbooster1_array_pointer
+                        , Program.ROM.RomInfo.item_statbooster1_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_statbooster2_array_pointer()
-                        , Program.ROM.RomInfo.item_statbooster2_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_statbooster2_array_pointer
+                        , Program.ROM.RomInfo.item_statbooster2_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 8: //8=エラーメッセージを定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_errormessage_array_pointer()
-                        , Program.ROM.RomInfo.item_errormessage_array_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_errormessage_array_pointer
+                        , Program.ROM.RomInfo.item_errormessage_array_switch2_address
                         , newCount
                         , defAddr
                         , undodata);
                     break;
                 case 9: //9=アイテム名の前置詞を定義する
-                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_name_article_pointer()
-                        , Program.ROM.RomInfo.item_name_article_switch2_address()
+                    PatchUtil.Switch2Expands(Program.ROM.RomInfo.item_name_article_pointer
+                        , Program.ROM.RomInfo.item_name_article_switch2_address
                         , newCount
                         , defAddr
                         , undodata);

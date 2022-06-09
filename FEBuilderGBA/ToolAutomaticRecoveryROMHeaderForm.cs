@@ -100,7 +100,7 @@ namespace FEBuilderGBA
                 String filename = Path.GetFileName(Program.ROM.Filename);
                 pleaseWait.DoEvents(R._("{0}に適合する元ファイルを自動検索中・・・", filename));
 
-                uint srcCRC32 = Program.ROM.RomInfo.orignal_crc32();
+                uint srcCRC32 = Program.ROM.RomInfo.orignal_crc32;
 
                 string orignal_romfile = MainFormUtil.FindOrignalROMByCRC32(dir, srcCRC32);
                 this.OrignalFilename.Text = orignal_romfile;

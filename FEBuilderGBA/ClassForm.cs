@@ -50,8 +50,8 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.class_pointer()
-                , Program.ROM.RomInfo.class_datasize()
+                , Program.ROM.RomInfo.class_pointer
+                , Program.ROM.RomInfo.class_datasize
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (i == 0)
@@ -83,7 +83,7 @@ namespace FEBuilderGBA
             this.X_Tooltip = InputFormRef.GetToolTip<ClassForm>();
             InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, this.X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {//FE8の場合、分岐CCへ
                 InputFormRef.markupJumpLabel(this.J_5);
 
@@ -225,7 +225,7 @@ namespace FEBuilderGBA
         //上位クラスかどうかの判定
         public static bool isHighClass(uint cid)
         {
-            if (Program.ROM.RomInfo.version() <= 6)
+            if (Program.ROM.RomInfo.version <= 6)
             {
                 return ClassFE6Form.isHighClassFE6(cid);
             }
@@ -254,7 +254,7 @@ namespace FEBuilderGBA
         //ロードユニットフラグの確認
         public static bool isLoadClass(uint cid)
         {
-            if (Program.ROM.RomInfo.version() <= 6)
+            if (Program.ROM.RomInfo.version <= 6)
             {
                 return ClassFE6Form.isLoadClass(cid);
             }
@@ -477,7 +477,7 @@ namespace FEBuilderGBA
                 return 0;
             }
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 switch (costtype)
                 {
@@ -494,13 +494,13 @@ namespace FEBuilderGBA
                     case 5:
                         return addr + 64; //地形魔防
                     case 6:
-                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                        return Program.ROM.RomInfo.terrain_recovery_pointer; //地形回復
                     case 7:
-                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer(); //地形ステータス異常回復
+                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer; //地形ステータス異常回復
                     case 8:
-                        return Program.ROM.RomInfo.terrain_show_infomation_pointer(); //地形ウィンドウに情報表示
+                        return Program.ROM.RomInfo.terrain_show_infomation_pointer; //地形ウィンドウに情報表示
                     default:
-                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                        return Program.ROM.RomInfo.terrain_recovery_pointer; //地形回復
                 }
             }
             else
@@ -520,13 +520,13 @@ namespace FEBuilderGBA
                     case 5:
                         return addr + 76; //地形魔防
                     case 6:
-                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                        return Program.ROM.RomInfo.terrain_recovery_pointer; //地形回復
                     case 7:
-                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer(); //地形ステータス異常回復
+                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer; //地形ステータス異常回復
                     case 8:
-                        return Program.ROM.RomInfo.terrain_show_infomation_pointer(); //地形ウィンドウに情報表示
+                        return Program.ROM.RomInfo.terrain_show_infomation_pointer; //地形ウィンドウに情報表示
                     default:
-                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                        return Program.ROM.RomInfo.terrain_recovery_pointer; //地形回復
                 }
             }
         }
@@ -597,7 +597,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 out_pointer = addr + 48;
                 return Program.ROM.p32(addr + 48);
@@ -618,7 +618,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {//FE6
                 out_pointer = addr + 48;
                 return Program.ROM.p32(addr + 48);
@@ -649,7 +649,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
                 uint p;
-                if (Program.ROM.RomInfo.version() == 6)
+                if (Program.ROM.RomInfo.version == 6)
                 {//FE6
                     p = Program.ROM.p32(addr + 48);
                 }
@@ -743,21 +743,21 @@ namespace FEBuilderGBA
 
             //全クラス共通:地形回復
             FEBuilderGBA.Address.AddPointer(list,
-                  Program.ROM.RomInfo.terrain_recovery_pointer()
+                  Program.ROM.RomInfo.terrain_recovery_pointer
                 , 66
                 , "MoveCost ref"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
             //全クラス共通:地形バッドステータス回復
             FEBuilderGBA.Address.AddPointer(list,
-                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer()
+                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer
                 , 66
                 , "MoveCost recovery bad status"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
             //全クラス共通:地形ウィンドウに情報表示
             FEBuilderGBA.Address.AddPointer(list,
-                  Program.ROM.RomInfo.terrain_show_infomation_pointer()
+                  Program.ROM.RomInfo.terrain_show_infomation_pointer
                 , 66
                 , "MoveCost show infomation"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
@@ -785,10 +785,10 @@ namespace FEBuilderGBA
                 addr += eearg.BlockSize;
             }
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 CCBranchForm.ExpandsArea(this,eearg.OldDataCount, (uint)count, undodata);
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     OPClassAlphaNameForm.ExpandsArea(this, eearg.OldDataCount, (uint)count, undodata);
                 }
@@ -813,7 +813,7 @@ namespace FEBuilderGBA
 
         private void J_5_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 InputFormRef.JumpForm<CCBranchForm>((uint)this.AddressList.SelectedIndex);
             }
@@ -831,7 +831,7 @@ namespace FEBuilderGBA
         public static bool IsClassPromotedByAddr(uint addr)
         {
             uint v ;
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 v = Program.ROM.u8(addr + 37);
             }
@@ -879,7 +879,7 @@ namespace FEBuilderGBA
             , out uint out_dark
                 )
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 ClassFE6Form.GetWeaponLevel(cid
                     , out out_sword
@@ -946,7 +946,7 @@ namespace FEBuilderGBA
                     , R._("クラスデータが極端に少ないです。破損している可能性があります。")));
             }
 
-            bool isFE6 = Program.ROM.RomInfo.version() == 6;
+            bool isFE6 = Program.ROM.RomInfo.version == 6;
 
             //武器魔法混在パッチを適応しているか
             bool is_melee_range_fix = PatchUtil.SearchMeleeAndMagicFixPatch();
@@ -1139,7 +1139,7 @@ namespace FEBuilderGBA
         public static string GetClassType(uint class_type)
         {
             string text = "";
-            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
             {
                 text = SkillSystemsEffectivenessReworkClassTypeForm.GetText(class_type);
             }
@@ -1147,7 +1147,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap DrawClassTypeIcon(uint class_type)
         {
-            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
             {
                 return SkillSystemsEffectivenessReworkClassTypeForm.DrawClassTypeIcon(class_type);
             }

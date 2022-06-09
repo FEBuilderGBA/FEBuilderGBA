@@ -40,9 +40,9 @@ namespace FEBuilderGBA
             int count = (int)eearg.NewDataCount;
 
             Program.ROM.write_p32(
-                Program.ROM.RomInfo.unit_wait_barista_anime_address()
+                Program.ROM.RomInfo.unit_wait_barista_anime_address
                 , addr 
-                    + 0x2 + (0x8 * Program.ROM.RomInfo.unit_wait_barista_id())
+                    + 0x2 + (0x8 * Program.ROM.RomInfo.unit_wait_barista_id)
             );
             if (count > 128)
             {
@@ -55,7 +55,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.unit_wait_icon_pointer()
+                , Program.ROM.RomInfo.unit_wait_icon_pointer
                 , 8
                 , (int i,uint addr) =>
                 {//読込最大値検索
@@ -160,31 +160,31 @@ namespace FEBuilderGBA
             uint palette;
             if( palette_type == 1)
             {//友軍
-                palette = Program.ROM.RomInfo.unit_icon_npc_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_npc_palette_address;
             }
             else if( palette_type == 2)
             {//敵軍
-                palette = Program.ROM.RomInfo.unit_icon_enemey_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_enemey_palette_address;
             }
             else if (palette_type == 4)
             {//4軍
-                palette = Program.ROM.RomInfo.unit_icon_four_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_four_palette_address;
             }
             else if (palette_type == 3)
             {//グレー
-                palette = Program.ROM.RomInfo.unit_icon_gray_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_gray_palette_address;
             }
             else if (palette_type == 5)
             {//光の結界
-                palette = Program.ROM.RomInfo.unit_icon_lightrune_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_lightrune_palette_address;
             }
             else if (palette_type == 6)
             {//セピア
-                palette = Program.ROM.RomInfo.unit_icon_sepia_palette_address();
+                palette = Program.ROM.RomInfo.unit_icon_sepia_palette_address;
             }
             else 
             {//自軍
-               palette = Program.ROM.RomInfo.unit_icon_palette_address();
+               palette = Program.ROM.RomInfo.unit_icon_palette_address;
             }
             uint pic_address_offset = U.toOffset(pic_address);
 
@@ -327,16 +327,16 @@ namespace FEBuilderGBA
                 string palette_error =
                     ImageUtil.CheckPalette(bitmap.Palette
                         , Program.ROM.Data
-                        , (Program.ROM.RomInfo.unit_icon_palette_address())
-                        , (Program.ROM.RomInfo.unit_icon_enemey_palette_address())
+                        , (Program.ROM.RomInfo.unit_icon_palette_address)
+                        , (Program.ROM.RomInfo.unit_icon_enemey_palette_address)
                         );
                 if (palette_error != "")
                 {
                     ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
                     f.SetErrorMessage(palette_error);
-                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address())));
-                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address())));
-                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_enemey_palette_address())));
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address)));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_palette_address)));
+                    f.SetReOrderImage2(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, (Program.ROM.RomInfo.unit_icon_enemey_palette_address)));
                     f.ShowForceButton();
                     f.ShowDialog();
 

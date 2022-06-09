@@ -28,7 +28,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.monster_probability_pointer()
+                , Program.ROM.RomInfo.monster_probability_pointer
                 , 12
                 , (int i, uint addr) =>
                 {//読込最大値検索

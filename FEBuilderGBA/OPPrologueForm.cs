@@ -32,7 +32,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.op_prologue_image_pointer()
+                , Program.ROM.RomInfo.op_prologue_image_pointer
                 , 12
                 , (int i, uint addr) =>
                 {
@@ -61,7 +61,7 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy();
             }
             uint palette =
-                Program.ROM.p32(Program.ROM.RomInfo.op_prologue_palette_color_pointer());
+                Program.ROM.p32(Program.ROM.RomInfo.op_prologue_palette_color_pointer);
 
             byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
             byte[] tsaUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(tsa));
@@ -151,7 +151,7 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 , 4});
 
                 FEBuilderGBA.Address.AddPointer(list
-                    , Program.ROM.RomInfo.op_prologue_palette_color_pointer()
+                    , Program.ROM.RomInfo.op_prologue_palette_color_pointer
                     , 2 * 16
                     , name + " Palette"
                     , FEBuilderGBA.Address.DataTypeEnum.PAL);

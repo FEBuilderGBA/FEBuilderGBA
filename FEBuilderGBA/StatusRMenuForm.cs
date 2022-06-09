@@ -24,7 +24,7 @@ namespace FEBuilderGBA
             this.FilterComboBox.Items.Add(R._("2=武器レベル"));
             this.FilterComboBox.Items.Add(R._("3=戦闘予測1"));
             this.FilterComboBox.Items.Add(R._("4=戦闘予測2"));
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 this.FilterComboBox.Items.Add(R._("5=状況画面"));
             }
@@ -172,27 +172,27 @@ namespace FEBuilderGBA
             int selected = this.FilterComboBox.SelectedIndex;
             if (selected == 0)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_unit_pointer()) );
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_unit_pointer) );
             }
             else if (selected == 1)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_game_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu_game_pointer));
             }
             else if (selected == 2)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu3_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu3_pointer));
             }
             else if (selected == 3)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu4_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu4_pointer));
             }
             else if (selected == 4)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu5_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu5_pointer));
             }
             else if (selected == 5)
             {
-                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu6_pointer()));
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu6_pointer));
             }
         }
 
@@ -247,12 +247,12 @@ namespace FEBuilderGBA
         {
             Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
             uint[] pointerIndexes = new uint[] { 0, 4, 8, 12, 20, 24 };
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer()
-                , Program.ROM.RomInfo.status_rmenu_game_pointer()
-                , Program.ROM.RomInfo.status_rmenu3_pointer()
-                , Program.ROM.RomInfo.status_rmenu4_pointer()
-                , Program.ROM.RomInfo.status_rmenu5_pointer()
-                , Program.ROM.RomInfo.status_rmenu6_pointer()
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer
+                , Program.ROM.RomInfo.status_rmenu_game_pointer
+                , Program.ROM.RomInfo.status_rmenu3_pointer
+                , Program.ROM.RomInfo.status_rmenu4_pointer
+                , Program.ROM.RomInfo.status_rmenu5_pointer
+                , Program.ROM.RomInfo.status_rmenu6_pointer
             };
 
             for (int n = 0; n < addlist.Length; n++)
@@ -308,12 +308,12 @@ namespace FEBuilderGBA
         public static void MakeVarsIDArray(List<UseValsID> list)
         {
             Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
-            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer()
-                , Program.ROM.RomInfo.status_rmenu_game_pointer()
-                , Program.ROM.RomInfo.status_rmenu3_pointer()
-                , Program.ROM.RomInfo.status_rmenu4_pointer()
-                , Program.ROM.RomInfo.status_rmenu5_pointer()
-                , Program.ROM.RomInfo.status_rmenu6_pointer()
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu_unit_pointer
+                , Program.ROM.RomInfo.status_rmenu_game_pointer
+                , Program.ROM.RomInfo.status_rmenu3_pointer
+                , Program.ROM.RomInfo.status_rmenu4_pointer
+                , Program.ROM.RomInfo.status_rmenu5_pointer
+                , Program.ROM.RomInfo.status_rmenu6_pointer
             };
 
             for (int n = 0; n < addlist.Length; n++)

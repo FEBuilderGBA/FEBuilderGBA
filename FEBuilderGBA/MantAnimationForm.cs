@@ -26,7 +26,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.mant_command_pointer()
+                , Program.ROM.RomInfo.mant_command_pointer
                 , 4
                 , (int i, uint addr) =>
                 {
@@ -35,7 +35,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    uint id = (uint)i + Program.ROM.RomInfo.mant_command_startadd();
+                    uint id = (uint)i + Program.ROM.RomInfo.mant_command_startadd;
                     return U.ToHexString(id) + " " + ImageBattleAnimeForm.GetBattleAnimeName(id);
                 }
                 );
@@ -59,7 +59,7 @@ namespace FEBuilderGBA
             }
 
             //マントコマンドは個数が書かれているので、修正しないといけない.
-            uint count_addr = Program.ROM.RomInfo.mant_command_count_address();
+            uint count_addr = Program.ROM.RomInfo.mant_command_count_address;
             Program.Undo.Push("MantCount",count_addr,4);
             Program.ROM.write_u8(count_addr,(uint)count - 1);
         }

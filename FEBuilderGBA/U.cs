@@ -1678,7 +1678,7 @@ namespace FEBuilderGBA
 
         public static bool CheckZeroAddressWriteHigh(uint addr, bool ShowMessage = true)
         {
-            return CheckZeroAddressWrite(addr, ShowMessage, Program.ROM.RomInfo.compress_image_borderline_address() );
+            return CheckZeroAddressWrite(addr, ShowMessage, Program.ROM.RomInfo.compress_image_borderline_address );
         }
 
         //0番地に書き込みを拒否する
@@ -1743,17 +1743,17 @@ namespace FEBuilderGBA
         }
         public static uint ParseFE8UnitPosX(uint unitpos)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() >= 8); //FE8限定
+            Debug.Assert(Program.ROM.RomInfo.version >= 8); //FE8限定
             return (unitpos) & 0x3F;
         }
         public static uint ParseFE8UnitPosY(uint unitpos)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() >= 8); //FE8限定
+            Debug.Assert(Program.ROM.RomInfo.version >= 8); //FE8限定
             return (unitpos >> 6) & 0x3F;
         }
         public static uint ParseFE8UnitPosExtraBit(uint unitpos)
         {
-            Debug.Assert(Program.ROM.RomInfo.version() >= 8); //FE8限定
+            Debug.Assert(Program.ROM.RomInfo.version >= 8); //FE8限定
             return (unitpos >> 12) & 0x7;
         }
         public static uint MakeFe8UnitPos(uint x, uint y, uint ext)
@@ -2437,7 +2437,7 @@ namespace FEBuilderGBA
             UnitActionPointerForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 2")) return list;
 
-            if (Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.is_multibyte == false)
             {
                 SkillAssignmentClassSkillSystemForm.MakeAllDataLength(list);
                 SkillAssignmentUnitSkillSystemForm.MakeAllDataLength(list);
@@ -2488,7 +2488,7 @@ namespace FEBuilderGBA
             MapMiniMapTerrainImageForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 ImageTSAAnime2Form.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
@@ -2525,7 +2525,7 @@ namespace FEBuilderGBA
                 MapSettingForm.MakeAllDataLength(list);
                 ImageCGForm.MakeAllDataLength(list, isPointerOnly);
 
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     OPClassFontForm.MakeAllDataLength(list, isPointerOnly);
                     OPClassDemoForm.MakeAllDataLength(list);
@@ -2540,7 +2540,7 @@ namespace FEBuilderGBA
                 }
 
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);
                 EDFE7Form.MakeAllDataLength(list);
@@ -2563,7 +2563,7 @@ namespace FEBuilderGBA
                 StatusOptionOrderForm.MakeAllDataLength(list);
                 EventFinalSerifFE7Form.MakeAllDataLength(list);
 
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     ImageChapterTitleFE7Form.MakeAllDataLength(list, isPointerOnly);
                     MapSettingFE7Form.MakeAllDataLength(list);
@@ -2577,7 +2577,7 @@ namespace FEBuilderGBA
                     OPClassDemoFE7UForm.MakeAllDataLength(list);
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 EDFE6Form.MakeAllDataLength(list);
                 EventBattleTalkFE6Form.MakeAllDataLength(list);
@@ -2597,7 +2597,7 @@ namespace FEBuilderGBA
             }
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 5")) return list;
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 MapTerrainNameForm.MakeAllDataLength(list);
             }
@@ -2670,7 +2670,7 @@ namespace FEBuilderGBA
             EventCondForm.MakeVarsIDArray(list);
 
             if (InputFormRef.DoEvents(null, "MakeVarsIDArray 2")) return list;
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
             }
             else
@@ -2683,7 +2683,7 @@ namespace FEBuilderGBA
             SoundBossBGMForm.MakeVarsIDArray(list);
 
             if (InputFormRef.DoEvents(null, "MakeVarsIDArray 3")) return list;
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 WorldMapEventPointerForm.MakeVarsIDArray(list);
                 StatusOptionForm.MakeVarsIDArray(list);
@@ -2698,7 +2698,7 @@ namespace FEBuilderGBA
                 TextDicForm.MakeVarsIDArray(list);
                 WorldMapBGMForm.MakeVarsIDArray(list);
 
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     OPClassDemoForm.MakeVarsIDArray(list);
                     SkillConfigFE8NSkillForm.MakeVarsIDArray(list);
@@ -2712,9 +2712,9 @@ namespace FEBuilderGBA
                 }
 
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {//7
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     MapSettingFE7Form.MakeVarsIDArray(list);
                     OPClassDemoFE7Form.MakeVarsIDArray(list);
@@ -2937,7 +2937,7 @@ namespace FEBuilderGBA
         [MethodImpl(256)]
         public static bool isExtrendsROMArea(uint a)
         {
-            return (a >= U.toOffset(Program.ROM.RomInfo.extends_address()));
+            return (a >= U.toOffset(Program.ROM.RomInfo.extends_address));
         }
 
         public static bool isSafetyZArray(uint a)
@@ -3022,7 +3022,7 @@ namespace FEBuilderGBA
         }
         public static bool OtherLangLine(string line,ROM rom)
         {
-            if (rom.RomInfo.is_multibyte())
+            if (rom.RomInfo.is_multibyte)
             {
                 if (line.IndexOf("\t{U}") >= 0)
                 {//日本語版で英語版専用項目はいらない
@@ -3038,7 +3038,7 @@ namespace FEBuilderGBA
             }
             return false;
         }
-        static int ClipCommentIndexOf(string str, string need)
+        public static int ClipCommentIndexOf(string str, string need)
         {
             int index = str.IndexOf(need);
             if (index < 0)
@@ -3178,14 +3178,14 @@ namespace FEBuilderGBA
             string fullfilename;
             if (rom != null)
             {
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + lang + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename + "." + lang + ".txt");
                 if (File.Exists(fullfilename))
                 {//言語指定がある
                     return fullfilename;
                 }
                 if (canSecondLanguageEnglish)
                 {//第2言語を英語にできるなら英語リソースを検索
-                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + "en" + ".txt");
+                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename + "." + "en" + ".txt");
                     if (File.Exists(fullfilename))
                     {//言語指定がある
                         return fullfilename;
@@ -3193,7 +3193,7 @@ namespace FEBuilderGBA
                 }
 
                 //ないなら共通版
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename + ".txt");
                 if (File.Exists(fullfilename))
                 {//各FEごとの設定がある
                     return fullfilename;
@@ -3232,7 +3232,7 @@ namespace FEBuilderGBA
             }
             else if (rom.IsVirtualROM)
             {//仮想ROMなのでファイル名はない
-                romtitle = "_Virtial_" + rom.RomInfo.VersionToFilename();
+                romtitle = "_Virtial_" + rom.RomInfo.VersionToFilename;
             }
             else
             {
@@ -5718,7 +5718,7 @@ namespace FEBuilderGBA
         {
             if (!File.Exists(filename))
             {
-                if (Program.ROM.RomInfo.version() == 0)
+                if (Program.ROM.RomInfo.version == 0)
                 {//FEでないので読めなくてもいい
                     return false;
                 }
@@ -7604,6 +7604,79 @@ namespace FEBuilderGBA
             }
             return "";
         }
+
+        public static uint FindROMPointer(ROM rom, uint[] pointers)
+        {
+            //最初に見つけた正しいポインタにする
+            foreach (uint p in pointers)
+            {
+                uint a = rom.u32(p);
+                if (!U.isSafetyPointer(a, rom))
+                {
+                    continue;
+                }
+
+                //発見
+                return p;
+            }
+
+            //判別不能なので最初のポインタを使う
+            return pointers[0];
+        }
+        public static uint FindROMPointer(ROM rom,uint checkPointer, uint[] pointers)
+        {
+            //最初に見つけた正しいポインタにする
+            foreach (uint p in pointers)
+            {
+                uint a = rom.u32(p);
+                if (! U.isSafetyPointer(a, rom))
+                {
+                    continue;
+                }
+                a = U.toOffset(a);
+                if (!U.isSafetyOffset(a + checkPointer + 4, rom))
+                {
+                    continue;
+                }
+                uint checkP = rom.u32(a + checkPointer);
+                if (!U.isSafetyPointer(checkP, rom))
+                {
+                    continue;
+                }
+                //発見
+                return p;
+            }
+
+            //判別不能!
+            return FindROMPointer(rom, pointers);
+        }
+        public static uint FindROMPointer(ROM rom, Func<uint,bool> func, uint[] pointers)
+        {
+            //最初に見つけた正しいポインタにする
+            foreach (uint p in pointers)
+            {
+                uint a = rom.u32(p);
+                if (!U.isSafetyPointer(a, rom))
+                {
+                    continue;
+                }
+                a = U.toOffset(a);
+                if (!U.isSafetyOffset(a + 0x100, rom))
+                {
+                    continue;
+                }
+                if (!func(a))
+                {
+                    continue;
+                }
+                //発見
+                return p;
+            }
+
+            //判別不能!
+            return FindROMPointer(rom, pointers);
+        }
+
     }
 }
 

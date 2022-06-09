@@ -25,7 +25,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.image_chapter_title_pointer()
+                , Program.ROM.RomInfo.image_chapter_title_pointer
                 , 4
                 , (int i, uint addr) =>
                 {//読込最大値検索
@@ -57,7 +57,7 @@ namespace FEBuilderGBA
             }
 
             int height = ImageUtil.CalcHeight(width, imageUZ.Length);
-            uint palette = Program.ROM.RomInfo.image_chapter_title_palette();
+            uint palette = Program.ROM.RomInfo.image_chapter_title_palette;
 
             return ImageUtil.ByteToImage16Tile(width, height
                 , imageUZ, 0
@@ -97,15 +97,15 @@ namespace FEBuilderGBA
                 string palette_error =
                     ImageUtil.CheckPalette(bitmap.Palette
                         , Program.ROM.Data
-                        , Program.ROM.RomInfo.image_chapter_title_palette()
+                        , Program.ROM.RomInfo.image_chapter_title_palette
                         , U.NOT_FOUND
                         );
                 if (palette_error != "")
                 {
                     ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
                     f.SetErrorMessage(palette_error);
-                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
-                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette));
                     f.ShowForceButton();
                     f.ShowDialog();
 

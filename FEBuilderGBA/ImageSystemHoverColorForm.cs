@@ -13,9 +13,9 @@ namespace FEBuilderGBA
     public partial class ImageSystemHoverColorForm : Form
     {
         uint[] BasePointers = new uint[]{
-             Program.ROM.RomInfo.systemhover_gradation_palette_pointer()
-            ,Program.ROM.RomInfo.systemhover_gradation_palette_pointer()
-            ,Program.ROM.RomInfo.systemhover_gradation_palette_pointer()
+             Program.ROM.RomInfo.systemhover_gradation_palette_pointer
+            ,Program.ROM.RomInfo.systemhover_gradation_palette_pointer
+            ,Program.ROM.RomInfo.systemhover_gradation_palette_pointer
         };
 
         public ImageSystemHoverColorForm()

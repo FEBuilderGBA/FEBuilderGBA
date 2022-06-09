@@ -49,7 +49,7 @@ namespace FEBuilderGBA
         public static Bitmap DrawBorderBitmap(uint img)
         {
             byte[] bin = LZ77.decompress(Program.ROM.Data, U.toOffset(img));
-            uint pal = Program.ROM.p32(Program.ROM.RomInfo.worldmap_county_border_palette_pointer());
+            uint pal = Program.ROM.p32(Program.ROM.RomInfo.worldmap_county_border_palette_pointer);
 
             int height = ImageUtil.CalcHeight(32 * 8, bin.Length);
             if (height <= 0)

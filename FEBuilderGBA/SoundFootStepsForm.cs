@@ -38,7 +38,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    uint id = Program.ROM.u8(Program.ROM.RomInfo.sound_foot_steps_switch2_address()) + (uint)i;
+                    uint id = Program.ROM.u8(Program.ROM.RomInfo.sound_foot_steps_switch2_address) + (uint)i;
                     return U.ToHexString(id) + ClassForm.GetClassName(id);
                 }
                 );
@@ -46,7 +46,7 @@ namespace FEBuilderGBA
 
         private void SoundFootStepsForm_Load(object sender, EventArgs e)
         {
-            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address);
             if (!enable)
             {
                 this.ERROR_NOT_FOUND.Show();
@@ -67,9 +67,9 @@ namespace FEBuilderGBA
             {
                 return U.NOT_FOUND;
             }
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.sound_foot_steps_pointer());
-            uint count = Program.ROM.u8(Program.ROM.RomInfo.sound_foot_steps_switch2_address() + 2);
-            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.sound_foot_steps_pointer);
+            uint count = Program.ROM.u8(Program.ROM.RomInfo.sound_foot_steps_switch2_address + 2);
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address);
             if (enable == false)
             {
                 return U.NOT_FOUND;
@@ -94,15 +94,15 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"SoundFootStep SwitchExpands");
 
-            PatchUtil.Switch2Expands(Program.ROM.RomInfo.sound_foot_steps_pointer()
-                , Program.ROM.RomInfo.sound_foot_steps_switch2_address()
+            PatchUtil.Switch2Expands(Program.ROM.RomInfo.sound_foot_steps_pointer
+                , Program.ROM.RomInfo.sound_foot_steps_switch2_address
                 , newCount
                 , defAddr
                 , undodata);
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {//Fix PlaySoundStepByClass(足音) HardCode
                     Program.ROM.write_range(0x7B198, new byte[] { 0x1c, 0xe0 }, undodata);
                 }

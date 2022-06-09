@@ -18,7 +18,7 @@ namespace FEBuilderGBA
 
             ImageBGButton.BackgroundImage = MakeTransparent(Trim(ImageBGForm.DrawBG(0)));
 
-            if (Program.ROM.RomInfo.version() >= 7)
+            if (Program.ROM.RomInfo.version >= 7)
             {
                 BigCGButton.BackgroundImage = MakeTransparent(Trim(ImageCGForm.DrawImageByID(0)));
             }
@@ -39,7 +39,7 @@ namespace FEBuilderGBA
             ImageBattleFieldButton.BackgroundImage = MakeTransparent(ImageBattleBGForm.DrawBG(2));
             ImageBattleTerrainButton.BackgroundImage = MakeTransparent((ImageBattleTerrainForm.Draw(2)));
 
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 ImageUnitPaletteButton.BackgroundImage = MakeTransparent(BattleZoom(UnitPaletteForm.DrawSample(2, 3)));
             }
@@ -51,7 +51,7 @@ namespace FEBuilderGBA
 
             WorldMapImageButton.BackgroundImage = MakeTransparent(WorldMapImageForm.DrawWorldMap());
 
-            if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
             {//英語版FE7は、章タイトルをテキストで保持していて、40260c nazo fontで、描画している.
                 ImageChapterTitleButton.Hide();
             }
@@ -70,7 +70,7 @@ namespace FEBuilderGBA
                 ImageMagicButton.Hide();
             }
 
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
@@ -143,13 +143,13 @@ namespace FEBuilderGBA
 
         private void BigCGButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 InputFormRef.JumpForm<ImageCGForm>();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (!Program.ROM.RomInfo.is_multibyte())
+                if (!Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<ImageCGFE7UForm>();
                 }
@@ -162,7 +162,7 @@ namespace FEBuilderGBA
 
         private void ImagePortraitButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 6)
+            if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<ImagePortraitFE6Form>();
             }
@@ -214,15 +214,15 @@ namespace FEBuilderGBA
 
         private void WorldMapImageButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 InputFormRef.JumpForm<WorldMapImageForm>();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
                 InputFormRef.JumpForm<WorldMapImageFE7Form>();
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<WorldMapImageFE6Form>();
             }
@@ -230,18 +230,18 @@ namespace FEBuilderGBA
 
         private void ImageChapterTitleButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version == 8)
             {
                 InputFormRef.JumpForm<ImageChapterTitleForm>();
             }
-            else if (Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version == 7)
             {
-                if (Program.ROM.RomInfo.is_multibyte())
+                if (Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<ImageChapterTitleFE7Form>();
                 }
             }
-            else if (Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version == 6)
             {
                 InputFormRef.JumpForm<ImageChapterTitleFE7Form>(); //FE6 とFe7は同一フォーマット
             }
@@ -267,7 +267,7 @@ namespace FEBuilderGBA
 
         private void FontButton_Click(object sender, EventArgs e)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            if (Program.ROM.RomInfo.is_multibyte)
             {
                 OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
                 if (textencoding == OptionForm.textencoding_enum.ZH_TBL)

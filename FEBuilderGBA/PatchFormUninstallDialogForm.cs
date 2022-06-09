@@ -156,7 +156,7 @@ namespace FEBuilderGBA
         }
         bool IsOrignalROM(byte[] rom)
         {
-            uint orignal_crc32 = Program.ROM.RomInfo.orignal_crc32();
+            uint orignal_crc32 = Program.ROM.RomInfo.orignal_crc32;
             U.CRC32 crc32 = new U.CRC32();
             if (orignal_crc32 == crc32.Calc(rom))
             {//無改造ROM

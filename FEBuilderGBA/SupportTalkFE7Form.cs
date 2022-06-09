@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.support_talk_pointer()
+                , Program.ROM.RomInfo.support_talk_pointer
                 , 20
                 , (int i, uint addr) =>
                 {//とりあえず 00 00 まで読む.

@@ -43,7 +43,7 @@ namespace FEBuilderGBA
         public static string GetPatchDirectory()
         {
             return
-                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename());
+                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename);
         }
 
         //パッチをスキャンしなおす.
@@ -107,7 +107,7 @@ namespace FEBuilderGBA
         static List<PatchSt> ScanPatchs(string path, bool isScanOnly)
         {
             List<PatchSt> patchs = new List<PatchSt>();
-            if (Program.ROM.RomInfo.version() == 0)
+            if (Program.ROM.RomInfo.version == 0)
             {
                 return patchs;
             }
@@ -375,7 +375,7 @@ namespace FEBuilderGBA
                 name = U.at(patch.Param, "NAME");
             }
             sb.Append(R._("パッチ名:"));
-            sb.AppendLine(R._(name) + "  @" + Program.ROM.RomInfo.VersionToFilename());
+            sb.AppendLine(R._(name) + "  @" + Program.ROM.RomInfo.VersionToFilename);
 
             string author = atMultiLine(patch, "AUTHOR");
             if (author != "")
@@ -4703,7 +4703,7 @@ namespace FEBuilderGBA
             Debug.Assert(type == "BIN");
 
             List<BinMapping> binMappings = new List<BinMapping>();
-            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address;
 
             Dictionary<string, bool> jumpMatch = new Dictionary<string, bool>();
             foreach (var pair in patch.Param)
@@ -4793,7 +4793,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address;
 
             foreach (string fullfilename in files)
             {
@@ -4862,7 +4862,7 @@ namespace FEBuilderGBA
             Debug.Assert(type == "BIN");
 
             List<BinMapping> binMappings = new List<BinMapping>();
-            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address;
 
             Dictionary<string, bool> jumpMatch = new Dictionary<string, bool>();
             foreach (var pair in patch.Param)
@@ -4894,7 +4894,7 @@ namespace FEBuilderGBA
                     {//+1しているため間違いなくコードだ
                         datatype = Address.DataTypeEnum.POINTER_ASM;
                     }
-                    else if (addr <= Program.ROM.RomInfo.compress_image_borderline_address())
+                    else if (addr <= Program.ROM.RomInfo.compress_image_borderline_address)
                     {
                         datatype = Address.DataTypeEnum.POINTER_ASM;
                     }
@@ -5176,7 +5176,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address;
 
             foreach (string fullfilename in files)
             {
@@ -5355,7 +5355,7 @@ namespace FEBuilderGBA
                         uint addr = lastMatchAddr;
                         if (data.BINData.Length > 0)
                         {
-                            uint foundAddr = U.Grep(Program.ROM.Data, data.BINData, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                            uint foundAddr = U.Grep(Program.ROM.Data, data.BINData, Program.ROM.RomInfo.compress_image_borderline_address, 0, 4);
                             if (foundAddr != U.NOT_FOUND)
                             {
                                 addr = foundAddr;
@@ -7182,7 +7182,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-//            uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
+//            uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address;
             uint FindStartAddress = 0x100;
 
             byte[] grepdata = File.ReadAllBytes(filename);
@@ -8000,7 +8000,7 @@ namespace FEBuilderGBA
         }
         static void StripROM(List<BinMapping> binmap, Undo.UndoData undodata)
         {
-            uint extendsAddr = U.toOffset(Program.ROM.RomInfo.extends_address());
+            uint extendsAddr = U.toOffset(Program.ROM.RomInfo.extends_address);
             int length = Program.ROM.Data.Length;
 
             //終端が0x00で埋まるならROMサイズを小さくする.
@@ -8328,7 +8328,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint search_start = Program.ROM.RomInfo.compress_image_borderline_address();
+            uint search_start = Program.ROM.RomInfo.compress_image_borderline_address;
 
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             uint struct_pointer = convertBinAddressString(pointer_str, 8, search_start, basedir);
@@ -9265,35 +9265,35 @@ namespace FEBuilderGBA
             uint newPointer;
             if (typeName == "ITEM")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_pointer);
             }
             else if (typeName == "ITEMICON")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.icon_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.icon_pointer);
             }
             else if (typeName == "ITEMEFFECT")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_effect_array_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_effect_array_pointer);
             }
             else if (typeName == "SONG")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.sound_table_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.sound_table_pointer);
             }
             else if (typeName == "ITEMUSABILITY")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_usability_array_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_usability_array_pointer);
             }
             else if (typeName == "ITEMSTATBOOSTER2")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_statbooster2_array_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_statbooster2_array_pointer);
             }
             else if (typeName == "CLASS")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.class_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.class_pointer);
             }
             else if (typeName == "CCTABLE")
             {
-                newPointer = Program.ROM.u32(Program.ROM.RomInfo.ccbranch_pointer());
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.ccbranch_pointer);
             }
             else
             {
@@ -9403,7 +9403,7 @@ namespace FEBuilderGBA
             string allocMustHighAddress = U.at(patch.Param, "ALLOC_MUST_HIGH_ADDRESS", "0");
             if (U.stringbool(allocMustHighAddress))
             {
-                if (freearea >= U.toOffset(Program.ROM.RomInfo.extends_address()))
+                if (freearea >= U.toOffset(Program.ROM.RomInfo.extends_address))
                 {
                     DialogResult dr = R.ShowNoYes("このパッチは、複雑な構文を持っているので、リビルドを成功させるためにも、上位アドレスに入れる必要があります。\r\nただ、あなたのROMは上位アドレスを使い果たしているので、インストールすることができません。\r\n推奨しませんが、上位アドレスではないエリアにインストールしてもよろしいですか？");
                     if (dr != DialogResult.Yes)

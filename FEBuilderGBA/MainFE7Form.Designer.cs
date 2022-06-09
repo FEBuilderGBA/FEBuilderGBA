@@ -141,6 +141,7 @@
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.UnitCustomBattleAnime = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.AIPerformItemButton = new System.Windows.Forms.Button();
             this.EventFinalSerifButton = new System.Windows.Forms.Button();
             this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
@@ -205,7 +206,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1365,6 +1365,17 @@
             this.ControlPanel.Size = new System.Drawing.Size(1623, 716);
             this.ControlPanel.TabIndex = 0;
             // 
+            // MapMiniMapTerrainImageButton
+            // 
+            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1220, 329);
+            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
+            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
+            this.MapMiniMapTerrainImageButton.TabIndex = 142;
+            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
+            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
+            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
+            // 
             // AIPerformItemButton
             // 
             this.AIPerformItemButton.Location = new System.Drawing.Point(814, 508);
@@ -2068,17 +2079,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // MapMiniMapTerrainImageButton
-            // 
-            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1220, 329);
-            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
-            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
-            this.MapMiniMapTerrainImageButton.TabIndex = 142;
-            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
-            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
-            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
             // 
             // MainFE7Form
             // 

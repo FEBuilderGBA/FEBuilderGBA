@@ -24,7 +24,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , ""
-                , Program.ROM.RomInfo.support_attribute_pointer()
+                , Program.ROM.RomInfo.support_attribute_pointer
                 , 8
                 , (int i, uint addr) =>
                 {//個数が固定できまっている

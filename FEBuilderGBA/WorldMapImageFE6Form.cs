@@ -34,11 +34,11 @@ namespace FEBuilderGBA
             //There's 2 256-clrs palettes. One for the zoomed out map, and one for all the zoomed in ones (they use the same palette)
             //$082D1964: Elibe world map palette (all, zoomed in)
             //$082D1BA0: Elibe world map palette (global, zoomed out)
-            WMZoomOut = new ImageFormRef(this, "WMZoomOUT", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer(), 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer()));
-            WMZoomNW = new ImageFormRef(this, "WMZoomNW", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer() + 8, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer() + 8));
-            WMZoomNE = new ImageFormRef(this, "WMZoomNE", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer() + 16, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer() + 16));
-            WMZoomSW = new ImageFormRef(this, "WMZoomSW", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer() + 24, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer() + 24));
-            WMZoomSE = new ImageFormRef(this, "WMZoomSE", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer() + 32, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer() + 32));
+            WMZoomOut = new ImageFormRef(this, "WMZoomOUT", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer));
+            WMZoomNW = new ImageFormRef(this, "WMZoomNW", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer + 8, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer + 8));
+            WMZoomNE = new ImageFormRef(this, "WMZoomNE", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer + 16, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer + 16));
+            WMZoomSW = new ImageFormRef(this, "WMZoomSW", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer + 24, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer + 24));
+            WMZoomSE = new ImageFormRef(this, "WMZoomSE", 240, 160, 16, Program.ROM.RomInfo.worldmap_big_image_pointer + 32, 0, U.toPointer(Program.ROM.RomInfo.worldmap_big_palette_pointer + 32));
         }
         private void WriteButton_Click(object sender, EventArgs e)
         {
@@ -59,8 +59,8 @@ namespace FEBuilderGBA
             //FE6のワールドマップは 256色 tileではなく、通常の画像のようなlinerである.
             //
             //情報元:
-            uint image256Z = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer());
-            uint paletteZ = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer());
+            uint image256Z = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_image_pointer);
+            uint paletteZ = Program.ROM.p32(Program.ROM.RomInfo.worldmap_big_palette_pointer);
 
             return ImageUtilMap.DrawWorldMapFE6(image256Z, paletteZ);
         }
@@ -69,60 +69,60 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_image_pointer()
+                , Program.ROM.RomInfo.worldmap_big_image_pointer
                 , "worldmap_big_image"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_palette_pointer()
+                , Program.ROM.RomInfo.worldmap_big_palette_pointer
                 , "worldmap_big_palette"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77PAL);
 
 
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_image_pointer() + 8
+                , Program.ROM.RomInfo.worldmap_big_image_pointer + 8
                 , "worldmap_big_imageNW"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_palette_pointer() + 8
+                , Program.ROM.RomInfo.worldmap_big_palette_pointer + 8
                 , "worldmap_big_paletteNW"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77PAL);
 
 
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_image_pointer() + 16
+                , Program.ROM.RomInfo.worldmap_big_image_pointer + 16
                 , "worldmap_big_imageNE"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_palette_pointer() + 16
+                , Program.ROM.RomInfo.worldmap_big_palette_pointer + 16
                 , "worldmap_big_paletteNE"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77PAL);
 
 
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_image_pointer() + 24
+                , Program.ROM.RomInfo.worldmap_big_image_pointer + 24
                 , "worldmap_big_imageSW"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_palette_pointer() + 24
+                , Program.ROM.RomInfo.worldmap_big_palette_pointer + 24
                 , "worldmap_big_paletteSW"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77PAL);
 
 
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_image_pointer() + 32
+                , Program.ROM.RomInfo.worldmap_big_image_pointer + 32
                 , "worldmap_big_imageSE"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77IMG);
             FEBuilderGBA.Address.AddLZ77Pointer(list
-                , Program.ROM.RomInfo.worldmap_big_palette_pointer() + 32
+                , Program.ROM.RomInfo.worldmap_big_palette_pointer + 32
                 , "worldmap_big_paletteSE"
                 , isPointerOnly
                 , Address.DataTypeEnum.LZ77PAL);
