@@ -21,6 +21,7 @@ namespace FEBuilderGBA
             SimpleTranslateFromROMFilename.AllowDropFilename();
             SimpleTranslateToROMFilename.AllowDropFilename();
             SimpleTranslateToTranslateDataFilename.AllowDropFilename();
+            SimpleTranslateToTranslateDataFilename.Placeholder = R._("無指定の場合は定型文のみ翻訳します。");
 
             useAutoTranslateCheckBox_CheckedChanged(null, null);
 

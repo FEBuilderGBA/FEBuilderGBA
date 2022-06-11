@@ -136,8 +136,9 @@ namespace FEBuilderGBA
                 return map;
             }
 #endif
+            Dictionary<uint, bool> knownDic = new Dictionary<uint, bool>();
             List<Address> structlist;
-#if !DEBUG 
+#if !DEBUG
             try
             {
 #endif
@@ -226,7 +227,8 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
+            knownDic = AsmMapFile.MakeKnownListToDic(structlist);
+            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0x00, 16); //フリー領域
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
@@ -239,7 +241,7 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
+            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0xFF, 16); //フリー領域
             if (IsStopFlag) return map;
 #if !DEBUG 
             }

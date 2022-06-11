@@ -47,14 +47,6 @@ namespace FEBuilderGBA
 
                 return ups.DialogResult == DialogResult.OK;
             }
-            else if (ext == ".REBUILD")
-            {
-                ToolROMRebuildOpenSimpleForm ROMRebuild = (ToolROMRebuildOpenSimpleForm)InputFormRef.JumpFormLow<ToolROMRebuildOpenSimpleForm>();
-                ROMRebuild.OpenROMRebuild(romfilename, useReOpen, forceversion);
-                ROMRebuild.ShowDialog();
-
-                return ROMRebuild.DialogResult == DialogResult.OK;
-            }
             else if (ext == ".7Z")
             {
                 return OpenGBA7ZROM(romfilename, useReOpen, forceversion);

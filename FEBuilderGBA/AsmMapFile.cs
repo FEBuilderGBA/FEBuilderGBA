@@ -854,6 +854,11 @@ namespace FEBuilderGBA
                 {
                     return false;
                 }
+                if (size >= 1000)
+                {//大きすぎる!
+                    return false;
+                }
+
                 p.Length = size;
                 p.Name += " Count_" + ((p.Length) / 8);
                 return true;
@@ -863,6 +868,10 @@ namespace FEBuilderGBA
                 uint size = U.TextBatchShortLength(U.toOffset(pointer), rom);
                 if (size <= 0)
                 {
+                    return false;
+                }
+                if (size >= 1000)
+                {//大きすぎる!
                     return false;
                 }
 
@@ -877,6 +886,10 @@ namespace FEBuilderGBA
                 {
                     return false;
                 }
+                if (size >= 2000)
+                {//大きすぎる!
+                    return false;
+                }
 
                 p.Length = size;
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
@@ -889,6 +902,10 @@ namespace FEBuilderGBA
                 {
                     return false;
                 }
+                if (size >= 1202*3)
+                {//大きすぎる!
+                    return false;
+                }
 
                 p.Length = size;
                 return true;
@@ -898,6 +915,10 @@ namespace FEBuilderGBA
                 uint size = ImageRomAnimeForm.GetPaletteFrameCountLow(rom.Data, U.toOffset(pointer)) * 2; 
                 if (size <= 0)
                 {
+                    return false;
+                }
+                if (size >= 1000)
+                {//大きすぎる!
                     return false;
                 }
 
@@ -1342,23 +1363,60 @@ namespace FEBuilderGBA
             }
 
         }
+
+        public static Dictionary<uint, bool> MakeKnownListToDic(List<Address> knownList)
+        {
+            Dictionary<uint, bool> ret = new Dictionary<uint, bool>();
+            foreach (Address a in knownList)
+            {
+                if (a.DataType == Address.DataTypeEnum.FFor00)
+                {
+                    continue;
+                }
+
+                uint addr = U.toOffset(a.Addr);
+                ret[addr] = true;
+
+                addr = U.Padding4(addr);
+                for (uint i = 0; i < a.Length; i += 4)
+                {
+                    ret[addr + i] = true;
+                }
+
+                if (a.Pointer != U.NOT_FOUND)
+                {
+                    addr = U.toOffset(a.Pointer);
+                    ret[addr + 0] = true;
+                    ret[addr + 1] = true;
+                    ret[addr + 2] = true;
+                    ret[addr + 3] = true;
+                }
+
+            }
+            return ret;
+        }
+ 
         //フリー領域と思われる部分を検出.
-        public static void MakeFreeDataList(List<Address> list, uint addr, byte filldata, uint needSize)
+        public static void MakeFreeDataList(List<Address> list, Dictionary<uint, bool> knownDic, uint addr, byte filldata, uint needSize)
         {
             byte[] data = Program.ROM.Data;
             uint length = (uint)Program.ROM.Data.Length;
 
-            MakeFreeDataList(list, addr, filldata, needSize, data, length);
+            MakeFreeDataList(list, knownDic, addr, filldata, needSize, data, length);
         }
 
         //フリー領域と思われる部分を検出.
-        public static void MakeFreeDataList(List<Address> list, uint addr, byte filldata, uint needSize,byte[] data, uint length)
+        public static void MakeFreeDataList(List<Address> list, Dictionary<uint, bool> knownDic, uint addr, byte filldata, uint needSize,byte[] data, uint length)
         {
             string name = "FREEAREA:" + filldata.ToString("X02");
 
             addr = U.Padding4(addr);
             for (; addr < length; addr += 4)
             {
+                if (knownDic.ContainsKey(addr))
+                {
+                    continue;
+                }
                 if (data[addr] == filldata)
                 {
                     uint start = addr;
@@ -1380,7 +1438,8 @@ namespace FEBuilderGBA
                             }
                             break;
                         }
-                        if (data[addr] != filldata)
+
+                        if (data[addr] != filldata || knownDic.ContainsKey(addr))
                         {
                             uint matchsize = addr - start;
                             if (matchsize >= needSize)

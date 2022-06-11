@@ -13,14 +13,17 @@ namespace FEBuilderGBA
     //リビルドしない領域にあるフリーエリア 再利用する場合に利用する.
     class ToolROMRebuildFreeArea
     {
-        public ToolROMRebuildFreeArea(uint freeAreaMinimumSize, uint freeAreaStartAddress )
+        public ToolROMRebuildFreeArea(uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename)
         {
             this.FreeAreaMinimumSize = freeAreaMinimumSize;
             this.FreeAreaStartAddress = freeAreaStartAddress;
+            this.AppendFreeAreaFilename = appendFreeAreaFilename;
         }
 
         uint FreeAreaMinimumSize = 2048;
         uint FreeAreaStartAddress = 0x1000000;
+        string AppendFreeAreaFilename = "";
+        uint FreeAreaPadding = 0;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
@@ -37,53 +40,26 @@ namespace FEBuilderGBA
                 );
             MoveToFreeSapceForm.AppendSkillSystemsSanctuary(knownList);
 
-            Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
-            MakeFreeDataList(RecycleFreeAreaList, knownDic, FreeAreaMinimumSize + 16 + 16, data, RebuildAddress, useMap);
+            Dictionary<uint, bool> knownDic = AsmMapFile.MakeKnownListToDic(knownList);
+            MakeFreeDataList(RecycleFreeAreaList, knownDic, FreeAreaMinimumSize + FreeAreaPadding + FreeAreaPadding, data, RebuildAddress, useMap);
 
             for (int i = 0; i < this.RecycleFreeAreaList.Count; )
             {
                 Address p = this.RecycleFreeAreaList[i];
 
                 //頭としっぽはくれてやれ
-                if (p.Length < 64)
+                if (p.Length <= FreeAreaPadding*2)
                 {
                     this.RecycleFreeAreaList.RemoveAt(i);
                     continue;
                 }
-                p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
+                p.ResizeAddress(p.Addr + FreeAreaPadding, p.Length - FreeAreaPadding - FreeAreaPadding);
                 i++;
             }
-        }
-        Dictionary<uint,bool> MakeKnownListToDic(List<Address> knownList)
-        {
-            Dictionary<uint,bool> ret = new Dictionary<uint,bool>();
-            foreach(Address a in knownList)
-            {
-                if (a.DataType == Address.DataTypeEnum.FFor00)
-                {
-                    continue;
-                }
 
-                uint addr = U.toOffset(a.Addr);
-                ret[addr] = true;
+            AppendFreeArea(RebuildAddress, this.AppendFreeAreaFilename);
 
-                addr = U.Padding4(addr);
-                for (uint i = 0; i < a.Length; i += 4)
-                {
-                    ret[addr + i] = true;
-                }
-
-                if (a.Pointer != U.NOT_FOUND)
-                {
-                    addr = U.toOffset(a.Pointer);
-                    ret[addr + 0] = true;
-                    ret[addr + 1] = true;
-                    ret[addr + 2] = true;
-                    ret[addr + 3] = true;
-                }
-
-            }
-            return ret;
+            RecycleFreeAreaList.Sort((a, b) => { return ((int)a.Length) - ((int)b.Length); });
         }
 
         //フリー領域と思われる部分を検出.
@@ -150,6 +126,119 @@ namespace FEBuilderGBA
             FEBuilderGBA.Address.AddAddress(list
                 , start
                 , matchsize
+                , U.NOT_FOUND
+                , ""
+                , Address.DataTypeEnum.FFor00);
+        }
+
+        void AppendFreeArea(uint RebuildAddress,string appendFreeAreaFilename)
+        {
+            if (!File.Exists(appendFreeAreaFilename))
+            {
+                return ;
+            }
+            try
+            {
+                using (StreamReader reader = File.OpenText(appendFreeAreaFilename))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.IndexOf("//FREEAREA:") < 0)
+                        {
+                            continue;
+                        }
+
+                        string[] sp = line.Split(' ');
+                        if (sp.Length < 5)
+                        {
+                            continue;
+                        }
+                        uint start = U.atoh(sp[0]);
+                        uint end = U.atoh(sp[2]);
+                        AppendCustomFreeList(RecycleFreeAreaList,RebuildAddress, start, end);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+        }
+        
+        void AppendCustomFreeList(List<Address> list,uint RebuildAddress, uint start, uint end)
+        {
+            start = U.toOffset(start);
+            if (!U.isPadding4(start))
+            {//4で割り切れないの補正
+                start = U.SubPadding4(start) + 4;
+            }
+
+            end = U.toOffset(end);
+            end = U.SubPadding4(end);
+            if (start <= 0x100 || end <= 0x100 || end <= start)
+            {//アドレスが変
+                return;
+            }
+            if (start >= RebuildAddress || end >= RebuildAddress)
+            {//リビルドアドレスより上なのて無視
+                return;
+            }
+            if (end - start >= FreeAreaMinimumSize)
+            {//自動探索する領域よりも大きいから無視しておいた方が無難
+                return;
+            }
+
+            uint d = Program.ROM.u32(start);
+            if (!(d == 0x0 || d == 0xFFFFFFFF))
+            {//空いてない
+                return;
+            }
+
+            d = Program.ROM.u32(end - 4);
+            if (!(d == 0x0 || d == 0xFFFFFFFF))
+            {//空いてない
+                //終端が割り込まれるのはよくあることなので4バイト削る
+                end -= 4;
+                if (end <= start + 4)
+                {//小さすぎる
+                    return;
+                }
+                d = Program.ROM.u32(end - 4);
+                if (!(d == 0x0 || d == 0xFFFFFFFF))
+                {//それでも空いてない
+                    //もう一回削る
+                    end -= 4;
+                    if (end <= start + 4)
+                    {//小さすぎる
+                        return;
+                    }
+                    d = Program.ROM.u32(end - 4);
+                    if (!(d == 0x0 || d == 0xFFFFFFFF))
+                    {//それでも空いてないなら無理
+                        return;
+                    }
+                }
+            }
+            if (end - start <= 0xF)
+            {//あまりに小さすぎる
+                return;
+            }
+            
+            foreach (Address a in list)
+            {
+                uint AddrEnd = a.Addr + a.Length;
+                if (a.Addr >= start && AddrEnd <= start && AddrEnd <= end)
+                {//既に知ってる
+                    return;
+                }
+            }
+
+            if (InputFormRef.DoEvents(null, "AppendCustomFreeList " + U.ToHexString(start))) return;
+            FEBuilderGBA.Address.AddAddress(list
+                , start
+                , end - start
                 , U.NOT_FOUND
                 , ""
                 , Address.DataTypeEnum.FFor00);

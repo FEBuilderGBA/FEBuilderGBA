@@ -193,9 +193,9 @@
 012A=SE:Aureola light beam
 012B=SE:Aureola light bomb falling
 012C=SE:Aureola light explosion
-012D=SE:[[Unknown,Tell me if you know!]]
-012E=SE:[[Unknown,Tell me if you know!]]
-012F=SE:[[Unknown,Tell me if you know!]]
+012D=SE:Forblaze 1
+012E=SE:Forblaze 2
+012F=SE:Forblaze 3
 0130=SE:Fenrir symbols
 0131=SE:Fenrir rune
 0132=SE:Fenrir flame

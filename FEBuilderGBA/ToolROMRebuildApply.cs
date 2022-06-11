@@ -153,18 +153,18 @@ namespace FEBuilderGBA
             }
         }
 
-        void InitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress)
+        void InitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename)
         {
-            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress);
+            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename);
         }
 
-        void ReInitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress,
+        void ReInitFreeAreaDef(uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename,
             int useFreeArea,uint rebuildAddress, string[] rebuildLines)
         {
             Dictionary<uint, uint> useMap = new Dictionary<uint,uint>(this.AddressMap);
             AppendUseMap(useMap, rebuildAddress,rebuildLines);
 
-            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress);
+            this.FreeArea = new ToolROMRebuildFreeArea(freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename);
             if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
             {
                 FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, useMap);
@@ -183,7 +183,8 @@ namespace FEBuilderGBA
         }
 
         uint RebuildAddress;
-        public bool Apply(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress)
+        uint UseShareSameData = 0;
+        public bool Apply(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename, uint useShareSameData)
         {
             this.ApplyLog = new StringBuilder();
             this.AddressMap = new Dictionary<uint, uint>();
@@ -192,6 +193,7 @@ namespace FEBuilderGBA
             this.WriteROMData32MB = new byte[32 * 1024 * 1024]; //32MB memory reserve
             U.write_range(this.WriteROMData32MB , 0 , vanilla.Data);
             this.WriteOffset = (uint)vanilla.Data.Length;
+            this.UseShareSameData = useShareSameData;
 
             string dir = Path.GetDirectoryName(filename);
 
@@ -207,7 +209,7 @@ namespace FEBuilderGBA
 
             //途中でデータを書き込むことがあるので、現在のフリーエリアを見つけてリストに追加.
             //後でROM末尾を超えたら再設定する.
-            InitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress);
+            InitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename);
             //通常のROM末尾を超えた時点で再度スキャンする.
             bool isMakeFreeAreaList = false;
 
@@ -259,7 +261,7 @@ namespace FEBuilderGBA
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
                     //フリーエリアの再設定
-                    ReInitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress , useFreeArea, this.RebuildAddress, lines);
+                    ReInitFreeAreaDef(freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename, useFreeArea, this.RebuildAddress, lines);
                 }
 
                 if (i > nextDoEvents)
@@ -602,7 +604,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (bin.Length >= 8)
+                if (IsShareData(bin.Length))
                 {
                     //実はこのデータが既にROMにあったりしますか?
                     uint foundAddr = SearchShareArea(bin);
@@ -621,6 +623,27 @@ namespace FEBuilderGBA
             ResolvedPointer(U.toPointer(addr), U.toPointer(writeaddr), debugInfo);
         }
 
+        bool IsShareData(int length)
+        {
+            if (this.UseShareSameData == 1)
+            {//32以下なら共有しない
+                if (length <= 32)
+                {
+                    return false;
+                }
+                return true;
+            }
+            if (this.UseShareSameData == 2)
+            {//8以下なら共有しない
+                if (length <= 8)
+                {
+                    return false;
+                }
+                return true;
+            }
+            //共有しない
+            return false;
+        }
 
         enum PointerType
         {

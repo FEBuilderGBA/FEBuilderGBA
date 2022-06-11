@@ -421,7 +421,7 @@ namespace FEBuilderGBA
         public static void ConversationTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, textid, TextForm.MAX_SERIF_WIDTH);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
@@ -431,7 +431,7 @@ namespace FEBuilderGBA
         public static void DeathQuoteTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_DEATH_QUOTE_WIDTH);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, textid, TextForm.MAX_DEATH_QUOTE_WIDTH);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
@@ -448,7 +448,6 @@ namespace FEBuilderGBA
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage), tag));
             }
         }
-
         public static void CheckID(uint eqID, uint id, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (id != eqID)

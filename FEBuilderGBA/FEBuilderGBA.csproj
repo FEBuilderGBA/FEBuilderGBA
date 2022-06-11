@@ -1842,12 +1842,6 @@
     <Compile Include="ToolROMRebuildForm.Designer.cs">
       <DependentUpon>ToolROMRebuildForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolROMRebuildOpenSimpleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolROMRebuildOpenSimpleForm.Designer.cs">
-      <DependentUpon>ToolROMRebuildOpenSimpleForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExtraUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3025,9 +3019,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolROMRebuildForm.resx">
       <DependentUpon>ToolROMRebuildForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolROMRebuildOpenSimpleForm.resx">
-      <DependentUpon>ToolROMRebuildOpenSimpleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExtraUnitForm.resx">
       <DependentUpon>ExtraUnitForm.cs</DependentUpon>

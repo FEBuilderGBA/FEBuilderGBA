@@ -2858,11 +2858,11 @@ namespace FEBuilderGBA
             }
             if (arg1 == "CONVERSATION")
             {
-                return CheckConversationTextMessage(text,MAX_SERIF_WIDTH);
+                return CheckConversationTextMessage(text, textid, MAX_SERIF_WIDTH);
             }
             if (arg1 == "DEATHQUOTE")
             {
-                return CheckConversationTextMessage(text,MAX_DEATH_QUOTE_WIDTH);
+                return CheckConversationTextMessage(text, textid, MAX_DEATH_QUOTE_WIDTH);
             }
             return "";
         }
@@ -3191,11 +3191,20 @@ namespace FEBuilderGBA
 
 
         //会話テキストのエラーチェック
-        public static string CheckConversationTextMessage(string text, int widthLimit)
+        public static string CheckConversationTextMessage(string text, uint textid, int widthLimit)
         {
             if (text.Length <= 0)
             {
-                return "";
+                if (textid == 0 || textid >= 0xFFFF)
+                {
+                    return "";
+                }
+
+                if (widthLimit == TextForm.MAX_DEATH_QUOTE_WIDTH)
+                {
+                    return R._("警告:\r\n会話文なのに0バイトの文字列が指定されています。\r\n利用しない場合は、TextIDに0を割り当ててください。");
+                }
+                return R._("警告:\r\n会話文なのに0バイトの文字列が指定されています。");
             }
 
             text = ConvertEscapeTextRev(text);

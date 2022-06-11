@@ -280,6 +280,13 @@ namespace FEBuilderGBA
             MakeAllDisASMButton(self, save.FileNames[0], notifyUpdateMessage: false);
         }
 
+        static void MakeFreeData(List<Address> structlist)
+        {
+            Dictionary<uint, bool> knownDic = AsmMapFile.MakeKnownListToDic(structlist);
+            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0x00, 16); //フリー領域
+            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0xFF, 16); //フリー領域
+        }
+
         public static void MakeAllDisASMButton(Form self, string store_filename, bool notifyUpdateMessage)
         {
             uint addr = 0x100;
@@ -310,8 +317,7 @@ namespace FEBuilderGBA
                     , isUseOAMSP: true
                     );
                 UnpackBINByCode(structlist);
-                AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
-                AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
+                MakeFreeData(structlist);
                 asmMapFile.AppendMAP(structlist);
 
                 //コメントデータ
@@ -502,8 +508,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
-                AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
-                AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
+                MakeFreeData(structlist);
                 asmMapFile.AppendMAP(structlist);
 
                 //コメントデータ

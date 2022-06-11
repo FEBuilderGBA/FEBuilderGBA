@@ -20,13 +20,15 @@ namespace FEBuilderGBA
             U.AddCancelButton(this);
 
             UseFreeAreaComboBox.SelectedIndex = 0;
+            UseShareSameDataComboBox.SelectedIndex = 1;
             this.FreeAreaMinimumSize.Value = 2048;
             this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
+            AppendFreeAreaFilename.Placeholder = R._("無指定の場合は追加設定ファイルを利用しません。");
 
             X_RebuildAddress.AccessibleDescription = GetExplainRebuildAddress();
-            X_UseFreeArea.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeArea();
-            X_FreeAreaMinimumSize.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaMinimumSize();
-            X_FreeAreaStartAddress.AccessibleDescription = ToolROMRebuildOpenSimpleForm.GetExplainFreeAreaStartAddress();
+            X_UseFreeArea.AccessibleDescription = GetExplainFreeArea();
+            X_FreeAreaMinimumSize.AccessibleDescription = GetExplainFreeAreaMinimumSize();
+            X_FreeAreaStartAddress.AccessibleDescription = GetExplainFreeAreaStartAddress();
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)
@@ -69,15 +71,12 @@ namespace FEBuilderGBA
                 return;
             }
 
-            if (this.DefragCheckBox.Checked)
+            if (Program.ROM.Modified)
             {
-                if (Program.ROM.Modified)
+                DialogResult dr = R.ShowYesNo("デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n");
+                if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    DialogResult dr = R.ShowYesNo("デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n");
-                    if (dr == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        return;
-                    }
+                    return;
                 }
             }
 
@@ -113,32 +112,28 @@ namespace FEBuilderGBA
 
             Make(save.FileName, OrignalFilename.Text, (uint)this.RebuildAddress.Value);
 
-            if (this.DefragCheckBox.Checked)
+            //自動適応
+            string newROM = ReOpen(save.FileName, OrignalFilename.Text
+                , UseFreeAreaComboBox.SelectedIndex
+                , (uint)FreeAreaMinimumSize.Value
+                , (uint)FreeAreaStartAddress.Value
+                , AppendFreeAreaFilename.Text
+                , (uint)UseShareSameDataComboBox.SelectedIndex);
+            if (newROM == "")
             {
-                string newROM = ReOpen(save.FileName, OrignalFilename.Text
-                    , UseFreeAreaComboBox.SelectedIndex
-                    , (uint)FreeAreaMinimumSize.Value, (uint)FreeAreaStartAddress.Value);
-                if (newROM == "")
-                {
-                    return;
-                }
-
-                //エクスプローラで選択しよう
-                U.SelectFileByExplorer(newROM);
-                R.ShowOK("デフラグ処理が完了しました。\r\n動作を検証するためクリアテストをお勧めします。\r\n\r\nデフラグされた新しいROM:\r\n{0}\r\n\r\nOKボタンを押すと、この新しいROMを開きます。", newROM);
-
-                //メインフォームを開きなおさないといけない場合
-                MainFormUtil.ReOpenMainForm();
-
-                //保存したROMを開く.
-                Program.LoadROM(newROM, "");
+                return;
             }
-            else
-            {
-                //エクスプローラで選択しよう
-                U.SelectFileByExplorer(save.FileName);
-                R.ShowOK("このROMの変更点を、すべてファイルに書きだしました。\r\nこのファイルをFEBuilderGBAから開いてください。\r\nファイル:{0}\r\n\r\n", save.FileName);
-            }
+
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(newROM);
+            R.ShowOK("デフラグ処理が完了しました。\r\n動作を検証するためクリアテストをお勧めします。\r\n\r\nデフラグされた新しいROM:\r\n{0}\r\n\r\nOKボタンを押すと、この新しいROMを開きます。", newROM);
+
+            //メインフォームを開きなおさないといけない場合
+            MainFormUtil.ReOpenMainForm();
+
+            //保存したROMを開く.
+            Program.LoadROM(newROM, "");
+
             this.Close();
         }
         static void Make(string romRebuildFilename, string orignalFilename,uint rebuildAddress)
@@ -149,7 +144,7 @@ namespace FEBuilderGBA
                 ROMRebuild.Make(pleaseWait, orignalFilename, romRebuildFilename, rebuildAddress);
             }
         }
-        static string ReOpen(string romRebuildFilename, string orignalFilename, int useFreeArea , uint freeAreaMinimumSize,uint freeAreaStartAddress)
+        static string ReOpen(string romRebuildFilename, string orignalFilename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename, uint useShareSameData)
         {
             ROM rom = new ROM();
             string version;
@@ -164,7 +159,10 @@ namespace FEBuilderGBA
             {
                 r = ToolROMRebuildForm.ApplyROMRebuild(pleaseWait, rom, romRebuildFilename
                     , useFreeArea
-                    , freeAreaMinimumSize, freeAreaStartAddress);
+                    , freeAreaMinimumSize
+                    , freeAreaStartAddress
+                    , appendFreeAreaFilename
+                    , useShareSameData);
                 if (!r)
                 {
                     U.SelectFileByExplorer(ToolROMRebuildApply.GetLogFilename(romRebuildFilename));
@@ -196,16 +194,18 @@ namespace FEBuilderGBA
             uint addr = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
             uint freeAreaMinimumSize = 2048;
             uint freeAreaStartAddress = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
-            string stdout = ReOpen(romRebuildFilename, orignalFilename, 1, freeAreaMinimumSize, freeAreaStartAddress);
+            string appendFreeAreaFilename = "";
+            uint useShareSameData = 1;
+            string stdout = ReOpen(romRebuildFilename, orignalFilename, 1, freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename, useShareSameData);
             U.echo(stdout);
 
             return 0;
         }
 
-        public static bool ApplyROMRebuild(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress)
+        public static bool ApplyROMRebuild(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename, uint useShareSameData)
         {
             ToolROMRebuildApply romRebuildApply = new ToolROMRebuildApply();
-            return romRebuildApply.Apply(wait, vanilla, filename, useFreeArea ,freeAreaMinimumSize, freeAreaStartAddress);
+            return romRebuildApply.Apply(wait, vanilla, filename, useFreeArea ,freeAreaMinimumSize, freeAreaStartAddress, appendFreeAreaFilename, useShareSameData);
         }
 
         private void OrignalFilename_DoubleClick(object sender, EventArgs e)
@@ -284,6 +284,41 @@ namespace FEBuilderGBA
         public static string GetExplainRebuildAddress()
         {
             return R._("このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。", U.To0xHexString(Program.ROM.RomInfo.extends_address) );
+        }
+        public static string GetExplainFreeArea()
+        {
+            return R._("ROMの前方にあるフリー領域も利用するかどうかを定義します。\r\nフリー領域も利用した方がROMが小さくなりますが、SkillSystemsなどのEA(buildfile)を使っている場合は、問題が発生することもあります。");
+        }
+        public static string GetExplainFreeAreaMinimumSize()
+        {
+            return R._("この数だけnullが連続する場所があればフリー領域とみなします。\r\nCSASpellや画像データなどの役割が判明していて誤爆しやすい場所は最初から除外されています。\r\nただ、未知のデータで偶然にもnullがたくさん入っているデータ構造がある場合は、値を小さくすると誤爆する可能性が高まります。\r\n値を小さくすると、より小さなnull領域も再利用してROMが小さくなりますが、誤爆の可能性も増えます。");
+        }
+        public static string GetExplainFreeAreaStartAddress()
+        {
+            return R._("空き領域の探索を開始するアドレスです。\r\nディフォルトは、compress_image_borderline_address です。\r\nこれは、プログラムコードとデータ領域を分離できるアドレスです。\r\n基本的に変更しないでください。");
+        }
+
+        private void AppendFreeAreaFilenameSelectButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("逆アセンブルデータからFREEAREAとマークされている追加データをいれてください。");
+            string filter = R._("Text|*.txt|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+
+            Program.LastSelectedFilename.Save(this, "", open);
+            AppendFreeAreaFilename.Text = open.FileNames[0];
         }
     }
 }

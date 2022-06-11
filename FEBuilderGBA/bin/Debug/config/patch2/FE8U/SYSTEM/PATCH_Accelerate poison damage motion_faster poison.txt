@@ -1,0 +1,33 @@
+NAME=毒ダメージモーションを高速化する
+NAME.en=Accelerate poison damage motion(faster poison)
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|2倍速|ON2
+
+
+// from this proc 9A508C 
+DETERMINATION_ADDRESS=0x9A50AE
+
+// default 50 Frames to wait during poison anim before hp drains
+OFF:0x9A50AE=0x32
+ON2:0x9A50AE=0x1E
+
+// default 30 frames before hp bar disappears 
+OFF:0x9A50BE=0x1E
+ON2:0x9A50BE=0x0F
+
+// default 44 frames to wait before going to the next unit 
+OFF:0x9A50CE=0x2C
+ON2:0x9A50CE=0x5
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/49
+INFO=毒でダメージを受ける時のモーションを高速化します。
+INFO.en=This patch speeds up the motion of taking damage from poison.
+
+COMBO.en=Default|OFF|Double speed|ON2
+COMBO.zh=Default|OFF|双倍速度。|ON2
+NAME.zh=加快毒药伤害动作。
+INFO.zh=受到毒药伤害时会加快运动速度。

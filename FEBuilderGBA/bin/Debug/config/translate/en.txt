@@ -11485,6 +11485,12 @@ Warning: Text is too long in the side.\r\nEstimated number of pixels: ({0},{1})\
 :警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
 Warning: Too many lines of text.\r\nEstimated pixels ({0},{1})\r\n{2}
 
+:警告:\r\n会話文なのに0バイトの文字列が指定されています。\r\n利用しない場合は、TextIDに0を割り当ててください。
+warning:.\r\nA 0-byte character string is specified even though it is a conversational sentence.\r\nIf you do not use it, assign 0 to TextID.
+
+:警告:\r\n会話文なのに0バイトの文字列が指定されています。
+warning:.\r\nA 0-byte character string is specified even though it is a conversational sentence.
+
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
 Warning:\r\nAlthough it is text for conversations, there are no symbols such as @0003.
 
@@ -12544,6 +12550,9 @@ File ({1}) is missing.\r\nNumber of rows: {0}\r\n
 :適応した結果にエラーがあるようです。\r\nログを確認してください。\r\nログ:{0}
 There seems to be an error in the adaptation.\r\nPlease check the log.\r\nLog: {0}
 
+:無指定の場合は追加設定ファイルを利用しません。
+If not specified, the additional setting file will not be used.
+
 :デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n
 When defragmentation is executed, unsaved data is lost.\r\nPlease save your changes and try again.\r\n
 
@@ -12552,9 +12561,6 @@ Please name the new ROMRebuild file.
 
 :デフラグ処理が完了しました。\r\n動作を検証するためクリアテストをお勧めします。\r\n\r\nデフラグされた新しいROM:\r\n{0}\r\n\r\nOKボタンを押すと、この新しいROMを開きます。
 Defragmentation processing is completed.\r\nPlaytesting is recommended to verify the ROM's operation.\r\n\r\nDefragmented new ROM:\r\n{0}\r\n\r\nPress the OK button to open this new ROM.
-
-:このROMの変更点を、すべてファイルに書きだしました。\r\nこのファイルをFEBuilderGBAから開いてください。\r\nファイル:{0}\r\n\r\n
-Wrote all the changes in this ROM to a file.\r\nPlease open this file using FEBuilderGBA.\r\nFile: {0}\r\n\r\n
 
 :このROMは拡張領域を利用していないので、リビルドできません。
 Since this ROM does not use the extended area, it can not be rebuilt.
@@ -12574,8 +12580,35 @@ It is dangerous to rebuild the address ({1}) below the extended area ({0}).\r\nA
 :このアドレス以降のデータを再構築します。\r\nディフォルトは{0}です。\r\n通常は変更しないでください。\r\nもしリビルドに失敗する用であれば、この値を大きくしてください。\r\nリビルドに失敗する主な理由は、独自に追加したASMです。\r\nリビルド後にそのASMを再インストールすると動くことがあります。\r\nもし、それができない場合は、この値を大きくして、そのASMがインストールされている領域まではリビルドしないことで、動作させることもできます。
 Rebuild the data after this address.\r\nThe default is {0}.\r\nNormally do not change.\r\nIf it is for rebuilding to fail, increase this value.\r\nThe main reason for the rebuild to fail is the ASM you added yourself.\r\nIt may work if you reinstall the ASM after rebuilding.\r\nIf that is not possible, you can increase this value and make it work by not rebuilding to the area where the ASM is installed.
 
+:ROMの前方にあるフリー領域も利用するかどうかを定義します。\r\nフリー領域も利用した方がROMが小さくなりますが、SkillSystemsなどのEA(buildfile)を使っている場合は、問題が発生することもあります。
+Defines whether the free area in front of the ROM is also used.\r\nThe ROM will be smaller if you also use the free area, but if you are using an EA (build file) such as Skill Systems, problems may occur.
+
+:この数だけnullが連続する場所があればフリー領域とみなします。\r\nCSASpellや画像データなどの役割が判明していて誤爆しやすい場所は最初から除外されています。\r\nただ、未知のデータで偶然にもnullがたくさん入っているデータ構造がある場合は、値を小さくすると誤爆する可能性が高まります。\r\n値を小さくすると、より小さなnull領域も再利用してROMが小さくなりますが、誤爆の可能性も増えます。
+If there are places where nulls continue for this number, it is considered as a free area.\r\nPlaces where roles such as CSASpell and image data are known and are prone to accidental explosion are excluded from the beginning.\r\nHowever, if there is a data structure that happens to contain a lot of nulls in unknown data, reducing the value increases the possibility of accidental explosion.\r\nDecreasing the value will also reuse the smaller null area and make the ROM smaller, but it also increases the chance of accidental explosion.
+
+:空き領域の探索を開始するアドレスです。\r\nディフォルトは、compress_image_borderline_address です。\r\nこれは、プログラムコードとデータ領域を分離できるアドレスです。\r\n基本的に変更しないでください。
+The address to start searching for free space.\r\nThe default is compress_image_borderline_address.\r\nThis is an address that can separate the program code from the data area.\r\nBasically do not change.
+
+:逆アセンブルデータからFREEAREAとマークされている追加データをいれてください。
+Enter additional data marked FREE AREA from the disassembled data.
+
 :変更点をファイルに書きだす
 Write Changes to a File
+
+:0=同じデータを共有しない
+0=Do not share the same data.
+
+:1=32バイト以下の小さいデータは共有はしない
+1=Do not share small data of 32 bytes or less.
+
+:2=8バイト以下の小さいデータは共有はしない
+2=Do not share small data of 8 bytes or less.
+
+:ポインタの共有
+Pointer sharing.
+
+:追加設定ファイル
+Additional configuration file.
 
 :探索開始アドレス
 Search start address.
@@ -12601,12 +12634,6 @@ Use of Free Space
 :再構築アドレス
 Rebuild Address
 
-:自動適応
-Automatic Adaptation
-
-:書出しが終わったらインポートを行う(デフラグを実行する)
-After exporting, import later (Run Defragmentation)
-
 :変更されている設定をファイルに書きだします。\r\n\r\nUPSパッチと比較して以下のメリットがあります。\r\n無改造ROMにこのデータをインポートすることで、断片化した無駄な領域を節約できます。\r\n\r\n逆に以下のデメリットがあります。\r\nFEBuilderGBAが知らないデータは、ダンプされません。\r\nたとえばバイナリエディタで変更した内容などは保存されません。
 Write the changed settings to a file.\r\n\r\nCompared to UPS patching, it has the following advantages.\r\nBy importing this data to an unmodified ROM, you can save space.\r\n\r\nConversely, there are the following disadvantages.\r\nData not known by FEBuilderGBA will not be dumped.\r\nFor example, contents changed through hex or external means are not accounted for.
 
@@ -12627,24 +12654,6 @@ CRC32 hash of target non-remodeled ROM
 
 :再構築を開始するアドレス。このアドレス以降を再構築します。
 Starting Address - the address and onward will be rebuilt.
-
-:ROMの前方にあるフリー領域も利用するかどうかを定義します。\r\nフリー領域も利用した方がROMが小さくなりますが、SkillSystemsなどのEA(buildfile)を使っている場合は、問題が発生することもあります。
-Defines whether the free area in front of the ROM is also used.\r\nThe ROM will be smaller if you also use the free area, but if you are using an EA (build file) such as Skill Systems, problems may occur.
-
-:この数だけnullが連続する場所があればフリー領域とみなします。\r\nCSASpellや画像データなどの役割が判明していて誤爆しやすい場所は最初から除外されています。\r\nただ、未知のデータで偶然にもnullがたくさん入っているデータ構造がある場合は、値を小さくすると誤爆する可能性が高まります。\r\n値を小さくすると、より小さなnull領域も再利用してROMが小さくなりますが、誤爆の可能性も増えます。
-If there are places where nulls continue for this number, it is considered as a free area.\r\nPlaces where roles such as CSASpell and image data are known and are prone to accidental explosion are excluded from the beginning.\r\nHowever, if there is a data structure that happens to contain a lot of nulls in unknown data, reducing the value increases the possibility of accidental explosion.\r\nDecreasing the value will also reuse the smaller null area and make the ROM smaller, but it also increases the chance of accidental explosion.
-
-:空き領域の探索を開始するアドレスです。\r\nディフォルトは、compress_image_borderline_address です。\r\nこれは、プログラムコードとデータ領域を分離できるアドレスです。\r\n基本的に変更しないでください。
-The address to start searching for free space.\r\nThe default is compress_image_borderline_address.\r\nThis is an address that can separate the program code from the data area.\r\nBasically do not change.
-
-:ROMRebuildを開く
-Open ROMRebuild
-
-:ROMRebuildを適応したROMを、ファイル名.gbaとして保存する
-Name the ROM to which ROMRebuild is applied. Save it as .GBA.
-
-:ROMRebuildを開くために無改造のROMを選択してください。\r\n適応後には、動作を確認するプレイテストを行ってください。
-Please select an unmodified ROM to open ROMRebuild.\r\nAfter completion, please playtest to confirm the ROM's operation.
 
 :これよりテスト実行を開始します。
 This will start playtesting.
@@ -12768,6 +12777,9 @@ Unknown Character String
 
 :Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n以降は、Google翻訳を無効にして処理を実装します。\r\n\r\n{0}
 Google Translate returned an error.\r\nToo many translation requests sent.\r\nProcessing halted.\r\n\r\n{0}
+
+:無指定の場合は定型文のみ翻訳します。
+If not specified, only fixed phrases will be translated.
 
 :フォントを抽出するROMを選択してください
 Please select the ROM to extract fonts from.
