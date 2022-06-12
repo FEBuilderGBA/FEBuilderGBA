@@ -424,20 +424,88 @@ namespace FEBuilderGBA
             string errorMessage = TextForm.CheckConversationTextMessage(text, textid, TextForm.MAX_SERIF_WIDTH);
             if (errorMessage != "")
             {
+                if (IsVanillaGlitchForConversationTextMessage(text, textid, cond))
+                {
+                    return;
+                }
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage) , tag));
             }
         }
+        static bool IsVanillaGlitchForConversationTextMessage(string text, uint textid, Type cond)
+        {
+            if (Program.ROM.RomInfo.version == 7)
+            {
+                //ルイーズの支援A会話は例外扱い
+                if (Program.ROM.RomInfo.is_multibyte)
+                {//FE7J
+                    if (text == "不要")   ///No Translate
+                    {
+                        return true;
+                    }
+                }
+                else
+                {//FE7U
+                    if (cond == Type.SUPPORT_TALK)
+                    {
+                        if (text == "")
+                        {
+                            if (textid == 0xBE
+                                || textid == 0x10C
+                                || textid == 0x112
+                                || textid == 0x115
+                                || textid == 0x118
+                                || textid == 0x11B
+                                || textid == 0x151
+                                || textid == 0x14E
+                                || textid == 0x157
+                            )
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
         public static void DeathQuoteTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
             string errorMessage = TextForm.CheckConversationTextMessage(text, textid, TextForm.MAX_DEATH_QUOTE_WIDTH);
             if (errorMessage != "")
             {
+                if (IsVanillaGlitchForDeathQuoteTextMessage(textid))
+                {
+                    return;
+                }
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage), tag));
             }
         }
+        static bool IsVanillaGlitchForDeathQuoteTextMessage(uint textid)
+        {
+            if (Program.ROM.RomInfo.version == 7)
+            {
+                if (Program.ROM.RomInfo.is_multibyte)
+                {//FE7
+                    if (textid == 0xEED)
+                    {//FE7の場合、火竜のセリフに空白テキストが割り当てられているので除外します
+                        return true;
+                    }
+                }
+                else
+                {//FE7
+                    if (textid == 0xF61)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public static void CheckText(uint textid, string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
