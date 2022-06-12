@@ -468,11 +468,39 @@ namespace FEBuilderGBA
 
             return true;
         }
+        //LDRが書いてあるADDRが正しいかどうか検証する
+        bool CheckTrueLDRAddress(uint addr)
+        {
+            if (this.PointerMark.ContainsKey(addr))
+            {//既に知っている.
+                return false;
+            }
+
+            for (int i = 0; i < this.StructList.Count; i++)
+            {
+                Address a = this.StructList[i];
+                if (addr > a.Addr
+                    && addr < a.Addr + a.Length)
+                {
+                    if (Address.IsBINType(a.DataType))
+                    {//BINの中にLDRがあるわけがない
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
         void AppendLDR(List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             for (int i = 0; i < ldrmap.Count; i++)
             {
                 DisassemblerTrumb.LDRPointer ldr = ldrmap[i];
+
+                if (!CheckTrueLDRAddress(ldr.ldr_address))
+                {
+                    continue;
+                }
 
                 uint addr = U.toOffset(ldr.ldr_data);
 

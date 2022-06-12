@@ -3412,11 +3412,9 @@ namespace FEBuilderGBA
             //圧縮して書き込みます.
             byte[] z;
             z = LZ77.compress(rightToLeftOAM.ToArray());
-            uint addr = InputFormRef.AppendBinaryData(z, undodata);
             ra.WriteAndWritePointer(battleanime_baseaddress + 20, z, undodata);
 
             z = LZ77.compress(leftToRightOAM.ToArray());
-            addr = InputFormRef.AppendBinaryData(z, undodata);
             ra.WriteAndWritePointer(battleanime_baseaddress + 24, z, undodata);
 
             //パレットは4つ 自軍、敵軍、友軍、グレーを作り、lz77圧縮する.
@@ -3428,7 +3426,6 @@ namespace FEBuilderGBA
             {//パレットが指定されていない場合は、自分で作る.
                 z = MakeBattle4Palette_Z("", palette, reColorMap);
             }
-            addr = InputFormRef.AppendBinaryData(z, undodata);
             ra.WriteAndWritePointer(battleanime_baseaddress + 28, z, undodata);
 
             //画像シートの書き込み.
@@ -3446,7 +3443,6 @@ namespace FEBuilderGBA
             }
 
             z = LZ77.compress(z);
-            addr = InputFormRef.AppendBinaryData(z, undodata);
             ra.WriteAndWritePointer(battleanime_baseaddress + 16, z, undodata);
 
             //セクションデータ(固定長だがそのまま使うと テーブル拡張時に失敗する.)
