@@ -209,5 +209,34 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
+        private void MoveButton_Click(object sender, EventArgs e)
+        {
+            uint moveAddr = U.toOffset((uint)MoveFromAddress.Value);
+            uint toAddr = U.toOffset((uint)MoveToAddress.Value);
+            if (!U.isSafetyOffset(moveAddr))
+            {
+                R.ShowStopError("FROMに指定されたアドレスがROMの範囲外です");
+                return ;
+            }
+            if (!U.isSafetyOffset(toAddr))
+            {
+                R.ShowStopError("TOに指定されたアドレスがROMの範囲外です");
+                return ;
+            }
+
+            uint length = (uint)MoveLength.Value;
+            if (length == 0)
+            {//自動推測
+                return;
+            }
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            uint r = InputFormRef.MoveBinaryData(this, moveAddr, toAddr, length, undodata);
+            if (r == U.NOT_FOUND)
+            {
+                return;
+            }
+            Program.Undo.Push(undodata);
+        }
+
     }
 }

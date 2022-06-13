@@ -148,6 +148,7 @@
             this.SIMPLE_OVERRAIDE_JPFONT.TabIndex = 102;
             this.SIMPLE_OVERRAIDE_JPFONT.Text = "日本語フォントの上書き";
             this.SIMPLE_OVERRAIDE_JPFONT.UseVisualStyleBackColor = true;
+            this.SIMPLE_OVERRAIDE_JPFONT.Visible = false;
             // 
             // SimpleTranslateToTranslateDataFilenameButton
             // 

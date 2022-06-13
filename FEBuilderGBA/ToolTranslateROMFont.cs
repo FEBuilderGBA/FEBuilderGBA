@@ -182,6 +182,8 @@ namespace FEBuilderGBA
                 n++;
             }
         }
+
+
         void FontImporterOne(string one, bool isItemFont, bool isSquareFont)
         {
             uint moji = U.ConvertMojiCharToUnit(one, this.MyselfPriorityCode);

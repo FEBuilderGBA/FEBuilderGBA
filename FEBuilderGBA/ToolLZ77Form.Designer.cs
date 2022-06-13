@@ -58,6 +58,14 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.MoveToAddress = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.MoveFromAddress = new System.Windows.Forms.NumericUpDown();
+            this.MoveButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.MoveLength = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
@@ -65,6 +73,10 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveToAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveFromAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).BeginInit();
             this.SuspendLayout();
             // 
             // DeCompressDESTFilename
@@ -312,6 +324,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -421,6 +434,108 @@
             this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
             this.textBoxEx2.TabIndex = 105;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.MoveLength);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.MoveToAddress);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.MoveFromAddress);
+            this.tabPage4.Controls.Add(this.MoveButton);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(685, 302);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "移動";
+            // 
+            // MoveToAddress
+            // 
+            this.MoveToAddress.Hexadecimal = true;
+            this.MoveToAddress.Location = new System.Drawing.Point(174, 108);
+            this.MoveToAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.MoveToAddress.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.MoveToAddress.Name = "MoveToAddress";
+            this.MoveToAddress.Size = new System.Drawing.Size(144, 25);
+            this.MoveToAddress.TabIndex = 101;
+            // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(7, 19);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 31);
+            this.label7.TabIndex = 97;
+            this.label7.Text = "FROM";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MoveFromAddress
+            // 
+            this.MoveFromAddress.Hexadecimal = true;
+            this.MoveFromAddress.Location = new System.Drawing.Point(174, 23);
+            this.MoveFromAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.MoveFromAddress.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.MoveFromAddress.Name = "MoveFromAddress";
+            this.MoveFromAddress.Size = new System.Drawing.Size(144, 25);
+            this.MoveFromAddress.TabIndex = 100;
+            // 
+            // MoveButton
+            // 
+            this.MoveButton.Location = new System.Drawing.Point(172, 140);
+            this.MoveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MoveButton.Name = "MoveButton";
+            this.MoveButton.Size = new System.Drawing.Size(462, 31);
+            this.MoveButton.TabIndex = 98;
+            this.MoveButton.Text = "この領域を移動する";
+            this.MoveButton.UseVisualStyleBackColor = true;
+            this.MoveButton.Click += new System.EventHandler(this.MoveButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(7, 102);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(157, 31);
+            this.label8.TabIndex = 99;
+            this.label8.Text = "TO";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(7, 49);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(157, 31);
+            this.label10.TabIndex = 102;
+            this.label10.Text = "LENGTH";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MoveLength
+            // 
+            this.MoveLength.Location = new System.Drawing.Point(174, 53);
+            this.MoveLength.Margin = new System.Windows.Forms.Padding(4);
+            this.MoveLength.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.MoveLength.Name = "MoveLength";
+            this.MoveLength.Size = new System.Drawing.Size(144, 25);
+            this.MoveLength.TabIndex = 103;
+            // 
             // ToolLZ77Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -442,6 +557,10 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MoveToAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveFromAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,6 +597,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private TextBoxEx textBoxEx1;
         private TextBoxEx textBoxEx2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.NumericUpDown MoveToAddress;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown MoveFromAddress;
+        private System.Windows.Forms.Button MoveButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown MoveLength;
+        private System.Windows.Forms.Label label10;
 
     }
 }

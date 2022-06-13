@@ -10329,6 +10329,61 @@ namespace FEBuilderGBA
             return newFreeSapceAddr;
         }
 
+        //連続するデータの書き込み
+        public static uint MoveBinaryData(Form self
+            , uint addr
+            , uint toAddr
+            , uint original_size
+            , Undo.UndoData undodata
+        )
+        {
+            uint write_addr = U.toOffset(addr);
+            if (original_size >= 0x00200000)
+            {//長すぎる.
+                R.ShowStopError("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません", U.To0xHexString(addr), original_size);
+                return U.NOT_FOUND;
+            }
+            else if (addr + original_size >= Program.ROM.Data.Length)
+            {//アドレスが危険
+                R.ShowStopError("危険なアドレス({0})が指定されました。\r\n", U.To0xHexString(addr + original_size));
+                return U.NOT_FOUND;
+            }
+
+            byte[] dataByte = Program.ROM.getBinaryData(addr, original_size);
+            uint searchFreespaceSize = U.Padding4((uint)dataByte.Length);
+
+            //元データの保存
+            undodata.list.Add(new Undo.UndoPostion(write_addr, original_size));
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
+            {
+                //LDRとEVEVNT
+                //影響を受けるポインタサーチ
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(write_addr);
+
+                //影響を受けるポインタの書き換え.
+                for (int i = 0; i < movepointerlist.Count; i++)
+                {
+                    InputFormRef.DoEvents(null, "PointerCount:" + i);
+
+                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(toAddr), undodata);
+                }
+            }
+
+            //コメントやLintなどの付属データの書き換え
+            MoveToFreeSapceForm.RepointEtcData(write_addr, original_size, toAddr);
+
+            //元データをクリアします.
+            byte[] fill = U.FillArray(original_size, 0x00);
+            Program.ROM.write_range(write_addr, fill);
+
+            //データの書き込み
+            Program.ROM.write_range(toAddr, dataByte);
+            //拡張されたことを通知する
+            InputFormRef.NotifyChangePointer(addr, toAddr);
+
+            return toAddr;
+        }
+
         //拡張する必要があるか.
         public bool IsNeedExpandsArea(uint newdatacount)
         {
