@@ -1,9 +1,6 @@
 NAME=100%以上の敵の成長を許可する
 NAME.en=Allow enemy growths over 100%
 
-TYPE=ADDR
-TAG=#ENGINE
-
 TYPE=SWITCH
 TAG=#ENGINE
 

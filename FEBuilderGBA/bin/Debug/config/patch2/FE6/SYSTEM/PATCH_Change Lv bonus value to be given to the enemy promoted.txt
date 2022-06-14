@@ -1,0 +1,17 @@
+NAME=敵の上級職に付与するLvボーナス値
+NAME.en=Change Lv bonus value to be given to the enemy's promoted
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+AUTHOR=7743
+
+ADDRESS=0x17944
+HEX=false
+
+INFO=敵がクラス成長するとき、上級職は、Lvボーナスがもらえます。\r\nFE6では、Lv+19です。
+
+INFO.en=As enemies grow in class(AutoLevel), promoted positions receive an Lv bonus.\r\nThe default value is Lv + 9.
+NAME.zh=难度等级Lv奖励值在正常时间给予敌人的高级职业。
+INFO.zh=随着敌人在课堂上成长，高级职位获得Lv奖金。\r\nThe default value is Lv + 9.
