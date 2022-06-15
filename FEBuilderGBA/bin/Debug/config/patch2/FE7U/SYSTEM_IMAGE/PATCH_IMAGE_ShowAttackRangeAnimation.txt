@@ -1,0 +1,15 @@
+NAME=IMAGE_ShowAttackRangeAnimation
+
+TYPE=IMAGE
+
+WIDTH=16
+HEIGHT=96
+
+IMAGE_POINTER=0x00B93574//0x083FDA1C
+PALETTE_POINTER=0x0001D25C//0x083FDD1C
+
+KEEPPALETTE=1
+
+INFO=攻撃レンジ表示アニメーション。無圧縮画像
+INFO.en=Attack range display animation.Uncompressed image.
+INFO.zh=攻击范围显示动画。未压缩的图像。

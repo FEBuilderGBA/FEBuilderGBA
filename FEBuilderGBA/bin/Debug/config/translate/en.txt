@@ -12289,6 +12289,12 @@ All settings are complete.
 :{0}から{1}までの領域({2} bytes)をゼロクリアしてもよろしいですか？
 Are you sure you want to clear the area ({2} bytes) from {0} to {1} to zero? 
 
+:FROMに指定されたアドレスがROMの範囲外です
+The address specified in FROM is out of ROM range.
+
+:TOに指定されたアドレスがROMの範囲外です
+The address specified in TO is out of ROM range.
+
 :解凍する
 Decompress
 
@@ -12312,6 +12318,9 @@ Erase
 
 :ROMの指定範囲を0クリアします。\r\n危険なので、通常は利用しないでください。
 Clears the specified range of ROM to 0.\r\nDo not use it normally as it is dangerous.
+
+:この領域を移動する
+Move this area.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

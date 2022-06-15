@@ -9595,18 +9595,6 @@ r3=X tile position of menu of right	{U}
 08753C4C	&PALETTE	Something's palette	508	{J}
 086BAB54	&PALETTE	Something's palette	509	{J}
 086B1E90	&PALETTE	Something's palette	510	{J}
-08A02C34	:08A02CB3	Uncompressed image 0x80 bytes	1	{U}
-08A02CB4	:08A02D33	Uncompressed image 0x80 bytes	2	{U}
-08A02D34	:08A02DB3	Uncompressed image 0x80 bytes	3	{U}
-08A02DB4	:08A02E33	Uncompressed image 0x80 bytes	4	{U}
-08A02E34	:08A02EB3	Uncompressed image 0x80 bytes	5	{U}
-08A02EB4	:08A02F34	Uncompressed image 0x80 bytes	6	{U}
-08A74CEC	:08A74D6B	Uncompressed image 0x80 bytes	1	{J}
-08A74D6C	:08A74DEB	Uncompressed image 0x80 bytes	2	{J}
-08A74DEC	:08A74E6B	Uncompressed image 0x80 bytes	3	{J}
-08A74E6C	:08A74EEB	Uncompressed image 0x80 bytes	4	{J}
-08A74EEC	:08A74F6B	Uncompressed image 0x80 bytes	5	{J}
-08A74F6C	:08A74FEB	Uncompressed image 0x80 bytes	6	{J}
 0803830C	Battle record display	{J}
 080381E0	Battle record display	{U}
 080BD02C	Draw capture assessment	ending	{J}
