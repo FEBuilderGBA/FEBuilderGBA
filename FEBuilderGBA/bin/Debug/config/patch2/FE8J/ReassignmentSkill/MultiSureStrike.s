@@ -22,8 +22,8 @@ ldr r3, =0x0802b1d8|1	@{J}
 bx  r3
 
 TrueExit:
-@ldr r3, =0x0802B19E|1	@{J} アイテム制限あり
-ldr r3, =0x0802B1B0|1	@{J} アイテム制限なし
+ldr r3, =0x0802B19E|1	@{J} アイテム制限あり
+@ldr r3, =0x0802B1B0|1	@{J} アイテム制限なし
 bx  r3
 
 .align
