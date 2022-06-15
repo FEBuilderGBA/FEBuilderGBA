@@ -4496,7 +4496,7 @@ Are you sure you want to overwrite with clipboard data?
 Are you sure you want to replace {0} with {1}?
 
 :{0}を{1}の位置に移動してもよろしいですか？
-Are you sure you want to move {0} to the position of {1}? 
+Are you sure you want to move {0} to the position of {1}?
 
 :アドレス({0}+{1})は、終端(2)を超えるので表示できません。
 The address ({0} + {1}) exceeds the termination (2) and can't be displayed.
@@ -12294,6 +12294,9 @@ The address specified in FROM is out of ROM range.
 
 :TOに指定されたアドレスがROMの範囲外です
 The address specified in TO is out of ROM range.
+
+:{0}から{1}までの領域({2} bytes)を{3}に移動してもよろしいですか？
+Are you sure you want to move the area from {0} to {1} ({2} bytes) to {3}? 
 
 :解凍する
 Decompress

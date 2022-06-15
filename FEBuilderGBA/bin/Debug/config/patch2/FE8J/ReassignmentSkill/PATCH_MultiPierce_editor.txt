@@ -1,0 +1,29 @@
+NAME=複数の「貫通」スキルパッチ(Editor)
+NAME.en=Multi-Class Pierce Skill(Editor)
+NAME.zh=Multi-Class Pierce Skill(Editor)
+
+INFO=複数クラスでの「貫通」スキルを実装します
+INFO.en=Patches the ROM to allow the Wyvern Kn's "Pierce" skill to be assigned to multiple classes.\r\n
+INFO.zh=Patches the ROM to allow the Wyvern Kn's "Pierce" skill to be assigned to multiple classes.\r\n
+TYPE=STRUCT
+TAG=#ENGINE
+
+AUTHOR=7743
+
+//既に適応されたかどうか
+IF:0x2B218=0x00 0x4B
+//データへのポインタ
+POINTER=$FGREP4END MultiPierce.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=Class
+

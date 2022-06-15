@@ -226,9 +226,15 @@ namespace FEBuilderGBA
 
             uint length = (uint)MoveLength.Value;
             if (length == 0)
-            {//自動推測
+            {//自動推測できたらいいなあ
                 return;
             }
+            DialogResult dr = R.ShowNoYes("{0}から{1}までの領域({2} bytes)を{3}に移動してもよろしいですか？", U.To0xHexString(moveAddr), U.To0xHexString(moveAddr + length), length, U.To0xHexString(toAddr));
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
             uint r = InputFormRef.MoveBinaryData(this, moveAddr, toAddr, length, undodata);
             if (r == U.NOT_FOUND)

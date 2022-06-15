@@ -10,6 +10,8 @@ INFO.zh=Units checked with the IsSethLArachelMyrrhInnes function.\r\nDisplays un
 TYPE=STRUCT
 TAG=#ENGINE
 
+IF:0x86B2A=0x01 0x49
+
 //データへのポインタ
 POINTER=0x86B30 //08A5F798へのポインタ
 

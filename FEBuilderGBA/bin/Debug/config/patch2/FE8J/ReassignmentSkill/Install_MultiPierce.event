@@ -1,0 +1,16 @@
+#include "Extensions/Hack Installation.txt" 
+PUSH
+ORG 0x2B218	//{J}
+jumpToHack(MultiPierce)
+POP
+
+ALIGN 4
+MultiPierce:
+#incbin "MultiPierce.dmp"
+POIN MultiPierceTable
+
+ALIGN 4
+MultiPierceTable:
+BYTE 0x23 0x24 0x24 0x24 0x24 0x24 0x24 0x24 0x24 0x24 0x24 0x00
+
+ALIGN 4

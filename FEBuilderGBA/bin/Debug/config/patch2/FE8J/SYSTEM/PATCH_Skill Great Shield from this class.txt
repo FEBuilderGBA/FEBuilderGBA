@@ -15,6 +15,7 @@ AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttps://dw.ngmansi
 
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
-CONFLICT_MESSAGE=FE8N Skill Extends
+CONFLICT_IF:0x2B2B4=0x00 0x4B
+CONFLICT_MESSAGE=FE8N Skill Extends / MultiGreatShield
 
 INFO.en=Sets which class Great Shield is attached to.\r\n

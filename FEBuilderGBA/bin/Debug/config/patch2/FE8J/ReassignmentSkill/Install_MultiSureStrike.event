@@ -1,0 +1,16 @@
+#include "Extensions/Hack Installation.txt" 
+PUSH
+ORG 0x2B194	//{J}
+jumpToHack(MultiSureStrike)
+POP
+
+ALIGN 4
+MultiSureStrike:
+#incbin "MultiSureStrike.dmp"
+POIN MultiSureStrikeTable
+
+ALIGN 4
+MultiSureStrikeTable:
+BYTE 0x1B 0x1C 0x1C 0x1C 0x1C 0x1C 0x1C 0x1C 0x1C 0x1C 0x1C 0x00
+
+ALIGN 4

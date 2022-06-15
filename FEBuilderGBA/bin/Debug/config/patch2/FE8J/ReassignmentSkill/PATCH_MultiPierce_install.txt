@@ -1,0 +1,19 @@
+NAME=複数の「貫通」スキルパッチ(Install)
+NAME.en=Multi-Class Pierce Skill(Install)
+NAME.zh=Multi-Class Pierce Skill(Install)
+
+INFO=複数クラスでの「貫通」スキルを実装します
+INFO.en=Patches the ROM to allow the Wyvern Kn's "Pierce" skill to be assigned to multiple classes.\r\n
+INFO.zh=Patches the ROM to allow the Wyvern Kn's "Pierce" skill to be assigned to multiple classes.\r\n
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2B218=0x00 0x4B
+EDIT_PATCH=PATCH_MultiPierce_editor.txt
+EA=Install_MultiPierce.event
+
+AUTHOR=7743
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

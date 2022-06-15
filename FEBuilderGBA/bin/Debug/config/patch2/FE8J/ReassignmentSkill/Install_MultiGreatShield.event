@@ -1,0 +1,16 @@
+#include "Extensions/Hack Installation.txt" 
+PUSH
+ORG 0x2B2B4	//{J}
+jumpToHack(MultiGreatShield)
+POP
+
+ALIGN 4
+MultiGreatShield:
+#incbin "MultiGreatShield.dmp"
+POIN MultiGreatShieldTable
+
+ALIGN 4
+MultiGreatShieldTable:
+BYTE 0x0B 0x0C 0x0C 0x0C 0x0C 0x0C 0x0C 0x0C 0x0C 0x0C 0x0C 0x00
+
+ALIGN 4
