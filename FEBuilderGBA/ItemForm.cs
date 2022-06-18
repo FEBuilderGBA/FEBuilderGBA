@@ -565,9 +565,13 @@ namespace FEBuilderGBA
             uint effectID = Program.ROM.u16(ar.addr + 4);
             if (effectID == 0xFFFF && mapEffectPointer == 0)
             {
-                errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, ar.addr
-                    , R._("間接攻撃できる武器なのに、間接エフェクトが0xFFFFに設定されています。\r\nこの設定では、戦闘アニメで敵のHPが減るモーションが表示されません。"), id));
-                return;
+                uint RangeEffectID = Program.ROM.u16(ar.addr + 6); //SpellLoader
+                if (RangeEffectID == 0x0 || RangeEffectID == 0xFFFF)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, ar.addr
+                        , R._("間接攻撃できる武器なのに、間接エフェクトが0xFFFFに設定されています。\r\nこの設定では、戦闘アニメで敵のHPが減るモーションが表示されません。"), id));
+                    return;
+                }
             }
         }
 
