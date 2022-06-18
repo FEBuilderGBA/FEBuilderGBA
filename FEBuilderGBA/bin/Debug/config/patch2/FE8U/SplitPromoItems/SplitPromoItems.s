@@ -30,16 +30,16 @@ push {r4-r7}
 @cmp r0,#0 
 @bne CC616
 
-@set class to promote to
-@mov r0,r1
-@add r0,#0x35
-@ldrb r0,[r0]
-@mov r1,r2
-@add r1,#0x3B
-@strb r0,[r1]
-
 mov r6,r1
 mov r7,r2
+
+@set default class to promote to
+mov r0,r1
+add r0,#0x35
+ldrb r0,[r0]
+mov r1,r2
+add r1,#0x3B
+strb r0,[r1]
 
 @action struct has the slot # our promo item is in
 ldr r0,=0x203A958 @action struct

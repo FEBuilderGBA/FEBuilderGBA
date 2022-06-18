@@ -35,10 +35,10 @@ ldr r4,=0x0203A56C	@戦闘アニメの左側	{U}
 
 Inittable:
 ldr r5,Table
-sub r5,#0xC
+sub r5,#0x10
 
 Loop:
-add r5,#0xC
+add r5,#0x10
 ldr r0, [r5]
 cmp r0, #0x0
 beq Term
@@ -68,8 +68,8 @@ ldrh r0, [r5,#0x2]
 cmp  r0, #0x0
 beq  CheckVoice
 
-@blh #0x080860D0	@CheckFlag {J}
-blh #0x08083DA8	@CheckFlag {U}
+@blh 0x080860D0	@CheckFlag {J}
+blh 0x08083DA8	@CheckFlag {U}
 cmp r0, #0x0
 bne Loop
 

@@ -1,4 +1,4 @@
-NAME=ユニットを選択した時に音声を再生する(Editor)
+NAME=レベルアップした時に音声を再生する(Editor)
 NAME.en=voice on level up(Editor)
 
 IF:0x76730=0x00 0x4B 0x18 0x47

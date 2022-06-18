@@ -832,3 +832,6 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0007DA28=SelfDamageMapAnim	{J}	//08A13910
 0007B688=HatchFromEggsMapAnim	{U}	//089A3238
 0007D9D0=HatchFromEggsMapAnim	{J}	//08A138C0
+005C273C=PoisonDamageLoop	{J}	//085C68F8
+005C2744=GorgonEggHatchLoop	{J}	//085C68F8
+005C272C=StatusDepletionLoop	{J}	//085C6960
