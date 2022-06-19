@@ -8,6 +8,10 @@ namespace FEBuilderGBA
     public class RecycleAddress
     {
         List<Address> Recycle;
+        public RecycleAddress()
+        {
+            this.Recycle = new List<Address>();
+        }
         public RecycleAddress(List<Address> list)
         {
             this.Recycle = list;
@@ -17,9 +21,9 @@ namespace FEBuilderGBA
         public bool AlreadyRecycled(uint addr)
         {
             //既に登録されている場合は登録しない.
-            for (int i = 0; i < this.Recycle.Count; i++)
+            foreach (Address a in Recycle)
             {
-                if (this.Recycle[i].Addr == addr)
+                if (a.Addr == addr)
                 {//すでにある.
                     return true;
                 }
@@ -30,9 +34,9 @@ namespace FEBuilderGBA
         //別の領域で使われているので再利用してはいけない領域を消す.
         public void SubRecycle(List<Address> rlist)
         {
-            for (int i = 0; i < rlist.Count; i++)
+            foreach (Address a in Recycle)
             {
-                SubRecycle(rlist[i].Addr, rlist[i].Length);
+                SubRecycle(a.Addr, a.Length);
             }
         }
         public bool SubRecycle(uint addr, int length)
@@ -65,6 +69,34 @@ namespace FEBuilderGBA
             return ret;
         }
 
+
+        //追加で領域の指定
+        public void AddRecycle(List<Address> rlist)
+        {
+            foreach(Address a in rlist)
+            {
+                AddRecycle(a);
+            }
+        }
+        void AddRecycle(Address a)
+        {
+            //既に登録されている場合は削除する
+            for (int i = 0; i < this.Recycle.Count; i++)
+            {
+                Address b = this.Recycle[i];
+                if (b.Addr >= a.Addr
+                    && b.Addr < a.Addr + a.Length)
+                {//登録されているので無視する.
+                    return;
+                }
+                if (b.Addr + b.Length >= a.Addr
+                    && b.Addr + b.Length < a.Addr + a.Length)
+                {//登録されているので無視する.
+                    return;
+                }
+            }
+            this.Recycle.Add(a);
+        }
 
         public void RecycleOptimize()
         {

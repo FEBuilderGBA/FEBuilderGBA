@@ -18,11 +18,14 @@ namespace FEBuilderGBA
         Dictionary<string, bool> ProcessedFont;
         ROM YourROM;
         Undo.UndoData UndoData;
-        public void ImportFont(Form self, string FontROMTextBox, bool FontAutoGenelateCheckBox, Font ttf)
+        RecycleAddress Recycle;
+
+        public void ImportFont(Form self, string FontROMTextBox, bool FontAutoGenelateCheckBox, Font ttf, RecycleAddress recycle, Undo.UndoData undodata)
         {
             string filename = FontROMTextBox;
             this.YourROM = new ROM();
-
+            this.Recycle = recycle;
+            this.UndoData = undodata;
             this.ProcessedFont = new Dictionary<string, bool>();
             this.MyselfPriorityCode = PatchUtil.SearchPriorityCode();
 
@@ -50,8 +53,6 @@ namespace FEBuilderGBA
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {
-                this.UndoData = Program.Undo.NewUndoData("FONT Import");
-
                 //文字列からフォントを探索
                 {
                     List<U.AddrResult> list = TextForm.MakeItemList();
@@ -147,8 +148,6 @@ namespace FEBuilderGBA
                         FontImporter(str);
                     }
                 }
-
-                Program.Undo.Push(this.UndoData);
             }
         }
         void FontImporter(string text)
@@ -279,7 +278,7 @@ namespace FEBuilderGBA
 
             U.write_u32(newFontData, 0, 0);   //NULL リストの末尾に追加するので.
 
-            uint newaddr = InputFormRef.AppendBinaryData(newFontData, this.UndoData);
+            uint newaddr = this.Recycle.Write(newFontData, this.UndoData);
             if (newaddr == U.NOT_FOUND)
             {//エラー
                 return;

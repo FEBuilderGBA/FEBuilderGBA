@@ -51,8 +51,17 @@ namespace FEBuilderGBA
 
             ToolTranslateROM trans = new ToolTranslateROM();
             trans.CheckTextImportPatch(true);
-            trans.SetWipeJPFont(X_OVERRAIDE_JPFONT.Checked);
-            trans.ImportAllText(this);
+
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("Import Translate file");
+            if (X_OVERRAIDE_JPFONT.Checked)
+            {
+                trans.WipeJPFont(this, undodata);
+            }
+            trans.ImportAllText(this, undodata);
+
+            trans.BlackOut(undodata);
+            Program.Undo.Push(undodata);
         }
 
         private void ExportallTextButton_Click(object sender, EventArgs e)
@@ -127,8 +136,12 @@ namespace FEBuilderGBA
                 return;
             }
 
-            ToolTranslateROMFont trans = new ToolTranslateROMFont();
-            trans.ImportFont(this, this.FontROMTextBox.Text, FontAutoGenelateCheckBox.Checked, UseFontNameTextEdit.Font);
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ImportFont");
+
+            ToolTranslateROM trans = new ToolTranslateROM();
+            trans.ImportFont(this, this.FontROMTextBox.Text, FontAutoGenelateCheckBox.Checked, UseFontNameTextEdit.Font, undodata);
+            trans.BlackOut(undodata);
+            Program.Undo.Push(undodata);
         }
         private void FontROMTextBox_DoubleClick(object sender, EventArgs e)
         {
@@ -266,41 +279,43 @@ namespace FEBuilderGBA
             string to = U.InnerSplit(Translate_to.Text, "=", 0);
             string fromrom = SimpleTranslateFromROMFilename.Text;
             string torom = SimpleTranslateToROMFilename.Text;
-            bool wipeJPFont = SIMPLE_OVERRAIDE_JPFONT.Checked;
-
-            ToolTranslateROM trans = new ToolTranslateROM();
-            trans.ApplyTranslatePatch(to);
-
-            //翻訳データがある場合は適用する.
-            string translateDataFilename = SimpleTranslateToTranslateDataFilename.Text;
-            if (File.Exists(translateDataFilename))
-            {
-                trans.SetWipeJPFont(wipeJPFont);
-                wipeJPFont = false;
-
-                trans.ImportAllText(this, translateDataFilename);
-            }
-
             if (from == to)
             {
                 return;
             }
 
+            ToolTranslateROM trans = new ToolTranslateROM();
+            trans.ApplyTranslatePatch(to);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("Import TransFile Simple");
+
+            //翻訳データがある場合は適用する.
+            string translateDataFilename = SimpleTranslateToTranslateDataFilename.Text;
+
+            if (SIMPLE_OVERRAIDE_JPFONT.Checked)
+            {
+                trans.WipeJPFont(this, undodata);
+            }
+
+            if (File.Exists(translateDataFilename))
+            {
+                trans.ImportAllText(this, translateDataFilename, undodata);
+            }
+
             //それ以外のデータの翻訳
             {
-                trans.SetWipeJPFont(wipeJPFont);
-                wipeJPFont = false;
-
                 string writeTextFileName = Path.GetTempFileName();
 
                 trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false,false);
-                trans.ImportAllText(this, writeTextFileName);
+                trans.ImportAllText(this, writeTextFileName, undodata);
 
-                ToolTranslateROMFont transFont = new ToolTranslateROMFont();
-                transFont.ImportFont(this, torom, true, FontAutoGenelateCheckBox.Font);
+                trans.ImportFont(this, torom, true, FontAutoGenelateCheckBox.Font, undodata);
 
                 File.Delete(writeTextFileName);
             }
+            trans.BlackOut(undodata);
+            Program.Undo.Push(undodata);
+
             R.ShowOK("完了");
             this.Close();
         }

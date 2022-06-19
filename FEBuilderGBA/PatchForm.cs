@@ -4095,9 +4095,8 @@ namespace FEBuilderGBA
             string basedir = Path.GetDirectoryName(filename);
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.ImportAllText(this, filename);
-
-//            binBlocks.Add(new BinBlock(U.NOT_FOUND, filename));
+            trans.ImportAllText(this, filename, undodata);
+            trans.BlackOut(undodata);
         }
         void BinWriteExtebds(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)
         {

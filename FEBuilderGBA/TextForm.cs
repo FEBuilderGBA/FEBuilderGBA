@@ -2664,11 +2664,16 @@ namespace FEBuilderGBA
         {
             ToolTranslateROM trans = new ToolTranslateROM();
             trans.CheckTextImportPatch(false);
-            bool r = trans.ImportAllText(this);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("Import Textfile");
+            bool r = trans.ImportAllText(this, undodata);
             if (!r)
             {
+                Program.Undo.Rollback(undodata);
                 return;
             }
+            trans.BlackOut(undodata);
+            Program.Undo.Push(undodata);
 
             this.InputFormRef = Init(this);
             UpdateDataCountCache(this.InputFormRef);
