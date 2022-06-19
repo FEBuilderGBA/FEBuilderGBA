@@ -1,0 +1,15 @@
+NAME=ユニットにアイコンを表示する(install)
+NAME.en=Icon Display(install)
+NAME.zh=Icon Display(install)
+INFO=特定の条件にマッチしたユニットに、アイコンを表示します。詳細はFEUの作者の解説記事を確認してください。
+INFO.en=Display icons on units that match certain criteria. For more information, check the FEU author's explanatory article.
+INFO.zh=Display icons on units that match certain criteria. For more information, check the FEU author's explanatory article.
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x27948=0x00 0x4B
+EDIT_PATCH:1=PATCH_IconDisplay.txt
+EA=Installer.event
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/50 https://github.com/Veslyquix/ASM/tree/main/IconDisplay

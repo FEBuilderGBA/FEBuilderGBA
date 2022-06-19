@@ -1,0 +1,9 @@
+ReturnTrue=$58
+IconDisplayList=$7C
+Loop=$10
+SkipCheckTerminator=$1E
+ReturnFalse=$64
+SkipCheckUnitID=$2C
+SkipCheckClassID=$3A
+SkipCheckFlag=$4A
+SkipCheckChapter=$58

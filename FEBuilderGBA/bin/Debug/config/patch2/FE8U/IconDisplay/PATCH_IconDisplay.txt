@@ -1,0 +1,32 @@
+NAME=ユニットにアイコンを表示する(editor)
+NAME.en=Icon Display(editor)
+NAME.zh=Icon Display(editor)
+INFO=特定の条件にマッチしたユニットに、アイコンを表示します。詳細はFEUの作者の解説記事を確認してください。\r\nTileのコンボボックスは、ダメージを受けているユニットがいるとHPバーを表示(HPBars Patch)をインストールしていること前提で説明を書いています。
+INFO.en=Display icons on units that match certain criteria. For more information, check the FEU author's explanatory article.\r\nThe Tile combo box is written assuming that the HPBars Patch is installed.
+INFO.zh=Display icons on units that match certain criteria. For more information, check the FEU author's explanatory article.\r\nThe Tile combo box is written assuming that the HPBars Patch is installed.
+
+IF:0x279B0=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END UnitDisplay.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=$GREP8 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+
+//リストに表示
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+W2:FLAG=CheckFlag(00=ANY)
+B4:MAP=Map(FF=ANY)
+B5:$COMBO tile.combo.txt=Tile(FF=Default)
+W6=00

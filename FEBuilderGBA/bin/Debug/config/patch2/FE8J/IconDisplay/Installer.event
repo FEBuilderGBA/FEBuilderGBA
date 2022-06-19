@@ -1,0 +1,59 @@
+#include "eastdlib.event"
+
+PUSH
+
+ORG $27948 
+jumpToHack(UnitDisplay)
+
+ORG $27980 
+#define callHack_r3_FE8J(offset) "SHORT 0x4B01; BL(0xD65C8); SHORT 0xE001; POIN (offset|0x1)"	//{J}
+callHack_r3_FE8J(IconDisplay)
+// ldr r2 =OAMSize 
+ORG $2798E 
+SHORT 0x46C0 // Nop - normally ldr r3, =0x811 
+
+POP 
+
+
+
+
+ALIGN 4 
+PUSH; ORG CurrentOffset+1
+UnitDisplay:
+POP
+#incbin "UnitDisplay.dmp"
+POIN IconDisplayList
+
+
+ALIGN 4 
+PUSH; ORG CurrentOffset+1
+IconDisplay:
+POP
+#incbin "IconDisplay.dmp"
+POIN IconDisplayList
+
+
+
+ALIGN 4
+IconDisplayList:
+//BYTE 0 // Any Unit ID 
+//BYTE 0 // Any Class 
+//SHORT 0 // Any flag 
+//BYTE 0xFF // Any chapter 
+//BYTE 0xFF // Default ObjTileID 
+//BYTE 0 // padding 
+//BYTE 0 // Padding 
+
+/*
+BYTE 1 0; SHORT 0; 		BYTE 0xFF 0xFF 0 0 // Unit ID 1 to always display default icon for unit to defend 
+BYTE 2 0; SHORT 0; 		BYTE 0xFF 0x76 0 0
+BYTE 3 0; SHORT 0; 		BYTE 0xFF 0x77 0 0
+BYTE 4 0; SHORT 0; 		BYTE 0xFF 0x4  0 0
+BYTE 5 0; SHORT 0; 		BYTE 0xFF 0x51 0 0
+BYTE 6 0; SHORT 0; 	BYTE 0xFF 3 0 0  // Any unit ID, class, any flag
+*/
+WORD 0xFFFFFFFF 0xFFFFFFFF // terminator 
+
+
+
+

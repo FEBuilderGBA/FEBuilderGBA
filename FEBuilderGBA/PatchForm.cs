@@ -339,7 +339,7 @@ namespace FEBuilderGBA
         static string MakeInfoAndAuthorString(PatchSt patch)
         {
             StringBuilder sb = new StringBuilder();
-            string showWarning = U.at(patch.Param, "SHOW_WARNING", "false");
+            string showWarning = U.at(patch.Param, "WARNING", "false");
             if (U.stringbool(showWarning))
             {
                 sb.AppendLine("!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!");

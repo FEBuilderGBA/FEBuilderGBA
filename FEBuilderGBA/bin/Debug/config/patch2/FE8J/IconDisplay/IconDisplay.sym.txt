@@ -1,0 +1,10 @@
+DefaultBehaviour=$76
+IconDisplayList=$AC
+Loop=$1E
+SkipCheckTerminator=$2C
+SkipCheckUnitID=$3A
+SkipCheckClassID=$48
+SkipCheckFlag=$58
+SkipCheckChapter=$66
+NotDefaultTile=$70
+Exit=$78
