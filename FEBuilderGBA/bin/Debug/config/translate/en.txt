@@ -3583,6 +3583,9 @@ This data is reserved in the system as an image as a black background.\r\nWe rec
 :このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。
 This data is reserved as a random background used to display assistive conversations in the system menu.\r\nWe recommend that you do not change it.
 
+:警告: このデータはシステムで予約されています。\r\nこのデータを書き換えると予期せぬ動作を招くことになります。\r\nそれでも、本当に書き換えてもよろしいですか？
+Warning: This data is reserved by the system.\r\nRewriting this data will lead to unexpected behavior.\r\nStill, are you sure you want to rewrite it? 
+
 :ヘッダ付きTSA
 TSA with header
 

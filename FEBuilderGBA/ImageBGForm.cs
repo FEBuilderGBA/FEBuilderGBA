@@ -119,6 +119,11 @@ namespace FEBuilderGBA
 
         private void ImportButton_Click(object sender, EventArgs e)
         {
+            if (!CheckDangerUpdate())
+            {
+                return;
+            }
+
             int width = 32 * 8;
             int height = 20 * 8;
             int palette_count = 8;
@@ -266,6 +271,23 @@ namespace FEBuilderGBA
                 DetailErrorMessageBox.Text = "";
                 DetailErrorMessageBox.Hide();
             }
+        }
+
+        bool CheckDangerUpdate()
+        {
+            uint bgid = (uint)this.AddressList.SelectedIndex;
+            if (bgid == Program.ROM.RomInfo.bg_reserve_black_bgid
+                || bgid == Program.ROM.RomInfo.bg_reserve_random_bgid)
+            {
+                DialogResult dr = R.ShowNoYes("警告: このデータはシステムで予約されています。\r\nこのデータを書き換えると予期せぬ動作を招くことになります。\r\nそれでも、本当に書き換えてもよろしいですか？");
+                if (dr == DialogResult.Yes)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return true;
+
         }
     }
 }
