@@ -6161,18 +6161,18 @@
 08037D58	イベントから呼ばれる退却処理開始	{U}
 080B5D5C	イベントから呼ばれる中断処理開始	{U}
 
-08C258A4	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08CBFAD8	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08CBFEA8	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08D2B5F0	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08D2D080	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08D7E080	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08D7E450	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08D914A0	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08DCB4B0	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
-08DD2CA8	&LZ77	ボツデータ スケルトン槍	{J}
-08DD8604	&LZ77	ボツデータ スケルトン弓の待機モーション	{J}
-08DFB6D8	&LZ77	ボツデータ 空っぽの戦闘シート	{J}
+08C258A4	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08CBFAD8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08CBFEA8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08D2B5F0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08D2D080	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08D7E080	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08D7E450	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08D914A0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08DCB4B0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
+08DD2CA8	&LZ77	ボツデータ スケルトン槍	UNUSEDBIN	{J}
+08DD8604	&LZ77	ボツデータ スケルトン弓の待機モーション	UNUSEDBIN	{J}
+08DFB6D8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{J}
 08AA5344	&LZ77	何かのバー	{J}
 08AA5380	&LZ77	メニュー	{J}
 08AD1540	&LZ77	火の玉みたいな何か	{J}
@@ -6189,18 +6189,18 @@
 08A588C0	&LZ77	To Be Continued	{J}
 08780574	&LZ77	何かのエフェクト	{J}
 087819D0	&LZ77	何かのエフェクトのTSA	{J}
-08C258A4	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08CBFAD8	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08CBFEA8	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08D2B5F0	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08D2D080	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08D7E080	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08D7E450	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08D914A0	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08DCB4B0	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
-08DD2CA8	&LZ77	ボツデータ スケルトン槍	{U}
-08DD8604	&LZ77	ボツデータ スケルトン弓の待機モーション	{U}
-08DFB6D8	&LZ77	ボツデータ 空っぽの戦闘シート	{U}
+08C258A4	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08CBFAD8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08CBFEA8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08D2B5F0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08D2D080	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08D7E080	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08D7E450	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08D914A0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08DCB4B0	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
+08DD2CA8	&LZ77	ボツデータ スケルトン槍	UNUSEDBIN	{U}
+08DD8604	&LZ77	ボツデータ スケルトン弓の待機モーション	UNUSEDBIN	{U}
+08DFB6D8	&LZ77	ボツデータ 空っぽの戦闘シート	UNUSEDBIN	{U}
 08A97E88	&LZ77	三角形	{U}
 
 08088B08	StatusRMenu_StrengthGetter	{U}
@@ -6368,10 +6368,10 @@
 0801DEF0	SendToConvoyMenuIdel	{J}
 08074050	Command85	{J}
 08071B6C	Command85	{U}
-089F7D20	:08A07D1F	ボツデータ1 利用されていないタイルアニメーションデータだと思われる	{J}
-08A09920	:08A0BD1F	ボツデータ2 利用されていないタイルアニメーションデータだと思われる	{J}
-089875AC	:089975AB	ボツデータ1 利用されていないタイルアニメーションデータだと思われる	{U}
-089991AC	:0899B5AB	ボツデータ2 利用されていないタイルアニメーションデータだと思われる	{U}
+//089F7D20	:08A07D1F	ボツデータ1 利用されていないタイルアニメーションデータだと思われる	UNUSEDBIN	{J}
+//08A09920	:08A0BD1F	ボツデータ2 利用されていないタイルアニメーションデータだと思われる	UNUSEDBIN	{J}
+//089875AC	:089975AB	ボツデータ1 利用されていないタイルアニメーションデータだと思われる	UNUSEDBIN	{U}
+//089991AC	:0899B5AB	ボツデータ2 利用されていないタイルアニメーションデータだと思われる	UNUSEDBIN	{U}
 08A84B00	&LZ77	章タイトルの空データ	{J}
 08A10FE0	&LZ77	章タイトルの空データ	{U}
 085776F0	:08577EEF	デバッグ用のフォント画像	{J}
@@ -7753,17 +7753,17 @@
 08081B40	傷薬回復エフェクトの設定	{U}
 08A20600	:08A2067F	傷薬の回復エフェクトのパレットアニメ	{J}
 089AFF78	:089AFFF7	傷薬の回復エフェクトのパレットアニメ	{U}
-08BBD970	:08BC39FF	ボツデータ NAZO1	{J}
-08BBB6C8	:08BBD3F7	ボツデータ NAZO2	{J}
-08BB8ED0	:08BBB33C	ボツデータ NAZO3	{J}
-08BB310C	:08BB8787	通信闘技場のデータ	{J}
-08FE0000	:08FE1553	ボツデータ ROM終端1	{J}
-08FE281C	:08FE308F	ボツデータ ROM終端2	{J}
+//08BBD970	:08BC39FF	ボツデータ NAZO1	UNUSEDBIN	{J}
+//08BBB6C8	:08BBD3F7	ボツデータ NAZO2	UNUSEDBIN	{J}
+//08BB8ED0	:08BBB33C	ボツデータ NAZO3	UNUSEDBIN	{J}
+//08BB310C	:08BB8787	通信闘技場のデータ	{J}
+//08FE0000	:08FE1553	ボツデータ ROM終端1	UNUSEDBIN	{J}
+//08FE281C	:08FE308F	ボツデータ ROM終端2	UNUSEDBIN	{J}
 
-08B1FE7C	:08B2A5D3	ボツデータ NAZO1	{U}
-08B1A0B8	:08B1FA3B	ボツデータ NAZO2	{U}
-08FE0000	:08FE1553	ボツデータ ROM終端1	{U}
-08FE281C	:08FE308F	ボツデータ ROM終端2	{U}
+//08B1FE7C	:08B2A5D3	ボツデータ NAZO1	UNUSEDBIN	{U}
+//08B1A0B8	:08B1FA3B	ボツデータ NAZO2	UNUSEDBIN	{U}
+//08FE0000	:08FE1553	ボツデータ ROM終端1	UNUSEDBIN	{U}
+//08FE281C	:08FE308F	ボツデータ ROM終端2	UNUSEDBIN	{U}
 080837b0	強制ゲームオーバー	{U}
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	強制ゲームオーバー	{J}
@@ -8370,9 +8370,9 @@
 08AB0A44	:08AB0B47	オープニングクラスデモ 抽選テーブル	{J}
 08A2FBD4	:08A2FBDF	オープニングクラスデモ 抽選テーブルをシフトする数	{U}
 08AB0A38	:08AB0A43	オープニングクラスデモ 抽選テーブルをシフトする数	{J}
-085B0FA8	&LZ77	ボツデータ	FE6の画像	FE8Uにはポインタが存在しない	{U}
-085B4B44	&LZ77	ボツデータ	FE6の画像のTSA	FE8Uにはポインタが存在しない	{U}
-085B50A8	&PALETTE16	ボツデータ	FE6の画像のパレット	FE8Uにはポインタが存在しない	{U}
+085B0FA8	&LZ77	ボツデータ	FE6の画像	FE8Uにはポインタが存在しない	UNUSEDBIN	{U}
+085B4B44	&LZ77	ボツデータ	FE6の画像のTSA	FE8Uにはポインタが存在しない	UNUSEDBIN	{U}
+085B50A8	&PALETTE16	ボツデータ	FE6の画像のパレット	FE8Uにはポインタが存在しない	UNUSEDBIN	{U}
 0801474C	無圧縮TSAを適応してアニメパターンを読込む	{U}
 089B17A4	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	1	{U}
 089B0864	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	2	{U}
@@ -8820,14 +8820,14 @@
 08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
 08A1A474	&HEADERTSA	何かのTSA	20	{U}
 08A96CC4	&HEADERTSA	何かのTSA	20	{J}
-08A9C874	:08A9C997	ボツデータ	マップ変化	1	未使用	{J}
-08A9BEFC	:08A9C01F	ボツデータ	マップ変化	2	未使用	{J}
-08A1F3A8	:08A1F3BF	ボツデータ	マップ変化	3	未使用	{J}
-08A1F948	:08A1FA6B	ボツデータ	マップ変化	1	未使用	{U}
-08A1EFD0	:08A1F0F3	ボツデータ	マップ変化	2	未使用	{U}
-08A1F3A8	:08A1F3BF	ボツデータ	マップ変化	3	未使用	{U}
-08A2C94C	&HEADERTSA	何かのTSA	21	未使用	{U}
-08AAAADC	&HEADERTSA	何かのTSA	21	未使用	{J}
+//08A9C874	:08A9C997	ボツデータ	マップ変化	1	未使用	UNUSEDBIN	{J}
+//08A9BEFC	:08A9C01F	ボツデータ	マップ変化	2	未使用	UNUSEDBIN	{J}
+//08A1F3A8	:08A1F3BF	ボツデータ	マップ変化	3	未使用	UNUSEDBIN	{J}
+//08A1F948	:08A1FA6B	ボツデータ	マップ変化	1	未使用	UNUSEDBIN	{U}
+//08A1EFD0	:08A1F0F3	ボツデータ	マップ変化	2	未使用	UNUSEDBIN	{U}
+//08A1F3A8	:08A1F3BF	ボツデータ	マップ変化	3	未使用	UNUSEDBIN	{U}
+//08A2C94C	&HEADERTSA	何かのTSA	21	未使用	UNUSEDBIN	{U}
+//08AAAADC	&HEADERTSA	何かのTSA	21	未使用	UNUSEDBIN	{J}
 08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS	19	{U}
 08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS	19	{J}
 085B7E74	&PALETTE	何かのパレット	203	{U}
@@ -9066,7 +9066,7 @@
 085D88AC	:085D895F	CrimsonEyeData	詳細不明	{U}
 085D9154	:085D9243	SRankWeaponEffect	詳細不明	{U}
 085D9430	&ASM_POINTER_ARRAY	ROMMagicTable	{U}
-089EDE80	:089EDE97	ボツデータ	トラップ	未使用	{U}
+//089EDE80	:089EDE97	ボツデータ	トラップ	未使用	UNUSEDBIN	{U}
 085FAA70	&PALETTE	何かのパレット	263	{J}
 085FAA90	&PALETTE	何かのパレット	264	{J}
 085FAAB0	&PALETTE	何かのパレット	265	{J}
@@ -9087,7 +9087,7 @@
 08602EFC	:08602FAF	CrimsonEyeData	詳細不明	{J}
 086037A4	:08603893	SRankWeaponEffect	詳細不明	{J}
 08603B58	&ASM_POINTER_ARRAY	ROMMagicTable	{J}
-08A5FFB8	:08A5FFCF	ボツデータ	トラップ	未使用	{J}
+//08A5FFB8	:08A5FFCF	ボツデータ	トラップ	未使用	UNUSEDBIN	{J}
 08A59A58	&PALETTE	何かのパレット	279	{J}
 08A59A78	&PALETTE	何かのパレット	280	{J}
 08A59A98	&PALETTE	何かのパレット	281	{J}
@@ -11557,9 +11557,9 @@
 08A1EE2C	&LZ77	gGfxSpark	{J}
 08A5A35C	&LZ77	gGfxDialogueTextBubble	{J}
 08A5A6A0	gEventIdMaskLookup	{J}
-08A79E90	&LZ77	ボツデータ	雷のような画像	ONLY FE8J	{J}
-08AAB4A0	&LZ77	ボツデータ	モード	ONLY FE8J	{J}
-08AAC5A8	&LZ77	ボツデータ	メニューのレリーフ	ONLY FE8J	{J}
+08A79E90	&LZ77	ボツデータ	雷のような画像	ONLY FE8J	UNUSEDBIN	{J}
+08AAB4A0	&LZ77	ボツデータ	モード	ONLY FE8J	UNUSEDBIN	{J}
+08AAC5A8	&LZ77	ボツデータ	メニューのレリーフ	ONLY FE8J	UNUSEDBIN	{J}
 08031e18	闘技場の掛け金を取得	{J}
 08031DEC	闘技場の掛け金を設定	{J}
 08031E24	闘技場の試合結果の取得	{J}
@@ -12014,9 +12014,9 @@
 080B1F1C	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
 08A9D904	&OAMREGS_ARRAY	Unk OAMREGS	25	{J}
 08A2099C	&OAMREGS_ARRAY	Unk OAMREGS	25	{U}
-08AD1734	&LZ77	ボツデータ	FE7のCGの一部の断片	{J}
-08AD1EC8	&PALETTE8	ボツデータ	FE7のCGのパレットの残骸	{J}
-08AD1FC8	&HEADERTSA	ボツデータ	FE7のCGのTSAの残骸	{J}
+08AD1734	&LZ77	ボツデータ	FE7のCGの一部の断片	UNUSEDBIN	{J}
+08AD1EC8	&PALETTE8	ボツデータ	FE7のCGのパレットの残骸	UNUSEDBIN	{J}
+08AD1FC8	&HEADERTSA	ボツデータ	FE7のCGのTSAの残骸	UNUSEDBIN	{J}
 0802D664	アイテム交換で、実際にアイテムを交換した時	{J}
 080358A8	AutoRestoreBadStatus	{J}
 080357A8	AutoRestoreBadStatus	{U}

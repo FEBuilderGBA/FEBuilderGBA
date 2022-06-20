@@ -129,6 +129,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: false
                     , isUseOAMSP: false
                     );
+                AsmMapFile.InvalidateUNUNSED(structlist);
                 asmMapFile.AppendMAP(structlist);
 
                 //コメントデータ
@@ -316,6 +317,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
+                AsmMapFile.InvalidateUNUNSED(structlist);
                 UnpackBINByCode(structlist);
                 MakeFreeData(structlist);
                 asmMapFile.AppendMAP(structlist);
@@ -328,6 +330,7 @@ namespace FEBuilderGBA
                 {//設計をミスった。 綺麗なリストを作りたいので、もう一回読みこみなおそう...
                     AsmMapFile asmMapFile2 = new AsmMapFile(Program.ROM);
                     asmMapFile2.MakeAllDataLength(structlist);
+                    AsmMapFile.InvalidateUNUNSED(structlist);
                 }
 
                 uint limit = (uint)Program.ROM.Data.Length;
@@ -508,6 +511,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
+                AsmMapFile.InvalidateUNUNSED(structlist);
                 MakeFreeData(structlist);
                 asmMapFile.AppendMAP(structlist);
 

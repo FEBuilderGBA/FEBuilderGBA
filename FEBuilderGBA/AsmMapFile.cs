@@ -1460,6 +1460,50 @@ namespace FEBuilderGBA
                 }
             }
         }
+        //UNUNSEDマークの中にデータがあれば無効する
+        public static void InvalidateUNUNSED(List<Address> list)
+        {
+            for (int i = 0; i < list.Count; )
+            {
+                Address a = list[i];
+                if (a.DataType != Address.DataTypeEnum.UNUSEDBIN)
+                {
+                    i++;
+                    continue;
+                }
+
+                if (CheckInvalidateUNUNSED(list, a))
+                {
+                    list.RemoveAt(i);
+                    continue;
+                }
+
+                i++;
+            }
+        }
+        static bool CheckInvalidateUNUNSED(List<Address> list, Address un)
+        {
+            foreach (Address a in list)
+            {
+                if (a.DataType == Address.DataTypeEnum.UNUSEDBIN
+                    || a.DataType == Address.DataTypeEnum.FFor00)
+                {
+                    continue;
+                }
+
+                if (a.Addr >= un.Addr
+                    && a.Addr < un.Addr + un.Length)
+                {//登録されているので解除する
+                    return true;
+                }
+                if (a.Addr + a.Length >= un.Addr
+                    && a.Addr + a.Length < un.Addr + un.Length)
+                {//登録されているので解除する.
+                    return true;
+                }
+            }
+            return false;
+        }
 
         //名前からの逆検索(ただし、遅い)
         public uint SearchName(string name)

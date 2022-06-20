@@ -34,7 +34,7 @@ namespace FEBuilderGBA
         //別の領域で使われているので再利用してはいけない領域を消す.
         public void SubRecycle(List<Address> rlist)
         {
-            foreach (Address a in Recycle)
+            foreach (Address a in rlist)
             {
                 SubRecycle(a.Addr, a.Length);
             }

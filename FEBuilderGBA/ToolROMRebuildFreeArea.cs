@@ -38,6 +38,7 @@ namespace FEBuilderGBA
                 , isUseOtherGraphics: true
                 , isUseOAMSP: true
                 );
+            AsmMapFile.InvalidateUNUNSED(knownList);
             MoveToFreeSapceForm.AppendSkillSystemsSanctuary(knownList);
 
             Dictionary<uint, bool> knownDic = AsmMapFile.MakeKnownListToDic(knownList);
@@ -182,7 +183,7 @@ namespace FEBuilderGBA
                 return;
             }
             if (start >= RebuildAddress || end >= RebuildAddress)
-            {//リビルドアドレスより上なのて無視
+            {//リビルドアドレスより上なので無視
                 return;
             }
             if (end - start >= FreeAreaMinimumSize)

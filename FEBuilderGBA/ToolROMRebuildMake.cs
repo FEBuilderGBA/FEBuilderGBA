@@ -523,11 +523,14 @@ namespace FEBuilderGBA
                 if (!PointerMark.ContainsKey(addrP) 
                     && !PointerMark.ContainsKey(addrP - 1))
                 {
-                    Address.AddAddress(this.StructList
-                        , addr - 1, 0, pointer
-                        , "LDR DATA ASM" + Program.AsmMapFileAsmCache.GetName(addr)
-                        , Address.DataTypeEnum.ASM);
-                    PointerMark[addrP - 1] = PointerType.ASM;
+                    if (DisassemblerTrumb.IsCode(addr - 1))
+                    {
+                        Address.AddAddress(this.StructList
+                            , addr - 1, 0, pointer
+                            , "LDR DATA ASM" + Program.AsmMapFileAsmCache.GetName(addr)
+                            , Address.DataTypeEnum.ASM);
+                        PointerMark[addrP - 1] = PointerType.ASM;
+                    }
                 }
             }
             else
@@ -767,6 +770,7 @@ namespace FEBuilderGBA
                 , isUseOtherGraphics: true
                 , isUseOAMSP: false
                 );
+            AsmMapFile.InvalidateUNUNSED(StructList);
             DeleteCommentData();
             AppendPointer();
 

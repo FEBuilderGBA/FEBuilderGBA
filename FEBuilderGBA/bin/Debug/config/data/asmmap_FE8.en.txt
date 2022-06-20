@@ -7463,10 +7463,10 @@ r3=X tile position of menu of right	{U}
 080C2AD4	Display of place name of world map	{U}
 08005E70	Transfer facial images of general soldiers to memory	{J}
 08005F6C	Transfer facial images of general soldiers to memory	{U}
-08220D18	:08221CD8	Unused musical instrument table 1	{U}
-08223BF8	:08223E38	Unused musical instrument table 2	{U}
-082109C8	:08211988	Unused musical instrument table 1	{J}
-082138A8	:08214084	Unused musical instrument table 2	{J}
+//08220D18	:08221CD8	Unused musical instrument table 1	UNUSEDBIN	{U}
+//08223BF8	:08223E38	Unused musical instrument table 2	UNUSEDBIN	{U}
+//082109C8	:08211988	Unused musical instrument table 1	UNUSEDBIN	{J}
+//082138A8	:08214084	Unused musical instrument table 2	UNUSEDBIN	{J}
 08011DB0	ChangeAI	{J}
 08011CCC	ChangeAI	{U}
 08086240	TalkCheck	{J}
@@ -7514,7 +7514,7 @@ r3=X tile position of menu of right	{U}
 085911C4	:085911D7	MMSizeTable	{U}
 085B8F5C	:085B8F6F	MMSizeTable	{J}
 08001EE4	EnablePaletteSync	{J}
-089991AC	:0899B5AB	UNUSED DATA 2	It seems to be tile animation data not being used	{U}
+//089991AC	:0899B5AB	UNUSED DATA 2	It seems to be tile animation data not being used	UNUSEDBIN	{U}
 0859A140	&PALETTE	Something's palette	01	{U}
 0859EEA0	&PALETTE	Something's palette	02	{U}
 0859EEC0	&PALETTE	LightRune Palette	{U}
@@ -7805,16 +7805,16 @@ r3=X tile position of menu of right	{U}
 08081B40	Set up scar damage recovery effect	{U}
 08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}
 089AFF78	:089AFFF7	Restoration of wound medicine Effect pallet Animation	{U}
-08BBD970	:08BC39FF	UNUSED DATA Unknown 1	{J}
-08BBB6C8	:08BBD3F7	UNUSED DATA Unknown 2	{J}
-08BB8ED0	:08BBB33C	UNUSED DATA Unknown 3	{J}
-08BB310C	:08BB8787	Network Arena Data	{J}
-08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{J}
-08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{J}
-08B1FE7C	:08B2A5D3	UNUSED DATA Unknown 1	{U}
-08B1A0B8	:08B1FA3B	UNUSED DATA Unknown 2	{U}
-08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{U}
-08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{U}
+//08BBD970	:08BC39FF	UNUSED DATA Unknown 1	UNUSEDBIN	{J}
+//08BBB6C8	:08BBD3F7	UNUSED DATA Unknown 2	UNUSEDBIN	{J}
+//08BB8ED0	:08BBB33C	UNUSED DATA Unknown 3	UNUSEDBIN	{J}
+//08BB310C	:08BB8787	Network Arena Data	{J}
+//08FE0000	:08FE1553	UNUSED DATA ROM termination 1	UNUSEDBIN	{J}
+//08FE281C	:08FE308F	UNUSED DATA ROM termination 2	UNUSEDBIN	{J}
+//08B1FE7C	:08B2A5D3	UNUSED DATA Unknown 1	UNUSEDBIN	{U}
+//08B1A0B8	:08B1FA3B	UNUSED DATA Unknown 2	UNUSEDBIN	{U}
+//08FE0000	:08FE1553	UNUSED DATA ROM termination 1	UNUSEDBIN	{U}
+//08FE281C	:08FE308F	UNUSED DATA ROM termination 2	UNUSEDBIN	{U}
 080837b0	Forced game over	{U}
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	Forced game over	{J}
@@ -8401,9 +8401,9 @@ r3=X tile position of menu of right	{U}
 08AB0A44	:08AB0B47	Opening class demoLottery table	{J}
 08A2FBD4	:08A2FBDF	Opening class demoNumber to shift lottery table	{U}
 08AB0A38	:08AB0A43	Opening class demoNumber to shift lottery table	{J}
-085B0FA8	&LZ77	UNUSED DATA	Image of FE 6	There is no pointer in FE 8U	{U}
-085B4B44	&LZ77	UNUSED DATA	TSA of image of FE 6	There is no pointer in FE 8U	{U}
-085B50A8	&PALETTE16	UNUSED DATA	FE 6 image palette	There is no pointer in FE 8U	{U}
+085B0FA8	&LZ77	UNUSED DATA	Image of FE 6	There is no pointer in FE8U	UNUSEDBIN	{U}
+085B4B44	&LZ77	UNUSED DATA	TSA of image of FE 6	There is no pointer in FE8U	UNUSEDBIN	{U}
+085B50A8	&PALETTE16	UNUSED DATA	FE 6 image palette	There is no pointer in FE8U	UNUSEDBIN	{U}
 0801474C	Apply uncompressed TSA and read animation pattern	{U}
 089B17A4	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{U}
 089B0864	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{U}
@@ -8715,13 +8715,13 @@ r3=X tile position of menu of right	{U}
 08B1E5FC	&HEADERTSA	Something's TSA	15	{J}
 08B1E61C	&HEADERTSA	Something's TSA	16	{J}
 08B1E634	&HEADERTSA	Something's TSA	17	{J}
-08AC2BE0	&HEADERTSA	Something's TSA	19	unused	{J}
+08AC2BE0	&HEADERTSA	Something's TSA	19	unused	UNUSEDBIN	{J}
 085B52D8	&HEADERTSA	Something's TSA	2	{U}
 085B5374	&HEADERTSA	Something's TSA	3	{U}
 08A02250	&HEADERTSA	Something's TSA	4	{U}
 08A1A434	&HEADERTSA	Something's TSA	6	{U}
 08A1768C	&HEADERTSA	Something's TSA	18	{U}
-08A3F21C	&HEADERTSA	Something's TSA	19	unused	{U}
+08A3F21C	&HEADERTSA	Something's TSA	19	unused	UNUSEDBIN	{U}
 08004998	Load font for status screen	{J}
 08004A90	Load font for status screen	{U}
 085B91C8	&OAMREGS_ARRAY	Unk OAMREGS4	{J}
@@ -8760,9 +8760,9 @@ r3=X tile position of menu of right	{U}
 080B5B18	Arena	Serve as a result of winning or losing	{U}
 08A1DDD4	&LZ77	Something small compressed data	108	{J}
 089AD74C	&LZ77	Something small compressed data	108	{U}
-08A595A4	&HEADERTSA	Something's TSA	20	unused	{J}
-08A98838	&HEADERTSA	Something's TSA	21	unused	{J}
-08A1BDA0	&HEADERTSA	Something's TSA	21	unused	{U}
+08A595A4	&HEADERTSA	Something's TSA	20	unused	UNUSEDBIN	{J}
+08A98838	&HEADERTSA	Something's TSA	21	unused	UNUSEDBIN	{J}
+08A1BDA0	&HEADERTSA	Something's TSA	21	unused	UNUSEDBIN	{U}
 08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS	05	{J}
 08A20650	&OAMREGS_ARRAY	Unk OAMREGS	05	{U}
 08A9E470	&OAMREGS_ARRAY	Unk OAMREGS	06	{J}
@@ -8847,14 +8847,14 @@ r3=X tile position of menu of right	{U}
 08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
 08A1A474	&HEADERTSA	Something's TSA	20	{U}
 08A96CC4	&HEADERTSA	Something's TSA	20	{J}
-08A9C874	:08A9C997	UNUSED DATA	Tile Changes	1	unused	{J}
-08A9BEFC	:08A9C01F	UNUSED DATA	Tile Changes	2	unused	{J}
-08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	{J}
-08A1F948	:08A1FA6B	UNUSED DATA	Tile Changes	1	unused	{U}
-08A1EFD0	:08A1F0F3	UNUSED DATA	Tile Changes	2	unused	{U}
-08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	{U}
-08A2C94C	&HEADERTSA	Something's TSA	21	unused	{U}
-08AAAADC	&HEADERTSA	Something's TSA	21	unused	{J}
+//08A9C874	:08A9C997	UNUSED DATA	Tile Changes	1	unused	UNUSEDBIN	{J}
+//08A9BEFC	:08A9C01F	UNUSED DATA	Tile Changes	2	unused	UNUSEDBIN	{J}
+//08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	UNUSEDBIN	{J}
+//08A1F948	:08A1FA6B	UNUSED DATA	Tile Changes	1	unused	UNUSEDBIN	{U}
+//08A1EFD0	:08A1F0F3	UNUSED DATA	Tile Changes	2	unused	UNUSEDBIN	{U}
+//08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	UNUSEDBIN	{U}
+08A2C94C	&HEADERTSA	Something's TSA	21	unused	UNUSEDBIN	{U}
+08AAAADC	&HEADERTSA	Something's TSA	21	unused	UNUSEDBIN	{J}
 08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS	19	{U}
 08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS	19	{J}
 085B7E74	&PALETTE	Something's palette	203	{U}
@@ -8872,28 +8872,28 @@ r3=X tile position of menu of right	{U}
 080AE7C4	RegistTSAAnime2	{U}
 08012CFC	Register animation of destroying statue	{U}
 08012DB4	Register animation of destroying statue	{J}
-088BC5E8	:088BC60F	Unit movement in unused unit placement	1	{U}
-088BCCC8	:088BCD03	Unused unit arrangement	1	{U}
-088C179C	:088C17D3	Unit movement in unused unit placement	2	{U}
-088C1D30	:088C1DCF	Unused unit arrangement	2	{U}
-088C9C40	:088C9CAF	Unit movement in unused unit placement	3	{U}
-088CA250	:088CA463	Unused unit arrangement	3	{U}
-088CA60C	:088CA63B	Unit movement in unused unit placement	4	{U}
-088CAEAC	:088CAF87	Unused unit arrangement	4	{U}
-088CB020	:088CB057	Unit movement in unused unit placement	5	{U}
-088CB574	:088CB613	Unused unit arrangement	5	{U}
-088D1448	:088D164F	Unused unit arrangement	6	enemy	{U}
-08910B48	:08910B6F	Unit movement in unused unit placement	1	{J}
-08911200	:0891123B	Unused unit arrangement	1	{J}
-08915C84	:08915CBB	Unit movement in unused unit placement	2	{J}
-08916218	:089162B7	Unused unit arrangement	2	{J}
-0891E0A8	:0891E117	Unit movement in unused unit placement	3	{J}
-0891E6A4	:0891E8D3	Unused unit arrangement	3	{J}
-0891EA60	:0891EA8F	Unit movement in unused unit placement	4	{J}
-0891F300	:0891F3DB	Unused unit arrangement	4	{J}
-0891F474	:0891F4AB	Unit movement in unused unit placement	5	{J}
-0891F9C8	:0891FA57	Unused unit arrangement	5	{J}
-0892589C	:08925AA3	Unused unit arrangement	6	enemy	{J}
+//088BC5E8	:088BC60F	Unit movement in unused unit placement	1	UNUSEDBIN	{U}
+//088BCCC8	:088BCD03	Unused unit arrangement	1	UNUSEDBIN	{U}
+//088C179C	:088C17D3	Unit movement in unused unit placement	2	UNUSEDBIN	{U}
+//088C1D30	:088C1DCF	Unused unit arrangement	2	UNUSEDBIN	{U}
+//088C9C40	:088C9CAF	Unit movement in unused unit placement	3	UNUSEDBIN	{U}
+//088CA250	:088CA463	Unused unit arrangement	3	UNUSEDBIN	{U}
+//088CA60C	:088CA63B	Unit movement in unused unit placement	4	UNUSEDBIN	{U}
+//088CAEAC	:088CAF87	Unused unit arrangement	4	UNUSEDBIN	{U}
+//088CB020	:088CB057	Unit movement in unused unit placement	5	UNUSEDBIN	{U}
+//088CB574	:088CB613	Unused unit arrangement	5	UNUSEDBIN	{U}
+//088D1448	:088D164F	Unused unit arrangement	6	enemy	UNUSEDBIN	{U}
+//08910B48	:08910B6F	Unit movement in unused unit placement	1	UNUSEDBIN	{J}
+//08911200	:0891123B	Unused unit arrangement	1	UNUSEDBIN	{J}
+//08915C84	:08915CBB	Unit movement in unused unit placement	2	UNUSEDBIN	{J}
+//08916218	:089162B7	Unused unit arrangement	2	UNUSEDBIN	{J}
+//0891E0A8	:0891E117	Unit movement in unused unit placement	3	UNUSEDBIN	{J}
+//0891E6A4	:0891E8D3	Unused unit arrangement	3	UNUSEDBIN	{J}
+//0891EA60	:0891EA8F	Unit movement in unused unit placement	4	UNUSEDBIN	{J}
+//0891F300	:0891F3DB	Unused unit arrangement	4	UNUSEDBIN	{J}
+//0891F474	:0891F4AB	Unit movement in unused unit placement	5	UNUSEDBIN	{J}
+//0891F9C8	:0891FA57	Unused unit arrangement	5	UNUSEDBIN	{J}
+//0892589C	:08925AA3	Unused unit arrangement	6	enemy	UNUSEDBIN	{J}
 087FF448	&PALETTE	Something's palette	206	{U}
 088019F4	:08801A95	Mystery data	Battle screen relation	1	{U}
 08801A96	:08801AD3	Mystery data	Battle screen relation	2	{U}
@@ -9015,9 +9015,9 @@ r3=X tile position of menu of right	{U}
 08678AE0	&PALETTE	Something's palette	251	unused	{U}
 08678B00	&PALETTE	Something's palette	252	unused	{U}
 08678B20	&PALETTE16	Something's palette	253	{U}
-08678D20	&LZ77	Image of something	1	unused	{U}
-086792A4	:08679B03	Unknown	Unused data	1	{U}
-0867EA48	:0867EE03	Unknown	Unused data	2	{U}
+08678D20	&LZ77	Image of something	1	unused	UNUSEDBIN		{U}
+//086792A4	:08679B03	Unknown	Unused data	1	UNUSEDBIN		{U}
+//0867EA48	:0867EE03	Unknown	Unused data	2	UNUSEDBIN		{U}
 0868CC30	&PALETTE	Something's palette	254	Background color	{U}
 0868CC50	&PALETTE	Something's palette	255	Background color	{U}
 0868CC70	&PALETTE	Something's palette	256	Background color	{U}
@@ -9089,7 +9089,7 @@ r3=X tile position of menu of right	{U}
 085D88AC	:085D895F	CrimsonEyeData	details unknown	{U}
 085D9154	:085D9243	SRankWeaponEffect	details unknown	{U}
 085D9430	&ASM_POINTER_ARRAY	ROMMagicTable	{U}
-089EDE80	:089EDE97	UNUSED DATA	Trap	unused	{U}
+//089EDE80	:089EDE97	UNUSED DATA	Trap	unused	UNUSEDBIN	{U}
 085FAA70	&PALETTE	Something's palette	263	unused	{J}
 085FAA90	&PALETTE	Something's palette	264	unused	{J}
 085FAAB0	&PALETTE	Something's palette	265	unused	{J}
@@ -9110,7 +9110,7 @@ r3=X tile position of menu of right	{U}
 08602EFC	:08602FAF	CrimsonEyeData	details unknown	{J}
 086037A4	:08603893	SRankWeaponEffect	details unknown	{J}
 08603B58	&ASM_POINTER_ARRAY	ROMMagicTable	{J}
-08A5FFB8	:08A5FFCF	UNUSED DATA	Trap	unused	{J}
+//08A5FFB8	:08A5FFCF	UNUSED DATA	Trap	unused	UNUSEDBIN	{J}
 08A59A58	&PALETTE	Something's palette	279	{J}
 08A59A78	&PALETTE	Something's palette	280	{J}
 08A59A98	&PALETTE	Something's palette	281	{J}

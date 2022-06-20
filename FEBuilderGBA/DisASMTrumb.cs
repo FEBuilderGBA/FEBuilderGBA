@@ -2111,6 +2111,15 @@ namespace FEBuilderGBA
         
         public static bool IsCode(byte[] prog , uint pos, ROM currentROM)
         {
+            uint limit = (uint)Math.Min(prog.Length, 7 * 1024);
+
+            List<uint> ldrdata = new List<uint>();
+            uint length = CalcLength(prog, pos, limit, ldrdata);
+            if (length >= 6 * 1024)
+            {//6kbを越えるコードは長すぎる
+                return false;
+            }
+            
             //先頭にpushがあるか?
             {
                 uint a0 = U.u8(prog,pos);
@@ -2120,11 +2129,6 @@ namespace FEBuilderGBA
                     return true;
                 }
             }
-
-            uint limit = (uint)prog.Length;
-
-            List<uint> ldrdata = new List<uint>();
-            uint length = CalcLength(prog, pos, limit, ldrdata);
 
             uint correctLDR = 0;
             for(int i = 0 ; i < ldrdata.Count ; i ++)
@@ -2143,7 +2147,12 @@ namespace FEBuilderGBA
                 correctLDR++;
             }
 
-            return (correctLDR >= 1) ;
+            if (correctLDR <= 0)
+            {//LDR参照が一つもないコードがあってたまるか!
+                return false;
+            }
+
+            return true;
         }
         public static bool IsCallBX(uint a)
         {

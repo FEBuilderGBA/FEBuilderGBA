@@ -5083,7 +5083,7 @@ namespace FEBuilderGBA
                 byte[] bin;
                 bool[] mask;
 
-                if (!(key == "CLEAR"))
+                if (key != "CLEAR")
                 {
                     continue;
                 }
@@ -5092,7 +5092,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                FEBuilderGBA.Address.DataTypeEnum datatype = Address.DataTypeEnum.BIN;
+                FEBuilderGBA.Address.DataTypeEnum datatype = Address.DataTypeEnum.UNUSEDBIN;
 
                 uint addr = U.atoi0x(sp[1]);
                 if (!U.isSafetyOffset(addr))
@@ -5101,11 +5101,6 @@ namespace FEBuilderGBA
                 }
 
                 uint length = U.atoi0x(sp[2]);
-                if (IsClearArea(addr, length))
-                {//クリア済み
-                    datatype = Address.DataTypeEnum.FFor00;
-                }
-
                 bin = Program.ROM.getBinaryData(addr, length);
                 mask = new bool[length];
 
@@ -6285,6 +6280,16 @@ namespace FEBuilderGBA
                             , U.NOT_FOUND
                             , "Fixed " + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.BIN
+                            );
+                    }
+                    else if (m.type == Address.DataTypeEnum.UNUSEDBIN)
+                    {
+                        FEBuilderGBA.Address.AddAddress(list
+                            , m.addr
+                            , (uint)m.length
+                            , U.NOT_FOUND
+                            , "Fixed " + patch.Name + "@" + m.filename + "@UNUSEDBIN"
+                            , Address.DataTypeEnum.UNUSEDBIN
                             );
                     }
                     else if (m.type == Address.DataTypeEnum.JUMPTOHACK)
