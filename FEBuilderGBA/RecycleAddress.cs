@@ -57,7 +57,7 @@ namespace FEBuilderGBA
                     ret = true;
                     continue;
                 }
-                if (a.Addr + a.Length >= addr
+                if (a.Addr + a.Length > addr
                     && a.Addr + a.Length < addr + length)
                 {//登録されているので解除する.
                     this.Recycle.RemoveAt(i);
@@ -89,7 +89,7 @@ namespace FEBuilderGBA
                 {//登録されているので無視する.
                     return;
                 }
-                if (b.Addr + b.Length >= a.Addr
+                if (b.Addr + b.Length > a.Addr
                     && b.Addr + b.Length < a.Addr + a.Length)
                 {//登録されているので無視する.
                     return;
@@ -235,9 +235,8 @@ namespace FEBuilderGBA
         //もし、リサイクルできない端数が残ったら、それらは0x00で総クリアする
         public void BlackOut(Undo.UndoData undodata)
         {
-            for (int i = 0; i < this.Recycle.Count; i++)
+            foreach(Address p in Recycle)
             {
-                Address p = this.Recycle[i];
                 Program.ROM.write_fill(p.Addr, p.Length, 0x00, undodata);
             }
             this.Recycle.Clear();

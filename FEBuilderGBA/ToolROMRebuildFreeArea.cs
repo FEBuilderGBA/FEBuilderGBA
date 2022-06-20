@@ -230,7 +230,7 @@ namespace FEBuilderGBA
             foreach (Address a in list)
             {
                 uint AddrEnd = a.Addr + a.Length;
-                if (a.Addr >= start && AddrEnd <= start && AddrEnd <= end)
+                if (a.Addr >= start && AddrEnd < start && AddrEnd < end)
                 {//既に知ってる
                     return;
                 }

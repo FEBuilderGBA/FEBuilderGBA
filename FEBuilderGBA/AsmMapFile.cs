@@ -1496,7 +1496,7 @@ namespace FEBuilderGBA
                 {//登録されているので解除する
                     return true;
                 }
-                if (a.Addr + a.Length >= un.Addr
+                if (a.Addr + a.Length > un.Addr
                     && a.Addr + a.Length < un.Addr + un.Length)
                 {//登録されているので解除する.
                     return true;
