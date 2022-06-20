@@ -14845,3 +14845,6 @@
 0808FDF0	CheckSoftResetKeyCommand	{J}
 03000055	IsTextDialogAWait	{J}
 0300005D	IsTextDialogAWait	{U}
+
+08A94270	:08A942C6	真っ黒フェードアウト用のデータ	{J}
+08A1852C	:08A18582	真っ黒フェードアウト用のデータ	{U}

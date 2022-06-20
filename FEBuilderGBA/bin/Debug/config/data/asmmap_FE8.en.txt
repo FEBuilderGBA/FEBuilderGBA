@@ -14869,3 +14869,5 @@ r3=X tile position of menu of right	{U}
 0808FDF0	CheckSoftResetKeyCommand	{J}
 03000055	IsTextDialogAWait	{J}
 0300005D	IsTextDialogAWait	{U}
+08A94270	:08A942C6	Data for fade-out black	{J}
+08A1852C	:08A18582	Data for fade-out black	{U}
