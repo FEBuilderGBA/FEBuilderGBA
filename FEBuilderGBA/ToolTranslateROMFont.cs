@@ -148,6 +148,8 @@ namespace FEBuilderGBA
                         FontImporter(str);
                     }
                 }
+                //エイリアス
+                AliasFont();
             }
         }
         void FontImporter(string text)
@@ -286,6 +288,94 @@ namespace FEBuilderGBA
 
             //ひとつ前のフォントリストのポインタを、現在追加した最後尾にすげかえる.
             Program.ROM.write_u32(prevaddress_my + 0, U.toPointer(newaddr), this.UndoData);
+        }
+
+        void AliasFont()
+        {
+            if (Program.ROM.RomInfo.is_multibyte)
+            {
+                AliasFontOne("0", "０", false, false);///No Translate
+                AliasFontOne("1", "１", false, false);///No Translate
+                AliasFontOne("2", "２", false, false);///No Translate
+                AliasFontOne("3", "３", false, false);///No Translate
+                AliasFontOne("4", "４", false, false);///No Translate
+                AliasFontOne("5", "５", false, false);///No Translate
+                AliasFontOne("6", "６", false, false);///No Translate
+                AliasFontOne("7", "７", false, false);///No Translate
+                AliasFontOne("8", "８", false, false);///No Translate
+                AliasFontOne("9", "９", false, false);///No Translate
+            }
+            else
+            {
+                AliasFontOne("０", "0", false, false);///No Translate
+                AliasFontOne("１", "1", false, false);///No Translate
+                AliasFontOne("２", "2", false, false);///No Translate
+                AliasFontOne("３", "3", false, false);///No Translate
+                AliasFontOne("４", "4", false, false);///No Translate
+                AliasFontOne("５", "5", false, false);///No Translate
+                AliasFontOne("６", "6", false, false);///No Translate
+                AliasFontOne("７", "7", false, false);///No Translate
+                AliasFontOne("８", "8", false, false);///No Translate
+                AliasFontOne("９", "9", false, false);///No Translate
+            }
+        }
+        void AliasFontOne(string one_from, string one_to, bool isItemFont, bool isSquareFont)
+        {
+            uint moji_from = U.ConvertMojiCharToUnit(one_from, this.MyselfPriorityCode);
+            if (moji_from < 0x20 || moji_from == 0x80)
+            {//制御文字なので無視
+                return;
+            }
+            uint moji_to = U.ConvertMojiCharToUnit(one_to, this.MyselfPriorityCode);
+            if (moji_to < 0x20 || moji_to == 0x80)
+            {//制御文字なので無視
+                return;
+            }
+
+            uint topaddress;
+            uint fontaddress_from;
+            uint prevaddress_from;
+            topaddress = FontForm.GetFontPointer(isItemFont);
+            fontaddress_from = FontForm.FindFontData(topaddress
+                , moji_from
+                , out prevaddress_from
+                , this.MyselfPriorityCode);
+            if (fontaddress_from == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            uint fontaddress_to;
+            uint prevaddress_to;
+            fontaddress_to = FontForm.FindFontData(topaddress
+                , moji_to
+                , out prevaddress_to
+                , this.MyselfPriorityCode);
+            if (fontaddress_to == U.NOT_FOUND)
+            {
+                uint font_width = Program.ROM.u8(fontaddress_from + 5);
+                byte[] fontimage = Program.ROM.getBinaryData(fontaddress_from + 8, 72 - 8);
+                byte[] newFontData = FontForm.MakeNewFontData(moji_to
+                    , font_width
+                    , fontimage
+                    , Program.ROM
+                    , this.MyselfPriorityCode);
+
+                U.write_u32(newFontData, 0, 0);   //NULL リストの末尾に追加するので.
+
+                uint newaddr = this.Recycle.Write(newFontData, this.UndoData);
+                if (newaddr == U.NOT_FOUND)
+                {//エラー
+                    return;
+                }
+                //ひとつ前のフォントリストのポインタを、現在追加した最後尾にすげかえる.
+                Program.ROM.write_u32(prevaddress_to + 0, U.toPointer(newaddr), this.UndoData);
+            }
+            else
+            {
+                byte[] bin = Program.ROM.getBinaryData(fontaddress_from + 5, 72 - 5);
+                Program.ROM.write_range(fontaddress_to + 5, bin, this.UndoData);
+            }
         }
     }
 }
