@@ -2227,5 +2227,34 @@ namespace FEBuilderGBA
             }
             return OPClassReelSortExtends.NO;
         }
+
+        public static uint SearchSubMenuMenuDefinePointerFE8J(ROM rom)
+        {
+            uint pointer = U.NOT_FOUND;
+            if (rom.u32(0x050110) == 0x469f4b00)
+            {//submenu
+                pointer = 0x1BCBC;
+                uint a = rom.u32(pointer);
+                if (! U.isSafetyPointer(a, rom))
+                {
+                    pointer = U.GrepEnd(rom.Data, new byte[] { 0x00, 0xB5, 0x03, 0x48, 0x03, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x07, 0x20, 0x02, 0xBC, 0x08, 0x47 }, 0x1000, 0, 4, 0, true);
+                }
+            }
+            return pointer;
+        }
+        public static uint SearchSubMenuMenuDefinePointerFE8U(ROM rom)
+        {
+            uint pointer = U.NOT_FOUND;
+            if (rom.u32(0x04F39C) == 0x469f4b00)
+            {//submenu
+                pointer = 0x1C02C;
+                uint a = rom.u32(pointer);
+                if (!U.isSafetyPointer(a, rom))
+                {
+                    pointer = U.GrepEnd(rom.Data, new byte[] { 0x00, 0xB5, 0x03, 0x48, 0x03, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x07, 0x20, 0x02, 0xBC, 0x08, 0x47 }, 0x1000, 0, 4, 0, true);
+                }
+            }
+            return pointer;
+        }
     }
 }

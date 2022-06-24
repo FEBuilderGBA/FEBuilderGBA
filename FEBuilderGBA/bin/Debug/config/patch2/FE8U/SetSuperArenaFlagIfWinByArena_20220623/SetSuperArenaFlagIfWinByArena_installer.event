@@ -1,8 +1,8 @@
 PUSH
 //Hook ArenaAfter Procs
 //FE8J
-ORG 0xABCD18
-//ORG 0x0A39720
+//ORG 0xABCD18
+ORG 0x0A39720
 POIN SetSuperArenaFlagIfWinByArena|1
 POP
 

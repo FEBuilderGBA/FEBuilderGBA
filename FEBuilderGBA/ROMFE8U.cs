@@ -157,7 +157,8 @@ namespace FEBuilderGBA
            link_arena_deny_unit_pointer = 0x97E8C;  //通信闘技場 禁止ユニット 
            worldmap_road_pointer = 0xC2C0;  // ワールドマップの道
 
-           menu_definiton_pointer = U.FindROMPointer(rom, 8, new uint[] { 0x1C02C, 0x1C2F4, 0x1C0EC, 0x1C2E0, 0x33488, 0x299B4 });  //メニュー定義
+           uint submenu_pointer = PatchUtil.SearchSubMenuMenuDefinePointerFE8U(rom);
+           menu_definiton_pointer = U.FindROMPointer(rom, 8, new uint[] { submenu_pointer, 0x1C02C, 0x1C2F4, 0x1C0EC, 0x1C2E0, 0x33488, 0x299B4 });  //メニュー定義
            menu_promotion_pointer = 0xCDC10;  //CC決定する選択子
            menu_promotion_branch_pointer = 0xCDDCC;  //FE8にある分岐CCメニュー
            menu_definiton_split_pointer = 0x86510;   //FE8にある分岐メニュー

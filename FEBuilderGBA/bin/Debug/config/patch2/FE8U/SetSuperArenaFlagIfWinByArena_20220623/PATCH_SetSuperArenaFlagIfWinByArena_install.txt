@@ -1,4 +1,4 @@
-NAME=闘技場で勝利した時に、超闘技場のステータスフラグを設定する20210602(Installer)
+NAME=闘技場で勝利した時に、超闘技場のステータスフラグを設定する20220623(Installer)
 INFO=闘技場で勝利した時に、指定した時要件を満たしていれば、そのユニットに超闘技場(Super Arena)のステータスフラグを設定します。
 
 TYPE=EA
@@ -14,5 +14,3 @@ NAME.en=Set the Super Arena status flag when you win in Arena(Installer)
 INFO.en=When the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.
 NAME.zh=Set the Super Arena status flag when you win in Arena(Installer)
 INFO.zh=When the unit wins in the arena, if it meets the specified time requirements, it will set the SuperArena status flag.
-
-DEPRECATED=1

@@ -14871,3 +14871,5 @@ r3=X tile position of menu of right	{U}
 0300005D	IsTextDialogAWait	{U}
 08A94270	:08A942C6	Data for fade-out black	{J}
 08A1852C	:08A18582	Data for fade-out black	{U}
+08090B48	AddSortedUnitList	{U}
+08092E20	AddSortedUnitList	{J}

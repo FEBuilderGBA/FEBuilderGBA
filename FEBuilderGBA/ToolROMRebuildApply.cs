@@ -46,25 +46,6 @@ namespace FEBuilderGBA
 
         //どのアドレスをどこに再マップしたかのテーブル
         Dictionary<uint, uint> AddressMap;
-        //LDRキャッシュ (@IFRリポイントの度にやっていてはきりがないので、キャッシュする.)
-        List<DisassemblerTrumb.LDRPointer> LDRCache;
-        void CheckLDRCache()
-        {
-            if (LDRCache != null)
-            {
-                return;
-            }
-            uint limit = Program.ROM.RomInfo.compress_image_borderline_address;
-            if (this.WriteOffset < limit)
-            {
-                limit = this.WriteOffset;
-            }
-            this.LDRCache = DisassemblerTrumb.MakeLDRMap(this.WriteROMData32MB, 0x100, limit, true);
-        }
-        void ClearLDRCache()
-        {
-            this.LDRCache = null;
-        }
         bool isVanilaExtrendsROMArea(uint addr)
         {
             return addr > this.RebuildAddress;
@@ -884,19 +865,6 @@ namespace FEBuilderGBA
                 U.write_range(this.WriteROMData32MB, writeaddr, bin);
 
                 uint vanilla_pointer = U.toPointer(vanilla_addr);
-
-                //IFRの場合 複数のLDRを書き換える必要あり
-                //ClearLDRCache();
-                CheckLDRCache();
-                for (int i = 0; i < this.LDRCache.Count; i++)
-                {
-                    DisassemblerTrumb.LDRPointer ldr = this.LDRCache[i];
-                    if (ldr.ldr_data == vanilla_pointer)
-                    {
-                        U.write_u32(this.WriteROMData32MB, ldr.ldr_data_address, writeaddr_pointer);
-                        ldr.ldr_data = writeaddr_pointer;
-                    }
-                }
             }
 
             string[] lines = File.ReadAllLines(targetfilename);

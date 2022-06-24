@@ -649,6 +649,59 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.LZ77TSA
                 ;
         }
+        //LDR参照が途中に絶対にないと言い切れるデータ
+        public static bool IsNonLDRType(Address.DataTypeEnum dataType)
+        {
+            return dataType == Address.DataTypeEnum.IMG
+                || dataType == Address.DataTypeEnum.PAL
+                || dataType == Address.DataTypeEnum.TSA
+                || dataType == Address.DataTypeEnum.AP
+                || dataType == Address.DataTypeEnum.ROMTCS
+                || dataType == Address.DataTypeEnum.HEADERTSA
+                || dataType == Address.DataTypeEnum.BIN
+                || dataType == Address.DataTypeEnum.UNUSEDBIN
+                || dataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND
+                || dataType == Address.DataTypeEnum.SONGINSTWAVE
+                || dataType == Address.DataTypeEnum.BATTLEFRAMEIMG
+                || dataType == Address.DataTypeEnum.BATTLEOAM
+                || dataType == Address.DataTypeEnum.CSTRING
+                || dataType == Address.DataTypeEnum.LZ77IMG
+                || dataType == Address.DataTypeEnum.LZ77MAPCONFIG
+                || dataType == Address.DataTypeEnum.LZ77MAPMAR
+                || dataType == Address.DataTypeEnum.LZ77PAL
+                || dataType == Address.DataTypeEnum.LZ77TSA
+                || dataType == Address.DataTypeEnum.EVENTCOND_ALWAYS
+                || dataType == Address.DataTypeEnum.EVENTCOND_OBJECT
+                || dataType == Address.DataTypeEnum.EVENTCOND_TALK
+                || dataType == Address.DataTypeEnum.EVENTCOND_TURN
+                || dataType == Address.DataTypeEnum.EVENTSCRIPT
+                || dataType == Address.DataTypeEnum.BATTLEFRAME
+                || dataType == Address.DataTypeEnum.SONGSCORE
+                || dataType == Address.DataTypeEnum.SONGTRACK
+                || dataType == Address.DataTypeEnum.PROCS
+                || dataType == Address.DataTypeEnum.OAMSP
+                || dataType == Address.DataTypeEnum.POINTER
+                || dataType == Address.DataTypeEnum.POINTER_ASM
+                || dataType == Address.DataTypeEnum.POINTER_ARRAY
+                || dataType == Address.DataTypeEnum.AISCRIPT
+                || dataType == Address.DataTypeEnum.MAGICFRAME_CSA
+                || dataType == Address.DataTypeEnum.MAGICFRAME_FEITORADV
+                || dataType == Address.DataTypeEnum.MAGIC_APPEND_SPELLTABLE
+                || dataType == Address.DataTypeEnum.FONT
+                || dataType == Address.DataTypeEnum.FONTCN
+                || dataType == Address.DataTypeEnum.TEXTPOINTERS
+                || dataType == Address.DataTypeEnum.InputFormRef
+                || dataType == Address.DataTypeEnum.InputFormRef_ASM
+                || dataType == Address.DataTypeEnum.InputFormRef_MIX
+                || dataType == Address.DataTypeEnum.InputFormRef_1
+                || dataType == Address.DataTypeEnum.MIX
+                || dataType == Address.DataTypeEnum.JUMPTOHACK
+                || dataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT
+                || dataType == Address.DataTypeEnum.SplitMenu9
+                || dataType == Address.DataTypeEnum.SplitMenu5
+                ;
+                ;
+        }
         public static bool IsFFor00(Address.DataTypeEnum dataType)
         {
             return dataType == DataTypeEnum.FFor00;

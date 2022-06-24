@@ -11,11 +11,16 @@ push {lr ,r4 ,r5, r6}
 mov r6 ,r0	@this procs
 
 @壊すコードの再送
-blh 0x08015394|1	@SubSkipThread2	@{J}
-@blh 0x08015370|1	@SubSkipThread2	@{U}
+@blh 0x08015394|1	@SubSkipThread2	@{J}
+blh 0x08015370|1	@SubSkipThread2	@{U}
 
-ldr r4, =0x03004DF0 @Current	@{J}
-@ldr r4, =0x03004E50 @Current	@{U}
+@blh 0x08031E24	@闘技場の試合結果の取得	@{J}
+blh 0x08031ed8	@闘技場の試合結果の取得	@{U}
+cmp r0, #0x1
+bne Exit
+
+@ldr r4, =0x03004DF0 @Current	@{J}
+ldr r4, =0x03004E50 @Current	@{U}
 
 ldr r4, [r4]		@RAMUnit = [Current]
 
@@ -65,8 +70,8 @@ beq  CHECK_MONEY
 
 ldr  r0, [r4 , #0x0]	@RAMUnit->Unit
 ldrb r0, [r0 , #0x4]	@RAMUnit->Unit->ID
-blh  0x080a9740   @BWL_GetEntry	@{J}
-@blh  0x080a4cfc   @BWL_GetEntry	@{U}
+@blh  0x080a9740   @BWL_GetEntry	@{J}
+blh  0x080a4cfc   @BWL_GetEntry	@{U}
 
 cmp  r0, #0x0
 beq  Exit
@@ -89,8 +94,8 @@ ldr  r2,  [r5, #0x4]	@MONEY
 cmp  r2, #0x0
 beq  CHECK_FLAG
 
-ldr  r0, =0x0202BCEC	@gChapterData	@{J}
-@ldr  r0, =0x0202BCF0	@gChapterData	@{U}
+@ldr  r0, =0x0202BCEC	@gChapterData	@{J}
+ldr  r0, =0x0202BCF0	@gChapterData	@{U}
 ldr  r0, [r0, #0x8]		@gChapterData->Gold
 cmp  r0, r2
 blt  Exit
@@ -101,8 +106,8 @@ ldrh r0,  [r5, #0x8]	@Flag
 cmp  r0, #0x0
 beq  Found
 
-blh  0x080860d0	@CheckFlag	@{J}
-@blh  0x08083DA8	@CheckFlag	@{U}
+@blh  0x080860d0	@CheckFlag	@{J}
+blh  0x08083DA8	@CheckFlag	@{U}
 cmp  r0, #0x0
 beq  Exit
 
@@ -122,8 +127,8 @@ cmp r0,  #0x1
 ble Exit
 mov r1, r6  @this procs
 
-blh 0x0800d340   @イベント命令を動作させる関数	{J}
-@blh 0x0800d07c   @イベント命令を動作させる関数	{U}
+@blh 0x0800d340   @イベント命令を動作させる関数	{J}
+blh 0x0800d07c   @イベント命令を動作させる関数	{U}
 
 Exit:
 pop {r4,r5,r6}

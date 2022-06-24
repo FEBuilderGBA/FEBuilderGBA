@@ -435,6 +435,11 @@ namespace FEBuilderGBA
                     continue;
                 }
 
+                if (!IsNonLDRType(a.Pointer))
+                {//このアドレスはデータの中にあるので書き換えてはいけません
+                    continue;
+                }
+
                 Address.AddAddress(this.StructList
                     , a.Pointer
                     , 0
@@ -471,18 +476,23 @@ namespace FEBuilderGBA
         //LDRが書いてあるADDRが正しいかどうか検証する
         bool CheckTrueLDRAddress(uint addr)
         {
-            if (this.PointerMark.ContainsKey(addr))
+            if (this.PointerMark.ContainsKey( U.toPointer(addr) ))
             {//既に知っている.
                 return false;
             }
-
+            return IsNonLDRType(addr);
+        }
+        //このデータの中にLDR参照される不明なポインタはありません
+        bool IsNonLDRType(uint addr)
+        {
+            addr = U.toOffset(addr);
             for (int i = 0; i < this.StructList.Count; i++)
             {
                 Address a = this.StructList[i];
                 if (addr > a.Addr
                     && addr < a.Addr + a.Length)
                 {
-                    if (Address.IsBINType(a.DataType))
+                    if (Address.IsNonLDRType(a.DataType))
                     {//BINの中にLDRがあるわけがない
                         return false;
                     }
@@ -491,6 +501,7 @@ namespace FEBuilderGBA
 
             return true;
         }
+
         void AppendLDR(List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             for (int i = 0; i < ldrmap.Count; i++)
@@ -498,6 +509,10 @@ namespace FEBuilderGBA
                 DisassemblerTrumb.LDRPointer ldr = ldrmap[i];
 
                 if (!CheckTrueLDRAddress(ldr.ldr_address))
+                {
+                    continue;
+                }
+                if (!CheckTrueLDRAddress(ldr.ldr_data_address))
                 {
                     continue;
                 }

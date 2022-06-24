@@ -14848,3 +14848,5 @@
 
 08A94270	:08A942C6	真っ黒フェードアウト用のデータ	{J}
 08A1852C	:08A18582	真っ黒フェードアウト用のデータ	{U}
+08090B48	AddSortedUnitList	{U}
+08092E20	AddSortedUnitList	{J}

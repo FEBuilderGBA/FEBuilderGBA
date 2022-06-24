@@ -2255,7 +2255,7 @@ namespace FEBuilderGBA
 
         public static uint GrepEnd(byte[] data, byte[] need, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
         {
-            uint grepresult = U.Grep(Program.ROM.Data, need, start, end, blocksize);
+            uint grepresult = U.Grep(data, need, start, end, blocksize);
             if (grepresult == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
@@ -7628,11 +7628,17 @@ namespace FEBuilderGBA
             //最初に見つけた正しいポインタにする
             foreach (uint p in pointers)
             {
+                if (p == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                
                 uint a = rom.u32(p);
                 if (! U.isSafetyPointer(a, rom))
                 {
                     continue;
                 }
+
                 a = U.toOffset(a);
                 if (!U.isSafetyOffset(a + checkPointer + 4, rom))
                 {

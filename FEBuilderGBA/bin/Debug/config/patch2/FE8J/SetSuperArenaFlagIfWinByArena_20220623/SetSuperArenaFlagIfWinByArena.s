@@ -14,6 +14,11 @@ mov r6 ,r0	@this procs
 blh 0x08015394|1	@SubSkipThread2	@{J}
 @blh 0x08015370|1	@SubSkipThread2	@{U}
 
+blh 0x08031E24	@闘技場の試合結果の取得	@{J}
+@blh 0x08031ed8	@闘技場の試合結果の取得	@{U}
+cmp r0, #0x1
+bne Exit
+
 ldr r4, =0x03004DF0 @Current	@{J}
 @ldr r4, =0x03004E50 @Current	@{U}
 
