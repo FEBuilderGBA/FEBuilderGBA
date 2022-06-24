@@ -835,3 +835,5 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 005C273C=PoisonDamageLoop	{J}	//085C68F8
 005C2744=GorgonEggHatchLoop	{J}	//085C68F8
 005C272C=StatusDepletionLoop	{J}	//085C6960
+0007E584=BattleDebugProcs	{J}	//08A13E9C
+0007C240=BattleDebugProcs	{U}	//089A3814

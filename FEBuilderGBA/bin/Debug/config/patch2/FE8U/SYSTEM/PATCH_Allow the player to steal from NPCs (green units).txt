@@ -4,12 +4,13 @@ NAME.en=Allow the player to steal from NPCs (green units)
 INFO.en=Normally blue units can only steal from enemies, but this patch also allows them to steal from NPCs if the other requirements for stealing are met.\r\nNPCs won't be able to steal from the player even if this is done.\r\n
 NAME.zh=Allow the player to steal from NPCs (green units)
 INFO.zh=Normally blue units can only steal from enemies, but this patch also allows them to steal from NPCs if the other requirements for stealing are met.\r\nNPCs won't be able to steal from the player even if this is done.\r\n
-AUTHOR=Shuusuke https://feuniverse.us/t/fe8-shuusukes-simple-sorcery/11318/6
+AUTHOR=Shuusuke, updated by Contro https://feuniverse.us/t/fe8-shuusukes-simple-sorcery/11318/6
 
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=Default|OFF|Fix|FIX
+COMBO=Default|OFF|Enable stealing from players and NPCs|FIX|Enable stealing from NPCs|NPC
 
-OFF:0x25BAA=0x08 0x40 0x80 0x28
-FIX:0x25BAA=0x09 0x40 0x80 0x42
+OFF:0x25BAA=0x08 0x40 0x80 0x28 0x23 0xD1
+FIX:0x25BAA=0x09 0x40 0x80 0x42 0x23 0xD1
+NPC:0x25BAA=0x08 0x40 0x00 0x28 0x23 0xD0

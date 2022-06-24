@@ -14873,3 +14873,5 @@ r3=X tile position of menu of right	{U}
 08A1852C	:08A18582	Data for fade-out black	{U}
 08090B48	AddSortedUnitList	{U}
 08092E20	AddSortedUnitList	{J}
+0807E574	StartBattleDebugProcs	{J}
+0807C230	StartBattleDebugProcs	{U}
