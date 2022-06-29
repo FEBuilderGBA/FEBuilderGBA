@@ -1406,8 +1406,8 @@ r3=X tile position of menu of the right	{U}
 @ActionBattleStruct@12	Inventory slot number (0-4)
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@08	word	Money
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)
@@ -14831,3 +14831,29 @@ r3=X tile position of menu of the right	{U}
 08092E20	AddSortedUnitList	{J}
 0807E574	StartBattleDebugProcs	{J}
 0807C230	StartBattleDebugProcs	{U}
+08AC2898	StartWorldMapMiniMapProcs	{J}
+08072E74	StartBattleManaketeTransform	{J}
+08A3EED4	StartWorldMapMiniMapProcs	{U}
+080708CC	StartBattleManaketeTransform	{U}
+088BC5E8	:088BC60F	移动具有未使用单位的单位。	1	{U}
+088BCCC8	:088BCD03	未使用的单元放置。	1	{U}
+088C179C	:088C17D3	移动具有未使用单位的单位。	2	{U}
+088C1D30	:088C1DCF	未使用的单元放置。	2	{U}
+088C9C40	:088C9CAF	移动具有未使用单位的单位。	3	{U}
+088CA250	:088CA463	未使用的单元放置。	3	{U}
+088CA60C	:088CA63B	移动具有未使用单位的单位。	4	{U}
+088CAEAC	:088CAF87	未使用的单元放置。	4	{U}
+088CB020	:088CB057	移动具有未使用单位的单位。	5	{U}
+088CB574	:088CB613	未使用的单元放置。	5	{U}
+088D1448	:088D164F	未使用的单元放置。	6	敌人。	{U}
+08910B48	:08910B6F	移动具有未使用单位的单位。	1	{J}
+08911200	:0891123B	未使用的单元放置。	1	{J}
+08915C84	:08915CBB	移动具有未使用单位的单位。	2	{J}
+08916218	:089162B7	未使用的单元放置。	2	{J}
+0891E0A8	:0891E117	移动具有未使用单位的单位。	3	{J}
+0891E6A4	:0891E8D3	未使用的单元放置。	3	{J}
+0891EA60	:0891EA8F	移动具有未使用单位的单位。	4	{J}
+0891F300	:0891F3DB	未使用的单元放置。	4	{J}
+0891F474	:0891F4AB	移动具有未使用单位的单位。	5	{J}
+0891F9C8	:0891FA57	未使用的单元放置。	5	{J}
+0892589C	:08925AA3	未使用的单元放置。	6	敌人。	{J}

@@ -1,0 +1,17 @@
+NAME=踊れないユニットの設定(Install)
+NAME.en=Setting up a unit that cannot dance(Install)
+NAME.zh=Setting up a unit that cannot dance(Install)
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=install.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x025B50=0x00 0x4B
+
+AUTHOR=7743
+
+INFO=プレイヤーユニットが、指定したユニットへDance/Playすることを禁止します。\r\nリストは上から評価していきます。\r\nリストに記載がない場合は、Danceすることができます。
+INFO.en=Prohibits the player unit from Dance/Play to the designated unit.\r\nListings are evaluated from the top.\r\nIf it is not listed, it can be danced.
+INFO.zh=Prohibits the player unit from Dance/Play to the designated unit.\r\nListings are evaluated from the top.\r\nIf it is not listed, it can be danced.

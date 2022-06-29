@@ -1,0 +1,8 @@
+TABLE=$5C
+Loop=$06
+TrueReturn=$3E
+CheckUnit=$0E
+CheckClass=$1C
+CheckFlag=$2A
+Found=$3A
+Exit=$4A

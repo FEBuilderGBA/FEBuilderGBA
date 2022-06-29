@@ -78,9 +78,18 @@ namespace FEBuilderGBA
                     {
                         return false;
                     }
-                    return U.isPointerOrNULL(Program.ROM.u32(addr + 12))
-                        && U.isPointerOrNULL(Program.ROM.u32(addr + 16))
+                    if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
+                    {
+                        return U.isPointerOrNULL(Program.ROM.u32(addr + 12))
+//                            && U.isPointerOrNULL(Program.ROM.u32(addr + 16)) //スキルシステムでなんかするみたいなのでやめる
                         ;
+                    }
+                    else
+                    {
+                        return U.isPointerOrNULL(Program.ROM.u32(addr + 12))
+                            && U.isPointerOrNULL(Program.ROM.u32(addr + 16))
+                        ;
+                    }
                 }
                 , (int i, uint addr) =>
                 {

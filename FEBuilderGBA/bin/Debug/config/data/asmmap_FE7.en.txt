@@ -4598,8 +4598,8 @@
 0809ED34	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}
 080178B4	GetROMItemStructPtr	{J}
 //This data is made with the aim of being readable by machine fast.
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@18	byte	playthroughId
 @ChapterData@19	byte	_pad19

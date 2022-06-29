@@ -994,8 +994,8 @@
 @ActionBattleStruct@12	Inventory slot number (0-4)
 0203A85C	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A858	@ActionBattleStruct	ActionBattleStruct	{J}
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@08	word	Money
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)

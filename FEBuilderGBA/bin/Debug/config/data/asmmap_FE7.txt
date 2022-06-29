@@ -1266,8 +1266,8 @@
 0203A858	@ActionBattleStruct	ActionBattleStruct	{J}
 
 
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@08	word	所持金
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	霧の濃さ (0なら霧なし)

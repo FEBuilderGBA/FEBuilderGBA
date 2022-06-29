@@ -1,0 +1,19 @@
+NAME=闘技場のBボタンキャンセルできるメッセージをスキップする
+NAME.en=Skip messages that can be canceled with the B button in the arena
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: ShowMessage|OFFF|Fixed: Hide|FIX1
+
+DETERMINATION_ADDRESS=0xB5A82
+
+OFFF:0xB5A82=0x00 0xF0 0xBF 0xF8
+FIX1:0xB5A82=0x00 0x00 0x00 0x00
+
+AUTHOR=7743
+INFO=闘技場でBボタンでキャンセルできるというメッセージを省略します。\r\nBボタンでキャンセルできることは常識だから注意する必要はないと思う。
+INFO.en=Omit the message that you can cancel with the B button in the arena.\r\nIt's common sense that you can cancel with the B button, so you don't need to be careful.
+NAME.zh=竞技场中的 B 按钮 跳过可取消的消息。
+INFO.zh=省略可以使用竞技场中的 B 按钮取消的消息。\r\n使用 B 键可以取消，这是常识，无需小心。

@@ -1,0 +1,25 @@
+NAME=CG表示時のフェードイン、フェードアウト演出を消す
+NAME.en=Remove fade-in/fade-out effect when displaying CG
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Fade-in|OFFF|Fixed|FIX1
+
+DETERMINATION_ADDRESS=0xEA50
+
+//fade-in
+OFFF:0xEA50=0xA3 0xF0 0x96 0xFE
+FIX1:0xEA50=0x00 0x00 0x00 0x00
+
+//fade-out
+OFFF:0xEA72=0xA3 0xF0 0x5B 0xFE
+FIX1:0xEA72=0x00 0x00 0x00 0x00
+
+
+AUTHOR=7743
+INFO=CGを表示するときに強制的にフェードイン演出が追加されますが、このパッチではそれを無効にします。\r\nフェードインが行われなくなりますが、代わりにイベント命令からFADIなどを利用してイベントから制御することができるようになります。
+INFO.en=A fade-in effect is forcibly added when displaying CG, but this patch disables it.\r\nFade-in will not be performed, but instead it will be possible to control from the event by using FADI etc. from the event instruction.
+NAME.zh=Remove fade-in/fade-out effect when displaying CG
+INFO.zh=显示CG时强制添加淡入效果，但此补丁将其禁用。\r\n将不执行淡入，但可以通过事件指令使用 FADI 等从事件进行控制。

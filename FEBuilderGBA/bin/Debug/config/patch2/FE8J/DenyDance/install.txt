@@ -1,0 +1,22 @@
+PUSH
+ORG 0x025AF4	//{J}
+//ORG 0x025B50	//{U}
+jumpToHack(DenyDance)
+POP
+
+ALIGN 4
+DenyDance:
+#incbin "DenyDance.dmp"
+POIN DenyDanceTABLE
+
+ALIGN 4
+DenyDanceTABLE:
+
+//		Unit	Class		Flag
+//	(00=ANY)	(00=ANY)	(00=ANY)
+BYTE	0x01	0x00		;SHORT 0x00	//Eirika
+BYTE	0x02	0x00		;SHORT 0x00	//Seth
+BYTE	0x00	0x65		;SHORT 0x00	//DragonZombie
+BYTE	0x00	0x66		;SHORT 0x00	//DeamonKing
+
+BYTE	0xFF	0x00		;SHORT 0x00	//term

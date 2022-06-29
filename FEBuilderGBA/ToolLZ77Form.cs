@@ -203,7 +203,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            Undo.UndoData undodata = Program.Undo.NewUndoData("ZeroClear");
+            Undo.UndoData undodata = Program.Undo.NewUndoData(R._("ZeroClear {0}-{1} ({2}size)", U.To0xHexString(from), U.To0xHexString(to), size));
             Program.ROM.write_fill(from, size);
             Program.Undo.Push(undodata);
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -235,7 +235,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            Undo.UndoData undodata = Program.Undo.NewUndoData(R._("MoveAddress {0}-{1} => {2} ({3}size)", U.To0xHexString(moveAddr),U.To0xHexString(moveAddr + length), U.To0xHexString(toAddr), length));
             uint r = InputFormRef.MoveBinaryData(this, moveAddr, toAddr, length, undodata);
             if (r == U.NOT_FOUND)
             {

@@ -36,6 +36,11 @@ namespace FEBuilderGBA
                 , 8
                 , (int i, uint addr) =>
                 {
+                    uint p = Program.ROM.u32(addr);
+                    if (! U.isPointer(p))
+                    {
+                        return false;
+                    }
                     return i < 12;
                 }
                 , (int i, uint addr) =>
@@ -163,7 +168,6 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
-
                     FEBuilderGBA.Address.AddLZ77Pointer(list, addr + 0, name, isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
                     FEBuilderGBA.Address.AddLZ77Pointer(list, addr + 4, name, isPointerOnly, FEBuilderGBA.Address.DataTypeEnum.LZ77TSA);
                 }

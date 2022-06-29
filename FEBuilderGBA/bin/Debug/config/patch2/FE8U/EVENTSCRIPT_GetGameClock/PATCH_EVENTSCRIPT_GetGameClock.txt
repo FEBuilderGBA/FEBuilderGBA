@@ -1,0 +1,33 @@
+NAME=ゲーム内時間を取得する(イベント命令)
+NAME.en=Add Event: Get Game Clock
+NAME.zh=Add Event: Get Game Clock
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetGameClock.dmp=0x00 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetGameClock.dmp
+BIN:$FREEAREA:2=ASMC_GetChapterStartClock.dmp
+BIN:$FREEAREA:3=ASMC_GetTurnStartClock.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_GetGameClock.dmp}	ゲームのリアルタイムクロックの取得(ASMC_GetGameClock)	@STOREC
+EVENTSCRIPT:02=400D0000{$L1:ASMC_GetChapterStartClock.dmp}	章開始時間の取得(ASMC_GetChapterStartClock)	@STOREC
+EVENTSCRIPT:03=400D0000{$L1:ASMC_GetTurnStartClock.dmp}	現在のターン開始時間の取得(ASMC_GetTurnStartClock)	@STOREC
+
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_GetGameClock.dmp}	Get Game realtime clock(ASMC_GetGameClock)	@STOREC
+EVENTSCRIPT:02.en=400D0000{$L1:ASMC_GetChapterStartClock.dmp}	Get chapter start clock(ASMC_GetChapterStartClock)	@STOREC
+EVENTSCRIPT:03.en=400D0000{$L1:ASMC_GetTurnStartClock.dmp}	Get current turn start clock(ASMC_GetTurnStartClock)	@STOREC
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_GetGameClock.dmp}	Get Game realtime clock(ASMC_GetGameClock)	@STOREC
+EVENTSCRIPT:02.zh=400D0000{$L1:ASMC_GetChapterStartClock.dmp}	Get chapter start clock(ASMC_GetChapterStartClock)	@STOREC
+EVENTSCRIPT:03.zh=400D0000{$L1:ASMC_GetTurnStartClock.dmp}	Get current turn start clock(ASMC_GetTurnStartClock)	@STOREC
+
+INFO=ゲーム内時間を取得しSlotCに格納します。\r\n時刻(クロック)の単位はフレーム秒で、60フレーム秒で1秒になります。\r\n
+値を引き算することで経過した時間を求めることができます。\r\nGameClockは、フレーム単位で常にインクリメントされ更新されています。\r\nTurnStartClockは、プレイヤーターンが開始した瞬間に更新されます。GameClockとの差を求めると、現在のターンにかかっている時間がわかります。\r\nChapterStartClockは、章が開始した瞬間に更新されます。GameClockとの差を求めると、現在の章にかかっている時間がわかります。
+INFO.en=Gets the in-game time and stores it in SlotC.\r\nThe unit of time (clock) is frame seconds, and 60 frame seconds is 1 second.\r\n
+INFO.zh=获取游戏内时间并将其存储在 SlotC 中。\r\n时间单位（时钟）为帧秒，60帧秒为1秒。\r\n

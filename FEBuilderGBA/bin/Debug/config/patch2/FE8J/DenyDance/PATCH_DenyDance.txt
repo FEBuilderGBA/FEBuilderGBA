@@ -1,0 +1,26 @@
+NAME=踊れないユニットの設定(Editor)
+NAME.en=Setting up a unit that cannot dance(Editor)
+NAME.zh=Setting up a unit that cannot dance(Editor)
+
+IF:0x025AF4=0x00 0x4B
+
+AUTHOR=7743
+
+//画像パッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+POINTER=$FGREP4END DenyDance.dmp
+DATASIZE=4
+DATACOUNT=$GREP4 0xFF 0x00 0x00 0x00
+
+LISTNAME=$B1:CLASS
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+W2:FLAG=Flag(00=ANY)
+
+
+INFO=プレイヤーユニットが、指定したユニットへDance/Playすることを禁止します。\r\nリストは上から評価していきます。\r\nリストに記載がない場合は、Danceすることができます。
+INFO.en=Prohibits the player unit from Dance/Play to the designated unit.\r\nListings are evaluated from the top.\r\nIf it is not listed, it can be danced.
+INFO.zh=Prohibits the player unit from Dance/Play to the designated unit.\r\nListings are evaluated from the top.\r\nIf it is not listed, it can be danced.
+

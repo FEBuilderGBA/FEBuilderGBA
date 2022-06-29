@@ -1954,8 +1954,8 @@
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
 
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@08	word	所持金
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	霧の濃さ (0なら霧なし)
@@ -14852,3 +14852,7 @@
 08092E20	AddSortedUnitList	{J}
 0807E574	StartBattleDebugProcs	{J}
 0807C230	StartBattleDebugProcs	{U}
+08AC2898	StartWorldMapMiniMapProcs	{J}
+08072E74	StartBattleManaketeTransform	{J}
+08A3EED4	StartWorldMapMiniMapProcs	{U}
+080708CC	StartBattleManaketeTransform	{U}

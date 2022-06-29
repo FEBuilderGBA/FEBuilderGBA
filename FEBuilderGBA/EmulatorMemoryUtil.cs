@@ -760,8 +760,8 @@ namespace FEBuilderGBA
             List<AddressList> ret = new List<AddressList>();
             if (Program.ROM.RomInfo.version == 6)
             {//FE6
-                ret.Add(new AddressList(0x00, "Clock", "", 4));
-                ret.Add(new AddressList(0x04, "Unknown4", "", 4));
+                ret.Add(new AddressList(0x00, "TurnStartClock", "", 4));
+                ret.Add(new AddressList(0x04, "ChapterStartClock", "", 4));
                 ret.Add(new AddressList(0x08, "Gold", "DEC", 4));
                 ret.Add(new AddressList(0x0C, "SaveSlotIndex", "", 1));
                 ret.Add(new AddressList(0x0D, "Fog", "FOG", 1));
@@ -780,8 +780,8 @@ namespace FEBuilderGBA
             }
             else
             {//FE7 , FE8
-                ret.Add(new AddressList(0x00, "Clock", "", 4));
-                ret.Add(new AddressList(0x04, "Unknown4", "", 4));
+                ret.Add(new AddressList(0x00, "TurnStartClock", "", 4));
+                ret.Add(new AddressList(0x04, "ChapterStartClock", "", 4));
                 ret.Add(new AddressList(0x08, "Gold", "DEC", 4));
                 ret.Add(new AddressList(0x0C, "SaveSlotIndex", "", 1));
                 ret.Add(new AddressList(0x0D, "Fog", "FOG", 1));

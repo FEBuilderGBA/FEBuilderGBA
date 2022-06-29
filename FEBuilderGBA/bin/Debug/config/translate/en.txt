@@ -2132,7 +2132,7 @@ Talk Conditions
 03=Conversation
 
 :04=話す条件ASM
-04=Talk Condition (ASM)
+04=Conversation (ASM)
 
 :会話条件
 Conversation Cond.

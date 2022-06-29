@@ -1427,8 +1427,8 @@ r3=X tile position of menu of right	{U}
 @ActionBattleStruct@12	Inventory slot number (0-4)
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
-@ChapterData@00	word	Clock
-@ChapterData@04	word	Unknown4
+@ChapterData@00	word	TurnStartClock
+@ChapterData@04	word	ChapterStartClock
 @ChapterData@08	word	Money
 @ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)
@@ -14875,3 +14875,35 @@ r3=X tile position of menu of right	{U}
 08092E20	AddSortedUnitList	{J}
 0807E574	StartBattleDebugProcs	{J}
 0807C230	StartBattleDebugProcs	{U}
+08AC2898	StartWorldMapMiniMapProcs	{J}
+08072E74	StartBattleManaketeTransform	{J}
+08A3EED4	StartWorldMapMiniMapProcs	{U}
+080708CC	StartBattleManaketeTransform	{U}
+08220D18	:08221CD8	Unused instrument table 1.	{U}
+08223BF8	:08223E38	Unused instrument table 2.	{U}
+082109C8	:08211988	Unused instrument table 1.	{J}
+082138A8	:08214084	Unused instrument table 2.	{J}
+088BC5E8	:088BC60F	Move units with unused units.	1	{U}
+088BCCC8	:088BCD03	Unused unit placement.	1	{U}
+088C179C	:088C17D3	Move units with unused units.	2	{U}
+088C1D30	:088C1DCF	Unused unit placement.	2	{U}
+088C9C40	:088C9CAF	Move units with unused units.	3	{U}
+088CA250	:088CA463	Unused unit placement.	3	{U}
+088CA60C	:088CA63B	Move units with unused units.	4	{U}
+088CAEAC	:088CAF87	Unused unit placement.	4	{U}
+088CB020	:088CB057	Move units with unused units.	5	{U}
+088CB574	:088CB613	Unused unit placement.	5	{U}
+088D1448	:088D164F	Unused unit placement.	6	enemy.	{U}
+08910B48	:08910B6F	Move units with unused units.	1	{J}
+08911200	:0891123B	Unused unit placement.	1	{J}
+08915C84	:08915CBB	Move units with unused units.	2	{J}
+08916218	:089162B7	Unused unit placement.	2	{J}
+0891E0A8	:0891E117	Move units with unused units.	3	{J}
+0891E6A4	:0891E8D3	Unused unit placement.	3	{J}
+0891EA60	:0891EA8F	Move units with unused units.	4	{J}
+0891F300	:0891F3DB	Unused unit placement.	4	{J}
+0891F474	:0891F4AB	Move units with unused units.	5	{J}
+0891F9C8	:0891FA57	Unused unit placement.	5	{J}
+0892589C	:08925AA3	Unused unit placement.	6	enemy.	{J}
+086792A4	:08679B03	Unknown	Unused data.	1	{U}
+0867EA48	:0867EE03	Unknown	Unused data.	2	{U}
