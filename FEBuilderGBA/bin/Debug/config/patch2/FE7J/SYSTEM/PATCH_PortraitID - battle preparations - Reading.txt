@@ -1,0 +1,18 @@
+
+NAME=Portrait ID for Reading
+NAME.en=Portrait ID for Reading
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x09C2D2
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=進撃準備画面のReading時に表示する人物の顔画像
+INFO.en=Portrait ID for the character portrait to display during Reading in the battle preparations screen.
+INFO.zh=读取预先准备画面时要显示的人脸图像。

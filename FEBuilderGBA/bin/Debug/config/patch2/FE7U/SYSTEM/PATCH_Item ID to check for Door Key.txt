@@ -1,0 +1,19 @@
+
+NAME=扉の鍵のアイテムID
+NAME.en=Item ID to check for Door command
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x018568
+ADDRESS_TYPE=ITEM
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=扉を開けられる「とびらのかぎ」のアイテムID
+INFO.en=Item ID to check for when determining availability of Door command.
+NAME.zh=门钥匙物品 ID。
+INFO.zh=可以开门的“飞鸟之剑”的物品ID。

@@ -1,0 +1,19 @@
+
+NAME=攻略評価のランク評価用に使われる顔画像
+NAME.en=Portrait ID for Rank evaluation
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x09A200
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=攻略評価に利用する自分物の顔画を指定します
+INFO.en=Portrait ID for the character portrait to give the ranking in the battle preparations screen.
+NAME.zh=人脸图像用于捕获评估的等级评估。
+INFO.zh=指定您自己的面部图像以用于捕获评估。

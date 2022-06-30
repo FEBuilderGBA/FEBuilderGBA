@@ -28,7 +28,7 @@ namespace FEBuilderGBA
                 , 8
                 , (int i, uint addr) =>
                 {//0xFFまで
-                    if (Program.ROM.u8(addr) == 0xFF)
+                    if (Program.ROM.u16(addr) == 0xFFFF)
                     {
                         return false;
                     }

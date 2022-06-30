@@ -5504,3 +5504,4 @@
 080798D0	ClearGlobalTriggerState	{U}
 0808DEA8	出撃禁止判定	{U}
 0808E7D4	出撃禁止判定	{J}
+08006f80	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{U}

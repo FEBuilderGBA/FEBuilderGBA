@@ -1,0 +1,21 @@
+
+NAME=回復アニメーションに利用するアイテムID
+NAME.en=Item ID to use for Vulnerary animation
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02CE98
+ADDRESS_TYPE=ITEM
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=傷薬のヒーリングアニメーションに使用するアイテムIDです。\r\nデフォルトでは、アイテムID 0x6B（きずぐすり）のアニメーション効果を使用するようにハードコーディングされています。\r\n例えば0x6Cに変更すると、ユニットがVulneraryを使用したときに、Elixirマップのアニメーション/エフェクトが再生されます。
+
+INFO.en=Item ID to use for Vulnerary healing animation.\r\nBy default, the game is hardcoded to use the animation effect from item ID 0x6B (Vulnerary) for Vulnerary use effect.\r\nChanging it to 0x6C, for example, will cause the Elixir map animation/effect to play when a unit uses a Vulnerary.
+
+NAME.zh=用于恢复动画的项目 ID。
+INFO.zh=用于伤口愈合动画的物品 ID。\r\n默认情况下，使用项目 ID 0x6B 的动画效果是硬编码的。\r\n例如，如果将其更改为 0x6C，则在单位使用 Vulnerary 时将播放 Elixir 地图的动画/效果。

@@ -1,0 +1,19 @@
+
+NAME=タイルでの自動回復に利用するアイテムID
+NAME.en=Item ID to use for tile healing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x03286A
+ADDRESS_TYPE=ITEM
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=タイルのヒーリングアニメーションに使用するアイテムIDです。デフォルトでは、ユニットがヒーリングタイルからHPを回復するときのアニメーションは、アイテムID 0x6B (きずくすり) のアニメーション効果を使用するようにハードコーディングされています。
+INFO.en=Item ID to use for tile healing animation.\r\nBy default, the game is hardcoded to use the animation effect from item ID 0x6B (Vulnerary)\r\nfor the animation to play when a unit recovers HP from a healing tile.\r\nChanging it to 0x6C, for example, will cause the Elixir map animation/effect to play when a unit recovers HP from a Fort.
+NAME.zh=用于在瓷砖上自动恢复的项目 ID。
+INFO.zh=用于瓷砖愈合动画的物品 ID。默认情况下，单位从治疗图块中恢复生命值时的动画被硬编码为使用项目 ID 0x6B（刮擦）的动画效果。

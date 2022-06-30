@@ -1,0 +1,19 @@
+
+NAME=輸送隊の顔画像
+NAME.en=Portrait ID for Supply screen
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x096870 0x0991A0
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=輸送体画面の左上に表示される顔画像
+INFO.en=Portrait ID to use on the screen where items can be withdrawn/deposited.
+NAME.zh=车队的面部图像。
+INFO.zh=人脸图像显示在运输机屏幕的左上方。

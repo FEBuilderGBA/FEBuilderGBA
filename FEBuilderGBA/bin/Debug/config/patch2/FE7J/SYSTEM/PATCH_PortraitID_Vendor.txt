@@ -1,0 +1,19 @@
+
+NAME=道具屋の女性の顔画像
+NAME.en=Portrait ID for vendor woman
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0DB079C
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=2
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=道具屋の女性の顔画像
+INFO.en=Portrait ID for the character portrait to display in the vendor.
+NAME.zh=工具店里一个女人的脸。
+INFO.zh=工具店里一个女人的脸。

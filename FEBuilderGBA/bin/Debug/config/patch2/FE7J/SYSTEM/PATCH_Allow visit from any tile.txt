@@ -1,0 +1,19 @@
+
+NAME=村以外のタイルでも訪問できるようにする
+NAME.en=Allow Visit command from any tile
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+ONN:0x223BC=0x06 0xE0
+OFF:0x223BC=0x03 0x28
+
+COMBO=Check for specific tiles|OFF|Can Visit from any tile|ONN
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=訪問コマンドのタイルIDチェックをスキップし、任意のタイルに尋ねるを表示できるようにします。
+INFO.en=This skips the tile ID check for Visit command, allowing the Visit command to appear on any tile. 
+NAME.zh=可以参观村庄以外的瓷砖。
+INFO.zh=跳过访问命令的磁贴 ID 检查并允许您查看询问任何磁贴。

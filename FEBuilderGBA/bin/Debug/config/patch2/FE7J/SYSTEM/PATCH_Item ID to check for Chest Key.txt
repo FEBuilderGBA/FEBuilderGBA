@@ -1,0 +1,19 @@
+
+NAME=宝箱の鍵 アイテムID(1)
+NAME.en=Item ID (1) to check for Chest command
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x018944
+ADDRESS_TYPE=ITEM
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=宝箱コマンドの有無を判断する際に確認するアイテムID（2つのうちの1つ）です。 ゲーム側がチェックする「たからのかぎ」は、1回使用と3回使用があります。
+INFO.en=Item ID (one of two) to check for when determining availability of Chest command.  There is the single use and three use Chest Key that the game checks for.
+NAME.zh=宝箱钥匙物品 ID (1)。
+INFO.zh=确定宝箱命令是否存在时要检查的项目 ID（两者之一）。游戏勾选的“宝之卡吉”可以使用一次或三次。

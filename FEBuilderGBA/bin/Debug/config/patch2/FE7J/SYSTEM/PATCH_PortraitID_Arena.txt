@@ -1,0 +1,19 @@
+
+NAME=闘技場の男の顔画像
+NAME.en=Portrait ID for arena man
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0B354A
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=1
+HEX=true
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=闘技場の受付にいる男の顔画像です
+INFO.en=Portrait ID for the character portrait to display for the arena fightmonger. Unlike the armory and vendor portrait IDs, the arena man portrait ID can only be one byte without patches.
+NAME.zh=一个男人在舞台上的面部图像。
+INFO.zh=这是一个男人在竞技场接待处的面部图像。

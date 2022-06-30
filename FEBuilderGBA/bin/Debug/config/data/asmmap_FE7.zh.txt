@@ -5188,5 +5188,6 @@
 080685c8	IsHealStaffBGM	{J}
 0807A0A0	ClearGlobalTriggerState	{J}
 080798D0	ClearGlobalTriggerState	{U}
-0808DEA8	出击禁止判断。	{U}
-0808E7D4	出击禁止判断。	{J}
+0808DEA8	出击禁止判断	{U}
+0808E7D4	出击禁止判断	{J}
+08006f80	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{U}
