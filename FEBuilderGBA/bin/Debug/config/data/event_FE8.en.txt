@@ -244,6 +244,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20B30000	WM_TEXTDECORATE
 40C60000XXXX0000	Text display[XXXX:TEXT:Text](WM_TEXT)	{WMAPTEXT}
 20C70000	Prepare text display(WM_TEXTSTART)	{WMAPTEXT}
+20C80000	Prepare text display by TOP(WM_TEXTSTART_TOP)(LOW)	Prohibited from use because it does not work as expected.	{WMAPTEXT}
 20C90000	Wait until end of movement(WM_REMOVETEXT)	{WAIT}	{WMAPTEXT}
 2046XX00	Small screening effect on[XX::]
 2F460000	Screen effect - Small summon
