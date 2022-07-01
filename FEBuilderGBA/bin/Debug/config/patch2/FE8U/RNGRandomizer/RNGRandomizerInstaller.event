@@ -11,6 +11,7 @@ jumpToHack(RNGBodyFE8)
 
 POP
 
+ALIGN 4
 RNGBodyFE8:
 #incbin rngbodyFE8.dmp
 
@@ -21,6 +22,7 @@ jumpToHack(bootHackBodyFE8)
 
 POP
 
+ALIGN 4
 bootHackBodyFE8:
 #incbin BootHackFE8.dmp
 
@@ -31,6 +33,7 @@ jumpToHack(resumeHackBodyFE8)
 
 POP
 
+ALIGN 4
 resumeHackBodyFE8:
 #incbin ResumeHackFE8.dmp
 

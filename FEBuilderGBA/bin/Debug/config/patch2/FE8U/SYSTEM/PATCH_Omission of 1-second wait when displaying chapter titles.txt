@@ -1,0 +1,23 @@
+NAME=章タイトル表示時の1秒のウェイトの省略
+NAME.en=Omission of 1-second wait when displaying chapter titles
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Wait 1sec|OFFF|Fixed: No Wait|FIX1
+
+DETERMINATION_ADDRESS=0x59B1C2
+
+OFFF:0x59B1C2=0x3C
+FIX1:0x59B1C2=0x00
+
+OFFF:0x59B2D2=0x3C
+FIX1:0x59B2D2=0x00
+
+AUTHOR=7743
+INFO=章を開始するときに、タイトルを表紙する前に、二つのライトが回転する演出が入りますが、この演出が開始される前に1秒のウェイトがあります。
+このパッチはそのウェイトを省略します。
+INFO.en=When starting a chapter, before the title is covered, there is a one-second wait before the two lights rotate to start the production.\r\nThis patch omits that wait.
+NAME.zh=Omission of 1-second wait when displaying chapter titles
+INFO.zh=When starting a chapter, before the title is covered, there is a one-second wait before the two lights rotate to start the production.\r\nThis patch omits that wait.

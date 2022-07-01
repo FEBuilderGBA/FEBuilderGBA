@@ -8798,8 +8798,8 @@ r3=X tile position of menu of the right	{U}
 0802CB8C	FinishUpItemBattle	Register motion when using items	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	{J}
-08A19608	&OAMREGS_ARRAY	Unk OAMREGS	17	{U}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	Light up the selection field of items in the Supply	{J}
+08A19608	&OAMREGS_ARRAY	Unk OAMREGS	17	Light up the selection field of items in the Supply	{U}
 08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
 08A1A474	&HEADERTSA	Something's TSA	20	{U}
 08A96CC4	&HEADERTSA	Something's TSA	20	{J}
@@ -8868,7 +8868,6 @@ r3=X tile position of menu of the right	{U}
 08A944E4	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
 08A187F0	&OAMREGS_ARRAY	Unk OAMREGS	21	{U}
 08A94534	&OAMREGS_ARRAY	Unk OAMREGS	21	{J}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	22	FE8JONLY	{J}
 08A9DA70	&OAMREGS_ARRAY	Unk OAMREGS	23	{J}
 080144E0	NewPaletteAnimator_2	{J}
 080144CC	NewPaletteAnimator_2	{U}
