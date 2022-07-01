@@ -1,0 +1,17 @@
+NAME=ユニット選択パレット1（青／移動範囲）
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+ADDRESS=0x308E98
+DATASIZE=2
+DATACOUNT=48
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=ユニットが通過できるタイルを表示するパレット。
+NAME.en=Unit selection palette 1 (blue/movement).
+INFO.en=Palette displayed for tiles a unit can walk through.
+NAME.zh=单位选择调色板1（蓝色/运动）
+INFO.zh=显示一个单位可以走过的瓷砖的调色板。

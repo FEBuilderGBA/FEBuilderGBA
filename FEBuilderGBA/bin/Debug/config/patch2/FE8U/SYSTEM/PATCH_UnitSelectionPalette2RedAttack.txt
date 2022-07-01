@@ -1,0 +1,17 @@
+NAME=ユニット選択パレット2（赤／攻撃範囲）
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+ADDRESS=0xA02F94
+DATASIZE=2
+DATACOUNT=48
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=ユニットが攻撃可能なタイルを表示するパレット。
+NAME.en=Unit selection palette 2 (red/attack).
+INFO.en=Palette displayed for tiles a unit can attack.
+NAME.zh=单位选择调色板2（红色/攻击）。
+INFO.zh=显示一个单位可以攻击的瓷砖的调色板

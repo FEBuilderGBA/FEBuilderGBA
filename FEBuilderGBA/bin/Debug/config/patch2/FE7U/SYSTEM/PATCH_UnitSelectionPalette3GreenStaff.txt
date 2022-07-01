@@ -1,0 +1,17 @@
+NAME=ユニット選択パレット3（緑／杖）
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+ADDRESS=0x3FDDDC
+DATASIZE=2
+DATACOUNT=48
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=ユニットが杖を使用できるタイルを表示するパレットです。
+NAME.en=Unit selection palette 3 (green/staff).
+INFO.en=Palette displayed for tiles a unit can use a staff on.
+NAME.zh=单位选择调色板3（绿色/工作人员）。
+INFO.zh=显示一个单位可以使用法杖的瓷砖的调色板。
