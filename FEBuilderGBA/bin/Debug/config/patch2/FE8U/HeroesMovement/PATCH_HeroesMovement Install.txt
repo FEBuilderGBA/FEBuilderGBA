@@ -25,3 +25,4 @@ INFO.zh=它将斯坦的英雄运动与SkillSystems分开。\r\n播放器人物�
 
 NEW_TARGET_SELECTION_STRUCT=$FGREP4END+4 HeroesMovement/asm/TargetCommandEffect.bin
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=8000

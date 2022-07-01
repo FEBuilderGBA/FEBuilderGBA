@@ -15,3 +15,6 @@ NAME.en=Join(Refuge) command
 INFO.en=Instead of rescuing units, you will be able to rescue them from the other side with you.
 NAME.zh=同行命令
 INFO.zh=您可以从另一侧救出他们，而不是救出人物。
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=2000

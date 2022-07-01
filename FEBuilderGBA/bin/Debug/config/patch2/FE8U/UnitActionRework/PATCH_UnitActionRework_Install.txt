@@ -12,3 +12,6 @@ INFO=UnitActionで利用できるアクション数を増やします。\r\n空�
 
 INFO.en=Increase the number of actions available for UnitAction.\r\nWe will greatly increase the number of free actions.\r\nThis library is a prerequisite for patches you want to animate on units on the map.
 INFO.zh=增加UnitAction可用的操作数。\r\n我们将大大增加自由行动的数量。\r\n此库是要为地图上的人物设置动画的修补程序的先决条件。
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=2000
