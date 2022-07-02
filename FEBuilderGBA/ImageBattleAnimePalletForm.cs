@@ -21,6 +21,14 @@ namespace FEBuilderGBA
             this.PFR = new PaletteFormRef(this);
             PFR.MakePaletteUI(OnChangeColor, GetSampleBitmap);
             SetExpain();
+
+            U.AllowDropFilename(this, new string[] { ".PNG" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    this.ImportButton_Click(null, null);
+                }
+            });
         }
         PaletteFormRef PFR;
         //32Colorモードかどうか

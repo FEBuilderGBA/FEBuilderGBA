@@ -1,0 +1,20 @@
+NAME=セーブスロットに地名を表示しない
+NAME.en=Do not display place names in save slots
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: |OFFF|Fixed: |FIX1
+
+DETERMINATION_ADDRESS=0xB06FE
+
+OFFF:0xB06FE=0x0F 0xD1
+FIX1:0xB06FE=0x0F 0xE0
+
+AUTHOR=7743
+INFO=セーブスロットに必ず章名を表示するようにします。\r\nたとえ、フリーマップであっても地名ではなく章のタイトルの名前を表示するようにします。\r\nワールドマップを利用する場合は利用しない方がいいと思います。
+INFO.en=Always display the name of the chapter in the save slot.\r\nEven if it is a world map skirmishes, it should display the name of the chapter title, not the name of the place.\r\nIf you use the world map, I think it should not be used.
+
+NAME.zh=Do not display place names in save slots
+INFO.zh=Always display the name of the chapter in the save slot.\r\nEven if it is a world map skirmishes, it should display the name of the chapter title, not the name of the place.\r\nIf you use the world map, I think it should not be used.
