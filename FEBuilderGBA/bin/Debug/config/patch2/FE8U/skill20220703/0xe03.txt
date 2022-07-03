@@ -1,0 +1,2 @@
+Character with whom this unit
+may talk on the battlefield.

@@ -1,0 +1,2 @@
+Add unit's Resistance to damage[N]
+dealt. (3 Durability Per Hit)

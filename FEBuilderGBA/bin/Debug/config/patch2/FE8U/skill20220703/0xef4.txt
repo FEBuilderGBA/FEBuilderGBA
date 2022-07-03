@@ -1,0 +1,3 @@
+Infiltrator: If within 2 spaces
+of two or more enemies, gain +3
+damage and +15% hit.

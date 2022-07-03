@@ -1028,4 +1028,4 @@ UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
 UPDATE_UNINSTALL:12=..\bad_status_sword\PATCH_bad_status_sword.txt
 
 DEPRECATED=1
-UPDATE_PATCH=..\Skill20220527\PATCH_Skill20220527.txt
+UPDATE_PATCH=..\Skill20220703\PATCH_Skill20220703.txt

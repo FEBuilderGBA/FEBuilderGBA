@@ -1,0 +1,3 @@
+Spectrum Stance: +2 attack,
+speed, defense, and resistance
+when foe initiates battle.

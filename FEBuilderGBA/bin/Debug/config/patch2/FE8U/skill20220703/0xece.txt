@@ -1,0 +1,3 @@
+Foresight: Avoid the damage
+from enemy Critical Hits and
+Skill Activations.

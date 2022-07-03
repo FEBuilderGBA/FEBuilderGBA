@@ -1,0 +1,2 @@
+Lancebreaker: +50 Hit/Avo when
+enemy has a lance equipped.

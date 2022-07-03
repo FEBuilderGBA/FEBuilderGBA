@@ -1206,4 +1206,4 @@ EDIT_PATCH:28=../skill20220120/PATCH_Capture_Trade_GenericPortraitTable.txt
 NAME.zh=技能 SkillSystems 20220402（技能扩展）
 
 DEPRECATED=1
-UPDATE_PATCH=..\Skill20220527\PATCH_Skill20220527.txt
+UPDATE_PATCH=..\Skill20220703\PATCH_Skill20220703.txt

@@ -1,0 +1,2 @@
+Nature Rush: If unit is on
+rough terrain, unit gains +2 Mov.
