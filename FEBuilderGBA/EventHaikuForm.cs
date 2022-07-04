@@ -19,6 +19,11 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            if (PatchUtil.DeathQuoteAddKillerID() == PatchUtil.DeathQuoteAddKillerIDExtends.Enable)
+            {
+                ShowKillerExtends();
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -81,6 +86,12 @@ namespace FEBuilderGBA
                 U.SelectedIndexSafety(this.AddressList, hit_uid_only_pos);
                 return;
             }
+        }
+        void ShowKillerExtends()
+        {
+            J_1.Text = R._("殺害者");
+            L_1_UNIT_ANY.Show();
+            L_1_UNITICON.Show();
         }
 
 

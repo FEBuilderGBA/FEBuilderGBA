@@ -13492,3 +13492,5 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
+:殺害者
+Killer

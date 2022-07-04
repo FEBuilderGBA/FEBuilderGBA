@@ -47,6 +47,7 @@ namespace FEBuilderGBA
             g_Cache_ItemUsingExtendsPatch = ItemUsingExtends.NoCache;
             g_Cache_OPClassReelSortPatch = OPClassReelSortExtends.NoCache;
             g_cache_StairsHack = StairsHack_enum.NoCache;
+            g_Cache_DeathQuoteAddKillerIDExtends = DeathQuoteAddKillerIDExtends.NoCache;
             g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
             g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
 
@@ -2226,6 +2227,61 @@ namespace FEBuilderGBA
                 }
             }
             return OPClassReelSortExtends.NO;
+        }
+
+        //死亡セリフにトドメを刺したユニットを表示する
+        public enum DeathQuoteAddKillerIDExtends
+        {
+            NO,             //なし
+            Enable,
+            NoCache = (int)NO_CACHE
+        };
+        static DeathQuoteAddKillerIDExtends g_Cache_DeathQuoteAddKillerIDExtends = DeathQuoteAddKillerIDExtends.NoCache;
+        public static DeathQuoteAddKillerIDExtends DeathQuoteAddKillerID()
+        {
+            if (g_Cache_DeathQuoteAddKillerIDExtends == DeathQuoteAddKillerIDExtends.NoCache)
+            {
+                g_Cache_DeathQuoteAddKillerIDExtends = DeathQuoteAddKillerIDLow();
+            }
+            return g_Cache_DeathQuoteAddKillerIDExtends;
+        }
+        static DeathQuoteAddKillerIDExtends DeathQuoteAddKillerIDLow()
+        {
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte)
+                {//FE8J
+                    uint a = Program.ROM.u32(0x0869B0);
+                    if (a == 0x47184b00)
+                    {
+                        a = Program.ROM.u32(0x16328);
+                        if (a == 0x46874800)
+                        {//capture area
+                            return DeathQuoteAddKillerIDExtends.NO;
+                        }
+                        return DeathQuoteAddKillerIDExtends.Enable;
+                    }
+                }
+                else
+                {//FE8U
+                    uint a = Program.ROM.u32(0x0846E4);
+                    if (a == 0x47184b00)
+                    {
+                        a = Program.ROM.u32(0x16580);
+                        if (a == 0x46874800)
+                        {//capture area
+                            return DeathQuoteAddKillerIDExtends.NO;
+                        }
+                        a = Program.ROM.u32(0x32264);
+                        if (a == 0x47184b00)
+                        {//capture skillsystems
+                            return DeathQuoteAddKillerIDExtends.NO;
+                        }
+                        return DeathQuoteAddKillerIDExtends.Enable;
+                    }
+                }
+            }
+            return DeathQuoteAddKillerIDExtends.NO;
         }
 
         public static uint SearchSubMenuMenuDefinePointerFE8J(ROM rom)
