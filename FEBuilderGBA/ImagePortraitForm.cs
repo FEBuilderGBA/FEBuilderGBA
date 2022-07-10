@@ -207,10 +207,8 @@ namespace FEBuilderGBA
 
             //TSA変換された顔画像の取得
             Bitmap allface;
-            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-            {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
-             //圧縮   FE7U FE6
-             //無圧縮 FE7 FE8 FE8U
+            if (LZ77.iscompress(Program.ROM.Data, unit_face))
+            {
                 byte[] imageUZ = LZ77.decompress(Program.ROM.Data, unit_face);
                 if (imageUZ.Length <= 0)
                 {//ない
@@ -638,11 +636,14 @@ namespace FEBuilderGBA
                 return ImageUtil.Blank(seet_width, seet_height);
             }
 
+            if (IsHalfBodyFlag(unit_face))
+            {
+                return DrawPortraitSeetHalfBody(addr);
+            }
+
             Bitmap allface;
-            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-            {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
-                //圧縮   FE7U FE6
-                //無圧縮 FE7 FE8 FE8U
+            if (LZ77.iscompress(Program.ROM.Data, unit_face))
+            {
                 byte[] imageUZ = LZ77.decompress(Program.ROM.Data, unit_face);
                 if (imageUZ.Length <= 0)
                 {//ない
@@ -656,13 +657,9 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (IsHalfBodyFlag(unit_face) )
-                {
-                    return DrawPortraitSeetHalfBody(addr);
-                }
                 unit_face += 4; //謎の4バイトをスキップ.
 
-                allface = ImageUtil.ByteToImage16Tile(32 * 8, 5 * 8
+                allface = ImageUtil.ByteToImage16Tile(32 * 8, (5 + 3) * 8
                     , Program.ROM.Data, (int)unit_face
                     , Program.ROM.Data, (int)palette
                     );
@@ -740,6 +737,7 @@ namespace FEBuilderGBA
 
             return seet;
         }
+
         static Bitmap DrawPortraitSeetHalfBody(uint addr)
         {
             uint unit_face = Program.ROM.u32(addr);
@@ -766,10 +764,8 @@ namespace FEBuilderGBA
             }
 
             Bitmap allface;
-            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-            {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
-                //圧縮   FE7U FE6
-                //無圧縮 FE7 FE8 FE8U
+            if (LZ77.iscompress(Program.ROM.Data, unit_face))
+            {
                 byte[] imageUZ = LZ77.decompress(Program.ROM.Data, unit_face);
                 if (imageUZ.Length <= 0)
                 {//ない
@@ -790,7 +786,6 @@ namespace FEBuilderGBA
                     , Program.ROM.Data, (int)palette
                     );
             }
-
             //シートを作る
             Bitmap seet = ImageUtil.Blank(160, 160, allface);
 
@@ -1141,6 +1136,38 @@ namespace FEBuilderGBA
             return seetbitmap;
         }
 
+        bool IsCompressPortrait()
+        {
+            //圧縮   FE7U FE6
+            //無圧縮 FE7 FE8 FE8U
+            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //無圧縮だったら領域を消す
+        void WipeIfUnCompress(uint addr, Undo.UndoData undodata)
+        {
+            addr = U.toOffset(addr);
+            if (! U.isSafetyOffset(addr))
+            {
+                return ;
+            }
+            if (!U.isSafetyOffset(addr + 4 + 0x1000))
+            {
+                return;
+            }
+            uint a00 = Program.ROM.u8(addr + 0);
+            uint a01 = Program.ROM.u8(addr + 1);
+            if(a00 == 0x00 && a01 == 0x04)
+            {//無圧縮ヘッダなので消していい
+                Program.ROM.write_fill(addr, 0x4 + 0x1000, 0, undodata);
+                return;
+            }
+        }
+
         void ImportFaceImage(Bitmap fullColor, string imagefilename)
         {
             Bitmap seetbitmap = Convert16Color(fullColor, imagefilename);
@@ -1158,8 +1185,10 @@ namespace FEBuilderGBA
 
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
+            if (IsCompressPortrait())
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
+
+                WipeIfUnCompress((uint)this.D0.Value, undodata);
                 //圧縮   FE7U FE6
                 //無圧縮 FE7 FE8 FE8U
                 this.InputFormRef.WriteImageData(this.D0, seet_image, true, undodata);
@@ -1364,11 +1393,9 @@ namespace FEBuilderGBA
             {
                 isHalfBodyExtends = (Program.ROM.RomInfo.version == 8 && IsHalfBodyFlag(seet_image));
 
-                //4バイトヘッダ+無圧縮
-                //圧縮   FE7U FE6
-                //無圧縮 FE7 FE8 FE8U
-                if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-                {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
+
+                if (LZ77.iscompress(Program.ROM.Data, portrait_addr))
+                {//圧縮されている
                     FEBuilderGBA.Address.AddLZ77Pointer(recycle
                         , portrait_addr + 0
                         , basename + "FACE"
@@ -1425,7 +1452,7 @@ namespace FEBuilderGBA
                     , portrait_addr + 12
                     , (parts_width / 2) * parts_height * 6
                     , basename + "MOUTH"
-                    , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                    , FEBuilderGBA.Address.DataTypeEnum.IMG);
             }
             if (U.isSafetyOffset(class_face))
             {

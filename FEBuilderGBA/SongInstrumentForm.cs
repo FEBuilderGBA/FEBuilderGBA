@@ -541,23 +541,34 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string info = GetMoreInfo(AddressList);
+            uint addr = InputFormRef.SelectToAddr(AddressList);
+            string info = GetMoreInfo(AddressList, addr);
             this.X_MoreInfo.Text = info;
 
-            string fingerPrint = FingerPrint(InputFormRef.SelectToAddr(AddressList));
+            string fingerPrint = FingerPrint(addr);
             this.FINGERPRINT.Text = fingerPrint;
 
             StopPlayer();
         }
 
-        string GetMoreInfo(ListBoxEx addressList)
+        string GetMoreInfo(ListBoxEx addressList, uint addr)
         {
             if (addressList.SelectedIndex < 0)
             {
                 return "";
             }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(addressList.Text);
+
             uint instid = (uint)addressList.SelectedIndex;
-            return addressList.Text + ", if drum:" + SongUtil.getKeyCode(instid) ;
+            sb.Append(", if drum:");
+            sb.Append(SongUtil.getKeyCode(instid));
+
+            if (SongUtil.IsDirectSoundCompress(addr))
+            {
+                sb.Append(", DPCM compress");
+            }
+            return sb.ToString();
         }
 
         public class InstrumentHintSt

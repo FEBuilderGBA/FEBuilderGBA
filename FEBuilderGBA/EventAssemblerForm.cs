@@ -39,10 +39,10 @@ namespace FEBuilderGBA
             {
                 freearea = InputFormRef.AllocBinaryData(1024 * 200, isProgramArea: false); //200kbyte
             }
-
+            
             if (freearea == U.NOT_FOUND)
-            {
-                freearea = 0;
+            {//ROM末尾
+                freearea = (uint)Program.ROM.Data.Length;
             }
             U.ForceUpdate(FREEAREA, freearea);
         }

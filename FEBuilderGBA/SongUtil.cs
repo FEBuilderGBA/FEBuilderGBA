@@ -3824,5 +3824,26 @@ namespace FEBuilderGBA
             }
             return 33 * (div64);
         }
+        public static bool IsDirectSoundCompress(uint addr)
+        {
+            if (!U.isSafetyOffset(addr))
+            {
+                return false;
+            }
+            if (!SongUtil.IsDirectSoundData(addr))
+            {
+                return false;
+            }
+            uint waveAddr = Program.ROM.p32(addr + 4);
+            if (! U.isSafetyOffset(waveAddr))
+            {
+                return false;
+            }
+            if (!SongUtil.IsDirectSoundWaveCompressedDPCM(waveAddr))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

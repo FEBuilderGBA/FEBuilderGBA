@@ -2425,6 +2425,9 @@ FF=无条件
 :1=エリウッド編チュートリアルでの死亡セリフ
 1=Eriwood Hen教程中的死亡线。
 
+:殺害者
+凶手
+
 :変化データポインタ
 更改数据指针
 
@@ -13492,5 +13495,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:殺害者
-凶手

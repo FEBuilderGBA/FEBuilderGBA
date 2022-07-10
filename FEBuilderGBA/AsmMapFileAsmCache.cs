@@ -69,19 +69,16 @@ namespace FEBuilderGBA
         //全部のデータを作る 時間がかかる.
         AsmMapFile MakeFull()
         {
-#if !DEBUG 
             try
             {
-#endif
                 return MakeFullLow();
-#if !DEBUG 
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString());
+                Debug.Assert(false);
                 return BaseSymbol;
             }
-#endif
         }
 
         AsmMapFile MakeFullLow()
@@ -94,205 +91,168 @@ namespace FEBuilderGBA
             this.FELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
 
             List<DisassemblerTrumb.LDRPointer> ldrmap;
-#if !DEBUG 
             try
             {
-#endif
-            ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
-            this.LDRMapCache = ldrmap;
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                this.LDRMapCache = ldrmap;
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
                 return map;
             }
-#endif
-#if !DEBUG 
+
             try
             {
-#endif
-            MakeHardCodeWarning(); //ハードコーディングされているデータの警告
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                MakeHardCodeWarning(); //ハードコーディングされているデータの警告
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
-#if !DEBUG 
+
             try
             {
-#endif
-            ScanFELintByThread(ldrmap);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                ScanFELintByThread(ldrmap);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
                 return map;
             }
-#endif
+
             Dictionary<uint, bool> knownDic = new Dictionary<uint, bool>();
             List<Address> structlist;
-#if !DEBUG
             try
             {
-#endif
-            structlist = U.MakeAllStructPointersList(false); //既存の構造体
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                structlist = U.MakeAllStructPointersList(false); //既存の構造体
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
                 return map;
             }
-#endif
 
-#if !DEBUG 
             try
             {
-#endif
-            PatchForm.MakePatchStructDataList(structlist,true,true,false); //パッチが知っている領域.
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                PatchForm.MakePatchStructDataList(structlist,true,true,false); //パッチが知っている領域.
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
 
-#if !DEBUG 
             try
             {
-#endif
-            //参照の逆追跡
-            this.VarsIDArray = U.MakeVarsIDArray(map);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                //参照の逆追跡
+                this.VarsIDArray = U.MakeVarsIDArray(map);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
-#if !DEBUG 
-            try
-            {
-#endif
-            GraphicsToolForm.MakeLZ77DataList(structlist); //lz77で圧縮されたもの(主に画像)
-            if (IsStopFlag) return map;
-#if !DEBUG 
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString() );
-            }
-#endif
-#if !DEBUG 
-            try
-            {
-#endif
-            ProcsScriptForm.MakeAllDataLength(structlist, ldrmap);
-            if (IsStopFlag) return map;
-#if !DEBUG 
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString() );
-            }
-#endif
 
+            try
+            {
+                GraphicsToolForm.MakeLZ77DataList(structlist); //lz77で圧縮されたもの(主に画像)
+                if (IsStopFlag) return map;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+                Debug.Assert(false);
+            }
 
-#if !DEBUG 
             try
             {
-#endif
-            OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                ProcsScriptForm.MakeAllDataLength(structlist, ldrmap);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
 
-#if !DEBUG 
             try
             {
-#endif
-            knownDic = AsmMapFile.MakeKnownListToDic(structlist);
-            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0x00, 16); //フリー領域
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
-#if !DEBUG 
-            try
-            {
-#endif
-            AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0xFF, 16); //フリー領域
-            if (IsStopFlag) return map;
-#if !DEBUG 
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString() );
-            }
-#endif
 
-#if !DEBUG 
             try
             {
-#endif
-            map.AppendMAP(structlist);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                knownDic = AsmMapFile.MakeKnownListToDic(structlist);
+                AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0x00, 16); //フリー領域
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
+
+            try
+            {
+                AsmMapFile.MakeFreeDataList(structlist, knownDic, 0x100, 0xFF, 16); //フリー領域
+                if (IsStopFlag) return map;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+                Debug.Assert(false);
+            }
+
+            try
+            {
+                map.AppendMAP(structlist);
+                if (IsStopFlag) return map;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+                Debug.Assert(false);
+            }
+
             Dictionary<uint, uint> ldrtable = new Dictionary<uint, uint>();  //LDR参照データがある位置を記録します. コードの末尾などにあります. 数が多くなるのでマップする.
-#if !DEBUG 
             try
             {
-#endif
-
-            AsmMapFile.MakeSwitchDataList(ldrtable, 0x100, 0);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                AsmMapFile.MakeSwitchDataList(ldrtable, 0x100, 0);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
-#if !DEBUG 
+
             try
             {
-#endif
-
-            map.AppendMAP(ldrtable);
-            if (IsStopFlag) return map;
-#if !DEBUG 
+                map.AppendMAP(ldrtable);
+                if (IsStopFlag) return map;
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                Debug.Assert(false);
             }
-#endif
 
             //近場リスト生成.
             map.MakeNearSearchSortedList();
@@ -361,13 +321,10 @@ namespace FEBuilderGBA
         {
             AsyncMethodCaller caller;
             AsmMapFile map;
-#if !DEBUG 
             try
             {
-#endif
                 caller = (AsyncMethodCaller)ar.AsyncState;
                 map = caller.EndInvoke(ar);
-#if !DEBUG 
             }
             catch (Exception e)
             {
@@ -377,11 +334,12 @@ namespace FEBuilderGBA
                 Caller = null;
                 AsyncResult = null;
                 IsStopFlag = false;
+
+                Debug.Assert(false);
                 return;
             }
-#endif
 
-                if (IsStopFlag)
+            if (IsStopFlag)
             {
                 Caller = null;
                 AsyncResult = null;

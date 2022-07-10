@@ -8,11 +8,11 @@ EDIT_PATCH=PATCH_kagaribi2.txt
 EA=Installer.event
 
 
-INFO=FE5の離脱ポイントは霧の中でも視界が確保されていたように、霧の中でも特定の位置に視界を確保します。
+INFO=FE5の離脱ポイントは霧の中でも視界が確保されていたように、霧の中でも特定の位置に視界を確保します。\r\n離脱地点を死滅灯りや、かがり火として利用してください。\r\nまた、フラグが有効な場合のみ視界を確保できるようにもできます。\r\n演出に利用してください。\r\nプレイヤーターンにしか、追加の視界が現れない制限がありますが、気にしないでください。\r\n松明、固定視点、霧の中の光
 
 AUTHOR=7743
 
 NAME.en=Even in fog, it ensures visibility at specific coordinates. ver2 (Install)
-INFO.en=The exit point of FE5 secures  view at a specific position in fog, just as view was secured in fog.
+INFO.en=The exit point of FE5 secures  view at a specific position in fog, just as view was secured in fog.\r\nfixed torch view, Light in Fog.
 NAME.zh=即使在雾中，我们也能确保特定坐标的可见性 ver2（Installer）
 INFO.zh=至于FE 5的出发点，即使在雾中也能确保能够在特定位置看到能见度，如在雾中，确保了能见度。

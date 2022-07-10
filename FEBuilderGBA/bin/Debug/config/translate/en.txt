@@ -2425,6 +2425,9 @@ Death Quote
 :1=エリウッド編チュートリアルでの死亡セリフ
 1=Death Quotes in Eliwood's Story
 
+:殺害者
+Killer
+
 :変化データポインタ
 Change Data Pointer
 
@@ -13492,5 +13495,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:殺害者
-Killer
