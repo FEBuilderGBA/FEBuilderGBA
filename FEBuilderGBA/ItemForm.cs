@@ -571,6 +571,10 @@ namespace FEBuilderGBA
                 return;
             }
 
+            if (! OptionForm.felint_check_melee_item_motionid())
+            {
+                return ;
+            }
             uint effectID = Program.ROM.u16(ar.addr + 4);
             if (effectID == 0xFFFF && mapEffectPointer == 0)
             {

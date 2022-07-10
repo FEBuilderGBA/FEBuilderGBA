@@ -383,6 +383,11 @@ namespace FEBuilderGBA
 
         static void MakeCheckError_Check(List<FELint.ErrorSt> errors, uint support_addr , uint id)
         {
+            if (! OptionForm.felint_support_validation())
+            {
+                return;
+            }
+
             uint uid = UnitForm.GetUnitIDWhereSupportAddr(support_addr);
             if (uid == U.NOT_FOUND)
             {

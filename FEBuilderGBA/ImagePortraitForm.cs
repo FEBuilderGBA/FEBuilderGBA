@@ -1136,8 +1136,23 @@ namespace FEBuilderGBA
             return seetbitmap;
         }
 
-        bool IsCompressPortrait()
+        bool IsCompressPortrait(uint addr)
         {
+            if (U.isSafetyOffset(addr))
+            {
+                if (LZ77.iscompress(Program.ROM.Data, addr))
+                {
+                    return true;
+                }
+            }
+
+            OptionForm.func_portrait_lz77_enum portrait_lz77 = OptionForm.portrait_lz77();
+            if (portrait_lz77 == OptionForm.func_portrait_lz77_enum.AlwaysL77Compress)
+            {
+                return true;
+            }
+
+            //バニラの設定に従う
             //圧縮   FE7U FE6
             //無圧縮 FE7 FE8 FE8U
             if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
@@ -1185,7 +1200,7 @@ namespace FEBuilderGBA
 
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            if (IsCompressPortrait())
+            if (IsCompressPortrait((uint)this.D0.Value))
             {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
 
                 WipeIfUnCompress((uint)this.D0.Value, undodata);
@@ -1550,18 +1565,19 @@ namespace FEBuilderGBA
         }
         static string CheckFaceHeader(uint seet_image)
         {
-            //圧縮   FE7U FE6
-            //無圧縮 FE7 FE8 FE8U
-            if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-            {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
-                //ヘッダはないので常にOKを返す
-                return "";
-            }
             //無圧縮
             uint head1 = Program.ROM.u8(seet_image + 0);
             uint head2 = Program.ROM.u8(seet_image + 1);
             uint head3 = Program.ROM.u8(seet_image + 2);
             uint head4 = Program.ROM.u8(seet_image + 3);
+            if (head1 == 0x10)
+            {
+                if (! LZ77.iscompress(Program.ROM.Data, seet_image))
+                {
+                    return R._("顔画像のユニット画像が圧縮されていますがデータが破損しています。");
+                }
+                return "";
+            }
             if (head1 != 0x00)
             {
                 return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。", U.To0xHexString(seet_image + 0), U.To0xHexString(head1));

@@ -3671,7 +3671,7 @@ PNG|*.png|Anime GIF|*.gif|All files|*
 This setting can not be used because the extended patch is installed.Please correct from the patch side.
 
 :もっとたくさん一般兵の顔画像を利用したい場合は、パッチを利用してください。
-If you want to use more face images of general soldiers, please use the patch.
+If you want to use more portrait images of general soldiers, please use the patch.
 
 :拡張した領域にあるアイテムアイコンを利用するには、アイテムアイコン拡張のパッチが別途必要です。\r\nアイテムアイコンを拡張してもよろしいですか？\r\n
 In order to use the item icon in the expanded area, a patch of the item icon extension is required separately.\r\nWould you like to extend the item icons list?\r\n
@@ -8929,6 +8929,27 @@ This item is used to easily check the vanilla source code.\r\nBy default, you ca
 :スキル拡張パッチをインストールする領域を予約し保護するかどうかを設定します。\r\n「常に」(ディフォルト)は、その領域には一切干渉しないようにして保護します。\r\n「インストールされていれば保護」は、スキル拡張がインストールされていれば保護します。後からスキル拡張がインストールされる可能性もあるので推奨はしません。\r\n「保護しない」は、一切保護しません。
 Set whether to reserve and protect the area where the skill extension patch is installed.\r\n"Always" (default) protects the area from interference at all.\r\n"Protect if installed" protects if the skill extension is installed.We do not recommend it as skill extensions may be installed later.\r\n"Not protect" does not protect at all.
 
+:顔画像を圧縮するかどうかを設定します。GBAFEはバージョンによって無圧縮であることがあります。圧縮すると約半分の容量になります。\r\nディフォルトはバニラの設定に従います。
+Set whether to compress the portrait image.GBAFE may be uncompressed depending on the version.When compressed, it will be about half the capacity.\r\nThe default follows the vanilla settings.
+
+:投げ斧の戦闘アニメモーションが登録されていない場合、警告を出します。
+If the battle animation motion of the throwing axs(hand axs) is not registered, a warning will be issued.
+
+:支援が片思いなどの正しくない場合、警告を出します。\r\n支援は相手から見ても同じ値である必要があります。
+If the support is incorrect, such as unrequited love, it will warn you.\r\nSupport should be the same value from the perspective of the other party.
+
+:アイテムの近接モーションの0xFFFFが設定されているかを確認します。\r\n設定しなくてもおそらく問題ないのですが、行儀がよくないのでちゃんと設定することをお勧めします。
+Check if the item's proximity motion is set to 0xFFFF.\r\nIt's probably okay if you don't set it, but it's not well-behaved, so it's recommended to set it properly.
+
+:会話文の長さをチェックします。\r\n何かの理由でチェックしたくない場合はOFFにできます。\r\n会話文が長すぎるとゲームで正しく表示されません。
+Check the length of the conversation.\r\nIf you don't want to check it for some reason, you can turn it off.\r\nIf the conversation is too long, it will not be displayed correctly in the game.
+
+:街や宝箱、古木、壊れる壁の位置にタイル変化が設定されているかチェックします。\r\nタイル変化の設定を忘れると、ゲームがハングアップすることがあります。
+Check if tile changes are set for the location of towns, treasure chests, snag, and broken walls.\r\nIf you forget to set the tile change, the game may hang.
+
+:音楽のTIEとEOTの妥当性を確認します。\r\nマップで利用する音楽の場合、EOTを忘れると、音が残ったままになってしまいます。\r\nこの機能はそれを地頭的に検出し警告を出します。
+Validate the TIE and EOT of the music.\r\nFor music used on maps, if you forget the EOT, the sound will remain.\r\nThis feature detects it terribly and issues a warning.
+
 :ソースコードを保存するディレクトリを指定してください。
 Specify the directory where you want to save the source code.
 
@@ -9166,8 +9187,71 @@ Shortcut Key 2
 :ショートカットキー1
 Shortcut Key 1
 
+:0=警告を出さない
+0=No warning
+
+:1=警告を出す
+1=Issue a warning
+
+:楽譜のTIEとEOTの妥当性の検証
+Verification of the validity of TIE and EOT of the score
+
+:マップ変化の検証
+Verification of tile change
+
+:テキスト幅の検証
+Text width verification
+
+:アイテムの近接モーションの存在確認
+Confirmation of the existence of proximity motion of the item.
+
+:支援の妥当性の検証
+Validation of support
+
+:投げ斧の設定を検証する
+Verify the hand axs setting
+
+:0=チェックしない
+0=No Warnings
+
+:1=最高レベル
+1=Highest Amount
+
+:6=通常レベル
+6=Average Amount
+
+:9=最低レベル
+9=Lowest Amount
+
+:Lintで警告する不明な命令の連続数
+Scale of Unknown Lint Warnings 
+
+:Lintで会話が3行をバグとして検出する
+Set Lint Text Detection (3 Lines of Text = Bug)
+
+:0=行数をチェックしない
+0=Disable Line Detection
+
+:1=4行以上をバグとして検出する
+1=Detect 4+ Lines as a bug
+
+:2=検出するが、無改造ROMのバグを除く
+2=Detect, exclude Vanilla bugs
+
+:3=検出する
+3=Detect All
+
 :機能
 Function
+
+:0=バニラのルールに従う
+0=Follow the vanilla rules.
+
+:1=常にlz77圧縮する
+1=Always lz77 compressed.
+
+:顔画像の圧縮
+Portrait image compression.
 
 :0=常に保護する
 0=Always protect
@@ -9189,21 +9273,6 @@ Starting Addresses for Program/Patches
 
 :1=通常の拡張領域を利用
 1=Use Common Addresses
-
-:0=チェックしない
-0=No Warnings
-
-:1=最高レベル
-1=Highest Amount
-
-:6=通常レベル
-6=Average Amount
-
-:9=最低レベル
-9=Lowest Amount
-
-:Lintで警告する不明な命令の連続数
-Scale of Unknown Lint Warnings 
 
 :0=SYMファイルを作成しない
 0=Do Nothing
@@ -9234,21 +9303,6 @@ Development Aid
 
 :サイズ不足の時のROMサイズの拡張
 ROM Expansion Settings
-
-:Lintで会話が3行をバグとして検出する
-Set Lint Text Detection (3 Lines of Text = Bug)
-
-:0=行数をチェックしない
-0=Disable Line Detection
-
-:1=4行以上をバグとして検出する
-1=Detect 4+ Lines as a bug
-
-:2=検出するが、無改造ROMのバグを除く
-2=Detect, exclude Vanilla bugs
-
-:3=検出する
-3=Detect All
 
 :0=拡張を認めない
 0=Disable ROM Expansion

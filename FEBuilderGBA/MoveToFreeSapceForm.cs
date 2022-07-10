@@ -638,12 +638,12 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            OptionForm.skillsystems_sanctuary_option_enum skillsystems_sanctuary_option = OptionForm.skillsystems_sanctuary_option();
-            if (skillsystems_sanctuary_option == OptionForm.skillsystems_sanctuary_option_enum.None)
+            OptionForm.skillsystems_sanctuary_enum skillsystems_sanctuary = OptionForm.skillsystems_sanctuary();
+            if (skillsystems_sanctuary == OptionForm.skillsystems_sanctuary_enum.None)
             {
                 return false;
             }
-            else if (skillsystems_sanctuary_option == OptionForm.skillsystems_sanctuary_option_enum.IfSkillSystemsInstalled)
+            else if (skillsystems_sanctuary == OptionForm.skillsystems_sanctuary_enum.IfSkillSystemsInstalled)
             {
                 PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
                 if (skillsystem == PatchUtil.skill_system_enum.NO)

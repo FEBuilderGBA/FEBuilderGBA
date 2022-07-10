@@ -3642,7 +3642,12 @@ namespace FEBuilderGBA
                 }
                 else if (c.type == 0xb2)
                 {//GOTO
-                    if (isMapBGM && checkTIE && !IsEnvSound(song_id) && track.codes.Count > 20)
+                    if (OptionForm.felint_check_song_tie_eot() 
+                        && isMapBGM 
+                        && checkTIE 
+                        && !IsEnvSound(song_id) 
+                        && track.codes.Count > 20
+                        )
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));

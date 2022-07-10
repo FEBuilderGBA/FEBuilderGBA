@@ -987,6 +987,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (! OptionForm.felint_check_exist_tilechange())
+            {
+                return;
+            }
 
             int i = 0;
             for (int y = 0; y < mapHeight; y++)
@@ -1033,6 +1037,10 @@ namespace FEBuilderGBA
             uint tile = tilesArray[index];
             if (tile != tileid)
             {//目的のタイルではない とりあえずOK
+                return true;
+            }
+            if (!OptionForm.felint_check_exist_tilechange())
+            {//確認しない設定
                 return true;
             }
             return IsExistsTileChange(x, y, changeList);

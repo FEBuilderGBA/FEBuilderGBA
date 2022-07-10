@@ -159,7 +159,14 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_create_nodoll_gba_sym, (int)create_nodoll_gba_sym());
             U.SelectedIndexSafety(func_overraide_simple_error_check, (int)overraide_simple_error_check());
             U.SelectedIndexSafety(func_alert_unk_event_code, (int)alert_unk_event_code());
-            U.SelectedIndexSafety(func_skillsystems_sanctuary_option, (int)skillsystems_sanctuary_option());
+            U.SelectedIndexSafety(func_skillsystems_sanctuary, (int)skillsystems_sanctuary());
+            U.SelectedIndexSafety(func_portrait_lz77, (int)portrait_lz77());
+            U.SelectedIndexSafety(func_felint_haxs, U.BoolToInt(felint_haxs()));
+            U.SelectedIndexSafety(func_felint_support_validation, U.BoolToInt(felint_support_validation()));
+            U.SelectedIndexSafety(func_felint_check_melee_item_motionid, U.BoolToInt(felint_check_melee_item_motionid()));
+            U.SelectedIndexSafety(func_felint_check_seriftext_width, U.BoolToInt(felint_check_text_width()));
+            U.SelectedIndexSafety(func_felint_check_exist_tilechange, U.BoolToInt(felint_check_exist_tilechange()));
+            U.SelectedIndexSafety(func_felint_check_song_tie_eot, U.BoolToInt(felint_check_song_tie_eot()));
             U.SelectedIndexSafety(RunTestMessage, (int)U.atoi(Program.Config.at("RunTestMessage")));
 
             ChangeColorWriteButtonWhenChangingSetting();
@@ -320,7 +327,14 @@ namespace FEBuilderGBA
             Program.Config["func_create_nodoll_gba_sym"] = U.SelectValueComboboxText(func_create_nodoll_gba_sym.Text);
             Program.Config["func_overraide_simple_error_check"] = U.SelectValueComboboxText(func_overraide_simple_error_check.Text);
             Program.Config["func_alert_unk_event_code"] = U.SelectValueComboboxText(func_alert_unk_event_code.Text);
-            Program.Config["func_skillsystems_sanctuary_option"] = U.SelectValueComboboxText(func_skillsystems_sanctuary_option.Text);
+            Program.Config["func_skillsystems_sanctuary"] = U.SelectValueComboboxText(func_skillsystems_sanctuary.Text);
+            Program.Config["func_portrait_lz77"] = U.SelectValueComboboxText(func_portrait_lz77.Text);
+            Program.Config["func_felint_haxs"] = U.SelectValueComboboxText(func_felint_haxs.Text);
+            Program.Config["func_felint_support_validation"] = U.SelectValueComboboxText(func_felint_support_validation.Text);
+            Program.Config["func_felint_check_melee_item_motionid"] = U.SelectValueComboboxText(func_felint_check_melee_item_motionid.Text);
+            Program.Config["func_felint_check_seriftext_width"] = U.SelectValueComboboxText(func_felint_check_seriftext_width.Text);
+            Program.Config["func_felint_check_exist_tilechange"] = U.SelectValueComboboxText(func_felint_check_exist_tilechange.Text);
+            Program.Config["func_felint_check_song_tie_eot"] = U.SelectValueComboboxText(func_felint_check_song_tie_eot.Text);
             Program.Config["RunTestMessage"] = U.SelectValueComboboxText(RunTestMessage.Text);
 
             //configの保存
@@ -343,7 +357,25 @@ namespace FEBuilderGBA
             g_Cache_lint_text_skip_bug_enum = lint_text_skip_bug_enum.NoCache;
             g_Cache_lang = null;
             g_Cache_textencoding = textencoding_enum.NoChace;
-            g_skillsystems_sanctuary_option = skillsystems_sanctuary_option_enum.NoCache;
+            g_skillsystems_sanctuary = skillsystems_sanctuary_enum.NoCache;
+
+            g_Color_Control_BackColor = Color.Empty;
+            g_Color_Control_ForeColor = Color.Empty;
+            g_Color_Input_BackColor = Color.Empty;
+            g_Color_Input_ForeColor = Color.Empty;
+            g_Color_InputDecimal_BackColor = Color.Empty;
+            g_Color_InputDecimal_ForeColor = Color.Empty;
+            g_Color_NotifyWrite_BackColor = Color.Empty;
+            g_Color_NotifyWrite_ForeColor = Color.Empty;
+            g_Color_Error_BackColor = Color.Empty;
+            g_Color_Error_ForeColor = Color.Empty;
+            g_Color_List_SelectedColor = Color.Empty;
+            g_Color_List_HoverColor = Color.Empty;
+            g_Color_Keyword_BackColor = Color.Empty;
+            g_Color_Keyword_ForeColor = Color.Empty;
+            g_Color_Comment_ForeColor = Color.Empty;
+            g_Color_ControlComment_ForeColor = Color.Empty;
+            g_Color_List_RelatedLine_BackColor = Color.Empty;
         }
 
         public static string EXESearch(string first_filter)
@@ -365,90 +397,182 @@ namespace FEBuilderGBA
             return open.FileNames[0];
         }
 
+        static Color g_Color_Control_BackColor = Color.Empty;
         public static Color Color_Control_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Control_BackColor", "Control"));
+            if (g_Color_Control_BackColor.IsEmpty)
+            {
+                g_Color_Control_BackColor = U.ColorFromName(Program.Config.at("Color_Control_BackColor", "Control"));
+            }
+            return g_Color_Control_BackColor;
         }
+
+        static Color g_Color_Control_ForeColor = Color.Empty;
         public static Color Color_Control_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Control_ForeColor", "ControlText"));
+            if (g_Color_Control_ForeColor.IsEmpty)
+            {
+                g_Color_Control_ForeColor = U.ColorFromName(Program.Config.at("Color_Control_ForeColor", "ControlText"));
+            }
+            return g_Color_Control_ForeColor;
         }
+
+        static Color g_Color_Input_BackColor = Color.Empty;
         public static Color Color_Input_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Input_BackColor", "Window"));
+            if (g_Color_Input_BackColor.IsEmpty)
+            {
+                g_Color_Input_BackColor = U.ColorFromName(Program.Config.at("Color_Input_BackColor", "Window"));
+            }
+            return g_Color_Input_BackColor;
         }
+
+        static Color g_Color_Input_ForeColor = Color.Empty;
         public static Color Color_Input_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Input_ForeColor", "WindowText"));
+            if (g_Color_Input_ForeColor.IsEmpty)
+            {
+                g_Color_Input_ForeColor = U.ColorFromName(Program.Config.at("Color_Input_ForeColor", "WindowText"));
+            }
+            return g_Color_Input_ForeColor;
         }
+
+        static Color g_Color_InputDecimal_BackColor = Color.Empty;
         public static Color Color_InputDecimal_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_InputDecimal_BackColor", "Window"));
+            if (g_Color_InputDecimal_BackColor.IsEmpty)
+            {
+                g_Color_InputDecimal_BackColor = U.ColorFromName(Program.Config.at("Color_InputDecimal_BackColor", "Window"));
+            }
+            return g_Color_InputDecimal_BackColor;
         }
+
+        static Color g_Color_InputDecimal_ForeColor = Color.Empty;
         public static Color Color_InputDecimal_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_InputDecimal_ForeColor", "OrangeRed"));
+            if (g_Color_InputDecimal_ForeColor.IsEmpty)
+            {
+                return U.ColorFromName(Program.Config.at("Color_InputDecimal_ForeColor", "OrangeRed"));
+            }
+            return g_Color_InputDecimal_ForeColor;
         }
+
+        static Color g_Color_NotifyWrite_BackColor = Color.Empty;
         public static Color Color_NotifyWrite_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_NotifyWrite_BackColor", "Yellow"));
+            if (g_Color_NotifyWrite_BackColor.IsEmpty)
+            {
+                g_Color_NotifyWrite_BackColor = U.ColorFromName(Program.Config.at("Color_NotifyWrite_BackColor", "Yellow"));
+            }
+            return g_Color_NotifyWrite_BackColor;
         }
+
+        static Color g_Color_NotifyWrite_ForeColor = Color.Empty;
         public static Color Color_NotifyWrite_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_NotifyWrite_ForeColor", "Black"));
+            if (g_Color_NotifyWrite_ForeColor.IsEmpty)
+            {
+                g_Color_NotifyWrite_ForeColor = U.ColorFromName(Program.Config.at("Color_NotifyWrite_ForeColor", "Black"));
+            }
+            return g_Color_NotifyWrite_ForeColor;
         }
+
+        static Color g_Color_Error_BackColor = Color.Empty;
         public static Color Color_Error_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Error_BackColor", "Control"));
+            if (g_Color_Error_BackColor.IsEmpty)
+            {
+                g_Color_Error_BackColor = U.ColorFromName(Program.Config.at("Color_Error_BackColor", "Control"));
+            }
+            return g_Color_Error_BackColor;
         }
+        static Color g_Color_Error_ForeColor = Color.Empty;
         public static Color Color_Error_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Error_ForeColor", "Red"));
+            if (g_Color_Error_ForeColor.IsEmpty)
+            {
+                g_Color_Error_ForeColor = U.ColorFromName(Program.Config.at("Color_Error_ForeColor", "Red"));
+            }
+            return g_Color_Error_ForeColor;
         }
+        static Color g_Color_List_SelectedColor = Color.Empty;
         public static Color Color_List_SelectedColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_List_SelectedColor", "Highlight"));
+            if (g_Color_List_SelectedColor.IsEmpty)
+            {
+                return U.ColorFromName(Program.Config.at("Color_List_SelectedColor", "Highlight"));
+            }
+            return g_Color_List_SelectedColor;
         }
+        static Color g_Color_List_HoverColor = Color.Empty;
         public static Color Color_List_HoverColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_List_HoverColor", "WhiteSmoke"));
+            if (g_Color_List_HoverColor.IsEmpty)
+            {
+                g_Color_List_HoverColor = U.ColorFromName(Program.Config.at("Color_List_HoverColor", "WhiteSmoke"));
+            }
+            return g_Color_List_HoverColor;
         }
+        static Color g_Color_Keyword_BackColor = Color.Empty;
         public static Color Color_Keyword_BackColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Keyword_BackColor", "Window"));
+            if (g_Color_Keyword_BackColor.IsEmpty)
+            {
+                g_Color_Keyword_BackColor = U.ColorFromName(Program.Config.at("Color_Keyword_BackColor", "Window"));
+            }
+            return g_Color_Keyword_BackColor;
         }
+        static Color g_Color_Keyword_ForeColor = Color.Empty;
         public static Color Color_Keyword_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Keyword_ForeColor", "Blue"));
+            if (g_Color_Keyword_ForeColor.IsEmpty)
+            {
+                g_Color_Keyword_ForeColor = U.ColorFromName(Program.Config.at("Color_Keyword_ForeColor", "Blue"));
+            }
+            return g_Color_Keyword_ForeColor;
         }
 
+        static Color g_Color_Comment_ForeColor = Color.Empty;
         public static Color Color_Comment_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_Comment_ForeColor", "DarkGreen"));
+            if (g_Color_Comment_ForeColor.IsEmpty)
+            {
+                g_Color_Comment_ForeColor = U.ColorFromName(Program.Config.at("Color_Comment_ForeColor", "DarkGreen"));
+            }
+            return g_Color_Comment_ForeColor;
         }
 
+        static Color g_Color_ControlComment_ForeColor = Color.Empty;
         public static Color Color_ControlComment_ForeColor()
         {
-            return U.ColorFromName(Program.Config.at("Color_ControlComment_ForeColor", "Green"));
+            if (g_Color_ControlComment_ForeColor.IsEmpty)
+            {
+                g_Color_ControlComment_ForeColor = U.ColorFromName(Program.Config.at("Color_ControlComment_ForeColor", "Green"));
+            }
+            return g_Color_ControlComment_ForeColor;
         }
 
+        static Color g_Color_List_RelatedLine_BackColor = Color.Empty;
         public static Color Color_List_RelatedLine_BackColor()
         {
-            //下位互換性のため色判定を通します
-            string color = Program.Config.at("Color_List_RelatedLine_BackColor", "");
-            if (color == "")
+            if (g_Color_List_RelatedLine_BackColor.IsEmpty)
             {
-                if (Color_Control_ForeColor() == U.ColorFromName("White"))
-                {//黒背景
-                    color = "ff295454";
+                //下位互換性のため色判定を通します
+                string color = Program.Config.at("Color_List_RelatedLine_BackColor", "");
+                if (color == "")
+                {
+                    if (Color_Control_ForeColor() == U.ColorFromName("White"))
+                    {//黒背景
+                        color = "ff295454";
+                    }
+                    else
+                    {//白背景
+                        color = "ffffe1ff";
+                    }
                 }
-                else
-                {//白背景
-                    color = "ffffe1ff";
-                }
+                g_Color_List_RelatedLine_BackColor = U.ColorFromName(color);
             }
-            return U.ColorFromName(color);
-//            return U.ColorFromName(Program.Config.at("Color_List_RelatedLine_BackColor", "ffffe1ff"));
+            return g_Color_List_RelatedLine_BackColor;
         }
         
 
@@ -970,21 +1094,56 @@ namespace FEBuilderGBA
             return (overraide_simple_error_check_enum)U.atoi(Program.Config.at("func_overraide_simple_error_check", "1"));
         }
 
-        public enum skillsystems_sanctuary_option_enum
+        public enum skillsystems_sanctuary_enum
         {
             Always = 0
           , IfSkillSystemsInstalled = 1
           , None = 2
           , NoCache = 0xff
         };
-        static skillsystems_sanctuary_option_enum g_skillsystems_sanctuary_option = skillsystems_sanctuary_option_enum.NoCache;
-        public static skillsystems_sanctuary_option_enum skillsystems_sanctuary_option()
+        static skillsystems_sanctuary_enum g_skillsystems_sanctuary = skillsystems_sanctuary_enum.NoCache;
+        public static skillsystems_sanctuary_enum skillsystems_sanctuary()
         {
-            if (g_skillsystems_sanctuary_option == skillsystems_sanctuary_option_enum.NoCache)
+            if (g_skillsystems_sanctuary == skillsystems_sanctuary_enum.NoCache)
             {
-                g_skillsystems_sanctuary_option = (skillsystems_sanctuary_option_enum)U.atoi(Program.Config.at("func_skillsystems_sanctuary_option", "0"));
+                g_skillsystems_sanctuary = (skillsystems_sanctuary_enum)U.atoi(Program.Config.at("func_skillsystems_sanctuary", "0"));
             }
-            return g_skillsystems_sanctuary_option;
+            return g_skillsystems_sanctuary;
+        }
+
+        public enum func_portrait_lz77_enum
+        {
+            Vanilla = 0
+          , AlwaysL77Compress = 1
+        };
+        public static func_portrait_lz77_enum portrait_lz77()
+        {
+            return (func_portrait_lz77_enum)U.atoi(Program.Config.at("func_portrait_lz77", "0"));
+        }
+
+        public static bool felint_haxs()
+        {
+            return U.stringbool(Program.Config.at("func_felint_haxs", "1"));
+        }
+        public static bool felint_support_validation()
+        {
+            return U.stringbool(Program.Config.at("func_felint_support_validation", "1"));
+        }
+        public static bool felint_check_melee_item_motionid()
+        {
+            return U.stringbool(Program.Config.at("func_felint_check_melee_item_motionid", "1"));
+        }
+        public static bool felint_check_text_width()
+        {
+            return U.stringbool(Program.Config.at("func_felint_check_seriftext_width", "1"));
+        }
+        public static bool felint_check_exist_tilechange()
+        {
+            return U.stringbool(Program.Config.at("func_felint_check_exist_tilechange", "1"));
+        }
+        public static bool felint_check_song_tie_eot()
+        {
+            return U.stringbool(Program.Config.at("func_felint_check_song_tie_eot", "1"));
         }
 
         public static int alert_unk_event_code()
@@ -1431,7 +1590,14 @@ namespace FEBuilderGBA
             X_EXPLAIN_MUSICTOOL.AccessibleDescription = R._("音楽を変換するツールを設定します。\r\ngba_mus_riperは、midiへエクスポートするためと、soundfontをエクスポートするために利用されます。\r\nsoxは、wavをインポートするときの周波数や余白の削除等に利用されます。\r\n");
             X_EXPLAIN_MID2AGB.AccessibleDescription = R._("Midiをインポートする時に、mid2agbを利用するならば設定してください。\r\nたいていの場合、mid2agbを利用して変換した方がよりよい結果を得ることができます。");
             X_EXPLAIN_SRCCODE.AccessibleDescription = R._("バニラのソースコードを簡単に確認するために利用する項目です。\r\nディフォルトではF10キーを押すとバニラのコードにアクセスできます。\r\nバニラのソースコードは数十万行になるので、テキストエディターには、大きなファイルを表示できるテキストエディタを指定してください。");
-            explain_func_skillsystems_sanctuary_option.AccessibleDescription = R._("スキル拡張パッチをインストールする領域を予約し保護するかどうかを設定します。\r\n「常に」(ディフォルト)は、その領域には一切干渉しないようにして保護します。\r\n「インストールされていれば保護」は、スキル拡張がインストールされていれば保護します。後からスキル拡張がインストールされる可能性もあるので推奨はしません。\r\n「保護しない」は、一切保護しません。");
+            explain_func_skillsystems_sanctuary.AccessibleDescription = R._("スキル拡張パッチをインストールする領域を予約し保護するかどうかを設定します。\r\n「常に」(ディフォルト)は、その領域には一切干渉しないようにして保護します。\r\n「インストールされていれば保護」は、スキル拡張がインストールされていれば保護します。後からスキル拡張がインストールされる可能性もあるので推奨はしません。\r\n「保護しない」は、一切保護しません。");
+            explain_func_portrait_lz77.AccessibleDescription = R._("顔画像を圧縮するかどうかを設定します。GBAFEはバージョンによって無圧縮であることがあります。圧縮すると約半分の容量になります。\r\nディフォルトはバニラの設定に従います。");
+            explain_func_felint_haxs.AccessibleDescription = R._("投げ斧の戦闘アニメモーションが登録されていない場合、警告を出します。");
+            func_felint_support_validation.AccessibleDescription = R._("支援が片思いなどの正しくない場合、警告を出します。\r\n支援は相手から見ても同じ値である必要があります。");
+            func_felint_check_melee_item_motionid.AccessibleDescription = R._("アイテムの近接モーションの0xFFFFが設定されているかを確認します。\r\n設定しなくてもおそらく問題ないのですが、行儀がよくないのでちゃんと設定することをお勧めします。");
+            func_felint_check_seriftext_width.AccessibleDescription = R._("会話文の長さをチェックします。\r\n何かの理由でチェックしたくない場合はOFFにできます。\r\n会話文が長すぎるとゲームで正しく表示されません。");
+            func_felint_check_exist_tilechange.AccessibleDescription = R._("街や宝箱、古木、壊れる壁の位置にタイル変化が設定されているかチェックします。\r\nタイル変化の設定を忘れると、ゲームがハングアップすることがあります。");
+            func_felint_check_song_tie_eot.AccessibleDescription = R._("音楽のTIEとEOTの妥当性を確認します。\r\nマップで利用する音楽の場合、EOTを忘れると、音が残ったままになってしまいます。\r\nこの機能はそれを地頭的に検出し警告を出します。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)
@@ -1709,5 +1875,6 @@ namespace FEBuilderGBA
         {
             Color_List_RelatedLine_BackColor_button.BackColor = SelectColorDialog(Color_List_RelatedLine_BackColor_button.BackColor);
         }
+
     }
 }
