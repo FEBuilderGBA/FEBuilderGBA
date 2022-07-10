@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
@@ -100,7 +101,6 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.LinkInternt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -234,6 +234,16 @@
             this.DragTargetPanel2.Name = "DragTargetPanel2";
             this.DragTargetPanel2.Size = new System.Drawing.Size(872, 58);
             this.DragTargetPanel2.TabIndex = 63;
+            // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(365, 23);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 31;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
             // 
             // ExportButton
             // 
@@ -1015,16 +1025,6 @@
             this.AddressList.Size = new System.Drawing.Size(253, 646);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // LinkInternt
-            // 
-            this.LinkInternt.AutoSize = true;
-            this.LinkInternt.Location = new System.Drawing.Point(365, 23);
-            this.LinkInternt.Name = "LinkInternt";
-            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
-            this.LinkInternt.TabIndex = 31;
-            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
-            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
             // 
             // ImagePortraitForm
             // 

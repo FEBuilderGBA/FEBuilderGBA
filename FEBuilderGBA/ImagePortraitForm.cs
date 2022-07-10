@@ -1140,8 +1140,9 @@ namespace FEBuilderGBA
         {
             if (U.isSafetyOffset(addr))
             {
-                if (LZ77.iscompress(Program.ROM.Data, addr))
-                {
+                uint header00 = Program.ROM.u8(addr);
+                if (header00 == 0x10)
+                {//圧縮ヘッダがるので圧縮しよう
                     return true;
                 }
             }
@@ -1409,8 +1410,9 @@ namespace FEBuilderGBA
                 isHalfBodyExtends = (Program.ROM.RomInfo.version == 8 && IsHalfBodyFlag(seet_image));
 
 
-                if (LZ77.iscompress(Program.ROM.Data, portrait_addr))
-                {//圧縮されている
+                uint header00 = Program.ROM.u8(seet_image);
+                if (header00 == 0x10)
+                {//圧縮ヘッダがるので圧縮されてる
                     FEBuilderGBA.Address.AddLZ77Pointer(recycle
                         , portrait_addr + 0
                         , basename + "FACE"
@@ -1483,16 +1485,14 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
-            {
-                InputFormRef InputFormRef = Init(null);
-                FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Portrait", new uint[] { 0 , 4, 8, 12, 16});
+            InputFormRef InputFormRef = Init(null);
+            FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Portrait", new uint[] { 0 , 4, 8, 12, 16});
 
-                uint addr = InputFormRef.BaseAddress;
-                for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
-                {
-                    string name = "Portrait:" + U.To0xHexString(i);
-                    RecyclePortrait(ref list, name, isPointerOnly, addr);
-                }
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                string name = "Portrait:" + U.To0xHexString(i);
+                RecyclePortrait(ref list, name, isPointerOnly, addr);
             }
         }
 
@@ -1538,10 +1538,9 @@ namespace FEBuilderGBA
 
                 if (U.isSafetyOffset(seet_image))
                 {//4バイトヘッダ+無圧縮
-                    //圧縮   FE7U FE6
-                    //無圧縮 FE7 FE8 FE8U
-                    if (Program.ROM.RomInfo.version == 7 && Program.ROM.RomInfo.is_multibyte == false)
-                    {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
+                    uint header00 = Program.ROM.u8(seet_image);
+                    if (header00 == 0x10)
+                    {
                         FELint.CheckLZ77(seet_image, errors, FELint.Type.PORTRAIT, portrait_addr, id);
                     }
                     else
@@ -1570,14 +1569,6 @@ namespace FEBuilderGBA
             uint head2 = Program.ROM.u8(seet_image + 1);
             uint head3 = Program.ROM.u8(seet_image + 2);
             uint head4 = Program.ROM.u8(seet_image + 3);
-            if (head1 == 0x10)
-            {
-                if (! LZ77.iscompress(Program.ROM.Data, seet_image))
-                {
-                    return R._("顔画像のユニット画像が圧縮されていますがデータが破損しています。");
-                }
-                return "";
-            }
             if (head1 != 0x00)
             {
                 return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader1: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。", U.To0xHexString(seet_image + 0), U.To0xHexString(head1));
@@ -1730,6 +1721,34 @@ namespace FEBuilderGBA
         private void LinkInternt_Click(object sender, EventArgs e)
         {
             MainFormUtil.GotoMoreData();
+        }
+
+        private void DEBUG_AllCompress(object sender, EventArgs e)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                uint a = Program.ROM.u32(addr);
+                if (a == 0) continue;
+
+                a = U.toOffset(a);
+
+                if (Program.ROM.u8(a) == 0x10)
+                {//既に圧縮済み
+                    continue;
+                }
+
+                byte[] bin = Program.ROM.getBinaryData(a + 4, 0x1000);
+                byte[] lz77 = LZ77.compress(bin);
+                if (lz77.Length >= 0x1000 + 4)
+                {
+                    continue;   
+                }
+                Program.ROM.write_fill(a, 4 + 0x1000, 0);
+                Program.ROM.write_range(a, lz77);
+            }
         }
 
     }
