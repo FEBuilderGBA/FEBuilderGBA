@@ -311,7 +311,7 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.version == 7
                 && !Program.ROM.RomInfo.is_multibyte)
-            {//FE7Uだけ別ルーチン.
+            {//FE7Jだけ別ルーチン.
                 return ImageChapterTitleFE7Form.MakeList();
             }
             InputFormRef InputFormRef = Init(null);

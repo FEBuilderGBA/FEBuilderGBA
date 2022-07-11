@@ -292,6 +292,7 @@
     <Compile Include="MapStyleEditorFormWarningVanillaTileOverraideForm.Designer.cs">
       <DependentUpon>MapStyleEditorFormWarningVanillaTileOverraideForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolTranslateROMWipeJPChapterName.cs" />
     <Compile Include="ToolTranslateROMWipeJPFont.cs" />
     <Compile Include="UwordBitFlagForm.cs">
       <SubType>Form</SubType>

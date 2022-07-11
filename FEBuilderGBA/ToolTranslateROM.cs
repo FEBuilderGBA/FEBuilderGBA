@@ -229,7 +229,16 @@ namespace FEBuilderGBA
 
             jpfont.WriteBackFont(this.Recycle);
         }
+        public void WipeJPTitle(Undo.UndoData undodata)
+        {
+            List<Address> list = new List<FEBuilderGBA.Address>();
 
+            ToolTranslateROMWipeJPChapterName jpChapter = new ToolTranslateROMWipeJPChapterName(undodata);
+            jpChapter.Wipe(list);
+
+            this.Recycle.AddRecycle(list);
+            this.Recycle.RecycleOptimize();
+        }
 
         public void ImportAllText(Form self, string filename, Undo.UndoData undodata)
         {

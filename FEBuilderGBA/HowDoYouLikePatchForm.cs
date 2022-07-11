@@ -60,6 +60,7 @@ namespace FEBuilderGBA
             , WakuEvent_0x3B_Fix
             , StatusToLocalization
             , ExtendedMovingMapAnimationList
+            , ChapterNameText
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -325,6 +326,31 @@ namespace FEBuilderGBA
                 patchName2 = "Extended Moving Map Animation List";///No Translate
                 patchShowName = "Extended to Moving Map Animation 0xFF";///No Translate
                 patchCombo = "Extend 0xFF";///No Translate
+            }
+            else if (type == TYPE.ChapterNameText)
+            {
+                if (Program.ROM.RomInfo.version != 8)
+                {//FE8以外ではダメ
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchChapterNameToTextPatch();
+                };
+                reason = R._("章をテキストで表示するには、ChapterNameToTextパッチが必要です。\r\n有効にしますか？");
+
+                if (Program.ROM.RomInfo.is_multibyte)
+                {
+                    patchName1 = "Convert Chapter Titles to Text_ver2(Install)";
+                    patchName2 = "Chapter names as text2";
+                }
+                else
+                {
+                    patchName1 = "Convert Chapter Titles to Text_ver2.1 Support Lat1(Install)";///No Translate
+                    patchName2 = "PATCH_Chapter names as text2.1";///No Translate
+                }
+                patchShowName = "Convert Chapter Titles to Text_ver2";///No Translate
             }
 
             Debug.Assert(checkFunc != null);

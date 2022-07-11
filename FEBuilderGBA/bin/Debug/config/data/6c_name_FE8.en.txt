@@ -838,3 +838,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 000C3EBC=WorldMapMiniMap	{U}	//08A3EED4
 00072EA0=BattleManaketeTransform	{J}	//087A8C88
 000708F8=BattleManaketeTransform	{U}	//08758754
+000213C0=LightRuneMapAnim	{J}	//085C3830
+00005638=FaceRipSync	{J}	//085B8FE4
+00005730=FaceRipSync	{U}	//0859124C
+0000563C=FaceEyeLogic	{J}	//085B8FFC

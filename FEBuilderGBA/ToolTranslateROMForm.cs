@@ -56,6 +56,7 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData("Import Translate file");
             if (X_OVERRAIDE_JPFONT.Checked)
             {
+                trans.WipeJPTitle(undodata);
                 trans.WipeJPFont(this, undodata);
             }
             trans.ImportAllText(this, undodata);
@@ -294,6 +295,7 @@ namespace FEBuilderGBA
 
             if (SIMPLE_OVERRAIDE_JPFONT.Checked)
             {
+                trans.WipeJPTitle(undodata);
                 trans.WipeJPFont(this, undodata);
             }
 

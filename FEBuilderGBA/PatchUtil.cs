@@ -2312,5 +2312,16 @@ namespace FEBuilderGBA
             }
             return pointer;
         }
+
+        //章タイトルを画像ではなくテキストとして表示する(ENだけ)
+        public static bool SearchChapterNameToTextPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="ChapterNameToText",	ver = "FE8J", addr = 0x8B894,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+                new PatchTableSt{ name="ChapterNameToText",	ver = "FE8U", addr = 0x89624,data = new byte[]{0x00, 0x4B, 0x18, 0x47}},
+            };
+
+            return SearchPatchBool(table);
+        }
     }
 }

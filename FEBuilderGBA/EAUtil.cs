@@ -496,7 +496,7 @@ namespace FEBuilderGBA
             DataEnum dataType = DataEnum.BIN;
             if (orignalIine.IndexOf("--lz77") >= 0)
             {
-                byte[] image = Png2DmpLZ77(fullbinname);
+                byte[] image = Png2DmpLZ77(fullbinname, incext: true);
                 Data data = new Data(filename, this.Dir, image, dataType);
                 this.DataList.Add(data);
             }
@@ -532,15 +532,18 @@ namespace FEBuilderGBA
 
             return true;
         }
-        byte[] Png2DmpLZ77(string filename)
+        byte[] Png2DmpLZ77(string filename, bool incext = false)
         {
             string hint = filename + ".dmp";
             if (File.Exists(hint))
             {
                 return File.ReadAllBytes(hint);
             }
-            //ヒントファイルがない!!
-            Debug.Assert(false);
+            if (incext == false)
+            {
+                //ヒントファイルがない!!
+                Debug.Assert(false);
+            }
             return new byte[] { };
         }
 

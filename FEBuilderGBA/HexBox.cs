@@ -498,6 +498,10 @@ namespace FEBuilderGBA
             this.LastSearch = addrString;
             this.LastSearchLittleEndian = isLittleEndian;
 
+            //0x と $ を削る
+            addrString = addrString.Replace("0x", "");
+            addrString = addrString.Replace("$", "");
+            
             //空白を詰める.
             addrString = addrString.Replace(" ", "");
             addrString = addrString.Replace("\t", "");
@@ -561,13 +565,14 @@ namespace FEBuilderGBA
                 mask = littlemask;
             }
 
+            uint searchStart = this.CursolPosStart;
             uint blockSize = 1;
             if (isAlign4)
             {
                 blockSize = 4;
+                searchStart = U.SubPadding4(searchStart);
             }
 
-            uint searchStart = this.CursolPosStart;
             uint found ;
             if (isRev)
             {
