@@ -43,8 +43,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label23 = new System.Windows.Forms.Label();
             this.J_12 = new System.Windows.Forms.Label();
             this.B25 = new System.Windows.Forms.NumericUpDown();
@@ -74,9 +72,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
-            this.DescriptionAfterImportLabel = new FEBuilderGBA.LabelEx();
             this.X_MUG_EXCEED = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -94,13 +90,18 @@
             this.label24 = new System.Windows.Forms.Label();
             this.ShowFrameUpDown = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
-            this.X_PIC_ZZZ = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_MAP_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_UNIT_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.ToolCompressAllPortrait = new System.Windows.Forms.Button();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.DescriptionAfterImportLabel = new FEBuilderGBA.LabelEx();
+            this.X_PIC_ZZZ = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_MAP_PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_UNIT_PIC = new FEBuilderGBA.InterpolatedPictureBox();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -127,10 +128,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC_ZZZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_MAP_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_UNIT_PIC)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -226,6 +227,7 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.ToolCompressAllPortrait);
             this.DragTargetPanel2.Controls.Add(this.LinkInternt);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
@@ -306,28 +308,6 @@
             this.AddressPanel.Name = "AddressPanel";
             this.AddressPanel.Size = new System.Drawing.Size(872, 30);
             this.AddressPanel.TabIndex = 60;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(310, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(80, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(521, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(132, 25);
-            this.SelectAddress.TabIndex = 40;
             // 
             // label23
             // 
@@ -707,15 +687,6 @@
             this.DragTargetPanel.Size = new System.Drawing.Size(872, 606);
             this.DragTargetPanel.TabIndex = 62;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(175, 564);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(445, 25);
-            this.Comment.TabIndex = 200;
-            // 
             // label11
             // 
             this.label11.AccessibleDescription = "@COMMENT";
@@ -727,17 +698,6 @@
             this.label11.TabIndex = 199;
             this.label11.Text = "コメント";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DescriptionAfterImportLabel
-            // 
-            this.DescriptionAfterImportLabel.AutoSize = true;
-            this.DescriptionAfterImportLabel.ErrorMessage = "";
-            this.DescriptionAfterImportLabel.Location = new System.Drawing.Point(9, 483);
-            this.DescriptionAfterImportLabel.Name = "DescriptionAfterImportLabel";
-            this.DescriptionAfterImportLabel.Size = new System.Drawing.Size(587, 18);
-            this.DescriptionAfterImportLabel.TabIndex = 176;
-            this.DescriptionAfterImportLabel.Text = "顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。";
-            this.DescriptionAfterImportLabel.Visible = false;
             // 
             // X_MUG_EXCEED
             // 
@@ -948,37 +908,6 @@
             this.label17.Text = "フレーム";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_PIC_ZZZ
-            // 
-            this.X_PIC_ZZZ.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC_ZZZ.Location = new System.Drawing.Point(540, 223);
-            this.X_PIC_ZZZ.Margin = new System.Windows.Forms.Padding(5);
-            this.X_PIC_ZZZ.Name = "X_PIC_ZZZ";
-            this.X_PIC_ZZZ.Size = new System.Drawing.Size(152, 133);
-            this.X_PIC_ZZZ.TabIndex = 86;
-            this.X_PIC_ZZZ.TabStop = false;
-            // 
-            // X_MAP_PIC
-            // 
-            this.X_MAP_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_MAP_PIC.Location = new System.Drawing.Point(399, 224);
-            this.X_MAP_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_MAP_PIC.Name = "X_MAP_PIC";
-            this.X_MAP_PIC.Size = new System.Drawing.Size(107, 98);
-            this.X_MAP_PIC.TabIndex = 85;
-            this.X_MAP_PIC.TabStop = false;
-            // 
-            // X_UNIT_PIC
-            // 
-            this.X_UNIT_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_UNIT_PIC.Location = new System.Drawing.Point(397, 10);
-            this.X_UNIT_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_UNIT_PIC.Name = "X_UNIT_PIC";
-            this.X_UNIT_PIC.Size = new System.Drawing.Size(223, 197);
-            this.X_UNIT_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.X_UNIT_PIC.TabIndex = 67;
-            this.X_UNIT_PIC.TabStop = false;
-            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1013,6 +942,18 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ToolCompressAllPortrait
+            // 
+            this.ToolCompressAllPortrait.Location = new System.Drawing.Point(710, 17);
+            this.ToolCompressAllPortrait.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ToolCompressAllPortrait.Name = "ToolCompressAllPortrait";
+            this.ToolCompressAllPortrait.Size = new System.Drawing.Size(161, 29);
+            this.ToolCompressAllPortrait.TabIndex = 201;
+            this.ToolCompressAllPortrait.Text = "顔画像の全圧縮";
+            this.ToolCompressAllPortrait.UseVisualStyleBackColor = true;
+            this.ToolCompressAllPortrait.Visible = false;
+            this.ToolCompressAllPortrait.Click += new System.EventHandler(this.ToolCompressAllPortrait_Click);
+            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1025,6 +966,79 @@
             this.AddressList.Size = new System.Drawing.Size(253, 646);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(175, 564);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(445, 25);
+            this.Comment.TabIndex = 200;
+            // 
+            // DescriptionAfterImportLabel
+            // 
+            this.DescriptionAfterImportLabel.AutoSize = true;
+            this.DescriptionAfterImportLabel.ErrorMessage = "";
+            this.DescriptionAfterImportLabel.Location = new System.Drawing.Point(9, 483);
+            this.DescriptionAfterImportLabel.Name = "DescriptionAfterImportLabel";
+            this.DescriptionAfterImportLabel.Size = new System.Drawing.Size(587, 18);
+            this.DescriptionAfterImportLabel.TabIndex = 176;
+            this.DescriptionAfterImportLabel.Text = "顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。";
+            this.DescriptionAfterImportLabel.Visible = false;
+            // 
+            // X_PIC_ZZZ
+            // 
+            this.X_PIC_ZZZ.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC_ZZZ.Location = new System.Drawing.Point(540, 223);
+            this.X_PIC_ZZZ.Margin = new System.Windows.Forms.Padding(5);
+            this.X_PIC_ZZZ.Name = "X_PIC_ZZZ";
+            this.X_PIC_ZZZ.Size = new System.Drawing.Size(152, 133);
+            this.X_PIC_ZZZ.TabIndex = 86;
+            this.X_PIC_ZZZ.TabStop = false;
+            // 
+            // X_MAP_PIC
+            // 
+            this.X_MAP_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_MAP_PIC.Location = new System.Drawing.Point(399, 224);
+            this.X_MAP_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_MAP_PIC.Name = "X_MAP_PIC";
+            this.X_MAP_PIC.Size = new System.Drawing.Size(107, 98);
+            this.X_MAP_PIC.TabIndex = 85;
+            this.X_MAP_PIC.TabStop = false;
+            // 
+            // X_UNIT_PIC
+            // 
+            this.X_UNIT_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_UNIT_PIC.Location = new System.Drawing.Point(397, 10);
+            this.X_UNIT_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_UNIT_PIC.Name = "X_UNIT_PIC";
+            this.X_UNIT_PIC.Size = new System.Drawing.Size(223, 197);
+            this.X_UNIT_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.X_UNIT_PIC.TabIndex = 67;
+            this.X_UNIT_PIC.TabStop = false;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(310, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(80, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(521, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(132, 25);
+            this.SelectAddress.TabIndex = 40;
             // 
             // ImagePortraitForm
             // 
@@ -1071,10 +1085,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC_ZZZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_MAP_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_UNIT_PIC)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1154,5 +1168,6 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LinkInternt;
+        private System.Windows.Forms.Button ToolCompressAllPortrait;
     }
 }

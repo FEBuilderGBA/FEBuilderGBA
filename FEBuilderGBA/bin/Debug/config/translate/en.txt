@@ -3394,6 +3394,9 @@ Do you want to install the localization patch?
 :ユニット移動アイコンを拡張するには、テーブルを拡張するパッチを適応する必要があります。\r\n有効にしますか？
 To extend the unit move icon, you need to apply a patch that extends the table.\r\nDo you want to enable it? 
 
+:章をテキストで表示するには、ChapterNameToTextパッチが必要です。\r\n有効にしますか？
+The ChapterNameToText patch is required to display chapters in text.\r\nDo you want to enable it? 
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 
@@ -3787,6 +3790,9 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 :顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
 The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
 
+:顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\n捨てに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
+Compress all face images.\r\nYou can get a capacity of 200-300kb for vanilla.\r\nData that has been compressed to discard is skipped, so it is theoretically safe no matter how many times you execute it.\r\n\r\nAre you sure you want to do it? 
+
 :口
 Mouth
 
@@ -3802,9 +3808,6 @@ Eye XX/YY
 :6=瞳を閉じる
 6=Close Eye
 
-:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
-If the eye and mouth positions in the portrait do not match, please adjust the position.
-
 :mug_exceed用のタイルをどこに配置するか設定してください
 Please set where to place the tile for mug_exceed
 
@@ -3813,6 +3816,12 @@ Tile 2
 
 :タイル1
 Tile 1
+
+:顔画像の全圧縮
+Full compression of face image.
+
+:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
+If the eye and mouth positions in the portrait do not match, please adjust the position.
 
 :位置確認用
 For position confirmation

@@ -1,0 +1,8 @@
+
+PUSH
+ORG 0x03e320	//FE8U
+//ORG 0x03E2B0	//FE8J
+//ORG 0x0393E8	//FE7U
+//ORG 0x03989c	//FE7J
+#incbin "FillAIDangerMap-7743.dmp"
+POP

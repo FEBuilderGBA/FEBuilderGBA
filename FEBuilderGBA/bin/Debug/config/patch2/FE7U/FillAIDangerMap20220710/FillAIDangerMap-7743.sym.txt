@@ -1,7 +1,0 @@
-UnitLoop=$1A
-ContinueNextUnit=$C4
-ItemLoop=$44
-BreakItemLoop=$6C
-ContinueNextItem=$64
-LoopY=$A2
-LoopX=$AA

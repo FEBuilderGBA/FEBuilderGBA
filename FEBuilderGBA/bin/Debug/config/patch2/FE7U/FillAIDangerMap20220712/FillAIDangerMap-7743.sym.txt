@@ -1,0 +1,7 @@
+UnitLoop=$16
+ContinueNextUnit=$C2
+ItemLoop=$42
+BreakItemLoop=$6A
+ContinueNextItem=$62
+LoopY=$A0
+LoopX=$A8

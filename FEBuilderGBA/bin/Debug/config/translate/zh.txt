@@ -3394,6 +3394,9 @@ Do not recommend this patch
 :ユニット移動アイコンを拡張するには、テーブルを拡張するパッチを適応する必要があります。\r\n有効にしますか？
 要扩展单位移动图标，您需要应用一个扩展表格的补丁。\r\n您要启用它吗？ 
 
+:章をテキストで表示するには、ChapterNameToTextパッチが必要です。\r\n有効にしますか？
+需要 ChapterNameToText 补丁以文本形式显示章节。\r\n你想启用它吗？ 
+
 :{0}パッチを有効にしますか？
 你想激活{0}补丁吗？
 
@@ -3787,6 +3790,9 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 :顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
 The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
 
+:顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\n捨てに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
+压缩所有人脸图像。\r\n您可以获得 200-300kb 的香草容量。\r\n已压缩丢弃的数据会被跳过，因此无论执行多少次，理论上都是安全的。\r\n\r\n你确定要这样做吗？ 
+
 :口
 口
 
@@ -3802,9 +3808,6 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 :6=瞳を閉じる
 6=闭上眼睛
 
-:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
-如果脸部图像的眼睛和嘴巴位置不匹配，请从这里调整位置。
-
 :mug_exceed用のタイルをどこに配置するか設定してください
 请为mug_exceed设置拼贴的位置
 
@@ -3813,6 +3816,12 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 
 :タイル1
 瓷砖1
+
+:顔画像の全圧縮
+人脸图像完全压缩。
+
+:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
+如果脸部图像的眼睛和嘴巴位置不匹配，请从这里调整位置。
 
 :位置確認用
 对于位置确认

@@ -33,6 +33,8 @@ namespace FEBuilderGBA
             B23.ValueChanged += AddressList_SelectedIndexChanged;
             B24.ValueChanged += AddressList_SelectedIndexChanged;
 
+            DetermineToolCompressAllPortraitButton();
+
             //パレット変更の部分にリンクを置く.
             InputFormRef.markupJumpLabel(this.J_8);
 
@@ -1723,7 +1725,7 @@ namespace FEBuilderGBA
             MainFormUtil.GotoMoreData();
         }
 
-        private void DEBUG_AllCompress(object sender, EventArgs e)
+        private void CompressAllPortrait(Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = Init(null);
 
@@ -1746,8 +1748,35 @@ namespace FEBuilderGBA
                 {
                     continue;   
                 }
-                Program.ROM.write_fill(a, 4 + 0x1000, 0);
-                Program.ROM.write_range(a, lz77);
+                Program.ROM.write_fill(a, 4 + 0x1000, 0, undodata);
+                Program.ROM.write_range(a, lz77, undodata);
+            }
+        }
+
+        private void DetermineToolCompressAllPortraitButton()
+        {
+            OptionForm.func_portrait_lz77_enum portrait_lz77 = OptionForm.portrait_lz77();
+            if (portrait_lz77 != OptionForm.func_portrait_lz77_enum.AlwaysL77Compress)
+            {
+                return;
+            }
+
+            ToolCompressAllPortrait.Show();
+        }
+ 
+        private void ToolCompressAllPortrait_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = R.ShowNoYes("顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\n捨てに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？");
+            if (dr != DialogResult.Yes)
+            {
+                return;
+            }
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                Undo.UndoData undodata = Program.Undo.NewUndoData("ToolCompressAllPortrait");
+                CompressAllPortrait(undodata);
+                Program.Undo.Push(undodata);
             }
         }
 
