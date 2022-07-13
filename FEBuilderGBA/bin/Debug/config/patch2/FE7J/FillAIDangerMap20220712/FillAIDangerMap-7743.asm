@@ -97,6 +97,7 @@ NuAiFillDangerMap:
 	@maybe assert(ldrb [r11,#0xb] == r10 )
 
 	UnitLoop:
+	mov r4, r10 @ this is needed if we go past line 178
 	ldr r0, [r4, #0x0]	@Unit->Unit
 	cmp r0, #0x0
 	beq ContinueNextUnit	@ if unit->unit == null
