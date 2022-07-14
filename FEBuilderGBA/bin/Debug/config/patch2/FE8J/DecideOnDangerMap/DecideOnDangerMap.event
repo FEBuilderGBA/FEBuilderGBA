@@ -1,7 +1,3 @@
-ORG 0x6D2E4 //Kaitou
-
-
-
 #include "EAstdlib.event"
 #ifndef callHackNew
 	#define callHackNew(offset) "BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
