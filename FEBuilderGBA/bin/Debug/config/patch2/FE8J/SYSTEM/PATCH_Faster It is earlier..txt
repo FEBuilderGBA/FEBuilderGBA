@@ -1,6 +1,6 @@
 ﻿
 NAME=はやい もっとはやい
-NAME.en=Faster It is earlier.
+NAME.en=Enable Faster Movement By Holding A (alt)
 
 
 //アドレスパッチとして実装します
@@ -10,6 +10,10 @@ TAG=#ENGINE
 ADDRESS=0x007b928
 COMBO=Default: はやい|0x40|もっとはやい|0x80
 COMBO.en=Default: fast|0x40|more fast|0x80
+
+INFO=ユニットの移動速度を、もっと早くします。
+INFO.en=Toggles if characters move faster when the A button is held or not.
+INFO.zh=更快地移动设备。
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 NAME.zh=更快更早???

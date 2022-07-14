@@ -14856,3 +14856,4 @@
 08A3EED4	StartWorldMapMiniMapProcs	{U}
 080708CC	StartBattleManaketeTransform	{U}
 087A8CD0	:087A8F64	リザイア等の魔法モーションの背景の一部	{J}
+0875879C	:08758A30	リザイア等の魔法モーションの背景の一部	{U}

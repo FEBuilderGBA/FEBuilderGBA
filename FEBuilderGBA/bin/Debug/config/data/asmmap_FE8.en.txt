@@ -14906,3 +14906,5 @@ r3=X tile position of menu of right	{U}
 0892589C	:08925AA3	Unused unit placement.	6	enemy.	{J}
 086792A4	:08679B03	Unknown	Unused data.	1	{U}
 0867EA48	:0867EE03	Unknown	Unused data.	2	{U}
+087A8CD0	:087A8F64	Part of the background of magical motion such as resire.	{J}
+0875879C	:08758A30	Part of the background of magical motion such as resire.	{U}

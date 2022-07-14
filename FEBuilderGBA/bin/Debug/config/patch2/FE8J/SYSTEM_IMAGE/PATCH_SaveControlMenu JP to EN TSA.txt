@@ -4,7 +4,8 @@ NAME.en=SaveControlMenu JP->EN TSA
 TYPE=SWITCH
 TAG=#IMAGE
 
-AUTHOR=Pikmin1211
+AUTHOR=Pikmin1211 https://github.com/Pikmin1211/The-Nameless-Heroes/tree/master/Graphics/Menus
+
 NAME.zh=保存屏幕菜单。 JP->EN TSA
 
 INFO=セーブ画面のメニューを英語版と同じ並び順にします。\r\n英語版は文字を繰り出す位置が違うので、そのまま英語版のデータを入れても動作しません。\r\nこのパッチはその問題を修正します。\r\nセーブ画面のメニューを英語版に翻訳したいときは、このパッチを入れてから、画像をインポートしてください。画像を入れてからこのパッチを当ててもいいです。

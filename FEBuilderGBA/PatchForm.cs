@@ -8299,6 +8299,14 @@ namespace FEBuilderGBA
                     }
                     pasm = b.addr + 12;
                 }
+                else if (jumpcode == 0x4B01)
+                {//callHackNew
+                    if (!U.isSafetyOffset(b.addr + 12))
+                    {
+                        continue;
+                    }
+                    pasm = b.addr + 12;
+                }
                 else
                 {
                     continue;
