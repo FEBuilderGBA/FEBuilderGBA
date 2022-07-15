@@ -1,4 +1,1 @@
-Start=$1C
-RetZero=$1A
-VanillaBehaviour=$36
-End=$4C
+End=$28

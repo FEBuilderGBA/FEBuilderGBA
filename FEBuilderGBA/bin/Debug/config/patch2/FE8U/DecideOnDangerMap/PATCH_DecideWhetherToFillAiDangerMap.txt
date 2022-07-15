@@ -7,7 +7,7 @@ NAME.zh=DecideWhetherToFillAiDangerMap
 EA=DecideOnDangerMap.event
 
 //既に適応されたかどうか
-PATCHED_IF:0x3E12C=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+PATCHED_IF:0x3E308=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
 
 INFO=このパッチは敵AIの思考時間をさらに短くします。\r\nFillAiDangerMap関数はコストがかかることが知られており、既にこれの効率を改善するパッチがいくつかあります。\r\nこのパッチは、それらのパッチとも互換性があり、さらに動作を改善するルーチンです。\r\nTargetAIの種類によって、FillAiDangerMapを実行する必要がないものがあります。\r\n具体的には、TargetAI3の8, 20, 28については、FillAiDangerMapを実行する必要がないので、この実行をスキップします。\r\nこれにより、1敵ユニットにつき4フレーム程度の処理が早くなります。\r\n多くのゲームで、TargetAI3=8は、標準として使われているので、ゲームの速度の改善が見込めます。\r\n\r\nFillAiDangerMapの改善ルーチンと併用することで、敵AIの思考時間を最高に短くできます。
 

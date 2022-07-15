@@ -5,19 +5,8 @@
 
 
 PUSH 
-
-// These are a couple of offsets for Target AI3 
-//ORG $D817E	//{U}
-//BYTE 0 // prioritize accuracy ai3 0x8 to ignore attack power of opponents 
-//ORG $D81A6	//{U}
-//BYTE 0 // prioritize damage ai3 0x10 to ignore attack power of opponents 
-
-//ORG $3E2F4 // SetupAiDangerMap	//{U}
-ORG $3E284 // SetupAiDangerMap	//{J}
-SHORT $4770 // bx lr! 
-
-//ORG $3E12C // from AiBattleGetTileDangerWeight	//{U}
-ORG $3E0BC // from AiBattleGetTileDangerWeight	//{J}
+//ORG $3E308 // from $3E2F4 SetupAiDangerMap	//{U}
+ORG $3E298 // from SetupAiDangerMap	//{J}
 callHackNew(DecideWhetherToFillAiDangerMap|1) 
 
 POP 
@@ -25,7 +14,4 @@ POP
 ALIGN 4 
 DecideWhetherToFillAiDangerMap: 
 #incbin "DecideWhetherToFillAiDangerMap.dmp" 
-
-
-
 
