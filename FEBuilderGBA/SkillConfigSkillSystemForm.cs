@@ -904,7 +904,9 @@ namespace FEBuilderGBA
         {
             uint anime = (uint)ANIMATION.Value;
             uint frame = (uint)ShowFrameUpDown.Value;
-            AnimationPictureBox.Image = ImageUtilSkillSystemsAnimeCreator.Draw(anime, frame);
+            string log;
+            AnimationPictureBox.Image = ImageUtilSkillSystemsAnimeCreator.Draw(anime, frame, out log);
+            BinInfo.Text = log;
         }
 
         private void AnimationExportButton_Click(object sender, EventArgs e)

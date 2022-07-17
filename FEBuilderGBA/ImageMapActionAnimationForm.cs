@@ -264,9 +264,11 @@ namespace FEBuilderGBA
 
         private void ShowFrameUpDown_ValueChanged(object sender, EventArgs e)
         {
+            string log;
             uint anime = U.toOffset((uint)P0.Value);
             uint frame = (uint)ShowFrameUpDown.Value;
-            AnimationPictureBox.Image = ImageUtilMapActionAnimation.Draw(anime, frame);
+            AnimationPictureBox.Image = ImageUtilMapActionAnimation.Draw(anime, frame, out log);
+            BinInfo.Text = log;
         }
         public static String GetName(uint id)
         {
@@ -301,7 +303,8 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy();
             }
             uint anime = Program.ROM.p32(addr);
-            return ImageUtilMapActionAnimation.Draw(anime, frame);
+            string log;
+            return ImageUtilMapActionAnimation.Draw(anime, frame, out log);
         }
 
         private void AnimationExportButton_Click(object sender, EventArgs e)

@@ -65,6 +65,7 @@
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.NOTIFY_KeepEmpty = new System.Windows.Forms.Label();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -410,6 +411,7 @@
             // 
             // AnimationPanel
             // 
+            this.AnimationPanel.Controls.Add(this.BinInfo);
             this.AnimationPanel.Controls.Add(this.ShowZoomComboBox);
             this.AnimationPanel.Controls.Add(this.label25);
             this.AnimationPanel.Controls.Add(this.label26);
@@ -418,7 +420,7 @@
             this.AnimationPanel.Controls.Add(this.AnimationPictureBox);
             this.AnimationPanel.Location = new System.Drawing.Point(3, 179);
             this.AnimationPanel.Name = "AnimationPanel";
-            this.AnimationPanel.Size = new System.Drawing.Size(864, 366);
+            this.AnimationPanel.Size = new System.Drawing.Size(864, 424);
             this.AnimationPanel.TabIndex = 120;
             this.AnimationPanel.Visible = false;
             // 
@@ -532,6 +534,16 @@
             this.NOTIFY_KeepEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NOTIFY_KeepEmpty.Visible = false;
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(326, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(538, 25);
+            this.BinInfo.TabIndex = 196;
+            // 
             // ImageMapActionAnimationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -557,6 +569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).EndInit();
             this.AnimationPanel.ResumeLayout(false);
+            this.AnimationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
@@ -603,5 +616,6 @@
         private System.Windows.Forms.NumericUpDown W4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label NOTIFY_KeepEmpty;
+        private TextBoxEx BinInfo;
     }
 }

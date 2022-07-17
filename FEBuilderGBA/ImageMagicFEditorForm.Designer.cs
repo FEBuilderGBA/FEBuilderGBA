@@ -33,12 +33,12 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.LinkInternt = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.MagicComment = new FEBuilderGBA.TextBoxEx();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,6 +72,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -152,16 +153,6 @@
             this.panel3.Size = new System.Drawing.Size(1206, 30);
             this.panel3.TabIndex = 115;
             // 
-            // LinkInternt
-            // 
-            this.LinkInternt.AutoSize = true;
-            this.LinkInternt.Location = new System.Drawing.Point(8, 440);
-            this.LinkInternt.Name = "LinkInternt";
-            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
-            this.LinkInternt.TabIndex = 29;
-            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
-            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
-            // 
             // ReloadListButton
             // 
             this.ReloadListButton.Location = new System.Drawing.Point(506, -1);
@@ -221,9 +212,20 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(8, 440);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 29;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.BinInfo);
             this.DragTargetPanel.Controls.Add(this.LinkInternt);
             this.DragTargetPanel.Controls.Add(this.MagicComment);
             this.DragTargetPanel.Controls.Add(this.label2);
@@ -642,6 +644,16 @@
             this.label16.Text = "アドレス";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(310, 297);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(600, 25);
+            this.BinInfo.TabIndex = 195;
+            // 
             // ImageMagicFEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -723,5 +735,6 @@
         private TextBoxEx MagicComment;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LinkInternt;
+        private TextBoxEx BinInfo;
     }
 }

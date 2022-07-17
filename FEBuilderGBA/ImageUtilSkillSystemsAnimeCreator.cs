@@ -69,12 +69,12 @@ namespace FEBuilderGBA
         }
 
 
-        public static Bitmap Draw(uint anime_address, uint showFrameData)
+        public static Bitmap Draw(uint anime_address, uint showFrameData, out string log)
         {
-
             anime_address = U.toOffset(anime_address);
             if (!U.isSafetyOffset(anime_address))
             {
+                log = "";
                 return null;
             }
 
@@ -83,10 +83,12 @@ namespace FEBuilderGBA
             uint anime_config_address = SkipCode(anime_address, out programCode, out animeType);
             if (anime_config_address == U.NOT_FOUND)
             {//先頭に埋め込まれているプログラムを検出できない
+                log = "BAD ANIME CONFIG ADDRESS";
                 return null;
             }
             if (anime_config_address + (4 * 5) > Program.ROM.Data.Length)
             {//範囲外
+                log = "BAD ANIME CONFIG ADDRESS";
                 return null;
             }
             //POIN Frames
@@ -102,28 +104,33 @@ namespace FEBuilderGBA
 
             if (!U.isSafetyOffset(frames))
             {
+                log = R._("BAD ANIME_FRAMES {0}", U.To0xHexString(frames));
                 return null;
             }
             if (!U.isSafetyOffset(tsalist))
             {
+                log = R._("BAD TSALIST {0}", U.To0xHexString(tsalist));
                 return null;
             }
             if (!U.isSafetyOffset(graphiclist))
             {
+                log = R._("BAD GRAPHICS {0}", U.To0xHexString(graphiclist));
                 return null;
             }
             if (!U.isSafetyOffset(palettelist))
             {
+                log = R._("BAD PALETTELIST {0}", U.To0xHexString(palettelist));
                 return null;
             }
 
             uint frame = FindFrame(showFrameData, frames, Program.ROM.Data);
             if (frame == U.NOT_FOUND)
             {
+                log = "";
                 return null;
             }
             //フレームを発見したので描画する.
-            Bitmap retImage = DrawFrameImage(frame, graphiclist, tsalist, palettelist);
+            Bitmap retImage = DrawFrameImage(frame, graphiclist, tsalist, palettelist, out log);
             return retImage;
         }
 
@@ -154,10 +161,11 @@ namespace FEBuilderGBA
             return U.NOT_FOUND;
         }
 
-        static Bitmap DrawFrameImage(uint frame, uint graphiclist, uint tsalist, uint palettelist)
+        static Bitmap DrawFrameImage(uint frame, uint graphiclist, uint tsalist, uint palettelist, out string log)
         {
             if (!U.isSafetyOffset(frame))
             {
+                log = R._("BAD FRAME_OFFSET {0}", U.To0xHexString(frame));
                 return ImageUtil.BlankDummy();
             }
             //struct Frames{
@@ -173,14 +181,17 @@ namespace FEBuilderGBA
 
             if (!U.isSafetyOffset(objPointer+4))
             {
+                log = R._("BAD OBJ_POINTER {0}", U.To0xHexString(objPointer+4));
                 return ImageUtil.BlankDummy();
             }
             if (!U.isSafetyOffset(tsaPointer+4))
             {
+                log = R._("BAD TSA_POINTER {0}", U.To0xHexString(objPointer + 4));
                 return ImageUtil.BlankDummy();
             }
             if (!U.isSafetyOffset(palPointer+4))
             {
+                log = R._("BAD PAL_PONER {0}", U.To0xHexString(objPointer + 4));
                 return ImageUtil.BlankDummy();
             }
             uint objOffset = Program.ROM.p32(objPointer);
@@ -188,16 +199,21 @@ namespace FEBuilderGBA
             uint palOffset = Program.ROM.p32(palPointer);
             if (!U.isSafetyOffset(objOffset))
             {
+                log = R._("BAD OBJ_OFFSET {0}", U.To0xHexString(objOffset));
                 return ImageUtil.BlankDummy();
             }
             if (!U.isSafetyOffset(tsaOffset))
             {
+                log = R._("BAD TSA_OFFSET {0}", U.To0xHexString(tsaOffset));
                 return ImageUtil.BlankDummy();
             }
             if (!U.isSafetyOffset(palOffset + 0x20))
             {
+                log = R._("BAD PAL_OFFSET {0}", U.To0xHexString(palOffset));
                 return ImageUtil.BlankDummy();
             }
+
+            log = R._("OBJ {0}, TAS {1}, PAL {2}", U.To0xHexString(objOffset), U.To0xHexString(tsaOffset), U.To0xHexString(palOffset));
 
             //objとtsaは圧縮されている.
             //palは、0x20(16色1パレット)固定.
@@ -282,7 +298,8 @@ namespace FEBuilderGBA
                     break;
                 }
 
-                Bitmap bitmap = DrawFrameImage(n, graphiclist, tsalist, palettelist);
+                string log;
+                Bitmap bitmap = DrawFrameImage(n, graphiclist, tsalist, palettelist, out log);
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
             }
 
@@ -379,7 +396,8 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    bitmap = DrawFrameImage(n, graphiclist, tsalist, palettelist);
+                    string log;
+                    bitmap = DrawFrameImage(n, graphiclist, tsalist, palettelist, out log);
 
                     int paletteCount = ImageUtil.GetPalette16Count(bitmap);
                     if (paletteCount < 1)

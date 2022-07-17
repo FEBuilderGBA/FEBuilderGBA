@@ -335,6 +335,7 @@ namespace FEBuilderGBA
         static Bitmap DrawFrameImage(uint frame, byte[] frameData
             , uint objRightToLeftOAM
             , uint objBGRightToLeftOAM
+            , out string log
             )
         {
             //0  frame16 byte1 x86
@@ -345,9 +346,12 @@ namespace FEBuilderGBA
             //20 objPalettePointer
             //24 bgPalettePointer
 
+            StringBuilder sb = new StringBuilder();
+
             uint objPalettePointer = U.u32(frameData, frame + 20);
             if (! U.isSafetyPointer(objPalettePointer))
             {
+                log = R._("BAD OBJPAL_POINTER {0}", U.To0xHexString(objPalettePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] objPalette = Program.ROM.getBinaryData(U.toOffset(objPalettePointer), 0x20);
@@ -355,6 +359,7 @@ namespace FEBuilderGBA
             uint bgPalettePointer = U.u32(frameData, frame + 24);
             if (!U.isSafetyPointer(bgPalettePointer))
             {
+                log = R._("BAD BGPAL_POINTER {0}", U.To0xHexString(bgPalettePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] bgPalette = Program.ROM.getBinaryData(U.toOffset(bgPalettePointer), 0x20);
@@ -367,13 +372,15 @@ namespace FEBuilderGBA
             uint bgPointer = U.u32(frameData, frame + 16);
             if (!U.isSafetyPointer(bgPointer))
             {
+                log = R._("BAD BGIMG_POINTER {0}", U.To0xHexString(bgPointer));
                 return ImageUtil.BlankDummy();
             }
 
+            log = "";
             byte[] bg_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(bgPointer));
             if (bg_UZ.Length > 0)
             {
-                Log.Debug("bg: ", U.ToHexString(bgPointer), bg_UZ.Length.ToString());
+                log += R._("BGIMG {0}, BGPAL {1},", U.To0xHexString(bgPointer), U.To0xHexString(bgPalettePointer));
 
                 int rom_image_width = BG_SEAT_TILE_WIDTH * 8;
                 int rom_image_height = ImageUtil.CalcHeight(rom_image_width, bg_UZ.Length);
@@ -387,11 +394,14 @@ namespace FEBuilderGBA
             uint objImagePointer = U.u32(frameData, frame + 4);
             if (!U.isSafetyPointer(objImagePointer))
             {
+                log = R._("BAD OBJIMG_POINTER {0} ", U.To0xHexString(objImagePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] obj_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(objImagePointer));
             if (obj_UZ.Length > 0)
             {
+                log += R._("OBJIMG {0}, OBJPAL {1}", U.To0xHexString(objImagePointer), U.To0xHexString(objPalettePointer));
+
                 int width = 256;
                 int height = ImageUtil.CalcHeight(width, obj_UZ.Length);
                 if (height < 64)
@@ -438,7 +448,8 @@ namespace FEBuilderGBA
 
         //BG OAMデータはダミーデータしか作られないので、無視する.
         public static Bitmap Draw(uint showFrameData, uint frameData
-            , uint objRightToLeftOAM, uint objBGRightToLeftOAM)
+            , uint objRightToLeftOAM, uint objBGRightToLeftOAM
+            , out string log)
         {
             frameData = U.toOffset(frameData);
             objRightToLeftOAM = U.toOffset(objRightToLeftOAM);
@@ -446,9 +457,10 @@ namespace FEBuilderGBA
             uint frame = FindFrame(showFrameData, frameData, Program.ROM.Data);
             if (frame == U.NOT_FOUND)
             {
+                log = "";
                 return null;
             }
-            Bitmap retImage = DrawFrameImage(frame, Program.ROM.Data, objRightToLeftOAM, objBGRightToLeftOAM);
+            Bitmap retImage = DrawFrameImage(frame, Program.ROM.Data, objRightToLeftOAM, objBGRightToLeftOAM, out log);
 
             return retImage;
         }
@@ -509,7 +521,8 @@ namespace FEBuilderGBA
 
                 //0x86 画像 pointer
                 uint wait = U.u16(frameData, n);
-                Bitmap bitmap = DrawFrameImage(n, frameData, objRightToLeftOAM, objBGRightToLeftOAM);
+                string log;
+                Bitmap bitmap = DrawFrameImage(n, frameData, objRightToLeftOAM, objBGRightToLeftOAM, out log);
 
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
 

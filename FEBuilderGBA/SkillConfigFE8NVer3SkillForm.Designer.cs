@@ -124,6 +124,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
             this.N3_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N3_L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.N3_J_0_ITEM = new System.Windows.Forms.Label();
@@ -165,6 +166,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel28 = new System.Windows.Forms.Panel();
+            this.label49 = new System.Windows.Forms.Label();
             this.N4_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N4_L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.N4_J_0_ITEM = new System.Windows.Forms.Label();
@@ -206,6 +208,9 @@
             this.label61 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel35 = new System.Windows.Forms.Panel();
+            this.N5_L_0_SKILL = new FEBuilderGBA.TextBoxEx();
+            this.N5_L_0_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.label74 = new System.Windows.Forms.Label();
             this.N5_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N5_J_0 = new System.Windows.Forms.Label();
             this.N5_B0 = new System.Windows.Forms.NumericUpDown();
@@ -279,11 +284,7 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.N5_L_0_SKILL = new FEBuilderGBA.TextBoxEx();
-            this.N5_L_0_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -351,6 +352,7 @@
             this.panel34.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel35.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N5_L_0_SKILLICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N5_B0)).BeginInit();
             this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N5_ReadCount)).BeginInit();
@@ -377,7 +379,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N5_L_0_SKILLICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -1527,6 +1528,16 @@
             this.panel15.Size = new System.Drawing.Size(657, 449);
             this.panel15.TabIndex = 119;
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(3, 89);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(511, 18);
+            this.label48.TabIndex = 126;
+            this.label48.Text = "このアイテムを武器として装備しているときに、このスキルを有効にします。";
+            // 
             // N3_ZeroPointerPanel
             // 
             this.N3_ZeroPointerPanel.Location = new System.Drawing.Point(5, 386);
@@ -2010,6 +2021,16 @@
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(657, 449);
             this.panel28.TabIndex = 119;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(3, 89);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(437, 18);
+            this.label49.TabIndex = 127;
+            this.label49.Text = "このアイテムを所持しているときに、このスキルを有効にします。";
             // 
             // N4_ZeroPointerPanel
             // 
@@ -2496,6 +2517,37 @@
             this.panel35.Size = new System.Drawing.Size(657, 449);
             this.panel35.TabIndex = 126;
             // 
+            // N5_L_0_SKILL
+            // 
+            this.N5_L_0_SKILL.ErrorMessage = "";
+            this.N5_L_0_SKILL.Location = new System.Drawing.Point(96, 45);
+            this.N5_L_0_SKILL.Name = "N5_L_0_SKILL";
+            this.N5_L_0_SKILL.Placeholder = "";
+            this.N5_L_0_SKILL.ReadOnly = true;
+            this.N5_L_0_SKILL.Size = new System.Drawing.Size(178, 25);
+            this.N5_L_0_SKILL.TabIndex = 129;
+            // 
+            // N5_L_0_SKILLICON
+            // 
+            this.N5_L_0_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N5_L_0_SKILLICON.Location = new System.Drawing.Point(279, 6);
+            this.N5_L_0_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N5_L_0_SKILLICON.Name = "N5_L_0_SKILLICON";
+            this.N5_L_0_SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.N5_L_0_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.N5_L_0_SKILLICON.TabIndex = 128;
+            this.N5_L_0_SKILLICON.TabStop = false;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(3, 89);
+            this.label74.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(424, 18);
+            this.label74.TabIndex = 127;
+            this.label74.Text = "現在のスキルに、指定した他のスキルの効果を追加します。";
+            // 
             // N5_ZeroPointerPanel
             // 
             this.N5_ZeroPointerPanel.Location = new System.Drawing.Point(5, 386);
@@ -2968,6 +3020,7 @@
             // 
             // AnimationPanel
             // 
+            this.AnimationPanel.Controls.Add(this.BinInfo);
             this.AnimationPanel.Controls.Add(this.X_N_JumpEditor);
             this.AnimationPanel.Controls.Add(this.ShowZoomComboBox);
             this.AnimationPanel.Controls.Add(this.label31);
@@ -2977,7 +3030,7 @@
             this.AnimationPanel.Controls.Add(this.AnimationPictureBox);
             this.AnimationPanel.Location = new System.Drawing.Point(2, 127);
             this.AnimationPanel.Name = "AnimationPanel";
-            this.AnimationPanel.Size = new System.Drawing.Size(864, 366);
+            this.AnimationPanel.Size = new System.Drawing.Size(864, 416);
             this.AnimationPanel.TabIndex = 123;
             this.AnimationPanel.Visible = false;
             // 
@@ -3363,56 +3416,15 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // label48
+            // BinInfo
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(3, 89);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(511, 18);
-            this.label48.TabIndex = 126;
-            this.label48.Text = "このアイテムを武器として装備しているときに、このスキルを有効にします。";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(3, 89);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(437, 18);
-            this.label49.TabIndex = 127;
-            this.label49.Text = "このアイテムを所持しているときに、このスキルを有効にします。";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(3, 89);
-            this.label74.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(424, 18);
-            this.label74.TabIndex = 127;
-            this.label74.Text = "現在のスキルに、指定した他のスキルの効果を追加します。";
-            // 
-            // N5_L_0_SKILL
-            // 
-            this.N5_L_0_SKILL.ErrorMessage = "";
-            this.N5_L_0_SKILL.Location = new System.Drawing.Point(96, 45);
-            this.N5_L_0_SKILL.Name = "N5_L_0_SKILL";
-            this.N5_L_0_SKILL.Placeholder = "";
-            this.N5_L_0_SKILL.ReadOnly = true;
-            this.N5_L_0_SKILL.Size = new System.Drawing.Size(178, 25);
-            this.N5_L_0_SKILL.TabIndex = 129;
-            // 
-            // N5_L_0_SKILLICON
-            // 
-            this.N5_L_0_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N5_L_0_SKILLICON.Location = new System.Drawing.Point(279, 6);
-            this.N5_L_0_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.N5_L_0_SKILLICON.Name = "N5_L_0_SKILLICON";
-            this.N5_L_0_SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.N5_L_0_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.N5_L_0_SKILLICON.TabIndex = 128;
-            this.N5_L_0_SKILLICON.TabStop = false;
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(326, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(535, 25);
+            this.BinInfo.TabIndex = 197;
             // 
             // SkillConfigFE8NVer3SkillForm
             // 
@@ -3508,6 +3520,7 @@
             this.tabPage5.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel35.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N5_L_0_SKILLICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N5_B0)).EndInit();
             this.panel36.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N5_ReadCount)).EndInit();
@@ -3524,6 +3537,7 @@
             this.panel41.ResumeLayout(false);
             this.tabAnimePage.ResumeLayout(false);
             this.AnimationPanel.ResumeLayout(false);
+            this.AnimationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPictureBox)).EndInit();
             this.panel20.ResumeLayout(false);
@@ -3537,7 +3551,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N5_L_0_SKILLICON)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3800,5 +3813,6 @@
         private System.Windows.Forms.Label label74;
         private TextBoxEx N5_L_0_SKILL;
         private InterpolatedPictureBox N5_L_0_SKILLICON;
+        private TextBoxEx BinInfo;
     }
 }

@@ -129,7 +129,9 @@ namespace FEBuilderGBA
 
         void DrawSelectedAnime()
         {
-            X_B_ANIME_PIC2.Image = ImageUtilMagicFEditor.Draw((uint)ShowFrameUpDown.Value, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
+            string log;
+            X_B_ANIME_PIC2.Image = ImageUtilMagicFEditor.Draw((uint)ShowFrameUpDown.Value, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value, out log);
+            BinInfo.Text = log;
         }
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {

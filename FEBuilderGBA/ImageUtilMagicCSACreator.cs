@@ -13,7 +13,7 @@ namespace FEBuilderGBA
     public class ImageUtilMagicCSACreator
     {
         //BG OAMデータはダミーデータしか作られないので、無視する.
-        public static Bitmap Draw(uint showFrameData, uint frameData, uint objRightToLeftOAM, uint objBGRightToLeftOAM)
+        public static Bitmap Draw(uint showFrameData, uint frameData, uint objRightToLeftOAM, uint objBGRightToLeftOAM, out string log)
         {
             frameData = U.toOffset(frameData);
             objRightToLeftOAM = U.toOffset(objRightToLeftOAM);
@@ -21,11 +21,12 @@ namespace FEBuilderGBA
             uint frame = FindFrame(showFrameData, frameData, Program.ROM.Data);
             if (frame == U.NOT_FOUND)
             {
+                log = "";
                 return null;
             }
 
             bool bgExpands = IsExpandsBG(showFrameData, frameData, Program.ROM.Data);
-            Bitmap retImage = DrawFrameImage(frame, Program.ROM.Data, objRightToLeftOAM, objBGRightToLeftOAM, bgExpands);
+            Bitmap retImage = DrawFrameImage(frame, Program.ROM.Data, objRightToLeftOAM, objBGRightToLeftOAM, bgExpands, out log);
             return retImage;
         }
 
@@ -127,7 +128,8 @@ namespace FEBuilderGBA
             , byte[] frameData
             , uint objRightToLeftOAM
             , uint objBGRightToLeftOAM
-            , bool bgExpands)
+            , bool bgExpands
+            , out string log)
         {
             //0  frame16 byte1 x86
             //4  objImagePointer
@@ -141,6 +143,7 @@ namespace FEBuilderGBA
             uint objPalettePointer = U.u32(frameData, frame + 20);
             if (!U.isSafetyPointer(objPalettePointer))
             {
+                log = R._("BAD OBJPAL POINTER {0}", U.To0xHexString(objPalettePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] objPalette = Program.ROM.getBinaryData(U.toOffset(objPalettePointer), 0x20);
@@ -148,6 +151,7 @@ namespace FEBuilderGBA
             uint bgPalettePointer = U.u32(frameData, frame + 24);
             if (!U.isSafetyPointer(bgPalettePointer))
             {
+                log = R._("BAD BGPAL POINTER {0}", U.To0xHexString(bgPalettePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] bgPalette = Program.ROM.getBinaryData(U.toOffset(bgPalettePointer), 0x20);
@@ -158,6 +162,7 @@ namespace FEBuilderGBA
             uint bgPointer = U.u32(frameData, frame + 16);
             if (!U.isSafetyPointer(bgPointer))
             {
+                log = R._("BAD BGIMG POINTER {0}", U.To0xHexString(bgPointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] bg_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(bgPointer));
@@ -165,8 +170,11 @@ namespace FEBuilderGBA
             uint bgTSAPointer = U.u32(frameData, frame + 28);
             if (!U.isSafetyPointer(bgTSAPointer))
             {
+                log = R._("BAD BGTSA POINTER {0}", U.To0xHexString(bgTSAPointer));
                 return ImageUtil.BlankDummy();
             }
+            log = R._("BGIMG {0}, BGPAL {1}, BGTSA {2},", U.To0xHexString(bgPointer), U.To0xHexString(bgPalettePointer), U.To0xHexString(bgTSAPointer));
+
             byte[] bgTSA_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(bgTSAPointer));
 
             int width = 256 - 8 - 8;
@@ -178,25 +186,24 @@ namespace FEBuilderGBA
             Bitmap bg = ImageUtil.ByteToImage16Tile(width, height, bg_UZ, 0, bgPalette, 0, bgTSA_UZ, 0);
             if (bgExpands)
             {
-                //Bitmap tempbg = ImageUtil.Blank(width, height, bg);
-                //ImageUtil.Scale(tempbg, 0, 0, width, 160 - 32, bg , 0 , 0 , width , 64);
-                //bg = tempbg;
                 ImageUtil.Scale(retImage, 0, 0, retImage.Width, retImage.Height, bg, 0, 0, retImage.Width, 64);
             }
             else
             {
                 ImageUtil.BitBlt(retImage, 0, 0, retImage.Width, retImage.Height, bg, 0, 0, 0);
             }
-            //ImageUtil.BitBlt(retImage, 0, 0, bg.Width, bg.Height, bg, 0, 0, 0);
 
             uint objImagePointer = U.u32(frameData, frame + 4);
             if (!U.isSafetyPointer(objImagePointer))
             {
+                log = R._("BAD OBJ_POINTER {0}", U.To0xHexString(objImagePointer));
                 return ImageUtil.BlankDummy();
             }
             byte[] obj_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(objImagePointer));
             if (obj_UZ.Length > 0)
             {
+                log += R._("OBJIMG {0}, OBJPAL {1},", U.To0xHexString(objImagePointer), U.To0xHexString(objPalettePointer));
+
                 width = 256;
                 height = ImageUtil.CalcHeight(width, obj_UZ.Length);
                 if (height < 64)
@@ -380,7 +387,8 @@ namespace FEBuilderGBA
 
                 //0x86 画像 pointer
                 uint wait = U.u16(frameData, n);
-                Bitmap bitmap = DrawFrameImage(n, frameData, objRightToLeftOAM, objBGRightToLeftOAM, bgExpands);
+                string log;
+                Bitmap bitmap = DrawFrameImage(n, frameData, objRightToLeftOAM, objBGRightToLeftOAM, bgExpands, out log);
 
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
 

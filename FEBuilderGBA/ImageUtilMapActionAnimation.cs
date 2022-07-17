@@ -15,21 +15,23 @@ namespace FEBuilderGBA
         const int SCREEN_WIDTH  = 64;
         const int SCREEN_HEIGHT = 64;
 
-        public static Bitmap Draw(uint anime_address, uint showFrameData)
+        public static Bitmap Draw(uint anime_address, uint showFrameData, out string log)
         {
             anime_address = U.toOffset(anime_address);
             if (!U.isSafetyOffset(anime_address))
             {
+                log = "";
                 return ImageUtil.BlankDummy();
             }
 
             uint frame = FindFrame(showFrameData, anime_address, Program.ROM.Data);
             if (frame == U.NOT_FOUND)
             {
+                log = "";
                 return ImageUtil.BlankDummy();
             }
             //フレームを発見したので描画する.
-            Bitmap retImage = DrawFrameImage(frame);
+            Bitmap retImage = DrawFrameImage(frame, out log);
             return retImage;
         }
 
@@ -62,10 +64,11 @@ namespace FEBuilderGBA
             return U.NOT_FOUND;
         }
 
-        static Bitmap DrawFrameImage(uint frame)
+        static Bitmap DrawFrameImage(uint frame, out string log)
         {
             if (!U.isSafetyOffset(frame))
             {
+                log = "";
                 return ImageUtil.BlankDummy();
             }
             //struct Frames{
@@ -81,12 +84,15 @@ namespace FEBuilderGBA
 
             if (!U.isSafetyOffset(objOffset))
             {
+                log = R._("BAD OBJ_OFFSET {0}", U.To0xHexString(objOffset));
                 return ImageUtil.BlankDummy();
             }
             if (!U.isSafetyOffset(palOffset))
             {
+                log = R._("BAD PAL_OFFSET {0}", U.To0xHexString(palOffset));
                 return ImageUtil.BlankDummy();
             }
+            log = R._("IMG {0}, PAL {1}", U.To0xHexString(objOffset), U.To0xHexString(palOffset));
 
             //objは圧縮されている.
             //palは、0x20(16色1パレット)固定.
@@ -136,7 +142,8 @@ namespace FEBuilderGBA
                     break;
                 }
 
-                Bitmap bitmap = DrawFrameImage(n);
+                string log;
+                Bitmap bitmap = DrawFrameImage(n, out log);
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
             }
 
@@ -194,7 +201,8 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    bitmap = DrawFrameImage(n);
+                    string log;
+                    bitmap = DrawFrameImage(n, out log);
                     bitmap.Tag = id;
                     id++;
 

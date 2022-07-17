@@ -239,6 +239,7 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -2429,6 +2430,7 @@
             // 
             // AnimationPanel
             // 
+            this.AnimationPanel.Controls.Add(this.BinInfo);
             this.AnimationPanel.Controls.Add(this.X_N_JumpEditor);
             this.AnimationPanel.Controls.Add(this.ShowZoomComboBox);
             this.AnimationPanel.Controls.Add(this.label31);
@@ -2438,7 +2440,7 @@
             this.AnimationPanel.Controls.Add(this.AnimationPictureBox);
             this.AnimationPanel.Location = new System.Drawing.Point(2, 127);
             this.AnimationPanel.Name = "AnimationPanel";
-            this.AnimationPanel.Size = new System.Drawing.Size(864, 366);
+            this.AnimationPanel.Size = new System.Drawing.Size(864, 403);
             this.AnimationPanel.TabIndex = 123;
             this.AnimationPanel.Visible = false;
             // 
@@ -2824,6 +2826,16 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(326, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(535, 25);
+            this.BinInfo.TabIndex = 197;
+            // 
             // SkillConfigFE8NVer2SkillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2917,6 +2929,7 @@
             this.panel34.ResumeLayout(false);
             this.tabAnimePage.ResumeLayout(false);
             this.AnimationPanel.ResumeLayout(false);
+            this.AnimationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPictureBox)).EndInit();
             this.panel20.ResumeLayout(false);
@@ -3147,5 +3160,6 @@
         private System.Windows.Forms.Button button9;
         private ListBoxEx listBoxEx2;
         private System.Windows.Forms.Label label61;
+        private TextBoxEx BinInfo;
     }
 }

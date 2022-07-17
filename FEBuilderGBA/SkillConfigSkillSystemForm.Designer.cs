@@ -47,6 +47,10 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.IconAddr = new System.Windows.Forms.NumericUpDown();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportAllButton = new System.Windows.Forms.Button();
+            this.ImportAllButton = new System.Windows.Forms.Button();
             this.AnimationExportButton = new System.Windows.Forms.Button();
             this.AnimationInportButton = new System.Windows.Forms.Button();
             this.AnimationPanel = new System.Windows.Forms.Panel();
@@ -66,10 +70,7 @@
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ExportAllButton = new System.Windows.Forms.Button();
-            this.ImportAllButton = new System.Windows.Forms.Button();
-            this.IconAddr = new System.Windows.Forms.NumericUpDown();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -77,14 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).BeginInit();
+            this.panel2.SuspendLayout();
             this.AnimationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ANIMATION)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -325,6 +326,51 @@
             this.panel1.Size = new System.Drawing.Size(904, 762);
             this.panel1.TabIndex = 97;
             // 
+            // IconAddr
+            // 
+            this.IconAddr.Hexadecimal = true;
+            this.IconAddr.Location = new System.Drawing.Point(234, 44);
+            this.IconAddr.Margin = new System.Windows.Forms.Padding(2);
+            this.IconAddr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.IconAddr.Name = "IconAddr";
+            this.IconAddr.ReadOnly = true;
+            this.IconAddr.Size = new System.Drawing.Size(167, 25);
+            this.IconAddr.TabIndex = 154;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.ExportAllButton);
+            this.panel2.Controls.Add(this.ImportAllButton);
+            this.panel2.Location = new System.Drawing.Point(242, 721);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(658, 37);
+            this.panel2.TabIndex = 153;
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ExportAllButton.TabIndex = 117;
+            this.ExportAllButton.Text = "一括エクスポート";
+            this.ExportAllButton.UseVisualStyleBackColor = true;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
+            // 
+            // ImportAllButton
+            // 
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Name = "ImportAllButton";
+            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ImportAllButton.TabIndex = 116;
+            this.ImportAllButton.Text = "一括インポート";
+            this.ImportAllButton.UseVisualStyleBackColor = true;
+            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
+            // 
             // AnimationExportButton
             // 
             this.AnimationExportButton.Location = new System.Drawing.Point(611, 195);
@@ -349,6 +395,7 @@
             // 
             // AnimationPanel
             // 
+            this.AnimationPanel.Controls.Add(this.BinInfo);
             this.AnimationPanel.Controls.Add(this.X_N_JumpEditor);
             this.AnimationPanel.Controls.Add(this.ShowZoomComboBox);
             this.AnimationPanel.Controls.Add(this.label25);
@@ -358,7 +405,7 @@
             this.AnimationPanel.Controls.Add(this.AnimationPictureBox);
             this.AnimationPanel.Location = new System.Drawing.Point(18, 242);
             this.AnimationPanel.Name = "AnimationPanel";
-            this.AnimationPanel.Size = new System.Drawing.Size(864, 366);
+            this.AnimationPanel.Size = new System.Drawing.Size(864, 409);
             this.AnimationPanel.TabIndex = 120;
             this.AnimationPanel.Visible = false;
             // 
@@ -551,50 +598,15 @@
             this.panel10.Text = "アイコン";
             this.panel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // BinInfo
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.ExportAllButton);
-            this.panel2.Controls.Add(this.ImportAllButton);
-            this.panel2.Location = new System.Drawing.Point(242, 721);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(658, 37);
-            this.panel2.TabIndex = 153;
-            // 
-            // ExportAllButton
-            // 
-            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
-            this.ExportAllButton.Name = "ExportAllButton";
-            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
-            this.ExportAllButton.TabIndex = 117;
-            this.ExportAllButton.Text = "一括エクスポート";
-            this.ExportAllButton.UseVisualStyleBackColor = true;
-            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
-            // 
-            // ImportAllButton
-            // 
-            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
-            this.ImportAllButton.Name = "ImportAllButton";
-            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
-            this.ImportAllButton.TabIndex = 116;
-            this.ImportAllButton.Text = "一括インポート";
-            this.ImportAllButton.UseVisualStyleBackColor = true;
-            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
-            // 
-            // IconAddr
-            // 
-            this.IconAddr.Hexadecimal = true;
-            this.IconAddr.Location = new System.Drawing.Point(234, 44);
-            this.IconAddr.Margin = new System.Windows.Forms.Padding(2);
-            this.IconAddr.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.IconAddr.Name = "IconAddr";
-            this.IconAddr.ReadOnly = true;
-            this.IconAddr.Size = new System.Drawing.Size(167, 25);
-            this.IconAddr.TabIndex = 154;
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(324, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(537, 25);
+            this.BinInfo.TabIndex = 197;
             // 
             // SkillConfigSkillSystemForm
             // 
@@ -618,14 +630,15 @@
             this.panel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.AnimationPanel.ResumeLayout(false);
+            this.AnimationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ANIMATION)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +687,6 @@
         private System.Windows.Forms.Button ExportAllButton;
         private System.Windows.Forms.Button ImportAllButton;
         private System.Windows.Forms.NumericUpDown IconAddr;
+        private TextBoxEx BinInfo;
     }
 }

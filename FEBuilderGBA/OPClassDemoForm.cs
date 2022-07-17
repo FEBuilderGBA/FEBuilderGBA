@@ -55,6 +55,10 @@ namespace FEBuilderGBA
                 , 1
                 , (int i, uint addr) =>
                 {
+                    if (i >= 16)
+                    {
+                        return false;
+                    }
                     return (Program.ROM.u8(addr)!=0xFF)
                         ;
                 }
