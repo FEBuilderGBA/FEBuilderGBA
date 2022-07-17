@@ -1,0 +1,15 @@
+NAME=敵AIの攻撃時のターゲット選択の枠を表示している時間を早くする
+NAME.en=Accelerate Frames for AI to display targetting cursor
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x39F26
+HEX=false
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/66
+INFO=このパッチは敵AIが攻撃するときに、攻撃するユニットに対してターゲティングの枠の表示時間を変更します。\r\n数字を小さくすることで、枠の表示が短くなり、マップ戦闘が高速に動作すようになります。\r\nディフォルトは 45 フレームです。
+INFO.en=This patch changes the display time of the targeting frame for the attacking unit when the enemy AI attacks.\r\nBy reducing the number, the frame display will be shorter and the map battle will be faster.\r\nThe default is 45 frames.
+NAME.zh=增加敌方AI攻击时显示目标选择框的时间。
+INFO.zh=此补丁更改了敌方 AI 攻击时攻击单位的目标帧显示时间。\r\n通过减少数量，帧显示会更短，地图战斗会更快。\r\n默认值为 45 帧。

@@ -1,0 +1,15 @@
+PUSH
+ORG 0x0BA64C
+jumpToHack(ResetEEFlagOFFOnArea_FlagON)
+
+ORG 0x0BA6A0
+jumpToHack(ResetEEFlagOFFOnArea_FlagOFF)
+POP
+
+ALIGN 4
+ResetEEFlagOFFOnArea_FlagON:
+#incbin "ResetEEFlagOFFOnArea_FlagON.dmp"
+
+ALIGN 4
+ResetEEFlagOFFOnArea_FlagOFF:
+#incbin "ResetEEFlagOFFOnArea_FlagOFF.dmp"
