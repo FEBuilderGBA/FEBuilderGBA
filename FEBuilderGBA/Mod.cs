@@ -198,7 +198,7 @@ namespace FEBuilderGBA
 
             if (U.IsEmpty(p.Form))
             {
-                R.Error("FORMがありません\r\n{0}", fullfilename);
+//                R.Error("FORMがありません\r\n{0}", fullfilename);
                 return null;
             }
 

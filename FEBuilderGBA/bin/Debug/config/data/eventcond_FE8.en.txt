@@ -6,8 +6,8 @@ ALWAYS	(DoNotUse)When player unit is selected
 ALWAYS	(DoNotUse)When player unit is decided to move
 ALWAYS	(DoNotUse)When player unit is moved coordinate
 TUTORIAL	Tutorial
-TRAP	Trap(Ballista, GargonEgg, DamageFloor)
-TRAP	Trap2(Damaged floor of ruins 9F only?)
+TRAP	Trap All difficulties(Ballista, GargonEgg, DamageFloor)
+TRAP	Trap Additional HardMode(Ballista, GargonEgg, DamageFloor)
 PLAYER_UNIT	Player Placement
 PLAYER_UNIT	Player Placement when HARD LEVEL
 FREEMAP_PLAYER_UNIT	world map skirmishes Player placement1

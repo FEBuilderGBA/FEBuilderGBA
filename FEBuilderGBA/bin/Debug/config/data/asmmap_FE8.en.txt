@@ -4114,8 +4114,8 @@ r3=X tile position of menu of right	{U}
 080831ac	IsThereClosedChestAt	{U}
 080831f0	IsThereClosedDoorAt	{U}
 080832d8	CheckEventId3	{U}
-08083308	GetCurrentChapterBallistaePtr	{U}
-08083320	GetCurrentChapterBallistae2Ptr	{U}
+08085640	GetTrapPointer	GetCurrentChapterBallistaePtr	{J}
+08085658	GetTrapAdditionalHardModePointer	GetCurrentChapterBallistae2Ptr	{J}
 08083348	GetChapterAllyUnitDataPointer	{U}
 080834b0	ShouldCallBattleQuote	{U}
 08083504	CallBattleQuoteEventsIfAny	{U}
@@ -5877,8 +5877,8 @@ r3=X tile position of menu of right	{U}
 080854E4	IsThereClosedChestAt	{J}
 08085528	IsThereClosedDoorAt	{J}
 08085610	CheckEventId3	{J}
-08085640	GetCurrentChapterBallistaePtr	{J}
-08085658	GetCurrentChapterBallistae2Ptr	{J}
+08085640	GetTrapPointer	GetCurrentChapterBallistaePtr	{J}
+08085658	GetTrapAdditionalHardModePointer	GetCurrentChapterBallistae2Ptr	{J}
 08085680	GetChapterAllyUnitDataPointer	{J}
 080857E8	ShouldCallBattleQuote	{J}
 0808583C	CallBattleQuoteEventsIfAny	{J}

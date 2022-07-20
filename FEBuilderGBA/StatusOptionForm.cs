@@ -14,11 +14,13 @@ namespace FEBuilderGBA
         public StatusOptionForm()
         {
             InitializeComponent();
+            fixDocsBugs = new U.FixDocsBugs(this);
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawGameOptionAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.PreAddressListExpandsEvent += OnPreGameOptionExtendsWarningHandler;
+
         }
 
         public static void OnPreGameOptionExtendsWarningHandler(object sender,EventArgs e)
@@ -89,9 +91,20 @@ namespace FEBuilderGBA
             return GetNameFast(addr + offset);
         }
 
+        U.FixDocsBugs fixDocsBugs;
         private void MenuForm_Load(object sender, EventArgs e)
         {
-
+            //拡張を表示するかどうか
+            if (IsShowGameOptionExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressList.Height;
+                AddressListExpandsButton.Hide();
+            }
+            fixDocsBugs.AllowMaximizeBox();
         }
 
         //全データの取得
@@ -129,6 +142,21 @@ namespace FEBuilderGBA
 
             Bitmap bitmap = ImageSystemIconForm.MusicIcon(icon_id / 2);
             return bitmap;
+        }
+        bool IsShowGameOptionExetdns(int count)
+        {
+            if (OptionForm.show_gameoption_extends() == OptionForm.show_extends_enum.Show)
+            {//表示する設定の場合は表示する.
+                return true;
+            }
+
+            uint addr = Program.ROM.u32(Program.ROM.RomInfo.status_game_option_pointer);
+            if (addr < Program.ROM.RomInfo.extends_address)
+            {//拡張されていないので表示しない
+                return false;
+            }
+            //拡張されているので表示する
+            return true;
         }
     }
 }

@@ -1,4 +1,6 @@
-NAME=ArenaBattleBG
+NAME=闘技場 戦闘背景 ArenaBattleBG
+NAME.en=ArenaBattleBG
+NAME.zh=ArenaBattleBG
 
 TYPE=IMAGE
 

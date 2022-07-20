@@ -8914,6 +8914,9 @@ Allows expanding the amount of item icons of FE7 and FE6.\r\nPatches are require
 :SongTableを拡張するボタンを表示します。\r\nSongTableをrepointするとsapplyでは認識できなくなります。\r\nSongTableには空き領域がたくさんあるので拡張する必要はほとんどありません。
 Displays a button that can expand the SongTable list.\r\nIf you repoint the SongTable, sappy will not recognize it.\r\nSince the SongTable has a lot of free space and empty fields, there is typically no reason to expand it.
 
+:ゲームオプションを拡張するボタンを表示します。\r\nGameOptionの追加にはASMが必要になります。\r\n既存のオプションを消すだけなら「ゲームオプションの順番」から変更可能です。\r\n拡張するデメリットの方が多いので非表示になっています。
+Shows buttons to extend game options.\r\nASM is required to add GameOption.\r\nIf you just want to delete the existing options, you can change it from "Order of game options".\r\nIt is hidden because there are many disadvantages of expanding it.
+
 :逆コンパイラを指定します。\r\nただ、あまり期待しない方がいいですよ。\r\n
 Specify the decompiler.\r\nHowever, these are rarely used.\r\n
 
@@ -9522,6 +9525,9 @@ When exporting a file...
 
 :保存
 Save
+
+:ゲームオプションの拡張ボタンを表示する
+Show extended buttons for game options.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -10468,14 +10474,14 @@ Unit class.
 :ユニットスキル
 Unit skill.
 
-:複合スキル
-ComplexSkill
-
 :このアイテムを武器として装備しているときに、このスキルを有効にします。
 Activate this skill when equipping this item as a weapon.
 
 :このアイテムを所持しているときに、このスキルを有効にします。
 Activate this skill when you have this item.
+
+:複合スキル
+ComplexSkill
 
 :現在のスキルに、指定した他のスキルの効果を追加します。
 Adds the effects of other specified skills to the current skill.

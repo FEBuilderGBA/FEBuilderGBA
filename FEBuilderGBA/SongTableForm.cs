@@ -72,7 +72,7 @@ namespace FEBuilderGBA
 
         private void SongTableForm_Load(object sender, EventArgs e)
         {
-            //アイテムアイコン拡張を表示するかどうか
+            //拡張を表示するかどうか
             if (IsShowSongTableExetdns(this.AddressList.Items.Count))
             {
                 AddressListExpandsButton_32766.Show();
