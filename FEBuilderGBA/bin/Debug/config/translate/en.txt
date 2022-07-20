@@ -9229,8 +9229,8 @@ Verify the hand axs setting
 :1=最高レベル
 1=Highest Amount
 
-:6=通常レベル
-6=Average Amount
+:2=通常レベル
+2=Normal level.
 
 :9=最低レベル
 9=Lowest Amount
@@ -9364,6 +9364,15 @@ ROM Expansion Starting Address
 :機能2
 Function 2
 
+:0=表示しない
+0=Not Displayed
+
+:1=表示する
+1=Displayed
+
+:ゲームオプションの拡張ボタンを表示する
+Show extended buttons for game options.
+
 :0=警告も何もしない(推奨しません)
 0=Ignore Out of Range Warnings (Not Recommended)
 
@@ -9375,12 +9384,6 @@ Function 2
 
 :危険な範囲の書き込みについて
 About writing in a dangerous range.
-
-:0=表示しない
-0=Not Displayed
-
-:1=表示する
-1=Displayed
 
 :SongTable拡張ボタンの表示
 Song Table Data Expansion
@@ -9525,9 +9528,6 @@ When exporting a file...
 
 :保存
 Save
-
-:ゲームオプションの拡張ボタンを表示する
-Show extended buttons for game options.
 
 :その他ROM直値テキスト
 Other ROM Direct Text

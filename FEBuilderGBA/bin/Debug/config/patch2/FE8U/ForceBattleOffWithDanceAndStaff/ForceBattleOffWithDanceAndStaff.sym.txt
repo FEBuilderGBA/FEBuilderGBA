@@ -1,0 +1,2 @@
+Exit=$2E
+AnimeOFF=$2C

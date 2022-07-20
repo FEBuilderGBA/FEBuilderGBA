@@ -1,0 +1,15 @@
+PUSH
+//ORG 0x3561E	//字幕を常に有効にする	{J}
+ORG 0x35716	//字幕を常に有効にする	{U}
+BYTE 0xFF
+
+//ORG 0x0589FE	//{J}
+ORG 0x057AB6	//{U}
+BYTE 0x00 0x00
+jumpToHack(ForceBattleOffWithDanceAndStaff)
+POP
+
+ALIGN 4
+ForceBattleOffWithDanceAndStaff:
+#incbin "ForceBattleOffWithDanceAndStaff.dmp"
+

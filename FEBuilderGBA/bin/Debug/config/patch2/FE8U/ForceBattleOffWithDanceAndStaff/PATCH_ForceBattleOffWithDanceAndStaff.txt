@@ -1,0 +1,13 @@
+NAME=杖と踊りはアニメを表示しないというゲームオプションを追加
+
+TYPE=EA
+PATCHED_IF:0x057AB6=0x00 0x00 0x00 0x4B
+EA=Install.txt
+
+INFO=アニメを表示する設定だったとしても、杖と踊りのアニメは表示しないという設定を追加します。\r\nただし、ボスが使う杖には無効です。\r\n設定のオンオフには、字幕ヘルプの設定を再利用します。\r\n設定がオン(ディフォルト)の時には、特に何も起きません。\r\n設定をオフにした場合にのみ効果を発揮します。\r\nこの時には、アニメ1,アニメ2にしていた場合でも、杖や踊りのアニメーションを表示しなくなります。\r\nアニメオフにしていた場合は、そもそもオフなので、オフのままです。\r\n\r\n字幕ヘルプの設定の文字列の書き換えは自分でやってください。
+
+AUTHOR=7743
+NAME.en=Added a game option that staff and dances do not display anime
+INFO.en=Even if it is set to display the animation, add the setting to not display the animation of the cane and dance.\r\nHowever, it is not valid for the staff used by the boss.\r\nReuse subtitle help settings to turn settings on and off.\r\nWhen the setting is on (default), nothing happens.\r\nIt only works when the setting is turned off.\r\nAt this time, even if animation 1 and animation 2 are set, the cane and dance animations will not be displayed.\r\nIf the animation was turned off, it is still off because it is off in the first place.\r\n\r\nPlease rewrite the character string of the subtitle help setting by yourself.
+NAME.zh=添加了魔杖和舞蹈不显示动画的游戏选项
+INFO.zh=即使设置为显示动画，添加不显示拐杖和舞蹈动画的设置。\r\n但是，对于boss使用的魔杖无效。\r\n重复使用字幕帮助设置来打开和关闭设置。\r\n当设置打开（默认）时，什么都不会发生。\r\n它仅在设置关闭时有效。\r\n此时，即使设置了动画1和动画2，也不会显示手杖和舞蹈动画。\r\n如果动画被关闭，它仍然是关闭的，因为它首先是关闭的。\r\n\r\n请自行改写字幕帮助设置的字符串。
