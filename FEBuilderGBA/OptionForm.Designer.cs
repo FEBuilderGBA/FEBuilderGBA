@@ -239,6 +239,8 @@
             this.explain_func_rom_extends_option = new System.Windows.Forms.Label();
             this.func_rom_extends_option = new System.Windows.Forms.ComboBox();
             this.tabPageFunc2 = new System.Windows.Forms.TabPage();
+            this.func_show_gameoption_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_gameoption_extends = new System.Windows.Forms.Label();
             this.func_write_low_address = new System.Windows.Forms.ComboBox();
             this.explain_func_write_low_address = new System.Windows.Forms.Label();
             this.func_show_song_table_extends = new System.Windows.Forms.ComboBox();
@@ -287,8 +289,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.func_show_gameoption_extends = new System.Windows.Forms.ComboBox();
-            this.explain_func_show_gameoption_extends = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -2454,11 +2454,11 @@
             this.func_alert_unk_event_code.Items.AddRange(new object[] {
             "0=チェックしない",
             "1=最高レベル",
-            "2=",
+            "2=通常レベル",
             "3=",
             "4=",
             "5=",
-            "6=通常レベル",
+            "6=",
             "7=",
             "8=",
             "9=最低レベル"});
@@ -2824,6 +2824,30 @@
             this.tabPageFunc2.Size = new System.Drawing.Size(842, 708);
             this.tabPageFunc2.TabIndex = 6;
             this.tabPageFunc2.Text = "機能2";
+            // 
+            // func_show_gameoption_extends
+            // 
+            this.func_show_gameoption_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_gameoption_extends.FormattingEnabled = true;
+            this.func_show_gameoption_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_gameoption_extends.Location = new System.Drawing.Point(419, 497);
+            this.func_show_gameoption_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_gameoption_extends.Name = "func_show_gameoption_extends";
+            this.func_show_gameoption_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_gameoption_extends.TabIndex = 70;
+            // 
+            // explain_func_show_gameoption_extends
+            // 
+            this.explain_func_show_gameoption_extends.AccessibleDescription = "";
+            this.explain_func_show_gameoption_extends.Location = new System.Drawing.Point(9, 502);
+            this.explain_func_show_gameoption_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_gameoption_extends.Name = "explain_func_show_gameoption_extends";
+            this.explain_func_show_gameoption_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_gameoption_extends.TabIndex = 69;
+            this.explain_func_show_gameoption_extends.Text = "ゲームオプションの拡張ボタンを表示する";
+            this.explain_func_show_gameoption_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // func_write_low_address
             // 
@@ -3427,30 +3451,6 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // func_show_gameoption_extends
-            // 
-            this.func_show_gameoption_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_show_gameoption_extends.FormattingEnabled = true;
-            this.func_show_gameoption_extends.Items.AddRange(new object[] {
-            "0=表示しない",
-            "1=表示する"});
-            this.func_show_gameoption_extends.Location = new System.Drawing.Point(419, 497);
-            this.func_show_gameoption_extends.Margin = new System.Windows.Forms.Padding(2);
-            this.func_show_gameoption_extends.Name = "func_show_gameoption_extends";
-            this.func_show_gameoption_extends.Size = new System.Drawing.Size(408, 26);
-            this.func_show_gameoption_extends.TabIndex = 70;
-            // 
-            // explain_func_show_gameoption_extends
-            // 
-            this.explain_func_show_gameoption_extends.AccessibleDescription = "";
-            this.explain_func_show_gameoption_extends.Location = new System.Drawing.Point(9, 502);
-            this.explain_func_show_gameoption_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_show_gameoption_extends.Name = "explain_func_show_gameoption_extends";
-            this.explain_func_show_gameoption_extends.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_show_gameoption_extends.TabIndex = 69;
-            this.explain_func_show_gameoption_extends.Text = "ゲームオプションの拡張ボタンを表示する";
-            this.explain_func_show_gameoption_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OptionForm
             // 

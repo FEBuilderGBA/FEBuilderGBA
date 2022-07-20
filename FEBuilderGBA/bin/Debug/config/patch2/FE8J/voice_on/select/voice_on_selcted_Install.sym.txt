@@ -1,2 +1,0 @@
-voice_on_selcted=$18C18E8
-Voice_On_Selected_Table=$18C1994

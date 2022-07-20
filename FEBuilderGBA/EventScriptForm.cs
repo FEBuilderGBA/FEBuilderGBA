@@ -941,7 +941,7 @@ namespace FEBuilderGBA
                 else if (code.Script.Has == EventScript.ScriptHas.UNKNOWN)
                 {
                     unknown_count++;
-                    if (unknown_count > alert_unk_event_code)
+                    if (unknown_count >= alert_unk_event_code)
                     {//不明命令が個連続して続いたら打ち切る
                         errors.Add(new FELint.ErrorSt(FELint.Type.EVENTSCRIPT, U.toOffset(start_addr)
                             , R._("イベント「{0}」の先に多数の無効な命令が連続して現れました。\r\nイベントポインタが間違っている可能性があります。", U.To0xHexString(start_addr))));

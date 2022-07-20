@@ -3196,6 +3196,20 @@ namespace FEBuilderGBA
             }
         }
 
+        //FE6には、王都奪還のツァイスとゲイルの会話シーンに0バイトの会話文があります。
+        //これを無視するためにチェックします
+        static bool CheckFE6Glitch15B(uint textid)
+        {
+            if (Program.ROM.RomInfo.version != 6)
+            {
+                return false;
+            }
+            if (textid == 0x15B)
+            {
+                return true;
+            }
+            return false;
+        }
 
         //会話テキストのエラーチェック
         public static string CheckConversationTextMessage(string text, uint textid, int widthLimit)
@@ -3203,6 +3217,10 @@ namespace FEBuilderGBA
             if (text.Length <= 0)
             {
                 if (textid == 0 || textid >= 0xFFFF)
+                {
+                    return "";
+                }
+                if (CheckFE6Glitch15B(textid))
                 {
                     return "";
                 }
