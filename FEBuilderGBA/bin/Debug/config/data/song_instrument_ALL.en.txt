@@ -441,7 +441,7 @@
 	Whip	31aca546cc748058125a5cea4d65a339	//Fn0 //29	//0x1D
 	Laser	2b6eca15ac807dc4a5b81be41efd803f	//En0 //28	//0x1C
 
-//FE8 不明な楽器
+//FE8 Unknown instrument
 	FE8Song01_014	cd6ffd4d8618c6985898dd4528e0be20
 	FE8Song01_046	8c64ad998fbb3498423f1c452c83bf10
 	FE8Song01_047	5ac1f6ae3d00f9da57d602c2779b6f8d

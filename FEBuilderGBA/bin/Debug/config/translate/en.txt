@@ -1498,6 +1498,9 @@ World Map Node
 :MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。
 Could not locate MAPTASK Procs.\r\nAre you in a chapter? \r\nYou must be playing a chapter to use this feature.
 
+:既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。
+You already have a Direct Injection hook, so activate the emulator once to complete the process, then try again.
+
 :ROMのバージョン情報:
 ROM Version Information:
 

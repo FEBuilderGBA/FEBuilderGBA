@@ -142,6 +142,11 @@ namespace FEBuilderGBA
 
             return true;
         }
+        static bool AlreadyHooked(uint maptask)
+        {
+            uint p = Program.RAM.u32(maptask + 4);
+            return U.is_02RAMPointer(p);
+        }
 
         public static void CHEAT_WARP_FE8(EmulatorMemoryForm form, uint warp_chapter, uint edtion, uint worldmap_node)
         {
@@ -175,6 +180,12 @@ namespace FEBuilderGBA
                 R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
+            if (AlreadyHooked(maptask))
+            {//既にフック済みなので2重フックはやめます
+                R.ShowStopError("既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。");
+                return;
+            }
+
 
             byte[] warpCode = { 
             //ASM
@@ -274,6 +285,11 @@ namespace FEBuilderGBA
                 R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
                 return;
             }
+            if (AlreadyHooked(maptask))
+            {//既にフック済みなので2重フックはやめます
+                R.ShowStopError("既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。");
+                return;
+            }
 
             byte[] warpCode = { 
             //ASM
@@ -339,6 +355,11 @@ namespace FEBuilderGBA
             if (maptask == U.NOT_FOUND)
             {
                 R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
+                return;
+            }
+            if (AlreadyHooked(maptask))
+            {//既にフック済みなので2重フックはやめます
+                R.ShowStopError("既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。");
                 return;
             }
 
@@ -462,6 +483,11 @@ namespace FEBuilderGBA
             if (maptask == U.NOT_FOUND)
             {
                 R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
+                return;
+            }
+            if (AlreadyHooked(maptask))
+            {//既にフック済みなので2重フックはやめます
+                R.ShowStopError("既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。");
                 return;
             }
 
@@ -626,6 +652,12 @@ namespace FEBuilderGBA
             uint maptask = SearchMapTaskProcsAddr();
             if (maptask == U.NOT_FOUND)
             {
+                R.ShowStopError("MAPTASK Procsの位置を特定できませんでした。\r\n章に入っていますか？\r\nこの機能を使うには章の中に入らないといけません。");
+                return;
+            }
+            if (AlreadyHooked(maptask))
+            {//既にフック済みなので2重フックはやめます
+                R.ShowStopError("既にDirectInjectionフックをしていので、一度エミュレーターをアクティブにして処理を完了させた後で、もう一度実行してください。");
                 return;
             }
 
@@ -1966,6 +1998,24 @@ namespace FEBuilderGBA
             }
 
             return U.substr(r, 1);
+        }
+
+        public static bool ExistsModalDialog()
+        {
+            if (InputFormRef.GetForm<RAMRewriteToolForm>() != null)
+            {
+                return true;
+            }
+            if (InputFormRef.GetForm<RAMRewriteToolMAPForm>() != null)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static void CloseAllModalDialog()
+        {
+            InputFormRef.CloseForm<RAMRewriteToolForm>();
+            InputFormRef.CloseForm<RAMRewriteToolMAPForm>();
         }
     }
 }

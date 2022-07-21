@@ -54,7 +54,7 @@ namespace FEBuilderGBA
                 , Program.ROM.RomInfo.unit_datasize
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.unit_maxcount; 
+                        return i < Program.ROM.RomInfo.unit_maxcount; 
                 }
                 , (int i, uint addr) =>
                 {

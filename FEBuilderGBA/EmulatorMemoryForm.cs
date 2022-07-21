@@ -1071,8 +1071,25 @@ namespace FEBuilderGBA
                 //自動的に終了しない
                 return;
             }
+
             //自動終了する.
-            InputFormRef.CloseForm<EmulatorMemoryForm>();
+
+            if (EmulatorMemoryUtil.ExistsModalDialog())
+            {
+                //モーダルがいると終わったときに例外が発生するので単純に閉じることはできない
+                EmulatorMemoryUtil.CloseAllModalDialog();
+                Timer t = new Timer();
+                t.Tick += (object sender, EventArgs e) => {
+                    t.Stop();
+                    InputFormRef.CloseForm<EmulatorMemoryForm>();
+                };
+                t.Interval = 1000;
+                t.Start();
+            }
+            else
+            {
+                InputFormRef.CloseForm<EmulatorMemoryForm>();
+            }
         }
 
         private void RunningEventListBox_KeyDown(object sender, KeyEventArgs e)
@@ -3860,13 +3877,13 @@ namespace FEBuilderGBA
             {
                 RAMRewriteToolMAPForm f = (RAMRewriteToolMAPForm)InputFormRef.JumpFormLow<RAMRewriteToolMAPForm>();
                 f.Init(base_addr + id);
-                dr = f.ShowDialog();
+                dr = f.ShowDialog(this);
             }
             else
             {
                 RAMRewriteToolForm f = (RAMRewriteToolForm)InputFormRef.JumpFormLow<RAMRewriteToolForm>();
                 f.Init(base_addr + id, size, isHex);
-                dr = f.ShowDialog();
+                dr = f.ShowDialog(this);
             }
 
             if (dr == System.Windows.Forms.DialogResult.Retry)
