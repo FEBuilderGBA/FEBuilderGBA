@@ -1,0 +1,19 @@
+NAME=戦闘アニメOFFの時に、ステータス情報を追加で表示する ver2
+NAME.en=FE8-Battle Stats with Anims Off ver2
+INFO=戦闘アニメOFFの時に、マップ戦闘時の体力バー表示の下に、戦闘のステータス情報を追加で表示します。\r\nこのバージョンではアイテムアイコンも表示します。
+INFO.en=Show battle stats when animations are off.\r\nWhen battle animation is OFF, battle status information is additionally displayed under the display of physical strength bar at map battle.\r\nThis version also displays item icons.
+
+TYPE=EA
+TAG=#ENGINE
+EA=FE8-Battle Stats Master EA File.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x7E21A=0xC0 0x46
+
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/67 , Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/51
+NAME.zh=当战斗动画关闭时，另外显示状态信息 ver2
+INFO.zh=当战斗动画关闭时，在地图战斗中在体力棒的显示下另外显示战斗状态信息。\r\nThis version also displays item icons.
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=2216

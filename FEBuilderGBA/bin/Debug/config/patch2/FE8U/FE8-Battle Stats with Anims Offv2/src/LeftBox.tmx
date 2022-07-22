@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="11" height="9" tilewidth="8" tileheight="8" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="MenuTiles" tilewidth="8" tileheight="8" tilecount="32" columns="8">
+  <image source="Anims_Off_Battle_Graphic-New.png" width="64" height="32"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="11" height="9">
+  <data encoding="csv">
+2147483654,7,8,9,4,4,4,4,4,4,4,
+2147483665,16,16,16,16,16,16,16,16,16,16,
+2147483671,19,19,20,21,21,21,21,21,22,19,
+2147483678,28,28,28,28,28,28,28,28,28,28,
+2147483678,28,28,28,28,28,28,28,28,28,28,
+2147483678,28,28,28,28,28,28,28,28,28,28,
+2147483678,28,28,28,28,28,28,28,28,28,28,
+2147483678,28,28,28,28,28,28,28,28,28,28,
+2147483662,11,12,12,12,12,12,12,12,13,13
+</data>
+ </layer>
+</map>

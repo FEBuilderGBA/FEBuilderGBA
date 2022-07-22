@@ -1,0 +1,93 @@
+//FE8J Show battle stats when animations are off
+//By Tequila
+//JAPANESE FE8 ONLY! Made for FE Girls and (presumably) Midori.
+
+#define UseWeaponTriangleForArrowsDef 1 // If false, approximates whether the battle is beneficial or not 
+#ifdef _FE8_
+	
+	#include "Extensions/Hack Installation.txt"
+	
+	
+	PUSH
+	
+	//Update the graphics
+	ORG $7DF8C
+	POIN New_Battle_Anims_Off_Graphics
+	
+	//Modify the numbers to use - rather than ?
+	ORG $7DD68
+	POIN New_Numbers
+	
+	//TSA for the right and left boxes, respectively
+	ORG $A13D08 //function using this at 7E19E
+	POIN New_Battle_Anims_Off_Right_TSA
+	POIN New_Battle_Anims_Off_Left_TSA
+	
+	//Make the box not overlap active units or go off-screen (will probably have to fiddle with this later)
+	ORG $7CF26
+	SHORT 0x284F //cmp r0,#0x5F rather than 0x6F
+
+	ORG $7CF34
+	SHORT 0x3851 //sub r0,#0x51 rather than 0x40(ver1), 0x28(vanilla)
+
+	ORG $7CF3E
+	SHORT 0x2000 //mov r0,0x0; 0x8(ver1) should cover all the funny cases
+	
+	//Actually display the necessary things
+	ORG $7E21A
+	SHORT 0x46C0
+	jumpToHack(Show_Battle_Stats)
+	
+	POP
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Graphics:
+	#incbin "Anims_Off_Battle_Graphic New.png.dmp"	//HINT=BIN
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Right_TSA:
+	#incbin "src/RightBox.dmp" 	//HINT=BIN
+//	#incbin "New_Battle_Anims_Off_Right_TSA.dmp" //HINT=BIN
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Left_TSA:
+	#incbin "src/LeftBox.dmp" 	//HINT=BIN
+//	#incbin "New_Battle_Anims_Off_Left_TSA.dmp" //HINT=BIN
+	
+	ALIGN 4
+	Show_Battle_Stats:
+	#incbin "Show_Battle_Stats.dmp"
+	POIN Battle_Name_Graphics
+	POIN Battle_Name_Palette
+	POIN DrawWeaponAtBottom 
+
+
+	#include "src/DrawWeaponAtBottom.lyn.event" 
+
+	ALIGN 4 
+	UseWeaponTriangleForArrows:
+	WORD UseWeaponTriangleForArrowsDef
+	
+	ALIGN 4 
+	gArrows: 
+	POIN Arrows 
+	
+	ALIGN 4
+	Arrows:
+	#incbin "src/ArrowIcons.dmp" 	//HINT=BIN
+
+	ALIGN 4
+	Battle_Name_Graphics:
+	#incbin "New_Stat_Names.png.dmp"	//HINT=BIN
+	
+	ALIGN 4
+	Battle_Name_Palette:
+	#incbin "New_Stat_Names.png.pal.dmp"	//HINT=BIN
+	
+	ALIGN 4
+	New_Numbers:
+	#incbin "New_Numbers.png.dmp"	//HINT=BIN
+
+#else
+	ERROR "You're not assembling FE8 events!"
+#endif
