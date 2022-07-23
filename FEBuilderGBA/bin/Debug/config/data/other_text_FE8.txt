@@ -12,6 +12,7 @@ AC1B54	{J}
 AC1B30	{J}
 AC1B0C	{J}
 000B04	{J}
+0D29BC	{J}	//全角スペース Promoion(CC)に利用するらしい
 //単数・複数形変換
 591AB0	{U}
 591AAC	{U}

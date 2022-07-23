@@ -7834,14 +7834,15 @@ r3=X tile position of menu of right	{U}
 08670D40	:0867169F	What data related to live wand 1	0x0854	{U}
 086716A0	:08671FFF	What data 2 related to live wand 2	0x0854	{U}
 0866F774	:086700D3	What data related to live wand 3	0x1F	{U}
-086700D4	:086702D3	Live staff pallet relationship 1	{U}
-08672000	:0867221F	Palette of live cane relationship 2	{U}
+086700D4	:086702D3	Heal staff pallet relationship 1	{U}
+08672000	:0867221F	Palette of Heal staff relationship 2	{U}
 08672220	:0867243F	Data of live wand something	{U}
 0869D918	:0869E277	What data related to live wand 1	0x0854	{J}
 0869E278	:0869EBD7	What data 2 related to live wand 2	0x0854	{J}
 0869C34C	:0869CCAB	What data related to live wand 3	0x1F	{J}
-0869CCAC	:0869CEAB	Live staff pallet relationship 1	{J}
-080E29E6	:080E2A17	Palette of live cane relationship 2	{J}
+0869CCAC	:0869CEAB	Heal staff pallet relationship 1	{J}
+080E29E6	:080E2A17	Palette of Heal staff relationship 2	{J}
+0869EDF8	:0869EFF8	Palette of Heal staff relationship 3	{J}
 080E2A18	:080E2C37	Data of live wand something	{J}
 085879D8	&ASM_POINTER_ARRAY	Procs(6c) Function	{U}
 08577688	&ASM_POINTER_ARRAY	Procs(6c) Function	{J}
@@ -14908,3 +14909,9 @@ r3=X tile position of menu of right	{U}
 0867EA48	:0867EE03	Unknown	Unused data.	2	{U}
 087A8CD0	:087A8F64	Part of the background of magical motion such as resire.	{J}
 0875879C	:08758A30	Part of the background of magical motion such as resire.	{U}
+08083308	GetTrapPointer	GetCurrentChapterBallistaePtr	{U}
+08083320	GetTrapAdditionalHardModePointer	GetCurrentChapterBallistae2Ptr	{U}
+081F56A4	:081F56AB	Save data header 1 AGB-FE9.	{J}
+081F5784	:081F578B	Save data header 2 AGB-FE9.	{J}
+08205C9C	:08205CA3	Save data header 1 AGB-FE9.	{U}
+08205D7C	:08205D83	Save data header 1 AGB-FE9.	{U}

@@ -28,6 +28,27 @@ namespace FEBuilderGBA
             this.PriorityCode = PatchUtil.SearchPriorityCode();
         }
 
+        void AddKeepFont(bool isItemFont, uint moji, uint rewitePointer = U.NOT_FOUND)
+        {
+            uint topaddress = FontForm.GetFontPointer(isItemFont);
+            uint prevaddress;
+            uint fontaddress = FontForm.FindFontData(topaddress
+                , moji
+                , out prevaddress
+                , PriorityCode);
+            if (fontaddress == U.NOT_FOUND)
+            {
+                return;
+            }
+            KeepFont kf = new KeepFont();
+            kf.IsItemFont = isItemFont;
+            kf.Moji = "Code"+U.To0xHexString(moji);
+            kf.MojiCode = moji;
+            kf.Width = Program.ROM.u8(fontaddress + 5);
+            kf.Data = Program.ROM.getBinaryData(fontaddress + 8, 64);
+            kf.rewitePointer = rewitePointer;
+            KeepFontList.Add(kf);
+        }
         void AddKeepFont(bool isItemFont, string one, uint rewitePointer = U.NOT_FOUND)
         {
             uint moji = U.ConvertMojiCharToUnit(one, PriorityCode);
@@ -170,8 +191,8 @@ namespace FEBuilderGBA
             AddKeepFont(false, "７"); ///No Translate
             AddKeepFont(false, "８"); ///No Translate
             AddKeepFont(false, "９"); ///No Translate
-            AddKeepFont(false, "♥"); ///No Translate
-            AddKeepFont(true, "♥"); ///No Translate
+            AddKeepFont(false, 0x7a81); //ハート ///No Translate
+            AddKeepFont(true, 0x7a81); //ハート  ///No Translate
             AddKeepFont(true, "０", 0x593ECC); ///No Translate
             AddKeepFont(true, "１", 0x593ED0); ///No Translate
             AddKeepFont(true, "２", 0x593ED4); ///No Translate
