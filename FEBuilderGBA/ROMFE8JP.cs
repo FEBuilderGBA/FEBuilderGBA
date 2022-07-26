@@ -99,7 +99,8 @@ namespace FEBuilderGBA
             map_exit_point_blank = 0xDD1BC;  // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
             sound_boss_bgm_pointer = 0x74DE4;  // ボスBGMの開始位置
             sound_foot_steps_pointer = 0x7B1E8;  // クラス足音の開始位置
-            sound_foot_steps_switch2_address = 0x7b1d6; 
+            sound_foot_steps_switch2_address = 0x7b1d6;
+            sound_foot_steps_data_pointer = 0x7B440;    //足音のデータ構造の先頭
             worldmap_point_pointer = 0xC8DC0;  // ワールドマップ拠点の開始位置
             worldmap_bgm_pointer = 0xBEE28;  // ワールドマップのBGMテーブルの開始位置
             worldmap_icon_data_pointer = 0xC04A4;  // ワールドマップのアイコンデータのテーブルの開始位置

@@ -12373,8 +12373,29 @@ The address specified in FROM is out of ROM range.
 :TOに指定されたアドレスがROMの範囲外です
 The address specified in TO is out of ROM range.
 
+:FROMに指定された{0}のコンテンツが全部nullです。\r\n既に移動済みの利用域をしていると思いますので、処理を停止します。
+All the contents of {0} specified in FROM are null.\r\nI think that you have already moved the usage area, so stop the process.
+
+:TOに指定された{0}のコンテンツが全部nullではありません。\r\n既に別のデータで利用しているかもしれません。続行してもよろしいですか？
+All the contents of {0} specified in TO are not null.\r\nYou may already be using it with other data.Are you sure you want to continue? 
+
 :{0}から{1}までの領域({2} bytes)を{3}に移動してもよろしいですか？
 Are you sure you want to move the area from {0} to {1} ({2} bytes) to {3}? 
+
+:この移動で{0}か所のポインタの置換が行われます。\r\n本当に継続してもよろしいですか？
+This move replaces the pointer at {0}.\r\nAre you sure you want to continue? 
+
+:編集中のデータがあります。\r\n危険なので、一度ROMを保存してから再度試してください。\r\n
+There is data being edited.\r\nIt is dangerous, so save the ROM and try again.\r\n
+
+:lz77再圧縮を実行してもよろしいですか?
+Are you sure you want to perform lz77 recompression ?.
+
+:再圧縮しても容量を増やすことができませんでした。\r\nすべてのデータは新しいルーチンで圧縮されているものだと思われます。
+Recompression did not increase capacity.\r\nAll the data seems to have been compressed with the new routine.
+
+:{0}個のデータを再圧縮し、{1}バイトの追加の余白を得ました。\r\nこの余白を最大限利用するには、動作テストの後にrebuildを実行してください。
+I recompressed {0} data and got {1} bytes of extra margin.\r\nTo get the most out of this margin, run rebuild after the operation test.
 
 :解凍する
 Decompress
@@ -12402,6 +12423,15 @@ Clears the specified range of ROM to 0.\r\nDo not use it normally as it is dange
 
 :この領域を移動する
 Move this area.
+
+:再圧縮
+Recompressed.
+
+:再圧縮する
+Recompress.
+
+:20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。
+Since 20220726, the compression ratio of lz77 has improved.\r\nRecompress the existing data in ROM to create a margin in ROM.\r\nYou can get a little more space by rebuilding after making a margin.\r\nThe process takes about 15 minutes.\r\nAfter the implementation, please do a simple operation test just in case.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

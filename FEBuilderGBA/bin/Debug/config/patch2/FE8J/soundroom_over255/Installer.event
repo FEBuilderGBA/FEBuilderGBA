@@ -318,6 +318,10 @@ BYTE 0x00 0x00	//nop
 BYTE 0x00 0x00	//nop
 
 
+//初期乱数を時刻を使って替える
+ORG 0xB3B9C	//{J}
+//ORG 0xAEF7C	//{U}
+jumpToHack(SoundRoomShuffleFirstRandom)
 
 POP
 
@@ -325,5 +329,8 @@ ALIGN 4
 RandomPlay:
 #incbin "RandomPlay.dmp"
 
+ALIGN 4
+SoundRoomShuffleFirstRandom:
+#incbin "SoundRoomShuffleFirstRandom.dmp"
 
 ALIGN 4

@@ -134,5 +134,17 @@ namespace FEBuilderGBA
             FEBuilderGBA.Address.AddFunctions(list, arlist, 0, name);
         }
 
+        //誤爆すると面倒なことになるフレームとOAMのデータ群
+        public static void MakeIgnoreDictionary(Dictionary<uint, bool> dic)
+        {
+            if (!U.isSafetyOffset(Program.ROM.RomInfo.sound_foot_steps_data_pointer))
+            {
+                return;
+            }
+            uint pointer = Program.ROM.p32(Program.ROM.RomInfo.sound_foot_steps_data_pointer);
+            dic[pointer] = true; //足音のデータ 圧縮ファイルと混同するので辞書に追加しておく
+        }
+
+
     }
 }

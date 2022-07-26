@@ -67,8 +67,9 @@ namespace FEBuilderGBA
         public static List<FoundImage> FindImage()
         {
             //誤爆すると面倒なことになるフレームとOAMのデータ群
-            Dictionary<uint,bool> battleFrameDic = new Dictionary<uint,bool>();
-            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(battleFrameDic);
+            Dictionary<uint,bool> ignoreDic = new Dictionary<uint,bool>();
+            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(ignoreDic);
+            SoundFootStepsForm.MakeIgnoreDictionary(ignoreDic);
 
             List<FoundImage> list = new List<FoundImage>();
             uint length = (uint)Program.ROM.Data.Length - 4;
@@ -91,7 +92,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (battleFrameDic.ContainsKey(a))
+                if (ignoreDic.ContainsKey(a))
                 {//戦闘アニメのフレーム,OAM等のlz77で圧縮されているデータ
                     continue;
                 }
@@ -1126,12 +1127,21 @@ namespace FEBuilderGBA
             //おそらくこのマッチは間違っている.
             return false;
         }
+        static void MakeIgnoreDictionnaryFromList(Dictionary<uint, bool> dic, List<Address> list)
+        {
+            foreach(Address a in list)
+            {
+                dic[a.Addr] = true;
+            }
+        }
 
         public static void MakeLZ77DataList(List<Address> list)
         {
             //誤爆すると面倒なことになるフレームとOAMのデータ群
-            Dictionary<uint, bool> battleFrameDic = new Dictionary<uint, bool>();
-            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(battleFrameDic);
+            Dictionary<uint, bool> ignoreDic = new Dictionary<uint, bool>();
+            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(ignoreDic);
+            SoundFootStepsForm.MakeIgnoreDictionary(ignoreDic);
+            MakeIgnoreDictionnaryFromList(ignoreDic, list);
 
             string name = R._("圧縮データ");
             uint length = (uint)Program.ROM.Data.Length - 4;
@@ -1151,8 +1161,12 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                if (!U.isPadding4(a))
+                {//4バイトパディングされていないlz77データはありえないとする.
+                    continue;
+                }
 
-                if (battleFrameDic.ContainsKey(a))
+                if (ignoreDic.ContainsKey(a))
                 {//戦闘アニメのフレーム,OAM等のlz77で圧縮されているデータ
                     continue;
                 }
@@ -1170,12 +1184,6 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                //解凍して中身を見てみる.
-                byte[] image = LZ77.decompress(Program.ROM.Data, a);
-                if (image.Length != imageDataSize)
-                {//解凍したらデータ容量が違う
-                    continue;
-                }
                 uint getcompsize = LZ77.getCompressedSize(Program.ROM.Data, a);
                 if (getcompsize == 0)
                 {

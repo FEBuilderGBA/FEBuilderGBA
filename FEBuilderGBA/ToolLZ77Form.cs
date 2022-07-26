@@ -204,7 +204,7 @@ namespace FEBuilderGBA
                 return;
             }
             Undo.UndoData undodata = Program.Undo.NewUndoData(R._("ZeroClear {0}-{1} ({2}size)", U.To0xHexString(from), U.To0xHexString(to), size));
-            Program.ROM.write_fill(from, size);
+            Program.ROM.write_fill(from, size, 0 , undodata);
             Program.Undo.Push(undodata);
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
@@ -213,26 +213,60 @@ namespace FEBuilderGBA
         {
             uint moveAddr = U.toOffset((uint)MoveFromAddress.Value);
             uint toAddr = U.toOffset((uint)MoveToAddress.Value);
-            if (!U.isSafetyOffset(moveAddr))
-            {
-                R.ShowStopError("FROMに指定されたアドレスがROMの範囲外です");
-                return ;
-            }
-            if (!U.isSafetyOffset(toAddr))
-            {
-                R.ShowStopError("TOに指定されたアドレスがROMの範囲外です");
-                return ;
-            }
-
             uint length = (uint)MoveLength.Value;
             if (length == 0)
             {//自動推測できたらいいなあ
                 return;
             }
-            DialogResult dr = R.ShowNoYes("{0}から{1}までの領域({2} bytes)を{3}に移動してもよろしいですか？", U.To0xHexString(moveAddr), U.To0xHexString(moveAddr + length), length, U.To0xHexString(toAddr));
-            if (dr != System.Windows.Forms.DialogResult.Yes)
+
+            if (!U.isSafetyOffset(moveAddr) || !U.isSafetyOffset(moveAddr + length))
+            {
+                R.ShowStopError("FROMに指定されたアドレスがROMの範囲外です");
+                return ;
+            }
+            if (!U.isSafetyOffset(toAddr) || !U.isSafetyOffset(toAddr + length))
+            {
+                R.ShowStopError("TOに指定されたアドレスがROMの範囲外です");
+                return ;
+            }
+            DialogResult dr;
+
+            {
+                byte[] moveBytes = Program.ROM.getBinaryData(moveAddr, length);
+                byte[] toBytes = Program.ROM.getBinaryData(toAddr, length);
+                if (U.IsEmptyRange(moveBytes))
+                {
+                    R.ShowStopError("FROMに指定された{0}のコンテンツが全部nullです。\r\n既に移動済みの利用域をしていると思いますので、処理を停止します。", U.To0xHexString(moveAddr));
+                    return;
+                }
+                if (!U.IsEmptyRange(toBytes))
+                {
+                    dr = R.ShowNoYes("TOに指定された{0}のコンテンツが全部nullではありません。\r\n既に別のデータで利用しているかもしれません。続行してもよろしいですか？", U.To0xHexString(toAddr));
+                    if (dr != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            dr = R.ShowNoYes("{0}から{1}までの領域({2} bytes)を{3}に移動してもよろしいですか？", U.To0xHexString(moveAddr), U.To0xHexString(moveAddr + length), length, U.To0xHexString(toAddr));
+            if (dr != DialogResult.Yes)
             {
                 return;
+            }
+
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(moveAddr);
+                if (movepointerlist.Count != 1)
+                {
+                    dr = R.ShowNoYes("この移動で{0}か所のポインタの置換が行われます。\r\n本当に継続してもよろしいですか？", movepointerlist.Count);
+                    if (dr != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
             }
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(R._("MoveAddress {0}-{1} => {2} ({3}size)", U.To0xHexString(moveAddr),U.To0xHexString(moveAddr + length), U.To0xHexString(toAddr), length));
@@ -244,5 +278,133 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
         }
 
+        private void ReCompressButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+            if (Program.ROM.Modified)
+            {
+                R.ShowYesNo("編集中のデータがあります。\r\n危険なので、一度ROMを保存してから再度試してください。\r\n");
+                return;
+            }
+
+            DialogResult dr = R.ShowNoYes("lz77再圧縮を実行してもよろしいですか?");
+            if (dr != DialogResult.Yes)
+            {
+                return;
+            }
+
+            uint totalSize = 0;
+            uint totalCount = 0;
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                List<Address> list = SearchAllLZ77Data(pleaseWait);
+                pleaseWait.DoEvents("...");
+
+                Undo.UndoData undodata = Program.Undo.NewUndoData("ReCompressLZ77");
+                foreach (Address a in list)
+                {
+                    uint diff = RecompressOne(pleaseWait, a, undodata);
+                    if (diff == 0)
+                    {
+                        pleaseWait.DoEvents();
+                        continue;
+                    }
+                    totalSize += diff;
+                    totalCount++;
+                }
+                Program.Undo.Push(undodata);
+            }
+
+            if (totalSize == 0)
+            {
+                R.ShowOK("再圧縮しても容量を増やすことができませんでした。\r\nすべてのデータは新しいルーチンで圧縮されているものだと思われます。");
+            }
+            else
+            {
+                R.ShowOK("{0}個のデータを再圧縮し、{1}バイトの追加の余白を得ました。\r\nこの余白を最大限利用するには、動作テストの後にrebuildを実行してください。", totalCount, totalSize);
+            }
+        }
+
+        List<Address> SearchAllLZ77Data(InputFormRef.AutoPleaseWait wait)
+        {
+            //念のためパッチのCheckIFをスキャンをやり直す.
+            PatchForm.ClearCheckIF();
+
+            wait.DoEvents("GrepAllStructPointers");
+            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, Program.ROM.RomInfo.compress_image_borderline_address, true);
+            List<Address> structList = U.MakeAllStructPointersList(false);
+            U.AppendAllASMStructPointersList(structList
+                , ldrmap
+                , isPatchInstallOnly: true
+                , isPatchPointerOnly: false
+                , isPatchStructOnly: false
+                , isUseOtherGraphics: true
+                , isUseOAMSP: false
+                );
+            AsmMapFile.InvalidateUNUNSED(structList);
+
+            Dictionary<uint, bool> dupCheck = new Dictionary<uint, bool>();
+
+            List<Address> ret = new List<Address>();
+            foreach (Address a in structList)
+            {
+                if (! Address.IsLZ77(a.DataType))
+                {
+                    continue;
+                }
+                if (dupCheck.ContainsKey(a.Addr))
+                {
+                    continue;
+                }
+                ret.Add(a);
+                dupCheck[a.Addr] = true;
+            }
+            ret.Sort((aa, bb) => { return (int)(aa.Addr - bb.Addr); });
+
+            return ret;
+        }
+
+        uint RecompressOne(InputFormRef.AutoPleaseWait wait, Address a, Undo.UndoData undodata)
+        {
+            if (! Address.IsLZ77(a.DataType))
+            {//念のためlz77圧縮の確認
+                return 0;
+            }
+            if (!U.isPadding4(a.Addr))
+            {//4バイトパディングされていないデータはありえない
+                return 0;
+            }
+
+            byte[] unzipData = LZ77.decompress(Program.ROM.Data, a.Addr);
+            if (unzipData.Length <= 0)
+            {
+                return 0;
+            }
+            uint uncompressSize = LZ77.getUncompressSize(Program.ROM.Data, a.Addr);
+            if (unzipData.Length != uncompressSize)
+            {
+                return 0;
+            }
+
+            byte[] lz77Data = LZ77.compress(unzipData);
+            if (lz77Data.Length >= a.Length)
+            {//無意味なのでやらない
+                return 0;
+            }
+            uint diff = (uint)(a.Length - lz77Data.Length);
+            if (diff <= 3)
+            {//無意味なのでやらない
+                return 0;
+            }
+            //書き込み
+            Program.ROM.write_fill(a.Addr, a.Length, 0, undodata);
+            Program.ROM.write_range(a.Addr, lz77Data, undodata);
+            wait.DoEvents(R._("recompress lz77 {0}", U.To0xHexString(a.Addr)));
+
+            return diff;
+        }
     }
 }

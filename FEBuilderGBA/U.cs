@@ -7688,6 +7688,17 @@ namespace FEBuilderGBA
             return b ? 1 : 0;
         }
 
+        public static bool IsEmptyRange(byte[] data, byte fill = 0)
+        {
+            foreach(byte a in data)
+            {
+                if (a != fill)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
 

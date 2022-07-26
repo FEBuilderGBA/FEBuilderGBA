@@ -14,7 +14,7 @@ namespace FEBuilderGBA
     class LZ77
     {
         const int WINDOW_SIZE = 4096;
-        const int READ_AHEAD_BUFFER_SIZE = 12;
+        const int READ_AHEAD_BUFFER_SIZE = 18;  //18がGBAの上限
         const int BLOCK_SIZE = 8;
         const int SLIDING_WINDOW_SIZE = 0x1000;
 
@@ -362,6 +362,8 @@ namespace FEBuilderGBA
                     match_count = search(data, position, length, out match_pos);
                     if (match_count > 2)
                     {//圧縮できた
+                        Debug.Assert(match_count - 3 <= 0xF);
+                        Debug.Assert(match_pos - 1 <= 0xFFF);
                         int add = (((match_count - 3) & 0xF) << 4)
                                 + (((match_pos-1) >> 8) & 0xF);
                         tempVector.Add((byte)add);

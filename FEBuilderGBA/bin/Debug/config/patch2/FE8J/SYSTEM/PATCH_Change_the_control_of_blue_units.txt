@@ -1,0 +1,23 @@
+NAME=デバッグ 青いプレイヤーユニットの制御を変更
+INFO=青（プレイアブル）ユニットをプレイヤーが操作するか、AIが操作するかを変更します。
+
+NAME.en=Debug: Change the control of blue units
+INFO.en=Change whether blue (playable) units are controlled by the player or by the AI.
+
+NAME.zh=改变对蓝色单位的控制
+INFO.zh=改变蓝色（可玩）单位是由玩家还是由AI控制。
+
+AUTHOR=Shuusuke, source by Sme https://feuniverse.us/t/control-enemy-npc-units-fe8/1897/7
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Player controls blue units|PLAYER|Fix: AI controls blue units|AI
+PLAYER:0x15486=0x06
+AI:0x15486=0x13
+ENEMY:0x15486=0x03
+
+
+CONFLICT_IF:0x1547E=0x0A 0xE0
+CONFLICT_MESSAGE=Using the other patch which gives player control of both enemies and NPCs in a different manner
+
+HINT=Debug

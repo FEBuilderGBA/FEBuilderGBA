@@ -14915,3 +14915,5 @@ r3=X tile position of menu of right	{U}
 081F5784	:081F578B	Save data header 2 AGB-FE9.	{J}
 08205C9C	:08205CA3	Save data header 1 AGB-FE9.	{U}
 08205D7C	:08205D83	Save data header 1 AGB-FE9.	{U}
+080B987C	Displaying the status screen of the world map.	{U}
+08A748B4	:08A74914	Status screen page name Image related data.	{J}

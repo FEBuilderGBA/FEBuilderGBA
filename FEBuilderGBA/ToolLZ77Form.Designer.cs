@@ -64,6 +64,9 @@
             this.MoveFromAddress = new System.Windows.Forms.NumericUpDown();
             this.MoveButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.ReCompressButton = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveToAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveFromAddress)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // DeCompressDESTFilename
@@ -335,6 +339,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -536,6 +541,40 @@
             this.label8.Text = "TO";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.ReCompressButton);
+            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(685, 302);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "再圧縮";
+            // 
+            // ReCompressButton
+            // 
+            this.ReCompressButton.Location = new System.Drawing.Point(6, 264);
+            this.ReCompressButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ReCompressButton.Name = "ReCompressButton";
+            this.ReCompressButton.Size = new System.Drawing.Size(462, 31);
+            this.ReCompressButton.TabIndex = 100;
+            this.ReCompressButton.Text = "再圧縮する";
+            this.ReCompressButton.UseVisualStyleBackColor = true;
+            this.ReCompressButton.Click += new System.EventHandler(this.ReCompressButton_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 22);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(649, 218);
+            this.textBox4.TabIndex = 99;
+            this.textBox4.Text = "20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう" +
+    "少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。";
+            // 
             // textBoxEx1
             // 
             this.textBoxEx1.ErrorMessage = "";
@@ -581,6 +620,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveToAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoveFromAddress)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -625,6 +666,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown MoveLength;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button ReCompressButton;
+        private System.Windows.Forms.TextBox textBox4;
 
     }
 }

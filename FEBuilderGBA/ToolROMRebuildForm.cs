@@ -20,8 +20,15 @@ namespace FEBuilderGBA
             U.AddCancelButton(this);
 
             UseFreeAreaComboBox.SelectedIndex = 0;
-            UseShareSameDataComboBox.SelectedIndex = 1;
-            this.FreeAreaMinimumSize.Value = 2048;
+            UseShareSameDataComboBox.SelectedIndex = 2;
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                this.FreeAreaMinimumSize.Value = 512;
+            }
+            else
+            {
+                this.FreeAreaMinimumSize.Value = 2048;
+            }
             this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
             AppendFreeAreaFilename.Placeholder = R._("無指定の場合は追加設定ファイルを利用しません。");
 
@@ -73,11 +80,8 @@ namespace FEBuilderGBA
 
             if (Program.ROM.Modified)
             {
-                DialogResult dr = R.ShowYesNo("デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n");
-                if (dr == System.Windows.Forms.DialogResult.Yes)
-                {
-                    return;
-                }
+                R.ShowYesNo("デフラグを実行すると、保存していないデータは失われます。\r\nセーブをした後で再度試してください。\r\n");
+                return;
             }
 
             string errorMessage = MainFormUtil.CheckOrignalROM(OrignalFilename.Text);
