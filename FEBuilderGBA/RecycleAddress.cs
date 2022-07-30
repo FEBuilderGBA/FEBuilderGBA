@@ -98,15 +98,12 @@ namespace FEBuilderGBA
             this.Recycle.Add(a);
         }
 
-        public void RecycleOptimize()
+        bool RecycleOptimize_List()
         {
-            if (this.Recycle.Count <= 1)
-            {
-                return;
-            }
-
             //まずアドレス順に昇順に並べる.
             this.Recycle.Sort((a, b) => { return (int)(a.Addr - b.Addr); });
+
+            bool conflict = false;
 
             //重複する部分アドレスが含まれている場合除外する
             for (int i = 0; i < this.Recycle.Count - 1; )
@@ -121,7 +118,7 @@ namespace FEBuilderGBA
                 }
 
                 uint p_end = p.Addr + p.Length;
-                uint p_end2 =  p2.Addr + p2.Length;
+                uint p_end2 = p2.Addr + p2.Length;
                 if (p_end > p2.Addr && p_end2 <= p_end)
                 {//重複している
                     //p |---------------------|
@@ -143,9 +140,32 @@ namespace FEBuilderGBA
                     p.ResizeAddress(p.Addr, length);
 
                     this.Recycle.RemoveAt(i + 1);
+
+                    //結合したリストの妥当性のテストのため再度ループを回す必要がある
+                    conflict = true;
                     continue;
                 }
                 i++;
+            }
+            return conflict;
+        }
+
+        public void RecycleOptimize()
+        {
+            if (this.Recycle.Count <= 1)
+            {
+                return;
+            }
+
+            //矛盾点が無くなるまで、最適化ループを回します。
+            //念のため10000回で諦めます
+            for (int i = 0; i < 10000; i++)
+            {
+                bool conflict = RecycleOptimize_List();
+                if (conflict == false)
+                {
+                    break;
+                }
             }
 
             //探索しやすいように、昇順に並べる.

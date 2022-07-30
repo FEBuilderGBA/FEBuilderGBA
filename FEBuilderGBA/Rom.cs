@@ -99,6 +99,7 @@ namespace FEBuilderGBA
         public uint sound_foot_steps_pointer { get; protected set; } // クラス足音の開始位置
         public uint sound_foot_steps_switch2_address { get; protected set; }
         public uint sound_foot_steps_data_pointer { get; protected set; } //足音のデータ構造の先頭
+        public uint worldmap_scroll_somedata_pointer { get; protected set; }    //FE8ワールドマップのスクロール関係のデータ
         public uint worldmap_point_pointer { get; protected set; } // ワールドマップ拠点の開始位置
         public uint worldmap_bgm_pointer { get; protected set; } // ワールドマップのBGMテーブルの開始位置
         public uint worldmap_icon_data_pointer { get; protected set; } // ワールドマップのアイコンデータのテーブルの開始位置

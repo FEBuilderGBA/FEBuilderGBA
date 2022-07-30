@@ -13,10 +13,9 @@ namespace FEBuilderGBA
 {
     class LZ77
     {
-        const int WINDOW_SIZE = 4096;
+        const int SLIDING_WINDOW_SIZE = 0x1000;
         const int READ_AHEAD_BUFFER_SIZE = 18;  //18がGBAの上限
         const int BLOCK_SIZE = 8;
-        const int SLIDING_WINDOW_SIZE = 0x1000;
 
         const int MAX_UNCOMP_DATA_LIMIT = 0x14000;
 

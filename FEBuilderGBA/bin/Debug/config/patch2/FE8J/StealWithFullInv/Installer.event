@@ -1,0 +1,46 @@
+#include "Extensions/6CDefinitions.txt"
+
+ALIGN 4 
+StealInvFull: 
+#incbin "StealInvFull.dmp" 
+POIN StealFixProc 
+
+ALIGN 4 
+StealRestoreItems: 
+#incbin "StealRestoreItems.dmp" 
+
+PUSH
+//ORG $32506	//{U}
+ORG $32452	//{J}
+SHORT $46c0 $46c0 // don't give the item early 
+
+//ORG $9a3618 //from "MapAnimSteal" at 0x9A32C8 proc 	//{U}
+ORG $A13CA0 //from "MapAnimSteal" at 0xA13950 proc 	//{J}
+_6C_CALL_ROUTINE(StealInvFull|1)
+
+//#ifdef SKILLSYSTEM_SKILL_TESTER
+//ORG $9a3608			//{U}
+//_6C_JUMP(0x9A3618)	//{U}
+//#endif 
+
+//ORG $241CA	//{U}
+ORG $24186	//{J}
+SHORT $2807 // allow steal while full inv 
+POP 
+
+
+ALIGN 4 
+StealFixProc:	//HINT=PROCS
+_6C_SLEEP(0)
+_6C_SET_NAME(StealProcName)
+_6C_SLEEP(0)
+//_6C_WHILE_EXISTS(0x89A32C8) // MapAnimSteal	//{U}
+_6C_WHILE_EXISTS(0x8A13950) // MapAnimSteal	//{J}
+_6C_CALL_ROUTINE(StealRestoreItems|1) 
+_6C_END 
+
+StealProcName:
+String("Steal copy inv to attacker") ; BYTE 0
+ALIGN 4
+
+

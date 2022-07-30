@@ -341,7 +341,7 @@ namespace FEBuilderGBA
                 , isPatchInstallOnly: true
                 , isPatchPointerOnly: false
                 , isPatchStructOnly: false
-                , isUseOtherGraphics: true
+                , isUseOtherGraphics: false
                 , isUseOAMSP: false
                 );
             AsmMapFile.InvalidateUNUNSED(structList);
@@ -369,7 +369,7 @@ namespace FEBuilderGBA
 
         uint RecompressOne(InputFormRef.AutoPleaseWait wait, Address a, Undo.UndoData undodata)
         {
-            if (! Address.IsLZ77(a.DataType))
+            if (!Address.IsLZ77(a.DataType))
             {//念のためlz77圧縮の確認
                 return 0;
             }

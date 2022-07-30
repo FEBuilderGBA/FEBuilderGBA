@@ -100,6 +100,7 @@ namespace FEBuilderGBA
            sound_foot_steps_pointer = 0x78dd4;  //クラス足音の開始位置
            sound_foot_steps_switch2_address = 0x78DC2;
            sound_foot_steps_data_pointer = 0x7902C;    //足音のデータ構造の先頭
+           worldmap_scroll_somedata_pointer = 0xBE528; //ワールドマップのスクロール関係のデータ
            worldmap_point_pointer = 0xBE84;  // ワールドマップ拠点の開始位置
            worldmap_bgm_pointer = 0xB9F94;  // ワールドマップのBGMテーブルの開始位置
            worldmap_icon_data_pointer = 0xBB674;  // ワールドマップのアイコンデータのテーブルの開始位置

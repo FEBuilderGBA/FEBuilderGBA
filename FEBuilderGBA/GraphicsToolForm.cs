@@ -1141,6 +1141,7 @@ namespace FEBuilderGBA
             Dictionary<uint, bool> ignoreDic = new Dictionary<uint, bool>();
             ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(ignoreDic);
             SoundFootStepsForm.MakeIgnoreDictionary(ignoreDic);
+            WorldMapPointForm.MakeIgnoreDictionary(ignoreDic);
             MakeIgnoreDictionnaryFromList(ignoreDic, list);
 
             string name = R._("圧縮データ");

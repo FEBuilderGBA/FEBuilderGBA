@@ -7,6 +7,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace FEBuilderGBA
 {
@@ -294,41 +295,48 @@ namespace FEBuilderGBA
         {
             if (Program.ROM.RomInfo.is_multibyte)
             {
-                AliasFontOne("0", "０", false, false);///No Translate
-                AliasFontOne("1", "１", false, false);///No Translate
-                AliasFontOne("2", "２", false, false);///No Translate
-                AliasFontOne("3", "３", false, false);///No Translate
-                AliasFontOne("4", "４", false, false);///No Translate
-                AliasFontOne("5", "５", false, false);///No Translate
-                AliasFontOne("6", "６", false, false);///No Translate
-                AliasFontOne("7", "７", false, false);///No Translate
-                AliasFontOne("8", "８", false, false);///No Translate
-                AliasFontOne("9", "９", false, false);///No Translate
+                AliasFontOne("0", "０");///No Translate
+                AliasFontOne("1", "１");///No Translate
+                AliasFontOne("2", "２");///No Translate
+                AliasFontOne("3", "３");///No Translate
+                AliasFontOne("4", "４");///No Translate
+                AliasFontOne("5", "５");///No Translate
+                AliasFontOne("6", "６");///No Translate
+                AliasFontOne("7", "７");///No Translate
+                AliasFontOne("8", "８");///No Translate
+                AliasFontOne("9", "９");///No Translate
             }
             else
             {
-                AliasFontOne("０", "0", false, false);///No Translate
-                AliasFontOne("１", "1", false, false);///No Translate
-                AliasFontOne("２", "2", false, false);///No Translate
-                AliasFontOne("３", "3", false, false);///No Translate
-                AliasFontOne("４", "4", false, false);///No Translate
-                AliasFontOne("５", "5", false, false);///No Translate
-                AliasFontOne("６", "6", false, false);///No Translate
-                AliasFontOne("７", "7", false, false);///No Translate
-                AliasFontOne("８", "8", false, false);///No Translate
-                AliasFontOne("９", "9", false, false);///No Translate
+                AliasFontOne("０", "0");///No Translate
+                AliasFontOne("１", "1");///No Translate
+                AliasFontOne("２", "2");///No Translate
+                AliasFontOne("３", "3");///No Translate
+                AliasFontOne("４", "4");///No Translate
+                AliasFontOne("５", "5");///No Translate
+                AliasFontOne("６", "6");///No Translate
+                AliasFontOne("７", "7");///No Translate
+                AliasFontOne("８", "8");///No Translate
+                AliasFontOne("９", "9");///No Translate
             }
+        }
+        void AliasFontOne(string one_from, string one_to)
+        {
+            AliasFontOne(one_from, one_to, false, false);
+            AliasFontOne(one_from, one_to, true, false);
         }
         void AliasFontOne(string one_from, string one_to, bool isItemFont, bool isSquareFont)
         {
             uint moji_from = U.ConvertMojiCharToUnit(one_from, this.MyselfPriorityCode);
             if (moji_from < 0x20 || moji_from == 0x80)
             {//制御文字なので無視
+                Debug.Assert(false);
                 return;
             }
             uint moji_to = U.ConvertMojiCharToUnit(one_to, this.MyselfPriorityCode);
             if (moji_to < 0x20 || moji_to == 0x80)
             {//制御文字なので無視
+                Debug.Assert(false);
                 return;
             }
 
@@ -342,6 +350,7 @@ namespace FEBuilderGBA
                 , this.MyselfPriorityCode);
             if (fontaddress_from == U.NOT_FOUND)
             {
+                Debug.Assert(false);
                 return;
             }
 
@@ -352,20 +361,17 @@ namespace FEBuilderGBA
                 , out prevaddress_to
                 , this.MyselfPriorityCode);
             if (fontaddress_to == U.NOT_FOUND)
-            {
-                uint font_width = Program.ROM.u8(fontaddress_from + 5);
-                byte[] fontimage = Program.ROM.getBinaryData(fontaddress_from + 8, 72 - 8);
-                byte[] newFontData = FontForm.MakeNewFontData(moji_to
-                    , font_width
-                    , fontimage
-                    , Program.ROM
-                    , this.MyselfPriorityCode);
+            {//ないならコピー
+                byte[] bin = Program.ROM.getBinaryData(fontaddress_from, 72);
+                U.write_u32(bin, 0, 0);   //NULL リストの末尾に追加するので.
 
-                U.write_u32(newFontData, 0, 0);   //NULL リストの末尾に追加するので.
+                uint moji2 = (moji_to & 0xff);
+                U.write_u8(bin, 4, moji2);   //SJIS2バイト目
 
-                uint newaddr = this.Recycle.Write(newFontData, this.UndoData);
+                uint newaddr = this.Recycle.Write(bin, this.UndoData);
                 if (newaddr == U.NOT_FOUND)
-                {//エラー
+                {
+                    Debug.Assert(false);
                     return;
                 }
                 //ひとつ前のフォントリストのポインタを、現在追加した最後尾にすげかえる.
