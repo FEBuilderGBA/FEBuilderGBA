@@ -14919,3 +14919,7 @@ r3=X tile position of menu of right	{U}
 08A748B4	:08A74914	Status screen page name Image related data.	{J}
 08AC1CB8	:08AC1E24	Worldmap scroll related data.	{J}
 08A3E2F8	:08A3E464	Worldmap scroll related data.	{U}
+085FF1C0	:085FF1C8	EfxDummy01000000FrameControl	{J}
+085FF1B4	:085FF1C0	EfxDummy01000000FrameData	{J}
+085D4F90	:085D4F98	EfxDummy01000000FrameControl	{U}
+085D4F84	:085D4F90	EfxDummy01000000FrameData	{U}

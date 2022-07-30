@@ -80,7 +80,7 @@ namespace FEBuilderGBA
         }
         void AddRecycle(Address a)
         {
-            //既に登録されている場合は削除する
+            //既に登録されている場合は無視する
             for (int i = 0; i < this.Recycle.Count; i++)
             {
                 Address b = this.Recycle[i];
@@ -101,7 +101,7 @@ namespace FEBuilderGBA
         bool RecycleOptimize_List()
         {
             //まずアドレス順に昇順に並べる.
-            this.Recycle.Sort((a, b) => { return (int)(a.Addr - b.Addr); });
+            this.Recycle.Sort((a, b) => { return (int)(((int)a.Addr) - ((int)b.Addr)); });
 
             bool conflict = false;
 
@@ -158,8 +158,8 @@ namespace FEBuilderGBA
             }
 
             //矛盾点が無くなるまで、最適化ループを回します。
-            //念のため10000回で諦めます
-            for (int i = 0; i < 10000; i++)
+            //念のため1000回で諦めます
+            for (int i = 0; i < 1000; i++)
             {
                 bool conflict = RecycleOptimize_List();
                 if (conflict == false)
@@ -168,8 +168,8 @@ namespace FEBuilderGBA
                 }
             }
 
-            //探索しやすいように、昇順に並べる.
-            this.Recycle.Sort((a, b) => { return (int)(a.Length - b.Length); });
+            //探索しやすいように、サイズで昇順に並べる.
+            this.Recycle.Sort((a, b) => { return (int)(((int)a.Length) - ((int)b.Length)); });
         }
 
         public uint WriteAndWritePointer(uint write_pointer, byte[] write_data, Undo.UndoData undodata)

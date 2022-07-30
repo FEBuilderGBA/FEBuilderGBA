@@ -13940,18 +13940,18 @@ r3=X tile position of menu of the right	{U}
 08011750	CreateNotifyEventCommandPopup	{U}
 030005C8	:030005E8	PopupWorkForCreateNotifyEventCommandPopup	{J}
 030005D0	:030005F0	PopupWorkForCreateNotifyEventCommandPopup	{U}
-08022200	StartAnimationHitotachi	FE8JONLY	用剑切割的动画。	{J}
+08022200	StartAnimationHitotachi	FE8JONLY	用剑切割的动画	{J}
 03001CE0	用于 LOAD2 目标的 RAM 区域在“在 RAM 区域中设置的 LOAD2 内容的指令”中	尺寸未知	既然是sizeof20，那么至少应该有40个字节	{J}
 03001CE8	用于 LOAD2 目标的 RAM 区域在“在 RAM 区域中设置的 LOAD2 内容的指令”中	尺寸未知	既然是sizeof20，那么至少应该有40个字节	{U}
 08088A6C	指令到 LOAD2 在 RAM 区域中设置的东西	03001CE0 用于 FE8J	{J}
 0808679C	指令到 LOAD2 在 RAM 区域中设置的东西	03001CE8 用于 FE8U	{U}
 08A1CC54	:08A1CE1B	用于显示升级项目的调色板等数据	{J}
 089AC5CC	:089AC793	用于显示升级项目的调色板等数据	{U}
-08A1DEF0	&LZ77	红色状态的数字。	估计没用。	{J}
-089AD868	&LZ77	红色状态的数字。	估计没用。	{U}
+08A1DEF0	&LZ77	红色状态的数字	估计没用	{J}
+089AD868	&LZ77	红色状态的数字	估计没用	{U}
 080A8914	CheckSoundRoomEnableList	r0=0	r1=SongID	{J}
 080A3ED0	CheckSoundRoomEnableList	r0=0	r1=SongID	{U}
-08AC033C	:08AC0393	综合评价计算值。	{J}
+08AC033C	:08AC0393	综合评价计算值	{J}
 080D3C44	GuideOnKeyDown	{J}
 080CEF48	GuideOnKeyDown	{U}
 08078730	IsBattleStatsInPromotionMode	{J}
@@ -14761,14 +14761,14 @@ r3=X tile position of menu of the right	{U}
 08013988	EndApplyDamagePaletteToTarget	{U}
 0203FBB8	:0203FFFF	Debuffs VBA/make	{U}
 0203AE00	:0203AEC7	Hp bars with cached warning	by circles and Tequila (included in Skill System)	{U}
-080B3D00	在音室随机播放屏幕上播放下一首歌曲。	{J}
-080B3D60	在音室随机播放屏幕上播放上一首歌曲。	{J}
-080B3B84	Sound Room 生成随机播放的播放列表。	{J}
-02021388	:02021407	用于在音室中随机播放的播放列表。	{J}
-080AF0E0	在音室随机播放屏幕上播放下一首歌曲。	{U}
-080AF140	在音室随机播放屏幕上播放上一首歌曲。	{U}
-080AEF64	Sound Room 生成随机播放的播放列表。	{U}
-02021388	:02021407	用于在音室中随机播放的播放列表。	{U}
+080B3D00	在音室随机播放屏幕上播放下一首歌曲	{J}
+080B3D60	在音室随机播放屏幕上播放上一首歌曲	{J}
+080B3B84	Sound Room 生成随机播放的播放列表	{J}
+02021388	:02021407	用于在音室中随机播放的播放列表	{J}
+080AF0E0	在音室随机播放屏幕上播放下一首歌曲	{U}
+080AF140	在音室随机播放屏幕上播放上一首歌曲	{U}
+080AEF64	Sound Room 生成随机播放的播放列表	{U}
+02021388	:02021407	用于在音室中随机播放的播放列表	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
 080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
 080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
@@ -14794,10 +14794,10 @@ r3=X tile position of menu of the right	{U}
 0801DB4C	SetCursorToNextUnitOfCurrentlySelectedUnit	{U}
 0801D740	CheckIfValidForLPressCursor	{J}
 0801D7B0	SetCursorToNextUnitOfCurrentlySelectedUnit	{J}
-08036E0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址。	{J}
+08036E0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址	{J}
 08036e4c	BKSEL_LoadPalette	{J}
 0807E114	获取地图动画附属调色板	{J}
-08036D0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址。	{U}
+08036D0C	BKSEL_LoadPalette_Low	阅读战斗预测调色板地址	{U}
 08036D4C	BKSEL_LoadPalette	{U}
 0807BDD0	获取地图动画附属调色板	{U}
 080B46B4	SoundRoomDestructor	{J}
@@ -14835,35 +14835,39 @@ r3=X tile position of menu of the right	{U}
 08072E74	StartBattleManaketeTransform	{J}
 08A3EED4	StartWorldMapMiniMapProcs	{U}
 080708CC	StartBattleManaketeTransform	{U}
-088BC5E8	:088BC60F	移动具有未使用单位的单位。	1	{U}
-088BCCC8	:088BCD03	未使用的单元放置。	1	{U}
-088C179C	:088C17D3	移动具有未使用单位的单位。	2	{U}
-088C1D30	:088C1DCF	未使用的单元放置。	2	{U}
-088C9C40	:088C9CAF	移动具有未使用单位的单位。	3	{U}
-088CA250	:088CA463	未使用的单元放置。	3	{U}
-088CA60C	:088CA63B	移动具有未使用单位的单位。	4	{U}
-088CAEAC	:088CAF87	未使用的单元放置。	4	{U}
-088CB020	:088CB057	移动具有未使用单位的单位。	5	{U}
-088CB574	:088CB613	未使用的单元放置。	5	{U}
-088D1448	:088D164F	未使用的单元放置。	6	敌人。	{U}
-08910B48	:08910B6F	移动具有未使用单位的单位。	1	{J}
-08911200	:0891123B	未使用的单元放置。	1	{J}
-08915C84	:08915CBB	移动具有未使用单位的单位。	2	{J}
-08916218	:089162B7	未使用的单元放置。	2	{J}
-0891E0A8	:0891E117	移动具有未使用单位的单位。	3	{J}
-0891E6A4	:0891E8D3	未使用的单元放置。	3	{J}
-0891EA60	:0891EA8F	移动具有未使用单位的单位。	4	{J}
-0891F300	:0891F3DB	未使用的单元放置。	4	{J}
-0891F474	:0891F4AB	移动具有未使用单位的单位。	5	{J}
-0891F9C8	:0891FA57	未使用的单元放置。	5	{J}
-0892589C	:08925AA3	未使用的单元放置。	6	敌人。	{J}
-087A8CD0	:087A8F64	部分魔法运动的背景，如resire。	{J}
-0875879C	:08758A30	部分魔法运动的背景，如resire。	{U}
-081F56A4	:081F56AB	保存数据头 1 AGB-FE9。	{J}
-081F5784	:081F578B	保存数据头 2 AGB-FE9。	{J}
-08205C9C	:08205CA3	保存数据头 1 AGB-FE9。	{U}
-08205D7C	:08205D83	保存数据头 1 AGB-FE9。	{U}
-080B987C	显示世界地图的状态画面。	{U}
-08A748B4	:08A74914	状态屏幕页面名称 图像相关数据。	{J}
-08AC1CB8	:08AC1E24	世界地图滚动相关数据。	{J}
-08A3E2F8	:08A3E464	世界地图滚动相关数据。	{U}
+088BC5E8	:088BC60F	移动具有未使用单位的单位	1	{U}
+088BCCC8	:088BCD03	未使用的单元放置	1	{U}
+088C179C	:088C17D3	移动具有未使用单位的单位	2	{U}
+088C1D30	:088C1DCF	未使用的单元放置	2	{U}
+088C9C40	:088C9CAF	移动具有未使用单位的单位	3	{U}
+088CA250	:088CA463	未使用的单元放置	3	{U}
+088CA60C	:088CA63B	移动具有未使用单位的单位	4	{U}
+088CAEAC	:088CAF87	未使用的单元放置	4	{U}
+088CB020	:088CB057	移动具有未使用单位的单位	5	{U}
+088CB574	:088CB613	未使用的单元放置	5	{U}
+088D1448	:088D164F	未使用的单元放置	6	敌人	{U}
+08910B48	:08910B6F	移动具有未使用单位的单位	1	{J}
+08911200	:0891123B	未使用的单元放置	1	{J}
+08915C84	:08915CBB	移动具有未使用单位的单位	2	{J}
+08916218	:089162B7	未使用的单元放置	2	{J}
+0891E0A8	:0891E117	移动具有未使用单位的单位	3	{J}
+0891E6A4	:0891E8D3	未使用的单元放置	3	{J}
+0891EA60	:0891EA8F	移动具有未使用单位的单位	4	{J}
+0891F300	:0891F3DB	未使用的单元放置	4	{J}
+0891F474	:0891F4AB	移动具有未使用单位的单位	5	{J}
+0891F9C8	:0891FA57	未使用的单元放置	5	{J}
+0892589C	:08925AA3	未使用的单元放置	6	敌人	{J}
+087A8CD0	:087A8F64	部分魔法运动的背景，如resire	{J}
+0875879C	:08758A30	部分魔法运动的背景，如resire	{U}
+081F56A4	:081F56AB	保存数据头 1 AGB-FE9	{J}
+081F5784	:081F578B	保存数据头 2 AGB-FE9	{J}
+08205C9C	:08205CA3	保存数据头 1 AGB-FE9	{U}
+08205D7C	:08205D83	保存数据头 1 AGB-FE9	{U}
+080B987C	显示世界地图的状态画面	{U}
+08A748B4	:08A74914	状态屏幕页面名称 图像相关数据	{J}
+08AC1CB8	:08AC1E24	世界地图滚动相关数据	{J}
+08A3E2F8	:08A3E464	世界地图滚动相关数据	{U}
+085FF1C0	:085FF1C8	EfxDummy01000000FrameControl	{J}
+085FF1B4	:085FF1C0	EfxDummy01000000FrameData	{J}
+085D4F90	:085D4F98	EfxDummy01000000FrameControl	{U}
+085D4F84	:085D4F90	EfxDummy01000000FrameData	{U}

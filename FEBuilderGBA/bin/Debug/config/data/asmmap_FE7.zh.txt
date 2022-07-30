@@ -4788,8 +4788,8 @@
 080B7980	加载10个分割的CG	{J}
 0807DEC0	沙漠宝藏的判断	{J}
 0807D2B0	沙漠宝藏的判断	{U}
-0800AEB0	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{J}
-0800af74	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{U}
+0800AEB0	操作事件指令的功能	r0=事件指令指针：POINTER_EVENT	r1=参数1-3	{J}
+0800af74	操作事件指令的功能	r0=事件指令指针：POINTER_EVENT	r1=参数1-3	{U}
 0808667C	DeletePlayerPhaseInterface6Cs	{J}
 08085C7C	DeletePlayerPhaseInterface6Cs	{U}
 080070AC	ShouldPortraitBeSmol	{J}
@@ -4889,31 +4889,31 @@
 0800AEA4	Call_ExecuteEvent	r0=event	r1=slot	{J}
 0800AF5C	CallExecuteEvent_Slot3	r0=event	{U}
 0800AF68	Call_ExecuteEvent	r0=event	r1=slot	{U}
-080AD424	声音室	绘制声音波形。	{J}
-080AD39C	声音室	将声音波形拉低。	{J}
-080AD460	声音室	RANDOM MODE时间显示。	{J}
-080ad2d0	声音室	显示歌曲标题。	{J}
-080AD544	SoundRoom声音室的绘图。	{J}
+080AD424	声音室	绘制声音波形	{J}
+080AD39C	声音室	将声音波形拉低	{J}
+080AD460	声音室	RANDOM MODE时间显示	{J}
+080ad2d0	声音室	显示歌曲标题	{J}
+080AD544	SoundRoom声音室的绘图	{J}
 08006884	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{J}
-08DAEDF8	&OAMREGS	声音室	RANDOMMODE	随机模式显示。	OAM	{J}
-08DAEE18	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆。	OAM	{J}
-08DAEE38	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置。	OAM	{J}
-08DAEDE0	&OAMREGS	声音室	控制。	播放开始按钮。	OAM	{J}
-08DAEDE8	&OAMREGS	声音室	控制。	停止开始按钮。	OAM	{J}
-08DAEDF0	&OAMREGS	声音室	控制。	随机模式按钮。	OAM	{J}
+08DAEDF8	&OAMREGS	声音室	RANDOMMODE	随机模式显示	OAM	{J}
+08DAEE18	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆	OAM	{J}
+08DAEE38	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置	OAM	{J}
+08DAEDE0	&OAMREGS	声音室	控制	播放开始按钮	OAM	{J}
+08DAEDE8	&OAMREGS	声音室	控制	停止开始按钮	OAM	{J}
+08DAEDF0	&OAMREGS	声音室	控制	随机模式按钮	OAM	{J}
 08BFF7A8	&OAMREGS	声音室	歌名	名称	OAM	{J}
-080AC54C	声音室	绘制声音波形。	{U}
-080AC4C4	声音室	将声音波形拉低。	{U}
-080AC588	声音室	RANDOM MODE时间显示。	{U}
-080AC3F8	声音室	显示歌曲标题。	{U}
-080AC66C	SoundRoom声音室的绘图。	{U}
+080AC54C	声音室	绘制声音波形	{U}
+080AC4C4	声音室	将声音波形拉低	{U}
+080AC588	声音室	RANDOM MODE时间显示	{U}
+080AC3F8	声音室	显示歌曲标题	{U}
+080AC66C	SoundRoom声音室的绘图	{U}
 080069F4	RegisterObjectSafe	I don't see any difference with the above, except that x & y are truncated properly (it's "Safe") r0=root node index	r1=base x coord	r2=base y coord	r3=ROM OAM Data pointer	[sp+0]=base OAM2 data	{U}
-08CE560C	&OAMREGS	声音室	RANDOMMODE	随机模式显示。	OAM	{U}
-08CE562C	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆。	OAM	{U}
-08CE564C	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置。	OAM	{U}
-08CE55F4	&OAMREGS	声音室	控制。	播放开始按钮。	OAM	{U}
-08CE55FC	&OAMREGS	声音室	控制。	停止开始按钮。	OAM	{U}
-08CE5604	&OAMREGS	声音室	控制。	随机模式按钮。	OAM	{U}
+08CE560C	&OAMREGS	声音室	RANDOMMODE	随机模式显示	OAM	{U}
+08CE562C	&OAMREGS	声音室	RANDOMMODE	在播放位置寻找条形记忆	OAM	{U}
+08CE564C	&OAMREGS	声音室	RANDOMMODE	搜索杆旋钮在播放位置	OAM	{U}
+08CE55F4	&OAMREGS	声音室	控制	播放开始按钮	OAM	{U}
+08CE55FC	&OAMREGS	声音室	控制	停止开始按钮	OAM	{U}
+08CE5604	&OAMREGS	声音室	控制	随机模式按钮	OAM	{U}
 08B905F8	&OAMREGS	声音室	歌名	名称	OAM	{U}
 08B91AD8	CallEvent	Battle Quote and Death Quote display event 1	{U}
 08B91AE8	CallEvent	Battle Quote and Death Quote display event 2	{U}
@@ -5127,21 +5127,21 @@
 08005440	Text_GetXCursor	{J}
 0203A508	@BattleRound@[7]	gRoundArray	{J}
 0203A50C	@BattleRound@[7]	gRoundArray	{U}
-0808F3D0	马修讲话为 ch8 推进做准备。	{U}
-0808FD10	马修讲话为 ch8 推进做准备。	{J}
-0808F43C	玛丽娜斯会谈为前进做准备。	{U}
-0808FD7C	玛丽娜斯会谈为前进做准备。	{J}
-0808F4A8	算命先生谈话为ch14的推进做准备。	{U}
-0808FDE8	算命先生谈话为ch14的推进做准备。	{J}
-0808F52C	当玛丽娜斯得到马车时，她说话以准备前进。	{U}
-0808FE6C	当玛丽娜斯得到马车时，她说话以准备前进。	{J}
+0808F3D0	马修讲话为 ch8 推进做准备	{U}
+0808FD10	马修讲话为 ch8 推进做准备	{J}
+0808F43C	玛丽娜斯会谈为前进做准备	{U}
+0808FD7C	玛丽娜斯会谈为前进做准备	{J}
+0808F4A8	算命先生谈话为ch14的推进做准备	{U}
+0808FDE8	算命先生谈话为ch14的推进做准备	{J}
+0808F52C	当玛丽娜斯得到马车时，她说话以准备前进	{U}
+0808FE6C	当玛丽娜斯得到马车时，她说话以准备前进	{J}
 0801CACC	PlayerPhase_RangeDisplayIdle	{J}
 0801C6C8	PlayerPhase_RangeDisplayIdle	{U}
 08015f0c	SetCursorMapPosition	{J}
 0801c584	HandlePlayerCursorMovement	{J}
 0801C194	HandlePlayerCursorMovement	{U}
-080AD190	显示音室画面。	{J}
-080AC2AC	显示音室画面。	{U}
+080AD190	显示音室画面	{J}
+080AC2AC	显示音室画面	{U}
 03005E80	:03006A7F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{J}
 03005DA0	:0300699F	ipatix High Quality Sound Mixer 2 getting somewhat dangerously close to the stack)	{U}
 0802D940	FlamesWeatherHBlank	{U}

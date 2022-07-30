@@ -1194,7 +1194,7 @@
 0806D028	沙漠宝藏的判断
 08041A38	EndAllMenus
 0808F2A4	DeletePlayerPhaseInterface6Cs
-0800d9b8	操作事件指令的功能。	r0=事件指令指针：POINTER_EVENT。	r1=参数1-3。	{J}
+0800d9b8	操作事件指令的功能	r0=事件指令指针：POINTER_EVENT	r1=参数1-3	{J}
 0800D978	CallExecuteEvent_Slot3	r0=event
 0806B5B0	MaybeCallEndEvent
 0806cd78	ShouldCallEndEvent

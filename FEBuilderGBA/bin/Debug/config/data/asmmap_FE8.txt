@@ -14864,5 +14864,9 @@
 08205C9C	:08205CA3	セーブデータのヘッダ1 AGB-FE9	{U}
 08205D7C	:08205D83	セーブデータのヘッダ1 AGB-FE9	{U}
 08A748B4	:08A74914	ステータス画面のページ名画像関係のデータ	{J}
-08AC1CB8	:08AC1E24	Worldmapのスクロール関係のデータ	{J}
-08A3E2F8	:08A3E464	Worldmapのスクロール関係のデータ	{U}
+08AC1CB8	:08AC1E24	Worldmapのスクロール関係のデータ	ここを壊すとワールドマップのスクロールが止まる	{J}
+08A3E2F8	:08A3E464	Worldmapのスクロール関係のデータ	ここを壊すとワールドマップのスクロールが止まる	{U}
+085FF1C0	:085FF1C8	EfxDummy01000000FrameControl	ダミーフレームだと思う	{J}
+085FF1B4	:085FF1C0	EfxDummy01000000FrameData	ダミーフレームだと思う	{J}
+085D4F90	:085D4F98	EfxDummy01000000FrameControl	ダミーフレームだと思う	{U}
+085D4F84	:085D4F90	EfxDummy01000000FrameData	ダミーフレームだと思う	{U}
