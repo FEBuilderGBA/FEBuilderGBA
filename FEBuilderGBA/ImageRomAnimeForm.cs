@@ -27,6 +27,7 @@ namespace FEBuilderGBA
                 this.AddressList.Items.Add(name);
             }
             this.AddressList.EndUpdate();
+            this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             U.SelectedIndexSafety(this.AddressList, 0, true);
             U.SetIcon(AnimeExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(AnimeImportButton, Properties.Resources.icon_upload);

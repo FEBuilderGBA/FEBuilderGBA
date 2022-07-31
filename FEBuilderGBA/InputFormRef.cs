@@ -6677,6 +6677,7 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
             ShowWriteNotifyAnimation(this.SelfForm, startAR.addr);
             ReloadAddressList();
+            U.SelectedIndexSafety(this.AddressList, targetIndex);
             this.AddressList.Refresh();
         }
 
