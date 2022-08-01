@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             , MAPX   //MAPX マップ 16x16チップ
             , MAPY   //MAPY
             , MAPXY
+            , MAPYX
             , WMAPX   //MAPX マップ 16x16チップ
             , WMAPY   //MAPY
             , SCREENX   //SCREENX 画面 320x240

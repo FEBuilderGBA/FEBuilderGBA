@@ -1,0 +1,14 @@
+RandomizeCoordsPlayer=$22
+RandomizeCoordsEnemy=$2A
+RandomizeCoordsNPC=$32
+RandomizeCoordsAll=$1A
+LoopThroughUnits=$38
+NextUnitLadder=$54
+ValidUnit=$56
+NextUnit=$015A
+XCoordInRange=$82
+End_LoopThroughUnits=$0162
+YCoordInRange=$B4
+GetTile=$FC
+AnyTerrainException=$0118
+ForceSpecificTerrain=$013A

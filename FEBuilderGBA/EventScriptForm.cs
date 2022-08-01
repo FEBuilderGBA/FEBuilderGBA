@@ -1549,7 +1549,14 @@ namespace FEBuilderGBA
                         else if (arg.Type == EventScript.ArgType.MAPXY)
                         {//MAPXY
                             isENumText = true;
-                            text = " " + InputFormRef.GetMAPXY(v);
+                            if (arg.Size == 4)
+                            {
+                                text = " " + InputFormRef.GetMAPXY32(v);
+                            }
+                            else
+                            {
+                                text = " " + InputFormRef.GetMAPXY16(v);
+                            }
                         }
                         else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
                         {

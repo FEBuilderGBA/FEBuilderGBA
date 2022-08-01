@@ -1,0 +1,31 @@
+NAME=エリア内のユニットの座標をランダム配置 RandomizeCoords(イベント命令)
+NAME.en=Add Event: RandomizeCoords  Random coordinates of units in the area
+NAME.zh=Add Event: RandomizeCoords  Random coordinates of units in the area
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 RandomizeCoords.dmp=0xF0 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=RandomizeCoords.dmp
+
+AUTHOR=Vesly
+
+EVENTSCRIPT:01=400D0000{$L1:RandomizeCoords.dmp}	エリア内のユニットの座標をランダム配置(ASMC RandomizeCoords)(LOW)	Slot4=地形条件(FF=ANY) Slot5=所属条件(FF=ANY) Slot8=RangeOfUnits(XXYYWWHH) Slot9=RangeToPlaceInto(XXYYWWHH)
+EVENTSCRIPT:02=40050400TT00000040050500VV00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	エリア内のユニットの座標をランダム配置[UUUU:MAPYX:元座標 左上][ZZZZ:MAPYX:元座標 右下]=>[XXXX:MAPYX:移動先 左上][WWWW:MAPYX:移動先 右下] [VV:WMAPAFFILIATION:所属条件(FF=ANY)] [TT:TILE:地形条件(FF=ANY)](ASMC RandomizeCoords)
+EVENTSCRIPT:03=40050400FF00000040050500FF00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	エリア内の全ユニットの座標をランダム配置[UUUU:MAPYX:元座標 左上][ZZZZ:MAPYX:元座標 右下]=>[XXXX:MAPYX:移動先 左上][WWWW:MAPYX:移動先 右下](ASMC RandomizeCoords)
+
+EVENTSCRIPT:01.en=400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of units in the area(ASMC RandomizeCoords)(LOW)	Slot4=TerrainType(FF=ANY) Slot5=UnitType(FF=ANY) Slot8=RangeOfUnits(XXYYWWHH) Slot9=RangeToPlaceInto(XXYYWWHH)
+EVENTSCRIPT:02.en=40050400TT00000040050500VV00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of units in the area[UUUU:MAPYX:FromUpper][ZZZZ:MAPYX:FromLower]=>[XXXX:MAPYX:ToUpper][WWWW:MAPYX:ToLower] [VV:WMAPAFFILIATION:UnitType(FF=ANY)] [TT:TILE:TerrainType(FF=ANY)](ASMC RandomizeCoords)
+EVENTSCRIPT:03.en=40050400FF00000040050500FF00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of all units in the area[UUUU:MAPYX:FromUpper][ZZZZ:MAPYX:FromLower]=>[XXXX:MAPYX:ToUpper][WWWW:MAPYX:ToLower](ASMC RandomizeCoords)
+
+EVENTSCRIPT:01.zh=400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of units in the area(ASMC RandomizeCoords)(LOW)	Slot4=TerrainType(FF=ANY) Slot5=UnitType(FF=ANY) Slot8=RangeOfUnits(XXYYWWHH) Slot9=RangeToPlaceInto(XXYYWWHH)
+EVENTSCRIPT:02.zh=40050400TT00000040050500VV00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of units in the area[UUUU:MAPYX:FromUpper][ZZZZ:MAPYX:FromLower]=>[XXXX:MAPYX:ToUpper][WWWW:MAPYX:ToLower] [VV:WMAPAFFILIATION:UnitType(FF=ANY)] [TT:TILE:TerrainType(FF=ANY)](ASMC RandomizeCoords)
+EVENTSCRIPT:03.zh=40050400FF00000040050500FF00000040050800ZZZZUUUU40050900WWWWXXXX400D0000{$L1:RandomizeCoords.dmp}	Random coordinates of all units in the area[UUUU:MAPYX:FromUpper][ZZZZ:MAPYX:FromLower]=>[XXXX:MAPYX:ToUpper][WWWW:MAPYX:ToLower](ASMC RandomizeCoords)
+
+
+INFO=指定した範囲のユニットを、別のエリアにランダムに配置します。\r\nこの命令を使う前にLOAD命令でユニットをFromのエリアに読込んでください。\r\nその後で、この命令を利用して、Toのエリアに移動させます。\r\n地形はFFを指定すると、移動可能な全地形が選択されます。\r\nタイルを指定すると、そのタイルに移動するようになります。
+INFO.en=Randomly places the units within the specified range in another area.\r\nBefore using this command, load the unit into the From area with the LOAD command.\r\nThen use this command to move it to To's area.\r\nIf you specify FF for the terrain, all terrain that can be moved is selected.\r\nIf you specify a tile, it will move to that tile.
+INFO.zh=将指定范围内的单位随机放置在另一个区域中。\r\n在使用此命令之前，使用 LOAD 命令将设备加载到 From 区域。\r\n然后使用此命令将其移动到 To 的区域。\r\n如果为地形指定 FF，则选择所有可以移动的地形。\r\n如果您指定一个磁贴，它将移动到该磁贴。

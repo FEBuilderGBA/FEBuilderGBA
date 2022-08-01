@@ -914,11 +914,48 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAPXY)
             {
-                text = InputFormRef.GetMAPXY(v);
-                if (isOrderOfHuman)
+                if (arg.Size == 2)
                 {
-                    NumericUpDown xyObj = (NumericUpDown)sender;
-                    Popup.MAP.SetPoint(this.AddressList.SelectedIndex.ToString(), (int)U.ParsePosX((uint)xyObj.Value), (int)U.ParsePosY((uint)xyObj.Value));
+                    text = InputFormRef.GetMAPXY16(v);
+                    if (isOrderOfHuman)
+                    {
+                        NumericUpDown xyObj = (NumericUpDown)sender;
+                        Popup.MAP.SetPoint(this.AddressList.SelectedIndex.ToString()
+                            , (int)U.ParsePosX16((uint)xyObj.Value), (int)U.ParsePosY16((uint)xyObj.Value));
+                    }
+                }
+                else
+                {
+                    text = InputFormRef.GetMAPXY32(v);
+                    if (isOrderOfHuman)
+                    {
+                        NumericUpDown xyObj = (NumericUpDown)sender;
+                        Popup.MAP.SetPoint(this.AddressList.SelectedIndex.ToString()
+                            , (int)U.ParsePosX32((uint)xyObj.Value), (int)U.ParsePosY32((uint)xyObj.Value));
+                    }
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.MAPYX)
+            {
+                if (arg.Size == 2)
+                {
+                    text = InputFormRef.GetMAPYX16(v);
+                    if (isOrderOfHuman)
+                    {
+                        NumericUpDown xyObj = (NumericUpDown)sender;
+                        Popup.MAP.SetPoint(this.AddressList.SelectedIndex.ToString()
+                            , (int)U.ParsePosY16((uint)xyObj.Value), (int)U.ParsePosX16((uint)xyObj.Value));
+                    }
+                }
+                else
+                {
+                    text = InputFormRef.GetMAPYX32(v);
+                    if (isOrderOfHuman)
+                    {
+                        NumericUpDown xyObj = (NumericUpDown)sender;
+                        Popup.MAP.SetPoint(this.AddressList.SelectedIndex.ToString()
+                            , (int)U.ParsePosY32((uint)xyObj.Value), (int)U.ParsePosX32((uint)xyObj.Value));
+                    }
                 }
             }
             else if (arg.Type == EventScript.ArgType.FLAG)
@@ -991,7 +1028,25 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAPXY)
             {//MAPXY
-                text = " " + InputFormRef.GetMAPXY(v);
+                if (arg.Size == 2)
+                {
+                    text = " " + InputFormRef.GetMAPXY16(v);
+                }
+                else
+                {
+                    text = " " + InputFormRef.GetMAPXY32(v);
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.MAPYX)
+            {//MAPYX
+                if (arg.Size == 2)
+                {
+                    text = " " + InputFormRef.GetMAPYX16(v);
+                }
+                else
+                {
+                    text = " " + InputFormRef.GetMAPYX32(v);
+                }
             }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
             {//RAM_UNIT_PARAM
@@ -1860,30 +1915,113 @@ namespace FEBuilderGBA
                 NumericUpDown mapxy = (NumericUpDown)sender;
                 bool updateLock = false;
 
-                Func<int, int, int> movecallback = (int x, int y) =>
+                if (arg.Size == 2)
                 {
-                    if (updateLock)
+                    Func<int, int, int> movecallback = (int x, int y) =>
                     {
-                        return 0;
-                    }
-                    updateLock = true;
+                        if (updateLock)
+                        {
+                            return 0;
+                        }
+                        updateLock = true;
 
-                    uint v = (uint)mapxy.Value;
-                    v = (uint)( ((uint)x & 0xFFFF) | (((uint)y & 0xFFFF) << 16));
+                        uint v = InputFormRef.ConvertMAPXY16((uint)x, (uint)y);
+                        U.ForceUpdate(mapxy, v);
 
-                    U.ForceUpdate(mapxy, v);
+                        updateLock = false;
 
-                    updateLock = false;
+                        //補正しないといけないっぽい
+                        PopupDialog_MAPUpdatePos(x, y);
+                        return -1;
+                    };
 
-                    //補正しないといけないっぽい
-                    PopupDialog_MAPUpdatePos(x, y);
-                    return -1;
-                };
+                    PopupDialog_MAP((NumericUpDown)sender, mapid
+                        , (int)U.ParsePosX16((uint)mapxy.Value)
+                        , (int)U.ParsePosY16((uint)mapxy.Value)
+                        , movecallback);
+                }
+                else
+                {
+                    Func<int, int, int> movecallback = (int x, int y) =>
+                    {
+                        if (updateLock)
+                        {
+                            return 0;
+                        }
+                        updateLock = true;
 
-                PopupDialog_MAP((NumericUpDown)sender, mapid
-                    , (int)U.ParsePosX((uint)mapxy.Value)
-                    , (int)U.ParsePosY((uint)mapxy.Value)
-                    , movecallback);
+                        uint v = InputFormRef.ConvertMAPXY32((uint)x, (uint)y);
+                        U.ForceUpdate(mapxy, v);
+
+                        updateLock = false;
+
+                        //補正しないといけないっぽい
+                        PopupDialog_MAPUpdatePos(x, y);
+                        return -1;
+                    };
+
+                    PopupDialog_MAP((NumericUpDown)sender, mapid
+                        , (int)U.ParsePosX32((uint)mapxy.Value)
+                        , (int)U.ParsePosY32((uint)mapxy.Value)
+                        , movecallback);
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.MAPYX)
+            {
+                uint mapid = ScanMAPID();
+                NumericUpDown mapxy = (NumericUpDown)sender;
+                bool updateLock = false;
+
+                if (arg.Size == 2)
+                {
+                    Func<int, int, int> movecallback = (int x, int y) =>
+                    {
+                        if (updateLock)
+                        {
+                            return 0;
+                        }
+                        updateLock = true;
+
+                        uint v = InputFormRef.ConvertMAPYX16((uint)x, (uint)y);
+                        U.ForceUpdate(mapxy, v);
+
+                        updateLock = false;
+
+                        //補正しないといけないっぽい
+                        PopupDialog_MAPUpdatePos(x, y);
+                        return -1;
+                    };
+
+                    PopupDialog_MAP((NumericUpDown)sender, mapid
+                        , (int)U.ParsePosY16((uint)mapxy.Value)
+                        , (int)U.ParsePosX16((uint)mapxy.Value)
+                        , movecallback);
+                }
+                else
+                {
+                    Func<int, int, int> movecallback = (int x, int y) =>
+                    {
+                        if (updateLock)
+                        {
+                            return 0;
+                        }
+                        updateLock = true;
+
+                        uint v = InputFormRef.ConvertMAPYX32((uint)x, (uint)y);
+                        U.ForceUpdate(mapxy, v);
+
+                        updateLock = false;
+
+                        //補正しないといけないっぽい
+                        PopupDialog_MAPUpdatePos(x, y);
+                        return -1;
+                    };
+
+                    PopupDialog_MAP((NumericUpDown)sender, mapid
+                        , (int)U.ParsePosY32((uint)mapxy.Value)
+                        , (int)U.ParsePosX32((uint)mapxy.Value)
+                        , movecallback);
+                }
             }
             else if (arg.Type == EventScript.ArgType.SCREENXY)
             {
@@ -1898,9 +2036,7 @@ namespace FEBuilderGBA
                     }
                     updateLock = true;
 
-                    uint v = (uint)screenxy.Value;
-                    v = (uint)(((uint)x & 0xFFFF) | (((uint)y & 0xFFFF) << 16));
-
+                    uint v = InputFormRef.ConvertMAPXY32((uint)x, (uint)y);
                     U.ForceUpdate(screenxy, v);
 
                     updateLock = false;
@@ -1911,8 +2047,8 @@ namespace FEBuilderGBA
                 };
 
                 PopupDialog_Screen((NumericUpDown)sender
-                    , (int)U.ParsePosX((uint)screenxy.Value)
-                    , (int)U.ParsePosY((uint)screenxy.Value)
+                    , (int)U.ParsePosX32((uint)screenxy.Value)
+                    , (int)U.ParsePosY32((uint)screenxy.Value)
                     , movecallback);
             }
             else
@@ -2987,7 +3123,26 @@ namespace FEBuilderGBA
                     else if (arg.Type == EventScript.ArgType.MAPXY)
                     {//MAPXY
                         sb.Append(" ");
-                        sb.Append(InputFormRef.GetMAPXY(v));
+                        if (arg.Size == 2)
+                        {
+                            sb.Append(InputFormRef.GetMAPXY16(v));
+                        }
+                        else
+                        {
+                            sb.Append(InputFormRef.GetMAPXY32(v));
+                        }
+                    }
+                    else if (arg.Type == EventScript.ArgType.MAPYX)
+                    {//MAPYX
+                        sb.Append(" ");
+                        if (arg.Size == 2)
+                        {
+                            sb.Append(InputFormRef.GetMAPYX16(v));
+                        }
+                        else
+                        {
+                            sb.Append(InputFormRef.GetMAPYX32(v));
+                        }
                     }
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
                     {//RAM_UNIT_PARAM

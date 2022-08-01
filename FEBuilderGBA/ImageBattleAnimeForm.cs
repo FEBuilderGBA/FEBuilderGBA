@@ -114,7 +114,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    String animename = Program.ROM.getString(addr, 8);
+                    String animename = Program.ROM.getString(addr, 12);
                     return U.ToHexString(i+1) + U.SA(animename) + InputFormRef.GetCommentSA(addr);
                 }
                 );
@@ -125,7 +125,6 @@ namespace FEBuilderGBA
 #if DEBUG
             uint top_battleanime_baseaddress = N_InputFormRef.BaseAddress;
             uint bottum_battleanime_baseaddress = N_InputFormRef.BaseAddress + (N_InputFormRef.BlockSize * N_InputFormRef.DataCount);
-//            ImageUtilOAM.MakeReColorRule(top_battleanime_baseaddress, bottum_battleanime_baseaddress);
 #endif
         }
 
@@ -570,7 +569,7 @@ namespace FEBuilderGBA
            SaveFileDialog save = new SaveFileDialog();
            save.Title = title;
            save.Filter = filter;
-           Program.LastSelectedFilename.Load(this, "", save,N_L_0_SPLITSTRING_7.Text);
+           Program.LastSelectedFilename.Load(this, "", save,N_L_0_SPLITSTRING_11.Text);
 
            DialogResult dr = save.ShowDialog();
            if (dr != DialogResult.OK)
@@ -803,6 +802,7 @@ namespace FEBuilderGBA
                f.Init( ToolAnimationCreatorUserControl.AnimationTypeEnum.BattleAnime
                    , ID, filehint, filename);
                f.Show();
+               f.Focus();
            }
        }
 

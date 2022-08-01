@@ -60,12 +60,12 @@
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.LinkInternt = new System.Windows.Forms.Label();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.N_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.N_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.LinkInternt = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.X_LZ77_INFO = new FEBuilderGBA.TextBoxEx();
             this.N_Comment = new FEBuilderGBA.TextBoxEx();
@@ -96,7 +96,7 @@
             this.N_B2 = new System.Windows.Forms.NumericUpDown();
             this.N_B1 = new System.Windows.Forms.NumericUpDown();
             this.N_B0 = new System.Windows.Forms.NumericUpDown();
-            this.N_L_0_SPLITSTRING_7 = new FEBuilderGBA.TextBoxEx();
+            this.N_L_0_SPLITSTRING_11 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown26 = new System.Windows.Forms.NumericUpDown();
             this.N_P28 = new System.Windows.Forms.NumericUpDown();
             this.N_P24 = new System.Windows.Forms.NumericUpDown();
@@ -107,7 +107,6 @@
             this.N_J_24 = new System.Windows.Forms.Label();
             this.N_J_20 = new System.Windows.Forms.Label();
             this.N_J_16 = new System.Windows.Forms.Label();
-            this.N_J_8 = new System.Windows.Forms.Label();
             this.N_J_12 = new System.Windows.Forms.Label();
             this.N_B11 = new System.Windows.Forms.NumericUpDown();
             this.N_B10 = new System.Windows.Forms.NumericUpDown();
@@ -555,16 +554,6 @@
             this.panel3.Size = new System.Drawing.Size(1234, 30);
             this.panel3.TabIndex = 67;
             // 
-            // LinkInternt
-            // 
-            this.LinkInternt.AutoSize = true;
-            this.LinkInternt.Location = new System.Drawing.Point(3, 483);
-            this.LinkInternt.Name = "LinkInternt";
-            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
-            this.LinkInternt.TabIndex = 30;
-            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
-            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
-            // 
             // N_ReloadListButton
             // 
             this.N_ReloadListButton.Location = new System.Drawing.Point(484, -1);
@@ -624,6 +613,16 @@
             this.N_ReadStartAddress.Size = new System.Drawing.Size(125, 25);
             this.N_ReadStartAddress.TabIndex = 27;
             // 
+            // LinkInternt
+            // 
+            this.LinkInternt.AutoSize = true;
+            this.LinkInternt.Location = new System.Drawing.Point(3, 483);
+            this.LinkInternt.Name = "LinkInternt";
+            this.LinkInternt.Size = new System.Drawing.Size(273, 18);
+            this.LinkInternt.TabIndex = 30;
+            this.LinkInternt.Text = "インターネットから新しいリソースを探す";
+            this.LinkInternt.Click += new System.EventHandler(this.LinkInternt_Click);
+            // 
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -657,7 +656,7 @@
             this.DragTargetPanel.Controls.Add(this.N_B2);
             this.DragTargetPanel.Controls.Add(this.N_B1);
             this.DragTargetPanel.Controls.Add(this.N_B0);
-            this.DragTargetPanel.Controls.Add(this.N_L_0_SPLITSTRING_7);
+            this.DragTargetPanel.Controls.Add(this.N_L_0_SPLITSTRING_11);
             this.DragTargetPanel.Controls.Add(this.numericUpDown26);
             this.DragTargetPanel.Controls.Add(this.N_P28);
             this.DragTargetPanel.Controls.Add(this.N_P24);
@@ -668,7 +667,6 @@
             this.DragTargetPanel.Controls.Add(this.N_J_24);
             this.DragTargetPanel.Controls.Add(this.N_J_20);
             this.DragTargetPanel.Controls.Add(this.N_J_16);
-            this.DragTargetPanel.Controls.Add(this.N_J_8);
             this.DragTargetPanel.Controls.Add(this.N_J_12);
             this.DragTargetPanel.Controls.Add(this.N_B11);
             this.DragTargetPanel.Controls.Add(this.N_B10);
@@ -1037,15 +1035,15 @@
             this.N_B0.Size = new System.Drawing.Size(64, 25);
             this.N_B0.TabIndex = 157;
             // 
-            // N_L_0_SPLITSTRING_7
+            // N_L_0_SPLITSTRING_11
             // 
-            this.N_L_0_SPLITSTRING_7.ErrorMessage = "";
-            this.N_L_0_SPLITSTRING_7.Location = new System.Drawing.Point(162, 8);
-            this.N_L_0_SPLITSTRING_7.Margin = new System.Windows.Forms.Padding(5);
-            this.N_L_0_SPLITSTRING_7.Name = "N_L_0_SPLITSTRING_7";
-            this.N_L_0_SPLITSTRING_7.Placeholder = "";
-            this.N_L_0_SPLITSTRING_7.Size = new System.Drawing.Size(183, 25);
-            this.N_L_0_SPLITSTRING_7.TabIndex = 155;
+            this.N_L_0_SPLITSTRING_11.ErrorMessage = "";
+            this.N_L_0_SPLITSTRING_11.Location = new System.Drawing.Point(162, 8);
+            this.N_L_0_SPLITSTRING_11.Margin = new System.Windows.Forms.Padding(5);
+            this.N_L_0_SPLITSTRING_11.Name = "N_L_0_SPLITSTRING_11";
+            this.N_L_0_SPLITSTRING_11.Placeholder = "";
+            this.N_L_0_SPLITSTRING_11.Size = new System.Drawing.Size(183, 25);
+            this.N_L_0_SPLITSTRING_11.TabIndex = 155;
             // 
             // numericUpDown26
             // 
@@ -1176,17 +1174,6 @@
             this.N_J_16.TabIndex = 72;
             this.N_J_16.Text = "FrameData";
             this.N_J_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N_J_8
-            // 
-            this.N_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_8.Location = new System.Drawing.Point(-1, 91);
-            this.N_J_8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.N_J_8.Name = "N_J_8";
-            this.N_J_8.Size = new System.Drawing.Size(157, 31);
-            this.N_J_8.TabIndex = 68;
-            this.N_J_8.Text = "00";
-            this.N_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N_J_12
             // 
@@ -1566,7 +1553,6 @@
         private System.Windows.Forms.NumericUpDown N_ReadCount;
         private System.Windows.Forms.NumericUpDown N_ReadStartAddress;
         private System.Windows.Forms.Panel DragTargetPanel;
-        private System.Windows.Forms.Label N_J_8;
         private System.Windows.Forms.Label N_J_12;
         private System.Windows.Forms.NumericUpDown N_B11;
         private System.Windows.Forms.NumericUpDown N_B10;
@@ -1598,7 +1584,7 @@
         private System.Windows.Forms.NumericUpDown N_B2;
         private System.Windows.Forms.NumericUpDown N_B1;
         private System.Windows.Forms.NumericUpDown N_B0;
-        private FEBuilderGBA.TextBoxEx N_L_0_SPLITSTRING_7;
+        private FEBuilderGBA.TextBoxEx N_L_0_SPLITSTRING_11;
         private System.Windows.Forms.NumericUpDown numericUpDown26;
         private System.Windows.Forms.Button BattleAnimeExportButton;
         private System.Windows.Forms.Button BattleAnimeImportButton;

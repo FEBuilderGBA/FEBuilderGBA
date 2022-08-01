@@ -1471,14 +1471,8 @@ namespace FEBuilderGBA
                     }
                     updateLock = true;
 
-                    byte[] str = new byte[maxid - link_id + 1];
-                    for (uint nn = 0; nn < src_objests.Length; nn++)
-                    {
-                        str[nn] = (byte)src_objests[nn].Value;
-                    }
-
+                    link_object.Text = U.MakeNUDString(maxid, link_id, src_objests);
                     FETextDecode decoder = new FETextDecode();
-                    link_object.Text = decoder.listbyte_to_string(str, src_objests.Length);
                     updateLock = false;
 
                 };
@@ -1488,6 +1482,12 @@ namespace FEBuilderGBA
                     {
                         return;
                     }
+                    string oldString = U.MakeNUDString(maxid, link_id, src_objests);
+                    if (link_object.Text == oldString)
+                    {//変更なし
+                        return;
+                    }
+
                     updateLock = true;
 
                     byte[] sjisstr = Program.SystemTextEncoder.Encode(link_object.Text);
@@ -7393,11 +7393,49 @@ namespace FEBuilderGBA
             double sec = Math.Round( ((double)num / 60.0f) , 4);
             return R._("フレーム秒({0}秒)", sec );
         }
-        public static string GetMAPXY(uint num)
+        public static string GetMAPXY16(uint num)
+        {
+            uint y = ((num & 0xff00) >> 8);
+            uint x = ((num & 0x00ff));
+            return String.Format("({0},{1})", x, y);
+        }
+        public static string GetMAPXY32(uint num)
         {
             uint y = ((num & 0xffff0000) >> 16);
             uint x = ((num & 0x0000ffff) );
             return String.Format("({0},{1})", x, y);
+        }
+        public static string GetMAPYX16(uint num)
+        {
+            uint y = ((num & 0x00ff) >> 8);
+            uint x = ((num & 0xff00));
+            return String.Format("({0},{1})", x, y);
+        }
+        public static string GetMAPYX32(uint num)
+        {
+            uint y = ((num & 0x0000ffff) >> 16);
+            uint x = ((num & 0xffff0000));
+            return String.Format("({0},{1})", x, y);
+        }
+        public static uint ConvertMAPXY16(uint x, uint y)
+        {
+            uint v = (uint)(((uint)x & 0xFF) | (((uint)y & 0xFF) << 8));
+            return v;
+        }
+        public static uint ConvertMAPXY32(uint x, uint y)
+        {
+            uint v = (uint)(((uint)x & 0xFFFF) | (((uint)y & 0xFFFF) << 16));
+            return v;
+        }
+        public static uint ConvertMAPYX16(uint x, uint y)
+        {
+            uint v = (uint)(((uint)y & 0xFF) | (((uint)x & 0xFF) << 8));
+            return v;
+        }
+        public static uint ConvertMAPYX32(uint x, uint y)
+        {
+            uint v = (uint)(((uint)y & 0xFFFF) | (((uint)x & 0xFFFF) << 16));
+            return v;
         }
 
         public static string GetMapChangeName(uint mapid, uint changeid)

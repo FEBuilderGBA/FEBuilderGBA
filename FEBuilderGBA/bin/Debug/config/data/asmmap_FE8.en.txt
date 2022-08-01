@@ -14923,3 +14923,4 @@ r3=X tile position of menu of right	{U}
 085FF1B4	:085FF1C0	EfxDummy01000000FrameData	{J}
 085D4F90	:085D4F98	EfxDummy01000000FrameControl	{U}
 085D4F84	:085D4F90	EfxDummy01000000FrameData	{U}
+081F5BE8	Used for "survival evaluation" of strategy evaluation.	{J}

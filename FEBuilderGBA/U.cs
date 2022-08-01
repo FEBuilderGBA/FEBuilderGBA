@@ -1733,14 +1733,23 @@ namespace FEBuilderGBA
         {
             return (unitgrow >> 3) & 0x1F;
         }
-        public static uint ParsePosY(uint unitpos)
+        public static uint ParsePosY32(uint unitpos)
         {
             return (unitpos >> 16) & 0xFFFF;
         }
-        public static uint ParsePosX(uint unitpos)
+        public static uint ParsePosX32(uint unitpos)
         {
             return (unitpos) & 0xFFFF;
         }
+        public static uint ParsePosY16(uint unitpos)
+        {
+            return (unitpos >> 8) & 0xFF;
+        }
+        public static uint ParsePosX16(uint unitpos)
+        {
+            return (unitpos) & 0xFF;
+        }
+
         public static uint ParseFE8UnitPosX(uint unitpos)
         {
             Debug.Assert(Program.ROM.RomInfo.version >= 8); //FE8限定
@@ -7698,6 +7707,29 @@ namespace FEBuilderGBA
                 }
             }
             return true;
+        }
+
+        public static string MakeNUDString(uint maxid, uint link_id, NumericUpDown[] src_objests)
+        {
+            byte[] str = new byte[maxid - link_id + 1];
+            for (uint nn = 0; nn < src_objests.Length; nn++)
+            {
+                str[nn] = (byte)src_objests[nn].Value;
+            }
+
+            FETextDecode decoder = new FETextDecode();
+            return decoder.listbyte_to_string(str, src_objests.Length);
+        }
+        public static string MakeNUDWideString(uint maxid, uint link_id, NumericUpDown[] src_objests)
+        {
+            byte[] str = new byte[maxid - link_id + 1];
+            for (uint nn = 0; nn < src_objests.Length; nn++)
+            {
+                str[nn] = (byte)src_objests[nn].Value;
+            }
+
+            FETextDecode decoder = new FETextDecode();
+            return decoder.listbyte_to_string(str, src_objests.Length);
         }
     }
 }

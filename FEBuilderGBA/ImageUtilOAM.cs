@@ -2736,60 +2736,6 @@ namespace FEBuilderGBA
             return map;
         }
 
-#if DEBUG
-        //ReColor用の色割り当てを作成します。
-        //既存のバトルアニメの色配色から、カラー割り当てを模倣します.
-        public static Dictionary<uint, ReColorMap> MakeReColorRule(uint top_battleanime_baseaddress, uint bottum_battleanime_baseaddress)
-        {
-//            Dictionary<uint, ReColorMap> map = new Dictionary<uint, ReColorMap>();
-            Dictionary<uint, ReColorMap> map = LoadReColorRule();
-            uint id = 0;
-            for (uint p = top_battleanime_baseaddress; p <= bottum_battleanime_baseaddress; p += 32 , id++ )
-            {
-                uint palette = Program.ROM.p32(p + 28);
-                if (! U.isSafetyOffset(palette))
-                {
-                    continue;
-                }
-
-                byte[] palette_bin = LZ77.decompress(Program.ROM.Data,palette);
-                if (palette_bin.Length < 2 * 16 * 4)
-                {//パレットが足りない 16色*4配色必要.
-                    continue;
-                }
-
-                for (uint i = 0; i < 16; i++ )
-                {
-                    uint player = U.u16(palette_bin, (i * 2) + (0));
-                    if (map.ContainsKey(player))
-                    {//既に変換を知っている色なので、次へ.
-                        continue;
-                    }
-
-                    uint enemy = U.u16(palette_bin, (i * 2) + (2 * 16 * 1));
-                    uint npc = U.u16(palette_bin, (i * 2) + (2 * 16 * 2));
-                    uint gray = U.u16(palette_bin, (i * 2) + (2 * 16 * 3));
-                    if (player == enemy || player == npc || player == gray )
-                    {//同じ色が使われているので無視.
-                        continue;
-                    }
-                    if (npc == gray)
-                    {
-                        continue;
-                    }
-                    string name = Program.ROM.getString(p);
-                    Log.Debug(U.ToHexString(player) + "\t" + U.ToHexString(enemy) + "\t" + U.ToHexString(npc) + "\t" + U.ToHexString(gray) + "//" + U.To0xHexString(id) + " " + name);
-                    ReColorMap m = new ReColorMap();
-                    m.Enemy = enemy;
-                    m.NPC = npc;
-                    m.Gray = gray;
-                    map[player] = m;
-                }
-            }
-
-            return map;
-        }
-#endif
         static bool checkOAMSize(int size)
         {
             string error = checkOAMSizeSimple(size);

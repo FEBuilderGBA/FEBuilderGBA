@@ -44,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.UNITCLASS_LIST = new FEBuilderGBA.ListBoxEx();
             this.label21 = new System.Windows.Forms.Label();
-            this.J_11 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.B9 = new System.Windows.Forms.NumericUpDown();
@@ -75,6 +74,8 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.REDOButton = new System.Windows.Forms.Button();
+            this.UNDOButton = new System.Windows.Forms.Button();
             this.PaletteOverradeALL = new System.Windows.Forms.CheckBox();
             this.AutoScrollPanel = new System.Windows.Forms.Panel();
             this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
@@ -174,8 +175,6 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.REDOButton = new System.Windows.Forms.Button();
-            this.UNDOButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -337,7 +336,6 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.UNITCLASS_LIST);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.J_11);
             this.panel4.Controls.Add(this.B11);
             this.panel4.Controls.Add(this.B10);
             this.panel4.Controls.Add(this.B9);
@@ -401,7 +399,7 @@
             // Comment
             // 
             this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(135, 252);
+            this.Comment.Location = new System.Drawing.Point(135, 222);
             this.Comment.Name = "Comment";
             this.Comment.Placeholder = "";
             this.Comment.Size = new System.Drawing.Size(338, 25);
@@ -411,7 +409,7 @@
             // 
             this.label13.AccessibleDescription = "@COMMENT";
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(-1, 249);
+            this.label13.Location = new System.Drawing.Point(-1, 219);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 31);
@@ -421,7 +419,7 @@
             // 
             // L_12_NEWALLOC_IMAGEUNITPALETTE
             // 
-            this.L_12_NEWALLOC_IMAGEUNITPALETTE.Location = new System.Drawing.Point(274, 181);
+            this.L_12_NEWALLOC_IMAGEUNITPALETTE.Location = new System.Drawing.Point(274, 167);
             this.L_12_NEWALLOC_IMAGEUNITPALETTE.Name = "L_12_NEWALLOC_IMAGEUNITPALETTE";
             this.L_12_NEWALLOC_IMAGEUNITPALETTE.Size = new System.Drawing.Size(231, 30);
             this.L_12_NEWALLOC_IMAGEUNITPALETTE.TabIndex = 222;
@@ -463,21 +461,10 @@
             this.label21.Text = "↓文字列内訳";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // J_11
-            // 
-            this.J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_11.Location = new System.Drawing.Point(-1, 144);
-            this.J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_11.Name = "J_11";
-            this.J_11.Size = new System.Drawing.Size(132, 30);
-            this.J_11.TabIndex = 175;
-            this.J_11.Text = "00";
-            this.J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // B11
             // 
             this.B11.Hexadecimal = true;
-            this.B11.Location = new System.Drawing.Point(135, 148);
+            this.B11.Location = new System.Drawing.Point(343, 118);
             this.B11.Margin = new System.Windows.Forms.Padding(2);
             this.B11.Maximum = new decimal(new int[] {
             65535,
@@ -491,7 +478,7 @@
             // B10
             // 
             this.B10.Hexadecimal = true;
-            this.B10.Location = new System.Drawing.Point(344, 114);
+            this.B10.Location = new System.Drawing.Point(275, 118);
             this.B10.Margin = new System.Windows.Forms.Padding(2);
             this.B10.Maximum = new decimal(new int[] {
             65535,
@@ -505,7 +492,7 @@
             // B9
             // 
             this.B9.Hexadecimal = true;
-            this.B9.Location = new System.Drawing.Point(274, 114);
+            this.B9.Location = new System.Drawing.Point(205, 118);
             this.B9.Margin = new System.Windows.Forms.Padding(2);
             this.B9.Maximum = new decimal(new int[] {
             65535,
@@ -519,7 +506,7 @@
             // B8
             // 
             this.B8.Hexadecimal = true;
-            this.B8.Location = new System.Drawing.Point(204, 114);
+            this.B8.Location = new System.Drawing.Point(135, 118);
             this.B8.Margin = new System.Windows.Forms.Padding(2);
             this.B8.Maximum = new decimal(new int[] {
             65535,
@@ -533,7 +520,7 @@
             // B7
             // 
             this.B7.Hexadecimal = true;
-            this.B7.Location = new System.Drawing.Point(135, 114);
+            this.B7.Location = new System.Drawing.Point(343, 83);
             this.B7.Margin = new System.Windows.Forms.Padding(2);
             this.B7.Maximum = new decimal(new int[] {
             65535,
@@ -613,7 +600,7 @@
             // P12
             // 
             this.P12.Hexadecimal = true;
-            this.P12.Location = new System.Drawing.Point(135, 184);
+            this.P12.Location = new System.Drawing.Point(135, 170);
             this.P12.Margin = new System.Windows.Forms.Padding(2);
             this.P12.Maximum = new decimal(new int[] {
             -559939585,
@@ -628,7 +615,7 @@
             // B6
             // 
             this.B6.Hexadecimal = true;
-            this.B6.Location = new System.Drawing.Point(344, 82);
+            this.B6.Location = new System.Drawing.Point(275, 83);
             this.B6.Margin = new System.Windows.Forms.Padding(2);
             this.B6.Maximum = new decimal(new int[] {
             65535,
@@ -642,7 +629,7 @@
             // J_12
             // 
             this.J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_12.Location = new System.Drawing.Point(-1, 181);
+            this.J_12.Location = new System.Drawing.Point(-1, 167);
             this.J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_12.Name = "J_12";
             this.J_12.Size = new System.Drawing.Size(132, 30);
@@ -653,7 +640,7 @@
             // B5
             // 
             this.B5.Hexadecimal = true;
-            this.B5.Location = new System.Drawing.Point(274, 82);
+            this.B5.Location = new System.Drawing.Point(205, 83);
             this.B5.Margin = new System.Windows.Forms.Padding(2);
             this.B5.Maximum = new decimal(new int[] {
             65535,
@@ -667,7 +654,7 @@
             // B4
             // 
             this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(204, 82);
+            this.B4.Location = new System.Drawing.Point(135, 83);
             this.B4.Margin = new System.Windows.Forms.Padding(2);
             this.B4.Maximum = new decimal(new int[] {
             65535,
@@ -681,7 +668,7 @@
             // B3
             // 
             this.B3.Hexadecimal = true;
-            this.B3.Location = new System.Drawing.Point(135, 82);
+            this.B3.Location = new System.Drawing.Point(343, 48);
             this.B3.Margin = new System.Windows.Forms.Padding(2);
             this.B3.Maximum = new decimal(new int[] {
             65535,
@@ -954,6 +941,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1265, 452);
             this.panel1.TabIndex = 74;
+            // 
+            // REDOButton
+            // 
+            this.REDOButton.Location = new System.Drawing.Point(473, 382);
+            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.REDOButton.Name = "REDOButton";
+            this.REDOButton.Size = new System.Drawing.Size(136, 30);
+            this.REDOButton.TabIndex = 280;
+            this.REDOButton.Text = "REDO";
+            this.REDOButton.UseVisualStyleBackColor = true;
+            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
+            // 
+            // UNDOButton
+            // 
+            this.UNDOButton.Location = new System.Drawing.Point(330, 382);
+            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UNDOButton.Name = "UNDOButton";
+            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
+            this.UNDOButton.TabIndex = 279;
+            this.UNDOButton.Text = "UNDO";
+            this.UNDOButton.UseVisualStyleBackColor = true;
+            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
             // 
             // PaletteOverradeALL
             // 
@@ -2373,28 +2382,6 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // REDOButton
-            // 
-            this.REDOButton.Location = new System.Drawing.Point(473, 382);
-            this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
-            this.REDOButton.Name = "REDOButton";
-            this.REDOButton.Size = new System.Drawing.Size(136, 30);
-            this.REDOButton.TabIndex = 280;
-            this.REDOButton.Text = "REDO";
-            this.REDOButton.UseVisualStyleBackColor = true;
-            this.REDOButton.Click += new System.EventHandler(this.REDOButton_Click);
-            // 
-            // UNDOButton
-            // 
-            this.UNDOButton.Location = new System.Drawing.Point(330, 382);
-            this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
-            this.UNDOButton.Name = "UNDOButton";
-            this.UNDOButton.Size = new System.Drawing.Size(139, 30);
-            this.UNDOButton.TabIndex = 279;
-            this.UNDOButton.Text = "UNDO";
-            this.UNDOButton.UseVisualStyleBackColor = true;
-            this.UNDOButton.Click += new System.EventHandler(this.UNDOButton_Click);
-            // 
             // ImageUnitPaletteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2518,7 +2505,6 @@
         private System.Windows.Forms.NumericUpDown B3;
         private System.Windows.Forms.Label J_0;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label J_11;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;

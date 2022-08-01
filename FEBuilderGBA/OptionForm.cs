@@ -1171,9 +1171,9 @@ namespace FEBuilderGBA
         static string lang_low()
         {
             string l =  Program.Config.at("func_lang", "auto");
-            if (l == "de")
-            {//ドイツ語は機械翻訳なので消す 2018/04/中旬ごろには消去する.
-                return "en";
+            if (l == "ja" || l == "en" || l == "zh")
+            {//ディフォルト対応の言語
+                return l;
             }
             if (l == "auto")
             {
@@ -1188,12 +1188,9 @@ namespace FEBuilderGBA
                 {//日本語
                     return "ja";
                 }
-                else
-                {//不明な場合は、とりあえず、英語とする. 日本語にしたいが、英語の方が困る人が少ないだろう.
-                    return "en";
-                }
             }
-            return l;
+            //不明な場合は、とりあえず、英語とする. 日本語にしたいが、英語の方が困る人が少ないだろう.
+            return "en";
         }
         public enum textencoding_enum
         {

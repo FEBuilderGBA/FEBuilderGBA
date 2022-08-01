@@ -272,7 +272,14 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.MAPXY)
             {//MAPXY
-                text = InputFormRef.GetMAPXY(value);
+                if (arg.Size == 4)
+                {
+                    text = InputFormRef.GetMAPXY32(value);
+                }
+                else
+                {
+                    text = InputFormRef.GetMAPXY16(value);
+                }
             }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;

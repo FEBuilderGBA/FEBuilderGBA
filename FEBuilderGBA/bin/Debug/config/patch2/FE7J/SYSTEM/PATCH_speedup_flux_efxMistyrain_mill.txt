@@ -86,3 +86,4 @@ INFO=闇魔法の基本魔法のミィル(efxMistyrain)の動作速度を少し�
 
 INFO.en=Increase the speed of the basic dark magic Flux(efxMistyrain) operation a little bit.\r\nIf you raise it too much, it will look weird.\r\nIn the arena, you will be using Flux continuously, so want it to be as fast as the other basic magic magic.
 INFO.zh=Increase the speed of the basic dark magic Flux(efxMistyrain) operation a little bit.\r\nIf you raise it too much, it will look weird.\r\nIn the arena, you will be using Flux continuously, so want it to be as fast as the other basic magic magic.
+NAME.zh=增加暗魔法米尔的速度。
