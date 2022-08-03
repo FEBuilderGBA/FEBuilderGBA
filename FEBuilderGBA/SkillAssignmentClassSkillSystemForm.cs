@@ -62,6 +62,11 @@ namespace FEBuilderGBA
             U.SetIcon(ExportAllButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportAllButton, Properties.Resources.icon_upload);
             InputFormRef.markupJumpLabel(X_LEARNINFO);
+
+            if (SkillConfigSkillSystemForm.IsClassSkillExtends())
+            {
+                X_LevelAddPanel.Show();
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -829,5 +834,90 @@ namespace FEBuilderGBA
             string url = "https://dw.ngmansion.xyz/doku.php?id=en:guide_febuildergba_learnskillinfo";
             U.OpenURLOrFile(url);
         }
+
+        bool X_LV_UpdateLock = false;
+        private void N1_B0_ValueChanged(object sender, EventArgs e)
+        {
+            if (! X_LevelAddPanel.Visible)
+            {
+                return;
+            }
+
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            uint lv = (uint)N1_B0.Value;
+            uint trueLevel = lv & 0x1f;
+
+            X_LV_Value.Value = trueLevel;
+            X_LV_PlayerOnlyCheckBox.Checked = ((lv & 32) == 32) ? true : false;
+            X_LV_EnemyOnlyCheckBox.Checked = ((lv & 64) == 64) ? true : false;
+            X_LV_NormalHardCheckBox.Checked = ((lv & 96) == 96) ? true : false;
+            X_LV_HardOnlyCheckBox.Checked = ((lv & 128) == 128) ? true : false;
+            X_LV_UpdateLock = false;
+        }
+
+        private void X_LV_PlayerOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            N1_B0.Value = U.UpdateCheckBitBox(X_LV_PlayerOnlyCheckBox, (uint)N1_B0.Value, 32);
+            X_LV_UpdateLock = false;
+        }
+
+        private void X_LV_EnemyOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            N1_B0.Value = U.UpdateCheckBitBox(X_LV_EnemyOnlyCheckBox, (uint)N1_B0.Value, 64);
+            X_LV_UpdateLock = false;
+        }
+
+        private void X_LV_NormalHardCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            N1_B0.Value = U.UpdateCheckBitBox(X_LV_NormalHardCheckBox, (uint)N1_B0.Value, 96);
+            X_LV_UpdateLock = false;
+        }
+
+        private void X_LV_HardOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            N1_B0.Value = U.UpdateCheckBitBox(X_LV_HardOnlyCheckBox, (uint)N1_B0.Value, 128);
+            X_LV_UpdateLock = false;
+        }
+
+        private void X_LV_Value_ValueChanged(object sender, EventArgs e)
+        {
+            if (X_LV_UpdateLock)
+            {
+                return;
+            }
+            X_LV_UpdateLock = true;
+            uint lv = (uint)N1_B0.Value;
+            uint trueLevel = (uint)X_LV_Value.Value;
+            lv = lv - (lv & 0x1f);
+            lv += trueLevel;
+
+            N1_B0.Value = lv;
+            X_LV_UpdateLock = false;
+        }
+
     }
 }

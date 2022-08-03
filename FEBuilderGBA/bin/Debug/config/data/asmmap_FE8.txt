@@ -14871,3 +14871,8 @@
 085D4F90	:085D4F98	EfxDummy01000000FrameControl	ダミーフレームだと思う	{U}
 085D4F84	:085D4F90	EfxDummy01000000FrameData	ダミーフレームだと思う	{U}
 081F5BE8	攻略評価の「生存評価」に利用	{J}
+0805B3B0	SetupEkrUnitMainMini_OPClassReel	{J}
+080B8A88	Start_opinfoDrawBattleAnime	r0=this	r1=OPClassReelDataPointer	{J}
+080B8A48	Cleanup_opinfoDrawBattleAnime	{J}
+080B83A8	DrawMain_opinfoDrawBattleAnime	{J}
+080B83A8	Preparation_opinfoDrawBattleAnime	{J}

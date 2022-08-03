@@ -10201,11 +10201,14 @@ Import failed.
 :習得レベルとスキルの詳細は、ここをクリックしてください。
 Click here for more information on learning skills and levels.
 
+:クラススキル
+Class Skill
+
 :レベルアップで取得するスキルの先頭アドレス
 The first address of the skill to be acquired by leveling up.
 
-:クラススキル
-Class Skill
+:レベル内訳
+Level breakdown.
 
 :スキル1
 Skill 1

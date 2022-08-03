@@ -7696,6 +7696,25 @@ namespace FEBuilderGBA
         {
             return b ? 1 : 0;
         }
+        public static bool IntToBool(int b)
+        {
+            return b == 0 ? false : true;
+        }
+        public static uint UpdateCheckBitBox(CheckBox box, uint a, uint bit)
+        {
+            return UpdateCheckBitBox(box.Checked, a, bit);
+        }
+        public static uint UpdateCheckBitBox(bool ch, uint a, uint bit )
+        {
+            if (ch)
+            {
+                return a | bit;
+            }
+            else
+            {
+                return a & ~bit;
+            }
+        }
 
         public static bool IsEmptyRange(byte[] data, byte fill = 0)
         {

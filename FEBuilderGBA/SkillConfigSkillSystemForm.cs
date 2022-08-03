@@ -108,6 +108,7 @@ namespace FEBuilderGBA
             g_Cache_FindAnimePointer = PatchUtil.NO_CACHE;
             g_Cache_SkillScrollItemID = 0xEEEE;
             g_Cache_SkillName = new Dictionary<uint,string>();
+            g_IsClassSkillExtends = U.NOT_FOUND;
         }
 
         static uint g_Cache_FindAssignPersonalSkillPointer = PatchUtil.NO_CACHE;
@@ -273,6 +274,30 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
+
+        static uint g_IsClassSkillExtends = U.NOT_FOUND;
+        public static bool IsClassSkillExtends()
+        {
+            if (g_IsClassSkillExtends == U.NOT_FOUND)
+            {
+                g_IsClassSkillExtends = IsClassSkillExtendsLow();
+            }
+            return g_IsClassSkillExtends != 0;
+        }
+        static uint IsClassSkillExtendsLow()
+        {
+            byte[] need = new byte[]{0xF0 ,0xE7 ,0x02 ,0x2B ,0x12 ,0xD0 ,0x03 ,0x2B ,0x06 ,0xD1 ,0x0D ,0x48 ,0x42 ,0x21 ,0x41 ,0x5C ,0x20 ,0x22 ,0x11 ,0x42 ,0x0A ,0xD1 ,0xE5 ,0xE7 ,0x04 ,0x2B ,0x06 ,0xD1 ,0x08 ,0x48 ,0x14 ,0x21 ,0x41 ,0x5C ,0x40 ,0x22 ,0x11 ,0x42 ,0x01 ,0xD1 ,0xDC ,0xE7 ,0xDB ,0xE7 ,0x63 ,0x78 ,0x33 ,0x70 ,0x01 ,0x36 ,0xD7 ,0xE7 ,0x00 ,0x20 ,0x30 ,0x70 ,0x06 ,0xBC ,0xF1 ,0xBC ,0x70 ,0x47 ,0x00 ,0x00 ,0xF0 ,0xBC ,0x02 ,0x02};
+
+            uint start = 0xB00000;
+            uint end = 0xC00000;
+            uint addr = U.Grep(Program.ROM.Data, need, start, end, 4);
+            if (addr == U.NOT_FOUND)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        
 
         const uint SkillPalettePointer = 0x22370; //オリジナルROMからあるパレット.
         public static uint GetIconAddr(uint index, uint imageBaseAddress)

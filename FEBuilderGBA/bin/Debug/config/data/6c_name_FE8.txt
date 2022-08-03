@@ -847,3 +847,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0000563C=FaceEyeLogic	{J}	//085B8FFC
 000BE82C=WorldmapGaideMenu	{J}	//08AC2278
 000B9898=WorldmapGaideMenu	{U}	//08B12D1C
+000B8AA4=opinfoDrawBattleAnime	{J}	//08AAFDEC

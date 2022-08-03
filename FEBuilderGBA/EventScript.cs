@@ -370,6 +370,55 @@ namespace FEBuilderGBA
             return script;
         }
 
+        static List<Arg> SortArgs(List<Arg> args, String[] info)
+        {
+            List<Arg> sortArgs = new List<Arg>(args.Count);
+            for (int i = 0; i < info.Length; i++)
+            {
+                string a = info[i];
+                if (a == "" || a[0] != '[')
+                {
+                    continue;
+                }
+                char symbol = a[1];
+                foreach(Arg arg in args)
+                {
+                    if (arg.Symbol == symbol)
+                    {
+                        sortArgs.Add(arg);
+                        break;
+                    }
+                }
+            }
+            if (sortArgs.Count != args.Count)
+            {//何か取りこぼしがある
+                foreach (Arg arg in args)
+                {
+                    if (! MatchArgs(arg, sortArgs))
+                    {
+                        sortArgs.Add(arg);
+                        if (sortArgs.Count == args.Count)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return sortArgs;
+        }
+
+        static bool MatchArgs(Arg a, List<Arg> sortArgs)
+        {
+            foreach (Arg b in sortArgs)
+            {
+                if (a.Position == b.Position)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         static bool ErrorCheckArg(Arg arg,string line)
         {
             if (IsPointerArgs(arg.Type))
