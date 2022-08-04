@@ -201,6 +201,15 @@ namespace FEBuilderGBA
                return;
            }
 
+           if (InputFormRef.DataCount == 0)
+           {
+               DialogResult dr = R.ShowNoYes("リストが0件です。\r\n空のリストを分離させても意味がないのですが、それでも分離独立させますか？");
+               if (dr != DialogResult.Yes)
+               {
+                   return;
+               }
+           }
+
            Undo.UndoData undodata = Program.Undo.NewUndoData(this, this.Name + " Independence");
 
            uint dataSize = (InputFormRef.DataCount + 1) * InputFormRef.BlockSize;

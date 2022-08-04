@@ -35,12 +35,18 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.panel8 = new System.Windows.Forms.Panel();
             this.X_LevelAddPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.X_LV_Value = new System.Windows.Forms.NumericUpDown();
             this.X_LV_HardOnlyCheckBox = new System.Windows.Forms.CheckBox();
             this.X_LV_NormalHardCheckBox = new System.Windows.Forms.CheckBox();
             this.X_LV_EnemyOnlyCheckBox = new System.Windows.Forms.CheckBox();
             this.X_LV_PlayerOnlyCheckBox = new System.Windows.Forms.CheckBox();
+            this.X_LV_255 = new System.Windows.Forms.Panel();
+            this.X_LV255_infoTextBox = new System.Windows.Forms.TextBox();
             this.X_LEARNINFO = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.ExportAllButton = new System.Windows.Forms.Button();
@@ -50,28 +56,39 @@
             this.IndependencePanel = new System.Windows.Forms.Panel();
             this.IndependenceButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.N1_J_0 = new System.Windows.Forms.Label();
             this.N1_B0 = new System.Windows.Forms.NumericUpDown();
             this.N1_J_1_SKILLASSIGNMENT = new System.Windows.Forms.Label();
+            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.N1_B1 = new System.Windows.Forms.NumericUpDown();
+            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
+            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label7 = new System.Windows.Forms.Label();
             this.N1_WriteButton = new System.Windows.Forms.Button();
             this.N1_Address = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.N1_ReloadListButton = new System.Windows.Forms.Button();
+            this.X_LevelUPSkillLabel = new FEBuilderGBA.LabelEx();
             this.label2 = new System.Windows.Forms.Label();
             this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.X_LevelUpAddr = new System.Windows.Forms.NumericUpDown();
+            this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
+            this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_SKILLASSIGNMENT = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -79,46 +96,32 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_LevelUPSkillLabel = new FEBuilderGBA.LabelEx();
-            this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
-            this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_LV_Value = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.X_LevelAddPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LV_Value)).BeginInit();
+            this.X_LV_255.SuspendLayout();
             this.panel10.SuspendLayout();
             this.ZeroPointerPanel.SuspendLayout();
             this.IndependencePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_LevelUpAddr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_LV_Value)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -212,10 +215,21 @@
             this.panel4.Size = new System.Drawing.Size(904, 771);
             this.panel4.TabIndex = 96;
             // 
+            // SKILLNAME
+            // 
+            this.SKILLNAME.ErrorMessage = "";
+            this.SKILLNAME.Location = new System.Drawing.Point(48, 36);
+            this.SKILLNAME.Name = "SKILLNAME";
+            this.SKILLNAME.Placeholder = "";
+            this.SKILLNAME.ReadOnly = true;
+            this.SKILLNAME.Size = new System.Drawing.Size(191, 25);
+            this.SKILLNAME.TabIndex = 119;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.X_LevelAddPanel);
+            this.panel8.Controls.Add(this.X_LV_255);
             this.panel8.Controls.Add(this.X_LEARNINFO);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.ZeroPointerPanel);
@@ -227,9 +241,9 @@
             this.panel8.Controls.Add(this.N1_SKILLTEXT);
             this.panel8.Controls.Add(this.N1_B1);
             this.panel8.Controls.Add(this.N1_SKILLICON);
-            this.panel8.Location = new System.Drawing.Point(246, 321);
+            this.panel8.Location = new System.Drawing.Point(246, 293);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(657, 449);
+            this.panel8.Size = new System.Drawing.Size(657, 477);
             this.panel8.TabIndex = 118;
             // 
             // X_LevelAddPanel
@@ -241,16 +255,52 @@
             this.X_LevelAddPanel.Controls.Add(this.X_LV_NormalHardCheckBox);
             this.X_LevelAddPanel.Controls.Add(this.X_LV_EnemyOnlyCheckBox);
             this.X_LevelAddPanel.Controls.Add(this.X_LV_PlayerOnlyCheckBox);
-            this.X_LevelAddPanel.Location = new System.Drawing.Point(2, 116);
+            this.X_LevelAddPanel.Location = new System.Drawing.Point(47, 36);
             this.X_LevelAddPanel.Name = "X_LevelAddPanel";
-            this.X_LevelAddPanel.Size = new System.Drawing.Size(272, 194);
+            this.X_LevelAddPanel.Size = new System.Drawing.Size(600, 101);
             this.X_LevelAddPanel.TabIndex = 154;
             this.X_LevelAddPanel.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(148, 4);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(181, 30);
+            this.label5.TabIndex = 155;
+            this.label5.Text = "レベル";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 87);
+            this.label1.TabIndex = 113;
+            this.label1.Text = "習得レベルの内訳";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // X_LV_Value
+            // 
+            this.X_LV_Value.Location = new System.Drawing.Point(333, 8);
+            this.X_LV_Value.Margin = new System.Windows.Forms.Padding(2);
+            this.X_LV_Value.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.X_LV_Value.Name = "X_LV_Value";
+            this.X_LV_Value.Size = new System.Drawing.Size(78, 25);
+            this.X_LV_Value.TabIndex = 0;
+            this.X_LV_Value.ValueChanged += new System.EventHandler(this.X_LV_Value_ValueChanged);
             // 
             // X_LV_HardOnlyCheckBox
             // 
             this.X_LV_HardOnlyCheckBox.AutoSize = true;
-            this.X_LV_HardOnlyCheckBox.Location = new System.Drawing.Point(4, 158);
+            this.X_LV_HardOnlyCheckBox.Location = new System.Drawing.Point(366, 71);
             this.X_LV_HardOnlyCheckBox.Name = "X_LV_HardOnlyCheckBox";
             this.X_LV_HardOnlyCheckBox.Size = new System.Drawing.Size(178, 22);
             this.X_LV_HardOnlyCheckBox.TabIndex = 4;
@@ -261,7 +311,7 @@
             // X_LV_NormalHardCheckBox
             // 
             this.X_LV_NormalHardCheckBox.AutoSize = true;
-            this.X_LV_NormalHardCheckBox.Location = new System.Drawing.Point(4, 130);
+            this.X_LV_NormalHardCheckBox.Location = new System.Drawing.Point(366, 42);
             this.X_LV_NormalHardCheckBox.Name = "X_LV_NormalHardCheckBox";
             this.X_LV_NormalHardCheckBox.Size = new System.Drawing.Size(197, 22);
             this.X_LV_NormalHardCheckBox.TabIndex = 3;
@@ -272,7 +322,7 @@
             // X_LV_EnemyOnlyCheckBox
             // 
             this.X_LV_EnemyOnlyCheckBox.AutoSize = true;
-            this.X_LV_EnemyOnlyCheckBox.Location = new System.Drawing.Point(4, 102);
+            this.X_LV_EnemyOnlyCheckBox.Location = new System.Drawing.Point(152, 73);
             this.X_LV_EnemyOnlyCheckBox.Name = "X_LV_EnemyOnlyCheckBox";
             this.X_LV_EnemyOnlyCheckBox.Size = new System.Drawing.Size(177, 22);
             this.X_LV_EnemyOnlyCheckBox.TabIndex = 2;
@@ -283,7 +333,7 @@
             // X_LV_PlayerOnlyCheckBox
             // 
             this.X_LV_PlayerOnlyCheckBox.AutoSize = true;
-            this.X_LV_PlayerOnlyCheckBox.Location = new System.Drawing.Point(4, 74);
+            this.X_LV_PlayerOnlyCheckBox.Location = new System.Drawing.Point(152, 44);
             this.X_LV_PlayerOnlyCheckBox.Name = "X_LV_PlayerOnlyCheckBox";
             this.X_LV_PlayerOnlyCheckBox.Size = new System.Drawing.Size(175, 22);
             this.X_LV_PlayerOnlyCheckBox.TabIndex = 1;
@@ -291,10 +341,31 @@
             this.X_LV_PlayerOnlyCheckBox.UseVisualStyleBackColor = true;
             this.X_LV_PlayerOnlyCheckBox.CheckedChanged += new System.EventHandler(this.X_LV_PlayerOnlyCheckBox_CheckedChanged);
             // 
+            // X_LV_255
+            // 
+            this.X_LV_255.Controls.Add(this.X_LV255_infoTextBox);
+            this.X_LV_255.Location = new System.Drawing.Point(47, 36);
+            this.X_LV_255.Name = "X_LV_255";
+            this.X_LV_255.Size = new System.Drawing.Size(563, 109);
+            this.X_LV_255.TabIndex = 155;
+            this.X_LV_255.Visible = false;
+            // 
+            // X_LV255_infoTextBox
+            // 
+            this.X_LV255_infoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.X_LV255_infoTextBox.Location = new System.Drawing.Point(0, 0);
+            this.X_LV255_infoTextBox.Multiline = true;
+            this.X_LV255_infoTextBox.Name = "X_LV255_infoTextBox";
+            this.X_LV255_infoTextBox.ReadOnly = true;
+            this.X_LV255_infoTextBox.Size = new System.Drawing.Size(563, 109);
+            this.X_LV255_infoTextBox.TabIndex = 0;
+            this.X_LV255_infoTextBox.Text = "レベルに255が設定されています。\r\n下級職からCCして、このクラスになった場合には、このスキルを得ることはできません。\r\nこのクラスでLOADされた場合にのみ、" +
+    "このスキルを持つことができます。\r\n";
+            // 
             // X_LEARNINFO
             // 
             this.X_LEARNINFO.AutoSize = true;
-            this.X_LEARNINFO.Location = new System.Drawing.Point(5, 313);
+            this.X_LEARNINFO.Location = new System.Drawing.Point(5, 330);
             this.X_LEARNINFO.Name = "X_LEARNINFO";
             this.X_LEARNINFO.Size = new System.Drawing.Size(393, 18);
             this.X_LEARNINFO.TabIndex = 153;
@@ -306,14 +377,14 @@
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.ExportAllButton);
             this.panel10.Controls.Add(this.ImportAllButton);
-            this.panel10.Location = new System.Drawing.Point(-1, 409);
+            this.panel10.Location = new System.Drawing.Point(-1, 428);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(658, 37);
             this.panel10.TabIndex = 152;
             // 
             // ExportAllButton
             // 
-            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 4);
             this.ExportAllButton.Name = "ExportAllButton";
             this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
             this.ExportAllButton.TabIndex = 117;
@@ -323,7 +394,7 @@
             // 
             // ImportAllButton
             // 
-            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 4);
             this.ImportAllButton.Name = "ImportAllButton";
             this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
             this.ImportAllButton.TabIndex = 116;
@@ -334,7 +405,7 @@
             // ZeroPointerPanel
             // 
             this.ZeroPointerPanel.Controls.Add(this.label12);
-            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 344);
+            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 361);
             this.ZeroPointerPanel.Name = "ZeroPointerPanel";
             this.ZeroPointerPanel.Size = new System.Drawing.Size(504, 61);
             this.ZeroPointerPanel.TabIndex = 144;
@@ -353,7 +424,7 @@
             // 
             this.IndependencePanel.Controls.Add(this.IndependenceButton);
             this.IndependencePanel.Controls.Add(this.label4);
-            this.IndependencePanel.Location = new System.Drawing.Point(6, 343);
+            this.IndependencePanel.Location = new System.Drawing.Point(6, 360);
             this.IndependencePanel.Name = "IndependencePanel";
             this.IndependencePanel.Size = new System.Drawing.Size(504, 62);
             this.IndependencePanel.TabIndex = 143;
@@ -377,6 +448,16 @@
             this.label4.TabIndex = 122;
             this.label4.Text = "このテーブルは、複数のクラスで参照されています。";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // N1_SKILLNAME
+            // 
+            this.N1_SKILLNAME.ErrorMessage = "";
+            this.N1_SKILLNAME.Location = new System.Drawing.Point(96, 185);
+            this.N1_SKILLNAME.Name = "N1_SKILLNAME";
+            this.N1_SKILLNAME.Placeholder = "";
+            this.N1_SKILLNAME.ReadOnly = true;
+            this.N1_SKILLNAME.Size = new System.Drawing.Size(178, 25);
+            this.N1_SKILLNAME.TabIndex = 120;
             // 
             // N1_J_0
             // 
@@ -406,7 +487,7 @@
             // N1_J_1_SKILLASSIGNMENT
             // 
             this.N1_J_1_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N1_J_1_SKILLASSIGNMENT.Location = new System.Drawing.Point(2, 46);
+            this.N1_J_1_SKILLASSIGNMENT.Location = new System.Drawing.Point(2, 146);
             this.N1_J_1_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N1_J_1_SKILLASSIGNMENT.Name = "N1_J_1_SKILLASSIGNMENT";
             this.N1_J_1_SKILLASSIGNMENT.Size = new System.Drawing.Size(191, 30);
@@ -414,10 +495,22 @@
             this.N1_J_1_SKILLASSIGNMENT.Text = "スキル";
             this.N1_J_1_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // N1_SKILLTEXT
+            // 
+            this.N1_SKILLTEXT.ErrorMessage = "";
+            this.N1_SKILLTEXT.Location = new System.Drawing.Point(280, 215);
+            this.N1_SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_SKILLTEXT.Multiline = true;
+            this.N1_SKILLTEXT.Name = "N1_SKILLTEXT";
+            this.N1_SKILLTEXT.Placeholder = "";
+            this.N1_SKILLTEXT.ReadOnly = true;
+            this.N1_SKILLTEXT.Size = new System.Drawing.Size(348, 79);
+            this.N1_SKILLTEXT.TabIndex = 2;
+            // 
             // N1_B1
             // 
             this.N1_B1.Hexadecimal = true;
-            this.N1_B1.Location = new System.Drawing.Point(196, 52);
+            this.N1_B1.Location = new System.Drawing.Point(196, 152);
             this.N1_B1.Margin = new System.Windows.Forms.Padding(2);
             this.N1_B1.Maximum = new decimal(new int[] {
             -559939585,
@@ -429,6 +522,17 @@
             this.N1_B1.TabIndex = 1;
             this.N1_B1.ValueChanged += new System.EventHandler(this.N1_B1_ValueChanged);
             // 
+            // N1_SKILLICON
+            // 
+            this.N1_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N1_SKILLICON.Location = new System.Drawing.Point(279, 146);
+            this.N1_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_SKILLICON.Name = "N1_SKILLICON";
+            this.N1_SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.N1_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.N1_SKILLICON.TabIndex = 116;
+            this.N1_SKILLICON.TabStop = false;
+            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -439,11 +543,22 @@
             this.panel7.Controls.Add(this.N1_WriteButton);
             this.panel7.Controls.Add(this.N1_Address);
             this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(249, 247);
+            this.panel7.Location = new System.Drawing.Point(249, 222);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(655, 75);
             this.panel7.TabIndex = 113;
+            // 
+            // N1_BlockSize
+            // 
+            this.N1_BlockSize.ErrorMessage = "";
+            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
+            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_BlockSize.Name = "N1_BlockSize";
+            this.N1_BlockSize.Placeholder = "";
+            this.N1_BlockSize.ReadOnly = true;
+            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.N1_BlockSize.TabIndex = 58;
             // 
             // label6
             // 
@@ -455,6 +570,17 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Size:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N1_SelectAddress
+            // 
+            this.N1_SelectAddress.ErrorMessage = "";
+            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
+            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_SelectAddress.Name = "N1_SelectAddress";
+            this.N1_SelectAddress.Placeholder = "";
+            this.N1_SelectAddress.ReadOnly = true;
+            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N1_SelectAddress.TabIndex = 57;
             // 
             // label7
             // 
@@ -507,14 +633,14 @@
             this.panel2.Controls.Add(this.N1_AddressListExpandsButton);
             this.panel2.Controls.Add(this.N1_AddressList);
             this.panel2.Controls.Add(this.N1_LabelFilter);
-            this.panel2.Location = new System.Drawing.Point(0, 248);
+            this.panel2.Location = new System.Drawing.Point(0, 222);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 522);
+            this.panel2.Size = new System.Drawing.Size(246, 548);
             this.panel2.TabIndex = 111;
             // 
             // N1_AddressListExpandsButton
             // 
-            this.N1_AddressListExpandsButton.Location = new System.Drawing.Point(0, 489);
+            this.N1_AddressListExpandsButton.Location = new System.Drawing.Point(0, 514);
             this.N1_AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.N1_AddressListExpandsButton.Name = "N1_AddressListExpandsButton";
             this.N1_AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
@@ -522,11 +648,23 @@
             this.N1_AddressListExpandsButton.Text = "リストの拡張";
             this.N1_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
+            // N1_AddressList
+            // 
+            this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N1_AddressList.FormattingEnabled = true;
+            this.N1_AddressList.IntegralHeight = false;
+            this.N1_AddressList.ItemHeight = 18;
+            this.N1_AddressList.Location = new System.Drawing.Point(0, 27);
+            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N1_AddressList.Name = "N1_AddressList";
+            this.N1_AddressList.Size = new System.Drawing.Size(246, 481);
+            this.N1_AddressList.TabIndex = 0;
+            // 
             // N1_LabelFilter
             // 
             this.N1_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N1_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N1_LabelFilter.Location = new System.Drawing.Point(2, 2);
+            this.N1_LabelFilter.Location = new System.Drawing.Point(2, 0);
             this.N1_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N1_LabelFilter.Name = "N1_LabelFilter";
             this.N1_LabelFilter.Size = new System.Drawing.Size(244, 26);
@@ -542,7 +680,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.N1_ReadCount);
             this.panel1.Controls.Add(this.X_LevelUpAddr);
-            this.panel1.Location = new System.Drawing.Point(-1, 214);
+            this.panel1.Location = new System.Drawing.Point(-1, 187);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(905, 34);
             this.panel1.TabIndex = 110;
@@ -556,6 +694,18 @@
             this.N1_ReloadListButton.TabIndex = 27;
             this.N1_ReloadListButton.Text = "再取得";
             this.N1_ReloadListButton.UseVisualStyleBackColor = true;
+            // 
+            // X_LevelUPSkillLabel
+            // 
+            this.X_LevelUPSkillLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_LevelUPSkillLabel.ErrorMessage = "";
+            this.X_LevelUPSkillLabel.Location = new System.Drawing.Point(-1, -1);
+            this.X_LevelUPSkillLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_LevelUPSkillLabel.Name = "X_LevelUPSkillLabel";
+            this.X_LevelUPSkillLabel.Size = new System.Drawing.Size(371, 36);
+            this.X_LevelUPSkillLabel.TabIndex = 28;
+            this.X_LevelUPSkillLabel.Text = "レベルアップで取得するスキルの先頭アドレス";
+            this.X_LevelUPSkillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -595,6 +745,29 @@
             this.X_LevelUpAddr.Size = new System.Drawing.Size(130, 25);
             this.X_LevelUpAddr.TabIndex = 0;
             this.X_LevelUpAddr.ValueChanged += new System.EventHandler(this.X_LevelUpAddr_ValueChanged);
+            // 
+            // SKILLTEXT
+            // 
+            this.SKILLTEXT.ErrorMessage = "";
+            this.SKILLTEXT.Location = new System.Drawing.Point(252, 71);
+            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLTEXT.Multiline = true;
+            this.SKILLTEXT.Name = "SKILLTEXT";
+            this.SKILLTEXT.Placeholder = "";
+            this.SKILLTEXT.ReadOnly = true;
+            this.SKILLTEXT.Size = new System.Drawing.Size(348, 108);
+            this.SKILLTEXT.TabIndex = 109;
+            // 
+            // SKILLICON
+            // 
+            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SKILLICON.Location = new System.Drawing.Point(251, 2);
+            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLICON.Name = "SKILLICON";
+            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SKILLICON.TabIndex = 102;
+            this.SKILLICON.TabStop = false;
             // 
             // B0
             // 
@@ -638,6 +811,17 @@
             this.panel5.Size = new System.Drawing.Size(905, 34);
             this.panel5.TabIndex = 94;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -648,6 +832,17 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
             // 
             // label22
             // 
@@ -730,140 +925,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // SKILLNAME
-            // 
-            this.SKILLNAME.ErrorMessage = "";
-            this.SKILLNAME.Location = new System.Drawing.Point(48, 36);
-            this.SKILLNAME.Name = "SKILLNAME";
-            this.SKILLNAME.Placeholder = "";
-            this.SKILLNAME.ReadOnly = true;
-            this.SKILLNAME.Size = new System.Drawing.Size(191, 25);
-            this.SKILLNAME.TabIndex = 119;
-            // 
-            // N1_SKILLNAME
-            // 
-            this.N1_SKILLNAME.ErrorMessage = "";
-            this.N1_SKILLNAME.Location = new System.Drawing.Point(96, 85);
-            this.N1_SKILLNAME.Name = "N1_SKILLNAME";
-            this.N1_SKILLNAME.Placeholder = "";
-            this.N1_SKILLNAME.ReadOnly = true;
-            this.N1_SKILLNAME.Size = new System.Drawing.Size(178, 25);
-            this.N1_SKILLNAME.TabIndex = 120;
-            // 
-            // N1_SKILLTEXT
-            // 
-            this.N1_SKILLTEXT.ErrorMessage = "";
-            this.N1_SKILLTEXT.Location = new System.Drawing.Point(280, 115);
-            this.N1_SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_SKILLTEXT.Multiline = true;
-            this.N1_SKILLTEXT.Name = "N1_SKILLTEXT";
-            this.N1_SKILLTEXT.Placeholder = "";
-            this.N1_SKILLTEXT.ReadOnly = true;
-            this.N1_SKILLTEXT.Size = new System.Drawing.Size(348, 108);
-            this.N1_SKILLTEXT.TabIndex = 2;
-            // 
-            // N1_SKILLICON
-            // 
-            this.N1_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N1_SKILLICON.Location = new System.Drawing.Point(279, 46);
-            this.N1_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_SKILLICON.Name = "N1_SKILLICON";
-            this.N1_SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.N1_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.N1_SKILLICON.TabIndex = 116;
-            this.N1_SKILLICON.TabStop = false;
-            // 
-            // N1_BlockSize
-            // 
-            this.N1_BlockSize.ErrorMessage = "";
-            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
-            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_BlockSize.Name = "N1_BlockSize";
-            this.N1_BlockSize.Placeholder = "";
-            this.N1_BlockSize.ReadOnly = true;
-            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.N1_BlockSize.TabIndex = 58;
-            // 
-            // N1_SelectAddress
-            // 
-            this.N1_SelectAddress.ErrorMessage = "";
-            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
-            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_SelectAddress.Name = "N1_SelectAddress";
-            this.N1_SelectAddress.Placeholder = "";
-            this.N1_SelectAddress.ReadOnly = true;
-            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
-            this.N1_SelectAddress.TabIndex = 57;
-            // 
-            // N1_AddressList
-            // 
-            this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N1_AddressList.FormattingEnabled = true;
-            this.N1_AddressList.IntegralHeight = false;
-            this.N1_AddressList.ItemHeight = 18;
-            this.N1_AddressList.Location = new System.Drawing.Point(0, 29);
-            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N1_AddressList.Name = "N1_AddressList";
-            this.N1_AddressList.Size = new System.Drawing.Size(246, 454);
-            this.N1_AddressList.TabIndex = 0;
-            // 
-            // X_LevelUPSkillLabel
-            // 
-            this.X_LevelUPSkillLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_LevelUPSkillLabel.ErrorMessage = "";
-            this.X_LevelUPSkillLabel.Location = new System.Drawing.Point(-1, -1);
-            this.X_LevelUPSkillLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.X_LevelUPSkillLabel.Name = "X_LevelUPSkillLabel";
-            this.X_LevelUPSkillLabel.Size = new System.Drawing.Size(371, 36);
-            this.X_LevelUPSkillLabel.TabIndex = 28;
-            this.X_LevelUPSkillLabel.Text = "レベルアップで取得するスキルの先頭アドレス";
-            this.X_LevelUPSkillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SKILLTEXT
-            // 
-            this.SKILLTEXT.ErrorMessage = "";
-            this.SKILLTEXT.Location = new System.Drawing.Point(252, 71);
-            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLTEXT.Multiline = true;
-            this.SKILLTEXT.Name = "SKILLTEXT";
-            this.SKILLTEXT.Placeholder = "";
-            this.SKILLTEXT.ReadOnly = true;
-            this.SKILLTEXT.Size = new System.Drawing.Size(348, 108);
-            this.SKILLTEXT.TabIndex = 109;
-            // 
-            // SKILLICON
-            // 
-            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.SKILLICON.Location = new System.Drawing.Point(251, 2);
-            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLICON.Name = "SKILLICON";
-            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SKILLICON.TabIndex = 102;
-            this.SKILLICON.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -876,42 +937,6 @@
             this.AddressList.Size = new System.Drawing.Size(246, 742);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // X_LV_Value
-            // 
-            this.X_LV_Value.Location = new System.Drawing.Point(185, 42);
-            this.X_LV_Value.Margin = new System.Windows.Forms.Padding(2);
-            this.X_LV_Value.Maximum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.X_LV_Value.Name = "X_LV_Value";
-            this.X_LV_Value.Size = new System.Drawing.Size(78, 25);
-            this.X_LV_Value.TabIndex = 0;
-            this.X_LV_Value.ValueChanged += new System.EventHandler(this.X_LV_Value_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(0, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 30);
-            this.label1.TabIndex = 113;
-            this.label1.Text = "レベル内訳";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(0, 38);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 30);
-            this.label5.TabIndex = 155;
-            this.label5.Text = "レベル";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SkillAssignmentClassSkillSystemForm
             // 
@@ -935,11 +960,15 @@
             this.panel8.PerformLayout();
             this.X_LevelAddPanel.ResumeLayout(false);
             this.X_LevelAddPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LV_Value)).EndInit();
+            this.X_LV_255.ResumeLayout(false);
+            this.X_LV_255.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.ZeroPointerPanel.ResumeLayout(false);
             this.IndependencePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).EndInit();
@@ -947,14 +976,12 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_LevelUpAddr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_LV_Value)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1028,5 +1055,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown X_LV_Value;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel X_LV_255;
+        private System.Windows.Forms.TextBox X_LV255_infoTextBox;
     }
 }

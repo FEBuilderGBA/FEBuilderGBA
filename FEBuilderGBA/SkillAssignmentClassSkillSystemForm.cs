@@ -65,9 +65,11 @@ namespace FEBuilderGBA
 
             if (SkillConfigSkillSystemForm.IsClassSkillExtends())
             {
-                X_LevelAddPanel.Show();
+                UseXLevelAddPanel = true;
             }
         }
+
+        bool UseXLevelAddPanel = false;
 
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self, uint assignClass)
@@ -681,6 +683,14 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (N1_InputFormRef.DataCount == 0)
+            {
+                DialogResult dr = R.ShowNoYes("リストが0件です。\r\n空のリストを分離させても意味がないのですが、それでも分離独立させますか？");
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, this.Name + " Independence");
 
@@ -838,24 +848,47 @@ namespace FEBuilderGBA
         bool X_LV_UpdateLock = false;
         private void N1_B0_ValueChanged(object sender, EventArgs e)
         {
-            if (! X_LevelAddPanel.Visible)
-            {
-                return;
-            }
-
             if (X_LV_UpdateLock)
             {
                 return;
             }
+
             X_LV_UpdateLock = true;
             uint lv = (uint)N1_B0.Value;
-            uint trueLevel = lv & 0x1f;
+            if (!UseXLevelAddPanel)
+            {
+                if (lv == 0xFF)
+                {
+                    X_LV_255.Show();
+                }
+                else
+                {
+                    X_LV_255.Hide();
+                }
+            }
+            else
+            {
+                if (lv == 0xFF)
+                {
+                    X_LevelAddPanel.Hide();
+                    X_LV_255.Show();
+                }
+                else
+                {
+                    X_LV_255.Hide();
+                    X_LevelAddPanel.Show();
+                }
 
-            X_LV_Value.Value = trueLevel;
-            X_LV_PlayerOnlyCheckBox.Checked = ((lv & 32) == 32) ? true : false;
-            X_LV_EnemyOnlyCheckBox.Checked = ((lv & 64) == 64) ? true : false;
-            X_LV_NormalHardCheckBox.Checked = ((lv & 96) == 96) ? true : false;
-            X_LV_HardOnlyCheckBox.Checked = ((lv & 128) == 128) ? true : false;
+                uint trueLevel = lv & 0x1f;
+
+                X_LV_Value.Value = trueLevel;
+                X_LV_PlayerOnlyCheckBox.Checked = ((lv & 32) == 32) ? true : false;
+                X_LV_EnemyOnlyCheckBox.Checked = ((lv & 64) == 64) ? true : false;
+                X_LV_NormalHardCheckBox.Checked = ((lv & 96) == 96) ? true : false;
+                X_LV_HardOnlyCheckBox.Checked = ((lv & 128) == 128) ? true : false;
+            }
+
+
             X_LV_UpdateLock = false;
         }
 

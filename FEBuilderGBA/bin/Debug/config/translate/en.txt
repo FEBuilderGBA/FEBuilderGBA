@@ -3448,6 +3448,9 @@ Pointer ({2}) of class ({0}) 's {1} is dangerous.
 :戦闘アニメが極端に少ないです。破損している可能性があります。
 Battle animation is extremely few.It may be damaged.
 
+:リストが0件です。\r\n空のリストを分離させても意味がないのですが、それでも分離独立させますか？
+There are 0 listings.\r\nThere's no point in isolating an empty list. 
+
 :武器種類
 Weapon type
 
@@ -10198,17 +10201,20 @@ A large amount of ({2}) data is registered in the data pointer ({1}) of the Skil
 :インポートに失敗しました。
 Import failed.
 
+:習得レベルの内訳
+Breakdown of proficiency levels
+
+:レベルに255が設定されています。\r\n下級職からCCして、このクラスになった場合には、このスキルを得ることはできません。\r\nこのクラスでLOADされた場合にのみ、このスキルを持つことができます。\r\n
+Level 255 is set.\r\nIf you Promotion from a un-Pormoted class and become this class, you will not be able to acquire this skill.\r\nYou can only have this skill isf loaded with this class.\r\n
+
 :習得レベルとスキルの詳細は、ここをクリックしてください。
 Click here for more information on learning skills and levels.
-
-:クラススキル
-Class Skill
 
 :レベルアップで取得するスキルの先頭アドレス
 The first address of the skill to be acquired by leveling up.
 
-:レベル内訳
-Level breakdown.
+:クラススキル
+Class Skill
 
 :スキル1
 Skill 1
