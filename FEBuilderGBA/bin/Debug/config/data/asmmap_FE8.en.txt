@@ -13212,8 +13212,8 @@ r3=X tile position of menu of right	{U}
 080B578C	RunProcsArenaAfter	{U}
 080BA720	PlayVictoryCheersByArena	{J}
 080B5B9C	PlayVictoryCheersByArena	{U}
-080DFF70	:080E0007	KEEPEMPTY	1	Related to critical	{J}
-080DAF60	:080DAFF7	KEEPEMPTY	1	Related to critical	{U}
+080DFF70	:080E0008	KEEPEMPTY	1	Related to critical	{J}
+080DAF60	:080DAFF8	KEEPEMPTY	1	Related to critical	{U}
 08A1EB2C	:08A1EB45	KEEPEMPTY	2	{J}
 089AE4A4	:089AE4BD	KEEPEMPTY	2	{U}
 08A1F998	:08A1F9E7	KEEPEMPTY	3	{J}

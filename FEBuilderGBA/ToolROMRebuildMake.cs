@@ -2049,6 +2049,17 @@ namespace FEBuilderGBA
             uint maybeEnd = addr;
             for (uint i = addr; i < vallinaLength; i += 2)
             {
+                //次の素性のわかるデータがあったら終了
+                if (i != addr && U.isPadding4(i))
+                {
+                    if (this.PointerMark.ContainsKey(U.toPointer(i)))
+                    {
+                        maybeEnd = i;
+                        break;
+                    }
+                }
+
+                //バニラと同じデータが何個か出てきたら終了
                 uint c = Program.ROM.u16(i);
                 uint v = this.Vanilla.u16(i);
                 if (c == v)

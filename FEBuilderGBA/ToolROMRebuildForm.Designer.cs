@@ -49,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.OrignalFilename = new FEBuilderGBA.TextBoxEx();
             this.OrignalSelectButton = new System.Windows.Forms.Button();
+            this.WARRING_SmallValue = new FEBuilderGBA.LabelEx();
             this.customColorGroupBox1.SuspendLayout();
             this.X_FreeAreaDef.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FreeAreaStartAddress)).BeginInit();
@@ -114,6 +115,7 @@
             // 
             // X_FreeAreaDef
             // 
+            this.X_FreeAreaDef.Controls.Add(this.WARRING_SmallValue);
             this.X_FreeAreaDef.Controls.Add(this.AppendFreeAreaFilename);
             this.X_FreeAreaDef.Controls.Add(this.AppendFreeAreaFilenameSelectButton);
             this.X_FreeAreaDef.Controls.Add(this.X_AppendFreeAreaFilename);
@@ -191,7 +193,7 @@
             0,
             0});
             this.FreeAreaMinimumSize.Minimum = new decimal(new int[] {
-            100,
+            32,
             0,
             0,
             0});
@@ -203,6 +205,7 @@
             0,
             0,
             0});
+            this.FreeAreaMinimumSize.ValueChanged += new System.EventHandler(this.FreeAreaMinimumSize_ValueChanged);
             // 
             // X_FreeAreaStartAddress
             // 
@@ -338,6 +341,17 @@
             this.OrignalSelectButton.UseVisualStyleBackColor = true;
             this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
             // 
+            // WARRING_SmallValue
+            // 
+            this.WARRING_SmallValue.AutoSize = true;
+            this.WARRING_SmallValue.ErrorMessage = "";
+            this.WARRING_SmallValue.Location = new System.Drawing.Point(596, 7);
+            this.WARRING_SmallValue.Name = "WARRING_SmallValue";
+            this.WARRING_SmallValue.Size = new System.Drawing.Size(192, 18);
+            this.WARRING_SmallValue.TabIndex = 109;
+            this.WARRING_SmallValue.Text = "値が小さすぎて危険です。";
+            this.WARRING_SmallValue.Visible = false;
+            // 
             // ToolROMRebuildForm
             // 
             this.AcceptButton = this.MakeROMRebuildPatchButton;
@@ -383,5 +397,6 @@
         private System.Windows.Forms.Label X_ShareSameData;
         private TextBoxEx AppendFreeAreaFilename;
         private System.Windows.Forms.Button AppendFreeAreaFilenameSelectButton;
+        private LabelEx WARRING_SmallValue;
     }
 }

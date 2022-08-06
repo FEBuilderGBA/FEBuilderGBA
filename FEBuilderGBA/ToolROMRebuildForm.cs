@@ -324,5 +324,26 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(this, "", open);
             AppendFreeAreaFilename.Text = open.FileNames[0];
         }
+
+        private void FreeAreaMinimumSize_ValueChanged(object sender, EventArgs e)
+        {
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                if (FreeAreaMinimumSize.Value <= 180)
+                {
+                    WARRING_SmallValue.Show();
+                    return;
+                }
+            }
+            else
+            {
+                if (FreeAreaMinimumSize.Value <= 512)
+                {
+                    WARRING_SmallValue.Show();
+                    return;
+                }
+            }
+            WARRING_SmallValue.Hide();
+        }
     }
 }

@@ -206,8 +206,8 @@ namespace FEBuilderGBA
 
         static Dictionary<uint, Address> MakeAllStructMapping(List<Address> structlist)
         {
-            Dictionary<uint, Address> dic = new Dictionary<uint, Address>(Program.ROM.Data.Length / 2);
-
+            Dictionary<uint, Address> dic = new Dictionary<uint, Address>(Program.ROM.Data.Length);
+            
             for (int i = 0; i < structlist.Count; i++)
             {
                 Address a = structlist[i];

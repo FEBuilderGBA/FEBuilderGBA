@@ -12766,6 +12766,9 @@ Rebuild Address
 :変更されている設定をファイルに書きだします。\r\n\r\nUPSパッチと比較して以下のメリットがあります。\r\n無改造ROMにこのデータをインポートすることで、断片化した無駄な領域を節約できます。\r\n\r\n逆に以下のデメリットがあります。\r\nFEBuilderGBAが知らないデータは、ダンプされません。\r\nたとえばバイナリエディタで変更した内容などは保存されません。
 Write the changed settings to a file.\r\n\r\nCompared to UPS patching, it has the following advantages.\r\nBy importing this data to an unmodified ROM, you can save space.\r\n\r\nConversely, there are the following disadvantages.\r\nData not known by FEBuilderGBA will not be dumped.\r\nFor example, contents changed through hex or external means are not accounted for.
 
+:値が小さすぎて危険です。
+Too small a value is dangerous.
+
 :データを最適化中... {0}({1})
 Optimizing data.{0} ({1}).
 

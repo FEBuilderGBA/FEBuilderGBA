@@ -1,0 +1,12 @@
+NAME=闘技場の対戦相手と戦う時は名前ではなくクラス名を表示する
+NAME.en=When Battle Arena's Enemy, display class name, not unit name
+
+TYPE=BIN
+PATCHED_IF:0x051F78=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=ShowClassNameNotGenericEnemyName.dmp
+JUMP:0x051F78:r3=ShowClassNameNotGenericEnemyName.dmp
+
+AUTHOR=7743
+INFO=闘技場などで、対戦相手(UnitID: 0xFD)と戦う時は、戦闘画面の左上の名前を"対戦相手"ではなく、クラス名を表示するようにします。\r\n例えば、相手のクラスがアーマーナイトなら、戦闘画面の左上の名称は対戦相手ではなく、アーマーナイトになります。
+INFO.en=When fighting an opponent in the arena(UnitID: 0xFD Enemy), display the class name in the upper left corner of the battle screen instead of the opponent's name.\r\nFor example, if the opponent's class is Armor Knight, the name on the top left of the battle screen will be Armor Knight, not Enemy.
+INFO.zh=在竞技场等与对手（UnitID：0xFD）战斗时，战斗画面左上角的名称会显示职业名称而不是“对手”。
