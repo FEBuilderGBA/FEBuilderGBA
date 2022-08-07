@@ -1,0 +1,18 @@
+﻿NAME=MeleeAndMagicFix 20220721
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x184dc=0x10 0xB5
+
+BIN:0x184dc=MeleeAndMagicFix_FE7U.dmp
+BIN:0x28842=MeleeAndMagicFix_Arena_FE7U.dmp	//add strh r1, [r5, #0x1E]
+
+AUTHOR=melee and magic fix  Hextator,Tequila,7743
+INFO=武器魔法を同時に利用できるパッチ
+INFO.zh=近战和魔法修复
+INFO.en=A patch that can simultaneously use weapon magic
+NAME.en=MeleeAndMagicFix
+AUTHOR.en=melee and magic fix  Hextator,Tequila,7743
+NAME.zh=近战和魔法修复
+AUTHOR.zh=melee and magic fix  Hextator,Tequila,7743

@@ -1,8 +1,8 @@
 .thumb
 
-.equ origin, 0x080184DC	@UnitHasMagicRank
-.equ GetUnitEquippedWeapon, . + 0x08016764 - origin
-.equ GetItemAttributes, . + 0x0801727C - origin
+.equ origin, 0x08018a58	@UnitHasMagicRank
+.equ GetUnitEquippedWeapon, . + 0x08016b28 - origin
+.equ GetItemAttributes, . + 0x0801756c - origin
 
 PUSH {r4,lr}
 mov r4, r0
