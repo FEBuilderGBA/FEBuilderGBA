@@ -1,0 +1,5 @@
+Skip=$0E
+End=$26
+Fix=$2A
+False=$22
+Skipbl=$34

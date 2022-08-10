@@ -1697,8 +1697,8 @@
 08029040	回避率 計算式	{J}
 08028BA0	回避率 計算式	{U}
 
-08006488	戦闘アニメーションのフレームデータのパース	{J}
-080065F8	戦闘アニメーションのフレームデータのパース	{U}
+08006488	AISArray_Sort	戦闘アニメーションのフレームデータのパース	{J}
+080065F8	AISArray_Sort	戦闘アニメーションのフレームデータのパース	{U}
 
 0804A040	ClearBG0BG1	{U}
 0804A210	LoadNewUIGraphics	{U}
@@ -5505,3 +5505,8 @@
 0808DEA8	出撃禁止判定	{U}
 0808E7D4	出撃禁止判定	{J}
 08006f80	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{U}
+08006E10	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
+08006688	HandleNextAISFrame	{U}
+08006518	HandleNextAISFrame	{J}
+08006850	_AIS_Display	r0=@AnimationInterpreter	{U}
+080066E0	_AIS_Display	r0=@AnimationInterpreter	{J}
