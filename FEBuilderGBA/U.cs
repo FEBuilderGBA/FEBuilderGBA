@@ -1490,7 +1490,9 @@ namespace FEBuilderGBA
         {
             if (length <= 0) return "";
             byte[] d = U.getBinaryData(data,addr, length);
-            return System.Text.Encoding.GetEncoding("ASCII").GetString(d);
+            string str = System.Text.Encoding.GetEncoding("ASCII").GetString(d);
+            str = str.TrimEnd('\0');
+            return str;
         }
         public static string getASCIIString(byte[] data, uint addr)
         {

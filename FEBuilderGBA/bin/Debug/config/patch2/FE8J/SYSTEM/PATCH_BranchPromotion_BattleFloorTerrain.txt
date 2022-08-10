@@ -1,0 +1,17 @@
+
+NAME=CC分岐時の床の地形
+NAME.en=Floor terrain of branch Prmotion
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0D1A78
+ADDRESS_TYPE=TERRAINBATTLE
+DEFAULT=0x9
+AUTHOR=7743
+
+NAME.zh=Floor terrain of forced Prmotion
+INFO=イベントでの強制CC時の背景です。\r\n進撃準備画面などのマップの外で行われるCC時にも利用されます。\r\nディフォルトは、BattleFloorTerrain 0x9 の砂漠の戦闘床地形の画像が利用されます。\r\n
+INFO.en=This is the background for forced CC at the event.\r\nIt is also used during CC that takes place outside the map, such as on the attack preparation screen.\r\nBy default, BattleFloorTerrain 0x9 image of desert battle floor terrain is used.\r\n
+INFO.zh=这就是活动中强制抄送的背景。\r\n它也用于在地图外进行的 CC 期间，例如在攻击准备屏幕上。\r\n默认情况下，使用沙漠战场地形的 BattleFloorTerrain 0x9 图像。\r\n

@@ -1143,6 +1143,8 @@ namespace FEBuilderGBA
                         || type == "SKILL"
                         || type == "WEAPONTYPE"
                         || type == "MAPACTIONANIMATION"
+                        || type == "TERRAINBATTLE"
+                        || type == "BATTLEBG"
                         )
                     {
                         PictureBox pic = new PictureBox();
@@ -1244,6 +1246,7 @@ namespace FEBuilderGBA
             {
                 ifr.ReInit(struct_address);
             }
+            this.MaximizeBox = true;
 
             ReadStartAddress.Tag = ifr;
             ifr.MakeGeneralAddressListContextMenu(true);
@@ -1705,7 +1708,7 @@ namespace FEBuilderGBA
             }
             else if (listname.Length > 2 && listname[0] == '$')
             {
-                uint offset = U.atoh(U.substr(listname, 2));
+                uint offset = U.atoi(U.substr(listname, 2));
                 if (listname[1] == 'P')
                 {
                     i = (int)Program.ROM.p32(address + offset);
@@ -2064,7 +2067,7 @@ namespace FEBuilderGBA
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, address_type +"ICON", new string[0]);
                 }
-                else if (address_type == "TEXT" || address_type == "MAP" || address_type == "FLAG")
+                else if (address_type == "TEXT" || address_type == "MAP" || address_type == "FLAG" || address_type == "UNITPALETTE")
                 {
                     link.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(link);
@@ -2087,26 +2090,28 @@ namespace FEBuilderGBA
                     PictureBox pic = new PictureBox();
                     pic.Location = new Point(x, y);
                     pic.Size = new Size(CONTROL_HEIGHT * 3, CONTROL_HEIGHT * 3);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
                     x += CONTROL_HEIGHT * 3;
 
-                    pic.Name = "L_" + 0 + "_PORTRAIT";
+                    pic.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(pic);
 
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
-                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "PORTRAIT", new string[0]);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, address_type, new string[0]);
                 }
                 else if (address_type == "BATTLEANIME")
                 {
-                    link.Name = "L_" + 0 + "_BATTLEANIME";
+                    link.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(link);
                     x += 200;
 
                     PictureBox pic = new PictureBox();
                     pic.Location = new Point(x, y);
                     pic.Size = new Size(CONTROL_HEIGHT*3, CONTROL_HEIGHT*3);
-                    x += CONTROL_HEIGHT*3;
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+                    x += CONTROL_HEIGHT * 3;
 
-                    pic.Name = "L_" + 0 + "_BATTLEANIME";
+                    pic.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(pic);
 
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
@@ -2115,16 +2120,17 @@ namespace FEBuilderGBA
                 }
                 else if (address_type == "BATTLEANIME_PLUS1")
                 {
-                    link.Name = "L_" + 0 + "_BATTLEANIME_PLUS1";
+                    link.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(link);
                     x += 200;
 
                     PictureBox pic = new PictureBox();
                     pic.Location = new Point(x, y);
                     pic.Size = new Size(CONTROL_HEIGHT * 3, CONTROL_HEIGHT * 3);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
                     x += CONTROL_HEIGHT * 3;
 
-                    pic.Name = "L_" + 0 + "_BATTLEANIMEICON_PLUS1";
+                    pic.Name = "L_" + 0 + "_" + address_type;
                     PatchPage.Controls.Add(pic);
 
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
@@ -2201,6 +2207,27 @@ namespace FEBuilderGBA
 
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "CLASSMOVEICONSRC", new string[0]);
+                }
+                else if (address_type == "TERRAINBATTLE"
+                    || address_type == "BATTLEBG"
+                    )
+                {
+                    link.Name = "L_" + 0 + "_" + address_type;
+                    PatchPage.Controls.Add(link);
+
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(x, y);
+                    pic.Size = new Size(CONTROL_HEIGHT * 3, CONTROL_HEIGHT * 3);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+                    
+                    x += CONTROL_HEIGHT * 3;
+
+                    pic.Name = "L_" + 0 + "_" + address_type + "ICON";
+                    PatchPage.Controls.Add(pic);
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, address_type + "ICON", new string[0]);
                 }
                 else if (address_type == "BADSTATUS")
                 {

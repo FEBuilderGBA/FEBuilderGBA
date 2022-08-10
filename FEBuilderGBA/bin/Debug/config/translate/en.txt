@@ -8374,6 +8374,9 @@ Height (0 is OK)
 :新規にメニューデータを作成しますか？
 Do you want to create new menu data?
 
+:メモリ割り当てに失敗しています
+Memory allocation failed.
+
 :メニューの領域が確保されていません。
 The menu area is not allocated.
 

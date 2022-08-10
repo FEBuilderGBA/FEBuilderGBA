@@ -885,7 +885,9 @@ namespace FEBuilderGBA
         public String getString(uint addr,int length)
         {
             if (length == 0) return "";
-            return Program.SystemTextEncoder.Decode(Data, (int)addr, length);
+            string str =  Program.SystemTextEncoder.Decode(Data, (int)addr, length);
+            str = str.TrimEnd('\0');
+            return str;
         }
         public String getASCIIString(uint addr, int length)
         {
