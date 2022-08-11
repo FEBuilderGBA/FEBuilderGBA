@@ -1,0 +1,60 @@
+NAME=闘技場の図鑑を作る(ArenaDicConfig)
+
+IF:$FGREP4 ArenaDicMain.dmp=0xF0 0xB5
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+8 ArenaDicMain.dmp
+
+//データサイズ(10進数)
+DATASIZE=28
+
+//データ個数
+DATACOUNT=1
+MAX_EXPLANDS_SIZE=1
+
+//リストに表示
+LISTNAME=request
+
+
+
+B0:UNITPALETTE.ja=未撃破の黒パレット
+W2:TEXT.ja=未撃破メッセージ
+P4.ja=未撃破時の静止アニメーション
+D8:FLAG.ja=全制覇時の達成フラグ
+P12:EVENT.ja=全制覇時のイベント
+P16.ja=アニメーション1
+P20.ja=アニメーション2
+P24.ja=アニメーション3
+D28.ja=記録領域RAM
+
+B0:UNITPALETTE.en=Unbroken black palette id
+W2:TEXT.en=unbroken message
+P4.en=Stop animation when unbroken
+D8:FLAG.en=achievement flag when all completed
+P12:EVENT.en=Events when all completed
+P16.en=AnimetionType1
+P20.en=AnimetionType2
+P24.en=AnimetionType3
+D28.en=DataStoreRAM
+
+B0:UNITPALETTE.zh=Unbroken black palette id
+W2:TEXT.zh=unbroken message
+P4.zh=Stop animation when unbroken
+D8:FLAG.zh=achievement flag when all completed
+P12:EVENT.zh=Events when all completed
+P16.zh=AnimetionType1
+P20.zh=AnimetionType2
+P24.zh=AnimetionType3
+D28.zh=DataStoreRAM
+
+INFO=闘技場の図鑑パッチの設定をします。\r\n「未撃破の黒パレット」は、未撃破時に利用する黒いパレットを指定します。コナンの犯人みたいな真っ黒なパレットを作成して指定してください。\r\n「未撃破メッセージ」には、「まだ撃破していない」ことをプレイヤーに伝える2行のメッセージを指定します。\r\n「未撃破時の静止アニメーション」はディフォルトから変更しないでください。静止するアニメーションを指定する必要があります。\r\n「全制覇時の達成フラグ」は、全制覇時のイベントを何度も実行することを抑制するためのグローバルフラグを指定します。\r\n空いているグローバルフラグを何か指定してください。\r\n「全制覇時のイベント」は、全制覇時に動作させるイベントを設定してください。\r\nファンファーレを鳴らして、盛大にユーザーを祝福しましょう。\r\n「アニメーション1」「アニメーション2」「アニメーション3」は、ディフォルトから変えないでください。アニメーションが一番良く見えるアニメーションを定義する必要があります。\r\nアニメーションのモーションの長さに応じて使い分けます。\r\n「記録領域RAM」には、データを保存するRAM領域を指定します。ディフォルトはダンジョンのデータ記憶領域を指定しています。\r\nこれは塔と遺跡をクリアした時にデータを保存する30バイト程度の領域です。\r\n撃破したかどうかはビットフラグ(bool配列)で記録するので、1バイト当たり8個の記録ができます。\r\n30バイトあれば、240個の記録が可能です。\r\nもしもっと分厚い辞書を作りたいなら、それだけのデータを記録できる領域が必要になります。\r\n
+
+
+NAME.en=Create a picture book of the arena (ArenaDicConfig)
+NAME.zh=创建竞技场的图画书（ArenaDicConfig）
+INFO.en=Set the picture book patch for the arena.\r\n"Undefeated black pallet" specifies the black pallet to be used when not defeated.Please create and specify a black palette like Conan's criminal.\r\nFor "Undefeated message\\r\nDo not change the default "still animation when undefeated".You need to specify a still animation.\r\n"Achievement flag when conquering all" specifies a global flag to suppress the event when conquering all times.\r\nSpecify any free global flags.\r\nPlease set the event that will be activated when you complete all the "events when all are conquered".\r\nCongratulate your users with fanfare.\r\nDo not change "Animation 1\You need to define the animation that looks best in your animation.\r\nIt is used properly according to the length of the animation motion.\r\nIn "Recording area RAM\The default specifies the data storage area of \u200b\u200bthe dungeon.\r\nThis is an area of \u200b\u200babout 30 bytes that saves data when clearing towers and ruins.\r\nWhether or not it was defeated is recorded with a bit flag (bool array), so 8 records can be recorded per byte.\r\nWith 30 bytes, 240 records are possible.\r\nIf you want to make a thicker dictionary, you will need an area that can store that much data.\r\n
+INFO.zh=为竞技场设置图画书补丁。\r\n“不败黑色托盘”指定未打败时使用的黑色托盘。请创建并指定像柯南的罪犯一样的黑色调色板。\r\n对于“Undefeated Message”，指定一条两行消息，告诉玩家他们尚未被击败。\r\n不要更改默认的“不败时静止动画”。您需要指定静止动画。\r\n“征服所有时的成就标志”指定一个全局标志以在征服所有时间时抑制事件。\r\n指定任何免费的全局标志。\r\n请设置完成所有“征服所有事件”时将激活的事件。\r\n大张旗鼓地祝贺你的用户。\r\n不要更改默认的“动画 1”、“动画 2”和“动画 3”。您需要定义在您的动画中看起来最好的动画。\r\n根据动画动作的长度适当使用。\r\n在“Recording area RAM”中，指定要保存数据的 RAM 区域。默认指定地牢的数据存储区域。\r\n这是一个大约 30 字节的区域，用于在清除塔和废墟时保存数据。\r\n是否被击败是用位标志（布尔数组）记录的，因此每个字节可以记录 8 条记录。\r\n使用 30 个字节，可以有 240 条记录。\r\n如果您想制作更厚的字典，您将需要一个可以存储这么多数据的区域。\r\n

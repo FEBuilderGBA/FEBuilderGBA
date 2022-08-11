@@ -1,0 +1,224 @@
+#include "Extensions/6CDefinitions.txt"
+
+// if you are using FEBuilder. 
+#ifdef FEBUILDER_EXTRA_ORG
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+	POIN	arenadic_sjis_string
+	SHORT	$0629 $0668		//右がヘルプ
+	SHORT	$4F03 0
+	POIN	ArenaDicCommandUsability|1
+	WORD	0
+	POIN	ArenaDicCommandEffect|1
+	WORD	0 
+	WORD	0
+	WORD	0
+POP
+#endif // FEBUILDER_EXTRA_ORG
+
+
+PUSH
+//Hook ArenaAfter Procs
+ORG 0xABCD08	//FE8J
+POIN ArenaDicHookArenaAfter|1
+POP
+
+
+ALIGN 4
+ArenaDicCommandUsability:
+#incbin "ArenaDicCommandUsability.dmp"
+POIN ArenaDicMenuCond
+
+
+ALIGN 4
+ArenaDicCommandEffect:
+#incbin "ArenaDicCommandEffect.dmp"
+POIN ArenaDicProcs
+
+ALIGN 4
+ArenaDicHookArenaAfter:
+#incbin "ArenaDicHookArenaAfter.dmp"
+POIN ArenaDicStruct
+POIN ArenaDicConfig
+
+ALIGN 4
+ArenaDicMain:
+#incbin "ArenaDicMain.dmp"
+POIN opinfoDrawBattleAnimeCustomProcs
+POIN ArenaDicStruct
+POIN ArenaDicConfig
+
+ALIGN 4
+ArenaDicRunEventIfComplate:
+#incbin "ArenaDicRunEventIfComplate.dmp"
+POIN ArenaDicConfig
+
+ALIGN 4
+Preparation_opinfoDrawBattleAnimeCustom:
+#incbin "Preparation_opinfoDrawBattleAnimeCustom.dmp"
+POIN ArenaDicConfig
+
+ALIGN 4
+Repeat_opinfoDrawBattleAnimeCustom:
+#incbin "Repeat_opinfoDrawBattleAnimeCustom.dmp"
+POIN ArenaDicConfig
+
+ALIGN 4
+ASMC_ArenaDic_GetComplateParsent:
+#incbin "ASMC_ArenaDic_GetComplateParsent.dmp"
+POIN ArenaDicStruct
+POIN ArenaDicConfig
+
+ALIGN 4
+ASMC_ArenaDic_EnableRandomOne:
+#incbin "ASMC_ArenaDic_EnableRandomOne.dmp"
+POIN ArenaDicStruct
+POIN ArenaDicConfig
+
+ALIGN 4
+ASMC_ArenaDic_ClearAll:
+#incbin "ASMC_ArenaDic_ClearAll.dmp"
+POIN ArenaDicStruct
+POIN ArenaDicConfig
+
+
+ArenaDicProcsName:
+String("ArenaDic") ; BYTE 0
+
+ALIGN 4 
+ArenaDicProcs:	//HINT=PROCS
+_6C_SET_NAME(ArenaDicProcsName)
+_6C_CALL_ROUTINE(0x8015384|1)	//AddSkipThread2	{J}
+_6C_CALL_ROUTINE(0x808F44C|1)	//DeletePlayerPhaseInterface6Cs	{J}
+_6C_CALL_ROUTINE(0x80300D4|1)	//BlockGameGraphicsLogic	{J}
+
+_6C_LOOP_ROUTINE(ArenaDicMain|1)
+
+_6C_CALL_ROUTINE(0x8013E38|1)	//StartFadeInBlackFast	{J}
+_6C_LOOP_ROUTINE(0x8014120|1)	//ContinueUntilSomeTransistion6CExists	{J}
+
+_6C_CALL_ROUTINE(0x8030108|1)	//UnblockGameGraphicsLogic	{J}
+_6C_CALL_ROUTINE(0x80310F4|1)	//ReloadGameCoreGraphics	{J}
+_6C_CALL_ROUTINE(0x808F2C0|1)	//InitPlayerPhaseInterfaceMaybe	{J}
+
+_6C_CALL_ROUTINE(0x8013E5C|1)	//StartFadeOutBlackFast	{J}
+_6C_LOOP_ROUTINE(0x8014120|1)	//ContinueUntilSomeTransistion6CExists	{J}
+_6C_CALL_ROUTINE(0x8015394|1)	//SubSkipThread2	{J}
+
+_6C_CALL_ROUTINE(ArenaDicRunEventIfComplate|1)
+_6C_END
+
+//ProcsData
+//0x2A	CurrentPage
+//0x2C	AllCount
+//0x2E	ComplateCount
+
+opinfoDrawBattleAnimeCustomProcsName:
+String("opinfoDrawBattleAnimeCustom") ; BYTE 0
+ALIGN 4
+
+ALIGN 4 
+opinfoDrawBattleAnimeCustomProcs:	//HINT=PROCS
+_6C_SET_NAME(opinfoDrawBattleAnimeCustomProcsName)
+_6C_CALL_ROUTINE(0x8013E38|1)	//StartFadeInBlackFast	{J}
+_6C_LOOP_ROUTINE(0x8014120|1)	//ContinueUntilSomeTransistion6CExists	{J}
+_6C_CALL_ROUTINE(Preparation_opinfoDrawBattleAnimeCustom|1)
+_6C_SET_DESTRUCTOR(0x80B8A48|1)	//Cleanup_opinfoDrawBattleAnime	{J}
+
+_6C_CALL_ROUTINE(0x8013E5C|1)	//StartFadeOutBlackFast	{J}
+_6C_LOOP_ROUTINE(0x8014120|1)	//ContinueUntilSomeTransistion6CExists	{J}
+
+_6C_LOOP_ROUTINE(0x80B87FC|1)	//MainLoop_opinfoDrawBattleAnime	{J}
+
+
+_6C_LABEL(0x9)
+_6C_CALL_ROUTINE(0x80B8930|1)	//{J}
+_6C_LOOP_ROUTINE(0x80B89C4|1)	//{J}
+_6C_GOTO(0x9)
+
+_6C_LABEL(0xA)
+_6C_LABEL(0x4)
+_6C_LABEL(0x7)
+_6C_LABEL(0x8)
+_6C_CALL_ROUTINE(Repeat_opinfoDrawBattleAnimeCustom|1)	//{J}
+_6C_BLOCK
+
+_6C_END
+
+
+ALIGN 4
+AnimationDoNotMove:
+BYTE 0x05 0x70 0x07 0x00 0x00 0x00 0x00 0x00
+
+ALIGN 4
+AnimationNormal:
+//Code 0x5 Wait , Frame
+//Code 0x1 , 攻撃
+//Code 0x2 , 必殺
+//Code 0x3 , 戻れ?
+//Code 0x4 , 魔法剣
+BYTE 0x05 0x1C 0x01 0x00 0x02 0x00 0x05 0x28 0x03 0x00
+BYTE 0x05 0x50 0x05 0x20 0x01 0x00 0x01 0x00 0x03 0x00
+BYTE 0x00 0x00
+
+ALIGN 4
+AnimationLongCrit:
+BYTE 0x05 0x20 0x02 0x00 0x02 0x00 0x03 0x00
+BYTE 0x00 0x00
+
+ALIGN 4
+AnimationNormalAttack:
+BYTE 0x05 0x08 0x01 0x00 0x05 0x70 0x03 0x00
+BYTE 0x00 0x00
+
+
+#ifdef FEBUILDER_DATA_ORG
+PUSH
+ORG FEBUILDER_DATA_ORG
+#endif
+
+ALIGN 4
+arenadic_sjis_string:
+#incbin "TEXT_SJIS.bin"	//図かん
+                        //図鑑の「鑑」がバニラにはないのでひらがな表記
+
+
+ALIGN 4
+ComplateEvent:
+BYTE 0x20 0x16 0x8F 0x00	//SOUN 0x8f 歓声
+BYTE 0x23 0x1A 0x00 0x00	//システムメッセージ表示イベント[説明テキスト:0x082F おめでとう。 あなたは、より強い敵が登](TUTORIALTEXTBOXSTART+TEXTEND+REMA)
+BYTE 0x40 0x05 0x0B 0x00 0xFF 0xFF 0xFF 0xFF
+BYTE 0x20 0x1B; SHORT 0x0946 ;BYTE 0x20 0x1D 0x00 0x00
+BYTE 0x22 0x1B 0x00 0x00
+BYTE 0x20 0x01 0x00 0x00	//ENDA
+
+
+ALIGN 4
+ArenaDicConfig:
+//未撃破黒パレット+0	未撃破メッセージ+2	未撃破アニメーション+4		全制覇時の達成フラグ+8	00+A	ComplateEvent+C 			アニメ1+10		アニメ2+14		アニメ3+18		RAM+1c
+SHORT	0x6C			0x05FF				;POIN AnimationDoNotMove	;SHORT 0x67				0x00	; POIN ComplateEvent	AnimationNormal	AnimationLongCrit	AnimationNormalAttack	;WORD 0x03001798
+
+ALIGN 4
+ArenaDicMenuCond:
+//MapID+0		Flag+2
+SHORT	0x00	0x00
+SHORT	0x39	0x00
+SHORT	0x24	0x00
+
+WORD	0xFFFFFFFF	//term
+
+ALIGN 4
+ArenaDicStruct:
+//英語名+0		INFO+4			説明1+6	説明2+8	説明3+A	ShowAlways+C	Magic+D	BattleAnime+E	Pallet+10	AnimeColor+11	地形+0x12	Anime+0x13
+POIN 0x1F5940;SHORT 0x0679 0x0246 0x0002 0x0003;BYTE 0x01 0x00;SHORT 0x03;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F5948;SHORT 0x067D 0x0249 0x0002 0x0003;BYTE 0x01 0x00;SHORT 0x3A;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F5950;SHORT 0x067E 0x024A 0x0002 0x0003;BYTE 0x00 0x00;SHORT 0x40;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F595C;SHORT 0x067C 0x0248 0x0002 0x0003;BYTE 0x00 0x00;SHORT 0x34;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F595C;SHORT 0x067C 0x0248 0x0002 0x0003;BYTE 0x00 0x00;SHORT 0x35;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F596C;SHORT 0x06A2 0x026E 0x0002 0x0003;BYTE 0x00 0x00;SHORT 0x66;BYTE 0x00 0x00 0x13 0x00
+POIN 0x1F5994;SHORT 0x0696 0x0263 0x0002 0x0003;BYTE 0x00 0x00;SHORT 0x19;BYTE 0x00 0x00 0x13 0x00
+
+WORD	0x0 0x0 0x0 0x0 0x0//term
+//sizeof(20byte)
+
+ALIGN 4

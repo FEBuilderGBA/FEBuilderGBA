@@ -1,0 +1,36 @@
+NAME=闘技場の図鑑を作る(Installer)
+INFO=ポケモン図鑑のような図鑑を実装します。\r\n闘技場で、図鑑に掲載されている戦闘アニメのユニットを倒せば、情報が登録されていきます。\r\nまだ倒していない敵は、コナンの犯人みたいな真っ黒なパレットで塗りつぶされます。\r\n図鑑を完成させたら、特定のフラグを有効することができます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ArenaDicMain.dmp=0xF0 0xB5
+EDIT_PATCH:1=PATCH_ArenaDic_ArenaDicStruct.txt
+EDIT_PATCH:2=PATCH_ArenaDic_ArenaDicConfig.txt
+EDIT_PATCH:3=PATCH_ArenaDic_ArenaDicMenuCond.txt
+EA=Install.event
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_ArenaDic_GetComplateParsent.dmp}	闘技場の図鑑の達成率の取得(ASMC_ArenaDic_GetComplateParsent)	@STOREC	SlotCの他に[G]でも取得できます。
+EVENTSCRIPT:02=400D0000{$L1:ASMC_ArenaDic_EnableRandomOne.dmp}	闘技場の図鑑のどれか一つを有効にする(ASMC_ArenaDic_EnableRandomOne)
+EVENTSCRIPT:03=400D0000{$L1:ASMC_ArenaDic_ClearAll.dmp}	闘技場の図鑑を全部無効にする(ASMC_ArenaDic_ClearAll)
+
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_ArenaDic_GetComplateParsent.dmp}	Get achievement rate of the ArenaDic(ASMC_ArenaDic_GetComplateParsent)	@STOREC	It can be obtained in [G] as well as in SlotC
+EVENTSCRIPT:02.en=400D0000{$L1:ASMC_ArenaDic_EnableRandomOne.dmp}	Randomly enable one of the ArenaDic(ASMC_ArenaDic_EnableRandomOne)
+EVENTSCRIPT:03.en=400D0000{$L1:ASMC_ArenaDic_ClearAll.dmp}	Disable all the ArenaDic(ASMC_ArenaDic_ClearAll)
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_ArenaDic_GetComplateParsent.dmp}	Get achievement rate of the ArenaDic(ASMC_ArenaDic_GetComplateParsent)	@STOREC	It can be obtained in [G] as well as in SlotC
+EVENTSCRIPT:02.zh=400D0000{$L1:ASMC_ArenaDic_EnableRandomOne.dmp}	Randomly enable one of the ArenaDic(ASMC_ArenaDic_EnableRandomOne)
+EVENTSCRIPT:03.zh=400D0000{$L1:ASMC_ArenaDic_ClearAll.dmp}	Disable all the ArenaDic(ASMC_ArenaDic_ClearAll)
+
+
+AUTHOR=7743
+NAME.en=Create a picture book of the arena (Installer)
+INFO.en=This Patch will implement a picture book like a Pokemon picture book.\r\nIn the arena, if you defeat the units of the battle animation published in the picture book, the information will be registered.\r\nEnemies you haven't defeated yet are painted over with a pitch black palette, like Conan's killer.\r\nOnce you have completed the Pokédex, you can enable certain flags.
+NAME.zh=创建竞技场的图画书(Installer)
+INFO.zh=我们将实现像口袋妖怪绘本一样的绘本。\r\n在竞技场中，如果您击败了绘本中公布的战斗动画的单位，信息将被注册。\r\n你尚未击败的敌人会被涂上漆黑的调色板，就像柯南的杀手一样。\r\n完成图鉴后，您可以启用某些标志。
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=4000			//パッチ全体のサイズ
+ALLOC_PROGRAM_ONLY_SIZE=3300	//コード部だけのサイズ, FEBUILDER_DATA_ORGでデータ部を分離します
+EA_EXTENDS_GAMEMENU:0x01=0x40

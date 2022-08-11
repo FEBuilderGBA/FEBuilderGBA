@@ -1,0 +1,3 @@
+0=Anime1
+1=Anime2
+2=Anime3

@@ -1,0 +1,65 @@
+NAME=闘技場の図鑑を作る(ArenaDicStruct)
+IF:$FGREP4 ArenaDicMain.dmp=0xF0 0xB5
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 ArenaDicMain.dmp
+
+//データサイズ(10進数)
+DATASIZE=20
+
+//データ個数
+DATACOUNT=$GREP20 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$W14:BATTLEANIME
+
+//データを定義します
+P0:CSTRING.ja=英語名
+W4:TEXT.ja=2行メッセージ
+W6:TEXT.ja=1行8文字その1
+W8:TEXT.ja=1行8文字その2
+W10:TEXT.ja=1行8文字その3
+B12:$COMBO IsDefaultShow.combo.txt.ja=ディフォルト表示
+B13:$COMBO Magic.combo.txt.ja=魔法エフェクト
+W14:BATTLEANIME.ja=戦闘アニメ
+B16:UNITPALETTE.ja=キャラパレット(0=なし)
+B17:$COMBO PlayerEnemyColor.combo.txt.ja=敵味方カラー
+B18:TERRAINBATTLE.ja=地形
+B19:$COMBO Animation.combo.txt.ja=AnimationDefinde
+
+P0:CSTRING:.en=alphabetic name
+W4:TEXT:.en=2-line message
+W6:TEXT:.en=16char 1line part1
+W8:TEXT:.en=16char 1line part2
+W10:TEXT:.en=16char 1line part3
+B12:$COMBO IsDefaultShow.combo:.en.txt:.en=ShowAlways
+B13:$COMBO Magic.combo:.en.txt:.en=Magic Effect
+W14:BATTLEANIME:.en=BattleAnimation
+B16:UNITPALETTE:.en=Unit Palette(0=None)
+B17:$COMBO PlayerEnemyColor.combo.txt:.en=PlayerEnemyColor
+B18:TERRAINBATTLE:.en=Terrain
+B19:$COMBO Animation.combo.txt:.en=AnimationDefine
+
+P0:CSTRING:.zh=alphabetic name
+W4:TEXT:.zh=2-line message
+W6:TEXT:.zh=16char 1line part1
+W8:TEXT:.zh=16char 1line part2
+W10:TEXT:.zh=16char 1line part3
+B12:$COMBO IsDefaultShow.combo:.zh.txt:.zh=ShowAlways
+B13:$COMBO Magic.combo:.zh.txt:.zh=Magic Effect
+W14:BATTLEANIME:.zh=BattleAnimation
+B16:UNITPALETTE:.zh=Unit Palette(0=None)
+B17:$COMBO PlayerEnemyColor.combo.txt:.zh=PlayerEnemyColor
+B18:TERRAINBATTLE:.zh=Terrain
+B19:$COMBO Animation.combo.txt:.zh=AnimationDefine
+
+NAME.en=Create a picture book of the arena (ArenaDicStruct)
+NAME.zh=创建竞技场的图画书（ArenaDicStruct）
+
+INFO=図鑑の項目をしています。\r\n\r\n「英語名」には、画面右上に表示されるクラスの英語表記です。この表記はアルファベットのみです。スペースと、一部の大文字は利用できません。\r\nデータ構造としては、null終端のC言語の文字列にする必要があります。\r\n「2行メッセージ」は、そのクラスのことを詳細に説明した2行の説明文です。\r\n「1行8文字その1」「1行8文字その2」「1行8文字その3」は、左上に表示するクラスの名前や特徴です。2バイト文字で8文字(1バイト文字だと16文字)の表示空間があります。\r\n「ディフォルト表示」は、撃破しなくても辞書表示するデータを指定します。通常はその敵を撃破すると初めて図鑑に表示されます。\r\nそれまでは未撃破状態となり、コナンの犯人みたいに真っ黒のパレットで表示されます。\r\nディフォルト表示を1にすると、撃破に関係なく常に表示するようになります。\r\n闘技場に出演しないキャラクターでも辞典に掲載したい場合に利用してください。\r\n「魔法エフェクト」は、オープニングのクラス紹介(OP Class Reel)と同じです。ユニットが魔法を使う場合に表示する魔法エフェクトを指定します。\r\n「戦闘アニメ」は、図鑑に表示する戦闘アニメーションを指定します。\r\nオープニングのクラス紹介(OP Class Reel)とは違い、ID+1にはしません。\r\n「キャラパレット」は、ユニットをキャラクター別の特殊なパレットを利用するかどうか指定します。\r\n利用しない場合は、0を指定ください。\r\nこれもオープニングのクラス紹介(OP Class Reel)と違い、ID+1にはしません。\r\nそのため、「なし」にしたい場合は、0xFFではなく、0x00を指定します。\r\n「敵味方カラー」は、プレイヤーの色か、敵の汎用色のどちらを利用するかを指定します。\r\n「地形」は、ユニットは立っている地形の種類です。\r\n容量がもったいないので、オープニングのクラス紹介(OP Class Reel)とは違い、単一のデータだけを指定できます。\r\n「AnimationDefinde」は、設定にある3つのアニメーションタイプのどれを利用するか指定します。\r\n基本的にディフォルトの0で問題ありませんが、ユニットの攻撃モーションが長い場合は、別のを指定した方がいいかもしれません。\r\nなお、このArenaDicStructは、絶対に0個にはしないでください。必ず1つ以上の項目が必要です。\r\n
+INFO.en=I am working on a picture book item.\r\n\r\n"English name" is the English notation of the class displayed on the upper right of the screen.This notation is alphabetical only.Spaces and some capital letters are not allowed.\r\nThe data structure should be a null-terminated C string.\r\nA "two-line message" is a two-line descriptive text that describes the class in detail.\r\n"1 line 8 characters part 1\There is a display space for 8 double-byte characters (16 single-byte characters).\r\n"Default display" specifies the data to be displayed in the dictionary even if it is not defeated.Usually, it will be displayed in the picture book for the first time after defeating the enemy.\r\nUntil then, it will be in an undefeated state and will be displayed with a black palette like Conan's criminal.\r\nIf you set the default display to 1, it will always be displayed regardless of defeat.\r\nPlease use it when you want to include characters that do not appear in the arena in the dictionary.\r\n"Magic effect" is the same as the opening class introduction (OP Class Reel).Specifies the magic effect to display when the unit uses magic.\r\n"Battle animation" specifies the battle animation to be displayed in the picture book.\r\nUnlike the opening class introduction (OP Class Reel), it will not be ID+1.\r\n"Character palette" specifies whether to use a special palette for each character for the unit.\r\nIf you do not use it, please specify 0.\r\nUnlike the opening class introduction (OP Class Reel), this is not ID+1.\r\nTherefore, if you want "none\\r\n"Enemy ally color" specifies whether to use the player's color or the enemy's general color.\r\n"Terrain" is the type of terrain the unit is standing on.\r\nUnlike the opening class introduction (OP Class Reel), only a single data can be specified because it is a waste of space.\r\n"AnimationDefinde" specifies which of the three animation types in the settings should be used.\r\nBasically, the default of 0 is fine, but if the unit's attack motion is long, you may want to specify a different value.\r\nAlso, never set this ArenaDicStruct to 0.At least one item is required.\r\n
+INFO.zh=我正在制作一本图画书项目。\r\n\r\n“英文名称”是显示在屏幕右上角的班级的英文符号。此符号仅按字母顺序排列。不允许使用空格和一些大写字母。\r\n数据结构应该是一个以 null 结尾的 C 字符串。\r\n“两行消息”是详细描述类的两行描述性文本。\r\n“1 line 8 characters part 1”、“1 line 8 characters part 2”、“1 line 8 characters part 3”是显示在左上角的类的名称和特征。有 8 个双字节字符（16 个单字节字符）的显示空间。\r\n“默认显示”指定在字典中显示的数据，即使它没有被击败。通常，它会在击败敌人后第一次显示在绘本中。\r\n在那之前，它将处于不败状态，并且将像柯南的罪犯一样以黑色调色板显示。\r\n如果将默认显示设置为 1，则无论失败，它都会始终显示。\r\n当您想在字典中包含未出现在竞技场中的字符时，请使用它。\r\n“魔法效果”与开课介绍（OP Class Reel）相同。指定单位使用魔法时显示的魔法效果。\r\n“战斗动画”指定要在绘本中显示的战斗动画。\r\n与开课介绍（OP Class Reel）不同，不会是ID+1。\r\n“字符调色板”指定是否为单元的每个字符使用特殊调色板。\r\n如果不使用，请指定 0。\r\n与开课介绍（OP Class Reel）不同，这不是ID+1。\r\n因此，如果您想要“无”，请指定 0x00 而不是 0xFF。\r\n“Enemy ally color”指定是使用玩家的颜色还是敌人的一般颜色。\r\n“地形”是单位站立的地形类型。\r\n与开课介绍（OP Class Reel）不同，只能指定单个数据，因为太浪费空间了。\r\n'AnimationDefinde' 指定应使用设置中的三种动画类型中的哪一种。\r\n基本上，默认值 0 即可，但如果单位的攻击动作较长，您可能需要指定不同的值。\r\n此外，永远不要将此 ArenaDicStruct 设置为 0。至少需要一项。\r\n

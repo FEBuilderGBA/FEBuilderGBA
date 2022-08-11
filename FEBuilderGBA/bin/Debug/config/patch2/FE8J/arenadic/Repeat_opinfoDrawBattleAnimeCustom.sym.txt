@@ -1,0 +1,9 @@
+GetRepeat_AnimationAddress=$22
+Exit=$1C
+GetRepeat_AnimationAddress_Repeat=$32
+GetRepeat_AnimationAddress_Exit=$4E
+GetAnimationData_Anime2=$44
+GetAnimationData_Anime3=$4A
+GetAnimationData_Anime1=$3E
+ArenaDicConfig=$58
+DATA=$58

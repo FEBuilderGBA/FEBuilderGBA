@@ -1,0 +1,9 @@
+0=None
+1=Fire
+2=Thunder
+3=Heal
+4=Light
+5=Flux
+6=Manakete Transformation
+7=Monster's Magic
+8=Stone

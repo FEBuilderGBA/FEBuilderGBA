@@ -1,0 +1,17 @@
+GetCount=$9C
+EnableFirstData=$1E
+ASMC_ArenaDic_EnableRandomOne_Exit=$1A
+ArenaDicStruct=$B8
+EnableFirstData_Loop=$2A
+EnableFirstData_Break=$50
+EnableFirstData_CheckFlag=$30
+EnableFirstData_Next=$4A
+CheckBit=$58
+SetBit=$78
+EnableFirstData_Exit=$52
+ArenaDicConfig=$BC
+CheckBit_Exit=$74
+SetBit_Exit=$98
+GetCount_Loop=$A2
+GetCount_Break=$AE
+DATA=$B8

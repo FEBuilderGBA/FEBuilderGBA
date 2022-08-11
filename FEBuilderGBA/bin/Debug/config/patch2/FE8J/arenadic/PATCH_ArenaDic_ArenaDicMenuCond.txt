@@ -1,0 +1,33 @@
+NAME=闘技場の図鑑を作る(ArenaDicMenuCond)
+IF:$FGREP4 ArenaDicMain.dmp=0xF0 0xB5
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+0 ArenaDicCommandUsability.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0xff 0xff 0xff 0xff
+
+//リストに表示
+LISTNAME=$B0:MAP
+
+
+
+//データを定義します
+ArenaDicMenuCond:
+//MapID+0		Flag+2
+B0:MAP_ANYFF=MAPID(0xFF=ANY)
+W2:FLAG=Flag(0x00=ANY)
+
+INFO=図鑑メニューを表示する条件を設定します。\r\nこれらの条件を一つでも満たしたときに、図鑑メニューを表示します。\r\nどれにも当てはまらない場合は非表示になります。
+
+NAME.en=Create a picture book of the arena (ArenaDicMenuCond)
+NAME.zh=创建竞技场的图画书（ArenaDicMenuCond）
+INFO.en=Set the conditions for displaying the encyclopedia menu.\r\nWhen even one of these conditions is met, the encyclopedia menu will be displayed.\r\nIf it doesn't match any of the above, it will be hidden.
+INFO.zh=设置显示百科全书菜单的条件。\r\n只要满足其中一个条件，就会显示百科全书菜单。\r\n如果不符合上述任何一项，它将被隐藏。

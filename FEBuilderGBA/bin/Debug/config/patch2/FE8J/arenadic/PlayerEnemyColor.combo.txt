@@ -1,0 +1,2 @@
+0=PlayerColor
+1=EnemyColor

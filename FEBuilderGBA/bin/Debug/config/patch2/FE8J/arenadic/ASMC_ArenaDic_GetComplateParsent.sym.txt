@@ -1,0 +1,10 @@
+ArenaDicStruct=$68
+Loop=$08
+Break=$26
+CheckFlag=$0E
+IncrementAchievement=$1E
+CheckBit=$3E
+Next=$20
+ArenaDicConfig=$6C
+CheckBit_Exit=$5A
+DATA=$68

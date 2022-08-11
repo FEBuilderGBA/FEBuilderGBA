@@ -1,0 +1,9 @@
+Exit=$34
+ArenaDicStruct=$6C
+Loop=$1C
+Next=$2E
+Found=$28
+SetBit=$3A
+ArenaDicConfig=$70
+SetBit_Exit=$5A
+DATA=$6C
