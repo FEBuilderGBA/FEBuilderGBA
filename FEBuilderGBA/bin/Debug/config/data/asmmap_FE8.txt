@@ -14876,3 +14876,4 @@
 080B8A48	Cleanup_opinfoDrawBattleAnime	{J}
 080B83A8	DrawMain_opinfoDrawBattleAnime	{J}
 080B83A8	Preparation_opinfoDrawBattleAnime	{J}
+0203AAA0	NetWorkArena関係のワークメモリ	{J}

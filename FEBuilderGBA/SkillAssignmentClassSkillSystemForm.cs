@@ -86,10 +86,13 @@ namespace FEBuilderGBA
                     {//既存のクラスの最大値を超えたらダメ
                         return false;
                     }
-//                    if (Program.ROM.u8(addr) == 0xFF)
-//                    {//終端コードが出てきたらそこで強制終了
-//                        return false;
-//                    }
+                    if (i >= 0xFE)
+                    {
+                        if (Program.ROM.u8(addr) == 0xFF)
+                        {//終端コードが出てきたらそこで強制終了
+                            return false;
+                        }
+                    }
 
                     return true;
                 }

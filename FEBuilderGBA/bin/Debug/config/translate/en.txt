@@ -11110,6 +11110,12 @@ This WAV file consumes a very large size of {0} bytes! Proceed with importing an
 :Waveファイルのインポートを取りやめました
 Canceled WAV importing.
 
+:SongID {0}のトラック「{1}」は、長さが0です。\r\nトラックが破損しているかトラック数の定義が間違っています。
+Track "{1}" with SongID {0} has a length of 0.\r\nEither the track is corrupted or the number of tracks is defined incorrectly.
+
+:SongID {0}のトラック「{1}」には、途中に{2}が32個連続しています。\r\nトラックが破損している可能性があります。
+The track "{1}" with SongID {0} has 32 consecutive {2}s in the middle.\r\nThe track may be damaged.
+
 :SongID {0}のトラック「{1}」は、壊れた楽器「{2}」を再生するように命令されています。\r\nVOICE命令を確認してください。\r\n{3}
 Track "{1}" with SongID {0} is instructed to play the broken instrument "{2}".\r\nCheck the VOICE instruction.\r\n{3}
 

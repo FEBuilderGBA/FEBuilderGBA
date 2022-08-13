@@ -3611,6 +3611,34 @@ namespace FEBuilderGBA
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors, Track track, uint songinst_addr, uint songaddr, uint song_id, uint track_number, bool isMapBGM)
         {
+            if (track.codes.Count <= 1)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                    , R._("SongID {0}のトラック「{1}」は、長さが0です。\r\nトラックが破損しているかトラック数の定義が間違っています。", U.To0xHexString(song_id), track_number + 1), song_id));
+                return;
+            }
+            else
+            {
+                byte[] unkBin = new byte[32];
+                uint a = U.Grep(Program.ROM.Data, unkBin, track.codes[0].addr, track.codes[track.codes.Count - 1].addr, 4);
+                if (a != U.NOT_FOUND)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                        , R._("SongID {0}のトラック「{1}」には、途中に{2}が32個連続しています。\r\nトラックが破損している可能性があります。", U.To0xHexString(song_id), track_number + 1, U.To0xHexString(0x00) ), song_id));
+                    return;
+                }
+
+                unkBin = U.FillArray(32, 0xFF);
+                a = U.Grep(Program.ROM.Data, unkBin, track.codes[0].addr, track.codes[track.codes.Count - 1].addr, 4);
+                if (a != U.NOT_FOUND)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                        , R._("SongID {0}のトラック「{1}」には、途中に{2}が32個連続しています。\r\nトラックが破損している可能性があります。", U.To0xHexString(song_id), track_number + 1, U.To0xHexString(0xFF) ), song_id));
+                    return;
+                }
+
+            }
+
             bool checkTIE = false;
             for (int i = 0; i < track.codes.Count; i++)
             {
@@ -3642,10 +3670,10 @@ namespace FEBuilderGBA
                 }
                 else if (c.type == 0xb2)
                 {//GOTO
-                    if (OptionForm.felint_check_song_tie_eot() 
-                        && isMapBGM 
-                        && checkTIE 
-                        && !IsEnvSound(song_id) 
+                    if (OptionForm.felint_check_song_tie_eot()
+                        && isMapBGM
+                        && checkTIE
+                        && !IsEnvSound(song_id)
                         && track.codes.Count > 20
                         )
                     {

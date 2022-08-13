@@ -14872,3 +14872,9 @@ r3=X tile position of menu of the right	{U}
 085D4F90	:085D4F98	EfxDummy01000000FrameControl	{U}
 085D4F84	:085D4F90	EfxDummy01000000FrameData	{U}
 081F5BE8	用于策略评估的“生存评估”。	{J}
+0805B3B0	SetupEkrUnitMainMini_OPClassReel	{J}
+080B8A88	Start_opinfoDrawBattleAnime	r0=this	r1=OPClassReelDataPointer	{J}
+080B8A48	Cleanup_opinfoDrawBattleAnime	{J}
+080B83A8	DrawMain_opinfoDrawBattleAnime	{J}
+080B83A8	Preparation_opinfoDrawBattleAnime	{J}
+0203AAA0	与 NetWorkArena 相关的工作记忆。	{J}
