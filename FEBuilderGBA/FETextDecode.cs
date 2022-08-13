@@ -356,8 +356,8 @@ namespace FEBuilderGBA
                 if (addr + 4 > rom_length)
                 {
                     Log.Error("String Tree Broken: {0}/{1} addr_start:{2}", U.ToHexString8(addr), U.ToHexString8(rom_length), U.ToHexString8(addr_start));
-                    out_DataSize = 0;
-                    return "";
+                    out_DataSize = (int)(addr - addr_start);
+                    return listbyte_to_string(str.ToArray(), str.Count);
                 }
                 uint bit = this.ROM.u32(addr);
                 if (bit == 0x0)
@@ -365,8 +365,8 @@ namespace FEBuilderGBA
                     if (addr + 4 + 4 > rom_length)
                     {
                         Log.Error("String Tree Broken2: {0}/{1} addr_start:{2}", U.ToHexString8(addr), U.ToHexString8(rom_length), U.ToHexString8(addr_start));
-                        out_DataSize = 0;
-                        return "";
+                        out_DataSize = (int)(addr - addr_start);
+                        return listbyte_to_string(str.ToArray(), str.Count);
                     }
                     if (this.ROM.u32(addr + 4) == 0x0)
                     {//終端2

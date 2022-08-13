@@ -204,9 +204,10 @@ namespace FEBuilderGBA
             Debug.Assert(r == 10);
         }
 
-        static Dictionary<uint, Address> MakeAllStructMapping(List<Address> structlist)
+        static Dictionary<uint, int> MakeAllStructMapping(List<Address> structlist)
         {
-            Dictionary<uint, Address> dic = new Dictionary<uint, Address>(Program.ROM.Data.Length);
+            //Dictionary<uint, Address> としたいが容量不足になるので、ポインタのように場所だけ記録します
+            Dictionary<uint, int> dic = new Dictionary<uint, int>(Program.ROM.Data.Length);
             
             for (int i = 0; i < structlist.Count; i++)
             {
@@ -222,7 +223,7 @@ namespace FEBuilderGBA
                 {
                     if (!dic.ContainsKey(addr))
                     {
-                        dic.Add(addr, a);
+                        dic.Add(addr, i);
                     }
                 }
             }
@@ -236,11 +237,11 @@ namespace FEBuilderGBA
                 uint addr = U.Padding2Before(a.Pointer);
                 if (!dic.ContainsKey(addr))
                 {
-                    dic.Add(addr, a);
+                    dic.Add(addr, i);
                 }
                 if (!dic.ContainsKey(addr + 2))
                 {
-                    dic.Add(addr + 2, a);
+                    dic.Add(addr + 2, i);
                 }
             }
             return dic;
@@ -343,12 +344,11 @@ namespace FEBuilderGBA
 
                 wait.DoEvents(R._("データを準備中..."));
                 //探索を早くするために、データをアドレスへマッピングする. メモリを大量に使うが早い.
-                Dictionary<uint, Address> lookupStructMap = MakeAllStructMapping(structlist);
-                structlist = null;
+                Dictionary<uint, int> lookupStructMap = MakeAllStructMapping(structlist);
 
                 uint nextDoEvents = 0;
                 bool prevPointer = false; //ひとつ前がポインタだった
-                Address matchAddress;
+                int matchAddressPoint;
                 DisassemblerTrumb.VM vm = new DisassemblerTrumb.VM();
                 while (addr < limit)
                 {
@@ -358,9 +358,9 @@ namespace FEBuilderGBA
                         nextDoEvents = addr + 0xfff;
                     }
 
-
-                    if (lookupStructMap.TryGetValue(addr, out matchAddress))
+                    if (lookupStructMap.TryGetValue(addr, out matchAddressPoint))
                     {
+                        Address matchAddress = structlist[matchAddressPoint];
                         if (matchAddress.Pointer <= addr && addr < matchAddress.Pointer + 4)
                         {//ポインタ?
                             writer.WriteLine(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //POINTER " + matchAddress.Info);
@@ -400,8 +400,9 @@ namespace FEBuilderGBA
                         uint data = Program.ROM.u32(addr);
                         if (U.isPointer(data))
                         {
-                            if (lookupStructMap.TryGetValue(U.toOffset(data), out matchAddress))
+                            if (lookupStructMap.TryGetValue(U.toOffset(data), out matchAddressPoint))
                             {
+                                Address matchAddress = structlist[matchAddressPoint];
                                 writer.WriteLine(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //Wild POINTER " + U.ToHexString8(data) + " " + matchAddress.Info);
                                 addr += 4;
                                 continue;
