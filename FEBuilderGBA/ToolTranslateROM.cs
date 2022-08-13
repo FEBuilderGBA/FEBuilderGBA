@@ -46,29 +46,33 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                uint data_addr;
 
+                uint data_addr;
                 int length;
                 if (FETextEncode.IsUnHuffmanPatchPointer(paddr))
                 {//un-huffman patch?
                     uint unhuffman_addr = U.toOffset(FETextEncode.ConvertUnHuffmanPatchToPointer(paddr));
                     data_addr = unhuffman_addr;
                     TextDecode.UnHffmanPatchDecode(unhuffman_addr, out length);
+                    if (length <= 0)
+                    {
+                        return;
+                    }
                 }
                 else if (U.isPointer(paddr))
                 {
                     data_addr = U.toOffset(paddr);
                     TextDecode.huffman_decode(data_addr, out length);
+                    if (length <= 1)
+                    {
+                        return;
+                    }
                 }
                 else
                 {
                     return;
                 }
 
-                if (length <= 0)
-                {
-                    return;
-                }
                 if (data_addr == this.TextID0Addr)
                 {
                     return;
@@ -170,21 +174,24 @@ namespace FEBuilderGBA
             HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.StatusToLocalization);
         }
 
-        public void CheckTextImportPatch(bool checkDrawFontPatch)
+        public void CheckTextImportPatch(bool checkDrawFontPatch, bool checkLocalizationPatch)
         {
             ApplyAntiHuffmanPatch();
             if (checkDrawFontPatch)
             {
                 ApplyDrawFontPatch();
             }
-            ApplyStatusToLocalizationPatch();
+            if (checkLocalizationPatch)
+            {
+                ApplyStatusToLocalizationPatch();
+            }
         }
 
 
         //パッチの適用
         public void ApplyTranslatePatch(string to)
         {
-            this.CheckTextImportPatch(true);
+            this.CheckTextImportPatch(true, true);
             //メニューのサイズを調整する
             this.ChangeMainMenuWidth(to);
             this.ChangeStatusScreenSkill(to);

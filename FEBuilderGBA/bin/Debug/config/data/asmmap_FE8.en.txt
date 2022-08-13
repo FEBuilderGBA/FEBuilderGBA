@@ -14927,6 +14927,11 @@ r3=X tile position of menu of right	{U}
 0805B3B0	SetupEkrUnitMainMini_OPClassReel	{J}
 080B8A88	Start_opinfoDrawBattleAnime	r0=this	r1=OPClassReelDataPointer	{J}
 080B8A48	Cleanup_opinfoDrawBattleAnime	{J}
-080B83A8	DrawMain_opinfoDrawBattleAnime	{J}
 080B83A8	Preparation_opinfoDrawBattleAnime	{J}
-0203AAA0	Work memory related to NetWorkArena.	{J}
+080B87FC	DrawMain_opinfoDrawBattleAnime	{J}
+0203AAA0	:0203C61F	During link arena	May be only in real link games, in which case it may as well be considered always free.	{J}
+0805A60C	SetupEkrUnitMainMini_OPClassReel	{J}
+080B3EDC	Start_opinfoDrawBattleAnime	r0=this	r1=OPClassReelDataPointer	{U}
+080B3E9C	Cleanup_opinfoDrawBattleAnime	{U}
+080B37FC	DrawMain_opinfoDrawBattleAnime	{U}
+080B3C50	Preparation_opinfoDrawBattleAnime	{U}

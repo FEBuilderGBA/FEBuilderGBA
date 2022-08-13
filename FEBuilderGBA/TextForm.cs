@@ -2663,7 +2663,7 @@ namespace FEBuilderGBA
         private void Import_Click(object sender, EventArgs e)
         {
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.CheckTextImportPatch(false);
+            trans.CheckTextImportPatch(false, false);
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("Import Textfile");
             bool r = trans.ImportAllText(this, undodata);

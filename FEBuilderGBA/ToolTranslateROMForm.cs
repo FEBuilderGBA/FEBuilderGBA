@@ -50,7 +50,7 @@ namespace FEBuilderGBA
             }
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.CheckTextImportPatch(true);
+            trans.CheckTextImportPatch(true,true);
 
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("Import Translate file");
