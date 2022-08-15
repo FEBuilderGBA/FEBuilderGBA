@@ -1,0 +1,12 @@
+
+PUSH
+//ORG 0x05a870	//FE8J
+ORG 0x059ACC	//FE8U
+jumpToHack(AutoGenLeftOAM)
+POP
+
+ALIGN 4
+AutoGenLeftOAM:
+#incbin "AutoGenLeftOAM.dmp"
+
+ALIGN 4

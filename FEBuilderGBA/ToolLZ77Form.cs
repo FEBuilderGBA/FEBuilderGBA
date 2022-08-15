@@ -406,5 +406,23 @@ namespace FEBuilderGBA
 
             return diff;
         }
+
+        private void CompressPortraitButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {
+                return;
+            }
+            ImagePortraitForm.Execute_ToolCompressAllPortrait();
+        }
+        
+        private void OptimizationBattleAnimationOAMButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {
+                return;
+            }
+            ImageBattleAnimeForm.Execute_ToolAutoGenLeftToRightAllAnimation();
+        }
     }
 }

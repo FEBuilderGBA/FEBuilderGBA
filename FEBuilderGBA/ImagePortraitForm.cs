@@ -1725,10 +1725,11 @@ namespace FEBuilderGBA
             MainFormUtil.GotoMoreData();
         }
 
-        private void CompressAllPortrait(Undo.UndoData undodata)
+        static private uint CompressAllPortrait(InputFormRef.AutoPleaseWait pleaseWait, Undo.UndoData undodata)
         {
-            InputFormRef InputFormRef = Init(null);
+            uint totalSize = 0;
 
+            InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
@@ -1742,15 +1743,21 @@ namespace FEBuilderGBA
                     continue;
                 }
 
+                pleaseWait.DoEvents(R._("{0} 削減サイズ:{1}", U.To0xHexString(i), totalSize));
+
                 byte[] bin = Program.ROM.getBinaryData(a + 4, 0x1000);
                 byte[] lz77 = LZ77.compress(bin);
-                if (lz77.Length >= 0x1000 + 4)
+                uint uncomplessSize = 0x1000 + 4;
+                if (lz77.Length >= uncomplessSize)
                 {
                     continue;   
                 }
-                Program.ROM.write_fill(a, 4 + 0x1000, 0, undodata);
+                Program.ROM.write_fill(a, uncomplessSize, 0, undodata);
                 Program.ROM.write_range(a, lz77, undodata);
+
+                totalSize += uncomplessSize - (uint)lz77.Length;
             }
+            return totalSize;
         }
 
         private void DetermineToolCompressAllPortraitButton()
@@ -1766,18 +1773,31 @@ namespace FEBuilderGBA
  
         private void ToolCompressAllPortrait_Click(object sender, EventArgs e)
         {
-            DialogResult dr = R.ShowNoYes("顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\n捨てに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？");
+            Execute_ToolCompressAllPortrait();
+        }
+
+        public static void Execute_ToolCompressAllPortrait()
+        {
+            if (Program.ROM.RomInfo.version != 8)
+            {
+                R.ShowStopError("FE8にしか利用できません");
+                return;
+            }
+
+            DialogResult dr = R.ShowNoYes("顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\nすでに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？");
             if (dr != DialogResult.Yes)
             {
                 return;
             }
 
-            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            uint totalSize = 0;
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
             {
                 Undo.UndoData undodata = Program.Undo.NewUndoData("ToolCompressAllPortrait");
-                CompressAllPortrait(undodata);
+                totalSize = CompressAllPortrait(pleaseWait, undodata);
                 Program.Undo.Push(undodata);
             }
+            R.ShowOK("完了しました。\r\n{0}バイトの領域を解放できました。", totalSize);
         }
 
     }

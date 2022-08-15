@@ -50,6 +50,7 @@ namespace FEBuilderGBA
             g_Cache_DeathQuoteAddKillerIDExtends = DeathQuoteAddKillerIDExtends.NoCache;
             g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
             g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
+            g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2323,5 +2324,51 @@ namespace FEBuilderGBA
 
             return SearchPatchBool(table);
         }
+
+        //戦闘アニメの敵モーションの動的作成
+        public enum AutoGenLeftOAMPatch
+        {
+            NO,             //なし
+            AutoGenLeftOAM,
+            NoCache = (int)NO_CACHE
+        };
+        static AutoGenLeftOAMPatch g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
+        public static AutoGenLeftOAMPatch AutoGenLeftOAM()
+        {
+            if (g_Cache_AutoGenLeftOAMPatch == AutoGenLeftOAMPatch.NoCache)
+            {
+                g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMLow();
+            }
+            return g_Cache_AutoGenLeftOAMPatch;
+        }
+        static AutoGenLeftOAMPatch AutoGenLeftOAMLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="AutoGenLeftOAM",	ver = "FE8J", addr = 0x05a870,data = new byte[]{0x00, 0x4B}},
+                new PatchTableSt{ name="AutoGenLeftOAM",	ver = "FE8U", addr = 0x059ACC,data = new byte[]{0x00, 0x4B}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename;
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "AutoGenLeftOAM")
+                {
+                    return AutoGenLeftOAMPatch.AutoGenLeftOAM;
+                }
+            }
+            return AutoGenLeftOAMPatch.NO;
+        }
+
     }
 }

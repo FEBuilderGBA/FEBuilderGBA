@@ -1355,7 +1355,7 @@ namespace FEBuilderGBA
             }
             public byte[] GetLeftToRightOAM()
             {
-                return GetLeftToRightOAM(this.RightToLeftOAM);
+                return ImageUtilOAM.ConvertLeftToRightOAM(this.RightToLeftOAM);
             }
             public byte[] GetRightToLeftOAMBG()
             {
@@ -1365,7 +1365,7 @@ namespace FEBuilderGBA
             public byte[] GetLeftToRightOAMBG()
             {
                 Debug.Assert(this.IsMagicOAM == true);
-                return GetLeftToRightOAM(this.RightToLeftOAMBG);
+                return ImageUtilOAM.ConvertLeftToRightOAM(this.RightToLeftOAMBG);
             }
 
             public uint GetOAMByteCount()
@@ -1373,38 +1373,6 @@ namespace FEBuilderGBA
                 return (uint)this.RightToLeftOAM.Count;
             }
 
-            
-            byte[] GetLeftToRightOAM(List<byte> oam)
-            {
-                byte[] leftToRight = oam.ToArray();
-                for (int i = 0; i < leftToRight.Length; i += 12)
-                {
-                    if (leftToRight[i] == 1)
-                    {//end code
-                        continue;
-                    }
-                    if (leftToRight[i + 2] == 0xff && leftToRight[i + 3] == 0xff)
-                    {//回転とかの別ルーチン
-                        continue;
-                    }
-                    uint align = (uint)(leftToRight[i + 1]);
-                    uint area = (uint)(leftToRight[i + 3]);
-
-                    //幅高さの取得
-                    int width, height;
-                    DrawOAM.convertAlignAreaToWH(align, area, out width, out height);
-
-                    //反転フラグ
-                    leftToRight[i + 3] = (byte)(leftToRight[i + 3] | 0x10);
-
-                    //描画位置調整
-                    int vram_x = (short)U.u16(leftToRight, (uint)(i + 6));
-                    vram_x = -(width * 8) - vram_x;
-
-                    U.write_u16(leftToRight, (uint)(i + 6), (uint)vram_x);
-                }
-                return leftToRight;
-            }
             public int GetOAMSize()
             {
                 return this.RightToLeftOAM.Count;
@@ -1421,6 +1389,38 @@ namespace FEBuilderGBA
             {
                 return this.BaseDir;
             }
+        }
+
+        static public byte[] ConvertLeftToRightOAM(List<byte> oam)
+        {
+            byte[] leftToRight = oam.ToArray();
+            for (int i = 0; i < leftToRight.Length; i += 12)
+            {
+                if (leftToRight[i] == 1)
+                {//end code
+                    continue;
+                }
+                if (leftToRight[i + 2] == 0xff && leftToRight[i + 3] == 0xff)
+                {//回転とかの別ルーチン
+                    continue;
+                }
+                uint align = (uint)(leftToRight[i + 1]);
+                uint area = (uint)(leftToRight[i + 3]);
+
+                //幅高さの取得
+                int width, height;
+                DrawOAM.convertAlignAreaToWH(align, area, out width, out height);
+
+                //反転フラグ
+                leftToRight[i + 3] = (byte)(leftToRight[i + 3] | 0x10);
+
+                //描画位置調整
+                int vram_x = (short)U.u16(leftToRight, (uint)(i + 6));
+                vram_x = -(width * 8) - vram_x;
+
+                U.write_u16(leftToRight, (uint)(i + 6), (uint)vram_x);
+            }
+            return leftToRight;
         }
 
         //ユーザーがパレットを指定しているか？
@@ -2647,10 +2647,17 @@ namespace FEBuilderGBA
 
             //圧縮して書き込みます.
             byte[] z = oam.GetRightToLeftOAM_Z();
-            ra.WriteAndWritePointer(battleanime_baseaddress + 20, z , undodata);
+            uint leftToRightAddress = ra.WriteAndWritePointer(battleanime_baseaddress + 20, z , undodata);
 
-            z = oam.GetLeftToRightOAM_Z();
-            ra.WriteAndWritePointer(battleanime_baseaddress + 24, z, undodata);
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM)
+            {
+                ra.WritePointerOnly(battleanime_baseaddress + 24, leftToRightAddress, undodata);
+            }
+            else
+            {
+                z = oam.GetLeftToRightOAM_Z();
+                ra.WriteAndWritePointer(battleanime_baseaddress + 24, z, undodata);
+            }
 
             z = MakeBattle4Palette_Z(GetFirstImage(oam.GetBaseDir(),lines), oam.GetPalette(), reColorMap);
             ra.WriteAndWritePointer(battleanime_baseaddress + 28, z, undodata);
@@ -2976,9 +2983,21 @@ namespace FEBuilderGBA
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
             byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
-            byte[] leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(leftToRightOAM)); //OAM
             byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+
+            byte[] leftToRightOAM_UZ;
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM
+                && rightToLeftOAM == leftToRightOAM)
+            {
+                List<byte> rightToLeftOAM_UZ_Array = new List<byte>(rightToLeftOAM_UZ);
+                leftToRightOAM_UZ = ConvertLeftToRightOAM(rightToLeftOAM_UZ_Array);
+            }
+            else
+            {
+                leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(leftToRightOAM)); //OAM
+            }
+
 
             List<uint> animeSeet = new List<uint>();
 
@@ -3358,10 +3377,18 @@ namespace FEBuilderGBA
             //圧縮して書き込みます.
             byte[] z;
             z = LZ77.compress(rightToLeftOAM.ToArray());
-            ra.WriteAndWritePointer(battleanime_baseaddress + 20, z, undodata);
+            uint leftToRightAddress = ra.WriteAndWritePointer(battleanime_baseaddress + 20, z, undodata);
 
-            z = LZ77.compress(leftToRightOAM.ToArray());
-            ra.WriteAndWritePointer(battleanime_baseaddress + 24, z, undodata);
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM
+                && IsMatchOAM(rightToLeftOAM, leftToRightOAM))
+            {
+                ra.WritePointerOnly(battleanime_baseaddress + 24, leftToRightAddress, undodata);
+            }
+            else
+            {
+                z = LZ77.compress(leftToRightOAM.ToArray());
+                ra.WriteAndWritePointer(battleanime_baseaddress + 24, z, undodata);
+            }
 
             //パレットは4つ 自軍、敵軍、友軍、グレーを作り、lz77圧縮する.
             if (order_palette.Length == 0x80)
@@ -3399,6 +3426,16 @@ namespace FEBuilderGBA
 
             Program.Undo.Push(undodata);
             return "";
+        }
+
+        public static bool IsMatchOAM(List<byte> rightToLeftOAM, List<byte> leftToRightOAM)
+        {
+            byte[] genLeftToRightOAM = ConvertLeftToRightOAM(rightToLeftOAM);
+            if (U.memcmp(genLeftToRightOAM, leftToRightOAM.ToArray()) == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public static void RecycleOldAnime(ref List<Address> list, uint battleanime_baseaddress)

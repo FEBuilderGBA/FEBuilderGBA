@@ -797,10 +797,11 @@ namespace FEBuilderGBA
                    R.ShowStopError("アニメーションエディタを表示するために、アニメーションをエクスポートしようとしましたが、アニメをファイルにエクスポートできませんでした。\r\n\r\nファイル:{0}", filename);
                    return;
                }
+               byte[] paletteBIN = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes));
 
                ToolAnimationCreatorForm f = (ToolAnimationCreatorForm)InputFormRef.JumpFormLow<ToolAnimationCreatorForm>();
                f.Init( ToolAnimationCreatorUserControl.AnimationTypeEnum.BattleAnime
-                   , ID, filehint, filename);
+                   , ID, filehint, filename, paletteBIN);
                f.Show();
                f.Focus();
            }
@@ -1185,6 +1186,83 @@ namespace FEBuilderGBA
        private void LinkInternt_Click(object sender, EventArgs e)
        {
            MainFormUtil.GotoMoreData();
+       }
+
+
+       static uint All_ToolAutoGenLeftToRightAllAnimation(InputFormRef.AutoPleaseWait pleaseWait, Undo.UndoData undodata)
+       {
+           uint totalSize = 0;
+
+           //テーブル拡張などで同じOAMが複数個所にある場合の対処
+           Dictionary<uint, uint> convertHistory = new Dictionary<uint, uint>();
+
+           InputFormRef N_InputFormRef = N_Init(null);
+           uint addr = N_InputFormRef.BaseAddress;
+           for (uint i = 0; i < N_InputFormRef.DataCount; i++, addr += N_InputFormRef.BlockSize)
+           {
+               uint rightToLeftOAMAddress = Program.ROM.p32(addr + 20);
+               uint leftToRightOAMAddress = Program.ROM.p32(addr + 24);
+               if (rightToLeftOAMAddress == leftToRightOAMAddress)
+               {//処理済み
+                   continue;
+               }
+
+               //実はさっき処理していますか?
+               //Ｄ拡張などで同じデータが複数個ある場合への配慮.
+               uint convertAddress;
+               if (convertHistory.TryGetValue(leftToRightOAMAddress, out convertAddress))
+               {
+                   Program.ROM.write_p32(addr + 24, convertAddress, undodata);
+                   continue;
+               }
+
+               byte[] rightToLeftOAMBin = LZ77.decompress(Program.ROM.Data, rightToLeftOAMAddress);
+               byte[] leftToRightOAMBin = LZ77.decompress(Program.ROM.Data, leftToRightOAMAddress);
+
+               List<byte> rightToLeftOAMArray = new List<byte>(rightToLeftOAMBin);
+               List<byte> leftToRightOAMArray = new List<byte>(leftToRightOAMBin);
+
+               if (! ImageUtilOAM.IsMatchOAM(rightToLeftOAMArray, leftToRightOAMArray))
+               {//鏡写しではないので、自動生成できません。
+                   continue;
+               }
+               pleaseWait.DoEvents(R._("{0} 削減サイズ:{1}", U.To0xHexString(i), totalSize));
+
+               //データを自動生成できるので、ポインタを共有します
+               Program.ROM.write_p32(addr + 24, rightToLeftOAMAddress, undodata);
+               //不要なデータを消去します
+               uint leftToRightOAMSize = LZ77.getCompressedSize(Program.ROM.Data, leftToRightOAMAddress);
+               Program.ROM.write_fill(leftToRightOAMAddress, leftToRightOAMSize, 0, undodata);
+
+               convertHistory[leftToRightOAMAddress] = rightToLeftOAMAddress;
+               totalSize += leftToRightOAMSize;
+           }
+           return totalSize;
+       }
+
+       public static void Execute_ToolAutoGenLeftToRightAllAnimation()
+       {
+           if (PatchUtil.AutoGenLeftOAM() != PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM)
+           {
+               R.ShowStopError("必要なパッチ「AutoGenLeftOAM」がインストールされていません。");
+               return;
+           }
+
+           DialogResult dr = R.ShowNoYes("戦闘アニメーションをスキャンして、LeftToRightOAMを消せるものはすべて消します。\r\nすでに処理されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？");
+           if (dr != DialogResult.Yes)
+           {
+               return;
+           }
+
+           uint totalSize = 0;
+           using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
+           {
+               Undo.UndoData undodata = Program.Undo.NewUndoData("ToolAutoGenLeftToRightAllAnimation");
+               totalSize = All_ToolAutoGenLeftToRightAllAnimation(pleaseWait, undodata);
+               Program.Undo.Push(undodata);
+           }
+
+           R.ShowOK("完了しました。\r\n{0}バイトの領域を解放できました。", totalSize);
        }
 
     }
