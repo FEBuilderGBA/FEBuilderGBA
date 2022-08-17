@@ -1,0 +1,106 @@
+
+2 line issues:
+Regular trading: top right/left 
+Obtained drop with full inv: 5 lines works now 
+Prep: trading (starts at 6014000 fsr), should start at 6012000 or 6013000  
+Prep: list (starts at 6012000) 5 lines works 
+Prep: trading - 6012000 5 lines works 
+Shop: starts at 6013000, should start at 6012000 
+Supply: should 6012000 
+
+203E794+0x30 (203E7C4) is a short of palette<<12 | vramTile (eg. 6013000 = 0x180) 
+
+
+StartStatScreenHelpTextBubble 0x80889A0 
+	
+
+gProcHelpTextBubble 0xA00AD0 
+	89060 // HelpTextBubble 
+		88E9C // HelpDialogue 
+		89088 // WaitForPressesLoop 
+			// 89118 B press 
+			// 89140 on new thing to hover over 
+		
+
+
+New R-Text for Item 0x8088E9C 
+starts: 
+	gProc_8A00A98 // Proc 
+		88CFC // PlaySound 
+		88D3C // DrawHelpBoxWhile (this uses Obj Sprites)
+			bl 8088C48 // DrawObjBox 
+				88C70 // x coord of box 
+				88C90 // y coord of box 
+				88Cb2 // x size of box 
+				88CD2 // y size of box (max 0x50 / 3 lines of text) 
+				
+				89994 // is extra width needed? 
+				89980 // 899C0 caps it from being > 0x30 
+				// change it from mov r0, #0x30 to mov r0, #0x40 / #0x50 for max 4 / 5 lines 
+					899A8 // probably min / max x size 
+				89A7C // 8590F8C is the objData 
+				
+				objInsertSafe calls: 
+				89A4E the small white 16x16 boxes to extend width at the end 
+				89A7A twice left white boxes - maybe it's 32x by 16y? 
+				89B00, 89B14 
+				89B46, 89B58 twice 
+				89B8E, 89BA4, 89BB2, 89BC8 
+				89C12, 
+		89060
+			bl 88E9C 
+				bl 8A118 // sets up vram 
+					bl 45FC // sets up a row of vram takes a ram address in r0 
+					struct: 
+					+04: 0x20 
+					
+					calls 0x80046E0
+					uses gpCurrentFont -> FontData -> /* 0C */ void*(*getDrawTarget)(TextHandle*);
+					to get the vram tile to use 
+					
+				LoadDialogueBoxGfx at 8089804 
+					change 898A4 to WORD 0x6012000
+					
+						
+		Label 99 
+		88D65 // DestructHelpBox
+		88DB9 // DrawHelpBoxDisappearing 
+88F54 
+	A01650 proc // DrawDialogue 
+		89F58 // DetermineWeaponTypeForLabels 
+			also sets up text tiles 
+		89FCC // DetermineWeaponTypeForTextDetails 
+			bl to 8089CD4 with wepShort in r0 // sets up text for wep's stats 
+		8A00D // 808A080 to get the string from the index 
+8A052 starts A01628 proc 
+	hook 8A068 or thereabouts to make more textHandles 
+	203E794 textHandles 
+	203E7AC gText_HelpBox
+	203E7E8 Tutorial_Text
+	
+	A01628 proc // HelpBoxTextScroll_OnLoop
+		struct: +0x34 textHandle[3] ? 
+			we need textHandle[5] 
+		89E58 // TextAppendCharactersUntilDrawn - breaks the procloop when finished drawing the line(s) of text 
+		// draws to vram / obj sprites, but only to allocated vram? 
+			89EA2 
+			89EDA 
+		89EC0 // no text handle found for proc + 0x34 + 0x10 
+203E784 stores R-text info? 
+
+StoreItemDescIDFromRamToPlus4C 0x8088A00 
+
+
+
+
+[0880A9B2]?
+
+at 88F54 
+r0 = short item 
+r1 = desc text ID 
+
+
+
+
+
+

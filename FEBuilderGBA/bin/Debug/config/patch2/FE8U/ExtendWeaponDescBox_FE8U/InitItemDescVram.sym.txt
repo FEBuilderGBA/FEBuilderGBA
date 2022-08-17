@@ -1,0 +1,13 @@
+ProcExceptionsList=$014C
+Loop=$32
+BreakLoop=$46
+Exit2=$CE
+InitFiveMenu=$A8
+OnOpenTradeMenuHelpBox=$86
+OnCloseTradeMenuHelpBox=$80
+Restore_TrandeMenuFace1=$D4
+Exit=$CC
+TradeMenuButNot5Lines=$9A
+TradeMenuAnd5Lines=$A0
+Restore_TrandeMenuFace1_Exit=$EE
+Restore_TrandeMenuFace1_Main=$F2

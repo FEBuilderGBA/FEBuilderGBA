@@ -1685,7 +1685,7 @@
 02039F18	UnkOAMTablePtr	{J}
 
 02002774	When in the item menu	{J}
-0203E678	When viewing character list, help functions, armories	{J}
+0203E678	HelpTextHandles	{J}
 030000E8	When dialogue is displayed	{J}
 02000044	Main Menu	{J}
 020040D4	Status screen	{J}
@@ -1742,7 +1742,7 @@
 02039F1C	UnkOAMTablePtr	{U}
 
 02002774	When in the item menu	{U}
-0203E6A0	When viewing character list, help functions, armories	{U}
+0203E6A0	HelpTextHandles	{U}
 030000E8	When dialogue is displayed	{U}
 02000044	Main Menu	{U}
 020040D4	Status screen	{U}

@@ -8315,16 +8315,16 @@ Base Color to Modify
 Map Tile Animation 2
 
 :可否診断ルーチンポインタ
-Possibility Diagnostic Routine Pointer
+Usability routine
 
 :描画ルーチンポインタ
-Drawing Routine Pointer
+Draw routine
 
 :選択時に実行する効果ポインタ
-Effect Pointer Executed When Selected
+Effect when selected
 
 :選択時に毎ターン呼び出されるポインタ
-Pointer Called Every Turn At Selection
+Routine on hover
 
 :カーソルで選択されたときの動作ポインタ
 Action Pointer When Selected

@@ -657,7 +657,7 @@
 02038D44	UnkOAMTablePtr
 
 02002770	When in the item menu
-0203D40C	When viewing character list, help functions, armories
+0203D40C	HelpTextHandles
 02000444	Main Menu
 02017640	In battles
 0203C758	Link Arena

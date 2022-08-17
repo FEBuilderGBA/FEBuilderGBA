@@ -2455,7 +2455,7 @@ r3=X tile position of menu of right	{U}
 0203A018	UnkOAMTablePtr	{U}
 
 02002774	When in item menu	{U}
-0203E794	When viewing character list, help functions, armories	{U}
+0203E794	HelpTextHandles	{U}
 030000F0	When dialogue is displayed	{U}
 02000920	Main Menu	{U}
 02004BC4	Status screen	{U}
@@ -2558,7 +2558,7 @@ r3=X tile position of menu of right	{U}
 0203A014	UnkOAMTablePtr	{J}
 
 02002774	When in item menu	{J}
-0203E790	When viewing character list, help functions, armories	{J}
+0203E790	HelpTextHandles	{J}
 030000E8	When dialogue is displayed	{J}
 02000920	Main Menu	{J}
 02004BC4	Status screen	{J}
@@ -12827,7 +12827,7 @@ r3=X tile position of menu of right	{U}
 08590F8C	&OAMREGS	Sound Room	SongName	Name	OAM	{U}
 0808BFE0	MakeHelpDialog_WeaponDetail	{J}
 0808b55c	Determine the type of weapon	{J}
-0808B438	HelpDialog_CalcStringWidth	{J}
+0808B438	HelpDialog_CalcStringWidthAndHeight	{J}
 08089CD4	MakeHelpDialog_WeaponDetail	{U}
 080892D0	Determine the type of weapon	{U}
 02020988	gGenericTSABuffer
@@ -13221,8 +13221,8 @@ r3=X tile position of menu of right	{U}
 08AC1BEC	:08AC1BFD	KEEPEMPTY	4	{J}
 08A3E22C	:08A3E23D	KEEPEMPTY	4	{U}
 08BB8EA0	:08BB8EEF	KEEPEMPTY	5	{J}
-085C2BA4	:085C2C53	KEEPEMPTY	6	NPC UNIT RAM	{J}
-0859A724	:0859A7D3	KEEPEMPTY	6	NPC UNIT RAM	{U}
+085C2BA4	:085C2C54	KEEPEMPTY	6	NPC UNIT RAM	{J}
+0859A724	:0859A7D4	KEEPEMPTY	6	NPC UNIT RAM	{U}
 0808EB0C	ParseTextCommandSetName0x8023	{U}
 08090DE0	ParseTextCommandSetName0x8023	{J}
 081B258C	:081B2C80	Staff role is entered in ASCII Not used.	{J}
@@ -14935,3 +14935,10 @@ r3=X tile position of menu of right	{U}
 080B3E9C	Cleanup_opinfoDrawBattleAnime	{U}
 080B37FC	DrawMain_opinfoDrawBattleAnime	{U}
 080B3C50	Preparation_opinfoDrawBattleAnime	{U}
+080891AC	HelpDialog_CalcStringWidthAndHeight	{U}
+0802DA94	OnOpen_TradeMenu_HelpBoxControlSub	{J}
+0802DB3C	MainLoop_TradeMenu_HelpBoxControlSub	{J}
+0802DC10	OnClose_TradeMenu_HelpBoxControlSub	{J}
+0802DB5C	OnOpen_TradeMenu_HelpBoxControlSub	{U}
+0802DC04	MainLoop_TradeMenu_HelpBoxControlSub	{U}
+0802DCD8	OnClose_TradeMenu_HelpBoxControlSub	{U}

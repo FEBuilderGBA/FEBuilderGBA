@@ -51,6 +51,7 @@ namespace FEBuilderGBA
             g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
             g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
             g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
+            g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2370,5 +2371,49 @@ namespace FEBuilderGBA
             return AutoGenLeftOAMPatch.NO;
         }
 
+        //武器の説明欄に最大3行書けるようにする
+        public enum ExtendWeaponDescBoxPatch
+        {
+            NO,             //なし
+            ExtendWeaponDescBox,
+            NoCache = (int)NO_CACHE
+        };
+        static ExtendWeaponDescBoxPatch g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
+        public static ExtendWeaponDescBoxPatch ExtendWeaponDescBox()
+        {
+            if (g_Cache_ExtendWeaponDescBoxPatch == ExtendWeaponDescBoxPatch.NoCache)
+            {
+                g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxLow();
+            }
+            return g_Cache_ExtendWeaponDescBoxPatch;
+        }
+        static ExtendWeaponDescBoxPatch ExtendWeaponDescBoxLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="ExtendWeaponDescBox",	ver = "FE8J", addr = 0x353E0,data = new byte[]{0xC0, 0x42}},
+                new PatchTableSt{ name="ExtendWeaponDescBox",	ver = "FE8U", addr = 0x354D8,data = new byte[]{0xC0, 0x42}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename;
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "ExtendWeaponDescBox")
+                {
+                    return ExtendWeaponDescBoxPatch.ExtendWeaponDescBox;
+                }
+            }
+            return ExtendWeaponDescBoxPatch.NO;
+        }
     }
 }
