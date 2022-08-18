@@ -52,6 +52,7 @@ namespace FEBuilderGBA
             g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
             g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
             g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
+            g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2229,6 +2230,50 @@ namespace FEBuilderGBA
                 }
             }
             return OPClassReelSortExtends.NO;
+        }
+
+        //OP ClassReelでBattleAnimationID255を越えることができるか
+        public enum OPClassReelAnimationIDOver255Patch
+        {
+            NO,             //なし
+            Over255,
+            NoCache = (int)NO_CACHE
+        };
+        static OPClassReelAnimationIDOver255Patch g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
+        public static OPClassReelAnimationIDOver255Patch OPClassReelAnimationIDOver255()
+        {
+            if (g_Cache_OPClassReelAnimationIDOver255 == OPClassReelAnimationIDOver255Patch.NoCache)
+            {
+                g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Low();
+            }
+            return g_Cache_OPClassReelAnimationIDOver255;
+        }
+        static OPClassReelAnimationIDOver255Patch OPClassReelAnimationIDOver255Low()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Over255",	ver = "FE8J", addr = 0xB86B0,data = new byte[]{0x59, 0x8A}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename;
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "Over255")
+                {
+                    return OPClassReelAnimationIDOver255Patch.Over255;
+                }
+            }
+            return OPClassReelAnimationIDOver255Patch.NO;
         }
 
         //死亡セリフにトドメを刺したユニットを表示する

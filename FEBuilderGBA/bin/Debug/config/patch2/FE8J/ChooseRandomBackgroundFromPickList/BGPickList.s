@@ -10,12 +10,13 @@
 
 CountBGList:
 ldr  r6, BGList
-mov  r0, #0x1
+mov  r0, #0x0
 Loop:
 ldrb r3, [r6, r0]
-add  r0, #0x01
 cmp  r3, #0xFF
-bne  Loop
+beq  ChooseRandBG
+add  r0, #0x01
+b    Loop
 
 ChooseRandBG:
 blh 0x08000c58   @NextRN_N	{J}

@@ -1546,10 +1546,10 @@ r3=X tile position of menu of right	{U}
 03005268	flag0x125 - 0x12C	{U}
 
 020228A8	Palette wram buffer
-02022CA8	BG 0 wram buffer
-020234A8	BG 1 wram buffer
-02023CA8	BG 2 wram buffer
-020244A8	BG 3 wram buffer
+02022CA8	gBG0TilemapBuffer	BG 0 wram buffer
+020234A8	gBG1TilemapBuffer	BG 1 wram buffer
+02023CA8	gBG2TilemapBuffer	BG 2 wram buffer
+020244A8	gBG3TilemapBuffer	BG 3 wram buffer
 
 0203EFB8	Unit data loaded from events	{U}
 0203EFB4	Unit data loaded from events	{J}
@@ -1910,10 +1910,10 @@ r3=X tile position of menu of right	{U}
 
 @6CPointer@0	word	pointer
 
-02024E68	@6CStructHeader@[40]	PoolOf6C	{U}
-02026968	@6CPointer@[40]	Lookup6C	{U}
-02026A6C	Alloc6CIt	Pointer to next available slot in Lookup6C table	{U}
-02026A70	@6CPointer@[8]	MainArray	{U}
+02024E68	@6CStructHeader@[40]	ProcAllocList	{U}
+02026968	@6CPointer@[40]	ProcAllocListHead	{U}
+02026A6C	ProcAllocListHead	Pointer to next available slot in ProcAllocListHead table	{U}
+02026A70	@6CPointer@[8]	ProcTreeRootArray	{U}
 
 08002C08	Initialize6CEngine	{U}
 08002C7C	New6C	{U}
@@ -1948,10 +1948,10 @@ r3=X tile position of menu of right	{U}
 080030A4	ForAll6CFollowing	{U}
 
 
-02024E68	@6CStructHeader@[40]	PoolOf6C	{J}
-02026968	@6CPointer@[40]	Lookup6C	{J}
-02026A6C	Alloc6CIt	Pointer to next available slot in Lookup6C table	{J}
-02026A70	@6CPointer@[8]	MainArray	{J}
+02024E68	@6CStructHeader@[40]	ProcAllocList	{J}
+02026968	@6CPointer@[40]	ProcAllocListHead	{J}
+02026A6C	ProcAllocListHead	Pointer to next available slot in ProcAllocListHead table	{J}
+02026A70	@6CPointer@[8]	ProcTreeRootArray	{J}
 
 08002B58	Initialize6CEngine	{J}
 08002BCC	New6C	{J}
@@ -2402,14 +2402,14 @@ r3=X tile position of menu of right	{U}
 0808BBCC	WindowPosCheck	This returns 0-3 based on cursor position	 Uses same misc	 RAM data	 This function is used by all window elements	 here (goal, terrain, minimug), so don't edit it		{U}
 0808BBAC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending	 on whether r0 and r1 are negative, positive, or zero, from box control table	 Used when determining where to draw terrain, goal, and minimug windows		{U}
 0808C5D0	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself		{U}
-02003D2C	ERAMBGBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{U}
+02003D2C		gBG0TilemapBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{U}
 02003E36	MMBBarRAMBuffer	This is buffer area for HP bar	{U}
 0200422C	MMBTilemapRAMBuffer	This is where box's tilemap is written to to accomplish scrolling effect	{U}
 08A17484	MMBTilemap	This is where rilemap for minimug box is		{U}
 0202A6AC	TextBufferOffset	This is buffer text is written to		{U}
 03004150	WRAMRoutinePointer	{U}
 08003F90	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space		RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{U}
-02028E70	TextParams	{U}
+02028E70	CurrentFont	TextParams	{U}
 08003DC8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to		{U}
 08004218	DefaultTextDraw	This is default drawing routine There's a pointer to it at 2028E60	{U}
 02028E60	DefaultTextDrawPointer	{U}
@@ -2425,7 +2425,7 @@ r3=X tile position of menu of right	{U}
 08005924	MinimugWriter	{U}
 08005F9C	GenericMMGetter	{U}
 08005F9C	GenericMMPalGetter	{U}
-08005514	PortraitEntryGetter	{U}
+08005514	GetPortraitStructPointer	{U}
 08005894	TilemapWriter	Writes a tilemap	r0=destination	r1=tile table	r2=base tile	r3=flag for flipping	{U}
 0808C45C	DrawHPNumbers	This routine draws HP numbers to minimug box	 It handles displaying statuses, too	 Warning: This routine is called every frame by another routine in order to keep displaying OAM	{U}
 08590F44	:08591153	OAMTable	This is a table of size/shape	data and number of sprites to draw	{U}
@@ -2512,13 +2512,13 @@ r3=X tile position of menu of right	{U}
 0808DEDC	WindowPosCheck	This returns 0-3 based on cursor position	 Uses same misc	 RAM data	 This function is used by all window elements	 here (goal, terrain, minimug), so don't edit it		{J}
 0808DEBC	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending	 on whether r0 and r1 are negative, positive, or zero, from box control table	 Used when determining where to draw terrain, goal, and minimug windows		{J}
 0808E8CC	MMBBuilder	This is routine that handles parts on box, such as unit's name and minimug along with tilemap for box itself		{J}
-02003D2C	ERAMBGBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{J}
+02003D2C		gBG0TilemapBuffer	This is BG buffer dedicated to window  tilemaps, such as tilemaps for terrain window, goal window, and minimug box	{J}
 0200422C	MMBTilemapRAMBuffer	This is where box's tilemap is written to to accomplish scrolling effect	{J}
 08A931D0	MMBTilemap	This is where rilemap for minimug box is		{J}
 0202A6A8	TextBufferOffset	This is buffer text is written to		{J}
 030040F0	WRAMRoutinePointer	{J}
 08003EAC	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space		RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{J}
-02028E70	TextParams	{J}
+02028E70	CurrentFont	TextParams	{J}
 08003CF8	TextVRAMClearer	This function gets a space in VRAM and prepares it for new text to be written to		{J}
 08004150	DefaultTextDraw	This is default drawing routine There's a pointer to it at 2028E60	{J}
 08004140	TextPalSelecter	{J}
@@ -2529,7 +2529,7 @@ r3=X tile position of menu of right	{U}
 0800582C	MinimugWriter	{J}
 08005EA0	GenericMMGetter	{J}
 08005EA0	GenericMMPalGetter	{J}
-0800541C	PortraitEntryGetter	{J}
+0800541C	GetPortraitStructPointer	{J}
 0800579CTilemapWriter	Writes a tilemap	r0=destination	r1=tile table	r2=base tile	r3=flag for flipping	{J}
 0808E75E	DrawHPNumbers	This routine draws HP numbers to minimug box	 It handles displaying statuses, too	 Warning: This routine is called every frame by another routine in order to keep displaying OAM	{J}
 085B8CDC	:085B8EEB	OAMTable	This is a table of size/shape	data and number of sprites to draw	{J}
@@ -3282,7 +3282,7 @@ r3=X tile position of menu of right	{U}
 0801c940	PlayerPhase_MainLoop	{U}
 0801cb70	DisplayUnitEffectRange	{U}
 0801cc7c	DisplayActiveUnitEffectRange	{U}
-0801d084	_6CE_PLAYERPAHSE_PrepareAction	{U}
+0801d084	PlayerPhase_PrepareAction	{U}
 0801d244	TryMakeCantoUnit	{U}
 0801d300	RunPotentialWaitEvents	{U}
 0801d31c	EnsureCameraOntoActiveUnitPosition	{U}
@@ -3291,14 +3291,14 @@ r3=X tile position of menu of right	{U}
 0801d64c	PlayerPhase_WaitForUnitMovement	{U}
 0801d70c	MakeMoveunitForActiveUnit	{U}
 0801d75c	ClearActiveUnit	{U}
-0801d89c	Load6CRangeDisplaySquareGfx	{U}
-0801d8ec	Loop6C_MLVCHC	{U}
-0801d92c	Setup6CRangeDisplayGfx	{U}
-0801d9dc	Loop6C_MoveLimitView	{U}
-0801da60	DestructMoveLimitView	{U}
+0801d89c	MoveLimitViewChange_OnInit	{U}
+0801d8ec	MoveLimitViewChange_OnLoop	{U}
+0801d92c	MoveLimitView_OnInit	{U}
+0801d9dc	MoveLimitView_OnLoop	{U}
+0801da60	MoveLimitView_OnEnd	{U}
 0801da98	DisplayMoveRangeGraphics	{U}
 0801dacc	HideMoveRangeGraphics	{U}
-0801dba4	Goto3IfPhaseHasNoAbleUnits	{U}
+0801dba4	PlayerPhase_HandleAutoEnd	{U}
 0801dbd4	GetSomeFacingDirection	{U}
 0801dc00	Make6CMOVEUNITForUnitBeingRescued	{U}
 0801dc3c	Loop6C_KOIDO	{U}
@@ -5059,7 +5059,7 @@ r3=X tile position of menu of right	{U}
 0801C5A8	PlayerPhase_MainLoop	{J}
 0801C7D8	DisplayUnitEffectRange	{J}
 0801C8E4	DisplayActiveUnitEffectRange	{J}
-0801CCEC	_6CE_PLAYERPAHSE_PrepareAction	{J}
+0801CCEC	PlayerPhase_PrepareAction	{J}
 0801CEA8	TryMakeCantoUnit	{J}
 0801CF64	RunPotentialWaitEvents	{J}
 0801CF80	EnsureCameraOntoActiveUnitPosition	{J}
@@ -5068,14 +5068,14 @@ r3=X tile position of menu of right	{U}
 0801D2B0	PlayerPhase_WaitForUnitMovement	{J}
 0801D370	MakeMoveunitForActiveUnit	{J}
 0801D3C0	ClearActiveUnit	{J}
-0801D500	Load6CRangeDisplaySquareGfx	{J}
-0801D550	Loop6C_MLVCHC	{J}
-0801D590	Setup6CRangeDisplayGfx	{J}
-0801D640	Loop6C_MoveLimitView	{J}
-0801D6C4	DestructMoveLimitView	{J}
+0801D500	MoveLimitViewChange_OnInit	{J}
+0801D550	MoveLimitViewChange_OnLoop	{J}
+0801D590	MoveLimitView_OnInit	{J}
+0801D640	MoveLimitView_OnLoop	{J}
+0801D6C4	MoveLimitView_OnEnd	{J}
 0801D6FC	DisplayMoveRangeGraphics	{J}
 0801D730	HideMoveRangeGraphics	{J}
-0801D808	Goto3IfPhaseHasNoAbleUnits	{J}
+0801D808	PlayerPhase_HandleAutoEnd	{J}
 0801D838	GetSomeFacingDirection	{J}
 0801D864	Make6CMOVEUNITForUnitBeingRescued	{J}
 0801D8A0	Loop6C_KOIDO	{J}
@@ -9882,7 +9882,7 @@ r3=X tile position of menu of right	{U}
 0801F68C	NewFireTrapEffectGfx	{U}
 0801F6BC	NewMineTrapEffectGfx	{U}
 0801F844	StartLightArrowTrapGfx	{U}
-0801FD90	BgMoverProc_Update	{U}
+0801FD90	ChapterIntro_Bg3Scroll_Loop	{U}
 08021684	BeginLightRuneMapAnim	{U}
 08022300	BeginMineMapAnim	{U}
 080226F8	MapMenuCommand_DangerZoneUnusedEffect	{U}
@@ -10405,7 +10405,7 @@ r3=X tile position of menu of right	{U}
 0200000C	gAISBackRight	{U}
 0200005C	gpBattleAnimFrameStartLookup	{U}
 02001168	gBonusClaimItemList	{U}
-0200278C	gTradeMenuTextHandles	{U}
+0200278C	gTradeMenuText	{U}
 020041C8	gAISOAM_20041C8	{U}
 0200F1C8	gAISFrames_Left	{U}
 02011BC8	gAISFrames_Right	{U}
@@ -10840,7 +10840,7 @@ r3=X tile position of menu of right	{U}
 0801F2E4	NewFireTrapEffectGfx	{J}
 0801F314	NewMineTrapEffectGfx	{J}
 0801F49C	StartLightArrowTrapGfx	{J}
-0801FA1C	BgMoverProc_Update	{J}
+0801FA1C	ChapterIntro_Bg3Scroll_Loop	{J}
 0802137C	BeginLightRuneMapAnim	{J}
 080222CC	BeginMineMapAnim	{J}
 080226C0	MapMenuCommand_DangerZoneUnusedEffect	{J}
@@ -11762,7 +11762,7 @@ r3=X tile position of menu of right	{U}
 0200000C	gAISBackRight	{J}
 0200005C	gpBattleAnimFrameStartLookup	{J}
 02001168	gBonusClaimItemList	{J}
-0200278C	gTradeMenuTextHandles	{J}
+0200278C	gTradeMenuText	{J}
 020041C8	gAISOAM_20041C8	{J}
 0200F1C8	gAISFrames_Left	{J}
 02011BC8	gAISFrames_Right	{J}

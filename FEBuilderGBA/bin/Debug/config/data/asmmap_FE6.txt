@@ -415,10 +415,10 @@
 0202BCE8	@Unit@[32]	Enemy
 
 //020228A8	Palette wram buffer
-02021B08	BG 0 wram buffer
-02021B88	BG 1 wram buffer
-02021C08	BG 2 wram buffer
-02021C88	BG 3 wram buffer
+02021B08	gBG0TilemapBuffer	BG 0 wram buffer
+02021B88	gBG1TilemapBuffer	BG 1 wram buffer
+02021C08	gBG2TilemapBuffer	BG 2 wram buffer
+02021C88	gBG3TilemapBuffer	BG 3 wram buffer
 
 02003108	Stat screen data
 
@@ -643,7 +643,7 @@
 0202D204	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.
 086781D4	MMBStructType	This is the type of 0x6C struct used when drawing the box.
 085C5280	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM
-02003238	ERAMBGBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box
+02003238		gBG0TilemapBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box
 02003738	MMBTilemapRAMBuffer	This is where the box's tilemap is written to to accomplish the scrolling effect
 03006320	WRAMRoutinePointer
 08000540	CharSizeTable
@@ -760,10 +760,10 @@
 0801B9B0	RunPotentialWaitEvents
 0801B9CC	EnsureCameraOntoActiveUnitPosition
 0801BAF0	PlayerPhase_ApplyUnitMovement
-0801BD38	Load6CRangeDisplaySquareGfx
-0801BD88	Loop6C_MLVCHC
-0801BF68	Loop6C_MoveLimitView
-0801BFD4	DestructMoveLimitView
+0801BD38	MoveLimitViewChange_OnInit
+0801BD88	MoveLimitViewChange_OnLoop
+0801BF68	MoveLimitView_OnLoop
+0801BFD4	MoveLimitView_OnEnd
 0801C02C	DisplayMoveRangeGraphics
 0801C15E	GetSomeFacingDirection
 0801C188	Make6CMOVEUNITForUnitBeingRescued
@@ -973,8 +973,8 @@
 085C3B06	:085C3B2B	顔画像関係のOAMの何か5
 08008650	どの顔画像のOAMを利用するか決定する
 
-02023CC4	@6CPointer@[40]	Lookup6C	//maybe
-020258CC	@6CPointer@[8]	MainArray
+02023CC4	@6CPointer@[40]	ProcAllocListHead	//maybe
+020258CC	@6CPointer@[8]	ProcTreeRootArray
 @6CPointer@0	word	pointer
 
 08003e44	Exec6C (Wrapper) 
@@ -1131,7 +1131,7 @@
 08002d54	GetSpriteNum1
 0802A028	ApplyUnitAction
 0203956C	gActionData
-0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A028	PlayerPhase_PrepareAction
 0802A494	ActionSteal
 0802A138	ActionRescue
 0802A188	ActionDrop
@@ -1301,7 +1301,7 @@
 080059e0	Text_SetXCursor
 08005a60	Text_GetColorId
 08016860	DrawItemStatScreenLine
-02027BCC	TextParams
+02027BCC	CurrentFont	TextParams
 080064b4	Text_AppendStringSimple
 08005E78	Text_AppendDecNumber
 08005f40	Text_AppendChar
