@@ -2272,7 +2272,7 @@
 0802F954	BATTLE_DeleteLinkedMOVEUNIT	{U}
 0802F9C4	BATTLE_HandleItemDrop	{U}
 0803077C	CanCharacterBePrepMoved	{U}
-08030C28	SALLYCURSOR6C_StartUnitSwap	{U}
+08030C28	PrepScreen6C_StartUnitSwap	{U}
 08030EFA	CallCursorShop	{U}
 0803117C	ShrinkPlayerUnits	{U}
 08031270	CanUnitUseVisit	{U}
@@ -3079,7 +3079,7 @@
 0802FD88	BATTLE_ProbablyMakesTheDeadUnitDissapear	{J}
 0802FE20	BATTLE_DeleteLinkedMOVEUNIT	{J}
 08030C68	CanCharacterBePrepMoved	{J}
-08031114	SALLYCURSOR6C_StartUnitSwap	{J}
+08031114	PrepScreen6C_StartUnitSwap	{J}
 080313E6	CallCursorShop	{J}
 08031664	ShrinkPlayerUnits	{J}
 080317EC	CanUnitUseSeize	{J}
