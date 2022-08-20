@@ -2,7 +2,7 @@
 01=Wait for HP to deplete
 02=Start of dodge
 03=Start attack animation; need 07 right after this.
-04=Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+04=Prepare HP depletion routine; needed to animate return to standing frame after hit
 05=Call spell associated with equipped weapon
 06=Begin opponent's turn after hit.next code 0D.
 07=Start attack animation; need 03 right before this.
@@ -55,7 +55,7 @@
 36=Play sword unsheathing SFE
 37=Play sword clicking SFE
 38=Play heavy spear spinning SFE
-39=Pauses the attacker, makes them flash white and makes the screen flash white Essentially makes it look as though the attacker was hit, but without blue sparks
+39=Sacred Flash; white flash
 3A=Play dancer magic release SFE
 3B=Play bard song SFE
 3C=Play sword "whooshing" SFE (done by Nomads; sounds like wing flap)
@@ -69,7 +69,7 @@
 44=Play short "light emission" SFE
 45=FE7:Play horse neighing SFE
 46=Play dropped axe crashing onto ground SFE
-47=Show cape flowing animation; VERY hardcoded
+47=Show cape flowing animation; Do NOT USE; VERY hardcoded; alternative is C01Hack Loop.
 48=EMPTY
 49=Play sage's magic firing SFE
 4A=Play valkyrie's magic charging SFE
@@ -79,5 +79,5 @@
 4E=Show dirt wave (as from horse kicking forward from ground) animation
 4F=Play druid critical charging SFE
 50=FE7:Nergal's critical
-51=Show brief white flash animation
+51=Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
 52=See command 0x2D
