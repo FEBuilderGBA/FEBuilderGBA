@@ -2141,6 +2141,7 @@
     <Compile Include="SomeClassListForm.Designer.cs">
       <DependentUpon>SomeClassListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolTranslateROMWipeJPClassReelFont.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />

@@ -15375,3 +15375,5 @@
 08A72996	sSprite_Page2Name	{J}
 08A729DC	sPageNameSpriteLut	{J}
 08A729E8	sPageNameChrOffsetLut	{J}
+080098D4	GameCtrl_GotoToClassReel	{J}
+080B762C	opinfoview_draw_font	{J}

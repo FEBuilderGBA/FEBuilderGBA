@@ -246,6 +246,16 @@ namespace FEBuilderGBA
             this.Recycle.AddRecycle(list);
             this.Recycle.RecycleOptimize();
         }
+        public void WipeJPClassReelFont(Undo.UndoData undodata)
+        {
+            List<Address> list = new List<FEBuilderGBA.Address>();
+
+            ToolTranslateROMWipeJPClassReelFont jpClassReel = new ToolTranslateROMWipeJPClassReelFont(undodata);
+            jpClassReel.Wipe(list);
+
+            this.Recycle.AddRecycle(list);
+            this.Recycle.RecycleOptimize();
+        }
 
         public void ImportAllText(Form self, string filename, Undo.UndoData undodata)
         {
