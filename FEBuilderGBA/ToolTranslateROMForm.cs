@@ -295,6 +295,7 @@ namespace FEBuilderGBA
 
             if (SIMPLE_OVERRAIDE_JPFONT.Checked)
             {
+                trans.WipeJPClassReelFont(undodata);
                 trans.WipeJPTitle(undodata);
                 trans.WipeJPFont(this, undodata);
             }

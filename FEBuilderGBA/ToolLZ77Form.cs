@@ -224,27 +224,33 @@ namespace FEBuilderGBA
                 R.ShowStopError("FROMに指定されたアドレスがROMの範囲外です");
                 return ;
             }
-            if (!U.isSafetyOffset(toAddr) || !U.isSafetyOffset(toAddr + length))
+            if (toAddr != 0)
             {
-                R.ShowStopError("TOに指定されたアドレスがROMの範囲外です");
-                return ;
+                if (!U.isSafetyOffset(toAddr) || !U.isSafetyOffset(toAddr + length))
+                {
+                    R.ShowStopError("TOに指定されたアドレスがROMの範囲外です");
+                    return;
+                }
             }
             DialogResult dr;
 
             {
                 byte[] moveBytes = Program.ROM.getBinaryData(moveAddr, length);
-                byte[] toBytes = Program.ROM.getBinaryData(toAddr, length);
                 if (U.IsEmptyRange(moveBytes))
                 {
                     R.ShowStopError("FROMに指定された{0}のコンテンツが全部nullです。\r\n既に移動済みの利用域をしていると思いますので、処理を停止します。", U.To0xHexString(moveAddr));
                     return;
                 }
-                if (!U.IsEmptyRange(toBytes))
+                if (toAddr != 0)
                 {
-                    dr = R.ShowNoYes("TOに指定された{0}のコンテンツが全部nullではありません。\r\n既に別のデータで利用しているかもしれません。続行してもよろしいですか？", U.To0xHexString(toAddr));
-                    if (dr != DialogResult.Yes)
+                    byte[] toBytes = Program.ROM.getBinaryData(toAddr, length);
+                    if (!U.IsEmptyRange(toBytes))
                     {
-                        return;
+                        dr = R.ShowNoYes("TOに指定された{0}のコンテンツが全部nullではありません。\r\n既に別のデータで利用しているかもしれません。続行してもよろしいですか？", U.To0xHexString(toAddr));
+                        if (dr != DialogResult.Yes)
+                        {
+                            return;
+                        }
                     }
                 }
             }
@@ -405,6 +411,24 @@ namespace FEBuilderGBA
             wait.DoEvents(R._("recompress lz77 {0}", U.To0xHexString(a.Addr)));
 
             return diff;
+        }
+
+        private void CompressPortraitButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {
+                return;
+            }
+            ImagePortraitForm.Execute_ToolCompressAllPortrait();
+        }
+        
+        private void OptimizationBattleAnimationOAMButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {
+                return;
+            }
+            ImageBattleAnimeForm.Execute_ToolAutoGenLeftToRightAllAnimation();
         }
     }
 }

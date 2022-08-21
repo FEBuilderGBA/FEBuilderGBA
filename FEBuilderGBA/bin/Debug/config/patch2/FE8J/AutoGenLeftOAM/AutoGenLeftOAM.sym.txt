@@ -1,0 +1,6 @@
+ThisHack=$12
+Exit=$64
+Loop=$22
+Break=$62
+convertAlignAreaToWidth=$3A
+LookupAlignAreaToWidth=$68

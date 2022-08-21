@@ -172,6 +172,11 @@ namespace FEBuilderGBA
             this.Recycle.Sort((a, b) => { return (int)(((int)a.Length) - ((int)b.Length)); });
         }
 
+        public uint WritePointerOnly(uint write_pointer, uint content_addr, Undo.UndoData undodata)
+        {
+            Program.ROM.write_p32(write_pointer, content_addr, undodata);
+            return content_addr;
+        }
         public uint WriteAndWritePointer(uint write_pointer, byte[] write_data, Undo.UndoData undodata)
         {
             uint use_addr = Write(write_data, undodata);

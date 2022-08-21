@@ -235,6 +235,7 @@ namespace FEBuilderGBA
             {
                 return pos;
             }
+           
             return -1;
         }
 

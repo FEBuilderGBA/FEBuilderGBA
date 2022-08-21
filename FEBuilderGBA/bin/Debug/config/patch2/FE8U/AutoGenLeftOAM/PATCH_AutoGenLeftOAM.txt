@@ -1,0 +1,15 @@
+NAME=AutoGenLeftOAM LeftToRightOAMを動的作成することで容量を減らす
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x059ACC=0x00 0x4B
+BIN:$FREEAREA=AutoGenLeftOAM.dmp
+JUMP:0x059ACC:$r3=AutoGenLeftOAM.dmp
+
+AUTHOR=7743
+INFO=戦闘アニメの敵のモーションLeftToRightOAMを、RightToLeftOAMから自動生成するようにします。\r\nこれにより1アニメーションに付き2-4kbの用利用の削減ができます。\r\nこのパッチを適応後に、lz77ツールから設定してください。\r\nバニラのアニメーションは、鏡写しにはできないので、自動生成のターゲットにはなりません。\r\nリポジトリなどにあるユーザーが作ったアニメーションが対象になります。\r\nLeftToRightOAMを省略できる場合、戦闘アニメーションのLeftToRightOAMには、RightToLeftOAMと同じ値が設定されます。
+NAME.en=AutoGenLeftOAM Reduce capacity by dynamically creating LeftToRightOAM.
+INFO.en=Automatically generate LeftToRightOAM from RightToLeftOAM for battle animation enemy motion.\r\nThis saves 2-4kb of usage per animation.\r\nAfter applying this patch, please set from the lz77 tool.\r\nVanilla animations are not targets for auto-generation because they cannot be mirrored.\r\nAnimations created by users in repositories etc. are targeted.\r\nIf LeftToRightOAM can be omitted, LeftToRightOAM in combat animations will have the same value as RightToLeftOAM.
+NAME.zh=AutoGenLeftOAM 通过动态创建 LeftToRightOAM 来减少容量。
+INFO.zh=从 RightToLeftOAM 自动生成 LeftToRightOAM 用于战斗动画敌人的运动。\r\n这样可以为每个动画节省 2-4kb 的使用量。\r\n应用此补丁后，请从 lz77 工具中进行设置。\r\n原版动画不是自动生成的目标，因为它们不能被镜像。\r\n用户在存储库等中创建的动画是目标。\r\n如果 LeftToRightOAM 可以省略，则战斗动画中的 LeftToRightOAM 将具有与 RightToLeftOAM 相同的值。

@@ -402,6 +402,10 @@ namespace FEBuilderGBA
             }
             if (isEquip)
             {
+                if (PatchUtil.ExtendWeaponDescBox() == PatchUtil.ExtendWeaponDescBoxPatch.ExtendWeaponDescBox)
+                {
+                    return true;
+                }
                 return false;
             }
             return true;

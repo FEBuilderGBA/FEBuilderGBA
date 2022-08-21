@@ -264,6 +264,7 @@ namespace FEBuilderGBA
         AnimationTypeEnum AnimationType;
         uint ID;
         Bitmap DummyBitmap;
+        byte[] PaletteBIN;
 
         enum AnimeStEnum
         {
@@ -736,6 +737,7 @@ namespace FEBuilderGBA
             , uint id
             , string filehint
             , string filename
+            , byte[] paletteBin
             )
         {
             this.AnimationType = type;
@@ -876,6 +878,7 @@ namespace FEBuilderGBA
             this.AddressList.DummyAlloc(this.AnimeList.Count, 0);
 
             this.ID = id;
+            this.PaletteBIN = paletteBin;
         }
 
         void InitSkillAnimeParse(string filename)
@@ -1102,6 +1105,7 @@ namespace FEBuilderGBA
         }
         bool ExportBattleAnimeWrite(string filename)
         {
+            bool firstImage = true;
             string basedir = Path.GetDirectoryName(filename);
 
             List<string> lines = new List<string>();
@@ -1127,6 +1131,11 @@ namespace FEBuilderGBA
                     {
                         return false;
                     }
+                    if (firstImage)
+                    {
+                        firstImage = false;
+                        MakeCutomPalette(imagefullfilename, this.PaletteBIN);
+                    }
                 }
                 else if (code.type == AnimeStEnum.Loop)
                 {
@@ -1148,6 +1157,35 @@ namespace FEBuilderGBA
             return U.WriteAllLinesInError(filename, lines);
         }
 
+        void MakeCutomPalette(string imagefullfilename,byte[] paletteBIN)
+        {
+            if (paletteBIN == null)
+            {
+                return;
+            }
+
+            MakeCutomPalette(imagefullfilename, paletteBIN, "enemy", 1);
+            MakeCutomPalette(imagefullfilename, paletteBIN, "ally", 2);
+            MakeCutomPalette(imagefullfilename, paletteBIN, "playerfour", 3);
+        }
+        void MakeCutomPalette(string imagefullfilename, byte[] paletteBIN, string type, int paletteIndex)
+        {
+            if (paletteBIN.Length < (paletteIndex + 1) * 32)
+            {
+                return;
+            }
+
+            string basedir = Path.GetDirectoryName(imagefullfilename);
+            string filename = Path.GetFileNameWithoutExtension(imagefullfilename);
+            string ext = Path.GetExtension(imagefullfilename);
+
+            Bitmap bmp = ImageUtil.OpenBitmap(imagefullfilename);
+            Bitmap pal = ImageUtil.Blank(8, 8, paletteBIN, paletteIndex * 32);
+            ImageUtil.AppendPalette(bmp, pal, 0);
+
+            string palette_filename = Path.Combine(basedir, filename + type + ext);
+            bmp.Save(palette_filename);
+        }
 
 
         void InitMagicAnimeParse(string filename)

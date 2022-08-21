@@ -15,6 +15,17 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+            if (PatchUtil.OPClassReelAnimationIDOver255() == PatchUtil.OPClassReelAnimationIDOver255Patch.Over255)
+            {
+                J_16_BATTLEANIME.Name = "J_16";
+                J_16_BATTLEANIME.Text = R._("旧データ00");
+                J_16_BATTLEANIME.AccessibleDescription = R._("バニラでは戦闘アニメーションの指定にこのフィールドを使っていましたが、1バイトしか書けないので、パッチによって移動しました。\r\n現在は利用していません。");
+                L_16_BATTLEANIME_PLUS1.Hide();
+                L_18_BATTLEANIME_PLUS1.Show();
+                J_18.Name = "J_16_BATTLEANIME";
+                J_18.Text = R._("戦闘アニメ");
+                J_18.AccessibleDescription = "@OP_CLASSDEMO_BATTLEANIME";
+            }
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
 
             this.InputFormRef = Init(this);
@@ -152,17 +163,32 @@ namespace FEBuilderGBA
 
         private void B16_ValueChanged(object sender, EventArgs e)
         {
-            if (B13.Value == 0xFF)
-            {//標準パレット
-                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
-                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, 0, 0, 0, (int)B15.Value);
+            if (PatchUtil.OPClassReelAnimationIDOver255() == PatchUtil.OPClassReelAnimationIDOver255Patch.Over255)
+            {//パッチで 戦闘アニメ255を越える場合
+                if (B13.Value == 0xFF)
+                {//標準パレット
+                    X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)D18.Value + 1
+                        , ImageBattleAnimeForm.ScaleTrim.SCALE_90, 0, 0, 0, (int)B15.Value);
+                }
+                else
+                {
+                    X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)D18.Value + 1
+                        , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B13.Value + 1, 0, 0, (int)B15.Value);
+                }
             }
             else
-            {
-                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
-                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B13.Value + 1, 0, 0, (int)B15.Value);
+            {//バニラ
+                if (B13.Value == 0xFF)
+                {//標準パレット
+                    X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
+                        , ImageBattleAnimeForm.ScaleTrim.SCALE_90, 0, 0, 0, (int)B15.Value);
+                }
+                else
+                {
+                    X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
+                        , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B13.Value + 1, 0, 0, (int)B15.Value);
+                }
             }
-
         }
 
 

@@ -1,0 +1,13 @@
+NAME=OPクラス紹介で紹介できるクラスアニメーションID上限を0xFFから0xFFFFにする
+INFO=OPクラス紹介(OP class reel)で紹介できるクラスIDは1バイト(ldrb)て読み取られるので、0xFFを越えることができませんでした。\r\nこのパッチは、読み取る位置を変えることで2バイト(ldrh)でデータを読み取れるようにし、0xFFFFまで指定できるようにします。\r\nこのパッチをインストールすると、クラスデータを読み取る位置が変わるので注意してください。\r\n今までは0x10から読み取っていましたが、0x12の位置からデータを読み取ります。\r\n設定を作り直す必要があります。
+
+TYPE=SWITCH
+AUTHOR=7743
+
+COMBO=Default: 1byte; ldrb [#0x10]|OFF|Fix: 2byte; ldrh [#0x12]|ONN
+
+OFF:0xB86B0=0x19 0x7c
+ONN:0xB86B0=0x59 0x8A
+
+OFF:0xB86E2=0x9A 0x7C 0x4A 0x80 0xDA 0x7C
+ONN:0xB86E2=0x00 0x22 0x4A 0x80 0xC0 0x46

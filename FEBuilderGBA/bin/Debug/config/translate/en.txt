@@ -3451,6 +3451,18 @@ Battle animation is extremely few.It may be damaged.
 :リストが0件です。\r\n空のリストを分離させても意味がないのですが、それでも分離独立させますか？
 There are 0 listings.\r\nThere's no point in isolating an empty list. 
 
+:{0} 削減サイズ:{1}
+{0} Reduced size: {1}.
+
+:必要なパッチ「AutoGenLeftOAM」がインストールされていません。
+The required patch 'AutoGenLeftOAM' is not installed.
+
+:戦闘アニメーションをスキャンして、LeftToRightOAMを消せるものはすべて消します。\r\nすでに処理されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
+Scan for combat animations and turn off anything that can turn LeftToRightOAM off.\r\nIt skips data that has already been processed, so it is theoretically safe to run multiple times.\r\n\r\nAre you sure you want to run it? 
+
+:完了しました。\r\n{0}バイトの領域を解放できました。
+Has completed.\r\nThe {0} byte area was released.
+
 :武器種類
 Weapon type
 
@@ -3796,8 +3808,11 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 :顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader4: Addr: {0} Msg: 規定値は0x00ですが、{1}になっています。
 The header of the first 4 bytes of the portrait's unit image is corrupted. It is recommended to re-import it.\r\nHeader4: Addr: {0} Msg: The default value is 0x00 but it is set to {1}.
 
-:顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\n捨てに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
-Compress all face images.\r\nYou can get a capacity of 200-300kb for vanilla.\r\nData that has been compressed to discard is skipped, so it is theoretically safe no matter how many times you execute it.\r\n\r\nAre you sure you want to do it? 
+:FE8にしか利用できません
+Only available for FE8.
+
+:顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\nすでに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
+Compress all face images.\r\nFor vanilla you can get 200-300kb of storage.\r\nIt skips data that has already been compressed, so it's theoretically safe to run multiple times.\r\n\r\nAre you sure you want to run it? 
 
 :口
 Mouth
@@ -8300,16 +8315,16 @@ Base Color to Modify
 Map Tile Animation 2
 
 :可否診断ルーチンポインタ
-Possibility Diagnostic Routine Pointer
+Usability routine
 
 :描画ルーチンポインタ
-Drawing Routine Pointer
+Draw routine
 
 :選択時に実行する効果ポインタ
-Effect Pointer Executed When Selected
+Effect when selected
 
 :選択時に毎ターン呼び出されるポインタ
-Pointer Called Every Turn At Selection
+Routine on hover
 
 :カーソルで選択されたときの動作ポインタ
 Action Pointer When Selected
@@ -12451,6 +12466,24 @@ Recompress.
 :20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。
 Since 20220726, the compression ratio of lz77 has improved.\r\nRecompress the existing data in ROM to create a margin in ROM.\r\nYou can get a little more space by rebuilding after making a margin.\r\nThe process takes about 15 minutes.\r\nAfter the implementation, please do a simple operation test just in case.
 
+:lz77再圧縮
+lz77 recompression.
+
+:戦闘アニメOAM
+Battle animation OAM.
+
+:顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
+Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
+
+:AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
+The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
+
+:顔画像を圧縮する
+Compress facial images.
+
+:戦闘アニメOAMの最適化
+Optimization of battle animation OAM.
+
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*
 
@@ -12745,6 +12778,9 @@ Write Changes to a File
 :ポインタの共有
 Pointer sharing.
 
+:値が小さすぎて危険です。
+Too small a value is dangerous.
+
 :追加設定ファイル
 Additional configuration file.
 
@@ -12774,9 +12810,6 @@ Rebuild Address
 
 :変更されている設定をファイルに書きだします。\r\n\r\nUPSパッチと比較して以下のメリットがあります。\r\n無改造ROMにこのデータをインポートすることで、断片化した無駄な領域を節約できます。\r\n\r\n逆に以下のデメリットがあります。\r\nFEBuilderGBAが知らないデータは、ダンプされません。\r\nたとえばバイナリエディタで変更した内容などは保存されません。
 Write the changed settings to a file.\r\n\r\nCompared to UPS patching, it has the following advantages.\r\nBy importing this data to an unmodified ROM, you can save space.\r\n\r\nConversely, there are the following disadvantages.\r\nData not known by FEBuilderGBA will not be dumped.\r\nFor example, contents changed through hex or external means are not accounted for.
-
-:値が小さすぎて危険です。
-Too small a value is dangerous.
 
 :データを最適化中... {0}({1})
 Optimizing data.{0} ({1}).

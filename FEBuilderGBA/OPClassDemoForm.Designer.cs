@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_18_BATTLEANIME_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.L_17_COMBO = new System.Windows.Forms.ComboBox();
             this.L_23_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_22_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
@@ -88,13 +89,13 @@
             this.J_23_TERRAINBATTLE = new System.Windows.Forms.Label();
             this.B22 = new System.Windows.Forms.NumericUpDown();
             this.J_22_TERRAINBATTLE = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.J_18 = new System.Windows.Forms.Label();
             this.B17 = new System.Windows.Forms.NumericUpDown();
             this.J_17 = new System.Windows.Forms.Label();
             this.B16 = new System.Windows.Forms.NumericUpDown();
             this.J_16_BATTLEANIME = new System.Windows.Forms.Label();
             this.B15 = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
+            this.J_15 = new System.Windows.Forms.Label();
             this.L_14_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.J_14_CLASS = new System.Windows.Forms.Label();
@@ -125,9 +126,9 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_23_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_22_TERRAINBATTLEICON_PLUS1)).BeginInit();
@@ -172,6 +173,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.L_18_BATTLEANIME_PLUS1);
             this.panel2.Controls.Add(this.L_17_COMBO);
             this.panel2.Controls.Add(this.L_23_TERRAINBATTLEICON_PLUS1);
             this.panel2.Controls.Add(this.L_22_TERRAINBATTLEICON_PLUS1);
@@ -190,13 +192,13 @@
             this.panel2.Controls.Add(this.J_23_TERRAINBATTLE);
             this.panel2.Controls.Add(this.B22);
             this.panel2.Controls.Add(this.J_22_TERRAINBATTLE);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.J_18);
             this.panel2.Controls.Add(this.B17);
             this.panel2.Controls.Add(this.J_17);
             this.panel2.Controls.Add(this.B16);
             this.panel2.Controls.Add(this.J_16_BATTLEANIME);
             this.panel2.Controls.Add(this.B15);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.J_15);
             this.panel2.Controls.Add(this.L_14_CLASS);
             this.panel2.Controls.Add(this.B14);
             this.panel2.Controls.Add(this.J_14_CLASS);
@@ -217,6 +219,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1256, 806);
             this.panel2.TabIndex = 67;
+            // 
+            // L_18_BATTLEANIME_PLUS1
+            // 
+            this.L_18_BATTLEANIME_PLUS1.ErrorMessage = "";
+            this.L_18_BATTLEANIME_PLUS1.Location = new System.Drawing.Point(321, 369);
+            this.L_18_BATTLEANIME_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_18_BATTLEANIME_PLUS1.Name = "L_18_BATTLEANIME_PLUS1";
+            this.L_18_BATTLEANIME_PLUS1.Placeholder = "";
+            this.L_18_BATTLEANIME_PLUS1.ReadOnly = true;
+            this.L_18_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(174, 25);
+            this.L_18_BATTLEANIME_PLUS1.TabIndex = 187;
+            this.L_18_BATTLEANIME_PLUS1.Visible = false;
             // 
             // L_17_COMBO
             // 
@@ -531,6 +545,7 @@
             this.D18.Name = "D18";
             this.D18.Size = new System.Drawing.Size(130, 25);
             this.D18.TabIndex = 10;
+            this.D18.ValueChanged += new System.EventHandler(this.B16_ValueChanged);
             // 
             // groupBox1
             // 
@@ -968,16 +983,16 @@
             this.J_22_TERRAINBATTLE.Text = "表示地形左半分";
             this.J_22_TERRAINBATTLE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // J_18
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(2, 370);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 32);
-            this.label13.TabIndex = 162;
-            this.label13.Text = "??";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_18.Location = new System.Drawing.Point(2, 370);
+            this.J_18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_18.Name = "J_18";
+            this.J_18.Size = new System.Drawing.Size(175, 32);
+            this.J_18.TabIndex = 162;
+            this.J_18.Text = "??";
+            this.J_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B17
             // 
@@ -1046,16 +1061,16 @@
             this.B15.TabIndex = 6;
             this.B15.ValueChanged += new System.EventHandler(this.B16_ValueChanged);
             // 
-            // label10
+            // J_15
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(2, 272);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(175, 32);
-            this.label10.TabIndex = 156;
-            this.label10.Text = "敵味方カラー";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_15.Location = new System.Drawing.Point(2, 272);
+            this.J_15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_15.Name = "J_15";
+            this.J_15.Size = new System.Drawing.Size(175, 32);
+            this.J_15.TabIndex = 156;
+            this.J_15.Text = "敵味方カラー";
+            this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_14_CLASS
             // 
@@ -1420,18 +1435,6 @@
             this.panel12.Size = new System.Drawing.Size(257, 836);
             this.panel12.TabIndex = 162;
             // 
-            // LabelFilter
-            // 
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(255, 26);
-            this.LabelFilter.TabIndex = 163;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddressList
             // 
             this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1454,6 +1457,18 @@
             this.AddressListExpandsButton.TabIndex = 164;
             this.AddressListExpandsButton.Text = "リストの拡張";
             this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(255, 26);
+            this.LabelFilter.TabIndex = 163;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OPClassDemoForm
             // 
@@ -1535,7 +1550,7 @@
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label J_15;
         private FEBuilderGBA.TextBoxEx L_14_CLASS;
         private System.Windows.Forms.NumericUpDown B14;
         private System.Windows.Forms.Label J_14_CLASS;
@@ -1568,7 +1583,7 @@
         private System.Windows.Forms.Label J_23_TERRAINBATTLE;
         private System.Windows.Forms.NumericUpDown B22;
         private System.Windows.Forms.Label J_22_TERRAINBATTLE;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label J_18;
         private System.Windows.Forms.NumericUpDown B17;
         private System.Windows.Forms.Label J_17;
         private System.Windows.Forms.NumericUpDown B16;
@@ -1618,5 +1633,6 @@
         private InterpolatedPictureBox L_23_TERRAINBATTLEICON_PLUS1;
         private System.Windows.Forms.ComboBox L_17_COMBO;
         private System.Windows.Forms.Button AddressListExpandsButton;
+        private TextBoxEx L_18_BATTLEANIME_PLUS1;
     }
 }

@@ -38,6 +38,7 @@ namespace FEBuilderGBA
             Load(rom);
 
             //MargeS("FE8_clean.sym");
+            //MargeSym("fireemblem8.sym");
         }
         void Load(ROM rom)
         {
@@ -1578,6 +1579,29 @@ namespace FEBuilderGBA
                 {
                     addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
                 }
+                if (ContainsKey(addr))
+                {
+                    continue;
+                }
+                Log.Debug(U.ToHexString8(addr) + "\t" + name + "\t{U}");
+            }
+        }
+        void MargeSym(string filename)
+        {
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                //08A011F0 gMid_Axe
+                string line = lines[i];
+                string[] sp = line.Split(' ');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+                string name = sp[1];
+                name = name.Replace(",", "");
+
+                uint addr = U.atoh(sp[0]);
                 if (ContainsKey(addr))
                 {
                     continue;

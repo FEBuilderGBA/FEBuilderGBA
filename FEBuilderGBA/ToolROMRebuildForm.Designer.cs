@@ -33,6 +33,7 @@
             this.UseShareSameDataComboBox = new System.Windows.Forms.ComboBox();
             this.X_ShareSameData = new System.Windows.Forms.Label();
             this.X_FreeAreaDef = new System.Windows.Forms.Panel();
+            this.WARRING_SmallValue = new FEBuilderGBA.LabelEx();
             this.AppendFreeAreaFilename = new FEBuilderGBA.TextBoxEx();
             this.AppendFreeAreaFilenameSelectButton = new System.Windows.Forms.Button();
             this.X_AppendFreeAreaFilename = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.OrignalFilename = new FEBuilderGBA.TextBoxEx();
             this.OrignalSelectButton = new System.Windows.Forms.Button();
-            this.WARRING_SmallValue = new FEBuilderGBA.LabelEx();
             this.customColorGroupBox1.SuspendLayout();
             this.X_FreeAreaDef.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FreeAreaStartAddress)).BeginInit();
@@ -129,6 +129,17 @@
             this.X_FreeAreaDef.Size = new System.Drawing.Size(1140, 103);
             this.X_FreeAreaDef.TabIndex = 105;
             // 
+            // WARRING_SmallValue
+            // 
+            this.WARRING_SmallValue.AutoSize = true;
+            this.WARRING_SmallValue.ErrorMessage = "";
+            this.WARRING_SmallValue.Location = new System.Drawing.Point(596, 7);
+            this.WARRING_SmallValue.Name = "WARRING_SmallValue";
+            this.WARRING_SmallValue.Size = new System.Drawing.Size(192, 18);
+            this.WARRING_SmallValue.TabIndex = 109;
+            this.WARRING_SmallValue.Text = "値が小さすぎて危険です。";
+            this.WARRING_SmallValue.Visible = false;
+            // 
             // AppendFreeAreaFilename
             // 
             this.AppendFreeAreaFilename.ErrorMessage = "";
@@ -201,7 +212,7 @@
             this.FreeAreaMinimumSize.Size = new System.Drawing.Size(128, 25);
             this.FreeAreaMinimumSize.TabIndex = 0;
             this.FreeAreaMinimumSize.Value = new decimal(new int[] {
-            100,
+            32,
             0,
             0,
             0});
@@ -340,17 +351,6 @@
             this.OrignalSelectButton.Text = "ファイル選択";
             this.OrignalSelectButton.UseVisualStyleBackColor = true;
             this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
-            // 
-            // WARRING_SmallValue
-            // 
-            this.WARRING_SmallValue.AutoSize = true;
-            this.WARRING_SmallValue.ErrorMessage = "";
-            this.WARRING_SmallValue.Location = new System.Drawing.Point(596, 7);
-            this.WARRING_SmallValue.Name = "WARRING_SmallValue";
-            this.WARRING_SmallValue.Size = new System.Drawing.Size(192, 18);
-            this.WARRING_SmallValue.TabIndex = 109;
-            this.WARRING_SmallValue.Text = "値が小さすぎて危険です。";
-            this.WARRING_SmallValue.Visible = false;
             // 
             // ToolROMRebuildForm
             // 

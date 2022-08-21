@@ -69,7 +69,7 @@
 44=当埃利伍德严重时，剑声闪耀
 45=FE7:主骑士马的内心
 46=Play dropped axe crashing onto ground SFE
-47=Show cape flowing animation; VERY hardcoded
+47=Show cape flowing animation; Do NOT USE; VERY hardcoded; alternative is C01Hack Loop.
 48=免费
 49=魔法师魔法音效
 4A=Valkyria攻击声音效果
@@ -79,5 +79,5 @@
 4E=Show dirt wave (as from horse kicking forward from ground) animation
 4F=假阴茎的关键音效
 50=FE7:Nergal的重要作用
-51=Show brief white flash animation
+51=Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
 52=See command 0x2D

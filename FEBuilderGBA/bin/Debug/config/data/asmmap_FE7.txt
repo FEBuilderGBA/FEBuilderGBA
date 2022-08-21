@@ -1115,10 +1115,10 @@
 0202DCD0	@Unit@[14]	Ally	{U}
 
 02022860	Palette wram buffer
-02022C60	BG 0 wram buffer
-02023460	BG 1 wram buffer
-02023C60	BG 2 wram buffer
-02024460	BG 3 wram buffer
+02022C60	gBG0TilemapBuffer	BG 0 wram buffer
+02023460	gBG1TilemapBuffer	BG 1 wram buffer
+02023C60	gBG2TilemapBuffer	BG 2 wram buffer
+02024460	gBG3TilemapBuffer	BG 3 wram buffer
 
 0200310C	Stat screen data	{U}
 
@@ -1530,14 +1530,14 @@
 @6CPointer@0	word	pointer
 
 
-02024E28	@6CStructHeader@[40]	PoolOf6C	{U}
-02024E20	@6CStructHeader@[40]	PoolOf6C	{J}
-02026928	@6CPointer@[40]	Lookup6C	{U}
-02026920	@6CPointer@[40]	Lookup6C	{J}
-02026A2C	Alloc6CIt	{U}
-02026A24	Alloc6CIt	{J}
-02026A30	@6CPointer@[8]	MainArray	{U}
-02026A28	@6CPointer@[8]	MainArray	{J}
+02024E28	@6CStructHeader@[40]	ProcAllocList	{U}
+02024E20	@6CStructHeader@[40]	ProcAllocList	{J}
+02026928	@6CPointer@[40]	ProcAllocListHead	{U}
+02026920	@6CPointer@[40]	ProcAllocListHead	{J}
+02026A2C	ProcAllocListHead	{U}
+02026A24	ProcAllocListHead	{J}
+02026A30	@6CPointer@[8]	ProcTreeRootArray	{U}
+02026A28	@6CPointer@[8]	ProcTreeRootArray	{J}
 
 08004420	Initialize6CEngine	{U}
 080042FC	Initialize6CEngine	{J}
@@ -1749,13 +1749,13 @@
 0808512C	WindowPosCheck	This returns 0-3 based on cursor position. Uses the same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{J}
 0808510E	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending. on whether r0 and r1 are negative, positive, or zero, from the box control table. Used when determining where to draw terrain, goal, and minimug windows.	{J}
 08085B0C	MMBBuilder	This is the routine that handles parts on the box, such as the unit's name and minimug along with the tilemap for the box itself.	{J}
-0200323C	ERAMBGBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box	{J}
+0200323C		gBG0TilemapBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box	{J}
 0200373C	MMBTilemapRAMBuffer	This is where the box's tilemap is written to to accomplish the scrolling effect	{J}
 081C9F2C	MMBTilemap	This is where the rilemap for the minimug box is.	{J}
 0202A5B0	TextBufferOffset	This is the buffer text is written to.	{J}
 03005A70	WRAMRoutinePointer	{J}
 08005564	TexCenterer	his routine takes a given amount of space nd tries to center a given text string n that space.	RET=r0  distance in pixels to center by	r0=Space in pixels available	r1=Text string, usually text buffer	{J}
-02028D68	TextParams	{J}
+02028D68	CurrentFont	TextParams	{J}
 080053B0	TextVRAMClearer	This function gets a space in VRAM and prepares it for the new text to be written to.	{J}
 08005774	DefaultTextDraw	This is the default drawing routine There's a pointer to it at 2028E60	{J}
 08005764	TextPalSelecter	{J}
@@ -1765,7 +1765,7 @@
 08006E10	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
 08BFF9E0	MMSizeTable	{J}
 08006DAC	MinimugWriter	{J}
-080069B0	PortraitEntryGetter	{J}
+080069B0	GetPortraitStructPointer	{J}
 08006D1C	TilemapWriter	Writes a tilemap	r0=destination	r1=tile table	r2=base tile	r3=flag for flipping	{J}
 08BFF760	:08BFF96F	OAMTable	This is a table of size/shape	data and number of sprites to draw	{J}
 08016620	EquippableCheck:	returns 0 or 1 if a unit can equip and use an item checks for silenced units	{J}
@@ -1786,7 +1786,7 @@
 02039F18	UnkOAMTablePtr	{J}
 
 02002774	When in the item menu	{J}
-0203E678	When viewing character list, help functions, armories	{J}
+0203E678	HelpTextHandles	{J}
 030000E8	When dialogue is displayed	{J}
 02000044	Main Menu	{J}
 020040D4	Status screen	{J}
@@ -1816,11 +1816,11 @@
 08084730	WindowPosCheck	This returns 0-3 based on cursor position. Uses the same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{U}
 08084712	WindowType	'Type' is inaccurate, it's still position but for label purposes I'm calling it type This routine returns 0-3 depending. on whether r0 and r1 are negative, positive, or zero, from the box control table. Used when determining where to draw terrain, goal, and minimug windows.	{U}
 08085110	MMBBuilder	This is the routine that handles parts on the box, such as the unit's name and minimug along with the tilemap for the box itself.	{U}
-0200323C	ERAMBGBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box	{U}
+0200323C		gBG0TilemapBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box	{U}
 0200373C	MMBTilemapRAMBuffer	This is where the box's tilemap is written to to accomplish the scrolling effect	{U}
 0202A5B4	TextBufferOffset	This is the buffer text is written to.	{U}
 03005B50	WRAMRoutinePointer	{U}
-02028D70	TextParams	{U}
+02028D70	CurrentFont	TextParams	{U}
 08000540	CharSizeTable	{U}
 0801B9A6	MinimugGetter	Determines a unit's minimug	{U}
 08B90830	MMSizeTable	{U}
@@ -1843,7 +1843,7 @@
 02039F1C	UnkOAMTablePtr	{U}
 
 02002774	When in the item menu	{U}
-0203E6A0	When viewing character list, help functions, armories	{U}
+0203E6A0	HelpTextHandles	{U}
 030000E8	When dialogue is displayed	{U}
 02000044	Main Menu	{U}
 020040D4	Status screen	{U}
@@ -2086,20 +2086,20 @@
 0801B472	HandlePlayerCursorMovement	{U}
 0801C234	PlayerPhase_MainLoop	{U}
 0801C4D0	DisplayUnitEffectRange	{U}
-0801CA38	_6CE_PLAYERPAHSE_PrepareAction	{U}
+0801CA38	PlayerPhase_PrepareAction	{U}
 0801CB98	TryMakeCantoUnit	{U}
 0801CC4C	RunPotentialWaitEvents	{U}
 0801CC68	EnsureCameraOntoActiveUnitPosition	{U}
 0801CDBC	PlayerPhase_ApplyUnitMovement	{U}
 0801CE6C	GetUnitSelectionValueThing	{U}
 0801CF98	PlayerPhase_WaitForUnitMovement	{U}
-0801D078	Load6CRangeDisplaySquareGfx	{U}
-0801D0C8	Loop6C_MLVCHC	{U}
-0801D1E4	Loop6C_MoveLimitView	{U}
-0801D268	DestructMoveLimitView	{U}
+0801D078	MoveLimitViewChange_OnInit	{U}
+0801D0C8	MoveLimitViewChange_OnLoop	{U}
+0801D1E4	MoveLimitView_OnLoop	{U}
+0801D268	MoveLimitView_OnEnd	{U}
 0801D2A0	DisplayMoveRangeGraphics	{U}
 0801D2D4	HideMoveRangeGraphics	{U}
-0801D3AC	Goto3IfPhaseHasNoAbleUnits	{U}
+0801D3AC	PlayerPhase_HandleAutoEnd	{U}
 0801D3DA	GetSomeFacingDirection	{U}
 0801D404	Make6CMOVEUNITForUnitBeingRescued	{U}
 0801D47C	Make6CKOIDO	{U}
@@ -2378,7 +2378,7 @@
 0802F954	BATTLE_DeleteLinkedMOVEUNIT	{U}
 0802F9C4	BATTLE_HandleItemDrop	{U}
 0803077C	CanCharacterBePrepMoved	{U}
-08030C28	SALLYCURSOR6C_StartUnitSwap	{U}
+08030C28	PrepScreen6C_StartUnitSwap	{U}
 08030EFA	CallCursorShop	{U}
 0803117C	ShrinkPlayerUnits	{U}
 08031270	CanUnitUseVisit	{U}
@@ -2918,20 +2918,20 @@
 0801B84E	HandlePlayerCursorMovement	{J}
 0801C624	PlayerPhase_MainLoop	{J}
 0801C8D4	DisplayUnitEffectRange	{J}
-0801CE3C	_6CE_PLAYERPAHSE_PrepareAction	{J}
+0801CE3C	PlayerPhase_PrepareAction	{J}
 0801CF9C	TryMakeCantoUnit	{J}
 0801D050	RunPotentialWaitEvents	{J}
 0801D06C	EnsureCameraOntoActiveUnitPosition	{J}
 0801D1C0	PlayerPhase_ApplyUnitMovement	{J}
 0801D270	GetUnitSelectionValueThing	{J}
 0801D39C	PlayerPhase_WaitForUnitMovement	{J}
-0801D47C	Load6CRangeDisplaySquareGfx	{J}
-0801D4CC	Loop6C_MLVCHC	{J}
-0801D5E8	Loop6C_MoveLimitView	{J}
-0801D66C	DestructMoveLimitView	{J}
+0801D47C	MoveLimitViewChange_OnInit	{J}
+0801D4CC	MoveLimitViewChange_OnLoop	{J}
+0801D5E8	MoveLimitView_OnLoop	{J}
+0801D66C	MoveLimitView_OnEnd	{J}
 0801D6A4	DisplayMoveRangeGraphics	{J}
 0801D6D8	HideMoveRangeGraphics	{J}
-0801D7B0	Goto3IfPhaseHasNoAbleUnits	{J}
+0801D7B0	PlayerPhase_HandleAutoEnd	{J}
 0801D7DE	GetSomeFacingDirection	{J}
 0801D808	Make6CMOVEUNITForUnitBeingRescued	{J}
 0801D880	Make6CKOIDO	{J}
@@ -3184,7 +3184,7 @@
 0802FD88	BATTLE_ProbablyMakesTheDeadUnitDissapear	{J}
 0802FE20	BATTLE_DeleteLinkedMOVEUNIT	{J}
 08030C68	CanCharacterBePrepMoved	{J}
-08031114	SALLYCURSOR6C_StartUnitSwap	{J}
+08031114	PrepScreen6C_StartUnitSwap	{J}
 080313E6	CallCursorShop	{J}
 08031664	ShrinkPlayerUnits	{J}
 080317EC	CanUnitUseSeize	{J}

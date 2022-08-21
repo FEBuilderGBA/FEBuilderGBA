@@ -10391,6 +10391,16 @@ namespace FEBuilderGBA
             byte[] dataByte = Program.ROM.getBinaryData(addr, original_size);
             uint searchFreespaceSize = U.Padding4((uint)dataByte.Length);
 
+            if (toAddr == 0)
+            {
+                toAddr = AppendBinaryData(dataByte, undodata);
+                if (toAddr == U.NOT_FOUND)
+                {
+                    return U.NOT_FOUND;
+                }
+            }
+
+
             //元データの保存
             undodata.list.Add(new Undo.UndoPostion(write_addr, original_size));
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))

@@ -43,7 +43,8 @@ namespace FEBuilderGBA
               ToolAnimationCreatorUserControl.AnimationTypeEnum type
             , uint id
             , string filehint
-            , string filename)
+            , string filename
+            , byte[] palleteBin = null)
         {
             uint uniq = MakeUniqID(type,id);
             int existingTabIndex = this.MainTab.FindTab(uniq);
@@ -55,7 +56,7 @@ namespace FEBuilderGBA
 
             ToolAnimationCreatorUserControl f = new ToolAnimationCreatorUserControl();
             InputFormRef.InitControl(f, this.ToolTip);
-            f.Init(type,id,filehint,filename);
+            f.Init(type, id, filehint, filename, palleteBin);
 
             this.MainTab.Add(filehint, f, uniq);
             this.ToolAnimationCreatorForm_Resize(null, null);

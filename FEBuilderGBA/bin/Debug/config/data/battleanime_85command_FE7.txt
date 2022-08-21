@@ -2,7 +2,7 @@
 01=HPゲージが減り終わるまで待機
 02=回避モーションの始め
 03=攻撃モーション開始 この後に07が来る
-04=魔法攻撃が命中した時に、HPを減らす準備をする。命中後に立ちモーションへ戻す必要あり。
+04=攻撃が命中した時に、HPを減らす準備をする。命中後に立ちモーションへ戻す必要あり。
 05=魔法の呼び出し
 06=攻撃アニメ終了 後に0Dが来る
 07=攻撃モーション開始 この前に03が来る
@@ -69,7 +69,7 @@
 44=エリウッドクリティカル時の剣が光る音
 45=FE7:ロードナイト馬のいななき
 46=Play dropped axe crashing onto ground SFE
-47=Show cape flowing animation; VERY hardcoded
+47=Show cape flowing animation; Do NOT USE; VERY hardcoded; alternative is C01Hack Loop.
 48=空き
 49=賢者　魔法効果音
 4A=ヴァルキュリア攻撃効果音
@@ -79,5 +79,5 @@
 4E=Show dirt wave (as from horse kicking forward from ground) animation
 4F=ドイルド　クリティカル効果音
 50=FE7:ネルガルのクリティカル効果
-51=Show brief white flash animation
+51=Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
 52=See command 0x2D
