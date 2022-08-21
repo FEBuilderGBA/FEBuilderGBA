@@ -674,7 +674,7 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.ROMTCS
                 || dataType == Address.DataTypeEnum.HEADERTSA
 //                || dataType == Address.DataTypeEnum.BIN
-                || dataType == Address.DataTypeEnum.UNUSEDBIN
+//                || dataType == Address.DataTypeEnum.UNUSEDBIN
                 || dataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND
                 || dataType == Address.DataTypeEnum.SONGINSTWAVE
                 || dataType == Address.DataTypeEnum.BATTLEFRAMEIMG

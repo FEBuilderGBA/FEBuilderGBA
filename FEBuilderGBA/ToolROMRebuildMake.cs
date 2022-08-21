@@ -346,6 +346,17 @@ namespace FEBuilderGBA
                 refCmdList.Add(refCmd);
             }
         }
+        void FindHardcodingPointer(uint search_pointer, string info)
+        {
+            //よくリポイントされる未知のポインタを探します。
+            uint search_addr = Program.ROM.p32(search_pointer);
+            List<uint> list = MoveToFreeSapceForm.SearchPointer(search_addr, isSilent: true);
+            foreach (uint addr in list)
+            {
+                Address.AddPointer(StructList, addr, 4, info, Address.DataTypeEnum.POINTER);
+            }
+        }
+
         bool IsNULLData(byte[] bin)
         {
             for (int i = 0; i < bin.Length; i++)
@@ -530,7 +541,6 @@ namespace FEBuilderGBA
             for (int i = 0; i < ldrmap.Count; i++)
             {
                 DisassemblerTrumb.LDRPointer ldr = ldrmap[i];
-
                 if (!CheckTrueLDRAddress(ldr.ldr_address))
                 {
                     continue;
@@ -810,6 +820,8 @@ namespace FEBuilderGBA
                 );
             AsmMapFile.InvalidateUNUNSED(StructList);
             DeleteCommentData();
+            FindHardcodingPointer(Program.ROM.RomInfo.item_pointer, "ITEM_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.class_pointer, "CLASS_POINTER");
             AppendPointer();
 
             wait.DoEvents(R._("データを準備中..."));
@@ -885,6 +897,7 @@ namespace FEBuilderGBA
 
             wait.DoEvents(R._("未知のハックを探索中..."));
             FindUnknownHack2(refCmdList,processedAddress);
+
 
             StringBuilder rebuildData = new StringBuilder();
             rebuildData.Append(RefSortSimple(wait, refCmdList));
