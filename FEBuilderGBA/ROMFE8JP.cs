@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             text_recover_address = 0x14D08C;  // textの開始位置(上記ポインタを壊している改造があるののでその対策)
             text_data_start_address = 0xED7F4;  // textデータの規定値の開始位置
             text_data_end_address = 0x14929B;  // textデータの規定値の開始位置
-            unit_pointer = U.FindROMPointer(rom, 0x2c, new uint[] { 0x010650, 0x010268, 0x1069C, 0xA3B64, 0xA3CE0, 0xA4928, 0xA49A0, 0xA4C3C, 0xA5458, 0xA56A8, 0xA5860, 0xA595C, 0xA5BB0, 0xA5D28, 0xA61F8, });  // ユニットのの開始位置
+            unit_pointer = U.FindROMPointer(rom, 0x2c, new uint[] { 0x010650, 0x010268, 0x1069C, 0xA3B64, 0xA3CE0, 0xA4928, 0xA49A0, 0xA4C3C, 0xA5458, 0xA56A8, 0xA5860, 0xA595C, 0xA5BB0, 0xA5D28, 0xA61F8 });  // ユニットのの開始位置
             unit_maxcount = 255;  // ユニットの最大数
             unit_datasize = 52;  // ユニットのデータサイズ
             max_level_address = 0x02B9C0;  // 最大レベルの値を格納しているアドレス  

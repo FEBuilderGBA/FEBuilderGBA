@@ -1,0 +1,1 @@
+Arena_NotDie=$B88570
