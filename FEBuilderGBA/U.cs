@@ -7621,6 +7621,11 @@ namespace FEBuilderGBA
             //最初に見つけた正しいポインタにする
             foreach (uint p in pointers)
             {
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+               
                 uint a = rom.u32(p);
                 if (!U.isSafetyPointer(a, rom))
                 {
@@ -7643,7 +7648,12 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                
+
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+
                 uint a = rom.u32(p);
                 if (! U.isSafetyPointer(a, rom))
                 {
@@ -7672,6 +7682,11 @@ namespace FEBuilderGBA
             //最初に見つけた正しいポインタにする
             foreach (uint p in pointers)
             {
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+
                 uint a = rom.u32(p);
                 if (!U.isSafetyPointer(a, rom))
                 {

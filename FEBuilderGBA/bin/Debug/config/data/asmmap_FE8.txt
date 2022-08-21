@@ -15377,3 +15377,5 @@
 08A729E8	sPageNameChrOffsetLut	{J}
 080098D4	GameCtrl_GotoToClassReel	{J}
 080B762C	opinfoview_draw_font	{J}
+080099E4	GameCtrl_GotoToClassReel	{U}
+080B2A14	opinfoview_draw_font	{U}

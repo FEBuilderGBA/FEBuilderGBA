@@ -109,6 +109,7 @@ namespace FEBuilderGBA
             try
             {
                 uint freearea = (uint)FREEAREA.Value;
+                freearea = U.toOffset(freearea);
                 SymbolUtil.DebugSymbol storeSymbol = (SymbolUtil.DebugSymbol)(DebugSymbolComboBox.SelectedIndex);
                 WriteEA(EAFilename, freearea, U.NOT_FOUND, U.NOT_FOUND, undodata, storeSymbol);
             }
@@ -135,7 +136,8 @@ namespace FEBuilderGBA
                 MessageBox.Show(text
                     , title
                     , MessageBoxButtons.YesNo
-                    , MessageBoxIcon.Exclamation);
+                    , MessageBoxIcon.Exclamation
+                    , MessageBoxDefaultButton.Button2);
             if (r != System.Windows.Forms.DialogResult.Yes)
             {
                 return;

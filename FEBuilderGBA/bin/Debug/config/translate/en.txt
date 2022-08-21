@@ -8818,6 +8818,12 @@ Class Reel FE7U
 :OPクラスデモ FE8U
 Class Reel FE8U
 
+:旧データ00
+old data 00.
+
+:バニラでは戦闘アニメーションの指定にこのフィールドを使っていましたが、1バイトしか書けないので、パッチによって移動しました。\r\n現在は利用していません。
+In vanilla, this field was used to specify battle animations, but since it can only be written in 1 byte, it was moved by the patch.\r\nNot currently.
+
 :OPクラスデモ
 Class Reel
 

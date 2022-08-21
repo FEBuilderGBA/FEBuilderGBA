@@ -11,3 +11,7 @@ ONN:0xB86B0=0x59 0x8A
 
 OFF:0xB86E2=0x9A 0x7C 0x4A 0x80 0xDA 0x7C
 ONN:0xB86E2=0x00 0x22 0x4A 0x80 0xC0 0x46
+NAME.en=Changed the upper limit of class animation IDs that can be introduced in the OP class introduction from 0xFF to 0xFFFF.
+INFO.en=The class ID that can be introduced in the OP class reel is read as 1 byte (ldrb), so it could not exceed 0xFF.\r\nThis patch allows you to read data in 2 bytes (ldrh) by changing the read position, and allows you to specify up to 0xFFFF.\r\nPlease note that installing this patch changes the location from which class data is read.\r\nUntil now, it was reading from 0x10, but now it reads data from location 0x12.\r\nYou have to recreate the settings.
+NAME.zh=将OP类介绍中可引入的类动画ID上限从0xFF改为0xFFFF。
+INFO.zh=可以在 OP 类卷轴中引入的类 ID 被读取为 1 个字节（ldrb），因此它不能超过 0xFF。\r\n此补丁允许您通过更改读取位置以 2 个字节 (ldrh) 读取数据，并允许您指定最多 0xFFFF。\r\n请注意，安装此补丁会更改读取类数据的位置。\r\n到目前为止，它是从 0x10 读取数据，但现在它从位置 0x12 读取数据。\r\n您必须重新创建设置。
