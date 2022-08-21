@@ -435,7 +435,10 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (!IsNonLDRType(a.Pointer))
+                if (IsIFRData(a))
+                {
+                }
+                else if (!IsNonLDRType(a.Pointer))
                 {//このアドレスはデータの中にあるので書き換えてはいけません
                     continue;
                 }
@@ -447,6 +450,26 @@ namespace FEBuilderGBA
                     , "AppendPointer:" + a.Info
                     , Address.DataTypeEnum.POINTER);
             }
+        }
+        bool IsIFRData(Address a)
+        {
+            if (!(a.DataType == Address.DataTypeEnum.InputFormRef
+                || a.DataType == Address.DataTypeEnum.InputFormRef_ASM
+                || a.DataType == Address.DataTypeEnum.InputFormRef_MIX)
+                )
+            {
+                return false;
+            }
+            if (!U.isSafetyOffset(a.Addr))
+            {
+                return false;
+            }
+            if (a.Length > 0xffff)
+            {
+                return false;
+            }
+
+            return true;
         }
         //LDR DATA が正しいかどうか検証する
         bool CheckTrueLDRData(uint addr)

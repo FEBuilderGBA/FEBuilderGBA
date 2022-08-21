@@ -21,14 +21,7 @@ namespace FEBuilderGBA
 
             UseFreeAreaComboBox.SelectedIndex = 0;
             UseShareSameDataComboBox.SelectedIndex = 2;
-            if (Program.ROM.RomInfo.version == 8)
-            {
-                this.FreeAreaMinimumSize.Value = 512;
-            }
-            else
-            {
-                this.FreeAreaMinimumSize.Value = 2048;
-            }
+            this.FreeAreaMinimumSize.Value = 2048;
             this.FreeAreaStartAddress.Value = U.Padding4(Program.ROM.RomInfo.compress_image_borderline_address);
             AppendFreeAreaFilename.Placeholder = R._("無指定の場合は追加設定ファイルを利用しません。");
 
@@ -113,6 +106,7 @@ namespace FEBuilderGBA
                 return;
             }
             Program.LastSelectedFilename.Save(this, "", save);
+            Program.AsmMapFileAsmCache.StopRequest();
 
             Make(save.FileName, OrignalFilename.Text, (uint)this.RebuildAddress.Value);
 

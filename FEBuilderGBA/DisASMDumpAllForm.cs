@@ -292,6 +292,7 @@ namespace FEBuilderGBA
         public static void MakeAllDisASMButton(Form self, string store_filename, bool notifyUpdateMessage)
         {
             uint addr = 0x100;
+            Program.AsmMapFileAsmCache.StopRequest();
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(self))
             using (StreamWriter writer = new StreamWriter(store_filename))

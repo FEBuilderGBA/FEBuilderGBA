@@ -577,7 +577,8 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "SkillConfigSkillSystem", new uint[] { });
 
                 uint anime = Program.ROM.p32(baseanimeP);
-                for (uint i = 0; i < InputFormRef.DataCount; i++ , anime += 4)
+                FEBuilderGBA.Address.AddAddressInstantIFR(list, baseanimeP, 4, InputFormRef.DataCount, "SkillAnime", new uint[] { 0 });
+                for (uint i = 0; i < InputFormRef.DataCount; i++, anime += 4)
                 {
                     if (!U.isSafetyOffset(anime))
                     {
@@ -589,8 +590,6 @@ namespace FEBuilderGBA
                         continue;
                     }
                     string name = "SkillAnime:" + U.To0xHexString(i) + " ";
-                    FEBuilderGBA.Address.AddAddress(list, addr, 0, anime, name, FEBuilderGBA.Address.DataTypeEnum.POINTER);
-
                     ImageUtilSkillSystemsAnimeCreator.RecycleOldAnime(ref list
                         ,name
                         ,isPointerOnly

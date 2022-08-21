@@ -1061,7 +1061,7 @@ namespace FEBuilderGBA
                         continue;
                     }
                     string name = "SkillAnime:" + U.To0xHexString(i) + " ";
-                    FEBuilderGBA.Address.AddAddress(list, addr, 0, anime, name, FEBuilderGBA.Address.DataTypeEnum.POINTER);
+                    FEBuilderGBA.Address.AddAddress(list, addr, 4, anime, name, FEBuilderGBA.Address.DataTypeEnum.POINTER);
 
                     ImageUtilSkillSystemsAnimeCreator.RecycleOldAnime(ref list
                         , name
