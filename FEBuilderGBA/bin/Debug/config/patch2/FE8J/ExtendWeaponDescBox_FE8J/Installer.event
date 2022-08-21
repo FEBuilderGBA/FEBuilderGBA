@@ -13,10 +13,14 @@
 #define gProc_ChapterMenuUnit $A93854	//{J}
 //#define gProc_ChapterMenuStatus $A01B54	//{U}
 #define gProc_ChapterMenuStatus $A73C0C	//{J}
+//#define gProc_PrepSomethingUnknown $A1898C	//{U}
+#define gProc_PrepSomethingUnknown $A946D0	//{J}
+//#define gProc_PrepSomethingUnknown2 $A18944 //backup	//{U}
+#define gProc_PrepSomethingUnknown2 $A94688 //backup	//{J}
 
 ALIGN 4 
 ProcExceptionsList:
-POIN gProc_SaveMenu gProc_SaveMenu2 gProc_ChapterMenuUnit gProc_ChapterMenuStatus
+POIN gProc_SaveMenu gProc_SaveMenu2 gProc_ChapterMenuUnit gProc_ChapterMenuStatus gProc_PrepSomethingUnknown gProc_PrepSomethingUnknown2
 WORD 0 // Terminator 
 
 
