@@ -350,6 +350,11 @@ namespace FEBuilderGBA
         {
             //よくリポイントされる未知のポインタを探します。
             uint search_addr = Program.ROM.p32(search_pointer);
+            if (! isRebuildAddress(search_addr))
+            {//リビルド領域にないので関係ないです
+                return;
+            }
+
             List<uint> list = MoveToFreeSapceForm.SearchPointer(search_addr, isSilent: true);
             foreach (uint addr in list)
             {
@@ -822,6 +827,8 @@ namespace FEBuilderGBA
             DeleteCommentData();
             FindHardcodingPointer(Program.ROM.RomInfo.item_pointer, "ITEM_POINTER");
             FindHardcodingPointer(Program.ROM.RomInfo.class_pointer, "CLASS_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.icon_pointer, "ICON_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.portrait_pointer, "PORTRAIT_POINTER");
             AppendPointer();
 
             wait.DoEvents(R._("データを準備中..."));

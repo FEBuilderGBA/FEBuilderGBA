@@ -441,6 +441,10 @@ namespace FEBuilderGBA
         public uint bg_reserve_black_bgid { get; protected set; }
         public uint bg_reserve_random_bgid { get; protected set; }
 
+        public uint item_vanilla_address { get; protected set; } // バニラのアイテムアドレス
+        public uint itemicon_vanilla_address { get; protected set; } // バニラのアイテムアイコンアドレス
+        public uint class_vanilla_address { get; protected set; } // バニラのクラスアドレス
+
         public uint extends_address { get; protected set; } //拡張領域
         public uint orignal_crc32 { get; protected set; } //無改造ROMのCRC32
         public bool is_multibyte { get; protected set; }    // マルチバイトを利用するか？
