@@ -18,7 +18,7 @@ namespace FEBuilderGBA
 
             ImageBGButton.BackgroundImage = MakeTransparent(Trim(ImageBGForm.DrawBG(0)));
 
-            if (Program.ROM.RomInfo.version >= 7)
+            if (Program.ROM.RomInfo.bigcg_pointer != 0)
             {
                 BigCGButton.BackgroundImage = MakeTransparent(Trim(ImageCGForm.DrawImageByID(0)));
             }
@@ -146,17 +146,25 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version == 8)
             {
                 InputFormRef.JumpForm<ImageCGForm>();
+                return;
             }
             else if (Program.ROM.RomInfo.version == 7)
             {
                 if (!Program.ROM.RomInfo.is_multibyte)
                 {
                     InputFormRef.JumpForm<ImageCGFE7UForm>();
+                    return;
                 }
                 else
                 {
                     InputFormRef.JumpForm<ImageCGForm>();
+                    return;
                 }
+            }
+
+            if (Program.ROM.RomInfo.bigcg_pointer != 0)
+            {
+                InputFormRef.JumpForm<ImageCGForm>();
             }
         }
 

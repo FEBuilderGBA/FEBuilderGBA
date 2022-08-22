@@ -506,18 +506,27 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    PropertyInfo field = (PropertyInfo)info;
-                    if (field.PropertyType != typeof(uint))
-                    {
-                        continue;
-                    }
-
                     uint v;
                     if (!map.TryGetValue(info.Name, out v))
                     {
                         continue;
                     }
-                    field.SetValue(this, v, null);
+
+                    PropertyInfo field = (PropertyInfo)info;
+                    if (field.PropertyType == typeof(uint))
+                    {
+                        field.SetValue(this, v, null);
+                    }
+                    else if (field.PropertyType == typeof(int))
+                    {
+                        field.SetValue(this, (int)v, null);
+                    }
+                    else if (field.PropertyType == typeof(bool))
+                    {
+                        bool b = (v == 0 ? false : true);
+                        field.SetValue(this, b, null);
+                    }
+
                 }
             }
             catch(Exception)
