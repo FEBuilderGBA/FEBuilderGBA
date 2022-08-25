@@ -3023,7 +3023,6 @@ namespace FEBuilderGBA
                 TextBoxEx link_object = ((TextBoxEx)link_info);
                 src_object.ValueChanged += (sender, e) =>
                 {
-                    //ユニット名の取得
                     link_object.Text = InputFormRef.GetAOECONFIG((uint)src_object.Value);
                 };
                 link_object.DoubleClick += (sender, e) =>
@@ -3040,6 +3039,20 @@ namespace FEBuilderGBA
                 {//ダブルクリックで編集
                     JumpTo(src_object, link_info, linktype, new string[] { });
                 };
+                return;
+            }
+            if (linktype == "UNITCLASSABILITY")
+            {//UNITCLASSABILITY
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = InputFormRef.GetUNITCLASSABILITY((uint)src_object.Value);
+                };
+                link_object.DoubleClick += (sender, e) =>
+                {//ダブルクリックで編集
+                    JumpTo(src_object, link_info, linktype, new string[] { });
+                };
+
                 return;
             }
             if (linktype == "CALLMENUCONFIG")
@@ -4557,6 +4570,12 @@ namespace FEBuilderGBA
             {
                 AOERANGEForm f = (AOERANGEForm)InputFormRef.JumpForm<AOERANGEForm>(U.NOT_FOUND);
                 f.JumpTo(src_object, value);
+            }
+            else if (linktype == "UNITCLASSABILITY")
+            {
+                UwordBitFlagForm f = (UwordBitFlagForm)InputFormRef.JumpForm<UwordBitFlagForm>(U.NOT_FOUND);
+                f.JumpTo(EventScript.ArgType.UNITCLASSABILITY, value);
+                InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
             }
             else if (linktype == "CALLMENUCONFIG")
             {

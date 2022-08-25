@@ -1,21 +1,21 @@
-NAME=章ごとに進撃準備の音楽変更 20170922
-NAME.en=Set Preparation BGM By Chapter 20170922
-NAME.zh=每章进击准备的音乐变更 20170922
+NAME=章ごとに進撃準備の音楽変更 20220825
+NAME.en=Set Preparation BGM By Chapter 20220825
+NAME.zh=每章进击准备的音乐变更 20220825
 
 //PATCHED_IF:0x340cc=0x64 0xF0 0xFC 0xFB	//FE8J
 PATCHED_IF:0x341C4=0x62 0xF0 0x0E 0xFA	//FE8U
 TYPE=BIN
 TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 
-BIN:$FREEAREA:0=c0p.bin
+BIN:$FREEAREA:0=c0p.dmp
 BIN:$FREEAREA:1=c1p.bin
 BIN:$FREEAREA:2=c2p.bin
 
 //JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行ているみたいです.
 //JUMP:0x988c6:$B=0x9893a	//FE8J
 JUMP:0x965E2:$B=0x96656		//FE8U
-//JUMP:0x988c8:$r0=c0p.bin	//FE8J
-JUMP:0x965E4:$r0=c0p.bin	//FE8U
+//JUMP:0x988c8:$r0=c0p.dmp	//FE8J
+JUMP:0x965E4:$r0=c0p.dmp	//FE8U
 
 //JUMP:0x340cc:$BL=0x988c8	//FE8J
 JUMP:0x341C4:$BL=0x965E4	//FE8U

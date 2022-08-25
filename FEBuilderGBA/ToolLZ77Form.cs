@@ -312,7 +312,8 @@ namespace FEBuilderGBA
                 Undo.UndoData undodata = Program.Undo.NewUndoData("ReCompressLZ77");
                 foreach (Address a in list)
                 {
-                    uint diff = RecompressOne(pleaseWait, a, undodata);
+                    pleaseWait.DoEvents(R._("{0} 削減サイズ:{1}", U.To0xHexString(a.Addr), totalSize));
+                    uint diff = RecompressOne(a, undodata);
                     if (diff == 0)
                     {
                         pleaseWait.DoEvents();
@@ -373,7 +374,7 @@ namespace FEBuilderGBA
             return ret;
         }
 
-        uint RecompressOne(InputFormRef.AutoPleaseWait wait, Address a, Undo.UndoData undodata)
+        uint RecompressOne(Address a, Undo.UndoData undodata)
         {
             if (!Address.IsLZ77(a.DataType))
             {//念のためlz77圧縮の確認
@@ -408,7 +409,6 @@ namespace FEBuilderGBA
             //書き込み
             Program.ROM.write_fill(a.Addr, a.Length, 0, undodata);
             Program.ROM.write_range(a.Addr, lz77Data, undodata);
-            wait.DoEvents(R._("recompress lz77 {0}", U.To0xHexString(a.Addr)));
 
             return diff;
         }

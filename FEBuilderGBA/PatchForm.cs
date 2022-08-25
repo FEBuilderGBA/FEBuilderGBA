@@ -1018,22 +1018,13 @@ namespace FEBuilderGBA
                     ImageBattleAnimeForm.MakeComboBattleAnimeSP(link);
                     PatchPage.Controls.Add(link);
                 }
-                else if (type == "AOECONFIG")
+                else if (type == "AOECONFIG" || type == "UNITCLASSABILITY" || type == "CALLMENUCONFIG")
                 {
                     TextBoxEx link = new TextBoxEx();
                     link.Location = new Point(500, y);
                     link.Size = new Size(150, CONTROL_HEIGHT);
 
-                    link.Name = "L_" + datanum + "_AOECONFIG";
-                    PatchPage.Controls.Add(link);
-                }
-                else if (type == "CALLMENUCONFIG")
-                {
-                    TextBoxEx link = new TextBoxEx();
-                    link.Location = new Point(500, y);
-                    link.Size = new Size(150, CONTROL_HEIGHT);
-
-                    link.Name = "L_" + datanum + "_CALLMENUCONFIG";
+                    link.Name = "L_" + datanum + "_" + type;
                     PatchPage.Controls.Add(link);
                 }
                 else if (type.IndexOf("PatchImage") == 0)
