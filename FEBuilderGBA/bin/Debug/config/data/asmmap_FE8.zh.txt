@@ -4020,7 +4020,7 @@ r3=X tile position of menu of the right	{U}
 0807cc78	NewMapPoisonEffect	{U}
 0807ccc0	MapAnim_BeginPoisonAnim	{U}
 0807d82c	NewMapAnimEffectAnimator	{U}
-0807daa8	New6C_SomethingFlashy	{U}
+0807daa8	StartMapAnimTargetUnitWarpRingProcs	{U}
 0807ec08	GetSomeStatUp	{U}
 0807ed30	GetSomeStatBase	{U}
 0807f614	NewBG0Shaker	{U}
@@ -5782,7 +5782,7 @@ r3=X tile position of menu of the right	{U}
 0807EFBC	NewMapPoisonEffect	{J}
 0807F004	MapAnim_BeginPoisonAnim	{J}
 0807FB70	NewMapAnimEffectAnimator	{J}
-0807FDEC	New6C_SomethingFlashy	{J}
+0807FDEC	StartMapAnimTargetUnitWarpRingProcs	{J}
 08080F48	GetSomeStatUp	{J}
 08081070	GetSomeStatBase	{J}
 08081954	NewBG0Shaker	{J}
@@ -13070,7 +13070,7 @@ r3=X tile position of menu of the right	{U}
 08745FD0	&LZ77	Something's TSA	57	{U}
 08083F38	StartTourchStaffMapAnim	{J}
 0807FEEC	StartProcForTourchStaffMapAnim	{J}
-080819E8	StartTourchStaffMapAnim	{U}
+
 0807DBA8	StartProcForTourchStaffMapAnim	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
@@ -15380,3 +15380,47 @@ r3=X tile position of menu of the right	{U}
 080B762C	opinfoview_draw_font	{J}
 080099E4	GameCtrl_GotoToClassReel	{U}
 080B2A14	opinfoview_draw_font	{U}
+08083FF4	ExecMapAnimHammern	{J}
+08080170	StartMapAnimHammernProcs	{J}
+08083F94	ExecMapAnimRestore	{J}
+08080334	StartMapAnimRestoreProcs	{J}
+08083FD4	ExecMapAnimStone	{J}
+08080524	StartMapAnimStoneProcs	{J}
+08083F74	ExecMapAnimBeserk	{J}
+080800c0	StartMapAnimBeserkProcs	{J}
+0807FB1C	StartMapAnimUnusedProcs	{J}
+08083D68	ExecMapAnimAntitoxin	{J}
+08083D94	ExecMapAnimPureWater	{J}
+0807f9cc	StartMapAnimAntitoxinPureWaterProcs	{J}
+08083D28	ExecMapAnimFortify	{J}
+0807f3f8	StartMapAnimFortifyProcs	{J}
+08083D08	ExecMapAnimBarrier	{J}
+08080978	StartMapAnimBarrierProcs	{J}
+08083CE8	ExecMapAnimSilence	{J}
+080807CC	StartMapAnimSilenceProcs	{J}
+
+08081CB4	ExecMapAnimHammern	{U}
+0807D7D8	StartMapAnimHammernProcs	{U}
+08081C54	ExecMapAnimRestore	{U}
+0807DFF4	StartMapAnimRestoreProcs	{U}
+08081C94	ExecMapAnimStone	{U}
+0807e1e4	StartMapAnimStoneProcs	{U}
+08081C34	ExecMapAnimBeserk	{U}
+0807dd80	StartMapAnimBeserkProcs	{U}
+08081A28	ExecMapAnimAntitoxin	{U}
+08081A54	ExecMapAnimPureWater	{U}
+0807D688	StartMapAnimAntitoxinPureWaterProcs	{U}
+080819E8	ExecMapAnimFortify	{U}
+0807d0b4	StartMapAnimFortifyProcs	{U}
+080819C8	ExecMapAnimBarrier	{U}
+0807e638	StartMapAnimBarrierProcs	{U}
+080819A8	ExecMapAnimSilence	{U}
+0807e48c	StartMapAnimSilenceProcs	{U}
+08083D48	ExecMapAnimNightmare	{J}
+0807f818	StartMapAnimNightmareProcs	{J}
+08081A08	ExecMapAnimNightmare	{U}
+0807d4d4	StartMapAnimNightmareProcs	{U}
+0807F6A4	StartMapAnimFortifySubProcs	{J}
+0807D360	StartMapAnimFortifySubProcs	{U}
+0808068C	StartMapAnimUnused2Procs	{J}
+0807E34C	StartMapAnimUnused2Procs	{U}

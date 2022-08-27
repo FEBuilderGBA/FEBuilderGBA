@@ -53,12 +53,12 @@
 	ALIGN 4
 	New_Battle_Anims_Off_Right_TSA:
 	#incbin "src/RightBox.dmp" 	//HINT=BIN
-	//#incbin "New_Battle_Anims_Off_Right_TSA.dmp"
+	//#incbin "New_Battle_Anims_Off_Right_TSA.dmp"		//HINT=BIN
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Left_TSA:
 	#incbin "src/LeftBox.dmp" 	//HINT=BIN
-	//#incbin "New_Battle_Anims_Off_Left_TSA.dmp"
+	//#incbin "New_Battle_Anims_Off_Left_TSA.dmp"		//HINT=BIN
 	
 	ALIGN 4
 	Show_Battle_Stats:

@@ -33,8 +33,6 @@ namespace FEBuilderGBA
             B23.ValueChanged += AddressList_SelectedIndexChanged;
             B24.ValueChanged += AddressList_SelectedIndexChanged;
 
-            DetermineToolCompressAllPortraitButton();
-
             //パレット変更の部分にリンクを置く.
             InputFormRef.markupJumpLabel(this.J_8);
 
@@ -1760,16 +1758,6 @@ namespace FEBuilderGBA
             return totalSize;
         }
 
-        private void DetermineToolCompressAllPortraitButton()
-        {
-            OptionForm.func_portrait_lz77_enum portrait_lz77 = OptionForm.portrait_lz77();
-            if (portrait_lz77 != OptionForm.func_portrait_lz77_enum.AlwaysL77Compress)
-            {
-                return;
-            }
-
-            ToolCompressAllPortrait.Show();
-        }
  
         private void ToolCompressAllPortrait_Click(object sender, EventArgs e)
         {

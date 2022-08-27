@@ -2610,7 +2610,7 @@
 08061B68	StartSpellAnimNaglfar	{U}
 0806B7D6	StartSpellAnimCrimsonEye	{U}
 08082FD8	NewMapPoisonEffect	{U}
-08082FD8	New6C_SomethingFlashy	{U}
+08082FD8	StartMapAnimTargetUnitWarpRingProcs	{U}
 0808E39C	GetCurrentChapterBallistae2Ptr	{U}
 0808DC9A	ClearLocalEvents	{U}
 0808979A	CallRouteSplitMenu	{U}
@@ -3395,7 +3395,7 @@
 08062350	StartSpellAnimEvilEye	{J}
 08062350	StartSpellAnimNaglfar	{J}
 080839D8	NewMapPoisonEffect	{J}
-080839D8	New6C_SomethingFlashy	{J}
+080839D8	StartMapAnimTargetUnitWarpRingProcs	{J}
 0808ECE0	GetCurrentChapterBallistae2Ptr	{J}
 0808A0FA	CallRouteSplitMenu	{J}
 08084DD2	MenuCommand_DrawRouteSplit	{J}

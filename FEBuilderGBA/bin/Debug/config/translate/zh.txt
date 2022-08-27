@@ -3829,6 +3829,9 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 :6=瞳を閉じる
 6=闭上眼睛
 
+:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
+如果脸部图像的眼睛和嘴巴位置不匹配，请从这里调整位置。
+
 :mug_exceed用のタイルをどこに配置するか設定してください
 请为mug_exceed设置拼贴的位置
 
@@ -3837,12 +3840,6 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 
 :タイル1
 瓷砖1
-
-:顔画像の全圧縮
-人脸图像完全压缩。
-
-:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
-如果脸部图像的眼睛和嘴巴位置不匹配，请从这里调整位置。
 
 :位置確認用
 对于位置确认
