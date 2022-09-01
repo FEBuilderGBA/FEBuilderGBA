@@ -179,6 +179,8 @@ namespace FEBuilderGBA
             //テンポラリディレクトリを利用する
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
+                U.ReleaseMemory(pleaseWait);
+
                 string orignalFilename = OrignalFilename.Text;
                 byte[] s = File.ReadAllBytes(orignalFilename);
 

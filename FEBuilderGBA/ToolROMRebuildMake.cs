@@ -100,6 +100,8 @@ namespace FEBuilderGBA
 
         Dictionary<Address, uint> OptimizeList_MakeScore(InputFormRef.AutoPleaseWait wait, List<Address> list)
         {
+            U.ReleaseMemory(wait);
+
             int orignalCount = (int)list.Count;
             wait.DoEvents(R._("データを最適化中... {0}({1})", orignalCount, 0));
 

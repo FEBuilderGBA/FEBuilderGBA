@@ -13252,6 +13252,9 @@ The directory could not be created.\r\n{0}.\r\n\r\n{1}.
 :ファイルをコピーできませんでした。\r\nSrc:{0}\r\nDest:{1}\r\n\r\n{2}
 The file could not be copied.\r\nSrc: {0}.\r\nDest: {1}.\r\n\r\n{2}.
 
+:ワークメモリを解放しています。
+Releasing work memory.
+
 :範囲攻撃の攻撃タイプを設定します。
 Sets the attack type for ranged attacks.
 

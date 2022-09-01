@@ -7767,6 +7767,16 @@ namespace FEBuilderGBA
             FETextDecode decoder = new FETextDecode();
             return decoder.listbyte_to_string(str, src_objests.Length);
         }
+        public static void ReleaseMemory(InputFormRef.AutoPleaseWait pleaseWait = null)
+        {
+            if (pleaseWait != null)
+            {
+                pleaseWait.DoEvents(R._("ワークメモリを解放しています。"));
+            }
+            Program.AsmMapFileAsmCache.StopRequest();
+            Program.AsmMapFileAsmCache.Join();
+            GC.Collect();
+        }
     }
 }
 

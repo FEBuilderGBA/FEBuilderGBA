@@ -15476,3 +15476,31 @@ r3=X tile position of menu of right	{U}
 0807D360	StartMapAnimFortifySubProcs	{U}
 0808068C	StartMapAnimUnused2Procs	{J}
 0807E34C	StartMapAnimUnused2Procs	{U}
+08083FB4	ExecMapAnimSleep	{J}
+08080414	StartMapAnimSleepProcs	{J}
+08083F58	ExecMapAnimUnlock	{J}
+08021C28	StartMapAnimUnused3Procs	{J}
+08021510	StartMapAnimUnused4Procs	{J}
+080DC7DC	:080DC810	LightRuneMapAnimSomeData	{J}
+080DC810	:080DC844	MapAnimUnuse4SomeData	{J}
+08021610	UnuseMapAnim5Init	{J}
+0802155C	UnuseMapAnim5Init2	{J}
+080216A4	StartMapAnimUnused5Procs	{J}
+085C38C8	:085C390C	WarpInData1	{J}
+085C390C	:085C3950	WarpInData2	{J}
+08081C74	ExecMapAnimSleep	{U}
+0807DFF4	StartMapAnimSleepProcs	{U}
+08081C18	ExecMapAnimUnlock	{U}
+08021684	StartMapAnimUnused4Procs	{U}
+080D7B30	:080D7B64	LightRuneMapAnimSomeData	{U}
+080D7B64	:080D7B98	MapAnimUnuse4SomeData	{U}
+080215F0	UnuseMapAnim5Init	{U}
+0802153C	UnuseMapAnim5Init2	{U}
+08021684	StartMapAnimUnused5Procs	{U}
+0859B448	:0859B48C	WarpInData1	{U}
+0859B48C	:0859B4D0	WarpInData2	{U}
+080220B0	StartUnuseMapAnim6Procs	Remains of FE7.	The implementation department displaying the shiny mark on the sword above Roland's altar.	{J}
+085C3798	:085C37C0	UNUSEDBIN	UnsedChapterIntroProcs	{J}
+085B9A28	:085B9A7C	UNUSEDBIN	They are probably Procs for debugging.	{J}
+08022E2C	BkSel_ButtonBPressed	When the B button is pressed in battle prediction.	{J}
+0807F114	StartMapEggHatch2Procs	{J}

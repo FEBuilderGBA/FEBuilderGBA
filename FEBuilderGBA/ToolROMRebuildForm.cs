@@ -106,7 +106,8 @@ namespace FEBuilderGBA
                 return;
             }
             Program.LastSelectedFilename.Save(this, "", save);
-            Program.AsmMapFileAsmCache.StopRequest();
+            
+            
 
             Make(save.FileName, OrignalFilename.Text, (uint)this.RebuildAddress.Value);
 
