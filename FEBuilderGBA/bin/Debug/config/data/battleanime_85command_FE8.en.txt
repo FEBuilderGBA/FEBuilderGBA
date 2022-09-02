@@ -39,8 +39,8 @@
 26=Sword toss; VERY hardcoded
 27=Shield toss; while this command is used for shield tossing,it is actually just a copy of command 0x26
 28=Play electrical charging SFE
-29=EMPTY
-2A=EMPTY
+29=Play sound when the Demon King appears
+2A=Play screams of the demon king dies
 2B=Play armored unit "leaping" SFE
 2C=Show fire (that envelopes Sealed Sword; contains all Sealed Sword fire frames)
 2D=? (Assassin critical) (Lethality activator that is dependent on other commands?)
@@ -63,8 +63,8 @@
 3E=Play burning SFE
 3F=Play alternate arrow firing SFE?
 40=EMPTY
-41=EMPTY
-42=Play long axe swinging SFE
+41=Play Axe rising SFE
+42=Play Axe falling SFE; long axe swinging SFE
 43=Play weapon stance SFE (Clicking noise)
 44=Play short "light emission" SFE
 45=FE7:Play horse neighing SFE

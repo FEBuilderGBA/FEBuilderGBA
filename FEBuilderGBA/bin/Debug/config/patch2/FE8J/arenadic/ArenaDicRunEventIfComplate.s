@@ -45,7 +45,7 @@ ldr r0, [r3, #0xC]	@ArenaDicConfig->全達成時のイベント
 cmp r0, #0x1
 ble ComplateEvent_Exit	@イベントアドレスが無効
 
-mov r1, r4  @this procs
+mov r1, #0x2
 blh 0x0800d340   @イベント命令を動作させる関数	{J}
 @blh 0x0800d07c   @イベント命令を動作させる関数	{U}
 

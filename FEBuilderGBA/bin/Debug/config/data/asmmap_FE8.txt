@@ -15451,5 +15451,6 @@
 085B9A28	:085B9A7C	UNUSEDBIN	おそらくデバッグ用のProcsかもしれない	{J}
 08022E2C	BkSel_ButtonBPressed	戦闘予測でBボタンが押された時	{J}
 0807F114	StartMapEggHatch2Procs	{J}
-
-
+08083360	StartSummonByEvent45Procs	{J}
+080833A8	DeleteSummonByEvent45Procs	{J}
+08083510	StartColorChangeByEvent45Procs	{J}
