@@ -1,0 +1,68 @@
+#include "Extensions/Hack Installation.txt"
+#include EAstdlib.event
+#include "Tools/Tool Helpers.txt"
+
+PUSH
+//	ORG 0x5514	//{U}
+	ORG 0x541C	//{J}
+	jumpToHack(DynamicPortraits)
+POP
+
+ALIGN 4
+DynamicPortraits:
+#incbin "DynamicPortraitIDSetter.dmp"
+POIN DynamicPortraitTable
+
+ALIGN 4
+DynamicPortraitTable:
+/* Each table entry works like this:
+
+SHORT For the base portrait ID
+SHORT For the new portrait ID
+SHORT For the Event Flag ID that will trigger the portrait change (0 if you want no flag)
+BYTE  For the character ID who we will check to determine if we change the portrait. unit must be recruited and alive. (0 if you want no character)
+BYTE  For the class ID the character above must be to trigger the portrait change (0 if you don't care about their class)
+
+So if we wanted to change Ephraim's class if he promoted in a fully vanilla rom, it'd go like:
+
+SHORT #0x0014 Ephraim's portrait ID
+SHORT #0x???? We insert the ID of the new portrait here
+SHORT #0x0000 We don't use a flag, so 0
+BYTE  #0x0F Ephraim's character ID
+BYTE  #0x03 Ephraim's Great Lord class ID
+
+If we wanted to change Eirika's portrait if Flag F was set and Seth was recruited, we'd do:
+
+SHORT #0x0002 Eirika's portrait ID
+SHORT #0x???? We insert the ID of the new portrait here
+SHORT #0x000F Flag ID
+BYTE  #0x02 Seth's character ID, portrait will change if Seth is recruited and alive
+BYTE  #0x00 We don't care about Seth's class here
+
+*/
+
+//samples
+
+//Sample 1: Eirika changes to Ross if Gilliam exists
+SHORT #0x0002
+SHORT #0x0009
+SHORT #0x0000
+BYTE  #0x03 
+BYTE  #0x00 
+
+//Sample 2: Seth changes to Neimi if Event Flag A is set
+SHORT #0x0004
+SHORT #0x000A
+SHORT #0x000A
+BYTE  #0x00 
+BYTE  #0x00 
+
+//Sample 3: Gilliam changes to Colm if Gilliam exists and is a General
+SHORT #0x0005
+SHORT #0x000C
+SHORT #0x0000
+BYTE  #0x03 
+BYTE  #0x0B 
+
+
+WORD 0x0 0x0//Terminator, don't delete this or very bad things will happen

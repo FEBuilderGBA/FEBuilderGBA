@@ -1,0 +1,17 @@
+NAME=顔画像をクラス、フラグごとに切り替える(Install)
+INFO=顔画像をクラス、フラグごとに切り替えます。\r\nこのパッチは会話中の顔画像も切り替えることができます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x541C=0x00 0x4B
+EDIT_PATCH=PATCH_DynamicPortraits_Editor.txt
+EA=DynamicPortraitsInstaller.event
+
+AUTHOR=Scraiza https://feuniverse.us/t/scraizas-crazy-asm/5624/8
+NAME.en=Switch Portrait images by class, flag.(Installer)
+INFO.en=Switch Portrait to the status screen and MiniMug class, flags.\r\nThis patch can also switch portrait(face image) during conversations.
+
+NAME.zh=按类，旗切换面部图像(Install)
+INFO.zh=切换到状态屏幕和MiniMug类，标志

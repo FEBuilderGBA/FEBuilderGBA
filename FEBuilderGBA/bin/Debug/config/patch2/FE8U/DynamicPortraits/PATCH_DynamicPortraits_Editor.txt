@@ -1,0 +1,33 @@
+NAME=顔画像をクラス、フラグごとに切り替える(Editor)
+INFO=顔画像をクラス、フラグごとに切り替えます。\r\nこのパッチは会話中の顔画像も切り替えることができます。\r\nClassに0以外を指定するときは、Unitにも0以外を指定してください。
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+//既に適応されたかどうか
+IF:0x5514=0x00 0x4B
+
+AUTHOR=Scraiza https://feuniverse.us/t/scraizas-crazy-asm/5624/8
+NAME.en=Switch Portrait images by class, flag.(Editor)
+INFO.en=Switch Portrait to the status screen and MiniMug class, flags.\r\nThis patch can also switch portrait(face image) during conversations.\r\nWhen specifying a non-zero value for Class, specify a non-zero value for Unit as well.
+
+NAME.zh=按类，旗切换面部图像(Editor)
+INFO.zh=切换到状态屏幕和MiniMug类，标志\r\nThis patch can also switch portrait(face image) during conversations.\r\nWhen specifying a non-zero value for Class, specify a non-zero value for Unit as well.
+
+//データへのポインタ
+POINTER=$FGREP4END DynamicPortraitIDSetter.dmp
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$W0:PORTRAIT
+
+//データを定義します
+W0:PORTRAIT=From PORTRAIT
+W2:PORTRAIT=To PORTRAIT
+W4:FLAG=Flag(0x00=ANY)
+B6:UNIT=UNIT(0x00=ANY)
+B7:CLASS=CLASS(0x00=ANY)

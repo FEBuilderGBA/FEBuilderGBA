@@ -17,3 +17,4 @@ INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。
 
 CONFLICT_IF:0x22BF6=0xC0 0x46 0x00 0x4B 0x18 0x47
 CONFLICT_MESSAGE=SkillSystems RandomMugs
+DEPRECATED=1
