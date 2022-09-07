@@ -1,0 +1,15 @@
+NAME=Add item ability to ignore weapon triangle
+INFO=This patch adds a weapon ability to ignore weapon triangle on flag 3, field 3.
+
+TYPE=EA
+TAG=#ENGINE
+
+//flag 3, field 3
+PATCHED_IF:0x2A1C8= 0x00 0x49 0x8F 0x46
+EA=IgnoreWeaponTriangle_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+NAME.en=Add item ability to ignore weapon triangle
+INFO.en=This patch adds a weapon ability to ignore weapon triangle on flag 3, field 3.
+NAME.zh=Add item ability to ignore weapon triangle
+INFO.zh=This patch adds a weapon ability to ignore weapon triangle on flag 3, field 3.

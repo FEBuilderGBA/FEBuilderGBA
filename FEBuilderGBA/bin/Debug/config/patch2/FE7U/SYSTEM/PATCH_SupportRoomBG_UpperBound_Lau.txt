@@ -1,0 +1,17 @@
+NAME=支援会話一覧の画面でのBG背景IDの上限
+NAME.en=Upper bound of BG ID for Support Viewer room
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xB652
+DATASIZE=1
+HEX=true
+
+AUTHOR=SageMatthis/EgalLau37
+
+INFO=支援会話一覧でサポート会話を閲覧する際に使用する背景IDの上限値です。\r\n上限は非包括なので、IDはlast background+1である必要があります。
+INFO.en=The upper bound of background IDs to use when viewing support conversations in the Support Viewer room.  The upper bound is non-inclusive, so the ID should be last background+1.
+INFO.zh=The upper bound of background IDs to use when viewing support conversations in the Support Viewer room.  The upper bound is non-inclusive, so the ID should be last background+1.
+NAME.zh=支持对话列表屏幕上的 BG 背景 ID 的最大数量。

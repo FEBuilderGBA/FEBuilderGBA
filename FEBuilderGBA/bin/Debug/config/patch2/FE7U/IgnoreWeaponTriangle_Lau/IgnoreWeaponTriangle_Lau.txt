@@ -1,0 +1,18 @@
+
+PUSH
+ORG 0x02A120
+#incbin "codeP1.bin"
+
+ORG 0x02A1C8
+SHORT 0x4900 0x468F
+POIN IgnoreCode
+POP
+
+IgnoreCode:
+#incbin "codeP2.bin"
+POIN (currentOffset-0x1C)+1
+WORD 0x802A1ED 0x0
+
+#incbin "codeP3.bin"
+POIN (currentOffset-0x1C)+1
+WORD 0x802A1ED 0x0

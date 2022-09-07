@@ -1,0 +1,23 @@
+
+NAME=支援会話一覧での会話速度
+NAME.en=Text speed for Support Viewer room
+NAME.zh=Text speed for Support Viewer room
+
+//Text speed for Support Viewer room
+TYPE=SWITCH
+TAG=#ENGINE
+
+OFF:0xA22F0=0x20
+
+ON2:0xA22F0=0x00
+ON3:0xA22F0=0x40
+ON4:0xA22F0=0x60
+
+
+AUTHOR= SageMatthis/EgalLau37
+COMBO=Text speed: Default|OFF|Text speed: Slow|ON2|Text speed: Fast|ON3|Text speed: Instant|ON4
+
+
+INFO=支援会話一覧で会話文を表示するテキストスピードを設定します。
+INFO.en=By default, the game forces the Support Viewer room to use the default text speed by constantly overwriting the text speed setting.  This allows changing the forced setting to a different speed.
+INFO.zh=By default, the game forces the Support Viewer room to use the default text speed by constantly overwriting the text speed setting.  This allows changing the forced setting to a different speed.

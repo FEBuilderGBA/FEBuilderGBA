@@ -1,0 +1,16 @@
+NAME=Battle music by chapter
+INFO=This patch changes the routine to use bytes 0xE and 0xF in chapter data to determine the battle music IDs for Attack/Defend.
+
+TYPE=EA
+TAG=#ENGINE
+
+//patch notes
+PATCHED_IF:0x67E76=0x01 0x4A 0x97 0x46
+EA=BattleMusicByChapter_Lau_Installer.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+NAME.en=Battle music by chapter
+INFO.en=This patch changes the routine to use bytes 0xE and 0xF in chapter data to determine the battle music IDs for Attack/Defend.
+NAME.zh=Battle music by chapter
+INFO.zh=This patch changes the routine to use bytes 0xE and 0xF in chapter data to determine the battle music IDs for Attack/Defend.
