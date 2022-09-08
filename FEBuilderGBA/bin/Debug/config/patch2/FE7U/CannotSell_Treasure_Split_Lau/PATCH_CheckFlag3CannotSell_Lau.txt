@@ -1,0 +1,16 @@
+NAME=Split "Cannot Sell" and "Treasure/Cannot Drop" item abilities
+INFO=By default, ability 3, field 1 for items disables both selling and dropping the item.  This patch changes this to split these abilities into their own bytes; ability 3, field 1 remains "Cannot drop/Is Treasure" while ability 4, field 3 becomes "Cannot sell".
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0xB1DC6=0x19 0xF0 0x9B 0xFE
+EA=CheckFlag3CannotSell_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+NAME.en=Split "Cannot Sell" and "Treasure/Cannot Drop" item abilities
+INFO.en=By default, ability 3, field 1 for items disables both selling and dropping the item.  This patch changes this to split these abilities into their own bytes; ability 3, field 1 remains "Cannot drop/Is Treasure" while ability 4, field 3 becomes "Cannot sell".
+NAME.zh=Split "Cannot Sell" and "Treasure/Cannot Drop" item abilities
+INFO.zh=By default, ability 3, field 1 for items disables both selling and dropping the item.  This patch changes this to split these abilities into their own bytes; ability 3, field 1 remains "Cannot drop/Is Treasure" while ability 4, field 3 becomes "Cannot sell".

@@ -1,2 +1,3 @@
-Exit=$2E
-AnimeOFF=$2C
+Exit=$36
+AnimeOFF=$34
+DanceCheck=$2C

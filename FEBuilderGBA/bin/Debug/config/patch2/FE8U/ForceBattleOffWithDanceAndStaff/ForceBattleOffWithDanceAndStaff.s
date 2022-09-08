@@ -40,8 +40,15 @@ ldrb r2, [r3, r2]	@gBattleActor->WeaponType
 cmp  r2, #0xFF		@Dance
 beq  AnimeOFF
 cmp  r2, #0x04		@Staff
-beq  AnimeOFF
+beq  DanceCheck
 b    Exit
+
+DanceCheck:
+mov  r2, #0x52		@canCounter
+ldrb r2, [r3, r2]	@gBattleActor->canCounter
+cmp  r2, #0x0       @Dance‚Íí‚É1‚É‚È‚é
+                    @0‚¾‚Æpromotion‚Ì‰Â”\«‚ª‚‚¢
+beq  Exit
 
 AnimeOFF:
 mov  r4, #0x0

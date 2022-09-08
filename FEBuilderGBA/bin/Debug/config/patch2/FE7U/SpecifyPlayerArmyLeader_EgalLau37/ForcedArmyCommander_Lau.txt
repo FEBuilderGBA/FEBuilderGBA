@@ -1,0 +1,42 @@
+
+#define FreeRAMSpace	0x0202BC78	//location to temporarily store character state
+
+PUSH
+ORG 0x8681C
+SHORT 0x4D00 0x46AF
+POIN CustomArmyCommander
+
+
+ORG 0x86AC2
+SHORT 0x4801 0x4687 0x0000
+POIN NewStateCodeDisplay
+
+//restores previous state to character
+ORG 0x87156
+SHORT 0x6B60 0x68C1 0x4A02 0x6812 0x60C2 0xE003 0x0000
+WORD FreeRAMSpace
+SHORT 0x0000 0xBC10
+POP
+
+//loads character ID from table, then goes through character data in RAM and compares ROM pointers until a match is found
+ALIGN 4
+CustomArmyCommander:	//HINT=ASM
+#incbin "army.bin"
+POIN TableLocation	//character ID table
+WORD 0x0202BC06		//chapter ID
+POIN 0xBDCE18		//character data ROM
+WORD 0x0202BD08		//character data RAM
+POIN 0x86AA8	//return location
+
+ALIGN 4
+NewStateCodeDisplay:	//HINT=ASM
+SHORT 0x6B62 0x68D1 0x4803 0x6001 0x2100 0x60D1 0x4800 0x4687 0x6B0A 0x0808
+WORD FreeRAMSpace
+
+ALIGN 4
+TableLocation:	//character IDs for faction leaders for each chapter
+BYTE 03 03 03 03 03 03 03 03 03 03 01 01 01 01 01
+BYTE 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+BYTE 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+BYTE 02 02 02 02 02 02 02 02 02 02 02 02 02 02 0x69
+
