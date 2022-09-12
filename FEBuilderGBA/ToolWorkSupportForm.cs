@@ -223,15 +223,28 @@ namespace FEBuilderGBA
                 string url = U.at(this.Lines, "AUTOFEEDBACK_URL");
                 if (url != "")
                 {
-                    DialogResult dr = R.ShowYesNo("「{0}」を遊んでくれてありがとう。\r\nこのゲームの進行状況を、作者に自動フィードバックしてもよろしいですか？\r\nフィードバックの内容は、ゲーム内の情報だけで、完全に匿名で行います。\r\nあなたのフィードバックは、ゲームの改善と、製作者のモチベーションの向上につながるので、ぜひご協力ください。\r\nこの設定は、「Menu->実行->作品支援」からいつでも変更できます。\r\n自動フィードバックを有効にしてもよろしいですか?\r\n", name);
-                    if (dr == System.Windows.Forms.DialogResult.Yes)
-                    {
+                    uint defaultSetting = U.atoi(U.at(this.Lines, "AUTOFEEDBACK_DEFAULT_SETTING","1"));
+                    if (defaultSetting == 1)
+                    {//ディフォルトは送信
                         autofeedback = 1;
                     }
-                    else if (dr == System.Windows.Forms.DialogResult.No)
-                    {
+                    else if (defaultSetting == 0)
+                    {//ディフォルトは送信しない
                         autofeedback = 0;
                     }
+                    else
+                    {//ディフォルトはユーザーに聞く
+                        DialogResult dr = R.ShowYesNo("「{0}」を遊んでくれてありがとう。\r\nこのゲームの進行状況を、作者に自動フィードバックしてもよろしいですか？\r\nフィードバックの内容は、ゲーム内の情報だけで、完全に匿名で行います。\r\nあなたのフィードバックは、ゲームの改善と、製作者のモチベーションの向上につながるので、ぜひご協力ください。\r\nこの設定は、「Menu->実行->作品支援」からいつでも変更できます。\r\n自動フィードバックを有効にしてもよろしいですか?\r\n", name);
+                        if (dr == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            autofeedback = 1;
+                        }
+                        else if (dr == System.Windows.Forms.DialogResult.No)
+                        {
+                            autofeedback = 0;
+                        }
+                    }
+
                     UpdateAutoFeedback(autofeedback);
                 }
             }
