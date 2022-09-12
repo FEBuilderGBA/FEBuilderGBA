@@ -827,45 +827,6 @@ namespace FEBuilderGBA
         }
 #endif //DEBUG
 
-        private void MakeErrorReportButton_Click(object sender, EventArgs e)
-        {
-            if (InputFormRef.IsPleaseWaitDialog(this))
-            {//2重割り込み禁止
-                return;
-            }
-
-            string title = R._("フィードバックを保存するファイル名を選択してください");
-            string filter = R._("report.7z|*.report.7z|All files|*");
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = title;
-            save.Filter = filter;
-            save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, MakeFeedBackFilename());
-
-            DialogResult dr = save.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
-            }
-            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
-            {
-                return;
-            }
-
-            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
-            {
-                string error = MakeFeedBack(save.FileNames[0]);
-                if (error != "")
-                {
-                    R.ShowStopError("レポートを作れませんでした。\r\n{0}", error);
-                    return;
-                }
-            }
-
-            //エクスプローラで選択しよう
-            U.SelectFileByExplorer(save.FileNames[0]);
-            R.ShowOK("フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。");
-        }
 
         string MakeFeedBackFilename()
         {
@@ -931,7 +892,7 @@ namespace FEBuilderGBA
         {
             UpdateButton.AccessibleDescription = R._("このゲームを最新版に更新します。");
             CommunityButton.AccessibleDescription = R._("開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。");
-            MakeFeedBackReportButton.AccessibleDescription = R._("ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n");
+            ToggleAutoFeedbackButton.AccessibleDescription = R._("自動フィードバックレポートを送るかどうかを設定します。");
         }
 
         private void ToggleAutoFeedbackButton_Click(object sender, EventArgs e)

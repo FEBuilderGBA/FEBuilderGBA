@@ -13174,29 +13174,20 @@ A new version of this game has been released!\r\nAutomatically update to the lat
 :自動更新をキャンセルした後に、手動で更新したい場合は、「メニュー」->「実行」->「作品支援」を利用してください。
 If you want to update manually after canceling the automatic update, please use "Menu" -> "Run" -> "Work Support".
 
-:フィードバックを保存するファイル名を選択してください
-Choose a file name to save the feedback.
-
-:フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。
-A feedback report has been created.\r\nSend this file to the Discord server.
-
 :このゲームを最新版に更新します。
 Update this game to the latest version.
 
 :開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。
 Access the development community.\r\nSend feedback and feedback on the game and contribute to the project.
 
-:ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
-Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
+:自動フィードバックレポートを送るかどうかを設定します。
+Sets whether to send automatic feedback reports.
 
 :最新バージョンに更新する
 Update to Latest Version
 
 :開発コミニティにアクセスする
 Join Development Community
-
-:フィードバックのレポート作成する
-Create Feedback Report
 
 :著者
 Author
