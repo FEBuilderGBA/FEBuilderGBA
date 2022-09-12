@@ -9,3 +9,6 @@ TAG=#MUSIC #SONG #SOUND #BGM
 ADDRESS=0x08085960
 ADDRESS_TYPE=SONG
 
+INFO=自軍のユニットが死亡した時(ユニットを失った時)に再生されるBGMです。
+INFO.en=Select the song to be played when a player character is defeated.
+INFO.zh=这是您的单位死亡时播放的 BGM（当您失去单位时）。

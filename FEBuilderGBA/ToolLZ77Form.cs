@@ -430,5 +430,58 @@ namespace FEBuilderGBA
             }
             ImageBattleAnimeForm.Execute_ToolAutoGenLeftToRightAllAnimation();
         }
+
+        private void Base64TextToFileButton_Click(object sender, EventArgs e)
+        {
+            string text = Base64RichTextEdit.Text;
+            if (text == "")
+            {
+                R.ShowStopError("Textにbase64のデータを入力してください");
+                return;
+            }
+            byte[] bin = System.Convert.FromBase64String(text);
+
+            string title = R._("保存するファイル名を選択してください。");
+            string filter = R._("All files|*");
+            string ext = U.GuessExtension(bin);
+
+            SaveFileDialog save = new SaveFileDialog();
+            if (ext != "")
+            {
+                save.FileName = "foo" + ext;
+            }
+            save.Title = title;
+            save.Filter = filter;
+            save.ShowDialog();
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return;
+            }
+            File.WriteAllBytes(save.FileName, bin);
+            U.SelectFileByExplorer(save.FileName);
+        }
+
+        private void FileToBase64TextButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("開くファイル名を選択してください");
+            string filter = R._("All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            open.ShowDialog();
+            if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+            {
+                return;
+            }
+            byte[] bin = File.ReadAllBytes(open.FileName);
+            string text = System.Convert.ToBase64String(bin);
+            if (text == "")
+            {
+                R.ShowStopError("base64に変換できませんでした。");
+                return;
+            }
+            Base64RichTextEdit.Text = text;
+        }
     }
 }

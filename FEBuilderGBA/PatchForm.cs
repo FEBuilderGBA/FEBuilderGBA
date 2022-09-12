@@ -386,7 +386,7 @@ namespace FEBuilderGBA
 
             
 
-            sb.AppendLine("");
+            sb.AppendLine();
 
             if (File.Exists(patch.PatchFileName))
             {

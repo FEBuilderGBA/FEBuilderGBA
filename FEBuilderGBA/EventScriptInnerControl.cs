@@ -3251,7 +3251,7 @@ namespace FEBuilderGBA
                     sb.Append(code.Script.Info[i + 1]);
                 }
             }
-            sb.AppendLine("");
+            sb.AppendLine();
 
             return sb.ToString();
         }

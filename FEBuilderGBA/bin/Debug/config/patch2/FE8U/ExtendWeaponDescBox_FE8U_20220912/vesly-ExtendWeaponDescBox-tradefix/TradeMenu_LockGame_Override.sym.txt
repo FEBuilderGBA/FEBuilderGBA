@@ -1,0 +1,2 @@
+TradeMenuGfxData=$50
+Exit=$30

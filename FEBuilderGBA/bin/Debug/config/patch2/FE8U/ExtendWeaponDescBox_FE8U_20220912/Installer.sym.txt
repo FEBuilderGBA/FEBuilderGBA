@@ -1,0 +1,10 @@
+ASMC_Draw=$AC7410
+ProcExceptionsList=$84886C
+InitItemDescVram=$848888
+InitProcTextHandles=$848954
+InitWepDescTextHandles=$848998
+YPosDescBox=$8489CC
+LoadDialogueBoxGfxHook=$8489F0
+TradeMenu_LockGame_Override=$848A34
+TradeMenu_ClearDisplay_Override=$848A88
+TradeMenuGfxData=$848AD8

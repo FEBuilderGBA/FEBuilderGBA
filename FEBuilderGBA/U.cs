@@ -7777,6 +7777,31 @@ namespace FEBuilderGBA
             Program.AsmMapFileAsmCache.Join();
             GC.Collect();
         }
+        public static bool firstMatchBin(byte[] a, byte[] need)
+        {
+            if (a.Length < need.Length)
+            {
+                return false;
+            }
+            byte[] bin = U.getBinaryData(a, 0, need.Length);
+            return U.memcmp(bin, need) == 0;
+        }
+        public static string GuessExtension(byte[] bin)
+        {
+            if (U.firstMatchBin(bin, new byte[] { 0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C }))
+            {
+                return ".7z";
+            }
+            if (U.firstMatchBin(bin, new byte[] { 0x89, 0x50, 0x4E, 0x47 }))
+            {
+                return ".png";
+            }
+            if (U.firstMatchBin(bin, new byte[] { 0x50, 0x4B }))
+            {
+                return ".zip";
+            }
+            return "";
+        }
     }
 }
 

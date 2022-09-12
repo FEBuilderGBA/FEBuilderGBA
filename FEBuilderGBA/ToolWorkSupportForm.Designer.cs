@@ -44,6 +44,7 @@
             this.CommunityTextBox = new System.Windows.Forms.TextBox();
             this.LOGO = new FEBuilderGBA.InterpolatedPictureBox();
             this.SnowAllWorksButton = new System.Windows.Forms.Button();
+            this.ToggleAutoFeedbackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // CommunityButton
             // 
-            this.CommunityButton.Location = new System.Drawing.Point(17, 281);
+            this.CommunityButton.Location = new System.Drawing.Point(17, 277);
             this.CommunityButton.Name = "CommunityButton";
             this.CommunityButton.Size = new System.Drawing.Size(838, 48);
             this.CommunityButton.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             // MakeFeedBackReportButton
             // 
-            this.MakeFeedBackReportButton.Location = new System.Drawing.Point(17, 348);
+            this.MakeFeedBackReportButton.Location = new System.Drawing.Point(17, 338);
             this.MakeFeedBackReportButton.Name = "MakeFeedBackReportButton";
             this.MakeFeedBackReportButton.Size = new System.Drawing.Size(838, 48);
             this.MakeFeedBackReportButton.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(750, 539);
+            this.OpenButton.Location = new System.Drawing.Point(750, 590);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(105, 35);
             this.OpenButton.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             // ReloadButton
             // 
-            this.ReloadButton.Location = new System.Drawing.Point(750, 495);
+            this.ReloadButton.Location = new System.Drawing.Point(750, 546);
             this.ReloadButton.Name = "ReloadButton";
             this.ReloadButton.Size = new System.Drawing.Size(105, 35);
             this.ReloadButton.TabIndex = 2;
@@ -107,7 +108,7 @@
             // 
             // InfoTextBox
             // 
-            this.InfoTextBox.Location = new System.Drawing.Point(17, 495);
+            this.InfoTextBox.Location = new System.Drawing.Point(17, 546);
             this.InfoTextBox.Multiline = true;
             this.InfoTextBox.Name = "InfoTextBox";
             this.InfoTextBox.ReadOnly = true;
@@ -187,7 +188,7 @@
             // 
             // SnowAllWorksButton
             // 
-            this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 441);
+            this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 492);
             this.SnowAllWorksButton.Name = "SnowAllWorksButton";
             this.SnowAllWorksButton.Size = new System.Drawing.Size(570, 48);
             this.SnowAllWorksButton.TabIndex = 1;
@@ -195,11 +196,22 @@
             this.SnowAllWorksButton.UseVisualStyleBackColor = true;
             this.SnowAllWorksButton.Click += new System.EventHandler(this.SnowAllWorksButton_Click);
             // 
+            // ToggleAutoFeedbackButton
+            // 
+            this.ToggleAutoFeedbackButton.Location = new System.Drawing.Point(17, 399);
+            this.ToggleAutoFeedbackButton.Name = "ToggleAutoFeedbackButton";
+            this.ToggleAutoFeedbackButton.Size = new System.Drawing.Size(838, 48);
+            this.ToggleAutoFeedbackButton.TabIndex = 34;
+            this.ToggleAutoFeedbackButton.Text = "自動フィードバックを無効にする";
+            this.ToggleAutoFeedbackButton.UseVisualStyleBackColor = true;
+            this.ToggleAutoFeedbackButton.Click += new System.EventHandler(this.ToggleAutoFeedbackButton_Click);
+            // 
             // ToolWorkSupportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(867, 586);
+            this.ClientSize = new System.Drawing.Size(867, 636);
+            this.Controls.Add(this.ToggleAutoFeedbackButton);
             this.Controls.Add(this.SnowAllWorksButton);
             this.Controls.Add(this.CommunityTextBox);
             this.Controls.Add(this.label4);
@@ -243,5 +255,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox CommunityTextBox;
         private System.Windows.Forms.Button SnowAllWorksButton;
+        private System.Windows.Forms.Button ToggleAutoFeedbackButton;
     }
 }

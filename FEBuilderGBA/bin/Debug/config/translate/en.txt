@@ -12433,6 +12433,15 @@ Recompression did not increase capacity.\r\nAll the data seems to have been comp
 :{0}個のデータを再圧縮し、{1}バイトの追加の余白を得ました。\r\nこの余白を最大限利用するには、動作テストの後にrebuildを実行してください。
 I recompressed {0} data and got {1} bytes of extra margin.\r\nTo get the most out of this margin, run rebuild after the operation test.
 
+:Textにbase64のデータを入力してください
+Enter base64 data in Text.
+
+:保存するファイル名を選択してください。
+Please select a file name to save.
+
+:base64に変換できませんでした。
+Failed to convert to base64.
+
 :解凍する
 Decompress
 
@@ -12463,29 +12472,29 @@ Move this area.
 :再圧縮
 Recompressed.
 
-:再圧縮する
-Recompress.
+:lz77再圧縮
+lz77 recompression.
 
 :20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。
 Since 20220726, the compression ratio of lz77 has improved.\r\nRecompress the existing data in ROM to create a margin in ROM.\r\nYou can get a little more space by rebuilding after making a margin.\r\nThe process takes about 15 minutes.\r\nAfter the implementation, please do a simple operation test just in case.
 
-:lz77再圧縮
-lz77 recompression.
-
-:戦闘アニメOAM
-Battle animation OAM.
-
-:顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
-Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
-
-:AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
-The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
+:再圧縮する
+Recompress.
 
 :顔画像を圧縮する
 Compress facial images.
 
+:顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
+Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
+
+:戦闘アニメOAM
+Battle animation OAM.
+
 :戦闘アニメOAMの最適化
 Optimization of battle animation OAM.
+
+:AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
+The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*
@@ -13114,8 +13123,17 @@ It cannot be updated because it is a virtual ROM.
 :警告\r\n変更した内容をROMに保存していませんが、無視してアップデートしてもよろしいですか？
 Alert\r\nModified content is not saved in the ROM. Are you sure you want to ignore and update? 
 
+:「{0}」を遊んでくれてありがとう。\r\nこのゲームの進行状況を、作者に自動フィードバックしてもよろしいですか？\r\nフィードバックの内容は、ゲーム内の情報だけで、完全に匿名で行います。\r\nあなたのフィードバックは、ゲームの改善と、製作者のモチベーションの向上につながるので、ぜひご協力ください。\r\nこの設定は、「Menu->実行->作品支援」からいつでも変更できます。\r\n自動フィードバックを有効にしてもよろしいですか?\r\n
+Thank you for playing "{0}".\r\nWould you like to send automatic feedback to the author about the progress of this game? \r\nFeedback is completely anonymous, with in-game information only.\r\nYour feedback helps us improve the game and motivate our creators.\r\nThis setting can be changed at any time from "Menu->Run->Work Support".\r\nAre you sure you want to enable automatic feedback?\r\n
+
 :このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n
 Updateinfo.txt has not been created for this project.\r\nPlease see the following URL for how to create it.\r\n
+
+:自動フィードバックを無効にする
+Disable automatic feedback.
+
+:自動フィードバックを有効にする
+Enable automatic feedback.
 
 :UPDATE_URLの項目がありません
 There is no UPDATE_URL item.
