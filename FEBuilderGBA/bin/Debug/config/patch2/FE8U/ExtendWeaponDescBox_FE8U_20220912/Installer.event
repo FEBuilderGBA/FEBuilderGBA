@@ -54,9 +54,6 @@ LoadDialogueBoxGfxHook:
 
 PUSH 
 
-ORG $9C63C
-BYTE 1 
-
 ORG $8A126		//{U}
 //ORG $8C436		//{J}
 SHORT $46C0 
@@ -104,10 +101,10 @@ BYTE (5)<<4
 //ORG $898A4 // default: used by shop, stat screen, send item to supply, itemMenu, and trading on map 
 //WORD 0x6012000 // 13000 vanilla
 
-ORG $2D2EA		//{U}
-//ORG $2D222		//{J}
+//////ORG $2D2EA		//{U}
+////ORG $2D222		//{J}
 					// mov r1, #0x90 
-BYTE 0xE1			// lsl r1, #7  = 0x4800 as vram offset to use // 7080 
+//BYTE 0xE1			// lsl r1, #7  = 0x4800 as vram offset to use // 7080 
 //ORG $ADB7C // StartSmallBrownNameBoxes (for trading) is called shortly after the prior org 
 
 ORG $89F0C4		//{U}
@@ -156,10 +153,9 @@ SHORT 0x42C0 // vanilla 0x4240
 //SHORT 0x4280 
 //ORG $B53BC 
 
-//Obsoleted by vesly-ExtendWeaponDescBox-tradefix.
-//ORG 0x09C63C	//{U}
-////ORG 0x09E8E2	//{J}
-//BYTE 0x1
+ORG 0x09C63C	//{U}
+//ORG 0x09E8E2	//{J}
+BYTE 0x1
 
 
 POP 

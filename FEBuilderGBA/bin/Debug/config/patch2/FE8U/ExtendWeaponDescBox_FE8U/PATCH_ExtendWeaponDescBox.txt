@@ -3,7 +3,7 @@ TYPE=EA
 TAG=#EVENT
 
 //既に適応されたかどうか
-PATCHED_IF:0x354D8=0xC0 0x42
+PATCHED_IF:0x2D2EA=0xE1 0x21
 EA=Installer.event
 
 AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/76
@@ -15,3 +15,4 @@ NAME.zh=ExtendWeaponDescBox 20220817 将武器描述框从 1 行扩展到 3 行�
 INFO.zh=将武器描述字段从原版的 1 行扩展到最多 3 行。\r\n但是，如果最多写 3 行描述，VRAM 区域就会不足，所以当你在交换菜单中按下 R 键时，交换伙伴的面部图像将被隐藏。（如果不超过 2 行，则不会隐藏。）。
 
 ALLOC_SIZE_HINT=600			//パッチ全体のサイズ
+DEPRECATED=1

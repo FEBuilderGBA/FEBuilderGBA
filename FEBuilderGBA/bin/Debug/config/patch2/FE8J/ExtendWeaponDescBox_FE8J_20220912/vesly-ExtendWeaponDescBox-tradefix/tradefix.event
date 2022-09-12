@@ -4,6 +4,10 @@
 // install after vesly's hack
 // also make sure to remove the call to DeleteFaceByIndex in InitItemDescVram
 ALIGN 4
+TradeMenuGfxData:
+#incbin "TradeMenuGfxData.dmp"
+
+ALIGN 4
 TradeMenu_LockGame_Override:
 #incbin "TradeMenu_LockGame_Override.dmp"
 POIN TradeMenuGfxData
@@ -11,10 +15,6 @@ POIN TradeMenuGfxData
 ALIGN 4
 TradeMenu_ClearDisplay_Override:
 #incbin "TradeMenu_ClearDisplay_Override.dmp"
-
-ALIGN 4
-TradeMenuGfxData:
-#incbin "TradeMenuGfxData.dmp"
 
 ALIGN 4
 
