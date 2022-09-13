@@ -72,7 +72,7 @@
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(123, 76);
+            this.OpenButton.Location = new System.Drawing.Point(236, 107);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(105, 33);
             this.OpenButton.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             // ReloadButton
             // 
-            this.ReloadButton.Location = new System.Drawing.Point(3, 76);
+            this.ReloadButton.Location = new System.Drawing.Point(116, 107);
             this.ReloadButton.Name = "ReloadButton";
             this.ReloadButton.Size = new System.Drawing.Size(105, 33);
             this.ReloadButton.TabIndex = 0;
@@ -100,11 +100,11 @@
             // 
             // InfoTextBox
             // 
-            this.InfoTextBox.Location = new System.Drawing.Point(3, 26);
+            this.InfoTextBox.Location = new System.Drawing.Point(3, 3);
             this.InfoTextBox.Multiline = true;
             this.InfoTextBox.Name = "InfoTextBox";
             this.InfoTextBox.ReadOnly = true;
-            this.InfoTextBox.Size = new System.Drawing.Size(832, 44);
+            this.InfoTextBox.Size = new System.Drawing.Size(832, 98);
             this.InfoTextBox.TabIndex = 7;
             // 
             // label1
@@ -195,17 +195,17 @@
             this.panel1.Controls.Add(this.OpenButton);
             this.panel1.Location = new System.Drawing.Point(17, 532);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 110);
+            this.panel1.Size = new System.Drawing.Size(838, 143);
             this.panel1.TabIndex = 35;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 5);
+            this.label5.Location = new System.Drawing.Point(3, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 18);
+            this.label5.Size = new System.Drawing.Size(93, 18);
             this.label5.TabIndex = 8;
-            this.label5.Text = "UpdateInfo";
+            this.label5.Text = "UpdateInfo:";
             // 
             // LOGO
             // 
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(867, 652);
+            this.ClientSize = new System.Drawing.Size(867, 678);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ToggleAutoFeedbackButton);
             this.Controls.Add(this.SnowAllWorksButton);
