@@ -2289,7 +2289,7 @@ namespace FEBuilderGBA
                     sb.Append(' ');
                     sb.Append(ItemForm.GetItemName(itemid));
 
-                    uint uses = Program.RAM.u8(addr + 0x1E - subFE6);
+                    uint uses = Program.RAM.u8(addr + 0x1F - subFE6);
                     sb.Append(" @");
                     sb.Append(uses);
                 }
@@ -2363,7 +2363,7 @@ namespace FEBuilderGBA
                 sb.Append(' ');
                 sb.Append(ItemForm.GetItemName(itemid));
 
-                uint uses = Program.RAM.u8(addr + 0x1E - subFE6);
+                uint uses = Program.RAM.u8(addr + 0x1F - subFE6);
                 sb.Append(" @");
                 sb.Append(uses);
             }

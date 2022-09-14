@@ -1,0 +1,27 @@
+NAME=神の矢をイベントで発動させて敵を攻撃する(イベント命令)
+NAME.en=Add Event: ShootArrow
+NAME.zh=Add Event: ShootArrow
+
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ShootArrowASMC.dmp=0x00 0xB5
+
+EA=Installer.event
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/79
+
+EVENTSCRIPT:01=400D0000{$L1:ShootArrowASMC.dmp}	神の矢をイベントで発動させて敵を攻撃する(ShootArrowASMC)(LOW)	Slot1=Damage ,SlotB=Range	{MAP}
+EVENTSCRIPT:02=40050B00XXXXYYYY40050100WWWW0000400D0000{$L1:ShootArrowASMC.dmp}	神の矢をイベントで発動させて敵を攻撃する[XX:MAPX:X],[YY:MAPY:Y] [WW:DECIMAL:Damage](ShootArrowASMC)	Slot1=Damage ,SlotB=Range	{MAP}
+
+EVENTSCRIPT:01.en=400D0000{$L1:ShootArrowASMC.dmp}	Activates Arrow Trap with event to attack the enemy(ShootArrowASMC)(LOW)	Slot1=Damage ,SlotB=Range	{MAP}
+EVENTSCRIPT:02.en=40050B00XXXXYYYY40050100WWWW0000400D0000{$L1:ShootArrowASMC.dmp}	Activates Arrow Trap with event to attack the enemy[XX:MAPX:X],[YY:MAPY:Y] [WW:DECIMAL:Damage](ShootArrowASMC)	Slot1=Damage ,SlotB=Range	{MAP}
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ShootArrowASMC.dmp}	Activates Arrow Trap with event to attack the enemy(ShootArrowASMC)(LOW)	Slot1=Damage ,SlotB=Range	{MAP}
+EVENTSCRIPT:02.zh=40050B00XXXXYYYY40050100WWWW0000400D0000{$L1:ShootArrowASMC.dmp}	Activates Arrow Trap with event to attack the enemy[XX:MAPX:X],[YY:MAPY:Y] [WW:DECIMAL:Damage](ShootArrowASMC)	Slot1=Damage ,SlotB=Range	{MAP}
+
+
+INFO=神の矢のトラップをイベントで発動させて敵を攻撃する
+INFO.en=Activates Arrow Trap with event to attack the enemy
+INFO.zh=Activates Arrow Trap with event to attack the enemy
