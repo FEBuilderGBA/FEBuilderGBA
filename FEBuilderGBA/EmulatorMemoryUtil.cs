@@ -2017,6 +2017,23 @@ namespace FEBuilderGBA
             InputFormRef.CloseForm<RAMRewriteToolForm>();
             InputFormRef.CloseForm<RAMRewriteToolMAPForm>();
         }
+        public static uint VillageDestoryXY()
+        {
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
+            uint phase = Program.RAM.u8(stageStructAddr + 0x0F);
+            if (phase != 0x80)
+            {//敵フェーズではない
+                return U.NOT_FOUND;
+            }
+            uint aiAddr = Program.ROM.RomInfo.workmemory_ai_data_address;
+            uint decisionType = Program.RAM.u8(aiAddr + 0x90);
+            if (decisionType != 4)
+            {//村破壊ではない
+                return U.NOT_FOUND;
+            }
+            uint xy = Program.RAM.u16(aiAddr + 0x92);
+            return xy;
+        }
 
 
         public static bool IsFlag0x03Enable()
@@ -2083,6 +2100,7 @@ namespace FEBuilderGBA
             MakeUnitBattleExtraInfoLow(sb, Program.ROM.RomInfo.workmemory_battle_target_address);
             return sb.ToString();
         }
+
         static void MakeUnitBattleExtraInfoLow(StringBuilder sb, uint baseaddr)
         {
             {
@@ -2283,7 +2301,75 @@ namespace FEBuilderGBA
                     break;
                 }
             }
+        }
 
+        public static string MakeActiveUnitExtraInfo()
+        {
+            uint subFE6 = 0;
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                subFE6 = 0x2;
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address;
+            uint addr = Program.RAM.u32(control_unit_address);
+
+            if (!U.is_02RAMPointer(addr))
+            {//選択しているキャラクターはいない.
+                return "";
+            }
+
+            uint pointer = Program.RAM.u32(addr + 0x0);
+            if (!U.isSafetyPointer(pointer))
+            {
+                return "";
+            }
+            else
+            {
+                uint lvl = Program.RAM.u8(addr + 0x08);
+                if (lvl == 0)
+                {
+                    return "";
+                }
+                sb.Append("Lv");
+                sb.Append(lvl.ToString());
+                sb.Append(' ');
+                sb.Append('/');
+
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(UnitForm.GetUnitName(id));
+                sb.Append(' ');
+            }
+
+            pointer = Program.RAM.u32(addr + 4);
+            if (U.isSafetyPointer(pointer))
+            {
+                sb.Append('/');
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ClassForm.GetClassName(id));
+            }
+
+            uint itemid = Program.RAM.u8(addr + 0x1E - subFE6);
+            if (itemid != 0)
+            {
+                sb.Append('/');
+                sb.Append(itemid.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ItemForm.GetItemName(itemid));
+
+                uint uses = Program.RAM.u8(addr + 0x1E - subFE6);
+                sb.Append(" @");
+                sb.Append(uses);
+            }
+            sb.AppendLine();
+
+            return sb.ToString();
         }
 
         public static string MakeChapterExtraInfo()

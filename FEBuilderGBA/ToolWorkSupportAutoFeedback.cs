@@ -134,6 +134,15 @@ namespace FEBuilderGBA
                     return;
                 }
             }
+            uint villageDestroyXY = EmulatorMemoryUtil.VillageDestoryXY();
+            if (villageDestroyXY != U.NOT_FOUND)
+            {
+                if (SendFeedBack_VillageDestroyXY(mapid, villageDestroyXY))
+                {
+                    return;
+                }
+            }
+
         }
         bool SendFeedBack_EndEvent(uint mapid)
         {
@@ -148,7 +157,12 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            Send(mapid, 0x0);
+            string chapter = GetChapterAndInfo(mapid);
+            if (chapter == "")
+            {
+                return false;
+            }
+            Send(chapter, "");
             LastFeedBackType = eventType;
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
@@ -166,11 +180,43 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            Send(mapid, deadunit);
+            string chapter = GetChapterAndInfo(mapid);
+            if (chapter == "")
+            {
+                return false;
+            }
+            string deadunitString = GetDeadUnitAndInfo(deadunit);
+            Send(chapter, deadunitString);
             LastFeedBackType = eventType;
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
+        bool SendFeedBack_VillageDestroyXY(uint mapid, uint xy)
+        {
+            string eventType = "VillageDestroy" + xy;
+            if (LastFeedBackType == eventType)
+            {//連続して報告はしない
+                return false;
+            }
+            uint maptaskProcs = EmulatorMemoryUtil.SearchMapTaskProcsAddr();
+            if (maptaskProcs == U.NOT_FOUND)
+            {//マップに入っていないので、章タイトルを表示している最中だろうから、送ってはいけない
+                return false;
+            }
+
+            string chapter = GetChapterAndInfo(mapid);
+            if (chapter == "")
+            {
+                return false;
+            }
+            string deadunitString = GetVillageDestroyXYAndInfo(xy);
+            Send(chapter, deadunitString);
+
+            LastFeedBackType = eventType;
+            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            return true;
+        }
+
         string MakeBase64()
         {
             if (! File.Exists(this.SavFilename))
@@ -193,15 +239,20 @@ namespace FEBuilderGBA
                 return "";
             }
         }
-        void Send(uint mapid, uint uid)
+        string GetChapterAndInfo(uint mapid)
         {
             string chapter = MapSettingForm.GetMapName(mapid);
             if (chapter == "")
             {
-                return;
+                return "";
             }
             chapter = mapid.ToString("X02") + " " + chapter
                 + "\r\n" + EmulatorMemoryUtil.MakeChapterExtraInfo();
+            return chapter;
+        }
+
+        string GetDeadUnitAndInfo(uint uid)
+        {
             string deadunit;
             if (uid == 0)
             {
@@ -213,7 +264,25 @@ namespace FEBuilderGBA
                 deadunit = uid.ToString("X02") + " " + deadunit
                     + "\r\n" + EmulatorMemoryUtil.MakeUnitBattleExtraInfo();
             }
+            return deadunit;
+        }
+        string GetVillageDestroyXYAndInfo(uint xy)
+        {
+            string deadunit;
+            if (xy == U.NOT_FOUND)
+            {
+                deadunit = "";
+            }
+            else
+            {
+                deadunit = "VillageDestory:" + (xy & 0xFF) + "," + ((xy >> 8) & 0xFF);
+                deadunit += "\r\n" + EmulatorMemoryUtil.MakeActiveUnitExtraInfo();
+            }
+            return deadunit;
+        }
 
+        void Send(string chapter, string deadunit)
+        {
             System.Threading.Thread s1 = new System.Threading.Thread(t =>
             {
                 IsBusy = true;
