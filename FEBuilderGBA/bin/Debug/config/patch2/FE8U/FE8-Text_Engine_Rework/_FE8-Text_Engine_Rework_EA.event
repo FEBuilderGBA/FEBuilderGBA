@@ -74,7 +74,7 @@ ORG $6DC4
 callHack_r3(UpdateFontBeforeBoxWidthCalc)
 SHORT 0x46C0
 
-//Fix Promotion Screen
+// Fix the 3-line box clearing function overwriting the graphics for the promotion description box on the promotion selection menu
 ORG $CCC20; WORD 0x6003800; ORG $CCC0E; BYTE $8E
 
 POP
