@@ -1462,8 +1462,8 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetBattleSomeDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version != 8)
-            {//FE6 FE7
+            if (Program.ROM.RomInfo.version == 6)
+            {//FE6
                 return ret;
             }
             ret.Add(new AddressList(0x00, "UnknownBattleFlag", "", 4));

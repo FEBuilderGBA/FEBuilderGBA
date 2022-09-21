@@ -275,7 +275,7 @@ namespace FEBuilderGBA
             workmemory_ai_data_address = 0x0203A8EC; //ワークメモリ AI関係の起点
             workmemory_action_data_address = 0x0203A85C; //ワークメモリ ActionData
             workmemory_dungeon_data_address = 0x0; //ワークメモリ ダンジョン FE8のみ
-            workmemory_battlesome_data_address = 0x0; //ワークメモリ バルトに関係する諸データ
+            workmemory_battlesome_data_address = 0x0203DFFC; //ワークメモリ バルトに関係する諸データ
             workmemory_battleround_data_address = 0x02039328; //ワークメモリ　戦闘のラウンドデータ
             workmemory_last_string_address = 0x0202B5B4;  //ワークメモリ 最後に表示した文字列
             workmemory_text_buffer_address = 0x0202A5B4;  //ワークメモリ デコードされたテキスト

@@ -188,7 +188,8 @@
 60B4XXXXYYYYZZZZWWWW0000	World map display[XXXX::Value 1][YY:WMAPY:X][ZZ:WMAPX:Y][WW::Map](WM_SHOWDRAWNMAP)	{WMAPMOVE}
 20C10000	Skips_world_map_event(SKIPWN)	{WMAP}
 40830000YYYYZZZZ	WM_SETCAM[YY::X-coordinate][ZZ::Y-coordinate]	{WMAPMOVE}
-4085000000000000	Move camera to lord unit(WM_CENTERCAMONLORD)	{WMAP}
+4085000000000000	Move camera to lord unit on world map(WM_CENTERCAMONLORD)	{WMAP}
+40850000XXXX0000	Move camera to [XXXX:WMAP_SPRITE_ID:RegistID] on world map(WM_SETCAMONSPRITE)	{WMAP}
 20AE0000	_20AE
 609F0000XXXXYYYY0000ZZZZ	_609F	[XXXX::val1][YYYY::val2][ZZZZ::val3]
 80860000FFFFFFFFWWWWVVVVUUUUTTTT	Scroll from current location[WW:WMAPX:XX][VV:WMAPY:YY][UU:FSEC:DelaySpeed][TT::Unk 2](WM_MOVECAM)	{WMAPMOVE}
@@ -215,7 +216,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40930000YYYYZZZZ	Move lord unit to a World Map Node[YY:WMLOCATION:World Map Node][ZZ::Value 2](WM_LOADLOCATION2)	{WMAP}
 40940000YYYYZZZZ	Erase map icon[YY:WMLOCATION:World Map Node][ZZ::Value 2](WM_REMOVELOCATION)	{WMAP}
 40950000YYYYZZZZ	Display map icon[YY:WMLOCATION:World Map Node][ZZ::Value 2](WM_LOADLOCATION3)	{WMAP}
-40960000YYYY0000	Route drawing 2[YY:WMPATH:road ID](DRAWPATH3)
+40960000YYYY0000	Route drawing 2[YY:WMPATH:road ID](WM_DRAWPATH3)
 20970000	Next destination appearance(WM_CREATENEXTDESTINATION)	{WMAP}
 409AXXXXYYYY0000	Specify next destination[XXXX::Value 1][YY:WMLOCATION:World Map Node](WM_SETDESTINATION)	{WMAP}
 40B80000YYYY0000	Highlight a part of the continent and display a name[YY:WMREGION:Country](WM_HIGHLIGHT)	{WMAPMOVE}
@@ -619,3 +620,4 @@ Duration
 400D000085010308	Stop map animation, stop drawing units(ASMC BlockGameGraphicsLogic)	{U}
 400D000009010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{J}
 400D0000B9010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{U}
+20820000	WorldmapReturn Don't use it, use ENDA instead.[TERM](ENDWM)(LOW)
