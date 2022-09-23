@@ -1155,6 +1155,7 @@ EXPORT:06=portrait_0x01_face.dmp	portrait_0x01_face_Graphic
 EXPORT:07=portrait_0x01_mouth.dmp	portrait_0x01_mouth_Graphic
 EXPORT:08=portrait_0x01_pal.dmp	portrait_0x01_pal_Graphic
 EXPORT:09=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
+EXPORT:10=GetDebuffs.dmp	GetDebuffs
 
 
 SYMBOL=symbol.sym
