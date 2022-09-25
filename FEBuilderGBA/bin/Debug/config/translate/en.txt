@@ -12436,6 +12436,9 @@ I recompressed {0} data and got {1} bytes of extra margin.\r\nTo get the most ou
 :Textにbase64のデータを入力してください
 Enter base64 data in Text.
 
+:Base64を復号できませんでした
+Failed to decode Base64.
+
 :保存するファイル名を選択してください。
 Please select a file name to save.
 

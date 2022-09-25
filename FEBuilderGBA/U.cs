@@ -7802,6 +7802,19 @@ namespace FEBuilderGBA
             }
             return "";
         }
+        public static bool Base64Encode(string text, out byte[] out_data)
+        {
+            try
+            {
+                out_data = System.Convert.FromBase64String(text);
+            }
+            catch (Exception)
+            {
+                out_data = new byte[0];
+                return false;
+            }
+            return true;
+        }
     }
 }
 
