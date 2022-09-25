@@ -20,7 +20,9 @@ namespace FEBuilderGBA
 
         string SavFilename = "";
 
+        const int FEEDBACK_WAIT_LONG_MINUTE = 10;
         const int FEEDBACK_WAIT_MINUTE = 1;
+        DateTime LastFeedBackLongPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_LONG_MINUTE);
         DateTime LastFeedBackPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
         string LastFeedBackType = "";
         bool IsBusy = false;
@@ -88,10 +90,6 @@ namespace FEBuilderGBA
         {
             return IsAutoFeedBack;
         }
-        public DateTime GetLastFeedBackPostTime()
-        {
-            return LastFeedBackPostTime;
-        }
         public bool GetAutoFeedBackEnable()
         {
             if (AUTOFEEDBACK_URL == "")
@@ -112,40 +110,32 @@ namespace FEBuilderGBA
             }
 
             DateTime now = DateTime.Now;
-            if (now <= LastFeedBackPostTime)
-            {//クールダウン中
+            if (SendFeedBack_EndEvent(now, mapid))
+            {
                 return;
             }
-
-            bool flag0x03 = EmulatorMemoryUtil.IsFlag0x03Enable();
-            if (flag0x03)
+            if (SendFeedBack_DeadEvent(now, mapid))
             {
-                if (SendFeedBack_EndEvent(mapid))
-                {
-                    return;
-                }
+                return;
             }
-
-            uint deadunit = EmulatorMemoryUtil.DeadPlayerUnit();
-            if (deadunit != 0)
+            if (SendFeedBack_VillageDestroyXY(now, mapid))
             {
-                if (SendFeedBack_DeadEvent(mapid, deadunit))
-                {
-                    return;
-                }
+                return;
             }
-            uint villageDestroyXY = EmulatorMemoryUtil.VillageDestoryXY();
-            if (villageDestroyXY != U.NOT_FOUND)
-            {
-                if (SendFeedBack_VillageDestroyXY(mapid, villageDestroyXY))
-                {
-                    return;
-                }
-            }
-
         }
-        bool SendFeedBack_EndEvent(uint mapid)
+        bool SendFeedBack_EndEvent(DateTime now, uint mapid)
         {
+            //LOMAでマップIDを切り替えるケースがあるので、長いクールダウンを利用します
+            if (now <= LastFeedBackLongPostTime)
+            {//クールダウン中
+                return false;
+            }
+            bool flag0x03 = EmulatorMemoryUtil.IsFlag0x03Enable();
+            if (! flag0x03)
+            {
+                return false;
+            }
+
             string eventType = "EndEvent" + mapid;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
@@ -164,11 +154,22 @@ namespace FEBuilderGBA
             }
             Send(chapter, "");
             LastFeedBackType = eventType;
-            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            LastFeedBackLongPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
             return true;
         }
-        bool SendFeedBack_DeadEvent(uint mapid, uint deadunit)
+        bool SendFeedBack_DeadEvent(DateTime now, uint mapid)
         {
+            if (now <= LastFeedBackPostTime)
+            {//クールダウン中
+                return false;
+            }
+
+            uint deadunit = EmulatorMemoryUtil.DeadPlayerUnit();
+            if (deadunit == 0)
+            {
+                return false;
+            }
+
             string eventType = "UnitDead" + deadunit;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
@@ -191,9 +192,19 @@ namespace FEBuilderGBA
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
-        bool SendFeedBack_VillageDestroyXY(uint mapid, uint xy)
+        bool SendFeedBack_VillageDestroyXY(DateTime now, uint mapid)
         {
-            string eventType = "VillageDestroy" + xy;
+            if (now <= LastFeedBackPostTime)
+            {//クールダウン中
+                return false;
+            }
+
+            uint villageDestroyXY = EmulatorMemoryUtil.VillageDestoryXY();
+            if (villageDestroyXY == U.NOT_FOUND)
+            {
+                return false;
+            }
+            string eventType = "VillageDestroy" + villageDestroyXY;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
                 return false;
@@ -209,7 +220,7 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            string deadunitString = GetVillageDestroyXYAndInfo(xy);
+            string deadunitString = GetVillageDestroyXYAndInfo(villageDestroyXY);
             Send(chapter, deadunitString);
 
             LastFeedBackType = eventType;
