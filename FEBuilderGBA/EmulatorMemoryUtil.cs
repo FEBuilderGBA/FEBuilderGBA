@@ -2375,9 +2375,9 @@ namespace FEBuilderGBA
         public static string MakeChapterExtraInfo()
         {
             StringBuilder sb = new StringBuilder();
-            uint addr = Program.ROM.RomInfo.workmemory_chapterdata_address;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             {
-                uint turn = Program.RAM.u8(addr + 0x10);
+                uint turn = Program.RAM.u16(stageStructAddr + 0x10);
                 sb.Append("Turn:");
                 sb.Append(turn);
                 sb.AppendLine();
@@ -2414,7 +2414,7 @@ namespace FEBuilderGBA
                 sb.Append(diffecly);
             }
             {
-                uint gold = Program.RAM.u8(addr + 0x08);
+                uint gold = Program.RAM.u32(stageStructAddr + 0x08);
                 sb.Append(" /Gold:");
                 sb.Append(gold);
             }
