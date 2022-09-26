@@ -291,7 +291,9 @@
             this.L_15_COMBO.FormattingEnabled = true;
             this.L_15_COMBO.Items.AddRange(new object[] {
             "00=自軍",
-            "01=敵軍"});
+            "01=敵軍",
+            "02=NPC",
+            "03=グレー"});
             this.L_15_COMBO.Location = new System.Drawing.Point(263, 274);
             this.L_15_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_15_COMBO.Name = "L_15_COMBO";

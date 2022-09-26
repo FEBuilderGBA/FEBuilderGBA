@@ -1,0 +1,17 @@
+#include "Extensions/Hack Installation.txt" 
+PUSH
+ORG 0x02C6FC	//{J}
+//ORG 0x02C7C4	//{U}
+jumpToHack(MultiIgnoreTriangle)
+POP
+
+ALIGN 4
+MultiIgnoreTriangle:
+#incbin "MultiIgnoreTriangle.dmp"
+POIN MultiIgnoreTriangleTable
+
+ALIGN 4
+MultiIgnoreTriangleTable:
+BYTE 0x01 0x02 0x03 0x04 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x00
+
+ALIGN 4

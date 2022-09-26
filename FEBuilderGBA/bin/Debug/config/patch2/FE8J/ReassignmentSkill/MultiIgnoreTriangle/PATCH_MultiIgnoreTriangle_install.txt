@@ -1,0 +1,17 @@
+NAME=複数の「相性無効」スキルパッチ(Install)
+NAME.en=Multi-Class IgnoreTriangle Skill(Install)
+NAME.zh=Multi-Class IgnoreTriangle Skill(Install)
+
+INFO=複数クラスでのすくみを無効にする「相性無効」スキルを実装します。
+INFO.en=Patches the ROM to allow the "IgnoreTriangle" skill that ignore WeaponTriangle to be assigned to multiple classes.\r\n
+INFO.zh=Patches the ROM to allow the "IgnoreTriangle" skill to be assigned to multiple classes.\r\n
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2C6FC=0x00 0x4B
+EDIT_PATCH=PATCH_MultiIgnoreTriangle_editor.txt
+EA=Install_MultiIgnoreTriangle.event
+
+AUTHOR=7743
+

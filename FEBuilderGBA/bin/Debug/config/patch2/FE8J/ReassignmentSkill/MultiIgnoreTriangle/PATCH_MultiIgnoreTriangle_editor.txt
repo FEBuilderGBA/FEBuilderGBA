@@ -1,0 +1,28 @@
+NAME=複数の「相性無効」スキルパッチ(Editor)
+NAME.en=Multi-Class IgnoreTriangle Skill(Editor)
+NAME.zh=Multi-Class IgnoreTriangle Skill(Editor)
+
+INFO=複数クラスでのすくみを無効にする「相性無効」スキルを実装します。
+INFO.en=Patches the ROM to allow the "IgnoreTriangle" skill that ignore WeaponTriangle to be assigned to multiple classes.\r\n
+INFO.zh=Patches the ROM to allow the "IgnoreTriangle" skill to be assigned to multiple classes.\r\n
+TYPE=STRUCT
+TAG=#ENGINE
+
+AUTHOR=7743
+
+//既に適応されたかどうか
+IF:0x2C6FC=0x00 0x4B
+//データへのポインタ
+POINTER=$FGREP4END MultiIgnoreTriangle.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=Class
