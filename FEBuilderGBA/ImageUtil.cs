@@ -2597,6 +2597,8 @@ namespace FEBuilderGBA
                 string palette_error =
                     ImageUtil.CheckPalette(bitmap.Palette
                         , paletteHint.Palette
+                        , null
+                        , ""
                         );
                 if (palette_error != "")
                 {
@@ -4048,7 +4050,7 @@ namespace FEBuilderGBA
             return ret;
         }
 
-        public static string CheckPalette(ColorPalette yourpalette,byte[] data, uint basepalette, uint basepalette2)
+        public static string CheckPalette(ColorPalette yourpalette,byte[] data, uint basepalette, uint basepalette2, string appendErrorMeesage)
         {
             //パレットの読込.
             Bitmap pic1 = new Bitmap(8, 8, PixelFormat.Format8bppIndexed);
@@ -4056,7 +4058,7 @@ namespace FEBuilderGBA
 
             if (basepalette2 == U.NOT_FOUND)
             {
-                return CheckPalette(yourpalette, pic1.Palette, null);
+                return CheckPalette(yourpalette, pic1.Palette, null, appendErrorMeesage);
             }
             else
             {
@@ -4064,11 +4066,11 @@ namespace FEBuilderGBA
                 Bitmap pic2 = new Bitmap(8, 8, PixelFormat.Format8bppIndexed);
                 pic2.Palette = ByteToPalette(pic2.Palette, data, (int)basepalette2);
 
-                return CheckPalette(yourpalette, pic1.Palette, pic2.Palette);
+                return CheckPalette(yourpalette, pic1.Palette, pic2.Palette, appendErrorMeesage);
             }
         }
 
-        public static string CheckPalette(ColorPalette yourpalette, ColorPalette basepalette, ColorPalette basepalette2 = null)
+        public static string CheckPalette(ColorPalette yourpalette, ColorPalette basepalette, ColorPalette basepalette2, string appendErrorMeesage)
         {
             bool isOK = true;
             StringBuilder sb = new StringBuilder();
@@ -4147,6 +4149,11 @@ namespace FEBuilderGBA
             }
 
             sb.AppendLine(R._("!!マークが出ているのが問題のパレットです。"));
+            if (appendErrorMeesage != "")
+            {
+                sb.AppendLine(appendErrorMeesage);
+            }
+
 
             if (isOK)
             {

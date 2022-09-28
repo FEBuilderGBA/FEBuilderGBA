@@ -2606,6 +2606,7 @@ namespace FEBuilderGBA
                         string errorPaletteMessage = ImageUtil.CheckPalette(bitmap.Palette
                             , paletteHint.Palette
                             , null
+                            , ""
                             );
                         string errorMessage = R.Error("パレットがほかと異なります\r\n{0}", errorPaletteMessage);
 

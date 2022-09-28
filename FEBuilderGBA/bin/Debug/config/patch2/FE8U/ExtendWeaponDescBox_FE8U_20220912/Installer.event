@@ -134,6 +134,10 @@ ORG $354D8		//{U}
 //ORG $353E0		//{J}
 SHORT 0x42C0 // vanilla 0x4240 
 
+ORG $59E14C	//{U}
+//ORG $5C662C	//{J}
+SHORT $00 $04 $08 $0C $10 $14 $18 $1C $9C $9C $9C $9C $9C $00
+
 // managed to keep this vanilla by hooking LoadDialogueBoxGfx 
 // Shop/Armoury 
 //ORG $B4C74 // mov r0, #0x90 
@@ -156,6 +160,7 @@ SHORT 0x42C0 // vanilla 0x4240
 ORG 0x09C63C	//{U}
 //ORG 0x09E8E2	//{J}
 BYTE 0x1
+
 
 
 POP 

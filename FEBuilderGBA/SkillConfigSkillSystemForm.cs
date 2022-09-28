@@ -513,6 +513,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.p32(SkillPalettePointer)
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {

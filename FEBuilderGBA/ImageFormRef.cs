@@ -1097,6 +1097,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , palette_address
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {

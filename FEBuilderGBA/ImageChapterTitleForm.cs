@@ -125,6 +125,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.RomInfo.image_chapter_title_palette
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {
@@ -186,6 +187,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.RomInfo.image_chapter_title_palette
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {
@@ -245,6 +247,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.RomInfo.image_chapter_title_palette
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {

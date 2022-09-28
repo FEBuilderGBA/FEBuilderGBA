@@ -4279,8 +4279,14 @@ Unable to recognize transparent color.
 :パレットがほかと異なります\r\n{0}
 Palette is different from others\r\n{0}
 
+:パレットがほかと異なります\r\n{0}\r\n{1}
+Palette is different from others\r\n{0}\r\n{1}
+
 :画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}
 Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}
+
+:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}\r\n{2}
+Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}\r\n{2}
 
 :イメージが大きすぎます。\r\n初手で 256x64のシートが全部埋まりました。\r\n背景色の指定を間違えていませんか？\r\nまたは、キャラクターが256x64以上の巨大な画像です。\r\n
 The image is too large.\r\nMore than 256 x 64 sheets were filled.\r\nIs the background color specified incorrectly?\r\nIf not, the character may be too large.\r\n
