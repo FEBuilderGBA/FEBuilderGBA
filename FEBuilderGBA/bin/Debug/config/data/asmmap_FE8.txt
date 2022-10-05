@@ -1923,7 +1923,7 @@
 0202E4D0	@MapSize	MapSize	{J}
 
 
-@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion)
+@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion, 0x200=Ring, 0x200=Ring)
 @BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
 @BattleStats@04	short	Damage (Attack - defense)
 @BattleStats@06	short	Attack
@@ -14792,8 +14792,8 @@
 0202BCB8	gCurrentRealCameraPos	{J}
 080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
 080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
-0807B5DC	BeginPoisonMapAnim	{U}
-0807D924	BeginPoisonMapAnim	{J}
+0807B5DC	BeginMapAnimsControllerForUnit	{U}
+0807D924	BeginMapAnimsControllerForUnit	{J}
 0807B7F0	BeginMapAnimDance	{U}
 0807DB38	BeginMapAnimDance	{J}
 0807B634	BeginHatchFromEggsMapAnim	{U}
@@ -15454,3 +15454,17 @@
 08083360	StartSummonByEvent45Procs	{J}
 080833A8	DeleteSummonByEvent45Procs	{J}
 08083510	StartColorChangeByEvent45Procs	{J}
+08021828	StartMapAnimRingEffectIfBattleStats0x200	{J}
+08021B30	StartMapAnimRingEffectIfBattleStats0x200	{U}
+08022250	StartUnuseMapAnim6Procs	FE7の残骸	ローランの祭壇の上にある剣にピカピカマークを表示する実装部	{U}
+08022E64	BkSel_ButtonBPressed	戦闘予測でBボタンが押された時	{U}
+08080E9C	StartSummonByEvent45Procs	{U}
+08081068	DeleteSummonByEvent45Procs	{U}
+080811D0	StartColorChangeByEvent45Procs	{U}
+080DC878	:080DC8B0	DancerRingEffectData	{J}
+080D7BCC	:080D7C04	DancerRingEffectData	{U}
+080DC844	:080DC878	MapAnimUnuse5SomeData	{J}
+080D7B98	:080D7BCC	MapAnimUnuse5SomeData	{U}
+080DC8B0	:080DC8E8	MapAnimUnuse3SomeData	{J}
+080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
+080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}

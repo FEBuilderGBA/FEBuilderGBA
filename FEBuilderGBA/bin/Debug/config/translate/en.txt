@@ -4279,12 +4279,6 @@ Unable to recognize transparent color.
 :パレットがほかと異なります\r\n{0}
 Palette is different from others\r\n{0}
 
-:パレットがほかと異なります\r\n{0}\r\n{1}
-Palette is different from others\r\n{0}\r\n{1}
-
-:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}
-Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}
-
 :画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}\r\n{2}
 Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}\r\n{2}
 
@@ -8806,6 +8800,9 @@ Class Name when using Branch Promotion
 :01=敵軍
 01=Enemy Army
 
+:03=グレー
+03=Gray
+
 :日本語名 開始位置
 Japanese Name Start Position
 
@@ -11862,6 +11859,9 @@ Cannot copy images from different animations.\r\nPlease export the animation and
 
 :画像({0})がリスト存在しないため、ペーストできません。
 Pasting can not be done because the image ({0}) does not have a list.
+
+:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}
+Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}
 
 :背景の取出し
 Export Background

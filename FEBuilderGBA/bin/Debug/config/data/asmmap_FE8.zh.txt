@@ -1380,7 +1380,7 @@ r3=X tile position of menu of the right	{U}
 @MapSize@2	short	Height
 0202E4D4	@MapSize	MapSize	{U}
 0202E4D0	@MapSize	MapSize	{J}
-@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion)
+@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion, 0x200=Ring)
 @BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
 @BattleStats@04	short	Damage	(Attack - defense)
 @BattleStats@06	short	Attack
@@ -14772,8 +14772,8 @@ r3=X tile position of menu of the right	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
 080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
 080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
-0807B5DC	BeginPoisonMapAnim	{U}
-0807D924	BeginPoisonMapAnim	{J}
+0807B5DC	BeginMapAnimsControllerForUnit	{U}
+0807D924	BeginMapAnimsControllerForUnit	{J}
 0807B7F0	BeginMapAnimDance	{U}
 0807DB38	BeginMapAnimDance	{J}
 0807B634	BeginHatchFromEggsMapAnim	{U}
@@ -15452,3 +15452,19 @@ r3=X tile position of menu of the right	{U}
 085B9A28	:085B9A7C	UNUSEDBIN	它们可能是用于调试的 Procs。	{J}
 08022E2C	BkSel_ButtonBPressed	在战斗预测中按下 B 按钮时。	{J}
 0807F114	StartMapEggHatch2Procs	{J}
+08083360	StartSummonByEvent45Procs	{J}
+080833A8	DeleteSummonByEvent45Procs	{J}
+08083510	StartColorChangeByEvent45Procs	{J}
+08021828	StartMapAnimRingEffectIfBattleStats0x200	{J}
+08021B30	StartMapAnimRingEffectIfBattleStats0x200	{U}
+08022250	StartUnuseMapAnim6Procs	FE7的遗骸。	执行部在罗兰祭坛上方的剑上展示着闪亮的印记。	{U}
+08022E64	BkSel_ButtonBPressed	在战斗预测中按下 B 按钮时。	{U}
+08081068	DeleteSummonByEvent45Procs	{U}
+080811D0	StartColorChangeByEvent45Procs	{U}
+080DC878	:080DC8B0	DancerRingEffectData	{J}
+080D7BCC	:080D7C04	DancerRingEffectData	{U}
+080DC844	:080DC878	MapAnimUnuse5SomeData	{J}
+080D7B98	:080D7BCC	MapAnimUnuse5SomeData	{U}
+080DC8B0	:080DC8E8	MapAnimUnuse3SomeData	{J}
+080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
+080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}
