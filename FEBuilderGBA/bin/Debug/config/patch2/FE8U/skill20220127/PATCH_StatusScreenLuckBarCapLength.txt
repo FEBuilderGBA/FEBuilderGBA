@@ -1,0 +1,12 @@
+NAME=Stat Bar Max Length Luck Caps(SkillSystems)
+IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=false
+
+ADDRESS=$GREP4ENDA+0 0x40 0x46 0x08 0xB4 0x40 0x4B 0x9E 0x46 0x08 0xBC 0x00 0xF8 0x41 0x46 0x19 0x23 0xCB 0x56 0x00 0x90
+
+INFO=Modifies the luck's maximum value that the yellow stat bars properly display\r\nThese bars by default have errors after exceeding 31.\r\nThis patch allows the bars to display 63 in each stat.\r\nHowever, if this is set too high, the bar will expand beyond the statbox on the Status Screen.\r\nWith the skill system, the upper limit of the luck bar is hard-coded, so it needs to be handled separately in this patch.\r\nDefault is 30\r\n
+
