@@ -11375,7 +11375,7 @@ Support Partner 9
 Support Partner 8
 
 :区切り00
-Separator
+Padding00
 
 :支援人数
 # of Partners
