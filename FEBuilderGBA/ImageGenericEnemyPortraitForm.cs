@@ -15,10 +15,12 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
 
+            InputFormRef.markupJumpLabel(ExtendsBanner);
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
                 using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
