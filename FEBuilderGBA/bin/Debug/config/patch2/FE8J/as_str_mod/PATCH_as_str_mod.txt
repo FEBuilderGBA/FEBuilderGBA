@@ -15,3 +15,6 @@ BIN:0x02aae4=as_str_mod.bin
 AUTHOR=HeartHero https://feuniverse.us/t/fe8-calculate-as-based-on-str/4749/2
 NAME.zh=计算攻击速度时，按力计算。
 INFO.zh=在计算攻击速度时，体格 - 而不是武器的重量。\r\n计算攻击速度时，（力量） - 用武器的重量计算。
+
+//武器レベルS時にAS計算が変になります
+WARNING=1
