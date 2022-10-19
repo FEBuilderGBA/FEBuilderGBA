@@ -1,0 +1,10 @@
+0=Non
+1=Sword
+2=Lance
+3=Axs
+4=Bow
+5=Staff(Unused)
+6=Anima
+7=Light
+8=Dark
+10=SuperArena only

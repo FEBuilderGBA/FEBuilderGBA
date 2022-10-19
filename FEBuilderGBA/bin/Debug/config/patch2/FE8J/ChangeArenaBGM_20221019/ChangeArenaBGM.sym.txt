@@ -1,0 +1,9 @@
+DefautlArenaSongID=$80
+Table=$7C
+NotFound=$58
+Loop=$10
+CHECK_OPTION=$28
+Found=$54
+CHECK_OPTION_WEAPONTYPE=$44
+CHECK_OPTION_SUPERAREA=$36
+Exit=$5A

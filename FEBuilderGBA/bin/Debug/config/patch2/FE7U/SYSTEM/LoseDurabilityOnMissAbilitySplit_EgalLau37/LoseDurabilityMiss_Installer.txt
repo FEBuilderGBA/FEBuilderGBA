@@ -1,0 +1,10 @@
+PUSH
+ORG 0x294A4
+SHORT 0x4900 0x468F
+POIN SplitDeductDurability
+SHORT 0x6969
+POP
+
+ALIGN 4
+SplitDeductDurability:
+#incbin LoseDurability.bin

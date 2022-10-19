@@ -1,0 +1,18 @@
+
+NAME.en=Split Uncounterable and "decrement durability on miss" (flag 80, field 1)
+NAME=Split Uncounterable and "decrement durability on miss" (flag 80, field 1)
+NAME.zh=Split Uncounterable and "decrement durability on miss" (flag 80, field 1)
+
+//splits flag 80, field 1
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x294A4=0x00 0x49 0x8F 0x46
+EA=LoseDurabilityMiss_Installer.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=By default, flag 0x80, field 1 doubles as both Uncounterable and forces durability decrement even on miss.  This patch splits those two effects such that flag 80, field 1 is Uncounterable while flag 20, field 4 becomes "decrement durability even on miss".
+INFO.en=By default, flag 0x80, field 1 doubles as both Uncounterable and forces durability decrement even on miss.  This patch splits those two effects such that flag 80, field 1 is Uncounterable while flag 20, field 4 becomes "decrement durability even on miss".
+INFO.zh=By default, flag 0x80, field 1 doubles as both Uncounterable and forces durability decrement even on miss.  This patch splits those two effects such that flag 80, field 1 is Uncounterable while flag 20, field 4 becomes "decrement durability even on miss".

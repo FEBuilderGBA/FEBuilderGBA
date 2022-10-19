@@ -1,0 +1,28 @@
+PUSH
+ORG 0x74BEC	//FE8J
+//ORG 0x72710	//FE8U
+jumpToHack(ChangeArenaBGM)
+
+POP
+
+
+ALIGN 4
+ChangeArenaBGM:
+#incbin "ChangeArenaBGM.dmp"
+POIN ChangeArenaBGM_Table
+WORD 0x39
+
+ALIGN 4
+ChangeArenaBGM_Table:   //sizeof == 0x4
+//		EnemyClass	Option	BGM
+BYTE	0x5			0x0		;SHORT	0		0x2	//ソシアル専用
+BYTE	0x6			0x0		;SHORT	0		0x2	//ソシアル専用
+BYTE	0x7			0x0		;SHORT	0		0x3	//アーマー専用
+BYTE	0x8			0x0		;SHORT	0		0x3	//アーマー専用
+BYTE	0xB			0x0		;SHORT	0		0x4	//ジェネラル専用
+BYTE	0xC			0x0		;SHORT	0		0x4	//ジェネラル専用
+
+BYTE	0xFF		0		;SHORT	0		0	//term
+//EnemyClass		1
+//Option			1
+//BGM			2
