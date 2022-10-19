@@ -1,0 +1,28 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH 
+//ORG $2AE54	//{U}
+ORG $2ADC4	//{J}
+jumpToHack(NegateDefHack)
+POP 
+
+ALIGN 4 
+NegateDefHack:
+#incbin "NegateDefHack.dmp"
+POIN NegateDefAmountTable2
+
+
+ALIGN 4
+NegateDefAmountTable2:
+//	ItemID	Percent	Flag(00=ANY)
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+BYTE 0x9	55		;SHORT 0x0	//Rapier negates 55% def
+
+WORD 0x00	//term
