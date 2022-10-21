@@ -1,0 +1,36 @@
+NAME=アイテム入手時のポップアップの表示時間の高速化
+NAME.en=Accelerate Got item popup
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default:96 frame|OFFF|1.5倍速: 65 frame|ON65|2倍速: 45 frame|ON45|3倍速: 32 frame|ON32|4倍速: 25 frame|ON25
+
+DETERMINATION_ADDRESS=0x115E6
+
+OFFF:0x115E6=96	// frames to show "got item" popup 
+OFFF:0x11758=96	// frames to show "got gold" popup 
+
+ON65:0x115E6=65	// frames to show "got item" popup 
+ON65:0x11758=65	// frames to show "got gold" popup 
+
+ON45:0x115E6=45	// frames to show "got item" popup 
+ON45:0x11758=45	// frames to show "got gold" popup 
+
+ON32:0x115E6=32	// frames to show "got item" popup 
+ON32:0x11758=32	// frames to show "got gold" popup 
+
+ON25:0x115E6=25	// frames to show "got item" popup 
+ON25:0x11758=25	// frames to show "got gold" popup 
+
+
+AUTHOR=Vesly https://discord.com/channels/144670830150811649/725478895226191892/1032840060430725242
+INFO=アイテム取得、ゴールド取得のポップアップの表示時間を短くします。\r\nディフォルトは96フレームです。
+INFO.en=Speed up for popups for got items and got gold.\r\nDefault is 96 frames.
+
+COMBO.en=Default:96 frame|OFFF|1.5x speed: 65 frame|ON65|2x speed: 45 frame|ON45|3x speed: 32 frame|ON32|4x speed: 25 frame|ON25
+
+NAME.zh=Accelerate Got item popup
+INFO.zh=Speed up for popups for got items and got gold.\r\nDefault is 96 frames.
+COMBO.zh=Default:96 frame|OFFF|1.5x speed: 65 frame|ON65|2x speed: 45 frame|ON45|3x speed: 32 frame|ON32|4x speed: 25 frame|ON25
