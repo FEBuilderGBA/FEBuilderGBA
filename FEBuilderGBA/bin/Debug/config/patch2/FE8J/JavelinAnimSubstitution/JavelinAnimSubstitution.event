@@ -1,0 +1,47 @@
+PUSH
+    ORG $58E80	//{J}
+    //ORG $58034	//{U}
+    jumpToHack(JavelinAnimSub)
+POP
+
+ALIGN 4
+JavelinAnimSub:
+    #incbin "asm/JavelinAnimSub.dmp"
+    POIN JavelinSubList
+
+#define JavelinAnimSubstitute(aClass, aSubAnim) "BYTE aClass 0x0; SHORT aSubAnim"
+#define JavelinAnimSubstituteEnd "WORD 0x0"
+
+ALIGN 4
+JavelinSubList:
+    // Including vanilla javelin substitutes
+    JavelinAnimSubstitute(0x5,      0x4)
+    JavelinAnimSubstitute(0x6,    0x4)
+    JavelinAnimSubstitute(0x7,       0x6)
+    JavelinAnimSubstitute(0x8,     0xD)
+    JavelinAnimSubstitute(0xB,       0xB)
+    JavelinAnimSubstitute(0xC,     0xB)
+    JavelinAnimSubstitute(0x1f,   0x9)
+    JavelinAnimSubstitute(0x20, 0x9)
+    JavelinAnimSubstitute(0x21,    0xA)
+    JavelinAnimSubstitute(0x22,  0xA)
+    JavelinAnimSubstitute(0x48, 0x7)
+    JavelinAnimSubstitute(0x49,   0x8)
+    JavelinAnimSubstitute(0x4e,       0x5)
+
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+    JavelinAnimSubstitute(0x4e,       0x3)
+
+    // Add new Javelin substitutes here
+JavelinAnimSubstituteEnd
