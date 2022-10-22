@@ -1,0 +1,27 @@
+#ifndef MURDERSTICKS
+#define MURDERSTICKS
+
+#ifdef _FE8_
+
+// Murder Sticks. Hack by Zeta/Gilgamesh
+// Fixes displaying stats of offensive staves in attack/item windows.
+// Free to use/modify
+
+#include "Extensions/Hack Installation.txt"
+
+ALIGN 4
+MurderSticksASM:
+#incbin "MurderSticks.dmp"
+
+PUSH
+ORG 0x1E45E
+SHORT 0x0
+#define jumpToHack_r4(offset) "BYTE 0x00 0x4C 0x20 0x47; POIN (offset|0x1)"
+jumpToHack_r4(MurderSticksASM)
+POP
+
+#else // _FE8_
+  ERROR MurderSticks is for FE8
+#endif // _FE8_
+
+#endif // MURDERSTICKS

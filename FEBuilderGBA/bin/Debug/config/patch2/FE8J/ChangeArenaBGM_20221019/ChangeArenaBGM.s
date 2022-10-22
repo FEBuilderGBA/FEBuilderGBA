@@ -69,7 +69,7 @@ cmp r0, #0x0
 beq Found
 
 ldrb r1, [r5,#0xE] @ArenaData->opponentWpnType
-add r0, #0x1
+add r1, #0x1
 cmp r0, r1
 bne Loop
 
