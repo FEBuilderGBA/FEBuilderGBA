@@ -5557,6 +5557,9 @@ Invalidate (DEL)
 :00のデータの変更は許可されていません。
 Modification of 00 data is not allowed.
 
+:あなたはzipファイルを解凍せずに指定しているように思います。\r\nまずはzipファイルを解凍してください。
+I think you are specifying the zip file without unzipping it.\r\nFirst unzip the zip file.
+
 :該当アイテム
 Usable Item
 

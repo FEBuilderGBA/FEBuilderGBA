@@ -7815,6 +7815,19 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        //ファイルの解凍を知らないアホのために
+        public static bool IsExplorerZipVirtual(string path)
+        {
+            if (path.IndexOf("\\Temp\\") >= 0)
+            {
+                if (path.IndexOf(".zip\\") >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
 

@@ -5557,6 +5557,9 @@ If you check this and cancel the installation of the patch, \r\nthis patch will 
 :00のデータの変更は許可されていません。
 不允许修改00数据。
 
+:あなたはzipファイルを解凍せずに指定しているように思います。\r\nまずはzipファイルを解凍してください。
+我认为您正在指定 zip 文件而不解压缩它。\r\n首先解压缩zip文件。
+
 :該当アイテム
 该道具
 

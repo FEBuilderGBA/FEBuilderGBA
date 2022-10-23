@@ -12939,5 +12939,13 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void IfAdditionalErrorMessagesForIdiotsWhoDontKnowHowToUnzipTheZip(string filename)
+        {
+            if (U.IsExplorerZipVirtual(filename))
+            {
+                R.ShowStopError("あなたはzipファイルを解凍せずに指定しているように思います。\r\nまずはzipファイルを解凍してください。");
+            }
+        }
+
     }
 }
