@@ -5065,6 +5065,30 @@ namespace FEBuilderGBA
             return true;
         }
 
+        //ディレクトリを確実に消す
+        public static bool DelTree(string dir , int retry = 10)
+        {
+            if (!Directory.Exists(dir))
+            {
+                return true;
+            }
+
+            for (int i = 0; i < retry; i++)
+            {
+                try
+                {
+                    Directory.Delete(dir, true);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e.ToString());
+                }
+                System.Threading.Thread.Sleep(500);
+            }
+            return false;
+        }
+
         //Nビットで表現される マイナスありの数字にキャストします。
         public static int CastBit(uint a,int bitCount)
         {

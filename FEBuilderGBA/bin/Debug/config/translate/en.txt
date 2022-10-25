@@ -12091,6 +12091,9 @@ Complete!
 :まだ未実装です!
 Not implemented yet!
 
+:カスタムビルドのキャッシュを削除できませんでした。\r\n以下のディレクトリを手動で消去してください。\r\n{0}
+Failed to delete custom build cache.\r\nManually delete the following directories.\r\n{0}.
+
 :SkillSystemsがインストールされていません。
 Skill System is not installed.
 
