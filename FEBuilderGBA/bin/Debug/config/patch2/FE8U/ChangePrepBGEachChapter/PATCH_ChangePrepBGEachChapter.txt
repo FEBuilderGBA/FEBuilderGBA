@@ -1,7 +1,8 @@
-NAME=進撃準備の背景を章ごとに変更する
-NAME.en=Change Preparations background for each chapter
+NAME=進撃準備の背景を章ごとに変更する(Editor)
+NAME.en=Change Preparations background for each chapter(Editor)
 
-INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
+INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。\r\nパレットは2段(32色)必要で、パレット1は通常の背景ように、パレット2は辞書や設定画面の一番の字幕の黒帯に利用される暗い背景になります。
+
 
 IF:0x86BFC=0x00 0x4B
 
@@ -31,7 +32,7 @@ P8:PatchImage_PALETTE=Palette
 WIDTH=256
 HEIGHT=160
 //利用パレット数
-PALETTE=1
-INFO.en=To import a new image, please set the address, PALETTE to 0 or FFFFFFFF, then import it.\r\nOtherwise, overwrite the existing image and change it.
-NAME.zh=改变每章攻击准备的背景
-INFO.zh=要导入新图像，请将地址PALETTE设置为0或FFFFFFFF，然后导入。\r\n否则，覆盖现有图像并进行更改。
+PALETTE=2
+INFO.en=To import a new image, please set the address, PALETTE to 0 or FFFFFFFF, then import it.\r\nOtherwise, overwrite the existing image and change it.\r\nTwo palettes (32 colors) are required, palette 1 is like a normal background, and palette 2 is a dark background used for black bars in dictionaries and the most subtitle of the settings screen.
+NAME.zh=改变每章攻击准备的背景(Editor)
+INFO.zh=要导入新图像，请将地址PALETTE设置为0或FFFFFFFF，然后导入。\r\n否则，覆盖现有图像并进行更改。\r\nTwo palettes (32 colors) are required, palette 1 is like a normal background, and palette 2 is a dark background used for black bars in dictionaries and the most subtitle of the settings screen.
