@@ -5692,7 +5692,7 @@ r3=X tile position of menu of right	{U}
 080634E0	StartSpellAnimSleep	{J}
 080631EC	StartSpellAnimHammerne	{J}
 08063D14	StartSpellAnimBerserk	{J}
-0805E8D8	StartSpellAnimShine	{J}
+08064580	StartSpellAnimShine	{J}
 08064A74	StartSpellAnimLuna	{J}
 08066524	StartSpellAnimAura	{J}
 08067B94	StartSpellAnimIvaldi	{J}
