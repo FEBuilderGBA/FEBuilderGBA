@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             this.X_ReOrderImage1Panel.Hide();
+            this.X_ReOrderImage2Panel.Hide();
             this.X_CancelImage.Image = SystemIcons.Error.ToBitmap();
         }
 
@@ -48,16 +49,33 @@ namespace FEBuilderGBA
         }
 
         Bitmap ReOrderImage1 = null;
+        Bitmap ReOrderImage2 = null;
         public void SetReOrderImage1(Bitmap src, int maxPalette, int yohaku, bool isReserve1StPalette)
         {
             //減色する
             DecreaseColor deColor = new DecreaseColor();
-            this.ReOrderImage1 = deColor.Convert(src, maxPalette, yohaku, isReserve1StPalette , false);
+            this.ReOrderImage1 = deColor.Convert(src, maxPalette, yohaku * 8, isReserve1StPalette, false);
+            if (this.ReOrderImage1 == null)
+            {
+                X_ReOrderImage1Panel.Hide();
+                X_ReOrderImage2Panel.Hide();
+                return;
+            }
 
-            this.X_ReOrderImage1.Image = src;//this.ReOrderImage1;
+            this.X_ReOrderImage1.Image = ReOrderImage1;//this.ReOrderImage1;
             ChangeScale(this.X_ReOrderImage1);
-
             X_ReOrderImage1Panel.Show();
+
+            if (src.PixelFormat == PixelFormat.Format8bppIndexed 
+                && src.Height == 160)
+            {
+                Bitmap pic2 = ImageUtil.CloneBitmap(src);
+                DecreaseColor.ForceConvertTSA(pic2);
+                this.ReOrderImage2 = pic2;
+                this.X_ReOrderImage2.Image = (Image)ReOrderImage2.Clone();//this.ReOrderImage1;
+                ChangeScale(this.X_ReOrderImage2);
+                X_ReOrderImage2Panel.Show();
+            }
         }
         Bitmap ResultBitmap = null;
         public Bitmap GetResultBitmap()
@@ -85,6 +103,12 @@ namespace FEBuilderGBA
         private void X_ReOrderImage1_Click(object sender, EventArgs e)
         {
             ReOrder1Button.PerformClick();
+        }
+
+        private void ReOrder2Button_Click(object sender, EventArgs e)
+        {
+            this.ResultBitmap = ReOrderImage2;
+            this.Close();
         }
     }
 }

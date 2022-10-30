@@ -1612,6 +1612,12 @@ Automatic Convert and Import
 :この画像は、必要な形式の基準を満たしていません。
 This image does not meet the formatting requirements.
 
+:規約を守っていないデータはパレットの最初の色としてインポートします。
+Data that does not follow the convention will be imported as the first color in the palette.
+
+:違反データは0に指定
+Violation data is specified as 0.
+
 :画像の形式が基準を満たしていません。
 The image format does not meet the criteria.
 

@@ -677,5 +677,62 @@ namespace FEBuilderGBA
                 );
         }
 
+        public static void ForceConvertTSA(Bitmap bitmap)
+        {
+            Rectangle rect = new Rectangle(new Point(), bitmap.Size);
+            BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
+            IntPtr adr = bmpData.Scan0;
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+
+            for (int y = 0; y < height; y += 8)
+            {
+                for (int x = 0; x < width; x += 8)
+                {
+                    uint palette = 255;
+                    for (int y8 = 0; y8 < 8; y8++)
+                    {
+                        for (int x8 = 0; x8 < 8; x8++)
+                        {
+                            int n = (x + x8 + 0) + bmpData.Stride * (y + y8);
+                            byte a = Marshal.ReadByte(adr, n);
+                            uint selectpalette = (uint)(a / 16);
+                            if (palette == 255)
+                            {//初期値
+                                palette = selectpalette;
+                            }
+                            else if (palette != selectpalette)
+                            {//フォーマット違反 8x8セルの中で異なるパレットを使用してはいけない.
+                                x8 = 8;
+                                y8 = 8;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (palette == 255)
+                    {
+                        palette = 0;
+                    }
+
+                    for (int y8 = 0; y8 < 8; y8++)
+                    {
+                        for (int x8 = 0; x8 < 8; x8++)
+                        {
+                            int n = (x + x8 + 0) + bmpData.Stride * (y + y8);
+                            byte a = Marshal.ReadByte(adr, n);
+                            uint selectpalette = (uint)(a / 16);
+                            if (palette != selectpalette)
+                            {//フォーマット違反 8x8セルの中で異なるパレットを使用してはいけない.
+                                a = (byte)(palette * 16);
+                            }
+                            Marshal.WriteByte(adr, n, a);
+                        }
+                    }
+                }
+            }
+
+            bitmap.UnlockBits(bmpData);
+        }
     }
 }
