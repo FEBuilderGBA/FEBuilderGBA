@@ -1,0 +1,21 @@
+NAME=必殺ダメージ係数
+NAME.en=Critical damage coefficient
+NAME.zh=Critical damage coefficient
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 3x|OFFF|2x|X2XX|1.5x|X15X|4x|X4XX
+
+DETERMINATION_ADDRESS=0x02B47A
+
+OFFF:0x02B47A=0x48 0x00 0x40 0x18
+X2XX:0x02B47A=0x48 0x00 0x01 0x1C
+X15X:0x02B47A=0x48 0x08 0x40 0x18
+X4XX:0x02B47A=0x88 0x00 0x01 0x1C
+
+INFO=必殺ダメージの計算式を変更します。\r\nディフォルトはダメージ3倍です。
+AUTHOR=https://forums.serenesforest.net/index.php?/topic/58006-solved-change-critical-damage-multiplier/&tab=comments#comment-4049554
+INFO.en=Changed the calculation formula for critical damage.\r\nDefault is 3x damage.
+INFO.zh=更改了暴击伤害的计算公式。\r\n默认为 3 倍伤害。

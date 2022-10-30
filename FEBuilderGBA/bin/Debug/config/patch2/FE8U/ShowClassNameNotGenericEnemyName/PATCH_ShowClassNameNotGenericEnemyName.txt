@@ -4,7 +4,7 @@ NAME.en=When Battle Arena's Enemy, display class name, not unit name
 TYPE=BIN
 PATCHED_IF:0x051F78=0x00 0x4B 0x9F 0x46
 BIN:$FREEAREA=ShowClassNameNotGenericEnemyName.dmp
-JUMP:0x051F78:r3=ShowClassNameNotGenericEnemyName.dmp
+JUMP:0x051F78:$r3=ShowClassNameNotGenericEnemyName.dmp
 
 AUTHOR=7743
 INFO=闘技場などで、対戦相手(UnitID: 0xFD)と戦う時は、戦闘画面の左上の名前を"対戦相手"ではなく、クラス名を表示するようにします。\r\n例えば、相手のクラスがアーマーナイトなら、戦闘画面の左上の名称は対戦相手ではなく、アーマーナイトになります。
