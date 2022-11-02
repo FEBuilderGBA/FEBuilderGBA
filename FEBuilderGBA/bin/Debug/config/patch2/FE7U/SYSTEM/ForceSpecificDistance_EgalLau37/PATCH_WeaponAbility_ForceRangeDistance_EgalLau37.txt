@@ -1,7 +1,7 @@
 
 NAME.en=Force specific distance for battle animations
 NAME=Force specific distance for battle animations
-NAME.zh=Disable forced long-range distance from Uncounterable ability
+NAME.zh=Force specific distance for battle animations
 
 //forces specific ranged distance, melee is disabled currently due to softlock...
 

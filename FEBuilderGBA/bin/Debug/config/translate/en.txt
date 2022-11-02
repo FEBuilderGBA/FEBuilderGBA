@@ -6302,7 +6302,7 @@ Gaiden-style Spell
 World Map BGM
 
 :辞書
-Dictionary
+Guide
 
 :魔物発生拠点
 World Map Skirmishes
@@ -6707,7 +6707,7 @@ Edit the English name for the class used in Prologue of OP class.\r\nThis settin
 Edit the image of the staff role displayed on the ED.
 
 :辞書を選んだときに表示される項目の設定を行います。
-Edit the items displayed when selecting a dictionary.
+Edit the items displayed when selecting a guide.
 
 :ROMに直接書き込まれているテキスト文字列の編集を行います。
 Edit text string directly written in ROM.

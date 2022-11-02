@@ -8,8 +8,8 @@ TYPE=SWITCH
 TAG=#ENGINE
 
 ADDRESS=0x051FB2
-OFF:0x51FB2=0x80 |Flag 0x80, field 1 forces long-range distance
-ON2:0x51FB2=0x00 |Flag 0x80, field 1 does not force long-range distance
+OFF:0x51FB2=0x80
+ON2:0x51FB2=0x00
 
 COMBO=Flag 0x80, field 1 forces long-range distance|OFF|Flag 0x80, field 1 does not force long-range distance|ON2
 
