@@ -9691,6 +9691,9 @@ Bugs such as freezing when using this patch have been reported.\r\nDo not instal
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is outdated.\r\nSee if there is a recent/alternative version.\r\n
 
+:SkillSystemsと同じ場所をフックするため、SkillSystemsとは同時には利用できません。
+This patch uses the same data as the Skill System Patch, so the two can't be used together.\r\nDo not attempt to use with the Skill System Patch.
+
 :このパッチは、内部処理用に作られたものです。通常は利用しないでください。
 This patch was designed for internal processing. Don't use it normally.
 

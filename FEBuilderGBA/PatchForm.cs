@@ -336,6 +336,26 @@ namespace FEBuilderGBA
         }
         const int CONTROL_HEIGHT = 26;
 
+
+        //SkillSystemsと競合しているかどうか
+        static bool IsConflictSkillSystems(PatchSt patch)
+        {
+            if (Program.ROM.RomInfo.version == 8 && Program.ROM.RomInfo.is_multibyte == false)
+            {
+                string conflict_if = U.at(patch.Param, "CONFLICT_IF:0x0800", "");
+                if (conflict_if != "")
+                {
+                    return true;
+                }
+                conflict_if = U.at(patch.Param, "CONFLICT_IF:0x800", "");
+                if (conflict_if != "")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         static string MakeInfoAndAuthorString(PatchSt patch)
         {
             StringBuilder sb = new StringBuilder();
@@ -353,6 +373,18 @@ namespace FEBuilderGBA
                 sb.AppendLine(R._("このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n"));
             }
 
+            if (IsConflictSkillSystems(patch))
+            {
+                sb.AppendLine("!!!! NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                sb.AppendLine(R._("SkillSystemsと同じ場所をフックするため、SkillSystemsとは同時には利用できません。"));
+            }
+
+            if (sb.Length != 0)
+            {
+                sb.AppendLine();
+            }
+            
+
             string info = atMultiLine(patch, "INFO");
             if (info  != "")
             {
@@ -366,6 +398,7 @@ namespace FEBuilderGBA
             }
             if (tag.IndexOf("#HIDDEN")>=0)
             {
+                sb.AppendLine("!!!! NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 sb.AppendLine(R._("このパッチは、内部処理用に作られたものです。通常は利用しないでください。"));
             }
 
