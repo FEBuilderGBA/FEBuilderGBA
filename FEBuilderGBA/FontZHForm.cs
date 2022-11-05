@@ -43,8 +43,8 @@ namespace FEBuilderGBA
 
             Debug.Assert(isZH());
 
-            this.FontSample.Text = "艾@珂"; ///No Translate
-            this.SearchChar.Text = "瑞";          ///No Translate
+            this.FontSample.Text = "铁@铁"; ///No Translate
+            this.SearchChar.Text = "剑";          ///No Translate
         }
 
         //フォントを探す.
@@ -427,6 +427,32 @@ namespace FEBuilderGBA
         public static uint GetFontPointer(bool IsItemFont,ROM rom)
         {
             Debug.Assert(isZH());
+            if (rom.RomInfo.version == 6)
+            {
+                if (IsItemFont)
+                {
+                    //セリフ
+                    return 0x58ef54;
+                }
+                else
+                {
+                    //アイテム
+                    return 0x58ef28;
+                }
+            }
+            if (rom.RomInfo.version == 7)
+            {
+                if (IsItemFont)
+                {
+                    //セリフ
+                    return 0xbc06c4;
+                }
+                else
+                {
+                    //アイテム
+                    return 0xbc0698;
+                }
+            }
             if (rom.RomInfo.version == 8)
             {
                 if (IsItemFont)
