@@ -508,7 +508,7 @@
 
 
 //Just before the attacker's battle struct is data used to display the pre-battle numbers and calculate the rounds data
-@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion)
+@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion, 0x200=Ring)
 @BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
 @BattleStats@04	short	Damage	(Attack - defense)
 @BattleStats@06	short	Attack

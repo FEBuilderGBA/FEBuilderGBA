@@ -1,0 +1,11 @@
+NAME=闘技場で死なない HP1で留まる
+INFO=闘技場で負けても死なずに、聖戦の系譜(FE4)みたいにHP1にします。
+
+TYPE=BIN
+PATCHED_IF:0x0328D0=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=Arena_NotDie.dmp
+JUMP:0x0328D0:$r3=Arena_NotDie.dmp
+NAME.en=Don't die in the arena and stay at 1 HP.
+INFO.en=Don't die even if you lose in the arena, and set HP to 1 like Genealogy of the Holy War (FE4).
+NAME.zh=不要死在竞技场并保持 1 HP。
+INFO.zh=竞技场输了也不死，像十字军谱系（FE4）一样把HP设为1。

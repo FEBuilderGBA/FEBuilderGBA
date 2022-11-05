@@ -253,8 +253,8 @@ namespace FEBuilderGBA
                 sb.Append(U.ToHexString8(p));
                 sb.Append(" ");
             }
-            sb.AppendLine("");
-            sb.AppendLine("");
+            sb.AppendLine();
+            sb.AppendLine();
             for (int n = 0; n < listoam12.Count; n++)
             {
                 addr = listoam12[n].Addr;
@@ -275,8 +275,8 @@ namespace FEBuilderGBA
                         sb.Append(U.HexDump(Program.ROM.getBinaryData(addr, 12)));
                     }
                 }
-                sb.AppendLine("");
-                sb.AppendLine("");
+                sb.AppendLine();
+                sb.AppendLine();
             }
 
             X_DATA.Text = sb.ToString();

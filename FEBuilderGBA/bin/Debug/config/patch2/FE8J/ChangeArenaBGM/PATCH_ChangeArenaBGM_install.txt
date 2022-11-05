@@ -1,4 +1,4 @@
-NAME=闘技場BGMを柔軟に変更する(Installer)
+NAME=闘技場BGMを柔軟に変更する 20210519(Installer)
 INFO=Arena BGMを出現する敵クラスやプレイヤーユニットなどの条件に応じて変更できるようにします。
 
 
@@ -13,7 +13,7 @@ EA=ChangeArenaBGM_installer.event
 AUTHOR=7743
 HINT=ソング 音楽 Song Music
 
-NAME.en=Flexible change of Arena BGM(Installer)
+NAME.en=Flexible change of Arena BGM 20210519(Installer)
 INFO.en=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.
-NAME.zh=Flexible change of Arena BGM(Installer)
+NAME.zh=Flexible change of Arena BGM 20210519(Installer)
 INFO.zh=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.

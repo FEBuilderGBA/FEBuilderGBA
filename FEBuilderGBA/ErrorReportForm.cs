@@ -47,7 +47,7 @@ namespace FEBuilderGBA
                 sb.Append(m.DeclaringType.Name.ToString());
                 sb.Append(".cs ");
                 sb.Append(m.ToString());
-                sb.AppendLine("");
+                sb.AppendLine();
             }
             return sb.ToString();
         }

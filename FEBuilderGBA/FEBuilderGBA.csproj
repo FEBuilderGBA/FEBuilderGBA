@@ -294,6 +294,7 @@
     </Compile>
     <Compile Include="ToolTranslateROMWipeJPChapterName.cs" />
     <Compile Include="ToolTranslateROMWipeJPFont.cs" />
+    <Compile Include="ToolWorkSupportAutoFeedback.cs" />
     <Compile Include="UwordBitFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>

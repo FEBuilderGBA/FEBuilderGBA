@@ -1,0 +1,5 @@
+Exit=$52
+SetUnk1=$30
+SetUnk2=$3A
+CallFunction=$44
+SetUnk2_=$44

@@ -1,0 +1,17 @@
+
+NAME.en=Set army commander by chapter (installer)
+INFO.en=This changes the routine so that the current army commander is based on an ID in a table.
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x8681C=0x00 0x4D 0xAF 0x46
+EDIT_PATCH=PATCH_ForcedArmyCommander_Lau_Editor.txt
+EA=ForcedArmyCommander_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+NAME=Set army commander by chapter (installer)
+INFO=This changes the routine so that the current army commander is based on an ID in a table.
+NAME.zh=Set army commander by chapter (installer)
+INFO.zh=This changes the routine so that the current army commander is based on an ID in a table.

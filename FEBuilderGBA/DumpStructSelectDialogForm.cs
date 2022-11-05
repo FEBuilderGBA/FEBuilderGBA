@@ -372,7 +372,7 @@ namespace FEBuilderGBA
             {
                 addr_array[i] = InputFormRef.SelectToAddrResult(listbox, i);
             }
-            sb.AppendLine("");
+            sb.AppendLine();
 
             for (int i = 0; i < addr_array.Length; i++)
             {
@@ -436,7 +436,7 @@ namespace FEBuilderGBA
                         sb.Append(U.To0xHexString(v));
                     }
                 }
-                sb.AppendLine("");
+                sb.AppendLine();
             }
             return sb.ToString();
         }
@@ -566,7 +566,7 @@ namespace FEBuilderGBA
             {
                 addr_array = new U.AddrResult[] { InputFormRef.SelectToAddrResult(listbox, (int)target) };
             }
-            sb.AppendLine("");
+            sb.AppendLine();
             sb.AppendLine("PUSH");
             sb.AppendLine("ORG " + U.To0xHexString(addr_array[0].addr));
             string lastData = "";
@@ -738,7 +738,7 @@ namespace FEBuilderGBA
                 sb.AppendLine(dropDownFilename);
             }
             sb.AppendLine("NULL");
-            sb.AppendLine("");
+            sb.AppendLine();
 
             foreach (NameMapping nm in dic)
             {

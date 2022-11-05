@@ -1,0 +1,106 @@
+//FE6 Battle stats with animations off
+//Phanfan, based on hack by Tequila
+
+#ifdef _FE6_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+	
+//	#ifndef FreeSpace
+//		#define FreeSpace 0x818000
+//		ORG FreeSpace
+//	#endif
+	
+	PUSH
+
+	//Update the graphics [useless?]
+	//ORG $6F844 //7BC44
+	//POIN New_Battle_Anims_Off_Graphics
+	
+	//Modify the numbers to use - rather than ?
+	ORG $62AB0 //-fe6 6F52C-fe7 7BA20-fe8 [NOT SURE]
+	POIN New_Numbers
+	//Make said numbers load earlier in tile ram to make room for -- 
+	ORG $62BA8 //6F624-fe7
+	BYTE 0x1F
+	//And then read earlier as well
+	ORG $630C0 //6FB44-fe7
+	BYTE 0x1F
+	
+	//TSA for the right and left boxes, respectively (taken from fe6 version, but it actually works, surprisingly) [Need to change for
+	ORG $664F18 //fe7-C9D7A8 fe8-9A3680
+	POIN New_Battle_Anims_Off_Right_TSA
+	POIN New_Battle_Anims_Off_Left_TSA
+	
+	//Make the box not overlap active units or go off-screen (will probably have to fiddle with this later)
+	ORG $61F80 //6EA44-fe7 7AB8A-fe8
+	SHORT 0x295F //cmp r1,#0x5F rather than 0x6F
+	ORG $61F98 //6EA5C-fe7 //7AB98-fe8
+	SHORT 0x3840 //sub r0,#0x40 rather than 0x28
+	ORG $61FBA //6EA7E-fe7 7ABA2-fe8
+	SHORT 0x2008 //mov r0,0x8; should cover all the funny cases
+	
+	//Actually display the necessary things?? 
+	ORG $632A8 //6FD2C-fe7 7BED6-fe8
+	//SHORT 0x46C0
+	jumpToHack(Show_Battle_Stats)
+	
+	//THE FOLLOWING STUFF IS FROM THE FE6 VERSION BECAUSE IT'S MORE SIMILAR THAN FE8
+	//Handle the '--' tiles [x]
+	ORG $13E8C //13350-fe7
+	SHORT 0xB408 0
+	jumpToHack(Func_13E8C)
+
+	//Create a wrapper so hp doesn't show as -- due to the above fix [x]
+	ORG $62B50 //6F5CC-fe7 (8818761)
+	callHack_r3(Wrap_13E8C)
+
+	
+
+	POP
+
+	ALIGN 4
+	New_Battle_Anims_Off_Graphics:
+	//#incext Png2Dmp "Anims_Off_Battle_Graphic New.png" --lz77
+	#incbin "Anims_Off_Battle_Graphic New.png.bin"
+
+	//Starts at 0x8818134
+	ALIGN 4
+	New_Battle_Anims_Off_Right_TSA:
+	#incbin "New_Battle_Anims_Off_Right_TSA.dmp"	//HINT=BIN
+	//Starts at 0x8818164
+	ALIGN 4
+	New_Battle_Anims_Off_Left_TSA:
+	#incbin "New_Battle_Anims_Off_Left_TSA.dmp"		//HINT=BIN
+	//Starts at 0x8818195
+	ALIGN 4
+	Show_Battle_Stats:
+	#incbin "Show_Battle_Stats.dmp"
+	POIN Battle_Name_Graphics Battle_Name_Palette
+	
+	ALIGN 4
+	Battle_Name_Graphics:
+	//#incext Png2Dmp "New_Stat_Names.png" --lz77
+	#incbin "New_stat_Names.png.bin"
+	
+	ALIGN 4
+	Battle_Name_Palette:
+	//#incext Png2Dmp "New_Stat_Names.png" --palette-only
+	#incbin "New_stat_Names.png.pal.bin"
+
+	ALIGN 4
+	New_Numbers:
+	//#incext Png2Dmp "new_numbers.png" --lz77
+	#incbin "new_numbers.png.bin"
+
+	ALIGN 4
+	Func_13E8C:
+	#incbin "Func_13E8C.dmp"
+	
+	ALIGN 4
+	Wrap_13E8C:
+	#incbin "Wrap_13E8C.dmp"
+
+#else
+	ERROR "You're not assembling FE6 events!"
+#endif

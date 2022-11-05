@@ -1,0 +1,11 @@
+INFO=ワールドマップで簡単モードでイム村をクリアする前であっても、アイテム整理メニューを表示する
+INFO.en=Show Manage Item menu on world map even before clear Ide Village in Easy mode
+INFO.zh=Show Manage Item menu on world map even before clear Ide Village in Easy mode
+
+AUTHOR=Vesly https://discord.com/channels/144670830150811649/470029781795078175/1019369794149040209
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xB9333
+COMBO=Default|0xDB|Fix: Show always|0xE0

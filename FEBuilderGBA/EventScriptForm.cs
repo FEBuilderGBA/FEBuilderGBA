@@ -867,6 +867,47 @@ namespace FEBuilderGBA
             return errormessage;
         }
 
+        static bool IsLOMA(EventScript.OneCode code)
+        {
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                if (code.Script.LowCode.IndexOf("2025") == 0)
+                {
+                    return true;
+                }
+            }
+            if (Program.ROM.RomInfo.version == 7)
+            {
+                if (Program.ROM.RomInfo.is_multibyte)
+                {
+                    if (code.Script.LowCode.IndexOf("65000000") == 0)
+                    {
+                        return true;
+                    }
+                    if (code.Script.LowCode.IndexOf("82000000") == 0)
+                    {
+                        return true;
+                    }
+                    
+                }
+                else
+                {
+                    if (code.Script.LowCode.IndexOf("84000000") == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                if (code.Script.LowCode.IndexOf("3F000000") == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         //エラー検出
         static void CheckCallebleFromEvent(uint mapid, ref string errormessage)
         {

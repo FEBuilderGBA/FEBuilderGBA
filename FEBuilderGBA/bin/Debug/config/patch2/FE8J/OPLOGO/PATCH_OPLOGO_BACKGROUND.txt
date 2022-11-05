@@ -17,3 +17,7 @@ ZTSA_POINTER=0x0CA558//0xB43424
 PALETTE_POINTER=0x0CA560//0xB43988
 
 
+WARNING=true
+INFO=もし、変更する場合は、このパッチで変更するのではなく、"OPタイトルに256色の画像を利用する"パッチを利用してください。
+INFO.en=If you want to change it, do not change it with this patch, but use the "Use 256-color image for OP title" patch.
+INFO.zh=如果你想改变它，不要用这个补丁来改变它，而是使用“使用 256 色图像作为 OP 标题”补丁。

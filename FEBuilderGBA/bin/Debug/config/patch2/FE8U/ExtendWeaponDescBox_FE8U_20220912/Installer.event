@@ -1,0 +1,168 @@
+#include "EAstdlib.event" 
+
+// If these procs are active, don't use the extra vram. 
+// If you experience graphical glitches, the solution is 
+// to look in FEBuilder's debugger to see what procs are running,
+// then add the relevant proc(s) to this exception list. 
+#define gProc_SaveMenu $a200b8			//{U}
+//#define gProc_SaveMenu $A9CFE4			//{J}
+#define gProc_SaveMenu2 $A203A8			//{U}
+//#define gProc_SaveMenu2 $A9D2D4			//{J}
+#define gProc_ChapterMenuUnit $A17B08	//{U}
+//#define gProc_ChapterMenuUnit $A93854	//{J}
+#define gProc_ChapterMenuStatus $A01B54	//{U}
+//#define gProc_ChapterMenuStatus $A73C0C	//{J}
+#define gProc_PrepSomethingUnknown $A1898C 
+#define gProc_PrepSomethingUnknown2 $A18944 // backup 
+#define gProc_PrepItemUseScreen $A19064
+ALIGN 4 
+ProcExceptionsList:
+POIN gProc_SaveMenu gProc_SaveMenu2 gProc_ChapterMenuUnit gProc_ChapterMenuStatus
+POIN gProc_PrepSomethingUnknown 
+POIN gProc_PrepSomethingUnknown2 
+//POIN gProc_PrepItemUseScreen
+WORD 0 // Terminator 
+
+
+
+#ifndef callHackNew 
+	#define callHackNew(offset) 		"BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif 
+
+
+ALIGN 4 
+InitItemDescVram: 
+#incbin "InitItemDescVram.dmp" 
+POIN ProcExceptionsList
+
+ALIGN 4 
+InitProcTextHandles:
+#incbin "InitProcTextHandles.dmp" 
+
+
+ALIGN 4 
+InitWepDescTextHandles:
+#incbin "InitWepDescTextHandles.dmp" 
+
+ALIGN 4 
+YPosDescBox:
+#incbin "YPosDescBox.dmp" 
+
+ALIGN 4 
+LoadDialogueBoxGfxHook:
+#incbin "LoadDialogueBoxGfxHook.dmp" 
+
+PUSH 
+
+ORG $8A126		//{U}
+//ORG $8C436		//{J}
+SHORT $46C0 
+callHackNew(InitItemDescVram|1)
+SHORT $46C0 $46C0 $46C0 
+PROTECT $8A126 $8A126+28		//{U}
+//PROTECT $8C436 $8C436+28		//{J}
+
+ORG $8A064		//{U}
+//ORG $8C374		//{J}
+callHackNew(InitProcTextHandles|1)
+PROTECT $8A064 $8A064+12		//{U}
+//PROTECT $8C374 $8C374+12		//{J}
+
+ORG $89874		//{U}
+//ORG $8BB84		//{J}
+callHackNew(InitWepDescTextHandles|1) 
+PROTECT $89874 $89874+12		//{U}
+//PROTECT $8BB84 $8BB84+12		//{J}
+
+ORG $88C88		//{U}
+//ORG $8AF14		//{J}
+callHackNew(YPosDescBox|1) // make it 0 if it's negative 
+PROTECT $88C88 $88C88+12		//{U}
+//PROTECT $8AF14 $8AF14+12		//{J}
+
+ORG $8980C		//{U}
+//ORG $8BB1C		//{J}
+callHackNew(LoadDialogueBoxGfxHook|1)
+PROTECT $8980C $8980C+12	//{U}
+//PROTECT $8BB1C $8BB1C+12	//{J}
+
+
+
+ORG $899BC		//{U}
+//ORG $8BCDA		//{J}
+BYTE (5)<<4
+
+ORG $899C0		//{U}
+//ORG $8BCDE		//{J}
+BYTE (5)<<4
+
+
+// [203E7C4]!!
+//ORG $898A4 // default: used by shop, stat screen, send item to supply, itemMenu, and trading on map 
+//WORD 0x6012000 // 13000 vanilla
+
+//////ORG $2D2EA		//{U}
+////ORG $2D222		//{J}
+					// mov r1, #0x90 
+//BYTE 0xE1			// lsl r1, #7  = 0x4800 as vram offset to use // 7080 
+//ORG $ADB7C // StartSmallBrownNameBoxes (for trading) is called shortly after the prior org 
+
+ORG $89F0C4		//{U}
+//ORG $8F361C		//{J}
+WORD 0x6013000 // 12000 vanilla
+
+ORG $98998		//{U}
+//ORG $9AC70		//{J}
+//WORD 0x6012000 // 14000 vanilla
+
+ORG $9B970 // Preps		//{U}
+//ORG $9DC34 // Preps		//{J}
+WORD 0x6012000 // 14000 vanilla 
+
+ORG $9D9FC // Supply	//{U}
+//ORG $9FC9C // Supply	//{J}
+WORD 0x6012000 // 13000 vanilla 
+
+//ORG $9F0C4 // List 
+//WORD 0x6013000 // 12000 vanilla 
+
+ORG $355A4 // "Select an item to send to supply / discard" 	//{U}
+//ORG $354AC // "Select an item to send to supply / discard"		//{J}
+WORD 0x6015800 // 14800 vanilla 
+
+ORG $354D8		//{U}
+//ORG $353E0		//{J}
+SHORT 0x42C0 // vanilla 0x4240 
+
+ORG $59E14C	//{U}
+//ORG $5C662C	//{J}
+SHORT $00 $04 $08 $0C $10 $14 $18 $1C $9C $9C $9C $9C $9C $00
+
+// managed to keep this vanilla by hooking LoadDialogueBoxGfx 
+// Shop/Armoury 
+//ORG $B4C74 // mov r0, #0x90 
+//BYTE $E0 // 
+//// lsl r0, #2
+// 
+////ORG $B53A8 // mov r2, #0xC9 
+////BYTE $CE // new locat for spinny arrows on shop 
+//// lsl r2, #6 = 3240 
+//ORG $B4E74 
+//WORD 0x6015000 // vanilla 14C00 
+////r0=0x4260 at B52BC in B52A4 
+//// called by looking for pointer to B52A5 
+//// which is A394C4 in A394C0 proc called from gProc_Shop at 0x8A39210 
+//// poin to A394C0 is at B4A34 (destructor), B4E78, B5AF4, and B5BF8 
+//ORG $B4E7C // shop vram address as #0xAC 
+//SHORT 0x4280 
+//ORG $B53BC 
+
+ORG 0x09C63C	//{U}
+//ORG 0x09E8E2	//{J}
+BYTE 0x1
+
+
+
+POP 
+
+#include "vesly-ExtendWeaponDescBox-tradefix/tradefix.event"

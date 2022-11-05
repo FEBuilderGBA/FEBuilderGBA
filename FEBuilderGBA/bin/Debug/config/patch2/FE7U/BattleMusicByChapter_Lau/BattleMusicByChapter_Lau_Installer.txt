@@ -1,0 +1,12 @@
+
+//#define PerChapterBattleMusic 0xFFF900
+
+PUSH
+ORG 0x67E76
+SHORT 0x4A01 0x4697 0x6969
+POIN PerChapterBattleMusic
+SHORT 0x6969 0x6969
+POP
+
+PerChapterBattleMusic:
+#incbin "PerChapterBattles.bin"

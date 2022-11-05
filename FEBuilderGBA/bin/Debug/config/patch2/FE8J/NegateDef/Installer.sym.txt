@@ -1,0 +1,2 @@
+NegateDefHack=$BC3A14
+NegateDefAmountTable2=$BC3A90

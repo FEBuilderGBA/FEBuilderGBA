@@ -1,0 +1,16 @@
+NAME=NegateDef: 貫通武器を柔軟に設定する(Installer)
+INFO=防御無視の貫通武器をもう少し柔軟に設定できるようにします。\r\n常に防御を0にするのでなく、無視するパーセンテージを指定できるようになります。\r\n10%を設定すると、防御の10%だけを利用するようになります。\r\nまた、フラグを設定することで、そのフラグが有効な場合にのみ有効になるようにもできます。\r\nアイテムの特性3で"防御無視"にチェックをつけて有効にして、このパッチのリストで、無視する防御力を設定してください。\r\nリストに設定されていない場合、バニラと同じ挙動となり、100%の防御を無視します。\r\n設定できる値は、1%-100%までです。0と100以上は設定されていないものとしてバニラの挙動と同じになります。
+AUTHOR=NegateDefHack / Original: Vesly https://feuniverse.us/t/veslys-asm/12011/9  Fixed: 7743
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2ADC4=0x00 0x4B
+EDIT_PATCH=PATCH_NegateDefHack.txt
+EA=Installer.event
+NAME.en=NegateDef: Flexible settings for penetrate weapons(Installer)
+INFO.en=Allows a little more flexibility with piercing weapons that ignore armor.\r\nYou can now specify a percentage to ignore, instead of always setting the defense to 0.\r\nA setting of 10% will only use 10% of your defense.\r\nYou can also set a flag so that it only takes effect if the flag is valid.\r\nEnable "Negate Defenses" in item attribute 3, and set the defenses to ignore in this patch's list.\r\nIf not set in the list, it behaves like vanilla, ignoring 100% defense.\r\nThe value that can be set is from 1% to 100%.  0 and 100 or more will be the same as vanilla behavior as not being set.
+NAME.zh=NegateDef: 穿透性武器的灵活设置(Installer)
+INFO.zh=使用无视护甲的穿刺武器可以提供更多的灵活性。\r\n您现在可以指定要忽略的百分比，而不是始终将防御设置为 0。\r\n设置为 10% 只会使用 10% 的防御。\r\n您还可以设置一个标志，使其仅在标志有效时生效。\r\n在项目属性3中启用“防御无视”，并在此补丁列表中设置忽略防御。\r\n如果未在列表中设置，它的行为就像香草一样，忽略 100% 防御。\r\n可以设置的值是 1% 到 100%。0 和 100 或更多将与未设置的原始行为相同。

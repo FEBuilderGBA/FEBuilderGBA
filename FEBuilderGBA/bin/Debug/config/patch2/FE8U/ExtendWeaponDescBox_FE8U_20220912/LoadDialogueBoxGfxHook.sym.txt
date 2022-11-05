@@ -1,0 +1,2 @@
+Param2Provided=$08
+VramProvided=$28

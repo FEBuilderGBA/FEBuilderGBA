@@ -30,7 +30,6 @@
         {
             this.UpdateButton = new System.Windows.Forms.Button();
             this.CommunityButton = new System.Windows.Forms.Button();
-            this.MakeFeedBackReportButton = new System.Windows.Forms.Button();
             this.OpenButton = new System.Windows.Forms.Button();
             this.ReloadButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
@@ -42,8 +41,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CommunityTextBox = new System.Windows.Forms.TextBox();
-            this.LOGO = new FEBuilderGBA.InterpolatedPictureBox();
             this.SnowAllWorksButton = new System.Windows.Forms.Button();
+            this.ToggleAutoFeedbackButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LOGO = new FEBuilderGBA.InterpolatedPictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             // 
             // CommunityButton
             // 
-            this.CommunityButton.Location = new System.Drawing.Point(17, 281);
+            this.CommunityButton.Location = new System.Drawing.Point(17, 277);
             this.CommunityButton.Name = "CommunityButton";
             this.CommunityButton.Size = new System.Drawing.Size(838, 48);
             this.CommunityButton.TabIndex = 1;
@@ -67,32 +70,22 @@
             this.CommunityButton.UseVisualStyleBackColor = true;
             this.CommunityButton.Click += new System.EventHandler(this.CommunityButton_Click);
             // 
-            // MakeFeedBackReportButton
-            // 
-            this.MakeFeedBackReportButton.Location = new System.Drawing.Point(17, 348);
-            this.MakeFeedBackReportButton.Name = "MakeFeedBackReportButton";
-            this.MakeFeedBackReportButton.Size = new System.Drawing.Size(838, 48);
-            this.MakeFeedBackReportButton.TabIndex = 2;
-            this.MakeFeedBackReportButton.Text = "フィードバックのレポート作成する";
-            this.MakeFeedBackReportButton.UseVisualStyleBackColor = true;
-            this.MakeFeedBackReportButton.Click += new System.EventHandler(this.MakeErrorReportButton_Click);
-            // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(750, 539);
+            this.OpenButton.Location = new System.Drawing.Point(236, 107);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(105, 35);
-            this.OpenButton.TabIndex = 3;
+            this.OpenButton.Size = new System.Drawing.Size(105, 33);
+            this.OpenButton.TabIndex = 2;
             this.OpenButton.Text = "Open";
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // ReloadButton
             // 
-            this.ReloadButton.Location = new System.Drawing.Point(750, 495);
+            this.ReloadButton.Location = new System.Drawing.Point(116, 107);
             this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(105, 35);
-            this.ReloadButton.TabIndex = 2;
+            this.ReloadButton.Size = new System.Drawing.Size(105, 33);
+            this.ReloadButton.TabIndex = 0;
             this.ReloadButton.Text = "Reload";
             this.ReloadButton.UseVisualStyleBackColor = true;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
@@ -107,11 +100,11 @@
             // 
             // InfoTextBox
             // 
-            this.InfoTextBox.Location = new System.Drawing.Point(17, 495);
+            this.InfoTextBox.Location = new System.Drawing.Point(3, 3);
             this.InfoTextBox.Multiline = true;
             this.InfoTextBox.Name = "InfoTextBox";
             this.InfoTextBox.ReadOnly = true;
-            this.InfoTextBox.Size = new System.Drawing.Size(728, 79);
+            this.InfoTextBox.Size = new System.Drawing.Size(832, 98);
             this.InfoTextBox.TabIndex = 7;
             // 
             // label1
@@ -174,6 +167,46 @@
             this.CommunityTextBox.Size = new System.Drawing.Size(458, 25);
             this.CommunityTextBox.TabIndex = 33;
             // 
+            // SnowAllWorksButton
+            // 
+            this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 476);
+            this.SnowAllWorksButton.Name = "SnowAllWorksButton";
+            this.SnowAllWorksButton.Size = new System.Drawing.Size(570, 48);
+            this.SnowAllWorksButton.TabIndex = 3;
+            this.SnowAllWorksButton.Text = "他の作品を表示する";
+            this.SnowAllWorksButton.UseVisualStyleBackColor = true;
+            this.SnowAllWorksButton.Click += new System.EventHandler(this.SnowAllWorksButton_Click);
+            // 
+            // ToggleAutoFeedbackButton
+            // 
+            this.ToggleAutoFeedbackButton.Location = new System.Drawing.Point(17, 360);
+            this.ToggleAutoFeedbackButton.Name = "ToggleAutoFeedbackButton";
+            this.ToggleAutoFeedbackButton.Size = new System.Drawing.Size(838, 48);
+            this.ToggleAutoFeedbackButton.TabIndex = 2;
+            this.ToggleAutoFeedbackButton.Text = "自動フィードバックを無効にする";
+            this.ToggleAutoFeedbackButton.UseVisualStyleBackColor = true;
+            this.ToggleAutoFeedbackButton.Click += new System.EventHandler(this.ToggleAutoFeedbackButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.InfoTextBox);
+            this.panel1.Controls.Add(this.ReloadButton);
+            this.panel1.Controls.Add(this.OpenButton);
+            this.panel1.Location = new System.Drawing.Point(17, 532);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(838, 143);
+            this.panel1.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 18);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "UpdateInfo:";
+            // 
             // LOGO
             // 
             this.LOGO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
@@ -185,21 +218,13 @@
             this.LOGO.TabIndex = 31;
             this.LOGO.TabStop = false;
             // 
-            // SnowAllWorksButton
-            // 
-            this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 441);
-            this.SnowAllWorksButton.Name = "SnowAllWorksButton";
-            this.SnowAllWorksButton.Size = new System.Drawing.Size(570, 48);
-            this.SnowAllWorksButton.TabIndex = 1;
-            this.SnowAllWorksButton.Text = "他の作品を表示する";
-            this.SnowAllWorksButton.UseVisualStyleBackColor = true;
-            this.SnowAllWorksButton.Click += new System.EventHandler(this.SnowAllWorksButton_Click);
-            // 
             // ToolWorkSupportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(867, 586);
+            this.ClientSize = new System.Drawing.Size(867, 678);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ToggleAutoFeedbackButton);
             this.Controls.Add(this.SnowAllWorksButton);
             this.Controls.Add(this.CommunityTextBox);
             this.Controls.Add(this.label4);
@@ -209,16 +234,14 @@
             this.Controls.Add(this.AuthorTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.InfoTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.ReloadButton);
-            this.Controls.Add(this.OpenButton);
-            this.Controls.Add(this.MakeFeedBackReportButton);
             this.Controls.Add(this.CommunityButton);
             this.Controls.Add(this.UpdateButton);
             this.Name = "ToolWorkSupportForm";
             this.Text = "作品支援";
             this.Load += new System.EventHandler(this.WorkSupport_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,7 +252,6 @@
 
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button CommunityButton;
-        private System.Windows.Forms.Button MakeFeedBackReportButton;
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button ReloadButton;
         private System.Windows.Forms.TextBox NameTextBox;
@@ -243,5 +265,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox CommunityTextBox;
         private System.Windows.Forms.Button SnowAllWorksButton;
+        private System.Windows.Forms.Button ToggleAutoFeedbackButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
     }
 }

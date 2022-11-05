@@ -1,4 +1,4 @@
-NAME=闘技場BGMを柔軟に変更する(Editor)
+NAME=闘技場BGMを柔軟に変更する 20210519(Editor)
 INFO=Arena BGMを出現する敵クラスやプレイヤーユニットなどの条件に応じて変更できるようにします。\r\nリストは上から探索され、どれにもマッチしない場合は、ディフォルトの闘技場BGMが再生されます。\r\n
 
 
@@ -32,8 +32,8 @@ W4:FLAG=CheckFlag(0=ANY)
 W6:SONG=ChangeBGM
 
 HINT=ソング 音楽 Song Music
-NAME.en=Flexible change of Arena BGM(Editor)
+NAME.en=Flexible change of Arena BGM 20210519(Editor)
 INFO.en=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.\r\nThe list is searched from the top, and if none of them match, the default arena BGM is played.\r\n
 
-NAME.zh=Flexible change of Arena BGM(Editor)
+NAME.zh=Flexible change of Arena BGM 20210519(Editor)
 INFO.zh=This patch allows you to change the Arena BGM according to the conditions such as the enemy class and player unit that appear.\r\nThe list is searched from the top, and if none of them match, the default arena BGM is played.\r\n

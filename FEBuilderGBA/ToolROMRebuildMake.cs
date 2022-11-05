@@ -100,6 +100,8 @@ namespace FEBuilderGBA
 
         Dictionary<Address, uint> OptimizeList_MakeScore(InputFormRef.AutoPleaseWait wait, List<Address> list)
         {
+            U.ReleaseMemory(wait);
+
             int orignalCount = (int)list.Count;
             wait.DoEvents(R._("データを最適化中... {0}({1})", orignalCount, 0));
 
@@ -346,6 +348,22 @@ namespace FEBuilderGBA
                 refCmdList.Add(refCmd);
             }
         }
+        void FindHardcodingPointer(uint search_pointer, string info)
+        {
+            //よくリポイントされる未知のポインタを探します。
+            uint search_addr = Program.ROM.p32(search_pointer);
+            if (! isRebuildAddress(search_addr))
+            {//リビルド領域にないので関係ないです
+                return;
+            }
+
+            List<uint> list = MoveToFreeSapceForm.SearchPointer(search_addr, isSilent: true);
+            foreach (uint addr in list)
+            {
+                Address.AddPointer(StructList, addr, 4, info, Address.DataTypeEnum.POINTER);
+            }
+        }
+
         bool IsNULLData(byte[] bin)
         {
             for (int i = 0; i < bin.Length; i++)
@@ -435,7 +453,10 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (!IsNonLDRType(a.Pointer))
+                if (IsIFRData(a))
+                {
+                }
+                else if (!IsNonLDRType(a.Pointer))
                 {//このアドレスはデータの中にあるので書き換えてはいけません
                     continue;
                 }
@@ -447,6 +468,26 @@ namespace FEBuilderGBA
                     , "AppendPointer:" + a.Info
                     , Address.DataTypeEnum.POINTER);
             }
+        }
+        bool IsIFRData(Address a)
+        {
+            if (!(a.DataType == Address.DataTypeEnum.InputFormRef
+                || a.DataType == Address.DataTypeEnum.InputFormRef_ASM
+                || a.DataType == Address.DataTypeEnum.InputFormRef_MIX)
+                )
+            {
+                return false;
+            }
+            if (!U.isSafetyOffset(a.Addr))
+            {
+                return false;
+            }
+            if (a.Length > 0xffff)
+            {
+                return false;
+            }
+
+            return true;
         }
         //LDR DATA が正しいかどうか検証する
         bool CheckTrueLDRData(uint addr)
@@ -507,7 +548,6 @@ namespace FEBuilderGBA
             for (int i = 0; i < ldrmap.Count; i++)
             {
                 DisassemblerTrumb.LDRPointer ldr = ldrmap[i];
-
                 if (!CheckTrueLDRAddress(ldr.ldr_address))
                 {
                     continue;
@@ -787,6 +827,10 @@ namespace FEBuilderGBA
                 );
             AsmMapFile.InvalidateUNUNSED(StructList);
             DeleteCommentData();
+            FindHardcodingPointer(Program.ROM.RomInfo.item_pointer, "ITEM_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.class_pointer, "CLASS_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.icon_pointer, "ICON_POINTER");
+            FindHardcodingPointer(Program.ROM.RomInfo.portrait_pointer, "PORTRAIT_POINTER");
             AppendPointer();
 
             wait.DoEvents(R._("データを準備中..."));
@@ -862,6 +906,7 @@ namespace FEBuilderGBA
 
             wait.DoEvents(R._("未知のハックを探索中..."));
             FindUnknownHack2(refCmdList,processedAddress);
+
 
             StringBuilder rebuildData = new StringBuilder();
             rebuildData.Append(RefSortSimple(wait, refCmdList));

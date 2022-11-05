@@ -1,0 +1,17 @@
+NAME=闘技場の相手のパレット
+INFO=闘技場に生成される相手は、通常、敵軍（赤/RED）ですが、このパッチでそれを変更することができます。
+NAME.en=ArenaOpponentAllegiance
+INFO.en=The opponent generated in the arena is normally an enemy (red). This patch can change that.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1036046410262523974
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Enemy(Red)|RED|Player(Blue)|BLU|NPC(Green)|GRE|Other(Purple)|PUR
+
+RED:0x31AD2=0x80
+BLU:0x31AD2=0x00
+GRE:0x31AD2=0x40
+PUR:0x31AD2=0xC0
+NAME.zh=对手在竞技场的托盘。
+INFO.zh=在竞技场中生成的对手通常是敌方部队 (RED)，但您可以通过此补丁对其进行更改。

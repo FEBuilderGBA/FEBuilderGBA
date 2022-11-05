@@ -1,4 +1,4 @@
-NAME=固定成長モード
+NAME=固定成長モード 20220505
 NAME.en=FixedGrowthsMode 20220505
 
 TYPE=EA

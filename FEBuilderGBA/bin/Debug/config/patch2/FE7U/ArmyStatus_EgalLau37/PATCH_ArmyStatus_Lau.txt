@@ -1,0 +1,19 @@
+
+NAME.en=Custom Fortune/Army Status options (installer)
+INFO.en=This changes the Fortune/Army Status option during battle preparations to display options based on a flag table.
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x8E9B0=0x00 0x49 0x8F 0x46
+EDIT_PATCH=PATCH_ArmyStatus_Lau_Editor.txt
+EA=ArmyStatus_Lau_Installer.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+NAME=Custom Fortune/Army Status options (installer)
+INFO=This changes the Fortune/Army Status option during battle preparations to display options based on a flag table.
+NAME.zh=Custom Fortune/Army Status options (installer)
+INFO.zh=This changes the Fortune/Army Status option during battle preparations to display options based on a flag table.

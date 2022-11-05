@@ -631,24 +631,24 @@ NAME.zh=技能SkillSystems20190404（技能扩展）
 REPLACE_POINTER:0x809B10=ITEM
 
 
-EVENTSCRIPT:1=400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)(LOW)	@STOREC
+EVENTSCRIPT:1=400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)(LOW)	@STOREC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:2=40050200XX00000040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	[XX:UNIT:Unit]が[YY:SKILL:SkillID]を持っているかどうか判定(HasSkill)	@STOREC	{UNIT}	{COND}
 EVENTSCRIPT:3=212E00002006C20040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	現在操作しているユニットが[YY:SKILL:SkillID]を持っているかどうか判定(HasSkill)	@STOREC	{UNIT}	{COND}
-EVENTSCRIPT:4=400D0000{$L1:ASMC_LearnSkill.bin}	ユニットにスキルを習得させます(LearnSkill)(LOW)	@RETC
+EVENTSCRIPT:4=400D0000{$L1:ASMC_LearnSkill.bin}	ユニットにスキルを習得させます(LearnSkill)(LOW)	@RETC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:5=40050200XX00000040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	[XX:UNIT:Unit]に[YY:SKILL:SkillID]を習得させます(LearnSkill)	{UNIT}
 EVENTSCRIPT:6=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	現在操作しているユニットに[YY:SKILL:SkillID]を習得させます(LearnSkill)	{UNIT}
 
-EVENTSCRIPT:1.en=400D0000{$L1:ASMC_HasSkill.bin}	Check if unit has skill(HasSkill)(LOW)	@STOREC
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_HasSkill.bin}	Check if unit has skill(HasSkill)(LOW)	@STOREC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:2.en=40050200XX00000040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	Check if [XX:UNIT:Unit] has [YY:SKILL:SkillID](HasSkill)	@STOREC	{UNIT}	{COND}
 EVENTSCRIPT:3.en=212E00002006C20040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	Check if currently operating unit has [YY:SKILL:SkillID](HasSkill)	@STOREC	{UNIT}	{COND}
-EVENTSCRIPT:4.en=400D0000{$L1:ASMC_LearnSkill.bin}	Learn unit acquire skill(LearnSkill)(LOW)	@RETC
+EVENTSCRIPT:4.en=400D0000{$L1:ASMC_LearnSkill.bin}	Learn unit acquire skill(LearnSkill)(LOW)	@RETC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:5.en=40050200XX00000040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	Make specified [XX:UNIT:Unit] learn [YY:SKILL:SkillID](LearnSkill)	{UNIT}
 EVENTSCRIPT:6.en=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	Make currently operating unit learn [YY:SKILL:SkillID](LearnSkill)	{UNIT}
 
-EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_HasSkill.bin}	人物是不是有着技艺(HasSkill)(LOW)	@STOREC
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_HasSkill.bin}	人物是不是有着技艺(HasSkill)(LOW)	@STOREC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:2.zh=40050200XX00000040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	人物是不是有着技艺(HasSkill)[XX:UNIT:Unit][YY:SKILL:SkillID]	@STOREC	{UNIT}	{COND}
 EVENTSCRIPT:3.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	检查当前的操作人物是否具备技能(HasSkill)[YY:SKILL:SkillID]	@STOREC	{UNIT}	{COND}
-EVENTSCRIPT:4.zh=400D0000{$L1:ASMC_LearnSkill.bin}	让人物学会技艺(LearnSkill)(LOW)	@RETC
+EVENTSCRIPT:4.zh=400D0000{$L1:ASMC_LearnSkill.bin}	让人物学会技艺(LearnSkill)(LOW)	@RETC	slot2=UnitID, slot1=SkillID
 EVENTSCRIPT:5.zh=40050200XX00000040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	让人物学会技艺(LearnSkill)[XX:UNIT:Unit][YY:SKILL:SkillID]	{UNIT}
 EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	精益当前的运营人物获得技能
 (LearnSkill)[YY:SKILL:SkillID]	{UNIT}

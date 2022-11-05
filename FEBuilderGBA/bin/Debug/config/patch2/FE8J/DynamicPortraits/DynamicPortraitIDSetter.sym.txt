@@ -1,0 +1,7 @@
+DynamicPortraitTable=$7C
+Loop=$08
+End=$5A
+CheckFlag=$14
+CheckUnitID=$26
+Found=$58
+CheckClass=$4A

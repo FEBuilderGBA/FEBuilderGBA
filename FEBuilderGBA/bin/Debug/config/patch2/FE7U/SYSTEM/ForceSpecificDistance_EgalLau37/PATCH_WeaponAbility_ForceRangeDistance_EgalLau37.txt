@@ -1,0 +1,18 @@
+
+NAME.en=Force specific distance for battle animations
+NAME=Force specific distance for battle animations
+NAME.zh=Force specific distance for battle animations
+
+//forces specific ranged distance, melee is disabled currently due to softlock...
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x51FB2=0x01 0x49 0x8F 0x46 0x69 0x69
+EA=ForceSpecificRangeInstaller_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+
+INFO=By default, flag 0x80, field 1 forces long-range distance in addition to disabling countering from either side.  This patch splits that ability into its own ability in field 4.  In field 4, the flags are: 01 - melee (disabled due to softlocking from range) ; 02 - ranged ; 04 - long-distance ; 08 - solo(such as during use of Fortify) ; 10 - promotions .  All possible options are included in case someone has use for them, but the main ones to use are flags 02 and 04. 
+INFO.en=By default, flag 0x80, field 1 forces long-range distance in addition to disabling countering from either side.  This patch splits that ability into its own ability in field 4.  In field 4, the flags are: 01 - melee (disabled due to softlocking from range) ; 02 - ranged ; 04 - long-distance ; 08 - solo(such as during use of Fortify) ; 10 - promotions .  All possible options are included in case someone has use for them, but the main ones to use are flags 02 and 04.
+INFO.zh=By default, flag 0x80, field 1 forces long-range distance in addition to disabling countering from either side.  This patch splits that ability into its own ability in field 4.  In field 4, the flags are: 01 - melee (disabled due to softlocking from range) ; 02 - ranged ; 04 - long-distance ; 08 - solo(such as during use of Fortify) ; 10 - promotions .  All possible options are included in case someone has use for them, but the main ones to use are flags 02 and 04.

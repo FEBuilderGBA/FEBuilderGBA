@@ -402,7 +402,7 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(form, procs_jump_addr);
         }
 
-        static uint SearchMapTaskProcsAddr()
+        public static uint SearchMapTaskProcsAddr()
         {
             uint maptaskProcsAddr = Program.ROM.u32(Program.ROM.RomInfo.procs_maptask_pointer);
             return SearchProcsAddr(maptaskProcsAddr);
@@ -1462,8 +1462,8 @@ namespace FEBuilderGBA
         static public List<EmulatorMemoryUtil.AddressList> GetBattleSomeDataStruct()
         {
             List<AddressList> ret = new List<AddressList>();
-            if (Program.ROM.RomInfo.version != 8)
-            {//FE6 FE7
+            if (Program.ROM.RomInfo.version == 6)
+            {//FE6
                 return ret;
             }
             ret.Add(new AddressList(0x00, "UnknownBattleFlag", "", 4));
@@ -2016,6 +2016,413 @@ namespace FEBuilderGBA
         {
             InputFormRef.CloseForm<RAMRewriteToolForm>();
             InputFormRef.CloseForm<RAMRewriteToolMAPForm>();
+        }
+        public static uint VillageDestoryXY()
+        {
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
+            uint phase = Program.RAM.u8(stageStructAddr + 0x0F);
+            if (phase != 0x80)
+            {//敵フェーズではない
+                return U.NOT_FOUND;
+            }
+            uint aiAddr = Program.ROM.RomInfo.workmemory_ai_data_address;
+            uint decisionType = Program.RAM.u8(aiAddr + 0x90);
+            if (decisionType != 4)
+            {//村破壊ではない
+                return U.NOT_FOUND;
+            }
+            uint xy = Program.RAM.u16(aiAddr + 0x92);
+            return xy;
+        }
+
+
+        public static bool IsFlag0x03Enable()
+        {
+            const uint flag0x03Bit = (1 << (0x3 - 1));
+            uint localflag = Program.RAM.u8(Program.ROM.RomInfo.workmemory_local_flag_address);
+
+            if ((localflag & flag0x03Bit) == flag0x03Bit)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static uint DeadPlayerUnit()
+        {
+            uint uid;
+            uid = DeadPlayerUnit(Program.ROM.RomInfo.workmemory_battle_actor_address);
+            if (uid != 0)
+            {
+                return uid;
+            }
+
+            uid = DeadPlayerUnit(Program.ROM.RomInfo.workmemory_battle_target_address);
+            if (uid != 0)
+            {
+                return uid;
+            }
+
+            return 0;
+        }
+        static uint DeadPlayerUnit(uint baseaddr)
+        {
+            const uint UnitTableIndex = 0x0B;
+            uint HPIndex = 0x12;
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                HPIndex = 0x10;
+            }
+
+            uint maxHP = Program.RAM.u8(baseaddr + HPIndex);
+            if (maxHP != 0)
+            {
+                uint currentHP = Program.RAM.u8(baseaddr + HPIndex + 1);
+                if (currentHP == 0)
+                {
+                    uint unitTable = Program.RAM.u8(baseaddr + UnitTableIndex);
+                    if (unitTable >= 1 && unitTable < 0x40)
+                    {
+                        uint pointer = Program.RAM.u32(baseaddr);
+                        if (U.isSafetyPointer(pointer))
+                        {
+                            return Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+        public static string MakeUnitBattleExtraInfo()
+        {
+            StringBuilder sb = new StringBuilder();
+            MakeUnitBattleExtraInfoLow(sb, Program.ROM.RomInfo.workmemory_battle_actor_address);
+            sb.AppendLine("VS");
+            MakeUnitBattleExtraInfoLow(sb, Program.ROM.RomInfo.workmemory_battle_target_address);
+            return sb.ToString();
+        }
+
+        static void MakeUnitBattleExtraInfoLow(StringBuilder sb, uint baseaddr)
+        {
+            {
+                uint lvl = Program.RAM.u8(baseaddr + 0x08);
+                if (lvl == 0)
+                {
+                    return;
+                }
+                sb.Append("Lv");
+                sb.Append(lvl);
+                sb.Append(' ');
+                sb.Append('/');
+            }
+
+
+            uint pointer = Program.RAM.u32(baseaddr);
+            if (U.isSafetyPointer(pointer))
+            {
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(UnitForm.GetUnitName(id));
+            }
+
+            pointer = Program.RAM.u32(baseaddr + 4);
+            if (U.isSafetyPointer(pointer))
+            {
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(' ');
+                sb.Append("/");
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ClassForm.GetClassName(id));
+            }
+
+            {
+                uint id = Program.RAM.u8(baseaddr + 0x4A);
+                sb.Append(" /");
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ItemForm.GetItemName(id));
+
+                sb.Append(' ');
+                sb.Append('@');
+                uint count = Program.RAM.u8(baseaddr + 0x4B);
+                sb.Append(count);
+            }
+            sb.AppendLine();
+
+            uint subFE6 = 0;
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                subFE6 = 0x2;
+            }
+
+            {
+                uint maxhp = Program.RAM.u8(baseaddr + 0x12 - subFE6);
+                uint currenthp = Program.RAM.u8(baseaddr + 0x13 - subFE6);
+                sb.Append("HP:");
+                sb.Append(currenthp);
+                sb.Append("/");
+                sb.Append(maxhp);
+            }
+            {
+                uint x = Program.RAM.u8(baseaddr + 0x10 - subFE6);
+                uint y = Program.RAM.u8(baseaddr + 0x11 - subFE6);
+                sb.Append("  /XY:");
+                sb.Append(x);
+                sb.Append(",");
+                sb.Append(y);
+            }
+            sb.AppendLine();
+        }
+
+        static void MakeDeployUnits(out uint all, out uint alive, out uint deploy)
+        {
+            const uint RAMUnitSizeOf = 72; //構造体のサイズ
+            const uint UnitStatusUnDeploy = 0x04;
+            const uint UnitStatusDead = 0x02;
+
+            all = 0;
+            alive = 0;
+            deploy = 0;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address; 
+            for (uint i = 0 ; i < 62; i++, addr += RAMUnitSizeOf)
+            {
+                uint unitPointer = Program.RAM.u32(addr);
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    break;
+                }
+
+                uint status = Program.RAM.u32(addr + 0xC);
+                if ((status & UnitStatusUnDeploy) != UnitStatusUnDeploy)
+                {
+                    deploy++;
+                }
+                if ((status & UnitStatusDead) != UnitStatusDead)
+                {
+                    alive++;
+                }
+                all = i + 1;
+            }
+
+        }
+
+        static void MakeTopUnits(StringBuilder sb, uint limitCount)
+        {
+            const uint RAMUnitSizeOf = 72; //構造体のサイズ
+            const uint UnitStatusUnDeploy = 0x04;
+            const uint UnitStatusDead = 0x02;
+
+            uint subFE6 = 0;
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                subFE6 = 0x2;
+            }
+
+            uint count = 0;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address;
+            for (uint i = 0; i < 62; i++, addr += RAMUnitSizeOf)
+            {
+                uint unitPointer = Program.RAM.u32(addr);
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    break;
+                }
+
+                uint status = Program.RAM.u32(addr + 0xC);
+                if ((status & UnitStatusUnDeploy) == UnitStatusUnDeploy)
+                {
+                    continue;
+                }
+                if ((status & UnitStatusDead) == UnitStatusDead)
+                {
+                    continue;
+                }
+
+                uint pointer = Program.RAM.u32(addr);
+                if (!U.isSafetyPointer(pointer))
+                {
+                    continue;
+                }
+                else
+                {
+                    uint lvl = Program.RAM.u8(addr + 0x08);
+                    if (lvl == 0)
+                    {
+                        continue;
+                    }
+                    sb.Append("Lv");
+                    sb.Append(lvl.ToString());
+                    sb.Append(' ');
+                    sb.Append('/');
+
+                    uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                    sb.Append(id.ToString("X02"));
+                    sb.Append(' ');
+                    sb.Append(UnitForm.GetUnitName(id));
+                    sb.Append(' ');
+                }
+
+                pointer = Program.RAM.u32(addr + 4);
+                if (U.isSafetyPointer(pointer))
+                {
+                    sb.Append('/');
+                    uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                    sb.Append(id.ToString("X02"));
+                    sb.Append(' ');
+                    sb.Append(ClassForm.GetClassName(id));
+                }
+
+                uint itemid = Program.RAM.u8(addr + 0x1E - subFE6);
+                if (itemid != 0)
+                {
+                    sb.Append('/');
+                    sb.Append(itemid.ToString("X02"));
+                    sb.Append(' ');
+                    sb.Append(ItemForm.GetItemName(itemid));
+
+                    uint uses = Program.RAM.u8(addr + 0x1F - subFE6);
+                    sb.Append(" @");
+                    sb.Append(uses);
+                }
+                sb.AppendLine();
+
+                count++;
+                if (count >= limitCount)
+                {
+                    break;
+                }
+            }
+        }
+
+        public static string MakeActiveUnitExtraInfo()
+        {
+            uint subFE6 = 0;
+            if (Program.ROM.RomInfo.version == 6)
+            {
+                subFE6 = 0x2;
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            uint control_unit_address = Program.ROM.RomInfo.workmemory_control_unit_address;
+            uint addr = Program.RAM.u32(control_unit_address);
+
+            if (!U.is_02RAMPointer(addr))
+            {//選択しているキャラクターはいない.
+                return "";
+            }
+
+            uint pointer = Program.RAM.u32(addr + 0x0);
+            if (!U.isSafetyPointer(pointer))
+            {
+                return "";
+            }
+            else
+            {
+                uint lvl = Program.RAM.u8(addr + 0x08);
+                if (lvl == 0)
+                {
+                    return "";
+                }
+                sb.Append("Lv");
+                sb.Append(lvl.ToString());
+                sb.Append(' ');
+                sb.Append('/');
+
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(UnitForm.GetUnitName(id));
+                sb.Append(' ');
+            }
+
+            pointer = Program.RAM.u32(addr + 4);
+            if (U.isSafetyPointer(pointer))
+            {
+                sb.Append('/');
+                uint id = Program.ROM.u8(U.toOffset(pointer) + 0x4);
+                sb.Append(id.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ClassForm.GetClassName(id));
+            }
+
+            uint itemid = Program.RAM.u8(addr + 0x1E - subFE6);
+            if (itemid != 0)
+            {
+                sb.Append('/');
+                sb.Append(itemid.ToString("X02"));
+                sb.Append(' ');
+                sb.Append(ItemForm.GetItemName(itemid));
+
+                uint uses = Program.RAM.u8(addr + 0x1F - subFE6);
+                sb.Append(" @");
+                sb.Append(uses);
+            }
+            sb.AppendLine();
+
+            return sb.ToString();
+        }
+
+        public static string MakeChapterExtraInfo()
+        {
+            StringBuilder sb = new StringBuilder();
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
+            {
+                uint turn = Program.RAM.u16(stageStructAddr + 0x10);
+                sb.Append("Turn:");
+                sb.Append(turn);
+                sb.AppendLine();
+            }
+
+            {
+                uint units, alive, deploy;
+                MakeDeployUnits(out units, out alive, out deploy);
+                sb.Append("Units:");
+                sb.Append(units);
+                sb.Append(" /Alive:");
+                sb.Append(alive);
+                sb.Append(" /Deploy:");
+                sb.Append(deploy);
+                sb.AppendLine();
+            }
+            if (Program.ROM.RomInfo.version >= 7)
+            {
+                sb.Append("Mode:");
+                uint v = EmulatorMemoryUtil.GetDiffecly();
+                string diffecly = EmulatorMemoryUtil.ConvertDiffeclyToString(v);
+                sb.Append(diffecly);
+                sb.Append(' ');
+
+                v = EmulatorMemoryUtil.GetEdition();
+                string editon = EmulatorMemoryUtil.ConvertEditionToString(v);
+                sb.Append(editon);
+            }
+            else
+            {
+                sb.Append("Mode:");
+                uint v = EmulatorMemoryUtil.GetDiffecly();
+                string diffecly = EmulatorMemoryUtil.ConvertDiffeclyToString(v);
+                sb.Append(diffecly);
+            }
+            {
+                uint gold = Program.RAM.u32(stageStructAddr + 0x08);
+                sb.Append(" /Gold:");
+                sb.Append(gold);
+            }
+            sb.AppendLine();
+
+            //一覧表の上から10人
+            MakeTopUnits(sb, 10);
+            return sb.ToString();
         }
     }
 }

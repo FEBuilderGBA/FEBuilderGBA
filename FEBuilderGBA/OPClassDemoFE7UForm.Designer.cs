@@ -110,9 +110,9 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_20_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_19_TERRAINBATTLEICON_PLUS1)).BeginInit();
@@ -258,7 +258,9 @@
             this.L_12_COMBO.FormattingEnabled = true;
             this.L_12_COMBO.Items.AddRange(new object[] {
             "00=自軍",
-            "01=敵軍"});
+            "01=敵軍",
+            "02=NPC",
+            "03=グレー"});
             this.L_12_COMBO.Location = new System.Drawing.Point(266, 250);
             this.L_12_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_12_COMBO.Name = "L_12_COMBO";
@@ -1210,18 +1212,6 @@
             this.panel12.Size = new System.Drawing.Size(255, 730);
             this.panel12.TabIndex = 162;
             // 
-            // LabelFilter
-            // 
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(253, 26);
-            this.LabelFilter.TabIndex = 163;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddressList
             // 
             this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1244,6 +1234,18 @@
             this.AddressListExpandsButton.TabIndex = 165;
             this.AddressListExpandsButton.Text = "リストの拡張";
             this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(253, 26);
+            this.LabelFilter.TabIndex = 163;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OPClassDemoFE7UForm
             // 

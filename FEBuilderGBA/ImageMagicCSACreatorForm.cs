@@ -247,6 +247,7 @@ namespace FEBuilderGBA
             if (error != "")
             {
                 R.ShowStopError(error);
+                InputFormRef.IfAdditionalErrorMessagesForIdiotsWhoDontKnowHowToUnzipTheZip(filename);
                 return;
             }
         }

@@ -1,0 +1,17 @@
+NAME=カジュアルモード Flag 0x8C 20221005
+NAME.en=CasualMode Flag 0x8C 20221005
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=CasualMode.event
+
+INFO=グローバルフラグ0x8CをONにした状態で、プレイヤーユニットが死亡しても、次の章で自動的に復活するようになります。\r\nもともとは0xA0でしたが、0xA0はセーブファイルに保存されないので、保存される最後のフラグである0x8Cに変更しました
+
+PATCHED_IF:0x17BEC=0x00 0x4B 0x18 0x47
+USEFLAG=0x8C
+
+AUTHOR=circleseverywhere, 7743
+INFO.en=Even if the player unit dies while the global flag 0x8C is set to ON, it will be automatically restored in the next chapter.\r\nOriginally 0xA0, but since 0xA0 is not saved in the save file, we changed it to 0x8C, the last flag to be saved
+NAME.zh=休闲模式 Flag 0x8C 20221005
+INFO.zh=即使播放器人物在全局标志0x8C设置为ON时死亡，它也将在下一章中自动恢复。\r\nOriginally 0xA0, but since 0xA0 is not saved in the save file, we changed it to 0x8C, the last flag to be saved

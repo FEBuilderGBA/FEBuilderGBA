@@ -25,7 +25,7 @@ ALLLL:0xA13DCA=0x01
 ALLLL:0xA13DDA=0x01
 
 AUTHOR=7743
-INFO=経験値を取得するときに表示する棒グラフを早く表示して、早く閉じるようにします。\r\nディフォルトでは、合計で1秒程度のディレイが設定されています。\r\nこのパッチはそれを取り除き高速にバーを表示します。
+INFO=経験値を取得するときに表示する棒グラフ(バー)を早く表示して、早く閉じるようにします。\r\nディフォルトでは、合計で1秒程度のディレイが設定されています。\r\nこのパッチはそれを取り除き高速にバーを表示します。
 INFO.en=Display the bar graph that is displayed when you get experience points earlier, and close it earlier.\r\nBy default, a total delay of about 1 second is set.\r\nThis patch removes it and displays the bar faster.
 NAME.zh=获取地图动画中的经验值 高速显示栏。
 INFO.zh=显示较早获得经验值时显示的条形图，并提前关闭它。\r\n默认情况下，设置的总延迟约为 1 秒。\r\n此补丁将其删除并更快地显示栏。

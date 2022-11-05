@@ -1,0 +1,10 @@
+PUSH
+ORG 0x51FB2
+SHORT 0x4901 0x468F 0x6969
+POIN ForceDistanceCode
+WORD 0x75614C21
+POP
+
+ALIGN 4
+ForceDistance:
+#incbin ForceSpecificDistance.bin

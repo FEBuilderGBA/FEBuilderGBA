@@ -58,9 +58,11 @@ ORG 0x0A5B02
 ORG 0x0A5BC0
 #incbin "000AA5D8.bin"
 
-//ORG 0x0BA8EC
-ORG 0x0B5ED4
-#incbin "000BA8EC.bin"
+//manual saving
+//ORG 0x0BA8EC	//FE8J
+ORG 0xB5D66
+#incbin "000B5D66.bin"
+
 
 //アイコン GBAのアイコン
 ORG 0xA2E9EC

@@ -1,0 +1,17 @@
+NAME=ExtendWeaponDescBox 20220912 武器の説明欄を1行から3行に拡張する
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x2D2EA=0xB0 0x21
+EA=Installer.event
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/76
+INFO=武器の説明欄をバニラの1行から、最大3行にまで拡張します。\r\nただし、3行まで説明を書いた場合、VRAM領域が不足するので、交換メニューでRボタンを押したときに、交換相手の顔画像が非表示になります。(2行までなら非表示にはなりません。)
+
+NAME.en=ExtendWeaponDescBox 20220912 Extends weapon description from 1 line to 3 lines
+INFO.en=Expands the weapon description field from vanilla's 1 line to a maximum of 3 lines.\r\nHowever, if you write a description up to 3 lines, the VRAM area will be insufficient, so when you press the R button in the Trade menu, the face image of the exchange partner will be hidden.(It will not be hidden if it is up to 2 lines.).
+NAME.zh=ExtendWeaponDescBox 20220912 将武器描述框从 1 行扩展到 3 行。
+INFO.zh=将武器描述字段从原版的 1 行扩展到最多 3 行。\r\n但是，如果最多写 3 行描述，VRAM 区域就会不足，所以当你在交换菜单中按下 R 键时，交换伙伴的面部图像将被隐藏。（如果不超过 2 行，则不会隐藏。）。
+
+ALLOC_SIZE_HINT=660			//パッチ全体のサイズ

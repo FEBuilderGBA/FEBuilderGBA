@@ -1,0 +1,19 @@
+
+NAME=強制アニメONにするクラスID
+NAME.en=Class ID to force battle animations
+
+//Class ID to force battle animations
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x052784
+ADDRESS_TYPE=CLASS
+DATASIZE=1
+HEX=true
+
+AUTHOR=SageMatthis/EgalLau37
+
+INFO=常にアニメーションを強制するためのクラスIDです。\r\nデフォルトでは、ラスボスであるクラス0x46に使用されます。
+INFO.en=Class ID to always force animations.  By default, this is used for the final boss, class 0x46.
+NAME.zh=Class ID to force battle animations
+INFO.zh=Class ID to always force animations.  By default, this is used for the final boss, class 0x46.

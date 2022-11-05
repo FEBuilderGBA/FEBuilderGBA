@@ -1,0 +1,14 @@
+NAME=Limit Weapon Rank Display
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=install.txt
+PATCHED_IF:0x89A3C=0x28 0x1C 0x8D 0xF7
+
+INFO=ステータスメニューに表示される武器のうち、ランクがないものをすべて非表示にするパッチです。\r\nこのルーチンは、FE8Nスキルの一部として利用されています。
+INFO.en=Patches the ROM to hide all weapon types on the Status Menu that a unit has no rank in.\r\nFor example, if a unit can equip Swords and Lances, only Swords and Lances will appear.\r\nThis routine is used as part of the FE8N skill.
+
+AUTHOR=aera
+
+INFO.zh=此补丁在状态菜单中隐藏了所有未排名的武器。\r\n此例程用作 FE8N 技能的一部分。

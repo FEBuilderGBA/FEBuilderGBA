@@ -1,0 +1,6 @@
+Skip2=$2C
+get_menu_name=$74
+DrawString=$3C
+ItemSpecialEffectCallUsability=$A8
+Break=$8C
+Exit=$8E

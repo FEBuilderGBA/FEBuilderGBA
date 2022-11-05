@@ -1,0 +1,30 @@
+
+NAME.en=Custom Fortune/Army Status options (editor)
+INFO.en=Set which options appear when selecting Fortune during battle preparations.  The flags used here are different from the event ID flags used during chapters.  Flags: 01=Ranking , 02=Tactician , 04=Augury , 08=Supports , 03=Ranking+Tactician . 
+
+IF:0x8E9B0=0x00 0x49 0x8F 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ForceFortuneFlagCode.bin
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x69
+
+//リストに表示されるのはユニットIDです
+LISTNAME=MAP
+
+//データを定義します
+B0=Flags
+
+
+NAME=Custom Fortune/Army Status options (editor)
+INFO=Set which options appear when selecting Fortune during battle preparations.  The flags used here are different from the event ID flags used during chapters.  Flags: 01=Ranking , 02=Tactician , 04=Augury , 08=Supports , 03=Ranking+Tactician . 
+NAME.zh=Custom Fortune/Army Status options (editor)
+INFO.zh=Set which options appear when selecting Fortune during battle preparations.  The flags used here are different from the event ID flags used during chapters.  Flags: 01=Ranking , 02=Tactician , 04=Augury , 08=Supports , 03=Ranking+Tactician . 

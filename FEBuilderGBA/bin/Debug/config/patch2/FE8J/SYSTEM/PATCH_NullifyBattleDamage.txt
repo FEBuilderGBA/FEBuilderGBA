@@ -1,0 +1,17 @@
+
+NAME=ダメージを0にするアイテムID
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2B332
+ADDRESS_TYPE=ITEM
+AUTHOR=7743
+
+INFO=このアイテムはダメージを0にします。\r\nバニラでは、0xB5ストーンに設定されています。
+DEFAULT=0xB5
+NAME.en=Item ID that reduces damage to 0.
+INFO.en=This item reduces damage to 0.\r\nIn vanilla, it is set to 0xB5 stone.
+NAME.zh=将伤害减至 0 的物品 ID。
+INFO.zh=此物品可将伤害减至 0。\r\n在原版中，它设置为 0xB5 石头。

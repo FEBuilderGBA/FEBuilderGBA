@@ -1,0 +1,15 @@
+NAME=MurderSticks: 武器できる杖の詳細情報の表示
+INFO=このパッチは、武器として装備して攻撃できる杖をメニューから選択した時に、他の武器と同じように攻撃力などの情報を表示するようにします。
+AUTHOR=Zeta https://feuniverse.us/t/zetas-asm-c-spellbook/4824/13 ,fix 7743
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x1E802=0x00 0x00
+EA=Installer.event
+NAME.en=MurderSticks: Displays detailed information about sticks that can be used as weapons.
+INFO.en=With this patch, when you select a stave that can be equipped as a weapon and attack from the menu, information such as attack power will be displayed like other weapons.
+NAME.zh=MurderSticks：显示有关可用作武器的棍子的详细信息。
+INFO.zh=在这个补丁中，当您从菜单中选择可以作为武器装备和攻击的五线谱时，攻击力等信息将与其他武器一样显示。

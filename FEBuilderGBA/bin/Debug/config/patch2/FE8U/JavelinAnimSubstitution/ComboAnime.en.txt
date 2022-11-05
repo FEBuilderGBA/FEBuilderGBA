@@ -1,0 +1,11 @@
+3=Javelin3
+4=Javelin4
+5=Javelin5
+6=Javelin6
+7=Javelin7
+8=Javelin8
+9=Javelin9
+A=JavelinA
+B=JavelinB
+C=JavelinC
+D=JavelinD

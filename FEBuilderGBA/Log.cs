@@ -53,7 +53,7 @@ namespace FEBuilderGBA
         {
             return System.IO.Path.Combine(Program.BaseDirectory, "config","log", "log.txt");
         }
-        static string GeOldLogFilename(int num)
+        static string GetOldLogFilename(int num)
         {
             return System.IO.Path.Combine(Program.BaseDirectory, "config","log","log."+num+".txt.7z");
         }
@@ -84,7 +84,7 @@ namespace FEBuilderGBA
         static void Rotate(string current)
         {
             {
-                string oldlog2 = GeOldLogFilename(GEN_COUNT);
+                string oldlog2 = GetOldLogFilename(GEN_COUNT);
                 if (File.Exists(oldlog2))
                 {
                     File.Delete(oldlog2);
@@ -92,8 +92,8 @@ namespace FEBuilderGBA
             }
             for (int i = GEN_COUNT; i > 0; i--)
             {
-                string oldlog1 = GeOldLogFilename(i - 1);
-                string oldlog2 = GeOldLogFilename(i);
+                string oldlog1 = GetOldLogFilename(i - 1);
+                string oldlog2 = GetOldLogFilename(i);
 
                 if (File.Exists(oldlog1))
                 {
@@ -101,7 +101,7 @@ namespace FEBuilderGBA
                 }
             }
             {
-                string oldlog2 = GeOldLogFilename(0);
+                string oldlog2 = GetOldLogFilename(0);
                 ArchSevenZip.Compress(oldlog2, current);
                 File.Delete(current);
             }

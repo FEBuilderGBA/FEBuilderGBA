@@ -1,0 +1,8 @@
+TABLE=$78
+Loop=$12
+NegateAllDef=$5E
+CheckFlag=$20
+Found=$30
+NoCapNeeded=$58
+StoreBackIn=$5A
+End=$66

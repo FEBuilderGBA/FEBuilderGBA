@@ -366,7 +366,7 @@
 @MapSize@0	short	Width
 @MapSize@2	short	Height
 0202D200	@MapSize	MapSize
-@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion)
+@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion, 0x200=Ring)
 @BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
 @BattleStats@04	short	Damage	(Attack - defense)
 @BattleStats@06	short	Attack

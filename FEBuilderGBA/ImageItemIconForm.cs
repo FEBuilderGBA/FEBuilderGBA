@@ -206,6 +206,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer)
                         , Program.ROM.p32(Program.ROM.RomInfo.system_weapon_icon_palette_pointer)
+                        , ""
                         );
                 if (palette_error != "")
                 {

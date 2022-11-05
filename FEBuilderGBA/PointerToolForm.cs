@@ -924,6 +924,12 @@ namespace FEBuilderGBA
                     lines[i] = line;
                     continue;
                 }
+
+                if (TrySourceHex(ref line))
+                {
+                    lines[i] = line;
+                    continue;
+                }
             }
             f.SetTextData(string.Join("\r\n", lines));
             f.ShowDialog();
@@ -1001,6 +1007,37 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            bool found = false;
+            for (int n = 1; n < match.Groups.Count; n++)
+            {
+                string v = match.Groups[n].Value;
+                uint addr = U.atoh(v);
+                if (addr < 0x100)
+                {
+                    continue;
+                }
+                this.Address.Text = U.ToHexString(addr);
+                AutoSearch();
+                bool isNearMatch;
+                if (!IsDataFound(out isNearMatch))
+                {//見つからなかった
+                    continue;
+                }
+                found = true;
+                string newV = v + "(" + OtherROMAddressWithLDRRef.Text + "->" + OtherROMAddressWithLDR.Text + "," + OtherROMRefPointer2.Text + "->" + OtherROMAddress2.Text + ")";
+                line = line.Replace(v, newV);
+            }
+            return found;
+        }
+        bool TrySourceHex(ref string line)
+        {
+            System.Text.RegularExpressions.Match match =
+                RegexCache.Match(line, @"^.+=.+0x([A-Za-z0-9]+).+?;?$");
+            if (match.Groups.Count < 1)
+            {
+                return false;
+            }
+
             bool found = false;
             for (int n = 1; n < match.Groups.Count; n++)
             {

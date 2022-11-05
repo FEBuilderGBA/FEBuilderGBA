@@ -684,12 +684,12 @@ namespace FEBuilderGBA
                     Bitmap seatBitmapBackup = ImageUtil.CloneBitmap(SeatBitmap);
                     int oamBackupPostion = this.RightToLeftOAM.Count;
 
-                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM, imagefilename);
                     if (r == null)
                     {
                         return null;
                     }
-                    animedata objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAM);
+                    animedata objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAM, imagefilename);
                     if (objbg == null)
                     {
                         return null;
@@ -703,8 +703,8 @@ namespace FEBuilderGBA
                         //次のシートへ
                         NextSeat();
 
-                        r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
-                        objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAM); //戦闘アニメの場合は、RightToLeftOAMBGではない.
+                        r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM, imagefilename);
+                        objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAM, imagefilename); //戦闘アニメの場合は、RightToLeftOAMBGではない.
                         if (r.image_pointer != objbg.image_pointer)
                         {
                             return null;
@@ -715,7 +715,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM, imagefilename);
                 }
 
                 bitmap.Dispose();
@@ -743,7 +743,7 @@ namespace FEBuilderGBA
                 int oamBackupPostion = this.RightToLeftOAM.Count;
                 int oamBGBackupPostion = this.RightToLeftOAMBG.Count;
 
-                r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM, imagefilename);
                 if (r == null)
                 {
                     this.ErrorMessage = "MakeBattleAnime OBJ1 Error" + R._("\r\n画像ファイル名:{0}"
@@ -752,7 +752,7 @@ namespace FEBuilderGBA
                     bitmap.Dispose();
                     return null;
                 }
-                animedata bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
+                animedata bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG, imagefilename);
                 if (bg == null)
                 {
                     this.ErrorMessage = "MakeBattleAnime BG1 Error" + R._("\r\n画像ファイル名:{0}"
@@ -771,7 +771,7 @@ namespace FEBuilderGBA
                     //次のシートへ
                     NextSeat();
 
-                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM, imagefilename);
                     if (r == null)
                     {
                         this.ErrorMessage = "MakeBattleAnime OBJ2 Error" + R._("\r\n画像ファイル名:{0}"
@@ -780,7 +780,7 @@ namespace FEBuilderGBA
                         bitmap.Dispose();
                         return null;
                     }
-                    bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
+                    bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG, imagefilename);
                     if (bg == null)
                     {
                         this.ErrorMessage = "MakeBattleAnime BG2 Error" + R._("\r\n画像ファイル名:{0}"
@@ -835,7 +835,7 @@ namespace FEBuilderGBA
                 ,MagicChangePalette
             };
 
-            PaletteResult CheckAndConvertPalette(ref Bitmap bitmap, bool firsttry)
+            PaletteResult CheckAndConvertPalette(ref Bitmap bitmap, bool firsttry, string imagefilename)
             {
                 if (firsttry && this.IsSwapBackgroundColor == false)
                 {
@@ -895,6 +895,7 @@ namespace FEBuilderGBA
                         string errorPaletteMessage = ImageUtil.CheckPalette(bitmap.Palette
                             , this.SeatBitmap.Palette
                             , null
+                            , imagefilename
                             );
                         string errorMessage = R.Error("パレットがほかと異なります\r\n{0}", errorPaletteMessage);
 
@@ -915,7 +916,7 @@ namespace FEBuilderGBA
                 return PaletteResult.OK;
             }
 
-            animedata MakeBattleAnime(Bitmap orignalBitmap,bool isMode2, List<byte> oam)
+            animedata MakeBattleAnime(Bitmap orignalBitmap, bool isMode2, List<byte> oam, string imagefilename)
             {
                 animedata animedata = new animedata();
                 animedata.oam_pos = (uint)oam.Count;
@@ -959,7 +960,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        this.ErrorMessage = R.Error("画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}", orignalBitmap.Width, orignalBitmap.Height);
+                        this.ErrorMessage = R.Error("画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}\r\n{2}", orignalBitmap.Width, orignalBitmap.Height, imagefilename);
                         return null;
                     }
                 }
@@ -970,7 +971,7 @@ namespace FEBuilderGBA
                     InitSeat(bitmap);
                 }
                 //パレットの確認.
-                PaletteResult paletteResult = CheckAndConvertPalette(ref bitmap, firsttry);
+                PaletteResult paletteResult = CheckAndConvertPalette(ref bitmap, firsttry, imagefilename);
                 if (paletteResult == PaletteResult.Cancel)
                 {//ユーザーキャンセル.
                     return null;
@@ -983,7 +984,7 @@ namespace FEBuilderGBA
                     NextSeat();
 
                     //もう一回トライ
-                    return MakeBattleAnime(orignalBitmap, isMode2, oam);
+                    return MakeBattleAnime(orignalBitmap, isMode2, oam, imagefilename);
                 }
 
                 //途中でシートが満杯でリトライになったときのためにバックアップを作成します.
@@ -1010,7 +1011,7 @@ namespace FEBuilderGBA
                         NextSeat();
 
                         //もう一回最初からトライ
-                        return MakeBattleAnime(orignalBitmap, isMode2 , oam);
+                        return MakeBattleAnime(orignalBitmap, isMode2, oam, imagefilename);
                     }
 
                     if (this.IsMultiPaletteOAM == false)
@@ -3333,6 +3334,7 @@ namespace FEBuilderGBA
                             , palette
                             , 0
                             , 0
+                            , imagefilename
                             );
                         Log.Error(ErrorPaletteMessage);
 

@@ -1,0 +1,36 @@
+// rearrange map trade vram to play nice with Vesly's extend weapon desc box hacc
+// nathacc
+
+// install after vesly's hack
+// also make sure to remove the call to DeleteFaceByIndex in InitItemDescVram
+ALIGN 4
+TradeMenuGfxData:
+#incbin "TradeMenuGfxData.dmp"
+
+ALIGN 4
+TradeMenu_LockGame_Override:
+#incbin "TradeMenu_LockGame_Override.dmp"
+POIN TradeMenuGfxData
+
+ALIGN 4
+TradeMenu_ClearDisplay_Override:
+#incbin "TradeMenu_ClearDisplay_Override.dmp"
+
+ALIGN 4
+
+PUSH
+
+//ORG 0x02D2EA // in TradeMenu_InitUnitNameDisplay	//{U}
+ORG 0x02D222 // in TradeMenu_InitUnitNameDisplay	//{J}
+BYTE 0xB0 // 4800 (vanilla) -> 7080 (vesly) -> 5800 (nat)
+
+//ORG 0x59BB1C + 0*8 + 4 // TradeMenu proc (0859BB1C), 0th instruction (*8) ptr (+4)	//{U}
+ORG 0x5C3FFC + 0*8 + 4 // TradeMenu proc (085C3FFC), 0th instruction (*8) ptr (+4)	//{J}
+
+POIN TradeMenu_LockGame_Override|1
+
+//ORG 0x59BB1C + 19*8 + 4 // TradeMenu proc (0859BB1C), 19th instruction (*8) ptr (+4)	//{U}
+ORG 0x5C3FFC + 19*8 + 4 // TradeMenu proc (085C3FFC), 19th instruction (*8) ptr (+4)	//{J}
+POIN TradeMenu_ClearDisplay_Override|1
+
+POP

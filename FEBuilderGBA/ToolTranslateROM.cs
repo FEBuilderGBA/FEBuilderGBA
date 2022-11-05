@@ -262,6 +262,8 @@ namespace FEBuilderGBA
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {
+                U.ReleaseMemory(pleaseWait);
+
                 uint id = U.NOT_FOUND;
                 string[] lines = File.ReadAllLines(filename);
 

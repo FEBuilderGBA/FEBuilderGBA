@@ -1,0 +1,12 @@
+PUSH
+ORG 0x0328D0	//{J}
+//ORG 0x032984	//{U}
+BYTE 0x00 0x4B 0x9F 0x46
+POIN Arena_NotDie
+POP
+
+ALIGN 4
+Arena_NotDie:
+#incbin "Arena_NotDie.dmp"
+
+ALIGN 4

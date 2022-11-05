@@ -211,6 +211,58 @@ namespace FEBuilderGBA
             this.Lines = LoadUpdateInfo(this.Filename);
             return true;
         }
+        void InitAutoFeedback()
+        {
+            //0 = 拒否
+            //1 = 許可
+            //255 = 不明
+            uint autofeedback = U.atoi(Program.WorkSupportCache.At(2, "255"));
+            if (autofeedback == 255)
+            {
+                string name = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
+                string url = U.at(this.Lines, "AUTOFEEDBACK_URL");
+                if (url != "")
+                {
+                    uint defaultSetting = U.atoi(U.at(this.Lines, "AUTOFEEDBACK_DEFAULT_SETTING","1"));
+                    if (defaultSetting == 1)
+                    {//ディフォルトは送信
+                        autofeedback = 1;
+                    }
+                    else if (defaultSetting == 0)
+                    {//ディフォルトは送信しない
+                        autofeedback = 0;
+                    }
+                    else
+                    {//ディフォルトはユーザーに聞く
+                        DialogResult dr = R.ShowYesNo("「{0}」を遊んでくれてありがとう。\r\nこのゲームの進行状況を、作者に自動フィードバックしてもよろしいですか？\r\nフィードバックの内容は、ゲーム内の情報だけで、完全に匿名で行います。\r\nあなたのフィードバックは、ゲームの改善と、製作者のモチベーションの向上につながるので、ぜひご協力ください。\r\nこの設定は、「Menu->実行->作品支援」からいつでも変更できます。\r\n自動フィードバックを有効にしてもよろしいですか?\r\n", name);
+                        if (dr == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            autofeedback = 1;
+                        }
+                        else if (dr == System.Windows.Forms.DialogResult.No)
+                        {
+                            autofeedback = 0;
+                        }
+                    }
+
+                    UpdateAutoFeedback(autofeedback);
+                }
+            }
+
+            bool enableAutoFeedback = (autofeedback == 1);
+            AutoFeedback.Init(this.Lines, enableAutoFeedback);
+        }
+        void UpdateAutoFeedback(uint autofeedback)
+        {
+            Program.WorkSupportCache.Update(2, autofeedback.ToString());
+            Program.WorkSupportCache.Save(Path.GetFileNameWithoutExtension(Program.ROM.Filename));
+        }
+
+        public static ToolWorkSupportAutoFeedback AutoFeedback = new ToolWorkSupportAutoFeedback();
+        static public bool UseAutoFeedback()
+        {
+            return AutoFeedback.GetIsAutoFeedBack();
+        }
 
         private void WorkSupport_Load(object sender, EventArgs e)
         {
@@ -235,6 +287,7 @@ namespace FEBuilderGBA
                 InfoTextBox.Text += R._("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n") + ExplainUpdateInfo() + "\r\n";
             }
 
+            InitAutoFeedback();
             this.NameTextBox.Text = GetName();
             this.AuthorTextBox.Text = U.at(this.Lines, "AUTHOR");
             this.CommunityTextBox.Text = U.at(this.Lines, "COMMUNITY_URL");
@@ -243,6 +296,27 @@ namespace FEBuilderGBA
             InfoTextBox.Text += this.Filename + "\r\n";
 
             LOGO.Image = MakeLogo();
+            SetToggleAutoFeedbackButton();
+        }
+        void SetToggleAutoFeedbackButton()
+        {
+            if (! AutoFeedback.GetAutoFeedBackEnable())
+            {
+                ToggleAutoFeedbackButton.Hide();
+            }
+            else
+            {
+                ToggleAutoFeedbackButton.Show();
+            }
+
+            if (AutoFeedback.GetIsAutoFeedBack())
+            {
+                ToggleAutoFeedbackButton.Text = R._("自動フィードバックを無効にする");
+            }
+            else
+            {
+                ToggleAutoFeedbackButton.Text = R._("自動フィードバックを有効にする");
+            }
         }
         string GetName()
         {
@@ -639,6 +713,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            InitAutoFeedback();
             if (!CheckUpdateTodayAndOverraideTime(romfilename))
             {
                 return;
@@ -752,45 +827,6 @@ namespace FEBuilderGBA
         }
 #endif //DEBUG
 
-        private void MakeErrorReportButton_Click(object sender, EventArgs e)
-        {
-            if (InputFormRef.IsPleaseWaitDialog(this))
-            {//2重割り込み禁止
-                return;
-            }
-
-            string title = R._("フィードバックを保存するファイル名を選択してください");
-            string filter = R._("report.7z|*.report.7z|All files|*");
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = title;
-            save.Filter = filter;
-            save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, MakeFeedBackFilename());
-
-            DialogResult dr = save.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
-            }
-            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
-            {
-                return;
-            }
-
-            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
-            {
-                string error = MakeFeedBack(save.FileNames[0]);
-                if (error != "")
-                {
-                    R.ShowStopError("レポートを作れませんでした。\r\n{0}", error);
-                    return;
-                }
-            }
-
-            //エクスプローラで選択しよう
-            U.SelectFileByExplorer(save.FileNames[0]);
-            R.ShowOK("フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。");
-        }
 
         string MakeFeedBackFilename()
         {
@@ -856,7 +892,20 @@ namespace FEBuilderGBA
         {
             UpdateButton.AccessibleDescription = R._("このゲームを最新版に更新します。");
             CommunityButton.AccessibleDescription = R._("開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。");
-            MakeFeedBackReportButton.AccessibleDescription = R._("ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n");
+            ToggleAutoFeedbackButton.AccessibleDescription = R._("自動フィードバックレポートを送るかどうかを設定します。");
+        }
+
+        private void ToggleAutoFeedbackButton_Click(object sender, EventArgs e)
+        {
+            AutoFeedback.SetAutoFeedBackStatus(! AutoFeedback.GetIsAutoFeedBack());
+            SetToggleAutoFeedbackButton();
+
+            uint autoFeedback = 0;
+            if (AutoFeedback.GetIsAutoFeedBack())
+            {
+                autoFeedback = 1;
+            }
+            UpdateAutoFeedback(autoFeedback);
         }
     }
 }

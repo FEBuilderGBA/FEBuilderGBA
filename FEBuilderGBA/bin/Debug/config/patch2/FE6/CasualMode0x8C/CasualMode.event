@@ -1,0 +1,28 @@
+#ifndef CASUAL_MODE
+#define CASUAL_MODE
+
+#include "Extensions/Hack Installation.txt"
+
+// eid $8C enables Casual Mode (fallen units come back next chapter)
+// hack by circleseverywhere
+
+#ifdef _FE6_
+
+  {
+
+  PUSH
+    ORG $17BEC
+      jumpToHack(CasualMode)
+  POP
+
+  ALIGN 4
+  CasualMode:
+    #incbin "asm/CasualModeFE6.dmp"
+
+  }
+
+#else // _FE6_
+  ERROR Casual mode hack is for FE7
+#endif // _FE6_
+
+#endif // CASUAL_MODE

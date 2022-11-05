@@ -1,0 +1,31 @@
+NAME=JavelinAnimSubstitution: 手槍の設定(Editor)
+INFO=戦闘アニメで、クラスごとに投げる手槍の画像を設定できます。\r\nバニラではハードコーディングされているので、それをクラスごとに柔軟に設定できるようにします。
+AUTHOR=Contro,Stan https://feuniverse.us/t/contros-asm-lineup/13514/8
+
+IF:0x58E80=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END asm/JavelinAnimSub.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示
+LISTNAME=$W0:CLASS
+
+//データを定義します
+W0:CLASS=Class
+W2:$COMBO ComboAnime.ja.txt:.ja=Anime
+W2:$COMBO ComboAnime.en.txt:.en=Anime
+W2:$COMBO ComboAnime.en.txt:.zh=Anime
+NAME.en=JavelinAnimSubstitution: Javelin Anim Substitute (Editor)
+INFO.en=In the battle animation, you can set the image of the hand spear thrown for each class.\r\nIt's hard-coded in vanilla, so we'll make it flexibly configurable on a per-class basis.
+NAME.zh=JavelinAnimSubstitution：手矛设置(Editor)
+INFO.zh=在战斗动画中，您可以为每个职业设置投掷手矛的图像。\r\n它在 vanilla 中是硬编码的，因此我们将使其在每个类的基础上灵活配置。

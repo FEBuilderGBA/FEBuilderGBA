@@ -13,10 +13,14 @@
 #define gProc_ChapterMenuUnit $A93854	//{J}
 //#define gProc_ChapterMenuStatus $A01B54	//{U}
 #define gProc_ChapterMenuStatus $A73C0C	//{J}
+//#define gProc_PrepSomethingUnknown $A1898C	//{U}
+#define gProc_PrepSomethingUnknown $A946D0	//{J}
+//#define gProc_PrepSomethingUnknown2 $A18944 //backup	//{U}
+#define gProc_PrepSomethingUnknown2 $A94688 //backup	//{J}
 
 ALIGN 4 
 ProcExceptionsList:
-POIN gProc_SaveMenu gProc_SaveMenu2 gProc_ChapterMenuUnit gProc_ChapterMenuStatus
+POIN gProc_SaveMenu gProc_SaveMenu2 gProc_ChapterMenuUnit gProc_ChapterMenuStatus gProc_PrepSomethingUnknown gProc_PrepSomethingUnknown2
 WORD 0 // Terminator 
 
 
@@ -128,6 +132,10 @@ WORD 0x6015800 // 14800 vanilla
 //ORG $354D8		//{U}
 ORG $353E0		//{J}
 SHORT 0x42C0 // vanilla 0x4240 
+
+//ORG $59E14C	//{U}
+ORG $5C662C	//{J}
+SHORT $00 $04 $08 $0C $10 $14 $18 $1C $9C $9C $9C $9C $9C $00
 
 // managed to keep this vanilla by hooking LoadDialogueBoxGfx 
 // Shop/Armoury 

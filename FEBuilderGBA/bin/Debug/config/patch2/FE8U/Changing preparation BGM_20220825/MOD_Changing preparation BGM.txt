@@ -1,0 +1,14 @@
+IF:0x341C4=0x62 0xF0 0x0E 0xFA
+
+FORM=MapSettingForm
+
+L_38:VISIBLE=true
+
+J_38=進撃準備BGM
+J_38:NAME=J_38_SONG
+J_38.en=Preparation BGM
+J_38.zh=高级攻击准备BGM
+
+J_38:HINT=進撃準備のBGMを変更します。
+J_38:HINT.en=Change BGM for preparation.
+J_38:HINT.zh=我会改变进攻的BGM。

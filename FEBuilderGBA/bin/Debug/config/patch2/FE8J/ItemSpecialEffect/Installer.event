@@ -1,0 +1,62 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	0x80DCAC0		//"Use" String
+SHORT	0x623 0x0		//右がヘルプ指定
+SHORT	$3402 0			//02は青メニュー
+POIN	ItemSpecialEffectCallUsability|1
+POIN	ItemSpecialDraw|1
+POIN	ItemSpecialEffect|1
+WORD	0 0 0
+
+POP
+
+
+PUSH 
+ORG $165FC	//{J}
+jumpToHack(ItemMenuTextColorHack) // White or gray text for the item after selecting "item" 
+POP 
+
+ALIGN 4
+ItemMenuTextColorHack:
+#incbin "ItemMenuTextColor.dmp"
+POIN ItemSpecialEffectUsability
+
+	
+ALIGN 4 
+ItemSpecialEffectTable:
+// 12 bytes per entry 
+// ItemID, unit, class, hp%, ReqFlag, TextID, POIN EventAddress 
+BYTE 0xBB   0        0    0; SHORT 0     0     ; POIN ExampleEvent // 0xBB is gold gem 
+//BYTE OrionBolt Eirika EirikaLord 80 ; SHORT 0 0x508; POIN ExampleEvent // only usable at 80% or less hp 
+// Entries
+WORD 0 0 0 // Terminator 
+
+
+ALIGN 4
+ExampleEvent:
+#incbin "sample_event.dmp"
+
+
+ALIGN 4
+ItemSpecialEffect:
+#incbin "ItemSpecialEffect.dmp"
+POIN ItemSpecialEffectTable
+POIN ItemSpecialEffectUsability
+
+
+ALIGN 4
+ItemSpecialEffectUsability:
+#incbin "ItemSpecialEffectUsability.dmp"
+POIN ItemSpecialEffectTable
+
+ALIGN 4
+ItemSpecialDraw:
+#incbin "ItemSpecialDraw.dmp"
+POIN ItemSpecialEffectCallUsability
+
+ALIGN 4
+ItemSpecialEffectCallUsability:
+#incbin "ItemSpecialEffectCallUsability.dmp"
+POIN ItemSpecialEffectUsability

@@ -329,6 +329,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , (Program.ROM.RomInfo.unit_icon_palette_address)
                         , (Program.ROM.RomInfo.unit_icon_enemey_palette_address)
+                        , ""
                         );
                 if (palette_error != "")
                 {

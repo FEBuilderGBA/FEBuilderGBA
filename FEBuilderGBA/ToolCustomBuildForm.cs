@@ -234,6 +234,13 @@ namespace FEBuilderGBA
 
             string skill_CustomBuildDirectory = Path.Combine(Program.BaseDirectory, "config", "patch2", "FE8U"
                 , "skill_CustomBuild");
+
+            bool r = U.DelTree(skill_CustomBuildDirectory);
+            if (!r)
+            {
+                R.ShowStopError("カスタムビルドのキャッシュを削除できませんでした。\r\n以下のディレクトリを手動で消去してください。\r\n{0}", skill_CustomBuildDirectory);
+                return false;
+            }
             U.mkdir(skill_CustomBuildDirectory);
 
             U.CopyDirectory(Path.GetDirectoryName(ParentPatch.PatchFileName), skill_CustomBuildDirectory);

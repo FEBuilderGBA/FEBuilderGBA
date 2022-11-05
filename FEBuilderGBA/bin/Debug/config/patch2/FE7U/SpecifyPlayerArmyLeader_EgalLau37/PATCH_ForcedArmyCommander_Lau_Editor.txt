@@ -1,0 +1,29 @@
+NAME=Set army commander by chapter (editor)
+INFO=Specify which character should be the faction leader for each chapter.  The character must be in the party; otherwise, the game may softlock.
+
+IF:0x8681C=0x00 0x4D 0xAF 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END army.bin
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x69
+
+//リストに表示されるのはユニットIDです
+LISTNAME=MAP
+
+//データを定義します
+B0:UNIT=Player faction army leader
+
+
+NAME.en=Set army commander by chapter (editor)
+INFO.en=Specify which character should be the faction leader for each chapter.  The character must be in the party; otherwise, the game may softlock.
+NAME.zh=Set army commander by chapter (editor)
+INFO.zh=Specify which character should be the faction leader for each chapter.  The character must be in the party; otherwise, the game may softlock.

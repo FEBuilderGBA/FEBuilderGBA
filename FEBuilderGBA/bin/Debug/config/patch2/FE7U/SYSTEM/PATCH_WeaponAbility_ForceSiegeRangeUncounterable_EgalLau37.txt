@@ -1,0 +1,21 @@
+
+NAME.en=Disable forced long-range distance from Uncounterable ability
+NAME=Disable forced long-range distance from Uncounterable ability
+NAME.zh=Disable forced long-range distance from Uncounterable ability
+
+//
+TYPE=SWITCH
+TAG=#ENGINE
+
+ADDRESS=0x051FB2
+OFF:0x51FB2=0x80
+ON2:0x51FB2=0x00
+
+COMBO=Flag 0x80, field 1 forces long-range distance|OFF|Flag 0x80, field 1 does not force long-range distance|ON2
+
+
+AUTHOR=SageMatthis/EgalLau37 | Original: Brendor https://feuniverse.us/t/elibean-nights-final-draft-playtest-patch-6-5-21/83/261
+
+INFO=デフォルトでは、フラグ0x80、フィールド1は、どちらか一方からのカウンターを無効にすることに加えて、遠距離を強制します。\r\nこのパッチは、強制的な距離を削除します。 "Force specific distance"パッチとは併用しないでください。
+INFO.en=By default, flag 0x80, field 1 forces long-range distance in addition to disabling countering from either side.  This patch removes the forced distance.  Do not use with the "Force specific distance" patch.
+INFO.zh=By default, flag 0x80, field 1 forces long-range distance in addition to disabling countering from either side.  This patch removes the forced distance.  Do not use with the "Force specific distance" patch.

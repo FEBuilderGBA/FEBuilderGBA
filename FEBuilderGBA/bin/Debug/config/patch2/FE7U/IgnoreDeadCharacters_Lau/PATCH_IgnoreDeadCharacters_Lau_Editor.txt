@@ -1,0 +1,29 @@
+
+NAME.en=Ignore dead characters for cutscenes (installer)
+INFO.en=Specify which units should bypass the dead check and be loaded during cutscenes.  For gameplay purposes, the character will remain dead unless revived.
+
+IF:0xA6AA=0x01 0x48 0x87 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END deadcode.bin
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x69
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit ID
+
+NAME=Ignore dead characters for cutscenes (editor)
+INFO=Specify which units should bypass the dead check and be loaded during cutscenes.  For gameplay purposes, the character will remain dead unless revived.
+NAME.zh=Ignore dead characters for cutscenes (editor)
+INFO.zh=Specify which units should bypass the dead check and be loaded during cutscenes.  For gameplay purposes, the character will remain dead unless revived.

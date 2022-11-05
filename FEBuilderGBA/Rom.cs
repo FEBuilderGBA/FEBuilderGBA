@@ -441,6 +441,10 @@ namespace FEBuilderGBA
         public uint bg_reserve_black_bgid { get; protected set; }
         public uint bg_reserve_random_bgid { get; protected set; }
 
+        public uint item_vanilla_address { get; protected set; } // バニラのアイテムアドレス
+        public uint itemicon_vanilla_address { get; protected set; } // バニラのアイテムアイコンアドレス
+        public uint class_vanilla_address { get; protected set; } // バニラのクラスアドレス
+
         public uint extends_address { get; protected set; } //拡張領域
         public uint orignal_crc32 { get; protected set; } //無改造ROMのCRC32
         public bool is_multibyte { get; protected set; }    // マルチバイトを利用するか？
@@ -502,18 +506,27 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    PropertyInfo field = (PropertyInfo)info;
-                    if (field.PropertyType != typeof(uint))
-                    {
-                        continue;
-                    }
-
                     uint v;
                     if (!map.TryGetValue(info.Name, out v))
                     {
                         continue;
                     }
-                    field.SetValue(this, v, null);
+
+                    PropertyInfo field = (PropertyInfo)info;
+                    if (field.PropertyType == typeof(uint))
+                    {
+                        field.SetValue(this, v, null);
+                    }
+                    else if (field.PropertyType == typeof(int))
+                    {
+                        field.SetValue(this, (int)v, null);
+                    }
+                    else if (field.PropertyType == typeof(bool))
+                    {
+                        bool b = (v == 0 ? false : true);
+                        field.SetValue(this, b, null);
+                    }
+
                 }
             }
             catch(Exception)

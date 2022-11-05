@@ -1,0 +1,22 @@
+
+NAME=エピローグでのテキストスピード
+NAME.en=Text speed for Epilogue events
+NAME.zh=Text speed for Epilogue events
+
+//Text speed for Epilogue
+TYPE=SWITCH
+TAG=#ENGINE
+
+OFF:0xAF12=0x20
+
+ON2:0xAF12=0x00
+ON3:0xAF12=0x40
+ON4:0xAF12=0x60
+
+
+AUTHOR= SageMatthis/EgalLau37
+COMBO=Text speed: Default|OFF|Text speed: Slow|ON2|Text speed: Fast|ON3|Text speed: Instant|ON4
+
+INFO=By default, the game forces the Epilogue to use the default text speed by constantly overwriting the text speed setting.  This allows changing the forced setting to a different speed.
+INFO.en=By default, the game forces the Epilogue to use the default text speed by constantly overwriting the text speed setting.  This allows changing the forced setting to a different speed.
+INFO.zh=By default, the game forces the Epilogue to use the default text speed by constantly overwriting the text speed setting.  This allows changing the forced setting to a different speed.

@@ -270,6 +270,21 @@ namespace FEBuilderGBA
             }
             list.Add(new Address(addr, length, pointer, info, type, InputFormRef.BlockSize, pointerIndexes));
         }
+        static public void AddAddressInstantIFR(List<Address> list, uint pointer, uint blockSize, uint datacount, string info, uint[] pointerIndexes, DataTypeEnum type = DataTypeEnum.InputFormRef)
+        {
+            pointer = U.toOffset(pointer);
+            if (!U.isSafetyOffset(pointer))
+            {
+                return;
+            }
+            uint addr = Program.ROM.p32(pointer);
+            uint length = blockSize * (datacount + 1);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            list.Add(new Address(addr, length, pointer, info, type, blockSize, pointerIndexes));
+        }
         static public void AddAddressButDoNotLengthPuls1(List<Address> list, InputFormRef InputFormRef, string info, uint[] pointerIndexes, DataTypeEnum type = DataTypeEnum.InputFormRef_1)
         {
             uint addr = InputFormRef.BaseAddress;
@@ -658,8 +673,8 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.AP
                 || dataType == Address.DataTypeEnum.ROMTCS
                 || dataType == Address.DataTypeEnum.HEADERTSA
-                || dataType == Address.DataTypeEnum.BIN
-                || dataType == Address.DataTypeEnum.UNUSEDBIN
+//                || dataType == Address.DataTypeEnum.BIN
+//                || dataType == Address.DataTypeEnum.UNUSEDBIN
                 || dataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND
                 || dataType == Address.DataTypeEnum.SONGINSTWAVE
                 || dataType == Address.DataTypeEnum.BATTLEFRAMEIMG
@@ -678,6 +693,9 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.BATTLEFRAME
                 || dataType == Address.DataTypeEnum.SONGSCORE
                 || dataType == Address.DataTypeEnum.SONGTRACK
+                || dataType == Address.DataTypeEnum.SONGINST
+                || dataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND
+                || dataType == Address.DataTypeEnum.SONGINSTWAVE
                 || dataType == Address.DataTypeEnum.PROCS
                 || dataType == Address.DataTypeEnum.OAMSP
                 || dataType == Address.DataTypeEnum.POINTER
@@ -694,7 +712,7 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.InputFormRef_ASM
                 || dataType == Address.DataTypeEnum.InputFormRef_MIX
                 || dataType == Address.DataTypeEnum.InputFormRef_1
-                || dataType == Address.DataTypeEnum.MIX
+//                || dataType == Address.DataTypeEnum.MIX
                 || dataType == Address.DataTypeEnum.JUMPTOHACK
                 || dataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT
                 || dataType == Address.DataTypeEnum.SplitMenu9

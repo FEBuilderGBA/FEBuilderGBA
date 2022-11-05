@@ -1,0 +1,16 @@
+NAME=Ignore dead characters for cutscenes (installer)
+INFO=By default, if a character is dead, it is not loaded during cutscenes. This can cause issues if a dead character is loaded and forced to move, where the game may hang or softlock when attempting to move a non-existant unit.  This code allows one to specify certain units to be able to bypass the dead check and still be loaded even if they have been defeated in battle.  Can be useful for characters who are only injured and remain in the party.
+
+TYPE=EA
+TAG=#ENGINE
+
+//patch notes
+PATCHED_IF:0xA6AA=0x01 0x48 0x87 0x46
+EDIT_PATCH=PATCH_IgnoreDeadCharacters_Lau_Editor.txt
+EA=IgnoreDeadCharacters_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+NAME.en=Ignore dead characters for cutscenes (installer)
+INFO.en=By default, if a character is dead, it is not loaded during cutscenes. This can cause issues if a dead character is loaded and forced to move, where the game may hang or softlock when attempting to move a non-existant unit.  This code allows one to specify certain units to be able to bypass the dead check and still be loaded even if they have been defeated in battle.  Can be useful for characters who are only injured and remain in the party.
+NAME.zh=Ignore dead characters for cutscenes (installer)
+INFO.zh=By default, if a character is dead, it is not loaded during cutscenes. This can cause issues if a dead character is loaded and forced to move, where the game may hang or softlock when attempting to move a non-existant unit.  This code allows one to specify certain units to be able to bypass the dead check and still be loaded even if they have been defeated in battle.  Can be useful for characters who are only injured and remain in the party.

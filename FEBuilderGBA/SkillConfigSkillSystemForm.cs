@@ -250,20 +250,17 @@ namespace FEBuilderGBA
                     //0th data
                     uint data0th = Program.ROM.u32(U.toOffset(p));
                     uint data1st = Program.ROM.u32(U.toOffset(p + 4));
+                    uint data2nd = Program.ROM.u32(U.toOffset(p + 8));
 
-                    if (!U.isPadding4(data0th))
-                    {
-                        continue;
-                    }
                     if (!U.isSafetyPointerOrNull(data0th))
                     {
                         continue;
                     }
-                    if (!U.isPadding4(data1st))
+                    if (!U.isSafetyPointerOrNull(data1st))
                     {
                         continue;
                     }
-                    if (!U.isSafetyPointerOrNull(data1st))
+                    if (!U.isSafetyPointerOrNull(data2nd))
                     {
                         continue;
                     }
@@ -513,6 +510,7 @@ namespace FEBuilderGBA
                         , Program.ROM.Data
                         , Program.ROM.p32(SkillPalettePointer)
                         , U.NOT_FOUND
+                        , ""
                         );
                 if (palette_error != "")
                 {
@@ -577,7 +575,8 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "SkillConfigSkillSystem", new uint[] { });
 
                 uint anime = Program.ROM.p32(baseanimeP);
-                for (uint i = 0; i < InputFormRef.DataCount; i++ , anime += 4)
+                FEBuilderGBA.Address.AddAddressInstantIFR(list, baseanimeP, 4, InputFormRef.DataCount, "SkillAnime", new uint[] { 0 });
+                for (uint i = 0; i < InputFormRef.DataCount; i++, anime += 4)
                 {
                     if (!U.isSafetyOffset(anime))
                     {
@@ -589,8 +588,6 @@ namespace FEBuilderGBA
                         continue;
                     }
                     string name = "SkillAnime:" + U.To0xHexString(i) + " ";
-                    FEBuilderGBA.Address.AddAddress(list, addr, 0, anime, name, FEBuilderGBA.Address.DataTypeEnum.POINTER);
-
                     ImageUtilSkillSystemsAnimeCreator.RecycleOldAnime(ref list
                         ,name
                         ,isPointerOnly

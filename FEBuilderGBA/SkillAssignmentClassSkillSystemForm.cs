@@ -312,8 +312,9 @@ namespace FEBuilderGBA
 
                 Dictionary<uint, string> skillNames = new Dictionary<uint,string>();
                 InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
-            
+
                 uint assignLevelUpAddr = Program.ROM.p32(assignLevelUpP);
+                FEBuilderGBA.Address.AddAddressInstantIFR(list, assignLevelUpP, 4, InputFormRef.DataCount, "SkillAssignmentClassLeveList", new uint[] { 0 });
                 for (uint i = 0; i < InputFormRef.DataCount; i++, assignLevelUpAddr += 4)
                 {
                     if (!U.isSafetyOffset(assignLevelUpAddr))
@@ -328,7 +329,8 @@ namespace FEBuilderGBA
                     }
 
                     N1_InputFormRef.ReInitPointer(assignLevelUpAddr);
-                    FEBuilderGBA.Address.AddAddress(list, N1_InputFormRef, "SkillAssignmentClassSkillSystem.Levelup" + i, new uint[] { });
+                    string name = "SkillAssignmentClassSkillSystem.Levelup" + i;
+                    FEBuilderGBA.Address.AddAddress(list, N1_InputFormRef, name, new uint[] { });
                 }
             }
         }

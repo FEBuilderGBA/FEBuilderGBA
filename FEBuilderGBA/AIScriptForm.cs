@@ -93,6 +93,20 @@ namespace FEBuilderGBA
                 Program.ROM.write_u32(addr, U.NOT_FOUND, undodata);
             }
 
+            //現在のポインタの次に2つのポインタがあるらしい
+            //ai1[3]  ,ai2[3]
+            uint basePointerAddr = InputFormRef.BasePointer;
+            for (uint i = 1; i < 3; i++)
+            {
+                addr = basePointerAddr + (i * 4);
+                uint p = Program.ROM.u32(addr);
+                if (!U.isPointer(p))
+                {
+                    continue;
+                }
+                Program.ROM.write_p32(addr, eearg.NewBaseAddress, undodata);
+            }
+
             Program.Undo.Push(undodata);
 
             ReloadAISetting();
@@ -226,6 +240,20 @@ namespace FEBuilderGBA
                     continue;
                 }
                 MakeAllDataLengthSub(list,isPointerOnly,aiAddr,aiType);
+                MakeAllDataLengthAISomeByte(list, aiAddr, aiType);
+            }
+        }
+        public static void MakeAllDataLengthAISomeByte(List<Address> list, uint aiAddr, int aiType)
+        {
+            for (uint i = 1; i < 3; i++ )
+            {
+                uint addr = aiAddr + (i * 4);
+                uint p = Program.ROM.u32(addr);
+                if (! U.isPointer(p))
+                {
+                    continue;
+                }
+                FEBuilderGBA.Address.AddPointer(list, addr, 0, "AI" + (aiType+1) + "_ClonePointer" + i, FEBuilderGBA.Address.DataTypeEnum.POINTER);
             }
         }
         public static void MakeAllDataLengthSub(List<Address> list, bool isPointerOnly,uint aiAddr,int aiType)

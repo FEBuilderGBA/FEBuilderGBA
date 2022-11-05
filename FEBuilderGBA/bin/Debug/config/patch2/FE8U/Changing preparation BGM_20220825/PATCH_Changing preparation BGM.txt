@@ -1,0 +1,52 @@
+NAME=章ごとに進撃準備の音楽変更 20220825
+NAME.en=Set Preparation BGM By Chapter 20220825
+NAME.zh=每章进击准备的音乐变更 20220825
+
+//PATCHED_IF:0x340cc=0x64 0xF0 0xFC 0xFB	//FE8J
+PATCHED_IF:0x341C4=0x62 0xF0 0x0E 0xFA	//FE8U
+TYPE=BIN
+TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
+
+BIN:$FREEAREA:0=c0p.dmp
+BIN:$FREEAREA:1=c1p.bin
+BIN:$FREEAREA:2=c2p.bin
+
+//JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行ているみたいです.
+//JUMP:0x988c6:$B=0x9893a	//FE8J
+JUMP:0x965E2:$B=0x96656		//FE8U
+//JUMP:0x988c8:$r0=c0p.dmp	//FE8J
+JUMP:0x965E4:$r0=c0p.dmp	//FE8U
+
+//JUMP:0x340cc:$BL=0x988c8	//FE8J
+JUMP:0x341C4:$BL=0x965E4	//FE8U
+//JUMP:0x988c2:$BL=0x988c8	//FE8J
+JUMP:0x965DC:$BL=0x965E4	//FE8U
+//JUMP:0xa46ee:$BL=0x988c8	//FE8J
+JUMP:0xAEB54:$BL=0x965E4	//FE8U
+//JUMP:0xa5738:$BL=0x988c8	//FE8J
+JUMP:0xA1960:$BL=0x965E4	//FE8U
+
+//JUMP:0xb6910:$r0=c1p.bin	//FE8J
+JUMP:0xB1CF0:$r0=c1p.bin	//FE8U
+
+//JUMP:0xB692A:$B=0xB70BA	//FE8J
+JUMP:0xB1D0A:$B=0xB24A2		//FE8U
+//JUMP:0xB692C:$r0=c2p.bin	//FE8J
+JUMP:0xB1D0C:$r0=c2p.bin	//FE8U
+
+//JUMP:0x9ef6e:$BL=0xB692C	//FE8J
+JUMP:0x9CCD6:$BL=0xB1D0C	//FE8U
+//JUMP:0xd13d2:$BL=0xB692C	//FE8J
+JUMP:0xCC6B6:$BL=0xB1D0C	//FE8U
+
+INFO=進撃準備画面で再生される曲を章単位で変更できるようにします。
+INFO.en=Patches the ROM to enable per-chapter preparation screen BGM via Chapter Editor byte 0x26.\r\nTo edit, enter Chapter Editor and modify the Preparation BGM field.\r\nBy default this isn't set to a Prep BGM and must be changed throughout the ROM.\r\n
+INFO.zh=允许您以章节为人物更改在攻击提升屏幕上播放的歌曲。
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/RePreparation 移植:7743
+AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/RePreparation端口:7743。
+AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/RePreparation Port: 7743.
+
+EVENTSCRIPT:1=400D0000{$L1:c2p.bin}	進撃準備のBGMを再生する	{MUSIC}
+EVENTSCRIPT:1.en=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}
+EVENTSCRIPT:1.zh=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}

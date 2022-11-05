@@ -1612,6 +1612,12 @@ Automatic Convert and Import
 :この画像は、必要な形式の基準を満たしていません。
 This image does not meet the formatting requirements.
 
+:規約を守っていないデータはパレットの最初の色としてインポートします。
+Data that does not follow the convention will be imported as the first color in the palette.
+
+:違反データは0に指定
+Violation data is specified as 0.
+
 :画像の形式が基準を満たしていません。
 The image format does not meet the criteria.
 
@@ -3829,6 +3835,9 @@ Eye XX/YY
 :6=瞳を閉じる
 6=Close Eye
 
+:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
+If the eye and mouth positions in the portrait do not match, please adjust the position.
+
 :mug_exceed用のタイルをどこに配置するか設定してください
 Please set where to place the tile for mug_exceed
 
@@ -3837,12 +3846,6 @@ Tile 2
 
 :タイル1
 Tile 1
-
-:顔画像の全圧縮
-Full compression of face image.
-
-:顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
-If the eye and mouth positions in the portrait do not match, please adjust the position.
 
 :位置確認用
 For position confirmation
@@ -4282,8 +4285,8 @@ Unable to recognize transparent color.
 :パレットがほかと異なります\r\n{0}
 Palette is different from others\r\n{0}
 
-:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}
-Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}
+:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}\r\n{2}
+Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}\r\n{2}
 
 :イメージが大きすぎます。\r\n初手で 256x64のシートが全部埋まりました。\r\n背景色の指定を間違えていませんか？\r\nまたは、キャラクターが256x64以上の巨大な画像です。\r\n
 The image is too large.\r\nMore than 256 x 64 sheets were filled.\r\nIs the background color specified incorrectly?\r\nIf not, the character may be too large.\r\n
@@ -5560,6 +5563,9 @@ Invalidate (DEL)
 :00のデータの変更は許可されていません。
 Modification of 00 data is not allowed.
 
+:あなたはzipファイルを解凍せずに指定しているように思います。\r\nまずはzipファイルを解凍してください。
+I think you are specifying the zip file without unzipping it.\r\nFirst unzip the zip file.
+
 :該当アイテム
 Usable Item
 
@@ -6296,7 +6302,7 @@ Gaiden-style Spell
 World Map BGM
 
 :辞書
-Dictionary
+Guide
 
 :魔物発生拠点
 World Map Skirmishes
@@ -6701,7 +6707,7 @@ Edit the English name for the class used in Prologue of OP class.\r\nThis settin
 Edit the image of the staff role displayed on the ED.
 
 :辞書を選んだときに表示される項目の設定を行います。
-Edit the items displayed when selecting a dictionary.
+Edit the items displayed when selecting a guide.
 
 :ROMに直接書き込まれているテキスト文字列の編集を行います。
 Edit text string directly written in ROM.
@@ -8803,6 +8809,9 @@ Class Name when using Branch Promotion
 :01=敵軍
 01=Enemy Army
 
+:03=グレー
+03=Gray
+
 :日本語名 開始位置
 Japanese Name Start Position
 
@@ -8817,6 +8826,12 @@ Class Reel FE7U
 
 :OPクラスデモ FE8U
 Class Reel FE8U
+
+:旧データ00
+old data 00.
+
+:バニラでは戦闘アニメーションの指定にこのフィールドを使っていましたが、1バイトしか書けないので、パッチによって移動しました。\r\n現在は利用していません。
+In vanilla, this field was used to specify battle animations, but since it can only be written in 1 byte, it was moved by the patch.\r\nNot currently.
 
 :OPクラスデモ
 Class Reel
@@ -9675,6 +9690,9 @@ Bugs such as freezing when using this patch have been reported.\r\nDo not instal
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is outdated.\r\nSee if there is a recent/alternative version.\r\n
+
+:SkillSystemsと同じ場所をフックするため、SkillSystemsとは同時には利用できません。
+This patch uses the same data as the Skill System Patch, so the two can't be used together.\r\nDo not attempt to use with the Skill System Patch.
 
 :このパッチは、内部処理用に作られたものです。通常は利用しないでください。
 This patch was designed for internal processing. Don't use it normally.
@@ -11369,7 +11387,7 @@ Support Partner 9
 Support Partner 8
 
 :区切り00
-Separator
+Padding00
 
 :支援人数
 # of Partners
@@ -11854,6 +11872,9 @@ Cannot copy images from different animations.\r\nPlease export the animation and
 :画像({0})がリスト存在しないため、ペーストできません。
 Pasting can not be done because the image ({0}) does not have a list.
 
+:画像サイズが正しくありません。\r\n選択された画像のサイズ Width:{0} Height:{1}
+Image size is incorrect.\r\nSize of image you specified: Width:{0} Height:{1}
+
 :背景の取出し
 Export Background
 
@@ -12078,6 +12099,9 @@ Complete!
 
 :まだ未実装です!
 Not implemented yet!
+
+:カスタムビルドのキャッシュを削除できませんでした。\r\n以下のディレクトリを手動で消去してください。\r\n{0}
+Failed to delete custom build cache.\r\nManually delete the following directories.\r\n{0}.
 
 :SkillSystemsがインストールされていません。
 Skill System is not installed.
@@ -12430,6 +12454,18 @@ Recompression did not increase capacity.\r\nAll the data seems to have been comp
 :{0}個のデータを再圧縮し、{1}バイトの追加の余白を得ました。\r\nこの余白を最大限利用するには、動作テストの後にrebuildを実行してください。
 I recompressed {0} data and got {1} bytes of extra margin.\r\nTo get the most out of this margin, run rebuild after the operation test.
 
+:Textにbase64のデータを入力してください
+Enter base64 data in Text.
+
+:Base64を復号できませんでした
+Failed to decode Base64.
+
+:保存するファイル名を選択してください。
+Please select a file name to save.
+
+:base64に変換できませんでした。
+Failed to convert to base64.
+
 :解凍する
 Decompress
 
@@ -12460,29 +12496,29 @@ Move this area.
 :再圧縮
 Recompressed.
 
-:再圧縮する
-Recompress.
+:lz77再圧縮
+lz77 recompression.
 
 :20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。
 Since 20220726, the compression ratio of lz77 has improved.\r\nRecompress the existing data in ROM to create a margin in ROM.\r\nYou can get a little more space by rebuilding after making a margin.\r\nThe process takes about 15 minutes.\r\nAfter the implementation, please do a simple operation test just in case.
 
-:lz77再圧縮
-lz77 recompression.
-
-:戦闘アニメOAM
-Battle animation OAM.
-
-:顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
-Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
-
-:AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
-The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
+:再圧縮する
+Recompress.
 
 :顔画像を圧縮する
 Compress facial images.
 
+:顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
+Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
+
+:戦闘アニメOAM
+Battle animation OAM.
+
 :戦闘アニメOAMの最適化
 Optimization of battle animation OAM.
+
+:AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
+The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*
@@ -13111,8 +13147,17 @@ It cannot be updated because it is a virtual ROM.
 :警告\r\n変更した内容をROMに保存していませんが、無視してアップデートしてもよろしいですか？
 Alert\r\nModified content is not saved in the ROM. Are you sure you want to ignore and update? 
 
+:「{0}」を遊んでくれてありがとう。\r\nこのゲームの進行状況を、作者に自動フィードバックしてもよろしいですか？\r\nフィードバックの内容は、ゲーム内の情報だけで、完全に匿名で行います。\r\nあなたのフィードバックは、ゲームの改善と、製作者のモチベーションの向上につながるので、ぜひご協力ください。\r\nこの設定は、「Menu->実行->作品支援」からいつでも変更できます。\r\n自動フィードバックを有効にしてもよろしいですか?\r\n
+Thank you for playing "{0}".\r\nWould you like to send automatic feedback to the author about the progress of this game? \r\nFeedback is completely anonymous, with in-game information only.\r\nYour feedback helps us improve the game and motivate our creators.\r\nThis setting can be changed at any time from "Menu->Run->Work Support".\r\nAre you sure you want to enable automatic feedback?\r\n
+
 :このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n
 Updateinfo.txt has not been created for this project.\r\nPlease see the following URL for how to create it.\r\n
+
+:自動フィードバックを無効にする
+Disable automatic feedback.
+
+:自動フィードバックを有効にする
+Enable automatic feedback.
 
 :UPDATE_URLの項目がありません
 There is no UPDATE_URL item.
@@ -13153,29 +13198,20 @@ A new version of this game has been released!\r\nAutomatically update to the lat
 :自動更新をキャンセルした後に、手動で更新したい場合は、「メニュー」->「実行」->「作品支援」を利用してください。
 If you want to update manually after canceling the automatic update, please use "Menu" -> "Run" -> "Work Support".
 
-:フィードバックを保存するファイル名を選択してください
-Choose a file name to save the feedback.
-
-:フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。
-A feedback report has been created.\r\nSend this file to the Discord server.
-
 :このゲームを最新版に更新します。
 Update this game to the latest version.
 
 :開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。
 Access the development community.\r\nSend feedback and feedback on the game and contribute to the project.
 
-:ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
-Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
+:自動フィードバックレポートを送るかどうかを設定します。
+Sets whether to send automatic feedback reports.
 
 :最新バージョンに更新する
 Update to Latest Version
 
 :開発コミニティにアクセスする
 Join Development Community
-
-:フィードバックのレポート作成する
-Create Feedback Report
 
 :著者
 Author
@@ -13248,6 +13284,9 @@ The directory could not be created.\r\n{0}.\r\n\r\n{1}.
 
 :ファイルをコピーできませんでした。\r\nSrc:{0}\r\nDest:{1}\r\n\r\n{2}
 The file could not be copied.\r\nSrc: {0}.\r\nDest: {1}.\r\n\r\n{2}.
+
+:ワークメモリを解放しています。
+Releasing work memory.
 
 :範囲攻撃の攻撃タイプを設定します。
 Sets the attack type for ranged attacks.

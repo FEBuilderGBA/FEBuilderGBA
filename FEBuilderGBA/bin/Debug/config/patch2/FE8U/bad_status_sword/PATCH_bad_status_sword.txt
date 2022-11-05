@@ -21,8 +21,8 @@ JUMP:0x7A928:$NONE=effect_noanime.bin
 JUMP:0x2B63C:$NONE=aki.bin
 
 
-INFO=追加効果で、6=睡眠、 7=バーサク、8=サイレス、効果をそれぞれ与えることができる武器を作れるようになります。\r\nSkillSystemsと同じ場所をフックするため、SkillSystemsとは同時には利用できません。
-INFO.en=Patches ROM to enable sword status ailments. Effect Options: 6=Sleeping, 7=Berserk, 8=Silence.\r\nThis patch uses the same data as the Skill System Patch, so the two can't be used together.\r\nDo not attempt to use with the Skill System Patch.\r\n
+INFO=追加効果で、6=睡眠、 7=バーサク、8=サイレス、効果をそれぞれ与えることができる武器を作れるようになります。\r\n
+INFO.en=Patches ROM to enable sword status ailments. Effect Options: 6=Sleeping, 7=Berserk, 8=Silence.
 INFO.zh=6=睡眠，7=狂乱，8 =沉默，我们可以制造能产生各种效果的武器。
 
 AUTHOR=Aera, Stein. Compatability:7743

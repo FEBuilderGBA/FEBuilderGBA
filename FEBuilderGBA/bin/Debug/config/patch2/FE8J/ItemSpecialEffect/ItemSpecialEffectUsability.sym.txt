@@ -1,0 +1,11 @@
+ItemSpecialEffectTable=$84
+FindValidItemLoop=$0A
+Continue=$20
+RetFalse=$74
+SkipFlagCheck=$36
+SkipUnitCheck=$44
+SkipClassCheck=$52
+SkipHealthCheck=$70
+DivLoop=$62
+RetTrue=$70
+ExitUsability=$78

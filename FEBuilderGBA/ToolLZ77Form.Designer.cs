@@ -65,18 +65,23 @@
             this.MoveButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.ReCompressButton = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ReCompressButton = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.CompressPortraitButton = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.OptimizationBattleAnimationOAMButton = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.Base64TextToFileButton = new System.Windows.Forms.Button();
+            this.FileToBase64TextButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Base64RichTextEdit = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
@@ -93,6 +98,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
             // DeCompressDESTFilename
@@ -349,6 +355,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
@@ -564,48 +571,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "再圧縮";
             // 
-            // ReCompressButton
-            // 
-            this.ReCompressButton.Location = new System.Drawing.Point(4, 223);
-            this.ReCompressButton.Margin = new System.Windows.Forms.Padding(4);
-            this.ReCompressButton.Name = "ReCompressButton";
-            this.ReCompressButton.Size = new System.Drawing.Size(462, 31);
-            this.ReCompressButton.TabIndex = 100;
-            this.ReCompressButton.Text = "再圧縮する";
-            this.ReCompressButton.UseVisualStyleBackColor = true;
-            this.ReCompressButton.Click += new System.EventHandler(this.ReCompressButton_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 6);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(622, 189);
-            this.textBox4.TabIndex = 99;
-            this.textBox4.Text = "20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう" +
-    "少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。";
-            // 
-            // textBoxEx1
-            // 
-            this.textBoxEx1.ErrorMessage = "";
-            this.textBoxEx1.Location = new System.Drawing.Point(310, 72);
-            this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEx1.Name = "textBoxEx1";
-            this.textBoxEx1.Placeholder = "";
-            this.textBoxEx1.Size = new System.Drawing.Size(346, 25);
-            this.textBoxEx1.TabIndex = 103;
-            // 
-            // textBoxEx2
-            // 
-            this.textBoxEx2.ErrorMessage = "";
-            this.textBoxEx2.Location = new System.Drawing.Point(310, 74);
-            this.textBoxEx2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEx2.Name = "textBoxEx2";
-            this.textBoxEx2.Placeholder = "";
-            this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
-            this.textBoxEx2.TabIndex = 105;
-            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage6);
@@ -629,6 +594,28 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "lz77再圧縮";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 6);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(622, 189);
+            this.textBox4.TabIndex = 99;
+            this.textBox4.Text = "20220726以降、lz77の圧縮率がよくなりました。\r\nROM内の既存のデータを再圧縮しROMに余白を作ります。\r\n余白を作った後にrebuildすれば、もう" +
+    "少し容量を得ることができます。\r\n処理には15分ぐらいの時間がかかります。\r\n実施後には、念のため簡単な動作テストをしてください。";
+            // 
+            // ReCompressButton
+            // 
+            this.ReCompressButton.Location = new System.Drawing.Point(4, 223);
+            this.ReCompressButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ReCompressButton.Name = "ReCompressButton";
+            this.ReCompressButton.Size = new System.Drawing.Size(462, 31);
+            this.ReCompressButton.TabIndex = 100;
+            this.ReCompressButton.Text = "再圧縮する";
+            this.ReCompressButton.UseVisualStyleBackColor = true;
+            this.ReCompressButton.Click += new System.EventHandler(this.ReCompressButton_Click);
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.Control;
@@ -641,16 +628,16 @@
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "顔画像";
             // 
-            // tabPage8
+            // CompressPortraitButton
             // 
-            this.tabPage8.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage8.Controls.Add(this.OptimizationBattleAnimationOAMButton);
-            this.tabPage8.Controls.Add(this.textBox6);
-            this.tabPage8.Location = new System.Drawing.Point(4, 28);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(654, 261);
-            this.tabPage8.TabIndex = 2;
-            this.tabPage8.Text = "戦闘アニメOAM";
+            this.CompressPortraitButton.Location = new System.Drawing.Point(6, 223);
+            this.CompressPortraitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CompressPortraitButton.Name = "CompressPortraitButton";
+            this.CompressPortraitButton.Size = new System.Drawing.Size(462, 31);
+            this.CompressPortraitButton.TabIndex = 101;
+            this.CompressPortraitButton.Text = "顔画像を圧縮する";
+            this.CompressPortraitButton.UseVisualStyleBackColor = true;
+            this.CompressPortraitButton.Click += new System.EventHandler(this.CompressPortraitButton_Click);
             // 
             // textBox5
             // 
@@ -662,6 +649,28 @@
             this.textBox5.TabIndex = 100;
             this.textBox5.Text = "顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300k" +
     "b程度容量を削減できます。";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage8.Controls.Add(this.OptimizationBattleAnimationOAMButton);
+            this.tabPage8.Controls.Add(this.textBox6);
+            this.tabPage8.Location = new System.Drawing.Point(4, 28);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(654, 261);
+            this.tabPage8.TabIndex = 2;
+            this.tabPage8.Text = "戦闘アニメOAM";
+            // 
+            // OptimizationBattleAnimationOAMButton
+            // 
+            this.OptimizationBattleAnimationOAMButton.Location = new System.Drawing.Point(4, 226);
+            this.OptimizationBattleAnimationOAMButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OptimizationBattleAnimationOAMButton.Name = "OptimizationBattleAnimationOAMButton";
+            this.OptimizationBattleAnimationOAMButton.Size = new System.Drawing.Size(462, 31);
+            this.OptimizationBattleAnimationOAMButton.TabIndex = 102;
+            this.OptimizationBattleAnimationOAMButton.Text = "戦闘アニメOAMの最適化";
+            this.OptimizationBattleAnimationOAMButton.UseVisualStyleBackColor = true;
+            this.OptimizationBattleAnimationOAMButton.Click += new System.EventHandler(this.OptimizationBattleAnimationOAMButton_Click);
             // 
             // textBox6
             // 
@@ -675,27 +684,76 @@
     "、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に" +
     "、特に有効です。";
             // 
-            // CompressPortraitButton
+            // textBoxEx1
             // 
-            this.CompressPortraitButton.Location = new System.Drawing.Point(6, 223);
-            this.CompressPortraitButton.Margin = new System.Windows.Forms.Padding(4);
-            this.CompressPortraitButton.Name = "CompressPortraitButton";
-            this.CompressPortraitButton.Size = new System.Drawing.Size(462, 31);
-            this.CompressPortraitButton.TabIndex = 101;
-            this.CompressPortraitButton.Text = "顔画像を圧縮する";
-            this.CompressPortraitButton.UseVisualStyleBackColor = true;
-            this.CompressPortraitButton.Click += new System.EventHandler(this.CompressPortraitButton_Click);
+            this.textBoxEx1.ErrorMessage = "";
+            this.textBoxEx1.Location = new System.Drawing.Point(310, 72);
+            this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx1.Name = "textBoxEx1";
+            this.textBoxEx1.Placeholder = "";
+            this.textBoxEx1.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx1.TabIndex = 103;
             // 
-            // OptimizationBattleAnimationOAMButton
+            // textBoxEx2
             // 
-            this.OptimizationBattleAnimationOAMButton.Location = new System.Drawing.Point(4, 226);
-            this.OptimizationBattleAnimationOAMButton.Margin = new System.Windows.Forms.Padding(4);
-            this.OptimizationBattleAnimationOAMButton.Name = "OptimizationBattleAnimationOAMButton";
-            this.OptimizationBattleAnimationOAMButton.Size = new System.Drawing.Size(462, 31);
-            this.OptimizationBattleAnimationOAMButton.TabIndex = 102;
-            this.OptimizationBattleAnimationOAMButton.Text = "戦闘アニメOAMの最適化";
-            this.OptimizationBattleAnimationOAMButton.UseVisualStyleBackColor = true;
-            this.OptimizationBattleAnimationOAMButton.Click += new System.EventHandler(this.OptimizationBattleAnimationOAMButton_Click);
+            this.textBoxEx2.ErrorMessage = "";
+            this.textBoxEx2.Location = new System.Drawing.Point(310, 74);
+            this.textBoxEx2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx2.Name = "textBoxEx2";
+            this.textBoxEx2.Placeholder = "";
+            this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx2.TabIndex = 105;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage9.Controls.Add(this.Base64RichTextEdit);
+            this.tabPage9.Controls.Add(this.label11);
+            this.tabPage9.Controls.Add(this.FileToBase64TextButton);
+            this.tabPage9.Controls.Add(this.Base64TextToFileButton);
+            this.tabPage9.Location = new System.Drawing.Point(4, 28);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(685, 302);
+            this.tabPage9.TabIndex = 5;
+            this.tabPage9.Text = "Base64";
+            // 
+            // Base64TextToFileButton
+            // 
+            this.Base64TextToFileButton.Location = new System.Drawing.Point(6, 265);
+            this.Base64TextToFileButton.Name = "Base64TextToFileButton";
+            this.Base64TextToFileButton.Size = new System.Drawing.Size(228, 31);
+            this.Base64TextToFileButton.TabIndex = 1;
+            this.Base64TextToFileButton.Text = "Base64 Text to File";
+            this.Base64TextToFileButton.UseVisualStyleBackColor = true;
+            this.Base64TextToFileButton.Click += new System.EventHandler(this.Base64TextToFileButton_Click);
+            // 
+            // FileToBase64TextButton
+            // 
+            this.FileToBase64TextButton.Location = new System.Drawing.Point(274, 265);
+            this.FileToBase64TextButton.Name = "FileToBase64TextButton";
+            this.FileToBase64TextButton.Size = new System.Drawing.Size(218, 31);
+            this.FileToBase64TextButton.TabIndex = 6;
+            this.FileToBase64TextButton.Text = "File to Base64 Text";
+            this.FileToBase64TextButton.UseVisualStyleBackColor = true;
+            this.FileToBase64TextButton.Click += new System.EventHandler(this.FileToBase64TextButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 18);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Text:";
+            // 
+            // Base64RichTextEdit
+            // 
+            this.Base64RichTextEdit.Location = new System.Drawing.Point(9, 31);
+            this.Base64RichTextEdit.Name = "Base64RichTextEdit";
+            this.Base64RichTextEdit.Size = new System.Drawing.Size(631, 228);
+            this.Base64RichTextEdit.TabIndex = 9;
+            this.Base64RichTextEdit.Text = "";
             // 
             // ToolLZ77Form
             // 
@@ -730,6 +788,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -785,6 +845,11 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button OptimizationBattleAnimationOAMButton;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button Base64TextToFileButton;
+        private System.Windows.Forms.Button FileToBase64TextButton;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RichTextBox Base64RichTextEdit;
 
     }
 }

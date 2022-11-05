@@ -223,7 +223,21 @@ namespace FEBuilderGBA
             UpdateBattleRoundData();
             UpdatePalette();
             UpdateBGM();
+            AutoFeedback();
         }
+
+        void AutoFeedback()
+        {
+            if (! ToolWorkSupportForm.UseAutoFeedback() )
+            {
+                return ;
+            }
+
+            uint mapid = (uint)N_B14.Value;
+            ToolWorkSupportForm.AutoFeedback.SendFeedBack(mapid);
+        }
+
+
         void UpdateUserStack()
         {
             this.UserStack = Program.RAM.getBinaryData(0x03007000, 0x03007F00 - 0x03007000);
@@ -2579,6 +2593,16 @@ namespace FEBuilderGBA
                 this.BattleSomeDataList.DummyAlloc(BattleSomeDataStruct.Count, 0);
                 InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.BattleSomeDataAddress);
             }
+            else if (Program.ROM.RomInfo.version == 7)
+            {
+                tabControlEtc.TabPages.Remove(tabPageWorldmap);
+                tabControlEtc.TabPages.Remove(tabPageDungeon);
+
+                this.BattleSomeDataList.OwnerDraw(DrawBattleSomeDataList, DrawMode.OwnerDrawFixed, false);
+                this.BattleSomeDataList.ItemHeight = 12;
+                this.BattleSomeDataList.DummyAlloc(BattleSomeDataStruct.Count, 0);
+                InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.BattleSomeDataAddress);
+            }
             else
             {
                 tabControlEtc.TabPages.Remove(tabPageBattleSome);
@@ -3241,7 +3265,6 @@ namespace FEBuilderGBA
             EmulatorMemoryUtil.AddressList a = list[index];
 
             uint addr = baseaddr + a.Plus;
-
             if (a.Size == 0)
             {//Label
                 U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);

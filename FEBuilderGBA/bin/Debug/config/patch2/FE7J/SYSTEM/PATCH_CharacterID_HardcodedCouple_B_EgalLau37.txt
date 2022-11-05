@@ -1,0 +1,18 @@
+NAME=ハードコードされたカップルのユニットID その2
+NAME.en=Character 2 of hardcoded couple
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0DAD288
+ADDRESS_TYPE=UNIT
+DATASIZE=1
+HEX=true
+
+AUTHOR=SageMatthis/EgalLau37
+
+INFO=ハードコードされたカップルのユニットID その2。パントとルイーズ（0x0F、0x15）は、デフォルトでは支援の有無や支援会話一覧での表示などがハードコードされています。 この2人のIDは、支援とAランク、他のすべてのキャラクターとBランクになったとき、ゲーム上ではコンプリートとみなされます。 これにより、表示とコンプリート進捗のハードコーディングされたIDが変更されます。
+INFO.en=Character ID 2 for hardcoded couple. By default, Pent and Louse (0x0F, 0x15) are hardcoded in terms of support availability and display in the supports viewer room.  For their IDs, the game considers them complete when they have A rank with their parter and B rank with every other character.  This changes the hardcoded IDs for display and completion progress.
+NAME.zh=硬编码的情侣单元 ID #2。
+INFO.zh=硬编码的情侣单位 ID 第 2 部分。Punt 和 Louise (0x0F, 0x15) 默认是硬编码的，用来表示支持是否可用，并显示在支持对话列表中。这两个ID在支持和A级，以及所有其他角色和B级的情况下，在游戏中被认为是完整的。这将更改用于显示和完成进度的硬编码 ID。

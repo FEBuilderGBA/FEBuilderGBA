@@ -72,6 +72,8 @@ ldr		r5,[r5]			@r5=gDialogueState
 MainLoop:
 ldr		r4,[r5]			@pointer to place in current text buffer
 ldrb	r6,[r4]
+cmp		r6,#0
+beq		Label2389238
 cmp		r6,#0x80		@extra text codes
 beq		ExtraTextCodes
 cmp		r6,#0x1D		@0x1E-0x7F all return 1
@@ -80,6 +82,7 @@ b		RetOne
 Label1:
 add		r4,#1
 str		r4,[r5]
+Label2389238:
 ldr		r1,=HandleNormalTextCodesTable	@defined by EA
 lsl		r0,r6,#2
 add		r0,r1

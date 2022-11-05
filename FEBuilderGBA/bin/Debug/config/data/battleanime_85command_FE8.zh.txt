@@ -39,8 +39,8 @@
 26=把勇者之剑投掷的家伙
 27=把勇者之剑投掷的家伙
 28=电的声音(吱吱吱吱的)
-29=空
-2A=空
+29=Play sound when the Demon King appears
+2A=Play screams of the demon king dies
 2B=钢铁声音
 2C=FE6:罗伊封印暴击的火焰效果
 2D=? (刺客关键)(致命的激活器取决于其他命令?)

@@ -1,0 +1,33 @@
+NAME=マップに光の柱の演出を表示(イベント命令)
+NAME.en=Add Event: Show light columns on map
+NAME.zh=Add Event: Show light columns on map
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ShowLightMapAnim.dmp=0xF0 0xB5 0x81 0xB0
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_ShowLightMapAnim.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	マップに光の柱の演出を表示(LOW)	SlotB=Coord, Slot1=Val1,Val2	{MAP}
+EVENTSCRIPT:02=40050B00XXXXYYYY40050100ZZZZWWWW400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	マップに光の柱の演出を表示 [XX:MAPX:X][YY:MAPY:Y] [ZZ:DEC:Unk1][WW:DEC:Unk2]		{MAP}
+EVENTSCRIPT:03=40050B00XXXXYYYY4005010000000000400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	マップに光の柱の演出を表示 [XX:MAPX:X][YY:MAPY:Y]		{MAP}
+EVENTSCRIPT:05=400D0000D1220208	光の柱をマップから消す	{MAP}
+
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map(LOW)	SlotB=Coord, Slot1=Val1,Val2	{MAP}
+EVENTSCRIPT:02.en=40050B00XXXXYYYY40050100ZZZZWWWW400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map [XX:MAPX:X][YY:MAPY:Y] [ZZ:DEC:Unk1][WW:DEC:Unk2]		{MAP}
+EVENTSCRIPT:03.en=40050B00XXXXYYYY4005010000000000400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map [XX:MAPX:X][YY:MAPY:Y]		{MAP}
+EVENTSCRIPT:05.en=400D0000D1220208	Hide light columns on map	{MAP}
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map(LOW)	SlotB=Coord, Slot1=Val1,Val2	{MAP}
+EVENTSCRIPT:02.zh=40050B00XXXXYYYY40050100ZZZZWWWW400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map [XX:MAPX:X][YY:MAPY:Y] [ZZ:DEC:Unk1][WW:DEC:Unk2]		{MAP}
+EVENTSCRIPT:03.zh=40050B00XXXXYYYY4005010000000000400D0000{$L1:ASMC_ShowLightMapAnim.dmp}	Show light columns on map [XX:MAPX:X][YY:MAPY:Y]		{MAP}
+EVENTSCRIPT:05.zh=400D0000D1220208	Hide light columns on map	{MAP}
+
+INFO=マップに光の柱の演出を追加します。\r\nFE7のローランの剣の演出で利用されたルーチンの残骸を再利用します。\r\nこの光の柱はイベント中にのみ有効です。\r\n一度表示したらイベント中はずっと表示されていますが、邪魔になったら非表示にすることもできます。
+INFO.en=Adds a pillar of light effect to the map.\r\nReuses leftover routines used in FE7's Sword of Roland rendition.\r\nThis pillar of light is only active during the event.\r\nOnce displayed, it will remain visible throughout the event, but you can hide it if it gets in the way.
+INFO.zh=为地图添加光柱效果。\r\n重用 FE7 的《罗兰之剑》演绎中使用的剩余例程。\r\n此光柱仅在活动期间激活。\r\n一旦显示，它将在整个活动期间保持可见，但如果它妨碍您，您可以将其隐藏。

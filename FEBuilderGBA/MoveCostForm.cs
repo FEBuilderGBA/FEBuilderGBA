@@ -260,6 +260,13 @@ namespace FEBuilderGBA
             {
                 max = 50 + 1;
             }
+            if (!U.isSafetyOffset(addr + max - 1))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.CLASS, classList[(int)cid].addr
+                    , R._("クラス({0})の{1}のポインタ({2})が危険です。"
+                    , classList[(int)cid].name, seetname, U.To0xHexString(addr)), cid));
+                return;
+            }
 
             for (uint id = 0; id < max; id++)
             {

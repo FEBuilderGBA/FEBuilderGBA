@@ -39,22 +39,29 @@
             this.X_CancelImage = new FEBuilderGBA.InterpolatedPictureBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.X_ReOrderImage2Panel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.X_ReOrderImage2 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ReOrder2Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.X_ReOrderImage1Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_ReOrderImage1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_CancelImage)).BeginInit();
+            this.X_ReOrderImage2Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_ReOrderImage2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.X_ReOrderImage2Panel);
             this.panel1.Controls.Add(this.X_ErrorMessage);
             this.panel1.Controls.Add(this.X_ReOrderImage1Panel);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 750);
+            this.panel1.Size = new System.Drawing.Size(1040, 823);
             this.panel1.TabIndex = 1;
             // 
             // X_ErrorMessage
@@ -65,7 +72,7 @@
             this.X_ErrorMessage.Name = "X_ErrorMessage";
             this.X_ErrorMessage.Placeholder = "";
             this.X_ErrorMessage.ReadOnly = true;
-            this.X_ErrorMessage.Size = new System.Drawing.Size(544, 293);
+            this.X_ErrorMessage.Size = new System.Drawing.Size(475, 231);
             this.X_ErrorMessage.TabIndex = 8;
             // 
             // X_ReOrderImage1Panel
@@ -74,14 +81,14 @@
             this.X_ReOrderImage1Panel.Controls.Add(this.label5);
             this.X_ReOrderImage1Panel.Controls.Add(this.X_ReOrderImage1);
             this.X_ReOrderImage1Panel.Controls.Add(this.ReOrder1Button);
-            this.X_ReOrderImage1Panel.Location = new System.Drawing.Point(7, 339);
+            this.X_ReOrderImage1Panel.Location = new System.Drawing.Point(7, 272);
             this.X_ReOrderImage1Panel.Name = "X_ReOrderImage1Panel";
-            this.X_ReOrderImage1Panel.Size = new System.Drawing.Size(1096, 408);
+            this.X_ReOrderImage1Panel.Size = new System.Drawing.Size(1028, 277);
             this.X_ReOrderImage1Panel.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(556, 49);
+            this.label5.Location = new System.Drawing.Point(484, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(535, 98);
             this.label5.TabIndex = 5;
@@ -93,7 +100,7 @@
             this.X_ReOrderImage1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
             this.X_ReOrderImage1.Location = new System.Drawing.Point(3, -1);
             this.X_ReOrderImage1.Name = "X_ReOrderImage1";
-            this.X_ReOrderImage1.Size = new System.Drawing.Size(544, 408);
+            this.X_ReOrderImage1.Size = new System.Drawing.Size(475, 276);
             this.X_ReOrderImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.X_ReOrderImage1.TabIndex = 4;
             this.X_ReOrderImage1.TabStop = false;
@@ -102,7 +109,7 @@
             // ReOrder1Button
             // 
             this.ReOrder1Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ReOrder1Button.Location = new System.Drawing.Point(556, 3);
+            this.ReOrder1Button.Location = new System.Drawing.Point(484, 3);
             this.ReOrder1Button.Name = "ReOrder1Button";
             this.ReOrder1Button.Size = new System.Drawing.Size(535, 36);
             this.ReOrder1Button.TabIndex = 3;
@@ -116,7 +123,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.X_CancelImage);
             this.panel2.Controls.Add(this.CloseButton);
-            this.panel2.Location = new System.Drawing.Point(560, 40);
+            this.panel2.Location = new System.Drawing.Point(492, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(543, 102);
             this.panel2.TabIndex = 5;
@@ -163,12 +170,53 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "この画像は、必要な形式の基準を満たしていません。";
             // 
+            // X_ReOrderImage2Panel
+            // 
+            this.X_ReOrderImage2Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_ReOrderImage2Panel.Controls.Add(this.label3);
+            this.X_ReOrderImage2Panel.Controls.Add(this.X_ReOrderImage2);
+            this.X_ReOrderImage2Panel.Controls.Add(this.ReOrder2Button);
+            this.X_ReOrderImage2Panel.Location = new System.Drawing.Point(7, 551);
+            this.X_ReOrderImage2Panel.Name = "X_ReOrderImage2Panel";
+            this.X_ReOrderImage2Panel.Size = new System.Drawing.Size(1028, 277);
+            this.X_ReOrderImage2Panel.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(484, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(535, 98);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "規約を守っていないデータはパレットの最初の色としてインポートします。";
+            // 
+            // X_ReOrderImage2
+            // 
+            this.X_ReOrderImage2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_ReOrderImage2.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_ReOrderImage2.Location = new System.Drawing.Point(3, -1);
+            this.X_ReOrderImage2.Name = "X_ReOrderImage2";
+            this.X_ReOrderImage2.Size = new System.Drawing.Size(475, 276);
+            this.X_ReOrderImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.X_ReOrderImage2.TabIndex = 4;
+            this.X_ReOrderImage2.TabStop = false;
+            // 
+            // ReOrder2Button
+            // 
+            this.ReOrder2Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ReOrder2Button.Location = new System.Drawing.Point(484, 3);
+            this.ReOrder2Button.Name = "ReOrder2Button";
+            this.ReOrder2Button.Size = new System.Drawing.Size(535, 36);
+            this.ReOrder2Button.TabIndex = 3;
+            this.ReOrder2Button.Text = "違反データは0に指定";
+            this.ReOrder2Button.UseVisualStyleBackColor = true;
+            this.ReOrder2Button.Click += new System.EventHandler(this.ReOrder2Button_Click);
+            // 
             // ErrorTSAErrorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1137, 770);
+            this.ClientSize = new System.Drawing.Size(1055, 847);
             this.Controls.Add(this.panel1);
             this.Name = "ErrorTSAErrorForm";
             this.Text = "画像の形式が基準を満たしていません。";
@@ -179,6 +227,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ReOrderImage1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.X_CancelImage)).EndInit();
+            this.X_ReOrderImage2Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.X_ReOrderImage2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,6 +246,10 @@
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Label label2;
         private TextBoxEx X_ErrorMessage;
+        private System.Windows.Forms.Panel X_ReOrderImage2Panel;
+        private System.Windows.Forms.Label label3;
+        private InterpolatedPictureBox X_ReOrderImage2;
+        private System.Windows.Forms.Button ReOrder2Button;
 
     }
 }

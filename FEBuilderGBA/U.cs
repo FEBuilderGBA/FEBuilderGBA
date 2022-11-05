@@ -5065,6 +5065,30 @@ namespace FEBuilderGBA
             return true;
         }
 
+        //ディレクトリを確実に消す
+        public static bool DelTree(string dir , int retry = 10)
+        {
+            if (!Directory.Exists(dir))
+            {
+                return true;
+            }
+
+            for (int i = 0; i < retry; i++)
+            {
+                try
+                {
+                    Directory.Delete(dir, true);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e.ToString());
+                }
+                System.Threading.Thread.Sleep(500);
+            }
+            return false;
+        }
+
         //Nビットで表現される マイナスありの数字にキャストします。
         public static int CastBit(uint a,int bitCount)
         {
@@ -7621,6 +7645,11 @@ namespace FEBuilderGBA
             //最初に見つけた正しいポインタにする
             foreach (uint p in pointers)
             {
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+               
                 uint a = rom.u32(p);
                 if (!U.isSafetyPointer(a, rom))
                 {
@@ -7643,7 +7672,12 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                
+
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+
                 uint a = rom.u32(p);
                 if (! U.isSafetyPointer(a, rom))
                 {
@@ -7672,6 +7706,11 @@ namespace FEBuilderGBA
             //最初に見つけた正しいポインタにする
             foreach (uint p in pointers)
             {
+                if (!U.isSafetyOffset(p, rom))
+                {
+                    continue;
+                }
+
                 uint a = rom.u32(p);
                 if (!U.isSafetyPointer(a, rom))
                 {
@@ -7752,6 +7791,67 @@ namespace FEBuilderGBA
             FETextDecode decoder = new FETextDecode();
             return decoder.listbyte_to_string(str, src_objests.Length);
         }
+        public static void ReleaseMemory(InputFormRef.AutoPleaseWait pleaseWait = null)
+        {
+            if (pleaseWait != null)
+            {
+                pleaseWait.DoEvents(R._("ワークメモリを解放しています。"));
+            }
+            Program.AsmMapFileAsmCache.StopRequest();
+            Program.AsmMapFileAsmCache.Join();
+            GC.Collect();
+        }
+        public static bool firstMatchBin(byte[] a, byte[] need)
+        {
+            if (a.Length < need.Length)
+            {
+                return false;
+            }
+            byte[] bin = U.getBinaryData(a, 0, need.Length);
+            return U.memcmp(bin, need) == 0;
+        }
+        public static string GuessExtension(byte[] bin)
+        {
+            if (U.firstMatchBin(bin, new byte[] { 0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C }))
+            {
+                return ".7z";
+            }
+            if (U.firstMatchBin(bin, new byte[] { 0x89, 0x50, 0x4E, 0x47 }))
+            {
+                return ".png";
+            }
+            if (U.firstMatchBin(bin, new byte[] { 0x50, 0x4B }))
+            {
+                return ".zip";
+            }
+            return "";
+        }
+        public static bool Base64Encode(string text, out byte[] out_data)
+        {
+            try
+            {
+                out_data = System.Convert.FromBase64String(text);
+            }
+            catch (Exception)
+            {
+                out_data = new byte[0];
+                return false;
+            }
+            return true;
+        }
+        //ファイルの解凍を知らないアホのために
+        public static bool IsExplorerZipVirtual(string path)
+        {
+            if (path.IndexOf("\\Temp\\") >= 0)
+            {
+                if (path.IndexOf(".zip\\") >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
 

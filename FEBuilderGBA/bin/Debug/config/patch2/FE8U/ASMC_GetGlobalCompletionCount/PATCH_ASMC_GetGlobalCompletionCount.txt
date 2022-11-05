@@ -1,0 +1,20 @@
+NAME=ゲームを何周しているか取得する(イベント命令)
+NAME.en=Add Event: Get how many counts the game has been cleared
+NAME.zh=Add Event: Get how many counts the game has been cleared
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetGlobalCompletionCount.dmp=0x00 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetGlobalCompletionCount.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_GetGlobalCompletionCount.dmp}	ゲームを何周しているか取得する(ASMC_GetGlobalCompletionCount)	@STOREC	{MAP}
+
+INFO=ゲームを何周クリアしているか取得します。\r\n状況画面の右上に表示されている"周目"の数字を取得し、SlotCに返します。\r\nこの値は0から数えます。\r\nつまり、1周周もクリアしていない場合は0になります。\r\nもし2周している場合は1ですし、5周している場合は4です。
+INFO.en=Gets the number of times the game has been completed.\r\nThe number of "PLAY" shown in the upper right corner of the status screen is retrieved and returned to SlotC.\r\nThis value is counted from 0.\r\nIf the game has not cleared any rounds, the value is 0.\r\nIf two laps have been completed, the value is 1, and if five laps have been completed, the value is 4.
+INFO.zh=Gets the number of times the game has been completed.\r\nThe number of "PLAY" shown in the upper right corner of the status screen is retrieved and returned to SlotC.\r\nThis value is counted from 0.\r\nIf the game has not cleared any rounds, the value is 0.\r\nIf two laps have been completed, the value is 1, and if five laps have been completed, the value is 4.

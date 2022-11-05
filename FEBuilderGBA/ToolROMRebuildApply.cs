@@ -167,6 +167,8 @@ namespace FEBuilderGBA
         uint UseShareSameData = 0;
         public bool Apply(InputFormRef.AutoPleaseWait wait, ROM vanilla, string filename, int useFreeArea, uint freeAreaMinimumSize, uint freeAreaStartAddress, string appendFreeAreaFilename, uint useShareSameData)
         {
+            U.ReleaseMemory(wait);
+
             this.ApplyLog = new StringBuilder();
             this.AddressMap = new Dictionary<uint, uint>();
             this.MissingPointerList = new List<MissingPointer>();

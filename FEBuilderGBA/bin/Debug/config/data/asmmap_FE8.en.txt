@@ -1401,7 +1401,7 @@ r3=X tile position of menu of right	{U}
 @MapSize@2	short	Height
 0202E4D4	@MapSize	MapSize	{U}
 0202E4D0	@MapSize	MapSize	{J}
-@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion)
+@BattleStats@00	short	bitfield	(0x2='battle hasn't started yet', 0x20=arena, 0x80=Promotion, 0x200=Ring)
 @BattleStats@02	short	Type of animation?	No idea, really	 -Appears to be range
 @BattleStats@04	short	Damage	(Attack - defense)
 @BattleStats@06	short	Attack
@@ -4086,7 +4086,7 @@ r3=X tile position of menu of right	{U}
 0807cc78	NewMapPoisonEffect	{U}
 0807ccc0	MapAnim_BeginPoisonAnim	{U}
 0807d82c	NewMapAnimEffectAnimator	{U}
-0807daa8	New6C_SomethingFlashy	{U}
+0807daa8	StartMapAnimTargetUnitWarpRingProcs	{U}
 0807ec08	GetSomeStatUp	{U}
 0807ed30	GetSomeStatBase	{U}
 0807f614	NewBG0Shaker	{U}
@@ -5692,7 +5692,7 @@ r3=X tile position of menu of right	{U}
 080634E0	StartSpellAnimSleep	{J}
 080631EC	StartSpellAnimHammerne	{J}
 08063D14	StartSpellAnimBerserk	{J}
-0805E8D8	StartSpellAnimShine	{J}
+08064580	StartSpellAnimShine	{J}
 08064A74	StartSpellAnimLuna	{J}
 08066524	StartSpellAnimAura	{J}
 08067B94	StartSpellAnimIvaldi	{J}
@@ -5849,7 +5849,7 @@ r3=X tile position of menu of right	{U}
 0807EFBC	NewMapPoisonEffect	{J}
 0807F004	MapAnim_BeginPoisonAnim	{J}
 0807FB70	NewMapAnimEffectAnimator	{J}
-0807FDEC	New6C_SomethingFlashy	{J}
+0807FDEC	StartMapAnimTargetUnitWarpRingProcs	{J}
 08080F48	GetSomeStatUp	{J}
 08081070	GetSomeStatBase	{J}
 08081954	NewBG0Shaker	{J}
@@ -13114,7 +13114,7 @@ r3=X tile position of menu of right	{U}
 08745FD0	&LZ77	Something's TSA	57	{U}
 08083F38	StartTourchStaffMapAnim	{J}
 0807FEEC	StartProcForTourchStaffMapAnim	{J}
-080819E8	StartTourchStaffMapAnim	{U}
+
 0807DBA8	StartProcForTourchStaffMapAnim	{U}
 08014958	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{J}
 08014930	memset_short	r0=DestPtr	r1=Count	r2=FillValue	{U}
@@ -14816,8 +14816,8 @@ r3=X tile position of menu of right	{U}
 0202BCB8	gCurrentRealCameraPos	{J}
 080357E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
 080358E4	UpdateMapGraphicsIfUnitHP0AndFog	{U}
-0807B5DC	BeginPoisonMapAnim	{U}
-0807D924	BeginPoisonMapAnim	{J}
+0807B5DC	BeginMapAnimsControllerForUnit	{U}
+0807D924	BeginMapAnimsControllerForUnit	{J}
 0807B7F0	BeginMapAnimDance	{U}
 0807DB38	BeginMapAnimDance	{J}
 0807B634	BeginHatchFromEggsMapAnim	{U}
@@ -15428,3 +15428,95 @@ r3=X tile position of menu of right	{U}
 08A72996	sSprite_Page2Name	{J}
 08A729DC	sPageNameSpriteLut	{J}
 08A729E8	sPageNameChrOffsetLut	{J}
+080098D4	GameCtrl_GotoToClassReel	{J}
+080B762C	opinfoview_draw_font	{J}
+080099E4	GameCtrl_GotoToClassReel	{U}
+080B2A14	opinfoview_draw_font	{U}
+08083FF4	ExecMapAnimHammern	{J}
+08080170	StartMapAnimHammernProcs	{J}
+08083F94	ExecMapAnimRestore	{J}
+08080334	StartMapAnimRestoreProcs	{J}
+08083FD4	ExecMapAnimStone	{J}
+08080524	StartMapAnimStoneProcs	{J}
+08083F74	ExecMapAnimBeserk	{J}
+080800c0	StartMapAnimBeserkProcs	{J}
+0807FB1C	StartMapAnimUnusedProcs	{J}
+08083D68	ExecMapAnimAntitoxin	{J}
+08083D94	ExecMapAnimPureWater	{J}
+0807f9cc	StartMapAnimAntitoxinPureWaterProcs	{J}
+08083D28	ExecMapAnimFortify	{J}
+0807f3f8	StartMapAnimFortifyProcs	{J}
+08083D08	ExecMapAnimBarrier	{J}
+08080978	StartMapAnimBarrierProcs	{J}
+08083CE8	ExecMapAnimSilence	{J}
+080807CC	StartMapAnimSilenceProcs	{J}
+
+08081CB4	ExecMapAnimHammern	{U}
+0807D7D8	StartMapAnimHammernProcs	{U}
+08081C54	ExecMapAnimRestore	{U}
+0807DFF4	StartMapAnimRestoreProcs	{U}
+08081C94	ExecMapAnimStone	{U}
+0807e1e4	StartMapAnimStoneProcs	{U}
+08081C34	ExecMapAnimBeserk	{U}
+0807dd80	StartMapAnimBeserkProcs	{U}
+08081A28	ExecMapAnimAntitoxin	{U}
+08081A54	ExecMapAnimPureWater	{U}
+0807D688	StartMapAnimAntitoxinPureWaterProcs	{U}
+080819E8	ExecMapAnimFortify	{U}
+0807d0b4	StartMapAnimFortifyProcs	{U}
+080819C8	ExecMapAnimBarrier	{U}
+0807e638	StartMapAnimBarrierProcs	{U}
+080819A8	ExecMapAnimSilence	{U}
+0807e48c	StartMapAnimSilenceProcs	{U}
+08083D48	ExecMapAnimNightmare	{J}
+0807f818	StartMapAnimNightmareProcs	{J}
+08081A08	ExecMapAnimNightmare	{U}
+0807d4d4	StartMapAnimNightmareProcs	{U}
+0807F6A4	StartMapAnimFortifySubProcs	{J}
+0807D360	StartMapAnimFortifySubProcs	{U}
+0808068C	StartMapAnimUnused2Procs	{J}
+0807E34C	StartMapAnimUnused2Procs	{U}
+08083FB4	ExecMapAnimSleep	{J}
+08080414	StartMapAnimSleepProcs	{J}
+08083F58	ExecMapAnimUnlock	{J}
+08021C28	StartMapAnimUnused3Procs	{J}
+08021510	StartMapAnimUnused4Procs	{J}
+080DC7DC	:080DC810	LightRuneMapAnimSomeData	{J}
+080DC810	:080DC844	MapAnimUnuse4SomeData	{J}
+08021610	UnuseMapAnim5Init	{J}
+0802155C	UnuseMapAnim5Init2	{J}
+080216A4	StartMapAnimUnused5Procs	{J}
+085C38C8	:085C390C	WarpInData1	{J}
+085C390C	:085C3950	WarpInData2	{J}
+08081C74	ExecMapAnimSleep	{U}
+0807DFF4	StartMapAnimSleepProcs	{U}
+08081C18	ExecMapAnimUnlock	{U}
+08021684	StartMapAnimUnused4Procs	{U}
+080D7B30	:080D7B64	LightRuneMapAnimSomeData	{U}
+080D7B64	:080D7B98	MapAnimUnuse4SomeData	{U}
+080215F0	UnuseMapAnim5Init	{U}
+0802153C	UnuseMapAnim5Init2	{U}
+08021684	StartMapAnimUnused5Procs	{U}
+0859B448	:0859B48C	WarpInData1	{U}
+0859B48C	:0859B4D0	WarpInData2	{U}
+080220B0	StartUnuseMapAnim6Procs	Remains of FE7.	The implementation department displaying the shiny mark on the sword above Roland's altar.	{J}
+085C3798	:085C37C0	UNUSEDBIN	UnsedChapterIntroProcs	{J}
+085B9A28	:085B9A7C	UNUSEDBIN	They are probably Procs for debugging.	{J}
+08022E2C	BkSel_ButtonBPressed	When the B button is pressed in battle prediction.	{J}
+0807F114	StartMapEggHatch2Procs	{J}
+08083360	StartSummonByEvent45Procs	{J}
+080833A8	DeleteSummonByEvent45Procs	{J}
+08083510	StartColorChangeByEvent45Procs	{J}
+08021828	StartMapAnimRingEffectIfBattleStats0x200	{J}
+08021B30	StartMapAnimRingEffectIfBattleStats0x200	{U}
+08022250	StartUnuseMapAnim6Procs	Remains of FE7.	The implementation department displaying the shiny mark on the sword above Roland's altar.	{U}
+08022E64	BkSel_ButtonBPressed	When the B button is pressed in battle prediction.	{U}
+08081068	DeleteSummonByEvent45Procs	{U}
+080811D0	StartColorChangeByEvent45Procs	{U}
+080DC878	:080DC8B0	DancerRingEffectData	{J}
+080D7BCC	:080D7C04	DancerRingEffectData	{U}
+080DC844	:080DC878	MapAnimUnuse5SomeData	{J}
+080D7B98	:080D7BCC	MapAnimUnuse5SomeData	{U}
+080DC8B0	:080DC8E8	MapAnimUnuse3SomeData	{J}
+080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
+080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}

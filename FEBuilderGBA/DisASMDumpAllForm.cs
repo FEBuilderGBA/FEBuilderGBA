@@ -296,6 +296,7 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(self))
             using (StreamWriter writer = new StreamWriter(store_filename))
             {
+                U.ReleaseMemory(wait);
                 writer.WriteLine("//FEBuilderGBA " + R._("逆アセンブラ"));
                 if (notifyUpdateMessage)
                 {
@@ -342,6 +343,7 @@ namespace FEBuilderGBA
                 Dictionary<uint, uint> ldrtable = new Dictionary<uint, uint>();  //LDR参照データがある位置を記録します. コードの末尾などにあります. 数が多くなるのでマップする.
                 AsmMapFile.MakeSwitchDataList(ldrtable, 0x100, 0);
 
+                U.ReleaseMemory(wait);
                 wait.DoEvents(R._("データを準備中..."));
                 //探索を早くするために、データをアドレスへマッピングする. メモリを大量に使うが早い.
                 Dictionary<uint, int> lookupStructMap = MakeAllStructMapping(structlist);
@@ -464,6 +466,7 @@ namespace FEBuilderGBA
 
                     addr += code.GetLength();
                 }
+                U.ReleaseMemory(wait);
             }
 
             if (self != null)

@@ -1,0 +1,4 @@
+JavelinAnimSubList=$1C
+Loop=$02
+End=$12
+MatchFound=$10
