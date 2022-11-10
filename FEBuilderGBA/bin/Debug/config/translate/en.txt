@@ -12340,6 +12340,9 @@ It seems that VB6 runtime has already been installed.\r\nDo you want to skip run
 :SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
 Sappy is written in Visual Basic 6, so you need to install the runtime.\r\nLaunch the runtime installer.
 
+:(ディフォルト)
+(Default)
+
 :黒背景2
 Black Background2
 

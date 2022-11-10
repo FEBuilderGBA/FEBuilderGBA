@@ -377,69 +377,56 @@
 68	Oboe?	28594b5c2857733357acd1cad0f603f1
 
 //NIMAP DRUMSET
-	Snare Drum Brush	00ed96379873058f59ce5cc18e06fb3b	//	Fs5	//90	//0x5A
-	Ocean Drum	38a1898afe8a04b561646584efa76d14	Fn5	//89	//0x59
-//	Snare Drum Rod	//En5	//88	//0x58	NONE
-	Surdu	Ds5 //87	//0x57	75e89fb088c8c17a6dc7d508328e498e	
-	Surdu Dead Stroke	c8c19c15e6f05481f59bb4f38aae9d85	//Dn5 //86	//0x56	
-	Castanets	b3fda146183f79403dfdc3ca5e1dee4c	//Cs5 //85	//0x55	
-	Bell Tree	b429872447b51e45139f86dc72d10c99	//Cn5 //84	//0x54
-	Sleigh Bell	0afd8b5b31704a930f63fc2e22720218	//Bn4 //83	//0x53
-	Shaker	e816cc34d2e1ed405502fcaa82111cb0	//As4 //82	//0x52	
-	Open triangle	63142b51ea46e86d5863e58d8e289182	//An4 //81 //0x51	
-	Mute triangle	6e098662b4633b329be2c4a8779f0adc	//Gs4 //80 //0x50	
-//	Open Cuica	Gn4 //79 //0x4F	NONE
-//	Mute Cuica	Fs4 //78 //0x4E	NONE
-	Low Wood Block	31aca546cc748058125a5cea4d65a339	//Fn4 //77 //0x4D	
-	High Wood Block	2b6eca15ac807dc4a5b81be41efd803f	//En4 //76 //0x4C	
-	Claves	7e4a1ed182054f8c871447035fd409a4	//Ds4 //75 //0x4B	
-	Long Guiro	b38ba32f96f5e98deb2a63e2d682e8aa	//Dn4 //74 //0x4A	
-	Short Guiro	a98e49a9b47f39dc1edf59cc96ee6e2c	//Cs4 //73 //0x49	
-//	Long Whistle	//Cn4 //72 //0x48	NONE
-//	Short Whistle	//Bn3 //71	//0x47	NONE
-//	Maracas	As3 //70	//0x46	NONE
-//	Cabassa	An3 //69	//0x45	NONE
-	Low Agogo	ce1282b2b4abaa9e06efb41f6f9adeac	//Gs3 //68	//0x44	
-	High Agogo	71f3adcaaa4da28439e4ac000cc6fedc	//Gn3 //67	//0x43	
-//	Low Timbale	//Fs3 //66	//0x42	NONE
-//	High Timbale	//Fn3 //65	//0x41	NONE
-	Low Conga	1cd63b420d7d0745e104d682c884a208	//En3 //64	//0x40
-	Open Hi Conga	a22d56614a30adc232d59468fb472431	//Ds3 //63	//0x3F	
-	Mute Hi Conga	9e23be21a647a7a02156d6cd976ff936	//Dn3 //62	//0x3E	
-	Low Bongo	275906d852e04fba615c6aaef4c12ff8	//Cs3 //61	//0x3D	
-	Hi BOngo	15021facfe0b1b7742b2945264a77f7a	//Cn3 //60	//0x3C	
-//	Ride Cymbal 2	//	Bn2 //59	//0x3B	NONE	
-	Vibraslap	59ab7468b5f2dc8b472f1f213a4c333b	//As2 //58	//0x3A	
-	Crash Cymbal 2	a24bd81a46512a1abeb4c8522a10579d	//An2 //57	//0x39	
-	Cowbell	431b587c1ac638e79676e97d74e54e24	//Gs2 //56	//0x38	
-	Splash Cymbal	0d5eab1f63cb5a5ee7e051e24122ab19	//Gn2 //55	//0x37	
-	Tambourine	823a1375cd40942f3151b2b55609e914	//Fs2 //54	//0x36	
-	Ride Bell1	805a16046e0080246b6d6f3875ceecea	//Fn2 //53	//0x35	
-	Chinise Cymbal	010311e114645af24ede0652afb058d5	//En2 //52	//0x34	
-	Ride Cymbal 1	7b3a8766e7addb7f240c59acbc8ad011	//Ds2 //51	//0x33	
-//	High Tom	//Dn2 //50	//0x32	NONE	
-	Crash Cymbal	ce69994344888385ae257e4c3861f002	//Cs2 //49	//0x31	
-	Hi Mid Tom1	Cn2 //48	//0x30	027ed7e1f71c5f6470ea42b009ac7933	
-//	Low Mid Tom	Bn1 //47	//0x2F	NONE	
-	Open Hi-Hat	As1 //46	//0x2E	aaca75b0c9f09e619ec8c7bdcbc338db	
-	Low Tom	An1	1dc51ea1130a60c2fbf9d28f54ba3c20	//45	//0x2D
-//	Pedal Hi-Hat	//Gs1 //44	//0x2C	NONE	
-//	High Floor Tom	//Gn1 //43	//0x2B	NONE	
-	Closed Hi-Hat	00ed96379873058f59ce5cc18e06fb3b	//Fs1 //42	//0x2A	
-	Low Floor Tom	38a1898afe8a04b561646584efa76d14	//Fn1 //41	//0x29
-	Electoric Snare	75e89fb088c8c17a6dc7d508328e498e	//En1 //40	//0x28
-	Hand Clap	70130b0f57d28cd18826bf4c79ca625c	//Ds1 //39	//0x27
-	Acoustic Snare	239f5cf146148ab202a3d98439fa94a1	//Dn1 //38	//0x26
-	Side Stick	39d39003651a7a9175cf055a5ccd5f17	//Cs1 //37	//0x25
-	Bass Drum 1	9200e7dba63ddf2eb851467a001f63eb	//Cn1 //36	//0x24	
-	Acou Bass Drum	0afd8b5b31704a930f63fc2e22720218	//Bn0 //35	//0x23
-	Metronome Bell	e816cc34d2e1ed405502fcaa82111cb0	//As0 //34	//0x22
-	Metronome Click	An0 //33	//0x21	63142b51ea46e86d5863e58d8e289182
-	Stick Click	6e098662b4633b329be2c4a8779f0adc	//	Gs0 //32	//0x20
-//Scratch Pull	Gn0 //31	//0x1F		NONE
-//Scratch Push	Fs0 //30	//0x1E		NONE
-	Whip	31aca546cc748058125a5cea4d65a339	//Fn0 //29	//0x1D
-	Laser	2b6eca15ac807dc4a5b81be41efd803f	//En0 //28	//0x1C
+	Hand Clap 1	75e89fb088c8c17a6dc7d508328e498e	//En0
+	Hand Clap 2	9e23be21a647a7a02156d6cd976ff936	//Drum127 Dn7
+	Sleigh Bell	0afd8b5b31704a930f63fc2e22720218	//Bn0
+	Bass Drum 1	b429872447b51e45139f86dc72d10c99	//Cn1
+	Bass Drum 2	3f7435ed8188e2ea3278b55428fa8379	//Cn5
+	Bass Drum 3	96f3e65f635635ac247a1e487b2c5ba7	//Fn5
+	Bass Drum 4	9200e7dba63ddf2eb851467a001f63eb	//Drum127 Cn1
+	Bass Drum 5	76dd1677040313ee4fb8a71e1a6dfbd1	//Drum127 Bn1
+	Bass Drum 6	992e6e8b96f2c1e964beec894a73d5af	//Drum127 Dn2
+	Side Stick 1	b3fda146183f79403dfdc3ca5e1dee4c	//Cs1
+	Side Stick 2	39d39003651a7a9175cf055a5ccd5f17	//Drum127 Cs1
+	Acoustic Snare 1	c8c19c15e6f05481f59bb4f38aae9d85	//Dn1
+	Acoustic Snare 2	239f5cf146148ab202a3d98439fa94a1	//Dn1
+	Acoustic Snare 3	40005e8c42ee86340dba157d7d18619f	//Dn5
+	Closed Hi-Hat	1dc51ea1130a60c2fbf9d28f54ba3c20	//An1
+	Cymbal 1	aaca75b0c9f09e619ec8c7bdcbc338db	//As1
+	Cymbal 2	ce69994344888385ae257e4c3861f002	//Cs2
+	Cymbal 3	b89bfeb0d91aab91dd27927b20aa5da7	//Cs6
+	Cymbal 4	a24bd81a46512a1abeb4c8522a10579d	//An2
+	Chinise Cymbal	805a16046e0080246b6d6f3875ceecea	//Fn2
+	Open Hi-Hat	1dc51ea1130a60c2fbf9d28f54ba3c20	//Bn1
+	Triangle 1	63142b51ea46e86d5863e58d8e289182	//An0
+	Triangle 2	e816cc34d2e1ed405502fcaa82111cb0	//As4
+	Close Triangle 6e098662b4633b329be2c4a8779f0adc	//Gs4
+	Tambourine	823a1375cd40942f3151b2b55609e914	//Fs2
+	Vibraslap 1	59ab7468b5f2dc8b472f1f213a4c333b	//As2
+	Vibraslap 2	0d5eab1f63cb5a5ee7e051e24122ab19	//Gn2
+	Surdu 1	4b07b932a3343df5ad0211069e0816d3	//Fn1
+	Surdu 2	38a1898afe8a04b561646584efa76d14	//Gn1
+	Castanets 1	00ed96379873058f59ce5cc18e06fb3b	//Fs1
+	Castanets 2	2bf116a0bb2679fb57dc3686c5a9856b	//Drum127 Gs1
+	Shaker 1	027ed7e1f71c5f6470ea42b009ac7933	//Cn2
+	Shaker 2	70130b0f57d28cd18826bf4c79ca625c	//Drum127 Ds1
+	High Wood Block 1	71f3adcaaa4da28439e4ac000cc6fedc	//Gn3
+	Low Wood Block 1	ce1282b2b4abaa9e06efb41f6f9adeac	//Gs3
+	High Wood Block 2	2b6eca15ac807dc4a5b81be41efd803f	//En0
+	Low Wood Block 2	31aca546cc748058125a5cea4d65a339	//Fn0
+	High Wood Block 3	2b6eca15ac807dc4a5b81be41efd803f	//En4
+	Low Wood Block 3	31aca546cc748058125a5cea4d65a339	//Fn4
+	Claves	431b587c1ac638e79676e97d74e54e24	//Gs2
+	Guiro 1	b38ba32f96f5e98deb2a63e2d682e8aa	//Gn0
+	Guiro 2	ad1a12cf8c2160ca2d8370049aec7a92	//Gn4
+	Guiro 3	a98e49a9b47f39dc1edf59cc96ee6e2c	//Fs0
+	Guiro 4	3e02ee0ba87ee8b50f660a08fcfffd6e	//Drum127 Gn8
+	Short Guiro 1	9ff40b4ef72c92364fc8c7bb75263e68	//Fs4
+	Short Guiro 2	9a4f012a65bf01bb4a11d6c44779c7c7	//Drum127 Fs8
+	Ride Cymbal 1	b6e61b83f6133f51268a4dfbe864be22	//Dn2
+	Ride Cymbal 2	7b3a8766e7addb7f240c59acbc8ad011	//Ds2
+	Ride Cymbal 3	88579446df2419d2b9a04a5eb1659d0e	//Bn2
+	Ride Cymbal 4	010311e114645af24ede0652afb058d5	//Drum127 En2
 
 //FE8 Unknown instrument
 	FE8Song01_014	cd6ffd4d8618c6985898dd4528e0be20

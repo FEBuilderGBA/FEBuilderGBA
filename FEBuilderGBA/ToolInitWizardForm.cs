@@ -82,6 +82,12 @@ namespace FEBuilderGBA
         }
         Step5_Enum Step5;
 
+        void GotoPage2()
+        {
+            this.MainTab.SelectedTab = this.Step3Page;
+            SetFocusIfEnable(EATextBox, DownloadEA, Step2NextButton);
+        }
+
         private void Step1NextButton_Click(object sender, EventArgs e)
         {
             if (! File.Exists(EmulatorTextBox.Text))
@@ -89,19 +95,25 @@ namespace FEBuilderGBA
                 return;
             }
             this.Step1 = Step1_Enum.Path;
-            this.MainTab.SelectedTab = this.Step2Page;
+            GotoPage2();
         }
 
         private void DownloadVBAM_Button_Click(object sender, EventArgs e)
         {
             this.Step1 = Step1_Enum.DOWNLOAD_VBA_M;
-            this.MainTab.SelectedTab = this.Step2Page;
+            GotoPage2();
         }
 
         private void DownloadMGBA_Button_Click(object sender, EventArgs e)
         {
             this.Step1 = Step1_Enum.DOWNLOAD_mGBA;
-            this.MainTab.SelectedTab = this.Step2Page;
+            GotoPage2();
+        }
+
+        void GotoPage3()
+        {
+            this.MainTab.SelectedTab = this.Step4Page;
+            SetFocusIfEnable(SappyTextBox, DownloadVGMusicStudio, Step3NextButton);
         }
 
         private void Step2NextButton_Click(object sender, EventArgs e)
@@ -111,19 +123,25 @@ namespace FEBuilderGBA
                 return;
             }
             this.Step2 = Step2_Enum.Path;
-            this.MainTab.SelectedTab = this.Step3Page;
+            GotoPage3();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.Step2 = Step2_Enum.DOWNLOAD_EA;
-            this.MainTab.SelectedTab = this.Step3Page;
+            GotoPage3();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Step2 = Step2_Enum.DO_NOT_SELECT;
-            this.MainTab.SelectedTab = this.Step3Page;
+            GotoPage3();
+        }
+
+        void GotoPage4()
+        {
+            this.MainTab.SelectedTab = this.Step4Page;
+            SetFocusIfEnable(ASMTextBox, DownloadASM, Step4NextButton);
         }
 
         private void Step3NextButton_Click(object sender, EventArgs e)
@@ -133,23 +151,29 @@ namespace FEBuilderGBA
                 return;
             }
             this.Step3 = Step3_Enum.Path;
-            this.MainTab.SelectedTab = this.Step4Page;
+            GotoPage4();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             this.Step3 = Step3_Enum.DOWNLOAD_SAPPY;
-            this.MainTab.SelectedTab = this.Step4Page;
+            GotoPage4();
         }
         private void button11_Click(object sender, EventArgs e)
         {
             this.Step3 = Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO;
-            this.MainTab.SelectedTab = this.Step4Page;
+            GotoPage4();
         }
         private void button9_Click(object sender, EventArgs e)
         {
             this.Step3 = Step3_Enum.DO_NOT_SELECT;
-            this.MainTab.SelectedTab = this.Step4Page;
+            GotoPage4();
+        }
+
+        void GotoPage5()
+        {
+            this.MainTab.SelectedTab = this.Step5Page;
+            SetFocusIfEnable(midfix4agb_TextBox, DownloadMusictool, Step5NextButton);
         }
 
         private void Step4NextButton_Click(object sender, EventArgs e)
@@ -163,19 +187,19 @@ namespace FEBuilderGBA
                 return;
             }
             this.Step4 = Step4_Enum.Path;
-            this.MainTab.SelectedTab = this.Step5Page;
+            GotoPage5();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             this.Step4 = Step4_Enum.DOWNLOAD_BOTH;
-            this.MainTab.SelectedTab = this.Step5Page;
+            GotoPage5();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             this.Step4 = Step4_Enum.DO_NOT_SELECT;
-            this.MainTab.SelectedTab = this.Step5Page;
+            GotoPage5();
         }
 
         private void RefEmulatorButton_Click(object sender, EventArgs e)
@@ -317,7 +341,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler", "Tools");
-                    string url = "https://github.com/StanHash/lyn/releases/download/v2.5.2/lyn.exe";
+                    string url = "https://github.com/StanHash/lyn/releases/download/v2.5.3/lyn.exe";
                     string r = DownloadProgram_DirectOneFile(url, dir, "lyn.exe");
                     if (IsErrorResult(r))
                     {
@@ -414,8 +438,13 @@ namespace FEBuilderGBA
                     string r = DownloadProgram_Direct(url, dir, "NO$GBA.EXE");
                     if (IsErrorResult(r))
                     {
-                        R.ShowStopError(r);
-                        return;
+                        url = "https://cdn.discordapp.com/attachments/470029781795078175/1039723314286956594/nogba.7z";
+                        r = DownloadProgram_Direct(url, dir, "NO$GBA.EXE");
+                        if (IsErrorResult(r))
+                        {
+                            R.ShowStopError(r);
+                            return;
+                        }
                     }
                     debugger = r;
                 }
@@ -646,9 +675,23 @@ namespace FEBuilderGBA
             this.Close();
         }
 
+        void SetFocusIfEnable(TextBox path, Button download, Button setting = null)
+        {
+            if (setting != null && File.Exists(path.Text))
+            {
+                setting.Focus();
+            }
+            else
+            {
+                download.Text += R._("(ディフォルト)");
+                download.Focus();
+            }
+        }
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             this.MainTab.SelectedTab = this.Step1Page;
+            SetFocusIfEnable(EmulatorTextBox, DownloadVBAM_Button, Step1NextButton);
         }
 
         private void LANG_EN_Button_Click(object sender, EventArgs e)

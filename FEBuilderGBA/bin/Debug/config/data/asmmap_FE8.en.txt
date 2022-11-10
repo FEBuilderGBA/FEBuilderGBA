@@ -13660,9 +13660,9 @@ r3=X tile position of menu of right	{U}
 08060AA8	StartEfxLightningBG	{J}
 08060E5C	StartEfxPurgeOBJRND	{J}
 08060EFC	StartEfxPurgeOBJ	{J}
-0805F330	StartEfxDevineBG_1	{J}
-0805F330	StartEfxDevineBG_2	{J}
-0805F330	StartEfxDevineBG_3	{J}
+080610B0	StartEfxDevineBG_1	{J}
+08061134	StartEfxDevineBG_2	{J}
+080611B8	StartEfxDevineBG_3	{J}
 080612E0	StartEfxDevineOBJ	{J}
 0806138C	StartEfxHazymoon	{J}
 08061890	StartEfxHazymoonOBJ3	{J}
