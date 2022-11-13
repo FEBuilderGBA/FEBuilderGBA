@@ -769,6 +769,9 @@ namespace FEBuilderGBA
                 Program.CommentCache.RemoveOverRange(resize);
             }
 
+            //OutOfMemoryException が発生することがあるらしいので、メモリを解放しておきます
+            GC.Collect();
+
             //C#は refで プロパティを設定したものを渡せない愚かな仕様だから...
             //文句はMSまで.どうぞ.
             //Array.Resize(ref this.Data,(int)resize);

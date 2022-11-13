@@ -13186,6 +13186,9 @@ There is no CHECK_URL item.
 :CHECK_REGEXの項目がありません
 There is no CHECK_REGEX item.
 
+:更新を確認しようとしたら、Webサイト({0})がエラーを返しました。\r\n{1}
+Website ({0}) returned an error when trying to check for updates.\r\n{1}.
+
 :CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}
 No data matched by CHECK_REGEX.\r\n{0}.
 

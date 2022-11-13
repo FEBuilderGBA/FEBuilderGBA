@@ -1,0 +1,30 @@
+
+//クリーチャーキャンペーンで指定のワールドマップイベントを実行する
+//Run a specified world map event in a creature campaign
+
+
+PUSH
+ORG 0xBF1D4	//{J}
+jumpToHack(FireCreatureCampaignEvent)
+POP
+
+
+
+ALIGN 4
+FireCreatureCampaignEvent:
+#incbin "FireCreatureCampaignEvent.dmp"
+POIN CreatureCampaignEventObject
+
+ALIGN 4
+CreatureCampaignEventObject:
+SHORT 0x0
+SHORT 0x0
+POIN  CreatureCampaignEvent
+
+WORD  0x0 0x0
+
+ALIGN 4
+CreatureCampaignEvent:
+#incbin "FireCreatureCampaignEvent_Example.dmp"
+
+ALIGN 4
