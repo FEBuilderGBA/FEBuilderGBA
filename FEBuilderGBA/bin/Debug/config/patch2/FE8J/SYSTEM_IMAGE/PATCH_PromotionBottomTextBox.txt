@@ -1,6 +1,6 @@
 NAME=CC画面の下のテキストボックス
-NAME.en=Text box at the bottom of the Protmoion screen
-NAME.zh=Text box at the bottom of the Protmoion screen
+NAME.en=Text box at the bottom of the Promotion screen
+NAME.zh=Text box at the bottom of the Promotion screen
 
 TYPE=IMAGE
 TAG=#HIDDEN
