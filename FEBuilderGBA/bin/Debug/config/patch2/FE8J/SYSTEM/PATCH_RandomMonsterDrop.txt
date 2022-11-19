@@ -1,0 +1,21 @@
+NAME=モンスターの武器ドロップのランダム化
+INFO=デフォルトでは、所持品のアイテムがランダムなモンスターは、2つのアイテムを持って出現し、最初のアイテムが毒を与えなければ、最後のアイテムをドロップします。
+
+NAME.en=Random monster weapon drop
+INFO.en=By default, a monster with randomized inventory will drop their last item if they spawn with 2 and their first doesn't inflict poison.
+NAME.zh=Random monster weapon drop
+INFO.zh=By default, a monster with randomized inventory will drop their last item if they spawn with 2 and their first doesn't inflict poison.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1043401604935712778
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Drop if they have 2 items and the first doesn't cause poison|DEF|Do not drop their last item on spawn|NO|Always drop their last item|YES|Drop if they spawn with 2 items|TWO
+
+DEF:0x178D8=0x01 0xD0 0x00 0x2C 0x06 0xD1
+
+NO:0x178D8=0x01 0xE0 0x00 0x2C 0x06 0xD1
+
+YES:0x178D8=0xC0 0x46 0x00 0x2C 0x06 0xE0
+
+TWO:0x178D8=0xC0 0x46 0x00 0x2C 0x06 0xD1
