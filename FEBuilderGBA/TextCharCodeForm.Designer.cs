@@ -93,7 +93,6 @@
             this.WriteButton.TabIndex = 9;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
-            this.WriteButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.WriteButton_MouseClick);
             // 
             // panel1
             // 
@@ -303,11 +302,6 @@
             this.SEARCH_COUNT.Name = "SEARCH_COUNT";
             this.SEARCH_COUNT.Size = new System.Drawing.Size(47, 25);
             this.SEARCH_COUNT.TabIndex = 29;
-            this.SEARCH_COUNT.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label5
             // 

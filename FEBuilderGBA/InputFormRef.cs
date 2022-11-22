@@ -10128,7 +10128,10 @@ namespace FEBuilderGBA
             bool useUnHuffmanPatch = false;
             if (FETextEncode.IsUnHuffmanPatchPointer(write_addr))
             {//文字列なので、海外改造によくある unHuffman patchの可能性を見る.
-                useUnHuffmanPatch = true;
+                if (raiseUnHuffman)
+                {
+                    useUnHuffmanPatch = true;
+                }
                 write_addr = FETextEncode.ConvertUnHuffmanPatchToPointer(write_addr);
             }
             write_addr = U.toOffset(write_addr);
@@ -10169,6 +10172,10 @@ namespace FEBuilderGBA
                 if (raiseUnHuffman)
                 {//un-Huffman化する.
                     Program.ROM.write_u32(write_pointer, FETextEncode.ConvertPointerToUnHuffmanPatchPointer(U.toPointer(write_addr)));
+                }
+                else
+                {//un-Huffman化しない.
+                    Program.ROM.write_u32(write_pointer, U.toPointer(write_addr));
                 }
 
                 return write_addr;

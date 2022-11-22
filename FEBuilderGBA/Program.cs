@@ -510,7 +510,7 @@ namespace FEBuilderGBA
             return Program.Config.at("Last_Rom_Filename");
         }
 
-        static void ReBuildFETextEncoder()
+        public static void ReBuildFETextEncoder()
         {
             FETextEncoder = new FETextEncode();
         }

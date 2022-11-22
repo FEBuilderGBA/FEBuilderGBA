@@ -1,0 +1,11 @@
+NAME=Image_BowBattleAnimationEffect 弓矢の画像
+NAME.en=Image_BowBattleAnimationEffect
+NAME.zh=Image_BowBattleAnimationEffect
+
+TYPE=IMAGE
+
+WIDTH=24
+HEIGHT=8
+
+ZIMAGE_POINTER=0x05C3BC//0x5DA7AC
+PALETTE_POINTER=0x05C078//0x5DA05C

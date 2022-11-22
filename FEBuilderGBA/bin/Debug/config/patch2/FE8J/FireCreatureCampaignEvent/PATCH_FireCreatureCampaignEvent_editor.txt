@@ -13,13 +13,13 @@ DATACOUNT=1
 //データを定義します
 W0:FLAG.ja=達成フラグ(0x00=ANY)
 W2:FLAG.ja=判定フラグ(0x00=ANY)
-D4:EVENT.ja=実行するイベント
+P4:EVENT.ja=実行するイベント
 
 W0:FLAG.en=Achievement Flag(0x00=ANY)
 W2:FLAG.en=Trigger Flag(0x00=ANY)
-D4:EVENT.en=Event
+P4:EVENT.en=Event
 
 W0:FLAG.zh=Achievement Flag(0x00=ANY)
 W2:FLAG.zh=Trigger Flag(0x00=ANY)
-D4:EVENT.zh=Event
+P4:EVENT.zh=Event
 

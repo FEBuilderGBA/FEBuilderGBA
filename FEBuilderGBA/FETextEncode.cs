@@ -157,7 +157,7 @@ namespace FEBuilderGBA
 			return 0;
 		}
 
-        int string_to_code_next(byte[] sjisstr,int nowi,out uint out_code)
+        public int string_to_code_next(byte[] sjisstr,int nowi,out uint out_code)
 		{
 			if (sjisstr[nowi] == '@')
 			{

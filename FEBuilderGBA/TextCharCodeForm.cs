@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
         }
 
         public InputFormRef InputFormRef;
@@ -141,10 +142,6 @@ namespace FEBuilderGBA
         }
 
 
-        private void WriteButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            Program.ReLoadSetting();
-        }
 
         private void SEARCH_COUNT_LIST_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -162,6 +159,11 @@ namespace FEBuilderGBA
             string name = "TextCharCode";
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
+        }
+
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            Program.ReBuildFETextEncoder();
         }
     }
 }
