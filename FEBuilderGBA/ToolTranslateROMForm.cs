@@ -302,7 +302,7 @@ namespace FEBuilderGBA
 
             if (File.Exists(translateDataFilename))
             {
-                trans.ImportAllText(this, translateDataFilename, undodata);
+                trans.ImportAllText(this, translateDataFilename,SIMPLE_OVERRAIDE_JPFONT.Checked, undodata);
             }
 
             //それ以外のデータの翻訳
@@ -310,7 +310,7 @@ namespace FEBuilderGBA
                 string writeTextFileName = Path.GetTempFileName();
 
                 trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false,false);
-                trans.ImportAllText(this, writeTextFileName, undodata);
+                trans.ImportAllText(this, writeTextFileName, false, undodata);
 
                 trans.ImportFont(this, torom, true, FontAutoGenelateCheckBox.Font, undodata);
 

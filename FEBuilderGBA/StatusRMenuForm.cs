@@ -100,16 +100,10 @@ namespace FEBuilderGBA
                     }
                     if (!U.isSafetyOffset(addr) || !U.isSafetyOffset(addr + 28))
                     {
-                        already.Clear();
                         return false;
                     }
 
                     ListFounder(addr, ref rmenulist, ref already);
-                    if (rmenulist.Count <= 0)
-                    {
-                        already.Clear();
-                        return false;
-                    }
 
                     return true;
                 }

@@ -1,0 +1,17 @@
+
+PUSH
+ORG 0x0CC2270
+POIN AffinityTextTableCode+1
+
+POP
+
+ALIGN 4
+AffinityTextTableCode:
+#incbin "AffinityTableCode.bin"
+POIN AffinityTextTableCode_Label
+
+ALIGN 4
+AffinityTextTableCode_Label:
+SHORT 0x00 0x26F 0x270 0x271 0x272 0x273 0x274 0x275 0x276
+
+ALIGN 4

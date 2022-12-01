@@ -1606,6 +1606,10 @@ namespace FEBuilderGBA
             {
                 out_listname_combo_dic = InputFormRef.GetTerrainSetDic();
             }
+            else if (listname == "ATTRIBUTEICON" || listname == "ATTRIBUTEICON0")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawAtributeAndText, DrawMode.OwnerDrawFixed);
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -1729,6 +1733,14 @@ namespace FEBuilderGBA
             else if (listname == "ITEMSTAFFUSEEFFECT")
             {
                 appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
+            }
+            else if (listname == "ATTRIBUTEICON0")
+            {
+                appendname = U.ToHexString(i) + " " + InputFormRef.GetAttributeName((uint)i);
+            }
+            else if (listname == "ATTRIBUTEICON")
+            {
+                appendname = U.ToHexString(i + 1) + " " + InputFormRef.GetAttributeName((uint)i + 1);
             }
             else if (listname.Length > 2 && listname[0] == '$')
             {
@@ -4146,7 +4158,7 @@ namespace FEBuilderGBA
             string basedir = Path.GetDirectoryName(filename);
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.ImportAllText(this, filename, undodata);
+            trans.ImportAllText(this, filename,false, undodata);
             trans.BlackOut(undodata);
         }
         void BinWriteExtebds(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)

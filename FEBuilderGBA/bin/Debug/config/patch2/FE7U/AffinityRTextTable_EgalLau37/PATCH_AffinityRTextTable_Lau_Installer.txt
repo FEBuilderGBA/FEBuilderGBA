@@ -1,0 +1,19 @@
+NAME=属性ごとに異なるヘルプメッセージを設定する(installer)
+INFO=ステータス画面のRボタンのヘルプテキストに、属性ごとに異なるテキストIDを表示できるようにします。
+NAME.en=Different help texts for unit affinity (installer)
+INFO.en=This patch adds code to make the affinity text use different text IDs per affinity for the R-button help text.
+NAME.zh=Different help texts for unit affinity (installer)
+INFO.zh=This patch adds code to make the affinity text use different text IDs per affinity for the R-button help text.
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:$FGREP4 AffinityTableCode.bin=0x05 0x48 0xC0 0x68
+
+EA=AffinityTextTable_Lau.txt
+
+AUTHOR= SageMatthis/EgalLau37
+NAME.en=Different help texts for unit affinity (installer)
+INFO.en=This patch adds code to make the affinity text use different text IDs per affinity for the R-button help text.
+NAME.zh=Different help texts for unit affinity (installer)
+INFO.zh=This patch adds code to make the affinity text use different text IDs per affinity for the R-button help text.

@@ -1,0 +1,28 @@
+NAME.en=Different help texts for unit affinity (editor)
+INFO.en=Specify different text IDs for different affinities.  Useful for specifying the affinity name and what bonuses are provided.
+
+IF:$FGREP4 AffinityTableCode.bin=0x05 0x48 0xC0 0x68
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END AffinityTableCode.bin
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=0x8
+
+//リストに表示されるのは属性アイコンです
+LISTNAME=ATTRIBUTEICON0
+
+//データを定義します
+W0:TEXT=Text for affinity
+
+NAME=属性ごとに異なるヘルプメッセージを設定する(editor)
+INFO=ステータス画面の属性のRボタンのヘルプメッセージに、属性ごとに異なるテキストIDを指定します。\r\n属性名や、どのようなボーナスが提供されるかを指定するのに便利です。
+NAME.zh=Different help texts for unit affinity (editor)
+INFO.zh=Specify different text IDs for different affinities.  Useful for specifying the affinity name and what bonuses are provided.

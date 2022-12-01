@@ -157,7 +157,7 @@ namespace FEBuilderGBA
 			return 0;
 		}
 
-        public int string_to_code_next(byte[] sjisstr,int nowi,out uint out_code)
+        int string_to_code_next(byte[] sjisstr,int nowi,out uint out_code)
 		{
 			if (sjisstr[nowi] == '@')
 			{
@@ -550,6 +550,87 @@ namespace FEBuilderGBA
 
             byte[] sjisstr = Program.SystemTextEncoder.Encode(str);
             outByte = convert_unHuffman_code_to_binary(sjisstr);
+        }
+
+        public void StringCount(string str, Dictionary<uint, ToolTextCharRecreate.CharCounter> charCounterMap)
+        {
+            str = ConvertSPMoji(str);
+            if (str == "")
+            {
+                return;
+            }
+
+            byte[] sjisstr = Program.SystemTextEncoder.Encode(str); 
+            int length = sjisstr.Length;
+
+            for (int i = 0; i <= length; )
+            {
+                if (i == length)
+                {
+                    break;
+                }
+                uint code;
+                int nexti = string_to_code_next(sjisstr, i, out code);
+                i = nexti;
+
+                ToolTextCharRecreate.CharCounter p;
+                if (! charCounterMap.TryGetValue(code, out p))
+                {
+                    p = new ToolTextCharRecreate.CharCounter();
+                    charCounterMap[code] = p;
+                    p.mojiBin = code;
+                }
+                p.count++;
+                p.length += length / 32;
+            }
+        }
+
+        public void StringCountEN(string str, Dictionary<uint, ToolTextCharRecreate.CharCounter> charCounterMap)
+        {
+            str = ConvertSPMoji(str);
+            if (str == "")
+            {
+                return;
+            }
+
+            byte[] sjisstr = Program.SystemTextEncoder.Encode(str);
+            int length = sjisstr.Length;
+
+            for (int i = 0; i <= length; )
+            {
+                if (i == length)
+                {
+                    break;
+                }
+                uint code;
+                int nexti = string_to_code_next(sjisstr, i, out code);
+                i = nexti;
+
+                if (i != length)
+                {
+                    if (code >= 0x30 && code < 0x100 && code != 80)
+                    {
+                        //１つ先読み
+                        uint code2;
+                        int nexti2 = string_to_code_next(sjisstr, i, out code2);
+                        if (code2 >= 0x30 && code2 < 0x100 && code2 != 80)
+                        {
+//                            code = (code << 8) | code2;
+                            code = (code2 << 8) | code;
+                        }
+                    }
+                }
+
+                ToolTextCharRecreate.CharCounter p;
+                if (!charCounterMap.TryGetValue(code, out p))
+                {
+                    p = new ToolTextCharRecreate.CharCounter();
+                    charCounterMap[code] = p;
+                    p.mojiBin = code;
+                }
+                p.count++;
+                p.length += length / 32;
+            }
         }
 
 
