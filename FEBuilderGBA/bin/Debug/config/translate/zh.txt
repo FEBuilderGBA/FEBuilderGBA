@@ -3743,10 +3743,10 @@ PNG|*.png|动漫GIF|*.gif|所有文件|*
 魔法动画 FEditorAdvCSA
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
-攻击动漫脚本| *.地图动作动画。txt | 动画 GIF | *.gif | 全部转储 | *.txt | 所有文件 | *.
+攻击动漫脚本|*.MapActionAnimation.txt|动画GIF|*.gif|Dump All|*.txt|All files|*
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|All files|*
-攻击动漫脚本| *.地图动作动画。txt | 所有文件 | *.
+攻击动漫脚本|*.MapActionAnimation.txt|All files|*
 
 :攻撃モーションの、アニメーションテーブルを取得できません。\r\nパッチがインストールされていない可能性があります。
 无法获取攻击动作的动画表。\r\n可能没有安装补丁。

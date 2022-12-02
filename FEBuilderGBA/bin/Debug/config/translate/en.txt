@@ -3743,10 +3743,10 @@ Magic Extends CSACreator
 Magic Extends FEditorAdvCSA
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
-Attack anime script | *.MapActionAnimation.txt | Animated GIF | *.gif | Dump All | *.txt | All files | *.
+Attack anime script|*.MapActionAnimation.txt|Animated GIF|*.gif|Dump All|*.txt|All files|*
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|All files|*
-Attack anime script | *.MapActionAnimation.txt | All files | *.
+Attack anime script|*.MapActionAnimation.txt|All files|*
 
 :攻撃モーションの、アニメーションテーブルを取得できません。\r\nパッチがインストールされていない可能性があります。
 Unable to get the animation table for the attack motion.\r\nThe patch may not be installed.
