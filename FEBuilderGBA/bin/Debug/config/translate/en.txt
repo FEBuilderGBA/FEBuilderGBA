@@ -10882,6 +10882,9 @@ Adds the specified value to the overall volume of this song.\r\nThe larger the v
 :トラックエディタ
 Track Editor
 
+:00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。
+00 = Inherited from previous track (default).\r\n80 = reverb 0 (reverb off).\r\nFF = Reverb max.\r\nIf you use reverb, set a number between 0x80 - 0xFF.
+
 :インポートする音楽ファイルを選択してください
 Please select the music file to import.
 

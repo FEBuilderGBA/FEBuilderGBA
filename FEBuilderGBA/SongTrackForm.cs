@@ -22,6 +22,8 @@ namespace FEBuilderGBA
         public SongTrackForm()
         {
             InitializeComponent();
+            this.J_3.AccessibleDescription = R._("00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。");
+
             fixDocsBugs = new U.FixDocsBugs(this);
 
             this.TrackListBoxs = new ListBoxEx[] { Track1, Track2, Track3, Track4, Track5, Track6, Track7, Track8, Track9, Track10, Track11, Track12, Track13, Track14, Track15, Track16 };
