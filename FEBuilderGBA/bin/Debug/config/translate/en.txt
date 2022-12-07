@@ -10882,8 +10882,8 @@ Adds the specified value to the overall volume of this song.\r\nThe larger the v
 :トラックエディタ
 Track Editor
 
-:00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。
-00 = Inherited from previous track (default).\r\n80 = reverb 0 (reverb off).\r\nFF = Reverb max.\r\nIf you use reverb, set a number between 0x80 - 0xFF.
+:00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。\r\n\r\nバニラでは効果音は0を指定し、\r\nフィールド曲はFE6だと9E、FE7だと80、FE8だと94を指定していることが多い。
+00 = Inherited from previous track (default).\r\n80 = reverb 0 (reverb off).\r\nFF = Reverb max.\r\nIf you use reverb, set a number between 0x80 - 0xFF.\r\n\r\nVanilla uses 0 for sound effects, 80 for other music,\r\nand the following values for map music: 9E for FE6, 80 for FE7, and 94 for FE8.
 
 :インポートする音楽ファイルを選択してください
 Please select the music file to import.

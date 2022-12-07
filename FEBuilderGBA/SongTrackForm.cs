@@ -22,7 +22,7 @@ namespace FEBuilderGBA
         public SongTrackForm()
         {
             InitializeComponent();
-            this.J_3.AccessibleDescription = R._("00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。");
+            this.J_3.AccessibleDescription = R._("00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。\r\n\r\nバニラでは効果音は0を指定し、\r\nフィールド曲はFE6だと9E、FE7だと80、FE8だと94を指定していることが多い。");
 
             fixDocsBugs = new U.FixDocsBugs(this);
 

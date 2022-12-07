@@ -136,7 +136,7 @@
             0});
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(68, 25);
-            this.B0.TabIndex = 174;
+            this.B0.TabIndex = 0;
             // 
             // panel2
             // 
@@ -174,7 +174,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(862, 703);
-            this.panel2.TabIndex = 74;
+            this.panel2.TabIndex = 0;
             // 
             // EXPLAIN
             // 
@@ -271,7 +271,7 @@
             0});
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(68, 25);
-            this.B14.TabIndex = 184;
+            this.B14.TabIndex = 8;
             // 
             // J_14
             // 
@@ -308,7 +308,7 @@
             0});
             this.W12.Name = "W12";
             this.W12.Size = new System.Drawing.Size(88, 25);
-            this.W12.TabIndex = 181;
+            this.W12.TabIndex = 7;
             // 
             // J_12_TEXT
             // 
@@ -333,7 +333,7 @@
             0});
             this.W8.Name = "W8";
             this.W8.Size = new System.Drawing.Size(88, 25);
-            this.W8.TabIndex = 178;
+            this.W8.TabIndex = 5;
             // 
             // B1
             // 
@@ -347,7 +347,7 @@
             0});
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(68, 25);
-            this.B1.TabIndex = 177;
+            this.B1.TabIndex = 1;
             // 
             // B2
             // 
@@ -361,7 +361,7 @@
             0});
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(68, 25);
-            this.B2.TabIndex = 175;
+            this.B2.TabIndex = 2;
             // 
             // L_0_UNIT
             // 
@@ -412,7 +412,7 @@
             0});
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(68, 25);
-            this.B10.TabIndex = 166;
+            this.B10.TabIndex = 6;
             // 
             // J_8_FLAG
             // 
@@ -452,7 +452,7 @@
             0});
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(68, 25);
-            this.B6.TabIndex = 163;
+            this.B6.TabIndex = 4;
             // 
             // J_6
             // 
@@ -491,7 +491,7 @@
             0});
             this.W4.Name = "W4";
             this.W4.Size = new System.Drawing.Size(88, 25);
-            this.W4.TabIndex = 147;
+            this.W4.TabIndex = 3;
             // 
             // J_4_TEXT
             // 

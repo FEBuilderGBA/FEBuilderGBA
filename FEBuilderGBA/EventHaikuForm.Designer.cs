@@ -102,7 +102,7 @@
             0});
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(68, 25);
-            this.B3.TabIndex = 175;
+            this.B3.TabIndex = 5;
             // 
             // Address
             // 
@@ -141,7 +141,7 @@
             0});
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(68, 25);
-            this.B0.TabIndex = 174;
+            this.B0.TabIndex = 0;
             // 
             // panel2
             // 
@@ -202,7 +202,7 @@
             0});
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(68, 25);
-            this.B1.TabIndex = 251;
+            this.B1.TabIndex = 1;
             // 
             // L_1_UNIT_ANY
             // 
@@ -213,7 +213,7 @@
             this.L_1_UNIT_ANY.Placeholder = "";
             this.L_1_UNIT_ANY.ReadOnly = true;
             this.L_1_UNIT_ANY.Size = new System.Drawing.Size(337, 25);
-            this.L_1_UNIT_ANY.TabIndex = 250;
+            this.L_1_UNIT_ANY.TabIndex = 10;
             this.L_1_UNIT_ANY.Visible = false;
             // 
             // J_1
@@ -232,7 +232,7 @@
             this.L_8_NEWALLOC_ALTEVENT_W6.Location = new System.Drawing.Point(342, 323);
             this.L_8_NEWALLOC_ALTEVENT_W6.Name = "L_8_NEWALLOC_ALTEVENT_W6";
             this.L_8_NEWALLOC_ALTEVENT_W6.Size = new System.Drawing.Size(300, 28);
-            this.L_8_NEWALLOC_ALTEVENT_W6.TabIndex = 248;
+            this.L_8_NEWALLOC_ALTEVENT_W6.TabIndex = 9;
             this.L_8_NEWALLOC_ALTEVENT_W6.Text = "新規イベント";
             this.L_8_NEWALLOC_ALTEVENT_W6.UseVisualStyleBackColor = true;
             // 
@@ -259,7 +259,7 @@
             0});
             this.P8.Name = "P8";
             this.P8.Size = new System.Drawing.Size(141, 25);
-            this.P8.TabIndex = 246;
+            this.P8.TabIndex = 8;
             // 
             // J_8_EVENT
             // 
@@ -285,7 +285,7 @@
             this.L_2_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_2_COMBO.Name = "L_2_COMBO";
             this.L_2_COMBO.Size = new System.Drawing.Size(293, 26);
-            this.L_2_COMBO.TabIndex = 240;
+            this.L_2_COMBO.TabIndex = 4;
             // 
             // EXPLAIN
             // 
@@ -335,7 +335,7 @@
             0});
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(68, 25);
-            this.B2.TabIndex = 177;
+            this.B2.TabIndex = 3;
             // 
             // J_2
             // 
@@ -394,7 +394,7 @@
             0});
             this.W4.Name = "W4";
             this.W4.Size = new System.Drawing.Size(88, 25);
-            this.W4.TabIndex = 160;
+            this.W4.TabIndex = 6;
             // 
             // W6
             // 
@@ -408,7 +408,7 @@
             0});
             this.W6.Name = "W6";
             this.W6.Size = new System.Drawing.Size(88, 25);
-            this.W6.TabIndex = 147;
+            this.W6.TabIndex = 7;
             // 
             // J_6_TEXT
             // 
