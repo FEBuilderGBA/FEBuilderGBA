@@ -50,7 +50,7 @@ namespace FEBuilderGBA
             if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
             {
                 J_33.Text = "Debuff";
-                J_34.AccessibleDescription = "SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。";
+                J_33.AccessibleDescription = "SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。";
                 InputFormRef.markupJumpLabel(J_33);
             }
 
