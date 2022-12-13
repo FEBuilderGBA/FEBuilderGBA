@@ -1,0 +1,17 @@
+NAME=ユニットの上を通過できるか判断する (Skill System)
+INFO=ユニット同士で、上を通れるかどうかの条件を変更することができます。
+NAME.en=Determine whether units can pass through each other (Skill System)
+INFO.en=Lets you change the conditions which allow units to pass through each other.
+NAME.zh=Determine whether units can pass through each other (Skill System)
+INFO.zh=Lets you change the conditions which allow units to pass through each other.
+IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=$XGREP4+8 0x7F 0xB5 0x9C 0x7A 0x7C 0x40 0x80 0x20 XXXX XXXX 0x08 0xD0 0x06 0x48 0x86 0x46 0x98 0x7A 0x00 0xF8 0x06 0x49 0x8E 0x46
+
+COMBO=Default: Blue->Blue/Green->Green/Blue<->Green/Red->Red/Pass skill|0x20 0x42|Units cannot pass through each other unless they have Pass|0xFF 0x28|All units can pass through each other|0x80 0x28
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1043369841412804680
+

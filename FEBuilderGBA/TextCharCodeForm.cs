@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
         }
 
         public InputFormRef InputFormRef;
@@ -83,29 +84,36 @@ namespace FEBuilderGBA
             }
         }
 
-        private void SEARCH_COUNT_BUTTON_Click(object sender, EventArgs e)
+        static Dictionary<uint, FETextDecode.huffman_count_st> GetUsedCharDic(List<U.AddrResult> list, InputFormRef ifr)
         {
             Dictionary<uint, FETextDecode.huffman_count_st> dic = new Dictionary<uint, FETextDecode.huffman_count_st>();
             //初期値を入れる.
-            uint addr = (uint)InputFormRef.BaseAddress;
-            int limitsize = (int)InputFormRef.DataCount;
+            uint addr = (uint)ifr.BaseAddress;
+            int limitsize = (int)ifr.DataCount;
             for (int i = 0; i < limitsize; i++)
             {
-                FETextDecode.huffman_count_st st  = new FETextDecode.huffman_count_st();
+                FETextDecode.huffman_count_st st = new FETextDecode.huffman_count_st();
                 st.code_number = i;
-                dic[ Program.ROM.u16(addr) ] = st;
-                addr += InputFormRef.BlockSize;
+                dic[Program.ROM.u16(addr)] = st;
+                addr += ifr.BlockSize;
             }
 
             //テキスト探索.
             FETextDecode textdecoder = new FETextDecode();
-            List<U.AddrResult> list = TextForm.MakeItemList();
-            for(int i = 0 ; i < list.Count ; i++ )
+            for (int i = 0; i < list.Count; i++)
             {
                 uint textaddr = Program.ROM.p32(list[i].addr);
-                textdecoder.huffman_count(textaddr,ref dic);
+                textdecoder.huffman_count(textaddr, ref dic);
             }
+            return dic;
+        }
 
+        private void SEARCH_COUNT_BUTTON_Click(object sender, EventArgs e)
+        {
+            List<U.AddrResult> list = TextForm.MakeItemList();
+            Dictionary<uint, FETextDecode.huffman_count_st> dic = GetUsedCharDic(list, InputFormRef);
+
+            SEARCH_COUNT_LIST.BeginUpdate();
             SEARCH_COUNT_LIST.Items.Clear();
             uint minimaumCount = (uint)SEARCH_COUNT.Value;
             foreach(var pair in dic)
@@ -138,13 +146,10 @@ namespace FEBuilderGBA
 
                 SEARCH_COUNT_LIST.Items.Add(line);
             }
+            SEARCH_COUNT_LIST.EndUpdate();
         }
 
 
-        private void WriteButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            Program.ReLoadSetting();
-        }
 
         private void SEARCH_COUNT_LIST_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -162,6 +167,69 @@ namespace FEBuilderGBA
             string name = "TextCharCode";
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
+        }
+
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            Program.ReBuildFETextEncoder();
+        }
+
+        public static void RebuildAllData(ToolTextCharRecreate recreate, Undo.UndoData undodata)
+        {
+            InputFormRef InputFormRef = Init(null);
+            List<ToolTextCharRecreate.CharCounter> list = recreate.GetSortedList();
+
+            int i = 0;
+            uint addr = InputFormRef.BaseAddress;
+            uint length = addr + (4 * (InputFormRef.DataCount));
+            for (; addr < length; addr += 4)
+            {
+                uint a = Program.ROM.u16(addr);
+                if (a <= 0x300)
+                {
+                    continue;
+                }
+                Program.ROM.write_u16(addr, list[i].mojiBin, undodata);
+                i++;
+                if (i >= list.Count)
+                {
+                    break;
+                }
+            }
+            Program.ReBuildFETextEncoder();
+        }
+
+        public static void RebuildEmpty(ToolTextCharRecreate recreate, Undo.UndoData undodata)
+        {
+            InputFormRef InputFormRef = Init(null);
+            List<ToolTextCharRecreate.CharCounter> list = recreate.GetSortedList();
+
+            List<U.AddrResult> stringList = TextForm.MakeItemList();
+            Dictionary<uint, FETextDecode.huffman_count_st> dic = GetUsedCharDic(stringList, InputFormRef);
+
+            int i = 0;
+            foreach (var pair in dic)
+            {
+                if (pair.Key == 0)
+                {
+                    continue;
+                }
+                if (pair.Value.count > 0)
+                {//一度でも使われているものは除外
+                    continue;
+                }
+
+                uint addr = (uint)(pair.Value.code_number * 4) + (InputFormRef.BaseAddress);
+
+                //uint a = Program.ROM.u16(addr);
+                Program.ROM.write_u16(addr, list[i].mojiBin, undodata);
+                i++;
+                if (i >= list.Count)
+                {
+                    break;
+                }
+            }
+            Program.ReBuildFETextEncoder();
         }
     }
 }

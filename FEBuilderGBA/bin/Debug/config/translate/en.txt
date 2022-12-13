@@ -3743,10 +3743,10 @@ Magic Extends CSACreator
 Magic Extends FEditorAdvCSA
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
-Attack anime script | *.MapActionAnimation.txt | Animated GIF | *.gif | Dump All | *.txt | All files | *.
+Attack anime script|*.MapActionAnimation.txt|Animated GIF|*.gif|Dump All|*.txt|All files|*
 
 :攻撃アニメスクリプト|*.MapActionAnimation.txt|All files|*
-Attack anime script | *.MapActionAnimation.txt | All files | *.
+Attack anime script|*.MapActionAnimation.txt|All files|*
 
 :攻撃モーションの、アニメーションテーブルを取得できません。\r\nパッチがインストールされていない可能性があります。
 Unable to get the animation table for the attack motion.\r\nThe patch may not be installed.
@@ -5711,7 +5711,7 @@ Item Type
 Use Screen
 
 :IERによって参照される値です。\r\nアイテムに応じて役割が変わります。
-The value referenced by IER.\r\nThe role changes depending on the item.
+The value referenced by IER(SkillSystems's item effect rework).\r\nThe role changes depending on the item.\r\nAt least PromotionItem and weapons with bad status must be set to a non-zero value.
 
 :この拡張は、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。
 This extension requires more data than a regular stat booster.\r\nAllocate the stat booster area after setting this extended flag to 1.\r\nIf you have already reserved it, set the stat booster address to 0 and reserve it again.
@@ -10882,6 +10882,9 @@ Adds the specified value to the overall volume of this song.\r\nThe larger the v
 :トラックエディタ
 Track Editor
 
+:00 = 前の曲から継承(ディフォルト)\r\n80 = リバーブ0(リバーブオフ)\r\nFF = リバーブ最大\r\nreverbを使う場合は、0x80 - 0xFFの間の数字を設定してください。\r\n\r\nバニラでは効果音は0を指定し、\r\nフィールド曲はFE6だと9E、FE7だと80、FE8だと94を指定していることが多い。
+00 = Inherited from previous track (default).\r\n80 = reverb 0 (reverb off).\r\nFF = Reverb max.\r\nIf you use reverb, set a number between 0x80 - 0xFF.\r\n\r\nVanilla uses 0 for sound effects, 80 for other music,\r\nand the following values for map music: 9E for FE6, 80 for FE7, and 94 for FE8.
+
 :インポートする音楽ファイルを選択してください
 Please select the music file to import.
 
@@ -12340,6 +12343,9 @@ It seems that VB6 runtime has already been installed.\r\nDo you want to skip run
 :SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
 Sappy is written in Visual Basic 6, so you need to install the runtime.\r\nLaunch the runtime installer.
 
+:(ディフォルト)
+(Default)
+
 :黒背景2
 Black Background2
 
@@ -13182,6 +13188,9 @@ There is no CHECK_URL item.
 
 :CHECK_REGEXの項目がありません
 There is no CHECK_REGEX item.
+
+:更新を確認しようとしたら、Webサイト({0})がエラーを返しました。\r\n{1}
+Website ({0}) returned an error when trying to check for updates.\r\n{1}.
 
 :CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}
 No data matched by CHECK_REGEX.\r\n{0}.

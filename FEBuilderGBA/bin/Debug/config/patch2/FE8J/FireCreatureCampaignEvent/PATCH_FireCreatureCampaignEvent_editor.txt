@@ -1,0 +1,25 @@
+NAME=大陸の魔物退治で指定のワールドマップイベントを実行する(Editor)
+NAME.en=Run a specified world map event in a creature campaign(Editor)
+NAME.zh=Run a specified world map event in a creature campaign(Editor)
+AUTHOR=7743
+
+TYPE=STRUCT
+IF:$FGREP4 FireCreatureCampaignEvent.dmp=0x11 0x78
+
+POINTER=$FGREP4END FireCreatureCampaignEvent.dmp
+DATASIZE=4
+DATACOUNT=1
+
+//データを定義します
+W0:FLAG.ja=達成フラグ(0x00=ANY)
+W2:FLAG.ja=判定フラグ(0x00=ANY)
+P4:EVENT.ja=実行するイベント
+
+W0:FLAG.en=Achievement Flag(0x00=ANY)
+W2:FLAG.en=Trigger Flag(0x00=ANY)
+P4:EVENT.en=Event
+
+W0:FLAG.zh=Achievement Flag(0x00=ANY)
+W2:FLAG.zh=Trigger Flag(0x00=ANY)
+P4:EVENT.zh=Event
+

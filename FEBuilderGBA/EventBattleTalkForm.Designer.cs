@@ -298,7 +298,7 @@
             this.L_12_NEWALLOC_ALTEVENT_W8.Location = new System.Drawing.Point(313, 372);
             this.L_12_NEWALLOC_ALTEVENT_W8.Name = "L_12_NEWALLOC_ALTEVENT_W8";
             this.L_12_NEWALLOC_ALTEVENT_W8.Size = new System.Drawing.Size(300, 28);
-            this.L_12_NEWALLOC_ALTEVENT_W8.TabIndex = 247;
+            this.L_12_NEWALLOC_ALTEVENT_W8.TabIndex = 8;
             this.L_12_NEWALLOC_ALTEVENT_W8.Text = "新規イベント";
             this.L_12_NEWALLOC_ALTEVENT_W8.UseVisualStyleBackColor = true;
             // 
@@ -311,7 +311,7 @@
             this.L_12_EVENT.Placeholder = "";
             this.L_12_EVENT.ReadOnly = true;
             this.L_12_EVENT.Size = new System.Drawing.Size(301, 25);
-            this.L_12_EVENT.TabIndex = 246;
+            this.L_12_EVENT.TabIndex = 9;
             this.L_12_EVENT.Visible = false;
             // 
             // J_12_EVENT
@@ -338,7 +338,7 @@
             0});
             this.P12.Name = "P12";
             this.P12.Size = new System.Drawing.Size(149, 25);
-            this.P12.TabIndex = 244;
+            this.P12.TabIndex = 7;
             // 
             // EXPLAIN
             // 
@@ -422,7 +422,7 @@
             0});
             this.W2.Name = "W2";
             this.W2.Size = new System.Drawing.Size(68, 25);
-            this.W2.TabIndex = 175;
+            this.W2.TabIndex = 1;
             // 
             // W0
             // 
@@ -436,7 +436,7 @@
             0});
             this.W0.Name = "W0";
             this.W0.Size = new System.Drawing.Size(68, 25);
-            this.W0.TabIndex = 174;
+            this.W0.TabIndex = 0;
             // 
             // L_2_UNIT_ANY
             // 
@@ -498,7 +498,7 @@
             0});
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(68, 25);
-            this.B10.TabIndex = 163;
+            this.B10.TabIndex = 6;
             // 
             // J_10
             // 
@@ -523,7 +523,7 @@
             0});
             this.W6.Name = "W6";
             this.W6.Size = new System.Drawing.Size(88, 25);
-            this.W6.TabIndex = 160;
+            this.W6.TabIndex = 4;
             // 
             // B5
             // 
@@ -537,7 +537,7 @@
             0});
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(68, 25);
-            this.B5.TabIndex = 159;
+            this.B5.TabIndex = 3;
             // 
             // B4
             // 
@@ -551,7 +551,7 @@
             0});
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(68, 25);
-            this.B4.TabIndex = 158;
+            this.B4.TabIndex = 2;
             // 
             // W8
             // 
@@ -565,7 +565,7 @@
             0});
             this.W8.Name = "W8";
             this.W8.Size = new System.Drawing.Size(88, 25);
-            this.W8.TabIndex = 147;
+            this.W8.TabIndex = 5;
             // 
             // J_8_TEXT
             // 
@@ -667,7 +667,7 @@
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(523, 652);
-            this.AddressList.TabIndex = 143;
+            this.AddressList.TabIndex = 0;
             // 
             // EventBattleTalkForm
             // 

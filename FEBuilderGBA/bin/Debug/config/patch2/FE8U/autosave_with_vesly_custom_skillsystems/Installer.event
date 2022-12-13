@@ -1,0 +1,52 @@
+//autosave_fix_with_skillsystems
+
+#ifndef QuicksaveToggleFlag
+	#define QuicksaveToggleFlag 0 
+#endif 
+#ifndef CurrentPartySizeRam 
+	#define CurrentPartySizeRam 0x202bd33
+#endif 
+#ifndef callHackNew  
+	#define callHackNew(offset) 		"BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif 
+
+ALIGN 4; PUSH; ORG CurrentOffset+1; AutosaveFunc: ; POP 
+#incbin "Autosave.dmp" 
+WORD CurrentPartySizeRam 
+WORD QuicksaveToggleFlag
+
+//When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.
+//The original version allows players to switch by hijacking terrain options, but this version doesn't.
+//Just install this patch and it will take effect.
+PUSH
+ORG 0x1c89e
+BYTE  0x00 0x00 0x00 0x00
+ORG 0x1d22c
+BYTE  0x00 0x00 0x00 0x00
+ORG 0x2CDDE
+BYTE  0x00 0x00 0x00 0x00
+
+ORG 0x31F06
+BYTE  0x00 0x00 0x00 0x00
+ORG 0x377A2
+BYTE  0x00 0x00 0x00 0x00
+ORG 0x39af4
+BYTE  0x00 0x00 0x00 0x00
+
+ORG 0x154F8
+callHackNew(AutosaveFunc) 
+SHORT $BC01 // pop {r0} 
+SHORT $4700 // bx r0 // i've gone over a SHORT of padding 
+
+
+//ActionData@gActionData.suspendPointType = 9 にするために、この値を参照できるようにする
+//ORG	0x015534  //J
+ORG 0x015510      //U
+SHORT	$481C	//ldr	r0, [$080155a8]
+
+//ORG	0x015560
+ORG	0x01553C
+//WORD	$0203A954
+WORD $0203A958
+
+POP

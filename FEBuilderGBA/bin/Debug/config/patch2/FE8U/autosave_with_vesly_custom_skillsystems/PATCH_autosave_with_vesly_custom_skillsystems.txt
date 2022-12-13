@@ -1,0 +1,28 @@
+NAME=オートセーブ機能 vesly's custom(SkillSystems/EMS対応)
+NAME.en=Auto save function vesly's custom(with SkillSystems/EMS)
+TYPE=EA
+TAG=#EVENT
+EA=Installer.event
+
+//for EMS
+IF:0x0A6408=0x2A 0x20 0x70 0x47 0x06 0x49 0x07 0x4C
+
+//既に適応されたかどうか
+PATCHED_IF:0x154F8=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+
+INFO=中断から再開した時に、直前の行動ではなく、ターン開始時に戻れるようにします。\r\nオリジナルのバージョンは地形オプションを乗っ取ることで、プレイヤーが切り換えられるようにしますが、このバージョンではそれはありません。\r\nこのパッチをインストールだけで有効になります。\r\nこのバージョンは、プレイヤーのユニット数が前ターンより下回っていると、ターンを更新したとしても、自動保存を行いません。\r\nこれにより、リセットが遅れたとしても、救うことができます。\r\nそれを実現するためにgChapterDataのpaddingの0x202bd33を追加で利用します。
+
+
+AUTHOR=7743,aera,FE8 Girls , Vesly https://feuniverse.us/t/veslys-asm/12011/95
+INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThis patch rewinds one turn time, like Do-Over(Turnwheel, Divine Pulse).\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.\r\nit so it'll only autosave at the start of your turn if you have the same number (or more) units as you did last turn. This way if a player is late to reset, they can still resume to the previous turn.\r\nThis uses a byte in ram. I've made the default 0x202bd33 which is padding in gChapterData.
+
+
+
+NAME.zh=自动保存功能 vesly's custom(with SkillSystems/EMS)
+INFO.zh=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nThis patch rewinds one turn time, like Do-Over(Turnwheel, Divine Pulse).\r\nThe original version allows players to switch by hijacking terrain options, but this version doesn't.\r\nJust install this patch and it will take effect.\r\nit so it'll only autosave at the start of your turn if you have the same number (or more) units as you did last turn. This way if a player is late to reset, they can still resume to the previous turn.\r\nThis uses a byte in ram. I've made the default 0x202bd33 which is padding in gChapterData.
+
+
+CONFLICT_IF:0x1553C=0x58 0xA9 0x03 0x02
+CONFLICT_MESSAGE=AutoSave
+
+HINT=EMS wait 1 turn rewind

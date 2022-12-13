@@ -18,4 +18,4 @@ AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:
 INFO.en=Specifies the amount that vulneraries heal in hex. Convert to decimal for value.\r\nDefault is (0x0A) 10 HP.
 
 CONFLICT_IF:0x2FE14=0x00 0x4B
-CONFLICT_MESSAGE=Multiple Vulnarary
+CONFLICT_MESSAGE=Multiple vulnerary

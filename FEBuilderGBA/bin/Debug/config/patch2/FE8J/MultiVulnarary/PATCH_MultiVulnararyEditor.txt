@@ -1,6 +1,6 @@
 NAME=複数のきずぐすりを設定する(Editor)
-NAME.en=Multiple Vulnarary(Editor)
-NAME.zh=Multiple Vulnarary(Editor)
+NAME.en=Multiple vulnerary(Editor)
+NAME.zh=Multiple vulnerary(Editor)
 TYPE=STRUCT
 TAG=#ENGINE
 
@@ -9,8 +9,8 @@ IF:0x2FE14=0x00 0x4B
 AUTHOR=7743
 
 INFO=別のアイテムIDで作成した傷薬の回復量を10以外に設定することができます。
-INFO.en=This patch allows you to set the recovery amount of Vulnarary created with another item ID to something other than 10.
-INFO.zh=This patch allows you to set the recovery amount of Vulnarary created with another item ID to something other than 10.
+INFO.en=This patch allows you to set the recovery amount of vulnerary created with another item ID to something other than 10.
+INFO.zh=This patch allows you to set the recovery amount of vulnerary created with another item ID to something other than 10.
 
 
 POINTER=$FGREP4END MultiVulnarary.dmp

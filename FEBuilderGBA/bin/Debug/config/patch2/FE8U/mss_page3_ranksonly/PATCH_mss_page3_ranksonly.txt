@@ -15,3 +15,4 @@ INFO.zh=状态屏幕3显示所有武器的等级。即使你使用技能系统�
 AUTHOR=Kirb
 CONFLICT_IF:0x18A58=0x00 0xB5 0xFE 0xF7
 CONFLICT_MESSAGE=Limit Weapon Rank Display
+WARNING=1

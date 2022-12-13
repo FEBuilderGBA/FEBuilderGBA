@@ -8,6 +8,10 @@ PUSH
 	//Fixes the game considering some chapters postgame.
 	ORG 0x8BAD4
 	SHORT 0x200E 0x5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
+
+	//Fix MapLoadingProcess
+	ORG 0xC1E80
+	BYTE 0xB6 0xE0
 POP
 
 ALIGN 4

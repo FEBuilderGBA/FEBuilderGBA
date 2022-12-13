@@ -13,4 +13,4 @@ DEFAULT=0x0A
 INFO.en=Specifies the amount that vulneraries heal in hex. Convert to decimal for value.\r\nDefault is (0x0A) 10 HP.
 
 CONFLICT_IF:0x2FEC4=0x00 0x4B
-CONFLICT_MESSAGE=Multiple Vulnarary
+CONFLICT_MESSAGE=Multiple vulnerary

@@ -1,0 +1,5 @@
+Return=$4A
+CheckTriggerFlag=$18
+EVENTOBJ=$68
+CheckAchievementFlag=$2A
+FireEvent=$42

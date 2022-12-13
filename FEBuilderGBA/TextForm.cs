@@ -464,32 +464,28 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
+            //とにかくハフマン符号化する
+            error = Program.FETextEncoder.Encode(text, out encode);
+
             bool raiseUnHuffman = false;
-            if (EnableUnHuffmanPatch(baseaddress, id))
-            {//unHuffmanをキメてやがる.
-                Program.FETextEncoder.UnHuffmanEncode(text, out encode);
-            }
-            else
-            {//ふつーなので ハフマン符号化する
-                error = Program.FETextEncoder.Encode(text, out encode);
-                //エンコードのエラー確認.
-                if (error.Length > 0)
-                {//ハフマン符号化中にエラー発生.
-                    bool use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
+            if (error.Length > 0)
+            {//ハフマン符号化中にエラー発生.
+                R.Notify("文字:{0}はシステムに登録されていません。", error);
+
+                bool use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
+                if (use_anti_Huffman == false)
+                {//un Huffmanパッチが入っていないのでエラー表示.
+                    NeedAntiHuffman(error);
+                    //インストールされたか確認する.
+                    use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
                     if (use_anti_Huffman == false)
-                    {//un Huffmanパッチが入っていないのでエラー表示.
-                        NeedAntiHuffman(error);
-                        //インストールされたか確認する.
-                        use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
-                        if (use_anti_Huffman == false)
-                        {
-                            return U.NOT_FOUND;
-                        }
+                    {
+                        return U.NOT_FOUND;
                     }
-                    //unHuffmanをキメる.
-                    Program.FETextEncoder.UnHuffmanEncode(text, out encode);
-                    raiseUnHuffman = true;
                 }
+                //unHuffmanをキメる.
+                Program.FETextEncoder.UnHuffmanEncode(text, out encode);
+                raiseUnHuffman = true;
             }
 
             uint write_addr = InputFormRef.WriteTextData(

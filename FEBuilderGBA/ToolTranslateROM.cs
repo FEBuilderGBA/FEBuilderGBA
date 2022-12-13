@@ -219,8 +219,19 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(self, "", open);
             string filename = open.FileNames[0];
 
-            ImportAllText(self, filename, undodata);
+            ImportAllText(self, filename, false, undodata);
             return true;
+        }
+
+        //ハフマン符号化の再構築
+        public void RebuildTextCharCode(Dictionary<uint, string> textDataDic, Undo.UndoData undodata)
+        {
+            ToolTextCharRecreate recreater = new ToolTextCharRecreate();
+            foreach(var pair in textDataDic)
+            {
+                recreater.AddEN(pair.Value);
+            }
+            TextCharCodeForm.RebuildAllData(recreater, undodata);
         }
 
         //日本語フォントを上書きしてもいい場合
@@ -257,77 +268,80 @@ namespace FEBuilderGBA
             this.Recycle.RecycleOptimize();
         }
 
-        public void ImportAllText(Form self, string filename, Undo.UndoData undodata)
+        public void ImportAllText(Form self, string filename, bool IsRebuildHuffmanCharCode, Undo.UndoData undodata)
         {
+            ToolTextCharRecreate charRecreate = new ToolTextCharRecreate();
+
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {
                 U.ReleaseMemory(pleaseWait);
-
-                uint id = U.NOT_FOUND;
-                string[] lines = File.ReadAllLines(filename);
+                Dictionary<uint, string> textDataDic = ReadTextDataDic(filename);
 
                 //上書きするテキスト領域を再利用リストに突っ込む
                 List<Address> list = new List<FEBuilderGBA.Address>();
-                for (int i = 0; i < lines.Length; i++)
+                foreach (var pair in textDataDic)
                 {
-                    string line = lines[i];
-                    if (U.IsCommentSlashOnly(line) || U.OtherLangLine(line))
-                    {
-                        continue;
-                    }
-                    line = U.ClipComment(line);
-                    if (line.Length <= 0)
-                    {
-                        continue;
-                    }
-
-                    if (!TranslateTextUtil.IsTextIDCode(line))
-                    {
-                        continue;
-                    }
-
-                    AddRecycle(id, list);
-
-                    //次のテキスト
-                    id = U.atoh(U.substr(line, 1));
+                    AddRecycle(pair.Key, list);
                 }
                 this.Recycle.AddRecycle(list);
                 this.Recycle.RecycleOptimize();
 
-                id = U.NOT_FOUND;
-                string text = "";
-                for (int i = 0; i < lines.Length; i++)
+                //ハフマンコードの再構築をするかどうか
+                if (IsRebuildHuffmanCharCode)
                 {
-                    string line = lines[i];
-                    if (U.IsCommentSlashOnly(line) || U.OtherLangLine(line))
-                    {
-                        continue;
-                    }
-                    line = U.ClipComment(line);
-                    if (line.Length <= 0)
-                    {
-                        continue;
-                    }
-
-                    if (! TranslateTextUtil.IsTextIDCode(line))
-                    {
-                        text += line + "\r\n";
-                        continue;
-                    }
-
-                    //次の数字があったので、現在のテキストの書き込み.
-                    pleaseWait.DoEvents("Write:" + U.To0xHexString(id));
-                    WriteText(id, text, undodata);
-
-                    //次のテキスト
-                    id = U.atoh(U.substr(line, 1));
-                    text = "";
+//                    RebuildTextCharCode(textDataDic, undodata);
                 }
 
-                //最後のデータ
-                WriteText(id, text, undodata);
+                foreach (var pair in textDataDic)
+                {
+                    AddRecycle(pair.Key, list);
+                    //次の数字があったので、現在のテキストの書き込み.
+                    pleaseWait.DoEvents("Write:" + U.To0xHexString(pair.Key));
+                    WriteText(pair.Key, pair.Value, undodata);
+                }
             }
+        }
+        Dictionary<uint, string> ReadTextDataDic(string filename)
+        {
+            Dictionary<uint, string> textDataDic = new Dictionary<uint,string>();
+
+            uint id = U.NOT_FOUND;
+            string[] lines = File.ReadAllLines(filename);
+            string text = "";
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (U.IsCommentSlashOnly(line) || U.OtherLangLine(line))
+                {
+                    continue;
+                }
+                line = U.ClipComment(line);
+                if (line.Length <= 0)
+                {
+                    continue;
+                }
+
+                if (! TranslateTextUtil.IsTextIDCode(line))
+                {
+                    text += line + "\r\n";
+                    continue;
+                }
+
+                if (id != U.NOT_FOUND)
+                {
+                    //次の数字があったので、現在のテキストの書き込み.
+                    textDataDic[id] = text;
+                }
+
+                //次のテキスト
+                id = U.atoh(U.substr(line, 1));
+                text = "";
+            }
+
+            //最後のデータ
+            textDataDic[id] = text;
+            return textDataDic;
         }
 
 

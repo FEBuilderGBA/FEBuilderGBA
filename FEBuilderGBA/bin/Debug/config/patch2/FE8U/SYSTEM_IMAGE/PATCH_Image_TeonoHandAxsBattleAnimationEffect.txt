@@ -1,0 +1,11 @@
+NAME=Image_TeonoHandAxsBattleAnimationEffect 手斧
+NAME.en=Image_TeonoHandAxsBattleAnimationEffect
+NAME.zh=Image_TeonoHandAxsBattleAnimationEffect
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x05C07C//0x5D9C5C
+PALETTE_POINTER=0x05C078//0x5DA05C

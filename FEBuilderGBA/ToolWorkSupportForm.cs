@@ -597,7 +597,17 @@ namespace FEBuilderGBA
             }
             else
             {
-                string html = U.HttpGet(url);
+                string html;
+                try
+                {
+                    html = U.HttpGet(url);
+                }
+                catch (Exception e)
+                {
+                    R.ShowStopError("更新を確認しようとしたら、Webサイト({0})がエラーを返しました。\r\n{1}", url, e.ToString());
+                    return UPDATE_RESULT.LATEST;
+                }
+
                 Match m = RegexCache.Match(html, regex);
                 if (m.Groups.Count < 2)
                 {
@@ -612,7 +622,17 @@ namespace FEBuilderGBA
 
             if (U.isURL(match))
             {//直URL
-                WebResponse rsp = U.HttpHead(url);
+                WebResponse rsp;
+                try
+                {
+                    rsp = U.HttpHead(url);
+                }
+                catch(Exception e)
+                {
+                    R.ShowStopError("更新を確認しようとしたら、Webサイト({0})がエラーを返しました。\r\n{1}", url, e.ToString());
+                    return UPDATE_RESULT.LATEST;
+                }
+
                 dateString = rsp.Headers["LastModified"];
                 if (dateString == null)
                 {

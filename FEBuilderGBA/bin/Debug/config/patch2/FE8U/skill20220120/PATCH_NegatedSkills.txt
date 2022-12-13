@@ -1,0 +1,25 @@
+﻿NAME=NegatedSkills(SkillSystems)
+INFO=List of skills disabled by nihil.
+
+IF:0x2AF94=0x00 0x4b
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+
+//データへのポインタ
+POINTER=$FGREP4END+12 nihilTester.dmp
+
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのは
+LISTNAME=$B0:SKILL
+
+//データを定義します
+B0:SKILL=Skill
+
+INFO=Editor: NegatedSkills

@@ -16,7 +16,11 @@ ldr  r1, [r3 , #0x0]
 
 Found:
 ldrb  r0, [r1, r0] @GetTileID
+cmp  r0, #0x0
+beq Exit
+sub r0, #0x1  @ID-1
 
+Exit:
 pop {r1}
 bx r1
 

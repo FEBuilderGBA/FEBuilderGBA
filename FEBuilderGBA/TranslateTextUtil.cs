@@ -438,7 +438,7 @@ namespace FEBuilderGBA
                     oneline = oneline.Replace("\r\n", "");
                 }
 
-                TranslateGoogle engine = new TranslateGoogle();
+                TranslateManage engine = new TranslateManage();
                 string transline = engine.Trans(oneline, from, to);
 
                 if (use0001)

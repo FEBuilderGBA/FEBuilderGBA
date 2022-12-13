@@ -61,7 +61,7 @@
             this.RefEAButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DownloadEA = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Step2NextButton = new System.Windows.Forms.Button();
@@ -69,13 +69,13 @@
             this.label11 = new FEBuilderGBA.LabelEx();
             this.label5 = new FEBuilderGBA.LabelEx();
             this.Step3Page = new System.Windows.Forms.TabPage();
-            this.button11 = new System.Windows.Forms.Button();
+            this.DownloadVGMusicStudio = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.Step3PrevButton = new System.Windows.Forms.Button();
             this.RefSappyButton = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.DownloadSappy = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.Step3NextButton = new System.Windows.Forms.Button();
@@ -89,7 +89,7 @@
             this.RefDebuggerButton = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
+            this.DownloadASM = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.Step4NextButton = new System.Windows.Forms.Button();
@@ -107,7 +107,7 @@
             this.Refgba_mus_riperButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.DownloadMusictool = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.Step5NextButton = new System.Windows.Forms.Button();
@@ -433,7 +433,7 @@
             this.Step2Page.Controls.Add(this.RefEAButton);
             this.Step2Page.Controls.Add(this.button4);
             this.Step2Page.Controls.Add(this.label4);
-            this.Step2Page.Controls.Add(this.button5);
+            this.Step2Page.Controls.Add(this.DownloadEA);
             this.Step2Page.Controls.Add(this.label9);
             this.Step2Page.Controls.Add(this.label14);
             this.Step2Page.Controls.Add(this.Step2NextButton);
@@ -485,15 +485,15 @@
             this.label4.TabIndex = 114;
             this.label4.Text = "または、";
             // 
-            // button5
+            // DownloadEA
             // 
-            this.button5.Location = new System.Drawing.Point(18, 369);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(795, 36);
-            this.button5.TabIndex = 113;
-            this.button5.Text = "最新版のEAをダウンロードする";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.DownloadEA.Location = new System.Drawing.Point(18, 369);
+            this.DownloadEA.Name = "DownloadEA";
+            this.DownloadEA.Size = new System.Drawing.Size(795, 36);
+            this.DownloadEA.TabIndex = 113;
+            this.DownloadEA.Text = "最新版のEAをダウンロードする";
+            this.DownloadEA.UseVisualStyleBackColor = true;
+            this.DownloadEA.Click += new System.EventHandler(this.button5_Click);
             // 
             // label9
             // 
@@ -554,13 +554,13 @@
             // Step3Page
             // 
             this.Step3Page.BackColor = System.Drawing.SystemColors.Control;
-            this.Step3Page.Controls.Add(this.button11);
+            this.Step3Page.Controls.Add(this.DownloadVGMusicStudio);
             this.Step3Page.Controls.Add(this.label26);
             this.Step3Page.Controls.Add(this.Step3PrevButton);
             this.Step3Page.Controls.Add(this.RefSappyButton);
             this.Step3Page.Controls.Add(this.button9);
             this.Step3Page.Controls.Add(this.label15);
-            this.Step3Page.Controls.Add(this.button10);
+            this.Step3Page.Controls.Add(this.DownloadSappy);
             this.Step3Page.Controls.Add(this.label16);
             this.Step3Page.Controls.Add(this.label17);
             this.Step3Page.Controls.Add(this.Step3NextButton);
@@ -573,15 +573,15 @@
             this.Step3Page.TabIndex = 5;
             this.Step3Page.Text = "Step3Page";
             // 
-            // button11
+            // DownloadVGMusicStudio
             // 
-            this.button11.Location = new System.Drawing.Point(18, 459);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(795, 36);
-            this.button11.TabIndex = 119;
-            this.button11.Text = "VGMusicStudioをダウンロードする";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.DownloadVGMusicStudio.Location = new System.Drawing.Point(18, 459);
+            this.DownloadVGMusicStudio.Name = "DownloadVGMusicStudio";
+            this.DownloadVGMusicStudio.Size = new System.Drawing.Size(795, 36);
+            this.DownloadVGMusicStudio.TabIndex = 119;
+            this.DownloadVGMusicStudio.Text = "VGMusicStudioをダウンロードする";
+            this.DownloadVGMusicStudio.UseVisualStyleBackColor = true;
+            this.DownloadVGMusicStudio.Click += new System.EventHandler(this.button11_Click);
             // 
             // label26
             // 
@@ -631,15 +631,15 @@
             this.label15.TabIndex = 114;
             this.label15.Text = "または、";
             // 
-            // button10
+            // DownloadSappy
             // 
-            this.button10.Location = new System.Drawing.Point(18, 369);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(795, 36);
-            this.button10.TabIndex = 113;
-            this.button10.Text = "Sappyをダウンロードする";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.DownloadSappy.Location = new System.Drawing.Point(18, 369);
+            this.DownloadSappy.Name = "DownloadSappy";
+            this.DownloadSappy.Size = new System.Drawing.Size(795, 36);
+            this.DownloadSappy.TabIndex = 113;
+            this.DownloadSappy.Text = "Sappyをダウンロードする";
+            this.DownloadSappy.UseVisualStyleBackColor = true;
+            this.DownloadSappy.Click += new System.EventHandler(this.button10_Click);
             // 
             // label16
             // 
@@ -706,7 +706,7 @@
             this.Step4Page.Controls.Add(this.RefDebuggerButton);
             this.Step4Page.Controls.Add(this.button13);
             this.Step4Page.Controls.Add(this.label18);
-            this.Step4Page.Controls.Add(this.button14);
+            this.Step4Page.Controls.Add(this.DownloadASM);
             this.Step4Page.Controls.Add(this.label19);
             this.Step4Page.Controls.Add(this.label20);
             this.Step4Page.Controls.Add(this.Step4NextButton);
@@ -778,15 +778,15 @@
             this.label18.TabIndex = 114;
             this.label18.Text = "または、";
             // 
-            // button14
+            // DownloadASM
             // 
-            this.button14.Location = new System.Drawing.Point(18, 369);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(795, 36);
-            this.button14.TabIndex = 113;
-            this.button14.Text = "最新版を自動的にダウンロードします。";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.DownloadASM.Location = new System.Drawing.Point(18, 369);
+            this.DownloadASM.Name = "DownloadASM";
+            this.DownloadASM.Size = new System.Drawing.Size(795, 36);
+            this.DownloadASM.TabIndex = 113;
+            this.DownloadASM.Text = "最新版を自動的にダウンロードします。";
+            this.DownloadASM.UseVisualStyleBackColor = true;
+            this.DownloadASM.Click += new System.EventHandler(this.button14_Click);
             // 
             // label19
             // 
@@ -865,7 +865,7 @@
             this.Step5Page.Controls.Add(this.Refgba_mus_riperButton);
             this.Step5Page.Controls.Add(this.button6);
             this.Step5Page.Controls.Add(this.label23);
-            this.Step5Page.Controls.Add(this.button7);
+            this.Step5Page.Controls.Add(this.DownloadMusictool);
             this.Step5Page.Controls.Add(this.label24);
             this.Step5Page.Controls.Add(this.label25);
             this.Step5Page.Controls.Add(this.Step5NextButton);
@@ -965,15 +965,15 @@
             this.label23.TabIndex = 114;
             this.label23.Text = "または、";
             // 
-            // button7
+            // DownloadMusictool
             // 
-            this.button7.Location = new System.Drawing.Point(18, 369);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(795, 36);
-            this.button7.TabIndex = 113;
-            this.button7.Text = "最新版を自動的にダウンロードします。";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.DownloadMusictool.Location = new System.Drawing.Point(18, 369);
+            this.DownloadMusictool.Name = "DownloadMusictool";
+            this.DownloadMusictool.Size = new System.Drawing.Size(795, 36);
+            this.DownloadMusictool.TabIndex = 113;
+            this.DownloadMusictool.Text = "最新版を自動的にダウンロードします。";
+            this.DownloadMusictool.UseVisualStyleBackColor = true;
+            this.DownloadMusictool.Click += new System.EventHandler(this.button7_Click);
             // 
             // label24
             // 
@@ -1169,7 +1169,7 @@
         private System.Windows.Forms.Button DownloadVBAM_Button;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DownloadEA;
         private System.Windows.Forms.Label label9;
         private TextBoxEx EATextBox;
         private System.Windows.Forms.Label label14;
@@ -1179,7 +1179,7 @@
         private System.Windows.Forms.Button RefSappyButton;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button DownloadSappy;
         private System.Windows.Forms.Label label16;
         private TextBoxEx SappyTextBox;
         private System.Windows.Forms.Label label17;
@@ -1190,7 +1190,7 @@
         private System.Windows.Forms.Button RefDebuggerButton;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button DownloadASM;
         private System.Windows.Forms.Label label19;
         private TextBoxEx DebuggerTextBox;
         private System.Windows.Forms.Label label20;
@@ -1225,7 +1225,7 @@
         private System.Windows.Forms.Button Refgba_mus_riperButton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button DownloadMusictool;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button Step5NextButton;
@@ -1233,7 +1233,7 @@
         private TextBoxEx gba_mus_riper_TextBox;
         private LabelEx labelEx6;
         private LabelEx labelEx7;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button DownloadVGMusicStudio;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button midfix4agbButton;
         private System.Windows.Forms.Label label27;

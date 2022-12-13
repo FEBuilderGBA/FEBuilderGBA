@@ -9541,14 +9541,14 @@ r3=X tile position of menu of the right	{U}
 08727014	&PALETTE	东西的调色板	505	{U}
 08727034	&PALETTE	东西的调色板	506	{U}
 08727054	&PALETTE	东西的调色板	507	{U}
-08727074	&PALETTE	东西的调色板	508	{U}
+08727074	&PALETTE2	东西的调色板	508	{U}
 0868DF7C	&PALETTE	东西的调色板	509	{U}
 086852B8	&PALETTE	东西的调色板	510	{U}
 0869FD40	:086A0BFF	未知数据	OAMSP Maybe	9	{J}
 08753BEC	&PALETTE	东西的调色板	505	{J}
 08753C0C	&PALETTE	东西的调色板	506	{J}
 08753C2C	&PALETTE	东西的调色板	507	{J}
-08753C4C	&PALETTE	东西的调色板	508	{J}
+08753C4C	&PALETTE2	东西的调色板	508	{J}
 086BAB54	&PALETTE	东西的调色板	509	{J}
 086B1E90	&PALETTE	东西的调色板	510	{J}
 0803830C	战斗记录显示	{J}
@@ -13615,9 +13615,9 @@ r3=X tile position of menu of the right	{U}
 08060AA8	StartEfxLightningBG	{J}
 08060E5C	StartEfxPurgeOBJRND	{J}
 08060EFC	StartEfxPurgeOBJ	{J}
-0805F330	StartEfxDevineBG_1	{J}
-0805F330	StartEfxDevineBG_2	{J}
-0805F330	StartEfxDevineBG_3	{J}
+080610B0	StartEfxDevineBG_1	{J}
+08061134	StartEfxDevineBG_2	{J}
+080611B8	StartEfxDevineBG_3	{J}
 080612E0	StartEfxDevineOBJ	{J}
 0806138C	StartEfxHazymoon	{J}
 08061890	StartEfxHazymoonOBJ3	{J}

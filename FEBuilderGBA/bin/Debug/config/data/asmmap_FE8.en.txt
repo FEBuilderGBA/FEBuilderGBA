@@ -9585,14 +9585,14 @@ r3=X tile position of menu of right	{U}
 08727014	&PALETTE	Something's palette	505	{U}
 08727034	&PALETTE	Something's palette	506	{U}
 08727054	&PALETTE	Something's palette	507	{U}
-08727074	&PALETTE	Something's palette	508	{U}
+08727074	&PALETTE2	Something's palette	508	{U}
 0868DF7C	&PALETTE	Something's palette	509	{U}
 086852B8	&PALETTE	Something's palette	510	{U}
 0869FD40	:086A0BFF	Unknown data	OAMSP Maybe	9	{J}
 08753BEC	&PALETTE	Something's palette	505	{J}
 08753C0C	&PALETTE	Something's palette	506	{J}
 08753C2C	&PALETTE	Something's palette	507	{J}
-08753C4C	&PALETTE	Something's palette	508	{J}
+08753C4C	&PALETTE2	Something's palette	508	{J}
 086BAB54	&PALETTE	Something's palette	509	{J}
 086B1E90	&PALETTE	Something's palette	510	{J}
 0803830C	Battle record display	{J}
@@ -13660,9 +13660,9 @@ r3=X tile position of menu of right	{U}
 08060AA8	StartEfxLightningBG	{J}
 08060E5C	StartEfxPurgeOBJRND	{J}
 08060EFC	StartEfxPurgeOBJ	{J}
-0805F330	StartEfxDevineBG_1	{J}
-0805F330	StartEfxDevineBG_2	{J}
-0805F330	StartEfxDevineBG_3	{J}
+080610B0	StartEfxDevineBG_1	{J}
+08061134	StartEfxDevineBG_2	{J}
+080611B8	StartEfxDevineBG_3	{J}
 080612E0	StartEfxDevineOBJ	{J}
 0806138C	StartEfxHazymoon	{J}
 08061890	StartEfxHazymoonOBJ3	{J}

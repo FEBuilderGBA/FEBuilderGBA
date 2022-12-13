@@ -1,2 +1,3 @@
-Table=$14
+Table=$1C
 Found=$0E
+Exit=$16

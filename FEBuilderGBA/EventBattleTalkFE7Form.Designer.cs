@@ -170,7 +170,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1292, 30);
-            this.panel1.TabIndex = 68;
+            this.panel1.TabIndex = 0;
             // 
             // ReloadListButton
             // 
@@ -365,7 +365,7 @@
             this.L_8_NEWALLOC_ALTEVENT_W4.Location = new System.Drawing.Point(312, 309);
             this.L_8_NEWALLOC_ALTEVENT_W4.Name = "L_8_NEWALLOC_ALTEVENT_W4";
             this.L_8_NEWALLOC_ALTEVENT_W4.Size = new System.Drawing.Size(300, 28);
-            this.L_8_NEWALLOC_ALTEVENT_W4.TabIndex = 244;
+            this.L_8_NEWALLOC_ALTEVENT_W4.TabIndex = 7;
             this.L_8_NEWALLOC_ALTEVENT_W4.Text = "新規イベント";
             this.L_8_NEWALLOC_ALTEVENT_W4.UseVisualStyleBackColor = true;
             // 
@@ -475,7 +475,7 @@
             0});
             this.P8.Name = "P8";
             this.P8.Size = new System.Drawing.Size(149, 25);
-            this.P8.TabIndex = 178;
+            this.P8.TabIndex = 6;
             // 
             // J_6
             // 
@@ -500,7 +500,7 @@
             0});
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(68, 25);
-            this.B1.TabIndex = 175;
+            this.B1.TabIndex = 1;
             // 
             // B0
             // 
@@ -514,7 +514,7 @@
             0});
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(68, 25);
-            this.B0.TabIndex = 174;
+            this.B0.TabIndex = 0;
             // 
             // L_1_UNIT_ANY
             // 
@@ -576,7 +576,7 @@
             0});
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(68, 25);
-            this.B14.TabIndex = 169;
+            this.B14.TabIndex = 9;
             // 
             // W12
             // 
@@ -590,7 +590,7 @@
             0});
             this.W12.Name = "W12";
             this.W12.Size = new System.Drawing.Size(88, 25);
-            this.W12.TabIndex = 166;
+            this.W12.TabIndex = 8;
             // 
             // J_14
             // 
@@ -641,7 +641,7 @@
             0});
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(68, 25);
-            this.B6.TabIndex = 160;
+            this.B6.TabIndex = 5;
             // 
             // B3
             // 
@@ -655,7 +655,7 @@
             0});
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(68, 25);
-            this.B3.TabIndex = 159;
+            this.B3.TabIndex = 3;
             // 
             // B2
             // 
@@ -669,7 +669,7 @@
             0});
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(68, 25);
-            this.B2.TabIndex = 158;
+            this.B2.TabIndex = 2;
             // 
             // W4
             // 
@@ -683,7 +683,7 @@
             0});
             this.W4.Name = "W4";
             this.W4.Size = new System.Drawing.Size(88, 25);
-            this.W4.TabIndex = 147;
+            this.W4.TabIndex = 4;
             // 
             // J_4_TEXT
             // 
@@ -771,7 +771,7 @@
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(435, 454);
-            this.AddressList.TabIndex = 143;
+            this.AddressList.TabIndex = 0;
             // 
             // panel3
             // 
@@ -937,7 +937,7 @@
             0});
             this.N1_B10.Name = "N1_B10";
             this.N1_B10.Size = new System.Drawing.Size(67, 25);
-            this.N1_B10.TabIndex = 185;
+            this.N1_B10.TabIndex = 6;
             // 
             // N1_B3
             // 
@@ -976,7 +976,7 @@
             0});
             this.N1_B6.Name = "N1_B6";
             this.N1_B6.Size = new System.Drawing.Size(67, 25);
-            this.N1_B6.TabIndex = 180;
+            this.N1_B6.TabIndex = 4;
             // 
             // N1_J_6
             // 
@@ -999,7 +999,7 @@
             0});
             this.N1_B0.Name = "N1_B0";
             this.N1_B0.Size = new System.Drawing.Size(67, 25);
-            this.N1_B0.TabIndex = 174;
+            this.N1_B0.TabIndex = 0;
             // 
             // N1_L_0_UNIT
             // 
@@ -1035,7 +1035,7 @@
             0});
             this.N1_W8.Name = "N1_W8";
             this.N1_W8.Size = new System.Drawing.Size(87, 25);
-            this.N1_W8.TabIndex = 166;
+            this.N1_W8.TabIndex = 5;
             // 
             // N1_B2
             // 
@@ -1048,7 +1048,7 @@
             0});
             this.N1_B2.Name = "N1_B2";
             this.N1_B2.Size = new System.Drawing.Size(67, 25);
-            this.N1_B2.TabIndex = 164;
+            this.N1_B2.TabIndex = 2;
             // 
             // N1_B1
             // 
@@ -1061,7 +1061,7 @@
             0});
             this.N1_B1.Name = "N1_B1";
             this.N1_B1.Size = new System.Drawing.Size(67, 25);
-            this.N1_B1.TabIndex = 163;
+            this.N1_B1.TabIndex = 1;
             // 
             // N1_J_1_MAP
             // 
@@ -1084,7 +1084,7 @@
             0});
             this.N1_W4.Name = "N1_W4";
             this.N1_W4.Size = new System.Drawing.Size(88, 25);
-            this.N1_W4.TabIndex = 147;
+            this.N1_W4.TabIndex = 3;
             // 
             // N1_J_4_TEXT
             // 
@@ -1183,7 +1183,7 @@
             0});
             this.N1_Address.Name = "N1_Address";
             this.N1_Address.Size = new System.Drawing.Size(130, 25);
-            this.N1_Address.TabIndex = 8;
+            this.N1_Address.TabIndex = 0;
             // 
             // label20
             // 

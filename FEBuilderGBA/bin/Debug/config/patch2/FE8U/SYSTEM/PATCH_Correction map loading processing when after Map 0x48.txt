@@ -1,0 +1,20 @@
+NAME=Map 0x48以降のマップ読込時処理の修正
+NAME.en=Fix map loading processing when after Map 0x48
+NAME.zh=Fix map loading processing when after Map 0x48
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0BD074
+COMBO=Default: |0x98 0xE0|Fix: |0xB6 0xE0
+
+INFO=バニラでは、マップ読込時処理で指定できるマップは0x47までしかありません。\r\nもし、MNC2Fix Worldmap版を使っている場合、マップ0x48以降は、どこでも入れるマップを作ることができません。\r\nこのパッチはその問題を解決します。\r\nディフォルトは、「Map0x48以降はワールドマップからしか入れない」で、これを「Map0x48以降は何処からでも入れる」に変更します。\r\n
+。
+INFO.en=In vanilla, the only map that can be specified in the map loading process is 0x47.\r\nIf you are using the MNC2Fix Worldmap version, you cannot create a map to put anywhere after map 0x48.\r\nThis patch solves that problem.\r\nThe default is "Map 0x48 and after can only be entered from the worldmap" and this will be changed to "Map 0x48 and after can be entered from anywhere".
+
+INFO.zh=In vanilla, the only map that can be specified in the map loading process is 0x47.\r\nIf you are using the MNC2Fix Worldmap version, you cannot create a map to put anywhere after map 0x48.\r\nThis patch solves that problem.\r\nThe default is "Map 0x48 and after can only be entered from the worldmap" and this will be changed to "Map 0x48 and after can be entered from anywhere".
+
+AUTHOR=7743
+
+IFNOT:0x0F464=0x98 0xF4 0x00 0x08

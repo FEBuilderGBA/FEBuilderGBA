@@ -321,7 +321,7 @@ namespace FEBuilderGBA
 
             string ret = "";
 
-            TranslateGoogle engine = new TranslateGoogle();
+            TranslateManage engine = new TranslateManage();
             string[] lines = src.Split(new string[] { "\r\n" }, StringSplitOptions.None);
             for (int i = 0; i < lines.Length; i++)
             {
