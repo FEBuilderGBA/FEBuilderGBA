@@ -34,6 +34,10 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     uint max = Program.ROM.u8(Program.ROM.RomInfo.summons_demon_king_count_address);
+                    if (max >= 100)
+                    {
+                        return false;
+                    }
                     return i <= max;
                 }
                 , (int i, uint addr) =>
@@ -72,6 +76,11 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Summons", new uint[] { });
+        }
+
+        private void SummonsDemonKingForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

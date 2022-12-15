@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
             this.P8 = new System.Windows.Forms.NumericUpDown();
             this.B7 = new System.Windows.Forms.NumericUpDown();
@@ -99,7 +99,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.AddressListExpandsButton_50 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
@@ -154,6 +154,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 31);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -190,7 +191,6 @@
             // 
             // B7
             // 
-
             this.B7.Location = new System.Drawing.Point(132, 387);
             this.B7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B7.Name = "B7";
@@ -266,9 +266,11 @@
             // 
             // L_2_UNIT
             // 
+            this.L_2_UNIT.ErrorMessage = "";
             this.L_2_UNIT.Location = new System.Drawing.Point(695, 33);
             this.L_2_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_2_UNIT.Name = "L_2_UNIT";
+            this.L_2_UNIT.Placeholder = "";
             this.L_2_UNIT.ReadOnly = true;
             this.L_2_UNIT.Size = new System.Drawing.Size(160, 25);
             this.L_2_UNIT.TabIndex = 52;
@@ -302,7 +304,6 @@
             // 
             // L_4_UNITPOS_X
             // 
-
             this.L_4_UNITPOS_X.Location = new System.Drawing.Point(175, 2);
             this.L_4_UNITPOS_X.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.L_4_UNITPOS_X.Name = "L_4_UNITPOS_X";
@@ -322,7 +323,6 @@
             // 
             // L_4_UNITPOS_Y
             // 
-
             this.L_4_UNITPOS_Y.Location = new System.Drawing.Point(329, 2);
             this.L_4_UNITPOS_Y.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.L_4_UNITPOS_Y.Name = "L_4_UNITPOS_Y";
@@ -663,9 +663,11 @@
             // 
             // L_15_ITEM
             // 
+            this.L_15_ITEM.ErrorMessage = "";
             this.L_15_ITEM.Location = new System.Drawing.Point(204, 324);
             this.L_15_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_15_ITEM.Name = "L_15_ITEM";
+            this.L_15_ITEM.Placeholder = "";
             this.L_15_ITEM.ReadOnly = true;
             this.L_15_ITEM.Size = new System.Drawing.Size(189, 25);
             this.L_15_ITEM.TabIndex = 78;
@@ -697,9 +699,11 @@
             // 
             // L_14_ITEM
             // 
+            this.L_14_ITEM.ErrorMessage = "";
             this.L_14_ITEM.Location = new System.Drawing.Point(203, 290);
             this.L_14_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_14_ITEM.Name = "L_14_ITEM";
+            this.L_14_ITEM.Placeholder = "";
             this.L_14_ITEM.ReadOnly = true;
             this.L_14_ITEM.Size = new System.Drawing.Size(189, 25);
             this.L_14_ITEM.TabIndex = 75;
@@ -731,9 +735,11 @@
             // 
             // L_13_ITEM
             // 
+            this.L_13_ITEM.ErrorMessage = "";
             this.L_13_ITEM.Location = new System.Drawing.Point(203, 259);
             this.L_13_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_13_ITEM.Name = "L_13_ITEM";
+            this.L_13_ITEM.Placeholder = "";
             this.L_13_ITEM.ReadOnly = true;
             this.L_13_ITEM.Size = new System.Drawing.Size(189, 25);
             this.L_13_ITEM.TabIndex = 72;
@@ -765,9 +771,11 @@
             // 
             // L_12_ITEM
             // 
+            this.L_12_ITEM.ErrorMessage = "";
             this.L_12_ITEM.Location = new System.Drawing.Point(203, 224);
             this.L_12_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_12_ITEM.Name = "L_12_ITEM";
+            this.L_12_ITEM.Placeholder = "";
             this.L_12_ITEM.ReadOnly = true;
             this.L_12_ITEM.Size = new System.Drawing.Size(189, 25);
             this.L_12_ITEM.TabIndex = 69;
@@ -865,7 +873,6 @@
             // 
             // L_3_UNITGROW_LV
             // 
-
             this.L_3_UNITGROW_LV.Location = new System.Drawing.Point(137, 2);
             this.L_3_UNITGROW_LV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.L_3_UNITGROW_LV.Name = "L_3_UNITGROW_LV";
@@ -935,9 +942,11 @@
             // 
             // L_1_CLASS
             // 
+            this.L_1_CLASS.ErrorMessage = "";
             this.L_1_CLASS.Location = new System.Drawing.Point(202, 35);
             this.L_1_CLASS.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_1_CLASS.Name = "L_1_CLASS";
+            this.L_1_CLASS.Placeholder = "";
             this.L_1_CLASS.ReadOnly = true;
             this.L_1_CLASS.Size = new System.Drawing.Size(188, 25);
             this.L_1_CLASS.TabIndex = 49;
@@ -969,9 +978,11 @@
             // 
             // L_0_UNIT
             // 
+            this.L_0_UNIT.ErrorMessage = "";
             this.L_0_UNIT.Location = new System.Drawing.Point(200, 2);
             this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_UNIT.Name = "L_0_UNIT";
+            this.L_0_UNIT.Placeholder = "";
             this.L_0_UNIT.ReadOnly = true;
             this.L_0_UNIT.Size = new System.Drawing.Size(189, 25);
             this.L_0_UNIT.TabIndex = 16;
@@ -1014,7 +1025,6 @@
             // 
             // WriteButton
             // 
-
             this.WriteButton.Location = new System.Drawing.Point(755, 0);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
@@ -1025,7 +1035,6 @@
             // 
             // ReloadListButton
             // 
-
             this.ReloadListButton.Location = new System.Drawing.Point(510, 0);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -1037,7 +1046,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_50);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(12, 46);
@@ -1046,15 +1055,15 @@
             this.panel6.Size = new System.Drawing.Size(276, 476);
             this.panel6.TabIndex = 89;
             // 
-            // AddressListExpandsButton
+            // AddressListExpandsButton_50
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(2, 441);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
-            this.AddressListExpandsButton.TabIndex = 114;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            this.AddressListExpandsButton_50.Location = new System.Drawing.Point(2, 441);
+            this.AddressListExpandsButton_50.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_50.Name = "AddressListExpandsButton_50";
+            this.AddressListExpandsButton_50.Size = new System.Drawing.Size(239, 30);
+            this.AddressListExpandsButton_50.TabIndex = 114;
+            this.AddressListExpandsButton_50.Text = "リストの拡張";
+            this.AddressListExpandsButton_50.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -1070,9 +1079,11 @@
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(315, 4);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 58;
@@ -1090,9 +1101,11 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(533, 3);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(150, 25);
             this.SelectAddress.TabIndex = 57;
@@ -1149,7 +1162,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(369, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -1215,6 +1227,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SummonsDemonKingForm";
             this.Text = "呼魔エディタ";
+            this.Load += new System.EventHandler(this.SummonsDemonKingForm_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
@@ -1265,7 +1278,7 @@
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.Button AddressListExpandsButton_50;
         private System.Windows.Forms.Label LabelFilter;
         private FEBuilderGBA.TextBoxEx BlockSize;
         private System.Windows.Forms.Label label3;
