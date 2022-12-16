@@ -20,3 +20,5 @@ AUTHOR=7743
 INFO.en=Change material such as frame when chapter title is displayed for each chapter.\r\nIt can be set for each chapter and flag.
 NAME.zh=每章显示章节标题时更改材料图像（如框架）(Install)
 INFO.zh=每章显示章节标题时，更改框架等材料。\r\n它可以为每个章节和标志设置。
+
+WARNING=1

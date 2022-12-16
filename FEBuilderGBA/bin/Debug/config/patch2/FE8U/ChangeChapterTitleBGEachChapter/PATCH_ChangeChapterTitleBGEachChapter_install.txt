@@ -15,3 +15,5 @@ AUTHOR=7743
 INFO.en=Change background when chapter title is displayed for each chapter.\r\nIt can be set for each chapter and flag.
 NAME.zh=为每章章节标题显示时更改背景(Install)
 INFO.zh=为每章显示章节标题时更改背景。\r\n它可以为每个章节和标志设置。
+
+WARNING=1

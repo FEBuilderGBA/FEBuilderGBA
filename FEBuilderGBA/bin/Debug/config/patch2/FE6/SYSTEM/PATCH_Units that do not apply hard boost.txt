@@ -26,3 +26,5 @@ INFO=ハードブーストを受け取らないユニットを設定します。
 INFO.en=Set the units that do not receive hard boost.\r\n\r\nIf AppendLv is set to 0, it will not be received.\r\nBy changing the AppendLv, you can receive a hard boost up to the LV of that value.
 NAME.zh=不施加强力提升的单位。
 INFO.zh=设置不强加的单位。\r\n\r\n如果AppendLv设置为0，则不会接收到它。\r\n通过更改AppendLv，您可以硬性提高到该值的LV。
+
+WARNING=1

@@ -1,5 +1,5 @@
-NAME=章タイトルを表示する時の背景を章ごとに変更する
-NAME.en=Change Chapter Title  background for each chapter
+NAME=章タイトルを表示する時の背景を章ごとに変更する(Editor)
+NAME.en=Change Chapter Title  background for each chapter(Editor)
 
 INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
 
@@ -34,5 +34,5 @@ HEIGHT=160
 //利用パレット数
 PALETTE=1
 INFO.en=To import a new image, please set the address, PALETTE to 0 or FFFFFFFF, then import it.\r\nOtherwise, overwrite the existing image and change it.
-NAME.zh=为每章显示章节标题时更改背景
+NAME.zh=为每章显示章节标题时更改背景(Editor)
 INFO.zh=要导入新图像，请将地址PALETTE设置为0或FFFFFFFF，然后导入。\r\n否则，覆盖现有图像并进行更改。
