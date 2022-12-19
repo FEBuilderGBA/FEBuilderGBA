@@ -13,16 +13,16 @@ BIN:$FREEAREA=ASMC_MakeShop.dmp
 
 INFO=このパッチはイベントから店を呼び出します。\r\n店の種類は、00=武器屋, 01=道具屋, 02=秘密の店 です。\r\n売り物ポインタは、店で売る商品リストのポインタです。
 
-EVENTSCRIPT:11=400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot2=StoreType r2=売り物Pointer
-EVENTSCRIPT:12=40050100XXXXXXXX40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す[XX:UNIT:ユニット] [YY::店の種類] [ZZ:POINTER:売り物ポインタ](ASMC_MakeShop)
-EVENTSCRIPT:14=40050100FFFFFFFF40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_UsePureWater.dmp}	イベントから店を呼び出す 操作中のユニット [YY::店の種類] [ZZ:POINTER:売り物ポインタ](ASMC_MakeShop)
+EVENTSCRIPT:11=400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot3=StoreType Slot4=売り物Pointer
+EVENTSCRIPT:12=40050100XXXXXXXX40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す[XX:UNIT:ユニット] [YY::店の種類] [ZZ:POINTER:売り物ポインタ](ASMC_MakeShop)
+EVENTSCRIPT:14=40050100FFFFFFFF40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す 操作中のユニット [YY::店の種類] [ZZ:POINTER:売り物ポインタ](ASMC_MakeShop)
 
-EVENTSCRIPT:11.en=400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot2=StoreType r2=ItemsPointer
-EVENTSCRIPT:12.en=40050100XXXXXXXX40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event[XX:UNIT:Unit] [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
-EVENTSCRIPT:14.en=40050100FFFFFFFF40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_UsePureWater.dmp}	Call the store from event Current unit [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot3=StoreType Slot4=ItemsPointer
+EVENTSCRIPT:12.en=40050100XXXXXXXX40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event[XX:UNIT:Unit] [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
+EVENTSCRIPT:14.en=40050100FFFFFFFF40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event Current unit [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
 
-EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot2=StoreType r2=ItemsPointer
-EVENTSCRIPT:12.zh=40050100XXXXXXXX40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event[XX:UNIT:Unit] [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
-EVENTSCRIPT:14.zh=40050100FFFFFFFF40050200YY00000040050300ZZZZZZZZ400D0000{$L1:ASMC_UsePureWater.dmp}	Call the store from event Current unit [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot3=StoreType Slot4=ItemsPointer
+EVENTSCRIPT:12.zh=40050100XXXXXXXX40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event[XX:UNIT:Unit] [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
+EVENTSCRIPT:14.zh=40050100FFFFFFFF40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	Call the store from event Current unit [YY::StoreType] [ZZ:POINTER:ItemsPointer](ASMC_MakeShop)
 
 AUTHOR=7743
