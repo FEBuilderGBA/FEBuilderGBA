@@ -2273,6 +2273,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (text.IndexOf("@0003") < 0)
+            {
+                return;
+            }
             text = TextForm.StripAllCode(text);
             TextToSpeechForm.Speak(text);
         }
