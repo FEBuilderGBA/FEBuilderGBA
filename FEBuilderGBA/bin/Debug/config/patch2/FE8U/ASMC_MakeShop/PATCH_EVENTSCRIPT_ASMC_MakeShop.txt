@@ -12,6 +12,8 @@ PATCHED_IF:$FGREP4 ASMC_MakeShop.dmp=0x30 0xB5
 BIN:$FREEAREA=ASMC_MakeShop.dmp
 
 INFO=このパッチはイベントから店を呼び出します。\r\n店の種類は、00=武器屋, 01=道具屋, 02=秘密の店 です。\r\n売り物ポインタは、店で売る商品リストのポインタです。
+INFO.en=This patch calls a store from an event. \r\nThe type of the store is 00=weapons shop, 01=tool shop, 02=secret store.\r\nThe Items pointer is list of items to be sold in the store.
+INFO.zh=This patch calls a store from an event. \r\nThe type of the store is 00=weapons shop, 01=tool shop, 02=secret store.\r\nThe Items pointer is list of items to be sold in the store.
 
 EVENTSCRIPT:11=400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す(ASMC_MakeShop)(LOW)	Slot1=Unit, Slot3=StoreType Slot4=売り物Pointer
 EVENTSCRIPT:12=40050100XXXXXXXX40050300YY00000040050400ZZZZZZZZ400D0000{$L1:ASMC_MakeShop.dmp}	イベントから店を呼び出す[XX:UNIT:ユニット] [YY::店の種類] [ZZ:POINTER:売り物ポインタ](ASMC_MakeShop)

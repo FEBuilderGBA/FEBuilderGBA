@@ -6542,7 +6542,7 @@ Edit the icon displayed when the unit is in the moving state.
 Edit the battle animation when attacking with weapons.
 
 :魔法拡張パッチを利用して、新規に魔法エフェクトを定義します。\r\nFEの魔法は戦闘アニメと違い、プログラムでハードコーディングされているため、魔法を追加するには、パッチを当てて魔法システムが必要になります。
-Using a magic expansion patch, define a new magic effect.\r\nFE's magic is hard-coded by a program, unlike battle animation, so to add magic, you need a patch to use a magic system.
+Using a magic expansion patch, define a new magic effect.\r\nFE's magic is hard-coded by a program, unlike battle animation, so to add magic, you need a patch to use a custom spell system(CSA Patch).
 
 :戦闘時に表示される背景を設定します。
 Edit the background to be displayed during battle.
