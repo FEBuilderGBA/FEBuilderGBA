@@ -2524,6 +2524,7 @@ namespace FEBuilderGBA
             equ["gtp1"] = 0x01;
             equ["gtp2"] = 0x02;
             equ["gtp3"] = 0x03;
+            equ["mod_vib"] = 0x00;
 
             for (uint i = WAIT_START; i <= WAIT_END; i++)
             {
@@ -3640,6 +3641,7 @@ namespace FEBuilderGBA
             }
 
             bool checkTIE = false;
+            bool checkBCKeySH = false;
             for (int i = 0; i < track.codes.Count; i++)
             {
                 Code c = track.codes[i];
@@ -3681,6 +3683,18 @@ namespace FEBuilderGBA
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
                     }
                 }
+                else if (i <= 5 &&
+                    (c.type == 0xBC || c.type == 0xBB) )
+                {//KEYSH
+                    checkBCKeySH = true;
+                }
+            }
+
+            if (checkBCKeySH == false)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SONGTRACK, U.toOffset(songaddr)
+                    , R._("SongID {0}のトラック「{1}」は、曲の先頭にKEYSH命令がありません。\r\nトラックが破損している可能性があります。", U.To0xHexString(song_id), track_number + 1), song_id));
+                return;
             }
         }
 
