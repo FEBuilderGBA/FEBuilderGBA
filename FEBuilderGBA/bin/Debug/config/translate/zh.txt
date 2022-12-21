@@ -5753,7 +5753,7 @@ IER 引用的值。\r\n角色因项目而异。
 Skill Scroll
 
 :Lv: {0}以上でCCできます。
-:Protmoion with Lv {0} or higher.
+:Promotion with Lv {0} or higher.
 
 :現在、レベル0でCCできる設定になっています。
 Currently, set to Promotion at level 0.

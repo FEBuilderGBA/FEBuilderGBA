@@ -3683,8 +3683,7 @@ namespace FEBuilderGBA
                             , R._("SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。", U.To0xHexString(song_id), track_number + 1), song_id));
                     }
                 }
-                else if (i <= 5 &&
-                    (c.type == 0xBC || c.type == 0xBB) )
+                else if (i <= 5 && c.type == 0xBC )
                 {//KEYSH
                     checkBCKeySH = true;
                 }

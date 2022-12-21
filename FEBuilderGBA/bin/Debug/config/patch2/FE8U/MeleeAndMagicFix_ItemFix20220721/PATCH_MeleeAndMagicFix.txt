@@ -6,7 +6,7 @@ TAG=#ENGINE
 PATCHED_IF:0x18a58=0x10 0xB5
 
 BIN:0x18a58=MeleeAndMagicFix_FE8U.dmp
-BIN:0x2A7DE=MeleeAndMagicFix_Arena_FE8U.dmp	//add strh r1, [r5, #0x1E]
+//BIN:0x2A7DE=MeleeAndMagicFix_Arena_FE8U.dmp	//add strh r1, [r5, #0x1E]
 
 AUTHOR=melee and magic fix  Hextator,Tequila,7743
 INFO=武器魔法を同時に利用できるパッチ
