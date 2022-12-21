@@ -5753,7 +5753,7 @@ Latona
 Skill Scroll
 
 :Lv: {0}以上でCCできます。
-:Protmoion with Lv {0} or higher.
+:Promotion with Lv {0} or higher.
 
 :現在、レベル0でCCできる設定になっています。
 Currently, set to Promotion at level 0.
@@ -11157,6 +11157,9 @@ Track "{1}" with SongID {0} is instructed to play the broken instrument "{2}".\r
 
 :SongID {0}のトラック「{1}」は、TIEに対するEOTを忘れてGOTOでループしています。\r\nEOTを忘れてループすると、音が鳴りっぱなしになるます。楽譜のGOTOの前にEOTを追加してください。
 Track "{1}" with SongID {0} is looping in GOTO, forgetting the EOT for TIE.\r\nIf you forget the EOT and loop, the sound will continue to sound.Add EOT before GOTO in the score.
+
+:SongID {0}のトラック「{1}」は、曲の先頭にKEYSH命令がありません。\r\nトラックが破損している可能性があります。
+Track "{1}" with SongID {0} does not have a KEYSH instruction at the beginning of the song.\r\nThe track may be damaged.
 
 :GBAMusRiperがエラーを返しました。\r\nFEBuilderGBA側で代用します。\r\n\r\nGBAMusRiperのエラーメッセージ\r\n{0}
 GBAMusRiper returned an error.\r\nFEBuilderGBA will substitute.\r\n\r\nGBAMusRiper error message:\r\n{0}.
