@@ -2104,8 +2104,8 @@ Villages usually require 2 seperate events to function.\r\n\r\n1) A Type-10 (Hom
 :宝箱
 Chest
 
-:入手できるゴールドを指定します。\\r\\nゴールドは、256ゴールド以上を指定する必要があります。
-Specify the gold available.\\\\ r \\\\ n Gold must be 256 gold or higher.
+:入手できるゴールドを指定します。\r\nゴールドは、256ゴールド以上を指定する必要があります。
+Specify the gold available.\r\nGold must be 256 gold or higher.
 
 :ゴールド
 Gold

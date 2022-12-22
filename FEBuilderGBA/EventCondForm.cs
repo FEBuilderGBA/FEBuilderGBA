@@ -22,6 +22,7 @@ namespace FEBuilderGBA
             SupportOtherSeries();
 
             U.SelectedIndexSafety(this.FilterComboBox,0);
+            this.OBJECT_N07_J_6.AccessibleDescription = R._("入手できるゴールドを指定します。\r\nゴールドは、256ゴールド以上を指定する必要があります。");
 
             this.InputFormRefN02 = InitN02(this);
             this.InputFormRefN02.PreWriteHandler += PreWriteHandler_N02_W0;

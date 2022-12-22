@@ -1684,7 +1684,6 @@
             // 
             // OBJECT_N07_J_6
             // 
-            this.OBJECT_N07_J_6.AccessibleDescription = "入手できるゴールドを指定します。\\r\\nゴールドは、256ゴールド以上を指定する必要があります。";
             this.OBJECT_N07_J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OBJECT_N07_J_6.Location = new System.Drawing.Point(0, 0);
             this.OBJECT_N07_J_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
