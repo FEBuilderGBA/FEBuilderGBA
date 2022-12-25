@@ -1,0 +1,12 @@
+NAME=高武器レベルは、プレイヤーフェーズでしか武器レベルを学習させない(Installer)
+NAME.en=High weapon level only allows weapon level to be learned in the player phase(Installer)
+
+INFO=高武器レベル(ディフォルトは武器レベルA WLVL:A)以上は、プレイヤーフェーズでの攻撃でしか武器レベルを学習させないようにします。\r\nこれは、敵ターンのカウンターで武器レベルがどんどん上がってしまう問題に対する解決法の一つです。\r\n多くの章があるゲームで、敵が大量に出てしまうと、すぐに武器レベルが上がってしまうためです。\r\n武器レベルAなどの武器をプレイヤーに使う機会を与えることを目的としています。
+
+TYPE=EA
+EA=Install.event
+
+PATCHED_IF:0x2C090=0x00 0x4B
+INFO.en=For high weapon levels (default weapon level A WLVL:A) and above, weapon levels are learned only by attacking in the player phase.\r\nThis is one of the solutions to the problem of weapons leveling up on enemy turn counters.\r\nThis is because in a game with many chapters, if you encounter a lot of enemies, your weapon level will go up quickly.\r\nIt is intended to give players a chance to use weapons such as Weapon Level A.
+NAME.zh=高武器等级只会让你在玩家阶段 学习武器等级(Installer)
+INFO.zh=对于高武器等级（默认武器等级 A WLVL:A）及以上，武器等级只能通过玩家阶段的攻击来学习。\r\n这是解决武器在敌人转弯计数器上升级问题的方法之一。\r\n这是因为在章节较多的游戏中，如果遇到的敌人较多，武器等级提升会很快。\r\n它旨在让玩家有机会使用武器，例如 Weapon Level A。

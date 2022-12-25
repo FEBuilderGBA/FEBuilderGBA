@@ -11,6 +11,7 @@ HEX=false
 
 AUTHOR=aera
 
-INFO=下級職の武器レベル制限を設定します。ディフォルトは、181(0xB5/A Rank)です。
-INFO.en=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)
-INFO.zh=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)
+INFO=下級職の武器レベル制限を設定します。ディフォルトは、181(0xB5/A Rank)です。\r\nWLV D+1=31\r\nWLV C+1=71\r\nWLV B+1=121\r\nWLV A+1=181\r\n
+
+INFO.en=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)\r\nWLV D+1=31\r\nWLV C+1=71\r\nWLV B+1=121\r\nWLV A+1=181\r\n
+INFO.zh=Sets the maximum amount of weapon experience unpromoted classes. Default is 181(0xB5/A Rank)\r\nWLV D+1=31\r\nWLV C+1=71\r\nWLV B+1=121\r\nWLV A+1=181\r\n

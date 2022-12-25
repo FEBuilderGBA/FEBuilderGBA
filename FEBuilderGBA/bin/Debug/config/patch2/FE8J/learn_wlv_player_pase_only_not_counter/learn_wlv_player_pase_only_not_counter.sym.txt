@@ -1,0 +1,3 @@
+LimitWeaponLevel=$24
+AddWeaponLevel=$0E
+Exit=$10
