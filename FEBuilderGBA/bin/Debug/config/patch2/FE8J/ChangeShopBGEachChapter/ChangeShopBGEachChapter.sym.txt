@@ -1,0 +1,11 @@
+defualt_bg=$A8
+IsPrepShop=$14
+IsWorldMapShop=$24
+SetMapID=$32
+LoopStart=$36
+Table=$F4
+Loop=$3A
+CheckShopType=$42
+CheckMapID=$48
+CheckFlag=$52
+Found=$62

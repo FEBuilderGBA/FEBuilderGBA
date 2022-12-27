@@ -1,5 +1,5 @@
-NAME=お店のBGMを章ごとに変更する(Editor)
-NAME.en=Change Shop BGM for each chapter(Editor)
+NAME=お店のBGMを章ごとに変更する 20181123(Editor)
+NAME.en=Change Shop BGM for each chapter 20181123(Editor)
 
 IF:0xB4BF8=0x00 0x4B
 
@@ -34,7 +34,7 @@ B3:MAP_ANYFF.zh=MAPID(0xFF=ANY,0xFE=Worldmap)
 
 INFO=章ごとにお店のBGMを変更します。\r\n武器屋、道具屋、秘密の店のBGMを変更することができます。\r\nもし、リストにマッチしない場合は、ディフォルトのBGMが再生されます。
 INFO.en=Change shop's BGM for each chapter.\r\nYou can change BGM of weapons shop, tool store, secret shop.\r\nIf it does not match the list, the default BGM will be played.
-NAME.zh=为每章更改商店的BGM(Editor)
+NAME.zh=为每章更改商店的BGM 20181123(Editor)
 INFO.zh=更改每章的商店BGM。\r\n你可以改变武器商店，工具店，秘密商店的BGM。\r\n如果与列表不匹配，将播放默认BGM。
 
 AUTHOR=7743

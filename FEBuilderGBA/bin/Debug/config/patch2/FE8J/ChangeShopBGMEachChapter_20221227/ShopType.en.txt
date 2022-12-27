@@ -1,0 +1,4 @@
+0=Armory
+1=Vendor
+2=Secret Shop
+10=Prep Shop

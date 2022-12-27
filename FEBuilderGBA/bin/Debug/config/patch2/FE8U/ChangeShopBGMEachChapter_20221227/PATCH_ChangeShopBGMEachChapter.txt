@@ -1,7 +1,7 @@
-NAME=お店のBGMを章ごとに変更する 20181123(Editor)
-NAME.en=Change Shop BGM for each chapter 20181123(Editor)
+NAME=お店のBGMを章ごとに変更する 20221227(Editor)
+NAME.en=Change Shop BGM for each chapter 20221227(Editor)
 
-IF:0xB9780=0x00 0x4B
+IF:0xB4BF8=0x00 0x4B
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
@@ -11,10 +11,10 @@ TAG=#ENGINE
 POINTER=$FGREP4END ChangeShopBGMEachChapter.dmp
 
 //データサイズ(10進数)
-DATASIZE=4
+DATASIZE=8
 
 //データ個数 00 が出てくるまで
-DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 
 //リストに表示されるのはマップIDです
 LISTNAME=$B3:MAP
@@ -23,18 +23,21 @@ LISTNAME=$B3:MAP
 W0:SONG=BGM
 B2:$COMBO ShopType.txt:.ja=Type
 B3:MAP_ANYFF=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG=FLAG(0x00=ANY)
 
 W0:SONG.en=BGM
 B2:$COMBO ShopType.en.txt:.en=Type
 B3:MAP_ANYFF.en=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG.en=FLAG(0x00=ANY)
 
 W0:SONG.zh=BGM
 B2:$COMBO ShopType.zh.txt:.zh=Type
 B3:MAP_ANYFF.zh=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG.zh=FLAG(0x00=ANY)
 
 INFO=章ごとにお店のBGMを変更します。\r\n武器屋、道具屋、秘密の店のBGMを変更することができます。\r\nもし、リストにマッチしない場合は、ディフォルトのBGMが再生されます。
 INFO.en=Change shop's BGM for each chapter.\r\nYou can change BGM of weapons shop, tool store, secret shop.\r\nIf it does not match the list, the default BGM will be played.
-NAME.zh=为每章更改商店的BGM 20181123(Editor)
+NAME.zh=为每章更改商店的BGM 20221227(Editor)
 INFO.zh=更改每章的商店BGM。\r\n你可以改变武器商店，工具店，秘密商店的BGM。\r\n如果与列表不匹配，将播放默认BGM。
 
 AUTHOR=7743

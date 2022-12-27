@@ -1,0 +1,43 @@
+NAME=お店の背景BGを章ごとに変更する(Editor)
+NAME.en=Change Shop backgound BG for each chapter(Editor)
+
+IF:0xB4DB4=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangeShopBGEachChapter.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはマップIDです
+LISTNAME=$B3:MAP
+
+//データを定義します
+W0:BGICON=BG
+B2:$COMBO ShopType.txt:.ja=Type
+B3:MAP_ANYFF=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG=FLAG(00=ANY)
+
+W0:BGICON.en=BG
+B2:$COMBO ShopType.en.txt:.en=Type
+B3:MAP_ANYFF.en=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG.en=FLAG(00=ANY)
+
+W0:BGICON.zh=BG
+B2:$COMBO ShopType.zh.txt:.zh=Type
+B3:MAP_ANYFF.zh=MAPID(0xFF=ANY,0xFE=Worldmap)
+W4:FLAG.zh=FLAG(00=ANY)
+
+INFO=章ごとにお店の背景BGを変更します。\r\n武器屋、道具屋、秘密の店のBGを変更することができます。\r\nもし、リストにマッチしない場合は、ディフォルトの背景画像が利用されます。
+INFO.en=Change shop's backgound image BG for each chapter.\r\nYou can change BG of weapons shop, tool store, secret shop.\r\nIf it does not match the list, the default BG will be used.
+
+AUTHOR=7743
+NAME.zh=更改每个章节的商店背景 BG(Editor)
+INFO.zh=每章更换店铺背景BG。\r\n您可以更改武器商店、工具商店和秘密商店的BG。\r\n如果列表中没有匹配项，将使用默认背景图像。

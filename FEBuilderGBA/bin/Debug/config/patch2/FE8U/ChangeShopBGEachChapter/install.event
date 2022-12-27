@@ -1,0 +1,40 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+//ORG $B993C		//FE8J
+ORG $B4DB4		//FE8U
+jumpToHack(ChangeShopBGEachChapter)
+POP
+
+ALIGN 4
+ChangeShopBGEachChapter:
+#incbin "ChangeShopBGEachChapter.dmp"
+POIN ChangeShopBGEachChapter_Table
+
+ALIGN 4
+//@struct ChangeShopBGEachChapter_Table
+//@{
+//@	short	bg index;
+//@	byte	shop_type   //0=武器屋 1=道具屋 2=秘密の店
+//@	byte	map_id      //FF=ANY
+//@	short	flag        //00=ANY
+//@	short	00
+//@}//sizeof(8bytes)
+ChangeShopBGEachChapter_Table:
+//		BG ID			shop_type	map_id			flag	dummy00
+
+SHORT	0x0		;BYTE	0x0			0xFF	;SHORT	0x0		0x0
+SHORT	0x1		;BYTE	0x1			0xFF	;SHORT	0x0		0x0
+SHORT	0x2		;BYTE	0x2			0xFF	;SHORT	0x0		0x0
+
+WORD	0x00	0x00	//term
+
+
+ALIGN 4
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif
