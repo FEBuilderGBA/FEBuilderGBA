@@ -1414,6 +1414,9 @@ Weather
 :02=吹雪
 02=Blizzard
 
+:03=FE6の塔(非推奨)
+03=FE6's Tower(Unused)
+
 :04=雨
 04=Rain
 

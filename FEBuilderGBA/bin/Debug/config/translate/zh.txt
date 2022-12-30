@@ -1414,6 +1414,9 @@ Select opponents in Arena
 :02=吹雪
 02=暴风雪
 
+:03=FE6の塔(非推奨)
+03=FE6's Tower(不推荐使用)
+
 :04=雨
 04=雨
 
