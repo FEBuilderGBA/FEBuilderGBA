@@ -6247,8 +6247,19 @@ namespace FEBuilderGBA
             {//リストの中身がゼロではない.
                 return true;
             }
-            DialogResult dr = R.ShowNoYes("{0}を変更しようとしています。\r\nID:0x00は、未設定のデータを表現するために予約されているデータです。\r\nこの変更するのは危険です。\r\nそれでも、書き込んでもよろしいですか？", this.AddressList.Text);
-            return (dr == DialogResult.Yes);
+            OptionForm.write_00_enum option = OptionForm.write_00();
+            if (option == OptionForm.write_00_enum.NoWarning)
+            {
+                R.Notify("ID:0x00への書き込みは危険ですが、設定により警告はしません");
+                return true;
+            }
+            else if (option == OptionForm.write_00_enum.Warning)
+            {
+                DialogResult dr = R.ShowNoYes("{0}を変更しようとしています。\r\nID:0x00は、未設定のデータを表現するために予約されているデータです。\r\nこの変更するのは危険です。\r\nそれでも、書き込んでもよろしいですか？", this.AddressList.Text);
+                return (dr == DialogResult.Yes);
+            }
+            R.ShowStopError("ID:0x00へ書き込むことはできません。\r\nID:0x00へ書き込むとROMを破壊する危険性があるため、設定オプションで書き込みを拒否する設定になっています。");
+            return false;
         }
 
         //メモリは連続していないので単純な警告は出せない.

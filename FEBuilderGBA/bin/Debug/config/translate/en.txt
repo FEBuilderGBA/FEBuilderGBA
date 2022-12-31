@@ -4516,8 +4516,14 @@ Warning: Access is out of scopename: {0}id: {1}addr {2}form: {3}
 :警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}
 Warning: writing outside the rangeprefix: {0}addr: {1} + {2}length: {3}form: {4}
 
+:ID:0x00への書き込みは危険ですが、設定により警告はしません
+Writing to ID:0x00 is dangerous, but no warning will be given depending on the setting.
+
 :{0}を変更しようとしています。\r\nID:0x00は、未設定のデータを表現するために予約されているデータです。\r\nこの変更するのは危険です。\r\nそれでも、書き込んでもよろしいですか？
 You are about to change {0}.\r\nID: 0x00 is data reserved for unset data.\r\nIt is dangerous to change this.\r\nStill, is it OK to write in?
+
+:ID:0x00へ書き込むことはできません。\r\nID:0x00へ書き込むとROMを破壊する危険性があるため、設定オプションで書き込みを拒否する設定になっています。
+Cannot write to ID:0x00.\r\nWriting to ID: 0x00 may destroy the ROM, so it is set to deny writing in the setting options.
 
 :アドレス{0}は範囲外ですが、設定により、警告はしません
 The address {0} is out of range, but it does not warn you depending on the setting
@@ -8890,6 +8896,9 @@ When you're about to write out of the ROM's range, you can\r\ncancel writing aut
 :プログラムコードが格納されている下位アドレスに書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。
 When you are about to write to the lower address where the program code is stored,.\r\nDecide whether to automatically reject, warn, or do nothing.
 
+:TextID 0x00や、ClassID 0x00などの変えてはいけない 0x00へ書き込みをしそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。
+When you are about to write to 0x00 that should not be changed, such as TextID 0x00 or ClassID 0x00, .\r\nDecide whether to automatically reject, issue a warning, or do nothing.
+
 :ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します
 After exporting data from a ROM using this program, you can allow FEBuilderGBA\r\nto open the directory of where the file was saved to each time.
 
@@ -9570,6 +9579,9 @@ When exporting a file...
 
 :保存
 Save
+
+:ID:00の書き込みについて
+About writing ID: 00.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
