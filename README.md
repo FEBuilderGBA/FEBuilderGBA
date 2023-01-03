@@ -5,6 +5,7 @@ The editor supports
  * FE6 (The Binding Blade)
  * FE7J/FE7U (The Blazing Blade)
  * FE8J/FE8U (The Sacred Stones)
+
 Essentially, both Japanese and North American releases of all games (with the exception of FE6 being Japan-only) are supported.
 
 Starting from the main screen, FEBuilder supports a wide range of functions from image displaying, importing and export of most data, map remodeling, table editing, community patch management, music insertion, and much more. 
