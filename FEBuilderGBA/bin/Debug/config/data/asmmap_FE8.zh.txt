@@ -5441,9 +5441,9 @@ r3=X tile position of menu of the right	{U}
 0804504C	NameSelect_DrawName	{J}
 08045BB4	New6C_SIOMAIN2	{J}
 0804EDFC	LoadOldUIPal	{J}
-0804EDFC	LoadNewUIPal	{J}
+0804e0a8	LoadNewUIPal	{J}
 0804EE5C	LoadOldUIImage	{J}
-0804EE5C	LoadNewUIImage	{J}
+0804ee8c	LoadNewUIImage	{J}
 0804EF40	WriteUIWindowTileMap	{J}
 0804F098	ClearTileMapRect	{J}
 0804F0EC	MakeUIWindowTileMap_BG0BG1	{J}
