@@ -1,0 +1,11 @@
+PUSH
+ORG 0x8A758	//{J}
+//ORG 0x884CC	//{U}
+jumpToHack(EquippedItemsColor)
+POP
+
+ALIGN 4
+EquippedItemsColor:
+#incbin "EquippedItemsColor.dmp"
+
+ALIGN 4

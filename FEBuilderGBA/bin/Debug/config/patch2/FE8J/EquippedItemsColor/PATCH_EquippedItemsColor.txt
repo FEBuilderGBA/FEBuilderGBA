@@ -1,0 +1,14 @@
+NAME=ステータス画面の装備している武器のマーカーのパレットを敵なら赤色にする
+TYPE=EA
+TAG=#ENGINE
+
+EA=Install.event
+PATCHED_IF:0x8A758=0x00 0x4B 0x18 0x47
+
+INFO=ステータス画面の所持品の画面で、装備している武器のパレットをユニットの所属ごとに切り替えます。\r\nディフォルトでは、装備している武器には青いマーカーが引かれています。\r\nこのパッチは、そのマーカー等の色を敵ならば赤色に変更します。
+
+AUTHOR=7743, Base: Contro https://discord.com/channels/144670830150811649/725478895226191892/1060989884912910419
+NAME.en=If enemy, palette of equipped weapon's marker on the status screen turns red
+INFO.en=On the inventory screen of the status screen, switch the palette of equipped weapons for each unit affiliation.\r\nBy default, equipped weapons are marked with a blue marker.\r\nThis patch changes the color of the marker etc. to red if it is an enemy.\r\nHowever, the colors of this palette depend on the colors of the MMB panel.
+NAME.zh=如果是敌人，则状态屏幕上装备武器标记的调色板会变成红色
+INFO.zh=在状态画面的库存画面上，切换每个单位隶属关系的装备武器调色板。\r\n默认情况下，装备好的武器标有蓝色标记。\r\n如果是敌人，此补丁会将标记等的颜色更改为红色。\r\n但是，此调色板的颜色取决于 MMB 面板的颜色。
