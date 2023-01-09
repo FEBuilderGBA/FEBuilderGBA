@@ -10834,6 +10834,12 @@ ALERT\r\nThe sound effects must specify a priority greater than 0x00030003 in th
 :ソングテーブルが極端に少ないです。破損している可能性があります。
 Song table is extremely small. It may be damaged.
 
+:SongID:{0} 総削減サイズ:{1}
+SongID: {0} Total reduced size: {1}.
+
+:音楽をスキャンして、GOTO後のゴミを消去します。\r\n\r\n実行してもよろしいですか？
+Scan for music and clear garbage after GOTO.\r\n\r\nAre you sure you want to run it? .
+
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
 Displays the instrument table that contains sounds.\r\nNormally, this doesn't need to be edited.\r\nUseful for those wanting to add new instruments.
 
@@ -12543,6 +12549,15 @@ Optimization of battle animation OAM.
 
 :AutoGenLeftOAMパッチを利用して、敵の戦闘モーションを省略することができます。\r\nだいたい1アニメに対して、2-4kb程度の削減が可能です。\r\nただし、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に、特に有効です。
 The AutoGenLeftOAM patch can be used to omit enemy combat motions.\r\nAbout 2-4kb can be reduced for one animation.\r\nHowever, it is not valid for all animations, only for non-vanilla battle animations created by the user.\r\nEspecially useful if you have a lot of animations installed.
+
+:音楽GOTO-FINE
+MusicGOTO-FINE.
+
+:音楽GOTO-FINE最適化
+Music GOTO-FINE optimization.
+
+:音楽でGOTOの後に即FINEを実施します。\r\nGOTOの後に無駄な余白を持っている楽曲を最適化します。
+Perform FINE immediately after GOTO with music.\r\nOptimize songs that have useless white space after GOTO.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

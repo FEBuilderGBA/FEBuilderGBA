@@ -54,6 +54,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.Base64RichTextEdit = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.FileToBase64TextButton = new System.Windows.Forms.Button();
+            this.Base64TextToFileButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -77,17 +82,16 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.Base64TextToFileButton = new System.Windows.Forms.Button();
-            this.FileToBase64TextButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Base64RichTextEdit = new System.Windows.Forms.RichTextBox();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.OptimizationSongGotoFineButton = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).BeginInit();
@@ -98,7 +102,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // DeCompressDESTFilename
@@ -423,6 +427,57 @@
             this.textBox2.TabIndex = 99;
             this.textBox2.Text = "特定のデータをlz77で圧縮して、ファイルに保存します。\r\nデバッグ用の機能です。";
             // 
+            // tabPage9
+            // 
+            this.tabPage9.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage9.Controls.Add(this.Base64RichTextEdit);
+            this.tabPage9.Controls.Add(this.label11);
+            this.tabPage9.Controls.Add(this.FileToBase64TextButton);
+            this.tabPage9.Controls.Add(this.Base64TextToFileButton);
+            this.tabPage9.Location = new System.Drawing.Point(4, 28);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(685, 302);
+            this.tabPage9.TabIndex = 5;
+            this.tabPage9.Text = "Base64";
+            // 
+            // Base64RichTextEdit
+            // 
+            this.Base64RichTextEdit.Location = new System.Drawing.Point(9, 31);
+            this.Base64RichTextEdit.Name = "Base64RichTextEdit";
+            this.Base64RichTextEdit.Size = new System.Drawing.Size(631, 228);
+            this.Base64RichTextEdit.TabIndex = 9;
+            this.Base64RichTextEdit.Text = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 18);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Text:";
+            // 
+            // FileToBase64TextButton
+            // 
+            this.FileToBase64TextButton.Location = new System.Drawing.Point(274, 265);
+            this.FileToBase64TextButton.Name = "FileToBase64TextButton";
+            this.FileToBase64TextButton.Size = new System.Drawing.Size(218, 31);
+            this.FileToBase64TextButton.TabIndex = 6;
+            this.FileToBase64TextButton.Text = "File to Base64 Text";
+            this.FileToBase64TextButton.UseVisualStyleBackColor = true;
+            this.FileToBase64TextButton.Click += new System.EventHandler(this.FileToBase64TextButton_Click);
+            // 
+            // Base64TextToFileButton
+            // 
+            this.Base64TextToFileButton.Location = new System.Drawing.Point(6, 265);
+            this.Base64TextToFileButton.Name = "Base64TextToFileButton";
+            this.Base64TextToFileButton.Size = new System.Drawing.Size(228, 31);
+            this.Base64TextToFileButton.TabIndex = 1;
+            this.Base64TextToFileButton.Text = "Base64 Text to File";
+            this.Base64TextToFileButton.UseVisualStyleBackColor = true;
+            this.Base64TextToFileButton.Click += new System.EventHandler(this.Base64TextToFileButton_Click);
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -576,6 +631,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage10);
             this.tabControl2.Location = new System.Drawing.Point(3, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -704,56 +760,38 @@
             this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
             this.textBoxEx2.TabIndex = 105;
             // 
-            // tabPage9
+            // tabPage10
             // 
-            this.tabPage9.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage9.Controls.Add(this.Base64RichTextEdit);
-            this.tabPage9.Controls.Add(this.label11);
-            this.tabPage9.Controls.Add(this.FileToBase64TextButton);
-            this.tabPage9.Controls.Add(this.Base64TextToFileButton);
-            this.tabPage9.Location = new System.Drawing.Point(4, 28);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(685, 302);
-            this.tabPage9.TabIndex = 5;
-            this.tabPage9.Text = "Base64";
+            this.tabPage10.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage10.Controls.Add(this.OptimizationSongGotoFineButton);
+            this.tabPage10.Controls.Add(this.textBox7);
+            this.tabPage10.Location = new System.Drawing.Point(4, 28);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(654, 261);
+            this.tabPage10.TabIndex = 3;
+            this.tabPage10.Text = "音楽GOTO-FINE";
             // 
-            // Base64TextToFileButton
+            // OptimizationSongGotoFineButton
             // 
-            this.Base64TextToFileButton.Location = new System.Drawing.Point(6, 265);
-            this.Base64TextToFileButton.Name = "Base64TextToFileButton";
-            this.Base64TextToFileButton.Size = new System.Drawing.Size(228, 31);
-            this.Base64TextToFileButton.TabIndex = 1;
-            this.Base64TextToFileButton.Text = "Base64 Text to File";
-            this.Base64TextToFileButton.UseVisualStyleBackColor = true;
-            this.Base64TextToFileButton.Click += new System.EventHandler(this.Base64TextToFileButton_Click);
+            this.OptimizationSongGotoFineButton.Location = new System.Drawing.Point(16, 225);
+            this.OptimizationSongGotoFineButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OptimizationSongGotoFineButton.Name = "OptimizationSongGotoFineButton";
+            this.OptimizationSongGotoFineButton.Size = new System.Drawing.Size(462, 31);
+            this.OptimizationSongGotoFineButton.TabIndex = 104;
+            this.OptimizationSongGotoFineButton.Text = "音楽GOTO-FINE最適化";
+            this.OptimizationSongGotoFineButton.UseVisualStyleBackColor = true;
+            this.OptimizationSongGotoFineButton.Click += new System.EventHandler(this.OptimizationSongGotoFineButton_Click);
             // 
-            // FileToBase64TextButton
+            // textBox7
             // 
-            this.FileToBase64TextButton.Location = new System.Drawing.Point(274, 265);
-            this.FileToBase64TextButton.Name = "FileToBase64TextButton";
-            this.FileToBase64TextButton.Size = new System.Drawing.Size(218, 31);
-            this.FileToBase64TextButton.TabIndex = 6;
-            this.FileToBase64TextButton.Text = "File to Base64 Text";
-            this.FileToBase64TextButton.UseVisualStyleBackColor = true;
-            this.FileToBase64TextButton.Click += new System.EventHandler(this.FileToBase64TextButton_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 18);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Text:";
-            // 
-            // Base64RichTextEdit
-            // 
-            this.Base64RichTextEdit.Location = new System.Drawing.Point(9, 31);
-            this.Base64RichTextEdit.Name = "Base64RichTextEdit";
-            this.Base64RichTextEdit.Size = new System.Drawing.Size(631, 228);
-            this.Base64RichTextEdit.TabIndex = 9;
-            this.Base64RichTextEdit.Text = "";
+            this.textBox7.Location = new System.Drawing.Point(16, 4);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(622, 200);
+            this.textBox7.TabIndex = 103;
+            this.textBox7.Text = "音楽でGOTOの後に即FINEを実施します。\r\nGOTOの後に無駄な余白を持っている楽曲を最適化します。";
             // 
             // ToolLZ77Form
             // 
@@ -774,6 +812,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -788,8 +828,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -850,6 +890,9 @@
         private System.Windows.Forms.Button FileToBase64TextButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox Base64RichTextEdit;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Button OptimizationSongGotoFineButton;
+        private System.Windows.Forms.TextBox textBox7;
 
     }
 }

@@ -437,6 +437,54 @@ namespace FEBuilderGBA
             }
         }
 
+        //GOTOの後のゴミを最適化
+        static uint All_Execute_ToolOptimizationSongGotoFine(InputFormRef.AutoPleaseWait pleaseWait, Undo.UndoData undodata)
+        {
+            uint totalSize = 0;
+
+            InputFormRef InputFormRef = Init(null);
+            uint songtable_addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, songtable_addr += InputFormRef.BlockSize)
+            {
+                uint song_header = Program.ROM.p32(songtable_addr + 0);
+                if (!U.isSafetyOffset(song_header))
+                {
+                    continue;
+                }
+
+                uint trackCount = Program.ROM.u8(song_header + 0);
+                if (trackCount == 0)
+                {
+                    continue;
+                }
+
+                List<SongUtil.Track> tracks = SongUtil.ParseTrack(song_header, trackCount);
+                for (int tracknumber = 0; tracknumber < trackCount; tracknumber++)
+                {
+                    totalSize += SongUtil.Execute_ToolOptimizationSongGotoFineTrackOne(tracks[tracknumber], undodata);
+                }
+                pleaseWait.DoEvents(R._("SongID:{0} 総削減サイズ:{1}", i , totalSize));
+            }
+            return totalSize;
+        }
+        public static void Execute_ToolOptimizationSongGotoFine()
+        {
+            DialogResult dr = R.ShowNoYes("音楽をスキャンして、GOTO後のゴミを消去します。\r\n\r\n実行してもよろしいですか？");
+            if (dr != DialogResult.Yes)
+            {
+                return;
+            }
+
+            uint totalSize = 0;
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
+            {
+                Undo.UndoData undodata = Program.Undo.NewUndoData("ToolAutoGenLeftToRightAllAnimation");
+                totalSize = All_Execute_ToolOptimizationSongGotoFine(pleaseWait, undodata);
+                Program.Undo.Push(undodata);
+            }
+
+            R.ShowOK("完了しました。\r\n{0}バイトの領域を解放できました。", totalSize);
+        }
 
     }
 }

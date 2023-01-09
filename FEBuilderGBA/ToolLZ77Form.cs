@@ -493,5 +493,14 @@ namespace FEBuilderGBA
             }
             Base64RichTextEdit.Text = text;
         }
+
+        private void OptimizationSongGotoFineButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {
+                return;
+            }
+            SongTableForm.Execute_ToolOptimizationSongGotoFine();
+        }
     }
 }

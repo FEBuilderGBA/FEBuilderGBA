@@ -3891,5 +3891,53 @@ namespace FEBuilderGBA
             }
             return true;
         }
+
+        public static uint FindCode(Track track, uint code, uint startpos = 0)
+        {
+            for (int i = (int)startpos; i < track.codes.Count; i++)
+            {
+                Code c = track.codes[i];
+                if (c.type == code)
+                {//GOTO
+                    return (uint)i;
+                }
+            }
+            return U.NOT_FOUND;
+        }
+
+        public static uint Execute_ToolOptimizationSongGotoFineTrackOne(Track track, Undo.UndoData undodata)
+        {
+            //find goto
+            uint gotoPos = FindCode(track, 0xB2);
+            if (gotoPos == U.NOT_FOUND)
+            {
+                return 0;
+            }
+
+            //find fine
+            uint finePos = FindCode(track, 0xB1 , gotoPos + 1);
+            if (finePos == U.NOT_FOUND)
+            {//FINEがない!?
+                return 0;
+            }
+            if (gotoPos+1 == finePos )
+            {//即終了になっている理想形
+                return 0;
+            }
+
+            uint beginAddr = track.codes[(int)gotoPos+1].addr;
+            uint endAddr = track.codes[(int)finePos].addr + 1;
+            if (beginAddr >= endAddr)
+            {
+                return 0;
+            }
+            uint length = endAddr - beginAddr;
+
+            Program.ROM.write_fill(beginAddr, length, 0x00, undodata);
+            Program.ROM.write_u8(beginAddr, 0xB1, undodata); //fine
+
+            return length;
+        }
+
     }
 }
