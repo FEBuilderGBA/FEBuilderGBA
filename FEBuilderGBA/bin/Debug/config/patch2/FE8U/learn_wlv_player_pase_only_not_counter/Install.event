@@ -1,6 +1,6 @@
 PUSH
-//ORG 0x2C090	//{J}
-ORG 0x2C148	//{U}
+//ORG 0x2C080	//{J}
+ORG 0x2C138	//{U}
 jumpToHack(learn_wlv_player_pase_only_not_counter)
 
 POP
@@ -8,6 +8,7 @@ POP
 ALIGN 4
 learn_wlv_player_pase_only_not_counter:
 #incbin "learn_wlv_player_pase_only_not_counter.dmp"
+//WORD 71	//WeaponLevel C
 //WORD 121	//WeaponLevel B
 WORD 181	//WeaponLevel A
 

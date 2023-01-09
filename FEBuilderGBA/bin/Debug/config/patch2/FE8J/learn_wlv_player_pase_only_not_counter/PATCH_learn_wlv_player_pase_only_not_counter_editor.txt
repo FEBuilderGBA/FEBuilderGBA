@@ -5,7 +5,7 @@ INFO=高武器レベル(ディフォルトは武器レベルA WLVL:A)以上は�
 
 TYPE=ADDR
 
-IF:0x2C090=0x00 0x4B
+IF:0x2C080=0x00 0x4B
 ADDRESS=$FGREP4ENDA+0 learn_wlv_player_pase_only_not_counter.dmp
 HEX=FALSE
 INFO.en=For high weapon levels (default weapon level A WLVL:A) and above, weapon levels are learned only by attacking in the player phase.\r\nThis is one of the solutions to the problem of weapons leveling up on enemy turn counters.\r\nThis is because in a game with many chapters, if you encounter a lot of enemies, your weapon level will go up quickly.\r\nIt is intended to give players a chance to use weapons such as Weapon Level B.\r\nWLV D=31\r\nWLV C=71\r\nWLV B=121\r\nWLV A=181\r\nWLV S=250\r\n
