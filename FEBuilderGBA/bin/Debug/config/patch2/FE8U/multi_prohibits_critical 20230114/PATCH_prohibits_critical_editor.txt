@@ -1,13 +1,13 @@
-NAME=必殺を禁止するクラスを複数定義する 20200719(Editor)
-NAME.en=Define multiple classes that prohibit critical 20200719(Editor)
-NAME.zh=Define multiple classes that prohibit critical 20200719(Editor)
+NAME=必殺を禁止するクラスを複数定義する 20230114(Editor)
+NAME.en=Define multiple classes that prohibit critical 20230114(Editor)
+NAME.zh=Define multiple classes that prohibit critical 20230114(Editor)
 
 INFO=指定したクラスまたはユニットへの必殺を無効にします。
 INFO.en=Disables critical for the specified class or unit.
 INFO.zh=Disables critical for the specified class or unit.
 
 TYPE=STRUCT
-IF:0x2AC1C=0x00 0x4B 0x18 0x47
+IF:0x2ACAC=0x00 0x4B 0x18 0x47
 
 //データへのポインタ
 POINTER=$FGREP4END prohibits_critical.dmp

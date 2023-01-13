@@ -13,7 +13,7 @@ TAG=#IMAGE
 WIDTH=256
 HEIGHT=160
 //利用パレット数
-PALETTE=1
+PALETTE=2
 
 //圧縮画像
 ZIMAGE_POINTER=0x1FD84
@@ -22,4 +22,4 @@ PALETTE_POINTER=0x1FD80
 
 
 INFO.en=Background of preparation for advance.
-INFO.zh=提前准备的背景。
+INFO.zh=提前准备的背景

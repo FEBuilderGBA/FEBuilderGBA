@@ -1,0 +1,7 @@
+TABLE=$48
+Loop=$0E
+NotFound=$2E
+CheckUnit=$16
+CheckClass=$20
+Found=$2A
+Exit=$2E

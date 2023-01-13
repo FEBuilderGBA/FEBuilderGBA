@@ -1,0 +1,25 @@
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+PUSH
+//ORG $2AC1C	//{J}
+ORG $2ACAC	//{U}
+jumpToHack(prohibits_critical)
+
+POP
+
+ALIGN 4
+prohibits_critical:
+#incbin "prohibits_critical.dmp"
+POIN prohibits_critical_TABLE
+
+ALIGN 4
+prohibits_critical_TABLE:
+BYTE 0x68 0x0
+BYTE 0x46 0x0
+BYTE 0x47 0x0
+BYTE 0x48 0x0
+BYTE 0x4a 0x0
+BYTE 0x00 0x66
+BYTE 0xff 0x0  //Term
+
+ALIGN 4
