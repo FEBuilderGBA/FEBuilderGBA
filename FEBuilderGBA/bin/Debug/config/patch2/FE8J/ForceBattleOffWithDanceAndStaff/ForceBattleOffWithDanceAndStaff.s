@@ -38,7 +38,7 @@ bne		Exit			@自分はボスなのでアニメを表示します
 mov  r2, #0x50		@WeaponType
 ldrb r2, [r3, r2]	@gBattleActor->WeaponType
 cmp  r2, #0x04		@Staff
-beq  AnimeOFF
+beq  DanceCheck
 cmp  r2, #0xFF		@Dance
 beq  DanceCheck
 b    Exit

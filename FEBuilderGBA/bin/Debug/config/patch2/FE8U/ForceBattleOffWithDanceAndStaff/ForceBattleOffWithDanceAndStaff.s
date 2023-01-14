@@ -37,13 +37,13 @@ bne		Exit			@自分はボスなのでアニメを表示します
 @杖と踊りならアニメオフにする
 mov  r2, #0x50		@WeaponType
 ldrb r2, [r3, r2]	@gBattleActor->WeaponType
-cmp  r2, #0xFF		@Dance
-beq  AnimeOFF
 cmp  r2, #0x04		@Staff
-beq  DanceCheck
+beq  CanCounterCheck
+cmp  r2, #0xFF		@Dance
+beq  CanCounterCheck
 b    Exit
 
-DanceCheck:
+CanCounterCheck:
 mov  r2, #0x52		@canCounter
 ldrb r2, [r3, r2]	@gBattleActor->canCounter
 cmp  r2, #0x0       @Danceは常に1になる

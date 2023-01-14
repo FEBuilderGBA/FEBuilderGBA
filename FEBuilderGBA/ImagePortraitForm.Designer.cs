@@ -1032,11 +1032,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1160, 764);
+            this.Controls.Add(this.AddressPanel);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DragTargetPanel2);
             this.Controls.Add(this.DragTargetPanel);
-            this.Controls.Add(this.AddressPanel);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ImagePortraitForm";
             this.Text = "顔画像";
