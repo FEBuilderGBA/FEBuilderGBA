@@ -1,6 +1,7 @@
 NAME=ChapterTileAndSoundRoomSongTitleBackground
 
 TYPE=IMAGE
+TAG=IMAGE
 
 WIDTH=256
 HEIGHT=64

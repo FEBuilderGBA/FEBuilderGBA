@@ -15468,3 +15468,4 @@ r3=X tile position of menu of the right	{U}
 080DC8B0	:080DC8E8	MapAnimUnuse3SomeData	{J}
 080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
 080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}
+086B8780	:086B87B0	SleepAnimationOAM_Maybe	{J}	与睡眠动画的开始有关。如果你打破它，动画被激活时会出现奇怪的字符。

@@ -1,0 +1,29 @@
+NAME=戦闘アニメのスリープモーションを高速化する
+NAME.en=Accelerate BattleAnim Sleep motion
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFFF|0x40フレーム削減|ON40
+
+DETERMINATION_ADDRESS=0x0626FC
+
+OFFF:0x0626FC=0x64
+OFFF:0x062710=0x82
+OFFF:0x062750=0xA5
+OFFF:0x062786=0xB9
+
+ON40:0x0626FC=0x24
+ON40:0x062710=0x32
+ON40:0x062750=0x78
+ON40:0x062786=0x90
+
+AUTHOR=7743
+INFO=戦闘アニメのスリープの杖モーションから待機時間を減らして高速化します。
+INFO.en=Speed up for sleep motion of the battle animation when using Sleep Staff.
+
+COMBO.en=Default|OFFF|Skip 0x40 frame|ON40
+NAME.zh=Accelerate BattleAnim Sleep motion
+INFO.zh=Speed up for sleep motion of the battle animation when using Sleep Staff.
+COMBO.zh=Default|OFFF|Skip 0x40 frame|ON40
