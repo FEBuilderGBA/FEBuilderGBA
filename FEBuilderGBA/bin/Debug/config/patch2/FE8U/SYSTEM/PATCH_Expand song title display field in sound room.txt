@@ -16,7 +16,7 @@ ON4:0x0B0110=0x20
 ON4:0x0B0134=0x05
 
 
-AUTHOR=7743
+AUTHOR=7743 https://discord.com/channels/144670830150811649/725478895226191892/1067678505887866910
 NAME.en=Slightly widens the song name display field in the sound room.
 INFO.en=In vanilla, 4 dots on the left and right of the song title in the sound room cannot be used as margins.\r\nIn this patch, the margin is removed and an additional space of about 3 alphabetic characters (2 double-width characters) is secured.
 NAME.zh=稍微加宽了音室中的歌曲名称显示区域。
