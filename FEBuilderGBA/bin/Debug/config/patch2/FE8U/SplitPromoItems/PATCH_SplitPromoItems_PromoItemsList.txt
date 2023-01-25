@@ -1,4 +1,4 @@
-NAME=Split Promotion Items  PromoItemsList (Editor)
+NAME=Split Promotion Items PromoItemsList 20200622(Editor)
 TYPE=STRUCT
 IF:0xCC5F6=0xC0 0x46
 

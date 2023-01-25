@@ -32,7 +32,10 @@ namespace FEBuilderGBA
         }
         public void Save(string romBaseFilename)
         {
-            U.SaveConfigEtcTSV1("textid_", this.EtcTextID, romBaseFilename);
+            if (this.EtcTextID.Count >= 1)
+            {
+                U.SaveConfigEtcTSV1("textid_", this.EtcTextID, romBaseFilename);
+            }
         }
 
         //マージ専用

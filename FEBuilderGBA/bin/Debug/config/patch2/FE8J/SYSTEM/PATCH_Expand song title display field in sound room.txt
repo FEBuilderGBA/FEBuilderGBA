@@ -1,0 +1,23 @@
+NAME=サウンドルームの曲名表示欄を少し広げる
+INFO=バニラでは、サウンドルームの曲名の左右4ドット程度は余白として利用できません。\r\nこのパッチではその余白をなくして、アルファベットで3文字(倍角文字で2文字)程度の追加スペースを確保します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix: Expand|ON4
+
+DETERMINATION_ADDRESS=0x0B4D28
+
+OFF:0x0B4D28=0x24
+OFF:0x0B4D4C=0x04
+
+ON4:0x0B4D28=0x20
+ON4:0x0B4D4C=0x05
+
+
+AUTHOR=7743
+NAME.en=Slightly widens the song name display field in the sound room.
+INFO.en=In vanilla, 4 dots on the left and right of the song title in the sound room cannot be used as margins.\r\nIn this patch, the margin is removed and an additional space of about 3 alphabetic characters (2 double-width characters) is secured.
+NAME.zh=稍微加宽了音室中的歌曲名称显示区域。
+INFO.zh=在原版中，音室中歌名左右各4个点不能作为边距。\r\n在此补丁中，边距被移除，并确保了大约 3 个字母字符（2 个双角字符）的额外空间。

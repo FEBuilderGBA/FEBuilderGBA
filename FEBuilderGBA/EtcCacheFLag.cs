@@ -53,7 +53,10 @@ namespace FEBuilderGBA
         }
         public void Save(string romBaseFilename)
         {
-            U.SaveConfigEtcTSV1("flag_", this.EtcFlag, romBaseFilename);
+            if (this.EtcFlag.Count >= 1)
+            {
+                U.SaveConfigEtcTSV1("flag_", this.EtcFlag, romBaseFilename);
+            }
         }
 
         public List<U.AddrResult> MakeList()

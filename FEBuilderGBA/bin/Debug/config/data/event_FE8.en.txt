@@ -167,7 +167,7 @@
 412C0100XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	@LOAD2	{LOADUNIT}
 412C0000XXXXXXXX	Load units.[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	@LOAD2	{LOADUNIT}
 412C0100XXXXXXXX20300000	Load units and move.[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	@LOAD2	{LOADUNIT}
-402C0000XXXXXXXX	Load units. If player unit, join party. Dead units do not load.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	@LOAD1	This was formerly called LOAD1 ver3.	{LOADUNIT}
+402C0000XXXXXXXX	Load units. If player unit, join party. Dead units do not load.[XXXXXXXX:POINTER_UNIT:Units](LOAD1)(LOW)	@LOAD1	This was formerly called LOAD1 ver3.	{LOADUNIT}
 
 422C0000XXXXXXXX	Load player unit For cutscenes[XXXXXXXX:POINTER_UNIT:Units](LOAD3)	@LOAD3	{LOADUNIT}
 402C0100FFFFFFFF	Load reinforcements of memory slot 2(LOW)

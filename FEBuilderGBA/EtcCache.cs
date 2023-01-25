@@ -193,7 +193,10 @@ namespace FEBuilderGBA
 
         public void Save(string romBaseFilename)
         {
-            U.SaveConfigEtcTSV1(this.Type , this.Cache , romBaseFilename);
+            if (this.Cache.Count >= 1)
+            {
+                U.SaveConfigEtcTSV1(this.Type, this.Cache, romBaseFilename);
+            }
         }
 
         public void MakeAddressList(List<Address> list)
