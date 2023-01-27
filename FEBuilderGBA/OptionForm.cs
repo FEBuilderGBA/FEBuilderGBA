@@ -1146,11 +1146,11 @@ namespace FEBuilderGBA
         }
         public static bool felint_support_validation()
         {
-            return U.stringbool(Program.Config.at("func_felint_support_validation", "1"));
+            return U.stringbool(Program.Config.at("func_felint_support_validation", "0"));
         }
         public static bool felint_check_melee_item_motionid()
         {
-            return U.stringbool(Program.Config.at("func_felint_check_melee_item_motionid", "1"));
+            return U.stringbool(Program.Config.at("func_felint_check_melee_item_motionid", "0"));
         }
         public static bool felint_check_text_width()
         {

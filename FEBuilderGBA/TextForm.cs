@@ -735,7 +735,7 @@ namespace FEBuilderGBA
         }
         static bool IsMoveOrJump(uint code1,uint code2)
         {
-            return code1 == 0x0080 && (code2 >= 0xA && code2 <= 0xF);
+            return code1 == 0x0080 && (code2 >= 0xA && code2 <= 0x11);
         }
 #if DEBUG
         public static void TEST_TEXTPARSE1()
@@ -973,6 +973,54 @@ namespace FEBuilderGBA
             Debug.Assert(simpleList[1].Code2 == 0x0);
             Debug.Assert(simpleList[1].Code3 == 0x0);
             Debug.Assert(simpleList[1].SrcText == "@0080@001D@0016...@0004@0003\r\n@0080@001C.....@0005@0003");///No Translate
+        }
+        public static void TESTNOW_TEXTPARSE11()
+        {
+            string text =
+            "@000C@0010@0101@0009@0010@FFFF@000Cなんだい君達は？@0003\r\n" +
+            "@000C@0080@000E@000Cえっ？怪盗？\r\n" +
+            "うわー助けてくれ。@0003@0015\r\n" +
+            "@000C@0080@0011@0009・・・・@0003"; ///No Translate
+            List<TextBlock> simpleList;
+            ParseTextList(text, out simpleList);
+
+            //位置を更新
+            UpdatePosstion(text, ref simpleList);
+
+            Debug.Assert(simpleList[0].Code1 == 0xC);
+            Debug.Assert(simpleList[0].Code2 == 0x10);
+            Debug.Assert(simpleList[0].Code3 == 0x101);
+            Debug.Assert(simpleList[0].SrcText == "@000C@0010@0101");///No Translate
+
+            Debug.Assert(simpleList[1].Code1 == 0x9);
+            Debug.Assert(simpleList[1].Code2 == 0x10);
+            Debug.Assert(simpleList[1].Code3 == 0xFFFF);
+            Debug.Assert(simpleList[1].SrcText == "@0009@0010@FFFF");///No Translate
+
+            Debug.Assert(simpleList[2].Code1 == 0xC);
+            Debug.Assert(simpleList[2].Code2 == 0x0);
+            Debug.Assert(simpleList[2].Code3 == 0x0);
+            Debug.Assert(simpleList[2].SrcText == "@000Cなんだい君達は？@0003\r\n");///No Translate
+
+            Debug.Assert(simpleList[3].Code1 == 0xC);
+            Debug.Assert(simpleList[3].Code2 == 0x80);
+            Debug.Assert(simpleList[3].Code3 == 0xE);
+            Debug.Assert(simpleList[3].SrcText == "@000C@0080@000E");///No Translate
+
+            Debug.Assert(simpleList[4].Code1 == 0xC);
+            Debug.Assert(simpleList[4].Code2 == 0x0);
+            Debug.Assert(simpleList[4].Code3 == 0x0);
+            Debug.Assert(simpleList[4].SrcText == "@000Cえっ？怪盗？\r\nうわー助けてくれ。@0003@0015\r\n");///No Translate
+
+            Debug.Assert(simpleList[5].Code1 == 0xC);
+            Debug.Assert(simpleList[5].Code2 == 0x80);
+            Debug.Assert(simpleList[5].Code3 == 0x11);
+            Debug.Assert(simpleList[5].SrcText == "@000C@0080@0011");///No Translate
+
+            Debug.Assert(simpleList[6].Code1 == 0x9);
+            Debug.Assert(simpleList[6].Code2 == 0x0);
+            Debug.Assert(simpleList[6].Code3 == 0x0);
+            Debug.Assert(simpleList[6].SrcText == "@0009・・・・@0003");///No Translate
         }
 
 #endif

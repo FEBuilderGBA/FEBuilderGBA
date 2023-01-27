@@ -47,10 +47,8 @@ namespace FEBuilderGBA
             }
             else if (keyData == (Keys.Control | Keys.V))
             {//コピペ
-                if (!Clipboard.ContainsText())
-                {
-                    return true;
-                }
+                PasteAction(this, null);
+                return true;
             }
             else if (keyData == Keys.Space
                 || (keyData >= Keys.D0 && keyData <= Keys.Z)
@@ -313,10 +311,11 @@ namespace FEBuilderGBA
 
         void PasteAction(object sender, EventArgs e)
         {
-            if (!Clipboard.ContainsText())
+            if (!convertClipBoardText())
             {
                 return;
             }
+            PushUndo();
             this.Paste();
             if (this.PasteCallback != null)
             {
@@ -401,5 +400,22 @@ namespace FEBuilderGBA
         public EventHandler UndoCallback;
         public EventHandler CutCallback;
         public EventHandler PasteCallback;
+
+        bool convertClipBoardText()
+        {
+            if (!Clipboard.ContainsText())
+            {//テキストデータなければダメ
+                return false;
+            }
+
+            //ContainsTextが完全に信用できないので、明確にテキストデータに変換してから渡します
+            string text = (string)Clipboard.GetData("Text");
+            if (text == "")
+            {//空テキストは拒否
+                return false;
+            }
+            Clipboard.SetText(text, TextDataFormat.Text);
+            return true;
+        }
     }
 }
