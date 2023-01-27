@@ -15469,3 +15469,5 @@ r3=X tile position of menu of the right	{U}
 080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
 080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}
 086B8780	:086B87B0	SleepAnimationOAM_Maybe	{J}	与睡眠动画的开始有关。如果你打破它，动画被激活时会出现奇怪的字符。
+080B9E00	CanSellTheItem	我可以卖东西吗？ .	r0=数量 << 8 + 商品 ID。	{J}
+080B527C	CanSellTheItem	我可以卖东西吗？ .	r0=数量 << 8 + 商品 ID。	{U}

@@ -15521,3 +15521,5 @@ r3=X tile position of menu of right	{U}
 080D7C04	:080D7C38	MapAnimUnuse3SomeData	{U}
 080DC8E8	:080DC938	AnimationHitotachiSomeData	{J}
 086B8780	:086B87B0	SleepAnimationOAM_Maybe	{J}	Relates to the start of sleep animation.If you break it, a strange character will appear when the animation is activated.
+080B9E00	CanSellTheItem	Can I sell items? .	r0=Quantity << 8 + Item ID.	{J}
+080B527C	CanSellTheItem	Can I sell items? .	r0=Quantity << 8 + Item ID.	{U}

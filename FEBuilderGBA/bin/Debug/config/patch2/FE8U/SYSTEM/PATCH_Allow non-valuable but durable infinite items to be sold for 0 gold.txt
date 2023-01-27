@@ -1,0 +1,16 @@
+
+NAME=貴重品ではないが耐久無限のアイテムを0ゴールドで売却できるようにする
+INFO=貴重品の売却不可のフラグが立っていないが、耐久無限の武器は、売値が0ゴールドになり、売却を断られます。\r\nこのパッチはそのようなアイテムでも、0ゴールドで売れるようにします。\r\nこのようなアイテムは、捨てるを選んで処分すればいいのですが、売れないのは納得がいかないという人のためのパッチです。
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0B5296
+AUTHOR=7743
+COMBO=Default: Cannot Sell|0x01 0xD0|Fix: Sell 0 gold|0x00 0x00s
+NAME.zh=允许具有无限耐用性的无价值物品以 0 金币出售
+NAME.en=Allows non-valuable items with infinite durability to be sold for 0 gold.
+INFO.en=Weapons with infinite durability that are not flagged as unsellable for valuables will have a selling price of 0 gold and will be refused for sale.\r\nThis patch allows such items to sell for 0 gold.\r\nYou can choose to throw away items like this and dispose of them.
+INFO.zh=没有标记为贵重物品不可出售的具有无限耐久性的武器的售价为 0 金币，并且将被拒绝出售。\r\n此补丁允许此类物品以 0 金币的价格出售。\r\n您可以选择丢弃此类物品并进行处理。

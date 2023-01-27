@@ -232,7 +232,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint ap = 0xB2449C;
+            uint ap = 0xA175C8;  //0xB2449C;
             ImageUtilAP p = new ImageUtilAP();
             p.Parse(ap);
         }
