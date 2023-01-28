@@ -3080,6 +3080,16 @@ namespace FEBuilderGBA
 
                 return;
             }
+            if (linktype == "ITEMSTAFFUSEEFFECT")
+            {//アイテム名利用効果とリンク.
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = ItemForm.GetItemStaffUseEffectName((uint)src_object.Value);
+                };
+
+                return;
+            }
             
             
 #if DEBUG            

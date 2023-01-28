@@ -14,7 +14,20 @@ namespace FEBuilderGBA
         public AIPerformItemForm()
         {
             InitializeComponent();
-            this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
+
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {//IERはItemIDをItemEffectIDに変えてしまう
+                this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+                J_0_ITEM.Name = "J_0";
+                J_0_ITEM.Text = R._("アイテム利用効果ID");
+                L_0_ITEM.Name = "L_0_ITEMSTAFFUSEEFFECT";
+                L_0_ITEMICON.Hide();
+            }
+            else
+            {//バニラ
+                this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
+            }
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
@@ -36,9 +49,22 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     uint item_id = Program.ROM.u16(addr);
-                    return U.ToHexString(item_id) + " " + ItemForm.GetItemName(item_id);
+                    return U.ToHexString(item_id) + " " + AIPerformItemForm.GetColumnName(item_id);
                 }
                 );
+        }
+
+        public static string GetColumnName(uint id)
+        {
+            PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+            if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+            {//IERはItemIDをItemEffectIDに変えてしまう
+                return ItemForm.GetItemStaffUseEffectName(id);
+            }
+            else
+            {//バニラ
+                return ItemForm.GetItemName(id);
+            }
         }
 
         //全データの取得

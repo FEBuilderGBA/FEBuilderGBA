@@ -67,6 +67,9 @@ Address
 :AIの章ごとの設定
 AI's Item Usage
 
+:アイテム利用効果ID
+Item use effect ID.
+
 :AIがアイテムを使用するかどうか判定する関数を指定します。\r\nなお、章ごとにアイテムを使えるかどうかの設定は、「AIの章ごとの設定」にあります。
 Specifies the function to determine if the AI will use the item.\r\nNote that the settings for whether or not you can use items for each chapter can be found in the "AI chapter settings" section.
 
@@ -11559,6 +11562,9 @@ Unable to write to RAM area.\r\nTextID:{0}
 
 :ユニットの位置が0x08から0xFの範囲にありません。
 Unit position is not in the range of 0x08 to 0xF.
+
+:@000C@0010@0101@0009@0010@FFFF@000Cなんだい君達は？@0003\r\n@000C@0080@000E@000Cえっ？怪盗？\r\nうわー助けてくれ。@0003@0015\r\n@000C@0080@0011@0009・・・・@0003
+@000C@0010@0101@0009@0010@FFFF@000C What are you guys? @0003.\r\n@000C@0080@000E@000C Huh? Kaito? .\r\nWow help me@0003@0015.\r\n@000C@0080@0011@0009・・・@0003.
 
 :[表示]
 [Display]

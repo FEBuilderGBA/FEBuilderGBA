@@ -847,6 +847,16 @@ namespace FEBuilderGBA
             }
         }
 
+        public static string GetItemStaffUseEffectName(uint effectID)
+        {
+            string name;
+            if (!g_item_staff_use_effect_List.TryGetValue(effectID, out name))
+            {
+                return "";
+            }
+            return name;
+        }
+
         private void J_33_Click(object sender, EventArgs e)
         {
             if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
