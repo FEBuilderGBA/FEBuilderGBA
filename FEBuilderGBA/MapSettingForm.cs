@@ -637,7 +637,7 @@ namespace FEBuilderGBA
         }
 
 
-        //輸送体の位置(FE7のみ)
+        //輸送隊の位置(FE7のみ)
         public static Point GetTransporter(uint mapid, bool isElwood)
         {
             if (Program.ROM.RomInfo.version != 7)

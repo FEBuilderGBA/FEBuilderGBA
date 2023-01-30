@@ -271,7 +271,7 @@ namespace FEBuilderGBA
             ending1_event_pointer = 0x0; 
             ending2_event_pointer = 0x0; 
             RAMSlotTable_address = 0x5C5280; 
-            supply_pointer_address = 0x296A8;   //輸送体RAMへのアドレス
+            supply_pointer_address = 0x296A8;   //輸送隊RAMへのアドレス
             workmemory_player_units_address = 0x0202AB78;     //ワークメモリ PLAYER UNIT
             workmemory_enemy_units_address = 0x0202BCE8;     //ワークメモリ PLAYER UNIT
             workmemory_npc_units_address = 0x202CAF8;     //ワークメモリ PLAYER UNIT

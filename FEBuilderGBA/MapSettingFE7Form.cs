@@ -20,7 +20,7 @@ namespace FEBuilderGBA
             MapPictureBox.HideCommandBar();
             MapPictureBox.SetPointIcon("L_142_MAPXY_143", ImageSystemIconForm.ExitPoint());
 
-            //われら輸送体
+            //われら輸送隊
             Bitmap yusoutai = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x3A, 0, true);
 
             MapPictureBox.SetPointIcon("L_130_MAPXY_132", yusoutai);
@@ -134,7 +134,7 @@ namespace FEBuilderGBA
             uint mappointer_plist = (uint)B8.Value;
             MapPictureBox.LoadMap(ImageUtilMap.DrawMap(obj_plist, palette_plist, config_plist, mappointer_plist));
         }
-        //輸送体の位置(FE7のみ)
+        //輸送隊の位置(FE7のみ)
         public static Point GetTransporter(uint mapid, bool isElwood)
         {
             InputFormRef InputFormRef = Init(null);

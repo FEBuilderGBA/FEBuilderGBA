@@ -7852,10 +7852,10 @@ Fortune (Prologue)
 :占い会話(エリウッド)
 Fortune (Eliwood)
 
-:輸送体 エリウッド編
+:輸送隊 エリウッド編
 Eliwood Convoy
 
-:輸送体 ヘクトル編
+:輸送隊 ヘクトル編
 Hector Convoy
 
 :ヘクトルハード

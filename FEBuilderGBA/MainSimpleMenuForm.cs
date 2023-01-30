@@ -318,7 +318,7 @@ namespace FEBuilderGBA
         List<U.AddrResult> ExitPointList;
         List<U.AddrResult> MapObjectList;
         List<U.AddrResult> MapTrapList;
-        Point MapTransporter; //FE7のみ　輸送体の位置(エリウッド編) yusoutai
+        Point MapTransporter; //FE7のみ　輸送隊の位置(エリウッド編) yusoutai
 
         List<U.AddrResult> TurnZouenList;
 
@@ -423,7 +423,7 @@ namespace FEBuilderGBA
             this.MapTransporter = MapSettingForm.GetTransporter(mapid,true);
 
             if (Program.ROM.RomInfo.version == 7 && this.MapTransporter.X < 255)
-            {//FE7のみ輸送体の位置
+            {//FE7のみ輸送隊の位置
                 Bitmap yusoutai = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(0x3A, 0, true);
                 Map.SetStaticItem("yusoutai"
                     , MapTransporter.X
@@ -746,7 +746,7 @@ namespace FEBuilderGBA
         bool MapMouseDownEvent_Ysoutai(uint mapid, int clickx, int clicky, bool rev)
         {
             if (Program.ROM.RomInfo.version == 7 && this.MapTransporter.X < 255)
-            {//FE7のみ輸送体の位置
+            {//FE7のみ輸送隊の位置
                 if (clickx == MapTransporter.X && clicky == MapTransporter.Y)
                 {
                     if (Program.ROM.RomInfo.is_multibyte)

@@ -257,7 +257,7 @@ namespace FEBuilderGBA
         public uint ending1_event_pointer { get; protected set; }
         public uint ending2_event_pointer { get; protected set; }
         public uint RAMSlotTable_address { get; protected set; }
-        public uint supply_pointer_address { get; protected set; }  //輸送体RAMへのアドレス
+        public uint supply_pointer_address { get; protected set; }  //輸送隊RAMへのアドレス
         public uint workmemory_player_units_address { get; protected set; } //ワークメモリ PLAYER UNIT
         public uint workmemory_enemy_units_address { get; protected set; } //ワークメモリ ENEMY UNIT
         public uint workmemory_npc_units_address { get; protected set; } //ワークメモリ ENEMY UNIT

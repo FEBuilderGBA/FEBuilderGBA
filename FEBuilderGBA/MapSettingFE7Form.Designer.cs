@@ -1498,7 +1498,7 @@
             this.L_130_MAPXY_132.Name = "L_130_MAPXY_132";
             this.L_130_MAPXY_132.Size = new System.Drawing.Size(210, 32);
             this.L_130_MAPXY_132.TabIndex = 246;
-            this.L_130_MAPXY_132.Text = "輸送体 エリウッド編";
+            this.L_130_MAPXY_132.Text = "輸送隊 エリウッド編";
             this.L_130_MAPXY_132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_131_MAPXY_133
@@ -1509,7 +1509,7 @@
             this.L_131_MAPXY_133.Name = "L_131_MAPXY_133";
             this.L_131_MAPXY_133.Size = new System.Drawing.Size(210, 32);
             this.L_131_MAPXY_133.TabIndex = 245;
-            this.L_131_MAPXY_133.Text = "輸送体 ヘクトル編";
+            this.L_131_MAPXY_133.Text = "輸送隊 ヘクトル編";
             this.L_131_MAPXY_133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // D108
