@@ -1,6 +1,6 @@
-NAME=敵将強制アニメON EX 20220518(Install)
-NAME.en=Boss Animation ON EX 20220518(Install)
-NAME.zh=敌将强制动画开启 EX 20220518(Install)
+NAME=敵将強制アニメON EX 20230131(Install)
+NAME.en=Boss Animation ON EX 20230131(Install)
+NAME.zh=敌将强制动画开启 EX 20230131(Install)
 TYPE=EA
 TAG=#ENGINE
 

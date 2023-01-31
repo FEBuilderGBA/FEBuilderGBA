@@ -1,7 +1,7 @@
-NAME=敵将強制アニメON EX 20220518(Install)
-NAME.en=Boss Animation ON EX 20220518(Install)
-NAME.zh=敌将强制动画开启 EX 20220518(Install)
-TYPE=EA
+NAME=敵将強制アニメON EX 20230131(Editor)
+NAME.en=Boss Animation ON EX 20230131(Editor)
+NAME.zh=敌将强制动画开启 EX 20230131(Editor)
+TYPE=STRUCT
 TAG=#ENGINE
 
 INFO=設定でアニメをオフにしても、ボスフラグを持つ敵と戦うときは、強制的にアニメーションをONにします。\r\nこのパッチは改良版で、敵将でなくても強制アニメONにできます。\r\nまた、ボスフラグを持っているだけではなく、敵で且つボスフラグを持っている場合にのみ有効にするようにします。\r\n説得で仲間になるキャラクターと誤って戦闘した場合に、バトルアニメをONにすることもできます。
@@ -10,5 +10,20 @@ INFO.zh=即使您在设置中关闭动画，当您使用敌将标志与敌人战
 
 AUTHOR=7743
 
-EA=install.event
-PATCHED_IF:0x57A7A=0x00 0x00 0x00 0x4B 0x18 0x47
+IF:0x589C2=0x00 0x00 0x00 0x4B 0x18 0x47
+POINTER=$FGREP4END Boss_Animation_ON.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはUnitIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(0x00=ANY)
+B1:MAP_ANYFF=MAPID(0xFF=ANY)
+B2:$COMBO Boss_Animation_On_Cond.txt=Cond
+B3:$COMBO Boss_Animation_On_Anime.txt=Anime

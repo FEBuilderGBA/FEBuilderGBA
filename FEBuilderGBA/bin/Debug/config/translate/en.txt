@@ -12769,8 +12769,8 @@ Which Chapter?
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files (ie. battle animations, image data) to reproduce your problems.\r\nPlease leave it blank if irrelevant.\r\nUp to 2 MB of data can be attached.
 
-:どんな問題がありますか？\r\n問題を具体的に説明してください。
-What are the issues present?\r\nPlease explain the problem clearly and state the steps to reproduce them.
+:どんな問題がありますか？\r\nどうやったら、私たちはそれを確認できますか？\r\n問題を具体的に説明してください。
+What kind of problem are you having? .\r\nHow can we check that? .\r\nPlease be specific about your problem.
 
 :多くの国では、ROMを公開することは違法です。\r\nそのため、あなたの改造だけを取り出したupsパッチという差分データを作ります。\r\nupsパッチは、無改造ROMと、あなたのROMを比較して、あなたの改造だけを取り出します。
 It is illegal to publish ROMs in most countries.\r\nTherefore, we need to make differential data called a UPS patch which isolates changed data.\r\nThe UPS patch compares your edits to an unmodified ROM and applies them like a recipe.

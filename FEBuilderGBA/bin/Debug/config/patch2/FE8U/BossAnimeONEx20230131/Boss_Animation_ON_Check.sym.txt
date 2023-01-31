@@ -1,0 +1,9 @@
+CheckUnit=$02
+CheckCond=$10
+ReturnFalse=$60
+ReturnTrue=$5C
+CheckBossFlag=$16
+CheckEnemy=$2C
+CheckNPC=$3C
+CheckWithoutStaff=$4C
+Exit=$62

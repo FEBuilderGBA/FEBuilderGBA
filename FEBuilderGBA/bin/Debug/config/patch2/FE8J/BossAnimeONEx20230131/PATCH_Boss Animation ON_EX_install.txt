@@ -1,6 +1,6 @@
-NAME=敵将強制アニメON EX 20220518(Install)
-NAME.en=Boss Animation ON EX 20220518(Install)
-NAME.zh=敌将强制动画开启 EX 20220518(Install)
+NAME=敵将強制アニメON EX 20230131(Install)
+NAME.en=Boss Animation ON EX 20230131(Install)
+NAME.zh=敌将强制动画开启 EX 20230131(Install)
 TYPE=EA
 TAG=#ENGINE
 
@@ -11,4 +11,4 @@ INFO.zh=即使您在设置中关闭动画，当您使用敌将标志与敌人战
 AUTHOR=7743
 
 EA=install.event
-PATCHED_IF:0x57A7A=0x00 0x00 0x00 0x4B 0x18 0x47
+PATCHED_IF:0x589C2=0x00 0x00 0x00 0x4B 0x18 0x47

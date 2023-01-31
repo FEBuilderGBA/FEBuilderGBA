@@ -1,0 +1,9 @@
+AnimeOn=$4A
+AnimeOff=$44
+BossAnimeOnTable=$60
+Loop=$12
+Default=$3E
+CheckMap=$1A
+CheckCond=$28
+Boss_Animation_ON_Check=$64
+Found=$34

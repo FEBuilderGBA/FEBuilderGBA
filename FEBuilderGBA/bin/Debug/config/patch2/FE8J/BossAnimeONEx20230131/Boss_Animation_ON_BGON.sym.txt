@@ -1,0 +1,8 @@
+BattleBGON=$3E
+BossAnimeOnTable=$54
+Loop=$10
+BattleBGOff=$38
+CheckMap=$18
+CheckCond=$26
+Boss_Animation_ON_Check=$58
+Found=$32

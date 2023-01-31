@@ -22,7 +22,8 @@ ldr r0, [r4]
 cmp r0, #0x0
 beq BattleBGOff
 
-mov	r3, r10
+@mov	r3, r10	@{J}
+mov	r3, r9	@{U}
 
 CheckUnit:
 ldrb	r0, [r4]	@Table->Unit

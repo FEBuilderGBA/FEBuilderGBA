@@ -193,7 +193,7 @@
             // 
             this.X_UnitIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_UnitIcon.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_UnitIcon.Location = new System.Drawing.Point(712, 328);
+            this.X_UnitIcon.Location = new System.Drawing.Point(712, 355);
             this.X_UnitIcon.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.X_UnitIcon.Name = "X_UnitIcon";
             this.X_UnitIcon.Size = new System.Drawing.Size(58, 58);
@@ -204,7 +204,7 @@
             // X_UnitName
             // 
             this.X_UnitName.ErrorMessage = "";
-            this.X_UnitName.Location = new System.Drawing.Point(267, 361);
+            this.X_UnitName.Location = new System.Drawing.Point(267, 377);
             this.X_UnitName.Name = "X_UnitName";
             this.X_UnitName.Placeholder = "";
             this.X_UnitName.Size = new System.Drawing.Size(416, 25);
@@ -213,7 +213,7 @@
             // X_UnitID
             // 
             this.X_UnitID.Hexadecimal = true;
-            this.X_UnitID.Location = new System.Drawing.Point(183, 358);
+            this.X_UnitID.Location = new System.Drawing.Point(183, 374);
             this.X_UnitID.Maximum = new decimal(new int[] {
             255,
             0,
@@ -226,7 +226,7 @@
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(6, 354);
+            this.label10.Location = new System.Drawing.Point(6, 370);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(165, 31);
@@ -247,7 +247,7 @@
             // X_MapID
             // 
             this.X_MapID.Hexadecimal = true;
-            this.X_MapID.Location = new System.Drawing.Point(183, 328);
+            this.X_MapID.Location = new System.Drawing.Point(183, 344);
             this.X_MapID.Name = "X_MapID";
             this.X_MapID.Size = new System.Drawing.Size(78, 25);
             this.X_MapID.TabIndex = 1;
@@ -255,7 +255,7 @@
             // X_MapIDLabel
             // 
             this.X_MapIDLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_MapIDLabel.Location = new System.Drawing.Point(6, 324);
+            this.X_MapIDLabel.Location = new System.Drawing.Point(6, 340);
             this.X_MapIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.X_MapIDLabel.Name = "X_MapIDLabel";
             this.X_MapIDLabel.Size = new System.Drawing.Size(165, 31);
@@ -266,7 +266,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(6, 393);
+            this.label2.Location = new System.Drawing.Point(6, 409);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 31);
@@ -276,7 +276,7 @@
             // 
             // AttachDataSelectButton
             // 
-            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 426);
+            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 442);
             this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.AttachDataSelectButton.Name = "AttachDataSelectButton";
             this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
@@ -288,7 +288,7 @@
             // X_MapName
             // 
             this.X_MapName.ErrorMessage = "";
-            this.X_MapName.Location = new System.Drawing.Point(267, 328);
+            this.X_MapName.Location = new System.Drawing.Point(267, 344);
             this.X_MapName.Name = "X_MapName";
             this.X_MapName.Placeholder = "";
             this.X_MapName.Size = new System.Drawing.Size(416, 25);
@@ -297,7 +297,7 @@
             // labelEx1
             // 
             this.labelEx1.ErrorMessage = "";
-            this.labelEx1.Location = new System.Drawing.Point(6, 463);
+            this.labelEx1.Location = new System.Drawing.Point(6, 479);
             this.labelEx1.Name = "labelEx1";
             this.labelEx1.Size = new System.Drawing.Size(775, 58);
             this.labelEx1.TabIndex = 98;
@@ -306,7 +306,7 @@
             // AttachDataFilename
             // 
             this.AttachDataFilename.ErrorMessage = "";
-            this.AttachDataFilename.Location = new System.Drawing.Point(144, 432);
+            this.AttachDataFilename.Location = new System.Drawing.Point(144, 448);
             this.AttachDataFilename.Margin = new System.Windows.Forms.Padding(4);
             this.AttachDataFilename.Name = "AttachDataFilename";
             this.AttachDataFilename.Placeholder = "";
@@ -327,7 +327,7 @@
             // Problem
             // 
             this.Problem.ErrorMessage = "";
-            this.Problem.Location = new System.Drawing.Point(6, 65);
+            this.Problem.Location = new System.Drawing.Point(6, 81);
             this.Problem.Multiline = true;
             this.Problem.Name = "Problem";
             this.Problem.Placeholder = "";
@@ -338,11 +338,11 @@
             // ProblemLabel
             // 
             this.ProblemLabel.ErrorMessage = "";
-            this.ProblemLabel.Location = new System.Drawing.Point(3, 22);
+            this.ProblemLabel.Location = new System.Drawing.Point(3, 15);
             this.ProblemLabel.Name = "ProblemLabel";
-            this.ProblemLabel.Size = new System.Drawing.Size(669, 41);
+            this.ProblemLabel.Size = new System.Drawing.Size(669, 63);
             this.ProblemLabel.TabIndex = 8;
-            this.ProblemLabel.Text = "どんな問題がありますか？\r\n問題を具体的に説明してください。";
+            this.ProblemLabel.Text = "どんな問題がありますか？\r\nどうやったら、私たちはそれを確認できますか？\r\n問題を具体的に説明してください。";
             // 
             // Step2Page
             // 

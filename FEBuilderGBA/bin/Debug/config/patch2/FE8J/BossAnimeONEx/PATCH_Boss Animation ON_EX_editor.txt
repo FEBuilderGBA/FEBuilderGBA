@@ -1,6 +1,6 @@
-NAME=敵将強制アニメON EX(Editor)
-NAME.en=Boss Animation ON EX(Editor)
-NAME.zh=敌将强制动画开启 EX(Editor)
+NAME=敵将強制アニメON EX 20220518(Editor)
+NAME.en=Boss Animation ON EX 20220518(Editor)
+NAME.zh=敌将强制动画开启 EX 20220518(Editor)
 TYPE=STRUCT
 TAG=#ENGINE
 

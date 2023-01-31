@@ -1,0 +1,9 @@
+03=Boss&NotStaff
+83=Boss&Enmey&NotStaff
+43=Boss&NPC&NotStaff
+01=Boss
+81=Boss&Enmey
+41=Boss&NPC
+80=Enmey
+40=NPC
+FF=ANY
