@@ -3352,8 +3352,8 @@ A patch is required to move the map of FE 8 without going through the world map.
 :フリーマップを無効にしてよいならば、強力なEliminateを選択してください。\r\n
 If you'd like to disable the world map skirmishes, choose the powerful Eliminate.\r\n
 
-:フリーマップを使いたい場合は、MNC2Fix を選択してください。\r\n
-If you want to use the world map skirmishes, select MNC2Fix.\r\n
+:推奨しませんが、フリーマップも使いたい場合は、MNC2Fix を選択してください。\r\n
+Not recommended, If you want to use the world map skirmishes, select MNC2Fix.\r\n
 
 :{0}パッチを有効にする
 Enable {0}

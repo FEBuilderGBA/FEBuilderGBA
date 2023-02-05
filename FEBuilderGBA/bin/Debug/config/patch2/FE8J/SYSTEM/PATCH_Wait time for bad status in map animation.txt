@@ -1,0 +1,16 @@
+NAME=マップアニメで状態異常ダメージを受けたときのウェイト秒数
+INFO=マップアニメで、毒などのバッドステータスを受けたときに、待機する時間を指定します。\r\nディフォルトは、100(0x64)フレーム秒です。\r\nもし、毒のモーションを早くした場合は、この数字も早くしないと、無駄な待機時間が増えてしまいます。
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07CCE6
+HEX=FALSE
+AUTHOR=7743
+
+DEFAULT=0x64
+NAME.en=The number of seconds to wait when bad status damage in a map animation
+INFO.en=Specifies the time to wait when receiving a bad status such as poison in map animation.\r\nThe default is 100 (0x64) frames per second.\r\nIf the poison motion is made faster, this number must also be made faster, otherwise the waiting time will increase.
+NAME.zh=在地图动画中收到状态异常伤害时等待的秒数
+INFO.zh=指定在地图动画中收到不良状态（例如中毒）时等待的时间。\r\n默认值为每秒 100 (0x64) 帧。\r\n如果毒动作变快，这个数字也必须变快，否则等待时间会增加。

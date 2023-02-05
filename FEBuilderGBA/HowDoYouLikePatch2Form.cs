@@ -136,7 +136,7 @@ namespace FEBuilderGBA
                 };
                 title = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
                 reason  = R._("フリーマップを無効にしてよいならば、強力なEliminateを選択してください。\r\n");
-                reason += R._("フリーマップを使いたい場合は、MNC2Fix を選択してください。\r\n");
+                reason += R._("推奨しませんが、フリーマップも使いたい場合は、MNC2Fix を選択してください。\r\n");
 
                 patchName1 = "Eliminate";///No Translate
                 patchName2 = "Eliminate the constraint of freezing unless it enters from the world map.";///No Translate
