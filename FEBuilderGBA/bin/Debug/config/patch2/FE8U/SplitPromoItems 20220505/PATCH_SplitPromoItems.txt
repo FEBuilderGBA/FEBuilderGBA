@@ -8,3 +8,4 @@ INFO=CCアイテムごとにCCするクラスをもっと細かく分岐させ�
 INFO.en=For each Promotion item, branch the promotion class into smaller pieces.\r\nAllows the usage of different promo items to result in different classes when used, similar to the Elysian Whip in DSFE.\r\nIt also retains the function of vanilla FE8 split promotions, so you can have items like the Master Seal give a choice and separate promotion items to force one or the other pick.
 INFO.zh=For each Promotion item, branch the promotion class into smaller pieces.\r\nAllows the usage of different promo items to result in different classes when used, similar to the Elysian Whip in DSFE.\r\nIt also retains the function of vanilla FE8 split promotions, so you can have items like the Master Seal give a choice and separate promotion items to force one or the other pick.
 
+WARNING=1

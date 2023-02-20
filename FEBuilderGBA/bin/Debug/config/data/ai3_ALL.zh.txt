@@ -1,8 +1,8 @@
-00=先伤害(专注于优先)
-08=先伤害(标准)
-10=损坏优先级(功率强调)
-18=?
-20=优先考虑准确性
-28=射手
+00=PrioritizePosition
+08=PrioritizeLowHP
+10=Reckless(FE7Jaffar)
+18=PrioritizeDefense
+20=PrioritizeDamage/Accuracy
+28=Archers
 30=?
 38=?

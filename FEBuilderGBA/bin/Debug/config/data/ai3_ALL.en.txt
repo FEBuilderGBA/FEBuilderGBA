@@ -1,8 +1,8 @@
-00=PrioritizeDamage(Accuracy)
-08=PrioritizeDamage(Standard)
-10=PrioritizeDamage(Max)
-18=?
-20=PrioritizeAccuracy
+00=PrioritizePosition
+08=PrioritizeLowHP
+10=Reckless(FE7Jaffar)
+18=PrioritizeDefense
+20=PrioritizeDamage/Accuracy
 28=Archers
 30=?
 38=?
