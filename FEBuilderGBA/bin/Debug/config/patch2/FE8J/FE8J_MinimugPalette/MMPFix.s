@@ -9,8 +9,8 @@
 .equ	RegisterTileGraphics,	0x8001F64|1	@{J}
 
 @Use sound room buffer
-@.equ	MMP_Buffer,	0x201F148				@{U}
-.equ	MMP_Buffer,	0x201F148				@{J}
+@.equ	MMP_Buffer,	0x202B4AC				@{U}
+.equ	MMP_Buffer,	0x202B4A8				@{J}
 
 push  {r4-r6, r14}
 

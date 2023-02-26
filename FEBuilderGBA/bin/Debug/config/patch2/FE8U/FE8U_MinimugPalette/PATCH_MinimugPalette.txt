@@ -1,6 +1,6 @@
 TYPE=EA
 TAG=#ENGINE
-NAME=MinimugPalette
+NAME=MinimugPalette Using TextBuffer
 
 EA=MinimugPalette.event
 
@@ -8,8 +8,8 @@ EA=MinimugPalette.event
 PATCHED_IF:0x5968=0x01 0x48 0xCB 0xF0 0xA9 0xFF 0x01 0xE0
 
 
-INFO=あるminimugから別のminimugに切り替えるとき、新しいパレットはバッファリングされますが、新しいタイルはすぐにVRAMにフラッシュされます。\r\nこのパッチは、代わりにタイルをバッファリングし、minimugが間違ったパレットを使用している1つのフレームを防止します。
-INFO.en=When switching from one minimug to another, the new palette is buffered, but the new tiles are immediately flushed to VRAM.\r\nThis patch instead buffers the tiles, preventing that one frame where a minimug is using the wrong palette.
+INFO=あるminimugから別のminimugに切り替えるとき、新しいパレットはバッファリングされますが、新しいタイルはすぐにVRAMにフラッシュされます。\r\nこのパッチは、代わりにタイルをバッファリングし、minimugが間違ったパレットを使用している1つのフレームを防止します。\r\nこのバージョンは、テキストバッファの終端を利用します。翻訳パッチと競合してクラッシュするので同時には利用できません。
+INFO.en=When switching from one minimug to another, the new palette is buffered, but the new tiles are immediately flushed to VRAM.\r\nThis patch instead buffers the tiles, preventing that one frame where a minimug is using the wrong palette.\r\nThis version uses the end of the text buffer. It cannot be used at the same time because it conflicts with the translation patch and crashes.
 
 AUTHOR=Huichelaar https://feuniverse.us/t/huichelaars-assembly-adventures/8229
-INFO.zh=当从一个 minimug 切换到另一个时，新的调色板会被缓冲，但新的图块会立即刷新到 VRAM。\r\n此补丁改为缓冲图块，防止 minimug 在一帧中使用错误的调色板。
+INFO.zh=当从一个 minimug 切换到另一个时，新的调色板会被缓冲，但新的图块会立即刷新到 VRAM。\r\n此补丁改为缓冲图块，防止 minimug 在一帧中使用错误的调色板。\r\nThis version uses the end of the text buffer. It cannot be used at the same time because it conflicts with the translation patch and crashes.

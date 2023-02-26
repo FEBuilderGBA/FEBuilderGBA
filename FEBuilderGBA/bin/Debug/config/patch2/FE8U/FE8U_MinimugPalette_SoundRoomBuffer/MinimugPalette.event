@@ -1,0 +1,30 @@
+// When switching from one minimug to another, the new palette is buffered, but
+// the new tiles are immediately flushed to VRAM. MinimugPalette also buffers
+// the tiles, preventing that one frame where a minimug is using the wrong palette.
+// label prefix: MMP.
+#ifndef _FE8_
+    ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include "Extensions/Hack Installation.txt"
+
+
+
+{
+PUSH
+
+  ORG 0x5968			//FE8U
+  callHack_r0(MMPFix)	//FE8U
+  SHORT 0x46C0			//FE8U
+
+//	#define callHack_r0_FE8J(offset) "SHORT 0x4801; BL(0xD65BC); SHORT 0xE001; POIN (offset|0x1)"	//FE8J
+//  ORG 0x5870					//FE8J
+//  callHack_r0_FE8J(MMPFix)	//FE8J
+//  SHORT 0x46C0				//FE8J
+
+POP
+
+ALIGN 4
+MMPFix:
+#incbin "MMPFix.dmp"
+}

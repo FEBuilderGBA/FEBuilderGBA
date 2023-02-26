@@ -10,8 +10,8 @@
 
 @ Set this to some free ram space, size 0x200 bytes.
 @I'm using the last 0x200 bytes of the textstring buffer.
-.equ	MMP_Buffer,	0x202B4AC				@{U}
-@.equ	MMP_Buffer,	0x202B4A8				@{J}
+.equ	MMP_Buffer,	0x201F148				@{U}
+@.equ	MMP_Buffer,	0x201F148				@{J}
 
 push  {r4-r6, r14}
 
