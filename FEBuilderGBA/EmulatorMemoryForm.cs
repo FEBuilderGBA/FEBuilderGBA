@@ -1500,15 +1500,24 @@ namespace FEBuilderGBA
 
             InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
         }
-        void WriteFlag(uint flag,bool setValue)
+        void WriteFlag(uint flag, bool setValue)
         {
-            if (flag == 0 || flag > 0x12C)
-            {
-                return;
-            }
             if (!CheckConnectShowError())
             {
                 return;
+            }
+            uint flagMemory = WriteFlagLow(flag, setValue);
+            if (flagMemory == 0)
+            {
+                return;
+            }
+            InputFormRef.ShowWriteNotifyAnimation(this, flagMemory);
+        }
+        static public uint WriteFlagLow(uint flag,bool setValue)
+        {
+            if (flag == 0 || flag > 0x12C)
+            {
+                return 0;
             }
 
             uint flagMemory;
@@ -1537,7 +1546,33 @@ namespace FEBuilderGBA
                 data &= ~flagMask;
             }
             Program.RAM.write_u8(flagMemory, data);
-            InputFormRef.ShowWriteNotifyAnimation(this, flagMemory);
+            return flagMemory;
+        }
+        static public bool IsFlagEnable(uint flag)
+        {
+            if (flag == 0 || flag > 0x12C)
+            {
+                return false;
+            }
+
+            uint flagMemory;
+            uint flagMask;
+            uint data;
+            if (flag >= 0x65)
+            {//クローバル
+                uint a = (flag - 0x65);
+                flagMemory = Program.ROM.RomInfo.workmemory_global_flag_address + (a / 8);
+                flagMask = (uint)(1 << (int)(a % 8));
+            }
+            else
+            {//ローカル
+                uint a = (flag - 0x1);
+                flagMemory = Program.ROM.RomInfo.workmemory_local_flag_address + (a / 8);
+                flagMask = (uint)(1 << (int)(a % 8));
+            }
+
+            data = Program.RAM.u8(flagMemory);
+            return ((data & flagMask) == flagMask);
         }
         private void FlagListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {

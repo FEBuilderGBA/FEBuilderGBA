@@ -17,6 +17,8 @@ namespace FEBuilderGBA
         string AUTOFEEDBACK_POST_DEADUNIT = "";
         string AUTOFEEDBACK_POST_BASE64 = "";
         string AUTOFEEDBACK_URL = "";
+        uint AUTOFEEDBACK_ENABLE_FLAG = 0;
+        uint AUTOFEEDBACK_ENABLE_FLAG_MAPID = 0;
 
         string SavFilename = "";
 
@@ -37,6 +39,8 @@ namespace FEBuilderGBA
             AUTOFEEDBACK_POST_CHAPTER = U.at(lines, "AUTOFEEDBACK_POST_CHAPTER");
             AUTOFEEDBACK_POST_DEADUNIT = U.at(lines, "AUTOFEEDBACK_POST_DEADUNIT");
             AUTOFEEDBACK_POST_BASE64 = U.at(lines, "AUTOFEEDBACK_POST_BASE64");
+            AUTOFEEDBACK_ENABLE_FLAG = U.atoi0x(U.at(lines, "AUTOFEEDBACK_ENABLE_FLAG"));
+            AUTOFEEDBACK_ENABLE_FLAG_MAPID = U.atoi0x(U.at(lines, "AUTOFEEDBACK_ENABLE_FLAG_MAPID"));
 
             this.USERHASH = MakeUserHash();
             this.VERSION = MakeVersion();
@@ -113,6 +117,10 @@ namespace FEBuilderGBA
             }
 
             DateTime now = DateTime.Now;
+            if (mapid == AUTOFEEDBACK_ENABLE_FLAG_MAPID)
+            {
+                EnableFlag(now);
+            }
             if (SendFeedBack_EndEvent(now, mapid))
             {
                 return;
@@ -126,6 +134,25 @@ namespace FEBuilderGBA
                 return;
             }
         }
+        void EnableFlag(DateTime now)
+        {
+            if (AUTOFEEDBACK_ENABLE_FLAG == 0)
+            {
+                return;
+            }
+            if (now <= LastFeedBackPostTime)
+            {//クールダウン中
+                return;
+            }
+            bool flag = EmulatorMemoryForm.IsFlagEnable(AUTOFEEDBACK_ENABLE_FLAG);
+            if (flag)
+            {//有効なら何もしない
+                return;
+            }
+            //無効なら有効にする
+            EmulatorMemoryForm.WriteFlagLow(AUTOFEEDBACK_ENABLE_FLAG, true);
+        }
+
         bool SendFeedBack_EndEvent(DateTime now, uint mapid)
         {
             //LOMAでマップIDを切り替えるケースがあるので、長いクールダウンを利用します

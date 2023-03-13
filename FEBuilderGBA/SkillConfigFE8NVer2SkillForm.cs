@@ -1009,9 +1009,13 @@ namespace FEBuilderGBA
                 return ;
             }
             uint addr = g_AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "");
-            Program.ROM.write_p32(addr, (uint)AnimePointer.Value, undodata);
-            Program.Undo.Push(undodata);
+            uint anime_pointer_addr = Program.ROM.u32(addr);
+            if (U.isSafetyPointerOrNull(anime_pointer_addr))
+            {//アニメポインタテーブルが足りないことがあるらしい
+                Undo.UndoData undodata = Program.Undo.NewUndoData(this, "");
+                Program.ROM.write_p32(addr, (uint)AnimePointer.Value, undodata);
+                Program.Undo.Push(undodata);
+            }
         }
 
 

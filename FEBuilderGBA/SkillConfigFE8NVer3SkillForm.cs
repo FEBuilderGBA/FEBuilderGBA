@@ -387,11 +387,10 @@ namespace FEBuilderGBA
             {
                 uint animePointer = g_AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
 
-                uint animeAddr = Program.ROM.p32(animePointer);
-
-                if (U.isSafetyOffset(animeAddr))
+                uint anime_pointer_addr = Program.ROM.u32(animePointer);
+                if (U.isSafetyPointerOrNull(anime_pointer_addr))
                 {
-                    AnimePointer.Value = animeAddr;
+                    AnimePointer.Value = U.toOffset(anime_pointer_addr);
                     ShowFrameUpDown_ValueChanged(null, null);
                     AnimationPanel.Visible = true;
                     return;
@@ -1015,9 +1014,14 @@ namespace FEBuilderGBA
                 return ;
             }
             uint addr = g_AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "");
-            Program.ROM.write_p32(addr, (uint)AnimePointer.Value, undodata);
-            Program.Undo.Push(undodata);
+
+            uint anime_pointer_addr = Program.ROM.u32(addr);
+            if (U.isSafetyPointerOrNull(anime_pointer_addr))
+            {//アニメポインタテーブルが足りないことがあるらしい
+                Undo.UndoData undodata = Program.Undo.NewUndoData(this, "");
+                Program.ROM.write_p32(addr, (uint)AnimePointer.Value, undodata);
+                Program.Undo.Push(undodata);
+            }
         }
 
 
@@ -1056,11 +1060,13 @@ namespace FEBuilderGBA
                     {
                         break;
                     }
-                    uint addr = Program.ROM.p32(anime);
-                    if (!U.isSafetyOffset(addr))
+
+                    uint anime_pointer_addr = Program.ROM.u32(anime);
+                    if (!U.isSafetyPointer(anime_pointer_addr))
                     {
                         continue;
                     }
+                    uint addr = U.toOffset(anime_pointer_addr);
                     string name = "SkillAnime:" + U.To0xHexString(i) + " ";
                     FEBuilderGBA.Address.AddAddress(list, addr, 4, anime, name, FEBuilderGBA.Address.DataTypeEnum.POINTER);
 

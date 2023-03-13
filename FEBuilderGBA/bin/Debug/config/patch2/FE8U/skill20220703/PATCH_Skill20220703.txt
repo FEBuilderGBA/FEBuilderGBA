@@ -1170,6 +1170,12 @@ UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
 UPDATE_UNINSTALL:10=..\Use Item Might for Healing\PATCH_Use Item Might for healing.txt
 UPDATE_UNINSTALL:11=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
 UPDATE_UNINSTALL:12=..\bad_status_sword\PATCH_bad_status_sword.txt
+UPDATE_UNINSTALL:13=..\Passive Boosts Patches\PATCH_Passive Boosts Patches.txt
+UPDATE_UNINSTALL:14=..\Passive Boosts Patches no-stack\PATCH_Passive Boosts Patches no-stack.txt
+UPDATE_UNINSTALL:15=..\ChangeStaffExp\PATCH_ChangeStaffExp Installer.txt
+UPDATE_UNINSTALL:16=..\MultiSupplyUnits\PATCH_MultiSupplyUnits_install.txt
+UPDATE_UNINSTALL:17=..\MultiSupplyUnits20200302\PATCH_MultiSupplyUnits_install.txt
+UPDATE_UNINSTALL:18=..\MultiSupplyUnits20220419\PATCH_MultiSupplyUnits_install.txt
 
 EDIT_PATCH:1=../skill20191022/PATCH_AnimaTriangle_FireList SkillSystem Version.txt
 EDIT_PATCH:2=../skill20191022/PATCH_AnimaTriangle_ThunderList SkillSystem Version.txt

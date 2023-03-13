@@ -207,6 +207,7 @@
             this.AnimationExportButton = new System.Windows.Forms.Button();
             this.AnimationInportButton = new System.Windows.Forms.Button();
             this.AnimationPanel = new System.Windows.Forms.Panel();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.X_N_JumpEditor = new System.Windows.Forms.Button();
             this.ShowZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -236,10 +237,8 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -2444,6 +2443,16 @@
             this.AnimationPanel.TabIndex = 123;
             this.AnimationPanel.Visible = false;
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(326, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(535, 25);
+            this.BinInfo.TabIndex = 197;
+            // 
             // X_N_JumpEditor
             // 
             this.X_N_JumpEditor.Location = new System.Drawing.Point(169, 121);
@@ -2782,7 +2791,6 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton_255);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(8, 42);
@@ -2790,16 +2798,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(245, 802);
             this.panel6.TabIndex = 97;
-            // 
-            // AddressListExpandsButton_255
-            // 
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(2, 768);
-            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
-            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(239, 30);
-            this.AddressListExpandsButton_255.TabIndex = 115;
-            this.AddressListExpandsButton_255.Text = "リストの拡張";
-            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -2822,19 +2820,9 @@
             this.AddressList.Location = new System.Drawing.Point(1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 742);
+            this.AddressList.Size = new System.Drawing.Size(246, 777);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // BinInfo
-            // 
-            this.BinInfo.ErrorMessage = "";
-            this.BinInfo.Location = new System.Drawing.Point(326, 367);
-            this.BinInfo.Name = "BinInfo";
-            this.BinInfo.Placeholder = "";
-            this.BinInfo.ReadOnly = true;
-            this.BinInfo.Size = new System.Drawing.Size(535, 25);
-            this.BinInfo.TabIndex = 197;
             // 
             // SkillConfigFE8NVer2SkillForm
             // 
@@ -2977,7 +2965,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown N1_ReadCount;
         private System.Windows.Forms.NumericUpDown N1_ReadStartAddress;
-        private System.Windows.Forms.Button AddressListExpandsButton_255;
         private System.Windows.Forms.NumericUpDown W2;
         private System.Windows.Forms.Label J_2;
         private System.Windows.Forms.Panel panel7;
