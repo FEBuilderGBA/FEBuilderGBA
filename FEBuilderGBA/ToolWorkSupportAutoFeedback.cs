@@ -117,25 +117,24 @@ namespace FEBuilderGBA
             }
 
             DateTime now = DateTime.Now;
-            if (mapid == AUTOFEEDBACK_ENABLE_FLAG_MAPID)
-            {
-                EnableFlag(now);
-            }
             if (SendFeedBack_EndEvent(now, mapid))
             {
-                return;
             }
-            if (SendFeedBack_DeadEvent(now, mapid))
+            else if (SendFeedBack_DeadEvent(now, mapid))
             {
-                return;
             }
-            if (SendFeedBack_VillageDestroyXY(now, mapid))
+            else if (SendFeedBack_VillageDestroyXY(now, mapid))
             {
-                return;
             }
+
+            EnableFlag(now, mapid);
         }
-        void EnableFlag(DateTime now)
+        void EnableFlag(DateTime now, uint mapid)
         {
+            if (mapid != AUTOFEEDBACK_ENABLE_FLAG_MAPID)
+            {
+                return;
+            }
             if (AUTOFEEDBACK_ENABLE_FLAG == 0)
             {
                 return;
