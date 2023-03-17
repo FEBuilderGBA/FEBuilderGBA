@@ -127,9 +127,9 @@ namespace FEBuilderGBA
             {
             }
 
-            EnableFlag(now, mapid);
+            EnableAutoFeedbackFlag(now, mapid);
         }
-        void EnableFlag(DateTime now, uint mapid)
+        void EnableAutoFeedbackFlag(DateTime now, uint mapid)
         {
             if (mapid != AUTOFEEDBACK_ENABLE_FLAG_MAPID)
             {

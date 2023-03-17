@@ -17,6 +17,7 @@ EVENTSCRIPT:01=400DXX00{$L1:ASMC_ChangeEdition.dmp}	編を切り替える[XX:EDI
 EVENTSCRIPT:01.en=400DXX00{$L1:ASMC_ChangeEdition.dmp}	Change Edition[XX:EDITION:Edition]
 EVENTSCRIPT:01.zh=400DXX00{$L1:ASMC_ChangeEdition.dmp}	Change Edition[XX:EDITION:Edition]
 
-INFO=指定した編に、単純に切り替えます。\r\nパーティスイッチなどの余計なことは何も行わず、単純に編だけを切り替えます。\r\n編が変わると、主人公が変わります。\r\n序盤とエイリーク編では、Unit ID:0x01 エイリークが主人公です。\r\nエフラム編では、 Unit ID:0x0F エフラムが主人公です。
-INFO.en=Simply switch to the specified chapter.\r\nDo nothing extra, such as party switches, and simply switch between chapters.\r\nWhen the editon(tale) changes, the main character changes.\r\nIn prologue and Eirika tale, Unit ID: 0x01 Eirika is the main character.\r\nIn Ephraim tale, Unit ID: 0x0F Ephram is the main character.
-INFO.zh=Simply switch to the specified chapter.\r\nDo nothing extra, such as party switches, and simply switch between chapters.\r\nWhen the editon(tale) changes, the main character changes.\r\nIn prologue and Eirika tale, Unit ID: 0x01 Eirika is the main character.\r\nIn Ephraim tale, Unit ID: 0x0F Ephram is the main character.
+INFO=指定した編に、単純に切り替えます。\r\nパーティスイッチなどの余計なことは何も行わず、単純に編だけを切り替えます。\r\n編が変わると、主人公が変わります。\r\n序盤とエイリーク編では、Unit ID:0x01 エイリークが主人公です。\r\nエフラム編では、 Unit ID:0x0F エフラムが主人公です。\r\nルート切替, ゲームモード切替
+
+INFO.en=Simply switch to the specified chapter.\r\nDo nothing extra, such as party switches, and simply switch between chapters.\r\nWhen the editon(tale) changes, the main character changes.\r\nIn prologue and Eirika tale, Unit ID: 0x01 Eirika is the main character.\r\nIn Ephraim tale, Unit ID: 0x0F Ephram is the main character.\r\nChange route, game mode.
+INFO.zh=Simply switch to the specified chapter.\r\nDo nothing extra, such as party switches, and simply switch between chapters.\r\nWhen the editon(tale) changes, the main character changes.\r\nIn prologue and Eirika tale, Unit ID: 0x01 Eirika is the main character.\r\nIn Ephraim tale, Unit ID: 0x0F Ephram is the main character.\r\nChange route, game mode.

@@ -1,0 +1,13 @@
+NAME=戦闘アニメ終了後に画面にノイズが走るバグを修正する
+INFO=魔法エフェクトを実行した時に、戦闘アニメ終了エフェクトにノイズが入ることがあるのを修正します。\r\nこの問題は、4以上の超長いレンジで攻撃して、攻撃エフェクトで魔法エフェクトをロードした時に発生するようだ。\r\nこれは、StartEkrBaseKaiten関数で、 nullポインタの画像をLZ77UnCompVram関数で解凍するためです。\r\nこのパッチはこの挙動を強引に修正します。
+
+NAME.en=Fix glitch that causes noise to run on the screen after the battle animation ends
+INFO.en=Fix noise in the combat animation end effect when magic effects are executed.\r\nThis problem seems to occur when attacking with a very long range of 4 or more and loading magic effects in the attack effect. \r\nThis is due to the StartEkrBaseKaiten function decompressing the null pointer image with the LZ77UnCompVram function. \r\nThis patch forcefully fixes this behavior.
+
+NAME.zh=Fix glitch that causes noise to run on the screen after the battle animation ends
+INFO.zh=Fix noise in the combat animation end effect when magic effects are executed.\r\nThis problem seems to occur when attacking with a very long range of 4 or more and loading magic effects in the attack effect. \r\nThis is due to the StartEkrBaseKaiten function decompressing the null pointer image with the LZ77UnCompVram function. \r\nThis patch forcefully fixes this behavior.
+
+TYPE=BIN
+PATCHED_IF:0x056558=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=FixBattleAnimeExitNoise.dmp
+JUMP:0x056558:$r3=FixBattleAnimeExitNoise.dmp
