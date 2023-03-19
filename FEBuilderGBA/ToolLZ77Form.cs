@@ -440,15 +440,12 @@ namespace FEBuilderGBA
                 return;
             }
             byte[] bin;
-            if (! U.Base64Encode(text, out bin))
+            text = text.Trim();
+            text = text.Replace(' ', '+');
+            if (!U.Base64Encode(text, out bin))
             {
-                text = text.Trim();
-                text = text.Replace(' ', '+');
-                if (!U.Base64Encode(text, out bin))
-                {
-                    R.ShowStopError("Base64を復号できませんでした");
-                    return;
-                }
+                R.ShowStopError("Base64を復号できませんでした");
+                return;
             }
 
             string title = R._("保存するファイル名を選択してください。");
