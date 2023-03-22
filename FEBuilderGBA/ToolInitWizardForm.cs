@@ -450,7 +450,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "asm");
-                    string url = "https://github.com/FireEmblemUniverse/SkillSystem_FE8/raw/master/Tools/devkitARM/bin/arm-none-eabi-as.exe";
+                    string url = "https://github.com/FireEmblemUniverse/SkillSystem_FE8/raw/d6808351425a9098feab27ddbfa9c5c3a46a3f57/Tools/devkitARM/bin/arm-none-eabi-as.exe";
                     string r = DownloadProgram_Direct(url, dir, "arm-none-eabi-as.exe");
                     if (IsErrorResult(r))
                     {
