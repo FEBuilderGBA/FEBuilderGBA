@@ -266,16 +266,20 @@ namespace FEBuilderGBA
 
             try
             {
-                string temp7z = Path.GetTempFileName();
-                File.Delete(temp7z);
-                temp7z = temp7z + ".7z";
-                ArchSevenZip.Compress(temp7z, this.SavFilename);
-                byte[] bin = File.ReadAllBytes(temp7z);
-                File.Delete(temp7z);
-                return System.Convert.ToBase64String(bin);
+                using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
+                {
+                    string filenameOnly = Path.GetFileName(this.SavFilename);
+                    string srcFilename = Path.Combine(tempdir.Dir, filenameOnly);
+                    string dest7zFilename = Path.Combine(tempdir.Dir, filenameOnly + ".7z");
+                    File.Copy(this.SavFilename, srcFilename);
+                    ArchSevenZip.Compress(dest7zFilename, srcFilename, 10);
+                    byte[] bin = File.ReadAllBytes(dest7zFilename);
+                    return System.Convert.ToBase64String(bin);
+                }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                R.Error("セーブデータを7z圧縮できませんでした", e.ToString());
                 return "";
             }
         }
@@ -329,10 +333,7 @@ namespace FEBuilderGBA
                 try
                 {
                     string base64 = MakeBase64();
-                    if (base64 != "")
-                    {
-                        Send(chapter, deadunit, base64);
-                    }
+                    Send(chapter, deadunit, base64);
                 }
                 catch (Exception)
                 {
