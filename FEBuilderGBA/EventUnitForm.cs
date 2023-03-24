@@ -2007,7 +2007,12 @@ namespace FEBuilderGBA
         void RomToControlPanel()
         {
             int index = FE8CoordListBox.SelectedIndex;
-            if (index < 0 || index >= this.FE8CoordList.Count)
+            if (index < 0)
+            {
+                index = 0;
+                U.SelectedIndexSafety(FE8CoordListBox, 0);
+            }
+            if (index >= this.FE8CoordList.Count)
             {
                 U.ForceUpdate(F_X, 0);
                 U.ForceUpdate(F_Y, 0);
@@ -2190,7 +2195,6 @@ namespace FEBuilderGBA
             int selected = this.FE8CoordListBox.SelectedIndex;
             if (selected < 0 || selected >= this.FE8CoordList.Count)
             {//追加で処理する.
-                NewButton.PerformClick();
                 return;
             }
 
