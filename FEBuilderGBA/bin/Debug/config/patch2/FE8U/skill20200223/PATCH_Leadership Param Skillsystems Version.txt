@@ -25,6 +25,5 @@ B0:DECIMAL=Value
 
 INFO=Leadership. Grants +5 Hit +3 Avo to all ally units per star.\r\nNote:\r\nEnemyStarAvoidBonus is not referenced in the bug.\r\nNPCStarAvoidBonus is used instead of EnemyStarAvoidBonus.\r\nNPCStarAvoidBonus is used for both red and green.\r\n\r\nCancelOutOpposingLeadership takes a bool value of 0 or 1.
 
-\r\n0に設定すると、
 
 AUTHOR=Zeta

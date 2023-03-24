@@ -206,9 +206,11 @@ namespace FEBuilderGBA
             if (! File.Exists(this.Filename))
             {
                 this.Lines = new Dictionary<string, string>();
+                UpdateAutoFeedback(0);
                 return false;
             }
             this.Lines = LoadUpdateInfo(this.Filename);
+            InitAutoFeedback();
             return true;
         }
         void InitAutoFeedback()
@@ -287,7 +289,6 @@ namespace FEBuilderGBA
                 InfoTextBox.Text += R._("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n") + ExplainUpdateInfo() + "\r\n";
             }
 
-            InitAutoFeedback();
             this.NameTextBox.Text = GetName();
             this.AuthorTextBox.Text = U.at(this.Lines, "AUTHOR");
             this.CommunityTextBox.Text = U.at(this.Lines, "COMMUNITY_URL");
@@ -707,12 +708,19 @@ namespace FEBuilderGBA
             }
         }
 
-        static public void CheckUpdateSlientByThread()
+        static public void CheckUpdateSlientByThread(bool isAutoUpdate)
         {
             if (Program.ROM == null)
             {
                 return;
             }
+            ToolWorkSupportForm f = (ToolWorkSupportForm)InputFormRef.JumpFormLow<ToolWorkSupportForm>();
+            f.IsSlientMode = true;
+            if (!f.Open(Program.ROM.Filename))
+            {
+                return;
+            }
+
             if (Program.ROM.IsVirtualROM)
             {//仮想ROMは更新できない
                 return;
@@ -723,17 +731,13 @@ namespace FEBuilderGBA
                 return;
             }
 
-            ToolWorkSupportForm f = (ToolWorkSupportForm)InputFormRef.JumpFormLow<ToolWorkSupportForm>();
-            f.IsSlientMode = true;
-            f.CheckUpdateSlientMain(Program.ROM.Filename);
-        }
-        void CheckUpdateSlientMain(string romfilename)
-        {
-            if (!Open(romfilename))
+            if (isAutoUpdate)
             {
-                return;
+                f.CheckUpdateSlientByThreadLow(Program.ROM.Filename);
             }
-            InitAutoFeedback();
+        }
+        void CheckUpdateSlientByThreadLow(string romfilename)
+        {
             if (!CheckUpdateTodayAndOverraideTime(romfilename))
             {
                 return;

@@ -23,3 +23,6 @@ INFO=盗賊の鍵を誰でも使えるように変更します。\r\nディフ�
 
 INFO.en=Change Lockpick to be available to everyone.\r\nBy default, it is only available to bandits (units with the bandit skill in their unit or class properties).\r\n\r\nChange to Anyone: Makes the lockpick available to everyone.
 INFO.zh=更改小偷的钥匙，以便任何人都可以使用它。\r\n默认仅适用于盗贼（单位或在职业特性中具有盗贼技能的单位）。\r\n\r\n更改为任何人：使其可供任何人使用。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

@@ -1,4 +1,4 @@
-NAME=Split Promotion Items 20200622(Installer)
+NAME=Split Promotion Items 20220622(Installer)
 TYPE=EA
 EA=SplitPromoItems.event
 PATCHED_IF:0xCC5F6=0xC0 0x46

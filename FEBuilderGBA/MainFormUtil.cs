@@ -38,6 +38,7 @@ namespace FEBuilderGBA
             }
             MainFormUtil.ClearModifiedFlag();
 
+            bool isOpen = false;
             string ext = U.GetFilenameExt(romfilename);
             if (ext == ".UPS")
             {
@@ -45,11 +46,11 @@ namespace FEBuilderGBA
                 ups.OpenUPS(romfilename, useReOpen, forceversion);
                 ups.ShowDialog();
 
-                return ups.DialogResult == DialogResult.OK;
+                isOpen = (ups.DialogResult == DialogResult.OK);
             }
             else if (ext == ".7Z")
             {
-                return OpenGBA7ZROM(romfilename, useReOpen, forceversion);
+                isOpen = OpenGBA7ZROM(romfilename, useReOpen, forceversion);
             }
             else
             {
@@ -57,13 +58,19 @@ namespace FEBuilderGBA
                 {
                     ReOpenMainForm();
                 }
-                bool r = Program.LoadROM(romfilename, forceversion);
-                if (r)
+                isOpen = Program.LoadROM(romfilename, forceversion);
+                if (isOpen)
                 {
-                    ToolWorkSupportForm.CheckUpdateSlientByThread();
+                    ToolWorkSupportForm.CheckUpdateSlientByThread(isAutoUpdate: true);
                 }
-                return r;
+                return isOpen;
             }
+
+            if (isOpen)
+            {
+                ToolWorkSupportForm.CheckUpdateSlientByThread(isAutoUpdate: false);
+            }
+            return isOpen;
         }
 
         public static void ReOpenMainForm()
