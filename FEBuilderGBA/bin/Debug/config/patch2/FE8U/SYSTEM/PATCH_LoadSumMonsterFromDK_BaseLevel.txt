@@ -1,0 +1,14 @@
+
+NAME=魔王の召喚で呼び出されるモンスターユニットのレベルの基礎値
+INFO=魔王が召喚を利用して呼び出されるモンスターのレベルの基礎値を指定します。\r\nこの値に乱数値を加えた値がモンスターのレベルになります。\r\nディフォルトは5です。\r\n\r\nhttps://github.com/FireEmblemUniverse/fireemblem8u/blob/074d78750b34cd6b0a8046303ade4048845b155e/src/mapanim_summon.c#L288
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7B2EC
+HEX=false
+NAME.en=Base level of monster units summoned by demon king summons
+INFO.en=Specifies the base value of the level of the monster summoned by the Demon King.\r\nThe monster's level is the value obtained by adding a random value to this value.\r\nDefault is 5.\r\n\r\nhttps://github.com/FireEmblemUniverse/fireemblem8u/blob/074d78750b34cd6b0a8046303ade4048845b155e/src/mapanim_summon.c#L288.
+NAME.zh=魔王召唤召唤出的魔物单位的基础等级
+INFO.zh=指定魔王召唤的怪物等级的基础值。\r\n怪物的等级就是这个值加上一个随机值得到的值。\r\n默认值为 5。\r\n\r\nhttps://github.com/FireEmblemUniverse/fireemblem8u/blob/074d78750b34cd6b0a8046303ade4048845b155e/src/mapanim_summon。c#L288。
