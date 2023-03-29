@@ -3665,7 +3665,11 @@ namespace FEBuilderGBA
                     return;
                 }
 
-                if (! CheckDeprecatedUI(patch))
+                if (!CheckDeprecatedUI(patch))
+                {
+                    return;
+                }
+                if (!CheckWarningUI(patch))
                 {
                     return;
                 }
