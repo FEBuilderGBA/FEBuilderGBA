@@ -1,0 +1,23 @@
+NAME=分岐メニュー(Install) 20230401
+NAME.en=Add Event: Split Menu 20230401
+
+INFO=カルチノとグラドに分岐する時に表示されるような分岐メニューを表示します。\r\nこれはText_ResetTileAllocationを追加したバージョンです。\r\n連続してメニューを表示し続けても不具合が発生しません。
+
+PATCHED_IF:$FGREP4 CallEventMenu.dmp=0x10 0xB5 0x04 0x1C
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:$FREEAREA:1=CommandEffect_EventCalledMenu.dmp
+BIN:$FREEAREA:2=CallEventMenu.dmp
+
+AUTHOR=Stan,circleseverywhere https://feuniverse.us/t/fe8u-doc-guide-analysing-extending-mimicking-the-lord-split-menu/2878 ,vesly  How to use: https://feuniverse.us/t/question-on-using-febuilder-for-split-path-menu/6483/6
+
+
+EVENTSCRIPT:1=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分岐メニュー [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	分岐メニューを表示(Split Menu)
+EVENTSCRIPT:1.en=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	CallEventMenu [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	Display Split Menu
+
+INFO.en=Displays a branching menu that will be displayed when branching to caricino and glado.\r\nThis is the version with Text_ResetTileAllocation added.\r\nIt does not cause any problems even if the menu is continuously displayed.
+
+NAME.zh=分支菜单(Install) 20230401
+INFO.zh=显示分支到caricino和glado时将显示的分支菜单。\r\nThis is the version with Text_ResetTileAllocation added.\r\nIt does not cause any problems even if the menu is continuously displayed.
+EVENTSCRIPT:1.zh=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分支菜单[XXXXXXXX:POINTER_MENUEXTENDS:菜单]	@STOREC	Display Split Menu
