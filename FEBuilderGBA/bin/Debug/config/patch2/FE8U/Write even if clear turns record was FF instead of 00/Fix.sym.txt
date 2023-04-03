@@ -1,0 +1,2 @@
+TrueExit=$0E
+FalseExit=$0A

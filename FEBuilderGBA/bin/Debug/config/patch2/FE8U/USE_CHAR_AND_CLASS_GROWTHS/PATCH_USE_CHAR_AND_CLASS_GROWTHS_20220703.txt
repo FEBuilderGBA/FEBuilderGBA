@@ -1,0 +1,15 @@
+NAME=DSFEスタイルの成長(成長率=ユニット成長 + クラス成長)(SkillSystems 20220703)
+NAME.en=Modern Character Growths (Growth = Character Growth + Class Growth)(SkillSystems 20220703)
+NAME.zh=DSFE风格增长（增长率=人物增长+阶级增长）(SkillSystems 20220703)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=$FGREP4ENDA+4 Get_Hp_Growth.dmp;;$FGREP4ENDA+4 Get_Str_Growth.dmp;;$FGREP4ENDA+12 Get_Mag_Growth_20220703.dmp;;$FGREP4ENDA+4 Get_Skl_Growth.dmp;;$FGREP4ENDA+4 Get_Spd_Growth.dmp;;$FGREP4ENDA+4 Get_Def_Growth.dmp;;$FGREP4ENDA+4 Get_Res_Growth.dmp;;$FGREP4ENDA+4 Get_Luk_Growth.dmp
+
+COMBO=Default(Vanilla)|0x0|Enable(ModernGrowths)|0x01
+
+INFO=これは、SKillSystems 20220703に対応したバージョンです。\r\n0だと無効です。1を設定すると有効になります。\r\nこのパッチでは、キャラクターの統計の成長率は、個人的な成長と、与えられた統計に対するクラスの成長の合計とみなされます。\r\nこれはゲームの自動レベルルーチンを変更しないので、成長率を変更する際にはこのことを念頭に置いてください。\r\n成長率=ユニット成長 + クラス成長
+INFO.en=This Patched supported by SkillSystems 20220703.\r\n0 is disable. 1 is enable.\r\nPatches the game to calculate growths using a different formula.\r\nCharacter Growths Per Stat = Growth Rate (Character Editor) + Growth Rate (Class Editor)\r\nNote that this does not alter the game's auto-level routines, so keep this in mind when changing growth rates.\r\n
+INFO.zh=This Patched supported by SkillSystems 20220703.\r\n0 is disable. 1 is enable.\r\n在这个补丁中，角色的统计增长率被视为个人增长和类别增长对特定统计数据的总和。\r\n在改变增长率时请记住这一点，因为这不会改变游戏的自动等级例程。\r\n增长率=人物增长+班级成长

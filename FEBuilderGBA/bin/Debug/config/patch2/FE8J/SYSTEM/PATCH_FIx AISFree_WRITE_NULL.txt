@@ -17,3 +17,7 @@ FIX:0x04F16=0x71 0x49 0x90 0x6B 0x08 0x60 0x00 0x28 0x06 0xD0 0x43 0x63 0x04 0xE
 AUTHOR=7743
 
 INFO=条件はよくわからないが、特定条件下で、AIS_Free関数がnullに書き込むときがあるので、そのバグを修正します。\r\nLDR r1, [PC, #0x1C4] @02029D84 gpAISFirst\r\nldr r0, [r2, #0x38]\r\nstr r0, [r1, #0x0]   //gpAISFirst\r\ncmp r0, #0x0\r\nBEQ #0x8004F2E\r\nstr r3, [r0, #0x34]\r\nB 0x8004f2e\r\n
+NAME.en=Fixed a bug that writes to null in the AIS_Free function.
+INFO.en=I'm not sure about the conditions, but under certain conditions, the AIS_Free function writes to null, so I'll fix that bug.\r\nLDR r1, [PC, #0x1C4] @02029D84 gpAISFirst.\r\nldr r0, [r2, #0x38].\r\nstr r0, [r1, #0x0].
+NAME.zh=修复了在 AIS_Free 函数中写入 null 的错误。
+INFO.zh=我不确定条件，但在某些条件下，AIS_Free 函数会写入 null，因此我会修复该错误。\r\nLDR r1，[PC，#0x1C4] @02029D84 gpAISFirst。\r\nldr r0，[r2，#0x38]。\r\nstr r0，[r1，#0x0]。

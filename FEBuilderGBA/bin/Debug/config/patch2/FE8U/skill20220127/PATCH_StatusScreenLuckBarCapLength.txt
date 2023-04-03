@@ -1,4 +1,4 @@
-NAME=Stat Bar Max Length Luck Caps(SkillSystems)
+NAME=Stat Bar Max Length Luck Caps(SkillSystems 20220703)
 IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 
 //アドレスパッチとして実装します
