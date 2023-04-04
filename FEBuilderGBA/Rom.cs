@@ -241,6 +241,8 @@ namespace FEBuilderGBA
         public uint monster_wmap_probability_2_pointer { get; protected set; }
         public uint monster_wmap_probability_after_1_pointer { get; protected set; }
         public uint monster_wmap_probability_after_2_pointer { get; protected set; }
+        public uint worldmap_skirmish_startevent_pointer { get; protected set; }
+        public uint worldmap_skirmish_endevent_pointer { get; protected set; }
         public uint battle_bg_pointer { get; protected set; } //戦闘背景
         public uint battle_terrain_pointer { get; protected set; } //戦闘地形
         public uint senseki_comment_pointer { get; protected set; } //戦績コメント

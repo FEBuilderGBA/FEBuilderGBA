@@ -8154,7 +8154,7 @@ r3=X tile position of menu of right	{U}
 089F35FC	&EVENT	Any event function	Bifurcation to Ephrata	{U}
 089FC6C4	&EVENT	Any event function	Mystery reinforcement data	{U}
 089FF480	&EVENT	Any event function	Mystery	7	{U}
-089FFD64	&EVENT	Debug Room Event	details unknown	{U}
+089FFD64	&EVENT	Worldmap Skirmish EndEvent	{U}
 08591F88	&EVENT	Any event function	Mystery	8	{U}
 08591F9C	&EVENT	Any event function	Mystery	9	{U}
 08591FA8	&EVENT	When a chest is opened, triggers the tile change and gives either an item (if slot3 <= 0xFF) or gold (if slot3 > 0xFF)	{U}
@@ -8801,7 +8801,7 @@ r3=X tile position of menu of right	{U}
 085D3E50	&EVENT	For debugging	Would you like to delete all saved data?	{J}
 085D4358	&EVENT	Communication stadium	Do you surrender?	{J}
 085D437C	&EVENT	Communication stadium	I can not give damage	Do you want to end it? 	{J}
-08A71E1C	&EVENT	For debugging	Mysterious branch	{J}
+08A71E1C	&EVENT	Worldmap Skirmish EndEvent	{J}
 08A71FC0	&EVENT	For debugging	Branch	1	{J}
 08A72038	&EVENT	For debugging	Branch	2	{J}
 08A720E0	&EVENT	For debugging	Branch	3	{J}
@@ -15523,3 +15523,5 @@ r3=X tile position of menu of right	{U}
 086B8780	:086B87B0	SleepAnimationOAM_Maybe	{J}	Relates to the start of sleep animation.If you break it, a strange character will appear when the animation is activated.
 080B9E00	CanSellTheItem	Can I sell items? .	r0=Quantity << 8 + Item ID.	{J}
 080B527C	CanSellTheItem	Can I sell items? .	r0=Quantity << 8 + Item ID.	{U}
+085A814C	gAITargetTileBreakingWallAndSnag	{U}
+085D2054	gAITargetTileBreakingWallAndSnag	{J}

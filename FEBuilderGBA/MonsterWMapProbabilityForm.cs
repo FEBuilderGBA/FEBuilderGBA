@@ -37,6 +37,9 @@ namespace FEBuilderGBA
             N2_B6.ValueChanged += N2_SUM;
             N2_B7.ValueChanged += N2_SUM;
             N2_B8.ValueChanged += N2_SUM;
+
+            SKIMISH_STARTEVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.worldmap_skirmish_startevent_pointer);
+            SKIMISH_ENDEVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.worldmap_skirmish_endevent_pointer);
         }
 
         public InputFormRef InputFormRef;
@@ -172,6 +175,19 @@ namespace FEBuilderGBA
                 InputFormRef.ReInitPointer((Program.ROM.RomInfo.monster_wmap_probability_2_pointer));
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "MonsterWMapProbabilityEphraim", new uint[] { });
             }
+            {
+                List<uint> tracelist = new List<uint>();
+                {
+                    uint p = Program.ROM.RomInfo.worldmap_skirmish_startevent_pointer;
+                    string name = R._("フリーマップ開始イベント");
+                    EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
+                }
+                {
+                    uint p = Program.ROM.RomInfo.worldmap_skirmish_endevent_pointer;
+                    string name = R._("フリーマップ終了イベント");
+                    EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
+                }
+            }
         }
 
         void N2_BaseNameUpdate(object sender,EventArgs e)
@@ -263,6 +279,25 @@ namespace FEBuilderGBA
             {
                 U.SelectedIndexSafety(N1_Filter, N2_Filter.SelectedIndex);
             }
+        }
+
+        private void JUMP_SKIMISH_STARTEVENT_Click(object sender, EventArgs e)
+        {
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>();
+            f.JumpTo((uint)SKIMISH_STARTEVENT.Value);
+        }
+
+        private void JUMP_SKIMISH_ENDEVENT_Click(object sender, EventArgs e)
+        {
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>();
+            f.JumpTo((uint)SKIMISH_ENDEVENT.Value);
+        }
+
+        private void EventWriteButton_Click(object sender, EventArgs e)
+        {
+            Program.ROM.write_p32(Program.ROM.RomInfo.worldmap_skirmish_startevent_pointer, (uint)SKIMISH_STARTEVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.worldmap_skirmish_endevent_pointer, (uint)SKIMISH_ENDEVENT.Value);
+            InputFormRef.ShowWriteNotifyAnimation(this, Program.ROM.RomInfo.worldmap_skirmish_startevent_pointer);
         }
 
         

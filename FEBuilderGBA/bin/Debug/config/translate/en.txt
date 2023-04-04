@@ -8572,6 +8572,12 @@ Monster 1
 :座標設定の2バイトの一番左が5の時のクラスが確率テーブル
 The class when coordinate settings of the leftmost 2 bytes is 5 = probability table
 
+:フリーマップ開始イベント
+Worldmap Skirmish StartEvent
+
+:フリーマップ終了イベント
+Worldmap Skirmish EndEvent
+
 :魔物が出現する拠点IDを指定します。
 Specify the World Map Node ID where the monster appears.
 

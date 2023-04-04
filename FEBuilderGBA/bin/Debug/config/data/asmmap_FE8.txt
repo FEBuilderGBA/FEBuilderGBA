@@ -8111,7 +8111,7 @@
 089F35FC	&EVENT	何かのイベント関数	エフラムへの分岐	{U}
 089FC6C4	&EVENT	何かのイベント関数	謎の増援データ	{U}
 089FF480	&EVENT	何かのイベント関数	謎	7	{U}
-089FFD64	&EVENT	デバッグルームイベント	詳細不明	{U}
+089FFD64	&EVENT	フリーマップ終了イベント	{U}
 08591F88	&EVENT	何かのイベント関数	謎	8	{U}
 08591F9C	&EVENT	何かのイベント関数	謎	9	{U}
 08591FA8	&EVENT	何かのイベント関数	謎	10	{U}
@@ -8773,7 +8773,7 @@
 085D3E50	&EVENT	デバッグ用	セーブデータをすべて消去しますか？	{J}
 085D4358	&EVENT	通信闘技場	降伏しますか？	{J}
 085D437C	&EVENT	通信闘技場	ダメージが与えられません。終了しますか？	{J}
-08A71E1C	&EVENT	デバッグ用	謎の分岐	{J}
+08A71E1C	&EVENT	フリーマップ終了イベント	{J}
 08A71FC0	&EVENT	デバッグ用	分岐	1	{J}
 08A72038	&EVENT	デバッグ用	分岐	2	{J}
 08A720E0	&EVENT	デバッグ用	分岐	3	{J}
@@ -15471,3 +15471,5 @@
 086B8780	:086B87B0	SleepAnimationOAM_Maybe	{J}	スリープアニメの開始に関係する。壊すとアニメ発動時に変な文字が出る。
 080B9E00	CanSellTheItem	アイテムを売却できるか？	r0=個数 << 8 + アイテムID	{J}
 080B527C	CanSellTheItem	アイテムを売却できるか？	r0=個数 << 8 + アイテムID	{U}
+085A814C	gAITargetTileBreakingWallAndSnag	{U}
+085D2054	gAITargetTileBreakingWallAndSnag	{J}

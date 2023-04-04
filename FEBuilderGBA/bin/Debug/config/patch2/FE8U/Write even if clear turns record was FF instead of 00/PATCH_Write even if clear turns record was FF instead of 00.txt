@@ -8,7 +8,7 @@ BIN:$FREEAREA=Fix.dmp
 JUMP:0x0A42E0:$r1=Fix.dmp
 
 AUTHOR=7743
-NAME.en=Write even if the clear turn number recording area is FF instead of 00.
-INFO.en=It seems that some ROMs or emulators are initialized with FF instead of 00 for recording clear turns.\r\nEven in such a case, the clear turn data can be memorized correctly.\r\nWhen using this patch, please also apply the "Clear turn list crash prevention" patch.\r\nIf you don't, you'll hang up when you refer to the FF data in the ending turn list.
-NAME.zh=即使清除圈数记录区为 FF 而不是 00 也写入。
-INFO.zh=似乎某些 ROM 或模拟器使用 FF 而不是 00 来初始化以记录清晰的转弯。\r\n即使在这种情况下，也可以正确存储明确的转弯数据。\r\n使用此补丁时，请同时应用“Clear turn list crash prevention”补丁。\r\n如果没有，你在结束回合列表中引用FF数据的时候就挂了。
+NAME.en=Write even if the clear turn number recording area is FF instead of 00
+INFO.en=It seems that some ROMs or emulators are initialized with FF instead of 00 for recording clear turns.\r\nEven in such a case, the clear turn data can be memorized correctly.\r\nWhen using this patch, please also apply the "Crash prevention in the clear turn list" patch.\r\nIf you don't, you'll hang up when you refer to the FF data in the ending turn list.
+NAME.zh=即使清除圈数记录区为 FF 而不是 00 也写入
+INFO.zh=似乎某些 ROM 或模拟器使用 FF 而不是 00 来初始化以记录清晰的转弯。\r\n即使在这种情况下，也可以正确存储明确的转弯数据。\r\n使用此补丁时，请同时应用“Crash prevention in the clear turn list”补丁。\r\n如果没有，你在结束回合列表中引用FF数据的时候就挂了。

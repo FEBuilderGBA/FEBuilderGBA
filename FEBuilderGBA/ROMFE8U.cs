@@ -243,7 +243,9 @@ namespace FEBuilderGBA
            monster_wmap_probability_1_pointer = 0xC17C4; 
            monster_wmap_probability_2_pointer = 0xC17FC; 
            monster_wmap_probability_after_1_pointer = 0xC1814; 
-           monster_wmap_probability_after_2_pointer = 0xC18D4; 
+           monster_wmap_probability_after_2_pointer = 0xC18D4;
+           worldmap_skirmish_startevent_pointer = 0x01540C;
+           worldmap_skirmish_endevent_pointer = 0x0832C0;
            battle_bg_pointer = 0x75A68;  //戦闘背景
            battle_terrain_pointer = 0x51E48;  //戦闘地形
            senseki_comment_pointer = 0x0;  //戦績コメント FE8にはない
