@@ -1,0 +1,8 @@
+PUSH
+    ORG 0x22E2C
+    jumpToHack(BattleForecast_OnBPress)
+POP
+
+ALIGN 4
+BattleForecast_OnBPress:
+#incbin "BattleForecastFix.dmp"

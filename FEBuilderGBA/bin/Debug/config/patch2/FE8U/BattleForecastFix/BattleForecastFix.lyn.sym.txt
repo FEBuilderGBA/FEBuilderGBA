@@ -1,0 +1,1 @@
+BattleForecast_OnBPress=$B88571

@@ -1,0 +1,11 @@
+PUSH
+    ORG 0x22E64
+    jumpToHack(BattleForecast_OnBPress)
+POP
+
+//Protect hooked function
+PROTECT 0x22E64 0x22E88
+
+ALIGN 4
+BattleForecast_OnBPress:
+#incbin "BattleForecastFix.dmp"

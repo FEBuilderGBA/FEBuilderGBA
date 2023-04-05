@@ -1,0 +1,15 @@
+NAME=戦闘予測修正 Battle Forecast Fix
+INFO=攻撃アイテムを選択した後のバトル予測で、ABボタンを超高速で入力した時に、グラフィックが壊れるバグを修正します。\r\nバニラでは猶予フレームは1秒(SkillSystemsだと4秒)で、それを越える速度でボタンを連打するとグラフィックが破壊されます。
+
+NAME.en=Battle Forecast Fix
+INFO.en=Small bug fix for entering and exiting the battle forecast quickly causing graphical issues.\r\nIn vanilla, the grace frame is 1 second (4 seconds in SkillSystems), and if the button is pressed repeatedly at a speed exceeding that, the graphics are destroyed.
+
+NAME.zh=Battle Forecast Fix
+INFO.zh=Small bug fix for entering and exiting the battle forecast quickly causing graphical issues.\r\nIn vanilla, the grace frame is 1 second (4 seconds in SkillSystems), and if the button is pressed repeatedly at a speed exceeding that, the graphics are destroyed.
+
+
+TYPE=EA
+PATCHED_IF:0x022E2C=0x00 0x4B 0x18 0x47
+EA=Installer.event
+
+AUTHOR=Contro https://feuniverse.us/t/contros-asm-lineup/13514/15
