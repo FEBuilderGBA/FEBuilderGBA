@@ -1,0 +1,27 @@
+NAME=ASMC_GetSuccessor(イベント命令)
+NAME.en=Add Event: ASMC_GetSuccessor
+NAME.zh=Add Event: ASMC_GetSuccessor
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetSuccessor.dmp=0xF0 0xB5 0x48 0x4C
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetSuccessor.dmp
+
+
+INFO=ユニットIDが入力されると、そのユニットの「後継者」を返します。後継者と見なされるには、他のユニットがその司令官と同じ入力ユニットIDを持ち（サポート7）、彼らと同じ忠誠心を持っている必要があります。また、ユニットを後継者と見なさないようにするための制限を指定することもできます。条件と制限に合致する最初のユニットがサセッサーとしてSlotCに返されます。
+INFO.en=Given a unit ID, returns their "sucessor". To be considered a potential sucessor, another unit must have the input unit ID as their commander (support 7) and have the same allegiance as them. You can also specify restrictions to prevent units from being considered sucessors. The first unit that matches the conditions and restrictions is returned SlotC as sucessor.
+INFO.zh=Given a unit ID, returns their "sucessor". To be considered a potential sucessor, another unit must have the input unit ID as their commander (support 7) and have the same allegiance as them. You can also specify restrictions to prevent units from being considered sucessors. The first unit that matches the conditions and restrictions is returned SlotC as sucessor.
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1093980111038070866
+
+EVENTSCRIPT:1=400DYY00{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor(LOW)	Slot1 = UnitID of commander, Slot2 = EnableNonBosses (if set to 0, generic units cannot be sucessors), Slot3 = EnableFemale (if set to 0, female units cannot be sucessors)	{COND}
+EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor(LOW)	Slot1 = UnitID of commander, Slot2 = EnableNonBosses (if set to 0, generic units cannot be sucessors), Slot3 = EnableFemale (if set to 0, female units cannot be sucessors)	{COND}
+EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor(LOW)	Slot1 = UnitID of commander, Slot2 = EnableNonBosses (if set to 0, generic units cannot be sucessors), Slot3 = EnableFemale (if set to 0, female units cannot be sucessors)	{COND}
+
+EVENTSCRIPT:2=40050100XXXX000040050200YY00000040050300ZZ000000400D0000{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor [XXXX:UNIT:UnitID of commander], [YYYY:BOOL:EnableNonBosses], [ZZZZ:BOOL:EnableFemale]	{COND}
+EVENTSCRIPT:2.en=40050100XXXX000040050200YY00000040050300ZZ000000400D0000{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor [XXXX:UNIT:UnitID of commander], [YYYY:BOOL:EnableNonBosses], [ZZZZ:BOOL:EnableFemale]	{COND}
+EVENTSCRIPT:2.zh=40050100XXXX000040050200YY00000040050300ZZ000000400D0000{$L1:ASMC_GetSuccessor.dmp}	ASMC_GetSuccessor [XXXX:UNIT:UnitID of commander], [YYYY:BOOL:EnableNonBosses], [ZZZZ:BOOL:EnableFemale]	{COND}
+
