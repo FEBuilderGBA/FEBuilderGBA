@@ -66,7 +66,8 @@ namespace FEBuilderGBA
 
             //For FE8  他シリーズでもとりあえず初期化だけはやる.
             this.InputFormRefTutorial = InitTutorial(this);
-            this.InputFormRefTutorial.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP0;
+            //this.InputFormRefTutorial.PostAddressListExpandsEvent += AddressListExpandsEventNoCopyP0;
+            this.InputFormRefTutorial.PostAddressListExpandsEvent += AddressListExpandsEventTutorial;
             this.InputFormRefTutorial.MakeGeneralAddressListContextMenu(true, true, (sender, e) =>{
                 this.CustomKeydownHandler(sender, e, this.InputFormRefTutorial);
             });
@@ -381,6 +382,27 @@ namespace FEBuilderGBA
             WriteButton.PerformClick();
         }
 
+        void AddressListExpandsEventTutorial(object sender, EventArgs arg)
+        {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+            U.ForceUpdate(this.EventPointer, addr);
+            InputFormRef.WriteButtonToYellow(WriteButton, false);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearP0Pointer");
+            addr = addr + (eearg.OldDataCount * eearg.BlockSize);
+
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                //種類が0だと終端がわからなくなるので、適当なものを入れる.
+                Program.ROM.write_u32(addr, 1);
+                addr += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+            WriteButton.PerformClick();
+        }
+
         //リストが拡張されたとき P0イベントポインタをNULLにする.
         void AddressListExpandsEventNoCopyP0(object sender, EventArgs arg)
         {
@@ -558,7 +580,9 @@ namespace FEBuilderGBA
                 , 4
                 , (int i, uint addr) =>
                 {//有効なポインタまで 基本的に0で停止
-                    return U.isPointer(Program.ROM.u32(addr + 0));
+                    uint a = Program.ROM.u32(addr + 0);
+                    if (a == 1) return true;
+                    return U.isPointer(a);
                 }
                 , (int i, uint addr) =>
                 {
