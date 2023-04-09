@@ -24,7 +24,7 @@ b   Loop
 Break:
 
 @占有バイトを求める
-lsl r0, r5, #0x3
+lsr r0, r5, #0x3
 
 mov r1, #0x7
 and r1, r5
