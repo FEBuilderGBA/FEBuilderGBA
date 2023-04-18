@@ -1,0 +1,132 @@
+#ifdef BATTLE_ANIMATION_NUMBERS
+
+  // Display numbers hovering over battle sprites
+  // indicating damage dealt/ HP healed.
+  // By Huichelaar. I got inspired by Lex Talionis.
+
+  PUSH
+  
+    // Re-load Miss/NoDamage palette.
+    ORG 0x6C6C0	//{U}
+    callHack_r3(BAN_ReloadPal)
+    //ORG 0x6E9E4	//{J}
+    //#define callHack_r3_FE8J(offset) "SHORT 0x4B01; BL(0xD65C8); SHORT 0xE001; POIN (offset|0x1)"	//{J}
+    //callHack_r3_FE8J(BAN_ReloadPal)	//{J}
+
+    // Start the Anim numbers animations.
+    ORG 0x52304	//{U}
+    //ORG 0x52FFC	//{J}
+    jumpToHack(BAN_HookAttack)
+    ORG 0x52A0C	//{U}
+    //ORG 0x536FC	//{J}
+    jumpToHack(BAN_HookHeal)
+    ORG 0x525E8	//{U}
+    //ORG 0x532DC	//{J}
+    jumpToHack(BAN_HookNosferatu1)
+    ORG 0x527A4	//{U}
+    //ORG 0x53494	//{J}
+    jumpToHack(BAN_HookNosferatu2)
+    
+    // Kill existing DamageMoji procs.
+    ORG 0x552D0	//{U}
+    //ORG 0x56278	//{J}
+    jumpToHack(BAN_KillDigits)
+
+    // NULL DamageMoji proc +0x60 pointer
+    // when the proc it points to gets de-allocated.
+    // Otherwise BAN_KillDigits might delete an unrelated
+    // proc that takes the newly freed procstatearray's slot.
+    ORG 0x06C70C	//{U}
+    //ORG 0x06EA30	//{J}
+    jumpToHack(BAN_DeAllocPointer)
+    SHORT 0x46C0
+
+    // Delay NODAMGEMIS graphics.
+    ORG 0x6C636	//{U}
+    SHORT 0x2103 0xF796 0xFB20	//{U} mov r1, #0x3 ; bl 0x08002c7c New6C
+    //ORG 0x6E95A	//{J}
+    //SHORT 0x2103 0xF794 0xF936	//{J} mov r1, #0x3 ; bl 0x08002bcc New6C
+
+    ORG 0x6C648	//{U}
+    //ORG 0x6E96C	//{J}
+    POIN BAN_Proc_DelayNODAMGEMIS
+    
+    // Add a custom zero digit to the Stat-up big digits.
+    ORG 0x5C85F8	//{U}
+    //ORG 0x5F2828	//{J}
+    WORD 0x00000000 0x00000000 0x00000000 0x88800000
+    WORD 0xAAD88000 0x8DD1D800 0x08111800 0x08111D80
+    WORD 0x00000000 0x00000000 0x00000000 0x00000888
+    WORD 0x00088DAA 0x008D1DD8 0x00811180 0x08D11180
+    ORG 0x5C89F8	//{U}
+    //ORG 0x5F2C28	//{J}
+    WORD 0x08BBBB80 0x08BBBB80 0x08AAAD80 0x08AAA800
+    WORD 0x8DAAD800 0x11D88000 0x88800000 0x00000000
+    WORD 0x08BBBB80 0x08BBBB80 0x08DAAA80 0x008AAA80
+    WORD 0x008DAAD8 0x00088D11 0x00000888 0x00000000
+  
+  POP
+  
+  ALIGN 4
+  BAN_ReloadPal:
+  #include "asm/ReloadPal.lyn.event"
+  
+  ALIGN 4
+  BAN_HookAttack:
+  #include "asm/HookAttack.lyn.event"
+  ALIGN 4
+  BAN_HookHeal:
+  #include "asm/HookHeal.lyn.event"
+  ALIGN 4
+  BAN_HookNosferatu1:
+  #include "asm/HookNosferatu1.lyn.event"
+  ALIGN 4
+  BAN_HookNosferatu2:
+  #include "asm/HookNosferatu2.lyn.event"
+  ALIGN 4
+  BAN_DisplayDamage:
+  #include "asm/DisplayDamage.lyn.event"
+
+  ALIGN 4
+  BAN_DeAllocPointer:
+  #include "asm/DeAllocPointer.lyn.event"
+
+  ALIGN 4
+  BAN_KillDigits:
+  #include "asm/KillDigits.lyn.event"
+  
+  // Palettes
+  ALIGN 4; BAN_DigitsPalette:
+  WORD 0x7BDE001F 0x57D30000 0x00000000 0x00000000
+  WORD 0x000014A5 0x6BD857D3 0x27CB0000 0x00000000
+  WORD 0x7BDE03E0 0x567E0000 0x00000000 0x00000000
+  WORD 0x000014A5 0x6B1E567E 0x257E0000 0x00000000
+  
+  // Delay NODAMGEMIS graphics.
+  ALIGN 4; BAN_DelayNODAMGEMIS:
+  WORD 0x4802B500 0xDF124902 0x4700BC01	//{U}
+  WORD 0x85BA0B8 0x6012000				//{U}
+  //WORD 0x4802B500 0xDF124902 0x4700BC01	//{J}
+  //WORD 0x85E42E8 0x6012000				//{J}
+
+  ALIGN 4; BAN_Proc_DelayNODAMGEMIS:
+  SHORT 0xE 0x1 0x0 0x0
+  SHORT 0x2 0x0; POIN BAN_DelayNODAMGEMIS|1
+  WORD 0x0 0x0
+  
+  // Delay Digits graphics.
+  ALIGN 4; BAN_DelayDigits:
+  #include "asm/DelayDigits.lyn.event"
+  ALIGN 4; BAN_Proc_DelayDigits:
+  SHORT 0xE 0x1 0x0 0x0
+  SHORT 0x2 0x0; POIN BAN_DelayDigits|1
+  WORD 0x0 0x0
+  
+  // FrameData for the AISes.
+  #include "FrameData/Digits1FD.event"
+  #include "FrameData/Digits2FD.event"
+  #include "FrameData/Digits3FD.event"
+  #include "FrameData/Digits4FD.event"
+  #include "FrameData/Digits5FD.event"
+
+#endif // BATTLE_ANIMATION_NUMBERS

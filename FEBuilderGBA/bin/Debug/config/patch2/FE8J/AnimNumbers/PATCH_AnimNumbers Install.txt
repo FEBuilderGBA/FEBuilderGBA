@@ -1,6 +1,6 @@
-NAME=AnimNumbers 戦闘アニメでダメージのポップアップ(Install)
-NAME.en=AnimNumbers Damage pop-up in battle anime(Installer)
-NAME.zh=AnimNumbers Damage pop-up in battle anime(Installer)
+NAME=AnimNumbers 戦闘アニメでダメージのポップアップ 20220205(Install)
+NAME.en=AnimNumbers Damage pop-up in battle anime 20220205(Installer)
+NAME.zh=AnimNumbers Damage pop-up in battle anime 20220205(Installer)
 TYPE=EA
 TAG=#ENGINE
 

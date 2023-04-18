@@ -1,10 +1,10 @@
-NAME=AnimNumbers 戦闘アニメでダメージのポップアップ 20220205(Install)
-NAME.en=AnimNumbers Damage pop-up in battle anime 20220205(Installer)
-NAME.zh=AnimNumbers Damage pop-up in battle anime 20220205(Installer)
+NAME=AnimNumbers 戦闘アニメでダメージのポップアップ 20230418(Install)
+NAME.en=AnimNumbers Damage pop-up in battle anime 20230418(Installer)
+NAME.zh=AnimNumbers Damage pop-up in battle anime 20230418(Installer)
 TYPE=EA
 TAG=#ENGINE
 
-PATCHED_IF:0x52304=0x00 0x4B 0x18 0x47
+PATCHED_IF:0x552D0=0x00 0x4B 0x18 0x47
 
 EA=Installer.event
 AUTHOR=Huichelaar
@@ -15,4 +15,4 @@ INFO.zh=Display numbers hovering over battle sprites indicating damage dealt/ HP
 USEFLAG=0xEE
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
-ALLOC_SIZE_HINT=6100
+ALLOC_SIZE_HINT=6128

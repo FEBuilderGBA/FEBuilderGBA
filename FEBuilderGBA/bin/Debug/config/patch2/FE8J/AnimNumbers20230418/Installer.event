@@ -1,0 +1,6 @@
+#include "Extensions/Hack Installation.txt"
+
+#define BATTLE_ANIMATION_NUMBERS_FLAG 0xEE
+
+#define BATTLE_ANIMATION_NUMBERS
+#include "AnimNumbers.event"
