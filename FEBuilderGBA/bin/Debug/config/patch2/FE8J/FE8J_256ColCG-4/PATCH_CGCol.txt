@@ -1,6 +1,6 @@
-NAME=256, 224色BGを利用できるようにする(Install)
-NAME.en=Using 256, 224 color BG(Installer)
-NAME.zh=Using 256, 224 color BG(Installer)
+NAME=256, 224色BGを利用できるようにする(256ColCG)(Install)
+NAME.en=Using 256, 224 color BG(256ColCG)(Installer)
+NAME.zh=Using 256, 224 color BG(256ColCG)(Installer)
 
 INFO=このパッチは、背景にTSAを利用しない256色、224色のBGを利用できるようにします。\r\n顔画像を出さないカットシーンでは256色画像を利用でき、顔画像を出す場合は224色画像まで利用できます。\r\nグラデーションがある絵など、TSAでは表示しにくい絵を表示したい場合に役に立ちます。
 INFO.en=This patch allows the use of 256-color and 224-color BGs that do not utilize TSA for the background.\r\nFor cut scenes that do not show portrait images, 256-color images can be used, and up to 224-color images can be used when portrait images are shown.\r\nThis is useful when you want to display pictures that are difficult to display with TSA, such as pictures with gradations.
