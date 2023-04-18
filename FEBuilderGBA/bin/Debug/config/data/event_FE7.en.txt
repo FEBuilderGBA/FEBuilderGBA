@@ -32,8 +32,8 @@
 3700000003000000XXXXXXXX	Load Units 3[XXXX:POINTER_UNIT:Units](LOUFILTERED2)	{U}
 30000000XXXXXXXX	Load Units, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1)	{LOADUNIT}	{J}
 32000000XXXXXXXX	Load Units, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1)	{LOADUNIT}	{U}
-30000000XXXXXXXX39000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1+ENUN)	{LOADUNIT}	{J}
-32000000XXXXXXXX3B000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1+ENUN)	{LOADUNIT}	{U}
+30000000XXXXXXXX39000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units] And Wait(LOU1+ENUN)	{LOADUNIT}	{J}
+32000000XXXXXXXX3B000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units] And Wait(LOU1+ENUN)	{LOADUNIT}	{U}
 31000000XXXXXXXX	Load Units[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
 33000000XXXXXXXX	Load Units[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
 31000000XXXXXXXX39000000	Load units and Move[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
@@ -42,16 +42,16 @@
 34000000XXXXXXXX	Load [XXXX:POINTER_UNIT:Units] (LOUFILTERED)	{U}
 34000000XXXXXXXX	Load [XXXX:POINTER_UNIT:Units] (LOU2)	{J}
 36000000XXXXXXXX	Load [XXXX:POINTER_UNIT:Units] (LOU2)	{U}
-25000000ZZ000000XXXXYYYYSS000000	Move Settig[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
-27000000ZZ000000XXXXYYYYSS000000	Move Settig[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
-25000000ZZ000000XXXXYYYYSS00000039000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE+ENUN)	{UNITMOVE}	{J}
-27000000ZZ000000XXXXYYYYSS0000003B000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE+ENUN)	{UNITMOVE}	{U}
-25000000ZZ000200XXXXXXXX	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
-27000000ZZ000200XXXXXXXX	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
-25000000ZZ000200XXXXXXXX39000000	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE+ENUN)	{UNITMOVE}	{J}
-27000000ZZ000200XXXXXXXX3B000000	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE+ENUN)	{UNITMOVE}	{U}
-22000000XX00YY00WW00VV00SS000000	Move Settig[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
-24000000XX00YY00WW00VV00SS000000	Move Settig[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
+25000000ZZ000000XXXXYYYYSS000000	Move[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
+27000000ZZ000000XXXXYYYYSS000000	Move[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
+25000000ZZ000000XXXXYYYYSS00000039000000	Move[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed] And Wait(MOVE+ENUN)	{UNITMOVE}	{J}
+27000000ZZ000000XXXXYYYYSS0000003B000000	Move[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:FSEC:Speed] And Wait(MOVE+ENUN)	{UNITMOVE}	{U}
+25000000ZZ000200XXXXXXXX	ManualMove Move[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
+27000000ZZ000200XXXXXXXX	ManualMove Move[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
+25000000ZZ000200XXXXXXXX39000000	ManualMove Move[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed] And Wait(MOVE+ENUN)	{UNITMOVE}	{J}
+27000000ZZ000200XXXXXXXX3B000000	ManualMove Move[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:FSEC:Speed] And Wait(MOVE+ENUN)	{UNITMOVE}	{U}
+22000000XX00YY00WW00VV00SS000000	Move[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{J}
+24000000XX00YY00WW00VV00SS000000	Move[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:FSEC:Speed](MOVE)	{UNITMOVE}	{U}
 64000000XX00YY00	[XX:MAPX:X][YY:MAPY:Y]Blink location in frame(CURF)	{WAKU}	{J}
 66000000XX00YY00	[XX:MAPX:X][YY:MAPY:Y]Blink location in frame(CURF)	{WAKU}	{U}
 56000000XXXXXXXX	[XXXXXXXX:POINTER_EVENT:event]Execute specified event (clear chapter) When chiefly speaking, use in chapter clear(JUMP)	{SUBROUTINE}	{J}
@@ -60,18 +60,18 @@
 6F000000XX000000	[XX:UNIT:Character]erase unit(REPA)	{UNITREMOVE}	{U}
 73000000XX00YY0000cc0000	[XX:MAPX:X][YY:MAPY:Y][ZZ::AI]Change AI ​​of unit in this location(CHAI)	{UNITPERSOLNAL}	{J}
 75000000XX00YY0000cc0000	[XX:MAPX:X][YY:MAPY:Y][ZZ::AI]Change AI ​​of unit in this location(CHAI)	{UNITPERSOLNAL}	{U}
-2D000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{J}
-2F000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{U}
-24000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{J}
-26000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{U}
-24000000ZZ000000XX00YY0039000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE+ENUN)	{UNITMOVE}	{J}
-26000000ZZ000000XX00YY003B000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE+ENUN)	{UNITMOVE}	{U}
-37000000ZZ00WW00XX00YY00	Move Setting[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{J}
-39000000ZZ00WW00XX00YY00	Move Setting[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{U}
-21000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{J}
-23000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{U}
-2C000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{J}
-2E000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{U}
+2D000000ZZ000000XX00YY00	Move[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{J}
+2F000000ZZ000000XX00YY00	Move[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{U}
+24000000ZZ000000XX00YY00	Move[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{J}
+26000000ZZ000000XX00YY00	Move[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{U}
+24000000ZZ000000XX00YY0039000000	Move[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y] And Wait(MOVE+ENUN)	{UNITMOVE}	{J}
+26000000ZZ000000XX00YY003B000000	Move[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y] And Wait(MOVE+ENUN)	{UNITMOVE}	{U}
+37000000ZZ00WW00XX00YY00	Move[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{J}
+39000000ZZ00WW00XX00YY00	Move[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{U}
+21000000XX00YY00WW00VV00	Move[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{J}
+23000000XX00YY00WW00VV00	Move[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{U}
+2C000000XX00YY00WW00VV00	Move[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{J}
+2E000000XX00YY00WW00VV00	Move[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{U}
 69000000XX000000	[XX:UNIT:Character]erase unit(DISA)	{UNITREMOVE}	{J}
 6B000000XX000000	[XX:UNIT:Character]erase unit(DISA)	{UNITREMOVE}	{U}
 82000000XX000000	[XX:MAPCHAPTER:Map]Map change(LOMA)	{MAP}	{J}

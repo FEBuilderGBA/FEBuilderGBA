@@ -793,8 +793,8 @@ Type
 :00=自分で決める
 00=Decide by yourself
 
-:01=背景(CG)
-01=Background (CG)
+:01=背景(BG,CG)
+01=Background (BG, CG)
 
 :02=戦闘背景
 02=Battle Backgrounds
@@ -816,6 +816,12 @@ Type
 
 :08=一枚絵マップチップ(10パレット)
 08=Single-Image Map Chip (10 palettes)
+
+:09=TSAを利用しないBG256色(カットシーン)
+09=BG256 colors without TSA (cutscene).
+
+:0A=TSAを利用しないBG224色(会話シーン用)
+0A=BG 224 colors that do not use TSA (for conversation scenes)
 
 :出力ファイル
 Output File
@@ -3226,6 +3232,9 @@ Split in Two
 :圧縮256色
 Compression 256 Colors
 
+:圧縮224色
+Compressed 224 Colors
+
 :TSAを利用しない
 Don't Use TSA
 
@@ -3619,6 +3628,9 @@ This data is reserved in the system as an image as a black background.\r\nWe rec
 :このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。
 This data is reserved as a random background used to display assistive conversations in the system menu.\r\nWe recommend that you do not change it.
 
+:このデータは、カットシーン用の255色画像として登録されいます。\r\n顔画像を表示した会話イベントでは利用しないでください。
+This data is registered as a 255-color image for cutscenes.\r\nDo not use in conversation events that display Portrait images.
+
 :警告: このデータはシステムで予約されています。\r\nこのデータを書き換えると予期せぬ動作を招くことになります。\r\nそれでも、本当に書き換えてもよろしいですか？
 Warning: This data is reserved by the system.\r\nRewriting this data will lead to unexpected behavior.\r\nStill, are you sure you want to rewrite it? 
 
@@ -3627,6 +3639,30 @@ TSA with header
 
 :背景画像
 Background Editor
+
+:バニラ形式。TSA方式を利用する方法でインポートする
+Vanilla format.Import by using the TSA method.
+
+:TSAを利用しないBG224色(会話用)
+BG 224 color without TSA (for conversation)
+
+:TSAを利用しないBG256色(カットシーン)
+BG 256 colors without TSA (cutscene)
+
+:インポートするBGの形式を指定してください。
+Please specify the format of the BG to be imported.
+
+:このモードでインポートする画像は、224色のみ利用しますが、顔画像を表示する会話シーンに利用できます。\r\n減色ツールの「0A=TSAを利用しないBG224色(会話シーン用)」で減色した画像を指定してください。
+Images imported in this mode use only 224 colors, but can be used for conversation scenes that display Portrait images.\r\nPlease specify an image that has been color-reduced with the color reduction tool "0A = BG224 color without TSA (for conversation scenes)".
+
+:このモードでインポートする画像は、256色すべてを利用できますが、顔画像を出さないカットシーンである必要があります。\r\n減色ツールの「09=TSAを利用しないBG256色(カットシーン)」で減色した画像を指定してください。
+Images imported in this mode can use all 256 colors, but must be cutscenes without Portrait images.\r\nPlease specify an image that has been color-reduced with the color reduction tool "09 = BG256 colors without TSA (cutscene)".
+
+:バニラの仕様であるTSAを利用した最大8パレットを指定します。\r\n減色ツールの「01=背景(BG,CG)」で減色した画像を指定してください。
+Specify up to 8 pallets using TSA, which is a vanilla specification.\r\nPlease specify the image whose color has been reduced with "01 = Background (BG, CG)" of the color reduction tool.
+
+:どの形式でインポートしますか?
+In what format do you want to import?
 
 :00=単体
 00=Alone
@@ -3824,7 +3860,7 @@ The header of the first 4 bytes of the portrait's unit image is corrupted. It is
 Only available for FE8.
 
 :顔画像を全部圧縮します。\r\nバニラに対してだと200-300kbの容量を得ることができます。\r\nすでに圧縮されているデータはスキップするので何度実行しても理論上は安全です。\r\n\r\n実行してもよろしいですか？
-Compress all face images.\r\nFor vanilla you can get 200-300kb of storage.\r\nIt skips data that has already been compressed, so it's theoretically safe to run multiple times.\r\n\r\nAre you sure you want to run it? 
+Compress all Portrait images.\r\nFor vanilla you can get 200-300kb of storage.\r\nIt skips data that has already been compressed, so it's theoretically safe to run multiple times.\r\n\r\nAre you sure you want to run it? 
 
 :口
 Mouth
@@ -12548,10 +12584,10 @@ Since 20220726, the compression ratio of lz77 has improved.\r\nRecompress the ex
 Recompress.
 
 :顔画像を圧縮する
-Compress facial images.
+Compress portrait images.
 
 :顔画像をlz77で圧縮することができます。\r\n既存の顔画像をスキャンして、圧縮敵る者はすべて圧縮します。\r\nバニラに対して実行すると、だいたい200kb-300kb程度容量を削減できます。
-Face images can be compressed with lz77.\r\nScan your existing facial images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
+Portrait images can be compressed with lz77.\r\nScan your existing portrait images and compress anything that doesn't compress.\r\nRunning against vanilla will save you roughly 200kb-300kb of space.
 
 :戦闘アニメOAM
 Battle animation OAM.

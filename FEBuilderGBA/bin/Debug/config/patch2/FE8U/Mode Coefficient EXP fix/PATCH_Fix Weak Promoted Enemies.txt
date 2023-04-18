@@ -8,7 +8,9 @@ TAG=#ENGINE #ESSENTIALFIXES
 ADDRESS=0x180b4
 COMBO=Fix|0x00 0x2a 0x00 0xdc 0x01 0x22|Default|0x18 0x56 0x82 0x42 0x04 0xDD
 
-INFO.en=Patches the ROM to remove the 10 level deficit that promoted enemies receive.\r\nAllows for enemies with higher stats.\r\n
+INFO=難易度ボーナスがマイナス（イージー/ノーマル）のとき、昇格した敵がオートレベルにならず、非常に弱くなることがある不具合を修正します。\r\n昇格した敵が、昇格したことによるオートレベル・ボーナスを常に得られるようにします。
+INFO.en=Fixes glitch causing promoted enemies to sometimes not autolevel and become very weak when difficulty level bonus is negative (easy/normal). Ensures promoted enemies always get the autolevel bonus for being promoted.\r\n
+INFO.zh=Fixes glitch causing promoted enemies to sometimes not autolevel and become very weak when difficulty level bonus is negative (easy/normal). Ensures promoted enemies always get the autolevel bonus for being promoted.\r\n
 
 AUTHOR=credit Gryz https://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
 AUTHOR.en=Gryz https://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3

@@ -343,14 +343,16 @@
             this.Method.FormattingEnabled = true;
             this.Method.Items.AddRange(new object[] {
             "00=自分で決める",
-            "01=背景(CG)",
+            "01=背景(BG,CG)",
             "02=戦闘背景",
             "03=ワールドマップ",
             "04=ワールドマップ(イベント用)",
             "05=TSAを利用しない256色",
             "06=ステータス画面の背景(FE8)",
             "07=一枚絵マップチップ(5パレット)",
-            "08=一枚絵マップチップ(10パレット)"});
+            "08=一枚絵マップチップ(10パレット)",
+            "09=TSAを利用しないBG256色(カットシーン)",
+            "0A=TSAを利用しないBG224色(会話シーン用)"});
             this.Method.Location = new System.Drawing.Point(316, 87);
             this.Method.Name = "Method";
             this.Method.Size = new System.Drawing.Size(638, 26);

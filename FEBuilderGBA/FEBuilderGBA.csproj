@@ -86,6 +86,12 @@
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtilLynDumpMode.cs" />
+    <Compile Include="ImageBGSelectPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBGSelectPopupForm.Designer.cs">
+      <DependentUpon>ImageBGSelectPopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SongUtilDPCM.cs" />
     <Compile Include="ToolBGMMuteDialogForm.cs">
       <SubType>Form</SubType>
@@ -2191,6 +2197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
       <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBGSelectPopupForm.resx">
+      <DependentUpon>ImageBGSelectPopupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapStyleEditorImportImageOptionForm.resx">
       <DependentUpon>MapStyleEditorImportImageOptionForm.cs</DependentUpon>

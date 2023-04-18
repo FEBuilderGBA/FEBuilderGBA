@@ -116,7 +116,8 @@
             "圧縮あり画像",
             "無圧縮画像",
             "2分割",
-            "圧縮256色"});
+            "圧縮256色",
+            "圧縮224色"});
             this.ImageOption.Location = new System.Drawing.Point(0, 100);
             this.ImageOption.Margin = new System.Windows.Forms.Padding(2);
             this.ImageOption.Name = "ImageOption";

@@ -53,6 +53,7 @@ namespace FEBuilderGBA
             g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
             g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
             g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
+            g_Cache_BG256ColorPatch = BG256ColorPatch.NoCache;
 
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
@@ -2459,6 +2460,51 @@ namespace FEBuilderGBA
                 }
             }
             return ExtendWeaponDescBoxPatch.NO;
+        }
+
+        //256色 BG
+        public enum BG256ColorPatch
+        {
+            NO,             //なし
+            BG256Color,
+            NoCache = (int)NO_CACHE
+        };
+        static BG256ColorPatch g_Cache_BG256ColorPatch = BG256ColorPatch.NoCache;
+        public static BG256ColorPatch BG256Color()
+        {
+            if (g_Cache_BG256ColorPatch == BG256ColorPatch.NoCache)
+            {
+                g_Cache_BG256ColorPatch = BG256ColorLow();
+            }
+            return g_Cache_BG256ColorPatch;
+        }
+        static BG256ColorPatch BG256ColorLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="BG256Color",	ver = "FE8J", addr = 0xE532,data = new byte[]{0xC0, 0x46,0xC0, 0x46}},
+                new PatchTableSt{ name="BG256Color",	ver = "FE8U", addr = 0xE2DA,data = new byte[]{0xC0, 0x46,0xC0, 0x46}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename;
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "BG256Color")
+                {
+                    return BG256ColorPatch.BG256Color;
+                }
+            }
+            return BG256ColorPatch.NO;
         }
     }
 }

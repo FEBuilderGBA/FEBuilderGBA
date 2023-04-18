@@ -165,6 +165,27 @@ namespace FEBuilderGBA
                 U.ForceUpdate(this.ConvertSizeMethod, 0);
                 IgnoreTSA.Checked = false;
             }
+            else if (Method.SelectedIndex == 9)
+            {//09=TSAを利用しないBG256色(カットシーン)
+                U.ForceUpdate(this.ConvertWidth, 30 * 8);
+                U.ForceUpdate(this.ConvertHeight, 20 * 8);
+                U.ForceUpdate(this.ConvertYohaku, 2 * 8);
+                U.ForceUpdate(this.ConvertPaletteNo, 16);
+                U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
+                IgnoreTSA.Checked = true;
+                //0A=TSAを利用しないBG224色(会話用)
+            }
+            else if (Method.SelectedIndex == 0xA)
+            {//0A=TSAを利用しないBG224色(会話用)
+                U.ForceUpdate(this.ConvertWidth, 30 * 8);
+                U.ForceUpdate(this.ConvertHeight, 20 * 8);
+                U.ForceUpdate(this.ConvertYohaku, 2 * 8);
+                U.ForceUpdate(this.ConvertPaletteNo, 14);
+                U.ForceUpdate(this.ConvertReserveColor, 1);
+                U.ForceUpdate(this.ConvertSizeMethod, 1);
+                IgnoreTSA.Checked = true;
+            }
         }
 
         private void AFileSelectButton_Click(object sender, EventArgs e)

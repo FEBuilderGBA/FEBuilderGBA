@@ -1,0 +1,49 @@
+#include "C/main.lyn.event"
+
+PUSH
+
+  // Draw NoNameBubbleSprite when no name active.
+  ORG 0x9193C //FE8U 0x8F668
+    jumpToHack(CGC_drawNoNameBubbleSprite)
+
+  // Supplement CGNameBox OAM with chatbubble OAM.
+  ORG 0x919AC //FE8U 0x8F6D8
+    POIN CGC_NameBubbleSpriteOAM
+  
+  // Make text transparent as well to avoid issues when fading out bubble.
+  ORG 0x91A40 //FE8U 0x8F76C
+    POIN CGC_TextSpriteOAM
+  
+  // No idea why this sprite exists, but it seems useless and ruins blend effect.
+  ORG 0x91AD8 //FE8U 0x8F804
+    SHORT 0x46C0 0x46C0
+  
+  ORG 0x90DE4 //FE8U 0x8EB10
+    jumpToHack(CGC_loadBubbleGfx)
+  
+  // Don't update BG0 screen entries (BG chatbubble).
+  ORG 0x910B4 //FE8U 0x8EDE0
+    BYTE 0xE
+  
+  #define callHack_r3_FE8J(offset) "SHORT 0x4B01; BL(0xD65C8); SHORT 0xE001; POIN (offset|0x1)"	//{J}
+  // Clear textbubble OBJVRAM.
+  ORG 0x9135C //FE8U 0x8F088
+    callHack_r3_FE8J(CGC_clearBubbleGfx)
+  
+  // Don't load text/dialogue palettes into BGPAL.
+  ORG 0xE532 //FE8U 0xE2DA
+    SHORT 0x46C0 0x46C0
+  
+  // Call CGC_LoadMultiPalBG if 256 or 224 col BG.
+  ORG 0xEA54 //FE8U 0xE844
+    jumpToHack(CGC_loadBGGfx)
+
+POP
+ALIGN 4; CGC_drawNoNameBubbleSprite:
+#include "drawNoNameBubbleSprite.lyn.event"
+ALIGN 4; CGC_loadBubbleGfx:
+#include "loadBubbleGfx.lyn.event"
+ALIGN 4; CGC_clearBubbleGfx:
+#include "clearBubbleGfx.lyn.event"
+ALIGN 4; CGC_loadBGGfx:
+#include "loadBGGfx.lyn.event"

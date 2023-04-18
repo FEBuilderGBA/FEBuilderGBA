@@ -670,6 +670,30 @@ namespace FEBuilderGBA
             UInt16[] tile = ByteToHeaderTSA(tsa, tsa_pos, width, height);
             return ByteToImage16TileInner(width, height, image, image_pos, palette, palette_pos, tile,0);
         }
+        //224BG色
+        public static Bitmap ByteToImage224BGTile(int width, int height, byte[] image, int image_pos, byte[] palette, int palette_pos)
+        {
+            byte[] pal = new byte[16 * 16 * 2];
+            Array.Copy(palette, palette_pos, pal, 0, 16 * 14 * 2);
+
+            byte[] img = new byte[width * height];
+            for (int i = 0; i < img.Length; i++)
+            {
+                int n = i + image_pos;
+                if (n >= image.Length)
+                {
+                    continue;
+                }
+                byte a = image[n];
+                if (a >= BG224StartPaletteIndex * 16)
+                {
+                    a -= 2 * 16;
+                }
+                img[i] = a;
+            }
+
+            return ByteToImage256Tile(width, height, img, 0, pal, 0);
+        }
 
         //256色
         public static Bitmap ByteToImage256Tile(int width, int height, byte[] image, int image_pos, byte[] palette, int palette_pos)
@@ -4628,5 +4652,30 @@ namespace FEBuilderGBA
 
             return path;
         }
+
+        const int BG224StartPaletteIndex = 2;
+
+        public static void Convert255ColorTo224Color(byte[] image)
+        {
+            for (int i = 0; i < image.Length; i += 1)
+            {
+                byte a = image[i];
+                if (a < BG224StartPaletteIndex * 16)
+                {
+                    continue;
+                }
+
+                if (a >= (16 - 2) * 16)
+                {
+                    a = 0;
+                }
+                else
+                {
+                    a += 16 * 2;
+                }
+                image[i] = a;
+            }
+        }
+
     }
 }

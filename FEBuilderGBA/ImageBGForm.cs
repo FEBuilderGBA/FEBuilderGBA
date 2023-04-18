@@ -47,9 +47,18 @@ namespace FEBuilderGBA
                 , 12
                 , (int i, uint addr) =>
                 {//読込最大値検索
+                    uint a0 = Program.ROM.u32(addr + 0);
+                    uint a1 = Program.ROM.u32(addr + 4);
+                    if (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color)
+                    {
+                        if (a1 <= 1)
+                        {
+                            return U.isPointerOrNULL(a0);
+                        }
+                    }
+
                     //0 と 4 がポインタであればデータがあると考える.
-                    return U.isPointerOrNULL(Program.ROM.u32(addr + 0))
-                        && U.isPointerOrNULL(Program.ROM.u32(addr + 4));
+                    return U.isPointerOrNULL(a0) && U.isPointerOrNULL(a1);
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
@@ -88,12 +97,26 @@ namespace FEBuilderGBA
             }
             if (!U.isPointer(tsa))
             {
+                if (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color)
+                {
+                    byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
+                    if (tsa == 0)
+                    {//256 color
+                        return ImageUtil.ByteToImage256Tile(32 * 8, 20 * 8, imageUZ, 0, Program.ROM.Data, (int)U.toOffset(palette));
+                    }
+                    else if (tsa == 1)
+                    {//224 color
+                        return ImageUtil.ByteToImage224BGTile(32 * 8, 20 * 8, imageUZ, 0, Program.ROM.Data, (int)U.toOffset(palette));
+                    }
+                }
+
                 return ImageUtil.BlankDummy();
             }
 
-            byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
-
-            return ImageUtil.ByteToImage16TileHeaderTSA(32 * 8, 20 * 8, imageUZ, 0, Program.ROM.Data, (int)U.toOffset(palette), Program.ROM.Data, (int)U.toOffset(tsa));
+            {
+                byte[] imageUZ = LZ77.decompress(Program.ROM.Data, U.toOffset(image));
+                return ImageUtil.ByteToImage16TileHeaderTSA(32 * 8, 20 * 8, imageUZ, 0, Program.ROM.Data, (int)U.toOffset(palette), Program.ROM.Data, (int)U.toOffset(tsa));
+            }
         }
         public static Bitmap DrawBG(uint id)
         {
@@ -114,7 +137,58 @@ namespace FEBuilderGBA
         private void ExportButton_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = DrawBG((uint)this.AddressList.SelectedIndex);
-            ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(), 8);
+            int palette_max = 8;
+            if (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color)
+            {
+                if (P4.Value <= 1)
+                {
+                    palette_max = 16;
+                }
+            }
+            ImageFormRef.ExportImage(this, bitmap, InputFormRef.MakeSaveImageFilename(), palette_max);
+        }
+
+        void ImportButton255(ImageBGSelectPopupForm.SelectedType selectType)
+        {
+            int width = 32 * 8;
+            int height = 20 * 8;
+            int palette_count = 16; //255 color
+            Bitmap bitmap = ImageUtil.LoadAndConvertDecolorUI(this, null, width, height, false, palette_count);
+            if (bitmap == null)
+            {
+                return;
+            }
+
+            byte[] image = ImageUtil.ImageToByte256Tile(bitmap, width, height);
+            byte[] tsa = new byte[0];
+
+            //パレット
+            byte[] palette = ImageUtil.ImageToPalette(bitmap, palette_count);
+            if (selectType == ImageBGSelectPopupForm.SelectedType.BG224)
+            {
+                ImageUtil.Convert255ColorTo224Color(image);
+            }
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                //画像等データの書き込み
+                Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+                this.InputFormRef.WriteImageData(this.P0, image, true, undodata);
+                this.InputFormRef.WriteImageData(this.P4, tsa, false, undodata);
+                this.InputFormRef.WriteImageData(this.P8, palette, false, undodata);
+                if (selectType == ImageBGSelectPopupForm.SelectedType.BG224)
+                {
+                    this.P4.Value = 1;
+                }
+                else
+                {
+                    this.P4.Value = 0;
+                }
+                Program.Undo.Push(undodata);
+            }
+
+            //ポインタの書き込み
+            this.WriteButton.PerformClick();
         }
 
         private void ImportButton_Click(object sender, EventArgs e)
@@ -122,6 +196,26 @@ namespace FEBuilderGBA
             if (!CheckDangerUpdate())
             {
                 return;
+            }
+
+            if (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color)
+            {
+                ImageBGSelectPopupForm f = (ImageBGSelectPopupForm)InputFormRef.JumpFormLow<ImageBGSelectPopupForm>();
+                f.ShowDialog();
+                if (f.Selected == ImageBGSelectPopupForm.SelectedType.BG224)
+                {
+                    ImportButton255(f.Selected);
+                    return;
+                }
+                else if (f.Selected == ImageBGSelectPopupForm.SelectedType.BG255)
+                {
+                    ImportButton255(f.Selected);
+                    return;
+                }
+                else if (f.Selected == ImageBGSelectPopupForm.SelectedType.None)
+                {
+                    return;
+                }
             }
 
             int width = 32 * 8;
@@ -170,22 +264,51 @@ namespace FEBuilderGBA
             for (int i = 0; i < InputFormRef.DataCount; i++ , addr += InputFormRef.BlockSize )
             {
                 string name = "BG " + U.To0xHexString(i);
-
-                FEBuilderGBA.Address.AddLZ77Pointer(list
-                    , addr + 0
-                    , name + " IMAGE"
-                    , isPointerOnly
-                    , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-                FEBuilderGBA.Address.AddHeaderTSAPointer(list
-                    , addr + 4
-                    , name + " TSA"
-                    , isPointerOnly
-                    );
-                FEBuilderGBA.Address.AddPointer(list
-                    , addr + 8
-                    , 0x20 * 8
-                    , name + " PALETTE"
-                    , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                uint tsa = Program.ROM.u32(addr + 4);
+                if (tsa == 0)
+                {//255色画像
+                    FEBuilderGBA.Address.AddLZ77Pointer(list
+                        , addr + 0
+                        , name + " 255 color IMAGE"
+                        , isPointerOnly
+                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                    FEBuilderGBA.Address.AddPointer(list
+                        , addr + 8
+                        , 0x20 * 16
+                        , name + " PALETTE"
+                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                }
+                else if (tsa == 1)
+                {//224色画像
+                    FEBuilderGBA.Address.AddLZ77Pointer(list
+                        , addr + 0
+                        , name + " 224 color IMAGE"
+                        , isPointerOnly
+                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                    FEBuilderGBA.Address.AddPointer(list
+                        , addr + 8
+                        , 0x20 * 16
+                        , name + " PALETTE"
+                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                }
+                else
+                {//普通の画像
+                    FEBuilderGBA.Address.AddLZ77Pointer(list
+                        , addr + 0
+                        , name + " IMAGE"
+                        , isPointerOnly
+                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                    FEBuilderGBA.Address.AddHeaderTSAPointer(list
+                        , addr + 4
+                        , name + " TSA"
+                        , isPointerOnly
+                        );
+                    FEBuilderGBA.Address.AddPointer(list
+                        , addr + 8
+                        , 0x20 * 8
+                        , name + " PALETTE"
+                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                }
             }
         }
 
@@ -193,7 +316,8 @@ namespace FEBuilderGBA
 
         private void DecreaseColorTSAToolButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
+            DecreaseColorTSAToolForm f = (DecreaseColorTSAToolForm)InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
+            f.InitMethod(1);
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
@@ -238,18 +362,38 @@ namespace FEBuilderGBA
             uint palette = U.toOffset(P8.Value);
             uint tsa = U.toOffset(P4.Value);
 
+            int imageType, tsaType, paletteCount;
+            if (tsa == 0)
+            {//255 color
+                imageType = 3;
+                tsaType = 0;
+                paletteCount = 16;
+            }
+            else if (tsa == 1)
+            {//224 color
+                imageType = 4;
+                tsaType = 0;
+                paletteCount = 16;
+            }
+            else
+            {
+                imageType = 0;
+                tsaType = 3;
+                paletteCount = 8;
+            }
+
             int width = 32 * 8;
             int height = 20 * 8;
             GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpFormLow<GraphicsToolForm>();
             f.Jump(width
                 , height
                 , image
-                , 0
+                , imageType
                 , tsa
-                , 3
+                , tsaType
                 , palette
                 , 0
-                , 8
+                , paletteCount
                 , 0);
             f.Show();
         }
@@ -264,6 +408,11 @@ namespace FEBuilderGBA
             else if (bgid == Program.ROM.RomInfo.bg_reserve_random_bgid)
             {
                 DetailErrorMessageBox.Text = R._("このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。");
+                DetailErrorMessageBox.Show();
+            }
+            else if (P4.Value == 0)
+            {
+                DetailErrorMessageBox.Text = R._("このデータは、カットシーン用の255色画像として登録されいます。\r\n顔画像を表示した会話イベントでは利用しないでください。");
                 DetailErrorMessageBox.Show();
             }
             else

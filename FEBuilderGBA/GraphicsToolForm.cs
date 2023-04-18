@@ -306,7 +306,7 @@ namespace FEBuilderGBA
         {
             byte[] image;
             int image_pos;
-            if (ImageOption.SelectedIndex == 0 || ImageOption.SelectedIndex == 3)
+            if (ImageOption.SelectedIndex == 0 || ImageOption.SelectedIndex == 3 || ImageOption.SelectedIndex == 4)
             {//圧縮画像
                 image = LZ77.decompress(Program.ROM.Data
                     , U.toOffset(Image.Value) );
@@ -369,6 +369,17 @@ namespace FEBuilderGBA
                 if (ImageOption.SelectedIndex == 3)
                 {///256
                     bitmap = ImageUtil.ByteToImage256Tile((int)PicWidth.Value * 8
+                        , (int)PicHeight.Value * 8
+                        , image
+                        , image_pos
+                        , palette
+                        , 0
+                        );
+                    this.USE_PALETTE_NUMBER.Text = "16";
+                }
+                else if (ImageOption.SelectedIndex == 4)
+                {///224
+                    bitmap = ImageUtil.ByteToImage224BGTile((int)PicWidth.Value * 8
                         , (int)PicHeight.Value * 8
                         , image
                         , image_pos

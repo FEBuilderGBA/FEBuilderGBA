@@ -1,0 +1,13 @@
+// Allows for 256-colour mode CGs.
+#ifndef _FE8_
+  ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include "Extensions/Hack Installation.txt"
+#include "EAstdlib.event"
+
+// Parameters, change these to fit your project.
+
+// Includes
+#include "src/src.event"
+#include "gfx/gfx.event"
