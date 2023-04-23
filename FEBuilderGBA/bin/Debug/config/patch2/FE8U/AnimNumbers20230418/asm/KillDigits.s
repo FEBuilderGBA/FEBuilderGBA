@@ -32,6 +32,7 @@ Loop:
     beq   Loop              @ Skip if subAnimeEmulator proc* is NULL.
       
       @ Kill subAnimeEmulator proc.
+      mov   r0, r6
       ldr   r3, =0x8002D6C|1 @EndProc	@{U}
       @ldr   r3, =0x8002CBC|1 @EndProc	@{J}
       bl    GOTO_R3
