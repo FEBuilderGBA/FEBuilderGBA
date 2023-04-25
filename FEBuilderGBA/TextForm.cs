@@ -66,6 +66,8 @@ namespace FEBuilderGBA
         {
             editor.AppendContentMenuBar();
             editor.AppendContentMenu(R._("読み上げ"), new EventHandler(OptionTextToSpeechByRichText));
+            editor.AppendContentMenu(R._("翻訳用の直列コピー"), new EventHandler(OptionJoinCopyByRichText));
+
             if (PatchUtil.SearchIrregularFontPatch() == PatchUtil.IrregularFont_enum.NarrowFont)
             {
                 editor.AppendContentMenuBar();
@@ -1930,6 +1932,22 @@ namespace FEBuilderGBA
             }
             RichTextBoxEx editor = (RichTextBoxEx)sender;
             TextToSpeechForm.OptionTextToSpeech(editor.Text2);
+        }
+        void OptionJoinCopyByRichText(Object sender, EventArgs e)
+        {
+            if ((sender is MenuItem))
+            {
+                sender = ((MenuItem)sender).GetContextMenu().SourceControl;
+            }
+            if (!(sender is RichTextBoxEx))
+            {
+                return;
+            }
+            RichTextBoxEx editor = (RichTextBoxEx)sender;
+            string str = editor.Text2;
+            str = TextForm.StripAllCode(TextForm.ConvertEscapeTextRev(str));
+            str = TextToSpeechForm.TextJoinCopy(str, useSentensLineBreak: true);
+            Clipboard.SetText(str);
         }
         void OptionConvertAnrrowFont(Object sender, EventArgs e)
         {

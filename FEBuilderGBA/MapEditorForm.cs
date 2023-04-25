@@ -561,6 +561,7 @@ this.MapObjImage);
                 }
             }
 
+
             int mapChangeIndex = MapChange.SelectedIndex;
             if (mapChangeIndex == 0)
             {//メインだけ
@@ -598,7 +599,6 @@ this.MapObjImage);
                         , GraphicsUnit.Pixel);
                 }
 
-                MAP.Image = null;
                 MAP.Image = zoomPic;
             }
 

@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 362);
+            this.ClientSize = new System.Drawing.Size(847, 347);
             this.Controls.Add(this.IconPictureBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.VoiceComboBox);

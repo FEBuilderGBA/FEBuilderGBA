@@ -106,8 +106,51 @@ namespace FEBuilderGBA
                 ,"。。","。"    ///No Translate
                 ,"、、","、"    ///No Translate
                 ,",,",","    ///No Translate
+                ,"..","."    ///No Translate
                 ,"\"",""    ///No Translate
         };
+        static string[] ConvertTableEN = new string[]{
+                 "・",""    ///No Translate
+                ,"【",""    ///No Translate
+                ,"】",""    ///No Translate
+                ,"「",""    ///No Translate
+                ,"」",""    ///No Translate
+                ,"！","。"    ///No Translate
+                ,"!","."    ///No Translate
+                ,"\r\n"," "    ///No Translate
+                ,"。。","."    ///No Translate
+                ,"、、","、"    ///No Translate
+                ,",,",","    ///No Translate
+                ,"..","."    ///No Translate
+                ,"\"",""    ///No Translate
+        };
+        public static string TextJoinCopy(string str, bool useSentensLineBreak)
+        {
+            string text;
+            if (Program.ROM.RomInfo.is_multibyte)
+            {
+                text = U.table_replace(str, ConvertTable);
+            }
+            else
+            {
+                text = U.table_replace(str, ConvertTableEN);
+            }
+            if (useSentensLineBreak)
+            {
+                if (Program.ROM.RomInfo.is_multibyte)
+                {
+                    text = text.Replace("。", "。\r\n");   ///No Translate
+                    text = text.Replace("\r\n、", "\r\n");   ///No Translate
+                }
+                else
+                {
+                    text = text.Replace(".", ".\r\n");   ///No Translate
+                    text = text.Replace("\r\n,", "\r\n");   ///No Translate
+                }
+            }
+
+            return text;
+        }
         public static void Speak(string str, bool isForce = false)
         {
             if (g_VoiceSpeeach == null)
@@ -115,7 +158,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            str = U.table_replace(str, ConvertTable);
+            str = TextJoinCopy(str, useSentensLineBreak: false);
             if (str.Length <= 0)
             {
                 return;

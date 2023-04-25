@@ -10840,6 +10840,9 @@ Reduce Sound Quality
 :8000=8000Hz(一般的なツールでの最低音質)
 8000=8000Hz(lowest sound quality with common tools)
 
+:13379=13379Hz(楽器でよく使われる音質)
+13379=13379Hz (sound quality often used in musical instruments).
+
 :42048=42048Hz(M4A最高音質)
 42048=42048Hz(M4A highest sound quality)
 
@@ -11571,6 +11574,9 @@ Title
 
 :読み上げ
 Text to Speech
+
+:翻訳用の直列コピー
+Serial copy for translation
 
 :NarrowFont変換
 Narrow Font conversion
