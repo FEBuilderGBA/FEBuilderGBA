@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NotChangeButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
             this.InstrumentSelectComboBox = new System.Windows.Forms.ComboBox();
             this.Instrument = new System.Windows.Forms.NumericUpDown();
             this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NotChangeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Instrument)).BeginInit();
             this.SuspendLayout();
@@ -50,15 +50,26 @@
             this.panel1.Location = new System.Drawing.Point(10, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(677, 270);
+            this.panel1.Size = new System.Drawing.Size(728, 270);
             this.panel1.TabIndex = 0;
+            // 
+            // NotChangeButton
+            // 
+            this.NotChangeButton.Location = new System.Drawing.Point(8, 230);
+            this.NotChangeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NotChangeButton.Name = "NotChangeButton";
+            this.NotChangeButton.Size = new System.Drawing.Size(340, 28);
+            this.NotChangeButton.TabIndex = 1;
+            this.NotChangeButton.Text = "ディフォルト値から変更しない";
+            this.NotChangeButton.UseVisualStyleBackColor = true;
+            this.NotChangeButton.Click += new System.EventHandler(this.NotChangeButton_Click);
             // 
             // OKButton
             // 
             this.OKButton.Location = new System.Drawing.Point(377, 230);
             this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(272, 28);
+            this.OKButton.Size = new System.Drawing.Size(347, 28);
             this.OKButton.TabIndex = 0;
             this.OKButton.Text = "選択する";
             this.OKButton.UseVisualStyleBackColor = true;
@@ -71,7 +82,7 @@
             this.InstrumentSelectComboBox.Location = new System.Drawing.Point(354, 177);
             this.InstrumentSelectComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.InstrumentSelectComboBox.Name = "InstrumentSelectComboBox";
-            this.InstrumentSelectComboBox.Size = new System.Drawing.Size(295, 26);
+            this.InstrumentSelectComboBox.Size = new System.Drawing.Size(370, 26);
             this.InstrumentSelectComboBox.TabIndex = 2;
             this.InstrumentSelectComboBox.SelectedIndexChanged += new System.EventHandler(this.InstrumentSelectComboBox_SelectedIndexChanged);
             // 
@@ -111,24 +122,13 @@
             this.label1.Text = "曲を演奏するときに利用する楽器を選択してください。\r\nディフォルトは現在の曲の楽器アドレスになっています。\r\n\r\nmidi楽器とFEの楽器は、並び順が違うので、注" +
     "意してください。\r\n自分で楽器の順番を調整するか、\r\nNIMAP(Native Instrument Map)パッチを利用してください。";
             // 
-            // NotChangeButton
-            // 
-            this.NotChangeButton.Location = new System.Drawing.Point(8, 230);
-            this.NotChangeButton.Margin = new System.Windows.Forms.Padding(4);
-            this.NotChangeButton.Name = "NotChangeButton";
-            this.NotChangeButton.Size = new System.Drawing.Size(340, 28);
-            this.NotChangeButton.TabIndex = 1;
-            this.NotChangeButton.Text = "ディフォルト値から変更しない";
-            this.NotChangeButton.UseVisualStyleBackColor = true;
-            this.NotChangeButton.Click += new System.EventHandler(this.NotChangeButton_Click);
-            // 
             // SongTrackImportSelectInstrumentForm
             // 
             this.AcceptButton = this.OKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(698, 284);
+            this.ClientSize = new System.Drawing.Size(751, 284);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SongTrackImportSelectInstrumentForm";

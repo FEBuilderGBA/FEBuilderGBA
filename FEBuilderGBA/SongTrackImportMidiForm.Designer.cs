@@ -79,7 +79,7 @@
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(264, 28);
             this.OKButton.TabIndex = 0;
-            this.OKButton.Text = "選択する";
+            this.OKButton.Text = "インポートする";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
@@ -90,7 +90,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 489);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(688, 259);
+            this.tabControl1.Size = new System.Drawing.Size(721, 259);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -101,7 +101,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(680, 227);
+            this.tabPage1.Size = new System.Drawing.Size(713, 227);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "FEBuilderGBAでインポート";
             // 
@@ -115,7 +115,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(680, 227);
+            this.tabPage2.Size = new System.Drawing.Size(713, 227);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "mid2agbでインポート";
             // 
@@ -149,7 +149,7 @@
             this.Explain_mid2agb.Multiline = true;
             this.Explain_mid2agb.Name = "Explain_mid2agb";
             this.Explain_mid2agb.ReadOnly = true;
-            this.Explain_mid2agb.Size = new System.Drawing.Size(628, 108);
+            this.Explain_mid2agb.Size = new System.Drawing.Size(691, 108);
             this.Explain_mid2agb.TabIndex = 177;
             this.Explain_mid2agb.Text = "mid2agbで音楽をインポートします。\r\nループを作りたい場合は、DTMソフトでmidiにループラベルを入れてください。\r\n[ と ] のラベルを入れると、その" +
     "間がループとして変換されます。";
@@ -172,7 +172,7 @@
             this.customColorGroupBox2.Controls.Add(this.label2);
             this.customColorGroupBox2.Location = new System.Drawing.Point(13, 228);
             this.customColorGroupBox2.Name = "customColorGroupBox2";
-            this.customColorGroupBox2.Size = new System.Drawing.Size(687, 242);
+            this.customColorGroupBox2.Size = new System.Drawing.Size(720, 242);
             this.customColorGroupBox2.TabIndex = 176;
             this.customColorGroupBox2.TabStop = false;
             this.customColorGroupBox2.Text = "みょーん補正";
@@ -184,7 +184,7 @@
             this.tabControl2.Location = new System.Drawing.Point(11, 65);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(650, 177);
+            this.tabControl2.Size = new System.Drawing.Size(703, 177);
             this.tabControl2.TabIndex = 8;
             // 
             // MuoonTabPage1
@@ -197,7 +197,7 @@
             this.MuoonTabPage1.Location = new System.Drawing.Point(4, 28);
             this.MuoonTabPage1.Name = "MuoonTabPage1";
             this.MuoonTabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.MuoonTabPage1.Size = new System.Drawing.Size(642, 145);
+            this.MuoonTabPage1.Size = new System.Drawing.Size(695, 145);
             this.MuoonTabPage1.TabIndex = 0;
             this.MuoonTabPage1.Text = "オプション";
             // 
@@ -254,7 +254,7 @@
             this.MuoonTabPage2.Location = new System.Drawing.Point(4, 28);
             this.MuoonTabPage2.Name = "MuoonTabPage2";
             this.MuoonTabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.MuoonTabPage2.Size = new System.Drawing.Size(642, 145);
+            this.MuoonTabPage2.Size = new System.Drawing.Size(695, 145);
             this.MuoonTabPage2.TabIndex = 1;
             this.MuoonTabPage2.Text = "古いオプション";
             // 
@@ -316,7 +316,7 @@
             this.customColorGroupBox3.Controls.Add(this.label3);
             this.customColorGroupBox3.Location = new System.Drawing.Point(6, 11);
             this.customColorGroupBox3.Name = "customColorGroupBox3";
-            this.customColorGroupBox3.Size = new System.Drawing.Size(672, 155);
+            this.customColorGroupBox3.Size = new System.Drawing.Size(700, 155);
             this.customColorGroupBox3.TabIndex = 177;
             this.customColorGroupBox3.TabStop = false;
             this.customColorGroupBox3.Text = "トリミング";
@@ -360,7 +360,7 @@
             this.customColorGroupBox1.Controls.Add(this.Instrument);
             this.customColorGroupBox1.Location = new System.Drawing.Point(13, 13);
             this.customColorGroupBox1.Name = "customColorGroupBox1";
-            this.customColorGroupBox1.Size = new System.Drawing.Size(688, 199);
+            this.customColorGroupBox1.Size = new System.Drawing.Size(721, 199);
             this.customColorGroupBox1.TabIndex = 1;
             this.customColorGroupBox1.TabStop = false;
             this.customColorGroupBox1.Text = "楽器";
@@ -383,7 +383,7 @@
             this.InstrumentSelectComboBox.Location = new System.Drawing.Point(356, 159);
             this.InstrumentSelectComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.InstrumentSelectComboBox.Name = "InstrumentSelectComboBox";
-            this.InstrumentSelectComboBox.Size = new System.Drawing.Size(325, 26);
+            this.InstrumentSelectComboBox.Size = new System.Drawing.Size(354, 26);
             this.InstrumentSelectComboBox.TabIndex = 1;
             this.InstrumentSelectComboBox.SelectedIndexChanged += new System.EventHandler(this.InstrumentSelectComboBox_SelectedIndexChanged);
             // 
@@ -418,7 +418,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(712, 756);
+            this.ClientSize = new System.Drawing.Size(745, 756);
             this.Controls.Add(this.customColorGroupBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.customColorGroupBox1);

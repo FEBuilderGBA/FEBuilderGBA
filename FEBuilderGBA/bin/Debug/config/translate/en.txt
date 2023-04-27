@@ -199,8 +199,8 @@ Target AI 30
 :標的AI38
 Target AI 38
 
-:もし致死ダメージを与えられる敵なら、この項目のTPは50固定です（優先度無視）\r\n\r\n致死ダメージを与えられない場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n加算されるTP上限は40です。（上限は優先度を乗算した値にかかります）
-If the enemy can deal a finishing blow, the TP for this item is fixed at 50 (ignoring priority).\r\n\r\nTP for non-lethal damage is calculated as "Hit Points x Damage/100". Note that follow-up attacks aren't accounted for.\r\nThe maximum TP that can be added is 40. (The limit is multiplied by the priority)
+:敵にとどめを刺せる場合、このアイテムのTPは50(優先度無視)に固定されます。\r\n非致死ダメージのTPは「ヒットポイント×ダメージ/100」で計算されます。\r\n追撃は考慮されないので注意してください。\r\n追加できるTPの最大値は40です。(優先度無視)
+If the enemy can deal a finishing blow, the TP for this item is fixed at 50 (ignoring priority).\r\n\r\nTP for non-lethal damage is calculated as "Hit Points x Damage/100". Note that follow-up attacks aren't accounted for.\r\nThe maximum TP that can be added is 40 (ignoring priority).
 
 :「20-敵の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。この計算が0以下になれば0です。\r\n例を挙げると、HP30の敵に25ダメージを与えられるとすると、敵の残りHPは5なので、20-5=15で「15」が計算結果です。
 Calculated as "20 - enemy's remaining HP", while assuming that all attacks will hit. If this calculation is equal or less than 0, it's set to 0.\r\nFor example, suppose that you deal 25 damage to an enemy with 30 HP.\r\nThe enemy's remaining HP is 5, so 20-5 = 15, so 15 is the final result.
@@ -1018,7 +1018,7 @@ Data Structure Options
 :値:
 Select:
 
-:インポート
+:インポートする
 Import
 
 :ダンプしていたデータのインポート
@@ -3933,9 +3933,6 @@ Black off the edge
 
 :フレーム:
 Flame:
-
-:インポートする
-Import
 
 :この画像は16色を超えているので、減色処理が必要です
 Since this image exceeds 16 colors, color reduction processing is necessary
@@ -11038,9 +11035,6 @@ Import Music
 :mid2agbが設定されていません。\r\n設定画面より、mid2agbの設定をしてください。
 mid2agb is not set.\r\nPlease set mid2agb's path from the Options screen.
 
-:選択する
-Select
-
 :FEBuilderGBAでインポート
 Import with FEBuilderGBA
 
@@ -11052,6 +11046,9 @@ Master Volume
 
 :mid2agbで音楽をインポートします。\r\nループを作りたい場合は、DTMソフトでmidiにループラベルを入れてください。\r\n[ と ] のラベルを入れると、その間がループとして変換されます。
 Music will be imported with mid2agb.\r\nTo create a loop, set two labels using DTM software (Anvil Studio, Domino).\r\nThe labels needed are "[" and "]".
+
+:選択する
+Select
 
 :みょーん補正
 Pitch Correction

@@ -341,7 +341,7 @@
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(283, 28);
             this.OKButton.TabIndex = 15;
-            this.OKButton.Text = "インポート";
+            this.OKButton.Text = "インポートする";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 

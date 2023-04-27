@@ -216,7 +216,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 87;
-            this.label6.Text = "インポート";
+            this.label6.Text = "インポートする";
             // 
             // ImportButton
             // 
