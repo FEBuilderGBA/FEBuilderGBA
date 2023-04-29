@@ -23,7 +23,7 @@ CheckMAP:
 ldr  r0,[r4,#0x00]  @     Check Term
 ldr  r1,=0xFFFFFFFF
 cmp  r0,r1
-beq  load_defualt   @     見つからないのでディフォルト動作
+beq  load_default   @     見つからないのでディフォルト動作
 
 ldrb r0,[r4,#0x00]  @     B0:MAPID=MAPID(0xFF=ANY)
 cmp  r0,#0xFF       @     ANY MAPID ?
@@ -75,7 +75,7 @@ blh  0x08009fa8     @FE8J GetStringFromIndex TextID=r0 Result=r0:buffer
 @blh  0x0800a240     @FE8U GetStringFromIndex TextID=r0 Result=r0:buffer
 b    Exit
 
-load_defualt:
+load_default:
 mov r0 ,r7
 blh 0x08019f18      @FE8J GetTerrainNameString
 @blh 0x0801a240      @FE8U GetTerrainNameString

@@ -20,7 +20,7 @@ ldr r0, [r0]
 blh 0x08002dec   @Find6C	@{J}
 @blh 0x08002e9c   @Find6C	@{U}
 cmp r0, #0x0
-beq defualt_bg
+beq default_bg
 
 add r0, #0x61
 ldrb r6, [r0, #0x0]  @店の種類の一時保存
@@ -58,7 +58,7 @@ Loop:
 add  r4,#0x8        @     次のデータへ
 ldr  r0,[r4,#0x00]  @     Check EOF
 cmp  r0,#0x0
-beq  defualt_bg
+beq  default_bg
 
 CheckShopType:
 ldrb r0,[r4,#0x02]  @     B2:$COMBO ShopType.txt=type
@@ -126,7 +126,7 @@ ldr   r3,=0x080B9968    @FE8J 復帰	@{J}
 mov   pc,r3
 
 
-defualt_bg:       @見つからなかったのでディフォルトのルーチンへ復帰する
+default_bg:       @見つからなかったのでディフォルトのルーチンへ復帰する
 pop {r0,r6}
 mov r1, #0xe0
 lsl r1 ,r1 ,#0x1

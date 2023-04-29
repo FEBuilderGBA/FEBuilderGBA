@@ -1,6 +1,6 @@
 Table=$7C
 Loop=$0A
-load_defualt=$64
+load_default=$64
 CheckClass=$20
 CheckMAP=$32
 CheckEdition=$40

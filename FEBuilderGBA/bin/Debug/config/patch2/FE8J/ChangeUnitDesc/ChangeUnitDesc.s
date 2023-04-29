@@ -21,7 +21,7 @@ add  r5,#0x8        @     次のデータへ
 
 ldrh r0,[r5,#0x00]  @     W0:TextID
 cmp  r0,#0x0        @     データのポインタがない場合、終端とみなす.
-beq  load_defualt   @データがないので、ディフォルトの説明文をロードして終了!
+beq  load_default   @データがないので、ディフォルトの説明文をロードして終了!
 
 ldrb r0,[r5,#0x02]  @     B2:UNITID
 
@@ -80,7 +80,7 @@ Found:
 ldrh r2,[r5,#0x00]  @     W0:TEXTを採用
 b    Exit
 
-load_defualt:
+load_default:
 ldr  r1,[r4,#0x00]  @     RAMUNIT->ROMUNIT
 ldrh r2,[r1,#0x2]   @     ROMUNIT->Desc
 

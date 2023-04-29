@@ -7,7 +7,7 @@ TAG=#ENGINE
 
 ADDRESS=0x281E8 0x5C3E88
 
-INFO=支援レベルCになれるサポート値. Defualt:0x50
-INFO.en=Support value that can reach support level C. Defualt:0x50
+INFO=支援レベルCになれるサポート値. default:0x50
+INFO.en=Support value that can reach support level C. default:0x50
 NAME.zh=支撑价值达到支CB级。
-INFO.zh=可以达到支撑级别C的支撑值。 Defualt:0x50
+INFO.zh=可以达到支撑级别C的支撑值。 default:0x50

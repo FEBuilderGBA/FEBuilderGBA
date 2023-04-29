@@ -25,7 +25,7 @@ CheckMAP:
 ldr  r0,[r6,#0x00]  @     Check Term
 ldr  r1,=0xFFFFFFFF
 cmp  r0,r1
-beq  load_defualt   @     見つからないのでディフォルト動作
+beq  load_default   @     見つからないのでディフォルト動作
 
 ldrb r0,[r6,#0x00]  @     B0:MAPID=MAPID(0xFF=ANY)
 cmp  r0,#0xFF       @     ANY MAPID ?
@@ -50,7 +50,7 @@ beq  Loop           @     条件不一致なので、次のループへ continue
 Found:
 b    Exit
 
-load_defualt:
+load_default:
 mov  r0,r4           @     MiniMap Procs
 mov  r1,r5           @     ParentProcs
 blh  0x08004494      @New6C FE7U

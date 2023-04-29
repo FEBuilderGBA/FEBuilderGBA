@@ -5,8 +5,8 @@ TAG=#ENGINE
 
 ADDRESS=0x95A9A
 COMBO=Default|0x8A|章名を表示|0x70
-COMBO.en=Defualt|0x8A|Display Chapter name|0x70
-COMBO.zh=Defualt|0x8A|Display Chapter name|0x70
+COMBO.en=Default|0x8A|Display Chapter name|0x70
+COMBO.zh=Default|0x8A|Display Chapter name|0x70
 
 AUTHOR=aera
 INFO=進撃準備の章の目的が表示されている部分に、章名(タイトル)を表示するようにします。

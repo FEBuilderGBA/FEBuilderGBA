@@ -1,7 +1,7 @@
 Table=$84
 Loop=$06
 CheckMAP=$08
-load_defualt=$5A
+load_default=$5A
 CheckXY=$1E
 CheckTileID=$34
 CheckFlag=$40

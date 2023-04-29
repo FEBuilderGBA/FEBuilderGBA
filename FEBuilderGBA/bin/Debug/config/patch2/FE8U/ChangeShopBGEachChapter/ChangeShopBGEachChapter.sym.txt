@@ -1,4 +1,4 @@
-defualt_bg=$A8
+default_bg=$A8
 IsPrepShop=$14
 IsWorldMapShop=$24
 SetMapID=$32

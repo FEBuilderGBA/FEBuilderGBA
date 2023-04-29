@@ -57,7 +57,7 @@ ldrh r0, [r3,#0x04]
 b    Exit
 
 NotMatch:
-ldr  r0, =0x2D5  @Defualt SE
+ldr  r0, =0x2D5  @default SE
 
 Exit:
 @

@@ -5,7 +5,7 @@ NAME.en=Faster Level Ups
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default 20 frame sec|OFF|0 frame sec|ON0|1 frame sec|ON1|2 frame sec|ON2|5 frame sec|ON5|7 frame sec|ON7|10 frame sec|ONA|15 frame sec|ONF
+COMBO=Default 20 frame sec|OFF|0 frame sec|ON0|1 frame sec|ON1|2 frame sec|ON2|5 frame sec|ON5|7 frame sec|ON7|10 frame sec|ONA|15 frame sec|ONF
 
 COMBO.zh=默认 20 帧 秒|OFF|0 帧 秒|ON0|1 帧 秒|ON1|2 帧 秒|ON2|5 帧 秒|ON5|7 帧 秒|ON7|10 帧 秒|ONA|15 帧 秒|ONF
 

@@ -54,7 +54,7 @@ Loop:
 add  r4,#0x4        @     次のデータへ
 ldrh r0,[r4,#0x00]  @     W0:SONG=SongData
 cmp  r0,#0x0
-beq  defualt_bgm
+beq  default_bgm
 
 CheckShopType:
 ldrb r0,[r4,#0x02]  @     B2:$COMBO ShopType.txt=type
@@ -79,7 +79,7 @@ ldr  r3,=#0x080B4C10    @FE8U BGMを再生させるルーチンに復帰する.
 mov   pc,r3
 
 
-defualt_bgm:       @見つからなかったのでディフォルトのルーチンへ復帰する
+default_bgm:       @見つからなかったのでディフォルトのルーチンへ復帰する
 
 mov r0, r6
 add r0, #0x61

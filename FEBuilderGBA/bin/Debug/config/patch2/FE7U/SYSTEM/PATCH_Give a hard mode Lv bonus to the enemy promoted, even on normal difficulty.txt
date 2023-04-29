@@ -15,7 +15,7 @@ INFO=敵がクラス成長するとき、上級職は、Lvボーナスがもら�
 
 COMBO=ディフォルト|OFF|敵を強くする|TRA
 INFO.en=As enemies grow in class, promoted positions receive an Lv bonus.\r\nThe normal mode is Lv + 9 and the hard mode is +19.\r\nThis patch changes this to give a hard mode Lv bonus, even in normal mode, to make enemies in promoted positions stronger.\r\nThis patch was created based on "Normally strong promoteds".
-COMBO.en=default.|OFF|Make the enemy stronger.|TRA
+COMBO.en=Default.|OFF|Make the enemy stronger.|TRA
 INFO.zh=随着敌人在课堂上成长，高级职位获得Lv奖金。\r\n正常模式为Lv + 9，硬模式为+19。\r\n这个补丁改变了这一点，即使在正常模式下也能给出硬模式Lv加值，使高级位置的敌人变得更强。\r\n这个补丁是基于“普通强壮的老年人"创建的。
 COMBO.zh=默认。|OFF|让敌人更强大。|TRA
 NAME.zh=即使遇到困难，也可以在硬模式下为敌人提供更高级别的LV加值。

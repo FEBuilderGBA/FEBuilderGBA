@@ -25,11 +25,11 @@ add  r5,#0x8        @     次のデータへ
 
 ldrh r0,[r5,#0x00]  @     W0:Portrait
 cmp  r0,#0x0        @     データのポインタがない場合、終端とみなす.
-beq  load_defualt   @データがないので、ディフォルトの顔画像をロードして終了!
+beq  load_default   @データがないので、ディフォルトの顔画像をロードして終了!
 
 ldrb r0,[r5,#0x02]  @     B2:UNITID
 cmp  r0,#0x00       @     データのポインタがない場合、終端とみなす.
-beq  load_defualt   @データがないので、ディフォルトの顔画像をロードして終了!
+beq  load_default   @データがないので、ディフォルトの顔画像をロードして終了!
 
 ldr  r1,[r4,#0x00]  @     RAMUNIT->ROMUNIT
 ldrb r1,[r1,#0x4]   @     ROMUNIT->ID
@@ -84,7 +84,7 @@ ldr  r1,[r4,#0x00]  @     RAMUNIT->ROMUNIT  @戻り値に必須なのでここで代入.
 ldrh r0,[r5,#0x00]  @     W0:Portraitを採用
 b    Exit
 
-load_defualt:
+load_default:
 ldr  r1,[r4,#0x00]  @     RAMUNIT->ROMUNIT
 ldrh r0,[r1,#0x6]   @     ROMUNIT->ID
 

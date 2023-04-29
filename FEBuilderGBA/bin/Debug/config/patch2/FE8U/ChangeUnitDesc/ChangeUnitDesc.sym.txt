@@ -1,6 +1,6 @@
 Table=$78
 Loop=$0A
-load_defualt=$5E
+load_default=$5E
 CheckClass=$1C
 CheckMAP=$2E
 CheckEdition=$3C

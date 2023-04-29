@@ -7,7 +7,7 @@ TAG=#ENGINE
 
 ADDRESS=0x028244 0x59B9B0
 
-INFO=支援レベルAになれるサポート値. Defualt:0xF0
-INFO.en=Support value that can reach support level A. Defualt:0xF0
+INFO=支援レベルAになれるサポート値. default:0xF0
+INFO.en=Support value that can reach support level A. default:0xF0
 NAME.zh=达到支撑级别A的支撑值。
-INFO.zh=可以达到支持级别A的支持值。 Defualt:0xF0
+INFO.zh=可以达到支持级别A的支持值。 default:0xF0

@@ -24,7 +24,7 @@ Loop:
 add  r4,#0xC        @     次のデータへ
 ldr  r0,[r4,#0x04]  @     P4:ZIMAGE=Image
 cmp  r0,#0x00       @     データのポインタがない場合、終端とみなす.
-beq  load_defualt_bg     @データがないので、ディフォルトの背景をロードして終了!
+beq  load_default_bg     @データがないので、ディフォルトの背景をロードして終了!
 
 CheckMapID:
 ldrb r0,[r4,#0x00]  @     B0:MAPID=MAPID(0xFF=ANY)
@@ -64,7 +64,7 @@ Found:              @探索したデータにマッチした。
 ldr r0,[r4,#0x04]   @     背景画像
 ldr r1,=0xFFFFFFFF  @     FEBuilderGBAの都合 データが0件では困るのでダミーデータがあるよ
 cmp r0,r1
-beq load_defualt_bg
+beq load_default_bg
 
 ldr r0,[r4,#0x08]   @     パレット
 lsl r1 ,r5 ,#0x5
@@ -75,7 +75,7 @@ ldr r0,[r4,#0x04]   @     背景画像
 b Exit
 
 @設定がない場合は、ディフォルトの背景をロードする.
-load_defualt_bg:    @ディフォルトの設定をロードする
+load_default_bg:    @ディフォルトの設定をロードする
 
 ldr r0, =0x08088EFC @FE8J パレット
 ldr r0,[r0]         @     ポインタ参照することで、リポイントに耐える.

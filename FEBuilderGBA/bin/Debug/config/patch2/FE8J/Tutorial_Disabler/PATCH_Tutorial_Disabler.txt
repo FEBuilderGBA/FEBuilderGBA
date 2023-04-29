@@ -5,7 +5,7 @@ NAME.en=Tutorial Disabler
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=defualt|OFF|disable|ONN
+COMBO=Default|OFF|disable|ONN
 COMBO.zh=默认|OFF|禁用|ONN
 
 OFF:0x0e378=0x22 0xd0
