@@ -397,8 +397,7 @@ namespace FEBuilderGBA
             string url = U.at(this.Lines, "UPDATE_URL");
             if (url == "")
             {
-                R.ShowStopError("UPDATE_URLの項目がありません");
-                return ;
+                url = "@CHECK_URL";
             }
 
             string regex = U.at(this.Lines, "UPDATE_REGEX");
@@ -410,6 +409,10 @@ namespace FEBuilderGBA
 
             if (regex == "@DIRECT_URL")
             {//直リン
+            }
+            else if (url == "@CHECK_URL")
+            {//check_urlと同じ
+                url = U.at(this.Lines, "CHECK_URL");
             }
             else
             {
@@ -441,36 +444,36 @@ namespace FEBuilderGBA
         bool DownloadAndExtract(string download_url, InputFormRef.AutoPleaseWait pleaseWait)
         {
             string romdir = Path.GetDirectoryName(Program.ROM.Filename);
-            string update7z = Path.GetTempFileName();
+            string tempfile = Path.GetTempFileName();
 
             //ダウンロード
             try
             {
-                U.DownloadFile(update7z, download_url, pleaseWait);
+                U.DownloadFile(tempfile, download_url, pleaseWait);
             }
             catch (Exception ee)
             {
                 BrokenDownload(R.ExceptionToString(ee));
                 return false;
             }
-            if (!File.Exists(update7z))
+            if (!File.Exists(tempfile))
             {
                 BrokenDownload(R._("ダウンロードしたはずのファイルがありません。"));
                 return false;
             }
-            if (U.GetFileSize(update7z) <= 256)
+            if (U.GetFileSize(tempfile) <= 256)
             {
                 BrokenDownload(R._("ダウンロードしたファイルが小さすぎます。"));
-                File.Delete(update7z);
+                File.Delete(tempfile);
                 return false;
             }
 
             pleaseWait.DoEvents("Extract...");
 
-            if (UPSUtil.IsUPSFile(update7z))
+            if (UPSUtil.IsUPSFile(tempfile))
             {
                 string upsName = Path.Combine(romdir, RecomendUPSName(download_url));
-                File.Copy(update7z, upsName, true);
+                File.Copy(tempfile, upsName, true);
             }
             else
             {
@@ -479,7 +482,7 @@ namespace FEBuilderGBA
                 {
                     using (U.MakeTempDirectory t = new U.MakeTempDirectory())
                     {
-                        string r = ArchSevenZip.Extract(update7z, t.Dir);
+                        string r = ArchSevenZip.Extract(tempfile, t.Dir);
                         if (r != "")
                         {
                             BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);
@@ -491,11 +494,11 @@ namespace FEBuilderGBA
                 catch (Exception ee)
                 {
                     BrokenDownload(R.ExceptionToString(ee));
-                    File.Delete(update7z);
+                    File.Delete(tempfile);
                     return false;
                 }
             }
-            File.Delete(update7z);
+            File.Delete(tempfile);
             pleaseWait.DoEvents("Select Vanilla ROM");
 
             string[] ups_files = U.Directory_GetFiles_Safe(romdir, "*.ups", SearchOption.AllDirectories);
@@ -555,7 +558,7 @@ namespace FEBuilderGBA
             {
                 return filename;
             }
-            return U.ChangeExtFilename(Program.ROM.Filename, "ups");
+            return U.ChangeExtFilename(Program.ROM.Filename, ".ups");
         }
 
         public enum UPDATE_RESULT
@@ -567,6 +570,38 @@ namespace FEBuilderGBA
         UPDATE_RESULT CheckUpdate()
         {
             return CheckUpdateLow(this.Lines,Program.ROM.Filename, this.IsSlientMode);
+        }
+
+        static DateTime ConvretDateTime(string url, string dateString)
+        {
+            DateTime datetime;
+            if (url.IndexOf("getuploader.com") >= 0)
+            {
+                datetime = DateTime.Parse(dateString, new CultureInfo("ja-JP", false));
+                return datetime;
+            }
+            if (U.TryParseUnitTime(dateString, out datetime))
+            {//unittmie
+                return datetime;
+            }
+            if (dateString.Length <= 12)
+            {
+                if (DateTime.TryParseExact(dateString, "yyyyMMdd.HH", null, DateTimeStyles.None, out datetime))
+                {
+                    return datetime;
+                }
+            }
+            if (dateString.Length <= 8)
+            {
+                if (DateTime.TryParseExact(dateString, "yyyyMMdd", null, DateTimeStyles.None, out datetime))
+                {
+                    return datetime;
+                }
+            }
+            {//通常の日付
+                datetime = DateTime.Parse(dateString);
+                return datetime;
+            }
         }
         public static UPDATE_RESULT CheckUpdateLow(Dictionary<string,string> lines,string romfilename, bool isSlientMode)
         {
@@ -652,20 +687,7 @@ namespace FEBuilderGBA
             DateTime datetime;
             try
             {
-                if (url.IndexOf("getuploader.com") >= 0)
-                {
-                    datetime = DateTime.Parse(dateString, new CultureInfo("ja-JP", false));
-                }
-                else
-                {
-                    if (U.TryParseUnitTime(dateString, out datetime))
-                    {//unittmie
-                    }
-                    else
-                    {//通常の日付
-                        datetime = DateTime.Parse(dateString);
-                    }
-                }
+                datetime = ConvretDateTime(url, dateString);
             }
             catch(Exception )
             {

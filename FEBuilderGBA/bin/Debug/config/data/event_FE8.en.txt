@@ -428,8 +428,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050B00XXXXYYYY2127FFFF	Revert tile change[XXXX:MAPX:X][YYYY:MAPY:Y](TILEREVERSE)	{MAPCHANGE}
 2025FFFF	Change Map to memory slot 2 value(LOMA)(LOW)	{MAP}
 2004XXXX	Get a random number[XXXX::Maximum_Number](RANDOMNUMBER)	@STOREC	{COND}
-601800000000000000000000	STARTFADE	{FADE}
-611800000000000000000000	ENDFADE	{FADE}
+601800000000000000000000	STARTFADE(COLORFADE_INIT)	{FADE}
+611800000000000000000000	ENDFADE(COLORFADE_TERM)	{FADE}
 2042XXXX	Shake the screen (earthquake Effect)[XXXX:EARTHQUAKE:value](EARTHQUAKE_START)	{MAPEFFECT}
 2F420000	Stop shaking the screen (earthquake Effect)(EARTHQUAKE_END)	{MAPEFFECT}
 2045XXXX	GLOWING_CROSS[XXXX:UNIT:Character]	Makes a glowing cross effect appear underneath the character
@@ -479,10 +479,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 202DXX00	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color]
 202DXX02	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color] 2
 202D0000	Draw the color of Player Unit to be read in the original color
-6218XXXXYYYYZZZZWWWWVVVV	FADECOLORS[XXXX::Target][YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}
-62180000YYYYZZZZWWWWVVVV	Change the color of the entire screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](FADECOLORS)	{FADE}	{MAPEFFECT}
-6218060AYYYYZZZZWWWWVVVV	Change the background color[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
-62181D01YYYYZZZZWWWWVVVV	Change color of enemy units[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
+6218XXXXYYYYZZZZWWWWVVVV	FADECOLORS[XXXX::Target][YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}
+62180000YYYYZZZZWWWWVVVV	Change the color of the entire screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}
+6218060AYYYYZZZZWWWWVVVV	Change the background color[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}
+62181D01YYYYZZZZWWWWVVVV	Change color of enemy units[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}
 40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Character]is in leave state(LOW)	{UNITPERSOLNAL}
 40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Character]is in an leave state, restore what was deleted(LOW)	{UNITPERSOLNAL}
 2117XXXX	Fade the screen to black with[XXXX:FSEC:Speed] Normal->Dark (FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
@@ -607,7 +607,7 @@ Duration
 2026ZZWW40050B00ZZ00WW002041FFFF40050B00XX00YY00402FFFFFFEFFZZWW200E14002F410000	Warp from Coordinates[XX:MAPX:SrcX][YY:MAPY:SrcY] to coordinates[ZZ:MAPX:DestX][WW:MAPY:DestY](omitting warp IN)(CAM1+MOVE+ENUN+SlotB+WARP_OUT+ENDWARP)	{MAPEFFECT}	Unlike the warp when specifying a unit ID, the unit is not temporarily deleted when warp IN is performed.\r\nUnlike the warp when the unit ID is specified, the unit is not temporarily deleted when the warp is in.
 
 2016XXXX200ETTTT2016YYYY200ETTTT2016ZZZZ	Play SFX [XXXX:SOUND:sound effect1], [YYYY:SOUND:sound effect2], and [ZZZZ:SOUND:sound effect3] at [TTTT:FSEC:frame seconds] intervals(SOUN+STAL+SOUN+STAL+SOUN)	{MAPEFFECT}
-6018000000000000000000006218060AYYYYZZZZWWWWVVVV611800000000000000000000	Blink the screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](STARTFADE+ChangeColor+ENDFADE)	{MAPEFFECT}	For example, if you blink it in red for a short time, it will sound like an alarm.
+6018000000000000000000006218060AYYYYZZZZWWWWVVVV611800000000000000000000	Blink the screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_INIT+COLORFADE_FADE+COLORFADE_TERM)	{MAPEFFECT}	For example, if you blink it in red for a short time, it will sound like an alarm.
 4005020002000000400A0000F002A608	When any Enemy unit stops in range (used at the start of range based events)(EnemyInRange)	{COND}	{ENEMYICON}	If the unit at the time of entering the area of the range condition is the enemy(red)	{J}
 4005020002000000400A0000B8E19E08	When any Enemy unit stops in range (used at the start of range based events)(EnemyInRange)	{COND}	{ENEMYICON}	If the unit at the time of entering the area of the range condition is the enemy(red)	{U}
 4005020001000000400A0000F002A608	When any NPC(green) unit stops in range (used at the start of range based events)(NPCInRange)	{COND}	{NPCICON}	If the unit at the time of entering the area of the range condition is the ally(NPC/green)	{J}
