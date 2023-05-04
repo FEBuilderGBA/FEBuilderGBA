@@ -1,0 +1,3 @@
+NormalMove=$2E
+Match=$2A
+Exit=$34

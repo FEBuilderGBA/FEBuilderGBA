@@ -1,0 +1,12 @@
+NAME=移動しないAIだったら移動範囲を表示しない By 7743
+NAME.en=Null Move Display By 7743
+NAME.zh=Null Move Display By 7743
+
+INFO=ボスなどの移動しないAIの場合は、敵の移動範囲を表示しません。\r\n以下のAIが設定されている、敵またはNPCの移動範囲を表示しません。\r\nAI1=0x03, AI2=0x03\r\nAI1=0x06, AI2=0x03\r\nAI2=0x03, AI4=0x20\r\nこれは7743が独自に実装したバージョンです。既に同種のパッチが入っている場合はインストールしないでください。\r\n
+
+TYPE=BIN
+PATCHED_IF:0x01A0A0=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=Null Move Display-7743.dmp
+JUMP:0x01A0A0:$r3=Null Move Display-7743.dmp
+INFO.en=For non-moving AI such as bosses, the enemy's movement range is not displayed.\r\nDoes not display the movement range of enemies or NPCs with the following AI settings.\r\nAI1=0x03, AI2=0x03.\r\nAI1=0x06, AI2=0x03.\r\nAI2=0x03, AI4=0x20.\r\nThis is the version implemented independently by the 7743.Do not install if the same kind of patch is already included.\r\n
+INFO.zh=对于 Boss 等不动的 AI，不会显示敌人的移动范围。\r\n不显示具有以下 AI 设置的敌人或 NPC 的移动范围。\r\nAI1=0x03，AI2=0x03。\r\nAI1=0x06，AI2=0x03。\r\nAI2=0x03，AI4=0x20。\r\n这是7743独立实现的版本。如果已经包含相同类型的补丁，请不要安装。\r\n

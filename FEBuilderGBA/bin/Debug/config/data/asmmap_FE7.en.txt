@@ -5224,3 +5224,5 @@
 080066E0	_AIS_Display	r0=@AnimationInterpreter	{J}
 0807E5E0	A shiny mark is displayed on the sword above Roland's altar.	ASMC	{J}
 08021550	The implementation department displaying the shiny mark on the sword above Roland's altar.	{J}
+08018bc4	GetMovCostTablePtr	{J}
+080187d4	GetMovCostTablePtr	{U}

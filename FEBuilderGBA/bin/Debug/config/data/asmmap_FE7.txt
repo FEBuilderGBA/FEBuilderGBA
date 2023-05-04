@@ -5512,3 +5512,5 @@
 080066E0	_AIS_Display	r0=@AnimationInterpreter	{J}
 0807E5E0	ローランの祭壇の上にある剣にピカピカマークを表示	ASMC	{J}
 08021550	ローランの祭壇の上にある剣にピカピカマークを表示する実装部	{J}
+08018bc4	GetMovCostTablePtr	{J}
+080187d4	GetMovCostTablePtr	{U}

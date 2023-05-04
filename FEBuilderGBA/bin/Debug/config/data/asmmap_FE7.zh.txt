@@ -5198,3 +5198,5 @@
 080066E0	_AIS_Display	r0=@AnimationInterpreter	{J}
 0807E5E0	罗兰祭坛上方的剑上，出现了一个闪亮的印记。	ASMC	{J}
 08021550	执行部在罗兰祭坛上方的剑上展示着闪亮的印记。	{J}
+08018bc4	GetMovCostTablePtr	{J}
+080187d4	GetMovCostTablePtr	{U}
