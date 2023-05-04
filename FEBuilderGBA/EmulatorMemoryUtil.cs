@@ -1598,37 +1598,37 @@ namespace FEBuilderGBA
             ret.Add(new AddressList(0x4bB, "Round[0].damage", "DEC", 1));
             ret.Add(new AddressList(0x4bC, "Round[0].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4bD, "Round[0].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4bE, "Round[0].pad", "", 2));
+            ret.Add(new AddressList(0x4bE, "Round[0].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4c0, "Round[1].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4c3, "Round[1].damage", "DEC", 1));
             ret.Add(new AddressList(0x4c4, "Round[1].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4c5, "Round[1].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4c6, "Round[1].pad", "", 2));
+            ret.Add(new AddressList(0x4c6, "Round[1].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4c8, "Round[2].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4cB, "Round[2].damage", "DEC", 1));
             ret.Add(new AddressList(0x4cC, "Round[2].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4cD, "Round[2].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4cE, "Round[2].pad", "", 2));
+            ret.Add(new AddressList(0x4cE, "Round[2].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4d0, "Round[3].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4d3, "Round[3].damage", "DEC", 1));
             ret.Add(new AddressList(0x4d4, "Round[3].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4d5, "Round[3].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4d6, "Round[3].pad", "", 2));
+            ret.Add(new AddressList(0x4d6, "Round[3].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4d8, "Round[4].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4dB, "Round[4].damage", "DEC", 1));
             ret.Add(new AddressList(0x4dC, "Round[4].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4dD, "Round[4].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4dE, "Round[4].pad", "", 2));
+            ret.Add(new AddressList(0x4dE, "Round[4].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4e0, "Round[5].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4e3, "Round[5].damage", "DEC", 1));
             ret.Add(new AddressList(0x4e4, "Round[5].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4e5, "Round[5].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4e6, "Round[5].pad", "", 2));
+            ret.Add(new AddressList(0x4e6, "Round[5].popupDamage", "SIGNED_DEC2", 2));
             ret.Add(new AddressList(0x4e8, "Round[6].flag", "BATTLEROUND", 3));
             ret.Add(new AddressList(0x4eB, "Round[6].damage", "DEC", 1));
             ret.Add(new AddressList(0x4eC, "Round[6].skillID", "SKILL", 1));
             ret.Add(new AddressList(0x4eD, "Round[6].hpChange", "DEC", 1));
-            ret.Add(new AddressList(0x4eE, "Round[6].pad", "", 2));
+            ret.Add(new AddressList(0x4eE, "Round[6].popupDamage", "SIGNED_DEC2", 2));
             return ret;
         }
 
@@ -1824,6 +1824,21 @@ namespace FEBuilderGBA
             else if (a.Type == "SKILL")
             {
                 return U.To0xHexString(v) + " (" + SkillUtil.GetSkillName(v) + ")";
+            }
+            else if (a.Type == "SIGNED_DEC1")
+            {
+                int vv = (sbyte)(v);
+                return vv.ToString();
+            }
+            else if (a.Type == "SIGNED_DEC4")
+            {
+                int vv = (int)(v);
+                return vv.ToString();
+            }
+            else if (a.Type == "SIGNED_DEC2")
+            {
+                int vv = (short)(v);
+                return vv.ToString();
             }
             else
             {

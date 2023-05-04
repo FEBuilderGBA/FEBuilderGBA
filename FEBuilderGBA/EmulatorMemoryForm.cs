@@ -3341,7 +3341,7 @@ namespace FEBuilderGBA
 
 
             string r = EmulatorMemoryUtil.GetAddressList(a, addr);
-            if (a.Type == "DEC")
+            if (a.Type == "DEC" || a.Type == "SIGNED_DEC1" || a.Type == "SIGNED_DEC4" || a.Type == "SIGNED_DEC2")
             {
                 U.DrawText(r, g, lb.Font, this.ListBoxForeDecBrush, isWithDraw, bounds);
             }
