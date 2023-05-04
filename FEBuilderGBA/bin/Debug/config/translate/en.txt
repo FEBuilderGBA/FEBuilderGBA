@@ -13252,9 +13252,6 @@ Disable automatic feedback.
 :自動フィードバックを有効にする
 Enable automatic feedback.
 
-:UPDATE_URLの項目がありません
-There is no UPDATE_URL item.
-
 :UPDATE_REGEXの項目がありません
 There is no UPDATE_REGEX item.
 

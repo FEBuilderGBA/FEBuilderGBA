@@ -2670,6 +2670,19 @@ namespace FEBuilderGBA
             this.SupplyDataList.DummyAlloc((int)this.SuppyMaxCount, 0);
             InputFormRef.AppendEvent_CopyAddressToDoubleClick(this.SupplyDataAddress);
 
+            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
+            {
+                Workmemor_BattleRound = 0x203A608;
+                Workmemor_BattleRoundTotalByte = 0x4F0;
+                BattleRoundDataStruct = EmulatorMemoryUtil.GetBattleSkillSystemsRoundDataStruct();
+            }
+            else
+            {
+                Workmemor_BattleRound = Program.ROM.RomInfo.workmemory_battleround_data_address;
+                Workmemor_BattleRoundTotalByte = 0x74;
+                BattleRoundDataStruct = EmulatorMemoryUtil.GetBattleRoundDataStruct();
+            }
+
             this.BattleRoundDataList.OwnerDraw(DrawBattleRoundDataList, DrawMode.OwnerDrawFixed, false);
             this.BattleRoundDataList.ItemHeight = 12;
             this.BattleRoundDataList.DummyAlloc(BattleRoundDataStruct.Count, 0);
@@ -3014,11 +3027,14 @@ namespace FEBuilderGBA
                 this.BattleSomeDataList.Invalidate();
             }
         }
+
+        uint Workmemor_BattleRound;
+        uint Workmemor_BattleRoundTotalByte;
         void UpdateBattleRoundData()
         {
             byte[] bin = Program.RAM.getBinaryData(
-                  Program.ROM.RomInfo.workmemory_battleround_data_address
-                , 0x74);
+                  Workmemor_BattleRound
+                , Workmemor_BattleRoundTotalByte);
             uint sum = U.CalcCheckSUM(bin);
             if (sum != this.BattleRoundDataSUM)
             {//変更有
@@ -3288,9 +3304,8 @@ namespace FEBuilderGBA
         }
         Size DrawBattleRoundDataList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
-            return DrawAddressList(BattleRoundDataStruct, Program.ROM.RomInfo.workmemory_battleround_data_address, lb, index, g, listbounds, isWithDraw);
+            return DrawAddressList(BattleRoundDataStruct, Workmemor_BattleRound, lb, index, g, listbounds, isWithDraw);
         }
-       
 
         Size DrawAddressList(List<EmulatorMemoryUtil.AddressList> list, uint baseaddr, ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw, int shiftDrawX = 0)
         {
@@ -3818,7 +3833,7 @@ namespace FEBuilderGBA
 
         private void BattleRoundDataList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddressList_SelectedIndexChanged(BattleRoundDataStruct, Program.ROM.RomInfo.workmemory_battleround_data_address, BattleRoundDataList, BattleRoundDataAddress);
+            AddressList_SelectedIndexChanged(BattleRoundDataStruct, Workmemor_BattleRound, BattleRoundDataList, BattleRoundDataAddress);
         }
 
         private void ETC_UNIT_MEMORY_AND_NAME_DoubleClick(object sender, EventArgs e)

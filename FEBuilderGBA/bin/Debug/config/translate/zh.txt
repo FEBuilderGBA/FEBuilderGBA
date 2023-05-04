@@ -13252,9 +13252,6 @@ GOTO 后立即用音乐执行 FINE。\r\n优化 GOTO 后有无用空白的歌曲
 :自動フィードバックを有効にする
 启用自动反馈。
 
-:UPDATE_URLの項目がありません
-没有UPDATE_URL项。
-
 :UPDATE_REGEXの項目がありません
 没有UPDATE_REGEX项。
 
