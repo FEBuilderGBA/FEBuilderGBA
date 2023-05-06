@@ -1,0 +1,7 @@
+AllegiancePaletteList=$80
+Loop=$10
+Break=$5E
+AnyFlag=$28
+AnyChapter=$3C
+Skip=$4E
+SetTo2=$4C

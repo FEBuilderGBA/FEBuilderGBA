@@ -1,0 +1,17 @@
+NAME=ユニットのパレットを動的に変更する(Install)
+NAME.en=AllegiancePalette, Dynamically change the palette of allegiance(Installer)
+NAME.zh=AllegiancePalette, Dynamically change the palette of allegiance(Installer)
+
+TYPE=EA
+TAG=#ENGINE #IMAGE
+
+PATCHED_IF:0x265D4=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+EDIT_PATCH=PATCH_AllegiancePalette editor.txt
+EA=Installer.event
+
+INFO=マップに表示されるユニットのパレットをマップごとに切り替えます。\r\nたとえば、ディフォルトではNPCは緑ですが、特定のフラグが有効になったら、赤色のパレットに切り替えることができます。\r\nパレットは無限に定義できるので、このパッチを利用すると、マップごとにさまざまな色を持つことができます。
+
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/60
+INFO.en=Switch the palette of units displayed on the map for each map.\r\nFor example, NPCs are green by default, but you can switch to a red palette when certain flags are enabled.\r\nPalettes are infinitely definable, so this patch allows you to have different colors for each map.
+INFO.zh=为每张地图切换地图上显示的单位调色板。\r\n例如，默认情况下 NPC 是绿色的，但您可以在启用某些标志时切换到红色调色板。\r\n调色板是无限可定义的，因此此补丁允许您为每张地图使用不同的颜色。

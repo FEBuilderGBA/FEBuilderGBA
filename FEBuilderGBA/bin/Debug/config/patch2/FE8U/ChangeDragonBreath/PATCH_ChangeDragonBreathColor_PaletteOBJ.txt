@@ -25,6 +25,7 @@ WIDTH=256
 HEIGHT=32
 //利用パレット数
 PALETTE=1
+KEEPIMAGE=1
 
 PatchImage_ZIMAGE=0x5D02C
 LISTNAME=$COMBO Color.combo.txt

@@ -1,0 +1,39 @@
+NAME=ユニットのパレットを動的に変更する(Editor)
+NAME.en=AllegiancePalette, Dynamically change the palette of allegiance(Editor)
+NAME.zh=AllegiancePalette, Dynamically change the palette of allegiance(Editor)
+
+IF:0x26630=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+
+INFO=マップに表示されるユニットのパレットをマップごとに切り替えます。\r\nたとえば、ディフォルトではNPCは緑ですが、特定のフラグが有効になったら、赤色のパレットに切り替えることができます。\r\nパレットは無限に定義できるので、このパッチを利用すると、マップごとにさまざまな色を持つことができます。\r\nパレットのヒント\r\nPlayer: 0859EE20\r\nEnemy: 0859EE40\r\nNPC: 0859EE60\r\n4th: 0859EEA0\r\nGray(wait): 0859EE80\r\nLight rune: 0859EEC0\r\nSepia: 0859EEE0\r\n新規にパレットをインポートしたい場合は、パレットのポインタを0にしてから画像をインポートしてください。(さもないと、既存のパレットが上書きされるので注意!)
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/60
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+//データへのポインタ
+POINTER=$FGREP4END AllegiancePalette.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 ff ff ff ff が出てくるまで
+DATACOUNT=$GREP8 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B3:MAP
+
+//データを定義します
+W0:FLAG=Flag
+B2:$COMBO Allegiance.combo.txt=Allegiance
+B3:MAP_ANYFF=Map(ANY=0xFF)
+P4:PatchImage_PALETTE=Palette
+
+PatchImage_ZIMAGE=0x8AF8AC
+WIDTH=16
+HEIGHT=32
+PALETTE=1
+KEEPIMAGE=1
+INFO.en=Switch the palette of units displayed on the map for each map.\r\nFor example, NPCs are green by default, but you can switch to a red palette when certain flags are enabled.\r\nPalettes are infinitely definable, so this patch allows you to have different colors for each map.\r\nPalette tips.\r\nPlayer: 0859EE20.\r\nEnemy: 0859EE40.\r\nNPC: 0859EE60.\r\n4th: 0859EEA0.\r\nGray(wait): 0859EE80.\r\nLight rune: 0859EEC0.\r\nSepia: 0859EEE0.\r\nIf you want to import a new palette, set the palette pointer to 0 before importing the image.(Otherwise the existing palette will be overwritten, so be careful!).
+INFO.zh=为每张地图切换地图上显示的单位调色板。\r\n例如，默认情况下 NPC 是绿色的，但您可以在启用某些标志时切换到红色调色板。\r\n调色板是无限可定义的，因此此补丁允许您为每张地图使用不同的颜色。\r\n调色板提示。\r\n播放器：0859EE20。\r\n敌人：0859EE40。\r\nNPC：0859EE60。\r\n第四：0859EEA0。\r\n灰色（等待）：0859EE80。\r\n光符文：0859EEC0。\r\n棕褐色：0859EEE0。\r\n如果要导入新调色板，请在导入图像之前将调色板指针设置为 0。（否则现有的调色板将被覆盖，所以要小心！）。

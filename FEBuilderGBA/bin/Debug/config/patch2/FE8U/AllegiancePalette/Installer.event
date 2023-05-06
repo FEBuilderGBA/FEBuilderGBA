@@ -1,0 +1,45 @@
+﻿
+
+ALIGN 4 
+AllegiancePaletteList:
+// required flag, Allegiance to change (0 = player, 1 = npc, 2 = enemy, 3 = other), chapterID (0xFF = any) 
+// POIN *new palette to use* 
+SHORT 0x25; BYTE 0 0xFF; POIN 0x859EE40 // players use the enemy palette 
+SHORT 0x26; BYTE 2 0xFF; POIN 0x859EE20 // enemies use the player palette 
+//SHORT 0x26; BYTE 1 0xFF; POIN 0x859EE20
+WORD 0xFFFFFFFF 0xFFFFFFFF // terminator 
+
+
+#ifndef callHackNew
+	#define callHackNew(offset) "BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif 
+
+
+PUSH 
+
+ORG $26630 
+callHackNew(AllegiancePalette|1) 
+
+POP 
+
+ALIGN 4 
+AllegiancePalette: 
+#incbin "AllegiancePalette.dmp" 
+POIN AllegiancePaletteList 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

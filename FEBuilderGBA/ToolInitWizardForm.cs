@@ -84,7 +84,7 @@ namespace FEBuilderGBA
 
         void GotoPage2()
         {
-            this.MainTab.SelectedTab = this.Step3Page;
+            this.MainTab.SelectedTab = this.Step2Page;
             SetFocusIfEnable(EATextBox, DownloadEA, Step2NextButton);
         }
 
@@ -112,7 +112,7 @@ namespace FEBuilderGBA
 
         void GotoPage3()
         {
-            this.MainTab.SelectedTab = this.Step4Page;
+            this.MainTab.SelectedTab = this.Step3Page;
             SetFocusIfEnable(SappyTextBox, DownloadVGMusicStudio, Step3NextButton);
         }
 

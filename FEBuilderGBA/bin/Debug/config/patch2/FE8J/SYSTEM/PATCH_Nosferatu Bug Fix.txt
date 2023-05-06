@@ -17,3 +17,7 @@ AUTHOR.en=7743 Source: https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends
+
+INFO.en=When you make a critical in Nosferatu(Resire), you may get a negative value over the sbyte limit of 127.\r\nThe patch fixes that.
+INFO.zh=When you make a critical in Nosferatu(Resire), you may get a negative value over the sbyte limit of 127.\r\nThe patch fixes that.
+INFO=リザイアでクリティカルを出すとsbyteの上限127を超えて、マイナスになってしまうこどあります。\r\nこのパッチはそのバグを修正します。
