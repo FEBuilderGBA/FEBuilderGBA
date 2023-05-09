@@ -1,0 +1,18 @@
+NAME=ワープの杖のターゲット (Allegiance)
+NAME.en=Warp Staff Target (Allegiance)
+NAME.zh=Warp Staff Target (Allegiance)
+INFO=バニラでは、ワープの杖でユニットをターゲットできるのは、そのユニットが同盟を結んでいる場合です。このパッチにより、プレイヤーは同じ所属を持つユニットだけをターゲットにしたり、代わりにどんなユニットでもターゲットにしたりできるようになります。
+INFO.en=In vanilla you can target a unit with the Warp staff if the unit is allied. This patch can allow the player to be able to target only units with the same allegiance, or any unit instead.
+INFO.zh=In vanilla you can target a unit with the Warp staff if the unit is allied. This patch can allow the player to be able to target only units with the same allegiance, or any unit instead.
+AUTHOR=Shuusuke 
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Can only target allied units|ALLY|Can only target units with the same allegiance|SAME|Can target any unit regardless of allegiance|ANY
+
+ALLY:0x2626E=0xFE 0xF7 0x8D 0xFD
+
+SAME:0x2626E=0xFE 0xF7 0x99 0xFD
+
+ANY:0x2626E=0x01 0x20 0xC0 0x46

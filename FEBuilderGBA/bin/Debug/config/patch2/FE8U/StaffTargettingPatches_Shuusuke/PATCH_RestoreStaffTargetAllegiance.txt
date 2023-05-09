@@ -1,0 +1,18 @@
+NAME=レストの杖のターゲット (Allegiance)
+NAME.en=Restore Staff Target (Allegiance)
+NAME.zh=Restore Staff Target (Allegiance)
+INFO=バニラでは、ユニットが同盟関係にある場合、レストの杖でそのユニットをターゲットにすることができます。このパッチでは、プレイヤーはどのユニットもターゲットにすることができ、同じ所属を持つユニットだけをターゲットにすることも可能です。これはプレイヤーの杖の使い方にのみ影響し、AIの使い方は変更されません。
+INFO.en=In vanilla you can target a unit with the Restore staff if the unit is allied. This patch can allow the player to target any unit, or only units with the same allegiance. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+INFO.zh=In vanilla you can target a unit with the Restore staff if the unit is allied. This patch can allow the player to target any unit, or only units with the same allegiance. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/725478895226191892/1105250445401792533
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Allied units|ALLY|Same allegiance only|SAME|Any unit regardless of allegiance|ANY
+
+ALLY:0x25FAA=0xFE 0xF7 0xEF 0xFE
+
+SAME:0x25FAA=0xFE 0xF7 0xFB 0xFE
+
+ANY:0x25FAA=0x01 0x20 0xC0 0x46

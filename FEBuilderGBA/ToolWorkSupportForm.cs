@@ -313,10 +313,12 @@ namespace FEBuilderGBA
             if (AutoFeedback.GetIsAutoFeedBack())
             {
                 ToggleAutoFeedbackButton.Text = R._("自動フィードバックを無効にする");
+                AuoFeedBackStatusLabel.Text = R._("現在自動フィードバックは有効になっています。ご協力に感謝します。");
             }
             else
             {
                 ToggleAutoFeedbackButton.Text = R._("自動フィードバックを有効にする");
+                AuoFeedBackStatusLabel.Text = R._("現在自動フィードバックは無効になっています。ぜひ、有効にして作品の改善に協力してください。");
             }
         }
         string GetName()

@@ -1,0 +1,20 @@
+NAME=サイレスの杖のターゲット (Status)
+NAME.en=Silence Staff Target (Status)
+NAME.zh=Silence Staff Target (Status)
+INFO=バニラでは、サイレスの杖を持つユニットがステータス異常を持たないか、すでに沈黙している場合にのみ、そのユニットを対象にすることができます。他のステータスを上書きできるように変更することができます。これはプレイヤーの杖の使い方にのみ影響し、AIの使い方は変わりません。
+INFO.en=In vanilla you can only target a unit with the Silence staff if the unit has no status or is already silenced. You can change it to make it able to override other status. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+INFO.zh=In vanilla you can only target a unit with the Silence staff if the unit has no status or is already silenced. You can change it to make it able to override other status. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/725478895226191892/1105242529877729451
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: No status or already silenced|DEFAULT|Can override any other status(including eggs)|ANY|Any other than max duration silence(including eggs)|MAX|Bad status or no status (cannot override ring buffs or egg status)|BAD
+
+DEFAULT:0x26122=0x0F 0x21 0x01 0x40 0x00 0x29 0x01 0xD0 0x03 0x29 0x08 0xD1
+
+ANY:0x26122=0x0F 0x21 0x01 0x40 0x00 0x29 0x01 0xD0 0x89 0x42 0x08 0xD1
+
+MAX:0x26122=0xC0 0x46 0xC0 0x46 0x53 0x28 0x01 0xD1 0xC0 0x46 0x08 0xE0
+
+BAD:0x26122=0x0F 0x21 0x01 0x40 0x0B 0x29 0x01 0xD0 0x04 0x29 0x08 0xDC

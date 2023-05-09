@@ -13249,8 +13249,14 @@ Updateinfo.txt has not been created for this project.\r\nPlease see the followin
 :自動フィードバックを無効にする
 Disable automatic feedback.
 
+:現在自動フィードバックは有効になっています。ご協力に感謝します。
+Automatic feedback is now enabled.We thank you for your cooperation.
+
 :自動フィードバックを有効にする
 Enable automatic feedback.
+
+:現在自動フィードバックは無効になっています。ぜひ、有効にして作品の改善に協力してください。
+Automatic feedback is currently disabled.Please enable it and help us improve our work.
 
 :UPDATE_REGEXの項目がありません
 There is no UPDATE_REGEX item.

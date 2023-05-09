@@ -1,0 +1,18 @@
+NAME.en=ハマーンの杖のターゲット (Allegiance)
+NAME.en=Hammerne Staff Target (Allegiance)
+NAME.zh=Hammerne Staff Target (Allegiance)
+INFO=バニラでは、ハマーン杖を持ったユニットが同じ所属である場合にのみ、そのユニットをターゲットにすることができます。このパッチにより、プレイヤーは代わりにNPCのユニットや任意のユニットをターゲットにすることができるようになります。
+INFO.en=In vanilla you can target a unit with the Hammerne staff if the unit has the same allegiance. This patch can allow the player to be able to target allied units or any unit instead.
+INFO.zh=In vanilla you can target a unit with the Hammerne staff if the unit has the same allegiance. This patch can allow the player to be able to target allied units or any unit instead.
+AUTHOR=Shuusuke 
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Can only target units with the same allegiance|SAME|Can only target allied units|ALLY|Can target any unit regardless of allegiance|ANY
+
+SAME:0x2630E=0xFE 0xF7 0x49 0xFD
+
+ALLY:0x2630E=0xFE 0xF7 0x3D 0xFD
+
+ANY:0x2630E=0x01 0x20 0xC0 0x46

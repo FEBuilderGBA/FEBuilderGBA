@@ -1,0 +1,18 @@
+NAME=レストの杖のターゲット (Status)
+NAME.en=Restore Staff Target (Status)
+NAME.zh=Restore Staff Target (Status)
+INFO=バニラでは、ユニットが何らかのステータス異常を持っている場合、レストの杖でユニットを治療するターゲットにすることができますが、このパッチではある程度変更することができます。これはプレイヤーの杖の使い方にのみ影響し、AIの使い方は変わりません。
+INFO.en=In vanilla you can target a unit with the Restore staff if the unit has any status, which this patch can change to an extent. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+INFO.zh=In vanilla you can target a unit with the Restore staff if the unit has any status, which this patch can change to an extent. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/725478895226191892/1105250445401792533
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Any status|DEFAULT|No status or bad status excluding stone(cannot remove ring buff status)|BAD|Any status including none|ANY
+
+DEFAULT:0x25FC4=0x0F 0x20 0x08 0x40 0x00 0x28 0x08 0xD0
+
+BAD:0x25FC4=0x0F 0x20 0x08 0x40 0x04 0x28 0x08 0xDC
+
+ANY:0x25FC4=0x0F 0x20 0x08 0x40 0x80 0x42 0x08 0xD1

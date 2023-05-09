@@ -46,6 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.LOGO = new FEBuilderGBA.InterpolatedPictureBox();
+            this.AuoFeedBackStatusLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +180,7 @@
             // 
             // ToggleAutoFeedbackButton
             // 
-            this.ToggleAutoFeedbackButton.Location = new System.Drawing.Point(17, 360);
+            this.ToggleAutoFeedbackButton.Location = new System.Drawing.Point(17, 378);
             this.ToggleAutoFeedbackButton.Name = "ToggleAutoFeedbackButton";
             this.ToggleAutoFeedbackButton.Size = new System.Drawing.Size(838, 48);
             this.ToggleAutoFeedbackButton.TabIndex = 2;
@@ -218,11 +219,20 @@
             this.LOGO.TabIndex = 31;
             this.LOGO.TabStop = false;
             // 
+            // AuoFeedBackStatusLabel
+            // 
+            this.AuoFeedBackStatusLabel.Location = new System.Drawing.Point(20, 357);
+            this.AuoFeedBackStatusLabel.Name = "AuoFeedBackStatusLabel";
+            this.AuoFeedBackStatusLabel.Size = new System.Drawing.Size(832, 18);
+            this.AuoFeedBackStatusLabel.TabIndex = 36;
+            this.AuoFeedBackStatusLabel.Text = "現在自動フィードバックは有効になっています。ご協力に感謝します。";
+            // 
             // ToolWorkSupportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(867, 678);
+            this.Controls.Add(this.AuoFeedBackStatusLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ToggleAutoFeedbackButton);
             this.Controls.Add(this.SnowAllWorksButton);
@@ -268,5 +278,6 @@
         private System.Windows.Forms.Button ToggleAutoFeedbackButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label AuoFeedBackStatusLabel;
     }
 }
