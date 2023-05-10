@@ -4,14 +4,14 @@ NAME.en=DSFE-Style Healing: MAG/2 + Staff Might + WLVL Bonus = Heal
 
 PATCHED_IF:0x16B68=0x10 0xB5 0x03 0x1C 0x0A 0x1C 0x24 0x24 0xFF 0x21 0x11 0x40 0x61 0x43 0x00 0x24 0x14 0x48
 
-INFO=回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力+武器Lv補正\r\nこのパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。
-INFO.en=By default, staffs heal for hardcoded amounts and use the formula Heal = Magic + Value.\r\nThis patches healing staffs to use staff might instead of the hardcoded value.\r\nIt also adds a bonus for the user's weapon level.\r\nPatched Formula for healing = Magic / 2 + Staff's Might + Weapon Level Bonus\r\nThis patch modifies the item table and must be installed prior to item table expansion.\r\n
+INFO=このパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。\r\n回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力+武器Lv補正
+INFO.en=This patch modifies the item table and must be installed prior to item table expansion.\r\nBy default, staffs heal for hardcoded amounts and use the formula Heal = Magic + Value.\r\nThis patches healing staffs to use staff might instead of the hardcoded value.\r\nIt also adds a bonus for the user's weapon level.\r\nPatched Formula for healing = Magic / 2 + Staff's Might + Weapon Level Bonus
 
 TYPE=BIN
 TAG=#ENGINE
 BIN:0x16B68=DSFE-Style Healing.dmp
 AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
 NAME.zh=DSFE风格复原（恢复量=（魔法力量/ 2）+手杖力量+武器Lv修正）
-INFO.zh=而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔法力量/ 2）+手杖+武器力量修正\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
+INFO.zh=由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。\r\n而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔法力量/ 2）+手杖+武器力量修正
 
 REPLACE_POINTER:0xC51538=ITEM
