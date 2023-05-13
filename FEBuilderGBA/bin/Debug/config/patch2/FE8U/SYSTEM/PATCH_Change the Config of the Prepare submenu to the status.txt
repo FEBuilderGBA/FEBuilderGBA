@@ -1,0 +1,26 @@
+NAME=進撃準備画面サブメニューの設定を状況に変える
+NAME.en=Change "Config" to "Status" in the Prepare submenu
+NAME.zh=Change "Config" to "Status" in the Prepare submenu
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|CONFIG|Change: Status|STATUS
+
+DETERMINATION_ADDRESS=0x033ED0
+
+
+CONFIG:0x0336DC=0x92 0x05 0x00 0x00
+CONFIG:0x0336E0=0xBD 0x05 0x00 0x00
+CONFIG:0x033ED0=0x88 0xED 0xA2 0x08
+
+STATUS:0x0336DC=0x39 0x00 0x00 0x00
+STATUS:0x0336E0=0xE0 0x06 0x00 0x00
+STATUS:0x033ED0=0x54 0x1B 0xA0 0x08
+
+
+AUTHOR=7743
+INFO=このパッチは、進撃準備画面の「マップを見る」で表示されるメニューの「設定」を「状況」に変更します。
+INFO.en=This patch changes "Config" to "Status" in the menu that appears under "Check Map" on the Prepare screen.
+INFO.zh=This patch changes "Config" to "Status" in the menu that appears under "Check Map" on the Prepare screen.
