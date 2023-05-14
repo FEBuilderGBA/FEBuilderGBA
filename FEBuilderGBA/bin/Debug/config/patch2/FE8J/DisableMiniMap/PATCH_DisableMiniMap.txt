@@ -27,5 +27,5 @@ W2:FLAG=Flag(0x00=ANY)
 NAME.en=Disable MiniMap(Edit)
 INFO.en=Suppresses the display of the Mini map that is displayed when the start button is pressed.\r\nYou can create a prohibited setting with chapters and flags.
 
-NAME.zh=抑制小地图显示（编辑）
+NAME.zh=抑制小地图显示(Editor)
 INFO.zh=禁止显示按下开始按钮时显示的迷你地图。\r\n您可以使用章节和标志创建禁止的设置。
