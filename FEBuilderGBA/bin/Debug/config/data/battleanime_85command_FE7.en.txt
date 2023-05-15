@@ -63,8 +63,8 @@
 3E=Play burning SFE
 3F=Play alternate arrow firing SFE?
 40=EMPTY
-41=EMPTY
-42=Play long axe swinging SFE
+41=Play Axe rising SFE
+42=Play Axe falling SFE; long axe swinging SFE
 43=Play weapon stance SFE (Clicking noise)
 44=Play short "light emission" SFE
 45=FE7:Play horse neighing SFE

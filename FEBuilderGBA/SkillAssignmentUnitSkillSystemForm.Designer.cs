@@ -238,6 +238,7 @@
             // X_LevelUPSkillLabel
             // 
             this.X_LevelUPSkillLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_LevelUPSkillLabel.ErrorMessage = "";
             this.X_LevelUPSkillLabel.Location = new System.Drawing.Point(-1, -1);
             this.X_LevelUPSkillLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_LevelUPSkillLabel.Name = "X_LevelUPSkillLabel";

@@ -8678,6 +8678,10 @@ namespace FEBuilderGBA
         {
             oldaddr = U.toPointer(oldaddr);
             newaddr = U.toPointer(newaddr);
+            if (oldaddr <= 1)
+            {//0または1に対して置換すると誤爆するのでやめます
+                return;
+            }
 
             foreach (var pair in Forms)
             {

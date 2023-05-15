@@ -717,5 +717,6 @@ namespace FEBuilderGBA
             //N1の書き込みボタンが反応してしまうときがあるのでやめさせる.
             InputFormRef.WriteButtonToYellow(this.N1_WriteButton, false);
         }
+
     }
 }
