@@ -45,5 +45,5 @@ B5:DECIMAL.zh=If more than MaxHP(0x00=ANY)
 W6:FLAG.zh=Flag(0x00=ANY)
 NAME.en=Change minimum poison damage for each chapter (Editor)
 INFO.en=Poison becomes air like yamcha in the latter half.This patch modifies this.\r\nSet the minimum damage for each chapter or unit.\r\nThe list will be matched from the top, so please set the most strict condition above.\r\nIf none of the lists match, the default poison damage is applied.\r\nDamage = Minimum damage + RAND (Maximum random damage).
-NAME.zh=更改每个章节的最小毒害(Install)
+NAME.zh=更改每个章节的最小毒害(Editor)
 INFO.zh=毒药在下半年像山药一样变成空气。此补丁程序对此进行了修改。\r\n设置每个章节或单元的最小损坏。\r\n该列表将从顶部开始匹配，因此请在上面设置最严格的条件。\r\n如果没有一个列表匹配，则应用默认的毒药损害。\r\nDamage = Minimum damage + RAND (Maximum random damage)

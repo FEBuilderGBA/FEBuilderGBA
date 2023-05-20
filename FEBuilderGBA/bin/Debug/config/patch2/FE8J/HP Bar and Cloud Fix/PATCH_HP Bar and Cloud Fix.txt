@@ -1,0 +1,16 @@
+NAME=HP Bar and Cloud Fix; 雲の画像を小さくして、HPBarとの競合を解決
+NAME.en=HP Bar and Cloud Fix; Fix the cloudy graphic so it doesn't overlap with the hp bars
+NAME.zh=HP Bar and Cloud Fix; Fix the cloudy graphic so it doesn't overlap with the hp bars
+
+PATCHED_IF:0x30A3C=0x08 0x22
+
+TYPE=EA
+TAG=#ENGINE
+EA=Cloud_Fix_EA.event
+
+INFO=このパッチは、雲の画像を小さくして、HPBarとの競合しないように修正します。\r\nHPBar patchを利用してHPBarを表示すると、天気「雲」を利用することができません。\r\n天気「雲」は滅多に利用されない天候なので、それほど重要な問題にはなりませんが、どうしても「雲」を使いたい場合は、このパッチで雲のサイズを小さくする修正をする必要があります。
+
+
+AUTHOR=Tequila https://feuniverse.us/t/bug-mod-map-hp-bars-weather-condition-0x7/5955/6
+INFO.en=This patch fixes cloud images to be smaller and not conflict with HPBar.\r\nWhen HPBar is displayed using HPBar patch, weather "clouds" cannot be used.\r\nWeather "clouds" is rarely used weather, so it's not a big issue, but if you really want to use "clouds", you'll need to fix it in this patch to reduce the size of the clouds.
+INFO.zh=此补丁修复了云图像更小且不与 HPBar 冲突的问题。\r\n使用 HPBar 补丁显示 HPBar 时，无法使用天气“云”。\r\n天气“云”是很少使用的天气，所以这不是什么大问题，但如果你真的想使用“云”，你需要在这个补丁中修复它以减少云的大小。

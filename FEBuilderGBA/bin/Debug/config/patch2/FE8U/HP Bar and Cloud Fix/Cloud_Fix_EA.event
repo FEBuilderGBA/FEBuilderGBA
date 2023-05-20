@@ -1,0 +1,71 @@
+//sprite stuff
+#define _8x8(x_coord, y_coord, h_flip, v_flip, tile_num) "SHORT y_coord x_coord|(h_flip<<0xC)|(v_flip<<0xD) tile_num"
+#define _64x32(x_coord, y_coord, h_flip, v_flip, tile_num) "_8x8(x_coord|0xC000, y_coord|0x4000, h_flip, v_flip, tile_num)"
+#define _32x32(x_coord, y_coord, h_flip, v_flip, tile_num) "_8x8(x_coord|0x8000, y_coord|0x0000, h_flip, v_flip, tile_num)"
+#define _16x32(x_coord, y_coord, h_flip, v_flip, tile_num) "_8x8(x_coord|0x8000, y_coord|0x8000, h_flip, v_flip, tile_num)"
+
+PUSH
+
+//Fix the cloudy graphic so it doesn't overlap with the hp bars
+ORG $30AEC
+SHORT 0x2208	//mov r2,#8 (copy 8 tiles instead of 0xE, I hope)
+ORG $30AFC
+WORD 0x06010300	//tile ram to copy cloud tiles to
+ORG $30A78
+POIN Smaller_Clouds
+ORG $30B30
+WORD 0xAC18		//originally 0xAC12, the 12 is the tile number
+ORG $30B2C
+POIN Cloudy_Sprite_Attributes
+//This part has to do with shifting the graphics around and then copying them to tile ram to make the clouds move
+ORG $309F6
+BYTE 0x70
+ORG $30A0A
+BYTE 0x7
+ORG $30AD0
+BYTE 0x80
+ORG $30AD6
+BYTE 0x80
+ORG $30ADC
+SHORT 0x21C0 0x0089
+
+POP
+
+//Overwrites cloud data
+ORG 0x05A3B00
+Smaller_Clouds:
+//#incext Png2Dmp "cloudy.png" --lz77
+#incbin "cloudy.png.dmp"
+
+Cloudy_Sprite_Attributes:
+SHORT 23	//number of objects
+//Row 1
+_64x32(0x00, 0x00, 0, 0, 0)
+_64x32(0x40, 0x00, 0, 0, 0)
+_64x32(0x80, 0x00, 0, 0, 0)
+_64x32(0xC0, 0x00, 0, 0, 0)
+//Row 2
+_16x32(0x00, 0x20, 0, 0, 6)
+_64x32(0x10, 0x20, 0, 0, 0)
+_64x32(0x50, 0x20, 0, 0, 0)
+_64x32(0x90, 0x20, 0, 0, 0)
+_32x32(0xD0, 0x20, 0, 0, 0)
+//Row 3 (from here on out, there's just a bit on the sides; the middle is omitted)
+_32x32(0x00, 0x40, 0, 0, 4)
+_32x32(0x20, 0x40, 0, 0, 0)
+_32x32(0xC0, 0x40, 0, 0, 4)
+_16x32(0xE0, 0x40, 0, 0, 0)
+//Row 4
+_32x32(0x00, 0x60, 0, 0, 2)
+_16x32(0x20, 0x60, 0, 0, 6)
+_32x32(0xC0, 0x60, 0, 0, 2)
+_16x32(0xE0, 0x60, 0, 0, 6)
+//Row 5
+_64x32(0x00, 0x80, 0, 0, 0)
+_64x32(0xC0, 0x80, 0, 0, 0)
+//Row 6 (yes, this would normally go offscreen, but it actually appears as you scroll downward)
+_16x32(0x00, 0xA0, 0, 0, 6)
+_32x32(0x10, 0xA0, 0, 0, 0)
+_16x32(0xC0, 0xA0, 0, 0, 6)
+_32x32(0xD0, 0xA0, 0, 0, 0)
+PROTECT 0x5A401C

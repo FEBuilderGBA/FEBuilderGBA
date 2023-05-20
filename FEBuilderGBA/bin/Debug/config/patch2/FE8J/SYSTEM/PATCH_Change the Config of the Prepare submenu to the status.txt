@@ -19,3 +19,6 @@ STATUS:0x033DD8=0x0C 0x3C 0xA7 0x08
 
 AUTHOR=7743
 INFO=このパッチは、進撃準備画面の「マップを見る」で表示されるメニューの「設定」を「状況」に変更します。
+INFO.en=This patch will change "Settings" in the menu displayed by "View Map" on the Advance Preparation screen to "Situation".
+NAME.zh=根据情况更改攻击准备屏幕子菜单的设置。
+INFO.zh=本次补丁将提前准备画面中“查看地图”显示的菜单中的“设置”更改为“战况”。
