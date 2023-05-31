@@ -18,4 +18,7 @@ Z2IMAGE_POINTER=0x000C74A0//0x08AC0BD8
 ZTSA_POINTER=0x000C7478//0x08AC1878
 PALETTE_POINTER=0x000C74E8//0x08AC1C8C
 
-INFO=Edit and import OP Anime Graphic for the Ephraim Zoom image.
+INFO=これは表示用に用意しています。データを編集は未対応です。\r\nOP Anime Graphic for the Ephraim Zoom image.
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.\r\nOP Anime Graphic for the Ephraim Zoom image.
+INFO.zh=它用于显示目的。不支持编辑数据。\r\nEphraim Zoom 图像的 OP 动漫图形。

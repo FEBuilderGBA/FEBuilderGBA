@@ -18,3 +18,7 @@ Z2IMAGE_POINTER=0x0CCD90//0xB60D3C
 ZTSA_POINTER=0x0CCD68//0xB627A4
 PALETTE_POINTER=0x0CCDD8//0xB62D04
 
+INFO=これは表示用に用意しています。データを編集は未対応です。TSAで共有されているためです。
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.Because it's shared by the TSA.
+INFO.zh=它用于显示目的。不支持编辑数据。因为它由 TSA 共享。

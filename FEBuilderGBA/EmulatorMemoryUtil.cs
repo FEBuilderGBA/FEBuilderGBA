@@ -834,6 +834,12 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x30, "FundsTotalDifference", "", 0x4));
                 ret.Add(new AddressList(0x34, "Unknown34", "", 0x4));
                 ret.Add(new AddressList(0x38, "Padding_38", "", 0x2));
+                ret.Add(new AddressList(0x3A, "Unknown3A", "", 0x1));
+                ret.Add(new AddressList(0x3B, "Unknown3B", "", 0x1));
+                ret.Add(new AddressList(0x3C, "Assets_rating", "", 0x1));
+                ret.Add(new AddressList(0x3D, "Experience_rating", "", 0x1));
+                ret.Add(new AddressList(0x3E, "Chapter_rating", "", 0x1));
+                ret.Add(new AddressList(0x3F, "Unknown3F", "", 0x1));
                 ret.Add(new AddressList(0x40, "Config", "CHAPTERCONFIG", 0x4));
                 ret.Add(new AddressList(0x44, "Unknown44", "", 0x4));
                 ret.Add(new AddressList(0x48, "Unknown48", "", 0x2));

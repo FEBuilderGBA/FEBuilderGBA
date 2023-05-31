@@ -18,3 +18,7 @@ Z2IMAGE_POINTER=0x0CD868//0xB67A80
 ZTSA_POINTER=0x0CD840//0xB68898
 PALETTE_POINTER=0x0CEC70//0xB68CDC
 
+INFO=これは表示用に用意しています。データを編集は未対応です。
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.
+INFO.zh=它用于显示目的。不支持编辑数据。

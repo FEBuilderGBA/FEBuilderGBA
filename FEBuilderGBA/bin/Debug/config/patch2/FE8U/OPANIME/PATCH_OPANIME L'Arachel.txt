@@ -18,4 +18,7 @@ Z2IMAGE_POINTER=0x000C88CC//0x08ACE0B8
 ZTSA_POINTER=0x000C88A4//0x08ACEED0
 PALETTE_POINTER=0x000C9CA4//0x08ACF314
 
-INFO=Edit and import OP Anime Graphic for the L'Arachel main image.
+INFO=これは表示用に用意しています。データを編集は未対応です。\r\nOP Anime Graphic for the L'Arachel main image.
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.\r\nOP Anime Graphic for the L'Arachel main image.
+INFO.zh=它用于显示目的。不支持编辑数据。\r\nL'Arachel 主图像的 OP 动漫图形。

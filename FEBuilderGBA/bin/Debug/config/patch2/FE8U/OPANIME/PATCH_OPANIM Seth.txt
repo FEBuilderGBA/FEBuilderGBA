@@ -19,3 +19,7 @@ ZTSA_POINTER=0x000C899C//0x08AD206C
 PALETTE_POINTER=0x000C9CF4//0x08AD24B4
 
 
+INFO=これは表示用に用意しています。データを編集は未対応です。
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.
+INFO.zh=它用于显示目的。不支持编辑数据。

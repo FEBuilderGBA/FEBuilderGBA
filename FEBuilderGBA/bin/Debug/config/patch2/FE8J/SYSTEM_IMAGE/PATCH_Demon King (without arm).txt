@@ -1,4 +1,4 @@
-﻿NAME=魔王 腕なし
+NAME=魔王 腕なし
 
 TYPE=IMAGE
 TAG=#IMAGE
@@ -15,3 +15,7 @@ PALETTE_POINTER=0x0728A8//0x84CB34
 AUTHOR=qps https://feuniverse.us/t/fe-builder-gba/2845/570
 NAME.en=Demon King Image (Armless)
 NAME.zh=魔王没有手臂
+INFO=これは表示用に用意しています。データを編集は未対応です。TSAで共有されているためです。
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.Because it's shared by the TSA.
+INFO.zh=它用于显示目的。不支持编辑数据。因为它由 TSA 共享。

@@ -17,4 +17,7 @@ Z2IMAGE_POINTER=0x000C7E38//0x08AC7374
 ZTSA_POINTER=0x000C7E10//0x08AC8DDC
 PALETTE_POINTER=0x000C7E80//0x08AC933C
 
-INFO=Edit and import OP Anime Graphic for Eirika (Zoomed in)
+INFO=これは表示用に用意しています。データを編集は未対応です。\r\nOP Anime Graphic for Eirika (Zoomed in)
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.\r\nOP Anime Graphic for Eirika (Zoomed in).
+INFO.zh=它用于显示目的。不支持编辑数据。\r\nEirika 的 OP 动漫图形（放大）。

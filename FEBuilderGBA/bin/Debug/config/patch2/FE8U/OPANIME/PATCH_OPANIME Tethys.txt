@@ -14,4 +14,7 @@ Z2IMAGE_POINTER=0x000C8C88//0x08ADA31C
 ZTSA_POINTER=0x000C8C60//0x08ADB804
 PALETTE_POINTER=0x000C9DE8//0x08ADBD18
 
-INFO=Edit and import OP Anime Graphic for the Tethys image.
+INFO=これは表示用に用意しています。データを編集は未対応です。\r\nOP Anime Graphic for the Tethys image.
+WARNING=1
+INFO.en=It is provided for display purposes.Edit data is not supported.\r\nOP Anime Graphic for the Tethys image.
+INFO.zh=它用于显示目的。不支持编辑数据。\r\nTethys 图像的 OP 动画图形。
