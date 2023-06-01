@@ -65,6 +65,7 @@ namespace FEBuilderGBA
             U.MakeTransparent(this.YubiYokoCursor);
             this.MusicIcon = ImageSystemIconForm.MusicIcon(6);
             U.MakeTransparent(this.MusicIcon);
+            this.IsConnectOnce = false;
 
             //リスト項目の初期化.
             InitUserStack();
@@ -180,6 +181,7 @@ namespace FEBuilderGBA
 
         byte[] UpdateCheckDataFlag;
         byte[] UpdateCheckDataMemorySlot;
+        bool IsConnectOnce;
 
         void UpdateALL()
         {
@@ -190,13 +192,12 @@ namespace FEBuilderGBA
 
                 //エミュレータは終了しているのでは?
                 Program.UpdateWatcher.CheckALL();
+                AutoFeedbackFail();
                 return;
             }
-            else
-            {
-                ERROR_EMU_CONNECT.Hide();
-            }
 
+            this.IsConnectOnce = true;
+            ERROR_EMU_CONNECT.Hide();
             UpdateUserStack();
             UpdateProcs();
             UpdateFlag();
@@ -235,6 +236,20 @@ namespace FEBuilderGBA
 
             uint mapid = (uint)N_B14.Value;
             ToolWorkSupportForm.AutoFeedback.SendFeedBack(mapid);
+        }
+        void AutoFeedbackFail()
+        {
+            if (! this.IsConnectOnce)
+            {
+                return;
+            }
+
+            if (!ToolWorkSupportForm.UseAutoFeedback())
+            {
+                return;
+            }
+            uint mapid = (uint)N_B14.Value;
+            ToolWorkSupportForm.AutoFeedback.AutoFeedbackFail(mapid);
         }
 
 
@@ -971,6 +986,7 @@ namespace FEBuilderGBA
                 ToolSubtitleSetingDialogForm.CloseSubTile();
                 IsSubtileSpeech = false;
             }
+            this.IsConnectOnce = false;
         }
 
         private void ProcsListBox_DoubleClick(object sender, EventArgs e)

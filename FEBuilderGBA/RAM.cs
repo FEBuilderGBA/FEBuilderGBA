@@ -572,6 +572,7 @@ namespace FEBuilderGBA
             if (process == null)
             {
                 this.ErrorMessage = R._("エミュレータが動作していません。");
+                this.IsPageError = false;
                 return false;
             }
             this.Process = process;
@@ -583,12 +584,14 @@ namespace FEBuilderGBA
             {
 //                R.Error(R.ExceptionToString(e));
                 this.ErrorMessage = R._("OverflowException! 32bitバージョンのエミュレータを利用していますか?");
+                this.IsPageError = false;
                 return false;
             }
             catch (Exception e)
             {
                 R.Error(R.ExceptionToString(e));
                 this.ErrorMessage = e.ToString();
+                this.IsPageError = false;
                 return false;
             }
         }
@@ -615,6 +618,7 @@ namespace FEBuilderGBA
             if (this.ProcessHandle == IntPtr.Zero)
             {
                 this.ErrorMessage = R._("OpenProcess APIが失敗ました。");
+                this.IsPageError = false;
                 return false;
             }
 
@@ -660,15 +664,18 @@ namespace FEBuilderGBA
                     if (MemBasicInfo03.RegionSize <= 0 || Memory03.Length <= 0)
                     {
                         this.ErrorMessage = R._("読込むメモリを特定できませんでした。(Page02,Page03)");
+                        this.IsPageError = true;
                     }
                     else
                     {
                         this.ErrorMessage = R._("読込むメモリを特定できませんでした。(Page02)");
+                        this.IsPageError = true;
                     }
                 }
                 else
                 {
                     this.ErrorMessage = R._("読込むメモリを特定できませんでした。(Page03)");
+                    this.IsPageError = true;
                 }
 
 #if DEBUG
@@ -885,7 +892,6 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                
 
                 match = true;
                 break;
@@ -920,6 +926,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02を読めませんでした。bytesRead:{0},MemBasicInfo02.RegionSize:{1},"
                     , bytesRead, MemBasicInfo02.RegionSize);
+                this.IsPageError = false;
                 this.DisConnect();
                 return this.Connect();
             }
@@ -933,6 +940,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02に必須の値がありません。procs_game_main:{0},data:{1},rom_procs_game_main:{2},"
                     , U.To0xHexString(procs_game_main), U.To0xHexString(data), U.To0xHexString(rom_procs_game_main));
+                this.IsPageError = false;
                 this.DisConnect();
                 return this.Connect();
             }
@@ -952,6 +960,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03を読めませんでした。bytesRead:{0},MemBasicInfo03.RegionSize:{1},"
                     , bytesRead, MemBasicInfo03.RegionSize);
+                this.IsPageError = false;
                 this.DisConnect();
                 return this.Connect();
             }
@@ -965,6 +974,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03に必須の値がありません。user_stack_base:{0},data:{1},function_fe_main_return_address:{2},"
                     , U.To0xHexString(user_stack_base), U.To0xHexString(data), U.To0xHexString(function_fe_main_return_address));
+                this.IsPageError = false;
                 this.DisConnect();
                 return this.Connect();
             }
@@ -999,6 +1009,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
+                this.IsPageError = false;
                 this.DisConnect();
                 return ;
             }
@@ -1031,6 +1042,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
+                this.IsPageError = false;
                 this.DisConnect();
                 return;
             }
@@ -1048,6 +1060,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
+                this.IsPageError = false;
                 this.DisConnect();
                 return;
             }
@@ -1065,6 +1078,7 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
+                this.IsPageError = false;
                 this.DisConnect();
                 return;
             }
@@ -1075,6 +1089,11 @@ namespace FEBuilderGBA
         public string GetErrorMessage()
         {
             return this.ErrorMessage;
+        }
+        bool IsPageError;
+        public bool GetIsPageError()
+        {
+            return this.IsPageError;
         }
 
         public void DumpMemory0x02000000(string filename)

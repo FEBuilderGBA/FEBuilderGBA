@@ -103,11 +103,40 @@ namespace FEBuilderGBA
             return true;
         }
 
+        uint FailConnect = 0;   //接続失敗数
+        const uint FEEDBACK_FAIL_REPORT_COUNT = 3; //クラッシュと判断する接続失敗数。1つに付き1秒
+        public void AutoFeedbackFail(uint mapid)
+        {
+            if (!IsAutoFeedBack)
+            {//フィードバックはしない
+                this.FailConnect = 0;
+                return;
+            }
+            if (!Program.RAM.GetIsPageError())
+            {//ページエラーではない
+                this.FailConnect = 0;
+                return;
+            }
+            if (IsBusy)
+            {//レポートスレッドが動作しているので、何もしない
+                return;
+            }
 
+            this.FailConnect++;
+            if (this.FailConnect == FEEDBACK_FAIL_REPORT_COUNT)
+            {
+                DateTime now = DateTime.Now;
+                SendFeedBack_Fail(now, mapid);
+                this.FailConnect = 0;
+            }
+        }
 
         public void SendFeedBack(uint mapid)
         {
-            if (! IsAutoFeedBack)
+            //接続に成功しているので失敗カウントを消します
+            this.FailConnect = 0;
+
+            if (!IsAutoFeedBack)
             {//フィードバックはしない
                 return;
             }
@@ -252,6 +281,29 @@ namespace FEBuilderGBA
             string deadunitString = GetVillageDestroyXYAndInfo(villageDestroyXY);
             Send(chapter, deadunitString);
 
+            LastFeedBackType = eventType;
+            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            return true;
+        }
+        bool SendFeedBack_Fail(DateTime now, uint mapid)
+        {
+            if (now <= LastFeedBackPostTime)
+            {//クールダウン中
+                return false;
+            }
+
+            string eventType = "Crush!" + mapid;
+            if (LastFeedBackType == eventType)
+            {//連続して報告はしない
+                return false;
+            }
+
+            string chapter = GetChapterAndInfo(mapid);
+            if (chapter == "")
+            {
+                return false;
+            }
+            Send(chapter, "");
             LastFeedBackType = eventType;
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
