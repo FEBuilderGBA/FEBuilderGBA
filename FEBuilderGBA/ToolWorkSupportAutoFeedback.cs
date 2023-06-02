@@ -292,7 +292,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            string eventType = "Crush!" + mapid;
+            string eventType = "Hang-up detection" + mapid;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
                 return false;
@@ -303,7 +303,8 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            Send(chapter, "");
+            string deadunit = "Hang-up detection";
+            Send(chapter, deadunit);
             LastFeedBackType = eventType;
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
