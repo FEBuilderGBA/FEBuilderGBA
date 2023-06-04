@@ -1,0 +1,10 @@
+NAME=戦闘で武器レベルがSを超えた場合、この値にリセットする
+NAME.en=If weapon level before battle exceeded S, reset it to this value
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02C18C 0x2C188
+HEX=false
+INFO=Default:251
+NAME.zh=如果战斗中武器等级超过S，则会重置为该值。

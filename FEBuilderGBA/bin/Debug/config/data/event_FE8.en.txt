@@ -136,7 +136,7 @@
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
 2012FF7F	Mute, Turn off the BGM(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	Change BGM to[XXXX:MUSIC:Song](MUSC)	{MUSIC}
-2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)
+2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)(LOW)
 2016XXXX	Play SFX[XXXX:SOUND:sound effect](SOUN)	{MUSIC}
 2013FF7F	Mute, Fade out and turn off the BGM(MUSCFAST 0x7FFF)	{MUSIC}
 2213XXXX	Change BGM to[XXXX:MUSIC:Song] with fast fade out(MUSCFAST)	{MUSIC}
@@ -249,7 +249,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 20C90000	Wait until end of movement(WM_REMOVETEXT)	{WAIT}	{WMAPTEXT}
 2046XX00	Small screening effect on[XX::]
 2F460000	Screen effect - Small summon
-2014XXXX200E2100201A0000	Change BGM during conversation[XXXX:MUSIC:change BGM](MUSS)	{MUSIC}
 213BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds][]frames[XXXX:UNIT:Character]is highlighted(CUMO)	{WAKU}
 40050100XXYY00002039ZZ00	Change AI[ZZ:UNIT:Character][XX:AI1:AI1][YY:AI2:AI2]	{UNIT}
 40050300XX0000002037YYYY	Give Item[XX:ITEM:item]to[YYYY:UNIT:Character](LOW)	{ITEM}

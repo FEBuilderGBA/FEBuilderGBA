@@ -6,7 +6,7 @@ NAME.zh=武器经验值可以是武器级别S
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x16d86 0x02AD74
+ADDRESS=0x16d86 0x02AD74 0x2C164 0x2C168
 HEX=false
 INFO.en=Sets the weapon experience required to S Rank a weapon type.\r\nDefault:250\r\nWeapon S Rank WEXP,Change Required WEXP for next level S
 INFO=Default:250
