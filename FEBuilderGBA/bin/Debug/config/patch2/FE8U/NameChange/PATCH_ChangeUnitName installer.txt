@@ -1,0 +1,18 @@
+NAME=ChangeUnitName(Install)
+NAME.en=ChangeUnitName(Install)
+NAME.zh=ChangeUnitName(Install)
+
+TYPE=EA
+TAG=#ENGINE
+
+INFO=特定条件下でユニットの名前を変更します。
+
+PATCHED_IF:0x7BEAC=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_ChangeUnitName Editor.txt
+EA=Installer.event
+
+AUTHOR=epicer https://discord.com/channels/144670830150811649/470029781795078175/1115010007000424469
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
+INFO.en=Change the name of the unit under certain conditions.
+INFO.zh=在某些条件下更改单位名称。

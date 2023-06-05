@@ -1,0 +1,128 @@
+
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+    
+    PUSH
+    ORG $8C5F4
+    jumpToHack(ChangeUnitName1)
+    ORG $86E4C
+    jumpToHack(ChangeUnitName2)
+    ORG $365EC
+    jumpToHack(ChangeUnitName3)
+    ORG $9A5F0
+    jumpToHack(ChangeUnitName4)
+    ORG $9A97C
+    jumpToHack(ChangeUnitName5)
+    ORG $9954C
+    jumpToHack(ChangeUnitName6)
+    ORG $9A1DC
+    jumpToHack(ChangeUnitName7)
+    ORG $5203C
+    jumpToHack(ChangeUnitName8)
+    ORG $923A8
+    jumpToHack(ChangeUnitName9)
+    ORG $9ECCE
+    SHORT 0x46C0
+    jumpToHack(ChangeUnitName10)
+    ORG $8E240
+    jumpToHack(ChangeUnitName11)
+    ORG $34984
+    jumpToHack(ChangeUnitName12)
+    ORG $2D34C
+    jumpToHack(ChangeUnitName13)
+    ORG $2D37C
+    jumpToHack(ChangeUnitName14)
+    ORG $9B9F0
+    jumpToHack(ChangeUnitName15)
+    ORG $9BA24
+    jumpToHack(ChangeUnitName16)
+    ORG $7BEAC
+    jumpToHack(ChangeUnitName17)
+    POP
+	
+	
+	ALIGN 4    
+    ChangeUnitName1:
+    #incbin "ChangeUnitName1.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4    
+    ChangeUnitName2:
+    #incbin "ChangeUnitName2.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4    
+    ChangeUnitName3:
+    #incbin "ChangeUnitName3.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4    
+    ChangeUnitName4:
+    #incbin "ChangeUnitName4.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4    
+    ChangeUnitName5:
+    #incbin "ChangeUnitName5.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4        
+    ChangeUnitName6:
+    #incbin "ChangeUnitName6.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4
+    ChangeUnitName7:
+    #incbin "ChangeUnitName7.dmp"
+    POIN ChangeUnitName_Table
+	ALIGN 4    
+    ChangeUnitName8:
+    #incbin "ChangeUnitName8.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName9:
+    #incbin "ChangeUnitName9.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName10:
+    #incbin "ChangeUnitName10.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName11:
+    #incbin "ChangeUnitName11.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName12:
+    #incbin "ChangeUnitName12.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName13:
+    #incbin "ChangeUnitName13.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName14:
+    #incbin "ChangeUnitName14.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName15:
+    #incbin "ChangeUnitName15.dmp"
+    POIN ChangeUnitName_Table
+ 	ALIGN 4   
+    ChangeUnitName16:
+    #incbin "ChangeUnitName16.dmp"
+    POIN ChangeUnitName_Table
+ALIGN 4   
+    ChangeUnitName17:
+    #incbin "ChangeUnitName17.dmp"
+    POIN ChangeUnitName_Table
+ALIGN 4
+ChangeUnitName_Table:
+#include "ChangeUnitName_Table.event"
+//@struct ChangeUnitDesc_Table
+//@{
+//@	short	new_desc_id				require
+//@	byte	unit_id;				require
+//@	byte	class_id;				00=ANY or FF=any
+//@	byte	map_id;		章			FF=ANY
+//@	byte	editon		編			FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@}//sizeof(16bytes)
+
+    
