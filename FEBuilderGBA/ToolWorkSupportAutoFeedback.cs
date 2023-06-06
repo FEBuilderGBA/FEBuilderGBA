@@ -155,6 +155,9 @@ namespace FEBuilderGBA
             else if (SendFeedBack_VillageDestroyXY(now, mapid))
             {
             }
+            else if (SendFeedBack_ReloadDetection(now, mapid))
+            {
+            }
 
             EnableAutoFeedbackFlag(now, mapid);
         }
@@ -206,10 +209,6 @@ namespace FEBuilderGBA
             }
 
             string chapter = GetChapterAndInfo(mapid);
-            if (chapter == "")
-            {
-                return false;
-            }
             Send(chapter, "");
             LastFeedBackType = eventType;
             LastFeedBackLongPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
@@ -240,10 +239,6 @@ namespace FEBuilderGBA
             }
 
             string chapter = GetChapterAndInfo(mapid);
-            if (chapter == "")
-            {
-                return false;
-            }
             string deadunitString = GetDeadUnitAndInfo(deadunit);
             Send(chapter, deadunitString);
             LastFeedBackType = eventType;
@@ -274,10 +269,6 @@ namespace FEBuilderGBA
             }
 
             string chapter = GetChapterAndInfo(mapid);
-            if (chapter == "")
-            {
-                return false;
-            }
             string deadunitString = GetVillageDestroyXYAndInfo(villageDestroyXY);
             Send(chapter, deadunitString);
 
@@ -285,6 +276,45 @@ namespace FEBuilderGBA
             LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
+
+        uint SendFeedBack_TurnStartClock = 0;
+        bool SendFeedBack_ReloadDetection(DateTime now, uint mapid)
+        {
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
+            uint turnStartClock = Program.RAM.u32(stageStructAddr + 0);
+
+            if (turnStartClock == 0)
+            {//ゲームが開始していない タイトルメニュー等
+                SendFeedBack_TurnStartClock = 0;
+                return false;
+            }
+            if (SendFeedBack_TurnStartClock != 0)
+            {
+                SendFeedBack_TurnStartClock = turnStartClock;
+                return false;
+            }
+            SendFeedBack_TurnStartClock = turnStartClock;
+            if (now <= LastFeedBackPostTime)
+            {//クールダウン中
+                return false;
+            }
+
+            //0から有効な値になったので、リロードされたと判定する
+            string eventType = "ReloadGame" + turnStartClock;
+//            if (LastFeedBackType == eventType)
+//            {//連続して報告はしない
+//                return false;
+//            }
+
+            string chapter = GetChapterAndInfo(mapid);
+            string deadunit = "reload game";
+            Send(chapter, deadunit);
+
+            LastFeedBackType = eventType;
+            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            return true;
+        }
+
         bool SendFeedBack_Fail(DateTime now, uint mapid)
         {
             if (now <= LastFeedBackPostTime)
@@ -293,16 +323,12 @@ namespace FEBuilderGBA
             }
 
             string eventType = "Hang-up detection" + mapid;
-            if (LastFeedBackType == eventType)
-            {//連続して報告はしない
-                return false;
-            }
+//            if (LastFeedBackType == eventType)
+//            {//連続して報告はしない
+//                return false;
+//            }
 
             string chapter = GetChapterAndInfo(mapid);
-            if (chapter == "")
-            {
-                return false;
-            }
             string deadunit = "Hang-up detection";
             Send(chapter, deadunit);
             LastFeedBackType = eventType;
@@ -341,13 +367,12 @@ namespace FEBuilderGBA
             string chapter = MapSettingForm.GetMapName(mapid);
             if (chapter == "")
             {
-                return "";
+                return mapid.ToString("X02") + " ????";
             }
             chapter = mapid.ToString("X02") + " " + chapter
                 + "\r\n" + EmulatorMemoryUtil.MakeChapterExtraInfo();
             return chapter;
         }
-
         string GetDeadUnitAndInfo(uint uid)
         {
             string deadunit;

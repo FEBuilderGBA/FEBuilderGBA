@@ -206,7 +206,7 @@ namespace FEBuilderGBA
             if (! File.Exists(this.Filename))
             {
                 this.Lines = new Dictionary<string, string>();
-                UpdateAutoFeedback(0);
+                UpdateAutoFeedback(255);
                 return false;
             }
             this.Lines = LoadUpdateInfo(this.Filename);

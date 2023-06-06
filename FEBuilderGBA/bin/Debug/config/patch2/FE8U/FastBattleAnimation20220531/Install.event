@@ -7,7 +7,7 @@ POP
 ALIGN 4
 FastBattleAnimation:
 #incbin "FastBattleAnimation.dmp"
-WORD 0x0001  //A Button
+WORD 0x0100  //R Button
 
 //A Button 0x0001
 //B Button 0x0002
