@@ -209,7 +209,8 @@ namespace FEBuilderGBA
             }
 
             string chapter = GetChapterAndInfo(mapid);
-            Send(chapter, "");
+            string deadunit = "EndEvent";
+            Send(chapter, deadunit);
             LastFeedBackType = eventType;
             LastFeedBackLongPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
             return true;
@@ -378,12 +379,12 @@ namespace FEBuilderGBA
             string deadunit;
             if (uid == 0)
             {
-                deadunit = "";
+                deadunit = "DeadUnit: ???";
             }
             else
             {
                 deadunit = UnitForm.GetUnitName(uid);
-                deadunit = uid.ToString("X02") + " " + deadunit
+                deadunit = "DeadUnit: " + uid.ToString("X02") + " " + deadunit
                     + "\r\n" + EmulatorMemoryUtil.MakeUnitBattleExtraInfo();
             }
             return deadunit;
@@ -393,7 +394,7 @@ namespace FEBuilderGBA
             string deadunit;
             if (xy == U.NOT_FOUND)
             {
-                deadunit = "";
+                deadunit = "VillageDestory: ??";
             }
             else
             {
