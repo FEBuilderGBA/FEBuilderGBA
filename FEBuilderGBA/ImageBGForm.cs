@@ -259,39 +259,45 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "BG", new uint[] { 0 , 4 , 8 });
+            bool isBG256ColorPatch = (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color);
 
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++ , addr += InputFormRef.BlockSize )
             {
                 string name = "BG " + U.To0xHexString(i);
                 uint tsa = Program.ROM.u32(addr + 4);
-                if (tsa == 0)
-                {//255色画像
-                    FEBuilderGBA.Address.AddLZ77Pointer(list
-                        , addr + 0
-                        , name + " 255 color IMAGE"
-                        , isPointerOnly
-                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-                    FEBuilderGBA.Address.AddPointer(list
-                        , addr + 8
-                        , 0x20 * 16
-                        , name + " PALETTE"
-                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                if (isBG256ColorPatch)
+                {
+                    if (tsa == 0)
+                    {//255色画像
+                        FEBuilderGBA.Address.AddLZ77Pointer(list
+                            , addr + 0
+                            , name + " 255 color IMAGE"
+                            , isPointerOnly
+                            , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                        FEBuilderGBA.Address.AddPointer(list
+                            , addr + 8
+                            , 0x20 * 16
+                            , name + " PALETTE"
+                            , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                        continue;
+                    }
+                    else if (tsa == 1)
+                    {//224色画像
+                        FEBuilderGBA.Address.AddLZ77Pointer(list
+                            , addr + 0
+                            , name + " 224 color IMAGE"
+                            , isPointerOnly
+                            , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+                        FEBuilderGBA.Address.AddPointer(list
+                            , addr + 8
+                            , 0x20 * 16
+                            , name + " PALETTE"
+                            , FEBuilderGBA.Address.DataTypeEnum.PAL);
+                        continue;
+                    }
                 }
-                else if (tsa == 1)
-                {//224色画像
-                    FEBuilderGBA.Address.AddLZ77Pointer(list
-                        , addr + 0
-                        , name + " 224 color IMAGE"
-                        , isPointerOnly
-                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-                    FEBuilderGBA.Address.AddPointer(list
-                        , addr + 8
-                        , 0x20 * 16
-                        , name + " PALETTE"
-                        , FEBuilderGBA.Address.DataTypeEnum.PAL);
-                }
-                else
+
                 {//普通の画像
                     FEBuilderGBA.Address.AddLZ77Pointer(list
                         , addr + 0
@@ -363,20 +369,29 @@ namespace FEBuilderGBA
             uint tsa = U.toOffset(P4.Value);
 
             int imageType, tsaType, paletteCount;
-            if (tsa == 0)
-            {//255 color
-                imageType = 3;
-                tsaType = 0;
-                paletteCount = 16;
-            }
-            else if (tsa == 1)
-            {//224 color
-                imageType = 4;
-                tsaType = 0;
-                paletteCount = 16;
+            if (PatchUtil.BG256Color() == PatchUtil.BG256ColorPatch.BG256Color)
+            {
+                if (tsa == 0)
+                {//255 color
+                    imageType = 3;
+                    tsaType = 0;
+                    paletteCount = 16;
+                }
+                else if (tsa == 1)
+                {//224 color
+                    imageType = 4;
+                    tsaType = 0;
+                    paletteCount = 16;
+                }
+                else
+                {//通常の背景
+                    imageType = 0;
+                    tsaType = 3;
+                    paletteCount = 8;
+                }
             }
             else
-            {
+            {//通常の背景
                 imageType = 0;
                 tsaType = 3;
                 paletteCount = 8;
@@ -410,7 +425,7 @@ namespace FEBuilderGBA
                 DetailErrorMessageBox.Text = R._("このデータは、システムメニューの支援会話表示に利用されるランダム背景として予約されています。\r\n変更しないことをお勧めします。");
                 DetailErrorMessageBox.Show();
             }
-            else if (P4.Value == 0)
+            else if (Is255BG())
             {
                 DetailErrorMessageBox.Text = R._("このデータは、カットシーン用の255色画像として登録されいます。\r\n顔画像を表示した会話イベントでは利用しないでください。");
                 DetailErrorMessageBox.Show();
@@ -422,6 +437,18 @@ namespace FEBuilderGBA
             }
         }
 
+        bool Is255BG()
+        {
+            if (PatchUtil.BG256Color() != PatchUtil.BG256ColorPatch.BG256Color)
+            {
+                return false;
+            }
+            if (P0.Value != 0 && P4.Value == 0)
+            {
+                return true;
+            }
+            return false;
+        }
         bool CheckDangerUpdate()
         {
             uint bgid = (uint)this.AddressList.SelectedIndex;
