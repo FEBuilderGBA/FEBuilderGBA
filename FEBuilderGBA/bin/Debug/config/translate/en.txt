@@ -1150,6 +1150,9 @@ Would you like pass the flag "{0}"?
 :フラグ「{0}」を立てますか
 Would you like to set the flag "{0}"?
 
+:この作品ではチート機能が無効に設定されているため、実行できません。
+This work cannot be executed because the cheat function is disabled.
+
 :ユニットが選択されていません
 Unit not selected
 

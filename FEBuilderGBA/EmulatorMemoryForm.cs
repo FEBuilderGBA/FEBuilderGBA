@@ -1497,6 +1497,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
             uint stageStructAddr = Program.ROM.RomInfo.workmemory_chapterdata_address;
             uint writeRAMPointer = stageStructAddr + 0x8;
             Program.RAM.write_u32(writeRAMPointer, (uint)CHEAT_MONEY_VALUE.Value);
@@ -1507,6 +1511,10 @@ namespace FEBuilderGBA
         private void CHEAT_FOG_Click(object sender, EventArgs e)
         {
             if (!CheckConnectShowError())
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }
@@ -1670,8 +1678,21 @@ namespace FEBuilderGBA
 
         private void CHEAT_SET_FLAG03_Click(object sender, EventArgs e)
         {
-//            WriteFlag(0x03, true);
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
             EmulatorMemoryUtil.CHEAT_CALLENDEvent(this);
+        }
+
+        bool CheckDisableCheat()
+        {
+            if (!ToolWorkSupportForm.IsDisableCheat())
+            {
+                return true;
+            }
+            R.ShowStopError("この作品ではチート機能が無効に設定されているため、実行できません。");
+            return false;
         }
 
         void CanNotUpdateControlUnit()
@@ -1782,6 +1803,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
             Debug.Assert(U.is_02RAMPointer(CurrentControlUnitRAMAddress));
             UpdateUnitHP1(CurrentControlUnitRAMAddress , showNotify: true);
         }
@@ -1793,6 +1818,10 @@ namespace FEBuilderGBA
                 return;
             }
             if (!CheckUnitSelectAndError())
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }
@@ -1837,6 +1866,10 @@ namespace FEBuilderGBA
                 return;
             }
             if (!CheckUnitSelectAndError())
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }
@@ -2458,6 +2491,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
             if (Program.ROM.RomInfo.version <= 6)
             {
                 return;
@@ -2490,6 +2527,11 @@ namespace FEBuilderGBA
 
         private void CHEAT_ALL_PLAYER_UNIT_GROW_Click(object sender, EventArgs e)
         {
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
+
             uint limit = 62;
             uint addr = Program.ROM.RomInfo.workmemory_player_units_address;
             MultiUnitsGrow(addr, limit, growMovePower: true);
@@ -2498,6 +2540,11 @@ namespace FEBuilderGBA
 
         private void CHEAT_ALL_UNIT_GROW_Click(object sender, EventArgs e)
         {
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
+
             uint limit = 62;
             uint addr = Program.ROM.RomInfo.workmemory_player_units_address;
             MultiUnitsGrow(addr, limit, growMovePower: true);
@@ -2516,6 +2563,11 @@ namespace FEBuilderGBA
 
         private void CHEAT_ALL_ENEMY_UNIT_HP_1_Click(object sender, EventArgs e)
         {
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
+
             uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address;
             uint limit = 50;
             for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
@@ -2536,6 +2588,11 @@ namespace FEBuilderGBA
         }
         private void CHEAT_ALL_ENEMY_DO_NOT_MOVE_Click(object sender, EventArgs e)
         {
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
+
             uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address;
             uint limit = 50;
             for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
@@ -3581,6 +3638,11 @@ namespace FEBuilderGBA
 
         private void CHEAT_WARP_Click(object sender, EventArgs e)
         {
+            if (!CheckDisableCheat())
+            {
+                return;
+            }
+
             if (Program.ROM.RomInfo.version == 8)
             {
                 EmulatorMemoryUtil.CHEAT_WARP_FE8(this, (uint)this.CHEAT_WARP_CHPATER_VALUE.Value, (uint)this.CHEAT_WARP_EDTION_VALUE.Value, (uint)this.CHEAT_WARP_NODE_VALUE.Value);
@@ -3668,6 +3730,10 @@ namespace FEBuilderGBA
         private void CHEAT_TURN_Click(object sender, EventArgs e)
         {
             if (!CheckConnectShowError())
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }
@@ -3950,6 +4016,10 @@ namespace FEBuilderGBA
         void OnRAMDirectEdit_DoubleClick(object sender,InputFormRef ifr, OnRAMDirectEditEnum typeEnum)
         {
             if (!(sender is NumericUpDown))
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }
@@ -4291,6 +4361,10 @@ namespace FEBuilderGBA
                 return;
             }
             if (!CheckUnitSelectAndError())
+            {
+                return;
+            }
+            if (!CheckDisableCheat())
             {
                 return;
             }

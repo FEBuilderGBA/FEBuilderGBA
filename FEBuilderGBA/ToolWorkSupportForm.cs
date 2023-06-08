@@ -207,10 +207,12 @@ namespace FEBuilderGBA
             {
                 this.Lines = new Dictionary<string, string>();
                 UpdateAutoFeedback(255);
+                DISABLE_CHEAT = false;
                 return false;
             }
             this.Lines = LoadUpdateInfo(this.Filename);
             InitAutoFeedback();
+            InitDisableCheat();
             return true;
         }
         void InitAutoFeedback()
@@ -264,6 +266,24 @@ namespace FEBuilderGBA
         static public bool UseAutoFeedback()
         {
             return AutoFeedback.GetIsAutoFeedBack();
+        }
+
+        static bool DISABLE_CHEAT = false;
+        void InitDisableCheat()
+        {
+            uint r = U.atoi0x(U.at(this.Lines, "DISABLE_CHEAT", "0"));
+            if (r != 0)
+            {
+                DISABLE_CHEAT = true;
+            }
+            else
+            {
+                DISABLE_CHEAT = false;
+            }
+        }
+        static public bool IsDisableCheat()
+        {
+            return DISABLE_CHEAT;
         }
 
         private void WorkSupport_Load(object sender, EventArgs e)
