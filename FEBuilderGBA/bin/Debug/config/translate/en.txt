@@ -1151,7 +1151,7 @@ Would you like pass the flag "{0}"?
 Would you like to set the flag "{0}"?
 
 :この作品ではチート機能が無効に設定されているため、実行できません。
-This work cannot be executed because the cheat function is disabled.
+Sorry, The cheat function is set to disabled in this work, so cheats cannot be performed.
 
 :ユニットが選択されていません
 Unit not selected

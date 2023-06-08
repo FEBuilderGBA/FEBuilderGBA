@@ -1151,7 +1151,7 @@ Eliwood版
 你想设置标志"{0}"吗？
 
 :この作品ではチート機能が無効に設定されているため、実行できません。
-由于作弊功能被禁用，因此无法执行此工作。
+Sorry, The cheat function is set to disabled in this work, so cheats cannot be performed.
 
 :ユニットが選択されていません
 人物未选中
