@@ -1,5 +1,5 @@
-NAME=セーブ画面のメニュー
-NAME.en=SaveControlMenu
+NAME=セーブ画面のメニュー Image
+NAME.en=SaveControlMenu Image
 
 TYPE=IMAGE
 TAG=#IMAGE
@@ -12,4 +12,4 @@ PALETTE_POINTER=0x0A8EE4//0xA27F68
 PALETTE=1
 
 AUTHOR=Kirb
-NAME.zh=保存屏幕菜单。
+NAME.zh=保存屏幕菜单  Image

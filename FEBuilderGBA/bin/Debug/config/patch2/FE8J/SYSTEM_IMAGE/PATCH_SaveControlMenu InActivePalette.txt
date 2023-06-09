@@ -1,0 +1,16 @@
+NAME=セーブ画面のメニュー InActivePalette
+NAME.en=SaveControlMenu InActivePalette
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=112
+
+ZIMAGE_POINTER=0x000AD8F4//0x08AA39DC
+PALETTE_ADDRESS=0xAA523C
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Eretein https://feuniverse.us/t/fe8-main-menu-tiles-palette/20607/
+NAME.zh=保存屏幕菜单 InActivePalette

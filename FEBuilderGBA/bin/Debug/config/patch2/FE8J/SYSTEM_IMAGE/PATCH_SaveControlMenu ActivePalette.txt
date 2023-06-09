@@ -1,0 +1,16 @@
+NAME=セーブ画面のメニュー ActivePalette
+NAME.en=SaveControlMenu ActivePalette
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=112
+
+ZIMAGE_POINTER=0x000AD8F4//0x08AA39DC
+PALETTE_POINTER=0x000AD8FC//0x08AA51BC
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Kirb
+NAME.zh=保存屏幕菜单 ActivePalette
