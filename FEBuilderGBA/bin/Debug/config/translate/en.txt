@@ -12550,6 +12550,9 @@ Please select a file name to save.
 :base64に変換できませんでした。
 Failed to convert to base64.
 
+:Base64を復号しましたが、7zファイルからsavを回収できませんでした。
+Decrypted Base64 but could not recover sav from 7z file.
+
 :解凍する
 Decompress
 
@@ -12612,6 +12615,12 @@ Music GOTO-FINE optimization.
 
 :音楽でGOTOの後に即FINEを実施します。\r\nGOTOの後に無駄な余白を持っている楽曲を最適化します。
 Perform FINE immediately after GOTO with music.\r\nOptimize songs that have useless white space after GOTO.
+
+:base64テキストからsavデータを復元してエミュレータを起動します。
+Restore sav data from base64 text and start emulator.
+
+:base64テキストを入力するか、fileから変換した結果が代入されます
+Input the base64 text or substitute the result converted from file.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

@@ -499,5 +499,42 @@ namespace FEBuilderGBA
             }
             SongTableForm.Execute_ToolOptimizationSongGotoFine();
         }
+
+        private void Base64TextToEmulatorButton_Click(object sender, EventArgs e)
+        {
+            string text = Base64DirectEmulatorRichTextEdit.Text;
+            if (text == "")
+            {
+                R.ShowStopError("Textにbase64のデータを入力してください");
+                return;
+            }
+            byte[] bin;
+            text = text.Trim();
+            text = text.Replace(' ', '+');
+            if (!U.Base64Encode(text, out bin))
+            {
+                R.ShowStopError("Base64を復号できませんでした");
+                return;
+            }
+
+            using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
+            {
+                string save7zfile = Path.Combine(tempdir.Dir, "foo.7z");
+                File.WriteAllBytes(save7zfile, bin);
+
+                ArchSevenZip.Extract(save7zfile, tempdir.Dir);
+                string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.sav", SearchOption.AllDirectories);
+                if (files.Length < 1)
+                {
+                    R.ShowStopError("Base64を復号しましたが、7zファイルからsavを回収できませんでした。");
+                    return;
+                }
+                
+                string targetsavFile = U.GetEmulatorSavFile(".emulator.sav");
+                File.Copy(files[0], targetsavFile , true);
+            }
+
+            MainFormUtil.RunAs("emulator");
+        }
     }
 }

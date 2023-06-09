@@ -7852,6 +7852,25 @@ namespace FEBuilderGBA
             return false;
         }
 
+        public static string  GetEmulatorSavFile(string needExt)
+        {
+            string dir = Path.GetDirectoryName(Program.ROM.Filename);
+            string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
+
+            string savFilename = Path.Combine(dir, file + needExt);
+            if (!File.Exists(savFilename))
+            {
+                //一部のエミュレータでは、spaceが_に置換されることがあるらしい
+                file = file.Replace(" ", "_");
+                string savFilename2 = Path.Combine(dir, file + needExt);
+                if (File.Exists(savFilename2))
+                {
+                    return savFilename2;
+                }
+            }
+            return savFilename;
+        }
+
     }
 }
 

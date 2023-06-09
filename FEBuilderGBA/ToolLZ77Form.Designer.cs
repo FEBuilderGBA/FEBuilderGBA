@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DeCompressDESTFilename = new FEBuilderGBA.TextBoxEx();
             this.DeCompressDESTSelectButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.DeCompressFireButton = new System.Windows.Forms.Button();
             this.DeCompressAddress = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.DeCompressSRCFilename = new FEBuilderGBA.TextBoxEx();
             this.DeCompressSRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.CompressDESTFilename = new FEBuilderGBA.TextBoxEx();
             this.CompressDESTSelectButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.CompressFireButton = new System.Windows.Forms.Button();
-            this.CompressSRCFilename = new FEBuilderGBA.TextBoxEx();
             this.CompressSRCSelectButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ZeroClearTo = new System.Windows.Forms.NumericUpDown();
@@ -55,10 +51,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.Base64RichTextEdit = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.FileToBase64TextButton = new System.Windows.Forms.Button();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
             this.Base64TextToFileButton = new System.Windows.Forms.Button();
+            this.FileToBase64TextButton = new System.Windows.Forms.Button();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.Base64TextToEmulatorButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -80,11 +78,17 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.OptimizationBattleAnimationOAMButton = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.OptimizationSongGotoFineButton = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.DeCompressDESTFilename = new FEBuilderGBA.TextBoxEx();
+            this.DeCompressSRCFilename = new FEBuilderGBA.TextBoxEx();
+            this.CompressDESTFilename = new FEBuilderGBA.TextBoxEx();
+            this.CompressSRCFilename = new FEBuilderGBA.TextBoxEx();
+            this.Base64DirectEmulatorRichTextEdit = new FEBuilderGBA.TextBoxEx();
+            this.Base64RichTextEdit = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
+            this.textBoxEx2 = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
@@ -92,6 +96,9 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MoveLength)).BeginInit();
@@ -104,17 +111,6 @@
             this.tabPage8.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DeCompressDESTFilename
-            // 
-            this.DeCompressDESTFilename.ErrorMessage = "";
-            this.DeCompressDESTFilename.Location = new System.Drawing.Point(310, 77);
-            this.DeCompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.DeCompressDESTFilename.Name = "DeCompressDESTFilename";
-            this.DeCompressDESTFilename.Placeholder = "";
-            this.DeCompressDESTFilename.Size = new System.Drawing.Size(346, 25);
-            this.DeCompressDESTFilename.TabIndex = 97;
-            this.DeCompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressDESTFilename_MouseDoubleClick);
             // 
             // DeCompressDESTSelectButton
             // 
@@ -174,17 +170,6 @@
             this.label1.Text = "SRC開始アドレス";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DeCompressSRCFilename
-            // 
-            this.DeCompressSRCFilename.ErrorMessage = "";
-            this.DeCompressSRCFilename.Location = new System.Drawing.Point(310, 13);
-            this.DeCompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.DeCompressSRCFilename.Name = "DeCompressSRCFilename";
-            this.DeCompressSRCFilename.Placeholder = "";
-            this.DeCompressSRCFilename.Size = new System.Drawing.Size(346, 25);
-            this.DeCompressSRCFilename.TabIndex = 87;
-            this.DeCompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressSRCFilename_MouseDoubleClick);
-            // 
             // DeCompressSRCSelectButton
             // 
             this.DeCompressSRCSelectButton.Location = new System.Drawing.Point(172, 9);
@@ -206,17 +191,6 @@
             this.label9.TabIndex = 85;
             this.label9.Text = "SRC";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CompressDESTFilename
-            // 
-            this.CompressDESTFilename.ErrorMessage = "";
-            this.CompressDESTFilename.Location = new System.Drawing.Point(310, 45);
-            this.CompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.CompressDESTFilename.Name = "CompressDESTFilename";
-            this.CompressDESTFilename.Placeholder = "";
-            this.CompressDESTFilename.Size = new System.Drawing.Size(346, 25);
-            this.CompressDESTFilename.TabIndex = 94;
-            this.CompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressDESTFilename_MouseDoubleClick);
             // 
             // CompressDESTSelectButton
             // 
@@ -250,17 +224,6 @@
             this.CompressFireButton.Text = "圧縮する";
             this.CompressFireButton.UseVisualStyleBackColor = true;
             this.CompressFireButton.Click += new System.EventHandler(this.CompressFireButton_Click);
-            // 
-            // CompressSRCFilename
-            // 
-            this.CompressSRCFilename.ErrorMessage = "";
-            this.CompressSRCFilename.Location = new System.Drawing.Point(310, 15);
-            this.CompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.CompressSRCFilename.Name = "CompressSRCFilename";
-            this.CompressSRCFilename.Placeholder = "";
-            this.CompressSRCFilename.Size = new System.Drawing.Size(346, 25);
-            this.CompressSRCFilename.TabIndex = 90;
-            this.CompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressSRCFilename_MouseDoubleClick);
             // 
             // CompressSRCSelectButton
             // 
@@ -403,13 +366,13 @@
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.CompressDESTFilename);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.CompressDESTSelectButton);
             this.tabPage2.Controls.Add(this.CompressSRCSelectButton);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.CompressSRCFilename);
             this.tabPage2.Controls.Add(this.CompressFireButton);
+            this.tabPage2.Controls.Add(this.CompressDESTFilename);
+            this.tabPage2.Controls.Add(this.CompressSRCFilename);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -430,10 +393,7 @@
             // tabPage9
             // 
             this.tabPage9.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage9.Controls.Add(this.Base64RichTextEdit);
-            this.tabPage9.Controls.Add(this.label11);
-            this.tabPage9.Controls.Add(this.FileToBase64TextButton);
-            this.tabPage9.Controls.Add(this.Base64TextToFileButton);
+            this.tabPage9.Controls.Add(this.tabControl3);
             this.tabPage9.Location = new System.Drawing.Point(4, 28);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -441,42 +401,71 @@
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Base64";
             // 
-            // Base64RichTextEdit
+            // tabControl3
             // 
-            this.Base64RichTextEdit.Location = new System.Drawing.Point(9, 31);
-            this.Base64RichTextEdit.Name = "Base64RichTextEdit";
-            this.Base64RichTextEdit.Size = new System.Drawing.Size(631, 228);
-            this.Base64RichTextEdit.TabIndex = 9;
-            this.Base64RichTextEdit.Text = "";
+            this.tabControl3.Controls.Add(this.tabPage12);
+            this.tabControl3.Controls.Add(this.tabPage11);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(3, 3);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(679, 296);
+            this.tabControl3.TabIndex = 10;
             // 
-            // label11
+            // tabPage11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 18);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Text:";
-            // 
-            // FileToBase64TextButton
-            // 
-            this.FileToBase64TextButton.Location = new System.Drawing.Point(274, 265);
-            this.FileToBase64TextButton.Name = "FileToBase64TextButton";
-            this.FileToBase64TextButton.Size = new System.Drawing.Size(218, 31);
-            this.FileToBase64TextButton.TabIndex = 6;
-            this.FileToBase64TextButton.Text = "File to Base64 Text";
-            this.FileToBase64TextButton.UseVisualStyleBackColor = true;
-            this.FileToBase64TextButton.Click += new System.EventHandler(this.FileToBase64TextButton_Click);
+            this.tabPage11.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage11.Controls.Add(this.Base64TextToFileButton);
+            this.tabPage11.Controls.Add(this.FileToBase64TextButton);
+            this.tabPage11.Controls.Add(this.Base64RichTextEdit);
+            this.tabPage11.Location = new System.Drawing.Point(4, 28);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(671, 264);
+            this.tabPage11.TabIndex = 0;
+            this.tabPage11.Text = "Plain";
             // 
             // Base64TextToFileButton
             // 
-            this.Base64TextToFileButton.Location = new System.Drawing.Point(6, 265);
+            this.Base64TextToFileButton.Location = new System.Drawing.Point(3, 220);
             this.Base64TextToFileButton.Name = "Base64TextToFileButton";
             this.Base64TextToFileButton.Size = new System.Drawing.Size(228, 31);
             this.Base64TextToFileButton.TabIndex = 1;
             this.Base64TextToFileButton.Text = "Base64 Text to File";
             this.Base64TextToFileButton.UseVisualStyleBackColor = true;
             this.Base64TextToFileButton.Click += new System.EventHandler(this.Base64TextToFileButton_Click);
+            // 
+            // FileToBase64TextButton
+            // 
+            this.FileToBase64TextButton.Location = new System.Drawing.Point(266, 220);
+            this.FileToBase64TextButton.Name = "FileToBase64TextButton";
+            this.FileToBase64TextButton.Size = new System.Drawing.Size(218, 31);
+            this.FileToBase64TextButton.TabIndex = 2;
+            this.FileToBase64TextButton.Text = "File to Base64 Text";
+            this.FileToBase64TextButton.UseVisualStyleBackColor = true;
+            this.FileToBase64TextButton.Click += new System.EventHandler(this.FileToBase64TextButton_Click);
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage12.Controls.Add(this.Base64DirectEmulatorRichTextEdit);
+            this.tabPage12.Controls.Add(this.Base64TextToEmulatorButton);
+            this.tabPage12.Location = new System.Drawing.Point(4, 28);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(671, 264);
+            this.tabPage12.TabIndex = 1;
+            this.tabPage12.Text = "Emulator";
+            // 
+            // Base64TextToEmulatorButton
+            // 
+            this.Base64TextToEmulatorButton.Location = new System.Drawing.Point(3, 228);
+            this.Base64TextToEmulatorButton.Name = "Base64TextToEmulatorButton";
+            this.Base64TextToEmulatorButton.Size = new System.Drawing.Size(274, 31);
+            this.Base64TextToEmulatorButton.TabIndex = 1;
+            this.Base64TextToEmulatorButton.Text = "Base64 Text to Run Emulator";
+            this.Base64TextToEmulatorButton.UseVisualStyleBackColor = true;
+            this.Base64TextToEmulatorButton.Click += new System.EventHandler(this.Base64TextToEmulatorButton_Click);
             // 
             // tabPage3
             // 
@@ -740,26 +729,6 @@
     "、すべのてアニメーションに対して有効ではなく、ユーザが作成したバニラ以外の戦闘アニメに対してのみ有効です。\r\nアニメーションをたくさんインストールしている場合に" +
     "、特に有効です。";
             // 
-            // textBoxEx1
-            // 
-            this.textBoxEx1.ErrorMessage = "";
-            this.textBoxEx1.Location = new System.Drawing.Point(310, 72);
-            this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEx1.Name = "textBoxEx1";
-            this.textBoxEx1.Placeholder = "";
-            this.textBoxEx1.Size = new System.Drawing.Size(346, 25);
-            this.textBoxEx1.TabIndex = 103;
-            // 
-            // textBoxEx2
-            // 
-            this.textBoxEx2.ErrorMessage = "";
-            this.textBoxEx2.Location = new System.Drawing.Point(310, 74);
-            this.textBoxEx2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEx2.Name = "textBoxEx2";
-            this.textBoxEx2.Placeholder = "";
-            this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
-            this.textBoxEx2.TabIndex = 105;
-            // 
             // tabPage10
             // 
             this.tabPage10.BackColor = System.Drawing.SystemColors.Control;
@@ -793,6 +762,92 @@
             this.textBox7.TabIndex = 103;
             this.textBox7.Text = "音楽でGOTOの後に即FINEを実施します。\r\nGOTOの後に無駄な余白を持っている楽曲を最適化します。";
             // 
+            // DeCompressDESTFilename
+            // 
+            this.DeCompressDESTFilename.ErrorMessage = "";
+            this.DeCompressDESTFilename.Location = new System.Drawing.Point(310, 77);
+            this.DeCompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.DeCompressDESTFilename.Name = "DeCompressDESTFilename";
+            this.DeCompressDESTFilename.Placeholder = "";
+            this.DeCompressDESTFilename.Size = new System.Drawing.Size(346, 25);
+            this.DeCompressDESTFilename.TabIndex = 97;
+            this.DeCompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressDESTFilename_MouseDoubleClick);
+            // 
+            // DeCompressSRCFilename
+            // 
+            this.DeCompressSRCFilename.ErrorMessage = "";
+            this.DeCompressSRCFilename.Location = new System.Drawing.Point(310, 13);
+            this.DeCompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.DeCompressSRCFilename.Name = "DeCompressSRCFilename";
+            this.DeCompressSRCFilename.Placeholder = "";
+            this.DeCompressSRCFilename.Size = new System.Drawing.Size(346, 25);
+            this.DeCompressSRCFilename.TabIndex = 87;
+            this.DeCompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressSRCFilename_MouseDoubleClick);
+            // 
+            // CompressDESTFilename
+            // 
+            this.CompressDESTFilename.ErrorMessage = "";
+            this.CompressDESTFilename.Location = new System.Drawing.Point(310, 45);
+            this.CompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.CompressDESTFilename.Name = "CompressDESTFilename";
+            this.CompressDESTFilename.Placeholder = "";
+            this.CompressDESTFilename.Size = new System.Drawing.Size(346, 25);
+            this.CompressDESTFilename.TabIndex = 94;
+            this.CompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressDESTFilename_MouseDoubleClick);
+            // 
+            // CompressSRCFilename
+            // 
+            this.CompressSRCFilename.ErrorMessage = "";
+            this.CompressSRCFilename.Location = new System.Drawing.Point(310, 15);
+            this.CompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.CompressSRCFilename.Name = "CompressSRCFilename";
+            this.CompressSRCFilename.Placeholder = "";
+            this.CompressSRCFilename.Size = new System.Drawing.Size(346, 25);
+            this.CompressSRCFilename.TabIndex = 90;
+            this.CompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressSRCFilename_MouseDoubleClick);
+            // 
+            // Base64DirectEmulatorRichTextEdit
+            // 
+            this.Base64DirectEmulatorRichTextEdit.ErrorMessage = "";
+            this.Base64DirectEmulatorRichTextEdit.Location = new System.Drawing.Point(4, 7);
+            this.Base64DirectEmulatorRichTextEdit.Multiline = true;
+            this.Base64DirectEmulatorRichTextEdit.Name = "Base64DirectEmulatorRichTextEdit";
+            this.Base64DirectEmulatorRichTextEdit.Placeholder = "base64テキストからsavデータを復元してエミュレータを起動します。";
+            this.Base64DirectEmulatorRichTextEdit.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.Base64DirectEmulatorRichTextEdit.Size = new System.Drawing.Size(662, 205);
+            this.Base64DirectEmulatorRichTextEdit.TabIndex = 0;
+            // 
+            // Base64RichTextEdit
+            // 
+            this.Base64RichTextEdit.ErrorMessage = "";
+            this.Base64RichTextEdit.Location = new System.Drawing.Point(6, 8);
+            this.Base64RichTextEdit.Multiline = true;
+            this.Base64RichTextEdit.Name = "Base64RichTextEdit";
+            this.Base64RichTextEdit.Placeholder = "base64テキストを入力するか、fileから変換した結果が代入されます";
+            this.Base64RichTextEdit.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.Base64RichTextEdit.Size = new System.Drawing.Size(662, 206);
+            this.Base64RichTextEdit.TabIndex = 0;
+            // 
+            // textBoxEx1
+            // 
+            this.textBoxEx1.ErrorMessage = "";
+            this.textBoxEx1.Location = new System.Drawing.Point(310, 72);
+            this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx1.Name = "textBoxEx1";
+            this.textBoxEx1.Placeholder = "";
+            this.textBoxEx1.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx1.TabIndex = 103;
+            // 
+            // textBoxEx2
+            // 
+            this.textBoxEx2.ErrorMessage = "";
+            this.textBoxEx2.Location = new System.Drawing.Point(310, 74);
+            this.textBoxEx2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEx2.Name = "textBoxEx2";
+            this.textBoxEx2.Placeholder = "";
+            this.textBoxEx2.Size = new System.Drawing.Size(346, 25);
+            this.textBoxEx2.TabIndex = 105;
+            // 
             // ToolLZ77Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -813,7 +868,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -888,11 +947,15 @@
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button Base64TextToFileButton;
         private System.Windows.Forms.Button FileToBase64TextButton;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox Base64RichTextEdit;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Button OptimizationSongGotoFineButton;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Button Base64TextToEmulatorButton;
+        private TextBoxEx Base64RichTextEdit;
+        private TextBoxEx Base64DirectEmulatorRichTextEdit;
 
     }
 }

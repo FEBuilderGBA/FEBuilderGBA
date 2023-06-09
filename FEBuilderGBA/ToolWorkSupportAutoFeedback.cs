@@ -228,7 +228,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            string eventType = "UnitDead" + deadunit;
+            string eventType = "DeadUnit" + deadunit;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
                 return false;
@@ -308,7 +308,7 @@ namespace FEBuilderGBA
 //            }
 
             string chapter = GetChapterAndInfo(mapid);
-            string deadunit = "reload game";
+            string deadunit = "ReloadGame";
             Send(chapter, deadunit);
 
             LastFeedBackType = eventType;
