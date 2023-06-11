@@ -737,7 +737,7 @@
             "自軍",
             "敵軍",
             "友軍",
-            "グレー"});
+            "第4軍"});
             this.ShowPaletteComboBox.Location = new System.Drawing.Point(102, 419);
             this.ShowPaletteComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ShowPaletteComboBox.Name = "ShowPaletteComboBox";

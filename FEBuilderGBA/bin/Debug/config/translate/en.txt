@@ -4039,6 +4039,9 @@ Import Palette
 :4軍
 Fourth
 
+:第4軍
+Fourth
+
 :システムパレット2
 System palette 2
 

@@ -775,7 +775,7 @@
             this.unit_icon_four_Label.Name = "unit_icon_four_Label";
             this.unit_icon_four_Label.Size = new System.Drawing.Size(242, 31);
             this.unit_icon_four_Label.TabIndex = 125;
-            this.unit_icon_four_Label.Text = "4軍";
+            this.unit_icon_four_Label.Text = "第4軍";
             this.unit_icon_four_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.unit_icon_four_Label.Click += new System.EventHandler(this.unit_icon_four_Label_Click);
             // 
