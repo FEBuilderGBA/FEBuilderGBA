@@ -930,7 +930,7 @@ namespace FEBuilderGBA
 
             sb.AppendLine(typeof(U).Assembly.GetName().Name + ":" + U.getVersion());
             sb.AppendLine("FEVersion:" + FEVersion);
-            sb.AppendLine("Emu:" + OptionForm.GetEmulatorNameOnly());
+            sb.AppendLine("Emu:" + OptionForm.GetEmulatorName() + " Ver:" + OptionForm.GetEmulatorVersion());
 
             DateTime dt = U.GetFileDateLastWriteTime(Program.ROM.Filename);
             sb.AppendLine("ROM DateTime:" + dt.ToString());

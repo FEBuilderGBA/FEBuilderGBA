@@ -81,14 +81,16 @@ namespace FEBuilderGBA
         }
         string MakeVersion()
         {
-            uint size = (uint) (Program.ROM.Data.Length / 1024);
+            string emulator = OptionForm.GetEmulatorName();
+            string emulatorver = OptionForm.GetEmulatorVersion();
+            uint size = (uint)(Program.ROM.Data.Length / 1024);
             if (! File.Exists(Program.ROM.Filename))
             {
-                return "_" + size;
+                return "_" + size + "\r\n" + emulator + "\r\n" + emulatorver;
             }
             string filename = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
             DateTime dt = U.GetFileDateLastWriteTime(Program.ROM.Filename);
-            return filename + "\r\n" + dt.ToString("yyyyMMdd") + "\r\n" + size;
+            return filename + "\r\n" + dt.ToString("yyyyMMdd") + "\r\n" + size + "\r\n" + emulator + "\r\n" + emulatorver;
         }
         public bool GetIsAutoFeedBack()
         {

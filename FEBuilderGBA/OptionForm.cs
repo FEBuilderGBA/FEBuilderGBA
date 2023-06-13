@@ -1515,15 +1515,46 @@ namespace FEBuilderGBA
         }
 
         //利用しているエミュレータの種類を知りたいので、名前を取得する
-        public static string GetEmulatorNameOnly()
+        public static string GetEmulatorName()
         {
             //エミュレータの名前
             string emu = Program.Config.at("emulator");
-            if (emu == "")
+            if (emu == "" || !File.Exists(emu))
             {
                 return "";
             }
-            return Path.GetFileName(emu);
+
+            return Path.GetFileNameWithoutExtension(emu);
+        }
+        //利用しているエミュレータの種類を知りたいので、名前を取得する
+        public static string GetEmulatorVersion()
+        {
+            //エミュレータの名前
+            string emu = Program.Config.at("emulator");
+            if (emu == "" || !File.Exists(emu))
+            {
+                return "";
+            }
+
+            string emulator = Path.GetFileNameWithoutExtension(emu);
+            if (emulator == "mGBA")
+            {//mGBAだとバージョン番号をちゃんととれます
+                try
+                {
+                    System.Diagnostics.FileVersionInfo vi =
+                        System.Diagnostics.FileVersionInfo.GetVersionInfo(emu);
+
+                    //ファイル名 + バージョン番号
+                    return vi.FileVersion;
+                }
+                catch (Exception)
+                {
+                }
+            }
+
+            {//それ以外は取れないので、日付を見ましょう
+                return File.GetLastWriteTime(emu).ToString("yyyyMMdd");
+            }
         }
 
         public static string GetCFLAGS()

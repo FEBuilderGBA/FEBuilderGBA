@@ -254,6 +254,7 @@ namespace FEBuilderGBA
             string ups = Path.Combine(tempdir, Path.GetFileNameWithoutExtension(targetFilename) + ".ups");
             UPSUtil.MakeUPS(s, d, ups);
             U.CopyTimeStamp(targetFilename, ups); //タイムスタンプを元のファイルに合わせる.
+            U.ReleaseMemory(null);
 
             return true;
         }
@@ -485,7 +486,7 @@ namespace FEBuilderGBA
 
             sb.AppendLine(typeof(U).Assembly.GetName().Name + ":" + U.getVersion());
             sb.AppendLine("FEVersion:" + FEVersion);
-            sb.AppendLine("Emu:" + OptionForm.GetEmulatorNameOnly());
+            sb.AppendLine("Emu:" + OptionForm.GetEmulatorName() + " Ver:" + OptionForm.GetEmulatorVersion());
 
             sb.AppendLine("MapID:");
             sb.AppendLine(U.ToHexString(this.X_MapID.Value) + ":" + this.X_MapName.Text);
