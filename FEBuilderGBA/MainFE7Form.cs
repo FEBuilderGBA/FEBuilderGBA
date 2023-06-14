@@ -166,6 +166,16 @@ namespace FEBuilderGBA
 
         private void FontButton_Click(object sender, EventArgs e)
         {
+            if (Program.ROM.RomInfo.is_multibyte)
+            {
+                OptionForm.textencoding_enum textencoding = OptionForm.textencoding();
+                if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
+                {
+                    InputFormRef.JumpForm<FontZHForm>();
+                    return;
+                }
+            }
+
             InputFormRef.JumpForm<FontForm>();
         }
 
