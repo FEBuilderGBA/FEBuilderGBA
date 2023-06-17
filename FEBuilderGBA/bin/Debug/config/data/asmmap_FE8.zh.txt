@@ -7741,28 +7741,28 @@ r3=X tile position of menu of the right	{U}
 08A587D0	&LZ77	Something small compressed data	67	{J}
 08A5882C	&LZ77	Something small compressed data	68	{J}
 08A58888	&LZ77	Something small compressed data	69	{J}
-08A71F3C	&EVENT	Debug room, Event 1	{J}
-08A71FCC	&EVENT	Debug room, Event 2	{J}
-08A72044	&EVENT	Debug room, Event 3	{J}
-08A720EC	&EVENT	Debug room, Event 4	{J}
-08A72158	&EVENT	Debug room, Event 5	{J}
-08A721F4	&EVENT	Debug room, Event 6	{J}
-08A72264	&EVENT	Debug room, Event 7	{J}
-08A72318	&EVENT	Debug room, Event 8	{J}
-08A72158	&EVENT	Debug room, Event 9	{J}
-08A721F4	&EVENT	Debug room, Event 10	{J}
-08A723A8	&EVENT	Debug room, Event 11	{J}
-089FFE84	&EVENT	Debug room, Event 1	{U}
-089FFF14	&EVENT	Debug room, Event 2	{U}
-089FFF8C	&EVENT	Debug room, Event 3	{U}
-08A00034	&EVENT	Debug room, Event 4	{U}
-08A000A0	&EVENT	Debug room, Event 5	{U}
-08A0013C	&EVENT	Debug room, Event 6	{U}
-08A001AC	&EVENT	Debug room, Event 7	{U}
-08A00260	&EVENT	Debug room, Event 8	{U}
-08A000A0	&EVENT	Debug room, Event 9	{U}
-08A0013C	&EVENT	Debug room, Event 10	{U}
-08A002F0	&EVENT	Debug room, Event 11	{U}
+08A71F3C	&EVENT	Skirmishes, Event 1	{J}
+08A71FCC	&EVENT	Skirmishes, Event 2	{J}
+08A72044	&EVENT	Skirmishes, Event 3	{J}
+08A720EC	&EVENT	Skirmishes, Event 4	{J}
+08A72158	&EVENT	Skirmishes, Event 5	{J}
+08A721F4	&EVENT	Skirmishes, Event 6	{J}
+08A72264	&EVENT	Skirmishes, Event 7	{J}
+08A72318	&EVENT	Skirmishes, Event 8	{J}
+08A72158	&EVENT	Skirmishes, Event 9	{J}
+08A721F4	&EVENT	Skirmishes, Event 10	{J}
+08A723A8	&EVENT	Skirmishes, Event 11	{J}
+089FFE84	&EVENT	Skirmishes, Event 1	{U}
+089FFF14	&EVENT	Skirmishes, Event 2	{U}
+089FFF8C	&EVENT	Skirmishes, Event 3	{U}
+08A00034	&EVENT	Skirmishes, Event 4	{U}
+08A000A0	&EVENT	Skirmishes, Event 5	{U}
+08A0013C	&EVENT	Skirmishes, Event 6	{U}
+08A001AC	&EVENT	Skirmishes, Event 7	{U}
+08A00260	&EVENT	Skirmishes, Event 8	{U}
+08A000A0	&EVENT	Skirmishes, Event 9	{U}
+08A0013C	&EVENT	Skirmishes, Event 10	{U}
+08A002F0	&EVENT	Skirmishes, Event 11	{U}
 08083DF0	Set up scar damage recovery effect	{J}
 08081B40	Set up scar damage recovery effect	{U}
 08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}

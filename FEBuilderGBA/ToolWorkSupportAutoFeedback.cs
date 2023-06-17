@@ -24,8 +24,13 @@ namespace FEBuilderGBA
 
         const int FEEDBACK_WAIT_LONG_MINUTE = 10;
         const int FEEDBACK_WAIT_MINUTE = 1;
-        DateTime LastFeedBackLongPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_LONG_MINUTE);
-        DateTime LastFeedBackPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        DateTime LastFeedBackEndEventPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_LONG_MINUTE);
+        DateTime LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        DateTime LastFeedBackEnableFlagPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        DateTime LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        DateTime LastFeedBackRaloadDetectionPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        DateTime LastFeedBackFailPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+        
         string LastFeedBackType = "";
         bool IsBusy = false;
 
@@ -148,19 +153,10 @@ namespace FEBuilderGBA
             }
 
             DateTime now = DateTime.Now;
-            if (SendFeedBack_EndEvent(now, mapid))
-            {
-            }
-            else if (SendFeedBack_DeadEvent(now, mapid))
-            {
-            }
-            else if (SendFeedBack_VillageDestroyXY(now, mapid))
-            {
-            }
-            else if (SendFeedBack_ReloadDetection(now, mapid))
-            {
-            }
-
+            SendFeedBack_EndEvent(now, mapid);
+            SendFeedBack_DeadEvent(now, mapid);
+            SendFeedBack_VillageDestroyXY(now, mapid);
+            SendFeedBack_ReloadDetection(now, mapid);
             EnableAutoFeedbackFlag(now, mapid);
         }
         void EnableAutoFeedbackFlag(DateTime now, uint mapid)
@@ -173,10 +169,11 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (now <= LastFeedBackPostTime)
+            if (now <= LastFeedBackEnableFlagPostTime)
             {//クールダウン中
                 return;
             }
+            LastFeedBackEnableFlagPostTime = now;
             bool flag = EmulatorMemoryForm.IsFlagEnable(AUTOFEEDBACK_ENABLE_FLAG);
             if (flag)
             {//有効なら何もしない
@@ -189,7 +186,7 @@ namespace FEBuilderGBA
         bool SendFeedBack_EndEvent(DateTime now, uint mapid)
         {
             //LOMAでマップIDを切り替えるケースがあるので、長いクールダウンを利用します
-            if (now <= LastFeedBackLongPostTime)
+            if (now <= LastFeedBackEndEventPostTime)
             {//クールダウン中
                 return false;
             }
@@ -214,12 +211,12 @@ namespace FEBuilderGBA
             string deadunit = "EndEvent";
             Send(chapter, deadunit);
             LastFeedBackType = eventType;
-            LastFeedBackLongPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
+            LastFeedBackEndEventPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
             return true;
         }
         bool SendFeedBack_DeadEvent(DateTime now, uint mapid)
         {
-            if (now <= LastFeedBackPostTime)
+            if (now <= LastFeedBackDeadUnitPostTime)
             {//クールダウン中
                 return false;
             }
@@ -245,12 +242,12 @@ namespace FEBuilderGBA
             string deadunitString = GetDeadUnitAndInfo(deadunit);
             Send(chapter, deadunitString);
             LastFeedBackType = eventType;
-            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
         bool SendFeedBack_VillageDestroyXY(DateTime now, uint mapid)
         {
-            if (now <= LastFeedBackPostTime)
+            if (now <= LastFeedBackVillageDestroyXYPostTime)
             {//クールダウン中
                 return false;
             }
@@ -276,7 +273,7 @@ namespace FEBuilderGBA
             Send(chapter, deadunitString);
 
             LastFeedBackType = eventType;
-            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
 
@@ -297,7 +294,7 @@ namespace FEBuilderGBA
                 return false;
             }
             SendFeedBack_TurnStartClock = turnStartClock;
-            if (now <= LastFeedBackPostTime)
+            if (now <= LastFeedBackRaloadDetectionPostTime)
             {//クールダウン中
                 return false;
             }
@@ -314,13 +311,13 @@ namespace FEBuilderGBA
             Send(chapter, deadunit);
 
             LastFeedBackType = eventType;
-            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            LastFeedBackRaloadDetectionPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
 
         bool SendFeedBack_Fail(DateTime now, uint mapid)
         {
-            if (now <= LastFeedBackPostTime)
+            if (now <= LastFeedBackFailPostTime)
             {//クールダウン中
                 return false;
             }
@@ -335,7 +332,7 @@ namespace FEBuilderGBA
             string deadunit = "Hang-up detection";
             Send(chapter, deadunit);
             LastFeedBackType = eventType;
-            LastFeedBackPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
+            LastFeedBackFailPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
 
