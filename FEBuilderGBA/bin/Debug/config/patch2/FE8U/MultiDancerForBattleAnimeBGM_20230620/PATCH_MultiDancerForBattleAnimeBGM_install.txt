@@ -1,0 +1,18 @@
+NAME=戦闘アニメでの踊り子のBGMを複数設定する 20230620(Install)
+NAME.en=Setting battle BGM of a many dancer in battle animetion 20230620(Installer)
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x727FC=0x00 0x4B
+EDIT_PATCH=PATCH_MultiDancerForBattleAnimeBGM.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.zh=在战斗动画中设置多个舞者BGM 20230620(Install)
+
+INFO=毎回同じ踊りBGMだと飽きてくるので、LVと乱数とフラグを利用して、踊りBGMを細かく制御するバージョンです。\r\nリストの上からマッチさせていき、マッチしたら確率を乱数で判定します。どれにもマッチしなかったらディフォルトの踊りBGM/奏でるBGMが再生されます。\r\n最初の方に乱数100%を書いてしまうと、下にマッチしなくなるので注意!
+INFO.en=This is a version that uses LV, random numbers, and flags to control the dance BGM in detail, since the same dance BGM gets boring every time.\r\nMatch from the top of the list, and if a match occurs, the probability is determined by a random number. \r\nIf none of the matches are found, the default dancing BGM/playing BGM is played.\r\nNote that if you write a random number 100% at the beginning, it will not match below!
+INFO.zh=每次都对同样的舞蹈BGM感到厌倦，所以这是一个用LV、随机数和旗帜来精细控制舞蹈BGM的版本。\r\n从列表顶部匹配，如果匹配，则用随机数确定概率。如果不匹配，将播放默认的舞蹈 BGM/播放 BGM。\r\n如果开头写了100%的随机数，下面是匹配不到的，要小心！

@@ -1,0 +1,19 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $74CD8
+jumpToHack(HackLocation)
+POP
+
+
+HackLocation:
+#incbin "MultiDancerForBattleAnimeBGM.dmp"
+POIN MultiDancerForBattleAnimeBGMTable
+
+ALIGN 4
+MultiDancerForBattleAnimeBGMTable:
+//		Unit(0x0=ANY)	Class	Level>=(0=ANY)	Probability(100=ANY)	Flag(00=ANY)	SongID
+BYTE	0x0				0x4D	0x0				100						;SHORT	0x0 	0x20
+
+WORD	0x0	0x0
+ALIGN 4

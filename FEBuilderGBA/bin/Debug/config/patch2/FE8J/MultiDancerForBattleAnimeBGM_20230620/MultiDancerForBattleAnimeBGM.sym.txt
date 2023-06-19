@@ -1,0 +1,12 @@
+MultiDancerClassTable=$AC
+Loop=$04
+NotMatch=$86
+CheckUnit=$0C
+CheckClass=$1A
+CheckLV=$28
+CheckFlag=$34
+CheckRand=$44
+CheckDanceOrPlay=$54
+Match=$60
+Play_SE=$80
+Play_BGM=$70

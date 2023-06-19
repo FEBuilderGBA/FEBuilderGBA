@@ -3502,8 +3502,8 @@ Editor
 :汎用色
 Generic Color
 
-:グレー
-Gray
+:第4軍
+Fourth
 
 :拡大して描画
 Zoom and Draw
@@ -4033,14 +4033,11 @@ Arrow
 :システムパレット
 System Palette
 
+:グレー
+Gray
+
 :画像からパレット読込
 Import Palette
-
-:4軍
-Fourth
-
-:第4軍
-Fourth
 
 :システムパレット2
 System palette 2

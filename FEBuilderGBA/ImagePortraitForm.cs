@@ -1587,7 +1587,10 @@ namespace FEBuilderGBA
                         return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10または0x20ですが、{1}になっています。", U.To0xHexString(seet_image + 2), U.To0xHexString(head3));
                     }
                 }
-                return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。", U.To0xHexString(seet_image + 2), U.To0xHexString(head3));
+                else
+                {
+                    return R._("顔画像のユニット画像の先頭4バイトのヘッダが壊れています。インポートしなおすことを推奨します。\r\nHeader3: Addr: {0} Msg: 規定値は0x10ですが、{1}になっています。", U.To0xHexString(seet_image + 2), U.To0xHexString(head3));
+                }
             }
             if (head4 != 0x00)
             {
