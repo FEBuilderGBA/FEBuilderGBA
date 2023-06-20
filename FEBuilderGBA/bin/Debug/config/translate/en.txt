@@ -13243,8 +13243,8 @@ Also display flags common to all maps.
 :章で利用しているフラグ
 Flags Used in the Chapter
 
-:セーブデータを7z圧縮できませんでした
-The save data could not be 7z compressed.
+:セーブデータを7z圧縮できませんでした。\r\n{0}
+The save data could not be 7z compressed.\r\n{0}
 
 :仮想ROMなので更新できません
 It cannot be updated because it is a virtual ROM.

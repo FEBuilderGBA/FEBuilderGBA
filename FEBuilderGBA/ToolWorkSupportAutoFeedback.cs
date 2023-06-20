@@ -358,7 +358,7 @@ namespace FEBuilderGBA
             }
             catch (Exception e)
             {
-                R.Error("セーブデータを7z圧縮できませんでした", e.ToString());
+                R.Error("セーブデータを7z圧縮できませんでした。\r\n{0}", e.ToString());
                 return "";
             }
         }
