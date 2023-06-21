@@ -1,0 +1,34 @@
+NAME=レベル1にリセットしないCCアイテムを作成(Editor)
+INFO=CC時にレベルがリセットされない、CCアイテムを作成します。\r\nこのテーブルに定義されている昇格ItemIDを利用してCCした場合、レベルをリセットしません。
+
+NAME.en=Optional Level Reset linked to Promotional Items(Editor)
+INFO.en=This patch creates a Promotion Item, whose level is not reset upon Promotion.\r\nIf a Promotion is made using the Promoted ItemID defined in this table, the level will not be reset.
+
+NAME.zh=Optional Level Reset linked to Promotional Items(Editor)
+INFO.zh=This patch creates a Promotion Item, whose level is not reset upon Promotion.\r\nIf a Promotion is made using the Promoted ItemID defined in this table, the level will not be reset.
+
+TYPE=EA
+EA=Installer.event
+
+IF:0x2534C=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ResetLevelOnlyIfNotPromoted.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはアイテム名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+
+AUTHOR=Sei

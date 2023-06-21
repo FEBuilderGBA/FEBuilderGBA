@@ -1,0 +1,4 @@
+ResetLevelOnlyIfNotPromoted_Table=$40
+loop=$1C
+ResetLevel=$2A
+NotResetLevel=$2E

@@ -19,7 +19,7 @@ add r0, #0x41
 ldrb r0, [r0]
                    @0x02 効果音 OFF
                    @0x80 字幕ヘルプ OFF
-mov r1, #0x82
+mov r1, #0x80
 and r0, r1
 cmp r0, #0x0
 beq Exit           @杖と踊りアニメはオンなので何もしない

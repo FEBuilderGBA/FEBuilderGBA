@@ -1,0 +1,19 @@
+#ifndef callHackNew 
+	#define callHackNew(offset) 		"BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif 
+PUSH
+ORG $2534C
+callHackNew(ResetLevelOnlyIfNotPromoted|1)
+POP
+
+ALIGN 4
+ResetLevelOnlyIfNotPromoted:
+#incbin "ResetLevelOnlyIfNotPromoted.dmp"
+POIN ResetLevelOnlyIfNotPromoted_Table
+
+ALIGN 4
+ResetLevelOnlyIfNotPromoted_Table:
+BYTE 0x63 0x63 0x63
+BYTE 0x00 //term
+
+ALIGN 4

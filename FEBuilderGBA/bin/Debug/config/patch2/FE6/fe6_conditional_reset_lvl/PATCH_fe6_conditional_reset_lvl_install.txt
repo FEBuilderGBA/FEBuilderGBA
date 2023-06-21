@@ -1,0 +1,15 @@
+NAME=レベル1にリセットしないCCアイテムを作成(Installer)
+INFO=CC時にレベルがリセットされない、CCアイテムを作成します。\r\nこのテーブルに定義されている昇格ItemIDを利用してCCした場合、レベルをリセットしません。
+
+NAME.en=Optional Level Reset linked to Promotional Items(Installer)
+INFO.en=This patch creates a Promotion Item, whose level is not reset upon Promotion.\r\nIf a Promotion is made using the Promoted ItemID defined in this table, the level will not be reset.
+
+NAME.zh=Optional Level Reset linked to Promotional Items(Installer)
+INFO.zh=This patch creates a Promotion Item, whose level is not reset upon Promotion.\r\nIf a Promotion is made using the Promoted ItemID defined in this table, the level will not be reset.
+
+TYPE=EA
+EA=Installer.event
+
+PATCHED_IF:0x2534C=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+
+AUTHOR=Sei
