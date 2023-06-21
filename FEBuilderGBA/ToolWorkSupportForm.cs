@@ -504,7 +504,7 @@ namespace FEBuilderGBA
                 {
                     using (U.MakeTempDirectory t = new U.MakeTempDirectory())
                     {
-                        string r = ArchSevenZip.Extract(tempfile, t.Dir);
+                        string r = ArchSevenZip.Extract(tempfile, t.Dir, isHide: true);
                         if (r != "")
                         {
                             BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);

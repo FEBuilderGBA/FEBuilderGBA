@@ -16,7 +16,7 @@ namespace FEBuilderGBA
             StringBuilder szOutput, // 処理結果文字列
             int dwSize);            // 引数szOutputの文字列サイズ
 
-        public static string Extract(string a7z, string dir)
+        public static string Extract(string a7z, string dir, bool isHide)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace FEBuilderGBA
                     string errorMessage;
                     using (new U.ChangeCurrentDirectory(basedir1))
                     {
-                        errorMessage = ExtractLow(a7z_relativePath, dir_relativePath);
+                        errorMessage = ExtractLow(a7z_relativePath, dir_relativePath, isHide);
                     }
                     //いくつかの環境では相対パスでうまくいかないことがあるらしい.
                     if (errorMessage.Length <= 0)
@@ -39,7 +39,7 @@ namespace FEBuilderGBA
 
                     //絶対パスで再取得.
                 }
-                return ExtractLow(a7z, dir);
+                return ExtractLow(a7z, dir, isHide);
             }
             catch (Exception e)
             {
@@ -47,10 +47,14 @@ namespace FEBuilderGBA
                 return R.Error("7z解凍中にエラーが発生しました。\r\nターゲットファイル:{0}\r\n{1}", a7z , e.ToString());
             }
         }
-        static string ExtractLow(string a7z, string dir)
+        static string ExtractLow(string a7z, string dir, bool isHide)
         {
-            string command = "x -y -hide -o" + "\"" + dir  + "\"" + " " + "\"" + a7z + "\"";
-            
+            string command = "x -y ";
+            if (isHide)
+            {
+                command += "-hide ";
+            }
+            command += "-o" + "\"" + dir + "\"" + " " + "\"" + a7z + "\"";
 
             StringBuilder sb = new StringBuilder(1024);
             int r = SevenZip(IntPtr.Zero, command, sb, 1024);

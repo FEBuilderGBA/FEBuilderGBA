@@ -598,7 +598,7 @@ namespace FEBuilderGBA
 
                 this.SettingPleaseWait.DoEvents("Extract...");
                 U.mkdir(dir);
-                string r = ArchSevenZip.Extract(tempFilename, dir);
+                string r = ArchSevenZip.Extract(tempFilename, dir, isHide: true);
                 if (r != "")
                 {
                     return R.Error("ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE);

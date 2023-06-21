@@ -1582,6 +1582,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetTRAP(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.FADESPEED)
+                        {//FADESPEED
+                            isENumText = true;
+                            text = " " + InputFormRef.GetFadeSpeed(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.FSEC)
                         {//FSEC
                             isENumText = true;

@@ -2515,11 +2515,11 @@ Compare the memory slot C where the previous conditional expression result is st
 :直前の条件式結果が格納されるメモリスロットCと、指定したメモリスロットの値を比較します。
 Compare the memory slot C where the previous conditional expression result is stored with the value of the specified memory slot.
 
-:10(最速)>>>>>01
-10 (Fastest) >>>>> 01
+:16(最速)>>>>>01
+16(Fastest) >>>>> 01
 
 :30(最速)>>>>>01\r\nTransitionSpeedには、1-30の範囲で、画面を切り替える速度を指定します。
-30 (fastest) >>>>> 01.\r\nFor TransitionSpeed, specify the speed at which the screen is switched in the range of 1-30.
+30(fastest) >>>>> 01.\r\nFor TransitionSpeed, specify the speed at which the screen is switched in the range of 1-30.
 
 :Speedは、移動する速度を指定します。\r\n大きい数字を入れるほど早く移動します。\r\n注意:移動できないタイルへ移動させるとフリーズします。\r\n例えば、ジェネラルは山を越えられないので、山のタイルへ移動せよと命令するとフリーズします。
 Speed specifies the speed of movement.\r\nThe larger the number, the faster it will move.\r\nNote: Moving to a tile that cannot be moved freezes.\r\nFor example, a general cannot cross a mountain, so if you order it to move to a mountain tile, it will freeze.
@@ -4714,11 +4714,53 @@ teleportation.
 :フレーム秒({0}秒)
 frame sec({0} sec)
 
-:アクティブユニットの座標
-active unit's coordinate
-
 :0だとフリーズするので、1以上の値を指定してください。
 If it is 0, it freezes, so specify a value of 1 or more.
+
+:11秒 最低速度
+11 seconds (slowest)
+
+:8秒 低速
+8 seconds (slow)
+
+:6秒 低速
+6 seconds (slow)
+
+:5秒 低速
+5 seconds (slow)
+
+:4.5秒 低速
+4.5 seconds (slow)
+
+:4秒
+4 seconds
+
+:3.5秒
+3.5 seconds
+
+:3秒
+3 seconds
+
+:2.5秒
+2.5 seconds
+
+:2秒
+2 seconds
+
+:1.5秒 高速
+1.5 seconds (fast)
+
+:1秒 高速
+1 second (fast)
+
+:1秒 最高速度
+1 second (fastest)
+
+:(16最速>>>>1)
+(16 fastest>>>>1)
+
+:アクティブユニットの座標
+active unit's coordinate
 
 :1から30までの値を指定してください。
 Specify a value from 1 to 30.

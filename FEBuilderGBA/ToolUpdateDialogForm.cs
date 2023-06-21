@@ -119,7 +119,7 @@ namespace FEBuilderGBA
                 {
                     string _update = Path.Combine(Program.BaseDirectory, "_update");
                     U.mkdir(_update);
-                    string r = ArchSevenZip.Extract(update7z, _update);
+                    string r = ArchSevenZip.Extract(update7z, _update, isHide: false);
                     if (r != "")
                     {
                         BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);
@@ -134,6 +134,7 @@ namespace FEBuilderGBA
                     return;
                 }
 
+                pleaseWait.DoEvents("Check...");
                 string updateNewVersionFilename = Path.Combine(Program.BaseDirectory, "_update", "FEBuilderGBA.exe");
                 if (!File.Exists(updateNewVersionFilename))
                 {

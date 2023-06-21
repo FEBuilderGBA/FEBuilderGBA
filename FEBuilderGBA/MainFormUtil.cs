@@ -1917,7 +1917,7 @@ namespace FEBuilderGBA
         {
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
-                ArchSevenZip.Extract(romfilename, tempdir.Dir);
+                ArchSevenZip.Extract(romfilename, tempdir.Dir, isHide: true);
                 string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                 if (files.Length < 1)
                 {
@@ -2341,7 +2341,7 @@ namespace FEBuilderGBA
             {//7zの場合展開する.
                 using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
                 {
-                    ArchSevenZip.Extract(path, tempdir.Dir);
+                    ArchSevenZip.Extract(path, tempdir.Dir, isHide: true);
                     string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                     if (files.Length < 1)
                     {

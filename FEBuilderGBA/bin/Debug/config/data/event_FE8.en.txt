@@ -484,10 +484,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 62181D01YYYYZZZZWWWWVVVV	Change color of enemy units[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}
 40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Character]is in leave state(LOW)	{UNITPERSOLNAL}
 40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Character]is in an leave state, restore what was deleted(LOW)	{UNITPERSOLNAL}
-2117XXXX	Fade the screen to black with[XXXX:FSEC:Speed] Normal->Dark (FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
-2017XXXX	Fade the screen back from black with[XXXX:FSEC:Speed] Dark->Normal (FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
-2317XXXX	Fade the screen to white with[XXXX:FSEC:Speed] Normal->White (FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
-2217XXXX	Fade the screen back from white with[XXXX:FSEC:Speed] White->Normal (FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
+2117XXXX	Fade the screen to black with[XXXX:FADESPEED:Speed] Normal->Dark (FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
+2017XXXX	Fade the screen back from black with[XXXX:FADESPEED:Speed] Dark->Normal (FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
+2317XXXX	Fade the screen to white with[XXXX:FADESPEED:Speed] Normal->White (FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
+2217XXXX	Fade the screen back from white with[XXXX:FADESPEED:Speed] White->Normal (FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
 
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle  Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Set and execute event battle Attack From Enemy(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}

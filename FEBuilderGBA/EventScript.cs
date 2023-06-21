@@ -100,6 +100,7 @@ namespace FEBuilderGBA
             , BOOL              //BOOL値型
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
+            , FADESPEED         //フェードアウト
             , TILE              //マップのタイル名
             , EDITION           //編
             , DIFFICULTY        //難易度
@@ -850,6 +851,7 @@ namespace FEBuilderGBA
                 || type == EventScript.ArgType.DECIMALSIGNED
                 || type == EventScript.ArgType.MAGVELY
                 || type == EventScript.ArgType.FSEC
+                || type == EventScript.ArgType.FADESPEED
                 || type == EventScript.ArgType.SOUNDROOM
                 || type == EventScript.ArgType.TRANSITIONSPEED
                 );
@@ -1200,7 +1202,7 @@ namespace FEBuilderGBA
             }
             else if (hint == "@FADESPEED")
             {
-                return R._("10(最速)>>>>>01");
+                return R._("16(最速)>>>>>01");
             }
             else if (hint == "@TRANSITIONSPEED")
             {
@@ -1409,27 +1411,6 @@ namespace FEBuilderGBA
                 }
             }
             return 0x0;
-        }
-        public static void SetDefaultFrameTo60(EventScript.Script script)
-        {
-            for(int i = 0 ; i < script.Args.Length ; i++ )
-            {
-                if (script.Args[i].Type == ArgType.FSEC)
-                {
-                    if ( script.Args[i].Size == 1)
-                    {
-                        U.write_u8(script.Data, (uint)script.Args[i].Position, 60);
-                    }
-                    else if (script.Args[i].Size == 2)
-                    {
-                        U.write_u16(script.Data, (uint)script.Args[i].Position, 60);
-                    }
-                    else if (script.Args[i].Size == 4)
-                    {
-                        U.write_u32(script.Data, (uint)script.Args[i].Position, 60);
-                    }
-                }
-            }
         }
 
         //ポインタの更新の通知

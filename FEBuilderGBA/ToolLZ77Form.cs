@@ -522,7 +522,7 @@ namespace FEBuilderGBA
                 string save7zfile = Path.Combine(tempdir.Dir, "foo.7z");
                 File.WriteAllBytes(save7zfile, bin);
 
-                ArchSevenZip.Extract(save7zfile, tempdir.Dir);
+                ArchSevenZip.Extract(save7zfile, tempdir.Dir, isHide: true);
                 string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.sav", SearchOption.AllDirectories);
                 if (files.Length < 1)
                 {

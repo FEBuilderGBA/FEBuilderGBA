@@ -1022,6 +1022,10 @@ namespace FEBuilderGBA
             {//KEYS
                 text = " " + InputFormRef.GetPressKEYS(v);
             }
+            else if (arg.Type == EventScript.ArgType.FADESPEED)
+            {//FADESPEED
+                text = " " + InputFormRef.GetFadeSpeed(v);
+            }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
                 text = " " + InputFormRef.GetFSEC(v);
@@ -2635,6 +2639,13 @@ namespace FEBuilderGBA
                         U.write_u8(selectedByteData, (uint)arg.Position, 60);
                     }
                 }
+                if (arg.Type == EventScript.ArgType.FADESPEED)
+                {//FADESPEED
+                    if (v == 0)
+                    {//FADESPEEDが0なら最大値値16を設定する
+                        U.write_u8(selectedByteData, (uint)arg.Position, 16);
+                    }
+                }
                 else if (arg.Type == EventScript.ArgType.TRANSITIONSPEED)
                 {//TRANSITIONSPEED
                     if (v == 0)
@@ -3114,6 +3125,11 @@ namespace FEBuilderGBA
                     {//KEYS
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetPressKEYS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.FADESPEED)
+                    {//FADESPEED
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetFadeSpeed(v));
                     }
                     else if (arg.Type == EventScript.ArgType.FSEC)
                     {//FSEC

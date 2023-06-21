@@ -266,6 +266,10 @@ namespace FEBuilderGBA
             {
                 text = Program.AsmMapFileAsmCache.GetASMName(value, AsmMapFileAsmCache.ASMTYPE.THUMB, out errorMessage);
             }
+            else if (arg.Type == EventScript.ArgType.FADESPEED)
+            {
+                text = InputFormRef.GetFadeSpeed(value);
+            }
             else if (arg.Type == EventScript.ArgType.FSEC)
             {//FSEC
                 text = InputFormRef.GetFSEC(value);

@@ -7433,6 +7433,47 @@ namespace FEBuilderGBA
             double sec = Math.Round( ((double)num / 60.0f) , 4);
             return R._("フレーム秒({0}秒)", sec );
         }
+        public static string GetFadeSpeed(uint num)
+        {
+            switch(num)
+            {
+                case 0:
+                    return R._("0だとフリーズするので、1以上の値を指定してください。");
+                case 1:
+                    return R._("11秒 最低速度");
+                case 2:
+                    return R._("8秒 低速");
+                case 3:
+                    return R._("6秒 低速");
+                case 4:
+                    return R._("5秒 低速");
+                case 5:
+                    return R._("4.5秒 低速");
+                case 6:
+                    return R._("4秒");
+                case 7:
+                    return R._("3.5秒");
+                case 8:
+                    return R._("3秒");
+                case 9:
+                    return R._("2.5秒");
+                case 10:
+                    return R._("2.5秒");
+                case 11:
+                    return R._("2秒");
+                case 12:
+                    return R._("2秒");
+                case 13:
+                    return R._("1.5秒 高速");
+                case 14:
+                    return R._("1秒 高速");
+                case 15:
+                    return R._("1秒 高速");
+                case 16:
+                    return R._("1秒 最高速度");
+            }
+            return R._("(16最速>>>>1)");
+        }
         public static string GetMAPXY16(uint num)
         {
             uint y = ((num & 0xff00) >> 8);
