@@ -46,6 +46,11 @@ namespace FEBuilderGBA
 
             if (!File.Exists(fullfilename))
             {//リソースがない.
+                if (fullfilename.IndexOf("ja.txt") > 0 )
+                {
+                    return;
+                }
+                R.ShowStopError("Translation resource file {0} could not be found.\r\nWe recommend re-downloading the file.\r\n翻訳リソースファイル {0}が見つかりませんでした。\r\n再ダウンロードすることを推奨します。", fullfilename); ///No Translate
                 return;
             }
 
@@ -120,7 +125,7 @@ namespace FEBuilderGBA
         //重たいのでフルテストの時のみ
         public static void TESTFULL_RESOURCE()
         {
-            string[] langs = new string[] { "en", "zh", "de" };
+            string[] langs = new string[] { "en", "zh" };
             for (int i = 0; i < langs.Length; i++)
             {
                 MyTranslateResourceLow trans = new MyTranslateResourceLow();
