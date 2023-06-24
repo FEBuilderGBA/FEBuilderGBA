@@ -36,6 +36,15 @@ namespace FEBuilderGBA
             //パレット変更の部分にリンクを置く.
             InputFormRef.markupJumpLabel(this.J_8);
 
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                InputFormRef.markupJumpLabel(X_JUMP_STATUS_HEIGHT);
+            }
+            else
+            {
+                X_JUMP_STATUS_HEIGHT.Hide();
+            }
+
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
 
@@ -1789,6 +1798,16 @@ namespace FEBuilderGBA
                 Program.Undo.Push(undodata);
             }
             R.ShowOK("完了しました。\r\n{0}バイトの領域を解放できました。", totalSize);
+        }
+
+        private void X_JUMP_STATUS_HEIGHT_Click(object sender, EventArgs e)
+        {
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+            uint portraitID = (uint)this.AddressList.SelectedIndex;
+            InputFormRef.JumpForm<UnitIncreaseHeightForm>(portraitID);
         }
 
     }

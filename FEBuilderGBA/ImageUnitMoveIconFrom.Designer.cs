@@ -70,6 +70,7 @@
             this.ImportAPButton = new System.Windows.Forms.Button();
             this.ExportAPButton = new System.Windows.Forms.Button();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
+            this.X_JUMP_FOOTSTEPS = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.DragTargetPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -584,6 +585,7 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.X_JUMP_FOOTSTEPS);
             this.DragTargetPanel2.Controls.Add(this.ImportAPButton);
             this.DragTargetPanel2.Controls.Add(this.ExportAPButton);
             this.DragTargetPanel2.Controls.Add(this.X_JUMP_WAITICON);
@@ -594,6 +596,19 @@
             this.DragTargetPanel2.Name = "DragTargetPanel2";
             this.DragTargetPanel2.Size = new System.Drawing.Size(902, 78);
             this.DragTargetPanel2.TabIndex = 102;
+            // 
+            // X_JUMP_FOOTSTEPS
+            // 
+            this.X_JUMP_FOOTSTEPS.AutoSize = true;
+            this.X_JUMP_FOOTSTEPS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_FOOTSTEPS.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_FOOTSTEPS.Location = new System.Drawing.Point(536, 56);
+            this.X_JUMP_FOOTSTEPS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_FOOTSTEPS.Name = "X_JUMP_FOOTSTEPS";
+            this.X_JUMP_FOOTSTEPS.Size = new System.Drawing.Size(100, 18);
+            this.X_JUMP_FOOTSTEPS.TabIndex = 77;
+            this.X_JUMP_FOOTSTEPS.Text = "足音へJump";
+            this.X_JUMP_FOOTSTEPS.Click += new System.EventHandler(this.X_JUMP_FOOTSTEPS_Click);
             // 
             // ImageUnitMoveIconFrom
             // 
@@ -676,6 +691,7 @@
         private ComboBoxEx X_APCOMBO;
         private TextBoxEx X_AP_MD5;
         private System.Windows.Forms.Button AddressListExpandsButton_255;
+        private System.Windows.Forms.Label X_JUMP_FOOTSTEPS;
 
     }
 }

@@ -27,6 +27,15 @@ namespace FEBuilderGBA
             U.SetIcon(ExportAPButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportAPButton, Properties.Resources.icon_upload);
 
+            if (Program.ROM.RomInfo.version == 8)
+            {
+                InputFormRef.markupJumpLabel(X_JUMP_FOOTSTEPS);
+            }
+            else
+            {
+                X_JUMP_FOOTSTEPS.Hide();
+            }
+
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
                 using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
@@ -662,6 +671,16 @@ namespace FEBuilderGBA
         private void X_APCOMBO_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectAPAddresssFromAPCombo();
+        }
+
+        private void X_JUMP_FOOTSTEPS_Click(object sender, EventArgs e)
+        {
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+            uint cid = (uint)this.AddressList.SelectedIndex + 1;
+            InputFormRef.JumpForm<SoundFootStepsForm>(cid);
         }
 
 

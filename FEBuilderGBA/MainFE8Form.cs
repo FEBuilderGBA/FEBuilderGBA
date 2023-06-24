@@ -379,7 +379,6 @@ namespace FEBuilderGBA
         private void UnitIncreaseHeightFormButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<UnitIncreaseHeightForm>();
-            
         }
 
         private void ClassOPFontButton_Click(object sender, EventArgs e)

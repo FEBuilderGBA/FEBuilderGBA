@@ -39,7 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SwitchListExpandsButton = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -79,9 +80,11 @@
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(329, 0);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 52;
@@ -99,9 +102,11 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(546, 0);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(169, 25);
             this.SelectAddress.TabIndex = 40;
@@ -190,6 +195,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 31);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -200,7 +206,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(352, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -251,6 +256,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.ERROR_NOT_FOUND);
             this.panel2.Controls.Add(this.L_0_COMBO);
             this.panel2.Controls.Add(this.P0);
@@ -333,6 +339,16 @@
             this.panel3.Size = new System.Drawing.Size(1155, 30);
             this.panel3.TabIndex = 93;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(2, 366);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(852, 172);
+            this.textBox1.TabIndex = 120;
+            this.textBox1.Text = "ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。";
+            // 
             // UnitIncreaseHeightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -386,5 +402,6 @@
         private System.Windows.Forms.NumericUpDown P0;
         private System.Windows.Forms.Button SwitchListExpandsButton;
         private System.Windows.Forms.Label ERROR_NOT_FOUND;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -101,6 +101,7 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_JUMP_STATUS_HEIGHT = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -662,6 +663,7 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.X_JUMP_STATUS_HEIGHT);
             this.DragTargetPanel.Controls.Add(this.Comment);
             this.DragTargetPanel.Controls.Add(this.label11);
             this.DragTargetPanel.Controls.Add(this.DescriptionAfterImportLabel);
@@ -710,7 +712,7 @@
             // Comment
             // 
             this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(175, 564);
+            this.Comment.Location = new System.Drawing.Point(175, 546);
             this.Comment.Name = "Comment";
             this.Comment.Placeholder = "";
             this.Comment.Size = new System.Drawing.Size(445, 25);
@@ -720,7 +722,7 @@
             // 
             this.label11.AccessibleDescription = "@COMMENT";
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(12, 561);
+            this.label11.Location = new System.Drawing.Point(12, 543);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(155, 31);
@@ -1026,6 +1028,19 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // X_JUMP_STATUS_HEIGHT
+            // 
+            this.X_JUMP_STATUS_HEIGHT.AutoSize = true;
+            this.X_JUMP_STATUS_HEIGHT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_STATUS_HEIGHT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_STATUS_HEIGHT.Location = new System.Drawing.Point(9, 582);
+            this.X_JUMP_STATUS_HEIGHT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_STATUS_HEIGHT.Name = "X_JUMP_STATUS_HEIGHT";
+            this.X_JUMP_STATUS_HEIGHT.Size = new System.Drawing.Size(256, 18);
+            this.X_JUMP_STATUS_HEIGHT.TabIndex = 78;
+            this.X_JUMP_STATUS_HEIGHT.Text = "ステータス画面の背丈調整へJump";
+            this.X_JUMP_STATUS_HEIGHT.Click += new System.EventHandler(this.X_JUMP_STATUS_HEIGHT_Click);
+            // 
             // ImagePortraitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1154,5 +1169,6 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LinkInternt;
+        private System.Windows.Forms.Label X_JUMP_STATUS_HEIGHT;
     }
 }

@@ -3892,6 +3892,9 @@ Tile 2
 :タイル1
 Tile 1
 
+:ステータス画面の背丈調整へJump
+Jump to height adjustment on the status screen
+
 :位置確認用
 For position confirmation
 
@@ -4112,7 +4115,7 @@ Please select the file name to be read
 The address could not be found because the class with this AP does not exist in this ROM.\r\nEnter the AP address manually or import.
 
 :待機アイコンへJump
-Hover Map Icons
+Jump to Hover Map Icons
 
 :ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。
 Define the animation when the unit moves.\r\nIn GBAFE, the value of ClassID is the data of the moving icon to use as it is.
@@ -4137,6 +4140,9 @@ Import AP
 
 :AP取出
 Export AP
+
+:足音へJump
+Jump to footsteps
 
 :移動アイコン
 Moving Map Anims
@@ -13524,6 +13530,9 @@ Jump to Unit Palette
 
 :ステータス画面で背丈を伸ばす補正をするか？
 Raise Portrait Height on Stat Screen?
+
+:ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。
+Set whether to raise the bottom by 1 tile (8 dots) on the status screen.\r\nA short character will look bad without raising the bottom.
 
 :身長を伸ばす顔ID
 Portrait Height Editor
