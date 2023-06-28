@@ -1949,24 +1949,27 @@ namespace FEBuilderGBA
         }
         int CalcFEditorMagicInitCode()
         {
-            //先頭5つがCode 0x00だったら、FEEditor互換の魔法
-            if (this.AnimeList.Count < 5)
+            if (! IsMagicAnimationType())
             {
                 return 0;
             }
-            for (int index = 0; index < 5; index++)
+            if (this.AnimationType == AnimationTypeEnum.MagicAnime_FEEDitor)
+            {
+                return 0;
+            }
+
+            for (int index = 0; index < this.AnimeList.Count; index++)
             {
                 AnimeSt code = this.AnimeList[index];
-                if (code.type != AnimeStEnum.Code)
+                if (code.type == AnimeStEnum.Code)
                 {
-                    return 0;
-                }
-                if (code.code != 0)
-                {
-                    return 0;
+                    if ((code.code & 0xff) == 0x53)
+                    {
+                        return (int)((code.code >> 8) & 0xff);
+                    }
                 }
             }
-            return 1;
+            return 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

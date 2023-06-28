@@ -1303,7 +1303,7 @@ namespace FEBuilderGBA
             ret.Add(new AddressList(0x08, "Unk0C", "", 4));
             ret.Add(new AddressList(0x10, "Unk10", "", 1));
             ret.Add(new AddressList(0x11, "gWMCurrentNode", "WMLOCATION", 1));
-            ret.Add(new AddressList(0x12, "Unk12", "", 2));
+            ret.Add(new AddressList(0x12, "gWMMainUnit", "UNIT", 2));
             ret.Add(new AddressList(0x14, "Unk14", "", 2));
             ret.Add(new AddressList(0x18, "Unk18", "", 4));
             ret.Add(new AddressList(0x1C, "Unk1C", "", 4));

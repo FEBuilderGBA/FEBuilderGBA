@@ -99,10 +99,10 @@ namespace FEBuilderGBA
                         {
                             bgExpands = (frameData[n + 1] >= 0x01);
                         }
-                        else if (frameData[n + 0] == 0x0 && frame == n)
-                        {//面倒だから先頭のみチェックする
-                            bgExpands = true;
-                        }
+//                        else if (frameData[n + 0] == 0x0 && frame == n)
+//                        {//面倒だから先頭のみチェックする
+//                            bgExpands = true;
+//                        }
 
                         continue;
                     }

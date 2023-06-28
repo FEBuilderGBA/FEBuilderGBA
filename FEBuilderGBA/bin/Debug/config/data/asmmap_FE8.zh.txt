@@ -7291,7 +7291,7 @@ r3=X tile position of menu of the right	{U}
 @WMEventRelatedStruct@0C	Unk0C	word
 @WMEventRelatedStruct@10	Unk10	byte
 @WMEventRelatedStruct@11	gWMCurrentNode	byte
-@WMEventRelatedStruct@12	Unk12	short
+@WMEventRelatedStruct@12	gWMMainUnit	short
 
 0300533E	gSaved	{J}
 03006790	gpReadSramFast	{J}
