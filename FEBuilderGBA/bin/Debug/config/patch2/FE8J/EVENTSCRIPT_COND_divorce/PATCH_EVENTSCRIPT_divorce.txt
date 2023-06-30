@@ -29,6 +29,6 @@ AUTHOR.en=Kaitou patch7743
 
 
 
-EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	Clear support from the operating character
+EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	Clear support from the Current unit	Clear support from the Active unit
 EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_run_divorce.bin}	从操作字符中删除辅助
 

@@ -32,6 +32,8 @@
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.N_L_0_ID = new FEBuilderGBA.PanelEx();
+            this.N_B0 = new System.Windows.Forms.NumericUpDown();
             this.N_Comment = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.X_MAPEDITOR_LINK = new System.Windows.Forms.Label();
@@ -54,8 +56,7 @@
             this.N_B1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.N_L_1_MAPXY_2 = new System.Windows.Forms.Label();
-            this.N_B0 = new System.Windows.Forms.NumericUpDown();
-            this.X_JUMP_MAPEDITOR = new System.Windows.Forms.Label();
+            this.X_JUMP_MAPEDITOR = new FEBuilderGBA.LabelEx();
             this.panel5 = new System.Windows.Forms.Panel();
             this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,17 +78,19 @@
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_AddressListExpandsButton_80 = new System.Windows.Forms.Button();
             this.N_LabelFilter = new System.Windows.Forms.Label();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
+            this.N_L_0_ID.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_B0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B7)).BeginInit();
@@ -96,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N_B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N_B0)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).BeginInit();
             this.panel14.SuspendLayout();
@@ -128,7 +130,7 @@
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(112, 30);
-            this.ReloadListButton.TabIndex = 1;
+            this.ReloadListButton.TabIndex = 0;
             this.ReloadListButton.Text = "再取得";
             this.ReloadListButton.UseVisualStyleBackColor = true;
             // 
@@ -149,6 +151,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_L_0_ID);
             this.panel3.Controls.Add(this.N_Comment);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.X_MAPEDITOR_LINK);
@@ -171,7 +174,6 @@
             this.panel3.Controls.Add(this.N_B1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.N_L_1_MAPXY_2);
-            this.panel3.Controls.Add(this.N_B0);
             this.panel3.Controls.Add(this.X_JUMP_MAPEDITOR);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 66);
@@ -180,6 +182,29 @@
             this.panel3.Size = new System.Drawing.Size(412, 472);
             this.panel3.TabIndex = 1;
             // 
+            // N_L_0_ID
+            // 
+            this.N_L_0_ID.Controls.Add(this.N_B0);
+            this.N_L_0_ID.ErrorMessage = "";
+            this.N_L_0_ID.Location = new System.Drawing.Point(160, 15);
+            this.N_L_0_ID.Name = "N_L_0_ID";
+            this.N_L_0_ID.Size = new System.Drawing.Size(86, 32);
+            this.N_L_0_ID.TabIndex = 0;
+            // 
+            // N_B0
+            // 
+            this.N_B0.Hexadecimal = true;
+            this.N_B0.Location = new System.Drawing.Point(4, 5);
+            this.N_B0.Margin = new System.Windows.Forms.Padding(2);
+            this.N_B0.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.N_B0.Name = "N_B0";
+            this.N_B0.Size = new System.Drawing.Size(60, 25);
+            this.N_B0.TabIndex = 0;
+            // 
             // N_Comment
             // 
             this.N_Comment.ErrorMessage = "";
@@ -187,7 +212,7 @@
             this.N_Comment.Name = "N_Comment";
             this.N_Comment.Placeholder = "";
             this.N_Comment.Size = new System.Drawing.Size(240, 25);
-            this.N_Comment.TabIndex = 209;
+            this.N_Comment.TabIndex = 9;
             // 
             // label4
             // 
@@ -234,7 +259,7 @@
             this.N_L_5_FLAG.Placeholder = "";
             this.N_L_5_FLAG.ReadOnly = true;
             this.N_L_5_FLAG.Size = new System.Drawing.Size(176, 25);
-            this.N_L_5_FLAG.TabIndex = 193;
+            this.N_L_5_FLAG.TabIndex = 5;
             this.N_L_5_FLAG.Visible = false;
             // 
             // N_J_6
@@ -268,6 +293,7 @@
             // 
             this.N_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.N_J_8.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.N_J_8.ErrorMessage = "";
             this.N_J_8.Location = new System.Drawing.Point(2, 229);
             this.N_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N_J_8.Name = "N_J_8";
@@ -335,7 +361,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 26);
-            this.label5.TabIndex = 197;
+            this.label5.TabIndex = 3;
             this.label5.Text = "H:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -388,7 +414,7 @@
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 26);
-            this.label11.TabIndex = 2;
+            this.label11.TabIndex = 1;
             this.label11.Text = "Y:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -433,25 +459,12 @@
             this.N_L_1_MAPXY_2.Text = "座標";
             this.N_L_1_MAPXY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // N_B0
-            // 
-            this.N_B0.Hexadecimal = true;
-            this.N_B0.Location = new System.Drawing.Point(164, 16);
-            this.N_B0.Margin = new System.Windows.Forms.Padding(2);
-            this.N_B0.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N_B0.Name = "N_B0";
-            this.N_B0.Size = new System.Drawing.Size(60, 25);
-            this.N_B0.TabIndex = 0;
-            // 
             // X_JUMP_MAPEDITOR
             // 
             this.X_JUMP_MAPEDITOR.AccessibleDescription = "@MAPEDITOR_ID";
             this.X_JUMP_MAPEDITOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_JUMP_MAPEDITOR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_MAPEDITOR.ErrorMessage = "";
             this.X_JUMP_MAPEDITOR.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.X_JUMP_MAPEDITOR.Location = new System.Drawing.Point(2, 16);
             this.X_JUMP_MAPEDITOR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -718,16 +731,6 @@
             this.N_LabelFilter.Text = "名前";
             this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MapPictureBox.Location = new System.Drawing.Point(412, 66);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(767, 472);
-            this.MapPictureBox.TabIndex = 224;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel14);
@@ -793,6 +796,16 @@
             this.panel8.Size = new System.Drawing.Size(1179, 538);
             this.panel8.TabIndex = 191;
             // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MapPictureBox.Location = new System.Drawing.Point(412, 66);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(767, 472);
+            this.MapPictureBox.TabIndex = 224;
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel22);
@@ -818,6 +831,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.N_L_0_ID.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N_B0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B7)).EndInit();
@@ -826,7 +841,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N_B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N_B0)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).EndInit();
@@ -889,7 +903,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label N_L_1_MAPXY_2;
         private System.Windows.Forms.NumericUpDown N_B0;
-        private System.Windows.Forms.Label X_JUMP_MAPEDITOR;
+        private FEBuilderGBA.LabelEx X_JUMP_MAPEDITOR;
         private FEBuilderGBA.TextBoxEx N_L_5_FLAG;
         private System.Windows.Forms.NumericUpDown N_B6;
         private System.Windows.Forms.Label N_J_6;
@@ -903,5 +917,6 @@
         private System.Windows.Forms.Panel panel8;
         private TextBoxEx N_Comment;
         private System.Windows.Forms.Label label4;
+        private PanelEx N_L_0_ID;
     }
 }

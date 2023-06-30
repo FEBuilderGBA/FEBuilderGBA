@@ -21,6 +21,6 @@ AUTHOR.en=Kaito Port:7743
 
 
 
-EVENTSCRIPT=400D0000{$L1:wakaresaseya_run_divorce.bin}	操作中のキャラから支援を消す 
-EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	Clear support from the operating character
+EVENTSCRIPT=400D0000{$L1:wakaresaseya_run_divorce.bin}	操作中のキャラから支援を消す
+EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	Clear support from the Current unit	Clear support from the Active unit
 EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_run_divorce.bin}	从操作字符中删除辅助
