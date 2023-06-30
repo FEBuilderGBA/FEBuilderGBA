@@ -1,0 +1,23 @@
+NAME=相手を倒したユニットの座標を取得(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_GetKillerUnitCoord.dmp=0x0C 0x48 0x0D 0x49
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetKillerUnitCoord.dmp
+
+AUTHOR=7743 ,base: Leonarth
+
+INFO=直前の戦闘で、自分を倒したユニットの座標を取得しSlotCに返します。\r\nたとえば、セスがオニールを倒した場合、セスの座標を取得します。XXXXYYYY形式です。
+EVENTSCRIPT:1=400D0000{$L1:ASMC_GetKillerUnitCoord.dmp}	死亡したユニットの座標を取得	@STOREC	{COND}
+
+NAME.en=Add Event: GetDeathUnitCoord
+INFO.en=Obtains the unit Coord that defeated the opponent in the last battle and returns it to SlotC.\r\nFor example, if Seth defeats O'Neill, Seth's coordinates are returned. format is XXXXYYYY.
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetKillerUnitCoord.dmp}	GetDeathUnitCoord	@STOREC	{COND}
+
+NAME.zh=Add Event: GetDeathUnitCoord
+INFO.zh=Obtains the unit Coord that defeated the opponent in the last battle and returns it to SlotC.\r\nFor example, if Seth defeats O'Neill, Seth's coordinates are returned. format is XXXXYYYY.
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetKillerUnitCoord.dmp}	GetDeathUnitCoord	@STOREC	{COND}

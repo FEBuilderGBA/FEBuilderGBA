@@ -5,7 +5,7 @@
 04=Second BGM flag
 05=??
 06=Defeat all(Rout) flag
-07=??
+07=Temporary flag 07
 08=Temporary flag 08
 09=Temporary flag 09
 0A=Temporary flag 0A
