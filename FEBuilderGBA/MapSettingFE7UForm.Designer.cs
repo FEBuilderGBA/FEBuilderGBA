@@ -42,9 +42,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.W20 = new System.Windows.Forms.NumericUpDown();
-            this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
+            this.J_20 = new System.Windows.Forms.Label();
             this.X_MAPSTYLE_CHANGE = new System.Windows.Forms.Label();
             this.J_ID_MAPEDITOR = new System.Windows.Forms.Label();
             this.J_151 = new System.Windows.Forms.Label();
@@ -467,9 +466,8 @@
             this.panel3.Controls.Add(this.label68);
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.L_20_DIFFCULTY);
             this.panel3.Controls.Add(this.W20);
-            this.panel3.Controls.Add(this.J_20_DIFFCULTY);
+            this.panel3.Controls.Add(this.J_20);
             this.panel3.Controls.Add(this.X_MAPSTYLE_CHANGE);
             this.panel3.Controls.Add(this.J_ID_MAPEDITOR);
             this.panel3.Controls.Add(this.J_151);
@@ -1001,17 +999,6 @@
             this.label18.Text = "攻略評価";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_20_DIFFCULTY
-            // 
-            this.L_20_DIFFCULTY.ErrorMessage = "";
-            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 498);
-            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
-            this.L_20_DIFFCULTY.Placeholder = "";
-            this.L_20_DIFFCULTY.ReadOnly = true;
-            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(306, 25);
-            this.L_20_DIFFCULTY.TabIndex = 348;
-            // 
             // W20
             // 
             this.W20.Hexadecimal = true;
@@ -1026,17 +1013,17 @@
             this.W20.Size = new System.Drawing.Size(95, 25);
             this.W20.TabIndex = 346;
             // 
-            // J_20_DIFFCULTY
+            // J_20
             // 
-            this.J_20_DIFFCULTY.AccessibleDescription = "@MAPSETTING_HARD_BOOST";
-            this.J_20_DIFFCULTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_20_DIFFCULTY.Location = new System.Drawing.Point(6, 494);
-            this.J_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_20_DIFFCULTY.Name = "J_20_DIFFCULTY";
-            this.J_20_DIFFCULTY.Size = new System.Drawing.Size(210, 32);
-            this.J_20_DIFFCULTY.TabIndex = 347;
-            this.J_20_DIFFCULTY.Text = "難易度補正";
-            this.J_20_DIFFCULTY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_20.AccessibleDescription = "@MAPSETTING_HARD_BOOST";
+            this.J_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_20.Location = new System.Drawing.Point(6, 494);
+            this.J_20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_20.Name = "J_20";
+            this.J_20.Size = new System.Drawing.Size(210, 32);
+            this.J_20.TabIndex = 347;
+            this.J_20.Text = "難易度補正";
+            this.J_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_MAPSTYLE_CHANGE
             // 
@@ -4192,9 +4179,8 @@
         private System.Windows.Forms.Label J_150;
         private System.Windows.Forms.Label J_ID_MAPEDITOR;
         private System.Windows.Forms.Label X_MAPSTYLE_CHANGE;
-        private TextBoxEx L_20_DIFFCULTY;
         private System.Windows.Forms.NumericUpDown W20;
-        private System.Windows.Forms.Label J_20_DIFFCULTY;
+        private System.Windows.Forms.Label J_20;
         private System.Windows.Forms.NumericUpDown B139;
         private System.Windows.Forms.Label J_139;
         private System.Windows.Forms.ComboBox L_139_COMBO;
