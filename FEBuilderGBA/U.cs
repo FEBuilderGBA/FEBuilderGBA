@@ -4389,10 +4389,10 @@ namespace FEBuilderGBA
             Random rand = new Random((int)seed);
             int SafariMinorVersion = 537;
             int SafariMajorVersion = 36;
-            int Chrome1Version = 65;
+            int Chrome1Version = 110;
             int Chrome2Version = 0;
-            int Chrome3Version = 2107;
-            int Chrome4Version = 108;
+            int Chrome3Version = 0;
+            int Chrome4Version = 0;
 
             string UserAgent = string.Format("Mozilla/5.0 (Windows NT {0}.{1}; Win64; x64) AppleWebKit/{2}.{3} (KHTML, like Gecko) Chrome/{4}.{5}.{6}.{7} Safari/{2}.{3}"
                 ,os.Version.Major//Windows 8では、「6」//OSのメジャーバージョン番号を表示する

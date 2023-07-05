@@ -446,6 +446,7 @@ namespace FEBuilderGBA
                     return;
                 }
                 url = m.Groups[1].ToString();
+                url = EscapeURLToDecode(url);
             }
 
             Program.UpdateWatcher.Stop();
@@ -461,6 +462,15 @@ namespace FEBuilderGBA
             MainFormUtil.Open(this, Program.ROM.Filename, true, "");
 
             Program.UpdateWatcher.Resume();
+        }
+
+        string EscapeURLToDecode(string url)
+        {
+            if (url.IndexOf(":\\/\\/") >= 0)
+            {
+                url = url.Replace("\\","");
+            }
+            return url;
         }
 
         bool DownloadAndExtract(string download_url, InputFormRef.AutoPleaseWait pleaseWait)
