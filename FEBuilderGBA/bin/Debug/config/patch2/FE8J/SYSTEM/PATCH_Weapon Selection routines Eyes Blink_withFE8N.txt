@@ -1,0 +1,45 @@
+NAME=武器選択画面等でまばたきを追加する(For FE8N)
+NAME.en=Weapon Selection etc routine's Eyes Blink(For FE8N)
+
+IF:0x0802D738=0xD7 0xF7 0x04 0xFF
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Off|OFF|Fix: Eyes Blink|FIX
+
+DETERMINATION_ADDRESS=0x2D73E
+OFF:0x05DAC=0xFD 0xF7 0x0C 0xF9
+OFF:0x1DD28=0x05
+OFF:0x22B7A=0x05
+OFF:0x22BD0=0x05
+OFF:0x23236=0x05
+OFF:0x232EC=0x05
+OFF:0x23546=0x05
+OFF:0x235DE=0x05
+OFF:0x23ACA=0x05
+OFF:0x2992A=0x05
+OFF:0x2D73E=0x05
+OFF:0x2D746=0x05
+
+FIX:0x05DAC=0x00 0x00 0x00 0x00
+FIX:0x1DD28=0x00
+FIX:0x22B7A=0x00
+FIX:0x22BD0=0x00
+FIX:0x23236=0x00
+FIX:0x232EC=0x00
+FIX:0x23546=0x00
+FIX:0x235DE=0x00
+FIX:0x23ACA=0x00
+FIX:0x2992A=0x00
+FIX:0x2D73E=0x00
+FIX:0x2D746=0x00
+
+
+AUTHOR=7743, Orignal: Mokha https://feuniverse.us/t/mokhas-hacks-sundries/16204\r\nEyes blink in Weapon-Selection
+
+INFO=武器選択画面やアイテム交換画面等にキャラクターの顔画面に、瞬きを追加します。\r\nFE8N Skillに対応しているバージョンです。
+INFO.en=This patch adds a blink to the character's portrait screen on the weapon selection screen, item exchange screen, etc.\r\nThis version is compatible with FE8N Skill.
+NAME.zh=在武器选择屏幕上添加闪烁等。(For FE8N)
+INFO.zh=在武器选择画面、物品交换画面等角色的面部画面中添加了闪烁。\r\nThis version is compatible with FE8N Skill.
+

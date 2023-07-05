@@ -25,9 +25,9 @@ namespace FEBuilderGBA
         const int FEEDBACK_WAIT_LONG_MINUTE = 10;
         const int FEEDBACK_WAIT_MINUTE = 1;
         DateTime LastFeedBackEndEventPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_LONG_MINUTE);
-        DateTime LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+//        DateTime LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
+//        DateTime LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
         DateTime LastFeedBackEnableFlagPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
-        DateTime LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
         DateTime LastFeedBackRaloadDetectionPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
         DateTime LastFeedBackFailPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_MINUTE);
         
@@ -183,28 +183,28 @@ namespace FEBuilderGBA
             EmulatorMemoryForm.WriteFlagLow(AUTOFEEDBACK_ENABLE_FLAG, true);
         }
 
-        bool SendFeedBack_EndEvent(DateTime now, uint mapid)
+        void SendFeedBack_EndEvent(DateTime now, uint mapid)
         {
             //LOMAでマップIDを切り替えるケースがあるので、長いクールダウンを利用します
             if (now <= LastFeedBackEndEventPostTime)
             {//クールダウン中
-                return false;
+                return ;
             }
             bool flag0x03 = EmulatorMemoryUtil.IsFlag0x03Enable();
             if (! flag0x03)
             {
-                return false;
+                return ;
             }
 
             string eventType = "EndEvent" + mapid;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
-                return false;
+                return ;
             }
             uint maptaskProcs = EmulatorMemoryUtil.SearchMapTaskProcsAddr();
             if (maptaskProcs == U.NOT_FOUND)
             {//マップに入っていないので、章タイトルを表示している最中だろうから、送ってはいけない
-                return false;
+                return ;
             }
 
             string chapter = GetChapterAndInfo(mapid);
@@ -212,60 +212,58 @@ namespace FEBuilderGBA
             Send(chapter, deadunit);
             LastFeedBackType = eventType;
             LastFeedBackEndEventPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_LONG_MINUTE);
-            return true;
         }
-        bool SendFeedBack_DeadEvent(DateTime now, uint mapid)
+        void SendFeedBack_DeadEvent(DateTime now, uint mapid)
         {
-            if (now <= LastFeedBackDeadUnitPostTime)
-            {//クールダウン中
-                return false;
-            }
+//            if (now <= LastFeedBackDeadUnitPostTime)
+//            {//クールダウン中
+//                return false;
+//            }
 
             uint deadunit = EmulatorMemoryUtil.DeadPlayerUnit();
             if (deadunit == 0)
             {
-                return false;
+                return ;
             }
 
             string eventType = "DeadUnit" + deadunit;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
-                return false;
+                return ;
             }
             uint maptaskProcs = EmulatorMemoryUtil.SearchMapTaskProcsAddr();
             if (maptaskProcs == U.NOT_FOUND)
             {//マップに入っていないので、章タイトルを表示している最中だろうから、送ってはいけない
-                return false;
+                return ;
             }
 
             string chapter = GetChapterAndInfo(mapid);
             string deadunitString = GetDeadUnitAndInfo(deadunit);
             Send(chapter, deadunitString);
             LastFeedBackType = eventType;
-            LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
-            return true;
+//            LastFeedBackDeadUnitPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
         }
-        bool SendFeedBack_VillageDestroyXY(DateTime now, uint mapid)
+        void SendFeedBack_VillageDestroyXY(DateTime now, uint mapid)
         {
-            if (now <= LastFeedBackVillageDestroyXYPostTime)
-            {//クールダウン中
-                return false;
-            }
+//            if (now <= LastFeedBackVillageDestroyXYPostTime)
+//            {//クールダウン中
+//                return false;
+//            }
 
             uint villageDestroyXY = EmulatorMemoryUtil.VillageDestoryXY();
             if (villageDestroyXY == U.NOT_FOUND)
             {
-                return false;
+                return ;
             }
             string eventType = "VillageDestroy" + villageDestroyXY;
             if (LastFeedBackType == eventType)
             {//連続して報告はしない
-                return false;
+                return ;
             }
             uint maptaskProcs = EmulatorMemoryUtil.SearchMapTaskProcsAddr();
             if (maptaskProcs == U.NOT_FOUND)
             {//マップに入っていないので、章タイトルを表示している最中だろうから、送ってはいけない
-                return false;
+                return ;
             }
 
             string chapter = GetChapterAndInfo(mapid);
@@ -273,8 +271,7 @@ namespace FEBuilderGBA
             Send(chapter, deadunitString);
 
             LastFeedBackType = eventType;
-            LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
-            return true;
+//            LastFeedBackVillageDestroyXYPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
         }
 
         uint SendFeedBack_TurnStartClock = 0;

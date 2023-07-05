@@ -40,3 +40,6 @@ INFO=武器選択画面やアイテム交換画面等にキャラクターの顔
 INFO.en=This patch adds a blink to the character's portrait screen on the weapon selection screen, item exchange screen, etc.
 NAME.zh=在武器选择屏幕上添加闪烁等。
 INFO.zh=在武器选择画面、物品交换画面等角色的面部画面中添加了闪烁。
+
+CONFLICT_IF:0x0802D738=0xD7 0xF7 0x04 0xFF
+CONFLICT_MESSAGE=FE8N Skill
