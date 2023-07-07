@@ -26,7 +26,7 @@ INFO.en=This Patch adds a command to manually change the unit from moving to sta
 EVENTSCRIPT:11.en=400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)(LOW)	Slot1=Unit
 EVENTSCRIPT:12.en=40050100XXXXXXXX400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:UNIT:Unit] Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
 EVENTSCRIPT:13.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
-EVENTSCRIPT:14.en=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit [ZZ:DECIMAL:Turn], Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:14.en=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
 
 
 INFO.zh=This Patch adds a command to manually change the unit from moving to standing\r\nThis patch make ASMC_ChangeMoveMotionToWaitMotion that moves from Moving Motion to Standing Motion.\r\nWhen the unit visits the village, the unit is showing Moving Motion.\r\nForcibly release this motion and move to Standing Motion.
@@ -35,5 +35,5 @@ INFO.zh=This Patch adds a command to manually change the unit from moving to sta
 EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)(LOW)	Slot1=Unit
 EVENTSCRIPT:12.zh=40050100XXXXXXXX400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:UNIT:Unit] Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
 EVENTSCRIPT:13.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	[XX:MAPX:X][XX:MAPX:Y]'s Unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
-EVENTSCRIPT:14.zh=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit [ZZ:DECIMAL:Turn], Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
+EVENTSCRIPT:14.zh=40050100FFFFFFFF400D0000{$L1:ASMC_ChangeMoveMotionToWaitMotion.dmp}	Current unit, Move from Moving Motion to Standing Motion(ASMC_ChangeMoveMotionToWaitMotion)
 
