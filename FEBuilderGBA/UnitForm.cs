@@ -930,5 +930,38 @@ namespace FEBuilderGBA
             f.JumpTo("HARDCODING_UNIT=" + U.ToHexString2(this.AddressList.SelectedIndex + 1), 0);
         }
 
+        private void X_BASE_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                string text = B11.Value + ", "
+                    + b12.Value + ", "
+                    + b13.Value + ", "
+                    + b14.Value + ", "
+                    + b15.Value + ", "
+                    + b16.Value + ", "
+                    + b17.Value + ", "
+                    + b18.Value + ", "
+                    + MagicExtUnitBase.Value;
+                Clipboard.SetText(text);
+            }
+        }
+
+        private void X_GROW_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                string text = B28.Value / 100 + ", "
+                    + B29.Value / 100 + ", "
+                    + B30.Value / 100 + ", "
+                    + B31.Value / 100 + ", "
+                    + B32.Value / 100 + ", "
+                    + B33.Value / 100 + ", "
+                    + B34.Value / 100 + ", "
+                    + B35.Value / 100 + ", "
+                    + MagicExtUnitGrow.Value / 100;
+                Clipboard.SetText(text);
+            }
+        }
     }
 }

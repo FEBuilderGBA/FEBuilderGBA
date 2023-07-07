@@ -1166,5 +1166,38 @@ namespace FEBuilderGBA
             PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
             f.JumpTo("HARDCODING_CLASS=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
         }
+
+        private void X_BASE_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                string text = B11.Value + ", "
+                    + B12.Value + ", "
+                    + B13.Value + ", "
+                    + B14.Value + ", "
+                    + B15.Value + ", "
+                    + B16.Value + ", "
+                    + B17.Value + ", "
+                    + B18.Value + ", "
+                    + MagicExtClassBase.Value;
+                Clipboard.SetText(text);
+            }
+        }
+
+        private void X_GROW_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right) 
+            {
+                string text = B27.Value / 100 + ", "
+                    + B28.Value / 100 + ", "
+                    + B29.Value / 100 + ", "
+                    + B30.Value / 100 + ", "
+                    + B31.Value / 100 + ", "
+                    + B32.Value / 100 + ", "
+                    + B33.Value / 100 + ", "
+                    + MagicExtClassGrow.Value / 100;
+                Clipboard.SetText(text);
+            }
+        }
     }
 }
