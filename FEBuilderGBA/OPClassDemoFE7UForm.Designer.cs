@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.B17 = new System.Windows.Forms.NumericUpDown();
+            this.B16 = new System.Windows.Forms.NumericUpDown();
+            this.B15 = new System.Windows.Forms.NumericUpDown();
             this.L_14_COMBO = new System.Windows.Forms.ComboBox();
             this.L_20_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_19_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
@@ -42,11 +45,10 @@
             this.B22 = new System.Windows.Forms.NumericUpDown();
             this.B21 = new System.Windows.Forms.NumericUpDown();
             this.B20 = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
+            this.J_21 = new System.Windows.Forms.Label();
             this.W8 = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
             this.L_10_UNITPALETTE_PLUS1 = new FEBuilderGBA.TextBoxEx();
-            this.D15 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.ANIME_LIST = new FEBuilderGBA.ListBoxEx();
@@ -74,11 +76,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.P24 = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
+            this.J_24 = new System.Windows.Forms.Label();
             this.B19 = new System.Windows.Forms.NumericUpDown();
             this.J_20_TERRAINBATTLE = new System.Windows.Forms.Label();
             this.J_19_TERRAINBATTLE = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.J_15 = new System.Windows.Forms.Label();
             this.B13 = new System.Windows.Forms.NumericUpDown();
             this.J_14 = new System.Windows.Forms.Label();
             this.B12 = new System.Windows.Forms.NumericUpDown();
@@ -94,7 +96,7 @@
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.L_0_CSTRING = new FEBuilderGBA.TextBoxEx();
-            this.label5 = new System.Windows.Forms.Label();
+            this.J_0_TEXT = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -114,6 +116,9 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_20_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_19_TERRAINBATTLEICON_PLUS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIMEICON)).BeginInit();
@@ -123,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D15)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).BeginInit();
@@ -152,6 +156,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.B17);
+            this.panel2.Controls.Add(this.B16);
+            this.panel2.Controls.Add(this.B15);
             this.panel2.Controls.Add(this.L_14_COMBO);
             this.panel2.Controls.Add(this.L_20_TERRAINBATTLEICON_PLUS1);
             this.panel2.Controls.Add(this.L_19_TERRAINBATTLEICON_PLUS1);
@@ -165,18 +172,17 @@
             this.panel2.Controls.Add(this.B22);
             this.panel2.Controls.Add(this.B21);
             this.panel2.Controls.Add(this.B20);
-            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.J_21);
             this.panel2.Controls.Add(this.W8);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.L_10_UNITPALETTE_PLUS1);
-            this.panel2.Controls.Add(this.D15);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.P24);
-            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.J_24);
             this.panel2.Controls.Add(this.B19);
             this.panel2.Controls.Add(this.J_20_TERRAINBATTLE);
             this.panel2.Controls.Add(this.J_19_TERRAINBATTLE);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.J_15);
             this.panel2.Controls.Add(this.B13);
             this.panel2.Controls.Add(this.J_14);
             this.panel2.Controls.Add(this.B12);
@@ -192,12 +198,54 @@
             this.panel2.Controls.Add(this.J_4_TEXT);
             this.panel2.Controls.Add(this.P0);
             this.panel2.Controls.Add(this.L_0_CSTRING);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.J_0_TEXT);
             this.panel2.Location = new System.Drawing.Point(270, 68);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1256, 700);
-            this.panel2.TabIndex = 67;
+            this.panel2.TabIndex = 0;
+            // 
+            // B17
+            // 
+            this.B17.Hexadecimal = true;
+            this.B17.Location = new System.Drawing.Point(346, 343);
+            this.B17.Margin = new System.Windows.Forms.Padding(2);
+            this.B17.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.B17.Name = "B17";
+            this.B17.Size = new System.Drawing.Size(67, 25);
+            this.B17.TabIndex = 12;
+            // 
+            // B16
+            // 
+            this.B16.Hexadecimal = true;
+            this.B16.Location = new System.Drawing.Point(266, 344);
+            this.B16.Margin = new System.Windows.Forms.Padding(2);
+            this.B16.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.B16.Name = "B16";
+            this.B16.Size = new System.Drawing.Size(67, 25);
+            this.B16.TabIndex = 11;
+            // 
+            // B15
+            // 
+            this.B15.Hexadecimal = true;
+            this.B15.Location = new System.Drawing.Point(187, 344);
+            this.B15.Margin = new System.Windows.Forms.Padding(2);
+            this.B15.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.B15.Name = "B15";
+            this.B15.Size = new System.Drawing.Size(67, 25);
+            this.B15.TabIndex = 10;
             // 
             // L_14_COMBO
             // 
@@ -217,7 +265,7 @@
             this.L_14_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_14_COMBO.Name = "L_14_COMBO";
             this.L_14_COMBO.Size = new System.Drawing.Size(228, 26);
-            this.L_14_COMBO.TabIndex = 196;
+            this.L_14_COMBO.TabIndex = 9;
             // 
             // L_20_TERRAINBATTLEICON_PLUS1
             // 
@@ -326,7 +374,7 @@
             0});
             this.B23.Name = "B23";
             this.B23.Size = new System.Drawing.Size(67, 25);
-            this.B23.TabIndex = 14;
+            this.B23.TabIndex = 18;
             // 
             // B22
             // 
@@ -340,7 +388,7 @@
             0});
             this.B22.Name = "B22";
             this.B22.Size = new System.Drawing.Size(67, 25);
-            this.B22.TabIndex = 13;
+            this.B22.TabIndex = 17;
             // 
             // B21
             // 
@@ -354,7 +402,7 @@
             0});
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(67, 25);
-            this.B21.TabIndex = 12;
+            this.B21.TabIndex = 16;
             // 
             // B20
             // 
@@ -368,18 +416,18 @@
             0});
             this.B20.Name = "B20";
             this.B20.Size = new System.Drawing.Size(67, 25);
-            this.B20.TabIndex = 11;
+            this.B20.TabIndex = 15;
             // 
-            // label29
+            // J_21
             // 
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Location = new System.Drawing.Point(2, 434);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(175, 32);
-            this.label29.TabIndex = 181;
-            this.label29.Text = "??";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_21.Location = new System.Drawing.Point(2, 434);
+            this.J_21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_21.Name = "J_21";
+            this.J_21.Size = new System.Drawing.Size(175, 32);
+            this.J_21.TabIndex = 181;
+            this.J_21.Text = "??";
+            this.J_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W8
             // 
@@ -416,20 +464,6 @@
             this.L_10_UNITPALETTE_PLUS1.ReadOnly = true;
             this.L_10_UNITPALETTE_PLUS1.Size = new System.Drawing.Size(228, 25);
             this.L_10_UNITPALETTE_PLUS1.TabIndex = 178;
-            // 
-            // D15
-            // 
-            this.D15.Hexadecimal = true;
-            this.D15.Location = new System.Drawing.Point(187, 344);
-            this.D15.Margin = new System.Windows.Forms.Padding(2);
-            this.D15.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.D15.Name = "D15";
-            this.D15.Size = new System.Drawing.Size(130, 25);
-            this.D15.TabIndex = 9;
             // 
             // groupBox1
             // 
@@ -776,19 +810,19 @@
             0});
             this.P24.Name = "P24";
             this.P24.Size = new System.Drawing.Size(130, 25);
-            this.P24.TabIndex = 15;
+            this.P24.TabIndex = 19;
             this.P24.ValueChanged += new System.EventHandler(this.P24_ValueChanged);
             // 
-            // label16
+            // J_24
             // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(2, 466);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(175, 32);
-            this.label16.TabIndex = 172;
-            this.label16.Text = "アニメ指定のポインタ";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_24.Location = new System.Drawing.Point(2, 466);
+            this.J_24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_24.Name = "J_24";
+            this.J_24.Size = new System.Drawing.Size(175, 32);
+            this.J_24.TabIndex = 172;
+            this.J_24.Text = "アニメ指定のポインタ";
+            this.J_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B19
             // 
@@ -802,7 +836,7 @@
             0});
             this.B19.Name = "B19";
             this.B19.Size = new System.Drawing.Size(67, 25);
-            this.B19.TabIndex = 10;
+            this.B19.TabIndex = 14;
             // 
             // J_20_TERRAINBATTLE
             // 
@@ -826,16 +860,16 @@
             this.J_19_TERRAINBATTLE.Text = "表示地形左半分";
             this.J_19_TERRAINBATTLE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // J_15
             // 
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(2, 338);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 32);
-            this.label13.TabIndex = 162;
-            this.label13.Text = "??";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_15.Location = new System.Drawing.Point(2, 338);
+            this.J_15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_15.Name = "J_15";
+            this.J_15.Size = new System.Drawing.Size(175, 32);
+            this.J_15.TabIndex = 162;
+            this.J_15.Text = "??";
+            this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B13
             // 
@@ -1026,16 +1060,16 @@
             this.L_0_CSTRING.Size = new System.Drawing.Size(189, 25);
             this.L_0_CSTRING.TabIndex = 130;
             // 
-            // label5
+            // J_0_TEXT
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(2, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 32);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "英語ポインタ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_0_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_TEXT.Location = new System.Drawing.Point(2, 6);
+            this.J_0_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_0_TEXT.Name = "J_0_TEXT";
+            this.J_0_TEXT.Size = new System.Drawing.Size(175, 32);
+            this.J_0_TEXT.TabIndex = 60;
+            this.J_0_TEXT.Text = "英語ポインタ";
+            this.J_0_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -1263,6 +1297,9 @@
             this.Load += new System.EventHandler(this.ClassOPDemoFE7UForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_20_TERRAINBATTLEICON_PLUS1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_19_TERRAINBATTLEICON_PLUS1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIMEICON)).EndInit();
@@ -1272,7 +1309,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D15)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1306,7 +1342,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private FEBuilderGBA.TextBoxEx L_0_CSTRING;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label J_0_TEXT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
@@ -1329,7 +1365,6 @@
         private FEBuilderGBA.TextBoxEx L_4_TEXT_OPCLASS2;
         private System.Windows.Forms.Label J_4_TEXT;
         private System.Windows.Forms.NumericUpDown P0;
-        private System.Windows.Forms.NumericUpDown D15;
         private System.Windows.Forms.NumericUpDown N2_B5;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.NumericUpDown N2_B4;
@@ -1344,11 +1379,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown P24;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label J_24;
         private System.Windows.Forms.NumericUpDown B19;
         private System.Windows.Forms.Label J_20_TERRAINBATTLE;
         private System.Windows.Forms.Label J_19_TERRAINBATTLE;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label J_15;
         private System.Windows.Forms.NumericUpDown B13;
         private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.NumericUpDown B12;
@@ -1374,7 +1409,7 @@
         private System.Windows.Forms.NumericUpDown W8;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.NumericUpDown B20;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label J_21;
         private System.Windows.Forms.NumericUpDown B22;
         private System.Windows.Forms.NumericUpDown B21;
         private System.Windows.Forms.NumericUpDown B14;
@@ -1389,5 +1424,8 @@
         private InterpolatedPictureBox L_19_TERRAINBATTLEICON_PLUS1;
         private System.Windows.Forms.ComboBox L_14_COMBO;
         private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.NumericUpDown B17;
+        private System.Windows.Forms.NumericUpDown B16;
+        private System.Windows.Forms.NumericUpDown B15;
     }
 }
