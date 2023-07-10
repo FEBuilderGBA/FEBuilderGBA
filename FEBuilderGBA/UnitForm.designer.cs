@@ -34,7 +34,6 @@
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.HardCodingWarningLabel = new System.Windows.Forms.Label();
-            this.B4 = new System.Windows.Forms.NumericUpDown();
             this.X_SKILL_BUTTON9 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON8 = new System.Windows.Forms.Button();
             this.X_SKILL_BUTTON7 = new System.Windows.Forms.Button();
@@ -164,6 +163,16 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.ChkGrowthsAsDecimal = new System.Windows.Forms.CheckBox();
+            this.ChkExportGrowths = new System.Windows.Forms.CheckBox();
+            this.ChkExportStats = new System.Windows.Forms.CheckBox();
+            this.ImportSelectedStatsBtn = new System.Windows.Forms.Button();
+            this.ImportAllBtn = new System.Windows.Forms.Button();
+            this.ExportSelectedBtn = new System.Windows.Forms.Button();
+            this.ExportAllBtn = new System.Windows.Forms.Button();
+            this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
+            this.B4 = new System.Windows.Forms.NumericUpDown();
             this.J_43 = new FEBuilderGBA.CustomColorGroupBox();
             this.L_43_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_43_BIT_40 = new System.Windows.Forms.CheckBox();
@@ -221,19 +230,12 @@
             this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
             this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
             this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
-            this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
-            this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
-            this.ImportSelectedGrowthsBtn = new System.Windows.Forms.Button();
-            this.ImportSelectedStatsBtn = new System.Windows.Forms.Button();
-            this.ImportAllGrowthsBtn = new System.Windows.Forms.Button();
-            this.ImportAllStatsBtn = new System.Windows.Forms.Button();
-            this.ExportSelectedGrowthsBtn = new System.Windows.Forms.Button();
-            this.ExportSelectedStatsBtn = new System.Windows.Forms.Button();
-            this.ExportAllGrowthsBtn = new System.Windows.Forms.Button();
-            this.ExportAllStatsBtn = new System.Windows.Forms.Button();
+            this.ChkIncludeHeader = new System.Windows.Forms.CheckBox();
+            this.ChkIncludeName = new System.Windows.Forms.CheckBox();
+            this.ChkExportWLevel = new System.Windows.Forms.CheckBox();
+            this.ChkUseClipboard = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).BeginInit();
@@ -288,6 +290,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
+            this.customColorGroupBox1.SuspendLayout();
+            this.L_4_ID_PLUS1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
             this.J_43.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B43)).BeginInit();
             this.J_42.SuspendLayout();
@@ -307,8 +312,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
-            this.L_4_ID_PLUS1.SuspendLayout();
-            this.customColorGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // J_0_TEXT
@@ -390,20 +393,6 @@
             this.HardCodingWarningLabel.Text = "[HardCoding]";
             this.HardCodingWarningLabel.Visible = false;
             this.HardCodingWarningLabel.Click += new System.EventHandler(this.HardCodingWarningLabel_Click);
-            // 
-            // B4
-            // 
-            this.B4.Hexadecimal = true;
-            this.B4.Location = new System.Drawing.Point(0, 3);
-            this.B4.Margin = new System.Windows.Forms.Padding(1);
-            this.B4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(53, 20);
-            this.B4.TabIndex = 7;
             // 
             // X_SKILL_BUTTON9
             // 
@@ -2056,6 +2045,147 @@
             this.panel1.Size = new System.Drawing.Size(630, 1);
             this.panel1.TabIndex = 109;
             // 
+            // customColorGroupBox1
+            // 
+            this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox1.Controls.Add(this.ChkUseClipboard);
+            this.customColorGroupBox1.Controls.Add(this.ChkExportWLevel);
+            this.customColorGroupBox1.Controls.Add(this.ChkIncludeName);
+            this.customColorGroupBox1.Controls.Add(this.ChkIncludeHeader);
+            this.customColorGroupBox1.Controls.Add(this.ChkGrowthsAsDecimal);
+            this.customColorGroupBox1.Controls.Add(this.ChkExportGrowths);
+            this.customColorGroupBox1.Controls.Add(this.ChkExportStats);
+            this.customColorGroupBox1.Controls.Add(this.ImportSelectedStatsBtn);
+            this.customColorGroupBox1.Controls.Add(this.ImportAllBtn);
+            this.customColorGroupBox1.Controls.Add(this.ExportSelectedBtn);
+            this.customColorGroupBox1.Controls.Add(this.ExportAllBtn);
+            this.customColorGroupBox1.Location = new System.Drawing.Point(5, 536);
+            this.customColorGroupBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.customColorGroupBox1.Name = "customColorGroupBox1";
+            this.customColorGroupBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.customColorGroupBox1.Size = new System.Drawing.Size(781, 81);
+            this.customColorGroupBox1.TabIndex = 111;
+            this.customColorGroupBox1.TabStop = false;
+            this.customColorGroupBox1.Text = "CSV Import / Export";
+            // 
+            // ChkGrowthsAsDecimal
+            // 
+            this.ChkGrowthsAsDecimal.AutoSize = true;
+            this.ChkGrowthsAsDecimal.Checked = true;
+            this.ChkGrowthsAsDecimal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkGrowthsAsDecimal.Location = new System.Drawing.Point(440, 53);
+            this.ChkGrowthsAsDecimal.Name = "ChkGrowthsAsDecimal";
+            this.ChkGrowthsAsDecimal.Size = new System.Drawing.Size(120, 17);
+            this.ChkGrowthsAsDecimal.TabIndex = 9;
+            this.ChkGrowthsAsDecimal.Text = "Growths as Decimal";
+            this.ChkGrowthsAsDecimal.UseVisualStyleBackColor = true;
+            // 
+            // ChkExportGrowths
+            // 
+            this.ChkExportGrowths.AutoSize = true;
+            this.ChkExportGrowths.Checked = true;
+            this.ChkExportGrowths.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkExportGrowths.Location = new System.Drawing.Point(440, 35);
+            this.ChkExportGrowths.Name = "ChkExportGrowths";
+            this.ChkExportGrowths.Size = new System.Drawing.Size(98, 17);
+            this.ChkExportGrowths.TabIndex = 8;
+            this.ChkExportGrowths.Text = "Export Growths";
+            this.ChkExportGrowths.UseVisualStyleBackColor = true;
+            // 
+            // ChkExportStats
+            // 
+            this.ChkExportStats.AutoSize = true;
+            this.ChkExportStats.Checked = true;
+            this.ChkExportStats.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkExportStats.Location = new System.Drawing.Point(440, 17);
+            this.ChkExportStats.Name = "ChkExportStats";
+            this.ChkExportStats.Size = new System.Drawing.Size(110, 17);
+            this.ChkExportStats.TabIndex = 7;
+            this.ChkExportStats.Text = "Export Base Stats";
+            this.ChkExportStats.UseVisualStyleBackColor = true;
+            // 
+            // ImportSelectedStatsBtn
+            // 
+            this.ImportSelectedStatsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImportSelectedStatsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImportSelectedStatsBtn.Location = new System.Drawing.Point(157, 48);
+            this.ImportSelectedStatsBtn.Name = "ImportSelectedStatsBtn";
+            this.ImportSelectedStatsBtn.Size = new System.Drawing.Size(161, 25);
+            this.ImportSelectedStatsBtn.TabIndex = 6;
+            this.ImportSelectedStatsBtn.Text = "Import Selected";
+            this.ImportSelectedStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImportSelectedStatsBtn.UseVisualStyleBackColor = true;
+            // 
+            // ImportAllBtn
+            // 
+            this.ImportAllBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImportAllBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImportAllBtn.Location = new System.Drawing.Point(10, 48);
+            this.ImportAllBtn.Name = "ImportAllBtn";
+            this.ImportAllBtn.Size = new System.Drawing.Size(141, 25);
+            this.ImportAllBtn.TabIndex = 4;
+            this.ImportAllBtn.Text = "Import All";
+            this.ImportAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImportAllBtn.UseVisualStyleBackColor = true;
+            // 
+            // ExportSelectedBtn
+            // 
+            this.ExportSelectedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportSelectedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportSelectedBtn.Location = new System.Drawing.Point(157, 17);
+            this.ExportSelectedBtn.Name = "ExportSelectedBtn";
+            this.ExportSelectedBtn.Size = new System.Drawing.Size(161, 25);
+            this.ExportSelectedBtn.TabIndex = 2;
+            this.ExportSelectedBtn.Text = "Export Selected";
+            this.ExportSelectedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportSelectedBtn.UseVisualStyleBackColor = true;
+            this.ExportSelectedBtn.Click += new System.EventHandler(this.ExportSelectedBtn_Click);
+            // 
+            // ExportAllBtn
+            // 
+            this.ExportAllBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportAllBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportAllBtn.Location = new System.Drawing.Point(11, 17);
+            this.ExportAllBtn.Name = "ExportAllBtn";
+            this.ExportAllBtn.Size = new System.Drawing.Size(140, 25);
+            this.ExportAllBtn.TabIndex = 0;
+            this.ExportAllBtn.Text = "Export All";
+            this.ExportAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportAllBtn.UseVisualStyleBackColor = true;
+            this.ExportAllBtn.Click += new System.EventHandler(this.ExportAllBtn_Click);
+            // 
+            // L_4_ID_PLUS1
+            // 
+            this.L_4_ID_PLUS1.Controls.Add(this.B4);
+            this.L_4_ID_PLUS1.ErrorMessage = "";
+            this.L_4_ID_PLUS1.Location = new System.Drawing.Point(435, 53);
+            this.L_4_ID_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_4_ID_PLUS1.Name = "L_4_ID_PLUS1";
+            this.L_4_ID_PLUS1.Size = new System.Drawing.Size(57, 21);
+            this.L_4_ID_PLUS1.TabIndex = 110;
+            // 
+            // B4
+            // 
+            this.B4.Hexadecimal = true;
+            this.B4.Location = new System.Drawing.Point(0, 3);
+            this.B4.Margin = new System.Windows.Forms.Padding(1);
+            this.B4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(53, 20);
+            this.B4.TabIndex = 7;
+            // 
             // J_43
             // 
             this.J_43.BorderColor = System.Drawing.Color.Empty;
@@ -2724,151 +2854,49 @@
             this.systemIconPictureBox1.TabIndex = 28;
             this.systemIconPictureBox1.TabStop = false;
             // 
-            // L_4_ID_PLUS1
+            // ChkIncludeHeader
             // 
-            this.L_4_ID_PLUS1.Controls.Add(this.B4);
-            this.L_4_ID_PLUS1.ErrorMessage = "";
-            this.L_4_ID_PLUS1.Location = new System.Drawing.Point(435, 53);
-            this.L_4_ID_PLUS1.Margin = new System.Windows.Forms.Padding(2);
-            this.L_4_ID_PLUS1.Name = "L_4_ID_PLUS1";
-            this.L_4_ID_PLUS1.Size = new System.Drawing.Size(57, 21);
-            this.L_4_ID_PLUS1.TabIndex = 110;
+            this.ChkIncludeHeader.AutoSize = true;
+            this.ChkIncludeHeader.Checked = true;
+            this.ChkIncludeHeader.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkIncludeHeader.Location = new System.Drawing.Point(324, 17);
+            this.ChkIncludeHeader.Name = "ChkIncludeHeader";
+            this.ChkIncludeHeader.Size = new System.Drawing.Size(99, 17);
+            this.ChkIncludeHeader.TabIndex = 10;
+            this.ChkIncludeHeader.Text = "Include Header";
+            this.ChkIncludeHeader.UseVisualStyleBackColor = true;
             // 
-            // customColorGroupBox1
+            // ChkIncludeName
             // 
-            this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
-            this.customColorGroupBox1.Controls.Add(this.ImportSelectedGrowthsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ImportSelectedStatsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ImportAllGrowthsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ImportAllStatsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ExportSelectedGrowthsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ExportSelectedStatsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ExportAllGrowthsBtn);
-            this.customColorGroupBox1.Controls.Add(this.ExportAllStatsBtn);
-            this.customColorGroupBox1.Location = new System.Drawing.Point(165, 536);
-            this.customColorGroupBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.customColorGroupBox1.Name = "customColorGroupBox1";
-            this.customColorGroupBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.customColorGroupBox1.Size = new System.Drawing.Size(621, 81);
-            this.customColorGroupBox1.TabIndex = 111;
-            this.customColorGroupBox1.TabStop = false;
-            this.customColorGroupBox1.Text = "Import / Export";
+            this.ChkIncludeName.AutoSize = true;
+            this.ChkIncludeName.Checked = true;
+            this.ChkIncludeName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkIncludeName.Location = new System.Drawing.Point(324, 35);
+            this.ChkIncludeName.Name = "ChkIncludeName";
+            this.ChkIncludeName.Size = new System.Drawing.Size(92, 17);
+            this.ChkIncludeName.TabIndex = 11;
+            this.ChkIncludeName.Text = "Include Name";
+            this.ChkIncludeName.UseVisualStyleBackColor = true;
             // 
-            // ImportSelectedGrowthsBtn
+            // ChkExportWLevel
             // 
-            this.ImportSelectedGrowthsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImportSelectedGrowthsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportSelectedGrowthsBtn.Location = new System.Drawing.Point(463, 46);
-            this.ImportSelectedGrowthsBtn.Name = "ImportSelectedGrowthsBtn";
-            this.ImportSelectedGrowthsBtn.Size = new System.Drawing.Size(153, 25);
-            this.ImportSelectedGrowthsBtn.TabIndex = 7;
-            this.ImportSelectedGrowthsBtn.Text = "Import Selected Growths";
-            this.ImportSelectedGrowthsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportSelectedGrowthsBtn.UseVisualStyleBackColor = true;
+            this.ChkExportWLevel.AutoSize = true;
+            this.ChkExportWLevel.Location = new System.Drawing.Point(324, 53);
+            this.ChkExportWLevel.Name = "ChkExportWLevel";
+            this.ChkExportWLevel.Size = new System.Drawing.Size(111, 17);
+            this.ChkExportWLevel.TabIndex = 12;
+            this.ChkExportWLevel.Text = "Export Wep Level";
+            this.ChkExportWLevel.UseVisualStyleBackColor = true;
             // 
-            // ImportSelectedStatsBtn
+            // ChkUseClipboard
             // 
-            this.ImportSelectedStatsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImportSelectedStatsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportSelectedStatsBtn.Location = new System.Drawing.Point(464, 16);
-            this.ImportSelectedStatsBtn.Name = "ImportSelectedStatsBtn";
-            this.ImportSelectedStatsBtn.Size = new System.Drawing.Size(153, 25);
-            this.ImportSelectedStatsBtn.TabIndex = 6;
-            this.ImportSelectedStatsBtn.Text = "Import Selected Stats";
-            this.ImportSelectedStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportSelectedStatsBtn.UseVisualStyleBackColor = true;
-            // 
-            // ImportAllGrowthsBtn
-            // 
-            this.ImportAllGrowthsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImportAllGrowthsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportAllGrowthsBtn.Location = new System.Drawing.Point(307, 46);
-            this.ImportAllGrowthsBtn.Name = "ImportAllGrowthsBtn";
-            this.ImportAllGrowthsBtn.Size = new System.Drawing.Size(156, 25);
-            this.ImportAllGrowthsBtn.TabIndex = 5;
-            this.ImportAllGrowthsBtn.Text = "Import All Growths";
-            this.ImportAllGrowthsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportAllGrowthsBtn.UseVisualStyleBackColor = true;
-            // 
-            // ImportAllStatsBtn
-            // 
-            this.ImportAllStatsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImportAllStatsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportAllStatsBtn.Location = new System.Drawing.Point(307, 16);
-            this.ImportAllStatsBtn.Name = "ImportAllStatsBtn";
-            this.ImportAllStatsBtn.Size = new System.Drawing.Size(156, 25);
-            this.ImportAllStatsBtn.TabIndex = 4;
-            this.ImportAllStatsBtn.Text = "Import All Stats";
-            this.ImportAllStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImportAllStatsBtn.UseVisualStyleBackColor = true;
-            // 
-            // ExportSelectedGrowthsBtn
-            // 
-            this.ExportSelectedGrowthsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportSelectedGrowthsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportSelectedGrowthsBtn.Location = new System.Drawing.Point(159, 46);
-            this.ExportSelectedGrowthsBtn.Name = "ExportSelectedGrowthsBtn";
-            this.ExportSelectedGrowthsBtn.Size = new System.Drawing.Size(146, 25);
-            this.ExportSelectedGrowthsBtn.TabIndex = 3;
-            this.ExportSelectedGrowthsBtn.Text = "Export Selected Growths";
-            this.ExportSelectedGrowthsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportSelectedGrowthsBtn.UseVisualStyleBackColor = true;
-            this.ExportSelectedGrowthsBtn.Click += new System.EventHandler(this.ExportSelectedGrowthsBtn_Click);
-            // 
-            // ExportSelectedStatsBtn
-            // 
-            this.ExportSelectedStatsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportSelectedStatsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportSelectedStatsBtn.Location = new System.Drawing.Point(159, 16);
-            this.ExportSelectedStatsBtn.Name = "ExportSelectedStatsBtn";
-            this.ExportSelectedStatsBtn.Size = new System.Drawing.Size(146, 25);
-            this.ExportSelectedStatsBtn.TabIndex = 2;
-            this.ExportSelectedStatsBtn.Text = "Export Selected Stats";
-            this.ExportSelectedStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportSelectedStatsBtn.UseVisualStyleBackColor = true;
-            this.ExportSelectedStatsBtn.Click += new System.EventHandler(this.ExportSelectedStatsBtn_Click);
-            // 
-            // ExportAllGrowthsBtn
-            // 
-            this.ExportAllGrowthsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportAllGrowthsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportAllGrowthsBtn.Location = new System.Drawing.Point(3, 46);
-            this.ExportAllGrowthsBtn.Name = "ExportAllGrowthsBtn";
-            this.ExportAllGrowthsBtn.Size = new System.Drawing.Size(155, 25);
-            this.ExportAllGrowthsBtn.TabIndex = 1;
-            this.ExportAllGrowthsBtn.Text = "Export All Growths";
-            this.ExportAllGrowthsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportAllGrowthsBtn.UseVisualStyleBackColor = true;
-            this.ExportAllGrowthsBtn.Click += new System.EventHandler(this.ExportAllGrowthsBtn_Click);
-            // 
-            // ExportAllStatsBtn
-            // 
-            this.ExportAllStatsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportAllStatsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportAllStatsBtn.Location = new System.Drawing.Point(3, 16);
-            this.ExportAllStatsBtn.Name = "ExportAllStatsBtn";
-            this.ExportAllStatsBtn.Size = new System.Drawing.Size(155, 25);
-            this.ExportAllStatsBtn.TabIndex = 0;
-            this.ExportAllStatsBtn.Text = "Export All Stats";
-            this.ExportAllStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportAllStatsBtn.UseVisualStyleBackColor = true;
-            this.ExportAllStatsBtn.Click += new System.EventHandler(this.ExportAllStatsBtn_Click);
+            this.ChkUseClipboard.AutoSize = true;
+            this.ChkUseClipboard.Location = new System.Drawing.Point(558, 17);
+            this.ChkUseClipboard.Name = "ChkUseClipboard";
+            this.ChkUseClipboard.Size = new System.Drawing.Size(92, 17);
+            this.ChkUseClipboard.TabIndex = 13;
+            this.ChkUseClipboard.Text = "Use Clipboard";
+            this.ChkUseClipboard.UseVisualStyleBackColor = true;
             // 
             // UnitForm
             // 
@@ -3042,7 +3070,6 @@
             this.Load += new System.EventHandler(this.UnitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
@@ -3097,6 +3124,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
+            this.customColorGroupBox1.ResumeLayout(false);
+            this.customColorGroupBox1.PerformLayout();
+            this.L_4_ID_PLUS1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
             this.J_43.ResumeLayout(false);
             this.J_43.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B43)).EndInit();
@@ -3120,8 +3151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
-            this.L_4_ID_PLUS1.ResumeLayout(false);
-            this.customColorGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3324,13 +3353,16 @@
         private System.Windows.Forms.Panel panel1;
         private PanelEx L_4_ID_PLUS1;
         private CustomColorGroupBox customColorGroupBox1;
-        private System.Windows.Forms.Button ExportSelectedGrowthsBtn;
-        private System.Windows.Forms.Button ExportSelectedStatsBtn;
-        private System.Windows.Forms.Button ExportAllGrowthsBtn;
-        private System.Windows.Forms.Button ExportAllStatsBtn;
-        private System.Windows.Forms.Button ImportSelectedGrowthsBtn;
+        private System.Windows.Forms.Button ExportSelectedBtn;
+        private System.Windows.Forms.Button ExportAllBtn;
         private System.Windows.Forms.Button ImportSelectedStatsBtn;
-        private System.Windows.Forms.Button ImportAllGrowthsBtn;
-        private System.Windows.Forms.Button ImportAllStatsBtn;
+        private System.Windows.Forms.Button ImportAllBtn;
+        private System.Windows.Forms.CheckBox ChkGrowthsAsDecimal;
+        private System.Windows.Forms.CheckBox ChkExportGrowths;
+        private System.Windows.Forms.CheckBox ChkExportStats;
+        private System.Windows.Forms.CheckBox ChkIncludeHeader;
+        private System.Windows.Forms.CheckBox ChkIncludeName;
+        private System.Windows.Forms.CheckBox ChkExportWLevel;
+        private System.Windows.Forms.CheckBox ChkUseClipboard;
     }
 }

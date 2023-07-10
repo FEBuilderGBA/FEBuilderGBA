@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace FEBuilderGBA
 {
@@ -45,15 +46,11 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(HardCodingWarningLabel);
 
             // Import/Export Setup
-            U.SetIcon(ExportAllStatsBtn, Properties.Resources.icon_arrow);
-            U.SetIcon(ExportAllGrowthsBtn, Properties.Resources.icon_arrow);
-            U.SetIcon(ExportSelectedStatsBtn, Properties.Resources.icon_arrow);
-            U.SetIcon(ExportSelectedGrowthsBtn, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportAllBtn, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportSelectedBtn, Properties.Resources.icon_arrow);
 
-            U.SetIcon(ImportAllStatsBtn, Properties.Resources.icon_upload);
-            U.SetIcon(ImportAllGrowthsBtn, Properties.Resources.icon_upload);
+            U.SetIcon(ImportAllBtn, Properties.Resources.icon_upload);
             U.SetIcon(ImportSelectedStatsBtn, Properties.Resources.icon_upload);
-            U.SetIcon(ImportSelectedGrowthsBtn, Properties.Resources.icon_upload);
         }
 
         public InputFormRef InputFormRef;
@@ -65,7 +62,7 @@ namespace FEBuilderGBA
                 , Program.ROM.RomInfo.unit_datasize
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                        return i < Program.ROM.RomInfo.unit_maxcount; 
+                    return i < Program.ROM.RomInfo.unit_maxcount;
                 }
                 , (int i, uint addr) =>
                 {
@@ -76,7 +73,7 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version == 6)
             {//FE6だと、 0x00 へのポインタしかない・・・
-                ifr.ReInit( Program.ROM.p32((Program.ROM.RomInfo.unit_pointer)) + Program.ROM.RomInfo.unit_datasize);
+                ifr.ReInit(Program.ROM.p32((Program.ROM.RomInfo.unit_pointer)) + Program.ROM.RomInfo.unit_datasize);
             }
             return ifr;
         }
@@ -135,7 +132,7 @@ namespace FEBuilderGBA
         {
             if (uid == 0 || uid == U.NOT_FOUND)
             {
-                return ;
+                return;
             }
             InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(uid - 1);
@@ -144,7 +141,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            sim.SetUnitBase((int)Program.ROM.u8(addr+11) //LV
+            sim.SetUnitBase((int)Program.ROM.u8(addr + 11) //LV
                 , (int)(sbyte)Program.ROM.u8(addr + 12) //hp
                 , (int)(sbyte)Program.ROM.u8(addr + 13) //str
                 , (int)(sbyte)Program.ROM.u8(addr + 14) //skill
@@ -162,7 +159,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 32) //def
                 , (int)Program.ROM.u8(addr + 33) //res
                 , (int)Program.ROM.u8(addr + 34) //luck
-                , (int)MagicSplitUtil.GetUnitGrowMagicExtends(uid,addr) //magic ext
+                , (int)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) //magic ext
                 );
         }
         public GrowSimulator BuildSim()
@@ -224,9 +221,9 @@ namespace FEBuilderGBA
         {
             X_SIM.Value = GrowSimulator.CalcMaxLevel((uint)B5.Value);
             X_SIM_ValueChanged(null, null);
-            SkillUtil.MakeUnitSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex+1, this.X_SkillButtons, this.X_Tooltip);
+            SkillUtil.MakeUnitSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex + 1, this.X_SkillButtons, this.X_Tooltip);
             CheckHardCodingWarning();
-            
+
         }
         //支援クラス
         public static uint GetClassID(uint uid)
@@ -315,7 +312,7 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++)
             {
-                if ( face_id == Program.ROM.u16(addr + 6) )
+                if (face_id == Program.ROM.u16(addr + 6))
                 {
                     uint id = Program.ROM.u16(addr);
                     return TextForm.Direct(id);
@@ -381,7 +378,7 @@ namespace FEBuilderGBA
             }
             InputFormRef InputFormRef = Init(null);
 
-            uint addr = InputFormRef.BaseAddress + (uid - 1)* InputFormRef.BlockSize;
+            uint addr = InputFormRef.BaseAddress + (uid - 1) * InputFormRef.BlockSize;
             return Program.ROM.p32(addr + 44);
         }
         //顔画像
@@ -404,11 +401,11 @@ namespace FEBuilderGBA
             {
                 return ImagePortraitForm.DrawPortraitAuto(0);
             }
-            uint face_id = Program.ROM.u16(addr+6);
+            uint face_id = Program.ROM.u16(addr + 6);
             return ImagePortraitForm.DrawPortraitAuto(face_id);
         }
         //顔画像
-        public static Bitmap DrawUnitFacePictureByAddr(uint addr,bool showClassCardIfZero)
+        public static Bitmap DrawUnitFacePictureByAddr(uint addr, bool showClassCardIfZero)
         {
             if (!U.isSafetyOffset(addr))
             {
@@ -483,7 +480,7 @@ namespace FEBuilderGBA
 
             int unitMax = Math.Min((int)InputFormRef.DataCount, (int)UnitForm.MAX_PLAYER_UNIT_ID + 1); //戦績が選べるのは 0x45まで
             uint addr = InputFormRef.BaseAddress;
-            for (int i = 0; i < unitMax; i++ , addr += InputFormRef.BlockSize)
+            for (int i = 0; i < unitMax; i++, addr += InputFormRef.BlockSize)
             {
                 uint talkGroup = Program.ROM.u8(addr + 48);
                 if (maxTalkGroup < talkGroup)
@@ -542,7 +539,7 @@ namespace FEBuilderGBA
             }
             //FE8の場合、CC分岐があるので、別途構造体で定義. UnitPaletteForm.cs
             return U.NOT_FOUND;
-    }
+        }
         public static uint GetPaletteHighClass(uint uid)
         {
             if (Program.ROM.RomInfo.version == 7)
@@ -643,14 +640,14 @@ namespace FEBuilderGBA
         }
 
         public static void GetWeaponLevel(uint uid
-            ,out uint out_sword
-            ,out uint out_lance
-            ,out uint out_axe
-            ,out uint out_bow
-            ,out uint out_staff
-            ,out uint out_anima
-            ,out uint out_light
-            ,out uint out_dark
+            , out uint out_sword
+            , out uint out_lance
+            , out uint out_axe
+            , out uint out_bow
+            , out uint out_staff
+            , out uint out_anima
+            , out uint out_light
+            , out uint out_dark
                 )
         {
             out_sword = 0;
@@ -663,7 +660,7 @@ namespace FEBuilderGBA
             out_dark = 0;
             if (uid == 0)
             {
-                return ;
+                return;
             }
             uid--;
 
@@ -671,7 +668,7 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.IDToAddr(uid);
             if (!U.isSafetyOffset(addr))
             {
-                return ;
+                return;
             }
 
             out_sword = Program.ROM.u8(addr + 20);
@@ -705,7 +702,7 @@ namespace FEBuilderGBA
         public static void MakeVarsIDArray(List<UseValsID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseValsID.AppendTextID(list, FELint.Type.UNIT, InputFormRef, new uint[] { 0 , 2});
+            UseValsID.AppendTextID(list, FELint.Type.UNIT, InputFormRef, new uint[] { 0, 2 });
         }
 
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
@@ -751,7 +748,7 @@ namespace FEBuilderGBA
                     if (isMeleeMagicMixAddr(unit_addr))
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.UNIT, unit_addr
-                            , R._("武器レベルで、近接と魔法を混在させています。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。"),i));
+                            , R._("武器レベルで、近接と魔法を混在させています。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。"), i));
                     }
                 }
                 uint support_pointer = Program.ROM.u32(unit_addr + 44);
@@ -863,7 +860,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                return (cid == 0x01 || cid == 0x0F) ;
+                return (cid == 0x01 || cid == 0x0F);
             }
         }
 
@@ -941,115 +938,159 @@ namespace FEBuilderGBA
             f.JumpTo("HARDCODING_UNIT=" + U.ToHexString2(this.AddressList.SelectedIndex + 1), 0);
         }
 
-        // Export Functionality
-        private void ExportAllStatsBtn_Click(object sender, EventArgs e)
+        // CSV Export Functionality
+
+        private string Export(int index, InputFormRef InputFormRef)
         {
+            int growthDivisor = ChkGrowthsAsDecimal.Checked ? 100 : 1;
+
             string output = "";
-            for (int i = 0; i < this.AddressList.Items.Count; i++)
+            uint uid = (uint)index;
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
             {
-                uint uid = (uint)i;
-                InputFormRef InputFormRef = Init(null);
-                uint addr = InputFormRef.IDToAddr(uid);
-                if (!U.isSafetyOffset(addr))
-                {
-                    break;
-                }
+                return "";
+            }
+
+            if (ChkIncludeName.Checked)
+            {
+                output += GetUnitNameByAddr(addr);
+                output += ", ";
+            }
+
+            // Base Stats
+            if (ChkExportStats.Checked)
+            {
                 output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // hp
-                output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", ";
-                output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", ";
-                output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
-                output += "\n";
+                output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", "; // str
+                output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", "; // skill
+                output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", "; // spd
+                output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", "; // def
+                output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", "; // res
+                output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", "; // luck
+                output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", "; // con
+                output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr); // mag
+                output += ", ";
             }
 
-            Clipboard.SetText(output);
-            MessageBox.Show("Copied Stats to Clipboard");
+            // Growths
+            if (ChkExportGrowths.Checked)
+            {
+                output += (float)(sbyte)Program.ROM.u8(addr + 28) / growthDivisor + ", "; // hp
+                output += (float)(sbyte)Program.ROM.u8(addr + 29) / growthDivisor + ", "; // str
+                output += (float)(sbyte)Program.ROM.u8(addr + 30) / growthDivisor + ", "; // skill
+                output += (float)(sbyte)Program.ROM.u8(addr + 31) / growthDivisor + ", "; // spd
+                output += (float)(sbyte)Program.ROM.u8(addr + 32) / growthDivisor + ", "; // def
+                output += (float)(sbyte)Program.ROM.u8(addr + 33) / growthDivisor + ", "; // res
+                output += (float)(sbyte)Program.ROM.u8(addr + 34) / growthDivisor + ", "; // luck
+                output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / growthDivisor; // mag
+            }
+
+            output += "\n";
+            return output;
         }
 
-        private void ExportAllGrowthsBtn_Click(object sender, EventArgs e)
+        private string SetupHeader()
         {
-            int divisor = 100;//ChkExportGrowthsPercent.Checked ? 100 : 1;
             string output = "";
-            for (int i = 0; i < this.AddressList.Items.Count; i++)
+            if (!ChkIncludeHeader.Checked)
             {
-                uint uid = (uint)i;
-                InputFormRef InputFormRef = Init(null);
-                uint addr = InputFormRef.IDToAddr(uid);
-                if (!U.isSafetyOffset(addr))
+                return output;
+            }
+
+            if (ChkIncludeName.Checked)
+            {
+                output += "Name, ";
+            }
+
+            if (ChkExportStats.Checked)
+            {
+                output += "HP, STR, SKL, SPD, DEF, RES, LUCK, CON";
+                if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
                 {
-                    break;
+                    output += ", MAG";
                 }
-                output += (float)(sbyte)Program.ROM.u8(addr + 28) / divisor + ", "; // HP
-                output += (float)(sbyte)Program.ROM.u8(addr + 29) / divisor + ", ";
-                output += (float)(sbyte)Program.ROM.u8(addr + 30) / divisor + ", ";
-                output += (float)(sbyte)Program.ROM.u8(addr + 31) / divisor + ", ";
-                output += (float)(sbyte)Program.ROM.u8(addr + 32) / divisor + ", ";
-                output += (float)(sbyte)Program.ROM.u8(addr + 33) / divisor + ", ";
-                output += (float)(sbyte)Program.ROM.u8(addr + 34) / divisor + ", ";
-                output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / divisor;
-                output += "\n";
             }
 
-            Clipboard.SetText(output);
-            MessageBox.Show("Copied Growths to Clipboard");
-        }
-
-        private void ExportSelectedStatsBtn_Click(object sender, EventArgs e)
-        {
-            string output = "";
-
-            uint uid = (uint)this.AddressList.SelectedIndex;
-            InputFormRef InputFormRef = Init(null);
-            uint addr = InputFormRef.IDToAddr(uid);
-            if (!U.isSafetyOffset(addr))
+            if (ChkExportGrowths.Checked)
             {
-                MessageBox.Show("Invalid Selection");
-                return;
+                if (ChkExportStats.Checked) // add an extra comma here because we want to allow this to be the start if we don't have the stats
+                {
+                    output += ", ";
+                }
+                output += "HP, STR, SKL, SPD, DEF, RES, LUCK";
+                if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                {
+                    output += ", MAG";
+                }
             }
-            output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // hp
-            output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", ";
-            output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", ";
-            output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
+
             output += "\n";
 
-            Clipboard.SetText(output);
-            MessageBox.Show("Copied Stats to Clipboard");
+            return output;
         }
 
-        private void ExportSelectedGrowthsBtn_Click(object sender, EventArgs e)
+        private void WriteToFile(string output) 
         {
-            int divisor = 100; //ChkExportGrowthsPercent.Checked ? 100 : 1;
+            if (ChkUseClipboard.Checked)
+            {
+                Clipboard.SetText(output);
+                MessageBox.Show("Copied Stats to Clipboard");
+            }
+            else
+            {
+                SaveFileDialog SaveFileDialog1 = new SaveFileDialog();
+                SaveFileDialog1.InitialDirectory = @"C:\";
+                SaveFileDialog1.RestoreDirectory = true;
+                SaveFileDialog1.DefaultExt = "csv";
+                SaveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                SaveFileDialog1.FilterIndex = 1;
+                SaveFileDialog1.CheckFileExists = false;
+                SaveFileDialog1.CheckPathExists = true;
+
+                if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.OpenWrite(SaveFileDialog1.FileName);
+                    byte[] bytes = Encoding.UTF8.GetBytes(output);
+                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Close();
+                    
+                    string argument = "/select, \"" + SaveFileDialog1.FileName + "\"";
+                    Process.Start("explorer.exe", argument);
+                }
+            }
+        }
+
+        private void ExportAllBtn_Click(object sender, EventArgs e)
+        {
+            InputFormRef InputFormRef = Init(null);
+            string output = "";
+            if (ChkIncludeHeader.Checked) 
+            {
+                output += SetupHeader();
+            }
+
+            for (int i = 0; i < AddressList.Items.Count; i++)
+            {
+                output += Export(i, InputFormRef);
+            }
+
+            WriteToFile(output);
+        }
+
+        private void ExportSelectedBtn_Click(object sender, EventArgs e)
+        {
+            InputFormRef InputFormRef = Init(null);
             string output = "";
 
-            uint uid = (uint)this.AddressList.SelectedIndex;
-            InputFormRef InputFormRef = Init(null);
-            uint addr = InputFormRef.IDToAddr(uid);
-            if (!U.isSafetyOffset(addr))
+            if (ChkIncludeHeader.Checked)
             {
-                MessageBox.Show("Invalid Selection");
-                return;
+                output += SetupHeader();
             }
-            output += (float)(sbyte)Program.ROM.u8(addr + 28) / divisor + ", "; // HP
-            output += (float)(sbyte)Program.ROM.u8(addr + 29) / divisor + ", ";
-            output += (float)(sbyte)Program.ROM.u8(addr + 30) / divisor + ", ";
-            output += (float)(sbyte)Program.ROM.u8(addr + 31) / divisor + ", ";
-            output += (float)(sbyte)Program.ROM.u8(addr + 32) / divisor + ", ";
-            output += (float)(sbyte)Program.ROM.u8(addr + 33) / divisor + ", ";
-            output += (float)(sbyte)Program.ROM.u8(addr + 34) / divisor + ", ";
-            output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / divisor;
-            output += "\n";
 
-            Clipboard.SetText(output);
-            MessageBox.Show("Copied Growths to Clipboard");
+            output += Export(AddressList.SelectedIndex, InputFormRef);
+
+            WriteToFile(output);
         }
     }
 }
