@@ -43,6 +43,17 @@ namespace FEBuilderGBA
 
             X_SIM.ValueChanged += X_SIM_ValueChanged;
             InputFormRef.markupJumpLabel(HardCodingWarningLabel);
+
+            // Import/Export Setup
+            U.SetIcon(ExportAllStatsBtn, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportAllGrowthsBtn, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportSelectedStatsBtn, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportSelectedGrowthsBtn, Properties.Resources.icon_arrow);
+
+            U.SetIcon(ImportAllStatsBtn, Properties.Resources.icon_upload);
+            U.SetIcon(ImportAllGrowthsBtn, Properties.Resources.icon_upload);
+            U.SetIcon(ImportSelectedStatsBtn, Properties.Resources.icon_upload);
+            U.SetIcon(ImportSelectedGrowthsBtn, Properties.Resources.icon_upload);
         }
 
         public InputFormRef InputFormRef;
@@ -930,38 +941,115 @@ namespace FEBuilderGBA
             f.JumpTo("HARDCODING_UNIT=" + U.ToHexString2(this.AddressList.SelectedIndex + 1), 0);
         }
 
-        private void X_BASE_MouseClick(object sender, MouseEventArgs e)
+        // Export Functionality
+        private void ExportAllStatsBtn_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            string output = "";
+            for (int i = 0; i < this.AddressList.Items.Count; i++)
             {
-                string text = B11.Value + ", "
-                    + b12.Value + ", "
-                    + b13.Value + ", "
-                    + b14.Value + ", "
-                    + b15.Value + ", "
-                    + b16.Value + ", "
-                    + b17.Value + ", "
-                    + b18.Value + ", "
-                    + MagicExtUnitBase.Value;
-                Clipboard.SetText(text);
+                uint uid = (uint)i;
+                InputFormRef InputFormRef = Init(null);
+                uint addr = InputFormRef.IDToAddr(uid);
+                if (!U.isSafetyOffset(addr))
+                {
+                    break;
+                }
+                output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // hp
+                output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", ";
+                output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", ";
+                output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
+                output += "\n";
             }
+
+            Clipboard.SetText(output);
+            MessageBox.Show("Copied Stats to Clipboard");
         }
 
-        private void X_GROW_MouseClick(object sender, MouseEventArgs e)
+        private void ExportAllGrowthsBtn_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            int divisor = 100;//ChkExportGrowthsPercent.Checked ? 100 : 1;
+            string output = "";
+            for (int i = 0; i < this.AddressList.Items.Count; i++)
             {
-                string text = B28.Value / 100 + ", "
-                    + B29.Value / 100 + ", "
-                    + B30.Value / 100 + ", "
-                    + B31.Value / 100 + ", "
-                    + B32.Value / 100 + ", "
-                    + B33.Value / 100 + ", "
-                    + B34.Value / 100 + ", "
-                    + B35.Value / 100 + ", "
-                    + MagicExtUnitGrow.Value / 100;
-                Clipboard.SetText(text);
+                uint uid = (uint)i;
+                InputFormRef InputFormRef = Init(null);
+                uint addr = InputFormRef.IDToAddr(uid);
+                if (!U.isSafetyOffset(addr))
+                {
+                    break;
+                }
+                output += (float)(sbyte)Program.ROM.u8(addr + 28) / divisor + ", "; // HP
+                output += (float)(sbyte)Program.ROM.u8(addr + 29) / divisor + ", ";
+                output += (float)(sbyte)Program.ROM.u8(addr + 30) / divisor + ", ";
+                output += (float)(sbyte)Program.ROM.u8(addr + 31) / divisor + ", ";
+                output += (float)(sbyte)Program.ROM.u8(addr + 32) / divisor + ", ";
+                output += (float)(sbyte)Program.ROM.u8(addr + 33) / divisor + ", ";
+                output += (float)(sbyte)Program.ROM.u8(addr + 34) / divisor + ", ";
+                output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / divisor;
+                output += "\n";
             }
+
+            Clipboard.SetText(output);
+            MessageBox.Show("Copied Growths to Clipboard");
+        }
+
+        private void ExportSelectedStatsBtn_Click(object sender, EventArgs e)
+        {
+            string output = "";
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
+            output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // hp
+            output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", ";
+            output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", ";
+            output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
+            output += "\n";
+
+            Clipboard.SetText(output);
+            MessageBox.Show("Copied Stats to Clipboard");
+        }
+
+        private void ExportSelectedGrowthsBtn_Click(object sender, EventArgs e)
+        {
+            int divisor = 100; //ChkExportGrowthsPercent.Checked ? 100 : 1;
+            string output = "";
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                MessageBox.Show("Invalid Selection");
+                return;
+            }
+            output += (float)(sbyte)Program.ROM.u8(addr + 28) / divisor + ", "; // HP
+            output += (float)(sbyte)Program.ROM.u8(addr + 29) / divisor + ", ";
+            output += (float)(sbyte)Program.ROM.u8(addr + 30) / divisor + ", ";
+            output += (float)(sbyte)Program.ROM.u8(addr + 31) / divisor + ", ";
+            output += (float)(sbyte)Program.ROM.u8(addr + 32) / divisor + ", ";
+            output += (float)(sbyte)Program.ROM.u8(addr + 33) / divisor + ", ";
+            output += (float)(sbyte)Program.ROM.u8(addr + 34) / divisor + ", ";
+            output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / divisor;
+            output += "\n";
+
+            Clipboard.SetText(output);
+            MessageBox.Show("Copied Growths to Clipboard");
         }
     }
 }
