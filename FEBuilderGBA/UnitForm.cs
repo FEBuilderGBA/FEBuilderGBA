@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
 
 namespace FEBuilderGBA
 {
@@ -125,8 +126,6 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             return InputFormRef.IDToAddr(uid);
         }
-
-
 
         public static void SetSimUnit(ref GrowSimulator sim, uint uid)
         {
@@ -940,7 +939,7 @@ namespace FEBuilderGBA
 
         // CSV Export Functionality
 
-        private string Export(int index, InputFormRef InputFormRef)
+        private string GetDataFromROM(int index, InputFormRef InputFormRef)
         {
             int growthDivisor = ChkGrowthsAsDecimal.Checked ? 100 : 1;
 
@@ -955,7 +954,15 @@ namespace FEBuilderGBA
             if (ChkIncludeName.Checked)
             {
                 output += GetUnitNameByAddr(addr);
-                output += ", ";
+                if (ChkIncludeUID.Checked) 
+                {
+                    output += "(" + uid + ")"; // export the UID in brackets
+                    output += ", ";
+                }
+            }
+            else if(ChkIncludeUID.Checked)
+            {
+                output += uid + ", ";
             }
 
             // Base Stats
@@ -970,12 +977,15 @@ namespace FEBuilderGBA
                 output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", "; // luck
                 output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", "; // con
                 output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr); // mag
-                output += ", ";
             }
 
             // Growths
             if (ChkExportGrowths.Checked)
             {
+                if (ChkExportStats.Checked) 
+                {
+                    output += ", ";
+                }
                 output += (float)(sbyte)Program.ROM.u8(addr + 28) / growthDivisor + ", "; // hp
                 output += (float)(sbyte)Program.ROM.u8(addr + 29) / growthDivisor + ", "; // str
                 output += (float)(sbyte)Program.ROM.u8(addr + 30) / growthDivisor + ", "; // skill
@@ -1061,6 +1071,142 @@ namespace FEBuilderGBA
             }
         }
 
+        private bool WriteDataToROM(bool useSelectedIndex = false)
+        {
+            OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            OpenFileDialog1.InitialDirectory = @"C:\";
+            OpenFileDialog1.RestoreDirectory = true;
+            OpenFileDialog1.DefaultExt = "csv";
+            OpenFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            OpenFileDialog1.FilterIndex = 1;
+            OpenFileDialog1.CheckFileExists = true;
+            OpenFileDialog1.CheckPathExists = true;
+
+            uint index = 0;
+
+            if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Sanitize the data input to make sure it's all good
+                TextFieldParser parser = new TextFieldParser(OpenFileDialog1.FileName);
+                parser.TrimWhiteSpace = true;
+                parser.Delimiters = new string[] { ", " };
+
+                if (ChkIncludeHeader.Checked) // if we include the header, we want to skip it since its not relevant
+                {
+                    parser.ReadLine();
+                }
+
+                while (parser.PeekChars(1) != null)
+                {
+                    string[] fieldRow = parser.ReadFields();
+
+                    uint uid;
+                    if(fieldRow[0].Length < 1) 
+                    {
+                        break;
+                    }
+
+                    if (useSelectedIndex)
+                    {
+                        uid = (uint)AddressList.SelectedIndex;
+                    }
+                    // Decode fieldRow[0] to make it into the address of the current unit
+                    else if (ChkIncludeName.Checked) 
+                    {
+                        string[] name = fieldRow[0].Split('(', ')');
+                        if(name.Length <= 2) 
+                        {
+                            MessageBox.Show("Error: Missing UID at Index " + index + ". Aborting...");
+                            return false;
+                        }
+                        uid = uint.Parse(name[1]);
+                    }
+                    else 
+                    {
+                        uid = uint.Parse(fieldRow[0]); 
+                    }
+
+                    InputFormRef InputFormRef = Init(null);
+                    uint addr = InputFormRef.IDToAddr(uid);
+                    if (!U.isSafetyOffset(addr))
+                    {
+                        MessageBox.Show("Error: Outside Safety Offset at Index " + index + ". Aborting...");
+                        return false;
+                    }
+
+                    Undo.UndoData undodata = Program.Undo.NewUndoData("ImportCharacterStats", U.ToHexString(uid), U.ToHexString(addr));
+
+                    // we use a row index here so we can optionally skip over some functionality
+                    // its a little messy but it lets us skip magic if the ROM doesn't support it
+                    // this is also useful for using growths if base stats aren't included
+                    uint rowIndex = 0;
+                    if (ChkIncludeName.Checked) 
+                    {
+                        rowIndex++;
+                    }
+                    if (ChkExportStats.Checked)
+                    {
+                        // Write the stats to the ROM
+                        Program.ROM.write_u8(addr + 12, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // hp
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 13, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // str
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 14, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // skl
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 15, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // spd
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 16, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // def
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 17, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // res
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 18, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // luk
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 19, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // con
+                        rowIndex++;
+
+                        if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                        {
+                            MagicSplitUtil.WriteUnitBaseMagicExtends(uid, addr, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // mag
+                            rowIndex++;
+                        }
+                    }
+
+                    if (ChkExportGrowths.Checked) 
+                    {
+                        int growthDivisor = 1;
+                        if (ChkGrowthsAsDecimal.Checked) 
+                        {
+                            growthDivisor = 100;
+                        }
+                        
+                        Program.ROM.write_u8(addr + 28, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // hp
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 29, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // str
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 30, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // skl
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 31, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // spd
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 32, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // def
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 33, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // res
+                        rowIndex++;
+                        Program.ROM.write_u8(addr + 34, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // luk
+                        rowIndex++;
+                        if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                        {
+                            MagicSplitUtil.WriteUnitGrowMagicExtends(uid, addr, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // mag
+                            rowIndex++;
+                        }
+                    }
+                    index++;
+                    Program.Undo.Push(undodata);
+                }
+            }
+            ReloadListButton.PerformClick();
+            return true;
+        }
+
         private void ExportAllBtn_Click(object sender, EventArgs e)
         {
             InputFormRef InputFormRef = Init(null);
@@ -1072,7 +1218,7 @@ namespace FEBuilderGBA
 
             for (int i = 0; i < AddressList.Items.Count; i++)
             {
-                output += Export(i, InputFormRef);
+                output += GetDataFromROM(i, InputFormRef);
             }
 
             WriteToFile(output);
@@ -1088,9 +1234,19 @@ namespace FEBuilderGBA
                 output += SetupHeader();
             }
 
-            output += Export(AddressList.SelectedIndex, InputFormRef);
+            output += GetDataFromROM(AddressList.SelectedIndex, InputFormRef);
 
             WriteToFile(output);
+        }
+
+        private void ImportAllBtn_Click(object sender, EventArgs e)
+        {
+            WriteDataToROM(false);
+        }
+
+        private void ImportSelectedStatsBtn_Click(object sender, EventArgs e)
+        {
+            WriteDataToROM(true);
         }
     }
 }

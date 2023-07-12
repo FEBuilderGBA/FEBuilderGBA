@@ -164,6 +164,11 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.ChkIncludeUID = new System.Windows.Forms.CheckBox();
+            this.ChkUseClipboard = new System.Windows.Forms.CheckBox();
+            this.ChkExportWLevel = new System.Windows.Forms.CheckBox();
+            this.ChkIncludeName = new System.Windows.Forms.CheckBox();
+            this.ChkIncludeHeader = new System.Windows.Forms.CheckBox();
             this.ChkGrowthsAsDecimal = new System.Windows.Forms.CheckBox();
             this.ChkExportGrowths = new System.Windows.Forms.CheckBox();
             this.ChkExportStats = new System.Windows.Forms.CheckBox();
@@ -230,10 +235,6 @@
             this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
             this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
             this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
-            this.ChkIncludeHeader = new System.Windows.Forms.CheckBox();
-            this.ChkIncludeName = new System.Windows.Forms.CheckBox();
-            this.ChkExportWLevel = new System.Windows.Forms.CheckBox();
-            this.ChkUseClipboard = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).BeginInit();
@@ -2048,6 +2049,7 @@
             // customColorGroupBox1
             // 
             this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox1.Controls.Add(this.ChkIncludeUID);
             this.customColorGroupBox1.Controls.Add(this.ChkUseClipboard);
             this.customColorGroupBox1.Controls.Add(this.ChkExportWLevel);
             this.customColorGroupBox1.Controls.Add(this.ChkIncludeName);
@@ -2068,12 +2070,68 @@
             this.customColorGroupBox1.TabStop = false;
             this.customColorGroupBox1.Text = "CSV Import / Export";
             // 
+            // ChkIncludeUID
+            // 
+            this.ChkIncludeUID.AutoSize = true;
+            this.ChkIncludeUID.Checked = true;
+            this.ChkIncludeUID.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkIncludeUID.Location = new System.Drawing.Point(324, 53);
+            this.ChkIncludeUID.Name = "ChkIncludeUID";
+            this.ChkIncludeUID.Size = new System.Drawing.Size(83, 17);
+            this.ChkIncludeUID.TabIndex = 14;
+            this.ChkIncludeUID.Text = "Include UID";
+            this.ChkIncludeUID.UseVisualStyleBackColor = true;
+            // 
+            // ChkUseClipboard
+            // 
+            this.ChkUseClipboard.AutoSize = true;
+            this.ChkUseClipboard.Location = new System.Drawing.Point(558, 17);
+            this.ChkUseClipboard.Name = "ChkUseClipboard";
+            this.ChkUseClipboard.Size = new System.Drawing.Size(92, 17);
+            this.ChkUseClipboard.TabIndex = 13;
+            this.ChkUseClipboard.Text = "Use Clipboard";
+            this.ChkUseClipboard.UseVisualStyleBackColor = true;
+            // 
+            // ChkExportWLevel
+            // 
+            this.ChkExportWLevel.AutoSize = true;
+            this.ChkExportWLevel.Location = new System.Drawing.Point(440, 53);
+            this.ChkExportWLevel.Name = "ChkExportWLevel";
+            this.ChkExportWLevel.Size = new System.Drawing.Size(116, 17);
+            this.ChkExportWLevel.TabIndex = 12;
+            this.ChkExportWLevel.Text = "Include Wep Level";
+            this.ChkExportWLevel.UseVisualStyleBackColor = true;
+            // 
+            // ChkIncludeName
+            // 
+            this.ChkIncludeName.AutoSize = true;
+            this.ChkIncludeName.Checked = true;
+            this.ChkIncludeName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkIncludeName.Location = new System.Drawing.Point(324, 35);
+            this.ChkIncludeName.Name = "ChkIncludeName";
+            this.ChkIncludeName.Size = new System.Drawing.Size(92, 17);
+            this.ChkIncludeName.TabIndex = 11;
+            this.ChkIncludeName.Text = "Include Name";
+            this.ChkIncludeName.UseVisualStyleBackColor = true;
+            // 
+            // ChkIncludeHeader
+            // 
+            this.ChkIncludeHeader.AutoSize = true;
+            this.ChkIncludeHeader.Checked = true;
+            this.ChkIncludeHeader.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkIncludeHeader.Location = new System.Drawing.Point(324, 17);
+            this.ChkIncludeHeader.Name = "ChkIncludeHeader";
+            this.ChkIncludeHeader.Size = new System.Drawing.Size(99, 17);
+            this.ChkIncludeHeader.TabIndex = 10;
+            this.ChkIncludeHeader.Text = "Include Header";
+            this.ChkIncludeHeader.UseVisualStyleBackColor = true;
+            // 
             // ChkGrowthsAsDecimal
             // 
             this.ChkGrowthsAsDecimal.AutoSize = true;
             this.ChkGrowthsAsDecimal.Checked = true;
             this.ChkGrowthsAsDecimal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkGrowthsAsDecimal.Location = new System.Drawing.Point(440, 53);
+            this.ChkGrowthsAsDecimal.Location = new System.Drawing.Point(558, 35);
             this.ChkGrowthsAsDecimal.Name = "ChkGrowthsAsDecimal";
             this.ChkGrowthsAsDecimal.Size = new System.Drawing.Size(120, 17);
             this.ChkGrowthsAsDecimal.TabIndex = 9;
@@ -2087,9 +2145,9 @@
             this.ChkExportGrowths.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkExportGrowths.Location = new System.Drawing.Point(440, 35);
             this.ChkExportGrowths.Name = "ChkExportGrowths";
-            this.ChkExportGrowths.Size = new System.Drawing.Size(98, 17);
+            this.ChkExportGrowths.Size = new System.Drawing.Size(103, 17);
             this.ChkExportGrowths.TabIndex = 8;
-            this.ChkExportGrowths.Text = "Export Growths";
+            this.ChkExportGrowths.Text = "Include Growths";
             this.ChkExportGrowths.UseVisualStyleBackColor = true;
             // 
             // ChkExportStats
@@ -2099,9 +2157,9 @@
             this.ChkExportStats.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkExportStats.Location = new System.Drawing.Point(440, 17);
             this.ChkExportStats.Name = "ChkExportStats";
-            this.ChkExportStats.Size = new System.Drawing.Size(110, 17);
+            this.ChkExportStats.Size = new System.Drawing.Size(115, 17);
             this.ChkExportStats.TabIndex = 7;
-            this.ChkExportStats.Text = "Export Base Stats";
+            this.ChkExportStats.Text = "Include Base Stats";
             this.ChkExportStats.UseVisualStyleBackColor = true;
             // 
             // ImportSelectedStatsBtn
@@ -2117,6 +2175,7 @@
             this.ImportSelectedStatsBtn.Text = "Import Selected";
             this.ImportSelectedStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ImportSelectedStatsBtn.UseVisualStyleBackColor = true;
+            this.ImportSelectedStatsBtn.Click += new System.EventHandler(this.ImportSelectedStatsBtn_Click);
             // 
             // ImportAllBtn
             // 
@@ -2131,6 +2190,7 @@
             this.ImportAllBtn.Text = "Import All";
             this.ImportAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ImportAllBtn.UseVisualStyleBackColor = true;
+            this.ImportAllBtn.Click += new System.EventHandler(this.ImportAllBtn_Click);
             // 
             // ExportSelectedBtn
             // 
@@ -2854,50 +2914,6 @@
             this.systemIconPictureBox1.TabIndex = 28;
             this.systemIconPictureBox1.TabStop = false;
             // 
-            // ChkIncludeHeader
-            // 
-            this.ChkIncludeHeader.AutoSize = true;
-            this.ChkIncludeHeader.Checked = true;
-            this.ChkIncludeHeader.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkIncludeHeader.Location = new System.Drawing.Point(324, 17);
-            this.ChkIncludeHeader.Name = "ChkIncludeHeader";
-            this.ChkIncludeHeader.Size = new System.Drawing.Size(99, 17);
-            this.ChkIncludeHeader.TabIndex = 10;
-            this.ChkIncludeHeader.Text = "Include Header";
-            this.ChkIncludeHeader.UseVisualStyleBackColor = true;
-            // 
-            // ChkIncludeName
-            // 
-            this.ChkIncludeName.AutoSize = true;
-            this.ChkIncludeName.Checked = true;
-            this.ChkIncludeName.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkIncludeName.Location = new System.Drawing.Point(324, 35);
-            this.ChkIncludeName.Name = "ChkIncludeName";
-            this.ChkIncludeName.Size = new System.Drawing.Size(92, 17);
-            this.ChkIncludeName.TabIndex = 11;
-            this.ChkIncludeName.Text = "Include Name";
-            this.ChkIncludeName.UseVisualStyleBackColor = true;
-            // 
-            // ChkExportWLevel
-            // 
-            this.ChkExportWLevel.AutoSize = true;
-            this.ChkExportWLevel.Location = new System.Drawing.Point(324, 53);
-            this.ChkExportWLevel.Name = "ChkExportWLevel";
-            this.ChkExportWLevel.Size = new System.Drawing.Size(111, 17);
-            this.ChkExportWLevel.TabIndex = 12;
-            this.ChkExportWLevel.Text = "Export Wep Level";
-            this.ChkExportWLevel.UseVisualStyleBackColor = true;
-            // 
-            // ChkUseClipboard
-            // 
-            this.ChkUseClipboard.AutoSize = true;
-            this.ChkUseClipboard.Location = new System.Drawing.Point(558, 17);
-            this.ChkUseClipboard.Name = "ChkUseClipboard";
-            this.ChkUseClipboard.Size = new System.Drawing.Size(92, 17);
-            this.ChkUseClipboard.TabIndex = 13;
-            this.ChkUseClipboard.Text = "Use Clipboard";
-            this.ChkUseClipboard.UseVisualStyleBackColor = true;
-            // 
             // UnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3364,5 +3380,6 @@
         private System.Windows.Forms.CheckBox ChkIncludeName;
         private System.Windows.Forms.CheckBox ChkExportWLevel;
         private System.Windows.Forms.CheckBox ChkUseClipboard;
+        private System.Windows.Forms.CheckBox ChkIncludeUID;
     }
 }
