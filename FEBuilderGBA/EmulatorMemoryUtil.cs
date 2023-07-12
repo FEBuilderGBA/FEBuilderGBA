@@ -928,8 +928,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x55, "terrainId", "", 0x1));
                 ret.Add(new AddressList(0x56, "terrainDefense", "DEC", 0x1));
                 ret.Add(new AddressList(0x57, "terrainAvoid", "DEC", 0x1));
-                ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x1));
-                ret.Add(new AddressList(0x59, "pad59", "", 0x1));
+                ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x2));
                 ret.Add(new AddressList(0x5A, "battleAttack", "DEC", 0x2));
                 ret.Add(new AddressList(0x5C, "battleDefense", "DEC", 0x2));
                 ret.Add(new AddressList(0x5E, "battleSpeed", "DEC", 0x2));
@@ -1034,8 +1033,7 @@ namespace FEBuilderGBA
                 ret.Add(new AddressList(0x55, "terrainId", "TILE", 0x1));
                 ret.Add(new AddressList(0x56, "terrainDefense", "DEC", 0x1));
                 ret.Add(new AddressList(0x57, "terrainAvoid", "DEC", 0x1));
-                ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x1));
-                ret.Add(new AddressList(0x59, "pad59", "", 0x1));
+                ret.Add(new AddressList(0x58, "terrainResistance", "DEC", 0x2));
                 ret.Add(new AddressList(0x5A, "battleAttack", "DEC", 0x2));
                 ret.Add(new AddressList(0x5C, "battleDefense", "DEC", 0x2));
                 ret.Add(new AddressList(0x5E, "battleSpeed", "DEC", 0x2));

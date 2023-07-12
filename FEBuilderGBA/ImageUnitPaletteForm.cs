@@ -368,7 +368,7 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
-                    name = "UnitPalette " + U.To0xHexString(i);
+                    name = "UnitPalette " + U.To0xHexString(i+1);
 
                     FEBuilderGBA.Address.AddLZ77Pointer(list
                         , addr + 12
