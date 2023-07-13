@@ -86,6 +86,7 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CsvManager.cs" />
     <Compile Include="EAUtilLynDumpMode.cs" />
     <Compile Include="ImageBGSelectPopupForm.cs">
       <SubType>Form</SubType>

@@ -3237,6 +3237,7 @@
             this.ImportSelectedStatsBtn.Text = "Import Selected";
             this.ImportSelectedStatsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ImportSelectedStatsBtn.UseVisualStyleBackColor = true;
+            this.ImportSelectedStatsBtn.Click += new System.EventHandler(this.ImportSelectedStatsBtn_Click);
             // 
             // ImportAllBtn
             // 
@@ -3251,6 +3252,7 @@
             this.ImportAllBtn.Text = "Import All";
             this.ImportAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ImportAllBtn.UseVisualStyleBackColor = true;
+            this.ImportAllBtn.Click += new System.EventHandler(this.ImportAllBtn_Click);
             // 
             // ExportSelectedBtn
             // 
@@ -3265,6 +3267,7 @@
             this.ExportSelectedBtn.Text = "Export Selected";
             this.ExportSelectedBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportSelectedBtn.UseVisualStyleBackColor = true;
+            this.ExportSelectedBtn.Click += new System.EventHandler(this.ExportSelectedBtn_Click);
             // 
             // ExportAllBtn
             // 
@@ -3279,6 +3282,7 @@
             this.ExportAllBtn.Text = "Export All";
             this.ExportAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportAllBtn.UseVisualStyleBackColor = true;
+            this.ExportAllBtn.Click += new System.EventHandler(this.ExportAllBtn_Click);
             // 
             // ClassForm
             // 
