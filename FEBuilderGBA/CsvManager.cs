@@ -21,10 +21,12 @@ namespace FEBuilderGBA
         private bool includeName = false;
         private bool useStats = false;
         private bool useGrowths = false;
+        private bool useWepLevel = false;
         private bool growthAsDecimal = false;
         private bool exportAsClass = false;
+        private bool isUsingMagicSplit = false;
         
-        public CsvManager(bool clipboard, bool useUID, bool header, bool unitName, bool stats, bool growths, bool growthDecimal, bool isClass) 
+        public CsvManager(bool clipboard, bool useUID, bool header, bool unitName, bool stats, bool growths, bool wepLevel, bool growthDecimal, bool isClass) 
         {
             toClipboard = clipboard;
             includeUID = useUID;
@@ -32,8 +34,10 @@ namespace FEBuilderGBA
             includeName = unitName;
             useStats = stats;
             useGrowths = growths;
+            useWepLevel = wepLevel;
             growthAsDecimal = growthDecimal;
             exportAsClass = isClass;
+            isUsingMagicSplit = MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC;
         }
 
         public static String GetUnitNameByAddr(uint addr)
@@ -58,7 +62,7 @@ namespace FEBuilderGBA
             if (useStats)
             {
                 output += "HP, STR, SKL, SPD, DEF, RES, LUCK, CON";
-                if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                if (isUsingMagicSplit)
                 {
                     output += ", MAG";
                 }
@@ -71,10 +75,19 @@ namespace FEBuilderGBA
                     output += ", ";
                 }
                 output += "HP, STR, SKL, SPD, DEF, RES, LUCK";
-                if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                if (isUsingMagicSplit)
                 {
                     output += ", MAG";
                 }
+            }
+
+            if (useWepLevel) 
+            {
+                if (useStats || useGrowths) 
+                {
+                    output += ", ";
+                }
+                output += "Sword, Lance, Axe, Bow, Staff, Anima, Light, Dark";
             }
 
             output += "\n";
@@ -113,26 +126,27 @@ namespace FEBuilderGBA
             {
                 if (exportAsClass) 
                 {
-                    output += (int)(sbyte)Program.ROM.u8(addr + 11) + ", "; // hp
-                    output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // str
-                    output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", "; // skill
-                    output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", "; // spd
-                    output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", "; // def
-                    output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", "; // res
-                    output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", "; // con
-                    output += (int)(sbyte)MagicSplitUtil.GetClassBaseMagicExtends(uid, addr); // mag
+                    // hp 11, str 12, skl 13, spd 14, def 15, res 16, con 17
+                    for (uint offset = 11; offset <= 17; offset++)
+                    {
+                        output += (int)(sbyte)Program.ROM.u8(addr + offset) + ", ";
+                    }
+                    if (isUsingMagicSplit) 
+                    {
+                        output += (int)(sbyte)MagicSplitUtil.GetClassBaseMagicExtends(uid, addr); // mag
+                    }
                 }
                 else 
                 {
-                    output += (int)(sbyte)Program.ROM.u8(addr + 12) + ", "; // hp
-                    output += (int)(sbyte)Program.ROM.u8(addr + 13) + ", "; // str
-                    output += (int)(sbyte)Program.ROM.u8(addr + 14) + ", "; // skill
-                    output += (int)(sbyte)Program.ROM.u8(addr + 15) + ", "; // spd
-                    output += (int)(sbyte)Program.ROM.u8(addr + 16) + ", "; // def
-                    output += (int)(sbyte)Program.ROM.u8(addr + 17) + ", "; // res
-                    output += (int)(sbyte)Program.ROM.u8(addr + 18) + ", "; // luck
-                    output += (int)(sbyte)Program.ROM.u8(addr + 19) + ", "; // con
-                    output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr); // mag
+                    // hp 12, str 13, skl 14, spd 15, def 16, res 17, luck 18, con 19
+                    for (uint offset = 12; offset <= 19; offset++)
+                    {
+                        output += (int)(sbyte)Program.ROM.u8(addr + offset) + ", ";
+                    }
+                    if (isUsingMagicSplit) 
+                    {
+                        output += (int)(sbyte)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr); // mag
+                    }
                 }
             }
 
@@ -145,25 +159,49 @@ namespace FEBuilderGBA
                 }
                 if (exportAsClass) 
                 {
-                    output += (float)(sbyte)Program.ROM.u8(addr + 27) / growthDivisor + ", "; // hp
-                    output += (float)(sbyte)Program.ROM.u8(addr + 28) / growthDivisor + ", "; // str
-                    output += (float)(sbyte)Program.ROM.u8(addr + 29) / growthDivisor + ", "; // skill
-                    output += (float)(sbyte)Program.ROM.u8(addr + 30) / growthDivisor + ", "; // spd
-                    output += (float)(sbyte)Program.ROM.u8(addr + 31) / growthDivisor + ", "; // def
-                    output += (float)(sbyte)Program.ROM.u8(addr + 32) / growthDivisor + ", "; // res
-                    output += (float)(sbyte)Program.ROM.u8(addr + 33) / growthDivisor + ", "; // luck
-                    output += (float)(sbyte)MagicSplitUtil.GetClassGrowMagicExtends(uid, addr) / growthDivisor; // mag
+                    // hp 27, str 28, skl 29, spd 30, def 31, res 32, luck 33
+                    for (uint offset = 27; offset <= 33; offset++)
+                    {
+                        output += (float)(sbyte)Program.ROM.u8(addr + offset) / growthDivisor + ", ";
+                    }
+                    if (isUsingMagicSplit) 
+                    {
+                        output += (float)(sbyte)MagicSplitUtil.GetClassGrowMagicExtends(uid, addr) / growthDivisor; // mag
+                    }
                 }
                 else 
                 {
-                    output += (float)(sbyte)Program.ROM.u8(addr + 28) / growthDivisor + ", "; // hp
-                    output += (float)(sbyte)Program.ROM.u8(addr + 29) / growthDivisor + ", "; // str
-                    output += (float)(sbyte)Program.ROM.u8(addr + 30) / growthDivisor + ", "; // skill
-                    output += (float)(sbyte)Program.ROM.u8(addr + 31) / growthDivisor + ", "; // spd
-                    output += (float)(sbyte)Program.ROM.u8(addr + 32) / growthDivisor + ", "; // def
-                    output += (float)(sbyte)Program.ROM.u8(addr + 33) / growthDivisor + ", "; // res
-                    output += (float)(sbyte)Program.ROM.u8(addr + 34) / growthDivisor + ", "; // luck
-                    output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / growthDivisor; // mag
+                    // hp 28, str 29, skl 30, spd 31, def 32, res 33, luck 34
+                    for (uint offset = 28; offset <= 34; offset++)
+                    {
+                        output += (float)(sbyte)Program.ROM.u8(addr + offset) / growthDivisor + ", ";
+                    }
+                    if (isUsingMagicSplit) 
+                    {
+                        output += (float)(sbyte)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) / growthDivisor; // mag
+                    }
+                }
+            }
+
+            if (useWepLevel) 
+            {
+                if (useStats || useGrowths)
+                {
+                    output += ", ";
+                }
+                if (exportAsClass) 
+                {
+                    for (uint offset = 44; offset <= 51; offset++)
+                    {
+                        output += (float)(sbyte)Program.ROM.u8(addr + offset) + ", "; 
+                    }
+                }
+                else 
+                {
+                    for (uint offset = 20; offset <= 27; offset++)
+                    {
+                        output += (float)(sbyte)Program.ROM.u8(addr + offset) + ", ";
+                    }
                 }
             }
 
@@ -221,7 +259,7 @@ namespace FEBuilderGBA
                 parser.TrimWhiteSpace = true;
                 parser.Delimiters = new string[] { ", " };
 
-                if (includeHeader) // if we include the header, we want to skip it since its not relevant
+                if (includeHeader) // if we included the header, we want to skip here since its not relevant
                 {
                     parser.ReadLine();
                 }
@@ -240,7 +278,7 @@ namespace FEBuilderGBA
                     {
                         uid = (uint)selectedIndex;
                     }
-                    // Decode fieldRow[0] to make it into the address of the current unit
+                    // Decode fieldRow[0] to make it into the UID for the current unit
                     else if (includeName)
                     {
                         string[] name = fieldRow[0].Split('(', ')');
@@ -281,22 +319,13 @@ namespace FEBuilderGBA
                         // Write the stats to the ROM
                         if (exportAsClass) 
                         {
-                            Program.ROM.write_u8(addr + 11, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // hp
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 12, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // str
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 13, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // skl
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 14, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // spd
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 15, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // def
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 16, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // res
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 17, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // con
-                            rowIndex++;
+                            for (uint offset = 11; offset <= 17; offset++)
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata);
+                                rowIndex++;
+                            }
 
-                            if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                            if (isUsingMagicSplit)
                             {
                                 MagicSplitUtil.WriteClassBaseMagicExtends(uid, addr, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // mag
                                 rowIndex++;
@@ -304,24 +333,13 @@ namespace FEBuilderGBA
                         }
                         else 
                         {
-                            Program.ROM.write_u8(addr + 12, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // hp
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 13, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // str
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 14, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // skl
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 15, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // spd
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 16, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // def
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 17, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // res
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 18, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // luk
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 19, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // con
-                            rowIndex++;
+                            for (uint offset = 12; offset <= 19; offset++) 
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata);
+                                rowIndex++;
+                            }
 
-                            if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                            if (isUsingMagicSplit)
                             {
                                 MagicSplitUtil.WriteUnitBaseMagicExtends(uid, addr, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata); // mag
                                 rowIndex++;
@@ -339,21 +357,13 @@ namespace FEBuilderGBA
 
                         if (exportAsClass) 
                         {
-                            Program.ROM.write_u8(addr + 27, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // hp
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 28, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // str
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 29, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // skl
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 30, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // spd
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 31, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // def
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 32, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // res
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 33, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // luk
-                            rowIndex++;
-                            if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                            for (uint offset = 27; offset <= 33; offset++) 
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // hp
+                                rowIndex++;
+                            }
+
+                            if (isUsingMagicSplit)
                             {
                                 MagicSplitUtil.WriteClassGrowMagicExtends(uid, addr, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // mag
                                 rowIndex++;
@@ -361,24 +371,35 @@ namespace FEBuilderGBA
                         }
                         else 
                         {
+                            for (uint offset = 28; offset <= 34; offset++) 
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // hp
+                                rowIndex++;
+                            }
 
-                            Program.ROM.write_u8(addr + 28, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // hp
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 29, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // str
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 30, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // skl
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 31, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // spd
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 32, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // def
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 33, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // res
-                            rowIndex++;
-                            Program.ROM.write_u8(addr + 34, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // luk
-                            rowIndex++;
-                            if (MagicSplitUtil.SearchMagicSplit() == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                            if (isUsingMagicSplit)
                             {
                                 MagicSplitUtil.WriteUnitGrowMagicExtends(uid, addr, (uint)(sbyte)Math.Round(float.Parse(fieldRow[rowIndex]) * growthDivisor), undodata); // mag
+                                rowIndex++;
+                            }
+                        }
+                    }
+
+                    if (useWepLevel)
+                    {
+                        if (exportAsClass)
+                        {
+                            for (uint offset = 44; offset <= 51; offset++)
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata);
+                                rowIndex++;
+                            }
+                        }
+                        else
+                        {
+                            for (uint offset = 20; offset <= 27; offset++)
+                            {
+                                Program.ROM.write_u8(addr + offset, (uint)sbyte.Parse(fieldRow[rowIndex]), undodata);
                                 rowIndex++;
                             }
                         }

@@ -2095,6 +2095,8 @@
             // ChkExportWLevel
             // 
             this.ChkExportWLevel.AutoSize = true;
+            this.ChkExportWLevel.Checked = true;
+            this.ChkExportWLevel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkExportWLevel.Location = new System.Drawing.Point(440, 53);
             this.ChkExportWLevel.Name = "ChkExportWLevel";
             this.ChkExportWLevel.Size = new System.Drawing.Size(116, 17);

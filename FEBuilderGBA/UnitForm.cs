@@ -948,6 +948,7 @@ namespace FEBuilderGBA
                 ChkIncludeName.Checked,
                 ChkExportStats.Checked,
                 ChkExportGrowths.Checked,
+                ChkExportWLevel.Checked,
                 ChkGrowthsAsDecimal.Checked,
                 false);
             csv.ExportList(InputFormRef, AddressList.Items.Count);
@@ -963,6 +964,7 @@ namespace FEBuilderGBA
                 ChkIncludeName.Checked,
                 ChkExportStats.Checked,
                 ChkExportGrowths.Checked,
+                ChkExportWLevel.Checked,
                 ChkGrowthsAsDecimal.Checked,
                 false);
             csv.ExportSingle(InputFormRef, AddressList.SelectedIndex);
@@ -980,6 +982,7 @@ namespace FEBuilderGBA
                ChkIncludeName.Checked,
                ChkExportStats.Checked,
                ChkExportGrowths.Checked,
+               ChkExportWLevel.Checked,
                ChkGrowthsAsDecimal.Checked,
                false);
             csv.ImportList(InputFormRef);
@@ -996,6 +999,7 @@ namespace FEBuilderGBA
                 ChkIncludeName.Checked,
                 ChkExportStats.Checked,
                 ChkExportGrowths.Checked,
+                ChkExportWLevel.Checked,
                 ChkGrowthsAsDecimal.Checked,
                 false);
             csv.ImportSingle(InputFormRef, AddressList.SelectedIndex);
