@@ -57,6 +57,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
 
             InputFormRef.LoadComboResource(L_30_COMBO, g_item_staff_use_effect_List);
             InputFormRef.LoadComboResource(L_31_COMBO, g_item_weapon_effect_List);
@@ -943,6 +944,38 @@ namespace FEBuilderGBA
                 return true;
             }
             return false;
+        }
+
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            if (IsStrangeRange((uint) B25.Value))
+            {
+                bool b;
+                b = HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.RangeDisplayFix);
+                if (b)
+                {
+                    HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.ChangeWeaponRangeText);
+                }
+            }
+        }
+
+        static bool IsStrangeRange(uint a)
+        {
+            if (a == 0x00
+                || a == 0x11
+                || a == 0x12
+                || a == 0x13
+                || a == 0x22
+                || a == 0x23
+                || a == 0x3A
+                || a == 0x3F
+                || a == 0x10
+                || a == 0xFF
+                )
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -1610,6 +1610,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawAtributeAndText, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "TILE")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -1741,6 +1745,10 @@ namespace FEBuilderGBA
             else if (listname == "ATTRIBUTEICON")
             {
                 appendname = U.ToHexString(i + 1) + " " + InputFormRef.GetAttributeName((uint)i + 1);
+            }
+            else if (listname == "TILE")
+            {
+                appendname = U.ToHexString(i) + " " + MapTerrainNameForm.GetName((uint)i);
             }
             else if (listname.Length > 2 && listname[0] == '$')
             {

@@ -61,6 +61,8 @@ namespace FEBuilderGBA
             , StatusToLocalization
             , ExtendedMovingMapAnimationList
             , ChapterNameText
+            , RangeDisplayFix
+            , ChangeWeaponRangeText
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -351,6 +353,60 @@ namespace FEBuilderGBA
                     patchName2 = "PATCH_Chapter names as text2.1";///No Translate
                 }
                 patchShowName = "Convert Chapter Titles to Text_ver2";///No Translate
+            }
+            else if (type == TYPE.RangeDisplayFix)
+            {
+                if (Program.ROM.RomInfo.version == 6)
+                {//FE6ではだめ
+                    return false;
+                }
+                PatchUtil.skill_system_enum skillsystems = PatchUtil.SearchSkillSystem();
+                if (skillsystems == PatchUtil.skill_system_enum.FE8N
+                    || skillsystems == PatchUtil.skill_system_enum.FE8N_ver2
+                    || skillsystems == PatchUtil.skill_system_enum.FE8N_ver3
+                    || skillsystems == PatchUtil.skill_system_enum.yugudora
+                    || skillsystems == PatchUtil.skill_system_enum.midori
+                    )
+                {//FE8JのSkillの場合はよくわからないので何もしない
+                    return true;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchRangeDisplayFixPatch();
+                };
+                reason = R._("武器の攻撃範囲をバニラの範囲外にするならパッチが必要です。\r\n有効にしますか？");
+
+                patchName1 = "Range Display Fix 20211217";  ///No Translate
+                patchName2 = "Range Display Fix 20211217";  ///No Translate
+                patchShowName = "Range Display Fix 20211217";///No Translate
+            }
+            else if (type == TYPE.ChangeWeaponRangeText)
+            {
+                if (Program.ROM.RomInfo.version != 8)
+                {//FE8ではないとダメ
+                    return false;
+                }
+                PatchUtil.skill_system_enum skillsystems = PatchUtil.SearchSkillSystem();
+                if (skillsystems == PatchUtil.skill_system_enum.FE8N
+                    || skillsystems == PatchUtil.skill_system_enum.FE8N_ver2
+                    || skillsystems == PatchUtil.skill_system_enum.FE8N_ver3
+                    || skillsystems == PatchUtil.skill_system_enum.yugudora
+                    || skillsystems == PatchUtil.skill_system_enum.midori
+                    )
+                {//FE8JのSkillの場合はよくわからないので何もしない
+                    return true;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchChangeWeaponRangeTextPatch();
+                };
+                reason = R._("バニラの範囲外のレンジをRボタンのポップアップで表示するにもパッチが必要です。\r\nこのパッチをインストールした後で射程を設定してください。\r\n有効にしますか？");
+
+                patchName1 = "GetItemRangeString installer";  ///No Translate
+                patchName2 = "Change weapon's range text(Installer)";  ///No Translate
+                patchShowName = "Change weapon's range text";///No Translate
             }
 
             Debug.Assert(checkFunc != null);
