@@ -54,7 +54,6 @@ namespace FEBuilderGBA
             g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
             g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
             g_Cache_BG256ColorPatch = BG256ColorPatch.NoCache;
-
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
         }
@@ -2505,6 +2504,35 @@ namespace FEBuilderGBA
                 }
             }
             return BG256ColorPatch.NO;
+        }
+        //RangeDisplayFix
+        public static bool SearchRangeDisplayFixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="RangeDisplayFix",	ver = "FE8J", addr = 0x016E7C,data = new byte[]{0x30, 0xB5, 0x04, 0x1C, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8}},
+                new PatchTableSt{ name="RangeDisplayFixFE8N",	ver = "FE8J", addr = 0x16e8e,data = new byte[]{0x03, 0x1C, 0x0F, 0x21, 0x08, 0x40, 0x01, 0x30, 0x01, 0x21, 0x81}},
+                new PatchTableSt{ name="RangeDisplayFix",	ver = "FE8U", addr = 0x0170d4,data = new byte[]{0x30, 0xB5, 0x04, 0x1C, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8}},
+                new PatchTableSt{ name="SkillSystems",	ver = "FE8U", addr = 0x0800,data = new byte[]{0x0, 0xC0, 0x9F, 0xE5, 0x1C, 0xFF, 0x2F, 0xE1}},
+                new PatchTableSt{ name="freerange EA",	ver = "FE8U", addr = 0x01ACBC,data = new byte[]{0xF0, 0xB5, 0x04, 0x1C, 0x01, 0x21, 0x49, 0x42, 0x22, 0x4B, 0x9E, 0x46, 0x00, 0xF8}},
+                new PatchTableSt{ name="staff range fix",	ver = "FE8U", addr = 0x01ACBC,data = new byte[]{0x00, 0xB5, 0x01, 0x21, 0x03, 0x4A, 0x04, 0x4B, 0x00, 0xF0, 0x02, 0xF8}},
+                new PatchTableSt{ name="RangeDisplayFix icecube",	ver = "FE8U", addr = 0x016CC6,data = new byte[]{0x2, 0x49, 0x38, 0xC9, 0x38, 0xC2, 0x18, 0x32, 0x1, 0xE0, 0xE8, 0x79, 0xD, 0x8}},
+                new PatchTableSt{ name="RangeDisplayFix",	ver = "FE7J", addr = 0x017208,data = new byte[]{0x30, 0xB5, 0x04, 0x1C, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8}},
+                new PatchTableSt{ name="RangeDisplayFix",	ver = "FE7U", addr = 0x016DB4,data = new byte[]{0x30, 0xB5, 0x04, 0x1C, 0x08, 0x4B, 0x9E, 0x46, 0x00, 0xF8}},
+                new PatchTableSt{ name="RangeDisplayFix icecube",	ver = "FE7U", addr = 0x01A4D4,data = new byte[]{0x00, 0xB5, 0x01, 0x21, 0x03, 0x4A, 0x04, 0x4B, 0x00, 0xF0, 0x02, 0xF8}},
+            };
+
+            return SearchPatchBool(table);
+        }
+        //Change weapon's range text
+        public static bool SearchChangeWeaponRangeTextPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="ChangeWeaponRangeText",	ver = "FE8J", addr = 0x16A68,data = new byte[]{0x00, 0xB5, 0x0A, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x0B, 0x4B, 0x04, 0x3B, 0x04, 0x33, 0x19, 0x68}},
+                new PatchTableSt{ name="ChangeWeaponRangeText",	ver = "FE8U", addr = 0x16CC0,data = new byte[]{0x00, 0xB5, 0x0A, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x0B, 0x4B, 0x04, 0x3B, 0x04, 0x33, 0x19, 0x68}},
+                new PatchTableSt{ name="SkillSystems",	ver = "FE8U", addr = 0x0800,data = new byte[]{0x0, 0xC0, 0x9F, 0xE5, 0x1C, 0xFF, 0x2F, 0xE1}},
+            };
+
+            return SearchPatchBool(table);
         }
     }
 }

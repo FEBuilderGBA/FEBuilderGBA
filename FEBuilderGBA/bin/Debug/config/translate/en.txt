@@ -3424,6 +3424,12 @@ To extend the unit move icon, you need to apply a patch that extends the table.\
 :章をテキストで表示するには、ChapterNameToTextパッチが必要です。\r\n有効にしますか？
 The ChapterNameToText patch is required to display chapters in text.\r\nDo you want to enable it? 
 
+:武器の攻撃範囲をバニラの範囲外にするならパッチが必要です。\r\n有効にしますか？
+A patch is required if the attack range of the weapon is out of the vanilla range.\r\nEnable? .
+
+:バニラの範囲外のレンジをRボタンのポップアップで表示するにもパッチが必要です。\r\nこのパッチをインストールした後で射程を設定してください。\r\n有効にしますか？
+A patch is also required to show vanilla out-of-range ranges in the R button popup.\r\nSet the range after installing this patch.\r\nEnable? .
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 
