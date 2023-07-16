@@ -478,13 +478,36 @@ namespace FEBuilderGBA
            {
                return;
            }
+           uint oldValue = Program.ROM.u32(pointer);
+
            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "FixBattleAnimeSetting");
            //クラスの戦闘アニメポインタを更新する.
            Program.ROM.write_p32(pointer, addr, undodata);
            Program.Undo.Push(undodata);
 
            this.InputFormRef.ReInit(addr, (uint)count);
+
+           if (oldValue == 0)
+           {//元の値が0の場合は自動更新のターゲットにならないので強制的に補正します
+               if (Program.ROM.RomInfo.version == 6)
+               {
+                   ClassFE6Form f = (ClassFE6Form)InputFormRef.GetForm<ClassForm>();
+                   if (f != null)
+                   {
+                       f.ForceUpdateBattleAnimationUIIf0(addr);
+                   }
+               }
+               else
+               {
+                   ClassForm f = (ClassForm)InputFormRef.GetForm<ClassForm>();
+                   if (f != null)
+                   {
+                       f.ForceUpdateBattleAnimationUIIf0(addr);
+                   }
+               }
+           }
        }
+
        void FixBattleAnimeSettingDataOnAddressListExpandsEvent(object sender, EventArgs arg)
        {
            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;

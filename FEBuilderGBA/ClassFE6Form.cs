@@ -447,5 +447,13 @@ namespace FEBuilderGBA
             PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
             f.JumpTo("HARDCODING_CLASS=" + U.ToHexString2(this.AddressList.SelectedIndex), 0);
         }
+        public void ForceUpdateBattleAnimationUIIf0(uint newAddr)
+        {
+            if (P48.Value != 0)
+            {
+                return;
+            }
+            P48.Value = U.toPointer(newAddr);
+        }
     }
 }

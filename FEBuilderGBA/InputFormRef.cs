@@ -8808,8 +8808,7 @@ namespace FEBuilderGBA
         };
         static Dictionary<int, FormSt> Forms = new Dictionary<int, FormSt>();
         public static Form JumpFormLow<Type>()
-        {
-            //すでに作っているなら新規では作らない
+        {            //すでに作っているなら新規では作らない
             FormSt formst;
             int hashCode = typeof(Type).GetHashCode();
             if (!Forms.TryGetValue(hashCode, out formst) || formst.Form.IsDisposed)
