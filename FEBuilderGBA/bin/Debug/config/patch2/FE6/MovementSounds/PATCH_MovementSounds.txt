@@ -1,6 +1,6 @@
-NAME=移動音
-NAME.en=MovementSounds
-NAME.zh=MovementSounds
+NAME=移動音(Editor)
+NAME.en=MovementSounds(Editor)
+NAME.zh=MovementSounds(Editor)
 TYPE=STRUCT
 TAG=#ENGINE #MUSIC #SONG #SOUND #BGM
 

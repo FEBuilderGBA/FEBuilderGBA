@@ -1,0 +1,16 @@
+
+NAME=ロイのCC ItemID
+INFO=ロイがCCするASMイベントで、昇格に利用するアイテムIDを指定します。\r\nこれは画面の表示に利用するだけなので、何を指定しても問題ありません。
+
+NAME.en=Roy's Promotion ItemID
+INFO.en=Specify the item ID to be used for promotion in Roy's Promotion ASM event.\r\nThis is only used to display the screen, so it does not matter what you specify.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS_TYPE=ITEM
+ADDRESS=0x6D0F0
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1126887112860520578
+NAME.zh=Roy 的 CC 项目 ID。
+INFO.zh=指定用于 Roy CC 的 ASM 事件中促销的项目 ID。\r\n这仅用于屏幕显示，因此您指定什么并不重要。

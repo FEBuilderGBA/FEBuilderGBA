@@ -1,0 +1,16 @@
+
+NAME=ロイのCC UnitID
+INFO=ロイがCCするASMイベントで、昇格するRoyのユニットIDを指定します。
+
+NAME.en=Roy's Promotion UnitID
+INFO.en=ASM event that Roy promotion's, specifying the unit ID of Roy to be promoted.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS_TYPE=UNIT
+ADDRESS=0x6D0EA
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1126887112860520578
+NAME.zh=Roy 的 CC 单位 ID。
+INFO.zh=指定 Roy 在 Roy CC 的 ASM 事件中提升的单位 ID。

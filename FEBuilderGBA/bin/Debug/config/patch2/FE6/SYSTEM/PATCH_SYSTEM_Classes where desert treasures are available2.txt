@@ -1,0 +1,16 @@
+
+NAME=砂漠の財宝を入手できるクラス2
+INFO=砂漠の財宝を入手できる盗賊のクラスを設定します。
+
+NAME.en=Class 2 for obtaining desert treasures
+INFO.en=Set the class of thief that can obtain desert treasures.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS_TYPE=CLASS
+ADDRESS=0x6d03e
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1131881705528107038
+NAME.zh=2级，你可以获得沙漠宝藏。
+INFO.zh=设置可以获得沙漠宝藏的盗贼的等级。
