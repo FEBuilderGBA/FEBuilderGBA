@@ -1,0 +1,26 @@
+NAME=目的ウィンドウのテキストを少し長くする
+NAME.en=Make goal window text slightly longer
+NAME.zh=Make goal window text slightly longer
+
+INFO=マップの右上(または右下)に表示される章の目的ウィンドウの幅を少しだけ大きくします
+INFO.en=This patch slightly increases the width of the chapter objective window displayed in the upper right (or lower right) of the map.
+INFO.zh=此补丁稍微增加了地图右上角（或右下角）显示的章节目标窗口的宽度。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/133
+COMBO=Default: 8 width|OFFF|Fix: 10 width|FIXA
+
+DETERMINATION_ADDRESS=0x8F5A2
+
+OFFF:0x8F5A2=0x08	// Width of line 2 (Vanilla is 8)
+OFFF:0x8F5AE=0x08	// Width of line 2 (Vanilla is 8)
+OFFF:0x8F5F2=0x40	// length in pixels for "Last turn" (Vanilla is 0x40)
+OFFF:0x8F6D6=0x40	// length in pixels for "Last turn" (Vanilla is 0x40)
+
+FIXA:0x8F5A2=0x0A	// Width of line 2 (Vanilla is 8)
+FIXA:0x8F5AE=0x0A	// Width of line 2 (Vanilla is 8)
+FIXA:0x8F5F2=0x48	// length in pixels for "Last turn" (Vanilla is 0x40)
+FIXA:0x8F6D6=0x48	// length in pixels for "Last turn" (Vanilla is 0x40)

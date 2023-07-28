@@ -1,0 +1,24 @@
+NAME=進撃準備画面の背景を左ではなく右にスクロールさせる
+NAME.en=Make prep screen BG scroll right instead of left
+NAME.zh=Make prep screen BG scroll right instead of left
+
+INFO=準備画面の他に、サウンドルームのBGスクロールにも影響を与えます。
+INFO.en=This patch affects not only the preparation screen, but also the BG scroll in the sound room.
+INFO.zh=该补丁不仅影响准备画面，还影响音室的背景滚动。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/132
+COMBO=Default: Left scroll|OFF|Fix: Right scroll|FIX
+
+DETERMINATION_ADDRESS=0x86B84
+
+OFF:0x86B84=0x01 0x30
+OFF:0x86B8C=0x00 0x29 0x00 0xDA 0x03 0x31
+OFF:0x86BA2=0x00 0x28 0x00 0xDA 0x03 0x30
+
+FIX:0x86B84=0x01 0x38
+FIX:0x86B8C=0xc0 0x46 0xc0 0x46 0xc0 0x46
+FIX:0x86BA2=0xc0 0x46 0xc0 0x46 0xc0 0x46
