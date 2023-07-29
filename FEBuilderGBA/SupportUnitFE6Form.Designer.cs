@@ -359,8 +359,8 @@
             this.EXPLAIN.ReadOnly = true;
             this.EXPLAIN.Size = new System.Drawing.Size(859, 155);
             this.EXPLAIN.TabIndex = 242;
-            this.EXPLAIN.Text = "C    51からA0まで\r\nB    A1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加してい" +
-    "きます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。";
+            this.EXPLAIN.Text = "C    81から160まで\r\nB    161から240まで\r\nA    241以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増" +
+    "加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。";
             // 
             // L_9_UNITICON
             // 
@@ -484,7 +484,6 @@
             // 
             // B28
             // 
-            this.B28.Hexadecimal = true;
             this.B28.Location = new System.Drawing.Point(569, 332);
             this.B28.Margin = new System.Windows.Forms.Padding(2);
             this.B28.Maximum = new decimal(new int[] {
@@ -498,7 +497,6 @@
             // 
             // B27
             // 
-            this.B27.Hexadecimal = true;
             this.B27.Location = new System.Drawing.Point(569, 296);
             this.B27.Margin = new System.Windows.Forms.Padding(2);
             this.B27.Maximum = new decimal(new int[] {
@@ -512,7 +510,6 @@
             // 
             // B26
             // 
-            this.B26.Hexadecimal = true;
             this.B26.Location = new System.Drawing.Point(569, 260);
             this.B26.Margin = new System.Windows.Forms.Padding(2);
             this.B26.Maximum = new decimal(new int[] {
@@ -526,7 +523,6 @@
             // 
             // B25
             // 
-            this.B25.Hexadecimal = true;
             this.B25.Location = new System.Drawing.Point(569, 224);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
@@ -540,7 +536,6 @@
             // 
             // B24
             // 
-            this.B24.Hexadecimal = true;
             this.B24.Location = new System.Drawing.Point(569, 188);
             this.B24.Margin = new System.Windows.Forms.Padding(2);
             this.B24.Maximum = new decimal(new int[] {
@@ -554,7 +549,6 @@
             // 
             // B23
             // 
-            this.B23.Hexadecimal = true;
             this.B23.Location = new System.Drawing.Point(569, 152);
             this.B23.Margin = new System.Windows.Forms.Padding(2);
             this.B23.Maximum = new decimal(new int[] {
@@ -568,7 +562,6 @@
             // 
             // B22
             // 
-            this.B22.Hexadecimal = true;
             this.B22.Location = new System.Drawing.Point(569, 116);
             this.B22.Margin = new System.Windows.Forms.Padding(2);
             this.B22.Maximum = new decimal(new int[] {
@@ -582,7 +575,6 @@
             // 
             // B21
             // 
-            this.B21.Hexadecimal = true;
             this.B21.Location = new System.Drawing.Point(569, 80);
             this.B21.Margin = new System.Windows.Forms.Padding(2);
             this.B21.Maximum = new decimal(new int[] {
@@ -704,7 +696,6 @@
             // 
             // B29
             // 
-            this.B29.Hexadecimal = true;
             this.B29.Location = new System.Drawing.Point(569, 368);
             this.B29.Margin = new System.Windows.Forms.Padding(2);
             this.B29.Maximum = new decimal(new int[] {
@@ -729,7 +720,6 @@
             // 
             // B20
             // 
-            this.B20.Hexadecimal = true;
             this.B20.Location = new System.Drawing.Point(569, 44);
             this.B20.Margin = new System.Windows.Forms.Padding(2);
             this.B20.Maximum = new decimal(new int[] {
@@ -743,7 +733,6 @@
             // 
             // B13
             // 
-            this.B13.Hexadecimal = true;
             this.B13.Location = new System.Drawing.Point(464, 151);
             this.B13.Margin = new System.Windows.Forms.Padding(2);
             this.B13.Maximum = new decimal(new int[] {
@@ -757,7 +746,6 @@
             // 
             // B19
             // 
-            this.B19.Hexadecimal = true;
             this.B19.Location = new System.Drawing.Point(464, 367);
             this.B19.Margin = new System.Windows.Forms.Padding(2);
             this.B19.Maximum = new decimal(new int[] {
@@ -771,7 +759,6 @@
             // 
             // B12
             // 
-            this.B12.Hexadecimal = true;
             this.B12.Location = new System.Drawing.Point(464, 115);
             this.B12.Margin = new System.Windows.Forms.Padding(2);
             this.B12.Maximum = new decimal(new int[] {
@@ -785,7 +772,6 @@
             // 
             // B18
             // 
-            this.B18.Hexadecimal = true;
             this.B18.Location = new System.Drawing.Point(464, 331);
             this.B18.Margin = new System.Windows.Forms.Padding(2);
             this.B18.Maximum = new decimal(new int[] {
@@ -799,7 +785,6 @@
             // 
             // B11
             // 
-            this.B11.Hexadecimal = true;
             this.B11.Location = new System.Drawing.Point(464, 79);
             this.B11.Margin = new System.Windows.Forms.Padding(2);
             this.B11.Maximum = new decimal(new int[] {
@@ -813,7 +798,6 @@
             // 
             // B17
             // 
-            this.B17.Hexadecimal = true;
             this.B17.Location = new System.Drawing.Point(464, 295);
             this.B17.Margin = new System.Windows.Forms.Padding(2);
             this.B17.Maximum = new decimal(new int[] {
@@ -827,7 +811,6 @@
             // 
             // B10
             // 
-            this.B10.Hexadecimal = true;
             this.B10.Location = new System.Drawing.Point(464, 43);
             this.B10.Margin = new System.Windows.Forms.Padding(2);
             this.B10.Maximum = new decimal(new int[] {
@@ -841,7 +824,6 @@
             // 
             // B16
             // 
-            this.B16.Hexadecimal = true;
             this.B16.Location = new System.Drawing.Point(464, 259);
             this.B16.Margin = new System.Windows.Forms.Padding(2);
             this.B16.Maximum = new decimal(new int[] {
@@ -869,7 +851,6 @@
             // 
             // B15
             // 
-            this.B15.Hexadecimal = true;
             this.B15.Location = new System.Drawing.Point(464, 223);
             this.B15.Margin = new System.Windows.Forms.Padding(2);
             this.B15.Maximum = new decimal(new int[] {
@@ -897,7 +878,6 @@
             // 
             // B14
             // 
-            this.B14.Hexadecimal = true;
             this.B14.Location = new System.Drawing.Point(464, 187);
             this.B14.Margin = new System.Windows.Forms.Padding(2);
             this.B14.Maximum = new decimal(new int[] {
