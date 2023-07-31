@@ -815,10 +815,10 @@
             // ConfigPictureBox
             // 
             this.ConfigPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ConfigPictureBox.Location = new System.Drawing.Point(838, 44);
+            this.ConfigPictureBox.Location = new System.Drawing.Point(836, 61);
             this.ConfigPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConfigPictureBox.Name = "ConfigPictureBox";
-            this.ConfigPictureBox.Size = new System.Drawing.Size(152, 152);
+            this.ConfigPictureBox.Size = new System.Drawing.Size(128, 128);
             this.ConfigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ConfigPictureBox.TabIndex = 39;
             this.ConfigPictureBox.TabStop = false;

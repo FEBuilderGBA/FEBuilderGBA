@@ -13858,3 +13858,11 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
+:大陸の魔物退治
+Creature Campaign
+
+:ステータス画面1
+Status screen 1
+
+:ステータス画面2
+Status screen 2

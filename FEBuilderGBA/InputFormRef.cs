@@ -8062,21 +8062,33 @@ namespace FEBuilderGBA
             string r = "";
             if ( (num & 0x1) == 0x1)
             {
-                r += " ,0x01 Stat screen page 1 (Inventory)";
+                r += " ," + R._("ステータス画面1");
             }
-            else if ((num & 0x2) == 0x2)
+            if ((num & 0x2) == 0x2)
             {
-                r += " ,0x02 Stat screen page 2 (Difficulty)";
+                r += " ," + R._("ステータス画面2");
             }
-            else if ((num & 0x10) == 0x10)
+            if ((num & 0x4) == 0x4)
             {
-                r += " ,0x10 Set when on prep screen";
+                r += " ,Unk04";
             }
-            else if ((num & 0x40) == 0x40)
+            if ((num & 0x4) == 0x8)
+            {
+                r += " ,Unk08";
+            }
+            if ((num & 0x10) == 0x10)
+            {
+                r += " ," + R._("進撃準備画面");
+            }
+            if ((num & 0x20) == 0x20)
+            {
+                r += " ," + R._("大陸の魔物退治");
+            }
+            if ((num & 0x40) == 0x40)
             {
                 r += " ,0x40 Set for hard mode";
             }
-            else if ((num & 0x80) == 0x80)
+            if ((num & 0x80) == 0x80)
             {
                 r += " ,0x80 Don't gain weapon exp";
             }
