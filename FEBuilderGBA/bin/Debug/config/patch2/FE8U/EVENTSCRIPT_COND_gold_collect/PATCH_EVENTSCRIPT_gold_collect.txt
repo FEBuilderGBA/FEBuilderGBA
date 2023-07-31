@@ -22,5 +22,5 @@ AUTHOR.en=Kaito Port:7743
 
 
 EVENTSCRIPT=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:ゴールド]お金を没収 	{GOLD}
-EVENTSCRIPT.en=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold] confiscated money extended instructions.	{GOLD}
-EVENTSCRIPT.zh=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold]没收钱延长指示。	{GOLD}
+EVENTSCRIPT.en=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold] confiscated money.	{GOLD}
+EVENTSCRIPT.zh=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold]没收钱	{GOLD}

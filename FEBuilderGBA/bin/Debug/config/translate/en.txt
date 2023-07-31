@@ -4954,6 +4954,15 @@ Tower
 :遺跡
 Ruins
 
+:ステータス画面1
+Status screen 1
+
+:ステータス画面2
+Status screen 2
+
+:大陸の魔物退治
+Creature Campaign
+
 :{0}ターン
 {0} turn
 
@@ -13858,11 +13867,3 @@ Map Skirmish Type
 :いつでも入れるかどうか
 Placement Flag
 
-:大陸の魔物退治
-Creature Campaign
-
-:ステータス画面1
-Status screen 1
-
-:ステータス画面2
-Status screen 2

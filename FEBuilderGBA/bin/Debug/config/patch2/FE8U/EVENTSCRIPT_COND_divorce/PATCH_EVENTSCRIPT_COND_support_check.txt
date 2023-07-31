@@ -24,5 +24,5 @@ AUTHOR.zh=Kaito补丁7743
 
 
 EVENTSCRIPT=400D0000{$L1:wakaresaseya_find_support_check.bin}	操作中のキャラの支援を確認 	{COND}
-EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_find_support_check.bin}	Confirm support of characters during operation Extended instructions.	{COND}
-EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_find_support_check.bin}	在操作期间确认字符的支持扩展说明。	{COND}
+EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_find_support_check.bin}	Confirm support of characters during operation.	{COND}
+EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_find_support_check.bin}	在操作期间确认字符的支持	{COND}

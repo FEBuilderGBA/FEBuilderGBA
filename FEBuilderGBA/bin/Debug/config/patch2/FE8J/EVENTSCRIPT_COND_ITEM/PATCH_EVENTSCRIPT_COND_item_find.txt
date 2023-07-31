@@ -30,5 +30,5 @@ AUTHOR.zh=Kaito补丁7743
 
 
 
-EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM] item possession check extended instruction.
-EVENTSCRIPT.zh=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]项目拥有检查扩展指令。
+EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM] item possession check
+EVENTSCRIPT.zh=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]项目拥有检查

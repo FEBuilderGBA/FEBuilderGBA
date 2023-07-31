@@ -1,0 +1,30 @@
+NAME=アイテムチェック(輸送隊のみ)(イベント命令)
+NAME.en=Add Event Condition: Item Check(Supply only)
+NAME.zh=事件命令_物品拥有輸送隊(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 item_find_supply.dmp=0xF0 0xB5 0x0D 0x48
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_find_supply.dmp
+INFO=特定のアイテムが輸送隊にあるかどうかという条件式を作成します.
+
+HINT=輸送体
+INFO.en=Create a conditional expression that says whether or not a particular item is in the Supply(convoy/transporter)
+INFO.zh=Create a conditional expression that says whether or not a particular item is in the Supply(convoy/transporter)
+
+HINT.en=convoy,supply,transporter,merlinus,wagon
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1135660603436970044
+
+EVENTSCRIPT:1=400D0000{$L1:item_find_supply.dmp}	アイテム所持確認 輸送隊のみ(LOW)	Slot1=ItemID	{COND}
+EVENTSCRIPT:2=40050100XX000000400D0000{$L1:item_find_supply.dmp}	[XX:ITEM:アイテム] アイテム所持確認 輸送隊のみ	Slot1=ItemID	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:item_find_supply.dmp}	Item possession confirmation Supply only(LOW)	Slot1=ItemID	{COND}
+EVENTSCRIPT:2.en=40050100XX000000400D0000{$L1:item_find_supply.dmp}	[XX:ITEM:Item] Item possession confirmation Supply only	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:item_find_supply.dmp}	物品拥有确认 Supply only(LOW)	Slot1=ItemID	{COND}
+EVENTSCRIPT:2.zh=40050100XX000000400D0000{$L1:item_find_supply.dmp}	[XX:ITEM:Item] 物品拥有确认 Supply only	{COND}

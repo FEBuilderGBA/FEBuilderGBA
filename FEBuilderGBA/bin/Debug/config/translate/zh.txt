@@ -4954,6 +4954,15 @@ Tower
 :遺跡
 Ruins
 
+:ステータス画面1
+Status screen 1
+
+:ステータス画面2
+Status screen 2
+
+:大陸の魔物退治
+Creature Campaign
+
 :{0}ターン
 {0}转
 
@@ -13858,11 +13867,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :いつでも入れるかどうか
 是否随时放入
 
-:大陸の魔物退治
-Creature Campaign
-
-:ステータス画面1
-Status screen 1
-
-:ステータス画面2
-Status screen 2

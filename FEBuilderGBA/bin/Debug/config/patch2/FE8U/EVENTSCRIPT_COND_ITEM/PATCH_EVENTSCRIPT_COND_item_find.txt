@@ -29,5 +29,5 @@ AUTHOR.zh=Kaito补丁7743
 
 
 EVENTSCRIPT=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:アイテム]アイテム所持確認 	{COND}
-EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]item possession confirmation extended instruction	{COND}
-EVENTSCRIPT.zh=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]物品拥有确认扩展指令	{COND}
+EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]item possession confirmation	{COND}
+EVENTSCRIPT.zh=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]物品拥有确认	{COND}
