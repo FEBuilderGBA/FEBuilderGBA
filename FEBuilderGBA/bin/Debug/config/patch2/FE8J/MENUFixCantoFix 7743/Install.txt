@@ -1,0 +1,11 @@
+PUSH
+ORG 0x1D114	//{J}
+//ORG 0x1D4B0	//{U}
+jumpToHack(FixCantoFix)
+POP
+
+ALIGN 4
+FixCantoFix:
+#incbin "FixCantoFix.dmp"
+
+ALIGN 4

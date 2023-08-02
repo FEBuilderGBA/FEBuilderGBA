@@ -1,0 +1,13 @@
+NAME=取引メニューを開いた後に、騎兵の再移動が発生しないバグ修正(ver 7743)
+NAME.en=Fixed glitch that prevented cavalry's CANTO move again after open menu(ver 7743)
+NAME.zh=Fixed glitch that prevented cavalry's CANTO move again after open menu(ver 7743)
+
+INFO=騎兵ユニットはアイテムを使った後や踊る、盗むのコマンド後に再移動ができます。\r\nしかしながら、コマンドを選択する前に、交換メニューや輸送隊メニューを選択すると、再移動が発生しないことがあります。\r\n交換メニューや輸送隊メニューを開くと、たとえ何も交換しなくてもgActionData.MoveCount=0xFFに上書きされるためです。\r\nこのパッチはその問題を修正し、取引メニューを選択した後にも必ず騎兵の再移動を発生させます。
+INFO.en=Cavalry units can re-move after using an item or after a dance or steal command.\r\nHowever, if you select the exchange menu or convoy menu before selecting the command, the re-move may not occur.\r\nThis is because opening the exchange or convoy menu overwrites gActionData.MoveCount=0xFF, even if you don't exchange anything.\r\nThis patch fixes that issue and always causes cavalry to re-move after selecting the trade menu.
+INFO.zh=Cavalry units can re-move after using an item or after a dance or steal command.\r\nHowever, if you select the exchange menu or convoy menu before selecting the command, the re-move may not occur.\r\nThis is because opening the exchange or convoy menu overwrites gActionData.MoveCount=0xFF, even if you don't exchange anything.\r\nThis patch fixes that issue and always causes cavalry to re-move after selecting the trade menu.
+
+TYPE=EA
+EA=install.txt
+
+PATCHED_IF:0x1D114=0x00 0x4B 0x18 0x47
+AUTHOR=7743

@@ -248,7 +248,7 @@
             // 
             this.ReadStartAddress.Hexadecimal = true;
             this.ReadStartAddress.Increment = new decimal(new int[] {
-            4,
+            0,
             0,
             0,
             0});

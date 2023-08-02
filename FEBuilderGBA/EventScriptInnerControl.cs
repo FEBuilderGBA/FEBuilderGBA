@@ -3812,6 +3812,5 @@ namespace FEBuilderGBA
             }
             EventScript.NotifyChangePointer(this.EventAsm , oldaddr , newaddr);
         }
-
     }
 }
