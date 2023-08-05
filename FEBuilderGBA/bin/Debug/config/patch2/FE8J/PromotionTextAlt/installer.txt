@@ -1,0 +1,15 @@
+PUSH
+ORG 0xd1b44 //{J}
+//ORG 0xCCE3C	//{U}
+jumpToHack(PromotionTextAlt)
+POP
+
+PromotionTextAlt:
+#incbin "PromotionTextAlt.dmp"
+POIN PromotionTextAlt_Table
+
+PromotionTextAlt_Table:
+//		ClassID	UnitID			TextID
+BYTE	0x28	0x00	;SHORT	0x2B4
+BYTE	0x2A	0x00	;SHORT	0x2B6
+WORD	0x0	//term

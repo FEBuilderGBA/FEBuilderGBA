@@ -1,0 +1,2 @@
+Term=$64
+GotoChapter=$8C

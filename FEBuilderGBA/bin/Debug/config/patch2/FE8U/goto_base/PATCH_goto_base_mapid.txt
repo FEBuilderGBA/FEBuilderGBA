@@ -1,0 +1,17 @@
+NAME=進撃準備画面から、拠点に戻れるようにする(拠点IDの設定)
+NAME.en=return to base point from preparation screen(Base point Map ID setting)
+TYPE=ADDR
+
+IF:0x9555C=0x00 0x4B 0x18 0x47
+
+INFO=進撃準備画面から戻れれる、お店がある拠点マップのMAPIDを設定します。
+INFO.en=Set the MAPID of the base map where the store can be returned from the preparation screen.
+
+
+ADDRESS=$FGREP4ENDA+0 goto_base.dmp
+ADDRESS_TYPE=MAP
+
+AUTHOR=7743
+
+NAME.zh=return to base point from preparation screen(Base point Map ID setting)
+INFO.zh=Set the MAPID of the base map where the store can be returned from the preparation screen.

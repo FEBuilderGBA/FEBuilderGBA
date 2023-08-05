@@ -1,0 +1,16 @@
+NAME=CC時に画面下に表示される説明文を変更する(Install)
+NAME.en=Change the description at bottom of screen during Promotion(Install)
+NAME.zh=Change the description at bottom of screen during Promotion(Install)
+
+PATCHED_IF:0xd1b44=0x00 0x4B 0x18 0x47
+
+INFO=分岐CCする時に、画面下に表示される2行の説明文を変更します。\r\nバニラではこのテキストはクラスの説明文が利用されます。クラスの説明文は最大3行かけるのに、CC時の説明文は2行しか書けないので、異なる説明文を表示を表示したい場合に利用してください。\r\nリストにマッチしなかった場合は、クラスの説明文がそのまま利用されます。
+INFO.en=Change the two lines of descriptive text that appear at the bottom of the screen when branching Promotion.\r\nIn vanilla, the class description is used for this text. Since the class description can be up to 3 lines, but only 2 lines can be written for Promotion, use this function when you want to display a different description.\r\nIf no match is found in the list, the class description is used as is.
+INFO.zh=Change the two lines of descriptive text that appear at the bottom of the screen when branching Promotion.\r\nIn vanilla, the class description is used for this text. Since the class description can be up to 3 lines, but only 2 lines can be written for Promotion, use this function when you want to display a different description.\r\nIf no match is found in the list, the class description is used as is.
+
+TYPE=EA
+TAG=#ENGINE
+
+EDIT_PATCH=PATCH_PromotionTextAlt.txt
+EA=installer.txt
+AUTHOR=7743
