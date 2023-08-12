@@ -927,18 +927,6 @@
     <Compile Include="PointerToolForm.Designer.cs">
       <DependentUpon>PointerToolForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolMagicEffectMakerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolMagicEffectMakerForm.Designer.cs">
-      <DependentUpon>ToolMagicEffectMakerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ToolPortraitMakerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolPortraitMakerForm.Designer.cs">
-      <DependentUpon>ToolPortraitMakerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="R.cs" />
@@ -2712,12 +2700,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupportUnitForm.resx">
       <DependentUpon>SupportUnitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolMagicEffectMakerForm.resx">
-      <DependentUpon>ToolMagicEffectMakerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolPortraitMakerForm.resx">
-      <DependentUpon>ToolPortraitMakerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,0 +1,14 @@
+NAME=Fix dodge to front glitch
+NAME.en=Fix dodge to front glitch
+NAME.zh=Fix dodge to front glitch
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:$FREEAREA=SpellFix.dmp
+JUMP:0x00637A:$r5=SpellFix.dmp
+
+AUTHOR=Snakey1
+PATCHED_IF:0x00637A=0x00 0x00 0x00 0x4D 0xAF 0x46
+INFO=CSACreatorの回避モーション(MISS)でフリーズするバグを修正します。
+INFO.en=Fix a freeze bug in CSAcreator's dodge motion(MISS)
+INFO.zh=修复CSAcreator避免动作（MISS）中的冻结错误。

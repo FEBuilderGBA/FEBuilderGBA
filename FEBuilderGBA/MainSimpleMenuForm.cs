@@ -1292,10 +1292,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
         }
 
-        private void PortraitMakerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ToolPortraitMakerForm>();
-        }
 
 
         private void UPSSimpleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1385,11 +1381,6 @@ namespace FEBuilderGBA
                 }
             }
             return ret;
-        }
-
-        private void ToolMagicEffectMakerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ToolMagicEffectMakerForm>();
         }
 
         private void ToolProblemReportToolStripMenuItem_Click(object sender, EventArgs e)

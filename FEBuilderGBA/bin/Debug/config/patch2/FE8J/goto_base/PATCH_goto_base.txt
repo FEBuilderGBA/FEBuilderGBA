@@ -20,7 +20,7 @@ USEFLAG=0xA4
 //FLAG:0xAB=ReserveGotoBasePointValue
 //FLAG:0xAC=ReserveGotoBasePointValue
 
-AUTHOR=7743
+AUTHOR=7743 https://discord.com/channels/144670830150811649/725478895226191892/1137389841131245629
 
 EVENTSCRIPT:1=400D0000{$L1:ASMC_reverse_base_to_chapter.dmp}	拠点マップから元の章のマップに復帰させる
 EVENTSCRIPT:1.en=400D0000{$L1:ASMC_reverse_base_to_chapter.dmp}	Return to original chapter map from the base point map
