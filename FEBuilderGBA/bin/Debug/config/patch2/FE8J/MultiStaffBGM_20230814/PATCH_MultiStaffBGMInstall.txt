@@ -1,6 +1,6 @@
-NAME=杖BGMを複数設定する 20220201(Install)
-NAME.en=Set multiple Staff BGMs 20220201(Installer)
-NAME.zh=Set multiple Staff BGMs 20220201(Installer)
+NAME=杖BGMを複数設定する 20240814(Install)
+NAME.en=Set multiple Staff BGMs 20240814(Installer)
+NAME.zh=Set multiple Staff BGMs 20240814(Installer)
 TYPE=EA
 TAG=#ENGINE #SONG #MUSIC #BGM
 

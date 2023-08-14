@@ -1,6 +1,6 @@
-NAME=杖BGMを複数設定する 20220201(Editor)
-NAME.en=Set multiple Staff BGMs 20220201(Editor)
-NAME.zh=Set multiple Staff BGMs 20220201(Editor)
+NAME=杖BGMを複数設定する 20240814(Editor)
+NAME.en=Set multiple Staff BGMs 20240814(Editor)
+NAME.zh=Set multiple Staff BGMs 20240814(Editor)
 TYPE=STRUCT
 TAG=#ENGINE #SONG #MUSIC #BGM
 
@@ -16,10 +16,10 @@ INFO.zh=This patch allows you to set the staff Battle BGM to something other tha
 POINTER=$FGREP4END MultiStaffBGM.dmp
 
 //データサイズ(10進数)
-DATASIZE=8
+DATASIZE=12
 
 //データ個数 00 が出てくるまで
-DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 
 LISTNAME=$B2:ITEM
 
@@ -30,3 +30,4 @@ B3:UNIT=Unit(00=ANY)
 B4:CLASS=Class(00=ANY)
 B5:$COMBO combo.Allegiance.txt=Allegiance
 W6:FLAG=Flag(00=ANY)
+B8:DECIMAL=Probability(100=ANY)
