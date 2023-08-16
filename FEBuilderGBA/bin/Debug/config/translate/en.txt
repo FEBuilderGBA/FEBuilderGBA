@@ -7096,12 +7096,6 @@ Talk:
 :DIFFツール
 DIFF Tool
 
-:顔画像生成ツール
-Portrait Generation Tool
-
-:魔法エフェクト作成ツール
-Magic effect creation tool
-
 :詳細メニューを開く
 Advanced Editors
 
@@ -12685,168 +12679,6 @@ Restore sav data from base64 text and start emulator.
 :base64テキストを入力するか、fileから変換した結果が代入されます
 Input the base64 text or substitute the result converted from file.
 
-:スクリプト|*.txt|All files|*
-Scripts.txt|*.txt|All files |*
-
-:RPGツクールのエフェクトを変換します
-Convert RPG Maker XP Magic effect
-
-:パーツの大きさ
-Part Size
-
-:変換先
-Destination
-
-:発動時効果音
-Sound Effect
-
-:リサイズ
-Resize
-
-:開始位置
-Start Position
-
-:クラススキル(FE8U:防衛スキル)
-Class Skill (FE8U: Defense Skill)
-
-:魔法(FEditor) (画面中央)
-Magic (FEditor) (Screen Center)
-
-:魔法(CSA) (画面中央)
-Magic (CSA) (Screen Center)
-
-:魔法(FEditor) (ユニットの位置)
-Magic (FEditor) (Unit Pos)
-
-:魔法(CSA) (ユニットの位置)
-Magic (CSA) (Unit Pos)
-
-:生成開始
-Start Generating
-
-:フレーム間隔
-Frame Interval
-
-:魔法の命中音
-Magical Hit Sound
-
-:魔法エフェクトの変換ツール
-Magical Effects Conversion
-
-:目の位置が、複数のセルに分断されています。一つのセルに収める必要があります。
-The eye position is divided into multiple cells. It needs to fit in one cell.
-
-:口の位置が、複数のセルに分断されています。一つのセルに収める必要があります。
-The position of the mouth is divided into multiple cells. It needs to fit in one cell.
-
-:表情画像の位置を検索中:{0}/300
-Searching for position of expression image: {0}/300
-
-:目と口を検出中... {0}
-Detecting eyes and mouth.{0}.
-
-:バストショット画像
-Bust Shot Image
-
-:表情画像
-Facial Exp Image
-
-:切り抜きX
-Cut Out X
-
-:切り抜きY
-Cut Out Y
-
-:作成
-Create
-
-:表情Y
-Facial Exp Y
-
-:表情X
-Facial Exp X
-
-:眼の位置Y
-Eye Position Y
-
-:眼の位置X
-Eye Position X
-
-:口の位置Y
-Mouth Position Y
-
-:口の位置X
-Mouth Position X
-
-:表情の幅高さ
-Width of Exp Height
-
-:左右反転する
-Flip Horizontally
-
-:切り抜き倍率%
-Scale Factor (%)
-
-:眼の位置H
-Eye Position H
-
-:眼の位置W
-Eye Position W
-
-:口の位置H
-Mouth Position H
-
-:口の位置W
-Mouth Position W
-
-:RPGツクールの顔画像を変換します(テスト)
-Convert RPG Maker XP/FEXNA Portraits (Beta)
-
-:表情テスト
-Facial Exp Test
-
-:1=怒り
-1=Anger
-
-:2=苦笑い
-2=Bitter Smile
-
-:3=半分目を閉じる
-3=Eyes Half-Closed
-
-:4=会釈
-4=Nod
-
-:5=不安
-5=Anxious
-
-:6=驚き
-6=Surprised
-
-:7=目を閉じる
-7=Eyes Closed
-
-:16色減色
-16-Color Reduction
-
-:0=傾けない
-0=Can't Tilt
-
-:1=傾ける1
-1=Tilt 1
-
-:2=傾ける2
-2=Tilt 2
-
-:3=傾ける3
-3=Tilt 3
-
-:4=傾ける4
-4=Tilt 4
-
-:5=傾ける5
-5=Tilt 5
-
 :例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)
 Example: "When my characters battle, the animations freeze.\r\nIt happens even with other characters in the chapter.\r\nIt doesn't matter what weapon is used.\r\nThis can be reproduced in the prologue where Grado soldiers are fought."\r\nIn essence, please explain clearly what the issue is, where/when it happens, who it applies to, and other details.
 
@@ -12891,6 +12723,9 @@ Attach any files (ie. battle animations, image data) to reproduce your problems.
 
 :どんな問題がありますか？\r\nどうやったら、私たちはそれを確認できますか？\r\n問題を具体的に説明してください。
 What kind of problem are you having? .\r\nHow can we check that? .\r\nPlease be specific about your problem.
+
+:作成
+Create
 
 :多くの国では、ROMを公開することは違法です。\r\nそのため、あなたの改造だけを取り出したupsパッチという差分データを作ります。\r\nupsパッチは、無改造ROMと、あなたのROMを比較して、あなたの改造だけを取り出します。
 It is illegal to publish ROMs in most countries.\r\nTherefore, we need to make differential data called a UPS patch which isolates changed data.\r\nThe UPS patch compares your edits to an unmodified ROM and applies them like a recipe.

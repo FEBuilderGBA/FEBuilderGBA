@@ -15478,3 +15478,7 @@
 080B527C	CanSellTheItem	アイテムを売却できるか？	r0=個数 << 8 + アイテムID	{U}
 085A814C	gAITargetTileBreakingWallAndSnag	{U}
 085D2054	gAITargetTileBreakingWallAndSnag	{J}
+080A4DC8	DeleteSaveSlot	@r0=SlotID	{U}
+080A980C	DeleteSaveSlot	@r0=SlotID	{J}
+
+

@@ -1,0 +1,22 @@
+NAME=現在のセーブスロットを消去します(イベント命令)
+NAME.en=Add Event: Erase the current save slot
+NAME.zh=Add Event: Erase the current save slot
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_DeleteCurrentSaveSlot.dmp=0x00 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_DeleteCurrentSaveSlot.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
+
+INFO=現在利用しているセーブスロットを消去します。\r\nこのコマンドは危険なので通常は利用しないでください。
+INFO.en=Clears the save slot currently in use.\r\nThis command is dangerous and should not be used normally.
+INFO.zh=清除当前使用的保存槽。\r\n该命令很危险，通常不应使用。
