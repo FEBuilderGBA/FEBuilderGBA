@@ -2458,6 +2458,7 @@ namespace FEBuilderGBA
             {
                 SkillConfigFE8NSkillForm.MakeAllDataLength(list);
                 SkillConfigFE8NVer2SkillForm.MakeAllDataLength(list, isPointerOnly);
+                SkillConfigFE8NVer3SkillForm.MakeAllDataLength(list, isPointerOnly);
             }
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 3")) return list;
 

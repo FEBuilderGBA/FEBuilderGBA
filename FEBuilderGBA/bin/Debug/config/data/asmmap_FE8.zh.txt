@@ -15478,3 +15478,6 @@ r3=X tile position of menu of the right	{U}
 080B527C	CanSellTheItem	我可以卖东西吗？	r0=数量 << 8 + 商品 ID。	{U}
 085A814C	gAITargetTileBreakingWallAndSnag	{U}
 085D2054	gAITargetTileBreakingWallAndSnag	{J}
+080A4DC8	DeleteSaveSlot	@r0=SlotID	{U}
+080A980C	DeleteSaveSlot	@r0=SlotID	{J}
+

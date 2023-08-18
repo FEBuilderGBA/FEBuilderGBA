@@ -15532,3 +15532,6 @@ r3=X tile position of menu of right	{U}
 080B527C	CanSellTheItem	Can I sell items? .	r0=Quantity << 8 + Item ID.	{U}
 085A814C	gAITargetTileBreakingWallAndSnag	{U}
 085D2054	gAITargetTileBreakingWallAndSnag	{J}
+080A4DC8	DeleteSaveSlot	@r0=SlotID	{U}
+080A980C	DeleteSaveSlot	@r0=SlotID	{J}
+
