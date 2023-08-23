@@ -195,6 +195,7 @@
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(194, 45);
             this.label15.Name = "label15";

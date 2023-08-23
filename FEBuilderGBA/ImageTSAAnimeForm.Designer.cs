@@ -48,6 +48,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TSAANimeList = new FEBuilderGBA.ListBoxEx();
-            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
@@ -263,6 +263,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(391, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -319,6 +320,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(824, 51);
             this.panel3.TabIndex = 78;
+            // 
+            // GraphicsToolButton
+            // 
+            this.GraphicsToolButton.Location = new System.Drawing.Point(605, 9);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // DecreaseColorTSAToolButton
             // 
@@ -455,17 +467,6 @@
             this.TSAANimeList.Size = new System.Drawing.Size(256, 454);
             this.TSAANimeList.TabIndex = 0;
             this.TSAANimeList.SelectedIndexChanged += new System.EventHandler(this.TSAANimeList_SelectedIndexChanged);
-            // 
-            // GraphicsToolButton
-            // 
-            this.GraphicsToolButton.Location = new System.Drawing.Point(605, 9);
-            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.GraphicsToolButton.Name = "GraphicsToolButton";
-            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
-            this.GraphicsToolButton.TabIndex = 204;
-            this.GraphicsToolButton.Text = "グラフィックツール";
-            this.GraphicsToolButton.UseVisualStyleBackColor = true;
-            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageTSAAnimeForm
             // 

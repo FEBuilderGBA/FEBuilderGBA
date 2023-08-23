@@ -35,10 +35,14 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
+            this.L_0_CGICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_CG = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label14 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label15 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -47,19 +51,15 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_0_CGICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.textBoxEx1 = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CGICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CGICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -148,6 +148,30 @@
             this.panel4.Size = new System.Drawing.Size(884, 589);
             this.panel4.TabIndex = 84;
             // 
+            // textBoxEx1
+            // 
+            this.textBoxEx1.ErrorMessage = "";
+            this.textBoxEx1.Location = new System.Drawing.Point(47, 287);
+            this.textBoxEx1.Multiline = true;
+            this.textBoxEx1.Name = "textBoxEx1";
+            this.textBoxEx1.Placeholder = "";
+            this.textBoxEx1.ReadOnly = true;
+            this.textBoxEx1.Size = new System.Drawing.Size(766, 128);
+            this.textBoxEx1.TabIndex = 190;
+            this.textBoxEx1.Text = "リストの中身はあまり変更しない方がよさそうです。\r\nフリーズの原因になることがあります。";
+            // 
+            // L_0_CGICON
+            // 
+            this.L_0_CGICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_0_CGICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_CGICON.Location = new System.Drawing.Point(254, 2);
+            this.L_0_CGICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_CGICON.Name = "L_0_CGICON";
+            this.L_0_CGICON.Size = new System.Drawing.Size(390, 265);
+            this.L_0_CGICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_0_CGICON.TabIndex = 189;
+            this.L_0_CGICON.TabStop = false;
+            // 
             // D0
             // 
             this.D0.Hexadecimal = true;
@@ -189,6 +213,17 @@
             this.panel5.Size = new System.Drawing.Size(884, 30);
             this.panel5.TabIndex = 82;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(337, 2);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -200,8 +235,20 @@
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(551, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(168, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(421, 2);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -292,52 +339,6 @@
             this.AddressList.Size = new System.Drawing.Size(464, 562);
             this.AddressList.TabIndex = 0;
             // 
-            // L_0_CGICON
-            // 
-            this.L_0_CGICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_0_CGICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_CGICON.Location = new System.Drawing.Point(254, 2);
-            this.L_0_CGICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_CGICON.Name = "L_0_CGICON";
-            this.L_0_CGICON.Size = new System.Drawing.Size(390, 265);
-            this.L_0_CGICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_0_CGICON.TabIndex = 189;
-            this.L_0_CGICON.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(337, 2);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(551, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(168, 25);
-            this.SelectAddress.TabIndex = 40;
-            // 
-            // textBoxEx1
-            // 
-            this.textBoxEx1.ErrorMessage = "";
-            this.textBoxEx1.Location = new System.Drawing.Point(47, 287);
-            this.textBoxEx1.Multiline = true;
-            this.textBoxEx1.Name = "textBoxEx1";
-            this.textBoxEx1.Placeholder = "";
-            this.textBoxEx1.ReadOnly = true;
-            this.textBoxEx1.Size = new System.Drawing.Size(766, 128);
-            this.textBoxEx1.TabIndex = 190;
-            this.textBoxEx1.Text = "リストの中身はあまり変更しない方がよさそうです。\r\nフリーズの原因になることがあります。";
-            // 
             // SoundRoomCGForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -357,12 +358,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CGICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CGICON)).EndInit();
             this.ResumeLayout(false);
 
         }

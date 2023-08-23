@@ -30,6 +30,7 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
             this.X_REF = new FEBuilderGBA.ListBoxEx();
             this.X_BG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
             this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
@@ -109,6 +109,19 @@
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(1051, 560);
             this.DragTargetPanel.TabIndex = 1;
+            // 
+            // DetailErrorMessageBox
+            // 
+            this.DetailErrorMessageBox.ErrorMessage = "";
+            this.DetailErrorMessageBox.Location = new System.Drawing.Point(3, 448);
+            this.DetailErrorMessageBox.Multiline = true;
+            this.DetailErrorMessageBox.Name = "DetailErrorMessageBox";
+            this.DetailErrorMessageBox.Placeholder = "";
+            this.DetailErrorMessageBox.ReadOnly = true;
+            this.DetailErrorMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.DetailErrorMessageBox.Size = new System.Drawing.Size(763, 103);
+            this.DetailErrorMessageBox.TabIndex = 204;
+            this.DetailErrorMessageBox.Visible = false;
             // 
             // X_REF
             // 
@@ -280,6 +293,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(391, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -491,19 +505,6 @@
             this.AddressList.Size = new System.Drawing.Size(258, 573);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // DetailErrorMessageBox
-            // 
-            this.DetailErrorMessageBox.ErrorMessage = "";
-            this.DetailErrorMessageBox.Location = new System.Drawing.Point(3, 448);
-            this.DetailErrorMessageBox.Multiline = true;
-            this.DetailErrorMessageBox.Name = "DetailErrorMessageBox";
-            this.DetailErrorMessageBox.Placeholder = "";
-            this.DetailErrorMessageBox.ReadOnly = true;
-            this.DetailErrorMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DetailErrorMessageBox.Size = new System.Drawing.Size(763, 103);
-            this.DetailErrorMessageBox.TabIndex = 204;
-            this.DetailErrorMessageBox.Visible = false;
             // 
             // ImageBGForm
             // 

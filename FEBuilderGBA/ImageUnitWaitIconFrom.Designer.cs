@@ -43,6 +43,8 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.L_2_COMBO = new System.Windows.Forms.ComboBox();
+            this.J_2 = new System.Windows.Forms.Label();
             this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
@@ -65,8 +67,6 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
-            this.J_2 = new System.Windows.Forms.Label();
-            this.L_2_COMBO = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -202,6 +202,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(402, 0);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -270,6 +271,30 @@
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(907, 392);
             this.DragTargetPanel.TabIndex = 57;
+            // 
+            // L_2_COMBO
+            // 
+            this.L_2_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_2_COMBO.FormattingEnabled = true;
+            this.L_2_COMBO.Items.AddRange(new object[] {
+            "0=16x16",
+            "1=16x32",
+            "2=32x32"});
+            this.L_2_COMBO.Location = new System.Drawing.Point(234, 41);
+            this.L_2_COMBO.Name = "L_2_COMBO";
+            this.L_2_COMBO.Size = new System.Drawing.Size(171, 26);
+            this.L_2_COMBO.TabIndex = 203;
+            // 
+            // J_2
+            // 
+            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_2.Location = new System.Drawing.Point(-1, 38);
+            this.J_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_2.Name = "J_2";
+            this.J_2.Size = new System.Drawing.Size(153, 31);
+            this.J_2.TabIndex = 202;
+            this.J_2.Text = "サイズ";
+            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // JumpToSystemPalette
             // 
@@ -540,30 +565,6 @@
             this.DragTargetPanel2.Name = "DragTargetPanel2";
             this.DragTargetPanel2.Size = new System.Drawing.Size(906, 56);
             this.DragTargetPanel2.TabIndex = 58;
-            // 
-            // J_2
-            // 
-            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(-1, 38);
-            this.J_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(153, 31);
-            this.J_2.TabIndex = 202;
-            this.J_2.Text = "サイズ";
-            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_2_COMBO
-            // 
-            this.L_2_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_2_COMBO.FormattingEnabled = true;
-            this.L_2_COMBO.Items.AddRange(new object[] {
-            "0=16x16",
-            "1=16x32",
-            "2=32x32"});
-            this.L_2_COMBO.Location = new System.Drawing.Point(234, 41);
-            this.L_2_COMBO.Name = "L_2_COMBO";
-            this.L_2_COMBO.Size = new System.Drawing.Size(171, 26);
-            this.L_2_COMBO.TabIndex = 203;
             // 
             // ImageUnitWaitIconFrom
             // 

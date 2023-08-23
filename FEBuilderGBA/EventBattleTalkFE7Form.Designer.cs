@@ -277,6 +277,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(416, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -1155,6 +1156,7 @@
             // 
             // label19
             // 
+            this.label19.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Location = new System.Drawing.Point(421, -1);
             this.label19.Name = "label19";

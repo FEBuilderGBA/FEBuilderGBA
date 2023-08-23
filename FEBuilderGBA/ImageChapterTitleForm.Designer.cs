@@ -45,6 +45,7 @@
             this.X_SAVE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.EXPLAIN = new System.Windows.Forms.TextBox();
             this.ImportButton3 = new System.Windows.Forms.Button();
             this.X_TITLE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.ImportButton2 = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.EXPLAIN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -289,6 +289,15 @@
             this.panel2.Size = new System.Drawing.Size(914, 437);
             this.panel2.TabIndex = 67;
             // 
+            // EXPLAIN
+            // 
+            this.EXPLAIN.Location = new System.Drawing.Point(3, 324);
+            this.EXPLAIN.Multiline = true;
+            this.EXPLAIN.Name = "EXPLAIN";
+            this.EXPLAIN.ReadOnly = true;
+            this.EXPLAIN.Size = new System.Drawing.Size(861, 108);
+            this.EXPLAIN.TabIndex = 91;
+            // 
             // ImportButton3
             // 
             this.ImportButton3.Location = new System.Drawing.Point(581, 260);
@@ -428,6 +437,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(409, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -483,15 +493,6 @@
             this.AddressList.Size = new System.Drawing.Size(259, 398);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // EXPLAIN
-            // 
-            this.EXPLAIN.Location = new System.Drawing.Point(3, 324);
-            this.EXPLAIN.Multiline = true;
-            this.EXPLAIN.Name = "EXPLAIN";
-            this.EXPLAIN.ReadOnly = true;
-            this.EXPLAIN.Size = new System.Drawing.Size(861, 108);
-            this.EXPLAIN.TabIndex = 91;
             // 
             // ImageChapterTitleForm
             // 

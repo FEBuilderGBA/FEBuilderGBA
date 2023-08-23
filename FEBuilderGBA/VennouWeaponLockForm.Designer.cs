@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Explain = new System.Windows.Forms.TextBox();
+            this.X_LINK_ICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_LINK = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,18 +45,15 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.Explain = new System.Windows.Forms.TextBox();
-            this.X_LINK_ICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_LINK = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LINK_ICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_LINK_ICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -76,6 +76,38 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(868, 536);
             this.panel4.TabIndex = 92;
+            // 
+            // Explain
+            // 
+            this.Explain.Location = new System.Drawing.Point(44, 67);
+            this.Explain.Multiline = true;
+            this.Explain.Name = "Explain";
+            this.Explain.ReadOnly = true;
+            this.Explain.Size = new System.Drawing.Size(808, 192);
+            this.Explain.TabIndex = 106;
+            this.Explain.Text = "通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定" +
+    "できます。";
+            // 
+            // X_LINK_ICON
+            // 
+            this.X_LINK_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_LINK_ICON.Location = new System.Drawing.Point(408, 2);
+            this.X_LINK_ICON.Margin = new System.Windows.Forms.Padding(2);
+            this.X_LINK_ICON.Name = "X_LINK_ICON";
+            this.X_LINK_ICON.Size = new System.Drawing.Size(32, 32);
+            this.X_LINK_ICON.TabIndex = 105;
+            this.X_LINK_ICON.TabStop = false;
+            // 
+            // X_LINK
+            // 
+            this.X_LINK.ErrorMessage = "";
+            this.X_LINK.Location = new System.Drawing.Point(230, 7);
+            this.X_LINK.Margin = new System.Windows.Forms.Padding(2);
+            this.X_LINK.Name = "X_LINK";
+            this.X_LINK.Placeholder = "";
+            this.X_LINK.ReadOnly = true;
+            this.X_LINK.Size = new System.Drawing.Size(174, 25);
+            this.X_LINK.TabIndex = 41;
             // 
             // B0
             // 
@@ -135,6 +167,19 @@
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-2, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(246, 514);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -225,6 +270,17 @@
             this.panel5.Size = new System.Drawing.Size(868, 34);
             this.panel5.TabIndex = 90;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -236,8 +292,20 @@
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
+            // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -282,73 +350,6 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Explain
-            // 
-            this.Explain.Location = new System.Drawing.Point(44, 67);
-            this.Explain.Multiline = true;
-            this.Explain.Name = "Explain";
-            this.Explain.ReadOnly = true;
-            this.Explain.Size = new System.Drawing.Size(808, 192);
-            this.Explain.TabIndex = 106;
-            this.Explain.Text = "通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定" +
-    "できます。";
-            // 
-            // X_LINK_ICON
-            // 
-            this.X_LINK_ICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_LINK_ICON.Location = new System.Drawing.Point(408, 2);
-            this.X_LINK_ICON.Margin = new System.Windows.Forms.Padding(2);
-            this.X_LINK_ICON.Name = "X_LINK_ICON";
-            this.X_LINK_ICON.Size = new System.Drawing.Size(32, 32);
-            this.X_LINK_ICON.TabIndex = 105;
-            this.X_LINK_ICON.TabStop = false;
-            // 
-            // X_LINK
-            // 
-            this.X_LINK.ErrorMessage = "";
-            this.X_LINK.Location = new System.Drawing.Point(230, 7);
-            this.X_LINK.Margin = new System.Windows.Forms.Padding(2);
-            this.X_LINK.Name = "X_LINK";
-            this.X_LINK.Placeholder = "";
-            this.X_LINK.ReadOnly = true;
-            this.X_LINK.Size = new System.Drawing.Size(174, 25);
-            this.X_LINK.TabIndex = 41;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-2, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 514);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
             // VennouWeaponLockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -364,6 +365,7 @@
             this.Load += new System.EventHandler(this.VennouWeaponLockForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_LINK_ICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -372,7 +374,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_LINK_ICON)).EndInit();
             this.ResumeLayout(false);
 
         }

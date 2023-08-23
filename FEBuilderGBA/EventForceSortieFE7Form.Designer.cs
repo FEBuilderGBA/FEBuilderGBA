@@ -53,7 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label46 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.N_AddressList = new ListBoxEx();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -161,9 +161,11 @@
             // 
             // N_L_0_UNIT
             // 
+            this.N_L_0_UNIT.ErrorMessage = "";
             this.N_L_0_UNIT.Location = new System.Drawing.Point(251, 13);
             this.N_L_0_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.N_L_0_UNIT.Name = "N_L_0_UNIT";
+            this.N_L_0_UNIT.Placeholder = "";
             this.N_L_0_UNIT.ReadOnly = true;
             this.N_L_0_UNIT.Size = new System.Drawing.Size(161, 25);
             this.N_L_0_UNIT.TabIndex = 191;
@@ -286,9 +288,11 @@
             // 
             // N_BlockSize
             // 
+            this.N_BlockSize.ErrorMessage = "";
             this.N_BlockSize.Location = new System.Drawing.Point(91, 52);
             this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
             this.N_BlockSize.ReadOnly = true;
             this.N_BlockSize.Size = new System.Drawing.Size(54, 25);
             this.N_BlockSize.TabIndex = 55;
@@ -306,15 +310,18 @@
             // 
             // N_SelectAddress
             // 
+            this.N_SelectAddress.ErrorMessage = "";
             this.N_SelectAddress.Location = new System.Drawing.Point(281, 53);
             this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
             this.N_SelectAddress.ReadOnly = true;
             this.N_SelectAddress.Size = new System.Drawing.Size(129, 25);
             this.N_SelectAddress.TabIndex = 54;
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(152, 52);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -386,6 +393,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -432,7 +440,6 @@
             // 
             // N_ReadCount
             // 
-
             this.N_ReadCount.Location = new System.Drawing.Point(397, 5);
             this.N_ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReadCount.Name = "N_ReadCount";
@@ -494,6 +501,7 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(-1, 24);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);

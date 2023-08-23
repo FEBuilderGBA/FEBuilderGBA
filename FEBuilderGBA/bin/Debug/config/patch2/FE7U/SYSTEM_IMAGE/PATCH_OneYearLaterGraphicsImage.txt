@@ -1,0 +1,12 @@
+NAME=OneYearLaterGraphicsImage
+INFO="一年後..."という画像
+INFO.en="One year later..." An image that says
+INFO.zh="One year later..." An image that says
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=160
+
+ZIMAGE_POINTER=0x07F16C//0x1C3590
+ZHEADERTSA_POINTER=0x07F17C//0x1C39C4
+PALETTE_POINTER=0x07F174//0x1C39A4

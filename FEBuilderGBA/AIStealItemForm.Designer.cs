@@ -32,6 +32,7 @@
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.J_1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_ITEM = new System.Windows.Forms.Label();
@@ -53,9 +54,9 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -116,6 +116,16 @@
             this.label1.Size = new System.Drawing.Size(725, 87);
             this.label1.TabIndex = 105;
             this.label1.Text = "盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。";
+            // 
+            // L_0_ITEMICON
+            // 
+            this.L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_ITEMICON.Location = new System.Drawing.Point(506, 11);
+            this.L_0_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_ITEMICON.Name = "L_0_ITEMICON";
+            this.L_0_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_ITEMICON.TabIndex = 104;
+            this.L_0_ITEMICON.TabStop = false;
             // 
             // L_0_ITEM
             // 
@@ -323,6 +333,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -367,16 +378,6 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_0_ITEMICON
-            // 
-            this.L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_ITEMICON.Location = new System.Drawing.Point(506, 11);
-            this.L_0_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_ITEMICON.Name = "L_0_ITEMICON";
-            this.L_0_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_ITEMICON.TabIndex = 104;
-            this.L_0_ITEMICON.TabStop = false;
-            // 
             // AIStealItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -393,6 +394,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -401,7 +403,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).EndInit();
             this.ResumeLayout(false);
 
         }

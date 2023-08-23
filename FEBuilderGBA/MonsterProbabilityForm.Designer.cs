@@ -33,6 +33,8 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label6 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
@@ -82,8 +84,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).BeginInit();
@@ -200,6 +200,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 430);
             this.panel2.TabIndex = 146;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(166, 284);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(715, 25);
+            this.Comment.TabIndex = 202;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleDescription = "@COMMENT";
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(5, 281);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 31);
+            this.label6.TabIndex = 201;
+            this.label6.Text = "コメント";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B11
             // 
@@ -674,6 +695,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(399, -1);
             this.label22.Name = "label22";
@@ -713,27 +735,6 @@
             this.label55.TabIndex = 1;
             this.label55.Text = "アドレス";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(166, 284);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(715, 25);
-            this.Comment.TabIndex = 202;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleDescription = "@COMMENT";
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(5, 281);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 31);
-            this.label6.TabIndex = 201;
-            this.label6.Text = "コメント";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MonsterProbabilityForm
             // 

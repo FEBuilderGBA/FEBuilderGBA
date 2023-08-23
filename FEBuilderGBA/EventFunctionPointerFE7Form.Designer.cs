@@ -39,7 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
@@ -81,9 +81,11 @@
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(329, 0);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 52;
@@ -101,15 +103,18 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(546, 0);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(169, 25);
             this.SelectAddress.TabIndex = 40;
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(419, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -192,6 +197,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 30);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -202,7 +208,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(357, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -281,19 +286,23 @@
             // 
             // X_NAME
             // 
+            this.X_NAME.ErrorMessage = "";
             this.X_NAME.Location = new System.Drawing.Point(-1, 133);
             this.X_NAME.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.X_NAME.Multiline = true;
             this.X_NAME.Name = "X_NAME";
+            this.X_NAME.Placeholder = "";
             this.X_NAME.ReadOnly = true;
             this.X_NAME.Size = new System.Drawing.Size(872, 146);
             this.X_NAME.TabIndex = 237;
             // 
             // L_0_ASM
             // 
+            this.L_0_ASM.ErrorMessage = "";
             this.L_0_ASM.Location = new System.Drawing.Point(139, 44);
             this.L_0_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_0_ASM.Name = "L_0_ASM";
+            this.L_0_ASM.Placeholder = "";
             this.L_0_ASM.ReadOnly = true;
             this.L_0_ASM.Size = new System.Drawing.Size(402, 25);
             this.L_0_ASM.TabIndex = 236;

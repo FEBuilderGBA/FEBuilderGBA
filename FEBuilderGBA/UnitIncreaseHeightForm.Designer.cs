@@ -45,13 +45,13 @@
             this.SwitchListExpandsButton = new System.Windows.Forms.Button();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ERROR_NOT_FOUND = new System.Windows.Forms.Label();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -113,6 +113,7 @@
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(419, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -267,6 +268,16 @@
             this.panel2.Size = new System.Drawing.Size(888, 544);
             this.panel2.TabIndex = 90;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(2, 366);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(852, 172);
+            this.textBox1.TabIndex = 120;
+            this.textBox1.Text = "ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。";
+            // 
             // ERROR_NOT_FOUND
             // 
             this.ERROR_NOT_FOUND.AutoSize = true;
@@ -338,16 +349,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1155, 30);
             this.panel3.TabIndex = 93;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(2, 366);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(852, 172);
-            this.textBox1.TabIndex = 120;
-            this.textBox1.Text = "ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。";
             // 
             // UnitIncreaseHeightForm
             // 

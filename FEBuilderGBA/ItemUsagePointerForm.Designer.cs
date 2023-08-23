@@ -30,22 +30,27 @@
         {
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_IER_PATCH = new System.Windows.Forms.Label();
             this.StatBoosterItemExplain = new System.Windows.Forms.GroupBox();
             this.StatBoosterItemLink = new System.Windows.Forms.Label();
             this.PromotionItemExplain = new System.Windows.Forms.GroupBox();
             this.PromotionItemLink = new System.Windows.Forms.Label();
+            this.L_0_ASM_SWITCH = new FEBuilderGBA.TextBoxEx();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
             this.X_NOT_FOUND = new System.Windows.Forms.Label();
             this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.SwitchListExpandsButton = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
@@ -54,11 +59,6 @@
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.X_IER_PATCH = new System.Windows.Forms.Label();
-            this.L_0_ASM_SWITCH = new FEBuilderGBA.TextBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4.SuspendLayout();
             this.StatBoosterItemExplain.SuspendLayout();
             this.PromotionItemExplain.SuspendLayout();
@@ -96,6 +96,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(916, 678);
             this.panel4.TabIndex = 149;
+            // 
+            // X_IER_PATCH
+            // 
+            this.X_IER_PATCH.AutoSize = true;
+            this.X_IER_PATCH.ForeColor = System.Drawing.Color.Red;
+            this.X_IER_PATCH.Location = new System.Drawing.Point(3, 197);
+            this.X_IER_PATCH.Name = "X_IER_PATCH";
+            this.X_IER_PATCH.Size = new System.Drawing.Size(470, 18);
+            this.X_IER_PATCH.TabIndex = 122;
+            this.X_IER_PATCH.Text = "IERがインストールされているため、パッチ画面から設定してください。";
+            this.X_IER_PATCH.Click += new System.EventHandler(this.ERROR_IER_PATCH_Click);
             // 
             // StatBoosterItemExplain
             // 
@@ -136,6 +147,17 @@
             this.PromotionItemLink.TabIndex = 0;
             this.PromotionItemLink.Text = "CCアイテム";
             this.PromotionItemLink.Click += new System.EventHandler(this.PromotionItemLink_Click);
+            // 
+            // L_0_ASM_SWITCH
+            // 
+            this.L_0_ASM_SWITCH.ErrorMessage = "";
+            this.L_0_ASM_SWITCH.Location = new System.Drawing.Point(414, 8);
+            this.L_0_ASM_SWITCH.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_ASM_SWITCH.Name = "L_0_ASM_SWITCH";
+            this.L_0_ASM_SWITCH.Placeholder = "";
+            this.L_0_ASM_SWITCH.ReadOnly = true;
+            this.L_0_ASM_SWITCH.Size = new System.Drawing.Size(404, 25);
+            this.L_0_ASM_SWITCH.TabIndex = 119;
             // 
             // L_0_COMBO
             // 
@@ -204,6 +226,17 @@
             this.panel5.Size = new System.Drawing.Size(917, 30);
             this.panel5.TabIndex = 147;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(326, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 63;
+            // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -214,8 +247,20 @@
             this.label11.Text = "Size:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 62;
+            // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(414, 0);
             this.label22.Name = "label22";
@@ -266,6 +311,18 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(277, 709);
             this.panel6.TabIndex = 150;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(275, 651);
+            this.AddressList.TabIndex = 0;
             // 
             // SwitchListExpandsButton
             // 
@@ -372,62 +429,6 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
-            // 
-            // X_IER_PATCH
-            // 
-            this.X_IER_PATCH.AutoSize = true;
-            this.X_IER_PATCH.ForeColor = System.Drawing.Color.Red;
-            this.X_IER_PATCH.Location = new System.Drawing.Point(3, 197);
-            this.X_IER_PATCH.Name = "X_IER_PATCH";
-            this.X_IER_PATCH.Size = new System.Drawing.Size(470, 18);
-            this.X_IER_PATCH.TabIndex = 122;
-            this.X_IER_PATCH.Text = "IERがインストールされているため、パッチ画面から設定してください。";
-            this.X_IER_PATCH.Click += new System.EventHandler(this.ERROR_IER_PATCH_Click);
-            // 
-            // L_0_ASM_SWITCH
-            // 
-            this.L_0_ASM_SWITCH.ErrorMessage = "";
-            this.L_0_ASM_SWITCH.Location = new System.Drawing.Point(414, 8);
-            this.L_0_ASM_SWITCH.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_ASM_SWITCH.Name = "L_0_ASM_SWITCH";
-            this.L_0_ASM_SWITCH.Placeholder = "";
-            this.L_0_ASM_SWITCH.ReadOnly = true;
-            this.L_0_ASM_SWITCH.Size = new System.Drawing.Size(404, 25);
-            this.L_0_ASM_SWITCH.TabIndex = 119;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(326, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 63;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 62;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(275, 651);
-            this.AddressList.TabIndex = 0;
             // 
             // ItemUsagePointerForm
             // 

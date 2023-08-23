@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_FE8J_COMMENT = new System.Windows.Forms.Label();
+            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_CLASS = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,13 +52,11 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_CLASS = new FEBuilderGBA.TextBoxEx();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -82,6 +82,16 @@
             this.panel4.Size = new System.Drawing.Size(878, 632);
             this.panel4.TabIndex = 88;
             // 
+            // L_0_CLASSICON
+            // 
+            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_CLASSICON.Location = new System.Drawing.Point(363, 2);
+            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
+            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_CLASSICON.TabIndex = 102;
+            this.L_0_CLASSICON.TabStop = false;
+            // 
             // X_FE8J_COMMENT
             // 
             this.X_FE8J_COMMENT.AutoSize = true;
@@ -92,6 +102,17 @@
             this.X_FE8J_COMMENT.TabIndex = 42;
             this.X_FE8J_COMMENT.Text = "上級職、下級職は自動で調整されます。\r\n闘技場で敵として使用されるユニットは、0xFD 対戦相手です。\r\nほかのユニットが出ることはないようです。";
             this.X_FE8J_COMMENT.Visible = false;
+            // 
+            // L_0_CLASS
+            // 
+            this.L_0_CLASS.ErrorMessage = "";
+            this.L_0_CLASS.Location = new System.Drawing.Point(212, 7);
+            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_CLASS.Name = "L_0_CLASS";
+            this.L_0_CLASS.Placeholder = "";
+            this.L_0_CLASS.ReadOnly = true;
+            this.L_0_CLASS.Size = new System.Drawing.Size(147, 25);
+            this.L_0_CLASS.TabIndex = 41;
             // 
             // B0
             // 
@@ -162,6 +183,18 @@
             this.panel6.Size = new System.Drawing.Size(307, 666);
             this.panel6.TabIndex = 89;
             // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(305, 608);
+            this.AddressList.TabIndex = 0;
+            // 
             // AddressListExpandsButton
             // 
             this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -198,6 +231,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -330,37 +364,6 @@
             this.panel5.Size = new System.Drawing.Size(878, 34);
             this.panel5.TabIndex = 86;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(307, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(878, 666);
-            this.panel1.TabIndex = 90;
-            // 
-            // L_0_CLASSICON
-            // 
-            this.L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_CLASSICON.Location = new System.Drawing.Point(363, 2);
-            this.L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASSICON.Name = "L_0_CLASSICON";
-            this.L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_CLASSICON.TabIndex = 102;
-            this.L_0_CLASSICON.TabStop = false;
-            // 
-            // L_0_CLASS
-            // 
-            this.L_0_CLASS.ErrorMessage = "";
-            this.L_0_CLASS.Location = new System.Drawing.Point(212, 7);
-            this.L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_CLASS.Name = "L_0_CLASS";
-            this.L_0_CLASS.Placeholder = "";
-            this.L_0_CLASS.ReadOnly = true;
-            this.L_0_CLASS.Size = new System.Drawing.Size(147, 25);
-            this.L_0_CLASS.TabIndex = 41;
-            // 
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
@@ -383,17 +386,15 @@
             this.SelectAddress.Size = new System.Drawing.Size(150, 25);
             this.SelectAddress.TabIndex = 57;
             // 
-            // AddressList
+            // panel1
             // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(305, 608);
-            this.AddressList.TabIndex = 0;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(307, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(878, 666);
+            this.panel1.TabIndex = 90;
             // 
             // ArenaClassForm
             // 
@@ -410,6 +411,7 @@
             this.Load += new System.EventHandler(this.ArenaClassForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
@@ -419,7 +421,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_CLASSICON)).EndInit();
             this.ResumeLayout(false);
 
         }

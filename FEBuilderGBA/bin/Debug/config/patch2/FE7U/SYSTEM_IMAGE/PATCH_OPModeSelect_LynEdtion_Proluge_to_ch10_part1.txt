@@ -1,0 +1,10 @@
+NAME=OPModeSelect_LynEdtion_Proluge_to_ch10_part1
+INFO=This image is divided into 4 parts
+TYPE=IMAGE
+
+WIDTH=80
+HEIGHT=8
+
+ZIMAGE_POINTER=0x418DC0//0x415BE8
+PALETTE_ADDRESS=0x3FE4B8
+KEEPPALETTE=1

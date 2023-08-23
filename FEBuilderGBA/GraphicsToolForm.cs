@@ -715,10 +715,6 @@ namespace FEBuilderGBA
                 {//無圧縮TSAを利用する
                     patch += "TSA_POINTER=" + U.To0xHexString(U.toOffset(tsaPointer)) + "//" + U.To0xHexString(U.toOffset(tsaAddress)) + "\r\n";
                 }
-//                else if (TSAOption.SelectedIndex == 5)
-//                {//パレットマップとして解釈する
-//                    patch += "ZPALMAP_POINTER=" + U.To0xHexString(U.toOffset(tsaPointer)) + "//" + U.To0xHexString(U.toOffset(tsaAddress)) + "\r\n";
-//                }
 
                 if (KeepTSAComboBox.SelectedIndex == 1)
                 {
@@ -741,6 +737,7 @@ namespace FEBuilderGBA
             else
             {
                 patch += "PALETTE_ADDRESS=" + U.To0xHexString(U.toOffset(paletteAddress)) + "\r\n";
+                patch += "KEEPPALETTE=1\r\n";
             }
 
             return patch;

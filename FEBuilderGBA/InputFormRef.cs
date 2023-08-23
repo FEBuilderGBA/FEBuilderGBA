@@ -12410,6 +12410,10 @@ namespace FEBuilderGBA
             {
                 str = R._("何も改造されていない、無改造のバニラROMを指定してください。");
             }
+            else if (str == "@SELECTION_ADDRESS")
+            {
+                str = R._("現在選択しているアドレスです。\r\nダブルクリックで、CSVエクスポート/インポートなどを行えます。");
+            }
             else
             {
                 //未定義のヒント

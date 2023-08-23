@@ -32,6 +32,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_8_TEXT_SOUND1 = new FEBuilderGBA.TextBoxEx();
             this.D8 = new System.Windows.Forms.NumericUpDown();
@@ -57,7 +58,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.X_RoomPosstionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
@@ -124,6 +124,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(839, 690);
             this.panel6.TabIndex = 80;
+            // 
+            // X_RoomPosstionLabel
+            // 
+            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 119);
+            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
+            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
+            this.X_RoomPosstionLabel.TabIndex = 188;
+            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_SONG
             // 
@@ -375,6 +385,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(410, 1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -418,16 +429,6 @@
             this.label23.TabIndex = 53;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // X_RoomPosstionLabel
-            // 
-            this.X_RoomPosstionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_RoomPosstionLabel.Location = new System.Drawing.Point(-1, 119);
-            this.X_RoomPosstionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.X_RoomPosstionLabel.Name = "X_RoomPosstionLabel";
-            this.X_RoomPosstionLabel.Size = new System.Drawing.Size(365, 30);
-            this.X_RoomPosstionLabel.TabIndex = 188;
-            this.X_RoomPosstionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SoundRoomFE6Form
             // 

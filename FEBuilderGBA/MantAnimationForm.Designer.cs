@@ -30,6 +30,7 @@
         {
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.JUMP_TO_BATTLEANIME = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.P0 = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +52,6 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel6.SuspendLayout();
@@ -87,6 +87,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(926, 344);
             this.panel4.TabIndex = 88;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(379, 36);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。";
             // 
             // JUMP_TO_BATTLEANIME
             // 
@@ -234,6 +243,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, 1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -335,15 +345,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(927, 34);
             this.panel5.TabIndex = 86;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(379, 36);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。";
             // 
             // MantAnimationForm
             // 

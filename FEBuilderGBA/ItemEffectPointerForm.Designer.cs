@@ -111,6 +111,7 @@
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(419, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

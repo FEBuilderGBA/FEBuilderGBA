@@ -53,9 +53,9 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
@@ -322,6 +322,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(413, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -368,6 +369,16 @@
             this.panel6.Size = new System.Drawing.Size(251, 670);
             this.panel6.TabIndex = 190;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 636);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(244, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -392,16 +403,6 @@
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 636);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(244, 30);
-            this.AddressListExpandsButton.TabIndex = 115;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // WorldMapBGMForm
             // 

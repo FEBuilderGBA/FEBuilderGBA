@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.N_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.EventWriteButton = new System.Windows.Forms.Button();
             this.ENDING2_EVENT = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +57,6 @@
             this.N_AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
-            this.N_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ENDING2_EVENT)).BeginInit();
@@ -83,6 +83,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(908, 650);
             this.panel3.TabIndex = 188;
+            // 
+            // N_L_0_NEWALLOC_EVENT
+            // 
+            this.N_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(325, 65);
+            this.N_L_0_NEWALLOC_EVENT.Name = "N_L_0_NEWALLOC_EVENT";
+            this.N_L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(300, 28);
+            this.N_L_0_NEWALLOC_EVENT.TabIndex = 249;
+            this.N_L_0_NEWALLOC_EVENT.Text = "新規イベント";
+            this.N_L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -331,6 +340,7 @@
             // 
             // label8
             // 
+            this.label8.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Location = new System.Drawing.Point(413, -1);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -410,15 +420,6 @@
             this.N_LabelFilter.TabIndex = 107;
             this.N_LabelFilter.Text = "名前";
             this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // N_L_0_NEWALLOC_EVENT
-            // 
-            this.N_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(325, 65);
-            this.N_L_0_NEWALLOC_EVENT.Name = "N_L_0_NEWALLOC_EVENT";
-            this.N_L_0_NEWALLOC_EVENT.Size = new System.Drawing.Size(300, 28);
-            this.N_L_0_NEWALLOC_EVENT.TabIndex = 249;
-            this.N_L_0_NEWALLOC_EVENT.Text = "新規イベント";
-            this.N_L_0_NEWALLOC_EVENT.UseVisualStyleBackColor = true;
             // 
             // WorldMapEventPointerFE7Form
             // 

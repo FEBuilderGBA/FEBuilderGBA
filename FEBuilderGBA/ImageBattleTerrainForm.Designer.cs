@@ -36,6 +36,7 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
@@ -76,7 +77,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.GraphicsToolButton = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,6 +190,17 @@
             this.panel3.Size = new System.Drawing.Size(953, 43);
             this.panel3.TabIndex = 78;
             // 
+            // GraphicsToolButton
+            // 
+            this.GraphicsToolButton.Location = new System.Drawing.Point(696, 8);
+            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.GraphicsToolButton.Name = "GraphicsToolButton";
+            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
+            this.GraphicsToolButton.TabIndex = 204;
+            this.GraphicsToolButton.Text = "グラフィックツール";
+            this.GraphicsToolButton.UseVisualStyleBackColor = true;
+            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
+            // 
             // ImportButton
             // 
             this.ImportButton.Location = new System.Drawing.Point(8, 9);
@@ -225,6 +236,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(391, -1);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -696,17 +708,6 @@
             this.AddressPanel.Name = "AddressPanel";
             this.AddressPanel.Size = new System.Drawing.Size(951, 30);
             this.AddressPanel.TabIndex = 75;
-            // 
-            // GraphicsToolButton
-            // 
-            this.GraphicsToolButton.Location = new System.Drawing.Point(696, 8);
-            this.GraphicsToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.GraphicsToolButton.Name = "GraphicsToolButton";
-            this.GraphicsToolButton.Size = new System.Drawing.Size(212, 30);
-            this.GraphicsToolButton.TabIndex = 204;
-            this.GraphicsToolButton.Text = "グラフィックツール";
-            this.GraphicsToolButton.UseVisualStyleBackColor = true;
-            this.GraphicsToolButton.Click += new System.EventHandler(this.GraphicsToolButton_Click);
             // 
             // ImageBattleTerrainForm
             // 

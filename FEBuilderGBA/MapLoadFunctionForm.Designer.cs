@@ -42,6 +42,7 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.J_0_ASM_THUMB = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -113,6 +113,7 @@
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Location = new System.Drawing.Point(419, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -229,6 +230,16 @@
             this.panel1.Size = new System.Drawing.Size(268, 572);
             this.panel1.TabIndex = 91;
             // 
+            // AddressListExpandsButton_255
+            // 
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(0, 542);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(259, 30);
+            this.AddressListExpandsButton_255.TabIndex = 155;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
+            // 
             // ReadStartAddress
             // 
             this.ReadStartAddress.Hexadecimal = true;
@@ -338,16 +349,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1155, 30);
             this.panel3.TabIndex = 93;
-            // 
-            // AddressListExpandsButton_255
-            // 
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(0, 542);
-            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
-            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(259, 30);
-            this.AddressListExpandsButton_255.TabIndex = 155;
-            this.AddressListExpandsButton_255.Text = "リストの拡張";
-            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // MapLoadFunctionForm
             // 

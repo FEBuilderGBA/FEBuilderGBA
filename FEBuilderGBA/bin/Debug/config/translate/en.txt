@@ -1087,11 +1087,11 @@ Lyn's Tale
 :撤退
 Withdrawal.
 
-:その後
-after that.
-
 :撤退指定 02
 Retreat Designation 02
+
+:その後
+after that.
 
 :エイリーク編
 Eirika's Route
@@ -3886,6 +3886,9 @@ Eye XX/YY
 :6=瞳を閉じる
 6=Close Eye
 
+:ステータス画面の背丈調整へJump
+Jump to height adjustment on the status screen
+
 :顔画像の目と口の位置が一致していない場合は、ここから位置を調整してください。
 If the eye and mouth positions in the portrait do not match, please adjust the position.
 
@@ -3897,9 +3900,6 @@ Tile 2
 
 :タイル1
 Tile 1
-
-:ステータス画面の背丈調整へJump
-Jump to height adjustment on the status screen
 
 :位置確認用
 For position confirmation
@@ -5635,6 +5635,9 @@ You can set the durability of the item.\r\nIf set to 0, the item will be sold wi
 :何も改造されていない、無改造のバニラROMを指定してください。
 Specify an unmodified vanilla ROM that has not been modified at all.
 
+:現在選択しているアドレスです。\r\nダブルクリックで、CSVエクスポート/インポートなどを行えます。
+The currently selected address.\r\nBy double-clicking, you can perform CSV export/import, etc.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -7111,6 +7114,9 @@ Character shape
 :簡易メニュー画像
 Simple menu image
 
+:よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。
+If you're not sure, don't change this setting.\r\nIt causes a bug.
+
 :戦闘アニメへ移動する
 Move to battle animation
 
@@ -7119,9 +7125,6 @@ There is now a C01 hack, so you do not need to set it up.\r\n\r\nThe cloak is se
 
 :マント設定
 Cloak setting
-
-:よくわからなければ、この設定を変更しないでください。\r\nバグの原因になります。
-If you're not sure, don't change this setting.\r\nIt causes a bug.
 
 :データが設定されていません。マップエディタから、データを作成してください。
 No data has been set.Create the data from the map editor.
@@ -13372,6 +13375,9 @@ The support pointer for unit 0x01 is invalid. This value is the starting point f
 :ユニット別パレットへジャンプ
 Jump to Unit Palette
 
+:ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。
+Set whether to raise the bottom by 1 tile (8 dots) on the status screen.\r\nA short character will look bad without raising the bottom.
+
 :{0}=背を伸ばさない
 {0}=Do Not Raise
 
@@ -13380,9 +13386,6 @@ Jump to Unit Palette
 
 :ステータス画面で背丈を伸ばす補正をするか？
 Raise Portrait Height on Stat Screen?
-
-:ステータス画面で、1タイル(8ドット)底上げをするかどうかを設定します。\r\n背が低いキャラクタは、底上げをしないと見た目が悪くなります。
-Set whether to raise the bottom by 1 tile (8 dots) on the status screen.\r\nA short character will look bad without raising the bottom.
 
 :身長を伸ばす顔ID
 Portrait Height Editor

@@ -56,6 +56,7 @@
             this.AnimationExportButton = new System.Windows.Forms.Button();
             this.AnimationImportButton = new System.Windows.Forms.Button();
             this.AnimationPanel = new System.Windows.Forms.Panel();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.ShowZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.NOTIFY_KeepEmpty = new System.Windows.Forms.Label();
-            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -205,6 +205,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, 1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -424,6 +425,16 @@
             this.AnimationPanel.TabIndex = 120;
             this.AnimationPanel.Visible = false;
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(326, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(538, 25);
+            this.BinInfo.TabIndex = 196;
+            // 
             // ShowZoomComboBox
             // 
             this.ShowZoomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -533,16 +544,6 @@
             this.NOTIFY_KeepEmpty.Text = "ID=00 Emptyはnullデータとして予約されています。\r\n0x0以外の値を設定しないでください。";
             this.NOTIFY_KeepEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NOTIFY_KeepEmpty.Visible = false;
-            // 
-            // BinInfo
-            // 
-            this.BinInfo.ErrorMessage = "";
-            this.BinInfo.Location = new System.Drawing.Point(326, 367);
-            this.BinInfo.Name = "BinInfo";
-            this.BinInfo.Placeholder = "";
-            this.BinInfo.ReadOnly = true;
-            this.BinInfo.Size = new System.Drawing.Size(538, 25);
-            this.BinInfo.TabIndex = 196;
             // 
             // ImageMapActionAnimationForm
             // 

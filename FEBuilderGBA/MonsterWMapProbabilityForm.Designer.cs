@@ -77,6 +77,12 @@
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.EventWriteButton = new System.Windows.Forms.Button();
+            this.SKIMISH_ENDEVENT = new System.Windows.Forms.NumericUpDown();
+            this.JUMP_SKIMISH_ENDEVENT = new System.Windows.Forms.Label();
+            this.SKIMISH_STARTEVENT = new System.Windows.Forms.NumericUpDown();
+            this.JUMP_SKIMISH_STARTEVENT = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.SUM = new System.Windows.Forms.Label();
             this.N2_B8 = new System.Windows.Forms.NumericUpDown();
@@ -113,12 +119,6 @@
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
             this.L_0_WMBASE = new FEBuilderGBA.TextBoxEx();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.EventWriteButton = new System.Windows.Forms.Button();
-            this.SKIMISH_ENDEVENT = new System.Windows.Forms.NumericUpDown();
-            this.JUMP_SKIMISH_ENDEVENT = new System.Windows.Forms.Label();
-            this.SKIMISH_STARTEVENT = new System.Windows.Forms.NumericUpDown();
-            this.JUMP_SKIMISH_STARTEVENT = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -137,6 +137,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_ENDEVENT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_STARTEVENT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B6)).BeginInit();
@@ -151,9 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N2_ReadStartAddress)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).BeginInit();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_ENDEVENT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_STARTEVENT)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -360,6 +360,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(-1, 30);
             this.label22.Name = "label22";
@@ -619,6 +620,7 @@
             // 
             // label9
             // 
+            this.label9.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Location = new System.Drawing.Point(-1, 30);
             this.label9.Name = "label9";
@@ -721,6 +723,87 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(644, 681);
             this.panel9.TabIndex = 158;
+            // 
+            // panel12
+            // 
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.EventWriteButton);
+            this.panel12.Controls.Add(this.SKIMISH_ENDEVENT);
+            this.panel12.Controls.Add(this.JUMP_SKIMISH_ENDEVENT);
+            this.panel12.Controls.Add(this.SKIMISH_STARTEVENT);
+            this.panel12.Controls.Add(this.JUMP_SKIMISH_STARTEVENT);
+            this.panel12.Location = new System.Drawing.Point(3, 569);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(631, 95);
+            this.panel12.TabIndex = 256;
+            // 
+            // EventWriteButton
+            // 
+            this.EventWriteButton.Location = new System.Drawing.Point(451, 7);
+            this.EventWriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventWriteButton.Name = "EventWriteButton";
+            this.EventWriteButton.Size = new System.Drawing.Size(167, 30);
+            this.EventWriteButton.TabIndex = 15;
+            this.EventWriteButton.Text = "書き込み";
+            this.EventWriteButton.UseVisualStyleBackColor = true;
+            this.EventWriteButton.Click += new System.EventHandler(this.EventWriteButton_Click);
+            // 
+            // SKIMISH_ENDEVENT
+            // 
+            this.SKIMISH_ENDEVENT.Hexadecimal = true;
+            this.SKIMISH_ENDEVENT.Location = new System.Drawing.Point(239, 65);
+            this.SKIMISH_ENDEVENT.Margin = new System.Windows.Forms.Padding(2);
+            this.SKIMISH_ENDEVENT.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.SKIMISH_ENDEVENT.Name = "SKIMISH_ENDEVENT";
+            this.SKIMISH_ENDEVENT.Size = new System.Drawing.Size(130, 25);
+            this.SKIMISH_ENDEVENT.TabIndex = 13;
+            // 
+            // JUMP_SKIMISH_ENDEVENT
+            // 
+            this.JUMP_SKIMISH_ENDEVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JUMP_SKIMISH_ENDEVENT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JUMP_SKIMISH_ENDEVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JUMP_SKIMISH_ENDEVENT.Location = new System.Drawing.Point(-1, 62);
+            this.JUMP_SKIMISH_ENDEVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.JUMP_SKIMISH_ENDEVENT.Name = "JUMP_SKIMISH_ENDEVENT";
+            this.JUMP_SKIMISH_ENDEVENT.Size = new System.Drawing.Size(234, 30);
+            this.JUMP_SKIMISH_ENDEVENT.TabIndex = 11;
+            this.JUMP_SKIMISH_ENDEVENT.Text = "フリーマップ終了イベント";
+            this.JUMP_SKIMISH_ENDEVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.JUMP_SKIMISH_ENDEVENT.Click += new System.EventHandler(this.JUMP_SKIMISH_ENDEVENT_Click);
+            // 
+            // SKIMISH_STARTEVENT
+            // 
+            this.SKIMISH_STARTEVENT.Hexadecimal = true;
+            this.SKIMISH_STARTEVENT.Location = new System.Drawing.Point(239, 37);
+            this.SKIMISH_STARTEVENT.Margin = new System.Windows.Forms.Padding(2);
+            this.SKIMISH_STARTEVENT.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.SKIMISH_STARTEVENT.Name = "SKIMISH_STARTEVENT";
+            this.SKIMISH_STARTEVENT.Size = new System.Drawing.Size(130, 25);
+            this.SKIMISH_STARTEVENT.TabIndex = 10;
+            // 
+            // JUMP_SKIMISH_STARTEVENT
+            // 
+            this.JUMP_SKIMISH_STARTEVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JUMP_SKIMISH_STARTEVENT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JUMP_SKIMISH_STARTEVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JUMP_SKIMISH_STARTEVENT.Location = new System.Drawing.Point(-1, 34);
+            this.JUMP_SKIMISH_STARTEVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.JUMP_SKIMISH_STARTEVENT.Name = "JUMP_SKIMISH_STARTEVENT";
+            this.JUMP_SKIMISH_STARTEVENT.Size = new System.Drawing.Size(234, 30);
+            this.JUMP_SKIMISH_STARTEVENT.TabIndex = 9;
+            this.JUMP_SKIMISH_STARTEVENT.Text = "フリーマップ開始イベント";
+            this.JUMP_SKIMISH_STARTEVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.JUMP_SKIMISH_STARTEVENT.Click += new System.EventHandler(this.JUMP_SKIMISH_STARTEVENT_Click);
             // 
             // label29
             // 
@@ -1126,87 +1209,6 @@
             this.L_0_WMBASE.Size = new System.Drawing.Size(172, 25);
             this.L_0_WMBASE.TabIndex = 136;
             // 
-            // panel12
-            // 
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.EventWriteButton);
-            this.panel12.Controls.Add(this.SKIMISH_ENDEVENT);
-            this.panel12.Controls.Add(this.JUMP_SKIMISH_ENDEVENT);
-            this.panel12.Controls.Add(this.SKIMISH_STARTEVENT);
-            this.panel12.Controls.Add(this.JUMP_SKIMISH_STARTEVENT);
-            this.panel12.Location = new System.Drawing.Point(3, 569);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(631, 95);
-            this.panel12.TabIndex = 256;
-            // 
-            // EventWriteButton
-            // 
-            this.EventWriteButton.Location = new System.Drawing.Point(451, 7);
-            this.EventWriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EventWriteButton.Name = "EventWriteButton";
-            this.EventWriteButton.Size = new System.Drawing.Size(167, 30);
-            this.EventWriteButton.TabIndex = 15;
-            this.EventWriteButton.Text = "書き込み";
-            this.EventWriteButton.UseVisualStyleBackColor = true;
-            this.EventWriteButton.Click += new System.EventHandler(this.EventWriteButton_Click);
-            // 
-            // SKIMISH_ENDEVENT
-            // 
-            this.SKIMISH_ENDEVENT.Hexadecimal = true;
-            this.SKIMISH_ENDEVENT.Location = new System.Drawing.Point(239, 65);
-            this.SKIMISH_ENDEVENT.Margin = new System.Windows.Forms.Padding(2);
-            this.SKIMISH_ENDEVENT.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.SKIMISH_ENDEVENT.Name = "SKIMISH_ENDEVENT";
-            this.SKIMISH_ENDEVENT.Size = new System.Drawing.Size(130, 25);
-            this.SKIMISH_ENDEVENT.TabIndex = 13;
-            // 
-            // JUMP_SKIMISH_ENDEVENT
-            // 
-            this.JUMP_SKIMISH_ENDEVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.JUMP_SKIMISH_ENDEVENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JUMP_SKIMISH_ENDEVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_SKIMISH_ENDEVENT.Location = new System.Drawing.Point(-1, 62);
-            this.JUMP_SKIMISH_ENDEVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.JUMP_SKIMISH_ENDEVENT.Name = "JUMP_SKIMISH_ENDEVENT";
-            this.JUMP_SKIMISH_ENDEVENT.Size = new System.Drawing.Size(234, 30);
-            this.JUMP_SKIMISH_ENDEVENT.TabIndex = 11;
-            this.JUMP_SKIMISH_ENDEVENT.Text = "フリーマップ終了イベント";
-            this.JUMP_SKIMISH_ENDEVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.JUMP_SKIMISH_ENDEVENT.Click += new System.EventHandler(this.JUMP_SKIMISH_ENDEVENT_Click);
-            // 
-            // SKIMISH_STARTEVENT
-            // 
-            this.SKIMISH_STARTEVENT.Hexadecimal = true;
-            this.SKIMISH_STARTEVENT.Location = new System.Drawing.Point(239, 37);
-            this.SKIMISH_STARTEVENT.Margin = new System.Windows.Forms.Padding(2);
-            this.SKIMISH_STARTEVENT.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.SKIMISH_STARTEVENT.Name = "SKIMISH_STARTEVENT";
-            this.SKIMISH_STARTEVENT.Size = new System.Drawing.Size(130, 25);
-            this.SKIMISH_STARTEVENT.TabIndex = 10;
-            // 
-            // JUMP_SKIMISH_STARTEVENT
-            // 
-            this.JUMP_SKIMISH_STARTEVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.JUMP_SKIMISH_STARTEVENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JUMP_SKIMISH_STARTEVENT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_SKIMISH_STARTEVENT.Location = new System.Drawing.Point(-1, 34);
-            this.JUMP_SKIMISH_STARTEVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.JUMP_SKIMISH_STARTEVENT.Name = "JUMP_SKIMISH_STARTEVENT";
-            this.JUMP_SKIMISH_STARTEVENT.Size = new System.Drawing.Size(234, 30);
-            this.JUMP_SKIMISH_STARTEVENT.TabIndex = 9;
-            this.JUMP_SKIMISH_STARTEVENT.Text = "フリーマップ開始イベント";
-            this.JUMP_SKIMISH_STARTEVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.JUMP_SKIMISH_STARTEVENT.Click += new System.EventHandler(this.JUMP_SKIMISH_STARTEVENT_Click);
-            // 
             // MonsterWMapProbabilityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1250,6 +1252,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_ENDEVENT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_STARTEVENT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B6)).EndInit();
@@ -1265,9 +1270,6 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).EndInit();
-            this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_ENDEVENT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKIMISH_STARTEVENT)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,0 +1,11 @@
+NAME=OPModeSelect_EliwoodEdtion_Ch11_to_Final_part2
+INFO=This image is divided into 4 parts
+
+TYPE=IMAGE
+
+WIDTH=80
+HEIGHT=8
+
+ZIMAGE_POINTER=0x418DD4//0x415F14
+PALETTE_ADDRESS=0x3FE4B8
+KEEPPALETTE=1

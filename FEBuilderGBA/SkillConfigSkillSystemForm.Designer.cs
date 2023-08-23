@@ -54,6 +54,7 @@
             this.AnimationExportButton = new System.Windows.Forms.Button();
             this.AnimationInportButton = new System.Windows.Forms.Button();
             this.AnimationPanel = new System.Windows.Forms.Panel();
+            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.X_N_JumpEditor = new System.Windows.Forms.Button();
             this.ShowZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel10 = new System.Windows.Forms.Label();
-            this.BinInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -212,6 +212,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(408, 1);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -409,6 +410,16 @@
             this.AnimationPanel.TabIndex = 120;
             this.AnimationPanel.Visible = false;
             // 
+            // BinInfo
+            // 
+            this.BinInfo.ErrorMessage = "";
+            this.BinInfo.Location = new System.Drawing.Point(324, 367);
+            this.BinInfo.Name = "BinInfo";
+            this.BinInfo.Placeholder = "";
+            this.BinInfo.ReadOnly = true;
+            this.BinInfo.Size = new System.Drawing.Size(537, 25);
+            this.BinInfo.TabIndex = 197;
+            // 
             // X_N_JumpEditor
             // 
             this.X_N_JumpEditor.Location = new System.Drawing.Point(169, 121);
@@ -597,16 +608,6 @@
             this.panel10.TabIndex = 112;
             this.panel10.Text = "アイコン";
             this.panel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BinInfo
-            // 
-            this.BinInfo.ErrorMessage = "";
-            this.BinInfo.Location = new System.Drawing.Point(324, 367);
-            this.BinInfo.Name = "BinInfo";
-            this.BinInfo.Placeholder = "";
-            this.BinInfo.ReadOnly = true;
-            this.BinInfo.Size = new System.Drawing.Size(537, 25);
-            this.BinInfo.TabIndex = 197;
             // 
             // SkillConfigSkillSystemForm
             // 

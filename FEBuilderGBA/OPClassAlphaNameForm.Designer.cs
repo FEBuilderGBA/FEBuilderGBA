@@ -547,6 +547,7 @@
             // 
             // label10
             // 
+            this.label10.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Location = new System.Drawing.Point(414, 0);
             this.label10.Name = "label10";
@@ -613,6 +614,7 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(0, 26);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);

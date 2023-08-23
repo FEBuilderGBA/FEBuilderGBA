@@ -74,6 +74,7 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.X_JUMP_STATUS_HEIGHT = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
             this.DescriptionAfterImportLabel = new FEBuilderGBA.LabelEx();
@@ -101,7 +102,6 @@
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_JUMP_STATUS_HEIGHT = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -215,6 +215,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(402, -2);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -709,6 +710,19 @@
             this.DragTargetPanel.Size = new System.Drawing.Size(872, 606);
             this.DragTargetPanel.TabIndex = 62;
             // 
+            // X_JUMP_STATUS_HEIGHT
+            // 
+            this.X_JUMP_STATUS_HEIGHT.AutoSize = true;
+            this.X_JUMP_STATUS_HEIGHT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_STATUS_HEIGHT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_STATUS_HEIGHT.Location = new System.Drawing.Point(9, 582);
+            this.X_JUMP_STATUS_HEIGHT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_STATUS_HEIGHT.Name = "X_JUMP_STATUS_HEIGHT";
+            this.X_JUMP_STATUS_HEIGHT.Size = new System.Drawing.Size(256, 18);
+            this.X_JUMP_STATUS_HEIGHT.TabIndex = 78;
+            this.X_JUMP_STATUS_HEIGHT.Text = "ステータス画面の背丈調整へJump";
+            this.X_JUMP_STATUS_HEIGHT.Click += new System.EventHandler(this.X_JUMP_STATUS_HEIGHT_Click);
+            // 
             // Comment
             // 
             this.Comment.ErrorMessage = "";
@@ -1027,19 +1041,6 @@
             this.AddressList.Size = new System.Drawing.Size(253, 646);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // X_JUMP_STATUS_HEIGHT
-            // 
-            this.X_JUMP_STATUS_HEIGHT.AutoSize = true;
-            this.X_JUMP_STATUS_HEIGHT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.X_JUMP_STATUS_HEIGHT.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_JUMP_STATUS_HEIGHT.Location = new System.Drawing.Point(9, 582);
-            this.X_JUMP_STATUS_HEIGHT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.X_JUMP_STATUS_HEIGHT.Name = "X_JUMP_STATUS_HEIGHT";
-            this.X_JUMP_STATUS_HEIGHT.Size = new System.Drawing.Size(256, 18);
-            this.X_JUMP_STATUS_HEIGHT.TabIndex = 78;
-            this.X_JUMP_STATUS_HEIGHT.Text = "ステータス画面の背丈調整へJump";
-            this.X_JUMP_STATUS_HEIGHT.Click += new System.EventHandler(this.X_JUMP_STATUS_HEIGHT_Click);
             // 
             // ImagePortraitForm
             // 

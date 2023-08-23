@@ -112,17 +112,17 @@
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
-            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N2_LabelFilter = new System.Windows.Forms.Label();
-            this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -282,6 +282,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(407, 1);
             this.label22.Name = "label22";
@@ -1142,6 +1143,18 @@
             this.panel9.Size = new System.Drawing.Size(267, 638);
             this.panel9.TabIndex = 190;
             // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(265, 580);
+            this.AddressList.TabIndex = 108;
+            // 
             // AddressListExpandsButton
             // 
             this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1164,18 +1177,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(265, 580);
-            this.AddressList.TabIndex = 108;
-            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1186,6 +1187,18 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(313, 640);
             this.panel10.TabIndex = 191;
+            // 
+            // N1_AddressList
+            // 
+            this.N1_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.N1_AddressList.FormattingEnabled = true;
+            this.N1_AddressList.IntegralHeight = false;
+            this.N1_AddressList.ItemHeight = 18;
+            this.N1_AddressList.Location = new System.Drawing.Point(0, 26);
+            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N1_AddressList.Name = "N1_AddressList";
+            this.N1_AddressList.Size = new System.Drawing.Size(311, 586);
+            this.N1_AddressList.TabIndex = 108;
             // 
             // N1_AddressListExpandsButton
             // 
@@ -1209,18 +1222,6 @@
             this.N1_LabelFilter.Text = "名前";
             this.N1_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // N1_AddressList
-            // 
-            this.N1_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.N1_AddressList.FormattingEnabled = true;
-            this.N1_AddressList.IntegralHeight = false;
-            this.N1_AddressList.ItemHeight = 18;
-            this.N1_AddressList.Location = new System.Drawing.Point(0, 26);
-            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N1_AddressList.Name = "N1_AddressList";
-            this.N1_AddressList.Size = new System.Drawing.Size(311, 586);
-            this.N1_AddressList.TabIndex = 108;
-            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1231,6 +1232,18 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(292, 637);
             this.panel11.TabIndex = 192;
+            // 
+            // N2_AddressList
+            // 
+            this.N2_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
+            this.N2_AddressList.ItemHeight = 18;
+            this.N2_AddressList.Location = new System.Drawing.Point(0, 26);
+            this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N2_AddressList.Name = "N2_AddressList";
+            this.N2_AddressList.Size = new System.Drawing.Size(290, 579);
+            this.N2_AddressList.TabIndex = 108;
             // 
             // N2_AddressListExpandsButton
             // 
@@ -1254,18 +1267,6 @@
             this.N2_LabelFilter.Text = "名前";
             this.N2_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // N2_AddressList
-            // 
-            this.N2_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.N2_AddressList.FormattingEnabled = true;
-            this.N2_AddressList.IntegralHeight = false;
-            this.N2_AddressList.ItemHeight = 18;
-            this.N2_AddressList.Location = new System.Drawing.Point(0, 26);
-            this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N2_AddressList.Name = "N2_AddressList";
-            this.N2_AddressList.Size = new System.Drawing.Size(290, 579);
-            this.N2_AddressList.TabIndex = 108;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -1287,7 +1288,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1363, 679);
+            this.tabPage1.Size = new System.Drawing.Size(1167, 679);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "撤退";
             // 

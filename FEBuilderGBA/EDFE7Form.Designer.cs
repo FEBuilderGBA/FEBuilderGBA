@@ -84,13 +84,13 @@
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
-            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N2_LabelFilter = new System.Windows.Forms.Label();
-            this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label23 = new System.Windows.Forms.Label();
             this.N3_Address = new System.Windows.Forms.NumericUpDown();
             this.N3_WriteButton = new System.Windows.Forms.Button();
@@ -122,8 +122,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.N4_ReloadListButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -152,6 +150,8 @@
             this.N4_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N4_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N4_LabelFilter = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_L_0_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_D4)).BeginInit();
@@ -190,8 +190,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N4_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N4_ReadStartAddress)).BeginInit();
@@ -204,6 +202,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.N4_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N4_B0)).BeginInit();
             this.panel15.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -414,6 +414,7 @@
             // 
             // label13
             // 
+            this.label13.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Location = new System.Drawing.Point(412, 1);
             this.label13.Name = "label13";
@@ -802,6 +803,7 @@
             // 
             // label19
             // 
+            this.label19.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.Location = new System.Drawing.Point(444, 0);
             this.label19.Name = "label19";
@@ -853,6 +855,18 @@
             this.panel10.Size = new System.Drawing.Size(313, 637);
             this.panel10.TabIndex = 191;
             // 
+            // N1_AddressList
+            // 
+            this.N1_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.N1_AddressList.FormattingEnabled = true;
+            this.N1_AddressList.IntegralHeight = false;
+            this.N1_AddressList.ItemHeight = 18;
+            this.N1_AddressList.Location = new System.Drawing.Point(0, 26);
+            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N1_AddressList.Name = "N1_AddressList";
+            this.N1_AddressList.Size = new System.Drawing.Size(311, 579);
+            this.N1_AddressList.TabIndex = 108;
+            // 
             // N1_AddressListExpandsButton
             // 
             this.N1_AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -875,18 +889,6 @@
             this.N1_LabelFilter.Text = "名前";
             this.N1_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // N1_AddressList
-            // 
-            this.N1_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.N1_AddressList.FormattingEnabled = true;
-            this.N1_AddressList.IntegralHeight = false;
-            this.N1_AddressList.ItemHeight = 18;
-            this.N1_AddressList.Location = new System.Drawing.Point(0, 26);
-            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N1_AddressList.Name = "N1_AddressList";
-            this.N1_AddressList.Size = new System.Drawing.Size(311, 579);
-            this.N1_AddressList.TabIndex = 108;
-            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -897,6 +899,18 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(298, 641);
             this.panel11.TabIndex = 192;
+            // 
+            // N2_AddressList
+            // 
+            this.N2_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
+            this.N2_AddressList.ItemHeight = 18;
+            this.N2_AddressList.Location = new System.Drawing.Point(0, 30);
+            this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N2_AddressList.Name = "N2_AddressList";
+            this.N2_AddressList.Size = new System.Drawing.Size(296, 579);
+            this.N2_AddressList.TabIndex = 108;
             // 
             // N2_AddressListExpandsButton
             // 
@@ -919,18 +933,6 @@
             this.N2_LabelFilter.TabIndex = 107;
             this.N2_LabelFilter.Text = "名前";
             this.N2_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // N2_AddressList
-            // 
-            this.N2_AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.N2_AddressList.FormattingEnabled = true;
-            this.N2_AddressList.IntegralHeight = false;
-            this.N2_AddressList.ItemHeight = 18;
-            this.N2_AddressList.Location = new System.Drawing.Point(0, 30);
-            this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N2_AddressList.Name = "N2_AddressList";
-            this.N2_AddressList.Size = new System.Drawing.Size(296, 579);
-            this.N2_AddressList.TabIndex = 108;
             // 
             // label23
             // 
@@ -966,6 +968,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(407, 1);
             this.label22.Name = "label22";
@@ -1292,32 +1295,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "撤退";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.panel4);
-            this.tabPage3.Controls.Add(this.panel10);
-            this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1189, 679);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "通り名";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.panel7);
-            this.tabPage4.Controls.Add(this.panel11);
-            this.tabPage4.Controls.Add(this.panel8);
-            this.tabPage4.Controls.Add(this.panel6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1189, 679);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "その後";
-            // 
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1430,6 +1407,7 @@
             // 
             // label8
             // 
+            this.label8.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Location = new System.Drawing.Point(407, 1);
             this.label8.Name = "label8";
@@ -1637,6 +1615,32 @@
             this.N4_LabelFilter.Text = "名前";
             this.N4_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.panel4);
+            this.tabPage3.Controls.Add(this.panel10);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1189, 679);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "通り名";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.panel7);
+            this.tabPage4.Controls.Add(this.panel11);
+            this.tabPage4.Controls.Add(this.panel8);
+            this.tabPage4.Controls.Add(this.panel6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1189, 679);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "その後";
+            // 
             // EDFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1692,8 +1696,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N4_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N4_ReadStartAddress)).EndInit();
@@ -1708,6 +1710,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.N4_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N4_B0)).EndInit();
             this.panel15.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

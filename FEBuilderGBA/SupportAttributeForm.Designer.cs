@@ -43,6 +43,8 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.L_0_ATTRIBUTEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B7 = new System.Windows.Forms.NumericUpDown();
             this.J_7 = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -165,7 +165,7 @@
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(321, 5);
+            this.BlockSize.Location = new System.Drawing.Point(321, 3);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
             this.BlockSize.Placeholder = "";
@@ -196,6 +196,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(407, -1);
             this.label22.Name = "label22";
@@ -261,8 +262,29 @@
             this.panel2.Location = new System.Drawing.Point(291, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 344);
+            this.panel2.Size = new System.Drawing.Size(855, 382);
             this.panel2.TabIndex = 54;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(180, 190);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(256, 25);
+            this.Comment.TabIndex = 198;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(44, 187);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 31);
+            this.label4.TabIndex = 197;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_ATTRIBUTEICON
             // 
@@ -433,7 +455,7 @@
             this.panel3.Controls.Add(this.LabelFilter);
             this.panel3.Location = new System.Drawing.Point(13, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(272, 379);
+            this.panel3.Size = new System.Drawing.Size(272, 417);
             this.panel3.TabIndex = 82;
             // 
             // AddressList
@@ -445,13 +467,13 @@
             this.AddressList.Location = new System.Drawing.Point(0, 33);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(270, 314);
+            this.AddressList.Size = new System.Drawing.Size(270, 352);
             this.AddressList.TabIndex = 108;
             // 
             // AddressListExpandsButton
             // 
             this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 347);
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 385);
             this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
             this.AddressListExpandsButton.Size = new System.Drawing.Size(270, 30);
@@ -471,33 +493,12 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(180, 190);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(256, 25);
-            this.Comment.TabIndex = 198;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(44, 187);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 31);
-            this.label4.TabIndex = 197;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SupportAttributeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1153, 431);
+            this.ClientSize = new System.Drawing.Size(1153, 459);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AddressPanel);

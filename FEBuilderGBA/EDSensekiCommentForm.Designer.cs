@@ -33,7 +33,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
             this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_12_TEXT_CONVERSATION = new FEBuilderGBA.TextBoxEx();
@@ -87,7 +87,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(371, 1);
             this.ReadCount.Name = "ReadCount";
             this.ReadCount.Size = new System.Drawing.Size(78, 25);
@@ -129,6 +128,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -388,6 +388,7 @@
             // 
             // label22
             // 
+            this.label22.AccessibleDescription = "@SELECTION_ADDRESS";
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.Location = new System.Drawing.Point(414, 0);
             this.label22.Name = "label22";

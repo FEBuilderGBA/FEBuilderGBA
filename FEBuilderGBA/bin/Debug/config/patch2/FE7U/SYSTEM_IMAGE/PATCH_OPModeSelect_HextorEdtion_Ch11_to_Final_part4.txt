@@ -1,0 +1,11 @@
+NAME=OPModeSelect_HextorEdtion_Ch11_to_Final_part4
+INFO=This image is divided into 4 parts
+
+TYPE=IMAGE
+
+WIDTH=24
+HEIGHT=8
+
+ZIMAGE_POINTER=0x418DEC//0x416220
+PALETTE_ADDRESS=0x3FE4B8
+KEEPPALETTE=1
