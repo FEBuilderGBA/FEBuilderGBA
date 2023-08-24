@@ -2945,6 +2945,14 @@ namespace FEBuilderGBA
             {
                 return R._("スキル拡張のカスタムビルドを行います。") + GetForHighLevelUser();
             }
+            if (name == "MapMiniMapTerrainImageButton")
+            {
+                return R._("スタートボタンを押したときに表示されるミニマップの地形データの設定を行います。");
+            }
+            if (name == "ImageMapActionButton")
+            {
+                return R._("マップアニメ時の攻撃モーションの設定を行います。\r\nこの機能を使うには、Vesly's Draw Patchが必要になります。");
+            }
 
             return "";
         }

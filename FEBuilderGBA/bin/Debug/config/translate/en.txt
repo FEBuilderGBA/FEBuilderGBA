@@ -6937,6 +6937,12 @@ Display the UnitAction table.\r\nThe UnitAction table is a table that defines th
 :スキル拡張のカスタムビルドを行います。
 Perform a custom build of the skill extension.
 
+:スタートボタンを押したときに表示されるミニマップの地形データの設定を行います。
+Set the terrain data of the minimap that is displayed when you press the start button.
+
+:マップアニメ時の攻撃モーションの設定を行います。\r\nこの機能を使うには、Vesly's Draw Patchが必要になります。
+Set the attack motion during map animation.\r\nYou will need Vesly's Draw Patch to use this feature.
+
 :ファイルが見つかりません
 File not found
 

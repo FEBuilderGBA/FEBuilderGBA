@@ -1,0 +1,17 @@
+NAME=魔王の呼魔で召喚される敵のレベルの設定方法
+INFO=バニラでは、パッチ「魔王召喚によって召喚されるモンスター・ユニットの基本レベル」で指定されたレベルが召喚リストの項目に加算される。このパッチを使用することで、この値を加算ではなく固定にし、すべての召喚獣がパッチで指定されたレベルを持つようにすることができます。
+NAME.en=Demon King summon level type
+INFO.en=In vanilla, the level specified by the patch "Base level of monster units summoned by demon king summons" is added to the summon list entry. You can use this patch to make it so the value is fixed instead of additive, making all summons have the level specified in the patch.
+NAME.zh=Demon King summon level type
+INFO.zh=In vanilla, the level specified by the patch "Base level of monster units summoned by demon king summons" is added to the summon list entry. You can use this patch to make it so the value is fixed instead of additive, making all summons have the level specified in the patch.
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1144301221885259819
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Default(Additive)|ADD|Fixed|FIX
+
+ADD:0x7B2ED=0x30
+
+FIX:0x7B2ED=0x20
