@@ -7208,7 +7208,7 @@ Terrain cost
 (Not all units)
 
 :座標 X:{0} Y:{1}
-CoordinateX: {0}Y: {1}
+Coordinate X: {0} Y: {1}
 
 :タイルを選択する
 Select tile
