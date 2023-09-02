@@ -56,3 +56,4 @@
 @0080@000F	右奥へ移動[MoveFarRight]	{MOVE_LOAD}
 @0080@0010	左画面外へ移動[MoveFarFarLeft]	{MOVE_LOAD}
 @0080@0011	右画面外へ移動[MoveFarFarRight]	{MOVE_LOAD}
+@0016・・・@0004@0016	Beat[ToggleMouthMove]...[....][ToggleMouthMove]	{MACRO}

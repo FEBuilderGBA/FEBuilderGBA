@@ -56,3 +56,4 @@
 @0080@000F	移到最右边[MoveFarRight]	{MOVE_LOAD}
 @0080@0010	移动到左侧屏幕外[MoveFarFarLeft]	{MOVE_LOAD}
 @0080@0011	移动到右侧屏幕之外[MoveFarFarRight]	{MOVE_LOAD}
+@0016・・・@0004@0016	Beat[ToggleMouthMove]...[....][ToggleMouthMove]	{MACRO}
