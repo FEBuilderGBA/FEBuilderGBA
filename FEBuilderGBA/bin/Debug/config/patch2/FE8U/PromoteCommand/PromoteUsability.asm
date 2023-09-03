@@ -18,6 +18,7 @@
 @.equ CheckEventId, 0x080860D0	@{J}
 .equ gChapterData, 0x0202BCF0	@{U}
 @.equ gChapterData, 0x0202BCEC	@{J}
+
 push {r4-r6, lr}
 
 mov r6, #3 @ False. Default - Menu false usability is 3 

@@ -24,7 +24,7 @@ cmp r3, #0
 beq Break
 ldr r2, =MemorySlot 
 ldr r0, [r2, #0x4*3] @ s3 
-strh r0, [r3, #0x1E] @ Item slot 1 
+strh r0, [r3, #0x26] @ Item slot 1 
 
 Break: 
 
