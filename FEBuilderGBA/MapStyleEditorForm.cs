@@ -152,6 +152,8 @@ namespace FEBuilderGBA
             RedrawMAPCHIPLIST();
             newbitmap.Dispose();
 
+            SelectedChipset_Update();
+
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, true);
             return true;
         }
