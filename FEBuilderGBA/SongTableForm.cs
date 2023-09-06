@@ -207,11 +207,11 @@ namespace FEBuilderGBA
             }
             else if (type == "SFX")
             {
-                if (playerType >= 0x00030003)
+                if (playerType >= 0x00020002)
                 {
                     return ""; //OK
                 }
-                return R._("警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}", U.To0xHexString(playerType));
+                return R._("警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00020002より大きい値を指定する必要があります。\r\n現在の設定:{0}", U.To0xHexString(playerType));
             }
             return "";
         }

@@ -10942,8 +10942,8 @@ Wave Import
 :警告\r\nマップで再生する音楽は、SongTableのPriority(PlayerType)で、0x00010001を指定する必要があります。\r\n現在の設定:{0}
 ALERT\r\nThe map BGM must be set to 0x00010001 priority in the song table.\r\nThe current setting is: {0}.
 
-:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
-ALERT\r\nThe sound effects must specify a priority greater than 0x00030003 in the song table.\r\nThe current setting is:  {0}.
+:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00020002より大きい値を指定する必要があります。\r\n現在の設定:{0}
+ALERT\r\nThe sound effects must specify a priority greater than 0x00020002 in the song table.\r\nThe current setting is:  {0}.
 
 :ソングテーブルが極端に少ないです。破損している可能性があります。
 Song table is extremely small. It may be damaged.

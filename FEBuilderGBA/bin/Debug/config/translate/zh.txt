@@ -10942,8 +10942,8 @@ DPCM 压缩
 :警告\r\nマップで再生する音楽は、SongTableのPriority(PlayerType)で、0x00010001を指定する必要があります。\r\n現在の設定:{0}
 警报\r\n要在地图上播放的音乐必须是SongTable的优先级（PlayerType），并且必须指定0x00010001。\r\n当前设置:{0}
 
-:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
-警报\r\n用于音效的音乐需要在SongTable的Priority（PlayerType）中指定大于0x00030003的值。\r\n当前设置:{0}。
+:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00020002より大きい値を指定する必要があります。\r\n現在の設定:{0}
+警报\r\n用于音效的音乐需要在SongTable的Priority（PlayerType）中指定大于0x00020002的值。\r\n当前设置:{0}。
 
 :ソングテーブルが極端に少ないです。破損している可能性があります。
 歌曲表很少。它可能已损坏。
