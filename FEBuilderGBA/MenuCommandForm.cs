@@ -444,6 +444,11 @@ namespace FEBuilderGBA
                 eearg.OldDataCount = ifr.DataCount;
                 eearg.BlockSize = ifr.BlockSize;
 
+                if (ifr.DataCount >= newdatacount)
+                {
+                    return ifr.BaseAddress;
+                }
+
                 newaddr = ifr.ExpandsArea(form, newdatacount, undodata, pointer);
                 if (newaddr == U.NOT_FOUND)
                 {
