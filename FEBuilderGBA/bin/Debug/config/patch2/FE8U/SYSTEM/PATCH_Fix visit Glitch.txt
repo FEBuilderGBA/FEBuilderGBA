@@ -1,0 +1,19 @@
+NAME=訪問した時に、タイル変化がないとフリーズするバグを修正
+NAME.en=Fixed a bug that caused the system to freeze if no tile change was made when visit
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFFF|Fixed|FIXX
+
+DETERMINATION_ADDRESS=0x0d2a8
+
+OFFF:0xd2a8=0x24 0x04 0x24 0x0C
+FIXX:0xd2a8=0xFF 0x28 0x08 0xDC
+
+AUTHOR=7743
+INFO=このパッチは村に"訪問"コマンドを利用した時に、タイル変化が設定されていないとクラッシュするバグを修正します。
+INFO.en=This patch fixes a bug that would cause a crash when using the "Visit" command on a village if tile changes were not set.
+NAME.zh=修复了一个错误，如果访问时没有更改图块，该错误会导致网站冻结。
+INFO.zh=此补丁修复了一个错误，如果未设置图块更改，则在村庄上使用“访问”命令时会导致崩溃。
