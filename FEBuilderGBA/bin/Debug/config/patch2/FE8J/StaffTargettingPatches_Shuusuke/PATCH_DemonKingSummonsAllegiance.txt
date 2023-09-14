@@ -1,7 +1,7 @@
 NAME=魔王召喚で呼び出されるユニットの所属
 NAME.en=Allegiance of demon king summons
 NAME.z=Allegiance of demon king summons
-INFO=魔王の召喚で呼び出されるユニットの所属を変えます。バニラでは、常に敵軍に固定されています。
+INFO=魔王の召喚(呼魔)で呼び出されるユニットの所属を変えます。バニラでは、常に敵軍に固定されています。
 INFO.en=Change the allegiance of demon king summons
 INFO.zh=Change the allegiance of demon king summons
 AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1089308174017888366

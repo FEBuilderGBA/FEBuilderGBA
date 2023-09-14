@@ -15482,3 +15482,5 @@
 080A980C	DeleteSaveSlot	@r0=SlotID	{J}
 08011184	GenSomeLongPopupText	{J}
 08011548	SetPopupItem	{J}
+080af28c	セーブスロットを選択していることを表す白い点灯のパレットアニメーション	{J}
+080AA7AC	セーブスロットを選択していることを表す白い点灯のパレットアニメーション	{U}

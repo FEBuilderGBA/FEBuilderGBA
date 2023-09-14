@@ -1,0 +1,17 @@
+NAME=セーブスロット 選択していることを表す白い点灯のパレットアニメーション
+
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+POINTER=0xAA7E0
+DATASIZE=2
+DATACOUNT=16
+
+LISTNAME=$W0:PALETTE
+W0:PALETTE=color
+
+INFO=セーブスロット等の現在選択していることを示す白いパレットアニメーションのデータです。\r\nセーブスロットの他にも、「記録から始める」などの画面にも利用されます。
+NAME.en=Save slot Palette animation with white lights to indicate selection
+INFO.en=This is white palette animation data that shows what is currently selected, such as a save slot.\r\nIn addition to the save slot, it is also used for screens such as "Restart Game".
+NAME.en=Save slot Palette animation with white lights to indicate selection
+INFO.en=This is white palette animation data that shows what is currently selected, such as a save slot.\r\nIn addition to the save slot, it is also used for screens such as "Restart Game".

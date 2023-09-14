@@ -15482,3 +15482,6 @@ r3=X tile position of menu of the right	{U}
 080A980C	DeleteSaveSlot	@r0=SlotID	{J}
 08011184	GenSomeLongPopupText	{J}
 
+08011548	SetPopupItem	{J}
+080af28c	亮起的白色调色板动画表示已选择保存槽。	{J}
+080AA7AC	亮起的白色调色板动画表示已选择保存槽。	{U}
