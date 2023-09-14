@@ -1,0 +1,18 @@
+NAME=バサークの杖のターゲット(Allegiance)
+NAME.en=Berserk Staff Target (Allegiance)
+NAME.zh=Berserk Staff Target (Allegiance)
+INFO=バニラでは、バサーク杖(バーサク杖)を持ったユニットが協力関係にない場合、そのユニットを対象にすることができます。このパッチにより、プレイヤーは異なる所属を持つユニットだけをターゲットにしたり、任意のユニットをターゲットにしたりできるようになります。これはプレイヤーの杖の使い方にのみ影響し、AIの使い方は変更されません。
+INFO.en=In vanilla you can target a unit with the Berserk staff if the unit is not allied. This patch can allow the player to target only units with a different allegiance, or any unit. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+INFO.zh=In vanilla you can target a unit with the Berserk staff if the unit is not allied. This patch can allow the player to target only units with a different allegiance, or any unit. This only affects the player's usage of the staff, it doesn't change the AI's usage.
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/725478895226191892/1105250445401792533
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Cannot target allied units|ALLY|Cannot target units with the same allegiance|SAME|Can target any unit regardless of allegiance|ANY
+
+ALLY:0x2614E=0xFE 0xF7 0xF5 0xFD
+
+SAME:0x2614E=0xFE 0xF7 0x01 0xFE
+
+ANY:0x2614E=0x00 0x20 0xC0 0x46

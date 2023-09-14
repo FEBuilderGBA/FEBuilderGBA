@@ -498,7 +498,11 @@ namespace FEBuilderGBA
             vanilla_plain_image_address = 0x174C50; 
             map_minimap_tile_array_pointer = 0xAC44C;  //minimapのチップ割り当て
             bg_reserve_black_bgid = 0x4f; 
-            bg_reserve_random_bgid = 0x51; 
+            bg_reserve_random_bgid = 0x51;
+
+            worldmap_node_armory_empty_address = 0x8AC2978;  // ワールドマップ拠点での武器屋のnullアドレス
+            worldmap_node_vendor_empty_address = 0x8AC2A3C;  // ワールドマップ拠点での道具屋のnullアドレス
+            worldmap_node_secret_empty_address = 0x8AC2B2E;  // ワールドマップ拠点での秘密の店のnullアドレス
 
             extends_address = 0x09000000;   //拡張領域
             orignal_crc32 = 0x9d76826f;  //無改造ROMのCRC32

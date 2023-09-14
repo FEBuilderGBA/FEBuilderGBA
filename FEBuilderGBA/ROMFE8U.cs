@@ -450,6 +450,10 @@ namespace FEBuilderGBA
            bg_reserve_black_bgid = 0x35; 
            bg_reserve_random_bgid = 0x37; 
 
+           worldmap_node_armory_empty_address = 0x8A3EFB4;  // ワールドマップ拠点での武器屋のnullアドレス
+           worldmap_node_vendor_empty_address = 0x8A3F078;  // ワールドマップ拠点での道具屋のnullアドレス
+           worldmap_node_secret_empty_address = 0x8A3F16A;  // ワールドマップ拠点での秘密の店のnullアドレス
+
            extends_address = 0x09000000;   //拡張領域
            orignal_crc32 = 0xa47246ae;  //無改造ROMのCRC32
            is_multibyte = false;     // マルチバイトを利用するか？

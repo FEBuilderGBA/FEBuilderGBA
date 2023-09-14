@@ -13645,6 +13645,15 @@ The map which is loaded when this location is moved and a chapter is started.\r\
 :章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。
 This is the destination which you will go to when ChapterID is completed.\r\nDifferent destinations can be specified for Ephraim and Eirika's modes, and Event Conditional Flags can be used to specify 2 more destinations.\r\nA value of 0xFF means there is no "next chapter" (used for Tower, Ruins, Melkaen Coast).\r\n*To make the node visitable any number of times (like the Tower or Ruins),\r\n"Next Location" value must be 0xFF and "Placement Flag" value must be 0x03.
 
+:この拠点で利用できる武器屋の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。
+Specifies the items for sale at the Armory shop available at this base.\r\nIf you do not want to display the store, please select an empty list ({0}) etc.
+
+:この拠点で利用できる道具屋の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。
+Specifies the items for sale at the Vendor shop that can be used at this base.\r\nIf you do not want to display the store, please select an empty list ({0}) etc.
+
+:この拠点で利用できる秘密の店の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。
+Specifies the items for sale in the secret shop available at this base.\r\nIf you do not want to display the store, please select an empty list ({0}) etc.
+
 :この座標はカーソルで選択しにくい可能性があります。\r\nカーソルは16ドット単位で移動します。\r\nそのため、16ドットより幅が小さいオブジェクトは、設置位地を調整する必要があります。
 This coordinate may be difficult to select with the cursor.\r\nThe cursor moves per 16-pixel movements.\r\nTherefore, objects smaller than 16 pixels need adjustments.
 

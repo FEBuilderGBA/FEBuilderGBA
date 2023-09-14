@@ -447,6 +447,10 @@ namespace FEBuilderGBA
         public uint itemicon_vanilla_address { get; protected set; } // バニラのアイテムアイコンアドレス
         public uint class_vanilla_address { get; protected set; } // バニラのクラスアドレス
 
+        public int worldmap_node_armory_empty_address { get; protected set; }    // ワールドマップ拠点での武器屋のnullアドレス
+        public int worldmap_node_vendor_empty_address { get; protected set; }    // ワールドマップ拠点での道具屋のnullアドレス
+        public int worldmap_node_secret_empty_address { get; protected set; }    // ワールドマップ拠点での秘密の店のnullアドレス
+
         public uint extends_address { get; protected set; } //拡張領域
         public uint orignal_crc32 { get; protected set; } //無改造ROMのCRC32
         public bool is_multibyte { get; protected set; }    // マルチバイトを利用するか？

@@ -209,6 +209,10 @@ namespace FEBuilderGBA
               J_4_MAP.AccessibleDescription = R._("この拠点の場所に移動して、章を開始したときにロードされるマップを指定します。\r\nまた、ワールドマップから読み込まれたときに呼び出される、ワールドマップイベントテーブルの参照位置にも関係します。");
               J_6_FLAG.AccessibleDescription = R._("もし、イベント分岐用フラグが、TRUEであれば、2回目が評価されます。\r\n例えば、主人公がエイリークで、イベント分岐用フラグがTRUEであれば、次の拠点ID(エイリーク2回目)が利用されます。");
               J_8.AccessibleDescription = R._("章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。");
+
+              J_12_ITEMSHOP.AccessibleDescription = R._("この拠点で利用できる武器屋の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。", U.ToHexString(Program.ROM.RomInfo.worldmap_node_armory_empty_address));
+              J_16_ITEMSHOP.AccessibleDescription = R._("この拠点で利用できる道具屋の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。", U.ToHexString(Program.ROM.RomInfo.worldmap_node_vendor_empty_address));
+              J_20_ITEMSHOP.AccessibleDescription = R._("この拠点で利用できる秘密の店の売り物を指定します。\r\nもし店を表示したくない場合は、空のリスト ({0})などを選択してください。", U.ToHexString(Program.ROM.RomInfo.worldmap_node_secret_empty_address));
         }
         private void W24_ValueChanged(object sender, EventArgs e)
         {
