@@ -9858,7 +9858,7 @@ r3=X tile position of menu of right	{U}
 08018858	MapMain_UpdateUnitStatus	{U}
 08018BA0	GetRedTeamUseFlags	{U}
 08019CBC	InitMapChangeGraphics	{U}
-0801A640	GenerateMovementInstructionsToPoint	{U}
+0801A640	GenerateBestMovementScript	{U}
 0801A82C	ProcessUnitMovement	{U}
 0801A8E4	MapMovementMarkMovementEdges	{U}
 0801A9D0	MapMarkMovementEdges	{U}
@@ -10815,7 +10815,7 @@ r3=X tile position of menu of right	{U}
 0801856C	MapMain_UpdateUnitStatus	{J}
 080188B4	GetRedTeamUseFlags	{J}
 08019994	InitMapChangeGraphics	{J}
-0801a304	GenerateMovementInstructionsToPoint	{J}
+0801a304	GenerateBestMovementScript	{J}
 0801a508	ProcessUnitMovement	{J}
 0801A5C0	MapMovementMarkMovementEdges	{J}
 0801A5C0	MapMarkMovementEdges	{J}

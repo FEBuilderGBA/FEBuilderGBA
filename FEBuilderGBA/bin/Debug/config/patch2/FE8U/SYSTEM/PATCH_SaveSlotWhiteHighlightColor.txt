@@ -15,3 +15,5 @@ NAME.en=Save slot Palette animation with white lights to indicate selection
 INFO.en=This is white palette animation data that shows what is currently selected, such as a save slot.\r\nIn addition to the save slot, it is also used for screens such as "Restart Game".
 NAME.en=Save slot Palette animation with white lights to indicate selection
 INFO.en=This is white palette animation data that shows what is currently selected, such as a save slot.\r\nIn addition to the save slot, it is also used for screens such as "Restart Game".
+NAME.zh=保存槽 亮起的白色调色板动画表明它已被选中。
+INFO.zh=这是白色调色板动画数据，显示当前选择的内容，例如保存槽。\r\n除了保存槽之外，它还用于“从录制开始”等屏幕。
