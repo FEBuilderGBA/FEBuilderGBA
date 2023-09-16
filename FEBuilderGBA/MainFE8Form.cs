@@ -756,7 +756,7 @@ namespace FEBuilderGBA
 
         private void WelcomeDialogButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<WelcomeForm>();
+            MainFormUtil.RunToolWelcomeDialog();
         }
 
         private void StatusParamButton_Click(object sender, EventArgs e)

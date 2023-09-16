@@ -33,6 +33,26 @@ namespace FEBuilderGBA
             VersionLabel.Text = "Ver:" + U.getVersion();
 #endif
             AllowDropFilename();
+
+            this.LANG_EN_Label.Text = "English"; ///No Translate
+            this.LANG_JP_Label.Text = "日本語"; ///No Translate
+            this.LANG_ZH_Label.Text = "中文"; ///No Translate
+            InputFormRef.markupJumpLabel(this.LANG_EN_Label);
+            InputFormRef.markupJumpLabel(this.LANG_JP_Label);
+            InputFormRef.markupJumpLabel(this.LANG_ZH_Label);
+        }
+
+        void CloseAndResetInstance()
+        {
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                OptionForm.ClearCache();
+
+                OptionForm f = new OptionForm();
+                f.AutoClose(0);
+            }
+            this.DialogResult = System.Windows.Forms.DialogResult.Retry;
+            this.Close();
         }
 
         void AllowDropFilename()
@@ -122,6 +142,24 @@ namespace FEBuilderGBA
             {//初期設定がされていない場合は、ウィザードを起動する.
                 MainFormUtil.RunToolInitWizard();
             }
+        }
+
+        private void LANG_EN_Label_Click(object sender, EventArgs e)
+        {
+            Program.Config["func_lang"] = "en";
+            CloseAndResetInstance();
+        }
+
+        private void LANG_JP_Label_Click(object sender, EventArgs e)
+        {
+            Program.Config["func_lang"] = "ja";
+            CloseAndResetInstance();
+        }
+
+        private void LANG_ZH_Label_Click(object sender, EventArgs e)
+        {
+            Program.Config["func_lang"] = "zh";
+            CloseAndResetInstance();
         }
     }
 }

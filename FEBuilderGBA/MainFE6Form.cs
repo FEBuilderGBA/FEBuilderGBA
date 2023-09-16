@@ -637,7 +637,7 @@ namespace FEBuilderGBA
 
         private void WelcomeDialogButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<WelcomeForm>();
+            MainFormUtil.RunToolWelcomeDialog();
         }
 
         private void DIffDebugToolStripMenuItem_Click(object sender, EventArgs e)

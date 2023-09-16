@@ -3065,6 +3065,19 @@ namespace FEBuilderGBA
             }
             while (true);
         }
+        public static void RunToolWelcomeDialog()
+        {
+            do
+            {
+                WelcomeForm f = (WelcomeForm)InputFormRef.JumpFormLow<WelcomeForm>();
+                DialogResult dr = f.ShowDialog();
+                if (dr != DialogResult.Retry)
+                {
+                    break;
+                }
+            }
+            while (true);
+        }
         static bool IsSorceCodeExits(string srccode_filename)
         {
             if (!File.Exists(srccode_filename))

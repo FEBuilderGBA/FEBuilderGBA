@@ -64,7 +64,17 @@ namespace FEBuilderGBA
                 {//ROMが読み込めない場合、welcomeダイアログを出す.
                     WelcomeForm.CheckInitWizard();
 
-                    f.ShowDialog();
+                    do
+                    {
+                        DialogResult dr = f.ShowDialog();
+                        if (dr != DialogResult.Retry)
+                        {
+                            break;
+                        }
+                        f = (WelcomeForm)InputFormRef.JumpFormLow<WelcomeForm>();
+                    }
+                    while (true);
+
                     if (Program.ROM == null)
                     {//それでもROMが読み込めない場合、終了.
                         return;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.VersionLabel = new System.Windows.Forms.TextBox();
             this.ManButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.OpenLastROMButton = new System.Windows.Forms.Button();
@@ -39,12 +38,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.VersionLabel = new System.Windows.Forms.TextBox();
+            this.LANG_ZH_Label = new System.Windows.Forms.Label();
+            this.LANG_JP_Label = new System.Windows.Forms.Label();
+            this.LANG_EN_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LANG_ZH_Label);
+            this.panel1.Controls.Add(this.LANG_JP_Label);
+            this.panel1.Controls.Add(this.LANG_EN_Label);
             this.panel1.Controls.Add(this.VersionLabel);
             this.panel1.Controls.Add(this.ManButton);
             this.panel1.Controls.Add(this.label3);
@@ -59,17 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1128, 529);
             this.panel1.TabIndex = 1;
-            // 
-            // VersionLabel
-            // 
-            this.VersionLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.VersionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.VersionLabel.Location = new System.Drawing.Point(924, 235);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.ReadOnly = true;
-            this.VersionLabel.Size = new System.Drawing.Size(193, 18);
-            this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Ver:";
             // 
             // ManButton
             // 
@@ -157,6 +152,47 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // VersionLabel
+            // 
+            this.VersionLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.VersionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VersionLabel.Location = new System.Drawing.Point(924, 225);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.ReadOnly = true;
+            this.VersionLabel.Size = new System.Drawing.Size(193, 18);
+            this.VersionLabel.TabIndex = 9;
+            this.VersionLabel.Text = "Ver:";
+            // 
+            // LANG_ZH_Label
+            // 
+            this.LANG_ZH_Label.AutoSize = true;
+            this.LANG_ZH_Label.Location = new System.Drawing.Point(1060, 255);
+            this.LANG_ZH_Label.Name = "LANG_ZH_Label";
+            this.LANG_ZH_Label.Size = new System.Drawing.Size(30, 18);
+            this.LANG_ZH_Label.TabIndex = 29;
+            this.LANG_ZH_Label.Text = "ZH";
+            this.LANG_ZH_Label.Click += new System.EventHandler(this.LANG_ZH_Label_Click);
+            // 
+            // LANG_JP_Label
+            // 
+            this.LANG_JP_Label.AutoSize = true;
+            this.LANG_JP_Label.Location = new System.Drawing.Point(995, 255);
+            this.LANG_JP_Label.Name = "LANG_JP_Label";
+            this.LANG_JP_Label.Size = new System.Drawing.Size(29, 18);
+            this.LANG_JP_Label.TabIndex = 28;
+            this.LANG_JP_Label.Text = "JP";
+            this.LANG_JP_Label.Click += new System.EventHandler(this.LANG_JP_Label_Click);
+            // 
+            // LANG_EN_Label
+            // 
+            this.LANG_EN_Label.AutoSize = true;
+            this.LANG_EN_Label.Location = new System.Drawing.Point(923, 255);
+            this.LANG_EN_Label.Name = "LANG_EN_Label";
+            this.LANG_EN_Label.Size = new System.Drawing.Size(30, 18);
+            this.LANG_EN_Label.TabIndex = 27;
+            this.LANG_EN_Label.Text = "EN";
+            this.LANG_EN_Label.Click += new System.EventHandler(this.LANG_EN_Label_Click);
+            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -187,5 +223,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox VersionLabel;
+        private System.Windows.Forms.Label LANG_ZH_Label;
+        private System.Windows.Forms.Label LANG_JP_Label;
+        private System.Windows.Forms.Label LANG_EN_Label;
     }
 }
