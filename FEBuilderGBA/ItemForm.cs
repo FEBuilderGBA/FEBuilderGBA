@@ -395,7 +395,25 @@ namespace FEBuilderGBA
             return Program.ROM.u8(addr + 28);
         }
 
-        public static bool is3Message(uint type, bool isEquip)
+        static bool is5Message(uint type, bool isEquip)
+        {
+            if (PatchUtil.ExtendWeaponDescBox() != PatchUtil.ExtendWeaponDescBoxPatch.ExtendWeaponDescBox)
+            {
+                return false;
+            }
+
+            if (type >= 0x9)
+            {
+                return true;
+            }
+            if (isEquip)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        static bool is3Message(uint type, bool isEquip)
         {
             if (type >= 0x9)
             {
@@ -414,7 +432,11 @@ namespace FEBuilderGBA
 
         public static string ChcekTextItem1ErrorMessage(uint id, string text, uint textid, uint type, bool isEquip)
         {
-            if (is3Message(type , isEquip))
+            if (is5Message(type, isEquip))
+            {
+                return TextForm.GetErrorMessage(text, textid, "ITEM5");
+            }
+            else if (is3Message(type , isEquip))
             {
                 return TextForm.GetErrorMessage(text, textid, "ITEM3");
             }
@@ -449,7 +471,14 @@ namespace FEBuilderGBA
         }
         public static string ChcekTextItem2ErrorMessage(uint id, string text, uint textid, uint type, bool isEquip)
         {
-            return TextForm.GetErrorMessage(text,textid, "ITEM3");
+            if (is5Message(type, isEquip))
+            {
+                return TextForm.GetErrorMessage(text, textid, "ITEM5");
+            }
+            else
+            {
+                return TextForm.GetErrorMessage(text, textid, "ITEM3");
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)

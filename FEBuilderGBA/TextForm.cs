@@ -2911,13 +2911,17 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, MAX_SERIF_WIDTH, 2 * 16, false);
             }
+            if (arg1 == "ITEM1")
+            {
+                return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
+            }
             if (arg1 == "ITEM3")
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
             }
-            if (arg1 == "ITEM1")
+            if (arg1 == "ITEM5")
             {
-                return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
+                return CheckOneLineTextMessage(text, 24 * 8, 5 * 16, false);
             }
             if (arg1 == "ITEMX")
             {//とりあえず3行でチェック
