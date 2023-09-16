@@ -50,10 +50,11 @@ namespace FEBuilderGBA
             g_Cache_DeathQuoteAddKillerIDExtends = DeathQuoteAddKillerIDExtends.NoCache;
             g_Cache_NIMAP_enum = NIMAP_enum.NoCache;
             g_Cache_DrumFix_enum = DrumFix_enum.NoCache;
-            g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
+            g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatchENUN.NoCache;
             g_Cache_ExtendWeaponDescBoxPatch = ExtendWeaponDescBoxPatch.NoCache;
             g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
             g_Cache_BG256ColorPatch = BG256ColorPatch.NoCache;
+            g_Cache_FixGenerateBestMovementScriptPatch = FixGenerateBestMovementScriptENUN.NoCache;
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
         }
@@ -1248,25 +1249,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="ImprovedSoundMixer",	ver = "FE8J", addr = 0xD4234,data = new byte[]{0xb1, 0x6c, 0x00, 0x03, 0x06, 0x00}},
                 new PatchTableSt{ name="ImprovedSoundMixer",	ver = "FE8U", addr = 0xd01d0,data = new byte[]{0xb0, 0x6c, 0x00, 0x03, 0x18, 0x02}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "ImprovedSoundMixer")
-                {
-                    return ImprovedSoundMixer.ImprovedSoundMixer;
-                }
+                return ImprovedSoundMixer.ImprovedSoundMixer;
             }
             return ImprovedSoundMixer.NO;
         }
@@ -1451,25 +1436,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="2x",	ver = "FE8J", addr = 0xa8bac,data = new byte[]{0x02}},
                 new PatchTableSt{ name="2x",	ver = "FE8U", addr = 0xA4168,data = new byte[]{0x02}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "2x")
-                {
-                    return ClearTurn2x_extends._2x;
-                }
+                return ClearTurn2x_extends._2x;
             }
             return ClearTurn2x_extends.NO;
         }
@@ -1495,25 +1464,9 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="FourthAllegiance",	ver = "FE8U", addr = 0x17BDC,data = new byte[]{0xC0, 0x20, 0xF8, 0xE7}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "FourthAllegiance")
-                {
-                    return FourthAllegiance_extends.FourthAllegiance;
-                }
+                return FourthAllegiance_extends.FourthAllegiance;
             }
             return FourthAllegiance_extends.NO;
         }
@@ -2000,25 +1953,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE7U", addr = 0xBE56C,data = new byte[]{0x96, 0x02}},
                 new PatchTableSt{ name="m4a_hq_mixer",	ver = "FE6",  addr = 0x9C838,data = new byte[]{0x96, 0x02}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "m4a_hq_mixer")
-                {
-                    return Cache_m4a_hq_mixer.m4a_hq_mixer;
-                }
+                return Cache_m4a_hq_mixer.m4a_hq_mixer;
             }
             return Cache_m4a_hq_mixer.NO;
         }
@@ -2046,25 +1983,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="soundroom_over255",	ver = "FE8J", addr = 0xb449c,data = new byte[]{0x68, 0x34, 0x21, 0x88}},
                 new PatchTableSt{ name="soundroom_over255",	ver = "FE8U", addr = 0xAF87C,data = new byte[]{0x68, 0x34, 0x21, 0x88}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "soundroom_over255")
-                {
-                    return Cache_SoundRoomExpands.soundroom_over255;
-                }
+                return Cache_SoundRoomExpands.soundroom_over255;
             }
             return Cache_SoundRoomExpands.NO;
         }
@@ -2091,25 +2012,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="Extends",	ver = "FE8J", addr = 0x58D1C,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},
                 new PatchTableSt{ name="Extends",	ver = "FE8U", addr = 0x57ED0,data = new byte[]{0x00, 0xB5, 0x05, 0x4B, 0xC9, 0x00}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "Extends")
-                {
-                    return ExtendsBattleBG_extends.Extends;
-                }
+                return ExtendsBattleBG_extends.Extends;
             }
             return ExtendsBattleBG_extends.NO;
         }
@@ -2164,25 +2069,9 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="IER",	ver = "FE8U", addr = 0x28E80,data = new byte[]{0x03, 0x4B, 0x14, 0x22, 0x50, 0x43, 0x40, 0x18, 0xC0, 0x18, 0x00, 0x68, 0x70, 0x47, 0x00, 0x00}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "IER")
-                {
-                    return ItemUsingExtends.IER;
-                }
+                return ItemUsingExtends.IER;
             }
             return ItemUsingExtends.NO;
         }
@@ -2209,25 +2098,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="OPClassReelSort",	ver = "FE8J", addr = 0xB8C80,data = new byte[]{0x04, 0x4B, 0x1B, 0x68}},
                 new PatchTableSt{ name="OPClassReelSort",	ver = "FE8U", addr = 0xB40EC,data = new byte[]{0x04, 0x4B, 0x1B, 0x68}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "OPClassReelSort")
-                {
-                    return OPClassReelSortExtends.OPClassReelSort;
-                }
+                return OPClassReelSortExtends.OPClassReelSort;
             }
             return OPClassReelSortExtends.NO;
         }
@@ -2253,25 +2126,9 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="Over255",	ver = "FE8J", addr = 0xB86B0,data = new byte[]{0x59, 0x8A}},
             };
-
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "Over255")
-                {
-                    return OPClassReelAnimationIDOver255Patch.Over255;
-                }
+                return OPClassReelAnimationIDOver255Patch.Over255;
             }
             return OPClassReelAnimationIDOver255Patch.NO;
         }
@@ -2372,48 +2229,33 @@ namespace FEBuilderGBA
         }
 
         //戦闘アニメの敵モーションの動的作成
-        public enum AutoGenLeftOAMPatch
+        public enum AutoGenLeftOAMPatchENUN
         {
             NO,             //なし
             AutoGenLeftOAM,
             NoCache = (int)NO_CACHE
         };
-        static AutoGenLeftOAMPatch g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatch.NoCache;
-        public static AutoGenLeftOAMPatch AutoGenLeftOAM()
+        static AutoGenLeftOAMPatchENUN g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMPatchENUN.NoCache;
+        public static AutoGenLeftOAMPatchENUN AutoGenLeftOAM()
         {
-            if (g_Cache_AutoGenLeftOAMPatch == AutoGenLeftOAMPatch.NoCache)
+            if (g_Cache_AutoGenLeftOAMPatch == AutoGenLeftOAMPatchENUN.NoCache)
             {
                 g_Cache_AutoGenLeftOAMPatch = AutoGenLeftOAMLow();
             }
             return g_Cache_AutoGenLeftOAMPatch;
         }
-        static AutoGenLeftOAMPatch AutoGenLeftOAMLow()
+        static AutoGenLeftOAMPatchENUN AutoGenLeftOAMLow()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="AutoGenLeftOAM",	ver = "FE8J", addr = 0x05a870,data = new byte[]{0x00, 0x4B}},
                 new PatchTableSt{ name="AutoGenLeftOAM",	ver = "FE8U", addr = 0x059ACC,data = new byte[]{0x00, 0x4B}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "AutoGenLeftOAM")
-                {
-                    return AutoGenLeftOAMPatch.AutoGenLeftOAM;
-                }
+                return AutoGenLeftOAMPatchENUN.AutoGenLeftOAM;
             }
-            return AutoGenLeftOAMPatch.NO;
+            return AutoGenLeftOAMPatchENUN.NO;
         }
 
         //武器の説明欄に最大3行書けるようにする
@@ -2439,24 +2281,9 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="ExtendWeaponDescBox",	ver = "FE8U", addr = 0x354D8,data = new byte[]{0xC0, 0x42}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "ExtendWeaponDescBox")
-                {
-                    return ExtendWeaponDescBoxPatch.ExtendWeaponDescBox;
-                }
+                return ExtendWeaponDescBoxPatch.ExtendWeaponDescBox;
             }
             return ExtendWeaponDescBoxPatch.NO;
         }
@@ -2484,27 +2311,42 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="BG256Color",	ver = "FE8U", addr = 0xE2DA,data = new byte[]{0xC0, 0x46,0xC0, 0x46}},
             };
 
-            string version = Program.ROM.RomInfo.VersionToFilename;
-            foreach (PatchTableSt t in table)
+            if (SearchPatchBool(table))
             {
-                if (t.ver != version)
-                {
-                    continue;
-                }
-
-                //チェック開始アドレス
-                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
-                if (U.memcmp(t.data, data) != 0)
-                {
-                    continue;
-                }
-                if (t.name == "BG256Color")
-                {
-                    return BG256ColorPatch.BG256Color;
-                }
+                return BG256ColorPatch.BG256Color;
             }
             return BG256ColorPatch.NO;
         }
+        //移動不可能なタイルへ移動させようとするとハングアップするバグの修正
+        public enum FixGenerateBestMovementScriptENUN
+        {
+            NO,             //なし
+            Fix,
+            NoCache = (int)NO_CACHE
+        };
+        static FixGenerateBestMovementScriptENUN g_Cache_FixGenerateBestMovementScriptPatch = FixGenerateBestMovementScriptENUN.NoCache;
+        public static FixGenerateBestMovementScriptENUN FixGenerateBestMovementScript()
+        {
+            if (g_Cache_FixGenerateBestMovementScriptPatch == FixGenerateBestMovementScriptENUN.NoCache)
+            {
+                g_Cache_FixGenerateBestMovementScriptPatch = FixGenerateBestMovementScriptLow();
+            }
+            return g_Cache_FixGenerateBestMovementScriptPatch;
+        }
+        static FixGenerateBestMovementScriptENUN FixGenerateBestMovementScriptLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="FixGenerateBestMovementScript",	ver = "FE8J", addr = 0x01A45A,data = new byte[]{0xFF, 0x2F, 0x2A, 0xDA, 0x02, 0x9F, 0x38, 0x70, 0x05, 0x9B, 0x02, 0x93, 0x01, 0x28, 0x0C, 0xD0, 0x01, 0x28, 0x02, 0xDC, 0x00, 0x28}},
+                new PatchTableSt{ name="FixGenerateBestMovementScript",	ver = "FE8U", addr = 0x01A77E,data = new byte[]{0xFF, 0x2D, 0x29, 0xDA, 0x02, 0x99, 0x08, 0x70, 0x04, 0x9B, 0x02, 0x93}},
+            };
+
+            if (SearchPatchBool(table))
+            {
+                return FixGenerateBestMovementScriptENUN.Fix;
+            }
+            return FixGenerateBestMovementScriptENUN.NO;
+        }
+
         //RangeDisplayFix
         public static bool SearchRangeDisplayFixPatch()
         {

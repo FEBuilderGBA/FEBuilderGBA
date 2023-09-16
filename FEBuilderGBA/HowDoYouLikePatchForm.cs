@@ -63,6 +63,8 @@ namespace FEBuilderGBA
             , ChapterNameText
             , RangeDisplayFix
             , ChangeWeaponRangeText
+            , AutoGenLeftOAMPatch
+            , Fix_GenerateBestMovementScript
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -407,6 +409,39 @@ namespace FEBuilderGBA
                 patchName1 = "GetItemRangeString installer";  ///No Translate
                 patchName2 = "Change weapon's range text(Installer)";  ///No Translate
                 patchShowName = "Change weapon's range text";///No Translate
+            }
+            else if (type == TYPE.AutoGenLeftOAMPatch)
+            {
+                if (Program.ROM.RomInfo.version != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatchENUN.AutoGenLeftOAM;
+                };
+                reason = R._("AutoGenLeftOAM LeftToRightOAMを動的作成することで容量を減らすパッチをインストールしますか？");
+                patchName1 = "AutoGenLeftOAM Reduce capacity by dynamically creating LeftToRightOAM";///No Translate
+                patchName2 = "AutoGenLeftOAM LeftToRightOAMを動的作成することで容量を減らす";///No Translate
+                patchShowName = "AutoGenLeftOAM";///No Translate
+            }
+            else if (type == TYPE.Fix_GenerateBestMovementScript)
+            {
+                if (Program.ROM.RomInfo.version != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.FixGenerateBestMovementScript() == PatchUtil.FixGenerateBestMovementScriptENUN.Fix;
+                };
+                reason = R._("移動不可能なタイルへ移動させようとするとハングアップするバグの修正するパッチをインストールしますか？");
+                patchName1 = "Fix_GenerateBestMovementScript Move Glitch";///No Translate
+                patchName2 = "移動不可能なタイルへ移動させようとするとハングアップするバグの修正";///No Translate
+                patchShowName = "InlineFix_GenerateBestMovementScript";///No Translate
+                patchCombo = "Fix";///No Translate
             }
 
             Debug.Assert(checkFunc != null);

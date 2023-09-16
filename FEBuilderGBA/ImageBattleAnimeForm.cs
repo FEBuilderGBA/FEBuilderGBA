@@ -122,10 +122,6 @@ namespace FEBuilderGBA
 
         private void ImageBattleAnimeForm_Load(object sender, EventArgs e)
         {
-#if DEBUG
-            uint top_battleanime_baseaddress = N_InputFormRef.BaseAddress;
-            uint bottum_battleanime_baseaddress = N_InputFormRef.BaseAddress + (N_InputFormRef.BlockSize * N_InputFormRef.DataCount);
-#endif
         }
 
         private void CLASS_LISTBOX_SelectedIndexChanged(object sender, EventArgs e)
@@ -708,6 +704,9 @@ namespace FEBuilderGBA
                filename = open.FileNames[0];
             }
 
+            //OAM最適化パッチ
+            HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.AutoGenLeftOAMPatch);
+
             //インポート実行
             uint id = (uint)N_AddressList.SelectedIndex + 1;
             string error = BattleAnimeImportDirect(id, filename);
@@ -1266,7 +1265,7 @@ namespace FEBuilderGBA
 
        public static void Execute_ToolAutoGenLeftToRightAllAnimation()
        {
-           if (PatchUtil.AutoGenLeftOAM() != PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM)
+           if (!HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.AutoGenLeftOAMPatch))
            {
                R.ShowStopError("必要なパッチ「AutoGenLeftOAM」がインストールされていません。");
                return;

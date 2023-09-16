@@ -2650,7 +2650,7 @@ namespace FEBuilderGBA
             byte[] z = oam.GetRightToLeftOAM_Z();
             uint leftToRightAddress = ra.WriteAndWritePointer(battleanime_baseaddress + 20, z , undodata);
 
-            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM)
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatchENUN.AutoGenLeftOAM)
             {
                 ra.WritePointerOnly(battleanime_baseaddress + 24, leftToRightAddress, undodata);
             }
@@ -2988,7 +2988,7 @@ namespace FEBuilderGBA
             byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
 
             byte[] leftToRightOAM_UZ;
-            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatchENUN.AutoGenLeftOAM
                 && rightToLeftOAM == leftToRightOAM)
             {
                 List<byte> rightToLeftOAM_UZ_Array = new List<byte>(rightToLeftOAM_UZ);
@@ -3381,7 +3381,7 @@ namespace FEBuilderGBA
             z = LZ77.compress(rightToLeftOAM.ToArray());
             uint leftToRightAddress = ra.WriteAndWritePointer(battleanime_baseaddress + 20, z, undodata);
 
-            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatch.AutoGenLeftOAM
+            if (PatchUtil.AutoGenLeftOAM() == PatchUtil.AutoGenLeftOAMPatchENUN.AutoGenLeftOAM
                 && IsMatchOAM(rightToLeftOAM, leftToRightOAM))
             {
                 ra.WritePointerOnly(battleanime_baseaddress + 24, leftToRightAddress, undodata);

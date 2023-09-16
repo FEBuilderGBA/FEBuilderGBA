@@ -3430,6 +3430,12 @@ A patch is required if the attack range of the weapon is out of the vanilla rang
 :バニラの範囲外のレンジをRボタンのポップアップで表示するにもパッチが必要です。\r\nこのパッチをインストールした後で射程を設定してください。\r\n有効にしますか？
 A patch is also required to show vanilla out-of-range ranges in the R button popup.\r\nSet the range after installing this patch.\r\nEnable? .
 
+:AutoGenLeftOAM LeftToRightOAMを動的作成することで容量を減らすパッチをインストールしますか？
+AutoGenLeftOAM Install patch to reduce capacity by dynamically creating LeftToRightOAM? .
+
+:移動不可能なタイルへ移動させようとするとハングアップするバグの修正するパッチをインストールしますか？
+Would you like to install the patch that fixes the hang bug when trying to move to an immovable tile? .
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 

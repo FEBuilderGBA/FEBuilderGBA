@@ -410,6 +410,8 @@ namespace FEBuilderGBA
 
             P8.Value = U.toPointer(newaddr);
             B7.Value = count;
+
+            HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Fix_GenerateBestMovementScript);
         }
         void PostWriteHandler(object sender, EventArgs e)
         {
@@ -2772,7 +2774,6 @@ namespace FEBuilderGBA
             }
             L_2_UNIT.ErrorMessage = R._("指揮官が自分自身です。\r\nフリーズする可能性があるので0に設定してください。");
         }
-
     }
 
 }
