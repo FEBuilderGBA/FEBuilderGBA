@@ -286,7 +286,7 @@ namespace FEBuilderGBA
            workmemory_next_text_buffer_address = 0x03000048;   //ワークメモリ 次に表示するTextBufferの位置を保持するポインタ
            workmemory_local_flag_address = 0x03005270;   //ワークメモリ グローバルフラグ
            workmemory_global_flag_address = 0x03005250;   //ワークメモリ ローカルフラグ
-           workmemory_trap_address = 0x0203A614;   //ワークメモリ ローカルフラグ
+           workmemory_trap_address = 0x0203A614;   //ワークメモリ トラップデータ
            workmemory_bwl_address = 0x0203E884;   //BWLデータ
            workmemory_clear_turn_address = 0x0203ECF4;  //ワークメモリ クリアターン数
            workmemory_clear_turn_count = 0x24;   //クリアターン数 最大数

@@ -13,3 +13,6 @@ INFO.en=Fix enemy dancer's AI to work properly.\r\nUsing dance to the enemy unit
 
 NAME.zh=纠正敌人的舞者AI舞者AI
 INFO.zh=该补丁还修改敌人舞者的AI以使其正常工作。\r\n我们将使用已经移动的敌方人物进行跳舞来协助移动。
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=448

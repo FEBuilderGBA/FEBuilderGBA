@@ -1,0 +1,26 @@
+﻿NAME=クリアターン数書き込みをイベントで行うようにする(イベント命令)
+NAME.en=AddEvent: Write clear turn number in event
+NAME.zh=在事件中写清楚的转弯号码(Add Event)
+
+TYPE=BIN
+TAG=#EVENT
+
+INFO=クリアターン数をイベントで書き込めるようにします。\r\n通常、フラグ0x03を有効にした後、終了イベントが実行され、その後で自動的にクリアターンが書かれます。\r\nこれを取りやめて、イベントから任意のタイミングでクリアターン数を書けるようにします。
+INFO.en=Allows you to write the number of clear turns in the event.\r\nNormally, after enabling flag 0x03, an end event is executed and then a clear turn is automatically written.\r\nI'll give up on this and write the number of clear turns at any time from the event.
+INFO.zh=允许您在事件中写入清晰转弯的数量。\r\n通常，在启用标志0x03后，执行结束事件，然后自动写入清除转弯。\r\n我会放弃这一点，并在活动中随时写下清晰转弯的次数。
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 write_turn.dmp=0x00 0xB5 0xC0 0x46
+
+EVENTSCRIPT:1=400D0000{$L1:write_turn.dmp}	クリアターン数を書き込む
+EVENTSCRIPT:1.en=400D0000{$L1:write_turn.dmp}	Write clear turn number
+EVENTSCRIPT:1.zh=400D0000{$L1:write_turn.dmp}	写清楚的转弯号码
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=write_turn.dmp
+//既存のターン数書き込みルーチンを飛ばす
+BIN:0x08009DAE=08009D0E_nop.dmp
+//MNC4でターン数が記録される部分も飛ばします
+BIN:0x080314B6=08031402_MNC4_RegisterChapterTimeAndTurnCount_nop.dmp
+
+AUTHOR=7743
