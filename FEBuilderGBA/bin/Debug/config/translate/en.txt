@@ -5872,17 +5872,20 @@ Latona
 :スキルの書
 Skill Scroll
 
+:CCに必要なレベルが設定されていない
+The required level for CC has not been set.
+
+:現在、レベル0でCCできる設定になっています。\r\nIER BYTEの項目に必要なレベルを設定してください。
+Currently, set to Promotion at level 0.\r\nSet the required level in the IER BYTE field.
+
 :Lv: {0}以上でCCできます。
 :Promotion with Lv {0} or higher.
 
-:現在、レベル0でCCできる設定になっています。
-Currently, set to Promotion at level 0.
+:杖の効果が未定義です
+The effect of the wand is undefined.
 
-:未定義
-Undefined
-
-:杖の効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。
-Staff effect is not set.\r\nFor example, if you want to sleep for 5 turns, set it to 52.
+:IER BYTEの項目に、杖またはリングの効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。\r\n毒: 51\r\nスリープ: 52\r\nサイレス: 53\r\nバサーク: 54\r\n
+IER BYTE item is not set to the effect of the staff or ring.\r\nFor example, if sleep is 5 turns, set 52 and so on.\r\nPoison: 51\r\nSleep: 52\r\nSilence: 53\r\nBersak: 54\r\n
 
 :{0}を{1}ターン
 {0} by {1} turn

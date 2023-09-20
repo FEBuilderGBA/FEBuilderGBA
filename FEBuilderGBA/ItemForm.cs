@@ -911,13 +911,14 @@ namespace FEBuilderGBA
             int itemEffectID = (int)B30.Value;
             if (IsPromotionItemFE8(itemEffectID))
             {
-                X_34_Info.Text = R._("Lv: {0}以上でCCできます。", IERValue);
                 if (IERValue == 0)
                 {
-                    X_34_Info.ErrorMessage = R._("現在、レベル0でCCできる設定になっています。");
+                    X_34_Info.Text = R._("CCに必要なレベルが設定されていない", IERValue);
+                    X_34_Info.ErrorMessage = R._("現在、レベル0でCCできる設定になっています。\r\nIER BYTEの項目に必要なレベルを設定してください。");
                 }
                 else
                 {
+                    X_34_Info.Text = R._("Lv: {0}以上でCCできます。", IERValue);
                     X_34_Info.ErrorMessage = "";
                 }
                 return;
@@ -927,8 +928,8 @@ namespace FEBuilderGBA
                 string badstatus = InputFormRef.GetBadStatusCode((uint)IERValue);
                 if (badstatus == "")
                 {
-                    X_34_Info.Text = R._("未定義");
-                    X_34_Info.ErrorMessage = R._("杖の効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。");
+                    X_34_Info.Text = R._("杖の効果が未定義です");
+                    X_34_Info.ErrorMessage = R._("IER BYTEの項目に、杖またはリングの効果が設定されていません。\r\n例えば、スリープを5ターンならば、52などと設定してください。\r\n毒: 51\r\nスリープ: 52\r\nサイレス: 53\r\nバサーク: 54\r\n");
                     return;
                 }
                 int turn = IERValue >> 4;
