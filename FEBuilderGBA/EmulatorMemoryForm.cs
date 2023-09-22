@@ -535,9 +535,13 @@ namespace FEBuilderGBA
 
             uint procHeaderP = Program.RAM.u32(ramaddr);
 
-            ProcsData pd = new ProcsData();
+            if (procHeaderP == 0)
+            {//nullデータ
+                return false;
+            }
             if (!U.is_02RAMPointer(procHeaderP))
-            {
+            {//壊れたポインタ
+                R.Error("MakeProcNodeで壊れたポインタを検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2}", U.To0xHexString(ramaddr), U.To0xHexString(topTreeIndex), U.To0xHexString(procHeaderP));
                 return false;
             }
             uint startCode = Program.RAM.u32(procHeaderP);
@@ -547,11 +551,13 @@ namespace FEBuilderGBA
                 {
                     if (tree[i].Compare(startCode, ramaddr))
                     {//既に知っている
+                        R.Error("MakeProcNodeで循環参照を検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} startCode:{3}", U.To0xHexString(ramaddr), U.To0xHexString(topTreeIndex), U.To0xHexString(procHeaderP), U.To0xHexString(startCode));
                         return false;
                     }
                 }
             }
 
+            ProcsData pd = new ProcsData();
             pd.ROMAddr = startCode;
             pd.ROMCodeCursor = Program.RAM.u32(procHeaderP+4);
             pd.RAMAddr = procHeaderP;

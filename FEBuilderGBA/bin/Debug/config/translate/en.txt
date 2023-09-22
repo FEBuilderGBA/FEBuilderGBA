@@ -1141,6 +1141,12 @@ Extra Skills
 :MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}
 Infinite recursion in MakeProcNode. ramaddr: {0} topTreeIndex: {1}
 
+:MakeProcNodeで壊れたポインタを検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2}
+Detected broken pointer in MakeProcNode ramaddr:{0} topTreeIndex:{1} procHeaderP:{2}.
+
+:MakeProcNodeで循環参照を検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} startCode:{3}
+Detected circular reference in MakeProcNode ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} startCode:{3}.
+
 :エミュレータと接続できませんでした。
 Could not connect to the emulator.
 

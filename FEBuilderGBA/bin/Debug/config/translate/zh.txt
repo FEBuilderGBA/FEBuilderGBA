@@ -1141,6 +1141,12 @@ Eliwood版
 :MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}
 使用MakeProcNode ramaddr进行无限递归:{0} topTreeIndex:{1}。
 
+:MakeProcNodeで壊れたポインタを検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2}
+在 MakeProcNode ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} 中检测到损坏的指针。
+
+:MakeProcNodeで循環参照を検出 ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} startCode:{3}
+在 MakeProcNode ramaddr:{0} topTreeIndex:{1} procHeaderP:{2} startCode:{3} 中检测到循环引用。
+
 :エミュレータと接続できませんでした。
 无法连接到模拟器。
 
