@@ -1888,26 +1888,6 @@ namespace FEBuilderGBA
             return url;
         }
 
-        public static string GetNecessaryProgramURL()
-        {
-            string lang = OptionForm.lang();
-
-            string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E4%B8%8A%E3%81%A7%E5%BF%85%E8%A6%81%E3%81%AB%E3%81%AA%E3%82%8B%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:febuildergba%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95_zh";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:how_to_obtain_necessary_tools_to_use_febuildergba_en";
-            }
-            return url;
-        }
-
         public static void GotoCommunities()
         {
             string url = GetCommunitiesURL();

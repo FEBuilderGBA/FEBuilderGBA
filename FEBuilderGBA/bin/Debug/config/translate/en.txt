@@ -9184,8 +9184,8 @@ Emulator 2
 :エミュレータ
 Emulator
 
-:それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
-For details on where to obtain each program, please refer to this manual.
+:それぞれのプログラムを自動で入手するには、「初期設定ウィザード」を利用してください。
+Please use the "Initial Setup Wizard" to automatically obtain each program.
 
 :パス2
 Path 2
@@ -9541,15 +9541,6 @@ ROM Expansion Starting Address
 :機能2
 Function 2
 
-:0=表示しない
-0=Not Displayed
-
-:1=表示する
-1=Displayed
-
-:ゲームオプションの拡張ボタンを表示する
-Show extended buttons for game options.
-
 :0=警告も何もしない(推奨しません)
 0=Ignore Out of Range Warnings (Not Recommended)
 
@@ -9558,6 +9549,18 @@ Show extended buttons for game options.
 
 :2=書き込みを禁止する
 2=Don't Allow Writing Out of Range
+
+:ID:00の書き込みについて
+About writing ID: 00.
+
+:0=表示しない
+0=Not Displayed
+
+:1=表示する
+1=Displayed
+
+:ゲームオプションの拡張ボタンを表示する
+Show extended buttons for game options.
 
 :危険な範囲の書き込みについて
 About writing in a dangerous range.
@@ -9705,9 +9708,6 @@ When exporting a file...
 
 :保存
 Save
-
-:ID:00の書き込みについて
-About writing ID: 00.
 
 :その他ROM直値テキスト
 Other ROM Direct Text

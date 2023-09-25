@@ -683,7 +683,11 @@ namespace FEBuilderGBA
             }
             else
             {
-                download.Text += R._("(ディフォルト)");
+                string def = R._("(ディフォルト)");
+                if (download.Text.IndexOf(def) < 0)
+                {
+                    download.Text += def;
+                }
                 download.Focus();
             }
         }
