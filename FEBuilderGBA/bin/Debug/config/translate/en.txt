@@ -3442,6 +3442,9 @@ AutoGenLeftOAM Install patch to reduce capacity by dynamically creating LeftToRi
 :移動不可能なタイルへ移動させようとするとハングアップするバグの修正するパッチをインストールしますか？
 Would you like to install the patch that fixes the hang bug when trying to move to an immovable tile? .
 
+:手斧モーションを投げ斧の汎用モーションとして利用するパッチをインストールしますか？
+Would you like to install a patch that uses the hatchet motion as a general motion for throwing axes? .
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 
@@ -9393,6 +9396,9 @@ Text width verification
 
 :アイテムの近接モーションの存在確認
 Confirmation of the existence of proximity motion of the item.
+
+:2=支援関係のエラーを一切報告しない
+2=Do not report any support-related errors.
 
 :支援の妥当性の検証
 Validation of support

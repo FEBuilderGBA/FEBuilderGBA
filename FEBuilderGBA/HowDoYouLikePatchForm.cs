@@ -65,6 +65,7 @@ namespace FEBuilderGBA
             , ChangeWeaponRangeText
             , AutoGenLeftOAMPatch
             , Fix_GenerateBestMovementScript
+            , HandAxsWildCard
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -442,6 +443,22 @@ namespace FEBuilderGBA
                 patchName2 = "移動不可能なタイルへ移動させようとするとハングアップするバグの修正";///No Translate
                 patchShowName = "InlineFix_GenerateBestMovementScript";///No Translate
                 patchCombo = "Fix";///No Translate
+            }
+            else if (type == TYPE.HandAxsWildCard)
+            {
+                if (Program.ROM.RomInfo.version == 6)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return PatchUtil.SearchCache_HandAxsWildCard() == PatchUtil.HandAxsWildCard_extends.Enable;
+                };
+                reason = R._("手斧モーションを投げ斧の汎用モーションとして利用するパッチをインストールしますか？");
+                patchName1 = "Use HandAxs motion as generic motion for throwing axes";///No Translate
+                patchName2 = "手斧モーションを投げ斧の汎用モーションとして利用する";///No Translate
+                patchShowName = "handaxs_wildcard";///No Translate
             }
 
             Debug.Assert(checkFunc != null);

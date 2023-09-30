@@ -1145,8 +1145,14 @@ namespace FEBuilderGBA
             return U.stringbool(Program.Config.at("func_felint_haxs", "1"));
         }
         public static bool felint_support_validation()
-        {
-            return U.stringbool(Program.Config.at("func_felint_support_validation", "0"));
+        {//支援の妥当性を検証するかどうか
+            uint a = U.atoi(Program.Config.at("func_felint_support_validation", "0"));
+            return (a == 1);
+        }
+        public static bool felint_support_system_off()
+        {//支援システムそのものを利用しないかどうか
+            uint a = U.atoi(Program.Config.at("func_felint_support_validation", "0"));
+            return (a == 2);
         }
         public static bool felint_check_melee_item_motionid()
         {

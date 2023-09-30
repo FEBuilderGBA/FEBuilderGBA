@@ -3008,8 +3008,11 @@ namespace FEBuilderGBA
 
             static bool CheckHasAutoNewLine(string text)
             {
+                if (OptionForm.felint_check_text_width())
+                {
+                    return true;
+                }
                 if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine
-                    || OptionForm.felint_check_text_width()
                     )
                 {//自動改行が入っている場合は、長さのチェックをしない
                     if (text.IndexOf("@0080@0090") >= 0

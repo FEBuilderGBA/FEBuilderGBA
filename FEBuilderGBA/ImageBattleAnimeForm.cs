@@ -43,6 +43,7 @@ namespace FEBuilderGBA
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.InputFormRef.PostAddressListExpandsEvent += AddressListExpandsEvent;
+            this.InputFormRef.PostWriteHandler += PostWriteHandler;
             U.SelectedIndexSafety(this.CLASS_LISTBOX, 1, false);
 
             //パレット変更の部分にリンクを置く.
@@ -59,6 +60,13 @@ namespace FEBuilderGBA
                     this.BattleAnimeImportButton_Click(null,null);
                 }
             });
+        }
+        void PostWriteHandler(object sender, EventArgs e)
+        {
+            if (B0.Value == 0x28 && B1.Value == 0x0)
+            {//斧使いの手斧モーション
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.HandAxsWildCard);
+            }
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(ImageBattleAnimeForm self)

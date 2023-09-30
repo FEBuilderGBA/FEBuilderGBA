@@ -87,6 +87,11 @@ namespace FEBuilderGBA
 
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
+            if (OptionForm.felint_support_system_off())
+            {//支援システムを一切利用しないのでチェックしない
+                return;
+            }
+
             InputFormRef InputFormRef = Init(null);
             if (InputFormRef.DataCount < 2)
             {

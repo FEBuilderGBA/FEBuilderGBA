@@ -709,9 +709,11 @@ namespace FEBuilderGBA
             uint base_pointer = Program.ROM.u32(Program.ROM.RomInfo.support_unit_pointer);
             if (!U.isSafetyPointer(base_pointer))
             {
-                errors.Add(new FELint.ErrorSt(FELint.Type.UNIT, U.NOT_FOUND
-                    , R._("ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。")));
-                return;
+                if (! OptionForm.felint_support_system_off())
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.UNIT, U.NOT_FOUND
+                        , R._("ユニット0x01の支援ポインタが無効です。この値は支援の起点となる値です。バニラの値から変更しないでください。")));
+                }
             }
 
             //武器魔法混在パッチを適応しているか
