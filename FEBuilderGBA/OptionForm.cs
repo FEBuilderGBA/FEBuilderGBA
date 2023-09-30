@@ -164,7 +164,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_skillsystems_sanctuary, (int)skillsystems_sanctuary());
             U.SelectedIndexSafety(func_portrait_lz77, (int)portrait_lz77());
             U.SelectedIndexSafety(func_felint_haxs, U.BoolToInt(felint_haxs()));
-            U.SelectedIndexSafety(func_felint_support_validation, U.BoolToInt(felint_support_validation()));
+            U.SelectedIndexSafety(func_felint_support_validation, felint_support_validation_low());
             U.SelectedIndexSafety(func_felint_check_melee_item_motionid, U.BoolToInt(felint_check_melee_item_motionid()));
             U.SelectedIndexSafety(func_felint_check_seriftext_width, U.BoolToInt(felint_check_text_width()));
             U.SelectedIndexSafety(func_felint_check_exist_tilechange, U.BoolToInt(felint_check_exist_tilechange()));
@@ -1144,14 +1144,18 @@ namespace FEBuilderGBA
         {
             return U.stringbool(Program.Config.at("func_felint_haxs", "1"));
         }
+        public static int felint_support_validation_low()
+        {//支援の妥当性を検証するかどうか
+            return  (int)U.atoi(Program.Config.at("func_felint_support_validation", "0"));
+        }
         public static bool felint_support_validation()
         {//支援の妥当性を検証するかどうか
-            uint a = U.atoi(Program.Config.at("func_felint_support_validation", "0"));
+            int a = felint_support_validation_low();
             return (a == 1);
         }
         public static bool felint_support_system_off()
         {//支援システムそのものを利用しないかどうか
-            uint a = U.atoi(Program.Config.at("func_felint_support_validation", "0"));
+            int a = felint_support_validation_low();
             return (a == 2);
         }
         public static bool felint_check_melee_item_motionid()
