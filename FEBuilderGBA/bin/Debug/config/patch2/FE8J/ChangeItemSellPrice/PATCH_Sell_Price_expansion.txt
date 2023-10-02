@@ -27,7 +27,7 @@ B1:DECIMAL=Sell(%)
 W2:FLAG=Flag / ANY=0x00
 NAME.zh=扩张价格(Editor)
 
-INFO=リストにあるアイテムは、売値を一律半額ではなく指定した売値(%)にします。\r\n100%で買値と同じになります。\r\n200%にすると買った時の倍で売れます。\r\n売値が上限の65535を超えた場合は自動的に補正されます。\r\n何も設定しない場合は、通常通りf50%を指定したことになります。\r\nフラグでどのレートを利用するかの設定も可能です。街ごとに変えて交易を作ってみるのも面白いでしょう。
+INFO=リストにあるアイテムは、売値を一律半額ではなく指定した売値(%)にします。\r\n100%で買値と同じになります。\r\n200%にすると買った時の倍で売れます。\r\n売値が上限の65535を超えた場合は自動的に補正されます。\r\n何も設定しない場合は、通常通り50%を指定したことになります。\r\nフラグでどのレートを利用するかの設定も可能です。街ごとに変えて交易を作ってみるのも面白いでしょう。
 
 INFO.en=Items in the list will be sold price (%) specified instead of half price.\r\nIt is the same as the bid price at 100%.\r\nIf it is 200% it will sell at double the time you bought it.\r\nIf the selling price exceeds the upper limit of 65535, it will be automatically compensated.\r\nIf you do not set anything, you have specified 50% as usual.\r\nYou can also set which rate to use with the flag.It would be interesting to try to make trade by changing every town.
-INFO.zh=列表中的项目将是指定的售价（％）而不是半价。\r\n它与100％的出价相同。\r\n如果它是200％，它会以你购买它的两倍的价格出售。\r\n如果售价超过65535的上限，它将自动得到补偿。\r\n如果您没有设置任何内容，则照常指定f50％。\r\n您还可以设置标志使用的速率。尝试通过改变每个城镇来进行交易会很有趣。
+INFO.zh=列表中的项目将是指定的售价（％）而不是半价。\r\n它与100％的出价相同。\r\n如果它是200％，它会以你购买它的两倍的价格出售。\r\n如果售价超过65535的上限，它将自动得到补偿。\r\n如果您没有设置任何内容，则照常指定50％。\r\n您还可以设置标志使用的速率。尝试通过改变每个城镇来进行交易会很有趣。

@@ -226,9 +226,9 @@ Duration
 2044XXXX	[XXXX:UNIT:ユニット]に召喚効果の魔方陣を表示(BREAKING_SACRED_STONE)
 2012FF7F	音楽BGMを消す(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	[XXXX:MUSIC:曲]に音楽BGMを変更(MUSC)	{MUSIC}
-2014XXXX	[XXXX:MUSIC:曲]に音楽BGMを一時的に変更(MUSS)(LOW)
+2014XXXX	[XXXX:MUSIC:曲]に音楽BGMを保存して一時的に変更(MUSS)(LOW)	MUREコマンドで変更する前のBGMに戻せます。\r\nMUSSとMUREはpush/popのようにセットで利用する必要があります。
 2016XXXX	[XXXX:SOUND:効果音]に変更(SOUN)	{MUSIC}
-2114XXXX	[XXXX:FSEC:Speed]音楽BGMをフェードインして、マップ標準のBGMに戻す(MURE)	{MUSIC}
+2114XXXX	[XXXX:FSEC:Speed]音楽BGMをフェードインして、MUSSで保存したマップBGMに戻す(MURE)(LOW)	MUSSで音楽を切り替える時に保存しておいた音楽に戻します。\r\nMUSSとMUREはpush/popのようにセットで利用する必要があります。	{MUSIC}
 2013FF7F	音楽BGMをフェードアウトして消す(MUSCFAST 0x7FFF)(MUSM)	{MUSIC}
 2213XXXX	[XXXX:MUSIC:曲]音楽BGMをフェードアウトして変更(MUSCFAST)	{MUSIC}
 2413XXXX	[XXXX:MUSIC:曲]音楽BGMをフェードアウトして変更2(MUSCMID)	{MUSIC}

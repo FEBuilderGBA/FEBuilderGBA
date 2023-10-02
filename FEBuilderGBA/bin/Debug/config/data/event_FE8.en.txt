@@ -136,7 +136,7 @@
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
 2012FF7F	Mute, Turn off the BGM(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	Change BGM to[XXXX:MUSIC:Song](MUSC)	{MUSIC}
-2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)(LOW)
+2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)(LOW)	You can use the MURE command to restore the BGM to the way it was before the change.\r\nMUSS and MURE must be used as a set, like push/pop.
 2016XXXX	Play SFX[XXXX:SOUND:sound effect](SOUN)	{MUSIC}
 2013FF7F	Mute, Fade out and turn off the BGM(MUSCFAST 0x7FFF)	{MUSIC}
 2213XXXX	Change BGM to[XXXX:MUSIC:Song] with fast fade out(MUSCFAST)	{MUSIC}
@@ -455,7 +455,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 203C0000	Gets player cursor position in SlotC(CHECK_CURSOR)	@STOREC	{COND}
 213CFFFF	Move player cursor position to SlotB(SET_CURSOR) (LOW)
 213CXXYY	Move player cursor position to [XX:MAPX:X],[YY:MAPY:Y](SET_CURSOR)
-2114XXXX	[XXXX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}
+2114XXXX	[XXXX:FSEC:Speed]Fade in music and return to map BGM(MURE)(LOW)	This command reverts back to the stored music when switching music in MUSS.\r\nMUSS and MURE must be used as a set, like push/pop.	{MUSIC}
 2011XXXX	IGNORE_KEYS[XXXX:IGNORE_KEYS:KeyMask]	Write a value to 03000010(STORETOSOMETHING)	Mainly used for tutorial events.
 
 213BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds][]frames[XXXX:UNIT:Character]is highlighted(CUMO)	{WAKU}

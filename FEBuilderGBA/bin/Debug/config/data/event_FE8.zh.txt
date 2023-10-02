@@ -76,7 +76,7 @@
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:人物]
 2012FF7F	静音，关闭BGM(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	更改为[XXXX:MUSIC:歌曲](MUSC)	{MUSIC}
-2014XXXX	更改为[XXXX:MUSIC:歌曲] 保存上一首歌曲时更改为音乐(MUSS)(LOW)
+2014XXXX	更改为[XXXX:MUSIC:歌曲] 保存上一首歌曲时更改为音乐(MUSS)(LOW)	You can use the MURE command to restore the BGM to the way it was before the change.\r\nMUSS and MURE must be used as a set, like push/pop.
 2016XXXX	更改为[XXXX:SOUND:音效](SOUN)	{MUSIC}
 2013FF7F	静音，淡出和关闭BGM(MUSCFAST 0x7FFF)	{MUSIC}
 2013XXXX	更改为[XXXX:MUSIC:歌曲]Even longer fadeout(MUSCSLOW)	{MUSIC}
@@ -439,7 +439,7 @@
 28190000	检查钱(CHECK_MONEY)	我们将获得拥有的资金	@STOREC	{GOLD}	{COND}
 29190000	检查事件ID(CHECK_EVENTID)	获取与当前事件get关联的成就标志	@STOREC	{COND}	{FLAG}
 21190000	检查章节ID(#CHECK_SOMETHING)	获取当前章节ID获取	@STOREC	{COND}
-2114XXXX	[XXXX:FSEC:Speed]淡入音乐并返回地图标准BGM(MURE)	{MUSIC}
+2114XXXX	[XXXX:FSEC:Speed]淡入音乐并返回地图标准BGM(MURE)(LOW)	This command reverts back to the stored music when switching music in MUSS.\r\nMUSS and MURE must be used as a set, like push/pop.	{MUSIC}
 2213XXXX	改为[XXXX:MUSIC:歌曲]歌曲随着淡出	(MUSCFAST)	{MUSIC}
 2413XXXX	改为[XXXX:MUSIC:歌曲]歌曲随着淡出2	(MUSCMID)	{MUSIC}
 211A0000	删除地图元素(REMOVEPORTRAITS)	{BG}
