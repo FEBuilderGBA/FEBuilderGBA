@@ -1,0 +1,20 @@
+#define Enable1RNFlag 0xB1
+
+PUSH
+
+// Roll1RN
+ORG $CA0
+SHORT 0xB530 // push {r4,r5}
+ORG $CB2
+SHORT 0xBC30 // pop {r4,r5}
+
+// Roll2RN
+ORG $CB8
+jumpToHack(New2RN)
+
+POP
+
+ALIGN 4
+New2RN:
+#incbin "New2RN.dmp"
+BYTE Enable1RNFlag

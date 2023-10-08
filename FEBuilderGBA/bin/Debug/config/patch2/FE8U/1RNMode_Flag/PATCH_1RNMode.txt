@@ -1,0 +1,16 @@
+NAME=1RNMode(Ver Flag 0xB1)
+NAME.en=1RNMode(Ver Flag 0xB1)
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=Installer.event
+
+INFO=グローバルフラグ0xB1をONにした状態だと、乱数にRN2ではなくRN1を利用します。\r\nRN2は実行命中率を意味します。このパッチは、実行命中率をグローバルフラグ0xB1でオフにできます。
+PATCHED_IF:0xCB8=0x00 0x4B 0x18 0x47
+USEFLAG=0xB1
+
+AUTHOR=Pikmin https://feuniverse.us/t/pikmin-asm/8148/10
+NAME.zh=1RNMode(Ver Flag 0xB1)
+INFO.en=If global flag 0xB1 is set to ON, RN1 will be used instead of RN2 for the random number.\r\nRN2 means execution hit rate.This patch allows execution accuracy to be turned off with global flag 0xB1.
+INFO.zh=如果全局标志 0xB1 设置为 ON，则将使用 RN1 而不是 RN2 作为随机数。\r\nRN2表示执行精度。该补丁允许使用全局标志 0xB1 关闭执行精度。

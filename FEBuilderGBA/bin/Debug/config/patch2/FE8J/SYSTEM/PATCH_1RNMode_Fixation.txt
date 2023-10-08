@@ -1,0 +1,19 @@
+NAME=1RNMode(固定モード)
+NAME.en=1RNMode(static mode)
+NAME.zh=1RNMode(static mode)
+INFO=乱数にRN2ではなくRN1を利用します。\r\nRN2は実行命中率を意味します。このパッチは、実行命中率を無効にしてより攻撃を回避しにくくします。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 2RN|OFF|Fix: 1RN|1RN
+
+DETERMINATION_ADDRESS=0x000C94
+
+OFF:0x000C94=0xFF 0xF7 0xD2 0xFF
+1RN:0x000C94=0x00 0x00 0x00 0x00
+
+
+INFO.en=Use RN1 instead of RN2 for random numbers.\r\nRN2 means execution accuracy.This patch disables execution accuracy to make attacks more difficult to evade.
+INFO.zh=使用 RN1 而不是 RN2 作为随机数。\r\nRN2表示执行命中率。该补丁会降低执行的准确性，并使攻击更难以躲避。

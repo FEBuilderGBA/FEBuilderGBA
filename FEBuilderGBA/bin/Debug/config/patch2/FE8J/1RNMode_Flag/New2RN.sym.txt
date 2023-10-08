@@ -1,0 +1,3 @@
+OneRNFlag=$50
+TwoRNRoll=$1C
+End=$3C
