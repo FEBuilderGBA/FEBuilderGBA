@@ -9,11 +9,11 @@ TAG=#ENGINE
 
 COMBO=Default: 2RN|OFF|Fix: 1RN|1RN
 
-DETERMINATION_ADDRESS=0x000CBC
+DETERMINATION_ADDRESS=0x000CB8
 
-OFF:0x000CBC=0xFF 0xF7 0xD2 0xFF
+OFF:0x000CB8=0x30 0xB5
+1RN:0x000CB8=0xF2 0xE7
 
-1RN:0x000CBC=0x00 0x00 0x00 0x00
 
 
 INFO.en=Use RN1 instead of RN2 for random numbers.\r\nRN2 means execution accuracy.This patch disables execution accuracy to make attacks more difficult to evade.
