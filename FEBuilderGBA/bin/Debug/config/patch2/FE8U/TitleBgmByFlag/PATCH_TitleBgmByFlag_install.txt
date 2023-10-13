@@ -1,0 +1,18 @@
+NAME=タイトル画面のBGMをフラグで変更する(Installer)
+NAME.en=Change the BGM on the title screen with a flag(Installer)
+NAME.zh=Change the BGM on the title screen with a flag(Installer)
+
+INFO=タイトル画面のBGMをゲーム進行に従い変更します。\r\nグローバルフラグを設定すると、BGMを変えることが出来ます。\r\n
+
+TYPE=EA
+EA=TitleBgmByFlag.event
+
+
+
+PATCHED_IF:0xc63d0=0x78 0x47 0xC0 0x46 0x00 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+AUTHOR=Eebit https://discord.com/channels/144670830150811649/470029781795078175/1162248910010593290
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=400
+INFO.en=The BGM on the title screen will change as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n
+INFO.zh=标题画面上的BGM会随着游戏的进行而改变。\r\n通过设置全局标志，您可以更改 BGM。\r\n

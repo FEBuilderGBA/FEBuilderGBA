@@ -1,0 +1,7 @@
+#ifndef TITLE_BGM_BY_FLAG_INSTALLED
+#define TITLE_BGM_BY_FLAG_INSTALLED
+
+#include "src/TitleBgmByFlag-Data.lyn.event"
+#include "src/TitleBgmByFlag.lyn.event"
+
+#endif /* TITLE_BGM_BY_FLAG_INSTALLED */

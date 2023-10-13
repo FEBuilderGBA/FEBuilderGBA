@@ -1,0 +1,9 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG 0x2C534
+gotoHack(expRoutine)
+POP
+
+expRoutine:
+#incbin "Fates EXP Approximation.dmp"

@@ -1750,6 +1750,10 @@ namespace FEBuilderGBA
             {
                 appendname = U.ToHexString(i) + " " + MapTerrainNameForm.GetName((uint)i);
             }
+            else if (listname == "SONG")
+            {
+                appendname = U.ToHexString(i) + " " + SongTableForm.GetSongName((uint)i);
+            }
             else if (listname.Length > 2 && listname[0] == '$')
             {
                 uint offset = U.atoi(U.substr(listname, 2));
