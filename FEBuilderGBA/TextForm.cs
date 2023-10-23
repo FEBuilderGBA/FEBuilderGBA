@@ -3008,7 +3008,7 @@ namespace FEBuilderGBA
 
             static bool CheckHasAutoNewLine(string text)
             {
-                if (OptionForm.felint_check_text_width())
+                if (! OptionForm.felint_check_text_width())
                 {
                     return true;
                 }

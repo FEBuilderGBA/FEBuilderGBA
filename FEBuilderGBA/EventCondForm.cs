@@ -1028,7 +1028,7 @@ namespace FEBuilderGBA
                         {
                             uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                                , R._("壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y),mapid));
+                                , R._("壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n壁を破壊した後のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。", x, y), mapid));
                         }
                     }
                     else if (tilesArray[i] == ImageUtilMap.BrokenSnagTileID)
@@ -1037,7 +1037,7 @@ namespace FEBuilderGBA
                         {
                             uint addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                                , R._("古木なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y), mapid));
+                                , R._("古木なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n古木を破壊した後のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。", x, y), mapid));
                         }
                     }
                 }
@@ -1199,7 +1199,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.TreasureChestTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y)));
+                            , R._("宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n宝箱を空けて空箱になるタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。", x, y)));
                     }
                 }
                 else if (type == 0x8)
@@ -1213,7 +1213,7 @@ namespace FEBuilderGBA
                     if (!DoesObjectHaveTileChanges(x, y, ImageUtilMap.DoorTileID, tilesArray, mapWidth, changeList))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}", x, y)));
+                            , R._("ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}\r\nドアを空けた時のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。", x, y)));
                     }
                 }
                 else if (type == 0xA)

@@ -14,5 +14,5 @@ AUTHOR=Eebit https://discord.com/channels/144670830150811649/470029781795078175/
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
 ALLOC_SIZE_HINT=400
-INFO.en=The BGM on the title screen will change as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n
-INFO.zh=标题画面上的BGM会随着游戏的进行而改变。\r\n通过设置全局标志，您可以更改 BGM。\r\n
+INFO.en=This patch changes the BGM of the title screen as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n
+INFO.zh=This patch changes the BGM of the title screen as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n

@@ -521,6 +521,7 @@
             this.L_24_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_24_COMBO.FormattingEnabled = true;
             this.L_24_COMBO.Items.AddRange(new object[] {
+            "0=口を閉じる(非推奨)",
             "1=通常",
             "6=瞳を閉じる"});
             this.L_24_COMBO.Location = new System.Drawing.Point(239, 305);

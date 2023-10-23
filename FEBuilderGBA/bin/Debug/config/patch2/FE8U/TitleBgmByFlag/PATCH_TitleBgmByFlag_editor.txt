@@ -22,5 +22,5 @@ DATASIZE=8
 DATACOUNT=$GREP8 0xFF 0xFF 0xFF 0xFF 00 00 00 00
 
 LISTNAME=$D4:SONG
-INFO.en=The BGM on the title screen will change as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n
-INFO.zh=标题画面上的BGM会随着游戏的进行而改变。\r\n通过设置全局标志，您可以更改 BGM。\r\n
+INFO.en=This patch changes the BGM of the title screen as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n
+INFO.zh=This patch changes the BGM of the title screen as the game progresses.\r\nBy setting the global flag, you can change the BGM.\r\n

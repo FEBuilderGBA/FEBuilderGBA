@@ -1891,11 +1891,11 @@ End Events are events that are called at the end of the chapter, once flag 03 is
 :制圧フラグ
 Seize Flag
 
-:壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}
-There is a Broken Wall, but the tile change of map is not set. x:{0} y:{1}
+:壊れる壁なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n壁を破壊した後のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。
+There is a Broken Wall, but the tile change of map is not set. x:{0} y:{1}\r\nYou need the tile change after the wall is destroyed.\r\nPlease check the map editor for tile changes.
 
-:古木なのに、マップ変化が設定されていません。 x:{0} y:{1}
-There is a Srag, but the tile change of map is not set. x:{0} y:{1}
+:古木なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n古木を破壊した後のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。
+There is a Srag, but the tile change of map is not set. x:{0} y:{1}\r\nYou need a tile change after destroying the old tree.\r\nPlease check the map editor for tile changes.
 
 :訪問できる村なのに、種類で「{0}」が設定されています。
 Even though it is a village that can be visited, "{0}" is set for the type.
@@ -1912,14 +1912,14 @@ A chest event has "{0}" set as its type.
 :ゴールドとアイテムの設定が不適切です。\r\n\r\nゴールドが入っている宝箱を作るには、アイテムを「{0} ゴールド」にしないといけません。\r\n逆に、ゴールドではなくアイテムが入っている宝箱の場合は、ゴールドの欄は0にしてください。\r\n
 The gold and item settings are incorrect.\r\n\r\nTo make a treasure chest with just gold in it, set the item obtained by it as the "{0} Gold" item.\r\nConversely, if the treasure box contain an item instead of gold, the field for gold should be at 0 if present.\r\n
 
-:宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}
-There is a Chest event, but the tile change of map is not set. x:{0} y:{1}
+:宝箱なのに、マップ変化が設定されていません。 x:{0} y:{1}\r\n宝箱を空けて空箱になるタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。
+There is a Chest event, but the tile change of map is not set. x:{0} y:{1}\r\nYou need a tile change that empties the treasure chest and becomes an empty box.\r\nPlease check the tile change in the map editor.
 
 :ドアなのに、種類で「{0}」が設定されています。
 There is a Door event, but "{0}" is set as the type.
 
-:ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}
-There is a Door event, the tile change of the map is not set. x:{0} y:{1}
+:ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}\r\nドアを空けた時のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。
+Please check the tile change in the map editor.
 
 :店なのに、種類で「{0}」が設定されています。
 There is a Shop event, but "{0}" is set as the type.
@@ -3894,6 +3894,9 @@ Class Portrait
 
 :目座標
 Eye XX/YY
+
+:0=口を閉じる(非推奨)
+0=Close mouth(Unused)
 
 :1=通常
 1=Normal
