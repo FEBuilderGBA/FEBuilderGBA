@@ -3191,6 +3191,7 @@ namespace FEBuilderGBA
             return ret;
         }
 
+
         static void AllocEvent(string arg1
             , Button link_object
             , NumericUpDown src_object
@@ -3332,8 +3333,7 @@ namespace FEBuilderGBA
                 alllocQMessage = R._("パレットを新規に割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。");
 
-                byte[] basepalette = LZ77.decompress(Program.ROM.Data,ImageUnitPaletteForm.GetPaletteAddr(1));
-                alloc = LZ77.compress(basepalette);
+                alloc = ImageUnitPaletteForm.GetDefaultLZ77Palette();
             }
             else if (arg1 == "BATTLEANIMEPOINTER")
             {

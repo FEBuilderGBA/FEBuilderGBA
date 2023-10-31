@@ -475,6 +475,23 @@ namespace FEBuilderGBA
             PFR.RunRedo();
         }
 
+        public static byte[] GetDefaultLZ77Palette()
+        {
+            uint addr = ImageUnitPaletteForm.GetPaletteAddr(1);
+            if (U.isSafetyOffset(addr))
+            {
+                byte[] basepalette = LZ77.decompress(Program.ROM.Data, addr);
+                if (basepalette.Length > 0)
+                {
+                    return LZ77.compress(basepalette);
+                }
+            }
+            //fallback!
+            {
+                byte[] lz77black = new byte[] { 0x10, 0xA0, 0x00, 0x00, 0x0F, 0x55, 0x53, 0x00, 0x00, 0xF0, 0x01, 0x70, 0x01, 0xF0, 0x1F, 0xF0, 0x1F, 0xF8, 0xF0, 0x01, 0xF0, 0x1F, 0xF0, 0x01, 0xF0, 0x1F, 0xF0, 0x01, 0x00, 0x00 };
+                return lz77black;
+            }
+        }
 
     }
 }

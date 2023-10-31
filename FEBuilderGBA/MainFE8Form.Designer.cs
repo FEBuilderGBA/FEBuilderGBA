@@ -218,7 +218,6 @@
             this.StatusParamButton = new System.Windows.Forms.Button();
             this.WelcomeDialogButton = new System.Windows.Forms.Button();
             this.MenuDefinitionButton = new System.Windows.Forms.Button();
-            this.MantAnimationButton = new System.Windows.Forms.Button();
             this.BattleScreenButton = new System.Windows.Forms.Button();
             this.SummonButton = new System.Windows.Forms.Button();
             this.OtherTextButton = new System.Windows.Forms.Button();
@@ -1517,7 +1516,6 @@
             this.ControlPanel.Controls.Add(this.StatusParamButton);
             this.ControlPanel.Controls.Add(this.WelcomeDialogButton);
             this.ControlPanel.Controls.Add(this.MenuDefinitionButton);
-            this.ControlPanel.Controls.Add(this.MantAnimationButton);
             this.ControlPanel.Controls.Add(this.BattleScreenButton);
             this.ControlPanel.Controls.Add(this.SummonButton);
             this.ControlPanel.Controls.Add(this.OtherTextButton);
@@ -2260,17 +2258,6 @@
             this.MenuDefinitionButton.UseVisualStyleBackColor = true;
             this.MenuDefinitionButton.Click += new System.EventHandler(this.MenuDefinitionButton_Click);
             // 
-            // MantAnimationButton
-            // 
-            this.MantAnimationButton.Location = new System.Drawing.Point(0, 224);
-            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MantAnimationButton.Name = "MantAnimationButton";
-            this.MantAnimationButton.Size = new System.Drawing.Size(200, 36);
-            this.MantAnimationButton.TabIndex = 6;
-            this.MantAnimationButton.Text = "マント";
-            this.MantAnimationButton.UseVisualStyleBackColor = true;
-            this.MantAnimationButton.Click += new System.EventHandler(this.MantAnimationButton_Click);
-            // 
             // BattleScreenButton
             // 
             this.BattleScreenButton.Location = new System.Drawing.Point(610, 333);
@@ -2530,7 +2517,6 @@
         private System.Windows.Forms.ToolStripMenuItem DecreaseColorToolStripMenuItem;
         private System.Windows.Forms.Button SummonButton;
         private System.Windows.Forms.Button BattleScreenButton;
-        private System.Windows.Forms.Button MantAnimationButton;
         private System.Windows.Forms.Button MenuDefinitionButton;
         private System.Windows.Forms.Button WelcomeDialogButton;
         private System.Windows.Forms.Button StatusRMenuButton;

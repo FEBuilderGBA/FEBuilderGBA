@@ -132,6 +132,7 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.ImageBattleFieldButton = new System.Windows.Forms.Button();
             this.AIPerformItemButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
@@ -181,7 +182,6 @@
             this.StatusRMenuButton = new System.Windows.Forms.Button();
             this.StatusParamButton = new System.Windows.Forms.Button();
             this.MenuDefinitionButton = new System.Windows.Forms.Button();
-            this.MantAnimationButton = new System.Windows.Forms.Button();
             this.BattleScreenButton = new System.Windows.Forms.Button();
             this.OtherTextButton = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
@@ -194,7 +194,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.MapMiniMapTerrainImageButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1189,7 +1188,6 @@
             this.ControlPanel.Controls.Add(this.StatusRMenuButton);
             this.ControlPanel.Controls.Add(this.StatusParamButton);
             this.ControlPanel.Controls.Add(this.MenuDefinitionButton);
-            this.ControlPanel.Controls.Add(this.MantAnimationButton);
             this.ControlPanel.Controls.Add(this.BattleScreenButton);
             this.ControlPanel.Controls.Add(this.OtherTextButton);
             this.ControlPanel.Controls.Add(this.HexEditorButton);
@@ -1247,6 +1245,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1640, 756);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // MapMiniMapTerrainImageButton
+            // 
+            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1232, 294);
+            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
+            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
+            this.MapMiniMapTerrainImageButton.TabIndex = 144;
+            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
+            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
+            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
             // 
             // ImageBattleFieldButton
             // 
@@ -1787,17 +1796,6 @@
             this.MenuDefinitionButton.UseVisualStyleBackColor = true;
             this.MenuDefinitionButton.Click += new System.EventHandler(this.MenuDefinitionButton_Click);
             // 
-            // MantAnimationButton
-            // 
-            this.MantAnimationButton.Location = new System.Drawing.Point(4, 148);
-            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MantAnimationButton.Name = "MantAnimationButton";
-            this.MantAnimationButton.Size = new System.Drawing.Size(200, 36);
-            this.MantAnimationButton.TabIndex = 4;
-            this.MantAnimationButton.Text = "マント";
-            this.MantAnimationButton.UseVisualStyleBackColor = true;
-            this.MantAnimationButton.Click += new System.EventHandler(this.MantAnimationButton_Click);
-            // 
             // BattleScreenButton
             // 
             this.BattleScreenButton.Location = new System.Drawing.Point(616, 293);
@@ -1930,17 +1928,6 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // MapMiniMapTerrainImageButton
-            // 
-            this.MapMiniMapTerrainImageButton.Location = new System.Drawing.Point(1232, 294);
-            this.MapMiniMapTerrainImageButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapMiniMapTerrainImageButton.Name = "MapMiniMapTerrainImageButton";
-            this.MapMiniMapTerrainImageButton.Size = new System.Drawing.Size(200, 36);
-            this.MapMiniMapTerrainImageButton.TabIndex = 144;
-            this.MapMiniMapTerrainImageButton.Text = "Minimap地形";
-            this.MapMiniMapTerrainImageButton.UseVisualStyleBackColor = true;
-            this.MapMiniMapTerrainImageButton.Click += new System.EventHandler(this.MapMiniMapTerrainImageButton_Click);
-            // 
             // MainFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2053,7 +2040,6 @@
         private System.Windows.Forms.Button OtherTextButton;
         private System.Windows.Forms.ToolStripMenuItem DecreaseColorToolStripMenuItem;
         private System.Windows.Forms.Button BattleScreenButton;
-        private System.Windows.Forms.Button MantAnimationButton;
         private System.Windows.Forms.Button MenuDefinitionButton;
         private System.Windows.Forms.Button StatusRMenuButton;
         private System.Windows.Forms.Button StatusParamButton;
