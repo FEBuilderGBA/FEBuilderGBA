@@ -86,9 +86,25 @@ namespace FEBuilderGBA
                 string newPath = Path.Combine(dir, newFilename + ext);
                 if (File.Exists(newPath))
                 {//既にある場合消す.
-                    File.Delete(newPath);
+                    try
+                    {
+                        File.Delete(newPath);
+                    }
+                    catch (Exception ee)
+                    {
+                        R.ShowStopError("既存のROMファイルを消去できませんでした。\r\nnewPath:{0}\r\n{1}", newPath, R.ExceptionToString(ee));
+                    }
                 }
-                File.Move(oldPath, newPath);
+                {
+                    try
+                    {
+                        File.Move(oldPath, newPath);
+                    }
+                    catch (Exception ee)
+                    {
+                        R.ShowStopError("ROMファイルを移動できませんでした。\r\noldPath: {0}\r\nnewPath:{1}\r\n{2}", oldPath, newPath, R.ExceptionToString(ee));
+                    }
+                }
             }
 
             {
@@ -114,16 +130,33 @@ namespace FEBuilderGBA
             string currentDir = Path.GetDirectoryName(U.ConfigEtcFilename("flag"));
             string newDir = Path.GetDirectoryName(U.ConfigEtcFilename("flag", newROMFilename));
 
-            if (! Directory.Exists(currentDir))
+            if (!Directory.Exists(currentDir))
             {//現在のプロジェクトのetcディレクトリが存在しない
                 return;
             }
 
             if (Directory.Exists(newDir))
             {//既にある場合消す.
-                Directory.Delete(newDir);
+                try
+                {
+                    Directory.Delete(newDir, true);
+                }
+                catch (Exception ee)
+                {
+                    R.ShowStopError("既存のetcファイルを消去できませんでした。\r\nnewDir:{0}\r\n{1}", newDir, R.ExceptionToString(ee));
+                }
             }
-            Directory.Move(currentDir, newDir);
+
+            {
+                try
+                {
+                    Directory.Move(currentDir, newDir);
+                }
+                catch (Exception ee)
+                {
+                    R.ShowStopError("etcファイルを移動できませんでした。\r\ncurrentDir: {0}\r\nnewDir:{1}\r\n{2}", currentDir, newDir, R.ExceptionToString(ee));
+                }
+            }
         }
 
     }

@@ -6283,6 +6283,9 @@ Tileset Palette
 :マップエディタ
 Map Editor
 
+:Minimap地形
+Minimap terrain.
+
 :ゲームオプションの順番
 Order of Game Option
 
@@ -6343,9 +6346,6 @@ Status Parameter
 :メニュー定義
 Menu Definitions
 
-:マント
-Cloak
-
 :その他文字列
 Other Text
 
@@ -6360,9 +6360,6 @@ Simple Menu
 
 :地形設定
 Terrain Editor
-
-:Minimap地形
-Minimap terrain.
 
 :ボスBGM
 Boss BGM
@@ -7152,6 +7149,9 @@ There is now a C01 hack, so you do not need to set it up.\r\n\r\nThe cloak is se
 
 :マント設定
 Cloak setting
+
+:マント
+Cloak
 
 :データが設定されていません。マップエディタから、データを作成してください。
 No data has been set.Create the data from the map editor.
@@ -12240,6 +12240,18 @@ You can not change the name of virtual ROM.
 
 :ファイル名として利用できない文字が含まれています
 Contains characters that can not be used as file names.
+
+:既存のROMファイルを消去できませんでした。\r\nnewPath:{0}\r\n{1}
+Failed to erase existing ROM file.\r\nnewPath:{0}.\r\n{1}.
+
+:ROMファイルを移動できませんでした。\r\noldPath: {0}\r\nnewPath:{1}\r\n{2}
+Could not move ROM file.\r\noldPath: {0}.\r\nnewPath:{1}.\r\n{2}.
+
+:既存のetcファイルを消去できませんでした。\r\nnewDir:{0}\r\n{1}
+Failed to delete existing etc file.\r\nnewDir:{0}.\r\n{1}.
+
+:etcファイルを移動できませんでした。\r\ncurrentDir: {0}\r\nnewDir:{1}\r\n{2}
+Could not move etc file.\r\ncurrentDir: {0}.\r\nnewDir:{1}.\r\n{2}.
 
 :現在の名前
 Current Name
