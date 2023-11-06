@@ -1,5 +1,5 @@
-NAME=常に必殺を禁止する武器を複数設定できるようにする. (Install)
-NAME.en=Define Multiple Prohibits the Crit By Item. (Installer)
+NAME=常に必殺を禁止する武器を複数設定できるようにする(Install)
+NAME.en=Define Multiple Prohibits the Crit By Item(Installer)
 
 INFO=追撃を出さない武器を複数設定できるようにします。
 
@@ -14,7 +14,7 @@ EA=Installer.event
 AUTHOR=7743
 
 INFO.en=Allows to set multiple weapons that do not emit Crit.
-NAME.zh=定义多个禁止按项目批判。(Install)
+NAME.zh=定义多个禁止按项目批判(Install)
 INFO.zh=允许设置多个不发射Crit的武器。
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1

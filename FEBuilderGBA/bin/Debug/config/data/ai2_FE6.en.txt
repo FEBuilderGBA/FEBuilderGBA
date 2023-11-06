@@ -1,7 +1,7 @@
 00=Charge (Action from the beginning)
-01=?
+01=Do not attack [0x5C86A0]
 02=Douglas assault?
-03=Start assault charge when attack is possible
+03=Do not move
 04=Attack after village destruction / destruction
 05=Thieves village destroyed and detached after destruction
 06=Began assault when attacking with 2 movements
@@ -9,7 +9,7 @@
 08=?
 09=random behavior
 0A=?
-0B=Clarine Milady · Leopard assault?
+0B=Clarine Milady, Leopard assault?
 0C=Citizen withdrawal
 0D=?
 0E=?
