@@ -1,0 +1,11 @@
+NAME=Display Growths
+INFO=このパッチは、ステータス画面でセレクトボタンを押すと成長率を表示するように変更します。
+
+NAME.en=Display Growths
+INFO.en=This patch changes the status screen to show the growth rate when the select button is pressed.
+
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/84
+TYPE=EA
+EA=Display Growths EA.txt
+PATCHED_IF:0x7FE78=0x30 0x47
+INFO.zh=此补丁更改了按下状态屏幕上的选择按钮时显示的增长率。

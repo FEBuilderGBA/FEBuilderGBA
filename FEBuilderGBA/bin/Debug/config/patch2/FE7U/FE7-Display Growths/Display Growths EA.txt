@@ -1,0 +1,88 @@
+//FE7 Display Growths
+//By Tequila
+
+#ifndef _FE7_
+	ERROR Wrong ROM
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+//#ifndef FreeSpace
+//	#define FreeSpace 0xD00000
+//	ORG FreeSpace
+//#endif
+
+#define Ram_Location 0x203FFFA //may need to change this
+
+PUSH
+
+ORG $813E2 //8888C //select + R-button check
+BYTE 0x82
+
+ORG $813EE //88896
+SHORT 0x46C0
+jumpToHack(Button_Press)
+
+//Remember whether we were looking at growths or stats
+ORG $814AC //8895C //Loads byte to store 1 before stat screen struct
+callHack_r1(Load_Page)
+
+ORG $81414 //888BC //Stores byte to store 1 before stat screen struct
+callHack_r2(Store_Page)
+
+ORG $7FE78 //871E8 //displays the stats
+SHORT 0x4730 //bx r6
+ORG $80050
+POIN Write_Numbers|1
+
+ORG $7FE0C
+callHack_r3(Stat_Labels)
+
+ORG $800A0
+jumpToHack(Update_Layers)
+
+POP
+
+ALIGN 4
+Button_Press:
+#incbin "Button_Press.dmp"
+
+ALIGN 4
+Load_Page:
+#incbin "Load_Page.dmp"
+WORD Ram_Location
+
+ALIGN 4
+Store_Page:
+#incbin "Store_Page.dmp"
+WORD Ram_Location
+
+ALIGN 4
+Write_Numbers:
+#incbin "Write_Numbers.dmp"
+POIN GrowthDisplayTable
+
+ALIGN 4
+GrowthDisplayTable:
+SHORT 0x1D 0x04A //Str/mag
+SHORT 0x1E 0x0CA //Skl
+SHORT 0x1F 0x14A //Spd
+SHORT 0x22 0x1CA //Luk
+SHORT 0x20 0x24A //Def
+SHORT 0x21 0x2CA //Res
+SHORT 0x1C 0x05A //HP
+
+ALIGN 4
+Stat_Labels:
+#incbin "Stat_Labels.dmp"
+POIN Alternate_Stat_Labels
+
+ALIGN 4
+Alternate_Stat_Labels:
+#incbin "Alternate_Stat_Labels.dmp"
+
+ALIGN 4
+Update_Layers:
+#incbin "Update_Layers.dmp"
+
