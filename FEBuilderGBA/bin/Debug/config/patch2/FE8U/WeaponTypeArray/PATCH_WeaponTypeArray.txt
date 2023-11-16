@@ -10,3 +10,4 @@ EDIT_PATCH:2=PATCH_WeaponTypeArray_EffectivenessType.txt
 
 INFO=Reworks the Weapon Triangle in two ways First way (EffectivenessType) increases the standard effectiveness table to allow for independent "bonuses" to the attacker and defender, instead of the defender getting the negative of the attacker's bonus. The second way (WeaponList), instead of using the weapon's actual type, uses a user definable byte for the weapon triangle calculation. This is to prevent it from interfering with other things (such as equipibility and weapon levels), while allowing for a lot more flexibility since the "weapon type" doesn't need to be an actual weapon type. A trivial example is implementing the Anima Triangle. A more involved example project could be pokemon type weaknesses.
 AUTHOR=Lisandra_Brave https://feuniverse.us/t/liss-asm-stuff/12801
+WARNING=1
