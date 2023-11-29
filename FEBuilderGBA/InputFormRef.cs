@@ -4005,6 +4005,15 @@ namespace FEBuilderGBA
                         return;
                     }
                 }
+                PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
+                if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
+                {
+                    if (CheckItemB10PassiveBooster(src_object))
+                    {
+                        InputFormRef.JumpForm<ItemStatBonusesSkillSystemsForm>(value, "AddressList", src_object);
+                        return;
+                    }
+                }
               
                 InputFormRef.JumpForm<ItemStatBonusesForm>(value, "AddressList", src_object);
                 return;
@@ -4854,6 +4863,40 @@ namespace FEBuilderGBA
             //違う
             return false;
         }
+
+        static bool CheckItemB10PassiveBooster(NumericUpDown value)
+        {
+            //IERが導入されたことでpassiveboosterの場合、成長率にも影響を与えます
+
+            //確保されていないので自動確保を試みる.
+            string prefix = GetPrefixName(value.Name);
+            uint id = GetStructID(prefix, value.Name);
+            if (id == U.NOT_FOUND)
+            {//IDが取れないので無理.
+                return false;
+            }
+
+            Form f = U.ControlToParentForm(value);
+            if (f == null)
+            {//フォームが取れないので無理.
+                return false;
+            }
+            List<Control> controls = InputFormRef.GetAllControls(f);
+
+            string object_type_name = prefix + "B10";
+            Control c = FindObjectByForm<NumericUpDown>(controls, object_type_name);
+            if (!(c is NumericUpDown))
+            {//判別不能
+                return false;
+            }
+            if (((byte)(((NumericUpDown)c).Value) & 0x80) == 0x80)
+            {//skillsystemsの独自拡張
+                return true;
+            }
+            //違う
+            return false;
+        }
+
         static bool CheckItemB34ExtendsStatBooster(NumericUpDown value)
         {
             //Vennoが独自に拡張したstatbooster?

@@ -335,6 +335,8 @@ namespace FEBuilderGBA
                 PatchUtil.class_type_enum effectivenesRework = PatchUtil.SearchClassType();
                 //grows mod
                 PatchUtil.growth_mod_enum growthmod = PatchUtil.SearchGrowsMod();
+                //IER
+                PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
 
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
@@ -343,6 +345,7 @@ namespace FEBuilderGBA
                     if (itemStatBonuses > 0)
                     {
                         uint vennoExtends = Program.ROM.u8(addr + 34);
+                        uint passivebooster = Program.ROM.u8(addr + 10);
                         uint statBonusesSize = 12; //バニラは12バイト
                         if (growthmod == PatchUtil.growth_mod_enum.Vennou && vennoExtends == 1)
                         {
@@ -351,6 +354,10 @@ namespace FEBuilderGBA
                         else if (growthmod == PatchUtil.growth_mod_enum.SkillSystems && vennoExtends == 1)
                         {
                             statBonusesSize = 20; //SkillSystemsは20バイト
+                        }
+                        else if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER && ((passivebooster & 0x80) == 0x80))
+                        {
+                            statBonusesSize = 20; //IERは20バイト
                         }
 
                         FEBuilderGBA.Address.AddAddress(list, itemStatBonuses

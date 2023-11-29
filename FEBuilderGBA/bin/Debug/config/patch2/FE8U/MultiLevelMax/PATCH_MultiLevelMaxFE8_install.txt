@@ -17,3 +17,6 @@ INFO.zh=将等级上限变更为职业和人物。\r\n规则\r\n如果有见习�
 AUTHOR=7743
 DEPRECATED=1
 UPDATE_PATCH=..\MultiLevelMax20191012\PATCH_MultiLevelMaxFE8_20191012_install.txt
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

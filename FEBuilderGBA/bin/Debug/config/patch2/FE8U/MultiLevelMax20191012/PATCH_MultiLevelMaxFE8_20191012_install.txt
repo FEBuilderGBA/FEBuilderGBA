@@ -15,3 +15,6 @@ INFO.en=Patches a table into the ROM that allows for variable level caps per uni
 INFO.zh=将等级上限变更为职业和人物。\r\n规则\r\n如果有见习标志，则该检查将被忽略。\r\n在人物和职业上设置最大级别。\r\n如果要为每个职业设置级别，请将0xFF（ANY）设置为该人物。\r\n如果你想为每个人物设置电平，请为该类设置0xFF（ANY）\r\n对于那些与此表不匹配的，将使用默认级别限制（通常是20。它可以通过修补程序进行更改）
 
 AUTHOR=7743
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
