@@ -1,0 +1,20 @@
+
+NAME=エクストラ トライアル 削除
+NAME.en=Remove Trial Map Menu
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x08A622
+COMBO=Default: 表示|0x08 0xD0 0x01 0x20|削除|0x08 0xE0 0x01 0x20
+COMBO.en=Default: show|0x08 0xD0 0x01 0x20|delete|0x08 0xE0 0x01 0x20
+
+INFO=ゲームクリア後に表示されるスタートメニューにあるエクストラメニューのトライアル「必殺の谷、豪雨の島、雪の中の防衛戦、海賊の挑戦、ロイの試練」を削除します。
+
+COMBO.zh=Default: 显示|0x08 0xD0 0x01 0x20|删除|0x08 0xE0 0x01 0x20
+
+AUTHOR=Eebit https://discord.com/channels/144670830150811649/470029781795078175/1179584779864244235
+INFO.en=The extra menu trials "Valley of Death, Fog Warfare, Castle Defense, Pincer Attack, A Solo Mission" will be removed from the extra menu that appears in the start menu that appears after clearing the game.
+NAME.zh=额外试用删除
+INFO.zh=额外菜单试炼“必杀之谷、豪雨之岛、雪中的防卫战、海贼的挑战、罗伊的试炼”将从通关游戏后出现的开始菜单中出现的额外菜单中删除。
