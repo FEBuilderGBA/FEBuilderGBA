@@ -1,0 +1,21 @@
+
+NAME=進撃準備画面の支援一覧でBGMを変えない
+NAME.en=Remove prep support room theme
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Change BGM|OFF|Fix: Do not change|ONN
+
+DETERMINATION_ADDRESS=0x951FC
+
+OFF:0x951FC=0x6D 0xF7 0xF4 0xFB
+ONN:0x951FC=0xC0 0x46 0xC0 0x46
+
+AUTHOR=GigaExcalibur https://feuniverse.us/t/dragz-s-backstage/19997/26
+
+INFO=進撃準備画面での支援一覧を表示する画面で音楽を変えません。
+INFO.en=This patch does not change the background music on the screen displaying the list of support on the Prepare Screen.
+NAME.zh=攻击准备画面的支援列表中的BGM无法变更。
+INFO.zh=攻击准备画面中显示支援列表的画面上的音乐没有变化。

@@ -1,0 +1,17 @@
+
+NAME=クリティカルの閾値
+NAME.en=Battle crit threshold
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02ACC0
+HEX=false
+
+AUTHOR=GigaExcalibur https://feuniverse.us/t/dragz-s-backstage/19997/26
+
+INFO=この必殺率を下回ると必殺率を0に設定します。\r\nディフォルトは0です。
+INFO.en=battle crit below this number becomes set to 0.\r\nDefault is 0.
+NAME.zh=临界阈值。
+INFO.zh=如果死亡率低于此死亡率，则死亡率将设置为0。\r\n默认值为 0。
