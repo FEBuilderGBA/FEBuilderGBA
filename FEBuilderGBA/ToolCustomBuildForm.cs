@@ -381,7 +381,7 @@ namespace FEBuilderGBA
                 this.OrignalROMTextArea.Text = orignal_romfile;
             }
             this.Explain.Text +=
-                "https://dw.ngmansion.xyz/doku.php?id=en:en:guide:febuildergba:skillsystems_custombuild"; ///No Translate
+                "https://feuniverse.us/t/how-to-link-skillsys-up-to-febuilder-to-make-a-custom-build/23157/4"; ///No Translate
         }
 
 

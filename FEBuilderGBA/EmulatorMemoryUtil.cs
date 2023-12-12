@@ -2241,17 +2241,39 @@ namespace FEBuilderGBA
             sb.AppendLine();
         }
 
-        static void MakeDeployUnits(out uint all, out uint alive, out uint deploy)
+        enum UNITS_TYPE
         {
+            PLAYER
+            ,ENEMY
+            ,NPC
+            ,PLAYER_DEPLOY
+        }
+        static uint CountUnits(UNITS_TYPE units_type)
+        {
+            uint count = 0;
             const uint RAMUnitSizeOf = 72; //構造体のサイズ
-            const uint UnitStatusUnDeploy = 0x04;
+            const uint UnitStatusUnDeploy = 0x08;
             const uint UnitStatusDead = 0x02;
 
-            all = 0;
-            alive = 0;
-            deploy = 0;
-            uint addr = Program.ROM.RomInfo.workmemory_player_units_address; 
-            for (uint i = 0 ; i < 62; i++, addr += RAMUnitSizeOf)
+            uint addr;
+            uint max;
+            if (units_type == UNITS_TYPE.ENEMY)
+            {
+                addr = Program.ROM.RomInfo.workmemory_enemy_units_address;
+                max = 50;
+            }
+            else if (units_type == UNITS_TYPE.NPC)
+            {
+                addr = Program.ROM.RomInfo.workmemory_npc_units_address;
+                max = 20;
+            }
+            else
+            {
+                addr = Program.ROM.RomInfo.workmemory_player_units_address;
+                max = 62;
+            }
+
+            for (uint i = 0; i < max; i++, addr += RAMUnitSizeOf)
             {
                 uint unitPointer = Program.RAM.u32(addr);
                 if (unitPointer == 0)
@@ -2260,22 +2282,29 @@ namespace FEBuilderGBA
                 }
                 if (!U.isSafetyPointer(unitPointer))
                 {
-                    break;
+                    continue;
                 }
 
-                uint status = Program.RAM.u32(addr + 0xC);
-                if ((status & UnitStatusUnDeploy) != UnitStatusUnDeploy)
+                if (units_type == UNITS_TYPE.PLAYER || units_type == UNITS_TYPE.PLAYER_DEPLOY)
                 {
-                    deploy++;
+                    uint status = Program.RAM.u32(addr + 0xC);
+                    if ((status & UnitStatusDead) == UnitStatusDead)
+                    {
+                        continue;
+                    }
+                    if (units_type == UNITS_TYPE.PLAYER_DEPLOY)
+                    {
+                        if ((status & UnitStatusUnDeploy) == UnitStatusUnDeploy)
+                        {
+                            continue;
+                        }
+                    }
                 }
-                if ((status & UnitStatusDead) != UnitStatusDead)
-                {
-                    alive++;
-                }
-                all = i + 1;
+                count ++;
             }
-
+            return count;
         }
+
 
         static void MakeTopUnits(StringBuilder sb, uint limitCount)
         {
@@ -2450,14 +2479,14 @@ namespace FEBuilderGBA
             }
 
             {
-                uint units, alive, deploy;
-                MakeDeployUnits(out units, out alive, out deploy);
                 sb.Append("Units:");
-                sb.Append(units);
-                sb.Append(" /Alive:");
-                sb.Append(alive);
+                sb.Append(CountUnits(UNITS_TYPE.PLAYER));
                 sb.Append(" /Deploy:");
-                sb.Append(deploy);
+                sb.Append(CountUnits(UNITS_TYPE.PLAYER_DEPLOY));
+                sb.Append(" /Enemy:");
+                sb.Append(CountUnits(UNITS_TYPE.ENEMY));
+                sb.Append(" /NPC:");
+                sb.Append(CountUnits(UNITS_TYPE.NPC));
                 sb.AppendLine();
             }
             if (Program.ROM.RomInfo.version >= 7)
