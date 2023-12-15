@@ -1,0 +1,25 @@
+NAME=ステータス画面を3フレーム早く表示する
+NAME.en=Faster status screen
+NAME.zh=Faster status screen
+INFO=このパッチは、ステータス画面を表示する時の無駄なウェイトである3フレームを除去して、より早くステータス画面を表示します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Wait 3Frames|OFF|Fix: No Wait|ONN
+
+DETERMINATION_ADDRESS=0xA00A48
+
+OFF:0xA009EA=0x02
+ONN:0xA009EA=0x01
+
+OFF:0xA00A48=0x0E 0x00 0x02 0x00 0x00 0x00 0x00 0x00
+ONN:0xA00A48=0x13 0x00 0x00 0x00 0x00 0x00 0x00 0x00	//NOP
+
+OFF:0xA00A60=0x0E 0x00 0x02 0x00 0x00 0x00 0x00 0x00
+ONN:0xA00A60=0x13 0x00 0x00 0x00 0x00 0x00 0x00 0x00	//NOP
+
+AUTHOR=Contro https://discord.com/channels/144670830150811649/725478895226191892/1184975373579075584
+INFO.en=This patch removes the 3 frames that are wasted when displaying the status screen and displays the status screen more quickly.
+INFO.zh=该补丁消除了显示状态屏幕时浪费的 3 帧，并更快地显示状态屏幕。
