@@ -16,8 +16,8 @@ EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	座標[ZZ:MAP
 EVENTSCRIPT:5=4F0D0000{$L1:SendAllTransporter.dmp}	現在操作しているユニットの持ち物をすべて輸送隊に送ります	{UNIT}
 
 
-EVENTSCRIPT:1.en=400DXX00{$L1:SendAllTransporter.dmp}	Send unit's all items to transporter[XX:UNIT:Unit][YY:DECIMAL:add exp]	{UNIT}
-EVENTSCRIPT:2.en=410D0000{$L1:SendAllTransporter.dmp}	Send SVAL1 Unit's all items to transporter.[YY:DECIMAL:add exp](LOW)
+EVENTSCRIPT:1.en=400DXX00{$L1:SendAllTransporter.dmp}	Send unit's all items to transporter[XX:UNIT:Unit]	{UNIT}
+EVENTSCRIPT:2.en=410D0000{$L1:SendAllTransporter.dmp}	Send SVAL1 Unit's all items to transporter.(LOW)
 EVENTSCRIPT:3.en=4B0D0000{$L1:SendAllTransporter.dmp}	Send SVALB coordinates Unit's all items to transporter(LOW)
 EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	Send coordinates[ZZ:MAPX:X][WW:MAPY:Y] Unit's all items to transporter	{UNIT}
 EVENTSCRIPT:5.en=4F0D0000{$L1:SendAllTransporter.dmp}	Send currently being operated unit's all items to transporter	{UNIT}
