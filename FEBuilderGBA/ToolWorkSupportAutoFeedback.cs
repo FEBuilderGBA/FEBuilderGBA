@@ -20,8 +20,6 @@ namespace FEBuilderGBA
         uint AUTOFEEDBACK_ENABLE_FLAG = 0;
         uint AUTOFEEDBACK_ENABLE_FLAG_MAPID = 0;
 
-        string SavFilename = "";
-
         const int FEEDBACK_WAIT_LONG_MINUTE = 10;
         const int FEEDBACK_WAIT_MINUTE = 1;
         DateTime LastFeedBackEndEventPostTime = DateTime.Now.AddMinutes(-FEEDBACK_WAIT_LONG_MINUTE);
@@ -49,7 +47,6 @@ namespace FEBuilderGBA
 
             this.USERHASH = MakeUserHash();
             this.VERSION = MakeVersion();
-            this.SavFilename = MakeSavFilename();
             if (url == "")
             {//URLが無効なのでできません
                 IsAutoFeedBack = false;
@@ -73,10 +70,6 @@ namespace FEBuilderGBA
             IsAutoFeedBack = r;
         }
 
-        string MakeSavFilename()
-        {
-            return U.ChangeExtFilename(Program.ROM.Filename, ".SAV", ".emulator");
-        }
         string MakeUserHash()
         {
             string users = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -332,22 +325,48 @@ namespace FEBuilderGBA
             LastFeedBackFailPostTime = DateTime.Now.AddMinutes(FEEDBACK_WAIT_MINUTE);
             return true;
         }
+        string MakeSavFilename()
+        {
+            string filename;
+            string dir = Path.GetDirectoryName(Program.ROM.Filename);
+            string name = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
+
+            filename = Path.Combine(dir, name + ".emulator.sav");
+            if (File.Exists(filename))
+            {
+                return filename;
+            }
+
+            filename = Path.Combine(dir, name + ".emulator.sa1");
+            if (File.Exists(filename))
+            {
+                return filename;
+            }
+
+            filename = Path.Combine(dir, name + ".sav");
+            if (File.Exists(filename))
+            {
+                return filename;
+            }
+
+            return "";
+        }
 
         string MakeBase64()
         {
-            if (! File.Exists(this.SavFilename))
-            {//セーブファイルがない!
-                return "";
-            }
-
             try
             {
+                string filename = MakeSavFilename();
+                if (filename == "")
+                {//セーブファイルがない!
+                    return "";
+                }
                 using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
                 {
-                    string filenameOnly = Path.GetFileName(this.SavFilename);
+                    string filenameOnly = Path.GetFileName(filename);
                     string srcFilename = Path.Combine(tempdir.Dir, filenameOnly);
                     string dest7zFilename = Path.Combine(tempdir.Dir, filenameOnly + ".7z");
-                    File.Copy(this.SavFilename, srcFilename);
+                    File.Copy(filename, srcFilename);
                     ArchSevenZip.Compress(dest7zFilename, srcFilename, 10);
                     byte[] bin = File.ReadAllBytes(dest7zFilename);
                     return System.Convert.ToBase64String(bin);

@@ -29,7 +29,7 @@ beq NotFound
 CheckClass:
 ldrb r0, [r4, #0x0]	@ClassID
 cmp  r0, r5
-bne  NotFound
+bne  Loop
 
 CheckUnit:
 ldrb r0, [r4, #0x1]	@UnitID

@@ -2477,9 +2477,8 @@ namespace FEBuilderGBA
                 sb.Append(turn);
                 sb.AppendLine();
             }
-
             {
-                sb.Append("Units:");
+                sb.Append("Player:");
                 sb.Append(CountUnits(UNITS_TYPE.PLAYER));
                 sb.Append(" /Deploy:");
                 sb.Append(CountUnits(UNITS_TYPE.PLAYER_DEPLOY));
@@ -2515,9 +2514,9 @@ namespace FEBuilderGBA
             }
             sb.AppendLine();
 
-            //一覧表の上から10人
-            MakeTopUnits(sb, 10);
-            return sb.ToString();
+            //一覧表の上から12人
+            MakeTopUnits(sb, 12);
+            return sb.ToString().TrimEnd();
         }
     }
 }

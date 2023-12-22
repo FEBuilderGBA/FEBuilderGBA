@@ -1,0 +1,20 @@
+NAME=ハードモードでも出撃禁止を有効にする
+NAME.en=Enable Deployment prohibitions even in hard mode
+NAME.zh=Enable Deployment prohibitions even in hard mode
+
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Invalid for hard mode|OFF|Fix: Enable also in hard mode|ONN
+DETERMINATION_ADDRESS=0x30DB6
+
+ONN:0x30DB6=0x00 0x00
+OFF:0x30DB6=0x06 0xD1
+
+AUTHOR=7743 https://discord.com/channels/144670830150811649/470029781795078175/1187268349269389322
+
+INFO=進撃準備画面で選択できない出撃禁止ユニットを、ハードモードでも有効にします。\r\nただし、このパッチはあまりテストされていないので副作用がある可能性があります。
+INFO.en=The prohibited units that cannot be selected on the advance preparation screen will also be enabled in hard mode.\r\nHowever, this patch has not been extensively tested and may have side effects.
+INFO.zh=无法在预先准备画面中选择的禁止单位也将在困难模式下启用。\r\n然而，该补丁尚未经过广泛测试，可能有副作用。
