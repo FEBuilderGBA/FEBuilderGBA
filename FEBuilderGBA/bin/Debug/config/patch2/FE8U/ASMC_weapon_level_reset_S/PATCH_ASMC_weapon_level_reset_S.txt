@@ -1,0 +1,74 @@
+NAME=武器レベルSをリセットするイベント(イベント命令)
+NAME.en=Add Event: Reset Weapon level S
+NAME.zh=Add Event: Reset Weapon level S
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_weapon_level_has_S.dmp=0x70 0xB5
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_weapon_level_has_S.dmp
+BIN:$FREEAREA:2=ASMC_weapon_level_have_more_than_one.dmp
+BIN:$FREEAREA:3=ASMC_weapon_level_reset_S.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:01=400D0000{$L1:ASMC_weapon_level_has_S.dmp}	ユニットが武器レベルSを持っているか判定(ASMC_weapon_level_has_S)(LOW)	@SlotC	Slot1=Unit	ユニットが武器レベルSを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:02=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_has_S.dmp}	[XX:UNIT:ユニット]が武器レベルSを持っているか判定(ASMC_weapon_level_has_S)	@SlotC	ユニットが武器レベルSを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:03=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	[XX:MAPX:X][YY:MAPY:Y]のユニットが武器レベルSを持っているか判定(ASMC_weapon_level_has_S)	@SlotC	ユニットが武器レベルSを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:04=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	操作中のユニットが武器レベルSを持っているか判定(ASMC_weapon_level_has_S)	@SlotC	ユニットが武器レベルSを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+
+EVENTSCRIPT:11=400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	ユニットが2つ以上の武器レベルを持っているか判定(ASMC_weapon_level_have_more_than_one)(LOW)	@SlotC	Slot1=Unit	ユニットが2つ以上の武器レベルを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:12=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	[XX:UNIT:ユニット]が2つ以上の武器レベルを持っているか判定(ASMC_weapon_level_have_more_than_one)	@SlotC	ユニットが2つ以上の武器レベルを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:13=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	[XX:MAPX:X][YY:MAPY:Y]のユニットが2つ以上の武器レベルを持っているか判定(ASMC_weapon_level_have_more_than_one)	@SlotC	ユニットが2つ以上の武器レベルを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+EVENTSCRIPT:14=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	操作中のユニットが2つ以上の武器レベルを持っているか判定(ASMC_weapon_level_have_more_than_one)	@SlotC	ユニットが2つ以上の武器レベルを持っているなら1がSlotCに返ります。それ以外は0が返されます。
+
+
+EVENTSCRIPT:21=400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	ユニットの武器レベルSをAに下げる(ASMC_weapon_level_reset_S)(LOW)	Slot1=Unit
+EVENTSCRIPT:22=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	[XX:UNIT:ユニット]の武器レベルSをAに下げる(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:23=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	[XX:MAPX:X][YY:MAPY:Y]のユニットの武器レベルSをAに下げる(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:24=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	操作中のユニットの武器レベルSをAに下げる(ASMC_weapon_level_reset_S)
+
+
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit has weapon level S(ASMC_weapon_level_has_S)(LOW)	@SlotC	Slot1=Unit	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:02.en=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the [XX:UNIT:Unit] has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:03.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit at [XX:MAPX:X][YY:MAPY:Y] has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:04.en=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit being current operating has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+
+EVENTSCRIPT:11.en=400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if a unit has more than one weapon level(ASMC_weapon_level_have_more_than_one)(LOW)	@SlotC	Slot1=Unit	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:12.en=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if [XX:UNIT:UNIT] has more than one weapon level(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:13.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if a unit at [XX:MAPX:X][YY:MAPY:Y] has two or more weapon levels(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:14.en=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if the unit being current operating has more than one weapon level(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+
+
+EVENTSCRIPT:21.en=400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the unit's weapon level S to A(ASMC_weapon_level_reset_S)(LOW)	Slot1=Unit
+EVENTSCRIPT:22.en=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the [XX:UNIT:Unit]'s weapon level S to A(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:23.en=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the Unit at [XX:MAPX:X][YY:MAPY:Y] in weapon level S to A(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:24.en=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the weapon level S of the current operating unit to A(ASMC_weapon_level_reset_S)
+
+
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit has weapon level S(ASMC_weapon_level_has_S)(LOW)	@SlotC	Slot1=Unit	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:02.zh=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the [XX:UNIT:Unit] has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:03.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit at [XX:MAPX:X][YY:MAPY:Y] has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:04.zh=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_has_S.dmp}	Determine if the unit being current operating has weapon level S(ASMC_weapon_level_has_S)	@SlotC	If the unit has weapon level S, 1 is returned in SlotC. Otherwise, 0 is returned.
+
+EVENTSCRIPT:11.zh=400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if a unit has more than one weapon level(ASMC_weapon_level_have_more_than_one)(LOW)	@SlotC	Slot1=Unit	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:12.zh=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if [XX:UNIT:UNIT] has more than one weapon level(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:13.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if a unit at [XX:MAPX:X][YY:MAPY:Y] has two or more weapon levels(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+EVENTSCRIPT:14.zh=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_have_more_than_one.dmp}	Determine if the unit being current operating has more than one weapon level(ASMC_weapon_level_have_more_than_one)	@SlotC	If the unit has more than one weapon level, 1 is returned in SlotC. Otherwise, 0 is returned.
+
+
+EVENTSCRIPT:21.zh=400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the unit's weapon level S to A(ASMC_weapon_level_reset_S)(LOW)	Slot1=Unit
+EVENTSCRIPT:22.zh=40050100XXXXXXXX400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the [XX:UNIT:Unit]'s weapon level S to A(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:23.zh=40050B00XXXXYYYY40050100FEFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the Unit at [XX:MAPX:X][YY:MAPY:Y] in weapon level S to A(ASMC_weapon_level_reset_S)
+EVENTSCRIPT:24.zh=40050100FFFFFFFF400D0000{$L1:ASMC_weapon_level_reset_S.dmp}	Reduce the weapon level S of the current operating unit to A(ASMC_weapon_level_reset_S)
+
+
+INFO=一つしか取れない武器レベルSを武器レベルAにリセットするイベントを作れるようにします。\r\n武器レベルをリセットできるかを調べた後に、リセットを実行する命令を発行してください。\r\n主人公などの特定の武器を装備しなければいけないユニットがいる場合は、CHECK_ACTIVEID命令で除外するようにしください。
+
+
+INFO.en=This patch allows you to create an event that resets weapon level S, which can only be obtained once, to weapon level A.\r\nAfter checking to see if the weapon level can be reset, issue an instruction to perform the reset.\r\nIf there are units that must be equipped with certain weapons, such as the hero, exclude them with the CHECK_ACTIVEID instruction.
+
+INFO.zh=此补丁允许您创建一个事件，将只能获得一次的武器等级 S 重置为武器等级 A。\r\nAfter checking to see if the weapon level can be reset, issue an instruction to perform the reset.\r\nIf there are units that must be equipped with certain weapons, such as the hero, exclude them with the CHECK_ACTIVEID instruction.

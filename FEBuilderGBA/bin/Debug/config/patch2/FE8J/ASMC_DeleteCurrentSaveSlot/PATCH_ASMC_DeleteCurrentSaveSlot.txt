@@ -14,8 +14,8 @@ BIN:$FREEAREA:1=ASMC_DeleteCurrentSaveSlot.dmp
 AUTHOR=7743
 
 EVENTSCRIPT:01=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
-EVENTSCRIPT:01.en=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
-EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	現在のセーブスロットを消去する(ASMC_DeleteCurrentSaveSlot)
+EVENTSCRIPT:01.en=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	Clear the current save slot(ASMC_DeleteCurrentSaveSlot)
+EVENTSCRIPT:01.zh=400D0000{$L1:ASMC_DeleteCurrentSaveSlot.dmp}	Clear the current save slot(ASMC_DeleteCurrentSaveSlot)
 
 INFO=現在利用しているセーブスロットを消去します。\r\nこのコマンドは危険なので通常は利用しないでください。
 INFO.en=Clears the save slot currently in use.\r\nThis command is dangerous and should not be used normally.

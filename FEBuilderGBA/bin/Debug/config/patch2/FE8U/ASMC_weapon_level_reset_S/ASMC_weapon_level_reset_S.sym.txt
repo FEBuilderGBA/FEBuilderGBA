@@ -1,0 +1,3 @@
+Exit=$2E
+Loop1=$18
+Reset=$26

@@ -1,6 +1,6 @@
 
-NAME=出撃禁止パッチ
-NAME.en=Deny Deployment From Preparations Editor
+NAME=出撃禁止パッチ(Editor)
+NAME.en=Deny Deployment From Preparations(Editor)
 
 IF:0x97AD8=0x00 0x48
 IF_COMMENT=出撃禁止パッチを導入してください.
@@ -40,6 +40,6 @@ B3:MAP_ANYFF.en=Chaptor(FF=All Chaptor)
 INFO=FE8にも出撃禁止機能を搭載する.
 AUTHOR=aera ,7743  FE8 kesseki patch
 INFO.en=Edits the table patched in by "Deny Deployment From Preparations Installer."\r\nPrevents certain units from taking part in certain chapters.\r\nAlso has a sortie prohibition feature in FE8.\r\n
-NAME.zh=禁止出击补丁
+NAME.zh=禁止出击补丁(Editor)
 INFO.zh=FE 8具有禁止出击功能。
 
