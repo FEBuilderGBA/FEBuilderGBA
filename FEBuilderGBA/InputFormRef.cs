@@ -10278,6 +10278,18 @@ namespace FEBuilderGBA
 
 
             Debug.Assert(original_size < 0x100000);
+            if (dataByte.Length == 0)
+            {//文字列長が0
+                undodata.list.Add(new Undo.UndoPostion(write_addr, original_size));
+
+                //文字列データの書き込み.
+                Program.ROM.write_fill(write_addr, original_size, 0x00);
+
+                //Text00のnullアドレスに戻します。
+                uint text_id_0_pointer = Program.ROM.u32(baseaddress);
+                Program.ROM.write_u32(write_pointer, text_id_0_pointer);
+                return U.toOffset(text_id_0_pointer);
+            }
             if (dataByte.Length <= original_size)
             {//オリジナルより小さいなら書き換え可能.
                 undodata.list.Add(new Undo.UndoPostion(write_addr, original_size));
@@ -10287,7 +10299,6 @@ namespace FEBuilderGBA
                 //余剰領域は0x00クリア
                 byte[] zerofill = U.FillArray(original_size - (uint)dataByte.Length, 0x0);
                 Program.ROM.write_range(write_addr + (uint)dataByte.Length, zerofill);
-
 
                 if (raiseUnHuffman)
                 {//un-Huffman化する.
