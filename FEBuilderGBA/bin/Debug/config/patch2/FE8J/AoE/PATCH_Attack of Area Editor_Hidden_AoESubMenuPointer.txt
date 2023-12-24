@@ -1,0 +1,24 @@
+NAME=AoE 範囲技 広範囲のエリア攻撃(Hidden AoESubMenuPointer)
+NAME.en=AoE Area of Effect(Hidden AoESubMenuPointer)
+NAME.zh=AoE Area of Effect(Hidden AoESubMenuPointer)
+TYPE=STRUCT
+TAG=#ENGINE #HIDDEN
+
+IF:0x1D640=0x00 0x4B 0x18 0x47
+
+AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/19
+
+
+INFO=AoEメニューのポインタを見つけるために内部的に利用するパッチです。\r\n\r\n広範囲のエリアを一度に攻撃できる機能を攻撃メニューに搭載します。\r\nバリスタなどのユニットにこの機能を付加すると、新たなユニットの特性を追加できます。\r\nまた、特定の範囲をまとめて回復する機能もあり、特殊なヒーラー、魔法使いを実装したりもできます。
+INFO.en=This patch is used internally to find the pointer to the AoE menu\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+INFO.zh=This patch is used internally to find the pointer to the AoE menu.\r\n\r\nA function that allows you to attack a wide area at once will be added to the attack menu(Unit Menu).\r\nAdding this feature to a unit such as a ballista will add a new unit characteristic.\r\nThere is also a function to heal a specific area at once, which can be implemented for special healers and wizards.
+
+
+//データへのポインタ
+POINTER=$XGREP4ENDA+6 0x02 0x00 0x00 0x00 XXXX XXXX XXXX XXXX 0x03 0x00 0x00 0x00 XXXX XXXX XXXX XXXX 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x22 0x41 0x6F 0x45 0x5F 0x4D 0x61 0x69 0x6E 0x50 0x72 0x6F 0x63 XXXX XXXX XXXX 0x10 XXXX XXXX XXXX 0xFD 0xF0 0x03 0x02 0x00 0x03
+
+//データサイズ(10進数)
+DATASIZE=36
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP36 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
