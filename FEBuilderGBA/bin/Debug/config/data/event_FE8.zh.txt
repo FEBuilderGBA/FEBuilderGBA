@@ -616,3 +616,5 @@ Duration
 400D000009010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{J}
 400D0000B9010308	Restart map animation, resume drawing units(ASMC UnblockGameGraphicsLogic)	{U}
 20820000	WorldmapReturn Don't use it, use ENDA instead.[TERM](ENDWM)(LOW)
+400D0000513C0008	ResetAllocation Fonts(ASMC Font_ResetAllocation)	{TEXT}	{J}
+400D0000213D0008	ResetAllocation Fonts(ASMC Font_ResetAllocation)	{TEXT}	{U}

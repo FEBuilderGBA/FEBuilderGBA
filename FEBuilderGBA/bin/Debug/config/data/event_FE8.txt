@@ -620,3 +620,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	WMAPに出したユニットの
 400D000009010308	マップアニメーションを再稼働し、ユニットの描画等を再開する(ASMC UnblockGameGraphicsLogic)	{J}
 400D0000B9010308	マップアニメーションを再稼働し、ユニットの描画等を再開する(ASMC UnblockGameGraphicsLogic)	{U}
 20820000	WorldmapReturn 利用するな、代わりにENDAを使え[TERM](ENDWM)(LOW)	
+400D0000513C0008	フォントを初期化する(ASMC Font_ResetAllocation)	{TEXT}	{J}
+400D0000213D0008	フォントを初期化する(ASMC Font_ResetAllocation)	{TEXT}	{U}
