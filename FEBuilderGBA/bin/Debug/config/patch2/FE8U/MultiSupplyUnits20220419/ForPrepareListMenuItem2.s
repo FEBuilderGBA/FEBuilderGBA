@@ -13,6 +13,7 @@ blh 0x0803161C @HasConvoyAccess	{U}
 mov r2, #0x2
 orr r2, r0
 
+ldr r0, [r4, #0x2c]
 add r5, #0x33
 ldrb r1, [r5, #0x0]
 

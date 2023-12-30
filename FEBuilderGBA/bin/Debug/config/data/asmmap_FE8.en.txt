@@ -1492,7 +1492,7 @@ r3=X tile position of menu of right	{U}
 @ITEMSTOCK@00	byte	Item ID
 @ITEMSTOCK@01	byte	Number of items
 0203A818	@ITEMSTOCK@[64]	Storage	{J}
-0203A81C	@ITEMSTOCK@[64]	Storage	{U}
+0203A720	@ITEMSTOCK@[64]	Storage	{U}
 
 03005261	flag0x09 - 0x10	{J}
 03005262	flag0x11 - 0x18	{J}

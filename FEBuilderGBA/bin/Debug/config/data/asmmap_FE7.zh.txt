@@ -1047,11 +1047,13 @@
 0203EBD8	@ClearTurn@[30]	章清除转	{J}
 0203EC00	@ClearTurn@[30]	章清除转	{U}
 
-//@ITEMSTOCK@00	byte	项目ID
-//@ITEMSTOCK@01	byte	项目数量
-//0203A46C	@ITEMSTOCK@[64]	运输清单	{J}
-//0203A470	@ITEMSTOCK@[64]	运输清单	{U}
+//https://feuniverse.us/t/fe7-convoy-ram-location/23402
+@ITEMSTOCK@00	byte	项目ID
+@ITEMSTOCK@01	byte	项目数量
+0203A71C	@ITEMSTOCK@[64]	运输清单	{J}
+0203A470	@ITEMSTOCK@[64]	运输清单	{U}
 
+0802EBCC	GetConvoyItemArray	{J}
 08012C60	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
 08013318	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
 08019CE0	Copies movement	cost entry (0x40 bytes long) from the rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{U}

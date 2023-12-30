@@ -577,7 +577,7 @@
 
 @ITEMSTOCK@00	byte	アイテムID
 @ITEMSTOCK@01	byte	アイテム個数
-2039430	@ITEMSTOCK@[64]	輸送隊在庫
+02039430	@ITEMSTOCK@[64]	輸送隊在庫
 
 
 08029734	輸送隊の中身へのポインタ
