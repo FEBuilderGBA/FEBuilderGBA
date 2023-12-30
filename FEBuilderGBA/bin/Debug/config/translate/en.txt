@@ -5231,7 +5231,7 @@ Determines growth rate when "Autolevel = Class Dependent" is selected in the Uni
 Determines how fast a unit moves.\r\nIf armored, set to 1.\r\nAll else, set to 0.\r\n
 
 :FE8では、分岐クラスチェンジが実装されたので、\r\nクラスチェンジの値としての意味をなさなくなりましたが、\r\n敵の自動成長に利用されています。\r\n敵の上級職を自動成長に成長させる時に、ここに設定されている下級職の成長率で成長させます。\r\nまた、クラスチェンジ3分岐パッチなどで、第3の選択子として利用されることもあります。
-In FE8, branching promotions was implemented,\r\nso it does not make sense as a promotions value,\r\nbut it is used for enemy's AutoLeveling.\r\nWhen the enemy Promoted Unit is grown to AutoLeveling,\r\nit is grown at the un-Promoted growth rate set here.\r\nIn addition, promotion 3 branch patch etc.\r\nmay be used as a third selector.
+Used for determining the EXP value of promoted classes,\r\nwhich combine their own Relative Power with that of their\r\nMenu Class. Do not set this to 0 on a promoted class.\r\nDue to FE8 adding branch promotions, this field is not used for\r\npromotions unless the 3 Promotion Branch Options patch is enabled,\r\nbut promotions can still be accessed by clicking here.
 
 :{0}する時のクラスとして利用されます。
 Used as class when {0} is done.
@@ -5622,6 +5622,9 @@ Specify bonuses to automatically recover bat status such as poison and sleep for
 
 :地形の回避率と防御ボーナスを表示するタイルを決定するテーブルです。\r\n255は、「--」を表示するタイルです。\r\nそれ以外は、タイルの回避率と防御値の情報を表示します。\r\n\r\nバニラでは、なぜかバーサーカーの移動コストのテーブルと同じアドレスが指定されています。\r\nよって、このデータはバーサーカーの移動コストにも使われるので、変な値は設定しないでください。\r\n
 A table that determines the tiles that display terrain evasion rates and defense bonuses.\r\n255 is a tile that displays "-".\r\nOther than that, it displays tile evasion rate and defense value information.\r\n\r\nIn vanilla, for some reason, the same address as the Berserker travel cost table is specified.\r\nTherefore, this data is also used for the Berserker's travel cost, so please do not set strange values.\r\n
+
+:バリスタに乗っている時の移動コストを指定します。。\r\n
+Specifies the movement cost when riding the ballista.\r\n
 
 :このデータに対するハードコーディングがあります。\r\n詳しくは、ラベルをクリックして、関連するパッチを見てください。\r\n
 There is known hard coding for this data.\r\nClick the label to see the associated patch for more information.\r\n
@@ -8736,6 +8739,9 @@ Movement Cost: Rain
 
 :移動コスト: 天気雪
 Movement Cost: Snow
+
+:バリスタの移動コスト
+BallistaMovCost
 
 :クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\nこのタイルは必ず255に設定する必要があります。
 Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nThis tile must be set to 255.

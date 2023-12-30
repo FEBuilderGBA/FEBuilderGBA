@@ -71,6 +71,7 @@ namespace FEBuilderGBA
         public uint terrain_recovery_pointer { get; protected set; } //地形回復 全クラス共通
         public uint terrain_bad_status_recovery_pointer { get; protected set; } //地形回復 全クラス共通
         public uint terrain_show_infomation_pointer { get; protected set; } //地形ウィンドウに情報表示 全クラス共通
+        public uint ballista_movcost_pointer { get; protected set; } //バリスタの移動コスト 全クラス共通
         public uint ccbranch_pointer { get; protected set; } // CC分岐の開始位置
         public uint ccbranch2_pointer { get; protected set; } // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
         public uint class_alphaname_pointer { get; protected set; } // クラスのアルファベット表記の開始位置

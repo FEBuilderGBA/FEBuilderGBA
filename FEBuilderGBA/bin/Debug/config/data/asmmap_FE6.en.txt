@@ -1670,3 +1670,5 @@
 0806BA34	ClearGlobalTriggerState	
 0202D20C	gMapMovement
 08019484	StoreMovCostTable
+0202AA48	@ChapterData	ChapterData
+02039430	@ITEMSTOCK@[64]	Convoy inventory.

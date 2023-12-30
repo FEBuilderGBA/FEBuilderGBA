@@ -72,6 +72,7 @@ namespace FEBuilderGBA
             terrain_recovery_pointer = 0x19F0C; //地形回復 全クラス共通
             terrain_bad_status_recovery_pointer = 0x019F1C; //地形回復 全クラス共通
             terrain_show_infomation_pointer = 0x85F78; //地形ウィンドウに情報表示 全クラス共通
+            ballista_movcost_pointer = 0x18BD8; //地形ウィンドウに情報表示 全クラス共通
             ccbranch_pointer = 0x0; // CC分岐の開始位置
             ccbranch2_pointer = 0x0; // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
             class_alphaname_pointer = 0x0; // クラスのアルファベット表記の開始位置

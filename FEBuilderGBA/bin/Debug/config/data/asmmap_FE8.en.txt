@@ -15539,3 +15539,4 @@ r3=X tile position of menu of right	{U}
 08011548	SetPopupItem	{J}
 080af28c	A lit white palette animation indicating that a save slot is selected.	{J}
 080AA7AC	A lit white palette animation indicating that a save slot is selected.	{U}
+0203A81C	@ITEMSTOCK@[64]	Convoy inventory.	{U}

@@ -51,8 +51,9 @@ namespace FEBuilderGBA
             combo.AddIcon(R._("地形回避"), ImageSystemIconForm.Forest());
             combo.AddIcon(R._("地形防御"), ImageSystemIconForm.Castle());
             //combo.AddIcon(R._("地形魔防"), );
-            //combo.AddIcon(R._("地形回復"), ImageSystemIconForm.Throne());
+            combo.AddIcon(R._("地形回復"), ImageSystemIconForm.Fort());
             //combo.AddIcon(R._("地形ステータス異常回復"), ImageSystemIconForm.Throne());
+            combo.AddIcon(R._("バリスタの移動コスト"), ImageSystemIconForm.BaristaIcon());
         }
 
 
@@ -100,8 +101,8 @@ namespace FEBuilderGBA
         {
             int filter = this.FilterComboBox.SelectedIndex;
 
-            if (filter == 6 || filter == 7 || filter == 8)
-            {//地形回復/地形ステータス異常回復/地形情報 全クラス共通
+            if (filter == 6 || filter == 7 || filter == 8 || filter == 9)
+            {//地形回復/地形ステータス異常回復/地形情報 全クラス共通/バリスタの移動コスト
                 IndependenceButton.Enabled = false;
                 CLASS_LISTBOX.Items.Clear();
                 CLASS_LISTBOX.Items.Add(R._("全クラス共通"));
@@ -487,6 +488,10 @@ namespace FEBuilderGBA
             else if (index == 8)
             {
                 return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_SHOW_INFOMATION");
+            }
+            else if (index == 9)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_BARISTAICON");
             }
             return "";
         }

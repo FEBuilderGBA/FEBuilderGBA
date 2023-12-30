@@ -525,6 +525,8 @@ namespace FEBuilderGBA
                         return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer; //地形ステータス異常回復
                     case 8:
                         return Program.ROM.RomInfo.terrain_show_infomation_pointer; //地形ウィンドウに情報表示
+                    case 9:
+                        return Program.ROM.RomInfo.ballista_movcost_pointer; //バリスタの移動コスト
                     default:
                         return Program.ROM.RomInfo.terrain_recovery_pointer; //地形回復
                 }

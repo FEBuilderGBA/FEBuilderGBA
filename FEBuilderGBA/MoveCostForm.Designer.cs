@@ -302,7 +302,8 @@
             "地形魔防",
             "地形回復",
             "地形ステータス異常回復",
-            "地形ウィンドに情報表示"});
+            "地形ウィンドに情報表示",
+            "バリスタの移動コスト"});
             this.FilterComboBox.Location = new System.Drawing.Point(503, -1);
             this.FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FilterComboBox.Name = "FilterComboBox";
