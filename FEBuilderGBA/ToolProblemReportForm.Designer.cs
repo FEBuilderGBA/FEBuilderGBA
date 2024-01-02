@@ -59,7 +59,6 @@
             this.Step2NextButton = new System.Windows.Forms.Button();
             this.OrignalFilename = new FEBuilderGBA.TextBoxEx();
             this.label11 = new FEBuilderGBA.LabelEx();
-            this.label9 = new FEBuilderGBA.LabelEx();
             this.label5 = new FEBuilderGBA.LabelEx();
             this.EndPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -353,7 +352,6 @@
             this.Step2Page.Controls.Add(this.Step2NextButton);
             this.Step2Page.Controls.Add(this.OrignalFilename);
             this.Step2Page.Controls.Add(this.label11);
-            this.Step2Page.Controls.Add(this.label9);
             this.Step2Page.Controls.Add(this.label5);
             this.Step2Page.Location = new System.Drawing.Point(4, 28);
             this.Step2Page.Name = "Step2Page";
@@ -424,16 +422,6 @@
             this.label11.Size = new System.Drawing.Size(75, 18);
             this.label11.TabIndex = 19;
             this.label11.Text = "Step 2/2";
-            // 
-            // label9
-            // 
-            this.label9.ErrorMessage = "";
-            this.label9.Location = new System.Drawing.Point(3, 241);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(767, 126);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "多くの国では、ROMを公開することは違法です。\r\nそのため、あなたの改造だけを取り出したupsパッチという差分データを作ります。\r\nupsパッチは、無改造ROMと" +
-    "、あなたのROMを比較して、あなたの改造だけを取り出します。";
             // 
             // label5
             // 
@@ -551,7 +539,6 @@
         private LabelEx label7;
         private LabelEx label8;
         private System.Windows.Forms.Button Step1NextButton;
-        private LabelEx label9;
         private LabelEx label6;
         private LabelEx label11;
         private LabelEx label12;

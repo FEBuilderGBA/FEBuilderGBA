@@ -1753,14 +1753,7 @@ namespace FEBuilderGBA
             string lang = OptionForm.lang();
 
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:more_data";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:more_data";
-            }
+            url = "https://feuniverse.us/t/feu-discord-server/1480";
             return url;
         }
 
@@ -1770,56 +1763,21 @@ namespace FEBuilderGBA
         }
         public static string GetCommunitiesURL()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=column:discord_chat";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:discord_chat";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:discord_chat";
-            }
+            url = "https://feuniverse.us/t/feu-discord-server/1480";
             return url;
         }
         public static string GetExplainOfSFileURL()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:s_file%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E4%B8%AD%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E8%A7%A3%E8%AA%AC";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:s%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E6%9C%9F%E9%97%B4%E7%9A%84%E9%94%99%E8%AF%AF%E8%AF%B4%E6%98%8E_zh";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:explanation_of_s_file_en";
-            }
+            url = "https://feuniverse.us/t/feu-discord-server/1480";
             return url;
         }
 
         public static string GetAboutTragetAI3()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:%E6%A8%99%E7%9A%84ai%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:about_targetai";
-            }
+            url = "https://feuniverse.us/t/fe7-the-official-ai-documentation-thread/348";
             return url;
         }
 
@@ -1830,61 +1788,22 @@ namespace FEBuilderGBA
         }
         public static string GetReport7zURL()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:report7z";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:report7z";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:report7z";
-            }
+            url = "https://feuniverse.us/t/fe-builder-gba-if-you-have-any-questions-attach-report7z/2845";
             return url;
         }
 
         public static string GetManualURL()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:index";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:index";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:index";
-            }
+            url = "https://feuniverse.us/t/ultraxblades-febuilder-help-faq/19565/";
             return url;
         }
 
         static string GetLynProgramURL()
         {
-            string lang = OptionForm.lang();
-
             string url;
-            if (lang == "ja")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E4%B8%8A%E3%81%A7%E5%BF%85%E8%A6%81%E3%81%AB%E3%81%AA%E3%82%8B%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95#lyn";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:febuildergba%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95_zh#lyn";
-            }
-            else
-            {
-                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:how_to_obtain_necessary_tools_to_use_febuildergba_en#lyn";
-            }
+            url = "https://github.com/StanHash/lyn/releases";
             return url;
         }
 

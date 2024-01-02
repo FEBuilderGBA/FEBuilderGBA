@@ -1,5 +1,6 @@
-NAME.en=Melee And Magic Menu Fix
-NAME.zh=MeleeAndMagicFix
+NAME.en=Melee And Magic Menu Fix 20210502
+NAME.zh=MeleeAndMagicFix 20210502
+NAME=MeleeAndMagicFix 20210502
 
 TYPE=BIN
 TAG=#ENGINE
