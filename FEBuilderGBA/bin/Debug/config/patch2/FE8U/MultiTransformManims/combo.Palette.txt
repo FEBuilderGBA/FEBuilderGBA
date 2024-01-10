@@ -1,0 +1,8 @@
+89A8F74=Manakete Default
+859EE20=Player(Blue)
+859EE40=Enemy(Red)
+859EE60=NPC(Green)
+859EE80=Gray
+859EEA0=4th color(Purple)
+859EEC0=LightRune
+859EEE0=Sepia

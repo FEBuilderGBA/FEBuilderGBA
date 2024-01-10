@@ -1,0 +1,33 @@
+NAME=マップアニメでの複数の変身アニメ(Editor)
+NAME.en=MultiTransformManims(Editor)
+NAME.zh=MultiTransformManims(Editor)
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x7AC74=0x30 0x1C 0xC0 0x46
+HINT=Battle Translate, Map Anime
+
+INFO=マップアニメで攻撃する時に、変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+
+AUTHOR=Eebit https://feuniverse.us/t/is-there-a-way-to-have-multiple-classes-that-transform-with-battle-anims-off/23526/2
+
+
+//データへのポインタ
+POINTER=$GREP4END 0xDC 0xD1 0xF5 0xE7 0xF0 0xE1 0x03 0x02 0xED 0x74 0x01 0x08
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP8 0xFF 0x00 0x00 0xFF 0x00 0x00 0x00 0x00
+
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B1:CLASS
+
+//データを定義します
+B0:ITEM=Item
+B1:CLASS=SourceClassId / ANY=00
+B2:CLASS=DisplayClassId
+P4:$COMBO combo.Palette.txt=PaletteAddress

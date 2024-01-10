@@ -1,0 +1,35 @@
+#ifndef MULTI_TRANSFORM_MANIMS_INSTALLED
+#define MULTI_TRANSFORM_MANIMS_INSTALLED
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+#define ManimTransformEnt(itemId, sourceClassId, displayClassId, palette) "BYTE itemId; BYTE sourceClassId; BYTE displayClassId; ALIGN 4; WORD palette"
+
+#define AnyClass 0x00
+
+gMultiTransformManimList:
+    ManimTransformEnt(Dragonstone, Manakete_2_F, Manakete, 0x089A8F74)
+    ManimTransformEnt(Rapier, EirikaLord, Bael, 0x0859EEA0)
+    ManimTransformEnt(Rapier, EirikaMasterLord, ElderBael, 0x0859EEA0)
+    ManimTransformEnt(SteelLance, AnyClass, DracoZombie, 0x0859EEA0)
+    ManimTransformEnt(-1, 0, 0, 0)
+
+#include "MultiTransformManims.lyn.event"
+
+PUSH
+// Hook at 'SetBattleMuPaletteByIndex', FE8U: 0x0807ABE0
+{
+    ORG 0x7AC2E // skip check for Myrrh's class ID
+        SHORT 0x46C0 // NOP
+
+    ORG 0x7AC74
+        SHORT 0x1C30 // MOV r0, r6; r6 = map anim actor index
+        SHORT 0x46C0 // NOP
+        callHack_r1(MTM_TrySetSpecialClassSprite|1)
+        SHORT 0x46C0 // NOP
+        SHORT 0xE00C // B #0x1C (to end of function)
+}
+POP
+
+#endif /* MULTI_TRANSFORM_MANIMS_INSTALLED */

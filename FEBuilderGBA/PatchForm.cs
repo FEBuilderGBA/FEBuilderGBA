@@ -1136,8 +1136,8 @@ namespace FEBuilderGBA
                 }
                 else if (type == "ITEMICONSRC"
                     || type == "ITEMICONSRC_WEAPON"
-                    || type == "WAITICON"
-                    || type == "MOVEICON"
+                    || type == "CLASSICONSRC"
+                    || type == "CLASSMOVEICONSRC"
                     )
                 {
                     PictureBox pic = new PictureBox();

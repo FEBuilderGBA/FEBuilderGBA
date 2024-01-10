@@ -1659,3 +1659,7 @@
 0806BA34	ClearGlobalTriggerState	
 0202D20C	gMapMovement
 08019484	StoreMovCostTable
+0203CD0C	gBattleSpellAnimationId1
+0203CD0E	gBattleSpellAnimationId2
+08058E44	GetSpellAnimId
+08049E9C	OverraideEmptyMagicEffectBy_WarpRescueTorchUnLock

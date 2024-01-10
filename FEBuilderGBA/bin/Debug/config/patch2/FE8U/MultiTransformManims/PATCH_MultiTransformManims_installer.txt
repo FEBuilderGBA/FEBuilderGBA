@@ -1,0 +1,19 @@
+NAME=マップアニメでの複数の変身アニメ(Install)
+NAME.en=MultiTransformManims(Installer)
+NAME.zh=MultiTransformManims(Install)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x7AC74=0x30 0x1C 0xC0 0x46
+EDIT_PATCH=PATCH_MultiTransformManims_editor.txt
+EA=MultiTransformManims.event
+
+HINT=Battle Translate, Map Anime
+
+INFO=マップアニメで攻撃する時に、変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+
+AUTHOR=Eebit https://feuniverse.us/t/is-there-a-way-to-have-multiple-classes-that-transform-with-battle-anims-off/23526/2
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=180				//パッチ全体のサイズ
