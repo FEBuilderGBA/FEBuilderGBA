@@ -11,7 +11,9 @@ EA=MultiTransformManims.event
 
 HINT=Battle Translate, Map Anime
 
-INFO=マップアニメで攻撃する時に、変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+INFO=マップアニメで攻撃する時に、複数の変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+INFO.en=This patch performs multiple transformations when attacking with map animations.\r\nIn vanilla, it only applies to Manakete, but this patch allows it to be performed on all classes.
+INFO.zh=This patch performs multiple transformations when attacking with map animations.\r\nIn vanilla, it only applies to Manakete, but this patch allows it to be performed on all classes.
 
 AUTHOR=Eebit https://feuniverse.us/t/is-there-a-way-to-have-multiple-classes-that-transform-with-battle-anims-off/23526/2
 

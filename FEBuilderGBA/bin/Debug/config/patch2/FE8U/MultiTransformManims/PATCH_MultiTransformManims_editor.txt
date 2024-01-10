@@ -8,7 +8,10 @@ TAG=#ENGINE
 IF:0x7AC74=0x30 0x1C 0xC0 0x46
 HINT=Battle Translate, Map Anime
 
-INFO=マップアニメで攻撃する時に、変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+INFO=マップアニメで攻撃する時に、複数の変身処理を実行します。\r\nバニラではマムクートだけが対象ですが、このパッチではすべてのクラスに対して、実行できるようにします。
+INFO.en=This patch performs multiple transformations when attacking with map animations.\r\nIn vanilla, it only applies to Manakete, but this patch allows it to be performed on all classes.
+INFO.zh=This patch performs multiple transformations when attacking with map animations.\r\nIn vanilla, it only applies to Manakete, but this patch allows it to be performed on all classes.
+
 
 AUTHOR=Eebit https://feuniverse.us/t/is-there-a-way-to-have-multiple-classes-that-transform-with-battle-anims-off/23526/2
 
@@ -20,7 +23,7 @@ POINTER=$GREP4END 0xDC 0xD1 0xF5 0xE7 0xF0 0xE1 0x03 0x02 0xED 0x74 0x01 0x08
 DATASIZE=8
 
 //データ個数 00 00 00 00 が出てくるまで
-DATACOUNT=$GREP8 0xFF 0x00 0x00 0xFF 0x00 0x00 0x00 0x00
+DATACOUNT=$GREP8 0xFF 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 
 
 //リストに表示されるのはクラス名です
