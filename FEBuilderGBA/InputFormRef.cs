@@ -7088,7 +7088,7 @@ namespace FEBuilderGBA
             }
             else if (num == 6)
             {
-                return R._("6=MapChange2");
+                return R._("6=Dragon Veins(TrapRework)");
             }
             else if (num == 7)
             {
@@ -7109,6 +7109,14 @@ namespace FEBuilderGBA
             else if (num == 0xD)
             {
                 return R._("D=Light Rune");
+            }
+            else if (num == 0xE)
+            {
+                return R._("E=Heal Tiles(TrapRework)");
+            }
+            else if (num == 0xF)
+            {
+                return R._("F=Tellius Torches(TrapRework)");
             }
             return U.ToHexString(num) + "=??";
         }
@@ -7744,7 +7752,7 @@ namespace FEBuilderGBA
             }
             else if (num == 6)
             {
-                return R._("マップ変化2");
+                return R._("Dragon Veins(TrapRework)");
             }
             else if (num == 7)
             {
@@ -7773,6 +7781,14 @@ namespace FEBuilderGBA
             else if (num == 0xD)
             {
                 return R._("光の結界");
+            }
+            else if (num == 0xE)
+            {
+                return R._("Heal Tiles(TrapRework)");
+            }
+            else if (num == 0xF)
+            {
+                return R._("Tellius Torches(TrapRework)");
             }
             return "";
         }

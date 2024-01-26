@@ -4,7 +4,7 @@
 #include "EAstdlib.event"
 #include "Extensions/Hack Installation.txt"
 
-#define ManimTransformEnt(itemId, sourceClassId, displayClassId, palette) "BYTE itemId; BYTE sourceClassId; BYTE displayClassId; BYTE 00; ALIGN 4; WORD palette"
+#define ManimTransformEnt(itemId, sourceClassId, displayClassId, palette) "BYTE itemId; BYTE sourceClassId; BYTE displayClassId; BYTE 0x00; ALIGN 4; WORD palette"
 
 #define AnyClass 0x00
 

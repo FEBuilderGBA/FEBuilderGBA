@@ -122,6 +122,10 @@ namespace FEBuilderGBA
                 {
                     return R._("[空宝箱]");
                 }
+                if (id == 0x0B)
+                {
+                    return R._("[城門]");
+                }
                 if (id == 0x34)
                 {
                     return R._("[丸太橋]");
@@ -142,6 +146,10 @@ namespace FEBuilderGBA
             if (id == 0x1B)
             {
                 return R._("[壊れる壁]");
+            }
+            if (id == 0x2E)
+            {
+                return R._("[飛行可能]");
             }
 
             return MakeHint_Simple(id);

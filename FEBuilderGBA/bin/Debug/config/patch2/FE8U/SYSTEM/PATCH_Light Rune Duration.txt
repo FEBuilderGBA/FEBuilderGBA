@@ -1,0 +1,17 @@
+
+NAME=光の結界の持続時間
+NAME.en=Light Rune Duration
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02EA76
+HEX=false
+
+AUTHOR=https://feuniverse.us/t/light-rune-duration/23721/1
+
+INFO=光の結界の持続時間の初期値を変更します。ディフォルトは3です。
+INFO.en=This patches changes the initial value of the light warding duration. Default is 3.
+NAME.zh=光障持续时间。
+INFO.zh=更改光障的初始持续时间。默认值为 3。
