@@ -1,6 +1,6 @@
-NAME=盗んだときにアイテム欄が満杯なら輸送隊に送る 20220727
-NAME.en=Steal with full inventory 20220727
-NAME.zh=Steal with full inventory 20220727
+NAME=盗んだときにアイテム欄が満杯なら輸送隊に送る 20221006
+NAME.en=Steal with full inventory 20221006
+NAME.zh=Steal with full inventory 20221006
 TYPE=EA
 TAG=#ENGINE
 
@@ -13,4 +13,3 @@ INFO=盗賊で、敵のアイテムを盗んだときにアイテム欄が満杯
 AUTHOR=Vesly https://feuniverse.us/t/veslys-asm/12011/68
 INFO.en=If thief are steal an enemy item and the item column is full, send it to the supply(convoy)\r\nThis will allow the thief to steal even if the item column is full.
 INFO.zh=If thief are steal an enemy item and the item column is full, send it to the supply(convoy)\r\nThis will allow the thief to steal even if the item column is full.
-DEPRECATED=1

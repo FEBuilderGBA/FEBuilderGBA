@@ -1,0 +1,4 @@
+Exit=$54
+Handle=$24
+SavePartOfUnitFromBattle=$78
+StealFixProc=$FC
