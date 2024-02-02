@@ -1746,15 +1746,8 @@ namespace FEBuilderGBA
 
         public static void GotoMoreData()
         {
-            U.OpenURLOrFile(GotoMoreDataURL());
-        }
-        public static string GotoMoreDataURL()
-        {
-            string lang = OptionForm.lang();
-
-            string url;
-            url = "https://feuniverse.us/t/feu-discord-server/1480";
-            return url;
+            string url = "https://feuniverse.us/t/fe-builder-gba-if-you-have-any-questions-attach-report7z/2845/4936?u=7743";
+            U.OpenURLOrFile(url);
         }
 
         public static void GotoManual()
@@ -1762,12 +1755,6 @@ namespace FEBuilderGBA
             U.OpenURLOrFile(GetManualURL());
         }
         public static string GetCommunitiesURL()
-        {
-            string url;
-            url = "https://feuniverse.us/t/feu-discord-server/1480";
-            return url;
-        }
-        public static string GetExplainOfSFileURL()
         {
             string url;
             url = "https://feuniverse.us/t/feu-discord-server/1480";
@@ -1789,7 +1776,7 @@ namespace FEBuilderGBA
         public static string GetReport7zURL()
         {
             string url;
-            url = "https://feuniverse.us/t/fe-builder-gba-if-you-have-any-questions-attach-report7z/2845";
+            url = "https://feuniverse.us/t/fe-builder-gba-if-you-have-any-questions-attach-report7z/2845/4937";
             return url;
         }
 

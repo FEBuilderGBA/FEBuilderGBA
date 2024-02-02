@@ -14,9 +14,12 @@ ONN:0x02320C=0x08 0xDD
 
 
 AUTHOR=Gryz https://feuniverse.us/t/item-storage-without-merlinus/520
-INFO=FE7の輸送隊は、自分自身で輸送隊にアクセスすることができません。この制限を解除します。
+INFO=FE7の輸送隊は、自分自身で輸送隊にアクセスすることができません。この制限を解除します。
+
 HINT=輸送体
-INFO.en=The FE 7 transporter can not access transporter on its own.Release this restriction.
+INFO.en=The FE 7 transporter can not access transporter on its own.Release this restriction.
+
 HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=消除运输人物无法自行调用运输车的约束。
 INFO.zh=FE 7运输车无法自行进入运输车。发布此限制。
+WARNING=true
