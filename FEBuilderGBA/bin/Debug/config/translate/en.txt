@@ -11251,9 +11251,6 @@ The number of tracks exceeds 16 tracks. Due to GBA limitations, you can only use
 :.equは2つの引数が必要です.\r\n例: .equ name, value\r\n\r\nFile:{0} Line:{1}
 .equ requires two arguments.\r\nExample: .equ name, value\r\n\r\nFile: {0} Line: {1}
 
-:説明:\r\n
-Description:\r\n
-
 :global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
 global has been defined twice. File: {0} Line: {1}
 
@@ -12733,8 +12730,8 @@ Restore sav data from base64 text and start emulator.
 :base64テキストを入力するか、fileから変換した結果が代入されます
 Input the base64 text or substitute the result converted from file.
 
-:例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)
-Example: "When my characters battle, the animations freeze.\r\nIt happens even with other characters in the chapter.\r\nIt doesn't matter what weapon is used.\r\nThis can be reproduced in the prologue where Grado soldiers are fought."\r\nIn essence, please explain clearly what the issue is, where/when it happens, who it applies to, and other details.
+:例:\r\nch1で、エイリークでブレゲを攻撃すると、フリーズします。\r\n再現するには、中断データからロードして、エイリークでブレゲを攻撃してください。\r\nブレゲが反撃しようとするとゲームがフリーズしてしまいます。
+Example:\r\nIn ch1, if you attack Breguet with Eirika, it will freeze.\r\nTo reproduce, load from the suspend data and attack Breguet with Eirika.\r\nWhen Breguet tries to fight back, the game freezes.
 
 :問題点を記載してください。
 Please describe the problem.
@@ -12775,8 +12772,8 @@ Which Chapter?
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files (ie. battle animations, image data) to reproduce your problems.\r\nPlease leave it blank if irrelevant.\r\nUp to 2 MB of data can be attached.
 
-:どんな問題がありますか？\r\nどうやったら、私たちはそれを確認できますか？\r\n問題を具体的に説明してください。
-What kind of problem are you having? .\r\nHow can we check that? .\r\nPlease be specific about your problem.
+:どういう問題が起きていますか?\r\nどうしたら、それを確認できますか?\r\nその2点を中心に記述してください。
+What problem are you having?\r\nHow can I check that?\r\nPlease write mainly on those two points.
 
 :作成
 Create

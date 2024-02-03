@@ -341,7 +341,7 @@
             this.ProblemLabel.Name = "ProblemLabel";
             this.ProblemLabel.Size = new System.Drawing.Size(669, 63);
             this.ProblemLabel.TabIndex = 8;
-            this.ProblemLabel.Text = "どんな問題がありますか？\r\nどうやったら、私たちはそれを確認できますか？\r\n問題を具体的に説明してください。";
+            this.ProblemLabel.Text = "どういう問題が起きていますか?\r\nどうしたら、それを確認できますか?\r\nその2点を中心に記述してください。";
             // 
             // Step2Page
             // 

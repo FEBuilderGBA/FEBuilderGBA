@@ -28,7 +28,7 @@ namespace FEBuilderGBA
             
             U.ForceUpdate(this.X_UnitID, 1);
 
-            this.Problem.Placeholder = R._("例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)");
+            this.Problem.Placeholder = R._("例:\r\nch1で、エイリークでブレゲを攻撃すると、フリーズします。\r\n再現するには、中断データからロードして、エイリークでブレゲを攻撃してください。\r\nブレゲが反撃しようとするとゲームがフリーズしてしまいます。");
             this.URLTextBoxEx.Text = MainFormUtil.GetCommunitiesURL();
 
             this.AboutReport7zText.Text = MainFormUtil.GetReport7zURL();
