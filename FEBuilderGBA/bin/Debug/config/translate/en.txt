@@ -1919,7 +1919,7 @@ There is a Chest event, but the tile change of map is not set. x:{0} y:{1}\r\nYo
 There is a Door event, but "{0}" is set as the type.
 
 :ドアなのに、マップ変化が設定されていません。 x:{0} y:{1}\r\nドアを空けた時のタイル変化が必要です。\r\nマップエディタのマップ変化を確認してください。
-Please check the tile change in the map editor.
+The door but the map change is not set. x:{0} y:{1}\r\nThere should be a tile change when the door is opened.\r\nPlease check the map change in the map editor.
 
 :店なのに、種類で「{0}」が設定されています。
 There is a Shop event, but "{0}" is set as the type.
