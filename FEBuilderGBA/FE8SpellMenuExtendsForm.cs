@@ -249,6 +249,15 @@ namespace FEBuilderGBA
 
         static uint FindFE8SpellPatchPointerLow()
         {
+            if (Program.ROM.RomInfo.version != 8)
+            {
+                return U.NOT_FOUND;
+            }
+            if (Program.ROM.RomInfo.is_multibyte)
+            {
+                return U.NOT_FOUND;
+            }
+
             uint pointer = FindFE8SpellPatchPointerLow_OldSystem();
             if (pointer != U.NOT_FOUND)
             {

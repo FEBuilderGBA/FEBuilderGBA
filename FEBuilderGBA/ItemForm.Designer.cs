@@ -76,7 +76,7 @@
             this.J_22 = new System.Windows.Forms.Label();
             this.B23 = new System.Windows.Forms.NumericUpDown();
             this.B24 = new System.Windows.Forms.NumericUpDown();
-            this.J_25 = new System.Windows.Forms.Label();
+            this.J_25 = new FEBuilderGBA.LabelEx();
             this.B25 = new System.Windows.Forms.NumericUpDown();
             this.J_23 = new System.Windows.Forms.Label();
             this.J_24 = new System.Windows.Forms.Label();
@@ -2387,7 +2387,7 @@
         private System.Windows.Forms.Label J_22;
         private System.Windows.Forms.NumericUpDown B23;
         private System.Windows.Forms.NumericUpDown B24;
-        private System.Windows.Forms.Label J_25;
+        private FEBuilderGBA.LabelEx J_25;
         private System.Windows.Forms.NumericUpDown B25;
         private System.Windows.Forms.Label J_23;
         private System.Windows.Forms.Label J_24;

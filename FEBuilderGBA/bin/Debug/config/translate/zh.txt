@@ -5902,6 +5902,9 @@ IER BYTE item is not set to the effect of the staff or ring.\r\nFor example, if 
 :{0}を{1}ターン
 {0} by {1} turn
 
+:杖ではないので、攻撃範囲に{0}を指定できません。\r\ngaiden magic patchと競合し、敵ターンでハングアップする可能性があります。
+由于它不是手杖，因此无法将{0}指定为攻击范围。\r\n可能会与外传魔法补丁发生冲突并在敌方回合中挂断。
+
 :武器LV熟練度
 武器LV熟练度
 
@@ -12732,7 +12735,6 @@ GOTO 后立即用音乐执行 FINE。\r\n优化 GOTO 后有无用空白的歌曲
 
 :例:\r\nch1で、エイリークでブレゲを攻撃すると、フリーズします。\r\n再現するには、中断データからロードして、エイリークでブレゲを攻撃してください。\r\nブレゲが反撃しようとするとゲームがフリーズしてしまいます。
 Example:\r\nIn ch1, if you attack Breguet with Eirika, it will freeze.\r\nTo reproduce, load from the suspend data and attack Breguet with Eirika.\r\nWhen Breguet tries to fight back, the game freezes.
-
 
 :問題点を記載してください。
 请描述问题。

@@ -519,6 +519,7 @@ namespace FEBuilderGBA
             {
                 L_16_NEWALLOC_EFFECTIVENESS.Hide();
             }
+            J_25.ErrorMessage = GetRangeErrorMessage();
 
             PatchUtil.ItemUsingExtends itemUsingExtends = PatchUtil.ItemUsingExtendsPatch();
             if (itemUsingExtends == PatchUtil.ItemUsingExtends.IER)
@@ -1013,6 +1014,25 @@ namespace FEBuilderGBA
                 return false;
             }
             return true;
+        }
+        string GetRangeErrorMessage()
+        {
+            uint range = (uint)B25.Value;
+            if (!(range == 0x10 || range == 0xFF))
+            {
+                return "";
+            }
+            uint weaponType = (uint)B7.Value;
+            if (weaponType == 0x4)
+            {//staffなら問題なし
+                return "";
+            }
+            uint assignLevelUpP = FE8SpellMenuExtendsForm.FindFE8SpellPatchPointer();
+            if (assignLevelUpP == U.NOT_FOUND)
+            {//gaiden magicが入っていないの問題なし
+                return "";
+            }
+            return R._("杖ではないので、攻撃範囲に{0}を指定できません。\r\ngaiden magic patchと競合し、敵ターンでハングアップする可能性があります。",U.ToHexString2(range));
         }
     }
 }

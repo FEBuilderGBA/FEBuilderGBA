@@ -5902,6 +5902,9 @@ IER BYTE item is not set to the effect of the staff or ring.\r\nFor example, if 
 :{0}を{1}ターン
 {0} by {1} turn
 
+:杖ではないので、攻撃範囲に{0}を指定できません。\r\ngaiden magic patchと競合し、敵ターンでハングアップする可能性があります。
+Since it is not a staff, {0} cannot be specified for the attack range.\r\nMay conflict with gaiden magic patch and hang up on enemy turns.
+
 :武器LV熟練度
 WEXP Per Hit
 

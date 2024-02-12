@@ -10163,6 +10163,10 @@ namespace FEBuilderGBA
         {
             uint start_addr = addr;
             addr += length;
+            if (MoveToFreeSapceForm.IsConflictCheck(addr))
+            {
+                return length;
+            }
 
             //まず4バイトずつ検索できるように端数を揃えます
             uint endAddr = U.Padding4(addr);
