@@ -7,6 +7,7 @@ EA=RemoveEffects.event
 
 AUTHOR=pikmin
 PATCHED_IF:$FGREP4 A26380.png.dmp=0x10 0x20 0x08 0x00 0x3F 0x00 0x00 0xF0
+HINT=removes the smoke from the FE8 chapter select screen.
 INFO.en=Remove the white fog effect from the save menu background.
 NAME.zh=从保存菜单背景中消除雾气
 INFO.zh=从保存菜单背景中删除白雾效果
