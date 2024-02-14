@@ -207,6 +207,7 @@ namespace FEBuilderGBA
             {
                 this.Lines = new Dictionary<string, string>();
                 UpdateAutoFeedback(255);
+                AutoFeedback.Init(this.Lines, false);
                 DISABLE_CHEAT = false;
                 return false;
             }

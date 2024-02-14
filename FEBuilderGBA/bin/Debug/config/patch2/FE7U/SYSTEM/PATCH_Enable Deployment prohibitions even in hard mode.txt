@@ -15,6 +15,9 @@ OFF:0x308CA=0x06 0xD1
 
 AUTHOR=7743 https://discord.com/channels/144670830150811649/470029781795078175/1187268349269389322
 
-INFO=進撃準備画面で選択できない出撃禁止ユニットを、ハードモードでも有効にします。\r\nただし、このパッチはあまりテストされていないので副作用がある可能性があります。
-INFO.en=The prohibited units that cannot be selected on the advance preparation screen will also be enabled in hard mode.\r\nHowever, this patch has not been extensively tested and may have side effects.
-INFO.zh=无法在预先准备画面中选择的禁止单位也将在困难模式下启用。\r\n然而，该补丁尚未经过广泛测试，可能有副作用。
+INFO=進撃準備画面で選択できない出撃禁止ユニットを、ハードモードでも有効にします。\r\nただし、このパッチはあまりテストされていないので副作用がある可能性があります。\r\nこのパッチを利用すると、準備画面でのユニット配置が記録されないバグが報告されています。 \r\nhttps://discord.com/channels/144670830150811649/470029781795078175/1207419674128547890
+
+INFO.en=The prohibited units that cannot be selected on the advance preparation screen will also be enabled in hard mode.\r\nHowever, this patch has not been extensively tested and may have side effects.\r\nA bug has been reported in which unit placement on the preparation screen is not recorded when using this patch.\r\nhttps://discord.com/channels/144670830150811649/470029781795078175/1207419674128547890
+INFO.zh=无法在预先准备画面中选择的禁止单位也将在困难模式下启用。\r\n然而，该补丁尚未经过广泛测试，可能有副作用。\r\nA bug has been reported in which unit placement on the preparation screen is not recorded when using this patch.\r\nhttps://discord.com/channels/144670830150811649/470029781795078175/1207419674128547890
+
+WARNING=1

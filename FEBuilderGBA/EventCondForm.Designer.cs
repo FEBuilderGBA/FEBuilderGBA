@@ -6994,7 +6994,7 @@
             this.TRAP_N0C_J_4.Name = "TRAP_N0C_J_4";
             this.TRAP_N0C_J_4.Size = new System.Drawing.Size(171, 32);
             this.TRAP_N0C_J_4.TabIndex = 181;
-            this.TRAP_N0C_J_4.Text = "LV";
+            this.TRAP_N0C_J_4.Text = "羽化開始";
             this.TRAP_N0C_J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TRAP_N0C_L_1_MAPXY_2
@@ -7010,7 +7010,6 @@
             // 
             // TRAP_N0C_B5
             // 
-            this.TRAP_N0C_B5.Hexadecimal = true;
             this.TRAP_N0C_B5.Location = new System.Drawing.Point(179, 114);
             this.TRAP_N0C_B5.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N0C_B5.Maximum = new decimal(new int[] {
@@ -7030,7 +7029,7 @@
             this.TRAP_N0C_J_3.Name = "TRAP_N0C_J_3";
             this.TRAP_N0C_J_3.Size = new System.Drawing.Size(171, 32);
             this.TRAP_N0C_J_3.TabIndex = 172;
-            this.TRAP_N0C_J_3.Text = "羽化開始";
+            this.TRAP_N0C_J_3.Text = "00";
             this.TRAP_N0C_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TRAP_N0C_J_5
@@ -7041,7 +7040,7 @@
             this.TRAP_N0C_J_5.Name = "TRAP_N0C_J_5";
             this.TRAP_N0C_J_5.Size = new System.Drawing.Size(171, 32);
             this.TRAP_N0C_J_5.TabIndex = 180;
-            this.TRAP_N0C_J_5.Text = "00";
+            this.TRAP_N0C_J_5.Text = "LV";
             this.TRAP_N0C_J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TRAP_N0C_B3
@@ -7071,7 +7070,6 @@
             // 
             // TRAP_N0C_B4
             // 
-            this.TRAP_N0C_B4.Hexadecimal = true;
             this.TRAP_N0C_B4.Location = new System.Drawing.Point(179, 80);
             this.TRAP_N0C_B4.Margin = new System.Windows.Forms.Padding(2);
             this.TRAP_N0C_B4.Maximum = new decimal(new int[] {
