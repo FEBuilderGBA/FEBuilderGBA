@@ -6899,7 +6899,7 @@
 0859EEA0	&PALETTE	何かのパレット	02	{U}
 0859EEC0	&PALETTE	光の結界のパレット	LightRune Palette	{U}
 0859EEE0	&PALETTE	何かのパレット	04	{U}
-0859EF00	&PALETTE	何かのパレット	05	{U}
+0859EF00	&PALETTE	SystemFontパレット	{U}
 0859EF20	&PALETTE	何かのパレット	06	{U}
 0859EF60	&PALETTE	何かのパレット	07	{U}
 0859EFE0	&PALETTE	何かのパレット	08	{U}
@@ -6999,7 +6999,7 @@
 085C73C0	&PALETTE	何かのパレット	02	{J}
 085C73E0	&PALETTE	光の結界のパレット	LightRune Palette	{J}
 085C7400	&PALETTE	何かのパレット	04	{J}
-085C7420	&PALETTE	何かのパレット	05	{J}
+085C7420	&PALETTE	SystemFontパレット	{J}
 085C7440	&PALETTE	何かのパレット	06	{J}
 085C7480	&PALETTE	何かのパレット	07	{J}
 085C7500	&PALETTE	何かのパレット	08	{J}

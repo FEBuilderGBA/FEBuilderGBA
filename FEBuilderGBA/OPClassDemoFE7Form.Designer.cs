@@ -54,9 +54,14 @@
             this.J_6 = new System.Windows.Forms.Label();
             this.L_14_UNITPALETTE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.groupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.N2_L_0_COMBO = new System.Windows.Forms.ComboBox();
+            this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N2_B1 = new System.Windows.Forms.NumericUpDown();
+            this.N2_B0 = new System.Windows.Forms.NumericUpDown();
+            this.X_J_2 = new System.Windows.Forms.Label();
+            this.N2_J_1 = new System.Windows.Forms.Label();
+            this.N2_J_0 = new System.Windows.Forms.Label();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.ANIME_LIST = new FEBuilderGBA.ListBoxEx();
-            this.label27 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label31 = new System.Windows.Forms.Label();
@@ -65,20 +70,6 @@
             this.N2_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.N2_WriteButton = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
-            this.N2_L_3_COMBO = new System.Windows.Forms.ComboBox();
-            this.N2_B5 = new System.Windows.Forms.NumericUpDown();
-            this.label24 = new System.Windows.Forms.Label();
-            this.N2_B4 = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
-            this.N2_B3 = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.N2_B2 = new System.Windows.Forms.NumericUpDown();
-            this.N2_B1 = new System.Windows.Forms.NumericUpDown();
-            this.N2_B0 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.P28 = new System.Windows.Forms.NumericUpDown();
             this.J_28 = new System.Windows.Forms.Label();
             this.B23 = new System.Windows.Forms.NumericUpDown();
@@ -140,14 +131,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.B24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_B0)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B17)).BeginInit();
@@ -539,32 +526,113 @@
             // groupBox1
             // 
             this.groupBox1.BorderColor = System.Drawing.Color.Empty;
-            this.groupBox1.Controls.Add(this.N2_AddressList);
-            this.groupBox1.Controls.Add(this.ANIME_LIST);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.N2_L_3_COMBO);
-            this.groupBox1.Controls.Add(this.N2_B5);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.N2_B4);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.N2_B3);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.N2_B2);
+            this.groupBox1.Controls.Add(this.N2_L_0_COMBO);
+            this.groupBox1.Controls.Add(this.N2_AddressListExpandsButton);
             this.groupBox1.Controls.Add(this.N2_B1);
             this.groupBox1.Controls.Add(this.N2_B0);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.X_J_2);
+            this.groupBox1.Controls.Add(this.N2_J_1);
+            this.groupBox1.Controls.Add(this.N2_J_0);
+            this.groupBox1.Controls.Add(this.N2_AddressList);
+            this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Location = new System.Drawing.Point(525, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(730, 350);
+            this.groupBox1.Size = new System.Drawing.Size(730, 428);
             this.groupBox1.TabIndex = 174;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "アニメ指定のポインタ先";
+            // 
+            // N2_L_0_COMBO
+            // 
+            this.N2_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.N2_L_0_COMBO.FormattingEnabled = true;
+            this.N2_L_0_COMBO.Items.AddRange(new object[] {
+            "0=スクリプトの終了",
+            "1=近距離攻撃アニメを実行",
+            "2=近距離必殺アニメを実行",
+            "3=アニメの状態を「hit effect applied」にする",
+            "4=遠距離攻撃アニメを実行",
+            "5=オプション引数で指定したnフレーム秒待つ",
+            "6=近距離で回避アニメーションを行う",
+            "7=FE8では未使用。アニメーションの状態を 「hit effect applied」にする",
+            "8=アニメがコマンドC01、C02、C18のどれかに到達するまで待つ"});
+            this.N2_L_0_COMBO.Location = new System.Drawing.Point(157, 157);
+            this.N2_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N2_L_0_COMBO.Name = "N2_L_0_COMBO";
+            this.N2_L_0_COMBO.Size = new System.Drawing.Size(566, 26);
+            this.N2_L_0_COMBO.TabIndex = 217;
+            // 
+            // N2_AddressListExpandsButton
+            // 
+            this.N2_AddressListExpandsButton.Location = new System.Drawing.Point(2, 398);
+            this.N2_AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N2_AddressListExpandsButton.Name = "N2_AddressListExpandsButton";
+            this.N2_AddressListExpandsButton.Size = new System.Drawing.Size(147, 30);
+            this.N2_AddressListExpandsButton.TabIndex = 216;
+            this.N2_AddressListExpandsButton.Text = "リストの拡張";
+            this.N2_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // N2_B1
+            // 
+            this.N2_B1.Location = new System.Drawing.Point(279, 188);
+            this.N2_B1.Margin = new System.Windows.Forms.Padding(2);
+            this.N2_B1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.N2_B1.Name = "N2_B1";
+            this.N2_B1.Size = new System.Drawing.Size(67, 25);
+            this.N2_B1.TabIndex = 213;
+            // 
+            // N2_B0
+            // 
+            this.N2_B0.Hexadecimal = true;
+            this.N2_B0.Location = new System.Drawing.Point(279, 122);
+            this.N2_B0.Margin = new System.Windows.Forms.Padding(2);
+            this.N2_B0.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.N2_B0.Name = "N2_B0";
+            this.N2_B0.Size = new System.Drawing.Size(67, 25);
+            this.N2_B0.TabIndex = 212;
+            // 
+            // X_J_2
+            // 
+            this.X_J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_J_2.Location = new System.Drawing.Point(357, 189);
+            this.X_J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_J_2.Name = "X_J_2";
+            this.X_J_2.Size = new System.Drawing.Size(175, 32);
+            this.X_J_2.TabIndex = 211;
+            this.X_J_2.Text = "/60 (秒)";
+            this.X_J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N2_J_1
+            // 
+            this.N2_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N2_J_1.Location = new System.Drawing.Point(157, 190);
+            this.N2_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N2_J_1.Name = "N2_J_1";
+            this.N2_J_1.Size = new System.Drawing.Size(113, 32);
+            this.N2_J_1.TabIndex = 210;
+            this.N2_J_1.Text = "00";
+            this.N2_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N2_J_0
+            // 
+            this.N2_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N2_J_0.Location = new System.Drawing.Point(157, 122);
+            this.N2_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N2_J_0.Name = "N2_J_0";
+            this.N2_J_0.Size = new System.Drawing.Size(113, 32);
+            this.N2_J_0.TabIndex = 209;
+            this.N2_J_0.Text = "Commamd";
+            this.N2_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N2_AddressList
             // 
@@ -572,33 +640,12 @@
             this.N2_AddressList.FormattingEnabled = true;
             this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
-            this.N2_AddressList.Location = new System.Drawing.Point(1, 128);
+            this.N2_AddressList.Location = new System.Drawing.Point(2, 122);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N2_AddressList.Name = "N2_AddressList";
-            this.N2_AddressList.Size = new System.Drawing.Size(147, 148);
-            this.N2_AddressList.TabIndex = 192;
-            // 
-            // ANIME_LIST
-            // 
-            this.ANIME_LIST.FormattingEnabled = true;
-            this.ANIME_LIST.IntegralHeight = false;
-            this.ANIME_LIST.ItemHeight = 18;
-            this.ANIME_LIST.Location = new System.Drawing.Point(592, 157);
-            this.ANIME_LIST.Margin = new System.Windows.Forms.Padding(5);
-            this.ANIME_LIST.Name = "ANIME_LIST";
-            this.ANIME_LIST.Size = new System.Drawing.Size(128, 184);
-            this.ANIME_LIST.TabIndex = 189;
-            // 
-            // label27
-            // 
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Location = new System.Drawing.Point(592, 121);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(128, 32);
-            this.label27.TabIndex = 188;
-            this.label27.Text = "アニメ指定共有";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N2_AddressList.Size = new System.Drawing.Size(147, 270);
+            this.N2_AddressList.TabIndex = 208;
+            this.N2_AddressList.SelectedIndexChanged += new System.EventHandler(this.N2_AddressList_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -694,180 +741,6 @@
             this.label26.TabIndex = 39;
             this.label26.Text = "選択アドレス:";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N2_L_3_COMBO
-            // 
-            this.N2_L_3_COMBO.FormattingEnabled = true;
-            this.N2_L_3_COMBO.Items.AddRange(new object[] {
-            "01=通常",
-            "02=必殺",
-            "03=間接や魔法剣"});
-            this.N2_L_3_COMBO.Location = new System.Drawing.Point(416, 194);
-            this.N2_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N2_L_3_COMBO.Name = "N2_L_3_COMBO";
-            this.N2_L_3_COMBO.Size = new System.Drawing.Size(174, 26);
-            this.N2_L_3_COMBO.TabIndex = 187;
-            // 
-            // N2_B5
-            // 
-            this.N2_B5.Hexadecimal = true;
-            this.N2_B5.Location = new System.Drawing.Point(338, 286);
-            this.N2_B5.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B5.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B5.Name = "N2_B5";
-            this.N2_B5.Size = new System.Drawing.Size(67, 25);
-            this.N2_B5.TabIndex = 186;
-            // 
-            // label24
-            // 
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(155, 287);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(175, 32);
-            this.label24.TabIndex = 185;
-            this.label24.Text = "00固定";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N2_B4
-            // 
-            this.N2_B4.Hexadecimal = true;
-            this.N2_B4.Location = new System.Drawing.Point(338, 251);
-            this.N2_B4.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B4.Name = "N2_B4";
-            this.N2_B4.Size = new System.Drawing.Size(67, 25);
-            this.N2_B4.TabIndex = 183;
-            // 
-            // label23
-            // 
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(155, 253);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(175, 32);
-            this.label23.TabIndex = 182;
-            this.label23.Text = "??";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N2_B3
-            // 
-            this.N2_B3.Hexadecimal = true;
-            this.N2_B3.Location = new System.Drawing.Point(338, 221);
-            this.N2_B3.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B3.Name = "N2_B3";
-            this.N2_B3.Size = new System.Drawing.Size(67, 25);
-            this.N2_B3.TabIndex = 181;
-            // 
-            // label21
-            // 
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(155, 223);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(175, 32);
-            this.label21.TabIndex = 180;
-            this.label21.Text = "00固定";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N2_B2
-            // 
-            this.N2_B2.Hexadecimal = true;
-            this.N2_B2.Location = new System.Drawing.Point(338, 191);
-            this.N2_B2.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B2.Name = "N2_B2";
-            this.N2_B2.Size = new System.Drawing.Size(67, 25);
-            this.N2_B2.TabIndex = 179;
-            // 
-            // N2_B1
-            // 
-            this.N2_B1.Hexadecimal = true;
-            this.N2_B1.Location = new System.Drawing.Point(338, 157);
-            this.N2_B1.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B1.Name = "N2_B1";
-            this.N2_B1.Size = new System.Drawing.Size(67, 25);
-            this.N2_B1.TabIndex = 178;
-            // 
-            // N2_B0
-            // 
-            this.N2_B0.Hexadecimal = true;
-            this.N2_B0.Location = new System.Drawing.Point(286, 128);
-            this.N2_B0.Margin = new System.Windows.Forms.Padding(2);
-            this.N2_B0.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N2_B0.Name = "N2_B0";
-            this.N2_B0.Size = new System.Drawing.Size(67, 25);
-            this.N2_B0.TabIndex = 177;
-            // 
-            // label20
-            // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(155, 194);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(175, 32);
-            this.label20.TabIndex = 176;
-            this.label20.Text = "アニメの特殊指定";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(416, 158);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(175, 32);
-            this.label19.TabIndex = 175;
-            this.label19.Text = "/60 (秒)";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(155, 161);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(175, 32);
-            this.label18.TabIndex = 174;
-            this.label18.Text = "ウェイト";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(155, 130);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(175, 32);
-            this.label17.TabIndex = 173;
-            this.label17.Text = "05固定";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // P28
             // 
@@ -1449,15 +1322,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.B24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W6)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N2_B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N2_B0)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_B0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B17)).EndInit();
@@ -1512,19 +1381,6 @@
         private FEBuilderGBA.TextBoxEx L_4_TEXT_OPCLASS2;
         private System.Windows.Forms.Label J_4_TEXT;
         private System.Windows.Forms.NumericUpDown P0;
-        private System.Windows.Forms.NumericUpDown N2_B5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.NumericUpDown N2_B4;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.NumericUpDown N2_B3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.NumericUpDown N2_B2;
-        private System.Windows.Forms.NumericUpDown N2_B1;
-        private System.Windows.Forms.NumericUpDown N2_B0;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown P28;
         private System.Windows.Forms.Label J_28;
         private System.Windows.Forms.NumericUpDown B23;
@@ -1536,22 +1392,18 @@
         private System.Windows.Forms.NumericUpDown B16;
         private System.Windows.Forms.Label J_17_BATTLEANIME;
         private System.Windows.Forms.NumericUpDown B15;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel3;
         private FEBuilderGBA.TextBoxEx N2_BlockSize;
         private System.Windows.Forms.Label label25;
         private FEBuilderGBA.TextBoxEx N2_SelectAddress;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button N2_WriteButton;
-        private System.Windows.Forms.ComboBox N2_L_3_COMBO;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Panel panel12;
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
-        private ListBoxEx ANIME_LIST;
         private System.Windows.Forms.NumericUpDown N2_Address;
         private System.Windows.Forms.Label label31;
-        private ListBoxEx N2_AddressList;
         private FEBuilderGBA.TextBoxEx L_14_UNITPALETTE_PLUS1;
         private System.Windows.Forms.NumericUpDown W6;
         private System.Windows.Forms.Label J_6;
@@ -1578,5 +1430,13 @@
         private System.Windows.Forms.NumericUpDown B21;
         private System.Windows.Forms.NumericUpDown B20;
         private System.Windows.Forms.NumericUpDown B19;
+        private System.Windows.Forms.NumericUpDown N2_B1;
+        private System.Windows.Forms.NumericUpDown N2_B0;
+        private System.Windows.Forms.Label X_J_2;
+        private System.Windows.Forms.Label N2_J_1;
+        private System.Windows.Forms.Label N2_J_0;
+        private ListBoxEx N2_AddressList;
+        private System.Windows.Forms.Button N2_AddressListExpandsButton;
+        private System.Windows.Forms.ComboBox N2_L_0_COMBO;
     }
 }

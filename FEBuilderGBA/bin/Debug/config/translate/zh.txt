@@ -8968,6 +8968,33 @@ ROM中存在未压缩的特殊OAM数据。\r\n从各种效果，C26 / C27指令�
 :日本語名 開始位置
 日本语的名字起始位置
 
+:0=スクリプトの終了
+0=End of the script
+
+:1=近距離攻撃アニメを実行
+1=Perform close range hit anim
+
+:2=近距離必殺アニメを実行
+2=Perform close range crit anim
+
+:3=アニメの状態を「hit effect applied」にする
+3=Set the anim state to "hit effect applied"
+
+:4=遠距離攻撃アニメを実行
+4=Perform far range hit anim
+
+:5=オプション引数で指定したnフレーム秒待つ
+5=Wait for 'n' frames, specified by the optional argument
+
+:6=近距離で回避アニメーションを行う
+6=Perform close range dodge anim
+
+:7=FE8では未使用。アニメーションの状態を 「hit effect applied」にする
+7=Unused in FE8; sets the anim state to "hit effect applied"
+
+:8=アニメがコマンドC01、C02、C18のどれかに到達するまで待つ
+8=Wait until anim reaches command C01, C02, or C18
+
 :日本語名アドレス
 日文姓名地址
 

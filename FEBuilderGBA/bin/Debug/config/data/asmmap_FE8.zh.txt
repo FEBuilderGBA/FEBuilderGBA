@@ -7480,7 +7480,7 @@ r3=X tile position of menu of the right	{U}
 0859EEA0	&PALETTE	Something's palette	02	{U}
 0859EEC0	&PALETTE	LightRune Palette	{U}
 0859EEE0	&PALETTE	Something's palette	04	{U}
-0859EF00	&PALETTE	Something's palette	05	{U}
+0859EF00	&PALETTE	SystemFont Palette	{U}
 0859EF20	&PALETTE	Something's palette	06	{U}
 0859EF60	&PALETTE	Something's palette	07	{U}
 0859EFE0	&PALETTE	Something's palette	08	{U}
@@ -7578,7 +7578,7 @@ r3=X tile position of menu of the right	{U}
 085C73C0	&PALETTE	Something's palette	02	{J}
 085C73E0	&PALETTE	LightRune Palette	{J}
 085C7400	&PALETTE	Something's palette	04	{J}
-085C7420	&PALETTE	Something's palette	05	{J}
+085C7420	&PALETTE	SystemFont Palette	{J}
 085C7440	&PALETTE	Something's palette	06	{J}
 085C7480	&PALETTE	Something's palette	07	{J}
 085C7500	&PALETTE	Something's palette	08	{J}

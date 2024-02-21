@@ -43,16 +43,18 @@ namespace FEBuilderGBA
                 }
                 );
         }
+
+        //Thanks Eebit https://discord.com/channels/144670830150811649/171833225944104961/1208518805102268427
         InputFormRef N2_InputFormRef;
         static InputFormRef N2_Init(Form self)
         {
             return new InputFormRef(self
                 , "N2_"
                 , 0
-                , 6
+                , 2
                 , (int i, uint addr) =>
                 {
-                    return i < 1; //1つだけ
+                    return (Program.ROM.u8(addr) != 0x00)
                         ;
                 }
                 , (int i, uint addr) =>
@@ -166,6 +168,20 @@ namespace FEBuilderGBA
 
             GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpForm<GraphicsToolForm>(U.NOT_FOUND);
             f.Jump(32 * 8, 4 * 8, addr, 0, 0, 0, paletteAddr, 0, 1 , 0);
+        }
+
+        private void N2_AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (N2_B0.Value == 0x8 || N2_B0.Value == 0x3)
+            {
+                N2_J_1.Text = "00";
+                X_J_2.Hide();
+            }
+            else
+            {
+                N2_J_1.Text = R._("待機");
+                X_J_2.Show();
+            }
         }
     }
 }
