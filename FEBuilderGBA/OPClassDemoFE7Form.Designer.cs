@@ -549,7 +549,6 @@
             this.N2_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.N2_L_0_COMBO.FormattingEnabled = true;
             this.N2_L_0_COMBO.Items.AddRange(new object[] {
-            "0=スクリプトの終了",
             "1=近距離攻撃アニメを実行",
             "2=近距離必殺アニメを実行",
             "3=アニメの状態を「hit effect applied」にする",

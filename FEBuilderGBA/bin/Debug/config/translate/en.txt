@@ -8968,9 +8968,6 @@ Class Name when using Branch Promotion
 :日本語名 開始位置
 Japanese Name Start Position
 
-:0=スクリプトの終了
-0=End of the script
-
 :1=近距離攻撃アニメを実行
 1=Perform close range hit anim
 
@@ -9000,6 +8997,9 @@ Japanese Name Address
 
 :OPクラスデモ FE7
 Class Reel FE7
+
+:0=スクリプトの終了
+0=End of the script
 
 :OPクラスデモ FE7U
 Class Reel FE7U
