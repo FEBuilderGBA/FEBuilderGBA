@@ -8998,9 +8998,6 @@ Japanese Name Address
 :OPクラスデモ FE7
 Class Reel FE7
 
-:0=スクリプトの終了
-0=End of the script
-
 :OPクラスデモ FE7U
 Class Reel FE7U
 

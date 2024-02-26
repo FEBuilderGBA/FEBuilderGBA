@@ -1,0 +1,23 @@
+#ifndef QUINTESSENCE_EFFECT_INSTALLED
+#define QUINTESSENCE_EFFECT_INSTALLED
+
+#include "QuintessenceEffect.lyn.event"
+
+#define ArchiveCurrentPalettes 0x080134D4|1
+ALIGN 4
+EventQuintessenceEffect00000000:
+ASMC StartQuintessenceStealEffect
+STAL 32
+ASMC ArchiveCurrentPalettes // (FE8U:0x080134D4)
+SOUN 0x125 // Nosferatu steal SE -> replace with FE7 SE
+ASMC FE7J_EventE5_Sim_Type_A
+ASMC FE7J_EventE5_Sim_Type_B
+ASMC FE7J_EventE5_Sim_Type_A
+ASMC FE7J_EventE5_Sim_Type_B
+ASMC fe7j_sub_80121FC // Wrapper for WriteFadedPaletteFromArchive (FE8U:0x08013550)
+ASMC QuintessenceFx_Goto_C
+STAL 16
+ASMC EndQuintessenceStealEffect
+ENDA
+
+#endif /* QUINTESSENCE_EFFECT_INSTALLED */

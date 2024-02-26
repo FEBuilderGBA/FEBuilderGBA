@@ -1924,11 +1924,16 @@ namespace FEBuilderGBA
         public static string GetASMCName(string eventscript)
         {
             string asmc = U.cut(eventscript,"{$L1:","}");
-            if (asmc == "")
+            if (asmc != "")
             {
-                return "";
+                return Path.GetFileNameWithoutExtension(asmc);
             }
-            return Path.GetFileNameWithoutExtension(asmc);
+            asmc = U.cut(eventscript, "{$L0:", "}");
+            if (asmc != "")
+            {
+                return Path.GetFileNameWithoutExtension(asmc);
+            }
+            return "";
         }
 
         //圧縮音源のサポート

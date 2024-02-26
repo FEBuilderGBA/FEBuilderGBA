@@ -5073,7 +5073,7 @@ namespace FEBuilderGBA
                     byte[] mod = ReadMod(sp, filename, out isSkip);
 
                     //ポインタ部は可変なので、maskパターンを作って検索します.
-                    addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr);
+                    addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr, 0 , 4);
                     if (addr == U.NOT_FOUND)
                     {
                         continue;
@@ -5309,7 +5309,7 @@ namespace FEBuilderGBA
                         byte[] mod = ReadMod(sp, data.BINData, out isSkip);
 
                         //可変なので、maskパターンを作って検索します.
-                        uint addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr);
+                        uint addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr, 0 , 4);
                         if (addr == U.NOT_FOUND)
                         {
                             continue;
@@ -5350,7 +5350,7 @@ namespace FEBuilderGBA
                         bool[] isSkip = MakeLynMaskPattern(data.BINData);
 
                         //可変なので、maskパターンを作って検索します.
-                        uint addr = U.GrepPatternMatch(Program.ROM.Data, data.BINData, isSkip, lastMatchAddr);
+                        uint addr = U.GrepPatternMatch(Program.ROM.Data, data.BINData, isSkip, lastMatchAddr, 0, 4);
                         if (addr == U.NOT_FOUND)
                         {
                             continue;
@@ -5737,7 +5737,7 @@ namespace FEBuilderGBA
         {
             while (true)
             {
-                Match m = RegexCache.Match(patched_message , @"{\$L([0-9a-zA-Z]+):" + filename + "}");
+                Match m = RegexCache.Match(patched_message , @"{\$L([01]):" + filename + "}");
                 if (! m.Success)
                 {
                     break;
@@ -7278,7 +7278,16 @@ namespace FEBuilderGBA
             uint FindStartAddress = 0x100;
 
             byte[] grepdata = File.ReadAllBytes(filename);
-            addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
+            if (filename.IndexOf("00000000.bin") >= 0)
+            {
+                bool[] isSkip = MakeLynMaskPattern(grepdata);
+                //可変なので、maskパターンを作って検索します.
+                addr = U.GrepPatternMatch(Program.ROM.Data, grepdata, isSkip, FindStartAddress,0 , 4);
+            }
+            else
+            {
+                addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
+            }
             if (addr == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
