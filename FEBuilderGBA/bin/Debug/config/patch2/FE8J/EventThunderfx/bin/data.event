@@ -1,0 +1,89 @@
+
+#define BmBgxConf(type, data, size, duration) "BYTE type 0 0 0; POIN data; SHORT size; BYTE duration 0"
+
+ALIGN 4
+BmBgfxConf_EventThunder:
+    BmBgxConf(3, Pal_EventThunderfx, 1, 0)
+    BmBgxConf(1, Img_EventThunderfx1, 0x1000, 1)
+    BmBgxConf(1, Img_EventThunderfx2, 0x1000, 0)
+    BmBgxConf(2, Tsa_EventThunderfx1, 0, 3)
+    BmBgxConf(2, Tsa_EventThunderfx2, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx3, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx4, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx5, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx6, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx7, 0, 5)
+    BmBgxConf(1, Img_EventThunderfx3, 0x1000, 1)
+    BmBgxConf(1, Img_EventThunderfx4, 0x1000, 0)
+    BmBgxConf(2, Tsa_EventThunderfx8, 0, 3)
+    BmBgxConf(2, Tsa_EventThunderfx9, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx10, 0, 5)
+    BmBgxConf(2, Tsa_EventThunderfx11, 0, 5)
+    BmBgxConf(10, 0, 0, 0)
+
+PUSH
+ORG FEBUILDER_DATA_ORG
+ALIGN 4
+Pal_EventThunderfx:
+    #incbin "Pal_EventThunderfx.bin"	//HINT=BIN
+
+ALIGN 4
+Img_EventThunderfx1:
+    #incbin "Img_EventThunderfx1.bin"	//HINT=BIN
+
+ALIGN 4
+Img_EventThunderfx2:
+    #incbin "Img_EventThunderfx2.bin"	//HINT=BIN
+
+ALIGN 4
+Img_EventThunderfx3:
+    #incbin "Img_EventThunderfx3.bin"	//HINT=BIN
+
+ALIGN 4
+Img_EventThunderfx4:
+    #incbin "Img_EventThunderfx4.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx1:
+    #incbin "Tsa_EventThunderfx1.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx2:
+    #incbin "Tsa_EventThunderfx2.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx3:
+    #incbin "Tsa_EventThunderfx3.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx4:
+    #incbin "Tsa_EventThunderfx4.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx5:
+    #incbin "Tsa_EventThunderfx5.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx6:
+    #incbin "Tsa_EventThunderfx6.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx7:
+    #incbin "Tsa_EventThunderfx7.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx8:
+    #incbin "Tsa_EventThunderfx8.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx9:
+    #incbin "Tsa_EventThunderfx9.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx10:
+    #incbin "Tsa_EventThunderfx10.bin"	//HINT=BIN
+
+ALIGN 4
+Tsa_EventThunderfx11:
+    #incbin "Tsa_EventThunderfx11.bin"	//HINT=BIN
+POP

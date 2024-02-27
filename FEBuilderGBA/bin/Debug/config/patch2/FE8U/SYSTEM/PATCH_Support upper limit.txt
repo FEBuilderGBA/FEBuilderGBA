@@ -14,3 +14,6 @@ INFO.en=The number of possible support conversations is the value set +1.\r\nThe
 INFO.zh=将支持对话的数量设置为-1。最多9个（支持10个支持对话）
 
 AUTHOR=Brendor https://feuniverse.us/t/changing-fe7-support-limits/519  transport:7743
+
+CONFLICT_IF:0x028338=0x00 0x48 0x87 0x46
+CONFLICT_MESSAGE=Change support conversation to 5 people instead of 5 times(By Aera)

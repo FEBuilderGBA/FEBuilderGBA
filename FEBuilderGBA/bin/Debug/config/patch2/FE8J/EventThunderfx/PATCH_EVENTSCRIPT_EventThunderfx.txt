@@ -1,0 +1,37 @@
+NAME=FE7のサンダー EventThunderfx(イベント命令)
+NAME.en=Add Event: FE7 style Thunder EventThunderfx
+NAME.zh=Add Event: FE7 style Thunder EventThunderfx
+
+AUTHOR=Mokha https://feuniverse.us/t/mokhas-hacks-sundries/16204/36
+
+TYPE=EA
+TAG=#EVENT #ENGINE
+EA=EventThunderfx.event
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x70 0xB5 0x04 0x00 0x03 0x20 0x0D 0x4B 0x40 0x42 0x00 0xF0 0x37 0xF8 0x00 0x28 0x11 0xD0 0x11 0x21 0x0A 0x4B 0x41 0x56 0x00 0x7C 0x0E 0x25 0x5A 0x5F 0x09 0x01 0x00 0x06 0x89 0x1A 0x00 0x16 0x0C 0x22 0x9B 0x5E 0x00 0x01 0xC0 0x1A 0x22 0x00 0x04 0x4B 0x00 0xF0 0x23 0xF8 0x70 0xBC 0x01 0xBC 0x00 0x47 0x3D 0xBF 0x00 0x08=0x70 0xB5 0x04 0x00
+
+INFO=このパッチは、FE7にあるサンダーを落とすカットシーン用の画面効果をFE8に実現させます。
+
+EVENTSCRIPT:11=400A0000{$L0:EventScr_CallThunderfx00000000.bin}	FE7のサンダーを落とす(CALL EventScr_CallThunderfx)(LOW)	Slot2=UnitID
+EVENTSCRIPT:12=40050200XXXXXXXX400A0000{$L0:EventScr_CallThunderfx00000000.bin}	[XX:UNIT:ユニット]にFE7のサンダーを落とす(CALL EventScr_CallThunderfx)
+EVENTSCRIPT:13=400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	FE7のサンダーを落とす(CALL EventScr_CallThunderfxAtPosition)(LOW)	Slot3=MapX Slot4=MapY
+EVENTSCRIPT:14=40050300XXXXXXXX40050400YYYYYYYY400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	[XX:MAPX:X][YY:MAPY:Y]にFE7のサンダーを落とす(CALL EventScr_CallThunderfxAtPosition)
+
+
+EVENTSCRIPT:11.en=400A0000{$L0:EventScr_CallThunderfx00000000.bin}	FE7 style Thunder(CALL EventScr_CallThunderfx)(LOW)	Slot2=UnitID
+EVENTSCRIPT:12.en=40050200XXXXXXXX400A0000{$L0:EventScr_CallThunderfx00000000.bin}	FE7 style thunder on [XX:UNIT:UNIT](CALL EventScr_CallThunderfx)
+EVENTSCRIPT:13.en=400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	FE7 style Thunder at map(CALL EventScr_CallThunderfxAtPosition)(LOW)	Slot3=MapX Slot4=MapY
+EVENTSCRIPT:14.en=40050300XXXXXXXX40050400YYYYYYYY400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	FE7 style Thunder at [XX:MAPX:X][YY:MAPY:Y](CALL EventScr_CallThunderfxAtPosition)
+
+EVENTSCRIPT:11.zh=400A0000{$L0:EventScr_CallThunderfx00000000.bin}	FE7 style Thunder(CALL EventScr_CallThunderfx)(LOW)	Slot2=UnitID
+EVENTSCRIPT:12.zh=40050200XXXXXXXX400A0000{$L0:EventScr_CallThunderfx00000000.bin}	FE7 style thunder on [XX:UNIT:UNIT](CALL EventScr_CallThunderfx)
+EVENTSCRIPT:13.zh=400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	FE7 style Thunder at map(CALL EventScr_CallThunderfxAtPosition)(LOW)	Slot3=MapX Slot4=MapY
+EVENTSCRIPT:14.zh=40050300XXXXXXXX40050400YYYYYYYY400A0000{$L0:EventScr_CallThunderfxAtPosition00000000.bin}	FE7 style Thunder at [XX:MAPX:X][YY:MAPY:Y](CALL EventScr_CallThunderfxAtPosition)
+
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=15236			//パッチ全体のサイズ
+ALLOC_PROGRAM_ONLY_SIZE=740	//コード部だけのサイズ, FEBUILDER_DATA_ORGでデータ部を分離します
+INFO.en=This patch brings to FE8 the screen effects for the thunder-dropping cutscenes found in FE7.
+INFO.zh=该补丁为 FE8 带来了 FE7 中雷霆万钧的过场动画的屏幕效果。
