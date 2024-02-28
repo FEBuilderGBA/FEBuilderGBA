@@ -2140,6 +2140,18 @@
       <DependentUpon>SomeClassListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolTranslateROMWipeJPClassReelFont.cs" />
+    <Compile Include="PackedMemorySlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackedMemorySlotForm.Designer.cs">
+      <DependentUpon>PackedMemorySlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventUnitColorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitColorForm.Designer.cs">
+      <DependentUpon>EventUnitColorForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -3163,6 +3175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SomeClassListForm.resx">
       <DependentUpon>SomeClassListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackedMemorySlotForm.resx">
+      <DependentUpon>PackedMemorySlotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitColorForm.resx">
+      <DependentUpon>EventUnitColorForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

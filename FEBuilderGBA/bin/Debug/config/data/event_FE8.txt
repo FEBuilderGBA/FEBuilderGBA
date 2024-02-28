@@ -117,9 +117,8 @@ Duration
 202BXXXX	In ruins. Called before loading units[XXXX::Value1](LOW)(_0x2B20)
 212BXXXX	In ruins after a randomization routine[XXXX::Value1](LOW)(_0x2B21)
 222BXXXX	Called before loading units sometimes[XXXX::Value1](LOW)(_0x2B22)
-202DXX00	これから読込む自軍ユニットの色を[XX:UNIT_COLOR:色]に変更
-202DXX02	これから読込む自軍ユニットの色を[XX:UNIT_COLOR:色]に変更2
-202D0000	これから読込む自軍ユニットの色を元の色で描画する
+202DXXXX	これから読込む自軍ユニットの色を[XX:UNIT_COLOR:変更する色]に変更	この命令はカットシーン用の命令です。
+202D0000	これから読込む自軍ユニットの色を元の色で描画する	この命令はカットシーン用の命令です。
 4032XXXXFFFE0000	デフォルトのパラメータで、味方[XXXX:UNIT:ユニット]をSlotBの地点に表示する(SPAWN_ALLY)(LOW)	{LOADUNIT}
 4132XXXXFFFE0000	デフォルトのパラメータで、友軍[XXXX:UNIT:ユニット]をSlotBの地点に表示する(SPAWN_NPC)(LOW)	{LOADUNIT}
 4232XXXXFFFE0000	デフォルトのパラメータで、敵軍[XXXX:UNIT:ユニット]をSlotBの地点に表示する(SPAWN_ENEMY)(LOW)	{LOADUNIT}

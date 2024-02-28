@@ -8255,10 +8255,48 @@ namespace FEBuilderGBA
 
         public static string GetUNIT_COLOR(uint num)
         {
+            if (num == 0)
+            {
+                return R._("変更せずに元の色で描画する");
+            }
+            string ret = "";
+
+            string color;
+            color = GetUNIT_COLORSub(num & 0xF);
+            if (color != "")
+            {
+                ret += R._("自軍を{0}に", color);
+            }
+            color = GetUNIT_COLORSub((num>>4) & 0xF);
+            if (color != "")
+            {
+                if (ret != "") ret += ",";
+                ret += R._("敵軍を{0}に", color);
+            }
+            color = GetUNIT_COLORSub((num >> 8) & 0xF);
+            if (color != "")
+            {
+                if (ret != "") ret += ",";
+                ret += R._("友軍を{0}に", color);
+            }
+            color = GetUNIT_COLORSub((num >> 12) & 0xF);
+            if (color != "")
+            {
+                if (ret != "") ret += ",";
+                ret += R._("友軍を{0}に", color);
+            }
+            color = GetUNIT_COLORSub((num >> 16) & 0xF);
+            if (color != "")
+            {
+                if (ret != "") ret += ",";
+                ret += R._("第4軍を{0}に", color);
+            }
+            return ret;
+        }
+        static string GetUNIT_COLORSub(uint num)
+        {
             switch (num)
             {
-                case 0x00:
-                    return R._("元");
                 case 0x01:
                     return R._("青");
                 case 0x02:

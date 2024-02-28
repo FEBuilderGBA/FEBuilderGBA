@@ -2722,6 +2722,42 @@ Persuade the unit and join the party
 :何もしないイベント1を設定します。
 Set event 1 to do nothing.
 
+:0=変更せず
+0=No change.
+
+:1=青
+1=Blue
+
+:2=赤
+2=Red
+
+:3=緑
+3=Green
+
+:4=セピア
+4=Sepia
+
+:変更する色を指定してください。
+Please specify the color you want to change.
+
+:適応
+Apply
+
+:自軍
+Player
+
+:敵軍
+Enemy
+
+:友軍
+NPC
+
+:第4軍
+Fourth
+
+:カットシーンでのユニットの色
+Color of units in cutscenes.
+
 :ユニットの座標({0},{1})は、マップのサイズ({2},{3})より大きい座標です。
 The coordinates of the unit ({0}, {1}) are larger than the size of the map ({2}, {3})
 
@@ -2769,15 +2805,6 @@ Class Dependent
 
 :成長率:
 Autolevel:
-
-:自軍
-Player
-
-:友軍
-NPC
-
-:敵軍
-Enemy
 
 :消滅
 Defeat
@@ -3522,9 +3549,6 @@ Editor
 
 :汎用色
 Generic Color
-
-:第4軍
-Fourth
 
 :拡大して描画
 Zoom and Draw
@@ -4990,8 +5014,20 @@ Avoid
 :スキル拡張がありません
 There is no skill extension
 
-:元
-Former
+:変更せずに元の色で描画する
+Draw in original color without changing.
+
+:自軍を{0}に
+Player to {0}
+
+:敵軍を{0}に
+Enemy to {0}
+
+:友軍を{0}に
+NPC to {0}
+
+:第4軍を{0}に
+4th to {0}
 
 :青
 Blue
@@ -6015,12 +6051,6 @@ Effect pointer "{1}" is not divisible by 4 when using map for item {0}.This numb
 
 :1=黒
 1=Black
-
-:2=赤
-2=Red
-
-:3=緑
-3=Green
 
 :4=青
 4=Blue
@@ -7341,9 +7371,6 @@ Expand Tile Changes
 
 :スタイル編集
 Edit Palette
-
-:適応
-Apply
 
 :データサイズが不一致。\r\n(データ数/2) % 幅 == 0 ではありません
 Data size doesn't match.\r\n(Data size / 2)%width==0
@@ -9771,6 +9798,9 @@ Show Error
 
 :ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
 Even if you don't save your changes, you can still playtest using F5.\r\nBackups are saved in date format within the same directory as the ROM.\r\n\r\nTo remove this message, correct the detected error(s).\r\nOr, in the settings, when you save your ROM, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are having trouble with an unresolvable error, create a report7z and consult with the Discord server.
+
+:計算式を作成してください。
+Please create a calculation formula.
 
 :リセット
 Reset

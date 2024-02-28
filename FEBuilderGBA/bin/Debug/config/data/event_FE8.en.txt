@@ -475,9 +475,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting/current) unit	{ITEM}	{U}
 400A0000249D5B0840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{J}
 400A0000401F590840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{U}
-202DXX00	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color]
-202DXX02	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:color] 2
-202D0000	Draw the color of Player Unit to be read in the original color
+202DXXXX	Change the color of Player Unit to be read from now to[XX:UNIT_COLOR:Change Color]	This instruction is for cut scenes.
+202D0000	Draw the color of Player Unit to be read in the original color	This instruction is for cut scenes.
 6218XXXXYYYYZZZZWWWWVVVV	FADECOLORS[XXXX::Target][YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}
 62180000YYYYZZZZWWWWVVVV	Change the color of the entire screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}
 6218060AYYYYZZZZWWWWVVVV	Change the background color[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](COLORFADE_FADE)	{FADE}	{MAPEFFECT}

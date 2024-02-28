@@ -1541,6 +1541,24 @@ namespace FEBuilderGBA
                         (InputFormRef.GetAllControls(f), "ApplyButton")
                     , src_object);
             }
+            else if (arg.Type == EventScript.ArgType.UNIT_COLOR)
+            {
+                EventUnitColorForm f = (EventUnitColorForm)InputFormRef.JumpForm<EventUnitColorForm>(U.NOT_FOUND);
+                f.JumpTo(value);
+                MakeInjectionApplyButtonCallback(f
+                    , (Button)InputFormRef.FindObjectByForm<Button>
+                        (InputFormRef.GetAllControls(f), "ApplyButton")
+                    , src_object);
+            }
+            else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
+            {
+                PackedMemorySlotForm f = (PackedMemorySlotForm)InputFormRef.JumpForm<PackedMemorySlotForm>(U.NOT_FOUND);
+                f.JumpTo(code.Script.Info[0],value);
+                MakeInjectionApplyButtonCallback(f
+                    , (Button)InputFormRef.FindObjectByForm<Button>
+                        (InputFormRef.GetAllControls(f), "ApplyButton")
+                    , src_object);
+            }
             else if (arg.Type == EventScript.ArgType.GAMEOPTION)
             {
                 StatusOptionForm f = (StatusOptionForm)InputFormRef.JumpForm<StatusOptionForm>();

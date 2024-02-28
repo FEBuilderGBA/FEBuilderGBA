@@ -236,6 +236,14 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.UNIT_COLOR)
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.PACKED_MEMORYSLOT)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.KEYS)
             {
                 isLabelJump = true;

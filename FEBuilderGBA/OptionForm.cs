@@ -918,15 +918,7 @@ namespace FEBuilderGBA
             {
                 return (text_escape_enum)U.atoi(Program.Config.at("func_text_escape", "1"));
             }
-            string lang = OptionForm.lang();
-            if (lang == "ja" || lang == "zh")
-            {//日本語と中国語版は、ProjectFEGBAをディフォルトにする.
-                return text_escape_enum.ProjectFEGBA;
-            }
-            else
-            {//英語版は、FEEditorAdv形式をディフォルトにする.
-                return text_escape_enum.FEditorAdv;
-            }
+            return text_escape_enum.FEditorAdv;
         }
 
         public static int write_notify_time()
