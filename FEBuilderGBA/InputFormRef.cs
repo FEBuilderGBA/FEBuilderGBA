@@ -8283,12 +8283,6 @@ namespace FEBuilderGBA
             if (color != "")
             {
                 if (ret != "") ret += ",";
-                ret += R._("友軍を{0}に", color);
-            }
-            color = GetUNIT_COLORSub((num >> 16) & 0xF);
-            if (color != "")
-            {
-                if (ret != "") ret += ",";
                 ret += R._("第4軍を{0}に", color);
             }
             return ret;
