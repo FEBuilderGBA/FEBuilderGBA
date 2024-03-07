@@ -3743,7 +3743,7 @@ You can change the save screen, the chapter image, and the chapter title, but.\r
 Chapter Image
 
 :章タイトル読込
-Export Chapter Title
+Import Chapter Title
 
 :章画像読込
 Import Chapter Image
@@ -8254,20 +8254,20 @@ File size is too small. Requires 9216 bytes.
 :地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。
 The map is available with 5 pallets.\r\nPalettes 6-9 is the daytime palette.\r\nPalettes 6-9 is the fog pallets.\r\n\r\nIf you don't use the fog, \r\nyou can also use the 6-9 palette,\r\nalthough it's Out of regulation.\r\n
 
+:タイルの種類だけをクリップボードに保存します。\r\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
+Saves only the tile type to the clipboard.\r\nSelect the destination tile from the tile palette on the left and press Ctrl + V.
+
+:タイルの情報をクリップボードに保存します。\r\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
+Saves tile information to the clipboard.\r\nSelect the destination tile from the tile palette on the left and press Ctrl + V.
+
 :コピーした情報を張り付けてROMに書き込みます。
 Paste the copied information and write it to ROM.
 
 :張り付け(Alt + V)
 Paste (Alt + V)
 
-:タイルの情報をクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
-Save the tile information to the clipboard.\\\\r\\\\nSelect the copy destination tile from the tile palette on the left and press Ctrl + V.
-
 :タイルのコピー(Alt + T) 
 Copy tile (Alt + T)
-
-:タイルの種類だけをクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。
-Save only the tile type to the clipboard.\\\\r\\\\nSelect the copy destination tile from the tile palette on the left and press Ctrl + V.
 
 :種類のコピー(Alt + C)
 Copy type (Alt + C)

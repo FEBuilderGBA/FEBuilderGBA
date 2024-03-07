@@ -1366,6 +1366,8 @@ namespace FEBuilderGBA
         void SetExplainText()
         {
             this.Explain_MapPalette.AccessibleDescription = R._("地図は5つのパレットとを利用できます。\r\n0-5パレットは、昼のパレットです。\r\n6-9パレットは、霧のパレットです。\r\n\r\n規格外になりますが、\r\nもし霧を利用しない場合は、\r\n6-9パレットも利用することもできます。");
+            this.CopyTypeButton.AccessibleDescription = R._("タイルの種類だけをクリップボードに保存します。\r\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。");
+            this.CopyTileButton.AccessibleDescription = R._("タイルの情報をクリップボードに保存します。\r\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。");
         }
 
 

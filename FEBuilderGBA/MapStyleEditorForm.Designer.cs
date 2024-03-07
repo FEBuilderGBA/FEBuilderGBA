@@ -403,7 +403,7 @@
             // 
             // CopyTileButton
             // 
-            this.CopyTileButton.AccessibleDescription = "タイルの情報をクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。";
+            this.CopyTileButton.AccessibleDescription = "";
             this.CopyTileButton.Location = new System.Drawing.Point(351, 196);
             this.CopyTileButton.Margin = new System.Windows.Forms.Padding(2);
             this.CopyTileButton.Name = "CopyTileButton";
@@ -415,7 +415,7 @@
             // 
             // CopyTypeButton
             // 
-            this.CopyTypeButton.AccessibleDescription = "タイルの種類だけをクリップボードに保存します。\\r\\n左側のタイルパレットから、コピー先のタイルを選択し、Ctrl + V を押してください。";
+            this.CopyTypeButton.AccessibleDescription = "";
             this.CopyTypeButton.Location = new System.Drawing.Point(122, 196);
             this.CopyTypeButton.Margin = new System.Windows.Forms.Padding(2);
             this.CopyTypeButton.Name = "CopyTypeButton";
