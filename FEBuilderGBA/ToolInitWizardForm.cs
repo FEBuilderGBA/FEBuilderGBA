@@ -381,7 +381,7 @@ namespace FEBuilderGBA
             else if (this.Step3 == Step3_Enum.DOWNLOAD_GBA_MUSIC_STDIO)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "GBAMusicStdio");
-                string url = "https://cdn.discordapp.com/attachments/600877394764627968/948313405431894077/VGMusicStudio.7z";
+                string url = "https://github.com/FEBuilderGBA/DirectPlayS/releases/download/20230504/DirectPlayS.7z";
                 string r = DownloadProgram_Direct(url, dir, "VG Music Studio.exe");
                 if (IsErrorResult(r))
                 {
@@ -438,13 +438,8 @@ namespace FEBuilderGBA
                     string r = DownloadProgram_Direct(url, dir, "NO$GBA.EXE");
                     if (IsErrorResult(r))
                     {
-                        url = "https://cdn.discordapp.com/attachments/470029781795078175/1039723314286956594/nogba.7z";
-                        r = DownloadProgram_Direct(url, dir, "NO$GBA.EXE");
-                        if (IsErrorResult(r))
-                        {
-                            R.ShowStopError(r);
-                            return;
-                        }
+                        R.ShowStopError(r);
+                        return;
                     }
                     debugger = r;
                 }
@@ -506,7 +501,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "midfix4agb");
-                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/775008685360807956/midfix4agb.7z";
+                    string url = "https://cdn.discordapp.com/attachments/470029781795078175/1215429662931681280/midfix4agb.7z";
                     string r = DownloadProgram_Direct(url, dir, "midfix4agb.exe");
                     if (IsErrorResult(r))
                     {
