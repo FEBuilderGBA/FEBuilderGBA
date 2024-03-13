@@ -501,7 +501,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "midfix4agb");
-                    string url = "https://cdn.discordapp.com/attachments/470029781795078175/1215429662931681280/midfix4agb.7z";
+                    string url = "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/download/ver_20240308.07/midfix4agb.7z";
                     string r = DownloadProgram_Direct(url, dir, "midfix4agb.exe");
                     if (IsErrorResult(r))
                     {
