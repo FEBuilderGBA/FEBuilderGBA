@@ -25,3 +25,6 @@ INFO.zh=CC通常是由CC分支指定的两个类别的分支CC，但是将CC类�
 AUTHOR=出典元:https://github.com/ngmansion/FE8/tree/master/ThreeGreens
 AUTHOR.en=area Port:7743 https://github.com/ngmansion/FE8/tree/master/ThreeGreens
 AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master/Three Greens
+
+CONFLICT_IF:0xCCD5C=0x4D 0x6F 0x6B 0x68 0x61
+CONFLICT_MESSAGE=Mokha's ClassChg Expansion

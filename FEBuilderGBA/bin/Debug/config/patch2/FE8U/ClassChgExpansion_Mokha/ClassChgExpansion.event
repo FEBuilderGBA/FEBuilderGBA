@@ -1,0 +1,18 @@
+#ifndef CLASS_CHG_EXPANSION_INSTALLED
+#define CLASS_CHG_EXPANSION_INSTALLED
+
+//#ifndef FreeSpace
+//#define FreeSpace 0xB2A610
+//ORG FreeSpace
+//#endif
+
+ALIGN 4
+gGetClasschgListFuncs:
+    POIN GetClasschgListVanilla GetClasschgListExpa GetClasschgListMod
+
+    POIN GetClasschgListPadFunc GetClasschgListPadFunc GetClasschgListPadFunc GetClasschgListPadFunc
+    WORD 0
+
+#include "ClassChgExpansionInternal.event"
+
+#endif /* CLASS_CHG_EXPANSION_INSTALLED */

@@ -1,0 +1,20 @@
+NAME=Mokha's ClassChg Expansion(Install)
+NAME.en=Mokha's ClassChg Expansion(Install)
+NAME.zh=Mokha's 转职扩展(Install)
+AUTHOR=Mokha(悠木晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23
+
+PATCHED_IF:0xCCD5C=0x4D 0x6F 0x6B 0x68 0x61
+
+TYPE=EA
+TAG=#ENGINE
+
+INFO=このパッチは最大6つのCC先を選択できるようにします。\r\nバニラの2つの昇格先に加えて、追加で4つのPromoion先を定義できます。
+INFO.en=This patch allows you to choose up to 6 Promotion destinations.\r\nIn addition to the two vanilla promotion destinations, four additional promoion destinations can be defined.
+
+EA=ClassChgExpansion.event
+
+CONFLICT_IF:0xCCE90=0x51 0x46 0x49 0x68 0x48 0x79 0xC0 0x46 0x0C 0x4A 0x09 0x79 0x49 0x00 0x8A 0x18 0x11 0x78 0x88 0x42 0x2D 0xD0 0x51 0x78 0x88 0x42 0x2A 0xD0 0x50 0x46 0x40 0x68
+CONFLICT_MESSAGE=3 Promotion Branch Options
+
+ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
+ALLOC_SIZE_HINT=4912			//パッチ全体のサイズ

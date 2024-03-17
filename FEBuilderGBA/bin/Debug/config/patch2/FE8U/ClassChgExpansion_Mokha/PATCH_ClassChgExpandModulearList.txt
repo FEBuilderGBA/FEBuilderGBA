@@ -1,0 +1,24 @@
+NAME=Mokha's ClassChg Expansion:ModulearList(Editor)
+NAME.en=Mokha's ClassChg Expansion:ModulearList(Editor)
+NAME.zh=Mokha's 转职扩展:额外扩展列表(Editor)
+AUTHOR=Mokha(悠木晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23
+
+IF:0xCCD5C=0x4D 0x6F 0x6B 0x68 0x61
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+INFO=特定の条件を満たした時にだけCCできるようにする制限を設定することができます。
+INFO.en=You can set restrictions that allow Promotion only when certain conditions are met.
+INFO.zh=可以扩充角色在满足特定条件的情况下进行转职
+
+POINTER=$GREP4END 0x43 0x6C 0x61 0x73 0x73 0x43 0x68 0x67 0x45 0x78 0x70 0x61 0x4D 0x6F 0x64 0x00
+DATASIZE=0x8
+DATACOUNT=$GREP4 0 0 0 0 0 0 0 0
+
+LISTNAME=$B0:CLASS
+B0:CLASS=Promotion class
+B1:CLASS=Current class
+B2:UNIT=Character, 0=ANY
+W4:ITEM=Item, 0=ANY
+W6:FLAG=Event flag, 0=ANY

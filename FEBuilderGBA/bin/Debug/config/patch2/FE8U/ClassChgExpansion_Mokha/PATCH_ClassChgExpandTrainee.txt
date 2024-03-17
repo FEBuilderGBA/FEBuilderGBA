@@ -1,0 +1,28 @@
+NAME=Mokha's ClassChg Expansion:Trainee(Editor)
+NAME.en=Mokha's ClassChg Expansion:Trainee(Editor)
+NAME.zh=Mokha's 转职扩展:0阶职业自动转职配置(Editor)
+
+AUTHOR=Mokha(悠木晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23
+
+IF:0xCCD5C=0x4D 0x6F 0x6B 0x68 0x61
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+INFO=見習いクラスからの自動昇格条件を設定できます。
+INFO.en=You can set the conditions for automatic promotion from the trainee class.
+INFO.zh=You can set the conditions for automatic promotion from the trainee class.
+
+POINTER=$GREP4END 0x54 0x72 0x61 0x69 0x6E 0x65 0x65 0x73 0x52 0x65 0x65 0x00
+DATASIZE=0x2
+DATACOUNT=$GREP2 0
+
+LISTNAME=$B0:CLASS
+B0:CLASS=見習いクラス
+B1:DECIMAL=自動昇格レベル
+
+B0:CLASS.en=Trainee Class
+B1:DECIMAL.en=Automatic Promotion level
+
+B0:CLASS.zh=职业
+B1:DECIMAL.zh=自动转职等级

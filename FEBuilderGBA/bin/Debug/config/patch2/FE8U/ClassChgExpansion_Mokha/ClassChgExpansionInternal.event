@@ -1,0 +1,17 @@
+ALIGN 4
+#include "source/data.lyn.event"
+
+/* Get promotion list core */
+#include "source/ClasschgList.lyn.event"
+#include "source/ClasschgListModularGetter.lyn.event"
+
+#include "source/Utils.lyn.event"
+#include "source/BmClassChg.lyn.event"
+
+#include "LynJump.event"
+
+PUSH
+/* Magic for FEB identification */
+ORG $CCD5C
+BYTE $4D $6F $6B $68 $61 // String("Mokha")
+POP

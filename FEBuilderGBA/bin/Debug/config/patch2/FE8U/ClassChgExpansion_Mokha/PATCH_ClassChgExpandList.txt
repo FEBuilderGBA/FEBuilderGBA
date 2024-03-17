@@ -1,0 +1,23 @@
+NAME=Mokha's ClassChg Expansion:List(Editor)
+NAME.en=Mokha's ClassChg Expansion:List(Editor)
+NAME.zh=Mokha's 转职扩展:标准扩展列表(Editor)
+AUTHOR=Mokha(悠木晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23
+
+IF:0xCCD5C=0x4D 0x6F 0x6B 0x68 0x61
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+INFO=バニラの2つのCC先に加えて追加する、CC先クラスを最大4つまで指定できます。
+INFO.en=You can specify up to four additional Promotion destination classes to be added to the two vanilla Promotion destinations.
+INFO.zh=在原本两个职业之外额外扩展四个可选职业进行转职
+
+ADDRESS=$GREP4END 0x50 0x72 0x6F 0x6D 0x6F 0x4A 0x69 0x64 0x4C 0x75 0x74 0x45 0x78 0x70 0x61 0x00 
+DATASIZE=4
+DATACOUNT=0x100
+
+LISTNAME=CLASS
+B0:CLASS=add class
+B1:CLASS=add class
+B2:CLASS=add class
+B3:CLASS=add class
