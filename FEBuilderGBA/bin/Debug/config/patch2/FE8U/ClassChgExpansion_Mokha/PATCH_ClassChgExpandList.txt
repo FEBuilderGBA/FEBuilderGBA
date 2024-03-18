@@ -21,3 +21,5 @@ B0:CLASS=add class
 B1:CLASS=add class
 B2:CLASS=add class
 B3:CLASS=add class
+AUTHOR.en=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23.
+AUTHOR.zh=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23。

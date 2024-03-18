@@ -18,3 +18,6 @@ CONFLICT_MESSAGE=3 Promotion Branch Options
 
 ALLOC_MUST_HIGH_ADDRESS=1		//このパッチは複雑なので、必ず上位アドレスに入れる必要がある
 ALLOC_SIZE_HINT=4912			//パッチ全体のサイズ
+AUTHOR.en=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23.
+INFO.zh=此补丁允许您选择最多 6 个 CC 目的地。\r\n除了两个普通促销目标之外，您还可以定义四个附加促销目标。
+AUTHOR.zh=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23。

@@ -1,0 +1,15 @@
+NAME=LoadTrapData関数内での神の矢のbreak忘れを修正する
+NAME.en=Fix ArrowTrap forgetting to break in LoadTrapData function
+
+INFO=このパッチは、Arrowトラップを設定すると、Eggトラップも設定されてしまうバグを修正します。\r\nFE8の開発者はLoadTrapData関数のswitch文でbreakを書くのを忘れました。\r\nそのため、Arrowトラップを追加すると、Eggトラップも設定されてしまいます。\r\nこのパッチはそのバグを修正します。
+
+TYPE=EA
+EA=Fix_ArrowTrapGlitch_install.txt
+
+PATCHED_IFNOT:0x37914=0x7a 0x79 0x03 0x08	//FE8J
+//PATCHED_IFNOT:0x3787C=0xe2 0x78 0x03 0x08	//FE8U
+
+AUTHOR=7743 https://discord.com/channels/144670830150811649/470029781795078175/1219122326122135643
+INFO.en=This patch fixes a bug where setting an Arrow trap would also set an Egg trap.\r\nThe FE8 developer forgot to write a break in the switch statement of the LoadTrapData function.\r\nTherefore, adding an Arrow trap will also set an Egg trap.\r\nThis patch fixes that bug.
+NAME.zh=修复了 LoadTrapData 函数中忘记折断上帝之箭的问题
+INFO.zh=此补丁修复了设置箭陷阱也会设置蛋陷阱的错误。\r\nFE8 开发人员忘记在 LoadTrapData 函数的 switch 语句中编写中断。\r\n因此，添加箭陷阱也会设置蛋陷阱。\r\n这个补丁修复了这个错误。

@@ -1,0 +1,8 @@
+PUSH
+//ORG 0x3787C	//{U}
+ORG 0x37914	//{J}
+POIN Fix_ArrowTrapGlitch
+POP
+
+Fix_ArrowTrapGlitch:
+#incbin "Fix_ArrowTrapGlitch.dmp"

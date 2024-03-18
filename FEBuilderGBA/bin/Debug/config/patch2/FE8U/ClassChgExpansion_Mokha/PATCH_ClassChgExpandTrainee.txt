@@ -26,3 +26,6 @@ B1:DECIMAL.en=Automatic Promotion level
 
 B0:CLASS.zh=职业
 B1:DECIMAL.zh=自动转职等级
+
+AUTHOR.en=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23.
+AUTHOR.zh=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23。

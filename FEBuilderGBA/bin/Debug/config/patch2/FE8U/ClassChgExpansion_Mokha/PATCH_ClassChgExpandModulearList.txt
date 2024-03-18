@@ -22,3 +22,6 @@ B1:CLASS=Current class
 B2:UNIT=Character, 0=ANY
 W4:ITEM=Item, 0=ANY
 W6:FLAG=Event flag, 0=ANY
+
+AUTHOR.en=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23.
+AUTHOR.zh=Mokha(Yuki 晓缺) https://feuniverse.us/t/mokhas-hacks-sundries/16204/23。
