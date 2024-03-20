@@ -161,6 +161,12 @@ SHORT $00 $04 $08 $0C $10 $14 $18 $1C $9C $9C $9C $9C $9C $00
 ORG 0x09E8E2	//{J}
 BYTE 0x1
 
+//Make scrolling help text only clear space for one line. (It doesn't seem to need it anyway.
+//https://discord.com/channels/144670830150811649/725478895226191892/1219846780590751845
+//ORG $3552A	//{U}
+ORG $35432	//{J}
+SHORT 0x46C0 //Remove loop branch so code only runs once
+
 POP 
 
 #include "vesly-ExtendWeaponDescBox-tradefix/tradefix.event"

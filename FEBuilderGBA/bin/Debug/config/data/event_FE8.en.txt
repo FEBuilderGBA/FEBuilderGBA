@@ -328,8 +328,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400D000079480C08	Roll Endgame Credits	{ENDING}	{U}
 400D000041D00B08	Display total number of turns for the ending	{ENDING}	{J}
 400D000075810B08	Display total number of turns for the ending	{ENDING}	{U}
-400D0000D5B70B08	Ending battle display	{ENDING}	{J}
-400D0000956C0B08	Ending battle display	{ENDING}	{U}
+400D0000D5B70B08	Display character endings	{ENDING}	{J}
+400D0000956C0B08	Display character endings	{ENDING}	{U}
 400D000069880808	Branch (place unknown)	{J}
 400A0000BC9D5B08	Call Preparation screen	{PREPARATION}	{MAP}	{J}
 400A0000D81F5908	Call Preparation screen	{PREPARATION}	{MAP}	{U}
