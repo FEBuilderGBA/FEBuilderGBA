@@ -56,7 +56,6 @@
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N2_LabelFilter = new System.Windows.Forms.Label();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel12.SuspendLayout();
@@ -389,22 +388,12 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.N2_AddressListExpandsButton);
             this.panel11.Controls.Add(this.N2_LabelFilter);
             this.panel11.Controls.Add(this.N2_AddressList);
             this.panel11.Location = new System.Drawing.Point(14, 45);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(268, 791);
             this.panel11.TabIndex = 192;
-            // 
-            // N2_AddressListExpandsButton
-            // 
-            this.N2_AddressListExpandsButton.Location = new System.Drawing.Point(0, 756);
-            this.N2_AddressListExpandsButton.Name = "N2_AddressListExpandsButton";
-            this.N2_AddressListExpandsButton.Size = new System.Drawing.Size(263, 30);
-            this.N2_AddressListExpandsButton.TabIndex = 212;
-            this.N2_AddressListExpandsButton.Text = "リストの拡張";
-            this.N2_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // N2_LabelFilter
             // 
@@ -427,7 +416,7 @@
             this.N2_AddressList.Location = new System.Drawing.Point(1, 26);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N2_AddressList.Name = "N2_AddressList";
-            this.N2_AddressList.Size = new System.Drawing.Size(265, 724);
+            this.N2_AddressList.Size = new System.Drawing.Size(265, 759);
             this.N2_AddressList.TabIndex = 108;
             // 
             // EDFE6Form
@@ -482,7 +471,6 @@
         private System.Windows.Forms.Label N2_J_0_TEXT;
         private FEBuilderGBA.TextBoxEx N2_L_0_TEXT_FE6EDAFTER6;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button N2_AddressListExpandsButton;
         private System.Windows.Forms.Label N2_LabelFilter;
         private ListBoxEx N2_AddressList;
         private FEBuilderGBA.TextBoxEx N2_L_6_TEXT_EDTITLE1;

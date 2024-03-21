@@ -31,11 +31,11 @@ namespace FEBuilderGBA
                 , 8
                 , (int i, uint addr) =>
                 {
-                    if (i == 0)
+                    if (i >= 0x42)
                     {
-                        return true;
+                        return false;
                     }
-                    return Program.ROM.u16(addr) != 0x00;
+                    return true;
                 }
                 , (int i, uint addr) =>
                 {
