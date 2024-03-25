@@ -1,0 +1,22 @@
+NAME=ASMC_ClearZombies(イベント命令)
+NAME.en=Add Event: ASMC_ClearZombies
+NAME.zh=Add Event: ASMC_ClearZombies
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ClearZombies.dmp=0x30 0xB5 0x31 0x48
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_ClearZombies.dmp
+
+
+INFO=HP=0またはDead状態が設定されているユニットのIDを0に設定します。CHECK_ALIVEループを必要とせず、複数のユニットを同時に消去する、よりエレガントな方法です。
+INFO.en=Sets the ID to 0 of units with HP = 0 or the Dead state set. This is a more elegant way to erase multiple units simultaneously, without requiring a CHECK_ALIVE loop.
+INFO.zh=Sets the ID to 0 of units with HP = 0 or the Dead state set. This is a more elegant way to erase multiple units simultaneously, without requiring a CHECK_ALIVE loop.
+
+AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1220835528635584522
+
+EVENTSCRIPT:1=17000000{$L1:ASMC_ClearZombies.dmp}	ASMC_ClearZombies
+EVENTSCRIPT:1.en=17000000{$L1:ASMC_ClearZombies.dmp}	ASMC_ClearZombies
+EVENTSCRIPT:1.zh=17000000{$L1:ASMC_ClearZombies.dmp}	ASMC_ClearZombies

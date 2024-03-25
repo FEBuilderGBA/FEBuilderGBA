@@ -1,0 +1,17 @@
+next_loop=$0A
+break_loop=$AA
+IsZombie=$28
+check_unit_id=$28
+check_class_id=$36
+check_item_id=$48
+check_affiliation=$74
+item_match=$74
+affiliation_match=$A4
+check_affiliation_enemy=$98
+check_affiliation_npc=$8E
+check_affiliation_purple=$A0
+check_affiliation_player=$88
+found=$A4
+Update=$B0
+set_str=$BA
+Update_Exit=$C0

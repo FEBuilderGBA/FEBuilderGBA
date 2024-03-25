@@ -17,9 +17,9 @@ INFO.zh=Similar to "Set All Unit Status", but it lets you specify the commander 
 
 AUTHOR=Shuusuke https://discord.com/channels/144670830150811649/470029781795078175/1093980111038070866
 
-EVENTSCRIPT:1=400DYY00{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(LOW)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
-EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(Low)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
-EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(Low)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
+EVENTSCRIPT:1=400D0000{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(LOW)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(Low)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_SetUnitStatusCommander.dmp}	ASMC_SetUnitStatusCommander(Low)	Slot1 = UnitID, Slot2 = ClassID, Slot3=Item, Slot4=Affiliation, Slot5=CommanderID, SlotA=StatusType, SlotB=Value	{UNITPERSOLNAL}
 
 EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500UUUU000040050A00VVVV000040050B00TTTTTTTT400D0000{$L1:ASMC_SetUnitStatusCommander.dmp}	全ユニットの[VV:RAM_UNIT_PARAM:Status]を[TT:RAM_UNIT_VALUE:NewValue]に設定する。条件:[XXXX:UNIT:ユニット条件 00=ANY][YYYY:CLASS:クラス条件 00=ANY][ZZZZ:ITEM:アイテム条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件 FF=ANY][UUUU:UNIT:指揮官条件 00=ANY]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.en=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW000040050500UUUU000040050A00VVVV000040050B00TTTTTTTT400D0000{$L1:ASMC_SetUnitStatusCommander.dmp}	Set ALL Unit's [VV:RAM_UNIT_PARAM:Status] to [TT:RAM_UNIT_VALUE:NewValue] If Cond conditions[XXXX:UNIT:CheckUnit 00=ANY][YYYY:CLASS:CheckClass 00=ANY][ZZZZ:ITEM:CheckItem 00=ANY][WWWW:WMAPAFFILIATION:FF=ANY][UUUU:UNIT:CheckCommanderID 00=ANY]	{UNITPERSOLNAL}

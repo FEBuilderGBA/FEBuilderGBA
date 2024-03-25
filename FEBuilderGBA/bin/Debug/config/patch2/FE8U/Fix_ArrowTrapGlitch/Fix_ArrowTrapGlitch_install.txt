@@ -1,7 +1,7 @@
 PUSH
-ORG 0x3787C	//{U}
-//ORG 0x37914	//{J}
-POIN Fix_ArrowTrapGlitch
+ORG 0x0378e2	//{U}
+BYTE 0x00 0x00
+jumpToHack(Fix_ArrowTrapGlitch)
 POP
 
 Fix_ArrowTrapGlitch:

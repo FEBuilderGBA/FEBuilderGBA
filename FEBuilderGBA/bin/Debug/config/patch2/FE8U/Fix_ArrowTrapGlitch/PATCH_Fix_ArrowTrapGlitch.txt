@@ -6,8 +6,7 @@ INFO=このパッチは、Arrowトラップを設定すると、Eggトラップ�
 TYPE=EA
 EA=Fix_ArrowTrapGlitch_install.txt
 
-//PATCHED_IFNOT:0x37914=0x7a 0x79 0x03 0x08	//FE8J
-PATCHED_IFNOT:0x3787C=0xe2 0x78 0x03 0x08	//FE8U
+PATCHED_IF:0x0378e2=0x00 0x00 0x00 0x4B 0x18 0x47	//FE8U
 
 AUTHOR=7743 https://discord.com/channels/144670830150811649/470029781795078175/1219122326122135643
 INFO.en=This patch fixes a bug where setting an Arrow trap would also set an Egg trap.\r\nThe FE8 developer forgot to write a break in the switch statement of the LoadTrapData function.\r\nTherefore, adding an Arrow trap will also set an Egg trap.\r\nThis patch fixes that bug.
