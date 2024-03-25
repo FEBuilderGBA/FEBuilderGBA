@@ -1,0 +1,31 @@
+NAME=ディフォルトオプション カーソル等
+NAME.en=Set Default Option "Cursor & etc"
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|ゲームとテキストスピードを早い,オートカーソルをオフ|FAST_A|ゲームとテキストスピードを早い|FAST_CURSOL_A|ゲームとテキストスピードを早い,オートカーソルをオフ,地形表示オフ|FAST_A_TERRAINOFF|ゲームとテキストスピードを早い,地形表示オフ|FAST_CURSOL_A_TERRAINOFF
+
+COMBO.en=Default|OFF|Game/text speed Fast, Autocursor off|FAST_A|Game/text speed Fast|FAST_CURSOL_A|Game/text speed Fast, Autocursor off,Terrain off|FAST_A_TERRAINOFF|Game/text speed Fast,Terrain off|FAST_CURSOL_A_TERRAINOFF
+
+DETERMINATION_ADDRESS=0x02E48A
+
+OFF:0x02E48A=0x02 0x40
+FAST_A:0x02E48A=0xd0 0x22
+FAST_CURSOL_A:0x02E48A=0xc0 0x22
+FAST_A_TERRAINOFF:0x02E48A=0xd2 0x22
+FAST_CURSOL_A_TERRAINOFF:0x02E48A=0xc2 0x22
+
+
+//CONFIGの設定 カーソル等	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
+ &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
+INFO=ニューゲームで開始した時の初期のディフォルトオプションを設定します。\r\nゲームスピード、テキストスピード、オートカーソル、吹き出しヘルプを設定できます。\r\nオートカーソルは、ターン開始時に主人公にカーソルを合わせるかどうかの設定です。\r\n地形表示は、オートセーブパッチを当てている場合に、オートセーブの切り替えになります。
+
+INFO.en=Set the default option when starting with the new game.\r\nYou can set game speed, text speed, auto cursor, balloon help.\r\nThe auto cursor is a setting as to whether or not to hover the cursor to the main character at the beginning of the turn.\r\nThe Terrain will be switched to auto save when applying the auto save patch.
+NAME.zh=默认选项光标等
+INFO.zh=从新游戏开始时设置初始默认选项。\r\n您可以设置游戏速度，文本速度，自动光标，气球帮助。\r\n自动光标是关于是否在转弯开始时将光标悬停在主角上的设置。\r\n应用自动保存补丁时，地形显示将切换为自动保存。
+
+
+COMBO.zh=Default|OFF|游戏和文字速度快，自动光标关闭|FAST_A|游戏和文字速度很快|FAST_CURSOL_A|游戏和文字速度快，自动光标关闭，地形关闭|FAST_A_TERRAINOFF|游戏和文字速度很快，地形关闭|FAST_CURSOL_A_TERRAINOFF
+
+AUTHOR=7743
+

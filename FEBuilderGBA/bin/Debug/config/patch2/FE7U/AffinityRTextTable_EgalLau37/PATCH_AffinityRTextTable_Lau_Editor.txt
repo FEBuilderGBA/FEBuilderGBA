@@ -1,3 +1,5 @@
+NAME=属性ごとに異なるヘルプメッセージを設定する(editor)
+INFO=ステータス画面の属性のRボタンのヘルプメッセージに、属性ごとに異なるテキストIDを指定します。\r\n属性名や、どのようなボーナスが提供されるかを指定するのに便利です。
 NAME.en=Different help texts for unit affinity (editor)
 INFO.en=Specify different text IDs for different affinities.  Useful for specifying the affinity name and what bonuses are provided.
 
@@ -22,7 +24,5 @@ LISTNAME=ATTRIBUTEICON0
 //データを定義します
 W0:TEXT=Text for affinity
 
-NAME=属性ごとに異なるヘルプメッセージを設定する(editor)
-INFO=ステータス画面の属性のRボタンのヘルプメッセージに、属性ごとに異なるテキストIDを指定します。\r\n属性名や、どのようなボーナスが提供されるかを指定するのに便利です。
 NAME.zh=Different help texts for unit affinity (editor)
 INFO.zh=Specify different text IDs for different affinities.  Useful for specifying the affinity name and what bonuses are provided.
