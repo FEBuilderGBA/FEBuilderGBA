@@ -682,6 +682,11 @@ namespace FEBuilderGBA
                 {
                     sb.AppendLine("#define SKILLSYSTEM_SKILL_TESTER SkillTester");
                 }
+                PatchUtil.ICONReworkENUN iconrework = PatchUtil.ICONRework();
+                if (iconrework == PatchUtil.ICONReworkENUN.SkillSystemsIconRework)
+                {
+                    sb.AppendLine("#define HAX_ICON_REWORK");
+                }
             }
             //魔法分離パッチ
             MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();

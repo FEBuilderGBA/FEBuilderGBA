@@ -55,6 +55,7 @@ namespace FEBuilderGBA
             g_Cache_OPClassReelAnimationIDOver255 = OPClassReelAnimationIDOver255Patch.NoCache;
             g_Cache_BG256ColorPatch = BG256ColorPatch.NoCache;
             g_Cache_FixGenerateBestMovementScriptPatch = FixGenerateBestMovementScriptENUN.NoCache;
+            g_Cache_IconReworkPatch = ICONReworkENUN.NoCache;
             g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
         }
@@ -2383,6 +2384,35 @@ namespace FEBuilderGBA
             };
 
             return SearchPatchBool(table);
+        }
+
+        //ICON REWORK
+        public enum ICONReworkENUN
+        {
+            NO,             //なし
+            SkillSystemsIconRework,
+            NoCache = (int)NO_CACHE
+        };
+        static ICONReworkENUN g_Cache_IconReworkPatch = ICONReworkENUN.NoCache;
+        public static ICONReworkENUN ICONRework()
+        {
+            if (g_Cache_IconReworkPatch == ICONReworkENUN.NoCache)
+            {
+                g_Cache_IconReworkPatch = ICONReworkLow();
+            }
+            return g_Cache_IconReworkPatch;
+        }
+        static ICONReworkENUN ICONReworkLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="SkillSystemsIconRework",	ver = "FE8U", addr = 0x03650,data = new byte[]{0x10 ,0xB5 ,0x03 ,0x4C}},
+            };
+
+            if (SearchPatchBool(table))
+            {
+                return ICONReworkENUN.SkillSystemsIconRework;
+            }
+            return ICONReworkENUN.NO;
         }
     }
 }
