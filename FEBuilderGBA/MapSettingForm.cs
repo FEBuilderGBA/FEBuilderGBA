@@ -69,8 +69,6 @@ namespace FEBuilderGBA
                 return true;
             }
 
-            uint textmax = TextForm.GetDataCount();
-            if (a <= textmax)
             {//CPを0にしている人対策
                 uint weather = Program.ROM.u8(addr + 12);
                 if (weather >= 0xE)
@@ -87,6 +85,7 @@ namespace FEBuilderGBA
                         return false;
                     }
                 }
+                uint textmax = TextForm.GetDataCount();
                 uint map1 = Program.ROM.u16(addr + 0x70);
                 if (map1 >= textmax)
                 {
@@ -109,7 +108,7 @@ namespace FEBuilderGBA
                 }
                 return true;
             }
-            return false;
+//            return false;
         }
 
 

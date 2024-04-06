@@ -545,6 +545,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 400A0000FC03A608	Fade-in relationship processing(LOW)	{J}
 400A0000C4E29E08	Fade-in relationship processing(LOW)	{U}
 2038XXXX	Sets [XXXX:UNIT:Unit] as currently active unit(SET_ACTIVE)
+40050B00XX00YY002038FEFF	Sets Coord [XX:MAPX:X][YY:MAPY:Y] as currently active unit(SET_ACTIVE)
 4035XXXXYYYY0000	Change [XXXX:UNIT:Unit]'s class to [YYYY:CLASS:Class](RECLASS)	weapon ranks, stats, etc stay the same.
 4035XXXX0000YYYY	Change [XXXX:UNIT:Unit]'s class to [YYYY:UNIT:Ref Unit]'s default class(RECLASS_FROMCHAR)
 4135XXXXYYYY0000	Switch [XXXX:UNIT:Unit1]'s class to [YYYY:UNIT:Unit2]'s class(SWITCH_CLASSES)	(the first unit will gain the *default* class of the second unit, while the second unit *will* get the class the first unit was in beforehand)

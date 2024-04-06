@@ -1,0 +1,52 @@
+//FE7 Display Growths
+//By Tequila
+
+#ifndef _FE6_
+	ERROR Wrong ROM
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+
+ORG $22410// 8022378 
+//ORG $25C0C // in 25B54
+jumpToHack(HP_Bars)
+
+ORG $15B54 //fe6-15B54 //load more graphics
+BYTE 0x18
+//ORG $2CB22 //force subtitles on (not necessary, we're not using this anymore)
+//SHORT 0x46C0
+ORG $15B70 //fe6-15B70
+POIN HPBarGraphic
+
+POP
+
+ALIGN 4
+HP_Bars:
+#incbin "Warning_and_HP_Bars.dmp"
+POIN HPFramePointers
+
+ALIGN 4
+HPFrames:
+#incbin "HPFrames.bin" //HINT=BIN
+
+ALIGN 4
+HPFramePointers: //HINT=POINTER_ARRAY
+POIN HPFrames
+POIN HPFrames+8
+POIN HPFrames+16
+POIN HPFrames+24
+POIN HPFrames+32
+POIN HPFrames+40
+POIN HPFrames+48
+POIN HPFrames+56
+POIN HPFrames+64
+POIN HPFrames+72
+POIN HPFrames+80
+POIN HPFrames+88
+
+ALIGN 4
+HPBarGraphic:
+#incbin "Fe7-Hp Bars graphics.png.dmp"	//HINT=BIN

@@ -47,7 +47,7 @@ namespace FEBuilderGBA
 
            unit_move_icon_pointer = U.FindROMPointer(rom, 0x4, new uint[] { 0x079584, 0x79598, 0xBAC2C, 0xBAC40});  // ユニット移動アイコンの開始位置
            lightrune_uniticon_id = 0x66;  // ユニット(光の結界)のユニットアイコンのID
-           map_setting_pointer = U.FindROMPointer(rom, (uint addr) => { return rom.u32(0x12) < 0xE; }, new uint[] {0x0B5F98,0x0B61C0,0x0B6328,0x0B6500});   // マップ設定の開始位置
+           map_setting_pointer = U.FindROMPointer(rom, (uint addr) => { return rom.u32(0x12) < 0xE; }, new uint[] { 0x0B5F98, 0x0B61C0, 0x0B6328, 0x0B6500, 0x03462C, 0xB5E68 });   // マップ設定の開始位置
            map_setting_datasize = 148;  //マップ設定のデータサイズ
            map_setting_event_plist_pos = 116;  //event plistの場所 
            map_setting_worldmap_plist_pos = 117;  //woldmap event plistの場所 

@@ -1,0 +1,15 @@
+NAME=HPBars and warnings
+NAME.en=HPBars and warnings
+NAME.zh=HPBars and warnings
+
+TYPE=EA
+TAG=#ENGINE
+EA=Installer.event
+
+PATCHED_IF:0x22410=0x00 0x4B 0x18 0x47
+
+INFO=HPbarを追加します。
+AUTHOR=Circles , Transport FE6: Vesly
+INFO.en=Add HPbar.
+\r\nSince it operates alone, it is separated from SkillSystems.\r\nfor the slow one that also has the effectiveness warnings
+INFO.zh=添加HPbar。
