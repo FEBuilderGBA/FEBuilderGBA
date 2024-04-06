@@ -1,0 +1,20 @@
+NAME=移動不可能なタイルへ移動させようとするとハングアップするバグの修正
+NAME.en=Fix_GenerateBestMovementScript Move Glitch
+NAME.zh=Fix_GenerateBestMovementScript Move Glitch
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x19738
+
+OFF:0x19738=0x84 0x46 0x62 0x46 0x02 0x99 0x0A 0x70 0x04 0x9B 0x02 0x93 0x67 0x46 0x38 0x04 0x00 0x14
+FIX:0x19738=0xFF 0x2E 0x2C 0xDA 0x02 0x99 0x08 0x70 0x04 0x9B 0x02 0x93 0x67 0x46 0xc0 0x46 0xc0 0x46
+
+
+INFO=通行できないタイルへ移動させようとするとハングアップするバグを修正します。\r\nGBAFEは壁の中などの移動できないタイルへ移動させようとすると、縦線の画像でハングアップしてしまいます。\r\nこのパッチはその問題を修正します。\r\n注意しないといけないのは、このパッチは、ハングアップさせないだけであって、本来移動的ない無茶な座標へ移動をさせると見た目はかなり変になります。
+INFO.en=Fixed a bug that would cause a hang when trying to move to a tile that cannot be moved.\r\nWhen trying to move GBAFE to a tile that cannot be moved, such as inside a wall, the image hangs with vertical lines.\r\nThis patch fixes that issue.\r\nWhat you have to be careful about is that this patch only prevents it from hanging up, and if you move it to unreasonable coordinates that are not originally intended for movement, it will look quite strange.
+INFO.zh=修复了尝试移动到无法移动的图块时会导致挂起的错误。\r\n当尝试将 GBAFE 移动到无法移动的图块（例如墙内）时，图像会悬挂垂直线。\r\n这个补丁解决了这个问题。\r\n你要小心的是，这个补丁只是防止它挂起来，如果你把它移动到原本不适合移动的不合理坐标上，看起来会相当奇怪。
+AUTHOR=original 7743 ,Transport Vesly
