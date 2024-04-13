@@ -1,0 +1,28 @@
+NAME=救出できなくする RescuerTable(Editor)
+NAME.en=Prevent Rescue RescuerTable(Editor)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x25344=0x30 0xB5 0x01 0x4C 0x20 0x47 0xC0 0x46
+
+//データへのポインタ
+POINTER=$FGREP4END+0 TryAddUnitToRescueTargetList.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数
+DATACOUNT=256
+
+//リストに表示
+LISTNAME=UNIT
+
+//データを定義します
+B0:$COMBO Combo.ja.txt:.ja=救出する禁止
+B0:$COMBO Combo.en.txt:.en=Prevent Rescuer
+B0:$COMBO Combo.en.txt:.zh=Prevent Rescuer
+
+INFO=指定したユニットは、他人を救出できなくなります。
+
+AUTHOR=Pikmin1211 https://feuniverse.us/t/pikmin-asm/8148/5
+INFO.en=The designated unit will not be able to rescue others.\r\nAllows for the prevention of both rescuing and being rescued (separately) by unit id. Also removes phantom rescuing hardcoding.

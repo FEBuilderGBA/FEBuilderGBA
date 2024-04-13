@@ -1,0 +1,28 @@
+NAME=救出できなくする RescueeTable(Editor)
+NAME.en=Prevent Rescue RescueeTable(Editor)
+TYPE=STRUCT
+TAG=#ENGINE
+
+IF:0x25344=0x30 0xB5 0x01 0x4C 0x20 0x47 0xC0 0x46
+
+//データへのポインタ
+POINTER=$FGREP4END+4 TryAddUnitToRescueTargetList.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数
+DATACOUNT=256
+
+//リストに表示
+LISTNAME=UNIT
+
+//データを定義します
+B0:$COMBO Combo.ja.txt:.ja=救出されるを禁止
+B0:$COMBO Combo.en.txt:.en=Prevent Rescuee
+B0:$COMBO Combo.en.txt:.zh=Prevent Rescuee
+
+INFO=指定したユニットが救出されるのを禁止します。
+
+AUTHOR=Pikmin1211 https://feuniverse.us/t/pikmin-asm/8148/5
+INFO.en=Prohibits the specified unit from being rescued.\r\nAllows for the prevention of both rescuing and being rescued (separately) by unit id. Also removes phantom rescuing hardcoding.

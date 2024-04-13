@@ -1,0 +1,32 @@
+
+ALIGN 4
+NewRescueTargetList:
+#incbin "TryAddUnitToRescueTargetList.dmp"
+POIN RescuerTable
+POIN RescueeTable
+
+PUSH
+ORG $25344
+GotoNewRescueFunc:
+#incbin "GotoNewFunc.dmp"
+POIN NewRescueTargetList + 1
+POP
+
+ALIGN 4
+RescuerTable:
+#incbin "BlankTable.dmp"
+
+ALIGN 4
+RescueeTable:
+#incbin "BlankTable.dmp"
+
+#define CannotRescue(unitid) "PUSH; ORG RescuerTable + unitid; BYTE 0x1; POP"
+#define CannotBeRescued(unitid) "PUSH; ORG RescueeTable + unitid; BYTE 0x1; POP"
+
+// Vanilla FE8 Phantoms
+CannotRescue(0x3B)
+CannotRescue(0x3E)
+CannotRescue(0x3F)
+CannotBeRescued(0x3B)
+CannotBeRescued(0x3E)
+CannotBeRescued(0x3F)

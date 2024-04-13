@@ -15,7 +15,7 @@
 15=Myrmidon/Swordmaster Lock	Restricts item use to only those with the Myrmidon/Swordmaster lock set.\r\nBy default, this is set for Wo Dao.
 16=Zephiel Lock	Restricts item use to only those with the Zephiel Lock set.\r\nBy default, this is set for Exaccus.
 17=Negate Flying Effectiveness	When equipped, negates Bow effectiveness against Flying units.\r\nBy default, this is set for the Delphi Shield.
-18=Negate Criticals	When equipped, prevents enemy critical hits.\r\nBy default, this is set for the Iron Rune.
+18=??	??
 
 //特性3
 21=??

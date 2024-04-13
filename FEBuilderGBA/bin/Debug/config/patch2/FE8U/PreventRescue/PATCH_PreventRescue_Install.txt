@@ -1,0 +1,16 @@
+NAME=救出できなくする(Installer)
+NAME.en=Prevent Rescue(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x25344=0x30 0xB5 0x01 0x4C 0x20 0x47 0xC0 0x46
+EA=Installer.event
+
+EDIT:1=PATCH_PreventRescue_RescuerTable.txt
+EDIT:2=PATCH_PreventRescue_RescueeTable.txt
+
+INFO=指定したユニットを救出できなくします。
+
+AUTHOR=Pikmin1211 https://feuniverse.us/t/pikmin-asm/8148/5
+INFO.en=Allows for the prevention of both rescuing and being rescued (separately) by unit id. Also removes phantom rescuing hardcoding.
