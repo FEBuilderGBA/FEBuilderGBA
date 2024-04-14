@@ -1,5 +1,5 @@
 NAME=HP上限 敵軍
-NAME.en=Foe HP Limit
+NAME.en=Enemy HP Limit(Foe HP Limit)
 NAME.zh=敌军HP上限
 
 //アドレスパッチとして実装します

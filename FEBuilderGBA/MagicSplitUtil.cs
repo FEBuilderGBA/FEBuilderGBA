@@ -269,7 +269,19 @@ namespace FEBuilderGBA
             }
             return 0;
         }
-
+        static public void MakeEADefine(StringBuilder sb)
+        {
+            if (g_Cache_magic_split_enum == magic_split_enum.FE7UMAGIC
+                || g_Cache_magic_split_enum == magic_split_enum.FE8UMAGIC)
+            {
+                sb.AppendLine("#define MagCharTable " + U.toOffset(UnitTag) );
+                sb.AppendLine("#define MagClassTable " + U.toOffset(ClassTag));
+            }
+        }
+        static public uint GetUnitTag()
+        {
+            return UnitTag;
+        }
 
         static public void WriteUnitBaseMagicExtends(uint uid, uint addr, uint newValue, Undo.UndoData undodata)
         {

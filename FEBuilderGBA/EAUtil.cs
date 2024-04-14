@@ -687,6 +687,7 @@ namespace FEBuilderGBA
                 {
                     sb.AppendLine("#define HAX_ICON_REWORK");
                 }
+
             }
             //魔法分離パッチ
             MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
@@ -697,10 +698,12 @@ namespace FEBuilderGBA
             else if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
             {
                 sb.AppendLine("#define USE_STRMAG_SPLIT");
+                MagicSplitUtil.MakeEADefine(sb);
             }
             else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
             {
                 sb.AppendLine("#define USE_STRMAG_SPLIT");
+                MagicSplitUtil.MakeEADefine(sb);
             }
 
 
