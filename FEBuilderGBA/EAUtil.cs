@@ -731,11 +731,11 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            sb.AppendLine("ORG " + U.To0xHexString(U.toOffset(addr)) + " ;" + name + ":");
+            sb.AppendLine("ORG " + U.To0xHexString(U.toOffset(addr)) + ";" + name + ":");
         }
         public static void AddORGWithMAP(StringBuilder sb, AsmMapFile map, string name)
         {
-            uint addr = map.SearchName(name);
+            uint addr = map.SearchNameLefthandMatch(name+"@");
             AddORG(sb, addr, name);
         }
 

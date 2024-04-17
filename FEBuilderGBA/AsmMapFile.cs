@@ -1518,6 +1518,18 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
+        //名前からの逆検索 前方一致(ただし、遅い)
+        public uint SearchNameLefthandMatch(string name)
+        {
+            foreach (var pair in AsmMap)
+            {
+                if (pair.Value.Name.IndexOf(name)==0)
+                {
+                    return pair.Key;
+                }
+            }
+            return U.NOT_FOUND;
+        }
 
         //近いデータの検索
         List<uint> NearSearchSortedList = new List<uint>();
